@@ -362,7 +362,8 @@
     document.querySelectorAll('.xp-mount[data-xp]').forEach(function(m){
       var k=m.dataset.xp;
       try{
-        if(k==='day') build(m);
+        if(XP.registry && XP.registry[k]) XP.registry[k](m);
+        else if(k==='day') build(m);
         else if(k==='pfc' && XP.cfgPFC) XP.make(m, XP.cfgPFC);
         else if(k==='tit' && XP.cfgTit) XP.make(m, XP.cfgTit);
         else if(k==='imp' && XP.cfgImp) XP.make(m, XP.cfgImp);
