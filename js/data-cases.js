@@ -42,7 +42,7 @@ sophia:{title:'Sophia, 30 — appetite suppression and late-night insomnia (Mefl
  a:{text:'Meflynate XL lasts about 8 h (SPS). She takes it at 10:00 because she wakes late on non-work days.', ask:'Most useful first intervention?', choices:[
   C('Review dose timing (take on waking, consistent time each day), plan a good breakfast before/with the dose and a planned evening meal; sleep diary','NICE NG87 1.8.5–1.8.8 (food with or after the dose, extra meals when the effect has worn off) and 1.8.17 (sleep diary). Late dosing extends effect into the evening.','good','b'),
   C('Add zopiclone at night','Hypnotics are not first line; fix timing and sleep hygiene first.','bad'),
-  C('Switch to lisdexamfetamine','Lisdexamfetamine lasts longer (~13 h) and may worsen insomnia.','bad')]},
+  C('Switch to lisdexamfetamine','Lisdexamfetamine lasts longer (up to ~13 h in children, ~14 h in adults) and may worsen insomnia.','bad')]},
  b:{text:'After timing changes Sophia sleeps better. She has lost 3 kg in 3 months.', ask:'What monitoring applies?', choices:[
   C('Weight every 6 months in adults (more often if concerns), consider BMI monitoring and dietary advice; change medication if weight change persists','NICE NG87 1.8.5–1.8.8.','good','end'),
   C('No monitoring needed in adults','Incorrect — adults need weight every 6 months.','bad')]},

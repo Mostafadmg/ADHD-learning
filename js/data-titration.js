@@ -72,14 +72,14 @@ window.TITRATION = {
   },
   atx_child: {
     name:'Atomoxetine – child/adolescent 6+ up to 70 kg (weight-based)',
-    pop:'Children 6+ and adolescents up to 70 kg (worked example: 30 kg)', max:'Maintenance ≈ 1.2 mg/kg/day; no added benefit shown above 1.2 mg/kg/day; doses over 1.8 mg/kg/day not systematically evaluated (SPC)',
+    pop:'Children 6+ and adolescents up to 70 kg (worked example: 30 kg)', maxLabel:'Dose limits', max:'Maintenance ≈ 1.2 mg/kg/day; no added benefit shown above 1.2 mg/kg/day; doses over 1.8 mg/kg/day not systematically evaluated (SPC)',
     note:'SPC: start at a total daily dose of approximately 0.5 mg/kg; keep the initial dose for a minimum of 7 days, then titrate up according to response and tolerability; recommended maintenance approximately 1.2 mg/kg/day. Once daily in the morning, or split (morning and late afternoon/early evening) if nausea or somnolence. Capsule strengths: 10, 18, 25, 40, 60, 80, 100 mg. Full effect builds over several weeks. BNFC maximum not verified (geo-restricted) — check BNFC (NICE 1.7.27).',
     src:'Atomoxetine SPC §4.2 (emc 10332)',
     monitor:'Weight, height, HR and BP before and after each dose change and at least 6-monthly; suicidal thoughts and behaviour; signs of liver injury (jaundice, dark urine, right upper quadrant pain).',
     steps:[
       {when:'Days 1–7+', dose:'30 kg: 15 mg/day (≈0.5 mg/kg)', detail:'Worked example for a 30 kg child: 0.5 mg/kg × 30 kg = 15 mg. Capsules come as 10, 18, 25, 40, 60, 80 and 100 mg, so 15 mg cannot be given exactly; the specialist chooses the nearest practical dose (e.g. 10 mg or 18 mg). Keep the starting dose for at least 7 days.'},
       {when:'Week 2+', dose:'30 kg: 25 mg/day', detail:'Titrate up according to response and tolerability. Check HR, BP and weight; ask about nausea, appetite, somnolence and mood.'},
-      {when:'Week 3+', dose:'30 kg: 36 mg/day (≈1.2 mg/kg)', detail:'Recommended maintenance ≈1.2 mg/kg/day = 36 mg for 30 kg (e.g. 18 mg twice daily, or 25 mg + 10 mg ≈ 35 mg once daily). Allow several weeks at maintenance before judging effect.', isMax:true},
+      {when:'Week 3+', dose:'30 kg: 36 mg/day (≈1.2 mg/kg)', detail:'Recommended maintenance ≈1.2 mg/kg/day = 36 mg for 30 kg (e.g. 18 mg twice daily, or 25 mg + 10 mg ≈ 35 mg once daily). Allow several weeks at maintenance before judging effect. This is the usual maintenance target, not a licensed maximum.', isTarget:true},
       {when:'Week 6+ review', dose:'Adequate trial?', detail:'Judge response after an adequate trial at maintenance. If no response to methylphenidate, lisdexamfetamine and a non-stimulant, NICE 1.7.16: obtain a second opinion or refer to a tertiary service.'},
       {when:'Stopping', dose:'No mandatory taper; taper if stopping electively', detail:'SPC: may be stopped abruptly for significant adverse effects; otherwise tapered off over a suitable time period. Re-evaluate need beyond 1 year.'}
     ]

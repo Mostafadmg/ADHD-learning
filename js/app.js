@@ -1,9 +1,32 @@
 /* ADHD for Pharmacists – app logic (no dependencies) */
 (function(){
   'use strict';
-  var LS = 'adhdPharmLearn.v1';
+  /* v2 storage: checklist ticks are keyed by each item's stable data-id, not its position. */
+  var LS = 'adhdPharmLearn.v2', LS1 = 'adhdPharmLearn.v1';
+  var V1_IDS = { /* item order in v1 for lists that did not change; 'mon' changed, so its v1 ticks are reset */
+    dx:['dx-symptoms-meet-dsm','dx-onset-of-several','dx-symptoms-present-6','dx-pervasive-in-2','dx-at-least-moderate','dx-collateral-history-obtained','dx-rating-scales-completed','dx-differential-diagnoses-and','dx-assessment-by-a','dx-diagnosis-and-next'],
+    baseline:['baseline-diagnosis-confirmed-and','baseline-mental-health-social','baseline-risk-of-substance','baseline-medical-history-and','baseline-height-and-weight','baseline-baseline-pulse-and','baseline-cardiovascular-history-examination','baseline-ecg-only-if','baseline-seizure-history-tics','baseline-pregnancy-contraception-discussed','baseline-driving-status-noted','baseline-shared-decision-making'] };
+  function blank(){ return {done:{},checks:{},quiz:{}}; }
+  function migrate(old){
+    var st = {done:old.done||{}, checks:{}, quiz:old.quiz||{}, resetNotice:{}};
+    var oc = old.checks||{};
+    Object.keys(oc).forEach(function(k){
+      var ids = V1_IDS[k], any=false;
+      Object.keys(oc[k]||{}).forEach(function(i){ if(oc[k][i]) any=true; if(ids && oc[k][i] && ids[+i]){ st.checks[k]=st.checks[k]||{}; st.checks[k][ids[+i]]=true; } });
+      if(!ids && any) st.resetNotice[k]=true;
+    });
+    return st;
+  }
   var state = load();
-  function load(){ try{ return JSON.parse(localStorage.getItem(LS)) || {done:{},checks:{},quiz:{}}; }catch(e){ return {done:{},checks:{},quiz:{}}; } }
+  function load(){
+    try{
+      var v2 = JSON.parse(localStorage.getItem(LS));
+      if(v2) return v2;
+      var v1 = JSON.parse(localStorage.getItem(LS1));
+      if(v1){ var m = migrate(v1); localStorage.setItem(LS, JSON.stringify(m)); localStorage.removeItem(LS1); return m; }
+    }catch(e){}
+    return blank();
+  }
   function save(){ try{ localStorage.setItem(LS, JSON.stringify(state)); }catch(e){} }
   var $ = function(s,r){return (r||document).querySelector(s);};
   var $$ = function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));};
@@ -63,7 +86,7 @@
     b.addEventListener('click', function(){ var id=b.dataset.module; state.done[id]=!state.done[id]; save(); renderProgress(); });
   });
   var reset = $('#resetProgress');
-  if(reset) reset.addEventListener('click', function(){ if(confirm('Reset all progress, checklist ticks and quiz scores stored in this browser?')){ state={done:{},checks:{},quiz:{}}; save(); location.reload(); } });
+  if(reset) reset.addEventListener('click', function(){ if(confirm('Reset all progress, checklist ticks and quiz scores stored in this browser?')){ state=blank(); save(); location.reload(); } });
 
   /* ---------- mobile menu ---------- */
   var mb = $('.menu-btn');
@@ -91,12 +114,19 @@
       boxes.forEach(function(b){ var l=b.nextElementSibling; if(l) l.classList.toggle('done-label', b.checked); });
     }
     boxes.forEach(function(b,i){
-      b.id = b.id || (key+'-'+i);
+      var sid = b.getAttribute('data-id') || (key+'-'+i);
+      b.id = b.id || ('cl-'+sid);
       var l = b.nextElementSibling; if(l && l.tagName==='LABEL') l.setAttribute('for', b.id);
-      b.checked = !!(state.checks[key] && state.checks[key][i]);
-      b.addEventListener('change', function(){ state.checks[key]=state.checks[key]||{}; state.checks[key][i]=b.checked; save(); upd(); });
+      b.checked = !!(state.checks[key] && state.checks[key][sid]);
+      b.addEventListener('change', function(){ state.checks[key]=state.checks[key]||{}; if(b.checked) state.checks[key][sid]=true; else delete state.checks[key][sid]; save(); upd(); });
     });
     upd();
+    if(state.resetNotice && state.resetNotice[key] && out){
+      var n=document.createElement('p'); n.className='cl-note'; n.setAttribute('role','status');
+      n.textContent='This checklist was updated, so your earlier ticks on it were cleared.';
+      out.parentNode.insertBefore(n, out.nextSibling);
+      delete state.resetNotice[key]; save();
+    }
     var clr = ul.parentNode.querySelector('.js-clear[data-for="'+key+'"]');
     if(clr) clr.addEventListener('click', function(){ boxes.forEach(function(b){b.checked=false;}); state.checks[key]={}; save(); upd(); });
   });
@@ -184,9 +214,9 @@
     Object.keys(TITRATION).forEach(function(k){ var o=document.createElement('option'); o.value=k; o.textContent=TITRATION[k].name; sel.appendChild(o); });
     function draw(){
       var d = TITRATION[sel.value]; var n=d.steps.length;
-      meta.innerHTML = '<p><strong>Population:</strong> '+d.pop+' &nbsp; <strong>Licensed maximum:</strong> '+d.max+'</p><p class="cl-progress">'+d.note+' <br><em>Source: '+d.src+'</em></p>';
+      meta.innerHTML = '<p><strong>Population:</strong> '+d.pop+' &nbsp; <strong>'+(d.maxLabel||'Licensed maximum')+':</strong> '+d.max+'</p><p class="cl-progress">'+d.note+' <br><em>Source: '+d.src+'</em></p>';
       track.innerHTML = d.steps.map(function(s,i){
-        return '<button type="button" class="st '+(i<idx?'past':'')+(i===idx?' cur':'')+(s.isMax?' max':'')+'" data-i="'+i+'" aria-label="Step '+(i+1)+': '+esc(s.dose)+'"><span>'+s.when+'</span><b>'+s.dose+'</b></button>';
+        return '<button type="button" class="st '+(i<idx?'past':'')+(i===idx?' cur':'')+(s.isMax?' max':'')+(s.isTarget?' target':'')+'" data-i="'+i+'" aria-label="Step '+(i+1)+': '+esc(s.dose)+(s.isMax?' (licensed maximum)':'')+(s.isTarget?' (usual maintenance target)':'')+'"><span>'+s.when+'</span><b>'+s.dose+'</b>'+(s.isMax?'<small class="tg tg-max">licensed max</small>':'')+(s.isTarget?'<small class="tg tg-target">usual maintenance</small>':'')+'</button>';
       }).join('');
       var s = d.steps[idx];
       det.innerHTML = '<strong>'+s.when+': '+s.dose+'</strong><p>'+s.detail+'</p><p class="cl-progress"><strong>Monitor at this step:</strong> '+(s.monitor||d.monitor)+'</p>';
