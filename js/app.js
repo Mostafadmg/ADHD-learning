@@ -58,7 +58,12 @@
   /* ---------- flip cards ---------- */
   $$('.flip').forEach(function(f){
     f.setAttribute('aria-pressed','false');
-    f.addEventListener('click', function(){ f.classList.toggle('flipped'); f.setAttribute('aria-pressed', f.classList.contains('flipped')); });
+    var back = f.querySelector('.back'), front = f.querySelector('.front');
+    function sync(){ var on=f.classList.contains('flipped'); f.setAttribute('aria-pressed', on?'true':'false'); if(back) back.setAttribute('aria-hidden', on?'false':'true'); if(front) front.setAttribute('aria-hidden', on?'true':'false'); }
+    function toggle(){ f.classList.toggle('flipped'); sync(); }
+    f.addEventListener('click', toggle);
+    f.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '||e.key==='Spacebar'){ e.preventDefault(); toggle(); } });
+    sync();
   });
 
   /* ---------- checklists ---------- */
@@ -127,7 +132,7 @@
   function renderCase(el){
     var c = (window.CASES||{})[el.dataset.case]; if(!c) return;
     var trail=[];
-    el.innerHTML = '<div class="case-head">'+(c.img?'<img src="'+c.img+'" alt="'+esc(c.alt||'Case illustration')+'" loading="lazy">':'')+
+    el.innerHTML = '<div class="case-head">'+(c.img?'<img src="'+c.img+'" alt="'+esc(c.alt||'Case illustration')+'" width="1152" height="864" decoding="async">':'')+
       '<div><h3 style="margin:0">'+c.title+'</h3><p style="margin:.3rem 0">'+c.summary+'</p>'+(c.source?'<span class="source-tag">'+c.source+'</span>':'')+'</div></div><div class="case-body" aria-live="polite"></div>';
     var body = el.querySelector('.case-body');
     function go(nid){
