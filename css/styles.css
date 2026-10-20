@@ -483,3 +483,8 @@ figure.wt>.walk-d{grid-column:2}
 .xf-sum span{color:#dbe6f0;font-size:.88rem}.xf-sum strong{color:#fff}
 .xf-sum small{flex:1 1 100%;color:#9fb3c8;font-size:.75rem}
 .xf-multi .xp-tog[aria-pressed="true"]::before{content:"✓";box-shadow:none;background:#05202a;color:#f2c14e;font-size:12px;line-height:14px;text-align:center;font-weight:700}
+
+/* v4: side-effect red flag + CD info */
+.se-rf{margin:0 0 .6rem;padding:.55rem .75rem;border-radius:10px;border-left:4px solid #ff7b7b;background:rgba(255,123,123,.15);color:#ffb3b3;font-size:.9rem;line-height:1.4}
+.se-rf b{color:#ff9a9a}
+.cd-info{margin-top:.6rem}

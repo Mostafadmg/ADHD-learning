@@ -33,15 +33,41 @@
     }
     return (unitCache[key]=out);
   }
+  /* ---------- pure dose/licence check (unit-tested: build/test_dosecheck.js) ---------- */
+  function prodMaxOf(g,brand,adult){
+    if(!adult) return g.childMax;
+    return (g.adultMax!==null && typeof g.adultMax==='object') ? g.adultMax[brand] : g.adultMax;
+  }
+  function doseCheck(S){
+    var g=G[S.g], w=[], adult=S.age==='adult', brand=g.brands[S.b]||g.brands[0];
+    var addTot=S.add.reduce(function(a,x){return a+x.d;},0), tot=S.d+addTot;
+    if(g.drug==='mph'){
+      var bmax=prodMaxOf(g,brand,adult), absLim=adult?80:60;
+      if(adult && bmax===0) w.push(['high',brand+' is not licensed for adults in the UK (SPC 4.1). Use in adults would be off-label.']);
+      if(adult && bmax===null) w.push(['info','Adult licensing differs between generic IR methylphenidate tablets: check the SPC of the product dispensed.']);
+      if(bmax && S.d>bmax) w.push(['danger',brand+' '+S.d+' mg is above the licensed maximum for this product ('+bmax+' mg/day '+(adult?'adult':'child')+', SPC 4.2).']);
+      var cap=bmax?Math.min(bmax,absLim):absLim, src=(bmax&&bmax<absLim)?brand+' SPC':'methylphenidate '+(adult?'adult':'child')+' maximum';
+      if(S.add.length && g.id!=='mphir') w.push(['warn','MR + IR combinations are outside any single product licence; check the BNF/BNFC and the shared-care protocol. Prescriber decision (NG87 1.7.22).']);
+      if(tot>cap) w.push(['danger','Total methylphenidate is '+tot+' mg/day, above '+cap+' mg/day ('+src+'). Query this with the prescriber.']);
+      else w.push(['info','Total methylphenidate: '+tot+' mg/day (reference maximum '+cap+' mg/day: '+src+(adult&&g.id==='mk'?', and ≤1 mg/kg body weight':'')+').']);
+    }
+    if(g.id==='lis'){ if(S.d>70) w.push(['danger','Above 70 mg/day.']); if(S.add.length) w.push(['high','Lisdexamfetamine plus a dexamfetamine IR top-up is specialist-only practice. NG87 1.7.22 covers methylphenidate MR + IR only.']); }
+    if(g.id==='dex'){ if(adult) w.push(['high','Dexamfetamine is not licensed for adults with ADHD in the UK (off-label, specialist use; see Module 5).']); if(tot>40) w.push(['danger','Total dexamfetamine '+tot+' mg/day is above 40 mg/day.']); else if(!adult&&tot>20) w.push(['warn','Total dexamfetamine '+tot+' mg/day: the usual maximum in children is 20 mg; up to 40 mg only in some older children (SPC).']); else w.push(['info','Total dexamfetamine: '+tot+' mg/day.']); }
+    if(g.id==='ato'){ if(!adult) w.push(['info','Children and young people up to 70 kg: dosing is weight-based (mg/kg). Fixed strengths are shown here for illustration only (SPC).']); else if(S.d>100) w.push(['danger','Above 100 mg/day.']); }
+    if(g.id==='gua'){ if(adult) w.push(['high','Guanfacine in adults is off-label: use only with advice from a tertiary ADHD service (NG87 1.7.17).']); else if(S.d>4) w.push(['warn','Above 4 mg: 6–12 year olds max 4 mg; 13–17 year olds up to 7 mg by weight band (SPC). Check the weight band.']); }
+    return w;
+  }
+  XP._doseCheck=doseCheck;
   function peakOf(a){ var p=0; for(var i=0;i<a.length;i++) if(a[i]>p) p=a[i]; return p; }
 
   /* ---------- products ---------- */
   var GROUPS = [
     {id:'mphir', chip:'Methylphenidate IR', drug:'mph', model:'ir', brands:['Ritalin','Medikinet tablets','Generic methylphenidate IR tablets'],
-     doses:[5,10,15,20], def:10, unitLbl:'mg', childMax:60, adultMax:{ 'Ritalin':80, 'Medikinet tablets':0, 'Generic methylphenidate IR tablets':80 },
+     doses:[5,10,15,20], def:10, unitLbl:'mg', childMax:60, adultMax:{ 'Ritalin':80, 'Medikinet tablets':0, 'Generic methylphenidate IR tablets':null },
      shape:'<p><strong>Immediate release:</strong> the tablet dissolves and methylphenidate is absorbed quickly. The SPC gives a Tmax of 1–2 h and a duration of effect of up to about 4 h (Ritalin; Medikinet tablets 1–4 h). Food increases Ritalin\'s Cmax by about 23%. One morning tablet does not cover a school or working day, so IR is usually given 2–3 times a day, or used as a top-up to an MR product.</p>'},
     {id:'oros', chip:'MR 22:78 (Concerta-type)', drug:'mph', model:'oros', brands:['Concerta XL','Xaggitin XL','Delmosart','Affenid XL','Xenidate XL'],
-     doses:[18,27,36,54,72], def:36, childMax:54, adultMax:72,
+     doses:[18,27,36,54,72], def:36, childMax:54, adultMax:{'Concerta XL':72,'Xaggitin XL':72,'Delmosart':72,'Affenid XL':72,'Xenidate XL':72},
+     /* each brand checked against its own UK SPC 4.1/4.2 (Oct 2026): children 6+ and adults; max 54 mg child, 72 mg adult */
      shape:'<p><strong>Osmotic-release (OROS-type) tablet, 22:78:</strong> 22% of the dose is in an immediate-release overcoat, giving an initial maximum at about 1–2 h. The remaining 78% is pushed out gradually through a laser-drilled hole as the tablet core absorbs water, so the level keeps <em>rising</em> to a peak at about 6–8 h (Concerta SPC) and cover lasts about 12 h. The tablet must be swallowed whole. The empty shell can appear in stools, which is expected (see the PIL).</p>'},
     {id:'mk', chip:'Medikinet XL (50:50)', drug:'mph', model:'mk', brands:['Medikinet XL'],
      doses:[5,10,20,30,40,50,60], def:20, childMax:60, adultMax:80,
@@ -49,7 +75,7 @@
     {id:'eq', chip:'Equasym XL (30:70)', drug:'mph', model:'eq', brands:['Equasym XL'],
      doses:[10,20,30,40,50,60], def:20, childMax:60, adultMax:0,
      shape:'<p><strong>Bead capsule, 30:70:</strong> 30% immediate-release and 70% modified-release beads (Equasym XL SPC). This gives a morning rise from the IR beads, then a larger second rise in the early afternoon, with cover of about 8 h. Compared with Medikinet XL (50:50), less is released at breakfast and more later. A high-fat breakfast delays Tmax by about 1 h. Capsules are 10, 20 and 30 mg, combined for higher doses.</p>'},
-    {id:'lis', chip:'Lisdexamfetamine', drug:'amf', model:'lis', brands:['Elvanse (6–17 y)','Elvanse Adult'],
+    {id:'lis', chip:'Lisdexamfetamine', drug:'amf', model:'lis', brands:['Elvanse (6 years+, incl. adults)'],
      doses:[20,30,40,50,60,70], def:30, childMax:70, adultMax:70, factor:0.297,
      shape:'<p><strong>Prodrug:</strong> lisdexamfetamine is inactive until red blood cells hydrolyse it to d-amfetamine and L-lysine (Elvanse SPC). Because this conversion is gradual and rate-limited, the level rises smoothly (d-amfetamine Tmax about 3.5 h) and effects were still present at 13 h in children and 14 h in adults (SPC). The SPC advises that <em>afternoon doses should be avoided because of the potential for insomnia</em>.</p>'},
     {id:'dex', chip:'Dexamfetamine IR', drug:'amf', model:'dex', brands:['Amfexa','Generic dexamfetamine tablets'],
@@ -109,7 +135,7 @@
       +'<div class="xp-box xp-ph"><h5>Pharmacist action</h5><div class="xp-phx"></div></div></div>'
       +'<p class="xp-note">Schematic, not pharmacokinetic data. The curves are built from SPC descriptions of release (IR:MR ratio, Tmax, duration) using a simple one-compartment model, normalised so that the morning dose is assumed to be titrated into this person\'s window. Real levels and responses vary widely between people (NG87 1.7.21). Strengths shown: check the current product range (dm+d).</p>'
       +'<details class="xp-src"><summary>Sources</summary><ul>'
-      +'<li>SPCs (emc): Ritalin; Medikinet tablets; Concerta XL; Medikinet XL; Equasym XL; Elvanse; dexamfetamine; Strattera; Intuniv (sections 4.2, 5.2).</li>'
+      +'<li>SPCs (emc): Ritalin; Medikinet tablets; Concerta XL; Xaggitin XL, Affenid XL, Xenidate XL (emc) and Delmosart (Accord UK SmPC) for 22:78 maxima (54 mg child, 72 mg adult); Medikinet XL; Equasym XL; Elvanse; dexamfetamine; Strattera; Intuniv (sections 4.2, 5.2).</li>'
       +'<li>NICE NG87 (live text checked Oct 2026): 1.7.8, 1.7.17, 1.7.21, 1.7.22, 1.7.23, 1.8.6, 1.8.9, 1.8.17.</li>'
       +'<li>MHRA Drug Safety Update (2022): prescribe modified-release methylphenidate by brand.</li>'
       +'<li>SPS: Methylphenidate modified-release preparations (updated 28 Aug 2025).</li>'
@@ -156,7 +182,7 @@
         var u=unit(model), a=new Float64Array(N), off=Math.round((tmin/60-H0)/DT);
         for(var i=off;i<N;i++) a[i]=u[i-off]*mg*fac*scale; return a;
       }
-      doses.push({lbl:g.brands[S.b]+' '+S.d+' mg', t:S.t, a:place(g.model,S.d,f,S.t), col:COLS[0]});
+      doses.push({lbl:g.brands[S.b].replace(/ \(.*\)$/,'')+' '+S.d+' mg', t:S.t, a:place(g.model,S.d,f,S.t), col:COLS[0]});
       var k=addKind();
       S.add.forEach(function(ad,i){ doses.push({lbl:k.name+' '+ad.d+' mg', t:ad.t, a:place(k.model,ad.d,k.factor,ad.t), col:COLS[i+1]}); });
       var tot=new Float64Array(N); doses.forEach(function(d){ for(var i=0;i<N;i++) tot[i]+=d.a[i]; });
@@ -223,7 +249,7 @@
       return {k:'off',tone:'low',badge:'Worn off',title:'Worn off: back to baseline'};
     }
     function nowText(st){
-      var g=G[S.g], c=curves, t=hhmm(S.time), name=g.brands[S.b];
+      var g=G[S.g], c=curves, t=hhmm(S.time), name=g.brands[S.b].replace(/ \(.*\)$/,'');
       if(st.k==='steady') return '<p><strong>'+t+':</strong> '+(g.id==='ato'?'atomoxetine':'guanfacine')+' is not expected to give a daily peak or trough of effect once established. Benefit builds over several weeks, so symptoms are similar morning, afternoon and evening, including before school and at bedtime. There is no wearing-off and no need for afternoon top-ups.</p>';
       var since=(S.time-S.t)/60, base='';
       if(st.k==='before') base='No medicine yet: symptoms are at their untreated level. Getting up, dressed and out of the door can be the hardest part of the day for some families.';
@@ -277,20 +303,8 @@
       return '<ul>'+li.map(function(x){return '<li>'+x+'</li>';}).join('')+'</ul>';
     }
     function warnings(){
-      var g=G[S.g], w=[], adult=S.age==='adult', brand=g.brands[S.b];
-      var mphTot=g.drug==='mph'?S.d+S.add.reduce(function(a,x){return a+x.d;},0):0;
-      if(g.drug==='mph'){
-        var bmax=adult?(typeof g.adultMax==='object'?g.adultMax[brand]:g.adultMax):g.childMax;
-        if(adult && !bmax) w.push(['high',brand+' is not licensed for adults in the UK (check the current SPC). Use in adults would be off-label.']);
-        var lim=adult?80:60;
-        if(mphTot>lim) w.push(['danger','Total methylphenidate is '+mphTot+' mg/day, above the licensed maximum of '+lim+' mg/day for '+(adult?'adults':'children')+'. Query this with the prescriber.']);
-        else if(bmax && S.d>bmax) w.push(['danger',brand+' '+S.d+' mg is above the licensed maximum for this product ('+bmax+' mg/day '+(adult?'adult':'child')+').']);
-        if(mphTot && mphTot<=lim) w.push(['info','Total methylphenidate: '+mphTot+' mg/day (licensed maximum '+lim+' mg/day '+(adult?'adult':'child')+').']);
-      }
-      if(g.id==='lis'){ if(S.d>70) w.push(['danger','Above 70 mg/day.']); if(S.add.length) w.push(['high','Lisdexamfetamine plus a dexamfetamine IR top-up is specialist-only practice. NG87 1.7.22 covers methylphenidate MR + IR only.']); if(adult&&S.b===0) w.push(['info','For adults the product is Elvanse Adult.']); if(!adult&&S.b===1) w.push(['info','Elvanse Adult is the adult product; for 6–17 years use Elvanse.']); }
-      if(g.id==='dex'){ var dt=S.d+S.add.reduce(function(a,x){return a+x.d;},0); if(adult) w.push(['high','Dexamfetamine is not licensed for adults with ADHD in the UK (off-label, specialist use; see Module 5).']); if(dt>40) w.push(['danger','Total dexamfetamine '+dt+' mg/day is above 40 mg/day.']); else if(!adult&&dt>20) w.push(['warn','Total dexamfetamine '+dt+' mg/day: the usual maximum in children is 20 mg; up to 40 mg only in some older children (SPC).']); else w.push(['info','Total dexamfetamine: '+dt+' mg/day.']); }
-      if(g.id==='ato'){ if(!adult) w.push(['info','Children and young people up to 70 kg: dosing is weight-based (mg/kg). Fixed strengths are shown here for illustration only (SPC).']); else if(S.d>100) w.push(['danger','Above 100 mg/day.']); }
-      if(g.id==='gua'){ if(adult) w.push(['high','Guanfacine in adults is off-label: use only with advice from a tertiary ADHD service (NG87 1.7.17).']); else if(S.d>4) w.push(['warn','Above 4 mg: 6–12 year olds max 4 mg; 13–17 year olds up to 7 mg by weight band (SPC). Check the weight band.']); }
+      var w=doseCheck(S);
+      if(S.g==='lis') w.push(['info','Time in window is schematic (a threshold on a model curve). The Elvanse SPC reports effects still present at 13 h in children and 14 h in adults.']);
       var bed=S.age==='child'?1260:1350;
       S.add.forEach(function(a,i){ if(a.t>=bed-300) w.push(['warn','Extra dose '+(i+1)+' at '+hhmm(a.t)+' is less than 5 h before bedtime ('+hhmm(bed)+'): high risk of delayed sleep onset.']); });
       if(curves && !curves.flat && curves.tooT!==null) w.push(['danger','Combined level reaches the "too much" zone at '+hhmm(minOf(curves.tooT))+' (schematic).']);
@@ -343,7 +357,7 @@
     function full(){ fillSelects(); renderAdds(); render(); }
 
     R.querySelectorAll('.db-meds .xp-chip').forEach(function(c){ c.addEventListener('click',function(){ S.g=c.dataset.g; S.b=0; S.d=G[S.g].def; full(); }); });
-    R.querySelectorAll('.db-age .xp-chip').forEach(function(c){ c.addEventListener('click',function(){ S.age=c.dataset.age; if(S.g==='lis') S.b=S.age==='adult'?1:0; full(); }); });
+    R.querySelectorAll('.db-age .xp-chip').forEach(function(c){ c.addEventListener('click',function(){ S.age=c.dataset.age; full(); }); });
     R.querySelectorAll('.db-scen .xp-chip').forEach(function(c,i){ c.addEventListener('click',function(){ var s=SCEN[i].s; S.g=s.g;S.b=s.b;S.d=s.d;S.t=s.t;S.age=s.age;S.add=s.add.map(function(a){return {d:a.d,t:a.t};}); if(s.add.length) S.time=s.add[s.add.length-1].t+60; full(); }); });
     R.querySelectorAll('.db-tchips .xp-chip').forEach(function(c){ c.addEventListener('click',function(){ S.time=+c.dataset.tm; render(); }); });
     selB.addEventListener('change',function(){ S.b=+selB.value; full(); });
