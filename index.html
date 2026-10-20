@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADHD Pharmacist Learning App | NICE NG87</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #4A90D9;
+  --secondary: #50C878;
+  --accent: #FF6B6B;
+  --bg: #F8FAFC;
+  --card: #FFFFFF;
+  --text: #1E293B;
+  --muted: #64748B;
+  --border: #E2E8F0;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Fredoka', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+header { background: linear-gradient(135deg, #4A90D9, #357ABD); color: white; padding: 2rem 1rem; text-align: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+header h1 { font-size: 2.2rem; font-weight: 700; }
+header p { opacity: 0.9; margin-top: 0.5rem; }
+nav { background: white; border-bottom: 1px solid var(--border); padding: 0.75rem; overflow-x: auto; white-space: nowrap; }
+nav a { display: inline-block; margin: 0 0.5rem; padding: 0.5rem 1rem; border-radius: 999px; text-decoration: none; color: var(--primary); font-weight: 500; transition: all 0.2s; }
+nav a:hover, nav a.active { background: var(--primary); color: white; }
+.container { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
+.module { background: var(--card); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+.module h2 { color: var(--primary); font-size: 1.8rem; margin-bottom: 1rem; border-bottom: 3px solid var(--secondary); padding-bottom: 0.5rem; }
+.module h3 { color: #334155; margin: 1.5rem 0 0.75rem; }
+.visual { text-align: center; margin: 1.5rem 0; }
+.visual img { max-width: 100%; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+.visual figcaption { font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem; }
+.card { background: #F1F5F9; border-radius: 12px; padding: 1.25rem; margin: 1rem 0; border-left: 4px solid var(--primary); }
+.highlight { background: #ECFDF5; border-left-color: var(--secondary); }
+.warning { background: #FEF2F2; border-left-color: var(--accent); }
+ul, ol { padding-left: 1.5rem; margin: 0.75rem 0; }
+li { margin: 0.4rem 0; }
+.quiz-btn { background: var(--primary); color: white; border: none; padding: 0.6rem 1.2rem; border-radius: 8px; cursor: pointer; font-family: inherit; font-weight: 500; margin-top: 1rem; }
+.quiz-btn:hover { opacity: 0.9; }
+footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.9rem; }
+@media (max-width: 768px) { header h1 { font-size: 1.6rem; } .module { padding: 1.25rem; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>ADHD Learning App for Pharmacists</h1>
+  <p>Comprehensive, evidence-based training based on NICE NG87 (reviewed July 2026) • BNF • DSM-5</p>
+</header>
+<nav>
+  <a href="#foundations">Foundations</a>
+  <a href="#diagnosis">Diagnosis</a>
+  <a href="#differential">Differential</a>
+  <a href="#management">Management</a>
+  <a href="#mechanisms">Mechanisms</a>
+  <a href="#titration">Titration</a>
+  <a href="#monitoring">Monitoring</a>
+  <a href="#cases">Cases</a>
+</nav>
+<div class="container">
+
+<section class="module" id="foundations">
+  <h2>1. Foundations of ADHD</h2>
+  <p>ADHD is a neurodevelopmental disorder characterised by persistent patterns of inattention and/or hyperactivity-impulsivity that interfere with functioning. It involves dysregulation of dopamine and norepinephrine signalling, particularly in the prefrontal cortex (executive function, attention, impulse control).</p>
+  <div class="card highlight">
+    <strong>Key points for pharmacists:</strong> Symptoms must begin before age 12, be pervasive across settings, and cause at least moderate impairment. Prevalence ~2.5% in adults. Under-recognised in females.
+  </div>
+  <figure class="visual">
+    <img src="XOPuq.jpg" alt="Prefrontal cortex pathways in ADHD">
+    <figcaption>Figure 1: Dopamine and norepinephrine pathways in the prefrontal cortex relevant to ADHD symptoms and treatment.</figcaption>
+  </figure>
+  <p>Presentations: Predominantly inattentive, predominantly hyperactive-impulsive, or combined. Symptoms often evolve with age — hyperactivity may become internal restlessness in adults.</p>
+</section>
+
+<section class="module" id="diagnosis">
+  <h2>2. Assessment & Diagnosis (NICE NG87 1.3)</h2>
+  <p>Diagnosis is made only by a specialist with expertise in ADHD. It requires:</p>
+  <ul>
+    <li>Full clinical and psychosocial assessment (symptoms across domains and settings)</li>
+    <li>Full developmental and psychiatric history</li>
+    <li>Observer reports and mental state examination</li>
+    <li>Assessment of coexisting conditions, needs, and physical health</li>
+  </ul>
+  <div class="card">
+    <strong>DSM-5 criteria (adults 17+):</strong> ≥5 symptoms of inattention and/or hyperactivity-impulsivity for ≥6 months, onset of several symptoms before age 12, present in ≥2 settings, clear functional impairment, not better explained by another disorder.
+  </div>
+  <p>Rating scales (ASRS, Conners, DIVA-5) are adjuncts only — never sole basis for diagnosis. QbTest may support diagnosis in ages 6–17.</p>
+  <figure class="visual">
+    <img src="Nnjhh.jpg" alt="NICE medication pathway">
+    <figcaption>Figure 2: NICE NG87 medication choice pathway (after diagnosis and environmental modifications).</figcaption>
+  </figure>
+</section>
+
+<section class="module" id="differential">
+  <h2>3. Differential Diagnosis</h2>
+  <p>ADHD symptoms overlap with many conditions. Full assessment must exclude or identify co-occurrence of:</p>
+  <ul>
+    <li>Anxiety and depression (common comorbidities; timeline helps distinguish)</li>
+    <li>Sleep disorders, substance use, autism spectrum disorder</li>
+    <li>Learning disability, thyroid dysfunction, medication effects</li>
+    <li>Personality disorders, bipolar, trauma-related presentations</li>
+  </ul>
+  <div class="card warning">
+    <strong>Pharmacist tip:</strong> Always consider whether current medications (e.g. sedating antihistamines, antipsychotics) or substances could be contributing to attention difficulties.
+  </div>
+</section>
+
+<section class="module" id="management">
+  <h2>4. Management Overview</h2>
+  <p><strong>Non-pharmacological first:</strong> Environmental modifications, ADHD-focused parent/carer training (especially children), structured support, elements of CBT for residual impairment. Medication is offered only when symptoms cause persistent significant impairment after these have been reviewed.</p>
+  <h3>Pharmacological Hierarchy (NICE NG87)</h3>
+  <ul>
+    <li><strong>Children ≥5 years:</strong> Methylphenidate first-line → if inadequate after 6-week trial → lisdexamfetamine → then atomoxetine or guanfacine.</li>
+    <li><strong>Adults:</strong> Lisdexamfetamine or methylphenidate first-line → switch after 6-week adequate trial of the other → atomoxetine if both inadequate or not tolerated.</li>
+  </ul>
+  <div class="card highlight">
+    Modified-release preparations preferred for adherence, pharmacokinetics, and lower diversion risk.
+  </div>
+</section>
+
+<section class="module" id="mechanisms">
+  <h2>5. Mechanisms of Action</h2>
+  <p>All core ADHD medications enhance catecholamine signalling, primarily dopamine and norepinephrine, in key circuits.</p>
+  <figure class="visual">
+    <img src="D849A.jpg" alt="Synaptic mechanisms of ADHD medications">
+    <figcaption>Figure 3: Synaptic actions — methylphenidate (DAT/NET blockade), amphetamines (release + blockade), atomoxetine (selective NET inhibition, prefrontal-focused).</figcaption>
+  </figure>
+  <ul>
+    <li><strong>Methylphenidate:</strong> Blocks dopamine and norepinephrine reuptake transporters.</li>
+    <li><strong>Lisdexamfetamine:</strong> Prodrug converted to d-amphetamine; blocks reuptake and promotes release of monoamines. Lower abuse potential than immediate-release amphetamines.</li>
+    <li><strong>Atomoxetine:</strong> Selective norepinephrine reuptake inhibitor. Increases NE (and DA via NET in PFC). Delayed onset (weeks), non-stimulant, useful when stimulants contraindicated or not tolerated.</li>
+  </ul>
+</section>
+
+<section class="module" id="titration">
+  <h2>6. Titration Protocols</h2>
+  <p>Titration is specialist-led. Start low, increase against symptoms and adverse effects. Record symptoms and side effects at baseline and each change. Slower titration if comorbidities present. Aim for lowest effective dose.</p>
+  <figure class="visual">
+    <img src="kFL7k.jpg" alt="Titration timeline">
+    <figcaption>Figure 4: Typical titration timeline — start low, weekly reviews, 6-week trial period, then stabilisation and shared care.</figcaption>
+  </figure>
+  <div class="card">
+    <strong>Typical adult starting doses (BNF-aligned):</strong><br>
+    Methylphenidate XL: 18 mg daily<br>
+    Lisdexamfetamine: 30 mg daily (or 20 mg if cautious start)<br>
+    Atomoxetine: 40 mg daily
+  </div>
+  <p>After 6 weeks at an adequate dose with insufficient response, switch to the alternative first-line agent before considering non-stimulants.</p>
+</section>
+
+<section class="module" id="monitoring">
+  <h2>7. Monitoring (NICE NG87 1.8)</h2>
+  <p>Baseline: mental health, substance risk, height/weight, pulse, blood pressure, cardiovascular history. ECG only if clinical indication.</p>
+  <figure class="visual">
+    <img src="3tBTD.jpg" alt="Monitoring checklist">
+    <figcaption>Figure 5: Core monitoring parameters — BP, heart rate, weight, height (children), side effects, and annual review.</figcaption>
+  </figure>
+  <ul>
+    <li>Heart rate and blood pressure: before and after each dose change, then at least every 6 months.</li>
+    <li>Weight: every 6 months in adults; more frequently in children (every 3 months if ≤10 years).</li>
+    <li>Height: every 6 months in children and young people; plot on growth charts.</li>
+    <li>Annual specialist review of continued need, efficacy, and adverse effects.</li>
+    <li>Monitor for tics, sleep disturbance, mood changes, sexual dysfunction (atomoxetine), and diversion risk.</li>
+  </ul>
+  <div class="card warning">
+    <strong>Action thresholds:</strong> Sustained resting tachycardia (>120 bpm), arrhythmia, or clinically significant BP rise → reduce dose and refer.
+  </div>
+  <p>After dose stabilisation, prescribing and routine monitoring can transfer to primary care under shared care arrangements (NICE recommendation; not automatic — GP agreement required).</p>
+</section>
+
+<section class="module" id="cases">
+  <h2>8. Case-Based Practice</h2>
+  <p>Use the materials from your ADHD Drive folder (workbook, case studies, exam) for practice. Key skills: recognising when to refer, understanding titration decisions, interpreting monitoring results, and supporting shared care.</p>
+  <div class="card">
+    <strong>Example scenario prompts:</strong>
+    <ul>
+      <li>Adult with inadequate response to methylphenidate after 6 weeks at optimised dose — next step?</li>
+      <li>Child on stimulant with falling weight centile — management options?</li>
+      <li>Patient with history of substance misuse — preferred agent and precautions?</li>
+    </ul>
+  </div>
+  <button class="quiz-btn" onclick="alert('Quiz feature: In a full version this would present interactive cases drawn from your Drive materials.')">Start Practice Cases</button>
+</section>
+
+</div>
+<footer>
+  <p>Educational resource based on NICE Guideline NG87 (Attention deficit hyperactivity disorder: diagnosis and management, last reviewed July 2026) and BNF. Not a substitute for clinical judgement or specialist advice. Always consult current BNF and local shared-care protocols.</p>
+</footer>
+<script>
+document.querySelectorAll('nav a').forEach(a => {
+  a.addEventListener('click', e => {
+    document.querySelectorAll('nav a').forEach(x => x.classList.remove('active'));
+    a.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
