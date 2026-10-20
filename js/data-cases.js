@@ -14,7 +14,7 @@ ethan:{title:'Ethan, 12 — Equasym XL wearing off by mid-afternoon', img:'image
   C('Stop the IR dose and accept no homework support','Throws away a helpful change; try timing adjustment first.','bad')]},
  end:{end:true, text:'Ethan\'s regimen is optimised with a morning MR plus small early-afternoon IR dose; sleep is monitored.', summary:'Key learning: know each brand\'s duration (Equasym ≈ 8 h, Concerta-type ≈ 12 h) and use NICE 1.7.22 for top-ups.'}}},
 
-mia:{title:'Mia, 10 — rebound irritability on IR methylphenidate', img:'images/case-anxiety.jpg', alt:'Illustration of a child comforted by a parent on a sofa', source:'From your workbook (Case Study 2)',
+mia:{title:'Mia, 10 — rebound irritability on IR methylphenidate', img:'images/case-mia.jpg', alt:'Illustration of a 10-year-old girl, arms folded and irritable after school, with her mother kneeling calmly beside her', source:'From your workbook (Case Study 2)',
  summary:'Medikinet (IR) 10 mg twice daily. Significant irritability and emotional outbursts when the afternoon dose wears off.', start:'a', nodes:{
  a:{text:'IR methylphenidate lasts about 4 hours; abrupt offset can cause "rebound" irritability. Mia\'s symptoms are otherwise controlled.', ask:'Best next step?', choices:[
   C('Discuss converting to a once-daily MR brand at an equivalent total daily dose (e.g. Medikinet XL 20 mg or Equasym XL 20 mg), which smooths the offset','MR products give a gentler decline and avoid a school dose (NICE 1.7.20). Medikinet XL 20 mg is intended to replace 10 mg breakfast + 10 mg lunchtime IR (SPC).','good','b'),
@@ -59,7 +59,7 @@ emma:{title:'Emma, 19 — Elvanse benefits but insomnia, weight loss and anxiety
   C('Add propranolol from the pharmacy','Not appropriate without specialist assessment.','bad')]},
  end:{end:true, text:'Emma keeps the benefit with better timing and a lower dose; anxiety is assessed in its own right.', summary:'Key learning: optimise timing and dose before switching; comorbid anxiety does not exclude stimulants.'}}},
 
-liam12:{title:'Liam, 12 — Amfexa wears off and he cannot take the school dose', img:'images/case-child.jpg', alt:'Illustration of a boy doing homework', source:'From your workbook (Case Study 2 file, case 2)',
+liam12:{title:'Liam, 12 — Amfexa wears off and he cannot take the school dose', img:'images/case-liam12.jpg', alt:'Illustration of a reluctant 12-year-old boy with a staff member in a school office at lunchtime', source:'From your workbook (Case Study 2 file, case 2)',
  summary:'Hyperactive-impulsive type. Switched to Amfexa (dexamfetamine IR) 5 mg twice daily after poor tolerance of methylphenidate. Effect lasts ~4 h, afternoon rebound irritability, difficulty swallowing the school dose.', start:'a', nodes:{
  a:{text:'He tolerated methylphenidate poorly but responds to dexamfetamine.', ask:'Next best step?', choices:[
   C('Discuss a trial of lisdexamfetamine (once-daily, capsule can be opened and dispersed in water/yoghurt), titrated from 20–30 mg','NICE 1.7.8–1.7.9 sequence and the Elvanse SPC administration options solve both duration and swallowing problems; he already responds to amfetamine.','good','b'),
@@ -79,11 +79,11 @@ david:{title:'David, 21 — ADHD + autism, intolerant of three stimulants', img:
   C('B — add melatonin for insomnia','Addresses only one adverse effect of one drug.','bad'),
   C('D — stop medication and rely on behavioural interventions','He wants treatment and still has significant impairment; non-drug support should be combined, not substituted (1.5.17).','bad')]},
  b:{text:'Atomoxetine 40 mg daily for 7 days then 80 mg. At week 3 he reports nausea and says it "isn\'t working".', ask:'Your counselling?', choices:[
-  C('Take with food or split into two doses; explain full effect may take several weeks; review at 6+ weeks at an adequate dose','SPC: twice-daily dosing can help tolerability; onset is gradual. If no response to one stimulant and one non-stimulant → seek tertiary advice before any other medicine (NG87 1.7.17).','good','end'),
+  C('Take with food or split into two doses; explain full effect may take several weeks; review at 6+ weeks at an adequate dose','SPC: twice-daily dosing can help tolerability; onset is gradual. If no response to one stimulant and one non-stimulant → obtain a second opinion or refer to a tertiary service (NG87 1.7.16); other medicines only with tertiary advice (1.7.17).','good','end'),
   C('Stop now — it should work within days','Atomoxetine is slower than stimulants.','bad')]},
  end:{end:true, text:'David continues atomoxetine with tolerability measures and planned review.', summary:'Key learning: NICE sequence for adults ends with atomoxetine; guanfacine in adults only with tertiary advice.'}}},
 
-anxiety:{title:'Zara, 16 — ADHD with comorbid anxiety', img:'images/case-anxiety.jpg', alt:'Illustration of an anxious teenager with a parent', source:'Required scenario',
+anxiety:{title:'Zara, 16 — ADHD with comorbid anxiety', img:'images/case-anxiety.jpg', alt:'Illustration of an anxious teenager on a sofa with a parent', source:'Required scenario',
  summary:'Newly diagnosed combined-type ADHD with generalised anxiety. Her mother worries stimulants will "make the anxiety worse".', start:'a', nodes:{
  a:{text:'Specialist plans medication after environmental modifications. Zara is also starting CBT for anxiety.', ask:'What is NICE\'s position?', choices:[
   C('Offer the same ADHD medication choices as anyone else, but titrate more slowly and monitor more often','NG87 1.7.18 and 1.7.28. Treating ADHD can reduce secondary anxiety; monitor closely.','good','b'),
@@ -108,7 +108,7 @@ bp:{title:'Mr K, 44 — raised BP on lisdexamfetamine (shared care review)', img
 shortage:{title:'Mrs P — Concerta XL out of stock for her son', img:'images/case-shortage.jpg', alt:'Illustration of a worried parent at a pharmacy counter', source:'Required scenario',
  summary:'Prescription for Concerta XL 36 mg #30 for Leo, 11. Your wholesaler cannot supply. Leo has 2 days left.', start:'a', nodes:{
  a:{text:'SPS lists Affenid XL, Atenza XL, Delmosart, Matoride XL, Xaggitin XL and Xenidate XL tablets as bioequivalent to Concerta XL.', ask:'What can you do?', choices:[
-  C('Contact the prescriber to amend the prescription to an available bioequivalent tablet brand (or generic as per local shortage policy), and counsel the family','Schedule 2 CD prescriptions specify the product; a pharmacist cannot substitute a different brand without a new/amended prescription. SPS supports switching between bioequivalent tablets; revert when supply returns.','good','b'),
+  C('Contact the prescriber to issue a new prescription for an available bioequivalent tablet brand (or generic as per local shortage policy), and counsel the family','Schedule 2 CD prescriptions specify the product; a pharmacist cannot substitute a different brand; a new prescription is needed. SPS supports switching between bioequivalent tablets; revert when supply returns.','good','b'),
   C('Supply Equasym XL 30 mg instead — close enough','Equasym XL is not bioequivalent (30:70, ~8 h); SPS: do not switch to/from Equasym XL. Also not legally permitted without a new prescription.','bad'),
   C('Make an emergency supply of 5 tablets','Emergency supply is not permitted for Schedule 2 CDs.','bad')]},
  b:{text:'The GP issues Xaggitin XL 36 mg. Mrs P is worried "the new one won\'t work".', ask:'Counselling?', choices:[

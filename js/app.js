@@ -12,15 +12,29 @@
   /* ---------- routing ---------- */
   var modules = $$('.module');
   var trackable = modules.filter(function(m){return m.dataset.track==='1';});
+  var current = null;
   function show(id){
-    var target = document.getElementById(id) || document.getElementById('home');
+    var el = id ? document.getElementById(id) : null;
+    var target;
+    if(el && el.classList.contains('module')) target = el;
+    else if(el && el.closest && el.closest('.module')) target = el.closest('.module');
+    else if(el) target = current || document.getElementById('home');   /* e.g. #main (skip link) */
+    else target = document.getElementById('home');
+    var changed = target !== current;
     modules.forEach(function(m){ m.classList.toggle('active', m===target); });
     $$('nav.sidebar a').forEach(function(a){
       if(a.getAttribute('href')==='#'+target.id) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
     });
     document.title = (target.dataset.title ? target.dataset.title+' · ' : '') + 'ADHD for Pharmacists';
     $('nav.sidebar').classList.remove('open');
-    window.scrollTo(0,0);
+    current = target;
+    if(el && el !== target){
+      /* deep link to an element inside a module, or the skip link to <main> */
+      if(!el.hasAttribute('tabindex')) el.setAttribute('tabindex','-1');
+      setTimeout(function(){ el.scrollIntoView({block:'start'}); el.focus({preventScroll:true}); }, 30);
+      return;
+    }
+    if(changed || !el){ window.scrollTo(0,0); }
     var h = target.querySelector('h1'); if(h){ h.setAttribute('tabindex','-1'); h.focus({preventScroll:true}); }
   }
   window.addEventListener('hashchange', function(){ show(location.hash.slice(1)); });
@@ -227,5 +241,38 @@
   }
 
   renderProgress();
+
+  /* ---------- stepwise mechanism diagrams ---------- */
+  $$('.mech').forEach(function(m){
+    var n = parseInt(m.dataset.steps,10)||1;
+    var lis = $$('ol.walk li', m), dots = $$('.mdot', m);
+    var prev = $('.mprev', m), next = $('.mnext', m), live = $('.mech-live', m);
+    function go(k, user){
+      k = Math.max(1, Math.min(n, k)); m.dataset.step = String(k);
+      lis.forEach(function(li){ var on = li.dataset.s===String(k); li.classList.toggle('cur', on); if(on) li.setAttribute('aria-current','step'); else li.removeAttribute('aria-current'); });
+      dots.forEach(function(d){ if(d.dataset.go===String(k)) d.setAttribute('aria-current','step'); else d.removeAttribute('aria-current'); });
+      prev.disabled = k===1; next.disabled = k===n;
+      if(live){ var li = lis[k-1]; live.textContent = 'Step '+k+' of '+n+': '+(li?li.textContent:''); }
+    }
+    prev.addEventListener('click', function(){ go(parseInt(m.dataset.step,10)-1, true); });
+    next.addEventListener('click', function(){ go(parseInt(m.dataset.step,10)+1, true); });
+    dots.forEach(function(d){ d.addEventListener('click', function(){ go(parseInt(d.dataset.go,10), true); }); });
+    lis.forEach(function(li){ li.setAttribute('tabindex','0'); li.addEventListener('click', function(){ go(parseInt(li.dataset.s,10), true); });
+      li.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); go(parseInt(li.dataset.s,10), true); } }); });
+    m.addEventListener('keydown', function(e){ if(e.target.tagName==='LI') return; if(e.key==='ArrowRight'){ go(parseInt(m.dataset.step,10)+1,true); } if(e.key==='ArrowLeft'){ go(parseInt(m.dataset.step,10)-1,true); } });
+    go(1,false);
+  });
+
+  /* ---------- figure walkthroughs: link numbered markers and steps ---------- */
+  $$('figure.wt').forEach(function(f){
+    var marks = $$('.wk-mark', f), lis = $$('ol.walk li', f);
+    function sel(k){
+      marks.forEach(function(b){ b.classList.toggle('cur', b.dataset.s===k); });
+      lis.forEach(function(li){ li.classList.toggle('cur', li.dataset.s===k); });
+    }
+    marks.forEach(function(b){ b.addEventListener('click', function(){ sel(b.dataset.s); var li = lis[parseInt(b.dataset.s,10)-1]; if(li && li.scrollIntoView && window.innerWidth<900) li.scrollIntoView({block:'nearest'}); }); });
+    lis.forEach(function(li){ li.setAttribute('tabindex','0'); li.addEventListener('click', function(){ sel(li.dataset.s); });
+      li.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); sel(li.dataset.s); } }); });
+  });
   show(location.hash.slice(1) || 'home');
 })();
