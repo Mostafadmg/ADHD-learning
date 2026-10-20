@@ -38,6 +38,7 @@
     if(!adult) return g.childMax;
     return (g.adultMax!==null && typeof g.adultMax==='object') ? g.adultMax[brand] : g.adultMax;
   }
+  var OFF=' This may be intentional specialist off-label dosing; confirm with the prescriber.';
   function doseCheck(S){
     var g=G[S.g], w=[], adult=S.age==='adult', brand=g.brands[S.b]||g.brands[0];
     var addTot=S.add.reduce(function(a,x){return a+x.d;},0), tot=S.d+addTot;
@@ -45,15 +46,16 @@
       var bmax=prodMaxOf(g,brand,adult), absLim=adult?80:60;
       if(adult && bmax===0) w.push(['high',brand+' is not licensed for adults in the UK (SPC 4.1). Use in adults would be off-label.']);
       if(adult && bmax===null) w.push(['info','Adult licensing differs between generic IR methylphenidate tablets: check the SPC of the product dispensed.']);
-      if(bmax && S.d>bmax) w.push(['danger',brand+' '+S.d+' mg is above the licensed maximum for this product ('+bmax+' mg/day '+(adult?'adult':'child')+', SPC 4.2).']);
+      if(bmax && S.d>bmax) w.push(['danger',brand+' '+S.d+' mg is above the licensed maximum for this product ('+bmax+' mg/day '+(adult?'adult':'child')+', SPC 4.2).'+OFF]);
+      var kg=(adult&&g.id==='mk')?' Medikinet XL adult dosing must also not exceed 1 mg/kg body weight (≤1 mg/kg, SPC 4.2).':'';
       var cap=bmax?Math.min(bmax,absLim):absLim, src=(bmax&&bmax<absLim)?brand+' SPC':'methylphenidate '+(adult?'adult':'child')+' maximum';
       if(S.add.length && g.id!=='mphir') w.push(['warn','MR + IR combinations are outside any single product licence; check the BNF/BNFC and the shared-care protocol. Prescriber decision (NG87 1.7.22).']);
-      if(tot>cap) w.push(['danger','Total methylphenidate is '+tot+' mg/day, above '+cap+' mg/day ('+src+'). Query this with the prescriber.']);
+      if(tot>cap) w.push(['danger','Total methylphenidate is '+tot+' mg/day, above '+cap+' mg/day ('+src+').'+kg+OFF]);
       else w.push(['info','Total methylphenidate: '+tot+' mg/day (reference maximum '+cap+' mg/day: '+src+(adult&&g.id==='mk'?', and ≤1 mg/kg body weight':'')+').']);
     }
-    if(g.id==='lis'){ if(S.d>70) w.push(['danger','Above 70 mg/day.']); if(S.add.length) w.push(['high','Lisdexamfetamine plus a dexamfetamine IR top-up is specialist-only practice. NG87 1.7.22 covers methylphenidate MR + IR only.']); }
-    if(g.id==='dex'){ if(adult) w.push(['high','Dexamfetamine is not licensed for adults with ADHD in the UK (off-label, specialist use; see Module 5).']); if(tot>40) w.push(['danger','Total dexamfetamine '+tot+' mg/day is above 40 mg/day.']); else if(!adult&&tot>20) w.push(['warn','Total dexamfetamine '+tot+' mg/day: the usual maximum in children is 20 mg; up to 40 mg only in some older children (SPC).']); else w.push(['info','Total dexamfetamine: '+tot+' mg/day.']); }
-    if(g.id==='ato'){ if(!adult) w.push(['info','Children and young people up to 70 kg: dosing is weight-based (mg/kg). Fixed strengths are shown here for illustration only (SPC).']); else if(S.d>100) w.push(['danger','Above 100 mg/day.']); }
+    if(g.id==='lis'){ if(S.d>70) w.push(['danger','Above 70 mg/day (Elvanse SPC maximum).'+OFF]); if(S.add.length) w.push(['high','Lisdexamfetamine plus a dexamfetamine IR top-up is specialist-only practice. NG87 1.7.22 covers methylphenidate MR + IR only.']); }
+    if(g.id==='dex'){ if(adult) w.push(['high','Dexamfetamine is not licensed for adults with ADHD in the UK (off-label, specialist use; see Module 5).']); if(tot>40) w.push(['danger','Total dexamfetamine '+tot+' mg/day is above 40 mg/day.'+OFF]); else if(!adult&&tot>20) w.push(['warn','Total dexamfetamine '+tot+' mg/day: the usual maximum in children is 20 mg; up to 40 mg only in some older children (SPC).']); else w.push(['info','Total dexamfetamine: '+tot+' mg/day.']); }
+    if(g.id==='ato'){ if(!adult) w.push(['info','Children and young people up to 70 kg: dosing is weight-based (mg/kg). Fixed strengths are shown here for illustration only (SPC).']); else if(S.d>100) w.push(['danger','Above 100 mg/day (SPC maximum).'+OFF]); }
     if(g.id==='gua'){ if(adult) w.push(['high','Guanfacine in adults is off-label: use only with advice from a tertiary ADHD service (NG87 1.7.17).']); else if(S.d>4) w.push(['warn','Above 4 mg: 6–12 year olds max 4 mg; 13–17 year olds up to 7 mg by weight band (SPC). Check the weight band.']); }
     return w;
   }
@@ -135,7 +137,7 @@
       +'<div class="xp-box xp-ph"><h5>Pharmacist action</h5><div class="xp-phx"></div></div></div>'
       +'<p class="xp-note">Schematic, not pharmacokinetic data. The curves are built from SPC descriptions of release (IR:MR ratio, Tmax, duration) using a simple one-compartment model, normalised so that the morning dose is assumed to be titrated into this person\'s window. Real levels and responses vary widely between people (NG87 1.7.21). Strengths shown: check the current product range (dm+d).</p>'
       +'<details class="xp-src"><summary>Sources</summary><ul>'
-      +'<li>SPCs (emc): Ritalin; Medikinet tablets; Concerta XL; Xaggitin XL, Affenid XL, Xenidate XL (emc) and Delmosart (Accord UK SmPC) for 22:78 maxima (54 mg child, 72 mg adult); Medikinet XL; Equasym XL; Elvanse; dexamfetamine; Strattera; Intuniv (sections 4.2, 5.2).</li>'
+      +'<li>SPCs (emc): Ritalin; Medikinet tablets; Concerta XL; Xaggitin XL, Affenid XL, Xenidate XL (emc) and Delmosart (Accord UK SmPC) for 22:78 maxima (54 mg child, 72 mg adult). Note: the BNF has listed 54 mg as the adult maximum for some 22:78 brands (e.g. Delmosart, Xaggitin XL), whereas their current SmPCs license up to 72 mg in adults; this tool uses the SmPC, so check the current BNF; Medikinet XL; Equasym XL; Elvanse; dexamfetamine; Strattera; Intuniv (sections 4.2, 5.2).</li>'
       +'<li>NICE NG87 (live text checked Oct 2026): 1.7.8, 1.7.17, 1.7.21, 1.7.22, 1.7.23, 1.8.6, 1.8.9, 1.8.17.</li>'
       +'<li>MHRA Drug Safety Update (2022): prescribe modified-release methylphenidate by brand.</li>'
       +'<li>SPS: Methylphenidate modified-release preparations (updated 28 Aug 2025).</li>'
