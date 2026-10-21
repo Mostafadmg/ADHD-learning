@@ -58,7 +58,7 @@
 .lib-panel h4 { font-size: .82rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 1rem 0 .3rem; }
 .lib-panel .table-wrap { max-width: 720px; }
 .lib-opts { max-width: 420px; }
-.lib-itemtext { display: block; color: var(--muted); font-size: .85rem; line-height: 1.35; }
+.lib-itemtext { display: block; color: var(--muted); font-size: .85rem; font-weight: 400; line-height: 1.35; }
 .lib-thr td { vertical-align: middle; }
 .lib-cut { font-size: 1.02rem; }
 .lib-flags { list-style: none; margin: .3rem 0; padding: 0; display: flex; flex-direction: column; gap: .5rem; }
@@ -116,18 +116,19 @@
 .lib-mx-key { margin: 0 0 .3rem; }
 .lib-mx-phone { display: none; }
 @media (max-width: 900px) { .lib-mx-phone { display: inline; } }
+@media (max-width: 480px) { .lib-matrix th.lib-mx-tool { min-width: 8.5rem; max-width: 10rem; } }
 .lib-mx-wrap { position: relative; } /* keeps .sr-only cell text inside the scroll box */
 .lib-mx-wrap:focus-visible { outline-offset: 2px; }
-.lib-matrix { min-width: 760px; }
+.lib-matrix { min-width: 680px; }
 .lib-matrix th, .lib-matrix td { vertical-align: middle; }
-.lib-matrix thead th.lib-mx-stage { text-align: center; text-transform: none; letter-spacing: 0; font-size: .78rem; line-height: 1.25; min-width: 5.6rem; color: var(--muted); }
+.lib-matrix thead th.lib-mx-stage { width: 7rem; min-width: 5.6rem; text-align: center; text-transform: none; letter-spacing: 0; font-size: .78rem; line-height: 1.25; color: var(--muted); vertical-align: bottom; }
 .lib-mx-n { display: block; font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--brand); }
 .lib-mx-t { display: block; }
-.lib-matrix th.lib-mx-tool { position: sticky; left: 0; z-index: 1; min-width: 10rem; max-width: 14rem; background: var(--surface); box-shadow: inset -1px 0 0 var(--line); }
+.lib-matrix th.lib-mx-tool { position: sticky; left: 0; z-index: 1; min-width: 10.5rem; max-width: 15rem; background: var(--surface); box-shadow: inset -1px 0 0 var(--line); }
+.lib-mx-head { display: flex; flex-wrap: wrap; align-items: center; gap: .2rem .45rem; }
 .lib-matrix thead th.lib-mx-tool { background: var(--surface-2); z-index: 2; }
 .lib-matrix th.lib-mx-tool a { font-weight: 700; }
 .lib-mx-name { display: block; font-weight: 400; font-size: .8rem; color: var(--muted); line-height: 1.3; }
-.lib-matrix .lib-mx-kind { white-space: nowrap; }
 .lib-matrix td.lib-mx-cell { text-align: center; color: var(--faint); }
 .lib-matrix td.lib-mx-on { background: var(--accent-l); color: var(--accent); font-weight: 700; font-size: 1.1rem; }
 .lib-mx-group th { background: var(--surface-2); font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); padding-top: .45rem; padding-bottom: .45rem; }

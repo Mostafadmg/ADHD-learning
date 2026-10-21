@@ -132,7 +132,7 @@
       el.appendChild(ui.empty('No tools loaded', 'The tools library is not available in this build.', ui.btn({ label: 'Go to home', kind: 'primary', go: 'home' })));
       return;
     }
-    el.appendChild(ui.callout('info', h('p', null, 'Questionnaires screen and measure. They never make the diagnosis on their own: that rests on the clinical interview, the history and information from people who knew the patient as a child.')));
+    el.appendChild(ui.callout('info', h('p', null, 'Questionnaires screen and measure. They never diagnose on their own: the diagnosis rests on the clinical interview, the history and collateral information.')));
 
     var f = readFilters();
     var present = GROUPS.filter(function (g) { return tools.some(function (t) { return groupKey(t) === g[0]; }); });
@@ -144,7 +144,7 @@
     if (f.stage && stageIds.indexOf(f.stage) < 0) f.stage = '';
 
     /* ---- Filters ---- */
-    var search = ui.search('Search by name, abbreviation or purpose', function (q) { f.q = q; apply(); saveFilters(f); }, f.q);
+    var search = ui.search('Search by name or purpose', function (q) { f.q = q; apply(); saveFilters(f); }, f.q);
     var chipBtns = {};
     var chips = h('div', { class: 'lib-chips', role: 'group', 'aria-labelledby': 'lib-groups-l' }, present.map(function (g) {
       var n = tools.filter(function (t) { return groupKey(t) === g[0]; }).length;
@@ -557,10 +557,9 @@
   function matrix(stages) {
     var tools = allTools().filter(function (t) { return stages.some(function (s) { return inStage(t, s); }); });
     if (!tools.length || !stages.length) return ui.empty('Nothing to show yet', 'No tools are linked to the pathway stages.');
-    var cols = stages.length + 2;
+    var cols = stages.length + 1;
     var head = h('thead', null, h('tr', null,
       h('th', { scope: 'col', class: 'lib-mx-tool' }, 'Tool'),
-      h('th', { scope: 'col', class: 'lib-mx-kind' }, 'In this app'),
       stages.map(function (s, i) {
         return h('th', { scope: 'col', class: 'lib-mx-stage', title: s.title || s.id },
           h('span', { class: 'lib-mx-n' }, String(typeof s.n === 'number' ? s.n : i + 1)), h('span', { class: 'lib-mx-t' }, s.title || stageName(s.id)));
@@ -572,9 +571,10 @@
         h('tr', { class: 'lib-mx-group' }, h('th', { scope: 'rowgroup', colspan: String(cols) }, h('span', null, g[1]))),
         rows.map(function (t) {
           return h('tr', null,
-            h('th', { scope: 'row', class: 'lib-mx-tool' }, h('a', { href: '#tool-' + t.id, 'data-go': 'tool-' + t.id }, toolLabel(t)),
+            h('th', { scope: 'row', class: 'lib-mx-tool' },
+              h('span', { class: 'lib-mx-head' }, h('a', { href: '#tool-' + t.id, 'data-go': 'tool-' + t.id }, toolLabel(t)),
+                scorable(t) ? ui.badge('Scored here', 'accent') : ui.badge('Licensed', 'neutral')),
               t.name ? h('span', { class: 'lib-mx-name' }, t.name) : null),
-            h('td', { class: 'lib-mx-kind' }, scorable(t) ? ui.badge('Scored here', 'accent') : ui.badge('Licensed', 'neutral')),
             stages.map(function (s) {
               var on = inStage(t, s);
               return h('td', { class: 'lib-mx-cell' + (on ? ' lib-mx-on' : '') },

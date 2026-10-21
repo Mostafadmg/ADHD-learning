@@ -19,7 +19,8 @@
   function syms() { return arr(AA.data.symptoms).filter(function (s) { return s && s.id; }); }
   function symCode(s) { return (s.codes && s.codes.dsm5) || s.id; }
   function condName(c) { return c ? (c.name || c.id) : ''; }
-  function toolAbbr(id) { var t = AA.byId('tools', id); return t ? (t.abbr || t.id) : id; }
+  var KNOWN_ABBR = { asrs18: 'ASRS v1.1', wurs25: 'WURS-25', wfirs: 'WFIRS-S' };
+  function toolAbbr(id) { var t = AA.byId('tools', id); return t ? (t.abbr || t.id) : (KNOWN_ABBR[id] || id); }
   /* Score a stored questionnaire. Never throws: odd data gives null. */
   function scoreOf(a, id) { try { return AA.scoring.forAssessment(a, id); } catch (e) { return null; } }
   function isPositive(r) { return !!r && r.answered > 0 && (r.positive === true || (r.sev !== null && r.sev !== undefined && r.sev >= 2)); }
@@ -226,7 +227,7 @@
             h('button', { type: 'button', class: 'ab-link', onclick: function () { reveal(rows[c.id].d); }, 'aria-label': 'Review ' + condName(c) }, condName(c)),
             ui.badge(U.plural(sigs[c.id].n, 'signal'), 'warn'), verdictBadge(e.verdict)),
           signalList(sigs[c.id]));
-      })), conds.length > hits.length ? h('p', { class: 'hint' }, 'No signals for the other ' + (conds.length - hits.length) + ' conditions.') : null]);
+      })), conds.length > hits.length ? h('p', { class: 'hint' }, 'No signals for the other ' + U.plural(conds.length - hits.length, 'condition') + '.') : null]);
     }
 
     /* Systematic protocol (guides.js), when present: embedded in a disclosure, otherwise linked. */
@@ -305,26 +306,37 @@
     return null;
   } };
 
-  /* The differential protocol component stores its ticks in ddxProtocol.<checkId> on the record.
-     Its options are passed in several common shapes; any failure falls back to a link. */
+  /* Systematic differential protocol (guides.js): AA.components.ddxProtocol({checked, onCheck, compact, actions}).
+     Ticks are stored on the record as ddxProtocol.<checkId>. Without the component, link to the guide page. */
+  function protocolCounts(a) {
+    var P = AA.data.ddxProtocol || {}, rec = (a && a.ddxProtocol) || {}, of = 0, done = 0;
+    arr(P.steps).forEach(function (st) {
+      arr(st && st.checks).forEach(function (c) { if (c && c.id) { of++; if (rec[c.id]) done++; } });
+    });
+    return { of: of, done: done };
+  }
   function protocolBlock(ctx) {
-    var link = h('div', { class: 'row' }, ui.btn({ label: 'Open the differential protocol', kind: 'ghost', small: true, go: 'ddxguide' }));
-    if (typeof AA.components.ddxProtocol !== 'function') {
-      return h('div', { class: 'ab-protocol' }, h('p', { class: 'hint' }, 'Work through the step-by-step differential protocol so no condition is missed.'), link);
-    }
-    return lazyDetails('Step-by-step differential protocol', function (body) {
+    var guideBtn = ui.btn({ label: 'Protocol guide page', kind: 'quiet', small: true, go: 'ddxguide' });
+    var sec = h('section', { class: 'ab-sec ab-protocol' }, h('h2', null, 'Step-by-step differential protocol'),
+      h('p', { class: 'hint' }, 'A systematic method so no condition is missed. Ticks are saved with this assessment.'));
+    if (typeof AA.components.ddxProtocol !== 'function') { sec.appendChild(h('div', { class: 'row' }, guideBtn)); return sec; }
+    var pc = protocolCounts(ctx.a());
+    var det = lazyDetails('Work through the protocol', function (body) {
       var node = null;
       try {
         node = AA.components.ddxProtocol({
-          ctx: ctx, assessmentId: ctx.id, mode: 'assessment', compact: true,
-          checks: ctx.get('ddxProtocol', {}) || {},
-          get: function (id) { return !!ctx.get('ddxProtocol.' + id); },
-          set: function (id, on) { ctx.set('ddxProtocol.' + id, on ? true : undefined); },
+          checked: ctx.get('ddxProtocol', {}) || {}, compact: true, actions: [guideBtn],
           onCheck: function (id, on) { ctx.set('ddxProtocol.' + id, on ? true : undefined); }
         });
       } catch (e) { if (window.console) console.error(e); node = null; }
-      U.append(body, node instanceof Node ? node : link);
-    }, { meta: 'So no condition is missed', cls: 'ab-protocol' });
+      U.append(body, node instanceof Node ? node : h('div', { class: 'row' }, guideBtn));
+    }, { meta: pc.of ? pc.done + ' of ' + pc.of + ' checks ticked' : null, cls: 'ab-protodet' });
+    sec.appendChild(det);
+    ctx.onChange('ddxProtocol', U.debounce(function () {
+      var m = det.querySelector('.disclosure-meta'), c = protocolCounts(ctx.a());
+      if (m && c.of) m.textContent = c.done + ' of ' + c.of + ' checks ticked';
+    }, 80));
+    return sec;
   }
 
   function paintScore(host, cond, sc) {
@@ -448,7 +460,7 @@
     var reached = ad.IA >= need || ad.HI >= need;
     var canReach = ad.IA + (ad.ofIA - ad.answeredIA) >= need || ad.HI + (ad.ofHI - ad.answeredHI) >= need;
     var interviewA = reached ? true : (ofAd && !canReach ? false : null);
-    var adText = 'interview ' + ad.IA + ' inattention and ' + ad.HI + ' hyperactive-impulsive (' + need + ' needed)';
+    var adText = 'interview ' + ad.IA + ' inattention and ' + ad.HI + ' hyperactive-impulsive, ' + need + ' needed';
 
     /* 1. ASRS Part A against the adult interview */
     var asrs = scoreOf(a, 'asrs18');
@@ -803,9 +815,10 @@
     var warnHost = h('div', { 'aria-live': 'polite' });
     var codeHost = h('div', { class: 'ab-codehost', 'aria-live': 'polite' });
 
+    /* Short option text so the select is not clipped on phones; the codes show in the coding line. */
+    var PRES_SHORT = { combined: 'Combined', ia: 'Predominantly inattentive', hi: 'Predominantly hyperactive-impulsive', other: 'Other specified ADHD', unspecified: 'Unspecified ADHD' };
     var presSel = h('select', null, [h('option', { value: '' }, 'Not specified')].concat(Object.keys(D.PRESENTATIONS).map(function (k) {
-      var p = D.PRESENTATIONS[k];
-      return h('option', { value: k }, p.label + ' (' + p.dsm + ', ' + p.icd11 + ')' + (k === sugP ? ', suggested' : ''));
+      return h('option', { value: k }, (PRES_SHORT[k] || D.PRESENTATIONS[k].label) + (k === sugP ? ' (suggested)' : ''));
     })));
     presSel.value = (f.presentation !== undefined ? f.presentation : sugP) || '';
     var presHint = h('p', { class: 'hint' });
@@ -878,26 +891,25 @@
     var rec = (a && a.symptoms) || {};
     var need = D.need(a), ad = D.counts(a, 'adult'), ch = D.counts(a, 'child');
     var table = h('table', { class: 'table table-compact ab-symtable' },
-      h('thead', null, h('tr', null, ['Code', 'Symptom', 'Adult', 'Child', 'Informant'].map(function (x) { return h('th', { scope: 'col' }, x); }))));
+      h('thead', null, h('tr', null, ['Symptom', 'Adult', 'Child', 'Informant'].map(function (x) { return h('th', { scope: 'col' }, x); }))));
     [['IA', 'Inattention'], ['HI', 'Hyperactivity-impulsivity']].forEach(function (g) {
       var gl = list.filter(function (s) { return s.dim === g[0]; });
       if (!gl.length) return;
-      var tb = h('tbody', null, h('tr', { class: 'ab-grow' }, h('th', { scope: 'colgroup', colspan: '5' }, g[1])));
+      var tb = h('tbody', null, h('tr', { class: 'ab-grow' }, h('th', { scope: 'colgroup', colspan: '4' }, g[1])));
       gl.forEach(function (s) {
         var r = rec[s.id] || {};
         var inf = [];
         if (has(r.infA)) inf.push('A: ' + INF_LABEL[r.infA]);
         if (has(r.infC)) inf.push('C: ' + INF_LABEL[r.infC]);
         tb.appendChild(h('tr', null,
-          h('td', { class: 'ab-code' }, symCode(s)),
-          h('th', { scope: 'row' }, h('button', { type: 'button', class: 'ab-link', onclick: function () { ctx.go(s.dim === 'HI' ? 'hi' : 'ia', s.id); } }, s.title || s.id)),
+          h('th', { scope: 'row' }, h('span', { class: 'ab-code' }, symCode(s)), ' ', h('button', { type: 'button', class: 'ab-link', onclick: function () { ctx.go(s.dim === 'HI' ? 'hi' : 'ia', s.id); } }, s.title || s.id)),
           h('td', null, scoreBadge(r.adult)),
           h('td', null, scoreBadge(r.child)),
           h('td', { class: 'ab-inf' }, inf.length ? inf.join(' · ') : h('span', { class: 'ab-none' }, '-'))));
       });
       var nA = ad[g[0]], nC = ch[g[0]], uA = ad['unsure' + g[0]];
       tb.appendChild(h('tr', { class: 'ab-total' },
-        h('th', { scope: 'row', colspan: '2' }, 'Total ' + g[1].toLowerCase()),
+        h('th', { scope: 'row' }, 'Total ' + g[1].toLowerCase()),
         h('td', null, h('span', { class: 'ab-tnum' }, nA + '/' + gl.length), ' ', nA >= need ? ui.badge(need + '+ met', 'ok') : ui.badge('below ' + need, 'neutral')),
         h('td', null, h('span', { class: 'ab-tnum' }, nC + '/' + gl.length), ' ', nC >= 6 ? ui.badge('6+', 'ok') : null),
         h('td', null, uA ? h('span', { class: 'muted' }, uA + ' unsure') : null)));
@@ -983,7 +995,7 @@
     /* Sources of information */
     var inf = p.informants || {}, src = p.sources || {}, col = a.collateral || {}, who = col.who || {};
     var rl = ratingLabels();
-    var present = ['the patient'];
+    var present = ['The patient'];
     if (inf.partner) present.push('partner');
     if (inf.parent) present.push('parent or carer');
     if (inf.sibling) present.push('brother or sister');
@@ -1129,6 +1141,8 @@
     if (notRev.length) ds.blocks.push({ p: 'Core conditions not yet reviewed: ' + notRev.join(', ') + '.' });
     if (!dl.length && !notRev.length) ds.blocks.push({ p: 'No differential review recorded.' });
     ds.blocks.push({ p: 'Criterion E ' + STATUS_TEXT[cr.E.status] + '. ' + cr.E.detail });
+    var pc = protocolCounts(a);
+    if (pc.of && pc.done) ds.blocks.push({ p: 'Systematic differential protocol: ' + pc.done + ' of ' + pc.of + ' checks completed.' });
 
     /* Validity */
     var vs = sec('Symptom validity');
