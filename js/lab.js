@@ -176,6 +176,86 @@ FIG.stages=function(){var st=[['Referral','Who is worried and why now?'],['Histo
  return '<svg class="ag-svg lab-svg" viewBox="0 0 380 460" role="img" aria-label="Case stages from referral to history, informants, scales, observation and decision">'+b+'</svg>';};
 R.fig=function(m){var f=m.dataset.f,h=FIG[f]?FIG[f]():(window.AGSVG&&window.AGSVG[f]?window.AGSVG[f]():'');m.innerHTML='<div class="ag-fig">'+h+'</div>';};
 
+FIG.mask=function(){var up=['Quiet, polite in class','Good or average marks','Organised planner','Seems \u201cfine\u201d'],dn=['Hours of extra effort','Anxiety and exhaustion','Daydreaming, losing track','Low self-esteem','Late-night catch-up'],b='<rect width="380" height="440" rx="16" fill="'+FC.bg+'"/>'+tx(190,30,'Masking: what others see vs the cost',{fs:17,fw:600,c:FC.navy});
+ b+='<rect x="0" y="190" width="380" height="250" fill="#d9eef0"/><path d="M0,190 Q47,180 95,190 T190,190 T285,190 T380,190" fill="none" stroke="'+FC.teal+'" stroke-width="2"/>';
+ b+='<path d="M150,190 L190,96 L232,190 Z" fill="#fff" stroke="'+FC.navy+'" stroke-width="2"/><path d="M110,190 L60,400 L320,410 L272,190 Z" fill="#eef6f7" stroke="'+FC.navy+'" stroke-width="2" stroke-dasharray="6 4"/>';
+ up.forEach(function(t,i){var x=i<2?14:366,a=i<2?'start':'end',y=82+(i%2)*40+(i<2?0:0);b+='<rect x="'+(i<2?10:226)+'" y="'+(y-18)+'" width="144" height="28" rx="14" fill="#fff" stroke="'+FC.teal+'"/>'+tx(i<2?82:298,y+1,t,{fs:12.5,c:FC.navy});});
+ tx;b+=tx(190,176,'Seen',{fs:14,fw:600,c:FC.teal});b+=tx(190,214,'Hidden',{fs:14,fw:600,c:FC.coral});
+ dn.forEach(function(t,i){var y=246+i*34;b+='<rect x="95" y="'+(y-19)+'" width="190" height="28" rx="14" fill="'+FC.cl+'" stroke="'+FC.coral+'"/>'+tx(190,y,t,{fs:13,c:FC.ink});});
+ return '<svg class="ag-svg lab-svg" viewBox="0 0 380 440" role="img" aria-label="Iceberg: visible behaviours such as quiet, good marks and an organised planner above the water; hidden costs such as extra effort, anxiety, daydreaming, low self-esteem and late-night catch-up below">'+b+'</svg>';};
+FIG.life=function(){var rows=[['Pre-school','Constant motion, climbing, no sense of danger'],['Primary','Out of seat, calls out, unfinished work'],['Teenage','Inner restlessness, late homework, risk-taking'],['Adult','Missed deadlines, money, driving, relationships'],['Older adult','Lifelong disorganisation; check memory and physical health']],b='<rect width="380" height="420" rx="16" fill="'+FC.bg+'"/>'+tx(190,30,'How the same ADHD looks across life',{fs:17,fw:600,c:FC.navy});
+ rows.forEach(function(r,i){var y=58+i*70,h=1-i*0.14;b+='<rect x="18" y="'+y+'" width="344" height="58" rx="12" fill="#fff" stroke="#cfe3e1"/><rect x="18" y="'+y+'" width="8" height="58" rx="4" fill="'+(i<2?FC.coral:FC.teal)+'"/>'+tx(38,y+24,r[0],{a:'start',fw:600,c:FC.navy,fs:15})+tx(38,y+45,r[1],{a:'start',fs:12.5,c:FC.mut});
+  b+='<rect x="292" y="'+(y+10)+'" width="60" height="10" rx="5" fill="'+FC.tl+'"/><rect x="292" y="'+(y+10)+'" width="'+(60*h).toFixed(0)+'" height="10" rx="5" fill="'+FC.coral+'"/>';});
+ b+=tx(322,408,'Visible hyperactivity',{fs:11.5,c:FC.mut});
+ return '<svg class="ag-svg lab-svg" viewBox="0 0 380 420" role="img" aria-label="ADHD across life stages: visible hyperactivity tends to fall with age while inattention and impairment in daily life persist">'+b+'</svg>';};
+R.agecmp=function(m){var SX=window.AGSX,i=S.agec||0;
+ function draw(){var x=SX[i];return '<label class="lab-sel">Choose a symptom<select class="agc-s">'+SX.map(function(s,k){return '<option value="'+k+'"'+(k===i?' selected':'')+'>'+s.k+' \u00b7 '+esc(s.t)+'</option>';}).join('')+'</select></label><div class="lab-agc"><div class="lab-agcc c"><h5>In a child</h5><ul>'+x.ec.map(function(e){return '<li>'+esc(e)+'</li>';}).join('')+'</ul></div><div class="lab-agcc a"><h5>In an adult</h5><ul>'+x.ea.map(function(e){return '<li>'+esc(e)+'</li>';}).join('')+'</ul></div></div><p class="ag-yes"><strong>Counts when:</strong> '+esc(x.yes)+'</p><p class="ag-no"><strong>Does not count when:</strong> '+esc(x.no)+'</p>';}
+ m.innerHTML=draw();m.addEventListener('change',function(e){if(e.target.matches('.agc-s')){i=S.agec=+e.target.value;save();rerender(m,draw);}});};
+R.mcq=function(m){var key=m.dataset.set,D=(window.LABMCQ||{})[key]||[],a=(S.mcq=S.mcq||{})[key]||(S.mcq[key]={});
+ function draw(){var ok=0,n=0;Object.keys(a).forEach(function(k){n++;if(a[k]===D[k].a)ok++;});return D.map(function(d,i){var x=a[i];return '<div class="ag-tri lab-di" data-i="'+i+'"><p><strong>'+(i+1)+'.</strong> '+esc(d.s)+'</p>'+opts(d.o,x,d.a,'mq-o')+(x!=null?fb(x===d.a?'good':'bad','<strong>'+(x===d.a?'Correct.':'Not quite.')+'</strong> '+esc(d.e)+(d.src?' <span class="ag-mini">Source: '+esc(d.src)+'</span>':'')):'')+'</div>';}).join('')+'<p class="ag-mini" aria-live="polite">Score: '+ok+' / '+n+' answered of '+D.length+'</p><div class="ag-row"><button type="button" class="btn secondary mq-r">Reset</button></div>';}
+ m.innerHTML=draw();m.addEventListener('click',function(e){var b=e.target.closest('.mq-o,.mq-r');if(!b)return;if(b.matches('.mq-r')){Object.keys(a).forEach(function(k){delete a[k];});}else{var i=+b.closest('.lab-di').dataset.i;if(a[i]!=null)return;a[i]=+b.dataset.i;}save();rerender(m,draw);});};
+
+/* ---------- B8: titration simulator ---------- */
+var TS={
+ leo:{t:'Leo, 9 (child): Concerta XL',age:'child',g:'oros',b:0,drug:'Concerta XL',lad:[18,36,54],adq:1,base:{sc:2.4,hr:84,sbp:102,dbp:62,wt:28.0},metric:'SNAP-IV parent mean (0\u20133)',target:1.0,
+  d:{18:{sc:1.9,hr:88,sbp:104,dbp:64,wt:0,ae:'None reported'},36:{sc:1.3,hr:92,sbp:106,dbp:66,wt:-0.2,ae:'Smaller lunch; eats well in the evening'},54:{sc:0.9,hr:98,sbp:108,dbp:66,wt:-0.4,ae:'Smaller lunch; takes 30 minutes longer to fall asleep'}},bp:'Below the 95th centile for age and height (simulated)',comorb:1},
+ tom:{t:'Tom, 12 (child): heart rate rise',age:'child',g:'oros',b:0,drug:'Concerta XL',lad:[18,36,54],adq:1,base:{sc:2.5,hr:90,sbp:108,dbp:66,wt:38.0},metric:'SNAP-IV parent mean (0\u20133)',target:1.0,
+  d:{18:{sc:2.2,hr:96,sbp:110,dbp:68,wt:0,ae:'None'},36:{sc:1.6,hr:104,sbp:112,dbp:70,wt:-0.2,ae:'Mild appetite loss'},54:{sc:1.1,hr:124,sbp:114,dbp:72,wt:-0.3,ae:'Feels his heart racing at rest'}},bp:'Below the 95th centile (simulated)'},
+ ana:{t:'Ana, 32 (adult): blood pressure rise',age:'adult',g:'lis',b:0,drug:'Lisdexamfetamine',lad:[30,50,70],adq:1,base:{sc:40,hr:74,sbp:122,dbp:78,wt:64.0},metric:'Adult symptom score (18 items, 0\u20133 each, illustrative)',target:18,
+  d:{30:{sc:33,hr:80,sbp:128,dbp:80,wt:-0.2,ae:'Dry mouth'},50:{sc:24,hr:86,sbp:134,dbp:84,wt:-0.3,ae:'Dry mouth'},70:{sc:18,hr:92,sbp:150,dbp:94,wt:-0.4,ae:'Headaches, irritable in the evening'}}},
+ max:{t:'Max, 26 (adult): afternoon wear-off',age:'adult',g:'oros',b:0,drug:'Concerta XL',lad:[18,36,54,72],adq:2,base:{sc:38,hr:70,sbp:118,dbp:74,wt:80.0},metric:'Adult symptom score (18 items, 0\u20133 each, illustrative)',target:18,
+  d:{18:{sc:35,hr:72,sbp:120,dbp:75,wt:0,ae:'None'},36:{sc:30,hr:76,sbp:122,dbp:76,wt:-0.2,ae:'None'},54:{sc:24,hr:80,sbp:124,dbp:78,wt:-0.3,ae:'Symptoms return from about 4 pm; he studies in the evening',wo:1},72:{sc:23,hr:84,sbp:126,dbp:80,wt:-0.3,ae:'No better than 54 mg; symptoms return from about 4 pm',wo:1}}}};
+var ACT=[['inc','Increase'],['hold','Hold dose'],['red','Reduce'],['sw','Switch medicine'],['ir','Add IR afternoon dose'],['ref','Reduce and refer']];
+R.titr=function(m){var T=S.titr||(S.titr={k:'leo',co:0}),sc;
+ function fresh(){return {i:0,w:1,wk:1,ir:0,hist:[],done:0,fb:null,trig:0};}
+ if(!T.run)T.run=fresh();
+ function reading(){var c=TS[T.k],r=T.run,dose=c.lad[r.i],x=c.d[dose],irB=r.ir?(c.age==='adult'?-4:-0.3):0;return {dose:dose,sc:Math.round((x.sc+irB)*10)/10,hr:x.hr+(T.k==='tom'&&dose===54&&r.w>1?2:0),sbp:x.sbp,dbp:x.dbp,wt:Math.round((c.base.wt+x.wt*r.wk)*10)/10,ae:x.ae,wo:x.wo&&!r.ir};}
+ function trigger(c,rd){if(c.age==='child')return rd.hr>120;return rd.sbp-c.base.sbp>=20||rd.sbp>=140;}
+ function expect(){var c=TS[T.k],r=T.run,rd=reading(),irD=c.age==='adult'?10:5,lim=c.age==='adult'?72:54,top=r.i===(r.cap!=null?r.cap:c.lad.length-1)||(r.ir&&r.i<c.lad.length-1&&c.lad[r.i+1]+irD>lim),ok=rd.sc<=c.target;
+  if(trigger(c,rd))return r.trig>=1?{a:['ref','red'],why:'Second occasion: NG87 1.8.11 says reduce the dose and refer to a paediatric hypertension specialist or adult physician.'}:{a:['hold'],why:'First raised reading: recheck at rest. NG87 1.8.11 acts on a sustained rise measured on 2 occasions.'};
+  if(rd.wo&&c.g==='oros')return {a:['ir','hold'],why:'Morning response is good but it wears off. NG87 1.7.22: think about MR methylphenidate in the morning plus IR methylphenidate later to extend the effect. If the overall response stays inadequate after a 6-week trial at an adequate dose, consider switching (1.7.12).'};
+  if(ok)return {a:['hold'],why:'Optimised: reduced symptoms with tolerable adverse effects (NG87 1.7.27). Hold and move to maintenance monitoring.'};
+  if(!top){if(c.comorb&&T.co&&r.w<2)return {a:['hold'],why:'With autism or another coexisting condition, NG87 1.7.28 asks for slower titration and more frequent monitoring. This simulator uses 2 weeks per step (a teaching choice; NICE gives no interval).'};return {a:['inc'],why:'Symptoms still impairing and adverse effects tolerable: titrate up (NG87 1.7.27; SmPC weekly steps).'};}
+  var swy=c.g==='lis'?'consider switching to methylphenidate (NG87 1.7.13, adults)':'consider switching to lisdexamfetamine (NG87 1.7.8 children, 1.7.12 adults)',cl=c.g==='lis'?'1.7.13':'1.7.8, 1.7.12',mxw=r.cap!=null?'At the highest dose the cardiovascular findings allow':(r.ir&&r.i<c.lad.length-1?'The next MR step plus the IR dose would take total methylphenidate above the '+lim+' mg/day '+c.drug+' maximum, so stay at this dose':'At the maximum dose');
+  if((r.wAdq||0)>=6)return {a:['sw'],why:'6-week trial at an adequate dose without enough benefit: '+swy+'.'};
+  return {a:['hold'],why:mxw+', but the 6-week trial at an adequate dose is not complete yet (NG87 '+cl+').'};}
+ function chk(){var c=TS[T.k],r=T.run,rd=reading(),add=r.ir?[{d:c.age==='adult'?10:5,t:900}]:[];if(!window.XP||!XP._doseCheck)return [];try{return XP._doseCheck({g:c.g,b:c.b,d:rd.dose,age:c.age,add:add})||[];}catch(e){return [];}}
+ function docLine(rd,act){var c=TS[T.k],r=T.run;return 'Week '+r.wk+': '+c.drug+' '+rd.dose+' mg mane'+(r.ir?' + methylphenidate IR '+(c.age==='adult'?10:5)+' mg at 3 pm':'')+'. '+c.metric.split(' (')[0]+' '+rd.sc+'. HR '+rd.hr+', BP '+rd.sbp+'/'+rd.dbp+(c.age==='child'?' (compare with centiles)':'')+'. Weight '+rd.wt+' kg. Adverse effects: '+rd.ae.toLowerCase()+'. Plan: '+(act?act:'\u2026')+'.';}
+ function draw(){var c=TS[T.k],r=T.run,rd=reading(),h='<div class="ag-row lab-tsel">'+Object.keys(TS).map(function(k){return '<button type="button" class="ag-segb ts-k" data-k="'+k+'" aria-pressed="'+(T.k===k)+'">'+esc(TS[k].t)+'</button>';}).join('')+'</div>';
+  if(c.comorb)h+='<label class="lab-chk"><input type="checkbox" class="ts-co"'+(T.co?' checked':'')+'> Leo also has autism (NG87 1.7.28: slower titration)</label>';
+  h+='<div class="lab-tgrid"><div class="lab-tcard"><span class="ag-mini">Week '+r.wk+' review</span><div class="lab-tdose">'+esc(c.drug)+' '+rd.dose+' mg'+(r.ir?' + IR':'')+'</div><span class="ag-mini">'+r.w+' week'+(r.w>1?'s':'')+' at this dose</span></div>'+
+   '<div class="lab-tcard"><span class="ag-mini">'+esc(c.metric)+'</span><div class="lab-tval">'+rd.sc+' <small>baseline '+c.base.sc+'; target \u2264 '+c.target+'</small></div></div>'+
+   '<div class="lab-tcard'+(trigger(c,rd)?' warn':'')+'"><span class="ag-mini">Resting HR and BP</span><div class="lab-tval">'+rd.hr+' bpm \u00b7 '+rd.sbp+'/'+rd.dbp+'</div><span class="ag-mini">'+(c.age==='child'?esc(c.bp||'Compare with centiles'):'Baseline '+c.base.sbp+'/'+c.base.dbp)+'</span></div>'+
+   '<div class="lab-tcard"><span class="ag-mini">Weight and adverse effects</span><div class="lab-tval">'+rd.wt+' kg</div><span class="ag-mini">'+esc(rd.ae)+'</span></div></div>';
+  h+='<div class="lab-tchart">'+chart()+'</div>';
+  var dc=chk();if(dc.length)h+=dc.map(function(x){return fb(x[0]==='info'?'good':(x[0]==='warn'?'ok':'bad'),'<strong>Dose check:</strong> '+esc(x[1]));}).join('');
+  if(r.fb)h+=fb(r.fb[0],r.fb[1]);
+  if(!r.done){h+='<p><strong>What do you do this week?</strong></p><div class="ag-opts lab-tact">'+ACT.map(function(a){return '<button type="button" class="ag-opt sm ts-a" data-a="'+a[0]+'">'+a[1]+'</button>';}).join('')+'</div>';}
+  else h+='<p class="ag-mini">Scenario finished. Choose another or restart.</p>';
+  h+='<h4 class="ag-sub">Documentation line</h4><p class="lab-docnow">'+esc(r.hist.length?r.hist[r.hist.length-1]:docLine(rd))+'</p>'+(r.hist.length>1?'<details class="ag-ex"><summary>Full titration record ('+r.hist.length+' weeks)</summary><ol class="lab-doc">'+r.hist.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ol></details>':'')+'<div class="ag-row"><button type="button" class="btn secondary ts-r">Restart scenario</button></div>';
+  return h;}
+ function chart(){var c=TS[T.k],r=T.run,pts=r.hist.length?r.pts:[],all=(pts||[]).concat([reading().sc]),W=360,H=150,mx=c.age==='child'?3:54,b='<rect width="'+W+'" height="'+H+'" rx="12" fill="#fbf7f0"/>';
+  var y=function(v){return 20+(1-v/mx)*100;},n=Math.max(all.length,6),x=function(i){return 40+i*(300/(n-1));};
+  b+='<line x1="40" x2="340" y1="'+y(c.target)+'" y2="'+y(c.target)+'" stroke="#0b6664" stroke-dasharray="5 4"/>'+tx(338,y(c.target)-6,'target',{fs:12,a:'end',c:'#0b6664'})+'<line x1="40" x2="340" y1="'+y(c.base.sc)+'" y2="'+y(c.base.sc)+'" stroke="#a8432e" stroke-dasharray="2 4"/>'+tx(44,y(c.base.sc)-6,'baseline',{fs:12,a:'start',c:'#a8432e'});
+  b+='<polyline fill="none" stroke="#16324f" stroke-width="3" points="'+all.map(function(v,i){return x(i)+','+y(v);}).join(' ')+'"/>'+all.map(function(v,i){return '<circle cx="'+x(i)+'" cy="'+y(v)+'" r="5" fill="'+(i===all.length-1?'#a8432e':'#16324f')+'"/>';}).join('');
+  b+=tx(190,H-8,'Weeks \u2192 (lower score = fewer symptoms)',{fs:12,c:'#5b6b7a'});
+  return '<svg class="ag-svg lab-svg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Symptom score by week against baseline and target">'+b+'</svg>';}
+ function act(a){var c=TS[T.k],r=T.run,rd=reading(),e=expect(),good=e.a.indexOf(a)>=0,lab={inc:'increase',hold:'hold dose',red:'reduce dose',sw:'switch medicine',ir:'add IR afternoon dose',ref:'reduce dose and refer'}[a];
+  var extra='';if(a==='ir'&&c.g!=='oros'){good=false;extra=' NG87 1.7.22 covers methylphenidate MR plus IR only.';}
+  if(a==='sw'&&e.a.indexOf('sw')<0)extra+=' Switching now is premature: NICE (NG87 1.7.8, 1.7.12, 1.7.13) describes switching after a 6-week trial at an adequate dose without enough benefit.';
+  if(a==='inc'&&r.i===c.lad.length-1)extra+=' This is already the licensed maximum in this scenario.';
+  r.fb=[good?'good':(e.a.indexOf('hold')>=0&&a==='inc'?'ok':'bad'),'<strong>'+(good?'Good decision.':'Reconsider.')+'</strong> '+esc(e.why+extra)];
+  r.hist.push(docLine(rd,lab));r.pts=(r.pts||[]).concat([rd.sc]);
+  if(trigger(c,rd))r.trig++;else r.trig=0;
+  if(r.i>=c.adq)r.wAdq=(r.wAdq||0)+1;
+  if(a==='inc'&&r.i<c.lad.length-1){r.i++;r.w=1;}else if((a==='red'||a==='ref')&&r.i>0){if(trigger(c,rd))r.cap=r.i-1;r.i--;r.w=1;r.trig=0;if(a==='ref')r.done=1;}else r.w++;
+  if(a==='ir'&&c.g==='oros')r.ir=1;if(a==='sw'){r.done=1;}
+  r.wk++;if(r.wk>12)r.done=1;}
+ m.innerHTML=draw();
+ m.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+  if(b.matches('.ts-k')){T.k=b.dataset.k;T.run=fresh();}else if(b.matches('.ts-a')){act(b.dataset.a);}else if(b.matches('.ts-r'))T.run=fresh();else return;save();rerender(m,draw);});
+ m.addEventListener('change',function(e){if(e.target.matches('.ts-co')){T.co=e.target.checked?1:0;save();rerender(m,draw);}});};
+
 function init(){$$('.lab-mount[data-lab]').forEach(function(m){var k=m.dataset.lab;if(R[k]&&!m.dataset.done){m.dataset.done='1';try{R[k](m);}catch(e){m.innerHTML='<p>This tool could not load.</p>';if(window.console)console.error(e);}}});}
 window.LAB={registry:R,init:init,state:function(){return S;}};
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
