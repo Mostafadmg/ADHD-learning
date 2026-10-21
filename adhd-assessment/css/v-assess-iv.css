@@ -1,0 +1,213 @@
+/* Interview steps (js/views/assess-interview.js): symptom overview and card, onset and impairment,
+   collateral information. Prefix .iv-. Builds on .sx-*, .ex-*, .card and .seg from app.css.
+   Colours come from tokens only, so light and dark themes both work. */
+
+.iv { min-width: 0; }
+.iv-sec > h2 { margin-bottom: .35rem; }
+.iv-sec > .hint, .iv-sec > .muted { margin-top: 0; }
+.iv-none { color: var(--faint); font-size: .88rem; }
+.iv kbd { font: inherit; font-size: .82rem; font-weight: 700; padding: .05rem .4rem; border: 1px solid var(--line-2); border-bottom-width: 2px; border-radius: 5px; background: var(--surface); color: var(--ink); }
+
+/* ---------- Overview ---------- */
+.iv-intro h2 { margin-bottom: .3rem; }
+.iv-rules { margin: .2rem 0 1rem; max-width: 75ch; }
+.iv-rules li { margin: .35rem 0; }
+.iv-tally { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); margin: 0 0 1rem; }
+.iv-tally-item { background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: .7rem .9rem; }
+.iv-tally-item p { margin: 0; }
+.iv-tally-k { font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; font-weight: 700; color: var(--muted); }
+.iv-tally-v .num { font-family: var(--font-display); font-weight: 600; font-size: 1.7rem; color: var(--brand); line-height: 1.2; }
+.iv-tally-v small { color: var(--muted); font-size: .9rem; }
+.iv-tally-item .badge { margin-top: .4rem; }
+.iv-cta .btn { white-space: normal; text-align: left; }
+
+.iv-table th, .iv-table td { vertical-align: middle; }
+.iv-table thead th { white-space: nowrap; }
+.iv-row { cursor: pointer; }
+.iv-row:hover > * { background: var(--surface-2); }
+.iv-code { font-weight: 700; color: var(--accent); white-space: nowrap; }
+.iv-table tbody th { min-width: 12rem; }
+.iv-link { font: inherit; font-weight: 700; color: var(--accent); background: none; border: 0; padding: .3rem 0; min-height: 36px; text-align: left; cursor: pointer; text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; }
+.iv-link:hover { color: var(--accent-2); text-decoration-color: currentColor; }
+.iv-sub { display: block; font-weight: 400; font-size: .82rem; color: var(--muted); }
+
+.iv-sup-item { border-top: 1px solid var(--line); padding: .9rem 0 .2rem; margin-top: .9rem; }
+.iv-sup-item h3 { font-size: 1rem; color: var(--muted); }
+.iv-sup-q { font-size: 1.12rem; font-weight: 700; margin: .35rem 0 .6rem; max-width: 70ch; }
+.iv-sup h2:focus { outline: none; }
+
+/* ---------- Symptom card ---------- */
+.iv-sym { scroll-margin-top: calc(var(--bar-h) + env(safe-area-inset-top, 0px) + 72px); }
+.iv-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: .6rem 1rem; margin: 0 0 .7rem; }
+.iv-head-main { min-width: 0; flex: 1 1 320px; }
+.iv-codes { display: flex; flex-wrap: wrap; gap: .35rem; margin: 0 0 .45rem; }
+.iv-title { font-size: 1.6rem; }
+.iv-title:focus { outline: none; }
+.iv-title:focus-visible { outline: 3px solid var(--focus); }
+.iv-head-nav { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
+.iv-head-nav .btn { min-height: 38px; }
+.iv-pos { font-weight: 700; color: var(--muted); font-size: .9rem; margin-right: .3rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+.iv-strip { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .8rem; margin: 0 0 .3rem; }
+.iv-strip ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px; }
+.iv-chip { font: inherit; font-size: .86rem; font-weight: 700; min-width: 36px; height: 36px; padding: 0 .3rem; border-radius: 8px; cursor: pointer;
+  border: 1px solid var(--line-2); background: var(--surface); color: var(--muted); font-variant-numeric: tabular-nums; position: relative; }
+.iv-chip:hover { border-color: var(--accent); color: var(--ink); }
+.iv-chip.is-part { border-style: dashed; border-color: var(--accent); color: var(--accent); }
+.iv-chip.is-done { background: var(--accent-l); border-color: var(--accent); color: var(--accent); }
+.iv-chip.is-done::after { content: "✓"; position: absolute; top: -6px; right: -5px; width: 15px; height: 15px; border-radius: 50%; background: var(--ok); color: var(--surface); font-size: .62rem; line-height: 15px; text-align: center; }
+.iv-chip[aria-current="true"] { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); border-style: solid; }
+.iv-keys { margin: 0 0 .9rem; font-size: .82rem; }
+@media (hover: none), (max-width: 760px) { .iv-keys { display: none; } .iv-strip { margin-bottom: .9rem; } }
+
+/* Score panel */
+.iv-score { margin: 0 0 1.1rem; gap: .5rem 1.4rem; padding: .75rem 1rem .55rem; box-shadow: var(--shadow); }
+.iv-score-col { min-width: 0; display: flex; flex-direction: column; gap: .2rem; align-items: stretch; }
+.iv-score .seg-label { min-width: 11.5rem; }
+.iv-score .seg-opt label { min-width: 64px; }
+.iv-status { min-height: 34px; display: flex; flex-wrap: wrap; align-items: center; gap: .2rem .6rem; }
+.iv-status .btn { margin-left: -.5rem; }
+.iv-nudge { margin: 0; font-size: .86rem; color: var(--muted); }
+.iv-nudge.is-warn { color: var(--warn); font-weight: 700; }
+.iv-nudge.is-warn::before { content: "! "; }
+@media (min-width: 1000px) and (min-height: 760px) {
+  .iv-score { position: sticky; top: calc(var(--bar-h) + env(safe-area-inset-top, 0px) + 64px); z-index: 20; }
+  /* Covers the strip between the sticky step bar and the panel, so content does not peek through. */
+  .iv-score::before { content: ""; position: absolute; left: -2px; right: -2px; top: -10px; height: 9px; background: var(--bg); }
+  html:has(.iv-score) { scroll-padding-top: calc(var(--bar-h) + 200px); }
+}
+
+/* Tabs and question */
+.iv-tabs { margin-top: .2rem; }
+.iv-tabs > .tabs { margin-bottom: .9rem; }
+.iv-tabs .tab { position: relative; min-height: 44px; }
+@media (max-width: 480px) { .iv-tabs .tab { white-space: normal; text-align: left; flex: 1 1 0; min-width: 0; padding-inline: .5rem; } }
+.iv .btn-sm { min-height: 36px; }
+.iv-ask { display: flex; flex-direction: column; gap: .2rem; margin-top: 0; }
+.iv-ask-k { font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+.iv-ask-q { display: block; }
+.iv-period > .disclosure { max-width: 70ch; }
+
+.iv-ex-head { margin: 1.3rem 0 .4rem; }
+.iv-ex-head h3, .iv-inf h3 { margin: 0; }
+.iv-ex-head .hint { margin: .15rem 0 0; }
+.iv-tools { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: 0 0 .6rem; }
+.iv-search { flex: 1 1 220px; min-width: 0; }
+.iv-only[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
+.iv-only[aria-pressed="true"]::before { content: "✓"; }
+.iv-examples .ex-group { padding: .5rem 0 .35rem; border-top: 1px solid var(--line); margin: 0; }
+.iv-examples .ex-group h4 { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: 0 0 .2rem; }
+.iv-gcount { font-size: .75rem; letter-spacing: 0; text-transform: none; font-weight: 700; color: var(--accent); background: var(--accent-l); border-radius: 999px; padding: .05rem .5rem; }
+.iv .ex-list .check { padding: .28rem .3rem; border-radius: 6px; min-height: 36px; align-items: flex-start; }
+.iv .ex-list .check:hover { background: var(--surface-2); }
+.iv .ex-list .check label { flex: 1; min-width: 0; padding-top: .05rem; }
+.iv .ex-list .check:has(input:checked) { background: var(--accent-l); }
+.iv .ex-list .check:has(input:checked) label { color: var(--ink); font-weight: 700; }
+.iv-period > .field { margin-top: 1.2rem; }
+
+.iv-inf { margin-top: 1.3rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+
+/* Question rows (label left, control right) */
+.iv-qrows { margin: .8rem 0; }
+.iv-qrow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .45rem 1.2rem; align-items: center; padding: .75rem 0; border-top: 1px solid var(--line); }
+.iv-qrow-text { min-width: 0; font-weight: 700; }
+.iv-qrow-text .hint { display: block; font-weight: 400; }
+.iv-qrow-ctl { min-width: 0; }
+.iv-inf .iv-qrow { border-top: 0; padding-top: .4rem; }
+@media (max-width: 760px) { .iv-qrow { grid-template-columns: minmax(0, 1fr); } }
+.iv-age { width: 7rem; }
+
+/* Reference sections */
+.iv-refs { margin: 1.4rem 0 1rem; }
+.iv-refs h3 { font-size: 1rem; margin: .4rem 0 .2rem; }
+.iv-rules-grid { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+.iv-rule { background: var(--surface-2); border-radius: var(--radius-sm); padding: .7rem .9rem; border-left: 4px solid var(--line-2); }
+.iv-rule-yes { border-left-color: var(--ok); }
+.iv-rule-no { border-left-color: var(--err); }
+.iv-anchors { display: grid; gap: .7rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); margin-top: .5rem; }
+.iv-anchor { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: .7rem .85rem; background: var(--surface); border-top: 4px solid var(--line-2); }
+.iv-anchor-yes { border-top-color: var(--ok); }
+.iv-anchor-unsure { border-top-color: var(--warn); }
+.iv-anchor-no { border-top-color: var(--muted); }
+.iv-anchor-score { margin: 0 0 .4rem; font-weight: 700; font-size: .88rem; display: flex; gap: .4rem; align-items: center; }
+.iv-anchor blockquote { margin: 0 0 .4rem; font-style: italic; color: var(--ink); }
+.iv-anchor-why { margin: 0; font-size: .9rem; color: var(--muted); }
+.iv-probes { display: grid; gap: .3rem 1.2rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); }
+.iv-probe .list { margin-top: .1rem; }
+.iv-mimics { display: flex; flex-direction: column; gap: .6rem; }
+.iv-mimics > .hint { margin: 0; }
+.iv-mimic { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: .7rem .85rem; }
+.iv-mimic p { margin: .3rem 0 0; }
+.iv-mimic-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem .8rem; }
+.iv-mimic-head h3 { margin: 0; }
+.iv-mimic-ask { font-style: italic; }
+.iv-mimic-ask strong { font-style: normal; }
+.iv-flag { gap: .45rem; }
+.iv-flag-box { width: 18px; height: 18px; flex: 0 0 18px; border: 2px solid var(--line-2); border-radius: 4px; display: inline-grid; place-items: center; font-size: .75rem; line-height: 1; }
+.iv-flag[aria-pressed="true"] { border-color: var(--warn); background: var(--warn-l); color: var(--warn); }
+.iv-flag[aria-pressed="true"] .iv-flag-box { border-color: var(--warn); background: var(--warn); color: var(--surface); }
+.iv-dl { margin: .2rem 0; }
+.iv-dl dt { font-weight: 700; margin-top: .6rem; }
+.iv-dl dt:first-child { margin-top: 0; }
+.iv-dl dd { margin: .1rem 0 0; max-width: 72ch; }
+.iv-dl-grid { display: grid; gap: .8rem 1.4rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); }
+.iv-dl-grid dt { margin-top: 0; }
+
+.iv-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: .8rem; margin-top: 1.4rem; padding-top: 1rem; border-top: 1px dashed var(--line-2); }
+.iv-foot-next { display: flex; flex-direction: column; align-items: flex-end; gap: .3rem; margin-left: auto; text-align: right; min-width: 0; }
+.iv-foot-next .hint { margin: 0; }
+.iv-foot .btn { white-space: normal; }
+@media (max-width: 480px) {
+  .iv-foot { flex-direction: column-reverse; align-items: stretch; }
+  .iv-foot-next { align-items: stretch; text-align: left; margin-left: 0; }
+  .iv-head-nav { width: 100%; }
+  .iv-pos { margin-right: auto; }
+  .iv-title { font-size: 1.35rem; }
+}
+
+/* ---------- Onset and impairment ---------- */
+.iv-onset > h2 { margin-bottom: .3rem; }
+.iv-asks { margin: .9rem 0 .3rem; }
+.iv-asks h3 { font-size: 1rem; margin-bottom: .2rem; }
+.iv-asklist { max-width: 72ch; }
+.iv-asklist li { margin: .3rem 0; }
+.iv-crit { border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface-2); padding: .7rem .9rem; margin: .9rem 0; }
+.iv-crit .hint { margin: .3rem 0 0; }
+.iv-crit-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem .8rem; }
+.iv-imp-sum { background: var(--surface); border: 1px solid var(--line-2); border-radius: var(--radius); padding: .9rem 1rem; margin: .6rem 0 1rem; }
+.iv-imp-grid { display: grid; gap: .8rem 1.2rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); }
+.iv-imp-per p { margin: .15rem 0; }
+.iv-imp-k { font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; font-weight: 700; color: var(--muted); }
+.iv-imp-worst { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem; }
+.iv-imp-worst .hint { margin: 0; }
+.iv-crit-list { list-style: none; margin: .8rem 0 0; padding: .7rem 0 0; border-top: 1px solid var(--line); display: grid; gap: .6rem 1.2rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+.iv-crit-list .hint { margin: .25rem 0 0; }
+.iv-nice { margin: .8rem 0 0; font-size: .9rem; background: var(--info-l); border-radius: var(--radius-sm); padding: .55rem .75rem; }
+.iv-doms > .hint { margin: 0; }
+.iv-dom { padding-bottom: .7rem; }
+.iv-dom-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem .8rem; }
+.iv-dom-head h3 { margin: 0; }
+.iv-dom-why { margin: .3rem 0 .7rem; font-size: .93rem; }
+.iv-anchor-text { margin: .5rem 0 .6rem; padding: .5rem .75rem; border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: .93rem; }
+.iv-anchor-text.is-empty { border-left-color: var(--line-2); color: var(--muted); }
+.iv-dom .field { margin-top: .6rem; }
+
+/* ---------- Collateral ---------- */
+.iv-lead { margin: 0; }
+.iv-src-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem .8rem; }
+.iv-src-head h3 { margin: 0; }
+.iv-src > .muted { margin: .3rem 0 .8rem; }
+.iv-src > .field { max-width: 460px; margin: 0 0 .8rem; }
+.iv-rate { display: flex; flex-direction: column; gap: .35rem; align-items: flex-start; margin: 0 0 .5rem; }
+.iv-rate-desc { margin: 0; }
+.iv-col-list { margin-top: .2rem; }
+.iv-col-sum h2 { font-size: 1.2rem; }
+.iv-col-live > p { margin: .5rem 0; }
+.iv-dl-inline { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .3rem 1rem; margin: .6rem 0 0; }
+.iv-dl-inline dt { margin: 0; font-weight: 400; color: var(--muted); }
+.iv-dl-inline dd { margin: 0; font-weight: 700; }
+@media (max-width: 420px) { .iv-dl-inline { grid-template-columns: minmax(0, 1fr); gap: 0; } .iv-dl-inline dd { margin-bottom: .4rem; } }
+
+/* Checked Yes / Unsure use dark text on the light dark-theme fills (white text there is too faint).
+   In the light theme --surface is white, so nothing changes. */
+.iv .seg-yes input:checked + label, .iv .seg-unsure input:checked + label { color: var(--surface); }
