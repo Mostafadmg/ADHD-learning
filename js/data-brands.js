@@ -99,14 +99,14 @@ window.BRANDS=[
 "mech": "Osmotic prolonged-release tablet (drug layer, push layer and cellulose acetate membrane); the shell may be seen in stools (SmPC 4.4, 6.1).",
 "ratio": "22:78 (manufacturer confirms bioequivalence — SPS)",
 "time": "Onset 1–2 h; peak 6–8 h; about 12 h (SPS).",
-"strengths": "18, 36, 54 mg",
-"lic": "Indicated in children 6+ (SmPC 4.1). <strong>Adults: continuation only</strong>: treatment may continue into adulthood in adolescents who have shown clear benefit, but starting it in adults is not appropriate (SmPC 4.2).",
-"dose": "18 mg once daily in the morning for patients new to methylphenidate; adjust in 18 mg steps at about weekly intervals. Max 54 mg/day, including adults continuing treatment (SmPC 4.2).",
+"strengths": "18, 36, 54 mg (72 mg as a combination of tablets; SmPC 4.2 notes a 27 mg strength is available from other companies)",
+"lic": "Children 6+ and adults (SmPC 4.1, MHRA text rev. 07/06/2026; the emc copy may lag).",
+"dose": "18 mg once daily in the morning for children and adults new to methylphenidate; adjust in 18 mg steps at about weekly intervals. Max 54 mg/day in children, 72 mg/day in adults (SmPC 4.2).",
 "bnf": "No brand-specific BNF/BNFC entry: follow the SmPC.",
 "admin": "Once daily in the morning, with or without food. Swallow whole with liquid; must not be chewed, divided or crushed (SmPC 4.2).",
 "exc": "Lactose 6.42 mg per 54 mg tablet (SmPC 2).",
-"inter": "SPS tablet group (bioequivalent to Concerta XL): Affenid XL, Atenza XL, Concerta XL, Delmosart, Matoride XL, Xaggitin XL, Xenidate XL. Can be switched at the same dose and quantity if necessary (SPS). At 18: may continue (max 54 mg/day) after clear benefit; not for adult initiation (SmPC 4.2).",
-"src": "Matoride XL SmPC (emc 3304); SPS."
+"inter": "SPS tablet group (bioequivalent to Concerta XL): Affenid XL, Atenza XL, Concerta XL, Delmosart, Matoride XL, Xaggitin XL, Xenidate XL. Can be switched at the same dose and quantity if necessary (SPS). At 18: licensed in adults; the maximum rises from 54 to 72 mg/day (SmPC 4.2).",
+"src": "Matoride XL SmPC (MHRA PL 04416/1346, 1348, 1349, rev. 07/06/2026; the emc 3304 copy is older); SPS."
 },
 {
 "id": "xenidate",

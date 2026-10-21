@@ -565,5 +565,5 @@ td.bnfchk{color:inherit}
 .hb-legend span{display:flex;align-items:center}
 .hb-legend .hb-lnote{flex-basis:100%;font-size:.8rem;color:#9fb3c8}
 .xf-sel[hidden]{display:none}
-.hb-tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.04em;padding:.05rem .45rem;border-radius:999px;border:1px solid #f2c14e;color:#f6cf6b;vertical-align:1px;margin-left:.25rem}
+.hb-tag{display:inline-block;font-size:max(.75rem,12px);font-weight:600;letter-spacing:.04em;padding:.05rem .45rem;border-radius:999px;border:1px solid #f2c14e;color:#f6cf6b;vertical-align:1px;margin-left:.25rem}
 .badge.ol,.badge.unv{font-size:max(.75rem,12px)}

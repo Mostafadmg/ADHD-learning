@@ -61,12 +61,12 @@
       '<div class="hb-row"><label class="xf-sel">Product<select class="hb-a">'+brandOptions(S.a)+'</select></label><label class="xf-sel">Compare with<select class="hb-b">'+brandOptions(S.b,true)+'</select></label></div>'
       +'<div class="xp-chart hb-chart"></div><div class="hb-legend" aria-hidden="true"></div><div class="hb-facts" aria-live="polite"></div>',
       'The curves are a schematic teaching model fitted to the timings stated in each SmPC section 5.2 (and SPS durations). Each curve is scaled to its own peak, so compare <em>timing and shape</em>, not height or dose. Not pharmacokinetic data; individual responses vary (NG87 1.7.21). Costs are not shown: prices could not be verified live, so check the current Drug Tariff or dm+d.',
-      ['SmPCs on emc (checked 20–21 Oct 2026): Concerta XL 314; Xaggitin XL 2704; Affenid XL 14600; Atenza XL 101204; Matoride XL 3304; Xenidate XL 4397; Ritalin XL 15966; Meflynate XL 15094; Metyrol XL 13797; Focusim XL 100558; Medikinet XL 313; Equasym XL 3887; Ritalin 15987; Medikinet 328; Elvanse 14089; Elvanse Adult 6828; Amfexa 102097; atomoxetine 10332; Intuniv 5099.','SPS: Prescribing and switching between modified-release methylphenidate (updated 28 Aug 2025).','BNF and BNFC drug monographs (accessed 21 Oct 2026).','London Medicines Evaluation Network: Methylphenidate review (March 2018), for Delmosart.']);
+      ['SmPCs on emc (checked 20–21 Oct 2026): Concerta XL 314; Xaggitin XL 2704; Affenid XL 14600; Atenza XL 101204; Matoride XL 3304 (superseded: current MHRA SmPC PL 04416/1346, 1348, 1349, rev. 07/06/2026); Xenidate XL 4397; Ritalin XL 15966; Meflynate XL 15094; Metyrol XL 13797; Focusim XL 100558; Medikinet XL 313; Equasym XL 3887; Ritalin 15987; Medikinet 328; Elvanse 14089; Elvanse Adult 6828; Amfexa 102097; atomoxetine 10332; Intuniv 5099.','SPS: Prescribing and switching between modified-release methylphenidate (updated 28 Aug 2025).','BNF and BNFC drug monographs (accessed 21 Oct 2026).','London Medicines Evaluation Network: Methylphenidate review (March 2018), for Delmosart.']);
     var R=m.firstChild, sa=R.querySelector('.hb-a'), sb=R.querySelector('.hb-b');
     function render(){
       S.a=sa.value; S.b=sb.value&&sb.value!==S.a?sb.value:'';
       var A=BY[S.a], Bp=S.b?BY[S.b]:null, ch=R.querySelector('.hb-chart');
-      if(!A.model) ch.innerHTML='<p class="hb-flat"><strong>'+esc(A.name)+':</strong> no daily release curve to draw. Benefit builds over weeks and, once established, is not tied to a daily peak ('+(A.id==='gua'?'Intuniv SmPC 5.1':'atomoxetine SmPC 5.1')+'). Compare it with a stimulant to see why timing questions differ.</p>'+(Bp&&Bp.model?chart(S.b,''):'');
+      if(!A.model) ch.innerHTML='<p class="hb-flat"><strong>'+esc(A.name)+':</strong> no daily release curve to draw. Its efficacy was shown in trials lasting several weeks ('+(A.id==='gua'?'Intuniv SmPC 5.1':'atomoxetine SmPC 5.1')+'); that benefit is not tied to a daily peak is a general principle, not an SmPC statement. Compare it with a stimulant to see why timing questions differ.</p>'+(Bp&&Bp.model?chart(S.b,''):'');
       else ch.innerHTML=chart(S.a,Bp&&Bp.model?S.b:'');
       function pkTxt(id){ var c=curve(id); return c?c.peaks.map(function(q){return q[0].toFixed(1)+' h';}).join(' and '):''; }
       R.querySelector('.hb-legend').innerHTML=(A.model?'<span><i style="background:#6fb3f2"></i>'+esc(A.name)+': peaks at '+pkTxt(S.a)+'</span>':'')+(Bp&&Bp.model?'<span><i class="dash" style="border-color:#f2c14e"></i>'+esc(Bp.name)+': peaks at '+pkTxt(S.b)+'</span>':'')+((A.model||(Bp&&Bp.model))?'<span class="hb-lnote">Peak times are from the teaching model; the SmPC timings are in the facts below.'+CAVEAT(S.a)+(Bp?CAVEAT(S.b):'')+'</span>':'');
@@ -103,8 +103,8 @@
     } else if(F.grp===Tt.grp && (F.grp==='tab'||F.grp==='cap')){
       badge='Bioequivalent'; head='Same dose and quantity ('+total+' mg)';
       out.push('<li><strong>'+esc(F.name)+' → '+esc(Tt.name)+':</strong> both are in the same SPS bioequivalence group, so switch at the same dose and quantity if a switch is necessary (SPS).</li>');
-      if(Tt.id==='matoride') out.push('<li><strong>Check the licence:</strong> Matoride XL (SmPC 4.2): treatment may continue into adulthood in adolescents who have shown clear benefit, but starting it in adults is not appropriate. Maximum 54 mg/day.</li>');
       if(F.grp==='tab'&&(F.id==='concerta'||F.id==='affenid'||F.id==='atenza'||F.id==='matoride')!==(Tt.id==='concerta'||Tt.id==='affenid'||Tt.id==='atenza'||Tt.id==='matoride')) out.push('<li><strong>Tablet design changes:</strong> osmotic tablets leave an empty shell in stools; Xaggitin XL and Xenidate XL do not. Warn the person so a change is not mistaken for a problem.</li>');
+      if(Tt.id==='matoride'&&total%18!==0) out.push('<li><strong>Strength check:</strong> Matoride XL comes as 18, 36 and 54 mg tablets only; '+total+' mg cannot be made up from them (SmPC 4.2 notes that a 27 mg strength is available from other companies). Stay on a brand that has the strength, or ask the prescriber.</li>');
       if(F.grp==='tab'&&(Tt.id==='xenidate'||F.id==='xenidate')) out.push('<li><strong>Excipient changes:</strong> Xenidate XL contains sucrose instead of lactose (SmPC 2).</li>');
     } else if(Tt.grp==='eq'||F.grp==='eq'){
       tone='danger'; badge='Avoid'; head='Equasym XL has no bioequivalent product';
@@ -220,7 +220,7 @@
     }
     else if(p==='atx'){
       head='No SmPC instruction: carry on as usual'; tone='info'; badge='General principle';
-      a.push('<li>The atomoxetine SmPC gives no missed-dose advice. Benefit does not depend on a daily peak (SmPC 5.1). Continue the usual schedule and check the patient leaflet supplied with the brand dispensed.'+GP+'</li>');
+      a.push('<li>The atomoxetine SmPC gives no missed-dose advice. Continue the usual schedule and check the patient leaflet supplied with the brand dispensed. Benefit does not depend on a daily peak.'+GP+'</li>');
       a.push(NODOUBLE);
       if(w==='two') a.push('<li>For longer gaps, ask the prescriber how to restart.'+GP+'</li>');
     }
