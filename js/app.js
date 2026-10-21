@@ -92,6 +92,27 @@
   var mb = $('.menu-btn');
   if(mb) mb.addEventListener('click', function(){ var s=$('nav.sidebar'); s.classList.toggle('open'); mb.setAttribute('aria-expanded', s.classList.contains('open')); });
 
+  /* ---------- desktop sidebar collapse ---------- */
+  (function(){
+    var tg=$('.sb-toggle'), root=document.documentElement, KEY='adhd.sidebarCollapsed';
+    if(!tg) return;
+    var desk=window.matchMedia('(min-width:901px)');
+    $$('nav.sidebar a').forEach(function(a){ var n=a.querySelector('.num'); if(!a.title) a.title=a.textContent.slice(n?n.textContent.length:0).trim(); });
+    function sync(){ var col=root.classList.contains('sb-collapsed'); var lbl=col?'Expand menu':'Collapse menu';
+      tg.setAttribute('aria-expanded', col?'false':'true'); tg.setAttribute('aria-label', lbl); tg.title=lbl+' (shortcut: [ )';
+      tg.querySelector('.sb-ico').textContent=col?'»':'«'; tg.querySelector('.sb-lbl').textContent=lbl; }
+    function set(col){ root.classList.toggle('sb-collapsed', col); try{ localStorage.setItem(KEY, col?'1':'0'); }catch(e){} sync();
+      setTimeout(function(){ window.dispatchEvent(new Event('resize')); }, 300); }
+    tg.addEventListener('click', function(){ set(!root.classList.contains('sb-collapsed')); });
+    document.addEventListener('keydown', function(e){
+      if(e.key!=='[' || e.ctrlKey || e.metaKey || e.altKey || !desk.matches) return;
+      var t=e.target, tag=t && t.tagName;
+      if(tag==='INPUT'||tag==='TEXTAREA'||tag==='SELECT'||(t&&t.isContentEditable)) return;
+      e.preventDefault(); set(!root.classList.contains('sb-collapsed'));
+    });
+    sync();
+  })();
+
   /* ---------- flip cards ---------- */
   $$('.flip').forEach(function(f){
     f.setAttribute('aria-pressed','false');

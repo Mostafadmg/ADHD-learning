@@ -488,3 +488,23 @@ figure.wt>.walk-d{grid-column:2}
 .se-rf{margin:0 0 .6rem;padding:.55rem .75rem;border-radius:10px;border-left:4px solid #ff7b7b;background:rgba(255,123,123,.15);color:#ffb3b3;font-size:.9rem;line-height:1.4}
 .se-rf b{color:#ff9a9a}
 .cd-info{margin-top:.6rem}
+
+/* ---------- desktop collapsible sidebar (v5) ---------- */
+.sb-toggle{display:none}
+@media (min-width:901px){
+  .layout{transition:grid-template-columns .25s ease}
+  main{transition:max-width .25s ease}
+  .sb-toggle{display:flex;align-items:center;gap:.5rem;width:100%;margin:0 0 .6rem;padding:.5rem .65rem;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);font:inherit;font-size:.9rem;cursor:pointer}
+  .sb-toggle:hover{background:var(--teal-l)}
+  .sb-toggle:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+  .sb-ico{flex:0 0 26px;height:26px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:1rem;line-height:1}
+  html.sb-collapsed .layout{grid-template-columns:68px 1fr}
+  html.sb-collapsed nav.sidebar{padding:1rem .45rem 2rem;overflow-x:hidden}
+  html.sb-collapsed .sb-toggle{justify-content:center;padding:.45rem 0}
+  html.sb-collapsed .sb-lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  html.sb-collapsed nav.sidebar .navhead{display:none}
+  html.sb-collapsed nav.sidebar a{justify-content:center;padding:.4rem 0;font-size:0;gap:0}
+  html.sb-collapsed nav.sidebar a .num{font-size:.8rem}
+  html.sb-collapsed main{max-width:1320px}
+  html.sb-collapsed nav.sidebar>.cl-progress{display:none}
+}
