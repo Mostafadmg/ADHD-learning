@@ -775,3 +775,9 @@ select{min-height:44px}
 @media(max-width:360px){.lab-tgrid{grid-template-columns:1fr}}
 .lab-docnow{background:#fff;border:1px solid var(--line);border-left:5px solid var(--teal);border-radius:10px;padding:.6rem .8rem;font-size:.95rem}
 .lab-sel{min-width:0;max-width:100%}.lab-sel select{width:100%;text-overflow:ellipsis}
+.lab-xbar{position:sticky;top:68px;z-index:4;display:flex;align-items:center;justify-content:space-between;gap:.6rem;background:#fff;border:2px solid var(--navy);border-radius:12px;padding:.35rem .4rem .35rem .8rem;box-shadow:var(--shadow);margin:.6rem 0}
+.lab-station{background:var(--teal-l);border-radius:var(--radius);padding:.6rem .9rem;margin:1.4rem 0 .4rem;border-left:5px solid var(--teal)}
+.lab-station .lab-h{margin-top:.2rem}
+.lab-xq{border-top:1px solid var(--line);padding-top:.6rem}
+.lab-att{list-style:none;padding:0;margin:.3rem 0}.lab-att li{padding:.35rem 0;border-bottom:1px solid var(--line)}
+.lab-sel input[type=text]{font:inherit;min-height:44px;padding:.4rem .6rem;border:2px solid var(--line);border-radius:10px;width:100%;max-width:28rem}

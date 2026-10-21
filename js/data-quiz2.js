@@ -1,3 +1,5 @@
+/* Deterministic option rotation so correct answers are spread across A-D (explanations never refer to letters). */
+window.__mixOpts=window.__mixOpts||function(list,seed){(list||[]).forEach(function(x,i){var n=x.o.length,r=((i+(seed||0))*7+3)%n;if(!r)return;x.o=x.o.slice(r).concat(x.o.slice(0,r));x.a=(x.a-r+n)%n;});return list;};
 /* Additional quiz banks (v6 expansion). Loaded after data-quiz.js; extends window.QUIZ.
    Vignette items are marked v:1 (used to check the ≥30% vignette rule). */
 (function(){var Q=window.QUIZ=window.QUIZ||{};
@@ -41,4 +43,5 @@ Q.sp=[
 {v:1,q:'Margaret, 72, reports new forgetfulness over the last year, losing words and getting lost while driving. Her sister says she was organised all her life. Most appropriate?',o:['Adult ADHD assessment','Assess for cognitive impairment or dementia and other causes; this is not a lifelong pattern','Start atomoxetine','Reassure'],a:1,e:'New-onset problems in later life without childhood symptoms point away from ADHD.',s:DSM+'; NICE NG97 (dementia) context'},
 {v:1,q:'A 16-year-old in custody has a long history of impulsivity and school exclusions. Which NG87 recommendation is most relevant?',o:['1.2.1: people known to the justice system may have increased prevalence of ADHD','1.7.22','1.10.1','None'],a:0,e:'NG87 1.2.1 lists people known to the Youth Justice or Adult Criminal Justice System.',s:NG+' 1.2.1'},
 {v:1,q:'A looked-after 8-year-old has moved placements four times. Which approach is safest?',o:['Diagnose on one carer report','Multi-source assessment: records from each placement and school, trauma history, social worker involved','Wait until 18','Medicate first, assess later'],a:1,e:'Looked-after children may have increased prevalence (NG87 1.2.1), but trauma and fragmented histories need careful assessment.',s:NG+' 1.2.1'}];
+__mixOpts(Q.dx,1);__mixOpts(Q.sim,2);__mixOpts(Q.sp,3);
 })();
