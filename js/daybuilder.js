@@ -59,7 +59,22 @@
     if(g.id==='gua'){ if(adult) w.push(['high','Guanfacine in adults is off-label: use only with advice from a tertiary ADHD service (NG87 1.7.17).']); else if(S.d>4) w.push(['warn','Above 4 mg: 6–12 year olds max 4 mg; 13–17 year olds up to 7 mg by weight band (SPC). Check the weight band.']); }
     return w;
   }
-  XP._doseCheck=doseCheck;
+  /* BNF/BNFC figures (accessed 21 Oct 2026) shown only where they differ from the product's SmPC maximum. */
+  function bnfNote(g,brand,adult){
+    var B='BNF', C='BNFC', id=g.id;
+    if(id==='mphir') return adult?B+' (adult IR): up to 100 mg/day in 2–3 doses; doses above the Ritalin 80 mg licence are off-label.':C+' (6–17 y): licensed maximum 60 mg/day; up to 90 mg/day only under specialist direction (off-label).';
+    if(id==='oros'){
+      if(brand==='Concerta XL') return adult?B+' (adult Concerta XL): maximum 108 mg/day, above the 72 mg licence (off-label).':C+' (Concerta XL): licensed maximum 54 mg; up to 108 mg/day only under specialist direction (off-label).';
+      if(brand==='Delmosart'||brand==='Xaggitin XL') return adult?B+' lists a maximum of 54 mg/day for '+brand+' in adults; the SmPC licenses up to 72 mg/day. This tool uses the SmPC maximum.':'';
+      return 'No brand-specific '+B+'/'+C+' entry for '+brand+': follow its SmPC.';
+    }
+    if(id==='mk'||id==='eq') return adult?B+' (adult '+(id==='mk'?'Medikinet XL':'Equasym XL')+'): maximum 100 mg/day'+(id==='eq'?'; Equasym XL has no adult licence (off-label).':', above the 80 mg licence (off-label).'):C+': licensed maximum 60 mg; up to 90 mg/day only under specialist direction (off-label).';
+    if(id==='dex') return adult?B+' (adult): 5 mg twice daily, maximum 60 mg/day; dexamfetamine has no adult ADHD licence (off-label).':'';
+    if(id==='ato') return adult?B+' (adult): maximum 120 mg/day under specialist direction; the "dose maximum of 120 mg" is not licensed.':C+': maximum 1.8 mg/kg and 120 mg/day under specialist direction; doses above 100 mg daily are not licensed.';
+    if(id==='gua') return adult?B+' lists no adult dose for guanfacine.':'';
+    return '';
+  }
+  XP._doseCheck=doseCheck; XP._bnfNote=bnfNote;
   function peakOf(a){ var p=0; for(var i=0;i<a.length;i++) if(a[i]>p) p=a[i]; return p; }
 
   /* ---------- products ---------- */
@@ -137,7 +152,7 @@
       +'<div class="xp-box xp-ph"><h5>Pharmacist action</h5><div class="xp-phx"></div></div></div>'
       +'<p class="xp-note">Schematic, not pharmacokinetic data. The curves are built from SPC descriptions of release (IR:MR ratio, Tmax, duration) using a simple one-compartment model, normalised so that the morning dose is assumed to be titrated into this person\'s window. Real levels and responses vary widely between people (NG87 1.7.21). Strengths shown: check the current product range (dm+d).</p>'
       +'<details class="xp-src"><summary>Sources</summary><ul>'
-      +'<li>SPCs (emc): Ritalin; Medikinet tablets; Concerta XL; Xaggitin XL, Affenid XL, Xenidate XL (emc) and Delmosart (Accord UK SmPC) for 22:78 maxima (54 mg child, 72 mg adult). Note: the BNF has listed 54 mg as the adult maximum for some 22:78 brands (e.g. Delmosart, Xaggitin XL), whereas their current SmPCs license up to 72 mg in adults; this tool uses the SmPC, so check the current BNF; Medikinet XL; Equasym XL; Elvanse; dexamfetamine; Strattera; Intuniv (sections 4.2, 5.2).</li>'
+      +'<li>SPCs (emc): Ritalin; Medikinet tablets; Concerta XL; Xaggitin XL, Affenid XL, Xenidate XL (emc) and Delmosart (Accord UK SmPC) for 22:78 maxima (54 mg child, 72 mg adult). BNF/BNFC (accessed 21 Oct 2026): Concerta XL up to 108 mg/day (off-label), Delmosart and Xaggitin XL 54 mg/day in adults (SmPC 72 mg); this tool keeps each product\'s SmPC maximum and shows differing BNF figures as notes; Medikinet XL; Equasym XL; Elvanse; dexamfetamine; Strattera; Intuniv (sections 4.2, 5.2).</li>'
       +'<li>NICE NG87 (live text checked Oct 2026): 1.7.8, 1.7.17, 1.7.21, 1.7.22, 1.7.23, 1.8.6, 1.8.9, 1.8.17.</li>'
       +'<li>MHRA Drug Safety Update (2022): prescribe modified-release methylphenidate by brand.</li>'
       +'<li>SPS: Methylphenidate modified-release preparations (updated 28 Aug 2025).</li>'
@@ -306,6 +321,7 @@
     }
     function warnings(){
       var w=doseCheck(S);
+      var bn=bnfNote(G[S.g],G[S.g].brands[S.b]||G[S.g].brands[0],S.age==='adult'); if(bn) w.push(['info',bn]);
       if(S.g==='lis') w.push(['info','Time in window is schematic (a threshold on a model curve). The Elvanse SPC reports effects still present at 13 h in children and 14 h in adults.']);
       var bed=S.age==='child'?1260:1350;
       S.add.forEach(function(a,i){ if(a.t>=bed-300) w.push(['warn','Extra dose '+(i+1)+' at '+hhmm(a.t)+' is less than 5 h before bedtime ('+hhmm(bed)+'): high risk of delayed sleep onset.']); });

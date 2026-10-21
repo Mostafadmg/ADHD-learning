@@ -30,7 +30,7 @@ m4:[
  {q:'NICE advice on dietary fatty acid supplements for ADHD in children:', o:['Offer omega-3 first line','Do not advise or offer','Offer if medication declined','Offer with stimulants'], a:1, e:'NG87 1.6.4. Also do not advise elimination of artificial colourings as a general treatment (1.6.2).', s:NG+' 1.6.2–1.6.4'}
 ],
 m5:[
- {q:'Maximum licensed daily dose of Concerta XL in adults (SPC):', o:['54 mg','72 mg','90 mg','108 mg'], a:1, e:'Concerta XL SPC: max 54 mg in children and 72 mg in adults. (Some specialists use higher doses off-label — check BNF and local guidance.)', s:'Concerta XL SPC §4.2'},
+ {q:'Maximum licensed daily dose of Concerta XL in adults (SPC):', o:['54 mg','72 mg','90 mg','108 mg'], a:1, e:'Concerta XL SPC: max 54 mg in children and 72 mg in adults. (The BNF/BNFC list up to 108 mg/day under specialist direction; this is off-label.)', s:'Concerta XL SPC §4.2'},
  {q:'IR:MR ratio of Equasym XL:', o:['22:78','30:70','50:50','100:0'], a:1, e:'Equasym XL is 30% IR / 70% MR, about 8 h duration; taken before breakfast. SPS: no other MR product is bioequivalent — do not switch or prescribe generically.', s:'Equasym XL SPC §4.2; SPS'},
  {q:'Elvanse starting dose and maximum (SPC):', o:['20 mg; 50 mg','30 mg (or 20 mg); 70 mg','10 mg; 60 mg','50 mg; 100 mg'], a:1, e:'Start 30 mg each morning (20 mg if lower start appropriate), increase by 10–20 mg about weekly, max 70 mg/day (50 mg if severe renal impairment).', s:'Elvanse SPC §4.2'},
  {q:'Guanfacine must be stopped by:', o:['Abrupt cessation','Tapering by no more than 1 mg every 3–7 days','Switching to clonidine','Halving weekly'], a:1, e:'Rebound rises in BP and HR can occur; taper ≤1 mg every 3–7 days with BP/pulse monitoring.', s:'Intuniv SPC §4.2'},

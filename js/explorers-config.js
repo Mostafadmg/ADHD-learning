@@ -149,7 +149,7 @@
        pharm:'Advise the prescriber that the dose likely exceeds this person\'s optimum, and do not supply an unexplained increase beyond the licensed maximum without checking. Ensure HR, BP and weight are rechecked promptly.'}
     ],
     note:'Schematic curves for one hypothetical child. Not dosing guidance: always follow the SPC and the current BNF/BNFC (NG87 1.7.27), and the prescriber\'s plan.',
-    sources:['NICE NG87 (live text checked Oct 2026): 1.7.4, 1.7.5, 1.7.8, 1.7.21, 1.7.26, 1.7.27, 1.8.5, 1.8.6, 1.8.9, 1.8.11, 1.8.17, 1.8.18.','Ritalin and Medikinet tablet SPCs §4.2 (emc): children start 5 mg once or twice daily, increase by 5–10 mg/day weekly, maximum 60 mg/day.','BNF/BNFC not verified (geo-restricted). Check the current edition.']
+    sources:['NICE NG87 (live text checked Oct 2026): 1.7.4, 1.7.5, 1.7.8, 1.7.21, 1.7.26, 1.7.27, 1.8.5, 1.8.6, 1.8.9, 1.8.11, 1.8.17, 1.8.18.','Ritalin and Medikinet tablet SPCs §4.2 (emc): children start 5 mg once or twice daily, increase by 5–10 mg/day weekly, maximum 60 mg/day.','BNFC (accessed 21 Oct 2026): IR methylphenidate 6–17 y, licensed maximum 60 mg/day; up to 90 mg/day under specialist direction (off-label).']
   };
 
   /* ===================== 3. Impairment across settings (Module 1) ===================== */

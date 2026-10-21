@@ -508,3 +508,8 @@ figure.wt>.walk-d{grid-column:2}
   html.sb-collapsed main{max-width:1320px}
   html.sb-collapsed nav.sidebar>.cl-progress{display:none}
 }
+.badge.ol{background:#fdecea;color:#b3261e;margin-left:.15rem}
+.src-line{margin:.2rem 0 1rem}
+@media (min-width:901px){td.bnfchk{min-width:15rem}}
+td.bnfchk b{color:var(--navy)}
+td.bnfchk{color:inherit}

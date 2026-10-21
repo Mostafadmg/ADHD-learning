@@ -3,7 +3,7 @@ window.TITRATION = {
   mph_ir_child: {
     name:'Methylphenidate IR – child 6–17 y (e.g. Medikinet / Ritalin tablets)',
     pop:'Children 6 years and over and adolescents', max:'60 mg/day (SPC licensed maximum)',
-    note:'SPC: start 5 mg once or twice daily (e.g. breakfast and lunch), increase if necessary by weekly increments of 5–10 mg in the daily dose. BNFC may allow higher doses under specialist direction — not verified live (BNFC geo-restricted).',
+    note:'SPC: start 5 mg once or twice daily (e.g. breakfast and lunch), increase if necessary by weekly increments of 5–10 mg in the daily dose. BNFC (accessed 21 Oct 2026): licensed maximum 60 mg/day in 2–3 doses (or 2.1 mg/kg/day); up to 90 mg/day only under specialist direction (off-label).',
     src:'Medikinet tablets SPC §4.2; Ritalin 10 mg SPC §4.2 (emc)',
     monitor:'Symptoms and adverse effects on standard scales (parent and teacher) at baseline and each dose change; HR and BP before and after each dose change (NICE 1.7.26, 1.8.9).',
     steps:[
@@ -18,7 +18,7 @@ window.TITRATION = {
   concerta: {
     name:'Concerta XL (OROS MR tablet) – child or adult',
     pop:'Children 6+ and adults', max:'54 mg/day children; 72 mg/day adults (SPC)',
-    note:'SPC: start 18 mg once daily in the morning for those new to methylphenidate; adjust in 18 mg increments at approximately weekly intervals (27 mg strength available). Conversion: IR 5 mg TDS ≈ 18 mg; 10 mg TDS ≈ 36 mg; 15 mg TDS ≈ 54 mg; 20 mg TDS ≈ 72 mg. Higher off-label adult doses are used by some specialists — not verified against the BNF here.',
+    note:'SPC: start 18 mg once daily in the morning for those new to methylphenidate; adjust in 18 mg increments at approximately weekly intervals (27 mg strength available). Conversion: IR 5 mg TDS ≈ 18 mg; 10 mg TDS ≈ 36 mg; 15 mg TDS ≈ 54 mg; 20 mg TDS ≈ 72 mg. BNF (accessed 21 Oct 2026): Concerta XL max 108 mg/day in children (under specialist direction) and adults, above the 54/72 mg licence (off-label); Delmosart and Xaggitin XL max 54 mg/day in children and adults.',
     src:'Concerta XL SPC §4.2 (emc, revised 06/11/2025)',
     monitor:'HR, BP and weight before and after each dose change; symptoms; sleep and appetite.',
     steps:[
@@ -46,7 +46,7 @@ window.TITRATION = {
   dexamf: {
     name:'Dexamfetamine IR (e.g. Amfexa) – child 6–17 y',
     pop:'Children 6–17 y (licensed when methylphenidate response clinically inadequate; adult use is off-label)', max:'Usually 20 mg/day; 40 mg/day rarely needed (SPC)',
-    note:'SPC: start 5 mg once or twice daily, increase by weekly increments of 5 mg. Tablets can be divided to aid swallowing (cross-scored; not for equal dose division). Taper on discontinuation.',
+    note:'SPC: start 5 mg once or twice daily, increase by weekly increments of 5 mg. BNFC (accessed 21 Oct 2026): initially 2.5 mg 2–3 times a day, ↑ 5 mg weekly; usual max 1 mg/kg, up to 20 mg/day (40 mg/day has been required in some children); 2–4 divided doses. Tablets can be divided to aid swallowing (cross-scored; not for equal dose division). Taper on discontinuation.',
     src:'Amfexa SPC §4.2 (emc, revised 14/01/2026)',
     monitor:'HR/BP, growth, sleep, appetite, mood; misuse and diversion (IR, high street value).',
     steps:[
@@ -60,7 +60,7 @@ window.TITRATION = {
   atx_adult: {
     name:'Atomoxetine – adult (or child > 70 kg)',
     pop:'Adults; children/adolescents over 70 kg', max:'100 mg/day (SPC)',
-    note:'SPC: start 40 mg/day, maintain for a minimum of 7 days, then titrate; maintenance 80–100 mg/day in adults (80 mg in children > 70 kg). Children ≤ 70 kg: start ≈ 0.5 mg/kg/day, maintenance ≈ 1.2 mg/kg/day. Full effect can take several weeks. CYP2D6 inhibitors (fluoxetine, paroxetine) increase exposure 6–8-fold — slower titration/lower dose.',
+    note:'SPC: start 40 mg/day, maintain for a minimum of 7 days, then titrate; maintenance 80–100 mg/day in adults (80 mg in children > 70 kg). Children ≤ 70 kg: start ≈ 0.5 mg/kg/day, maintenance ≈ 1.2 mg/kg/day. Full effect can take several weeks. CYP2D6 inhibitors (fluoxetine, paroxetine) increase exposure 6–8-fold — slower titration/lower dose. BNF (accessed 21 Oct 2026): maximum 120 mg/day under specialist direction; above 100 mg/day is off-label.',
     src:'Atomoxetine 40 mg capsules SPC §4.2, 4.5 (emc)',
     monitor:'HR/BP after each dose change and at least 6-monthly; suicidal thoughts; signs of liver injury (jaundice, dark urine, RUQ pain); sexual dysfunction (NICE 1.8.15).',
     steps:[
@@ -73,7 +73,7 @@ window.TITRATION = {
   atx_child: {
     name:'Atomoxetine – child/adolescent 6+ up to 70 kg (weight-based)',
     pop:'Children 6+ and adolescents up to 70 kg (worked example: 30 kg)', maxLabel:'Dose limits', max:'Maintenance ≈ 1.2 mg/kg/day; no added benefit shown above 1.2 mg/kg/day; doses over 1.8 mg/kg/day not systematically evaluated (SPC)',
-    note:'SPC: start at a total daily dose of approximately 0.5 mg/kg; keep the initial dose for a minimum of 7 days, then titrate up according to response and tolerability; recommended maintenance approximately 1.2 mg/kg/day. Once daily in the morning, or split (morning and late afternoon/early evening) if nausea or somnolence. Capsule strengths: 10, 18, 25, 40, 60, 80, 100 mg. Full effect builds over several weeks. BNFC maximum not verified (geo-restricted) — check BNFC (NICE 1.7.27).',
+    note:'SPC: start at a total daily dose of approximately 0.5 mg/kg; keep the initial dose for a minimum of 7 days, then titrate up according to response and tolerability; recommended maintenance approximately 1.2 mg/kg/day. Once daily in the morning, or split (morning and late afternoon/early evening) if nausea or somnolence. Capsule strengths: 10, 18, 25, 40, 60, 80, 100 mg. Full effect builds over several weeks. BNFC (accessed 21 Oct 2026): maximum 1.8 mg/kg/day and 120 mg/day, high doses under specialist direction; doses above 100 mg/day are not licensed.',
     src:'Atomoxetine SPC §4.2 (emc 10332)',
     monitor:'Weight, height, HR and BP before and after each dose change and at least 6-monthly; suicidal thoughts and behaviour; signs of liver injury (jaundice, dark urine, right upper quadrant pain).',
     steps:[
