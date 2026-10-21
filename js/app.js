@@ -36,7 +36,7 @@
   var modules = $$('.module');
   var trackable = modules.filter(function(m){return m.dataset.track==='1';});
   var current = null;
-  function show(id){
+  function show(id, initial){
     var el = id ? document.getElementById(id) : null;
     var target;
     if(el && el.classList.contains('module')) target = el;
@@ -54,11 +54,12 @@
     if(el && el !== target){
       /* deep link to an element inside a module, or the skip link to <main> */
       if(!el.hasAttribute('tabindex')) el.setAttribute('tabindex','-1');
-      setTimeout(function(){ el.scrollIntoView({block:'start'}); el.focus({preventScroll:true}); }, 30);
+      setTimeout(function(){ el.scrollIntoView({block:'start'}); if(!initial) el.focus({preventScroll:true}); }, 30);
       return;
     }
     if(changed || !el){ window.scrollTo(0,0); }
-    var h = target.querySelector('h1'); if(h){ h.setAttribute('tabindex','-1'); h.focus({preventScroll:true}); }
+    /* On first load leave focus at the top of the document so the first Tab reaches the skip link. */
+    var h = target.querySelector('h1'); if(h){ h.setAttribute('tabindex','-1'); if(!initial) h.focus({preventScroll:true}); }
   }
   window.addEventListener('hashchange', function(){ show(location.hash.slice(1)); });
 
@@ -255,7 +256,7 @@
   var mr = $('#mrExplorer');
   if(mr){
     var prof = {
-      'Concerta XL and bioequivalent tablets (Affenid XL, Atenza XL, Delmosart, Matoride XL, Xaggitin XL, Xenidate XL)':{ir:22,mr:78,dur:'about 12 h (second peak 6–8 h)',food:'With or without food; swallow whole with liquid; do not chew, divide or crush',strengths:'18, 27, 36, 54 mg (Atenza XL also 45 mg; Matoride XL 18, 36, 54 mg)',note:'Concerta XL, Affenid XL, Atenza XL and Matoride XL are osmotic tablets (the empty shell may appear in stool). SPS gives Delmosart and Xaggitin XL as 25:75 (Xaggitin XL is a matrix tablet) and Xenidate XL as a multiple-unit tablet; all are bioequivalent to Concerta XL (SPS). Matoride XL is licensed for children only.'},
+      'Concerta XL and bioequivalent tablets (Affenid XL, Atenza XL, Delmosart, Matoride XL, Xaggitin XL, Xenidate XL)':{ir:22,mr:78,dur:'about 12 h (second peak 6–8 h)',food:'With or without food; swallow whole with liquid; do not chew, divide or crush',strengths:'18, 27, 36, 54 mg (Atenza XL also 45 mg; Matoride XL 18, 36, 54 mg)',note:'Concerta XL, Affenid XL, Atenza XL and Matoride XL are osmotic tablets (the empty shell may appear in stool). SPS gives Delmosart and Xaggitin XL as 25:75 (Xaggitin XL is a matrix tablet) and Xenidate XL as a multiple-unit tablet; all are bioequivalent to Concerta XL (SPS). Matoride XL is indicated in children 6+; it may continue into adulthood after clear benefit, but adult initiation is not appropriate (max 54 mg/day, SmPC 4.1, 4.2).'},
       'Ritalin XL-type capsules (Ritalin XL, Meflynate XL, Metyrol XL, Focusim XL)':{ir:50,mr:50,dur:'about 8 h (two peaks about 4 h apart)',food:'With or without food; capsule may be opened and the beads sprinkled on cool soft food and taken at once',strengths:'Ritalin XL 10–40 mg; Meflynate XL and Metyrol XL 10–60 mg; Focusim XL 10–40 mg',note:'SPS lists these four as bioequivalent to one another. Second peak at 5–7 h (Ritalin XL SmPC) or about 4 h (SPS table).'},
       'Medikinet XL capsules':{ir:50,mr:50,dur:'about 8 h (second rise ~3 h after the first)',food:'Must be taken with or after food (risk of dose dumping on an empty stomach): children in the morning with breakfast; adults morning and lunchtime with meals; may be opened and sprinkled on apple sauce or yoghurt',strengths:'5, 10, 20, 30, 40, 50, 60 mg',note:'SPS: not completely bioequivalent with the Ritalin XL-type capsules, so switch with particular care.'},
       'Equasym XL capsules':{ir:30,mr:70,dur:'about 8 h (peaks ~1.5 h and ~4.5 h)',food:'In the morning before breakfast; may be opened and sprinkled on a tablespoon of apple sauce',strengths:'10, 20, 30 mg',note:'SPS: no other MR product is bioequivalent, so do not switch or prescribe generically. Not licensed for adults.'},
@@ -325,5 +326,12 @@
     lis.forEach(function(li){ li.setAttribute('tabindex','0'); li.addEventListener('click', function(){ sel(li.dataset.s); });
       li.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); sel(li.dataset.s); } }); });
   });
-  show(location.hash.slice(1) || 'home');
+  show(location.hash.slice(1) || 'home', true);
+  /* A deep link moves the browser's sequential-focus starting point to the target; reset it to the top
+     so the first Tab still reaches the skip link (focus is not moved into the module on first load). */
+  if(location.hash){
+    var resetStart=function(){ var ae=document.activeElement; if(ae && ae!==document.body && ae!==document.documentElement) return;
+      var b=document.body; b.setAttribute('tabindex','-1'); b.focus({preventScroll:true}); b.removeAttribute('tabindex'); };
+    if(document.readyState==='complete') setTimeout(resetStart,60); else window.addEventListener('load',function(){ setTimeout(resetStart,60); });
+  }
 })();

@@ -100,12 +100,12 @@ window.BRANDS=[
 "ratio": "22:78 (manufacturer confirms bioequivalence — SPS)",
 "time": "Onset 1–2 h; peak 6–8 h; about 12 h (SPS).",
 "strengths": "18, 36, 54 mg",
-"lic": "<strong>Children 6+ only — not licensed for adults</strong> (SmPC 4.1).",
-"dose": "Max 54 mg/day (SmPC 4.2).",
+"lic": "Indicated in children 6+ (SmPC 4.1). <strong>Adults: continuation only</strong>: treatment may continue into adulthood in adolescents who have shown clear benefit, but starting it in adults is not appropriate (SmPC 4.2).",
+"dose": "18 mg once daily in the morning for patients new to methylphenidate; adjust in 18 mg steps at about weekly intervals. Max 54 mg/day, including adults continuing treatment (SmPC 4.2).",
 "bnf": "No brand-specific BNF/BNFC entry: follow the SmPC.",
 "admin": "Once daily in the morning, with or without food. Swallow whole with liquid; must not be chewed, divided or crushed (SmPC 4.2).",
 "exc": "Lactose 6.42 mg per 54 mg tablet (SmPC 2).",
-"inter": "SPS tablet group (bioequivalent to Concerta XL): Affenid XL, Atenza XL, Concerta XL, Delmosart, Matoride XL, Xaggitin XL, Xenidate XL. Can be switched at the same dose and quantity if necessary (SPS). At 18, check the licence before continuing Matoride XL into adult care.",
+"inter": "SPS tablet group (bioequivalent to Concerta XL): Affenid XL, Atenza XL, Concerta XL, Delmosart, Matoride XL, Xaggitin XL, Xenidate XL. Can be switched at the same dose and quantity if necessary (SPS). At 18: may continue (max 54 mg/day) after clear benefit; not for adult initiation (SmPC 4.2).",
 "src": "Matoride XL SmPC (emc 3304); SPS."
 },
 {

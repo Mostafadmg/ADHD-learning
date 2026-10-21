@@ -49,6 +49,7 @@
     if(g.drug==='mph'){
       var bmax=prodMaxOf(g,brand,adult), absLim=adult?80:60;
       if(adult && bmax===0) w.push(['high',brand+' is not licensed for adults in the UK (SPC 4.1). Use in adults would be off-label.']);
+      if(adult && g.adultNote && g.adultNote[brand]) w.push(['high',g.adultNote[brand]]);
       if(adult && bmax===null) w.push(['info','Adult licensing differs between generic IR methylphenidate tablets: check the SPC of the product dispensed.']);
       if(bmax && S.d>bmax) w.push(['danger',brand+' '+S.d+' mg is above the licensed maximum for this product ('+bmax+' mg/day '+(adult?'adult':'child')+', SPC 4.2).'+OFF]);
       var kg=(adult&&g.id==='mk')?' Medikinet XL adult dosing must also not exceed 1 mg/kg body weight (≤1 mg/kg, SPC 4.2).':'';
@@ -89,8 +90,10 @@
      doses:[5,10,15,20], def:10, unitLbl:'mg', childMax:60, adultMax:{ 'Ritalin':80, 'Medikinet tablets':0, 'Generic methylphenidate IR tablets':null },
      shape:'<p><strong>Immediate release:</strong> the tablet dissolves and methylphenidate is absorbed quickly. The SPC gives a Tmax of 1–2 h and a duration of effect of up to about 4 h (Ritalin; Medikinet tablets 1–4 h). Food increases Ritalin\'s Cmax by about 23%. One morning tablet does not cover a school or working day, so IR is usually given 2–3 times a day, or used as a top-up to an MR product.</p>'},
     {id:'oros', chip:'MR 22:78 (Concerta-type)', drug:'mph', model:'oros', brands:['Concerta XL','Xaggitin XL','Delmosart','Affenid XL','Xenidate XL','Atenza XL','Matoride XL'],
-     doses:[18,27,36,54,72], def:36, childMax:54, adultMax:{'Concerta XL':72,'Xaggitin XL':72,'Delmosart':72,'Affenid XL':72,'Xenidate XL':72,'Atenza XL':72,'Matoride XL':0},
-     /* Atenza XL (emc 101204): children 6+ and adults, adult max 72 mg. Matoride XL (emc 3304): children 6+ only, max 54 mg. */
+     doses:[18,27,36,54,72], def:36, childMax:54, adultMax:{'Concerta XL':72,'Xaggitin XL':72,'Delmosart':72,'Affenid XL':72,'Xenidate XL':72,'Atenza XL':72,'Matoride XL':54},
+     adultNote:{'Matoride XL':'Matoride XL (SmPC 4.2): treatment may continue into adulthood in adolescents who have shown clear benefit, but starting it in adults is not appropriate. Maximum 54 mg/day.'},
+     brandDoses:{'Atenza XL':[18,27,36,45,54,72],'Matoride XL':[18,36,54]},
+     /* Atenza XL (emc 101204): children 6+ and adults, adult max 72 mg; the only brand with a 45 mg tablet. Matoride XL (emc 3304): indicated in children 6+; max 54 mg/day; may continue into adulthood after clear benefit, but adult initiation is not appropriate (SmPC 4.2). */
      /* each brand checked against its own UK SPC 4.1/4.2 (Oct 2026): children 6+ and adults; max 54 mg child, 72 mg adult */
      shape:'<p><strong>22:78-type prolonged-release tablets (Concerta XL and bioequivalent brands):</strong> about a fifth of the dose is released straight away from the tablet coat, giving an initial maximum at about 1–2 h. The rest is released gradually from the tablet core, so the level keeps <em>rising</em> to a peak at about 6–8 h (Concerta XL SmPC: Tmax 6.8 ± 1.8 h in adults) and cover lasts about 12 h (SPS). <strong>Concerta XL, Affenid XL, Atenza XL and Matoride XL are osmotic tablets</strong>: the empty, non-absorbable shell can appear in stools, which is expected (SmPC 4.4). <strong>Xaggitin XL</strong> (25:75; matrix core) and <strong>Xenidate XL</strong> (multiple-unit tablet) are not osmotic but are bioequivalent (SmPC 6.1, 5.2; SPS). All must be swallowed whole and not chewed, divided or crushed (SmPC 4.2).</p>'},
     {id:'mk', chip:'Medikinet XL (50:50)', drug:'mph', model:'mk', brands:['Medikinet XL'],
@@ -178,8 +181,9 @@
     function fillSelects(){
       var g=G[S.g];
       selB.innerHTML=g.brands.map(function(b,i){return opt(i,b,i===S.b);}).join('');
-      if(g.doses.indexOf(S.d)<0) S.d=g.def;
-      selD.innerHTML=g.doses.map(function(d){return opt(d,d+' mg'+(g.id==='mphir'||g.id==='dex'?' (morning)':' once daily'),d===S.d);}).join('');
+      var ds=(g.brandDoses&&g.brandDoses[g.brands[S.b]])||g.doses;
+      if(ds.indexOf(S.d)<0) S.d=ds.indexOf(g.def)>=0?g.def:ds[0];
+      selD.innerHTML=ds.map(function(d){return opt(d,d+' mg'+(g.id==='mphir'||g.id==='dex'?' (morning)':' once daily'),d===S.d);}).join('');
       selT.value=S.t;
       R.querySelectorAll('.db-meds .xp-chip').forEach(function(c){ c.setAttribute('aria-pressed', c.dataset.g===S.g?'true':'false'); });
       R.querySelectorAll('.db-age .xp-chip').forEach(function(c){ c.setAttribute('aria-pressed', c.dataset.age===S.age?'true':'false'); });
@@ -201,7 +205,7 @@
     }
 
     function compute(){
-      var g=G[S.g], key=JSON.stringify([S.g,S.d,S.t,S.add]);
+      var g=G[S.g], key=JSON.stringify([S.g,S.b,S.d,S.t,S.add]);
       if(key===lastKey) return curves; lastKey=key;
       var doses=[];
       if(g.flat){ curves={flat:true, doses:[], total:null}; return curves; }

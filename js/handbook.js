@@ -46,6 +46,10 @@
     s+=line(a,'#6fb3f2',false)+(bid?line(bid,'#f2c14e',true):'');
     return '<svg class="xp-svg" viewBox="0 0 360 236" role="img" aria-label="Schematic release profile of '+esc(A.name)+(bid?' compared with '+esc(BY[bid].name):'')+', hours after dose against relative level">'+s+'</svg>';
   }
+  function CAVEAT(id){
+    if(id==='equasym') return ' Equasym XL: the SmPC reports two peaks of similar height (about 7.7 and 8.2 ng/ml at about 1.5 h and 4.5 h; SmPC 5.2). With a 30% immediate-release fraction this simple model cannot match both heights, so it draws the first peak lower: read the timings, not the heights.';
+    if(id==='medikinetxl') return ' Medikinet XL: the SmPC gives a mean Tmax of 2.75 h and a 3–4 h plateau at or above 75% of peak (SmPC 5.2). The model keeps the plateau, so its single highest point falls later (about 3.7 h): read the plateau, not the exact peak.';
+    return ''; }
   function facts(b){
     var rows=[['Release mechanism',b.mech],['IR : MR',b.ratio],['Onset, peaks and duration',b.time],['Strengths',b.strengths],['Licence',b.lic],['Licensed dosing and titration',b.dose],['BNF/BNFC (accessed 21 Oct 2026)',b.bnf],['Food, swallowing and sprinkling',b.admin],['Excipients to check',b.exc],['Interchangeability',b.inter],['Legal status',b.cd]];
     return '<dl class="hb-dl">'+rows.map(function(r){return '<div><dt>'+esc(r[0])+'</dt><dd>'+r[1]+'</dd></div>';}).join('')+'</dl><p class="xp-note">Source: '+b.src+'</p>';
@@ -65,7 +69,7 @@
       if(!A.model) ch.innerHTML='<p class="hb-flat"><strong>'+esc(A.name)+':</strong> no daily release curve to draw. Benefit builds over weeks and, once established, is not tied to a daily peak ('+(A.id==='gua'?'Intuniv SmPC 5.1':'atomoxetine SmPC 5.1')+'). Compare it with a stimulant to see why timing questions differ.</p>'+(Bp&&Bp.model?chart(S.b,''):'');
       else ch.innerHTML=chart(S.a,Bp&&Bp.model?S.b:'');
       function pkTxt(id){ var c=curve(id); return c?c.peaks.map(function(q){return q[0].toFixed(1)+' h';}).join(' and '):''; }
-      R.querySelector('.hb-legend').innerHTML=(A.model?'<span><i style="background:#6fb3f2"></i>'+esc(A.name)+': peaks at '+pkTxt(S.a)+'</span>':'')+(Bp&&Bp.model?'<span><i class="dash" style="border-color:#f2c14e"></i>'+esc(Bp.name)+': peaks at '+pkTxt(S.b)+'</span>':'')+((A.model||(Bp&&Bp.model))?'<span class="hb-lnote">Peak times are from the teaching model; the SmPC timings are in the facts below.</span>':'');
+      R.querySelector('.hb-legend').innerHTML=(A.model?'<span><i style="background:#6fb3f2"></i>'+esc(A.name)+': peaks at '+pkTxt(S.a)+'</span>':'')+(Bp&&Bp.model?'<span><i class="dash" style="border-color:#f2c14e"></i>'+esc(Bp.name)+': peaks at '+pkTxt(S.b)+'</span>':'')+((A.model||(Bp&&Bp.model))?'<span class="hb-lnote">Peak times are from the teaching model; the SmPC timings are in the facts below.'+CAVEAT(S.a)+(Bp?CAVEAT(S.b):'')+'</span>':'');
       R.querySelector('.hb-facts').innerHTML='<h4 class="hb-h">'+esc(A.name)+'</h4>'+facts(A)+(Bp?'<details class="hb-cmp"><summary>Show '+esc(Bp.name)+' details</summary>'+facts(Bp)+'</details>':'');
     }
     sa.addEventListener('change',render); sb.addEventListener('change',render); render();
@@ -83,7 +87,7 @@
     if(!stim(F)||!stim(Tt)){
       tone='high'; badge='Molecule switch'; head='Different medicine: there is no dose conversion';
       out.push('<li><strong>No conversion factor exists.</strong> None of the SmPCs gives a dose conversion between methylphenidate, lisdexamfetamine, dexamfetamine, atomoxetine and guanfacine. The new medicine is started at its own licensed starting dose and titrated: '+Tt.dose+'</li>');
-      out.push('<li><strong>Who decides:</strong> switching between medicines follows the NG87 sequence (e.g. methylphenidate → lisdexamfetamine after an adequate 6-week trial, 1.7.8 and 1.7.12; atomoxetine or guanfacine in children, or atomoxetine in adults, after both stimulants have not been tolerated or have not worked, 1.7.10 and 1.7.15) and is a specialist decision under shared care (1.7.29).</li>');
+      out.push('<li><strong>Who decides:</strong> switching between medicines follows the NG87 sequence (e.g. methylphenidate → lisdexamfetamine after a 6-week trial at an adequate dose without enough benefit, 1.7.8 and 1.7.12; atomoxetine or guanfacine in children (1.7.10), or atomoxetine in adults (1.7.15), if the person cannot tolerate methylphenidate or lisdexamfetamine, or their symptoms have not responded to separate 6-week trials of both) and is a specialist decision under shared care (1.7.29).</li>');
       if(F.id==='gua') out.push('<li><strong>Stopping guanfacine:</strong> taper by no more than 1 mg every 3–7 days and monitor BP and pulse (rebound hypertension) (Intuniv SmPC 4.2, 4.4).</li>');
       if(F.id==='dex') out.push('<li><strong>Stopping dexamfetamine:</strong> the SmPC advises careful supervision on withdrawal (risk of depression and fatigue).</li>');
       if(Tt.id==='atx'||Tt.id==='gua') out.push('<li><strong>Expect a lag:</strong> benefit from '+(Tt.id==='atx'?'atomoxetine':'guanfacine')+' builds over weeks, so any overlap or cross-taper is planned by the specialist; the SmPCs give no cross-taper schedule.</li>');
@@ -99,37 +103,36 @@
     } else if(F.grp===Tt.grp && (F.grp==='tab'||F.grp==='cap')){
       badge='Bioequivalent'; head='Same dose and quantity ('+total+' mg)';
       out.push('<li><strong>'+esc(F.name)+' → '+esc(Tt.name)+':</strong> both are in the same SPS bioequivalence group, so switch at the same dose and quantity if a switch is necessary (SPS).</li>');
-      if(Tt.id==='matoride') out.push('<li><strong>Check the licence:</strong> Matoride XL is licensed for children only (SmPC 4.1).</li>');
+      if(Tt.id==='matoride') out.push('<li><strong>Check the licence:</strong> Matoride XL (SmPC 4.2): treatment may continue into adulthood in adolescents who have shown clear benefit, but starting it in adults is not appropriate. Maximum 54 mg/day.</li>');
       if(F.grp==='tab'&&(F.id==='concerta'||F.id==='affenid'||F.id==='atenza'||F.id==='matoride')!==(Tt.id==='concerta'||Tt.id==='affenid'||Tt.id==='atenza'||Tt.id==='matoride')) out.push('<li><strong>Tablet design changes:</strong> osmotic tablets leave an empty shell in stools; Xaggitin XL and Xenidate XL do not. Warn the person so a change is not mistaken for a problem.</li>');
       if(F.grp==='tab'&&(Tt.id==='xenidate'||F.id==='xenidate')) out.push('<li><strong>Excipient changes:</strong> Xenidate XL contains sucrose instead of lactose (SmPC 2).</li>');
     } else if(Tt.grp==='eq'||F.grp==='eq'){
       tone='danger'; badge='Avoid'; head='Equasym XL has no bioequivalent product';
       out.push('<li><strong>SPS:</strong> no other MR product is bioequivalent to Equasym XL, so it should not be switched to or prescribed generically. If supply forces a change, the specialist individualises the plan.</li>');
-      out.push('<li><strong>Anchor via IR:</strong> Equasym XL 10 mg ≈ 10 mg/day IR methylphenidate (SPS); 20 mg replaces 10 mg IR at breakfast plus 10 mg at lunch (SmPC 4.2). '+(F.grp==='eq'?'So '+total+' mg Equasym XL ≈ '+total+' mg/day IR.':'')+'</li>');
+      out.push('<li><strong>Anchor via IR:</strong> Equasym XL 10 mg ≈ 10 mg/day IR methylphenidate (SPS); 20 mg replaces 10 mg IR at breakfast plus 10 mg at lunch (SmPC 4.2). '+' The specialist chooses the starting dose of any new product.'+'</li>');
       out.push('<li><strong>Profile differs:</strong> 30:70 with peaks at about 1.5 h and 4.5 h, taken before breakfast; children only (SmPC 4.1, 4.2, 5.2).</li>');
     } else if(F.grp==='ir'&&Tt.grp==='tab'){
       if(freq===3&&[5,10,15,20].indexOf(dose)>=0){ var m={5:18,10:36,15:54,20:72}[dose]; head=dose+' mg TDS → '+m+' mg once daily'; badge='SmPC table';
         out.push('<li><strong>SmPC Table 1</strong> (Concerta XL and bioequivalent tablets): '+dose+' mg methylphenidate three times daily → '+m+' mg once daily.</li>');
         if(m>54) out.push('<li><strong>Licence:</strong> '+m+' mg is above the children\'s maximum of 54 mg/day; adults only (max 72 mg) (SmPC 4.2).</li>');
       } else { tone='warn'; badge='Judgement'; head='No SmPC conversion for this regimen';
-        out.push('<li>The SmPC table covers 5, 10, 15 or 20 mg three times daily only. For '+dose+' mg '+(freq===2?'twice':'three times')+' daily ('+total+' mg/day) the starting dose is a clinical judgement. SPS anchor: Concerta XL 18 mg ≈ 15 mg/day IR, so '+total+' mg/day IR ≈ '+Math.round(total*18/15)+' mg; nearest strength '+nearest([18,27,36,54,72],total*18/15)+' mg.</li>'); }
+        out.push('<li>The SmPC table covers 5, 10, 15 or 20 mg three times daily only. For '+dose+' mg '+(freq===2?'twice':'three times')+' daily ('+total+' mg/day) the specialist chooses the starting dose. For reference only, SPS gives Concerta XL 18 mg ≈ 15 mg/day IR.</li>'); }
       out.push('<li><strong>Profile changes:</strong> one dose now covers about 12 h, with a slower start (22–25% released immediately, depending on brand) (SmPC 5.2; SPS).</li>');
     } else if(F.grp==='ir'&&(Tt.grp==='cap'||Tt.grp==='mk')){
       if(freq===2||Tt.grp==='mk'){ badge='SmPC'; head=total+' mg/day IR → '+total+' mg once daily';
         out.push('<li>'+(Tt.grp==='mk'?'Medikinet XL SmPC: switch to the milligram-equivalent daily dose.':'Ritalin XL and Meflynate XL SmPCs: the once-daily dose equals the total daily IR dose given twice daily (e.g. 10 mg BD → 20 mg).')+' Children max 60 mg/day; adults 80 mg/day.</li>');
-        if(freq===3&&Tt.grp==='mk') out.push('<li><strong>Note:</strong> a three-times-daily IR regimen covers a longer day than an 8-hour capsule. The late-afternoon gap may need a small IR dose (SmPC 4.2; NG87 1.7.22).</li>');
+        if(freq===3&&Tt.grp==='mk') out.push('<li><strong>Note:</strong> a three-times-daily IR regimen covers a longer day than an 8-hour capsule. Whether a small late-day IR dose is added is a prescriber decision (Medikinet XL SmPC 4.2; NG87 1.7.22).</li>');
       } else { tone='warn'; badge='Judgement'; head='TDS regimen: no direct SmPC conversion'; out.push('<li>The capsule SmPC tables convert twice-daily IR regimens. A three-times-daily total of '+total+' mg/day may not be fully covered by an 8-hour capsule: specialist judgement.</li>'); }
       if(total>60) out.push('<li><strong>Licence:</strong> above the children\'s maximum of 60 mg/day (adults max 80 mg).</li>');
     } else if(Tt.grp==='ir'){
-      tone='warn'; badge='Specialist'; var irEq=F.grp==='tab'?Math.round(dose*15/18):dose;
-      head=esc(F.name)+' '+dose+' mg ≈ '+irEq+' mg/day IR';
-      out.push('<li><strong>SPS equivalence:</strong> '+(F.grp==='tab'?'Concerta XL 18 mg once daily ≈ 15 mg/day IR, so '+dose+' mg ≈ '+irEq+' mg/day, split into 2–3 doses.':'Medikinet XL 10 mg, Metyrol XL 10 mg and Equasym XL 10 mg ≈ 10 mg/day IR, so '+dose+' mg ≈ '+dose+' mg/day, split into doses.')+'</li>');
+      tone='warn'; badge='Specialist'; head='MR → IR: individualised; the specialist sets the dose';
+      out.push('<li><strong>SPS equivalences (reference points, not a conversion table):</strong> Concerta XL 18 mg once daily ≈ 15 mg/day IR; Medikinet XL 10 mg, Metyrol XL 10 mg and Equasym XL 10 mg ≈ 10 mg/day IR.'+(F.grp==='cap'?' Metyrol XL is in the same SPS capsule group as '+esc(F.name)+'.':'')+' The specialist chooses the IR dose and how to split it.</li>');
       out.push('<li><strong>SPS:</strong> an individualised approach is needed; consider seeking advice or referring back to the initiating specialist. IR products carry a higher risk of misuse and diversion (NG87 1.7.24).</li>');
     } else {
       tone='warn'; badge=(Tt.grp==='mk'||F.grp==='mk')?'Particular care':'Not bioequivalent'; head='Different release profile: specialist decision';
-      var irq=F.grp==='tab'?dose*15/18:dose, tgt=Tt.grp==='tab'?irq*18/15:irq;
-      out.push('<li><strong>'+GRPNAME[F.grp]+' → '+GRPNAME[Tt.grp]+'</strong>'+(Tt.grp==='mk'||F.grp==='mk'?' are not completely bioequivalent (SPS). ':' are not bioequivalent (SPS). ')+(Tt.grp==='mk'||F.grp==='mk'?'Switches between Medikinet XL and the Ritalin XL-type capsules are possible but need particular care (SPS).':'There is no SPS conversion between the tablet and capsule groups.')+'</li>');
-      out.push('<li><strong>Derived via IR equivalents (not a licensed conversion):</strong> '+dose+' mg ≈ '+Math.round(irq)+' mg/day IR ≈ '+Math.round(tgt)+' mg '+esc(Tt.name)+(Tt.grp==='tab'?' (nearest strength '+nearest([18,27,36,54],tgt)+' mg)':'')+'. Treat this as a starting point for the specialist, then titrate.</li>');
+      var mkcap=(F.grp==='mk'&&Tt.grp==='cap')||(F.grp==='cap'&&Tt.grp==='mk');
+      out.push('<li><strong>'+GRPNAME[F.grp]+' → '+GRPNAME[Tt.grp]+':</strong> '+(mkcap?'switches between Medikinet XL and the Ritalin XL-type capsules are possible but need particular care, because Medikinet XL is not completely bioequivalent with them (SPS).':(F.grp==='mk'||Tt.grp==='mk')?'Medikinet XL is not in an SPS bioequivalence group; any switch needs particular care (SPS).':'these groups are not bioequivalent (SPS).')+'</li>');
+      out.push('<li><strong>No SmPC or SPS dose conversion</strong> exists between these groups. For reference only, SPS relates each to IR methylphenidate (Concerta XL 18 mg ≈ 15 mg/day; Medikinet XL, Metyrol XL, Equasym XL 10 mg ≈ 10 mg/day). The specialist chooses the starting dose of the new product and titrates.</li>');
       var PK2={tab:'6–8 h',cap:'5–7 h',mk:'3–4 h',eq:'4.5 h'};
       out.push(DUR[F.grp]===DUR[Tt.grp]?'<li><strong>Timing changes:</strong> cover is similar (about '+DUR[F.grp]+' h), but the second peak moves from '+PK2[F.grp]+' to '+PK2[Tt.grp]+' after the dose (SmPC 5.2; SPS)'+(Tt.grp==='mk'?', and Medikinet XL must be taken with food':'')+'.</li>':'<li><strong>Cover changes:</strong> about '+DUR[F.grp]+' h → about '+DUR[Tt.grp]+' h (SPS), so the late-afternoon picture will change.</li>');
     }
@@ -159,40 +162,84 @@
   XP._plan=plan;
 
   /* ---------------- 3. Missed-dose and timing advisor ---------------- */
+  /* Each product cites only its own SmPC. Where the SmPC is silent, advice is labelled "General principle" or "Practical judgement". */
   var MD=[
-    {id:'mph8',l:'Methylphenidate MR, ~8 h (Medikinet XL, Equasym XL, Ritalin XL-type)'},
-    {id:'mph12',l:'Methylphenidate MR, ~12 h (Concerta XL-type tablets)'},
-    {id:'mphir',l:'Methylphenidate IR (a lunchtime or afternoon dose)'},
+    {id:'rxl',l:'Ritalin XL, Metyrol XL, Meflynate XL, Focusim XL (50:50 capsules)'},
+    {id:'mk',l:'Medikinet XL'},
+    {id:'eq',l:'Equasym XL'},
+    {id:'tab',l:'Concerta XL and bioequivalent 22:78-type tablets'},
+    {id:'ir',l:'Methylphenidate IR (Ritalin, Medikinet tablets)'},
     {id:'lis',l:'Lisdexamfetamine (Elvanse)'},{id:'dex',l:'Dexamfetamine IR'},{id:'atx',l:'Atomoxetine'},{id:'gua',l:'Guanfacine (Intuniv)'}];
   var WHEN=[{v:'early',l:'Within an hour or two of the usual time'},{v:'late',l:'Late morning / around lunch'},{v:'aft',l:'Afternoon or evening'},{v:'two',l:'Two or more days missed in a row'}];
+  var PJ=' <span class="hb-tag">Practical judgement</span>', GP=' <span class="hb-tag">General principle</span>';
+  var NODOUBLE='<li><strong>Do not take two doses</strong> to make up for a missed one.'+GP+'</li>';
+  var MPH_RESTART='<li><strong>After several missed days:</strong> SPS says that after short breaks (up to 2 weeks) methylphenidate can be restarted at the same dose if appropriate; seek specialist advice after longer breaks.</li>';
+  function rebound(src){ return '<li><strong>If symptoms rebound as the dose wears off:</strong> check timing and food first. '+src+' Any extra IR methylphenidate dose is a prescriber decision, not a counter fix; weigh it against sleep (NG87 1.7.22, 1.8.17).</li>'; }
   function missed(p,w){
-    var never='<li><strong>Never double up</strong> to make up for a missed dose (Ritalin XL SmPC 4.2: wait until it is time for the next dose).</li>';
-    var a=[], tone='ok', head='';
-    if(p==='lis'){ head='Skip today; resume tomorrow morning'; if(w==='early'){ head='Take it now if still morning, otherwise skip'; }
-      a.push('<li>Elvanse SmPC 4.2: <em>"In the event of a missed dose, Elvanse dosing can resume the next day."</em> Afternoon doses should be avoided because of the potential for insomnia.</li>'); if(w==='early') a.push('<li>Taking it within the morning is consistent with once-daily morning dosing; this is a practical judgement, not an SmPC rule.</li>'); tone=w==='early'?'ok':'warn'; }
-    else if(p==='gua'){ if(w==='two'){ tone='high'; head='Two or more doses missed: re-titrate'; a.push('<li>Intuniv SmPC 4.2: if two or more consecutive doses are missed, <strong>re-titration is recommended</strong> based on tolerability. Restarting at the full dose risks hypotension, bradycardia and sedation.</li><li>Missed doses also risk rebound rises in BP and heart rate: check BP and pulse and contact the prescriber.</li>'); }
-      else { head='Resume the usual dose the next day'; a.push('<li>Intuniv SmPC 4.2: if a dose is missed, the prescribed dose can resume the next day.</li>'); } }
-    else if(p==='atx'){ head='No SmPC instruction: do not double'; tone='info'; a.push('<li>The atomoxetine SmPC does not give missed-dose advice. Benefit does not depend on a daily peak, so one missed dose matters less than for a stimulant. Do not take two doses together; continue the usual schedule (general principle; check the patient leaflet supplied).</li>'); }
-    else if(p==='dex'){ head=w==='aft'?'Skip it':'Take it if it will not be too late after lunch'; tone=w==='aft'?'warn':'ok'; a.push('<li>Dexamfetamine SmPC 4.2: doses should not be taken too late after lunchtime, to avoid disturbing sleep. The SmPC gives no other missed-dose rule.</li>'); }
-    else if(p==='mphir'){ head=w==='aft'?'Skip it':'Take it if the next dose is not due soon'; tone=w==='aft'?'warn':'ok'; a.push('<li>An IR dose lasts about 4 h (SPS). A late afternoon IR dose often delays sleep (NG87 1.8.17); the SmPCs advise against late doses.</li>'); }
-    else { var dur=p==='mph12'?12:8;
-      if(w==='early'){ head='Take it now'; a.push('<li>A short delay simply shifts cover later by the same amount. Cover lasts about '+dur+' h (SPS).</li>'); }
-      else if(w==='late'){ tone='warn'; head=p==='mph12'?'Usually skip and restart tomorrow':'Judgement: taking it now pushes cover into the evening'; a.push('<li>Cover lasts about '+dur+' h (SPS), so a dose at 12:00 would act until about '+(12+dur)+':00. The SmPCs say not to take it too late in the day (Ritalin XL) or too late in the morning (Meflynate XL), to avoid sleep problems. Many people skip that day; agree a cut-off time with the prescriber in advance.</li>'); }
-      else { tone='warn'; head='Skip today; restart tomorrow morning'; a.push('<li>An afternoon MR dose would act into the night (about '+dur+' h; SPS) and disturb sleep (SmPC timing advice; NG87 1.8.17).</li>'); }
-      if(w==='two') { head='Restart at the usual dose'; tone='info'; a.length=0; a.push('<li>SPS: after short breaks of up to 2 weeks, methylphenidate can usually be restarted at the same dose if appropriate; seek specialist advice after longer breaks.</li>'); } }
-    if(p!=='gua'||w!=='two') a.push(never);
-    a.push('<li><strong>Late-afternoon rebound:</strong> if symptoms return sharply as a dose wears off (irritability, overactivity), check timing and duration first. An MR product plus a small afternoon IR methylphenidate dose can extend cover (NG87 1.7.22; SmPCs), weighing this against sleep.</li>');
-    return {tone:tone,head:head,html:'<ul>'+a.join('')+'</ul>'};
+    var a=[], tone='ok', head='', badge='SmPC';
+    if(p==='rxl'){
+      a.push('<li><strong>Ritalin XL and Metyrol XL SmPC 4.2:</strong> <em>"The patient should not take a double dose to make up for a forgotten dose. If a dose is forgotten, the patient should wait until it is time for the next dose."</em> The Meflynate XL and Focusim XL SmPCs give no forgotten-dose statement; they say intake should not be too late in the morning (sleep). Ritalin XL and Metyrol XL: not too late in the day.</li>');
+      if(w==='two'){ head='Restart at the usual dose'; tone='info'; badge='SPS'; a.length=0; a.push(MPH_RESTART); }
+      else if(w==='early'){ head='SmPC: wait for the next dose'; tone='warn';
+        a.push('<li>Taking a slightly late morning dose (within an hour or two) instead is a practical judgement, not the SmPC rule; agree this with the prescriber in advance.'+PJ+'</li>'); }
+      else { head='Skip it; take the next dose as usual tomorrow'; tone='warn'; a.push('<li>Cover lasts about 8 h (SPS); a dose taken at lunchtime or later would act into the evening and may disturb sleep.</li>'); }
+      if(w!=='two') a.push(rebound('Meflynate XL and Focusim XL SmPC 4.2: a small dose of IR methylphenidate late in the day may help if behaviour or sleep problems recur as the effect wears off.'));
+    }
+    else if(p==='mk'||p==='eq'||p==='tab'){
+      var nm={mk:'Medikinet XL',eq:'Equasym XL',tab:'Concerta XL'}[p], dur=p==='tab'?12:8;
+      var smpc={mk:'Medikinet XL SmPC 4.2 gives no forgotten-dose statement. It says children should not take it too late in the morning (sleep), and it must be taken with or after food.',
+                eq:'Equasym XL SmPC 4.2 gives no forgotten-dose statement. It says Equasym XL should not be taken too late in the morning (sleep); it is taken in the morning before breakfast.',
+                tab:'Concerta XL SmPC 4.2 gives no forgotten-dose statement. It is taken once daily in the morning.'}[p];
+      a.push('<li>'+smpc+'</li>');
+      if(w==='two'){ head='Restart at the usual dose'; tone='info'; badge='SPS'; a.length=0; a.push(MPH_RESTART); }
+      else if(w==='early'){ head='Usually take it now'; badge='Practical judgement'; a.push('<li>A short delay shifts cover (about '+dur+' h; SPS) later by the same amount.'+PJ+(p==='mk'?' Take it with food.':'')+'</li>'); a.push(NODOUBLE); }
+      else if(w==='late'){ tone='warn'; head='Ask about sleep before deciding; often skip'; badge='Practical judgement'; a.push('<li>Cover lasts about '+dur+' h (SPS), so a dose at 12:00 would act until about '+(12+dur)+':00. '+(p==='tab'?'For a 12-hour tablet this usually means skipping today.':'Taking it now pushes cover into the evening.')+' Agree a cut-off time with the prescriber in advance.'+PJ+'</li>'); a.push(NODOUBLE); }
+      else { tone='warn'; head='Skip today; usual dose tomorrow morning'; badge='Practical judgement'; a.push('<li>An afternoon MR dose would act into the night (about '+dur+' h; SPS) and disturb sleep.'+PJ+'</li>'); a.push(NODOUBLE); }
+      if(w!=='two') a.push(rebound(p==='mk'?'Medikinet XL SmPC 4.2: a small dose (5 mg) of IR methylphenidate late in the day may help.':p==='eq'?'Equasym XL SmPC 4.2: a small dose of IR methylphenidate late in the day may help.':'The Concerta XL SmPC does not mention IR top-ups; NG87 1.7.22 allows MR in the morning with IR later in the day.'));
+    }
+    else if(p==='ir'){
+      a.push('<li><strong>Ritalin SmPC 4.2:</strong> <em>"The patient should not take a double dose to make up for a forgotten dose. If a dose is forgotten, the patient should wait until it is time for the next dose."</em> Ritalin and Medikinet SmPC 4.2: the last dose should, in general, not be given within 4 hours before bedtime.</li>');
+      if(w==='two'){ head='Restart at the usual dose'; tone='info'; badge='SPS'; a.length=0; a.push(MPH_RESTART); }
+      else if(w==='early'){ head='Ritalin SmPC: wait for the next dose'; tone='warn'; a.push('<li>If the next dose is hours away and it is well over 4 h before bedtime, taking the missed dose late is a practical judgement for the prescriber to agree; never combine it with the next dose.'+PJ+'</li>'); }
+      else if(w==='late'){ head='Skip it; take the next dose at its usual time'; tone='warn'; a.push('<li>An IR dose lasts about 4 h (SPS); taking a late-morning dose close to the lunchtime dose would stack the two.</li>'); }
+      else { head='Skip it'; tone='warn'; a.push('<li>An afternoon or evening dose risks falling within 4 hours of bedtime and disturbing sleep (Ritalin, Medikinet SmPC 4.2).</li>'); }
+    }
+    else if(p==='lis'){
+      a.push('<li><strong>Elvanse SmPC 4.2:</strong> <em>"In the event of a missed dose, Elvanse dosing can resume the next day."</em> Afternoon doses should be avoided because of the potential for insomnia.</li>');
+      if(w==='two'){ head='Resume the usual dose'; badge='SmPC'; a.push('<li>The SmPC gives no separate rule for several missed days. For long gaps, ask the prescriber how to restart.'+GP+'</li>'); }
+      else if(w==='early'){ head='Take it now if it is still morning'; badge='Practical judgement'; a.push('<li>Taking it within the morning keeps it a once-daily morning dose; this is a practical judgement, not an SmPC rule.'+PJ+'</li>'); }
+      else { head='Skip today; resume tomorrow morning'; tone='warn'; }
+      if(w!=='two') a.push(NODOUBLE);
+    }
+    else if(p==='dex'){
+      a.push('<li><strong>Dexamfetamine SmPC 4.2:</strong> doses should not be taken too late after lunchtime, to avoid disturbing sleep. The SmPC gives no missed-dose rule.</li>');
+      if(w==='two'){ head='Ask the prescriber how to restart'; tone='info'; badge='General principle'; a.push('<li>No SmPC rule for restarting after missed days.'+GP+'</li>'); }
+      else if(w==='aft'){ head='Skip it'; tone='warn'; }
+      else { head='Take it if it will not be too late after lunch'; badge='Practical judgement'; a.push('<li>Whether a missed morning or lunchtime dose can still be taken depends on how close it is to the next dose and to the afternoon.'+PJ+'</li>'); }
+      a.push(NODOUBLE);
+    }
+    else if(p==='atx'){
+      head='No SmPC instruction: carry on as usual'; tone='info'; badge='General principle';
+      a.push('<li>The atomoxetine SmPC gives no missed-dose advice. Benefit does not depend on a daily peak (SmPC 5.1). Continue the usual schedule and check the patient leaflet supplied with the brand dispensed.'+GP+'</li>');
+      a.push(NODOUBLE);
+      if(w==='two') a.push('<li>For longer gaps, ask the prescriber how to restart.'+GP+'</li>');
+    }
+    else if(p==='gua'){
+      if(w==='two'){ tone='high'; badge='Act'; head='Two or more doses missed: re-titrate'; a.push('<li><strong>Intuniv SmPC 4.2:</strong> if two or more consecutive doses are missed, <strong>re-titration is recommended</strong> based on the patient\'s tolerability. Contact the prescriber.</li><li>Blood pressure and pulse may increase after guanfacine is stopped (SmPC 4.4): check BP and pulse.</li>'); }
+      else { head='Resume the usual dose the next day'; a.push('<li><strong>Intuniv SmPC 4.2:</strong> if a dose is missed, the prescribed dose can resume the next day.</li>'); a.push(NODOUBLE); }
+    }
+    return {tone:tone,head:head,badge:badge,html:'<ul>'+a.join('')+'</ul>'};
   }
+  XP._missed=missed; XP._MD=MD; XP._WHEN=WHEN;
   XP.registry.missed=function(m){
     m.innerHTML=card('Interactive advisor · Module 11','Missed dose? What to say at the counter',
       'Pick the medicine and when the dose was remembered. The advice quotes the SmPC where it gives a rule, and says plainly where it does not.',
       '<div class="hb-row"><label class="xf-sel">Medicine<select class="md-p">'+MD.map(function(x,i){return opt(x.id,x.l,i===0);}).join('')+'</select></label><label class="xf-sel">Remembered<select class="md-w">'+WHEN.map(function(x,i){return opt(x.v,x.l,i===1);}).join('')+'</select></label></div>'
       +'<div class="xp-state" aria-live="polite"><span class="xp-badge"></span><h4 class="xp-head"></h4></div><div class="xp-text md-out"></div>',
-      'Where the SmPC is silent, the advice is labelled as a general principle. Agree individual cut-off times with the prescriber.',
-      ['Elvanse SmPC 4.2; Intuniv SmPC 4.2; Ritalin XL SmPC 4.2; Meflynate XL SmPC 4.2; dexamfetamine SmPC 4.2; atomoxetine SmPC (no missed-dose statement).','SPS (28 Aug 2025): duration of action; restarting after breaks of up to 2 weeks.','NICE NG87 1.7.22, 1.8.17.']);
+      'Each line cites the SmPC of that product only. Where the SmPC is silent, advice is labelled <em>General principle</em> or <em>Practical judgement</em>. Agree individual cut-off times with the prescriber.',
+      ['SmPC 4.2 on emc: Ritalin XL (15966), Metyrol XL (13797), Meflynate XL (15094), Focusim XL (100558), Medikinet XL (313), Equasym XL (3887), Concerta XL (314), Ritalin (15987), Medikinet (328), Elvanse (14089), dexamfetamine (102097), Intuniv (5099, also 4.4); atomoxetine (10332: no missed-dose statement).','SPS (28 Aug 2025): duration of action; restarting after breaks of up to 2 weeks.','NICE NG87 1.7.22, 1.8.17.']);
     var R=m.firstChild, p=R.querySelector('.md-p'), w=R.querySelector('.md-w');
-    function render(){ var o=missed(p.value,w.value), b=R.querySelector('.xp-badge'); b.textContent=o.tone==='ok'?'Advice':o.tone==='info'?'General principle':o.tone==='high'?'Act':'Caution'; b.className='xp-badge xp-t-'+o.tone; R.querySelector('.xp-head').innerHTML=o.head; R.querySelector('.md-out').innerHTML=o.html; }
+    function render(){ var o=missed(p.value,w.value), b=R.querySelector('.xp-badge'); b.textContent=o.badge; b.className='xp-badge xp-t-'+o.tone; R.querySelector('.xp-head').innerHTML=o.head; R.querySelector('.md-out').innerHTML=o.html; }
     p.addEventListener('change',render); w.addEventListener('change',render); render();
   };
 

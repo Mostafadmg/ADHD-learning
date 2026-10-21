@@ -529,7 +529,7 @@ td.bnfchk{color:inherit}
 .hb-dl dd{margin:0;color:#dbe6f0;font-size:.9rem;line-height:1.5}
 .hb-dl dd strong{color:#fff}
 @media (min-width:900px){.hb-dl{grid-template-columns:1fr 1fr}}
-.hb .badge{font-size:.7rem}
+.hb .badge{font-size:.75rem}
 .hb-cmp{margin-top:.6rem}
 .sw-out ul,.md-out ul{margin:.3rem 0 .4rem;padding-left:1.15rem;color:#dbe6f0;font-size:.92rem;line-height:1.55}
 .sw-out li,.md-out li{margin:.35rem 0}
@@ -564,3 +564,6 @@ td.bnfchk{color:inherit}
 .hb-chart .xp-svg{margin:0 auto}
 .hb-legend span{display:flex;align-items:center}
 .hb-legend .hb-lnote{flex-basis:100%;font-size:.8rem;color:#9fb3c8}
+.xf-sel[hidden]{display:none}
+.hb-tag{display:inline-block;font-size:.72rem;font-weight:600;letter-spacing:.04em;padding:.05rem .45rem;border-radius:999px;border:1px solid #f2c14e;color:#f6cf6b;vertical-align:1px;margin-left:.25rem}
+.badge.ol,.badge.unv{font-size:max(.75rem,12px)}
