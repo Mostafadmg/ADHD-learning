@@ -198,7 +198,7 @@ AA.add('symptoms', [{
         "Parent: 'could never wait for anything'",
         "Parent: 'we avoided queues and restaurants because of it'"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16, optional)", items: [
+      { ctx: "teen", label: "Secondary school (12-16)", items: [
         "Walked out of canteen or bus queues",
         "Took risky short cuts across roads or railway lines rather than wait",
         "Took turns out of order in PE, science practicals or games",

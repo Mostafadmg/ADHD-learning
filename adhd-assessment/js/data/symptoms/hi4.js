@@ -204,7 +204,7 @@ AA.add('symptoms', [{
         "Nicknamed 'the noisy one' at home",
         "Grandparents said the house was never quiet when they came to stay"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16, optional)", items: [
+      { ctx: "teen", label: "Secondary school (12-16)", items: [
         "Got detentions for noise in study periods or the library",
         "Played music loudly from a phone or speaker on buses or at school",
         "Friends' parents said they were too loud in the house",

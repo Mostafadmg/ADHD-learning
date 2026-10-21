@@ -198,7 +198,7 @@ AA.add('symptoms', [{
         "Parent: 'always had to get the first word in'",
         "Parent: 'never could keep a secret or a surprise'"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16, optional)", items: [
+      { ctx: "teen", label: "Secondary school (12-16)", items: [
         "Sent out of lessons for shouting out",
         "Detentions for remarks made in class without thinking",
         "Blurted out comments that got laughs and then trouble",

@@ -853,7 +853,8 @@ AA.add('impairment', {
         { k: "p26", q: "Does anyone else in the family have similar difficulties?" },
         { k: "p27", q: "Looking at them as an adult now, how do these difficulties affect their life?" },
         { k: "p28", q: "Have these difficulties been there throughout, or were there periods when they were much better or much worse?" },
-        { k: "p29", q: "Is there anything else you think I should know?" }
+        { k: "p29", q: "Is there anything else you think I should know?" },
+        { k: "p30", q: "As a teenager, did they take more risks than their friends, such as drinking or drugs, fights, or trouble with the police?" }
       ]
     },
     partner: {
@@ -876,12 +877,14 @@ AA.add('impairment', {
         { k: "r15", q: "How do they handle frustration? Do they lose their temper quickly and calm down quickly?" },
         { k: "r16", q: "How do these things affect your relationship and the running of the household?" },
         { k: "r17", q: "How do they affect their work, money, friendships or driving?" },
-        { k: "r18", q: "Have they been like this the whole time you have known them, or did it start or get worse at some point?" },
+        { k: "r18", q: "Have they been like this the whole time you have known them, or did it start or get worse at some point? What has their family told you about them as a child?" },
         { k: "r19", q: "Do the problems come and go with mood, stress, sleep, alcohol or drugs, or are they always there?" },
         { k: "r20", q: "Have you noticed spells of very high energy with little need for sleep, or of low mood lasting weeks?" },
         { k: "r21", q: "What do they, you or others do to help them keep on track?" },
         { k: "r22", q: "How do they compare with other people of the same age that you know?" },
-        { k: "r23", q: "Is there anything that worries you, such as their safety, drinking or mood?" }
+        { k: "r23", q: "Is there anything that worries you, such as their safety, drinking or mood?" },
+        { k: "r24", q: "Do they make careless mistakes, for example in messages, forms or at work, even on things they know how to do?" },
+        { k: "r25", q: "How do they sleep? Do they snore loudly, stop breathing or gasp in their sleep, or seem very sleepy in the day?" }
       ]
     },
     school: {
@@ -924,8 +927,8 @@ AA.add('impairment', {
       ]
     },
     discrepancy: [
-      "In adulthood the patient is often the best informant on current symptoms (Kooij 2008, cited in Kooij 2019). Partners and family add information on severity and daily impact.",
-      "For childhood, a parent or older relative is usually the better source, especially for visible behaviour such as hyperactivity and impulsivity; many adults recall their own childhood behaviour poorly (Kooij 2019).",
+      "For current symptoms in adulthood, some research shows the patient is the best informant (Kooij 2008, cited in Kooij 2019). Partners and family still add valuable information on severity and daily impact.",
+      "For childhood, a parent or older relative is usually the better source, especially for visible behaviour such as hyperactivity and impulsivity (clinical practice). Collateral matters most when the person's own childhood recall is poor, for example with high ability, a very structured upbringing or mainly inattentive symptoms (Kooij 2019).",
       "Do not add up or average accounts. Ask each source for specific examples, then compare like with like: the same symptom, in the same setting, over the same period.",
       "When the patient reports more than informants, consider effective masking, informants who see only part of the person's life, and informants who have normalised the behaviour or have ADHD themselves (Young et al. 2020, UKAP consensus on females with ADHD). Also consider over-reporting and check the validity step.",
       "When informants report more than the patient, remember that many adults have limited insight into how their symptoms affect others and report fewer problems than those around them see (Kooij 2019). Give weight to concrete examples.",
@@ -933,16 +936,16 @@ AA.add('impairment', {
       "When two accounts conflict, look for a third source: school reports, health or social care records, another relative or a work appraisal.",
       "Disagreement about one or two symptoms matters less than disagreement about the overall pattern. Base the decision on the weight of evidence across all sources, not on any single account.",
       "Record each discrepancy, the likely reasons and how you weighed it. AQAS 2024 asks reports to discuss how missing or contradictory information affects the conclusion.",
-      "If the patient and informants disagree sharply about childhood and no records exist, treat onset as uncertain rather than absent, and seek further evidence before concluding (NICE NG87 1.3.3)."
+      "If the patient and informants disagree sharply about childhood and no records exist, do not settle the conflict by default in either direction. Weigh who was best placed to observe, seek further evidence, and record onset as unresolved. NICE NG87 1.3.3 advises against excluding on uncertain onset alone; ICD-11 advises caution without corroboration."
     ],
     noInformant: [
-      "Ask the patient and family to search for school reports, and ask whether the school or local authority still holds old records.",
-      "Seek other old records: GP and hospital notes (injuries, developmental concerns), the Red Book if kept, and educational psychology, speech and language therapy, CAMHS or youth justice reports.",
+      "Ask the patient and family to search for school reports at home. Schools and local authorities often keep pupil files only until the person is in their mid-20s, so ask early if the patient is young.",
+      "Seek other old records: GP records (which usually follow the person and may hold childhood letters), hospital notes on injuries or developmental concerns, the Red Book if kept, and educational psychology, speech and language therapy, CAMHS or youth justice reports.",
       "Look for another person who knew them as a child: an older sibling, aunt or uncle, grandparent, family friend, childhood friend or former teacher.",
       "For adult life, a long-standing friend, housemate or trusted colleague can describe current functioning when there is no partner. Work appraisals and college feedback can help too.",
       "Offer a written account or an informant rating scale completed at home when an interview is not possible (AQAS 2024 lists both as optional).",
       "Use the patient's own recall with care: ask for specific, datable memories anchored to the school-year timeline. Self-report alone carries more risk of under- or over-reporting.",
-      "Do not exclude ADHD only because no informant is available when this is outside the patient's control (RCPsych CR235; NICE NG87 1.3.3). Document the gap; ICD-11 advises making an adult diagnosis with caution without corroboration.",
+      "Do not exclude ADHD only because no informant is available when this is outside the patient's control (RCPsych CR235; NICE NG87 1.3.3 on uncertain onset). Document the gap; ICD-11 advises making an adult diagnosis with caution without corroboration.",
       "If the picture is still unclear, defer the decision: arrange a further appointment once records arrive, or review over time, rather than forcing a conclusion."
     ]
   }

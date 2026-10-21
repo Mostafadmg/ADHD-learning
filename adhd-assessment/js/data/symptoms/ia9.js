@@ -206,7 +206,7 @@ AA.add('symptoms', [{
         "Parents recall many notes home about missed deadlines",
         "Grandparents or older siblings did the remembering for them"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16, optional)", items: [
+      { ctx: "teen", label: "Secondary school (12-16)", items: [
         "Forgets coursework deadlines and exam dates",
         "Forgets to revise for tests until the night before",
         "Forgets to charge their phone or top up the bus pass",

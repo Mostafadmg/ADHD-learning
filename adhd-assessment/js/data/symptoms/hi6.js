@@ -196,7 +196,7 @@ AA.add('symptoms', [{
         "Comments about chatting appeared in report after report",
         "Behaviour logs listed talking in class again and again"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16, optional)", items: [
+      { ctx: "teen", label: "Secondary school (12-16)", items: [
         "Got detentions for talking in lessons",
         "Group projects stalled because they kept chatting instead of working",
         "Teachers separated them from friends to stop the chatter",

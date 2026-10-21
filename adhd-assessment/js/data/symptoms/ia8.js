@@ -201,7 +201,7 @@ AA.add('symptoms', [{
         "Parents' evening comments about being off task when others talk",
         "Report says they would achieve more if they could block out what goes on nearby"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16, optional)", items: [
+      { ctx: "teen", label: "Secondary school (12-16)", items: [
         "Phone and social media pulled them away from schoolwork",
         "Could only revise in total silence or late at night",
         "Classmates' chatter in large classes kept breaking their focus",

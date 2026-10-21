@@ -195,7 +195,7 @@ AA.add('symptoms', [{
         "Parent: 'was into everything and everyone's business'",
         "Parent: 'other parents complained that they took over'"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16, optional)", items: [
+      { ctx: "teen", label: "Secondary school (12-16)", items: [
         "Got into fights after stepping into other people's arguments",
         "Took over group projects at secondary school",
         "Used friends' phones, bags or clothes without asking",

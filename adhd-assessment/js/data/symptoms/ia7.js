@@ -201,7 +201,7 @@ AA.add('symptoms', [{
         "Family joked they would lose their head if it was not screwed on",
         "Brothers and sisters complained that borrowed things never came back"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16, optional)", items: [
+      { ctx: "teen", label: "Secondary school (12-16)", items: [
         "Loses phone, bus pass or locker key at secondary school",
         "Loses exercise books and coursework folders",
         "Loses keys and has to wait outside the house",

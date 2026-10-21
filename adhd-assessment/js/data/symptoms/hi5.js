@@ -195,7 +195,7 @@ AA.add('symptoms', [{
         "Parents asked the GP or school nurse about their energy levels",
         "Family joked that they had two speeds: flat out and asleep"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16, optional)", items: [
+      { ctx: "teen", label: "Secondary school (12-16)", items: [
         "Had several part-time jobs or sports teams at once",
         "Stayed busy every evening and weekend",
         "Struggled with long exams and study periods",
