@@ -6,25 +6,25 @@ AA.add('symptoms', [{
   title: "Hard to sustain attention",
   criterion: "Often has trouble keeping attention on tasks or on play and leisure for as long as they need. Focus fades partway through, for example in lessons or lectures, long conversations or lengthy reading.",
   adultForm: "In adults this shows as attention that drains away during meetings, lectures, long calls, reading, form-filling and routine work; DSM-5-TR names lectures, conversations and lengthy reading as typical. People often need frequent breaks, reread constantly, or rely on deadlines, music or another person in the room to keep going. Attention is often fine, or even locked on (hyperfocus), for things that are new, urgent or very interesting, which can make the problem look selective. The key is the extra effort needed to stay with ordinary tasks that others can manage.",
-  why: "The difficulty lies in keeping alertness and effort steady over time, especially when a task gives little novelty or immediate reward. Differences in arousal regulation and reward processing mean interest, urgency and novelty drive attention more than importance does, so focus collapses once a task becomes routine.",
+  why: "The difficulty lies in keeping alertness and effort steady over time, especially when a task gives little novelty or immediate reward. Differences in arousal regulation and reward processing are thought to mean that interest, urgency and novelty drive attention more than importance does, so focus collapses once a task becomes routine.",
   ask: {
     adult: "Over the last six months, how often have you found it hard to keep your attention on something for as long as you needed to, for example reading, a meeting, a long call or a routine task? What happens to your focus partway through?",
     child: "Thinking back to primary school, roughly age 5 to 12, how long could you keep your mind on lessons, schoolwork, stories or games compared with other children? What happened when you had to stay with one thing for a while?"
   },
   rephrase: [
     "How long can you stay focused on something before your mind drifts off it?",
-    "Do you start things paying attention and then feel your focus fade away?",
+    "When you start something, what happens to your focus as you go on?",
     "When you read a long article or a chapter, how far do you get before you lose track?",
-    "Can you get through a whole meeting, lecture or film and keep up with it?",
-    "Do you get bored quickly with things other people can keep going with?",
-    "In simple words: is it hard for you to keep concentrating?",
+    "How much of a whole meeting, lecture or film can you keep up with?",
+    "How quickly do you get bored with things other people can keep going with? Give me an example.",
+    "In simple words: how hard is it for you to keep your mind on one thing?",
     "Lots of people lose focus on dull things. Do you lose focus even on things you want or need to do?",
     "Is your concentration better with some things than others? Which ones, and what makes the difference?",
     "What do you have to do to stay with a task, for example music, breaks, deadlines or someone sitting with you?",
     "If something is not interesting, how many minutes can you keep at it?",
     "What would people who know you well say about how long you can stay with one thing?",
     "Tell me about the last time you had to concentrate for a long stretch. How did it go?",
-    "Do you need pressure or a deadline before your focus switches on?",
+    "What has to happen before your focus switches on? Does pressure or a deadline play a part?",
     "When you watch a series or a film, do you follow all of it, or realise you have missed whole parts?"
   ],
   examples: {
@@ -32,15 +32,15 @@ AA.add('symptoms', [{
       { ctx: "work", label: "Work", items: [
         "Focus fades within minutes on routine data entry or filing",
         "Loses concentration partway through long reports and has to start again",
-        "Needs to get up or switch task every 10 to 15 minutes to keep going",
+        "Needs a break or a change of task every 10 to 15 minutes to keep going",
         "Can only concentrate properly when a deadline is very close",
-        "Struggles to stay alert through long shifts of repetitive packing or checking",
+        "Loses focus partway through long shifts of repetitive packing or checking",
         "Concentration on quality checks or monitoring screens drops off quickly",
         "Works in short bursts and loses whole afternoons to unfocused time",
         "Locks on to a new project for hours, then attention collapses once it is routine",
         "Plays music or podcasts constantly to tolerate dull tasks",
         "Uses timers to break long tasks into tiny chunks",
-        "Needs several coffees to get through an afternoon of desk work",
+        "Relies on coffee or energy drinks to keep focus through desk work",
         "Cannot proofread long documents beyond the first few pages"
       ] },
       { ctx: "study", label: "Study and training", items: [
@@ -50,7 +50,7 @@ AA.add('symptoms', [{
         "Struggles to get through set reading before seminars",
         "Concentrates well early in an exam, then attention drops away",
         "Gives up on long textbooks and relies on summaries or videos",
-        "Can only revise under last-minute pressure, when focus finally switches on",
+        "Comes away from long lectures with notes that stop halfway",
         "Online training modules take far longer than they should"
       ] },
       { ctx: "conversation", label: "Conversations and meetings", items: [
@@ -84,17 +84,17 @@ AA.add('symptoms', [{
         "Scrolls short videos easily but cannot stay with a long documentary",
         "Skims articles and rarely reads past the first few lines",
         "Watches films and series on faster playback to stay with them",
-        "Abandons webinars and online courses partway through",
+        "Loses the thread of a webinar within the first few minutes",
         "Prefers games with constant novelty; slower games feel boring",
         "Turns on subtitles to keep attention on the story",
         "Long voice notes and podcasts drift past without being followed",
         "Reads the first part of long emails and replies only to that"
       ] },
       { ctx: "leisure", label: "Leisure and hobbies", items: [
-        "Struggles to sit through a whole film at the cinema",
+        "Loses track of the story partway through a film at the cinema",
         "Takes up hobbies with intense interest that fades within weeks",
         "Loses concentration in board games that go on for a long time",
-        "Finds slow sports such as golf, cricket or chess hard to stay with",
+        "Finds slow games such as cricket, golf or chess hard to stay with",
         "Can play a favourite video game for hours but not read for ten minutes",
         "Gets bored partway through plays, concerts or museum visits",
         "Abandons crosswords, puzzles or jigsaws after a short time",
@@ -102,10 +102,15 @@ AA.add('symptoms', [{
       ] },
       { ctx: "relationships", label: "Partner and family", items: [
         "Partner says they glaze over in long talks about plans or money",
-        "Finds it hard to stay engaged in long, serious talks about the relationship",
-        "Partner feels they are only half there during evenings in together",
+        "Drifts off partway through a series they are watching together",
+        "Loses focus during long phone calls with relatives",
         "Family notice their interest fades halfway through shared activities",
         "Attention wanders during long family meals or gatherings"
+      ] },
+      { ctx: "social", label: "Friends and social life", items: [
+        "Tunes out partway through long dinners or catch-ups with friends",
+        "Loses interest halfway through pub quizzes or long group games",
+        "Struggles to stay with a friend's long account of a problem"
       ] },
       { ctx: "parenting", label: "Parenting", items: [
         "Finds it hard to stay with bedtime stories to the end",
@@ -116,7 +121,7 @@ AA.add('symptoms', [{
       ] },
       { ctx: "driving", label: "Driving and travel", items: [
         "Concentration fades on motorways or long straight roads",
-        "Misses junctions on familiar routes because attention drifted",
+        "Misses junctions late in a long drive as concentration wears off",
         "Needs loud music, calls or snacks to stay alert on long drives",
         "Avoids long drives because focus will not last",
         "Loses track of stops on long bus or train journeys",
@@ -124,7 +129,7 @@ AA.add('symptoms', [{
       ] },
       { ctx: "health", label: "Health and appointments", items: [
         "Struggles to keep attention through long therapy or group sessions",
-        "Finds mindfulness or relaxation recordings impossible to stay with",
+        "Attention slides off guided meditation recordings within minutes",
         "Gives up reading leaflets about health conditions or medicines",
         "Loses focus partway through exercise classes or physio routines",
         "Loses the thread in long appointments, even important ones"
@@ -132,7 +137,7 @@ AA.add('symptoms', [{
       { ctx: "inner", label: "Inner experience", items: [
         "Feels attention draining away like a battery running down",
         "Feels physically uncomfortable, almost painful, when bored",
-        "Can lock on to interesting things for hours and lose track of time",
+        "Notices they have been looking at the same paragraph for minutes",
         "Has to force concentration with an effort others do not seem to need",
         "Feels switched off after the first few minutes of a dull task",
         "Feels foggy or blank when trying to stay with a long task",
@@ -151,7 +156,8 @@ AA.add('symptoms', [{
         "Leaves reading books after a few pages",
         "Teacher has to bring their attention back many times a lesson",
         "Works well on new or hands-on tasks but fades on routine practice",
-        "Joins in well at the start of a class discussion, then drifts off"
+        "Joins in well at the start of a class discussion, then drifts off",
+        "Follows the start of a class story but has drifted off by the end"
       ] },
       { ctx: "homework", label: "Homework", items: [
         "Homework that should take 20 minutes stretches over a whole evening",
@@ -163,7 +169,7 @@ AA.add('symptoms', [{
         "Spelling or times-table practice lasts only a couple of minutes"
       ] },
       { ctx: "home", label: "Home and family", items: [
-        "Cannot sit through a whole film unless it is a favourite",
+        "Loses interest in a film halfway unless it is a favourite",
         "Tunes out of family board games after a turn or two",
         "Gets bored with new toys very quickly and wants something else",
         "Loses interest in bedtime stories halfway through",
@@ -178,7 +184,7 @@ AA.add('symptoms', [{
         "Struggles with slow games that need steady concentration, like chess",
         "Friends complain they lose interest in pretend play before it ends",
         "Leaves colouring or drawing half done to start something new",
-        "Wants to stop a card game before the first round is over"
+        "Stays with a game they chose but drifts off from games friends choose"
       ] },
       { ctx: "activities", label: "Clubs, sport and outings", items: [
         "Attention drifts in swimming or music lessons after the first part",
@@ -309,8 +315,8 @@ AA.add('symptoms', [{
   },
   counts: [
     "Attention fades often (most days) on tasks or activities that peers of similar age and ability can stay with.",
-    "It affects things the person wants or needs to do, not only dull or very difficult tasks.",
-    "It is seen in more than one setting, for example at work and at home, or in study and leisure.",
+    "It affects ordinary tasks the person wants or needs to do (reading, meetings, routine work), not only tasks so dull or hard that most people would struggle.",
+    "It usually shows in more than one setting, for example at work and at home, or in study and leisure.",
     "It is long-standing and trait-like: present for most of the last six months and before, not in episodes.",
     "It has consequences: missed information, unfinished reading or courses, rework, conflict or risk.",
     "Score present even if the person can hyperfocus on very interesting activities; DSM-5-TR and ICD-11 both note attention may hold up during highly stimulating tasks.",
@@ -330,11 +336,11 @@ AA.add('symptoms', [{
     "Only in one setting, such as one boring job, with no difficulty anywhere else.",
     "Brief, abrupt blank spells with sudden return are not gradual fading (consider absence seizures).",
     "New and worsening in later life with other cognitive changes (consider mild cognitive impairment).",
-    "Do not count distraction by noise or movement (ia8), not taking in what is said face to face (ia3), or avoiding effortful tasks (ia6) here."
+    "Do not count being pulled away by noise, movement or unrelated thoughts (ia8), not taking in what is said face to face (ia3), avoiding effortful tasks (ia6) or leaving tasks unfinished (ia4) here."
   ],
   anchors: [
     { score: "yes", quote: "I can't read more than a page without realising I've taken nothing in. In meetings I'm fine for ten minutes, then I've gone. It's been like that since school; my reports said I couldn't concentrate for long.", why: "Present. Attention fades early in reading and meetings, from childhood, and more than in peers." },
-    { score: "yes", quote: "I love films, but I've never watched one at home without pausing it five or six times. At work I set a timer for 15 minutes and take a break, or nothing gets done.", why: "Present. It affects enjoyed activities too, and work needs constant compensation. Confirm the impact and the childhood history." },
+    { score: "yes", quote: "I love films, but I've never watched one at home without pausing it five or six times. At work I set a timer for 15 minutes and take a break, or nothing gets done.", why: "Present. It affects enjoyed activities too, and work needs constant compensation. Check that the pausing is because attention fades rather than physical restlessness (hyperactivity items), and confirm the impact and the childhood history." },
     { score: "yes", quote: "I can game for six hours straight, but anything boring, like paperwork or a training video, I last five minutes. My partner says it's selective, but I really do try.", why: "Present if childhood history and impairment fit. Hyperfocus on high-interest activities does not rule it out; the key is failing on ordinary tasks that others manage." },
     { score: "unsure", quote: "Since the baby was born I can't concentrate on anything.", why: "Unsure. Recent onset with sleep loss and possible postnatal depression. Ask about concentration before the baby and at school, and screen mood." },
     { score: "unsure", quote: "I can't concentrate when I'm worrying about money, which is most of the time at the moment.", why: "Unsure. Worry-driven loss of focus suggests anxiety or stress. Ask about calmer periods and childhood." },

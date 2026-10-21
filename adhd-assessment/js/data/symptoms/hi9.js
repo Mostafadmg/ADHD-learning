@@ -4,27 +4,27 @@ AA.add('symptoms', [{
   dim: "HI",
   codes: { dsm5: "A2i", diva: "H/I 9", asrs: [18] },
   title: "Interrupts or intrudes on others",
-  criterion: "Often interrupts or intrudes on other people: butts into their conversations, games or activities, or starts using their things without asking or being given permission. Adults may intrude into or take over what others are doing.",
-  adultForm: "In adults this shows as breaking into conversations they are not part of, interrupting people who are busy, offering opinions or help nobody asked for, taking over tasks or projects, and using other people's belongings without asking. DSM-5-TR notes that adults may intrude into or take over what others are doing. People often get feedback about being pushy, bossy or nosy, and may not notice the intrusion until afterwards.",
+  criterion: "Often breaks in on other people or imposes on them: butts into their conversations, games or activities, or starts using their belongings without asking or being given permission. In adolescents and adults this can include stepping into or taking over what others are doing.",
+  adultForm: "In adults this shows as breaking into conversations they are not part of, interrupting people who are busy, offering opinions or help nobody asked for, taking over tasks or projects, and using other people's belongings without asking. DSM-5-TR notes that adolescents and adults may intrude into or take over what others are doing. People often get feedback about being pushy, bossy or nosy, and may not notice the intrusion until afterwards.",
   why: "Poor inhibition of the impulse to act or speak the moment something catches their interest, combined with reduced monitoring of social cues while engaged. Low tolerance of watching others do things slowly or differently adds an urge to step in, and the person often realises only later that a boundary was crossed.",
   ask: {
     adult: "Over the last six months, how often have you interrupted other people or butted in on what they were doing, for example breaking into conversations, taking over tasks or using people's things without asking? Can you give me a recent example?",
     child: "When you were at primary school, between about 5 and 12, did you butt into other children's games or interrupt adults when they were talking or busy? Did you take or use other people's things without asking? What did people say about it?"
   },
   rephrase: [
-    "Do you interrupt people a lot?",
-    "Do you butt in when other people are talking or busy?",
-    "Do you join in conversations or games without being asked?",
-    "Do you take over things other people are doing because you want it done your way or faster?",
-    "Do you use other people's things without asking first?",
-    "Has anyone told you that you are pushy, bossy or nosy?",
+    "How often do you interrupt people? Tell me about the last time.",
+    "What happens when you see people talking or busy and you want to say something?",
+    "Tell me about a time you joined a conversation or a game without being asked.",
+    "When someone else is doing a task, what makes you step in and take it over? Give me an example.",
+    "Tell me about a time you used something that belonged to someone else without asking first.",
+    "What words have other people used about the way you join in or step in?",
     "Tell me about a recent time you stepped into something that was someone else's business. What happened?",
     "How do people react when you join a conversation or a task they had started?",
     "Everyone interrupts sometimes. Does it happen more often for you, and has it caused you trouble with people?",
     "Do you have to stop yourself stepping in when you see someone doing something slowly or differently? What does that take?",
-    "Do you only notice afterwards that you crossed a line?",
+    "When do you notice that you have crossed a line: at the time, afterwards, or only when someone tells you?",
     "Do people say things like 'excuse me, we were talking' or 'I've got this' to you?",
-    "When someone is busy, can you wait until they are free before telling them something?"
+    "When someone is busy and you want to tell them something, what do you usually do?"
   ],
   examples: {
     adult: [
@@ -91,7 +91,7 @@ AA.add('symptoms', [{
         "Butts into their child's conversations with friends",
         "Breaks into a child's play or concentration to start something new",
         "Steps in to tell other parents how to handle their children",
-        "Goes into a teenager's room or phone without asking",
+        "Walks into a teenager's room without knocking, even after being asked to knock",
         "Steps in while the other parent is dealing with a child's behaviour"
       ] },
       { ctx: "social", label: "Friends and social life", items: [
@@ -113,6 +113,12 @@ AA.add('symptoms', [{
         "Edits shared documents that others are still writing without asking",
         "Sends a stream of messages that break into colleagues' focused work",
         "Uses someone's logged-in laptop or tablet without asking"
+      ] },
+      { ctx: "driving", label: "Driving and travel", items: [
+        "Tells the driver how to drive, which route to take or when to pull out",
+        "Changes the music, heating or sat-nav in someone else's car without asking",
+        "Gets out to direct other drivers when there is a hold-up",
+        "Takes over the map, tickets or plans when travelling with others"
       ] },
       { ctx: "leisure", label: "Leisure and hobbies", items: [
         "Joins other people's games or sports without being asked",
@@ -301,7 +307,7 @@ AA.add('symptoms', [{
     "It involves breaking into other people's conversations, activities, tasks or belongings, not only finishing their sentences (that is hi7).",
     "It is longstanding: present for at least six months and usually for years.",
     "It has a cost: complaints, warnings, conflict, lost friendships or people avoiding them.",
-    "It is unplanned: the person often notices only afterwards and feels regret or embarrassment.",
+    "It is unplanned rather than deliberate: the person often notices only afterwards or when told, and may then feel embarrassed (regret is common but not required).",
     "It happens when calm and sober, not only when excited, intoxicated or high.",
     "Holding back still counts if it needs constant effort or avoidance, such as steering clear of group work.",
     "Collateral reports from a partner, family, colleagues or school of interrupting or taking over support scoring present."
@@ -321,24 +327,24 @@ AA.add('symptoms', [{
     "Scoring error: answering before a question is finished or completing sentences belongs to hi7, and talking at length belongs to hi6."
   ],
   anchors: [
-    { score: "yes", quote: "At work I'm forever going over to people's desks when they've got their headphones on. My manager has had a word twice about me taking over other people's projects. At home my partner says she can't cook a meal without me jumping in.", why: "Score Present: frequent, at work and at home, with formal feedback and collateral support." },
+    { score: "yes", quote: "At work I'm forever going over to people's desks when they've got their headphones on. My manager has had a word twice about me taking over other people's projects. At home my partner says they can't cook a meal without me jumping in.", why: "Score Present: frequent, at work and at home, with formal feedback and collateral support." },
     { score: "yes", quote: "I don't realise I'm doing it. I'll be in a group and suddenly I've joined someone else's conversation and taken it over. Some friends have stopped inviting me. I feel awful afterwards.", why: "Score Present: unplanned, frequent, with social cost and regret afterwards." },
     { score: "yes", quote: "I avoid group projects now because I always end up rewriting everyone's parts. And I'm always using people's chargers and pens without asking. My housemates have started labelling their things.", why: "Score Present: across settings, with avoidance as compensation and clear reactions from others." },
     { score: "unsure", quote: "I suppose I interrupt a bit when I'm passionate about something.", why: "Unsure: ask how often, in which settings, whether people have given feedback, and whether it has cost them anything." },
     { score: "unsure", quote: "My manager says I overstep, but that's because the team is so slow and I'm the one responsible for the deadline.", why: "Unsure: may be role-related or about control. Ask whether it happens outside work and in situations where they carry no responsibility." },
-    { score: "unsure", quote: "I only check my partner's phone because I'm worried he's seeing someone.", why: "Unsure, leaning towards absent: intrusion driven by jealousy or insecurity rather than impulsivity. Ask about intrusiveness with friends, colleagues and strangers." },
+    { score: "unsure", quote: "I only check my partner's phone because I'm worried they're seeing someone else.", why: "Unsure, leaning towards absent: intrusion driven by jealousy or insecurity rather than impulsivity. Ask about intrusiveness with friends, colleagues and strangers." },
     { score: "no", quote: "In my family we share everything and talk over each other, and nobody minds. At work I'm quite different and wait to be asked.", why: "Score Absent: a family norm that switches off easily, with no impairment." },
     { score: "no", quote: "As a team leader it's my job to step in when things go wrong, and I do.", why: "Score Absent: stepping in is part of the role and is not intrusion." },
-    { score: "no", quote: "There was a few weeks in my thirties when I was into everyone's business, barely sleeping and starting rows, but it stopped and I've been myself since.", why: "Score Absent for ADHD: an episodic change with reduced sleep suggests hypomania. Explore bipolar disorder." }
+    { score: "no", quote: "There were a few weeks in my thirties when I was into everyone's business, barely sleeping and starting rows, but it stopped and I've been myself since.", why: "Score Absent for ADHD: an episodic change with reduced sleep suggests hypomania. Explore bipolar disorder." }
   ],
   mimics: [
-    { ddx: "asd", clue: "Joins in or interrupts because unwritten social rules are unclear or cues are missed, or talks at length about own interests; the behaviour is rule-confused rather than impulsive.", ask: "When you join in or interrupt, is it an urge you cannot hold back, or are you unsure when it is OK to join in?" },
+    { ddx: "asd", clue: "Joins in or interrupts because unwritten social rules are unclear or cues that someone is busy are missed; the behaviour comes from uncertainty about the rules rather than from acting before thinking.", ask: "When you join in or interrupt, is it an urge you cannot hold back, or are you unsure when it is OK to join in?" },
     { ddx: "bip", clue: "Intrusiveness, disinhibition and taking over only during distinct episodes with raised mood and less sleep.", ask: "Have there been periods of days or weeks when you were much more forward with people than usual and needed little sleep?" },
     { ddx: "bpd", clue: "Intrusion into a partner's life driven by fear of abandonment or jealousy, mostly in close relationships.", ask: "Does it happen with colleagues and strangers too, or mainly with people you feel close to and fear losing?" },
     { ddx: "aspd", clue: "Deliberate use of others' belongings or control over others without remorse, alongside wider rule-breaking.", ask: "When you take or use someone's things, do you realise at the time, and do you feel bad about it afterwards?" },
     { ddx: "ocd", clue: "Takes over tasks because they must be done in a precise way to ease anxiety, not because of an urge to act.", ask: "When you take over, is it because waiting is unbearable, or because it has to be done exactly right?" },
     { ddx: "sud_alcohol", clue: "Intrusive, disinhibited behaviour only after drinking.", ask: "How are you with people on days when you have not had a drink?" },
-    { ddx: "sud_stim", clue: "Pushy, intrusive behaviour while using cocaine or amphetamines.", ask: "Does it happen when you have not used anything at all?" },
+    { ddx: "cptsd", clue: "Overfamiliarity and crossing boundaries that grew out of early neglect or unstable care, often with indiscriminate closeness to strangers and a strong need not to be left out, rather than acting before thinking.", ask: "Is the joining in more about needing to be close to people and included? What was home like when you were small, and did you have the same carers throughout?" },
     { ddx: "tbi", clue: "New disinhibition or social intrusiveness after a head injury or neurological illness.", ask: "Were you like this before the injury, or did people notice a change afterwards?" },
     { ddx: "mci", clue: "Late-onset loss of social boundaries or personality change (consider frontotemporal dementia).", ask: "When did people first notice this? Were you like this in your twenties and thirties?" },
     { ddx: "normal", clue: "Friendly, sociable joining in that others welcome and that switches off easily.", ask: "Has anyone ever complained about it, and can you hold back without effort when you need to?" }
@@ -347,7 +353,7 @@ AA.add('symptoms', [{
     women: "Women may show this as taking over tasks, helping without being asked or overstepping in friendships, which others may call bossy or controlling rather than impulsive. Many hold back in public and feel shame afterwards. Ask about close relationships, group work and what holding back costs them.",
     older: "Older adults may have learned to wait to be invited, so ask family about the lifelong pattern. A new loss of social boundaries in later life is a warning sign for frontotemporal dementia, stroke or other neurological illness rather than ADHD.",
     highIQ: "Able people may take over because they genuinely see the solution first, and in leadership roles this may be rewarded for a while. Look for complaints about overstepping, strained teams and the effort it takes to let others lead.",
-    sud: "Alcohol and stimulants reduce social inhibition and can produce intrusive behaviour. Confirm that interrupting and intruding happen when sober and predate substance use, ideally with a parent's account of childhood.",
+    sud: "Alcohol and stimulants such as cocaine or amphetamines reduce social inhibition and can produce pushy, intrusive behaviour. Confirm that interrupting and intruding happen when sober and predate substance use, ideally with a parent's account of childhood.",
     asd: "Autistic people may interrupt or join in at the wrong moment because unwritten social rules are unclear, and may use others' things without realising it matters. In ADHD the person usually knows the rule but acts before thinking. Both can be present, so ask what drives the behaviour.",
     culture: "Norms about personal space, sharing belongings and joining others' conversations vary between cultures, families and generations. Judge against the person's own community and ask whether people within it see the behaviour as unusual or a problem."
   },

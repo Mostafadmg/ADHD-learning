@@ -12,20 +12,20 @@ AA.add('symptoms', [{
     child: "When you were at primary school, roughly age 5 to 12, how often did you start schoolwork, homework or jobs at home and leave them unfinished because you drifted onto something else? What do you remember, or what did adults say about it?"
   },
   rephrase: [
-    "Do you tend to start things and not finish them?",
+    "How often do you start things and not finish them? Tell me about the last time.",
     "How many jobs or projects do you have on the go right now that are half done?",
     "When someone gives you a job with a few steps, how far do you usually get before you drift off it?",
     "Tell me about the last project you started at home or at work. What happened to it?",
-    "Plain words: do you leave things half done?",
-    "Simple English: you begin a job. Then you stop before the end. Does this happen a lot?",
-    "Do people have to chase you to get the last bits of a job done?",
+    "Plain words: how often do you leave jobs half done? What was the last one?",
+    "Simple English: you begin a job. Then you stop before the end. How often does this happen? Tell me one time.",
+    "How often do people chase you for the last bits of a job? Who, and about what?",
     "Most people leave the odd job unfinished. Is it more for you than for your friends or colleagues? How do you know?",
     "If nobody checks on you and there is no deadline, what happens to a task once you have started it?",
     "What do you do to make sure you finish things? What would happen if you stopped doing that?",
-    "Is there a cupboard, drawer, folder or room in your life that holds your unfinished things?",
+    "If I looked around your home, computer or workplace, would I find unfinished jobs or projects? What would they be?",
     "When you reach the dull final part of a task, like checking, tidying up or sending it off, what happens?",
-    "Have you ever lost marks, money or a job because something was left unfinished?",
-    "Would you call yourself a great starter but a poor finisher?"
+    "Has leaving something unfinished ever cost you marks, money or a job? What happened?",
+    "Are you more of a starter or a finisher? What makes you say that?"
   ],
   examples: {
     adult: [
@@ -43,7 +43,8 @@ AA.add('symptoms', [{
         "Takes on new initiatives with enthusiasm, then quietly lets them lapse",
         "Customers complain that the last fixings or finishing touches were never done",
         "Takes only short contracts or quick jobs that can be finished in one go",
-        "Asks a colleague to check in daily so tasks actually get finished"
+        "Asks a colleague to check in daily so tasks actually get finished",
+        "Leaves customer or client queries half dealt with, never closing them off"
       ] },
       { ctx: "study", label: "Study and training", items: [
         "Signs up for online courses eagerly but completes very few",
@@ -53,17 +54,18 @@ AA.add('symptoms', [{
         "Dissertation or portfolio unfinished for months past the target date",
         "Completes the interesting modules of a course and stalls on the rest",
         "Reads the opening chapters of set books but rarely reaches the end",
-        "Works through the night before a deadline to finish, then crashes"
+        "Needs a tutor or study partner checking in to get assignments over the line"
       ] },
       { ctx: "home", label: "Home and household", items: [
         "Rooms half painted or half decorated for months",
         "Starts cleaning one room, moves to another, and finishes neither",
-        "Washing is done but left in the machine or never put away",
+        "Gets the washing dry but rarely as far as folding and putting it away",
         "DIY tools still out weeks after a job was started",
         "Garden jobs begun in spring are still half done in autumn",
         "Begins batch cooking, stops halfway and leaves ingredients out",
         "Takes things apart to fix them and never puts them back together",
         "Flat-pack furniture stays half assembled",
+        "Stops following the instructions for a new appliance partway and guesses the rest",
         "Empties a cupboard to sort it, then leaves the contents on the floor",
         "Boxes still unpacked a year or more after moving house",
         "Washes up but stops before the pans and worktops are done",
@@ -79,14 +81,14 @@ AA.add('symptoms', [{
         "Expense claims and timesheets sit part filled until someone chases",
         "Begins setting up a pension or savings plan but skips the final steps",
         "Starts a complaint or refund claim and lets it lapse before it is resolved",
-        "Partner often finishes forms the patient began"
+        "Partner often has to finish forms that were started and left"
       ] },
       { ctx: "relationships", label: "Partner and family", items: [
         "Partner complains about promised jobs that are only half done",
         "Agrees to a request, starts it, then drifts onto something else",
         "Begins wrapping presents or writing cards and leaves the rest",
         "Rows at home about the number of unfinished projects",
-        "Promised to sort the shed, car or boiler, but it stays half done",
+        "Promised to clear the shed, loft or garden, but it stays half done",
         "Family have stopped asking for help because jobs rarely get finished",
         "Writes a heartfelt message or letter but never sends the final version",
         "Relatives take over jobs halfway through to get them done"
@@ -99,6 +101,12 @@ AA.add('symptoms', [{
         "Begins teaching a child a skill, like riding a bike, then lets it drop",
         "Starts making packed lunches, wanders off, and someone else finishes them",
         "Promised the children a den, treehouse or project that was never completed"
+      ] },
+      { ctx: "social", label: "Friends and social life", items: [
+        "Offers to organise a night out or trip, then leaves friends to finish arranging it",
+        "Takes on a club, committee or volunteer role keenly, then lets it slide",
+        "Starts making a present, photo album or video for a friend and never completes it",
+        "Offers to help a friend move or decorate and drifts off partway through"
       ] },
       { ctx: "leisure", label: "Leisure and hobbies", items: [
         "Has piles of half-knitted, half-built or half-painted hobby projects",
@@ -114,7 +122,7 @@ AA.add('symptoms', [{
         "Dozens of browser tabs open for tasks begun and abandoned",
         "Emails and texts sit unsent in the drafts folder",
         "Online forms and shopping baskets abandoned part way through",
-        "Starts a phone backup or software update and cancels it midway",
+        "Starts setting up a new phone, app or account and leaves it half done",
         "Begins sorting photos or computer files and gives up halfway",
         "Opens the laptop to finish one job and ends up on something else entirely",
         "CV or online profile on job sites left half completed"
@@ -123,15 +131,15 @@ AA.add('symptoms', [{
         "Actions from one meeting are still half done at the next",
         "Given spoken instructions with several steps, completes only the first",
         "Says they will do it now, starts, and is pulled onto something else",
-        "Abandons assembly or setup guides partway and guesses the rest",
-        "Colleagues have learned to give them one step at a time"
+                "Colleagues have learned to give them one step at a time",
+        "Offers to look into something for someone, gets sidetracked, and never reports back"
       ] },
       { ctx: "health", label: "Health and appointments", items: [
         "Stops physiotherapy or rehab exercises after the first few days",
         "Starts a self-help workbook or therapy course and drops out early",
         "Begins referral or health forms and leaves them unfinished",
-        "Completes the first part of a health check but not the follow-up steps",
-        "Self-help books about getting things done lie half read"
+        "Starts a food, sleep or symptom diary for a clinician and drops it within days",
+        "Gets halfway through booking a test or appointment online and leaves it"
       ] },
       { ctx: "inner", label: "Inner experience", items: [
         "Feels a rush of motivation at the start that vanishes halfway",
@@ -140,7 +148,7 @@ AA.add('symptoms', [{
         "Feels guilt and shame about the trail of unfinished things",
         "Finishes only when a deadline brings panic or pressure",
         "Calls themselves a starter, not a finisher",
-        "Finds the final tenth of a task harder than all the rest",
+        "Leaves a job unfinished as soon as a new idea or task comes to mind",
         "Works better with someone else in the room just to get to the end"
       ] }
     ],
@@ -150,7 +158,7 @@ AA.add('symptoms', [{
         "Copies the first lines from the board, then the page stays half empty",
         "Carries out only the first step of a teacher's multi-step instruction",
         "Written stories regularly have no ending",
-        "Still on the first question when classmates have finished the sheet",
+        "Leaves a task to chat or do something else and never comes back to it",
         "Exercise books full of unfinished pieces of work",
         "Drifts onto doodling in the margin instead of completing the task",
         "Needs an adult alongside to finish independent work",
@@ -190,7 +198,7 @@ AA.add('symptoms', [{
       { ctx: "activities", label: "Clubs, sport and outings", items: [
         "Joins clubs eagerly, then drops them within weeks",
         "Learns the opening of a music piece but never the whole thing",
-        "Badges or awards at clubs left incomplete",
+        "Starts a drill or practice task at sport and drifts off before the end",
         "Tasks for Scouts, Guides or similar groups started but not signed off",
         "Sponsored or charity challenges started but not completed",
         "On trips, worksheets or activity trails left half done"
@@ -338,7 +346,7 @@ AA.add('symptoms', [{
     "Only in one setting, such as one disliked job, while finishing reliably everywhere else.",
     "Began recently, for example after a head injury, a new medication or in midlife, with no childhood history.",
     "Normal variation: a few unfinished hobbies or one long-running DIY job, without impact.",
-    "Not starting at all belongs to A1f (avoids mental effort), and forgetting the task exists belongs to A1i (forgetful). Score here only when the task was started and then dropped."
+    "Not starting at all belongs to A1f (avoids mental effort), forgetting the task exists belongs to A1i (forgetful), and not taking in the instructions belongs to A1c (does not seem to listen). Score here only when the task was understood and started, then dropped."
   ],
   anchors: [
     { score: "yes", quote: "Every room in the house has a different half-done job. At work my manager books a check-in every Friday because otherwise nothing gets to the end. My school reports said exactly the same thing.", why: "Present. Frequent, at home and at work, long-standing since childhood, impairing, and finishing relies on outside structure." },
@@ -364,11 +372,11 @@ AA.add('symptoms', [{
     { ddx: "tbi", clue: "New after a head injury or stroke, with no childhood history.", ask: "Before the injury, were you able to finish things?" }
   ],
   special: {
-    women: "Girls and women often hide unfinished work by staying up late or redoing it in private, so teachers saw a quiet, compliant pupil. Ask about the hidden cost: late nights, a mother or partner finishing tasks, and shame about half-done projects.",
+    women: "Girls and women often hide unfinished work by staying up late or redoing it in private, so teachers saw a quiet, compliant pupil. Ask about the hidden cost: late nights, a parent or partner finishing tasks, and shame about half-done projects.",
     older: "In older adults, ask whether difficulty finishing is lifelong or new. New trouble with multi-step tasks in later life suggests cognitive decline, depression, medication effects or vascular change, and needs separate assessment.",
     highIQ: "Able people often finish only because they can do the work fast at the last minute, so impairment shows as underachievement, deadline crises and reliance on all-nighters. Judge impairment against their ability and effort, not against average output.",
     sud: "Cannabis, alcohol and the comedown from stimulants all reduce follow-through. Establish whether the pattern was there before regular use and whether it persisted during long periods without use.",
-    asd: "Autistic people may leave tasks when a routine is disrupted, instructions are vague, or a focused interest takes over. In ADHD the drift is towards whatever is newest; in autism it is more often towards a special interest or caused by unclear expectations. Both can be present.",
+    asd: "Autistic people may leave tasks when a routine is disrupted, instructions are vague, or a focused interest takes over. In ADHD the drift is usually towards whatever is newer or more stimulating; in autism it is more often towards a focused interest or caused by unclear expectations. Both can be present.",
     culture: "Expectations about finishing tasks vary with culture, gender role and family structure, and in some families others routinely complete tasks for young people. Check that instructions were understood in the person's first language and compare with peers from the same background."
   },
   refs: [

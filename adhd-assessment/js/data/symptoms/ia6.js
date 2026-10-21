@@ -13,19 +13,19 @@ AA.add('symptoms', [{
   },
   rephrase: [
     "Which jobs do you put off the longest?",
-    "Plain words: do you put off jobs that need a lot of thinking?",
+    "Plain words: what happens when you have a job that needs a lot of thinking?",
     "When you have a long form or a report to do, what do you do instead?",
-    "Do you do the quick, easy jobs first and leave the hard ones?",
+    "When you have easy jobs and hard jobs to do, which get done first? What happens to the rest?",
     "Tell me about the last important piece of paperwork you had to do. When did you actually start it?",
     "How do you feel when you look at a long document you need to read?",
     "Most people put things off sometimes. How much does it cost you compared with your friends?",
-    "Is there anything you have been avoiding for months, like letters, forms or a big task?",
-    "Have you chosen jobs, courses or roles to get away from reading, writing or desk work?",
-    "Simple English: some jobs need you to think hard for a long time. Do you try not to do these jobs?",
-    "Does someone else do your forms and paperwork for you?",
+    "Is there anything you have been putting off for months, like letters, forms or a big task? Tell me about it.",
+    "How much has reading, writing or desk work shaped the jobs, courses or roles you have chosen?",
+    "Simple English: some jobs need you to think hard for a long time. What do you do when you have one?",
+    "Who does the forms and paperwork in your home? How did that come about?",
     "When you have to concentrate for a long time, what does it feel like inside?",
-    "If something interests you, can you focus for hours? What about when it is dull but necessary?",
-    "Informal: do you leave the brain-heavy stuff until the very last minute?"
+    "How is it different when a task interests you, compared with one that is dull but necessary?",
+    "Informal: when does the brain-heavy stuff actually get done?"
   ],
   examples: {
     adult: [
@@ -40,7 +40,7 @@ AA.add('symptoms', [{
         "Passes complex analysis to colleagues and takes on simpler jobs",
         "Leaves long emails unanswered because a reply needs careful thought",
         "Bids or grant applications put off until it is too late to submit",
-        "Busy all day with small jobs while the important task waits",
+        "Avoids learning new software or systems that need long concentration",
         "Mandatory e-learning ignored until compliance warnings arrive",
         "Can only start demanding work late at night when pressure peaks"
       ] },
@@ -49,18 +49,18 @@ AA.add('symptoms', [{
         "Skips required reading and relies on summaries or videos",
         "Dropped courses that had heavy written assessment",
         "Chose a course or career to avoid long reading or writing",
-        "Revision put off until a few days before exams",
+        "Revision for university or professional exams starts only days before",
         "Asks for repeated extensions on a dissertation or thesis",
         "Prefers practical assessments and avoids written exams where possible",
         "Finds reasons to be elsewhere when study sessions are planned",
-        "Asks friends to talk them through set reading instead of reading it"
+        "Steers away from maths or statistics modules that need long problem-solving"
       ] },
       { ctx: "home", label: "Home and household", items: [
         "Skips reading instructions and guesses how appliances work",
         "Puts off getting and comparing quotes for home repairs",
-        "Leaves meal planning and shopping lists to others",
+        "Avoids working out household budgets or anything that needs sums",
         "Buys the first option rather than face comparing products",
-        "Household paperwork waits years to be sorted through",
+        "Puts off planning a renovation or garden project because of the thinking involved",
         "Chooses physical chores over any job that needs thinking",
         "Avoids setting up new devices, heating controls or home systems"
       ] },
@@ -74,29 +74,29 @@ AA.add('symptoms', [{
         "Bank statements go unchecked for months",
         "Never starts refund claims, so loses money they are owed",
         "Signs contracts without reading the terms",
-        "Keeps putting off writing a will or power of attorney",
+        "Puts off working out a repayment plan as debts build up",
         "Needs a crisis, like a final demand, before tackling paperwork",
         "Pays an accountant or relies on a relative for forms they could understand"
       ] },
       { ctx: "relationships", label: "Partner and family", items: [
-        "Leaves big family decisions that need research, like schools or moves, to a partner",
+        "Leaves decisions that need weighing up, like a mortgage or a move, to a partner",
         "Partner handles all forms, letters and official calls",
         "Rows about postponed jobs that need planning or thought",
         "Asks family for the short version instead of reading long messages",
-        "Promises to research holidays or big purchases, then keeps putting it off",
+        "Promises to look into a big purchase, like a car, then keeps putting it off",
         "Ducks out of helping relatives with forms or applications",
         "Feels guilty that a partner carries all the thinking jobs"
       ] },
       { ctx: "parenting", label: "Parenting", items: [
         "Avoids helping with homework that needs explaining",
         "Puts off school applications, consent forms or support paperwork",
-        "Leaves long school newsletters and emails to the other parent",
-        "Dreads filling in children's medical or activity forms",
+        "Skims or skips long school newsletters and emails",
+        "Puts off reading reports or support plans about a child's needs",
         "Prefers active play to reading or board games that need concentration",
         "Delays researching childcare, schools or support options"
       ] },
       { ctx: "digital", label: "Phone, screens and online", items: [
-        "Leaves long emails unopened, sometimes for weeks",
+        "Closes any web page or message that turns out to be a wall of text",
         "Prefers voice notes and short videos to written information",
         "Puts off setting up online accounts that need several steps",
         "Updating a CV or online profile is put off indefinitely",
@@ -110,7 +110,7 @@ AA.add('symptoms', [{
         "Chooses fast-moving hobbies over ones that need patience and thought",
         "Avoids crosswords, puzzles or strategy games that friends enjoy",
         "Puts off planning holidays because of the research involved",
-        "Reads only when a topic is gripping and abandons anything slow-paced"
+        "Puts off learning a language or skill that needs regular study"
       ] },
       { ctx: "health", label: "Health and appointments", items: [
         "Never reads medication leaflets or health information",
@@ -125,13 +125,13 @@ AA.add('symptoms', [{
         "Puts off complicated phone calls with banks or councils that need details",
         "Reads meeting papers at the last minute or not at all",
         "Avoids chairing or roles that need long, focused preparation",
-        "Avoids writing up meetings, asking someone else to do it"
+        "Asks for the headline only when someone explains something complex"
       ] },
       { ctx: "inner", label: "Inner experience", items: [
         "Feels dread or heaviness before starting a demanding task",
         "Describes a wall between them and getting started",
         "Thinking hard for a long time feels physically tiring or painful",
-        "Can focus for hours on interesting things but not on dull ones",
+        "Puts off dull thinking tasks yet spends hours on interesting ones",
         "Only gets going when the deadline makes it urgent",
         "Feels lazy, even though they genuinely want to do the task",
         "Mind goes blank when faced with a long form",
@@ -156,8 +156,8 @@ AA.add('symptoms', [{
         "Finds reasons to delay starting homework, like snacks or toys",
         "A short piece of homework takes hours because starting is so hard",
         "Hides homework or says none was set",
-        "Reading record rarely filled in",
-        "Happily colours or cuts out, but avoids homework that needs writing",
+        "Resists reading at home, so the reading record stays empty",
+        "Tries to bargain down how much homework has to be done",
         "Leaves projects until a parent insists on the night before",
         "Cries or argues when asked to practise spellings or times tables",
         "Will only start homework if an adult sits right beside them"
@@ -166,16 +166,16 @@ AA.add('symptoms', [{
         "Gets out of writing thank-you letters or cards",
         "Rarely reads for pleasure, unlike brothers or sisters",
         "Chooses TV or active play over anything that needs thinking",
-        "Puts off tasks parents set, saying 'later' again and again",
-        "Avoids writing diaries, lists or letters other children enjoy"
+        "Says 'later' again and again to anything that needs thinking",
+        "Avoids helping with recipes or jobs that mean reading the steps"
       ] },
       { ctx: "play", label: "Play and friends", items: [
         "Avoids jigsaws and building kits that need following instructions",
-        "Quits games like chess or draughts that need planning moves",
+        "Steers away from games like chess or draughts that need planning",
         "Prefers active games to quiet games that need concentration",
         "Avoids games with a lot of reading, like card games with text",
         "Gives up quickly on puzzles or brain teasers",
-        "Rarely looks at comics or books alone"
+        "Picks easy, fast games over ones that need working things out"
       ] },
       { ctx: "activities", label: "Clubs, sport and outings", items: [
         "Avoids clubs that involve reading or writing, like book clubs",
@@ -185,7 +185,7 @@ AA.add('symptoms', [{
         "Enjoys sport but will not learn tactics or rules"
       ] },
       { ctx: "reports", label: "What teachers and parents said", items: [
-        "'A reluctant writer'",
+        "'Reluctant to put pen to paper'",
         "'Avoids tasks that require concentration'",
         "'Needs encouragement to begin written work'",
         "'Does not read at home'",
@@ -314,12 +314,12 @@ AA.add('symptoms', [{
     "For childhood, homework battles, avoiding reading and writing, or needing an adult to get started were noticed before about age 12."
   ],
   notCount: [
-    "Avoids only tasks they cannot do because of a reading, writing or maths difficulty, but tackles other demanding tasks.",
+    "Avoids only tasks they cannot do because of a reading, writing or maths difficulty or poor eyesight, but tackles other demanding tasks.",
     "Avoidance driven by anxiety, perfectionism or fear of judgement, where effort itself is not the problem.",
     "Avoids everything, including things once enjoyed, during a depressive episode, with normal effort when well.",
     "Fatigue after mental effort from a physical illness (long COVID, ME-CFS, anaemia, thyroid disease) rather than aversion to the effort.",
     "Daytime sleepiness from poor or disrupted sleep that makes all concentration hard.",
-    "Avoiding reading because of eyesight problems or headaches when reading.",
+    "Deliberate refusal out of opposition or hostility (will not, rather than cannot face the effort). The DSM-5-TR note on oppositional behaviour applies to every symptom.",
     "Tasks in a second language or after interrupted schooling, where the barrier is language or education.",
     "Reasonable dislike of paperwork that still gets done on time without significant cost.",
     "Low motivation only when using cannabis or alcohol, or only during withdrawal.",
@@ -328,7 +328,7 @@ AA.add('symptoms', [{
     "Starting and then dropping a task belongs to A1d (follow-through), and disorganised planning belongs to A1e. Score here when the task is avoided or delayed before it starts."
   ],
   anchors: [
-    { score: "yes", quote: "There's been a letter from the tax office in my drawer for six months. I know it matters, I just can't make myself open it. My partner does all our paperwork now, and I turned down team leader because of the reports.", why: "Present. Strong avoidance of effortful paperwork, impact on money and career, and reliance on a partner. Confirm it is long-standing." },
+    { score: "yes", quote: "There's been a letter from the tax office in my drawer for six months. I know it matters, I just can't make myself open it. My partner does all our paperwork now, and I turned down team leader because of the reports.", why: "Present. Strong avoidance of effortful paperwork, impact on money and career, and reliance on a partner. Check it is the effort, not fear of what the letter says, and confirm it is long-standing." },
     { score: "yes", quote: "I can spend six hours in my workshop, but give me a ten-page document and I'll do anything else. I've always been like that. At school I did the practical bits and dodged the writing.", why: "Present. Avoidance is specific to sustained mental effort, with good focus on interesting tasks and a childhood history." },
     { score: "yes", quote: "I start every essay the night before. I sit down a week early with the best intentions and end up cleaning the whole flat instead.", why: "Present, if it is long-standing and costly. Typical delay of demanding work until urgency arrives. Check it extends beyond study." },
     { score: "unsure", quote: "I hate paperwork, but I do get it done.", why: "Unsure, leaning towards Absent. Ask how late, at what cost, and whether others help. If it is done on time without much cost, score Absent." },
@@ -348,10 +348,10 @@ AA.add('symptoms', [{
     { ddx: "osa", clue: "Daytime sleepiness and snoring make concentration exhausting.", ask: "How sleepy are you during the day, and does the avoidance ease when you have slept well?" },
     { ddx: "sensory", clue: "Avoids reading because of eye strain, headaches or poor vision.", ask: "When did you last have an eye test? Do you get headaches or blurred vision when reading?" },
     { ddx: "ocd", clue: "Cannot start because the task must be done perfectly or in a set way.", ask: "Is it hard to start because of the effort, or because it has to be exactly right?" },
-    { ddx: "feigning", clue: "Avoidance described mainly where there is a clear gain (exemptions, extra time) and contradicted by records or informants.", ask: "Tell me about the last time you managed a long, demanding task. What helped?" }
+    { ddx: "feigning", clue: "Avoidance described mainly where there is a clear gain (exemptions, extra time) and contradicted by records or informants.", ask: "Walk me through the last task you put off: what it was, when it was due, and how it ended." }
   ],
   special: {
-    women: "Girls and women often hide avoidance by over-preparing in secret, working late at night or doing tasks in sudden bursts, and may be labelled lazy or anxious. Ask about hidden late nights, panic near deadlines and parents or partners quietly taking over tasks.",
+    women: "Girls and women often hide avoidance by catching up in secret late at night or in last-minute bursts, and may be labelled lazy or anxious. Ask about hidden late nights, panic near deadlines and parents or partners quietly taking over tasks.",
     older: "Older adults may have arranged life so a partner handles all paperwork, and avoidance becomes visible only after bereavement or separation. New reluctance to tackle mental tasks in later life suggests depression, cognitive decline or sensory loss rather than lifelong ADHD.",
     highIQ: "Able people can leave tasks to the last minute and still do well, so avoidance looks like a quirk until demands rise. Ask what results would have been with steady work, and how much stress the last-minute pattern causes.",
     sud: "Cannabis and alcohol increase avoidance and reduce drive, and some people use stimulants or caffeine to force themselves through avoided work. Ask what the pattern was before regular use and whether substances are used to get through dull tasks.",

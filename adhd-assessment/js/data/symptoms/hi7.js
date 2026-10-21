@@ -5,26 +5,26 @@ AA.add('symptoms', [{
   codes: { dsm5: "A2g", diva: "H/I 7", asrs: [16] },
   title: "Blurts out answers, finishes others' sentences",
   criterion: "Often answers or responds before a question has been fully asked: blurts out the answer, completes other people's sentences, or cannot wait for their turn to speak in a conversation.",
-  adultForm: "In adults this is less about calling out in class and more about conversation: finishing people's sentences, replying before the question ends, talking over the last words of someone's turn and saying things before thinking them through. DSM-5-TR gives completing people's sentences and not waiting for a turn in conversation as adult examples, and ICD-11 mentions blurting out answers or comments at work. Many adults have learned to hold back in formal settings, so ask about relaxed settings, close relationships and what holding back costs them.",
+  adultForm: "In adults this is less about calling out in class and more about conversation: finishing people's sentences, replying before the question ends, talking over the last words of someone's turn and saying things before thinking them through. DSM-5-TR's own examples for this item (completing people's sentences, not waiting for a turn in conversation) already fit adult life, and ICD-11 describes blurting out answers at school or comments at work. Waiting a turn in queues, traffic or games is scored separately under hi8. Many adults have learned to hold back in formal settings, so ask about relaxed settings, close relationships and what holding back costs them.",
   why: "Weak response inhibition: the reply is formed and released before the brake engages, especially when the person is interested, excited or emotionally involved. Limited working memory adds pressure, because a thought that is not voiced at once may be lost, and delay aversion makes waiting for the speaker to finish feel uncomfortable.",
   ask: {
     adult: "Over the last six months, how often have you found yourself answering before someone has finished their question, or finishing other people's sentences for them? Can you give me a recent example?",
     child: "When you were at primary school, between about 5 and 12, did you call out answers before the teacher had finished asking, or jump in before other people had finished speaking? What do you remember, and what did teachers or your parents say about it?"
   },
   rephrase: [
-    "Do you tend to answer before people have finished asking you something?",
-    "Do you finish other people's sentences for them? How often does that happen?",
-    "Do you start talking before the other person has stopped?",
-    "Do words come out of your mouth before you have thought about them?",
-    "Do you say things quickly and then wish you had waited?",
-    "When someone asks you a question, do you answer before they get to the end?",
+    "How often do you answer before people have finished asking you something? Tell me about the last time.",
+    "Tell me about a time you finished someone else's sentence for them. How often does that happen?",
+    "What happens when you have something to say and the other person has not stopped talking yet?",
+    "When do words come out of your mouth before you have thought about them? Give me an example.",
+    "Tell me about something you said quickly and then wished you had waited.",
+    "When someone asks you a question, at what point do you start to answer?",
     "Tell me what happens in a conversation when you think you already know what the other person is going to say.",
     "What do the people closest to you say about how you take turns when you talk?",
     "Most people jump in now and then. Does it happen more often for you than for your friends or colleagues, and has it ever caused trouble?",
     "Do you have to work hard to stop yourself jumping in? What do you do to hold back, and what does that cost you?",
     "If you hold your answer back until the other person finishes, what happens to it? Do you lose the thought?",
     "Has anyone ever said to you 'let me finish' or 'wait until I've asked'? Who, and how often?",
-    "Would you call yourself someone who blurts things out?",
+    "How would you describe the way you join in when other people are talking? Can you give me an example?",
     "At work or at the doctor's, do you sometimes answer the question you expect rather than the one actually asked?"
   ],
   examples: {
@@ -51,9 +51,9 @@ AA.add('symptoms', [{
         "Says something tactless to a client and regrets it instantly",
         "Has had appraisal feedback about letting colleagues finish speaking",
         "Answers job interview questions before the interviewer has finished asking",
-        "Gives a colleague a blunt opinion of their work without any filter",
+        "Agrees to take on extra work before hearing what it involves",
         "Says 'yes, got it' before the instructions have ended, then gets them wrong",
-        "Calls out a price or answer across the shop floor before the customer has finished",
+        "Quotes a price before the customer has said exactly what they want",
         "Lets confidential information slip because it came out before thinking",
         "Gets complaints from callers for talking over them on the phone",
         "Blurts out a deadline or figure in a meeting, then has to stick to it",
@@ -71,8 +71,8 @@ AA.add('symptoms', [{
       { ctx: "relationships", label: "Partner and family", items: [
         "Partner complains of rarely being allowed to finish a sentence",
         "Says 'I know, I know' before a partner has finished explaining",
-        "Says hurtful things in rows that come out before any thought",
-        "Takes over the ending of a partner's stories in front of friends",
+        "Says things in arguments before thinking, then has to take them back",
+        "Jumps in with the ending of a partner's stories in front of friends",
         "Blurts out a surprise party or present before the day",
         "Family say they jump in before the question is even out",
         "Agrees or refuses before a partner has finished describing the plan",
@@ -84,24 +84,26 @@ AA.add('symptoms', [{
         "Calls out the homework answer before the child has had a chance to try",
         "Responds to a child's complaint before hearing the whole story",
         "Says something at parents' evening that comes out wrong and embarrasses the child",
+        "Answers the teacher's questions at parents' evening that were meant for the child",
         "Children say 'you never let me finish' or 'I wasn't asking you'"
       ] },
       { ctx: "social", label: "Friends and social life", items: [
         "Friends tease them for finishing everyone's sentences",
-        "Gives away the ending of a film or book a friend is describing",
+        "Blurts out how a film or book ends to friends who have not finished it",
         "Says something embarrassing at a gathering before thinking it through",
         "Announces a friend's news before the friend has had the chance",
         "Answers a question put to the whole group before anyone else can",
         "Makes an offhand remark that offends, then lies awake regretting it",
         "Is known among friends as the one who says whatever comes into their head",
-        "Says yes or no to an invitation before hearing the details"
+        "Says yes or no to an invitation before hearing the details",
+        "Gives a stranger directions before they have finished asking the way"
       ] },
       { ctx: "digital", label: "Phone, screens and online", items: [
         "Replies to a message or email before reading it to the end",
         "Posts a comment the moment a thought arrives, then deletes it later",
         "Unmutes on video calls and answers before the question has finished",
         "Sends a sharp reply to a work email and immediately wishes it unsent",
-        "Relies on 'undo send' or deletes posts after posting too quickly",
+        "Replies to the first of several messages before the rest have arrived",
         "Comments on social media posts before reading the whole post or article",
         "Answers in the call chat while the presenter is still asking the question",
         "Fires off a reply in a group chat before others have had their say"
@@ -115,7 +117,8 @@ AA.add('symptoms', [{
       { ctx: "admin", label: "Paperwork and money", items: [
         "Agrees to a deal or price on the phone before hearing the full offer",
         "Says 'yes' to terms read out by a call handler before they finish reading them",
-        "Answers a caller's security or survey questions before they are complete"
+        "Answers a caller's security or survey questions before they are complete",
+        "Talks over a police officer or official before they have finished asking"
       ] },
       { ctx: "leisure", label: "Leisure and hobbies", items: [
         "Shouts out answers at a pub quiz before the question has been read",
@@ -157,7 +160,7 @@ AA.add('symptoms', [{
       ] },
       { ctx: "homework", label: "Homework", items: [
         "Shouts the answer before the parent has finished reading the question",
-        "Guesses answers aloud rather than working them out",
+        "Says the first answer that comes to mind before the question ends, then changes it",
         "Gets cross when told to listen to the whole question first",
         "Calls out spellings or sums before they have been fully read out"
       ] },
@@ -172,7 +175,7 @@ AA.add('symptoms', [{
         "Replies before a parent has finished speaking and gets told off for it"
       ] },
       { ctx: "play", label: "Play and friends", items: [
-        "Shouts out guesses in games like I-spy before others get a go",
+        "Shouts out the answer in guessing games before the clue is finished",
         "Tells friends the ending of a film they have not yet seen",
         "Says hurtful things to friends without thinking first",
         "Gives away hiding places during hide and seek",
@@ -184,7 +187,7 @@ AA.add('symptoms', [{
         "Answers the coach before the instructions finish, then does the drill wrong",
         "Makes loud remarks during assemblies, services or performances",
         "Comments loudly about strangers in shops or on the bus",
-        "Cannot hold back answers during quizzes on school trips"
+        "Answers the guide's questions on trips before the guide has finished asking"
       ] },
       { ctx: "reports", label: "What teachers and parents said", items: [
         "Report: 'must remember to put a hand up and wait to be asked'",
@@ -302,7 +305,7 @@ AA.add('symptoms', [{
     ]
   },
   counts: [
-    "Answering before questions are finished, or finishing other people's sentences, happens often: most days, or in most conversations of any length.",
+    "Answering before questions are finished, finishing other people's sentences or not waiting for a turn to speak happens often: most days, or in many conversations.",
     "It happens clearly more than for most people of the same age, culture and background.",
     "It shows in at least two settings, for example work and home, or friends and family.",
     "It is longstanding: present for at least six months and usually for years, not only since a recent change.",
@@ -324,7 +327,7 @@ AA.add('symptoms', [{
     "Remarks that are planned, hostile or used to dominate rather than unfiltered (consider personality factors).",
     "Answering quickly only to end an anxious conversation or escape silence, and only with strangers or authority figures (consider social anxiety).",
     "A new loss of social filter that began in middle or later life (consider brain injury, frontotemporal dementia or medication effects).",
-    "Scoring error: butting into other people's conversations or activities belongs to hi9, and talking at length belongs to hi6."
+    "Scoring error: butting into other people's conversations or activities belongs to hi9, talking at length belongs to hi6, and waiting in queues or for a go in games belongs to hi8."
   ],
   anchors: [
     { score: "yes", quote: "My partner says I've hardly let her finish a sentence in ten years. At work I answer before the client has finished explaining, and twice I've given the wrong fix because of it. My manager put it in my review.", why: "Score Present: frequent, at home and at work, longstanding, with clear costs and collateral support." },
@@ -351,7 +354,7 @@ AA.add('symptoms', [{
   ],
   special: {
     women: "Women and girls often learn early that blurting is judged harshly and suppress it, so they may describe staying quiet, rehearsing replies or apologising, followed by exhaustion and shame. Ask what holding back costs and how they are in relaxed settings with close friends and family. A talkative girl may have been labelled chatty or bossy rather than impulsive.",
-    older: "Older adults often report that they have learned to hold back, so confirm the lifelong pattern with family where possible. A new loss of social filter in later life is not ADHD until proven otherwise: consider frontotemporal dementia, stroke, other neurological illness and medication effects.",
+    older: "Older adults often report that they have learned to hold back, so confirm the lifelong pattern with family where possible. A new loss of social filter in later life needs medical assessment before ADHD is considered: think of frontotemporal dementia, stroke, other neurological illness and medication effects.",
     highIQ: "Able people often know the answer early, so a fast reply may be accurate and even valued. Look for cost instead: answering the wrong question, colleagues who stop contributing, feedback about letting others speak, or exhaustion from holding back. Speed alone is not the symptom.",
     sud: "Alcohol, cocaine and other stimulants loosen the filter and speed up speech. Establish whether blurting happens when sober and whether it predates substance use, ideally with a parent's account of childhood.",
     asd: "Autistic people may also talk over others, but usually because it is hard to judge when a turn ends or because of a strong focus on a topic, not because of an urge that cannot be held back. Ask what drives it: an urge to release a thought before it is lost points to ADHD, while uncertainty about conversational rules points to autism. Both can be present.",

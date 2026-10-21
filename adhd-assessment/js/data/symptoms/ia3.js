@@ -6,18 +6,18 @@ AA.add('symptoms', [{
   title: "Seems not to listen when spoken to",
   criterion: "Often seems not to be listening when spoken to directly. The mind appears to be somewhere else, even when nothing obvious is distracting them.",
   adultForm: "In adults this shows as drifting off mid-conversation, nodding along without taking in what is said, and asking people to repeat themselves. Partners, children and colleagues often complain that the person is not really there. DSM-5-TR notes the mind seems elsewhere even without any obvious distraction. Many adults compensate by repeating back, taking notes, watching faces closely or asking for things in writing, which is tiring and can hide the problem.",
-  why: "Attention slips from the speaker to the person's own thoughts and is hard to hold on spoken words, so what is said is never properly taken in even though hearing is normal. Weak working memory means the start of a sentence can be lost by its end. Research links this to poor switching-off of the brain's resting (default mode) network during tasks.",
+  why: "Attention slips from the speaker to the person's own thoughts and is hard to hold on spoken words, so what is said is never properly taken in even though hearing is normal. Weak working memory means the start of a sentence can be lost by its end. One research model links this to the brain's resting (default mode) network not switching off fully during tasks, though the evidence is mixed.",
   ask: {
     adult: "Over the last six months, how often has someone spoken to you directly and then realised, or told you, that you were not really taking it in, as if your mind was somewhere else? Can you give me an example?",
     child: "Thinking back to primary school, roughly age 5 to 12, did parents or teachers often have to repeat themselves because you did not seem to hear them, even when they were talking right to you? What happened?"
   },
   rephrase: [
-    "Do people say you look miles away when they talk to you?",
-    "Do you find you have missed what someone just said, even though you were looking at them?",
-    "Do people often have to say things twice before it goes in?",
-    "Do your family or friends complain that you do not listen?",
+    "What do people say about how you seem when they are talking to you?",
+    "How often do you find you have missed what someone just said, even though you were looking at them?",
+    "How often do people have to say things twice before it goes in?",
+    "What do your family or friends say about how well you listen?",
     "When someone talks to you face to face, where does your mind go?",
-    "Do you nod along and then realise you have no idea what was said?",
+    "How often do you nod along and then realise you have no idea what was said?",
     "In plain words: do people think you are not listening, even when you are trying?",
     "Everyone switches off sometimes. Does it happen to you more than most, even in conversations that matter?",
     "When you are on the phone, how much of the call do you actually take in?",
@@ -25,7 +25,7 @@ AA.add('symptoms', [{
     "Tell me about the last time someone said, 'You're not listening.'",
     "If someone tells you something important out loud, how much of it sticks?",
     "Does it happen even when the room is quiet and nothing else is going on?",
-    "Do people ever wave a hand in front of your face or say your name to get you back?"
+    "What do people do to get your attention back, for example saying your name again?"
   ],
   examples: {
     adult: [
@@ -37,9 +37,9 @@ AA.add('symptoms', [{
         "Looks straight at the speaker but takes in nothing",
         "Catches only fragments of what is said and guesses the rest",
         "Feels caught out when suddenly asked for their view",
-        "Watches lips and faces closely to force themselves to follow",
+        "Keeps their eyes fixed on the speaker to force themselves to follow",
         "Repeats back what was said to check it has gone in",
-        "Replies late, as if the words have only just reached them"
+        "Changes the subject because they lost what the other person was saying"
       ] },
       { ctx: "relationships", label: "Partner and family", items: [
         "Partner says 'you never listen to me' and it leads to rows",
@@ -67,22 +67,22 @@ AA.add('symptoms', [{
         "Takes notes in every conversation in case words do not stick",
         "Asks for instructions by email because spoken ones slip away",
         "Gets feedback that they seem disengaged or uninterested",
-        "Has been told off for not acting on something said directly to them",
-        "Rings clients back to check what they asked for in person",
+        "Is told off over a request they did not register being given",
+        "Has to contact clients again to check what they asked for in a meeting",
         "Misses the key point of a spoken handover at shift change"
       ] },
       { ctx: "study", label: "Study and training", items: [
         "A tutor asks them a direct question and it has not registered",
-        "Misses spoken details about assessments given at the end of class",
+        "Misses what a tutor tells them one to one about an assignment",
         "Nods through one-to-one feedback but leaves without having taken it in",
-        "Group project members repeat decisions because they did not register them",
+        "Project partners have to repeat what they just told them",
         "Records tutorials to replay later because the first time does not go in"
       ] },
       { ctx: "social", label: "Friends and social life", items: [
         "Friends say they look glazed over when being told something",
         "Loses track of what a friend is telling them and fakes interest",
         "Asks a question a friend has just answered",
-        "Misses people's names straight after being introduced",
+        "Loses people's names the moment they are introduced, nearly every time",
         "Friends tease them about being in their own world",
         "Friends stop sharing things because they feel unheard",
         "Comes away from a catch-up unable to say what a friend's news was",
@@ -93,9 +93,9 @@ AA.add('symptoms', [{
         "Needs written information because spoken advice does not go in",
         "Brings someone along to listen at medical appointments",
         "Takes in little of a pharmacist's explanation about a new medicine",
-        "Answers a clinician's question with something unrelated",
+        "Realises after a phone consultation that the plan did not go in",
         "Asks a receptionist to repeat the same information several times",
-        "Misses spoken instructions from a fitness instructor or physio"
+        "Misses what a physio explains during a one-to-one session"
       ] },
       { ctx: "digital", label: "Phone, screens and online", items: [
         "Says 'sorry, what?' over and over on phone calls",
@@ -110,20 +110,26 @@ AA.add('symptoms', [{
         "Misses requests made face to face, such as to move the car",
         "Neighbours or visitors have to repeat what they came to say",
         "Family ask 'did you hear me?' many times a day",
-        "Gets visitors' requests wrong, such as the drink they asked for"
+        "Gets visitors' requests wrong, such as the drink they asked for",
+        "Misses what a landlord or tradesperson explains on the doorstep"
       ] },
       { ctx: "driving", label: "Driving and travel", items: [
         "Misses directions given by a stranger when asking the way",
-        "Asks a passenger to repeat directions several times",
+        "Asks station staff for directions, then has to ask again straight away",
         "Misses what a mechanic explained about their car",
         "Misses what ticket or gate staff tell them directly",
         "Misses a tour guide's answer to their own question"
       ] },
       { ctx: "admin", label: "Paperwork and money", items: [
-        "Comes off calls with the bank or council unsure what was decided",
+        "Has to ask a bank or council adviser to repeat what they just said",
         "Misses key points when an adviser explains a contract or benefit out loud",
         "Asks staff to write down what they just explained at a counter",
         "Agrees to terms on a sales call without taking in what was said"
+      ] },
+      { ctx: "leisure", label: "Leisure and hobbies", items: [
+        "Misses what a coach or teacher says to them directly in a lesson",
+        "Loses track when a friend explains the rules of a new game",
+        "Misses what a fellow club member tells them about changes to the next session"
       ] },
       { ctx: "inner", label: "Inner experience", items: [
         "Mind slides off to their own thoughts while someone is speaking",
@@ -144,10 +150,10 @@ AA.add('symptoms', [{
         "Needs the task explained again individually after the class is told",
         "Starts the wrong activity because the instruction did not go in",
         "Seems to be in a world of their own in class",
-        "Asks what they have to do straight after the explanation",
+        "Stares blankly when the teacher asks them a direct question",
         "Responds only when the teacher stands right next to them",
         "Gazes out of the window while being spoken to",
-        "Copies what other children do because the instruction did not go in"
+        "Watches other children to work out what they were just told to do"
       ] },
       { ctx: "home", label: "Home and family", items: [
         "Parents call their name several times before they respond",
@@ -157,16 +163,18 @@ AA.add('symptoms', [{
         "Parents touch their arm or crouch in front of them to be heard",
         "Agrees to do something but clearly did not hear what",
         "Had a hearing test because adults thought they could not hear",
-        "Does not hear their name called for meals, even in a quiet house"
+        "Carries on as if nothing was said when a parent speaks in a quiet room",
+        "Responds only once a parent raises their voice"
       ] },
       { ctx: "homework", label: "Homework", items: [
         "A parent explains a method and none of it goes in",
         "Needs each step explained again as they go",
         "Looks blank when asked what the teacher said about the homework",
-        "Parent has to sit face to face to get through to them"
+        "Parent has to sit face to face to get through to them",
+        "Asks what to do straight after a parent has explained the task"
       ] },
       { ctx: "play", label: "Play and friends", items: [
-        "Does not hear friends calling them in the playground",
+        "Does not respond when a friend talks to them during a quiet game",
         "Misses the rules when friends explain a new game",
         "Friends say they are daydreaming and do not answer",
         "Answers questions with something unrelated",
@@ -196,7 +204,7 @@ AA.add('symptoms', [{
         "Parents say talking to them is like talking to a wall",
         "Misses information given to them directly at the end of lessons",
         "Loses track in one-to-one chats with friends",
-        "Gets into trouble for not doing what they were directly told",
+        "Gets into trouble because a direct instruction never registered",
         "Teachers comment that they seem miles away when spoken to"
       ] }
     ]
@@ -304,7 +312,7 @@ AA.add('symptoms', [{
     "The mind is elsewhere even without obvious distraction: no screen, no noise, nothing else going on.",
     "It happens often: most days, with several different people, more than in peers.",
     "Other people notice it (partner, family, colleagues, teachers), not only the patient.",
-    "It is seen in more than one setting, such as home and work, or family and friends.",
+    "It usually shows in more than one setting, such as home and work, or family and friends.",
     "It is long-standing, with childhood accounts of daydreaming or needing to be called repeatedly.",
     "It causes problems: missed information, arguments, people feeling ignored, mistakes at work.",
     "Hearing has been checked, or there is no reason to suspect hearing loss.",
@@ -325,9 +333,9 @@ AA.add('symptoms', [{
     "Do not count attention fading through long lectures or meetings (ia2) or forgetting things later (ia9) here."
   ],
   anchors: [
-    { score: "yes", quote: "My partner says I'm not there half the time. She tells me something across the table, I nod, and an hour later I've no idea. It's the same at work, and my mum says teachers were always calling my name.", why: "Present. Face to face, frequent, noticed by others, across settings and from childhood." },
+    { score: "yes", quote: "My partner says I'm not there half the time. They tell me something across the table, I nod, and an hour later I've no idea. It's the same at work, and my mum says teachers were always calling my name.", why: "Present. Face to face, frequent, noticed by others, across settings and from childhood." },
     { score: "yes", quote: "I have to ask people to say things again all day. My hearing's been tested twice and it's fine. I just drift off into my own head, even when it's someone I love talking.", why: "Present. Hearing excluded, mind elsewhere, frequent, and it affects close relationships." },
-    { score: "yes", quote: "I take notes in every conversation at work, even quick ones, and I ask everyone to email me. If I don't, I miss half of what was said.", why: "Present. Heavy compensation hides the symptom. Ask what happens without notes and what others notice." },
+    { score: "yes", quote: "I take notes in every conversation at work, even quick ones, and I ask everyone to email me. If I don't, I miss half of what was said.", why: "Present if confirmed. Heavy compensation hides the symptom. Ask what happens without notes, whether it also happens at home and with friends, and what others notice." },
     { score: "unsure", quote: "People say I don't listen, but I think they just talk too much.", why: "Unsure. Ask for specific examples, whether it happens with interesting topics and people they value, and get collateral." },
     { score: "unsure", quote: "I zone out when people talk, but mostly when I'm stressed or someone's raising their voice.", why: "Unsure. Could be dissociation or anxiety. Ask about calm periods, childhood and any trauma history." },
     { score: "unsure", quote: "My kids say I never listen, but I'm usually on my phone when they talk to me.", why: "Unsure. Screen absorption is a confounder. Ask about times without a phone, at work and with other adults." },

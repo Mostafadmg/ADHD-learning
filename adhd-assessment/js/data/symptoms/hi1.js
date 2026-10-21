@@ -5,26 +5,26 @@ AA.add('symptoms', [{
   codes: { dsm5: "A2a", diva: "H/I 1", asrs: [5] },
   title: "Fidgets, taps or squirms in seat",
   criterion: "Often moves the hands or feet restlessly, taps or fiddles with things, or shifts and wriggles about in the seat, more than is usual for the person's age and setting.",
-  adultForm: "In adults the movement is usually smaller and better hidden than in childhood: a bouncing knee under the table, clicking pens, turning a ring, picking at skin or nails, swivelling the chair, constantly changing position. Many adults have learned to suppress visible movement, and the effort of doing so leaves them tense, tired or unable to follow what is being said. DSM-5-TR notes that hyperactivity becomes less obvious with age, so ask about the effort and cost of keeping still, not only about visible movement.",
-  why: "Weaker inhibition of motor activity together with a need for extra stimulation to stay alert in dull, seated situations. Small movements appear to help many people with ADHD keep arousal and working memory up, which is why fidgeting rises when a task is slow, sedentary or demanding to hold in mind.",
+  adultForm: "In adults the movement is usually smaller and better hidden than in childhood: a bouncing knee under the table, clicking pens, turning a ring, biting or picking at nails, swivelling the chair, constantly changing position. Many adults have learned to suppress visible movement, and the effort of doing so leaves them tense, tired or unable to follow what is being said. DSM-5-TR describes overt hyperactivity becoming less obvious after childhood, often narrowing to fidgetiness or an inner jittery feeling, so ask about the effort and cost of keeping still, not only about visible movement.",
+  why: "Thought to reflect weaker inhibition of motor activity together with a need for extra stimulation to stay alert in dull, seated situations. Small movements appear to help many people with ADHD keep arousal and working memory up, which is why fidgeting rises when a task is slow, sedentary or demanding to hold in mind.",
   ask: {
     adult: "Over the last six months, when you have had to sit for a while, such as at a desk, in a meeting, at a meal or watching something, how often have your hands or feet been on the move, or have you kept shifting about in your seat? Can you give me a recent example?",
     child: "Thinking back to primary school, roughly age 5 to 12, how often were your hands or feet moving, or were you fiddling with things or wriggling about, when you were meant to be sitting nicely? What did teachers or your parents say about it?"
   },
   rephrase: [
-    "When you sit down, do your hands or feet keep moving?",
-    "Do you jiggle your leg, tap your fingers or play with things a lot when you sit?",
-    "Is it hard for your body to keep still in a chair?",
+    "When you sit down, do your hands or feet keep moving? Tell me what they do.",
+    "Some people jiggle a leg, tap their fingers or play with things when they sit. Which of these, if any, do you do, and how often?",
+    "What is it like for your body when you have to keep still in a chair?",
     "When you sit, do your hands or feet move a lot? Can you show me what they do?",
     "What do your hands usually do while you are listening to someone?",
     "If I filmed you in a long meeting or at the cinema, what would I see your body doing?",
     "Lots of people fidget a little. Compared with friends or colleagues, do you move more, and do people mention it?",
     "Do you have tricks to stop yourself fidgeting, like sitting on your hands or holding something? What happens without them?",
     "How much effort does it take to keep still somewhere like the dentist or a job interview?",
-    "Does anyone ask you to stop tapping, clicking or bouncing your leg?",
-    "Do you find yourself twisting, picking or pulling at things, like a pen, your sleeves or your skin, while sitting?",
-    "Would you call yourself a fidgeter?",
-    "Do you change position in your chair a lot, tuck your legs under you, or rock?",
+    "What, if anything, do other people say about your tapping, clicking or leg bouncing?",
+    "What do your hands find to fiddle with when you sit, such as a pen, your sleeves, your hair or jewellery?",
+    "How would you describe yourself when it comes to sitting still, and what makes you say that?",
+    "How do you usually sit in a chair, and how often do you change position?",
     "When you have been sitting for a while, does your body feel uncomfortable until you move a bit?"
   ],
   examples: {
@@ -42,7 +42,7 @@ AA.add('symptoms', [{
         "Uses a standing desk mainly to be able to shift weight constantly",
         "On a till or production line, drums fingers whenever there is a pause",
         "Fiddles with a lanyard, ID badge or zip throughout the shift",
-        "Taps feet so much in a home office that people downstairs complain"
+        "Perches on the edge of the seat, tucking and untucking the legs"
       ] },
       { ctx: "study", label: "Study and training", items: [
         "Taps a pen against teeth or the desk in lectures",
@@ -59,10 +59,10 @@ AA.add('symptoms', [{
         "Turns a ring, bracelet or watch strap round and round while listening",
         "Peels labels off bottles or tears napkins into strips while chatting",
         "Turns a phone over and over in the hand without looking at it",
-        "Clicks a pen until the person chairing the meeting gives them a look",
+        "Folds and refolds the corners of agendas or meeting papers",
         "On video calls, swivels in the chair or rocks in and out of view",
         "Always holds a cup or object so the hands have something to do",
-        "Taps a foot to an inner rhythm while someone else is speaking",
+        "Unscrews, spins or stacks whatever is on the meeting table",
         "Fiddles with sleeves, buttons or cuffs in interviews"
       ] },
       { ctx: "home", label: "Home and household", items: [
@@ -72,8 +72,13 @@ AA.add('symptoms', [{
         "Taps cutlery on the plate or table during meals",
         "Sits on one leg, then the other, then tucked up, during a meal",
         "Has broken chairs by tipping back on them",
-        "Pulls at loose threads in clothes until holes appear",
+        "Sits sideways with legs over the chair arm, then changes again minutes later",
         "Drums on the worktop while waiting for the kettle to boil"
+      ] },
+      { ctx: "admin", label: "Paperwork and money", items: [
+        "Jiggles a leg throughout a session of bills or online forms",
+        "Fiddles with pens, paper clips or forms at bank or council appointments",
+        "Drums on the desk and shifts about while on hold to a call centre"
       ] },
       { ctx: "relationships", label: "Partner and family", items: [
         "Partner says the sofa or bed shakes from their jiggling foot",
@@ -85,11 +90,11 @@ AA.add('symptoms', [{
       ] },
       { ctx: "parenting", label: "Parenting", items: [
         "Bounces a leg through the school play or parents' evening",
-        "Fidgets through children's assemblies and gets looks from other parents",
+        "Fiddles with cushions, toys or the blanket while reading a bedtime story",
         "Plays with the child's pens or toys while helping with homework",
         "Drums on the table during homework help, distracting the child",
         "Clicks the buggy brake on and off while waiting",
-        "Shifts and squirms in the stand at children's sports matches"
+        "Shifts and squirms on the spectator bench at a child's lessons or matches"
       ] },
       { ctx: "social", label: "Friends and social life", items: [
         "Spins a beer mat or glass on the table at the pub",
@@ -101,15 +106,15 @@ AA.add('symptoms', [{
       ] },
       { ctx: "driving", label: "Driving and travel", items: [
         "Drums on the steering wheel at traffic lights",
-        "Keeps adjusting the seat, mirrors or radio while driving",
+        "Keeps fiddling with the radio, vents or seat settings while driving",
         "Fiddles with air vents, seatbelt or window buttons as a passenger",
         "Squirms and changes position all through long train or plane journeys",
         "Picks at the armrest or seat fabric on public transport",
         "Taps feet through a bus ride, annoying the person next to them",
-        "Pulls the seatbelt in and out on long journeys"
+        "Jiggles a leg so much as a passenger that the driver comments"
       ] },
       { ctx: "digital", label: "Phone, screens and online", items: [
-        "Spins the phone in the hand or flips the case open and shut",
+        "Plays with the charger cable or earphones while on the phone",
         "Swipes the phone screen back and forth without reading anything",
         "Clicks the mouse or taps keys for no reason while a page loads",
         "Rocks or swivels in a gaming chair throughout online sessions",
@@ -118,21 +123,21 @@ AA.add('symptoms', [{
       { ctx: "leisure", label: "Leisure and hobbies", items: [
         "Shifts, crosses and uncrosses legs all through a film at the cinema",
         "Picks at nails or skin while reading a book",
-        "Taps feet through a concert, play or service where others are still",
+        "Taps feet through a play, a talk or a religious service where others sit still",
         "Knits, crochets or doodles mainly to stop the hands fidgeting",
         "Fiddles with cards or game pieces between turns",
-        "Rocks or shuffles through a long board game"
+        "Shuffles and resettles in the seat throughout a long board game"
       ] },
       { ctx: "health", label: "Health and appointments", items: [
         "Taps feet and plays with leaflets in the GP waiting room",
-        "Struggles to keep still for a scan, blood test or dental treatment",
+        "Moves so much during a scan or blood test that it has to be redone",
         "Has been told by a hairdresser or tattoo artist to stop moving",
-        "Picks the skin around nails while sitting until it bleeds",
+        "Fiddles with the blood pressure cuff, couch paper or leaflets during a check-up",
         "Bites nails or chews the inside of the cheek when sitting still",
         "Fidgets so much in the dentist's chair that treatment takes longer"
       ] },
       { ctx: "inner", label: "Inner experience", items: [
-        "Feels an urge in the hands or legs that eases only with fiddling",
+        "Hands feel empty and restless without something to hold",
         "Puts so much effort into keeping still that they lose track of what is said",
         "Sits on hands or crosses legs tightly to hide fidgeting",
         "Feels tense and drained after a long spell of forced stillness",
@@ -154,17 +159,17 @@ AA.add('symptoms', [{
         "Swings legs and kicks the table leg or the chair in front",
         "Plays with the velcro on shoes or the zip of a jumper",
         "Picks at the corners of exercise books until pages are ragged",
-        "Twists round in the seat to look behind",
-        "Pokes or prods the child sitting next to them in assembly",
+        "Twists and turns in the seat, sitting every way except facing forwards",
+        "Fiddles with laces, hair or the edge of the carpet in assembly",
         "Was given a wobble cushion or fidget toy by the teacher",
-        "Pulls bits off rubbers or sharpens pencils down to stubs"
+        "Pulls bits off rubbers and rolls them into little balls"
       ] },
       { ctx: "homework", label: "Homework", items: [
         "Slides down the chair, then up, then sideways during homework",
         "Drums on the table and kicks the chair legs at homework time",
         "Clicks pens or fiddles with everything in reach instead of writing",
         "Does homework lying on the floor, rolling about",
-        "Bites the ends of pencils until they splinter",
+        "Taps a pencil against teeth or the table while thinking",
         "Spins round in a swivel chair while trying to read",
         "Twists hair or clothing during reading practice"
       ] },
@@ -176,14 +181,14 @@ AA.add('symptoms', [{
         "Fiddles with toys, buttons or the remote during family films",
         "Picks at scabs or the skin around nails",
         "Wriggles constantly while having hair brushed or cut",
-        "Kicks the table during meals without noticing"
+        "Could not keep still for family photos or long visits to relatives"
       ] },
       { ctx: "play", label: "Play and friends", items: [
-        "Fiddles with other children's things during quiet games",
+        "Fiddles with own hair, laces or a toy while friends are talking",
         "Wriggles and shuffles when friends sit down to watch something",
         "Knocks over pieces in board games through fidgeting",
-        "Taps and bangs on everything while playing indoors",
-        "Plays with the hair or clothes of the child next to them"
+        "Squirms on the floor or sofa while friends play a computer game",
+        "Rolls about or wriggles during quiet games like jigsaws or colouring"
       ] },
       { ctx: "activities", label: "Clubs, sport and outings", items: [
         "Fidgets through the cinema, theatre or pantomime",
@@ -194,14 +199,14 @@ AA.add('symptoms', [{
         "Wriggles through long meals in restaurants"
       ] },
       { ctx: "reports", label: "What teachers and parents said", items: [
-        "Report said 'needs to keep hands to themselves'",
+        "Report said 'needs to keep hands and feet still'",
         "Teacher wrote 'constantly fiddling' or 'cannot keep still'",
         "Parents' evening comments about wriggling and swinging on chairs",
         "Report said 'would achieve more if less fidgety'",
         "Teacher moved them to the front to keep an eye on the fidgeting",
         "Relatives called them 'wriggle-bottom' or 'ants in their pants'",
         "Was often told off for rocking on the chair",
-        "Nursery noted wriggling at circle time and snack time"
+        "Infant teacher noted wriggling at carpet time and in assembly"
       ] },
       { ctx: "teen", label: "Secondary school (12-16)", items: [
         "Clicked pens or tapped constantly in secondary school lessons",
@@ -307,7 +312,7 @@ AA.add('symptoms', [{
       "Cannot keep still",
       "Fiddles with equipment",
       "Rocks on chair",
-      "Needs to keep hands to themselves",
+      "Fidgety at carpet time",
       "Wriggles on the carpet",
       "Restless in their seat",
       "Always has something in their hands",
@@ -316,9 +321,9 @@ AA.add('symptoms', [{
   },
   counts: [
     "Hand, foot or body movement while seated happens often: most days and in most sitting situations, not just occasionally.",
-    "It is clearly more than peers of the same age, sex and culture in the same setting, and others have noticed or commented.",
-    "It shows in at least two settings, for example work and home, or meetings and meals.",
-    "It happens when the person is calm and interested, not only when anxious, in pain or after hours of boredom.",
+    "It is clearly more than peers of the same age and background in the same setting; others have usually noticed or commented, though well-hidden fidgeting may go unremarked.",
+    "It shows in more than one setting, for example work and home, or meetings and meals. Criterion C applies to the symptom picture as a whole, but fidgeting seen in only one place is weak evidence.",
+    "It is not confined to times of anxiety, pain or exceptional boredom; it also happens in ordinary, calm situations.",
     "It is longstanding and trait-like: present for at least the last six months and usually traceable to childhood, not tied to episodes.",
     "Score Present when stillness is possible only with obvious effort and that effort causes strain, missed information or exhaustion.",
     "Score Present when the person needs aids to manage it (fidget objects, gum, knitting, a wobble cushion) and the fidgeting returns without them.",
@@ -347,7 +352,7 @@ AA.add('symptoms', [{
     { score: "unsure", quote: "I suppose I fidget a bit when meetings drag on. Doesn't everyone?", why: "Unsure. Ask how often, in which other settings, and whether colleagues fidget as much. Score No if it is similar to peers and causes no problems." },
     { score: "unsure", quote: "Since I started the new antidepressant my legs just won't stop. I can't sit through a film.", why: "Unsure, leaning towards a medicine effect. Ask what it was like before the medicine and in childhood; new onset with a medicine suggests akathisia, which needs medical review." },
     { score: "unsure", quote: "I only fidget when I'm nervous, like job interviews or at the dentist. The rest of the time I'm fine.", why: "Unsure, leaning No. Situational and anxiety-linked. Explore relaxed settings; if absent there, score No and consider anxiety." },
-    { score: "no", quote: "I can sit and read for hours. My mum always said I was a calm child.", why: "Absent. No current or childhood evidence of fidgeting." },
+    { score: "no", quote: "I can sit and read for hours. My mum always said I was a calm child.", why: "Absent. No current or childhood evidence of fidgeting. If other symptoms point to ADHD, check with an informant, as fidgeting is often unnoticed by the person." },
     { score: "no", quote: "In the evening my legs feel horrible, like something crawling, and I have to get up and walk. During the day I'm fine.", why: "Absent for this symptom. Evening leg discomfort relieved by walking fits restless legs; assess that separately." },
     { score: "no", quote: "I blink hard and clear my throat. It builds up and I have to do it, then it settles.", why: "Absent for this symptom. A premonitory urge and relief point to tics. Score fidgeting only if ordinary fidgeting is also present." }
   ],
@@ -358,13 +363,13 @@ AA.add('symptoms', [{
     { ddx: "rls", clue: "Unpleasant leg sensations at rest, worse in the evening, eased by walking.", ask: "Is it worse in the evening or in bed, with a crawling or aching feeling in your legs?" },
     { ddx: "sud_stim", clue: "Movement tied to caffeine, energy drinks, cocaine, amphetamine or nicotine withdrawal.", ask: "How much caffeine, nicotine or other stimulants do you use, and does the fidgeting follow using or stopping them?" },
     { ddx: "asd", clue: "Patterned repetitive movements such as rocking or flapping used to self-soothe or cope with sensory overload.", ask: "Are the movements the same each time, and do they help you cope with noise, light or overwhelming situations?" },
-    { ddx: "ocd", clue: "Skin picking or hair pulling driven by tension and relief, with little other fidgeting.", ask: "Apart from picking or pulling, do you fidget in other ways, like tapping or jiggling?" },
+    { ddx: "ocd", clue: "Body-focused repetitive behaviour: skin picking or hair pulling driven by tension and relief, with little other fidgeting.", ask: "Apart from picking or pulling, do you fidget in other ways, like tapping or jiggling?" },
     { ddx: "thyroid", clue: "New jitteriness or tremor with weight loss, heat intolerance, sweating or palpitations.", ask: "Have you noticed weight loss, feeling hot, a racing heart or shaky hands recently?" },
     { ddx: "social", clue: "Fidgeting mainly when being watched, judged or performing.", ask: "Do you fidget when you are alone at home, or mainly when other people are looking at you?" },
     { ddx: "normal", clue: "Occasional fidgeting in long, dull situations, similar to peers, with no complaints.", ask: "Do others in the same meeting fidget as much as you, and has anyone ever mentioned it?" }
   ],
   special: {
-    women: "Girls and women are often taught to keep still, so fidgeting may be small and hidden: twisting hair, picking skin, toe-curling, knitting or doodling. Ask about the effort and cost of keeping still, and about school reports such as 'fiddly' or 'chatty'.",
+    women: "Girls and women are often taught to keep still, so fidgeting may be small and hidden: twisting hair, picking skin, toe-curling, knitting or doodling. Ask about the effort and cost of keeping still, and about school reports such as 'always fiddling' or 'never still'.",
     older: "Visible fidgeting tends to lessen with age and may be replaced by hidden habits. New restlessness in later life needs a medical review first (medicines, thyroid, restless legs, Parkinson's disease, cognitive decline with agitation), and a lifelong history is essential.",
     highIQ: "Able adults often build socially acceptable outlets such as note-taking, doodling, standing desks or active roles, so fidgeting looks mild. Judge by what happens when the outlets are unavailable and how much effort stillness takes.",
     sud: "Caffeine, nicotine and its withdrawal, stimulants, and alcohol or benzodiazepine withdrawal all cause fidgety restlessness. Establish whether fidgeting was present before substance use began and during periods without use.",

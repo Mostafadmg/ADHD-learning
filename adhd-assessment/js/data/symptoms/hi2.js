@@ -5,26 +5,26 @@ AA.add('symptoms', [{
   codes: { dsm5: "A2b", diva: "H/I 2", asrs: [12] },
   title: "Leaves seat when staying seated is expected",
   criterion: "Often gets up and leaves their place in situations where people are expected to stay seated, such as a classroom, an office or other workplace, meetings or meals.",
-  adultForm: "In adults it shows as getting up from the desk again and again, finding reasons to walk about (a drink, the printer, the toilet), leaving meetings part-way, pacing during calls, or stopping often on long drives. Many adults shape their lives to avoid the problem: they choose jobs that keep them on their feet, sit by the door, or stop going to cinemas, lectures, ceremonies and long flights. DSM-5-TR's examples include leaving one's place in the office or workplace, so ask about avoidance and seating choices as well as actual walking out.",
-  why: "Weak inhibition of the impulse to move, combined with low tolerance of under-stimulation: staying seated in a slow setting feels aversive, and getting up briefly restores alertness. It is the 'getting up' expression of the same motor-regulation difficulty that shows as fidgeting.",
+  adultForm: "In adults it shows as getting up from the desk again and again, finding reasons to walk about (a drink, the printer, the toilet), leaving meetings part-way, getting up to pace during work calls, or stopping often on long drives. Many adults shape their lives to avoid the problem: they choose jobs that keep them on their feet, sit by the door, or stop going to cinemas, lectures, ceremonies and long flights. DSM-5-TR's examples include leaving one's place in the office or workplace, so ask about avoidance and seating choices as well as actual walking out.",
+  why: "Thought to reflect weak inhibition of the impulse to move, combined with low tolerance of under-stimulation: staying seated in a slow setting feels aversive, and getting up briefly restores alertness. It is the 'getting up' expression of the same motor-regulation difficulty that shows as fidgeting.",
   ask: {
     adult: "Over the last six months, in places where people are expected to stay seated, like your desk, meetings, meals, the cinema or a long journey, how often have you got up, walked about or left before the end? Tell me about a recent time.",
     child: "When you were at primary school, how often did you get out of your seat in class, at mealtimes or in assembly when you were meant to stay sitting down? What happened when you did?"
   },
   rephrase: [
-    "Do you get up a lot when you are supposed to stay sitting?",
+    "Do you get up a lot when you are supposed to stay sitting? Where does that happen?",
     "At work or at the table, how long do you stay in your chair before you get up?",
     "When you must sit, do you stand up and walk? How many times?",
     "What makes you get up in the middle of a meeting or a meal?",
     "Where do you find it hardest to stay in your seat?",
     "Everyone stretches their legs now and then. Do you get up more than the people around you, and do they notice?",
-    "Do you find reasons to leave your seat, like making a drink, mainly so that you can move?",
-    "Are there places you avoid, such as the cinema, long flights or ceremonies, because you would have to stay seated?",
-    "Do you plan where you sit, for example near the door or on the aisle, so you can get up easily?",
+    "What reasons do you find to leave your seat, and how many of them are really about wanting to move?",
+    "Which places or events, if any, do you avoid because you would have to stay seated?",
+    "How do you choose where to sit in a meeting room, a cinema or on a plane?",
     "If you had to stay in one seat for two hours with no break, how would that go?",
-    "Do you walk about when you are on the phone?",
+    "On a long work call or online meeting, how long do you stay in your chair?",
     "Have you chosen work that keeps you on your feet? What made you choose it?",
-    "At home, do you usually eat a whole meal sitting down?"
+    "Tell me about mealtimes at home: how often do you stay at the table until the end?"
   ],
   examples: {
     adult: [
@@ -40,7 +40,8 @@ AA.add('symptoms', [{
         "Works standing at a counter rather than at the desk provided",
         "Steps out of training days or inductions several times",
         "Lost a desk-based job partly because of being away from the desk",
-        "Is often missing from the desk when the phone rings"
+        "Is often missing from the desk when the phone rings",
+        "Gets up from the desk to walk about during every work phone call"
       ] },
       { ctx: "conversation", label: "Conversations and meetings", items: [
         "Stands at the back or by the wall in meetings instead of sitting",
@@ -66,11 +67,14 @@ AA.add('symptoms', [{
         "Gets up several times during every meal at home",
         "Eats standing at the kitchen counter or walking about",
         "Leaves the sofa again and again during a film",
-        "Gets up mid-conversation to do a small job, then comes back",
-        "Rarely sits through a whole evening of television with the family",
-        "Jumps up from the table before others have finished eating",
-        "Wanders from room to room while on the phone",
-        "Stands to do household paperwork that others would sit for"
+        "Gets up and down while a visitor sits and chats over a cup of tea",
+        "Gets up repeatedly during a seated religious or festive meal at home",
+        "Jumps up from the table before others have finished eating"
+      ] },
+      { ctx: "admin", label: "Paperwork and money", items: [
+        "Stands to do household paperwork that others would sit for",
+        "Gets up many times while filling in a long form or tax return",
+        "Leaves the seat at bank or council appointments and has to be called back"
       ] },
       { ctx: "relationships", label: "Partner and family", items: [
         "Partner complains they never sit with them for a whole evening",
@@ -83,15 +87,15 @@ AA.add('symptoms', [{
       { ctx: "parenting", label: "Parenting", items: [
         "Gets up and down during children's assemblies, concerts or nativity plays",
         "Walks about at the back while waiting at parents' evening",
-        "Walks the touchline rather than sitting with other parents at matches",
-        "Leaves the table at children's parties to walk around",
-        "Steps out of a child's long school ceremony at least once",
+        "Leaves the spectator seats repeatedly during a child's swimming gala or show",
+        "Gets up and wanders out during a child's long clinic or hospital appointment",
+        "Cannot stay seated through a school information evening or meeting with a teacher",
         "Gets up several times while helping with homework"
       ] },
       { ctx: "social", label: "Friends and social life", items: [
         "Leaves the restaurant table between courses to walk about",
         "Stands at the bar rather than sitting at the table with friends",
-        "Goes outside repeatedly during evenings in, just to get up",
+        "Goes outside repeatedly during evenings at friends' homes, just to get up",
         "Leaves dinner parties early or wanders between rooms",
         "Gets up and down during a friend's wedding service or speeches",
         "Prefers standing events like gigs over seated dinners",
@@ -105,7 +109,7 @@ AA.add('symptoms', [{
         "Stands on buses or trains even when seats are free",
         "Unbuckles and stands while the seatbelt sign is still on",
         "Paces the platform or departure gate instead of sitting to wait",
-        "Gets out of the car at fuel stops even when no break is needed"
+        "As a passenger, asks for extra stops on long car journeys to get out"
       ] },
       { ctx: "leisure", label: "Leisure and hobbies", items: [
         "Rarely sees a whole film at the cinema without leaving at least once",
@@ -114,7 +118,7 @@ AA.add('symptoms', [{
         "Gets up between every hand or turn in card and board games",
         "Chooses end-of-row seats at the theatre",
         "Walks around the room during long matches on television",
-        "Stands at the back of talks rather than taking a seat"
+        "Leaves a booked seat at a comedy or music show to stand at the back"
       ] },
       { ctx: "health", label: "Health and appointments", items: [
         "Paces in the waiting room rather than sitting down",
@@ -125,15 +129,14 @@ AA.add('symptoms', [{
         "Avoids group courses or therapy because of sitting for an hour"
       ] },
       { ctx: "digital", label: "Phone, screens and online", items: [
-        "Walks about the room for every phone call",
+        "Turns down online courses that mean an hour or more at the screen",
         "Stands or paces while gaming or watching videos",
         "Gets up from the computer repeatedly during online courses or webinars",
-        "Uses a walking pad or treadmill desk to avoid being seated",
-        "Leaves the screen mid-way through online meetings and comes back"
+        "Uses a walking pad or treadmill desk to avoid being seated"
       ] },
       { ctx: "inner", label: "Inner experience", items: [
         "Feels a strong pull to get up after sitting for a while",
-        "Checks where the exits are so they know they can leave",
+        "Feels stuck and uncomfortable, rather than frightened, when unable to leave a seat",
         "Counts down the minutes to the next break in long sessions",
         "Feels relief the moment they stand up and walk",
         "Plans excuses in advance to get out of long sit-down events",
@@ -150,7 +153,7 @@ AA.add('symptoms', [{
         "Leaves the carpet during story time to look at things",
         "Gets up and visits other tables during lessons",
         "Was given jobs like taking the register to the office to let them move",
-        "Leaves the line or the bench in the assembly hall",
+        "Leaves their place on the floor or bench in assembly",
         "Gets up during tests or quiet reading",
         "Has to be steered back to the seat by the teaching assistant",
         "Slides off the chair and ends up somewhere else in the room"
@@ -159,7 +162,7 @@ AA.add('symptoms', [{
         "Gets up from homework every few minutes for a drink or snack",
         "Leaves the table halfway through a worksheet and has to be called back",
         "Does homework standing at the kitchen counter or walking around",
-        "Gets up to look out of the window or check on the pet",
+        "Wanders off to the window or the pet and has to be brought back",
         "Homework takes hours because of constant trips away from the table",
         "A parent has to sit beside them to keep them in the chair"
       ] },
@@ -193,7 +196,7 @@ AA.add('symptoms', [{
         "Report said 'needs to stay in their seat'",
         "Teacher wrote 'often out of seat without permission'",
         "Report said 'wanders around the classroom'",
-        "Nursery noted they would not stay at the snack table",
+        "Infant teacher noted they rarely stayed at their table",
         "Parents said they 'never finished a meal sitting down'",
         "Teacher put their desk by the door or gave movement breaks",
         "Lunchtime staff complained they left the dining table early"
@@ -305,7 +308,7 @@ AA.add('symptoms', [{
   counts: [
     "Gets up or leaves often: most days, several times in situations where sitting is expected, not only now and then.",
     "More than peers in the same role and setting, and others have noticed (colleagues, teachers, family).",
-    "Happens across settings, for example work, meals and leisure, not only in one place.",
+    "Happens in more than one setting, for example work, meals and leisure. A symptom seen in only one place is weak evidence.",
     "Driven by an urge to move or the discomfort of staying seated, not by a task need or a physical reason.",
     "Longstanding and trait-like: present for at least six months and usually traceable to childhood.",
     "Clear avoidance of seated situations (flights, cinemas, lectures, ceremonies) because of this difficulty counts, even if they now rarely walk out because they no longer go.",
@@ -334,7 +337,7 @@ AA.add('symptoms', [{
     { score: "unsure", quote: "I'm a nurse, I'm on my feet all shift, so I don't really sit anyway.", why: "Unsure. The job requires movement. Ask about meals, films, training days and time off; score on situations where sitting is expected." },
     { score: "unsure", quote: "I walk out of meetings when they get too crowded and loud. I have to get out.", why: "Unsure. May be sensory overload or anxiety. Ask whether they also get up in quiet, comfortable settings." },
     { score: "unsure", quote: "I get up a lot at work, but that's because I go out for a cigarette every hour.", why: "Unsure. Nicotine craving can drive this. Ask whether they got up as often before they smoked and on days without smoking." },
-    { score: "no", quote: "Since my car accident my back is bad and I have to stand every twenty minutes.", why: "Absent. Clear medical reason and recent onset." },
+    { score: "no", quote: "Since my car accident my back is bad and I have to stand every twenty minutes.", why: "Absent. A clear physical reason that began with the injury, not a lifelong urge to move. Ask about life before the accident if other symptoms suggest ADHD." },
     { score: "no", quote: "I can sit through a whole film, no problem. I'll get up if a meeting drags, same as anyone.", why: "Absent. Similar to peers with no problems." },
     { score: "no", quote: "I can't sit in cinemas or churches because I panic that I'll be trapped and can't get out.", why: "Absent for this symptom. Avoidance is driven by fear of being trapped; assess panic and agoraphobia instead." }
   ],

@@ -4,40 +4,40 @@ AA.add('symptoms', [{
   dim: "HI",
   codes: { dsm5: "A2d", diva: "H/I 4", asrs: [14] },
   title: "Cannot do leisure activities quietly",
-  criterion: "Often finds it hard to play, take part in hobbies or spend free time in a calm, quiet way. Free time tends to become loud, noisy or unsettled, even when the activity itself is meant to be quiet.",
-  adultForm: "In adults this is less about noisy play and more about volume and the inability to settle into calm downtime. People describe a loud voice they struggle to turn down, humming, singing, whistling or sound effects, clattering objects, and quiet pastimes (reading, a film, a bath, fishing, meditation) that they cannot stay with unless something louder or busier is added. Many say they cannot unwind or relax when they finally have time to themselves (ASRS item 14). DSM-5-TR gives no separate adult illustration for this item, so look for a lifelong pattern that other people comment on.",
+  criterion: "Often finds it hard to play, take part in hobbies or spend free time in a calm, quiet way. Free time tends to become loud, noisy or rowdy, even when the activity itself is meant to be quiet.",
+  adultForm: "In adults this is less about noisy play and more about volume and the inability to settle into calm downtime. People describe a loud voice they struggle to turn down, humming, singing, whistling or sound effects, clattering objects, and quiet pastimes (reading, a film, a bath, fishing, meditation) that they cannot stay with unless something louder or busier is added. Many say they cannot unwind or relax when they finally have time to themselves (ASRS item 14). DSM-5-TR gives no separate adult illustration for this item, so look for a persistent, trait-like pattern that other people comment on.",
   why: "Weak inhibition of motor and vocal output, combined with a strong need for stimulation: calm, low-arousal activity feels uncomfortable, so the person adds noise or activity to stay engaged. Poor self-monitoring means they often do not notice their own volume until someone tells them.",
   ask: {
     adult: "Over the last six months, when you have had free time, how easy has it been to do something calmly and quietly, like reading, watching a film or just relaxing at home? Can you give me a recent example of what usually happens?",
-    child: "Thinking back to primary school, roughly age 5 to 12, could you play or do quiet things like drawing, reading or watching TV calmly, or did it usually get noisy? What do you remember, and what did your family or teachers say?"
+    child: "Thinking back to primary school, roughly age 5 to 12, what were you like when you were meant to play or do something quietly, like drawing, reading or watching TV? What do you remember, and what did your family or teachers say?"
   },
   rephrase: [
-    "When you sit down to relax, can you stay calm and quiet, or does it tend to get loud?",
-    "Do people tell you that you are loud, even when you are just chilling out?",
+    "When you sit down to relax, how calm and quiet do you manage to stay? Talk me through what usually happens.",
+    "What do people say about how loud you are, even when you are just relaxing? Can you give me an example?",
     "What happens when you try a quiet hobby, such as reading, a jigsaw or fishing?",
-    "Can you watch a whole film at home without singing along, making noises or jumping up to do something?",
+    "What happens when you watch a film at home with someone else? What would they say you do?",
     "When you finally get some time to yourself, how easy is it to unwind?",
-    "Do you hum, whistle, sing or make little noises without noticing?",
-    "Plain words: can you be quiet when you are having fun or resting?",
+    "What sounds do you make without noticing, such as humming, whistling or singing? Who points them out?",
+    "In simple words: when you rest or have fun, are you quiet or noisy? Tell me about the last time.",
     "How do you get on in quiet places, like a library, a waiting room or a quiet train carriage?",
-    "Most people get noisy sometimes. Do you get asked to keep it down more than your friends or family do?",
-    "Do you choose loud or busy hobbies because quiet ones feel impossible?",
-    "Have you found tricks to keep yourself quiet, like headphones or background music? How much effort does that take?",
+    "Most people get noisy sometimes. How often are you asked to keep it down, compared with your friends or family?",
+    "How do you choose what to do in your free time? What puts you off the quieter pastimes?",
+    "What tricks do you use to keep yourself quiet in quiet places, and how much effort does that take?",
     "Tell me about a typical evening off. What do you actually do, minute by minute?",
-    "In your free time, are you more calm or more noisy than the people around you?",
-    "Do family, housemates or neighbours complain about the noise you make?"
+    "If I asked the people you live with what you are like on a quiet evening in, what would they tell me?",
+    "What have family, housemates or neighbours said about the noise you make at home?"
   ],
   examples: {
     adult: [
       { ctx: "leisure", label: "Leisure and hobbies", items: [
         "Cannot read a book for long without putting music or the TV on",
-        "Gives up quiet hobbies like jigsaws, knitting or painting within minutes",
+        "Chats or makes comments through films, plays or talks where others expect silence",
         "Sings along loudly to every song, even in shared spaces",
         "Turns a calm card game or board game into a loud, rowdy event",
         "Picks noisy, fast activities over quiet ones almost every time",
         "Gets shushed in the cinema or theatre for laughing or reacting loudly",
-        "Finds a quiet walk dull unless music is blaring through earphones",
-        "Cannot sit and fish, birdwatch or garden calmly for long",
+        "Turns a quiet picnic or country walk into a loud, boisterous outing",
+        "Scares off the fish or birds with noise when fishing or birdwatching with others",
         "Walked out of yoga, meditation or mindfulness classes because the silence was unbearable",
         "Has been asked to quieten down in a library, museum or gallery",
         "Clatters tools and materials noisily while doing a craft or hobby",
@@ -53,7 +53,7 @@ AA.add('symptoms', [{
         "Plays music loudly while others in the house want peace",
         "Bangs pans and crockery while cooking or tidying, startling others",
         "Moves heavily around the house; others always hear them coming",
-        "Finds a silent house unsettling and switches something noisy on straight away",
+        "Has the TV volume much higher than others in the house want",
         "Cannot sit quietly in the garden; ends up with music or a loud phone call",
         "Wakes the household when coming in late because of the noise"
       ] },
@@ -80,13 +80,13 @@ AA.add('symptoms', [{
         "Friends often say 'shh' or 'keep it down' when out together",
         "Laughs much louder than others in restaurants or on public transport",
         "Is the loudest voice at a gathering, even without any alcohol",
-        "Gets overexcited and loud in public, then feels embarrassed later",
+        "Quickly becomes brash or over the top when out, then feels embarrassed later",
         "People turn round to look because of their volume in a cafe or pub",
         "Struggles to stay quiet during a wedding service, funeral or speech",
         "Friends stop inviting them to calm occasions such as dinners or recitals",
-        "New acquaintances describe them as 'too much' or 'full on'",
+        "Staff in restaurants, pubs or hotels ask them to keep the noise down",
         "Shouts across a room rather than walking over to speak",
-        "Finds it hard to keep quiet during prayers or services at a place of worship"
+        "Gets rowdy at friends' houses late at night, so hosts worry about the neighbours"
       ] },
       { ctx: "conversation", label: "Conversations and meetings", items: [
         "Speaks louder than everyone else without realising",
@@ -94,7 +94,7 @@ AA.add('symptoms', [{
         "Others regularly ask them to bring their voice down",
         "Voice rises when excited, and they only notice when someone reacts",
         "Has been told they sound aggressive when they are simply loud",
-        "Makes audible sighs, laughs or noises while others are presenting",
+        "Strangers in a cafe or on a train can hear their whole conversation",
         "Is the one heard rustling, humming or muttering in a quiet meeting"
       ] },
       { ctx: "work", label: "Work", items: [
@@ -102,14 +102,14 @@ AA.add('symptoms', [{
         "Has been moved to a different desk or room because of noise",
         "The staff room gets noticeably louder when they arrive on a break",
         "Feedback mentions being 'disruptive' or 'loud' in an open-plan office",
-        "Struggles in quiet roles, such as libraries, labs or lone night shifts",
+        "Keeps being shushed in quiet workplaces such as libraries, labs or shared offices",
         "Takes phone calls so loudly that the whole office can follow them",
         "Chooses noisy workplaces like kitchens, sites or warehouses where volume goes unnoticed"
       ] },
       { ctx: "study", label: "Study and training", items: [
         "Gets told off in silent study areas for the noise they make",
         "Hums or mutters while revising and disturbs others nearby",
-        "Can only settle to study with loud music playing",
+        "Plays music aloud in shared halls or study rooms, annoying others",
         "Is the noisy one in group study sessions",
         "Has been warned in an exam hall about humming or making noises"
       ] },
@@ -133,7 +133,7 @@ AA.add('symptoms', [{
         "Finds a quiet waiting room hard and ends up chatting loudly or humming",
         "Cannot stay quiet through a massage or relaxation session",
         "Gives up on relaxation, breathing or sleep apps a clinician suggested",
-        "Finds hospital stays or bed rest unbearable because everything is so quiet"
+        "Disturbs other patients on a ward with their volume or phone calls"
       ] },
       { ctx: "inner", label: "Inner experience", items: [
         "Feels uneasy in silence and fills it with noise straight away",
@@ -167,13 +167,13 @@ AA.add('symptoms', [{
         "Read out loud, loudly, when asked to read silently"
       ] },
       { ctx: "home", label: "Home and family", items: [
-        "Could not watch a TV programme or film calmly without shouting or jumping about",
+        "Shouted, sang along or made noises all through TV programmes and films",
         "Family often said 'keep it down' or 'use your indoor voice'",
         "Was noisy at mealtimes, banging cutlery or singing",
         "Woke the household early in the morning with noise",
         "Played with toys loudly, full of crashes and explosions",
         "Neighbours complained about the noise they made",
-        "Could not settle quietly at bedtime; sang, bounced or made noises",
+        "Sang or made noises at bedtime long after the lights went out",
         "Car journeys were noisy because of their singing and shouting"
       ] },
       { ctx: "play", label: "Play and friends", items: [
@@ -182,7 +182,7 @@ AA.add('symptoms', [{
         "Played noisily even when playing alone",
         "Board games often ended in shouting and overexcitement",
         "Was the loudest child in the playground or at parties",
-        "Friends' parents asked them to calm down or be quieter",
+        "Quickly got silly and showed off when visitors came or when out in public",
         "Quiet play with friends rarely lasted more than a few minutes",
         "Made engine noises or shouted while playing with cars or figures"
       ] },
@@ -191,7 +191,7 @@ AA.add('symptoms', [{
         "Could not stay quiet at the cinema, theatre or a concert",
         "Found religious services or other quiet ceremonies very hard",
         "Was loud in restaurants, shops or waiting rooms",
-        "Got overexcited and noisy at swimming or sports sessions",
+        "Was so noisy at swimming or music lessons that the teacher had to stop the group",
         "Was not invited back to a quiet activity such as a library club",
         "Sang and shouted loudly on the coach during school trips"
       ] },
@@ -202,14 +202,14 @@ AA.add('symptoms', [{
         "Described as 'boisterous' by teachers and relatives",
         "Parents were told they disturbed others during quiet time",
         "Nicknamed 'the noisy one' at home",
-        "Grandparents said they could not be calm for five minutes"
+        "Grandparents said the house was never quiet when they came to stay"
       ] },
       { ctx: "teen", label: "Secondary school (12-16, optional)", items: [
         "Got detentions for noise in study periods or the library",
-        "Played music loudly from their phone on buses or at school",
+        "Played music loudly from a phone or speaker on buses or at school",
         "Friends' parents said they were too loud in the house",
         "Was moved during tests for making noises",
-        "Avoided quiet hobbies and chose loud music, sport or gaming"
+        "Family or neighbours complained about loud music or gaming late at night"
       ] }
     ]
   },
@@ -316,7 +316,7 @@ AA.add('symptoms', [{
   },
   counts: [
     "Free time is often noisy or unsettled: most weeks and in many leisure situations, not only on special occasions.",
-    "The noise or lack of calm is clearly greater than in people of the same age, sex and cultural background.",
+    "The noise or lack of calm is clearly greater than in people of the same age and cultural background.",
     "It shows in more than one setting: home, social life, public places and work or study.",
     "Other people notice and comment (partner, friends, neighbours, colleagues), not only the patient.",
     "Includes adults who cannot unwind or relax in their own time and who replace quiet pastimes with loud or busy ones, as long as concrete examples are given.",
@@ -328,16 +328,16 @@ AA.add('symptoms', [{
   notCount: [
     "Simple liveliness or an outgoing personality that the person can turn down easily when needed.",
     "Noise only at parties, sports matches or other settings where noise is normal.",
-    "Loudness only when drinking or using drugs; ask about sober behaviour.",
     "Speaking loudly because of hearing loss: ask about hearing and whether others say the TV is too loud.",
     "Loudness and noisy activity only during periods of high mood, less need for sleep and racing thoughts (consider hypomania or mania).",
     "Inability to relax that comes from worry, tension or fear (consider anxiety); in anxiety the person is usually tense and quiet rather than noisy.",
     "Inability to unwind that began with a recent stressful event, burnout or caring role, with no similar history before.",
     "Humming, grunting or other sounds that are urge-driven, repetitive and briefly suppressible (consider vocal tics).",
     "Family or cultural norms of loud speech where the person is no louder than others in that group.",
-    "Noise or overactivity from caffeine, energy drinks, stimulants or a new medicine; check the timing.",
+    "Loudness only when drinking, using drugs or lots of caffeine, or only since a new medicine; ask about sober behaviour and check the timing.",
     "A pattern seen in only one setting, for example only at home with siblings.",
-    "A new change in volume or disinhibition starting in mid or later life; this needs a medical or neurological review, not an ADHD score."
+    "A new change in volume or disinhibition starting in mid or later life; this needs a medical or neurological review, not an ADHD score.",
+    "Scoring error: talking at length belongs to hi6, a constant busy drive to hi5 and an inner restless feeling to hi3. Score hi4 for noise and for not being able to spend free time quietly and calmly."
   ],
   anchors: [
     { score: "yes", quote: "My partner gave up watching telly with me. I sing, I make comments, I get up and clatter about in the kitchen. Even when I read I need music blasting. My mum says I was exactly the same as a kid.", why: "Score Present: leisure is regularly noisy across different activities, other people notice it, and the pattern goes back to childhood." },

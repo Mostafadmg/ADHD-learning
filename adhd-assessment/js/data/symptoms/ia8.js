@@ -4,7 +4,7 @@ AA.add('symptoms', [{
   dim: "IA",
   codes: { dsm5: "A1h", diva: "A8", asrs: [11] },
   title: "Easily distracted",
-  criterion: "Is often pulled off task by things going on around them, such as sounds, movement, other people talking or alerts. In older teenagers and adults this includes being pulled away by thoughts that have nothing to do with the task. Attention is captured and the task is dropped, more than for others of the same age.",
+  criterion: "Is often pulled off task by things going on around them, such as sounds, movement, other people talking or alerts. In older teenagers and adults this includes being pulled away by thoughts that have nothing to do with the task. Attention is captured and getting back to the task is hard, much more than for others of the same age.",
   adultForm: "Adults describe being unable to tune out background noise, nearby conversations, movement or phone alerts, and struggling to get going again once interrupted. DSM-5-TR notes that for older adolescents and adults the distractor can be unrelated thoughts, so a stream of off-topic ideas that keeps taking them away from the task also counts. Many cope with headphones, quiet rooms, focus apps or working late at night, and open-plan offices, busy homes and screens make it worse.",
   why: "Weak inhibitory control and poor filtering of irrelevant input let new stimuli capture attention, and working memory does not hold the task goal firmly enough to steer back to it. Strong pull towards novelty and reward adds to this, so a fresh sound, sight or idea easily wins over the current task.",
   ask: {
@@ -14,17 +14,17 @@ AA.add('symptoms', [{
   rephrase: [
     "What tends to pull your attention away when you are trying to do something?",
     "If someone walks past or a phone buzzes, how easy is it to carry on with what you were doing?",
-    "Plain words: do little things around you stop you doing your work?",
-    "Do sounds, people or your phone grab your attention even when you want to ignore them?",
+    "Plain words: what small things around you stop you doing your work?",
+    "Which sounds, people or things grab your attention even when you want to ignore them?",
     "When you get interrupted, how long does it take to get going again, if you do at all?",
-    "Do new thoughts pop into your head and send you off on a different track?",
-    "Do you need silence, headphones or an empty room to get anything done? What happens without them?",
+    "What happens when a new thought pops into your head while you are in the middle of something?",
+    "What do you need around you to get something done, and what happens when you cannot have it?",
     "Everyone gets sidetracked sometimes. What makes you think yours is more than usual?",
-    "For someone using English as a second language: When there is noise or people near you, can you keep working? Or do you stop?",
+    "For someone using English as a second language: There is noise, or people are near you. What happens to your work? Tell me about one time.",
     "Tell me about the last time you sat down to do one thing and ended up doing something else because something caught your attention.",
     "How do you set up your workspace or your day to cut out interruptions? How much effort does that take?",
     "When you're out somewhere busy, like a café or shopping centre, what happens to your focus?",
-    "Informal: are you the one who notices every noise, every flicker, every ping?"
+    "Informal: when there's a noise, a flicker or a ping nearby, what happens to whatever you were doing?"
   ],
   examples: {
     adult: [
@@ -33,7 +33,7 @@ AA.add('symptoms', [{
         "Cannot work in an open-plan office without noise-cancelling headphones",
         "Stops mid-task to listen in to colleagues chatting nearby",
         "Loses track of a calculation when a phone rings",
-        "On the shop floor, turns to watch every customer who comes in",
+        "Stocking shelves, keeps stopping to watch what is happening at the tills",
         "Takes much longer than colleagues to finish tasks in a busy room",
         "Books empty meeting rooms or stays late just to get quiet time",
         "An email alert pulls them out of a report they were halfway through",
@@ -53,7 +53,7 @@ AA.add('symptoms', [{
         "Studies late at night because daytime noise makes it impossible"
       ] },
       { ctx: "home", label: "Home and household", items: [
-        "Gets pulled away from cooking by the TV in the next room",
+        "Starts tidying one room, spots something in another and drifts there",
         "Cannot follow a TV programme when others in the room are chatting",
         "Hears every sound from neighbours, traffic or the street and stops to listen",
         "Background TV or radio makes it impossible to read a letter properly",
@@ -67,7 +67,7 @@ AA.add('symptoms', [{
         "In a café, watches the TV screen or people behind the person they are talking to",
         "Loses what a friend is saying when a nearby table laughs",
         "In meetings, attention goes to someone's phone, a noise outside or the projector",
-        "Cannot follow a conversation at a party with music playing",
+        "At parties, keeps tuning in to other people's conversations instead of their own",
         "On phone calls, gets caught up in what is happening in the room",
         "Breaks off their own sentence to comment on something they have just noticed",
         "In video calls, watches other windows or their own image instead of the speaker",
@@ -82,7 +82,7 @@ AA.add('symptoms', [{
         "A message lighting up the screen takes attention off the road",
         "Misses their stop on the bus or train because they were watching something",
         "In stations or airports, gets sidetracked by shops and screens and nearly misses connections",
-        "Struggles in heavy traffic with lots of signs, lights and movement"
+        "In town, notices shop signs and people but misses the lights changing"
       ] },
       { ctx: "digital", label: "Phone, screens and online", items: [
         "Picks up the phone to check one thing and gets drawn into apps",
@@ -100,7 +100,7 @@ AA.add('symptoms', [{
         "Partner switches off the TV before raising anything important",
         "Arguments start when their attention drifts to the phone during meals",
         "Struggles at family gatherings where several conversations run at once",
-        "Partner waits for a calm, quiet moment before asking anything that matters"
+        "Loses the thread of a serious talk when a child or pet comes into the room"
       ] },
       { ctx: "parenting", label: "Parenting", items: [
         "While helping with homework, attention is caught by other children or the TV",
@@ -123,7 +123,7 @@ AA.add('symptoms', [{
         "Loses their place in a form when someone speaks to them",
         "Abandons online banking halfway through after a pop-up appears",
         "Makes mistakes with figures when there is background noise",
-        "Saves paperwork for times when everyone is out of the house",
+        "Reading a contract or official letter, glances at each new message and misses key points",
         "Calls to the bank or council go wrong because of things happening in the room",
         "Goes and sits in the car to make important phone calls in peace"
       ] },
@@ -133,7 +133,7 @@ AA.add('symptoms', [{
         "While reading, starts thinking about something seen earlier in the day",
         "Feels every sound in the room is as loud as the one they need to hear",
         "Describes the mind as a TV with many channels on at once",
-        "Finds it hard to tune out background things that others seem to ignore",
+        "A word or a passing sight sets off a chain of thoughts far from the task",
         "Feels drained after a day in a busy place from the effort of staying on track",
         "Gets irritable when interrupted because getting back takes so long",
         "A fresh idea feels more urgent than the task in front of them",
@@ -148,17 +148,17 @@ AA.add('symptoms', [{
         "Stops writing when someone sharpens a pencil or drops something",
         "Gets drawn into chatter at the next table",
         "Gets caught up looking at wall displays or things on the teacher's desk",
-        "Was seated at the front or on their own to cut down distractions",
+        "Stops working at the smallest noise, like a fly buzzing or a radiator ticking",
         "Loses their place in class reading after any interruption",
         "A visitor at the classroom door means the rest of the lesson is lost",
-        "Gets far more done in a small group or one-to-one",
+        "Stops listening to the teacher whenever the class next door is noisy",
         "In assembly, watches other classes rather than the person speaking",
         "Work done in a quiet room is much better than work done in class"
       ] },
       { ctx: "homework", label: "Homework", items: [
         "Cannot do homework at the kitchen table with the family around",
         "Gets up to see who is at the door and does not come back to homework",
-        "Homework takes all evening because of the TV, pets or siblings",
+        "Homework takes all evening because every noise in the house pulls them away",
         "Needs a parent to keep pointing them back to the page after each distraction",
         "Reading practice stops at every sound outside",
         "Does homework best in a bare room with nothing on the walls",
@@ -179,8 +179,8 @@ AA.add('symptoms', [{
         "Leaves one game to join another going on nearby",
         "Loses track of a board game when something else happens in the room",
         "Builds part of a model then drifts to something that caught their eye",
-        "In the playground, attention jumps from one thing to the next",
-        "Friends complain they don't pay attention during games"
+        "Starts a game of chase, then runs off to look at a dog by the fence",
+        "Wanders off mid-game to look at something, leaving friends cross"
       ] },
       { ctx: "activities", label: "Clubs, sport and outings", items: [
         "At swimming or football, watches other groups instead of the coach",
@@ -188,8 +188,8 @@ AA.add('symptoms', [{
         "In music or dance lessons, is pulled away by others in the room",
         "Misses their turn because they were watching something else",
         "At the cinema or theatre, looks round at the audience",
-        "At a place of worship or assembly, looks around at everything",
-        "Distracted by the crowd during matches they are playing in"
+        "At scouts, guides or similar groups, misses instructions while watching another group",
+        "Playing in a match, turns to watch the crowd or a nearby game"
       ] },
       { ctx: "reports", label: "What teachers and parents said", items: [
         "Report says they lose focus whenever there is something else to look at",
@@ -309,7 +309,7 @@ AA.add('symptoms', [{
     ]
   },
   counts: [
-    "Ordinary sights, sounds, alerts or unrelated thoughts often pull the person off task: most days, and in more than one setting.",
+    "Ordinary sights, sounds, alerts or unrelated thoughts often pull the person off task: most days, and in more than one setting, for example at work and at home.",
     "Once pulled away, the person struggles to get back, so work is slowed, left half done or full of errors.",
     "It is more than peers of the same age in the same conditions, for example colleagues in the same office.",
     "It happens with routine and demanding tasks alike, not only with dull tasks or extreme noise.",
@@ -321,14 +321,14 @@ AA.add('symptoms', [{
   ],
   notCount: [
     "Distraction only in genuinely chaotic or very loud settings where most people would struggle.",
-    "Attention pulled away by worry (anxiety), rumination (depression) or intrusive memories (PTSD), rather than by ordinary stimuli.",
+    "Attention pulled away only by worry (anxiety), rumination (depression) or intrusive memories (PTSD), rather than by ordinary sights, sounds or unrelated thoughts.",
     "Scanning for danger and startle linked to trauma or an unsafe environment.",
     "Distraction only during spells of raised mood with less need for sleep (bipolar).",
     "Sensory overload with distress from particular sounds, lights or textures, without the pattern of jumping to new things (consider autism).",
     "Difficulty following speech in background noise because of hearing loss.",
     "Only when sleep-deprived, intoxicated, withdrawing or after starting a new medicine.",
     "Responding to voices or other unusual experiences (psychosis).",
-    "Started recently with no childhood history.",
+    "Started recently, with a clear before and after and no earlier pattern: look for a new cause.",
     "Only one tempting stimulus, such as the phone, with no pull from other things around them (consider problematic phone use).",
     "Losing interest in dull tasks with no pull from outside stimuli or unrelated thoughts: rate this under sustained attention (A1b) instead.",
     "Struggling to follow a second language in a noisy setting, when focus is fine in the first language."
@@ -339,7 +339,7 @@ AA.add('symptoms', [{
     { score: "yes", quote: "I only get anything done between 11 at night and 3 in the morning when the house is silent. If my partner is up and moving around, forget it.", why: "Yes, if this is longstanding and impairing (sleep loss, missed deadlines). Night working is compensation; also check for a delayed sleep phase." },
     { score: "unsure", quote: "Everyone gets distracted by their phone, don't they? I check it a lot.", why: "Unsure. Ask whether other things also pull them away and whether tasks go unfinished; phone checking alone does not make the symptom." },
     { score: "unsure", quote: "Since the break-in I can't settle. I'm listening to every noise in the house.", why: "Unsure, leaning No. Hypervigilance after trauma is a different mechanism; explore the earlier history and PTSD symptoms." },
-    { score: "unsure", quote: "In lectures I'm fine, but in the library everyone moving about drives me mad.", why: "Unsure. One setting is not enough. Explore other settings and whether it is more than peers." },
+    { score: "unsure", quote: "In lectures I'm fine, but in the library everyone moving about drives me mad.", why: "Unsure. One setting alone is not enough to decide. Explore work, home and social settings, and whether it is more than other students in the same library." },
     { score: "no", quote: "I'm quite good at shutting out noise. I worked in a call centre for years with no problems.", why: "No. Good filtering in a demanding, noisy setting." },
     { score: "no", quote: "When I'm low I can't concentrate on anything; my mind keeps going back to the same worries. When I'm well I'm fine.", why: "No for this symptom. Attention is captured by rumination during episodes; assess for depression." },
     { score: "no", quote: "When I'm high my thoughts race and I notice everything, then it settles down for months.", why: "No. Episodic distractibility tied to mood episodes; assess for bipolar disorder." }
@@ -357,7 +357,7 @@ AA.add('symptoms', [{
     { ddx: "gaming", clue: "The pull is specifically towards games or the phone, with craving and loss of control, rather than to anything new.", ask: "Is it anything around you that takes your attention, or mainly the pull to games or your phone?" }
   ],
   special: {
-    women: "Girls are often quiet and look on task while their attention is elsewhere, so teachers may not have noticed. Women may describe a busy mind and unrelated thoughts more than visible looking around.",
+    women: "Girls are often quiet, so being pulled away by what is going on around them, or by their own thoughts, can look like daydreaming and go unnoticed by teachers. Women may describe a busy mind and unrelated thoughts more than visible looking around.",
     older: "New distractibility in later life may reflect hearing loss, mood change or cognitive decline. Look for a lifelong pattern and check hearing.",
     highIQ: "Able people may keep up despite constant distraction by working longer hours or at night. Ask about the effort and hours involved, not only the results.",
     sud: "Stimulants, cannabis, alcohol and withdrawal all affect focus. Ask about distraction during sober periods and before substance use started; some people use substances to quieten distraction.",

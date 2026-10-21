@@ -15,16 +15,16 @@ AA.add('symptoms', [{
     "What kinds of things slip your mind day to day?",
     "Plain words: do you forget to do things you planned to do?",
     "How many appointments, bills or calls have you missed in the last few months?",
-    "Do people have to remind you about things a lot? Who?",
-    "Have you ever had a letter or charge because you missed an appointment or a payment?",
-    "Do you walk into a room and not remember why you went in? How often?",
+    "Who reminds you about things, and what sort of things do they have to remind you about?",
+    "What letters, charges or fines have you had because an appointment or a payment slipped your mind?",
+    "How often do you walk into a room and not remember why you went in? Tell me about the last time.",
     "Everyone forgets things sometimes. Do you forget more often than people around you, or more important things?",
     "What would happen to your week if your phone reminders stopped working?",
-    "For someone using English as a second language: Do you often forget to do things? For example pay money, go to the doctor, call people back.",
+    "For someone using English as a second language: Paying money, going to the doctor, calling people back. What do you forget to do? How often?",
     "Tell me about the last time you forgot something that really mattered.",
     "If I asked your friends whether you remember birthdays, call back or turn up to plans, what would they say?",
     "How do you keep track of things you need to do, and how well does it work?",
-    "Informal: are you the one who suddenly goes 'oh no, that was today'?"
+    "Informal: how often do you have an 'oh no, that was today' moment? When was the last one?"
   ],
   examples: {
     adult: [
@@ -35,14 +35,14 @@ AA.add('symptoms', [{
         "Forgets to use inhalers, creams or eye drops as prescribed",
         "Forgets to book check-ups, screening tests or eye tests",
         "Forgets to go for blood tests after being asked",
-        "Forgets appointments made only a few days earlier",
+        "Forgets to cancel appointments they know they cannot make",
         "Forgets to collect prescriptions from the pharmacy",
-        "Forgets what the doctor advised by the time they get home",
+        "Forgets follow-up tasks such as booking physio or starting prescribed exercises",
         "Forgets to ring back to book a follow-up"
       ] },
       { ctx: "admin", label: "Paperwork and money", items: [
         "Forgets to pay bills and gets late fees or reminder letters",
-        "Has had the phone or energy supply cut off after missed payments",
+        "Has had the phone, internet or another service cut off after missed payments",
         "Forgets to renew insurance, vehicle tax or licences on time",
         "Forgets to cancel free trials and subscriptions before they charge",
         "Forgets to send forms back before the deadline",
@@ -62,7 +62,8 @@ AA.add('symptoms', [{
         "Forgets to feed pets or water plants",
         "Forgets the bath is running until it nearly overflows",
         "Forgets household jobs they agreed to do, even after a reminder that morning",
-        "Writes a shopping list, then leaves it at home"
+        "Writes a shopping list, then leaves it at home",
+        "Locks themselves out because the keys were left inside"
       ] },
       { ctx: "work", label: "Work", items: [
         "Forgets meetings or turns up late because the diary was not checked",
@@ -100,7 +101,7 @@ AA.add('symptoms', [{
       { ctx: "social", label: "Friends and social life", items: [
         "Forgets plans with friends and does not turn up",
         "Double-books evenings because an earlier arrangement was forgotten",
-        "Forgets to reply to messages for days or weeks",
+        "Forgets to ring friends back, until the friends stop calling",
         "Forgets to give back borrowed items or money",
         "Friends call them unreliable or flaky because plans slip their mind",
         "Forgets to reply to invitations for weddings or parties",
@@ -111,10 +112,10 @@ AA.add('symptoms', [{
         "Has dozens of phone alarms and reminders running each day",
         "Forgets to charge the phone, so it dies when needed",
         "Snoozes reminders and then forgets the task anyway",
-        "Resets forgotten passwords several times a month",
+        "Forgets to take the phone off silent and misses calls all day",
         "Reads a message, means to reply later and never does",
         "Sets up a calendar app and then forgets to look at it",
-        "Forgets online orders until parcels go back to the sender",
+        "Forgets to collect parcels from lockers or depots until they are sent back",
         "Forgets to top up travel cards, phone credit or meter keys"
       ] },
       { ctx: "driving", label: "Driving and travel", items: [
@@ -122,7 +123,7 @@ AA.add('symptoms', [{
         "Turns back after setting off, to collect things they forgot to take",
         "Forgets to pay for parking or tolls and gets fines",
         "Forgets car servicing, tyre checks or the annual test date",
-        "Forgets where they were heading halfway through a journey",
+        "Drives the usual route to work when they meant to go somewhere else",
         "Forgets to book tickets until prices have gone up",
         "Forgets to pack essentials such as chargers, medicines or passport for trips"
       ] },
@@ -139,8 +140,8 @@ AA.add('symptoms', [{
         "Carries a constant background feeling of having forgotten something",
         "Plans vanish from mind seconds after deciding to do them",
         "Feels ashamed when others have to remind them yet again",
-        "Intentions feel clear in the moment but are gone an hour later",
-        "Forgets what they were about to say halfway through a sentence",
+        "Has to act on a job the moment it comes to mind, or it is gone",
+        "Writes reminders on their hand because nothing else sticks",
         "Loses track of what they were doing partway through a task",
         "Feels that if something is out of sight, it no longer exists",
         "Checks lists and diaries many times a day just to feel safe"
@@ -176,11 +177,12 @@ AA.add('symptoms', [{
         "Forgets to tell parents important news from school",
         "Forgets to come home at the agreed time",
         "Leaves taps running or lights on after leaving a room",
-        "Forgets messages they were asked to pass on"
+        "Forgets messages they were asked to pass on",
+        "Forgets to bring home things they took to school or to a friend's house"
       ] },
       { ctx: "play", label: "Play and friends", items: [
         "Forgets arrangements to meet friends",
-        "Forgets the rules of a game they have played many times",
+        "Forgets to bring the ball or game they promised to bring",
         "Forgets promises made to friends",
         "Forgets to return things borrowed from friends",
         "Forgets friends' birthdays or party invitations",
@@ -195,7 +197,7 @@ AA.add('symptoms', [{
         "Forgets to tell parents when they need collecting"
       ] },
       { ctx: "reports", label: "What teachers and parents said", items: [
-        "Report says they need frequent reminders",
+        "Report says they need frequent reminders to bring things and hand work in",
         "Teacher wrote that they forget equipment or homework",
         "Parents put checklists on the door and still had to remind them",
         "Parents say they repeated the same reminders every day",
@@ -316,7 +318,7 @@ AA.add('symptoms', [{
     "Forgetting of routine daily tasks, plans or commitments happens often: at least most weeks, usually several times a week.",
     "It involves things adults are expected to remember: appointments, bills, calls, messages, collecting people, chores and medicines.",
     "It is more than peers of the same age, judged by the patient and ideally by an informant.",
-    "It happens across settings: at home, at work or study, and in social life.",
+    "It is seen in more than one setting, for example at home and at work or study, or in social life.",
     "It has consequences: missed appointments, fees and fines, conflict, warnings at work, or health and safety risks.",
     "It includes things the person cares about, not only tasks they dislike.",
     "It is longstanding, and for the childhood rating there was forgetting of kit, homework, messages or routines at primary school age.",
@@ -338,7 +340,7 @@ AA.add('symptoms', [{
     "Forgetting described only in settings with a clear gain, and not matching daily functioning reported by others."
   ],
   anchors: [
-    { score: "yes", quote: "I've missed the dentist twice this year and got a bigger parking fine because I forgot to pay the first letter. My partner set up a shared calendar but I forget to look at it.", why: "Yes. Frequent forgetting of routine obligations with consequences, despite support." },
+    { score: "yes", quote: "I've missed the dentist twice this year, I pay late fees most months, and my parking fine doubled because I forgot to pay the first letter. My partner set up a shared calendar but I forget to look at it, so now they text me every morning.", why: "Yes. Frequent forgetting of routine obligations (appointments, bills) with consequences, despite support from others." },
     { score: "yes", quote: "I've got about fifteen alarms a day. If my phone dies, I'm finished. Even with all that I forgot my son's parents' evening last month.", why: "Yes. Heavy compensation that still fails, and the effort itself is a cost." },
     { score: "yes", quote: "Mum says she had to remind me every morning to brush my teeth until I was 11, and I never had my PE kit. Now it's work: I promise to send things and they just go out of my head.", why: "Yes. Longstanding, with childhood and adult examples and impact at work." },
     { score: "unsure", quote: "I'm a bit scatty, I suppose, but I don't miss anything important.", why: "Unsure. Ask about compensation and whether others do the reminding; check with an informant." },
@@ -352,7 +354,7 @@ AA.add('symptoms', [{
     { ddx: "dep", clue: "Forgetting started with low mood, poor sleep and slowed thinking.", ask: "Were you this forgetful before your mood dropped?" },
     { ddx: "mci", clue: "New forgetting in later life: repeating questions, forgetting recent conversations, getting lost.", ask: "Is this a change from how you used to be? Are others worried about your memory?" },
     { ddx: "menopause", clue: "Brain fog with hot flushes, broken sleep and changing periods, starting in midlife.", ask: "Did the forgetting start or get worse around changes in your periods or hot flushes?" },
-    { ddx: "thyroid", clue: "Tiredness, weight change, feeling cold and slowed thinking, with a recent onset.", ask: "Have you had your thyroid checked recently?" },
+    { ddx: "thyroid", clue: "Tiredness, weight change, feeling cold and slowed thinking, with a recent onset.", ask: "Alongside the forgetting, have you noticed tiredness, feeling cold, weight gain or dry skin, and when did these start?" },
     { ddx: "osa", clue: "Snoring, waking unrefreshed, daytime sleepiness, morning headaches.", ask: "Do you snore or stop breathing in your sleep? Do you nod off during the day?" },
     { ddx: "sud_alcohol", clue: "Memory gaps after drinking; forgetting worse after heavy use.", ask: "Is your memory better when you have not been drinking?" },
     { ddx: "meds", clue: "Started after sedatives, antihistamines, anticholinergic drugs, antiepileptics or opioids.", ask: "Did anything change in your medicines before this started?" },

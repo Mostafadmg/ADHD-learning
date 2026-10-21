@@ -5,26 +5,26 @@ AA.add('symptoms', [{
   codes: { dsm5: "A1a", diva: "A1", asrs: [7] },
   title: "Careless mistakes, misses details",
   criterion: "Often fails to notice details or makes careless errors in schoolwork, work or other activities. The work comes out inaccurate because details are overlooked or missed, not because the person does not understand what to do.",
-  adultForm: "In adults this shows as inaccurate work: slips in emails, figures, forms and documents, steps left out of routine procedures, and conditions or small print missed when reading. DSM-5-TR describes adult work as often inaccurate, with details overlooked. Many adults hold the error rate down by checking everything several times, working very slowly or asking others to check, so the visible mistakes may be few while the hidden cost in time, effort and anxiety is high.",
+  adultForm: "In adults this shows as inaccurate work: slips in emails, figures, forms and documents, steps left out of routine procedures, and conditions or small print missed when reading. DSM-5-TR's examples are overlooking or missing details and inaccurate work; it gives no separate adult wording for this item, so the clinician translates it into adult tasks. Many adults hold the error rate down by checking everything several times, working very slowly or asking others to check, so the visible mistakes may be few while the hidden cost in time, effort and anxiety is high.",
   why: "Brief lapses of attention mean some details are never taken in, and weak working memory and self-monitoring mean slips are not caught before the work is finished. A quick, impulsive response style (acting before reading to the end) adds to this. It is a problem of noticing and checking, not of knowledge or skill.",
   ask: {
     adult: "Over the last six months, how often have you made mistakes because you missed a detail or did not notice something, for example at work, with forms and money, or at home? Can you tell me about a recent one?",
     child: "Thinking back to primary school, roughly age 5 to 12, how often did you get things wrong in your work because you missed small details, even when you knew how to do it? What did teachers or your parents say about it?"
   },
   rephrase: [
-    "Do you make slip-ups in things you actually know how to do?",
-    "Do small errors creep into what you do, like typos, wrong numbers or a missed step?",
+    "What kind of slip-ups do you make in things you actually know how to do?",
+    "How often do small errors creep into what you do, like typos, wrong numbers or a missed step?",
     "When you look back over something you have done, do you often find mistakes you did not see the first time?",
-    "Do people at work or at home often point out little mistakes in what you have done?",
-    "Do you tend to skip over the small print or the fine detail?",
+    "How often do people at work or at home point out little mistakes in what you have done? What sort of mistakes?",
+    "What happens when you have to read the small print or the fine detail of something?",
     "Tell me about the last time a small mistake caused you a problem. What happened?",
     "Everyone gets things wrong sometimes. Do you get small things wrong more than the people around you, even when you are trying hard?",
     "How much checking do you need to do to keep mistakes down, and how long does that take compared with other people?",
     "If I asked your manager, a colleague or your partner how careful you are with detail, what would they say?",
     "Do your mistakes happen because you rush, or do you miss things even when you go slowly?",
-    "In simple words: do you often make silly mistakes?",
-    "With forms, emails or money, do you often get one small thing wrong, like a date, a number or a name?",
-    "Have you ever pressed send or handed something in and then spotted an obvious error straight away?",
+    "In simple words: do you often get small things wrong? What kind of things?",
+    "With forms, emails or money, how often do you get one small thing wrong, like a date, a number or a name?",
+    "How often do you press send or hand something in and then spot an obvious error straight away?",
     "What tricks do you use to avoid mistakes, and what happens on days you cannot use them?"
   ],
   examples: {
@@ -44,7 +44,10 @@ AA.add('symptoms', [{
         "Stays late re-checking work that colleagues finish within normal hours",
         "Prints documents to proofread because errors are missed on screen",
         "Overlooks a safety step, such as isolating the power before starting work",
-        "Enters the wrong client, patient or stock details into a database"
+        "Enters the wrong client, patient or stock details into a database",
+        "Takes far longer than colleagues over detailed tasks such as audits or stocktakes",
+        "Rushes detailed work to get it over with and leaves slips in it",
+        "Signs off other people's work as checked without spotting the errors in it"
       ] },
       { ctx: "study", label: "Study and training", items: [
         "Loses marks for slips in work they understood well",
@@ -54,7 +57,7 @@ AA.add('symptoms', [{
         "Misses one part of a multi-part exam question",
         "Submits essays with spelling slips a quick reread would catch",
         "Misreads the word limit or required format of an assignment",
-        "Gets lower grades in timed tests than coursework would predict"
+        "Drops marks in timed tests through slips in answers they knew"
       ] },
       { ctx: "home", label: "Home and household", items: [
         "Leaves out an ingredient or adds the wrong amount when cooking",
@@ -65,7 +68,8 @@ AA.add('symptoms', [{
         "Leaves patches or edges unpainted when decorating",
         "Sets timers, heating or alarms to the wrong time by mistake",
         "Brings home the wrong items from the shop despite having a list",
-        "Doses cleaning products or plant feed wrongly without reading the label"
+        "Doses cleaning products or plant feed wrongly without reading the label",
+        "Starts assembling or fitting things before reading the instructions through"
       ] },
       { ctx: "admin", label: "Paperwork and money", items: [
         "Puts a wrong date of birth, postcode or reference number on forms",
@@ -76,7 +80,7 @@ AA.add('symptoms', [{
         "Applications for benefits, visas or jobs are delayed by small errors",
         "Books tickets or appointments for the wrong day or time",
         "Has to correct a tax return or expenses claim after sending it",
-        "Pays the same bill twice or pays the wrong person",
+        "Makes adding-up slips when budgeting or checking a payslip",
         "Reads forms with a ruler or finger to avoid skipping lines",
         "Writes in the wrong box on a form and has to start again"
       ] },
@@ -86,7 +90,7 @@ AA.add('symptoms', [{
         "Fills in school consent or meal forms with mistakes",
         "Overlooks a detail in a school message, such as bringing a packed lunch",
         "Makes errors in the working when helping with maths homework",
-        "Buys children's clothes or shoes in the wrong size"
+        "Orders the wrong size of school uniform after misreading the size chart"
       ] },
       { ctx: "driving", label: "Driving and travel", items: [
         "Gets parking or bus-lane fines for signs they did not take in",
@@ -94,7 +98,7 @@ AA.add('symptoms', [{
         "Gets on the wrong train or bus after misreading the board",
         "Types the wrong postcode or destination into the satnav",
         "Goes to the wrong terminal or address because a booking was misread",
-        "Overlooks travel rules such as passport expiry or visa needs",
+        "Books a trip without noticing the passport expires before it",
         "Misses speed limit changes and gets points on their licence"
       ] },
       { ctx: "digital", label: "Phone, screens and online", items: [
@@ -118,7 +122,7 @@ AA.add('symptoms', [{
       { ctx: "health", label: "Health and appointments", items: [
         "Takes tablets at the wrong dose after misreading the box",
         "Leaves gaps or gives inconsistent answers on health questionnaires",
-        "Misses preparation instructions, such as fasting before a blood test",
+        "Overlooks preparation steps in an appointment letter, such as fasting",
         "Collects or orders the wrong item on a repeat prescription",
         "Mixes up two similar-looking medicines",
         "Fills a relative's weekly pill organiser with tablets in the wrong slots"
@@ -127,8 +131,13 @@ AA.add('symptoms', [{
         "Partner checks bookings, forms or bills before they are sent",
         "Family say they never read things properly",
         "Arguments start over jobs done carelessly, like bills paid wrongly",
-        "Gets family details wrong on cards, gifts or invitations",
+        "Writes the wrong date, time or name on invitations and cards",
         "Relies on a family member to proofread anything important"
+      ] },
+      { ctx: "social", label: "Friends and social life", items: [
+        "Turns up on the wrong day or at the wrong venue after misreading the plan",
+        "Gets numbers or dates wrong when organising a group booking",
+        "Works out wrongly who owes what when splitting a bill with friends"
       ] },
       { ctx: "inner", label: "Inner experience", items: [
         "Feels their eyes slide over detail without taking it in",
@@ -146,14 +155,16 @@ AA.add('symptoms', [{
         "Gets sums wrong by misreading the plus or minus sign",
         "Copies words or numbers wrongly from the board",
         "Skips questions or whole sections on a worksheet",
-        "Spells the same word in different ways in one piece of writing",
+        "Leaves words out of sentences when writing, then reads them back as complete",
         "Starts writing before reading the question to the end",
         "Answers only the first half of two-part questions",
         "Leaves the back page of a worksheet or test blank",
         "Forgets capital letters and full stops even with reminders",
         "Lines up columns badly in maths so the answer goes wrong",
         "Rushes to be first to finish and makes many slips",
-        "Misreads simple words they can read correctly when slowed down"
+        "Misreads simple words they can read correctly when slowed down",
+        "Answers a different question from the one printed on the sheet",
+        "Takes much longer than classmates over work that must be neat and exact"
       ] },
       { ctx: "homework", label: "Homework", items: [
         "Hands in homework with slips a quick look would catch",
@@ -162,23 +173,23 @@ AA.add('symptoms', [{
         "Gets spelling tests right but the same words wrong in stories",
         "Parent finds mistakes in work the child clearly understands",
         "Says the work is checked but finds errors once they are pointed out",
-        "Skips or guesses words when reading aloud at home"
+        "Skips words or whole lines when reading aloud at home"
       ] },
       { ctx: "home", label: "Home and family", items: [
         "Lays the table or tidies with parts of the job missed",
         "Puts clothes on inside out or back to front past the usual age",
         "Washes or brushes teeth in a patchy, rushed way",
-        "Makes mistakes copying recipes or instructions for simple jobs",
-        "Fills in birthday cards or forms with letters or names wrong",
+        "Gets simple jobs half right, like sorting socks into odd pairs",
+        "Writes names in birthday cards with letters missed out",
         "Measures or pours carelessly when helping with baking"
       ] },
       { ctx: "play", label: "Play and friends", items: [
         "Loses games by missing a rule or an obvious move",
         "Builds construction kits with pieces or steps left out",
-        "Colours quickly and leaves whole areas unfinished",
+        "Colours in a rush, leaving gaps and missed areas",
         "Muddles game rules so friends get annoyed",
         "Forces jigsaw pieces into the wrong place rather than looking closely",
-        "Keeps losing track of the score in playground games"
+        "Miscounts the spaces moved or the score in board games"
       ] },
       { ctx: "activities", label: "Clubs, sport and outings", items: [
         "Misses steps in a dance, gymnastics or martial arts routine",
@@ -311,7 +322,7 @@ AA.add('symptoms', [{
   counts: [
     "Errors come from overlooking detail, not from a lack of knowledge or skill: once a mistake is pointed out, the person sees it and can fix it.",
     "It happens often: most weeks, across many kinds of task, clearly more than peers of similar age, education and job.",
-    "It shows in at least two areas of life, for example work and paperwork, or study and home.",
+    "It usually shows in more than one area of life, for example work and paperwork, or study and home (DSM-5-TR criterion C needs several symptoms across two or more settings).",
     "It is long-standing: present for years, and in adults for most of the last six months, not just during one recent spell.",
     "It has real consequences: work redone, marks lost, fines, complaints, warnings, or tasks taken away.",
     "Score present when errors are low only because of heavy compensation (repeated checking, others checking, working very slowly) that costs far more time or effort than others need.",
@@ -345,7 +356,7 @@ AA.add('symptoms', [{
     { score: "no", quote: "It's only spreadsheets at work that I struggle with. Everywhere else I'm fine with detail, and I always was at school.", why: "Absent unless probing finds more. One task type in one setting, with good accuracy elsewhere and in childhood, does not meet 'often' or pervasiveness." }
   ],
   mimics: [
-    { ddx: "sld", clue: "Errors follow a reading, spelling or maths pattern (reversals, decoding problems, number facts), and the person does not see what is wrong even when shown.", ask: "When someone points out a mistake, can you see straight away what is wrong and fix it, or is it still hard to work out?" },
+    { ddx: "sld", clue: "Errors follow a consistent pattern in reading, spelling or maths (slow, effortful decoding, spelling by sound, weak number facts), and the person cannot easily see what is wrong even when shown.", ask: "When someone points out a mistake, can you see straight away what is wrong and fix it, or is it still hard to work out?" },
     { ddx: "idd", clue: "Mistakes reflect difficulty with the level of the task across the board, with slow learning of new skills, rather than slips on familiar work.", ask: "Are the tasks you get wrong ones you can do well on a good day, or ones you find hard to understand?" },
     { ddx: "sensory", clue: "Misreads small print, numbers or signs; squints, has headaches, or does worse in poor light or on small screens.", ask: "When did you last have your eyes tested? Is small print or a phone screen harder to read than it used to be?" },
     { ddx: "dep", clue: "Errors began with low mood, poor sleep and loss of interest; accuracy was good before that.", ask: "Before your mood dropped, were you making as many mistakes as you are now?" },

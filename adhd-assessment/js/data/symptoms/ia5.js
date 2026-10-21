@@ -13,19 +13,19 @@ AA.add('symptoms', [{
   },
   rephrase: [
     "How do you plan your day or your week?",
-    "Plain words: is your life well organised, or a bit chaotic?",
+    "Plain words: how organised is your life? Give me an example from this week.",
     "When you have several things to do, how do you decide what to do first?",
     "How long do you think it takes you to get ready and leave the house? How long does it really take?",
     "Talk me through how you keep track of dates and deadlines. Does it work?",
     "What does your desk, car or kitchen table look like right now?",
     "Most people are messy sometimes. What would a visitor notice about your home that is different from your friends' homes?",
     "Does someone else organise things for you, like a partner, parent or assistant? What happens without them?",
-    "Simple English: is it hard for you to plan? Are you often late?",
+    "Simple English: how do you plan your day? Tell me about yesterday. Were you on time?",
     "Tell me about a time when a plan fell apart. What happened?",
-    "Do you set up systems or planners and then stop using them?",
+    "What diaries, lists or planners have you tried? What happened to them?",
     "If you look calm and organised at work, what does it take behind the scenes?",
     "When you have a big job with many parts, how do you break it down?",
-    "Informal: are you always running behind, juggling too much and never quite on top of things?"
+    "Informal: how on top of things do you feel from day to day? What slips first?"
   ],
   examples: {
     adult: [
@@ -46,13 +46,13 @@ AA.add('symptoms', [{
       ] },
       { ctx: "study", label: "Study and training", items: [
         "Notes for different subjects mixed up together in one bag or file",
-        "Several assignments end up due on the same day through poor planning",
+        "No plan for the term, so several assignments pile up in the same week",
         "Cannot plan the structure of an essay before starting to write",
         "Draws up a revision timetable that is far too unrealistic to follow",
         "Spends more time making colour-coded plans than actually studying",
         "Struggles to manage the stages of a research project or dissertation",
         "Group projects suffer because their part was never planned",
-        "Coursework files saved with random names in random places"
+        "Has no overview of when deadlines and exams fall across the term"
       ] },
       { ctx: "home", label: "Home and household", items: [
         "Every surface in the home is cluttered",
@@ -60,7 +60,7 @@ AA.add('symptoms', [{
         "Clothes kept in heaps on the floor or a chair rather than put away",
         "Has to clear a space before every meal or task",
         "Cupboards so crammed that things fall out when opened",
-        "Buys duplicates because they cannot see what is already at home",
+        "No set place for things, so items end up wherever they were last used",
         "Food shopping unplanned, so there is never a full meal in the house",
         "Feels ashamed to invite people round because of the state of the home",
         "Tidies in a big burst, then the home slides back to chaos within days",
@@ -76,7 +76,7 @@ AA.add('symptoms', [{
         "Pays late fees and charges because money is not organised",
         "Tax or benefit paperwork gathered in a last-minute scramble",
         "Has no overview of income and spending from month to month",
-        "Receipts and expense paperwork kept in no particular order",
+        "Pays some bills twice while others go unpaid",
         "A partner or relative runs the finances because they were too chaotic"
       ] },
       { ctx: "relationships", label: "Partner and family", items: [
@@ -84,7 +84,7 @@ AA.add('symptoms', [{
         "Rows about lateness and plans that fall through",
         "Double-books family events and has to cancel one",
         "Holidays arranged at the last minute, so costs rise",
-        "Promises the same evening to different people",
+        "Family days out start hours later than planned",
         "Partner describes life together as living in chaos",
         "Family gatherings arranged badly, with key details missed",
         "Relies on family members to keep track of shared plans"
@@ -112,7 +112,7 @@ AA.add('symptoms', [{
         "Regularly leaves home too late to arrive on time",
         "Car interior full of rubbish, clothes and papers",
         "Runs out of fuel or charge because refuelling was not planned",
-        "Books travel at the last minute and pays more",
+        "Allows no time for traffic, parking or connections",
         "Misses trains or flights through poor timing"
       ] },
       { ctx: "digital", label: "Phone, screens and online", items: [
@@ -120,12 +120,12 @@ AA.add('symptoms', [{
         "Computer desktop covered in files with no folder structure",
         "Uses several calendar apps, none of them up to date",
         "Downloads planning apps that never become a habit",
-        "Photos, files and documents spread across devices with no order",
+        "Online accounts, logins and subscriptions kept with no system",
         "Notes to self scattered across apps, scraps of paper and messages",
         "Sets phone reminders for every step because there is no plan otherwise"
       ] },
       { ctx: "health", label: "Health and appointments", items: [
-        "Medication runs out because repeat prescriptions are not ordered in time",
+        "Does not plan ahead for repeat prescriptions, so medication runs out",
         "Health appointments clash with work or other commitments",
         "Late for medical appointments because travel time was misjudged",
         "Cannot set up a steady routine of meals, sleep and exercise",
@@ -138,7 +138,7 @@ AA.add('symptoms', [{
         "Feels overwhelmed when a task has many parts",
         "Freezes when choosing where to start",
         "Feels constantly behind and on the back foot",
-        "Ashamed that others see them as lazy or careless",
+        "Cannot picture the steps between now and the finished task",
         "Spends a lot of energy just holding the day together"
       ] }
     ],
@@ -147,7 +147,7 @@ AA.add('symptoms', [{
         "Desk or tray stuffed with crumpled papers",
         "Last to be ready when the class moves to the next activity",
         "Book bag holds letters from weeks ago",
-        "Work spread across the page in a muddle",
+        "Does the steps of a task in a muddled order and has to start again",
         "Cannot set out the materials for a task without help",
         "Written work has no clear beginning, middle and end",
         "Pencil case and equipment always in chaos",
@@ -156,31 +156,31 @@ AA.add('symptoms', [{
       ] },
       { ctx: "homework", label: "Homework", items: [
         "Does not know which homework is due on which day",
-        "Leaves projects until the night before they are due",
+        "Does not realise a project needs weeks of work until it is due",
         "Homework diary empty or impossible to read",
         "Needs a parent to plan homework time every evening",
         "Cannot judge how long a piece of homework will take",
-        "Loose worksheets crumpled at the bottom of the bag",
+        "Cannot decide which piece of homework to do first",
         "Cannot plan the stages of a project, such as find out first, then write",
         "Spends the evening getting set up and little time working"
       ] },
       { ctx: "home", label: "Home and family", items: [
         "Bedroom floor covered in clothes and toys, far more than siblings",
         "Rarely ready to leave the house on time in the mornings",
-        "Needs step-by-step prompting to get ready, long after peers manage alone",
+        "Gets dressed in a muddled order, like shoes on before trousers",
         "Drawers stuffed with a jumble of unrelated things",
-        "Often unsure what day it is or what is happening next",
+        "Unsure what day it is or what comes next, long after peers know",
         "Gets stuck when asked to pack their own bag for a sleepover",
-        "Has no sense of how long ten minutes is",
+        "At 8 or 9, still has no feel for how long ten minutes is",
         "Charts and routines set up by parents never stick",
-        "Loses the thread of the morning routine without a picture chart"
+        "A bedroom tidied by a parent is back in chaos within a day"
       ] },
       { ctx: "play", label: "Play and friends", items: [
         "Games with complicated rules fall apart because they cannot organise them",
         "Needs an adult to set up play and struggles to occupy themselves",
         "Toys in heaps, with pieces from different sets mixed together",
         "Cannot plan how to build a model or den",
-        "Drifts between activities when left alone",
+        "Trading cards, bricks or collections kept in a jumble with no order",
         "Friends take charge of organising the games"
       ] },
       { ctx: "activities", label: "Clubs, sport and outings", items: [
@@ -188,7 +188,7 @@ AA.add('symptoms', [{
         "Often late to clubs and practices",
         "Cannot organise themselves on trips without close adult help",
         "Needs a leader to take them through each stage of an activity",
-        "Club or sports uniform kept in a crumpled heap",
+        "Not changed and ready when the match or lesson starts",
         "Overwhelmed by jobs with several stages, like packing for camp"
       ] },
       { ctx: "reports", label: "What teachers and parents said", items: [
@@ -331,7 +331,7 @@ AA.add('symptoms', [{
     "Over-committing and chaotic plans only during spells of high mood and little sleep (consider bipolar disorder).",
     "Well organised but slow because of perfectionism or ordering rituals.",
     "Chaos only during periods of heavy drinking or drug use.",
-    "Do not score losing things here (A1g) or forgetting appointments (A1i). This symptom is about planning, sequencing, keeping order and managing time.",
+    "Do not score losing things (A1g), forgetting appointments (A1i), putting off demanding tasks (A1f) or drifting off half-done tasks (A1d) here. This symptom is about planning, sequencing, keeping order and managing time.",
     "Distress when routines change, with good planning otherwise, points more towards autism than to this symptom."
   ],
   anchors: [
@@ -358,7 +358,7 @@ AA.add('symptoms', [{
     { ddx: "idd", clue: "Planning difficulty matches broader difficulty with learning and understanding across life.", ask: "Apart from organising, how easy is it for you to learn new things and understand instructions?" }
   ],
   special: {
-    women: "Women often carry a large mental load and keep up an organised front through hours of lists and late nights, so the problem shows as exhaustion rather than visible chaos. Ask what it costs to keep things running and what happens when they are unwell or overloaded, for example after having children.",
+    women: "Many women carry much of the household planning load and keep up an organised front through hours of lists and late nights, so the problem shows as exhaustion rather than visible chaos. Ask what it costs to keep things running and what happens when they are unwell or overloaded, for example after having children.",
     older: "Lifelong disorganisation is often hidden by retirement or by a partner who organises everything, and may surface after bereavement. New trouble with planning and sequencing after midlife points to cognitive impairment, depression, sleep apnoea or medication, so check with someone who knew them earlier.",
     highIQ: "High ability lets people hold plans in their head and recover from chaos quickly, so they look organised until demands outgrow that capacity, often at university, promotion or parenthood. Ask how much effort it takes and how many near misses there are.",
     sud: "Heavy drinking, cannabis and stimulant use all create chaotic lives. Date the disorganisation against the substance history and ask what life was like during periods without use.",

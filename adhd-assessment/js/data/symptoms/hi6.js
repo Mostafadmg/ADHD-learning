@@ -8,24 +8,24 @@ AA.add('symptoms', [{
   adultForm: "DSM-5-TR gives no separate adult illustration for this item. In adults it shows as doing most of the talking, long monologues and stories with far more detail than needed, meetings and calls that overrun, struggling to stop once started, and the same pattern in voice notes, messages and emails. Many adults learn to monitor themselves or hold back, so they may seem quiet in new groups yet talk non-stop with people they know; the effort of holding back is part of the picture.",
   why: "Linked to weak verbal inhibition and poor self-monitoring: thoughts flow into speech without a filter, and the person does not easily notice cues that others want a turn or want to leave. Talking can also provide stimulation and help them think out loud, which makes it harder to stop.",
   ask: {
-    adult: "Over the last six months, have you, or other people, felt that you talk too much, or more than others in the conversation? What usually happens, and can you give me a recent example?",
-    child: "When you were at primary school, around age 5 to 12, did you talk a lot more than other children? Were you told off for chatting, or did your reports or your parents mention it?"
+    adult: "Over the last six months, how much of the talking do you usually do when you are with other people? What do people say about how much you talk? Can you give me a recent example?",
+    child: "When you were at primary school, around age 5 to 12, how talkative were you compared with other children? What did teachers, school reports or your parents say about it? Can you remember an example?"
   },
   rephrase: [
-    "Do people tell you that you talk a lot?",
+    "What do people say about how much you talk?",
     "In a chat with friends, who usually does most of the talking?",
     "Once you start talking, how easy is it for you to stop?",
-    "Do people seem to switch off, look at their watch or look tired while you are talking?",
-    "Plain words: do you talk more than other people?",
-    "Simple English: do you speak a lot? Do people ask you to speak less?",
-    "Has anyone at work said you talk too much in meetings or on the phone?",
-    "Do you send long voice notes, or lots of messages in a row?",
-    "Everyone likes a chat. Do you get comments about your talking that your friends do not get?",
-    "Do you sometimes stay quiet on purpose because you know you will go on too long? How hard is that?",
+    "When you have been talking for a while, what do you notice in other people's faces or body language?",
+    "In simple words: who talks more, you or the people around you? Give me an example.",
+    "In simple English: do people ask you to speak less? When was the last time?",
+    "What feedback have you had at work about how long you speak in meetings or on calls?",
+    "How long are your voice notes, messages and emails compared with other people's?",
+    "Everyone likes a chat. How is your talking different from your friends', and what comments do you get about it?",
+    "Are there times you stay quiet on purpose because you know you will go on too long? What is that like for you?",
     "How long do your phone calls usually last compared with other people's?",
-    "When you tell a story, do you go into more detail than people want?",
+    "When you tell someone a story, how do they react to the amount of detail?",
     "Tell me about the last time someone said, or hinted, that you were talking too much.",
-    "Would people who know you well call you a big talker?"
+    "How would people who know you well describe you as a talker?"
   ],
   examples: {
     adult: [
@@ -37,7 +37,7 @@ AA.add('symptoms', [{
         "Tells long stories packed with side details",
         "Finds it hard to wrap up and finish a point",
         "Others have to walk away or end the call to stop the conversation",
-        "Talks at people rather than with them",
+        "Conversations turn one-way, with the other person mostly listening",
         "Repeats the same point several times in different words",
         "Others have to say they need to go several times before it ends",
         "Holds the floor so long that people drift away from the group"
@@ -61,7 +61,7 @@ AA.add('symptoms', [{
         "Chats through lectures or classes with whoever sits nearby",
         "Study groups get little done because they keep talking",
         "Has been asked to leave a study space for chatting",
-        "Takes over the chat or keeps unmuting during online classes"
+        "Speaks far longer than anyone else when unmuted in online classes"
       ] },
       { ctx: "relationships", label: "Partner and family", items: [
         "Partner says they cannot get a word in",
@@ -77,7 +77,7 @@ AA.add('symptoms', [{
       { ctx: "parenting", label: "Parenting", items: [
         "Children complain about long lectures or explanations",
         "Chats so long at the school gate that pick-up takes ages",
-        "Explains things to the children at far greater length than needed",
+        "Helps with homework but talks so much that the task gets lost",
         "Children say 'you're talking too much again'",
         "Teenagers avoid car journeys with them to escape long talks"
       ] },
@@ -85,20 +85,20 @@ AA.add('symptoms', [{
         "Friends joke that they could talk for their country",
         "Dominates group conversations at dinners and parties",
         "Leaves social events worried they talked too much",
-        "Shares far more personal detail than intended with people they have just met",
+        "Tells new acquaintances far more than intended because the talk runs on",
         "Has lost friends who found them tiring to be around because of the talking",
         "Talks to strangers in queues, shops and buses for a long time",
         "Friends let calls go to voicemail because conversations go on so long",
         "Is described as 'a talker', 'chatty' or 'motormouth'",
-        "Asks a friend to signal when they have been talking too long",
-        "Takes over the conversation even at other people's celebrations"
+        "A quick coffee with a friend regularly turns into hours of talk",
+        "Talks so much at other people's parties that the guest of honour hardly gets a say"
       ] },
       { ctx: "driving", label: "Driving and travel", items: [
         "Talks non-stop on car journeys while passengers pretend to sleep",
         "Chats to taxi drivers or fellow passengers for the whole journey",
         "Spends almost every drive on long hands-free calls",
         "Travel companions ask for some quiet time",
-        "Talks out loud to themselves while driving alone"
+        "Passengers have asked them to stop talking and concentrate on the road"
       ] },
       { ctx: "digital", label: "Phone, screens and online", items: [
         "Sends long voice notes that friends admit they never finish",
@@ -124,10 +124,10 @@ AA.add('symptoms', [{
         "Tradespeople and delivery drivers struggle to get away after a visit"
       ] },
       { ctx: "leisure", label: "Leisure and hobbies", items: [
-        "Talks through films, TV or sport that others are trying to watch",
+        "Turns a quick catch-up at a club or hobby group into an hour-long chat",
         "Chats constantly at the gym, in classes or on walks",
         "Team-mates or club members say they never stop chatting",
-        "Chats through calm pastimes like fishing or golf, irritating companions",
+        "Gives long, detailed accounts of a hobby to people who only asked in passing",
         "Gets told off at a book club or evening class for talking too much"
       ] },
       { ctx: "inner", label: "Inner experience", items: [
@@ -158,13 +158,13 @@ AA.add('symptoms', [{
         "Talked all through homework time instead of writing",
         "Turned homework help into long chats about other things",
         "Needed reminders to stop chatting and get on",
-        "Narrated everything out loud while working",
+        "Brothers or sisters at the same table complained about the chatter",
         "Kept stopping homework to tell a parent long stories"
       ] },
       { ctx: "home", label: "Home and family", items: [
         "Talked from waking up until falling asleep",
         "Parents felt worn out by the constant talking",
-        "Talked through TV programmes and films",
+        "Chattered all through meals until their food went cold",
         "Kept chatting at bedtime after lights out",
         "Brothers and sisters said they never got a word in",
         "Talked all the way through car journeys",
@@ -175,13 +175,13 @@ AA.add('symptoms', [{
         "Did more talking than playing when with friends",
         "Other children told them to be quiet",
         "Explained games at great length before anyone could start",
-        "Kept up a running commentary while playing alone",
+        "Chatted all the way to and from school, leaving friends little chance to speak",
         "Friends' parents remarked on how much they talked",
         "Talked so much at sleepovers that friends could not get to sleep"
       ] },
       { ctx: "activities", label: "Clubs, sport and outings", items: [
         "Leaders at Guides, Cubs or Scouts kept pausing activities to quieten their chatter",
-        "Chatted to neighbours all through school shows and concerts",
+        "Talked to the coach or leader at length instead of joining in",
         "Coaches asked them to stop talking and listen",
         "Chatted to strangers on buses or in shops",
         "Chatted through music or swimming lessons",
@@ -198,7 +198,7 @@ AA.add('symptoms', [{
       ] },
       { ctx: "teen", label: "Secondary school (12-16, optional)", items: [
         "Got detentions for talking in lessons",
-        "Spent hours on the phone or messaging every night",
+        "Group projects stalled because they kept chatting instead of working",
         "Teachers separated them from friends to stop the chatter",
         "Was seen as 'the chatty one' in their friendship group",
         "Was told off in exams or mocks for talking",
@@ -286,7 +286,7 @@ AA.add('symptoms', [{
       "Did they talk more than other children of their age?",
       "Did they talk from morning until night?",
       "Were they told off at school for talking?",
-      "Did they talk through TV, meals and car journeys?",
+      "Did they talk all through meals, car journeys and bedtime?",
       "Did brothers, sisters or friends complain about it?",
       "Could they stop when asked?",
       "Did they talk to strangers a lot?",
@@ -309,9 +309,9 @@ AA.add('symptoms', [{
     "Talks more than the situation needs in most conversations, on most days.",
     "Clearly talks more than peers of the same age, culture and role.",
     "Others have commented, complained or shown it, for example by switching off, ending calls or avoiding them.",
-    "Shows across settings: home, work or study, social life, and on the phone or in messages.",
+    "Usually shows across settings: home, work or study, social life, and on the phone or in messages.",
     "Finds it hard to stop even after noticing cues or being asked.",
-    "Longstanding: similar talking described in childhood, often in school reports.",
+    "Longstanding and trait-like rather than in spells; most people also describe childhood talkativeness, often in school reports (score childhood separately).",
     "Score Present when it is kept in check only by heavy effort (staying silent in new groups, notes to keep it short), with the talk returning when relaxed.",
     "Causes problems: meetings, customers, relationships, friendships or appointments.",
     "Present when mood is stable and the person is not under the influence of alcohol or drugs."
@@ -325,13 +325,13 @@ AA.add('symptoms', [{
     "A talkative job (sales, teaching) unless they talk more than colleagues and outside work too.",
     "Family or cultural norms of lively conversation, if they are no more talkative than their group.",
     "Disorganised, hard-to-follow speech with odd ideas (consider psychosis).",
-    "New talkativeness after a head injury, or starting in later life (consider frontal change or dementia).",
-    "Recent talkativeness in someone isolated and lonely who was not talkative before.",
+    "New talkativeness in adult life: after a head injury, starting in later life (consider frontal change or dementia), or in someone recently isolated and lonely.",
     "Long-windedness from word-finding difficulty or speaking a second language; ask about talk in their first language.",
-    "Talkativeness seen in only one setting."
+    "Talkativeness seen in only one narrow setting, such as with one close friend, and nowhere else.",
+    "Scoring error: answering before the question ends or finishing sentences belongs to hi7, butting into conversations to hi9, and loud volume or not keeping quiet through films, shows and other quiet leisure to hi4. Score hi6 for the amount of talk."
   ],
   anchors: [
-    { score: "yes", quote: "My nickname at work is 'the radio'. Meetings with me overrun, my manager's told me to keep updates to two minutes, and my partner says she can't get a word in. Every school report said I chatted too much.", why: "Score Present: several settings, clear consequences, others comment, and a childhood history in school reports." },
+    { score: "yes", quote: "My nickname at work is 'the radio'. Meetings with me overrun, my manager's told me to keep updates to two minutes, and my partner says they can't get a word in. Every school report said I chatted too much.", why: "Score Present: several settings, clear consequences, others comment, and a childhood history in school reports." },
     { score: "yes", quote: "I send voice notes that are ten minutes long and friends say they don't listen to them. On the phone I can go for two hours. I try to stop, but I don't notice the time going.", why: "Score Present: pervasive across different ways of talking, hard to stop, and peers comment. Confirm the childhood history." },
     { score: "yes", quote: "In new groups I stay really quiet, because I know once I start I won't stop. With people I know, I talk the whole time and feel embarrassed afterwards.", why: "Score Present: the pattern is held back only by heavy effort with strangers and shows freely with familiar people; score the underlying pattern." },
     { score: "unsure", quote: "I'm chatty, I suppose, but I'm a teacher. It comes with the job.", why: "Unsure: ask about life outside work, and whether they talk more than other teachers." },

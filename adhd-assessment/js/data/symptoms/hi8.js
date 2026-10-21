@@ -5,7 +5,7 @@ AA.add('symptoms', [{
   codes: { dsm5: "A2h", diva: "H/I 8", asrs: [17] },
   title: "Difficulty waiting their turn",
   criterion: "Often finds it hard to wait for their turn, for example when standing in a queue.",
-  adultForm: "In adults this shows as marked impatience whenever waiting is required: queues in shops and at the bar, traffic jams and red lights, waiting rooms, phone hold lines, slow websites, and waiting for replies, decisions or results. DSM-5-TR's example is waiting in line; the European consensus describes adult impatience, including walking out of jobs and rushing into relationships. Many adults arrange their lives to avoid waiting or pay to skip it, so ask what they do to avoid waits and what that costs.",
+  adultForm: "In adults this shows as marked impatience whenever waiting is required: queues in shops and at the bar, traffic jams and red lights, waiting rooms, phone hold lines, slow websites, and waiting for replies, decisions or results. DSM-5-TR's example is waiting in a queue; adult interview guides such as DIVA widen this to general impatience, including rushing into or walking out of jobs and relationships because things move too slowly. Many adults arrange their lives to avoid waiting or pay to skip it, so ask what they do to avoid waits and what that costs. Not waiting for a turn to speak in conversation is part of DSM-5-TR A2g, so score it under hi7, not here.",
   why: "Delay aversion: waiting feels unusually unpleasant, so the person escapes it, fills it or cuts it short. Weak inhibitory control and a strong pull towards immediate rather than later rewards add to this, and time seems to drag when nothing is holding attention.",
   ask: {
     adult: "Over the last six months, how often have you found it hard to wait your turn, for example in queues, in traffic or in waiting rooms? What happens when you have to wait? Can you give me a recent example?",
@@ -14,17 +14,18 @@ AA.add('symptoms', [{
   rephrase: [
     "How are you at waiting in queues?",
     "What happens inside you when you have to wait for something?",
-    "Do you find it hard to wait? For example in a shop, at the doctor's or in traffic.",
-    "Do you leave a queue because you cannot stand waiting any longer?",
-    "Is waiting harder for you than for other people?",
+    "What is it like for you when you have to wait, for example in a shop, at the doctor's or in traffic?",
+    "When did you last leave a queue because you could not stand the wait? What happened?",
+    "How does waiting compare for you and for the people around you? Give me an example.",
     "Tell me about the last time you had to wait for something. How did it go?",
     "Some people will do almost anything to avoid waiting. Is that you? What do you do?",
     "Everyone gets fed up in long queues. What makes it different for you, and what has it cost you?",
     "Do you plan your day to avoid queues or waiting? How much effort does that take?",
     "How are you when someone is slow, like a slow driver or a slow person at the till?",
-    "Can you wait for a reply to a message, or do you keep checking and chasing?",
-    "Would people who know you well call you impatient?",
-    "When you want something, can you wait for it, or do you need it now?"
+    "What do you do while you are waiting for a reply to a message?",
+    "How would people who know you well describe you when you have to wait for something?",
+    "How are you when it is someone else's turn first, for example in a game or at a counter?",
+    "When you want something, what happens if you are told you have to wait for it?"
   ],
   examples: {
     adult: [
@@ -40,49 +41,50 @@ AA.add('symptoms', [{
         "Walks long distances rather than wait for a late bus",
         "Crosses the road against the red pedestrian light",
         "Pushes towards the door when boarding a train, bus or plane",
-        "Swaps between airport security lines hunting for the quickest",
+        "Swaps between airport security queues hunting for the quickest",
         "Gets out of the car in a jam to see what the hold-up is",
-        "Rings or messages repeatedly when a taxi or lift is a few minutes late"
+        "Rings or messages repeatedly when a taxi or lift is a few minutes late",
+        "Edges out at junctions or roundabouts before it is their turn to go",
+        "Pushes in at the front of a traffic queue rather than wait in it"
       ] },
       { ctx: "home", label: "Home and household", items: [
-        "Abandons a full basket rather than stand in a long checkout line",
-        "Hops between checkout lines several times trying to find the fastest",
+        "Abandons a full basket rather than stand in a long checkout queue",
+        "Hops between checkout queues several times trying to find the fastest",
         "Uses only self-checkouts to avoid waiting behind other shoppers",
         "Shops late at night or very early just to avoid queues",
-        "Eats food before it has finished cooking or cooling",
-        "Paints a second coat before the first has dried",
-        "Opens the microwave or oven before the timer has finished",
+        "Opens the microwave or oven again and again before the food is ready",
         "Steps in front of others at a shop counter without noticing",
         "Gets visibly irritated when the person ahead is slow to pay",
+        "Takes a numbered ticket at a counter, then leaves before being called",
+        "Hovers outside the bathroom and hurries whoever is using it",
         "Phones the delivery firm repeatedly when a parcel is a few hours late",
         "Cancels a booked tradesperson to get someone who can come today"
       ] },
       { ctx: "admin", label: "Paperwork and money", items: [
         "Hangs up on hold lines before getting through, then has to start again",
         "Leaves problems with the bank or council unresolved because the phone wait is too long",
+        "Walks out of the bank, post office or council office when there is a queue",
+        "Rings again and again rather than wait for a promised call back",
         "Pays extra for next-day delivery rather than wait a few days",
-        "Uses buy-now-pay-later or credit rather than save up for something",
         "Chases a refund or application within days of sending it",
-        "Cashes in savings early rather than wait for them to mature",
-        "Borrows before payday so they can have something now",
         "Pays for fast-track services to cut out weeks of waiting"
       ] },
       { ctx: "work", label: "Work", items: [
         "Goes ahead without sign-off because waiting for approval feels unbearable",
         "Leaves jobs early because promotion or progress seems too slow",
         "Chases colleagues for replies within minutes of asking",
-        "Walks out of meetings that start late rather than wait",
+        "Leaves a meeting that starts late rather than wait for it to begin",
         "Gives up on the canteen queue and goes without lunch",
         "Starts the next step on site before glue, plaster or concrete has set",
-        "Cannot wait their turn for shared machines and gives up or jumps ahead",
+        "Jumps ahead of colleagues for the printer, kettle or microwave",
+        "Pushes to be seen first when colleagues are waiting to speak to the manager",
         "Rings an employer the day after an interview to ask for a decision",
-        "As a self-employed worker, drops projects that will take months to pay off",
         "Climbs many floors by the stairs rather than wait a minute for the lift"
       ] },
       { ctx: "relationships", label: "Partner and family", items: [
         "Moves in or commits very quickly because waiting feels unbearable",
         "Gets cross while waiting for a partner to get ready to go out",
-        "Sends several messages if a partner does not reply quickly",
+        "Starts the meal or the film without waiting for a partner to be ready",
         "Ends relationships when things do not move fast enough",
         "Hands over presents early because they cannot wait for the day",
         "Pushes for big decisions, like a house or a holiday, to be made today",
@@ -90,7 +92,7 @@ AA.add('symptoms', [{
       ] },
       { ctx: "parenting", label: "Parenting", items: [
         "Hurries children along all day because waiting for them is so hard",
-        "Struggles to stand in line at parents' evening or school events",
+        "Struggles to queue for teachers at parents' evening or for school events",
         "Finds the wait during a child's lesson or club almost intolerable",
         "Leaves the surgery with a child before being seen because of the delay",
         "Snaps at children when kept waiting for them at the school gate"
@@ -105,10 +107,11 @@ AA.add('symptoms', [{
       ] },
       { ctx: "leisure", label: "Leisure and hobbies", items: [
         "Avoids theme parks, concerts or events with long queues",
-        "Pays for fast-pass tickets to skip the queue",
+        "Pays for fast-track tickets to skip the queue at attractions",
         "Reads the last page or looks up spoilers rather than wait to find out",
         "Gets irritable in turn-based board games while others take their go",
-        "Digs up seeds or bulbs to check whether they have sprouted",
+        "Hurries other players to take their turn in card or board games",
+        "Takes a turn on the pool table, court or machine before it is theirs",
         "Gives up on baking, fishing or crafts where waiting is part of it",
         "Leaves a film or match early to beat the crowds"
       ] },
@@ -128,7 +131,8 @@ AA.add('symptoms', [{
         "Stops treatments that take weeks to work before they have had a chance",
         "Avoids appointments where a long wait is likely",
         "Rings repeatedly for test results before they are due",
-        "Takes another dose because the first has not worked yet",
+        "Takes a second dose of a painkiller too soon because the first has not worked yet",
+        "Keeps going up to reception to ask how much longer the wait will be",
         "Books the first slot of the day so there is no delay to sit through"
       ] },
       { ctx: "inner", label: "Inner experience", items: [
@@ -150,8 +154,8 @@ AA.add('symptoms', [{
         "Becomes upset when made to wait for the teacher's help",
         "Takes a turn in class activities before others have had theirs",
         "Grabs worksheets or equipment before they are handed out",
-        "Rushes out of the classroom before the class is dismissed",
-        "Struggles in lessons where children take turns to read aloud",
+        "Is out of the door before the class has been dismissed",
+        "Jumps in to read aloud when it is another child's turn",
         "Shouts 'my turn' over and over in group games",
         "Jostles others in the toilet or water fountain queue"
       ] },
@@ -178,7 +182,7 @@ AA.add('symptoms', [{
       ] },
       { ctx: "activities", label: "Clubs, sport and outings", items: [
         "Cannot wait their turn during practice drills at sport",
-        "Leaves the line for rides at the fair",
+        "Gives up on the queue for rides at the fair",
         "Gets very upset when made to wait at the doctor's or dentist",
         "Jumps into the pool before the instructor says so",
         "Cannot queue for the coach on school trips without pushing",
@@ -188,7 +192,7 @@ AA.add('symptoms', [{
       { ctx: "reports", label: "What teachers and parents said", items: [
         "Report: 'finds it hard to wait for a turn'",
         "Report: 'needs reminders to line up sensibly'",
-        "Report: 'pushes in the line'",
+        "Report: 'pushes in when the class lines up'",
         "Report: 'struggles with turn-taking games'",
         "Report: 'can be impatient with others'",
         "Parent: 'could never wait for anything'",
@@ -197,9 +201,9 @@ AA.add('symptoms', [{
       { ctx: "teen", label: "Secondary school (12-16, optional)", items: [
         "Walked out of canteen or bus queues",
         "Took risky short cuts across roads or railway lines rather than wait",
-        "Spent pocket money or wages at once rather than save for something",
+        "Took turns out of order in PE, science practicals or games",
         "Sent repeated messages when friends did not reply quickly",
-        "Lost patience in shop queues and was asked to leave"
+        "Argued with staff or other customers about queues"
       ] }
     ]
   },
@@ -312,7 +316,7 @@ AA.add('symptoms', [{
   ],
   notCount: [
     "Ordinary irritation in long or badly run queues that most people would share: normal variation.",
-    "Impatience only when genuinely late or under real time pressure.",
+    "Impatience only when genuinely late or under real time pressure, or only with one person or in one place.",
     "Being unable to wait because of pain, a full bladder, low blood sugar or another physical need.",
     "Leaving queues or waiting rooms because of panic, fear of being trapped or fear of being judged (consider panic disorder or social anxiety).",
     "Irritability and impatience only during an episode of depression, hypomania or mania.",
@@ -322,12 +326,12 @@ AA.add('symptoms', [{
     "Restlessness while waiting that is really a need to move or inner restlessness (score under hi1 or hi3), not intolerance of the wait itself.",
     "Deliberate, entitled or intimidating queue-jumping with disregard for others (consider antisocial traits).",
     "Local or cultural norms where queuing is informal and moving forward is expected.",
-    "Impatience only with one person or in one place."
+    "Scoring error: not waiting for a turn to speak in conversation belongs to hi7 (DSM-5-TR A2g), and impulsive spending or decisions with no wait involved should not be scored here."
   ],
   anchors: [
     { score: "yes", quote: "I can't do queues. If there are more than two people at the till I put my basket down and go. I've had points for speeding and overtaking when I wasn't even late. I walk out of the GP surgery if they're running behind, then I have to rebook.", why: "Score Present: frequent, across several settings, with costs and risk, not explained by time pressure." },
-    { score: "yes", quote: "My wife says I'm the most impatient person she knows. I order everything online, pay for next-day delivery and shop at six in the morning, all to avoid waiting. It costs us a fortune, but otherwise I lose it in queues.", why: "Score Present: extensive, costly avoidance driven by intolerance of waiting, with collateral support. Avoidance counts as the symptom." },
-    { score: "yes", quote: "I've always been like this. Mum says I opened my Christmas presents early every single year. I've left two jobs because promotion was taking too long, and if someone doesn't text back I send five more.", why: "Score Present: lifelong, across settings, with clear consequences." },
+    { score: "yes", quote: "My partner says I'm the most impatient person they know. I order everything online, pay for next-day delivery and shop at six in the morning, all to avoid waiting. It costs us a fortune, but otherwise I lose it in queues.", why: "Score Present: extensive, costly avoidance driven by intolerance of waiting, with collateral support. Avoidance that is driven by the wait and carries a cost counts towards the symptom." },
+    { score: "yes", quote: "I've always been like this. Mum says I pushed in every dinner queue at primary school. Now I can't stand in a queue for more than a minute, I edge out at junctions before it's my go, I've left two jobs because promotion was taking too long, and if someone doesn't text back I send five more.", why: "Score Present: queues, traffic and waiting for outcomes are all affected, across settings, with clear consequences and a childhood history." },
     { score: "unsure", quote: "I hate queues, but who doesn't?", why: "Unsure: ask for specific recent examples, what they actually do, how they compare with others and whether it has cost them anything." },
     { score: "unsure", quote: "I've got really short-tempered in queues this year, since my back got bad.", why: "Unsure, leaning towards absent: recent and linked to pain. Ask how they managed waiting before the pain started." },
     { score: "unsure", quote: "I avoid queues because of the crowds. I feel panicky and have to get out.", why: "Unsure, leaning towards absent: avoidance driven by anxiety, not by intolerance of delay. Explore panic and agoraphobia; both can co-exist with ADHD." },
@@ -352,7 +356,7 @@ AA.add('symptoms', [{
     older: "Older adults may have arranged their lives to avoid waiting, or may cope better now that time pressure has eased, so confirm the lifelong pattern with family. New impatience or irritability in later life points to pain, mood, medication or cognitive change rather than ADHD.",
     highIQ: "Able and well-resourced people may solve waiting with money and planning (fast-track services, deliveries, flexible hours), which hides the difficulty. Ask what happens when they cannot buy their way out, and what avoiding waits costs them.",
     sud: "Nicotine, cannabis, alcohol and stimulant withdrawal all cause irritability and impatience, and stimulant intoxication speeds people up. Ask about periods of abstinence and about childhood, and check whether the impatience predates substance use.",
-    asd: "Autistic people may find waiting hard because of sensory overload, uncertainty or changes to routine, and often cope better when the wait is quiet and predictable. In ADHD the waiting itself is aversive however calm and predictable it is. Both can be present.",
+    asd: "Autistic people may find waiting hard because of sensory overload, uncertainty or changes to routine, and often cope better when the wait is quiet and predictable. In ADHD the delay itself is the problem, and waiting stays hard even when it is quiet and its length is known. Both can be present.",
     culture: "Queuing norms vary widely between countries and settings: orderly lines are expected in some places and informal pushing forward in others. Judge against the person's own norms and ask whether their impatience stands out within their own community."
   },
   refs: [

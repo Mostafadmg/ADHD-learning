@@ -5,27 +5,27 @@ AA.add('symptoms', [{
   codes: { dsm5: "A2e", diva: "H/I 5", asrs: [6] },
   title: "Always on the go, 'driven by a motor'",
   criterion: "Is often on the go and seems to run on an engine that will not switch off. The person cannot stay still, or is uncomfortable staying still, for long stretches such as a meal out or a meeting, and other people may experience them as restless or hard to keep up with.",
-  adultForm: "DSM-5-TR notes that in adults this may show as being unable, or uncomfortable, to stay still for a long time, for example in restaurants or meetings, with others finding them restless or difficult to keep up with. Adults describe constant busyness, packed diaries, several jobs or projects at once, a fast pace, difficulty stopping to rest and taking on too much until they are exhausted. Many have channelled the drive into physically active jobs, sport or long hours, which can hide it and even earn praise.",
+  adultForm: "The DSM-5-TR wording for this item already uses adult settings: being unable, or uncomfortable, to stay still for a long time, for example in restaurants or meetings, with others finding the person restless or difficult to keep up with. Adults describe constant busyness, packed diaries, several jobs or projects at once, a fast pace, difficulty stopping to rest and taking on too much until they are exhausted. Many have channelled the drive into physically active jobs, sport or long hours, which can hide it and even earn praise.",
   why: "Thought to reflect poor regulation of arousal and activity level, a strong need for stimulation and weak inhibition of the urge to move on to the next thing. Stopping feels uncomfortable or even aversive, so the person keeps going even when tired, and only stops when they crash.",
   ask: {
     adult: "Over the last six months, how much have you felt that you are always on the go, as if your engine never switches off? What happens when you have to stay still for a long time, like a long meal or a meeting? Can you give me an example?",
-    child: "When you were at primary school, between about 5 and 12, were you on the go all the time, from morning until bedtime? What did your parents or teachers say about your energy? Can you remember an example?"
+    child: "When you were at primary school, between about 5 and 12, how would you describe your energy compared with other children? What did your parents or teachers say about it? Can you remember an example?"
   },
   rephrase: [
-    "Do people say you never stop?",
-    "Are you busy from the moment you wake up until you go to bed?",
+    "What do the people close to you say about how much you are on the go?",
+    "Take me through a normal day. How much of it are you busy doing something?",
     "How do you feel when you have to stay in one place for an hour or more, for example at a long dinner?",
-    "Do friends or family find it hard to keep up with you?",
-    "Plain words: do you have a lot of go in you? Is it hard for you to stop?",
+    "How easy do friends or family find it to keep up with you? What do they say?",
+    "In simple words: do you have a lot of energy, and is it hard to stop? Tell me about it.",
     "If you had a whole day with nothing planned, what would you actually do?",
-    "Do you fill every gap in your day with something to do?",
+    "What happens when there is a gap in your day with nothing to do?",
     "Lots of people are busy. Is your busyness something you choose, or something you feel you cannot stop?",
-    "Do you take on more than you can manage because sitting still is so hard?",
-    "Does it feel as if there is an engine inside you that keeps running?",
-    "Have you picked jobs or hobbies that keep you moving, so that you can cope?",
-    "Does anyone say you wear them out?",
+    "How much do you tend to take on compared with other people? What makes you say yes to more?",
+    "Some people say it feels like an engine inside them that keeps running. How well, or how badly, does that describe you?",
+    "How did you choose your jobs and hobbies? Did keeping on the move play a part?",
+    "Who in your life finds your pace tiring, and what do they say?",
     "Tell me about your last holiday or day off. How much did you actually rest?",
-    "Speed: do you do things faster than other people, and want them to hurry up?"
+    "How does your pace compare with the people you live or work with?"
   ],
   examples: {
     adult: [
@@ -51,7 +51,7 @@ AA.add('symptoms', [{
         "Cannot let the family have a slow, lazy morning",
         "Does chores at high speed, often several at once",
         "Sees an empty Sunday as a chance for a big project rather than rest",
-        "Has the garden, washing and shopping done before others are out of bed"
+        "Visitors say they feel tired just watching them"
       ] },
       { ctx: "relationships", label: "Partner and family", items: [
         "Partner says being with them is exhausting",
@@ -75,7 +75,7 @@ AA.add('symptoms', [{
         "Friends say they cannot keep up with them",
         "Books back-to-back social plans most weekends",
         "Wants to move on to the next place after a short time at each",
-        "Packs a lunch, a party and a late gig into one Saturday",
+        "First to arrive and last to leave, then still wants to go on somewhere else",
         "Known in the group as the one with endless energy",
         "Friends need a rest after a day out with them",
         "At slow gatherings like barbecues, ends up finding jobs to do",
@@ -84,11 +84,11 @@ AA.add('symptoms', [{
       { ctx: "leisure", label: "Leisure and hobbies", items: [
         "Has many hobbies going at once and does each of them intensely",
         "Packs holidays with activities and cannot lie on a beach",
-        "Exercises hard every day to burn off energy",
+        "On days off rushes from one outing to the next rather than resting",
         "Drawn to extreme or high-energy sports",
         "Walks so fast that companions have to half run to keep up",
         "Comes home from a holiday more tired than before it",
-        "Finds a day with nothing planned hard to bear",
+        "Companions on walks or hikes want far more breaks than they do",
         "Long films, plays or concerts feel like an endurance test",
         "Signs up for marathons, triathlons or challenges one after another"
       ] },
@@ -97,7 +97,7 @@ AA.add('symptoms', [{
         "Gets off a long flight or train ride desperate to move",
         "Long car journeys as a passenger feel unbearable",
         "Plans travel days packed with sights, leaving companions worn out",
-        "Cycles or walks everywhere to use up energy",
+        "On holiday moves on to a new place most days rather than staying put",
         "Squeezes several errands into every trip out, always in a hurry"
       ] },
       { ctx: "conversation", label: "Conversations and meetings", items: [
@@ -110,7 +110,7 @@ AA.add('symptoms', [{
       { ctx: "study", label: "Study and training", items: [
         "Combines study with work, sport and volunteering all at once",
         "Finds three-hour lectures or long exams very hard to sit through",
-        "Revises while walking or moving around the room",
+        "Course mates struggle to keep up with their pace on group projects",
         "Signs up for every society, course or extra project on offer"
       ] },
       { ctx: "health", label: "Health and appointments", items: [
@@ -118,11 +118,11 @@ AA.add('symptoms', [{
         "Finds recovery after an operation or illness, when rest is needed, very hard",
         "Has picked up injuries from doing too much, too fast",
         "Doctors or physios have said to rest, but they cannot",
-        "Pushes through tiredness until they suddenly collapse",
+        "Pushes through tiredness until they crash and need days to recover",
         "Has burned out more than once after years of overcommitting"
       ] },
       { ctx: "digital", label: "Phone, screens and online", items: [
-        "Fills an online calendar so there is never a free slot",
+        "Cannot watch a series without doing online jobs on the phone at the same time",
         "Books classes, trips and plans online late at night to fill the coming week",
         "Uses fitness trackers and goes far beyond the daily targets",
         "Runs several online projects, groups or side hustles at the same time"
@@ -136,7 +136,7 @@ AA.add('symptoms', [{
         "Feels exhausted yet still cannot stop",
         "Rest feels like wasted time",
         "Notices they move and work faster than everyone around them",
-        "Plans exercise before work so that sitting at a desk is possible",
+        "Feels irritable and trapped when plans fall through and the day is suddenly empty",
         "Schedules every hour of the day so there is never empty time"
       ] }
     ],
@@ -147,13 +147,13 @@ AA.add('symptoms', [{
         "Volunteered for every job that meant moving about",
         "Wore out teaching assistants and supply teachers",
         "Came in from playtime still going at full speed",
-        "Could not settle after PE or play",
-        "Found long sessions on the carpet very hard",
+        "Staff on school trips found them hard to keep up with",
+        "Still had energy to spare at the end of the school day when classmates were flagging",
         "Teachers gave them jobs to do just to use up their energy"
       ] },
       { ctx: "homework", label: "Homework", items: [
         "Wanted to rush homework so they could get going again",
-        "Did homework standing up or moving around the kitchen",
+        "Homework was squeezed in between clubs and play because they were always busy",
         "Homework only happened after sport had burned off some energy",
         "Parents had to keep calling them back to finish"
       ] },
@@ -161,7 +161,7 @@ AA.add('symptoms', [{
         "On the go from waking until bedtime",
         "Woke early and was immediately active",
         "Exhausted parents, grandparents and babysitters",
-        "Could not sit through a whole family meal",
+        "Parents struggled to find enough to keep them busy at weekends",
         "Needed far less rest than brothers or sisters",
         "Was still bouncing at bedtime when others were tired",
         "Parents compared them to a battery that never ran down",
@@ -179,7 +179,7 @@ AA.add('symptoms', [{
       ] },
       { ctx: "activities", label: "Clubs, sport and outings", items: [
         "Signed up for many clubs and sports at once",
-        "Could not sit through a long service, wedding or ceremony",
+        "Wanted to try every activity on offer at holiday clubs or camps",
         "Wanted to leave restaurants as soon as they had eaten",
         "Trips and days out wore out the adults with them",
         "Was the most energetic child at swimming or football",
@@ -191,8 +191,8 @@ AA.add('symptoms', [{
         "Relatives described them as 'a whirlwind'",
         "Report said they needed to learn to slow down",
         "Parents were told their child was 'hard work' or 'exhausting'",
-        "Childminders or nursery staff found them hard to keep up with",
-        "Parents asked the doctor or health visitor about their energy levels",
+        "Childminders or after-school club staff found them hard to keep up with",
+        "Parents asked the GP or school nurse about their energy levels",
         "Family joked that they had two speeds: flat out and asleep"
       ] },
       { ctx: "teen", label: "Secondary school (12-16, optional)", items: [
@@ -252,7 +252,7 @@ AA.add('symptoms', [{
       "Have you lost money or time by taking on too many things at once?"
     ] },
     { k: "compensation", label: "How you cope or hide it", items: [
-      "Do you plan exercise so that you can sit still later?",
+      "How do you get through situations where you must stay put for hours?",
       "Have you chosen an active job to cope with it?",
       "Do you fill your diary on purpose so that there is no empty time?",
       "Do you use anything to switch off, like alcohol or cannabis?",
@@ -307,28 +307,28 @@ AA.add('symptoms', [{
     "A constant drive and level of activity on most days, not only around deadlines or busy seasons.",
     "Clear discomfort or real difficulty staying still for long periods, such as meals out, meetings or long journeys.",
     "Other people notice it: they find the person hard to keep up with or tiring to be around.",
-    "Present across settings: work or study, home, social life and holidays.",
-    "A lifelong, trait-like pattern, with similar high energy described in childhood.",
+    "Usually present across settings: work or study, home, social life and holidays, not only in one demanding role.",
+    "A persistent, trait-like pattern rather than spells of days or weeks; most people also describe high energy in childhood (score childhood separately).",
     "Score Present when the person copes by choosing active jobs, heavy exercise or a packed diary: rate the underlying drive, not whether it is now hidden.",
     "There is a cost: exhaustion, burnout, injuries, strain in relationships, or being unable to rest when ill.",
-    "Present when mood is stable, the person is sober, and not using stimulants or large amounts of caffeine."
+    "Present when mood is stable, the person is sober, and not using cocaine, amphetamine or large amounts of caffeine."
   ],
   notCount: [
     "Periods of high energy that come in episodes with elevated or irritable mood, less need for sleep, big ideas or racing thoughts (consider bipolar disorder or cyclothymia).",
     "Chosen busyness that the person enjoys and can stop easily, with no discomfort when still.",
     "Busyness driven by worry, or used to avoid painful thoughts and memories (consider anxiety, trauma or depression).",
-    "High activity only in a demanding job, a busy season or while caring for small children, with a calmer pace otherwise.",
+    "High activity only because of a demanding job, a busy season, money worries or caring for small children, with no inner drive and a calmer pace when demands ease.",
     "Energy linked to stimulants, cocaine, high caffeine intake, or steroid or thyroid medication.",
     "Constant movement or exercise to control weight or shape (consider an eating disorder).",
     "Overactivity with weight loss, heat intolerance, tremor and palpitations (check thyroid function).",
     "An urge to move the legs at rest or in the evening that walking relieves (consider restless legs).",
     "An inner urge to move that started with an antipsychotic, antidepressant or other new medicine (consider akathisia).",
     "Overwork driven by perfectionism or rigid rules about using time well, rather than a restless drive.",
-    "Keeping going because of money worries or caring duties, without any inner drive or discomfort when still.",
-    "A new pattern starting in adulthood with no similar history in childhood."
+    "A new pattern that began in adulthood with no similar trait earlier in life: look for another cause (mood, substances, thyroid, new demands) before scoring.",
+    "Scoring error: fidgeting belongs to hi1, getting up from a seat to hi2, an inner restless feeling or needing exercise to settle to hi3, and noise or not unwinding quietly in free time to hi4. Score hi5 for the overall drive, pace and discomfort with long still periods."
   ],
   anchors: [
-    { score: "yes", quote: "My wife says I'm exhausting. I'm up at six, gym, work, then I'm fixing something or out on the bike. On holiday I can't do the pool, I need a plan for every day. My mum says I never stopped as a kid.", why: "Score Present: a constant drive across settings, discomfort with rest, others cannot keep up, and the same pattern in childhood." },
+    { score: "yes", quote: "My partner says I'm exhausting. I'm up at six, gym, work, then I'm fixing something or out on the bike. On holiday I can't do the pool, I need a plan for every day. My mum says I never stopped as a kid.", why: "Score Present: a constant drive across settings, discomfort with rest, others cannot keep up, and the same pattern in childhood." },
     { score: "yes", quote: "I'm a paramedic and I love it, because sitting still is torture. When I had an office job for a year I was miserable and wandering about all day. My friends say they can't keep up with me.", why: "Score Present: the active job is a way of coping; the office year shows the discomfort with stillness, and peers comment on it." },
     { score: "yes", quote: "Long meals out are a nightmare, I'm desperate to go by dessert. I've burned out twice from taking on too much and I still can't say no to anything. Teachers used to call me a whirlwind.", why: "Score Present: discomfort with long still periods, repeated overcommitment with a clear cost, and a childhood history." },
     { score: "unsure", quote: "I'm very busy, but that's because I've got three kids and a full-time job.", why: "Unsure: the busyness may be situational. Ask what they are like when there are no demands, for example a weekend when the children are away, and before they had children." },

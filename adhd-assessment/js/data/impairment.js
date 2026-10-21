@@ -2,14 +2,15 @@
    question and collateral history. Powers the onset and collateral steps of the interview.
    Original content for ADHD Assessment: the structure follows DIVA (five impairment areas plus daily life and
    safety, adult then childhood, collateral rated 0/1/2), but all wording is original.
-   Sources: NICE NG87 (1.2.2, 1.3.1, 1.3.3); UKAAN AQAS (Adamou et al. 2024); RCPsych CR235 (2023);
-   Kooij et al. 2019 European Consensus; DSM-5-TR; WHO ICD-11 CDDR (2024); GOV.UK ADHD and driving.
+   Sources: NICE NG87 (1.2.2, 1.3.1, 1.3.3, 1.4.3); UKAAN AQAS (Adamou et al. 2024); RCPsych CR235 (2023);
+   Kooij et al. 2019 European Consensus (citing Kooij 2008, Sibley 2018, Cooper 2018); Moffitt et al. 2015;
+   CADDRA 4.1; AADPA 2022; DSM-5-TR; WHO ICD-11 CDDR (2024); GOV.UK ADHD and driving.
    Example lists are append-only: stored ticks use the item index. */
 AA.add('impairment', {
   severity: [
     { v: 0, l: "None", d: "No effect on functioning in this area, or no more difficulty than most people of the same age. Ordinary slips with no real consequences." },
-    { v: 1, l: "Mild", d: "Noticeable but minor. Occasional problems that are soon put right, or extra effort the person can keep up without real cost. DSM-5-TR mild severity means no more than minor impairment. Mild on its own is below the NICE NG87 threshold." },
-    { v: 2, l: "Moderate", d: "Clear, repeated problems with real consequences, such as warnings, conflict, lost money or falling behind, or coping only at a high and sustained cost (very long hours, constant help from others). Meets the NICE NG87 1.3.3 threshold of at least moderate impairment." },
+    { v: 1, l: "Mild", d: "Noticeable but minor. Occasional problems that are soon put right, or extra effort the person can keep up without real cost. DSM-5-TR mild severity means no more than minor impairment. Clear but minor interference can still meet DSM-5-TR criterion D, but mild impairment alone is below the NICE NG87 1.3.3 threshold." },
+    { v: 2, l: "Moderate", d: "Clear, repeated problems with real consequences, such as warnings, conflict, lost money or falling behind, or coping only at a high and sustained cost (very long hours, constant help from others). This is the NICE NG87 1.3.3 level of at least moderate impairment; AQAS 2024 asks for it in at least two areas or settings." },
     { v: 3, l: "Severe", d: "Marked impairment: major loss or harm in this area, such as dismissal, exclusion, relationship breakdown, serious debt, injury or police contact, or unable to function there without substantial support. Matches the marked impairment of DSM-5-TR severe." }
   ],
 
@@ -80,7 +81,7 @@ AA.add('impairment', {
         ask: [
           "How did you get on at primary school? What did teachers say about your work and behaviour?",
           "How was secondary school? Did things get harder with more teachers and more homework?",
-          "Were you kept in at break, put on report, sent out of class or excluded? What for?",
+          "Were you kept in at break, put on report, sent out of class, suspended or excluded? What for?",
           "Did you have extra help, a teaching assistant or a special educational needs plan?",
           "How did homework go at home? How long did it take, and who had to help?",
           "Did your results match how bright people said you were?",
@@ -93,7 +94,7 @@ AA.add('impairment', {
           "Often kept in at break or lunch to finish work",
           "Often sent out of class or to the head teacher",
           "Put on a behaviour report card or contract",
-          "Fixed-term or permanent exclusion from school",
+          "Suspended (fixed-term exclusion) or permanently excluded from school",
           "Moved schools because of behaviour or learning problems",
           "Moved down to lower sets despite being able",
           "Had a teaching assistant, SEN support, a statement or an EHCP",
@@ -114,7 +115,8 @@ AA.add('impairment', {
           "Could not revise for exams despite wanting to do well",
           "Results held up only by a very structured school or private tutoring",
           "Teachers described them as lazy, careless or not trying",
-          "Reports graded effort and behaviour low across most subjects"
+          "Reports graded effort and behaviour low across most subjects",
+          "Repeated a school year, or restarted a course after falling behind"
         ],
         anchors: {
           0: "Progress in line with ability, with no more than ordinary teacher comments about effort or behaviour.",
@@ -128,7 +130,7 @@ AA.add('impairment', {
     {
       id: "relationships",
       label: "Partner and family",
-      why: "Partners and families carry much of the day-to-day cost: forgotten commitments, an unequal share of chores and admin, impulsive words and decisions, and recurring arguments. Ask about partner relationships, parenting and the wider family. A partner's account is especially useful here, because many adults with ADHD underestimate how their symptoms affect the people close to them (Kooij 2019).",
+      why: "Partners and families carry much of the day-to-day cost: forgotten commitments, an unequal share of chores and admin, impulsive words and decisions, and recurring arguments. Ask about partner relationships, parenting and the wider family. A partner's account is especially useful here: many adults with ADHD have limited insight into their own impairment (Kooij 2019), while partners see the day-to-day impact. Kooij 2019 also lists relationship problems and intimate partner violence among the burdens of adult ADHD, so ask about safety at home.",
       adult: {
         ask: [
           "How are things at home with your partner or the people you live with? What do you argue about most?",
@@ -172,13 +174,14 @@ AA.add('impairment', {
           "Still depends on parents for money, housing or organisation as an adult",
           "Partner often left waiting because of lateness",
           "Takes over conversations at home so others feel unheard",
-          "Conflict at home has escalated to police or social care involvement"
+          "Conflict at home has escalated to police or social care involvement",
+          "Domestic abuse or controlling behaviour in a relationship, as victim or perpetrator"
         ],
         anchors: {
           0: "Relationships and family life work as for most people. Disagreements are ordinary and do not centre on the person's difficulties.",
           1: "Some friction, such as teasing or irritation about lateness or forgetting, but no lasting strain, and roles at home are fair.",
           2: "Recurring conflict about the same issues, a clearly unequal share of household and family tasks, or a partner who feels they must manage the person. Relationships are under real strain.",
-          3: "Marked impairment: relationship breakdowns linked to the difficulties, estrangement from family, serious problems caring for children, or conflict that has involved police or social care."
+          3: "Marked impairment: relationship breakdowns linked to the difficulties, estrangement from family, serious problems caring for children, or conflict that has involved police or social care. If there is domestic abuse or risk to children, follow safeguarding procedures."
         }
       },
       child: {
@@ -230,7 +233,7 @@ AA.add('impairment', {
     {
       id: "social",
       label: "Friends and social contacts",
-      why: "In ADHD the difficulty is usually keeping friends rather than making them: forgetting to stay in touch, lateness, interrupting, talking too much or reacting quickly. In autism, making friends and reading social situations are the core problem (RCPsych CR235). Ask what friends would say about the person, and look for friendships lost over time and the loneliness that follows.",
+      why: "In ADHD the difficulty is usually keeping friends rather than making them: forgetting to stay in touch, lateness, interrupting, talking too much or reacting quickly. Difficulty making friends at all, and reading social cues, points more towards autism (RCPsych CR235), although the two often co-occur. Ask what friends would say about the person, and look for friendships lost over time and the loneliness that follows.",
       adult: {
         ask: [
           "Tell me about your friendships. Do you have close friends you have kept for years?",
@@ -625,7 +628,7 @@ AA.add('impairment', {
     {
       id: "safety",
       label: "Driving, health and safety",
-      why: "ADHD is linked with more accidents, injuries, risky driving, harmful substance use and contact with the police (ICD-11 CDDR; Kooij 2019). This area captures harm the other areas miss and feeds directly into the risk step and driving advice. Ask factually and without judgement. In the UK, people must tell the DVLA if their ADHD or its medication affects their ability to drive safely (GOV.UK).",
+      why: "ADHD is linked with more accidents, injuries, risky driving, harmful substance use and contact with the police (ICD-11 CDDR; Kooij 2019). This area captures harm the other areas miss and feeds directly into the risk step and driving advice. Ask factually and without judgement. In the UK, people must tell the DVLA if their ADHD or its medication affects their ability to drive safely (NICE NG87 1.4.3; GOV.UK). Kooij 2019 also lists self-harm and suicide attempts among the burdens of adult ADHD, so ask directly.",
       adult: {
         ask: [
           "Do you drive? Have you had accidents, near misses, speeding tickets or points on your licence?",
@@ -636,7 +639,7 @@ AA.add('impairment', {
           "How much do you drink, smoke or use drugs? Do you use them to calm down or to focus?",
           "Have you ever been in trouble with the police? What happened?",
           "Have you done things on impulse that put you at risk, such as unsafe sex or getting into fights?",
-          "Have you ever harmed yourself, or had sudden urges to? (If yes, complete the risk step today.)"
+          "Have you ever harmed yourself, had sudden urges to, or thought about ending your life? (If yes, complete the risk step today.)"
         ],
         items: [
           "Speeding tickets or penalty points on licence",
@@ -669,13 +672,14 @@ AA.add('impairment', {
           "Long-term condition poorly controlled because of missed treatment or checks",
           "Distracted crossing roads or near traffic",
           "Accidents at work from rushing or skipping safety steps",
-          "Exploited, scammed or harmed by others after acting on impulse"
+          "Exploited, scammed or harmed by others after acting on impulse",
+          "Suicide attempt made suddenly, during a crisis or after a setback"
         ],
         anchors: {
           0: "No more accidents, injuries, risky behaviour or police contact than most people.",
           1: "A few minor incidents, such as a speeding fine or small bumps, without injury or legal consequences.",
           2: "Repeated accidents or injuries, penalty points, risky substance use or impulsive risk-taking with real consequences.",
-          3: "Marked impairment: serious injury, driving ban, harmful substance use, arrest or conviction, or impulsive self-harm. Complete the risk step and give DVLA advice."
+          3: "Marked impairment: serious injury, driving ban, harmful substance use, arrest or conviction, or impulsive self-harm or suicide attempts. Complete the risk step, and give DVLA advice if they drive."
         }
       },
       child: {
@@ -726,7 +730,7 @@ AA.add('impairment', {
   ],
 
   onset: {
-    intro: "DSM-5-TR criterion B needs several inattentive or hyperactive-impulsive symptoms before age 12. It does not need a childhood diagnosis, the full symptom count, or impairment before 12. ICD-11 asks for evidence of significant symptoms before 12, and notes that some people first come to attention later, often when demands outstrip their ability to compensate. Establish the course as well as the start: ADHD symptoms are trait-like and lifelong rather than episodic, although they fluctuate from day to day (AQAS 2024). NICE NG87 1.3.3 advises against excluding someone only because the time of onset is uncertain, while ICD-11 advises caution when childhood symptoms cannot be corroborated. Use the memory aids and collateral to build a picture across the school years.",
+    intro: "DSM-5-TR criterion B needs several inattentive or hyperactive-impulsive symptoms before age 12. It does not need a childhood diagnosis, the full symptom count, or impairment before 12. ICD-11 asks for evidence of significant symptoms before 12, and notes that some people first come to attention later, often when demands outstrip their ability to compensate. Establish the course as well as the start: ADHD symptoms are trait-like and persistent rather than episodic, although they can fluctuate through the day (AQAS 2024). NICE NG87 1.3.3 advises against excluding someone only because the time of onset is uncertain, while ICD-11 advises caution when childhood symptoms cannot be corroborated. Use the memory aids and collateral to build a picture across the school years.",
     ask: [
       "Have these difficulties always been part of you, or can you remember a time before them?",
       "What is the earliest age you remember having trouble with attention, restlessness or acting without thinking?",
@@ -749,7 +753,7 @@ AA.add('impairment', {
     ],
     memoryAids: [
       "School reports from primary and secondary school: read the teacher comments, not only the grades.",
-      "A school-year timeline: Reception, Year 2, Year 4, Year 6, Year 7, Year 9, Year 11. Ask about one year at a time.",
+      "A school-year timeline, one year at a time. England and Wales: Reception, Year 2, Year 4, Year 6, then Year 7, Year 9, Year 11. Scotland: P1 to P7, then S1 to S4. Northern Ireland: P1 to P7, then Year 8 to Year 12.",
       "Life landmarks: house moves, teachers' names, a favourite class, a sibling's birth, a memorable holiday.",
       "Childhood photos and home videos: was the person usually on the move, mid-mischief, or apart from the group?",
       "Comparison with brothers and sisters: who was told off more, who lost things, who needed more help?",
@@ -765,16 +769,16 @@ AA.add('impairment', {
       "Reports from earlier assessments: educational psychology, speech and language therapy, CAMHS or paediatrics."
     ],
     lateOnset: [
-      "If onset was clearly after 12 with no childhood evidence, look hard for another explanation before diagnosing ADHD. ICD-11 notes that acute or abrupt onset in adolescence or adulthood should raise the possibility of another cause, such as emerging psychosis or bipolar disorder. If no other cause is found, record the uncertainty and review over time rather than forcing a conclusion.",
-      "Substances: cannabis, stimulants, alcohol and withdrawal can all cause inattention and restlessness. Check which came first and whether symptoms persist during sustained abstinence (ICD-11 CDDR).",
-      "Depression and anxiety: concentration problems that began with, and rise and fall with, a mood or anxiety episode point to that disorder rather than ADHD (ICD-11 CDDR).",
-      "Trauma: symptoms that began after abuse, assault or another traumatic event may reflect PTSD or complex PTSD, with hyperarousal, dissociation and poor concentration.",
-      "Head injury and neurological illness: a clear change after a brain injury, encephalitis, stroke or the start of epilepsy suggests an acquired cause.",
-      "Sleep: shift work, insomnia, sleep apnoea, a new baby or a delayed sleep pattern can all produce adult-onset inattention.",
-      "Medical causes and medicines: thyroid disease and anaemia (AADPA 2022), menopause and post-viral illness (clinical practice), and medicines such as carbamazepine, valproate, levetiracetam or bronchodilators (ICD-11 CDDR; AADPA 2022).",
-      "The late-onset debate: in the Dunedin cohort, most adults who met ADHD criteria at 38 had not had ADHD in childhood (Moffitt 2015). The finding is contested and has not changed the criteria.",
-      "When apparent late-onset cases were re-examined with repeated assessments in the MTA study, most were better explained by substance use, another mental disorder or non-impairing ups and downs in concentration; very few true adolescent-onset cases remained (Sibley 2018, as summarised in Kooij 2019).",
-      "Many apparent late-onset cases had raised symptoms at some point in childhood that were missed or compensated (Cooper 2018, cited in Kooij 2019). Look for subthreshold childhood symptoms hidden by ability, structure or support, and fully assess impairment, psychiatric history and substance use in any apparent later onset (Kooij 2019)."
+      "If onset was clearly after 12 with no childhood evidence, look hard for another explanation before diagnosing ADHD. ICD-11 notes that acute or abrupt onset in adolescence or adulthood should raise the possibility of another cause, such as emerging psychosis or bipolar disorder. If symptoms before 12 are clearly absent, DSM-5-TR criterion B is not met: record other specified ADHD only if impairing symptoms remain and nothing explains them better. If onset is merely uncertain, record the uncertainty and review over time rather than forcing a conclusion.",
+      "Substances: cannabis, stimulants, alcohol and withdrawal can all cause inattention and restlessness. Check which came first and whether symptoms persist when the person is not intoxicated or withdrawing, ideally over sustained abstinence (ICD-11 CDDR).",
+      "Depression and anxiety: concentration problems that began with, and rise and fall with, a mood or anxiety episode point to that disorder rather than ADHD. Count them towards ADHD only if present since childhood and persisting after the episode resolves (ICD-11 CDDR).",
+      "Trauma: symptoms that began after abuse, assault or another traumatic event may reflect PTSD or complex PTSD, with hyperarousal, dissociation and poor concentration (RCPsych CR235; ICD-11 CDDR notes that trauma and grief can produce ADHD-like symptoms).",
+      "Head injury and neurological illness: a clear change after a brain injury, encephalitis, stroke or the start of epilepsy suggests an acquired cause; ICD-11 excludes symptoms due to a disease of the nervous system.",
+      "Sleep: shift work, insomnia, sleep apnoea, sleep deprivation from caring for a baby, or a delayed sleep pattern can all produce adult-onset inattention (ICD-11 CDDR; AADPA 2022).",
+      "Medical causes and medicines: thyroid disease and anaemia (AADPA 2022), menopause and post-viral illness (clinical practice), and medicines such as carbamazepine, valproate, levetiracetam, bronchodilators, decongestants, thyroid replacement or high caffeine intake (ICD-11 CDDR; AADPA 2022).",
+      "The late-onset debate: in the Dunedin cohort, about 90% of adults who met ADHD criteria at 38 had not had ADHD in childhood (Moffitt 2015). The finding is contested and has not changed the criteria.",
+      "In the MTA comparison group (children without ADHD followed to about 25 with repeated multi-informant assessments), about 95% of those who first screened positive for late-onset ADHD were excluded on full review. Symptoms most often occurred only during heavy substance use, or reflected another disorder or non-impairing ups and downs in concentration. No adult onset was found without a complex psychiatric history (Sibley 2018, cited in Kooij 2019).",
+      "In a population cohort, most apparent late-onset cases had high ADHD scores at some point in childhood, so a single measure at 12 had misclassified them (Cooper 2018, cited in Kooij 2019). Look for subthreshold childhood symptoms hidden by ability, structure or support, and fully assess impairment, psychiatric history and substance use in any apparent later onset (Kooij 2019)."
     ],
     pitfalls: [
       "Confusing the onset of impairment with the onset of symptoms. Impairment often starts when support falls away (secondary school, university, first job, parenthood), while the symptoms were there earlier.",
@@ -784,7 +788,7 @@ AA.add('impairment', {
       "Treating the lack of a childhood diagnosis as evidence against ADHD. ADHD is under-recognised, particularly in girls and women (NICE NG87 1.2.2) and in people with mainly inattentive symptoms.",
       "Requiring the full symptom count before 12. DSM-5-TR asks only for several symptoms before 12.",
       "Using the old age-7 rule. DIVA 2.0 was written for DSM-IV and asks about onset before 7; DSM-5-TR and ICD-11 use 12.",
-      "Missing an episodic course. Symptoms that come and go with mood episodes, substance use or stress suggest another disorder; ADHD is trait-like, with day-to-day variation (AQAS 2024).",
+      "Missing an episodic course. Symptoms that come and go with mood episodes, substance use or stress suggest another disorder; ADHD is trait-like, although symptoms can fluctuate through the day (AQAS 2024).",
       "Excluding the diagnosis only because onset is uncertain. NICE NG87 1.3.3 advises against this. Record the evidence, its gaps and how you weighed them.",
       "Overlooking early developmental contacts (speech and language therapy, occupational therapy, health visitor or paediatrics) and family history, which support an early neurodevelopmental picture (RCPsych CR235)."
     ]
@@ -827,7 +831,7 @@ AA.add('impairment', {
         { k: "p4", q: "Did they seem to listen when you spoke to them, or did you have to repeat things many times?" },
         { k: "p5", q: "Could they follow a few instructions in a row, such as fetching their shoes, coat and bag?" },
         { k: "p6", q: "How did homework go? How long did it take and how much help did they need?" },
-        { k: "p7", q: "Did they often lose things such as coats, PE kit, reading books or toys?" },
+        { k: "p7", q: "Did they often lose things such as coats, PE kit, reading books or toys? Were their bedroom and school bag chaotic?" },
         { k: "p8", q: "Were they forgetful in daily routines, needing more reminders than other children?" },
         { k: "p9", q: "Did they make careless mistakes in schoolwork even when they knew how to do it?" },
         { k: "p10", q: "Did they flit from one activity to another without finishing?" },

@@ -6,25 +6,25 @@ AA.add('symptoms', [{
   title: "Runs about or climbs; in adults, feels restless",
   criterion: "Often runs about or climbs on things in situations where this is not appropriate. In teenagers and adults it may show only as a feeling of restlessness.",
   adultForm: "Adults rarely climb furniture. Instead they describe inner restlessness: a physical sense of being wound up, jittery or buzzing, an urge to move or burn off energy, and a body that will not settle. Some still show the outward form, such as running instead of walking, taking stairs several at a time, climbing walls or rocks where other adults would not, or needing hard daily exercise to discharge the feeling. DSM-5-TR allows the adult form to be limited to the subjective feeling of restlessness, so ask directly about the inner experience.",
-  why: "The same weak regulation of motor activity and arousal that drives fidgeting. With age, outward over-activity is increasingly held in and becomes an uncomfortable inner restlessness; low tolerance of under-stimulation and difficulty switching off motor readiness keep the feeling going.",
+  why: "Thought to reflect the same weak regulation of motor activity and arousal that drives fidgeting. With age, outward over-activity tends to be held in and becomes an uncomfortable inner restlessness; low tolerance of under-stimulation and difficulty switching off motor readiness keep the feeling going.",
   ask: {
     adult: "Over the last six months, how often have you felt restless or physically wound up inside, as if your body needs to move, even when you are sitting or lying still? What does that feel like for you, and when did you last notice it?",
     child: "When you were at primary school, how often did you run about or climb on things when you were not supposed to, for example indoors, in shops or on furniture? Did you feel restless inside? What did the adults around you say?"
   },
   rephrase: [
-    "Does your body often feel restless, even when you are keeping still?",
-    "Do you feel jittery or wound up inside a lot of the time?",
+    "Does your body often feel restless, even when you are keeping still? Tell me what that is like.",
+    "How often do you feel jittery or wound up inside, and what is that like?",
     "Some people describe a buzzing or fizzing feeling under the skin. Does that fit you?",
-    "Is it hard for your body to settle down?",
+    "What happens when you try to let your body settle down, for example in the evening?",
     "Inside your body, do you feel you must move? Often, or not often?",
     "How would you describe what your body feels like when you have to keep still for a long time?",
     "Most people get restless sometimes. How is yours different, and how often is it there?",
     "Even when you look calm, is there restlessness going on inside that others cannot see?",
     "Do you need hard exercise or physical work to feel settled? What happens if you miss it?",
     "As an adult, do you still run when others would walk, or climb things other adults would not?",
-    "Do you get 'itchy feet' or 'ants in your pants' a lot?",
+    "Some people say they feel like a coiled spring or have 'ants in their pants'. What words would you use for how your body feels?",
     "When you sit or lie still, what happens in your body?",
-    "Is the restless feeling there even when you are not worried about anything?"
+    "When the restless feeling is there, what else is going on? Is it there on days with nothing to worry about?"
   ],
   examples: {
     adult: [
@@ -34,14 +34,13 @@ AA.add('symptoms', [{
         "Has a sense of energy that needs to go somewhere",
         "Feels like crawling out of their skin when made to stay still",
         "Feels jittery inside while looking calm to others",
-        "Describes feeling 'antsy' most days without knowing why",
+        "Says they can never get comfortable in their own body",
         "The restless feeling is there even on good, worry-free days",
-        "Muscles feel tense and ready to spring into action",
-        "Feels physically uncomfortable unless moving in some way",
-        "Feels the urge to move in the arms and legs",
-        "Feels caged or cooped up indoors or in small rooms",
-        "Says the restlessness has always been there, like background noise",
-        "Feels calmer only after hard physical effort"
+        "Body feels primed to spring up and go, with nowhere to go",
+        "Describes feeling as if they had drunk too much coffee, without having any",
+        "The restless feeling is there from the moment they wake",
+        "The restlessness is there on holiday as much as at work",
+        "Says the restlessness has always been there, like background noise"
       ] },
       { ctx: "work", label: "Work", items: [
         "Paces the corridor or car park in breaks to burn off restlessness",
@@ -49,9 +48,9 @@ AA.add('symptoms', [{
         "Chose physical work, such as building or delivery, to manage restlessness",
         "Runs up the stairs at work rather than taking the lift",
         "Feels physically wound up on slow, quiet shifts",
-        "Jogs between departments or across the shop floor",
+        "Restless body is worse on working-from-home days with no commute or walking",
         "Takes a fast walk at lunch to be able to sit through the afternoon",
-        "Feels twitchy and unsettled during long desk-based training",
+        "Feels restless in the body even on busy, interesting days",
         "Colleagues notice they seem keyed up and unable to settle"
       ] },
       { ctx: "study", label: "Study and training", items: [
@@ -60,80 +59,81 @@ AA.add('symptoms', [{
         "Walks or jogs laps of the campus between lectures to settle",
         "Restlessness builds in the library until they must move",
         "Feels jumpy and unsettled in lectures even when interested",
-        "Studies better after hard exercise that 'takes the edge off'"
+        "Body feels restless through long revision sessions, even on subjects they enjoy"
       ] },
       { ctx: "home", label: "Home and household", items: [
         "Paces from room to room in the evening, unable to settle",
         "Takes the stairs two or three at a time",
         "Vaults over furniture, walls or gates rather than going round",
         "Runs rather than walks around the house",
-        "Feels restless on lazy days at home and has to get out",
-        "Climbs on worktops and furniture in ways others at home find risky",
-        "Feels cooped up and agitated when stuck indoors, such as during illness",
-        "Body feels too restless to settle on getting into bed",
+        "On quiet days at home the body feels restless by mid-morning",
+        "Goes out for a late walk or run because the body will not settle",
+        "Feels cooped up and twitchy after even one rainy day indoors",
         "Turns over and over in bed with a restless body rather than racing worries"
+      ] },
+      { ctx: "admin", label: "Paperwork and money", items: [
+        "Has to walk round the block before settling to bills or forms",
+        "Body feels restless and unsettled through long online forms or tax returns",
+        "Restless feeling builds through a long meeting with a bank adviser or solicitor"
       ] },
       { ctx: "leisure", label: "Leisure and hobbies", items: [
         "Needs intense exercise most days to feel settled",
         "Feels agitated and irritable on days when exercise is missed",
-        "Drawn to climbing, parkour, running or extreme sports",
+        "Restlessness eases during demanding sport, then returns within hours",
         "Climbs trees, walls or rocks on walks, unlike other adults",
         "Feels restless on beach holidays with nothing physical to do",
-        "Runs ahead on walks or hikes and has to wait for others",
-        "Climbs on tables, fences or stages at parties or festivals",
+        "Feels restless in the body during slow museum or gallery visits",
+        "Climbs on tables, fences or stages at parties, even when sober",
         "Uses running or cycling to 'get the fizz out'"
       ] },
       { ctx: "driving", label: "Driving and travel", items: [
-        "Feels physically wound up and agitated in traffic jams",
+        "Body feels restless and unsettled after an hour at the wheel",
         "Feels unbearably restless in the body on long flights or coach trips",
         "Runs through stations and airports even when not late",
-        "Climbs on barriers or railings while waiting for transport",
-        "Walks briskly up moving escalators and travelators",
-        "Feels restless in the body as a passenger on long journeys",
-        "Gets restless on holidays built around long sightseeing coach tours"
+        "Climbs on barriers or railings while waiting for transport"
       ] },
       { ctx: "social", label: "Friends and social life", items: [
         "Friends describe them as 'twitchy' or 'wired' when sitting down",
-        "Starts play-fighting or chasing at gatherings as an adult",
+        "Friends notice they never seem settled, even on relaxed nights in",
         "Feels physically restless at slow social events like dinner parties",
-        "Suggests active plans, such as a walk or a game, to manage restlessness",
-        "Feels physically on edge in quiet pubs or cafes",
-        "Climbs on things for fun when out with friends, embarrassing them"
+        "Suggests active plans, such as a walk or a game, to manage restlessness"
       ] },
       { ctx: "relationships", label: "Partner and family", items: [
         "Partner says they can feel the restlessness when cuddling on the sofa",
         "Partner describes them as never settled in their body",
         "Gets up at night to walk around because the body feels restless",
-        "Partner notices them pacing the kitchen in the evening",
-        "Family say they seem on edge even when happy",
-        "Partner plans active weekends because of their restlessness"
+        "Partner says they cannot lie still together on a lazy morning",
+        "Family say they seem keyed up even when happy",
+        "Partner plans active weekends because of their restlessness",
+        "Partner can tell from their body when the restlessness is building"
       ] },
       { ctx: "parenting", label: "Parenting", items: [
         "Runs around and climbs with the children more than other parents do",
         "Feels restless sitting on the bench at soft play or the park",
-        "Gets on the climbing frame or trampoline themselves",
         "Feels physically agitated during the slow parts of bedtime routines",
-        "Finds quiet afternoons at home with a baby or toddler very hard"
+        "Feels physically restless during long, quiet afternoons with a baby"
       ] },
       { ctx: "health", label: "Health and appointments", items: [
         "Feels agitated and jittery in waiting rooms",
         "Finds lying still for scans very hard because of inner restlessness",
         "Has been asked by a GP whether they are anxious, but denies worry",
         "Restlessness is worse on days with little physical activity",
-        "Restless body makes relaxation or breathing exercises feel impossible"
+        "Restless body makes relaxation or breathing exercises feel impossible",
+        "A doctor or nurse has remarked on how restless they look in the consulting room"
       ] },
       { ctx: "conversation", label: "Conversations and meetings", items: [
         "Feels physical restlessness rising after twenty minutes of a meeting",
         "Feels wired and unsettled in long one-to-one conversations",
         "Prefers walking meetings to manage the restless feeling",
         "Has to burn off energy before an important meeting",
-        "Feels jumpy in conversations that move slowly"
+        "Body feels restless during long phone calls, even when the topic matters",
+        "Feels restless in the body while a friend tells a long story, despite being interested"
       ] },
       { ctx: "digital", label: "Phone, screens and online", items: [
         "Feels restless even while scrolling, changing position or room",
         "Uses fast-paced games to ease the feeling of restlessness",
-        "Body feels wired and twitchy after hours of screen time",
-        "Feels jittery and unsettled when stuck on a long video call"
+        "Feels jittery and unsettled when stuck on a long video call",
+        "Feels restless in the body even during an exciting game or series"
       ] }
     ],
     child: [
@@ -145,17 +145,17 @@ AA.add('symptoms', [{
         "Runs around the classroom during wet play",
         "Climbs on PE apparatus before the teacher says so",
         "Runs on to the stage or round the hall in assembly or rehearsals",
-        "Climbs the climbing frame in unsafe ways",
+        "Climbs on to the roof of the playground shelter or bike sheds",
         "Hides under or clambers over furniture during lessons",
-        "Bursts out of the door running at the end of the day"
+        "Climbs on window sills or radiators in the classroom"
       ] },
       { ctx: "home", label: "Home and family", items: [
         "Climbs on kitchen worktops, shelves and wardrobes",
         "Jumps on beds and sofas, often breaking them",
         "Runs around the house rather than walking",
-        "Climbed out of the cot or bed very early",
+        "Uses the furniture as an obstacle course, leaping from chair to sofa",
         "Climbed out of windows or on to the roof",
-        "Slides down the banister or leaps down the stairs",
+        "Leaps down the stairs several steps at a time",
         "Has many injuries from climbing, such as falls and broken bones",
         "Parents fitted locks or moved furniture to stop the climbing",
         "Runs round in circles in the living room in the evening",
@@ -164,11 +164,9 @@ AA.add('symptoms', [{
       { ctx: "play", label: "Play and friends", items: [
         "Runs about in other people's houses during visits",
         "Climbs trees higher than friends dare, without seeing the danger",
-        "Turns calm play into chasing games",
+        "Is always the one fetching the ball from roofs or over fences",
         "Climbs on walls, garages and sheds with friends",
-        "Runs off from the group at the park",
-        "Friends' parents complain about climbing on their furniture",
-        "Always the one at the top of the climbing frame or wall"
+        "Friends' parents complain about climbing on their furniture"
       ] },
       { ctx: "activities", label: "Clubs, sport and outings", items: [
         "Runs off in supermarkets, shopping centres or car parks",
@@ -178,15 +176,17 @@ AA.add('symptoms', [{
         "Climbs on museum exhibits or statues",
         "Runs around the swimming pool edge despite lifeguard whistles",
         "Climbs on the furniture in waiting rooms",
-        "Runs about at weddings, funerals or formal events"
+        "Runs about at weddings, funerals or formal events",
+        "Runs up and down the coach aisle on school trips"
       ] },
       { ctx: "reports", label: "What teachers and parents said", items: [
         "Teacher kept reminding them to walk, not run, in school",
         "Report said 'climbs on equipment without permission'",
         "Relatives called them 'a little monkey' because of the climbing",
-        "Nursery staff noted frequent running off or climbing",
+        "Infant teacher noted frequent running off or climbing",
         "Name appeared often in the school accident book after falls",
         "Parents said they 'never walked anywhere, always ran'",
+        "Parents had to hold their hand everywhere to stop them running off",
         "Teacher commented on 'restless energy' in class"
       ] },
       { ctx: "teen", label: "Secondary school (12-16)", items: [
@@ -326,9 +326,9 @@ AA.add('symptoms', [{
     { score: "unsure", quote: "I feel restless when I'm stressed about money.", why: "Unsure. Linked to stress. Ask about calm periods and childhood; score No if it is only present under stress." },
     { score: "unsure", quote: "I get restless sometimes, I suppose, like when I'm bored.", why: "Unsure. Explore how often, in which settings and compared with peers before scoring." },
     { score: "unsure", quote: "For the last year I've felt agitated and can't sit, ever since my medicine was changed.", why: "Unsure, leaning No. Recent onset after a medicine change suggests akathisia or a side effect. Ask about life before the change and in childhood." },
-    { score: "no", quote: "When I'm high I can't keep still and I go days without sleep. In between I'm calm.", why: "Absent. Episodic restlessness with raised mood and little sleep points to bipolar disorder." },
+    { score: "no", quote: "When I'm high I can't keep still and I go days without sleep. In between I'm calm.", why: "Absent for this symptom. Restlessness confined to spells of raised mood and little sleep suggests mood episodes; assess for bipolar disorder." },
     { score: "no", quote: "I go climbing at weekends because I love it. Otherwise I'm pretty chilled.", why: "Absent. A chosen hobby without a restless feeling or problems." },
-    { score: "no", quote: "Since the assault I'm on edge all the time and jump at every noise.", why: "Absent for ADHD unless restlessness predates the trauma. Hyperarousal after trauma suggests PTSD." }
+    { score: "no", quote: "Since the assault I'm on edge all the time and jump at every noise.", why: "Absent for this symptom unless restlessness clearly predates the trauma. Hyperarousal after trauma suggests PTSD; ask what they were like before the assault and in childhood." }
   ],
   mimics: [
     { ddx: "gad", clue: "Restlessness comes with worry about many things, muscle tension and a sense of dread.", ask: "When you feel restless, what are you thinking about? Is there a worry behind it?" },

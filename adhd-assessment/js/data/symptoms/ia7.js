@@ -5,7 +5,7 @@ AA.add('symptoms', [{
   codes: { dsm5: "A1g", diva: "A7", asrs: [10] },
   title: "Loses things needed for tasks",
   criterion: "Frequently mislays or loses the everyday items needed to get things done, such as keys, wallet, phone, glasses, paperwork, tools, books or school equipment. The losses happen much more often than for others of the same age and cause real problems.",
-  adultForm: "In adults the items are usually keys, phone, wallet or bank cards, glasses, ID, work documents, chargers and tools. DSM-5-TR names wallets, keys, paperwork, eyeglasses and mobile phones as typical examples at this age. Look for time lost searching, lateness caused by searching, money spent on replacements, items left behind in shops, taxis or trains, and heavy reliance on fixed places, tracker tags, spares or other people to keep things safe. Adults often say 'I put it down somewhere' rather than 'I lost it'.",
+  adultForm: "In adults the items are usually keys, phone, wallet or bank cards, glasses, ID, work documents, chargers and tools. DSM-5-TR gives one example list for all ages, running from school materials, pencils and books to tools, wallets, keys, paperwork, glasses and mobile phones; unlike A1h and A1i there is no separate adult note. Look for time lost searching, lateness caused by searching, money spent on replacements, items left behind in shops, taxis or trains, and heavy reliance on fixed places, tracker tags, spares or other people to keep things safe. Adults often say 'I put it down somewhere' rather than 'I lost it'.",
   why: "Items are put down while attention is elsewhere, so where they went is never stored (weak attentional encoding and working memory). There is no automatic 'check before I leave' habit because self-monitoring is weak, so things are left behind or put down in random places.",
   ask: {
     adult: "Over the last six months, how often have you lost or misplaced things you need, like keys, your phone, wallet, glasses or important papers? Can you tell me about the last time it happened?",
@@ -13,34 +13,35 @@ AA.add('symptoms', [{
   },
   rephrase: [
     "How often do you find yourself hunting for something you had in your hand a minute ago?",
-    "Do your keys, phone or wallet go missing a lot?",
-    "Plain words: do you lose your things a lot?",
+    "Which things go missing most often: keys, phone, wallet, something else? Tell me about the last few times.",
+    "Plain words: what things do you lose? How often?",
     "How much time in a normal week do you spend looking for things?",
     "What things have you had to replace because they were lost? How many times?",
-    "Is there anything you lose so often that you now buy spares or keep copies?",
+    "What do you lose so often that you now buy spares or keep copies?",
     "Talk me through what usually happens in the few minutes before you leave the house.",
     "Lots of people lose things now and then. Compared with friends or colleagues your age, do you lose things more often, or more important things?",
     "Do you have tricks to stop yourself losing things, like a key hook, tracker tags or always using the same pocket? What happens when the trick fails?",
-    "Do people around you often help you search, or tease you about losing things?",
-    "Have you ever left something important behind, like a bag, laptop or bank card, in a shop, taxi, train or café?",
-    "For someone using English as a second language: Do you often not know where your things are? For example keys, phone, money, papers.",
+    "Who ends up helping you search, and what do they say about it?",
+    "Tell me about times you have left something important behind, like a bag, laptop or bank card, in a shop, taxi, train or café.",
+    "For someone using English as a second language: Your keys, phone, money, papers. How often do you not know where they are? Tell me about one time.",
     "If I asked your partner or a close friend how often you lose things, what would they say?",
-    "Informal: are you the one who's always asking 'has anyone seen my...?'"
+    "Informal: how often are you the one asking 'has anyone seen my...?'"
   ],
   examples: {
     adult: [
       { ctx: "home", label: "Home and household", items: [
         "Searches for keys most mornings before leaving the house",
-        "Puts the phone down in a room and has to ring it to find it",
+        "Loses the scissors, tape measure or screwdriver halfway through a household job",
         "Searches the house for glasses that turn out to be on their head",
         "Finds missing items in odd places, such as the fridge or bathroom cabinet",
         "Loses the TV remote several times a week",
         "Has lost the spare house key that was meant for emergencies",
         "Puts post down on a surface and cannot find it later",
-        "Loses one of a pair: a glove, earring, earbud or sock",
+        "Loses one of a pair: a glove, earring or sock",
         "Takes off a ring or watch and cannot recall where it was left",
         "Loses chargers so often that the home is full of spares",
-        "Keeps keys on a lanyard or clipped to clothing so they cannot go missing"
+        "Keeps keys on a lanyard or clipped to clothing so they cannot go missing",
+        "Writes a to-do list and then cannot find the list"
       ] },
       { ctx: "work", label: "Work", items: [
         "Loses their work ID or security pass and has to sign in at reception",
@@ -48,6 +49,7 @@ AA.add('symptoms', [{
         "Misplaces tools or equipment on site and holds up the job",
         "Leaves the work laptop or charger behind in a meeting room",
         "Loses notes taken in a meeting before acting on them",
+        "Loses the diary or planner that holds all their plans",
         "Borrows pens, staplers or tools from colleagues because their own have vanished",
         "Loses the keys to the work van, cash box or storeroom",
         "Has been warned or charged for lost equipment such as radios or uniform",
@@ -80,18 +82,18 @@ AA.add('symptoms', [{
         "Is late for work because the car keys cannot be found",
         "Has called out a locksmith or paid for replacement car keys",
         "Loses tickets or boarding passes between check-in and the gate",
-        "Leaves a bag or phone at a petrol station or motorway services",
-        "Loses the travel card or contactless card used for the bus",
+        "Pays the lost-ticket charge at car parks because the ticket has vanished",
+        "Loses hotel key cards or hire car keys during trips",
         "Has lost a passport or travel documents while abroad",
-        "Searches the car for sunglasses, the parking ticket or toll card"
+        "Searches the car for sunglasses, the phone holder or the toll card"
       ] },
       { ctx: "digital", label: "Phone, screens and online", items: [
-        "Rings their own phone from another phone several times a week",
+        "Rings their own phone from another phone to find it several times a week",
         "Relies on a tracker tag or locator app to find keys and bag",
-        "Has lost or left behind a phone more than once in a year",
+        "Has had to replace a lost phone more than once in recent years",
         "Loses earbuds or headphones regularly and keeps buying new ones",
         "Saves files or photos and cannot find where they went",
-        "Loses chargers, cables and adapters when away from home",
+        "Cannot find the email or text with a booking or ticket when it is needed",
         "Puts the phone down while out and walks away without it"
       ] },
       { ctx: "parenting", label: "Parenting", items: [
@@ -100,7 +102,7 @@ AA.add('symptoms', [{
         "Loses children's shoes, coats or PE kit after bringing them home",
         "Leaves the changing bag, buggy cover or toys at the park or café",
         "Misplaces the child's passport or birth certificate before a trip",
-        "Loses the spare key given by the childminder or school",
+        "Loses the baby's dummy, bottle or comforter when out",
         "Children have learnt to keep track of the parent's keys and phone",
         "Partner or children hold onto documents and keys for safe keeping"
       ] },
@@ -109,7 +111,7 @@ AA.add('symptoms', [{
         "Leaves things at friends' houses and has to go back for them",
         "Loses tickets for concerts, matches or events before the day",
         "Has lost borrowed books or tools and had to replace them",
-        "Friends no longer lend them things because items rarely come back",
+        "Friends no longer lend them things because borrowed items get lost",
         "Loses a present they bought before they get the chance to give it",
         "Leaves a bank card behind the bar after paying"
       ] },
@@ -127,7 +129,7 @@ AA.add('symptoms', [{
         "Loses medicine packs or pill organisers around the house",
         "Loses hearing aids, dentures or other daily aids",
         "Goes out without an inhaler or adrenaline pen because it cannot be found",
-        "Has paid again and again for replacement glasses",
+        "Loses insulin pens, glucose meters or test strips",
         "Loses the blood test form before getting to the clinic"
       ] },
       { ctx: "inner", label: "Inner experience", items: [
@@ -135,9 +137,9 @@ AA.add('symptoms', [{
         "Has no memory of where they put something down seconds ago",
         "Feels ashamed at always having to ask others to help search",
         "Retraces steps in their head for ages to work out where something is",
-        "Feels as if things vanish even when they were carefully put away",
+        "Puts something somewhere 'safe' and later has no idea where that was",
         "Dreads trips because of the fear of losing passport, tickets or money",
-        "Becomes very upset when someone moves things from their fixed places",
+        "Panics when someone tidies up, because then nothing can be found",
         "Gets frustrated or angry when a search eats into time they do not have"
       ] }
     ],
@@ -148,7 +150,7 @@ AA.add('symptoms', [{
         "Cannot find their reading book when it is reading time",
         "Loses worksheets between being given them and the end of the lesson",
         "Leaves jumper or cardigan in the classroom or playground",
-        "Borrows equipment from classmates most days",
+        "Borrows pens and rulers from classmates because their own have gone",
         "Loses the water bottle several times a term",
         "Lunch box or packed lunch bag goes missing",
         "Arrives at a lesson without the book they had with them that morning"
@@ -167,7 +169,7 @@ AA.add('symptoms', [{
         "Toys and games soon have missing pieces",
         "Loses pocket money or birthday money",
         "Loses the house key once trusted with one",
-        "Parents search for the child's things every morning",
+        "Loses their glasses, retainer or hearing aid, if they have one",
         "School uniform items vanish and need replacing",
         "Leaves belongings at grandparents' or friends' houses",
         "Puts things down anywhere and cannot say where later"
@@ -314,7 +316,7 @@ AA.add('symptoms', [{
     "Losing or misplacing everyday items happens often: at least most weeks, usually several times a week, not just a few times a year.",
     "It involves items needed to function, such as keys, phone, wallet, cards, glasses, documents, tools or kit, not only trivial things.",
     "It is clearly more than peers of the same age and circumstances, judged by the patient and ideally by an informant.",
-    "It shows across settings: at home, at work or study, and when out and about.",
+    "It is seen in more than one setting, for example at home and at work or study, or when out and about.",
     "It has consequences: time lost searching, lateness, replacement costs, fees, conflict or warnings at work.",
     "It is longstanding, and for the childhood rating it was present at primary school age (lost kit, coats, homework, toys).",
     "It persists despite effort, or is held in check only by heavy compensation (tracker tags, spares, fixed places, others checking). Score the behaviour as it would be without that support, and record the cost.",
@@ -331,7 +333,7 @@ AA.add('symptoms', [{
     "Only when intoxicated, hungover or after using cannabis.",
     "Items stolen, confiscated or lost for reasons outside the person's control, such as insecure housing or frequent moves.",
     "Only one kind of item (for example only umbrellas) with no wider pattern.",
-    "Hoarding or clutter where items are kept but buried, with distress at throwing things away: this is a different problem.",
+    "Items buried in clutter from hoarding (a strong urge to save, distress at throwing things away) do not count on their own. Assess hoarding separately and check whether losses came before the clutter, as the two often occur together.",
     "Memory gaps linked to dissociation or trauma reminders, where the person finds things moved with no memory of moving them.",
     "Do not score adulthood from childhood losses alone; rate adulthood and childhood separately."
   ],
@@ -344,7 +346,7 @@ AA.add('symptoms', [{
     { score: "unsure", quote: "At home I lose everything, but at work I'm fine because everything has its place.", why: "Unsure. Ask what makes work different: heavy structure or support may hide it. Explore other settings and how much effort work takes." },
     { score: "no", quote: "I'm pretty careful. I lost my wallet once on holiday years ago, but that's about it.", why: "No. A rare, isolated event." },
     { score: "no", quote: "Over the last year I've started losing things and forgetting names. I'm 67 and I was always the organised one.", why: "No for ADHD at this point. New decline in later life suggests a cognitive disorder; arrange a cognitive assessment." },
-    { score: "no", quote: "When I was using heavily I lost everything, phones, wallets. I've been clean two years and it's not a problem now.", why: "No. The losses were tied to intoxication and resolved with abstinence." }
+    { score: "no", quote: "When I was using heavily I lost everything, phones, wallets. I've not used for two years and it's not a problem now.", why: "No. The losses were tied to intoxication and resolved with abstinence." }
   ],
   mimics: [
     { ddx: "dep", clue: "Losses began with low mood, poor concentration and slowed thinking; the person was not like this before.", ask: "Were you losing things like this before your mood dropped, for example at school or in good years?" },
@@ -356,10 +358,10 @@ AA.add('symptoms', [{
     { ddx: "ocd", clue: "Repeated checking that items are present, driven by doubt and fear rather than actual losses.", ask: "Do you actually lose things, or do you check because you can't trust that you haven't?" },
     { ddx: "burnout", clue: "Losses during a spell of overload and poor sleep; they ease with rest.", ask: "Did it get better on holiday or when your workload was lighter?" },
     { ddx: "meds", clue: "Started or worsened after sedatives, anticholinergic drugs, antiepileptics or strong painkillers.", ask: "Did anything change in your medicines around the time this got worse?" },
-    { ddx: "normal", clue: "Losses are occasional, in line with a busy life, and have few consequences.", ask: "If you compare yourself with your friends, are you any worse?" }
+    { ddx: "normal", clue: "Losses are occasional, in line with a busy life, and have few consequences.", ask: "Think of friends with a similar life. How do your losses compare with theirs, in number and in what they cost you?" }
   ],
   special: {
-    women: "Women and girls often hide this behind meticulous systems, lists and spare items, so ask about the effort and the system rather than only the losses. Parenting and household roles can make losses more visible in adulthood than in childhood, when parents covered for them.",
+    women: "Women and girls may hide this behind meticulous systems, lists and spare items, so ask about the effort and the system rather than only the losses. Parenting and household roles can make losses more visible in adulthood than in childhood, when parents covered for them.",
     older: "In older adults, look for a lifelong pattern going back to school. Losing things for the first time in later life, especially with other memory changes, needs a cognitive assessment before ADHD is considered.",
     highIQ: "Able people may lose fewer things at work thanks to excellent systems, but pay in time, anxiety and help from others. Judge impairment against their ability and effort, and ask what happens when routines break, such as travel or a house move.",
     sud: "Intoxication, hangovers and blackouts cause losses. Rate the pattern during sober periods and in childhood, before substance use began.",
