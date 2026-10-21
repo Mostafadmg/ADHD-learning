@@ -75,9 +75,7 @@
       h('div', { class: 'page-head-text' },
         h('p', { class: 'eyebrow' }, 'Step ' + (idx + 1) + ' of ' + STEPS.length + (a.demo ? ' · demo patient' : '')),
         h('h1', null, meta.title),
-        h('p', { class: 'lead' }, meta.lead)),
-      h('div', { class: 'page-actions' },
-        h('span', { class: 'badge badge-accent' }, (p.ref || 'Untitled patient') + (p.age ? ' · ' + p.age + ' y' : '')))));
+        h('p', { class: 'lead' }, meta.lead))));
 
     var stepper = h('nav', { class: 'stepper', 'aria-label': 'Assessment steps' }, h('ol', null, STEPS.map(function (s, i) {
       var pr = D.stepProgress(a, s.id);
@@ -91,6 +89,9 @@
     var main = h('div', { class: 'ws-main' });
     var panel = h('aside', { class: 'ws-panel', 'aria-label': 'Live summary' });
     el.appendChild(h('div', { class: 'ws' }, main, panel));
+
+    var guide = stepGuide(step);
+    if (guide) main.appendChild(guide);
 
     var stepDef = AA.steps[step];
     var stepCleanup = null;
@@ -135,6 +136,28 @@
       subs.forEach(function (off) { off(); });
       if (typeof stepCleanup === 'function') stepCleanup();
     };
+  }
+
+  /* ---------- "What to do in this step" guide (AA.data.stepGuide) ---------- */
+  function stepGuide(step) {
+    var g = AA.data.stepGuide && AA.data.stepGuide[step];
+    if (!g) return null;
+    var key = 'guideClosed.' + step;
+    var d = h('details', { class: 'guide', open: !AA.progress.get(key, false) },
+      h('summary', null,
+        h('span', { class: 'guide-k' }, 'What to do in this step'),
+        h('span', { class: 'guide-goal' }, g.goal),
+        g.time ? h('span', { class: 'badge badge-neutral guide-time' }, g.time) : null),
+      h('div', { class: 'guide-body' },
+        g.do && g.do.length ? h('div', { class: 'guide-col' }, h('h3', null, 'Do this'), h('ol', { class: 'guide-do' }, g.do.map(function (x) { return h('li', null, x); }))) : null,
+        h('div', { class: 'guide-col' },
+          g.say && g.say.length ? [h('h3', null, 'You can say'), h('div', { class: 'guide-say' }, g.say.map(function (x) { return h('p', null, x); }))] : null,
+          g.watch && g.watch.length ? [h('h3', null, 'Watch out for'), ui.list(g.watch, 'list guide-watch')] : null,
+          g.done && g.done.length ? [h('h3', null, 'Done when'), ui.list(g.done, 'list guide-done')] : null,
+          g.next ? h('p', { class: 'guide-next' }, h('strong', null, 'Next: '), g.next) : null,
+          g.src && g.src.length ? ui.source(g.src.join('; ')) : null)));
+    d.addEventListener('toggle', function () { AA.progress.set(key, !d.open); });
+    return d;
   }
 
   /* ---------- Live summary panel ---------- */

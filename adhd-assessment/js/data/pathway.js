@@ -17,16 +17,16 @@
         "Clarify the referral question: what the person wants help with, and why now.",
         "NICE NG87 1.2.10: refer adults without a childhood diagnosis when typical ADHD symptoms began in childhood and have persisted, are not explained by another psychiatric diagnosis (coexisting conditions may be present), and cause at least moderate psychological, social, educational or occupational impairment.",
         "NICE NG87 1.2.11: adults treated for ADHD as children whose symptoms continue, with at least moderate impairment, are referred to general adult psychiatric services (QS39 statement 3).",
-        "Note higher-prevalence groups (NG87 1.2.1): adults with a mental health condition, a history of substance misuse, epilepsy, acquired brain injury, other neurodevelopmental conditions, a close relative with ADHD, people born preterm, and people known to the criminal justice system.",
+        "Note higher-prevalence groups (NG87 1.2.1): adults with a mental health condition, a history of substance misuse, epilepsy, acquired brain injury, other neurodevelopmental conditions, a close relative with ADHD, people born preterm, and people known to the criminal justice system. For the justice system and brain injury, NICE based this on committee experience of late diagnosis or misdiagnosis rather than prevalence data.",
         "Remember that ADHD is under-recognised in girls and women: they are less often referred, more often undiagnosed and more often given another diagnosis (NG87 1.2.2).",
-        "Ask the referrer for early developmental history, examples from two or more settings, the impact on functioning, medical history, and blood pressure and pulse (RCPsych CR235 Box 1 and section 8).",
+        "Ask the referrer for early developmental history, examples from two or more settings, the impact on functioning, medical history and examination, and blood pressure and pulse (RCPsych CR235 section 7 and Box 1). Desirable extras: WFIRS-S or WHODAS 2.0, AQ-10 and a developmental questionnaire.",
         "A positive screening questionnaire is not enough for referral on its own, and a negative one should not be used to exclude people (NHSE ADHD Taskforce Part 2, section 5 and recommendation 10).",
         "Look first for needs that cannot wait: active suicidal thinking, possible mania or psychosis, safeguarding concerns or new neurological signs. These need a different response before any ADHD assessment (clinical practice; NICE makes no recommendations on urgent or expedited ADHD assessment).",
         "People diagnosed privately or abroad should provide the full report. Without evidence of a comprehensive assessment, a standard assessment is needed (CR235 section 8)."
       ],
       tools: ["asrs18", "asrs5", "wfirs", "aq10"],
       tips: [
-        "Triage on the whole picture, not on a score. RCPsych CR235 found the ASRS undiscriminating for triage.",
+        "Triage on the whole picture, not on a score. In the clinical experience of the CR235 working group, the ASRS was undiscriminating for triage (CR235 section 7).",
         "If childhood onset is unclear, ask for more information rather than rejecting the referral: NG87 1.3.3 says an uncertain time of onset should not by itself exclude the diagnosis.",
         "Note any external pressure behind the referral (exams, work, benefits, a relative's diagnosis) without judging it (CR235 section 7).",
         "Keep risk under review while people wait. The DHSC review (2026) recommends that nobody is removed from a waiting list without being connected to appropriate help.",
@@ -46,7 +46,7 @@
       who: "The patient and informants complete forms; the admin team requests records; the assessing clinician reviews everything before the first appointment.",
       what: [
         "Explain the process in advance: number and length of appointments, who to bring, and what will be asked (UKAAN AQAS: orientation is highly recommended).",
-        "Send a current self-report symptom scale, for example the 18-item ASRS v1.1, to give a baseline for measuring change later. It is not diagnostic evidence (AQAS; NICE NG87 1.3.2).",
+        "Send a current self-report symptom scale, for example the 18-item ASRS v1.1, as a baseline for measuring change later. AQAS says such scales should not be a formative part of the diagnosis, and NG87 1.3.2 says a diagnosis must never rest on rating scales alone.",
         "Send a retrospective childhood scale, for example the WURS-25, and a functional impairment scale, for example the WFIRS-S.",
         "Send short screens for common coexisting conditions: depression, anxiety, alcohol and drug use, and autistic traits (AQAS optional; CADDRA uses the WSR-II, PHQ-9 and GAD-7).",
         "Send informant forms: a current observer form for a partner or close friend, and a childhood form for a parent or older sibling.",
@@ -58,9 +58,9 @@
       tips: [
         "Scores are context, not evidence. People who have read about ADHD can endorse most items (CR235 9.6).",
         "Read the forms before the interview and note discrepancies to explore, for example very high symptom scores with little impairment.",
-        "Norms from male or mixed samples can under-detect women, and rigid cut-offs produce false positives and false negatives (UKAP consensus on females with ADHD, 2020).",
+        "Norms from male or mixed samples may disadvantage women, and rigid adherence to cut-offs may produce many false positives and false negatives (UKAP consensus on females with ADHD, 2020).",
         "Keep the baseline scores: you will need them to judge treatment response (NG87 1.7.26 uses standard scales at baseline and at each dose change).",
-        "CAARS 2, BAARS-IV, Brown EF/A, BDEFS and BRIEF-A need a paid licence. Free tools cover most needs.",
+        "CAARS 2, BAARS-IV, Brown EF/A, BDEFS and BRIEF-A must be bought from their publishers. Free tools (ASRS, WURS-25, WFIRS-S, WSR-II) cover most needs (clinical practice).",
         "Old school reports are often the best evidence of childhood onset. Ask early, because they take time to find."
       ],
       sources: [
@@ -80,13 +80,13 @@
         "Developmental history: pregnancy, birth, prematurity, milestones, early temperament, and any early speech and language, occupational therapy or paediatric input (AQAS; CR235 9.4).",
         "School history: progress, reports, behaviour in class, exclusions, friendships and any extra help.",
         "Adult history: education, jobs and reasons for leaving them, relationships, parenting, money, driving and forensic history.",
-        "Work through all 18 DSM-5-TR symptoms with a semi-structured interview, for adulthood (past 6 months) and childhood (age 5 to 12), using open questions and getting a real example for every symptom you count (AQAS essential).",
+        "Work through all 18 DSM-5-TR symptoms with a semi-structured interview, for adulthood (past 6 months) and childhood (before 12; DIVA-style interviews ask about ages 5 to 12), using open questions and getting a real example for every symptom you count (AQAS essential).",
         "Onset and course: have the symptoms always been there, and was there ever a period without them?",
-        "Impairment in each area of life, rated none to severe with examples. At least moderate impairment in two or more domains or settings is needed (NG87 1.3.3; AQAS theme 3).",
+        "Impairment in each area of life, rated none to severe with examples. NG87 1.3.3 requires at least moderate impairment; AQAS (theme 3) asks for it in two or more domains or settings.",
         "Ask about adult features that are not criteria: mind-wandering, inner restlessness, emotional lability, difficulty getting to sleep and hyperfocus (CR235 9.3; Kooij 2019).",
-        "Allow enough time: at least 2 hours of direct contact in most cases (AQAS theme 4)."
+        "Allow enough time: total assessment time of at least 2 hours in most cases, in one session with a break or over several (AQAS theme 4)."
       ],
-      tools: ["diva5", "diva2", "aceplus", "caadid", "aisrs"],
+      tools: ["diva5", "diva2", "aceplus", "caadid"],
       tips: [
         "Get a recent, specific example before scoring any symptom. 'Yes, that's me' is not enough.",
         "Ask open questions first and offer examples second, so you do not lead (AQAS).",
@@ -114,7 +114,7 @@
         "Review previous records: CAMHS, paediatrics, educational psychology, GP, mental health and occupational health.",
         "Rate how strongly each source supports the diagnosis: none or little, some, or clear (the DIVA 0 to 2 approach).",
         "Record who was asked, what they said, and what was not available and why.",
-        "If no informant is available for reasons outside the person's control, this should not by itself exclude the diagnosis (CR235 9.5), but ICD-11 advises caution when childhood history cannot be corroborated."
+        "If no informant is available for reasons outside the person's control, this should not necessarily exclude the diagnosis (CR235 9.5), but ICD-11 advises caution when childhood history cannot be corroborated. Record the reason and how it lowers confidence."
       ],
       tools: ["asrs18", "caars2", "baars4", "snap4", "aceplus"],
       tips: [
@@ -144,13 +144,13 @@
         "Consider medical causes and aggravators: thyroid disease, anaemia, head injury, epilepsy, hearing or vision loss, sleep disorders and medicines (CADDRA 4.1 chapter 2; AADPA 2.2.2).",
         "For each condition decide: absent, coexisting, or better explains the picture.",
         "Do not count the same symptom twice for ADHD and autism (UKAP ADHD and autism consensus, 2020).",
-        "Where possible, treat major mood disorders, psychosis and unstable substance use before confirming ADHD (CR235 section 10; Kooij 2019 section 7.2)."
+        "Comorbidity should not block an assessment, but a major mood episode, psychosis or chaotic substance use usually needs treating or stabilising first, with ADHD symptoms rechecked once the person is stable (CR235 section 10; Kooij 2019 section 7.2)."
       ],
       tools: ["phq9", "gad7", "mdq", "hcl32", "audit", "auditc", "dast10", "cageaid", "assist", "aq10", "raads14", "pcl5", "pcptsd5", "itq", "msibpd", "pq16", "ocir", "isi", "stopbang", "epworth", "moca", "aceq", "wsr2"],
       tips: [
         "Coexisting conditions are the rule in adult ADHD and do not rule it out (WFADHD 2021).",
         "Ask 'since when?' about every symptom. A recent change points away from ADHD.",
-        "ADHD screens lose specificity in clinical groups: they often screen positive in depression, bipolar disorder and borderline personality disorder (May et al. 2023, Australian guideline).",
+        "ADHD screens lose specificity in clinical groups: the ASRS performs poorly in major depression and substance use, and the ASRS-5 in bipolar disorder and borderline personality disorder (May et al. 2023, Australian guideline).",
         "Sudden or late onset of hyperactivity in adulthood should prompt a search for mania, psychosis, substances or a medical cause (ICD-11 CDDR).",
         "Psychotic symptoms are not part of ADHD and point to a separate diagnosis (CR235 9.7.9).",
         "Use a trauma-informed approach: trauma can mimic, mask or coexist with ADHD (CR235 11.5)."
@@ -202,11 +202,11 @@
       what: [
         "Medical history, including conditions that affect the choice of medicine, and current medication (NG87 1.7.4).",
         "Height, weight, pulse and blood pressure measured with an appropriately sized cuff (NG87 1.7.4).",
-        "Cardiovascular history and examination, including breathlessness or fainting on exertion, palpitations, chest pain, and sudden cardiac death in a first-degree relative under 40 (NG87 1.7.5).",
-        "An ECG is needed only if a 1.7.5 feature is present or a coexisting condition is treated with a medicine that may increase cardiac risk (NG87 1.7.4, amended 2019).",
+        "Cardiovascular history and examination: congenital heart disease or cardiac surgery, breathlessness on exertion compared with peers, fainting on exertion or with fright or noise, sudden-onset rapid regular palpitations, chest pain suggesting a cardiac cause, and sudden cardiac death in a first-degree relative under 40 (NG87 1.7.4 and 1.7.5).",
+        "An ECG is not needed before ADHD medication unless a 1.7.5 feature is present or a coexisting condition is treated with a medicine that may increase cardiac risk (NG87 1.7.4, amended 2019).",
         "Refer for a cardiology opinion before medication if any NG87 1.7.5 feature is present, including a murmur or blood pressure in the hypertensive range.",
         "Ask specifically about seizures and head injuries (AQAS).",
-        "Ask about sleep and diet, and screen for sleep apnoea and insomnia (AQAS highly recommended).",
+        "Ask about sleep and diet (AQAS highly recommended), and screen for insomnia and obstructive sleep apnoea, which mimic inattention (clinical practice; AADPA 2.2.2).",
         "Ask about common physical comorbidities: obesity, asthma and allergies, hypermobility, migraine, thyroid disease and diabetes (AQAS highly recommended).",
         "Order investigations only when clinically indicated (AADPA 2.1.2)."
       ],
@@ -229,21 +229,22 @@
       id: "diagnosis", n: 8, title: "Diagnosis, formulation and feedback",
       who: "The assessing ADHD specialist, with multidisciplinary discussion for complex or uncertain cases.",
       what: [
-        "Check every criterion: A (5 or more symptoms in a domain from age 17), B (several before 12), C (two or more settings), D (clear interference; NICE asks for at least moderate impairment) and E (not better explained).",
+        "Check every criterion: A (5 or more symptoms in a list from age 17, lasting 6 months or more and beyond what is expected for developmental level), B (several before 12), C (several in two or more settings), D (clear interference; NICE asks for at least moderate impairment) and E (not better explained).",
         "State the presentation for the past 6 months: combined, predominantly inattentive or predominantly hyperactive-impulsive.",
         "State severity and whether in partial remission, and give the DSM-5-TR (F90.x) and ICD-11 (6A05.x) codes.",
         "Say explicitly that the symptoms are not better explained by another disorder (AQAS essential).",
         "If criteria are not met, say whether this is subthreshold ADHD or symptoms secondary to another condition (AQAS).",
         "Weigh the evidence: collateral, records, consistency and any validity concerns. Say what is missing and how it affects confidence.",
-        "Hold a structured discussion about how ADHD could affect the person's life: positives, stigma, impulsivity, environmental modifications, education and work, relationships, substance misuse and driving (NG87 1.4.3).",
-        "People who fall short of a diagnosis should also get information (NG87 1.4.4).",
+        "Hold a structured discussion about how ADHD could affect the person's life: positives, stigma, impulsivity, environmental modifications, education and work, relationships, coexisting conditions, substance misuse and driving (NG87 1.4.3).",
+        "People whose symptoms and impairment fall short of a diagnosis may benefit from similar information (NG87 1.4.4).",
         "Agree next steps and measurable goals (AQAS Table 2)."
       ],
       tools: ["diva5", "diva2", "aceplus", "wfirs", "caars2"],
       tips: [
         "Never let a scale score make or block the diagnosis (NG87 1.3.2).",
         "QbTest and other computer tests are research only in adults (NICE HTG729 1.2).",
-        "Neuropsychological tests are not diagnostic. Consider them only when impairment is out of proportion to symptoms or a learning problem is suspected (BAP 2014; Kooij 2019).",
+        "Neuropsychological tests are not diagnostic. Consider them only when impairment is out of proportion to symptoms, or a learning disorder, intellectual disability or cognitive decline is suspected (BAP 2014; Kooij 2019; AADPA 2022).",
+        "If there is an external incentive or the account is inconsistent, check credibility. In published series about 15 to 30% of adults referred for ADHD respond non-credibly, and an interview alone does not detect most of them (Suhr et al. 2008; Marshall et al. 2010 and 2016).",
         "If you are unsure, defer and gather more evidence rather than forcing a decision.",
         "Give feedback in plain language and leave time for questions. Some people need a second session (AQAS Table 2).",
         "Driving: people must tell the DVLA only if their ADHD or its medication affects their ability to drive safely (GOV.UK)."
@@ -253,6 +254,7 @@
         "UKAAN AQAS (2024): theme 2, theme 3 and Table 2",
         "NICE HTG729 (2024) 1.1 and 1.2",
         "BAP 2014; Kooij et al. 2019 section 3.3",
+        "Suhr et al. 2008; Marshall et al. 2010 and 2016 (non-credible responding in adult ADHD referrals)",
         "DSM-5-TR (APA 2022); WHO ICD-11 CDDR (2024)",
         "GOV.UK: ADHD and driving"
       ]
@@ -326,7 +328,7 @@
       id: "cks",
       name: "NICE Clinical Knowledge Summaries (CKS): Attention deficit hyperactivity disorder",
       org: "NICE CKS, produced by Clarity Informatics (trading as Agilio Software | Primary Care)",
-      year: "Updated continuously",
+      year: "Revised continuously (content not verified for this app)",
       scope: "Practical summaries for primary care. Access is limited to eligible users in the UK. CKS is third-party content, not NICE guidance, and is excluded from the NICE UK Open Content Licence.",
       keyPoints: [
         "CKS is written for GPs and primary care teams and is read alongside NICE guidance, not instead of it.",
@@ -396,7 +398,7 @@
         "Ask about additional adult features: affective instability, racing thoughts or mind-wandering, and difficulty getting to sleep (9.3).",
         "Early contact with speech and language therapy, occupational therapy, a health visitor or paediatrics suggests neurodevelopmental vulnerability (9.4).",
         "Instruments do not replace careful history taking. Patients who have read about ADHD may endorse most items (9.6).",
-        "Differentials include bipolar disorder and EUPD (affective instability), complex PTSD, anxiety, autism, Tourette's, substance effects, hyperthyroidism, frontal lobe syndromes, sleep disorders and abnormal illness behaviour. Psychotic symptoms are not part of ADHD (9.7).",
+        "Differentials include bipolar disorder and EUPD (affective instability), complex PTSD, anxiety, autism, Tourette's, substance effects, hyperthyroidism, frontal lobe syndromes, sleep disorders and abnormal sick-role behaviour, such as rehearsed questionnaire answers. Psychotic symptoms are not part of ADHD (9.7).",
         "Physical checklist: blood pressure, pulse, weight, height, cardiovascular history, tics or epilepsy, family cardiac history, liver disease and glaucoma (Box 2).",
         "Explore parenting roles routinely and use a trauma-informed approach (11.5, 11.6).",
         "Video assessment is acceptable: the quality of the assessment matters more than its mode (9.8)."
@@ -423,7 +425,7 @@
         "Before atomoxetine: the same checks, with liver history in place of misuse risk (Table 9).",
         "Use the later NICE NG87 1.7.4 and 1.7.5 criteria to decide on an ECG.",
         "Expect high rates of substance use, mood dysregulation and antisocial personality traits in adults with ADHD; about a quarter of adult male prisoners are estimated to have ADHD.",
-        "Rating scales can assist but should not replace a detailed clinical assessment, because of false positives, false negatives and informant bias."
+        "Rating scales can assist but should not replace a detailed clinical assessment, because of false positives, false negatives and informant bias (stated in the section on children)."
       ],
       url: "https://www.bap.org.uk/docdetails.php?docID=10"
     },
@@ -502,7 +504,7 @@
         "Confirm DSM-5, ICD-10 or ICD-11 criteria, clinically significant impairment and pervasiveness, judging symptoms against age, developmental level and intellectual ability (2.1.3).",
         "A detailed interview typically takes 2 to 3 hours, possibly over several sessions; DIVA is one example of a semi-structured interview.",
         "Request school reports and any previous reports.",
-        "Look for mimics and aggravators: hearing or vision impairment, thyroid disease, anaemia, sleep apnoea and sleep deprivation, and medicines or substances such as mood stabilisers, decongestants, asthma drugs, caffeine and levetiracetam (2.2.2).",
+        "Look for mimics and aggravators: hearing or vision impairment, thyroid disease and anaemia, and medicines or substances such as mood stabilisers, decongestants, asthma drugs and caffeine (2.2.2); also obstructive sleep apnoea, sleep deprivation and levetiracetam (May et al. 2023).",
         "Higher-prevalence adult groups include borderline personality disorder, substance use, psychotic disorders, gambling, binge eating and suicidal behaviour (1.1.1).",
         "Psychometric or neuropsychological testing is not required, but helps when the diagnosis is uncertain or a learning disorder, intellectual disability or dementia is suspected.",
         "Take the person's own view of their symptoms into account (2.1.8)."
@@ -597,7 +599,8 @@
         "NICE should define what an 'appropriately qualified' professional is; national competencies and quality standards (AQAS for adults) are recommended.",
         "All ADHD diagnostic assessments should become regulated by the Care Quality Commission (recommended, not yet in force).",
         "Misdiagnosis is more likely when assessment is brief, not face to face, fragmented, made without informants or records, or focused on a single condition (DHSC 2026).",
-        "The DHSC review recommends a 'needs-led plus diagnosis' system, with digital tools supporting but never making decisions."
+        "The DHSC review recommends a 'needs-led plus diagnosis' system, with digital tools supporting but never making decisions.",
+        "Base rates matter: in the English Adult Psychiatric Morbidity Survey, adults screening positive on the 6-item ASRS rose from 8.2% (2007) to 13.9% (2024), far above the expected prevalence of diagnosable ADHD (DHSC 2026, section 7.5)."
       ],
       assessment: [
         "Use informants and records, and avoid brief, single-condition assessments.",
@@ -666,8 +669,8 @@
         d: "There is clear evidence that the symptoms interfere with, or reduce the quality of, social, academic or occupational functioning.",
         items: [
           "NICE NG87 1.3.3 sets the UK bar at least at moderate psychological, social, educational or occupational impairment.",
-          "UKAAN AQAS: at least moderate impairment in two or more domains, based on interview and observation.",
-          "Judge impairment against what the person could manage without the symptoms, not only against average achievement: high achievers can be impaired.",
+          "UKAAN AQAS: at least moderate impairment in two or more domains or settings (including psychological functioning), based on interview and/or direct observation.",
+          "Do not rule ADHD out because of high achievement (AQAS theme 3). Look for the cost of achieving, such as very long hours, heavy reliance on others or distress, and for impairment in other domains.",
           "Rate each domain with examples. Scales such as the WFIRS-S support the judgement but do not replace the interview."
         ]
       },
@@ -696,10 +699,10 @@
         "Severe: many symptoms beyond those required, or several symptoms that are particularly severe, or marked impairment.",
         "A DSM-5-TR 'mild' case with only minor impairment may not meet the NICE NG87 1.3.3 requirement for at least moderate impairment."
       ],
-      other: "Other specified ADHD (ICD-10-CM F90.8): ADHD-type symptoms cause clinically significant distress or impairment but do not meet full criteria, and the clinician records the reason, for example 'with insufficient inattention symptoms'. Unspecified ADHD (F90.9): the same situation when the clinician does not give a reason, for example because there is not enough information. Both replaced DSM-IV 'ADHD not otherwise specified'. The app maps them to ICD-11 6A05.Y and 6A05.Z as the nearest codes, but in ICD-11 these are presentation categories of ADHD, not subthreshold diagnoses."
+      other: "Other specified ADHD (ICD-10-CM F90.8): ADHD-type symptoms cause clinically significant distress or impairment but do not meet full criteria, and the clinician records the reason, for example 'with insufficient inattention symptoms'. Unspecified ADHD (F90.9): the same situation when the clinician does not give a reason, for example because there is not enough information. Both replaced DSM-IV 'ADHD not otherwise specified'. The app maps them to ICD-11 6A05.Y and 6A05.Z as the nearest codes, but in ICD-11 these are presentation categories for people who meet all ADHD requirements, not subthreshold diagnoses. ICD-11 has no subthreshold ADHD category; the residual code 6A0Y (other specified neurodevelopmental disorders) is the nearest general option, so check local coding rules."
     },
     icd11: {
-      intro: "ICD-11 (WHO) codes ADHD as 6A05 in the chapter on neurodevelopmental disorders. The Clinical Descriptions and Diagnostic Requirements (CDDR, 2024) describe essential features rather than fixed counts, leaving more room for clinical judgement. UK services use ICD-11 and DSM-5-TR, and NICE NG87 1.3.3 accepts either.",
+      intro: "ICD-11 (WHO) codes ADHD as 6A05 in the chapter on neurodevelopmental disorders. The Clinical Descriptions and Diagnostic Requirements (CDDR, 2024) describe essential features rather than fixed counts, leaving more room for clinical judgement. NICE NG87 1.3.3 accepts DSM-5 or ICD-11 criteria, and the NHSE ADHD Taskforce notes that both are used in England.",
       essential: [
         "A persistent pattern, for example over at least 6 months, of inattention and/or hyperactivity-impulsivity that is outside the limits of normal variation for age and intellectual development.",
         "Several inattentive symptoms and/or several hyperactive-impulsive symptoms, with a direct negative impact on academic, occupational or social functioning. There is no fixed number.",
@@ -716,7 +719,7 @@
         "6A05.Y Other specified presentation.",
         "6A05.Z Presentation unspecified.",
         "'Predominate' means several symptoms of one type with few or none of the other. The code describes the current presentation.",
-        "ICD-10 crosswalk (CDDR): 6A05.0 maps to F90 or F98.8 (F98.8 if there are no hyperactive-impulsive symptoms); 6A05.1 to F90.8; 6A05.2 to F90.0; 6A05.Y to F90.8 or F98.8; 6A05.Z to F98.9."
+        "WHO ICD-10 crosswalk (CDDR): 6A05.0 maps to F90 or F98.8 (F98.8 if there are no hyperactive-impulsive symptoms); 6A05.1 to F90.8; 6A05.2 to F90.0; 6A05.Y to F90.8 or F98.8; 6A05.Z to F98.9. These are WHO ICD-10 codes, not the ICD-10-CM codes used with DSM-5-TR: F90.0 is 'disturbance of activity and attention' in WHO ICD-10 but the predominantly inattentive presentation in ICD-10-CM."
       ],
       differences: [
         "Symptom count: DSM-5-TR needs 5 or more in a list from age 17 (6 or more below 17); ICD-11 needs 'several', with no fixed number.",

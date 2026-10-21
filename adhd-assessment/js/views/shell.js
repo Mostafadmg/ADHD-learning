@@ -4,6 +4,9 @@
   var U = AA.util, h = U.h, ui = AA.ui;
   var shell = AA.shell = {};
 
+  var ICONS = {"home": "<path d=\"M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z\"/>", "assess": "<path d=\"M9 3h6l1 2h3a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h3z\"/><path d=\"M8.5 13l2.5 2.5 4.5-5\"/>", "new": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 8v8M8 12h8\"/>", "bank": "<circle cx=\"11\" cy=\"11\" r=\"6.5\"/><path d=\"M20 20l-4.2-4.2\"/>", "ddxguide": "<path d=\"M4 6h3M4 12h3M4 18h3\"/><path d=\"M10 6h10M10 12h10M10 18h10\"/>", "ddx": "<path d=\"M7 4 3 8l4 4\"/><path d=\"M3 8h14\"/><path d=\"M17 12l4 4-4 4\"/><path d=\"M21 16H7\"/>", "criteria": "<path d=\"M6 3h9l4 4v14H6z\"/><path d=\"M14 3v5h5M9 12h7M9 16h7\"/>", "forms": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"2\"/><path d=\"m3 7 9 6 9-6\"/>", "tools": "<rect x=\"4\" y=\"3\" width=\"16\" height=\"18\" rx=\"2\"/><path d=\"M8 8h8M8 12h8M8 16h5\"/>", "pathway": "<circle cx=\"5\" cy=\"6\" r=\"2\"/><circle cx=\"19\" cy=\"18\" r=\"2\"/><path d=\"M7 6h7a3 3 0 0 1 0 6H10a3 3 0 0 0 0 6h7\"/>", "learn": "<path d=\"M2 9l10-5 10 5-10 5z\"/><path d=\"M6 11v5c3 2 9 2 12 0v-5\"/>", "cases": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"13\" rx=\"2\"/><path d=\"M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2M3 12h18\"/>", "glossary": "<path d=\"M4 19V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2 2 2 0 0 0 2 2h13\"/>", "about": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 11v6M12 7.5v.5\"/>"};
+  function icon(k) { return h('span', { class: 'nav-ico', 'aria-hidden': 'true', html: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + (ICONS[k] || '') + '</svg>' }); }
+
   var NAV = [
     { title: 'Workspace', items: [
       { go: 'home', label: 'Home', ico: '⌂' },
@@ -12,10 +15,12 @@
     ] },
     { title: 'During the interview', items: [
       { go: 'bank', label: 'Question bank', ico: '?' },
+      { go: 'ddxguide', label: 'Differential protocol', ico: '✓' },
       { go: 'ddx', label: 'Differential diagnosis', ico: '⇄' },
       { go: 'criteria', label: 'Diagnostic criteria', ico: '≡' }
     ] },
     { title: 'Library', items: [
+      { go: 'forms', label: 'Pre-appointment forms', ico: '✉' },
       { go: 'tools', label: 'Tools and scoring', ico: '▤' },
       { go: 'pathway', label: 'Assessment pathway', ico: '→' }
     ] },
@@ -37,7 +42,7 @@
     var side = U.$('#sidebar');
     U.clear(side);
     var name = route ? route.name : '';
-    var map = { tool: 'tools', module: 'learn', quiz: 'learn', exam: 'learn', 'case': 'cases', cond: 'ddx', sym: 'bank' };
+    var map = { tool: 'tools', module: 'learn', quiz: 'learn', exam: 'learn', 'case': 'cases', cond: 'ddx', sym: 'bank', form: 'forms' };
     var active = map[name] || name;
     NAV.forEach(function (g) {
       side.appendChild(h('div', { class: 'nav-group' },
@@ -45,9 +50,15 @@
         h('ul', { class: 'nav' }, g.items.map(function (it) {
           var meta = typeof it.meta === 'function' ? it.meta() : it.meta;
           return h('li', null, h('a', { href: '#' + it.go, 'data-go': it.go, 'aria-current': active === it.go ? 'page' : null },
-            h('span', { class: 'nav-ico', 'aria-hidden': 'true' }, it.ico), h('span', null, it.label), meta ? h('span', { class: 'nav-meta' }, meta) : null));
+            icon(it.go), h('span', null, it.label), meta ? h('span', { class: 'nav-meta' }, meta) : null));
         }))));
     });
+    var me = AA.auth.current();
+    if (me) side.appendChild(h('div', { class: 'side-account' },
+      h('p', { class: 'who-line' }, me.name + (me.role ? ' · ' + me.role : '')),
+      h('div', { class: 'row' },
+        ui.btn({ label: 'Theme', small: true, kind: 'ghost', onClick: function () { U.$('#theme-btn').click(); } }),
+        ui.btn({ label: 'Sign out', small: true, kind: 'ghost', onClick: function () { U.$('#signout-btn').click(); } }))));
   }
 
   function setDrawer(open) {
@@ -69,7 +80,8 @@
     var chip = U.$('#patient-chip');
     chip.hidden = !a;
     if (a) {
-      chip.textContent = 'Patient: ' + (a.patient.ref || 'Untitled') + (a.patient.age ? ', ' + a.patient.age : '');
+      chip.textContent = (a.patient.ref || 'Untitled patient') + (a.patient.age ? ', ' + a.patient.age + ' y' : '');
+      chip.title = 'Open the current assessment';
       chip.onclick = function () { AA.router.go('assess-' + a.id + '-' + (a.step || 'setup')); };
     }
     renderNav(route);
@@ -227,7 +239,8 @@
         quick('2 · Practise', 'Practice cases', 'Work through realistic adult cases and compare your decisions with the expert answer.', 'cases'),
         quick('3 · Assess', 'Run an assessment', 'Thirteen guided steps from consent to report. Scores and criteria update as you go.', 'new'),
         quick('Any time', 'Question bank', 'Search every interview question and example by symptom, life area or keyword.', 'bank'),
-        quick('Any time', 'Differential diagnosis', 'What else could explain the symptoms, and the questions that tell them apart.', 'ddx'),
+        quick('Any time', 'Differential protocol', 'A step-by-step method so no alternative explanation is missed.', 'ddxguide'),
+        quick('Before the appointment', 'Pre-appointment forms', 'What each questionnaire is, how to read it and what the result means.', 'forms'),
         quick('Any time', 'Tools and scoring', 'Every screening and rating tool: when to use it, how to score it, where to get it.', 'tools'))));
   } });
 

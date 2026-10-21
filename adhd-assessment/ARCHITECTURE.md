@@ -24,6 +24,7 @@ css/v-assess-b.css         assess-steps-b.js (prefix .ab-)
 css/v-library.css          tools library and pathway (prefix .lib-)
 css/v-learn.css            learning, quizzes, cases (prefix .lr-)
 css/v-reference.css        ddx, criteria, question bank, glossary (prefix .rf-)
+css/v-guides.css           forms guide and ddx protocol (prefix .gd-)
 js/core/ns.js              window.AA, AA.add(), AA.byId()
 js/core/util.js            AA.util: h(), $, $$, esc, uid, debounce, storage, sha256, toast, confirm, copyText, download, isEmbedded
 js/core/store.js           AA.store, AA.auth, AA.assess, AA.progress
@@ -41,6 +42,7 @@ js/views/assess-steps-b.js AA.steps: ddx, validity, summary, report
 js/views/library.js        routes: tools, tool, pathway
 js/views/learn.js          routes: learn, module, quiz, exam, cases, case, glossary
 js/views/reference.js      routes: ddx, cond, criteria, bank, sym
+js/views/guides.js         routes: forms, form, ddxguide; AA.components.ddxProtocol
 js/app.js                  boot
 tests/run.js               node test runner: engine unit tests + data schema validation
 ```
@@ -300,6 +302,44 @@ AA.add('glossary', [ { term: '', def: '' } ]);
   answer: { conclusion: '', codes: '', ddx: [...], teaching: [...] } }
 ```
 
+### 5.9 Step guide (`AA.add('stepGuide', { <stepId>: {...} })`) - js/data/step-guide.js
+
+Shown at the top of every assessment step ("What to do in this step").
+```js
+{ setup: { goal: 'One sentence: what this step achieves', time: '10 minutes',
+           do: ['5-9 ordered actions, imperative'], say: ['2-5 lines the clinician can say to the patient'],
+           watch: ['3-6 pitfalls / watch-outs'], done: ['2-4 "you are done when" checks'],
+           next: 'What happens next and why', src: ['sources'] }, ... }   // all 13 step ids
+```
+
+### 5.10 Pre-appointment forms guide (`AA.add('formsGuide', {...})`) - js/data/forms-guide.js
+
+Teaches what each pre-appointment form is, why it is sent, how to read and weigh it.
+```js
+{ intro: '<p>html</p>', principles: ['...'],
+  forms: [ { id: 'asrs18', tool: 'asrs18'|null, title: '', kind: 'self'|'informant'|'records'|'history',
+             what: '<p>html</p>', recommendedBy: ['NICE NG87 (rating scales as adjunct)', 'UKAAN', 'CADDRA'],
+             whenSent: '', who: '', time: '',
+             howToRead: '<ol><li>step-by-step</li></ol>',
+             meaning: [ { result: 'Part A: 4 or more in the shaded boxes', means: '', action: '' } ],
+             example: { html: '<p>worked example with real numbers</p>', takeaway: '' },
+             pitfalls: ['...'], feedsInto: 'Which assessment step uses it and how', strength: 'one-line evidence summary' } ] }
+```
+
+### 5.11 Differential diagnosis protocol (`AA.add('ddxProtocol', {...})`) - js/data/ddx-protocol.js
+
+A systematic, step-by-step method so no differential is missed.
+```js
+{ intro: '<p>html</p>', principles: ['...'],
+  steps: [ { id: 'p1', n: 1, title: 'Build the life-course timeline', goal: '',
+             do: ['...'], ask: ['questions'], tools: ['tool ids'], conds: ['ddx ids'],
+             decide: ['decision rules'], redFlags: ['...'],
+             checks: [ { id: 'p1_c1', t: 'Checklist item the clinician ticks' } ] } ],   // 10-14 steps, ids p1.., check ids <stepId>_c<n>
+  final: { rules: ['how to reach the verdict for each condition'], documentation: ['what to write'] },
+  refs: ['...'] }
+```
+Ticks are stored per assessment in `ddxProtocol.<checkId> = true` (assessment record) and, in the guide page, in `AA.progress` `sandbox.ddxProtocol`.
+
 ## 6. Views and routes
 
 | Route | File | Purpose |
@@ -309,6 +349,7 @@ AA.add('glossary', [ { term: '', def: '' } ]);
 | `tools`, `tool-<id>`, `pathway` | library.js | instrument library, practice scoring, pathway and guidelines |
 | `learn`, `module-<id>`, `quiz-<id>`, `exam`, `cases`, `case-<id>`, `glossary` | learn.js | training |
 | `ddx`, `cond-<id>`, `criteria`, `bank`, `sym-<id>` | reference.js | interview aids |
+| `forms`, `form-<id>`, `ddxguide` | guides.js | pre-appointment forms guide, differential diagnosis protocol; also `AA.components.ddxProtocol(opts)` |
 
 ### Assessment steps
 `AA.STEP_LIST` (assess-frame.js) defines order and titles: setup, screen, risk, history, comorbid, ia, hi, onset, collateral, ddx, validity, summary, report.

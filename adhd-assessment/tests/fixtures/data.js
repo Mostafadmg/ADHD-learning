@@ -68,6 +68,19 @@
   AA.add('validity', { intro: 'Fixture validity intro.', indicators: [{ id: 'v_all18', t: 'Endorses almost every symptom at the maximum', w: 2, why: 'Fixture.' }, { id: 'v_vague', t: 'Cannot give concrete examples', w: 2, why: 'Fixture.' }],
     incentives: [{ id: 'v_exam', t: 'Seeking exam accommodations', why: 'Fixture.' }], consistency: ['Fixture check'], tests: [{ name: 'Fixture SVT', what: 'Fixture.', note: '' }], wording: ['Fixture wording.'], refs: ['Fixture'] });
   AA.add('plan', [{ id: 'pl_psychoed', group: 'After diagnosis', t: 'Fixture psychoeducation', src: 'Fixture' }, { id: 'pl_bp', group: 'Before any medication', t: 'Fixture baseline', src: 'Fixture' }, { id: 'pl_risk', group: 'Safety', t: 'Fixture safety', src: 'Fixture' }]);
+  var sg = {}; ['setup','screen','risk','history','comorbid','ia','hi','onset','collateral','ddx','validity','summary','report'].forEach(function (k) {
+    sg[k] = { goal: 'Fixture goal for ' + k + '.', time: '10 minutes', do: ex('Do', 5), say: ex('Say', 2), watch: ex('Watch', 3), done: ex('Done when', 2), next: 'Fixture next.', src: ['Fixture'] }; });
+  AA.add('stepGuide', sg);
+  AA.add('formsGuide', { intro: '<p>Fixture forms intro.</p>', principles: ex('Principle', 3), forms: [
+    { id: 'asrs18', tool: 'asrs18', title: 'Fixture ASRS', kind: 'self', what: '<p>Fixture what.</p>', recommendedBy: ['Fixture'], whenSent: 'Before', who: 'Patient', time: '5 min',
+      howToRead: '<ol><li>Fixture step</li></ol>', meaning: [{ result: 'Part A 4+', means: 'Fixture means', action: 'Fixture action' }], example: { html: '<p>Fixture example.</p>', takeaway: 'Fixture takeaway.' },
+      pitfalls: ex('Pitfall', 2), feedsInto: 'Fixture step.', strength: 'Fixture.' },
+    { id: 'school_reports', tool: null, title: 'Fixture school reports', kind: 'records', what: '<p>Fixture.</p>', recommendedBy: ['Fixture'], whenSent: 'Before', who: 'Patient', time: '-',
+      howToRead: '<ol><li>Fixture</li></ol>', meaning: [], example: { html: '<p>Fixture.</p>', takeaway: '' }, pitfalls: [], feedsInto: 'Collateral.', strength: '' } ] });
+  AA.add('ddxProtocol', { intro: '<p>Fixture protocol intro.</p>', principles: ex('Principle', 3), steps: [1, 2, 3].map(function (n) {
+    return { id: 'p' + n, n: n, title: 'Protocol step ' + n, goal: 'Fixture goal.', do: ex('Do', 3), ask: ex('Ask', 3), tools: n === 1 ? ['phq9'] : [], conds: n === 2 ? ['dep', 'bip'] : [], decide: ex('Decide', 2), redFlags: ex('Red flag', 1),
+      checks: [1, 2].map(function (c) { return { id: 'p' + n + '_c' + c, t: 'Check ' + c + ' of step ' + n }; }) }; }),
+    final: { rules: ex('Rule', 3), documentation: ex('Document', 2) }, refs: ['Fixture'] });
   AA.add('pathway', [{ id: 'referral', n: 1, title: 'Referral', what: ['Fixture'], who: 'GP', tools: [], tips: ['Fixture'], sources: ['Fixture'] }, { id: 'pre', n: 2, title: 'Pre-assessment questionnaires', what: ['Fixture'], who: 'Patient', tools: ['asrs18', 'wfirs'], tips: [], sources: [] }]);
   AA.add('guidelines', [{ id: 'ng87', name: 'Fixture guideline', org: 'NICE', year: '2018', scope: 'Fixture', keyPoints: ['Fixture'], assessment: ['Fixture'], url: 'https://example.org' }]);
   AA.add('criteria', { dsm5: { intro: 'Fixture DSM intro.', A: { t: 'Criterion A', d: 'Fixture.' }, B: { t: 'B', d: 'Fixture.' }, C: { t: 'C', d: 'Fixture.' }, D: { t: 'D', d: 'Fixture.' }, E: { t: 'E', d: 'Fixture.' }, presentations: ['Fixture'], specifiers: ['Fixture'] }, icd11: { intro: 'Fixture.' }, diva2: { intro: 'Fixture.' }, changes: ['Fixture'] });

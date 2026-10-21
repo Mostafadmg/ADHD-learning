@@ -1,0 +1,141 @@
+/* Tools library, tool reference card and assessment pathway (js/views/library.js). Prefix .lib-.
+   Colours come only from tokens in app.css, so the light and dark themes both work. */
+
+/* ---------- Tools: filters ---------- */
+.lib-filters { display: flex; flex-direction: column; gap: .9rem; margin: 0 0 .8rem; }
+.lib-filters .search { max-width: none; }
+.lib-flabel { font-weight: 700; font-size: .92rem; margin: 0 0 .35rem; }
+.lib-frow { display: flex; flex-wrap: wrap; align-items: flex-end; gap: .6rem 1.4rem; }
+.lib-frow .field { flex: 0 1 300px; min-width: min(100%, 220px); }
+.lib-frow .check { padding: 0 0 .25rem; }
+.lib-fclear { margin-left: auto; }
+.lib-fclear:empty { display: none; }
+.lib-chips { position: relative; display: flex; flex-wrap: wrap; gap: .4rem; } /* relative: keeps .sr-only text inside the scroll box */
+.lib-chip { display: inline-flex; align-items: center; gap: .45rem; min-height: 36px; padding: .3rem .75rem; border-radius: 999px;
+  border: 1px solid var(--line-2); background: var(--surface); color: var(--ink); font: inherit; font-size: .88rem; font-weight: 700;
+  cursor: pointer; white-space: nowrap; text-align: left; }
+.lib-chip:hover { border-color: var(--accent); }
+.lib-chip[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
+.lib-chip[aria-pressed="true"]::before { content: "✓"; font-weight: 700; }
+.lib-chip-n { display: inline-block; min-width: 1.5rem; padding: 0 .4rem; border-radius: 999px; background: var(--surface-2); color: var(--muted);
+  font-size: .75rem; text-align: center; font-variant-numeric: tabular-nums; }
+.lib-chip[aria-pressed="true"] .lib-chip-n { background: transparent; color: inherit; }
+@media (max-width: 640px) {
+  /* One scrolling row of group chips on phones instead of a tall wrapped block. */
+  .lib-chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: thin; padding-bottom: .3rem; margin-right: -.2rem; }
+  .lib-chip { flex: 0 0 auto; }
+  .lib-fclear { margin-left: 0; }
+}
+
+/* ---------- Tools: results ---------- */
+.lib-count { color: var(--muted); font-weight: 700; font-size: .92rem; margin: .2rem 0 0; }
+.lib-group { margin: 1.5rem 0 0; }
+.lib-group > h2 { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem .6rem; font-size: 1.25rem; margin: 0 0 .65rem; }
+.lib-group-n { font-family: var(--font-body); font-size: .85rem; font-weight: 700; color: var(--muted); }
+.lib-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); }
+.lib-card { display: flex; flex-direction: column; gap: .3rem; }
+.lib-card-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .35rem .6rem; }
+.lib-abbr { font-family: var(--font-display); font-size: 1.45rem; font-weight: 600; line-height: 1.15; color: var(--brand); overflow-wrap: anywhere; }
+.lib-card-name { display: block; font-weight: 700; color: var(--ink); line-height: 1.35; }
+.lib-card-facts { display: block; color: var(--muted); font-size: .88rem; }
+.lib-card-stages { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: auto; padding-top: .45rem; }
+.lib-tag { display: inline-block; font-size: .76rem; font-weight: 700; line-height: 1.3; padding: .12rem .5rem; border-radius: 6px;
+  background: var(--surface-2); border: 1px solid var(--line); color: var(--muted); }
+
+/* ---------- Tool reference card ---------- */
+.lib-top { align-items: start; margin: 0 0 .4rem; }
+.lib-top h2 { font-size: 1.15rem; }
+.lib-stack { display: flex; flex-direction: column; gap: 1rem; min-width: 0; }
+.lib-glance .kv { gap: .5rem 1.1rem; }
+.lib-glance .kv dd { overflow-wrap: anywhere; }
+.lib-links { display: inline-flex; flex-wrap: wrap; gap: 0 .9rem; }
+.lib-links a, .lib-rlist a { display: inline-flex; align-items: center; min-height: 32px; }
+.lib-tabsec > h2 { margin: 0 0 .5rem; }
+.lib-tabsec .tabs { margin-top: .4rem; }
+.lib-panel { max-width: 860px; }
+.lib-panel > h3 { font-size: 1.08rem; margin: 1.4rem 0 .45rem; }
+.lib-panel > h3:first-child { margin-top: .3rem; }
+.lib-panel h4 { font-size: .82rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 1rem 0 .3rem; }
+.lib-panel .table-wrap { max-width: 720px; }
+.lib-opts { max-width: 420px; }
+.lib-itemtext { display: block; color: var(--muted); font-size: .85rem; line-height: 1.35; }
+.lib-thr td { vertical-align: middle; }
+.lib-cut { font-size: 1.02rem; }
+.lib-flags { list-style: none; margin: .3rem 0; padding: 0; display: flex; flex-direction: column; gap: .5rem; }
+.lib-flags li { display: flex; align-items: flex-start; gap: .6rem; }
+.lib-flags .badge { flex: 0 0 auto; margin-top: .15rem; }
+
+/* Practice sandbox */
+.lib-sb-head { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: .6rem 1rem;
+  background: var(--accent-l); border-radius: var(--radius-sm); padding: .85rem 1rem; margin: 0 0 .9rem; }
+.lib-sb-text { flex: 1 1 320px; min-width: 0; }
+.lib-sb-text h3 { font-size: 1.08rem; }
+.lib-sb-text p { margin: .3rem 0 0; max-width: 72ch; }
+.lib-sb-status { font-weight: 700; }
+.lib-sandbox .q-actions { display: none; } /* the sandbox has its own clear button above */
+
+/* Related */
+.lib-rlist { list-style: none; margin: .3rem 0; padding: 0; display: flex; flex-direction: column; gap: .1rem; }
+.lib-use { border-top: 1px solid var(--line); margin-top: .7rem; padding-top: .6rem; }
+.lib-use p { margin: 0 0 .5rem; }
+
+/* ---------- Pathway ---------- */
+.lib-intro { margin: 0 0 .5rem; max-width: 72ch; }
+.lib-jump { margin: .2rem 0 1.1rem; }
+.lib-jump ol { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem; }
+.lib-jump .lib-chip-n { background: var(--brand); color: var(--brand-ink); }
+.lib-timeline { list-style: none; margin: 0; padding: 0; }
+.lib-stage { position: relative; display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: 0 .9rem; padding-bottom: 1rem; scroll-margin-top: calc(var(--bar-h) + 16px); }
+.lib-stage::before { content: ""; position: absolute; left: 1.3rem; top: 2.6rem; bottom: 0; width: 2px; margin-left: -1px; background: var(--line-2); }
+.lib-stage:last-child { padding-bottom: 0; }
+.lib-stage:last-child::before { display: none; }
+.lib-stage-n { position: relative; z-index: 1; width: 2.6rem; height: 2.6rem; border-radius: 50%; display: grid; place-items: center;
+  background: var(--brand); color: var(--brand-ink); font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; font-variant-numeric: tabular-nums; }
+.lib-stage-card h3 { font-size: 1.2rem; margin: .15rem 0 .3rem; }
+.lib-stage-card h4 { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: .9rem 0 .25rem; }
+.lib-stage-card .list { margin-top: .2rem; }
+.lib-stage-card .source { margin-top: .9rem; }
+.lib-who { margin: 0; color: var(--muted); }
+.lib-who strong { color: var(--ink); }
+.lib-tips { background: var(--surface-2); border-radius: var(--radius-sm); padding: .1rem .9rem .5rem; margin-top: .9rem; }
+.lib-tips h4 { margin-top: .6rem; }
+.lib-stage-on .lib-stage-card { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+.lib-stage-on .lib-stage-n { background: var(--accent); color: var(--accent-ink); }
+.lib-tchips { margin: .2rem 0; }
+.lib-tchip { display: inline-flex; align-items: center; gap: .3rem; min-height: 36px; color: var(--accent); font-weight: 700; text-decoration: none; }
+.lib-tchip:hover { border-color: var(--accent); color: var(--accent-2); }
+.lib-tchip-mark { font-size: .78rem; color: var(--ok); }
+@media (max-width: 480px) {
+  .lib-stage { grid-template-columns: 2rem minmax(0, 1fr); gap: 0 .6rem; }
+  .lib-stage-n { width: 2rem; height: 2rem; font-size: .95rem; }
+  .lib-stage::before { left: 1rem; top: 2rem; }
+  .lib-stage-card { padding: .9rem .95rem; }
+}
+
+/* "Which tool, when" matrix */
+.lib-mx-key { margin: 0 0 .3rem; }
+.lib-mx-phone { display: none; }
+@media (max-width: 900px) { .lib-mx-phone { display: inline; } }
+.lib-mx-wrap { position: relative; } /* keeps .sr-only cell text inside the scroll box */
+.lib-mx-wrap:focus-visible { outline-offset: 2px; }
+.lib-matrix { min-width: 760px; }
+.lib-matrix th, .lib-matrix td { vertical-align: middle; }
+.lib-matrix thead th.lib-mx-stage { text-align: center; text-transform: none; letter-spacing: 0; font-size: .78rem; line-height: 1.25; min-width: 5.6rem; color: var(--muted); }
+.lib-mx-n { display: block; font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: var(--brand); }
+.lib-mx-t { display: block; }
+.lib-matrix th.lib-mx-tool { position: sticky; left: 0; z-index: 1; min-width: 10rem; max-width: 14rem; background: var(--surface); box-shadow: inset -1px 0 0 var(--line); }
+.lib-matrix thead th.lib-mx-tool { background: var(--surface-2); z-index: 2; }
+.lib-matrix th.lib-mx-tool a { font-weight: 700; }
+.lib-mx-name { display: block; font-weight: 400; font-size: .8rem; color: var(--muted); line-height: 1.3; }
+.lib-matrix .lib-mx-kind { white-space: nowrap; }
+.lib-matrix td.lib-mx-cell { text-align: center; color: var(--faint); }
+.lib-matrix td.lib-mx-on { background: var(--accent-l); color: var(--accent); font-weight: 700; font-size: 1.1rem; }
+.lib-mx-group th { background: var(--surface-2); font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); padding-top: .45rem; padding-bottom: .45rem; }
+.lib-mx-group th span { position: sticky; left: .7rem; }
+
+/* Guidelines */
+.lib-gls { align-items: start; }
+.lib-gl h3 { font-size: 1.12rem; margin-bottom: .15rem; }
+.lib-gl-meta { color: var(--muted); font-size: .9rem; font-weight: 700; margin: 0 0 .4rem; }
+.lib-gl .disclosure { margin: .5rem 0 0; }
+.lib-gl-link { margin: .8rem 0 0; }
