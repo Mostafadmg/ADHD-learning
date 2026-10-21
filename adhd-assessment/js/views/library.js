@@ -445,10 +445,11 @@
       var nodes = [];
       if (keyed.length) {
         nodes.push(ui.table(['Item', 'Points per answer'], keyed.map(function (it) {
-          return [String(it.n), Object.keys(it.score).map(function (k) {
-            var o = optsOf(t, it).filter(function (x) { return String(x.v) === k; })[0];
-            return (o ? o.l : k) + ' = ' + it.score[k];
-          }).join(' · ')];
+          /* In the order the options appear on the form; values without an option come last. */
+          var opts = optsOf(t, it).filter(function (o) { return Object.prototype.hasOwnProperty.call(it.score, String(o.v)); });
+          var rest = Object.keys(it.score).filter(function (k) { return !opts.some(function (o) { return String(o.v) === k; }); });
+          return [String(it.n), opts.map(function (o) { return o.l + ' = ' + it.score[String(o.v)]; })
+            .concat(rest.map(function (k) { return k + ' = ' + it.score[k]; })).join(' · ')];
         }), 'table-compact'));
       }
       if (rev.length) nodes.push(h('p', null, 'Reverse scored: item ' + ranges(rev.map(function (it) { return it.n; })) + '.'));
