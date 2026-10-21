@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ADHD Assessment</title>
+<meta name="description" content="Clinician workspace for adult ADHD assessment: structured diagnostic interview, screening questionnaires with scoring, differential diagnosis and report.">
+<meta name="theme-color" content="#16324f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fredoka:wght@500;600&display=swap">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/v-assess-a.css">
+<link rel="stylesheet" href="css/v-assess-iv.css">
+<link rel="stylesheet" href="css/v-assess-b.css">
+<link rel="stylesheet" href="css/v-library.css">
+<link rel="stylesheet" href="css/v-learn.css">
+<link rel="stylesheet" href="css/v-reference.css">
+</head>
+<body>
+<a class="skip" href="#view" data-skip>Skip to content</a>
+<div id="app">
+  <header class="topbar" id="topbar" hidden>
+    <button class="topbar-btn menu-btn" id="menu-btn" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Open menu">☰</button>
+    <a class="brand" href="#home" data-go="home" aria-label="ADHD Assessment home">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#0b6664"/><path d="M7 21.5 12.5 9l5.5 12.5M9.3 17h6.4" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="23.5" cy="11" r="2.6" fill="#f2a541"/><path d="M21 21.5h5" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <span class="brand-text">ADHD Assessment</span>
+    </a>
+    <span class="spacer"></span>
+    <button class="patient-chip" id="patient-chip" type="button" hidden></button>
+    <span class="save-state" id="save-state" aria-live="polite"></span>
+    <span class="who" id="who"></span>
+    <button class="topbar-btn" id="theme-btn" type="button" aria-label="Switch colour theme" title="Theme"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.5a6.5 6.5 0 0 1 0 13z" fill="currentColor"/></svg></button>
+    <button class="topbar-btn" id="signout-btn" type="button">Sign out</button>
+  </header>
+  <div class="layout" id="layout">
+    <nav class="sidebar" id="sidebar" aria-label="Main" hidden></nav>
+    <div class="scrim" id="scrim"></div>
+    <main class="main" id="main"><div class="main-inner" id="view" tabindex="-1"></div></main>
+  </div>
+</div>
+<noscript><p style="padding:1rem">ADHD Assessment needs JavaScript.</p></noscript>
+
+<!-- core -->
+<script src="js/core/ns.js"></script>
+<script src="js/core/util.js"></script>
+<script src="js/core/store.js"></script>
+<script src="js/core/router.js"></script>
+<script src="js/components/ui.js"></script>
+<script src="js/engine/scoring.js"></script>
+<script src="js/engine/diagnosis.js"></script>
+<script src="js/components/questionnaire.js"></script>
+<!-- data -->
+<script src="js/data/tools-adhd.js"></script>
+<script src="js/data/tools-comorbid.js"></script>
+<script src="js/data/tools-info.js"></script>
+<script src="js/data/symptoms/ia1.js"></script>
+<script src="js/data/symptoms/ia2.js"></script>
+<script src="js/data/symptoms/ia3.js"></script>
+<script src="js/data/symptoms/ia4.js"></script>
+<script src="js/data/symptoms/ia5.js"></script>
+<script src="js/data/symptoms/ia6.js"></script>
+<script src="js/data/symptoms/ia7.js"></script>
+<script src="js/data/symptoms/ia8.js"></script>
+<script src="js/data/symptoms/ia9.js"></script>
+<script src="js/data/symptoms/hi1.js"></script>
+<script src="js/data/symptoms/hi2.js"></script>
+<script src="js/data/symptoms/hi3.js"></script>
+<script src="js/data/symptoms/hi4.js"></script>
+<script src="js/data/symptoms/hi5.js"></script>
+<script src="js/data/symptoms/hi6.js"></script>
+<script src="js/data/symptoms/hi7.js"></script>
+<script src="js/data/symptoms/hi8.js"></script>
+<script src="js/data/symptoms/hi9.js"></script>
+<script src="js/data/impairment.js"></script>
+<script src="js/data/history.js"></script>
+<script src="js/data/ddx-mood.js"></script>
+<script src="js/data/ddx-anxiety.js"></script>
+<script src="js/data/ddx-neurodev.js"></script>
+<script src="js/data/ddx-personality-sud.js"></script>
+<script src="js/data/ddx-medical.js"></script>
+<script src="js/data/ddx-other.js"></script>
+<script src="js/data/pathway.js"></script>
+<script src="js/data/glossary.js"></script>
+<script src="js/data/learn-1.js"></script>
+<script src="js/data/learn-2.js"></script>
+<script src="js/data/learn-3.js"></script>
+<script src="js/data/cases-1.js"></script>
+<script src="js/data/cases-2.js"></script>
+<script src="js/data/demo.js"></script>
+<!-- views -->
+<script src="js/views/shell.js"></script>
+<script src="js/views/assess-frame.js"></script>
+<script src="js/views/assess-steps-a.js"></script>
+<script src="js/views/assess-interview.js"></script>
+<script src="js/views/assess-steps-b.js"></script>
+<script src="js/views/library.js"></script>
+<script src="js/views/learn.js"></script>
+<script src="js/views/reference.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
