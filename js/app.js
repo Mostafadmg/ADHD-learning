@@ -48,7 +48,7 @@
     $$('nav.sidebar a').forEach(function(a){
       if(a.getAttribute('href')==='#'+target.id) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
     });
-    document.title = (target.dataset.title ? target.dataset.title+' · ' : '') + 'ADHD for Pharmacists';
+    document.title = (target.dataset.title ? target.dataset.title+' · ' : '') + 'ADHD for Clinicians';
     $('nav.sidebar').classList.remove('open');
     current = target;
     if(el && el !== target){
