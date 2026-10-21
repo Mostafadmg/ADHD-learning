@@ -617,6 +617,7 @@
       var seg = ui.seg({ label: 'Severity, ' + (d.label || d.id), hideLabel: true, options: sevs.map(function (x) { return { v: x.v, l: x.v + ' ' + x.l }; }),
         value: typeof cur.sev === 'number' ? cur.sev : null,
         onChange: function (v) { ctx.set(base + '.sev', nil(v)); paint(v); } });
+      seg.classList.add('iv-seg-grid');
       var items = arr(dp.items);
       var exDet = null;
       var exMeta = function () { var n = size((ctx.get(base, {}) || {}).ex); return n ? n + ' ticked' : items.length + ' examples'; };
@@ -685,17 +686,19 @@
       var desc = h('p', { class: 'hint iv-rate-desc', 'aria-live': 'polite' });
       var paint = function (v) {
         var m = rating.filter(function (x) { return x.v === v; })[0];
-        desc.textContent = v === 'na' ? 'Not available: no one to ask, or not yet obtained.' : m ? (m.d || m.l) : 'Not rated yet.';
+        desc.textContent = v === 'na' ? 'Not available: no one to ask, or not yet obtained.' : m ? (m.d || '') : 'Not rated yet.';
+        desc.hidden = !desc.textContent;
       };
       var val = has(c0[k]) ? c0[k] : null;
       paint(val);
       var seg = ui.seg({ label: name + ': support for the history', hideLabel: true,
         options: [{ v: 'na', l: 'n/a', title: 'Not available' }].concat(rating.map(function (x) { return { v: x.v, l: x.v + ' · ' + x.l, title: x.d }; })),
         value: val, onChange: function (v) { ctx.set('collateral.' + k, nil(v)); paint(v); } });
+      seg.classList.add('iv-seg-stack');
       return h('div', { class: 'iv-rate' }, h('span', { class: 'seg-label', 'aria-hidden': 'true' }, 'Support for the history'), seg, desc);
     }
 
-    function checkList(items, keyOf, textOf, summary, metaWord) {
+    function checkList(items, keyOf, textOf, summary, metaWord, hint) {
       var answers = c0.answers || {};
       var det = null;
       var meta = function () {
@@ -703,10 +706,10 @@
         var n = items.filter(function (x, i) { return cur[keyOf(x, i)]; }).length;
         return n + ' of ' + items.length + ' ' + metaWord;
       };
-      det = ui.details(summary, h('div', { class: 'ex-list iv-col-list' }, items.map(function (x, i) {
+      det = ui.details(summary, h('div', null, h('p', { class: 'hint iv-col-hint' }, hint), h('div', { class: 'ex-list iv-col-list' }, items.map(function (x, i) {
         var k = keyOf(x, i);
         return ui.check({ label: textOf(x), checked: !!answers[k], onChange: function (on) { ctx.set('collateral.answers.' + k, on ? true : undefined); setMeta(det, meta()); } });
-      })), { meta: meta() });
+      }))), { meta: meta() });
       return det;
     }
 
@@ -719,7 +722,7 @@
         ui.field('Who gave the information', ui.input({ value: ctx.get('collateral.who.' + k, ''), placeholder: k === 'parent' ? 'e.g. mother, by phone' : 'e.g. partner of 6 years, in clinic',
           onSave: function (v) { ctx.set('collateral.who.' + k, v.trim() ? v : undefined); } })),
         ratingCtl(k, title),
-        qs.length ? checkList(qs, function (q) { return q.k; }, function (q) { return q.q; }, 'Questions to ask (tick what is confirmed)', 'confirmed') : null);
+        qs.length ? checkList(qs, function (q) { return q.k; }, function (q) { return q.q; }, 'Questions to ask', 'confirmed', 'Tick each question the informant confirms. Leave it blank if not asked or not confirmed.') : null);
     }
 
     var parentNote = inf.parent ? 'Parent available (setup)' : inf.sibling ? 'Sibling available (setup)' : null;
@@ -733,12 +736,11 @@
         h('div', { class: 'iv-src-head' }, h('h3', null, 'School reports'), srcs.schoolReports ? ui.badge('Reports available (setup)', 'info') : null),
         school.intro ? h('p', { class: 'muted' }, school.intro) : null,
         ratingCtl('school', 'School reports'),
-        look.length ? checkList(look, function (x, i) { return 'school_' + i; }, function (x) { return x; }, 'Phrases found in the reports', 'found') : null,
+        look.length ? checkList(look, function (x, i) { return 'school_' + i; }, function (x) { return x; }, 'Phrases to look for', 'found', 'Tick each phrase, or one with the same meaning, that you find in the reports.') : null,
         arr(school.caution).length ? ui.callout('warn', ui.list(school.caution), 'Read reports with care') : null)));
 
     /* Live summary. */
     var sumBox = h('div', { class: 'iv-col-live', 'aria-live': 'polite' });
-    var sumBadge = h('span');
     var LEVEL = {
       clear: ['Clear support', 'ok', 'At least one source clearly supports the history. This strengthens the diagnosis.'],
       some: ['Some support', 'info', 'Sources partly support the history. Note where they agree and where they do not.'],
@@ -751,11 +753,9 @@
       var L = LEVEL[res.level] || LEVEL.unavailable;
       var cc = cur.collateral || {};
       var show = function (v) { return v === 'na' ? 'Not available' : typeof v === 'number' ? v + ' · ' + ((rating.filter(function (x) { return x.v === v; })[0] || {}).l || '') : 'Not rated'; };
-      U.clear(sumBadge);
-      sumBadge.appendChild(ui.badge(L[0], L[1]));
       U.clear(sumBox);
       U.append(sumBox, [
-        h('p', null, h('strong', null, L[0] + '. '), L[2]),
+        h('p', { class: 'iv-col-level' }, ui.badge(L[0], L[1]), h('span', null, L[2])),
         h('dl', { class: 'iv-dl iv-dl-inline' },
           h('dt', null, 'Parent or relative'), h('dd', null, show(cc.parent)),
           h('dt', null, 'Partner or friend'), h('dd', null, show(cc.partner)),
@@ -764,7 +764,7 @@
     }
     paintSum();
     wrap.appendChild(h('section', { class: 'card iv-col-sum' },
-      h('div', { class: 'iv-crit-head' }, h('h2', null, 'Overall collateral support'), sumBadge), sumBox));
+      h('h2', null, 'Overall collateral support'), sumBox));
 
     wrap.appendChild(h('div', null,
       arr(C.discrepancy).length ? ui.details('When informants disagree', ui.list(C.discrepancy)) : null,

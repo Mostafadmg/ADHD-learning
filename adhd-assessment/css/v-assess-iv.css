@@ -191,6 +191,14 @@
 .iv-anchor-text { margin: .5rem 0 .6rem; padding: .5rem .75rem; border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: .93rem; }
 .iv-anchor-text.is-empty { border-left-color: var(--line-2); color: var(--muted); }
 .iv-dom .field { margin-top: .6rem; }
+.iv-dom textarea { min-height: 60px; }
+@media (max-width: 560px) {
+  .iv-seg-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
+  .iv-seg-grid .seg-opt label { width: 100%; }
+  .iv-seg-stack { display: grid; grid-template-columns: minmax(0, 1fr); width: 100%; }
+  .iv-seg-stack .seg-opt label { width: 100%; justify-content: flex-start; text-align: left; }
+  .iv-dom .seg-field { flex-direction: column; align-items: stretch; gap: .3rem; }
+}
 
 /* ---------- Collateral ---------- */
 .iv-lead { margin: 0; }
@@ -203,6 +211,8 @@
 .iv-col-list { margin-top: .2rem; }
 .iv-col-sum h2 { font-size: 1.2rem; }
 .iv-col-live > p { margin: .5rem 0; }
+.iv-col-level { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .6rem; }
+.iv-col-hint { margin: 0 0 .4rem; }
 .iv-dl-inline { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .3rem 1rem; margin: .6rem 0 0; }
 .iv-dl-inline dt { margin: 0; font-weight: 400; color: var(--muted); }
 .iv-dl-inline dd { margin: 0; font-weight: 700; }
