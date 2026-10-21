@@ -26,8 +26,8 @@ After a minute or two the site will be live at:
 You can also open `index.html` locally in any browser.
 
 ## Structure
-- `index.html` — single-page app (10 modules, course exam, final quiz, references)
-- `css/styles.css`, `js/app.js` and data files (`data-quiz.js`, `data-cases.js`, `data-titration.js`)
+- `index.html` — single-page app (11 modules incl. the Module 11 practice handbook, course exam, final quiz, references)
+- `css/styles.css`, `js/app.js` and data files (`data-quiz.js`, `data-cases.js`, `data-titration.js`, `data-brands.js`); `handbook.js` holds the Module 11 interactives
 - `images/` — 35 AI-generated teaching illustrations (clinical labels are in HTML/SVG)
 
 No build step; only external dependency is Google Fonts (Fredoka) with a system-font fallback. Progress is stored in the browser's localStorage. Content last checked 20 Oct 2026.

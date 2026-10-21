@@ -10,9 +10,13 @@
   /* ---------- formulation models (tuned so cover is about the SPC durations) ---------- */
   var MODEL = {
     ir:   {comps:[{frac:1,lag:0,ka:1.8}], ke:0.36},
-    eq:   {comps:[{frac:.3,lag:0,ka:1.8},{frac:.7,lag:1.8,ka:0.4}], ke:0.36},
-    mk:   {comps:[{frac:.5,lag:0,ka:1.8},{frac:.5,lag:2.6,ka:0.7}], ke:0.36},
-    oros: {comps:[{frac:.22,lag:0,ka:1.6},{frac:.78,lag:0.4,zero:[10,[[0,.5],[.5,1.3],[1,.4]]]}], ke:0.40},
+    /* v5 (21 Oct 2026) re-fitted to SmPC 5.2 timings: Equasym XL peaks ~1.5 h and ~4.5 h; Medikinet XL second rise
+       ~3 h after the first with a 3-4 h plateau >=75% of peak; Ritalin XL-type peaks 1-2 h and 5-7 h (~4 h apart);
+       Concerta XL initial maximum 1-2 h, peak 6-8 h (Tmax 6.8 h), ~12 h. Checked with build/pkcheck.js. */
+    eq:   {comps:[{frac:.3,lag:0,ka:1.8},{frac:.7,lag:1.2,zero:[6,[[0,.2],[.3,1],[1,0]]]}], ke:0.36},
+    mk:   {comps:[{frac:.5,lag:0,ka:1.8},{frac:.5,lag:1.0,zero:[4,[[0,0],[.5,1],[1,0]]]}], ke:0.36},
+    rxl:  {comps:[{frac:.5,lag:0,ka:1.4},{frac:.5,lag:4.2,ka:1.0}], ke:0.36},
+    oros: {comps:[{frac:.22,lag:0,ka:2.2},{frac:.78,lag:0.6,zero:[10,[[0,.3],[.5,1.3],[1,.2]]]}], ke:0.40},
     dex:  {comps:[{frac:1,lag:0,ka:1.0}], ke:0.28},
     lis:  {comps:[{frac:1,lag:0,ka:1.5}], ke:0.12, kc:0.6}
   };
@@ -68,6 +72,7 @@
       if(brand==='Delmosart'||brand==='Xaggitin XL') return adult?B+' lists a maximum of 54 mg/day for '+brand+' in adults; the SmPC licenses up to 72 mg/day. This tool uses the SmPC maximum.':'';
       return 'No brand-specific '+B+'/'+C+' entry for '+brand+': follow its SmPC.';
     }
+    if(id==='rxl') return 'No brand-specific '+B+'/'+C+' entry for '+brand+': follow its SmPC (general '+C+' methylphenidate entry: licensed child maximum 60 mg/day).';
     if(id==='mk'||id==='eq') return adult?B+' (adult '+(id==='mk'?'Medikinet XL':'Equasym XL')+'): maximum 100 mg/day'+(id==='eq'?'; Equasym XL has no adult licence (off-label).':', above the 80 mg licence (off-label).'):C+': licensed maximum 60 mg; up to 90 mg/day only under specialist direction (off-label).';
     if(id==='dex') return adult?B+' (adult): 5 mg twice daily, maximum 60 mg/day; dexamfetamine has no adult ADHD licence (off-label).':'';
     if(id==='ato') return adult?B+' (adult): maximum 120 mg/day under specialist direction; the "dose maximum of 120 mg" is not licensed.':C+': maximum 1.8 mg/kg and 120 mg/day under specialist direction; doses above 100 mg daily are not licensed.';
@@ -75,6 +80,7 @@
     return '';
   }
   XP._doseCheck=doseCheck; XP._bnfNote=bnfNote;
+  XP._unit=function(k){ return MODEL[k]?unit(k):null; }; XP._pkDT=DT;
   function peakOf(a){ var p=0; for(var i=0;i<a.length;i++) if(a[i]>p) p=a[i]; return p; }
 
   /* ---------- products ---------- */
@@ -82,22 +88,27 @@
     {id:'mphir', chip:'Methylphenidate IR', drug:'mph', model:'ir', brands:['Ritalin','Medikinet tablets','Generic methylphenidate IR tablets'],
      doses:[5,10,15,20], def:10, unitLbl:'mg', childMax:60, adultMax:{ 'Ritalin':80, 'Medikinet tablets':0, 'Generic methylphenidate IR tablets':null },
      shape:'<p><strong>Immediate release:</strong> the tablet dissolves and methylphenidate is absorbed quickly. The SPC gives a Tmax of 1–2 h and a duration of effect of up to about 4 h (Ritalin; Medikinet tablets 1–4 h). Food increases Ritalin\'s Cmax by about 23%. One morning tablet does not cover a school or working day, so IR is usually given 2–3 times a day, or used as a top-up to an MR product.</p>'},
-    {id:'oros', chip:'MR 22:78 (Concerta-type)', drug:'mph', model:'oros', brands:['Concerta XL','Xaggitin XL','Delmosart','Affenid XL','Xenidate XL'],
-     doses:[18,27,36,54,72], def:36, childMax:54, adultMax:{'Concerta XL':72,'Xaggitin XL':72,'Delmosart':72,'Affenid XL':72,'Xenidate XL':72},
+    {id:'oros', chip:'MR 22:78 (Concerta-type)', drug:'mph', model:'oros', brands:['Concerta XL','Xaggitin XL','Delmosart','Affenid XL','Xenidate XL','Atenza XL','Matoride XL'],
+     doses:[18,27,36,54,72], def:36, childMax:54, adultMax:{'Concerta XL':72,'Xaggitin XL':72,'Delmosart':72,'Affenid XL':72,'Xenidate XL':72,'Atenza XL':72,'Matoride XL':0},
+     /* Atenza XL (emc 101204): children 6+ and adults, adult max 72 mg. Matoride XL (emc 3304): children 6+ only, max 54 mg. */
      /* each brand checked against its own UK SPC 4.1/4.2 (Oct 2026): children 6+ and adults; max 54 mg child, 72 mg adult */
-     shape:'<p><strong>Osmotic-release (OROS-type) tablet, 22:78:</strong> 22% of the dose is in an immediate-release overcoat, giving an initial maximum at about 1–2 h. The remaining 78% is pushed out gradually through a laser-drilled hole as the tablet core absorbs water, so the level keeps <em>rising</em> to a peak at about 6–8 h (Concerta SPC) and cover lasts about 12 h. The tablet must be swallowed whole. The empty shell can appear in stools, which is expected (see the PIL).</p>'},
+     shape:'<p><strong>22:78-type prolonged-release tablets (Concerta XL and bioequivalent brands):</strong> about a fifth of the dose is released straight away from the tablet coat, giving an initial maximum at about 1–2 h. The rest is released gradually from the tablet core, so the level keeps <em>rising</em> to a peak at about 6–8 h (Concerta XL SmPC: Tmax 6.8 ± 1.8 h in adults) and cover lasts about 12 h (SPS). <strong>Concerta XL, Affenid XL, Atenza XL and Matoride XL are osmotic tablets</strong>: the empty, non-absorbable shell can appear in stools, which is expected (SmPC 4.4). <strong>Xaggitin XL</strong> (25:75; matrix core) and <strong>Xenidate XL</strong> (multiple-unit tablet) are not osmotic but are bioequivalent (SmPC 6.1, 5.2; SPS). All must be swallowed whole and not chewed, divided or crushed (SmPC 4.2).</p>'},
     {id:'mk', chip:'Medikinet XL (50:50)', drug:'mph', model:'mk', brands:['Medikinet XL'],
      doses:[5,10,20,30,40,50,60], def:20, childMax:60, adultMax:80,
-     shape:'<p><strong>Bead capsule, 50:50:</strong> half the dose is in immediate-release pellets (white) and half in gastro-resistant modified-release pellets (blue). The SPC describes a second rising portion about 3 hours later and a plateau of 3–4 h at ≥75% of peak, so cover is about 8 h: a strong morning <em>and</em> a strong early afternoon. It must be taken with or after breakfast. The SPC states that 20 mg Medikinet XL can replace 10 mg IR at breakfast plus 10 mg IR at lunchtime.</p>'},
+     shape:'<p><strong>Bead capsule, 50:50:</strong> half the dose is in immediate-release pellets (white) and half in gastro-resistant modified-release pellets (blue). The SPC describes a second rising portion about 3 hours after the first and a plateau of 3–4 h during which levels do not fall below 75% of the peak (Tmax 2.75 h after breakfast), so cover is about 8 h: a strong morning <em>and</em> a strong early afternoon. It must be taken with or after breakfast. The SPC states that 20 mg Medikinet XL can replace 10 mg IR at breakfast plus 10 mg IR at lunchtime.</p>'},
+    {id:'rxl', chip:'MR 50:50 (Ritalin XL-type)', drug:'mph', model:'rxl', brands:['Ritalin XL','Meflynate XL','Metyrol XL','Focusim XL'],
+     doses:[10,20,30,40,60], def:20, childMax:60, adultMax:80,
+     /* Ritalin XL (emc 15966), Meflynate XL (15094), Metyrol XL (13797), Focusim XL (100558): children 6+ and adults; max 60 child, 80 adult. */
+     shape:'<p><strong>Bead capsule, 50:50 (Ritalin XL, Meflynate XL, Metyrol XL, Focusim XL):</strong> half the dose is in immediate-release beads, giving a first peak at about 1–2 h. The other half is in delayed-release beads that dissolve after about 4 h and give a second peak at about 5–7 h, so the profile has <em>two distinct peaks about 4 hours apart</em>, like IR methylphenidate taken twice daily 4 hours apart (Ritalin XL SmPC 5.2). Cover is about 8 h (SPS). It can be taken with or without food, and the capsule can be opened and the beads sprinkled on cool soft food (SmPC 4.2). SPS lists these four capsules as bioequivalent to each other.</p>'},
     {id:'eq', chip:'Equasym XL (30:70)', drug:'mph', model:'eq', brands:['Equasym XL'],
      doses:[10,20,30,40,50,60], def:20, childMax:60, adultMax:0,
-     shape:'<p><strong>Bead capsule, 30:70:</strong> 30% immediate-release and 70% modified-release beads (Equasym XL SPC). This gives a morning rise from the IR beads, then a larger second rise in the early afternoon, with cover of about 8 h. Compared with Medikinet XL (50:50), less is released at breakfast and more later. A high-fat breakfast delays Tmax by about 1 h. Capsules are 10, 20 and 30 mg, combined for higher doses.</p>'},
+     shape:'<p><strong>Bead capsule, 30:70:</strong> 30% immediate-release and 70% modified-release beads (Equasym XL SPC). The SmPC describes a sharp first rise with a peak at about 1–2 h (mean 7.7 ng/ml at 1.5 h) and a second maximum at about 4.5 h (mean 8.2 ng/ml), then a gradual decline, with cover of about 8 h. In the SmPC study the two peaks were of similar height; this schematic one-compartment model draws the first peak lower than the second, so read the timings, not the heights. Compared with Medikinet XL (50:50), less is released at breakfast and more later. A high-fat breakfast delays Tmax by about 1 h. Capsules are 10, 20 and 30 mg, combined for higher doses.</p>'},
     {id:'lis', chip:'Lisdexamfetamine', drug:'amf', model:'lis', brands:['Elvanse (6 years+, incl. adults)'],
      doses:[20,30,40,50,60,70], def:30, childMax:70, adultMax:70, factor:0.297,
      shape:'<p><strong>Prodrug:</strong> lisdexamfetamine is inactive until red blood cells hydrolyse it to d-amfetamine and L-lysine (Elvanse SPC). Because this conversion is gradual and rate-limited, the level rises smoothly (d-amfetamine Tmax about 3.5 h) and effects were still present at 13 h in children and 14 h in adults (SPC). The SPC advises that <em>afternoon doses should be avoided because of the potential for insomnia</em>.</p>'},
     {id:'dex', chip:'Dexamfetamine IR', drug:'amf', model:'dex', brands:['Amfexa','Generic dexamfetamine tablets'],
      doses:[5,10,15,20], def:5, childMax:40, adultMax:0, factor:0.73,
-     shape:'<p><strong>Immediate release:</strong> dexamfetamine tablets are absorbed within hours and are usually given in divided doses. The half-life is about 10 h, but useful effect from each dose is shorter (shown schematically as about 5–6 h). The SPC advises that doses should not be taken too late after lunchtime, to avoid disturbing sleep. The usual maximum in children is 20 mg/day, with up to 40 mg in some older children (SPC).</p>'},
+     shape:'<p><strong>Immediate release:</strong> dexamfetamine tablets are absorbed within hours and are usually given in divided doses. The SmPC gives a Tmax of about 1.5 h and a plasma half-life of about 10 h, and the dose is given once or twice daily (e.g. breakfast and lunch). The SmPC does not state a duration of effect: the curve here shows the clinical effect of each dose schematically (about 5–6 h), not the plasma level, which falls more slowly. The SPC advises that doses should not be taken too late after lunchtime, to avoid disturbing sleep. The usual maximum in children is 20 mg/day, with up to 40 mg in some older children (SPC).</p>'},
     {id:'ato', chip:'Atomoxetine', drug:'ato', flat:true, brands:['Atomoxetine capsules / oral solution (Strattera and generics)'],
      doses:[10,18,25,40,60,80,100], def:40, childMax:0, adultMax:100,
      shape:'<p><strong>Non-stimulant, steady effect:</strong> atomoxetine is a selective noradrenaline reuptake inhibitor. Plasma levels still rise and fall each day, but the clinical benefit builds gradually over <em>weeks</em> and is not tied to a daily peak. So there is no "wearing off" curve: the model shows a flat line once steady effect is reached. It can be given once daily in the morning or split into two doses (morning and late afternoon or early evening) if not tolerated or not effective once daily (SPC). It is not a controlled drug.</p>'},
@@ -227,7 +238,7 @@
       s+=T(X0+6,Y(WHI)+17,'WINDOW',{fill:'#7fe0b8',weight:600,ls:1.2});
       for(var hh=6;hh<=24;hh+=3){ s+='<line x1="'+X(hh*60)+'" y1="'+Y1+'" x2="'+X(hh*60)+'" y2="'+Y0+'" stroke="#2a4866" stroke-width="1"/>'+T(X(hh*60),Y0+20,(hh<10?'0':'')+hh,{anchor:'middle'}); }
       s+='<line x1="'+X0+'" y1="'+Y0+'" x2="'+X1+'" y2="'+Y0+'" stroke="#5f7a96"/>';
-      s+=T((X0+X1)/2,Y0+40,'Time of day (24-hour clock)',{anchor:'middle'})+T(16,(Y0+Y1)/2,'Relative level',{anchor:'middle',rot:-90});
+      s+=T((X0+X1)/2,Y0+40,'Time of day (24-hour clock)',{anchor:'middle'})+T(16,(Y0+Y1)/2,'Relative level (schematic)',{anchor:'middle',rot:-90});
       // bedtime marker
       var bed=S.age==='child'?1260:1350;
       s+='<line x1="'+X(bed)+'" y1="'+Y1+'" x2="'+X(bed)+'" y2="'+Y0+'" stroke="#b79cff" stroke-dasharray="2 4" opacity=".8"/>';
