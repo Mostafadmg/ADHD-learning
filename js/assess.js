@@ -204,7 +204,7 @@ W.report=function(){return wrap('Template','Report built from '+esc(caseNow().na
 
 /* ---------- step renderer ---------- */
 function visHTML(st){var v=st.vis,h='';
- if(v.img)h='<figure class="ag-vis"><picture><source srcset="images/'+v.img+'.webp" type="image/webp"><img src="images/'+v.img+'.jpg" alt="'+esc(v.alt)+'" width="1152" height="864" loading="lazy" decoding="async"></picture><figcaption>'+AICAP+'</figcaption></figure>';
+ if(v.img)h='<figure class="ag-vis"><picture><source srcset="images/'+v.img+'.webp" type="image/webp"><img src="images/'+v.img+'.jpg" alt="'+esc(v.alt)+'" width="1152" height="864" decoding="async"></picture><figcaption>'+AICAP+'</figcaption></figure>';
  else h='<figure class="ag-vis ag-vsvg">'+SVG[v.svg]()+'<figcaption>'+esc(CAP[v.svg]||'')+'</figcaption></figure>';
  if(st.svg2)h+='<figure class="ag-vis ag-vsvg">'+SVG[st.svg2]()+'<figcaption>'+esc(CAP[st.svg2]||'')+'</figcaption></figure>';
  return h;}
@@ -227,8 +227,11 @@ function render(focus){var root=$('#ag-app');if(!root)return;var st=STEPS[S.step
  h+='<details class="xp-src ag-src"><summary>Sources for this step</summary><p>'+esc(st.src)+'</p></details>';
  h+='<div class="ag-nav"><button type="button" class="btn secondary ag-back"'+(st.n===1?' disabled':'')+'>\u2190 Back</button><span class="ag-mini">Step '+st.n+' of '+N+'</span><button type="button" class="btn ag-next">'+(st.n===N?'Finish: print checklist':'Next: '+esc(STEPS[st.n].t)+' \u2192')+'</button></div></article>';
  root.innerHTML=h;
+ preloadNext(st.n);
  var cur=$('.ag-dot[aria-current="step"]',root);if(cur&&cur.scrollIntoView){var dots=$('.ag-dots',root);dots.scrollLeft=Math.max(0,cur.offsetLeft-dots.clientWidth/2+cur.clientWidth/2);}
  if(focus){var t=$('#ag-top');if(t)t.scrollIntoView({block:'start'});var hh=$('#ag-h');if(hh)hh.focus({preventScroll:true});}}
+var PRE={};function preloadNext(n){/* warm the cache for the next step's image (eager images only; no lazy loading) */
+ [n,n+1].forEach(function(k){var nx=STEPS[k];if(!nx||!nx.vis||!nx.vis.img||PRE[nx.vis.img])return;PRE[nx.vis.img]=1;var im=new Image();im.decoding='async';im.src='images/'+nx.vis.img+'.webp';});}
 function go(n){S.step=Math.max(1,Math.min(N,n));save();render(true);}
 function rerender(){/* re-render, keep scroll position and keyboard focus on the equivalent control */
  var y=window.scrollY,root=$('#ag-app'),ae=document.activeElement,idx=-1;
