@@ -177,6 +177,20 @@
       ui.details('How to judge', h('dl', { class: 'ab-judge' }, JUDGE.map(function (j) { return h('div', null, h('dt', null, j[0]), h('dd', null, j[1])); })),
         { open: !reviewed0, meta: 'Trait or episode, onset, settings, timeline', cls: 'ab-howto' })));
 
+    /* Step-by-step protocol (js/views/guides.js component); ticks are stored per assessment. */
+    if (AA.components.ddxProtocol && AA.data.ddxProtocol) {
+      var proto = AA.components.ddxProtocol({
+        checked: ctx.get('ddxProtocol', {}), compact: true,
+        onCheck: function (id, v) { ctx.set('ddxProtocol.' + id, v ? true : undefined); }
+      });
+      var pc = proto.counts ? proto.counts() : null;
+      el.appendChild(h('section', { class: 'card ab-card' },
+        h('h2', null, 'Work through the protocol'),
+        h('p', { class: 'muted' }, 'Follow these steps in order so that no alternative explanation is missed. Tick each check as you complete it; the ticks are saved with this assessment.'),
+        ui.details('Differential diagnosis protocol', proto, { open: !reviewed0, meta: pc ? pc.ticked + ' of ' + pc.checks + ' checks done' : '' }),
+        h('p', { class: 'hint' }, h('a', { href: '#ddxguide', 'data-go': 'ddxguide' }, 'Open the full protocol page'))));
+    }
+
     function paintE() {
       var a = ctx.a() || {};
       var E = D.criterionE(a);

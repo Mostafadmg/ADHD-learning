@@ -155,6 +155,14 @@
     var wrap = h('div', { class: 'tabs-wrap' }, bar, panel);
     show(cur);
     wrap.show = show;
+    /* Update the count badge of a tab without re-rendering. */
+    wrap.setCount = function (id, n) {
+      var b = btns[id];
+      if (!b) return;
+      var c = b.querySelector('.tab-count');
+      if (!c) { c = h('span', { class: 'tab-count' }); b.appendChild(c); }
+      c.textContent = String(n);
+    };
     return wrap;
   };
 
