@@ -106,7 +106,7 @@
           html:
             "<p>ADHD is one of the most heritable conditions in psychiatry. A review of 37 twin studies estimated heritability at about 74% (Faraone and Larsson 2018, cited in WFADHD 2021). The DSM-5-TR text cites the same figure (Koutsoklenis 2023). Kooij (2019) gives about 76% for children. First-degree relatives have a 4 to 5 times higher risk than the general population, with prevalence around 20% (Kooij 2019).</p>" +
             "<h4>An important adult nuance</h4>" +
-            "<p>Twin studies of adults that rely only on <em>self-rated</em> symptoms give much lower heritability, around 30 to 40%. Studies that combine informants or use clinical diagnoses give 70 to 80%, the same range as in children (Kooij 2019). The likely reason is that adults vary in how well they can rate themselves. The clinical lesson is direct: <strong>self-report alone may under-capture or distort adult symptoms</strong>, so seek other sources.</p>" +
+            "<p>Twin studies of adults that rely only on <em>self-rated</em> symptoms give much lower heritability, around 30 to 40%. Studies that combine informants or use clinical diagnoses give 70 to 80%, the same range as in children (Kooij 2019). One suggested reason is that adults vary in how aware they are of their own symptoms. The clinical lesson is direct: <strong>self-report alone may under-capture or distort adult symptoms</strong>, so seek other sources. This is not a rule that informants are always right: Kooij (2019) notes that some research finds the adult patient the best informant, and that some adults report many symptoms with little impairment, or the reverse.</p>" +
             "<h4>Many small effects</h4>" +
             "<p>ADHD is polygenic. Genome-wide studies of more than 20,000 people with ADHD show that most cases arise from many small genetic and environmental effects acting together (WFADHD 2021). There is no single gene and no genetic test. Environmental factors such as preterm birth (NICE NG87 1.2.1) and severe early deprivation (Kooij 2019) are best described as correlates that raise risk, not single causes (WFADHD 2021).</p>" +
             "<h4>What this means in the clinic</h4>" +
@@ -134,7 +134,7 @@
             "<h4>Hyperfocus</h4>" +
             "<p>Many adults describe hours of intense focus on things they find interesting or instantly rewarding, such as games or online chat (Kooij 2019). ICD-11 notes that inattention may not be evident during intensely stimulating or rewarding activities. The problem in ADHD is regulating attention, not a total absence of it.</p>" +
             "<h4>Emotional dysregulation: an associated feature</h4>" +
-            "<p>DSM-5 lists emotional dysregulation as an associated feature that supports the diagnosis. It is not one of the 18 criteria (Kooij 2019). ICD-11 also lists it among associated features. RCPsych CR235 (9.3) reports affective instability in up to 90% of adults with ADHD. It shows as irritability, frustration, anger, low frustration tolerance, temper outbursts and mood lability. The changes are short-lived and reactive, often to daily events, with a quick return to baseline within a few hours (Kooij 2019). That differs from the sustained change of a depressive or manic episode, and usually lacks the intense fear of abandonment, identity disturbance and chronic emptiness of borderline personality disorder (Kooij 2019; CADDRA 4.1).</p>" +
+            "<p>DSM-5 lists emotional dysregulation as an associated feature that supports the diagnosis. It is not one of the 18 criteria (Kooij 2019). ICD-11 also lists it among associated features. RCPsych CR235 (9.3) reports affective instability in up to 90% of adults with ADHD. It shows as irritability, frustration, anger, low frustration tolerance, temper outbursts and mood lability. The changes are short-lived and reactive, often to daily events, with a quick return to baseline within a few hours (Kooij 2019). That differs from the sustained change of a depressive or manic episode. In ADHD, anger and impulsivity tend to be short-lived and thoughtless rather than driven, and relationship conflict, self-harm, identity disturbance and fear of abandonment are usually less intense than in borderline personality disorder, where they are central (Kooij 2019; CADDRA 4.1).</p>" +
             "<h4>Women, masking and high ability</h4>" +
             "<ul>" +
             "<li>Women more often have inattentive symptoms (ICD-11) and internalising, affective and sleep problems (CR235 9.2). School reports may say 'daydreaming, distracted, disorganised' rather than 'disruptive' (UKAP females consensus 2020).</li>" +
@@ -209,9 +209,9 @@
             "<li>Open, example-based interviewing for each of the 18 symptoms, adult and childhood, rather than a tick-box checklist (AQAS 2024).</li>" +
             "<li>Evidence from childhood that does not depend only on the patient's memory: informants and school reports.</li>" +
             "<li>Impairment rated domain by domain, with examples.</li>" +
-            "<li>A systematic search for other explanations, using the Differential protocol.</li>" +
+            "<li>A systematic search for other explanations, using the Differential diagnosis protocol.</li>" +
             "<li>Attention to validity: incentives, consistency and over-reporting, without assuming bad faith.</li>" +
-            "<li>Honest outcomes, including 'not ADHD' and 'below the threshold'. NICE NG87 1.4.4 says people whose symptoms fall short of a diagnosis may still benefit from information and support.</li>" +
+            "<li>Honest outcomes, including 'not ADHD' and 'below the threshold'. NICE NG87 1.4.4 says people whose symptoms and impairment fall short of a diagnosis may still benefit from similar information about support.</li>" +
             "</ul>" +
             "<h4>The assessor's stance</h4>" +
             "<p>Be curious, neutral and evidence-seeking. Start without a conclusion. Let the person tell their story in their own words, then test it against the criteria, other sources and the alternatives. A good assessment feels thorough to the patient whatever the outcome, and a reader of your report can see how you reached your decision.</p>"
@@ -223,7 +223,7 @@
         "About 1 in 6 young people with ADHD still meet full criteria at 25 and about half have residual impairment. Late presentation is common; true late onset is doubtful.",
         "Hyperactivity often becomes inner restlessness. Inattention, executive difficulties and mind-wandering tend to persist.",
         "Emotional dysregulation is an associated feature, not a criterion. It is brief and reactive and returns to baseline within hours.",
-        "Heritability is about 74%. Adult self-report alone under-captures symptoms, so seek informants and records.",
+        "Heritability is about 74%. Adult self-report alone may miss or distort symptoms, so seek informants and records.",
         "ADHD is linked to accidents, substance misuse, unemployment, suicide and premature death. Assess risk every time.",
         "High achievement, calm in clinic and hyperfocus do not exclude ADHD. A positive screen does not confirm it.",
         "Missed and mistaken diagnoses both cause harm. Multi-source, example-based assessment with a systematic differential reduces both."
@@ -235,7 +235,7 @@
         "Counting emotional dysregulation as one of the 18 symptoms. It supports the picture but is not a criterion.",
         "Accepting 'adult-onset ADHD' without first searching for mood, trauma, sleep, substance or medical causes of recent difficulties.",
         "Quoting a screen-positive rate as if it were a prevalence.",
-        "Relying only on the patient's account when adult self-report is known to be incomplete."
+        "Relying only on the patient's account when adult self-report can be incomplete or distorted."
       ],
       quiz: [
         { q: "Which figure best reflects the prevalence of ADHD in adults in international meta-analyses?",
@@ -368,7 +368,7 @@
             "<li><strong>Where?</strong> In more than one situation, not tied to one task, person or stressor.</li>" +
             "<li><strong>So what?</strong> It has consequences that the person or others notice.</li>" +
             "</ol>" +
-            "<p>Rating scales show that frequency words carry different weight for different behaviours. On the ASRS v1.1, some items count from 'Sometimes' (items 1 to 3, 9, 12, 16 and 18) and the rest from 'Often'. The form explains that the frequency-based response is more sensitive with certain questions. In the interview, likewise, weigh frequency against how unusual the behaviour is. Leaving your seat in a meeting a few times a month is more unusual than losing focus in a dull report.</p>" +
+            "<p>Rating scales show that frequency words carry different weight for different behaviours. On the ASRS v1.1, some items count from 'Sometimes' (items 1 to 3, 9, 12, 16 and 18) and the rest from 'Often'. In the interview, likewise, weigh frequency against how unusual the behaviour is. Leaving your seat in a meeting a few times a month is more unusual than losing focus in a dull report.</p>" +
             "<h4>Questions that get to frequency without leading</h4>" +
             "<blockquote>'Tell me about the last time that happened.'</blockquote>" +
             "<blockquote>'In a typical week, how many times would that happen?'</blockquote>" +
@@ -401,7 +401,7 @@
             "<p>The threshold applies to each list separately. Four inattentive plus four hyperactive-impulsive symptoms make eight in total, but criterion A is <strong>not</strong> met, because neither list reaches five.</p>" +
             "<p>The age refers to the person's age now, at assessment. A 16-year-old in a transition clinic still needs six. The app applies five from age 17 and six below.</p>" +
             "<h4>Why five in adults</h4>" +
-            "<p>DSM-IV used six at every age. The APA lowered the adult threshold in DSM-5 because a lower threshold was enough for reliable diagnosis in adults (APA DSM-5 ADHD fact sheet, 2013). Kooij (2019) notes compelling evidence that four current symptoms may be the most appropriate adult cut-off, and that DSM-5 chose five because of concern about artificially raising prevalence. DIVA 2.0 has a footnote citing research that supports four or more in adults. These are research positions. The rule you apply is five.</p>" +
+            "<p>DSM-IV used six at every age. The APA lowered the adult threshold in DSM-5 because a lower threshold was enough for reliable diagnosis in adults (APA DSM-5 ADHD fact sheet, 2013). Kooij (2019) notes compelling evidence that four current symptoms may be the most appropriate adult cut-off, and that DSM-5 chose five because of concern about artificially raising prevalence. These are research positions. The rule you apply is five.</p>" +
             "<h4>The childhood count</h4>" +
             "<p>Criterion B needs 'several' symptoms before 12, not six. DSM-5-TR gives no number. The DIVA Foundation's own pages conflict: a 2019 note interprets 'several' as three or more in either list, while the current DIVA-5 instructions page says at least six. This app uses three or more as a working guide and asks you to confirm it. That is an app convention, not a DSM-5-TR rule.</p>" +
             "<h4>Rating-scale thresholds are not criteria</h4>" +
@@ -453,7 +453,7 @@
             "<h4>Autism is not an exclusion</h4>" +
             "<p>DSM-IV excluded ADHD in pervasive developmental disorders. DSM-5 removed this, and NICE NG87 1.3.3 says that exclusion on the basis of a pervasive developmental disorder is not recommended. Both diagnoses can be made. Do not count the same behaviour twice for both conditions (UKAP ADHD and autism consensus 2020).</p>" +
             "<h4>Write it down</h4>" +
-            "<p>UKAAN makes it essential that the report states that the symptoms are not better explained by another disorder, as a distinct criterion (AQAS 2024). Use the Differential protocol to show which conditions you considered and why you reached each verdict.</p>"
+            "<p>UKAAN makes it essential that the report states that the symptoms are not better explained by another disorder, as a distinct criterion (AQAS 2024). Use the Differential diagnosis protocol to show which conditions you considered and why you reached each verdict.</p>"
         },
         {
           h: "Presentation, severity, partial remission and other specified ADHD",
@@ -464,8 +464,8 @@
             "<tr><td>Predominantly inattentive</td><td>A1 met, A2 not met</td><td>F90.0</td></tr>" +
             "<tr><td>Predominantly hyperactive-impulsive</td><td>A2 met, A1 not met</td><td>F90.1</td></tr>" +
             "</tbody></table>" +
-            "<p>DSM-5 replaced 'subtype' with 'presentation' because the picture can change over a lifetime (Kooij 2019). Someone combined as a child is often predominantly inattentive as an adult. The presentation describes the current picture. The DIVA 2.0 score form uses the same logic: if childhood and adult subtypes differ, the adult one is used. Note that 'predominantly inattentive' does not mean 'no hyperactivity': a person with seven inattentive and four hyperactive-impulsive symptoms is predominantly inattentive.</p>" +
-            "<p>WHO ICD-10 codes differ from the US ICD-10-CM codes above (in WHO ICD-10, F90.0 is 'disturbance of activity and attention'). State which code set you use.</p>" +
+            "<p>DSM-5 replaced 'subtype' with 'presentation' because the picture can change over a lifetime (Kooij 2019). Someone combined as a child is often predominantly inattentive as an adult. The presentation describes the current picture. Note that 'predominantly inattentive' does not mean 'no hyperactivity': a person with seven inattentive and four hyperactive-impulsive symptoms is predominantly inattentive.</p>" +
+            "<p>WHO ICD-10 codes differ from the US ICD-10-CM codes above: in WHO ICD-10, F90.0 is 'disturbance of activity and attention', and attention deficit without hyperactivity is coded F98.8 (ICD-11 CDDR crosswalk). State which code set you use.</p>" +
             "<h4>Severity (DSM-5-TR, paraphrased)</h4>" +
             "<ul>" +
             "<li><strong>Mild:</strong> few, if any, symptoms beyond those required, and no more than minor impairment.</li>" +
@@ -474,14 +474,14 @@
             "</ul>" +
             "<p>A UK subtlety: NICE NG87 1.3.3 requires at least moderate impairment for diagnosis. A DSM-5-TR 'mild' case with only minor impairment may therefore not meet the NICE threshold. If you record 'mild', explain how the impairment still reaches the NICE bar.</p>" +
             "<h4>Partial remission</h4>" +
-            "<p>Use this when full criteria were met in the past, fewer than full criteria have been met for the past 6 months, and the symptoms still impair social, academic or occupational functioning. It needs a documented past episode of full criteria, usually a childhood diagnosis or a previous adult assessment. Do not use it for an adult who has never met full criteria.</p>" +
+            "<p>Use this when full criteria were met in the past, fewer than full criteria have been met for the past 6 months, and the symptoms still impair social, academic or occupational functioning. It needs good evidence that full criteria were met in the past: usually a childhood diagnosis or a previous assessment, or a well-corroborated childhood history (for example, school reports and a parent describing six or more symptoms in one list). Do not use it for an adult with no evidence of ever having met full criteria.</p>" +
             "<h4>Other specified and unspecified ADHD</h4>" +
             "<ul>" +
             "<li><strong>Other specified ADHD (ICD-10-CM F90.8):</strong> ADHD-type symptoms cause clinically significant distress or impairment but do not meet full criteria, and you record the reason, for example insufficient symptoms in either list.</li>" +
             "<li><strong>Unspecified ADHD (F90.9):</strong> the same situation when you do not give a reason, for example because information is incomplete.</li>" +
             "<li>Both replaced DSM-IV 'ADHD not otherwise specified' (Kooij 2019).</li>" +
             "</ul>" +
-            "<p>In UK practice, NICE NG87 1.3.3 asks for symptoms that meet the diagnostic criteria. An 'other specified' label records real difficulties that fall short. NICE NG87 1.4.4 says that people whose symptoms and impairment fall short of a diagnosis may still benefit from information and support. Treatment decisions in such cases are a specialist judgement and should be explained in the report (clinical practice).</p>"
+            "<p>In UK practice, NICE NG87 1.3.3 asks for symptoms that meet the diagnostic criteria. An 'other specified' label records real difficulties that fall short. NICE NG87 1.4.4 says that people whose symptoms and impairment fall short of a diagnosis may still benefit from similar information. Treatment decisions in such cases are a specialist judgement and should be explained in the report (clinical practice).</p>"
         },
         {
           h: "ICD-11 6A05 and how it differs",
@@ -503,7 +503,7 @@
             "<ul>" +
             "<li>ICD-11's hyperactivity-impulsivity clusters include acting on immediate stimuli without considering risk, such as impulsive decisions, injury-prone behaviour and reckless driving. These are not among the DSM's 18 items but are very relevant in adults.</li>" +
             "<li>In adolescents and adults, ICD-11 describes hyperactivity as feelings of physical restlessness and discomfort with being quiet or still.</li>" +
-            "<li>'Predominantly' means several symptoms of one type with few or none of the other. ICD-11 also mentions a purely inattentive pattern, sometimes called restrictive inattentive.</li>" +
+            "<li>'Predominantly' means several symptoms of one type with few or none of the other. So a person with seven inattentive and four clinically significant hyperactive-impulsive symptoms, predominantly inattentive under DSM-5-TR, may fit the ICD-11 combined presentation (a matter of judgement). ICD-11 also mentions a purely inattentive pattern, sometimes called restrictive inattentive.</li>" +
             "<li>ICD-11 notes that a severe, pervasive combined pattern, also observed by the clinician, is often referred to as hyperkinetic disorder and is regarded as the more severe form.</li>" +
             "<li>ICD-11 values reports from a partner, family member or co-worker in adults, and advises caution when childhood history is not corroborated.</li>" +
             "<li>The older ICD-10 hyperkinetic disorder (F90) was narrower: onset before 7, symptoms needed in all three groups (inattention, overactivity and impulsivity), and exclusion if mood, anxiety or pervasive developmental disorders were present.</li>" +
@@ -526,7 +526,7 @@
             "<h4>Why DIVA-5 exists</h4>" +
             "<p>DSM-5 changed the rules DIVA 2.0 was built on: onset moved from 7 to 12, the adult threshold fell from 6 to 5, adult examples were added, 'subtype' became 'presentation', and autism stopped being an exclusion. DIVA-5 (2019) updates the interview to DSM-5, with an adult threshold of 5. Young DIVA-5 covers ages 5 to 17 and DIVA-5 ID adapts it for people with intellectual disability. The DIVA Foundation has announced a revised DIVA-5-R.</p>" +
             "<h4>Licensing</h4>" +
-            "<p>DIVA-5 costs 10 euros per clinician, may be stored for personal use only, and may not be distributed. Digital versions need a contract, must be word for word, and may not be turned into an AI interview or chatbot (DIVA Foundation). DIVA 2.0 is also copyrighted. RCPsych (CR235) lists the free ACE+ interview as an alternative, and UKAAN names DIVA, CAADID and ACE+ as recommended schedules (AQAS 2024).</p>" +
+            "<p>DIVA-5 costs 10 euros per clinician, may be stored for personal use only, and may not be distributed. Digital versions need a contract, must be word for word, and may not be turned into an AI interview or chatbot (DIVA Foundation). DIVA 2.0 is free to use (CR235) but is still copyrighted. RCPsych (CR235) lists the free ACE+ interview as an alternative, and UKAAN names DIVA, CAADID and ACE+ as recommended schedules (AQAS 2024).</p>" +
             "<h4>How this app relates</h4>" +
             "<p>This app follows the same broad structure (adult then childhood for each symptom, examples, onset, impairment by area, collateral rated 0 to 2), but all questions and examples are original, and it applies DSM-5-TR rules. The Scoring and diagnosis step also shows a DIVA 2.0-style view (6 or more, DSM-IV) for comparison only. If you own DIVA-5, use it as published.</p>"
         },
@@ -535,10 +535,10 @@
           html:
             "<p>Cover the verdict column and decide for yourself first. All cases are fictional.</p>" +
             "<table><thead><tr><th>Case</th><th>Findings</th><th>Verdict and reason</th></tr></thead><tbody>" +
-            "<tr><td>1. Sam, 23, student</td><td>6 inattentive and 2 hyperactive-impulsive symptoms now. Childhood: 5 inattentive, supported by a parent and school reports saying 'dreamy, unfinished work'. Moderate impairment in study and home life. No better explanation.</td><td><strong>DSM-5-TR ADHD, predominantly inattentive presentation.</strong> A1 met (5 or more from 17); several before 12; two settings; moderate impairment; E met. On DIVA 2.0 rules (6 or more in childhood) the childhood count of 5 would fall short, which shows why DIVA-5 was needed.</td></tr>" +
+            "<tr><td>1. Sam, 23, student</td><td>6 inattentive and 2 hyperactive-impulsive symptoms now. Childhood: 5 inattentive, supported by a parent and school reports saying 'dreamy, unfinished work'. Moderate impairment in study and home life. No better explanation.</td><td><strong>DSM-5-TR ADHD, predominantly inattentive presentation.</strong> A1 met (5 or more from 17); several before 12; two settings; moderate impairment; E met. On the DIVA 2.0 score form (DSM-IV: 6 or more in childhood) the childhood count of 5 would fall short. DSM-5-TR asks only for several.</td></tr>" +
             "<tr><td>2. Two people with five inattentive symptoms</td><td>Identical histories. One is 16, the other 17.</td><td><strong>A met only for the 17-year-old.</strong> The threshold depends on current age: 6 up to 16, 5 from 17.</td></tr>" +
             "<tr><td>3. Alex, 35</td><td>4 inattentive and 4 hyperactive-impulsive symptoms, lifelong, moderate impairment, good collateral.</td><td><strong>DSM-5-TR criterion A not met.</strong> Lists are not added together. Consider other specified ADHD (insufficient symptoms) if clinically significant, give information (NICE NG87 1.4.4), and record your reasoning.</td></tr>" +
-            "<tr><td>4. Morgan, 28</td><td>7 inattentive and 6 hyperactive-impulsive symptoms, all starting at 19 after daily cannabis use began. Parents and school describe a settled, organised child.</td><td><strong>Criterion B not met; consider a substance-related cause.</strong> Check the order of onset and reassess after a period of abstinence (ICD-11 CDDR).</td></tr>" +
+            "<tr><td>4. Morgan, 28</td><td>7 inattentive and 6 hyperactive-impulsive symptoms, all starting at 19 after daily cannabis use began. Parents and school describe a settled, organised child.</td><td><strong>Criterion B not met; consider a substance-related cause.</strong> Check the order of onset and whether symptoms persist when not intoxicated, ideally after a period of abstinence (ICD-11 CDDR).</td></tr>" +
             "<tr><td>5. Chris, 44</td><td>Poor concentration, restlessness and forgetfulness for 5 months, since a depressive episode began. Previously well organised; school reports positive.</td><td><strong>Not ADHD.</strong> The symptoms occur only within a mood episode and have no childhood history. Treat the depression.</td></tr>" +
             "<tr><td>6. Dana, 31</td><td>Combined picture in childhood (parent and reports). Now 6 inattentive and 3 hyperactive-impulsive symptoms, impairing at work and home.</td><td><strong>ADHD, predominantly inattentive presentation.</strong> The presentation reflects the past 6 months, not childhood.</td></tr>" +
             "<tr><td>7. Lee, 38</td><td>Diagnosed with combined ADHD by CAMHS at 9. Now 4 inattentive and 2 hyperactive-impulsive symptoms, with continuing moderate impairment at work.</td><td><strong>ADHD in partial remission.</strong> Full criteria were met before; fewer now for 6 months; impairment continues.</td></tr>" +
@@ -565,7 +565,7 @@
         "Scoring symptoms straight from a questionnaire without interview examples.",
         "Requiring a childhood diagnosis or childhood impairment for criterion B.",
         "Counting symptoms that occur only during depression, mania, anxiety, intoxication or withdrawal.",
-        "Labelling a never-diagnosed adult with subthreshold symptoms as 'in partial remission'.",
+        "Labelling an adult with subthreshold symptoms as 'in partial remission' without evidence that full criteria were ever met.",
         "Leaving out the presentation, or the explicit statement that the symptoms are not better explained by another disorder."
       ],
       quiz: [
@@ -743,7 +743,7 @@
             "</ol>" +
             "<p>CADDRA warns against relying on observation in the interview, and notes that some students and young adults exaggerate symptoms to obtain accommodations or stimulants.</p>" +
             "<h4>Australian guideline (AADPA 2022)</h4>" +
-            "<p>No universal screening, but services for high-risk groups could screen, and a positive screen must be followed by a full assessment (1.2.1 to 1.2.5). The assessment includes a full clinical and psychosocial assessment including strengths, a developmental, mental health and medical history, observer reports and mental state, and a medical assessment to exclude other causes (2.1.2). Do not diagnose on rating scales or observation alone (2.1.4). Use more than one setting and reporter (2.1.5). The narrative suggests an interview of 2 to 3 hours. It also states that no specific conditions must be excluded before diagnosing ADHD.</p>" +
+            "<p>No universal screening, but services for high-risk groups could screen, and a positive screen must be followed by a full assessment (1.2.1 to 1.2.5). The assessment includes a full clinical and psychosocial assessment including strengths, a developmental, mental health and medical history, observer reports and mental state, and a medical assessment to exclude other causes (2.1.2). Do not diagnose on rating scales or observation alone (2.1.4). Use more than one setting and reporter (2.1.5). The narrative suggests an interview of 2 to 3 hours. It also states that no specific conditions must be excluded before diagnosing ADHD. That means there are no automatic exclusions, not that the differential can be skipped: 2.1.3 still requires differential and co-occurring conditions to be assessed.</p>" +
             "<h4>WFADHD (2021)</h4>" +
             "<p>A licensed clinician makes the diagnosis by interview. It cannot be made by rating scales alone, neuropsychological tests or brain imaging.</p>" +
             "<h4>Where they agree and where they differ</h4>" +
@@ -751,8 +751,8 @@
             "<tr><td>Diagnosis by clinical interview</td><td>Role of self-report scales: baseline only (AQAS) versus part of information gathering (CADDRA, AADPA)</td></tr>" +
             "<tr><td>Symptoms in childhood and adulthood</td><td>ASRS for triage: offered to referrers in 2017, then judged undiscriminating (CR235); one step of the CADDRA process</td></tr>" +
             "<tr><td>Collateral and school records strongly advised</td><td>Impairment wording: at least moderate (NICE), clinically significant (AADPA), interferes with or reduces quality (DSM-5-TR)</td></tr>" +
-            "<tr><td>Medical review and comorbidity assessment</td><td>Strengths named explicitly only by AADPA</td></tr>" +
-            "<tr><td>No test, scan or scale diagnoses ADHD</td><td>Minimum time stated by AQAS (2 hours) and AADPA (2 to 3 hours); not by NICE</td></tr>" +
+            "<tr><td>Medical review and comorbidity assessment</td><td>Strengths as a required part of the assessment: explicit in AADPA (NICE mentions them only in the post-diagnostic discussion)</td></tr>" +
+            "<tr><td>No test, scan or scale diagnoses ADHD</td><td>Time: AQAS sets at least 2 hours; the AADPA narrative says an interview typically takes 2 to 3 hours; NICE states no time</td></tr>" +
             "</tbody></table>"
         },
         {
@@ -848,7 +848,7 @@
             "<li>Risk, physical baseline and the agreed plan.</li>" +
             "</ul>" +
             "<h4>A formulation paragraph that works (fictional example)</h4>" +
-            "<blockquote>Ms A, 32, was assessed over two sessions (3 hours 15 minutes), with a 40-minute interview with her mother. Using a semi-structured interview based on DSM-5-TR, I found 7 of 9 inattentive and 4 of 9 hyperactive-impulsive symptoms over the past 6 months, each with examples (table 1). Her mother and primary school reports describe 6 inattentive symptoms before age 12 ('dreamy', 'needs constant reminders'). Symptoms are present at work, at home and socially. Impairment is moderate at work (two formal warnings for missed deadlines) and in daily tasks (council tax arrears), and mild in friendships. I considered depression, generalised anxiety disorder, bipolar disorder, obstructive sleep apnoea and cannabis use. Low mood is present but began after the work warnings and does not account for the lifelong pattern. There is no history of mood elevation, no sleep-disordered breathing, and no current substance use. The symptoms are not better explained by another disorder. The account was consistent across sources. Conclusion: ADHD, predominantly inattentive presentation, moderate (DSM-5-TR; ICD-10-CM F90.0; ICD-11 6A05.0), with a co-occurring mild depressive episode.</blockquote>" +
+            "<blockquote>Ms A, 32, was assessed over two sessions (3 hours 15 minutes), with a 40-minute interview with her mother. Using a semi-structured interview based on DSM-5-TR, I found 7 of 9 inattentive and 4 of 9 hyperactive-impulsive symptoms over the past 6 months, each with examples (table 1). Her mother and primary school reports describe 6 inattentive symptoms before age 12 ('dreamy', 'needs constant reminders'). Symptoms are present at work, at home and socially. Impairment is moderate at work (two formal warnings for missed deadlines) and in daily tasks (council tax arrears), and mild in friendships. I considered depression, generalised anxiety disorder, bipolar disorder, obstructive sleep apnoea and cannabis use. Her low mood meets criteria for a mild depressive episode, but it began after the work warnings, eight months ago, and does not account for the lifelong pattern. Her worries are about work and money and began with the warnings; there is no pattern of persistent, generalised worry. There is no history of mood elevation, no snoring, witnessed apnoeas or daytime sleepiness, and no cannabis or other substance use since university. The symptoms are not better explained by another disorder. The account was consistent across sources. Conclusion: ADHD, predominantly inattentive presentation, moderate (DSM-5-TR; ICD-11 6A05.0), with a co-occurring mild depressive episode.</blockquote>" +
             "<h4>Common documentation failures</h4>" +
             "<ul>" +
             "<li>Scores listed without examples, sources or interpretation.</li>" +
@@ -867,7 +867,7 @@
         "UKAAN AQAS is the most detailed UK standard: all 18 symptoms, adult and childhood, with examples; open questions; semi-structured interview; at least 2 hours; risk; and an explicit 'not better explained' statement.",
         "International guidance agrees on the essentials: clinical interview, childhood and adult evidence, collateral, medical review and comorbidity. No test diagnoses ADHD.",
         "The Taskforce (2025) and DHSC review (2026) call for defined competencies, quality standards, CQC regulation and needs-led support. These are recommendations; NG87 was unchanged in October 2026.",
-        "A full assessment usually needs a pre-assessment pack, a history session, a structured symptom interview, collateral, formulation and feedback: 2 to 4 hours of contact.",
+        "A full assessment usually needs a pre-assessment pack, a history session, a structured symptom interview, collateral, formulation and feedback: at least 2 hours of direct contact in most cases (AQAS), and often 3 to 4 hours once feedback is included.",
         "Take the open history before the structured interview, and pause the assessment for urgent risk, mood episodes, psychosis or intoxication.",
         "A good report lets a reader follow your reasoning from examples to criteria to conclusion."
       ],
@@ -976,7 +976,7 @@
             "<li>That another condition does not explain them better.</li>" +
             "<li>That the account is credible. Most self-report scales have no validity checks, and those that do miss many invalid responders.</li>" +
             "</ul>" +
-            "<p>The ASRS form itself tells clinicians to go on to review impairment and childhood history. NICE NG87 1.3.2 rules out diagnosis on rating scales alone. RCPsych CR235 found the ASRS undiscriminating for triage. The NHSE Taskforce (Part 2) says a positive screen alone is not an indication for referral, and scales should not be used alone to exclude people. The Australian guideline advises against universal screening, allows targeted screening in high-risk groups, and requires a full assessment after a positive screen (1.2.1 to 1.2.5).</p>" +
+            "<p>The ASRS form itself tells clinicians to go on to review impairment and childhood history. NICE NG87 1.3.2 rules out diagnosis on rating scales alone. RCPsych CR235 reports that, in its authors' clinical experience, the ASRS is undiscriminating for triage. The NHSE Taskforce (Part 2) says a positive screen alone is not an indication for referral, and scales should not be used alone to exclude people. The Australian guideline advises against universal screening, allows targeted screening in high-risk groups, and requires a full assessment after a positive screen (1.2.1 to 1.2.5).</p>" +
             "<h4>How a skilled assessor uses scales</h4>" +
             "<ul>" +
             "<li>Read them before the appointment, as a map, not a verdict.</li>" +
@@ -1020,9 +1020,9 @@
             "<p>Here LR+ is 0.9 / 0.2 = 4.5 and LR- is 0.1 / 0.8 = 0.125. Multiply the pre-test odds by the ratio. Primary care: odds 3/97 = 0.031; times 4.5 = 0.14; probability about 12%. Specialist clinic: odds 58/42 = 1.38; times 4.5 = 6.2; probability about 86%. A negative result in the clinic: 1.38 times 0.125 = 0.17; probability still about 15%.</p>" +
             "<h4>Real published figures</h4>" +
             "<ul>" +
-            "<li><strong>ASRS v1.1 Part A, US community sample:</strong> sensitivity 68.7%, specificity 99.5% (Kessler 2005).</li>" +
+            "<li><strong>ASRS v1.1 Part A, 154 US survey respondents (a clinical reappraisal subsample that over-represented people with childhood ADHD):</strong> sensitivity 68.7%, specificity 99.5% (Kessler 2005). High specificity in a survey sample does not carry over to clinics.</li>" +
             "<li><strong>ASRS v1.1 Part A, treatment-seeking substance use patients (13% with ADHD):</strong> sensitivity 0.84, specificity 0.66, PPV 0.26, NPV 0.97 (van de Glind 2013). Specificity falls sharply in a clinical group.</li>" +
-            "<li><strong>ASRS-5 at 14 or more:</strong> in general-population data (8.2% with ADHD), sensitivity 91.4%, specificity 96.0%, PPV 67.3%; in the specialist clinic (57.7%), sensitivity 91.9%, specificity 74.0%, PPV 82.8% (Ustun 2017). In German primary care, sensitivity 95.6% and specificity 72.3%; the authors estimate a PPV below 10% at 3% prevalence (Ballmann 2022).</li>" +
+            "<li><strong>ASRS-5 at 14 or more:</strong> in general-population data (8.2% with ADHD), sensitivity 91.4%, specificity 96.0%, PPV 67.3%; in the specialist clinic (57.7%), sensitivity 91.9%, specificity 74.0%, PPV 82.8% (Ustun 2017). In 262 German primary care and clinic patients, sensitivity 95.6% and specificity 72.3%; the authors estimate a PPV below 10% at 3% prevalence (Ballmann 2022).</li>" +
             "</ul>" +
             "<p>A quick ceiling check: 13.9% of adults in England screened positive on the 6-item ASRS in 2024 (APMS, reported in the DHSC review 2026). If true prevalence is around 3%, then even with perfect sensitivity no more than 3 in 13.9, about 22%, of screen positives could have ADHD.</p>" +
             "<p>Specificity also changes with the population. The Australian guideline's evidence review found ASRS v1.1 below 80% sensitivity and specificity in major depression, poor specificity in substance use and in incarcerated women, and poor ASRS-5 specificity in bipolar disorder and borderline personality disorder (May 2023). These are the people you will assess.</p>"
@@ -1030,7 +1030,7 @@
         {
           h: "ASRS v1.1: Part A, Part B and the 0 to 72 score",
           html:
-            "<p>The Adult ADHD Self-Report Scale v1.1 (WHO, with Kessler, Adler and Spencer; 2003) has 18 items covering the DSM-IV criterion A symptoms over the <strong>past 6 months</strong>. Each is rated Never (0), Rarely (1), Sometimes (2), Often (3) or Very often (4). It takes about 5 minutes. Part A is items 1 to 6, the screener (four inattention and two hyperactivity items). Part B is items 7 to 18.</p>" +
+            "<p>The Adult ADHD Self-Report Scale v1.1 (WHO, with Kessler, Adler and Spencer; 2003) has 18 items covering the DSM-IV criterion A symptoms over the <strong>past 6 months</strong>. Each is rated Never (0), Rarely (1), Sometimes (2), Often (3) or Very often (4). Part A is items 1 to 6, the screener (four inattention and two hyperactivity items). Part B is items 7 to 18.</p>" +
             "<h4>The shaded-box thresholds</h4>" +
             "<p>On the clinician's form, each item has a shaded range. An answer in that range counts as positive.</p>" +
             "<ul>" +
@@ -1051,7 +1051,7 @@
             "<tr><td>36</td><td>0.79</td><td>0.90</td></tr>" +
             "<tr><td>42</td><td>0.64</td><td>0.95</td></tr>" +
             "</tbody></table>" +
-            "<p>These compare diagnosed adults with population controls. In a clinic full of people with depression or anxiety, specificity will be lower. The 6-item screener discriminated as well as the full scale (AUC 0.903 versus 0.904). A Part A 0 to 24 sum with a cut-off of 14 was tested in substance use patients (sensitivity 0.81, specificity 0.70) and was not better than the original rule, which the authors recommend (van de Glind 2013).</p>" +
+            "<p>These compare diagnosed adults with population controls. In a clinic full of people with depression or anxiety, specificity will be lower. The 6-item screener discriminated as well as the full scale (AUC 0.903 versus 0.904; Brevik 2020). A Part A 0 to 24 sum with a cut-off of 14 was tested in substance use patients (sensitivity 0.81, specificity 0.70) and was not better than the original rule, which the authors recommend (van de Glind 2013).</p>" +
             "<h4>Worked example</h4>" +
             "<p>Part A answers: item 1 Sometimes, 2 Often, 3 Rarely, 4 Very often, 5 Sometimes, 6 Often. Shaded: item 1 (Sometimes counts), 2, 4 and 6. Item 3 is below Sometimes and item 5 is below Often. <strong>Four shaded: screen positive.</strong> Part A sum = 2 + 3 + 1 + 4 + 2 + 3 = 15.</p>" +
             "<p>Part B answers (items 7 to 18): 3, 4, 2, 3, 3, 1, 2, 3, 1, 2, 1, 1. Sum = 26. <strong>Total 0 to 72 = 41.</strong> Profile: inattention 8 of 9 shaded (items 1, 2, 4, 7, 8, 9, 10, 11); hyperactivity-impulsivity 3 of 9 (items 6, 14, 16).</p>" +
@@ -1118,7 +1118,7 @@
             "<li>The thresholds are clinical conventions, not cut-offs derived from adult accuracy studies.</li>" +
             "<li>Self-reported functioning can be over-reported, and the risk domain often shows floor effects.</li>" +
             "</ul>" +
-            "<p>UKAAN says impairment scales such as the WFIRS can support the judgement, but the judgement should rest mainly on the interview (AQAS 2024). Use the WFIRS-S to find domains to explore in the Onset and impairment step, and as a baseline for follow-up. The scale is free for clinical use, unmodified (copyright Dr Margaret Weiss).</p>"
+            "<p>UKAAN says impairment scales such as the WFIRS can support the judgement, but the judgement should rest mainly on the interview (AQAS 2024). Use the WFIRS-S to find domains to explore in the Onset and impairment step, and as a baseline for follow-up. The author's licence allows free clinical use of the unmodified scale (copyright Dr Margaret Weiss), and she asks to be contacted before it is posted online. RCPsych CR235 lists it as pay per use; the author's own statement takes precedence.</p>"
         },
         {
           h: "CAARS 2 and BAARS-IV: normed scales, informant forms and validity indexes",
@@ -1130,7 +1130,7 @@
             "<li>Results are T-scores (mean 50, standard deviation 10 in the normative sample): 70 or more very elevated, 65 to 69 elevated, 60 to 64 slightly elevated, below 60 not elevated. The 12-item ADHD Index is reported as a probability band, from very low (1 to 9%) to very high (90 to 99%).</li>" +
             "<li>Norms come from 2,640 people in the US and Canada.</li>" +
             "</ul>" +
-            "<p><strong>Response style analysis</strong> includes a Negative Impression Index (a score of 6 or more on the Short form warrants follow-up), an Inconsistency Index, omitted items, and pace (under 1 item per minute is unusually slow). On the original CAARS, the published Infrequency Index (more than 20 suggests non-credible reporting) had sensitivity of 17 to 50% and specificity of 86 to 95% on cross-validation, and an Exaggeration Index had specificity 0.97 but sensitivity 0.24 (Becke 2021; Harrison and Armstrong 2016).</p>" +
+            "<p><strong>Response style analysis</strong> includes a Negative Impression Index (a score of 6 or more on the Short form warrants follow-up), an Inconsistency Index, omitted items, and pace (under 1 item per minute is unusually slow). On the original CAARS, the published Infrequency Index (more than 20 suggests non-credible reporting) had sensitivity of 17 to 50% and specificity of 86 to 95% on cross-validation (Suhr 2011, as reviewed by Becke 2021), and an Exaggeration Index had specificity 0.97 but sensitivity 0.24 (Harrison and Armstrong 2016). These figures come from the original CAARS; equivalent accuracy data for the CAARS 2 indexes were not found in the sources reviewed.</p>" +
             "<h4>BAARS-IV (Barkley Adult ADHD Rating Scale-IV; Guilford 2011)</h4>" +
             "<ul>" +
             "<li>Self-report and other-report forms for current symptoms and for childhood symptoms, a 3 to 5 minute Quick Screen, and interview versions.</li>" +

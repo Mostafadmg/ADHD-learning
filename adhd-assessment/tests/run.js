@@ -308,6 +308,31 @@ function dataTests() {
   // pathway
   (d.pathway || []).forEach((p) => (p.tools || []).forEach((t) => { if (!toolIds.has(t)) err('pathway ' + p.id + ' unknown tool ' + t); }));
 
+  // step guide, forms guide, differential protocol
+  const STEPS = ['setup', 'screen', 'risk', 'history', 'comorbid', 'ia', 'hi', 'onset', 'collateral', 'ddx', 'validity', 'summary', 'report'];
+  if (d.stepGuide) STEPS.forEach((k) => { const g = d.stepGuide[k]; if (!g || !g.goal || !isStrArr(g.do, 3) || !isStrArr(g.done, 1)) err('stepGuide.' + k + ' incomplete'); });
+  else warn('stepGuide missing');
+  if (d.formsGuide) {
+    const fid = new Set();
+    (d.formsGuide.forms || []).forEach((f) => {
+      if (fid.has(f.id)) err('formsGuide duplicate ' + f.id); fid.add(f.id);
+      if (!ID.test(f.id || '')) err('formsGuide bad id ' + f.id);
+      if (f.tool && !toolIds.has(f.tool)) err('formsGuide ' + f.id + ' unknown tool ' + f.tool);
+      if (!f.title || !f.what || !f.howToRead) err('formsGuide ' + f.id + ' incomplete');
+    });
+    console.log('  forms guide: ' + fid.size + ' forms');
+  } else warn('formsGuide missing');
+  if (d.ddxProtocol) {
+    const cid = new Set(); const covered = new Set();
+    (d.ddxProtocol.steps || []).forEach((st) => {
+      (st.tools || []).forEach((t) => { if (!toolIds.has(t)) err('ddxProtocol ' + st.id + ' unknown tool ' + t); });
+      (st.conds || []).forEach((c) => { if (!ddxIds.has(c)) err('ddxProtocol ' + st.id + ' unknown condition ' + c); covered.add(c); });
+      (st.checks || []).forEach((c) => { if (cid.has(c.id)) err('ddxProtocol duplicate check ' + c.id); cid.add(c.id); });
+    });
+    ddxIds.forEach((x) => { if (!covered.has(x)) warn('ddxProtocol does not mention condition ' + x); });
+    console.log('  protocol: ' + (d.ddxProtocol.steps || []).length + ' steps, ' + cid.size + ' checks');
+  } else warn('ddxProtocol missing');
+
   // demo
   if (d.demo) {
     const de = d.demo;
