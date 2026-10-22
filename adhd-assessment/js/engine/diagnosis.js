@@ -52,7 +52,7 @@
       if (dur === 'no') return status('not-met', d + ' Symptoms have not lasted 6 months.', extra);
       return status(dur === 'yes' ? 'met' : 'pending', dur === 'yes' ? d : d + ' Confirm the 6-month duration.', extra);
     }
-    if ((c.ofIA + c.ofHI) === 0) return status('pending', 'Symptom interview not started.', extra);
+    if ((c.answeredIA + c.answeredHI) === 0) return status('pending', 'Symptom interview not started.', extra);
     if (!canIA && !canHI) return status('not-met', d, extra);
     return status('pending', d + ' Interview not finished.', extra);
   };
@@ -179,7 +179,8 @@
       if (f[x.id]) { score += w; checked++; }
     });
     var pct = max ? Math.round(100 * score / max) : 0;
-    var band = score === 0 ? 'none' : pct >= 50 || score >= 6 ? 'strong' : pct >= 25 || score >= 3 ? 'possible' : 'weak';
+    /* Bands are relative to the condition's total weight, so a long feature list does not inflate "strong". */
+    var band = score === 0 ? 'none' : pct >= 50 ? 'strong' : pct >= 20 || score >= 4 ? 'possible' : 'weak';
     return { score: score, max: max, pct: pct, band: band, checked: checked };
   };
 
@@ -305,13 +306,19 @@
         return { done: hd, of: hs.length || 1 };
       }
       case 'comorbid': return { done: toolsDone(T.comorbidCore), of: T.comorbidCore.length };
-      case 'ia': return symDone('IA');
-      case 'hi': return symDone('HI');
+      case 'ia':
+      case 'hi': {
+        /* The 18 symptom scores (adult and child) plus the DIVA-style supplement question for both periods. */
+        var sd = symDone(step === 'ia' ? 'IA' : 'HI');
+        var sup = a.supplement || {};
+        var keys = step === 'ia' ? ['iaAdult', 'iaChild'] : ['hiAdult', 'hiChild'];
+        return { done: sd.done + keys.filter(function (k) { return sup[k]; }).length, of: sd.of + keys.length };
+      }
       case 'onset': {
         var o = a.onset || {};
         var adultDoms = impairList(a, 'adult'), childDoms = impairList(a, 'child');
         var rated = adultDoms.filter(function (x) { return x.sev !== null; }).length + childDoms.filter(function (x) { return x.sev !== null; }).length;
-        return { done: (o.before12 ? 1 : 0) + (o.duration6m ? 1 : 0) + rated, of: 2 + adultDoms.length + childDoms.length };
+        return { done: (o.always ? 1 : 0) + (o.before12 ? 1 : 0) + (o.duration6m ? 1 : 0) + rated, of: 3 + adultDoms.length + childDoms.length };
       }
       case 'collateral': {
         var c = a.collateral || {};

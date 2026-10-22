@@ -42,7 +42,8 @@ const server = http.createServer((req, res) => {
     await page.click('text=Explore with a demo patient');
     await page.waitForTimeout(400);
     const routes = await page.evaluate(() => {
-      const AA = window.AA, out = ['home', 'new', 'about', 'tools', 'pathway', 'learn', 'cases', 'glossary', 'ddx', 'criteria', 'bank', 'exam'];
+      const AA = window.AA, out = ['home', 'new', 'about', 'tools', 'pathway', 'learn', 'cases', 'glossary', 'ddx', 'criteria', 'bank', 'exam', 'forms', 'ddxguide'];
+      ((AA.data.formsGuide && AA.data.formsGuide.forms) || []).forEach((f) => out.push('form-' + f.id));
       (AA.data.tools || []).forEach((t) => out.push('tool-' + t.id));
       (AA.data.learn || []).forEach((m) => { out.push('module-' + m.id); out.push('quiz-' + m.id); });
       (AA.data.cases || []).forEach((c) => out.push('case-' + c.id));

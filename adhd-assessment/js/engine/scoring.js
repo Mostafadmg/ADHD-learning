@@ -224,7 +224,7 @@
       out.push('Part A: ' + r.partA.shaded + ' of ' + r.partA.of + ' in the shaded range (screen positive at ' + r.partA.need + '+).');
       out.push('Part B: ' + r.partB.shaded + ' item(s) in the shaded range.');
     } else if (r.method === 'wfirs') {
-      out.push(r.impairedDomains + ' domain(s) meet the impairment rule.');
+      out.push(r.impairedDomains + ' domain(s) meet the impairment rule. Flagging 2 or more impaired domains is an app convention, not a published overall cut-off.');
     } else if (r.method === 'mdq') {
       out.push('Part 1: ' + r.part1 + ' of ' + r.max + ' yes; same period: ' + (r.part2 === 1 ? 'yes' : r.part2 === 0 ? 'no' : '-') + '; problem level: ' + (r.part3 === null ? '-' : ['none', 'minor', 'moderate', 'serious'][r.part3]) + '.');
     } else if (r.method === 'triage') {

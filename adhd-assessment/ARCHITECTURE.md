@@ -113,7 +113,7 @@ See `js/components/ui.js` for signatures. Key ones:
              consent: bool, interpreter: bool, present: '' },
   tools: { <toolId>: { answers: { <itemN>: value }, notes } },
   risk: { <riskItemId>: true, reviewed: bool, notes, action },
-  history: { <sectionId>: { checks: { <itemId>: true }, notes, none: bool } },
+  history: { <sectionId>: { checks: { <itemId>: true }, notes, none: bool }, mse: { notes } },   // mse = mental state observations
   symptoms: { <symptomId>: {
       adult: 'yes'|'no'|'unsure'|null, child: 'yes'|'no'|'unsure'|null,
       exA: { <exampleKey>: true }, exC: { <exampleKey>: true },   // ticked examples, key = "<ctx>.<index>"

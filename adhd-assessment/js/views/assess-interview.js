@@ -255,7 +255,9 @@
     /* Score panel: sticky under the step strip on large screens; a compact bar fixed to the bottom of the
        screen on phones and tablets, so the clinician can tick examples and score without scrolling back. */
     var nudge = { adult: h('p', { class: 'iv-nudge', 'aria-live': 'polite' }), child: h('p', { class: 'iv-nudge', 'aria-live': 'polite' }) };
-    var toChild = ui.btn({ label: 'Ask about childhood', kind: 'quiet', small: true, onClick: function () { tabs.show('child'); } });
+    /* Adulthood first, then childhood, for every symptom (DIVA order). Switching shows the childhood question. */
+    function showChild() { tabs.show('child'); if (root.scrollIntoView) root.scrollIntoView({ block: 'start' }); }
+    var toChild = ui.btn({ label: 'Ask about childhood', kind: 'quiet', small: true, onClick: showChild });
     var cols = {};
     function scoreCol(p, long, short, extra) {
       var seg = ui.seg({ label: long, hideLabel: true, options: SCORE_OPTS, value: r0[p] || null, onChange: function (v) { ctx.set(base + '.' + p, nil(v)); sync(); } });
@@ -266,8 +268,12 @@
         h('div', { class: 'iv-status' }, nudge[p], extra || null));
       return cols[p];
     }
-    var barNext = h('button', { type: 'button', class: 'btn btn-primary iv-bar-next', 'aria-label': nextS ? 'Next symptom: ' + label(nextS) : 'Finish: supplement question and summary', onclick: function () { goTo(idx + 1); } },
-      h('span', null, nextS ? 'Next' : 'Finish'), h('span', { 'aria-hidden': 'true' }, '→'));
+    /* Phone bar: once the adult score is set, the main button first leads to the childhood question. */
+    var barNextAria = nextS ? 'Next symptom: ' + label(nextS) : 'Finish: supplement question and summary';
+    var barLabel = h('span', null, nextS ? 'Next' : 'Finish');
+    var barNext = h('button', { type: 'button', class: 'btn btn-primary iv-bar-next', 'aria-label': barNextAria, onclick: function () {
+      if (barNext.getAttribute('data-child') === 'true') showChild(); else goTo(idx + 1);
+    } }, barLabel, h('span', { 'aria-hidden': 'true' }, '→'));
     var score = h('section', { class: 'sx-score iv-score', 'aria-label': 'Score this symptom', 'data-tab': curTab },
       scoreCol('adult', 'Adulthood (last 6 months)', 'Adult'),
       scoreCol('child', 'Childhood (age 5-12)', 'Child', toChild),
@@ -491,7 +497,11 @@
         cols[p].classList.toggle('is-warn', warn);
       });
       /* Space for the status line is reserved in CSS, so these never shift the content below. */
-      toChild.hidden = !(r.adult && !r.child && curTab === 'adult') || !nudge.child.hidden;
+      var askChild = !!(r.adult && !r.child && curTab === 'adult');
+      toChild.hidden = !askChild || !nudge.child.hidden;
+      barNext.setAttribute('data-child', askChild ? 'true' : 'false');
+      barNext.setAttribute('aria-label', askChild ? 'Ask about childhood for this symptom' : barNextAria);
+      barLabel.textContent = askChild ? 'Child' : nextS ? 'Next' : 'Finish';
       var tabBtns = U.$$('.tab', tabs);
       [size(r.exA), size(r.exC)].forEach(function (n, i) {
         var c = tabBtns[i] && tabBtns[i].querySelector('.tab-count');
@@ -548,7 +558,13 @@
     lateBox.hidden = o0.before12 !== 'no';
 
     var bBox = h('div', { class: 'iv-crit', 'aria-live': 'polite' });
+    /* A later age at onset and "Yes" before 12 contradict each other: ask the clinician to check. */
+    var ageWarn = h('p', { class: 'iv-nudge is-warn', 'aria-live': 'polite', hidden: true });
     function paintB() {
+      var oc = ctx.get('onset', {}) || {}, n = parseInt(oc.ageOnset, 10);
+      ageWarn.textContent = oc.always === 'no' && !isNaN(n) && n >= 12 && oc.before12 === 'yes'
+        ? 'Age at onset is ' + n + ', but "several symptoms before age 12" is Yes. Check which is right: symptoms are often present earlier and only cause problems later.' : '';
+      ageWarn.hidden = !ageWarn.textContent;
       var b = D.criterionB(ctx.a() || {});
       U.clear(bBox);
       U.append(bBox, [h('div', { class: 'iv-crit-head' }, h('strong', null, 'Criterion B · several symptoms before age 12'), ui.statusPill(b.status)), h('p', { class: 'hint' }, b.detail)]);
@@ -566,6 +582,7 @@
         qrow('Have the symptoms always been there?', ui.seg({ label: 'Have the symptoms always been there?', hideLabel: true, options: YN, value: o0.always || null,
           onChange: function (v) { ctx.set('onset.always', nil(v)); ageRow.hidden = v !== 'no'; } })),
         ageRow,
+        ageWarn,
         qrow('Were several symptoms present before age 12?', ui.seg({ label: 'Were several symptoms present before age 12?', hideLabel: true, options: YNU, value: o0.before12 || null,
           onChange: function (v) { ctx.set('onset.before12', nil(v)); lateBox.hidden = v !== 'no'; } }),
           h('span', { class: 'hint' }, 'DSM-5-TR needs several symptoms before age 12, not a diagnosis at that age.')),

@@ -97,6 +97,7 @@
   function toolBlock(ctx, t, o) {
     var meta = h('span', { class: 'as-meta' });
     var extra = null;
+    var nextHost = null;
     var d = lazyDetails(h('span', null, h('strong', null, t.abbr || t.id), t.name ? h('span', { class: 'as-tname-inline' }, ' ' + t.name) : null), function (body) {
       body.appendChild(aboutTool(t));
       if (hasItems(t)) {
@@ -105,6 +106,9 @@
           answers: ctx.get('tools.' + t.id + '.answers', {}) || {},
           onAnswer: function (n, v) { ctx.set('tools.' + t.id + '.answers.' + n, v === null ? undefined : v); }
         }));
+        /* Once this scale is complete, offer the next core scale that still needs answers. */
+        nextHost = h('div', { class: 'row as-foot', 'aria-live': 'polite' });
+        body.appendChild(nextHost);
       } else {
         body.appendChild(ui.callout('info', h('p', null, 'This instrument is not reproduced here because of its licence. Use the official form, then record the result in the notes below.')));
       }
@@ -115,6 +119,7 @@
         onSave: function (v) { ctx.set('tools.' + t.id + '.notes', v.trim() ? v : undefined); }
       }))));
       body.appendChild(h('div', { class: 'row as-foot' }, ui.btn({ label: 'Scoring guide in the tools library', kind: 'quiet', small: true, go: 'tool-' + t.id })));
+      if (nextHost) update(resultFor(ctx, t));
     }, { open: o.open, meta: meta, cls: 'as-tool' });
     d.id = 'as-tool-' + t.id;
     function update(r) {
@@ -129,6 +134,11 @@
         if (urgentFlags(r).length) meta.appendChild(ui.badge('Urgent flag', 'err'));
       }
       if (extra && extra.update) extra.update(r);
+      if (nextHost) {
+        var nb = r && r.complete && o.next ? o.next() : null;
+        U.clear(nextHost);
+        if (nb) nextHost.appendChild(ui.btn({ label: 'Next questionnaire: ' + (nb.t.abbr || nb.t.id) + ' →', kind: 'secondary', small: true, onClick: function () { d.open = false; reveal(nb.el); } }));
+      }
     }
     return { el: d, update: update, t: t };
   }
@@ -239,12 +249,21 @@
       if (!firstOpen && hasItems(t) && !(r && r.complete)) firstOpen = t.id;
     });
 
+    var order = [];
+    function nextCore(id) {
+      for (var j = order.indexOf(id) + 1; j < order.length; j++) {
+        var r = results[order[j]];
+        if (!o.optional(blocks[order[j]].t) && hasItems(blocks[order[j]].t) && !(r && r.complete)) return blocks[order[j]];
+      }
+      return null;
+    }
     o.groups.forEach(function (g) {
       var members = list.filter(g.filter);
       if (!members.length) return;
       var sec = h('section', { class: 'as-sec' }, h('h2', null, g.title), g.hint ? h('p', { class: 'hint' }, g.hint) : null);
       members.forEach(function (t) {
-        var b = toolBlock(ctx, t, { open: t.id === firstOpen, optional: o.optional(t), extra: o.extra || null });
+        order.push(t.id);
+        var b = toolBlock(ctx, t, { open: t.id === firstOpen, optional: o.optional(t), extra: o.extra || null, next: function () { return nextCore(t.id); } });
         blocks[t.id] = b;
         sec.appendChild(b.el);
       });

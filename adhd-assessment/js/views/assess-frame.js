@@ -37,13 +37,21 @@
       if (stepIndex(step) < 0) step = a.step || 'setup';
       AA.progress.set('lastAssessment', id);
       if (a.step !== step) AA.assess.set(id, 'step', step);
+      if (AA.shell && AA.shell.noteRoute) AA.shell.noteRoute('assess-' + id + '-' + step + (sub ? '-' + sub : ''));
       return workspace(el, id, step, sub);
     }
   });
 
   function chooser(el) {
     var last = AA.shell.lastAssessment();
-    if (last) { setTimeout(function () { AA.router.go('assess-' + last.id + '-' + (last.step || 'setup')); }, 0); return; }
+    if (last) {
+      setTimeout(function () {
+        var t = AA.shell.resumeRoute(last);
+        try { history.replaceState(null, '', '#' + t); } catch (e) { /* sandboxed */ }
+        AA.router.go(t);
+      }, 0);
+      return;
+    }
     var list = AA.assess.list();
     el.appendChild(ui.pageHead({ eyebrow: 'Assessment', title: 'Choose an assessment', actions: [ui.btn({ label: 'New assessment', kind: 'primary', go: 'new' })] }));
     if (!list.length) { el.appendChild(ui.empty('No assessments yet', 'Start a new assessment to begin.')); return; }

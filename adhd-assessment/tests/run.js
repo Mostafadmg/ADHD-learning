@@ -137,7 +137,7 @@ function engineTests() {
   ok(D.collateral({ collateral: { parent: 2, partner: 0 } }).level === 'clear' && D.collateral({ collateral: {} }).level === 'unavailable', 'collateral levels');
   const sc = D.ddxScore(AA.data.ddx[0], { f: { f1: true } });
   ok(sc.score === 3 && sc.max === 4 && sc.band === 'strong', 'ddx score weighted');
-  ok(D.stepProgress(a, 'ia').of === 18, 'step progress counts adult and child');
+  ok(D.stepProgress(a, 'ia').of === 20, 'step progress counts adult, child and the supplement question');
   const dv = D.diva2({ symptoms: a.symptoms, onset: { always: 'no', ageOnset: '5' } });
   ok(dv.childIA6 === true && dv.before7 === true, 'diva2 view');
 }

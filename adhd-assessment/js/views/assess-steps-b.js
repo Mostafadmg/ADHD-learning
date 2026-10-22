@@ -104,7 +104,15 @@
      linked to it, and symptoms where it was flagged as a possible mimic. */
   function signalsFor(a, cond) {
     var out = { screens: [], history: [], symptoms: [], n: 0 };
-    try { D.ddxScreens(a, cond).forEach(function (s) { if (s.positive) out.screens.push(s); }); } catch (e) { /* missing tools */ }
+    /* A positive ADHD scale is not evidence for an alternative; for those (for example "normal variation")
+       the signal is a completed scale that is negative. */
+    try {
+      D.ddxScreens(a, cond).forEach(function (s) {
+        var t = AA.byId('tools', s.id);
+        s.neg = !!(t && /^adhd/.test(t.group || ''));
+        if (s.neg ? s.result.complete && !s.positive : s.positive) out.screens.push(s);
+      });
+    } catch (e) { /* missing tools */ }
     var hist = (a && a.history) || {};
     arr(AA.data.history).forEach(function (sec) {
       var checks = (hist[sec.id] && hist[sec.id].checks) || {};
@@ -131,7 +139,7 @@
     var li = [];
     sig.screens.forEach(function (s) {
       var t = resultText(s.result);
-      li.push(h('li', null, h('span', { class: 'ab-src' }, 'Screen'), h('span', null, s.abbr + ' positive' + (t ? ' (' + t + ')' : ''))));
+      li.push(h('li', null, h('span', { class: 'ab-src' }, 'Screen'), h('span', null, s.abbr + (s.neg ? ' negative' : ' positive') + (t ? ' (' + t + ')' : ''))));
     });
     sig.history.forEach(function (x) {
       li.push(h('li', null, h('span', { class: 'ab-src' }, 'History'), h('span', null, x.t + (x.sec ? ' (' + x.sec + ')' : ''))));
@@ -264,6 +272,11 @@
       r.d = lazyDetails(h('span', { class: 'ab-ctitle' }, h('strong', null, condName(c)), c.core ? ui.badge('Core', 'accent') : null),
         function (body) { buildCond(ctx, c, body, r); paintRow(r); }, { meta: meta, cls: 'ab-cond' });
       r.d.id = 'ab-c-' + c.id;
+      /* The next core condition without a verdict, offered once this one has a verdict. */
+      r.nextTodo = function () {
+        var rec = (ctx.a() || {}).ddx || {};
+        return conds.filter(function (x) { return x.core && x.id !== c.id && !(rec[x.id] && rec[x.id].verdict); })[0] || null;
+      };
       rows[c.id] = r;
       paintRow(r);
       return r;
@@ -278,6 +291,11 @@
       r.meta.appendChild(verdictBadge(e.verdict));
       if (r.refs.score) paintScore(r.refs.score, r.cond, sc);
       if (r.refs.vhint) r.refs.vhint.textContent = verdictOf(e.verdict) ? verdictOf(e.verdict).d : 'Not decided yet.';
+      if (r.refs.next) {
+        var nx = e.verdict ? r.nextTodo() : null;
+        fill(r.refs.next, nx ? ui.btn({ label: 'Next to review: ' + String(nx.name || nx.id).replace(/\s*\([^)]*\)/g, '') + ' →', kind: 'secondary', small: true,
+          onClick: function () { r.d.open = false; reveal(rows[nx.id].d); } }) : null);
+      }
     }
     function groupBlock(title, hint, list) {
       if (!list.length) return;
@@ -449,6 +467,7 @@
       vhint,
       ui.field('Notes on ' + name, ui.input({ rows: 2, value: entry.notes || '', placeholder: 'What you asked, what you found and why you decided this.',
         onSave: function (v) { ctx.set('ddx.' + c.id + '.notes', textOrNone(v)); } })),
+      r.refs.next = h('div', { class: 'row', 'aria-live': 'polite' }),
       h('div', { class: 'row' }, ui.btn({ label: 'Full reference page', kind: 'quiet', small: true, go: 'cond-' + c.id }))));
   }
 
@@ -961,13 +980,16 @@
     var name = t ? (t.abbr || id) + (t.name ? ' (' + t.name + ')' : '') : id;
     var bits = [];
     if (r) {
-      var txt = arr(r.lines).join(' ');
+      /* A triage tool's line is the action for the clinician; the report records the result only. */
+      var txt = r.method === 'triage' ? '' : arr(r.lines).join(' ');
       if (r.band && txt.indexOf(r.band) < 0) txt = r.band + '. ' + txt;
       bits.push(txt.trim());
-      arr(r.subscales).forEach(function (s) {
-        if (!s.answered) return;
-        bits.push(s.label + ' ' + s.total + '/' + s.max + (s.band ? ' (' + s.band + ')' : s.positive === true ? ' (above cut-off)' : ''));
+      var impaired = arr(r.domains).filter(function (d) { return d.impaired; }).map(function (d) { return d.label; });
+      if (impaired.length) bits.push('Impaired: ' + impaired.join(', ') + '.');
+      var subs = arr(r.subscales).filter(function (s) { return s.answered; }).map(function (s) {
+        return s.label + ' ' + s.total + '/' + s.max + (s.band ? ' (' + s.band + ')' : s.positive === true ? ' (above cut-off)' : '');
       });
+      if (subs.length) bits.push('Subscales: ' + subs.join('; ') + '.');
       arr(r.flags).forEach(function (fl) { bits.push('Flag: ' + fl.text); });
     } else {
       bits.push('Recorded in notes.');
@@ -1283,7 +1305,9 @@
       groups.forEach(function (g) {
         var fits = g === 'Safety' ? 'Always consider'
           : (dec === 'met' || dec === 'other-specified') && (g === 'After diagnosis' || g === 'Before any medication') ? 'Fits your decision'
-          : dec === 'not-met' && g === 'If ADHD not diagnosed' ? 'Fits your decision' : null;
+          : dec === 'not-met' && g === 'If ADHD not diagnosed' ? 'Fits your decision'
+          : dec === 'deferred' && g === 'Other needs' ? 'Fits your decision'
+          : g === 'Other needs' && String((f0.comorbid !== undefined ? f0.comorbid : comorbidSuggestion(a0)) || '').trim() ? 'Co-occurring condition recorded' : null;
         var gItems = items.filter(function (x) { return (x.group || 'Other needs') === g; });
         var meta = h('span', { class: 'ab-pmeta' });
         var anyTicked = gItems.some(function (x) { return plan0[x.id]; });

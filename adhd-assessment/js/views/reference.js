@@ -142,7 +142,7 @@
   function asrsItems(s) { return arr(isObj(s.codes) ? s.codes.asrs : null).filter(function (n) { return typeof n === 'number' || txt(n); }); }
   function symTitle(s) { return txt(s.title) || s.id; }
   /* Label as used in the bank and in links: DIVA code first ("A3 Seems not to listen"). */
-  function symLabel(s) { var c = divaCode(s) || dsmCode(s); return (c ? c + ' ' : '') + symTitle(s); }
+  function symLabel(s) { var c = dsmCode(s), dv = divaCode(s); return (c ? c + ' ' : '') + symTitle(s) + (dv ? ' (DIVA ' + dv + ')' : ''); }
   function probeLabel(p) { var l = txt(p.label); return l && l !== p.k ? l : PROBE_LABEL[p.k] || l || txt(p.k) || 'Probes'; }
 
   /* ======================================================================
@@ -775,7 +775,7 @@
     el.appendChild(ui.pageHead({
       eyebrow: 'During the interview', title: 'Question bank',
       lead: 'Every interview question, other wording, example and probe in one place. Search with a word or two, then narrow by type, symptom, period or life area.',
-      actions: [last ? ui.btn({ label: 'Back to the assessment', kind: 'ghost', go: 'assess-' + last.id + '-' + (last.step || 'setup'), icon: '←' }) : null].filter(Boolean)
+      actions: [last ? ui.btn({ label: 'Back to the assessment', kind: 'ghost', go: AA.shell.resumeRoute ? AA.shell.resumeRoute(last) : 'assess-' + last.id + '-' + (last.step || 'setup'), icon: '←' }) : null].filter(Boolean)
     }));
     if (!idx.list.length) {
       el.appendChild(ui.empty('The question bank is empty', 'No interview content is loaded in this build.', ui.btn({ label: 'Go to home', kind: 'primary', go: 'home' })));

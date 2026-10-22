@@ -32,6 +32,15 @@
     { title: '', items: [{ go: 'about', label: 'About, privacy and data', ico: 'i' }] }
   ];
 
+  /* The last assessment page visited in this session (including the symptom card), kept in memory only,
+     so "back to the assessment" links return to the same place rather than the start of the step. */
+  var lastAssessRoute = null;
+  shell.noteRoute = function (token) { lastAssessRoute = token; };
+  shell.resumeRoute = function (a) {
+    if (!a) return 'home';
+    return lastAssessRoute && lastAssessRoute.indexOf('assess-' + a.id + '-') === 0 ? lastAssessRoute : 'assess-' + a.id + '-' + (a.step || 'setup');
+  };
+
   shell.lastAssessment = function () {
     var id = AA.progress.get('lastAssessment', null);
     var a = id ? AA.assess.get(id) : null;
@@ -92,7 +101,7 @@
     if (!a) return;
     chip.textContent = (a.patient.ref || 'Untitled patient') + (a.patient.age ? ', ' + a.patient.age + ' y' : '');
     chip.title = 'Open the current assessment';
-    chip.onclick = function () { AA.router.go('assess-' + a.id + '-' + (a.step || 'setup')); };
+    chip.onclick = function () { AA.router.go(shell.resumeRoute(a)); };
   }
 
   function renderSave() {
@@ -196,6 +205,9 @@
   shell.loadDemo = function () {
     var demo = AA.data.demo;
     if (!demo) { U.toast('The demo case is not available.', 'warn'); return null; }
+    /* Reopen this profile's demo patient rather than adding another copy (delete it on Home for a fresh one). */
+    var existing = AA.assess.list().filter(function (a) { return a.demo; })[0];
+    if (existing) { AA.progress.set('lastAssessment', existing.id); return existing.id; }
     var rec = JSON.parse(JSON.stringify(demo));
     rec.demo = true;
     var id = AA.assess.insert(rec);
@@ -204,10 +216,25 @@
   };
 
   /* ---------- New assessment ---------- */
+  /* A draft nobody has typed into yet: no reference, age or recorded answers. */
+  function isBlankDraft(a) {
+    var p = a.patient || {};
+    var empty = function (o) { return !o || !Object.keys(o).length; };
+    return !a.demo && !p.ref && !p.age && !p.consent && empty(a.tools) && empty(a.symptoms) && empty(a.history) && empty(a.risk) && empty(a.ddx);
+  }
+  shell.isBlankDraft = isBlankDraft;
+
   AA.router.register('new', { title: 'New assessment', render: function () {
+    /* Remove earlier untouched drafts so abandoned "Untitled patient" rows do not pile up on Home. */
+    AA.assess.list().forEach(function (a) { if (isBlankDraft(a)) AA.assess.remove(a.id); });
     var id = AA.assess.create({});
     AA.progress.set('lastAssessment', id);
-    setTimeout(function () { AA.router.go('assess-' + id + '-setup'); }, 0);
+    /* Replace the "new" history entry, so Back does not create another blank assessment. */
+    setTimeout(function () {
+      var t = 'assess-' + id + '-setup';
+      try { history.replaceState(null, '', '#' + t); } catch (e) { /* sandboxed */ }
+      AA.router.go(t);
+    }, 0);
   } });
 
   /* ---------- Home ---------- */
@@ -224,7 +251,7 @@
     var greet = nm.length > 1 && /^(dr|prof|professor|mr|mrs|ms|miss|mx)\.?$/i.test(nm[0]) ? nm[0] + ' ' + nm[nm.length - 1] : nm[0];
     el.appendChild(ui.pageHead({ eyebrow: 'Workspace', title: 'Welcome, ' + greet,
       lead: 'Start or continue an assessment, look something up during the interview, or keep training.',
-      actions: [ui.btn({ label: 'New assessment', kind: 'primary', go: 'new', icon: '+' }), ui.btn({ label: 'Load demo patient', kind: 'ghost', onClick: function () {
+      actions: [ui.btn({ label: 'New assessment', kind: 'primary', go: 'new', icon: '+' }), ui.btn({ label: list.some(function (a) { return a.demo; }) ? 'Open demo patient' : 'Load demo patient', kind: 'ghost', onClick: function () {
         var id = shell.loadDemo(); if (id) AA.router.go('assess-' + id + '-summary');
       } })] }));
 
@@ -348,7 +375,10 @@
     /* Crisp menu icon (the markup has a text glyph as a fallback). */
     U.$('#menu-btn').innerHTML = '<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2.5 4.5h13M2.5 9h13M2.5 13.5h13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
     U.$('#theme-btn').addEventListener('click', function () {
-      var order = ['system', 'dark', 'light'];
+      /* The first press always changes what you see: from the system theme go to its opposite. */
+      var sysDark = false;
+      try { sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches; } catch (e) { sysDark = false; }
+      var order = sysDark ? ['system', 'light', 'dark'] : ['system', 'dark', 'light'];
       var cur = AA.store.get('prefs.theme', 'system');
       var next = order[(order.indexOf(cur) + 1) % order.length];
       AA.store.set('prefs.theme', next); applyTheme(next);
