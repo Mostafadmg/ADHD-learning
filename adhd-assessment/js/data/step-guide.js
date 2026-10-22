@@ -39,7 +39,7 @@ AA.add('stepGuide', {
       "External pressure: a referral driven by an employer, university, court or relative can shape the account. Note it neutrally; you will weigh it in the validity step (RCPsych CR235 section 7).",
       "A previous diagnosis made privately or abroad: ask for the full report. Without evidence of a comprehensive assessment, carry out a standard assessment (CR235 section 8).",
       "Video appointments are acceptable (AQAS 2024; CR235 9.8). Check privacy and that nobody off-screen is prompting. The DHSC review (2026) lists assessments that are not face to face as a risk factor for misdiagnosis, so consider meeting in person when the picture is complex.",
-      "Plan the time: about 2 to 3 hours of direct contact, in one session with a break or over two sessions (AQAS: at least 2 hours in most cases). Collateral calls and the report take extra time outside the session."
+      "Plan the time: about 2 to 3 hours of direct contact, in one session with a break or over shorter sessions (AQAS: at least 2 hours in most cases). Feedback and the treatment discussion often need a further appointment of about an hour (AQAS). Collateral calls and the report take extra time outside the session."
     ],
     done: [
       "Reference, age and consent are recorded, so the step shows as complete.",
@@ -66,7 +66,7 @@ AA.add('stepGuide', {
       "ASRS v1.1: count the Part A answers (items 1 to 6) in the shaded range. Four or more is a positive screen. Use Part B as a list of probes; it has no total score. The optional ASRS-5 has its own weighted scoring: follow its tool guide.",
       "WURS-25 (childhood recall, total 0 to 100): 46 or more is the original cut-off and 36 or more a more sensitive one. Depression, bipolar disorder and borderline personality disorder also raise the score.",
       "WFIRS-S (last month): a domain is impaired when two or more items are rated 2, any item is rated 3, or the domain mean is 1.5 or more. These are the areas to explore in the impairment step.",
-      "Note the high-scoring items and impaired domains as prompts. Do not go through them item by item now: ask for examples later, in the history and the symptom interview, so the forms do not steer the patient's own account.",
+      "Note the high-scoring items and impaired domains as prompts. Check the answers briefly with the patient and ask for an example of a high score if it helps, but save the detailed exploration for the history and the symptom interview, so the forms do not steer the patient's own account.",
       "Note mismatches: very high scores on everything, low scores despite a clear history, or answers that do not fit what you see. These feed the validity step.",
       "Act today on any urgent flag shown at the top of the page, in the safety and risk step.",
       "If you are unsure how to read a form, open Pre-appointment forms in the menu: it explains each form, what the result means and how much weight to give it."
@@ -242,7 +242,7 @@ AA.add('stepGuide', {
     goal: "Decide, with real examples, which of the nine inattention symptoms are present now (last 6 months) and were present in childhood (age 5 to 12).",
     time: "35-50 minutes",
     do: [
-      "Set the frame: adulthood means the last 6 months; childhood means primary school, roughly age 5 to 12. Allow 60 to 90 minutes for both parts of the interview. Press Start, or open the first symptom from the table.",
+      "Set the frame: adulthood means the last 6 months; childhood means primary school, roughly age 5 to 12. Allow 60 to 90 minutes for both parts of the interview. Press Start with the first symptom, or open any symptom from the table.",
       "Read the main question aloud as written, then wait. Let the patient answer in their own words before you offer any example.",
       "Ask for a recent, specific example. Tick only the examples the patient actually describes, and type their own words in the box. Use Other ways to ask if the question does not land; do not read the example list out as a checklist.",
       "Open Probe further and ask how often it happens, whether it is more than in other people of the same age, in which settings, and what it costs. Ask how they cope and what happens when the coping fails.",
@@ -261,7 +261,7 @@ AA.add('stepGuide', {
     ],
     watch: [
       "Do not lead. Ask the open question first and use examples only as prompts. A general 'yes, that's me' is not enough: clear examples of each symptom present are essential (AQAS 2024).",
-      "Count traits, not states. Problems that appear only during low mood, anxiety, sleep loss or substance use do not count (ICD-11 CDDR; DSM-5-TR criterion E).",
+      "Count traits, not states. Problems that appear only during low mood, anxiety, sleep loss or substance use do not count (ICD-11 CDDR; DSM-5-TR criterion E). Nor do problems that come only from deliberate refusal or from not understanding the task or the language (DSM-5-TR criterion A note).",
       "Avoid double counting. One incident should not be the only evidence for two symptoms (clinical practice), and a behaviour better explained by autism should not also be counted as ADHD (Young et al. 2020, UKAP ADHD and autism consensus).",
       "Masking and scaffolding hide symptoms. Ask what it costs to cope, and what happens when the support (a partner, lists, a manager) is removed (CR235 9.2). Open Special populations for women, older adults, high ability, substance use, autism and culture.",
       "People who have read about ADHD may endorse most items. Look for varied, personal, concrete detail (CR235 9.6).",
@@ -275,7 +275,7 @@ AA.add('stepGuide', {
     ],
     next: "Go to Interview part 2: hyperactivity-impulsivity, using the same method. If the patient is tiring, take a short break first: fatigue lowers the quality of the answers.",
     src: [
-      "DSM-5-TR criterion A1, inattention (paraphrased)",
+      "DSM-5-TR criterion A1, inattention, and the criterion A note on defiance and not understanding tasks (paraphrased)",
       "UKAAN AQAS 2024 (systematic evaluation of all 18 symptoms in adulthood and childhood, open questions, clear examples)",
       "WHO ICD-11 CDDR 6A05 (boundaries with mood and anxiety disorders)",
       "RCPsych CR235 (2023) 9.2 and 9.6",
@@ -307,7 +307,7 @@ AA.add('stepGuide', {
     ],
     watch: [
       "Calm behaviour in the interview does not exclude ADHD; symptoms often do not show one-to-one (Kooij et al. 2019; CR235 9.2; CADDRA 4.1).",
-      "Impulsive spending, risk-taking or quitting jobs are not separate DSM-5-TR symptoms. Count them only where they illustrate a listed symptom, and record their cost as impairment (clinical practice).",
+      "Impulsive spending, risk-taking or quitting jobs are not separate DSM-5-TR symptoms. Count them only where they illustrate a listed symptom, and record their cost as impairment (clinical practice). ICD-11 does include acting without thinking about risk, such as reckless driving, in its impulsivity cluster.",
       "Episodes of restlessness with less need for sleep, pressured speech or grandiosity point to hypomania or mania. Abrupt new hyperactivity in an adult suggests bipolar disorder or emerging psychosis (ICD-11 CDDR).",
       "Restlessness only when anxious, or caused by caffeine, stimulants, withdrawal or medicines (for example bronchodilators or antipsychotics), does not count.",
       "In ADHD, impulsivity and anger are short-lived and thoughtless rather than driven. Impulsivity tied to fear of abandonment, self-harm or an unstable sense of self points to borderline personality disorder (Kooij et al. 2019 section 6.3).",
@@ -341,7 +341,7 @@ AA.add('stepGuide', {
       "Confirm that the current symptoms have lasted at least 6 months and are present most of the time, not only in bad patches.",
       "Rate adult impairment in each of the seven areas. Ask what happens, how often and what it has cost, tick examples, and choose None, Mild, Moderate or Severe against What each level means here.",
       "Rate childhood and adolescence the same way, using memories, informants and school reports.",
-      "Check the live criteria. The app shows C as met when two or more areas are affected, and D as met when any area is at least moderate. For UK practice, check that at least two areas are moderate or severe (NICE NG87 1.3.3; AQAS 2024).",
+      "Check the live criteria. The app shows C as met when two or more areas are affected, and D as met when any area is at least moderate. Criterion C is about symptoms showing in two or more settings, so also check that your symptom examples come from more than one setting. For UK practice, check that at least two areas are moderate or severe (AQAS 2024, applying NICE NG87 1.3.3).",
       "Write a short note on onset and the main areas of impairment, in the patient's words. The report draws on it."
     ],
     say: [
@@ -353,7 +353,7 @@ AA.add('stepGuide', {
     ],
     watch: [
       "Criterion B needs several symptoms before 12, not a diagnosis at that age. Structure and support can hide problems, and NICE advises against excluding ADHD because of an uncertain time of onset (NICE NG87 1.3.3; CR235 9.2).",
-      "Adult-onset ADHD with no childhood symptoms is not supported by the evidence (BAP 2014). Most apparent late onset still meets the before-12 rule on careful history; check impairment, psychiatric history and substance use (Kooij et al. 2019 section 5.3).",
+      "UK guidance does not support diagnosing ADHD that starts in adulthood with no childhood symptoms (BAP 2014), and 'late-onset ADHD' remains controversial. Most apparent late onset still meets the before-12 rule on careful history; check impairment, psychiatric history and substance use (Kooij et al. 2019 section 5.3).",
       "Abrupt onset of hyperactivity or inattention in adolescence or adulthood suggests another cause, such as bipolar disorder, psychosis, substances or a medical condition (ICD-11 CDDR).",
       "Rate impairment caused by the ADHD symptoms only, not impairment caused by depression, substance use or life events alone.",
       "High achievement does not rule ADHD out; impairment can lie in the effort and cost of achieving (AQAS 2024).",
@@ -372,16 +372,16 @@ AA.add('stepGuide', {
       "WHO ICD-11 CDDR 6A05 (onset and course)",
       "RCPsych CR235 (2023) 9.2",
       "Kooij et al. 2019 European Consensus section 5.3",
-      "BAP 2014 (Bolea-Alamañac et al.)"
+      "BAP 2014 (Bolea-Alamañac et al.): no evidence for later-onset ADHD without childhood symptoms"
     ]
   },
 
   /* ------------------------------------------------------------------ 9 */
   collateral: {
     goal: "Test the patient's account against people and records that knew them in childhood and know them now.",
-    time: "15-30 min, often by phone",
+    time: "15-30 minutes per informant, often by phone after the session",
     do: [
-      "With the patient's consent, speak to informants separately where possible: a parent or older sibling for childhood, a partner or close friend for adulthood. A phone call after the appointment is fine.",
+      "With the patient's consent, speak to informants separately, or alone for at least part of the time: a parent or older sibling for childhood, a partner or close friend for adulthood. A phone call after the appointment is fine.",
       "Record who gave the information and how, for example mother, by phone.",
       "Ask open questions first, then the listed questions. Ask for specific memories and comparisons with siblings or classmates, and tick each point the informant confirms.",
       "Read the school reports, primary school first. Tick the phrases you find and note whether comments recur across years and teachers.",
@@ -401,7 +401,7 @@ AA.add('stepGuide', {
       "School reports can be brief or kind. Reports on girls may say daydreaming, distracted or disorganised rather than disruptive (Young et al. 2020).",
       "Missing collateral for reasons outside the patient's control should not by itself rule out a diagnosis, but ICD-11 advises caution when childhood symptoms cannot be corroborated. Record how you weighed it (CR235 9.5; ICD-11 CDDR).",
       "Informants can over- or under-report, to protect the patient or because of conflict. Give more weight to specific, consistent detail than to general impressions.",
-      "Do not let the patient answer for the informant. Speak to the informant alone for at least part of the time (clinical practice)."
+      "Adults are often good reporters of their current symptoms, but childhood recall is weaker, especially with high ability, a structured upbringing or mainly inattentive problems. That is where informants and records matter most (Kooij et al. 2019 section 4). Do not let the patient answer for the informant (clinical practice)."
     ],
     done: [
       "Parent, partner and school sources are each rated 0, 1, 2 or n/a.",
@@ -414,6 +414,7 @@ AA.add('stepGuide', {
       "UKAAN AQAS 2024 (informants: one who knew the patient in childhood and one who knows them now)",
       "RCPsych CR235 (2023) 9.5",
       "WHO ICD-11 CDDR 6A05 additional features",
+      "Kooij et al. 2019 European Consensus section 4 (role of informants)",
       "Young et al. 2020, UKAP consensus on females with ADHD",
       "DIVA 2.0 collateral rating 0, 1, 2 (structure only)"
     ]
@@ -429,7 +430,7 @@ AA.add('stepGuide', {
       "For each condition, read Questions that tell them apart, ask any you have not yet covered, and tick the Features in this patient. The weighted score shows how strongly they point to the alternative.",
       "Apply the tests under How to judge: trait or episode, onset before 12, pervasiveness across settings, and timeline (do the ADHD symptoms persist when the other condition is absent or treated?). Then ask whether it explains every symptom and the childhood picture.",
       "Choose a verdict, using Better explains the symptoms when and Diagnose both when: absent; co-occurring; better explains; or uncertain. Write one line of reasoning in the notes.",
-      "Consider physical causes and medicines: thyroid disease, anaemia, hearing or vision problems, epilepsy, head injury, sleep disorders, and drugs such as levetiracetam, decongestants or bronchodilators. Arrange tests only if the history or examination points to them.",
+      "Consider physical causes and medicines: thyroid disease, anaemia, hearing or vision problems, epilepsy, head injury and sleep disorders; medicines that dull thinking (some anticonvulsants, mood stabilisers, sedating antihistamines), change behaviour (levetiracetam) or activate (decongestants, bronchodilators, caffeine). Arrange tests only if the history or examination points to them.",
       "For any uncertain verdict, plan what will settle it: records, an informant, a period of abstinence, treatment of mood, a sleep study or a specialist opinion.",
       "Work through the Step-by-step differential protocol further down this page. Its checklist makes sure no group of conditions is skipped, and the ticks are saved in the report."
     ],
@@ -460,7 +461,7 @@ AA.add('stepGuide', {
       "RCPsych CR235 (2023) 9.7, 11.5 and section 10",
       "CADDRA 4.1 chapter 2",
       "Kooij et al. 2019 European Consensus sections 6.3 and 7.2",
-      "May et al. 2023 (Australian guideline: no condition must be excluded first; medical mimics)",
+      "May et al. 2023 (Australian guideline 2.2.2: no condition must be excluded first; medical and medication mimics)",
       "Young et al. 2020, UKAP ADHD and autism consensus"
     ]
   },
@@ -511,10 +512,10 @@ AA.add('stepGuide', {
     time: "10-15 minutes",
     do: [
       "Check criterion A in the criteria table: at least 5 symptoms in either domain over the last 6 months (6 if under 17), each backed by an example. Use Review to go back to any step.",
-      "Check B (several symptoms before 12), C (two or more settings), D (clear impairment; at least moderate for NICE) and E (not better explained). Complete any criterion still pending.",
+      "Check B (several symptoms before 12), C (several symptoms in two or more settings), D (clear impairment; for UK practice at least moderate, in two or more areas) and E (not better explained). Complete any criterion still pending.",
       "Read Evidence strength. Resolve or record each minus or warning: unsure symptoms, missing collateral, disagreeing screens, unresolved differentials, validity concerns.",
       "Choose a decision: criteria met; not met; other specified (impairing symptoms below the full criteria, with the reason stated); or deferred (more information needed).",
-      "If met, record the presentation for the last 6 months (combined, predominantly inattentive or predominantly hyperactive-impulsive) and the severity (mild, moderate or severe), using the suggestion as a guide. Tick In partial remission only if full criteria were met in the past.",
+      "If met, record the presentation for the last 6 months (combined, predominantly inattentive or predominantly hyperactive-impulsive) and the severity (mild, moderate or severe), using the suggestion as a guide. Tick In partial remission only when full criteria were met in the past, fewer are met now, and impairment continues, for example in an adult diagnosed as a child.",
       "List co-occurring conditions (Fill from differential verdicts helps) and how they affect the picture and the order of treatment.",
       "Write the formulation in a few sentences: why the evidence does or does not meet each criterion, and what remains uncertain."
     ],
@@ -528,7 +529,7 @@ AA.add('stepGuide', {
       "Do not count your way to a diagnosis. Reaching the threshold is necessary but not enough: criteria B to E and clinical judgement matter as much (AQAS 2024; CR235 9.2).",
       "Mild impairment alone may satisfy the DSM-5-TR wording but does not meet the NICE NG87 1.3.3 threshold for a diagnosis in UK practice. Record which standard you applied and why.",
       "Say which system you used. DSM-5-TR uses fixed symptom counts; ICD-11 asks for several symptoms and has no severity or remission specifier. Presentation describes the last 6 months and can change over time.",
-      "The F90 codes shown are US ICD-10-CM codes that go with DSM-5-TR. WHO ICD-10, still used in some NHS records, codes ADHD differently (F90.0 for any presentation with hyperactivity; F98.8 for inattention only), so follow your local coding rules.",
+      "The F90 codes shown are US ICD-10-CM codes that go with DSM-5-TR. WHO ICD-10, still used for NHS hospital coding, uses the same numbers differently: the WHO crosswalk maps combined presentation to F90.0, predominantly hyperactive-impulsive to F90.8, and inattention without hyperactivity to F98.8. Follow your local coding rules.",
       "If criteria are not met, say whether this is subthreshold ADHD or symptoms better explained by another condition, and still give information (NICE NG87 1.4.4; AQAS 2024).",
       "Evidence strength and the DIVA 2.0 score form view (DSM-IV rules) are aids for comparison, not validated scales. Your clinical judgement makes the decision."
     ],
@@ -540,7 +541,7 @@ AA.add('stepGuide', {
     next: "Go to Report and next steps to give feedback, agree a plan and finalise the report.",
     src: [
       "DSM-5-TR criteria A to E, presentations and specifiers (paraphrased)",
-      "WHO ICD-11 CDDR 6A05; WHO ICD-10 F90 and F98.8",
+      "WHO ICD-11 CDDR 6A05 and its ICD-11 to ICD-10 crosswalk; WHO ICD-10 F90 and F98.8",
       "NICE NG87 1.3.3 and 1.4.4",
       "UKAAN AQAS 2024 theme 2 (report contents)",
       "RCPsych CR235 (2023) 9.2"
@@ -554,12 +555,12 @@ AA.add('stepGuide', {
     do: [
       "Give the outcome in plain language: what you found, why, and what it means. Allow time for questions and for the patient to take it in. Feedback can be a separate appointment.",
       "If ADHD is diagnosed, hold the structured discussion: positives and negatives of the diagnosis, impulsive behaviour, environmental changes, education and work adjustments, relationships, coexisting conditions, the risk of substance misuse and self-medication, and driving.",
-      "Agree the plan and tick the items that fit your decision: information and support groups, environmental modifications, treatment options and follow-up.",
+      "Agree the plan and tick the items that fit your decision: information and support groups, environmental modifications, treatment options and follow-up. Before any treatment starts, agree measurable goals and ask the GP about shared care for future prescribing (AQAS 2024 Table 2).",
       "If medication is an option, make sure the baseline is done: pulse, blood pressure, height, weight and a cardiovascular assessment. Refer to cardiology if any NICE NG87 1.7.5 feature is present.",
       "Explain the driving rule: the patient must tell the DVLA (DVA in Northern Ireland) only if their ADHD or its medication affects their ability to drive safely.",
       "If ADHD is not diagnosed, explain the alternative explanation or what is still unclear, and give information and signposting all the same.",
-      "Review the draft report: symptoms with examples, scale scores, collateral, conditions present and absent, the statement that the symptoms are not better explained by another disorder, presentation, impaired domains and the plan. Edit it so it supports its own conclusion.",
-      "Copy the report into the clinical record and add identifiers there, not in this app. With the patient's agreement, send it to the GP. Tick I have reviewed and edited this draft.",
+      "Read the draft report: symptoms with examples, scale scores, collateral, conditions present and absent, the statement that the symptoms are not better explained by another disorder, presentation, impaired domains and the plan. It is built from your entries, so correct an earlier step if a line is wrong. The report must support its own conclusion.",
+      "Copy the report into the clinical record, then edit the wording and add identifiers there, not in this app. With the patient's agreement, send it to the GP. Tick I have reviewed and edited this draft.",
       "Mark the assessment complete, then delete it from this browser (Home, then Delete) so identifiable data does not stay here."
     ],
     say: [

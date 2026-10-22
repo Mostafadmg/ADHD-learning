@@ -348,6 +348,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--accent); }
 .guide[open] > summary::after { content: "Hide"; }
 .guide-k { font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: var(--accent); flex: 0 0 100%; }
 .guide-goal { font-weight: 700; flex: 1 1 260px; min-width: 0; }
+.guide-time { white-space: normal; max-width: 100%; text-align: left; line-height: 1.35; }
 .guide-body { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: .4rem 1.6rem; padding: 0 1rem 1rem; }
 .guide-col { min-width: 0; }
 .guide h3 { font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: .7rem 0 .3rem; font-family: var(--font-body); font-weight: 700; }

@@ -5,8 +5,9 @@
    Item wording, thresholds and scoring were checked against the official forms (WHO ASRS v1.1 2003 layout;
    CADDRA WFIRS-S and WSR-II; NHS and UBC copies of the WURS-25) and the papers cited in each entry.
    Licence status is recorded per tool in `licence`. PDFs are redistributed only where the rights holder
-   clearly allows it (WFIRS-S and WSR-II: Dr M. D. Weiss's free-use statement printed on the forms).
-   Sources: Kessler et al. 2005, 2007; Adler et al. 2019; Ustun et al. 2017; van de Glind et al. 2013;
+   clearly allows it (WFIRS-S and WSR-II: the free-use statement by Dr M. D. Weiss printed on the forms).
+   Sources: Kessler et al. 2005, 2007; Harvard NCS ASRS v1.1 screener scoring update (February 2024);
+   Adler et al. 2019; Ustun et al. 2017; van de Glind et al. 2013; Iwanami et al. 2026;
    Brevik et al. 2020; Ward et al. 1993; Kouros et al. 2018; Mannuzza et al. 2002; CADDRA WFIRS guides 2011
    and 2025; Canu et al. 2020; UKAAN AQAS (Adamou et al. 2024); RCPsych CR235 (2023); NICE NG87 and HTG729;
    DIVA Foundation website (October 2026); MHS, PAR, Guilford and Pearson publisher information. */
@@ -19,13 +20,13 @@ AA.add('tools', [
     who: "Self-report by the patient. A partner or close other can complete it as an observer report (CADDRA).",
     time: "About 5 minutes", ages: "Adults (18 and over)", items_n: 18,
     purpose: "Screens for current adult ADHD symptoms. The 18 items follow the 18 DSM-IV-TR symptoms and ask how often each happened in the past 6 months. Part A (items 1-6) is the validated 6-item screener. Part B (items 7-18) covers the remaining symptoms and works as a set of prompts for the interview.",
-    when: "Before the first appointment (Screen step), so the answers are ready when the interview starts. Use it as a screen and a baseline only. UKAAN's quality standard (AQAS 2024) says self-rated symptom scales should give a baseline for measuring change and should not form part of the diagnostic evidence. Repeat it at follow-up and after dose changes to track response. Do not use it alone to accept or reject a referral: RCPsych CR235 (2023) calls the ASRS undiscriminating for triage, and NHS England's ADHD Taskforce says a positive screen on its own is not a reason to refer.",
-    how: "Give the patient a copy without shading (the shaded boxes are a scoring guide). Ask them to rate the past 6 months. Count the Part A answers that fall in the shaded range, then read the Part B answers. In the interview, ask for real examples of every item in the shaded range and how each problem affects work, home and relationships. The form also reminds clinicians to check childhood: some significant symptoms should have been present in childhood, but not necessarily the full set.",
+    when: "Before the first appointment (Screening step), so the answers are ready when the interview starts. Use it as a screen and a baseline only. UKAAN's quality standard (AQAS 2024) says self-rated symptom scales should give a baseline for measuring change and should not form part of the diagnostic evidence. Repeat it at follow-up and after dose changes to track response. Do not use it alone to accept or reject a referral: RCPsych CR235 (2023) calls the ASRS undiscriminating for triage, and NHS England's ADHD Taskforce says a positive screen on its own is not a reason to refer.",
+    how: "Give the patient a copy without shading (the shaded boxes are a scoring guide). Ask them to rate the past 6 months. Count the Part A answers that fall in the shaded range and add up the Part A scores (0-24), then read the Part B answers. In the interview, ask for real examples of every item in the shaded range and how each problem affects work, home and relationships. The form also reminds clinicians to check childhood: some significant symptoms should have been present in childhood, but not necessarily the full set.",
     interactive: true,
     instructions: "Rate yourself on each question. Choose the answer that best describes how you have felt and conducted yourself over the past 6 months.",
     options: [{ v: 0, l: "Never" }, { v: 1, l: "Rarely" }, { v: 2, l: "Sometimes" }, { v: 3, l: "Often" }, { v: 4, l: "Very often" }],
     items: [
-      { n: 1, part: "A", threshold: 2, section: "Part A", sectionNote: "The 6-item screener. Four or more answers in the shaded range is a positive screen.", t: "How often do you have trouble wrapping up the final details of a project, once the challenging parts have been done?" },
+      { n: 1, part: "A", threshold: 2, section: "Part A", sectionNote: "The 6-item screener. Positive if 4 or more answers are in the shaded range (original rule) or the 0-24 sum is 14 or more (2024 scoring).", t: "How often do you have trouble wrapping up the final details of a project, once the challenging parts have been done?" },
       { n: 2, part: "A", threshold: 2, t: "How often do you have difficulty getting things in order when you have to do a task that requires organization?" },
       { n: 3, part: "A", threshold: 2, t: "How often do you have problems remembering appointments or obligations?" },
       { n: 4, part: "A", threshold: 3, t: "When you have a task that requires a lot of thought, how often do you avoid or delay getting started?" },
@@ -47,15 +48,23 @@ AA.add('tools', [
     scoring: {
       method: "asrs18", partA: 4,
       subscales: [
+        { id: "parta", label: "Part A sum (items 1-6, scored 0-4; Harvard NCS 2024 scoring)", items: [1, 2, 3, 4, 5, 6], cutoff: 14,
+          bands: [
+            { min: 0, max: 9, label: "Low negative (0-9)", sev: 0 },
+            { min: 10, max: 13, label: "High negative (10-13)", sev: 1 },
+            { min: 14, max: 17, label: "Low positive (14-17)", sev: 2 },
+            { min: 18, max: 24, label: "High positive (18-24)", sev: 3 }
+          ] },
         { id: "ia", label: "Inattention (items 1-4, 7-11)", items: [1, 2, 3, 4, 7, 8, 9, 10, 11] },
         { id: "hi", label: "Hyperactivity-impulsivity (items 5-6, 12-18)", items: [5, 6, 12, 13, 14, 15, 16, 17, 18] }
       ]
     },
     interpretation: [
-      "Part A screen: count items 1-6 answered in the shaded range. Items 1-3 are shaded from 'Sometimes'; items 4-6 from 'Often'. Four or more is a positive screen. The form says such symptoms are highly consistent with adult ADHD and warrant further investigation. It is not a diagnosis.",
+      "Part A screen, original rule (printed on the form): count items 1-6 answered in the shaded range. Items 1-3 are shaded from 'Sometimes'; items 4-6 from 'Often'. Four or more is a positive screen. The form says such symptoms are highly consistent with adult ADHD and warrant further investigation. It is not a diagnosis.",
+      "Part A screen, 0-24 sum: the Harvard National Comorbidity Survey team (scoring update, February 2024) now prefers summing items 1-6 scored 0 (never) to 4 (very often). A total of 14 or more is a positive screen, and the total falls into four bands: 0-9 low negative, 10-13 high negative, 14-17 low positive, 18-24 high positive (the four-level screener of Kessler et al. 2007). The app shows both results. If they disagree, say which rule you used and let the interview decide.",
       "Part B (items 7-18): the form gives no total score or likelihood. Items 9, 12, 16 and 18 are shaded from 'Sometimes'; the others from 'Often'. Treat shaded answers as prompts for the interview.",
       "The subscale totals (0-36 each) and the overall total (0-72) shown in the app are raw frequency sums. They are useful as a baseline for measuring change. They have no official cut-off.",
-      "Research scorings you may meet. (1) Adler et al. 2019 scored each item 1 if shaded and counted inattention and hyperactivity-impulsivity items separately (0-9 each); 6 or more on either was called symptomatic, a DSM-IV-era rule. (2) Brevik et al. 2020 summed all 18 items (0-72): adults with ADHD averaged 45.0 and controls 23.0; a cut-off of 35 gave sensitivity 0.80 and specificity 0.88. (3) A summed Part A score (0-24) with a cut-off of 14 did no better than the shaded rule in substance use treatment, so those authors kept the shaded rule.",
+      "Research scorings you may meet. (1) Adler et al. 2019 scored each item 1 if shaded and counted inattention and hyperactivity-impulsivity items separately (0-9 each); 6 or more on either was called symptomatic, a DSM-IV-era rule. (2) Brevik et al. 2020 summed all 18 items (0-72): adults with ADHD averaged 45.0 and controls 23.0; a cut-off of 35 gave sensitivity 0.80 and specificity 0.88. (3) In substance use treatment (van de Glind et al. 2013), the 0-24 sum with a cut-off of 14 did no better than the shaded rule (sensitivity 0.81, specificity 0.70), so those authors kept the shaded rule in that setting. (4) Totals and bands from commercial websites (for example Part B 27 or more, total 40 or more) are not from a primary source.",
       "A negative screen does not rule ADHD out. In the original community study the screener detected about 7 in 10 cases (sensitivity 68.7%).",
       "A positive screen is common in people without ADHD. In England the share of adults screening positive on the 6-item ASRS rose from 8.2% (2007) to 13.9% (2024) in the Adult Psychiatric Morbidity Survey. The DHSC Independent Review (2026) stresses that screening positive is not the same as a diagnosis."
     ],
@@ -67,11 +76,12 @@ AA.add('tools', [
       "It does not check onset before 12, pervasiveness, impairment or other explanations, so it can neither make nor exclude a diagnosis.",
       "The wording is based on DSM-IV and leans on work settings. Adapt your follow-up questions for people who are not working; do not reword the items.",
       "Give the patient an unshaded copy. The shading shown in this app is for the clinician.",
-      "Do not confuse it with the ASRS-5, a different 6-item DSM-5 screener with weighted scoring."
+      "Do not confuse it with the ASRS-5, a different 6-item DSM-5 screener with weighted scoring.",
+      "Do not use the 2018 weighted 'DSM-5 scoring' of the six v1.1 screener items that still circulates online. Kessler withdrew it in a memo of December 2023: it reversed the scoring of two items, overfitted the data and overestimated prevalence. Use the original rules above."
     ],
     adhdNotes: "Use the shaded items as a map for the interview. For each one, ask for recent, specific examples and how often they happen compared with other people of the same age. A high score with few real examples suggests distress, another condition or over-reporting, so look at validity. A low score with a strong history and informant support suggests low insight, masking or a highly structured life. Where possible compare the patient's form with a partner's. Keep the result as a baseline and repeat it after treatment starts.",
     licence: "Part A (6-item screener): free for clinical and non-clinical use, including commercial use, with attribution; no changes except making an electronic version (NYU Langone licensing page; copyright New York University and the President and Fellows of Harvard College). Full 18-item checklist: the form carries '© World Health Organization 2003. All rights reserved', with requests to reproduce sent to Professor Ronald Kessler. NYU now licenses it: clinical-use permission through the 'ADHD in Adults' website, and a commercial website or app licence priced on application. PhenX lists the checklist as freely available without permission. Because these sources conflict, the Part B items are shown here for clinical use with the WHO notice, and written permission from NYU should be obtained before public release. The PDF is not redistributed (all rights reserved); CADDRA hosts a printable copy.",
-    source: "Kessler RC, Adler L, Ames M, et al. The World Health Organization Adult ADHD Self-Report Scale (ASRS): a short screening scale for use in the general population. Psychol Med 2005;35:245-256. ASRS-v1.1 Symptom Checklist © World Health Organization 2003. Shading and subtype scoring: Adler LA et al. Establishing US norms for the Adult ADHD Self-Report Scale (ASRS-v1.1). Int J Clin Pract 2019;73:e13260.",
+    source: "Kessler RC, Adler L, Ames M, et al. The World Health Organization Adult ADHD Self-Report Scale (ASRS): a short screening scale for use in the general population. Psychol Med 2005;35:245-256. ASRS-v1.1 Symptom Checklist © World Health Organization 2003. Harvard Medical School, National Comorbidity Survey. ASRS v1.1 screener (6Q) scoring update, 28 February 2024. Kessler RC. DSM-5 scoring of DSM-IV ASRS (memo), 8 December 2023. Kessler RC et al. Int J Methods Psychiatr Res 2007;16:52-65. Shading and subtype scoring: Adler LA et al. Establishing US norms for the Adult ADHD Self-Report Scale (ASRS-v1.1). Int J Clin Pract 2019;73:e13260.",
     url: "https://license.tov.med.nyu.edu/product/asrs-v11-18-question-symptom-checklist",
     file: null
   },
@@ -96,7 +106,8 @@ AA.add('tools', [
       "Only one inattention item, although inattention dominates adult ADHD.",
       "Specificity is poor in bipolar disorder and borderline personality disorder (AADPA 2022 evidence review).",
       "The development interviews did not use informants or exclude conditions such as bipolar disorder. The developers say the scale is best suited to people with enough insight to recognise their symptoms.",
-      "Do not score it with unweighted 0-4 points and report the result as an ASRS-5 score."
+      "Do not score it with unweighted 0-4 points and report the result as an ASRS-5 score.",
+      "Do not confuse it with the withdrawn 2018 'DSM-5 scoring' of the ASRS v1.1 screener items. That was a different set of items and weights, and Kessler withdrew it in December 2023."
     ],
     adhdNotes: "If you use it, treat it like the ASRS v1.1 screener: a reason to assess, not evidence for the diagnosis. Its two non-DSM items (putting things off and relying on others) also rise with depression, anxiety and low confidence. ASRS v1.1 Part A is free to use and is scored in this app, so prefer it unless your service is licensed for the ASRS-5.",
     licence: "Items are printed in an AMA-copyright article (JAMA Psychiatry 2017), free to read on PubMed Central. NYU's licensing page offers a free 1-year research licence that needs an institutional signatory and describes the scoring as proprietary; clinical and commercial terms are not stated. Without the scoring key the validated score cannot be produced, so the items are not reproduced or scored here and no PDF is redistributed.",
@@ -112,7 +123,7 @@ AA.add('tools', [
     who: "Self-report: the adult rates their own childhood", time: "Not stated in the sources (25 short items; a few minutes in practice)",
     ages: "Adults (retrospective report of childhood)", items_n: 25,
     purpose: "Gives a self-rated picture of childhood behaviour and mood. The 25 items are those from the 61-item WURS that best separated adults with ADHD from comparison groups in the original study. The numbers shown beside each item are its numbers on the 61-item form.",
-    when: "Before the childhood part of the interview (Screen step), alongside school reports and informant accounts. It helps you plan the childhood questions and gives a cross-check for criterion B. It cannot establish childhood onset on its own: adults recall their childhood poorly, so look for evidence from the time.",
+    when: "Before the childhood part of the interview (Screening step), alongside school reports and informant accounts. It helps you plan the childhood questions and gives a cross-check for criterion B. It cannot establish childhood onset on its own: adults recall their childhood poorly, so look for evidence from the time.",
     how: "The patient rates each description from 0 (not at all or very slightly) to 4 (very much) for how they were as a child. Add the 25 items (0-100). If the full 61-item form was used, score only these 25 items and ignore the rest.",
     interactive: true,
     instructions: "Think about yourself as a child. For each description, choose how much it applied to you. Each item completes the sentence in the heading above it.",
@@ -183,7 +194,7 @@ AA.add('tools', [
     who: "Self-report (adolescents and adults). A parent form (WFIRS-P) exists for children.",
     time: "Not stated by the author (69 short items; allow 10-15 minutes in practice)", ages: "Adolescents and adults", items_n: 69,
     purpose: "Measures how emotional or behavioural problems have affected daily functioning in the last month, across 7 domains: family, work, school, life skills, self-concept, social and risk. It leaves out ADHD symptom items, so it measures impairment separately from symptoms.",
-    when: "Send it before the appointment (Screen step) and use the domain profile to structure the impairment questions for criteria C and D. Repeat it at follow-up: it was designed to show change in functioning with treatment. UKAAN's quality standard lists it as supporting evidence only; the impairment judgement should rest mainly on the interview.",
+    when: "Send it before the appointment (Screening step) and use the domain profile to structure the impairment questions for criteria C and D. Repeat it at follow-up: it was designed to show change in functioning with treatment. UKAAN's quality standard lists it as supporting evidence only; the impairment judgement should rest mainly on the interview.",
     how: "The patient rates each item from 0 to 3 for the last month, or marks it not applicable (for example the School section when not studying). For each domain, count items rated 2 or 3 and work out the mean of the answered items. In the interview, ask about every impaired domain: what happened, how often, and what it cost.",
     interactive: true,
     instructions: "Choose the rating that best describes how your emotional or behavioural problems have affected each item in the last month.",
@@ -275,9 +286,9 @@ AA.add('tools', [
     interpretation: [
       "A domain counts as impaired when 2 or more items are rated 2 or higher, or any item is rated 3, or the domain mean is 1.5 or more (CADDRA WFIRS-S scoring guide 2025; the 2011 instructions say a mean above 1.5). Not-applicable items are left out of every calculation.",
       "At item level, any rating of 2 or 3 marks a clinically impaired area (CADDRA 2011 instructions).",
-      "The app reads 2 or more impaired domains as a positive result, in line with the DSM-5-TR and NICE requirement for impairment in at least 2 settings. The interview must confirm it.",
+      "The app reads 2 or more impaired domains as a positive result, as a prompt to check the DSM-5-TR and NICE requirement for impairment in at least 2 settings. It is not the same thing: Self-concept and Risk are not settings, so 2 impaired domains can come from one setting or none. The interview must confirm impairment in each setting.",
       "Use the total and domain means to track change. CADDRA's 2011 instructions describe a fall of 13 points in the total as a significant improvement (about half a standard deviation).",
-      "Domains map to the interview's impairment areas: Family to partner and family; Work and School to work and education; Life skills to daily life; Self-concept to self-image; Social to social life; Risk to safety."
+      "Domains map to the interview's impairment areas: Family to Partner and family; Work and School to Work and education; Life skills to Daily life, money and admin; Self-concept to Self-confidence and self-image; Social to Friends and social contacts (item F5 to Free time and hobbies); Risk to Driving, health and safety."
     ],
     psychometrics: "CADDRA 2011 instructions: internal consistency above 0.8 for each domain and for the whole scale; convergent validity about 0.6 with the Columbia Impairment Scale and GAF; correlation about 0.4 with symptom ratings; domains supported by factor analysis; sensitive to change (data mainly from children and parents). Canu et al. 2020 (2,093 college students and 262 informants): good reliability, cross-informant agreement and concurrent validity, but scores were also linked to internalising symptoms, so they are not specific to ADHD. French adult version (Micoulaud-Franchi et al. 2019; 363 adults with ADHD): alpha 0.91, poor factor fit (CFI 0.67), correlation 0.53 with BDI-II depression scores. Japanese version (Takeda et al. 2017): subscale alpha about 0.80, floor effects in the Risk domain. No adult cut-off derived from accuracy studies has been published.",
     pitfalls: [
@@ -332,7 +343,7 @@ AA.add('tools', [
   {
     id: "diva2", abbr: "DIVA 2.0", name: "Diagnostic Interview for ADHD in Adults, version 2.0 (DSM-IV)",
     group: "adhd-interview", stage: ["interview", "collateral", "diagnosis"],
-    who: "Clinician, with the patient and ideally a partner and/or family member present", time: "About 1.5 hours",
+    who: "Clinician, with the patient and, where possible, a relative or partner who can describe childhood and current behaviour", time: "About 1.5 hours",
     ages: "Adults", items_n: 18,
     purpose: "The 2010 DSM-IV version of the DIVA (Kooij and Francken, DIVA Foundation). Same structure as DIVA-5: the 18 symptoms in adulthood and childhood with examples, age of onset, impairment in five areas of life and collateral information. DIVA-5 replaced it in 2019, but it is still found in older reports and some services, and CADDRA 4.1 offers it as an interview option.",
     when: "You will meet it in earlier assessments and in services that have not moved to DIVA-5. If you use it now, apply DSM-5-TR rules instead of the DSM-IV rules printed on the form.",
@@ -363,7 +374,7 @@ AA.add('tools', [
     group: "adhd-interview", stage: ["pre", "interview", "collateral", "diagnosis"],
     who: "Clinician, with the patient and ideally an informant present. Self-report (ACE+SR) and informant (ACE+IR) pre-assessment questionnaires are available.",
     time: "Not stated in the sources reviewed; plan for a full semi-structured interview",
-    ages: "Adults. The author's site describes ACE+ v.2 for people over 17; a 2020 UK consensus lists ACE+ for age 16 and over. ACE covers children.", items_n: 18,
+    ages: "Adults. The author's site describes ACE+ v.2 for people over 17; a 2020 UK consensus lists ACE+ for age 16 and over. ACE v.2 covers children and young people aged 5-16.", items_n: 18,
     purpose: "Free semi-structured interview by Professor Susan Young covering the ADHD criteria of both DSM-5 and ICD-11, for adulthood and childhood. Self and informant questionnaires (ACE+SR and ACE+IR) gather childhood and recent behaviour before the appointment.",
     when: "A free alternative to DIVA-5 for the core interview (Inattention, Hyperactivity-impulsivity, Onset and Collateral steps). UKAAN's quality standard lists it with DIVA and CAADID as a recommended interview. Send the ACE+SR and ACE+IR before the appointment if you use them.",
     how: "Download the interview and questionnaires from the author's site after a free registration. Work through each symptom for adulthood and childhood with open questions and examples, involve an informant where possible, and use the summary to check each DSM-5 or ICD-11 criterion.",
@@ -570,16 +581,16 @@ AA.add('tools', [
     interpretation: [
       "Higher totals mean more severe current symptoms. Use change from baseline to judge treatment response.",
       "Silverstein et al. 2019 (297 adults, 171 with ADHD) reported that 18-item AISRS totals of 23-26 suggested a high likelihood of adult ADHD. An expanded version adds executive function and emotional control items.",
-      "The item rating range (often quoted as 0-3, total 0-54) was not verified for this app; check the scale before scoring."
+      "Each of the 18 items is rated 0 (none) to 3 (severe), so the total runs from 0 to 54 and each subscale (inattention, hyperactivity-impulsivity) from 0 to 27 (Iwanami et al. 2026; NIDA Data Share)."
     ],
-    psychometrics: "Spencer et al. 2010: high internal consistency and sensitivity to change with medication. Silverstein et al. 2019 as above.",
+    psychometrics: "Spencer et al. 2010: high internal consistency and sensitivity to change with medication. Silverstein et al. 2019 (297 people, 171 with ADHD, referred and primary care samples): high alpha; 95th-centile cut-offs of 23 (non-ADHD referrals) and 26 (pilot norms) for the 18-item total. Iwanami et al. 2026 (Japanese version, 61 adults with ADHD): alpha 0.83, test-retest ICC 0.77, inter-rater G coefficient 0.96, correlation 0.89 with the ASRS.",
     pitfalls: [
       "Rating quality depends on training.",
       "Not a diagnostic interview: it does not check onset, pervasiveness or other explanations."
     ],
     adhdNotes: "A clinician rating is less open to over-endorsement than self-report and gives a better baseline record of severity. Pair it with a functional measure such as the WFIRS-S.",
-    licence: "Not open access (European Consensus 2019). Licensing is understood to be through Massachusetts General Hospital or NYU; the terms were not verified. Not reproduced here.",
-    source: "Spencer TJ, Adler LA, Qiao M, et al. Validation of the Adult ADHD Investigator Symptom Rating Scale (AISRS). J Atten Disord 2010;14:57-68. Silverstein MJ et al. J Atten Disord 2019;23:1101-1110.",
+    licence: "Copyrighted and not open access (European Consensus 2019). Translators have had to obtain formal permission from the copyright holder (Iwanami et al. 2026), and NYU licenses the related adult ADHD scales; the AISRS terms and fees were not verified. Not reproduced here.",
+    source: "Spencer TJ, Adler LA, Qiao M, et al. Validation of the Adult ADHD Investigator Symptom Rating Scale (AISRS). J Atten Disord 2010;14:57-68. Silverstein MJ et al. J Atten Disord 2019;23:1101-1110. Iwanami A et al. Reliability and convergent validity of the AISRS-Japanese. Front Psychiatry 2026 (PMC13457393).",
     url: "https://pubmed.ncbi.nlm.nih.gov/19794135/",
     file: null
   },
@@ -588,16 +599,16 @@ AA.add('tools', [
   {
     id: "wsr2", abbr: "WSR-II", name: "Weiss Symptom Record II",
     group: "other", stage: ["pre", "comorbid", "risk"],
-    who: "Patient, partner, parent or teacher (CADDRA)", time: "Not stated by the author",
+    who: "The adult, a partner, a parent or a teacher (CADDRA toolkit); the form has a box to name the informant", time: "Not stated by the author",
     ages: "All ages (some items, such as wetting and soiling, apply to children)", items_n: null,
     purpose: "Free broad problem checklist from the CADDRA toolkit. Each item is rated none (0), mild (1), moderate (2), severe (3) or not applicable. Sections cover attention, hyperactivity-impulsivity, oppositional and conduct problems, development and learning, autism spectrum, motor problems such as tics, psychosis, depression, mood regulation, suicide, anxiety, stress and trauma, sleep, eating, substance use, other addictions and personality traits.",
-    when: "Before the first appointment (Co-occurring conditions step), as a broad screen for conditions that co-occur with or mimic ADHD. CADDRA uses it for general mental health screening before the ADHD-specific assessment. Follow up every flagged section with a specific tool or interview, and review any suicide item before the patient leaves.",
+    when: "Before the first appointment (Co-occurring conditions screen step), as a broad screen for conditions that co-occur with or mimic ADHD. CADDRA uses it for general mental health screening before the ADHD-specific assessment. Follow up every flagged section with a specific tool or interview, and review any suicide item before the patient leaves.",
     how: "Give the form to the patient and, if helpful, to a partner or parent. Review every item rated moderate or severe, and any rating in the risk-related sections.",
     interactive: false, items: [], scoring: null,
     interpretation: [
-      "There is no total score. CADDRA's 2018 toolkit counts the items rated moderate or severe (2 or 3) in each section. As a guide, 5 or more in the attention section, or in the hyperactivity-impulsivity section, suggests adult ADHD; 5 or more in depression suggests depression; 3 or more in mood regulation is flagged.",
-      "Any moderate or severe rating in sections such as suicide, psychosis, development, autism spectrum, motor, stress, sleep, substance use or addictions counts as 'at risk' and needs exploring.",
-      "Any rating above none on a suicide item needs a risk assessment.",
+      "There is no total score. CADDRA's 2018 toolkit counts the items rated moderate or severe (2 or 3) in each section. Screening cut-offs: adult ADHD 5 or more in the attention section or in the hyperactivity-impulsivity section; oppositional 4; conduct 3; depression 5; persistent depressive disorder 2; mood regulation 3.",
+      "Any moderate or severe rating in the development, motor, psychosis, suicide, autism spectrum, stress, sleep, substance use or addictions sections, or in the last 5 personality items, counts as 'at risk' and needs exploring. The first 6 personality items screen for borderline personality disorder.",
+      "Ask about any suicide item rated above none and assess risk the same day (clinical practice).",
       "These thresholds come from the 2018 toolkit. Check them against the current form (July 2022 version)."
     ],
     psychometrics: "A clinical screening checklist. No validation data were found for this app.",
@@ -619,11 +630,12 @@ AA.add('tools', [
     who: "Patient performs a computer test; set up and interpreted by trained staff", time: "One computer test session (length set by the manufacturer)",
     ages: "Norms 6-60. NICE recommends it as an option only for ages 6-17.", items_n: null,
     purpose: "A computerised continuous performance test combined with infrared tracking of head movement (Qbtech). It reports measures of attention, impulsivity and activity compared with age and sex norms.",
-    when: "Not recommended for diagnosing adults. NICE HTG729 recommends QbTest as an option to help diagnose ADHD in people aged 6-17, only alongside standard clinical assessment (1.1), and says more research is needed in people 18 and over (1.2), funded outside core NHS budgets. If an adult brings a QbTest report, record it but do not let it decide the diagnosis.",
+    when: "Not recommended for diagnosing adults. NICE HTG729 recommends QbTest as an option to help diagnose ADHD in people aged 6-17, only alongside standard clinical assessment (1.1), and says more research is needed in people 18 and over (1.2). Use for that purpose should be funded by the company, by research or from non-core NHS budgets (1.5). If an adult brings a QbTest report, record it but do not let it decide the diagnosis.",
     how: "Administered by trained staff following the manufacturer's protocol. The report compares the results with norms.",
     interactive: false, items: [], scoring: null,
     interpretation: [
       "In adults, a normal result does not exclude ADHD and an abnormal result does not confirm it.",
+      "Do not use it to judge response to medication either: NICE says more research is needed before QbTest is used to evaluate treatment response, at any age (HTG729 1.3).",
       "CADDRA notes that continuous performance test results overlap heavily between people with and without ADHD, and the European Consensus (2019) found neuropsychological tests insufficient for diagnosis."
     ],
     psychometrics: "Adamou et al. 2022 (69 UK adult referrals): QbTest+ failed to differentiate adults with and without ADHD. Brunkhorst-Kanaan et al. 2020 (114 adults in a specialist clinic): only the activity measure differed (AUC 65%), and the authors concluded that such tests do not help identify ADHD in that setting. Systematic review: Tomlinson et al. 2025, Health Technol Assess 29(58). NICE's committee found limited evidence in adults and said evidence from under-18s does not generalise to adults.",
