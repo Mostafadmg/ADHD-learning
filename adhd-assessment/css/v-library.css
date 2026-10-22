@@ -140,3 +140,6 @@
 .lib-gl-meta { color: var(--muted); font-size: .9rem; font-weight: 700; margin: 0 0 .4rem; }
 .lib-gl .disclosure { margin: .5rem 0 0; }
 .lib-gl-link { margin: .8rem 0 0; }
+/* Long tool names wrap inside chips on phones instead of widening the page. */
+.lib-chip { white-space: normal; max-width: 100%; text-align: left; overflow-wrap: anywhere; }
+li:has(> .lib-chip) { max-width: 100%; min-width: 0; }
