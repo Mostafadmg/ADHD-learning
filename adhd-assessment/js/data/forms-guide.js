@@ -6,9 +6,11 @@
    European Consensus 2019 (Kooij et al.), CADDRA 4.1 (2020), AADPA 2022, NHSE ADHD Taskforce (2025), DHSC review (2026),
    ICD-11 CDDR, NICE CG142, CG185, NG222, NG225 and the instrument papers named in each entry.
    Instrument wording is not reproduced beyond short themes. Licensed tools (CAARS 2, BAARS-IV, ASRS-5 weighted scoring,
-   MDQ, MSI-BPD, STOP-Bang, Epworth) are described, not copied. DIVA wording is not used.
+   STOP-Bang, Epworth) and tools whose reproduction licence is unconfirmed (MDQ, MSI-BPD) are described, not copied.
+   DIVA wording is not used.
    Worked examples are fictional people. Prevalence figures marked 'illustrative' are teaching assumptions, not data.
-   Sources: research briefs of 21 October 2026 (tools-adhd, tools-comorbid-items, guidelines-uk, guidelines-intl). */
+   Sources: research briefs of 21 October 2026 (tools-adhd, tools-comorbid, guidelines-uk, guidelines-intl, ddx-evidence);
+   Schiweck et al. 2021 meta-analysis (Neurosci Biobehav Rev 124:100-123) for bipolar disorder in adult ADHD. */
 AA.add('formsGuide', {
   intro:
     "<p>Before the first appointment most services send questionnaires to the patient and, with consent, to people who know them, and ask for old school reports and records. " +
@@ -37,13 +39,13 @@ AA.add('formsGuide', {
     "Self-report symptom scales are a baseline, not evidence for the diagnosis. UKAAN AQAS 2024: they consist of leading questions, and relying on them and on checklist interviewing risks confirmation bias. Record them, use them to plan the interview and to measure change later.",
     "Base rates decide what a score means. The same result has a different positive predictive value in different settings: in the 2024 Adult Psychiatric Morbidity Survey 13.9% of adults in England screened positive on ASRS Part A, while adult ADHD prevalence is estimated at about 2.5-2.8% (WFADHD 2021). In a specialist clinic, where prevalence is much higher, the same result is far more likely to be a true positive.",
     "A negative screen does not exclude ADHD. No screen has 100% sensitivity (ASRS Part A 68.7% in the original community study), and adults who compensate, have high ability, a mainly inattentive presentation or little insight often score low. Assess on the referral information, not on the score.",
-    "Comorbidity inflates scores in both directions. Depression, anxiety, bipolar disorder, borderline personality disorder, trauma and substance use raise ADHD scales (ASRS specificity 0.66 in substance use treatment; WURS raised in mood and personality disorders; WFIRS raised by internalising symptoms). ADHD in turn raises other screens: PHQ-9 items 3, 6, 7 and 8, GAD-7 items 4-6, AQ-10 items 3 and 4, PCL-5 items 15, 16, 19 and 20, and half of adults with ADHD screen positive on the MDQ. Read the items, not just the total.",
+    "Comorbidity inflates scores in both directions. Depression, anxiety, bipolar disorder, borderline personality disorder, trauma and substance use raise ADHD scales (ASRS specificity 0.66 in substance use treatment; WURS raised in mood and personality disorders; WFIRS raised by internalising symptoms). ADHD in turn raises other screens: PHQ-9 items 3, 4, 6, 7 and 8, GAD-7 items 4-6, AQ-10 items 3 and 4, PCL-5 items 15, 16, 19 and 20, and half of adults with ADHD screen positive on the MDQ. Read the items, not just the total.",
     "Mind the time window: trait versus state. ADHD is trait-like and present since childhood. Forms ask about different periods: WURS childhood; ASRS 6 months; WFIRS, PCL-5 and the C-SSRS ideation questions the last month; PHQ-9 and GAD-7 2 weeks; AUDIT and DAST-10 the past year. A high current score during a depressive episode, poor sleep or heavy substance use may be a state, not a trait.",
     "Contemporaneous evidence outweighs recall. Adult recall of childhood ADHD had a positive predictive value of only 0.27 at population prevalence (Mannuzza 2002). School reports and records written at the time carry more weight. ICD-11 advises caution when a pre-12 history cannot be corroborated, but NICE NG87 1.3.3 says an uncertain time of onset should not on its own exclude the diagnosis.",
-    "Self-informant disagreement is information, not noise. Many adults with ADHD under-report (limited insight, European Consensus 2019); others over-report under distress. Informants may not see inner symptoms, may have known the person only briefly, or may have ADHD themselves (UKAP 2020). Explore every disagreement with concrete, dated examples.",
+    "Self-informant disagreement is information, not noise. Insight varies: the European Consensus 2019 notes that many adults report high symptoms with low impairment, or the reverse, and distress can inflate self-report. Informants may not see inner symptoms, may have known the person only briefly, or may have ADHD themselves (UKAP 2020). Explore every disagreement with concrete, dated examples.",
     "Check response style and validity. Self-report scales are easy to fake (Sollman 2010), and 15-31% of adults referred for ADHD give non-credible responses on validity testing in published series. Watch for almost every item at the maximum, rare or atypical symptoms, inconsistency between forms, and severe scores alongside good functioning in records. Do not accuse: triangulate, and record your reasoning in the validity step.",
     "Bring the results into the interview, not the other way round. Read every returned form before the appointment. Turn elevated items into open questions ('Tell me about the last time...') and ask for real-life examples, frequency, settings and childhood; never read items back as yes/no questions. Note which hypotheses the forms raised and which the interview confirmed.",
-    "Act on safety items at once. A suicide or self-harm item, a safeguarding concern or a cardiac red flag (NG87 1.7.5) found in a pack needs a clinician's response before the appointment. Triage of returned forms should not rely on questionnaires alone (NHSE Taskforce 2025, recommendation 10).",
+    "Act on safety items at once. A suicide or self-harm item, a safeguarding concern or a cardiac red flag (NG87 1.7.5) found in a pack needs a clinician's response before the appointment. Triage of returned forms should not rely on questionnaires alone (NHSE ADHD Taskforce Part 2, 2025, recommendation 10).",
     "Use the official version, scoring and licence. ASRS-5 is only validated with its licensed weighted scoring; the German WURS-k is not the WURS-25; CAARS 2 is not the original CAARS. Licensed tools are used within their licence, and norms from other countries, or mainly male samples, may not fit your patient (UKAP 2020 consensus on females)."
   ],
 
@@ -102,7 +104,7 @@ AA.add('formsGuide', {
           "<ul><li><strong>Adults in England:</strong> 13.9% screened positive on Part A (APMS 2024), against an estimated adult prevalence of about 2.8%. Even if every adult with ADHD screened positive, at most about 1 in 5 screen-positive adults could have ADHD (2.8 / 13.9).</li>" +
           "<li><strong>Primary care, illustrative prevalence 5%</strong>, with the accuracy found in a German primary care and clinic sample (sensitivity 87.6%, specificity 85.1%; Ballmann 2022): of 1,000 adults, about 44 true positives and 142 false positives. PPV about 24%.</li>" +
           "<li><strong>Substance use treatment</strong> (prevalence 13%; van de Glind 2013): PPV 0.26, NPV 0.97.</li>" +
-          "<li><strong>Specialist adult ADHD clinic, illustrative prevalence 50%</strong>, with clinical-sample accuracy (sensitivity 0.84, specificity 0.66): of 100 referrals, about 42 true and 17 false positives (PPV about 71%), and about 8 people with ADHD among the 41 negatives (NPV about 80%).</li></ul>" +
+          "<li><strong>Specialist adult ADHD clinic, illustrative prevalence 50%</strong>, borrowing the substance use treatment accuracy (sensitivity 0.84, specificity 0.66), the closest published clinical-sample figures: of 100 referrals, about 42 true and 17 false positives (PPV about 71%), and about 8 people with ADHD among the 41 negatives (NPV about 80%).</li></ul>" +
           "<p><strong>Reading for Sam:</strong> a positive screen with a strongly inattentive profile. In a specialist clinic that raises the probability but settles nothing. The interview must test each shaded item with real examples, establish childhood onset, and check whether low mood or poor sleep is pushing the scores up (see Sam's PHQ-9 in the PHQ-9 entry).</p>",
         takeaway: "The same 4-of-6 result is a weak signal in the general population and a moderate one in a specialist clinic. In neither setting does it diagnose or exclude ADHD: it tells you which symptoms to explore."
       },
@@ -343,7 +345,7 @@ AA.add('formsGuide', {
       what:
         "<p>A 69-item scale by Dr Margaret Weiss, free for clinicians, distributed by CADDRA. The patient rates how emotional or behavioural problems have affected each area of life in the <strong>last month</strong>: 0 never or not at all, 1 sometimes or somewhat, 2 often or much, 3 very often or very much, or not applicable.</p>" +
         "<p>Seven domains: Family (8 items), Work (11), School (10), Life skills (12), Self-concept (5), Social (9) and Risk (14). It deliberately leaves out ADHD symptom items, so it measures impairment separately from symptoms.</p>" +
-        "<p><strong>Why it is sent:</strong> DSM-5-TR and NICE NG87 1.3.3 need impairment that is at least moderate and present in 2 or more important settings. The WFIRS-S maps where the problems are, so the interview can test each domain, and it gives a baseline for measuring change after treatment.</p>",
+        "<p><strong>Why it is sent:</strong> NICE NG87 1.3.3 needs at least moderate impairment, with symptoms occurring in 2 or more important settings; DSM-5-TR needs several symptoms in 2 or more settings (criterion C) that clearly interfere with functioning (criterion D). The WFIRS-S maps where the problems are, so the interview can test each domain, and it gives a baseline for measuring change after treatment.</p>",
       recommendedBy: [
         "CADDRA 4.1 Step 1 (consider WFIRS-S) and follow-up monitoring",
         "UKAAN AQAS 2024: impairment scales such as the WFIRS are useful for measuring change (optional); the judgement rests mainly on the interview",
@@ -362,7 +364,7 @@ AA.add('formsGuide', {
         "<li>Record the total and the domain means as the <strong>baseline</strong>. CADDRA's 2011 instructions describe a fall of 13 points in the total as a significant improvement.</li>" +
         "<li>For every impaired domain, note what to ask: what happened, how often, what it cost, and <strong>what caused it</strong> (ADHD symptoms, low mood, anxiety, substances or circumstances).</li></ol>",
       meaning: [
-        { result: "2 or more domains impaired", means: "Self-rated impairment in several areas, consistent with the 2-setting requirement (NICE NG87 1.3.3; DSM-5-TR C and D). The scale is not specific to ADHD: depression and anxiety raise every domain (Canu 2020).", action: "Interview each impaired domain for real examples and their cause. The interview, not the score, decides whether impairment is at least moderate." },
+        { result: "2 or more domains impaired", means: "Self-rated impairment in several areas, consistent with impairment across settings (NICE NG87 1.3.3; DSM-5-TR criteria C and D), although life domains are not the same as settings. The scale is not specific to ADHD: depression and anxiety raise every domain (Canu 2020).", action: "Interview each impaired domain for real examples and their cause. The interview, not the score, decides whether impairment is at least moderate." },
         { result: "1 domain impaired", means: "Impairment reported in one area only, or other areas are masked by support, compensation or avoidance.", action: "Ask what others do for the person and how much effort things cost. Ask an informant. Check whether the one domain reflects a specific mismatch, such as a job." },
         { result: "No domain impaired", means: "Little self-rated impairment. Possible low insight, family or partner compensation, or high achievement with hidden cost.", action: "Do not stop the assessment on this alone: UKAAN AQAS 2024 warns against ruling out ADHD on high achievement. Ask the informant and explore effort and cost." },
         { result: "Risk items rated 2 or 3 (driving, substances, aggression, sex without protection)", means: "Specific safety concerns, even if the Risk mean is low. The Risk domain often shows floor effects (Takeda 2017), so a low Risk score does not mean low risk.", action: "Cover each in Safety and risk. Give driving safety advice where relevant and screen substances with AUDIT and DAST-10." },
@@ -394,7 +396,7 @@ AA.add('formsGuide', {
         "Reproducing the CADDRA scoring guide: restate the rule in your own words (the guide is CADDRA copyright; the scale itself is free)."
       ],
       feedsInto: "Screening questionnaires step: enter the answers and the app applies the domain rule. In Onset and impairment the domains map to the impairment areas (Family to relationships; Work and School to work and education; Life skills to daily life; Self-concept to self-image; Social to social life; Risk to safety). Risk items feed Safety and risk; the total is the baseline in Report and next steps.",
-      strength: "Free, with good internal consistency (above 0.8 per domain) and sensitivity to change (CADDRA 2011), but not specific to ADHD and without an adult accuracy-derived cut-off. It supports, never replaces, the impairment interview (UKAAN AQAS 2024)."
+      strength: "Free, with good internal consistency (above 0.8 per domain) and sensitivity to change (CADDRA 2011, figures mainly from child and parent-form work), but not specific to ADHD and without an adult accuracy-derived cut-off. It supports, never replaces, the impairment interview (UKAAN AQAS 2024)."
     },
 
     /* ------------------------------------------------------------------ */
@@ -586,7 +588,7 @@ AA.add('formsGuide', {
         "Relying on reports from after 12 alone for onset: they help, but criterion B is about symptoms before 12."
       ],
       feedsInto: "Collateral information step: rate the school evidence (0, 1 or 2) and paste dated quotes. Link quotes to the childhood columns of Interview parts 1 and 2; they support criteria B and C in Onset and impairment, and the Report states whether school reports were reviewed and whether they support the conclusion.",
-      strength: "The strongest routinely available evidence of childhood onset, because it was written at the time by independent observers (ICD-11 CDDR; UKAAN AQAS 2024). Limited by brief, polite wording and missing years; no psychometric data."
+      strength: "Among the strongest routinely available evidence of childhood onset, alongside a childhood informant, because it was written at the time by independent observers (ICD-11 CDDR; UKAAN AQAS 2024). Limited by brief, polite wording and missing years; no psychometric data."
     },
 
     {
@@ -853,7 +855,7 @@ AA.add('formsGuide', {
         html:
           "<p><strong>Sasha, 28.</strong> Question 1: yes to 9 of 13 (talkative, racing thoughts, easily distracted, more energy, more active, more sociable, risky behaviour, overspending, irritable). No to elevated mood, more self-confidence, less need for sleep and more interest in sex. Question 2: yes. Question 3: serious. <strong>Screen positive.</strong></p>" +
           "<p><strong>Reasoning:</strong> every endorsed item also describes chronic ADHD traits, and the four items more typical of hypomania were not endorsed. Asked about question 2, Sasha says 'they all happen together, all the time'. There is no distinct period of change, and late nights are followed by tiredness, not by energy without sleep. The partner confirms no episodes.</p>" +
-          "<p><strong>Base rates:</strong> about half of adults with ADHD screen positive (Lundervold 2020). A 2026 preprint estimate (not peer reviewed) puts bipolar disorder at about 8% of adults with ADHD. So of 100 adults with ADHD, about 50 screen positive, and even if all 8 with bipolar disorder were among them, at most about 8 in 50 (16%) of the positives would have it.</p>" +
+          "<p><strong>Base rates:</strong> about half of adults with ADHD screen positive (Lundervold 2020). A meta-analysis of 71 studies found bipolar disorder in about 8% of adults with ADHD (7.95%; Schiweck 2021). So of 100 adults with ADHD, about 50 screen positive, and even if all 8 with bipolar disorder were among them, at most about 8 in 50 (16%) of the positives would have it.</p>" +
           "<p><strong>Conclusion:</strong> the positive screen most likely reflects lifelong traits. Record the episode history and the informant's account; keep bipolar disorder in mind at follow-up, especially if medication is started.</p>",
         takeaway: "In an ADHD clinic, a positive MDQ is common and usually reflects traits. The episode history, not the score, separates bipolar disorder from ADHD."
       },
@@ -1158,7 +1160,7 @@ AA.add('formsGuide', {
         html:
           "<p><strong>Pat, 52, man.</strong> Loud snoring, partner has seen pauses in breathing, tired all day, treated high blood pressure, BMI 33, neck 43 cm. STOP-Bang: S, T, O, P yes; B no; A, N, G yes. <strong>Score 7: high risk.</strong> Epworth <strong>15: moderate</strong> excessive daytime sleepiness.</p>" +
           "<p>Pat says concentration has 'gone downhill over the last five years', as weight increased. School reports describe a quiet, conscientious child.</p>" +
-          "<p><strong>Reasoning:</strong> adult onset, a link with weight gain, sleepiness rather than restlessness, and no childhood evidence all point to sleep apnoea as the better explanation. In studies of people treated for sleep apnoea, inattention improved after treatment.</p>" +
+          "<p><strong>Reasoning:</strong> adult onset, a link with weight gain, sleepiness rather than restlessness, and no childhood evidence all point to sleep apnoea as the better explanation. In a review of interventional studies, inattention improved after sleep apnoea was treated in all six studies.</p>" +
           "<p><strong>Plan:</strong> refer for a sleep study; advise about driving while sleepy; review attention after treatment. The ADHD assessment can be completed afterwards if difficulties persist and the history supports a lifelong pattern.</p>",
         takeaway: "When attention problems start in adulthood with snoring and sleepiness, investigate and treat sleep first."
       },
