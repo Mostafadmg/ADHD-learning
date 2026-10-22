@@ -37,7 +37,7 @@ AA.add('learn', [
           "<li>Psychiatric, developmental, medical, substance and forensic history, and a mental state examination.</li>" +
           "<li>Then the 18-symptom interview, followed by onset, impairment and collateral.</li>" +
           "</ol>" +
-          "<p>Hearing the story first protects you. You learn the person's language, you notice episodes, trauma or substance use that might explain the picture, and the 18-item frame does not shape the account before you have heard it.</p>" +
+          "<p>Hearing the story first protects you. You learn the person's language and notice episodes, trauma or substance use, before the 18-item frame shapes the account.</p>" +
           "<h4>The interview tests a claim; it does not record one</h4>" +
           "<p>An interview that simply asks 'do you do this?' will confirm almost anything. In one study of adults referred for ADHD whose effort on testing was non-credible, 71% would have been diagnosed on the interview alone (Marshall 2016). The interview has to weigh evidence.</p>" +
           "<table><thead><tr><th>The interview is</th><th>The interview is not</th></tr></thead><tbody>" +
@@ -85,7 +85,7 @@ AA.add('learn', [
           "<ul>" +
           "<li>Recent behaviour is easier to describe and check, so you get concrete examples quickly.</li>" +
           "<li>You learn the patient's own words for the problem, which you can reuse for the childhood question.</li>" +
-          "<li>The childhood question then becomes a comparison: 'Was that already there at primary school?' This is easier to answer than an abstract question about the past.</li>" +
+          "<li>The childhood question becomes an easier comparison: 'Was that already there at primary school?'</li>" +
           "</ul>" +
           "<h4>Anchor childhood once, then return to it</h4>" +
           "<p>Before the first childhood question, spend two minutes setting the scene: the name of the primary school, a teacher, where the family lived, who was at home, how they got to school. Then, for each symptom, take the patient back to that scene. Module 6 covers memory aids in detail.</p>" +
@@ -127,7 +127,7 @@ AA.add('learn', [
           "<blockquote>'When you say time blindness, what does that look like on an ordinary Tuesday?'</blockquote>" +
           "<p>RCPsych warns that people who have read about ADHD may easily endorse most items (CR235 9.6). Personal, varied and slightly untidy detail is more convincing than a fluent textbook description.</p>" +
           "<h4>When the answers sprawl</h4>" +
-          "<p>Some patients answer at length and drift off the point. Kooij (2019) notes that inattentive adults may be long-winded and tangential, which can itself slow the assessment. Steer kindly:</p>" +
+          "<p>Some patients drift off the point. Kooij (2019) notes that inattentive adults may be long-winded and tangential, which can itself slow the assessment. Steer kindly:</p>" +
           "<blockquote>'That is helpful, and I can see how it links. So I can cover everything today, can I bring you back to forgetting appointments? When was the last one?'</blockquote>"
       },
       {
@@ -137,7 +137,7 @@ AA.add('learn', [
           "<table><thead><tr><th>Test</th><th>Question to ask</th><th>Passes</th><th>Fails</th></tr></thead><tbody>" +
           "<tr><td><strong>1. Frequency beyond peers</strong></td><td>'How often? Is that more than friends or colleagues of your age?'</td><td>Most days or weeks, clearly more than people of similar age, education and culture</td><td>A few times a year, or about the same as everyone else</td></tr>" +
           "<tr><td><strong>2. Pervasiveness</strong></td><td>'Where else does it happen: at home, with friends, on holiday?'</td><td>More than one setting, not tied to one person, task or stressor</td><td>Only with one manager, only in one subject, only when anxious</td></tr>" +
-          "<tr><td><strong>3. Trait-like course</strong></td><td>'Has it always been like this? Has there been a time when it was not?'</td><td>Long-standing, part of the usual self; may fluctuate through the day</td><td>Started recently, or comes and goes in episodes</td></tr>" +
+          "<tr><td><strong>3. Trait-like course</strong></td><td>'Has it always been like this? Has there been a time when it was not?'</td><td>Persistent and part of the usual self, not an episode; may fluctuate through the day and with demands</td><td>A recent change from a previous level, or comes and goes in episodes</td></tr>" +
           "<tr><td><strong>4. Consequences</strong></td><td>'What has it cost you, or what does it take to stop it costing you?'</td><td>Real effects, or coping only at a high price</td><td>No consequences and no effort needed</td></tr>" +
           "</tbody></table>" +
           "<h4>How to apply the tests</h4>" +
@@ -145,6 +145,7 @@ AA.add('learn', [
           "<li><strong>Peers.</strong> Compare with people of the same age and broadly similar ability and background. ICD-11 asks you to judge symptoms against cultural norms. A 60-year-old forgets more names than a 25-year-old; the question is whether this person forgets more than their own peers.</li>" +
           "<li><strong>Interest.</strong> ICD-11 notes that inattention may not show during intensely stimulating or rewarding activities. Long spells of focus on games or a hobby do not fail test 1. Ask about routine, low-interest tasks.</li>" +
           "<li><strong>Fluctuation.</strong> Symptoms can vary through the day and with demands (AQAS 2024; ICD-11). That is not the same as an episodic course over weeks or months.</li>" +
+          "<li><strong>Trait-like is about the pattern.</strong> The pattern must reach back to childhood (criterion B), but a single adult symptom may show only once adult demands arrive, such as bills or managing a team. Test 3 fails on a change from the previous level, or on episodes (AQAS 2024).</li>" +
           "<li><strong>Consequences at symptom level.</strong> Each symptom you score as present should have some cost. The formal rating of impairment by life area comes later, in the Onset and impairment step (Module 7).</li>" +
           "<li><strong>Compensation.</strong> A symptom held in check by alarms, lists and a partner is still a symptom if the support is doing the work. Ask what happens when the support fails, and what the effort costs (CR235 9.2).</li>" +
           "</ul>" +
@@ -171,8 +172,8 @@ AA.add('learn', [
           "</tbody></table>" +
           "<h4>Over-endorsement and under-endorsement</h4>" +
           "<ul>" +
-          "<li><strong>Over-endorsement.</strong> In adults referred for ADHD, published rates of non-credible responding are about 15 to 31% (Suhr 2008; Harrison and Edwards 2010; Marshall 2010; Ovsiew 2023; see Module 4). Young adults without ADHD tend to over-report symptoms on self-report (Sibley 2012). Warning signs: every symptom 'always', textbook phrases, no personal examples, no exceptions. Ask, 'When does it not happen?', and record concerns for the Symptom validity step.</li>" +
-          "<li><strong>Under-endorsement.</strong> Many adults with ADHD have limited insight into how their symptoms affect others (Kooij 2019), and young adults with ADHD tend to under-report (Sibley 2012). Women and girls are more likely to be missed (NICE NG87 1.2.2), often because of masking. Ask what partners, parents and colleagues say.</li>" +
+          "<li><strong>Over-endorsement.</strong> In adults referred for ADHD, published rates of non-credible responding are about 15 to 31% (Suhr 2008; Harrison and Edwards 2010; Marshall 2010; Ovsiew 2023; see Module 11). Young adults without ADHD tend to over-report symptoms on self-report (Sibley 2012). Warning signs: every symptom 'always', textbook phrases, no personal examples, no exceptions. Ask, 'When does it not happen?', and record concerns for the Symptom validity step.</li>" +
+          "<li><strong>Under-endorsement.</strong> Many adults with ADHD have limited insight into how their symptoms affect others (Kooij 2019), and young adults with ADHD tend to under-report (Sibley 2012). Women and girls are more likely to be missed (NICE NG87 1.2.2), and compensatory strategies can mask their symptoms (Young 2020, UKAP consensus on females). Ask what partners, parents and colleagues say.</li>" +
           "</ul>"
       },
       {
@@ -186,13 +187,13 @@ AA.add('learn', [
           "<tr><td>Onset and impairment</td><td>15 to 20 minutes</td><td>Criteria B, C and D</td></tr>" +
           "<tr><td>Collateral</td><td>15 to 30 minutes</td><td>Often a separate phone call</td></tr>" +
           "</tbody></table>" +
-          "<p>These times are the app's working estimates (clinical practice). Together they fit the UKAAN minimum of 2 hours.</p>" +
+          "<p>These are working estimates (clinical practice) that fit the UKAAN minimum of 2 hours.</p>" +
           "<h4>Pacing rules (clinical practice)</h4>" +
           "<ul>" +
           "<li><strong>Clearly absent:</strong> one open question, one probe, then move on. 'No, never been a problem' with a credible reason is enough.</li>" +
           "<li><strong>Clearly present:</strong> one good example, then check the four tests briefly. You do not need ten examples.</li>" +
           "<li><strong>Borderline:</strong> this is where the time goes. Use Other ways to ask, probe further, and ask for the informant's view.</li>" +
-          "<li>Take a short break between the two parts. Fatigue lowers the quality of answers, for patient and clinician.</li>" +
+          "<li>Take a short break between the two parts; fatigue lowers the quality of answers.</li>" +
           "<li>If time runs out, finish the symptom you are on and book a second session. Do not skim the childhood half.</li>" +
           "</ul>" +
           "<h4>Using the app in the room</h4>" +
@@ -275,7 +276,7 @@ AA.add('learn', [
       "The semi-structured interview is the core evidence for an adult ADHD diagnosis. It must test every symptom, not confirm a questionnaire (AQAS 2024).",
       "Take an open history and mental state first. Do not make the first contact a symptom checklist alone (RCPsych CR235 9.1).",
       "For each symptom, ask about adulthood (last 6 months) and then childhood (age 5 to 12), and record a concrete example in the patient's own words.",
-      "Score Yes only when the symptom passes four tests: more frequent than peers, present across settings, trait-like since childhood, and with real consequences.",
+      "Score Yes only when the symptom passes four tests: more frequent than peers, present across settings, trait-like rather than episodic, and with real consequences.",
       "Ask open questions first. Examples are prompts, not a checklist; leading questions and tick-box interviews risk confirmation bias.",
       "Answer 'everyone does that' with frequency, comparison and cost, not with agreement or argument.",
       "Unsure is a legitimate holding score. It never counts towards the threshold; resolve it with collateral, records or a further session.",
@@ -309,7 +310,7 @@ AA.add('learn', [
         options: ["Met, because each unsure item counts as half", "Pending: resolve the unsure items with collateral, records or another session before deciding", "Not met, so stop the assessment", "Met for combined presentation"], a: 1,
         why: "Unsure never counts towards the threshold, and you should not round up when the outcome depends on it. The adult threshold is 5 per list. Record criterion A as pending and plan how to settle the uncertain items." },
       { q: "Which of these is NOT one of the four tests applied to each symptom?",
-        options: ["Clearly more frequent or severe than in peers of the same age and background", "Present in more than one setting", "Trait-like and long-standing since childhood", "Clearly visible during the interview"], a: 3,
+        options: ["Clearly more frequent or severe than in peers of the same age and background", "Present in more than one setting", "Trait-like and persistent rather than episodic", "Clearly visible during the interview"], a: 3,
         why: "The four tests are frequency beyond peers, pervasiveness, trait-like course and consequences. Behaviour in the room is a poor guide: CADDRA advises against relying on observation, and calm in clinic does not exclude ADHD (Kooij 2019)." },
       { q: "Tom, 44, sits still for two hours but describes constant inner restlessness, cannot watch a film without his phone and runs daily to feel settled. His partner confirms it. How should restlessness be scored for adulthood?",
         options: ["Yes: in adults restlessness may be only a feeling, and calm behaviour in clinic does not exclude it", "No, because no restlessness was observed", "Unsure until a QbTest has been done", "No, because inner restlessness always means anxiety"], a: 0,
@@ -331,7 +332,7 @@ AA.add('learn', [
         why: "AQAS makes a total of at least 2 hours an essential standard in most cases. RCPsych suggests two to three one-hour sessions, and AADPA describes 2 to 3 hours." }
     ],
     refs: [
-      "NICE NG87. Attention deficit hyperactivity disorder: diagnosis and management (2018, updated 2019; last reviewed July 2026). Recommendations 1.2.2, 1.3.1, 1.3.2, 1.3.3.",
+      "NICE NG87. Attention deficit hyperactivity disorder: diagnosis and management (2018; last updated May 2025; reviewed July 2026 with no change). Recommendations 1.2.2, 1.3.1, 1.3.2, 1.3.3.",
       "Adamou M et al. The adult ADHD assessment quality assurance standard (UKAAN AQAS). Front Psychiatry 2024;15:1380410.",
       "Royal College of Psychiatrists. CR235 ADHD in adults: good practice guidelines (2023), sections 9.1, 9.2, 9.6 and 9.8; RCPsych in Scotland, ADHD in adults: good practice guidelines (2017).",
       "Kooij JJS et al. Updated European Consensus Statement on diagnosis and treatment of adult ADHD. Eur Psychiatry 2019;56:14-34 (sections 4 and 4.1).",
@@ -387,7 +388,7 @@ AA.add('learn', [
           "<ul>" +
           "<li>At population prevalence, an adult's self-report of childhood ADHD had a positive predictive value of only about 0.27 (Mannuzza 2002). In the general population, most adults who recall an ADHD-like childhood would not have had ADHD as children.</li>" +
           "<li>In young adults followed from a childhood ADHD diagnosis, retrospective self-reports correlated only modestly with ratings made in childhood (r about 0.25 to 0.28), and those with ADHD tended to under-report their childhood symptoms. Parents' retrospective reports correlated better (r about 0.46), though still imperfectly (Sibley 2012).</li>" +
-          "<li>Recall is especially poor in people with high ability, a very structured or supportive upbringing, or a mainly inattentive presentation (Kooij 2019).</li>" +
+          "<li>Kooij (2019) warns that the age-12 rule may disadvantage adults who cannot recall their childhood well, especially those who compensated through high intelligence, grew up in a highly structured or supportive setting, or had mainly inattentive symptoms. For them a collateral informant is of great value.</li>" +
           "<li>Retrospective self-rating scales are not specific either. WURS-25 scores are raised in borderline personality disorder and bipolar disorder (Kouros 2018), and at the standard cut-off about 1 in 5 people with depression were misclassified (Ward 1993).</li>" +
           "</ul>" +
           "<h4>Common biases and how to counter them (clinical practice)</h4>" +
@@ -455,7 +456,7 @@ AA.add('learn', [
           "<li><strong>Year 4:</strong> 'Full of ideas, but easily drawn off task by others and needs frequent reminders. Homework is rarely returned.'</li>" +
           "<li><strong>Year 6:</strong> 'Very capable, but careless slips cost him marks. Jordan must try to wait his turn to speak.'</li>" +
           "</ul>" +
-          "<p>Three teachers over four years describe not listening (A1c), unfinished work (A1d), distractibility (A1h), careless mistakes (A1a), poor organisation of homework (A1e) and difficulty waiting to speak (A2g or A2h), in a capable child. <strong>Rate the school source 2, clear support.</strong> Use the reports to support the matching childhood symptoms, rating informant support for each.</p>" +
+          "<p>Three teachers over four years describe not listening (A1c), unfinished work (A1d), distractibility (A1h), careless mistakes (A1a), poor organisation of homework (A1e) and not waiting for a turn to speak (A2g, which covers not waiting for one's turn in conversation), in a capable child. <strong>Rate the school source 2, clear support.</strong> Use the reports to support the matching childhood symptoms, rating informant support for each.</p>" +
           "<p>Compare Mia, 31, with one Year 5 report: 'A lively member of the class who can be chatty. Could try harder in maths.' <strong>Rate 0, or 1 at most.</strong> These are ordinary comments from a single year, with no pattern.</p>"
       },
       {
@@ -593,9 +594,9 @@ AA.add('learn', [
         html:
           "<p>Some adults describe symptoms that seem to start after 12. The research is debated, and the criteria have not changed.</p>" +
           "<table><thead><tr><th>Study or source</th><th>Finding</th></tr></thead><tbody>" +
-          "<tr><td>Dunedin cohort (Moffitt 2015)</td><td>1,037 people followed from birth to 38. About 90% of those who met adult ADHD criteria had not had childhood ADHD, and that group lacked the childhood neuropsychological deficits and polygenic risk of childhood ADHD. The adult group showed substance dependence and impairment. Onset age and informant corroboration were study outcomes, not requirements, for the adult diagnosis.</td></tr>" +
+          "<tr><td>Dunedin cohort (Moffitt 2015)</td><td>1,037 people followed from birth to 38. About 90% of those who met adult ADHD criteria had not had childhood ADHD, and that group lacked the childhood neuropsychological deficits and polygenic risk of childhood ADHD. The adult group showed substance dependence and impairment. Onset age and cross-setting corroboration were study outcomes, not requirements, for the adult diagnosis.</td></tr>" +
           "<tr><td>MTA comparison group (Sibley 2018)</td><td>239 people without childhood ADHD, assessed eight times from about 10 to 25 with parent, teacher and self reports. About 95% of those who first screened positive for late-onset ADHD were excluded on full review. The commonest reason was symptoms occurring only with heavy substance use. There was no adult onset without a complex psychiatric history.</td></tr>" +
-          "<tr><td>Population cohort (Cooper 2018)</td><td>Most apparent late-onset cases had high ADHD scores at some point in childhood, so a single measure at 12 had misclassified them.</td></tr>" +
+          "<tr><td>ALSPAC population cohort, UK (Cooper 2018)</td><td>Of 75 people with apparent late-onset ADHD symptoms at 17, 56 (75%) had high ADHD scores at some earlier point in childhood, so a single measure at 12 had misclassified them. The remaining 19 did not show the typical neurodevelopmental profile.</td></tr>" +
           "<tr><td>European Consensus (Kooij 2019)</td><td>Most later-onset cases appear to meet the 'several symptoms by 12' rule. Assess impairment, psychiatric history and substance use carefully.</td></tr>" +
           "<tr><td>BAP (2014)</td><td>The literature does not support a later-onset disorder without childhood symptoms; many patients were simply not diagnosed as children.</td></tr>" +
           "<tr><td>ICD-11 CDDR</td><td>Acute or abrupt onset of hyperactivity in adolescence or adulthood should raise the possibility of another cause, such as emerging psychosis or bipolar disorder.</td></tr>" +
@@ -683,7 +684,7 @@ AA.add('learn', [
       "Sibley MH et al. When diagnosing ADHD in young adults emphasize informant reports, DSM items, and impairment. J Consult Clin Psychol 2012;80:1052-1061.",
       "Moffitt TE et al. Is adult ADHD a childhood-onset neurodevelopmental disorder? Evidence from a four-decade longitudinal cohort study. Am J Psychiatry 2015;172:967-977.",
       "Sibley MH et al. Late-onset ADHD reconsidered with comprehensive repeated assessments between ages 10 and 25. Am J Psychiatry 2018;175:140-149.",
-      "Cooper M et al. Investigating late-onset ADHD: a population cohort investigation. J Child Psychol Psychiatry 2018;59:1105-1113.",
+      "Cooper M et al. Investigating late-onset ADHD: a population cohort investigation (ALSPAC). J Child Psychol Psychiatry 2018;59:1105-1113.",
       "Bolea-Alamañac B et al. BAP evidence-based guidelines for the pharmacological management of ADHD. J Psychopharmacol 2014;28:179-203.",
       "Faraone SV et al. WFADHD International Consensus Statement: 2026 update. PsyArXiv preprint, October 2026 (not peer reviewed).",
       "Young S et al. Females with ADHD: an expert consensus statement (UKAP). BMC Psychiatry 2020;20:404.",
@@ -717,7 +718,7 @@ AA.add('learn', [
           "<tr><td>NICE NG87 1.3.3</td><td>At least moderate psychological, social, educational or occupational impairment, based on interview or direct observation in multiple settings; symptoms happening often in 2 or more important settings</td></tr>" +
           "<tr><td>UKAAN AQAS 2024</td><td>At least moderate impairment in at least two domains or settings, including psychological functioning; the report lists the domains (essential)</td></tr>" +
           "</tbody></table>" +
-          "<p>The UK bar is therefore higher than the DSM-5-TR wording. Clear but minor interference can satisfy criterion D, but mild impairment alone falls below the NICE threshold. RCPsych calls the impairment threshold a diagnostic requirement (CR235).</p>" +
+          "<p>The UK bar is therefore higher than the DSM-5-TR wording. Clear but minor interference can satisfy criterion D, but mild impairment alone falls below the NICE threshold. RCPsych adds that interference with functioning is also central to the treatment threshold, and that it has to be judged person by person, taking account of the demands and supports in the person's daily life (CR235 section 9).</p>" +
           "<h4>Settings and domains</h4>" +
           "<p>NICE uses two different words. <strong>Settings</strong> are physical places: home, work, a friend's house. <strong>Domains</strong> are areas of function: relationships, educational and occupational attainment, risk awareness (NG87, Terms used in this guideline). Criterion C is about symptoms showing up in more than one setting. Criterion D is about the damage they do in areas of life. Keep both in your notes.</p>" +
           "<h4>Why impairment deserves care</h4>" +
@@ -754,7 +755,7 @@ AA.add('learn', [
           "<blockquote>'In the last year, how much have you paid in late fees or charges, roughly?'</blockquote>" +
           "<blockquote>'What happens to letters that look like bills?'</blockquote>" +
           "<h4>Driving</h4>" +
-          "<p>ICD-11 gives reckless driving as an example of impulsivity. Ask about crashes, near misses, speeding fines, penalty points, bans, getting lost, and using the phone at the wheel. The Jerome Driving Questionnaire, listed by CADDRA, compares self and collateral reports of driving history and style. A partner's account is often more candid.</p>" +
+          "<p>ICD-11 gives reckless driving as an example of impulsivity. Ask about crashes, near misses, speeding fines, penalty points, bans, getting lost, and using the phone at the wheel. CADDRA reports that young drivers with untreated or under-treated ADHD have two to four times as many collisions and moving violations, typically involving speeding, distraction and driving anger, and offers the Jerome Driving Questionnaire as an example of a driving assessment. A partner's account is often more candid.</p>" +
           "<blockquote>'How many speeding fines or penalty points have you had? Any accidents, even minor ones?'</blockquote>" +
           "<p>Driving also matters after diagnosis. GOV.UK says people must tell the DVLA if their ADHD or ADHD medication affects their ability to drive safely, and need not tell it if driving is not affected. NICE includes driving in the structured post-diagnostic discussion (NG87 1.4.3).</p>" +
           "<h4>Health and safety</h4>" +
@@ -814,7 +815,7 @@ AA.add('learn', [
       {
         h: "Compensation and its hidden costs",
         html:
-          "<p>Many adults with ADHD have built a life that works, but only through effort, routines and other people. Scaffolding provided by parents and schools can mask symptoms in childhood (CR235 9.2), and AADPA notes that compensation can mask symptoms in adults (2022). If you rate only outcomes, you will miss these people. Rate the cost of coping as well.</p>" +
+          "<p>Many adults with ADHD have built a life that works, but only through effort, routines and other people. Scaffolding provided by parents and schools can mask symptoms in childhood (CR235 9.2), and AADPA notes that compensation can mask symptoms in adults (2022). RCPsych observes that students and professionals may seem to function highly, but 'at significant cost in terms of the time/effort required to maintain performance', and that the DSM-5 wording on reduced quality of functioning captures this (CR235 section 9). If you rate only outcomes, you will miss these people. Rate the cost of coping as well.</p>" +
           "<table><thead><tr><th>Strategy</th><th>Apparent outcome</th><th>Hidden cost</th></tr></thead><tbody>" +
           "<tr><td>Working 60 hours to produce 40 hours of output</td><td>Good appraisals</td><td>Exhaustion, no leisure, relationship strain, burnout</td></tr>" +
           "<tr><td>Partner as the 'external brain'</td><td>Bills paid, appointments kept</td><td>Resentment, unequal load, collapse when the partner is away</td></tr>" +
@@ -897,7 +898,7 @@ AA.add('learn', [
           "<h4>A model summary sentence</h4>" +
           "<blockquote>'Symptoms cause at least moderate impairment in four areas (work, partner and family, daily life and money, driving and safety), with severe impairment in finances. The impairment is long-standing, present across home and work, and corroborated by his partner and an employer's letter. It is not confined to his depressive episode in 2023.'</blockquote>" +
           "<h4>When the threshold is not met</h4>" +
-          "<p>Say so plainly, and say what you found. Symptoms with only mild impairment may be subthreshold ADHD. NICE says that people whose symptoms and impairment fall short of a diagnosis may still benefit from information about support (NG87 1.4.4). Record the needs you identified, because support does not have to wait for a diagnosis.</p>"
+          "<p>Say so plainly, and say what you found. UKAAN asks the report to state whether the picture is subthreshold ADHD or symptoms secondary to another condition (AQAS 2024). Symptoms with only mild impairment may be subthreshold ADHD. NICE says that people whose symptoms and impairment fall short of a diagnosis may still benefit from information about support (NG87 1.4.4). Record the needs you identified, because support does not have to wait for a diagnosis.</p>"
       }
     ],
     keyPoints: [
@@ -968,7 +969,7 @@ AA.add('learn', [
       "Kooij JJS, Francken MH. DIVA 2.0, DIVA Foundation 2010 (five impairment areas; structure only).",
       "Kooij JJS et al. Updated European Consensus Statement. Eur Psychiatry 2019;56:14-34 (sections 3, 4 and 4.1.7).",
       "Faraone SV et al. The World Federation of ADHD International Consensus Statement. Neurosci Biobehav Rev 2021;128:789-818.",
-      "CADDRA. Canadian ADHD Practice Guidelines, 4.1 edition (2020), chapter 1 (red flags) and Figure 1.5; CADDRA Toolkit (2011, 2018) and scoring guidance for the WFIRS-S; Jerome Driving Questionnaire.",
+      "CADDRA. Canadian ADHD Practice Guidelines, 4.1 edition (2020), chapter 1 (red flags), Figure 1.5 and the section on driving; CADDRA Toolkit (2011, 2018) and scoring guidance for the WFIRS-S; Jerome Driving Questionnaire (CADDRA eToolkit).",
       "May T et al. The Australian evidence-based clinical practice guideline for ADHD. Aust N Z J Psychiatry 2023;57:1101-1116; AADPA Diagnosis Checklist factsheet (2024).",
       "Sibley MH et al. When diagnosing ADHD in young adults emphasize informant reports, DSM items, and impairment. J Consult Clin Psychol 2012;80:1052-1061.",
       "Weiss MD. Weiss Functional Impairment Rating Scale, self-report (WFIRS-S), CADDRA version. Canu WH et al. J Atten Disord 2020;24:1648.",
@@ -997,7 +998,7 @@ AA.add('learn', [
       {
         h: "Co-occurring or better explained? The logic",
         html:
-          "<p>Comorbidity is the rule in adult ADHD. In the WHO World Mental Health surveys, 51.7% of adults with ADHD had at least one other mental disorder in the past year (Fayyad 2017). Lifetime comorbidity is 60 to 80% (Kooij 2019). A comorbid diagnosis does not rule out ADHD (WFADHD 2021), and NICE asks for symptoms 'not explained by other psychiatric diagnoses (although there may be other coexisting psychiatric conditions)' (NG87 1.2.10).</p>" +
+          "<p>Comorbidity is the rule in adult ADHD. In the WHO World Mental Health surveys, 51.7% of adults with ADHD had at least one other mental disorder in the past year (Fayyad 2017). Lifetime comorbidity is 60 to 80% (Kooij 2019). In a UK NHS adult clinic audit of 173 newly diagnosed adults, current or past diagnoses from the notes and GP records included autism in 38%, substance misuse in 29%, PTSD in 19%, a personality disorder in 19%, generalised anxiety in 18.5%, major depression in 17.9% and bipolar disorder in 7% (Newman 2026, conference abstract, not peer reviewed). A comorbid diagnosis does not rule out ADHD (WFADHD 2021). NICE's referral criteria for adults describe symptoms 'not explained by other psychiatric diagnoses (although there may be other coexisting psychiatric conditions)' (NG87 1.2.10).</p>" +
           "<h4>What the classifications say</h4>" +
           "<ul>" +
           "<li><strong>DSM-5-TR criterion E:</strong> symptoms do not occur only during schizophrenia or another psychotic disorder, and are not better explained by another mental disorder, such as a mood, anxiety, dissociative or personality disorder, or substance intoxication or withdrawal. Autism is no longer an exclusion.</li>" +
@@ -1053,7 +1054,7 @@ AA.add('learn', [
           "<tr><td>12 to 16</td><td>Homework missed, disorganised</td><td>None</td><td>Parents separated at 14</td></tr>" +
           "<tr><td>17 to 21</td><td>Left university in Year 2</td><td>Depressive episode at 20 (4 months)</td><td>Weekend binge drinking</td></tr>" +
           "<tr><td>22 to 30</td><td>Five jobs; late, missed deadlines</td><td>Episode at 27 (6 months); well between</td><td>Drinking reduced</td></tr>" +
-          "<tr><td>31 to 35</td><td>Disorganised and forgetful when mood is good (partner confirms)</td><td>Euthymic now; PHQ-9 is 6</td><td>Sleep fine</td></tr>" +
+          "<tr><td>31 to 35</td><td>Disorganised and forgetful when mood is good (partner confirms)</td><td>Euthymic now; PHQ-9 is 6, all from the sleep, concentration and restlessness items</td><td>Sleep fine</td></tr>" +
           "</tbody></table>" +
           "<p>The ADHD lane is active from primary school onwards and stays active between episodes. Depression is episodic and began later. Verdict: recurrent depression <strong>co-occurring</strong>. Assess the ADHD symptoms now, while she is well.</p>"
       },
@@ -1087,7 +1088,7 @@ AA.add('learn', [
         h: "The bipolar spectrum: telling hypomania from ADHD",
         html:
           "<p>Distractibility, talkativeness, restlessness, impulsive spending, risk-taking, irritability and poor sleep occur in both. RCPsych notes that ADHD can mimic mania, with restlessness, excitement and loud, pressured speech, and advises exploring the time course with a third party (CR235 9.7.1). About 8% of adults with ADHD have bipolar disorder, and about 17% of adults with bipolar disorder have ADHD (WFADHD 2026 update, preprint, summarising 71 studies).</p>" +
-          "<p>The key is <strong>episodicity</strong>. ICD-11 says that late onset, episodicity and intensity of mood elevation point to bipolar disorder. DSM-5-TR requires a hypomanic episode to last at least 4 consecutive days, and a manic episode at least a week, as a clear change from the person's usual self.</p>" +
+          "<p>The key is <strong>episodicity</strong>. ICD-11 says that late onset, episodicity and intensity of mood elevation point to bipolar disorder. DSM-5-TR requires a hypomanic episode to last at least 4 consecutive days, and a manic episode at least a week (or any duration if admission is needed), as a clear change from the person's usual self. Mania brings marked impairment, admission or psychotic features; hypomania does not.</p>" +
           "<table><thead><tr><th>Feature</th><th>ADHD</th><th>Hypomania or mania</th></tr></thead><tbody>" +
           "<tr><td>Course</td><td>Chronic, since childhood</td><td>Discrete episodes with a start and an end</td></tr>" +
           "<tr><td>Sleep</td><td>Trouble getting to sleep, then tired the next day</td><td>Decreased need for sleep without feeling tired</td></tr>" +
@@ -1137,7 +1138,7 @@ AA.add('learn', [
       {
         h: "PTSD and complex trauma",
         html:
-          "<p>Hyperarousal, poor concentration, irritability, sleep problems, restlessness, risk-taking and dissociative 'zoning out' all overlap with ADHD (CADDRA). ICD-11 notes that trauma and grief can produce ADHD-like symptoms. The association runs both ways: in a meta-analysis, PTSD was about three times more likely in people with ADHD, and ADHD was more common in people with PTSD (relative risk about 1.7) (Spencer 2016). RCPsych asks for a trauma-informed approach and notes that trauma, PTSD and EUPD can mask ADHD (CR235 11.5).</p>" +
+          "<p>Hyperarousal, poor concentration, irritability, sleep problems, restlessness, risk-taking and dissociative 'zoning out' all overlap with ADHD (CADDRA). ICD-11 notes that trauma and grief can produce ADHD-like symptoms. The association runs both ways: in a meta-analysis, PTSD was about three times more likely in people with ADHD (relative risk 2.9; 1.6 against trauma-exposed controls), and ADHD was more common in people with PTSD (relative risk about 1.7) (Spencer 2016). RCPsych asks for a trauma-informed approach and notes that trauma, PTSD and EUPD can mask ADHD (CR235 11.5).</p>" +
           "<h4>Complex PTSD</h4>" +
           "<p>ICD-11 complex PTSD adds disturbances in self-organisation to PTSD: severe problems regulating emotion, a persistently negative self-concept and difficulty sustaining relationships, usually after prolonged or repeated trauma from which escape was difficult. These closely resemble ADHD emotional dysregulation, demoralisation and relationship strain.</p>" +
           "<table><thead><tr><th>Favours ADHD</th><th>Favours PTSD or complex PTSD</th></tr></thead><tbody>" +
@@ -1164,13 +1165,14 @@ AA.add('learn', [
         h: "Emotionally unstable personality disorder and ADHD emotional dysregulation",
         html:
           "<p>This is the hardest psychiatric differential, because both conditions are long-standing, so course does not separate them (Kooij 2019). Both involve impulsivity, mood lability, anger, relationship difficulties and boredom. Emotional dysregulation is an associated feature of ADHD, not a criterion (DSM-5, cited in Kooij 2019), and RCPsych reports affective instability in up to 90% of adults with ADHD (CR235 9.3). Lifetime borderline personality disorder was found in 33.7% of people with ADHD against 5.2% of the general population (NESARC, cited by CADDRA), and 30 to 60% of people with BPD may have ADHD (Ditrich 2021). Women with ADHD are at particular risk of misdiagnosis (NICE NG87 1.2.2; CR235 9.2).</p>" +
+          "<p>A note on terms: EUPD is the ICD-10 name still used in many UK services. ICD-11 instead records personality disorder by severity with an optional borderline pattern specifier, and DSM-5-TR uses borderline personality disorder (BPD). This module uses EUPD and BPD for the same clinical picture.</p>" +
           "<table><thead><tr><th>Feature</th><th>ADHD</th><th>EUPD / BPD</th></tr></thead><tbody>" +
           "<tr><td>Emotional reactions</td><td>Quick to flare, short-lived, back to baseline within hours</td><td>Intense, often triggered by perceived rejection, can last longer</td></tr>" +
           "<tr><td>Impulsivity</td><td>Thoughtless rather than driven; present even when content</td><td>Often driven by emotional pain; stress-dependent</td></tr>" +
           "<tr><td>Relationships</td><td>Strain from forgetting, not listening, interrupting</td><td>Intense, unstable, swinging between idealising and devaluing; frantic efforts to avoid abandonment</td></tr>" +
           "<tr><td>Sense of self</td><td>Stable, though often low</td><td>Identity disturbance, rapid shifts in self-image</td></tr>" +
           "<tr><td>Inner experience</td><td>Restless, bored</td><td>Chronic emptiness</td></tr>" +
-          "<tr><td>Self-harm</td><td>Possible, usually less central</td><td>Recurrent suicidal behaviour, threats or self-harm</td></tr>" +
+          "<tr><td>Self-harm</td><td>Risk is raised (Kooij 2019), often impulsive; less often recurrent or triggered by rejection</td><td>Recurrent suicidal behaviour, threats or self-harm, often after interpersonal stress</td></tr>" +
           "<tr><td>Under stress</td><td>Overwhelmed, disorganised</td><td>Transient paranoia or severe dissociation</td></tr>" +
           "<tr><td>Childhood</td><td>Inattention and restlessness at primary school</td><td>Difficulties usually emerge from adolescence (clinical practice); childhood adversity is common in both (Ditrich 2021)</td></tr>" +
           "</tbody></table>" +
@@ -1211,7 +1213,7 @@ AA.add('learn', [
           "<h4>1. Better explained: Owen, 40</h4>" +
           "<p>Referred with poor concentration for three years. He worries about money, health and his children most of the day and has palpitations and tension. Concentration is fine on calm weekends. Primary school reports describe 'a careful, conscientious boy', and his mother recalls a quiet, settled child. GAD-7 is 17. <strong>Verdict: generalised anxiety disorder better explains the symptoms.</strong> ADHD is not diagnosed. Treat the anxiety, and give information about support (NG87 1.4.4).</p>" +
           "<h4>2. Co-occurring: Ella, 27</h4>" +
-          "<p>Lifelong distractibility, lost belongings and unfinished work, confirmed by school reports and her father. At 22 and 25 she had spells of about ten days of sleeping three hours a night without tiredness, spending £6,000, and grand business plans; her partner says she 'was not herself'. At 23 she had a four-month depressive episode. Between spells she is her usual disorganised self. MDQ positive. <strong>Verdict: hypomanic episodes suggest bipolar II disorder, co-occurring with ADHD.</strong> Refer to psychiatry and stabilise mood before any ADHD medication.</p>" +
+          "<p>Lifelong distractibility, lost belongings and unfinished work, confirmed by school reports and her father. At 22 and 25 she had spells of about ten days of sleeping three hours a night without tiredness, spending about £1,500 on impulse and making grand business plans. She kept working, had no psychotic symptoms and was not admitted, but her partner says she 'was not herself'. At 23 she had a four-month depressive episode. Between spells she is her usual disorganised self. MDQ positive. <strong>Verdict: hypomanic episodes plus a major depressive episode suggest bipolar II disorder, co-occurring with ADHD.</strong> Without marked impairment, admission or psychosis, these spells are hypomanic rather than manic. Refer to psychiatry and stabilise mood before any ADHD medication.</p>" +
           "<h4>3. Uncertain: Jess, 23</h4>" +
           "<p>Care-experienced after neglect and abuse from infancy. Nightmares, hypervigilance, dissociation under stress and poor concentration. No informant knew her before the trauma, and school records begin at 9 with reports of 'switching off'. ITQ meets the complex PTSD algorithm. <strong>Verdict: uncertain.</strong> Offer trauma-focused treatment and reassess ADHD afterwards.</p>" +
           "<h4>4. Both: Kim, 30</h4>" +
@@ -1240,7 +1242,7 @@ AA.add('learn', [
     ],
     pitfalls: [
       "Diagnosing ADHD from symptoms counted during a depressive, hypomanic or anxious episode.",
-      "Treating a positive MDQ, PCL-5 or MSI-BPD as a diagnosis, when ADHD alone raises scores on all three.",
+      "Treating a positive MDQ, PCL-5 or MSI-BPD as a diagnosis, when ADHD traits alone can raise scores on all three.",
       "Missing hypomania because you did not ask about decreased need for sleep, spells of being 'not themselves' or antidepressant-induced highs.",
       "Labelling ADHD emotional dysregulation as EUPD, especially in women, without checking for abandonment fear, identity disturbance and emptiness.",
       "Assuming a trauma history rules ADHD out, or ignoring trauma that better explains the picture.",
@@ -1251,7 +1253,7 @@ AA.add('learn', [
     quiz: [
       { q: "In the WHO World Mental Health surveys, about what proportion of adults with ADHD had at least one other mental disorder in the past year?",
         options: ["About 5%", "About half (51.7%)", "About 90%", "Almost none, because comorbidity excludes ADHD"], a: 1,
-        why: "Fayyad 2017 found 51.7%. Lifetime figures in clinics are 60 to 85% (Kooij 2019; CADDRA). Comorbidity does not rule out ADHD (WFADHD 2021)." },
+        why: "Fayyad 2017 found 51.7% over 12 months. Lifetime estimates are higher: 60 to 80% (Kooij 2019), and CADDRA cites 85%. Comorbidity does not rule out ADHD (WFADHD 2021)." },
       { q: "In the WHO surveys, ADHD began before 86% of comorbid mood disorders and 99% of substance use disorders. What is the main practical implication?",
         options: ["Mood disorders cause ADHD", "Substance use should never be asked about", "Temporal order is irrelevant to the differential", "ADHD-like symptoms that begin only after another disorder deserve extra scrutiny"], a: 3,
         why: "Because ADHD usually comes first, a picture in which 'ADHD symptoms' start with or after another disorder should make you look harder for that disorder as the explanation." },
@@ -1270,7 +1272,7 @@ AA.add('learn', [
       { q: "Owen, 40, has poor concentration only when worried, palpitations and tension, and fine concentration on calm weekends. School reports describe a conscientious child. What is the most likely verdict?",
         options: ["ADHD, combined presentation", "Co-occurring ADHD and GAD", "Generalised anxiety disorder better explains the symptoms", "Uncertain; start a stimulant trial"], a: 2,
         why: "Inattention confined to anxious states, physical anxiety symptoms and no childhood history point to anxiety as the explanation (CADDRA; ICD-11). A stimulant response would not settle the question." },
-      { q: "Sam, 24, developed poor concentration, nightmares and hypervigilance after an assault at 19. Primary school reports are glowing and his mother recalls a settled child. What is the most likely verdict?",
+      { q: "Luca, 24, developed poor concentration, nightmares and hypervigilance after an assault at 19. Primary school reports are glowing and his mother recalls a settled child. What is the most likely verdict?",
         options: ["ADHD, because PTSD and ADHD often co-occur", "Uncertain, because PCL-5 items overlap with ADHD", "Co-occurring ADHD and PTSD", "PTSD better explains the symptoms"], a: 3,
         why: "Onset after the trauma, re-experiencing and threat-related symptoms, and no childhood ADHD history point to PTSD as the explanation. Co-occurrence would require ADHD symptoms before the trauma." },
       { q: "Why does the ITQ diagnostic algorithm help when assessing an adult with ADHD and a trauma history?",
@@ -1288,18 +1290,19 @@ AA.add('learn', [
     ],
     refs: [
       "American Psychiatric Association. DSM-5-TR (2022): ADHD criterion E; hypomanic, manic, persistent depressive and cyclothymic disorder concepts, paraphrased.",
-      "World Health Organization. ICD-11 CDDR (2024): 6A05 boundaries with mood, anxiety and other disorders; 6B41 complex PTSD.",
+      "World Health Organization. ICD-11 CDDR (2024): 6A05 boundaries with mood, anxiety and other disorders; 6B41 complex PTSD; 6D10-6D11 personality disorder and borderline pattern.",
       "NICE NG87. Recommendations 1.2.2, 1.2.10 and 1.4.4. NICE CG185 bipolar disorder, recommendation 1.2.3.",
       "Adamou M et al. UKAAN AQAS. Front Psychiatry 2024;15:1380410.",
       "Royal College of Psychiatrists. CR235 ADHD in adults: good practice guidelines (2023), sections 9.2, 9.3, 9.7, 10 and 11.5.",
       "Kooij JJS et al. Updated European Consensus Statement. Eur Psychiatry 2019;56:14-34 (sections 4.1, 6.3, 7.2 and 7.5.1).",
       "CADDRA. Canadian ADHD Practice Guidelines, 4.1 edition (2020), chapter 2 (differential diagnosis tables).",
       "Faraone SV et al. WFADHD International Consensus Statement. Neurosci Biobehav Rev 2021;128:789-818; WFADHD 2026 update, PsyArXiv preprint (not peer reviewed).",
-      "Fayyad J et al. Adult ADHD in the WHO World Mental Health Surveys (2017): comorbidity and temporal priority.",
+      "Fayyad J et al. The descriptive epidemiology of DSM-IV adult ADHD in the WHO World Mental Health Surveys. Atten Defic Hyperact Disord 2017;9:47-65 (comorbidity and temporal priority).",
+      "Newman et al. Audit of comorbidity in 173 adults newly diagnosed with ADHD, Brighton and Hove NHS neurodevelopmental clinic, 2022-2024. RCPsych Congress abstract, 2026 (not peer reviewed).",
       "Kessler RC et al. The prevalence and correlates of adult ADHD in the United States (NCS-R). Am J Psychiatry 2006;163:716-723.",
       "Post RM et al. Graphic representation of the life course of illness in patients with affective disorder. Am J Psychiatry 1988;145:844-848.",
       "Asherson P et al. Differential diagnosis, comorbidity, and treatment of ADHD in relation to bipolar disorder or borderline personality disorder in adults. Curr Med Res Opin 2014;30:1657-1672.",
-      "Viktorin A et al. The risk of treatment-emergent mania with methylphenidate in bipolar disorder. Am J Psychiatry 2016 (cited in Kooij 2019, section 7.5.1).",
+      "Viktorin A et al. The risk of treatment-emergent mania with methylphenidate in bipolar disorder. Am J Psychiatry 2017;174:341-348 (online 2016; cited in Kooij 2019, section 7.5.1).",
       "Lundervold AJ et al. Front Psychol 2020;11:571101 (MDQ positive in adults with ADHD). Hirschfeld RMA et al. Am J Psychiatry 2000;157:1873-1875 (MDQ).",
       "Katzman MA et al. Adult ADHD and comorbid disorders: clinical implications of a dimensional approach. BMC Psychiatry 2017;17:302.",
       "Spencer AE et al. Examining the association between PTSD and ADHD: a systematic review and meta-analysis. J Clin Psychiatry 2016;77:72-83.",

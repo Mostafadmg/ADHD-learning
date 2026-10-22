@@ -63,7 +63,7 @@ AA.add('stepGuide', {
     time: "5-15 minutes",
     do: [
       "Check each returned form: completed by the patient, for the right time frame, with no missing items. Enter the answers here, or ask the patient to complete the scale now. Results at a glance shows which are done.",
-      "ASRS v1.1: count the Part A answers (items 1 to 6) in the shaded range. Four or more is a positive screen. Use Part B as a list of probes; it has no total score. The optional ASRS-5 has its own weighted scoring: follow its tool guide.",
+      "ASRS v1.1: count the Part A answers (items 1 to 6) in the shaded range. Four or more is a positive screen. Use Part B as a list of probes; it has no total score. The optional ASRS-5 has its own weighted scoring: follow its Scoring guide in the tools library.",
       "WURS-25 (childhood recall, total 0 to 100): 46 or more is the original cut-off and 36 or more a more sensitive one. Depression, bipolar disorder and borderline personality disorder also raise the score.",
       "WFIRS-S (last month): a domain is impaired when two or more items are rated 2, any item is rated 3, or the domain mean is 1.5 or more. These are the areas to explore in the impairment step.",
       "Note the high-scoring items and impaired domains as prompts. Check the answers briefly with the patient and ask for an example of a high score if it helps, but save the detailed exploration for the history and the symptom interview, so the forms do not steer the patient's own account.",
@@ -161,7 +161,7 @@ AA.add('stepGuide', {
       "Physical health and medicines: seizures, head injury, thyroid problems, hearing or vision, sleep, known heart disease, palpitations, breathlessness or fainting on exertion, sudden cardiac death in a first-degree relative under 40, and all medicines, including over-the-counter ones and caffeine.",
       "Substances and behaviours: alcohol, cannabis, stimulants, other drugs, nicotine and gambling. Find the age of first use and whether the ADHD-type problems came first.",
       "Build a rough timeline as you go: when the problems started, when other conditions started, major life events, and periods when things were better or worse.",
-      "Make mental state observations throughout: appearance, behaviour (including restlessness and distractibility), speech, mood, thought, perception, cognition and insight. Review Flags from the history at the top of the page."
+      "Make mental state observations throughout: appearance, behaviour (including restlessness and distractibility), speech, mood, thought, perception, cognition and insight. Record them under Mental state observations at the end of the page, then review Flags from the history at the top."
     ],
     say: [
       "Before I ask about specific difficulties, tell me in your own words what has been happening and why you have come now.",
@@ -179,7 +179,7 @@ AA.add('stepGuide', {
       "Psychotic symptoms are not part of ADHD and point to a separate diagnosis. Assess them, and treat them first if active (CR235 9.7.9; Kooij et al. 2019 section 7.2)."
     ],
     done: [
-      "Every history area is covered with ticks, notes or Nothing relevant.",
+      "Every history area is covered with ticks, notes or Nothing relevant, and mental state observations are recorded.",
       "You have a rough timeline of the ADHD-type problems, other conditions and life events.",
       "You know which flags for differentials, risk and treatment still need follow-up."
     ],
@@ -242,15 +242,15 @@ AA.add('stepGuide', {
     goal: "Decide, with real examples, which of the nine inattention symptoms are present now (last 6 months) and were present in childhood (age 5 to 12).",
     time: "35-50 minutes",
     do: [
-      "Set the frame: adulthood means the last 6 months; childhood means primary school, roughly age 5 to 12. Allow 60 to 90 minutes for both parts of the interview. Press Start with the first symptom, or open any symptom from the table.",
+      "Set the frame: adulthood means the last 6 months; childhood means primary school, roughly age 5 to 12. Allow 60 to 90 minutes for both parts of the interview. Press Start with (Continue with once you have begun), or open any symptom from the table.",
       "Read the main question aloud as written, then wait. Let the patient answer in their own words before you offer any example.",
-      "Ask for a recent, specific example. Tick only the examples the patient actually describes, and type their own words in the box. Use Other ways to ask if the question does not land; do not read the example list out as a checklist.",
+      "Ask for a recent, specific example. Open the area of life they talk about, or type in Filter examples, and tick only the examples the patient actually describes. Type their own words in the box. Use Other ways to ask if the question does not land; do not read the example list out as a checklist.",
       "Open Probe further and ask how often it happens, whether it is more than in other people of the same age, in which settings, and what it costs. Ask how they cope and what happens when the coping fails.",
-      "Score adulthood Yes, Unsure or No, using How to score this symptom and its calibration examples. Score Yes only when it is frequent, more than in peers, long-standing and causes problems.",
+      "Score adulthood Yes, Unsure or No, using How to score this symptom and its calibration examples. Score Yes only when it is frequent, more than in peers, long-standing and causes problems. On a phone or tablet the scores sit in the bar at the bottom of the screen.",
       "Switch to the Childhood tab. Anchor the period (school, teacher, house, friends), ask the childhood question, tick examples and score it the same way.",
       "If an informant is present or you have school reports, rate their support for this symptom: 0 none, 1 some, 2 clear, or n/a.",
       "If the problem might come from something else (low mood, anxiety, poor sleep, substances, a learning difficulty), open Could it be something else? and flag it for the differential step. If you are unsure, score Unsure and come back after collateral.",
-      "Move on with Next symptom or the arrow keys. After the ninth symptom, answer the supplement question for adulthood and for childhood: are these problems greater than in others of the same age?"
+      "Move on with Next symptom (Next in the score bar on a phone or tablet, or the arrow keys on a keyboard). After the ninth symptom, answer the supplement question for adulthood and for childhood: are these problems greater than in others of the same age?"
     ],
     say: [
       "I am now going to ask about nine kinds of difficulty with attention and organisation. For each one I will ask about the last six months, then about when you were at primary school.",
@@ -475,7 +475,7 @@ AA.add('stepGuide', {
       "Tick any indicators that apply, such as near-maximal answers on every scale, vague or textbook examples, or impairment out of proportion to the symptoms described.",
       "Note any external incentives: exam or workplace adjustments, benefits, stimulant medication or legal proceedings.",
       "Cross-check the account using Things to cross-check: interview against questionnaires, childhood account against school reports, reported impairment against actual achievements, and the patient's account against the informants'.",
-      "Record any formal validity measures used, such as embedded scale indexes or stand-alone symptom and performance validity tests, only if you are trained to give and interpret them.",
+      "If you used formal validity measures (see Symptom validity measures), such as embedded scale indexes or stand-alone symptom and performance validity tests, record the results in Notes on validity. Use them only if you are trained to give and interpret them.",
       "Rate the overall concern as none, some or major, and write the reasons in neutral, factual language. Example wording for the report can be added to the notes.",
       "If concern is some or major, decide what extra evidence you need (records, informants, neuropsychological testing) before reaching a conclusion."
     ],

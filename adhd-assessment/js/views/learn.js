@@ -24,6 +24,29 @@
   function byN(a, b) { return (typeof a.n === 'number' ? a.n : 999) - (typeof b.n === 'number' ? b.n : 999); }
   function pct(a, b) { return b ? Math.round(100 * a / b) : 0; }
 
+  /* Authored tables with several wordy columns become stacked cards on phones (CSS in this view's
+     stylesheet): each cell is labelled with its column heading. Short numeric tables stay as tables. */
+  function stackTables(root, cls) {
+    Array.prototype.forEach.call(root.querySelectorAll('table'), function (t) {
+      var rows = Array.prototype.slice.call(t.rows);
+      if (rows.length < 2) return;
+      var headRow = t.tHead && t.tHead.rows[0] ? t.tHead.rows[0] : rows[0];
+      var heads = Array.prototype.map.call(headRow.cells, function (c) { return c.tagName === 'TH' ? c.textContent.trim() : ''; });
+      if (!heads.some(Boolean)) return;
+      var body = rows.filter(function (r) { return r !== headRow; });
+      var cells = [];
+      body.forEach(function (r) { Array.prototype.forEach.call(r.cells, function (c) { cells.push(c); }); });
+      if (!cells.length) return;
+      var avg = cells.reduce(function (n, c) { return n + c.textContent.length; }, 0) / cells.length;
+      if (!((heads.length >= 3 && avg >= 24) || (heads.length === 2 && avg >= 60))) return;
+      body.forEach(function (r) { Array.prototype.forEach.call(r.cells, function (c, i) { if (heads[i]) c.setAttribute('data-label', heads[i]); }); });
+      headRow.classList.add(cls + '-head');
+      t.classList.add(cls);
+    });
+    return root;
+  }
+  function prose(html) { return stackTables(ui.html(html), 'lr-stack'); }
+
   function modules() { return (AA.data.learn || []).filter(function (m) { return m && m.id; }).slice().sort(byN); }
   function moduleById(id) { return modules().filter(function (m) { return m.id === id; })[0] || null; }
   function modNo(m) { var i = modules().indexOf(m); return typeof m.n === 'number' ? m.n : i + 1; }
@@ -457,7 +480,7 @@
       var id = 'lr-s' + count;
       article.appendChild(sec(txt(s.h) || 'Section ' + count, count, h('section', { class: 'lr-sec', id: id, 'aria-labelledby': id + 'h' },
         h('h2', { id: id + 'h', tabindex: '-1' }, txt(s.h) || 'Section ' + count),
-        ui.html(typeof s.html === 'string' ? s.html : ''))));
+        prose(typeof s.html === 'string' ? s.html : ''))));
     });
     if (!count) article.appendChild(ui.callout('info', h('p', null, 'The teaching content for this module is not available in this build.')));
 
@@ -605,7 +628,7 @@
       if (txt(c.referral)) body.appendChild(h('p', null, h('strong', null, 'Referral: '), txt(c.referral)));
       stagesOf(c).slice(0, upTo + 1).forEach(function (s, k) {
         body.appendChild(h('h3', { class: 'lr-ctx-h' }, 'Stage ' + (k + 1) + (txt(s.title) ? ': ' + txt(s.title) : '')));
-        if (typeof s.html === 'string') body.appendChild(ui.html(s.html));
+        if (typeof s.html === 'string') body.appendChild(prose(s.html));
       });
     });
     return h('div', { class: 'lr-ctx' },
@@ -822,7 +845,7 @@
         h('div', { class: 'card lr-stage-card' },
           h('h2', { class: 'lr-stage-h', id: 'lr-st-' + i, tabindex: '-1' },
             h('span', { class: 'lr-stage-k' }, 'Stage ' + (i + 1) + ' of ' + stages.length), h('span', { class: 'sr-only' }, ': '), txt(st.title) || 'What happens next'),
-          typeof st.html === 'string' && st.html ? ui.html(st.html) : null));
+          typeof st.html === 'string' && st.html ? prose(st.html) : null));
       var card = li.firstChild;
       if (validQ(st.q)) {
         card.appendChild(ask(st.q, {

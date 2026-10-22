@@ -78,7 +78,7 @@
               "It means a brain scan is needed before any diagnosis can be made"
             ],
             a: 1,
-            why: "Always ask about head injury (UKAAN AQAS lists seizures and head injury as specific enquiries, and NICE NG87 1.2.1 notes higher ADHD prevalence after acquired brain injury). What matters is the timeline. Symptoms that are documented years before the injury cannot have been caused by it. A stepwise change in attention after an injury would point the other way. Imaging is not part of a routine ADHD assessment."
+            why: "Always ask about head injury (UKAAN AQAS lists seizures and head injury as specific enquiries, and NICE NG87 1.2.1 lists people with acquired brain injury among the groups who may have a higher prevalence of ADHD). What matters is the timeline. Symptoms that are documented years before the injury cannot have been caused by it. A stepwise change in attention after an injury would point the other way. Imaging is not part of a routine ADHD assessment."
           }
         },
         {
@@ -295,7 +295,7 @@
             "<li><strong>Forgetful:</strong> double bookings, the hob, her own dental check-ups.</li></ul>" +
             "<p>Not counted: <em>careless mistakes</em> (few errors reach anyone because she checks everything three times; scored unsure and recorded as heavily compensated) and <em>seems not to listen</em> (absent).</p>" +
             "<h4>Hyperactivity-impulsivity: 2 of 9 present</h4>" +
-            "<p>She picks at her cuticles until they bleed and jiggles her foot under the desk, and she cannot watch a film without doing something else. No outward overactivity, excessive talking or impulsivity.</p>" +
+            "<ul><li><strong>Fidgeting:</strong> picks at her cuticles until they bleed and jiggles her foot under the desk.</li><li><strong>Inner restlessness:</strong> cannot watch a film or sit through a long meeting without doing something else with her hands or phone.</li></ul><p>No outward overactivity, excessive talking, blurting, interrupting or difficulty waiting.</p>" +
             "<h4>Partner</h4>" +
             "<p>Chris: “The whole house runs on her lists. When a list fails, everything fails. She's been exhausted for twenty years, not two.”</p>",
           q: {
@@ -355,7 +355,7 @@
               "Treat the iron deficiency, keep gathering the developmental evidence, and confirm ADHD only if the lifelong symptoms persist once she is iron replete"
             ],
             a: 3,
-            why: "CADDRA and AADPA list anaemia as a medical mimic or aggravator, and iron deficiency has been linked to poorer attention and processing speed in young women (Murray-Kolb and Beard). Correct it and reassess. The childhood evidence can be gathered in parallel. Here tiredness improved but the core inattentive pattern did not, which supports ADHD with co-occurring, now corrected, iron deficiency."
+            why: "CADDRA and AADPA list anaemia as a medical mimic or aggravator, and in a trial in women aged 18 to 35, iron deficiency was linked to poorer cognitive performance that improved as ferritin rose (Murray-Kolb and Beard 2007). Correct it and reassess. The childhood evidence can be gathered in parallel. Here tiredness improved but the core inattentive pattern did not, which supports ADHD with co-occurring, now corrected, iron deficiency."
           }
         },
         {
@@ -469,7 +469,7 @@
               "Spells of several days with much less sleep and no tiredness, with a clear change from their usual self that others notice"
             ],
             a: 3,
-            why: "Spending, distractibility and irritability are common to both. CADDRA and the ddx evidence name decreased need for sleep, elation, grandiosity and an episodic course as the features that favour bipolar disorder; ADHD sleep problems are usually sleep-onset delay followed by tiredness. ICD-11 adds that late onset, episodicity and intensity of mood elevation point to bipolar disorder rather than ADHD."
+            why: "Spending, distractibility and irritability are common to both. Decreased need for sleep without tiredness, elation, grandiosity and an episodic course are the features that favour bipolar disorder; in ADHD the usual sleep problem is sleep-onset delay from a busy mind, followed by tiredness (CADDRA). ICD-11 adds that late onset, episodicity and intensity of mood elevation point to bipolar disorder rather than ADHD."
           }
         },
         {
@@ -511,7 +511,7 @@
               "It shows the ADHD got worse on sertraline"
             ],
             a: 2,
-            why: "Reduced need for sleep, overspending and euphoria within weeks of starting an antidepressant are a classic warning sign of bipolar spectrum disorder (ddx evidence: antidepressant-induced switching, clinical practice). Records like this are often coded vaguely as 'agitation'. Ask what actually happened, how long it lasted and how others saw it, and record it on the life chart."
+            why: "Reduced need for sleep, overspending and euphoria within weeks of starting an antidepressant are a classic warning sign of bipolar spectrum disorder (clinical practice). DSM-5-TR counts a full hypomanic episode that emerges on an antidepressant and persists beyond its physiological effect as a true episode; agitation or edginess alone is not enough. Records like this are often coded vaguely as 'agitation'. Ask what actually happened, how long it lasted and how others saw it, and record it on the life chart."
           }
         },
         {
@@ -536,7 +536,7 @@
               "Decline, and tell Alex that people with bipolar disorder can never take ADHD medication"
             ],
             a: 1,
-            why: "Stimulants improve some cognitive measures in people without ADHD, so a response proves nothing. The European Consensus (Kooij 2019) reports that methylphenidate monotherapy in bipolar disorder increased the risk of manic switch (hazard ratio 6.7), while in people also taking a mood stabiliser the hazard ratio was 0.6. Bipolar disorder is stabilised first. 'Never' is also wrong: when ADHD genuinely co-occurs, it can be treated once mood is stable."
+            why: "Stimulants improve some cognitive measures in people without ADHD, so a response proves nothing. The European Consensus (Kooij 2019) reports Swedish register data in which methylphenidate monotherapy in bipolar disorder increased the risk of manic switch (hazard ratio 6.7), while in people also taking a mood stabiliser the hazard ratio was 0.6. Bipolar disorder is stabilised first. 'Never' is also wrong: when ADHD genuinely co-occurs, it can be treated once mood is stable."
           }
         },
         {
@@ -544,7 +544,7 @@
           html:
             "<p>The clinician drew the life chart with Alex during feedback. Seeing the spells and the depressions laid out by year, Alex said: “So the ‘ADHD days’ are the buzzy weeks.”</p>" +
             "<ul><li><strong>ADHD:</strong> not diagnosed. Criterion B is not met (no symptoms of note before 12), the between-episode count is far below threshold, and the episodic symptoms are better explained by bipolar disorder (criterion E).</li>" +
-            "<li><strong>Bipolar II disorder</strong>, most recent episode depressed, currently in full remission.</li>" +
+            "<li><strong>Bipolar II disorder</strong>, current or most recent episode hypomanic (the week the forms were filled in); euthymic at assessment. Because fewer than two months have passed since that episode, DSM-5-TR would record it as in partial remission.</li>" +
             "<li><strong>Plan:</strong> referral to the community mental health team for confirmation and treatment in line with NICE CG185, including psychoeducation and mood monitoring; a daily mood and sleep diary; letter to the GP explaining the possible antidepressant-associated hypomania.</li>" +
             "<li><strong>Information:</strong> NICE NG87 1.4.4 says people who fall short of an ADHD diagnosis may still benefit from information. Alex was given self-help strategies for organisation and a route back if attention problems persist through a long period of stable mood.</li></ul>",
           q: {
@@ -562,8 +562,8 @@
       ],
       profile: { adultIA: 2, adultHI: 1, childIA: 1, childHI: 0, impairment: "Severe during mood episodes (dropped out of college, debt from hypomanic spending, months unable to work when depressed). Minimal impairment from attention between episodes." },
       answer: {
-        conclusion: "ADHD not diagnosed. The attention, restlessness and impulsivity Alex describes occur in discrete hypomanic episodes with reduced need for sleep, against a background of recurrent depressive episodes since 19, an antidepressant-associated switch and a family history of bipolar I disorder. Between episodes there are few ADHD symptoms and there was no childhood onset. Bipolar II disorder better explains the picture.",
-        codes: "DSM-5-TR: bipolar II disorder, most recent episode depressed, in full remission (ICD-10-CM F31.81). ICD-11: 6A61 bipolar type II disorder. ADHD not diagnosed.",
+        conclusion: "ADHD not diagnosed. The attention, restlessness and impulsivity Alex describes occur in discrete hypomanic episodes with reduced need for sleep, against a background of recurrent depressive episodes since 19, an antidepressant-associated switch and a family history of bipolar I disorder. Between episodes there are few ADHD symptoms and there was no childhood onset. Bipolar II disorder better explains the picture; the most recent episode was the hypomanic week in which the forms were completed.",
+        codes: "DSM-5-TR: bipolar II disorder, current or most recent episode hypomanic, in partial remission (ICD-10-CM F31.81). ICD-11: 6A61.A bipolar type II disorder, currently in full remission (no significant mood symptoms at assessment). ADHD not diagnosed.",
         ddx: [
           "Bipolar II disorder: better explains the symptoms (episodic course, reduced need for sleep, onset at 19, family history, antidepressant-associated switch).",
           "ADHD: not met (2 inattentive and 1 hyperactive-impulsive symptoms between episodes; no childhood onset).",
@@ -657,7 +657,7 @@
             "<tr><td>Fidgeting</td><td>Rocks when thinking; flaps his hands when excited, mostly in private</td><td>Not counted: repetitive movements, not restlessness</td></tr>" +
             "<tr><td>Leaving seat</td><td>Leaves the lecture hall when the noise becomes painful</td><td>Not counted: sensory escape</td></tr>" +
             "<tr><td>Talks excessively; interrupts</td><td>Talks at length about maths without noticing others have lost interest; talks over others because he cannot tell when a turn has ended</td><td>Not counted: social reciprocity</td></tr>" +
-            "<tr><td>Restlessness, being on the go, waiting, blurting</td><td>“I like being still.” Likes queues because there are rules</td><td>Absent</td></tr>" +
+            "<tr><td>Restlessness, quiet leisure, being on the go, waiting, blurting</td><td>“I like being still.” Spends evenings quietly on maths puzzles. Likes queues because there are rules</td><td>Absent</td></tr>" +
             "</tbody></table>" +
             "<p>Adult count: <strong>3 of 9 inattentive, 0 of 9 hyperactive-impulsive</strong>.</p>",
           q: {
@@ -743,7 +743,7 @@
       profile: { adultIA: 3, adultHI: 0, childIA: 2, childHI: 0, impairment: "Moderate impairment in study (group projects not submitted) and social life, driven by social-communication and sensory demands rather than by inattention. Daily living skills are strong." },
       answer: {
         conclusion: "ADHD not diagnosed. Attention problems are confined to noisy, social and unstructured situations and are better accounted for by autistic social-communication differences, sensory over-responsivity and need for sameness, present since early childhood. Autism was diagnosed by the adult autism service after comprehensive assessment.",
-        codes: "ADHD not diagnosed. Autism (diagnosed by the autism service): DSM-5-TR autism spectrum disorder without accompanying intellectual or language impairment, requiring support (level 1) (ICD-10-CM F84.0). ICD-11: 6A02.0.",
+        codes: "ADHD not diagnosed. Autism (diagnosed by the autism service): DSM-5-TR autism spectrum disorder without accompanying intellectual or language impairment; requiring support (level 1) for social communication and for restricted, repetitive behaviours (ICD-10-CM F84.0). ICD-11: 6A02.0.",
         ddx: [
           "Autism: better explains the attention difficulties; confirmed after comprehensive assessment.",
           "ADHD: not met (3 inattentive and 0 hyperactive-impulsive symptoms after scoring without double counting).",
@@ -797,7 +797,7 @@
               "Use item 9 to classify her as low, medium or high risk and decide the follow-up from that"
             ],
             a: 1,
-            why: "The PHQ manual says a positive item 9 needs a clinical interview to judge risk; item 9 also picks up passive death wishes, so many positives are not active ideation. NICE NG225 (1.6.1 to 1.6.3) says not to use risk tools or global low, medium and high stratification to predict suicide or decide who gets treatment. Ask directly, explore, and agree a safety plan."
+            why: "The PHQ manual says a positive item 9 needs a clinical interview to judge risk; item 9 also picks up passive death wishes, so many positives are not active ideation. NICE NG225 1.6.1 to 1.6.3 (the self-harm guideline) advise against using risk tools and scales, or global low, medium and high stratification, to predict suicide or to decide who gets treatment. Ask directly, explore, and agree a safety plan."
           }
         },
         {
@@ -815,7 +815,7 @@
         {
           title: "Usual self versus the episode: adult ADHD symptoms",
           html:
-            "<p>The clinician rated ADHD symptoms for Sana's usual self (the first half of this year, before the episode, and the well years from 2019 to 2025), with her husband, Imran. What is new in the episode was recorded separately and not counted twice.</p>" +
+            "<p>The clinician rated ADHD symptoms for Sana's usual self (the six well years between her last episode at 31 and this summer), with her husband, Imran. What is new in the episode was recorded separately and not counted twice.</p>" +
             "<h4>Inattention (usual self): 7 of 9 present</h4>" +
             "<ul><li>Careless mistakes: transposed figures in client accounts; one VAT return had to be resubmitted; a reviewer now checks her work.</li>" +
             "<li>Sustaining attention: drifts through long audit files; rereads pages.</li>" +
@@ -854,7 +854,7 @@
             "<p>Fifteen years of examples, most from years when her mood was good: missed parents' evenings, late fees, two lost passports, talking over guests, never sitting through a film. Collateral rating: 2.</p>" +
             "<p>Family context: her son has ADHD and her younger brother is “the same”. The family had seen her difficulties as personality and her low mood as “stress”. Sana said it helped to be asked how her faith and family supported her.</p>",
           q: {
-            q: "Why do Imran's examples from 2019 to 2025 carry so much weight?",
+            q: "Why do Imran's examples from the six well years before this episode carry so much weight?",
             options: [
               "They come from years when she was not depressed, so they show the ADHD symptoms persist without the mood disorder",
               "Partners are always more accurate than parents",
@@ -995,11 +995,11 @@
         {
           title: "Substance history and timeline",
           html:
-            "<ul><li>First cannabis at 15 at parties; weekly by 16 or 17; daily from 18, when she started college and her parents separated.</li>" +
+            "<ul><li>First cannabis at 15 at parties; weekly from 16, when she started college; daily from 17, when her parents separated. She lost her college place at 18.</li>" +
             "<li>Now 1 to 2 g a day of high-strength herbal cannabis, first joint within an hour of waking, about £100 a week, mixed with tobacco.</li>" +
             "<li>Tried to stop at 21 and 23: irritable, anxious, vivid dreams, unable to sleep, off her food; restarted within a week each time.</li>" +
             "<li>Uses more than she intends, has strong cravings, and carries on despite the memory problems and losing her college place.</li>" +
-            "<li>Longest break since 18: five days.</li>" +
+            "<li>Longest break since 17: five days.</li>" +
             "<li>Alcohol once or twice a month; no other drugs. No psychotic symptoms apart from feeling “a bit para when I'm stoned”.</li></ul>" +
             "<p>When asked about specific ages rather than “always”, Ellie said: “At school I was fine. I was a bit of a swot. It all went wrong around college.”</p>" +
             "<p>Five DSM-5-TR criteria for cannabis use disorder are met (larger amounts than intended, unsuccessful attempts to cut down, craving, continued use despite psychological problems, withdrawal), which is the moderate range (4 to 5).</p>"
@@ -1012,7 +1012,7 @@
             "<li>Year 6: “Ellie is conscientious and reliable and always hands in her homework on time.”</li>" +
             "<li>Year 10: “A quiet, capable student who works steadily.” Eight GCSE passes.</li></ul>" +
             "<h4>Mother</h4>" +
-            "<p>“She was the organised one. She packed her own school bag from seven. Quiet, a bit of a worrier. All of this started at college, when she started smoking and when her dad and I split up.” Childhood count: <strong>1 of 9 inattentive</strong> (occasional daydreaming), <strong>0 of 9 hyperactive-impulsive</strong>. Collateral rating: 0.</p>",
+            "<p>“She was the organised one. She packed her own school bag from seven. Quiet, a bit of a worrier. All of this started in her second year at college, when she was smoking every day and her dad and I split up.” Childhood count: <strong>1 of 9 inattentive</strong> (occasional daydreaming), <strong>0 of 9 hyperactive-impulsive</strong>. Collateral rating: 0.</p>",
           q: {
             q: "What does the childhood evidence show?",
             options: [
@@ -1028,7 +1028,7 @@
         {
           title: "Reassessment after ten weeks without cannabis",
           html:
-            "<p>Ellie engaged with the drug and alcohol service, cut down over four weeks and then stopped. For about two weeks she was irritable and slept badly; vivid dreams lasted longer. Urine tests were negative for cannabinoids at week 6 and week 10 (in heavy daily users tests can stay positive for weeks after stopping, so a negative test this early supports her account; clinical practice).</p>" +
+            "<p>Ellie engaged with the drug and alcohol service, cut down over four weeks and then stopped. For about two weeks she was irritable and slept badly; vivid dreams lasted longer. Urine tests were negative for cannabinoids at week 6 and week 10, which supports her account. (In heavy daily users, urine tests can stay positive for several weeks after the last use, so an early positive result does not by itself mean relapse; clinical practice.)</p>" +
             "<p>At the second interview: “My head's clear for the first time in years.” She has been made a trainee team leader. Repeat ASRS Part A: 2 of 6 shaded. PHQ-9 5, GAD-7 6.</p>" +
             "<p>Adult symptoms now: <strong>3 of 9 inattentive</strong> (a messy flat, leaving tasks to the last minute, sometimes distracted at work) and <strong>1 of 9 hyperactive-impulsive</strong> (difficulty unwinding: “I don't know how to relax without it yet”). None is causing more than mild difficulty.</p>",
           q: {
@@ -1061,14 +1061,14 @@
               "Treat the cannabis use only and never assess ADHD"
             ],
             a: 0,
-            why: "Substance use does not exclude ADHD. In comorbid ADHD and substance use disorder, ADHD usually starts first (it preceded substance use disorder in 95 to 99% of cases in the WHO surveys). Crunelle 2018 advises starting assessment once serious intoxication or withdrawal has passed, using collateral and school reports, and verifying the preliminary diagnosis during treatment; CADDRA and Kooij 2019 favour treating both, stabilising severe substance use first."
+            why: "Substance use does not exclude ADHD. In comorbid ADHD and substance use disorder, ADHD usually starts first (it came first in 95 to 99% of cases in the WHO World Mental Health surveys). Crunelle 2018 advises starting assessment once serious intoxication or withdrawal has passed, using collateral and school reports, and verifying the preliminary diagnosis during treatment; CADDRA and Kooij 2019 favour treating both, stabilising severe substance use first."
           }
         }
       ],
       profile: { adultIA: 3, adultHI: 1, childIA: 1, childHI: 0, impairment: "During daily use: moderate impairment at work, in daily life (sleep, money) and self-image. After ten weeks without cannabis: mild only, with a promotion at work." },
       answer: {
         conclusion: "ADHD not diagnosed. There were no ADHD symptoms of note before 12 (school reports and her mother describe an organised, conscientious child). Inattention, poor memory and low motivation began at 17 or 18 with daily high-strength cannabis use and largely resolved after ten weeks of abstinence. The picture is explained by cannabis use disorder, moderate, now in early abstinence.",
-        codes: "ADHD not diagnosed. DSM-5-TR: cannabis use disorder, moderate (ICD-10-CM F12.20). ICD-11: cannabis dependence (6C41.2).",
+        codes: "ADHD not diagnosed. DSM-5-TR: cannabis use disorder, moderate (ICD-10-CM F12.20); the early remission specifier needs at least three months without criteria, so it does not yet apply at ten weeks. ICD-11: cannabis dependence, early full remission (6C41.21; abstinent for 1 to 12 months).",
         ddx: [
           "Cannabis use disorder with intoxication, withdrawal and chronic effects: better explains the symptoms (onset with daily use, resolution with abstinence).",
           "ADHD: not met (no childhood onset; 3 inattentive and 1 hyperactive-impulsive symptoms when abstinent).",
@@ -1110,7 +1110,7 @@
             "<tr><td>Epworth Sleepiness Scale</td><td>16 out of 24</td><td>Severe excessive daytime sleepiness on the American Thoracic Society bands (16 to 24).</td></tr>" +
             "<tr><td>STOP-Bang</td><td>7 of 8 (all except BMI over 35)</td><td>High risk of obstructive sleep apnoea (5 to 8). Licensed tool: use the official version.</td></tr>" +
             "<tr><td>PHQ-9 / GAD-7</td><td>9 / 4; PHQ-9 item 9 = 0</td><td>PHQ-9 points come from sleep, tiredness and concentration.</td></tr>" +
-            "<tr><td>AUDIT</td><td>10</td><td>Increasing risk (8 to 15).</td></tr>" +
+            "<tr><td>AUDIT</td><td>13 (AUDIT-C 10)</td><td>Increasing risk (8 to 15). Drinks most evenings.</td></tr>" +
             "</tbody></table>",
           q: {
             q: "Which result should change your priorities most?",
@@ -1121,7 +1121,7 @@
               "The PHQ-9 of 9"
             ],
             a: 2,
-            why: "Severe daytime sleepiness plus a high STOP-Bang score makes obstructive sleep apnoea the lead hypothesis and raises an immediate road-safety question. Attention deficits are reported in up to 95% of people with OSA, and CADDRA and AADPA list sleep apnoea as a mimic. The ASRS is non-specific and cannot tell drowsiness from distractibility; the PHQ-9 points here are sleep items."
+            why: "Severe daytime sleepiness plus a high STOP-Bang score makes obstructive sleep apnoea the lead hypothesis and raises an immediate road-safety question. Attention deficits are reported in up to 95% of people with OSA (Youssef 2011 review), and CADDRA and AADPA list sleep apnoea as a mimic. The ASRS is non-specific and cannot tell drowsiness from distractibility; the PHQ-9 points here are sleep items."
           }
         },
         {
@@ -1146,7 +1146,7 @@
               "His positive online ADHD test"
             ],
             a: 0,
-            why: "ADHD is a trait present since childhood; the ddx evidence names adult onset and onset with weight gain as pointers to OSA. Forgetting names and losing track are shared by both. The quality matters: Gareth describes his eyes closing and fighting sleep, not a mind pulled from one thing to the next. ICD-11 lists sleep-wake disorders among the medical conditions that must be considered."
+            why: "ADHD is a trait present since childhood; onset in adult life, especially alongside weight gain, snoring and sleepiness, points to OSA (clinical practice; CADDRA stresses the longitudinal course). Forgetting names and losing track are shared by both. The quality matters: Gareth describes his eyes closing and fighting sleep, not a mind pulled from one thing to the next. ICD-11 lists sleep-wake disorders among the medical conditions that must be considered."
           }
         },
         {
@@ -1154,10 +1154,10 @@
           html:
             "<p>Before going further, the clinician discussed driving. Gareth agreed that he had felt sleepy at the wheel several times a month.</p>" +
             "<ul><li>Clear advice not to drive while excessively sleepy, recorded in the notes and in the letter.</li>" +
-            "<li>An explanation that it is his legal responsibility to follow DVLA rules on excessive sleepiness and sleep apnoea, and that the sleep service would advise once he was assessed (check current DVLA guidance).</li>" +
+            "<li>The DVLA rules for car drivers (Assessing fitness to drive, checked on the day): with excessive sleepiness from suspected OSA he must not drive until his symptoms are controlled, and must tell the DVLA if control is not achieved within three months. If moderate or severe OSA with excessive sleepiness is confirmed, he must stop driving and tell the DVLA. Telling the DVLA is his legal duty, not the clinician's.</li>" +
             "<li>Referral to the sleep service, with his sleepiness and driving clearly stated so that he could be prioritised.</li>" +
             "<li>A practical plan agreed with his manager: train travel and video meetings for the next few weeks.</li></ul>" +
-            "<p>GMC guidance allows a doctor to inform the DVLA if a patient continues to drive against advice when unsafe, after telling the patient. Gareth agreed to stop driving until reviewed.</p>",
+            "<p>GMC guidance: if a patient keeps driving when unfit despite every reasonable effort to persuade them, and others are exposed to a risk of death or serious harm, the doctor should contact the DVLA promptly, telling the patient beforehand and in writing afterwards. Gareth agreed to stop driving until reviewed.</p>",
           q: {
             q: "Gareth has dozed at the wheel twice. What should you do now?",
             options: [
@@ -1167,7 +1167,7 @@
               "Advise him not to drive while sleepy, explain his duty to follow DVLA rules, document it, and refer to the sleep service highlighting the driving risk"
             ],
             a: 3,
-            why: "Road safety comes before diagnostic tidiness. The first step is clear advice, documented, with an explanation of the patient's own responsibility to the DVLA. Under GMC guidance, a doctor may disclose to the DVLA if the patient continues to drive when unsafe despite advice, after telling them. Waiting for the end of the ADHD assessment leaves a sleepy driver on the motorway."
+            why: "Road safety comes before diagnostic tidiness. The first step is clear advice, documented, with an explanation of the patient's own responsibility to the DVLA. Under GMC guidance, if the patient keeps driving when unsafe despite every reasonable effort to persuade them, the doctor should contact the DVLA promptly, telling the patient first. Waiting for the end of the ADHD assessment leaves a sleepy driver on the motorway."
           }
         },
         {
@@ -1194,13 +1194,13 @@
               "Refer straight to a memory clinic for dementia"
             ],
             a: 1,
-            why: "When OSA is present and the ADHD history is unclear or absent, treat the OSA and reassess (ddx evidence; in all six interventional studies reviewed, inattention improved after OSA treatment). His MoCA is normal and there is no progressive decline outside the sleepiness, so a memory clinic is not the next step. A stimulant would mask sleepiness without treating its cause."
+            why: "When OSA is present and the ADHD history is unclear or absent, treat the OSA and reassess (clinical practice). In the Youssef 2011 review, all six interventional studies, mostly in children, found that inattention improved after OSA treatment. His MoCA is normal and there is no progressive decline outside the sleepiness, so a memory clinic is not the next step. A stimulant would mask sleepiness without treating its cause."
           }
         },
         {
           title: "Three months on CPAP",
           html:
-            "<p>CPAP use averaged 6.5 hours a night on 90% of nights. Epworth score 6. His wife is back in the bedroom. Alcohol down to weekends (AUDIT 5). Weight down 4 kg. The sleep service advised that his sleepiness was controlled, and he returned to driving in line with DVLA guidance.</p>" +
+            "<p>CPAP use averaged 6.5 hours a night on 90% of nights. Epworth score 6. His wife is back in the bedroom. Alcohol down to weekends, about 10 units a week. Weight down 4 kg. Gareth had told the DVLA when severe OSA with excessive sleepiness was confirmed. The sleep service confirmed control of his sleepiness and good CPAP adherence, and he returned to driving once the DVLA's requirements were met, with review at least every three years.</p>" +
             "<p>“It's like someone switched the lights back on.” Repeat ASRS Part A: 1 of 6 shaded. Adult symptoms now: <strong>2 of 9 inattentive</strong> (occasionally loses his keys; finds long reports tedious), <strong>0 of 9 hyperactive-impulsive</strong>. He hit his targets this quarter.</p>",
           q: {
             q: "What should the report say about ADHD?",
@@ -1218,7 +1218,7 @@
       profile: { adultIA: 2, adultHI: 0, childIA: 1, childHI: 1, impairment: "Before treatment: moderate impairment at work (missed targets) and a serious driving risk, all beginning around 48 with sleepiness. After three months of CPAP: no significant impairment." },
       answer: {
         conclusion: "ADHD not diagnosed. A previously well-organised man developed forgetfulness and poor concentration from about 48, together with weight gain, loud snoring, witnessed apnoeas and severe daytime sleepiness. A sleep study showed severe obstructive sleep apnoea, and his attention returned to his usual level after three months of CPAP. There was no childhood history of ADHD.",
-        codes: "ADHD not diagnosed. Obstructive sleep apnoea, severe (AHI 38 per hour): ICD-10-CM G47.33; ICD-11 7A41. Hazardous drinking (AUDIT 10, now 5) and treated hypertension noted.",
+        codes: "ADHD not diagnosed. Obstructive sleep apnoea, severe (AHI 38 per hour): ICD-10-CM G47.33; ICD-11 7A41. Increasing-risk drinking (AUDIT 13; now about 10 units a week) and treated hypertension noted.",
         ddx: [
           "Obstructive sleep apnoea: better explains the symptoms (adult onset with weight gain, sleepiness, witnessed apnoeas, AHI 38, resolution with CPAP).",
           "ADHD: not met (no childhood onset; 2 inattentive symptoms after treatment).",
@@ -1263,7 +1263,7 @@
             "<tr><td>AUDIT / DAST-10</td><td>9 / 2</td><td>Increasing-risk drinking; low-level drug use to explore.</td></tr>" +
             "<tr><td>Epworth Sleepiness Scale</td><td>9</td><td>Within the normal range (0 to 10).</td></tr>" +
             "</tbody></table>" +
-            "<p>A colleague in the team remarks: “He has a first-class degree and earns more than any of us. Can he really be impaired?”</p>",
+            "<p>A colleague in your clinical team remarks: “He has a first-class degree and earns more than any of us. Can he really be impaired?”</p>",
           q: {
             q: "How should Femi's academic and career success influence your view of impairment?",
             options: [
@@ -1304,7 +1304,7 @@
             "<li><strong>Forgetful:</strong> school events, bills, returning calls; his wife and PA remind him.</li></ul>" +
             "<p>Scored unsure and not counted: <em>seems not to listen</em> (drifts in long internal meetings, but tracks client meetings closely) and <em>distractible</em> (manages with a closed door and headphones, which are ordinary strategies).</p>" +
             "<h4>Hyperactivity-impulsivity: 4 of 9 present</h4>" +
-            "<p>Clicks pens and jiggles his leg (colleagues comment), paces during every call and cannot sit through a film, answers before questions are finished, and talks over clients (raised at appraisal). The other five are absent.</p>" +
+            "<ul><li><strong>Fidgeting:</strong> clicks pens and jiggles his leg; colleagues comment.</li><li><strong>Leaving his seat:</strong> paces during every call and cannot stay seated through a film.</li><li><strong>Blurting:</strong> answers before questions are finished.</li><li><strong>Interrupting:</strong> talks over clients, raised at appraisal.</li></ul><p>The other five are absent.</p>" +
             "<p>Comparison with peers: colleagues at the same level bill similar hours in about 50 hours a week. Femi needs 75, plus a trainee and a PA covering for him.</p>",
           q: {
             q: "His trainee catches errors in his drafts every week, so clients never see them. How should you score careless mistakes?",
@@ -1353,7 +1353,7 @@
               "His wife says he is exhausted"
             ],
             a: 0,
-            why: "Two tests answer the question: did the symptoms exist before the sleep loss (yes, from childhood), and do they persist when sleep is adequate (yes, on holiday)? The ddx evidence suggests asking how the person functions on holiday or at weekends when sleeping enough. A normal Epworth score shows he is not excessively sleepy, but it does not show that short sleep is not worsening his attention; caffeine and exhaustion are aggravating factors, not discriminators."
+            why: "Two tests answer the question: did the symptoms exist before the sleep loss (yes, from childhood), and do they persist when sleep is adequate (yes, on holiday)? A useful question (clinical practice) is how the person functions on holiday or at weekends when sleeping enough. A normal Epworth score shows he is not excessively sleepy, but it does not show that short sleep is not worsening his attention; caffeine and exhaustion are aggravating factors, not discriminators."
           }
         },
         {

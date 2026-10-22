@@ -174,13 +174,26 @@
   var FINDER = 'sandbox.ddxfinder';
   function readTicks() { var f = AA.progress.get(FINDER + '.f', null); return isObj(f) ? Object.assign({}, f) : {}; }
 
+  /* The clue lists (about 500 checkboxes) are built group by group when a group is first opened or a
+     search needs it, so the page opens instantly; ranking works from the saved ticks alone. */
   function finder(list) {
     var ticks = readTicks();
     var rows = [];
     var groups = groupsOf(list).map(function (g) {
       var members = list.filter(function (c) { return groupKey(c) === g && features(c).length; });
       if (!members.length) return null;
-      var blocks = members.map(function (c) {
+      var meta = h('span');
+      var body = h('div', { class: 'rf-fbody' });
+      var grp = { g: g, members: members, meta: meta, blocks: [], n: members.length, built: false, body: body,
+        feats: members.reduce(function (acc, c) { return acc.concat(features(c).map(function (f) { return f.id; })); }, []) };
+      grp.el = ui.details(groupLabel(g), body, { meta: meta, cls: 'rf-fgroup', onToggle: function (open) { if (open) build(grp); } });
+      return grp;
+    }).filter(Boolean);
+
+    function build(grp) {
+      if (grp.built) return;
+      grp.built = true;
+      grp.blocks = grp.members.map(function (c) {
         var bRows = features(c).map(function (f) {
           var chk = ui.check({ label: [h('span', null, txt(f.t) || f.id), ' ', weightTag(weightOf(f))], checked: !!ticks[f.id], cls: 'rf-clue',
             onChange: function (on) { toggle(f.id, on); } });
@@ -190,10 +203,10 @@
         });
         return { el: h('div', { class: 'rf-fblock' }, h('h3', { class: 'rf-fcond' }, condName(c)), h('div', null, bRows.map(function (r) { return r.el; }))), rows: bRows };
       });
-      var meta = h('span');
-      var d = ui.details(groupLabel(g), blocks.map(function (b) { return b.el; }), { meta: meta, cls: 'rf-fgroup' });
-      return { el: d, meta: meta, blocks: blocks, n: members.length };
-    }).filter(Boolean);
+      var frag = document.createDocumentFragment();
+      grp.blocks.forEach(function (b) { frag.appendChild(b.el); });
+      grp.body.appendChild(frag);
+    }
 
     var status = h('p', { class: 'rf-fstatus', role: 'status', 'aria-live': 'polite' });
     var searchNote = h('p', { class: 'hint rf-fnote' });
@@ -209,6 +222,7 @@
       if (ws.length && !savedOpen) savedOpen = groups.map(function (g) { return g.el.open; });
       var shown = 0;
       groups.forEach(function (g) {
+        if (ws.length) build(g);
         var n = 0;
         g.blocks.forEach(function (b) {
           var m = 0;
@@ -220,9 +234,9 @@
           b.el.hidden = !m;
           n += m;
         });
-        g.el.hidden = !n;
+        g.el.hidden = ws.length ? !n : false;
         if (ws.length) g.el.open = n > 0;
-        shown += n;
+        shown += ws.length ? n : 1;
       });
       if (!ws.length && savedOpen) { groups.forEach(function (g, i) { g.el.open = !!savedOpen[i]; }); savedOpen = null; }
       noMatch.hidden = shown > 0;
@@ -259,16 +273,16 @@
           ui.progress(x.r.score, x.r.max, 'Share of the clue weight for ' + condName(x.c)),
           h('p', { class: 'rf-rank-meta' }, 'Score ' + x.r.score + ' of ' + x.r.max + ' · ' + x.r.pct + '% · ' + U.plural(x.r.checked, 'clue') + ' ticked')));
       });
-      var n = rows.filter(function (r) { return ticks[r.id]; }).length;
+      var n = 0;
+      groups.forEach(function (g) {
+        var t = g.feats.filter(function (id) { return ticks[id]; }).length;
+        n += t;
+        g.meta.textContent = U.plural(g.n, 'condition') + (t ? ' · ' + t + ' ticked' : '');
+      });
       rankEmpty.hidden = scored.length > 0;
       moreNote.textContent = scored.length > 8 ? U.plural(scored.length - 8, 'more condition') + ' with a lower score.' : '';
       resetBtn.disabled = !n;
-      status.textContent = !n ? 'No clues ticked yet.' : U.plural(n, 'clue') + ' ticked. Best fit: ' + condName(scored[0].c) + ', score ' + scored[0].r.score + ' (' + scored[0].r.pct + '%).';
-      groups.forEach(function (g) {
-        var t = 0;
-        g.blocks.forEach(function (bl) { bl.rows.forEach(function (r) { if (ticks[r.id]) t++; }); });
-        g.meta.textContent = U.plural(g.n, 'condition') + (t ? ' · ' + t + ' ticked' : '');
-      });
+      status.textContent = !n || !scored.length ? 'No clues ticked yet.' : U.plural(n, 'clue') + ' ticked. Best fit: ' + condName(scored[0].c) + ', score ' + scored[0].r.score + ' (' + scored[0].r.pct + '%).';
     }
 
     if (!groups.length) return null;
@@ -635,7 +649,7 @@
   var TYPE_WORDS = { Question: ['main question', 'main questions'], Rephrase: ['other wording', 'other wordings'], Example: ['example', 'examples'],
     Probe: ['probe', 'probes'], Informant: ['informant question', 'informant questions'] };
   var PERIOD_LABEL = { adult: 'Adulthood', child: 'Childhood' };
-  var LIMIT = 200;
+  var FIRST = 40, LIMIT = 120;   // results drawn at once: a short first page (instant), then larger pages
   var bankCache = null;
   var bankMemo = { q: '', types: [], sym: '', period: '', ctx: '', param: '' };
 
@@ -844,7 +858,7 @@
 
     /* ---- Results ---- */
     var resList = h('ul', { class: 'rf-res-list', 'aria-labelledby': 'rf-res-h' });
-    var moreBtn = ui.btn({ label: 'Show more', kind: 'secondary', onClick: function () { more(); } });
+    var moreBtn = ui.btn({ label: 'Show more', kind: 'secondary', onClick: function () { more(true); } });
     var noRes = ui.empty('Nothing matches', 'Try fewer or shorter words, or clear a filter.', ui.btn({ label: 'Clear all', kind: 'primary', onClick: function () { clearBtn.click(); } }));
     var results = h('section', { class: 'rf-results', 'aria-labelledby': 'rf-res-h' },
       h('h2', { id: 'rf-res-h', class: 'sr-only' }, 'Results'), resList, noRes, h('div', { class: 'rf-more' }, moreBtn));
@@ -872,18 +886,29 @@
             e.period ? [sep(), h('span', null, PERIOD_LABEL[e.period])] : null)),
         h('button', { type: 'button', class: 'btn btn-quiet btn-sm rf-copy', 'data-copy': String(e.i), 'aria-label': 'Copy: ' + (e.text.length > 60 ? e.text.slice(0, 57) + '...' : e.text) }, 'Copy'));
     }
-    function more() {
+    /* Draw the next page of results. focus: move focus to the first new result (the button's own click). */
+    function more(focus) {
       var frag = document.createDocumentFragment();
-      var end = Math.min(hits.length, shown + LIMIT);
+      var end = Math.min(hits.length, shown + (shown ? LIMIT : FIRST));
       var first = null;
       for (var i = shown; i < end; i++) { var node = item(hits[i]); if (!first) first = node; frag.appendChild(node); }
-      var focusNext = shown > 0 && first;
+      var focusNext = focus === true && shown > 0 && first;
       resList.appendChild(frag);
       shown = end;
       moreBtn.parentNode.hidden = shown >= hits.length;
       moreBtn.textContent = 'Show ' + Math.min(LIMIT, hits.length - shown) + ' more';
       countEl.textContent = 'Showing ' + fmt(shown) + ' of ' + U.plural(hits.length, 'match', 'matches').replace(/^\d+/, fmt(hits.length));
       if (focusNext) { var cb = first.querySelector('button'); if (cb) cb.focus(); }
+    }
+    /* Scrolling near the end of the list draws the next page by itself; the button stays for keyboards. */
+    var autoMore = null;
+    if (typeof window.IntersectionObserver === 'function') {
+      try {
+        autoMore = new IntersectionObserver(function (entries) {
+          if (entries.some(function (e) { return e.isIntersecting; }) && !results.hidden && shown < hits.length && shown > 0) more(false);
+        }, { rootMargin: '0px 0px 600px 0px' });
+        autoMore.observe(moreBtn.parentNode);
+      } catch (e) { autoMore = null; }
     }
     function apply() {
       var ws = wordsOf(f.q);
@@ -924,7 +949,7 @@
         return;
       }
       if (!hits.length) { countEl.textContent = 'No matches.'; moreBtn.parentNode.hidden = true; return; }
-      more();
+      more(false);
     }
     apply();
 
@@ -938,14 +963,17 @@
       search.select();
     }
     document.addEventListener('keydown', onKey);
-    return function () { document.removeEventListener('keydown', onKey); };
+    return function () { document.removeEventListener('keydown', onKey); if (autoMore) autoMore.disconnect(); };
   }
 
   /* ======================================================================
      Route: sym-<id> (one symptom's reference card, outside any assessment)
      ====================================================================== */
 
-  function exPeriod(groups, label) {
+  /* Phones fold long lists (examples, probes, informant questions) to their headings; wider screens open them. */
+  function narrow() { try { return window.matchMedia('(max-width: 640px)').matches; } catch (e) { return false; } }
+
+  function exPeriod(groups, label, fold) {
     var gs = arr(groups).filter(function (g) { return isObj(g) && texts(g.items).length; });
     if (!gs.length) return null;
     var total = gs.reduce(function (n, g) { return n + texts(g.items).length; }, 0);
@@ -953,16 +981,17 @@
       h('h3', null, h('span', null, label), h('span', { class: 'rf-n' }, U.plural(total, 'example'))),
       h('div', { class: 'rf-ex' }, gs.map(function (g) {
         var items = texts(g.items);
-        return h('div', { class: 'rf-exg' },
-          h('h4', null, h('span', null, txt(g.label) || txt(g.ctx) || 'Examples'), h('span', { class: 'rf-exg-n' }, String(items.length), h('span', { class: 'sr-only' }, items.length === 1 ? ' example' : ' examples'))),
+        return h('details', { class: 'rf-exg', open: !fold },
+          h('summary', null, h('span', null, txt(g.label) || txt(g.ctx) || 'Examples'), h('span', { class: 'rf-exg-n' }, String(items.length), h('span', { class: 'sr-only' }, items.length === 1 ? ' example' : ' examples'))),
           h('ul', null, items.map(li)));
       })));
   }
 
-  function miniCard(title, items, cls) {
+  function miniCard(title, items, cls, fold) {
     var list = texts(items);
     if (!list.length) return null;
-    return h('div', { class: 'card rf-mini' + (cls ? ' ' + cls : '') }, h('h3', null, title), ui.list(list));
+    return h('details', { class: 'card rf-mini' + (cls ? ' ' + cls : ''), open: !fold },
+      h('summary', null, h('span', { class: 'rf-mini-t' }, title), h('span', { class: 'rf-exg-n' }, String(list.length))), ui.list(list));
   }
 
   function renderSym(el, params) {
@@ -1011,14 +1040,15 @@
 
     /* ---- Examples ---- */
     var ex = isObj(s.examples) ? s.examples : {};
-    var exA = exPeriod(ex.adult, 'Adulthood'), exC = exPeriod(ex.child, 'Childhood');
-    if (exA || exC) el.appendChild(section('rf-ex-sec', 'Examples by life area', [h('p', { class: 'hint rf-intro' }, 'Concrete behaviours to ask about or recognise in the patient\'s account. Tick them in the interview, not here.'), exA, exC]));
+    var fold = narrow();
+    var exA = exPeriod(ex.adult, 'Adulthood', fold), exC = exPeriod(ex.child, 'Childhood', fold);
+    if (exA || exC) el.appendChild(section('rf-ex-sec', 'Examples by life area', [h('p', { class: 'hint rf-intro' }, 'Concrete behaviours to ask about or recognise in the patient\'s account. Tick them in the interview, not here.' + (fold ? ' Open a life area to see its examples.' : '')), exA, exC]));
 
     /* ---- Probes and informants ---- */
     var probes = arr(s.probes).filter(function (p) { return isObj(p) && texts(p.items).length; });
-    if (probes.length) el.appendChild(section('rf-probes', 'Probes', h('div', { class: 'rf-mgrid' }, probes.map(function (p) { return miniCard(probeLabel(p), p.items); }))));
+    if (probes.length) el.appendChild(section('rf-probes', 'Probes', h('div', { class: 'rf-mgrid' }, probes.map(function (p) { return miniCard(probeLabel(p), p.items, null, fold); }))));
     var inf = isObj(s.informant) ? s.informant : {};
-    var infCards = [miniCard('Partner', inf.partner), miniCard('Parent or carer', inf.parent), miniCard('School reports: look for', inf.school)].filter(Boolean);
+    var infCards = [miniCard('Partner', inf.partner, null, fold), miniCard('Parent or carer', inf.parent, null, fold), miniCard('School reports: look for', inf.school, null, fold)].filter(Boolean);
     if (infCards.length) el.appendChild(section('rf-inf', 'Informant questions', h('div', { class: 'rf-mgrid' }, infCards)));
 
     /* ---- How to score ---- */

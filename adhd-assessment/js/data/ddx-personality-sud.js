@@ -21,7 +21,7 @@ AA.add('ddx', [
     summary: "An enduring pattern of unstable relationships, self-image and emotion with marked impulsivity, usually emerging in adolescence or early adulthood. It shares impulsivity, mood lability, anger and relationship problems with ADHD, and the two often co-occur. The discriminators are the interpersonal engine of the symptoms (fear of abandonment, idealisation and devaluation), identity disturbance, chronic emptiness, recurrent self-harm and stress-related dissociation, none of which belong to ADHD.",
     prevalence: "Lifetime BPD in 33.7% of adults with ADHD versus 5.2% of the general population (NESARC, cited in CADDRA 4.1). Any personality disorder in 13.6% of women and 9.1% of men with ADHD in Norwegian registers (Solberg 2018), and in 19% of adults newly diagnosed in one UK NHS clinic audit (Newman 2026, conference abstract, not peer reviewed). Reverse direction: ADHD in about 20% of adults with BPD (Asherson 2014) and 30-60% in retrospective or self-report studies (Ditrich 2021).",
     coexist: "yes",
-    coexistNote: "Both can be diagnosed when each is met in its own right. DSM-5-TR lists personality disorders among the conditions that must not better explain the ADHD symptoms, and notes that ADHD is not characterised by fear of abandonment, self-injury or extreme ambivalence. ICD-11 notes that ADHD and personality disorder with disinhibition or negative affectivity can be hard to separate in adults. Both are trait-like (RCPsych CR235), so a lifelong course does not discriminate: use the age at onset, corroborated childhood symptoms and the features specific to BPD. NICE CG78 1.3.6.1 advises reviewing a diagnosis made during a crisis before treating a comorbid condition.",
+    coexistNote: "Both can be diagnosed when each is met in its own right. DSM-5-TR lists personality disorders among the conditions that must not better explain the ADHD symptoms, and notes that ADHD is not characterised by fear of abandonment, self-injury or extreme ambivalence. ICD-11 notes that persistent ADHD can be hard to separate from personality disorder with prominent disinhibition or negative affectivity, and that whether an added personality disorder diagnosis is useful depends on the clinical situation. Both are trait-like (RCPsych CR235), so a lifelong course does not discriminate: use the age at onset, corroborated childhood symptoms and the features specific to BPD. NICE CG78 1.3.6.1 advises reviewing a diagnosis made during a crisis before treating a comorbid condition.",
     overlap: [
       "Impulsivity: spending, risky sex, reckless driving, substance use, binge eating",
       "Rapid mood shifts and low frustration tolerance",
@@ -40,7 +40,7 @@ AA.add('ddx', [
       "Relationship problems come from forgetting, lateness, not listening and impulsive remarks, not from fear of abandonment",
       "A stable core sense of self and values despite a chaotic life",
       "Mood shifts follow everyday frustration, boredom or overload rather than perceived rejection",
-      "No recurrent self-harm, or a single act clearly tied to a co-occurring depressive episode",
+      "No repeated self-harm used to manage emotional pain (self-harm is also more common in ADHD, so a single episode does not discriminate; Kooij 2019)",
       "Informants describe a scattered, restless person even when relationships are going well"
     ],
     favoursAlt: [
@@ -50,7 +50,7 @@ AA.add('ddx', [
       "Chronic feelings of emptiness",
       "Recurrent self-harm, suicidal threats or suicide attempts",
       "Impulsive acts mainly in states of intense negative emotion, often after an interpersonal trigger",
-      "Intense dysphoric states lasting hours to several days, set off by perceived rejection (ICD-11)",
+      "Intense dysphoric mood states, usually lasting a few hours but up to several days (ICD-11), often set off by perceived rejection or criticism",
       "Transient stress-related paranoid ideas or dissociation (feeling unreal, losing time)",
       "Onset of the pattern in adolescence or early adulthood with no convincing childhood inattention or hyperactivity",
       "A view of the self as bad, worthless or profoundly different from other people (ICD-11)",
@@ -147,7 +147,7 @@ AA.add('ddx', [
     core: false,
     icd11: "6D10 Personality disorder with 6D11.2 Dissociality (often with 6D11.3 Disinhibition); childhood history coded as 6C91 Conduct-dissocial disorder. ICD-11 has no separate antisocial category.",
     summary: "A pervasive pattern, present since age 15, of disregard for and violation of the rights of others, with conduct disorder before 15. Impulsive rule-breaking, lying, failure to plan, irritability and unstable work and money overlap with ADHD. The discriminators are planned, instrumental behaviour for gain, deceit for profit or pleasure, aggression used to control others and lack of remorse.",
-    prevalence: "In the WHO World Mental Health surveys, ODD or adult antisocial behaviour was present in 8.3% of adults with ADHD, with an odds ratio of 15.0, the highest of any disorder (Fayyad 2017). CADDRA 4.1 places conduct disorder or ASPD at 11-30% in adult ADHD. About 25% of prisoners meet criteria for ADHD (Young 2018; Kooij 2019, citing a meta-analysis of 42 studies). Many people with ASPD have an ADHD history, but most people with ADHD do not develop ASPD (CADDRA 4.1).",
+    prevalence: "In the WHO World Mental Health surveys, ODD or adult antisocial behaviour was present in 8.3% of adults with ADHD, with an odds ratio of 15.0, the highest of any disorder (Fayyad 2017). CADDRA 4.1 places conduct disorder or ASPD at 11-30% in adult ADHD. About 26% of adult prisoners meet criteria for ADHD (meta-analysis of 42 studies cited in Kooij 2019; Young 2018). Many people with ASPD have an ADHD history, but most people with ADHD do not develop ASPD (CADDRA 4.1).",
     coexist: "yes",
     coexistNote: "Both can be diagnosed when criteria for each are met. DSM-5-TR antisocial personality disorder needs age 18 or over and evidence of conduct disorder before 15, and is not diagnosed when the behaviour occurs only during schizophrenia or bipolar disorder. ICD-11: disruptive behaviour driven by ADHD impulsivity is usually not severe or dissocial and does not justify conduct-dissocial disorder, and people with conduct-dissocial disorder alone typically lack inattention and hyperactivity. ADHD is a treatable risk factor for ASPD (CADDRA 4.1).",
     overlap: [
@@ -216,7 +216,7 @@ AA.add('ddx', [
     screen: ["aceq"],
     investigations: [
       "School reports and records of exclusions, youth offending or social care: early reports often separate inattention from defiance.",
-      "Criminal justice and probation records (with consent). NICE CG77 advises using written records and family accounts because the person may not always be a reliable informant.",
+      "Criminal justice and probation records (with consent). NICE CG77 1.3.2.1 advises adding information from written records or family and carers, with consent, because the person may not always be a reliable source.",
       "Structured assessment in secondary and forensic services (NICE CG77 1.3.1.2); in forensic services PCL-R or PCL-SV for severity and HCR-20 for violence risk.",
       "Urine or oral-fluid drug screen with consent when substance use is likely: part of the assessment, never the sole basis (NICE CG51 1.2.2.3).",
       "Symptom and performance validity testing when there is a clear incentive (see the validity step).",
@@ -234,7 +234,7 @@ AA.add('ddx', [
     decide: {
       better: "ASPD, or a conduct-disorder history alone, better explains the picture when antisocial behaviour is planned and instrumental, remorse is absent, and there is no inattention or hyperactivity outside conflict, intoxication or gain, with no childhood evidence of ADHD beyond defiance.",
       both: "Diagnose both when corroborated childhood-onset inattention and/or hyperactivity persists in neutral settings and causes impairment independent of offending, alongside the full ASPD pattern. This combination is common in forensic samples.",
-      next: "Gather records and collateral before deciding. Assess risk to others and the risk of diversion. If ADHD is diagnosed, NICE NG87 1.7.4 requires a risk assessment for substance misuse and diversion before medication, and NG87 1.7.24 advises against immediate-release or easily injected or snorted modified-release stimulants when that risk exists. Offer treatment for comorbid conditions whether or not the ASPD is being treated (NICE CG77 1.4.1.1); group cognitive and behavioural programmes target impulsivity and offending (CG77 1.4.2.1)."
+      next: "Gather records and collateral before deciding. Assess risk to others and the risk of diversion. If ADHD is diagnosed, NICE NG87 1.7.4 requires a risk assessment for substance misuse and diversion before medication, and NG87 1.7.24 advises against immediate-release or easily injected or snorted modified-release stimulants when that risk exists. Offer treatment for comorbid conditions whether or not the ASPD is being treated (NICE CG77 1.4.1.1); group cognitive and behavioural programmes address impulsivity, interpersonal difficulties and antisocial behaviour (CG77 1.4.2.1) and offending (CG77 1.4.2.2). Medicines are not used routinely for ASPD or its aggression, anger and impulsivity (CG77 1.4.3.1), so any ADHD medicine must be justified by the ADHD itself, with a plan for poor adherence and misuse of prescribed medicines (CG77 1.4.1.2)."
     },
     pearls: [
       "Ask what the behaviour was for. 'I didn't think' is ADHD-like; 'I needed the money' or 'they had it coming' is not.",
@@ -242,13 +242,13 @@ AA.add('ddx', [
       "Do not let an offending history block an ADHD assessment. NICE NG87 1.2.1 lists the criminal justice system as a higher-prevalence group, and treating ADHD may make structured ASPD interventions more workable (CADDRA 4.1).",
       "ASPD requires conduct disorder before 15, so childhood records serve both diagnoses: look for inattention and restlessness separate from defiance.",
       "Offenders with ADHD often recall childhood poorly and minimise impairment (Young 2018). Expect gaps and seek records rather than assuming absence.",
-      "Assessors tend to look only for externalising behaviour in men; ask about inattention too (Young 2018).",
+      "In male offenders, conduct disorder and ASPD can mask ADHD (Young 2018). Do not focus only on externalising behaviour: ask about inattention too.",
       "When a stimulant prescription is the main goal, use the validity step and consider non-stimulant options first."
     ],
     refs: [
       "DSM-5-TR (APA 2022): antisocial personality disorder; ADHD differential diagnosis (paraphrased)",
       "ICD-11 CDDR (WHO 2024): 6C91 boundary with ADHD; 6D11.2 Dissociality; 6A05 boundary with conduct-dissocial disorder",
-      "NICE CG77 Antisocial personality disorder (2009): 1.3.1.1, 1.3.1.2, 1.3.2.1, 1.3.3.1, 1.4.1.1, 1.4.2.1",
+      "NICE CG77 Antisocial personality disorder (2009): 1.3.1.1, 1.3.1.2, 1.3.2.1, 1.3.3.1, 1.4.1.1, 1.4.1.2, 1.4.2.1, 1.4.2.2, 1.4.3.1",
       "NICE NG87 (2018, updated 2025): 1.2.1, 1.7.4, 1.7.23-1.7.24",
       "NICE CG51 Drug misuse: psychosocial interventions (2007): 1.2.2.3",
       "CADDRA 4.1 (2020): antisocial personality disorder section and Table 2.4",
@@ -344,19 +344,19 @@ AA.add('ddx', [
       "Psychotic symptoms with use, or a family history of psychosis.",
       "Assessment attempted while the person is intoxicated or in significant withdrawal: rebook.",
       "Use of synthetic cannabinoids ('spice'), with unpredictable potency and toxicity.",
-      "Driving after use, or use in safety-critical work.",
+      "Driving after use, or use in safety-critical work. Persistent drug misuse or dependence must be notified to the DVLA by the driver: advise and record it.",
       "Debts, dealing or exploitation linked to supply: consider safeguarding.",
       "Heavy use of several substances combined with a request for stimulants."
     ],
     decide: {
       better: "Cannabis effects better explain the picture when attention and restlessness problems began after regular use, track use and withdrawal, and resolve during sustained abstinence, and there is no childhood evidence of ADHD.",
       both: "Diagnose both when ADHD symptoms are documented before first use (school reports, childhood informant) and persist through drug-free periods. This is the usual pattern: ADHD began first in most people with both conditions (Fayyad 2017).",
-      next: "Do not put the whole assessment on hold for abstinence. Start when the person is not intoxicated or in serious withdrawal, focus on drug-free periods and childhood evidence, and verify the diagnosis as SUD treatment progresses (Crunelle 2018). Offer referral to drug services and treat both, usually concurrently. Before ADHD medication, assess the risk of misuse and diversion (NICE NG87 1.7.4)."
+      next: "Do not put the whole assessment on hold for abstinence. Start when the person is not intoxicated or in serious withdrawal, focus on drug-free periods and childhood evidence, and verify the diagnosis as SUD treatment progresses (Crunelle 2018). CADDRA 4.1 notes that specialist input may be needed before diagnosing ADHD during active illicit drug use. Offer referral to drug services and treat both, usually concurrently. Before ADHD medication, assess the risk of misuse and diversion (NICE NG87 1.7.4)."
     },
     pearls: [
       "Many patients say cannabis helps them focus. CADDRA 4.1 notes there is no evidence that cannabis treats ADHD, and evidence that it impairs cognition and motivation.",
       "Ask why they use, not only how much. Using to sleep or to quieten a racing mind is a common ADHD story; it does not prove ADHD, but it makes the timeline question essential.",
-      "Withdrawal can mimic ADHD for 1-3 weeks after stopping heavy use (ICD-11), and sleep may take longer to settle. Do not rate ADHD symptoms in the first week off heavy use.",
+      "Withdrawal can mimic ADHD: it peaks at 4-7 days and may last 1-3 weeks after stopping heavy use (ICD-11). Avoid rating current ADHD symptoms until withdrawal has settled, and lean on childhood evidence and longer drug-free periods.",
       "In a meta-analysis of young frequent users, small residual cognitive effects were no longer significant in studies requiring more than 72 hours of abstinence (Scott 2018). Marked deficits weeks after stopping need another explanation, including ADHD.",
       "Teenage-onset heavy use with no childhood history is the classic over-diagnosis; childhood-onset ADHD with early, fast-escalating use is the classic missed diagnosis.",
       "Tobacco is often mixed with cannabis, and nicotine withdrawal also causes poor concentration, irritability and restlessness.",
@@ -409,7 +409,7 @@ AA.add('ddx', [
     favoursAlt: [
       "Attention and memory problems began after heavy drinking became established",
       "Symptoms are worst the morning after drinking and ease as the day goes on or after a drink",
-      "Withdrawal features: tremor, sweating, nausea, anxiety and insomnia starting 6-12 hours after the last drink (ICD-11)",
+      "Withdrawal features: tremor, sweating, nausea, anxiety, insomnia and distractibility, starting 6-12 hours after the last drink and usually lasting 3-7 days (ICD-11)",
       "Clear improvement after 3-4 weeks of abstinence",
       "Blackouts and memory gaps for drinking episodes",
       "Dependence: impaired control, drinking taking precedence, tolerance, withdrawal or relief drinking",
@@ -454,14 +454,14 @@ AA.add('ddx', [
       "AUDIT-C, then the full AUDIT if the score is 5 or more (UK OHID forms). The AUDIT is the NICE-named tool for identification and outcome monitoring (NICE CG115 1.2.1.4).",
       "Severity of dependence (SADQ or LDQ) and of withdrawal (CIWA-Ar) in specialist settings (NICE CG115 1.2.1.4).",
       "LFTs including GGT and an FBC (MCV) to identify physical health needs. NICE CG115 1.2.2.10 advises against using blood tests routinely to identify or diagnose alcohol use disorders.",
-      "Brief cognitive screen (for example MoCA, by trained staff) when memory complaints accompany long-term heavy drinking; repeat after abstinence and refer for neuropsychology if deficits persist (clinical practice).",
+      "Brief cognitive screen (for example MoCA, by trained staff) when memory complaints accompany long-term heavy drinking. Formal neuropsychological testing is usually done only if impairment persists after a period of abstinence or a large reduction in drinking (NICE CG115 1.2.2.11).",
       "If the person arrives intoxicated, rebook rather than assess (clinical practice).",
       "Referral: local alcohol service. Consider assisted withdrawal for people who drink over 15 units a day and/or score 20 or more on the AUDIT (NICE CG115 1.3.4.1)."
     ],
     redFlags: [
       "History of withdrawal seizures, delirium tremens or withdrawal hallucinations: do not advise stopping suddenly without medical support.",
       "Confusion, unsteadiness or abnormal eye movements in a heavy drinker: suspect Wernicke's encephalopathy and treat as an emergency with thiamine (NICE CG100).",
-      "Drink-driving or drinking in safety-critical work; alcohol misuse and dependence must be reported to the DVLA.",
+      "Drink-driving or drinking in safety-critical work. Persistent alcohol misuse or dependence must be notified to the DVLA by the driver: advise and record it.",
       "Suicidal thoughts, particularly when drinking.",
       "Domestic abuse or child safeguarding concerns.",
       "Planned disulfiram with methylphenidate: dose-related psychotic episodes have been described with this combination (Crunelle 2018)."
@@ -477,13 +477,14 @@ AA.add('ddx', [
       "The AUDIT items on memory loss and failing to do what was expected can be driven by ADHD forgetfulness: ask whether these happen only when drinking.",
       "Morning anxiety, shakiness and poor concentration in a heavy drinker may be withdrawal, not ADHD or depression.",
       "Long-term heavy drinking can cause alcohol-related brain damage with executive and memory deficits. It is acquired, so there is no childhood history.",
+      "Anxiety and insomnia can recur for months after stopping drinking, especially around drinking cues (ICD-11). Persisting poor sleep or anxiety in early recovery does not by itself point to ADHD.",
       "Alcohol often travels with cannabis, cocaine and gambling: screen for all of them.",
       "Clinic-wide, ask every adult about alcohol: NICE NG87 1.2.1 lists people with a history of substance misuse as a higher-prevalence group for ADHD, and the reverse holds too."
     ],
     refs: [
       "DSM-5-TR (APA 2022): ADHD criterion E; alcohol use disorder and alcohol withdrawal (paraphrased)",
       "ICD-11 CDDR (WHO 2024): 6C40; substance dependence requirements; Table 6.16 alcohol withdrawal",
-      "NICE CG115 Alcohol-use disorders (2011): 1.2.1.4, 1.2.2.7, 1.2.2.8, 1.2.2.10, 1.3.4.1",
+      "NICE CG115 Alcohol-use disorders (2011): 1.2.1.4, 1.2.2.7, 1.2.2.8, 1.2.2.10, 1.2.2.11, 1.3.4.1",
       "NICE CG100 Alcohol-use disorders: diagnosis and management of physical complications",
       "NICE NG87 (2018, updated 2025): 1.2.1, 1.7.4",
       "Crunelle CL et al. Eur Addict Res 2018;24:43-51",
@@ -528,7 +529,7 @@ AA.add('ddx', [
     favoursAlt: [
       "Concentration and motivation problems began after regular stimulant use started",
       "Problems cluster in the days after use: exhaustion, oversleeping, low mood, irritability and craving",
-      "Withdrawal begins 24 hours to 4 days after stopping; low mood, lethargy and oversleeping dominate for 7-14 days, then irritability and craving can persist for 6-8 weeks (ICD-11)",
+      "Withdrawal course (ICD-11): after cocaine it starts within 6-24 hours and lasts up to about 7 days, with craving late; after amfetamines it starts 24 hours to 4 days after stopping, with low mood, lethargy and oversleeping for 7-14 days, then irritability and craving that can persist for 6-8 weeks",
       "Overactivity and talkativeness only when intoxicated",
       "Paranoia, suspiciousness or hallucinations with use",
       "Binge pattern over days, used to get high",
@@ -559,7 +560,7 @@ AA.add('ddx', [
     features: [
       { id: "sud_stim_after", t: "Concentration and motivation problems began after regular stimulant use", w: 3 },
       { id: "sud_stim_nochild", t: "No childhood ADHD evidence from records or informants", w: 3 },
-      { id: "sud_stim_abst", t: "Symptoms resolve during sustained abstinence (allowing 6-8 weeks for late withdrawal)", w: 3 },
+      { id: "sud_stim_abst", t: "Symptoms resolve during sustained abstinence (allowing up to 6-8 weeks after heavy amfetamine use)", w: 3 },
       { id: "sud_stim_crash", t: "Problems cluster in the crash: exhaustion, oversleeping, low mood, craving", w: 2 },
       { id: "sud_stim_intox", t: "Overactivity and talkativeness seen only when intoxicated", w: 2 },
       { id: "sud_stim_dep", t: "Dependence features: impaired control, craving, binges over days", w: 2 },
@@ -588,14 +589,14 @@ AA.add('ddx', [
       "Drug debts, exploitation or county lines involvement: safeguarding."
     ],
     decide: {
-      better: "Stimulant effects better explain the picture when the problems began after regular use, follow intoxication and crash cycles, and resolve over a sustained drug-free period (allowing 6-8 weeks for late withdrawal), with no childhood evidence of ADHD.",
+      better: "Stimulant effects better explain the picture when the problems began after regular use, follow intoxication and crash cycles, and resolve over a sustained drug-free period (allowing up to 6-8 weeks after heavy amfetamine use), with no childhood evidence of ADHD.",
       both: "Diagnose both when ADHD features are documented before any stimulant use and persist through drug-free periods. Feeling calm or focused on cocaine or amphetamine is not evidence either way.",
-      next: "Assess when the person is not intoxicated and is past the first week of the crash. Seek records and a childhood informant. If ADHD is diagnosed, treating both is recommended (Crunelle 2018), but NICE NG87 1.7.24 advises against immediate-release or easily injected or snorted modified-release stimulants where misuse or diversion is a risk. Long-acting formulations have lower rates of misuse and diversion (Crunelle 2018), and non-stimulants have no abuse potential (CADDRA 4.1). Agree safe storage, limited supplies and monitoring."
+      next: "Assess when the person is not intoxicated and is past the acute crash (about a week after cocaine, 1-2 weeks after amfetamines; ICD-11). Seek records and a childhood informant. If ADHD is diagnosed, treating both is recommended (Crunelle 2018), but NICE NG87 1.7.24 advises against immediate-release or easily injected or snorted modified-release stimulants where misuse or diversion is a risk. Long-acting formulations have lower rates of misuse and diversion (Crunelle 2018), and non-stimulants have no abuse potential (CADDRA 4.1). Agree safe storage, limited supplies and monitoring."
     },
     pearls: [
       "A calming response to illicit stimulants is often reported by adults with ADHD (RCPsych CR235 9.3), but stimulants also improve some cognitive measures in people without ADHD. Never use the response to a stimulant as diagnostic evidence.",
       "Ask what non-prescribed stimulants were used for: studying or working suggests self-treatment, partying and bingeing suggests recreational use. Neither settles the diagnosis.",
-      "Separate the crash from ADHD: low mood, fatigue and oversleeping dominate the first 1-2 weeks after stopping, and irritability and craving can persist for 6-8 weeks (ICD-11).",
+      "Separate the crash from ADHD. After amfetamines, low mood, fatigue and oversleeping dominate the first 1-2 weeks and irritability and craving can persist for 6-8 weeks; cocaine withdrawal is shorter, up to about a week. Suicidal thoughts can occur when dysphoria is marked (ICD-11).",
       "Tolerance and withdrawal on prescribed ADHD medication taken as directed do not count towards stimulant use disorder (DSM-5-TR).",
       "Interpret amphetamine-positive drug screens alongside the prescription: lisdexamfetamine and dexamfetamine are amphetamines.",
       "Do not withhold ADHD treatment because of past stimulant use: in people with SUD, treating ADHD can reduce ADHD symptoms without worsening the SUD (Crunelle 2018), with careful monitoring for misuse and diversion.",
@@ -622,7 +623,7 @@ AA.add('ddx', [
     core: false,
     icd11: "6C50 Gambling disorder (6C50.0 predominantly offline, 6C50.1 predominantly online); QE21 Hazardous gambling or betting",
     summary: "A persistent pattern of impaired control over gambling, increasing priority given to it, and continuation despite harm, usually over at least 12 months. Impulsivity, reward seeking, debt, secrecy about money and relationship damage overlap with ADHD, and the two often co-occur. Gambling disorder is a separate, treatable condition that ADHD does not explain, and it carries a high suicide risk.",
-    prevalence: "Reverse direction: about a quarter of people with gambling disorder or gambling-related harm meet criteria or screen positive for ADHD (pooled estimate about 24%; 25.2% with full DSM-5 ADHD in one gambling disorder sample). ADHD symptom severity correlates with gambling severity (pooled r = 0.17; Theule 2019). Gambling problems are listed among the burdens of adult ADHD (Kooij 2019), and gambling disorder among adult groups with raised ADHD prevalence (Australian guideline 2022). The rate of gambling disorder in UK adult ADHD clinics is not well established.",
+    prevalence: "Reverse direction: in 163 adults with gambling disorder, 25.2% met full DSM-5 criteria for current ADHD and 28.8% had lifetime ADHD (Retz 2016). ADHD symptom severity correlates modestly with gambling severity (pooled r = 0.17; Theule 2019 meta-analysis). Gambling problems are listed among the burdens of adult ADHD (Kooij 2019), and gambling disorder among adult groups with raised ADHD prevalence (Australian guideline 2022). The rate of gambling disorder in UK adult ADHD clinics is not well established.",
     coexist: "yes",
     coexistNote: "Both can be diagnosed when each is met. ICD-11 does not diagnose gambling disorder when the gambling is better explained by a manic or hypomanic episode, or is caused by a medicine or substance (for example dopamine agonists or methamfetamine), and allows co-diagnosis with personality disorder and substance use disorders. ADHD impulsivity may drive the gambling, but gambling disorder still needs its own treatment (CADDRA 4.1; NICE NG248 1.5.7).",
     overlap: [
@@ -687,7 +688,7 @@ AA.add('ddx', [
       { id: "gambling_escape", t: "Gambling used to escape low mood, stress or boredom", w: 1 },
       { id: "gambling_pgsi", t: "PGSI 8 or more (problem gambling)", w: 1 }
     ],
-    screen: [],
+    screen: ["cssrs"],
     investigations: [
       "Ask directly ('Do you gamble?', 'Are you worried about your own or another person's gambling?'; NICE NG248 1.1.6) and point people to the NHS website gambling questionnaire (NG248 1.1.7).",
       "Problem Gambling Severity Index (PGSI: 9 items, 0-27; 8 or more indicates problem gambling) or the South Oaks Gambling Screen; NG248 1.1.20 suggests an up-to-date validated tool.",
@@ -717,7 +718,8 @@ AA.add('ddx', [
       "When gaming involves wagers (for example online poker), ICD-11 says gambling disorder is usually the better diagnosis. Ask about betting inside games and apps.",
       "Gambling-related harm can be a dominant suicide risk factor even without other risk factors (NG248 1.1.11).",
       "Always check for dopamine agonists and aripiprazole: they can cause impaired control over gambling, and ICD-11 then does not diagnose gambling disorder.",
-      "Men are affected about twice as often as women in adulthood; women tend to start later but progress faster and more often have co-occurring mood or anxiety disorders (ICD-11)."
+      "Men are affected about twice as often as women in adulthood; women tend to start later but progress faster and more often have co-occurring mood or anxiety disorders (ICD-11).",
+      "Gamblers with ADHD gamble for longer, more often describe gambling as calming, progress faster and have more suicide attempts and cluster B personality disorders than gamblers without ADHD (Retz 2016)."
     ],
     refs: [
       "ICD-11 CDDR (WHO 2024): 6C50 Gambling disorder (requirements, course, gender features and boundaries); QE21",
@@ -726,7 +728,8 @@ AA.add('ddx', [
       "CADDRA 4.1 (2020): addictions section",
       "Kooij JJS et al. Eur Psychiatry 2019;56:14-34 (4.1.7)",
       "Australian evidence-based clinical practice guideline for ADHD (AADPA 2022): 1.1.1",
-      "Theule J et al. Exploring the relationships between problem gambling and ADHD: a meta-analysis. J Atten Disord 2019"
+      "Theule J et al. Exploring the relationships between problem gambling and ADHD: a meta-analysis. J Atten Disord 2019;23(12)",
+      "Retz W et al. Association of attention-deficit/hyperactivity disorder with gambling disorder. J Neural Transm 2016;123:1013-19"
     ]
   },
 
@@ -738,7 +741,7 @@ AA.add('ddx', [
     core: false,
     icd11: "6C51 Gaming disorder (6C51.0 predominantly online, 6C51.1 predominantly offline); QE22 Hazardous gaming",
     summary: "A persistent pattern of impaired control over digital gaming, increasing priority given to it, and continuation despite harm, usually over at least 12 months. Adults with ADHD often hyperfocus on games and lose hours online, which can cause, hide or be mistaken for the disorder. Gaming disorder does not explain lifelong inattention across settings, but night-time gaming and displacement of work and study can mimic ADHD in someone who does not have it.",
-    prevalence: "ICD-11 notes elevated rates of problematic gaming and gaming disorder in people with ADHD and in autistic people, possibly because games are used to regulate attention. The Australian guideline (2022) lists internet addiction second only to BPD among adult groups with raised ADHD prevalence. Gaming disorder is most prevalent in adolescent and young adult males aged 12-20, with lower rates in adults (ICD-11). No reliable figure exists for UK adult ADHD clinics.",
+    prevalence: "ICD-11 notes elevated rates of problematic gaming and gaming disorder in people with ADHD and in autistic people, possibly because games are used to regulate attention. The Australian guideline (2022) lists internet addiction second only to BPD among adult groups with raised ADHD prevalence. Gaming disorder is most prevalent in adolescent and young adult males aged 12-20, with lower rates in adults (ICD-11). A meta-analysis of mostly cross-sectional studies found a moderate correlation between gaming disorder and ADHD symptom severity (r = 0.30), as strong for inattention as for hyperactivity (Koncz 2023). No reliable figure exists for UK adult ADHD clinics.",
     coexist: "yes",
     coexistNote: "Both can be diagnosed: ICD-11 lists ADHD among the conditions that commonly co-occur with gaming disorder. Gaming disorder is not diagnosed when the gaming is better explained by a manic episode or is due to a substance or medication. DSM-5-TR includes internet gaming disorder only as a condition for further study (Section III); ICD-11 6C51 is the diagnostic category. Heavy gaming alone, or gaming in line with peer and cultural norms, is not a disorder (ICD-11).",
     overlap: [
@@ -801,7 +804,7 @@ AA.add('ddx', [
       { id: "gaming_stop", t: "Low mood, anger or aggression when gaming is stopped or limited", w: 1 },
       { id: "gaming_escape", t: "Gaming used to escape low mood, anxiety or social difficulty", w: 1 }
     ],
-    screen: [],
+    screen: ["phq9", "aq10"],
     investigations: [
       "One to two weeks of sleep diary with screen-time reports from the phone or console.",
       "Screen for depression, social anxiety and autism (for example PHQ-9, AQ-10 or RAADS-14), which often drive a retreat into gaming.",
@@ -835,6 +838,7 @@ AA.add('ddx', [
       "Australian evidence-based clinical practice guideline for ADHD (AADPA 2022): 1.1.1",
       "CADDRA 4.1 (2020): addictions section",
       "Kooij JJS et al. Eur Psychiatry 2019;56:14-34 (4.1.7)",
+      "Koncz P et al. The emerging evidence on the association between symptoms of ADHD and gaming disorder: systematic review and meta-analysis. Clin Psychol Rev 2023;106:102343",
       "CNWL NHS Foundation Trust: National Centre for Gaming Disorders (service information, October 2026)"
     ]
   },
@@ -847,7 +851,7 @@ AA.add('ddx', [
     core: false,
     icd11: "6B80 Anorexia nervosa; 6B81 Bulimia nervosa; 6B82 Binge-eating disorder; 6B83 Avoidant-restrictive food intake disorder",
     summary: "Eating disorders co-occur with ADHD more often than chance, especially binge-eating and bulimic patterns, where impulsivity and poor regulation of eating overlap. Starvation, bingeing and purging also impair concentration, sleep and mood and can mimic ADHD. They matter for safety and treatment: methylphenidate product information lists anorexia nervosa among contraindications, and stimulants can be sought to suppress appetite.",
-    prevalence: "Females with ADHD were 3.6 times more likely than females without ADHD to meet criteria for an eating disorder, and ADHD prevalence in eating disorders is about 11.4% (CADDRA 4.1). Bulimia nervosa is more common in ADHD, and ADHD is more common in the purging type of anorexia nervosa (CADDRA 4.1). A clinically referred adult ADHD sample showed an excess of eating disorders compared with controls (Sobanski 2007).",
+    prevalence: "Females with ADHD were 3.6 times more likely than females without ADHD to meet criteria for an eating disorder, and ADHD prevalence in eating disorders is about 11.4% (CADDRA 4.1). Bulimia nervosa is more common in ADHD, and ADHD is more common in the purging type of anorexia nervosa (CADDRA 4.1). A clinically referred adult ADHD sample showed an excess of eating disorders compared with controls (Sobanski 2007). The Australian guideline lists binge-eating disorder among adult groups with raised ADHD prevalence (AADPA 2022 1.1.1, consensus).",
     coexist: "yes",
     coexistNote: "Both can be diagnosed. Do not count inattention, restlessness or irritability that appeared with starvation, purging or a binge cycle and resolves with nutritional recovery. Motor hyperactivity can be a weight-control behaviour in anorexia nervosa (ICD-11), not ADHD hyperactivity. Binge eating in ADHD is often impulsive or used to manage restlessness (Kooij 2019); diagnose binge-eating disorder only when episodes show loss of control and marked distress and meet the frequency and duration requirements (for example at least weekly for 3 months; ICD-11).",
     overlap: [
@@ -858,7 +862,7 @@ AA.add('ddx', [
       "Restlessness and high activity levels",
       "Low self-esteem and shame",
       "Sleep disturbance",
-      "Both are under-recognised in women (NICE NG87 1.2.2)"
+      "Eating used to manage boredom, stress or low mood"
     ],
     favoursADHD: [
       "Inattention and restlessness documented in childhood, before any eating problem",
@@ -931,7 +935,7 @@ AA.add('ddx', [
     decide: {
       better: "An eating disorder better explains the picture when concentration, restlessness and irritability began with restriction, bingeing or purging and improve with nutritional recovery, overactivity is driven exercise, and there is no childhood evidence of ADHD.",
       both: "Diagnose both when childhood-onset ADHD is corroborated and persists when eating and weight are stable, and the eating disorder meets criteria in its own right. ADHD with binge-eating or bulimic patterns is a common combination.",
-      next: "Assess physical risk first and refer to eating disorder services (NICE NG69 1.2.10). If ADHD is also diagnosed, plan medication with the eating disorder team: stimulants reduce appetite and weight, and methylphenidate SmPCs list anorexia nervosa among contraindications. Record baseline weight and monitor it during titration (NICE NG87 1.7.4)."
+      next: "Assess physical risk first and refer to eating disorder services (NICE NG69 1.2.10). If ADHD is also diagnosed, plan medication with the eating disorder team: stimulants reduce appetite and weight, and methylphenidate SmPCs list anorexia nervosa among contraindications. Record baseline weight (NICE NG87 1.7.4). NG87 1.8.5 sets 6-monthly weight checks for adults on ADHD medication; with an eating disorder, agree closer monitoring with the eating disorder team (clinical practice)."
     },
     pearls: [
       "Ask about eating in every adult ADHD assessment, especially in women: UKAAN quality standards (AQAS) say to enquire about conditions such as binge eating and anorexia because they change management.",
@@ -946,10 +950,12 @@ AA.add('ddx', [
     refs: [
       "ICD-11 CDDR (WHO 2024): 6B80-6B83 feeding and eating disorders",
       "DSM-5-TR (APA 2022): feeding and eating disorders (paraphrased)",
-      "NICE NG69 Eating disorders: recognition and treatment: 1.1.10, 1.2.4, 1.2.5, 1.2.6, 1.2.9, 1.2.10",
+      "NICE NG69 Eating disorders: recognition and treatment (2017, updated 2020): 1.2.4, 1.2.5, 1.2.6, 1.2.9, 1.2.10",
       "Royal College of Psychiatrists CR233 Medical emergencies in eating disorders (MEED), 2022",
-      "NICE NG87 (2018, updated 2025): 1.2.2, 1.7.4",
+      "NICE NG87 (2018, updated 2025): 1.2.2, 1.7.4, 1.8.5",
       "CADDRA 4.1 (2020): eating disorders section",
+      "Australian evidence-based clinical practice guideline for ADHD (AADPA 2022): 1.1.1",
+      "RCPsych CR235 (2023): 9.2 (women: differentiate from eating disorders)",
       "Kooij JJS et al. Eur Psychiatry 2019;56:14-34 (4.1.3)",
       "UKAAN Adult ADHD Quality Assessment Standards (AQAS; Adamou et al. 2024): mental health history",
       "Sobanski E et al. Psychiatric comorbidity in clinically referred adults with ADHD. Eur Arch Psychiatry Clin Neurosci 2007",

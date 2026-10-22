@@ -71,27 +71,50 @@
       meta: meta
     };
 
-    el.appendChild(h('header', { class: 'page-head' },
+    el.appendChild(h('header', { class: 'page-head ws-head' + (sub ? ' is-sub' : '') },
       h('div', { class: 'page-head-text' },
         h('p', { class: 'eyebrow' }, 'Step ' + (idx + 1) + ' of ' + STEPS.length + (a.demo ? ' · demo patient' : '')),
         h('h1', null, meta.title),
         h('p', { class: 'lead' }, meta.lead))));
 
-    var stepper = h('nav', { class: 'stepper', 'aria-label': 'Assessment steps' }, h('ol', null, STEPS.map(function (s, i) {
-      var pr = D.stepProgress(a, s.id);
-      var cls = 'step-chip' + (pr.done >= pr.of ? ' done' : pr.done > 0 ? ' part' : '');
-      return h('li', null, h('button', { type: 'button', class: cls, 'aria-current': s.id === step ? 'step' : null, title: s.title + ' (' + pr.done + '/' + pr.of + ')', onclick: function () { ctx.go(s.id); } },
-        h('span', { class: 'step-n' }, pr.done >= pr.of ? '✓' : String(i + 1)), s.short));
-    })));
+    /* Step strip: every step with its completion state; the current one is centred on small screens. */
+    var stepList = h('ol', null, STEPS.map(function (s, i) {
+      return h('li', null, h('button', { type: 'button', class: 'step-chip', 'aria-current': s.id === step ? 'step' : null, onclick: function () { ctx.go(s.id); } },
+        h('span', { class: 'step-n', 'aria-hidden': 'true' }), h('span', { class: 'step-t' }, s.short), h('span', { class: 'sr-only step-sr' })));
+    }));
+    var stepper = h('nav', { class: 'stepper', 'aria-label': 'Assessment steps' }, stepList);
+    function paintSteps(cur) {
+      U.$$('.step-chip', stepper).forEach(function (b, i) {
+        var pr = D.stepProgress(cur, STEPS[i].id);
+        var done = pr.done >= pr.of, part = !done && pr.done > 0;
+        b.classList.toggle('done', done);
+        b.classList.toggle('part', part);
+        b.querySelector('.step-n').textContent = done ? '✓' : String(i + 1);
+        b.querySelector('.step-sr').textContent = done ? ', complete' : part ? ', started' : ', not started';
+        b.title = STEPS[i].title + (done ? ' (complete)' : ' (' + pr.done + ' of ' + pr.of + ')');
+      });
+    }
+    paintSteps(a);
+    /* Fade the edges that have more chips beyond them. */
+    function paintEdges() {
+      var max = stepList.scrollWidth - stepList.clientWidth;
+      stepper.classList.toggle('more-left', stepList.scrollLeft > 4);
+      stepper.classList.toggle('more-right', stepList.scrollLeft < max - 4);
+    }
+    stepList.addEventListener('scroll', paintEdges, { passive: true });
     el.appendChild(stepper);
-    setTimeout(function () { var cur = stepper.querySelector('[aria-current="step"]'); if (cur && cur.scrollIntoView) cur.scrollIntoView({ block: 'nearest', inline: 'center' }); }, 0);
+    setTimeout(function () {
+      var cur = stepper.querySelector('[aria-current="step"]');
+      if (cur) stepList.scrollLeft = Math.max(0, cur.offsetLeft - (stepList.clientWidth - cur.offsetWidth) / 2);
+      paintEdges();
+    }, 0);
 
     var main = h('div', { class: 'ws-main' });
     var panel = h('aside', { class: 'ws-panel', 'aria-label': 'Live summary' });
     el.appendChild(h('div', { class: 'ws' }, main, panel));
 
-    var guide = stepGuide(step);
-    if (guide) main.appendChild(guide);
+    var guide = stepGuide(step, !!sub);
+    if (guide) { main.appendChild(guide.el); guide.status(a); }
 
     var stepDef = AA.steps[step];
     var stepCleanup = null;
@@ -104,30 +127,29 @@
       main.appendChild(ui.callout('warn', h('p', null, 'This step is not available in this build.')));
     }
 
-    /* Previous / next */
+    /* Previous / next. A symptom card has its own navigation, so the step buttons are left out there.
+       Next is the primary action unless the step already shows its own primary action. */
     var prev = STEPS[idx - 1], next = STEPS[idx + 1];
-    main.appendChild(h('div', { class: 'step-nav' },
-      prev ? ui.btn({ label: '← ' + prev.short, kind: 'ghost', onClick: function () { ctx.go(prev.id); } }) : h('span'),
-      next ? ui.btn({ label: next.short + ' →', kind: 'primary', onClick: function () { ctx.go(next.id); } })
-        : ui.btn({ label: a.status === 'complete' ? 'Reopen assessment' : 'Mark assessment complete', kind: a.status === 'complete' ? 'ghost' : 'primary', onClick: function () {
-          var done = AA.assess.get(id, 'status') === 'complete';
-          AA.assess.set(id, 'status', done ? 'active' : 'complete');
-          U.toast(done ? 'Assessment reopened' : 'Assessment marked complete', 'ok');
-          AA.router.refresh();
-        } })));
+    if (!sub) {
+      var ownPrimary = !!main.querySelector('.btn-primary');
+      main.appendChild(h('div', { class: 'step-nav' },
+        prev ? ui.btn({ label: '← ' + prev.short, kind: 'ghost', title: 'Previous step: ' + prev.title, onClick: function () { ctx.go(prev.id); } }) : h('span'),
+        next ? ui.btn({ label: 'Next: ' + next.short + ' →', kind: ownPrimary ? 'secondary' : 'primary', title: 'Next step: ' + next.title, onClick: function () { ctx.go(next.id); } })
+          : ui.btn({ label: a.status === 'complete' ? 'Reopen assessment' : 'Mark assessment complete', kind: a.status === 'complete' || ownPrimary ? 'secondary' : 'primary', onClick: function () {
+            var done = AA.assess.get(id, 'status') === 'complete';
+            AA.assess.set(id, 'status', done ? 'active' : 'complete');
+            U.toast(done ? 'Assessment reopened' : 'Assessment marked complete', 'ok');
+            AA.router.refresh();
+          } })));
+    }
 
     /* Live panel and step strip refresh when the assessment changes. */
     var refresh = U.debounce(function () {
       var cur = AA.assess.get(id);
       if (!cur) return;
       renderPanel(panel, cur, ctx);
-      U.$$('.step-chip', stepper).forEach(function (b, i) {
-        var pr = D.stepProgress(cur, STEPS[i].id);
-        b.classList.toggle('done', pr.done >= pr.of);
-        b.classList.toggle('part', pr.done > 0 && pr.done < pr.of);
-        b.querySelector('.step-n').textContent = pr.done >= pr.of ? '✓' : String(i + 1);
-        b.title = STEPS[i].title + ' (' + pr.done + '/' + pr.of + ')';
-      });
+      paintSteps(cur);
+      if (guide) guide.status(cur);
     }, 120);
     subs.push(AA.store.subscribe(AA.assess.path(id), refresh));
     renderPanel(panel, a, ctx);
@@ -138,26 +160,46 @@
     };
   }
 
-  /* ---------- "What to do in this step" guide (AA.data.stepGuide) ---------- */
-  function stepGuide(step) {
+  /* ---------- "What to do in this step" guide (AA.data.stepGuide) ----------
+     A disclosure: the summary always shows the goal, the usual time and whether the step is complete;
+     the body has tabs (do, say, watch for, done when). Open by default on large screens; closed on
+     small screens and on symptom cards. Only a choice the clinician makes is remembered (per step). */
+  function roomy() { try { return window.matchMedia('(min-width: 1000px) and (min-height: 700px)').matches; } catch (e) { return true; } }
+  function stepGuide(step, isSub) {
     var g = AA.data.stepGuide && AA.data.stepGuide[step];
     if (!g) return null;
     var key = 'guideClosed.' + step;
-    var d = h('details', { class: 'guide', open: !AA.progress.get(key, false) },
+    var pref = AA.progress.get(key, null);
+    var open = isSub ? false : pref === null || pref === undefined ? roomy() : !pref;
+    var statusHost = h('span', { class: 'guide-status' });
+    var tabs = [];
+    function add(id, label, list, render) { if (list && list.length) tabs.push({ id: id, label: label, count: list.length, render: render }); }
+    add('do', 'Do this', g.do, function () { return h('ol', { class: 'guide-do' }, g.do.map(function (x) { return h('li', null, x); })); });
+    add('say', [h('span', { class: 'gl-long' }, 'You can say'), h('span', { class: 'gl-short' }, 'Say')], g.say, function () { return h('div', { class: 'guide-say' }, g.say.map(function (x) { return h('p', null, x); })); });
+    add('watch', 'Watch for', g.watch, function () { return ui.list(g.watch, 'list guide-watch'); });
+    add('done', 'Done when', g.done, function () { return ui.list(g.done, 'guide-done'); });
+    var d = h('details', { class: 'guide', open: open },
       h('summary', null,
         h('span', { class: 'guide-k' }, 'What to do in this step'),
         h('span', { class: 'guide-goal' }, g.goal),
-        g.time ? h('span', { class: 'badge badge-neutral guide-time' }, g.time) : null),
+        h('span', { class: 'guide-side' },
+          g.time ? h('span', { class: 'guide-time' }, h('span', { class: 'sr-only' }, 'Usual time: '), g.time) : null,
+          statusHost,
+          h('span', { class: 'guide-toggle', 'aria-hidden': 'true' }))),
       h('div', { class: 'guide-body' },
-        g.do && g.do.length ? h('div', { class: 'guide-col' }, h('h3', null, 'Do this'), h('ol', { class: 'guide-do' }, g.do.map(function (x) { return h('li', null, x); }))) : null,
-        h('div', { class: 'guide-col' },
-          g.say && g.say.length ? [h('h3', null, 'You can say'), h('div', { class: 'guide-say' }, g.say.map(function (x) { return h('p', null, x); }))] : null,
-          g.watch && g.watch.length ? [h('h3', null, 'Watch out for'), ui.list(g.watch, 'list guide-watch')] : null,
-          g.done && g.done.length ? [h('h3', null, 'Done when'), ui.list(g.done, 'list guide-done')] : null,
-          g.next ? h('p', { class: 'guide-next' }, h('strong', null, 'Next: '), g.next) : null,
-          g.src && g.src.length ? ui.source(g.src.join('; ')) : null)));
-    d.addEventListener('toggle', function () { AA.progress.set(key, !d.open); });
-    return d;
+        tabs.length ? ui.tabs(tabs, 'do') : null,
+        g.next ? h('p', { class: 'guide-next' }, h('strong', null, 'Next: '), g.next) : null,
+        g.src && g.src.length ? ui.details('Sources', h('p', { class: 'source' }, g.src.join('; ')), { cls: 'guide-src', meta: String(g.src.length) }) : null));
+    var userToggled = false;
+    d.querySelector('summary').addEventListener('click', function () { userToggled = true; });
+    d.addEventListener('toggle', function () { if (userToggled && !isSub) AA.progress.set(key, !d.open); userToggled = false; });
+    function status(a) {
+      var pr = D.stepProgress(a, step);
+      U.clear(statusHost);
+      statusHost.appendChild(pr.done >= pr.of ? ui.badge('✓ Step complete', 'ok')
+        : pr.done > 0 ? ui.badge(pr.done + ' of ' + pr.of + ' done', 'warn') : ui.badge('Not started', 'neutral'));
+    }
+    return { el: d, status: status };
   }
 
   /* ---------- Live summary panel ---------- */
@@ -190,9 +232,12 @@
       h('div', { class: 'panel-sec row' },
         ctx.step !== 'summary' ? ui.btn({ label: 'Open scoring', small: true, kind: 'ghost', onClick: function () { ctx.go('summary'); } }) : null,
         ui.btn({ label: 'Question bank', small: true, kind: 'quiet', go: 'bank' })));
-    var adultSum = 'Adult ' + ad.IA + ' IA · ' + ad.HI + ' HI';
+    var pill = ui.statusPill(out.code === 'met' ? 'met' : out.code === 'incomplete' ? 'pending' : out.code === 'subthreshold' ? 'partial' : 'not-met');
     var fold = h('details', { class: 'panel-fold', open: wide() || foldOpen === true },
-      h('summary', null, h('span', null, 'Live summary'), h('span', { class: 'muted', style: { fontWeight: 400 } }, adultSum), ui.statusPill(out.code === 'met' ? 'met' : out.code === 'incomplete' ? 'pending' : out.code === 'subthreshold' ? 'partial' : 'not-met')),
+      h('summary', null,
+        h('span', { class: 'pf-title' }, 'Live summary'),
+        h('span', { class: 'pf-counts' }, h('span', { class: 'sr-only' }, 'Adult symptoms: '), 'IA ' + ad.IA + ' · HI ' + ad.HI),
+        pill, h('span', { class: 'pf-chev', 'aria-hidden': 'true' })),
       box);
     fold.addEventListener('toggle', function () { if (!wide()) foldOpen = fold.open; });
     panel.appendChild(fold);

@@ -177,20 +177,6 @@
       ui.details('How to judge', h('dl', { class: 'ab-judge' }, JUDGE.map(function (j) { return h('div', null, h('dt', null, j[0]), h('dd', null, j[1])); })),
         { open: !reviewed0, meta: 'Trait or episode, onset, settings, timeline', cls: 'ab-howto' })));
 
-    /* Step-by-step protocol (js/views/guides.js component); ticks are stored per assessment. */
-    if (AA.components.ddxProtocol && AA.data.ddxProtocol) {
-      var proto = AA.components.ddxProtocol({
-        checked: ctx.get('ddxProtocol', {}), compact: true,
-        onCheck: function (id, v) { ctx.set('ddxProtocol.' + id, v ? true : undefined); }
-      });
-      var pc = proto.counts ? proto.counts() : null;
-      el.appendChild(h('section', { class: 'card ab-card' },
-        h('h2', null, 'Work through the protocol'),
-        h('p', { class: 'muted' }, 'Follow these steps in order so that no alternative explanation is missed. Tick each check as you complete it; the ticks are saved with this assessment.'),
-        ui.details('Differential diagnosis protocol', proto, { open: !reviewed0, meta: pc ? pc.ticked + ' of ' + pc.checks + ' checks done' : '' }),
-        h('p', { class: 'hint' }, h('a', { href: '#ddxguide', 'data-go': 'ddxguide' }, 'Open the full protocol page'))));
-    }
-
     function paintE() {
       var a = ctx.a() || {};
       var E = D.criterionE(a);
@@ -377,6 +363,13 @@
       coexist || c.coexistNote ? h('p', { class: 'hint' }, h('strong', null, 'Co-occurs with ADHD? '), [coexist, c.coexistNote].filter(Boolean).join(' ')) : null,
       c.icd11 ? h('p', { class: 'hint' }, h('strong', null, 'ICD-11: '), c.icd11) : null));
 
+    /* The verdict sits at the end of a long body; a jump link keeps it one tap away. */
+    var verdictBox = null;
+    body.appendChild(h('div', { class: 'ab-jump' }, h('button', { type: 'button', class: 'btn btn-quiet btn-sm', onclick: function () {
+      if (!verdictBox) return;
+      try { verdictBox.scrollIntoView({ block: 'center' }); } catch (e) { verdictBox.scrollIntoView(); }
+      var first = verdictBox.querySelector('input'); if (first) { try { first.focus({ preventScroll: true }); } catch (e) { first.focus(); } }
+    } }, 'Go to your verdict ↓')));
     if (r.sig.n) body.appendChild(ui.callout('warn', signalList(r.sig), 'Signals in this assessment'));
     if (arr(c.overlap).length) body.appendChild(h('div', null, h('h4', { class: 'ab-h4' }, 'Where it overlaps with ADHD'), ui.list(c.overlap)));
     if (arr(c.favoursADHD).length || arr(c.favoursAlt).length) {
@@ -448,7 +441,7 @@
 
     var vhint = h('p', { class: 'hint', 'aria-live': 'polite' });
     r.refs.vhint = vhint;
-    body.appendChild(h('div', { class: 'ab-verdict' },
+    body.appendChild(verdictBox = h('div', { class: 'ab-verdict' },
       h('h4', { class: 'ab-h4' }, 'Your verdict on ' + name),
       ui.seg({ label: 'Verdict on ' + name, hideLabel: true, value: entry.verdict || null,
         options: VERDICTS.map(function (x) { return { v: x.v, l: x.l, kind: x.kind, title: x.d }; }),
@@ -572,8 +565,8 @@
 
     if (V) {
       el.appendChild(ui.callout('info', h('div', null,
-        V.intro ? h('p', null, V.intro) : null,
-        h('p', null, 'No single sign proves exaggeration or under-reporting. Record what you checked and how much weight the history can bear.')), 'Why this matters'));
+        h('p', null, 'No single sign proves exaggeration or under-reporting. Record what you checked and how much weight the history can bear.'),
+        V.intro ? ui.details('Background', h('p', null, V.intro), { cls: 'ab-bg' }) : null), 'Why this matters'));
     } else {
       el.appendChild(ui.callout('info', h('div', null,
         h('p', null, 'Self-report can overstate or understate symptoms. Some people exaggerate, for example to get stimulant medicine or exam support. Others under-report because of low insight or masking.'),
@@ -692,7 +685,7 @@
   ];
   function critNeed(k, need) {
     return {
-      A: need + ' or more symptoms in either domain for at least 6 months (past 6 months)' + (need === 6 ? '; 6 needed under age 17' : ''),
+      A: need + ' or more symptoms in either domain, present for at least 6 months' + (need === 6 ? ' (6 under age 17)' : ''),
       B: 'Several symptoms present before age 12',
       C: 'Several symptoms in two or more settings',
       D: 'Clear interference with functioning (NICE: at least moderate)',
@@ -1050,6 +1043,10 @@
     if (hNone.length) hs.blocks.push({ p: 'Nothing relevant reported: ' + hNone.join(', ') + '.' });
     if (!hItems.length && !hNone.length) hs.blocks.push({ p: 'No history recorded.' });
 
+    /* Mental state (recorded in the clinical history step as history.mse.notes) */
+    var mse = String((hist.mse && hist.mse.notes) || '').trim();
+    sec('Mental state').blocks.push({ p: mse || 'Not recorded.' });
+
     /* Safety and risk */
     var rs = sec('Safety and risk');
     var risk = a.risk || {};
@@ -1261,10 +1258,8 @@
     var f0 = a0.formulation || {};
     var dec = f0.decision;
 
-    el.appendChild(ui.callout('warn', h('div', null,
-      h('p', null, 'This report is generated from what you recorded. Check and edit every line before you use it.'),
-      h('p', null, 'Copy it into the clinical record. Then delete the assessment from this browser (Home, then Delete) so identifiable data does not stay here.')),
-      'Draft for you to edit'));
+    el.appendChild(ui.callout('warn', h('p', null, 'The report below is built from what you recorded. Check every line, copy it into the clinical record and edit it there. Then delete the assessment from this browser (Home, then Delete).'),
+      'Draft for you to check'));
     if (!dec) {
       el.appendChild(ui.callout('info', h('div', null, h('p', null, 'You have not recorded your conclusion yet. The report will say so.'),
         ui.btn({ label: 'Go to scoring and diagnosis', kind: 'ghost', small: true, onClick: function () { ctx.go('summary'); } }))));
@@ -1275,7 +1270,9 @@
     var plan0 = f0.plan || {};
     var planLive = h('p', { class: 'ab-live', 'aria-live': 'polite' });
     var planSec = h('section', { class: 'card ab-card no-print' }, h('h2', null, 'Plan'));
+    var planGroups = [];
     if (items.length) {
+      planSec.appendChild(h('p', { class: 'hint' }, dec ? 'Groups that fit your decision are open. Tick what you agreed with the patient.' : 'Tick what you agreed with the patient. Record your conclusion first to see which groups fit.'));
       planSec.appendChild(planLive);
       var groups = [];
       items.forEach(function (x) { var g = x.group || 'Other needs'; if (groups.indexOf(g) < 0) groups.push(g); });
@@ -1287,12 +1284,16 @@
         var fits = g === 'Safety' ? 'Always consider'
           : (dec === 'met' || dec === 'other-specified') && (g === 'After diagnosis' || g === 'Before any medication') ? 'Fits your decision'
           : dec === 'not-met' && g === 'If ADHD not diagnosed' ? 'Fits your decision' : null;
-        planSec.appendChild(h('div', { class: 'ab-pgroup' },
-          h('h3', { class: 'ab-pgh' }, h('span', null, g), fits ? ui.badge(fits, 'accent') : null),
-          h('div', { class: 'ab-plist' }, items.filter(function (x) { return (x.group || 'Other needs') === g; }).map(function (x) {
+        var gItems = items.filter(function (x) { return (x.group || 'Other needs') === g; });
+        var meta = h('span', { class: 'ab-pmeta' });
+        var anyTicked = gItems.some(function (x) { return plan0[x.id]; });
+        var det = ui.details(h('h3', { class: 'ab-pgh' }, h('span', null, g), fits ? ui.badge(fits, 'accent') : null),
+          h('div', { class: 'ab-plist' }, gItems.map(function (x) {
             return ui.check({ label: x.t || x.id, hint: x.src ? 'Source: ' + x.src : null, checked: !!plan0[x.id], cls: 'ab-pcheck',
               onChange: function (on) { ctx.set('formulation.plan.' + x.id, on ? true : undefined); } });
-          }))));
+          })), { open: !!fits || anyTicked, meta: meta, cls: 'ab-pgroup' });
+        planGroups.push({ items: gItems, meta: meta });
+        planSec.appendChild(det);
       });
     } else {
       planSec.appendChild(h('p', { class: 'muted' }, 'Plan items are not available in this build. Write the plan in the notes below.'));
@@ -1304,6 +1305,10 @@
       if (!items.length) return;
       var p = ctx.get('formulation.plan', {}) || {};
       planLive.textContent = items.filter(function (x) { return p[x.id]; }).length + ' of ' + items.length + ' plan items ticked.';
+      planGroups.forEach(function (g) {
+        var n = g.items.filter(function (x) { return p[x.id]; }).length;
+        g.meta.textContent = n + ' of ' + g.items.length;
+      });
     }
 
     /* Report */

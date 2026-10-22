@@ -37,10 +37,10 @@
 .ab-chipbtn { font: inherit; font-size: .88rem; min-height: 36px; padding: .25rem .75rem; border-radius: 999px; border: 1px solid var(--line-2);
   background: var(--surface-2); color: var(--ink); cursor: pointer; }
 .ab-chipbtn:hover { border-color: var(--accent); }
-.ab-vdefs { display: grid; gap: .5rem .9rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); margin: .2rem 0 .6rem; }
-.ab-vdef { background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: .55rem .7rem; }
-.ab-vdef dt { margin: 0 0 .25rem; }
-.ab-vdef dd { margin: 0; font-size: .92rem; }
+.ab-vdefs { display: grid; gap: 0 1.4rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); margin: .2rem 0 .8rem; }
+.ab-vdef { display: grid; grid-template-columns: 7.6rem minmax(0, 1fr); gap: .6rem; align-items: baseline; padding: .4rem 0; border-bottom: 1px solid var(--line); }
+.ab-vdef dt { margin: 0; }
+.ab-vdef dd { margin: 0; font-size: .9rem; color: var(--muted); }
 .ab-judge { margin: .2rem 0 0; display: grid; gap: .5rem; }
 .ab-judge dt { font-weight: 700; }
 .ab-judge dd { margin: .1rem 0 0; color: var(--ink); }
@@ -199,10 +199,13 @@
 .ab-codeline { margin: .5rem 0 0; padding: .45rem .7rem; background: var(--surface-2); border-radius: var(--radius-sm); }
 
 /* ---------- Report ---------- */
-.ab-pgroup { margin: .6rem 0 .8rem; }
-.ab-pgh { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .6rem; font-size: 1rem; margin: 1rem 0 .2rem; }
+.ab-pgroup { margin: .5rem 0; }
+.ab-pgroup > summary { flex-wrap: wrap; row-gap: .2rem; }
+.ab-pgh { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .4rem .6rem; font-size: 1rem; margin: 0; font-family: var(--font-ui); }
+.ab-pmeta { font-variant-numeric: tabular-nums; }
 .ab-plist { display: flex; flex-direction: column; }
 .ab-pcheck { padding: .4rem 0; border-bottom: 1px solid var(--line); }
+.ab-pcheck .check-hint { font-size: .78rem; color: var(--faint); margin-top: .1rem; }
 .ab-pcheck:last-child { border-bottom: 0; }
 .ab-rhead { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1rem; margin: 0 0 .3rem; }
 .ab-rhead h2 { margin: 0; font-size: 1.22rem; }
@@ -236,3 +239,10 @@
   .ab-report h3 { break-after: avoid; }
   .ab-rtable { overflow: visible; }
 }
+
+/* Background disclosure inside a callout */
+.ab-bg { background: transparent; border: 0; margin: .3rem 0 0; }
+.ab-bg > summary { padding: .3rem 0; min-height: 36px; font-size: .9rem; }
+.ab-bg .disclosure-body { padding: 0; }
+.ab-bg .disclosure-body p { margin: .2rem 0 0; }
+.ab-jump { display: flex; justify-content: flex-end; margin: -.3rem 0 .2rem; }

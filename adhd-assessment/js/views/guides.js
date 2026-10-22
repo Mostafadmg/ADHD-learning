@@ -29,6 +29,29 @@
   function stripTags(s) { return String(s || '').replace(/<[^>]*>/g, ' '); }
   function li(t) { return h('li', null, t); }
 
+  /* Authored tables with several wordy columns become stacked cards on phones (CSS in this view's
+     stylesheet): each cell is labelled with its column heading. Short numeric tables stay as tables. */
+  function stackTables(root, cls) {
+    Array.prototype.forEach.call(root.querySelectorAll('table'), function (t) {
+      var rows = Array.prototype.slice.call(t.rows);
+      if (rows.length < 2) return;
+      var headRow = t.tHead && t.tHead.rows[0] ? t.tHead.rows[0] : rows[0];
+      var heads = Array.prototype.map.call(headRow.cells, function (c) { return c.tagName === 'TH' ? c.textContent.trim() : ''; });
+      if (!heads.some(Boolean)) return;
+      var body = rows.filter(function (r) { return r !== headRow; });
+      var cells = [];
+      body.forEach(function (r) { Array.prototype.forEach.call(r.cells, function (c) { cells.push(c); }); });
+      if (!cells.length) return;
+      var avg = cells.reduce(function (n, c) { return n + c.textContent.length; }, 0) / cells.length;
+      if (!((heads.length >= 3 && avg >= 24) || (heads.length === 2 && avg >= 60))) return;
+      body.forEach(function (r) { Array.prototype.forEach.call(r.cells, function (c, i) { if (heads[i]) c.setAttribute('data-label', heads[i]); }); });
+      headRow.classList.add(cls + '-head');
+      t.classList.add(cls);
+    });
+    return root;
+  }
+  function prose(html) { return stackTables(ui.html(html), 'gd-stack'); }
+
   function guide() { var g = AA.data.formsGuide; return g && typeof g === 'object' ? g : {}; }
   function forms() { return arr(guide().forms).filter(function (f) { return f && typeof f === 'object' && txt(f.id); }); }
   function kindOf(f) {
@@ -50,6 +73,49 @@
   function toolOf(f) { var id = f && txt(f.tool); return id ? AA.byId('tools', id) : null; }
   function scorable(t) { return !!(t && t.interactive !== false && t.items && t.items.length); }
   function toolLabel(t) { return t.abbr || t.name || t.id; }
+
+  /* "Screening is not diagnosis. NICE NG87 ..." -> ['Screening is not diagnosis.', 'NICE NG87 ...'].
+     The first sentence (or the words before a colon) becomes the headline; '' when there is no short one. */
+  function splitRule(t) {
+    var s = String(t || '').trim();
+    var dot = s.search(/[.?!]['’"]?\s+(?=[A-Z0-9'‘"(])/);
+    if (dot > 0 && dot < 120) { var e = s.slice(dot).search(/\s/) + dot; return [s.slice(0, e).trim(), s.slice(e).trim()]; }
+    var col = s.indexOf(': ');
+    if (col > 0 && col < 90) return [s.slice(0, col + 1).trim(), s.slice(col + 2).trim()];
+    return ['', s];
+  }
+
+  /* Numbered rules: each headline is always visible and opens to its explanation, so twelve rules read
+     as a scannable checklist. Returns {el, toggle} where toggle is an "Open all" button. */
+  function ruleList(rules, prefix) {
+    var ds = [];
+    var toggle = ui.btn({ label: 'Open all', kind: 'quiet', small: true, onClick: function () {
+      var open = !ds.every(function (d) { return d.open; });
+      ds.forEach(function (d) { d.open = open; });
+      sync();
+    } });
+    function sync() { toggle.lastChild.textContent = ds.length && ds.every(function (d) { return d.open; }) ? 'Close all' : 'Open all'; }
+    var list = h('ol', { class: 'gd-rules' }, rules.map(function (r, i) {
+      var parts = splitRule(r);
+      if (!parts[0] || !parts[1]) return h('li', { class: 'gd-rule gd-rule-plain' }, h('span', { class: 'gd-rule-n', 'aria-hidden': 'true' }, String(i + 1)), h('p', null, r));
+      var d = h('details', { class: 'gd-rule-d', id: prefix + '-' + (i + 1) },
+        h('summary', null, h('span', { class: 'gd-rule-n', 'aria-hidden': 'true' }, String(i + 1)), h('span', { class: 'gd-rule-h' }, parts[0])),
+        h('p', { class: 'gd-rule-b' }, parts[1]));
+      d.addEventListener('toggle', sync);
+      ds.push(d);
+      return h('li', { class: 'gd-rule' }, d);
+    }));
+    sync();
+    return { el: list, toggle: ds.length > 1 ? toggle : null };
+  }
+
+  /* Decision rules shown in full, with the term before the first colon in bold ("Absent: you asked ..."). */
+  function termList(items, cls) {
+    return h('ol', { class: 'gd-terms' + (cls ? ' ' + cls : '') }, items.map(function (t) {
+      var col = t.indexOf(': ');
+      return col > 0 && col < 60 ? h('li', null, h('strong', null, t.slice(0, col)), ': ' + t.slice(col + 2)) : h('li', null, t);
+    }));
+  }
 
   function copyLines(lines, what) {
     U.copyText(lines.join('\n')).then(function (ok) {
@@ -81,21 +147,57 @@
       kindOf(f).label, kindOf(f).short, t ? t.abbr + ' ' + t.name : ''].join(' '));
   }
 
+  /* First sentence or clause of a long field, for compact cards. */
+  function firstPart(x, cutColon) {
+    var t = filled(x);
+    if (!t) return '';
+    var cut = t.search(cutColon ? /\. |; |: | \(/ : /\. |; | \(/);
+    if (cut > 0) t = t.slice(0, cut);
+    return t.replace(/[.,;:]+$/, '');
+  }
+  /* "RCPsych CR235 (2023) Box 3: ASRS listed as free" -> "RCPsych CR235": the source, without its detail. */
+  function shortSources(list) {
+    var out = [];
+    texts(list).forEach(function (r) {
+      var head = r.split(': ')[0].replace(/\s*\([^)]*\)/g, '');
+      head.split(/;\s*/).forEach(function (x) {
+        var t = x.replace(/\s+(Box|Table|Step|section|sections|chapter|Appendix)\b.*$/i, '').replace(/\s+\d+\.\d+\.\d+.*$/, '').replace(/\s+and\s*$/, '').trim();
+        if (t && t.length <= 48 && out.indexOf(t) < 0) out.push(t);
+      });
+    });
+    return out;
+  }
+
   function formCard(f) {
     var t = toolOf(f);
     var title = formTitle(f);
     var hid = ui.nid('gd-f');
-    var facts = [['Who', filled(f.who)], ['When', filled(f.whenSent)], ['Time', filled(f.time)]].filter(function (r) { return r[1]; });
-    var recs = texts(f.recommendedBy);
+    var time = firstPart(f.time, true);
+    if (!/minute|hour|variable|varies|depends/i.test(time)) time = '';
+    var facts = [['Who', firstPart(f.who)], ['When', firstPart(f.whenSent)], ['Time', time]].filter(function (r) { return r[1]; });
+    var recs = shortSources(f.recommendedBy);
     return h('article', { class: 'card gd-fcard', 'aria-labelledby': hid },
       h('h3', { id: hid, class: 'gd-fcard-title' }, title),
       facts.length ? h('dl', { class: 'gd-fkv' }, facts.map(function (r) { return [h('dt', null, r[0]), h('dd', null, r[1])]; })) : null,
-      recs.length ? h('div', { class: 'gd-recs' }, h('span', { class: 'sr-only' }, 'Recommended by: '),
-        recs.map(function (r) { return ui.badge(r, 'info'); })) : null,
-      filled(f.strength) ? h('p', { class: 'gd-fstrength' }, h('span', { class: 'gd-k' }, 'Evidence '), filled(f.strength)) : null,
+      recs.length ? h('p', { class: 'gd-fsrc' }, h('span', { class: 'gd-k' }, 'Recommended by '), recs.join(' · ')) : null,
       h('div', { class: 'gd-fcard-foot' },
         ui.btn({ label: 'How to read it', kind: 'primary', small: true, go: 'form-' + f.id, aria: 'How to read it: ' + title }),
         t ? ui.btn({ label: 'Open the tool', kind: 'ghost', small: true, go: 'tool-' + t.id, aria: 'Open the tool: ' + toolLabel(t) }) : null));
+  }
+
+  /* On phones a long introduction folds to its opening paragraphs, with a button to read the rest. */
+  function foldable(node, label) {
+    if (!node) return node;
+    var btn = h('button', { type: 'button', class: 'btn btn-ghost btn-sm gd-fold-btn', 'aria-expanded': 'false' }, label);
+    btn.addEventListener('click', function () {
+      var open = !node.classList.contains('gd-unfolded');
+      node.classList.toggle('gd-unfolded', open);
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.textContent = open ? 'Show less' : label;
+    });
+    node.classList.add('gd-foldable');
+    node.appendChild(h('div', { class: 'gd-fold-bar' }, btn));
+    return node;
   }
 
   function renderForms(el) {
@@ -109,11 +211,13 @@
       actions: [ui.btn({ label: 'Tools and scoring', kind: 'ghost', go: 'tools', icon: '▤' })]
     }));
 
-    var intro = filled(g.intro) ? h('section', { class: 'card gd-intro', 'aria-label': 'About pre-appointment forms' }, ui.html(g.intro)) : null;
+    var intro = filled(g.intro) ? foldable(h('section', { class: 'card gd-intro', 'aria-label': 'About pre-appointment forms' }, prose(g.intro)), 'Read the full introduction') : null;
     var rules = texts(g.principles);
-    var rulesCard = rules.length ? h('section', { class: 'card gd-rules-card', 'aria-labelledby': 'gd-rules-h' },
-      h('h2', { id: 'gd-rules-h' }, 'Rules for reading any form'),
-      h('ol', { class: 'gd-rules' }, rules.map(li))) : null;
+    var rl = rules.length ? ruleList(rules, 'gd-fr') : null;
+    var rulesCard = rl ? h('section', { class: 'card gd-rules-card', 'aria-labelledby': 'gd-rules-h' },
+      h('div', { class: 'gd-rules-head' }, h('h2', { id: 'gd-rules-h' }, 'Rules for reading any form'), rl.toggle),
+      h('p', { class: 'gd-rules-note' }, 'Open a rule for the evidence behind it.'),
+      rl.el) : null;
     if (intro || rulesCard) root.appendChild(h('div', { class: 'gd-top' + (intro && rulesCard ? '' : ' gd-top-one') }, intro, rulesCard));
 
     if (!list.length) {
@@ -133,7 +237,7 @@
       chipBtns.push({ id: id, el: b });
       return b;
     }
-    var search = ui.search('Search forms by name, purpose or guideline', function (q) { f.q = q; apply(); saveFilter(f); }, f.q);
+    var search = ui.search('Search forms', function (q) { f.q = q; apply(); saveFilter(f); }, f.q);
     var clearBtn = ui.btn({ label: 'Clear', kind: 'quiet', small: true, onClick: function () { f.q = ''; f.kind = ''; search.value = ''; apply(); saveFilter(f); search.focus(); } });
     root.appendChild(h('div', { class: 'card gd-filters', role: 'search', 'aria-label': 'Filter forms' },
       h('div', { class: 'gd-frow' }, search, clearBtn),
@@ -205,7 +309,7 @@
     var html = filled(ex.html), take = filled(ex.takeaway);
     if (!html && !take) return null;
     return h('div', { class: 'gd-exwrap' },
-      html ? h('div', { class: 'gd-example' }, h('p', { class: 'gd-example-k' }, 'Worked example'), ui.html(html)) : null,
+      html ? h('div', { class: 'gd-example' }, h('p', { class: 'gd-example-k' }, 'Worked example'), prose(html)) : null,
       take ? ui.callout('ok', h('p', null, take), 'Takeaway') : null);
   }
 
@@ -237,10 +341,10 @@
     var secs = [];
     function add(sid, stitle, body) { if (body) secs.push({ id: sid, title: stitle, body: body }); }
     var recs = texts(f.recommendedBy), pits = texts(f.pitfalls);
-    add('what', 'What it is', filled(f.what) ? ui.html(f.what) : null);
+    add('what', 'What it is', filled(f.what) ? prose(f.what) : null);
     add('recs', 'Recommended by', recs.length ? h('ul', { class: 'gd-reclist' }, recs.map(li)) : null);
     add('read', 'How to read and score it', filled(f.howToRead) || can ? h('div', null,
-      filled(f.howToRead) ? h('div', { class: 'gd-howto' }, ui.html(f.howToRead)) : null,
+      filled(f.howToRead) ? h('div', { class: 'gd-howto' }, prose(f.howToRead)) : null,
       can ? h('div', { class: 'gd-practise' },
         h('p', null, h('strong', null, 'Try it yourself. '), 'Fill in the practice form for ' + toolLabel(t) + ' and watch the score, bands and flags update. Practice answers are never linked to a patient.'),
         ui.btn({ label: 'Practise scoring this form', kind: 'primary', small: true, go: 'tool-' + t.id })) : null) : null);
@@ -333,10 +437,15 @@
       return h('li', null, h('a', { class: 'chip gd-link', href: '#tool-' + id, 'data-go': 'tool-' + id, title: t.name || null }, toolLabel(t)));
     }));
   }
+  /* Condition names are long ("Alcohol use disorder (harmful use and dependence), ..."): a plain link list
+     reads better than pills. The bracketed part is shown in a lighter weight. */
   function condChips(ids) {
-    return h('ul', { class: 'chip-list gd-links' }, ids.map(function (id) {
+    return h('ul', { class: 'gd-clist' }, ids.map(function (id) {
       var c = AA.byId('ddx', id);
-      return h('li', null, h('a', { class: 'chip gd-link', href: '#cond-' + id, 'data-go': 'cond-' + id }, (c && c.name) || id));
+      var name = (c && c.name) || id;
+      var m = name.match(/^(.*?)\s*(\(.*\))$/);
+      return h('li', null, h('a', { class: 'gd-clink', href: '#cond-' + id, 'data-go': 'cond-' + id },
+        m ? [h('span', { class: 'gd-cname' }, m[1]), ' ', h('span', { class: 'gd-cqual' }, m[2])] : h('span', { class: 'gd-cname' }, name)));
     }));
   }
   function blk(title, node, extra, cls) {
@@ -517,10 +626,13 @@
       return;
     }
 
-    var intro = filled(P.intro) ? h('section', { class: 'card gd-intro', 'aria-label': 'About the protocol' }, ui.html(P.intro)) : null;
+    var intro = filled(P.intro) ? foldable(h('section', { class: 'card gd-intro', 'aria-label': 'About the protocol' }, prose(P.intro)), 'Read the full introduction') : null;
     var rules = texts(P.principles);
-    var rulesCard = rules.length ? h('section', { class: 'card gd-rules-card', 'aria-labelledby': 'gd-pr-h' },
-      h('h2', { id: 'gd-pr-h' }, 'Principles'), h('ol', { class: 'gd-rules' }, rules.map(li))) : null;
+    var rl = rules.length ? ruleList(rules, 'gd-pr') : null;
+    var rulesCard = rl ? h('section', { class: 'card gd-rules-card', 'aria-labelledby': 'gd-pr-h' },
+      h('div', { class: 'gd-rules-head' }, h('h2', { id: 'gd-pr-h' }, 'Principles'), rl.toggle),
+      h('p', { class: 'gd-rules-note' }, 'Open a principle for the reasoning and sources.'),
+      rl.el) : null;
     if (intro || rulesCard) root.appendChild(h('div', { class: 'gd-top' + (intro && rulesCard ? '' : ' gd-top-one') }, intro, rulesCard));
 
     /* ---- The protocol (practice ticks in the clinician's profile) ---- */
@@ -556,14 +668,16 @@
         h('div', { class: 'grid-2' },
           verdict.length ? h('section', { class: 'card gd-fincard', 'aria-labelledby': 'gd-fin-r' },
             h('h3', { id: 'gd-fin-r' }, 'Reaching a verdict for each condition'),
-            h('ol', { class: 'gd-rules' }, verdict.map(li))) : null,
+            termList(verdict)) : null,
           docs.length ? h('section', { class: 'card gd-fincard', 'aria-labelledby': 'gd-fin-d' },
             h('div', { class: 'gd-blk-top' }, h('h3', { id: 'gd-fin-d' }, 'What to document'),
               ui.btn({ label: 'Copy', kind: 'quiet', small: true, icon: '⧉', aria: 'Copy what to document', onClick: function () { copyLines(docs.map(function (d) { return '- ' + d; }), 'Checklist'); } })),
             ui.list(docs, 'list gd-doclist')) : null)));
     }
     var refs = texts(P.refs);
-    if (refs.length) root.appendChild(ui.source(refs.join('; ')));
+    if (refs.length) {
+      root.appendChild(ui.details('Sources', h('ol', { class: 'gd-refs' }, refs.map(li)), { cls: 'gd-refs-d', meta: U.plural(refs.length, 'source') }));
+    }
     if (useBtn) {
       root.appendChild(h('div', { class: 'gd-endbar' },
         h('p', null, 'Ready to apply this to ' + ref + '?'),

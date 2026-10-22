@@ -9,17 +9,22 @@
 .iv kbd { font: inherit; font-size: .82rem; font-weight: 700; padding: .05rem .4rem; border: 1px solid var(--line-2); border-bottom-width: 2px; border-radius: 5px; background: var(--surface); color: var(--ink); }
 
 /* ---------- Overview ---------- */
-.iv-intro h2 { margin-bottom: .3rem; }
-.iv-rules { margin: .2rem 0 1rem; max-width: 75ch; }
+.iv-intro h2 { margin-bottom: .6rem; }
+.iv-rules { margin: 0; max-width: 75ch; }
 .iv-rules li { margin: .35rem 0; }
-.iv-tally { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); margin: 0 0 1rem; }
-.iv-tally-item { background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: .7rem .9rem; }
+.iv-tally { display: grid; gap: .7rem; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 0 0 1rem; }
+.iv-tally-item { background: var(--surface-2); border: 1px solid var(--line); border-radius: var(--radius-sm); padding: .7rem .9rem; min-width: 0; }
 .iv-tally-item p { margin: 0; }
-.iv-tally-k { font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; font-weight: 700; color: var(--muted); }
-.iv-tally-v .num { font-family: var(--font-display); font-weight: 600; font-size: 1.7rem; color: var(--brand); line-height: 1.2; }
+.iv-tally-k { font-size: .76rem; text-transform: uppercase; letter-spacing: .06em; font-weight: 700; color: var(--muted); }
+.iv-tally-v .num { font-family: var(--font-ui); font-weight: 600; font-size: 1.7rem; color: var(--brand); line-height: 1.25; font-variant-numeric: tabular-nums; }
 .iv-tally-v small { color: var(--muted); font-size: .9rem; }
+.iv-tally-item .hint { font-size: .84rem; }
 .iv-tally-item .badge { margin-top: .4rem; }
+.iv-cta { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; }
 .iv-cta .btn { white-space: normal; text-align: left; }
+.iv-cta-note { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .6rem; margin: 0; font-size: .9rem; color: var(--muted); }
+.iv-cta-sup { display: inline-flex; }
+.iv-howto { margin: 1rem 0 0; }
 
 .iv-table th, .iv-table td { vertical-align: middle; }
 .iv-table thead th { white-space: nowrap; }
@@ -30,6 +35,27 @@
 .iv-link { font: inherit; font-weight: 700; color: var(--accent); background: none; border: 0; padding: .3rem 0; min-height: 36px; text-align: left; cursor: pointer; text-decoration: underline; text-decoration-color: var(--line-2); text-underline-offset: 3px; }
 .iv-link:hover { color: var(--accent-2); text-decoration-color: currentColor; }
 .iv-sub { display: block; font-weight: 400; font-size: .82rem; color: var(--muted); }
+@media (max-width: 640px) {
+  .iv-tally { gap: .5rem; }
+  .iv-tally-item { padding: .6rem .7rem; }
+  .iv-tally-v .num { font-size: 1.45rem; }
+  .iv-cta .btn { width: 100%; justify-content: flex-start; }
+  /* Symptom table as compact cards: code and title, then adult and child scores, then the details. */
+  .iv-tablewrap { border-radius: var(--radius-sm); }
+  .iv-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+  .iv-table, .iv-table tbody { display: block; }
+  .iv-table tr { display: grid; grid-template-columns: 2.7rem auto auto minmax(0, 1fr); column-gap: .5rem; padding: .55rem .75rem .6rem; border-bottom: 1px solid var(--line); }
+  .iv-table tbody tr:last-child { border-bottom: 0; }
+  .iv-table th, .iv-table td { display: block; border: 0; padding: 0; background: transparent; }
+  .iv-table .iv-code { grid-row: 1 / span 4; padding-top: .45rem; }
+  .iv-table tbody th { grid-column: 2 / -1; min-width: 0; }
+  .iv-table td[data-label] { display: flex; align-items: center; gap: .35rem; font-size: .86rem; }
+  .iv-table td[data-label]::before { content: attr(data-label); font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+  .iv-table .iv-c-adult { grid-column: 2; margin: .15rem .4rem 0 0; }
+  .iv-table .iv-c-child { grid-column: 3; margin-top: .15rem; }
+  .iv-table .iv-c-inf, .iv-table .iv-c-ddx { grid-column: 2 / -1; margin-top: .2rem; color: var(--muted); }
+  .iv-table .iv-c-inf .iv-none, .iv-table .iv-c-ddx .iv-none { font-size: .84rem; }
+}
 
 .iv-sup-item { border-top: 1px solid var(--line); padding: .9rem 0 .2rem; margin-top: .9rem; }
 .iv-sup-item h3 { font-size: 1rem; color: var(--muted); }
@@ -59,22 +85,64 @@
 .iv-chip[aria-current="true"] { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); border-style: solid; }
 .iv-keys { margin: 0 0 .9rem; font-size: .82rem; }
 @media (hover: none), (max-width: 760px) { .iv-keys { display: none; } .iv-strip { margin-bottom: .9rem; } }
+@media (max-width: 640px) {
+  .iv-strip { gap: .3rem .8rem; }
+  .iv-strip ol { display: grid; grid-template-columns: repeat(9, minmax(0, 1fr)); gap: 4px; width: 100%; }
+  .iv-chip { height: 40px; min-width: 0; width: 100%; }
+  .iv-head { margin-bottom: .5rem; }
+  .iv-head-nav .btn { min-height: 40px; }
+}
 
-/* Score panel */
+/* Score panel. Large screens: a card that sticks under the step strip. Below 1000px: a compact bar
+   fixed to the bottom of the screen (with safe-area padding); the page gets matching bottom padding so
+   the bar never covers the last content. */
 .iv-score { margin: 0 0 1.1rem; gap: .5rem 1.4rem; padding: .75rem 1rem .55rem; box-shadow: var(--shadow); }
 .iv-score-col { min-width: 0; display: flex; flex-direction: column; gap: .2rem; align-items: stretch; }
-.iv-score .seg-label { min-width: 11.5rem; }
+.iv-score-row { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .8rem; }
+.iv-score-lab { min-width: 11.5rem; }
+.iv-l-short { display: none; }
 .iv-score .seg-opt label { min-width: 64px; }
+.iv-score-col.is-warn .seg { border-color: var(--warn); box-shadow: 0 0 0 1px var(--warn); }
 .iv-status { min-height: 34px; display: flex; flex-wrap: wrap; align-items: center; gap: .2rem .6rem; }
 .iv-status .btn { margin-left: -.5rem; }
 .iv-nudge { margin: 0; font-size: .86rem; color: var(--muted); }
 .iv-nudge.is-warn { color: var(--warn); font-weight: 700; }
 .iv-nudge.is-warn::before { content: "! "; }
-@media (min-width: 1000px) and (min-height: 760px) {
+.iv-bar-next { display: none; }
+@media (min-width: 1000px) {
   .iv-score { position: sticky; top: calc(var(--bar-h) + env(safe-area-inset-top, 0px) + 64px); z-index: 20; }
   /* Covers the strip between the sticky step bar and the panel, so content does not peek through. */
   .iv-score::before { content: ""; position: absolute; left: -2px; right: -2px; top: -10px; height: 9px; background: var(--bg); }
   html:has(.iv-score) { scroll-padding-top: calc(var(--bar-h) + 200px); }
+}
+@media (max-width: 999px) {
+  .iv-score { position: fixed; z-index: 45; left: 0; right: 0; bottom: 0; margin: 0;
+    display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto auto; gap: .35rem .6rem; align-items: center;
+    padding: .5rem max(12px, env(safe-area-inset-right, 0px)) calc(.5rem + env(safe-area-inset-bottom, 0px)) max(12px, env(safe-area-inset-left, 0px));
+    border: 0; border-top: 1px solid var(--line-2); border-radius: 0; background: var(--surface); box-shadow: var(--shadow-up); }
+  .iv-score-col { grid-column: 1; }
+  .iv-score-row { flex-wrap: nowrap; gap: .5rem; }
+  .iv-score-lab { min-width: 3.1rem; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+  .iv-l-long { display: none; }
+  .iv-l-short { display: inline; }
+  .iv-score[data-tab="adult"] .iv-sc-adult .iv-score-lab, .iv-score[data-tab="child"] .iv-sc-child .iv-score-lab { color: var(--accent); }
+  .iv-score .seg { flex: 1 1 auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 360px; }
+  .iv-score .seg-opt label { min-width: 0; width: 100%; min-height: 38px; padding: .25rem .3rem; }
+  /* Status messages stay available to screen readers; the warning shows as an outline on the control. */
+  .iv-status { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; min-height: 0; }
+  .iv-status .btn { display: none; }
+  .iv-bar-next { display: inline-flex; flex-direction: column; gap: 0; grid-column: 2; grid-row: 1 / span 2; align-self: stretch; min-width: 4.4rem; padding: .3rem .7rem; font-size: .9rem; }
+  .main:has(.iv-score) { padding-bottom: calc(8.5rem + env(safe-area-inset-bottom, 0px)); }
+  html:has(.iv-score) { scroll-padding-bottom: calc(8rem + env(safe-area-inset-bottom, 0px)); }
+  body:has(.iv-score) .toasts { bottom: calc(7.6rem + env(safe-area-inset-bottom, 0px)); }
+}
+@media (min-width: 640px) and (max-width: 999px) {
+  .iv-score { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; grid-template-rows: auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+  .iv-sc-child { grid-column: 2; grid-row: 1; }
+  .iv-bar-next { grid-column: 3; grid-row: 1; flex-direction: row; gap: .4rem; min-height: 44px; }
+  .main:has(.iv-score) { padding-bottom: calc(6rem + env(safe-area-inset-bottom, 0px)); }
+  html:has(.iv-score) { scroll-padding-bottom: calc(6rem + env(safe-area-inset-bottom, 0px)); }
+  body:has(.iv-score) .toasts { bottom: calc(5.4rem + env(safe-area-inset-bottom, 0px)); }
 }
 
 /* Tabs and question */
@@ -95,9 +163,19 @@
 .iv-search { flex: 1 1 220px; min-width: 0; }
 .iv-only[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
 .iv-only[aria-pressed="true"]::before { content: "✓"; }
-.iv-examples .ex-group { padding: .5rem 0 .35rem; border-top: 1px solid var(--line); margin: 0; }
-.iv-examples .ex-group h4 { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: 0 0 .2rem; }
-.iv-gcount { font-size: .75rem; letter-spacing: 0; text-transform: none; font-weight: 700; color: var(--accent); background: var(--accent-l); border-radius: 999px; padding: .05rem .5rem; }
+.iv-examples { border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); }
+.iv-exg { margin: 0; border-top: 1px solid var(--line); }
+.iv-exg:first-child { border-top: 0; }
+.iv-exg > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: .5rem; min-height: 44px; padding: .35rem .75rem; }
+.iv-exg > summary::-webkit-details-marker { display: none; }
+.iv-exg > summary::before { content: ""; flex: 0 0 8px; width: 8px; height: 8px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(-45deg); transition: transform .15s; }
+.iv-exg[open] > summary::before { transform: rotate(45deg); }
+.iv-exg > summary:hover { background: var(--surface-2); }
+.iv-exg-t { font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; font-weight: 700; color: var(--muted); }
+.iv-exg[open] .iv-exg-t { color: var(--ink); }
+.iv-exg-n { margin-left: auto; font-size: .8rem; color: var(--faint); font-variant-numeric: tabular-nums; }
+.iv-exg > .ex-list { padding: 0 .5rem .5rem 1.6rem; }
+.iv-gcount { font-size: .75rem; letter-spacing: 0; text-transform: none; font-weight: 700; color: var(--accent); background: var(--accent-l); border-radius: 999px; padding: .05rem .5rem; font-variant-numeric: tabular-nums; }
 .iv .ex-list .check { padding: .28rem .3rem; border-radius: 6px; min-height: 36px; align-items: flex-start; }
 .iv .ex-list .check:hover { background: var(--surface-2); }
 .iv .ex-list .check label { flex: 1; min-width: 0; padding-top: .05rem; }
@@ -187,7 +265,10 @@
 .iv-dom { padding-bottom: .7rem; }
 .iv-dom-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem .8rem; }
 .iv-dom-head h3 { margin: 0; }
-.iv-dom-why { margin: .3rem 0 .7rem; font-size: .93rem; }
+.iv-dom-why { margin: 0; font-size: .93rem; color: var(--muted); }
+.iv-dom-head { margin-bottom: .6rem; }
+.iv-about { margin: .5rem 0 .2rem; }
+.iv-intro-p { margin: 0; color: var(--muted); max-width: 75ch; }
 .iv-anchor-text { margin: .5rem 0 .6rem; padding: .5rem .75rem; border-left: 4px solid var(--accent); background: var(--surface-2); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-size: .93rem; }
 .iv-anchor-text.is-empty { border-left-color: var(--line-2); color: var(--muted); }
 .iv-dom .field { margin-top: .6rem; }
@@ -201,10 +282,10 @@
 }
 
 /* ---------- Collateral ---------- */
-.iv-lead { margin: 0; }
+.iv-lead { margin: 0; color: var(--muted); max-width: 75ch; }
 .iv-src-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem .8rem; }
 .iv-src-head h3 { margin: 0; }
-.iv-src > .muted { margin: .3rem 0 .8rem; }
+.iv-src > .muted { margin: .3rem 0 .8rem; font-size: .92rem; max-width: 75ch; }
 .iv-src > .field { max-width: 460px; margin: 0 0 .8rem; }
 .iv-rate { display: flex; flex-direction: column; gap: .35rem; align-items: flex-start; margin: 0 0 .5rem; }
 .iv-rate-desc { margin: 0; }
@@ -221,3 +302,8 @@
 /* Checked Yes / Unsure use dark text on the light dark-theme fills (white text there is too faint).
    In the light theme --surface is white, so nothing changes. */
 .iv .seg-yes input:checked + label, .iv .seg-unsure input:checked + label { color: var(--surface); }
+@media (max-width: 640px) { .iv-table .iv-c-inf:has(> .iv-none), .iv-table .iv-c-ddx:has(> .iv-none) { display: none; } }
+
+/* Short phone screens: let the step strip scroll away on a symptom card, so the question and the
+   score bar have room. */
+@media (max-width: 999px) and (max-height: 740px) { .ws-head.is-sub ~ .stepper { position: static; } }

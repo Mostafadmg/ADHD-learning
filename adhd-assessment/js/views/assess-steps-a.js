@@ -78,15 +78,18 @@
   }
 
   /* Short "about this tool" block: who, time, purpose, when, plus how and ADHD notes on demand. */
+  /* The facts line stays visible; the longer guidance folds away so the items come first. */
   function aboutTool(t) {
     var facts = [t.who, t.time, t.items_n ? U.plural(t.items_n, 'item') : null, t.ages].filter(Boolean).join(' · ');
-    return h('div', { class: 'as-about' },
-      facts ? h('p', { class: 'hint' }, facts) : null,
+    var more = [
       t.purpose ? h('p', null, t.purpose) : null,
       t.when ? h('p', null, h('strong', null, 'When: '), t.when) : null,
-      t.how || t.adhdNotes ? h('div', { class: 'as-more' },
-        t.how ? ui.details('How to give it', h('p', null, t.how)) : null,
-        t.adhdNotes ? ui.details('Reading the result in an ADHD assessment', h('p', null, t.adhdNotes)) : null) : null);
+      t.how ? [h('h4', { class: 'as-abouth' }, 'How to give it'), h('p', null, t.how)] : null,
+      t.adhdNotes ? [h('h4', { class: 'as-abouth' }, 'Reading the result in an ADHD assessment'), h('p', null, t.adhdNotes)] : null
+    ].filter(Boolean);
+    return h('div', { class: 'as-about' },
+      facts ? h('p', { class: 'hint' }, facts) : null,
+      more.length ? ui.details('About this questionnaire', h('div', { class: 'as-aboutbody' }, more), { cls: 'as-aboutdet' }) : null);
   }
 
   /* One questionnaire inside a disclosure: about, items with live score, notes, library link.
@@ -165,15 +168,18 @@
   function condsFor(toolId) {
     return (AA.data.ddx || []).filter(function (c) { return (c.screen || []).indexOf(toolId) > -1; });
   }
+  /* Condition names without the bracketed detail, for compact lists (the full name is in the title). */
+  function shortName(c) { return String(c.name || c.id).replace(/\s*\([^)]*\)/g, '').trim() || c.id; }
   function condLinks(conds) {
     return h('ul', { class: 'as-plist' }, conds.map(function (c) {
-      return h('li', null, h('a', { href: '#cond-' + c.id, 'data-go': 'cond-' + c.id }, c.name || c.id));
+      return h('li', null, h('a', { href: '#cond-' + c.id, 'data-go': 'cond-' + c.id, title: c.name }, shortName(c)));
     }));
   }
   function pointsNode(ctx, t, r) {
     var conds = condsFor(t.id);
     if (!conds.length) return h('span', { class: 'muted' }, '-');
-    return h('div', { class: 'as-points' }, condLinks(conds),
+    var list = conds.length > 3 ? ui.details(U.plural(conds.length, 'differential'), condLinks(conds), { cls: 'as-pts' }) : condLinks(conds);
+    return h('div', { class: 'as-points' }, list,
       isPositive(r) ? ui.btn({ label: 'Review in differentials', kind: 'ghost', small: true, onClick: function () { ctx.go('ddx'); } }) : null);
   }
 
@@ -284,9 +290,10 @@
     function renderTodo() {
       var q = ctx.get('patient', {}) || {};
       U.clear(todo);
-      todo.appendChild(h('span', { class: 'as-todo-k' }, 'To complete this step:'));
+      todo.appendChild(h('span', { class: 'as-todo-k' }, 'Needed to complete this step:'));
       [['Reference', !!q.ref], ['Age', !!q.age], ['Consent', !!q.consent]].forEach(function (x) {
-        todo.appendChild(ui.badge(x[0] + (x[1] ? ': done' : ': to do'), x[1] ? 'ok' : 'neutral'));
+        todo.appendChild(h('span', { class: 'as-req' + (x[1] ? ' is-done' : '') }, h('span', { class: 'as-req-i', 'aria-hidden': 'true' }, x[1] ? '✓' : ''), x[0],
+          h('span', { class: 'sr-only' }, x[1] ? ', done' : ', to do')));
       });
     }
     el.appendChild(todo);
@@ -410,9 +417,7 @@
     questionnaireStep(el, ctx, {
       tools: list,
       optional: function (t) { return core.indexOf(t.id) < 0; },
-      intro: ui.callout('info', h('div', null,
-        h('p', null, 'Screening scales support the assessment. They never make the diagnosis. NICE NG87 says a diagnosis of ADHD should not be made on rating scales alone: they are helpful added tools.'),
-        h('p', null, 'A positive screen means "assess carefully". A negative screen does not rule ADHD out, especially in people who mask or have little insight.')), 'Scales support, the interview decides'),
+      intro: ui.callout('info', h('p', null, 'Rating scales support the assessment but never make the diagnosis (NICE NG87). A positive screen means "assess carefully". A negative screen does not rule ADHD out, especially in people who mask or have little insight.'), 'Scales support, the interview decides'),
       groups: [{ title: 'Questionnaires', hint: 'Ideally completed before the appointment. Go through the answers with the patient and ask for an example of any high score.', filter: function () { return true; } }]
     });
   } };
@@ -608,6 +613,15 @@
       list.appendChild(d);
     });
     el.appendChild(list);
+
+    /* Mental state observations (NICE NG87 1.3.1). Stored with the history as history.mse.notes. */
+    el.appendChild(h('section', { class: 'card as-card as-mse' },
+      h('h2', null, 'Mental state observations'),
+      h('p', { class: 'hint' }, 'Observe throughout the interview. Note anything that points away from ADHD or needs action today, such as low mood, elation, psychotic features or intoxication.'),
+      h('ul', { class: 'chip-list as-mse-areas', 'aria-label': 'Areas to cover' },
+        ['Appearance and behaviour', 'Restlessness and distractibility', 'Speech', 'Mood and affect', 'Thought form and content', 'Perception', 'Cognition', 'Insight'].map(function (x) { return h('li', { class: 'chip' }, x); })),
+      ui.field('What you observed', ui.input({ rows: 4, value: ctx.get('history.mse.notes', ''), placeholder: 'For example: casually dressed, fidgeting throughout, speech normal rate, mood "fed up", reactive affect, no psychotic features, good insight.',
+        onSave: function (v) { ctx.set('history.mse.notes', v.trim() ? v : undefined); } }))));
 
     function covered(r) {
       return !!(r && ((r.checks && Object.keys(r.checks).some(function (k) { return r.checks[k]; })) || r.notes || r.none));

@@ -82,11 +82,11 @@
             "<tr><td>Losing things (ia7)</td><td>'I lose things constantly'</td><td>Cannot name anything lost in the past month. Has had the same keys, wallet and phone for two years</td><td>Not established</td></tr>" +
             "<tr><td>Organisation (ia5)</td><td>'Total chaos'</td><td>Keeps a shared revision timetable for his flat. His manager says he 'runs the rota'</td><td>Not established</td></tr>" +
             "<tr><td>Delaying effortful work (ia6)</td><td>'Always'</td><td>Puts off essays until the deadline is close, then works all night 'because I'm scared it won't be good enough'. Since first year only</td><td>Present, recent, linked to anxiety</td></tr>" +
-            "<tr><td>Distractibility (ia8)</td><td>'Anything distracts me'</td><td>Checks his phone during revision. Not in lectures or at work</td><td>Present but within the range of his peers</td></tr>" +
+            "<tr><td>Distractibility (ia8)</td><td>'Anything distracts me'</td><td>Checks his phone during revision. Not in lectures or at work</td><td>Not established: no more than his peers describe</td></tr>" +
             "<tr><td>Running and climbing (hi3)</td><td>'Very often, I climb on furniture'</td><td>No example. 'I mean I feel like it.' Inner restlessness only in exam weeks</td><td>Not established</td></tr>" +
             "<tr><td>Talking excessively (hi6)</td><td>'I never stop talking'</td><td>His girlfriend calls him 'the quiet one'</td><td>Not established</td></tr>" +
             "</tbody></table>" +
-            "<p>Clinician tally after probing: inattention 2 (both recent and tied to exam anxiety), hyperactivity-impulsivity 0. Impairment is confined to assessment periods. Work, friendships and daily life go well.</p>",
+            "<p>Clinician tally after probing: inattention 1 (delaying work, recent and tied to exam anxiety), hyperactivity-impulsivity 0. Impairment is confined to assessment periods. Work, friendships and daily life go well.</p>",
           q: {
             q: "He rates 'climbs on furniture' as a current problem 'very often' but cannot give an example. How should you treat this?",
             options: [
@@ -173,7 +173,7 @@
         }
       ],
       profile: {
-        adultIA: 2, adultHI: 0, childIA: 0, childHI: 0,
+        adultIA: 1, adultHI: 0, childIA: 0, childHI: 0,
         impairment: "Self-report claims severe impairment in every domain. Clinician-rated: mild, confined to exam and deadline periods (study). Work, relationships and daily life function well, confirmed by his employer and girlfriend."
       },
       answer: {
@@ -185,6 +185,7 @@
           "Sleep restriction from all-nighters: present; contributes",
           "Hazardous alcohol use (AUDIT 10): present; brief advice given",
           "Non-prescribed stimulant use: present; harm-reduction advice given",
+          "Cannabis use: occasional (a few times a term; DAST-10 2); advice given",
           "Depression: absent (PHQ-9 9, no persistent low mood or loss of interest)",
           "Normal variation under academic pressure: part of the picture"
         ],
@@ -325,7 +326,8 @@
             "<tr><td>EUPD</td><td>Abandonment fear, identity disturbance, emptiness, interpersonally triggered self-harm, stress-related dissociation; MSI-BPD 8</td><td>Present: co-occurring</td></tr>" +
             "<tr><td>Bipolar disorder</td><td>No periods of elevated mood, reduced need for sleep or grandiosity; her sleep problem is lifelong difficulty switching off</td><td>Absent</td></tr>" +
             "<tr><td>Depression</td><td>PHQ-9 14, but 5 points come from sleep, concentration and restlessness items she describes as lifelong. Reactive low mood since the break-up; still enjoys friends and her cat</td><td>No current depressive episode; GP to keep sertraline under review</td></tr>" +
-            "<tr><td>Alcohol</td><td>AUDIT 12; binges after arguments; no withdrawal or morning drinking</td><td>Hazardous use: brief intervention</td></tr>" +
+            "<tr><td>Generalised anxiety</td><td>GAD-7 12. Worry centres on rent arrears, work and the break-up. No long-standing, free-floating worry across many areas</td><td>Anxiety tied to current stresses; not generalised anxiety disorder at present; review</td></tr>" +
+            "<tr><td>Alcohol and drugs</td><td>AUDIT 12; binges after arguments; no withdrawal or morning drinking. Cannabis at a few parties a year (DAST-10 2)</td><td>Hazardous drinking: brief intervention. Cannabis: advice</td></tr>" +
             "<tr><td>PTSD</td><td>No traumatic events reported; trauma screen negative</td><td>Absent</td></tr>" +
             "<tr><td>Autism</td><td>AQ-10 3; easy early friendships</td><td>Absent</td></tr>" +
             "<tr><td>Thyroid disease</td><td>TFTs normal (GP, last month)</td><td>Absent</td></tr>" +
@@ -379,6 +381,8 @@
           "Bipolar disorder: absent (no episodes of elevated mood or reduced need for sleep)",
           "Depression: reactive low mood without a current depressive episode at interview",
           "Hazardous alcohol use (AUDIT 12): present; brief intervention",
+          "Cannabis: occasional (DAST-10 2); not a disorder",
+          "Generalised anxiety disorder: not met; anxiety (GAD-7 12) is tied to current stresses; review",
           "PTSD: trauma screen negative",
           "Autism: no early social-communication differences (AQ-10 3)",
           "Thyroid disease: TFTs normal",
@@ -412,7 +416,7 @@
           html: "<table><thead><tr><th>Measure</th><th>Result</th><th>Usual reading</th></tr></thead><tbody>" +
             "<tr><td>ASRS v1.1</td><td>Part A 4/6. Sum 44/72</td><td>Part A positive at 4 or more</td></tr>" +
             "<tr><td>WURS-25</td><td>59/100 (highest on anxious, sad, low opinion of self and temper items)</td><td>Above 46; mood and temper items drive many scores</td></tr>" +
-            "<tr><td>PC-PTSD-5</td><td>Trauma exposure yes; 5/5</td><td>Positive at 4 or more</td></tr>" +
+            "<tr><td>PC-PTSD-5</td><td>Trauma exposure yes; 5/5</td><td>Positive at 4 or more (3 is often used for women)</td></tr>" +
             "<tr><td>PCL-5</td><td>54/80 (clusters: B 15, C 7, D 18, E 14)</td><td>31 to 33 suggests probable PTSD</td></tr>" +
             "<tr><td>ITQ</td><td>PTSD items met (re-experiencing, avoidance, sense of threat, with impairment). Disturbances in self-organisation met (affect dysregulation, negative self-concept, relationship difficulties, with impairment)</td><td>By the ITQ algorithm this pattern indicates complex PTSD. The ITQ uses no cut-off scores</td></tr>" +
             "<tr><td>Adverse Childhood Experiences questionnaire</td><td>7 of 10</td><td>A count only; no diagnostic cut-off</td></tr>" +
@@ -517,6 +521,7 @@
             "<tr><td>EUPD</td><td>Affect dysregulation and relationship problems, but no identity disturbance, abandonment fear or self-harm</td><td>Not supported; the ITQ disturbances in self-organisation fit better</td></tr>" +
             "<tr><td>Depression</td><td>PHQ-9 12; low mood and shame are long-standing parts of the trauma picture; no distinct episode at present</td><td>Monitor; GP review</td></tr>" +
             "<tr><td>Generalised anxiety</td><td>Anxiety is threat-driven hyperarousal rather than free-floating worry</td><td>Part of complex PTSD</td></tr>" +
+            "<tr><td>Bipolar disorder</td><td>No periods of elevated mood, reduced need for sleep or overactivity. Irritability is brief and triggered by feeling cornered</td><td>Absent</td></tr>" +
             "<tr><td>Alcohol</td><td>AUDIT 7; wine to get to sleep</td><td>Advice given</td></tr>" +
             "<tr><td>Sleep, thyroid</td><td>Sleep broken by nightmares; no snoring; TFTs normal</td><td>Explained by PTSD</td></tr>" +
             "<tr><td>Safeguarding</td><td>Her son is thriving at school; she is a warm, consistent parent</td><td>No concerns; parenting is a strength</td></tr>" +
@@ -545,7 +550,7 @@
       ],
       profile: {
         adultIA: 4, adultHI: 2, childIA: 3, childHI: 0,
-        impairment: "Endorsed symptoms are state-dependent (threat cues, dissociation, after nightmares). Moderate impairment at work (two warnings for irritability) and in close relationships; daily organisation and parenting are strengths."
+        impairment: "Counts are the items endorsed before the trait test. All are state-dependent (threat cues, dissociation, after nightmares) and none is counted towards ADHD once that is taken into account. Moderate impairment at work (two warnings for irritability) and in close relationships; daily organisation and parenting are strengths."
       },
       answer: {
         conclusion: "ADHD not diagnosed. Her current inattention, forgetfulness and irritability are better explained by complex PTSD after prolonged childhood neglect and domestic abuse and later intimate partner violence. In childhood, attention was poor only during the years of danger and improved markedly once she was safe; there was never hyperactivity. As an adult she is highly organised except when triggered or dissociating. ADHD can be reconsidered if problems persist after effective trauma treatment.",
@@ -555,6 +560,7 @@
           "Depression: long-standing low mood and shame within the trauma picture; no distinct episode now; GP to monitor",
           "Emotionally unstable personality disorder: considered; no identity disturbance, abandonment fear or self-harm",
           "Generalised anxiety disorder: anxiety is threat-driven hyperarousal rather than free-floating worry",
+          "Bipolar disorder: no episodes of elevated mood or reduced need for sleep",
           "Alcohol: AUDIT 7, used to get to sleep; advice given",
           "Autism: not suggested by history",
           "Thyroid disease: TFTs normal"
@@ -653,7 +659,7 @@
               "Criterion A is not met: from age 17, 5 symptoms are needed in at least one domain. If the other criteria fit, consider Other specified ADHD and record the reason"
             ],
             a: 3,
-            why: "DSM-5-TR lowered the adult threshold from 6 to 5 for age 17 and over. Kooij 2019 notes evidence that 4 current symptoms may be the best adult cut-off, but DSM-5 chose 5. Other specified ADHD covers impairing ADHD-type symptoms that fall short of full criteria, with the reason recorded (for example 'insufficient symptoms'). NICE NG87 1.4.4 says people who fall short of a diagnosis may still benefit from information."
+            why: "DSM-5 lowered the adult threshold from 6 to 5 for age 17 and over, and DSM-5-TR kept it. Kooij 2019 notes evidence that 4 current symptoms may be the best adult cut-off, but DSM-5 chose 5. Other specified ADHD covers impairing ADHD-type symptoms that fall short of full criteria, with the reason recorded (for example 'insufficient symptoms'). NICE NG87 1.4.4 says people who fall short of a diagnosis may still benefit from information."
           }
         },
         {
@@ -664,7 +670,7 @@
             "<p>His mother found two primary school reports in a trunk:</p><ul>" +
             "<li>Age 8: 'Imran is capable, but his work is often incomplete.'</li>" +
             "<li>Age 10: 'Imran is easily distracted and would achieve more if he checked his work. He enjoys chatting to friends, sometimes when he should be listening.'</li></ul>" +
-            "<p>Childhood tally: inattention 4 (careless mistakes, sustaining attention, not finishing, distractibility), hyperactivity-impulsivity 2 (fidgeting, talking a lot). Several symptoms before 12: yes. Full criteria in childhood: no evidence. Collateral rating: parent 2, school 1, partner 2.</p>",
+            "<p>Childhood tally: inattention 4 (careless mistakes, sustaining attention, not finishing, distractibility), hyperactivity-impulsivity 2 (always on the go, talking a lot). Several symptoms before 12: yes. Full criteria in childhood: no evidence. Collateral rating: parent 2, school 1, partner 2.</p>",
           q: {
             q: "Why is 'ADHD in partial remission' not the right label?",
             options: [
@@ -705,14 +711,14 @@
           title: "Conclusion, coding and plan",
           html: "<h4>Coding</h4><ul>" +
             "<li>DSM-5-TR: Other specified ADHD, with insufficient symptoms (ICD-10-CM F90.8).</li>" +
-            "<li>ICD-11 has no fixed symptom count; it asks for 'several' symptoms with impairment. A clinician using ICD-11 might judge the requirements met. The report states which system the service uses and why.</li></ul>" +
+            "<li>ICD-11 deliberately avoids fixed symptom cut-offs, so a clinician using ICD-11 might judge the 6A05 requirements met. ICD-11 has no subthreshold ADHD category: 6A05.Y means an 'other specified presentation' of ADHD whose requirements are met, not the DSM-5-TR subthreshold category. The report states which system the service uses and why.</li></ul>" +
             "<h4>Plan</h4><ul>" +
             "<li>Explain the finding in plain words: real, lifelong ADHD-type traits that cause real problems, just below the DSM-5-TR count.</li>" +
             "<li>Written information and support groups (NICE NG87 1.4.4).</li>" +
             "<li>Environmental modifications at work: written actions after meetings, a quieter workspace, a project-management tool with reminders, a weekly planning slot with his manager. Information about Access to Work.</li>" +
             "<li>Skills-based support (organisation and time-management coaching or a CBT-based group).</li>" +
             "<li>Sleep advice: stop late-night catch-up working.</li>" +
-            "<li>Review in six months. NG87 does not address subthreshold presentations directly; if significant impairment persists after modifications, discuss medication in the multidisciplinary team and document the reasoning.</li></ul>",
+            "<li>Review in six months. NG87 covers information for people who fall short of a diagnosis (1.4.4) but says nothing about medication for them. If significant impairment persists after modifications, discuss medication in the multidisciplinary team and document the reasoning (clinical practice).</li></ul>",
           q: {
             q: "Which plan is most appropriate?",
             options: [
@@ -732,7 +738,7 @@
       },
       answer: {
         conclusion: "Other specified ADHD (DSM-5-TR), with insufficient symptoms. He has 4 inattentive and 3 hyperactive-impulsive symptoms now, several symptoms before 12 (confirmed by school reports, his mother and his sister), symptoms in two settings, and moderate impairment at work and at home, not better explained by another condition. Full criteria have never been met, so 'in partial remission' does not apply.",
-        codes: "DSM-5-TR Other specified ADHD, reason recorded as insufficient symptoms (ICD-10-CM F90.8). ICD-11 has no fixed symptom count, so whether 6A05 requirements are met is a clinical judgement (the app maps Other specified to 6A05.Y). State in the report which system is used.",
+        codes: "DSM-5-TR Other specified ADHD, reason recorded as insufficient symptoms (ICD-10-CM F90.8). ICD-11 has no fixed symptom count and no subthreshold ADHD category, so whether the 6A05 requirements are met is a clinical judgement; if they are, code the presentation. 6A05.Y is an 'other specified presentation' of a diagnosis that is met, not an equivalent of DSM-5-TR Other specified ADHD. State in the report which system is used.",
         ddx: [
           "Obstructive sleep apnoea: low risk (STOP-Bang 2, Epworth 7, no witnessed apnoeas)",
           "Sleep restriction from late working: contributes; advice given",
@@ -789,7 +795,7 @@
         },
         {
           title: "The lifelong history check",
-          html: "<ul><li>Primary school in Port of Spain, then London from age 9. Her sister kept a Year 6 report: 'Gloria is a careful, hard-working girl whose work is always beautifully presented.'</li>" +
+          html: "<ul><li>Primary school in Port of Spain, then London from age 9. Her sister kept her last primary school report, at 11: 'Gloria is a careful, hard-working girl whose work is always beautifully presented.'</li>" +
             "<li>Left school at 16, secretarial college, then 35 years as a hospital medical secretary. She ran the diaries of three consultants: <em>'I never once double-booked a clinic.'</em></li>" +
             "<li>Raised three children; managed the household finances throughout her marriage.</li>" +
             "<li>Retired at 63. Church treasurer for 20 years, including four years after retiring, with no errors until last year.</li></ul>" +
@@ -866,7 +872,7 @@
             "<li>Referral to the memory assessment service, with this report and her daughter's account.</li>" +
             "<li>GP to review oxybutynin and amitriptyline.</li>" +
             "<li>Audiology review; encourage her to wear the hearing aids.</li>" +
-            "<li>The memory service will advise on driving after its assessment.</li>" +
+            "<li>Driving: she got lost on a familiar route, so discuss road safety with her and her daughter now. The memory service will advise on fitness to drive and whether she must tell the DVLA.</li>" +
             "<li>Information for Gloria and her daughter, including carer support.</li></ul>",
           q: {
             q: "Gloria asks: 'Couldn't I have had ADHD all along and just coped?' Which reply is most accurate?",
@@ -881,8 +887,8 @@
         }
       ],
       profile: {
-        adultIA: 5, adultHI: 0, childIA: 0, childHI: 0,
-        impairment: "All five endorsed inattentive symptoms began about 18 months ago, as a decline from a high previous level. Mild impairment in money management, appointments and driving to familiar places; independent in self-care and social life."
+        adultIA: 0, adultHI: 0, childIA: 0, childHI: 0,
+        impairment: "Five inattentive items are endorsed (ia1, ia2, ia5, ia7, ia9), but all began about 18 months ago as a decline from a high previous level, so none is scored as an ADHD symptom. Mild impairment in money management, appointments and driving to familiar places; independent in self-care and social life."
       },
       answer: {
         conclusion: "ADHD not diagnosed. There is no evidence of ADHD symptoms in childhood or in adult life until 18 months ago; her sister and her work history describe an exceptionally organised woman. The new problems (repeating questions, losing items in odd places, getting lost on a familiar route, errors with money, word-finding pauses) are a decline from her previous level, with a MoCA of 22/30. This is consistent with mild neurocognitive disorder (mild cognitive impairment). Anticholinergic medicines and uncorrected hearing loss may be contributing. The cause is for the memory assessment service to establish.",
@@ -948,7 +954,7 @@
             "<li>Glasgow Coma Scale 7 at the scene. CT: bifrontal contusions and a small subdural haematoma, managed without surgery.</li>" +
             "<li>Five days in intensive care. Post-traumatic amnesia about three weeks. Eight weeks of inpatient neurorehabilitation.</li>" +
             "<li>Neuropsychology at six months: slowed processing speed, impaired working memory and executive function, against an estimated average pre-injury ability.</li>" +
-            "<li>By standard severity criteria (for example the Mayo classification: GCS below 13, contusions on imaging, amnesia longer than 24 hours) this was a moderate to severe injury.</li></ul>" +
+            "<li>By standard severity criteria (for example the Mayo classification: GCS below 13, contusions on imaging, amnesia longer than 24 hours) this was a moderate to severe injury. On traditional criteria (GCS 8 or less, post-traumatic amnesia over 7 days) it was severe.</li></ul>" +
             "<p>Since the injury: tiredness by mid-afternoon, headaches, irritability, crude comments 'that just come out', impulsive online spending (£2,000 of debt), poor planning and forgetting. He could not safely return to work with power tools and now works 16 hours a week at a garden centre.</p>" +
             "<blockquote>Mother: 'He's a different lad since the accident. Snappy. He says things he never would have said before.'</blockquote>",
           q: {
@@ -1017,6 +1023,8 @@
             "<tr><td>Cannabis use</td><td>Most evenings, for headaches and sleep</td><td>Contributes to memory problems and fatigue; advice given</td></tr>" +
             "<tr><td>Headache and sleep</td><td>Daily headaches; broken sleep</td><td>Contribute; GP review</td></tr>" +
             "<tr><td>Post-traumatic epilepsy</td><td>No blackouts, absences or unexplained episodes</td><td>No features; ask again at review</td></tr>" +
+            "<tr><td>PTSD after the crash</td><td>No memory of the collision (amnesia). No nightmares, intrusive images or avoidance of roads; travels by car and bus without distress</td><td>Not present; amnesia does not rule PTSD out, so ask again at review</td></tr>" +
+            "<tr><td>Personality change</td><td>Disinhibition, crude remarks and irritability that are new since the injury</td><td>Part of the brain injury picture; for the brain injury team</td></tr>" +
             "<tr><td>Validity</td><td>A personal injury claim is in progress</td><td>See question</td></tr>" +
             "</tbody></table>",
           q: {
@@ -1043,8 +1051,8 @@
         }
       ],
       profile: {
-        adultIA: 7, adultHI: 4, childIA: 0, childHI: 0,
-        impairment: "All current symptoms began after the injury at 19 and are a change from his previous level. Moderate to severe impairment: apprenticeship lost, £2,000 of debt from impulsive spending, a warning at work and strain at home."
+        adultIA: 0, adultHI: 0, childIA: 0, childHI: 0,
+        impairment: "He endorses 7 inattentive and 4 hyperactive-impulsive items, but all began after the injury at 19 as a change from his previous level, so none is scored as an ADHD symptom. Moderate to severe impairment: apprenticeship lost, £2,000 of debt from impulsive spending, a warning at work and strain at home."
       },
       answer: {
         conclusion: "ADHD not diagnosed. Callum had no ADHD symptoms before the injury (school, college and apprenticeship records and his mother agree). His attention, memory, planning and impulse-control problems began after a moderate to severe traumatic brain injury at 19 and match the neuropsychology findings at six months. This is a neurocognitive disorder due to traumatic brain injury, with post-injury low mood and evening cannabis use contributing.",
@@ -1055,6 +1063,8 @@
           "Cannabis use (most evenings, for headaches and sleep): contributes; advice given",
           "Post-traumatic headache and poor sleep: contribute to fatigue-related inattention",
           "Post-traumatic epilepsy: no features; ask again at review",
+          "PTSD after the collision: no intrusions or avoidance; he has no memory of the crash, which lowers but does not remove the risk",
+          "Secondary personality change (disinhibition, irritability since the injury): part of the brain injury picture; brain injury team to assess",
           "Non-credible report: compensation claim noted; account consistent with records and collateral",
           "ADHD: no childhood symptoms; not diagnosed"
         ],
@@ -1182,6 +1192,7 @@
           title: "Differentials and comorbidity",
           html: "<table><thead><tr><th>Condition</th><th>Findings</th><th>Verdict</th></tr></thead><tbody>" +
             "<tr><td>Autism</td><td>Early social-communication differences, restricted interests, insistence on sameness, sensory sensitivity; ADOS-2 and ADI-R at threshold</td><td>Present: co-occurring</td></tr>" +
+            "<tr><td>Burnout</td><td>Exhaustion and shutdown since the move to an open-plan office and a rotating rota; years of masking at work</td><td>Present: drives the sick leave; adjustments are the treatment</td></tr>" +
             "<tr><td>Depression</td><td>PHQ-9 13; three months of low mood and exhaustion after the reorganisation; still enjoys fossils and walking</td><td>No depressive episode at interview; GP to monitor</td></tr>" +
             "<tr><td>Anxiety</td><td>GAD-7 13; anxiety about unpredictability and social and sensory load</td><td>Review after workplace adjustments</td></tr>" +
             "<tr><td>Social anxiety disorder</td><td>Social difficulty is a developmental difference, not fear of scrutiny</td><td>Not supported</td></tr>" +
@@ -1229,6 +1240,7 @@
         codes: "ADHD combined presentation: DSM-5-TR F90.2; ICD-11 6A05.2. Autism spectrum disorder: ICD-11 6A02.0 (without disorder of intellectual development, with mild or no impairment of functional language); DSM-5-TR autism spectrum disorder without accompanying intellectual or language impairment (F84.0), with the support level specified by the autism team.",
         ddx: [
           "Autism spectrum disorder: present; co-occurring",
+          "Burnout: present; exhaustion after the loss of a predictable routine and a quiet workspace, made worse by masking; phased return with adjustments",
           "Depression: low mood with burnout (PHQ-9 13), no depressive episode at interview; monitor",
           "Anxiety: driven by unpredictability and sensory and social load (GAD-7 13); review after adjustments",
           "Social anxiety disorder: social difficulty is a developmental difference, not fear of judgement",
@@ -1370,7 +1382,7 @@
               "Note it as an incentive and a diversion risk. Check his account against independent records (here the educational psychology letter at 10 predates any incentive). If ADHD is diagnosed, plan treatment with diversion in mind"
             ],
             a: 3,
-            why: "CADDRA links antisocial patterns with stimulant-seeking and diversion, and NICE NG87 1.7.4 requires a risk assessment for substance misuse and diversion before medication. A request is not proof of feigning: weigh it against evidence that could not have been shaped by the incentive. The offenders consensus notes that clear drug-seeking for stimulants is uncommon in practice, and recommends non-stimulants such as atomoxetine where it is a concern."
+            why: "CADDRA links antisocial patterns with stimulant-seeking and diversion, and NICE NG87 1.7.4 requires a risk assessment for substance misuse and diversion before medication. A request is not proof of feigning: weigh it against evidence that could not have been shaped by the incentive. The offenders consensus (Young 2018) describes clear drug-seeking for stimulants as rare in the authors' experience, and recommends non-stimulants such as atomoxetine where it is a concern."
           }
         },
         {
@@ -1378,6 +1390,7 @@
           html: "<h4>Feedback</h4><blockquote>'There's a lot of evidence, going back to when you were 7, that you've had ADHD all along. It doesn't excuse what happened, but it helps explain why school and work kept going wrong, and it's treatable.'</blockquote>" +
             "<h4>Plan</h4><ul>" +
             "<li>Psychoeducation about ADHD for Kieran and, with consent, for the wing and education staff.</li>" +
+            "<li>Environmental modifications now: shorter education tasks with breaks, written appointment slips, a workshop role that allows movement, and instructions given one at a time.</li>" +
             "<li>Before medication: the NICE NG87 1.7.4 baseline (cardiovascular history, pulse, blood pressure, weight, height) and a documented diversion risk assessment.</li>" +
             "<li>Medication options agreed with the prison pharmacy: supervised daily administration of a modified-release stimulant, or atomoxetine (not a controlled drug) if diversion concerns remain.</li>" +
             "<li>Substance misuse service in custody, with relapse prevention for release.</li>" +

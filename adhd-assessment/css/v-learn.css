@@ -91,11 +91,10 @@
 .lr-toc-btn[aria-current="true"] .lr-toc-n { color: inherit; }
 .lr-toc-extra { padding-left: 2.35rem; }
 @media (max-width: 1099px) {
-  .lr-doc { grid-template-columns: minmax(0, 1fr); grid-template-areas: "toc" "main"; }
+  .lr-doc { grid-template-columns: minmax(0, 1fr); grid-template-areas: "toc" "main"; max-width: 46rem; }
   .lr-toc { position: static; max-height: none; overflow: visible; margin: 0 0 1.2rem; padding: .2rem .95rem .3rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); }
   .lr-toc-d > summary { min-height: 44px; font-size: .8rem; color: var(--muted); }
   .lr-toc ol { margin: 0 0 .5rem; }
-  .lr-article { max-width: none; }
 }
 
 .lr-objectives { background: var(--accent-l); border-radius: var(--radius); padding: 1rem 1.25rem; margin: 0 0 .6rem; }
@@ -154,6 +153,22 @@
   .lr-pager-link, .lr-pager-next { max-width: none; flex: 1 1 100%; }
   .lr-sec > h2 { font-size: 1.25rem; }
   .lr-sec .prose { font-size: 1rem; line-height: 1.68; }
+}
+
+/* Authored tables: white cells, tabular figures; wordy tables become labelled cards on phones (stackTables()). */
+.lr-sec .prose table, .lr-stage-card .prose table, .lr-ctx-body .prose table { background: var(--surface); font-variant-numeric: tabular-nums; line-height: 1.5; }
+table.lr-stack tr > :first-child { font-weight: 600; color: var(--ink); }
+@media (max-width: 600px) {
+  .lr-sec .prose table.lr-stack, .lr-stage-card .prose table.lr-stack, .lr-ctx-body .prose table.lr-stack { display: block; overflow: visible; background: transparent; font-size: .95rem; }
+  .lr-sec .prose table.lr-stack > thead, .lr-stage-card .prose table.lr-stack > thead, .lr-ctx-body .prose table.lr-stack > thead, .lr-sec .prose table.lr-stack .lr-stack-head, .lr-stage-card .prose table.lr-stack .lr-stack-head, .lr-ctx-body .prose table.lr-stack .lr-stack-head { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+  table.lr-stack > tbody, table.lr-stack tr, table.lr-stack td, table.lr-stack th { display: block; width: 100%; }
+  table.lr-stack tr { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); margin: 0 0 .6rem; overflow: hidden; }
+  .prose table.lr-stack td, .prose table.lr-stack th { border: 0; padding: .45rem .85rem 0; }
+  .prose table.lr-stack tr > :first-child { background: var(--surface-2); color: var(--brand); font-weight: 700; padding: .55rem .85rem; border-bottom: 1px solid var(--line); }
+  .prose table.lr-stack tr > :last-child { padding-bottom: .7rem; }
+  .prose table.lr-stack tr > :first-child:last-child { border-bottom: 0; }
+  table.lr-stack td[data-label]:not(:first-child)::before { content: attr(data-label); display: block; margin: 0 0 .1rem; font-size: .7rem; font-weight: 700;
+    letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 }
 
 /* ---------- Quiz and exam ---------- */

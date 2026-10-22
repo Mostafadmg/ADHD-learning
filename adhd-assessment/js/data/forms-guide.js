@@ -45,7 +45,7 @@ AA.add('formsGuide', {
     "Self-informant disagreement is information, not noise. Insight varies: the European Consensus 2019 notes that many adults report high symptoms with low impairment, or the reverse, and distress can inflate self-report. Informants may not see inner symptoms, may have known the person only briefly, or may have ADHD themselves (UKAP 2020). Explore every disagreement with concrete, dated examples.",
     "Check response style and validity. Self-report scales are easy to fake (Sollman 2010), and 15-31% of adults referred for ADHD give non-credible responses on validity testing in published series. Watch for almost every item at the maximum, rare or atypical symptoms, inconsistency between forms, and severe scores alongside good functioning in records. Do not accuse: triangulate, and record your reasoning in the validity step.",
     "Bring the results into the interview, not the other way round. Read every returned form before the appointment. Turn elevated items into open questions ('Tell me about the last time...') and ask for real-life examples, frequency, settings and childhood; never read items back as yes/no questions. Note which hypotheses the forms raised and which the interview confirmed.",
-    "Act on safety items at once. A suicide or self-harm item, a safeguarding concern or a cardiac red flag (NG87 1.7.5) found in a pack needs a clinician's response before the appointment. Triage of returned forms should not rely on questionnaires alone (NHSE ADHD Taskforce Part 2, 2025, recommendation 10).",
+    "Act on safety items at once. A suicide or self-harm item or a safeguarding concern found in a pack needs a clinician's response before the appointment. Current cardiac symptoms (fainting or chest pain on exertion, sudden-onset palpitations) go to the GP promptly; any NG87 1.7.5 feature must be resolved, with a cardiology opinion, before medication is considered. Triage of returned forms should not rely on questionnaires alone (NHSE ADHD Taskforce Part 2, 2025, recommendation 10).",
     "Use the official version, scoring and licence. ASRS-5 is only validated with its licensed weighted scoring; the German WURS-k is not the WURS-25; CAARS 2 is not the original CAARS. Licensed tools are used within their licence, and norms from other countries, or mainly male samples, may not fit your patient (UKAP 2020 consensus on females)."
   ],
 
@@ -71,7 +71,7 @@ AA.add('formsGuide', {
       who: "The patient. CADDRA also uses it as an observer form for a partner or close friend (see Informant forms).",
       time: "About 5 minutes (form instructions).",
       howToRead:
-        "<ol><li>Check it is the official ASRS v1.1 wording, rated for the past 6 months, and that the patient's copy was <strong>unshaded</strong>.</li>" +
+        "<ol><li>Check it is the official ASRS v1.1 wording, rated for the past 6 months. The printed form is shaded; PhenX advises removing the shading before the patient completes it, so note whether the patient could see which answers 'count'.</li>" +
         "<li><strong>Part A (items 1-6):</strong> mark each answer in the shaded range. Items 1, 2 and 3 count from 'Sometimes' upwards; items 4, 5 and 6 count from 'Often' upwards.</li>" +
         "<li>Count the shaded answers in Part A. <strong>4 or more = screen positive</strong>.</li>" +
         "<li><strong>Part B (items 7-18):</strong> no total and no cut-off. Mark the shaded answers: items 9, 12, 16 and 18 count from 'Sometimes'; items 7, 8, 10, 11, 13, 14, 15 and 17 count from 'Often'.</li>" +
@@ -109,7 +109,7 @@ AA.add('formsGuide', {
         takeaway: "The same 4-of-6 result is a weak signal in the general population and a moderate one in a specialist clinic. In neither setting does it diagnose or exclude ADHD: it tells you which symptoms to explore."
       },
       pitfalls: [
-        "Sending the shaded clinician copy to the patient. The shading shows which answers 'count'; send the unshaded version.",
+        "Sending the shaded form to the patient. The shading shows which answers 'count'; PhenX advises removing it before the form is given to the respondent.",
         "Treating a positive Part A as a diagnosis, or telling the patient they screened positive for ADHD as if it were a result.",
         "Using a negative Part A to decline assessment.",
         "Inventing a Part B cut-off, or treating the 18-item total as more accurate than Part A: in Kessler 2005 the full 18 items were less accurate (sensitivity 56.3%, specificity 98.3%) than the 6-item screener.",
@@ -574,7 +574,7 @@ AA.add('formsGuide', {
           "<tr><td>Year 9 (13-14)</td><td>Capable but easily distracted by others; must take more care.</td><td>Distractibility; careless errors</td></tr>" +
           "</tbody></table>" +
           "<p>Maths progress was described as excellent in Year 5. There are no comments about hyperactivity.</p>" +
-          "<p><strong>Reasoning:</strong> four teachers, eight years apart, describe the same pattern: off task, unfinished, disorganised, forgetful, not listening. Three of the four reports are before 12. Good maths progress and a love of stories argue against a global learning problem. None of the reports uses clinical words, and none needs to: the pattern is the evidence.</p>" +
+          "<p><strong>Reasoning:</strong> four teachers, across seven years, describe the same pattern: off task, unfinished, disorganised, forgetful, not listening. Three of the four reports are before 12. Good maths progress and a love of stories argue against a global learning problem. None of the reports uses clinical words, and none needs to: the pattern is the evidence.</p>" +
           "<p><strong>Rating:</strong> clear support (2) for inattentive symptoms before 12 in the school setting. In the report: quote two comments with their dates.</p>",
         takeaway: "One comment is anecdote; the same theme from several teachers across several years, before age 12, is strong evidence."
       },
@@ -737,7 +737,7 @@ AA.add('formsGuide', {
         "<li><strong>Read the core items</strong> (1 interest, 2 low mood) separately from the items ADHD can drive: 3 sleep, 4 energy, 7 concentration, 8 restlessness, and 6 feeling a failure (clinical reasoning from item content).</li>" +
         "<li>For each overlap item, ask: <em>is this new in the last 2 weeks, or how you have always been?</em></li></ol>",
       meaning: [
-        { result: "Item 9 scored 1, 2 or 3", means: "Thoughts of death or self-harm endorsed. Item 9 mixes passive wishes and active thoughts: against the C-SSRS, a score of 1 or more had a PPV of 28.6% for active ideation (Na 2018). Risk still rises with frequency: one-year suicide attempt risk rose from 0.4% at 'not at all' to 4% at 'nearly every day' (Simon 2013).", action: "Clinician enquiry before the appointment (C-SSRS screen) and a safety plan. Do not label risk as low, medium or high (NICE NG225 1.6.1-1.6.3)." },
+        { result: "Item 9 scored 1, 2 or 3", means: "Thoughts of death or self-harm endorsed. Item 9 mixes passive wishes and active thoughts: in depression clinic patients, against an electronic C-SSRS, a score of 1 or more had a sensitivity of 87.6% but a PPV of only 28.6% for suicidal ideation with intent or recent suicidal behaviour (Na 2018). Risk still rises with frequency: one-year suicide attempt risk rose from 0.4% at 'not at all' to 4% at 'nearly every day' (Simon 2013).", action: "Clinician enquiry before the appointment (C-SSRS screen) and a safety plan. Do not label risk as low, medium or high (NICE NG225 1.6.1-1.6.3)." },
         { result: "0-4", means: "Minimal depressive symptoms.", action: "Record as a baseline." },
         { result: "5-9 (mild)", means: "Often driven by overlap items in ADHD.", action: "Check items 1 and 2; repeat later." },
         { result: "10-14 (moderate)", means: "Probable depression: at 10 or more, sensitivity 0.88 and specificity 0.85 against semi-structured interviews (Levis 2019).", action: "Assess for a depressive episode at interview, with timing against the ADHD symptoms." },
@@ -778,7 +778,7 @@ AA.add('formsGuide', {
     {
       id: "gad7", tool: "gad7", title: "GAD-7: Generalized Anxiety Disorder scale", kind: "self",
       what:
-        "<p>Seven questions about the <strong>last 2 weeks</strong> (Spitzer et al. 2006), each 0-3; total 0-21. Designed for generalised anxiety disorder, it also detects panic disorder, social anxiety and PTSD. Free: no permission needed.</p>" +
+        "<p>Seven questions about the <strong>last 2 weeks</strong> (Spitzer et al. 2006), each 0-3; total 0-21. Designed for generalised anxiety disorder, it also screens reasonably well for panic disorder, social anxiety disorder and PTSD (Kroenke 2007), but cannot tell them apart. Free: no permission needed.</p>" +
         "<p><strong>Why it is sent:</strong> anxiety is very common in adults with ADHD and can mimic it: inattention and restlessness that occur only when anxious point to anxiety (CADDRA 4.1; ICD-11).</p>",
       recommendedBy: [
         "CADDRA 4.1: general screener",
@@ -855,7 +855,7 @@ AA.add('formsGuide', {
         html:
           "<p><strong>Sasha, 28.</strong> Question 1: yes to 9 of 13 (talkative, racing thoughts, easily distracted, more energy, more active, more sociable, risky behaviour, overspending, irritable). No to elevated mood, more self-confidence, less need for sleep and more interest in sex. Question 2: yes. Question 3: serious. <strong>Screen positive.</strong></p>" +
           "<p><strong>Reasoning:</strong> every endorsed item also describes chronic ADHD traits, and the four items more typical of hypomania were not endorsed. Asked about question 2, Sasha says 'they all happen together, all the time'. There is no distinct period of change, and late nights are followed by tiredness, not by energy without sleep. The partner confirms no episodes.</p>" +
-          "<p><strong>Base rates:</strong> about half of adults with ADHD screen positive (Lundervold 2020). A meta-analysis of 71 studies found bipolar disorder in about 8% of adults with ADHD (7.95%; Schiweck 2021). So of 100 adults with ADHD, about 50 screen positive, and even if all 8 with bipolar disorder were among them, at most about 8 in 50 (16%) of the positives would have it.</p>" +
+          "<p><strong>Base rates:</strong> about half of adults with ADHD screen positive (Lundervold 2020). A meta-analysis estimated bipolar disorder in about 8% of adults with ADHD (7.95%; Schiweck 2021). So of 100 adults with ADHD, about 50 screen positive, and even if all 8 with bipolar disorder were among them, at most about 8 in 50 (16%) of the positives would have it.</p>" +
           "<p><strong>Conclusion:</strong> the positive screen most likely reflects lifelong traits. Record the episode history and the informant's account; keep bipolar disorder in mind at follow-up, especially if medication is started.</p>",
         takeaway: "In an ADHD clinic, a positive MDQ is common and usually reflects traits. The episode history, not the score, separates bipolar disorder from ADHD."
       },
@@ -1047,7 +1047,7 @@ AA.add('formsGuide', {
         "<ol><li><strong>Check the event:</strong> what happened, when, and whether it meets criterion A (use the version with the Life Events Checklist).</li>" +
         "<li><strong>Add the 20 items</strong> (0-80). A total of <strong>31-33 or more</strong> suggests probable PTSD (National Center for PTSD). There are no published severity bands.</li>" +
         "<li><strong>Optional DSM-5 rule:</strong> count items at 2 or more as endorsed; probable PTSD needs at least 1 cluster B, 1 cluster C, 2 cluster D and 2 cluster E items. The National Center for PTSD says the cut-off tends to be more reliable than this rule.</li>" +
-        "<li><strong>Read the cluster pattern.</strong> Items 15 (irritability, outbursts), 16 (risk-taking), 19 (concentration) and 20 (sleep), and item 8 (memory gaps for the event), can reflect ADHD (clinical reasoning). High cluster E with low B and C should prompt: were these present before the trauma, or since childhood?</li>" +
+        "<li><strong>Read the cluster pattern.</strong> Items 15 (irritability, outbursts), 16 (risk-taking), 19 (concentration) and 20 (sleep) can reflect ADHD (clinical reasoning). Item 8 (memory gaps for the event) is a PTSD symptom, but it can also reflect poor attention at the time, intoxication or a head injury during the event: ask. High cluster E with low B and C should prompt: were these present before the trauma, or since childhood?</li>" +
         "<li>Consider complex PTSD (the ITQ covers ICD-11 PTSD and complex PTSD).</li>" +
         "<li>For monitoring, a change of 10 points suggests a response to treatment.</li></ol>",
       meaning: [
@@ -1067,7 +1067,7 @@ AA.add('formsGuide', {
           "<tr><td>E arousal and reactivity (15-20)</td><td>3, 3, 2, 1, 4, 3</td><td>16</td><td>5</td></tr>" +
           "<tr><td><strong>Total</strong></td><td></td><td><strong>32</strong></td><td></td></tr>" +
           "</tbody></table>" +
-          "<p><strong>Reasoning:</strong> 32 falls in the 31-33 range, but half the points come from cluster E, with concentration (item 19) the highest, and item 8 (gaps in memory for the event) scored 3. Intrusions and avoidance are low, and no cluster C item reaches 2, so the DSM-5 rule is not met. Mo's sister and a Year 5 report describe restlessness and temper long before the assault.</p>" +
+          "<p><strong>Reasoning:</strong> 32 falls in the 31-33 range, but half the points come from cluster E, with concentration (item 19) the highest. Intrusions and avoidance are low, and no cluster C item reaches 2, so the DSM-5 rule is not met. Item 8 (gaps in memory for the event) scored 3: ask whether Mo was knocked out or intoxicated during the assault, which would explain the gap differently from trauma-related amnesia. Mo's sister and a Year 5 report describe restlessness and temper long before the assault.</p>" +
           "<p><strong>Conclusion:</strong> PTSD is unlikely to be the main explanation for the attention problems, which predate the trauma. The assault still matters: assess its impact, offer help, and record it.</p>",
         takeaway: "In the PCL-5, see which clusters carry the score. ADHD-like problems live in cluster E; PTSD needs intrusions and avoidance, and a timeline that starts with the trauma."
       },
@@ -1212,14 +1212,14 @@ AA.add('formsGuide', {
       ],
       example: {
         html:
-          "<p><strong>Avery, 29.</strong> The returned PHQ-9 totals 12 with <strong>item 9 scored 1</strong> (several days). A clinician phones the next working day.</p>" +
+          "<p><strong>Avery, 29.</strong> The returned PHQ-9 totals 12 with <strong>item 9 scored 1</strong> (several days). A clinician phones Avery the same day the form is reviewed.</p>" +
           "<table><thead><tr><th>Question</th><th>Answer</th></tr></thead><tbody>" +
           "<tr><td>1 Wished to be dead (past month)</td><td>Yes: 'after bad days at work I wish I could just not wake up'</td></tr>" +
           "<tr><td>2 Thoughts of killing yourself (past month)</td><td>No</td></tr>" +
           "<tr><td>3-5</td><td>Not asked (question 2 was no)</td></tr>" +
           "<tr><td>6 Suicidal behaviour ever</td><td>No</td></tr>" +
           "</tbody></table>" +
-          "<p><strong>Reasoning:</strong> the positive item 9 reflects a passive wish, without active thoughts or past behaviour. That fits the evidence: only 28.6% of positive item 9 answers reflected active ideation on the C-SSRS (Na 2018). It is still not a 'low risk' label (NICE NG225). Avery drinks more after bad days, which matters in someone who may act on impulse.</p>" +
+          "<p><strong>Reasoning:</strong> the positive item 9 reflects a passive wish, without active thoughts or past behaviour. That pattern is common: in depression clinic patients only 28.6% of positive item 9 answers were matched by suicidal ideation with intent or recent suicidal behaviour on an electronic C-SSRS (Na 2018). It is still not a 'low risk' label (NICE NG225). Avery drinks more after bad days, which matters in someone who may act on impulse.</p>" +
           "<p><strong>Plan:</strong> talk through triggers, alcohol and protective factors; agree a simple safety plan and give crisis contacts; record the call; inform the GP with consent; review at the appointment.</p>",
         takeaway: "Every positive safety answer on a returned form gets a prompt human conversation. The C-SSRS structures that conversation; it does not predict risk."
       },

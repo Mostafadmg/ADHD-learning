@@ -35,7 +35,12 @@
 
   function allTools() { return (AA.data.tools || []).filter(function (t) { return t && t.id; }); }
   function arr(x) { return Array.isArray(x) ? x.filter(function (v) { return v !== null && v !== undefined && v !== ''; }) : (x ? [x] : []); }
-  function stagesOf(t) { return arr(t && t.stage); }
+  /* A tool's stages in pathway order (stage 1 first), whatever order the data lists them in. */
+  function stagesOf(t) {
+    var st = arr(t && t.stage), order = (AA.data.pathway || []).map(function (s) { return s && s.id; });
+    function pos(id) { var i = order.indexOf(id); return i < 0 ? 99 : i; }
+    return st.slice().sort(function (a, b) { return pos(a) - pos(b); });
+  }
   function scorable(t) { return !!(t && t.interactive !== false && t.items && t.items.length); }
   function byN(a, b) { return (typeof a.n === 'number' ? a.n : 99) - (typeof b.n === 'number' ? b.n : 99); }
   function pathway() { return (AA.data.pathway || []).filter(function (s) { return s && s.id; }).slice().sort(byN); }
@@ -108,17 +113,37 @@
     return norm([t.abbr, String(t.abbr || '').replace(/[^a-z0-9]/gi, ''), t.name, t.purpose, t.id, groupName(groupKey(t))].join(' '));
   }
 
+  /* First clause of a long data string, for compact cards ("About 5-10 minutes (clinical practice estimate)" -> "About 5-10 minutes"). */
+  function clause(x) {
+    var s = String(x || '').trim();
+    if (!s) return '';
+    var cut = s.search(/\. |; | \(/);
+    if (cut > 0) s = s.slice(0, cut);
+    if (s.length > 48 && s.indexOf(', ') > 0) s = s.slice(0, s.indexOf(', '));
+    return s.replace(/[.:,;]+$/, '');
+  }
+  function cardFacts(t) {
+    var time = clause(t.time);
+    if (/^not stated/i.test(time)) time = '';
+    return [clause(t.who), time, itemsText(t)].filter(Boolean).join(' · ');
+  }
+
   function toolCard(t) {
-    var facts = [t.who, t.time, itemsText(t)].filter(Boolean).join(' · ');
+    var facts = cardFacts(t);
     var st = stagesOf(t);
+    var nums = st.map(function (id) { var s = stageById(id); return s && typeof s.n === 'number' ? s.n : null; });
     return h('a', { class: 'card card-link lib-card', href: '#tool-' + t.id, 'data-go': 'tool-' + t.id },
       h('span', { class: 'lib-card-top' },
         h('span', { class: 'lib-abbr' }, toolLabel(t)),
-        scorable(t) ? ui.badge('Score it here', 'accent') : ui.badge('Licensed: described only', 'neutral')),
+        scorable(t) ? ui.badge('Scored here', 'accent') : ui.badge('Described only', 'neutral')),
       t.name ? h('span', { class: 'lib-card-name' }, t.name) : null,
       facts ? h('span', { class: 'lib-card-facts' }, facts) : null,
-      st.length ? h('span', { class: 'lib-card-stages' }, h('span', { class: 'sr-only' }, 'Stages: '),
-        st.map(function (id, i) { return h('span', { class: 'lib-tag' }, stageName(id), i < st.length - 1 ? h('span', { class: 'sr-only' }, ',') : null); })) : null);
+      st.length ? h('span', { class: 'lib-card-stages', title: st.map(stageLabel).join('\n') },
+        h('span', { class: 'lib-card-k' }, st.length === 1 ? 'Stage' : 'Stages'),
+        h('span', { class: 'lib-snums', 'aria-hidden': 'true' }, nums.every(function (n) { return n !== null; })
+          ? nums.map(function (n) { return h('span', { class: 'lib-snum' }, String(n)); })
+          : st.map(function (id) { return h('span', { class: 'lib-tag' }, stageName(id)); })),
+        h('span', { class: 'sr-only' }, ': ' + st.map(stageName).join(', '))) : null);
   }
 
   function renderTools(el) {
@@ -144,7 +169,7 @@
     if (f.stage && stageIds.indexOf(f.stage) < 0) f.stage = '';
 
     /* ---- Filters ---- */
-    var search = ui.search('Search by name or purpose', function (q) { f.q = q; apply(); saveFilters(f); }, f.q);
+    var search = ui.search('Search tools', function (q) { f.q = q; apply(); saveFilters(f); }, f.q);
     var chipBtns = {};
     var chips = h('div', { class: 'lib-chips', role: 'group', 'aria-labelledby': 'lib-groups-l' }, present.map(function (g) {
       var n = tools.filter(function (t) { return groupKey(t) === g[0]; }).length;
@@ -172,10 +197,22 @@
       apply(); saveFilters(f);
     }
 
-    el.appendChild(h('div', { class: 'card lib-filters', role: 'search', 'aria-label': 'Filter tools' },
-      search,
+    /* Groups, stage and "scored here" sit in a panel that phones fold away behind a Filters button
+       (the CSS always shows it on wider screens). */
+    var moreId = ui.nid('lib-fmore');
+    var morePanel = h('div', { class: 'lib-fmore', id: moreId, hidden: true },
       h('div', null, h('p', { class: 'lib-flabel', id: 'lib-groups-l' }, 'Groups'), chips),
-      h('div', { class: 'lib-frow' }, ui.field('Assessment stage', stageSel), scoreCheck, h('span', { class: 'lib-fclear' }, clearBtn))));
+      h('div', { class: 'lib-frow' }, ui.field('Assessment stage', stageSel), scoreCheck));
+    var moreN = h('span', { class: 'lib-fmore-n' });
+    var moreBtn = h('button', { type: 'button', class: 'btn btn-ghost lib-fmore-btn', 'aria-expanded': 'false', 'aria-controls': moreId, onclick: function () {
+      var open = morePanel.hidden;
+      morePanel.hidden = !open;
+      moreBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    } }, h('span', { class: 'lib-fmore-ico', 'aria-hidden': 'true' }), 'Filters', moreN);
+
+    el.appendChild(h('div', { class: 'card lib-filters', role: 'search', 'aria-label': 'Filter tools' },
+      h('div', { class: 'lib-fsearch' }, search, moreBtn),
+      morePanel));
 
     /* ---- Results: all cards are built once; filtering only toggles `hidden`. ---- */
     var countEl = h('p', { class: 'lib-count', role: 'status', 'aria-live': 'polite' });
@@ -192,7 +229,7 @@
     });
     var emptyEl = ui.empty('No tools match these filters', 'Try another word, choose a different stage or group, or clear the filters.',
       ui.btn({ label: 'Clear filters', kind: 'primary', onClick: function () { reset(); search.focus(); } }));
-    el.appendChild(countEl);
+    el.appendChild(h('div', { class: 'lib-count-row' }, countEl, clearBtn));
     el.appendChild(h('div', { class: 'lib-results' }, sections.map(function (s) { return s.el; }), emptyEl));
 
     function apply() {
@@ -215,6 +252,9 @@
       Object.keys(chipBtns).forEach(function (k) { chipBtns[k].setAttribute('aria-pressed', f.groups.indexOf(k) > -1 ? 'true' : 'false'); });
       var active = !!(f.q || f.groups.length || f.stage || f.scorable);
       clearBtn.hidden = !active;
+      var nf = f.groups.length + (f.stage ? 1 : 0) + (f.scorable ? 1 : 0);
+      moreN.textContent = nf ? String(nf) : '';
+      moreN.hidden = !nf;
       countEl.textContent = (active ? 'Showing ' + shown + ' of ' + U.plural(tools.length, 'tool') : 'All ' + U.plural(tools.length, 'tool')) +
         (shown ? ' · ' + canShown + ' can be scored here' : '');
     }
@@ -237,9 +277,19 @@
       return;
     }
     var can = scorable(t);
+    var tabsEl = null, tabSec = null;
+    /* Open one tab and bring the tabs into view (page-head and "full terms" shortcuts). */
+    function openTab(id) {
+      if (!tabsEl) return;
+      tabsEl.show(id);
+      try { tabSec.scrollIntoView({ block: 'start' }); } catch (e) { tabSec.scrollIntoView(); }
+      var b = tabSec.querySelector('.tab[aria-selected="true"]');
+      if (b) { try { b.focus({ preventScroll: true }); } catch (e) { b.focus(); } }
+    }
     el.appendChild(ui.pageHead({
       eyebrow: groupName(groupKey(t)), title: toolLabel(t) + (t.name ? ' · ' + t.name : ''), lead: t.purpose || null,
-      actions: [ui.btn({ label: 'Back to library', kind: 'ghost', go: 'tools', icon: '←' })]
+      actions: [ui.btn({ label: 'Back to library', kind: 'ghost', go: 'tools', icon: '←' }),
+        can ? ui.btn({ label: 'Practise scoring', kind: 'primary', icon: '✎', onClick: function () { openTab('practise'); } }) : null].filter(Boolean)
     }));
 
     /* ---- At a glance, when, how ---- */
@@ -250,8 +300,17 @@
     if (itemsText(t)) rows.push(['Items', itemsText(t)]);
     if (t.ages) rows.push(['Ages', t.ages]);
     rows.push(['Stages', st.length ? h('span', { class: 'lib-links' }, st.map(stageLink)) : h('span', { class: 'muted' }, 'Not assigned')]);
-    rows.push(['In this app', can ? ui.badge('Score it here', 'accent') : ui.badge('Licensed: described only', 'neutral')]);
-    rows.push(['Licence', t.licence || h('span', { class: 'muted' }, 'Not stated')]);
+    rows.push(['In this app', can ? ui.badge('Scored here', 'accent') : ui.badge('Described only', 'neutral')]);
+    /* Licence notes can run to several sentences: show the first here, the full text in the Licence tab. */
+    var lic = String(t.licence || '').trim();
+    var licShort = lic;
+    if (lic.length > 160) {
+      var dot = lic.indexOf('. ', 20);
+      licShort = dot > 0 && dot < 160 ? lic.slice(0, dot + 1) : lic.slice(0, 140).replace(/[\s,;:(]+\S*$/, '') + '…';
+    }
+    rows.push(['Licence', lic ? h('span', null, licShort,
+      licShort !== lic ? [' ', h('button', { type: 'button', class: 'lib-more-link', onclick: function () { openTab('licence'); } }, 'Full licence terms')] : null)
+      : h('span', { class: 'muted' }, 'Not stated')]);
 
     el.appendChild(h('div', { class: 'grid-2 lib-top' },
       h('section', { class: 'card lib-glance', 'aria-labelledby': 'lib-glance-h' }, h('h2', { id: 'lib-glance-h' }, 'At a glance'), ui.kv(rows)),
@@ -268,10 +327,12 @@
     tabs.push({ id: 'interp', label: 'Interpretation', render: function () { return interpPanel(t); } });
     tabs.push({ id: 'licence', label: 'Licence and download', render: function () { return licencePanel(t); } });
     var active = tabs.some(function (x) { return x.id === tabMemo[t.id]; }) ? tabMemo[t.id] : tabs[0].id;
-    el.appendChild(h('section', { class: 'section lib-tabsec', 'aria-labelledby': 'lib-tabs-h' },
+    tabsEl = ui.tabs(tabs, active, function (tid) { tabMemo[t.id] = tid; });
+    tabSec = h('section', { class: 'section lib-tabsec', 'aria-labelledby': 'lib-tabs-h' },
       h('h2', { id: 'lib-tabs-h' }, can ? 'Practise, score and interpret' : 'Scoring and interpretation'),
       can ? null : ui.callout('info', h('p', null, 'There is no practice form for this tool. Its items are not reproduced here, usually because the licence does not allow it, or because it is a clinician-run interview or a computer test. Use the official materials, then record the result in your assessment notes.'), 'Described, not reproduced'),
-      ui.tabs(tabs, active, function (tid) { tabMemo[t.id] = tid; })));
+      tabsEl);
+    el.appendChild(tabSec);
 
     /* ---- Related ---- */
     el.appendChild(related(t));
@@ -522,17 +583,21 @@
      Route: pathway[-<stageId>]
      ====================================================================== */
 
+  /* Open a stage's details, mark it and bring it into view (jump links and "pathway-<stageId>"). */
   function focusStage(id) {
     var li = document.getElementById('lib-stage-' + id);
     if (!li) return;
     U.$$('.lib-stage-on').forEach(function (x) { x.classList.remove('lib-stage-on'); });
     li.classList.add('lib-stage-on');
+    var d = li.querySelector('details');
+    if (d) d.open = true;
     var hd = li.querySelector('h3');
     try { li.scrollIntoView({ block: 'start' }); } catch (e) { /* old browsers */ }
     if (hd) { try { hd.focus({ preventScroll: true }); } catch (e) { hd.focus(); } }
   }
 
-  function stageItem(s, i) {
+  /* One stage: title, who and tools always in view; what happens, tips and sources fold away. */
+  function stageItem(s, i, onToggle) {
     var n = typeof s.n === 'number' ? s.n : i + 1;
     var what = arr(s.what), tips = arr(s.tips), sources = arr(s.sources);
     var tools = arr(s.tools).map(function (id) {
@@ -542,15 +607,18 @@
         toolLabel(t), scorable(t) ? h('span', { class: 'lib-tchip-mark', title: 'Can be scored here' }, h('span', { 'aria-hidden': 'true' }, '✓'), h('span', { class: 'sr-only' }, ' (can be scored here)')) : null));
     });
     var hid = 'lib-stage-h-' + s.id;
+    var meta = [what.length ? U.plural(what.length, 'step') : '', tips.length ? U.plural(tips.length, 'tip') : ''].filter(Boolean).join(' · ');
+    var more = what.length || tips.length || sources.length ? ui.details('What happens' + (tips.length ? ' and tips' : ''), [
+      what.length ? h('ol', { class: 'lib-what' }, what.map(function (x) { return h('li', null, x); })) : null,
+      tips.length ? h('div', { class: 'lib-tips' }, h('h4', null, 'Tips'), ui.list(tips)) : null,
+      sources.length ? ui.source(sources.join('; ')) : null], { meta: meta, cls: 'lib-more', onToggle: onToggle }) : null;
     return h('li', { class: 'lib-stage', id: 'lib-stage-' + s.id },
       h('span', { class: 'lib-stage-n', 'aria-hidden': 'true' }, String(n)),
       h('article', { class: 'card lib-stage-card', 'aria-labelledby': hid },
-        h('h3', { id: hid, tabindex: '-1' }, h('span', { class: 'sr-only' }, 'Stage ' + n + ': '), s.title || stageName(s.id)),
+        h('h3', { id: hid, tabindex: '-1' }, h('span', { class: 'lib-stage-k', 'aria-hidden': 'true' }, 'Stage ' + n), h('span', { class: 'sr-only' }, 'Stage ' + n + ': '), s.title || stageName(s.id)),
         s.who ? h('p', { class: 'lib-who' }, h('strong', null, 'Who: '), s.who) : null,
-        what.length ? [h('h4', null, 'What happens'), ui.list(what)] : null,
-        tools.length ? [h('h4', null, 'Tools'), h('ul', { class: 'chip-list lib-tchips' }, tools)] : null,
-        tips.length ? h('div', { class: 'lib-tips' }, h('h4', null, 'Tips'), ui.list(tips)) : null,
-        sources.length ? ui.source(sources.join('; ')) : null));
+        tools.length ? h('div', { class: 'lib-stage-tools' }, h('h4', null, 'Tools'), h('ul', { class: 'chip-list lib-tchips' }, tools)) : null,
+        more));
   }
 
   /* "Which tool, when": tools by row (grouped), stages by column; a tick plus screen-reader text marks use. */
@@ -573,7 +641,7 @@
           return h('tr', null,
             h('th', { scope: 'row', class: 'lib-mx-tool' },
               h('span', { class: 'lib-mx-head' }, h('a', { href: '#tool-' + t.id, 'data-go': 'tool-' + t.id }, toolLabel(t)),
-                scorable(t) ? ui.badge('Scored here', 'accent') : ui.badge('Licensed', 'neutral')),
+                scorable(t) ? ui.badge('Scored here', 'accent') : ui.badge('Described only', 'neutral')),
               t.name ? h('span', { class: 'lib-mx-name' }, t.name) : null),
             stages.map(function (s) {
               var on = inStage(t, s);
@@ -583,7 +651,7 @@
         }));
     });
     return h('div', null,
-      h('p', { class: 'hint lib-mx-key' }, h('span', { 'aria-hidden': 'true' }, '✓ '), 'marks the stages where a tool is used. ', h('span', { class: 'lib-mx-phone' }, 'Scroll the table sideways to see every stage.')),
+      h('p', { class: 'hint lib-mx-key' }, h('span', { 'aria-hidden': 'true' }, '✓ '), 'marks the stages where a tool is used. ', h('span', { class: 'lib-mx-phone' }, 'Scroll the table sideways to see every stage.'), h('span', { class: 'lib-mx-num' }, 'Columns are the numbered stages above. On a narrow screen, scroll sideways for the last ones.')),
       h('div', { class: 'table-wrap lib-mx-wrap', tabindex: '0', role: 'region', 'aria-label': 'Which tool, when (scrolls sideways)' },
         h('table', { class: 'table lib-matrix' }, h('caption', { class: 'sr-only' }, 'Tools by assessment stage'), head, bodies)));
   }
@@ -609,21 +677,30 @@
       actions: [ui.btn({ label: 'Tools and scoring', kind: 'ghost', go: 'tools', icon: '▤' })]
     }));
 
-    var stageSec = h('section', { class: 'section lib-pw', 'aria-labelledby': 'lib-pw-h' }, h('h2', { id: 'lib-pw-h' }, 'Stages of a full assessment'));
+    var allBtn = ui.btn({ label: 'Open all stages', kind: 'quiet', small: true, onClick: function () {
+      var ds = U.$$('.lib-more', stageSec);
+      var open = !ds.every(function (d) { return d.open; });
+      ds.forEach(function (d) { d.open = open; });
+      syncAll();
+    } });
+    function syncAll() {
+      var ds = U.$$('.lib-more', stageSec);
+      allBtn.lastChild.textContent = ds.length && ds.every(function (d) { return d.open; }) ? 'Close all stages' : 'Open all stages';
+    }
+    var stageSec = h('section', { class: 'section lib-pw', 'aria-labelledby': 'lib-pw-h' },
+      h('h2', { id: 'lib-pw-h' }, 'Stages of a full assessment'),
+      stages.length ? h('div', { class: 'lib-pw-bar' },
+        h('p', { class: 'muted' }, 'Each stage shows who does it and which tools belong there. Open a stage for what happens, step by step, and practical tips.'),
+        allBtn) : null);
     if (!stages.length) {
       stageSec.appendChild(ui.empty('The pathway is not available', 'Pathway content has not loaded in this build.'));
     } else {
-      stageSec.appendChild(h('nav', { class: 'lib-jump', 'aria-label': 'Jump to a stage' }, h('ol', null, stages.map(function (s, i) {
-        var n = typeof s.n === 'number' ? s.n : i + 1;
-        return h('li', null, h('button', { type: 'button', class: 'lib-chip', onclick: function () { focusStage(s.id); } },
-          h('span', { class: 'lib-chip-n' }, String(n)), h('span', null, s.title || stageName(s.id))));
-      }))));
-      stageSec.appendChild(h('ol', { class: 'lib-timeline' }, stages.map(stageItem)));
+      stageSec.appendChild(h('ol', { class: 'lib-timeline' }, stages.map(function (s, i) { return stageItem(s, i, syncAll); })));
     }
     el.appendChild(stageSec);
 
     el.appendChild(h('section', { class: 'section', 'aria-labelledby': 'lib-mx-h' }, h('h2', { id: 'lib-mx-h' }, 'Which tool, when'),
-      h('p', { class: 'muted lib-intro' }, 'Every tool linked to a stage, grouped by what it measures. Licensed tools are described in the library; the rest can be scored here.'),
+      h('p', { class: 'muted lib-intro' }, 'Every tool linked to a stage, grouped by what it measures. Tools marked "Scored here" have a practice form in this app; the rest are described with where to get them.'),
       matrix(stages)));
 
     var gl = (AA.data.guidelines || []).filter(function (g) { return g && g.id; });

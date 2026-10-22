@@ -73,6 +73,7 @@
     if (o.open) fill();
     return d;
   }
+  function roomy() { try { return window.matchMedia('(min-width: 1000px)').matches; } catch (e) { return true; } }
   function setMeta(details, text) { var m = details && details.querySelector('.disclosure-meta'); if (m) m.textContent = text; }
 
   /* ===================================================================================
@@ -114,48 +115,57 @@
         h('p', { class: 'hint' }, [unsure ? unsure + ' unsure' : null, of - answered ? (of - answered) + ' not scored' : null, thrNote + ' ' + thr].filter(Boolean).join(' · ')),
         n >= thr ? ui.badge('Threshold reached', 'ok') : null);
     }
+    function openSym(sid) { focusCard = true; ctx.go(ctx.step, sid); }
     var cta = first
-      ? ui.btn({ label: (started ? 'Continue with ' : 'Start with ') + label(first), kind: 'primary', onClick: function () { ctx.go(ctx.step, first.id); } })
-      : ui.btn({ label: 'Review from ' + label(list[0]), kind: 'ghost', onClick: function () { ctx.go(ctx.step, list[0].id); } });
+      ? ui.btn({ label: (started ? 'Continue with ' : 'Start with ') + label(first), kind: 'primary', onClick: function () { openSym(first.id); } })
+      : ui.btn({ label: 'Review from ' + label(list[0]), kind: 'secondary', onClick: function () { openSym(list[0].id); } });
+    var supNote = h('span', { class: 'iv-cta-sup', 'aria-live': 'polite' });
+    function paintSupNote() {
+      var sp = ctx.get('supplement', {}) || {};
+      U.clear(supNote);
+      supNote.appendChild(sp[key + 'Adult'] && sp[key + 'Child'] ? ui.badge('Supplement question answered', 'ok')
+        : h('span', null, 'Next: answer the supplement question below.'));
+    }
 
     wrap.appendChild(h('section', { class: 'card iv-intro' },
-      h('h2', null, 'How to run this part'),
-      ui.list([
+      h('h2', null, 'Progress in this part'),
+      h('div', { class: 'iv-tally' },
+        tally('Adulthood', ad[dim], ad['unsure' + dim], ad['answered' + dim], list.length, need, 'DSM-5-TR threshold'),
+        tally('Childhood', ch[dim], ch['unsure' + dim], ch['answered' + dim], list.length, 6, 'DIVA convention')),
+      h('div', { class: 'iv-cta' }, cta,
+        first ? null : h('p', { class: 'iv-cta-note' }, ui.badge('All ' + list.length + ' symptoms scored', 'ok'), supNote)),
+      ui.details('How to run this part', ui.list([
         'Adulthood means the last 6 months. Childhood means age 5 to 12.',
         'Look for long-standing traits, present most of the time. Problems that only appear during an episode of low mood, anxiety, stress or substance use do not count.',
         'Ask for real examples from the patient\'s own life. A general "yes, that\'s me" is not enough.',
         'Tick the examples the patient describes, note their own words, then score Yes, Unsure or No.',
         'Score Yes only when the problem is clearly more frequent or severe than in most people of the same age, and it causes difficulties.'
-      ], 'list iv-rules'),
-      h('div', { class: 'iv-tally' },
-        tally('Adulthood', ad[dim], ad['unsure' + dim], ad['answered' + dim], list.length, need, 'DSM-5-TR threshold'),
-        tally('Childhood', ch[dim], ch['unsure' + dim], ch['answered' + dim], list.length, 6, 'DIVA convention')),
-      h('div', { class: 'row iv-cta' }, cta, first ? null : ui.badge('All ' + list.length + ' symptoms scored', 'ok'))));
+      ], 'list iv-rules'), { open: !started, cls: 'iv-howto' })));
 
-    /* Symptom table: each row opens the symptom. */
+    /* Symptom table: each row opens the symptom. On phones the rows stack into compact cards. */
     var tbody = h('tbody');
     list.forEach(function (s) {
       var r = rec[s.id] || {};
-      var open = function () { ctx.go(ctx.step, s.id); };
+      var open = function () { openSym(s.id); };
       var flags = Object.keys(r.flags || {}).filter(function (k) { return r.flags[k]; }).map(ddxName);
       var inf = [];
       if (has(r.infA)) inf.push('Adult ' + INF_LABEL[r.infA]);
       if (has(r.infC)) inf.push('Child ' + INF_LABEL[r.infC]);
       var nA = size(r.exA), nC = size(r.exC);
-      tbody.appendChild(h('tr', { class: 'iv-row', onclick: function (e) { if (!e.target.closest('button, a')) open(); } },
+      tbody.appendChild(h('tr', { class: 'iv-row is-' + stateOf(r), onclick: function (e) { if (!e.target.closest('button, a')) open(); } },
         h('td', { class: 'iv-code num' }, code(s)),
         h('th', { scope: 'row' },
           h('button', { type: 'button', class: 'iv-link', onclick: open }, s.title || s.id),
           nA || nC ? h('span', { class: 'iv-sub' }, 'Examples ticked: ' + nA + ' adult, ' + nC + ' child') : null),
-        h('td', null, scoreBadge(r.adult)),
-        h('td', null, scoreBadge(r.child)),
-        h('td', null, inf.length ? inf.join(', ') : h('span', { class: 'iv-none' }, 'Not rated')),
-        h('td', null, flags.length ? flags.join(', ') : h('span', { class: 'iv-none' }, 'None'))));
+        h('td', { 'data-label': 'Adult', class: 'iv-c-adult' }, scoreBadge(r.adult)),
+        h('td', { 'data-label': 'Child', class: 'iv-c-child' }, scoreBadge(r.child)),
+        h('td', { 'data-label': 'Informant', class: 'iv-c-inf' }, inf.length ? inf.join(', ') : h('span', { class: 'iv-none' }, 'Not rated')),
+        h('td', { 'data-label': 'Differentials', class: 'iv-c-ddx' }, flags.length ? flags.join(', ') : h('span', { class: 'iv-none' }, 'None'))));
     });
     wrap.appendChild(h('section', { class: 'iv-sec' },
       h('h2', null, 'Symptoms in this part'),
       h('p', { class: 'hint' }, 'Select a symptom to open it. Scores update here as you go.'),
-      h('div', { class: 'table-wrap' }, h('table', { class: 'table iv-table' },
+      h('div', { class: 'table-wrap iv-tablewrap' }, h('table', { class: 'table iv-table' },
         h('thead', null, h('tr', null, ['Code', 'Symptom', 'Adult', 'Child', 'Informant', 'Differentials flagged'].map(function (c) { return h('th', { scope: 'col' }, c); }))),
         tbody))));
 
@@ -173,6 +183,8 @@
     });
     wrap.appendChild(supSec);
     el.appendChild(wrap);
+    paintSupNote();
+    ctx.onChange('supplement', paintSupNote);
 
     if (focusSupplement) {
       focusSupplement = false;
@@ -240,16 +252,26 @@
     root.appendChild(strip);
     root.appendChild(h('p', { class: 'hint iv-keys' }, 'Shortcut: press ', h('kbd', null, '←'), ' or ', h('kbd', null, '→'), ' to move between symptoms when you are not typing.'));
 
-    /* Score panel (sticky on large screens). */
+    /* Score panel: sticky under the step strip on large screens; a compact bar fixed to the bottom of the
+       screen on phones and tablets, so the clinician can tick examples and score without scrolling back. */
     var nudge = { adult: h('p', { class: 'iv-nudge', 'aria-live': 'polite' }), child: h('p', { class: 'iv-nudge', 'aria-live': 'polite' }) };
     var toChild = ui.btn({ label: 'Ask about childhood', kind: 'quiet', small: true, onClick: function () { tabs.show('child'); } });
-    var score = h('section', { class: 'sx-score iv-score', 'aria-label': 'Score this symptom' },
-      h('div', { class: 'iv-score-col' },
-        ui.seg({ label: 'Adulthood (last 6 months)', options: SCORE_OPTS, value: r0.adult || null, onChange: function (v) { ctx.set(base + '.adult', nil(v)); sync(); } }),
-        h('div', { class: 'iv-status' }, nudge.adult)),
-      h('div', { class: 'iv-score-col' },
-        ui.seg({ label: 'Childhood (age 5-12)', options: SCORE_OPTS, value: r0.child || null, onChange: function (v) { ctx.set(base + '.child', nil(v)); sync(); } }),
-        h('div', { class: 'iv-status' }, nudge.child, toChild)));
+    var cols = {};
+    function scoreCol(p, long, short, extra) {
+      var seg = ui.seg({ label: long, hideLabel: true, options: SCORE_OPTS, value: r0[p] || null, onChange: function (v) { ctx.set(base + '.' + p, nil(v)); sync(); } });
+      cols[p] = h('div', { class: 'iv-score-col iv-sc-' + p },
+        h('div', { class: 'iv-score-row' },
+          h('span', { class: 'seg-label iv-score-lab', 'aria-hidden': 'true' }, h('span', { class: 'iv-l-long' }, long), h('span', { class: 'iv-l-short' }, short)),
+          seg),
+        h('div', { class: 'iv-status' }, nudge[p], extra || null));
+      return cols[p];
+    }
+    var barNext = h('button', { type: 'button', class: 'btn btn-primary iv-bar-next', 'aria-label': nextS ? 'Next symptom: ' + label(nextS) : 'Finish: supplement question and summary', onclick: function () { goTo(idx + 1); } },
+      h('span', null, nextS ? 'Next' : 'Finish'), h('span', { 'aria-hidden': 'true' }, '→'));
+    var score = h('section', { class: 'sx-score iv-score', 'aria-label': 'Score this symptom', 'data-tab': curTab },
+      scoreCol('adult', 'Adulthood (last 6 months)', 'Adult'),
+      scoreCol('child', 'Childhood (age 5-12)', 'Child', toChild),
+      barNext);
     root.appendChild(score);
 
     /* Adulthood / Childhood tabs. Each tab is built once and kept, so filters and ticks survive switching. */
@@ -257,7 +279,7 @@
     var tabs = ui.tabs([
       { id: 'adult', label: ['Adulthood', h('span', { class: 'sr-only' }, ', examples ticked:')], count: size(r0.exA), render: function () { return cache.adult || (cache.adult = buildPeriod('adult')); } },
       { id: 'child', label: ['Childhood', h('span', { class: 'sr-only' }, ', examples ticked:')], count: size(r0.exC), render: function () { return cache.child || (cache.child = buildPeriod('child')); } }
-    ], curTab, function (id) { curTab = id; if (ready) sync(); });
+    ], curTab, function (id) { curTab = id; score.setAttribute('data-tab', id); if (ready) sync(); });
     tabs.classList.add('iv-tabs');
     root.appendChild(tabs);
 
@@ -293,7 +315,10 @@
           gi.items.push(it);
           listEl.appendChild(c);
         });
-        gi.el = h('div', { class: 'ex-group' }, h('h4', null, h('span', null, g.label || g.ctx || 'Examples'), count), listEl);
+        /* Each area of life folds, so a phone shows a short index of areas instead of a very long list. */
+        gi.el = h('details', { class: 'ex-group iv-exg', open: roomy() },
+          h('summary', null, h('span', { class: 'iv-exg-t' }, g.label || g.ctx || 'Examples'), count, h('span', { class: 'iv-exg-n' }, U.plural(items.length, 'example'))),
+          listEl);
         paintGroup(gi);
         index.push(gi);
         exHost.appendChild(gi.el);
@@ -303,9 +328,13 @@
         gi.count.textContent = n ? n + ' ticked' : '';
         gi.count.hidden = !n;
       }
+      var filtering = false;
       function filter() {
         var terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+        var active = !!terms.length || onlyTicked;
         var shown = 0;
+        /* While a filter is on, every area with a match opens; clearing it restores what was open before. */
+        if (active && !filtering) index.forEach(function (gi) { gi.wasOpen = gi.el.open; });
         index.forEach(function (gi) {
           var n = 0;
           gi.items.forEach(function (x) {
@@ -314,8 +343,11 @@
             if (ok) n++;
           });
           gi.el.hidden = !n;
+          if (active) gi.el.open = n > 0;
+          else if (filtering) gi.el.open = !!gi.wasOpen;
           shown += n;
         });
+        filtering = active;
         empty.hidden = shown > 0;
         empty.textContent = onlyTicked && !query ? 'Nothing ticked yet.' : 'No examples match. Clear the filter to see them all.';
       }
@@ -456,6 +488,7 @@
         el2.textContent = msg;
         el2.classList.toggle('is-warn', warn);
         el2.hidden = !msg;
+        cols[p].classList.toggle('is-warn', warn);
       });
       /* Space for the status line is reserved in CSS, so these never shift the content below. */
       toChild.hidden = !(r.adult && !r.child && curTab === 'adult') || !nudge.child.hidden;
@@ -479,14 +512,15 @@
     };
     document.addEventListener('keydown', onKey);
 
-    if (focusCard) {
-      focusCard = false;
-      setTimeout(function () {
-        if (!root.isConnected) return;
-        if (root.scrollIntoView) root.scrollIntoView({ block: 'start' });
-        try { title.focus({ preventScroll: true }); } catch (e) { title.focus(); }
-      }, 0);
-    }
+    /* Open with the card in view (the page heading and step guide sit above it). When moving between
+       symptoms, focus also moves to the new title. */
+    var moveFocus = focusCard;
+    focusCard = false;
+    setTimeout(function () {
+      if (!root.isConnected) return;
+      if (root.scrollIntoView) root.scrollIntoView({ block: 'start' });
+      if (moveFocus) { try { title.focus({ preventScroll: true }); } catch (e) { title.focus(); } }
+    }, 0);
     return function () { document.removeEventListener('keydown', onKey); };
   }
 
@@ -522,7 +556,7 @@
 
     var onsetCard = h('section', { class: 'card iv-onset' },
       h('h2', null, 'Onset (criterion B)'),
-      on.intro ? h('p', { class: 'muted' }, on.intro) : null,
+      on.intro ? ui.details('About criterion B', h('p', { class: 'iv-intro-p' }, on.intro), { cls: 'iv-about' }) : null,
       asks.length ? h('div', { class: 'iv-asks' },
         h('h3', null, 'Questions to ask'),
         ui.list(asks.slice(0, 6), 'list iv-asklist'),
@@ -632,9 +666,9 @@
       var levels = sevs.filter(function (x) { return anchors[x.v]; });
       var card = h('section', { class: 'card iv-dom', 'aria-label': d.label },
         h('div', { class: 'iv-dom-head' }, h('h3', null, d.label || d.id), badge),
-        d.why ? h('p', { class: 'muted iv-dom-why' }, d.why) : null,
         h('div', { class: 'seg-field' }, h('span', { class: 'seg-label', 'aria-hidden': 'true' }, 'Severity'), seg),
         anchorBox,
+        d.why ? ui.details('About this area', h('p', { class: 'iv-dom-why' }, d.why)) : null,
         arr(dp.ask).length ? ui.details('Questions to ask', ui.list(dp.ask), { meta: String(dp.ask.length) }) : null,
         exDet,
         levels.length ? ui.details('What each level means here', h('dl', { class: 'iv-dl' }, levels.map(function (x) {
@@ -680,7 +714,8 @@
     var wrap = h('div', { class: 'iv stack' });
 
     wrap.appendChild(h('div', { class: 'iv-col-intro' },
-      h('p', { class: 'lead iv-lead' }, C.intro || 'Information from people who knew the patient as a child and know them now, and from school reports, tests the history the patient gives.')));
+      h('p', { class: 'iv-lead' }, 'Rate how far each source supports the history: a parent or older relative for childhood, a partner or close friend for now, and school reports. Use n/a when a source is not available.'),
+      C.intro ? ui.details('Why collateral matters', h('p', { class: 'iv-intro-p' }, C.intro), { cls: 'iv-about' }) : null));
 
     function ratingCtl(k, name) {
       var desc = h('p', { class: 'hint iv-rate-desc', 'aria-live': 'polite' });

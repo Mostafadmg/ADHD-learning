@@ -61,7 +61,10 @@
         list.appendChild(h('li', { class: 'q-section', 'aria-hidden': 'false' }, h('h4', null, it.section), it.sectionNote ? h('p', { class: 'hint' }, it.sectionNote) : null));
       }
       var opts = it.opts || tool.options || [];
-      var li = h('li', { class: 'q-item' + (it.part === 'A' ? ' q-item-key' : '') },
+      /* Long or four-way answer sets lay out as two columns on phones; short sets share one row. */
+      var longest = opts.reduce(function (m, x) { return Math.max(m, String(x.l).length); }, 0);
+      var segCls = opts.length === 4 || (opts.length > 3 && longest > 12) ? 'q-seg-2' : null;
+      var li = h('li', { class: 'q-item' + (it.part === 'A' ? ' q-item-key' : '') + (segCls ? ' ' + segCls : '') },
         h('div', { class: 'q-item-text' }, h('span', { class: 'q-n' }, it.label || String(it.n)), h('span', null, it.t),
           it.threshold !== undefined ? h('span', { class: 'q-thr', title: 'Shaded box starts at this answer' }, 'shaded from "' + (opts.filter(function (x) { return x.v === it.threshold; })[0] || {}).l + '"') : null),
         ui.seg({

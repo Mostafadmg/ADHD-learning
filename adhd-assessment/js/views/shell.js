@@ -73,21 +73,26 @@
     U.$('#sidebar').hidden = !signedIn;
     U.$('#layout').style.display = signedIn ? '' : 'block';
     U.$('#main').classList.toggle('main-bare', !signedIn);
+    /* Close the phone drawer on every route change, including sign-out (its scrim would block the sign-in page). */
+    setDrawer(false);
     if (!signedIn) return;
     var me = AA.auth.current();
     U.$('#who').textContent = me.name + (me.role ? ' · ' + me.role : '');
-    var a = shell.lastAssessment();
-    var chip = U.$('#patient-chip');
-    chip.hidden = !a;
-    if (a) {
-      chip.textContent = (a.patient.ref || 'Untitled patient') + (a.patient.age ? ', ' + a.patient.age + ' y' : '');
-      chip.title = 'Open the current assessment';
-      chip.onclick = function () { AA.router.go('assess-' + a.id + '-' + (a.step || 'setup')); };
-    }
+    renderChip();
     renderNav(route);
-    setDrawer(false);
     U.$('#view').parentNode.classList.toggle('main-wide', route.name === 'assess');
     U.$('#view').className = 'main-inner' + (route.name === 'assess' ? ' wide' : '');
+  }
+
+  /* Current patient chip in the top bar (also refreshed while the patient details are typed). */
+  function renderChip() {
+    var a = AA.auth.current() ? shell.lastAssessment() : null;
+    var chip = U.$('#patient-chip');
+    chip.hidden = !a;
+    if (!a) return;
+    chip.textContent = (a.patient.ref || 'Untitled patient') + (a.patient.age ? ', ' + a.patient.age + ' y' : '');
+    chip.title = 'Open the current assessment';
+    chip.onclick = function () { AA.router.go('assess-' + a.id + '-' + (a.step || 'setup')); };
   }
 
   function renderSave() {
@@ -173,14 +178,14 @@
 
     el.appendChild(h('div', { class: 'signin' }, h('div', { class: 'signin-card' },
       h('section', { class: 'signin-intro' },
-        h('p', { class: 'eyebrow', style: { color: '#7fd6d1' } }, 'Adult ADHD · clinician workspace'),
+        h('p', { class: 'eyebrow' }, 'Adult ADHD · clinician workspace'),
         h('h1', null, 'ADHD Assessment'),
         h('p', null, 'Run a full adult ADHD assessment step by step: screening questionnaires with instant scoring, a DIVA-style interview of all 18 symptoms with hundreds of example questions, onset and impairment, collateral history, differential diagnosis and a scored conclusion with a draft report.'),
         h('ul', null,
           h('li', null, 'Learn the method in the assessor training, then practise on cases.'),
           h('li', null, 'Use it live in clinic: read the question, tick what the patient describes, score as you go.'),
           h('li', null, 'Everything is stored only in this browser. Use a patient reference, not a name.')),
-        h('p', { style: { fontSize: '.85rem' } }, 'Decision support for qualified clinicians. It does not replace clinical judgement, local policy or the licensed instruments.')),
+        h('p', { class: 'signin-note' }, 'Decision support for qualified clinicians. It does not replace clinical judgement, local policy or the licensed instruments.')),
       h('section', { class: 'signin-form' }, formHost, h('hr', { class: 'sep' }), h('div', null, h('p', { class: 'hint' }, 'No profile yet? You can look around first.'), demoBtn)))));
     showChooser();
   } });
@@ -214,7 +219,10 @@
     var mods = AA.data.learn || [];
     var modsDone = mods.filter(function (m) { return AA.progress.get('modules.' + m.id + '.done', false); }).length;
 
-    el.appendChild(ui.pageHead({ eyebrow: 'Workspace', title: 'Welcome, ' + me.name.split(' ')[0],
+    /* "Dr Sam Patel" greets as "Dr Patel", "Sam Patel" as "Sam". */
+    var nm = String(me.name || '').trim().split(/\s+/);
+    var greet = nm.length > 1 && /^(dr|prof|professor|mr|mrs|ms|miss|mx)\.?$/i.test(nm[0]) ? nm[0] + ' ' + nm[nm.length - 1] : nm[0];
+    el.appendChild(ui.pageHead({ eyebrow: 'Workspace', title: 'Welcome, ' + greet,
       lead: 'Start or continue an assessment, look something up during the interview, or keep training.',
       actions: [ui.btn({ label: 'New assessment', kind: 'primary', go: 'new', icon: '+' }), ui.btn({ label: 'Load demo patient', kind: 'ghost', onClick: function () {
         var id = shell.loadDemo(); if (id) AA.router.go('assess-' + id + '-summary');
@@ -234,19 +242,33 @@
     el.appendChild(sec);
 
     el.appendChild(h('section', { class: 'section' }, h('h2', null, 'How to use this app'),
-      h('div', { class: 'grid' },
+      h('div', { class: 'grid home-steps' },
         quick('1 · Learn', 'Assessor training', 'Criteria, interview technique, scoring rules, differentials and report writing, each with a quiz.', 'learn'),
         quick('2 · Practise', 'Practice cases', 'Work through realistic adult cases and compare your decisions with the expert answer.', 'cases'),
-        quick('3 · Assess', 'Run an assessment', 'Thirteen guided steps from consent to report. Scores and criteria update as you go.', 'new'),
-        quick('Any time', 'Question bank', 'Search every interview question and example by symptom, life area or keyword.', 'bank'),
-        quick('Any time', 'Differential protocol', 'A step-by-step method so no alternative explanation is missed.', 'ddxguide'),
-        quick('Before the appointment', 'Pre-appointment forms', 'What each questionnaire is, how to read it and what the result means.', 'forms'),
-        quick('Any time', 'Tools and scoring', 'Every screening and rating tool: when to use it, how to score it, where to get it.', 'tools'))));
+        quick('3 · Assess', 'Run an assessment', 'Thirteen guided steps from consent to report. Each step tells you what to do, and scores update as you go.', 'new'))));
+    el.appendChild(h('section', { class: 'section' }, h('h2', null, 'Look things up'),
+      h('ul', { class: 'home-links' },
+        link('Question bank', 'Every interview question and example, by symptom, life area or keyword.', 'bank'),
+        link('Differential protocol', 'A step-by-step method so no alternative explanation is missed.', 'ddxguide'),
+        link('Pre-appointment forms', 'What each questionnaire is, how to read it and what the result means.', 'forms'),
+        link('Tools and scoring', 'Every screening and rating tool: when to use it, how to score it, where to get it.', 'tools'))));
   } });
 
   function stat(k, v) { return h('div', { class: 'stat' }, h('div', { class: 'stat-k' }, k), h('div', { class: 'stat-v' }, String(v))); }
   function quick(eyebrow, title, body, go) {
     return h('a', { class: 'card card-link', href: '#' + go, 'data-go': go }, h('p', { class: 'eyebrow' }, eyebrow), h('h3', null, title), h('p', { class: 'muted' }, body));
+  }
+  function link(title, body, go) {
+    return h('li', null, h('a', { class: 'home-link', href: '#' + go, 'data-go': go },
+      h('span', { class: 'home-link-ico' }, icon(go)), h('span', { class: 'home-link-text' }, h('strong', null, title), h('span', null, body))));
+  }
+  /* Where an assessment is up to: steps complete and the step it is on. */
+  function stepState(a) {
+    var steps = AA.STEP_LIST || [];
+    var done = steps.filter(function (s) { var pr = AA.diagnosis.stepProgress(a, s.id); return pr.done >= pr.of; }).length;
+    var cur = steps.filter(function (s) { return s.id === (a.step || 'setup'); })[0];
+    var idx = steps.indexOf(cur);
+    return { done: done, of: steps.length, label: cur ? 'Step ' + (idx + 1) + ': ' + cur.title : '' };
   }
 
   function assessmentRow(a) {
@@ -254,13 +276,17 @@
     var kinds = { met: 'ok', 'not-met': 'neutral', subthreshold: 'warn', 'better-explained': 'info', incomplete: 'neutral' };
     var labels = { met: 'Criteria met', 'not-met': 'Criteria not met', subthreshold: 'Subthreshold', 'better-explained': 'Better explained', incomplete: 'In progress' };
     var p = a.patient || {};
+    var st = stepState(a);
     return h('div', { class: 'a-row' },
-      h('div', null,
-        h('div', { class: 'a-row-title' }, (p.ref || 'Untitled patient') + (a.demo ? ' (demo)' : '')),
+      h('div', { class: 'a-row-main' },
+        h('div', { class: 'a-row-title' }, (p.ref || 'Untitled patient') + (a.demo ? ' (demo)' : ''),
+          ui.badge(labels[out.code], kinds[out.code]), a.status === 'complete' ? ui.badge('Completed', 'accent') : null),
         h('div', { class: 'a-row-meta' },
           h('span', null, [p.age ? p.age + ' y' : null, p.sex || null].filter(Boolean).join(', ') || 'Age not recorded'),
-          h('span', null, 'Updated ' + U.fmtDate(a.updatedAt, true)),
-          ui.badge(labels[out.code], kinds[out.code]), a.status === 'complete' ? ui.badge('Completed', 'accent') : null)),
+          h('span', null, 'Updated ' + U.fmtDate(a.updatedAt, true))),
+        st.of ? h('div', { class: 'a-row-prog' },
+          ui.progress(st.done, st.of, 'Steps complete'),
+          h('span', { class: 'a-row-step' }, st.done + ' of ' + st.of + ' steps complete' + (a.status !== 'complete' && st.label ? ' · ' + st.label : ''))) : null),
       h('div', { class: 'a-row-actions' },
         ui.btn({ label: a.status === 'complete' ? 'Open' : 'Continue', kind: 'primary', small: true, onClick: function () {
           AA.progress.set('lastAssessment', a.id); AA.router.go('assess-' + a.id + '-' + (a.step || 'setup'));
@@ -319,6 +345,8 @@
   /* ---------- Boot wiring ---------- */
   shell.init = function () {
     applyTheme(AA.store.get('prefs.theme', 'system'));
+    /* Crisp menu icon (the markup has a text glyph as a fallback). */
+    U.$('#menu-btn').innerHTML = '<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2.5 4.5h13M2.5 9h13M2.5 13.5h13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
     U.$('#theme-btn').addEventListener('click', function () {
       var order = ['system', 'dark', 'light'];
       var cur = AA.store.get('prefs.theme', 'system');
@@ -333,6 +361,7 @@
     U.$('[data-skip]').addEventListener('click', function (e) { e.preventDefault(); U.$('#view').focus(); });
     AA.router.onChange(renderChrome);
     AA.store.subscribe('__save', renderSave);
+    AA.store.subscribe('assessments', U.debounce(renderChip, 300));
     renderSave();
 
     /* Lock PIN-protected profiles after 20 minutes without activity. */
