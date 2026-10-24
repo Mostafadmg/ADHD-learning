@@ -1,5 +1,18 @@
 /* Glossary. Entries tagged n:1 are NICE NG87 "Terms used in this guideline" (paraphrased closely); others are course definitions. */
 window.GLOSS=[
+{t:'Catecholamines',d:'Dopamine and noradrenaline (and adrenaline): the chemical messengers that every licensed ADHD medicine boosts.'},
+{t:'Synapse',d:'The tiny gap between two nerve cells where a chemical messenger passes the signal on.'},
+{t:'Vesicle',d:'A tiny storage bubble inside a nerve ending that holds messenger ready for release.'},
+{t:'VMAT2',d:'Vesicular monoamine transporter 2: the pump that packs dopamine and noradrenaline into vesicles. Amfetamines disrupt it.'},
+{t:'DAT (dopamine transporter)',d:'The recycling pump that clears dopamine from the synapse. Dense in the striatum and reward centre. Blocked by methylphenidate; reversed by amfetamines.'},
+{t:'NET (noradrenaline transporter)',d:'The recycling pump that clears noradrenaline, and most dopamine in the prefrontal cortex. Blocked by methylphenidate and atomoxetine; reversed by amfetamines.'},
+{t:'Reuptake',d:'Clearing a messenger back into the nerve ending through its transporter, which ends the signal.'},
+{t:'D1 receptor',d:'Dopamine receptor on prefrontal cortex cells; helps filter out distractions ("turns down the noise").'},
+{t:'Alpha-2A (α2A) receptor',d:'Noradrenaline receptor on prefrontal cortex cells that strengthens signals ("turns up the signal"); in the brainstem it lowers pulse and blood pressure. Guanfacine acts on it directly.'},
+{t:'Prodrug',d:'A medicine that is inactive until the body converts it. Lisdexamfetamine is converted to dexamfetamine by red blood cells.'},
+{t:'Prefrontal cortex',d:'The front part of the brain that plans, holds information in mind and puts the brakes on impulses.'},
+{t:'Striatum',d:'A deep brain area for reward, motivation, movement and habits; includes the nucleus accumbens (reward centre).'},
+{t:'Inverted U',d:'The idea that the prefrontal cortex works best at a moderate level of dopamine and noradrenaline; too little and too much both impair it.'},
 {t:'Domains',n:1,d:'Areas of function, for example interpersonal relationships, education and occupational attainment, and risk awareness.'},
 {t:'Environmental modifications',n:1,d:'Changes to the physical environment that reduce the impact of ADHD on day-to-day life, chosen from an assessment of the person\u2019s needs. NICE examples: seating changes, lighting and noise, reducing distractions (for example headphones), shorter periods of focus with movement breaks (including \u201cI need a break\u201d cards), written instructions alongside verbal requests and, for children, appropriate use of teaching assistants.'},
 {t:'Reasonable adjustments',n:1,d:'The legal obligations of employers and higher education providers to make sure that workers or students with disabilities or health conditions are not substantially disadvantaged.'},

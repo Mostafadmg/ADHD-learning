@@ -62,6 +62,9 @@
             icon(it.go), h('span', null, it.label), meta ? h('span', { class: 'nav-meta' }, meta) : null));
         }))));
     });
+    /* One website: a way back to the main ADHD course (the workspace lives in its adhd-assessment/ folder). */
+    side.appendChild(h('div', { class: 'nav-group' }, h('p', { class: 'nav-group-title' }, 'ADHD course'),
+      h('ul', { class: 'nav' }, h('li', null, h('a', { href: '../index.html#home' }, icon('home'), h('span', null, 'Back to the course modules'))))));
     var me = AA.auth.current();
     if (me) side.appendChild(h('div', { class: 'side-account' },
       h('p', { class: 'who-line' }, me.name + (me.role ? ' · ' + me.role : '')),
@@ -131,7 +134,7 @@
       var err = h('p', { class: 'hint', role: 'alert' });
       var go = function () {
         AA.auth.signIn(p.id, pin.value).then(function (ok) {
-          if (ok) AA.router.go('home'); else { err.textContent = 'That PIN does not match. Try again.'; pin.value = ''; pin.focus(); }
+          if (ok) AA.router.afterSignIn(); else { err.textContent = 'That PIN does not match. Try again.'; pin.value = ''; pin.focus(); }
         });
       };
       pin.addEventListener('keydown', function (e) { if (e.key === 'Enter') go(); });
@@ -151,7 +154,7 @@
       var create = function () {
         if (!name.value.trim()) { err.textContent = 'Enter your name.'; name.focus(); return; }
         if (pin.value && !/^\d{4,12}$/.test(pin.value)) { err.textContent = 'The PIN must be 4 to 12 digits, or left empty.'; pin.focus(); return; }
-        AA.auth.create({ name: name.value, role: role.value, pin: pin.value }).then(function () { AA.router.go('home'); });
+        AA.auth.create({ name: name.value, role: role.value, pin: pin.value }).then(function () { AA.router.afterSignIn(); });
       };
       formHost.appendChild(h('h2', null, 'Create your clinician profile'));
       formHost.appendChild(ui.field('Name', name));
@@ -169,7 +172,7 @@
       formHost.appendChild(h('h2', null, 'Choose your profile'));
       formHost.appendChild(h('div', { class: 'profile-list' }, profiles.map(function (p) {
         return h('button', { type: 'button', class: 'profile-btn', onclick: function () {
-          if (AA.auth.needsPin(p.id)) pinPrompt(p); else AA.auth.signIn(p.id).then(function () { AA.router.go('home'); });
+          if (AA.auth.needsPin(p.id)) pinPrompt(p); else AA.auth.signIn(p.id).then(function () { AA.router.afterSignIn(); });
         } }, h('span', { class: 'avatar', 'aria-hidden': 'true' }, initials(p.name)),
           h('span', null, h('strong', null, p.name), h('span', { class: 'check-hint' }, (p.role || 'Clinician') + (p.pinHash ? ' · PIN' : ''))));
       })));
@@ -180,8 +183,9 @@
       var existing = AA.auth.list().filter(function (p) { return p.guest; })[0];
       var start = existing ? AA.auth.signIn(existing.id).then(function () { return existing; }) : AA.auth.create({ name: 'Demo clinician', role: 'Guest', guest: true });
       start.then(function () {
+        var back = AA.router.takePending();
         var id = shell.loadDemo();
-        AA.router.go(id ? 'assess-' + id + '-summary' : 'home');
+        AA.router.go(back || (id ? 'assess-' + id + '-summary' : 'home'));
       });
     } });
 
@@ -194,7 +198,8 @@
           h('li', null, 'Learn the method in the assessor training, then practise on cases.'),
           h('li', null, 'Use it live in clinic: read the question, tick what the patient describes, score as you go.'),
           h('li', null, 'Everything is stored only in this browser. Use a patient reference, not a name.')),
-        h('p', { class: 'signin-note' }, 'Decision support for qualified clinicians. It does not replace clinical judgement, local policy or the licensed instruments.')),
+        h('p', { class: 'signin-note' }, 'Decision support for qualified clinicians. It does not replace clinical judgement, local policy or the licensed instruments.'),
+        h('p', null, h('a', { href: '../index.html#home' }, '← Back to the ADHD course modules'))),
       h('section', { class: 'signin-form' }, formHost, h('hr', { class: 'sep' }), h('div', null, h('p', { class: 'hint' }, 'No profile yet? You can look around first.'), demoBtn)))));
     showChooser();
   } });

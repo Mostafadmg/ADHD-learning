@@ -17,6 +17,7 @@ html = html.replace(/<link rel="stylesheet" href="(css\/[^"]+)">/g, (m, f) => {
   return fs.existsSync(p) ? '<style>\n' + fs.readFileSync(p, 'utf8') + '\n</style>' : '';
 });
 html = html.replace(/<script src="(js\/[^"]+)"><\/script>/g, (m, f) => {
+  f = f.split('?')[0];   /* ignore cache-busting queries such as ?v=20261025 */
   const p = path.join(ROOT, f);
   if (!fs.existsSync(p)) return '';
   const code = fs.readFileSync(p, 'utf8').replace(/<\/script/gi, '<\\/script').replace(/<!--/g, '<\\!--');

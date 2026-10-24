@@ -11,6 +11,7 @@
   var cleanup = null;
   var outlet = null;
   var hooks = [];
+  var pending = '';   /* route asked for before sign-in (e.g. a deep link from the course); opened after sign-in */
 
   function parse(token) {
     var t = String(token || '').replace(/^#/, '');
@@ -28,7 +29,10 @@
     mount: function (el) { outlet = el; },
     go: function (token, opts) {
       var r = parse(token);
-      if (!AA.auth.current() && r.name !== 'signin') r = parse('signin');
+      if (!AA.auth.current() && r.name !== 'signin') {
+        if (r.name && r.name !== 'home' && routes[r.name]) pending = r.token;
+        r = parse('signin');
+      }
       if (!routes[r.name]) r = parse('home');
       render(r, opts || {});
       if (r.name !== 'signin') {
@@ -36,6 +40,10 @@
       }
     },
     refresh: function () { render(current, { keepScroll: true }); },
+    /* Returns (and clears) the route requested before sign-in, or ''. */
+    takePending: function () { var t = pending; pending = ''; return t; },
+    /* After a successful sign-in: open the page the person came for, otherwise home. */
+    afterSignIn: function () { router.go(router.takePending() || 'home'); },
     start: function () {
       window.addEventListener('hashchange', function () {
         var t = location.hash.slice(1);
