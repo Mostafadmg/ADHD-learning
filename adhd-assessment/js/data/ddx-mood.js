@@ -1,7 +1,8 @@
 /* ddx-mood: mood and stress differentials for adult ADHD assessment (ARCHITECTURE.md section 5.5).
    Conditions, in order: dep (major depressive disorder), pdd (persistent depressive disorder / dysthymia),
    bip (bipolar I and II), cyclo (cyclothymic disorder), burnout (burnout and chronic stress overload).
-   Core (reviewed in every adult assessment): dep, bip.
+   Core (reviewed in every adult assessment): dep, bip. Adult only (ages: "adult", hidden for under-18s): burnout.
+   Young-person screens on dep (PHQ-A, MFQ, RCADS low mood) have no items here: their results are entered by hand.
    DSM-5-TR and ICD-11 content is paraphrased, not quoted. ICD-11 boundary statements were checked against
    the WHO CDDR (2024) text. NICE recommendation numbers are given only where verified (NG87 1.2.10, 1.3.3;
    NG145 1.2.3; CG185 1.2.3; CG142 1.2.3; NG225 1.6.1-1.6.3). Interview questions are original clinical prompts, not a
@@ -89,7 +90,7 @@ AA.add('ddx', [
       { id: "dep_suicide", t: "Recurrent thoughts of death or suicidal ideation (assess risk whatever the diagnosis)", w: 1 },
       { id: "dep_fh", t: "Family history of depressive disorder", w: 1 }
     ],
-    screen: ["phq9", "cssrs"],
+    screen: ["phq9", "cssrs", "phqa", "mfq", "rcads"],
     investigations: [
       "Risk assessment the same day for any suicidal thoughts (PHQ-9 item 9 or disclosed at interview). Use the C-SSRS screener to guide enquiry, not as a risk score (NICE NG225 1.6.1-1.6.3).",
       "PHQ-9 for current severity: manual bands at 5, 10, 15 and 20; NICE NG222 uses 16 or more as 'more severe'. It rates the last two weeks, so ask whether each endorsed item is new or lifelong.",
@@ -498,6 +499,7 @@ AA.add('ddx', [
     name: "Burnout and chronic stress overload",
     group: "trauma",
     core: false,
+    ages: "adult",
     icd11: "QD85 burnout (chapter 24, factors influencing health status: an occupational phenomenon, not a mental disorder). For overload outside work, consider 6B43 adjustment disorder.",
     summary: "ICD-11 describes burnout as the result of chronic workplace stress that has not been successfully managed, with exhaustion, mental distance or cynicism about the job, and reduced professional efficacy. Exhaustion and overload cause forgetfulness, poor focus, irritability and an inability to unwind that can look like adult-onset ADHD, but these begin with the overload and ease with rest. Burnout is also a common way for adults with lifelong, unrecognised ADHD to present for the first time, when their coping strategies fail.",
     prevalence: "No reliable prevalence figure for burnout in adults with ADHD was found: burnout is not a diagnosis in DSM-5-TR or ICD-11, and studies use different definitions and measures. Clinical practice: exhaustion after years of compensating is a frequent reason adults first seek ADHD assessment, so burnout is often the trigger for referral rather than an alternative explanation.",

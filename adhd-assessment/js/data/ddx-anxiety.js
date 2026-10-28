@@ -94,7 +94,7 @@ AA.add('ddx', [
       { id: "gad_reassure", t: "Perfectionism, over-preparation or reassurance-seeking dominate the picture", w: 1 },
       { id: "gad_fhx", t: "Family history of anxiety disorders, with no family history of ADHD", w: 1 }
     ],
-    screen: ["gad7", "phq9"],
+    screen: ["gad7", "phq9", "rcads"],
     investigations: [
       "No test diagnoses GAD. The diagnosis is clinical, against DSM-5-TR or ICD-11 criteria; GAD-7 of 10 or more prompts further assessment (PHQ Screeners manual).",
       "Thyroid function tests: consider in adults with unexplained anxiety (NICE NG145 1.2.3).",
@@ -219,7 +219,7 @@ AA.add('ddx', [
       { id: "social_rumin", t: "Long post-event rumination about perceived mistakes", w: 1 },
       { id: "social_alc", t: "Uses alcohol or other substances specifically to manage social fear", w: 1 }
     ],
-    screen: ["gad7"],
+    screen: ["gad7", "rcads"],
     investigations: [
       "No test is needed; the diagnosis is clinical. GAD-7 has moderate accuracy for social anxiety (Kroenke et al. 2007). Dedicated measures (SPIN, Mini-SPIN, LSAS) are used in specialist services; their licences vary and they are not reproduced here.",
       "Check alcohol and drug use (AUDIT, DAST-10): people with social anxiety may use substances to manage social fear.",
@@ -334,7 +334,7 @@ AA.add('ddx', [
       { id: "panic_ae", t: "Repeated emergency or GP visits for chest pain or palpitations with normal tests", w: 1 },
       { id: "panic_nocturnal", t: "Nocturnal panic attacks", w: 1 }
     ],
-    screen: ["gad7"],
+    screen: ["gad7", "rcads"],
     investigations: [
       "No test diagnoses panic disorder. GAD-7 has moderate accuracy for panic (Kroenke et al. 2007); the PHQ panic module is a free alternative. Exclude physical causes when the history suggests them.",
       "ECG if palpitations, chest pain, syncope or a family history of sudden cardiac death; consider ambulatory ECG for paroxysmal palpitations.",
@@ -703,7 +703,7 @@ AA.add('ddx', [
       { id: "ocd_reassure", t: "Repeated reassurance-seeking about feared themes", w: 1 },
       { id: "ocd_avoid", t: "Avoidance of triggers (contamination, sharp objects, particular numbers or places)", w: 1 }
     ],
-    screen: ["ocir", "ybocs"],
+    screen: ["ocir", "ybocs", "rcads"],
     investigations: [
       "No test diagnoses OCD; the diagnosis is clinical. The OCI-R (self-report) and Y-BOCS (clinician-rated severity) support assessment in specialist services; their licence status is not confirmed, so they are described but not reproduced here.",
       "Sudden onset, or onset after about 35, needs assessment for a medical cause such as a basal ganglia stroke (ICD-11 6B20 course features).",

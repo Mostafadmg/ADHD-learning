@@ -1,0 +1,29 @@
+/* Sidebar previews with an accessible full-size image modal. */
+#m4 .ag-zoom-trigger{display:block;width:100%;padding:0;border:0;border-radius:12px;background:transparent;font:inherit;cursor:zoom-in;text-align:left}
+#m4 .ag-zoom-trigger:focus-visible{outline:3px solid var(--teal);outline-offset:4px}
+#m4 .ag-zoom-trigger picture{display:block}
+:is(#ag-app,#sp) .ag-zoom-trigger{display:block;width:100%;padding:0;border:0;border-radius:10px;background:#fff;color:var(--navy);font:inherit;cursor:zoom-in;overflow:hidden;text-align:left}
+:is(#ag-app,#sp) .ag-zoom-trigger:focus-visible{outline:3px solid var(--teal);outline-offset:4px}
+:is(#ag-app,#sp) .ag-zoom-trigger:hover .ag-zoom-hint{background:#d7eeec}
+:is(#ag-app,#sp) .ag-zoom-trigger img,:is(#ag-app,#sp) .ag-zoom-trigger svg{display:block;width:100%;height:auto;max-width:none;max-height:none;object-fit:contain;border-radius:10px 10px 0 0}
+:is(#ag-app,#sp) .ag-zoom-hint{display:flex;justify-content:center;align-items:center;min-height:44px;padding:.4rem .6rem;background:#edf6f5;color:#0b6664;font-size:.9rem;font-weight:600}
+#ag-app .ag-vis .fz-btn,#ag-app .ag-fig .fz-btn{display:none}
+.ag-image-lock,.ag-image-lock body{overflow:hidden}
+.ag-image-dialog{width:min(1180px,96vw);max-width:96vw;max-height:94dvh;padding:0;border:0;border-radius:16px;background:#fff;color:#16324f;box-shadow:0 24px 80px #0005}
+.ag-image-dialog[open]{display:flex;flex-direction:column}
+.ag-image-dialog::backdrop{background:rgba(9,25,42,.78)}
+.ag-image-head{display:flex;align-items:center;gap:.6rem;padding:.8rem 1rem;border-bottom:1px solid #d8e0e8;flex-shrink:0}
+.ag-image-head h2{font-size:1.05rem;line-height:1.3;margin:0;flex:1}
+.ag-image-head .btn{min-height:44px;white-space:nowrap}
+.ag-image-scroll{overflow:auto;min-height:0;overscroll-behavior:contain;padding:1rem;background:#f3f6f8}
+.ag-image-art{width:100%;text-align:center}
+.ag-image-art>svg,.ag-image-art>img{display:block;margin:auto;width:100%;height:auto;max-height:68dvh;object-fit:contain}
+.sp-image-dialog:not(.is-zoomed) .ag-image-art>svg,.sp-image-dialog:not(.is-zoomed) .ag-image-art>img{max-height:none;max-width:900px}
+#sp .sp-ai-figure{margin:0}
+#sp .sp-ai-figure figcaption{margin:.65rem 0 0;font-size:.82rem;line-height:1.5;color:var(--muted)}
+#sp .sp-ai-figure figcaption span{display:block;margin-top:.3rem}
+.ag-image-dialog.is-zoomed .ag-image-art{width:max(1200px,150%)}
+.ag-image-dialog.is-zoomed .ag-image-art>svg,.ag-image-dialog.is-zoomed .ag-image-art>img{max-height:none;max-width:none;width:100%}
+.ag-image-caption{margin:0;padding:.7rem 1rem;font-size:.9rem;line-height:1.45;flex-shrink:0}
+@media(max-width:600px){.ag-image-head{flex-wrap:wrap}.ag-image-head h2{flex-basis:100%}.ag-image-caption{max-height:20dvh;overflow:auto}.ag-image-scroll{padding:.4rem}.ag-image-art>svg,.ag-image-art>img{max-height:58dvh}}
+@media print{.ag-zoom-hint,.ag-image-dialog{display:none!important}}

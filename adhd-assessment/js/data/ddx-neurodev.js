@@ -85,7 +85,7 @@ AA.add('ddx', [
       { id: "asd_f12", t: "Describes masking or camouflaging and exhaustion after social contact", w: 1 },
       { id: "asd_f13", t: "First-degree relative with autism", w: 1 }
     ],
-    screen: ["aq10", "raads14"],
+    screen: ["aq10", "raads14", "aq10child", "aq10adol", "scq"],
     investigations: [
       "Developmental history from a parent or someone who knew the person before age 5: the most useful single step",
       "School reports: look for comments such as 'plays alone', 'very literal', 'upset by change' as well as attention and behaviour",
@@ -652,17 +652,18 @@ AA.add('ddx', [
       "Have you dropped courses, lost jobs or had money problems despite doing well in tests?",
       "Does anyone in your family have ADHD?",
       "(Informant) As a child, did they lose things, forget instructions and leave things unfinished even when the work interested them?",
-      "(Informant) Did their restlessness settle when they were properly stretched, for example with harder work or a demanding hobby?"
+      "(Informant) Did their restlessness settle when they were properly stretched, for example with harder work or a demanding hobby?",
+      "(Teacher of a child) When given extension work or moved up a set, does the child settle and concentrate, or are they still distractible and disorganised?"
     ],
     features: [
       { id: "gifted_f1", t: "Inattention and restlessness only when work is too easy, slow or repetitive", w: 3 },
       { id: "gifted_f2", t: "Sustained attention is good on demanding tasks, including ones that are not inherently interesting", w: 3 },
-      { id: "gifted_f3", t: "Symptoms settled with acceleration, advanced work or a stimulating job", w: 3 },
-      { id: "gifted_f4", t: "Organised and reliable in daily life: money, appointments, belongings, time", w: 2 },
-      { id: "gifted_f5", t: "No impairment in relationships, driving, finances or self-care", w: 2 },
+      { id: "gifted_f3", t: "Symptoms settled with acceleration, advanced work, or a more stimulating course or job", w: 3 },
+      { id: "gifted_f4", t: "Organised and reliable in daily life for their age: belongings, homework, time (adults: also money and appointments)", w: 2 },
+      { id: "gifted_f5", t: "No impairment in friendships, family life or self-care (adults: also driving and finances)", w: 2 },
       { id: "gifted_f6", t: "School reports describe boredom and finishing early rather than forgetting, losing things or careless errors", w: 2 },
       { id: "gifted_f7", t: "Achievement consistent with ability when challenged", w: 2 },
-      { id: "gifted_f8", t: "Childhood informant describes a curious, intense child, not a distractible or disorganised one", w: 2 },
+      { id: "gifted_f8", t: "Parent or childhood informant describes a curious, intense child, not a distractible or disorganised one", w: 2 },
       { id: "gifted_f9", t: "Impatience and interrupting only with slower-paced people or tasks", w: 1 },
       { id: "gifted_f10", t: "Cognitive testing shows high ability with working memory and processing speed in line with other abilities", w: 1 },
       { id: "gifted_f11", t: "No family history of ADHD", w: 1 }
@@ -683,8 +684,8 @@ AA.add('ddx', [
       "Request driven mainly by a wish for cognitive enhancement, exam advantage or medication: rely on a full developmental history and corroboration, not questionnaires, while remembering ADHD is under-diagnosed (CR235 9.7.8); see the feigning differential"
     ],
     decide: {
-      better: "Giftedness without ADHD better explains the picture when inattention, restlessness and impatience occur only when the person is under-challenged, settle when the work is stretching, and daily life is organised and unimpaired. Record that ADHD criteria are not met. Advice on a better-matched role or course may help.",
-      both: "Diagnose ADHD in a gifted person when symptoms from childhood persist on challenging, valued tasks and cause at least moderate impairment, even if grades or job titles look good. Document the high ability (CADDRA). Impairment may have appeared only when demands outgrew the person's compensations.",
+      better: "Giftedness without ADHD better explains the picture when inattention, restlessness and impatience occur only when the person is under-challenged, settle when the work is stretching, and daily life is organised and unimpaired for their age. Record that ADHD criteria are not met. Advice on better-matched school work, a course or a role may help.",
+      both: "Diagnose ADHD in a gifted person when long-standing symptoms (in adults, from childhood) persist on challenging, valued tasks and cause at least moderate impairment, even if grades or job titles look good. Document the high ability (CADDRA). Impairment may have appeared only when demands outgrew the person's compensations.",
       next: "Gather school reports and a childhood informant. Map compensations and their cost. If ability is unknown and the question matters, ask for psychometric testing. Re-check for a co-occurring learning disorder or autism."
     },
     pearls: [

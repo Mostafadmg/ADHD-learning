@@ -9,7 +9,10 @@ AA.add('symptoms', [{
   why: "Linked to weak verbal inhibition and poor self-monitoring: thoughts flow into speech without a filter, and the person does not easily notice cues that others want a turn or want to leave. Talking can also provide stimulation and help them think out loud, which makes it harder to stop.",
   ask: {
     adult: "Over the last six months, how much of the talking do you usually do when you are with other people? What do people say about how much you talk? Can you give me a recent example?",
-    child: "When you were at primary school, around age 5 to 12, how talkative were you compared with other children? What did teachers, school reports or your parents say about it? Can you remember an example?"
+    child: "When you were at primary school, around age 5 to 12, how talkative were you compared with other children? What did teachers, school reports or your parents say about it? Can you remember an example?",
+    parent: "Over the last six months, how much does your child talk compared with other children their age, for example at meals, in the car or when others are trying to speak? Do they find it hard to stop when asked?",
+    teen: "Over the last six months, how much of the talking do you do with friends, with family or in class? Do people tell you that you talk too much or find it hard to stop?",
+    teacher: "Compared with others in the class, how much does this pupil talk at times when they are expected to listen or work quietly? Do they carry on after being asked to stop?"
   },
   rephrase: [
     "What do people say about how much you talk?",
@@ -196,13 +199,17 @@ AA.add('symptoms', [{
         "Comments about chatting appeared in report after report",
         "Behaviour logs listed talking in class again and again"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16)", items: [
+      { ctx: "teen", label: "Secondary school and college (12-17)", items: [
         "Got detentions for talking in lessons",
         "Group projects stalled because they kept chatting instead of working",
         "Teachers separated them from friends to stop the chatter",
         "Was seen as 'the chatty one' in their friendship group",
         "Was told off in exams or mocks for talking",
-        "Ran up phone bills or used up data on hours of calls"
+        "Ran up phone bills or used up data on hours of calls",
+        "Sends long runs of voice notes or messages in group chats",
+        "Gets told off at work for chatting instead of serving",
+        "Dominates conversations with friends and finds it hard to stop",
+        "Talks through online lessons or revision sessions with friends"
       ] }
     ]
   },
@@ -303,6 +310,14 @@ AA.add('symptoms', [{
       "Remarks that their chatter distracts other pupils",
       "Similar comments over several years from different teachers",
       "Good spoken skills noted, but with a need to know when to stop"
+    ],
+    teacher: [
+      "Chats through most lessons",
+      "Carries on talking after being asked to stop",
+      "Moved away from friends to cut down the chatting",
+      "Gives long answers when a short one is asked for",
+      "Other pupils find the chatter distracting",
+      "Talks during silent work and tests"
     ]
   },
   counts: [
@@ -359,7 +374,8 @@ AA.add('symptoms', [{
     highIQ: "Highly verbal people may be praised for being articulate, which hides the problem. Look at whether others get a turn, whether meetings overrun, and whether the person can stop when they need to.",
     sud: "Alcohol, cocaine and amphetamines increase talking. Check how talkative the person is when sober and what they were like as a child, before any substance use.",
     asd: "In autism long talk is often one-sided, on a narrow interest, with difficulty reading cues; in ADHD it ranges over many topics and the person often notices afterwards and feels embarrassed. Both can co-occur, and both should be assessed.",
-    culture: "Norms for talking, turn-taking and silence differ between cultures and families. Compare with peers from the same background, and consider language: speaking a second language can lengthen speech for reasons that have nothing to do with ADHD."
+    culture: "Norms for talking, turn-taking and silence differ between cultures and families. Compare with peers from the same background, and consider language: speaking a second language can lengthen speech for reasons that have nothing to do with ADHD.",
+    young: "How much children talk varies widely, so compare with children of the same age and ask whether it causes problems. Girls are often called chatty rather than hyperactive, and in some girls talking is the main visible sign. Talk only about a special interest, or one-sided talk that does not follow the listener, may point to autism or a language difficulty, and these can exist alongside ADHD."
   },
   refs: [
     "DSM-5-TR (APA 2022), criterion A2f, paraphrased",
@@ -368,6 +384,8 @@ AA.add('symptoms', [{
     "Kooij JJS et al. Updated European consensus statement on adult ADHD. Eur Psychiatry 2019;56:14-34",
     "DIVA 2.0 structure (Kooij and Francken 2010); question and example wording original",
     "CADDRA Canadian ADHD Practice Guidelines 4.1 (2020), differential diagnosis, paraphrased",
-    "Clinical practice"
+    "Clinical practice",
+    "NICE NG87 1.2.2 (under-recognition in girls), 1.3.5 (criteria adjusted for age) and 1.3.6 (children's views)",
+    "Parent, young person and teacher questions, teacher comments and young-person notes: clinical practice"
   ]
 }]);

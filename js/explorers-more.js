@@ -79,29 +79,50 @@
     ter:{end:true,tone:'danger',badge:'Tertiary',title:'Second opinion or tertiary referral',clause:'1.7.16',text:'Obtain a second opinion or refer to a tertiary service if symptoms are unresponsive to one or more stimulants and one non-stimulant (1.7.16).'}
   };
   XP.registry.path = function(m){
-    var trail=['start'];
-    var R=XP.form(m,{
-      kicker:'Interactive pathway · Module 4', title:'NICE NG87 pathway walker',
-      intro:'Choose the age group, then answer each question to walk the NICE treatment pathway. Each step shows the NG87 recommendation it comes from. This is a teaching summary and does not replace the full guideline or specialist judgement.',
-      controls:[], visualFirst:true,
-      evaluate:function(){
-        var id=trail[trail.length-1], n=N[id], depth=trail.length;
-        var vis='<ol class="pw-trail">'+trail.map(function(t,i){ var x=N[t]; return '<li class="pw-step xp-t-'+x.tone+(i===trail.length-1?' cur':'')+'"><span class="pw-dot"></span><b>'+esc(x.title)+'</b>'+(x.clause?' <small>NG87 '+esc(x.clause)+'</small>':'')+(i<trail.length-1&&trail.answers&&trail.answers[i]?'<em>→ '+esc(trail.answers[i])+'</em>':'')+'</li>'; }).join('')+'</ol>'
-          +(n.end?'':'<p class="pw-q">'+esc(n.q)+'</p><div class="xp-chips pw-opts" role="group" aria-label="Answer">'+n.opts.map(function(o,i){return '<button type="button" class="xp-chip" data-o="'+i+'">'+esc(o[0])+'</button>';}).join('')+'</div>')
-          +'<div class="pw-nav">'+(trail.length>1?'<button type="button" class="xp-chip pw-back">← Back a step</button><button type="button" class="xp-chip pw-reset">Start again</button>':'')+'</div>';
-        var line=id==='start'?'':(id[0]==='u'?'u5':id[0]==='a'?'adult':'child');
-        return {tone:n.tone,badge:n.badge,title:n.title,text:'<p>'+n.text+'</p>',visual:vis,
-          patient:n.end?(n.tone==='danger'?'<p>A different specialist team will review the options. Not responding to several medicines is not a failure; it means a closer look at the diagnosis, coexisting conditions and alternatives.</p>':'<p>The plan is shared: you can revisit decisions about treatment at any point (1.5.6). Keep doing the non-drug strategies that help.</p>'):'<p>Each step is a joint decision after discussing benefits, harms and preferences (1.5.4). A "6-week trial" means 6 weeks at an <em>adequate</em> dose, not just the starting dose.</p>',
-          pharm:ul(['Check where the person is on the pathway before advising on a switch: the "6-week trial at an adequate dose" rule (1.7.8, 1.7.12) applies at each step.','Initiation and switches are specialist decisions (1.7.2); in primary care, support adherence, monitor (1.8) and feed back to the specialist under shared care (1.7.29).',line==='adult'?'Adults: guanfacine needs tertiary advice (1.7.17); dexamfetamine is off-label (1.7.14).':line==='u5'?'Under 5: medication only after a second specialist opinion (1.5.9).':'Children: methylphenidate first line (1.7.7). Check the SPC licence for the age (for example, 6+ for most products).'])};
-      },
-      after:function(R2,st,render){
-        R2.querySelectorAll('.pw-opts .xp-chip').forEach(function(b){ b.onclick=function(){ var n=N[trail[trail.length-1]], o=n.opts[+b.dataset.o]; trail.answers=trail.answers||[]; trail.answers[trail.length-1]=o[0]; trail.push(o[1]); render(); var f=R2.querySelector('.pw-opts .xp-chip,.pw-back'); if(f) f.focus({preventScroll:true}); }; });
-        var bk=R2.querySelector('.pw-back'); if(bk) bk.onclick=function(){ trail.pop(); render(); var f=R2.querySelector('.pw-opts .xp-chip'); if(f) f.focus({preventScroll:true}); };
-        var rs=R2.querySelector('.pw-reset'); if(rs) rs.onclick=function(){ trail.length=1; trail.answers=[]; render(); var f=R2.querySelector('.pw-opts .xp-chip'); if(f) f.focus({preventScroll:true}); };
-      },
-      note:'Teaching summary of NICE NG87 (2018, updated 2019). Medicines can be off-label at some ages; check the SPC and the BNF/BNFC.',
-      sources:['NICE NG87 (live text checked Oct 2026): 1.5.2–1.5.18, 1.7.2, 1.7.4, 1.7.7–1.7.17, 1.7.27, 1.7.29, 1.8.4.']
+    /* Light, lesson-style walker (same colours as the M4 journeys): the route so far on the left (tap a step to go back
+       to it), the current NICE step in one card with its question and answers, then patient and pharmacist points in a
+       closed dropdown. On phones the route shrinks to numbered dots above the card. */
+    var trail=['start'], answers=[], moreOpen=false;
+    var TONE={info:'#5c7491|#eef2f6',mid:'#2f6fb3|#e8f0fa',ok:'#1d7a3e|#e4f5ea',warn:'#9a6200|#fff4dc',high:'#a8432e|#fbe9e4',danger:'#b3261e|#fde8e7'};
+    function col(t){ var c=(TONE[t]||TONE.info).split('|'); return '--c:'+c[0]+';--cl:'+c[1]; }
+    var dir=null;   /* direction of the last move, for the slide-in */
+    function draw(focus){
+      var id=trail[trail.length-1], n=N[id], line=trail[1]==='u5'?'u5':trail[1]==='a1'?'adult':trail[1]?'child':'';
+      var tr='<ol class="pw2-trail" aria-label="Your route so far">'+trail.map(function(t,i){ var x=N[t], cur=i===trail.length-1, nm=i===0?'Age group':x.title;
+        return '<li style="'+col(x.tone)+'"'+(cur?' class="cur" aria-current="step"':'')+'><button type="button" class="pw2-ti" data-k="'+i+'"'+(cur?' disabled':' aria-label="Go back to step '+(i+1)+': '+esc(nm)+'"')+'><span class="pw2-tn">'+(i+1)+'</span><span class="pw2-tt"><b>'+esc(nm)+'</b>'+(cur?'<small class="pw2-here">You are here</small>':(answers[i]?'<small>\u2192 '+esc(answers[i])+'</small>':''))+'</span></button></li>'; }).join('')+'</ol>';
+      var card='<div class="pw2-card" style="'+col(n.tone)+'"><div class="pw2-head"><span class="pw2-badge">'+esc(n.badge)+'</span>'+(n.clause?'<span class="pw2-ref">NG87 '+esc(n.clause)+'</span>':'')+'</div>'
+        +'<h4 class="pw2-title" tabindex="-1">'+esc(n.title)+'</h4><div class="pw2-text"><p>'+n.text+'</p></div>'
+        +(n.end?'<p class="pw2-end"><span aria-hidden="true">'+(n.tone==='danger'?'!':'\u2713')+'</span>End of this route. Go back a step to try another answer, or start again.</p>'
+          :'<div class="pw2-ask"><p class="pw2-q"><span aria-hidden="true">?</span>'+esc(n.q)+'</p><div class="pw2-opts" role="group" aria-label="Answer">'+n.opts.map(function(o,i){ return '<button type="button" class="pw2-o" data-o="'+i+'"><span>'+esc(o[0])+'</span><i aria-hidden="true">\u2192</i></button>'; }).join('')+'</div></div>')
+        +(trail.length>1?'<div class="pw2-nav"><button type="button" class="btn secondary pw2-back">\u2190 Back a step</button><button type="button" class="pw2-reset">Start again</button></div>':'')+'</div>';
+      var patient=n.end?(n.tone==='danger'?'<p>A different specialist team will review the options. Not responding to several medicines is not a failure; it means a closer look at the diagnosis, coexisting conditions and alternatives.</p>':'<p>The plan is shared: you can revisit decisions about treatment at any point (1.5.6). Keep doing the non-drug strategies that help.</p>'):'<p>Each step is a joint decision after discussing benefits, harms and preferences (1.5.4). A "6-week trial" means 6 weeks at an <em>adequate</em> dose, not just the starting dose.</p>';
+      var pharm=ul(['Check where the person is on the pathway before advising on a switch: the "6-week trial at an adequate dose" rule (1.7.8, 1.7.12) applies at each step.','Initiation and switches are specialist decisions (1.7.2); in primary care, support adherence, monitor (1.8) and feed back to the specialist under shared care (1.7.29).',line==='adult'?'Adults: guanfacine needs tertiary advice (1.7.17); dexamfetamine is off-label (1.7.14).':line==='u5'?'Under 5: medication only after a second specialist opinion (1.5.9).':'Children: methylphenidate first line (1.7.7). Check the SmPC licence for the age (for example, 6+ for most products).']);
+      var more='<details class="mx pw2-more"'+(moreOpen?' open':'')+'><summary><span class="mx-t"><b>For the patient and the pharmacist</b><small>What to explain, and what to check at this step</small></span><span class="mx-chev" aria-hidden="true"></span></summary><div class="mx-b"><div class="pw2-two"><div class="pw2-pt"><h5>For the patient</h5>'+patient+'</div><div class="pw2-ph"><h5>Pharmacist action</h5>'+pharm+'</div></div></div></details>';
+      m.innerHTML='<div class="pw2'+(dir?' pw2-go-'+dir:'')+'">'+tr+card+more+'<p class="pw2-note">Teaching summary of NICE NG87 (2018, updated 2019); it does not replace the guideline or specialist judgement. Medicines can be off-label at some ages: check the SmPC and the BNF or BNFC.</p></div>';
+      if(focus){ /* keep the route and card below the sticky lesson bar */
+        var mod=m.closest('.module'), bar=mod&&mod.querySelector('.ls-bar'), off=(bar?bar.getBoundingClientRect().bottom:70)+12, r=m.getBoundingClientRect();
+        if(r.top<off) window.scrollTo({top:r.top+window.scrollY-off, behavior:still?'auto':'smooth'});
+        m.querySelector('.pw2-title').focus({preventScroll:true}); }
+    }
+    /* smooth steps: the chosen answer lights up, the card fades out, the next one slides in from the side
+       you are moving to (forward from the right, back from the left); instant when reduced motion is set */
+    var still=window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches, busy=false;
+    function step(d, change, btn){
+      if(busy) return;
+      if(still){ change(); dir=null; draw(true); return; }
+      busy=true; if(btn) btn.classList.add('is-picked');
+      var c=m.querySelector('.pw2-card'); if(c) c.classList.add(d==='back'?'pw2-out-back':'pw2-out');
+      setTimeout(function(){ change(); dir=d; draw(true); busy=false; }, 170);
+    }
+    m.addEventListener('click', function(e){
+      var b=e.target.closest('button'); if(!b || !m.contains(b)) return;
+      if(b.matches('.pw2-o')){ step('fwd', function(){ var n=N[trail[trail.length-1]], o=n.opts[+b.dataset.o]; answers[trail.length-1]=o[0]; trail.push(o[1]); }, b); }
+      else if(b.matches('.pw2-ti')){ var k=+b.dataset.k; step('back', function(){ trail.length=k+1; answers.length=k; }); }
+      else if(b.matches('.pw2-back')){ step('back', function(){ trail.pop(); answers.length=trail.length-1; }); }
+      else if(b.matches('.pw2-reset')){ step('back', function(){ trail.length=1; answers.length=0; }); }
     });
+    m.addEventListener('toggle', function(e){ if(e.target.matches('.pw2-more')) moreOpen=e.target.open; }, true);
+    draw(false);
   };
 
   /* ================= M6: BP / HR response explorer (upgrades the old action helper) ================= */
@@ -194,7 +215,7 @@
   };
   XP.registry.se = function(m){ XP.form(m,{
     kicker:'Interactive explorer · Module 7', title:'Side-effect management explorer',
-    intro:'Pick an adverse effect, then how severe or persistent it is. The card shows typical timing and mechanism, and how management escalates. This summarises the table above, NG87 and the SPCs.',
+    intro:'Pick an adverse effect, then how severe or persistent it is. The card shows typical timing and mechanism, and how management escalates. This summarises lessons 2–4, NG87 and the SPCs.',
     controls:[
       {type:'chips',id:'e',label:'Adverse effect',value:'app',options:Object.keys(SE).map(function(k){return {v:k,label:SE[k].l};})},
       {type:'chips',id:'s',label:'Severity',value:0,show:function(st){return !SE[st.e].redFlag;},options:[{v:0,label:'Mild / new'},{v:1,label:'Persistent'},{v:2,label:'Severe / red flag'}]}],

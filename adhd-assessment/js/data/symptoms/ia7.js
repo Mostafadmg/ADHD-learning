@@ -9,7 +9,10 @@ AA.add('symptoms', [{
   why: "Items are put down while attention is elsewhere, so where they went is never stored (weak attentional encoding and working memory). There is no automatic 'check before I leave' habit because self-monitoring is weak, so things are left behind or put down in random places.",
   ask: {
     adult: "Over the last six months, how often have you lost or misplaced things you need, like keys, your phone, wallet, glasses or important papers? Can you tell me about the last time it happened?",
-    child: "When you were at primary school, roughly age 5 to 12, how often did you lose or leave behind things you needed, such as your coat, PE kit, lunch box, reading book or pencil case? What did your parents or teachers say about it?"
+    child: "When you were at primary school, roughly age 5 to 12, how often did you lose or leave behind things you needed, such as your coat, PE kit, lunch box, reading book or pencil case? What did your parents or teachers say about it?",
+    parent: "Over the last six months, how often does your child lose or leave behind things they need, like their coat, water bottle, PE kit, reading book or pencil case, compared with other children their age? Can you give me some recent examples?",
+    teen: "Over the last six months, how often do you lose things you need, like your phone, keys, bus pass, school books or money? How much trouble does that cause, compared with your friends?",
+    teacher: "Compared with others in the class, how often does this pupil lose or misplace equipment, books, worksheets or clothing during the school day? How much do they rely on spares or borrowing from others?"
   },
   rephrase: [
     "How often do you find yourself hunting for something you had in your hand a minute ago?",
@@ -201,12 +204,16 @@ AA.add('symptoms', [{
         "Family joked they would lose their head if it was not screwed on",
         "Brothers and sisters complained that borrowed things never came back"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16)", items: [
+      { ctx: "teen", label: "Secondary school and college (12-17)", items: [
         "Loses phone, bus pass or locker key at secondary school",
         "Loses exercise books and coursework folders",
         "Loses keys and has to wait outside the house",
         "Loses calculator or exam equipment just before exams",
-        "Loses money and cards when out with friends"
+        "Loses money and cards when out with friends",
+        "Loses phone chargers, earphones and other small tech",
+        "Loses their work uniform or name badge for a part-time job",
+        "Loses their provisional driving licence or theory test paperwork",
+        "Leaves PE kit or sports bags in the changing rooms"
       ] }
     ]
   },
@@ -310,6 +317,14 @@ AA.add('symptoms', [{
       "Equipment needs replacing regularly",
       "Must take more responsibility for their things",
       "Pencil case often missing"
+    ],
+    teacher: [
+      "Pencil case is often missing or empty",
+      "Regularly borrows equipment from classmates",
+      "Lost property often has their things in it",
+      "Loses worksheets during the lesson",
+      "Reading book or homework diary often missing",
+      "We keep spare equipment just for them"
     ]
   },
   counts: [
@@ -366,7 +381,8 @@ AA.add('symptoms', [{
     highIQ: "Able people may lose fewer things at work thanks to excellent systems, but pay in time, anxiety and help from others. Judge impairment against their ability and effort, and ask what happens when routines break, such as travel or a house move.",
     sud: "Intoxication, hangovers and blackouts cause losses. Rate the pattern during sober periods and in childhood, before substance use began.",
     asd: "Autistic people may be very distressed when others move their things because of a need for sameness, even though they know where things belong. In ADHD the item is truly lost and the person does not know where it was put. The two can co-occur.",
-    culture: "Ownership norms vary, and in shared households items may be moved or used by others. People with few possessions or insecure housing may lose things for reasons outside their control, so ask about the person's own part in the loss."
+    culture: "Ownership norms vary, and in shared households items may be moved or used by others. People with few possessions or insecure housing may lose things for reasons outside their control, so ask about the person's own part in the loss.",
+    young: "Younger primary children often lose things, so compare with children of the same age and allow for the youngest in the year. Losses may be hidden while a parent packs and checks everything, and may only show when the child has to manage alone, often after the move to secondary school. Losses only in a busy household where things get moved do not count on their own."
   },
   refs: [
     "DSM-5-TR (APA 2022), criterion A1g, paraphrased",
@@ -375,6 +391,8 @@ AA.add('symptoms', [{
     "DIVA 2.0 structure (Kooij and Francken 2010); all wording original",
     "ASRS v1.1 item 10 (Kessler et al. 2005)",
     "CADDRA Canadian ADHD Practice Guidelines 4.1 (2020), differential diagnosis tables",
-    "Clinical practice (examples, probes and anchors)"
+    "Clinical practice (examples, probes and anchors)",
+    "NICE NG87 1.2.2 (under-recognition in girls), 1.3.5 (criteria adjusted for age) and 1.3.6 (children's views)",
+    "Parent, young person and teacher questions, teacher comments and young-person notes: clinical practice"
   ]
 }]);

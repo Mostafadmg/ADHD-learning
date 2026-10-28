@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Form · ADHD for Clinicians</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="../css/score-panel.css?v=20261026x">
+<style>
+:root{--navy:#16324f;--teal:#0b6664;--teal-l:#e3f4f3;--coral:#a8432e;--red:#b3261e;--ink:#1d2733;--muted:#55626f;--line:#dde3ea;--bg:#f6f8fa}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Fredoka','Segoe UI',system-ui,sans-serif;font-size:16px;line-height:1.5}
+.bar{position:sticky;top:0;z-index:5;background:var(--navy);color:#fff;display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;padding:.6rem 1rem}
+.bar b{flex:1 1 auto}
+.bar a,.bar button{font:inherit;font-size:.9rem;border:1.5px solid rgba(255,255,255,.5);background:transparent;color:#fff;border-radius:999px;padding:.4rem .9rem;cursor:pointer;text-decoration:none}
+.bar .pri{background:#fff;color:var(--navy);border-color:#fff;font-weight:600}
+.page{max-width:860px;margin:1.2rem auto 3rem;background:#fff;border-radius:14px;box-shadow:0 2px 10px rgba(22,50,79,.08);padding:1.6rem 1.8rem}
+h1{margin:0;font-size:1.6rem;color:var(--navy)}
+.full{margin:.1rem 0 .6rem;color:var(--teal);font-weight:600}
+.src{font-size:.85rem;color:var(--muted);margin:0 0 1rem}
+.src a{color:var(--teal)}
+.who{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;margin:0 0 1.2rem}
+.who label{font-size:.8rem;font-weight:600;color:var(--muted);display:flex;flex-direction:column;gap:.2rem}
+.who input{font:inherit;border:1px solid var(--line);border-radius:8px;padding:.4rem .55rem}
+.inst{background:var(--teal-l);border-radius:10px;padding:.6rem .8rem;font-size:.92rem;margin:0 0 1rem}
+.sec{margin:1.2rem 0 .3rem;font-weight:600;color:var(--navy);font-size:1.05rem;border-bottom:2px solid var(--line);padding-bottom:.2rem}
+.sec small{display:block;font-weight:400;color:var(--muted);font-size:.85rem}
+.it{display:grid;grid-template-columns:2rem minmax(0,1fr);gap:.2rem .6rem;padding:.65rem 0;border-bottom:1px solid #edf1f6;break-inside:avoid}
+.it .n{font-weight:700;color:var(--teal)}
+.it .q{margin:0}
+.it .q em{color:var(--muted);font-size:.85rem}
+.opts{grid-column:2;display:flex;flex-wrap:wrap;gap:.35rem}
+.opts label{position:relative;display:inline-flex;align-items:center;border:1px solid #d3dbe6;border-radius:8px;padding:.45rem .8rem;font-size:.88rem;cursor:pointer;background:#fff;color:#33445c;min-height:38px}
+.opts label.sh{background:#e6ebf2;border-color:#b9c5d6}
+.opts input{position:absolute;opacity:0;pointer-events:none}
+.opts label:has(input:checked){background:#2f6fb3;border-color:#2f6fb3;color:#fff;font-weight:600}
+.opts label.sh:has(input:checked){background:#c0392b;border-color:#c0392b}
+.opts label:has(input:focus-visible){outline:3px solid var(--teal);outline-offset:2px}
+.key{font-size:.85rem;color:var(--muted);margin:0 0 .6rem}.key i{display:inline-block;width:.9rem;height:.7rem;border-radius:3px;background:#e6ebf2;border:1px solid #b9c5d6;vertical-align:middle;margin-right:.3rem}
+.notes{margin-top:1.2rem}
+.notes textarea{width:100%;min-height:90px;font:inherit;border:1px solid var(--line);border-radius:8px;padding:.5rem}
+.score{margin-top:1.2rem;border:2px solid var(--teal);border-radius:12px;padding:.8rem 1rem;background:#f4fbfa}
+.score h2{margin:0 0 .3rem;font-size:1.1rem;color:var(--navy)}
+.score ul{margin:.3rem 0 0;padding-left:1.1rem}
+.score .flag{margin:.5rem 0 0;padding:.4rem .6rem;border-radius:8px;background:#fde8e6;border-left:4px solid var(--red)}
+.foot{margin-top:1.4rem;font-size:.8rem;color:var(--muted)}
+.wrap{max-width:860px;margin:1.2rem auto 3rem;display:grid;grid-template-columns:minmax(0,1fr);gap:1.2rem;align-items:start}
+.wrap.show{max-width:1240px;grid-template-columns:minmax(0,1fr) 340px;padding:0 1rem}
+.wrap .page{margin:0;max-width:none}
+.side{position:sticky;top:72px;max-height:calc(100vh - 90px);overflow:auto}
+.side .sc{box-shadow:0 2px 10px rgba(22,50,79,.08)}
+.side .side-note{font-size:.78rem;color:var(--muted);margin:.5rem .2rem 0}
+.side .empty{background:#fff;border:1px dashed var(--line);border-radius:14px;padding:1rem;text-align:center;color:var(--muted)}
+.side .empty b{display:block;color:var(--navy);margin-bottom:.2rem}
+@media (max-width:980px){.wrap.show{grid-template-columns:1fr}.side{position:static;max-height:none;order:-1}}
+.err{max-width:640px;margin:3rem auto;text-align:center}
+@media (max-width:640px){.page{padding:1rem;margin:.6rem}.who{grid-template-columns:1fr}}
+@media print{
+  body{background:#fff;font-size:12px}
+  .bar,.noprint{display:none!important}
+  .wrap,.wrap.show{display:block;max-width:none;margin:0;padding:0}
+  .side{position:static;max-height:none;overflow:visible;margin-top:1rem;break-inside:avoid}
+  .page{box-shadow:none;margin:0;max-width:none;padding:0}
+  .opts label{border-color:#999;padding:.15rem .4rem}
+  .opts label:has(input:checked){background:#555!important;color:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .opts label.sh{background:#fff}
+  .who input,.notes textarea{border-color:#999}
+}
+</style>
+</head>
+<body>
+<div class="bar noprint"><b>ADHD for Clinicians · form</b><button type="button" class="pri" id="pdf">Save as PDF</button><button type="button" id="print">Print</button><a id="orig" hidden target="_blank" rel="noopener">Original form (PDF)</a><button type="button" id="score">Show score</button><button type="button" id="clear">Clear answers</button><a href="../index.html#form-library">Back to the form library</a></div>
+<div class="wrap" id="wrap"><main class="page" id="page"><p>Loading the form…</p></main><aside class="side" id="side" hidden aria-live="polite"></aside></div>
+<script src="../adhd-assessment/js/core/ns.js?v=20261026s"></script>
+<script src="../adhd-assessment/js/data/tools-adhd.js?v=20261026s"></script>
+<script src="../adhd-assessment/js/data/tools-comorbid.js?v=20261026s"></script>
+<script src="../adhd-assessment/js/data/tools-info.js?v=20261025-full-library"></script>
+<script src="../adhd-assessment/js/engine/scoring.js?v=20261026s"></script>
+<script src="../js/m3-tryforms-data.js?v=20261026s"></script>
+<script src="../js/score-panel.js?v=20261026x"></script>
+<script>
+/* Printable, fill-in version of a course form. Item wording and scoring come from the Assessment workspace
+   (licence-checked) or, for the SNAP-IV, from the course's paraphrased item set. Answers are kept in this browser. */
+(function(){
+  'use strict';
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  var page = document.getElementById('page');
+  var fid = new URLSearchParams(location.search).get('f') || '';
+  var cfg = (window.M3TRY || {})[fid];
+  var registered = window.AA && AA.byId('tools', fid);
+  if(!cfg && registered && registered.interactive && registered.items.length) cfg = {tool:fid};
+  var tool = cfg && (cfg.local || (window.AA && AA.byId('tools', cfg.tool)));
+  if(!tool || !tool.items || !tool.items.length){ page.innerHTML = '<div class="err"><h1>Form not found</h1><p>Open forms from the standalone form library.</p><p><a href="../index.html#form-library">Back to the form library</a></p></div>'; return; }
+  var KEY = 'form-' + fid, st;
+  try { st = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch(e){ st = {}; }
+  st.a = st.a || {}; st.who = st.who || {};
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(st)); } catch(e){} }
+  var name = tool.abbr || tool.name || fid, full = tool.name && tool.abbr ? tool.name : '';
+  document.title = name + ' · ADHD for Clinicians';
+  var lic = tool.licence ? String(tool.licence).split('. ')[0] + '.' : '';
+  var h = '<h1>' + esc(name) + '</h1>' + (full ? '<p class="full">' + esc(full) + '</p>' : '')
+    + '<p class="src">' + (tool.url ? (/pubmed|pmc\.ncbi/.test(tool.url) ? 'Original paper' : 'Official form') + ': <a href="' + esc(tool.url) + '" target="_blank" rel="noopener">' + esc(tool.url.replace(/^https?:\/\//, '').slice(0, 70)) + '</a>. ' : '') + esc(lic) + (cfg.note ? ' ' + esc(cfg.note) : '') + '</p>'
+    + '<div class="who"><label>Name<input data-w="name" value="' + esc(st.who.name || '') + '"></label><label>Date<input data-w="date" type="date" value="' + esc(st.who.date || '') + '"></label><label>Completed by<input data-w="by" value="' + esc(st.who.by || '') + '"></label></div>'
+    + (tool.instructions || tool.how ? '<p class="inst">' + esc(tool.instructions || tool.how) + '</p>' : '');
+  if(tool.items.some(function(it){ return it.threshold != null; })) h += '<p class="key noprint"><i></i>Grey answers are the range that counts towards the screen.</p>';
+  tool.items.forEach(function(it){
+    if(it.section) h += '<p class="sec">' + esc(it.section) + (it.sectionNote ? '<small>' + esc(it.sectionNote) + '</small>' : '') + '</p>';
+    var opts = it.opts || tool.options || [];
+    h += '<div class="it"><span class="n">' + it.n + '</span><p class="q">' + esc(it.t) + (it.unscored ? ' <em>(not scored)</em>' : '') + '</p><div class="opts" role="radiogroup" aria-label="Item ' + it.n + '">';
+    var thr = it.threshold;
+    opts.forEach(function(o){ var on = st.a[it.n] === o.v, sh = thr != null && typeof o.v === 'number' && o.v >= thr; h += '<label' + (sh ? ' class="sh"' : '') + '><input type="radio" name="i' + it.n + '" data-n="' + it.n + '" value="' + esc(o.v) + '"' + (on ? ' checked' : '') + '>' + esc(o.l) + '</label>'; });
+    h += '</div></div>';
+  });
+  h += '<div class="notes"><p class="sec">Notes and examples</p><textarea data-w="notes" placeholder="Real examples, settings, when it started…">' + esc(st.who.notes || '') + '</textarea></div>'
+    + '<p class="foot">Printed from the ADHD for Clinicians course for training. Rating scales support, and never replace, a full clinical assessment (NICE NG87 1.3.2). Use the official form in clinical practice.</p>';
+  page.innerHTML = h;
+  page.addEventListener('change', function(e){
+    var t = e.target;
+    if(t.dataset.n){ var v = t.value; st.a[t.dataset.n] = v === 'na' ? 'na' : (isNaN(+v) ? v : +v); save(); if(showing) score(); }
+    else if(t.dataset.w){ st.who[t.dataset.w] = t.value; save(); }
+  });
+  page.addEventListener('input', function(e){ if(e.target.dataset.w){ st.who[e.target.dataset.w] = e.target.value; save(); } });
+  var showing = false;
+  function score(){
+    var r = cfg.score ? cfg.score(st.a) : AA.scoring.score(tool, st.a), side = document.getElementById('side');
+    var any = Object.keys(st.a).length;
+    side.innerHTML = any ? window.M3SCORE(tool, r, st.a) + '<p class="side-note">Updates as you answer. Scoring as in the course form library.</p>'
+      : '<div class="empty"><b>No answers yet</b>Choose an answer for each question. The result, sub-scores and any safety alerts appear here as you go.</div>';
+  }
+
+  function setShow(on){ showing = on; var b = document.getElementById('score'); b.textContent = on ? 'Hide score' : 'Show score'; document.getElementById('wrap').classList.toggle('show', on); document.getElementById('side').hidden = !on; if(on) score(); try { localStorage.setItem('form-show', on ? '1' : ''); } catch(e){} }
+  document.getElementById('score').addEventListener('click', function(){ setShow(!showing); });
+  try { if(localStorage.getItem('form-show')) setShow(true); } catch(e){}
+  document.getElementById('clear').addEventListener('click', function(){ if(!confirm('Clear all answers on this form?')) return; st = {a:{}, who:{}}; save(); location.reload(); });
+  document.getElementById('print').addEventListener('click', function(){ window.print(); });
+  /* Save as PDF: the browser's print dialog with the destination set to 'Save as PDF'; the file name comes from the title. */
+  document.getElementById('pdf').addEventListener('click', function(){ var t = document.title; document.title = name + (st.who.name ? ' - ' + st.who.name : '') + (st.who.date ? ' - ' + st.who.date : ''); alert('In the print window, choose "Save as PDF" as the destination, then Save.'); window.print(); document.title = t; });
+  var ORIG = {asrs18:'asrs-v1-1.pdf', wfirs:'wfirs-s.pdf', snap4:'snap-iv-26.pdf', phq9:'phq-9.pdf', gad7:'gad-7.pdf', audit:'audit.pdf', aq10:'aq-10.pdf', pcl5:'pcl-5.pdf', cssrs:'c-ssrs-screener.pdf'};
+  if(ORIG[fid]){ var o = document.getElementById('orig'); o.href = 'view.html?f=' + ORIG[fid]; o.hidden = false; }
+})();
+</script>
+</body>
+</html>

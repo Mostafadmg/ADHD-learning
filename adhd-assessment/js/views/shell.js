@@ -179,53 +179,76 @@
       formHost.appendChild(h('div', { class: 'row' }, ui.btn({ label: 'New profile', kind: 'ghost', onClick: showCreate })));
     }
 
-    var demoBtn = ui.btn({ label: 'Explore with a demo patient', kind: 'secondary', onClick: function () {
-      var existing = AA.auth.list().filter(function (p) { return p.guest; })[0];
-      var start = existing ? AA.auth.signIn(existing.id).then(function () { return existing; }) : AA.auth.create({ name: 'Demo clinician', role: 'Guest', guest: true });
-      start.then(function () {
-        var back = AA.router.takePending();
-        var id = shell.loadDemo();
-        AA.router.go(back || (id ? 'assess-' + id + '-summary' : 'home'));
-      });
-    } });
+    /* "Look around first": sign in as the guest profile and open a demo patient.
+       A deep link waiting for sign-in (for example #new from the course) is dropped here: it is only
+       used after a real sign-in, so the demo button always opens the demo. */
+    function demoBtn(kind) {
+      return ui.btn({ label: kind === 'young' ? 'Explore with a child demo' : 'Explore with a demo patient', kind: 'secondary', onClick: function () {
+        var existing = AA.auth.list().filter(function (p) { return p.guest; })[0];
+        var start = existing ? AA.auth.signIn(existing.id).then(function () { return existing; }) : AA.auth.create({ name: 'Demo clinician', role: 'Guest', guest: true });
+        start.then(function () {
+          AA.router.takePending();
+          var id = shell.loadDemo(kind);
+          AA.router.go(id ? 'assess-' + id + '-summary' : 'home');
+        });
+      } });
+    }
 
     el.appendChild(h('div', { class: 'signin' }, h('div', { class: 'signin-card' },
       h('section', { class: 'signin-intro' },
-        h('p', { class: 'eyebrow' }, 'Adult ADHD · clinician workspace'),
+        h('p', { class: 'eyebrow' }, 'ADHD · clinician workspace'),
         h('h1', null, 'ADHD Assessment'),
-        h('p', null, 'Run a full adult ADHD assessment step by step: screening questionnaires with instant scoring, a DIVA-style interview of all 18 symptoms with hundreds of example questions, onset and impairment, collateral history, differential diagnosis and a scored conclusion with a draft report.'),
+        h('p', null, 'One patient record for the whole ADHD pathway, from referral to shared care, for adults and for young people aged 6 to 17.'),
+        h('p', null, 'Assess step by step: rating scales with instant scoring, an interview of all 18 symptoms, onset and impairment, information from family and school, differentials, and a scored conclusion with a draft report. Then plan treatment: pre-treatment checks, prescribing, titration, monitoring and shared care.'),
         h('ul', null,
           h('li', null, 'Learn the method in the assessor training, then practise on cases.'),
           h('li', null, 'Use it live in clinic: read the question, tick what the patient describes, score as you go.'),
+          h('li', null, 'For a child under 6, the app tells you to refer to a service with expertise in young children.'),
           h('li', null, 'Everything is stored only in this browser. Use a patient reference, not a name.')),
         h('p', { class: 'signin-note' }, 'Decision support for qualified clinicians. It does not replace clinical judgement, local policy or the licensed instruments.'),
         h('p', null, h('a', { href: '../index.html#home' }, '← Back to the ADHD course modules'))),
-      h('section', { class: 'signin-form' }, formHost, h('hr', { class: 'sep' }), h('div', null, h('p', { class: 'hint' }, 'No profile yet? You can look around first.'), demoBtn)))));
+      h('section', { class: 'signin-form' }, formHost, h('hr', { class: 'sep' }), h('div', null, h('p', { class: 'hint' }, 'No profile yet? You can look around first.'),
+        h('div', { class: 'row' }, demoBtn('adult'), AA.data.demoYoung ? demoBtn('young') : null))))));
     showChooser();
   } });
 
   function initials(n) { return String(n || '?').split(/\s+/).filter(Boolean).slice(-2).map(function (x) { return x[0].toUpperCase(); }).join(''); }
 
   /* ---------- Demo ---------- */
-  shell.loadDemo = function () {
-    var demo = AA.data.demo;
-    if (!demo) { U.toast('The demo case is not available.', 'warn'); return null; }
+  /* kind 'young' opens the child demo (AA.data.demoYoung, marked demo: 'young'); anything else the adult demo
+     (marked demo: true). Both are truthy, so "is this a demo?" checks elsewhere still work. */
+  function isDemoOf(a, kind) { return kind === 'young' ? a.demo === 'young' : !!a.demo && a.demo !== 'young'; }
+  shell.hasDemo = function (kind) { return AA.assess.list().some(function (a) { return isDemoOf(a, kind); }); };
+  shell.loadDemo = function (kind) {
+    var young = kind === 'young';
+    var demo = young ? AA.data.demoYoung : AA.data.demo;
+    if (!demo) { U.toast(young ? 'The child demo is not available.' : 'The demo case is not available.', 'warn'); return null; }
     /* Reopen this profile's demo patient rather than adding another copy (delete it on Home for a fresh one). */
-    var existing = AA.assess.list().filter(function (a) { return a.demo; })[0];
+    var existing = AA.assess.list().filter(function (a) { return isDemoOf(a, kind); })[0];
     if (existing) { AA.progress.set('lastAssessment', existing.id); return existing.id; }
     var rec = JSON.parse(JSON.stringify(demo));
-    rec.demo = true;
+    rec.demo = young ? 'young' : true;
     var id = AA.assess.insert(rec);
     AA.progress.set('lastAssessment', id);
     return id;
   };
 
   /* ---------- New assessment ---------- */
-  /* A draft nobody has typed into yet: no reference, age or recorded answers. */
+  /* A draft nobody has typed into yet: no reference, age or recorded answers.
+     New records start with empty young-person fields and an empty treatment record, so look for any value set. */
   function isBlankDraft(a) {
     var p = a.patient || {};
     var empty = function (o) { return !o || !Object.keys(o).length; };
-    return !a.demo && !p.ref && !p.age && !p.consent && empty(a.tools) && empty(a.symptoms) && empty(a.history) && empty(a.risk) && empty(a.ddx);
+    var untouched = function (o) {
+      if (!o) return true;
+      return !Object.keys(o).some(function (k) {
+        var v = o[k];
+        if (v && typeof v === 'object') return !untouched(v);
+        return v !== null && v !== undefined && v !== false && String(v).trim() !== '';
+      });
+    };
+    return !a.demo && !p.ref && !p.age && !p.consent && untouched(p.young) && empty(a.tools) && empty(a.symptoms) && empty(a.history) &&
+      empty(a.risk) && empty(a.ddx) && untouched(a.treatment);
   }
   shell.isBlankDraft = isBlankDraft;
 
@@ -254,11 +277,16 @@
     /* "Dr Sam Patel" greets as "Dr Patel", "Sam Patel" as "Sam". */
     var nm = String(me.name || '').trim().split(/\s+/);
     var greet = nm.length > 1 && /^(dr|prof|professor|mr|mrs|ms|miss|mx)\.?$/i.test(nm[0]) ? nm[0] + ' ' + nm[nm.length - 1] : nm[0];
+    function demoAction(kind) {
+      var young = kind === 'young';
+      var has = shell.hasDemo(kind);
+      return ui.btn({ label: young ? (has ? 'Open child demo' : 'Load child demo') : (has ? 'Open demo patient' : 'Load demo patient'), kind: 'ghost', onClick: function () {
+        var id = shell.loadDemo(kind); if (id) AA.router.go('assess-' + id + '-summary');
+      } });
+    }
     el.appendChild(ui.pageHead({ eyebrow: 'Workspace', title: 'Welcome, ' + greet,
       lead: 'Start or continue an assessment, look something up during the interview, or keep training.',
-      actions: [ui.btn({ label: 'New assessment', kind: 'primary', go: 'new', icon: '+' }), ui.btn({ label: list.some(function (a) { return a.demo; }) ? 'Open demo patient' : 'Load demo patient', kind: 'ghost', onClick: function () {
-        var id = shell.loadDemo(); if (id) AA.router.go('assess-' + id + '-summary');
-      } })] }));
+      actions: [ui.btn({ label: 'New assessment', kind: 'primary', go: 'new', icon: '+' }), demoAction('adult'), AA.data.demoYoung ? demoAction('young') : null].filter(Boolean) }));
 
     el.appendChild(h('div', { class: 'stat-row' },
       stat('In progress', active.length), stat('Completed', done.length),
@@ -273,11 +301,13 @@
     }
     el.appendChild(sec);
 
+    /* The step count comes from the frame's step list (18: assessment, diagnosis, treatment and report). */
+    var nSteps = (AA.STEP_LIST || []).length;
     el.appendChild(h('section', { class: 'section' }, h('h2', null, 'How to use this app'),
       h('div', { class: 'grid home-steps' },
         quick('1 · Learn', 'Assessor training', 'Criteria, interview technique, scoring rules, differentials and report writing, each with a quiz.', 'learn'),
         quick('2 · Practise', 'Practice cases', 'Work through realistic adult cases and compare your decisions with the expert answer.', 'cases'),
-        quick('3 · Assess', 'Run an assessment', 'Thirteen guided steps from consent to report. Each step tells you what to do, and scores update as you go.', 'new'))));
+        quick('3 · Assess and treat', 'Run an assessment', (nSteps ? nSteps + ' guided steps' : 'Guided steps') + ' along the whole pathway, from referral to shared care: assessment, diagnosis, treatment plan, prescribing, titration and monitoring. For adults and young people aged 6 to 17. Each step tells you what to do, and scores update as you go.', 'new'))));
     el.appendChild(h('section', { class: 'section' }, h('h2', null, 'Look things up'),
       h('ul', { class: 'home-links' },
         link('Question bank', 'Every interview question and example, by symptom, life area or keyword.', 'bank'),
@@ -294,13 +324,22 @@
     return h('li', null, h('a', { class: 'home-link', href: '#' + go, 'data-go': go },
       h('span', { class: 'home-link-ico' }, icon(go)), h('span', { class: 'home-link-text' }, h('strong', null, title), h('span', null, body))));
   }
-  /* Where an assessment is up to: steps complete and the step it is on. */
+  /* Where an assessment is up to: steps complete and the step it is on.
+     A step whose progress is {of: 0} is not applicable yet (for example the treatment steps before a
+     diagnosis, or when medicine is not planned): it is neither complete nor counted in the total. */
   function stepState(a) {
     var steps = AA.STEP_LIST || [];
-    var done = steps.filter(function (s) { var pr = AA.diagnosis.stepProgress(a, s.id); return pr.done >= pr.of; }).length;
+    var done = 0, na = 0;
+    steps.forEach(function (s) {
+      var pr = null;
+      try { pr = AA.diagnosis.stepProgress(a, s.id); } catch (e) { pr = null; }
+      if (!pr) return;
+      if (!pr.of) { na++; return; }
+      if (pr.done >= pr.of) done++;
+    });
     var cur = steps.filter(function (s) { return s.id === (a.step || 'setup'); })[0];
     var idx = steps.indexOf(cur);
-    return { done: done, of: steps.length, label: cur ? 'Step ' + (idx + 1) + ': ' + cur.title : '' };
+    return { done: done, of: steps.length - na, na: na, label: cur ? 'Step ' + (idx + 1) + ': ' + cur.title : '' };
   }
 
   function assessmentRow(a) {
@@ -311,14 +350,15 @@
     var st = stepState(a);
     return h('div', { class: 'a-row' },
       h('div', { class: 'a-row-main' },
-        h('div', { class: 'a-row-title' }, (p.ref || 'Untitled patient') + (a.demo ? ' (demo)' : ''),
+        h('div', { class: 'a-row-title' }, (p.ref || 'Untitled patient') + (a.demo === 'young' ? ' (child demo)' : a.demo ? ' (demo)' : ''),
           ui.badge(labels[out.code], kinds[out.code]), a.status === 'complete' ? ui.badge('Completed', 'accent') : null),
         h('div', { class: 'a-row-meta' },
           h('span', null, [p.age ? p.age + ' y' : null, p.sex || null].filter(Boolean).join(', ') || 'Age not recorded'),
           h('span', null, 'Updated ' + U.fmtDate(a.updatedAt, true))),
         st.of ? h('div', { class: 'a-row-prog' },
           ui.progress(st.done, st.of, 'Steps complete'),
-          h('span', { class: 'a-row-step' }, st.done + ' of ' + st.of + ' steps complete' + (a.status !== 'complete' && st.label ? ' · ' + st.label : ''))) : null),
+          h('span', { class: 'a-row-step' }, st.done + ' of ' + st.of + ' steps complete' + (st.na ? ' (' + st.na + ' not applicable yet)' : '') +
+            (a.status !== 'complete' && st.label ? ' · ' + st.label : ''))) : null),
       h('div', { class: 'a-row-actions' },
         ui.btn({ label: a.status === 'complete' ? 'Open' : 'Continue', kind: 'primary', small: true, onClick: function () {
           AA.progress.set('lastAssessment', a.id); AA.router.go('assess-' + a.id + '-' + (a.step || 'setup'));
@@ -334,8 +374,10 @@
     el.appendChild(ui.pageHead({ eyebrow: 'About', title: 'About, privacy and data' }));
     el.appendChild(h('div', { class: 'grid-2' },
       h('section', { class: 'card' }, h('h2', null, 'What this app is'),
-        h('p', null, 'A training and decision-support workspace for clinicians who assess adults for ADHD. It follows the structure of the DIVA diagnostic interview (Kooij and Francken) and the DSM-5-TR and ICD-11 criteria, with UK NICE NG87 and international guidance for the wider assessment.'),
-        h('p', null, 'Interview questions and examples in this app are written for it. They do not reproduce the licensed DIVA-5 forms. Licensed instruments (for example DIVA-5, CAARS 2, BAARS-IV) are described and linked, not copied.'),
+        h('p', null, 'A training and decision-support workspace for clinicians who assess and treat ADHD in adults and in young people aged 6 to 17. One patient record runs from referral to shared care: assessment, diagnosis, treatment plan, pre-treatment checks, prescribing, titration, monitoring and the annual review. For a child under 6, it tells you to refer to a service with expertise in ADHD in young children.'),
+        h('p', null, 'It follows the structure of the DIVA diagnostic interview (Kooij and Francken) and the DSM-5-TR and ICD-11 criteria, with UK NICE NG87 for the wider assessment, treatment and monitoring.'),
+        h('p', null, 'Interview questions and examples in this app are written for it. They do not reproduce the licensed DIVA-5 or Young DIVA-5 forms. Licensed instruments (for example DIVA-5, CAARS 2, BAARS-IV, Conners 4, SDQ) are described and linked, not copied: you can enter their results.'),
+        h('p', null, 'Diagnosing ADHD and starting medicine belong to a specialist ADHD team. Anyone doing this, including a non-medical prescriber, needs the training and expertise for that medicine and age group, and agreed governance and supervision.'),
         h('p', { class: 'muted' }, 'It supports, and never replaces, a qualified clinician\'s judgement, local policy and the official instruments.')),
       h('section', { class: 'card' }, h('h2', null, 'Privacy'),
         h('p', null, 'Everything you enter stays in this browser (localStorage). Nothing is sent to a server. Anyone using this browser profile can read the data unless your profile has a PIN, and the PIN is a lock, not encryption.'),

@@ -15,14 +15,18 @@
    the official DOCX without changes).
    UK frame: NICE NG87 1.3.4 and 1.7.4, CG142 1.2.2-1.2.3, CG185 1.2.3, CG115 1.2.1.4, NG222, NG225
    1.6.1-1.6.3, NG202 1.1.1-1.1.4 and 1.3.1; RCPsych CR235 (2023); UKAAN AQAS (2024). ADHD-overlap notes marked as reasoning are clinical
-   inferences from item content, not validation data. */
+   inferences from item content, not validation data.
+   ageMin/ageMax (added 25 Oct 2026): inclusive whole years of the person being assessed; ageMax 120 means no upper
+   limit stated. These are adult tools (18+), except the AQ-10, offered from 16 as clinical practice because the
+   adolescent form stops at 15 (research brief 25 Oct 2026). Young people's screens (PHQ-A, MFQ, RCADS, CRAFFT, SCQ,
+   AQ-10 Child and Adolescent) are information-only entries at the end of tools-info.js. */
 AA.add('tools', [
 
   /* ------------------------------------------------------------------ PHQ-9 */
   {
     id: "phq9", abbr: "PHQ-9", name: "Patient Health Questionnaire-9",
     group: "mood", stage: ["pre", "comorbid", "risk", "followup"],
-    who: "Self-report by the patient. It can be read aloud.", time: "2-3 minutes", ages: "Adults", items_n: 9,
+    who: "Self-report by the patient. It can be read aloud.", time: "2-3 minutes", ages: "Adults", ageMin: 18, ageMax: 120, items_n: 9,
     purpose: "Measures how severe depressive symptoms have been over the last 2 weeks. Each of the 9 items matches one DSM criterion for a major depressive episode, and item 9 asks about thoughts of being better off dead or of self-harm. A tenth question, which is not scored, asks how much the problems get in the way of daily life.",
     when: "Send it with the pre-assessment pack and score it before the interview (Co-occurring conditions step). NICE NG87 1.3.4 asks for an assessment of coexisting conditions as part of diagnosis, and UKAAN's quality standard (AQAS 2024) lists depression scales among the optional pre-assessment questionnaires. Depression mimics inattention and changes the order of care: RCPsych CR235 advises treating a major mood disorder before assessing ADHD. Repeat it at follow-up: NICE NG222 suggests sessional measures such as the PHQ-9 for routine outcome monitoring.",
     how: "Ask the person to rate the last 2 weeks. Add items 1-9 (0-27). Read item 9 on its own, whatever the total, and act on it the same day. Then, for each item scored 2 or 3, ask: is this new or worse in recent weeks, or how you have always been? The difficulty question is recorded but not added to the score.",
@@ -37,10 +41,10 @@ AA.add('tools', [
       { n: 5, t: "Poor appetite or overeating" },
       { n: 6, t: "Feeling bad about yourself — or that you are a failure or have let yourself or your family down" },
       { n: 7, t: "Trouble concentrating on things, such as reading the newspaper or watching television" },
-      { n: 8, t: "Moving or speaking so slowly that other people could have noticed. Or the opposite — being so fidgety or restless that you have been moving around a lot more than usual" },
+      { n: 8, t: "Moving or speaking so slowly that other people could have noticed? Or the opposite — being so fidgety or restless that you have been moving around a lot more than usual" },
       { n: 9, t: "Thoughts that you would be better off dead or of hurting yourself in some way" },
       { n: 10, unscored: true, section: "Difficulty (not scored)", sectionNote: "The person's own view of impairment. It is not added to the total (PHQ instruction manual).",
-        t: "If you ticked any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?",
+        t: "If you checked off any problems, how difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?",
         opts: [{ v: 0, l: "Not difficult at all" }, { v: 1, l: "Somewhat difficult" }, { v: 2, l: "Very difficult" }, { v: 3, l: "Extremely difficult" }] }
     ],
     scoring: {
@@ -84,7 +88,7 @@ AA.add('tools', [
   {
     id: "gad7", abbr: "GAD-7", name: "Generalized Anxiety Disorder-7",
     group: "anxiety", stage: ["pre", "comorbid", "followup"],
-    who: "Self-report by the patient. It can be read aloud.", time: "1-2 minutes", ages: "Adults", items_n: 7,
+    who: "Self-report by the patient. It can be read aloud.", time: "1-2 minutes", ages: "Adults", ageMin: 18, ageMax: 120, items_n: 7,
     purpose: "Measures how severe anxiety symptoms have been over the last 2 weeks. It was built to screen for generalised anxiety disorder and also picks up panic disorder, social anxiety disorder and PTSD reasonably well (Kroenke 2007).",
     when: "Send it with the pre-assessment pack and score it before the interview (Co-occurring conditions step). UKAAN's quality standard lists anxiety scales among the optional pre-assessment questionnaires. Anxiety causes poor concentration, restlessness and irritability that can look like ADHD, and the two often coexist. RCPsych CR235 advises treating a clear anxiety disorder first. Repeat it at follow-up to track change.",
     how: "Ask about the last 2 weeks. Add the 7 items (0-21). Then look at items 1-3 and 7 (worry and fear) separately from items 4-6 (tension, restlessness, irritability), which ADHD can raise. The app shows both groups in the subscale table.",
@@ -95,10 +99,10 @@ AA.add('tools', [
       { n: 1, t: "Feeling nervous, anxious or on edge" },
       { n: 2, t: "Not being able to stop or control worrying" },
       { n: 3, t: "Worrying too much about different things" },
-      { n: 4, t: "Having trouble relaxing" },
+      { n: 4, t: "Trouble relaxing" },
       { n: 5, t: "Being so restless that it is hard to sit still" },
       { n: 6, t: "Becoming easily annoyed or irritable" },
-      { n: 7, t: "Feeling afraid, as if something awful might happen" }
+      { n: 7, t: "Feeling afraid as if something awful might happen" }
     ],
     scoring: {
       method: "sum",
@@ -140,7 +144,7 @@ AA.add('tools', [
   {
     id: "mdq", abbr: "MDQ", name: "Mood Disorder Questionnaire",
     group: "bipolar", stage: ["comorbid"],
-    who: "Self-report on the official form, then reviewed with the patient.", time: "About 5 minutes", ages: "Adults", items_n: 17,
+    who: "Self-report on the official form, then reviewed with the patient.", time: "About 5 minutes", ages: "Adults", ageMin: 18, ageMax: 120, items_n: 17,
     purpose: "Screens for a lifetime history of hypomania or mania (bipolar spectrum). Part 1 has 13 yes/no symptom questions about a period when the person was not their usual self. Part 2 asks whether several of these happened at the same time, and Part 3 how much trouble they caused. Two more questions (family history, previous diagnosis) are not scored.",
     when: "Use it in the Co-occurring conditions step when the history suggests mood episodes or there is a family history of bipolar disorder, and in any adult with depression, because bipolar disorder changes the order of treatment (RCPsych CR235 advises treating a clear bipolar disorder first). Use it only as a prompt for a structured interview about episodes: NICE CG185 1.2.3 says not to use questionnaires in primary care to identify bipolar disorder in adults.",
     how: "This is a score sheet. The questionnaire wording is not reproduced here. Give the patient the official form, then enter their answers. The labels are short content summaries for scoring, not the questionnaire items. A positive screen needs all three: 7 or more 'yes' answers in Part 1, 'yes' to Part 2, and 'moderate' or 'serious' problems in Part 3. Then go through every 'yes' with the patient and ask when it happened, how long it lasted and whether others noticed a change.",
@@ -194,7 +198,7 @@ AA.add('tools', [
   {
     id: "audit", abbr: "AUDIT", name: "Alcohol Use Disorders Identification Test (UK version)",
     group: "substance", stage: ["pre", "comorbid", "risk", "followup"],
-    who: "Self-report, or asked by the clinician.", time: "2-3 minutes", ages: "Adults", items_n: 10,
+    who: "Self-report, or asked by the clinician.", time: "2-3 minutes", ages: "Adults", ageMin: 18, ageMax: 120, items_n: 10,
     purpose: "Identifies hazardous and harmful drinking and possible alcohol dependence over the last year. Items 1-3 cover consumption (the AUDIT-C), items 4-6 dependence and items 7-10 alcohol-related harm. It was developed by the WHO; this is the UK version from the Office for Health Improvement and Disparities (OHID), which asks about UK units.",
     when: "In every adult ADHD assessment, or after a positive AUDIT-C (5 or more). Alcohol can cause or worsen inattention, poor sleep and low mood. NICE CG115 1.2.1.4 names the AUDIT for identification and as a routine outcome measure, and NICE NG87 1.7.4 asks for a risk assessment for substance misuse before ADHD medication is started.",
     how: "Explain UK units first, using the unit guide on the form. Ask about the last year. Items 1-8 score 0-4; items 9 and 10 score 0, 2 or 4. Add them up (0-40). In interview format, the WHO manual skips to items 9 and 10 if the answer to item 1 is 'Never', or if items 2 and 3 both score 0.",
@@ -266,7 +270,7 @@ AA.add('tools', [
   {
     id: "auditc", abbr: "AUDIT-C", name: "AUDIT-Consumption (UK version)",
     group: "substance", stage: ["pre", "comorbid", "physical"],
-    who: "Self-report, or asked by the clinician.", time: "About 1 minute", ages: "Adults", items_n: 3,
+    who: "Self-report, or asked by the clinician.", time: "About 1 minute", ages: "Adults", ageMin: 18, ageMax: 120, items_n: 3,
     purpose: "A 3-question alcohol screen: the consumption items of the AUDIT (how often, how many units on a typical day, and how often 6 or 8 or more units on one occasion).",
     when: "A quick first screen in the pre-assessment pack or at the start of the substance history. If the score is 5 or more, complete the remaining 7 AUDIT questions, as the OHID form advises (use the AUDIT tool in this app).",
     how: "Explain UK units first. Add the three items (0-12). In the UK version, 5 or more is a positive screen: go on to the full AUDIT.",
@@ -312,7 +316,7 @@ AA.add('tools', [
   {
     id: "dast10", abbr: "DAST-10", name: "Drug Abuse Screening Test, 10 items",
     group: "substance", stage: ["pre", "comorbid", "risk"],
-    who: "Self-report, or asked by the clinician.", time: "2-3 minutes", ages: "Adults", items_n: 10,
+    who: "Self-report, or asked by the clinician.", time: "2-3 minutes", ages: "Adults", ageMin: 18, ageMax: 120, items_n: 10,
     purpose: "Screens for problems from drug use (not alcohol) in the past 12 months. Drug use means taking prescribed or over-the-counter medicines beyond the directions, or any non-medical use of drugs.",
     when: "In every adult ADHD assessment, before the interview. Cannabis, stimulants and other drugs can mimic or worsen ADHD symptoms, and NICE NG87 1.7.4 asks for a risk assessment for substance misuse and drug diversion before ADHD medication is started.",
     how: "Read out what 'drug use' means first, and say that prescribed medicine taken as directed does not count. Score 1 for each 'yes', except item 3, where 'no' scores 1. Total 0-10. Then take a drug history: which drugs, how much, how often and what they do for the person.",
@@ -321,9 +325,9 @@ AA.add('tools', [
     options: [{ v: 1, l: "Yes" }, { v: 0, l: "No" }],
     items: [
       { n: 1, t: "Have you used drugs other than those required for medical reasons?" },
-      { n: 2, t: "Do you use more than one drug at a time?" },
+      { n: 2, t: "Do you abuse more than one drug at a time?" },
       { n: 3, t: "Are you always able to stop using drugs when you want to?", score: { "1": 0, "0": 1 } },
-      { n: 4, t: "Have you had “blackouts” or “flashbacks” as a result of your drug use?" },
+      { n: 4, t: "Have you had “blackouts” or “flashbacks” as a result of drug use?" },
       { n: 5, t: "Do you ever feel bad or guilty about your drug use?" },
       { n: 6, t: "Does your spouse (or parents) ever complain about your involvement with drugs?" },
       { n: 7, t: "Have you neglected your family because of your use of drugs?" },
@@ -366,7 +370,7 @@ AA.add('tools', [
     id: "aq10", abbr: "AQ-10", name: "Autism Spectrum Quotient, 10 items (Adult)",
     group: "autism", stage: ["referral", "pre", "comorbid"],
     who: "Self-report. Read it aloud if the person has reading difficulties (NICE CG142 1.2.3).", time: "About 2 minutes",
-    ages: "Adults without a moderate or severe learning disability (NICE CG142)", items_n: 10,
+    ages: "Adults without a moderate or severe learning disability (NICE CG142). No age is printed on the form. The adolescent version covers 12-15, so at 16-17 this app offers the adult form as clinical practice.", ageMin: 16, ageMax: 120, items_n: 10,
     purpose: "A 10-item quick referral guide for autism in adults who do not have a learning disability. NICE CG142 recommends it for adults with possible autism.",
     when: "When there are persistent social-communication difficulties, rigid or repetitive behaviour, restricted interests or sensory differences. NICE CG142 1.2.2 advises considering an autism assessment when a person has such difficulties plus one of several other features, one of which is a history of a neurodevelopmental condition such as ADHD, so many adults referred for ADHD meet the conditions for using it. UKAAN's quality standard lists the AQ-10 as an optional pre-assessment questionnaire.",
     how: "Ask the person to tick one answer per item. Each item scores 0 or 1: either 'agree' answer scores on items 1, 7, 8 and 10; either 'disagree' answer scores on items 2, 3, 4, 5, 6 and 9. Total 0-10.",
@@ -418,7 +422,7 @@ AA.add('tools', [
   {
     id: "pcl5", abbr: "PCL-5", name: "PTSD Checklist for DSM-5",
     group: "trauma", stage: ["comorbid", "followup"],
-    who: "Self-report by the patient.", time: "5-10 minutes", ages: "Adults", items_n: 20,
+    who: "Self-report by the patient.", time: "5-10 minutes", ages: "Adults", ageMin: 18, ageMax: 120, items_n: 20,
     purpose: "Measures DSM-5 PTSD symptoms over the past month, tied to the person's worst stressful event. It gives a severity total (0-80) and a provisional check against the DSM-5 symptom pattern.",
     when: "In the Co-occurring conditions step when the history includes trauma, or after a positive PC-PTSD-5. PTSD causes poor concentration, irritability, risk-taking and sleep problems that can look like ADHD. It can also be repeated to track change.",
     how: "First establish that there was a qualifying traumatic event. The PCL-5 does not check this: use the version with the LEC-5 and a Criterion A question if needed. Ask the person to keep their worst event in mind and rate the past month. Add the 20 items (0-80). The app also checks the DSM-5 pattern, counting an item rated 2 ('Moderately') or more as endorsed.",
@@ -482,7 +486,7 @@ AA.add('tools', [
   {
     id: "msibpd", abbr: "MSI-BPD", name: "McLean Screening Instrument for Borderline Personality Disorder",
     group: "personality", stage: ["comorbid"],
-    who: "Self-report on the published questionnaire, then reviewed with the patient.", time: "2-3 minutes", ages: "Adults (validated aged 18-59)", items_n: 10,
+    who: "Self-report on the published questionnaire, then reviewed with the patient.", time: "2-3 minutes", ages: "Adults (validated aged 18-59)", ageMin: 18, ageMax: 59, items_n: 10,
     purpose: "A 10-item yes/no screen for borderline personality disorder. The items follow the DSM-IV criteria for the disorder.",
     when: "In the Co-occurring conditions step when the history includes marked emotional instability, self-harm, chaotic relationships or fears of abandonment. These overlap with ADHD emotional dysregulation, and the two conditions often coexist.",
     how: "This is a score sheet. The questionnaire wording is not reproduced here. Give the patient the published questionnaire (Zanarini 2003), then record each answer. The labels are short content summaries for scoring. Count the 'yes' answers (0-10). Go through the endorsed items at interview.",
@@ -531,7 +535,7 @@ AA.add('tools', [
   {
     id: "stopbang", abbr: "STOP-Bang", name: "STOP-Bang questionnaire for obstructive sleep apnoea",
     group: "sleep", stage: ["comorbid", "physical"],
-    who: "Clinician with the patient (needs blood pressure history, BMI and neck size), ideally with a bed partner's report.", time: "About 2 minutes", ages: "Adults", items_n: 8,
+    who: "Clinician with the patient (needs blood pressure history, BMI and neck size), ideally with a bed partner's report.", time: "About 2 minutes", ages: "Adults", ageMin: 18, ageMax: 120, items_n: 8,
     purpose: "Screens for obstructive sleep apnoea (OSA). Eight yes/no questions cover loud snoring, daytime tiredness, observed pauses in breathing, treated high blood pressure, BMI over 35, age over 50, a large neck and male sex.",
     when: "When an adult reports loud snoring, witnessed pauses in breathing, unrefreshing sleep, morning headaches or dozing in the day, especially with obesity or high blood pressure, or when attention problems began in adulthood. OSA causes inattention, poor memory and irritability that can look like ADHD. NICE NG202 1.1.1 advises assessing for OSA when 2 or more features are present (its list includes snoring, witnessed apnoeas, unrefreshing sleep, waking headaches, unexplained sleepiness or fatigue, and cognitive dysfunction or memory impairment). NICE NG202 1.1.3 says to use the Epworth Sleepiness Scale and to consider the STOP-Bang as well.",
     how: "Use the official questionnaire from stopbang.ca (check your organisation's licence with University Health Network). Count the 'yes' answers and apply the risk rules below. Use it with the Epworth Sleepiness Scale, not instead of a sleep history: NICE NG202 1.1.4 warns that not everyone with OSA is sleepy. Refer to the local sleep service if OSA is likely.",
@@ -568,7 +572,7 @@ AA.add('tools', [
   {
     id: "cssrs", abbr: "C-SSRS", name: "Columbia-Suicide Severity Rating Scale, Screen Version (Recent, with triage points)",
     group: "risk", stage: ["risk", "comorbid", "followup"],
-    who: "Asked by the clinician. Columbia says no mental health training is needed to use it.", time: "1-3 minutes", ages: "Adults", items_n: 6,
+    who: "Asked by the clinician. Columbia says no mental health training is needed to use it.", time: "1-3 minutes", ages: "Adults", ageMin: 18, ageMax: 120, items_n: 6,
     purpose: "A short, structured set of questions about suicidal thoughts in the past month and suicidal behaviour over the lifetime and in the past 3 months. On the Columbia form some answers carry triage points (yellow, orange, red) that show how urgently a clinician needs to respond.",
     when: "In the Safety and risk step, whenever PHQ-9 item 9 is positive, the person mentions self-harm or suicidal thoughts, or you have any concern. UK guidance expects a risk assessment in every adult ADHD assessment (UKAAN AQAS; RCPsych CR235). Use it as a structured way to ask, not as a risk score: NICE NG225 1.6.1-1.6.3 says not to use risk tools or scales to predict suicide or repeat self-harm, or to decide who is offered treatment or discharged, and not to sort people into low, medium or high risk to predict suicide.",
     how: "Ask the questions in order, directly and calmly. Always ask questions 1 and 2. If question 2 is 'yes', ask 3, 4, 5 and 6. If question 2 is 'no', go straight to 6 and mark 3-5 as not asked. If question 6 is 'yes', ask whether it was within the past 3 months. Then explore what the person has told you, agree a safety plan and record it.",
@@ -588,7 +592,7 @@ AA.add('tools', [
         opts: [{ v: 1, l: "Yes" }, { v: 0, l: "No" }, { v: "na", l: "Not asked (No to 2)" }] },
       { n: 6, section: "Lifetime", t: "Have you ever done anything, started to do anything, or prepared to do anything to end your life?",
         sub: "Examples: Took pills, tried to shoot yourself, cut yourself, or hang yourself, took out pills but didn’t swallow any, held a gun but changed your mind or it was grabbed from your hand, went to the roof but didn’t jump, collected pills, obtained a gun, gave away valuables, wrote a will or suicide note, etc." },
-      { n: 7, t: "Follow-up to question 6. If YES: Was this within the past three months?",
+      { n: 7, t: "If YES, ask: Was this within the past 3 months?",
         opts: [{ v: 1, l: "Yes" }, { v: 0, l: "No" }, { v: "na", l: "Not asked (No to 6)" }] }
     ],
     scoring: {
@@ -636,7 +640,7 @@ AA.add('tools', [
   {
     id: "cageaid", abbr: "CAGE-AID", name: "CAGE Adapted to Include Drugs",
     group: "substance", stage: ["comorbid"],
-    who: "Self-report, or asked by the clinician.", time: "About 1 minute", ages: "Adults", items_n: 4,
+    who: "Self-report, or asked by the clinician.", time: "About 1 minute", ages: "Adults", ageMin: 18, ageMax: 120, items_n: 4,
     purpose: "Four yes/no questions about drinking or drug use over the lifetime: wanting to Cut down, being Annoyed by criticism, feeling Guilty, and using first thing in the morning as an Eye-opener. It adapts the CAGE alcohol questions to include drugs.",
     when: "An optional quick screen for alcohol and drug problems together. For current problems prefer the AUDIT (or AUDIT-C) and the DAST-10, because the CAGE-AID asks whether something has ever happened.",
     how: "Use the official form. Include illegal drugs and prescription drugs used other than as prescribed. Count the 'yes' answers (0-4).",
@@ -667,7 +671,7 @@ AA.add('tools', [
   {
     id: "pcptsd5", abbr: "PC-PTSD-5", name: "Primary Care PTSD Screen for DSM-5",
     group: "trauma", stage: ["pre", "comorbid"],
-    who: "Self-report, or asked by the clinician.", time: "1-2 minutes", ages: "Adults", items_n: 5,
+    who: "Self-report, or asked by the clinician.", time: "1-2 minutes", ages: "Adults", ageMin: 18, ageMax: 120, items_n: 5,
     purpose: "A 5-item yes/no screen for probable PTSD over the past month. It starts with a question about lifetime exposure to a traumatic event.",
     when: "As a quick screen in the pre-assessment pack or the Co-occurring conditions step when trauma is reported or suspected. NICE NG116 suggests a validated brief PTSD screen in some groups (for example after major disasters and for refugees and asylum seekers) without naming one. If positive, go on to the PCL-5 and a clinical interview.",
     how: "Ask the trauma question first. If the answer is 'no', the screen ends with a score of 0. If 'yes', ask the 5 questions about the past month and count the 'yes' answers (0-5).",
@@ -711,7 +715,7 @@ AA.add('tools', [
   {
     id: "itq", abbr: "ITQ", name: "International Trauma Questionnaire (ICD-11 PTSD and complex PTSD)",
     group: "trauma", stage: ["comorbid"],
-    who: "Self-report by the patient.", time: "About 5 minutes", ages: "Adults", items_n: 18,
+    who: "Self-report by the patient.", time: "About 5 minutes", ages: "Adults", ageMin: 18, ageMax: 120, items_n: 18,
     purpose: "Measures ICD-11 PTSD and complex PTSD. Six PTSD items (re-experiencing in the here and now, avoidance, sense of current threat) and six 'disturbances in self-organisation' (DSO) items (affective dysregulation, negative self-concept, disturbed relationships), each set followed by three impairment questions. Diagnosis uses a fixed algorithm, not a cut-off.",
     when: "In the Co-occurring conditions step when there is a trauma history and the picture includes long-standing emotional dysregulation, low self-worth and relationship difficulties, which overlap with both ADHD and complex PTSD. It is the ICD-11-based alternative to the PCL-5.",
     how: "Ask the person to name the experience that troubles them most and when it happened. They rate each item 0-4: the PTSD items for the past month, the DSO items for how true they typically are. Then apply the algorithm by hand (see Interpretation): an item counts as endorsed when it is rated 2 ('Moderately') or more. The app shows the item ratings and the cluster scores.",
@@ -781,7 +785,7 @@ AA.add('tools', [
   {
     id: "pq16", abbr: "PQ-16", name: "Prodromal Questionnaire, 16 items",
     group: "psychosis", stage: ["comorbid"],
-    who: "Self-report by the patient.", time: "About 5 minutes", ages: "People seeking help from mental health services (validated in a general help-seeking population)", items_n: 16,
+    who: "Self-report by the patient.", time: "About 5 minutes", ages: "People seeking help from mental health services (validated in a general help-seeking population). No age range was found in the sources checked; this app treats it as an adult tool (clinical practice).", ageMin: 18, ageMax: 120, items_n: 16,
     purpose: "Screens help-seeking people for an ultra-high-risk (prodromal) state for psychosis. Sixteen true/false items: 9 on unusual perceptions, 5 on unusual thoughts or suspiciousness, and 2 on negative symptoms. Each 'true' answer is followed by a distress rating.",
     when: "In the Co-occurring conditions step when the history includes unusual perceptual experiences, suspiciousness or a decline in functioning. Psychotic symptoms are not features of ADHD and represent another diagnosis (RCPsych CR235).",
     how: "Use the published questionnaire. Count the 'true' answers (0-16). A positive screen needs a specialist interview, such as the CAARMS, not a label.",
@@ -813,7 +817,7 @@ AA.add('tools', [
   {
     id: "raads14", abbr: "RAADS-14", name: "Ritvo Autism Asperger Diagnostic Scale, 14-item Screen",
     group: "autism", stage: ["comorbid"],
-    who: "Self-report by the patient.", time: "3-5 minutes", ages: "Adults (validated in adult psychiatric outpatients)", items_n: 14,
+    who: "Self-report by the patient.", time: "3-5 minutes", ages: "Adults (validated in adult psychiatric outpatients)", ageMin: 18, ageMax: 120, items_n: 14,
     purpose: "A 14-item autism screen for adult psychiatric outpatients, drawn from the RAADS-R. It was validated against an ADHD comparison group. Each answer records whether a statement is true now and in childhood, only now, only before 16, or never.",
     when: "In the Co-occurring conditions step when autism is possible in an adult referred for ADHD (NICE CG142 1.2.2). It is more useful than the AQ-10 in ADHD clinics because it was tested against adults with ADHD, but about half of them still score above the cut-off.",
     how: "Ask the person to choose one answer per statement. Score 3 for 'true now and when I was young', 2 for 'true only now', 1 for 'true only when I was younger than 16' and 0 for 'never true'. Item 6 is reverse scored. Total 0-42.",

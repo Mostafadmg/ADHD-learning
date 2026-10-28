@@ -9,7 +9,10 @@ AA.add('symptoms', [{
   why: "Weak response inhibition: the reply is formed and released before the brake engages, especially when the person is interested, excited or emotionally involved. Limited working memory adds pressure, because a thought that is not voiced at once may be lost, and delay aversion makes waiting for the speaker to finish feel uncomfortable.",
   ask: {
     adult: "Over the last six months, how often have you found yourself answering before someone has finished their question, or finishing other people's sentences for them? Can you give me a recent example?",
-    child: "When you were at primary school, between about 5 and 12, did you call out answers before the teacher had finished asking, or jump in before other people had finished speaking? What do you remember, and what did teachers or your parents say about it?"
+    child: "When you were at primary school, between about 5 and 12, did you call out answers before the teacher had finished asking, or jump in before other people had finished speaking? What do you remember, and what did teachers or your parents say about it?",
+    parent: "Over the last six months, how often does your child answer before you have finished asking, or jump in before others have finished speaking, compared with other children their age? Can you give me a recent example?",
+    teen: "Over the last six months, how often do you answer before someone has finished asking, finish other people's sentences, or say things before thinking them through? Can you give me an example?",
+    teacher: "Compared with others in the class, how often does this pupil call out answers before you have finished the question or before being asked? Does it carry on despite rewards or reminders about hands up?"
   },
   rephrase: [
     "How often do you answer before people have finished asking you something? Tell me about the last time.",
@@ -198,12 +201,16 @@ AA.add('symptoms', [{
         "Parent: 'always had to get the first word in'",
         "Parent: 'never could keep a secret or a surprise'"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16)", items: [
+      { ctx: "teen", label: "Secondary school and college (12-17)", items: [
         "Sent out of lessons for shouting out",
         "Detentions for remarks made in class without thinking",
         "Blurted out comments that got laughs and then trouble",
         "Posted comments online that upset friends or got them into trouble",
-        "Answered questions in oral exams before hearing them out"
+        "Answered questions in oral exams before hearing them out",
+        "Replies in group chats before reading the whole message",
+        "Answers customers or managers at work before they finish speaking",
+        "Finishes friends' sentences, which annoys them",
+        "Jumps in during class discussions before others can speak"
       ] }
     ]
   },
@@ -302,6 +309,14 @@ AA.add('symptoms', [{
       "Enthusiastic contributions, but often called out",
       "Can make remarks that upset others without meaning to",
       "Has been moved seats to reduce calling out"
+    ],
+    teacher: [
+      "Calls out answers despite reminders about hands up",
+      "Answers before the question is finished, often wrongly",
+      "Says things without thinking that upset others",
+      "Comments aloud on what I am saying",
+      "Answers questions meant for other pupils",
+      "In trouble for calling out more than others"
     ]
   },
   counts: [
@@ -358,7 +373,8 @@ AA.add('symptoms', [{
     highIQ: "Able people often know the answer early, so a fast reply may be accurate and even valued. Look for cost instead: answering the wrong question, colleagues who stop contributing, feedback about letting others speak, or exhaustion from holding back. Speed alone is not the symptom.",
     sud: "Alcohol, cocaine and other stimulants loosen the filter and speed up speech. Establish whether blurting happens when sober and whether it predates substance use, ideally with a parent's account of childhood.",
     asd: "Autistic people may also talk over others, but usually because it is hard to judge when a turn ends or because of a strong focus on a topic, not because of an urge that cannot be held back. Ask what drives it: an urge to release a thought before it is lost points to ADHD, while uncertainty about conversational rules points to autism. Both can be present.",
-    culture: "Norms for overlapping talk differ: in some cultures and families talking over each other shows interest and is not rude. Judge against the person's own cultural and family norms and ask whether it causes problems within their own community. People using a second language may finish sentences to show they have understood or to help the speaker."
+    culture: "Norms for overlapping talk differ: in some cultures and families talking over each other shows interest and is not rude. Judge against the person's own cultural and family norms and ask whether it causes problems within their own community. People using a second language may finish sentences to show they have understood or to help the speaker.",
+    young: "Calling out is common in the youngest primary classes, so compare with children of the same age and allow for the youngest in the year. Girls may learn to hold back in class and show this mainly at home or with friends, so ask about both settings. Enthusiasm with no wider effect does not count on its own; look for a pattern that causes trouble."
   },
   refs: [
     "DSM-5-TR (APA 2022), criterion A2g, paraphrased",
@@ -366,6 +382,8 @@ AA.add('symptoms', [{
     "Kooij JJS et al. Updated European consensus statement on adult ADHD. Eur Psychiatry 2019;56:14-34",
     "DIVA 2.0 structure (Kooij and Francken 2010); question and example wording original",
     "ASRS v1.1 item 16 (WHO 2003)",
-    "Clinical practice"
+    "Clinical practice",
+    "NICE NG87 1.2.2 (under-recognition in girls), 1.3.5 (criteria adjusted for age) and 1.3.6 (children's views)",
+    "Parent, young person and teacher questions, teacher comments and young-person notes: clinical practice"
   ]
 }]);

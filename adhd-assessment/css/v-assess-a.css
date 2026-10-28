@@ -40,6 +40,35 @@
 .as-meter { flex: 1 1 160px; max-width: 320px; }
 .as-checkgrid { display: grid; gap: 0 1.4rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
 
+/* Age group: banner beside the age field (a left bar, not a box), and the under-6 stop card. */
+.as-agecard .form-grid { align-items: start; }
+.as-bandhost:empty { display: none; }
+.as-bandnone { margin: 0; max-width: 70ch; }
+.as-band { border-left: 4px solid var(--line-2); padding: .2rem 0 .2rem .9rem; max-width: 74ch; }
+.as-band-young { border-left-color: var(--accent); }
+.as-band-stop { border-left-color: var(--err); }
+.as-band > p { margin: .3rem 0 0; }
+.as-band > .as-band-k { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem .6rem; margin: 0; font-weight: 700; }
+.as-band > .hint { margin-top: .35rem; }
+.as-stop { border-left: 4px solid var(--err); }
+.as-stop > h2 { color: var(--err); }
+.as-stop-lead { font-weight: 700; font-size: 1.05rem; max-width: 70ch; }
+.as-stop .list { max-width: 72ch; }
+.as-stop > .row { margin: .9rem 0 .2rem; }
+
+/* Young person: consent, school and scripts. */
+.as-senhint { margin: .35rem 0 .5rem; }
+.as-basisdesc { margin: .4rem 0 .3rem; max-width: 72ch; }
+.as-subfield { margin: .1rem 0 .5rem 1.85rem; max-width: 26rem; }
+.as-card > .seg-field { margin: .3rem 0 0; }
+.as-card .tabs-wrap .as-script { margin-top: 0; }
+.as-confirm .as-warnmsg { margin: 0 0 .3rem 1.85rem; }
+.as-srcend { margin: .4rem 0 1rem; }
+.as-srcend .guide-src { margin: 0; }
+/* Sources by area or by item inside the closed Sources disclosure (history and risk steps). */
+.as-srclist { list-style: none; margin: .3rem 0 0; padding: 0; display: grid; gap: .25rem; }
+.as-srclist .source { margin: 0; overflow-wrap: anywhere; }
+
 /* ---------- Results table (screening and co-occurring) ---------- */
 .as-sum .table th[scope="row"] { min-width: 11rem; }
 .as-sum .table td { vertical-align: middle; }
@@ -85,6 +114,14 @@
 .as-aboutbody > p:first-child { margin-top: 0; }
 .as-aboutbody p { max-width: 75ch; }
 .as-abouth { font-size: .9rem; margin: .9rem 0 .2rem; }
+/* Result entry for licensed (information-only) tools. */
+.as-result > p:first-child { margin-top: .6rem; max-width: 75ch; }
+.as-lic { font-size: .85rem; color: var(--muted); margin: .4rem 0 0; max-width: 78ch; }
+.as-lic a { display: inline-flex; align-items: center; min-height: 32px; font-weight: 600; }
+.as-result .form-grid { margin: .2rem 0 .7rem; }
+.as-resultsegs { display: flex; flex-direction: column; gap: .6rem; margin: 0 0 .8rem; }
+.as-mres { font-weight: 700; overflow-wrap: anywhere; }
+.as-rater { color: var(--muted); font-size: .85rem; }
 .as-pointsbox { margin: .8rem 0 0; }
 .as-pointsbox:empty { display: none; }
 .as-pointsbox > .as-strong { margin-top: 0; }

@@ -78,7 +78,7 @@ AA.add('stepGuide', {
       "I will come back to some of these answers later and ask you for real examples."
     ],
     watch: [
-      "A diagnosis should not be made on rating scales alone (NICE NG87 1.3.2). UKAAN goes further: self-report symptom scales should only provide a baseline for measuring change after diagnosis and treatment, not evidence for the diagnosis (AQAS 2024).",
+      "NICE says a diagnosis should not be made on rating scales alone. UKAAN goes further: self-report symptom scales should only provide a baseline for measuring change after diagnosis and treatment, not evidence for the diagnosis (AQAS 2024).",
       "Positive screens are common in depression, anxiety, bipolar disorder, borderline personality disorder and substance use. In people in substance use treatment, the ASRS screen had a positive predictive value of only 0.26 (van de Glind et al. 2013; May et al. 2023).",
       "A negative screen does not exclude ADHD. People with low insight, strong compensation or high ability may under-report (Kooij et al. 2019).",
       "Retrospective childhood scales depend on memory and current mood. Contemporaneous school reports and informants carry more weight.",
@@ -175,7 +175,7 @@ AA.add('stepGuide', {
       "Trait or state: ADHD is trait-like and present since childhood, while depression, bipolar disorder and many anxiety disorders have a more discrete onset and an episodic or fluctuating course. Date every episode (CR235 9.7).",
       "Substance use can mimic or mask ADHD. The order of onset, and how the person is when not using, are the key tests (ICD-11 CDDR).",
       "A structured home, a supportive school or high ability can hide childhood problems. Ask who organised them and what coping costs them now (AQAS 2024; CR235 9.2).",
-      "ADHD is thought to be under-recognised in women, who may be more likely to receive an incorrect diagnosis of another mental health or neurodevelopmental condition (NICE NG87 1.2.2).",
+      "NICE warns that ADHD is thought to be under-recognised in women, who may be more likely to receive an incorrect diagnosis of another mental health or neurodevelopmental condition.",
       "Psychotic symptoms are not part of ADHD and point to a separate diagnosis. Assess them, and treat them first if active (CR235 9.7.9; Kooij et al. 2019 section 7.2)."
     ],
     done: [
@@ -341,7 +341,7 @@ AA.add('stepGuide', {
       "Confirm that the current symptoms have lasted at least 6 months and are present most of the time, not only in bad patches.",
       "Rate adult impairment in each of the seven areas. Ask what happens, how often and what it has cost, tick examples, and choose None, Mild, Moderate or Severe against What each level means here.",
       "Rate childhood and adolescence the same way, using memories, informants and school reports.",
-      "Check the live criteria. The app shows C as met when two or more areas are affected, and D as met when any area is at least moderate. Criterion C is about symptoms showing in two or more settings, so also check that your symptom examples come from more than one setting. For UK practice, check that at least two areas are moderate or severe (AQAS 2024, applying NICE NG87 1.3.3).",
+      "Check the live criteria. The app shows C as met when two or more areas are affected, and D as met when any area is at least moderate. Criterion C is about symptoms showing in two or more settings, so also check that your symptom examples come from more than one setting. For UK practice, check that at least two areas are moderate or severe: this is how UKAAN applies the NICE threshold.",
       "Write a short note on onset and the main areas of impairment, in the patient's words. The report draws on it."
     ],
     say: [
@@ -352,7 +352,7 @@ AA.add('stepGuide', {
       "What would be different in your life if these difficulties were not there?"
     ],
     watch: [
-      "Criterion B needs several symptoms before 12, not a diagnosis at that age. Structure and support can hide problems, and NICE advises against excluding ADHD because of an uncertain time of onset (NICE NG87 1.3.3; CR235 9.2).",
+      "Criterion B needs several symptoms before 12, not a diagnosis at that age. Structure and support can hide problems (CR235 9.2), and NICE advises against excluding ADHD because of an uncertain time of onset.",
       "UK guidance does not support diagnosing ADHD that starts in adulthood with no childhood symptoms (BAP 2014), and 'late-onset ADHD' remains controversial. Most apparent late onset still meets the before-12 rule on careful history; check impairment, psychiatric history and substance use (Kooij et al. 2019 section 5.3).",
       "Abrupt onset of hyperactivity or inattention in adolescence or adulthood suggests another cause, such as bipolar disorder, psychosis, substances or a medical condition (ICD-11 CDDR).",
       "Rate impairment caused by the ADHD symptoms only, not impairment caused by depression, substance use or life events alone.",
@@ -527,10 +527,10 @@ AA.add('stepGuide', {
     ],
     watch: [
       "Do not count your way to a diagnosis. Reaching the threshold is necessary but not enough: criteria B to E and clinical judgement matter as much (AQAS 2024; CR235 9.2).",
-      "Mild impairment alone may satisfy the DSM-5-TR wording but does not meet the NICE NG87 1.3.3 threshold for a diagnosis in UK practice. Record which standard you applied and why.",
+      "Mild impairment alone may satisfy the DSM-5-TR wording but does not meet the NICE threshold (at least moderate impairment) for a diagnosis in UK practice. Record which standard you applied and why.",
       "Say which system you used. DSM-5-TR uses fixed symptom counts; ICD-11 asks for several symptoms and has no severity or remission specifier. Presentation describes the last 6 months and can change over time.",
       "The F90 codes shown are US ICD-10-CM codes that go with DSM-5-TR. WHO ICD-10, still used for NHS hospital coding, uses the same numbers differently: the WHO crosswalk maps combined presentation to F90.0, predominantly hyperactive-impulsive to F90.8, and inattention without hyperactivity to F98.8. Follow your local coding rules.",
-      "If criteria are not met, say whether this is subthreshold ADHD or symptoms better explained by another condition, and still give information (NICE NG87 1.4.4; AQAS 2024).",
+      "If criteria are not met, say whether this is subthreshold ADHD or symptoms better explained by another condition, and still give information: NICE and UKAAN both advise this.",
       "Evidence strength and the DIVA 2.0 score form view (DSM-IV rules) are aids for comparison, not validated scales. Your clinical judgement makes the decision."
     ],
     done: [
@@ -556,7 +556,7 @@ AA.add('stepGuide', {
       "Give the outcome in plain language: what you found, why, and what it means. Allow time for questions and for the patient to take it in. Feedback can be a separate appointment.",
       "If ADHD is diagnosed, hold the structured discussion: positives and negatives of the diagnosis, impulsive behaviour, environmental changes, education and work adjustments, relationships, coexisting conditions, the risk of substance misuse and self-medication, and driving.",
       "Agree the plan and tick the items that fit your decision: information and support groups, environmental modifications, treatment options and follow-up. Before any treatment starts, agree measurable goals and ask the GP about shared care for future prescribing (AQAS 2024 Table 2).",
-      "If medication is an option, make sure the baseline is done: pulse, blood pressure, height, weight and a cardiovascular assessment. Refer to cardiology if any NICE NG87 1.7.5 feature is present.",
+      "If medication is an option, make sure the baseline is done: pulse, blood pressure, height, weight and a cardiovascular assessment. Ask for a cardiology opinion before starting if any of the NICE heart-history features is present.",
       "Explain the driving rule: the patient must tell the DVLA (DVA in Northern Ireland) only if their ADHD or its medication affects their ability to drive safely.",
       "If ADHD is not diagnosed, explain the alternative explanation or what is still unclear, and give information and signposting all the same.",
       "Read the draft report: symptoms with examples, scale scores, collateral, conditions present and absent, the statement that the symptoms are not better explained by another disorder, presentation, impaired domains and the plan. It is built from your entries, so correct an earlier step if a line is wrong. The report must support its own conclusion.",
@@ -571,10 +571,10 @@ AA.add('stepGuide', {
       "You only need to tell the DVLA if your ADHD or your medication affects your ability to drive safely."
     ],
     watch: [
-      "Medication is offered to adults whose symptoms still cause significant impairment in at least one domain after environmental modifications have been made and reviewed (NICE NG87 1.5.15).",
-      "An ECG is not needed before medication unless there is a NICE NG87 1.7.5 feature or the person takes a medicine with increased cardiac risk (NG87 1.7.4).",
+      "NICE recommends medication for adults whose symptoms still cause significant impairment in at least one domain after environmental modifications have been made and reviewed.",
+      "An ECG is not needed before medication unless one of the NICE heart-history features is present, or a coexisting condition is treated with a medicine that may increase cardiac risk.",
       "Check every generated sentence against your notes before it goes into the record. The report must state that the symptoms are not better explained by another disorder (AQAS 2024).",
-      "People who are told they do not have ADHD can feel dismissed. Explain the alternative and the next step clearly, and offer information (NICE NG87 1.4.4).",
+      "People who are told they do not have ADHD can feel dismissed. Explain the alternative and the next step clearly, and offer information about support groups, websites and help with education and work.",
       "Keep today's scale scores as a baseline, so change after treatment can be measured (AQAS 2024)."
     ],
     done: [

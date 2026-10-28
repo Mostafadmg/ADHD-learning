@@ -9,7 +9,10 @@ AA.add('symptoms', [{
   why: "Weak inhibition of motor and vocal output, combined with a strong need for stimulation: calm, low-arousal activity feels uncomfortable, so the person adds noise or activity to stay engaged. Poor self-monitoring means they often do not notice their own volume until someone tells them.",
   ask: {
     adult: "Over the last six months, when you have had free time, how easy has it been to do something calmly and quietly, like reading, watching a film or just relaxing at home? Can you give me a recent example of what usually happens?",
-    child: "Thinking back to primary school, roughly age 5 to 12, what were you like when you were meant to play or do something quietly, like drawing, reading or watching TV? What do you remember, and what did your family or teachers say?"
+    child: "Thinking back to primary school, roughly age 5 to 12, what were you like when you were meant to play or do something quietly, like drawing, reading or watching TV? What do you remember, and what did your family or teachers say?",
+    parent: "Over the last six months, can your child play or spend free time quietly, for example with Lego, drawing, reading or a film, as well as other children their age, or does it usually become loud and noisy? Can you give me a recent example?",
+    teen: "Over the last six months, what are you like when you are meant to do something quietly in your free time, like reading, watching a film or being in a library or quiet room? Do people often ask you to keep the noise down?",
+    teacher: "Compared with others in the class, how well does this pupil manage quiet times, such as silent reading, quiet choosing time or wet play? Do they make noises or turn quiet activities into loud ones?"
   },
   rephrase: [
     "When you sit down to relax, how calm and quiet do you manage to stay? Talk me through what usually happens.",
@@ -204,12 +207,16 @@ AA.add('symptoms', [{
         "Nicknamed 'the noisy one' at home",
         "Grandparents said the house was never quiet when they came to stay"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16)", items: [
+      { ctx: "teen", label: "Secondary school and college (12-17)", items: [
         "Got detentions for noise in study periods or the library",
         "Played music loudly from a phone or speaker on buses or at school",
         "Friends' parents said they were too loud in the house",
         "Was moved during tests for making noises",
-        "Family or neighbours complained about loud music or gaming late at night"
+        "Family or neighbours complained about loud music or gaming late at night",
+        "Shouts or talks loudly while gaming online with friends",
+        "Cannot watch a film without commenting aloud the whole way through",
+        "Is asked to keep the noise down at a part-time job",
+        "Turns quiet nights in with friends into loud, rowdy ones"
       ] }
     ]
   },
@@ -312,6 +319,14 @@ AA.add('symptoms', [{
       "Descriptions of overexcitement in assemblies, trips or performances",
       "Notes that quiet tasks such as reading are hard to settle into",
       "Similar comments across several years and from different teachers"
+    ],
+    teacher: [
+      "Struggles with quiet reading time",
+      "Hums, sings or makes sound effects while working",
+      "Turns quiet play into loud, boisterous play",
+      "Often asked to use a quieter voice",
+      "Gets overexcited at wet play and golden time",
+      "Moved to work alone because of the noise"
     ]
   },
   counts: [
@@ -368,7 +383,8 @@ AA.add('symptoms', [{
     highIQ: "Able adults may pick loud, high-stimulation hobbies and careers that hide the problem well. Ask about quiet situations they cannot avoid, and how much effort it costs them to stay calm in those.",
     sud: "Alcohol and stimulants make people louder, while alcohol or cannabis may be used to switch off in the evening. Establish what the person is like when sober and what they were like as a child, before any substance use.",
     asd: "Autistic people may have difficulty judging volume or may make sounds for sensory regulation. In ADHD the noise tends to be playful, social and stimulation-seeking; in autism it is more often repetitive, sensory or linked to missing social cues about volume. Both can co-occur.",
-    culture: "Norms about acceptable volume vary widely between cultures, families and communities. Compare with peers from the same background, and give more weight to comments from people who share that background."
+    culture: "Norms about acceptable volume vary widely between cultures, families and communities. Compare with peers from the same background, and give more weight to comments from people who share that background.",
+    young: "Young children are often noisy at play, so compare with children of the same age and ask about quiet times when other children manage to settle. Girls may hold back in public and be loud only at home or with close friends, so ask both the parent and the teacher. Family and cultural norms about noise differ, so judge against the child's own community."
   },
   refs: [
     "DSM-5-TR (APA 2022), criterion A2d, paraphrased",
@@ -377,6 +393,8 @@ AA.add('symptoms', [{
     "Kooij JJS et al. Updated European consensus statement on adult ADHD. Eur Psychiatry 2019;56:14-34",
     "DIVA 2.0 structure (Kooij and Francken 2010); question and example wording original",
     "CADDRA Canadian ADHD Practice Guidelines 4.1 (2020), differential diagnosis, paraphrased",
-    "Clinical practice"
+    "Clinical practice",
+    "NICE NG87 1.2.2 (under-recognition in girls), 1.3.5 (criteria adjusted for age) and 1.3.6 (children's views)",
+    "Parent, young person and teacher questions, teacher comments and young-person notes: clinical practice"
   ]
 }]);

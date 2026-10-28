@@ -3,7 +3,7 @@
    that opens it full-screen at a readable size (scroll sideways or pinch to zoom). */
 (function(){'use strict';
 var MQ=window.matchMedia?window.matchMedia('(max-width:759px)'):{matches:false},last=null;
-function add(s){if(s.__fz)return;s.__fz=1;if(s.querySelector('a,[tabindex],button'))return;var b=document.createElement('button');b.type='button';b.className='fz-btn';b.innerHTML='<span aria-hidden="true">\u2922</span> Enlarge figure';b.setAttribute('aria-label','Enlarge figure: '+(s.getAttribute('aria-label')||'diagram'));b.__svg=s;s.parentNode.insertBefore(b,s.nextSibling);}
+function add(s){if(!s.isConnected||!s.parentNode||s.closest('#ag-app .ag-vis, #ag-app .ag-fig, #sp .ag-fig, .ag-image-dialog'))return;if(s.__fz)return;s.__fz=1;if(s.querySelector('a,[tabindex],button'))return;var b=document.createElement('button');b.type='button';b.className='fz-btn';b.innerHTML='<span aria-hidden="true">\u2922</span> Enlarge figure';b.setAttribute('aria-label','Enlarge figure: '+(s.getAttribute('aria-label')||'diagram'));b.__svg=s;s.parentNode.insertBefore(b,s.nextSibling);}
 function wrapT(t){if(t.__tw)return;t.__tw=1;var p=t.parentElement;if(!p||p.classList.contains('table-wrap')||p.classList.contains('tbl-sc')||!t.closest('main'))return;var w=document.createElement('div');w.className='tbl-sc';p.insertBefore(w,t);w.appendChild(t);}
 function scan(r){r=r||document;if(!r.querySelectorAll)return;r.querySelectorAll('svg.ag-svg').forEach(add);r.querySelectorAll('table').forEach(wrapT);}
 function open(s){last=document.activeElement;var ov=document.createElement('div');ov.className='fz-ov';ov.setAttribute('role','dialog');ov.setAttribute('aria-modal','true');ov.setAttribute('aria-label',s.getAttribute('aria-label')||'Figure');

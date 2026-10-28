@@ -9,7 +9,10 @@ AA.add('symptoms', [{
   why: "This is mainly a failure of prospective memory: remembering to do something at the right moment. Weak attention when the plan is made and weak working memory mean the intention is not stored or not recalled when it is needed, and a poor sense of time makes future tasks feel far away until they have been missed.",
   ask: {
     adult: "Over the last six months, how often have you forgotten everyday things you meant to do, like appointments, paying bills, calling someone back or jobs around the house? What was the most recent thing?",
-    child: "When you were at primary school, how often did you forget things you were meant to do or bring, like taking letters home, bringing your PE kit on the right day, or doing your jobs at home? What happened?"
+    child: "When you were at primary school, how often did you forget things you were meant to do or bring, like taking letters home, bringing your PE kit on the right day, or doing your jobs at home? What happened?",
+    parent: "Over the last six months, how often does your child forget everyday things they do all the time, like brushing their teeth, bringing their bag or reading book home, or handing in letters, compared with other children their age? Can you give me a recent example?",
+    teen: "Over the last six months, how often do you forget everyday things, like homework deadlines, plans with friends, charging your phone, replying to messages or turning up to things? What happens when you forget?",
+    teacher: "Compared with others in the class, how often does this pupil forget routine things, such as homework, kit on the right day, reply slips or instructions given a few minutes before? How many reminders do they need?"
   },
   rephrase: [
     "What kinds of things slip your mind day to day?",
@@ -206,12 +209,16 @@ AA.add('symptoms', [{
         "Parents recall many notes home about missed deadlines",
         "Grandparents or older siblings did the remembering for them"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16)", items: [
+      { ctx: "teen", label: "Secondary school and college (12-17)", items: [
         "Forgets coursework deadlines and exam dates",
         "Forgets to revise for tests until the night before",
         "Forgets to charge their phone or top up the bus pass",
         "Forgets curfews or arrangements with parents",
-        "Forgets detentions, which then get doubled"
+        "Forgets detentions, which then get doubled",
+        "Forgets shifts or changed rotas at a part-time job",
+        "Forgets passwords for school apps and homework sites",
+        "Forgets to reply to messages, and friends think they are being ignored",
+        "Forgets booked driving lessons or the theory test date"
       ] }
     ]
   },
@@ -312,6 +319,14 @@ AA.add('symptoms', [{
       "Needs to take more responsibility for remembering",
       "Homework often not handed in",
       "Relies on adults to remember for them"
+    ],
+    teacher: [
+      "Needs reminding about the same routines every day",
+      "Forgets their kit on PE day",
+      "Reply slips and letters rarely come back",
+      "Forgets instructions given a few minutes earlier",
+      "Forgets to hand in homework that is done",
+      "Relies on adults to remember for them"
     ]
   },
   counts: [
@@ -368,7 +383,8 @@ AA.add('symptoms', [{
     highIQ: "Able people may hold a lot in their heads and compensate for years, until demands grow with promotion or parenthood. Ask what happens without their systems and how much effort the reminders take.",
     sud: "Alcohol, cannabis, benzodiazepines and opioids all impair memory. Rate the pattern during sober periods and before use began.",
     asd: "Autistic people may remember well within strict routines but struggle when routines change. In ADHD forgetting happens even within familiar routines. Executive difficulties are common in both and the two can co-occur.",
-    culture: "Some cultures place less weight on exact appointment times, and in some families remembering is shared. Ask about consequences in the person's own context, and check literacy and access to letters, phones and calendars."
+    culture: "Some cultures place less weight on exact appointment times, and in some families remembering is shared. Ask about consequences in the person's own context, and check literacy and access to letters, phones and calendars.",
+    young: "Young children need reminders, so judge forgetting against children of the same age and allow for the youngest in the year. Parents often act as the child's memory, so ask what happens when they stop reminding. Forgetting that is new, or that comes with falling school marks, headaches or a change in mood, needs a check for other causes such as low mood, poor sleep or a medical problem."
   },
   refs: [
     "DSM-5-TR (APA 2022), criterion A1i, paraphrased",
@@ -377,6 +393,8 @@ AA.add('symptoms', [{
     "DIVA 2.0 structure (Kooij and Francken 2010); all wording original",
     "ASRS v1.1 item 3 (Kessler et al. 2005)",
     "CADDRA Canadian ADHD Practice Guidelines 4.1 (2020), differential diagnosis tables",
-    "Clinical practice (examples, probes and anchors)"
+    "Clinical practice (examples, probes and anchors)",
+    "NICE NG87 1.2.2 (under-recognition in girls), 1.3.5 (criteria adjusted for age) and 1.3.6 (children's views)",
+    "Parent, young person and teacher questions, teacher comments and young-person notes: clinical practice"
   ]
 }]);

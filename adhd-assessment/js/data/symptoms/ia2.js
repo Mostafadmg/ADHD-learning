@@ -9,7 +9,10 @@ AA.add('symptoms', [{
   why: "The difficulty lies in keeping alertness and effort steady over time, especially when a task gives little novelty or immediate reward. Differences in arousal regulation and reward processing are thought to mean that interest, urgency and novelty drive attention more than importance does, so focus collapses once a task becomes routine.",
   ask: {
     adult: "Over the last six months, how often have you found it hard to keep your attention on something for as long as you needed to, for example reading, a meeting, a long call or a routine task? What happens to your focus partway through?",
-    child: "Thinking back to primary school, roughly age 5 to 12, how long could you keep your mind on lessons, schoolwork, stories or games compared with other children? What happened when you had to stay with one thing for a while?"
+    child: "Thinking back to primary school, roughly age 5 to 12, how long could you keep your mind on lessons, schoolwork, stories or games compared with other children? What happened when you had to stay with one thing for a while?",
+    parent: "Over the last six months, how long can your child stay with one thing, such as homework, a story, a board game or a film, compared with other children their age? What happens partway through?",
+    teen: "Over the last six months, how long can you keep your mind on things like lessons, revision, reading or a long conversation before it drifts off? Is that different from your friends? What happens when it drifts?",
+    teacher: "Compared with others in the class, how long can this pupil stay focused on a task they are able to do, such as independent writing, reading or listening to you explain something? What happens when their attention runs out?"
   },
   rephrase: [
     "How long can you stay focused on something before your mind drifts off it?",
@@ -204,12 +207,16 @@ AA.add('symptoms', [{
         "Reports often say 'off task' or 'needs to focus'",
         "Teacher writes that their focus comes and goes through every lesson"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16)", items: [
+      { ctx: "teen", label: "Secondary school and college (12-17)", items: [
         "Revision sessions collapse after a few minutes",
         "Cannot get through set texts for English literature",
         "Focus holds in practical lessons but fades in lecture-style lessons",
         "Games for hours but manages minutes of homework",
-        "Mock exam answers trail off as attention fades"
+        "Mock exam answers trail off as attention fades",
+        "Loses track partway through online lessons or recorded videos",
+        "Rereads the same page of a revision guide without taking it in",
+        "Gives up on driving theory practice questions before the end",
+        "Stops listening partway through a manager's instructions at work"
       ] }
     ]
   },
@@ -311,6 +318,14 @@ AA.add('symptoms', [{
       "Concentrates only on preferred topics",
       "Needs adult support to complete work",
       "Often off task"
+    ],
+    teacher: [
+      "Starts well, then switches off halfway through",
+      "Can only work in short bursts",
+      "Needs bringing back to the task many times a lesson",
+      "Focus is much better in practical or new activities",
+      "Manages more when an adult sits beside them",
+      "Drifts off during class discussion and long explanations"
     ]
   },
   counts: [
@@ -367,7 +382,8 @@ AA.add('symptoms', [{
     highIQ: "Able people may keep up through intelligence, cramming and last-minute pressure, so problems may not show until demands outgrow those strategies, for example at university or in a senior role. Ask how they study and how much effort staying focused takes.",
     sud: "Cannabis, alcohol, benzodiazepines and opioids blunt sustained attention, and so does withdrawal from stimulants or nicotine. Some people use caffeine, nicotine or stimulants to focus; ask about this and weigh timing against the childhood history.",
     asd: "Autistic people often sustain attention very well on their interests but struggle with non-preferred tasks, and sensory overload can break concentration. If attention still fades in quiet, predictable settings on reasonably interesting tasks, that favours ADHD.",
-    culture: "Expectations about sitting through long religious services, lectures or family events differ between cultures, so compare with peers from the same background. People learning or working in a second language may lose the thread through language load rather than attention."
+    culture: "Expectations about sitting through long religious services, lectures or family events differ between cultures, so compare with peers from the same background. People learning or working in a second language may lose the thread through language load rather than attention.",
+    young: "Attention span grows a lot between 6 and 11, so compare with children of the same age rather than with the class as a whole, and take extra care when the child is among the youngest in the year. Inattentive girls often sit quietly and look busy while taking little in, so ask what work they actually produce. Long focus on screens or favourite games does not rule this symptom out."
   },
   refs: [
     "DSM-5-TR (APA 2022), criterion A1b, paraphrased",
@@ -375,6 +391,8 @@ AA.add('symptoms', [{
     "Kooij JJS et al. European consensus on adult ADHD, Eur Psychiatry 2019",
     "DIVA 2.0 structure (Kooij and Francken 2010)",
     "ASRS v1.1 item 8 (WHO; Kessler et al. 2005)",
-    "Examples, probes and anchors: clinical practice"
+    "Examples, probes and anchors: clinical practice",
+    "NICE NG87 1.2.2 (under-recognition in girls), 1.3.5 (criteria adjusted for age) and 1.3.6 (children's views)",
+    "Parent, young person and teacher questions, teacher comments and young-person notes: clinical practice"
   ]
 }]);

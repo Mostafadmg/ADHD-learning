@@ -19,7 +19,9 @@
 .iv-tally-v .num { font-family: var(--font-ui); font-weight: 600; font-size: 1.7rem; color: var(--brand); line-height: 1.25; font-variant-numeric: tabular-nums; }
 .iv-tally-v small { color: var(--muted); font-size: .9rem; }
 .iv-tally-item .hint { font-size: .84rem; }
-.iv-tally-item .badge { margin-top: .4rem; }
+.iv-tally-item .badge { margin-top: .4rem; white-space: normal; max-width: 100%; text-align: left; }
+/* A child of 6-11 has only the current period: one tally, kept to a readable width. */
+.iv-tally.is-one { grid-template-columns: minmax(0, 26rem); }
 .iv-cta { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem; }
 .iv-cta .btn { white-space: normal; text-align: left; }
 .iv-cta-note { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .6rem; margin: 0; font-size: .9rem; color: var(--muted); }
@@ -61,6 +63,11 @@
 .iv-sup-item h3 { font-size: 1rem; color: var(--muted); }
 .iv-sup-q { font-size: 1.12rem; font-weight: 700; margin: .35rem 0 .6rem; max-width: 70ch; }
 .iv-sup h2:focus { outline: none; }
+
+/* Under 6: no interview in this tool (refer). Meaning shown by a left bar, not a tinted box. */
+.iv-stop { border-left: 4px solid var(--warn); }
+.iv-stop h2 { margin-bottom: .4rem; }
+.iv-stop p { max-width: 70ch; }
 
 /* ---------- Symptom card ---------- */
 .iv-sym { scroll-margin-top: calc(var(--bar-h) + env(safe-area-inset-top, 0px) + 72px); }
@@ -143,6 +150,15 @@
   .main:has(.iv-score) { padding-bottom: calc(6rem + env(safe-area-inset-bottom, 0px)); }
   html:has(.iv-score) { scroll-padding-bottom: calc(6rem + env(safe-area-inset-bottom, 0px)); }
   body:has(.iv-score) .toasts { bottom: calc(5.4rem + env(safe-area-inset-bottom, 0px)); }
+  .iv-score.is-one { grid-template-columns: minmax(0, 1fr) auto; }
+  .iv-score.is-one .iv-bar-next { grid-column: 2; }
+}
+/* One period only (child 6-11): a single score row beside the Next button. */
+@media (max-width: 999px) {
+  .iv-score.is-one { grid-template-rows: auto; }
+  .iv-score.is-one .iv-bar-next { grid-row: 1; }
+  /* "Now" and "Before 12" are a little longer than "Adult" and "Child": allow a second line. */
+  .iv-sym.is-young .iv-score-lab { min-width: 3.6rem; line-height: 1.15; }
 }
 
 /* Tabs and question */
@@ -154,6 +170,10 @@
 .iv-ask { display: flex; flex-direction: column; gap: .2rem; margin-top: 0; }
 .iv-ask-k { font-size: .74rem; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
 .iv-ask-q { display: block; }
+/* Young people: the other informants' questions sit in the same question box, divided by a thin line. */
+.iv-ask-alt { display: flex; flex-direction: column; gap: .15rem; margin-top: .65rem; padding-top: .6rem; border-top: 1px solid var(--line-2); }
+.iv-ask-aq { display: block; font-size: 1.02rem; font-weight: 400; line-height: 1.5; }
+.iv-tabs.iv-one { margin-top: .4rem; }
 .iv-period > .disclosure { max-width: 70ch; }
 
 .iv-ex-head { margin: 1.3rem 0 .4rem; }
@@ -185,6 +205,20 @@
 
 .iv-inf { margin-top: 1.3rem; padding-top: 1rem; border-top: 1px solid var(--line); }
 
+/* Per-source ratings (young people, current period): Parent / Teacher / Young person, one compact row each. */
+.iv-by { margin: .5rem 0 .2rem; }
+.iv-by-k { margin: 0 0 .4rem; font-weight: 700; }
+.iv-by-k .hint { font-weight: 400; }
+.iv-by-grid { display: grid; gap: .5rem 1.4rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); }
+.iv-by-item { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem .6rem; min-width: 0; }
+.iv-by-l { min-width: 6.8rem; font-size: .9rem; font-weight: 700; color: var(--muted); }
+.iv-by-hint { margin: .45rem 0 0; }
+@media (max-width: 480px) {
+  .iv-by-item { display: grid; grid-template-columns: minmax(0, 1fr); gap: .2rem; }
+  .iv-by-item .seg { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .iv-by-item .seg-opt label { width: 100%; min-width: 0; }
+}
+
 /* Question rows (label left, control right) */
 .iv-qrows { margin: .8rem 0; }
 .iv-qrow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .45rem 1.2rem; align-items: center; padding: .75rem 0; border-top: 1px solid var(--line); }
@@ -194,6 +228,11 @@
 .iv-inf .iv-qrow { border-top: 0; padding-top: .4rem; }
 @media (max-width: 760px) { .iv-qrow { grid-template-columns: minmax(0, 1fr); } }
 .iv-age { width: 7rem; }
+/* Ages 6 to 11, sudden or recent start: the red flag, then what was considered (criterion E waits for it) */
+.iv-abrupt[hidden] { display: none; }
+.iv-abrupt > .callout { margin: .2rem 0 .6rem; }
+.iv-abrupt-rec { border-left: 4px solid var(--warn); padding: .1rem 0 .2rem .85rem; margin: 0 0 .8rem; max-width: 75ch; }
+.iv-abrupt-rec > .field { margin: .6rem 0 0; }
 
 /* Reference sections */
 .iv-refs { margin: 1.4rem 0 1rem; }
@@ -202,6 +241,7 @@
 .iv-rule { background: var(--surface-2); border-radius: var(--radius-sm); padding: .7rem .9rem; border-left: 4px solid var(--line-2); }
 .iv-rule-yes { border-left-color: var(--ok); }
 .iv-rule-no { border-left-color: var(--err); }
+.iv-young-note { margin: 0; max-width: 75ch; }
 .iv-anchors { display: grid; gap: .7rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); margin-top: .5rem; }
 .iv-anchor { border: 1px solid var(--line); border-radius: var(--radius-sm); padding: .7rem .85rem; background: var(--surface); border-top: 4px solid var(--line-2); }
 .iv-anchor-yes { border-top-color: var(--ok); }
@@ -294,6 +334,9 @@
 .iv-col-live > p { margin: .5rem 0; }
 .iv-col-level { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .6rem; }
 .iv-col-hint { margin: 0 0 .4rem; }
+.iv-col-consent { margin: 0 0 .8rem; padding-left: .6rem; border-left: 3px solid var(--warn); max-width: 70ch; }
+.iv-col-agree { margin: .7rem 0 0; }
+.iv-src > .disclosure + .disclosure { margin-top: .4rem; }
 .iv-dl-inline { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .3rem 1rem; margin: .6rem 0 0; }
 .iv-dl-inline dt { margin: 0; font-weight: 400; color: var(--muted); }
 .iv-dl-inline dd { margin: 0; font-weight: 700; }

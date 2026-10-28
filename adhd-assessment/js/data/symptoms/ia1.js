@@ -9,7 +9,10 @@ AA.add('symptoms', [{
   why: "Brief lapses of attention mean some details are never taken in, and weak working memory and self-monitoring mean slips are not caught before the work is finished. A quick, impulsive response style (acting before reading to the end) adds to this. It is a problem of noticing and checking, not of knowledge or skill.",
   ask: {
     adult: "Over the last six months, how often have you made mistakes because you missed a detail or did not notice something, for example at work, with forms and money, or at home? Can you tell me about a recent one?",
-    child: "Thinking back to primary school, roughly age 5 to 12, how often did you get things wrong in your work because you missed small details, even when you knew how to do it? What did teachers or your parents say about it?"
+    child: "Thinking back to primary school, roughly age 5 to 12, how often did you get things wrong in your work because you missed small details, even when you knew how to do it? What did teachers or your parents say about it?",
+    parent: "Over the last six months, when your child does homework, reading or jobs at home, how often do they make silly mistakes or miss small details in things you know they can do, compared with other children their age? Can you give me a recent example?",
+    teen: "Over the last six months, how often have you got things wrong because you missed a small detail, like a sign in maths, part of a question or a step in a task, even though you knew how to do it? Can you give me an example?",
+    teacher: "Compared with others in the class, how often does this pupil make careless slips or miss details in work they understand, such as misreading signs, skipping questions or leaving words out? Can you give an example from recent work?"
   },
   rephrase: [
     "What kind of slip-ups do you make in things you actually know how to do?",
@@ -207,12 +210,16 @@ AA.add('symptoms', [{
         "Test results are lower than the teacher expected from class work",
         "Parents told 'could do much better with more care'"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16)", items: [
+      { ctx: "teen", label: "Secondary school and college (12-17)", items: [
         "Loses exam marks for misreading what the question asks",
         "Coursework comes back covered in small corrections",
         "Science practicals go wrong from missed measurements",
         "Writes mock exam answers in the wrong section of the paper",
-        "Copies homework tasks down wrongly from the board or app"
+        "Copies homework tasks down wrongly from the board or app",
+        "Loses marks in mock exams for missing units or decimal points",
+        "Online homework is marked wrong because of typing slips in answers",
+        "Gives the wrong change or takes orders down wrongly in a part-time job",
+        "Misses road signs or speed limit changes in driving lessons"
       ] }
     ]
   },
@@ -317,6 +324,15 @@ AA.add('symptoms', [{
       "Untidy presentation",
       "Silly slips lose marks",
       "Could do better with more care"
+    ],
+    teacher: [
+      "Knows the method but slips up on the detail",
+      "Rushes to finish first and does not check",
+      "Skips questions or misses the back of the sheet",
+      "Checks more carefully when an adult reminds them",
+      "Misreads instructions even though they can read the words",
+      "Test marks are lower than their class work suggests",
+      "Accurate one day and full of slips the next"
     ]
   },
   counts: [
@@ -373,7 +389,8 @@ AA.add('symptoms', [{
     highIQ: "Able people may keep errors low through intelligence and strategy, but the cost is out of proportion, such as hours of re-checking, or results well below their ability in timed exams. Judge impairment against their own ability and effort, not against average performance.",
     sud: "Cannabis, alcohol, sedatives and the come-down from stimulants all cause inaccuracy. Establish whether slips were present in childhood and during sober periods, and reassess after a period of abstinence if the timing is unclear.",
     asd: "Many autistic people attend closely to detail, so frequent careless slips are less typical of autism alone, although errors can appear under overload or with tasks of no interest. If both conditions are suspected, compare accuracy on preferred and non-preferred tasks.",
-    culture: "Bilingual patients may make language slips that look careless, so check accuracy in their first language and with numbers. In some cultures admitting mistakes is uncomfortable; use concrete examples and collateral rather than general questions."
+    culture: "Bilingual patients may make language slips that look careless, so check accuracy in their first language and with numbers. In some cultures admitting mistakes is uncomfortable; use concrete examples and collateral rather than general questions.",
+    young: "Compare slips with children of the same age, not with the oldest in the class: the youngest in a school year are less mature and may make more slips for that reason alone. Quiet, compliant pupils, often girls, may hide slips by working slowly or rewriting work at home, so look at work samples and ask how long homework takes."
   },
   refs: [
     "DSM-5-TR (APA 2022), criterion A1a, paraphrased",
@@ -381,6 +398,8 @@ AA.add('symptoms', [{
     "Kooij JJS et al. European consensus on adult ADHD, Eur Psychiatry 2019",
     "DIVA 2.0 structure (Kooij and Francken 2010)",
     "ASRS v1.1 item 7 (WHO; Kessler et al. 2005)",
-    "Examples, probes and anchors: clinical practice"
+    "Examples, probes and anchors: clinical practice",
+    "NICE NG87 1.2.2 (under-recognition in girls), 1.3.5 (criteria adjusted for age) and 1.3.6 (children's views)",
+    "Parent, young person and teacher questions, teacher comments and young-person notes: clinical practice"
   ]
 }]);

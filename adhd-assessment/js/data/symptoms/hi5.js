@@ -9,7 +9,10 @@ AA.add('symptoms', [{
   why: "Thought to reflect poor regulation of arousal and activity level, a strong need for stimulation and weak inhibition of the urge to move on to the next thing. Stopping feels uncomfortable or even aversive, so the person keeps going even when tired, and only stops when they crash.",
   ask: {
     adult: "Over the last six months, how much have you felt that you are always on the go, as if your engine never switches off? What happens when you have to stay still for a long time, like a long meal or a meeting? Can you give me an example?",
-    child: "When you were at primary school, between about 5 and 12, how would you describe your energy compared with other children? What did your parents or teachers say about it? Can you remember an example?"
+    child: "When you were at primary school, between about 5 and 12, how would you describe your energy compared with other children? What did your parents or teachers say about it? Can you remember an example?",
+    parent: "Over the last six months, is your child on the go from waking up to bedtime, finding it hard to be still even when tired or at calm times, more than other children their age? Can you give me an example of a typical day?",
+    teen: "Over the last six months, how often do you feel you have to keep going and cannot switch off, even when you are meant to rest? How do you feel when you have to stay still for a long time, like at a family meal or in a long lesson?",
+    teacher: "Compared with others in the class, how much does this pupil seem constantly on the go through the school day, finding it hard to settle or be still for long? Do staff find them tiring to keep up with?"
   },
   rephrase: [
     "What do the people close to you say about how much you are on the go?",
@@ -195,13 +198,17 @@ AA.add('symptoms', [{
         "Parents asked the GP or school nurse about their energy levels",
         "Family joked that they had two speeds: flat out and asleep"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16)", items: [
+      { ctx: "teen", label: "Secondary school and college (12-17)", items: [
         "Had several part-time jobs or sports teams at once",
         "Stayed busy every evening and weekend",
         "Struggled with long exams and study periods",
         "Found long family visits unbearable",
         "Was out and about constantly rather than resting at home",
-        "Friends struggled to keep up with their plans and pace"
+        "Friends struggled to keep up with their plans and pace",
+        "Picks up extra shifts and cannot settle on days off",
+        "Cannot relax on holiday and wants activity all the time",
+        "Feels uncomfortable doing nothing, even on rest days",
+        "Keeps busy until late and finds it hard to wind down"
       ] }
     ]
   },
@@ -301,6 +308,14 @@ AA.add('symptoms', [{
       "Extra adult support in class to help manage their activity",
       "Notes that they were tiring or 'a handful' on trips",
       "Consistent remarks across several years and teachers"
+    ],
+    teacher: [
+      "Full of energy from the moment they arrive",
+      "Never seems to run out of steam",
+      "Finds it very hard to settle after break",
+      "Needs jobs to use up their energy",
+      "Hard to keep up with on trips",
+      "Still going at full speed at the end of the day"
     ]
   },
   counts: [
@@ -356,7 +371,8 @@ AA.add('symptoms', [{
     highIQ: "Very able adults may channel the drive into achievement, several degrees or roles, and be admired for it. Ask about the cost: rest, relationships, burnout and how they feel when they are forced to stop.",
     sud: "Stimulants and high caffeine raise activity, while alcohol or cannabis may be used to slow down at night. Ask about the pattern before any substance use began and on days without use.",
     asd: "Autistic people may be very active around special interests or move for sensory reasons, but are often comfortable in predictable, still routines. In ADHD the drive is general and novelty-seeking. Both can co-occur and both should be assessed.",
-    culture: "Busy, long-hours lifestyles are valued in some cultures and jobs, and norms about physical activity differ. Compare with peers in the same setting, and focus on discomfort when still and on the cost to the person."
+    culture: "Busy, long-hours lifestyles are valued in some cultures and jobs, and norms about physical activity differ. Compare with peers in the same setting, and focus on discomfort when still and on the cost to the person.",
+    young: "Many young children are lively, so look for activity that is constant across settings and clearly beyond children of the same age, not just a lively child at the youngest end of the year group. In teenagers it often becomes a feeling of never switching off or a packed schedule. Distinct spells of high energy with little need for sleep and a clear change in mood are not ADHD and need a separate assessment."
   },
   refs: [
     "DSM-5-TR (APA 2022), criterion A2e, paraphrased",
@@ -365,6 +381,8 @@ AA.add('symptoms', [{
     "Kooij JJS et al. Updated European consensus statement on adult ADHD. Eur Psychiatry 2019;56:14-34",
     "DIVA 2.0 structure (Kooij and Francken 2010); question and example wording original",
     "CADDRA Canadian ADHD Practice Guidelines 4.1 (2020), differential diagnosis, paraphrased",
-    "Clinical practice"
+    "Clinical practice",
+    "NICE NG87 1.2.2 (under-recognition in girls), 1.3.5 (criteria adjusted for age) and 1.3.6 (children's views)",
+    "Parent, young person and teacher questions, teacher comments and young-person notes: clinical practice"
   ]
 }]);

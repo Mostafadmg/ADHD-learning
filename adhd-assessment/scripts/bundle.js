@@ -12,14 +12,20 @@ const fragment = process.argv.includes('--fragment');
 if (!out) { console.error('Usage: node scripts/bundle.js <out.html> [--fragment]'); process.exit(1); }
 
 let html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
+const missing = [];
+let nCss = 0, nJs = 0;
 html = html.replace(/<link rel="stylesheet" href="(css\/[^"]+)">/g, (m, f) => {
+  f = f.split('?')[0];   /* a cache-busting query must not drop the stylesheet */
   const p = path.join(ROOT, f);
-  return fs.existsSync(p) ? '<style>\n' + fs.readFileSync(p, 'utf8') + '\n</style>' : '';
+  if (!fs.existsSync(p)) { missing.push(f); return ''; }
+  nCss++;
+  return '<style>\n' + fs.readFileSync(p, 'utf8') + '\n</style>';
 });
 html = html.replace(/<script src="(js\/[^"]+)"><\/script>/g, (m, f) => {
   f = f.split('?')[0];   /* ignore cache-busting queries such as ?v=20261025 */
   const p = path.join(ROOT, f);
-  if (!fs.existsSync(p)) return '';
+  if (!fs.existsSync(p)) { missing.push(f); return ''; }
+  nJs++;
   const code = fs.readFileSync(p, 'utf8').replace(/<\/script/gi, '<\\/script').replace(/<!--/g, '<\\!--');
   return '<script>/* ' + f + ' */\n' + code + '\n</script>';
 });
@@ -34,4 +40,5 @@ if (fragment) {
   html = title + '\n' + head.replace(title, '') + '\n' + body;
 }
 fs.writeFileSync(out, html);
-console.log('Wrote ' + out + ' (' + Math.round(fs.statSync(out).size / 1024) + ' KB)');
+if (missing.length) console.warn('Missing, left out: ' + missing.join(', '));
+console.log('Wrote ' + out + ' (' + Math.round(fs.statSync(out).size / 1024) + ' KB; ' + nCss + ' stylesheets and ' + nJs + ' scripts inlined)');

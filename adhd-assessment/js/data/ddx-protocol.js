@@ -178,7 +178,7 @@ AA.add('ddxProtocol', {
         "(Informant) Compared with other people their age, how unusual is this?"
       ],
       tools: ["asrs18", "caars2", "wfirs"],
-      conds: ["normal", "gifted", "burnout"],
+      conds: ["normal", "gifted", "burnout", "relage", "env"],
       decide: [
         "Count a symptom only if it is frequent, has lasted at least 6 months, goes beyond what is expected for age and ability, and interferes with functioning. Occasional lapses are normal.",
         "Symptoms confined to one setting or one situation do not pass the pervasiveness test. Look for a situational, sensory or learning explanation.",
@@ -339,7 +339,7 @@ AA.add('ddxProtocol', {
         "As a child, were you seen as a worrier, or as dreamy, fidgety and chatty?"
       ],
       tools: ["gad7", "ocir", "ybocs"],
-      conds: ["gad", "social", "panic", "ocd"],
+      conds: ["gad", "social", "panic", "ocd", "sepanx"],
       decide: [
         "Inattention that occurs only when anxious, or only in feared situations, with no childhood ADHD, is better explained by the anxiety disorder (ICD-11 CDDR).",
         "Trait inattention and restlessness in calm, low-anxiety settings since childhood: diagnose both. Anxiety is one of the commonest co-occurring conditions.",
@@ -392,7 +392,7 @@ AA.add('ddxProtocol', {
         "(Informant) What were they like before these events happened?"
       ],
       tools: ["pcptsd5", "pcl5", "itq", "aceq"],
-      conds: ["ptsd", "cptsd"],
+      conds: ["ptsd", "cptsd", "attach"],
       decide: [
         "Symptoms driven by intrusions, avoidance and threat, with no ADHD symptoms before the trauma, are better explained by PTSD or complex PTSD.",
         "ADHD symptoms documented before the trauma and present in safe, non-triggering settings: diagnose both. The association runs in both directions.",
@@ -445,7 +445,7 @@ AA.add('ddxProtocol', {
         "(Informant) When things are calm, what are they like day to day?"
       ],
       tools: ["msibpd"],
-      conds: ["bpd", "aspd"],
+      conds: ["bpd", "aspd", "odd", "conduct"],
       decide: [
         "Impulsivity and lability that occur only in emotional crises, with identity disturbance, abandonment fear and self-harm, and no childhood ADHD, are better explained by EUPD.",
         "Childhood-onset inattention and hyperactivity that persist when relationships are stable: diagnose both. Both conditions are trait-like, so course alone does not separate them (European Consensus 2019).",
@@ -499,7 +499,7 @@ AA.add('ddxProtocol', {
         "(Parent) In the first five years, how did they play, talk and get on with other children?"
       ],
       tools: ["aq10", "raads14"],
-      conds: ["asd", "sld", "idd", "dcd", "tics", "gifted"],
+      conds: ["asd", "sld", "idd", "dcd", "tics", "gifted", "dld", "fasd"],
       decide: [
         "Autism and ADHD can be diagnosed together (DSM-5-TR; NICE NG87 1.3.3 advises against excluding ADHD because of a pervasive developmental disorder). Diagnose both when ADHD symptoms are broad and cross-situational, beyond what autism explains.",
         "Inattention confined to non-preferred or social tasks or to sensory overload, and movement that is stereotyped rather than restless, are better explained by autism.",
@@ -608,7 +608,7 @@ AA.add('ddxProtocol', {
         "Do you work shifts, or use alcohol, cannabis or screens to get to sleep?"
       ],
       tools: ["stopbang", "epworth", "isi"],
-      conds: ["osa", "insomnia", "dsps", "narcolepsy", "rls"],
+      conds: ["osa", "osa_child", "insomnia", "dsps", "narcolepsy", "rls"],
       decide: [
         "Daytime symptoms that began with the sleep problem and resolve when sleep is corrected, with no childhood ADHD, are better explained by the sleep disorder.",
         "Childhood-onset daytime symptoms that persist after adequate sleep: diagnose both. Delayed sleep onset is so common in ADHD that it is usually co-occurring.",

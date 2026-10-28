@@ -144,15 +144,24 @@
   };
 
   /* ---------- Assessments ---------- */
+  /* Fields used only for children and young people (6-17). Empty for adults.
+     consentBasis: 'parent_assent' (under 16, not Gillick competent: a person with parental responsibility consents and
+     the child assents) | 'gillick' (under 16, competent) | 'capacity_16' (16 or 17, capacity presumed) |
+     'lacks_capacity_16' (16 or 17, assessed as lacking capacity for this decision) | null. */
+  function blankYoung() {
+    return { school: '', year: '', sen: null, pr: '', consentBasis: null, assent: false, seenAlone: false,
+      lac: false, socialWorker: '', schoolConsent: false };
+  }
   function blankAssessment(id, clinicianId, patient) {
     var now = new Date().toISOString();
     return {
       id: id, clinicianId: clinicianId, createdAt: now, updatedAt: now, status: 'active', step: 'setup',
-      patient: Object.assign({ ref: '', age: null, sex: '', gender: '', occupation: '', referrer: '', reason: '', date: U.today(),
-        informants: { partner: false, parent: false, sibling: false, other: '' }, sources: { schoolReports: false, previousRecords: false },
-        consent: false, interpreter: false }, patient || {}),
+      /* referralNotes: the referral note for a child under 6 (concerns, impact, support tried, parent training, safeguarding). */
+      patient: Object.assign({ ref: '', age: null, sex: '', gender: '', occupation: '', referrer: '', reason: '', referralNotes: '', date: U.today(),
+        informants: { partner: false, parent: false, sibling: false, teacher: false, other: '' }, sources: { schoolReports: false, previousRecords: false },
+        consent: false, interpreter: false, young: blankYoung() }, patient || {}),
       tools: {}, risk: {}, history: {}, symptoms: {}, supplement: {}, onset: {}, impairment: { adult: {}, child: {} },
-      collateral: {}, ddx: {}, validity: {}, formulation: {}
+      collateral: {}, ddx: {}, validity: {}, formulation: {}, treatment: {}
     };
   }
 
@@ -161,7 +170,7 @@
       var me = auth.current();
       var id = U.uid(8);
       var rec = blankAssessment(id, me ? me.id : 'anon', patient);
-      if (opts && opts.demo) rec.demo = true;
+      if (opts && opts.demo) rec.demo = opts.demo === 'young' ? 'young' : true;
       store.set('assessments.' + id, rec);
       return id;
     },

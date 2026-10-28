@@ -4,19 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ADHD Assessment</title>
-<meta name="description" content="Clinician workspace for adult ADHD assessment: structured diagnostic interview, screening questionnaires with scoring, differential diagnosis and report.">
+<meta name="description" content="Clinician workspace for ADHD assessment and treatment in adults and young people aged 6 to 17: screening with scoring, a structured diagnostic interview, differentials, diagnosis, then pre-treatment checks, prescribing, titration, monitoring and shared care.">
 <meta name="theme-color" content="#16324f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap">
-<link rel="stylesheet" href="css/app.css">
-<link rel="stylesheet" href="css/v-assess-a.css">
-<link rel="stylesheet" href="css/v-assess-iv.css">
-<link rel="stylesheet" href="css/v-assess-b.css">
-<link rel="stylesheet" href="css/v-library.css">
-<link rel="stylesheet" href="css/v-learn.css">
-<link rel="stylesheet" href="css/v-reference.css">
-<link rel="stylesheet" href="css/v-guides.css">
+<link rel="stylesheet" href="css/app.css?v=20261027tx3">
+<link rel="stylesheet" href="css/v-assess-a.css?v=20261027tx3">
+<link rel="stylesheet" href="css/v-assess-iv.css?v=20261027tx3">
+<link rel="stylesheet" href="css/v-assess-b.css?v=20261027tx3">
+<link rel="stylesheet" href="css/v-assess-tx.css?v=20261027tx3">
+<link rel="stylesheet" href="css/v-library.css?v=20261027tx3">
+<link rel="stylesheet" href="css/v-learn.css?v=20261027tx3">
+<link rel="stylesheet" href="css/v-reference.css?v=20261027tx3">
+<link rel="stylesheet" href="css/v-guides.css?v=20261027tx3">
 </head>
 <body>
 <a class="skip" href="#view" data-skip>Skip to content</a>
@@ -43,65 +44,73 @@
 <noscript><p style="padding:1rem">ADHD Assessment needs JavaScript.</p></noscript>
 
 <!-- core -->
-<script src="js/core/ns.js"></script>
-<script src="js/core/util.js"></script>
-<script src="js/core/store.js"></script>
-<script src="js/core/router.js?v=20261025"></script>
-<script src="js/components/ui.js"></script>
-<script src="js/engine/scoring.js"></script>
-<script src="js/engine/diagnosis.js"></script>
-<script src="js/components/questionnaire.js"></script>
+<script src="js/core/ns.js?v=20261027tx3"></script>
+<script src="js/core/util.js?v=20261027tx3"></script>
+<script src="js/core/store.js?v=20261027tx3"></script>
+<script src="js/core/router.js?v=20261027tx3"></script>
+<script src="js/components/ui.js?v=20261027tx3"></script>
+<script src="js/engine/scoring.js?v=20261027tx3"></script>
+<script src="js/engine/diagnosis.js?v=20261027tx3"></script>
+<script src="js/engine/treatment.js?v=20261027tx3"></script>
+<script src="js/components/questionnaire.js?v=20261027tx3"></script>
 <!-- data -->
-<script src="js/data/tools-adhd.js"></script>
-<script src="js/data/tools-comorbid.js"></script>
-<script src="js/data/tools-info.js"></script>
-<script src="js/data/symptoms/ia1.js"></script>
-<script src="js/data/symptoms/ia2.js"></script>
-<script src="js/data/symptoms/ia3.js"></script>
-<script src="js/data/symptoms/ia4.js"></script>
-<script src="js/data/symptoms/ia5.js"></script>
-<script src="js/data/symptoms/ia6.js"></script>
-<script src="js/data/symptoms/ia7.js"></script>
-<script src="js/data/symptoms/ia8.js"></script>
-<script src="js/data/symptoms/ia9.js"></script>
-<script src="js/data/symptoms/hi1.js"></script>
-<script src="js/data/symptoms/hi2.js"></script>
-<script src="js/data/symptoms/hi3.js"></script>
-<script src="js/data/symptoms/hi4.js"></script>
-<script src="js/data/symptoms/hi5.js"></script>
-<script src="js/data/symptoms/hi6.js"></script>
-<script src="js/data/symptoms/hi7.js"></script>
-<script src="js/data/symptoms/hi8.js"></script>
-<script src="js/data/symptoms/hi9.js"></script>
-<script src="js/data/impairment.js"></script>
-<script src="js/data/history.js"></script>
-<script src="js/data/ddx-mood.js"></script>
-<script src="js/data/ddx-anxiety.js"></script>
-<script src="js/data/ddx-neurodev.js"></script>
-<script src="js/data/ddx-personality-sud.js"></script>
-<script src="js/data/ddx-medical.js"></script>
-<script src="js/data/ddx-other.js"></script>
-<script src="js/data/pathway.js"></script>
-<script src="js/data/glossary.js"></script>
-<script src="js/data/learn-1.js"></script>
-<script src="js/data/learn-2.js"></script>
-<script src="js/data/learn-3.js"></script>
-<script src="js/data/cases-1.js"></script>
-<script src="js/data/cases-2.js"></script>
-<script src="js/data/step-guide.js"></script>
-<script src="js/data/forms-guide.js"></script>
-<script src="js/data/ddx-protocol.js"></script>
-<script src="js/data/demo.js"></script>
+<script src="js/data/tools-adhd.js?v=20261027tx3"></script>
+<script src="js/data/tools-comorbid.js?v=20261027tx3"></script>
+<script src="js/data/tools-info.js?v=20261027tx3"></script>
+<script src="js/data/symptoms/ia1.js?v=20261027tx3"></script>
+<script src="js/data/symptoms/ia2.js?v=20261027tx3"></script>
+<script src="js/data/symptoms/ia3.js?v=20261027tx3"></script>
+<script src="js/data/symptoms/ia4.js?v=20261027tx3"></script>
+<script src="js/data/symptoms/ia5.js?v=20261027tx3"></script>
+<script src="js/data/symptoms/ia6.js?v=20261027tx3"></script>
+<script src="js/data/symptoms/ia7.js?v=20261027tx3"></script>
+<script src="js/data/symptoms/ia8.js?v=20261027tx3"></script>
+<script src="js/data/symptoms/ia9.js?v=20261027tx3"></script>
+<script src="js/data/symptoms/hi1.js?v=20261027tx3"></script>
+<script src="js/data/symptoms/hi2.js?v=20261027tx3"></script>
+<script src="js/data/symptoms/hi3.js?v=20261027tx3"></script>
+<script src="js/data/symptoms/hi4.js?v=20261027tx3"></script>
+<script src="js/data/symptoms/hi5.js?v=20261027tx3"></script>
+<script src="js/data/symptoms/hi6.js?v=20261027tx3"></script>
+<script src="js/data/symptoms/hi7.js?v=20261027tx3"></script>
+<script src="js/data/symptoms/hi8.js?v=20261027tx3"></script>
+<script src="js/data/symptoms/hi9.js?v=20261027tx3"></script>
+<script src="js/data/impairment.js?v=20261027tx3"></script>
+<script src="js/data/history.js?v=20261027tx3"></script>
+<script src="js/data/ddx-mood.js?v=20261027tx3"></script>
+<script src="js/data/ddx-anxiety.js?v=20261027tx3"></script>
+<script src="js/data/ddx-neurodev.js?v=20261027tx3"></script>
+<script src="js/data/ddx-personality-sud.js?v=20261027tx3"></script>
+<script src="js/data/ddx-medical.js?v=20261027tx3"></script>
+<script src="js/data/ddx-other.js?v=20261027tx3"></script>
+<script src="js/data/age-bands.js?v=20261027tx3"></script>
+<script src="js/data/ddx-young.js?v=20261027tx3"></script>
+<script src="js/data/pathway.js?v=20261027tx3"></script>
+<script src="js/data/glossary.js?v=20261027tx3"></script>
+<script src="js/data/learn-1.js?v=20261027tx3"></script>
+<script src="js/data/learn-2.js?v=20261027tx3"></script>
+<script src="js/data/learn-3.js?v=20261027tx3"></script>
+<script src="js/data/cases-1.js?v=20261027tx3"></script>
+<script src="js/data/cases-2.js?v=20261027tx3"></script>
+<script src="js/data/step-guide.js?v=20261027tx3"></script>
+<script src="js/data/forms-guide.js?v=20261027tx3"></script>
+<script src="js/data/ddx-protocol.js?v=20261027tx3"></script>
+<script src="js/data/step-guide-young.js?v=20261027tx3"></script>
+<script src="js/data/tx-products.js?v=20261027tx3"></script>
+<script src="js/data/tx-pathway.js?v=20261027tx3"></script>
+<script src="js/data/tx-guide.js?v=20261027tx3"></script>
+<script src="js/data/demo.js?v=20261027tx3"></script>
 <!-- views -->
-<script src="js/views/shell.js?v=20261025b"></script>
-<script src="js/views/assess-frame.js"></script>
-<script src="js/views/assess-steps-a.js"></script>
-<script src="js/views/assess-interview.js"></script>
-<script src="js/views/assess-steps-b.js"></script>
-<script src="js/views/library.js"></script>
-<script src="js/views/learn.js"></script>
-<script src="js/views/reference.js"></script>
-<script src="js/views/guides.js"></script>
-<script src="js/app.js"></script>
+<script src="js/views/shell.js?v=20261027tx3"></script>
+<script src="js/views/assess-frame.js?v=20261027tx4"></script>
+<script src="js/views/assess-steps-a.js?v=20261027tx3"></script>
+<script src="js/views/assess-interview.js?v=20261027tx3"></script>
+<script src="js/views/assess-steps-b.js?v=20261027tx3"></script>
+<script src="js/views/assess-treat.js?v=20261027tx3"></script>
+<script src="js/views/library.js?v=20261027tx3"></script>
+<script src="js/views/learn.js?v=20261027tx3"></script>
+<script src="js/views/reference.js?v=20261027tx3"></script>
+<script src="js/views/guides.js?v=20261027tx3"></script>
+<script src="js/app.js?v=20261027tx3"></script>
 </body>
 </html>

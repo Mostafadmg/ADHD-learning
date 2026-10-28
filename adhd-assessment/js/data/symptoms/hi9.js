@@ -9,7 +9,10 @@ AA.add('symptoms', [{
   why: "Poor inhibition of the impulse to act or speak the moment something catches their interest, combined with reduced monitoring of social cues while engaged. Low tolerance of watching others do things slowly or differently adds an urge to step in, and the person often realises only later that a boundary was crossed.",
   ask: {
     adult: "Over the last six months, how often have you interrupted other people or butted in on what they were doing, for example breaking into conversations, taking over tasks or using people's things without asking? Can you give me a recent example?",
-    child: "When you were at primary school, between about 5 and 12, did you butt into other children's games or interrupt adults when they were talking or busy? Did you take or use other people's things without asking? What did people say about it?"
+    child: "When you were at primary school, between about 5 and 12, did you butt into other children's games or interrupt adults when they were talking or busy? Did you take or use other people's things without asking? What did people say about it?",
+    parent: "Over the last six months, how often does your child break into other people's conversations or games, or take other people's things without asking, compared with other children their age? Can you give me a recent example?",
+    teen: "Over the last six months, how often do you interrupt people, join in conversations or plans without being invited, take over what others are doing, or use other people's things without asking? Can you give me an example?",
+    teacher: "Compared with others in the class, how often does this pupil interrupt you or other pupils, barge into others' work or games, or take things without asking? How do classmates react?"
   },
   rephrase: [
     "How often do you interrupt people? Tell me about the last time.",
@@ -195,12 +198,16 @@ AA.add('symptoms', [{
         "Parent: 'was into everything and everyone's business'",
         "Parent: 'other parents complained that they took over'"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16)", items: [
+      { ctx: "teen", label: "Secondary school and college (12-17)", items: [
         "Got into fights after stepping into other people's arguments",
         "Took over group projects at secondary school",
         "Used friends' phones, bags or clothes without asking",
         "Teachers described them as being in everyone's business",
-        "Lost friends who felt crowded or bossed around"
+        "Lost friends who felt crowded or bossed around",
+        "Jumps into group chats or conversations they were not part of",
+        "Takes over tasks from colleagues at a part-time job",
+        "Interrupts teachers' explanations to share their own ideas",
+        "Tells friends or siblings how to do things they are already doing"
       ] }
     ]
   },
@@ -298,6 +305,14 @@ AA.add('symptoms', [{
       "Takes other children's things without asking",
       "Joins other children's games uninvited",
       "Interrupts when the teacher is busy with others"
+    ],
+    teacher: [
+      "Interrupts when I am working with other pupils",
+      "Joins other children's games without being asked",
+      "Takes classmates' equipment without asking",
+      "Takes over in group work",
+      "Pokes or taps others to get their attention",
+      "Classmates complain they will not leave them alone"
     ]
   },
   counts: [
@@ -355,7 +370,8 @@ AA.add('symptoms', [{
     highIQ: "Able people may take over because they genuinely see the solution first, and in leadership roles this may be rewarded for a while. Look for complaints about overstepping, strained teams and the effort it takes to let others lead.",
     sud: "Alcohol and stimulants such as cocaine or amphetamines reduce social inhibition and can produce pushy, intrusive behaviour. Confirm that interrupting and intruding happen when sober and predate substance use, ideally with a parent's account of childhood.",
     asd: "Autistic people may interrupt or join in at the wrong moment because unwritten social rules are unclear, and may use others' things without realising it matters. In ADHD the person usually knows the rule but acts before thinking. Both can be present, so ask what drives the behaviour.",
-    culture: "Norms about personal space, sharing belongings and joining others' conversations vary between cultures, families and generations. Judge against the person's own community and ask whether people within it see the behaviour as unusual or a problem."
+    culture: "Norms about personal space, sharing belongings and joining others' conversations vary between cultures, families and generations. Judge against the person's own community and ask whether people within it see the behaviour as unusual or a problem.",
+    young: "Young children are still learning to take turns in talk and play, so compare with children of the same age and allow for the youngest in the year. Girls may show this as bossiness or taking over in friendships rather than obvious interrupting. Differences in social communication, as in autism, can also lead to interrupting, and both conditions can be present."
   },
   refs: [
     "DSM-5-TR (APA 2022), criterion A2i, paraphrased",
@@ -363,6 +379,8 @@ AA.add('symptoms', [{
     "Kooij JJS et al. Updated European consensus statement on adult ADHD. Eur Psychiatry 2019;56:14-34",
     "DIVA 2.0 structure (Kooij and Francken 2010); question and example wording original",
     "ASRS v1.1 item 18 (WHO 2003)",
-    "Clinical practice"
+    "Clinical practice",
+    "NICE NG87 1.2.2 (under-recognition in girls), 1.3.5 (criteria adjusted for age) and 1.3.6 (children's views)",
+    "Parent, young person and teacher questions, teacher comments and young-person notes: clinical practice"
   ]
 }]);

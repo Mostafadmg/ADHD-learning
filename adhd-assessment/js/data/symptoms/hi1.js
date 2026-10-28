@@ -9,7 +9,10 @@ AA.add('symptoms', [{
   why: "Thought to reflect weaker inhibition of motor activity together with a need for extra stimulation to stay alert in dull, seated situations. Small movements appear to help many people with ADHD keep arousal and working memory up, which is why fidgeting rises when a task is slow, sedentary or demanding to hold in mind.",
   ask: {
     adult: "Over the last six months, when you have had to sit for a while, such as at a desk, in a meeting, at a meal or watching something, how often have your hands or feet been on the move, or have you kept shifting about in your seat? Can you give me a recent example?",
-    child: "Thinking back to primary school, roughly age 5 to 12, how often were your hands or feet moving, or were you fiddling with things or wriggling about, when you were meant to be sitting nicely? What did teachers or your parents say about it?"
+    child: "Thinking back to primary school, roughly age 5 to 12, how often were your hands or feet moving, or were you fiddling with things or wriggling about, when you were meant to be sitting nicely? What did teachers or your parents say about it?",
+    parent: "Over the last six months, when your child has to sit for a while, such as at meals, at homework or on a car journey, how much do they fidget, tap, fiddle or wriggle about compared with other children their age? Can you give me a recent example?",
+    teen: "Over the last six months, when you have to sit for a while, like in lessons, exams or at meals, how much do your hands or feet keep moving, or do you keep shifting about in your seat? Do people comment on it?",
+    teacher: "Compared with others in the class, how much does this pupil fidget, tap, fiddle with things or wriggle in their seat or on the carpet? Does it get in the way of their work or other children's?"
   },
   rephrase: [
     "When you sit down, do your hands or feet keep moving? Tell me what they do.",
@@ -208,12 +211,16 @@ AA.add('symptoms', [{
         "Was often told off for rocking on the chair",
         "Infant teacher noted wriggling at carpet time and in assembly"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16)", items: [
+      { ctx: "teen", label: "Secondary school and college (12-17)", items: [
         "Clicked pens or tapped constantly in secondary school lessons",
         "Jiggled legs in exams and was asked to stop by invigilators",
         "Chewed sleeves, pen lids or hoodie strings",
         "Swapped obvious fidgeting for doodling or picking at nails",
-        "Still swung on chairs in class as a teenager"
+        "Still swung on chairs in class as a teenager",
+        "Bounces a leg or taps their fingers through every lesson",
+        "Fiddles with their phone, rings or bracelets while talking",
+        "Fidgets constantly on long car or bus journeys",
+        "Taps or fiddles with things during quiet spells at work"
       ] }
     ]
   },
@@ -317,6 +324,14 @@ AA.add('symptoms', [{
       "Restless in their seat",
       "Always has something in their hands",
       "Would concentrate better if less fidgety"
+    ],
+    teacher: [
+      "Cannot keep still on the carpet",
+      "Always has something in their hands",
+      "Rocks on their chair despite reminders",
+      "Taps pens or kicks the chair in front",
+      "Settles better with a fidget toy or wobble cushion",
+      "Chews pencils, sleeves or collars"
     ]
   },
   counts: [
@@ -374,7 +389,8 @@ AA.add('symptoms', [{
     highIQ: "Able adults often build socially acceptable outlets such as note-taking, doodling, standing desks or active roles, so fidgeting looks mild. Judge by what happens when the outlets are unavailable and how much effort stillness takes.",
     sud: "Caffeine, nicotine and its withdrawal, stimulants, and alcohol or benzodiazepine withdrawal all cause fidgety restlessness. Establish whether fidgeting was present before substance use began and during periods without use.",
     asd: "Autistic people may have repetitive movements (stimming) such as rocking, flapping or finger-flicking that are patterned and help regulate sensory or emotional load. ADHD fidgeting is more varied, rises with boredom and is not ritualised; both can co-exist, so record each separately.",
-    culture: "Expectations about sitting still vary across cultures, schools and religious settings, and some people use worry beads or prayer beads routinely. Compare with peers from the same background and ask whether their own community saw them as unusually fidgety."
+    culture: "Expectations about sitting still vary across cultures, schools and religious settings, and some people use worry beads or prayer beads routinely. Compare with peers from the same background and ask whether their own community saw them as unusually fidgety.",
+    young: "Fidgeting is common in young children, so compare with children of the same age, and take extra care when the child is the youngest in the year. Girls and older children often switch to small, hidden movements such as hair twisting, skin picking or doodling. Tell fidgeting apart from tics, which are sudden, repeated movements often preceded by an urge."
   },
   refs: [
     "DSM-5-TR (APA 2022), criterion A2a, paraphrased",
@@ -383,6 +399,8 @@ AA.add('symptoms', [{
     "Kooij JJS et al. Updated European consensus statement on diagnosis and treatment of adult ADHD. Eur Psychiatry 2019",
     "DIVA 2.0 structure (Kooij and Francken 2010); wording original",
     "Sarver DE et al. Hyperactivity in ADHD: impairing deficit or compensatory behavior? J Abnorm Child Psychol 2015",
-    "Clinical practice: akathisia, tics, restless legs and body-focused repetitive behaviours as differentials"
+    "Clinical practice: akathisia, tics, restless legs and body-focused repetitive behaviours as differentials",
+    "NICE NG87 1.2.2 (under-recognition in girls), 1.3.5 (criteria adjusted for age) and 1.3.6 (children's views)",
+    "Parent, young person and teacher questions, teacher comments and young-person notes: clinical practice"
   ]
 }]);

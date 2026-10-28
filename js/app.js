@@ -64,6 +64,14 @@
   }
   window.addEventListener('hashchange', function(){ show(location.hash.slice(1)); });
 
+  /* ---------- home cards: lesson count and time, read from each module's lessons ---------- */
+  $$('.mc-meta[data-mc]').forEach(function(p){
+    var ls = $$('#'+p.dataset.mc+' [data-lessons] > .lesson');
+    if(!ls.length) return;
+    var min = ls.reduce(function(t,l){ return t + (+l.dataset.min || 0); }, 0);
+    p.textContent = ls.length+' lessons'+(min ? ' · ~'+min+' min' : '');
+  });
+
   /* ---------- progress ---------- */
   function renderProgress(){
     var n = trackable.length, d = trackable.filter(function(m){return state.done[m.id];}).length;
@@ -102,7 +110,7 @@
     $$('nav.sidebar a').forEach(function(a){ var n=a.querySelector('.num'); if(!a.title) a.title=a.textContent.slice(n?n.textContent.length:0).trim(); });
     function sync(){ var col=root.classList.contains('sb-collapsed'); var lbl=col?'Expand menu':'Collapse menu';
       tg.setAttribute('aria-expanded', col?'false':'true'); tg.setAttribute('aria-label', lbl); tg.title=lbl+' (shortcut: [ )';
-      tg.querySelector('.sb-ico').textContent=col?'»':'«'; tg.querySelector('.sb-lbl').textContent=lbl; }
+      tg.querySelector('.sb-ico').innerHTML='<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(col?'<path d="M6 6l6 6-6 6M13 6l6 6-6 6"/>':'<path d="M18 6l-6 6 6 6M11 6l-6 6 6 6"/>')+'</svg>'; tg.querySelector('.sb-lbl').textContent=lbl; }
     function set(col){ root.classList.toggle('sb-collapsed', col); try{ localStorage.setItem(KEY, col?'1':'0'); }catch(e){} sync();
       setTimeout(function(){ window.dispatchEvent(new Event('resize')); }, 300); }
     tg.addEventListener('click', function(){ set(!root.classList.contains('sb-collapsed')); });
@@ -120,7 +128,21 @@
     f.setAttribute('aria-pressed','false');
     var back = f.querySelector('.back'), front = f.querySelector('.front');
     function sync(){ var on=f.classList.contains('flipped'); f.setAttribute('aria-pressed', on?'true':'false'); if(back) back.setAttribute('aria-hidden', on?'false':'true'); if(front) front.setAttribute('aria-hidden', on?'true':'false'); }
-    function toggle(){ f.classList.toggle('flipped'); sync(); }
+    /* Flip as a 2D squash (narrow to the edge, swap face, widen): reliable inside any container, unlike 3D. */
+    var inner = f.querySelector('.in'), busy = false, still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function toggle(){
+      if(busy) return;
+      if(still || !inner || !inner.animate){ f.classList.toggle('flipped'); sync(); return; }
+      busy = true;
+      var out = inner.animate([{transform:'scaleX(1)'},{transform:'scaleX(0)'}], {duration:150, easing:'cubic-bezier(.55,0,1,.45)'});
+      out.onfinish = function(){
+        f.classList.toggle('flipped'); sync();
+        var back = inner.animate([{transform:'scaleX(0)'},{transform:'scaleX(1)'}], {duration:190, easing:'cubic-bezier(0,.55,.45,1)'});
+        back.onfinish = back.oncancel = function(){ busy = false; };
+      };
+      out.oncancel = function(){ busy = false; };
+    }
+    f._sync = sync;
     f.addEventListener('click', toggle);
     f.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '||e.key==='Spacebar'){ e.preventDefault(); toggle(); } });
     sync();
@@ -138,7 +160,7 @@
     var bar = document.createElement('div'); bar.className = 'ls-bar';
     var menu = '<li><button type="button" data-i="-1"><span class="ls-n">i</span><span class="ls-t">Overview</span><span class="ls-m"></span></button></li>';
     ls.forEach(function(l,i){ menu += '<li><button type="button" data-i="'+i+'"><span class="ls-n">'+(i+1)+'</span><span class="ls-t">'+esc(l.dataset.title)+'</span><span class="ls-m">'+(l.dataset.min||'')+' min</span></button></li>'; });
-    bar.innerHTML = '<div class="ls-top"><span class="ls-pos" aria-live="polite"></span><button type="button" class="ls-menu-btn" aria-expanded="false">All lessons <span aria-hidden="true">▾</span></button></div>'
+    bar.innerHTML = '<div class="ls-top"><span class="ls-pos" aria-live="polite"></span><span class="ls-tnav"><button type="button" class="ls-tb ls-tprev" aria-label="Previous lesson" title="Previous lesson"><span aria-hidden="true">\u2039</span></button><button type="button" class="ls-menu-btn" aria-expanded="false">All lessons <span aria-hidden="true">▾</span></button><button type="button" class="ls-tb ls-tnext" aria-label="Next lesson" title="Next lesson"><span aria-hidden="true">\u203a</span></button></span></div>'
       + '<div class="ls-steps" role="group" aria-label="Jump to a lesson">'+ls.map(function(l,i){ var t = 'Lesson '+(i+1)+': '+esc(l.dataset.title); return '<button type="button" class="ls-seg" data-i="'+i+'" title="'+t+'" aria-label="'+t+'"><span></span></button>'; }).join('')+'</div>'
       + '<ol class="ls-menu" hidden>'+menu+'</ol>';
     box.insertBefore(bar, ls[0]);
@@ -146,29 +168,44 @@
     nav.innerHTML = '<button type="button" class="btn secondary ls-prev">← Previous</button><button type="button" class="btn ls-next"></button>';
     box.appendChild(nav);
     var pos = $('.ls-pos', bar), steps = $$('.ls-seg', bar), mbtn = $('.ls-menu-btn', bar), mlist = $('.ls-menu', bar), items = $$('.ls-menu button', bar);
-    var prev = $('.ls-prev', nav), next = $('.ls-next', nav), cur = 0;
-    var intro = box.closest('.module') && $('.mod-head', box.closest('.module'));   /* the overview is its own first screen */
+    var prev = $('.ls-prev', nav), next = $('.ls-next', nav), cur = 0, tprev = $('.ls-tprev', bar), tnext = $('.ls-tnext', bar);
+    var intro = box.closest('.module') && $('.mod-head', box.closest('.module'));
+    /* which module this is, from its number in the course menu: "Module 4", or "Module 3B" for the Module 3 sections */
+    var modEl = box.closest('.module'), modNum = modEl && $('nav.sidebar a[href="#'+modEl.id+'"] .num'), modTag = modNum && /^\d+[A-Z]?$/.test(modNum.textContent.trim()) ? 'Module '+modNum.textContent.trim() : '';   /* the overview is its own first screen */
+    /* after the last lesson, Next goes on to the following module in course order */
+    var mods = $$('main > section.module').filter(function(m){ return m.id!=='home' && $('nav.sidebar a[href="#'+m.id+'"]'); });   /* only pages in the course menu */
+    var after = mods[mods.indexOf(box.closest('.module'))+1] || null;
+    var afterLabel = after ? (/^m\d+$/.test(after.id) ? 'Next module: ' : /^(exam|final)$/.test(after.id) ? 'Next: ' : 'Next section: ')+(after.dataset.title||after.id)+' →' : '';
+    function toAfter(){ if(after) location.hash = '#'+after.id; }
     function go(i, scroll){
       cur = Math.max(intro ? -1 : 0, Math.min(n-1, i)); rec.at = cur; save();
       ls.forEach(function(l,li){ l.hidden = li!==cur; });
+      $$('details.sources-d[open]', box).forEach(function(d){ d.open = false; });   /* sources start closed on every visit */
       var ov = cur===-1; if(intro) intro.hidden = !ov; bar.hidden = ov;
       prev.hidden = ov || (cur===0 && !intro);
       prev.textContent = cur===0 ? '← Overview' : '← Previous';
-      next.hidden = cur===n-1;
-      next.textContent = ov ? 'Start lesson 1: '+ls[0].dataset.title+' →' : (cur<n-1 ? 'Next: '+ls[cur+1].dataset.title+' →' : '');
+      next.hidden = cur===n-1 && !after;
+      tprev.disabled = cur===0 && !intro; tnext.disabled = cur===n-1 && !after;
+      tprev.title = cur===0 ? 'Back to the overview' : (cur>0 ? 'Previous: '+ls[cur-1].dataset.title : ''); tnext.title = cur<n-1 ? 'Next: '+ls[cur+1].dataset.title : (after ? afterLabel.replace(/ →$/,'') : 'Last lesson');
+      next.textContent = ov ? 'Start lesson 1: '+ls[0].dataset.title+' →' : (cur<n-1 ? 'Next: '+ls[cur+1].dataset.title+' →' : afterLabel);
       items.forEach(function(b){ var bi = +b.dataset.i; b.classList.toggle('cur', bi===cur); b.classList.toggle('done', bi>=0 && !!rec.done[bi]); b.setAttribute('aria-current', bi===cur?'step':'false'); });
       if(scroll) window.scrollTo({top:0});
       if(ov){ if(scroll){ var h1 = $('h1', intro); if(h1) h1.focus({preventScroll:true}); } return; }
-      pos.innerHTML = '<strong>Lesson '+(cur+1)+' of '+n+'</strong> · '+esc(ls[cur].dataset.title)+' · '+(ls[cur].dataset.min||'?')+' min <span class="ls-total">('+total+' min in total)</span>';
+      pos.innerHTML = (modTag ? '<span class="ls-mod">'+modTag+'</span> · ' : '')+'<strong>Lesson '+(cur+1)+' of '+n+'</strong> · '+esc(ls[cur].dataset.title)+' · '+(ls[cur].dataset.min||'?')+' min <span class="ls-total">('+total+' min in total)</span>';
       steps.forEach(function(s,si){ s.className = 'ls-seg' + (si===cur ? ' cur' : (rec.done[si] ? ' done' : '')); s.setAttribute('aria-current', si===cur ? 'step' : 'false'); });
       if(scroll){ var h = $('h2', ls[cur]); if(h){ h.setAttribute('tabindex','-1'); h.focus({preventScroll:true}); } }
     }
     function menuOpen(o){ mlist.hidden = !o; mbtn.setAttribute('aria-expanded', o?'true':'false'); }
     mbtn.addEventListener('click', function(){ menuOpen(mlist.hidden); });
+    /* the menu floats over the lesson: close it on an outside click or Escape */
+    document.addEventListener('click', function(e){ if(!mlist.hidden && !bar.contains(e.target)) menuOpen(false); });
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape' && !mlist.hidden){ menuOpen(false); mbtn.focus(); } });
     items.forEach(function(b){ b.addEventListener('click', function(){ menuOpen(false); go(+b.dataset.i, true); }); });
     steps.forEach(function(b){ b.addEventListener('click', function(){ menuOpen(false); go(+b.dataset.i, true); }); });
     prev.addEventListener('click', function(){ go(cur-1, true); });
-    next.addEventListener('click', function(){ if(cur>=0) rec.done[cur] = true; go(cur+1, true); });
+    tprev.addEventListener('click', function(){ menuOpen(false); go(cur-1, true); });
+    tnext.addEventListener('click', function(){ menuOpen(false); if(cur>=0) rec.done[cur] = true; if(cur===n-1){ save(); toAfter(); return; } go(cur+1, true); });
+    next.addEventListener('click', function(){ if(cur>=0) rec.done[cur] = true; if(cur===n-1){ save(); toAfter(); return; } go(cur+1, true); });
     lessonSets.push({box:box, ls:ls, go:go});
     go(typeof rec.at==='number' ? rec.at : -1, false);
   });
@@ -243,10 +280,14 @@
     nav.innerHTML = '<button type="button" class="btn secondary js-dprev">← Previous</button><span class="deck-pos" aria-live="polite"></span><button type="button" class="btn js-dnext">Next →</button>';
     g.parentNode.insertBefore(nav, g.nextSibling);
     var pos = nav.querySelector('.deck-pos'), prev = nav.querySelector('.js-dprev'), next = nav.querySelector('.js-dnext');
+    var still = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches, first = true;
     function go(n){
-      cards[i].classList.remove('flipped'); cards[i].setAttribute('aria-pressed','false');
+      var dir = n > i ? 1 : -1;
+      cards[i].classList.remove('flipped'); if(cards[i]._sync) cards[i]._sync(); else cards[i].setAttribute('aria-pressed','false');
       i = (n + cards.length) % cards.length;
       cards.forEach(function(c,ci){ c.hidden = ci!==i; });
+      if(!first && !still && cards[i].animate) cards[i].animate([{opacity:0, transform:'translateX('+(24*dir)+'px)'},{opacity:1, transform:'none'}], {duration:240, easing:'cubic-bezier(.2,.7,.3,1)'});
+      first = false;
       pos.textContent = 'Card '+(i+1)+' of '+cards.length+' · tap the card to flip';
     }
     prev.addEventListener('click', function(){ go(i-1); });
@@ -254,11 +295,84 @@
     go(0);
   });
 
+  /* ---------- NICE pathways (.bflow) become a "journey": every step visible as a coloured numbered card with arrows between
+     them, then the decision (two coloured outcomes) and the "must not" rule. Same colour language as the gate steppers.
+     The original .bflow markup stays in the HTML as the no-JS version. ---------- */
+  $$('.bflow').forEach(function(f){
+    var kids = Array.prototype.filter.call(f.children, function(c){ return c.matches('.bf-step,.bf-fork,.bf-rule'); });
+    if(kids.length < 2) return;
+    var steps = '', after = '', n = 0;
+    kids.forEach(function(k){
+      if(k.matches('.bf-step')){
+        var d = k.querySelector(':scope > div'), b = d.querySelector('b'), ref = d.querySelector('.bf-ref');
+        var rest = Array.prototype.filter.call(d.children, function(c){ return c!==b && c!==ref; }).map(function(c){ return c.outerHTML; }).join('');
+        steps += '<li class="pj-s" data-i="'+(n%5)+'"><span class="pj-n">'+(++n)+'</span><b>'+b.innerHTML+'</b>'+rest+'</li>';
+      } else if(k.matches('.bf-fork')){
+        after += '<div class="pj-fork"><p class="pj-q"><span aria-hidden="true">?</span>'+k.querySelector('.bf-q').innerHTML+'</p><div class="pj-ways">'
+          + $$('.bf-way', k).map(function(w){ var tg = w.querySelector('.bf-tag'), b = w.querySelector('b'), ps = $$('p', w);
+              return '<div class="pj-way '+(w.classList.contains('bf-ok')?'ok':'go')+'"><span class="pj-tag">'+(tg?tg.innerHTML:'')+'</span><b>'+(b?b.innerHTML:'')+'</b>'+ps.map(function(p){ return p.outerHTML; }).join('')+'</div>'; }).join('')
+          + '</div></div>';
+      } else {
+        var d2 = k.querySelector(':scope > div') || k, b2 = d2.querySelector('b'), ref2 = d2.querySelector('.bf-ref');
+        var rest2 = Array.prototype.filter.call(d2.children, function(c){ return c!==b2 && c!==ref2; }).map(function(c){ return c.outerHTML; }).join('');
+        after += '<div class="pj-rule"><span class="pj-ri" aria-hidden="true">!</span><div><b>'+(b2?b2.innerHTML:'')+'</b>'+rest2+'</div></div>';
+      }
+    });
+    var g = document.createElement('div'); g.className = 'pj pj-n'+Math.min(n,4);
+    g.innerHTML = (n ? '<ol class="pj-steps">'+steps+'</ol>' : '') + after;
+    f.parentNode.replaceChild(g, f);
+  });
+
+  /* ---------- steppers [data-gst]: a track of tabs (.gst-t), one panel (.gst-p) at a time, Previous / Next (.gst-go) ---------- */
+  $$('[data-gst]').forEach(function(box){
+    /* clause numbers are dropped from step text: the module's sources dropdown lists them */
+    $$('.gst-band .gst-rule, .gst-ex > p, .gst-note, .gst-areas li > span, .gst-four li > span', box).forEach(function(r){
+      r.innerHTML = r.innerHTML.replace(/\s*\(((?:NICE )?NG87[^)]*)\)(\.?)/g, function(m, ref, dot){ return dot; }); });
+    var tabs = $$('.gst-t', box), panels = $$('.gst-p', box), pos = $('.gst-pos', box), go = $$('.gst-go', box), cur = 0;
+    function show(n, focus){
+      cur = Math.max(0, Math.min(tabs.length-1, n));
+      tabs.forEach(function(t,i){ t.setAttribute('aria-selected', i===cur ? 'true' : 'false'); t.tabIndex = i===cur ? 0 : -1; t.classList.toggle('past', i<cur); });
+      panels.forEach(function(p,i){ p.hidden = i!==cur; });
+      if(pos) pos.textContent = (cur+1)+' of '+tabs.length;
+      if(go[0]) go[0].disabled = cur===0;
+      if(go[1]){ go[1].disabled = cur===tabs.length-1; var nx = tabs[cur+1]; go[1].textContent = nx ? 'Next: '+(nx.querySelector('span')||nx).textContent.trim()+' →' : 'Done'; }
+      if(focus) tabs[cur].focus();
+    }
+    tabs.forEach(function(t,i){
+      t.addEventListener('click', function(){ show(i); });
+      t.addEventListener('keydown', function(e){ if(e.key==='ArrowRight'||e.key==='ArrowLeft'){ e.preventDefault(); show(cur+(e.key==='ArrowRight'?1:-1), true); } });
+    });
+    go.forEach(function(b){ b.addEventListener('click', function(){ show(cur + (+b.dataset.d)); }); });
+    show(0);
+  });
+
   /* ---------- practice boxes: tabs between flashcards and quizzes ---------- */
   var prN = 0;
   $$('[data-practice]').forEach(function(box){
     var boxN = ++prN;
-    var tabs = $$('.pr-tab', box), panels = $$('.pr-panel', box);
+    function own(el){ return el.closest('[data-practice]') === box; }
+    var tabs = $$('.pr-tab', box).filter(own), panels = $$('.pr-panel', box).filter(own);
+    /* End-of-module Practise boxes: each tab becomes a tile with an icon, the activity name and what it is */
+    if(box.classList.contains('practice') && !box.classList.contains('pr-nested')){
+      box.classList.add('pr2');
+      var ICO = {
+        cards:'<rect x="4" y="6" width="13" height="15" rx="2"/><path d="M8 3h11a2 2 0 0 1 2 2v13"/>',
+        quiz:'<circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.6 2.6L16.5 9"/>',
+        checks:'<path d="M9 6h11M9 12h11M9 18h11"/><path d="M3.5 6l1.2 1.2L7 5M3.5 12l1.2 1.2L7 11M3.5 18l1.2 1.2L7 17"/>',
+        drill:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/>'
+      };
+      tabs.forEach(function(t){
+        var cnt = t.querySelector('span'), n = cnt ? cnt.textContent.trim() : '', bare = t.cloneNode(true);
+        if(cnt) bare.removeChild(bare.querySelector('span'));
+        var label = bare.textContent.trim();
+        var kind = /flash/i.test(label) ? 'cards' : /lesson check/i.test(label) ? 'checks' : /quiz|exam/i.test(label) ? 'quiz' : 'drill';
+        var sub = {cards:'Flip and recall', quiz:'Test yourself', checks:'Two per lesson', drill:'Apply it'}[kind];
+        var unit = kind==='cards' ? ' cards' : (/^\d+$/.test(n) ? ' items' : '');
+        if(kind==='quiz' || kind==='checks') unit = ' questions';
+        t.classList.add('prt', 'prt-'+kind);
+        t.innerHTML = '<span class="prt-ic" aria-hidden="true"><svg viewBox="0 0 24 24">'+ICO[kind]+'</svg></span><span class="prt-tx"><b>'+label+'</b><small>'+(n && label.indexOf(n)<0 ? n+unit+' \u00b7 ' : '')+sub+'</small></span>';
+      });
+    }
     function sel(n, focus){
       tabs.forEach(function(t,ti){ t.setAttribute('aria-selected', ti===n?'true':'false'); t.tabIndex = ti===n?0:-1; });
       panels.forEach(function(p,pi){ p.hidden = pi!==n; });
@@ -303,49 +417,53 @@
     if(clr) clr.addEventListener('click', function(){ boxes.forEach(function(b){b.checked=false;}); state.checks[key]={}; save(); upd(); });
   });
 
-  /* ---------- quizzes ---------- */
+  /* ---------- quizzes ----------
+     One question at a time in a calm card: a segmented progress track (grey = to do, green = right, red = wrong,
+     outlined = current), a "Clinical scenario" label for vignettes, lettered answer tiles, a feedback card
+     (verdict, explanation, source chip) and a results screen with a score ring. */
   function renderQuiz(el){
     var id = el.dataset.quiz, data = (window.QUIZ||{})[id]; if(!data) return;
     var score=0, answered=0;
-    /* Collapsed by default to save space; stays open across a reset. */
     var wasOpen = 'open' in el.dataset || !!el.querySelector('details.quiz-d[open]'), best = state.quiz[el.dataset.module||id];
-    var html = '<details class="quiz-d"'+(wasOpen?' open':'')+'><summary><span class="quiz-sum"><h2 id="'+id+'-quiz-h">'+(el.dataset.title||'Check your understanding')+'</h2><span class="cl-progress">'+data.length+' questions'+(best?' · best score '+best.best+'/'+best.total:'')+' · tap to '+'<span class="quiz-act"></span></span></span></summary><div class="quiz-body">';
-    /* One question at a time: progress bar, numbered dots to jump, results screen at the end. */
-    html += '<div class="qz-top"><span class="qz-pos"></span><span class="qz-score" aria-live="polite"></span></div><div class="qz-bar" aria-hidden="true"><span></span></div>';
-    html += '<div class="qz-dots" role="group" aria-label="Jump to question">';
-    data.forEach(function(q,qi){ html += '<button type="button" class="qz-dot" data-qi="'+qi+'" aria-label="Question '+(qi+1)+'">'+(qi+1)+'</button>'; });
+    var html = '<details class="quiz-d"'+(wasOpen?' open':'')+'><summary><span class="quiz-sum"><h2 id="'+id+'-quiz-h">'+(el.dataset.title||'Check your understanding')+'</h2><span class="cl-progress">'+data.length+' questions'+(best?' · best score '+best.best+'/'+best.total:'')+' · tap to '+'<span class="quiz-act"></span></span></span></summary><div class="quiz-body qz2">';
+    html += '<div class="qz-head"><p class="qz-pos"></p><div class="qz-stats"><span class="qz-pill ok" title="Correct">\u2713 <b class="qz-ok">0</b></span><span class="qz-pill bad" title="Not quite">\u2717 <b class="qz-bad">0</b></span>'+(best?'<span class="qz-pill best" title="Your best score">Best '+best.best+'/'+best.total+'</span>':'')+'</div><span class="qz-score sr-only" aria-live="polite"></span></div>';
+    html += '<div class="qz-track" role="group" aria-label="Jump to question">';
+    data.forEach(function(q,qi){ html += '<button type="button" class="qz-dot" data-qi="'+qi+'" aria-label="Question '+(qi+1)+'" title="Question '+(qi+1)+'"></button>'; });
     html += '</div>';
     data.forEach(function(q,qi){
-      html += '<div class="q" data-qi="'+qi+'" hidden><div class="stem">'+(qi+1)+'. '+q.q+'</div><div class="opts" role="group" aria-label="Options for question '+(qi+1)+'">';
-      q.o.forEach(function(o,oi){ html += '<button type="button" class="opt" data-oi="'+oi+'">'+String.fromCharCode(65+oi)+'. '+o+'</button>'; });
-      html += '</div><div class="expl" aria-live="polite"><span class="res"></span> '+q.e+(q.s?'<div class="src">Source: '+q.s+'</div>':'')+'</div></div>';
+      html += '<div class="q" data-qi="'+qi+'" hidden><p class="qz-k">'+(q.v?'<span class="qz-v">Clinical scenario</span>':'<span>Question '+(qi+1)+'</span>')+'</p><div class="stem">'+q.q+'</div><div class="opts" role="group" aria-label="Options for question '+(qi+1)+'">';
+      q.o.forEach(function(o,oi){ html += '<button type="button" class="opt" data-oi="'+oi+'"><span class="ol" aria-hidden="true">'+String.fromCharCode(65+oi)+'</span><span class="ot">'+o+'</span></button>'; });
+      html += '</div><div class="expl" aria-live="polite"><p class="res"></p><p class="et">'+q.e+'</p>'+(q.s?'<p class="src"><span>Source</span><i>'+q.s+'</i></p>':'')+'</div></div>';
     });
-    html += '<div class="qz-result" hidden><p class="score" aria-live="polite"></p><p class="qz-msg"></p><p class="qz-acts"><button type="button" class="btn js-qwrong">Review wrong answers</button> <button type="button" class="btn secondary js-qreset">Try again</button></p></div>';
-    html += '<div class="qz-nav"><button type="button" class="btn secondary js-qprev">← Previous</button><button type="button" class="btn js-qnext">Next →</button></div></div></details>';
+    html += '<div class="qz-result" hidden><div class="qz-ring" aria-hidden="true"><span class="qz-pct"></span></div><div class="qz-rtext"><p class="score" aria-live="polite"></p><p class="qz-msg"></p><p class="qz-acts"><button type="button" class="btn js-qwrong">Review wrong answers</button> <button type="button" class="btn secondary js-qreset">Try again</button></p></div></div>';
+    html += '<div class="qz-nav"><button type="button" class="btn secondary js-qprev">\u2190 Previous</button><button type="button" class="btn js-qnext">Next \u2192</button></div></div></details>';
     el.innerHTML = html;
     var qs = $$('.q', el), dots = $$('.qz-dot', el), cur = 0, results = false, wrong = {};
-    var posEl = el.querySelector('.qz-pos'), liveEl = el.querySelector('.qz-score'), barEl = el.querySelector('.qz-bar span');
-    var resEl = el.querySelector('.qz-result'), prevB = el.querySelector('.js-qprev'), nextB = el.querySelector('.js-qnext');
+    var posEl = el.querySelector('.qz-pos'), liveEl = el.querySelector('.qz-score'), okEl = el.querySelector('.qz-ok'), badEl = el.querySelector('.qz-bad');
+    var resEl = el.querySelector('.qz-result'), prevB = el.querySelector('.js-qprev'), nextB = el.querySelector('.js-qnext'), ring = el.querySelector('.qz-ring');
     function show(i, focus){
       results = i === null; if(!results) cur = i;
       qs.forEach(function(qd,qi){ qd.hidden = results || qi!==cur; });
       dots.forEach(function(d,qi){ d.classList.toggle('cur', !results && qi===cur); d.setAttribute('aria-current', !results && qi===cur ? 'step' : 'false'); });
       resEl.hidden = !results;
-      posEl.textContent = results ? 'Results' : 'Question '+(cur+1)+' of '+data.length;
+      posEl.innerHTML = results ? '<b>Your results</b>' : '<b>Question '+(cur+1)+'</b> <span>of '+data.length+'</span>';
       prevB.disabled = !results && cur===0;
       nextB.hidden = results;
-      nextB.textContent = cur===data.length-1 ? (answered===data.length ? 'See results →' : 'Finish →') : 'Next →';
+      nextB.textContent = cur===data.length-1 ? (answered===data.length ? 'See results \u2192' : 'Finish \u2192') : 'Next \u2192';
+      nextB.classList.toggle('secondary', !results && !qs[cur].classList.contains('answered'));
       if(focus){ var t = results ? resEl : qs[cur].querySelector('.stem'); t.setAttribute('tabindex','-1'); t.focus({preventScroll:true}); }
     }
     function upd(){
       liveEl.textContent = score+' / '+answered+' correct';
-      barEl.style.width = Math.round(answered/data.length*100)+'%';
+      okEl.textContent = score; badEl.textContent = answered-score;
       if(answered===data.length){
         var prev = state.quiz[el.dataset.module||id]; var best = Math.max(score, prev?prev.best:0);
         state.quiz[el.dataset.module||id] = {best:best,total:data.length}; save(); renderProgress();
-        var pct = Math.round(score/data.length*100);
-        el.querySelector('.score').textContent = 'You scored '+score+' / '+data.length+' ('+pct+'%). Best: '+best+' / '+data.length+'.';
-        el.querySelector('.qz-msg').textContent = pct>=80 ? 'Excellent (80% or more). You are ready for the next module.' : 'Below 80%. Review the wrong answers, re-read the teaching, then try again.';
+        var pct = Math.round(score/data.length*100), good = pct>=80;
+        ring.style.setProperty('--p', pct); ring.classList.toggle('good', good);
+        el.querySelector('.qz-pct').textContent = pct+'%';
+        el.querySelector('.score').innerHTML = '<b>'+score+' of '+data.length+' correct</b> <span>Best: '+best+' / '+data.length+'</span>';
+        el.querySelector('.qz-msg').textContent = good ? 'Excellent: 80% or more. You are ready to move on.' : 'Below 80%. Review the ones you missed, re-read the teaching, then try again.';
         el.querySelector('.js-qwrong').hidden = score===data.length;
       }
     }
@@ -359,8 +477,10 @@
           if(ok) score++; else wrong[qi]=true;
           $$('.opt', qd).forEach(function(x){ x.disabled=true; if(+x.dataset.oi===q.a) x.classList.add('correct'); });
           if(!ok) b.classList.add('wrong');
+          b.classList.add('picked');
           dots[qi].classList.add(ok?'ok':'bad');
-          qd.querySelector('.res').innerHTML = ok ? '<strong>✓ Correct.</strong>' : '<strong>✗ Not quite.</strong> Correct answer: '+String.fromCharCode(65+q.a)+'.';
+          qd.querySelector('.expl').classList.add(ok?'is-ok':'is-bad');
+          qd.querySelector('.res').innerHTML = ok ? '<span class="ri">\u2713</span><b>Correct</b>' : '<span class="ri">\u2717</span><b>Not quite</b><span class="ra">The answer is '+String.fromCharCode(65+q.a)+'</span>';
           upd(); show(cur);
         });
       });
@@ -441,7 +561,7 @@
   var mr = $('#mrExplorer');
   if(mr){
     var prof = {
-      'Concerta XL and bioequivalent tablets (Affenid XL, Atenza XL, Delmosart, Matoride XL, Xaggitin XL, Xenidate XL)':{ir:22,mr:78,dur:'about 12 h (second peak 6–8 h)',food:'With or without food; swallow whole with liquid; do not chew, divide or crush',strengths:'18, 27, 36, 54 mg (Atenza XL also 45 mg; Matoride XL 18, 36, 54 mg)',note:'Concerta XL, Affenid XL, Atenza XL and Matoride XL are osmotic tablets (the empty shell may appear in stool). SPS gives Delmosart and Xaggitin XL as 25:75 (Xaggitin XL is a matrix tablet) and Xenidate XL as a multiple-unit tablet; all are bioequivalent to Concerta XL (SPS).'},
+      'Concerta XL and bioequivalent tablets (Affenid XL, Atenza XL, Delmosart, Matoride XL, Xaggitin XL, Xenidate XL)':{ir:22,mr:78,dur:'about 12 h (second peak 6–8 h)',food:'With or without food; swallow whole with liquid; do not chew, divide or crush',strengths:'18, 27, 36, 54 mg (Atenza XL also 45 mg; Matoride XL 18, 36, 54 mg)',note:'Concerta XL, Affenid XL, Atenza XL and Matoride XL are osmotic tablets (the empty shell may appear in stool). SPS gives Delmosart and Xaggitin XL as 25:75 (the Xaggitin XL SmPC describes a polymer core and no shell) and Xenidate XL as a multiple-unit tablet; all are bioequivalent to Concerta XL (SPS).'},
       'Ritalin XL-type capsules (Ritalin XL, Meflynate XL, Metyrol XL, Focusim XL)':{ir:50,mr:50,dur:'about 8 h (two peaks about 4 h apart)',food:'With or without food; capsule may be opened and the beads sprinkled on cool soft food and taken at once',strengths:'Ritalin XL 10–40 mg; Meflynate XL and Metyrol XL 10–60 mg; Focusim XL 10–40 mg',note:'SPS lists these four as bioequivalent to one another. Second peak at 5–7 h (Ritalin XL SmPC) or about 4 h (SPS table).'},
       'Medikinet XL capsules':{ir:50,mr:50,dur:'about 8 h (second rise ~3 h after the first)',food:'Must be taken with or after food (risk of dose dumping on an empty stomach): children in the morning with breakfast; adults morning and lunchtime with meals; may be opened and sprinkled on apple sauce or yoghurt',strengths:'5, 10, 20, 30, 40, 50, 60 mg',note:'SPS: not completely bioequivalent with the Ritalin XL-type capsules, so switch with particular care.'},
       'Equasym XL capsules':{ir:30,mr:70,dur:'about 8 h (peaks ~1.5 h and ~4.5 h)',food:'In the morning before breakfast; may be opened and sprinkled on a tablespoon of apple sauce',strengths:'10, 20, 30 mg',note:'SPS: no other MR product is bioequivalent, so do not switch or prescribe generically. Not licensed for adults.'},
@@ -504,7 +624,7 @@
   /* Stepper: the picture on one side, one step at a time on the other, with Previous/Next and step dots. */
   $$('figure.wt').forEach(function(f){
     var marks = $$('.wk-mark', f), lis = $$('ol.walk li', f), det = f.querySelector('.walk-d'), n = lis.length; if(!n) return;
-    var stepImage = f.querySelector('img[src="images/m1-adult-work.jpg"], img[src="images/m1-classroom.jpg"], img[src="images/m2-brain-pathways.jpg"], img[src="images/m2-synapse-normal.jpg"], img[src="images/m3-assessment.jpg"], img[src="images/m3-rating-scales.jpg"], img[src="images/m3-baseline.jpg"]');
+    var stepImage = f.querySelector('img[src="images/m1-adult-work.jpg"], img[src="images/m1-classroom.jpg"], img[src="images/m2-brain-pathways.jpg"], img[src="images/m2-synapse-normal.jpg"], img[src="images/m3-assessment.jpg"], img[src="images/m3-rating-scales.jpg"], img[src="images/m3-baseline.jpg"], img[src="images/m4-parent-training.jpg"], img[src="images/m4-adult-cbt.jpg"]');
     var stepImages = [];
     if(stepImage && stepImage.getAttribute('src')==='images/m1-adult-work.jpg') stepImages = [
       'images/m1-adult-step-1-emotional-overwhelm.png',
@@ -586,6 +706,36 @@
         'Labelled dopamine synapse: an action potential triggers calcium entry; a vesicle fuses with the presynaptic membrane and releases dopamine into the synaptic cleft.',
         'Labelled dopamine synapse: dopamine binds a postsynaptic D1 receptor, activating signalling inside the next cell. Noradrenaline acts on adrenergic receptors.',
         'Labelled dopamine synapse: arrows show DAT transporting dopamine from the cleft back into the presynaptic terminal. NET recaptures noradrenaline in its neurons.'
+      ];
+    }
+    if(stepImage && stepImage.getAttribute('src')==='images/m4-parent-training.jpg'){
+      stepImages = [
+        'images/m4-parent-step-1-facilitator.png',
+        'images/m4-parent-step-2-learning-together.png',
+        'images/m4-parent-step-3-practical-strategies.png',
+        'images/m4-parent-step-4-early-support.png'
+      ];
+      synapseAlts = [
+        'AI-generated teaching illustration: a trained facilitator demonstrates ADHD-focused routines to parents and carers. Group parent training is first-line for children under 5 with ADHD; medication under 5 requires a second specialist opinion.',
+        'AI-generated teaching illustration: parents share experiences, rehearse a strategy with a facilitator and try a simple routine at home. Practical skills and peer support without blame.',
+        'AI-generated teaching illustration: a parent joins a child in play, uses a picture routine, gives specific praise and explains calm, predictable, proportionate consequences. Adapt strategies to the child’s needs.',
+        'AI-generated teaching illustration: support can begin before a formal diagnosis. Review needs as the child grows; parent training complements medication when indicated in older children.'
+      ];
+    }
+    if(stepImage && stepImage.getAttribute('src')==='images/m4-adult-cbt.jpg'){
+      stepImages = [
+        'images/m4-adult-step-1-treatment-choice.png',
+        'images/m4-adult-step-2-structured-support.png',
+        'images/m4-adult-step-3-practical-skills.png',
+        'images/m4-adult-step-4-time-awareness.png',
+        'images/m4-adult-step-5-combined-support.png'
+      ];
+      synapseAlts = [
+        'AI-generated teaching illustration: an adult and professional explore preferences and barriers. Consider non-drug support when medication is declined, difficult to take consistently, ineffective or not tolerated.',
+        'AI-generated teaching illustration: agree a practical goal, practise ADHD-focused skills and review regularly in person or by phone. Structured support may include CBT elements or a full CBT course.',
+        'AI-generated teaching illustration: capture Write report on a list, break it into opening the document, adding three headings and drafting the first paragraph, then schedule the first action. An example, not a prescription.',
+        'AI-generated teaching illustration: choose one small task, work for a short timed block, then pause, review and restart if helpful. Choose a manageable interval and adjust it to the person.',
+        'AI-generated teaching illustration: when medication helps but significant daily-life difficulties remain, continue medication review and add ADHD-focused psychological support. Review symptoms, side effects and functioning together.'
       ];
     }
     if(stepImage){

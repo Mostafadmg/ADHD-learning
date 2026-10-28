@@ -4,7 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>ADHD Assessment (dev fixtures)</title>
-<meta name="description" content="Clinician workspace for adult ADHD assessment: structured diagnostic interview, screening questionnaires with scoring, differential diagnosis and report.">
+<meta name="description" content="Clinician workspace for ADHD assessment and treatment in adults and young people aged 6 to 17 (development page on fixture data).">
+<!-- Development page: the same CSS, core, engine and view files as ../index.html (with ../ paths), but the data
+     comes from tests/fixtures/data.js instead of js/data/*. Keep these lists in step with index.html.
+     The fixtures hold no age-band or treatment data, so the treatment steps show "Treatment data not loaded". -->
 <meta name="theme-color" content="#16324f">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +16,7 @@
 <link rel="stylesheet" href="../css/v-assess-a.css">
 <link rel="stylesheet" href="../css/v-assess-iv.css">
 <link rel="stylesheet" href="../css/v-assess-b.css">
+<link rel="stylesheet" href="../css/v-assess-tx.css">
 <link rel="stylesheet" href="../css/v-library.css">
 <link rel="stylesheet" href="../css/v-learn.css">
 <link rel="stylesheet" href="../css/v-reference.css">
@@ -50,6 +54,7 @@
 <script src="../js/components/ui.js"></script>
 <script src="../js/engine/scoring.js"></script>
 <script src="../js/engine/diagnosis.js"></script>
+<script src="../js/engine/treatment.js"></script>
 <script src="../js/components/questionnaire.js"></script>
 <!-- data: fixtures for development -->
 <script src="fixtures/data.js"></script>
@@ -59,6 +64,7 @@
 <script src="../js/views/assess-steps-a.js"></script>
 <script src="../js/views/assess-interview.js"></script>
 <script src="../js/views/assess-steps-b.js"></script>
+<script src="../js/views/assess-treat.js"></script>
 <script src="../js/views/library.js"></script>
 <script src="../js/views/learn.js"></script>
 <script src="../js/views/reference.js"></script>

@@ -1,0 +1,298 @@
+/* Treatment steps: treatment plan, pre-treatment checks, choose and prescribe, titration and reviews,
+   monitoring and shared care, and the treatment live panel (js/views/assess-treat.js). Prefix .tx-.
+   Colours come only from the tokens in app.css (light and dark). One card level: inside a card, meaning
+   is shown with a left bar, a dot or a label, never a tinted box. Disclosures inside cards are borderless. */
+
+/* ---------- Cards and text ---------- */
+.tx-card { margin: 0 0 1rem; padding: 1.25rem 1.5rem; }
+.tx-card > h2 { font-size: 1.22rem; margin: 0 0 .5rem; }
+.tx-lead { margin: 0 0 .6rem; max-width: 72ch; }
+.tx-card > .hint:first-of-type { margin-top: 0; }
+.tx-k { font-size: .74rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); margin: 0 0 .2rem; }
+.tx-subh { font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 1rem 0 .35rem; }
+.tx-h3 { font-size: 1.08rem; margin: 0; }
+.tx-count { font-weight: 700; margin: .2rem 0 .4rem; font-variant-numeric: tabular-nums; }
+.tx-count:empty, .tx-live:empty, .tx-srchost:empty, .tx-histbar:empty, .tx-ready:empty, .tx-q-hist:empty, .tx-use:empty, .tx-flags:empty, .tx-cmp:empty, .tx-bmi:empty, .tx-repeat:empty { display: none; }
+.tx-next { margin: .6rem 0 .3rem; max-width: 72ch; }
+.tx-plan { margin: .5rem 0; max-width: 72ch; font-weight: 600; }
+.tx-med { margin: 0 0 .4rem; }
+.tx-cls { margin: 0 0 .4rem; }
+.tx-empty { margin: .6rem 0; }
+.tx-ul { margin: .3rem 0; padding-left: 1.2rem; }
+.tx-ul li { margin: .2rem 0; }
+.tx-fields { margin: .7rem 0 .4rem; align-items: start; }
+.tx-fwrap { display: flex; flex-direction: column; align-items: flex-start; gap: .2rem; min-width: 0; }
+.tx-fwrap > .field { align-self: stretch; }
+.tx-sub { border-top: 1px solid var(--line); padding-top: .85rem; margin-top: 1rem; }
+.tx-sub > .seg-field + .hint { margin-top: .35rem; }
+.tx-sub > .seg-field + .check { margin-top: .4rem; }
+.tx-rowend { justify-content: flex-end; margin-top: .6rem; }
+.tx-ready { margin: 0 0 .8rem; }
+.tx-ready > .tx-note { margin-top: 0; }
+
+/* ---------- Notes: a left bar, no tinted box (they sit inside cards) ---------- */
+.tx-note { border-left: 4px solid var(--line-2); padding: .3rem 0 .35rem .85rem; margin: .7rem 0; max-width: 78ch; }
+.tx-note > p { margin: .15rem 0 0; overflow-wrap: anywhere; }
+.tx-note > p:first-child { margin-top: 0; }
+.tx-note .tx-ul { margin: .25rem 0 .1rem; }
+.tx-note-t { font-weight: 700; }
+.tx-note-ok { border-left-color: var(--ok); }
+.tx-note-ok .tx-note-t { color: var(--ok); }
+.tx-note-warn { border-left-color: var(--warn); }
+.tx-note-warn .tx-note-t { color: var(--warn); }
+.tx-note-err { border-left-color: var(--err); }
+.tx-note-err .tx-note-t { color: var(--err); }
+.tx-note-info { border-left-color: var(--info); }
+.tx-note-info .tx-note-t { color: var(--info); }
+.tx-note-act { margin-top: .45rem; }
+
+/* ---------- Extra segmented-control colours (risk answers are amber or red, not green) ---------- */
+.seg-risk input:checked + label { background: var(--warn); color: var(--surface); }
+.seg-bad input:checked + label { background: var(--err); color: var(--surface); }
+
+/* ---------- Checklists ---------- */
+.tx-checks { display: flex; flex-direction: column; }
+.tx-check { padding: .45rem 0; border-bottom: 1px solid var(--line); }
+.tx-check:last-child { border-bottom: 0; }
+.tx-scope .tx-checks { margin: .3rem 0 .2rem; }
+/* Annual review: the NICE areas carry their number in a small circle */
+.tx-check-area label { display: grid; grid-template-columns: 1.7rem minmax(0, 1fr); column-gap: .45rem; align-items: start; }
+.tx-area { width: 1.55rem; height: 1.55rem; border-radius: 50%; display: inline-grid; place-items: center; background: var(--accent-l); color: var(--accent); font-size: .8rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.tx-checks + .tx-subh { margin-top: 1.1rem; }
+/* Plan items that apply only in some situations: the text, then "Done or offered" / "Does not apply" */
+.tx-planq { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .35rem 1rem; align-items: start; }
+.tx-planq-t > p { margin: 0; }
+.tx-planq-t > .check-hint { display: block; margin-top: .15rem; }
+
+/* Pre-treatment checks: centile chart row, and the pregnancy lines */
+.tx-chartrow { margin-top: .6rem; }
+.tx-pregline > .hint, .tx-pregoff > .hint { margin: 0 0 .3rem; }
+.tx-pregline > .tx-pregpend { color: var(--warn); font-weight: 600; }
+.tx-pregpend:empty { display: none; }
+.tx-pregq { border-left: 4px solid var(--warn); padding: .1rem 0 .2rem .85rem; margin: .6rem 0 .2rem; }
+
+/* ---------- Borderless disclosures inside cards ---------- */
+.tx-bare { border: 0; background: transparent; border-radius: 0; margin: .6rem 0 0; }
+.tx-bare > summary { padding: .45rem 0; min-height: 40px; font-size: .95rem; }
+.tx-bare > .disclosure-body { padding: 0 0 .4rem; }
+.tx-srchost { margin: .4rem 0 0; }
+.tx-srclist { margin: 0; padding-left: 1.1rem; }
+.tx-srclist li { margin: .15rem 0; }
+
+/* ---------- Verdict (pre-treatment checks): a top-level card with a coloured bar ---------- */
+.tx-verdict { border-left: 6px solid var(--line-2); }
+.tx-verdict h2 { font-size: 1.3rem; margin: 0 0 .5rem; }
+.tx-v-ok { border-left-color: var(--ok); background: var(--ok-l); }
+.tx-v-warn { border-left-color: var(--warn); background: var(--warn-l); }
+.tx-v-err { border-left-color: var(--err); background: var(--err-l); }
+.tx-v-info { border-left-color: var(--info); }
+.tx-progline { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem 1rem; margin: 0 0 .6rem; }
+.tx-progline .meter { flex: 1 1 140px; max-width: 280px; }
+.tx-progline .hint { margin: 0; font-variant-numeric: tabular-nums; }
+.tx-reasons, .tx-pflags { list-style: none; margin: .4rem 0; padding: 0; display: flex; flex-direction: column; gap: .4rem; }
+.tx-r { display: grid; grid-template-columns: .7rem minmax(0, 1fr); gap: .6rem; align-items: start; margin: 0; overflow-wrap: anywhere; }
+.tx-dot { display: inline-block; width: .65rem; height: .65rem; border-radius: 50%; background: var(--line-2); margin-top: .45rem; flex: 0 0 auto; }
+.tx-r-ok .tx-dot { background: var(--ok); }
+.tx-r-warn .tx-dot { background: var(--warn); }
+.tx-r-err .tx-dot { background: var(--err); }
+.tx-r-info .tx-dot { background: var(--info); }
+
+/* ---------- Question rows (heart history, safety screen, side effects) ---------- */
+.tx-qs { display: flex; flex-direction: column; }
+.tx-q { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .35rem 1rem; align-items: start; padding: .6rem 0; border-bottom: 1px solid var(--line); }
+.tx-q:last-child { border-bottom: 0; }
+.tx-q-text { min-width: 0; }
+.tx-q-t { font-weight: 700; margin: 0; }
+.tx-q-ask { margin: .15rem 0 0; color: var(--ink); max-width: 70ch; }
+.tx-q-extra { margin: .2rem 0 0; font-size: .86rem; color: var(--muted); }
+.tx-q-ctl { padding-top: .1rem; }
+.tx-hist { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .4rem; margin: .3rem 0 0; font-size: .86rem; color: var(--muted); }
+.tx-groups { border-top: 1px solid var(--line); margin-top: .6rem; }
+.tx-grp { border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; margin: 0; }
+.tx-grp > summary { padding: .7rem 0; min-height: 48px; flex-wrap: wrap; row-gap: .15rem; }
+.tx-grp > summary > .disclosure-title { flex: 1 1 14rem; }
+.tx-grp > .disclosure-body { padding: 0 0 .6rem; }
+.tx-gmeta { font-variant-numeric: tabular-nums; }
+.tx-repeat, .tx-ecg { margin-top: .2rem; }
+.tx-bmi { margin: 0 0 .3rem; }
+/* Third blood pressure reading (inside the second-reading block) */
+.tx-third:empty { display: none; }
+.tx-third { margin: .2rem 0 .6rem; }
+.tx-third > .row { align-items: center; gap: .3rem .7rem; }
+.tx-third .hint { margin: 0; }
+/* Child-Pugh class under the liver item: a left bar, no box */
+.tx-cp:empty { display: none; }
+.tx-q > .tx-cp { grid-column: 1 / -1; min-width: 0; }
+.tx-cpq { border-left: 4px solid var(--warn); padding: .1rem 0 .2rem .85rem; margin: .5rem 0 .1rem; }
+.tx-cpq .hint { margin: .3rem 0 0; }
+/* Review: blood pressure centile (young people) */
+.tx-revcent { margin: .2rem 0 .5rem; }
+.tx-revcent .hint { margin: .3rem 0 0; }
+
+/* ---------- Rows: previous medicines and reviews (one open at a time) ---------- */
+.tx-rows { border-top: 1px solid var(--line); margin: .6rem 0; }
+.tx-row { border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; margin: 0; }
+.tx-row > summary { padding: .65rem 0; min-height: 48px; flex-wrap: wrap; row-gap: .2rem; }
+.tx-row[open] > summary { color: var(--brand); }
+.tx-row > .disclosure-body { padding: 0 0 1rem; }
+.tx-rowsum { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .3rem .6rem; font-weight: 700; }
+.tx-revdate { font-variant-numeric: tabular-nums; }
+.tx-revdose { font-weight: 400; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tx-rowbody .tabs { margin: .4rem 0 .7rem; }
+/* Tabs inside treatment cards wrap instead of scrolling, at every width, so every tab stays in sight */
+.tx-card .tabs { flex-wrap: wrap; overflow: visible; row-gap: 0; }
+/* New dose and the reason to go on despite flags (review decision tab) */
+.tx-newdose, .tx-override { margin: .5rem 0; }
+.tx-newdose { grid-template-columns: minmax(0, 18rem); }
+.tx-newdose[hidden], .tx-override[hidden] { display: none; }
+.tx-revmed { font-size: .82rem; }
+.tx-rowbody .tab { font-size: .88rem; padding: .5rem .7rem; }
+.tx-flags { margin: .2rem 0 .4rem; }
+.tx-cmp { margin: .2rem 0 0; }
+
+/* ---------- Prescribing stage track and stage ---------- */
+.tx-track ol { list-style: none; margin: 0 0 1rem; padding: 0 0 .85rem; display: flex; flex-wrap: wrap; gap: .4rem; border-bottom: 1px solid var(--line); }
+.tx-tstep { display: inline-flex; align-items: center; gap: .45rem; min-height: 40px; padding: .25rem .75rem .25rem .3rem; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); font: inherit; font-size: .86rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.tx-tstep:hover { border-color: var(--accent); color: var(--ink); }
+.tx-tn { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--surface-2); border: 1px solid var(--line); font-size: .76rem; font-weight: 700; font-variant-numeric: tabular-nums; flex: 0 0 26px; }
+.tx-tstep.is-done .tx-tn { background: var(--ok); border-color: var(--ok); color: var(--surface); }
+.tx-tstep[aria-current="step"] { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
+.tx-tstep[aria-current="step"] .tx-tn { background: var(--brand-ink); border-color: var(--brand-ink); color: var(--brand); }
+.tx-stage-h { display: flex; flex-direction: column; gap: .1rem; font-size: 1.22rem; margin: 0 0 .5rem; outline: none; }
+.tx-stage-h:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+.tx-stage-n { font-family: var(--font-ui); font-size: .74rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+.tx-stage-body { min-width: 0; }
+.tx-stage-nav { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; margin-top: 1.2rem; padding-top: .9rem; border-top: 1px solid var(--line); }
+
+/* NICE options: one row per step, the left bar shows its status */
+.tx-opts { list-style: none; margin: .4rem 0 0; padding: 0; display: flex; flex-direction: column; gap: .3rem; }
+.tx-opt { border-left: 4px solid var(--line); padding: .45rem 0 .55rem .85rem; }
+.tx-opt-next { border-left-color: var(--accent); }
+.tx-opt-possible { border-left-color: var(--info); }
+.tx-opt-tertiary { border-left-color: var(--warn); }
+.tx-opt-done, .tx-opt-blocked { border-left-color: var(--line-2); }
+.tx-opt-done .tx-opt-l, .tx-opt-blocked .tx-opt-l { color: var(--muted); }
+.tx-opt-head { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem .55rem; }
+.tx-opt-n { width: 24px; height: 24px; border-radius: 50%; display: inline-grid; place-items: center; background: var(--surface-2); border: 1px solid var(--line); font-size: .75rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.tx-opt-l { font-weight: 700; }
+.tx-opt-when { margin: .25rem 0 0; }
+.tx-opt-why { margin: .15rem 0 0; font-size: .9rem; color: var(--muted); max-width: 72ch; }
+.tx-opt-act { margin-top: .45rem; }
+.tx-druginfo { border-top: 1px solid var(--line); margin-top: 1rem; padding-top: .9rem; }
+.tx-druginfo:empty { display: none; }
+.tx-ints li { display: block; }
+
+/* Product picker: chips grouped by release type, one product shown */
+.tx-chips { display: flex; flex-wrap: wrap; gap: .45rem; margin: .2rem 0 .4rem; }
+.tx-chip { display: inline-flex; align-items: center; flex-wrap: wrap; gap: .1rem .45rem; min-height: 40px; padding: .3rem .8rem; border-radius: 999px; border: 1px solid var(--line-2); background: var(--surface); color: var(--ink); font: inherit; font-size: .9rem; font-weight: 600; cursor: pointer; text-align: left; max-width: 100%; }
+.tx-chip:hover { border-color: var(--accent); }
+.tx-chip[aria-pressed="true"] { border: 2px solid var(--accent); padding: calc(.3rem - 1px) calc(.8rem - 1px); }
+.tx-chip .tx-dot { margin-top: 0; }
+.tx-chip-ok .tx-dot { background: var(--ok); }
+.tx-chip-off .tx-dot { background: var(--warn); }
+.tx-chip-cond .tx-dot { background: var(--info); }
+.tx-chip-s:empty { display: none; }
+/* Licence condition tick (guanfacine, ages 6 to 17) above the product chips */
+.tx-licq { border-left: 4px solid var(--info); padding: .1rem 0 .2rem .85rem; margin: .2rem 0 .8rem; max-width: 78ch; }
+.tx-chip-bad .tx-dot { background: var(--err); }
+.tx-chip-bad .tx-chip-n { color: var(--muted); }
+.tx-chip-s { font-size: .78rem; font-weight: 400; color: var(--muted); }
+.tx-chip-c { font-size: .8rem; color: var(--ok); }
+.tx-chip-c:empty { display: none; }
+.tx-prod { border-top: 1px solid var(--line); margin-top: .8rem; padding-top: .9rem; }
+.tx-prod:empty { display: none; }
+.tx-prod-head { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem .7rem; margin: 0 0 .4rem; }
+.tx-badges { display: inline-flex; flex-wrap: wrap; gap: .3rem; }
+.tx-prod-act { margin-top: .8rem; }
+
+/* Dose plan and prescription wording */
+.tx-ladder { max-width: 560px; }
+.tx-perday { margin: .2rem 0 .4rem; }
+.tx-perday .hint { margin: .3rem 0 0; }
+.tx-doses { grid-template-columns: minmax(0, 24rem); margin-top: .2rem; }
+.tx-rx { border-left: 4px solid var(--accent); padding: .3rem 0 .35rem .9rem; margin: .8rem 0 .5rem; max-width: 72ch; }
+.tx-rx > p { margin: .2rem 0; font-weight: 600; overflow-wrap: anywhere; }
+.tx-rx > .tx-k { font-weight: 700; }
+
+/* Key and value lists */
+.tx-kv { display: grid; grid-template-columns: minmax(7rem, max-content) minmax(0, 1fr); gap: .35rem 1rem; margin: .6rem 0; }
+.tx-kv > div { display: contents; }
+.tx-kv dt { color: var(--muted); font-size: .9rem; }
+.tx-kv dd { margin: 0; overflow-wrap: anywhere; white-space: pre-line; }
+
+/* Titration */
+.tx-trial { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .9rem; margin: .3rem 0; }
+.tx-trial .meter { flex: 1 1 140px; max-width: 280px; }
+.tx-trial-k { font-weight: 700; font-variant-numeric: tabular-nums; }
+
+/* Monitoring */
+.tx-actions { list-style: none; margin: .2rem 0 0; padding: 0; display: flex; flex-direction: column; }
+.tx-actions li { display: flex; flex-direction: column; gap: .1rem; padding: .45rem 0; border-bottom: 1px solid var(--line); }
+.tx-actions li:last-child { border-bottom: 0; }
+.tx-sched th[scope="row"] { font-weight: 600; }
+.tx-letterdet { margin-top: 1rem; border-top: 1px solid var(--line); padding-top: .2rem; }
+.tx-letteract { margin: .2rem 0 .7rem; }
+.tx-letter { max-width: 860px; border: 0; border-left: 4px solid var(--line-2); border-radius: 0; padding: .1rem 0 .3rem 1.1rem; background: transparent; }
+.tx-letter h3 { font-size: 1.02rem; margin: 1.1rem 0 .35rem; padding-bottom: .2rem; border-bottom: 1px solid var(--line); }
+.tx-letter ul { padding-left: 1.2rem; margin: .3rem 0; }
+.tx-letter p { white-space: pre-line; overflow-wrap: anywhere; }
+.tx-letter-title { font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; color: var(--brand); margin: 0 0 .2rem; }
+.tx-letter-foot { color: var(--faint); font-size: .85rem; margin-top: 1.2rem; }
+
+/* Tables that become labelled cards on phones (td data-label) */
+.tx-stack { border: 0; border-radius: 0; }   /* a plain table inside the card, not a framed box */
+.tx-stack .table td, .tx-stack .table th[scope="row"] { vertical-align: top; }
+
+/* ---------- Live panel (treatment phase) ---------- */
+.tx-panel .tx-psec { display: flex; flex-direction: column; gap: .15rem; }
+.tx-pk { font-size: .72rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--faint); margin: 0; }
+.tx-pv { margin: 0; overflow-wrap: anywhere; }
+.tx-panel .badge { align-self: flex-start; }
+.tx-plist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .15rem; font-size: .92rem; }
+.tx-plist li { display: flex; justify-content: space-between; gap: .6rem; }
+.tx-pnum { font-weight: 700; font-variant-numeric: tabular-nums; color: var(--brand); }
+.tx-pflags { font-size: .88rem; margin: .3rem 0 0; }
+.tx-panel .tx-trial { margin: 0; }
+.tx-plinks { gap: .2rem; }
+
+/* ---------- Phones and touch ---------- */
+@media (max-width: 760px), (pointer: coarse) {
+  .tx-chip, .tx-tstep { min-height: 44px; }
+}
+@media (max-width: 760px) {
+  .tx-stack:not(.tx-nostack) { border: 0; }
+  .tx-stack:not(.tx-nostack) .table, .tx-stack:not(.tx-nostack) .table tbody, .tx-stack:not(.tx-nostack) .table tr, .tx-stack:not(.tx-nostack) .table th, .tx-stack:not(.tx-nostack) .table td { display: block; width: 100%; }
+  .tx-stack:not(.tx-nostack) .table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+  .tx-stack:not(.tx-nostack) .table { background: transparent; }
+  .tx-stack:not(.tx-nostack) .table tr { border-bottom: 1px solid var(--line); padding: .45rem 0 .5rem; }
+  .tx-stack:not(.tx-nostack) .table tr:last-child { border-bottom: 0; }
+  .tx-stack:not(.tx-nostack) .table th[scope="row"] { border: 0; padding: .15rem 0; white-space: normal; }
+  .tx-stack:not(.tx-nostack) .table td { display: grid; grid-template-columns: 6.4rem minmax(0, 1fr); gap: .6rem; align-items: start; border: 0; padding: .15rem 0; }
+  .tx-stack:not(.tx-nostack) .table td::before { content: attr(data-label); font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); padding-top: .15rem; }
+}
+@media (max-width: 640px) {
+  .tx-card { padding: 1rem; }
+  .tx-card .tab { flex: 1 1 auto; padding-left: .55rem; padding-right: .55rem; }
+  .tx-q, .tx-planq { grid-template-columns: minmax(0, 1fr); }
+  .tx-q-ctl { padding-top: .2rem; }
+  /* Stage track: numbers only on one row (the stage heading below names the current stage;
+     each button carries its name in aria-label and title) */
+  .tx-track ol { gap: .35rem; flex-wrap: nowrap; }
+  .tx-tstep { padding: .25rem .45rem; }
+  .tx-tstep .tx-tl { display: none; }
+  .tx-stage-nav .btn { flex: 1 1 0; min-width: 0; }
+  .tx-letter { padding-left: .8rem; }
+}
+@media (max-width: 520px) {
+  .tx-kv { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .tx-kv dd { margin-bottom: .45rem; }
+}
+
+/* ---------- Print: the shared care letter only (body.tx-printing is set by the Print button) ---------- */
+@media print {
+  body.tx-printing * { visibility: hidden !important; }
+  body.tx-printing .tx-letter, body.tx-printing .tx-letter * { visibility: visible !important; }
+  body.tx-printing .tx-letter { position: absolute; left: 0; top: 0; width: 100%; max-width: none; border: 0; padding: 0; }
+  .tx-letter { font-size: 10.5pt; }
+  .tx-letter h3 { break-after: avoid; }
+}

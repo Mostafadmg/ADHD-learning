@@ -9,7 +9,10 @@ AA.add('symptoms', [{
   why: "Thought to reflect weak inhibition of the impulse to move, combined with low tolerance of under-stimulation: staying seated in a slow setting feels aversive, and getting up briefly restores alertness. It is the 'getting up' expression of the same motor-regulation difficulty that shows as fidgeting.",
   ask: {
     adult: "Over the last six months, in places where people are expected to stay seated, like your desk, meetings, meals, the cinema or a long journey, how often have you got up, walked about or left before the end? Tell me about a recent time.",
-    child: "When you were at primary school, how often did you get out of your seat in class, at mealtimes or in assembly when you were meant to stay sitting down? What happened when you did?"
+    child: "When you were at primary school, how often did you get out of your seat in class, at mealtimes or in assembly when you were meant to stay sitting down? What happened when you did?",
+    parent: "Over the last six months, how often does your child get up and leave their seat when they are expected to stay sitting, such as at mealtimes, in a restaurant, at the cinema or during homework, compared with other children their age? Can you give me a recent example?",
+    teen: "Over the last six months, how often do you get up or leave your seat when you are meant to stay sitting, like in lessons, assemblies, exams or family meals? What makes you get up?",
+    teacher: "Compared with others in the class, how often does this pupil leave their seat or place on the carpet when they are expected to stay there? Do they find reasons to move, such as sharpening pencils or asking for the toilet?"
   },
   rephrase: [
     "Do you get up a lot when you are supposed to stay sitting? Where does that happen?",
@@ -201,12 +204,16 @@ AA.add('symptoms', [{
         "Teacher put their desk by the door or gave movement breaks",
         "Lunchtime staff complained they left the dining table early"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16)", items: [
+      { ctx: "teen", label: "Secondary school and college (12-17)", items: [
         "Was often sent out of lessons for being out of seat",
         "Asked for toilet passes often to walk the corridors",
         "Skipped long assemblies or lessons because sitting was so hard",
         "Walked out of exams as soon as it was allowed",
-        "Picked subjects with practical work, like PE or design, to be able to move"
+        "Picked subjects with practical work, like PE or design, to be able to move",
+        "Gets up and walks around many times during home revision",
+        "Leaves the table early at family meals or meals out",
+        "Finds reasons to leave the till or counter during work shifts",
+        "Leaves the cinema or a show partway through to walk about"
       ] }
     ]
   },
@@ -303,6 +310,14 @@ AA.add('symptoms', [{
       "Leaves the table at lunch",
       "Given movement breaks or jobs",
       "Must learn to stay in their place"
+    ],
+    teacher: [
+      "Often out of their seat during independent work",
+      "Finds reasons to get up, like the bin or the pencil sharpener",
+      "Asks to leave the room many times a day",
+      "Needs movement breaks to get through a lesson",
+      "Wanders over to other tables",
+      "Struggles to stay on the carpet or in assembly"
     ]
   },
   counts: [
@@ -359,7 +374,8 @@ AA.add('symptoms', [{
     highIQ: "Capable adults often choose roles that allow movement (management, teaching, sales, clinical work) or arrange walking meetings, which hides the symptom. Ask what happens in unavoidable seated settings such as exams, flights, training days and long ceremonies.",
     sud: "Frequent exits to smoke, vape or use substances can look like this symptom. Check whether getting up predates substance use and persists on substance-free days, and whether stimulants or withdrawal are causing restlessness.",
     asd: "Autistic people may leave because of sensory overload, social demands or unexpected change, rather than a motor urge. ADHD-type leaving happens even in calm, predictable and enjoyable settings; the two often co-exist.",
-    culture: "Expectations about sitting differ between cultures, families, schools and workplaces, for example standing during worship, informal family meals or active classrooms. Compare with others from the same background and setting."
+    culture: "Expectations about sitting differ between cultures, families, schools and workplaces, for example standing during worship, informal family meals or active classrooms. Compare with others from the same background and setting.",
+    young: "Young children can sit for shorter periods than older ones, so compare with children of the same age, and take care with the youngest in the year and with long carpet sessions that many find hard. Girls and older children may leave their seat in accepted ways, such as offering to help or run errands, which hides the need to move. Pain, bladder problems or anxiety in crowded rooms can also make a child get up."
   },
   refs: [
     "DSM-5-TR (APA 2022), criterion A2b, paraphrased",
@@ -367,6 +383,8 @@ AA.add('symptoms', [{
     "ASRS v1.1 item 12 (Kessler et al. 2005)",
     "Kooij JJS et al. Updated European consensus statement on diagnosis and treatment of adult ADHD. Eur Psychiatry 2019",
     "DIVA 2.0 structure (Kooij and Francken 2010); wording original",
-    "Clinical practice: akathisia, pain, panic and sensory overload as differentials"
+    "Clinical practice: akathisia, pain, panic and sensory overload as differentials",
+    "NICE NG87 1.2.2 (under-recognition in girls), 1.3.5 (criteria adjusted for age) and 1.3.6 (children's views)",
+    "Parent, young person and teacher questions, teacher comments and young-person notes: clinical practice"
   ]
 }]);

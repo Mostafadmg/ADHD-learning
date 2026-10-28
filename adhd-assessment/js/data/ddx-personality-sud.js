@@ -2,6 +2,9 @@
    behavioural addictions, and eating disorders (ARCHITECTURE.md section 5.5).
    Conditions, in order: bpd, aspd, sud_cannabis, sud_alcohol, sud_stim, gambling, gaming, eating.
    Core (reviewed in every adult assessment): bpd, sud_cannabis, sud_alcohol.
+   Adult only (ages: "adult"): aspd, which DSM-5-TR does not allow before age 18. bpd has no ages tag: DSM-5-TR
+   allows a personality disorder before 18 when the pattern has lasted at least a year (paraphrased).
+   CRAFFT (young-person substance screen) is listed on the three substance use disorders.
    Sources: DSM-5-TR (APA 2022) and ICD-11 CDDR (WHO 2024), paraphrased; NICE NG87, CG78, CG77, CG115,
    CG51, NG248 and NG69 (recommendation numbers checked on nice.org.uk in October 2026); CADDRA 4.1 (2020);
    Kooij et al. 2019 European consensus; RCPsych CR235 (2023); Crunelle et al. 2018 international consensus
@@ -145,6 +148,7 @@ AA.add('ddx', [
     name: "Antisocial personality disorder (dissocial personality disorder), including a history of conduct disorder",
     group: "personality",
     core: false,
+    ages: "adult",
     icd11: "6D10 Personality disorder with 6D11.2 Dissociality (often with 6D11.3 Disinhibition); childhood history coded as 6C91 Conduct-dissocial disorder. ICD-11 has no separate antisocial category.",
     summary: "A pervasive pattern, present since age 15, of disregard for and violation of the rights of others, with conduct disorder before 15. Impulsive rule-breaking, lying, failure to plan, irritability and unstable work and money overlap with ADHD. The discriminators are planned, instrumental behaviour for gain, deceit for profit or pleasure, aggression used to control others and lack of remorse.",
     prevalence: "In the WHO World Mental Health surveys, ODD or adult antisocial behaviour was present in 8.3% of adults with ADHD, with an odds ratio of 15.0, the highest of any disorder (Fayyad 2017). CADDRA 4.1 places conduct disorder or ASPD at 11-30% in adult ADHD. About 26% of adult prisoners meet criteria for ADHD (meta-analysis of 42 studies cited in Kooij 2019; Young 2018). Many people with ASPD have an ADHD history, but most people with ADHD do not develop ASPD (CADDRA 4.1).",
@@ -331,7 +335,7 @@ AA.add('ddx', [
       { id: "sud_cannabis_psych", t: "Paranoid or perceptual symptoms linked to use", w: 1 },
       { id: "sud_cannabis_screen", t: "DAST-10 3 or more, or ASSIST cannabis score in the moderate or high range", w: 1 }
     ],
-    screen: ["dast10", "assist", "cageaid"],
+    screen: ["dast10", "assist", "cageaid", "crafft"],
     investigations: [
       "Urine or oral-fluid drug screen with consent, as part of the assessment and never the sole basis (NICE CG51 1.2.2.3). Cannabis metabolites can remain detectable for days to weeks after heavy regular use, so a positive test does not prove current intoxication.",
       "A dated timeline of use against ADHD symptoms, including any abstinent periods (custody, hospital, pregnancy, treatment, travel).",
@@ -449,7 +453,7 @@ AA.add('ddx', [
       { id: "sud_alcohol_bloods", t: "Raised GGT or MCV, or other physical signs of heavy drinking", w: 1 },
       { id: "sud_alcohol_audit", t: "AUDIT 16 or more (higher risk) or 20 or more (possible dependence)", w: 1 }
     ],
-    screen: ["auditc", "audit", "assist", "cageaid"],
+    screen: ["auditc", "audit", "assist", "cageaid", "crafft"],
     investigations: [
       "AUDIT-C, then the full AUDIT if the score is 5 or more (UK OHID forms). The AUDIT is the NICE-named tool for identification and outcome monitoring (NICE CG115 1.2.1.4).",
       "Severity of dependence (SADQ or LDQ) and of withdrawal (CIWA-Ar) in specialist settings (NICE CG115 1.2.1.4).",
@@ -570,7 +574,7 @@ AA.add('ddx', [
       { id: "sud_stim_request", t: "Request fixed on a particular stimulant, dose or immediate-release form", w: 1 },
       { id: "sud_stim_test", t: "Drug screen positive for non-prescribed cocaine or amphetamines", w: 1 }
     ],
-    screen: ["dast10", "assist", "cageaid"],
+    screen: ["dast10", "assist", "cageaid", "crafft"],
     investigations: [
       "Urine or oral-fluid drug screen with consent, as part of the assessment and not the sole method (NICE CG51 1.2.2.3). Prescribed dexamfetamine and lisdexamfetamine give positive amphetamine results.",
       "Pulse, blood pressure and cardiovascular history; cardiology opinion before ADHD medication if any NICE NG87 1.7.5 feature is present. Cocaine is linked to myocardial infarction and stroke (ICD-11).",

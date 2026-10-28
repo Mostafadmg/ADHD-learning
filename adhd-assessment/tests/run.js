@@ -27,14 +27,14 @@ function load(sb, rel) {
 }
 function scriptList() {
   const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
-  return [...html.matchAll(/<script src="([^"]+)"/g)].map((m) => m[1]);
+  return [...html.matchAll(/<script src="([^"]+)"/g)].map((m) => m[1].split("?")[0]);   /* cache-busting ?v= queries are not part of the file path */
 }
 
 /* ---------------- Engine unit tests ---------------- */
 function engineTests() {
   console.log('\nEngine tests');
   const sb = makeContext();
-  ['js/core/ns.js', 'js/engine/scoring.js', 'js/engine/diagnosis.js'].forEach((f) => load(sb, f));
+  ['js/core/ns.js', 'js/engine/scoring.js', 'js/engine/diagnosis.js', 'js/engine/treatment.js'].forEach((f) => load(sb, f));
   const AA = sb.AA, S = AA.scoring, D = AA.diagnosis;
 
   // sum with bands, flags, cutoff
@@ -140,6 +140,11 @@ function engineTests() {
   ok(D.stepProgress(a, 'ia').of === 20, 'step progress counts adult, child and the supplement question');
   const dv = D.diva2({ symptoms: a.symptoms, onset: { always: 'no', ageOnset: '5' } });
   ok(dv.childIA6 === true && dv.before7 === true, 'diva2 view');
+
+  /* young-person bands and the treatment engine: their own suites, on synthetic data */
+  const eq = (x, y, m) => ok(x === y, m + ' (got ' + JSON.stringify(x) + ', expected ' + JSON.stringify(y) + ')');
+  require('./young-tests.js')({ AA, ok, eq });
+  require('./tx-tests.js')({ AA, ok, eq });
 }
 
 /* ---------------- Data validation ---------------- */
@@ -254,7 +259,7 @@ function dataTests() {
     if (!im.onset || !isStrArr(im.onset.ask, 8)) err('impairment.onset.ask too short');
     const c = im.collateral || {};
     const keys = new Set();
-    ['parent', 'partner'].forEach((k) => ((c[k] && c[k].questions) || []).forEach((q) => { if (keys.has(q.k)) err('collateral duplicate key ' + q.k); keys.add(q.k); if (!ID.test(q.k)) err('collateral bad key ' + q.k); }));
+    ['parent', 'partner', 'parentNow', 'teacher', 'youngSelf'].forEach((k) => ((c[k] && c[k].questions) || []).forEach((q) => { if (keys.has(q.k)) err('collateral duplicate key ' + q.k); keys.add(q.k); if (!ID.test(q.k)) err('collateral bad key ' + q.k); }));
     if (!c.school || !isStrArr(c.school.lookFor, 10)) err('collateral.school.lookFor too short');
     if (!im.supplement || !im.supplement.ia || !im.supplement.hi) err('impairment.supplement missing');
   }
@@ -309,7 +314,7 @@ function dataTests() {
   (d.pathway || []).forEach((p) => (p.tools || []).forEach((t) => { if (!toolIds.has(t)) err('pathway ' + p.id + ' unknown tool ' + t); }));
 
   // step guide, forms guide, differential protocol
-  const STEPS = ['setup', 'screen', 'risk', 'history', 'comorbid', 'ia', 'hi', 'onset', 'collateral', 'ddx', 'validity', 'summary', 'report'];
+  const STEPS = ['setup', 'screen', 'risk', 'history', 'comorbid', 'ia', 'hi', 'onset', 'collateral', 'ddx', 'validity', 'summary', 'txplan', 'baseline', 'prescribe', 'titrate', 'monitor', 'report'];
   if (d.stepGuide) STEPS.forEach((k) => { const g = d.stepGuide[k]; if (!g || !g.goal || !isStrArr(g.do, 3) || !isStrArr(g.done, 1)) err('stepGuide.' + k + ' incomplete'); });
   else warn('stepGuide missing');
   if (d.formsGuide) {
@@ -333,13 +338,69 @@ function dataTests() {
     console.log('  protocol: ' + (d.ddxProtocol.steps || []).length + ' steps, ' + cid.size + ' checks');
   } else warn('ddxProtocol missing');
 
-  // demo
-  if (d.demo) {
-    const de = d.demo;
-    Object.keys(de.symptoms || {}).forEach((k) => { if (!sy.some((s) => s.id === k)) err('demo symptom unknown ' + k); });
-    Object.keys(de.ddx || {}).forEach((k) => { if (!ddxIds.has(k)) err('demo ddx unknown ' + k); });
-    Object.keys(de.tools || {}).forEach((k) => { if (!toolIds.has(k)) err('demo tool unknown ' + k); });
-  }
+  // age bands, young step guide, ages tags
+  const AGES = new Set(['young', 'adult', 'all']);
+  if (d.ageBands) {
+    ['under6', 'child', 'teen', 'y17', 'adult'].forEach((b) => { if (!d.ageBands[b] || !d.ageBands[b].label) err('ageBands.' + b + ' missing'); });
+    Object.keys(d.ageBands).forEach((b) => {
+      const ab = d.ageBands[b];
+      ['screen', 'screenCore', 'comorbid', 'comorbidCore'].forEach((k) => (ab[k] || []).forEach((t) => { if (!toolIds.has(t)) err('ageBands.' + b + '.' + k + ' unknown tool ' + t); }));
+      (ab.ddxCore || []).forEach((x) => { if (!ddxIds.has(x)) err('ageBands.' + b + '.ddxCore unknown condition ' + x); });
+    });
+  } else warn('ageBands missing');
+  (d.tools || []).forEach((t) => { if (typeof t.ageMin !== 'number' || typeof t.ageMax !== 'number' || t.ageMin > t.ageMax) err('tool ' + t.id + ' needs numeric ageMin/ageMax'); });
+  if (d.stepGuideYoung) Object.keys(d.stepGuideYoung).forEach((k) => { const g = d.stepGuideYoung[k]; if (!STEPS.includes(k)) err('stepGuideYoung unknown step ' + k); if (!g || !g.goal || !isStrArr(g.do, 3) || !isStrArr(g.done, 1)) err('stepGuideYoung.' + k + ' incomplete'); });
+  const agesOf = (list, what) => (list || []).forEach((x) => { if (x && x.ages !== undefined && !AGES.has(x.ages)) err(what + ' ' + x.id + ' bad ages ' + x.ages); });
+  (d.history || []).forEach((sec) => { agesOf([sec], 'history section'); agesOf(sec.items, 'history item'); });
+  if (d.risk) agesOf(d.risk.items, 'risk item');
+  if (d.validity) { agesOf(d.validity.indicators, 'validity'); agesOf(d.validity.incentives, 'incentive'); }
+  agesOf(d.plan, 'plan'); agesOf(d.ddx, 'ddx');
+
+  // treatment data: ids, cross-references and a dose plan for every product
+  const txIds = (k) => { const set = new Set(); (d[k] || []).forEach((x) => { if (!ID.test(x.id || '')) err(k + ' bad id ' + x.id); if (set.has(x.id)) err(k + ' duplicate ' + x.id); set.add(x.id); }); return set; };
+  if (d.txDrugs && d.txProducts) {
+    const drugs = txIds('txDrugs'), prods = txIds('txProducts'), cau = txIds('txCautions'), se = txIds('txSideEffects'), cx = txIds('txCardiac');
+    txIds('txPlanItems'); txIds('txCounsel'); txIds('txRxChecks');
+    const histIds = new Set(); (d.history || []).forEach((sec) => (sec.items || []).forEach((it) => histIds.add(it.id)));
+    (d.txDrugs || []).forEach((x) => {
+      (x.ci || []).concat(x.caution || []).forEach((c) => { if (!cau.has(c)) err('txDrugs ' + x.id + ' unknown caution ' + c); });
+      (x.se || []).forEach((c) => { if (!se.has(c)) err('txDrugs ' + x.id + ' unknown side effect ' + c); });
+    });
+    (d.txProducts || []).forEach((p) => {
+      if (!drugs.has(p.drug)) err('txProducts ' + p.id + ' unknown drug ' + p.drug);
+      if (!p.dose || !(p.dose.child || p.dose.adult)) err('txProducts ' + p.id + ' has no dose');
+      if (!isStrArr(p.src, 1)) err('txProducts ' + p.id + ' needs sources');
+    });
+    (d.txCardiac || []).concat(d.txCautions || []).forEach((x) => (x.hist || []).forEach((h) => { if (!histIds.has(h)) err('tx ' + x.id + ' unknown history item ' + h); }));
+    (d.txCounsel || []).forEach((x) => { if (Array.isArray(x.drugs)) x.drugs.forEach((g) => { if (!drugs.has(g)) err('txCounsel ' + x.id + ' unknown drug ' + g); }); });
+    if (!d.txSequence || !Array.isArray(d.txSequence.young) || !Array.isArray(d.txSequence.adult)) err('txSequence needs young and adult');
+    if (!d.txMonitor || !Array.isArray(d.txMonitor.young) || !Array.isArray(d.txMonitor.adult) || !Array.isArray(d.txMonitor.annual)) err('txMonitor incomplete');
+    const T = sb.AA.treatment;
+    if (T) {
+      const pat = (age, kg) => ({ patient: { age: age }, formulation: { decision: 'met' }, treatment: { baseline: { weightKg: kg } } });
+      (d.txProducts || []).forEach((p) => [pat(9, 30), pat(15, 55), pat(30, 70)].forEach((a) => {
+        try { const pl = T.dosePlan(a, p.id, a.treatment.baseline.weightKg); if (!pl || typeof pl.text !== 'string') err('dosePlan ' + p.id + ' age ' + a.patient.age + ' gave no plan'); }
+        catch (e) { err('dosePlan ' + p.id + ' age ' + a.patient.age + ' threw: ' + e.message); }
+      }));
+    } else warn('treatment engine not loaded in data validation');
+    console.log('  treatment: ' + drugs.size + ' medicines, ' + prods.size + ' products, ' + cx.size + ' heart questions, ' + cau.size + ' cautions');
+  } else warn('treatment data missing');
+
+  // young-only differential links on history items
+  (d.history || []).forEach((sec) => (sec.items || []).forEach((it) => { if (it.ddxYoung && !ddxIds.has(it.ddxYoung)) err('history ' + it.id + ' unknown ddxYoung ' + it.ddxYoung); }));
+
+  // demos: ids exist, both reach a diagnosis, the child demo is in the 6-11 band
+  [['demo', d.demo], ['demoYoung', d.demoYoung]].forEach(([name, de]) => {
+    if (!de) { warn(name + ' missing'); return; }
+    Object.keys(de.symptoms || {}).forEach((k) => { if (!sy.some((s) => s.id === k)) err(name + ' symptom unknown ' + k); });
+    Object.keys(de.ddx || {}).forEach((k) => { if (!ddxIds.has(k)) err(name + ' ddx unknown ' + k); });
+    Object.keys(de.tools || {}).forEach((k) => { if (!toolIds.has(k)) err(name + ' tool unknown ' + k); });
+    const tx = de.treatment || {};
+    if (tx.choice && tx.choice.product && !(d.txProducts || []).some((p) => p.id === tx.choice.product)) err(name + ' unknown product ' + tx.choice.product);
+    const DD = sb.AA.diagnosis;
+    if (DD) ok(DD.outcome(de).code === 'met', name + ' should meet the criteria (got ' + DD.outcome(de).code + ')');
+  });
+  if (d.demoYoung && sb.AA.diagnosis) ok(sb.AA.diagnosis.band(d.demoYoung) === 'child', 'demoYoung is in the 6-11 band');
 }
 
 const onlyData = process.argv.includes('--data');

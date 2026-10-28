@@ -1,0 +1,30 @@
+Generated using the built-in image-generation tool.
+
+MASKING
+Use case: scientific-educational.
+Asset type: premium AI-illustrated teaching infographic for an ADHD clinician learning website; replaces a basic iceberg diagram.
+Create a beautifully crafted, high-resolution portrait 3:4 educational illustration, rich painterly 3D depth with precise editorial typography. Not a generic flowchart or flat boxes. Teal ocean, warm ivory, navy typography, restrained coral accents matching an educational medical website. Large central realistic translucent iceberg in a cutaway sea, tip above water and much larger body below, luminous ice textures, atmospheric but uncluttered. Human vignettes should actually teach the concept: above water a teen girl looking composed in class, completed schoolwork and orderly planner; below water small well-integrated separate vignettes of the SAME girl's effort: distracted while studying, checking multiple alarms and lists, late-night homework and tiredness. Nobody is physically underwater: these are clearly conceptual vignette insets around an iceberg metaphor. Respectful, warm, no distress sensationalism.
+Title exactly "Masking: beneath the surface". Subtitle exactly "Good results can hide a high personal cost".
+Above-water heading "What others see" with three clear labelled leader lines: "Quiet in class", "Good marks", "Organised planner".
+Below-water heading "What may be hidden". Three large editorial callouts anchored to the vignettes, exact paired text:
+"Difficulties" / "Losing track and needing reminders"
+"Compensation" / "Lists, alarms and extra preparation"
+"Personal cost" / "Late nights, exhaustion and worry"
+Bottom ivory panel exact text: "Ask about effort, not just results" then "How much time and support does this take?"
+Small but readable bottom note: "Illustrative examples, not a diagnosis. Masking can occur in any gender."
+Make every label spelled exactly and large enough to read in an enlarged web modal. Use navy high-contrast sans-serif lettering on pale clean label areas, never over busy textures. Full clean margins, no text cut off. Clinical caution: not every girl masks; these are possibilities not diagnostic signs. No logos, watermark, prevalence numbers, fake charts, or extra medical claims. Artwork should be genuinely polished and evocative, with convincing faces, natural hands and clear visual hierarchy.
+
+LIFE STAGES
+Use case: scientific-educational.
+Asset type: premium illustrated teaching infographic for an ADHD clinician learning website.
+Create a high-resolution portrait 3:4 image with five beautifully illustrated age-stage vignettes connected by a gently flowing timeline, warm sophisticated semi-realistic editorial digital painting, tactile paper and subtle 3D depth. Navy typography, teal accents, warm ivory background, restrained coral highlights, spacious sophisticated medical education design. Not stock clipart or plain rectangle cards. Large legible professionally typeset labels. Title exactly "ADHD across life stages". Subtitle exactly "Different ages, different everyday demands".
+Five stages from top to bottom: 1 Preschool child moving away from a seated activity in a safe supervised nursery; 2 Primary school child distracted from a half-finished worksheet with a forgotten book; 3 Teenager at a desk with several homework tasks struggling to plan; 4 Adult managing calendar, work email and household bills with subtle foot fidgeting; 5 Older adult discussing longstanding organisation difficulties with a clinician, respectful and active, not portrayed as inevitably having dementia.
+Give each scene its own space and clearly separated short two-line labels, rendered verbatim:
+"Pre-school" / "Movement and impulsivity" / "Compare with developmental level"
+"Primary school" / "Losing track of instructions" / "Unfinished work and reminders"
+"Adolescence" / "Restlessness and planning difficulties" / "Increasing demands and independence"
+"Adulthood" / "Disorganisation and missed tasks" / "Impact at work, home or with money"
+"Older adulthood" / "A lifelong pattern may persist" / "Assess new cognitive decline separately"
+A concise bottom teaching panel exact text: "Hyperactivity may become less visible." and "Inner restlessness and daily-life difficulties can remain."
+Footer exact: "Illustrative examples, not a fixed path. Assess the full history."
+No numerical severity bars, brain scans, diagnostic implication, universal or inevitable decline, medication recommendations, logos or watermark. All lettering accurate and high contrast against clean ivory space; no tiny dense text. Diverse people and natural anatomy, real meaningful actions and props, elegant composition and plentiful breathing room. The image must teach how presentation and life demands change, not merely show people of different ages.

@@ -9,7 +9,10 @@ AA.add('symptoms', [{
   why: "Weak inhibitory control and poor filtering of irrelevant input let new stimuli capture attention, and working memory does not hold the task goal firmly enough to steer back to it. Strong pull towards novelty and reward adds to this, so a fresh sound, sight or idea easily wins over the current task.",
   ask: {
     adult: "Over the last six months, how often have things going on around you, like noises, people, your phone, or thoughts that pop into your head, pulled you away from what you were doing? Can you give me a recent example?",
-    child: "When you were at primary school, how easily were you pulled off your work by things around you, like sounds in the corridor, children talking, or something happening outside? What happened to your work then?"
+    child: "When you were at primary school, how easily were you pulled off your work by things around you, like sounds in the corridor, children talking, or something happening outside? What happened to your work then?",
+    parent: "Over the last six months, when your child is doing homework, eating a meal or getting ready, how easily are they pulled away by noises, people, screens or things going on around them, compared with other children their age? What happens to the task?",
+    teen: "Over the last six months, how easily do you get pulled away from what you are doing, by noises, your phone, other people or your own thoughts drifting onto other things? How long does it take you to get back to it?",
+    teacher: "Compared with others in the class, how easily is this pupil pulled off task by things around them, such as noise, movement, someone at the door or what classmates are doing? How long does it take them to get back to work?"
   },
   rephrase: [
     "What tends to pull your attention away when you are trying to do something?",
@@ -201,11 +204,16 @@ AA.add('symptoms', [{
         "Parents' evening comments about being off task when others talk",
         "Report says they would achieve more if they could block out what goes on nearby"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16)", items: [
+      { ctx: "teen", label: "Secondary school and college (12-17)", items: [
         "Phone and social media pulled them away from schoolwork",
         "Could only revise in total silence or late at night",
         "Classmates' chatter in large classes kept breaking their focus",
-        "Sat at the back watching everything instead of the board"
+        "Sat at the back watching everything instead of the board",
+        "Opens another app every few minutes during online homework",
+        "Loses their thread in exams when others move or cough",
+        "Gets drawn away from customers by things happening elsewhere at work",
+        "Mind wanders onto unrelated thoughts when trying to revise",
+        "Is distracted by things outside the car during driving lessons"
       ] }
     ]
   },
@@ -306,6 +314,14 @@ AA.add('symptoms', [{
       "Needs to sit near the front or away from distractions",
       "Would achieve more if better able to focus",
       "Watches what others are doing rather than their own work"
+    ],
+    teacher: [
+      "Notices everything except the task",
+      "Turns round at every noise",
+      "Works far better in a quiet room or small group",
+      "Watches what other children are doing",
+      "Loses their place after any interruption",
+      "Sits at the front to cut down distractions"
     ]
   },
   counts: [
@@ -362,7 +378,8 @@ AA.add('symptoms', [{
     highIQ: "Able people may keep up despite constant distraction by working longer hours or at night. Ask about the effort and hours involved, not only the results.",
     sud: "Stimulants, cannabis, alcohol and withdrawal all affect focus. Ask about distraction during sober periods and before substance use started; some people use substances to quieten distraction.",
     asd: "Autistic people may be overwhelmed by sensory input, which can look like distractibility. In ADHD attention jumps to anything new; in autism particular sensory inputs cause distress. Both can co-occur and each needs assessing.",
-    culture: "Busy, shared and crowded homes increase distraction for everyone, so compare with others in the same household. Following speech in a second language in noise is harder, so check language before scoring."
+    culture: "Busy, shared and crowded homes increase distraction for everyone, so compare with others in the same household. Following speech in a second language in noise is harder, so check language before scoring.",
+    young: "Some distractibility is normal in young children, so compare with children of the same age, and with how the child manages one to one in a quiet room. Girls and quieter children are often pulled away by their own thoughts rather than by what is around them, which looks like daydreaming and is easily missed. Hearing problems, anxiety, sensory sensitivity and worries at home can all look like distractibility."
   },
   refs: [
     "DSM-5-TR (APA 2022), criterion A1h, paraphrased",
@@ -371,6 +388,8 @@ AA.add('symptoms', [{
     "DIVA 2.0 structure (Kooij and Francken 2010); all wording original",
     "ASRS v1.1 item 11 (Kessler et al. 2005)",
     "CADDRA Canadian ADHD Practice Guidelines 4.1 (2020), differential diagnosis tables",
-    "Clinical practice (examples, probes and anchors)"
+    "Clinical practice (examples, probes and anchors)",
+    "NICE NG87 1.2.2 (under-recognition in girls), 1.3.5 (criteria adjusted for age) and 1.3.6 (children's views)",
+    "Parent, young person and teacher questions, teacher comments and young-person notes: clinical practice"
   ]
 }]);

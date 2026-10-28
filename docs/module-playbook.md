@@ -55,7 +55,7 @@ progress segments, the "All lessons" menu with Overview, Previous/Next buttons, 
 | Teaching the "players" behind a mechanism | Key-players explorer (`.fx.kp-fx[data-practice]`, panels `.kp-panel` with `.kp-grid`: Where it is · Its job · What medicines do to it · What that means for the patient, plus `.kp-ana` everyday picture). Define every abbreviation correctly (DAT = dopamine transporter) and add the terms to `js/lab-data-gloss.js` |
 | A set of tools/options that each do a different job | Job lanes: `.tk-filter` (age chips: All · Children · Adults) + `.tk > .tk-lane.tk-<job>` with a coloured `.tk-job` label (job name + the question it answers) and 1–2 `.tk-tool` cards (`data-age="child|adult|both"`, `.tk-chips` for who / age / Free·Licensed, `.tk-lim` "What it can't tell you"). Order lanes in the order they are used |
 | A care pathway / journey overview | `.tl-key` + `ol.tl` timeline: numbered nodes with SVG icons on a continuous line, `li.in` (this module, solid teal) vs `li.out` (elsewhere, outlined), `.tl-tag` labels that link (`<a href="#mX">`) to other modules. Vertical on phones |
-| A NICE decision pathway | `.bflow`: `.bf-step` numbered steps with `.bf-ref` clause chips → `.bf-fork` ("After X, how are things?") with two `.bf-way` outcomes (`.bf-ok` green / `.bf-go` amber) → `.bf-rule` (red) for a "must not" rule. Never put a rule in as a numbered step |
+| A NICE decision pathway | `.bflow` (write it as below; `app.js` turns any `.bflow` with 2+ parts into a journey `.pj`: every step visible as a coloured numbered card with arrows, then the `?` decision with green/amber outcomes and the red `!` rule; the plain markup stays as the no-JS version. Use a click-through stepper `[data-gst]` only when each step has a lot of content, like the five gates): `.bf-step` numbered steps (no clause chips) → `.bf-fork` ("After X, how are things?") with two `.bf-way` outcomes (`.bf-ok` green / `.bf-go` amber) → `.bf-rule` (red) for a "must not" rule. Never put a rule in as a numbered step |
 | How a medicine works, start to finish | `h3.chain-h` "From pill to effect" + `ol.chain` (5 steps, last = effect in green) + `.chain-else` "Elsewhere in the body (side effects)" |
 | Stepped mechanism diagram | `.mech` with layered SVG (`.lay.onN`); gentle CSS motion is automatic (molecules drift, red blockers pulse, arrows flow); respects reduced motion |
 | Patient script | `.say` navy card with `.fx-lbl` "How to explain it to a patient" and a quoted `p` |
@@ -67,6 +67,11 @@ progress segments, the "All lessons" menu with Overview, Previous/Next buttons, 
 | Teaching picture | `figure.m1-pic` + `.m1-notice` "what to notice" cards with an **Ask:** line |
 | Decision tool | a small dedicated script like `js/m1-impact.js`: presets (patients), inputs, live verdict, checks with sources, "what you would do next" |
 | Key messages | `.callout` (teal), `.callout.warn` (amber, "how to read the evidence"), `.callout.note` |
+| Layers that build on each other (e.g. NICE treatment layers) | `.lyr` stack: numbered layer bars, widest at the base, a dashed amber check point, an arrow rail "each layer stays in place" (M4 lesson 1) |
+| Several steps or gates to learn in order | Stepper `div.gst[data-gst]`: `.gst-track` of `.gst-t` tabs (`<b>A</b><span>Title</span>`), one `.gst-p` panel each (head, rule, `.gst-ex` Passes/Fails, `.gst-ev` evidence chips), `.gst-nav` Previous / Next. Each step has its own colour (set by `data-i` 0–5) on its circle, a tinted `.gst-band` header and its chips; DSM/ICD columns, Passes/Fails and notes are tinted blocks with a coloured left bar. JS in `app.js` (generic) |
+| A rule with "counts / doesn't count" examples | Clean table `.sq` (question, ✓ counts, ✗ doesn't count columns, thin coloured left rules, no filled boxes); stacks on phones |
+| Side topic, checklist or big explorer inside a lesson | Closed `details.mx` (title + one-line `small` + chevron); `.mx-tool` for "Try it" explorers, `.mx-ck` for checklists |
+| Practice that has its own sub-tools | A tab in the end Practise box holding a nested `.practice.pr-nested[data-practice]` |
 | Icons | inline SVG line icons, `stroke="currentColor"`, white on teal/navy squares. **Never emoji** (they render black on some systems) |
 
 Tables in `[data-stack-tables]` sections turn into labelled cards on phones automatically; add
@@ -134,5 +139,8 @@ practical point, and the source in `s:`. Never "NG87 1.2.3." alone. Use real-sou
 - Quizzes and sources live at the end, not inside lessons; sources in a closed dropdown but always kept.
 - Painted, warm, semi-realistic image style (`docs/image-style-guide.md`); no text errors in images.
 - Wants commercial quality: a paid course for clinicians that could be sold.
+- No boxes inside boxes, even padding (~1.5rem) inside cards, one thing at a time (steppers, tabs), every lesson
+  about 2 screens or less, practice and tools at the module's end, references only in the closed sources dropdown,
+  and no topic taught twice (see "Design rules" in CLAUDE.md).
 - Grids must be full: no lonely tiles or empty columns. Give each lesson one focal point, and avoid a
   wall of same-weight boxes. Show strength of evidence, not just lists.

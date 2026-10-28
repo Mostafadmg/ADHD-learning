@@ -9,7 +9,10 @@ AA.add('symptoms', [{
   why: "Delay aversion: waiting feels unusually unpleasant, so the person escapes it, fills it or cuts it short. Weak inhibitory control and a strong pull towards immediate rather than later rewards add to this, and time seems to drag when nothing is holding attention.",
   ask: {
     adult: "Over the last six months, how often have you found it hard to wait your turn, for example in queues, in traffic or in waiting rooms? What happens when you have to wait? Can you give me a recent example?",
-    child: "When you were at primary school, between about 5 and 12, how were you at waiting your turn, for example in the dinner queue, in games or for a go on the computer? What do you remember, and what did others say about it?"
+    child: "When you were at primary school, between about 5 and 12, how were you at waiting your turn, for example in the dinner queue, in games or for a go on the computer? What do you remember, and what did others say about it?",
+    parent: "Over the last six months, how hard is it for your child to wait their turn, for example in games, in queues or for a go on a tablet or console, compared with other children their age? What happens when they have to wait?",
+    teen: "Over the last six months, how hard do you find waiting, for example in queues, for your turn in games or sport, for replies to messages or for things you want? What happens when you have to wait?",
+    teacher: "Compared with others in the class, how hard does this pupil find waiting their turn, such as lining up, taking turns in games or waiting for your help? What happens when they have to wait?"
   },
   rephrase: [
     "How are you at waiting in queues?",
@@ -198,12 +201,16 @@ AA.add('symptoms', [{
         "Parent: 'could never wait for anything'",
         "Parent: 'we avoided queues and restaurants because of it'"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16)", items: [
+      { ctx: "teen", label: "Secondary school and college (12-17)", items: [
         "Walked out of canteen or bus queues",
         "Took risky short cuts across roads or railway lines rather than wait",
         "Took turns out of order in PE, science practicals or games",
         "Sent repeated messages when friends did not reply quickly",
-        "Argued with staff or other customers about queues"
+        "Argued with staff or other customers about queues",
+        "Leaves a queue rather than wait, even for something they want",
+        "Quits games or videos that take more than a moment to load",
+        "Buys things straight away rather than wait or save up",
+        "Gives up or calls out rather than wait for the teacher's help"
       ] }
     ]
   },
@@ -301,6 +308,14 @@ AA.add('symptoms', [{
       "Can be impatient with others",
       "Wants to be first in everything",
       "Becomes upset when asked to wait for help"
+    ],
+    teacher: [
+      "Pushes to the front of the line",
+      "Cannot wait for a turn in games or group work",
+      "Gets upset when asked to wait for help",
+      "Grabs equipment before it is handed out",
+      "Wants to be first in everything",
+      "Out of the door before the class is dismissed"
     ]
   },
   counts: [
@@ -357,7 +372,8 @@ AA.add('symptoms', [{
     highIQ: "Able and well-resourced people may solve waiting with money and planning (fast-track services, deliveries, flexible hours), which hides the difficulty. Ask what happens when they cannot buy their way out, and what avoiding waits costs them.",
     sud: "Nicotine, cannabis, alcohol and stimulant withdrawal all cause irritability and impatience, and stimulant intoxication speeds people up. Ask about periods of abstinence and about childhood, and check whether the impatience predates substance use.",
     asd: "Autistic people may find waiting hard because of sensory overload, uncertainty or changes to routine, and often cope better when the wait is quiet and predictable. In ADHD the delay itself is the problem, and waiting stays hard even when it is quiet and its length is known. Both can be present.",
-    culture: "Queuing norms vary widely between countries and settings: orderly lines are expected in some places and informal pushing forward in others. Judge against the person's own norms and ask whether their impatience stands out within their own community."
+    culture: "Queuing norms vary widely between countries and settings: orderly lines are expected in some places and informal pushing forward in others. Judge against the person's own norms and ask whether their impatience stands out within their own community.",
+    young: "Waiting is hard for young children and gets easier with age, so compare with children of the same age and allow for the youngest in the year. Some children, often girls, hold it together at school and show impatience at home, so ask both the parent and the teacher. Frustration only when tired or hungry, or anger linked to low mood, does not count on its own."
   },
   refs: [
     "DSM-5-TR (APA 2022), criterion A2h, paraphrased",
@@ -366,6 +382,8 @@ AA.add('symptoms', [{
     "Sonuga-Barke EJS. The dual pathway model of AD/HD. Neurosci Biobehav Rev 2003;27:593-604",
     "DIVA 2.0 structure (Kooij and Francken 2010); question and example wording original",
     "ASRS v1.1 item 17 (WHO 2003)",
-    "Clinical practice"
+    "Clinical practice",
+    "NICE NG87 1.2.2 (under-recognition in girls), 1.3.5 (criteria adjusted for age) and 1.3.6 (children's views)",
+    "Parent, young person and teacher questions, teacher comments and young-person notes: clinical practice"
   ]
 }]);

@@ -1,7 +1,14 @@
-/* tools-info: information-only instruments used around an adult ADHD assessment (ARCHITECTURE.md section 5.4).
-   Child and adolescent ADHD scales met in childhood or transition records (conners4, adhdrs5, vanderbilt, snap4, sdq),
-   sleep (epworth, isi), bipolar (hcl32), OCD (ocir, ybocs), cognition (moca), adverse childhood experiences (aceq)
-   and substance use (assist).
+/* tools-info: information-only instruments (ARCHITECTURE.md section 5.4).
+   Child and adolescent ADHD scales (conners4, adhdrs5, vanderbilt, snap4, sdq): used now when assessing a young person
+   aged 6-17 (result entered by hand in the Screening step: tools.<id>.result), and met in childhood or transition
+   records in an adult assessment. Sleep (epworth, isi), bipolar (hcl32), OCD (ocir, ybocs), cognition (moca), adverse
+   childhood experiences (aceq) and substance use (assist).
+   Young-person tools added 25 Oct 2026 (end of file): wfirsp, ydiva5, acechild, rcads, mfq, phqa, crafft, scq,
+   aq10child, aq10adol. Ages, licences, URLs and cut-offs come from the research brief of 25 Oct 2026 (section 4);
+   Young DIVA-5 and ACE v.2 facts come from the existing tool entries and the main course Assessment Guide.
+   SCARED was left out: its licence and official source could not be confirmed.
+   ageMin/ageMax (every tool, in all three tool files): inclusive whole years of the person being assessed;
+   ageMax 120 means no upper limit stated. Where a range is an inference it says so in the ages text.
    Interactive: aceq only. CDC states that the ACE Study questionnaires are not copyrighted and carry no fees; the
    10 items follow the 'Finding your ACE score' short form (copy checked: US Probation, District of Minnesota).
    All others are interactive:false with empty items, because the licence does not allow reproduction, the licence
@@ -18,12 +25,12 @@ AA.add('tools', [
   /* ------------------------------------------------------------------ Conners 4 */
   {
     id: "conners4", abbr: "Conners 4", name: "Conners 4th Edition (Conners 4)",
-    group: "child", stage: ["referral", "collateral"],
+    group: "child", stage: ["referral", "pre", "collateral", "followup"],
     who: "Parent and teacher forms, and a young person's self-report. Publisher qualification required.",
     time: "Full forms 10-25 minutes (average 12-15); Short forms 5-10 minutes; ADHD Index 1-3 minutes (Conners 4 manual)",
-    ages: "6-18 (self-report 8-18)", items_n: null,
+    ages: "6-18 (self-report 8-18)", ageMin: 6, ageMax: 18, items_n: null,
     purpose: "Commercial rating scale for ADHD symptoms and related problems in children and adolescents (MHS, 2022; successor to the Conners 3). NICE NG87 rec 1.3.2 names the Conners' rating scales, with the SDQ, as helpful added tools in diagnosis. Both are child and adolescent scales.",
-    when: "Not used to assess adults directly. It matters in two situations. Transition: a young person of 17-18 referred from CAMHS or paediatrics may arrive with recent Conners parent, teacher and self-report results. Childhood records: old Conners reports (Conners 4, Conners 3 or earlier editions) in school, CAMHS or paediatric notes are useful evidence for Criterion B (several symptoms before 12) and Criterion C (more than one setting). Read them in the Collateral step. For an adult's own symptoms use adult tools such as the ASRS or CAARS 2.",
+    when: "Children and young people (6-18): send the parent and teacher forms before the assessment, and the self-report from age 8, so the results are ready for the Screening step. Enter the result there: the main scale scores, whether they reach the elevated range, who completed each form and the date. NICE names the Conners scales, with the SDQ, as helpful added tools; they never make the diagnosis on their own. During titration NICE asks for parent and teacher ratings on standard scales at baseline and at each dose change, so a short form or the ADHD Index can be repeated. Adults: it is not used to assess an adult directly. A young person of 17-18 referred from CAMHS or paediatrics may arrive with recent results, and old Conners reports (Conners 4, Conners 3 or earlier editions) in school, CAMHS or paediatric notes are evidence for criterion B (several symptoms before 12) and criterion C (more than one setting); read them in the Collateral step. For an adult's own symptoms use adult tools such as the ASRS or CAARS 2.",
     how: "Administered and scored by a qualified user, on paper or online through MHS. When you read an old report, note the edition, who completed each form, the child's age, whether the child was taking medication at the time, and the actual scale scores, not only the summary.",
     interactive: false, items: [], scoring: null,
     interpretation: [
@@ -42,9 +49,9 @@ AA.add('tools', [
       "Ratings made while the child was on medication understate symptoms.",
       "High ratings also occur with anxiety, trauma, autism, learning difficulties and family stress."
     ],
-    adhdNotes: "In an adult assessment the Conners is collateral, not a test. A childhood report with raised ratings from more than one informant supports onset before 12 and pervasiveness. Weigh it with school reports and the parent interview, and record it in the Collateral step.",
+    adhdNotes: "For a child or young person, raised inattention or hyperactivity-impulsivity scores from both a parent and a teacher support symptoms in more than one setting (criterion C). Only the interview shows which symptoms are present, since when, and what they cost. When parent and teacher disagree, ask each for recent examples and consider a school observation. Check the response-style indexes before you rely on a profile, and note whether the child was taking medication. In an adult assessment the Conners is collateral, not a test: a childhood report with raised ratings from more than one informant supports onset before 12 and pervasiveness.",
     licence: "Proprietary (Multi-Health Systems). Qualification required; forms and reports are sold by MHS. Items and norms may not be reproduced. Not reproduced here.",
-    source: "Conners CK. Conners 4th Edition (Conners 4). Toronto: Multi-Health Systems, 2022. Conners 4 online manual (MHS): overview of content, interpretation and standardisation chapters. NICE NG87, rec 1.3.2.",
+    source: "Conners CK. Conners 4th Edition (Conners 4). Toronto: Multi-Health Systems, 2022. Conners 4 online manual (MHS): overview of content, interpretation and standardisation chapters. NICE NG87 1.3.2 (rating scales such as the Conners as added tools; school observation when in doubt) and 1.7.26 (parent and teacher ratings on standard scales during titration).",
     url: "https://storefront.mhs.com/collections/conners-4",
     file: null
   },
@@ -52,12 +59,12 @@ AA.add('tools', [
   /* ------------------------------------------------------------------ ADHD-RS-5 */
   {
     id: "adhdrs5", abbr: "ADHD-RS-5", name: "ADHD Rating Scale-5 for Children and Adolescents (and the ADHD-RS-IV with adult prompts)",
-    group: "child", stage: ["collateral", "followup"],
+    group: "child", stage: ["pre", "collateral", "followup"],
     who: "Parent (Home Version) or teacher (School Version). The ADHD-RS-IV with adult prompts is a clinician rating used in adult trials.",
     time: "About 5-10 minutes (clinical practice estimate)",
-    ages: "5-17 (child form 5-10, adolescent form 11-17)", items_n: 18,
+    ages: "5-17 (child form 5-10, adolescent form 11-17)", ageMin: 5, ageMax: 17, items_n: 18,
     purpose: "Commercial DSM-5 rating scale for ADHD symptoms in children and adolescents (DuPaul, Power, Anastopoulos and Reid; Guilford, 2016). Nine inattention and nine hyperactivity-impulsivity items are rated for frequency. Six impairment domains (relationships with family or teachers, peers, academic functioning, behaviour, homework and self-esteem) are rated after each symptom set. Its predecessor, the ADHD-RS-IV, with adult prompts added, is widely used as the clinician-rated outcome in adult ADHD medication trials.",
-    when: "A child tool. In an adult assessment you meet it in childhood or transition records (Collateral step), and in the adult treatment trials you draw on when explaining medication evidence. It is not validated as a retrospective rating of an adult's childhood. For an adult's baseline and monitoring, use the ASRS v1.1 or the clinician-rated AISRS instead.",
+    when: "Children and young people (5-17): the parent (Home) and teacher (School) checklists rate the 18 DSM-5 symptoms and six areas of impairment. Send them before the assessment and enter the result in the Screening step: subscale scores, the percentile band from the manual, who rated and the date. It is short and follows the 18 symptoms, so it also suits titration reviews, where NICE asks for parent and teacher ratings at baseline and at each dose change. Adults: you meet it in childhood or transition records (Collateral step) and in the adult treatment trials you draw on when explaining medication evidence. It is not validated as a retrospective rating of an adult's childhood; for an adult's baseline and monitoring use the ASRS v1.1 or the clinician-rated AISRS.",
     how: "The parent or teacher rates each symptom on a 4-point frequency scale (0 never or rarely, 1 sometimes, 2 often, 3 very often), then rates impairment. The clinician sums the subscales and compares them with the age- and gender-based percentile norms in the manual. In the adult-prompt version, the clinician reads set prompts for each item and scores the highest frequency the patient describes.",
     interactive: false, items: [], scoring: null,
     interpretation: [
@@ -74,7 +81,7 @@ AA.add('tools', [
       "High ratings are not specific to ADHD: anxiety, trauma, autism, learning difficulties and oppositional behaviour all raise them.",
       "Do not confuse it with the ASRS. Both have 18 DSM-based items, but the response scales and thresholds differ."
     ],
-    adhdNotes: "Its main value in adult work is reading: childhood or transition records may contain ADHD-RS results, and adult trials report changes in ADHD-RS-IV totals. For an adult's own symptoms rely on the semi-structured interview, with the ASRS or AISRS for baseline and monitoring.",
+    adhdNotes: "For a child or young person, compare each informant's scores with the manual's norms for the child's age and gender; the percentile cut-offs are in the manual and were not checked for this app. Items rated 2 or 3 show which symptoms to explore with examples in the interview, and Home and School ratings together give a first view of criterion C. In adult work its value is reading: childhood or transition records may contain ADHD-RS results, and adult trials report changes in ADHD-RS-IV totals.",
     licence: "Proprietary (Guilford Press). The checklists come with the purchased manual, which gives purchasers a limited licence to photocopy the forms and score sheets for their own clients. Licensing of the adult-prompt version was not verified. Not reproduced here.",
     source: "DuPaul GJ, Power TJ, Anastopoulos AD, Reid R. ADHD Rating Scale-5 for Children and Adolescents: Checklists, Norms, and Clinical Interpretation. New York: Guilford Press, 2016. DuPaul GJ et al. Parent and teacher ratings of ADHD symptoms: factor structure and normative data. Psychol Assess 2016;28:214-25. ADHD-RS-IV with adult prompts as described in trial registrations (for example NCT01692782).",
     url: "https://www.guilford.com/books/ADHD-Rating-Scale-5-for-Children-and-Adolescents/DuPaul-Power-Anastopoulos-Reid/9781462524877",
@@ -84,12 +91,12 @@ AA.add('tools', [
   /* ------------------------------------------------------------------ NICHQ Vanderbilt */
   {
     id: "vanderbilt", abbr: "NICHQ Vanderbilt", name: "NICHQ Vanderbilt Assessment Scales (parent and teacher informant)",
-    group: "child", stage: ["collateral"],
+    group: "child", stage: ["pre", "collateral", "followup"],
     who: "Parent or teacher informant",
     time: "About 10 minutes (clinical practice estimate)",
-    ages: "Validated for ages 6-12 (AAP scoring instructions)", items_n: 55,
+    ages: "Validated for ages 6-12 (AAP scoring instructions)", ageMin: 6, ageMax: 12, items_n: 55,
     purpose: "Parent and teacher rating scales from the American Academy of Pediatrics (AAP) and NICHQ, adapted from the Vanderbilt Rating Scales developed by Mark Wolraich. They cover the 18 DSM-IV ADHD symptoms, screens for oppositional defiant disorder, conduct disorder and anxiety or depression (and learning problems on the teacher form), and performance (impairment) items. The parent initial form has 55 items (47 symptoms, 8 performance); the teacher initial form has 43 (35 symptoms, 8 performance). Follow-up forms track symptoms and medication side effects.",
-    when: "A child tool, used mostly in North America. In an adult assessment it helps in two ways: reading childhood or transition records that contain Vanderbilt results (Collateral step), and as a structured prompt when a parent describes the patient's primary-school years. It has no validation as a retrospective rating of an adult's childhood, so use any retrospective version as an aide-memoire for the parent interview, not as a score. CADDRA lists the Vanderbilt among other usable tools.",
+    when: "Children aged 6-12. The parent and teacher forms screen the 18 ADHD symptoms and impairment, plus oppositional, conduct and anxiety or depression problems (and learning problems on the teacher form). Send both before the assessment and enter the result in the Screening step: the symptom counts in each domain, whether the performance rule is met, who rated and the date. The follow-up forms track symptoms and side effects during treatment. It is used mostly in North America; CADDRA lists it among usable tools. From 13, use a scale normed for adolescents, such as the Conners 4, the ADHD-RS-5 or the SDQ. Adults: it helps when reading childhood or transition records that contain Vanderbilt results (Collateral step), and as a structured prompt when a parent describes the patient's primary-school years. It has no validation as a retrospective rating of an adult's childhood, so use it as an aide-memoire for the parent interview, not as a score.",
     how: "The informant rates the child's behaviour over the past 6 months, thinking about what is appropriate for the child's age. Symptoms are rated 0 never, 1 occasionally, 2 often, 3 very often. Performance is rated 1 excellent to 5 problematic. The form asks whether the ratings were made when the child was on medication, off medication or not sure.",
     interactive: false, items: [], scoring: null,
     interpretation: [
@@ -108,7 +115,7 @@ AA.add('tools', [
       "The oppositional, conduct and anxiety or depression sections are screens, not diagnoses.",
       "The parent form and the AAP scoring sheet number the performance items slightly differently."
     ],
-    adhdNotes: "If a parent completes a Vanderbilt about the patient's childhood, use it to open the parent interview: which symptoms, in which settings, and what school said at the time. A Vanderbilt completed at the time by a teacher, found in records, is stronger evidence than one completed from memory years later.",
+    adhdNotes: "For a child, 6 or more symptoms rated 2-3 in a domain on both the parent and the teacher form, with the performance rule met, is a strong prompt for the interview, not a diagnosis. Ask whether the child was on medication when rated. A positive oppositional, conduct or anxiety-depression screen goes to the differential step. In adult work, a Vanderbilt completed at the time by a teacher and found in records is stronger evidence than one a parent completes from memory years later; use the latter only to open the parent interview.",
     licence: "Copyright 2002 American Academy of Pediatrics and NICHQ, adapted from the Vanderbilt Rating Scales developed by Mark L. Wolraich (form footer). NICHQ offers the first edition (2002) as a free download and asks for a reference to NICHQ when it is cited; later editions (2nd 2011, 3rd 2019) come from the AAP, and the 3rd edition is sold through the AAP bookstore. Terms for reproduction in software were not verified. Not reproduced here.",
     source: "NICHQ Vanderbilt Assessment Scales, parent and teacher informant forms (AAP and NICHQ, 2002). AAP. Caring for Children With ADHD: A Resource Toolkit for Clinicians, 2nd ed. 2012: scoring instructions. Wolraich ML et al. J Pediatr Psychol 2003;28:559-67.",
     url: "https://www.nichq.org/resource/nichq-vanderbilt-assessment-scales",
@@ -118,17 +125,17 @@ AA.add('tools', [
   /* ------------------------------------------------------------------ SNAP-IV */
   {
     id: "snap4", abbr: "SNAP-IV", name: "Swanson, Nolan and Pelham Rating Scale, version IV (SNAP-IV-26)",
-    group: "adhd-childhood", stage: ["pre", "collateral"],
+    group: "adhd-childhood", stage: ["pre", "collateral", "followup"],
     who: "Parent or teacher. In adult assessment, a parent or older relative rates the patient's childhood (CADDRA).",
     time: "About 5-10 minutes (clinical practice estimate)",
-    ages: "Developed and normed in children; used by CADDRA as a retrospective childhood rating for adults", items_n: 26,
+    ages: "No age range is printed on the form. Normed in primary-school children and commonly used from 6 to 18; CADDRA also uses it as a retrospective childhood rating for adults.", ageMin: 6, ageMax: 120, items_n: 26,
     purpose: "Short rating scale of the 18 DSM-IV ADHD symptoms (items 1-9 inattention, 10-18 hyperactivity-impulsivity) and 8 oppositional defiant disorder symptoms (items 19-26), each rated 0 not at all, 1 just a little, 2 quite a bit, 3 very much. The 26-item version is the one in common clinical use; a longer 90-item SNAP-IV also exists.",
-    when: "In the CADDRA adult pathway (step 1, initial information gathering), someone who knew the patient as a child completes the SNAP-IV about the patient's childhood. The patient completes the ASRS and a partner or close other completes an observer ASRS at the same time. Send it before the appointment, then explore the endorsed items in the parent interview (Collateral step).",
-    how: "Ask the informant to think about the patient at primary-school age (before 12) and rate each item. Score each subscale, then ask for concrete examples of every item rated 2 or 3.",
+    when: "Children and young people: the parent and the teacher each rate the child's current behaviour. Send it before the assessment and enter the result in the Screening step: the inattention, hyperactivity-impulsivity and oppositional averages, who rated and the date. It is short and follows the 18 DSM symptoms, so it can be repeated at titration reviews. Adults: in the CADDRA adult pathway (step 1, initial information gathering), someone who knew the patient as a child completes it about the patient's childhood, while the patient completes the ASRS and a partner or close other an observer ASRS. Explore the endorsed items in the parent interview (Collateral step).",
+    how: "For a child or young person, the parent and the teacher rate current behaviour on separate forms. For an adult, the informant thinks about the patient at primary-school age (before 12). Work out each subscale average (the total of the item ratings divided by the number of items), then ask for concrete examples of every item rated 2 or 3.",
     interactive: false, items: [], scoring: null,
     interpretation: [
       "Swanson's method: subscale score = total of the item ratings divided by the number of items (an average from 0 to 3). It is compared with tentative cut-offs at about the 95th percentile of US child samples, which are higher for teacher than for parent ratings. The values usually quoted (teacher / parent) are: inattention 2.56 / 1.78; hyperactivity-impulsivity 1.78 / 1.44; combined 2.00 / 1.67; oppositional 1.38 / 1.88. These come from secondary sources, the original scoring sheet was not checked, and at least one published review could not trace where these 'tentative 5% cut-offs' came from. Treat them as rough benchmarks for children, not diagnostic thresholds.",
-      "Bussing et al. 2008: parent average scores above 1.2 raised the probability of concern (likelihood ratio above 10), and above 1.8 the probability of an ADHD diagnosis (likelihood ratio above 3).",
+      "Bussing et al. 2008: parent average scores above 1.2 raised the probability of concern (likelihood ratio above 10), and above 1.8 the probability of an ADHD diagnosis (likelihood ratio above 3). For teachers, averages above 1.2 for hyperactivity-impulsivity and above 1.8 for inattention marked concern only.",
       "CADDRA's printed guide sums items instead: inattention (items 1-9, out of 27) under 13 not significant, 13-17 mild, 18-22 moderate, 23-27 severe. Its hyperactivity-impulsivity bands are printed out of 24 although the maximum is 27, and its 'suggested targets' give a different threshold, so do not apply them.",
       "When counting against DSM criteria, an item rated 2 or 3 is often treated as present (clinical practice).",
       "Items 19-26 cover oppositional behaviour, which is common in children with ADHD. They are not conduct disorder items. Antisocial personality disorder needs evidence of conduct disorder before age 15, so ask separately about aggression, cruelty, fire-setting, theft, truancy and running away."
@@ -141,7 +148,7 @@ AA.add('tools', [
       "The 26-item and 90-item versions number their items differently. Check which version you have before scoring.",
       "CADDRA's summed bands for hyperactivity-impulsivity contain a printing error."
     ],
-    adhdNotes: "The SNAP-IV is a simple, structured way to get a parent's view of the patient's childhood. Several items rated 2-3 across both dimensions, backed by concrete examples in the interview, support Criterion B. A low score is not proof of absence: many parents of adults in mid-life cannot recall detail, and quiet, inattentive children were often missed.",
+    adhdNotes: "For a child or young person, use the parent and teacher averages as prompts for the interview, not as a diagnosis: raised scores from both support symptoms in more than one setting. The oppositional items (19-26) help with the oppositional defiant disorder differential; they do not screen for conduct disorder. For an adult, the SNAP-IV is a simple, structured way to get a parent's view of the patient's childhood: several items rated 2-3 across both dimensions, backed by concrete examples, support criterion B. A low score is not proof of absence: many parents of adults in mid-life cannot recall detail, and quiet, inattentive children were often missed.",
     licence: "Attributed to James M. Swanson. The CADDRA copy carries no copyright line. It is often described as public domain, but this was not confirmed with the author. Not reproduced here.",
     source: "Swanson JM. SNAP-IV Teacher and Parent Rating Scale (26-item version). CADDRA Canadian ADHD Practice Guidelines 4.1 and CADDRA ADHD toolkit (SNAP-IV-26 form, 2022). Bussing R et al. Assessment 2008;15:317-28.",
     url: "https://www.caddra.ca/wp-content/uploads/SNAP-IV-26_July-11-2022.pdf",
@@ -151,18 +158,19 @@ AA.add('tools', [
   /* ------------------------------------------------------------------ SDQ */
   {
     id: "sdq", abbr: "SDQ", name: "Strengths and Difficulties Questionnaire",
-    group: "child", stage: ["collateral"],
+    group: "child", stage: ["pre", "collateral", "comorbid"],
     who: "Parent and teacher versions; self-report for young people of about 11-17. An 18+ self-report version also exists.",
     time: "About 5 minutes (clinical practice estimate)",
-    ages: "Children and young people (2-17); 18+ self-report version without validated bands", items_n: 25,
+    ages: "Children and young people (2-17); 18+ self-report version without validated bands", ageMin: 2, ageMax: 17, items_n: 25,
     purpose: "Brief behavioural screening questionnaire (Goodman, 1997). Its 25 items form five scales of five items: emotional symptoms, conduct problems, hyperactivity-inattention, peer relationship problems and prosocial behaviour. An optional impact supplement asks about distress and impairment. NICE NG87 rec 1.3.2 names it, with the Conners' scales, as a helpful added tool in diagnosis.",
-    when: "A child tool, widely used in UK schools, CAMHS and social care. In England, local authorities collect a carer SDQ each year for looked-after children aged 4-16 (DfE and DHSC statutory guidance on the health of looked-after children, 2015), so care-experienced adults often have SDQs on file. In an adult assessment it turns up in childhood records, education files or transition paperwork (Collateral step). A raised hyperactivity-inattention score from a parent and a teacher, recorded in childhood, is useful evidence of early onset and pervasiveness. It is not a measure of adult ADHD.",
+    when: "Children and young people: parent and teacher versions (2-17) and the self-report from about 11. Send them before the assessment and enter the result in the Screening step: total difficulties, the hyperactivity-inattention score, the band, who completed it and the date. NICE names it, with the Conners scales, as a helpful added tool. Its emotional, conduct and peer scales also point to co-occurring problems. It is widely used in UK schools, CAMHS and social care, and in England local authorities collect a carer SDQ each year for looked-after children aged 4-16 (DfE and DHSC statutory guidance on the health of looked-after children, 2015), so ask the social worker for recent ones. Adults: it turns up in childhood records, education files or transition paperwork (Collateral step); a raised hyperactivity-inattention score from a parent and a teacher, recorded in childhood, is useful evidence of early onset and pervasiveness. It is not a measure of adult ADHD.",
     how: "Each item is rated not true, somewhat true or certainly true (0-2), with five items scored in reverse. Total difficulties is the sum of the four problem scales; the prosocial scale is scored separately. Banding uses the published UK norms on sdqinfo.org.",
     interactive: false, items: [], scoring: null,
     interpretation: [
       "Each scale 0-10. Total difficulties 0-40 (emotional, conduct, hyperactivity-inattention and peer scales). Prosocial 0-10, scored separately. The impact supplement gives an impact score.",
       "The hyperactivity-inattention scale covers restlessness, fidgeting, distractibility, thinking before acting and attention span. It does not map onto all 18 DSM symptoms.",
       "Score bands come from UK norms and differ by informant. Use the official scoring tables, not remembered cut-offs.",
+      "Four-band scoring (youthinmind scoring document, 20 June 2016), total difficulties: parent 0-13 close to average, 14-16 slightly raised, 17-19 high, 20-40 very high; teacher 0-11, 12-15, 16-18, 19-40; self-report 0-14, 15-17, 18-19, 20-40. Hyperactivity-inattention scale: parent and teacher 0-5, 6-7, 8, 9-10; self-report 0-5, 6, 7, 8-10. The older three bands (parent total: normal 0-13, borderline 14-16, abnormal 17-40) are also in use.",
       "Raised emotional or peer scores in childhood point you to questions about anxiety, mood, trauma or autism as well as ADHD.",
       "Cut-off bands are not validated for the 18+ self-report version; use continuous scores if you meet it (secondary guidance)."
     ],
@@ -173,9 +181,9 @@ AA.add('tools', [
       "Do not use child bands for an adult.",
       "The documents may not be modified, and electronic or computer-scored versions need a licence."
     ],
-    adhdNotes: "Treat a childhood SDQ like a school report. A raised hyperactivity-inattention score from more than one informant supports onset and pervasiveness. A normal score does not exclude ADHD, especially the inattentive presentation.",
+    adhdNotes: "For a child or young person, a raised hyperactivity-inattention score from both parent and teacher supports symptoms in more than one setting, but five items cannot establish DSM criteria: use the interview. Raised emotional, conduct or peer scores point to anxiety, low mood, oppositional or conduct problems, autism, or difficulties at home or school, which go to the differential step. In adult work, treat a childhood SDQ like a school report. A normal score does not exclude ADHD, especially the inattentive presentation.",
     licence: "Copyright Robert Goodman (youthinmind). sdqinfo.org: copyrighted documents that may not be modified; paper versions may be downloaded and photocopied without charge for non-commercial purposes; computer scoring needs a licence. Not reproduced here.",
-    source: "Goodman R. The Strengths and Difficulties Questionnaire: a research note. J Child Psychol Psychiatry 1997;38:581-6. youthinmind, sdqinfo.org download terms. NICE NG87, rec 1.3.2.",
+    source: "Goodman R. The Strengths and Difficulties Questionnaire: a research note. J Child Psychol Psychiatry 1997;38:581-6. youthinmind, sdqinfo.org download terms and scoring document (20 June 2016). NICE NG87, rec 1.3.2.",
     url: "https://www.sdqinfo.org/b1.html",
     file: null
   },
@@ -186,7 +194,7 @@ AA.add('tools', [
     group: "sleep", stage: ["comorbid", "physical"],
     who: "Self-report",
     time: "2-3 minutes (clinical practice estimate)",
-    ages: "Adults", items_n: 8,
+    ages: "Adults", ageMin: 18, ageMax: 120, items_n: 8,
     purpose: "Measures general daytime sleepiness: how likely the person is to doze off in 8 everyday situations (Johns, 1991).",
     when: "Comorbidity step, when the history suggests sleepiness rather than restless distraction: loud snoring, witnessed pauses in breathing, unrefreshing sleep, dozing while reading, in meetings or at the wheel, or sudden sleep attacks. Sleepiness from obstructive sleep apnoea, narcolepsy or simply too little sleep impairs concentration and memory and can look like inattention. Use it with STOP-Bang and a sleep history or diary. Repeat it after sleep treatment (for example CPAP) to see whether daytime symptoms change.",
     how: "The patient rates each situation from 0 (would never doze) to 3 (high chance of dozing), thinking about their usual way of life recently. Add the 8 ratings.",
@@ -218,7 +226,7 @@ AA.add('tools', [
     group: "sleep", stage: ["comorbid", "followup"],
     who: "Self-report (clinician and significant-other versions exist)",
     time: "About 5 minutes (clinical practice estimate)",
-    ages: "Adults", items_n: 7,
+    ages: "Adults", ageMin: 18, ageMax: 120, items_n: 7,
     purpose: "Rates the severity and impact of current insomnia: difficulty falling asleep, staying asleep and waking too early, satisfaction with sleep, interference with daytime functioning, how noticeable the problem is to others, and worry about sleep (Morin; Bastien et al., 2001).",
     when: "Comorbidity step whenever sleep problems are reported, which is common in adults with ADHD (especially difficulty getting to sleep). It shows whether sleep needs treatment in its own right, and gives a baseline before stimulants, which can worsen sleep. Repeat it at follow-up and after dose changes.",
     how: "The person rates their insomnia over the last 2 weeks on seven items, each rated 0-4, summed to a total. Also take a short sleep history: bedtime, time to fall asleep, night waking, wake time on work days and free days, naps, screens, caffeine, alcohol and cannabis. A 1-2 week sleep diary helps.",
@@ -248,7 +256,7 @@ AA.add('tools', [
     group: "bipolar", stage: ["comorbid"],
     who: "Self-report",
     time: "About 10-15 minutes (clinical practice estimate)",
-    ages: "Adults", items_n: 32,
+    ages: "Adults", ageMin: 18, ageMax: 120, items_n: 32,
     purpose: "Self-assessment of lifetime hypomanic symptoms (Angst et al., 2005). The person thinks about periods when they felt 'high' or more active than usual and answers yes or no to 32 features of those periods, with further questions about the effects of those periods and how long they lasted.",
     when: "Comorbidity step, when the history raises bipolar disorder: distinct spells of elevated or irritable mood, a reduced need for sleep, a family history of bipolar disorder, activation on antidepressants, or mood swings lasting days rather than hours. Use it only as a prompt for a careful interview about discrete episodes. NICE CG185 rec 1.2.3 says not to use questionnaires in primary care to identify bipolar disorder in adults.",
     how: "Ask the person to think of times when they felt high or hyper compared with their usual state, then answer each item. Count the yes answers. Then interview for discrete episodes: when, how long, sleep, change from their usual self, consequences, and whether others noticed. Build a life chart and ask an informant.",
@@ -279,7 +287,7 @@ AA.add('tools', [
     group: "anxiety", stage: ["comorbid"],
     who: "Self-report",
     time: "About 5 minutes (clinical practice estimate)",
-    ages: "Adults", items_n: 18,
+    ages: "Adults", ageMin: 18, ageMax: 120, items_n: 18,
     purpose: "Short self-report measure of OCD symptoms (Foa et al., 2002). Its 18 items form 6 subscales of 3 items: washing, checking, ordering, obsessing, hoarding and neutralising. Each item is rated for distress over the past month from 0 (not at all) to 4 (extremely).",
     when: "Comorbidity step, when inattention may be driven by intrusive thoughts, checking or rituals, or when the person reports repeated checking 'because I forget'. It helps separate anxiety-driven, ritualised OCD from forgetful, distractible ADHD. Follow a positive screen with an interview and, if OCD is likely, a Y-BOCS or referral.",
     how: "The patient rates each item. Sum all items for the total and sum each set of three for the subscales.",
@@ -309,7 +317,7 @@ AA.add('tools', [
     group: "anxiety", stage: ["comorbid"],
     who: "Clinician-rated semi-structured interview",
     time: "About 15-30 minutes including the symptom checklist (clinical practice estimate)",
-    ages: "Adults (a children's version, the CY-BOCS, exists)", items_n: 10,
+    ages: "Adults (a children's version, the CY-BOCS, exists)", ageMin: 18, ageMax: 120, items_n: 10,
     purpose: "Clinician rating of OCD severity that does not depend on the type of obsessions or compulsions (Goodman et al., 1989). A symptom checklist first identifies the obsessions and compulsions. Ten items then rate them, five for obsessions and five for compulsions, each from 0 (no symptoms) to 4 (extreme), covering time taken, interference, distress, resistance and control.",
     when: "After a positive OCD screen, or when OCD is clearly present, to rate severity for treatment planning and for the report. Usually done by, or with, an OCD or psychology service. Not needed in most ADHD assessments.",
     how: "Interview with the symptom checklist, then rate the 10 severity items for the recent period, usually the past week. Training is needed for reliable ratings.",
@@ -339,7 +347,7 @@ AA.add('tools', [
     group: "cognition", stage: ["comorbid", "physical"],
     who: "Clinician-administered by a trained, certified administrator",
     time: "About 10 minutes",
-    ages: "Adults; developed for older adults and mild cognitive impairment", items_n: null,
+    ages: "Adults; developed for older adults and mild cognitive impairment", ageMin: 18, ageMax: 120, items_n: null,
     purpose: "Brief 30-point screen for mild cognitive impairment (Nasreddine et al., 2005). It covers attention and concentration, executive function, memory, language, visuospatial skills, abstraction, calculation and orientation.",
     when: "Comorbidity step and physical health review, when attention or memory problems are new in mid or later life, are getting worse, or follow a head injury, stroke, heavy alcohol use or a medical illness. A new decline with no childhood history points to a neurocognitive or medical cause, not ADHD. It is not an ADHD test.",
     how: "Administer and score with the official form and instructions. Add 1 point for 12 years of formal education or less (official instructions).",
@@ -370,7 +378,7 @@ AA.add('tools', [
     group: "trauma", stage: ["interview", "comorbid"],
     who: "Self-report, or read aloud by the clinician. The person may decline any item.",
     time: "About 5 minutes",
-    ages: "Adults, about their first 18 years", items_n: 10,
+    ages: "Adults, about their first 18 years", ageMin: 18, ageMax: 120, items_n: 10,
     purpose: "Counts 10 categories of adversity before age 18: abuse (emotional, physical, sexual), neglect (emotional, physical) and household challenges (parental separation or divorce, violence towards the mother or stepmother, household substance misuse, household mental illness or suicide attempt, and imprisonment of a household member). It comes from the CDC-Kaiser Permanente ACE Study (17,337 adults, 1995-1997). The score is a count of categories, not a measure of severity or of trauma symptoms.",
     when: "Clinical history or Comorbidity step, as part of a trauma-informed history once rapport is established, rather than cold in a pre-appointment pack. Adversity shapes the differential (PTSD, complex PTSD, attachment and personality difficulties, substance use) and the formulation: early adversity can cause inattention, hypervigilance and emotional dysregulation that look like ADHD, and adversity is also more common in children with ADHD. Use the answers to time the adversity against the first ADHD symptoms.",
     how: "Explain why you are asking, that they can skip any question, and what you must do with some disclosures (for example a risk to children now). The person answers yes or no for their first 18 years. Score = number of yes answers. Then ask about ages, duration, who was involved, what support they had and how it affects them now.",
@@ -434,7 +442,7 @@ AA.add('tools', [
     group: "substance", stage: ["comorbid", "risk"],
     who: "Interview by a clinician or health worker",
     time: "About 5-10 minutes (WHO manual)",
-    ages: "Adults", items_n: 8,
+    ages: "Adults", ageMin: 18, ageMax: 120, items_n: 8,
     purpose: "WHO screening interview covering tobacco, alcohol, cannabis, cocaine, amphetamine-type stimulants, sedatives and sleeping pills, hallucinogens, inhalants, opioids and other drugs. It gives a risk score for each substance (lower, moderate or high risk), linked to a brief intervention or referral.",
     when: "Comorbidity and Safety and risk steps, when the person uses more than alcohol or you need a structured view of several substances. Cannabis, stimulant and sedative use matter in three ways: as mimics of ADHD (intoxication and withdrawal cause inattention and restlessness), as coexisting disorders, and as risks for stimulant treatment. NICE NG87 rec 1.7.4 asks for a risk assessment for substance misuse and drug diversion before medication. For alcohol alone, NICE CG115 recommends the AUDIT.",
     how: "Q1 asks which substances have ever been used; it filters the rest and is not scored. For each substance used: Q2-Q5 cover the past 3 months (how often used, strong desire or urge, health, social, legal or financial problems, and failing to do what was normally expected), Q6 whether others have expressed concern, Q7 failed attempts to cut down, and Q8 injecting. Use the WHO response card and the feedback report card.",
@@ -459,6 +467,289 @@ AA.add('tools', [
     licence: "Copyright World Health Organization 2010. The manual states all rights reserved; requests to reproduce or translate go to WHO. Terms for embedding in software were not verified. Not reproduced here.",
     source: "Humeniuk R, Henry-Edwards S, Ali R, Poznyak V, Monteiro MG. The Alcohol, Smoking and Substance Involvement Screening Test (ASSIST): manual for use in primary care. Geneva: World Health Organization, 2010 (ASSIST v3.1). Humeniuk R et al. Validation of the ASSIST. Addiction 2008;103:1039-47. Crunelle CL et al. Eur Addict Res 2018 (international consensus on ADHD and substance use disorder). Public Health England. How to use the ASSIST-Lite screening tool to identify alcohol and drug use and tobacco smoking. GOV.UK, updated 7 April 2021.",
     url: "https://www.who.int/publications/i/item/978924159938-2",
+    file: null
+  },
+
+  /* ================================================================== Young people (6-17), added 25 Oct 2026
+     Information-only: the result is entered by hand (tools.<id>.result = { score, cutoff, rater, date, notes }).
+     Facts from the research brief of 25 Oct 2026, section 4, unless stated. */
+
+  /* ------------------------------------------------------------------ WFIRS-P */
+  {
+    id: "wfirsp", abbr: "WFIRS-P", name: "Weiss Functional Impairment Rating Scale, Parent Report",
+    group: "adhd-impairment", stage: ["pre", "interview", "followup"],
+    who: "Parent or carer",
+    time: "Not stated by the author (50 short items; allow about 10 minutes in practice)",
+    ages: "Children and young people. No age range is printed on the form; this app offers it from 6 to 17 (clinical practice).", ageMin: 6, ageMax: 17, items_n: 50,
+    purpose: "The parent version of the Weiss impairment scale, from the CADDRA toolkit. It measures how the child's emotional or behavioural problems have affected daily life in the last month, in six domains: family (10 items), school (10: learning 4, behaviour 6), life skills (10), the child's self-concept (3), social activities (7) and risky activities (10). Like the self-report, it has no symptom items, so it measures impairment separately from symptoms.",
+    when: "Send it to the parent or carer before the assessment and enter the result in the Screening step. Use the domain profile to plan the impairment questions in the Onset and impairment step (criteria C and D), and keep it as a baseline: the Weiss scales were designed to show change in functioning with treatment. For a young person, the self-report (WFIRS-S, offered here from 12) adds their own view.",
+    how: "The parent rates each item from 0 (never or not at all) to 3 (very often or very much) for the last month, or marks it not applicable. For each domain, count the items rated 2 or 3 and work out the mean of the answered items, leaving out the not-applicable ones. In the interview, ask about every impaired domain: what happened, how often and what it cost.",
+    interactive: false, items: [], scoring: null,
+    interpretation: [
+      "The score sheet records, for each domain, the number of items rated 2 or 3, the total and the mean (not-applicable items excluded).",
+      "A domain is usually counted as impaired when 2 or more items are rated 2, or any item is rated 3, or the domain mean is 1.5 or more. The rule comes from CADDRA's WFIRS instructions; applying it to the parent form is likely but was not confirmed.",
+      "There are no norms. Read the profile with the interview: which domains, how often, and whether the problems come from ADHD symptoms or from something else, such as anxiety, a learning difficulty or stress at home.",
+      "NICE asks for at least moderate impairment. The WFIRS-P informs that judgement but does not make it; the child's own view counts as well."
+    ],
+    psychometrics: "Validation data were not reviewed for this app.",
+    pitfalls: [
+      "Not specific to ADHD: anxiety, low mood, autism, learning difficulties and family stress also raise scores.",
+      "One parent's view. Add the teacher's account of school and the young person's own view.",
+      "Items that do not apply should be marked not applicable, not 0."
+    ],
+    adhdNotes: "A quick way to see where the child's difficulties cost the most. Impaired domains at home and at school support criteria C and D only when the interview links them to ADHD symptoms. Repeat it at reviews to see whether daily functioning, not just symptoms, improves.",
+    licence: "© Margaret Danielle Weiss. The form states it can be used by clinicians and researchers free of charge; contact the author before posting it online, using it in research or translating it. Item wording was not checked for this app, so it is not reproduced here.",
+    source: "Weiss MD. Weiss Functional Impairment Rating Scale, Parent Report (WFIRS-P). CADDRA form. CADDRA WFIRS scoring instructions. NICE NG87 1.3.3 (at least moderate impairment) and 1.3.6 (the child's own view of impairment).",
+    url: "https://www.caddra.ca/wp-content/uploads/WFIRS-P.pdf",
+    file: null
+  },
+
+  /* ------------------------------------------------------------------ Young DIVA-5 */
+  {
+    id: "ydiva5", abbr: "Young DIVA-5", name: "Young DIVA-5: diagnostic interview for ADHD in children and young people",
+    group: "adhd-interview", stage: ["interview", "collateral", "diagnosis"],
+    who: "Clinician, with the child or young person and a parent present",
+    time: "About 1 hour (DIVA Foundation)",
+    ages: "5-17", ageMin: 5, ageMax: 17, items_n: 18,
+    purpose: "The DIVA Foundation's semi-structured interview for ADHD in children and young people, the counterpart of the adult DIVA-5. It goes through each of the 18 DSM-5 symptoms with examples, with a parent present.",
+    when: "An option for the core interview with 5-17-year-olds (Inattention, Hyperactivity-impulsivity, Onset and Collateral steps), if your service has it. Like DIVA-5 it covers ADHD only, so co-occurring conditions need separate assessment.",
+    how: "Use the purchased interview and its own instructions. Let the parent and the young person describe each problem in their own words before you use the examples to probe, and record real examples for every symptom you score as present.",
+    interactive: false, items: [], scoring: null,
+    interpretation: [
+      "Apply DSM-5-TR: 6 or more symptoms in a domain under 17 (5 or more at 17), several symptoms before 12, symptoms in 2 or more settings, clear impairment, and no better explanation.",
+      "Add the teacher's account: an interview with the parent alone covers mainly one setting."
+    ],
+    psychometrics: "Validation data were not reviewed for this app.",
+    pitfalls: [
+      "Examples can lead: ask open questions first.",
+      "Ticking examples is not the same as establishing a symptom. Confirm frequency, persistence and impairment against children of the same age.",
+      "Covers ADHD only."
+    ],
+    adhdNotes: "This app's young-person interview follows a similar structure (each symptom with examples, then onset, impairment and informants), but all its questions are original and it is not DIVA. Clinicians who own Young DIVA-5 can use it alongside the app and record their conclusions here.",
+    licence: "© DIVA Foundation. Obtained from the DIVA Foundation; its price and terms of use were not checked for this app. Not reproduced here.",
+    source: "DIVA Foundation: Young DIVA-5 for ages 5-17, about 1 hour with a parent present (as summarised in the main course Assessment Guide and the DIVA-5 entry in this library).",
+    url: "https://www.divacenter.eu/",
+    file: null
+  },
+
+  /* ------------------------------------------------------------------ ACE v.2 (child) */
+  {
+    id: "acechild", abbr: "ACE v.2", name: "ADHD Child Evaluation (ACE v.2)",
+    group: "adhd-interview", stage: ["pre", "interview", "collateral", "diagnosis"],
+    who: "Clinician, with the parent or carer and the child or young person",
+    time: "Not stated in the sources reviewed; plan for a full semi-structured interview",
+    ages: "5-16 (ACE+ covers older adolescents and adults)", ageMin: 5, ageMax: 16, items_n: 18,
+    purpose: "Professor Susan Young's semi-structured interview for ADHD in children and young people, the child version of ACE+. Like ACE+ v.2 it maps to DSM-5 and ICD-11.",
+    when: "A free alternative to Young DIVA-5 for the core interview with a parent or carer (Inattention, Hyperactivity-impulsivity, Onset and Collateral steps). It covers ADHD only, so co-occurring conditions need separate assessment.",
+    how: "Download it from the author's site after a free registration. Work through each symptom with open questions and examples, and use its summary to check each DSM-5 or ICD-11 criterion.",
+    interactive: false, items: [], scoring: null,
+    interpretation: [
+      "Apply DSM-5-TR or ICD-11 rules: 6 or more symptoms in a domain under 17, several symptoms before 12, symptoms in 2 or more settings, clear impairment and no better explanation."
+    ],
+    psychometrics: "Validation data were not reviewed for this app.",
+    pitfalls: [
+      "Avoid closed, leading questions and tick-box use.",
+      "Covers ADHD criteria only. Assess co-occurring conditions separately."
+    ],
+    adhdNotes: "A good choice when your service cannot buy Young DIVA-5. Record clear, real examples for every symptom you score as present, and get the teacher's account as well as the parent's.",
+    licence: "Described as free (Professor Susan Young, Psychology Services Ltd), downloaded after a free registration. Terms for embedding or adapting it in software were not checked, so its wording is not reproduced here.",
+    source: "Young S. ACE v.2: ADHD Child Evaluation. Psychology Services Ltd. Age range and licence as given in the ACE+ entry of this library and the main course Assessment Guide.",
+    url: "https://www.psychology-services.uk.com/adhd.htm",
+    file: null
+  },
+
+  /* ------------------------------------------------------------------ RCADS */
+  {
+    id: "rcads", abbr: "RCADS", name: "Revised Child Anxiety and Depression Scale (and parent version, RCADS-P)",
+    group: "anxiety", stage: ["pre", "comorbid", "followup"],
+    who: "Young person (RCADS) or parent (RCADS-P)",
+    time: "About 10 minutes (clinical practice estimate)",
+    ages: "8-18 (US school grades 3-12)", ageMin: 8, ageMax: 18, items_n: 47,
+    purpose: "Free 47-item questionnaire for anxiety and low mood in children and young people (Chorpita and Spence). Subscales: separation anxiety, social phobia, generalised anxiety, panic, obsessive-compulsive symptoms and low mood, plus total anxiety and total internalising scores. The parent version has the same 47 items.",
+    when: "Co-occurring conditions step, when the history or the SDQ emotional scale suggests worry, fears, panic or low mood. Anxiety and depression often co-occur with ADHD, and they can also cause poor concentration and restlessness. It can be repeated to track change.",
+    how: "The young person (and, separately, the parent) rates each item. Convert raw scores to T-scores with the developer's scoring spreadsheet, which needs the US school grade: one below the UK school year.",
+    interactive: false, items: [], scoring: null,
+    interpretation: [
+      "T-scores: 65 or more is borderline clinical; 70 or more is above the clinical threshold (developer's guidance, as listed by CORC).",
+      "Read the subscale pattern. Separation anxiety, social anxiety, panic or low mood that drives the attention problems needs its own plan.",
+      "A raised score is a prompt for interview, not a diagnosis."
+    ],
+    psychometrics: "Psychometric papers were not reviewed for this app.",
+    pitfalls: [
+      "Enter the grade correctly: the US grade is one below the UK school year. A wrong grade gives the wrong T-score.",
+      "Check the form is complete: young people with ADHD may rush or skip items (clinical practice).",
+      "Do not alter the form or remove the copyright text."
+    ],
+    adhdNotes: "Ask when the worry or low mood started compared with the attention problems, and whether the inattention is there on calm, good days too. Inattention only when anxious points to anxiety; inattention since early childhood in calm settings points to ADHD. Both often co-occur.",
+    licence: "Free: © Chorpita and Spence, at no cost to end users. Do not alter or remove the copyright text; adaptations need written permission. Not reproduced here.",
+    source: "Chorpita BF, Spence SH. Revised Child Anxiety and Depression Scale (RCADS and RCADS-P), rcads.ucla.edu. CORC outcome measures directory.",
+    url: "https://rcads.ucla.edu",
+    file: null
+  },
+
+  /* ------------------------------------------------------------------ MFQ */
+  {
+    id: "mfq", abbr: "MFQ", name: "Mood and Feelings Questionnaire (long form; short form SMFQ)",
+    group: "mood", stage: ["pre", "comorbid", "followup"],
+    who: "Young person (self-report) or parent; an adult self-report version also exists",
+    time: "About 5-10 minutes (clinical practice estimate)",
+    ages: "Designed for 8-18; validated 6-19", ageMin: 6, ageMax: 19, items_n: 33,
+    purpose: "Free questionnaire for depressive symptoms over the past 2 weeks (Angold and Costello). Each item is rated 0 not true, 1 sometimes, 2 true. The long child self-report has 33 items; the short form (SMFQ) has 13.",
+    when: "Co-occurring conditions step, when low mood, irritability, tearfulness or loss of interest are reported, or the SDQ emotional score is raised. Low mood can cause poor concentration and can co-occur with ADHD. Ask the young person as well as the parent.",
+    how: "The young person (and, if helpful, the parent) completes the form. Add the item scores.",
+    interactive: false, items: [], scoring: null,
+    interpretation: [
+      "The authors set no cut-points. Commonly used guides: SMFQ 12 or more; long MFQ 27 or more (CORC). Treat them as prompts only.",
+      "If the young person reports thoughts of self-harm or suicide, assess risk the same day in the Safety and risk step (clinical practice)."
+    ],
+    psychometrics: "Psychometric papers were not reviewed for this app.",
+    pitfalls: [
+      "Irritability and poor concentration overlap with ADHD. Ask whether the mood is a change from the child's usual self.",
+      "Parent and young person often rate differently. Ask both and record each."
+    ],
+    adhdNotes: "Depression is usually a change from the young person's usual self, often in episodes; ADHD is long-standing from early childhood. Ask whether concentration was a problem before the low mood began.",
+    licence: "Free to download; cite Angold and Costello (Duke University). Not reproduced here.",
+    source: "Angold A, Costello EJ. Mood and Feelings Questionnaire. Duke University, developmental epidemiology instruments. CORC outcome measures directory.",
+    url: "https://psychiatry.duke.edu/research/research-programs-areas/assessment-intervention/developmental-epidemiology-instruments-0",
+    file: null
+  },
+
+  /* ------------------------------------------------------------------ PHQ-A */
+  {
+    id: "phqa", abbr: "PHQ-A", name: "Patient Health Questionnaire for Adolescents (PHQ-9 modified for ages 11-17)",
+    group: "mood", stage: ["pre", "comorbid", "risk", "followup"],
+    who: "Young person (self-report), ideally completed on their own",
+    time: "About 2-5 minutes (clinical practice estimate)",
+    ages: "11-17", ageMin: 11, ageMax: 17, items_n: 9,
+    purpose: "The PHQ-9 adapted for adolescents: 9 scored items on depressive symptoms, total 0-27. The APA's adapted version asks about the past 7 days; the original asks about the past 2 weeks and adds questions on past-year depression, how difficult the problems make things, and suicidal thoughts and attempts.",
+    when: "Co-occurring conditions step for young people aged 11-17, in place of the adult PHQ-9. It is quick enough to use with every teenager (clinical practice). Depression can cause poor concentration and often co-occurs with ADHD.",
+    how: "The young person completes it, ideally on their own. Add the 9 item scores. Read item 9 (thoughts of being better off dead or of self-harm) before they leave.",
+    interactive: false, items: [], scoring: null,
+    interpretation: [
+      "Total 0-27: 0-4 none, 5-9 mild, 10-14 moderate, 15-19 moderately severe, 20-27 severe.",
+      "A cut-off of 11 or more gave sensitivity 89.5% and specificity 77.5% for major depression in 13-17-year-olds (Richardson et al. 2010).",
+      "Item 9 positive: assess risk the same day in the Safety and risk step."
+    ],
+    psychometrics: "Richardson et al. 2010 (ages 13-17): at 11 or more, sensitivity 89.5% and specificity 77.5% for major depression.",
+    pitfalls: [
+      "The concentration, sleep and restlessness items overlap with ADHD. Ask whether they are new or have always been there.",
+      "The two versions use different time frames (7 days or 2 weeks). Record which you used."
+    ],
+    adhdNotes: "A raised score with a clear change from the young person's usual self points to depression, which needs its own treatment. Long-standing inattention since early childhood, present on good days too, points to ADHD. Both can co-occur.",
+    licence: "Free: the PHQ screeners can be used without permission (phqscreeners.com). Not reproduced here.",
+    source: "PHQ-A (PHQ-9 modified for adolescents), phqscreeners.com. APA adapted version: Severity Measure for Depression, Child Age 11 to 17 (psychiatry.org). Richardson LP et al. 2010.",
+    url: "https://www.phqscreeners.com",
+    file: null
+  },
+
+  /* ------------------------------------------------------------------ CRAFFT 2.1 */
+  {
+    id: "crafft", abbr: "CRAFFT 2.1", name: "CRAFFT 2.1 substance use screen for adolescents (and CRAFFT 2.1+N)",
+    group: "substance", stage: ["comorbid", "risk"],
+    who: "Young person (self-completion is recommended), or asked by the clinician",
+    time: "About 2 minutes (clinical practice estimate)",
+    ages: "12-21 (validated 12-18; others have used it up to 26)", ageMin: 12, ageMax: 21, items_n: 6,
+    purpose: "Free screen for alcohol and drug use in adolescents. Part A asks how often the young person used alcohol, cannabis or other substances in the past 12 months. Part B has 6 yes/no items (CAR, RELAX, ALONE, FORGET, FRIENDS, TROUBLE); if every Part A answer is 0, only the CAR item is asked. CRAFFT 2.1+N adds a 10-item nicotine and vaping screen.",
+    when: "Co-occurring conditions and Safety and risk steps, for every young person from 12 (clinical practice). Substance use can mimic ADHD (intoxication, withdrawal, poor sleep), can co-occur with it, and matters for any medication plan (misuse and diversion risk). Ask the young person on their own.",
+    how: "Explain confidentiality and its limits, then let the young person complete it alone, on paper or on screen. Score 1 point for each yes in Part B.",
+    interactive: false, items: [], scoring: null,
+    interpretation: [
+      "Part B score 2 or more: high risk; needs further assessment.",
+      "Knight et al. 2002: 2 or more was the best cut-off (any problem: sensitivity 0.76, specificity 0.94; any disorder: sensitivity 0.80, specificity 0.86).",
+      "A yes to the CAR item (riding with a driver who had been drinking or using drugs, including themselves) needs safety advice whatever the total (clinical practice)."
+    ],
+    psychometrics: "Knight et al. 2002: at 2 or more, sensitivity 0.76 and specificity 0.94 for any problem; 0.80 and 0.86 for any disorder.",
+    pitfalls: [
+      "Young people under-report in front of parents. Ask on their own.",
+      "Use the current 2.1 version and keep the copyright notice."
+    ],
+    adhdNotes: "ADHD is linked with a higher risk of substance use in adolescence. Find out whether the attention problems were there before any substance use began. A high score feeds the substance use differentials and the misuse and diversion plan before any medication.",
+    licence: "Free: the CRAFFT site states the tool is free to use. Reproduce it according to the site's instructions and keep the copyright notice. Not reproduced here.",
+    source: "CRAFFT 2.1 and 2.1+N, crafft.org (Center for Adolescent Behavioral Health Research). Knight JR et al. 2002.",
+    url: "https://crafft.org",
+    file: null
+  },
+
+  /* ------------------------------------------------------------------ SCQ */
+  {
+    id: "scq", abbr: "SCQ", name: "Social Communication Questionnaire",
+    group: "autism", stage: ["pre", "comorbid"],
+    who: "Parent or carer",
+    time: "About 10 minutes (clinical practice estimate)",
+    ages: "From 4 years, with a mental age above 2", ageMin: 4, ageMax: 120, items_n: 40,
+    purpose: "Commercial 40-item yes/no parent questionnaire about autism features. The Lifetime form covers the child's whole developmental history; the Current form covers the last 3 months.",
+    when: "Co-occurring conditions step when there are social-communication difficulties, rigid or repetitive behaviour, intense interests or sensory differences. Autism often co-occurs with ADHD and some features overlap, so a positive screen leads to a specialist autism assessment, not a diagnosis.",
+    how: "The parent completes the form. Score it with the publisher's materials.",
+    interactive: false, items: [], scoring: null,
+    interpretation: [
+      "Lifetime form total of 15 or more: consider referral for an autism assessment.",
+      "Berument et al. 1999 (as the Autism Screening Questionnaire): a cut-off of 15 best separated pervasive developmental disorders from other diagnoses."
+    ],
+    psychometrics: "Berument et al. 1999: a cut-off of 15 was most effective at separating pervasive developmental disorders from other conditions.",
+    pitfalls: [
+      "Social difficulties caused by impulsivity or inattention can raise the score. Ask why the child struggles with friends (clinical practice).",
+      "A negative screen does not exclude autism, especially in children who mask."
+    ],
+    adhdNotes: "Autism and ADHD are both diagnosed when both are met. Do not count the same behaviour twice: poor turn-taking from impulsivity is different from not understanding the social rules of a game.",
+    licence: "Commercial (WPS; Hogrefe in the UK). Must be bought. Not reproduced here.",
+    source: "Social Communication Questionnaire (WPS; Hogrefe UK product page). Berument SK et al. 1999.",
+    url: "https://www.hogrefe.com/uk/shop/social-communication-questionnaire-85199.html",
+    file: null
+  },
+
+  /* ------------------------------------------------------------------ AQ-10 Child */
+  {
+    id: "aq10child", abbr: "AQ-10 Child", name: "Autism Spectrum Quotient, 10 items (Child, parent report)",
+    group: "autism", stage: ["pre", "comorbid"],
+    who: "Parent or carer",
+    time: "About 2 minutes (clinical practice estimate)",
+    ages: "4-11, for children without a learning disability (form wording)", ageMin: 4, ageMax: 11, items_n: 10,
+    purpose: "A 10-item parent-report quick referral guide for autistic traits in children aged 4-11 who do not have a learning disability, from the Autism Research Centre.",
+    when: "Co-occurring conditions step when the history suggests social-communication difficulties, rigid routines, intense interests or sensory differences. Autism and ADHD often co-occur.",
+    how: "The parent chooses definitely agree, slightly agree, slightly disagree or definitely disagree for each item. An 'agree' answer scores 1 on items 1, 5, 7 and 10; a 'disagree' answer scores 1 on items 2, 3, 4, 6, 8 and 9. Total 0-10.",
+    interactive: false, items: [], scoring: null,
+    interpretation: [
+      "6 or more: consider referral for a specialist autism assessment.",
+      "It is a referral guide, not a diagnostic test."
+    ],
+    psychometrics: "Psychometric data were not reviewed for this app.",
+    pitfalls: [
+      "For children without a learning disability (form wording). Not valid when intellectual disability is present: use a specialist autism assessment route.",
+      "The scoring key differs from the adolescent and adult forms. Use the key for this form.",
+      "A score below 6 does not exclude autism when the history points to it."
+    ],
+    adhdNotes: "A positive screen is a reason to consider an autism assessment, not to stop the ADHD assessment: both can be diagnosed.",
+    licence: "Free for non-profit use. Commercial users and for-profit healthcare apply through Mapi ePROVIDE. Not reproduced here.",
+    source: "Autism Research Centre, University of Cambridge: AQ-10 Child form. Allison C et al. 2012 (AQ-10).",
+    url: "https://www.autismresearchcentre.com/tests/autism-spectrum-quotient-10-items-aq-10-child/",
+    file: null
+  },
+
+  /* ------------------------------------------------------------------ AQ-10 Adolescent */
+  {
+    id: "aq10adol", abbr: "AQ-10 Adolescent", name: "Autism Spectrum Quotient, 10 items (Adolescent, parent report)",
+    group: "autism", stage: ["pre", "comorbid"],
+    who: "Parent or carer",
+    time: "About 2 minutes (clinical practice estimate)",
+    ages: "12-15, for teenagers without a learning disability (form wording). No AQ-10 version covers 16-17 by its stated range.", ageMin: 12, ageMax: 15, items_n: 10,
+    purpose: "A 10-item parent-report quick referral guide for autistic traits in adolescents aged 12-15 who do not have a learning disability, from the Autism Research Centre.",
+    when: "Co-occurring conditions step when the history suggests social-communication difficulties, rigid routines, intense interests or sensory differences. At 16-17 this app offers the adult AQ-10 as clinical practice.",
+    how: "The parent chooses definitely agree, slightly agree, slightly disagree or definitely disagree for each item. An 'agree' answer scores 1 on items 1, 5, 8 and 10; a 'disagree' answer scores 1 on items 2, 3, 4, 6, 7 and 9. Total 0-10.",
+    interactive: false, items: [], scoring: null,
+    interpretation: [
+      "6 or more: consider referral for a specialist autism assessment.",
+      "It is a referral guide, not a diagnostic test."
+    ],
+    psychometrics: "Psychometric data were not reviewed for this app.",
+    pitfalls: [
+      "For teenagers without a learning disability (form wording). Not valid when intellectual disability is present: use a specialist autism assessment route.",
+      "The scoring key differs from the child and adult forms. Use the key for this form.",
+      "A score below 6 does not exclude autism, especially in young people who mask."
+    ],
+    adhdNotes: "A positive screen is a reason to consider an autism assessment, not to stop the ADHD assessment: both can be diagnosed.",
+    licence: "Free for non-profit use. Commercial users and for-profit healthcare apply through Mapi ePROVIDE. Not reproduced here.",
+    source: "Autism Research Centre, University of Cambridge: AQ-10 Adolescent form. Allison C et al. 2012 (AQ-10).",
+    url: "https://www.autismresearchcentre.com/tests/autism-spectrum-quotient-10-items-aq-10-adolescent/",
     file: null
   }
 ]);

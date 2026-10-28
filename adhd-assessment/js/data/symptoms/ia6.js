@@ -9,7 +9,10 @@ AA.add('symptoms', [{
   why: "Keeping mental effort going on a low-reward task is unusually costly when attention regulation and reward processing work differently. The task feels aversive in advance, so the brain picks something with quicker reward. Urgency, novelty or strong interest switch attention on, which is why many people with ADHD can only start under deadline pressure.",
   ask: {
     adult: "Over the last six months, how often have you put off, avoided or dreaded tasks that need a lot of thinking or concentration for a long stretch, such as forms, reports, reading or paperwork? What happens when you have one of those to do?",
-    child: "At primary school age, roughly 5 to 12, how did you feel about tasks that needed you to concentrate for a long time, like homework, reading or writing? Did you try to get out of them or put them off? Can you remember an example?"
+    child: "At primary school age, roughly 5 to 12, how did you feel about tasks that needed you to concentrate for a long time, like homework, reading or writing? Did you try to get out of them or put them off? Can you remember an example?",
+    parent: "Over the last six months, what happens when your child has to do something that needs a lot of thinking for a while, like homework, reading or writing? Do they put it off, argue or find ways out of it more than other children their age?",
+    teen: "Over the last six months, how often do you put off or avoid things that need you to concentrate hard for a long time, like revision, essays, reading or forms? What do you do instead, and what happens in the end?",
+    teacher: "Compared with others in the class, how does this pupil respond to tasks that need sustained thinking, such as extended writing, reading or problems with several steps? Do they delay starting, ask to leave the room or do only the easy parts?"
   },
   rephrase: [
     "Which jobs do you put off the longest?",
@@ -194,13 +197,17 @@ AA.add('symptoms', [{
         "'Puts minimum effort into longer tasks'",
         "Parent: 'Homework was a fight every single night'"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16)", items: [
+      { ctx: "teen", label: "Secondary school and college (12-17)", items: [
         "Revision avoided until the last days before exams",
         "Chose subjects with less written coursework",
         "Avoids set texts and relies on film versions or summaries",
         "Coursework drafts not started until the deadline",
         "Skips lessons that involve long written tasks",
-        "Spends hours gaming but cannot face twenty minutes of revision"
+        "Spends hours gaming but cannot face twenty minutes of revision",
+        "Leaves online homework until the system closes at the deadline",
+        "Looks up answers online rather than working through long problems",
+        "Asks parents to fill in college or job application forms",
+        "Avoids reading the driving theory book despite wanting to drive"
       ] }
     ]
   },
@@ -300,6 +307,14 @@ AA.add('symptoms', [{
       "Does not read at home",
       "Homework rarely attempted without support",
       "Uses avoidance strategies"
+    ],
+    teacher: [
+      "Very reluctant to start written tasks",
+      "Finds reasons to leave the room when writing is set",
+      "Does the drawing but not the writing",
+      "Says it is boring or too hard before trying",
+      "Engages well in practical lessons",
+      "Homework is rarely attempted without support at home"
     ]
   },
   counts: [
@@ -356,7 +371,8 @@ AA.add('symptoms', [{
     highIQ: "Able people can leave tasks to the last minute and still do well, so avoidance looks like a quirk until demands rise. Ask what results would have been with steady work, and how much stress the last-minute pattern causes.",
     sud: "Cannabis and alcohol increase avoidance and reduce drive, and some people use stimulants or caffeine to force themselves through avoided work. Ask what the pattern was before regular use and whether substances are used to get through dull tasks.",
     asd: "Autistic people may avoid tasks that are unclear, socially demanding or outside their interests, or show a wider avoidance of demands. In ADHD the avoided task is defined by effort and low interest, and becomes possible with urgency or novelty.",
-    culture: "Expectations around reading and form-filling depend on education and language, and avoiding written tasks in a second language or after interrupted schooling is not ADHD. Ask about demanding tasks in the person's first language and in practical areas."
+    culture: "Expectations around reading and form-filling depend on education and language, and avoiding written tasks in a second language or after interrupted schooling is not ADHD. Ask about demanding tasks in the person's first language and in practical areas.",
+    young: "Check reading, writing and maths skills first: a child who avoids work they cannot do may have a specific learning difficulty, which can also exist alongside ADHD. Anxious or perfectionist children, often girls, avoid tasks for fear of getting them wrong, so ask why the task is avoided. Teenagers often hide avoidance with late-night catch-up, so ask parents what homework really costs the family."
   },
   refs: [
     "DSM-5-TR (APA 2022), criterion A1f, paraphrased",
@@ -364,6 +380,8 @@ AA.add('symptoms', [{
     "Kooij JJS et al. Updated European Consensus Statement on adult ADHD. Eur Psychiatry 2019;56:14-34",
     "DIVA 2.0 structure (Kooij and Francken 2010); wording original",
     "ASRS v1.1 Part A item 4 (WHO, Kessler et al. 2005)",
-    "Clinical practice"
+    "Clinical practice",
+    "NICE NG87 1.2.2 (under-recognition in girls), 1.3.5 (criteria adjusted for age) and 1.3.6 (children's views)",
+    "Parent, young person and teacher questions, teacher comments and young-person notes: clinical practice"
   ]
 }]);

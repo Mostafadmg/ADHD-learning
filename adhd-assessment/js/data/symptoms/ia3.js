@@ -9,7 +9,10 @@ AA.add('symptoms', [{
   why: "Attention slips from the speaker to the person's own thoughts and is hard to hold on spoken words, so what is said is never properly taken in even though hearing is normal. Weak working memory means the start of a sentence can be lost by its end. One research model links this to the brain's resting (default mode) network not switching off fully during tasks, though the evidence is mixed.",
   ask: {
     adult: "Over the last six months, how often has someone spoken to you directly and then realised, or told you, that you were not really taking it in, as if your mind was somewhere else? Can you give me an example?",
-    child: "Thinking back to primary school, roughly age 5 to 12, did parents or teachers often have to repeat themselves because you did not seem to hear them, even when they were talking right to you? What happened?"
+    child: "Thinking back to primary school, roughly age 5 to 12, did parents or teachers often have to repeat themselves because you did not seem to hear them, even when they were talking right to you? What happened?",
+    parent: "Over the last six months, when you speak to your child face to face, how often do they seem to be somewhere else, so you have to say it again, even when nothing else is going on, compared with other children their age? Can you give me a recent example?",
+    teen: "Over the last six months, how often have teachers, parents or friends told you that you were not listening when they were talking right to you? What is going on in your head at those times?",
+    teacher: "Compared with others in the class, how often does this pupil seem not to hear you when you speak to them directly, even when you are standing close to them? Do you need to repeat instructions to them on their own?"
   },
   rephrase: [
     "What do people say about how you seem when they are talking to you?",
@@ -199,13 +202,17 @@ AA.add('symptoms', [{
         "Parents told they are 'quiet but switched off'",
         "Report says they need to hear their name before starting work"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16)", items: [
+      { ctx: "teen", label: "Secondary school and college (12-17)", items: [
         "Teachers accuse them of ignoring them",
         "Parents say talking to them is like talking to a wall",
         "Misses information given to them directly at the end of lessons",
         "Loses track in one-to-one chats with friends",
         "Gets into trouble because a direct instruction never registered",
-        "Teachers comment that they seem miles away when spoken to"
+        "Teachers comment that they seem miles away when spoken to",
+        "Misses instructions given by a manager at a part-time job",
+        "Asks friends to repeat plans they were just told in person",
+        "Misses what the driving instructor has just said",
+        "Teacher has to repeat feedback given one to one"
       ] }
     ]
   },
@@ -305,6 +312,14 @@ AA.add('symptoms', [{
       "Listening skills need work",
       "Does not respond to their name",
       "Often looks blank when asked"
+    ],
+    teacher: [
+      "Looks at me but nothing seems to go in",
+      "Needs instructions repeated just for them",
+      "Often does not answer when I say their name",
+      "Starts the wrong task because they missed what I said",
+      "Watches others to work out what to do",
+      "Seems to be in a world of their own"
     ]
   },
   counts: [
@@ -361,7 +376,8 @@ AA.add('symptoms', [{
     highIQ: "Able people often fill gaps from context and guess well, so the symptom may stay hidden until a partner or manager complains. Ask what happens when guessing is not possible, such as detailed spoken instructions.",
     sud: "Cannabis, alcohol, benzodiazepines and opioids can make people seem spaced out and detached. Check whether others noticed the person not being there in childhood and during sober periods.",
     asd: "Autistic people may not look at the speaker yet be listening, or may process speech more slowly and miss social cues. In ADHD the mind drifts to unrelated thoughts, so ask what was going on in their head when they missed what was said.",
-    culture: "Norms about eye contact and responding differ between cultures; looking away may be a sign of respect, not inattention. Assess in the patient's preferred language, with a professional interpreter if needed, because listening in a second language increases missed information."
+    culture: "Norms about eye contact and responding differ between cultures; looking away may be a sign of respect, not inattention. Assess in the patient's preferred language, with a professional interpreter if needed, because listening in a second language increases missed information.",
+    young: "Check hearing, language and understanding first, and ask about brief staring spells with a sudden return, which can be absence seizures. Quiet daydreamers, often girls, are easily missed because they do not disrupt the class. Listening to whole-class instructions develops through primary school, so compare with children of the same age."
   },
   refs: [
     "DSM-5-TR (APA 2022), criterion A1c, paraphrased",
@@ -369,6 +385,8 @@ AA.add('symptoms', [{
     "Kooij JJS et al. European consensus on adult ADHD, Eur Psychiatry 2019",
     "DIVA 2.0 structure (Kooij and Francken 2010)",
     "ASRS v1.1 item 9 (WHO; Kessler et al. 2005)",
-    "Examples, probes and anchors: clinical practice"
+    "Examples, probes and anchors: clinical practice",
+    "NICE NG87 1.2.2 (under-recognition in girls), 1.3.5 (criteria adjusted for age) and 1.3.6 (children's views)",
+    "Parent, young person and teacher questions, teacher comments and young-person notes: clinical practice"
   ]
 }]);

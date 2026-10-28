@@ -9,7 +9,10 @@ AA.add('symptoms', [{
   why: "Organising draws on planning, sequencing, prioritising and a dependable sense of time, all executive functions. Weak working memory makes it hard to hold the steps of a plan in mind, and an altered sense of time means a future deadline does not feel real until it is close. Without an internal plan, the person reacts to whatever is in front of them.",
   ask: {
     adult: "Over the last six months, how often have you found it hard to organise things, such as planning your day, doing tasks in a sensible order, keeping track of time, or keeping your space and paperwork in order? Can you describe a recent example?",
-    child: "Thinking about primary school, roughly age 5 to 12, how well could you organise yourself compared with other children, for example getting ready in time, keeping your bag, desk or bedroom in order, or planning homework? What examples come to mind?"
+    child: "Thinking about primary school, roughly age 5 to 12, how well could you organise yourself compared with other children, for example getting ready in time, keeping your bag, desk or bedroom in order, or planning homework? What examples come to mind?",
+    parent: "Over the last six months, how well does your child manage their things and their time compared with other children their age, for example their school bag, bedroom, getting ready in the morning or homework? Can you give me a recent example?",
+    teen: "Over the last six months, how do you manage organising yourself, like your bag, your timetable, homework deadlines and getting ready in the morning? Do you need more help with this than your friends? Can you give me an example?",
+    teacher: "Compared with others in the class, how well does this pupil organise their equipment, their work on the page and the steps of a task? How much adult help do they need to get started and stay organised?"
   },
   rephrase: [
     "How do you plan your day or your week?",
@@ -200,13 +203,17 @@ AA.add('symptoms', [{
         "'Bag and tray are always in a mess'",
         "Parent: 'Took forever to get ready, every single day'"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16)", items: [
+      { ctx: "teen", label: "Secondary school and college (12-17)", items: [
         "Cannot manage a secondary school timetable without help",
         "Coursework deadlines pile up because they were never planned",
         "Locker and bag a mess of old sheets and food",
         "No revision plan; tries to cover everything the night before",
         "Late for lessons when moving between classrooms",
-        "Parents still organise their week at 15 or 16"
+        "Parents still organise their week at 15 or 16",
+        "Misses deadlines set on the school homework app",
+        "Turns up for shifts at a part-time job at the wrong time",
+        "Keeps no track of money from a job or allowance",
+        "Revision notes for different subjects end up mixed together"
       ] }
     ]
   },
@@ -307,6 +314,14 @@ AA.add('symptoms', [{
       "Needs support to plan and structure work",
       "Bag, tray or desk always in a mess",
       "Needs adult help to get ready and to move between tasks"
+    ],
+    teacher: [
+      "Tray and bag are always in a muddle",
+      "Often arrives without the right equipment",
+      "Needs tasks broken into small steps",
+      "Work on the page is scattered and hard to follow",
+      "Last to be ready when the class changes activity",
+      "Needs an adult to plan longer pieces of work"
     ]
   },
   counts: [
@@ -363,7 +378,8 @@ AA.add('symptoms', [{
     highIQ: "High ability lets people hold plans in their head and recover from chaos quickly, so they look organised until demands outgrow that capacity, often at university, promotion or parenthood. Ask how much effort it takes and how many near misses there are.",
     sud: "Heavy drinking, cannabis and stimulant use all create chaotic lives. Date the disorganisation against the substance history and ask what life was like during periods without use.",
     asd: "Autistic people may be highly organised within their interests and rely on routines, but struggle when plans change. ADHD disorganisation is more global and comes with a poor sense of time. Both often co-occur, and a rigid routine can also be an ADHD coping strategy.",
-    culture: "Attitudes to punctuality and planning differ between cultures and families, and arriving after the stated time may be normal in some settings. Compare with people from the same background and ask about impact in the places the person actually lives and works."
+    culture: "Attitudes to punctuality and planning differ between cultures and families, and arriving after the stated time may be normal in some settings. Compare with people from the same background and ask about impact in the places the person actually lives and works.",
+    young: "Organising skills develop slowly, and a messy bag or bedroom at 7 or 8 is common, so compare with children of the same age and allow for the youngest in the year. Demands jump at the move to secondary school, so problems may first stand out at 11 or 12; look back for earlier signs. Some children, often girls, stay organised only through heavy parent support or rigid routines, so ask how much help they get."
   },
   refs: [
     "DSM-5-TR (APA 2022), criterion A1e, paraphrased",
@@ -371,6 +387,8 @@ AA.add('symptoms', [{
     "Kooij JJS et al. Updated European Consensus Statement on adult ADHD. Eur Psychiatry 2019;56:14-34",
     "DIVA 2.0 structure (Kooij and Francken 2010); wording original",
     "ASRS v1.1 Part A item 2 (WHO, Kessler et al. 2005)",
-    "Clinical practice"
+    "Clinical practice",
+    "NICE NG87 1.2.2 (under-recognition in girls), 1.3.5 (criteria adjusted for age) and 1.3.6 (children's views)",
+    "Parent, young person and teacher questions, teacher comments and young-person notes: clinical practice"
   ]
 }]);

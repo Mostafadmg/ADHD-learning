@@ -100,7 +100,7 @@ F.gates=function(){var g=['A','B','C','D','E'],l=['Symptoms','Onset <12','2+ set
  g.forEach(function(x,i){var X=30+i*88;b+='<g filter="url(#agSh)"><rect x="'+X+'" y="90" width="72" height="110" rx="12" fill="'+C.tealL+'" stroke="'+C.teal+'" stroke-width="2.5"/></g>'+T(X+36,140,x,{fs:30,fw:700,c:C.teal})+T(X+36,230,l[i].split(' ')[0],{fs:12.5,c:C.navy,fw:600})+(l[i].split(' ').length>1?T(X+36,247,l[i].split(' ').slice(1).join(' '),{fs:12.5,c:C.navy,fw:600}):'')+
   '<circle cx="'+(X+36)+'" cy="175" r="12" fill="'+C.green+'"/>'+T(X+36,181,'\u2713',{fs:14,c:'#fff'});
   if(i<4)b+=ar(X+72,145,X+88,145);});
- return svg('0 0 480 300','Five criteria gates A to E that must all be passed',T(240,40,'All five gates must open',{fs:18,fw:600,c:C.navy})+b+T(240,285,'Then: presentation + severity + ICD-11 code',{fs:14,c:C.coral,fw:600}));};
+ return svg('0 0 480 300','Five criteria gates A to E that must all be passed',T(240,40,'All five gates must open',{fs:18,fw:600,c:C.navy})+b+T(240,285,'Then: presentation + DSM severity + ICD-11 code',{fs:14,c:C.coral,fw:600}));};
 F.fork=function(){return svg('0 0 480 300','A decision fork with three outcomes: ADHD, not ADHD, or uncertain',
  T(240,30,'Three honest outcomes',{fs:18,fw:600,c:C.navy})+pill(170,50,140,44,'#fff',C.navy,'Evidence',{fs:16})+
  curve('M200,94 Q120,140 85,176',C.green)+curve('M240,94 L240,176',C.amber)+curve('M280,94 Q360,140 395,176',C.coral)+

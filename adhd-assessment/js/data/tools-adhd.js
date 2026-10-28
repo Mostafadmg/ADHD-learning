@@ -10,7 +10,10 @@
    Adler et al. 2019; Ustun et al. 2017; van de Glind et al. 2013; Iwanami et al. 2026;
    Brevik et al. 2020; Ward et al. 1993; Kouros et al. 2018; Mannuzza et al. 2002; CADDRA WFIRS guides 2011
    and 2025; Canu et al. 2020; UKAAN AQAS (Adamou et al. 2024); RCPsych CR235 (2023); NICE NG87 and HTG729;
-   DIVA Foundation website (October 2026); MHS, PAR, Guilford and Pearson publisher information. */
+   DIVA Foundation website (October 2026); MHS, PAR, Guilford and Pearson publisher information.
+   ageMin/ageMax (added 25 Oct 2026): inclusive whole years of the person being assessed, taken from each tool's
+   ages text; ageMax 120 means no upper limit stated. WFIRS-S from 12 is an inference (clinical practice, said in
+   its ages text); ACE+ from 17 follows the main course (ACE v.2 covers 5-16); QbTest 6-17 follows NICE. */
 AA.add('tools', [
 
   /* ------------------------------------------------------------------ ASRS v1.1 (18 items) */
@@ -18,7 +21,7 @@ AA.add('tools', [
     id: "asrs18", abbr: "ASRS v1.1", name: "Adult ADHD Self-Report Scale v1.1, Symptom Checklist (WHO)",
     group: "adhd-screen", stage: ["referral", "pre", "followup"],
     who: "Self-report by the patient. A partner or close other can complete it as an observer report (CADDRA).",
-    time: "About 5 minutes", ages: "Adults (18 and over)", items_n: 18,
+    time: "About 5 minutes", ages: "Adults (18 and over)", ageMin: 18, ageMax: 120, items_n: 18,
     purpose: "Screens for current adult ADHD symptoms. The 18 items follow the 18 DSM-IV-TR symptoms and ask how often each happened in the past 6 months. Part A (items 1-6) is the validated 6-item screener. Part B (items 7-18) covers the remaining symptoms and works as a set of prompts for the interview.",
     when: "Before the first appointment (Screening step), so the answers are ready when the interview starts. Use it as a screen and a baseline only. UKAAN's quality standard (AQAS 2024) says self-rated symptom scales should give a baseline for measuring change and should not form part of the diagnostic evidence. Repeat it at follow-up and after dose changes to track response. Do not use it alone to accept or reject a referral: RCPsych CR235 (2023) calls the ASRS undiscriminating for triage, and NHS England's ADHD Taskforce says a positive screen on its own is not a reason to refer.",
     how: "Give the patient a copy without shading (the shaded boxes are a scoring guide). Ask them to rate the past 6 months. Count the Part A answers that fall in the shaded range and add up the Part A scores (0-24), then read the Part B answers. In the interview, ask for real examples of every item in the shaded range and how each problem affects work, home and relationships. The form also reminds clinicians to check childhood: some significant symptoms should have been present in childhood, but not necessarily the full set.",
@@ -90,7 +93,7 @@ AA.add('tools', [
   {
     id: "asrs5", abbr: "ASRS-5", name: "WHO Adult ADHD Self-Report Screening Scale for DSM-5",
     group: "adhd-screen", stage: ["referral", "pre"],
-    who: "Self-report", time: "A few minutes (6 items; time not stated by the authors)", ages: "Adults", items_n: 6,
+    who: "Self-report", time: "A few minutes (6 items; time not stated by the authors)", ages: "Adults", ageMin: 18, ageMax: 120, items_n: 6,
     purpose: "A 6-item DSM-5 screener built with a machine-learning method (RiskSLIM) from the longer ASRS question set. Four items match ASRS v1.1 items 9, 12, 14 and 16 (listening when spoken to, leaving one's seat, unwinding, finishing other people's sentences). Two are not DSM symptoms: putting things off until the last minute, and depending on others to keep life in order. It covers the past 6 months.",
     when: "An alternative to ASRS v1.1 Part A in the Screen step, only if your service holds a licence for the scoring key. The validated score uses unpublished weights, so this app does not score it. Like any screen it is optional and never decides the diagnosis.",
     how: "The patient rates 6 items from never to very often for the past 6 months. Score with the licensed key from NYU, then record the total and whether it is 14 or more.",
@@ -121,7 +124,7 @@ AA.add('tools', [
     id: "wurs25", abbr: "WURS-25", name: "Wender Utah Rating Scale (25 scored items)",
     group: "adhd-childhood", stage: ["pre", "interview"],
     who: "Self-report: the adult rates their own childhood", time: "Not stated in the sources (25 short items; a few minutes in practice)",
-    ages: "Adults (retrospective report of childhood)", items_n: 25,
+    ages: "Adults (retrospective report of childhood)", ageMin: 18, ageMax: 120, items_n: 25,
     purpose: "Gives a self-rated picture of childhood behaviour and mood. The 25 items are those from the 61-item WURS that best separated adults with ADHD from comparison groups in the original study. The numbers shown beside each item are its numbers on the 61-item form.",
     when: "Before the childhood part of the interview (Screening step), alongside school reports and informant accounts. It helps you plan the childhood questions and gives a cross-check for criterion B. It cannot establish childhood onset on its own: adults recall their childhood poorly, so look for evidence from the time.",
     how: "The patient rates each description from 0 (not at all or very slightly) to 4 (very much) for how they were as a child. Add the 25 items (0-100). If the full 61-item form was used, score only these 25 items and ignore the rest.",
@@ -192,7 +195,7 @@ AA.add('tools', [
     id: "wfirs", abbr: "WFIRS-S", name: "Weiss Functional Impairment Rating Scale, Self-Report",
     group: "adhd-impairment", stage: ["referral", "pre", "interview", "followup"],
     who: "Self-report (adolescents and adults). A parent form (WFIRS-P) exists for children.",
-    time: "Not stated by the author (69 short items; allow 10-15 minutes in practice)", ages: "Adolescents and adults", items_n: 69,
+    time: "Not stated by the author (69 short items; allow 10-15 minutes in practice)", ages: "Adolescents and adults. No lower age was found in the sources checked; this app offers it from 12 (clinical practice). A parent form (WFIRS-P) covers children.", ageMin: 12, ageMax: 120, items_n: 69,
     purpose: "Measures how emotional or behavioural problems have affected daily functioning in the last month, across 7 domains: family, work, school, life skills, self-concept, social and risk. It leaves out ADHD symptom items, so it measures impairment separately from symptoms.",
     when: "Send it before the appointment (Screening step) and use the domain profile to structure the impairment questions for criteria C and D. Repeat it at follow-up: it was designed to show change in functioning with treatment. UKAAN's quality standard lists it as supporting evidence only; the impairment judgement should rest mainly on the interview.",
     how: "The patient rates each item from 0 to 3 for the last month, or marks it not applicable (for example the School section when not studying). For each domain, count items rated 2 or 3 and work out the mean of the answered items. In the interview, ask about every impaired domain: what happened, how often, and what it cost.",
@@ -312,7 +315,7 @@ AA.add('tools', [
     id: "diva5", abbr: "DIVA-5", name: "Diagnostic Interview for ADHD in Adults, version 5",
     group: "adhd-interview", stage: ["interview", "collateral", "diagnosis"],
     who: "Clinician, with the patient and ideally a partner and/or parent present", time: "About 1 to 1.5 hours",
-    ages: "Adults. Young DIVA-5 covers ages 5-17; DIVA-5 ID is for adults with intellectual disability.", items_n: 18,
+    ages: "Adults. Young DIVA-5 covers ages 5-17; DIVA-5 ID is for adults with intellectual disability.", ageMin: 18, ageMax: 120, items_n: 18,
     purpose: "Semi-structured interview for the DSM-5 diagnosis of ADHD in adults, from the DIVA Foundation (Kooij and colleagues, 2019). It asks about each of the 18 DSM-5 symptoms in adulthood and in childhood, with examples to probe, then about onset and impairment in five areas of life, with input from informants.",
     when: "The core of the diagnostic interview (Inattention, Hyperactivity-impulsivity, Onset and Collateral steps), after a full psychiatric history and mental state examination. UKAAN's quality standard names DIVA, CAADID or ACE+ as recommended interview schedules; an experienced assessor may use their own style if every DSM criterion is explored. It covers ADHD only, so co-occurring conditions need separate assessment.",
     how: "For each symptom, ask first about adulthood and then about childhood. Let the patient describe the problem in their own words and give examples before you use the listed examples to probe. Score a symptom as present only when it is more frequent or severe than in peers, or clearly impairing. Ask the informant to confirm or add examples. Then record onset, impairment in each life area for both periods, and the totals on the score form.",
@@ -344,7 +347,7 @@ AA.add('tools', [
     id: "diva2", abbr: "DIVA 2.0", name: "Diagnostic Interview for ADHD in Adults, version 2.0 (DSM-IV)",
     group: "adhd-interview", stage: ["interview", "collateral", "diagnosis"],
     who: "Clinician, with the patient and, where possible, a relative or partner who can describe childhood and current behaviour", time: "About 1.5 hours",
-    ages: "Adults", items_n: 18,
+    ages: "Adults", ageMin: 18, ageMax: 120, items_n: 18,
     purpose: "The 2010 DSM-IV version of the DIVA (Kooij and Francken, DIVA Foundation). Same structure as DIVA-5: the 18 symptoms in adulthood and childhood with examples, age of onset, impairment in five areas of life and collateral information. DIVA-5 replaced it in 2019, but it is still found in older reports and some services, and CADDRA 4.1 offers it as an interview option.",
     when: "You will meet it in earlier assessments and in services that have not moved to DIVA-5. If you use it now, apply DSM-5-TR rules instead of the DSM-IV rules printed on the form.",
     how: "Each symptom is asked about for adulthood (the last 6 months or more) and for childhood (ages 5-12). The onset section asks whether symptoms were present before age 7, the DSM-IV rule. The score form counts symptoms for each period and rates collateral support from parents or siblings, a partner or friend, and school reports as 0, 1 or 2.",
@@ -374,7 +377,7 @@ AA.add('tools', [
     group: "adhd-interview", stage: ["pre", "interview", "collateral", "diagnosis"],
     who: "Clinician, with the patient and ideally an informant present. Self-report (ACE+SR) and informant (ACE+IR) pre-assessment questionnaires are available.",
     time: "Not stated in the sources reviewed; plan for a full semi-structured interview",
-    ages: "Adults. The author's site describes ACE+ v.2 for people over 17; a 2020 UK consensus lists ACE+ for age 16 and over. ACE v.2 covers children and young people aged 5-16.", items_n: 18,
+    ages: "Adults. The author's site describes ACE+ v.2 for people over 17; a 2020 UK consensus lists ACE+ for age 16 and over. ACE v.2 covers children and young people aged 5-16.", ageMin: 17, ageMax: 120, items_n: 18,
     purpose: "Free semi-structured interview by Professor Susan Young covering the ADHD criteria of both DSM-5 and ICD-11, for adulthood and childhood. Self and informant questionnaires (ACE+SR and ACE+IR) gather childhood and recent behaviour before the appointment.",
     when: "A free alternative to DIVA-5 for the core interview (Inattention, Hyperactivity-impulsivity, Onset and Collateral steps). UKAAN's quality standard lists it with DIVA and CAADID as a recommended interview. Send the ACE+SR and ACE+IR before the appointment if you use them.",
     how: "Download the interview and questionnaires from the author's site after a free registration. Work through each symptom for adulthood and childhood with open questions and examples, involve an informant where possible, and use the summary to check each DSM-5 or ICD-11 criterion.",
@@ -402,7 +405,7 @@ AA.add('tools', [
     id: "caars2", abbr: "CAARS 2", name: "Conners Adult ADHD Rating Scales, 2nd Edition",
     group: "adhd-rating", stage: ["pre", "collateral", "followup"],
     who: "Self-report and observer forms (for example a partner). Publisher qualification level B.",
-    time: "Full form 10-20 minutes; CAARS 2-Short 5-10 minutes; CAARS 2-ADHD Index 1-3 minutes", ages: "18 and over", items_n: null,
+    time: "Full form 10-20 minutes; CAARS 2-Short 5-10 minutes; CAARS 2-ADHD Index 1-3 minutes", ages: "18 and over", ageMin: 18, ageMax: 120, items_n: null,
     purpose: "Commercial rating scale of current adult ADHD symptoms and related problems (MHS, 2023; Conners, Erhardt and Sparrow). It gives content scales, DSM-5-TR symptom scales, an ADHD Index and response-style (validity) indexes, with US and Canadian norms.",
     when: "Optional, if your service holds a licence. Use it before the appointment for self and observer baseline data, to compare the patient's view with a partner's, and to look at response style when symptom validity is in question (Validity step). Repeat it for monitoring. Like other self-report scales it supports the diagnosis but does not make it.",
     how: "Administer online through MHS or on paper, by a qualified user. Choose the full, short or ADHD Index version, and use self and observer forms where possible. Read the response-style analysis first, then the scale T-scores.",
@@ -434,7 +437,7 @@ AA.add('tools', [
     id: "baars4", abbr: "BAARS-IV", name: "Barkley Adult ADHD Rating Scale-IV",
     group: "adhd-rating", stage: ["pre", "collateral", "followup"],
     who: "Self-report and other-report forms (for example a partner or parent); clinician interview versions", time: "Quick Screen 3-5 minutes; long forms 5-7 minutes",
-    ages: "18-89", items_n: null,
+    ages: "18-89", ageMin: 18, ageMax: 89, items_n: null,
     purpose: "Commercial rating scale by Russell Barkley (Guilford, 2011) for current and childhood DSM-IV ADHD symptoms in adults. It has self and other-report forms for current and for childhood symptoms, a Quick Screen, interview versions, and items on sluggish cognitive tempo.",
     when: "Optional pre-assessment scale for current and retrospective childhood symptoms, from the patient and from someone who knows them. In the RCPsych 2017 pathway, Barkley scales are handed out at the first appointment and reviewed at the next. It supports the interview but does not replace it.",
     how: "Give the self and other-report forms for current symptoms and, where possible, the childhood forms to the patient and to a parent or older relative. Score with the age-banded score sheets.",
@@ -463,7 +466,7 @@ AA.add('tools', [
     id: "brief_a", abbr: "BRIEF-A", name: "Behavior Rating Inventory of Executive Function, Adult Version",
     group: "cognition", stage: ["pre", "diagnosis"],
     who: "Self-report and informant forms. Publisher qualification level B.", time: "10-15 minutes",
-    ages: "18-90 (BRIEF2A: 18-99)", items_n: 75,
+    ages: "18-90 (BRIEF2A: 18-99)", ageMin: 18, ageMax: 90, items_n: 75,
     purpose: "Rating scale of everyday executive function (PAR; Roth, Isquith and Gioia). Its 75 items give 9 clinical scales, a Behavioral Regulation Index, a Metacognition Index and a Global Executive Composite, with three validity scales. The newer BRIEF2A has 70 items.",
     when: "Not part of the core ADHD assessment. Use it when you need a profile of everyday executive problems: when the diagnosis is uncertain, when brain injury, cognitive decline or a learning disorder is in the differential, or to plan support. It cannot diagnose ADHD.",
     how: "The patient completes the self form and a partner or relative completes the informant form. Score with the publisher's software or manual, and check the validity scales first.",
@@ -491,7 +494,7 @@ AA.add('tools', [
     id: "bdefs", abbr: "BDEFS", name: "Barkley Deficits in Executive Functioning Scale for Adults",
     group: "cognition", stage: ["pre", "diagnosis"],
     who: "Self-report and other-report forms", time: "Long form about 15-20 minutes; short form 4-5 minutes",
-    ages: "18-81", items_n: null,
+    ages: "18-81", ageMin: 18, ageMax: 81, items_n: null,
     purpose: "Barkley's rating scale of executive functioning in daily life (Guilford, 2011). Long and short forms for self and other report; the long form includes an ADHD risk index.",
     when: "Optional, when executive problems need describing for the formulation or support planning, or when another cause of executive difficulty is in the differential. It is not a diagnostic test for ADHD.",
     how: "The patient completes the self form and, if possible, a partner completes the other-report form. Score against the manual's norms.",
@@ -519,7 +522,7 @@ AA.add('tools', [
     id: "brown_efa", abbr: "Brown EF/A", name: "Brown Executive Function/Attention Scales",
     group: "adhd-rating", stage: ["pre", "followup"],
     who: "Self-report for adults (from age 19); other forms cover children and adolescents", time: "10-15 minutes",
-    ages: "3 years to adult", items_n: null,
+    ages: "3 years to adult", ageMin: 3, ageMax: 120, items_n: null,
     purpose: "Pearson's 2019 successor to the Brown ADD Scales (Thomas E. Brown). It rates executive function problems linked to ADHD in six clusters (Activation, Focus, Effort, Emotion, Memory and Action) with a total composite.",
     when: "Optional, if your service uses it, as baseline data on executive and attention problems before the interview and for monitoring. It supports the diagnosis but does not make it.",
     how: "Administer on paper or through Pearson Q-global and score against age norms.",
@@ -546,7 +549,7 @@ AA.add('tools', [
     id: "caadid", abbr: "CAADID", name: "Conners' Adult ADHD Diagnostic Interview for DSM-IV",
     group: "adhd-interview", stage: ["pre", "interview", "diagnosis"],
     who: "Clinician. Part I (history) can be completed by the patient beforehand or as an interview.", time: "Not stated in the sources reviewed",
-    ages: "Adults (18 and over)", items_n: 18,
+    ages: "Adults (18 and over)", ageMin: 18, ageMax: 120, items_n: 18,
     purpose: "Commercial semi-structured interview (Epstein, Johnson and Conners; MHS, 2001). Part I covers background and developmental history. Part II covers the DSM-IV ADHD criteria: symptoms in adulthood and childhood, age of onset, pervasiveness, impairment and whether another disorder explains the symptoms.",
     when: "An alternative core interview (Inattention, Hyperactivity-impulsivity, Onset and Collateral steps) for services that hold a licence. UKAAN's quality standard lists it with DIVA and ACE+. It is often used as the reference standard in research.",
     how: "Send Part I before the appointment or complete it as an interview. In Part II rate each symptom for adulthood and childhood using the prompts, then work through onset, settings, impairment and exclusions. Apply DSM-5-TR thresholds rather than the DSM-IV rules.",
@@ -573,7 +576,7 @@ AA.add('tools', [
     id: "aisrs", abbr: "AISRS", name: "Adult ADHD Investigator Symptom Rating Scale",
     group: "adhd-rating", stage: ["interview", "followup"],
     who: "Clinician-rated, using semi-structured prompts", time: "Not stated in the sources reviewed",
-    ages: "Adults", items_n: 18,
+    ages: "Adults", ageMin: 18, ageMax: 120, items_n: 18,
     purpose: "Clinician-rated scale of the 18 DSM ADHD symptoms (Spencer, Adler and colleagues, 2010). Each item has prompts and anchors so that ratings are consistent between raters. It gives inattention and hyperactive-impulsive subscales and is used mainly to measure severity and change in treatment studies.",
     when: "Not needed for diagnosis. Use it, if licensed, to rate symptom severity at baseline and to track response to treatment with a clinician rating rather than self-report.",
     how: "Interview the patient with the scale's prompts for each symptom and rate severity against the anchors. Add up the item scores for the total and subscales.",
@@ -600,7 +603,7 @@ AA.add('tools', [
     id: "wsr2", abbr: "WSR-II", name: "Weiss Symptom Record II",
     group: "other", stage: ["pre", "comorbid", "risk"],
     who: "The adult, a partner, a parent or a teacher (CADDRA toolkit); the form has a box to name the informant", time: "Not stated by the author",
-    ages: "All ages (some items, such as wetting and soiling, apply to children)", items_n: null,
+    ages: "All ages (some items, such as wetting and soiling, apply to children)", ageMin: 0, ageMax: 120, items_n: null,
     purpose: "Free broad problem checklist from the CADDRA toolkit. Each item is rated none (0), mild (1), moderate (2), severe (3) or not applicable. Sections cover attention, hyperactivity-impulsivity, oppositional and conduct problems, development and learning, autism spectrum, motor problems such as tics, psychosis, depression, mood regulation, suicide, anxiety, stress and trauma, sleep, eating, substance use, other addictions and personality traits.",
     when: "Before the first appointment (Co-occurring conditions screen step), as a broad screen for conditions that co-occur with or mimic ADHD. CADDRA uses it for general mental health screening before the ADHD-specific assessment. Follow up every flagged section with a specific tool or interview, and review any suicide item before the patient leaves.",
     how: "Give the form to the patient and, if helpful, to a partner or parent. Review every item rated moderate or severe, and any rating in the risk-related sections.",
@@ -628,9 +631,9 @@ AA.add('tools', [
     id: "qbtest", abbr: "QbTest", name: "QbTest (continuous performance test with motion tracking)",
     group: "objective", stage: ["diagnosis"],
     who: "Patient performs a computer test; set up and interpreted by trained staff", time: "One computer test session (length set by the manufacturer)",
-    ages: "Norms 6-60. NICE recommends it as an option only for ages 6-17.", items_n: null,
+    ages: "Norms 6-60. NICE recommends it as an option only for ages 6-17.", ageMin: 6, ageMax: 17, items_n: null,
     purpose: "A computerised continuous performance test combined with infrared tracking of head movement (Qbtech). It reports measures of attention, impulsivity and activity compared with age and sex norms.",
-    when: "Not recommended for diagnosing adults. NICE HTG729 recommends QbTest as an option to help diagnose ADHD in people aged 6-17, only alongside standard clinical assessment (1.1), and says more research is needed in people 18 and over (1.2). Use for that purpose should be funded by the company, by research or from non-core NHS budgets (1.5). If an adult brings a QbTest report, record it but do not let it decide the diagnosis.",
+    when: "Children and young people (6-17): NICE NG87 (updated May 2025) lists QbTest as an option to help diagnose ADHD at these ages, and HTG729 recommends it only alongside standard clinical assessment (1.1). If your service uses it, record the result and who interpreted it in the notes; it never decides the diagnosis. Adults: not recommended for diagnosis. HTG729 says more research is needed in people 18 and over (1.2). Use for that purpose should be funded by the company, by research or from non-core NHS budgets (1.5). If an adult brings a QbTest report, record it but do not let it decide the diagnosis.",
     how: "Administered by trained staff following the manufacturer's protocol. The report compares the results with norms.",
     interactive: false, items: [], scoring: null,
     interpretation: [
@@ -644,9 +647,9 @@ AA.add('tools', [
       "No built-in check of effort.",
       "Adult norms are not evidence of diagnostic accuracy."
     ],
-    adhdNotes: "In adults, base the diagnosis on the clinical interview, collateral history and records. Treat a QbTest result as a research-grade observation only.",
+    adhdNotes: "In children and young people, a QbTest result is one piece of evidence, weighed with the parent and teacher accounts, school information and the interview. In adults, base the diagnosis on the clinical interview, collateral history and records, and treat a QbTest result as a research-grade observation only.",
     licence: "Commercial medical device (Qbtech); NICE lists the cost as £31.20 per test excluding VAT. Not an item-based tool, so there is nothing to reproduce.",
-    source: "NICE HTG729. Digital technologies for assessing attention deficit hyperactivity disorder (ADHD). 2024 (migrated from DG60 with recommendations unchanged). Adamou M et al. J Atten Disord 2022; Brunkhorst-Kanaan N et al. Front Psychiatry 2020.",
+    source: "NICE HTG729. Digital technologies for assessing attention deficit hyperactivity disorder (ADHD). 2024 (migrated from DG60 with recommendations unchanged). NICE NG87 1.3.1 (QbTest option for ages 6-17, added May 2025). Adamou M et al. J Atten Disord 2022; Brunkhorst-Kanaan N et al. Front Psychiatry 2020.",
     url: "https://www.qbtech.com/adhd-tests/qbtest/",
     file: null
   }

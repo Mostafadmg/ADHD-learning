@@ -1,5 +1,6 @@
 /* ddx-medical: medical and cognitive differentials for adult ADHD (ARCHITECTURE.md section 5.5).
    Conditions, in order: thyroid, anaemia, epilepsy, tbi, sensory, meds, menopause, postviral, mci. None is core.
+   Adult only (ages: "adult", hidden for under-18s): menopause, mci.
    The common logic: these conditions are acquired, so the attention problems start with them, track them and
    ease when they are treated. ADHD is diagnosed alongside them only when childhood-onset symptoms predate the
    condition and persist once it is treated or stable (DSM-5-TR criterion E; ICD-11 CDDR 6A05 boundaries).
@@ -300,7 +301,8 @@ AA.add('ddx', [
       "(If on anti-seizure medicine) Did your concentration, mood or memory change when a medicine was started or the dose went up?",
       "Were you distractible and restless at school before any seizures started?",
       "On a day with no seizures and a good night's sleep, are the concentration problems still there?",
-      "(To an informant) What exactly does a 'switch-off' look like? How long does it last, and can you interrupt it?"
+      "(To an informant) What exactly does a 'switch-off' look like? How long does it last, and can you interrupt it?",
+      "(Teacher of a child) How often does the child stop and stare? Does it happen many times a day, does it end suddenly, and does the child carry on as if nothing happened?"
     ],
     features: [
       { id: "epilepsy_abrupt", t: "Lapses lasting seconds with abrupt onset and offset, not interruptible by voice or touch", w: 3 },
@@ -314,7 +316,7 @@ AA.add('ddx', [
       { id: "epilepsy_asm", t: "Attention or mood worsened after starting or increasing an anti-seizure medicine", w: 2 },
       { id: "epilepsy_risk", t: "Febrile seizures, brain injury or CNS infection, or a first-degree relative with epilepsy", w: 1 },
       { id: "epilepsy_eeg", t: "EEG shows epileptiform activity consistent with the spells", w: 3 },
-      { id: "epilepsy_after", t: "Attention lapses began after the seizures started, with no childhood history", w: 2 }
+      { id: "epilepsy_after", t: "Attention lapses began after the seizures started and were not there before them (adults: no childhood history)", w: 2 }
     ],
     screen: ["phq9", "gad7"],
     investigations: [
@@ -335,14 +337,15 @@ AA.add('ddx', [
       "Low mood or suicidal thoughts: anti-seizure medicines carry a warning about suicidal thoughts; assess risk."
     ],
     decide: {
-      better: "Seizures better explain the inattention when the lapses are brief, abrupt, uninterruptible and not remembered, or when the attention problems began with the seizures or with an anti-seizure medicine and there is no childhood ADHD history. Refer to neurology and do not diagnose ADHD on that basis.",
-      both: "Diagnose both when childhood-onset ADHD symptoms predate the seizures and the medicine, are present between seizures and across settings, and include more than lapses (disorganisation, restlessness, impulsivity). Coexisting epilepsy is common and is not a reason to withhold an ADHD diagnosis.",
+      better: "Seizures better explain the inattention when the lapses are brief, abrupt, uninterruptible and not remembered, or when the attention problems began with the seizures or with an anti-seizure medicine and there is no earlier history of ADHD symptoms (in adults, no childhood ADHD history). Refer to neurology (a paediatric neurologist for a child) and do not diagnose ADHD on that basis.",
+      both: "Diagnose both when ADHD symptoms predate the seizures and the medicine, are present between seizures and across settings, and include more than lapses (disorganisation, restlessness, impulsivity). Coexisting epilepsy is common and is not a reason to withhold an ADHD diagnosis.",
       next: "Get an eyewitness description and video, refer suspected seizures (NICE NG217), give driving and safety advice, and review anti-seizure medicines with neurology. Complete the ADHD assessment using between-seizure functioning, and agree any ADHD medicine plan with the neurologist."
     },
     pearls: [
       "The bedside test: can the spell be interrupted? Daydreaming stops when you call the person's name; an absence seizure does not (clinical practice).",
       "New absence epilepsy is uncommon in adults; most adult 'blank spells' that are seizures are focal impaired-awareness seizures, which usually last longer than absences (often 30 seconds to a few minutes) and are followed by confusion. Absences last seconds with instant recovery.",
       "'Daydreaming' spells since the teens plus morning jerks and a convulsion after a late night or alcohol suggest juvenile myoclonic epilepsy, which usually starts in adolescence; ask about all three.",
+      "In primary-school children, absence seizures can happen many times a day and are often reported by teachers as daydreaming. They last seconds, stop abruptly and cannot be interrupted; refer for an urgent first-seizure assessment rather than an ADHD diagnosis (clinical practice; NICE NG217).",
       "Take a medicine timeline. ICD-11 names carbamazepine and valproate, AADPA names levetiracetam, and topiramate commonly causes slowing and word-finding problems.",
       "Screen both ways: ask about seizures in ADHD clinics and about ADHD in epilepsy clinics (NICE NG87 1.2.1).",
       "Epilepsy does not rule out ADHD treatment. Optimise seizure control first, liaise with neurology and monitor seizures (clinical practice; Brikell 2019).",
@@ -530,7 +533,8 @@ AA.add('ddx', [
       "As a child, were there concerns about your hearing or speech, glue ear or grommets?",
       "Do the restlessness, impulsivity and disorganisation also happen where hearing and sight do not matter?",
       "Does anyone in your family have hearing loss that started early?",
-      "(To an informant) Does it look as if they did not hear you, or as if they heard and then drifted away?"
+      "(To an informant) Does it look as if they did not hear you, or as if they heard and then drifted away?",
+      "(Parent of a child) Did they pass the newborn hearing screen and school vision checks? Have they had glue ear or grommets, and when were hearing and eyesight last tested?"
     ],
     features: [
       { id: "sensory_noise", t: "Difficulty mainly in noisy settings, groups or on the phone", w: 2 },
@@ -539,7 +543,7 @@ AA.add('ddx', [
       { id: "sensory_reading", t: "Headaches, eye strain, blurred or double vision with reading or screens", w: 2 },
       { id: "sensory_aids", t: "Clear improvement with hearing aids, captions, glasses or better lighting", w: 3 },
       { id: "sensory_quiet", t: "Attention is normal in quiet one-to-one settings with aids in place", w: 3 },
-      { id: "sensory_onset", t: "Problems began or worsened in adulthood or with age", w: 2 },
+      { id: "sensory_onset", t: "Problems began or worsened with the hearing or sight problem and were not there before it (adults: often later in life or with age)", w: 2 },
       { id: "sensory_test", t: "Abnormal audiogram or eye examination", w: 3 },
       { id: "sensory_nonuse", t: "Prescribed glasses or hearing aids are not being worn", w: 1 },
       { id: "sensory_child", t: "Childhood glue ear, grommets or speech delay linked to hearing", w: 1 },
@@ -562,8 +566,8 @@ AA.add('ddx', [
       "Visual or hearing change with headache, vomiting or other neurological signs: urgent medical assessment."
     ],
     decide: {
-      better: "Sensory impairment better explains the picture when the 'inattention' happens mainly in tasks that depend on hearing or sight, resolves with good conditions or correction, and there is no wider or childhood pattern of ADHD.",
-      both: "Diagnose both when ADHD symptoms are present in quiet, well-lit, one-to-one settings with aids in place, date from childhood, and include organisational, restless or impulsive problems that the sensory loss cannot explain.",
+      better: "Sensory impairment better explains the picture when the 'inattention' happens mainly in tasks that depend on hearing or sight, resolves with good conditions or correction, and there is no wider or earlier pattern of ADHD from before the sensory problem (in adults, no childhood pattern).",
+      both: "Diagnose both when ADHD symptoms are present in quiet, well-lit, one-to-one settings with aids in place, are long-standing (in adults, date from childhood), and include organisational, restless or impulsive problems that the sensory loss cannot explain.",
       next: "Arrange hearing and eye tests early, correct what can be corrected, and re-rate the symptoms with aids in place. Record the results in the report."
     },
     pearls: [
@@ -702,6 +706,7 @@ AA.add('ddx', [
     name: "Perimenopause and menopause",
     group: "medical",
     core: false,
+    ages: "adult",
     icd11: "GA30 (menopausal or certain specified perimenopausal disorders); GA30.0 (menopause); GA30.6 (premature ovarian failure)",
     summary: "Perimenopause often brings brain fog, forgetfulness, word-finding problems, poor concentration, irritability, anxiety, low mood and sleep broken by night sweats. These are new or clearly worse from the late 30s to the 50s, alongside changes in periods and hot flushes. Perimenopause can also unmask or worsen existing ADHD, so it is a common point for a first ADHD assessment; the same applies to trans men and non-binary people who go through the menopause.",
     prevalence: "In an Icelandic population cohort of 5,392 women aged 35-55, 54.2% of women with self-reported ADHD had severe perimenopausal symptoms on the Menopause Rating Scale, against 30.1% of women without ADHD (prevalence ratio 1.80, 95% CI 1.64-1.98); the gap was largest at ages 35-39 (Jakobsdóttir Smári et al. 2025). In a Dutch clinic sample of 209 women with ADHD (no control group), 45% reported symptoms suggestive of premenstrual dysphoric disorder and 57% of those who had given birth recalled postnatal depression symptoms (Dorani et al. 2021).",
@@ -916,6 +921,7 @@ AA.add('ddx', [
     name: "Mild neurocognitive disorder (mild cognitive impairment) and early dementia, including frontotemporal dementia",
     group: "cognitive",
     core: false,
+    ages: "adult",
     icd11: "6D71 (mild neurocognitive disorder); 6D80-6D8Z (dementia)",
     summary: "Mild neurocognitive disorder is a decline from a previous level of cognition, shown on testing, that does not yet stop independent living; it may progress to dementia. It can look like ADHD because memory, attention and executive problems overlap, especially after 50. The key difference is decline from a previously higher level in mid or later life, whereas ADHD is lifelong; frontotemporal dementia can begin in the 50s with disinhibition, impulsivity and apathy that can be mistaken for late-presenting ADHD.",
     prevalence: "In a meta-analysis of older adults, ADHD prevalence was about 2.2% using validated rating scales (about 1.5% when limited to age 50 and over) but only about 0.2% by recorded clinical diagnosis (Dobrosavljevic 2020, cited in the WFADHD 2021 consensus); CADDRA gives about 3% in older adults. In an Israeli cohort of 109,218 people born 1933-1952, adult ADHD was associated with a higher risk of dementia (adjusted HR 2.77), with no clear excess in those treated with stimulants (Levine 2023); the reason for the association is not established.",

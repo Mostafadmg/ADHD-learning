@@ -9,7 +9,10 @@ AA.add('symptoms', [{
   why: "Thought to reflect the same weak regulation of motor activity and arousal that drives fidgeting. With age, outward over-activity tends to be held in and becomes an uncomfortable inner restlessness; low tolerance of under-stimulation and difficulty switching off motor readiness keep the feeling going.",
   ask: {
     adult: "Over the last six months, how often have you felt restless or physically wound up inside, as if your body needs to move, even when you are sitting or lying still? What does that feel like for you, and when did you last notice it?",
-    child: "When you were at primary school, how often did you run about or climb on things when you were not supposed to, for example indoors, in shops or on furniture? Did you feel restless inside? What did the adults around you say?"
+    child: "When you were at primary school, how often did you run about or climb on things when you were not supposed to, for example indoors, in shops or on furniture? Did you feel restless inside? What did the adults around you say?",
+    parent: "Over the last six months, how often does your child run about or climb on things where it is not safe or not allowed, such as on furniture, in shops or near roads, compared with other children their age? Can you give me a recent example?",
+    teen: "Over the last six months, how often have you felt restless or wound up inside, as if you need to move, even when you are sitting still? Do you still run about or climb on things where you should not?",
+    teacher: "Compared with others in the class, how often does this pupil run in the classroom or corridors, or climb on furniture or equipment when it is not allowed? Do they seem restless even when they are sitting still?"
   },
   rephrase: [
     "Does your body often feel restless, even when you are keeping still? Tell me what that is like.",
@@ -189,13 +192,17 @@ AA.add('symptoms', [{
         "Parents had to hold their hand everywhere to stop them running off",
         "Teacher commented on 'restless energy' in class"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16)", items: [
+      { ctx: "teen", label: "Secondary school and college (12-17)", items: [
         "Felt restless and twitchy in long lessons at secondary school",
         "Needed sport or running every day to feel settled",
         "Climbed on roofs, bridges or scaffolding for fun",
         "Felt agitated and cooped up at home in the evenings",
         "Took up parkour, climbing or BMX to burn off energy",
-        "Said they felt 'jumpy' or 'buzzy' inside much of the time"
+        "Said they felt 'jumpy' or 'buzzy' inside much of the time",
+        "Paces around the room while revising or on the phone",
+        "Says sitting through a whole exam feels physically unbearable",
+        "Still gets told off for running in school corridors",
+        "Jumps on walls, bins or railings on the way home"
       ] }
     ]
   },
@@ -292,6 +299,14 @@ AA.add('symptoms', [{
       "Needs close supervision on trips",
       "Slow to settle after break",
       "Needs physical outlets"
+    ],
+    teacher: [
+      "Runs in the corridors despite reminders",
+      "Climbs on furniture or apparatus without permission",
+      "Needs close supervision on trips and outings",
+      "Slow to settle after break or PE",
+      "Seems restless even when sitting",
+      "Has more bumps and scrapes than classmates"
     ]
   },
   counts: [
@@ -348,7 +363,8 @@ AA.add('symptoms', [{
     highIQ: "Able adults often channel restlessness into demanding sport, physically active careers or constant projects, so it stays hidden. Ask what happens when these outlets are unavailable, such as during injury, illness or long travel.",
     sud: "Many adults use cannabis, alcohol or nicotine to calm restlessness, and stimulants, caffeine and withdrawal all cause it. Establish the timeline: restlessness that predates substance use and continues during abstinence supports ADHD.",
     asd: "Autistic people may feel agitated with sensory overload, uncertainty or social demands, and may seek movement to regulate. ADHD-type restlessness is present even in calm, predictable settings as a general urge to move; the two often co-occur.",
-    culture: "Some languages have no direct word for restlessness, and people may describe it physically (heat, nerves, heart, legs) or as anxiety; use concrete descriptions and an interpreter where needed. Expectations about children's running and climbing differ across cultures, so compare with peers from the same background."
+    culture: "Some languages have no direct word for restlessness, and people may describe it physically (heat, nerves, heart, legs) or as anxiety; use concrete descriptions and an interpreter where needed. Expectations about children's running and climbing differ across cultures, so compare with peers from the same background.",
+    young: "Running and climbing are normal in the playground and in young children, so ask whether it happens where it is unsafe or not allowed, more than in children of the same age. In teenagers it often shifts to an inner restlessness, and girls may describe it as feeling tense or unable to switch off, which can be mistaken for anxiety. Ask about accidents and near misses, which show the safety cost."
   },
   refs: [
     "DSM-5-TR (APA 2022), criterion A2c, paraphrased",
@@ -356,6 +372,8 @@ AA.add('symptoms', [{
     "ASRS v1.1 item 13 (Kessler et al. 2005)",
     "Kooij JJS et al. Updated European consensus statement on diagnosis and treatment of adult ADHD. Eur Psychiatry 2019",
     "DIVA 2.0 structure (Kooij and Francken 2010); wording original",
-    "Clinical practice: akathisia, thyroid disease, PTSD hyperarousal and bipolar disorder as differentials"
+    "Clinical practice: akathisia, thyroid disease, PTSD hyperarousal and bipolar disorder as differentials",
+    "NICE NG87 1.2.2 (under-recognition in girls), 1.3.5 (criteria adjusted for age) and 1.3.6 (children's views)",
+    "Parent, young person and teacher questions, teacher comments and young-person notes: clinical practice"
   ]
 }]);

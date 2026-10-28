@@ -9,7 +9,10 @@ AA.add('symptoms', [{
   why: "Finishing depends on keeping the goal active in working memory and keeping effort going once the reward of starting has faded. In ADHD, weak goal maintenance and a strong pull towards immediate reward mean attention slides to whatever is newer, so tasks drift rather than being refused. The last, least rewarding steps (checking, tidying up, sending off) are the most likely to be dropped.",
   ask: {
     adult: "Over the last six months, how often have you started something, at work or at home, and not finished it because your focus drifted or you got sidetracked onto something else? Can you give me a recent example?",
-    child: "When you were at primary school, roughly age 5 to 12, how often did you start schoolwork, homework or jobs at home and leave them unfinished because you drifted onto something else? What do you remember, or what did adults say about it?"
+    child: "When you were at primary school, roughly age 5 to 12, how often did you start schoolwork, homework or jobs at home and leave them unfinished because you drifted onto something else? What do you remember, or what did adults say about it?",
+    parent: "Over the last six months, how often does your child start a job, their homework or a set of instructions and not finish because they drift onto something else, compared with other children their age? For example, what happens when you ask them to get dressed, brush their teeth and put their shoes on?",
+    teen: "Over the last six months, how often do you start things like homework, coursework, revision or jobs at home and not finish them because you lose focus or get sidetracked? Can you give me an example?",
+    teacher: "Compared with others in the class, how often does this pupil leave work unfinished or carry out only the first part of an instruction? When it happens, does it look like they have drifted off task rather than refused or not understood?"
   },
   rephrase: [
     "How often do you start things and not finish them? Tell me about the last time.",
@@ -213,13 +216,17 @@ AA.add('symptoms', [{
         "'Needs one-to-one support to complete independent tasks'",
         "Parent: 'Never finished anything they started'"
       ] },
-      { ctx: "teen", label: "Secondary school (12-16)", items: [
+      { ctx: "teen", label: "Secondary school and college (12-17)", items: [
         "Coursework handed in incomplete or very late",
         "Revision notes half written for most subjects",
         "Dropped exam courses or after-school courses partway through",
         "Part-time job tasks left half done, with warnings from the employer",
         "Started an award scheme like Duke of Edinburgh but never completed it",
-        "Project folders with missing sections at hand-in"
+        "Project folders with missing sections at hand-in",
+        "Leaves online homework tasks half done on the school app",
+        "Makes revision timetables and drops them within days",
+        "Leaves tasks at a part-time job half done at the end of a shift",
+        "Starts theory test practice but never gets as far as booking the test"
       ] }
     ]
   },
@@ -321,6 +328,15 @@ AA.add('symptoms', [{
       "Easily sidetracked",
       "Homework not completed or not handed in",
       "Capable, but does not complete work"
+    ],
+    teacher: [
+      "Starts well but rarely finishes independent work",
+      "Does the first step of an instruction and then stops",
+      "Exercise books are full of half-finished pieces",
+      "Finishes work only with an adult beside them",
+      "Often kept in at break to complete work",
+      "Homework comes in incomplete or not at all",
+      "It is not refusal: they get sidetracked"
     ]
   },
   counts: [
@@ -377,7 +393,8 @@ AA.add('symptoms', [{
     highIQ: "Able people often finish only because they can do the work fast at the last minute, so impairment shows as underachievement, deadline crises and reliance on all-nighters. Judge impairment against their ability and effort, not against average output.",
     sud: "Cannabis, alcohol and the comedown from stimulants all reduce follow-through. Establish whether the pattern was there before regular use and whether it persisted during long periods without use.",
     asd: "Autistic people may leave tasks when a routine is disrupted, instructions are vague, or a focused interest takes over. In ADHD the drift is usually towards whatever is newer or more stimulating; in autism it is more often towards a focused interest or caused by unclear expectations. Both can be present.",
-    culture: "Expectations about finishing tasks vary with culture, gender role and family structure, and in some families others routinely complete tasks for young people. Check that instructions were understood in the person's first language and compare with peers from the same background."
+    culture: "Expectations about finishing tasks vary with culture, gender role and family structure, and in some families others routinely complete tasks for young people. Check that instructions were understood in the person's first language and compare with peers from the same background.",
+    young: "Young children need help to finish tasks, so judge against what children of the same age manage, and allow for being among the youngest in the year. Make sure the child understood the instruction, and separate drifting off task from refusal, which may point to oppositional behaviour. Girls and teenagers often hide unfinished work by redoing it at home or late at night, so ask the parent what it takes to get work done."
   },
   refs: [
     "DSM-5-TR (APA 2022), criterion A1d, paraphrased",
@@ -385,6 +402,8 @@ AA.add('symptoms', [{
     "Kooij JJS et al. Updated European Consensus Statement on adult ADHD. Eur Psychiatry 2019;56:14-34",
     "DIVA 2.0 structure (Kooij and Francken 2010); wording original",
     "ASRS v1.1 Part A item 1 (WHO, Kessler et al. 2005)",
-    "Clinical practice"
+    "Clinical practice",
+    "NICE NG87 1.2.2 (under-recognition in girls), 1.3.5 (criteria adjusted for age) and 1.3.6 (children's views)",
+    "Parent, young person and teacher questions, teacher comments and young-person notes: clinical practice"
   ]
 }]);

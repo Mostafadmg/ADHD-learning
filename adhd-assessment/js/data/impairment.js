@@ -5,7 +5,12 @@
    Sources: NICE NG87 (1.2.2, 1.3.1, 1.3.3, 1.4.3); UKAAN AQAS (Adamou et al. 2024); RCPsych CR235 (2023);
    Kooij et al. 2019 European Consensus (citing Kooij 2008, Sibley 2018, Cooper 2018); Moffitt et al. 2015;
    CADDRA 4.1; AADPA 2022; DSM-5-TR; WHO ICD-11 CDDR (2024); GOV.UK ADHD and driving.
-   Example lists are append-only: stored ticks use the item index. */
+   Example lists are append-only: stored ticks use the item index.
+   Young people (6-17): each domain has a young block (why, present-tense questions to the parent or carer and the
+   child or young person, anchors tuned for age); the examples to tick reuse child.items, and the domain labels come
+   from age-bands.js (impairmentLabels), so domain ids never change. Also onset.askYoung, duration.askYoung,
+   supplement.<dim>.young and collateral introYoung, parentNow, teacher, youngSelf, discrepancyYoung and
+   noInformantYoung. Collateral question keys are unique across every question set (p, r, pn, t, ys). */
 AA.add('impairment', {
   severity: [
     { v: 0, l: "None", d: "No effect on functioning in this area, or no more difficulty than most people of the same age. Ordinary slips with no real consequences." },
@@ -75,6 +80,27 @@ AA.add('impairment', {
           1: "Minor problems, such as occasional lateness or missed deadlines that are put right, or extra effort the person can sustain. Career, income and study are not affected.",
           2: "Repeated problems with real consequences: warnings, poor appraisals, a course failed or dropped, frequent job changes, or keeping up only by working far longer than colleagues.",
           3: "Marked impairment: dismissals, long periods out of work, education abandoned well below ability, or unable to hold a job without substantial support."
+        }
+      },
+      young: {
+        why: "School is usually the second setting and the main place where impairment shows. Ask about progress against ability, sanctions and exclusions, the support in place and homework, and get the teacher's own view. Problems confined to reading, writing or maths point to a specific learning difficulty rather than ADHD. NICE counts educational impairment alongside psychological and social impairment.",
+        ask: [
+          "How is school going at the moment? What do the teachers say about their work and behaviour?",
+          "Does the work they hand in match how able you think they are?",
+          "How often are they kept in, given detentions, sent out of class or put on report? What for?",
+          "Have they been suspended, put on a part-time timetable, or warned about permanent exclusion?",
+          "What extra help do they get, such as a teaching assistant, SEN support or an EHCP? Does it make a difference?",
+          "How long does homework take, and how much adult help is needed to get it done?",
+          "Are they falling behind? Is it in every subject, or mainly reading, writing or maths?",
+          "(To the child or young person) Which lessons are hardest to concentrate in? What happens when you lose track?",
+          "(To the child or young person) How do you feel you are doing at school compared with your friends?",
+          "(Ages 16 and 17) How are college, sixth form, an apprenticeship or a part-time job going?"
+        ],
+        anchors: {
+          0: "Progress in line with ability and age, with no more than ordinary teacher comments about effort or behaviour.",
+          1: "Some comments about focus, chatting or untidy work, or extra reminders in class, but progress and relationships with teachers are broadly fine.",
+          2: "Repeated problems with consequences: work clearly below ability, regular sanctions or detentions, extra help needed in class, or homework that needs constant adult input.",
+          3: "Marked impairment: suspensions or a risk of permanent exclusion, a part-time timetable or alternative provision, falling far behind despite support, or not attending school."
         }
       },
       child: {
@@ -184,6 +210,25 @@ AA.add('impairment', {
           3: "Marked impairment: relationship breakdowns linked to the difficulties, estrangement from family, serious problems caring for children, or conflict that has involved police or social care. If there is domestic abuse or risk to children, follow safeguarding procedures."
         }
       },
+      young: {
+        why: "Family life carries much of the day-to-day cost: battles over routines and homework, more telling-off than brothers and sisters, and stress for the whole family. Ask what a typical morning and evening are like. Consider family stress, parenting and safety too, because they can cause or worsen behaviour problems as well as result from them.",
+        ask: [
+          "What is a typical morning and evening like at home? Where do things go wrong?",
+          "How often are there arguments or telling-off? What are they usually about?",
+          "How do they get on with brothers and sisters?",
+          "How much more supervision or help do they need than other children of the same age?",
+          "Do family meals, outings or visits often go wrong because of their behaviour?",
+          "How do their difficulties affect you, any partner and the rest of the family?",
+          "Do relatives, babysitters or after-school clubs find them hard to look after?",
+          "(To the child or young person) What is it like at home for you? What do you argue about?"
+        ],
+        anchors: {
+          0: "Ordinary family life, with the usual disagreements for a child of this age.",
+          1: "Needs more reminders than brothers, sisters or peers, with some friction, but family life is not much disrupted.",
+          2: "Frequent conflict or telling-off, much more supervision than siblings needed at the same age, and family routines regularly disrupted.",
+          3: "Marked impairment: home life dominated by their behaviour, outside help sought, a family or care placement at risk of breaking down, or worries about safety. Consider safeguarding."
+        }
+      },
       child: {
         ask: [
           "How did you get on with your parents when you were growing up? What were the rows about?",
@@ -280,6 +325,25 @@ AA.add('impairment', {
           1: "Friends tease or complain about lateness or forgetting, but friendships last and the person feels connected.",
           2: "Friendships repeatedly lapse or end, the person is left out of plans, or avoids social contact after repeated difficulties, and feels the loss.",
           3: "Marked impairment: few or no lasting friendships, isolation, or repeated serious fallouts clearly linked to the difficulties."
+        }
+      },
+      young: {
+        why: "In ADHD the difficulty is usually keeping friends rather than making them: not waiting their turn, taking over games, rough play or quick reactions. Difficulty making friends at all, and reading social cues, points more towards autism, although the two often occur together. Ask about bullying, in person and online, as the target or the bully.",
+        ask: [
+          "Do they have friends of their own age? Do the friendships last?",
+          "Are they invited to parties, to play or to go out with others?",
+          "Do other children complain that they do not wait their turn, take over games or are too rough?",
+          "Are they teased, left out or bullied, in person or online?",
+          "Do they get into fights or fall out more often than other children?",
+          "Is it harder for them to make friends, or to keep them?",
+          "Do they mix with much older children, or get drawn into trouble by others?",
+          "(To the child or young person) Who do you hang around with? What happens when you fall out?"
+        ],
+        anchors: {
+          0: "Has friends of their own age, is included, and fallouts are ordinary.",
+          1: "Some fallouts or bossiness, but still has friends and is included.",
+          2: "Friendships rarely last, with frequent conflict, teasing or exclusion and few invitations.",
+          3: "Marked impairment: no lasting friends, persistent rejection or bullying (as target or bully), or kept out of group activities because of behaviour. Check safety, including online."
         }
       },
       child: {
@@ -382,6 +446,24 @@ AA.add('impairment', {
           3: "Marked impairment: leisure is a major source of harm or distress, such as injuries, debt from hobbies or gaming, or never resting, leading to exhaustion."
         }
       },
+      young: {
+        why: "Play and activities show whether the child can settle, stick with things and join in without constant adult direction. Look for dropped clubs, being asked to leave activities, and conflict over screens. Being able to focus for hours on a favourite game does not rule ADHD out.",
+        ask: [
+          "What do they do for fun? Can they play on their own, or settle to a game?",
+          "Do they join clubs, sports or lessons and keep going? Why do they stop?",
+          "Have they been asked to leave a club, team or activity?",
+          "Can they sit through a film, a meal out or a long car journey?",
+          "How much time do they spend on screens or gaming? What happens when you ask them to stop?",
+          "Are there things they can focus on for hours? What are they?",
+          "(To the child or young person) What do you enjoy doing? What do you find boring?"
+        ],
+        anchors: {
+          0: "Enjoys play and hobbies for their age and keeps some going.",
+          1: "Lively, prefers active play and drops some activities, without real consequences.",
+          2: "Rarely sticks with an activity, is regularly asked to leave or left out of clubs, or free time often ends in conflict, including over screens.",
+          3: "Marked impairment: excluded from most organised activities, or free time is a constant source of conflict, danger or distress."
+        }
+      },
       child: {
         ask: [
           "What did you do for fun as a child? Did you stick at things?",
@@ -476,6 +558,24 @@ AA.add('impairment', {
           1: "Some self-doubt or frustration about the difficulties, without avoidance or lasting distress.",
           2: "Clear low self-esteem, shame or fear of failure that leads to avoiding opportunities, hiding difficulties or ongoing distress.",
           3: "Marked impairment: a pervasive sense of being a failure that shapes life choices, with major avoidance or persistent distress. Assess mood and risk."
+        }
+      },
+      young: {
+        why: "Repeated telling-off and failure can leave children feeling stupid or bad, and this often grows in the teenage years. Ask the child or young person directly. Separate long-standing low self-esteem from a depressive episode, which is a change from their usual self, and ask about self-harm.",
+        ask: [
+          "How do they talk about themselves? Do they call themselves stupid, naughty or bad?",
+          "How do they react when they are told off or corrected?",
+          "Do they give up quickly, or refuse to try new things in case they fail?",
+          "Do they say nobody likes them, or that they wish they were someone else?",
+          "Have they seemed low, worried or withdrawn for more than a couple of weeks?",
+          "(To the child or young person) What are you good at? What do you wish was different?",
+          "(To the child or young person) How do you feel about yourself compared with others in your class?"
+        ],
+        anchors: {
+          0: "Generally confident and positive about themselves for their age.",
+          1: "Some self-doubt after criticism, but bounces back and keeps trying.",
+          2: "Often sees themselves as stupid, naughty or a failure, avoids trying, or reacts strongly to correction.",
+          3: "Marked impairment: a persistently negative self-image with withdrawal, hopelessness or self-harm. Assess mood and safety today."
         }
       },
       child: {
@@ -580,6 +680,24 @@ AA.add('impairment', {
           3: "Marked impairment: serious debt, court action, eviction, utilities cut off, or unable to manage daily living without substantial help."
         }
       },
+      young: {
+        why: "Compare self-care and independence with what is usual for the child's age: getting ready, keeping track of belongings, routines and pocket money and, for older young people, travel, appointments and part-time work.",
+        ask: [
+          "How much help do they need to get up, washed, dressed and ready in the morning, compared with others of the same age?",
+          "How often do they lose or forget things such as coats, PE kit, homework, keys or their phone?",
+          "Can they follow a routine, such as packing their bag or getting ready for bed, without step-by-step reminders?",
+          "What is their bedroom like? Can they find what they need?",
+          "How do they manage pocket money?",
+          "How are bedtimes and sleep?",
+          "(Older children and teenagers) Can they travel on their own, keep track of their own plans and appointments, or manage a part-time job?"
+        ],
+        anchors: {
+          0: "Manages self-care, routines and belongings as expected for their age.",
+          1: "Somewhat forgetful or messy, needing a few more reminders than peers.",
+          2: "Needs much more supervision than peers for routines and belongings, with frequent losses and daily battles over getting ready.",
+          3: "Marked impairment: cannot manage age-appropriate self-care or routines without constant adult help, with frequent serious consequences."
+        }
+      },
       child: {
         ask: [
           "Did you need more help than other children with getting ready, dressing or packing your bag?",
@@ -682,6 +800,25 @@ AA.add('impairment', {
           3: "Marked impairment: serious injury, driving ban, harmful substance use, arrest or conviction, or impulsive self-harm or suicide attempts. Complete the risk step, and give DVLA advice if they drive."
         }
       },
+      young: {
+        why: "ADHD is linked with more accidents and injuries and, in teenagers, with risk-taking, early substance use and contact with the police. Ask factually and without judgement. Risky behaviour can also be a sign of exploitation or abuse, so consider safeguarding.",
+        ask: [
+          "Do they have more accidents, bumps or injuries than other children? Any A&E visits, stitches or broken bones?",
+          "Do they run into the road, climb dangerously or wander off?",
+          "Do you feel you can never take your eyes off them?",
+          "Do they take dares, or copy risky stunts they have seen online?",
+          "Have they been in trouble with the police, or been seen with older people you do not know?",
+          "Have they ever hurt themselves on purpose, or talked about wanting to die? (If yes, complete the risk step today.)",
+          "(Teenagers, ideally on their own) Do you drink, smoke, vape or use drugs? Have you taken risks you later regretted?",
+          "(Age 17) Are you learning to drive? How is it going?"
+        ],
+        anchors: {
+          0: "No more accidents or risk-taking than other children of the same age.",
+          1: "A few more bumps and scrapes than peers, without serious injury.",
+          2: "Frequent injuries, near misses or risky behaviour that needs close supervision, or early substance use.",
+          3: "Marked impairment: serious or repeated injuries, police or youth justice involvement, dangerous substance use, or self-harm. Complete the risk step and consider safeguarding."
+        }
+      },
       child: {
         ask: [
           "Did you have more accidents or injuries than other children? Any broken bones, stitches or hospital visits?",
@@ -751,6 +888,20 @@ AA.add('impairment', {
       "What did your first school reports say?",
       "If I asked the person who brought you up what you were like at about eight, what would they say?"
     ],
+    askYoung: [
+      "When did you first notice the problems with attention, activity or acting without thinking? How old were they?",
+      "What were they like as a baby and toddler: sleep, activity level, temper?",
+      "Did nursery, playgroup or the Reception teacher raise any concerns?",
+      "Have the problems always been there, or did they start or get much worse at a particular time?",
+      "Did anything happen around then, such as a move, a family break-up, a loss, an illness, a head injury, bullying or something frightening?",
+      "Did the problems become more obvious at a particular stage, such as starting school or moving up to secondary school? What changed in the demands on them?",
+      "Are the problems there most of the time, or do they come and go in spells of weeks?",
+      "Are they one of the youngest in their school year? How do they compare with children of the same age, not just the same class?",
+      "Have they been seen by a health visitor, school nurse, speech and language therapist, educational psychologist, paediatrician or CAMHS?",
+      "Does anyone else in the family have similar difficulties?",
+      "Are there early school or nursery reports, or the red book (personal child health record), that we could look at?",
+      "(To the young person, aged 12 and over) Can you remember a time before these problems? When did you first notice them yourself?"
+    ],
     memoryAids: [
       "School reports from primary and secondary school: read the teacher comments, not only the grades.",
       "A school-year timeline, one year at a time. England and Wales: Reception, Year 2, Year 4, Year 6, then Year 7, Year 9, Year 11. Scotland: P1 to P7, then S1 to S4. Northern Ireland: P1 to P7, then Year 8 to Year 12.",
@@ -801,22 +952,33 @@ AA.add('impairment', {
       "In the last six months, were there weeks when the problems were not there at all? What was happening then?",
       "Do the problems change with stress, sleep, mood, alcohol or drugs, or are they there regardless?",
       "If you take or have taken ADHD medicine, what are you like when you are not taking it?"
+    ],
+    askYoung: [
+      "Have these problems been there most of the time for at least the last six months?",
+      "Are they like this most days, at home and at school, or only at certain times or places?",
+      "Is this how they have always been, or a change from how they were a year or two ago?",
+      "In the last six months, were there weeks when the problems were not there at all? What was different then?",
+      "Do the problems change with sleep, worries, or events at home or at school, or are they there regardless?",
+      "If they have taken ADHD medicine, what are they like on days without it?"
     ]
   },
 
   supplement: {
     ia: {
       adult: "Thinking about all the attention and organisation problems we have just talked about: are they clearly more frequent or more severe for you than for most people of your age and background?",
-      child: "And as a child, between about 5 and 12: were these attention problems clearly more frequent or more severe for you than for other children of the same age?"
+      child: "And as a child, between about 5 and 12: were these attention problems clearly more frequent or more severe for you than for other children of the same age?",
+      young: "Thinking about all the attention and organisation problems we have talked about: are they clearly more frequent or more severe than in other children of the same age and stage of development?"
     },
     hi: {
       adult: "Thinking about the restlessness and impulsive behaviour we have just talked about: is this clearly more frequent or more intense for you than for most people of your age and background?",
-      child: "And as a child, between about 5 and 12: were you clearly more restless or impulsive, or more often so, than other children of the same age?"
+      child: "And as a child, between about 5 and 12: were you clearly more restless or impulsive, or more often so, than other children of the same age?",
+      young: "Thinking about the restlessness and impulsive behaviour we have talked about: is it clearly more frequent or more intense than in other children of the same age and stage of development?"
     }
   },
 
   collateral: {
     intro: "Observer reports are part of the basis for diagnosis in NICE NG87 1.3.1. Aim for at least one person who knew the patient as a child (usually a parent or older sibling), one who knows them well now (partner or close friend), and school reports (AQAS 2024). Speak to informants separately where possible, ask for specific examples rather than general impressions, and rate how far each source supports the diagnosis. Missing collateral should not by itself block a diagnosis, but record why it is missing and weigh the rest of the evidence carefully (RCPsych CR235; ICD-11 CDDR).",
+    introYoung: "For children and young people, collateral is the core of the assessment. NICE bases the diagnosis on observer reports as well as the history, and asks for symptoms that cause at least moderate impairment in two or more important settings, usually home and school. Aim for the parent or carer now, a teacher who knows the child well (with consent), and the child's or young person's own view. Ask each source for specific, recent examples, and compare like with like: the same symptom, in a similar setting, over the same period.",
     rating: [
       { v: 0, l: "None or little support", d: "The source does not describe the symptoms, or describes only isolated, ordinary behaviour. Also use 0 when the source contradicts the patient's account." },
       { v: 1, l: "Some support", d: "Describes some symptoms or some impairment, or supports the account in general terms with few specific examples, or covers only part of the relevant period." },
@@ -947,6 +1109,89 @@ AA.add('impairment', {
       "Use the patient's own recall with care: ask for specific, datable memories anchored to the school-year timeline. Self-report alone carries more risk of under- or over-reporting.",
       "Do not exclude ADHD only because no informant is available when this is outside the patient's control (RCPsych CR235; NICE NG87 1.3.3 on uncertain onset). Document the gap; ICD-11 advises making an adult diagnosis with caution without corroboration.",
       "If the picture is still unclear, defer the decision: arrange a further appointment once records arrive, or review over time, rather than forcing a conclusion."
-    ]
+    ],
+    parentNow: {
+      intro: "For a parent or carer who lives with the child now. Ask about the last six months, at home and in other places they see the child, and ask for specific recent examples. Compare with brothers, sisters or other children of the same age. Remember that a parent may have ADHD themselves, may be under strain, and may see the behaviour as normal or as worse than it is.",
+      questions: [
+        { k: "pn1", q: "Over the last six months, what worries you most about their attention, activity or behaviour?" },
+        { k: "pn2", q: "Do they seem not to listen when you speak to them directly? How often do you have to repeat things?" },
+        { k: "pn3", q: "Can they follow two or three instructions in a row, such as getting their shoes, coat and bag?" },
+        { k: "pn4", q: "How do they manage homework or other tasks that need effort? Do they avoid them, or start and not finish?" },
+        { k: "pn5", q: "How often do they lose or forget things they need, such as PE kit, homework or their phone?" },
+        { k: "pn6", q: "Are they easily sidetracked by noises, screens or their own thoughts?" },
+        { k: "pn7", q: "Can they sit still for meals, homework or a car journey? Do they fidget or keep getting up?" },
+        { k: "pn8", q: "Are they always on the go, running or climbing when they should not, or unable to play quietly?" },
+        { k: "pn9", q: "Do they talk a lot, interrupt, or blurt out answers before the question is finished?" },
+        { k: "pn10", q: "Can they wait their turn in games, queues or conversations?" },
+        { k: "pn11", q: "Do they act without thinking, for example running into the road or grabbing things?" },
+        { k: "pn12", q: "How do they react when told no, or when things go wrong? How quickly do they calm down?" },
+        { k: "pn13", q: "How do these problems affect family life, friendships and school?" },
+        { k: "pn14", q: "Are the problems the same at home, at school, with relatives and in clubs, or worse in one place?" },
+        { k: "pn15", q: "How long have they been like this? Were there signs before they started school?" },
+        { k: "pn16", q: "How do they compare with brothers, sisters, cousins or friends of the same age?" },
+        { k: "pn17", q: "Do they seem anxious, low or withdrawn, or have very intense interests or fixed routines?" },
+        { k: "pn18", q: "How do they sleep? Do they snore, or seem very tired in the day?" },
+        { k: "pn19", q: "Has anything happened recently that might affect their behaviour, such as a move, a loss, a separation or upsetting events?" },
+        { k: "pn20", q: "What helps, and what have you already tried?" }
+      ],
+      src: ["NICE NG87 1.3.1, 1.3.4"]
+    },
+    teacher: {
+      intro: "For the class teacher, form tutor, SENCO or teaching assistant who knows the child well, by questionnaire, phone or meeting, with consent from a parent with parental responsibility or from the young person if they can consent. Ask about the last six months and compare with others of the same age in the class. A teacher's account is the main evidence for the school setting.",
+      questions: [
+        { k: "t1", q: "How long have you known them, and in which lessons or settings?" },
+        { k: "t2", q: "How do their attention and concentration compare with others of the same age in the class?" },
+        { k: "t3", q: "Do they finish their work? Is it rushed, careless or left incomplete?" },
+        { k: "t4", q: "Can they follow instructions given to the whole class, or do they need them repeated one-to-one?" },
+        { k: "t5", q: "How organised are they with books, equipment and homework?" },
+        { k: "t6", q: "Do they stay in their seat, fidget, or wander round the classroom?" },
+        { k: "t7", q: "Do they call out, interrupt or find it hard to wait their turn?" },
+        { k: "t8", q: "How do they get on with other children, in class and at break?" },
+        { k: "t9", q: "How do they respond to correction, and how often are they sanctioned? What for?" },
+        { k: "t10", q: "Is their progress in line with their ability? Are there specific problems with reading, writing or maths?" },
+        { k: "t11", q: "What support or adjustments are in place (SEN support, an EHCP, a teaching assistant), and what difference do they make?" },
+        { k: "t12", q: "Do you notice the problems all day, or at particular times or in particular lessons?" },
+        { k: "t13", q: "Have you noticed signs of worry, low mood, tiredness, hearing or vision problems, or blank spells?" },
+        { k: "t14", q: "Have the problems been there since you have known them, or did they start or change at some point?" },
+        { k: "t15", q: "Are there any concerns about attendance, safety or wellbeing?" }
+      ],
+      src: ["NICE NG87 1.3.1, 1.3.2, 1.3.3"]
+    },
+    youngSelf: {
+      intro: "Take the child's or young person's own view into account when judging how much the problems affect them. Use words that suit their age. See young people on their own for part of the appointment, after explaining the limits of confidentiality.",
+      questions: [
+        { k: "ys1", q: "What is school like for you? Which lessons are easiest and hardest?" },
+        { k: "ys2", q: "Do you find it hard to concentrate, or to keep still? When does it happen most?" },
+        { k: "ys3", q: "What happens at home when things go wrong? What do you argue about?" },
+        { k: "ys4", q: "Who are your friends? Is it easy to make friends, and to keep them?" },
+        { k: "ys5", q: "What are you good at? What do you enjoy?" },
+        { k: "ys6", q: "How do you feel about yourself most of the time?" },
+        { k: "ys7", q: "Is anything worrying you, at home, at school or online? Does anyone hurt you or make you feel unsafe?" },
+        { k: "ys8", q: "How do you sleep?" },
+        { k: "ys9", q: "What would you most like to be different?" },
+        { k: "ys10", q: "What do you think about coming here, and about the help you might get?" }
+      ],
+      src: ["NICE NG87 1.3.6"]
+    },
+    discrepancyYoung: [
+      "Some difference between home and school is normal: the settings make different demands, and children behave differently with different adults. Compare like with like: the same symptom, in a similar setting, over the same period.",
+      "ADHD needs symptoms in two or more settings. If problems appear in only one, look for a reason in that setting: family stress, a mismatch with the class or teacher, a specific learning difficulty, anxiety or bullying.",
+      "Teachers see the child in a demanding group and can compare them with many children of the same age; parents see the whole day and the child's history. Weigh each account by what that person has actually seen.",
+      "Children and young people often report fewer problems than their parents and teachers describe. That alone does not mean the adults are over-reporting. Ask everyone for specific examples.",
+      "Consider each informant's position: how well and how long they have known the child, their own stress or mental health (assess the parents' or carers' mental health), conflict between the adults, and whether they hope for a particular outcome.",
+      "When parents or carers who live apart give very different accounts, ask each for specific examples and seek school evidence. Check who has parental responsibility and who has consented.",
+      "When accounts conflict, look for a third source: another teacher, school records and attendance, earlier reports, or a school observation, which helps when there is doubt about symptoms.",
+      "Record each discrepancy, the likely reasons and how you weighed it."
+    ],
+    noInformantYoung: [
+      "If no teacher report has come back, ask the school again (with consent), or ask the SENCO, form tutor or a teaching assistant who knows the child.",
+      "Use written school evidence: recent reports, behaviour logs, attendance, SEN support plans or an EHCP, and educational psychology reports.",
+      "Ask about other settings where an adult sees the child regularly: clubs, sports coaches, childminders, after-school care or relatives.",
+      "If a teacher rating scale is not possible, a structured written account from the teacher or a school observation can help.",
+      "For a looked-after child, ask the social worker, foster carers or residential staff and the virtual school (England) for information, with the right consent.",
+      "If one parent cannot be reached, or the child has recently changed school, record what is missing and why.",
+      "Do not diagnose from one setting alone. If the second setting cannot be assessed yet, defer the decision and set a date to review when school evidence arrives."
+    ],
+    srcYoung: ["NICE NG87 1.3.1, 1.3.2, 1.3.3, 1.3.4, 1.3.6", "DSM-5-TR criterion C", "Clinical practice"]
   }
 });

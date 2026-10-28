@@ -192,20 +192,21 @@ AA.add('ddx', [
       "Have you had treatment for sleep, such as CBT for insomnia, melatonin or sleeping tablets? What changed in the daytime?",
       "How has your mood been? Have you lost interest in things?",
       "Do you take any medicines in the afternoon or evening, such as stimulants, decongestants, steroids or some antidepressants?",
-      "(Parent) As a child, did they have trouble settling at night, and were they restless and distractible in the day as well?"
+      "(Parent) As a child, did they have trouble settling at night, and were they restless and distractible in the day as well?",
+      "(Parent of a child or young person) What is bedtime like: the routine, screens in the bedroom, caffeine or energy drinks, worries at night? Were they restless and distractible in the day before the sleep problem started?"
     ],
     features: [
-      { id: "insomnia_trigger", t: "Clear trigger at onset (stress, bereavement, shift work, illness, new medicine)", w: 2 },
-      { id: "insomnia_adultonset", t: "Daytime attention problems began with the insomnia in adulthood; no credible childhood history", w: 3 },
+      { id: "insomnia_trigger", t: "Clear trigger at onset (stress, bereavement, a family or school change, shift work, illness, new medicine)", w: 2 },
+      { id: "insomnia_adultonset", t: "Daytime attention problems began with the sleep problem and were not there before it (adults: no credible childhood history)", w: 3 },
       { id: "insomnia_tracks", t: "Daytime concentration normal after good nights, poor after bad nights", w: 3 },
       { id: "insomnia_holiday", t: "Daytime symptoms resolve on holidays or when sleep is extended", w: 3 },
       { id: "insomnia_worry", t: "Pre-sleep thoughts are worry about sleep or one stressor rather than many unrelated thoughts", w: 2 },
       { id: "insomnia_conditioned", t: "Conditioned arousal: alert in bed, falls asleep easily elsewhere", w: 1 },
       { id: "insomnia_maint", t: "Mainly frequent or early waking rather than delayed sleep onset", w: 1 },
-      { id: "insomnia_cbti", t: "Daytime functioning recovered after CBT for insomnia or sleep scheduling", w: 3 },
+      { id: "insomnia_cbti", t: "Daytime functioning recovered after CBT for insomnia, a behavioural sleep plan or sleep scheduling", w: 3 },
       { id: "insomnia_subst", t: "Caffeine, alcohol, nicotine or cannabis pattern explains the poor sleep", w: 1 },
       { id: "insomnia_driver", t: "Depression, anxiety, pain, menopause or another condition drives the sleep loss", w: 1 },
-      { id: "insomnia_shift", t: "Shift work or irregular schedules", w: 1 },
+      { id: "insomnia_shift", t: "Shift work or irregular sleep schedules (for example late screens or weekend lie-ins)", w: 1 },
       { id: "insomnia_isi", t: "Insomnia Severity Index 10 or more (community cut-off, Morin et al. 2011)", w: 1 }
     ],
     screen: ["isi", "phq9", "gad7", "auditc"],
@@ -227,8 +228,8 @@ AA.add('ddx', [
       "New insomnia after starting or increasing a stimulant: review dose and timing"
     ],
     decide: {
-      better: "Insomnia better explains the picture when daytime inattention began with the sleep problem in adulthood, there is no credible childhood history, and daytime function returns to normal when sleep is good (holidays, after CBT for insomnia).",
-      both: "Diagnose both when childhood-onset ADHD symptoms are established and daytime symptoms persist after good nights. Most adults with ADHD and insomnia fall here, and the insomnia often reflects a busy mind and a delayed body clock.",
+      better: "Insomnia better explains the picture when daytime inattention began with the sleep problem and was not there before it (in adults, there is no credible childhood history), and daytime function returns to normal when sleep is good (holidays, after CBT for insomnia or, for a child, a behavioural sleep plan).",
+      both: "Diagnose both when ADHD symptoms are established from before the sleep problem (in adults, from childhood) and daytime symptoms persist after good nights. Most adults with ADHD and insomnia fall here, and the insomnia often reflects a busy mind and a delayed body clock.",
       next: "If unclear, use a 2-week sleep diary, treat the insomnia (sleep hygiene, CBT for insomnia, caffeine, alcohol and medicine timing) and reassess daytime symptoms. If ADHD is diagnosed, treat both: CBT for insomnia is the standard first treatment for long-term insomnia (NICE TA922), and CR235 advises taking long-acting stimulants early in the morning."
     },
     pearls: [
@@ -781,14 +782,14 @@ AA.add('ddx', [
       { id: "normal_mild", t: "Symptoms occasional and mild, similar to peers", w: 3 },
       { id: "normal_noimpair", t: "No more than mild impairment in any setting", w: 3 },
       { id: "normal_onesetting", t: "Problems confined to one setting or one demanding role", w: 2 },
-      { id: "normal_nochild", t: "No credible childhood history; school reports describe a settled, attentive child", w: 3 },
+      { id: "normal_nochild", t: "No long-standing pattern: school reports describe a settled, attentive child (adults: no credible childhood history)", w: 3 },
       { id: "normal_noinformant", t: "Informants do not recognise a pattern beyond the ordinary", w: 2 },
       { id: "normal_demand", t: "Symptoms began with a recent rise in demands and ease when demands fall", w: 2 },
       { id: "normal_lifestyle", t: "Explained by sleep loss, stress, screen use or lifestyle, and improves when these change", w: 2 },
       { id: "normal_online", t: "Concern prompted mainly by online content or a self-test, without clear consequences in daily life", w: 1 },
-      { id: "normal_cope", t: "Copes with ordinary effort: meets deadlines, keeps jobs and relationships", w: 2 },
+      { id: "normal_cope", t: "Copes with ordinary effort: keeps up with school or work, friendships and relationships", w: 2 },
       { id: "normal_scales", t: "Informant rating scales near population norms", w: 1 },
-      { id: "normal_screenonly", t: "Only evidence is a positive self-report screen", w: 2 }
+      { id: "normal_screenonly", t: "Only evidence is a single positive screen (self-report, or one informant)", w: 2 }
     ],
     screen: ["asrs18", "wfirs", "wurs25"],
     investigations: [
@@ -806,7 +807,7 @@ AA.add('ddx', [
       "Pressure from others (employer, family, college) for a diagnosis or a prescription"
     ],
     decide: {
-      better: "Normal variation is the best explanation when symptoms are not frequent or pervasive enough, are not clearly out of keeping with peers, lack a childhood onset, or cause no more than mild impairment.",
+      better: "Normal variation is the best explanation when symptoms are not frequent or pervasive enough, are not clearly out of keeping with peers of the same developmental age, are not long-standing (in adults, lack a childhood onset), or cause no more than mild impairment. For a child who is young for the school year, also review relative age.",
       both: "Not applicable: normal variation and ADHD exclude each other. If impairment is real but full criteria are not met, consider DSM-5-TR other specified ADHD or a planned review, and record the reasons.",
       next: "Explain the findings clearly and kindly: the traits are real but do not amount to a disorder. Give information and practical strategies (NG87 1.4.4), address sleep, stress and workload, and offer a route back if new evidence appears, such as school reports or an informant account."
     },
