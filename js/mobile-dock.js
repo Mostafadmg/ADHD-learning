@@ -9,7 +9,7 @@
   'use strict';
   var mq = window.matchMedia ? window.matchMedia('(max-width:900px)') : { matches: false, addEventListener: function () {} };
   var root = document.documentElement, body = document.body;
-  var dock, sheet, list, sheetTitle, prevB, nextB, midB, midN, midT, prog;
+  var dock, sheet, list, sheetTitle, prevB, nextB, midB, midN, midT, midTT, prog;
   var last = { sig: '' };
 
   function $(s, r) { return (r || document).querySelector(s); }
@@ -22,8 +22,8 @@
     dock.innerHTML =
       '<div class="dk-prog" aria-hidden="true"></div>' +
       '<div class="dk-row">' +
-        '<button type="button" class="dk-b dk-prev"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><span>Back</span></button>' +
-        '<button type="button" class="dk-mid" aria-haspopup="dialog" aria-expanded="false"><span class="dk-n"></span><span class="dk-t"></span><svg class="dk-c" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>' +
+        '<button type="button" class="dk-b dk-prev" aria-label="Previous lesson"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg><span class="dk-bt">Back</span></button>' +
+        '<button type="button" class="dk-mid" aria-haspopup="dialog" aria-expanded="false"><span class="dk-t"><span class="dk-n"></span><span class="dk-tt"></span></span><svg class="dk-c" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg></button>' +
         '<button type="button" class="dk-b dk-next"><span>Next</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>' +
       '</div>';
     sheet = document.createElement('div');
@@ -31,11 +31,15 @@
     sheet.innerHTML = '<div class="sh-back"></div><div class="sh-panel" role="dialog" aria-modal="true" aria-label="All lessons"><div class="sh-grip" aria-hidden="true"></div>' +
       '<div class="sh-head"><b class="sh-title"></b><button type="button" class="sh-x">Close</button></div><ol class="sh-list"></ol></div>';
     body.appendChild(dock); body.appendChild(sheet);
-    prevB = $('.dk-prev', dock); nextB = $('.dk-next', dock); midB = $('.dk-mid', dock); midN = $('.dk-n', dock); midT = $('.dk-t', dock); prog = $('.dk-prog', dock);
+    prevB = $('.dk-prev', dock); nextB = $('.dk-next', dock); midB = $('.dk-mid', dock); midN = $('.dk-n', dock); midT = $('.dk-t', dock); prog = $('.dk-prog', dock); midTT = $('.dk-tt', dock);
     list = $('.sh-list', sheet); sheetTitle = $('.sh-title', sheet);
 
     prevB.addEventListener('click', function () { var b = bar(); if (b) { var t = $('.ls-tprev', b); if (t && !t.disabled) t.click(); } });
-    nextB.addEventListener('click', function () { var b = bar(); if (b) { var t = $('.ls-tnext', b); if (t && !t.disabled) t.click(); } });
+    nextB.addEventListener('click', function () {
+      /* a long lesson is read a part at a time: Next means "keep going" until every part is open */
+      if (window.__partsNext && window.__partsNext()) { last.sig = ''; queue(); return; }
+      var b = bar(); if (b) { var t = $('.ls-tnext', b); if (t && !t.disabled) t.click(); }
+    });
     midB.addEventListener('click', openSheet);
     $('.sh-back', sheet).addEventListener('click', closeSheet);
     $('.sh-x', sheet).addEventListener('click', closeSheet);
@@ -74,15 +78,17 @@
     var curBtn = $('.ls-menu button.cur', b), idx = curBtn ? +curBtn.dataset.i : 0, n = $$('.ls-menu button[data-i]', b).filter(function (x) { return +x.dataset.i >= 0; }).length;
     var tprev = $('.ls-tprev', b), tnext = $('.ls-tnext', b), nx = $('.ls-nav .ls-next', b.parentNode);
     var title = curBtn ? $('.ls-t', curBtn).textContent : '', min = curBtn ? $('.ls-m', curBtn).textContent : '';
-    var lastLesson = idx === n - 1, label = 'Next';
-    if (lastLesson) label = nx && /^Next module/.test(nx.textContent) ? 'Next module' : (nx && /^Next section/.test(nx.textContent) ? 'Next section' : 'Next');
+    var pi = window.__partsInfo ? window.__partsInfo() : null, more = !!(pi && pi.shown < pi.total);
+    var lastLesson = idx === n - 1 && !more, label = 'Next';
+    if (more) label = 'Continue';
+    else if (lastLesson) label = nx && /^Next module/.test(nx.textContent) ? 'Next module' : (nx && /^Next section/.test(nx.textContent) ? 'Next section' : 'Next');
     var dis = !!(tprev && tprev.disabled), ndis = !!(tnext && tnext.disabled);
     var done = $$('.ls-seg', b).map(function (s) { return s.classList.contains('cur') ? 'c' : (s.classList.contains('done') ? 'd' : 'o'); }).join('');
-    var sig = [idx, n, title, label, dis, ndis, done].join('|');
+    var sig = [idx, n, title, label, dis, ndis, done, pi ? pi.shown + '/' + pi.total : ''].join('|');
     dock.hidden = false; body.classList.add('has-dock');
     if (sig === last.sig) return; last.sig = sig;
-    midN.innerHTML = (idx + 1) + '<small>/' + n + '</small>'; midT.textContent = title; midB.setAttribute('aria-label', 'Lesson ' + (idx + 1) + ' of ' + n + ': ' + title + (min ? ', ' + min : '') + '. Open the list of lessons.');
-    prevB.disabled = dis; nextB.disabled = ndis; prevB.firstElementChild.nextElementSibling.textContent = idx === 0 ? 'Overview' : 'Back';
+    midN.textContent = (idx + 1) + ' of ' + n + (pi ? ' · part ' + pi.shown + '/' + pi.total : ''); midTT.textContent = title; midB.setAttribute('aria-label', 'Lesson ' + (idx + 1) + ' of ' + n + ': ' + title + (pi ? ', part ' + pi.shown + ' of ' + pi.total : '') + (min ? ', ' + min : '') + '. Open the list of lessons.');
+    prevB.disabled = dis; nextB.disabled = ndis; $('.dk-bt', prevB).textContent = idx === 0 ? 'Overview' : 'Back'; prevB.setAttribute('aria-label', idx === 0 ? 'Back to the module overview' : 'Previous lesson');
     $('span', nextB).textContent = label; nextB.classList.toggle('dk-last', lastLesson);
     prog.innerHTML = done.split('').map(function (c) { return '<i class="' + c + '"></i>'; }).join('');
   }
