@@ -1,0 +1,142 @@
+/* Module 10 (Branching cases): phone-first lesson design. Loaded after css/mobile.css and scoped to #m10.
+   Goals at 375px: lesson 1 reads in about two screens with the fix ladder as its focal point; in lessons 2 to 5 a case is
+   played ONE STEP AT A TIME (js/m10-cases.js sets data-st on each .case):
+     story  = the vignette and a "Decision 1 of 2" button
+     decide = one question with big lettered answer tiles ("Re-read the case" folds the facts away)
+     why    = the answer you chose, the explanation, and Continue / Try another option
+     end    = the learning point, then Next case (or Next lesson after the last case in the lesson)
+   Nothing here changes the words of a case, an option, an explanation or a source. Everything that is new is hidden
+   on wider screens, where the cases look as they did. */
+
+/* lesson 1: the grade key and the case groups sit inside dropdowns (closed on phones, open on wide screens) */
+#m10 details.mx .m10-key,#m10 details.mx .m10-map{margin:0}
+
+/* ------------------------------------------------------------------ new elements: phones only */
+#m10 .m10-strip,#m10 .m10-go,#m10 .m10-re,#m10 .m10-lp,#m10 .m10-endnext,#m10 .m10-ss{display:none}
+
+@media (max-width:700px){
+
+/* ------------------------------------------------------------------ lesson 1: the fix ladder is the focal point */
+#m10 .pj{margin:.5rem 0 .9rem}
+#m10 .pj .pj-steps{gap:.45rem}
+#m10 .pj-s{padding:.5rem .75rem .55rem 3.1rem;border:1px solid color-mix(in srgb,var(--g) 24%,#fff);border-left:5px solid var(--g);border-radius:0 14px 14px 0;background:var(--gl)}
+#m10 .pj-s .pj-n{top:.5rem;left:.6rem;width:32px;height:32px;box-shadow:none}
+#m10 .pj-s:not(:last-child)::after{content:"";display:block;left:1.25rem;right:auto;top:auto;bottom:-.5rem;width:3px;height:.5rem;transform:none;background:#b7c3cf}
+#m10 .pj-s>b{font-size:1.02rem;margin-bottom:.1rem}
+#m10 .pj-s>p{font-size:.95rem;line-height:1.4;margin:0}
+#m10 .pj-steps+.pj-fork,#m10 .pj-steps+.pj-rule{margin-top:.9rem}
+#m10 .pj-steps+.pj-fork::before,#m10 .pj-steps+.pj-rule::before{top:-1.15rem;font-size:1.05rem}
+#m10 .pj-fork{padding:.8rem}
+#m10 .pj-q{justify-content:flex-start;text-align:left;margin:0 0 .65rem;font-size:1rem;line-height:1.35}
+#m10 .pj-ways{grid-template-columns:1fr;gap:.5rem}
+#m10 .pj-way{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.2rem .6rem;align-items:center;padding:.6rem .75rem}
+#m10 .pj-way .pj-tag{margin:0;font-size:.75rem}
+#m10 .pj-way p{grid-column:1/-1;margin:0;font-size:.95rem;line-height:1.45}
+#m10 .pj-rule{margin-top:.8rem;padding:.75rem .85rem}
+#m10 .pj-rule p{font-size:.95rem;margin:.15rem 0 0}
+
+/* the two dropdowns under the ladder (grades, case groups) */
+#m10 details.mx{margin:.7rem 0 0}
+#m10 details.mx .mx-b{padding:.8rem}
+#m10 .m10-key{gap:.45rem;margin:0}
+#m10 .m10-key li{margin:0;max-width:none;padding:.6rem .8rem}
+#m10 .m10-key li b{display:inline;margin:0 .35rem 0 0}
+#m10 .m10-key li span{font-size:.95rem}
+#m10 .m10-map{gap:.5rem;margin:0}
+#m10 .m10-grp{grid-template-columns:62px minmax(0,1fr);grid-template-rows:auto auto;gap:.3rem .65rem;padding:.7rem .75rem;min-height:64px;border-radius:14px}
+#m10 .m10-gi{grid-column:1;grid-row:1;justify-self:center;width:38px;height:38px}
+#m10 .m10-gt{grid-column:2;grid-row:1/3}
+#m10 .m10-gn{grid-column:1;grid-row:2;justify-self:center;align-self:start;font-size:.75rem;letter-spacing:.02em;padding:.15rem .5rem}
+#m10 .m10-gt b{font-size:1rem;line-height:1.25}
+#m10 .m10-gt>span{font-size:.92rem;margin:.1rem 0 .15rem;line-height:1.4}
+
+/* ------------------------------------------------------------------ lessons 2 to 5: picker as three name chips */
+#m10 .m10-pick{margin:.8rem 0 .2rem;scroll-margin-top:.5rem}
+#m10 .m10-cards{grid-template-columns:repeat(3,minmax(0,1fr));gap:.4rem}
+#m10 .m10-card{flex-direction:column;align-items:flex-start;justify-content:center;gap:.1rem;padding:.5rem .6rem;min-height:62px;border-radius:12px}
+#m10 .m10-card img,#m10 .m10-ct>span{display:none}
+#m10 .m10-ct{gap:.15rem}
+#m10 .m10-ct b{font-size:1rem;line-height:1.2}
+#m10 .m10-st{font-size:.75rem;letter-spacing:.02em}
+#m10 .m10-sl{display:none}
+#m10 .m10-ss{display:inline}
+#m10 .m10-card.done .m10-st::before{margin-right:.25rem}
+
+/* ------------------------------------------------------------------ the case, one step at a time */
+#m10 .m10-stage .case{margin:.7rem 0 0}
+#m10 .m10-stage .case-body{padding:0}
+#m10 .case-head{display:none}
+#m10 .m10-stage .trail{display:none}
+
+/* progress strip: The case, Decision 1, Decision 2, Learning point */
+#m10 .m10-strip{display:block;margin:0 0 .75rem}
+#m10 .m10-track{list-style:none;display:flex;gap:4px;margin:0 0 .4rem;padding:0}
+#m10 .m10-track li{flex:1;height:6px;margin:0;max-width:none;border-radius:3px;background:#dfe7ee}
+#m10 .m10-track li.d{background:var(--teal-2)}
+#m10 .m10-track li.c{background:var(--navy)}
+#m10 .m10-where{margin:0;max-width:none;font-size:.85rem;line-height:1.35;color:var(--muted)}
+#m10 .m10-where b{color:var(--navy)}
+
+/* the facts: a quiet quote with a teal bar, no grey box */
+#m10 .m10-stage .node-text{background:none;border-radius:0;border-left:4px solid var(--teal);padding:.1rem 0 .1rem .85rem;margin:.2rem 0 .9rem;font-size:1rem;line-height:1.6}
+
+/* screen 1: story */
+#m10 .case[data-st="story"] .case-head{display:grid;grid-template-columns:92px minmax(0,1fr);gap:.55rem .8rem;align-items:center;padding:0;margin:0 0 .85rem;background:none;border-left:0;border-radius:0}
+#m10 .case[data-st="story"] .case-head>div{display:contents}
+#m10 .case[data-st="story"] .case-head img{grid-column:1;grid-row:1;width:92px;height:92px;object-fit:cover;border-radius:14px}
+#m10 .case[data-st="story"] .case-head h3{grid-column:2;grid-row:1;font-size:1.1rem;line-height:1.3}
+#m10 .case[data-st="story"] .case-head p{grid-column:1/-1;font-size:1rem;line-height:1.55;margin:0}
+#m10 .case[data-st="story"] .case-head .source-tag{grid-column:1/-1;justify-self:start;margin:0}
+#m10 .m10-stage .source-tag{font-size:.75rem}
+#m10 .case[data-st="story"] .m10-ask,#m10 .case[data-st="story"] .choices,#m10 .case[data-st="story"] .fbwrap{display:none}
+#m10 .case[data-st="story"] .node-text{margin-bottom:.4rem}
+#m10 .m10-go,#m10 .case[data-st="end"] .m10-endnext{display:none;align-items:center;justify-content:center;width:100%;min-height:56px;margin:.8rem 0 0;padding:.6rem 1rem;font-size:1.05rem;line-height:1.25;border-radius:14px;text-align:center}
+#m10 .case[data-st="story"] .m10-go,#m10 .case[data-st="end"] .m10-endnext{display:flex}
+
+/* screen 2: one question, big answer tiles. "Re-read the case" folds the facts away. */
+#m10 .case[data-st="decide"] .m10-re{display:flex;align-items:center;justify-content:space-between;gap:.6rem;width:100%;min-height:48px;margin:0 0 .5rem;padding:.4rem .9rem;font:inherit;font-size:.95rem;font-weight:600;color:var(--navy);background:#fff;border:1.5px solid var(--line);border-radius:12px;cursor:pointer;text-align:left}
+#m10 .case[data-st="decide"] .m10-re svg{flex:none;color:var(--teal);transition:transform .15s}
+#m10 .case[data-st="decide"] .m10-re[aria-expanded="true"] svg{transform:rotate(180deg)}
+#m10 .case[data-st="decide"][data-k="1"]:not(.m10-reread) .node-text{display:none}
+#m10 .case[data-st="decide"].m10-reread .case-head{display:block;padding:0 0 0 .85rem;margin:0 0 .6rem;background:none;border-left:4px solid var(--line);border-radius:0}
+#m10 .case[data-st="decide"].m10-reread .case-head img{display:none}
+#m10 .case[data-st="decide"].m10-reread .case-head h3{font-size:1rem}
+#m10 .case[data-st="decide"].m10-reread .case-head p{font-size:.95rem;line-height:1.5;margin:.2rem 0}
+#m10 .case[data-st="decide"] .node-text{margin-bottom:.5rem}
+#m10 .m10-stage .case-body>p.m10-ask{margin:.6rem 0 .7rem;max-width:none}
+#m10 .m10-stage .case-body>p.m10-ask strong{font-size:1.15rem;line-height:1.4;color:var(--navy)}
+#m10 .m10-stage .choices{gap:.6rem;margin:.2rem 0 0}
+#m10 .m10-stage .choice{width:100%;min-height:64px;padding:.8rem .9rem;gap:.8rem;border-radius:14px;font-size:1rem;line-height:1.45;text-align:left}
+#m10 .m10-l{width:34px;height:34px;border-radius:10px;font-size:1rem;margin-top:-.05rem}
+
+/* screen 3: why. Your answer, then the teaching, then Continue. */
+#m10 .case[data-st="why"] .m10-ask,#m10 .case[data-st="why"] .node-text,#m10 .case[data-st="why"] .choice:not(.m10-now){display:none}
+#m10 .case[data-st="why"] .choice.m10-now{pointer-events:none;min-height:0;font-size:.95rem;margin:0}
+#m10 .m10-stage .fb{padding:.9rem;margin:.7rem 0 0;font-size:1rem;line-height:1.6}
+#m10 .m10-stage .fb::before{left:.9rem;top:.9rem}
+#m10 .m10-stage .fb>strong:first-child{display:block;min-height:28px;padding-left:2.5rem;margin-bottom:.35rem;font-size:1.08rem;line-height:28px;color:var(--navy)}
+#m10 .cs-src{font-size:.85rem}
+#m10 .fbwrap .js-next{display:block;width:100%;min-height:56px;margin:.8rem 0 0;padding:.6rem 1rem;font-size:1.05rem;border-radius:14px}
+
+/* screen 4: the learning point, then the next step */
+#m10 .case[data-st="end"] .m10-lp{display:block;margin:0 0 .35rem;max-width:none;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal)}
+#m10 .case[data-st="end"] .node-text{margin-bottom:.9rem}
+#m10 .case[data-st="end"] .fb{margin-top:0}
+#m10 .m10-score{margin:.8rem 0 .2rem;max-width:none;font-size:.98rem;line-height:1.4}
+#m10 .m10-stage .js-restart{display:block;width:100%;min-height:48px;margin:.6rem 0 0}
+/* the footer (position + next case) is replaced by the end-of-case buttons above */
+#m10 .m10-foot{display:none}
+
+/* ------------------------------------------------------------------ links to other modules */
+#m10 .deeper{gap:.45rem;margin:1.1rem 0 .3rem}
+#m10 .deeper span{width:100%}
+#m10 .deeper a{display:inline-flex;align-items:center;min-height:44px;padding:.3rem .95rem;font-size:.92rem;line-height:1.3}
+}
+
+/* very narrow phones (320px): the two outcomes stack, chips get a little tighter */
+@media (max-width:359px){
+  #m10 .pj-ways{grid-template-columns:1fr}
+  #m10 .m10-card{padding:.5rem .45rem}
+  #m10 .m10-st{text-transform:none;letter-spacing:0}
+}
+@media (prefers-reduced-motion:reduce){#m10 .case[data-st="decide"] .m10-re svg{transition:none}}
