@@ -48,6 +48,9 @@ t('IR 30 mg BD child -> 60 ok', function () {
   assert.strictEqual(C({ ird: 30, irn: '3', to: 'cap' }).badge, 'SmPC statement');
 });
 
+t('IR 30 mg BD -> cap 60 mg: only Metyrol XL and Meflynate XL make 60 mg', function () { has(C({ ird: 30, irn: '2', to: 'cap' }), 'emc lists no 60 mg capsule for Ritalin XL or Focusim XL'); });
+t('IR -> Tuzulby chart is flagged as borrowing a shape', function () { var r = C({ who: 'child', ird: 10, irn: '2', to: 'tuz' }); assert.ok(/borrows the shape/.test(JSON.stringify(r.rows))); });
+
 /* ---- IR to Medikinet XL / Ambinet XL / Equasym XL / Addepta XL: milligram-equivalent daily dose ---- */
 t('IR 10 mg BD -> Medikinet XL adult: 20 mg a day in two doses', function () {
   var r = C({ ird: 10, irn: '2', to: 'mkxl' }); assert.strictEqual(r.badge, 'SmPC statement'); assert.strictEqual(r.tone, 'ok');

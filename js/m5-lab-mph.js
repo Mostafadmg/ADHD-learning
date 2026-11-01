@@ -110,7 +110,7 @@
     worked: 'Worked out from the SmPC table (not official)', none: 'No official conversion'
   };
   var NEWRX = 'New Schedule 2 prescription, written by brand.';
-    var CLIN = '<b>Clinical practice, not a source:</b> treat it as a new start, using the new product’s usual starting dose and weekly steps, with specialist input.';
+  var CLIN = '<b>Clinical practice, not a source:</b> treat it as a new start with specialist input. MHRA: frequent switching between products should be avoided.';
 
   /* ---------- small helpers ---------- */
   function fmt(n) { return String(Math.round(n * 10) / 10); }
@@ -212,6 +212,7 @@
       }
       if (dose) { var w2 = checkMax(dose, t, v); if (w2) { tone = 'warn'; imp.push(w2); } }
       spec.push('If 8 hours do not cover the day, NICE says think about a modified-release dose in the morning plus IR later.');
+      if (dose === 60) spec.unshift('60 mg is made with Metyrol XL or Meflynate XL: emc lists no 60 mg capsule for Ritalin XL or Focusim XL (10 to 40 mg).');
     } else if (t === 'mkxl' || t === 'ambi') {
       dose = tot; status = BADGE.stmt;
       head = before + ' → <b>' + T.name + ' ' + dose + ' mg a day</b>' + (adult ? ' in two doses, morning and lunchtime' : ', one dose in the morning');
@@ -235,7 +236,7 @@
     if (t === 'tab' || t === 'kixel') { var w1 = dose ? checkMax(dose, t, v) : ''; if (w1) { tone = 'warn'; imp.push(w1); } }
 
     built = dayChart(v, t, T.name + (dose ? ' ' + dose + ' mg' : ''), mrDoses(t, tot, v), before, irDoses(d, n), plain(head));
-    var extra = (dose && dose !== tot ? 'Drawn at ' + tot + ' mg each (the dose is ' + dose + ' mg). ' : '') + 'IR at 07:30, ' + (n === 3 ? '11:30, 15:30' : '12:00') + ' (example times).';
+    var extra = (dose && dose !== tot ? 'Drawn at ' + tot + ' mg each (the dose is ' + dose + ' mg). ' : '') + 'IR at 07:30, ' + (n === 3 ? '11:30, 15:30' : '12:00') + ' (example times).' + (T.assumed ? ' The Tuzulby curve borrows the shape of other 30:70 products: its SmPC gives only a median highest level at about 5 h.' : '');
     rows.push(dayRow(built, extra));
     rows.push({ h: 'Watch for', t: T.take });
     var ln = licNotes(v, t); if (ln.off && tone === 'ok') tone = 'warn';
@@ -298,7 +299,7 @@
 
   /* ---------- MR to MR ---------- */
   function mrToMr(v) {
-    var f = v.from, t = v.to, F = PR[f], T = PR[t], D = +v.mr, r = route(f, t), head, rows = [], built, sameLabel = F.name + ' ' + D + ' mg once a day';
+    var f = v.from, t = v.to, F = PR[f], T = PR[t], D = +v.mr, r = route(f, t), head, rows = [], built, sameLabel = F.name + ' ' + D + ' mg';
     if (f === t && f !== 'tab' && f !== 'cap') {
       return { tone: 'info', badge: 'Same product', head: 'You chose the same product on both sides: <b>there is nothing to convert</b>', rows: [{ h: 'What to do', t: 'Pick a different product in “To”, or use the swap button.' }], notes: [], src: '', chart: null };
     }
@@ -314,8 +315,8 @@
     /* different products: no dose is converted, both are drawn at the same total */
     head = F.name + ' ' + D + ' mg → ' + T.name + ': <b>' + r.head + '</b>';
     rows.push({ h: 'What the sources say', t: r.why });
-    if (r.dose) rows.push({ h: 'Dose', t: r.dose });
-    built = dayChart(v, t, T.name + ' (same total, ' + D + ' mg)', mrDoses(t, D, v), sameLabel, mrDoses(f, D, v), plain(head));
+    if (r.dose && r.tone !== 'stop') rows.push({ h: 'Dose', t: r.dose });
+    built = dayChart(v, t, T.name + ' (same total)', mrDoses(t, D, v), sameLabel, mrDoses(f, D, v), plain(head));
     rows.push(dayRow(built, 'Both are drawn at ' + D + ' mg only to compare shapes: that is not a conversion.' + (F.assumed || T.assumed ? ' The Tuzulby curve borrows the shape of other 30:70 products.' : '')));
     rows.push({ h: 'Watch for', t: T.take });
     var ln = licNotes(v, t); var tone = r.tone; if (ln.off && tone === 'ok') tone = 'warn';
@@ -350,32 +351,32 @@
     /* MR to MR */
     if (f === 'eqxl' || t === 'eqxl') {
       var other = f === 'eqxl' ? t : f;
-      return { tone: 'stop', badge: 'Do not switch', status: BADGE.none, head: 'do not switch', why: 'SPS: “No other MR products are bioequivalent to Equasym XL capsules and these should not be switched to or prescribed generically.”', todo: 'If supply fails, ask the specialist. SPS says to individualise treatment using IR products where no bioequivalent MR product is available.', src: SPS + '; ' + MHRA + '.',
+      return { tone: 'stop', badge: 'Do not switch', status: BADGE.none, head: 'do not switch', why: 'SPS: “No other MR products are bioequivalent to Equasym XL capsules and these should not be switched to or prescribed generically.”', todo: 'If supply fails, ask the specialist. In a supply shortage, SPS says to individualise treatment using IR products where no bioequivalent MR product is available.', src: SPS + '; ' + MHRA + '.',
         dose: 'None. No source gives a conversion between Equasym XL and ' + (other === 'eqxl' ? 'another product' : PR[other].name) + '. MHRA: follow the dosage recommendations for the product you switch to.',
-        clin: 'SPS: where no bioequivalent MR product is available, individualise treatment using IR products. MHRA: frequent switching between products should be avoided.' };
+        clin: 'SPS (supply disruption): individualise treatment using IR products where bioequivalent MR products are not available. MHRA: frequent switching between products should be avoided.' };
     }
     if ((f === 'mkxl' && t === 'cap') || (f === 'cap' && t === 'mkxl')) {
       return { tone: 'warn', badge: 'Particular care', status: BADGE.guide, head: 'possible with particular care: SPS gives no dose rule', why: 'SPS: “whilst switches from or to Medikinet XL capsules are also possible, these should be undertaken with particular care since this product is not completely bioequivalent with the other four.”', todo: 'No dose rule exists: ask the specialist, follow the dosing advice for the product you move to, and review.', src: SPS + '; ' + MHRA + '.',
-        dose: 'None given. Food rules and adult dosing differ (Medikinet XL: with food, adults in two doses; capsule group: once daily, any food). MHRA: follow the dosage recommendations for the product you switch to.',
-        clin: CLIN + ' MHRA: frequent switching between products should be avoided.' };
+        dose: 'None given. Food rules and adult dosing differ (Medikinet XL: with food, adults in two doses; capsule group: once daily, any food). MHRA: follow the dosage recommendations of the product you move to.',
+        clin: CLIN };
     }
     nl = [f, t].filter(function (k) { return PR[k].nolist; });
     if (nl.length) {
-      return { tone: 'stop', badge: 'No conversion', status: BADGE.none, head: 'no official conversion: ' + names(nl) + ' ' + (nl.length > 1 ? 'are' : 'is') + ' not on any SPS list', why: 'SPS lists only two bioequivalent groups (the Concerta XL-type tablets and the Ritalin XL-type capsules). ' + names(nl) + ' ' + (nl.length > 1 ? 'do' : 'does') + ' not appear in them. SPS: “Best practice guidance is to prescribe methylphenidate MR products by brand.”' + (((f === 'ambi' && t === 'mkxl') || (f === 'mkxl' && t === 'ambi')) ? ' Ambinet XL repeats the Medikinet XL SmPC wording, but no source says the two are bioequivalent.' : '') + (((f === 'kixel' && t === 'tab') || (f === 'tab' && t === 'kixel')) ? ' Kixel XL repeats the Concerta XL SmPC text and table, but SPS does not list it with the tablet group.' : ''),
+      return { tone: 'stop', badge: 'No conversion', status: BADGE.none, head: 'no official conversion: ' + names(nl) + ' ' + (nl.length > 1 ? 'are' : 'is') + ' not on any SPS list', why: 'SPS lists only two bioequivalent groups (the Concerta XL-type tablets and the Ritalin XL-type capsules), and ' + names(nl) + (nl.length > 1 ? ' are' : ' is') + ' in neither. SPS: “Best practice guidance is to prescribe methylphenidate MR products by brand.”' + (((f === 'ambi' && t === 'mkxl') || (f === 'mkxl' && t === 'ambi')) ? ' Ambinet XL repeats the Medikinet XL SmPC wording, but no source says the two are bioequivalent.' : '') + (((f === 'kixel' && t === 'tab') || (f === 'tab' && t === 'kixel')) ? ' Kixel XL repeats the Concerta XL SmPC text and table, but SPS does not list it with the tablet group.' : ''),
         todo: 'Keep the person on the brand they started. If a switch is unavoidable, ask the specialist.', src: SPS + '; ' + MHRA + '.',
-        dose: 'None. No source converts between these products. MHRA: follow the dosage recommendations for the product you switch to.',
-        clin: CLIN + ' MHRA: frequent switching between products should be avoided.' };
+        dose: 'None. MHRA: follow the dosage recommendations for the product you switch to.',
+        clin: CLIN };
     }
     return { tone: 'stop', badge: 'No conversion', status: BADGE.none, head: 'no official conversion between these two designs', why: 'The tablet group is 22:78 and works for about 12 hours; the capsule group is 50:50 and works for about 8 hours. No SmPC, SPS, NICE or MHRA table converts between them. MHRA: follow the specific dosage recommendations for each formulation if considering a switch to another long-acting preparation.', todo: 'Treat it as a new start with specialist input and avoid frequent switching.', src: SPS + '; ' + MHRA + '.',
-      dose: 'None. The SmPC of the product you move to gives its usual starting dose and weekly steps.',
-      clin: CLIN + ' MHRA: frequent switching between products should be avoided.' };
+      dose: 'None. Use the usual start and weekly steps of the product you move to.',
+      clin: CLIN };
   }
 
   /* ---------- the two tabs ---------- */
   function opts() { return ORDER.map(function (k) { return { v: k, l: PR[k].pick }; }); }
   var convertTab = {
     kind: 'tool', label: 'Convert',
-    intro: 'Pick what the person takes now and where to go. Both chart lines use the same total daily amount: compare shape, not strength.',
+    intro: 'Pick what the person takes now and where to go. The chart compares shape, not strength: both lines use the same total daily amount.',
     swap: ['from', 'to'],
     fields: [
       { id: 'who', type: 'seg', label: 'Patient', value: 'adult', options: [{ v: 'adult', l: 'Adult' }, { v: 'child', l: 'Child or teen' }] },

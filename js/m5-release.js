@@ -47,7 +47,7 @@
     },
     mk: {
       chip: 'Medikinet XL', tag: '50:50 · with food', name: 'Medikinet XL capsules', fam: 'b8', model: 'mk', split: [50, 50], lasts: 8, lastsTxt: 'about 8 hours',
-      dose2: { label: 'Adult pattern: two doses (07:30 and 12:00)', w: [0.5, 0.5], end: 8, lab: 'about 8 h after each dose', of: 'the highest point of the whole daily amount taken at once' },
+      dose2: { label: 'Adult pattern: two doses (07:30 and 12:00)', w: [0.5, 0.5], end: 8, lab: 'about 8 h each', of: 'the highest point of the whole daily amount taken at once' },
       inside: 'A capsule of beads: 50% are released at once and the other 50% are a modified-release part that works later.',
       moments: [
         { k: 'p1', t: 'Strong start', d: 'Half the dose works at once, so the morning effect is strong, like an IR tablet.' },
@@ -225,7 +225,7 @@
       var doses = two() ? [DOSE, IR2] : [DOSE];
       doses.forEach(function (h, i) {
         s += '<line x1="' + X(h) + '" x2="' + X(h) + '" y1="' + (PT - 2) + '" y2="' + base + '" stroke="#16324f" stroke-width="1.5" stroke-dasharray="4 3"/>';
-        s += '<text x="' + (X(h) + (i ? -4 : 4)) + '" y="' + (PT + 10) + '" class="rp-dl"' + (i ? ' text-anchor="end"' : '') + '>' + (i ? '2nd dose' : 'Dose') + '</text>';
+        s += '<text x="' + (X(h) + 4) + '" y="' + (PT + 10) + '" class="rp-dl">' + (doses.length > 1 ? 'Dose ' + (i + 1) : 'Dose') + '</text>';
       });
       /* areas: stacked parts, or the whole curve */
       function line(arr, off) {
