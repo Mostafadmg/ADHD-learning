@@ -92,6 +92,9 @@ html.sheet-open{overflow:hidden}
   #main .mech-ctrl .mdot{width:44px;min-width:44px;height:44px;min-height:44px}
   #main .pp-form,#main .m8x-form,#main .ag-cs,#main .lx-go,#main .tk-f,#main .lx-all,#main .agx-learn,#main .lab-clr,#main .pw2-ti{min-height:44px}
   #main .ag-dot{height:auto;min-height:44px;min-width:40px}
+  /* the compact step track keeps its size; its dots get a larger invisible tap area instead */
+  #main .agp-segs .ag-dot{min-width:0;min-height:0;height:30px;position:relative}
+  #main .agp-segs .ag-dot::after{content:"";position:absolute;inset:-9px -3px}
   #main .tl-tag{display:inline-flex;align-items:center;min-height:40px}
   /* closed dropdown headings (sources, "try it", side topics) are full-width tap bars */
   #main .lesson summary,#main .sources-d summary{min-height:48px;padding-top:.45rem;padding-bottom:.45rem;display:flex;align-items:center;gap:.5rem}
