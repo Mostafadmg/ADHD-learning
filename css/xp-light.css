@@ -1,0 +1,231 @@
+/* Light, phone-first form explorers (XP.form in js/explorers.js; configs in js/explorers-more.js).
+   Used by: M6 heart rate and blood pressure, M6 growth, M7 side effects, M7 interactions, M8 five clues,
+   M9 Schedule 2 checker (and the DSM-5 checker config).  Same look as the newer lessons (.rp, .ml, .pw2):
+   white card, 1px border, 16px radius, teal accents, a coloured left bar and pill for the verdict.
+   Phone first: every control is at least 44px tall, text is never below 12px, and the layout follows the width of the
+   card (container query), not the width of the screen.  Inside a "Try it" dropdown (details.mx) the card drops its own
+   frame, so there is no box inside a box.  The old dark card (.xp.card-dark, made by XP.make) is not touched. */
+.xpl{container:xpl/inline-size;--c:#4d6580;--cl:#eef2f6;position:relative;margin:.6rem 0 1.1rem;background:#fff;border:1px solid var(--line);border-radius:16px;padding:1rem 1.1rem .9rem;box-shadow:0 10px 28px -22px rgba(22,50,79,.45);color:var(--ink);text-align:left}
+.xpl *{min-width:0;box-sizing:border-box}
+.xpl p,.xpl ul,.xpl ol,.xpl li{max-width:none}
+.xpl [hidden]{display:none!important}
+.mx-b .xpl{margin:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none}
+.mx-b:has(>.xp-mount>.xpl){padding:.75rem .8rem .85rem}
+.lesson details.mx:has(.xpl){overflow:clip}
+
+/* tone colours: ok green, mid teal, warn amber, high red, danger deep red, low/info slate */
+.xpl[data-tone="ok"],.xpl .xl-t-ok,.xpl .xp-t-ok{--c:#1d7a3e;--cl:#e4f5ea}
+.xpl[data-tone="mid"],.xpl .xl-t-mid,.xpl .xp-t-mid{--c:#0b6664;--cl:#e3f4f3}
+.xpl[data-tone="warn"],.xpl .xl-t-warn,.xpl .xp-t-warn{--c:#9a6200;--cl:#fff4dc}
+.xpl[data-tone="high"],.xpl .xl-t-high,.xpl .xp-t-high{--c:#c62828;--cl:#fdeceb}
+.xpl[data-tone="danger"],.xpl .xl-t-danger,.xpl .xp-t-danger{--c:#8a1712;--cl:#f8dcda}
+.xpl[data-tone="low"],.xpl[data-tone="info"],.xpl .xl-t-low,.xpl .xl-t-info,.xpl .xp-t-low,.xpl .xp-t-info{--c:#4d6580;--cl:#eef2f6}
+
+/* header: shown when the card stands alone; inside a dropdown the summary already says it, so it is read-aloud only */
+.xl-head{margin:0 0 .5rem}
+.xl-kicker{margin:0;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal)}
+.xl-title{margin:.15rem 0 0;font-size:1.2rem;line-height:1.25;color:var(--navy)}
+.mx-b .xl-head{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+
+/* dropdowns inside the card (how to use, sources, the full picture): no frame, outlined +/- like .sources-d */
+.xpl details.xl-d{background:none;border:0;border-radius:0;box-shadow:none;margin:0;padding:0}
+.xpl .xl-d>summary{display:flex;align-items:center;gap:.5rem;min-height:44px;padding:.2rem .1rem;font-size:.9rem;font-weight:600;color:var(--teal);cursor:pointer;list-style:none;border-radius:8px}
+.xpl .xl-d>summary::-webkit-details-marker{display:none}
+.xpl .xl-d>summary::before{content:"+";display:inline-grid;place-items:center;flex:0 0 18px;width:18px;height:18px;border-radius:50%;background:transparent;border:1.5px solid var(--teal);color:var(--teal);font-size:.8rem;line-height:1}
+.xpl .xl-d[open]>summary::before{content:"\2013"}
+.xpl .xl-d>summary:hover{color:var(--navy)}
+.xpl .xl-d>summary:hover::before{border-color:var(--navy);color:var(--navy)}
+.xpl .xl-about{margin:0 0 .3rem}
+.xl-intro{padding:.1rem 0 .6rem .1rem;border-bottom:1px solid #edf1f5;margin:0 0 .5rem}
+.xl-intro p{margin:0;font-size:.92rem;line-height:1.55;color:var(--ink)}
+.xpl .xl-src{margin:.1rem 0 0}
+.xl-src ul{margin:.1rem 0 .4rem;padding:0 0 0 1.2rem;font-size:.84rem;line-height:1.5;color:var(--muted)}
+.xl-src li{margin:.3rem 0}
+.xl-vd[open]>summary{margin-bottom:.4rem}
+.xl-note{margin:.8rem 0 .3rem;font-size:.8rem;line-height:1.45;color:var(--muted)}
+
+/* layout: one column on a phone; controls left and result right when the card is wide */
+.xl-body{display:grid;gap:1rem;align-items:start}
+.xl-a{display:grid;gap:.7rem;align-content:start}
+.xl-b{display:grid;gap:.9rem;align-content:start}
+@container xpl (min-width:46rem){
+  .xl-body{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.4rem}
+}
+
+/* controls: one labelled block, hairlines between controls */
+.xl-ctl+.xl-ctl{border-top:1px solid #edf1f5;padding-top:.7rem}
+.xl-lab{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem;margin:0 0 .3rem;font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);line-height:1.3}
+.xl-lab label{font:inherit;letter-spacing:inherit;text-transform:inherit}
+.xl-hint{text-transform:none;letter-spacing:0;font-weight:500}
+.xl-out{font-size:1rem;font-weight:600;letter-spacing:0;text-transform:none;color:var(--navy);text-align:right}
+
+/* presets: one scrolling row of chips (wraps on wide screens) */
+.xl-pwrap{position:relative}
+.xl-pwrap::before,.xl-pwrap::after{content:"";position:absolute;top:0;bottom:6px;width:30px;pointer-events:none;opacity:0;transition:opacity .15s;z-index:1}
+.xl-pwrap::before{left:0;background:linear-gradient(270deg,rgba(255,255,255,0),#fff)}
+.xl-pwrap::after{right:0;background:linear-gradient(90deg,rgba(255,255,255,0),#fff)}
+.xl-pwrap.more-l::before,.xl-pwrap.more-r::after{opacity:1}
+.xl-presets{display:flex;gap:.5rem;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;padding:2px 2px 6px;margin:0 -2px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.xl-presets::-webkit-scrollbar{display:none}
+.xl-chip{flex:none;scroll-snap-align:start;font:inherit;font-size:.9rem;line-height:1.2;white-space:nowrap;min-height:44px;padding:.5rem .95rem;border:1.5px solid var(--line);border-radius:999px;background:#fff;color:var(--navy);cursor:pointer;transition:background .15s,border-color .15s}
+.xl-chip:hover{border-color:var(--teal-2)}
+.xl-chip[aria-pressed="true"]{background:var(--teal-l);border-color:var(--teal);box-shadow:0 0 0 1px var(--teal);color:var(--teal);font-weight:600}
+@container xpl (min-width:40rem){
+  .xl-presets{flex-wrap:wrap;overflow:visible;margin:0;padding:2px 0}
+  .xl-pwrap::before,.xl-pwrap::after{display:none}
+}
+
+/* single choice: segmented row (2-3 short labels), stacked rows (long labels), pill grid (4+), or a select */
+.xl-opts{display:grid;gap:.4rem}
+.xl-opt,.xl-tg{font:inherit;font-size:.92rem;line-height:1.3;text-align:left;display:flex;align-items:center;gap:.65rem;min-height:44px;padding:.35rem .8rem;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);cursor:pointer;transition:background .15s,border-color .15s}
+.xl-opt:hover,.xl-tg:hover{border-color:var(--teal-2)}
+.xl-opt[aria-pressed="true"],.xl-tg[aria-pressed="true"]{background:var(--teal-l);border-color:var(--teal);box-shadow:0 0 0 1px var(--teal);color:var(--navy);font-weight:600}
+.xl-seg{grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:4px;padding:4px;border-radius:14px;background:#eef3f7}
+.xl-seg .xl-opt{justify-content:center;text-align:center;min-height:44px;padding:.4rem .5rem;border:0;border-radius:10px;background:transparent;color:var(--muted);font-weight:500;line-height:1.2}
+.xl-seg .xl-opt:hover{color:var(--navy)}
+.xl-seg .xl-opt[aria-pressed="true"]{background:#fff;color:var(--teal);font-weight:700;box-shadow:0 1px 3px rgba(22,50,79,.22),0 0 0 1.5px var(--teal)}
+.xl-grid,.xl-multi{grid-template-columns:repeat(2,minmax(0,1fr))}
+.xl-multi1{grid-template-columns:minmax(0,1fr)}
+.xl-grid .xl-opt,.xl-multi .xl-tg{gap:.5rem;padding:.4rem .6rem;font-size:.88rem;overflow-wrap:break-word}
+.xl-multi>:last-child:nth-child(odd),.xl-grid>:last-child:nth-child(odd){grid-column:1/-1}
+@container xpl (min-width:40rem){
+  .xl-grid,.xl-multi,.xl-multi1{grid-template-columns:repeat(auto-fill,minmax(10.5rem,1fr))}
+  .xl-multi>:last-child:nth-child(odd),.xl-grid>:last-child:nth-child(odd){grid-column:auto}
+  .xl-seg{width:max-content;max-width:100%}
+  .xl-seg .xl-opt{padding:.4rem 1.1rem}
+}
+/* a long tick list in a closed group, with a count on the right */
+.xl-grp>summary{min-height:44px;padding:.2rem 0;font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);line-height:1.3}
+.xl-grp>summary::before{order:0}
+.xl-glab{flex:1}
+.xl-cnt{flex:none;padding:.15rem .6rem;border-radius:999px;background:var(--teal-l);color:var(--teal);font-size:.78rem;font-weight:700;letter-spacing:0;text-transform:none}
+.xl-grp[open]>summary{margin-bottom:.3rem}
+/* radio dot (stacked rows) and tick box (toggles) */
+.xl-stack .xl-opt::before,.xl-tg::before{content:"";flex:none;width:22px;height:22px;border:2px solid #9fb2c3;background:#fff center/14px no-repeat;transition:background-color .15s,border-color .15s}
+.xl-stack .xl-opt::before{border-radius:50%}
+.xl-tg::before{border-radius:6px}
+.xl-stack .xl-opt[aria-pressed="true"]::before{border-color:var(--teal);background-color:#fff;box-shadow:inset 0 0 0 4px #fff,inset 0 0 0 12px var(--teal)}
+.xl-tg[aria-pressed="true"]::before{border-color:var(--teal);background-color:var(--teal);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3.2L13 4.8' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.xl-ot{min-width:0}
+.xl-sel{position:relative}
+.xl-sel select{-webkit-appearance:none;appearance:none;width:100%;min-height:48px;padding:.5rem 2.4rem .5rem .85rem;font:inherit;font-size:.95rem;color:var(--navy);background:#fff;border:1.5px solid var(--line);border-radius:12px;text-overflow:ellipsis;cursor:pointer}
+.xl-sel select:hover{border-color:var(--teal-2)}
+.xl-sel .xl-chev{position:absolute;right:.8rem;top:50%;margin-top:-9px;color:var(--teal);pointer-events:none}
+
+/* slider: 44px hit area, light track, teal fill */
+.xl-range{-webkit-appearance:none;appearance:none;display:block;width:100%;height:44px;margin:0;background:transparent;cursor:pointer;--p:50%;touch-action:pan-y}
+.xl-range:focus{outline:none}
+.xl-range::-webkit-slider-runnable-track{height:8px;border-radius:99px;background:linear-gradient(90deg,var(--teal-2) 0,var(--teal-2) var(--p),#dde6ee var(--p))}
+.xl-range::-moz-range-track{height:8px;border-radius:99px;background:#dde6ee}
+.xl-range::-moz-range-progress{height:8px;border-radius:99px;background:var(--teal-2)}
+.xl-range::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:#fff;border:4px solid var(--teal);margin-top:-11px;box-shadow:0 2px 6px rgba(22,50,79,.3)}
+.xl-range::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:#fff;border:4px solid var(--teal);box-shadow:0 2px 6px rgba(22,50,79,.3)}
+.xl-range:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px #f2a541}
+.xl-range:focus-visible::-moz-range-thumb{box-shadow:0 0 0 4px #f2a541}
+
+/* verdict: coloured left bar and pill; tinted, no frame */
+.xl-res{padding:.8rem .95rem .85rem 1.15rem;border-radius:12px;background:var(--cl);box-shadow:inset 5px 0 0 var(--c)}
+.xl-state{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .6rem}
+.xl-pill{display:inline-flex;align-items:center;gap:.35rem;max-width:100%;padding:.22rem .7rem .22rem .55rem;border-radius:999px;background:var(--c);color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;line-height:1.25}
+.xl-pi{display:inline-flex;flex:none}
+.xl-vt{flex:1 1 100%;margin:.15rem 0 0;font-size:1.08rem;line-height:1.3;color:var(--navy)}
+.xl-text{margin:.5rem 0 0;font-size:.94rem;line-height:1.55;color:var(--ink)}
+.xl-text>:first-child{margin-top:0}.xl-text>:last-child{margin-bottom:0}
+.xl-text p{margin:.5rem 0 0}
+.xl-text ul,.xl-text ol{margin:.4rem 0 0;padding-left:1.15rem}.xl-text li{margin:.25rem 0}
+.xl-text strong,.xl-pane strong{color:var(--navy)}
+
+/* bars and tiles: compact two-column grid */
+.xl-glance{display:grid;gap:.8rem}
+.xl-bars,.xl-tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem .9rem}
+.xl-tiles{gap:.5rem}
+.xl-bar{display:grid;gap:.3rem}
+.xl-bar:last-child:nth-child(odd){grid-column:1/-1}
+.xl-bl{display:block;font-size:.82rem;line-height:1.25;color:var(--navy);font-weight:500}
+.xl-bl small{display:block;font-size:.75rem;color:var(--muted);font-weight:400}
+.xl-bt{display:block;height:9px;border-radius:99px;background:#e6edf3;overflow:hidden}
+.xl-bf{display:block;height:100%;width:100%;transform-origin:left;transform:scaleX(0);border-radius:99px;transition:transform .25s ease-out}
+.xl-b-pos .xl-bf{background:linear-gradient(90deg,#0b6664,#14a39f)}
+.xl-b-pos2 .xl-bf{background:linear-gradient(90deg,#2f6fb3,#5b9bd5)}
+.xl-b-neg .xl-bf{background:linear-gradient(90deg,#b3261e,#e5604f)}
+.xl-b-neg2 .xl-bf{background:linear-gradient(90deg,#9a6200,#e0a52e)}
+@media (prefers-reduced-motion:reduce){.xl-bf{transition:none}.xl-chip,.xl-opt,.xl-tg{transition:none}}
+.xl-tile{padding:.5rem .7rem .55rem;border-radius:10px;background:var(--cl);box-shadow:inset 4px 0 0 var(--c)}
+.xl-tile{padding-left:.95rem}
+.xl-tile span{display:block;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--c);line-height:1.3}
+.xl-tile b{display:block;margin-top:.1rem;font-size:.9rem;font-weight:600;line-height:1.3;color:var(--navy)}
+.xl-tile:last-child:nth-child(odd),.xl-tile.xl-wide{grid-column:1/-1}
+@container xpl (min-width:46rem){
+  .xl-bars,.xl-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* the picture drawn by a config (scale, centile chart, ladder, score strip) */
+.xl-vis:empty{display:none}
+.xl-vis-first{margin:0 0 .8rem}
+.xl-vis>svg.xp-svg{display:block;width:100%;max-width:520px;height:auto;margin:0 auto;padding:.3rem;border-radius:12px;background:#f6f8fa;cursor:default;user-select:none;-webkit-user-select:none}
+.xl-vis svg text{font-family:inherit;fill:#55626f}
+/* those SVG strings were drawn for the old dark card: recolour them here so evaluate() stays untouched */
+.xl-vis svg [fill="#223d59"]{fill:#dde6ee}
+.xl-vis svg rect[fill="#ff7b7b"]{fill:#c62828}
+.xl-vis svg line[stroke="#ff9a9a"]{stroke:#c62828}
+.xl-vis svg text[fill="#ff9a9a"]{fill:#c62828;font-weight:700}
+.xl-vis svg circle[fill="#0f2236"]{fill:#0b6664;stroke:#fff;filter:drop-shadow(0 1px 3px rgba(22,50,79,.45))}
+.xl-vis svg path[stroke="#2a4866"]{stroke:#cbd6e1}
+.xl-vis svg path[stroke="#5f7a96"]{stroke:#7d93a8}
+.xl-vis svg path[stroke="#ff9a76"]{stroke:#d4502a}
+.xl-vis svg path[stroke="#f2c14e"]{stroke:#c98a00}
+.xl-vis svg path[stroke="#5fd3a6"]{stroke:#1d9a6c}
+.xl-vis svg line[stroke="#c9d6e3"]{stroke:#7d93a8;opacity:1}
+.xl-vis svg text[fill="#dbe6f0"]{fill:#16324f;font-weight:600}
+/* DSM score strip */
+.xl-vis .xf-sum{position:static;display:flex;flex-wrap:wrap;gap:.2rem .9rem;align-items:baseline;padding:.65rem .9rem .65rem 1.1rem;border:0;border-radius:12px;background:var(--cl)!important;box-shadow:inset 5px 0 0 var(--c)}
+.xl-vis .xf-sum b{flex:1 1 100%;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.xl-vis .xf-sum span{font-size:.9rem;color:var(--ink)}
+.xl-vis .xf-sum strong{color:var(--navy)}
+.xl-vis .xf-sum small{flex:1 1 100%;font-size:.78rem;color:var(--muted)}
+/* side-effect ladder */
+.xpl .se-rf{margin:0 0 .6rem;padding:.55rem .75rem;border-radius:10px;border-left:4px solid #8a1712;background:#f8dcda;color:#7a1410;font-size:.9rem;line-height:1.4}
+.xpl .se-rf b{color:#8a1712}
+.xpl .se-ladder{list-style:none;margin:0;padding:0;display:grid;gap:.4rem}
+.xpl .se-ladder li{margin:0;padding:.55rem .75rem;border-radius:10px;border-left:4px solid var(--c);background:#fff!important;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line);font-size:.88rem;line-height:1.45;color:var(--ink);opacity:.8}
+.xpl .se-ladder li.cur{opacity:1;background:var(--cl)!important;border-color:var(--c)}
+.xpl .se-ladder li b{display:block;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;color:var(--c)}
+.xpl .se-ladder li span{color:var(--ink)}
+/* notes written inside a result */
+.xpl .db-w{margin:.6rem 0 0;padding:.1rem 0 .1rem .75rem;border-left:4px solid var(--c);color:var(--ink);font-size:.88rem;line-height:1.5}
+.xpl .xl-fold{margin:.4rem 0 0}
+.xpl .xl-fold>summary{min-height:44px}
+.xl-fold .db-w{margin:0 0 .3rem}
+.xpl .cd-info{margin-top:.6rem}
+
+/* patient / pharmacist: two closed dropdowns, one open at a time */
+.xl-two{display:grid;gap:.5rem}
+.xl-acc{display:grid}
+.xl-tab{font:inherit;font-size:.92rem;font-weight:600;line-height:1.25;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:.6rem;width:100%;min-height:52px;padding:.5rem .8rem;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--navy);cursor:pointer;transition:background .15s,border-color .15s}
+.xl-tab-pt{--b:#2f6fb3;--bl:#e8f0fa}
+.xl-tab-ph{--b:#0b6664;--bl:#e3f4f3}
+.xl-tab:hover{border-color:var(--b)}
+.xl-tab[aria-expanded="true"]{background:var(--bl);border-color:var(--b);box-shadow:0 0 0 1px var(--b)}
+.xl-tab .xl-chev{flex:none;color:var(--b);transition:transform .2s}
+.xl-tab[aria-expanded="true"] .xl-chev{transform:rotate(180deg)}
+.xl-pane{margin:.7rem 0 .2rem;padding:.1rem 0 .1rem .9rem;border-left:4px solid var(--b);font-size:.93rem;line-height:1.55}
+.xl-pane-pt{--b:#2f6fb3}
+.xl-pane-ph{--b:#0b6664}
+.xl-pane p{margin:0 0 .45rem}.xl-pane>div>:last-child{margin-bottom:0}
+.xl-pane ul{margin:0;padding-left:1.1rem}.xl-pane li{margin:.3rem 0}
+@container xpl (min-width:40rem){ .xl-two{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start} }
+
+/* sticky result strip: only while the verdict is still below the screen */
+.xl-strip{position:sticky;bottom:max(10px,env(safe-area-inset-bottom));z-index:5;display:flex;align-items:center;gap:.6rem;min-height:52px;margin:.6rem 0 0;padding:.45rem .8rem .45rem 1rem;border-radius:14px;background:var(--cl);box-shadow:inset 5px 0 0 var(--c),0 8px 22px -6px rgba(22,50,79,.4),0 0 0 1px rgba(22,50,79,.1);cursor:pointer}
+.xl-strip .xl-pill{flex:none}
+.xl-st{flex:1;font-size:.88rem;font-weight:600;line-height:1.25;color:var(--navy);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.xl-strip>.xl-chev{flex:none;color:var(--c)}
+
+/* keyboard focus: the same amber ring as the rest of the site */
+.xl-chip:focus-visible,.xl-opt:focus-visible,.xl-tg:focus-visible,.xl-tab:focus-visible,.xl-sel select:focus-visible,.xpl .xl-d>summary:focus-visible{outline:3px solid #f2a541;outline-offset:2px}
+
+/* narrow phones (320px): tighter, and the tab labels may need three lines */
+@media (max-width:360px){
+  .xpl{padding:.85rem .85rem .8rem}
+  .xl-res{padding-left:1rem}
+}
