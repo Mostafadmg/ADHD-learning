@@ -33,7 +33,7 @@ t('IR 10 mg BD -> tab: no table row, clinical judgement', function () {
   has(r, 'no row in the table'); has(r, 'between the 15 mg a day row (18 mg) and the 30 mg a day row (36 mg)'); has(r, 'clinical judgement');
 });
 t('IR 15 mg BD (30 a day) -> tab: matches the 30 row but not the shape', function () { has(C({ ird: 15, irn: '2', to: 'tab' }), 'matches the 30 mg a day row (36 mg), but that row is for three doses a day'); });
-t('IR 25 mg TDS -> tab: above the table', function () { var r = C({ ird: 25, irn: '3', to: 'tab' }); assert.strictEqual(r.badge, 'SmPC statement'); has(r, 'above the table'); has(r, 'licensed maximum of 72 mg'); });
+t('IR 25 mg TDS -> tab: above the table', function () { var r = C({ ird: 25, irn: '3', to: 'tab' }); assert.strictEqual(r.badge, 'SmPC statement'); has(r, 'above the table'); has(r, 'The licensed maximum of the tablet itself is 72 mg a day for adults'); });
 t('child 20 mg TDS -> tab 72 mg is above 54 mg', function () { var r = C({ who: 'child', ird: 20, irn: '3', to: 'tab' }); assert.strictEqual(r.tone, 'warn'); has(r, 'above the licensed maximum of 54 mg a day for children'); });
 t('Matoride three-row note at 72 mg', function () { has(C({ ird: 20, irn: '3', to: 'tab' }), 'Matoride XL'); });
 t('tab text says Matoride prints three rows and Delmosart unread', function () { var r = C({ ird: 5, irn: '3', to: 'tab' }); has(r, 'Matoride XL prints only the first three rows'); });
@@ -107,7 +107,8 @@ t('tab -> tab same SPS group', function () { var r = C({ from: 'tab', to: 'tab',
 t('cap -> cap same SPS group', function () { var r = C({ from: 'cap', to: 'cap', mr: '20' }); assert.strictEqual(r.badge, 'SPS equivalence'); has(r, 'sucrose content'); });
 t('tab <-> cap: no SPS/NICE/MHRA conversion (tablet to capsule also shows the one unnamed SmPC column)', function () {
   [C({ from: 'tab', to: 'cap', mr: '36' }), C({ from: 'cap', to: 'tab', mr: '20' })].forEach(function (r) { assert.strictEqual(r.tone, 'stop'); has(r, 'follow the specific dosage recommendations for each formulation'); has(r, 'frequent switching between products should be avoided'); });
-  assert.strictEqual(C({ from: 'tab', to: 'cap', mr: '36' }).badge, FOCUSIM); assert.strictEqual(C({ from: 'cap', to: 'tab', mr: '20' }).badge, 'No official conversion');
+  assert.strictEqual(C({ from: 'tab', to: 'cap', mr: '36' }).badge, 'No official conversion'); assert.strictEqual(C({ from: 'cap', to: 'tab', mr: '20' }).badge, 'No official conversion');
+  assert.strictEqual(C({ from: 'ambi', to: 'cap', mr: '20' }).badge, FOCUSIM);
 });
 t('Medikinet XL <-> capsule group: guideline, particular care', function () {
   [C({ from: 'mkxl', to: 'cap', mr: '20' }), C({ from: 'cap', to: 'mkxl', mr: '20' })].forEach(function (r) { assert.strictEqual(r.badge, 'Guideline (no numbers)'); assert.strictEqual(r.tone, 'warn'); has(r, 'not completely bioequivalent with the other four'); });
@@ -121,7 +122,7 @@ t('Anything with Equasym XL: do not switch', function () {
 t('products on no SPS list: no conversion', function () {
   [['ambi', 'mkxl'], ['mkxl', 'ambi'], ['kixel', 'tab'], ['tab', 'kixel'], ['tuz', 'cap'], ['addepta', 'tab'], ['ambi', 'cap']].forEach(function (p) {
     var r = C({ who: 'child', from: p[0], to: p[1], mr: String(p[0] === 'tab' || p[0] === 'kixel' ? 18 : (p[0] === 'tuz' ? 20 : 10)) });
-    assert.strictEqual(r.badge, p[1] === 'cap' ? FOCUSIM : 'No official conversion'); assert.strictEqual(r.tone, 'stop'); has(r, 'not on any SPS list'); has(r, 'prescribe methylphenidate MR products by brand');
+    assert.strictEqual(r.badge, p[1] === 'cap' && /^(tuz|ambi|addepta)$/.test(p[0]) ? FOCUSIM : 'No official conversion'); assert.strictEqual(r.tone, 'stop'); has(r, 'not on any SPS list'); has(r, 'prescribe methylphenidate MR products by brand');
   });
 });
 t('same non-group product is not a conversion', function () { assert.strictEqual(C({ from: 'mkxl', to: 'mkxl', mr: '20' }).badge, 'Same product'); });
@@ -241,7 +242,7 @@ t('Focusim XL MR column is shown for every move to the Ritalin XL-type capsules 
   has(C({ from: 'eqxl', to: 'cap', mr: '20' }), 'does not override the SPS advice not to switch Equasym XL');
 });
 t('badges for moves to the capsule group: Focusim badge only where SPS gives no rule; SPS wording wins elsewhere', function () {
-  assert.strictEqual(C({ from: 'tab', to: 'cap', mr: '36' }).badge, FOCUSIM); assert.strictEqual(S('tab', 'cap').head.indexOf('Red: no SPS, NICE or MHRA conversion') === 0, true);
+  assert.strictEqual(C({ from: 'tab', to: 'cap', mr: '36' }).badge, 'No official conversion'); assert.strictEqual(C({ from: 'ambi', to: 'cap', mr: '20' }).badge, FOCUSIM); assert.strictEqual(S('tab', 'cap').head.indexOf('Red: no SPS, NICE or MHRA conversion') === 0, true);
   assert.strictEqual(C({ from: 'mkxl', to: 'cap', mr: '20' }).badge, 'Guideline (no numbers)'); assert.strictEqual(C({ from: 'eqxl', to: 'cap', mr: '20' }).badge, 'No official conversion');
   assert.strictEqual(C({ from: 'cap', to: 'tab', mr: '20' }).badge, 'No official conversion');
 });
@@ -415,8 +416,145 @@ t('quiz: reversed-table stem, Focusim clause corrected', function () {
   assert.ok(stem && /^A colleague reverses the Concerta XL table row 10 mg three times a day → 36 mg and says/.test(stem.q), 'stem'); assert.strictEqual(stem.o[stem.a], 'Worked out from the SmPC table (not official)');
   var j = all.map(function (x) { return x.q + ' ' + x.o.join(' ') + ' ' + x.e; }).join(' ');
   assert.ok(j.indexOf('their table has IR rows only') < 0 && j.indexOf('Nothing converts a tablet to a capsule') < 0 && j.indexOf('but not for modified-release to IR or between different release designs') < 0, 'old absolute wording');
-  var l1 = Q.m5x_mph_l1[0]; assert.ok(/only modified-release to modified-release rule is one unnamed column in the Focusim XL SmPC/.test(l1.o[l1.a]));
+  var l1 = Q.m5x_mph_l1[0]; assert.ok(/the only dose rule printed in an SmPC is one unnamed column in the Focusim XL SmPC/.test(l1.o[l1.a]));
   assert.ok(/The Focusim XL table does have an MR column with the same milligrams/.test(l1.e) && /names no product/.test(l1.e));
+});
+
+/* =====================================================================================================================
+   Second-pass reviewer findings, 1 Nov 2026 (each assertion below FAILS on the earlier behaviour). Sources re-read the same day:
+   emc SmPCs (Medikinet XL 313, Ambinet XL 102268, Concerta XL 314, Kixel XL 101341, Focusim XL 100558, Equasym XL 3887,
+   Addepta XL 102481, Tuzulby 101828, Matoride XL 3304, Viatris tablets 8724, Medikinet tablets 328), SPS (28 Aug 2025).
+   ===================================================================================================================== */
+var REASON = 'could lead to a faster release of the total amount of active substance';
+
+/* P2-0 (major) the Medikinet XL and Ambinet XL SmPCs (4.5) do give the reason for the acid-reducing medicines */
+t('P2-0: acid-reducing medicines: the lessons, release explorer and lab give the SmPC reason, never "does not say why"', function () {
+  var prod = plainHtml(lesson('m5-products')), all = plainHtml(HTML), rel = readJs('m5-release.js'), lab = readJs('m5-lab-mph.js');
+  assert.ok(all.indexOf('It does not say why') < 0 && all.indexOf('They do not say why') < 0, 'index.html still says the SmPC gives no reason');
+  assert.ok(prod.indexOf('The SmPC gives the reason: taken together, they ' + REASON) > 0, 'Medikinet XL card');
+  assert.ok(all.indexOf('They give the reason: taken together, they ' + REASON) > 0, 'rules for every product');
+  assert.ok(all.indexOf('Ask about over-the-counter antacids as well as prescribed PPIs and H2 blockers') > 0);
+  assert.ok(rel.indexOf('It does not say why') < 0 && rel.indexOf('gives no\n   mechanism') < 0 && rel.indexOf('gives no mechanism') < 0, 'm5-release.js');
+  assert.ok(rel.indexOf('The SmPC gives the reason: taken together, they ' + REASON) > 0 && rel.indexOf('over-the-counter antacids') > 0);
+  assert.ok(lab.indexOf('together they ' + REASON) > 0);
+  ['mkxl', 'ambi'].forEach(function (to) {
+    [C({ ird: 10, irn: '2', to: to }), C({ from: 'tab', to: to, mr: '36' }), C({ who: 'child', from: 'cap', to: to, mr: '20' })].forEach(function (r) {
+      has(r, 'Not with a PPI, H2 blocker or antacid (contraindications)'); has(r, 'together they ' + REASON); has(r, 'Ask about over-the-counter antacids too');
+    });
+  });
+});
+
+/* P2-1 (major) above the Concerta XL-type table: the tablet's own licensed maximum is for the age, and the IR total is not "above 72 mg" */
+t('P2-1: IR total above the Concerta XL-type table names the tablet maximum for the age (54 mg child, 72 mg adult), never 72 mg for a child', function () {
+  ['tab', 'kixel'].forEach(function (to) {
+    var nm = to === 'tab' ? 'Concerta XL' : 'Kixel XL';
+    var c = C({ who: 'child', ird: 25, irn: '3', to: to });
+    has(c, 'The ' + nm + ' table stops at 60 mg a day of IR (20 mg three times a day gives 72 mg once daily). Your IR total of 75 mg a day is above the table.');
+    has(c, 'The licensed maximum of the tablet itself is 54 mg a day for children'); not(c, 'maximum of the tablet itself is 72'); not(c, 'above it and above the licensed maximum of 72');
+    var a = C({ who: 'adult', ird: 30, irn: '3', to: to });
+    has(a, 'Your IR total of 90 mg a day is above the table'); has(a, 'The licensed maximum of the tablet itself is 72 mg a day for adults'); not(a, 'for children');
+  });
+});
+
+/* P2-2 (major) six products are children only: the recap bullet, the flashcard and the old quiz explanation list them all */
+t('P2-2: all six children-only methylphenidate products are named in the recap, the flashcard and the licence quiz', function () {
+  var six = ['Medikinet tablets', 'Equasym XL', 'Addepta XL', 'Tuzulby', 'Matoride XL'];
+  var recap = HTML.slice(HTML.indexOf('data-title="Recap and practise" data-min="19"'));
+  var bullet = recap.slice(recap.indexOf('Dose by product, not by drug.'), recap.indexOf('</li>', recap.indexOf('Dose by product, not by drug.')));
+  assert.ok(bullet.indexOf('six products are children only') > 0 && bullet.indexOf('generic IR tablets') > 0, bullet);
+  six.forEach(function (p) { assert.ok(bullet.indexOf(p) > 0, 'recap bullet lacks ' + p); });
+  var q = recap.indexOf('Which methylphenidate products are children-only?'), card = recap.slice(q, recap.indexOf('Tap to flip back', q));
+  assert.ok(card.indexOf('Six:') > 0 && card.indexOf('Viatris generic IR tablets') > 0, card);
+  six.forEach(function (p) { assert.ok(card.indexOf(p) > 0, 'flashcard lacks ' + p); });
+  assert.ok(card.indexOf('not started') > 0 && card.indexOf('other than Matoride XL') > 0, 'Matoride XL nuance');
+  assert.ok(card.indexOf('Medikinet tablets and Equasym XL: not licensed in adults') < 0);
+  var Q5 = readJs('data-quiz-m5.js'), i = Q5.indexOf('Which methylphenidate product is licensed for adults?'), e = Q5.slice(i, Q5.indexOf('\n', i));
+  ['Addepta XL', 'Tuzulby', 'Matoride XL', 'Viatris generic tablets'].forEach(function (p) { assert.ok(e.indexOf(p) > 0, 'quiz explanation lacks ' + p); });
+  assert.ok(e.indexOf('bioequivalent tablets other than Matoride XL') > 0);
+});
+
+/* P2-3 (minor) the Focusim chip appears only where the chosen daily dose has a row in the Focusim XL MR column */
+t('P2-3: the Focusim badge needs a row (10, 20, 30, 40 or 60 mg); every other dose stays "No official conversion" and the row says so', function () {
+  var opt = conv.fields.filter(function (x) { return x.id === 'mr'; })[0].options, rows = [10, 20, 30, 40, 60], seen = { yes: 0, no: 0 };
+  ['adult', 'child'].forEach(function (w) {
+    ['tab', 'kixel', 'ambi', 'addepta', 'tuz'].forEach(function (f) {
+      opt({ from: f, who: w }).forEach(function (o) {
+        var D = +o.v, r = C({ who: w, from: f, to: 'cap', mr: o.v }), inSet = rows.indexOf(D) >= 0;
+        assert.strictEqual(r.badge, inSet ? FOCUSIM : 'No official conversion', w + ' ' + f + ' ' + D + ' -> cap');
+        has(r, 'Only the Focusim XL SmPC (Table 1, “MR” column) prints a modified-release rule'); has(r, 'has no row for any other dose');
+        if (inSet) { not(r, 'The Focusim XL column has no row for'); seen.yes++; } else { has(r, 'The Focusim XL column has no row for ' + D + ' mg.'); seen.no++; }
+      });
+    });
+  });
+  assert.ok(seen.yes >= 10 && seen.no >= 8, JSON.stringify(seen));
+  var r36 = C({ from: 'tab', to: 'cap', mr: '36' }); assert.strictEqual(r36.tone, 'stop'); has(r36, 'no SPS, NICE or MHRA conversion');
+  /* the second tab has no dose, so its status row never names the Focusim table as the status */
+  ['tab', 'kixel', 'ambi', 'addepta', 'tuz'].forEach(function (f) { var s = S(f, 'cap'); has(s, 'Status of the rule No official conversion'); not(s, 'Status of the rule SmPC table'); has(s, 'has no row for any other dose'); });
+  assert.ok(plainHtml(lesson('m5-switch')).indexOf('One table column that gives a modified-release rule for 10, 20, 30, 40 and 60 mg but names no product. It is not a conversion for other doses.') > 0, 'badge key');
+  assert.ok(plainHtml(lesson('m5-switch')).indexOf('for 10, 20, 30, 40 and 60 mg only, and it names no product') > 0, 'no-script table');
+});
+
+/* P2-4 (minor) "the only MR to MR rule" is over-absolute: SPS prints same-dose swaps inside its two groups */
+t('P2-4: the quiz key and the flashcard say the only SmPC dose rule, and mention the SPS same-dose swaps', function () {
+  var Q = {}; vm.runInNewContext(readJs('data-quiz-m5-mph.js'), { window: { QUIZ: Q }, __mixOpts: function (a) { return a; } });
+  var l1 = Q.m5x_mph_l1[0], key = l1.o[l1.a];
+  assert.ok(key.indexOf('the only modified-release to modified-release rule is one unnamed column') < 0, 'old absolute wording');
+  assert.ok(key.indexOf('Between different release designs there is no SPS, NICE or MHRA conversion') > 0 && key.indexOf('SPS allows same-dose swaps only inside its two bioequivalent groups') > 0, key);
+  var recap = HTML.slice(HTML.indexOf('data-title="Recap and practise" data-min="19"')), q = recap.indexOf('have an official conversion table or rule?'), card = recap.slice(q, recap.indexOf('Tap to flip back', q + 200));
+  assert.ok(card.indexOf('The only modified-release to modified-release rule is one unnamed') < 0, 'old flashcard wording');
+  assert.ok(card.indexOf('SPS allows same-dose swaps only inside its two bioequivalent groups') > 0 && card.indexOf('the only SmPC dose rule is one unnamed “MR” column in the Focusim XL SmPC, for 10, 20, 30, 40 and 60 mg') > 0, card);
+});
+
+/* P2-5 (minor) adults cannot take Medikinet XL or Ambinet XL 5 mg a day in two doses */
+t('P2-5: no adult 5 mg a day for Medikinet XL or Ambinet XL (children keep it); the adult 10 mg SPS line is explained', function () {
+  var opt = conv.fields.filter(function (x) { return x.id === 'mr'; })[0].options;
+  ['mkxl', 'ambi'].forEach(function (f) {
+    assert.strictEqual(opt({ from: f, who: 'adult' }).map(function (x) { return x.v; }).join(), '10,20,30,40,50,60', f + ' adult');
+    assert.strictEqual(opt({ from: f, who: 'child' }).map(function (x) { return x.v; }).join(), '5,10,20,30,40,50,60', f + ' child');
+  });
+  var a = C({ from: 'mkxl', to: 'ir', mr: '10' });
+  has(a, 'Medikinet XL 10 mg a day (taken as two doses, morning and lunchtime)'); has(a, 'SPS words this as once daily; adults take Medikinet XL as two doses.'); assert.strictEqual(a.badge, 'SPS equivalence');
+  not(C({ who: 'child', from: 'mkxl', to: 'ir', mr: '10' }), 'SPS words this as once daily'); not(C({ from: 'eqxl', to: 'ir', mr: '10' }), 'SPS words this as once daily');
+  has(C({ who: 'child', from: 'mkxl', to: 'ir', mr: '5' }), 'IR 5 mg once a day');
+});
+
+/* P2-6 (minor) a dose no capsule can make is never a green tile */
+t('P2-6: Equasym XL and Addepta XL totals that 10, 20 and 30 mg capsules cannot make are amber and name the nearest strengths', function () {
+  ['eqxl', 'addepta'].forEach(function (p) {
+    var nm = p === 'eqxl' ? 'Equasym XL' : 'Addepta XL';
+    [[5, '3', 15, 10, 20], [15, '3', 45, 40, 50]].forEach(function (d) {
+      var r = C({ who: 'child', ird: d[0], irn: d[1], to: p });
+      assert.strictEqual(r.tone, 'warn', nm + ' ' + d[2]); has(r, nm + ' ' + d[2] + ' mg once a day'); has(r, 'before breakfast (no capsule makes ' + d[2] + ' mg: nearest ' + d[3] + ' mg or ' + d[4] + ' mg, or another product)');
+      has(r, 'cannot be made up exactly'); assert.ok(r.chart.title.indexOf('no capsule makes') < 0, 'chart title stays short');
+    });
+    var ok = C({ who: 'child', ird: 10, irn: '2', to: p }); assert.strictEqual(ok.tone, 'ok'); not(ok, 'no capsule makes');
+    var over = C({ who: 'child', ird: 25, irn: '3', to: p }); not(over, 'no capsule makes'); has(over, 'above the licensed maximum');
+  });
+  ['child', 'adult'].forEach(function (w) {
+    [5, 10, 15, 20, 25, 30].forEach(function (d) { ['2', '3'].forEach(function (n) {
+      ['eqxl', 'addepta'].forEach(function (p) { var r = C({ who: w, ird: d, irn: n, to: p }); if (d * +n % 10 !== 0) assert.notStrictEqual(r.tone, 'ok', w + ' IR ' + d + ' x' + n + ' -> ' + p); });
+    }); });
+  });
+});
+
+/* P2-7 (minor) the colour legend describes every case the tab shows */
+t('P2-7: legend and lesson key: Green = an official rule exists, Amber = particular care or no source, Red = no conversion or do not switch', function () {
+  assert.ok(/Green<\/b>: an official rule exists \(an SmPC table or statement from IR, or a swap inside an SPS group\)/.test(safe.intro), safe.intro);
+  assert.ok(/Amber<\/b>: possible with particular care, an individualised approach \(any modified-release to IR; Medikinet XL and the Ritalin XL-type capsules\), or no source \(IR brand to IR brand\)/.test(safe.intro));
+  assert.ok(/Red<\/b>: no conversion, or do not switch/.test(safe.intro) && /not whether a switch suits this person/.test(safe.intro));
+  var sw = plainHtml(lesson('m5-switch'));
+  assert.ok(sw.indexOf('Green An official rule exists: an SmPC table or statement from IR, or a swap inside an SPS group') > 0, 'lesson Green key');
+  assert.ok(sw.indexOf('Amber Particular care, or no source: Medikinet XL to or from the Ritalin XL-type capsules; any MR to IR; IR brand to IR brand') > 0, 'lesson Amber key');
+  /* the colours the tab really shows match the legend, for every pair */
+  var ks = ['ir', 'tab', 'cap', 'mkxl', 'ambi', 'eqxl', 'addepta', 'tuz', 'kixel'], g = 0, a = 0, r = 0;
+  ks.forEach(function (f) { ks.forEach(function (to) {
+    if (f === to && f !== 'ir' && f !== 'tab' && f !== 'cap') return;
+    var tone = S(f, to).tone;
+    var amber = to === 'ir' || (f === 'mkxl' && to === 'cap') || (f === 'cap' && to === 'mkxl');
+    var green = (f === 'ir' && to !== 'ir') || (f === to && f !== 'ir');
+    if (green) { assert.strictEqual(tone, 'ok', f + '>' + to); g++; } else if (amber) { assert.strictEqual(tone, 'warn', f + '>' + to); a++; } else { assert.strictEqual(tone, 'stop', f + '>' + to); r++; }
+  }); });
+  assert.ok(g >= 10 && a >= 9 && r >= 30, [g, a, r].join());
 });
 
 console.log(n - fails + '/' + n + ' passed');

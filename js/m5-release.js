@@ -5,8 +5,8 @@
    are relative. Timings and durations in the text, and the "lasts" bars, are from the SmPCs and SPS (28 Aug 2025).
    Corrected 1 Nov 2026 against the SmPCs, SPS and MHRA: IR lasts "up to about 4 hours"; the second peak of the Ritalin XL
    group is 5-7 hours after the dose (SPS rounds it to 4); Concerta XL's 12 hours comes from the children's studies and
-   its 22:78 split from SPS; the acid-reducing medicines are contraindications in the Medikinet XL SmPC, which gives no
-   mechanism; adults take Medikinet XL as two doses, so it has an adult two-dose mode like the IR "Add a 12:00 dose".
+   its 22:78 split from SPS; the acid-reducing medicines are contraindications in the Medikinet XL SmPC, which gives the
+   mechanism in section 4.5 (faster release of the whole dose); adults take Medikinet XL as two doses, so it has an adult two-dose mode like the IR "Add a 12:00 dose".
    Markup: an empty [data-rp] box; this script builds everything inside it. */
 (function () {
   'use strict';
@@ -60,7 +60,7 @@
         { k: 't', h: 6.4, t: 'Lunchtime dose at 12:00', d: 'The second half of the daily amount starts a second round of the same shape.' },
         { k: 'end', t: 'Gone about 8 hours after lunch', d: 'The lunchtime dose fades around 20:00.' }
       ],
-      practice: ['Must be taken with or after food. On an empty stomach it is absorbed much faster and release may not be sustained, so the peak is higher and the effect shorter.', 'Children take one dose with or after breakfast. Adults take it as two doses, morning and lunchtime, with or after meals: try the adult pattern above.', 'A PPI, an H2 blocker, an antacid and pronounced anacidity of the stomach are listed as contraindications in the SmPC. It does not say why.'],
+      practice: ['Must be taken with or after food. On an empty stomach it is absorbed much faster and release may not be sustained, so the peak is higher and the effect shorter.', 'Children take one dose with or after breakfast. Adults take it as two doses, morning and lunchtime, with or after meals: try the adult pattern above.', 'A PPI, an H2 blocker, an antacid and pronounced anacidity of the stomach are listed as contraindications in the SmPC. The SmPC gives the reason: taken together, they could lead to a faster release of the total amount of active substance, so the dose may come out faster than designed. Ask about over-the-counter antacids as well as prescribed PPIs and H2 blockers.'],
       brands: 'Ambinet XL has the same 50:50, with-food design but is on no SPS list, so no source says the two can be swapped: keep the person on the brand they started. Medikinet XL is not fully bioequivalent with the Ritalin XL group, so switch between them only with particular care.',
       strengths: '5, 10, 20, 30, 40, 50, 60 mg.'
     },
