@@ -77,6 +77,9 @@
 #m6 .fx.fx-flat .fx-panel{box-shadow:none;border:1px solid var(--line)}
 #m6 .fx-panel .fx-h{font-size:1.15rem}
 
+/* a picture walkthrough inside a folded section sits directly on it: no second card */
+#m6 .mx-b figure.wt.wt-step{border:0;box-shadow:none;background:none;padding:0}
+
 /* two-column compact tiles for short lists (eight areas, six options, six items) */
 #m6 .risk-grid.rg-2{grid-template-columns:repeat(2,minmax(0,1fr))}
 
