@@ -86,10 +86,10 @@
      shape:'<p><strong>Immediate release:</strong> dexamfetamine tablets are absorbed within hours and are usually given in divided doses. The SmPC gives a Tmax of about 1.5 h and a plasma half-life of about 10 h, and the dose is given once or twice daily (e.g. breakfast and lunch). The SmPC does not state a duration of effect: the curve here shows the clinical effect of each dose schematically (about 5–6 h), not the plasma level, which falls more slowly. The SPC advises that doses should not be taken too late after lunchtime, to avoid disturbing sleep. The usual maximum in children is 20 mg/day, with up to 40 mg in some older children (SPC).</p>'},
     {id:'ato', chip:'Atomoxetine', drug:'ato', flat:true, brands:['Atomoxetine capsules / oral solution (Strattera and generics)'],
      doses:[10,18,25,40,60,80,100], def:40, childMax:0, adultMax:100,
-     shape:'<p><strong>Non-stimulant, steady effect:</strong> atomoxetine is a selective noradrenaline reuptake inhibitor. Plasma levels still rise and fall each day, but the clinical benefit builds gradually over <em>weeks</em> and is not tied to a daily peak. So there is no "wearing off" curve: the model shows a flat line once steady effect is reached. It can be given once daily in the morning or split into two doses (morning and late afternoon or early evening) if not tolerated or not effective once daily (SPC). It is not a controlled drug.</p>'},
+     shape:'<p><strong>Non-stimulant, no daily curve:</strong> atomoxetine is a selective noradrenaline reuptake inhibitor. Plasma levels still rise and fall each day. NICE says non-stimulants can take longer to have an effect than stimulants, but the SmPC gives no time to full effect and no daily peak or trough of clinical effect, so the model shows a flat line only because there is nothing to draw. It can be given once daily in the morning or split into two doses (morning and late afternoon or early evening) if not tolerated or not effective once daily (SPC). It is not a controlled drug.</p>'},
     {id:'gua', chip:'Guanfacine (Intuniv)', drug:'gua', flat:true, brands:['Intuniv prolonged-release tablets'],
      doses:[1,2,3,4,5,6,7], def:2, childMax:4, adultMax:0,
-     shape:'<p><strong>Non-stimulant α2A agonist, steady effect:</strong> guanfacine prolonged-release is taken once daily (morning or evening) and titrated in 1 mg steps no more often than weekly. Benefit builds over weeks rather than hours, so the model shows a flat line. Unlike stimulants it <em>lowers</em> blood pressure and heart rate, and it commonly causes sleepiness. It must not be stopped abruptly because of rebound hypertension: taper it (SPC). It is not a controlled drug.</p>'}
+     shape:'<p><strong>Non-stimulant α2A agonist, no daily curve:</strong> guanfacine prolonged-release is taken once daily (morning or evening) and titrated in 1 mg steps no more often than weekly. NICE says non-stimulants can take longer to have an effect than stimulants, but the SmPC gives no time to full effect and no daily peak or trough of clinical effect, so the model shows a flat line only because there is nothing to draw. Unlike stimulants it <em>lowers</em> blood pressure and heart rate, and it commonly causes sleepiness. It must not be stopped abruptly because of rebound hypertension: taper it (SPC). It is not a controlled drug.</p>'}
   ];
   var G={}; GROUPS.forEach(function(g){ G[g.id]=g; });
   var TIMES=[]; for(var m=360;m<=570;m+=30) TIMES.push(m);
@@ -240,7 +240,7 @@
       }).join('');
       var btn=$('.dy-addbtn'), note=$('.dy-addnote');
       btn.disabled = !k || S.add.length>=2;
-      note.textContent = !k ? 'Top-ups do not apply: '+G[S.g].chip.replace(/ \(.*/,'')+' gives a steady effect. Combining with a stimulant is a specialist decision.' : (S.add.length>=2 ? 'Maximum of two top-ups in this model.' : '');
+      note.textContent = !k ? 'Top-ups do not apply: '+G[S.g].chip.replace(/ \(.*/,'')+' has no daily curve in this model. Combining with a stimulant is a specialist decision.' : (S.add.length>=2 ? 'Maximum of two top-ups in this model.' : '');
       var sl='';
       if(k){ sl = G[S.g].drug==='mph' ? 'Ritalin and Medikinet tablet SmPCs (4.2): the last dose should, in general, not be given within 4 hours before bedtime.'
         : (S.g==='lis' ? 'Elvanse SPC: afternoon doses should be avoided because of the potential for insomnia. Dexamfetamine SPC: doses should not be taken too late after lunchtime, to avoid disturbing sleep.' : 'Dexamfetamine SPC: doses should not be taken too late after lunchtime, to avoid disturbing sleep.'); }
@@ -296,7 +296,7 @@
       s+='<text x="'+(bx-5)+'" y="'+(PT+15)+'" class="dy-zt" fill="#6b4fa3" text-anchor="end">BED '+hhmm(bed)+'</text>';
       if(c.flat){
         s+='<path d="M'+X(300)+','+Y(0.7)+'L'+X(1440)+','+Y(0.7)+'" stroke="#1d7a3e" stroke-width="4" stroke-linecap="round" fill="none"/>';
-        s+='<text x="'+(ML+PW/2)+'" y="'+(Y(0.7)-12)+'" class="dy-ax" text-anchor="middle" fill="#16324f">steady effect after several weeks</text>';
+        s+='<text x="'+(ML+PW/2)+'" y="'+(Y(0.7)-12)+'" class="dy-ax" text-anchor="middle" fill="#16324f">no daily peak stated (SmPC)</text>';
       } else {
         var pth=function(a){ var d='',step=10; for(var j=0;j<N;j+=step){ d+=(j?'L':'M')+X(minOf(j)).toFixed(1)+','+Y(a[j]).toFixed(1); } d+='L'+X(minOf(N-1)).toFixed(1)+','+Y(a[N-1]).toFixed(1); return d; };
         if(c.doses.length>1) c.doses.forEach(function(d){ s+='<path d="'+pth(d.a)+'" stroke="'+d.col+'" stroke-width="2.4" stroke-dasharray="6 4" fill="none"/>'; });
@@ -311,7 +311,7 @@
       s+='<rect x="'+tgx+'" y="2" width="'+tw+'" height="22" rx="11" fill="#16324f"/><text x="'+(tgx+tw/2)+'" y="17.5" class="dy-ctag" text-anchor="middle" fill="#fff">'+hhmm(S.time)+'</text>';
       svg.setAttribute('viewBox','0 0 '+W+' '+H); svg.setAttribute('width',W); svg.setAttribute('height',H);
       svg.innerHTML=s;
-      var sm=c.flat?'Flat steady effect over 24 hours.':'Combined level is in the window for about '+c.cover.toFixed(1)+' hours'+(c.segs.length?', from '+hhmm(minOf(c.segs[0][0]))+' to '+hhmm(minOf(c.segs[c.segs.length-1][1])):'')+'. Peak at '+hhmm(minOf(c.pkI))+'.';
+      var sm=c.flat?'Flat line: the SmPC gives no daily peak or length of effect.':'Combined level is in the window for about '+c.cover.toFixed(1)+' hours'+(c.segs.length?', from '+hhmm(minOf(c.segs[0][0]))+' to '+hhmm(minOf(c.segs[c.segs.length-1][1])):'')+'. Peak at '+hhmm(minOf(c.pkI))+'.';
       svg.setAttribute('aria-label','Day profile chart. '+sm+' Time marker at '+hhmm(S.time)+'.');
     }
     function caption(){
@@ -322,7 +322,7 @@
     /* ----- state at the time marker ----- */
     function stateAt(){
       var g=G[S.g], c=curves;
-      if(c.flat) return {k:'steady',tone:'ok',badge:'Steady state',title:'Steady 24-hour effect'};
+      if(c.flat) return {k:'steady',tone:'ok',badge:'No daily curve',title:'No daily peak stated in the SmPC'};
       var L=lvl(S.time), Lp=lvl(S.time-15), first=S.t;
       if(S.time<first) return {k:'before',tone:'low',badge:'Before dose',title:'Before the morning dose: untreated baseline'};
       if(L>=TOO) return {k:'too',tone:'danger',badge:'Too much',title:'Combined level in the "too much" zone'};
@@ -334,7 +334,7 @@
     }
     function nowText(st){
       var g=G[S.g], c=curves, t=hhmm(S.time), name=g.brands[S.b].replace(/ \(.*\)$/,'');
-      if(st.k==='steady') return '<p><strong>'+t+':</strong> '+(g.id==='ato'?'atomoxetine':'guanfacine')+' is not expected to give a daily peak or trough of effect once established. Benefit builds over several weeks, so symptoms are similar morning, afternoon and evening, including before school and at bedtime. There is no wearing-off and no need for afternoon top-ups.</p>';
+      if(st.k==='steady') return '<p><strong>'+t+':</strong> '+(g.id==='ato'?'atomoxetine':'guanfacine')+' has no release curve in this model. The SmPC gives no daily peak or trough of clinical effect, so the chart cannot show how symptoms change across the day: ask the person, including before school or work and at bedtime. NICE says non-stimulants can take longer to have an effect than stimulants, and the SmPC gives no time to full effect.</p>';
       var since=(S.time-S.t)/60, base='';
       if(st.k==='before') base='No medicine yet: symptoms are at their untreated level. Getting up, dressed and out of the door can be the hardest part of the day for some families.';
       else if(st.k==='build') base=since.toFixed(1).replace('.0','')+' h after the morning dose, the level is rising but not yet in the window. Effect is just starting.';
@@ -347,7 +347,7 @@
     }
     function addRisk(){
       var g=G[S.g], each=[], rest=[];
-      if(!S.add.length){ rest.push(g.flat?'<p>Not applicable to a steady-effect non-stimulant.</p>':'<p>No top-ups added. NICE suggests considering an MR methylphenidate preparation in the morning plus an IR dose at another time of day to extend the duration of effect (NG87 1.7.22). Use <em>Add a top-up</em> to see the effect.</p>'); return {each:each,rest:rest}; }
+      if(!S.add.length){ rest.push(g.flat?'<p>Not applicable to a non-stimulant in this model.</p>':'<p>No top-ups added. NICE suggests considering an MR methylphenidate preparation in the morning plus an IR dose at another time of day to extend the duration of effect (NG87 1.7.22). Use <em>Add a top-up</em> to see the effect.</p>'); return {each:each,rest:rest}; }
       var bed=bedOf();
       S.add.forEach(function(a,i){
         var gap=(bed-a.t)/60, gs=gap.toFixed(1).replace('.0','');
@@ -363,7 +363,7 @@
     }
     function patientText(st){
       var g=G[S.g];
-      if(g.flat) return g.id==='ato'?'<p>Take at the same time each day, with or without food. Benefit builds over several weeks, so it should not be judged in the first few days. Common early effects include stomach upset, reduced appetite, nausea and sleepiness, which often settle. Report low mood, agitation or any thoughts of self-harm straight away. Seek urgent help for jaundice or dark urine (rare liver injury).</p>':'<p>Take once a day at the same time, and avoid taking it with a high-fat meal or grapefruit juice (SPC). Sleepiness, tiredness, dizziness on standing and lower blood pressure are common, especially early on and after dose increases. <strong>Do not stop suddenly</strong>, because blood pressure can rebound; ask before stopping.</p>';
+      if(g.flat) return g.id==='ato'?'<p>Take at the same time each day, with or without food. It can take longer to start working than a stimulant, so do not judge it, or stop it, in the first few days. Common early effects include stomach upset, reduced appetite, nausea and sleepiness, which often settle. Report low mood, agitation or any thoughts of self-harm straight away. Seek urgent help for jaundice or dark urine (rare liver injury).</p>':'<p>Take once a day at the same time, and avoid taking it with a high-fat meal or grapefruit juice (SPC). Sleepiness, tiredness, dizziness on standing and lower blood pressure are common, especially early on and after dose increases. <strong>Do not stop suddenly</strong>, because blood pressure can rebound; ask before stopping.</p>';
       var p={before:'Mornings before the dose may be chaotic: plan routines, and give the dose early enough that it is working by the start of school or work.',
         build:'The first hour can feel no different. Breakfast before or with the dose helps appetite later in the day.',
         'in':'Best time for demanding tasks: lessons, exams, driving, homework. Lunch appetite is often reduced at this point, so offer a good breakfast and a snack after school.',
@@ -409,7 +409,7 @@
     }
     function tiles(){
       var c=curves, g=G[S.g], bl=lvl(bedOf());
-      if(c.flat) return [{label:'Hours of cover',value:'24 h (steady)',tone:'ok'},{label:'Onset of benefit',value:'Builds over weeks',tone:'info'},{label:g.id==='gua'?'BP / HR':'Controlled drug',value:g.id==='gua'?'Lowers: monitor':'No',tone:g.id==='gua'?'warn':'info'}];
+      if(c.flat) return [{label:'Hours of cover',value:'Not stated (SmPC)',tone:'info'},{label:'Onset of benefit',value:'Can take longer (NICE)',tone:'info'},{label:g.id==='gua'?'BP / HR':'Controlled drug',value:g.id==='gua'?'Lowers: monitor':'No',tone:g.id==='gua'?'warn':'info'}];
       return [{label:'Time in window',value:'≈ '+c.cover.toFixed(1)+' h',tone:c.cover>=10?'ok':c.cover>=7?'mid':'warn'},
               {label:'In window',value:c.segs.length?hhmm(minOf(c.segs[0][0]))+'–'+hhmm(minOf(c.segs[c.segs.length-1][1])):'never',tone:'info'},
               {label:'Level at bedtime',value:bl>=WLO?'Still active':bl>0.15?'Some effect':'Low',tone:bl>=WLO?'high':bl>0.15?'warn':'ok'}];

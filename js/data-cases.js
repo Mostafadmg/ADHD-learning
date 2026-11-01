@@ -193,7 +193,7 @@ david:{title:'David, 21: autism, and three stimulants not tolerated', img:'image
  summary:'ADHD and autism. Methylphenidate (Concerta XL, then Medikinet XL): appetite and weight loss, anxiety. Lisdexamfetamine: insomnia and sensory overload. Dexamfetamine: big mood swings. He is reluctant to try another stimulant but is still struggling at work.', start:'a', nodes:{
  a:{text:'Each trial was at an adequate dose, titrated slowly because of his autism. He asks what is left.', ask:'What is the most appropriate next step?', choices:[
   C('Offer atomoxetine, titrated slowly with closer monitoring, after explaining how it differs', 'good',
-    'NICE offers atomoxetine to adults who cannot tolerate lisdexamfetamine or methylphenidate (1.7.15), and autism means slower titration and more monitoring (1.7.28). It is not a controlled drug and works differently. Counsel that the effect builds over weeks, not days (clinical practice), and on the SmPC warnings: suicidal thoughts, liver injury (stop and do not restart if jaundice appears), raised pulse and blood pressure, and sexual side effects.',
+    'NICE offers atomoxetine to adults who cannot tolerate lisdexamfetamine or methylphenidate (1.7.15), and autism means slower titration and more monitoring (1.7.28). It is not a controlled drug and works differently. Counsel that it can take longer to have an effect than a stimulant (NICE), that the SmPC gives no time to full effect, and on the SmPC warnings: suicidal thoughts, liver injury (stop and do not restart if jaundice appears), raised pulse and blood pressure, and sexual side effects.',
     NG+' 1.7.15, 1.7.28 · Atomoxetine SmPC 4.4, 4.8'),
   C('Retry methylphenidate at a lower dose', 'bad',
     'He has had adequate, slowly titrated trials of two methylphenidate products and does not want another stimulant now. Shared decisions respect that (1.5.4–1.5.6); a cautious retry can be revisited later if he wishes.',
@@ -205,12 +205,12 @@ david:{title:'David, 21: autism, and three stimulants not tolerated', img:'image
     'He wants treatment and is still impaired. NICE offers non-drug treatment when medicine is declined, not tolerated or not working (1.5.16), and alongside medicine when impairment remains (1.5.17), but a medicine option is still open.',
     NG+' 1.5.16–1.5.17')]},
  b:{text:'He takes atomoxetine 40 mg daily for 7 days, then 80 mg. At week 3 he feels sick after the morning dose and says it “isn’t working”.', ask:'What do you advise?', choices:[
-  C('Take it with food or split it into two doses (morning and late afternoon), explain the effect builds over several weeks, and review at an adequate dose before judging it', 'good',
-    'The SmPC says atomoxetine can be taken with or without food, and that people with nausea or a poor response on one daily dose may do better on two evenly divided doses, in the morning and late afternoon or early evening. Taking it with food to ease nausea, and judging it over weeks rather than days, are clinical practice. If a stimulant and a non-stimulant both fail, NICE says get a second opinion or refer to a tertiary service (1.7.16); guanfacine in adults only with tertiary advice (1.7.17).',
+  C('Take it with food or split it into two doses (morning and late afternoon), explain it can take longer to have an effect than a stimulant, and review at an adequate dose before judging it', 'good',
+    'The SmPC says atomoxetine can be taken with or without food, and that people with nausea or a poor response on one daily dose may do better on two evenly divided doses, in the morning and late afternoon or early evening. Taking it with food to ease nausea is clinical practice. NICE says non-stimulants can take longer to have an effect than stimulants, and the SmPC gives no time to full effect, so judge it after an adequate trial rather than in the first days or weeks. If a stimulant and a non-stimulant both fail, NICE says get a second opinion or refer to a tertiary service (1.7.16); guanfacine in adults only with tertiary advice (1.7.17).',
     'Atomoxetine SmPC 4.2 · '+NG+' 1.7.16–1.7.17'),
   C('Stop it: it should have worked within days', 'bad',
-    'That is how stimulants behave. Atomoxetine’s effect builds gradually (clinical practice), so stopping at week 3 wastes the trial.',
-    'Clinical practice')]},
+    'That is how stimulants behave. NICE says non-stimulants can take longer to have an effect, and the SmPC gives no time to full effect, so stopping at week 3 before an adequate trial wastes it.',
+    NG+' rationale · Atomoxetine SmPC (no time to full effect stated)')]},
  end:{end:true, text:'David stays on atomoxetine with split doses and a planned review.', summary:'Key learning: the adult NICE sequence ends with atomoxetine (1.7.15); after a stimulant and a non-stimulant have failed, get a second opinion (1.7.16). Autism means slower titration, not fewer options.'}}},
 
 bp:{title:'Karim, 44: blood pressure up at the shared care review', img:'images/case-bp.jpg', alt:'Illustration of a pharmacist measuring a man’s blood pressure', source:'Focus: blood pressure under shared care',

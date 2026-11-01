@@ -86,7 +86,7 @@
     function render(){
       S.a=sa.value; S.b=sb.value&&sb.value!==S.a?sb.value:'';
       var A=BY[S.a], Bp=S.b?BY[S.b]:null, ch=R.querySelector('.hb-chart');
-      if(!A.model) ch.innerHTML='<p class="hb-flat"><strong>'+esc(A.name)+':</strong> no daily release curve to draw. Its benefit was shown in trials lasting several weeks ('+(A.id==='gua'?'Intuniv SmPC 5.1':'atomoxetine SmPC 5.1')+'), so timing questions are about routine and side effects, not cover. That benefit is not tied to a daily peak is a general principle, not an SmPC statement.</p>'+(Bp&&Bp.model?chart(S.b,''):'');
+      if(!A.model) ch.innerHTML='<p class="hb-flat"><strong>'+esc(A.name)+':</strong> no daily release curve to draw. The SmPC gives no daily peak, no length of effect and no time to full effect. Its benefit was shown in trials lasting several weeks ('+(A.id==='gua'?'Intuniv SmPC 5.1':'atomoxetine SmPC 5.1')+'), so timing questions are about routine and side effects, and about judging it after an adequate trial.</p>'+(Bp&&Bp.model?chart(S.b,''):'');
       else ch.innerHTML=chart(S.a,Bp&&Bp.model?S.b:'');
       function pkTxt(id){ var c=curve(id); return c?c.peaks.map(function(q){return q[0].toFixed(1)+' h';}).join(' and '):''; }
       R.querySelector('.hb-legend').innerHTML=(A.model?'<span><i style="background:'+C_A+'"></i>'+esc(A.name)+': peaks at '+pkTxt(S.a)+'</span>':'')+(Bp&&Bp.model?'<span><i class="dash" style="border-color:'+C_B+'"></i>'+esc(Bp.name)+': peaks at '+pkTxt(S.b)+'</span>':'')+((A.model||(Bp&&Bp.model))?'<span class="hb-lnote">Peak times come from the teaching model; the SmPC timings are in the facts below.'+CAVEAT(S.a)+(Bp?CAVEAT(S.b):'')+'</span>':'');
@@ -110,7 +110,7 @@
       out.push('<li><strong>Who decides:</strong> switching medicine follows the NICE order and is a specialist decision. Examples: methylphenidate to lisdexamfetamine after a 6-week trial at an adequate dose without enough benefit (NG87 1.7.8, 1.7.12), or the reverse in adults (1.7.13); atomoxetine or guanfacine in children (1.7.10), or atomoxetine in adults (1.7.15), if stimulants are not tolerated or separate 6-week trials of both have not helped.</li>');
       if(F.id==='gua') out.push('<li><strong>Stopping guanfacine:</strong> taper by no more than 1 mg every 3–7 days, checking BP and pulse: rebound high blood pressure (Intuniv SmPC 4.2, 4.4).</li>');
       if(F.id==='dex') out.push('<li><strong>Stopping dexamfetamine:</strong> reduce gradually with careful monitoring (SmPC 4.2), and supervise withdrawal (SmPC 4.4).</li>');
-      if(Tt.id==='atx'||Tt.id==='gua') out.push('<li><strong>Expect a lag:</strong> '+(Tt.id==='atx'?'atomoxetine':'guanfacine')+' takes weeks to work, so the specialist plans any overlap or cross-taper. The SmPCs give no cross-taper schedule.'+PJ+'</li>');
+      if(Tt.id==='atx'||Tt.id==='gua') out.push('<li><strong>Expect a lag:</strong> '+(Tt.id==='atx'?'atomoxetine':'guanfacine')+' can take longer to have an effect than a stimulant (NICE), so the specialist plans any overlap or cross-taper. The SmPCs give no cross-taper schedule.'+PJ+'</li>');
       out.push(matLic); out.push(legal); out.push(couns);
       return {tone:tone,badge:badgeTxt,head:head,html:'<ul>'+out.join('')+'</ul>'};
     }
@@ -333,7 +333,7 @@
       ['Quantity','"Prescriptions for this medicine usually cover up to 30 days. Taking more than 3 months\' supply out of the UK needs a Home Office personal licence; apply at least a month before you travel, so plan long stays with your prescriber early." (GOV.UK; NICE NG46)'],
       ['Time zones','"Keep the dose in your new morning, and avoid taking a long-acting dose late in your new day."']]},
     atx:{l:'Starting atomoxetine',steps:[
-      ['Expectations','"This isn\'t a stimulant. It builds up over several weeks, so don\'t stop it early because you see no change in the first week."'],
+      ['Expectations','"This isn\'t a stimulant. It can take longer to start working than a stimulant, so do not stop it early because the first days look the same."'],
       ['How','"Once a day in the morning, or split into a morning and a late-afternoon dose if it upsets your stomach or makes you sleepy. With or without food. Don\'t open the capsules: the powder irritates the eyes." (SmPC 4.2, 6.6)'],
       ['Warnings','"Tell us or your doctor straight away about yellowing of the skin or eyes, dark urine or other signs of liver problems, or any thoughts of harming yourself." (SmPC 4.4)'],
       ['Interactions','"Tell every prescriber you take it: some antidepressants, such as fluoxetine and paroxetine, raise its level a lot." (SmPC 4.5)']]},
