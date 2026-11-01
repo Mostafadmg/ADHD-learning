@@ -300,7 +300,7 @@
       ['Practical','"Order your next prescription about a week before you run out: a prescription for this controlled drug is valid for only 28 days, and we can\'t give an emergency supply without one. You must tell the DVLA if your ADHD or your medicine affects your ability to drive safely; if it doesn\'t, you don\'t need to tell them." (GOV.UK)'],
       ['Check understanding','"Can you tell me how and when you\'ll take it, and what you\'d do if you felt your heart racing?"']]},
     switch:{l:'Brand switch during a shortage',steps:[
-      ['Explain','"Your usual [brand] is out of stock nationally. The prescriber has issued [new brand], which is bioequivalent: it gives the same blood levels of the same medicine at the same dose." (Only within an SPS group.)'],
+      ['Explain','"Your usual [brand] is out of stock nationally. The prescriber has issued [new brand], which belongs to the same clinically equivalent group as your usual one. The dose has not changed." (SPS wording. Only within an SPS bioequivalent group, and ask them to report any change.)'],
       ['What looks different','"The tablet looks different [colour, shape]. Some tablets leave an empty shell in the stool; this one may not." Or: "This one is a capsule you can open."'],
       ['What to watch','"Most people notice no change. If your focus, sleep or appetite changes, or it wears off at a different time, tell us or the clinic."'],
       ['Going back','"When your usual brand is available again, the prescriber can switch you back. Please don\'t mix the two brands in one day."']]},
