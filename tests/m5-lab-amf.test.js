@@ -2,7 +2,8 @@
    Plain node, no packages:  node tests/m5-lab-amf.test.js
    Every number and status asserted here comes from the SmPCs on emc (Elvanse 14089, Amfexa 5004, dexamfetamine solution 13874),
    NICE NG87 and the local NHS documents named in the lab (read 1 Nov 2026).
-   The block marked REVIEW FIXES covers the independent clinical review of 1 Nov 2026: each assertion there fails on the old text. */
+   The block marked REVIEW FIXES covers the independent clinical review of 1 Nov 2026: each assertion there fails on the old text.
+   The block marked SECOND-PASS REVIEW FIXES (tests named PASS2 ...) covers the second review of the same day. */
 'use strict';
 const assert = require('assert');
 const fs = require('fs');
@@ -261,7 +262,8 @@ t('REVIEW Switch charts: an equal-area caption sits under every chart (finding 1
     }
   }
   const ld = lis.tabs[2].compute({ from: 'lis', to: 'dex', age: 'adult', cap: '30' }).rows[0].t;
-  assert.ok(/give less dexamfetamine than the capsule contains, once the salt in the tablets is allowed for/.test(ld));
+  assert.ok(/By our own arithmetic \(SmPC content figure, base converted to sulfate using Dolder 2017; not an official statement\), the local starting doses give less dexamfetamine than the capsule contains/.test(ld), 'pass 2 finding 6');
+  assert.ok(!/once the salt in the tablets is allowed for/.test(ld));
   assert.ok(!/capsule contains/.test(lis.tabs[2].compute({ from: 'mph', to: 'lis', age: 'adult', cap: '30' }).rows[0].t));
 });
 
@@ -442,7 +444,7 @@ t('REVIEW lessons and flashcards: brand-specific splitting, protocol wording, la
   assert.ok(/the NHS England national protocol could not be read on 1 Nov 2026/.test(html));
   assert.ok(/a lisdexamfetamine shortage notice/.test(html) && /a switching guide/.test(html));
   assert.ok(/Amfexa, Medice and Orifarm tablets contain isomalt/.test(html) && /Waymade 5 mg tablet has lactose and sucrose instead/.test(html));
-  assert.ok(/m5-lab-amf\.js\?v=20261101-amf2/.test(html) && /data-quiz-m5-amf\.js\?v=20261101-amf2/.test(html));
+  assert.ok(/m5-lab-amf\.js\?v=20261101-amf3/.test(html) && /data-quiz-m5-amf\.js\?v=20261101-amf3/.test(html));
 });
 
 t('REVIEW data-brands: elvanse and dex entries carry no unverified BNF figures and no blanket splitting claim (findings 2, 20)', () => {
@@ -519,6 +521,144 @@ t('REVIEW quiz: explanations match the corrected facts (findings 0, 2, 3, 5, 8, 
   assert.ok(!/only 60 mg figure in the SmPCs is for adult narcolepsy in the oral solution SmPC/.test(sixty.e));
   assert.ok(/appears to follow the NHS England national template/.test(sixty.e) && /cannot say whether the 60 mg wording is national or was added locally/.test(sixty.e), 'finding 6');
   assert.ok(!/local shared-care protocols/.test(sixty.o.join(' ')) && /60 mg appears in shared-care protocols/.test(sixty.o[0]));
+});
+
+/* ---------- SECOND-PASS REVIEW FIXES (1 Nov 2026): each assertion below fails on the text or behaviour it replaced ---------- */
+const stripTags = (h) => String(h).replace(/<[^>]+>/g, '');
+
+t('PASS2 finding 0: the M10 student case no longer says IR dexamfetamine has "the most" misuse risk', () => {
+  const src = fs.readFileSync(path.join(root, 'js/data-cases.js'), 'utf8');
+  assert.ok(!/carries the most misuse/.test(src) && !/the most misuse and diversion risk/.test(src));
+  assert.ok(/IR dexamfetamine also carries a higher misuse and diversion risk than lisdexamfetamine, as other immediate-release stimulants do, which matters in student housing \(1\.7\.20, 1\.7\.23–1\.7\.24\)/.test(src));
+  assert.ok(/NG\+' 1\.7\.14, 1\.7\.20, 1\.7\.23–1\.7\.24'/.test(src), 'source line lists the added clause');
+});
+
+t('PASS2 finding 1: the dexamfetamine titration note has no unverified BNFC start and agrees with data-brands', () => {
+  const ctx = vm.createContext({ window: {} });
+  vm.runInContext(fs.readFileSync(path.join(root, 'js/data-titration.js'), 'utf8'), ctx);
+  const d = ctx.window.TITRATION.dexamf, note = d.note;
+  assert.ok(!/2\.5 mg 2[–-]3 times a day/.test(note) && !/BNFC \(accessed 21 Oct 2026\)/.test(note), 'the unverifiable BNFC sentence is gone');
+  assert.ok(!/usual max 1 mg\/kg/.test(note) && !/2[–-]4 divided doses/.test(note), 'no other unverified BNFC figure is left in the note');
+  assert.ok(/BNF\/BNFC not re-checked on 1 Nov 2026/.test(note) && /follow the SmPC and your local protocol/.test(note));
+  assert.ok(/A 2\.5 mg start applies only to ages 3 to 5 in older sources \(Brown & Burk SmPC\)/.test(note));
+  assert.ok(/SPC: start 5 mg once or twice daily, increase by weekly increments of 5 mg/.test(note), 'the SmPC start is kept');
+  assert.strictEqual(d.steps[0].dose, '5 mg OD–BD');
+  const bc = vm.createContext({ window: {} });
+  vm.runInContext(fs.readFileSync(path.join(root, 'js/data-brands.js'), 'utf8'), bc);
+  const dx = bc.window.BRANDS.filter((b) => b.id === 'dex')[0];
+  assert.ok(/BNF\/BNFC not re-checked on 1 Nov 2026/.test(dx.bnf) && /BNF\/BNFC not re-checked on 1 Nov 2026/.test(note), 'both files say the same');
+});
+
+t('PASS2 finding 2: the dexamfetamine "Through the day" tab does not offer the tablet curve as the liquid\'s', () => {
+  const p1 = dex.tabs[0].picks[0], p2 = dex.tabs[0].picks[1];
+  assert.strictEqual(p1.tag, 'tablet', 'tag');
+  assert.ok(!/liquid/.test(p1.tag) && !/liquid/.test(p2.tag));
+  for (const p of [p1, p2]) {
+    const inside = stripTags(p.inside);
+    assert.ok(!/or 1 mg\/ml solution/.test(inside) && !/absorbed at once/.test(inside), 'no "tablet or solution" blanket, no "absorbed at once"');
+    assert.ok(/A plain immediate-release tablet \(5, 10 or 20 mg\): the whole dose is released at once, so the level rises fast\./.test(inside));
+    assert.ok(/The tablet SmPC gives a peak at about 1\.5 hours\. It does not say when it starts or how long it lasts\./.test(inside));
+    assert.ok(/The 1 mg\/ml solution SmPC gives no peak time, so this curve is only an assumption for the liquid\./.test(inside));
+  }
+  // the Switch tab already said the solution has no peak time: the two tabs now agree
+  const sw = dex.tabs[2].compute({ from: 'dex', to: 'dexs', age: 'child', cap: '30' });
+  assert.ok(/no peak time, half-life or absorption figures/.test(text(sw)));
+});
+
+t('PASS2 finding 3: "5 mg in divided doses" (Elvanse 20 mg) also warns about 2.5 mg portions', () => {
+  const f = lis.tabs[2].compute;
+  for (const age of ['adult', 'child']) {
+    const r = f({ from: 'lis', to: 'dex', age, cap: '20' }), row = rowOf(r, 'Tablet sizes');
+    assert.ok(row, 'row for 20 mg');
+    assert.ok(/Note that 5 mg in divided doses also means 2\.5 mg portions, which whole 5 mg tablets cannot give\./.test(row.t));
+    assert.ok(/1 mg\/ml oral solution, a single 5 mg dose, or how to round to a whole tablet strength/.test(row.t));
+    assert.ok(/7\.5 mg cannot be made from whole tablets/.test(row.t), 'the earlier 7.5 mg warning is kept');
+    assert.ok(/Oxford Health warns that half a tablet is only about 2\.5 mg/.test(row.t));
+  }
+  // property: wherever a local table says "5 mg in divided doses" the row carries the note; elsewhere it does not
+  for (const cap of Object.keys(FROM_LIS)) {
+    const r = f({ from: 'lis', to: 'dex', age: 'adult', cap }), loc = rowOf(r, 'Local NHS tables (not national): the doses').t, row = rowOf(r, 'Tablet sizes');
+    const five = /<b>5 mg<\/b> dexamfetamine in divided doses/.test(loc) || /<b>5 mg<\/b> to start/.test(loc);
+    assert.strictEqual(five, cap === '20', 'only the 20 mg capsule has a 5 mg local figure');
+    assert.strictEqual(!!row && /2\.5 mg portions/.test(row.t), five, 'cap ' + cap);
+    if (row && !five) assert.ok(!/single 5 mg dose/.test(row.t), 'cap ' + cap);
+  }
+});
+
+t('PASS2 finding 4: the 60 mg a day origin is traced to Oxford, CG72 (2008) and North East London, and the local documents are said to disagree', () => {
+  const ad = dex.tabs[1].compute({ age: 'adult', start: '10', target: 40 }), row = rowOf(ad, 'Shared-care protocols (not SmPC)');
+  assert.ok(row);
+  assert.ok(/NICE “indicates that treatment of adults may require up to 60mg daily in 2-4 divided doses”/.test(row.t));
+  assert.ok(/the NICE document it cites is CG72 \(2008\), which NG87 replaced/.test(row.t));
+  assert.ok(/North East London adult shared care guideline \(July 2023\) also gives “Max 60mg\/day in 2-4 divided doses”/.test(row.t));
+  assert.ok(/NG87 gives no dexamfetamine dose/.test(row.t));
+  assert.ok(/Oxford Health’s separate switching guide uses 20 mg a day \(40 mg rarely\) as its maximum, so local documents disagree/.test(row.t));
+  assert.ok(/cannot say whether the 60 mg wording is national or was added locally/.test(row.t), 'the Nottinghamshire caveat is kept');
+  // same fact everywhere it is taught
+  const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+  assert.ok(/Oxford Health’s adult protocol also gives 60 mg and says NICE “indicates that treatment of adults may require up to 60mg daily in 2-4 divided doses”, but the NICE document it cites is CG72 \(2008\), which NG87 replaced/.test(html), 'lesson dropdown');
+  assert.ok(/so local documents disagree\. Check the current BNF adult entry too/.test(html), 'lesson dropdown ending');
+  assert.ok(/Oxford Health’s adult protocol also gives 60 mg but credits NICE CG72 \(2008\), which NG87 replaced; NG87 gives no dexamfetamine dose\./.test(html), 'flashcard');
+  const Q = {}, ctx = vm.createContext({ window: { QUIZ: Q } });
+  vm.runInContext(fs.readFileSync(path.join(root, 'js/data-quiz-m5-amf.js'), 'utf8'), ctx);
+  const sixty = Q.m5x_amf_more[5];
+  assert.ok(/Oxford Health’s adult protocol also gives 60 mg, but it credits NICE CG72 \(2008\), which NG87 replaced, and NG87 itself gives no dexamfetamine dose/.test(sixty.e), 'quiz explanation');
+  assert.ok(/Oxford Health adult shared care protocol \(May 2021\)/.test(sixty.s), 'quiz source');
+  // day builder: an adult total above 40 mg is explained, not left as a bare "danger"
+  const db = fs.readFileSync(path.join(root, 'js/daybuilder.js'), 'utf8');
+  assert.ok(/\(adult\?' \(shared-care protocols go to 60 mg: see Module 5\)\.':'\.'\)/.test(db), 'adult wording in daybuilder.js');
+  assert.ok(!/is above 40 mg\/day\.'\+OFF/.test(db), 'the bare sentence is gone');
+  assert.ok(/m5-lab-amf\.js[^"]*amf3/.test(html) && /daybuilder\.js\?v=20261101-day1-amf3/.test(html) && /data-titration\.js\?v=20261101-ns3-amf3/.test(html) && /data-cases\.js\?v=20261101-amf3/.test(html), 'cache busters bumped');
+});
+
+t('PASS2 finding 5: the Dose steps tabs carry the SmPC safety lines', () => {
+  const ls = lis.tabs[1].compute;
+  for (const renal of ['usual', 'severe', 'dialysis']) {
+    const row = rowOf(ls({ start: '30', step: '10', renal }), 'Blood pressure and pulse');
+    assert.ok(row, 'lisdexamfetamine ' + renal);
+    assert.ok(/at <b>each dose change<\/b> and at least <b>every 6 months<\/b>/.test(row.t) && /centile chart/.test(row.t));
+  }
+  const ds = dex.tabs[1].compute;
+  for (const target of [10, 20, 40]) {
+    const c = ds({ age: 'child', start: '5', target }), row = rowOf(c, 'Stop and review');
+    assert.ok(row, 'child ' + target);
+    assert.ok(/no improvement after appropriate dose adjustment over 1 month/.test(row.t) && /drug-free trial at least once a year/.test(row.t) && /school holidays/.test(row.t));
+  }
+  const ad = ds({ age: 'adult', start: '10', target: 30 });
+  const chk = rowOf(ad, 'Check first'), stop = rowOf(ad, 'Stop and review'), oth = rowOf(ad, 'Other groups');
+  assert.ok(chk && /history of drug or alcohol abuse/.test(chk.t) && /Tourette syndrome/.test(chk.t) && /psychotic symptoms/.test(chk.t) && /severe depression/.test(chk.t) && /before the first dose/.test(chk.t));
+  assert.ok(stop && /no improvement after appropriate dose adjustment over 1 month/.test(stop.t) && /drug-free trial at least once a year/.test(stop.t) && /written for ages 6 to 17/.test(stop.t) && /shared-care protocol asks/.test(stop.t));
+  assert.ok(oth && /should not be used in the elderly/.test(oth.t) && /Kidney or liver impairment: no experience/.test(oth.t));
+  assert.strictEqual(ad.rows[ad.rows.length - 1].h, 'Also check', 'the BNF line is still last');
+  // the child path past 40 mg still draws nothing
+  assert.strictEqual(ds({ age: 'child', start: '5', target: 45 }).chart, undefined);
+});
+
+t('PASS2 finding 6: the "less dexamfetamine than the capsule" line is labelled as our own arithmetic and the sums hold', () => {
+  const f = lis.tabs[2].compute, ratio = 40.3 / 29.6;
+  for (const cap of Object.keys(FROM_LIS)) {
+    const [content, slam, oxFull] = FROM_LIS[cap], sulfate = content * ratio;
+    const r = f({ from: 'lis', to: 'dex', age: 'adult', cap }), about = rowOf(r, 'About the chart').t;
+    assert.ok(/By our own arithmetic/.test(about) && /not an official statement/.test(about) && /Dolder 2017/.test(about), 'label ' + cap);
+    assert.ok(slam < sulfate, 'the Somerset / ELFT / Oxford start is below the sulfate sum for ' + cap + ' (' + sulfate.toFixed(1) + ')');
+    assert.strictEqual(/Oxford’s higher “full equivalent” figure for this capsule is a little above that sum/.test(about), oxFull > sulfate, 'Oxford full vs sum ' + cap);
+  }
+  // the capsules where Oxford's full equivalent is above the sum
+  eq(Object.keys(FROM_LIS).filter((c) => FROM_LIS[c][2] > FROM_LIS[c][0] * ratio), ['30', '60', '70']);
+  // other pairs never carry the claim
+  assert.ok(!/own arithmetic/.test(f({ from: 'dex', to: 'lis', age: 'adult', cap: '30' }).rows[0].t));
+  assert.ok(!/own arithmetic/.test(f({ from: 'mph', to: 'lis', age: 'adult', cap: '30' }).rows[0].t));
+});
+
+t('PASS2 finding 7: the Nottinghamshire stop advice is labelled as shortage advice, not a planned switch', () => {
+  const f = lis.tabs[2].compute;
+  for (const age of ['adult', 'child']) {
+    const row = rowOf(f({ from: 'lis', to: 'atx', age, cap: '30' }), 'Local NHS protocol (not national)');
+    assert.ok(row, age);
+    assert.ok(/Nottinghamshire APC supply-disruption advice \(v35, 20 May 2024\), written for stopping lisdexamfetamine during a shortage, not for a planned switch/.test(row.t));
+    assert.ok(/stopped abruptly at low doses \(up to 30 mg daily\)/.test(row.t) && /reduce, ideally by 20 mg a week/.test(row.t));
+  }
+  assert.ok(!rowOf(dex.tabs[2].compute({ from: 'dex', to: 'atx', age: 'adult', cap: '30' }), 'Local NHS protocol'), 'dex>atx has no local row');
 });
 
 console.log(passed + ' tests passed' + (process.exitCode ? ' (with failures)' : ''));

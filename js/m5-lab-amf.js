@@ -8,7 +8,9 @@
    Adult dexamfetamine doses come from shared-care protocols, not from an SmPC: the badge says so ("Shared-care protocols
    (not SmPC)"). The Nottinghamshire protocol is titled "National shared care protocol adult for local use", so it may
    repeat national wording; the NHS England text could not be read (1 Nov 2026), so the lab never calls the 60 mg a day
-   figure purely local or purely national. The three lisdexamfetamine-to-dexamfetamine tables are local: two were written
+   figure purely local or purely national. The Oxford Health adult protocol states the same 60 mg and credits NICE CG72
+   (2008), which NG87 replaced; the North East London adult guideline (July 2023) repeats it. NG87 gives no dexamfetamine
+   dose. The three lisdexamfetamine-to-dexamfetamine tables are local: two were written
    for lisdexamfetamine shortages (Somerset, Oct 2023; ELFT / North East London ICS, Aug 2024) and one is a switching guide
    (Oxford Health, Oct 2023).
    Curves are schematic: they follow SmPC peak times and SmPC statements of duration, and the long tails picture clinical
@@ -119,10 +121,10 @@
   var NOTE_DEX = '<b>What the curve shows.</b> The peak follows the SmPC (about 1.5 h). The SmPCs give no duration, so the fall is a teaching picture of benefit, not blood level. <b>Plasma half-life is 10.2 hours</b> (SmPC, one 5 mg tablet): the blood level halves about every 10 hours, so some drug is still in the body in the evening even though the benefit fades much earlier.';
   function pickDex(id, twice, asCompare) {
     var p = {
-      id: id, chip: twice ? 'Dex&shy;amfetamine twice' : 'Dex&shy;amfetamine once', tag: asCompare ? 'compare' : (twice ? 'breakfast, lunch' : 'tablet or liquid'), color: C.dex[0], tint: C.dex[1],
+      id: id, chip: twice ? 'Dex&shy;amfetamine twice' : 'Dex&shy;amfetamine once', tag: asCompare ? 'compare' : (twice ? 'breakfast, lunch' : 'tablet'), color: C.dex[0], tint: C.dex[1],
       name: twice ? 'Dexamfetamine: breakfast and lunch doses' : 'Dexamfetamine: one morning dose',
       regimen: twice ? [{ model: 'dex', at: 0, mg: 0.5 }, { model: 'dex', at: LUNCH, mg: 0.5 }] : [{ model: 'dex', at: 0 }],
-      inside: 'A plain immediate-release tablet (5, 10 or 20 mg) or 1 mg/ml solution: the whole dose is absorbed at once, so the level rises fast. The SmPC gives a peak at about 1.5 hours. It does <b>not</b> say when it starts or how long it lasts.',
+      inside: 'A plain immediate-release tablet (5, 10 or 20 mg): the whole dose is released at once, so the level rises fast. The tablet SmPC gives a peak at about 1.5 hours. It does <b>not</b> say when it starts or how long it lasts. The 1 mg/ml solution SmPC gives no peak time, so this curve is only an assumption for the liquid.',
       note: NOTE_DEX
     };
     if (twice) {
@@ -173,6 +175,7 @@
         { h: 'Start and steps', t: (start === 30 ? '<b>30 mg</b> each morning (usual start)' : '<b>20 mg</b> each morning, when a lower start is judged appropriate') + ', then <b>10 or 20 mg</b> at about weekly intervals, to the <b>lowest effective dose</b>. Capsules cannot be divided.' },
         { h: 'Ceiling', t: ceiling },
         { h: 'Stop rule', t: 'Stop if <b>no improvement after appropriate dose adjustment over 1 month</b>. NICE judges benefit from a 6-week trial at an adequate dose before changing medicine.' },
+        { h: 'Blood pressure and pulse', t: 'Record both at <b>each dose change</b> and at least <b>every 6 months</b>. In children, record them on a centile chart.' },
         { h: 'Other groups', t: 'Same steps for children and adults; not under 6. Older adults: limited data, lower clearance, so doses may need adjusting, and blood pressure and cardiovascular status need ongoing monitoring. Liver: not studied, so no advice.' }
       ],
       notes: [],
@@ -218,6 +221,7 @@
       rows = [
         { h: 'Start and steps', t: startTxt + ' at the lowest possible dose, then add <b>5 mg to the daily dose each week</b>, guided by tolerability and effect.' },
         { h: 'Maximum', t: 'Usually <b>20 mg a day</b> in children and adolescents. <b>40 mg</b> may rarely be needed. Use the regimen that controls symptoms with the lowest total daily dose.' },
+        { h: 'Stop and review', t: 'Stop if there is <b>no improvement after appropriate dose adjustment over 1 month</b>. For long-term treatment the SmPC asks for a <b>drug-free trial at least once a year</b>, preferably in school holidays.' },
         { h: 'Other groups', t: 'Ages 6 to 17 only, under specialist supervision; not under 6. Kidney or liver impairment: no experience, peak levels could be higher and elimination slower, no dose figure, so take special care.' }
       ];
     } else {
@@ -225,7 +229,10 @@
       head = target > 60 ? 'Above 60 mg a day: higher than the maximum in the protocols quoted below' : 'Adults: no licensed ADHD dose. Protocol example: ' + (below ? start + ' mg a day' : doses.join(' → ') + ' mg a day');
       rows = [
         { h: 'Licence', t: '<b>Not licensed for ADHD in adults</b>: the SmPC says safety and efficacy in adults have not been established. NICE supports it when lisdexamfetamine works but the person cannot tolerate its longer effect profile (off-label). Record the off-label reason and consent.' },
-        { h: 'Shared-care protocols (not SmPC)', t: 'Oxford Health adult shared-care protocol (approved 2017, adult version May 2021, marked “currently under review”): 5 mg twice a day, up by 5 to 10 mg weekly as necessary.<br>Nottinghamshire APC adult protocol V2.0 (March 2025): initially 5 mg twice daily; “maximum 60 mg per day to be given in 2–4 divided doses”. Its title is “National shared care protocol adult for local use”, so it appears to follow the NHS England national template. We could not read the national protocol, so we cannot say whether the 60 mg wording is national or was added locally.' },
+        { h: 'Shared-care protocols (not SmPC)', t: 'Oxford Health adult shared-care protocol (approved 2017, adult version May 2021, marked “currently under review”): 5 mg twice a day, up by 5 to 10 mg weekly as necessary. It also says that NICE “indicates that treatment of adults may require up to 60mg daily in 2-4 divided doses”, but the NICE document it cites is CG72 (2008), which NG87 replaced.<br>Nottinghamshire APC adult protocol V2.0 (March 2025): initially 5 mg twice daily; “maximum 60 mg per day to be given in 2–4 divided doses”. Its title is “National shared care protocol adult for local use”, so it appears to follow the NHS England national template. We could not read the national protocol, so we cannot say whether the 60 mg wording is national or was added locally.<br>The North East London adult shared care guideline (July 2023) also gives “Max 60mg/day in 2-4 divided doses”. NG87 gives no dexamfetamine dose. Oxford Health’s separate switching guide uses 20 mg a day (40 mg rarely) as its maximum, so local documents disagree.' },
+        { h: 'Check first', t: 'Check the dexamfetamine contraindications before the first dose: a <b>history of drug or alcohol abuse</b>, <b>Tourette syndrome</b>, psychotic symptoms, severe depression and suicidal ideation, among others.' },
+        { h: 'Stop and review', t: 'The SmPC wording, written for ages 6 to 17: stop if there is <b>no improvement after appropriate dose adjustment over 1 month</b>, with a <b>drug-free trial at least once a year</b>. For adults, check what your shared-care protocol asks.' },
+        { h: 'Other groups', t: 'The SmPC says dexamfetamine <b>should not be used in the elderly</b> (safety and efficacy not established). Kidney or liver impairment: no experience, so take special care.' },
         { h: 'Also check', t: 'The current BNF adult entry and your local shared-care protocol before you set a dose.' }
       ];
       notes.push('The chart uses 5 mg weekly steps. 60 mg a day comes from shared-care protocols, not from an SmPC ADHD section: the SmPCs give 60 mg a day only for adult narcolepsy.');
@@ -297,8 +304,13 @@
       { h: 'Local NHS tables (not national): the doses', t: 'For Elvanse <b>' + s + ' mg</b>: <b>' + L.slam + ' mg</b> dexamfetamine in divided doses (Somerset and ELFT / North East London ICS; both credit South London and Maudsley NHS FT). Oxford Health: <b>' + L.oxStart + ' mg</b> to start, then a higher “full equivalent dose” of <b>' + L.oxFull + ' mg</b> “if tolerated”' +
         (over ? (adult ? ' (above the 20 mg a day maximum that Oxford’s own document gives for off-label adult use)' : ' (<b>above the usual 20 mg a day maximum for children and adolescents</b>; Oxford’s own document gives 20 mg, 40 mg rarely, as its maximum)') : '') + '.' }
     ];
-    if (odd.length) {
-      rows.push({ h: 'Tablet sizes', t: 'The smallest tablet is 5 mg, so ' + odd.join(' mg and ') + ' mg cannot be made from whole tablets. Do not rely on splitting tablets to give them. The Amfexa, Medice and Orifarm SmPCs say their score lines do not give equal doses, and Oxford Health warns that half a tablet is only about 2.5 mg. (The Waymade and Brown &amp; Burk 5 mg SmPCs say their single-scored tablet can be divided into equal doses, so the brand matters.) Agree with the specialist whether to use the 1 mg/ml oral solution or how to round to a whole tablet strength.' });
+    /* A local figure of "5 mg in divided doses" (Elvanse 20 mg, all three tables) is two 2.5 mg portions: whole 5 mg tablets cannot give those either. */
+    var five = L.slam === 5 || L.oxStart === 5;
+    if (odd.length || five) {
+      rows.push({ h: 'Tablet sizes', t: (odd.length ? 'The smallest tablet is 5 mg, so ' + odd.join(' mg and ') + ' mg cannot be made from whole tablets. Do not rely on splitting tablets to give them.' : 'Do not rely on splitting tablets.') +
+        ' The Amfexa, Medice and Orifarm SmPCs say their score lines do not give equal doses, and Oxford Health warns that half a tablet is only about 2.5 mg. (The Waymade and Brown &amp; Burk 5 mg SmPCs say their single-scored tablet can be divided into equal doses, so the brand matters.)' +
+        (five ? ' Note that 5 mg in divided doses also means 2.5 mg portions, which whole 5 mg tablets cannot give.' : '') +
+        ' Agree with the specialist whether to use the 1 mg/ml oral solution' + (five ? ', a single 5 mg dose,' : '') + ' or how to round to a whole tablet strength.' });
     }
     rows.push(
       { h: 'Before you switch', t: 'Check the dexamfetamine contraindications first. Its SmPC contraindicates a <b>history of drug or alcohol abuse</b> and <b>Tourette syndrome</b>, and lists more psychiatric and cerebrovascular conditions than the Elvanse SmPC does (for example psychotic symptoms, severe depression, suicidal ideation, psychopathic or borderline personality disorder, cerebrovascular disorders). Lisdexamfetamine only carries a caution for past substance abuse. So someone who is stable on Elvanse can be contraindicated for dexamfetamine. Immediate-release dexamfetamine also has a greater misuse and diversion risk than lisdexamfetamine.' },
@@ -376,7 +388,7 @@
       src: 'Sources: ' + NICE_SRC + '; atomoxetine SmPC (emc 10332, 6 Dec 2024); Elvanse and Amfexa SmPCs.'
     };
     if (lisFrom) {
-      r.rows.push({ h: 'Local NHS protocol (not national)', t: 'Nottinghamshire APC (v35, 20 May 2024): lisdexamfetamine can be stopped abruptly at low doses (up to 30 mg daily); at higher doses reduce, ideally by 20 mg a week.' });
+      r.rows.push({ h: 'Local NHS protocol (not national)', t: 'Nottinghamshire APC supply-disruption advice (v35, 20 May 2024), written for stopping lisdexamfetamine during a shortage, not for a planned switch: it can be stopped abruptly at low doses (up to 30 mg daily); at higher doses reduce, ideally by 20 mg a week.' });
     }
     return r;
   }
@@ -434,12 +446,21 @@
   }
 
   function norm(id) { return (id === 'dexb' || id === 'dexs') ? 'dex' : id; }
+  /* Our own sum, not a source statement. The SmPC content figure is read as dexamfetamine base; Dolder 2017 puts 100 mg lisdexamfetamine at
+     29.6 mg base = 40.3 mg d-amfetamine sulfate, the form the tablets are labelled in. Sulfate per capsule: 20 mg 8.0, 30 mg 12.1, 40 mg 16.2,
+     50 mg 20.2, 60 mg 24.3, 70 mg 28.3. Every local starting dose is below that; Oxford's "full equivalent" is above it for 30, 60 and 70 mg. */
+  var SULFATE_PER_BASE = 40.3 / 29.6;
+  function sumNote(cap) {
+    var s = CAPSULE[cap] ? cap : 30, sulfate = CAPSULE[s] * SULFATE_PER_BASE;
+    return 'By our own arithmetic (SmPC content figure, base converted to sulfate using Dolder 2017; not an official statement), the local starting doses give less dexamfetamine than the capsule contains.' +
+      (LOCAL[s].oxFull > sulfate ? ' Oxford’s higher “full equivalent” figure for this capsule is a little above that sum.' : '');
+  }
   /* Every Switch chart is drawn at equal area. Say so under the chart, so equal areas are never read as equal doses. */
   function switchResult(v) {
     var r = switchCore(v);
     if (r && r.chart && r.chart.kind === 'day' && r.rows) {
       var f = norm(v.from), t = norm(v.to), lisDex = (f === 'lis' && t === 'dex');
-      r.rows.unshift({ h: 'About the chart', t: 'Drawn at equal area, to compare the shape of the day only. It does not say the doses are equal.' + (lisDex ? ' The local starting doses below give less dexamfetamine than the capsule contains, once the salt in the tablets is allowed for.' : '') });
+      r.rows.unshift({ h: 'About the chart', t: 'Drawn at equal area, to compare the shape of the day only. It does not say the doses are equal.' + (lisDex ? ' ' + sumNote(+v.cap || 30) : '') });
     }
     return r;
   }

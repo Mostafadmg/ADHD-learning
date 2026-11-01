@@ -46,7 +46,7 @@ window.TITRATION = {
   dexamf: {
     name:'Dexamfetamine IR (e.g. Amfexa) – child 6–17 y',
     pop:'Children 6–17 y (licensed when methylphenidate response clinically inadequate; adult use is off-label)', max:'Usually 20 mg/day; 40 mg/day rarely needed (SPC)',
-    note:'SPC: start 5 mg once or twice daily, increase by weekly increments of 5 mg. BNFC (accessed 21 Oct 2026): initially 2.5 mg 2–3 times a day, ↑ 5 mg weekly; usual max 1 mg/kg, up to 20 mg/day (40 mg/day has been required in some children); 2–4 divided doses. Tablets can be divided to aid swallowing (cross-scored; not for equal dose division). Taper on discontinuation.',
+    note:'SPC: start 5 mg once or twice daily, increase by weekly increments of 5 mg. BNF/BNFC not re-checked on 1 Nov 2026: follow the SmPC and your local protocol. A 2.5 mg start applies only to ages 3 to 5 in older sources (Brown & Burk SmPC). Tablets can be divided to aid swallowing (cross-scored; not for equal dose division). Taper on discontinuation.',
     src:'Amfexa SPC §4.2 (emc, revised 14/01/2026)',
     monitor:'HR/BP, growth, sleep, appetite, mood; misuse and diversion (IR, high street value).',
     steps:[
