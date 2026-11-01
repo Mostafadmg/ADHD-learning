@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="css/m5-day.css?v=20261101-day1">
 <link rel="stylesheet" href="css/layout.css?v=20261101b">
 <link rel="stylesheet" href="css/mobile.css?v=20261101b">
+<link rel="stylesheet" href="css/m5-phone.css?v=20261101-m5p2">
 <link rel="stylesheet" href="css/m6-phone.css?v=20261101-m6b">
 <link rel="stylesheet" href="css/m9-phone.css?v=20261101-m9a">
 <link rel="stylesheet" href="css/m8-phone.css?v=20261101-m8b">
@@ -321,9 +322,17 @@ window.addEventListener('load',function(){var a=document.images;for(var i=0;i<a.
 <!-- ============ LESSON 3 ============ -->
 <section class="lesson" id="m5-release" data-title="Release profiles and brands" data-min="6">
 <h2 class="ls-h">Release profiles and brands</h2>
-<p>All MR methylphenidate products have an <strong>IR part</strong> (starts the effect) and an <strong>MR part</strong> (makes it last). Different ratios give different shapes of day. NICE lists the pharmacokinetic profile as one reason to think about modified-release, and the MHRA says take care when switching. Pick a product: the chart shows one dose at 07:30, <strong>dark</strong> released at once and <strong>light</strong> later. Tap a number or drag across the chart.</p>
+<p>All MR methylphenidate products have an <strong>IR part</strong> (starts the effect) and an <strong>MR part</strong> (makes it last). Different ratios give different shapes of day.</p>
+<p class="m5-how">Pick a product: the chart shows one dose at 07:30, <strong>dark</strong> released at once and <strong>light</strong> later. Tap a number or drag across the chart.</p>
 <div class="rp" data-rp><noscript><div class="table-wrap"><table><caption>Release profiles: one dose in the morning</caption><tr><th>Product</th><th>At once : later</th><th>Peaks</th><th>Lasts</th></tr><tr><th scope="row">IR tablets</th><td>All at once</td><td>1–2 h</td><td>Up to about 4 h</td></tr><tr><th scope="row">Equasym XL</th><td>30 : 70</td><td>1–2 h, then about 4.5 h</td><td>About 8 h</td></tr><tr><th scope="row">Medikinet XL (with food)</th><td>50 : 50</td><td>Strong start, second rise about 3 h later</td><td>About 8 h</td></tr><tr><th scope="row">Ritalin XL</th><td>50 : 50</td><td>1–2 h, then 5–7 h after the dose</td><td>About 8 h (SPS)</td></tr><tr><th scope="row">Concerta XL</th><td>22 : 78 (SPS)</td><td>Small rise at 1–2 h, peak at 6–8 h</td><td>About 12 h</td></tr><tr><th scope="row">Lisdexamfetamine</th><td>Prodrug: no parts</td><td>About 3.5–4 h</td><td>13 h (children), 14 h (adults)</td></tr></table></div></noscript></div>
-<p class="gst-note"><b>Match the profile to the person's day.</b> Line the effect up against school, homework, work or driving. If cover ends too early, consider an IR top-up later in the day (methylphenidate only) or another brand, prescribed by brand. Do not just increase the dose. For a child on Medikinet XL or Ambinet XL, the SmPC adds that treatment should not continue if a late IR dose is always needed, unless the same extra dose was needed on IR. The day builder in the lesson “Fitting the dose to the day” lets you try a whole day.</p>
+<p class="m5-why">NICE lists the pharmacokinetic profile as one reason to think about modified-release, and the MHRA says take care when switching.</p>
+<div class="gst-note m5-match"><b>Match the profile to the person's day.</b>
+<ul>
+<li>Line the effect up against school, homework, work or driving.</li>
+<li>If cover ends too early, consider an IR top-up later in the day (methylphenidate only) or another brand, prescribed by brand. Do not just increase the dose.</li>
+<li>For a child on Medikinet XL or Ambinet XL, the SmPC adds that treatment should not continue if a late IR dose is always needed, unless the same extra dose was needed on IR.</li>
+<li>The day builder in the lesson “Fitting the dose to the day” lets you try a whole day.</li>
+</ul></div>
 <div class="deeper"><span>Go deeper:</span><a href="#m5-switch">Which products can be swapped, and how to convert (next lesson)</a><a href="#m11-l1">Brand look-up (Module 11)</a></div>
 </section>
 
@@ -647,8 +656,13 @@ window.addEventListener('load',function(){var a=document.images;for(var i=0;i<a.
 <!-- ============ LESSON 7 ============ -->
 <section class="lesson" data-title="Before you prescribe: contraindications" data-min="5">
 <h2 class="ls-h">Before you prescribe: contraindications</h2>
-<p>A <strong>contraindication</strong> means “do not use”. A <strong>caution</strong> or warning (4.4) means “use, but with extra care and monitoring”. Check both against the baseline history from <a href="#m3">Module 3</a> before the first dose.</p>
-<div class="fx" data-practice>
+<ul class="m5-def">
+<li class="m5-def-no">A <strong>contraindication</strong> means “do not use”.</li>
+<li class="m5-def-care">A <strong>caution</strong> or warning (4.4) means “use, but with extra care and monitoring”.</li>
+</ul>
+<p>Check both against the baseline history from <a href="#m3">Module 3</a> before the first dose.</p>
+<div class="fx m5-fx" data-practice>
+<p class="m5-key" aria-hidden="true"><span class="k-stim">Stimulant</span><span class="k-non">Non-stimulant</span></p>
 <div class="pr-tabs fx-tabs" role="tablist" aria-label="Contraindications by medicine">
 <button type="button" role="tab" class="pr-tab fx-tab"><span class="fx-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg></span><span class="fx-tt"><b>Methylphenidate</b><small>The longest list</small></span></button>
 <button type="button" role="tab" class="pr-tab fx-tab"><span class="fx-ic" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg></span><span class="fx-tt"><b>Lisdexamfetamine</b><small>Heart, BP, agitation</small></span></button>
@@ -709,7 +723,8 @@ window.addEventListener('load',function(){var a=document.images;for(var i=0;i<a.
 <!-- ============ LESSON 8 ============ -->
 <section class="lesson" data-title="Titration: the method" data-min="6">
 <h2 class="ls-h">Titration: the method</h2>
-<p><strong>Titration</strong> means finding each person’s best dose by small, regular steps. The aim is <strong>dose optimisation</strong>: fewer symptoms, better behaviour, and gains at school, work and in relationships, with side effects the person can live with. It is <em>not</em> reaching the maximum.</p>
+<p><strong>Titration</strong> means finding each person’s best dose by small, regular steps.</p>
+<p class="m5-aim">The aim is <strong>dose optimisation</strong>: fewer symptoms, better behaviour, and gains at school, work and in relationships, with side effects the person can live with. It is <em>not</em> reaching the maximum.</p>
 <figure class="wt">
 <div class="overlay-fig"><picture><source srcset="images/m5-titration-steps.webp" type="image/webp"><img src="images/m5-titration-steps.jpg" alt="Illustration of a staircase of doses" width="1200" height="675" decoding="async" loading="lazy"></picture>
 <button type="button" class="wk-mark" data-s="1" style="left:44%;top:70%" aria-label="Show step 1">1</button>
@@ -732,7 +747,7 @@ window.addEventListener('load',function(){var a=document.images;for(var i=0;i<a.
 <div class="stat"><span class="stat-n">6 wk</span><span class="stat-l">trial at an adequate dose before calling a medicine a failure</span></div>
 <div class="stat"><span class="stat-n">2 readings</span><span class="stat-l">of a resting pulse over 120, an arrhythmia or systolic BP above the 95th centile: reduce the dose and refer</span></div>
 </div>
-<h3>Try it: titration stepper</h3>
+<details class="mx mx-tool"><summary><span class="mx-t"><b>Try it: titration stepper</b><small>Choose a medicine and step through its dose ladder</small></span><span class="mx-chev" aria-hidden="true"></span></summary><div class="mx-b">
 <div class="stepper" id="stepper">
 <p class="cl-progress">Illustrative steps based on SmPC doses. Choose a medicine, then step through. The dashed red outline marks the licensed maximum; a solid teal outline marks a usual maintenance target (not a maximum).</p>
 <div class="controls"><label for="stepDrug">Medicine<select id="stepDrug"></select></label>
@@ -743,6 +758,7 @@ window.addEventListener('load',function(){var a=document.images;for(var i=0;i<a.
 <div class="dose-bar" aria-hidden="true"><span></span></div>
 <div class="step-detail" aria-live="polite"></div>
 </div>
+</div></details>
 <div class="say"><span class="fx-lbl">How to explain it to a patient</span><p>“We start with a small dose and go up a little each week. Each week we will ask how things are going and check your pulse and blood pressure. We stop going up when it is working well and any side effects are mild. More is not always better.”</p></div>
 </section>
 
@@ -1635,6 +1651,7 @@ window.addEventListener('load',function(){var a=document.images;for(var i=0;i<a.
 <script src="js/mobile-dock.js?v=20261101a"></script>
 <script src="js/m5-mph.js?v=20261101a"></script>
 <script src="js/m5-release.js?v=20261101m4"></script>
+<script src="js/m5-extra.js?v=20261101-m5p2"></script>
 <script src="js/context-sidebar.js?v=20261025-start1"></script>
 <script src="js/m10-cases.js?v=20261028ge"></script>
 <script src="js/m1-impact.js?v=20261028ge"></script>
