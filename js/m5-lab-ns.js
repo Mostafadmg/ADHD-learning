@@ -4,6 +4,9 @@
    guanfacine letter dated 9 Oct 2026 (MHRA-hosted), NICE NG87 and the Elvanse SmPC (head-to-head trial). Every conversion result
    carries one honest status badge: SmPC table, SmPC statement, Guideline (no numbers), Local NHS protocol (not national),
    Worked out from the SmPC (not official), or No official method. Nothing here invents a cross-taper, overlap or conversion.
+   "No official method" means none of the UK sources read (SmPCs, NICE NG87, SPS, shared-care protocols) gives one: published
+   reviews exist for some moves (for example stimulant to atomoxetine in children) but are not UK guidance. Every dose a result
+   lists or draws is capped at the SmPC ceiling for that group; a figure the SmPC does not give never carries the "SmPC table" badge.
    Curves are PLASMA-LEVEL shapes from js/release-model.js (keys atx_em, atx_pm, atx_inh, gua_pr; the comment there says what each is
    fitted to and what it does not claim). They are not clinical-effect curves. */
 (function () {
@@ -12,6 +15,13 @@
   var RM = window.RELMODEL;
 
   /* ---------- small helpers ---------- */
+  /* The lab engine calls compute() without a try/catch, so a thrown error would blank the result area. Each tool is wrapped so that an
+     unexpected input shows a plain message instead. */
+  function safe(fn) {
+    return function (v) {
+      try { return fn(v); } catch (e) { return { tone: 'warn', badge: ST.none, head: 'This combination could not be worked out.', rows: [{ h: 'What to do', t: 'Change one of the choices above, and take specialist advice for this case.' }], notes: [] }; }
+    };
+  }
   function r1(n) { return Math.round(n * 10) / 10; }
   function r2(n) { return Math.round(n * 100) / 100; }
   function mg(n) { return r1(n) + ' mg'; }
@@ -58,12 +68,22 @@
     for (i = 0; i < SUMS.length; i++) { if (SUMS[i] <= d + 1e-9) below = SUMS[i]; if (SUMS[i] >= d - 1e-9 && above === null) above = SUMS[i]; }
     return { below: below, above: above, exact: below !== null && above !== null && Math.abs(below - above) < 1e-9 };
   }
-  /* Words for "what real capsules give this daily total at n dose times". w = weight in kg for mg/kg (or 0). */
-  function capsLine(total, n, w) {
+  /* Words for "what real capsules give this daily total at n dose times". w = weight in kg for mg/kg (or 0).
+     liver = true when the wanted dose is an SmPC liver reduction (50% or 25%). A wanted dose below the smallest capsule is only
+     rounded up to it when that capsule is within 25% of the wanted dose: otherwise no capsule can give the dose, and rounding up
+     would undo the reduction (or go well past the SmPC start), so the line says so and gives the size of the gap. */
+  var ROUND_UP_MAX = 1.25;
+  function capsLine(total, n, w, liver) {
     var d = total / n, nr = nearest(d), per = n === 2 ? ' at each of the two dose times' : '';
     function one(s) { var tt = s * n; return mg(tt) + ' (' + capText(s) + per + (w ? ', ' + r2(tt / w) + ' mg/kg' : '') + ')'; }
     if (nr.exact) return mg(total) + ' can be made exactly: ' + capText(nr.below) + per + '.';
-    if (nr.below === null) return 'Each dose would be ' + mg(d) + ', which is smaller than the smallest capsule (10 mg). The nearest real dose is ' + one(nr.above) + '.';
+    if (nr.below === null) {
+      var ratio = nr.above / d, gap = 'The smallest capsule is ' + r1(ratio) + ' times the wanted dose' + (w ? ' (' + r2(nr.above * n / w) + ' mg/kg against ' + r2(total / w) + ' mg/kg)' : '') + '.';
+      if (ratio <= ROUND_UP_MAX) return 'Each dose would be ' + mg(d) + ', which is smaller than the smallest capsule (10 mg). The nearest real dose is ' + one(nr.above) + '. ' + gap;
+      return '<b>No capsule can give this dose.</b> Each dose would be ' + mg(d) + ', which is smaller than the smallest capsule (10 mg). ' + gap + ' ' +
+        (liver ? 'Rounding up would undo the SmPC liver reduction. Do not round up; take specialist advice.'
+          : 'The SmPC gives the weight-based doses as “approximately”; whether to use the smallest capsule is the prescriber’s decision, so no dose is offered here.');
+    }
     if (nr.above === null) return mg(total) + ' needs more than two of the biggest capsule at a dose time. The nearest is ' + one(nr.below) + '.';
     return 'No capsule, or pair of capsules, gives exactly ' + mg(total) + '. The nearest are ' + one(nr.below) + ' and ' + one(nr.above) + '.';
   }
@@ -101,26 +121,28 @@
         note: 'Plasma level only. Tap “Compare with” to lay the once-daily curve over this one.' },
       { id: 'pm', chip: 'Poor metaboliser', tag: 'Slow CYP2D6', color: '#a8432e', tint: '#fbe9e5', name: 'Atomoxetine in a CYP2D6 poor metaboliser',
         series: [
-          { label: 'Poor metaboliser', model: 'atx_pm', mg: PM_REL, color: '#a8432e', tint: '#fbe9e5' },
+          { label: 'Poor metaboliser (area 10 times usual)', model: 'atx_pm', mg: PM_REL, color: '#a8432e', tint: '#fbe9e5' },
           { label: 'Usual (normal CYP2D6)', model: 'atx_em', mg: EM_REL, color: '#16324f', dashed: true }
         ],
+        inside: 'Read the red curve as exposure, not as a peak. It is drawn with 10 times the usual area under the curve (the SmPC figure). Its height is not an SmPC figure: the SmPC gives a steady-state peak about 5-fold higher, which one dose cannot show.',
         moments: [
           { t: 'Same capsule, about 10 times the exposure', h: 1.5, d: 'In poor metabolisers the area under the curve (AUC) is about 10 times that of extensive metabolisers (SmPC). The graph is drawn so its area is 10 times larger.' },
-          { t: 'Half-life 21 hours', h: 20, d: 'The mean half-life is 21 hours, against 3.6 hours. Worked out from the half-life: a day after the capsule about half of the peak level is still there, so the next capsule lands on top of it.' },
+          { t: 'Half-life 21 hours', h: 20, d: 'The mean half-life is 21 hours, against 3.6 hours. Worked out from the half-life, so schematic only: a day after one capsule about half of the peak level is still there. The SmPC does not describe how levels build up with repeated daily capsules.' },
           { t: 'Steady-state peak about 5-fold (not drawn)', h: 5, d: 'With repeated dosing the SmPC gives a peak (Css,max) about 5-fold higher. One dose cannot show a steady-state figure, so it is not drawn.' },
           { t: 'What the SmPC suggests', h: 12, d: 'About 7% of white people (“Caucasians” in the SmPC) are poor metabolisers. For a known poor metaboliser, a lower starting dose and slower titration “may be considered”. No dose cut is given.' }
         ],
         note: 'Plasma level only. The height of the single-dose peak is not an SmPC figure; the area (10-fold) is.' },
-      { id: 'inh', chip: 'With fluoxetine', tag: 'or paroxetine', color: '#6b4fa3', tint: '#efe9f7', name: 'Atomoxetine with a strong CYP2D6 inhibitor',
+      { id: 'inh', chip: 'With fluoxetine', tag: 'or paroxetine', color: '#6b4fa3', tint: '#efe9f7', name: 'Atomoxetine with a CYP2D6 inhibitor',
         series: [
-          { label: 'With an inhibitor: 6 times', model: 'atx_inh', mg: INH6, color: '#6b4fa3', tint: '#efe9f7' },
-          { label: 'With an inhibitor: 8 times', model: 'atx_inh', mg: INH8, color: '#3d2a6e' },
+          { label: 'With an inhibitor: area 6 times usual', model: 'atx_inh', mg: INH6, color: '#6b4fa3', tint: '#efe9f7' },
+          { label: 'With an inhibitor: area 8 times usual', model: 'atx_inh', mg: INH8, color: '#3d2a6e' },
           { label: 'Usual (no inhibitor)', model: 'atx_em', mg: EM_REL, color: '#16324f', dashed: true }
         ],
+        inside: 'Heights here show exposure (the area under each curve), not peaks. The SmPC puts the rise in the steady-state peak at 3 to 4 times, not 6 to 8, and the drawn peaks are taller than that, so the heights are not to scale.',
         moments: [
-          { t: 'Exposure 6 to 8 times higher', h: 1.5, d: 'With a strong CYP2D6 inhibitor (fluoxetine, paroxetine, quinidine, terbinafine) the SmPC says exposure “may be 6-to 8-fold increased”. The two purple lines are 6 times and 8 times the usual area.' },
-          { t: 'Steady-state peak 3 to 4 times (not drawn)', h: 5, d: 'The SmPC also gives a steady-state peak (Css,max) “3 to 4 times higher”. It is not drawn. It gives no half-life with an inhibitor, so both purple curves keep the usual shape and are only taller.' },
-          { t: 'What to do', h: 10, d: 'Slower titration and a lower final dose “may be necessary”. The SmPC gives no number. If an inhibitor is started or stopped after titration, re-evaluate response and tolerability.' }
+          { t: 'Exposure 6 to 8 times higher (area). Peak 3 to 4 times higher (SmPC)', h: 1.5, d: 'With a CYP2D6 inhibitor named in the SmPC (fluoxetine and paroxetine, which are SSRIs, quinidine, terbinafine) the SmPC says exposure “may be 6-to 8-fold increased and Css max 3 to 4 times higher”. The two purple curves are drawn with 6 times and 8 times the usual area. The drawn peaks are taller than the SmPC peak rise and are not to scale.' },
+          { t: 'Steady-state peak 3 to 4 times (not drawn)', h: 5, d: 'The steady-state peak (Css,max) is not drawn: one dose cannot show it. The SmPC gives no half-life with an inhibitor, so both purple curves keep the usual shape and are only taller.' },
+          { t: 'What to do', h: 10, d: 'Slower titration and a lower final dose “may be necessary”. The SmPC gives no number. If an inhibitor is started or stopped after titration, re-evaluate response and tolerability. The SmPC also warns that combining atomoxetine with SSRIs raises the risk of serotonin syndrome.' }
         ],
         note: 'Plasma level only. Only the size of the rise is from the SmPC; the shape is the usual one.' }
     ]
@@ -151,7 +173,7 @@
     /* real capsules: the prescriber decides */
     var cw = light ? w : 0;
     rows.push({ h: 'Real capsules (worked out, not official; the prescriber decides)',
-      t: '<b>Start:</b> ' + capsLine(start, n, cw) + '<br><b>' + (hi !== lo ? 'Target, low end:' : 'Target:') + '</b> ' + capsLine(lo, n, cw) + (hi !== lo ? '<br><b>Target, high end:</b> ' + capsLine(hi, n, cw) : '') });
+      t: '<b>Start:</b> ' + capsLine(start, n, cw, f !== 1) + '<br><b>' + (hi !== lo ? 'Target, low end:' : 'Target:') + '</b> ' + capsLine(lo, n, cw, f !== 1) + (hi !== lo ? '<br><b>Target, high end:</b> ' + capsLine(hi, n, cw, f !== 1) : '') });
 
     var half = lo / 2;
     rows.push({ h: n === 2 ? 'Two doses a day (evenly divided)' : 'Once daily or split: the same total',
@@ -160,10 +182,10 @@
 
     if (v.mod === 'pm') {
       tone = 'warn';
-      rows.push({ h: 'CYP2D6 poor metaboliser (SmPC statement)', t: 'About 10 times the exposure. “A lower starting dose and slower up titration of the dose may be considered.” The SmPC gives no dose cut, so the figures above are the usual ones, not adjusted.' });
+      rows.push({ h: 'CYP2D6 poor metaboliser (SmPC statement)', t: 'About 10 times the exposure. “A lower starting dose and slower up titration of the dose may be considered.” The SmPC gives no dose cut, so the figures above are the usual ones, not adjusted. It also advises caution with potent inhibitors of other CYP enzymes in a poor metaboliser, because the effect on exposure is unknown.' });
     } else if (v.mod === 'inh') {
       tone = 'warn';
-      rows.push({ h: 'Strong CYP2D6 inhibitor (SmPC statement)', t: 'Exposure may be 6- to 8-fold higher. “Slower titration and final lower dosage … may be necessary.” The SmPC gives no number, so the figures above are the usual ones, not adjusted. Re-evaluate if an inhibitor is started or stopped after titration.' });
+      rows.push({ h: 'CYP2D6 inhibitor (SmPC statement)', t: 'The SmPC names fluoxetine and paroxetine (SSRIs), quinidine and terbinafine. Exposure may be 6- to 8-fold higher. “Slower titration and final lower dosage … may be necessary.” The SmPC gives no number, so the figures above are the usual ones, not adjusted. Re-evaluate if an inhibitor is started or stopped after titration. The SmPC also warns of serotonin syndrome when atomoxetine is combined with SSRIs, so watch for it.' });
     } else if (f !== 1) {
       tone = 'warn';
       notes.push('The mg figures are arithmetic on the SmPC percentages. A local shared-care protocol (Dorset, February 2025: local, not national) also caps the total daily dose at ' + (f === 0.5 ? '50 mg in Child-Pugh B' : '25 mg in Child-Pugh C') + '.');
@@ -221,12 +243,16 @@
 
     /* atomoxetine once daily -> twice daily */
     if (a === 'atx1' && b === 'atx2') {
-      var half = total / 2, cap = nearest(half);
-      return { tone: 'ok', badge: ST.stmt, head: 'Allowed. Keep the same total daily dose and divide it evenly.',
+      var half = total / 2, cap = nearest(half), capTxt;
+      /* a half dose below the smallest capsule (10 mg a day split in two) has no real capsule at all */
+      if (cap.exact) capTxt = mg(half) + ' is ' + capText(cap.below) + '.';
+      else if (cap.below === null || cap.above === null) capTxt = mg(half) + ' is ' + (cap.below === null ? 'smaller than the smallest capsule (10 mg)' : 'bigger than two of the biggest capsules') + ', so ' + mg(total) + ' a day cannot be split into two even capsule doses. The prescriber decides.';
+      else capTxt = mg(half) + ' is not a capsule or a pair of capsules. The nearest are ' + mg(cap.below) + ' (' + capText(cap.below) + ') and ' + mg(cap.above) + ' (' + capText(cap.above) + '). The prescriber decides.';
+      return { tone: 'ok', badge: ST.stmt, head: 'The SmPC allows twice-daily evenly divided doses. Keeping the same total is the usual reading, not a stated rule.',
         rows: [
           { h: 'What the SmPC says', t: 'If a single daily dose does not give a satisfactory response (for tolerability, for example nausea or somnolence, or for efficacy), the person “might benefit from taking it as twice daily evenly divided doses in the morning and late afternoon or early evening”.' },
-          { h: 'The numbers (' + ST.calc.toLowerCase() + ')', t: 'The SmPC gives no conversion factor. The total stays ' + mg(total) + ' and is halved: <b>' + mg(half) + ' in the morning + ' + mg(half) + ' in the late afternoon or early evening</b>. The total daily maximum is still 100 mg.' },
-          { h: 'Real capsules at each time', t: cap.exact ? mg(half) + ' is ' + capText(cap.below) + '.' : mg(half) + ' is not a capsule or a pair of capsules. The nearest are ' + mg(cap.below) + ' (' + capText(cap.below) + ') and ' + mg(cap.above) + ' (' + capText(cap.above) + '). The prescriber decides.' }
+          { h: 'The numbers (' + ST.calc.toLowerCase() + ')', t: 'The SmPC gives no conversion factor and does not say the total stays the same. Taking the total as ' + mg(total) + ' and halving it gives <b>' + mg(half) + ' in the morning + ' + mg(half) + ' in the late afternoon or early evening</b>. The total daily maximum is still 100 mg.' },
+          { h: 'Real capsules at each time', t: capTxt }
         ],
         notes: ['The SmPC gives no clock time for the second dose.', 'The graph shows the level in the blood after each plan, in someone with normal CYP2D6. The total is the same; the peaks are lower when split.'],
         src: SRC.atx, chart: dayChart(total) };
@@ -235,8 +261,8 @@
     if (a === 'atx2' && b === 'atx1') {
       return { tone: 'warn', badge: ST.none, head: 'The SmPC does not describe going back to one daily dose.',
         rows: [
-          { h: 'What it does say', t: 'Atomoxetine “can be administered as a single daily dose in the morning”, and twice-daily dosing is an option for people who do not get a satisfactory response on one dose.' },
-          { h: 'What it leaves out', t: 'How to go back, and whether to keep the total the same. Going back at the same total daily dose is the obvious reading, but it is not written down.' },
+          { h: 'What it does say', t: 'Atomoxetine “can be administered as a single daily dose in the morning”: a single morning dose is the first regimen the SmPC lists. Twice-daily dosing is an option for people who do not get a satisfactory response on one dose.' },
+          { h: 'What it leaves out', t: 'How or when to go back, and whether to keep the total the same. Going back at the same total daily dose is the usual reading (the same reading as for splitting), but it is not written down.' },
           { h: 'What to do', t: 'Check the reason you split in the first place (nausea, sleepiness or response) and ask the specialist who started it.' }
         ], notes: [], src: SRC.atx };
     }
@@ -251,39 +277,40 @@
     }
     /* stimulant -> atomoxetine */
     if (a === 'stim' && isAtx(b)) {
-      return { tone: 'warn', badge: ST.none, head: 'No published method for the switch itself. The sources say when to offer atomoxetine, not how to move across.',
+      return { tone: 'warn', badge: ST.none, head: 'No official method for the switch itself. The UK sources say when to offer atomoxetine, not how to move across.',
         rows: [
           { h: 'When (' + ST.guide.toLowerCase() + ')', t: 'NICE: offer atomoxetine if the stimulants are not tolerated, or if separate 6-week trials of lisdexamfetamine and methylphenidate have not worked (children from age 5 and young people; adults).' },
-          { h: 'How (no source)', t: 'The atomoxetine SmPC, NG87, SPS and the shared-care protocols we read give no washout, overlap or cross-taper. Do not make one up.' },
+          { h: 'How (no official source)', t: 'The atomoxetine SmPC, NG87, SPS and the shared-care protocols we read give no washout, overlap or cross-taper. Do not make one up.' },
+          { h: 'Published reviews (not UK guidance)', t: 'Reviews do exist. For example, a 2008 review of switching children and young people from stimulants to atomoxetine (Paediatric Drugs, PMID 18162007) describes cross-tapering and co-administration with methylphenidate during the switch. It is not UK guidance and this course has not appraised it. Ask the specialist.' },
           { h: 'What the sources do give', t: 'Start atomoxetine on its own titration: about 0.5 mg/kg a day up to 70 kg, otherwise 40 mg, for at least 7 days. Check blood pressure and pulse after each dose change. The SmPC says to use it cautiously with medicines that may raise blood pressure (stimulants can). Ask the specialist how to handle the stimulant.' }
         ], notes: [mdt], src: SRC.atx + ' ' + SRC.ng };
     }
     /* atomoxetine -> stimulant */
     if (isAtx(a) && b === 'stim') {
-      return { tone: 'warn', badge: ST.none, head: 'No published method, and no NICE step that sends you back to a stimulant.',
+      return { tone: 'warn', badge: ST.none, head: 'No official method, and no NICE step that sends you back to a stimulant.',
         rows: [
           { h: 'Guideline (no numbers)', t: 'NICE puts stimulants first and atomoxetine after them. If symptoms are unresponsive to one or more stimulants and one non-stimulant, get a second opinion or refer to a tertiary service.' },
-          { h: 'How (no source)', t: 'The SmPCs, NG87, SPS and the shared-care protocols we read give no washout, overlap or cross-taper for this move.' },
+          { h: 'How (no official source)', t: 'The SmPCs, NG87, SPS and the shared-care protocols we read give no washout, overlap or cross-taper for this move. Published reviews and small studies may exist but are not UK guidance.' },
           { h: 'What to do', t: 'Ask the specialist. Stopping atomoxetine has its own rule (see the Stop option).' }
         ], notes: [], src: SRC.ng };
     }
     /* atomoxetine <-> guanfacine */
     if ((isAtx(a) && b === 'gua') || (a === 'gua' && isAtx(b))) {
       var toG = b === 'gua';
-      return { tone: 'warn', badge: ST.none, head: 'No published method for moving between the two non-stimulants.',
+      return { tone: 'warn', badge: ST.none, head: 'No official method for moving between the two non-stimulants.',
         rows: [
           { h: 'Guideline (no numbers)', t: 'NICE treats atomoxetine and guanfacine as parallel options after stimulants for children from age 5 and young people. For adults it offers atomoxetine; guanfacine needs tertiary advice. Symptoms unresponsive to one or more stimulants and one non-stimulant: second opinion or tertiary referral.' },
           { h: 'Licence', t: 'Guanfacine is licensed for ages 6 to 17 only. Atomoxetine is licensed for children from 6, teenagers and adults.' },
-          { h: 'How (no source)', t: 'No washout, overlap or cross-taper is published. ' + (toG ? 'Guanfacine has its own titration from 1 mg.' : 'Stopping guanfacine has its own taper: no more than 1 mg every 3 to 7 days, with blood pressure and pulse checks.') + ' Ask the specialist how to combine them.' }
+          { h: 'How (no official source)', t: 'The sources read give no washout, overlap or cross-taper. ' + (toG ? 'Guanfacine has its own titration from 1 mg.' : 'Stopping guanfacine has its own taper: no more than 1 mg every 3 to 7 days, with blood pressure and pulse checks.') + ' Ask the specialist how to combine them.' }
         ], notes: [], src: SRC.ng + ' ' + SRC.gua };
     }
     /* stimulant <-> guanfacine (answered in full in the guanfacine lab) */
     if ((a === 'stim' && b === 'gua') || (a === 'gua' && b === 'stim')) {
-      return { tone: 'warn', badge: ST.none, head: 'No published method for this move. The guanfacine lab (next lesson) has the detail.',
+      return { tone: 'warn', badge: ST.none, head: 'No official method for this move. The guanfacine lab (next lesson) has the detail.',
         rows: [
           { h: 'Guideline (no numbers)', t: a === 'stim' ? 'NICE offers guanfacine to children from age 5 and young people on the same terms as atomoxetine, and suggests considering it for stimulant-related tics. It is not for adults without tertiary advice.'
             : 'NICE: if a person on guanfacine has sustained orthostatic hypotension or fainting, reduce the dose or switch to another ADHD medicine.' },
-          { h: 'How (no source)', t: 'No washout, overlap or cross-taper. The guanfacine SmPC only has an add-on trial, which is a different design.' }
+          { h: 'How (no official source)', t: 'No washout, overlap or cross-taper in the sources read. The guanfacine SmPC only has an add-on trial, which is a different design.' }
         ], notes: [], src: SRC.ng };
     }
     return { tone: 'info', head: 'Choose two different options.', rows: [], notes: [] };
@@ -309,7 +336,7 @@
   }
 
   function atxStop() {
-    return { tone: 'ok', badge: ST.stmt, head: 'No withdrawal syndrome is described. Tapering is optional unless side effects are serious.',
+    return { tone: 'ok', badge: ST.stmt, head: 'No withdrawal syndrome is described. For significant side effects it may be stopped at once; otherwise the SmPC says it may be tapered over a suitable time.',
       rows: [
         { h: 'Serious side effects', t: 'Atomoxetine “may be stopped abruptly” in cases of significant adverse effects.' },
         { h: 'Otherwise', t: 'It may be tapered off “over a suitable time period”. The SmPC gives no schedule. “In the study programme no distinct withdrawal symptoms have been described.”' },
@@ -327,10 +354,10 @@
       { id: 'w', type: 'select', label: 'Weight', value: '30', options: kgOptions(15, 120, 1), show: function (v) { return v.grp !== 'adult'; } },
       { id: 'mod', type: 'select', label: 'Anything that changes the dose?', value: 'none', options: [
         { v: 'none', l: 'None of these' }, { v: 'cpb', l: 'Liver: Child-Pugh B (moderate)' }, { v: 'cpc', l: 'Liver: Child-Pugh C (severe)' },
-        { v: 'pm', l: 'Known CYP2D6 poor metaboliser' }, { v: 'inh', l: 'On fluoxetine, paroxetine or similar' }] },
+        { v: 'pm', l: 'Known CYP2D6 poor metaboliser' }, { v: 'inh', l: 'On fluoxetine, paroxetine, quinidine or terbinafine' }] },
       { id: 'sched', type: 'seg', label: 'Given as', value: '1', options: [{ v: '1', l: 'Once daily' }, { v: '2', l: 'Two doses' }] }
     ],
-    compute: atxDose
+    compute: safe(atxDose)
   };
 
   var ATX_SWITCH = {
@@ -347,11 +374,11 @@
         { v: 'gs', l: 'Guanfacine to a stimulant' }, { v: 'as', l: 'Atomoxetine to a stimulant' }, { v: 'ag', l: 'Atomoxetine and guanfacine together' }],
         show: function (v) { return v.task === 'add'; } }
     ],
-    compute: function (v) {
+    compute: safe(function (v) {
       if (v.task === 'stop') return atxStop();
       if (v.task === 'add') return atxAddOn(v);
       return atxSwitch(v);
-    }
+    })
   };
 
   window.M5LAB.add('atx', {
@@ -375,8 +402,8 @@
         moments: [
           { t: 'The tablet: with or without food, not a high-fat meal', h: 0, d: 'In adults a high-fat meal raised the peak (Cmax) by about 75% and total exposure (AUC) by about 40%. The SmPC gives the size of the rise, not its timing, so no curve is drawn. Do not give the tablet with a high-fat meal or with grapefruit juice.' },
           { t: 'Peak about 5 hours after the tablet', h: 5, d: 'The SmPC gives the peak plasma level at about 5 hours after a dose in children and adolescents (6 to 17).' },
-          { t: 'Half-life about 18 hours', h: 23, d: 'The mean half-life is about 18 hours: once the level is falling it halves about every 18 hours. A day later, when the next tablet is due, a large share of the first dose is still there.' },
-          { t: 'Days 2 and 3: tablets add up', h: 30, d: 'This curve simply adds each day’s tablet to what is left. It is arithmetic from the half-life, not a finding: the SmPC does not state accumulation or a time to steady state.' }
+          { t: 'Half-life about 18 hours', h: 23, d: 'The mean half-life is about 18 hours: once the level is falling it halves about every 18 hours. The SmPC gives the half-life; it does not describe how levels build up over repeated days.' },
+          { t: 'Days 2 and 3 (schematic: simple addition of the half-life curve, not stated in the SmPC)', h: 30, d: 'This curve simply adds each day’s tablet to what is left. It is arithmetic from the half-life, not a finding: the SmPC does not state accumulation or a time to steady state.' }
         ],
         practice: ['Morning or evening: in a trial in 6- to 12-year-olds both beat placebo.'],
         note: 'Plasma level only, counted from the first tablet. The curve for days 2 and 3 is a schematic of repeated once-daily dosing implied by the half-life; blood pressure and pulse effects are not drawn.' },
@@ -403,6 +430,8 @@
     for (var i = 0; i < GUA_BANDS.length; i++) if (GUA_BANDS[i].age === age && w >= GUA_BANDS[i].min - 1e-9) return GUA_BANDS[i];
     return null;
   }
+  /* The weight-based maintenance range (0.05 to 0.12 mg/kg a day) sits beside Tables 1 and 2 in the SmPC; nothing says it overrides the
+     table maxima, so every dose listed or drawn here is capped at the band maximum. */
   function guaDose(v) {
     var age = v.age, w = +v.w || 30, band = guaBand(age, w), lo = 0.05 * w, hi = 0.12 * w;
     var below = age === '6' ? 'under 25 kg (age 6 to 12)' : 'under 34 kg (age 13 to 17)';
@@ -414,46 +443,76 @@
           { h: 'What to do', t: 'Take specialist advice.' }
         ], notes: ['There is no table below 25 kg (age 6 to 12) or 34 kg (age 13 to 17).'], src: SRC.gua };
     }
-    var m = band.max, useMax = v.mod === 'inh' ? m / 2 : m, rows = [], notes = [], tone = v.mod === 'inh' ? 'warn' : 'info', steps = [], k, head, effect = null, effLabel = '';
+    var inh = v.mod === 'inh', ind = v.mod === 'ind';
+    var m = band.max;
+    /* with an inhibitor the chart steps stop at a whole-mg tablet at or below half the table maximum; the exact half is only a dashed line */
+    var half = m / 2, useMax = inh ? Math.floor(half + 1e-9) : m;
+    var hiCap = Math.min(hi, useMax), capped = hi > useMax + 1e-9;
+    var rows = [], notes = [], tone = inh ? 'warn' : 'info', steps = [], k, head, line, lineLabel, badge = ST.table;
     var whole = [], q;
-    for (q = Math.ceil(lo - 1e-9); q <= Math.floor(hi + 1e-9); q++) whole.push(q);
+    for (q = Math.ceil(lo - 1e-9); q <= Math.floor(hiCap + 1e-9); q++) whole.push(q);
     /* weekly steps of 1 mg up to the ceiling; one bar per distinct dose */
     for (k = 1; k <= m; k++) { var val = Math.min(k, useMax); if (k > 1 && val === Math.min(k - 1, useMax)) break; steps.push({ a: k, b: k + 1, v: val }); }
     var xTo = Math.max(steps.length, 4) + 1;
     steps[steps.length - 1].b = xTo;
 
-    head = v.mod === 'inh'
-      ? 'With a CYP3A4/5 inhibitor the SmPC recommends a 50% dose reduction. Half of ' + m + ' mg is ' + r1(useMax) + ' mg (worked out).'
+    head = inh
+      ? 'The SmPC recommends a 50% reduction of the dose with a CYP3A4/5 inhibitor. Halving the table maximum (' + m + ' mg to ' + r1(half) + ' mg) is this tool’s illustration, not an SmPC rule.'
       : 'Start 1 mg once daily. The table maximum is ' + m + ' mg a day.';
     rows.push({ h: 'Start and steps', t: '1 mg once daily, for everyone. Go up by no more than 1 mg a week. Dose changes, up or down, can be made at any weekly interval, by response and tolerability.' });
-    rows.push({ h: 'Maximum for this group (' + ST.table.toLowerCase() + ')', t: '<b>' + m + ' mg a day</b> (' + band.label + '). You reach it in week ' + m + ' if you go up every week.' +
-      (m === 7 ? ' 7 mg only after at least 1 week on 6 mg and a “thorough review” of tolerability and efficacy.' : '') });
-    rows.push({ h: 'Maintenance range by weight (SmPC)', t: '0.05 to 0.12 mg/kg a day = <b>' + r1(lo) + ' to ' + r1(hi) + ' mg</b> for ' + w + ' kg.' +
-      (m > hi + 1e-9 ? ' The table maximum (' + m + ' mg = ' + r2(m / w) + ' mg/kg) sits a little above the top of that range.' : '') });
-    rows.push({ h: 'Whole tablets in that range (' + ST.calc.toLowerCase() + ')', t: (whole.length ? whole.join(' mg, ') + ' mg. ' : 'No whole-mg tablet fits. ') + 'This is rounding. The SmPC gives no “2 to 3 mg” range or any other whole-tablet range.' });
+    if (inh) {
+      rows.push({ h: 'Table maximum without an inhibitor (' + ST.table.toLowerCase() + ')', t: '<b>' + m + ' mg a day</b> (' + band.label + '). The SmPC gives no table for use with an inhibitor: it says only that “a 50% reduction of the guanfacine dose is recommended” and that “further dose titration may be needed”.' });
+    } else {
+      rows.push({ h: 'Maximum for this group (' + ST.table.toLowerCase() + ')', t: '<b>' + m + ' mg a day</b> (' + band.label + '). You reach it in week ' + m + ' if you go up every week.' +
+        (m === 7 ? ' 7 mg only after at least 1 week on 6 mg and a “thorough review” of tolerability and efficacy.' : '') });
+    }
+    var rangeTxt = '0.05 to 0.12 mg/kg a day = <b>' + r1(lo) + ' to ' + r1(hi) + ' mg</b> for ' + w + ' kg.';
+    var ceilTxt = inh ? '' : ', so ' + m + ' mg is the ceiling';
+    if (lo > m + 1e-9) rangeTxt += ' Even the bottom of that range is above the table maximum (' + m + ' mg = ' + r2(m / w) + ' mg/kg)' + ceilTxt + '.';
+    else if (hi > m + 1e-9) rangeTxt += ' The table maximum (' + m + ' mg = ' + r2(m / w) + ' mg/kg) is lower than the top of that range' + ceilTxt + '.';
+    else if (m > hi + 1e-9) rangeTxt += ' The table maximum (' + m + ' mg = ' + r2(m / w) + ' mg/kg) sits ' + (m / hi <= 1.25 ? 'a little ' : '') + 'above the top of that range.';
+    rows.push({ h: 'Maintenance range by weight (SmPC)', t: rangeTxt });
+    if (inh) {
+      rows.push({ h: 'Whole tablets up to the illustrative ceiling (' + ST.calc.toLowerCase() + ')',
+        t: '1 mg to ' + useMax + ' mg, in whole-mg steps' + (Math.abs(half - useMax) > 1e-9 ? ' (half of ' + m + ' mg is ' + r1(half) + ' mg, rounded down to a whole tablet)' : '') + '. The SmPC gives no ceiling for use with an inhibitor, so the prescriber rounds and titrates by response.' });
+    } else {
+      rows.push({ h: 'Whole tablets in that range (' + ST.calc.toLowerCase() + ')',
+        t: (whole.length ? whole.join(' mg, ') + ' mg. ' : (lo > useMax + 1e-9 ? 'None: even the bottom of the range is above the table maximum. ' : 'No whole-mg tablet fits. ')) +
+          'This is rounding. The SmPC gives no “2 to 3 mg” range or any other whole-tablet range.' +
+          (capped ? ' The list stops at the table maximum.' : '') });
+    }
 
-    if (v.mod === 'inh') {
-      rows.push({ h: 'CYP3A4/5 inhibitor (SmPC statement)', t: 'With a moderate or strong inhibitor “a 50% reduction of the guanfacine dose is recommended”, and “further dose titration may be needed” because the effect varies. Ketoconazole raised the guanfacine peak 2-fold and the exposure 3-fold. The SmPC does not say whether this means half the table maximum. Read that way, the ceiling would be ' + r1(useMax) + ' mg (worked out; tablets come in whole mg, so the prescriber rounds and titrates by response).' });
+    if (inh) {
+      badge = ST.calc;
+      rows.push({ h: 'CYP3A4/5 inhibitor (SmPC statement)', t: 'With a moderate or strong inhibitor “a 50% reduction of the guanfacine dose is recommended”, and “further dose titration may be needed” because the effect varies. The SmPC also proposes “a decrease in the dose of guanfacine within the recommended dose range”. Ketoconazole raised the guanfacine peak 2-fold and the exposure 3-fold. The SmPC does not say whether this means half the table maximum. This tool halves it only as an illustration (' + m + ' mg to ' + r1(half) + ' mg). Tablets come in whole mg, so the prescriber rounds and titrates by response; the chart stops at ' + useMax + ' mg.' });
       notes.push('Examples in the SmPC: strong, clarithromycin and ketoconazole; moderate, ciprofloxacin, erythromycin, fluconazole, diltiazem, verapamil and grapefruit juice. Do not give guanfacine with grapefruit juice at all.');
-    } else if (v.mod === 'ind') {
-      rows.push({ h: 'Strong CYP3A4 inducer (SmPC statement)', t: 'A re-titration to increase the dose up to a maximum of 7 mg a day “may be considered if needed”. Rifampicin lowered the guanfacine peak by 54% and the exposure by 70%. The SmPC gives 7 mg as the maximum here and does not repeat the weight limits, so for a small child take specialist advice (clinical practice).' });
-      effect = 7; effLabel = 'Up to 7 mg a day may be considered with a strong inducer';
-      notes.push('Inducers in the SmPC list: carbamazepine, oxcarbazepine, phenytoin, phenobarbital, primidone, rifampicin, rifabutin, efavirenz, nevirapine, etravirine, modafinil, bosentan and St John’s wort. The SmPC does not mark which are strong.');
+      line = half; lineLabel = 'Half the table maximum (' + r1(half) + ' mg): this tool’s illustration, not in the SmPC';
+    } else if (ind) {
+      badge = ST.stmt;
+      tone = 'warn';
+      rows.push({ h: 'Strong CYP3A4 inducer (SmPC statement)', t: 'The SmPC proposes “an increase in the dose of guanfacine within the recommended dose range”, and says a re-titration “up to a maximum daily dose of 7 mg may be considered if needed”. Rifampicin lowered the guanfacine peak by 54% and the exposure by 70%. The SmPC does not say that 7 mg overrides the weight table' + (m === 7 ? ' (7 mg is this weight band’s own maximum)' : '') + '. ' +
+        (m === 7 ? '' : 'Take specialist advice before going above the table maximum (' + m + ' mg here).') });
+      if (m === 7) { line = 7; lineLabel = 'Up to 7 mg a day may be considered with a strong inducer'; }
+      else { line = hiCap; lineLabel = 'Table maximum for this weight (' + m + ' mg). The SmPC’s 7 mg for strong inducers is not drawn: it does not say it overrides the weight table'; }
+      notes.push('Inducers in the SmPC list: carbamazepine, oxcarbazepine, phenytoin, phenobarbital, primidone, rifampicin, rifabutin, efavirenz, nevirapine, etravirine, modafinil, bosentan and St John’s wort. The SmPC gives carbamazepine as its example of a strong inducer; its list does not grade the others.');
     } else if (v.mod === 'indstop') {
       tone = 'warn';
       rows.push({ h: 'A strong inducer has stopped (SmPC statement)', t: '“Retitration to reduce the guanfacine dose is recommended during the following weeks.” The SmPC gives no schedule or target.' });
     }
+    if (line == null) {
+      line = hiCap;
+      lineLabel = hi > useMax + 1e-9 ? 'Table maximum (' + m + ' mg): lower than the top of 0.05 to 0.12 mg/kg (' + r1(hi) + ' mg for ' + w + ' kg)' : 'Top of 0.05 to 0.12 mg/kg (' + r1(hi) + ' mg for ' + w + ' kg)';
+    }
     notes.push('Weekly checks while you titrate: sleepiness and sedation, blood pressure and pulse. Then at least every 3 months in year 1 and every 6 months after that.');
     notes.push('Tablets: Intuniv 1, 2, 3 and 4 mg. Generic guanfacine prolonged-release (Neuraxpharm) comes as 1 to 7 mg (emc, 1 November 2026).');
 
-    var ymax = Math.max(8, Math.ceil(Math.max(useMax, hi, effect || 0) + 1));
+    var ymax = Math.max(8, Math.ceil(Math.max(m, line) + 1));
     var chart = { kind: 'weeks', x: { from: 1, to: xTo, unit: 'week', title: 'Weeks from the first dose (going up every week)' }, y: { max: ymax, label: 'mg a day' },
       color: '#0b6664', tint: '#a3d5cf', steps: steps,
-      read: function (h, st) { return mg(st.v) + ' a day.' + (m === 7 && st.v === 7 ? ' 7 mg needs a review after a week on 6 mg.' : ''); } };
-    var line = effect != null ? effect : hi;
+      read: function (h, st) { return mg(st.v) + ' a day.' + (m === 7 && st.v === 7 && !inh ? ' 7 mg needs a review after a week on 6 mg.' : ''); } };
     chart.effect = [[1, line / ymax * 100], [xTo, line / ymax * 100]];
-    chart.effectLabel = effect != null ? effLabel : 'Top of 0.05 to 0.12 mg/kg (' + r1(hi) + ' mg for ' + w + ' kg)';
-    return { tone: tone, badge: ST.table, head: head, rows: rows, notes: notes, src: SRC.gua + ' Whole-tablet and halved figures are worked out.', chart: chart };
+    chart.effectLabel = lineLabel;
+    return { tone: tone, badge: badge, head: head, rows: rows, notes: notes, src: SRC.gua + ' Whole-tablet and halved figures are worked out.', chart: chart };
   }
 
   /* --- guanfacine: stop, miss, switch -------------------------------------------------------- */
@@ -510,7 +569,7 @@
       case 'taper': return guaTaper(v);
       case 'miss': return guaMiss(v);
       case 'ir':
-        return { tone: 'warn', badge: ST.none, head: 'No conversion exists. Do not swap immediate-release to prolonged-release mg for mg.',
+        return { tone: 'warn', badge: ST.none, head: 'The SmPC gives no conversion and says not to swap immediate-release to prolonged-release mg for mg.',
           rows: [
             { h: 'What the SmPC says', t: '“Immediate-release guanfacine tablets should not be substituted on a mg/mg basis, because of differing pharmacokinetic profiles.”' },
             { h: 'What it does not give', t: 'A conversion factor. It names no immediate-release product or dose either, and we found no immediate-release guanfacine product for ADHD on emc.' },
@@ -520,22 +579,22 @@
         return { tone: 'warn', badge: ST.none, head: 'No source says Intuniv and generic guanfacine are interchangeable.',
           rows: [
             { h: 'What matches', t: 'The generic (Neuraxpharm) SmPC dosing wording we compared (4 mg) reads the same as Intuniv’s.' },
-            { h: 'What differs', t: 'Lactose per tablet: 1 mg, 22.41 mg in Intuniv and 41.32 mg in the generic; 4 mg, 50.42 mg and 23.41 mg. Generics also come as 5, 6 and 7 mg; Intuniv stops at 4 mg.' },
-            { h: 'What to do', t: 'No rule is published. Check with the prescriber before you change the product.' }
+            { h: 'What differs', t: 'Lactose per tablet: 1 mg, 22.41 mg in Intuniv and 41.32 mg in the generic; 4 mg, 50.42 mg and 23.41 mg. That matters only for lactose intolerance: the SmPCs do not say whether the products are interchangeable. Generics also come as 5, 6 and 7 mg; Intuniv stops at 4 mg.' },
+            { h: 'What to do', t: 'The sources read give no rule either way. Check with the prescriber before you change the product.' }
           ], notes: [], src: SRC.gua + ' Neuraxpharm guanfacine SmPCs (revised 20 October 2026).' };
       case 'to':
-        return { tone: 'warn', badge: ST.none, head: 'No published method for starting guanfacine in place of another ADHD medicine.',
+        return { tone: 'warn', badge: ST.none, head: 'No official method for starting guanfacine in place of another ADHD medicine.',
           rows: [
             { h: 'When (' + ST.guide.toLowerCase() + ')', t: 'NICE offers guanfacine to children from age 5 and young people if they cannot tolerate methylphenidate or lisdexamfetamine, or separate 6-week trials of both failed. For stimulant-related tics it suggests considering guanfacine (children and young people only). The licence is ages 6 to 17, when stimulants are unsuitable, not tolerated or ineffective.' },
-            { h: 'How (no source)', t: v.other === 'atx' ? 'No source covers atomoxetine to guanfacine. NICE lists them as parallel options.' : 'No source gives a washout, overlap or cross-taper. The only overlap study is the add-on trial, a different design.' },
+            { h: 'How (no official source)', t: v.other === 'atx' ? 'No source read covers atomoxetine to guanfacine. NICE lists them as parallel options.' : 'No source read gives a washout, overlap or cross-taper. The only overlap study in them is the add-on trial, a different design. Published reviews on switching may exist but are not UK guidance.' },
             { h: 'What the SmPC does give', t: 'Start 1 mg once daily for everyone, with steps of no more than 1 mg a week and weekly checks. Ask the specialist.' }
           ], notes: [], src: SRC.ng + ' ' + SRC.gua };
       case 'from':
-        return { tone: 'warn', badge: ST.none, head: 'The sources give a reason to switch and a rule for stopping, but no way to combine them.',
+        return { tone: 'warn', badge: ST.none, head: 'The sources give a reason to switch and a rule for stopping, but no official way to combine them.',
           rows: [
             { h: 'When (' + ST.guide.toLowerCase() + ')', t: 'NICE: if a person on guanfacine has sustained orthostatic hypotension or fainting, reduce the dose or switch to another ADHD medicine.' },
             { h: 'Stopping guanfacine (' + ST.stmt.toLowerCase() + ')', t: 'Taper by no more than 1 mg every 3 to 7 days with blood pressure and pulse checks.' },
-            { h: 'How to combine them (no source)', t: 'No overlap or cross-taper is published. Blood pressure and pulse can rise after stopping guanfacine, and stimulants and atomoxetine can raise them too, so monitoring is the sensible safeguard (inference, not a stated rule). Ask the specialist.' }
+            { h: 'How to combine them (no official source)', t: 'The sources read give no overlap or cross-taper. Blood pressure and pulse can rise after stopping guanfacine, and stimulants and atomoxetine can raise them too, so monitoring is the sensible safeguard (inference, not a stated rule). Ask the specialist.' }
           ], notes: [], src: SRC.ng + ' ' + SRC.gua };
       case 'add':
         return atxAddOn({ add: 'gs' });
@@ -559,7 +618,7 @@
       { id: 'mod', type: 'select', label: 'Anything that changes the dose?', value: 'none', options: [
         { v: 'none', l: 'None of these' }, { v: 'inh', l: 'CYP3A4/5 inhibitor' }, { v: 'ind', l: 'Strong enzyme inducer' }, { v: 'indstop', l: 'An inducer has just stopped' }] }
     ],
-    compute: guaDose
+    compute: safe(guaDose)
   };
 
   var GUA_STOP = {
@@ -572,7 +631,7 @@
       { id: 'miss', type: 'seg', label: 'How many in a row?', value: '1', options: [{ v: '1', l: 'One' }, { v: '2', l: 'Two or more' }], show: function (v) { return v.sit === 'miss'; } },
       { id: 'other', type: 'seg', label: 'Which medicine?', value: 'stim', options: [{ v: 'stim', l: 'A stimulant' }, { v: 'atx', l: 'Atomoxetine' }], show: function (v) { return v.sit === 'to'; } }
     ],
-    compute: guaSit
+    compute: safe(guaSit)
   };
 
   window.M5LAB.add('gua', {

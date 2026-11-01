@@ -57,14 +57,18 @@
      atx_pm   Atomoxetine, CYP2D6 poor metaboliser. Same SmPC: mean elimination half-life 21 h. The absorption rate is raised so
               the peak stays at 1.5 h, because the SmPC gives one Cmax time, not one per genotype. The lab scales its area to about
               10 times the extensive metaboliser (SmPC: AUC "approximately 10-fold greater"). Does NOT claim: the peak height after
-              one dose (the SmPC's Css,max "about 5-fold greater" is a steady-state figure and is not drawn), or accumulation timing.
-     atx_inh  Atomoxetine with a strong CYP2D6 inhibitor (fluoxetine, paroxetine). The SmPC 4.5 gives only the size of the rise
+              one dose (the SmPC's Css,max "about 5-fold greater" is a steady-state figure and is not drawn), or accumulation timing. The drawn
+              single-dose peak is about 2.2 times the usual one; the lab says that height is not an SmPC figure.
+     atx_inh  Atomoxetine with a CYP2D6 inhibitor named in the SmPC (fluoxetine, paroxetine, quinidine, terbinafine). The SmPC 4.5 gives only the size of the rise
               (exposure "6-to 8-fold increased", Css,max "3 to 4 times higher") and no half-life, so this key is the atx_em shape and
               the lab scales its area to 6 and 8 times. Does NOT claim a longer half-life, a different peak time, or the Css,max rise.
+              Because the shape is the usual one, the drawn peaks come out 6 and 8 times the usual single-dose peak, which is taller than
+              the SmPC peak rise (Css,max 3 to 4 times). The lab says so on screen: heights show exposure (area), not peaks.
      gua_pr   Guanfacine prolonged-release (Intuniv and generics). Fitted to the Intuniv SmPC 5.2 (emc 5099, revised 5 March 2026):
               peak plasma concentration "approximately 5 hours after oral administration" in children and adolescents 6-17 and
               elimination half-life "approximately 18 hours". Does NOT claim: the tablet's release profile, accumulation or steady
-              state (the SmPC states neither), the size or timing of the high-fat-meal rise (the SmPC gives +75% Cmax and +40% AUC in
+              state (the SmPC states neither; the lab's three-day chart only adds one tablet's curve at 0, 24 and 48 h, which is arithmetic from the
+              half-life, labelled schematic on screen, not a finding), the size or timing of the high-fat-meal rise (the SmPC gives +75% Cmax and +40% AUC in
               adults, with no change in timing), blood pressure or heart-rate effects, or the time to benefit. */
   MODEL.atx_em  = {comps:[{frac:1,lag:0,ka:1.534}], ke:Math.LN2/3.6};
   MODEL.atx_pm  = {comps:[{frac:1,lag:0,ka:2.888}], ke:Math.LN2/21};
