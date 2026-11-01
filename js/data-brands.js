@@ -286,8 +286,8 @@ window.BRANDS=[
 "dose": "30 mg once daily in the morning (20 mg if a lower start is judged appropriate); increase by 10 or 20 mg at about weekly intervals; max 70 mg/day; severe renal impairment (GFR 15 to &lt;30 mL/min/1.73 m² or CrCl &lt;30 mL/min) max 50 mg; consider further reduction on dialysis. Stop if no improvement after 1 month of adjustment (SmPC 4.2).",
 "bnf": "Matches the SmPC (BNF/BNFC: max 70 mg; renal max 50 mg).",
 "admin": "With or without food, in the morning; afternoon doses should be avoided (insomnia). Swallow whole, or open and mix the entire contents with soft food (e.g. yoghurt) or water or orange juice and take at once; a film of inactive ingredients may remain. Do not divide a capsule or take less than one capsule a day. Missed dose: resume the next day (SmPC 4.2).",
-"exc": "Gelatine capsule; erythrosine in 30 mg (pink cap) (SmPC 6.1).",
-"inter": "Not interchangeable with methylphenidate or dexamfetamine tablets mg for mg.",
+"exc": "Gelatine capsule. Erythrosine (E127) is in the capsule shell of the 30 mg and 70 mg strengths only (both have a pink cap); the 20, 40, 50 and 60 mg shells do not list it (SmPC 6.1, emc 14089, 14092 and the other strengths).",
+"inter": "No national mg-to-mg conversion to methylphenidate or dexamfetamine exists, and no SmPC says so: this is clinical practice and what every local protocol read assumes (none uses 1:1). The SmPC section 2 content figure (30 mg capsule = 8.9 mg dexamfetamine) is not a dose conversion. See the Module 5 lisdexamfetamine lab.",
 "src": "Elvanse SmPC (emc 14089); former Elvanse Adult SmPC (emc 6828); BNF/BNFC."
 },
 {
@@ -299,14 +299,14 @@ window.BRANDS=[
 "mech": "Immediate-release tablet (cross-scored into quarters for swallowing only — not for equal doses).",
 "ratio": "100:0",
 "time": "Tmax about 1.5 h after 5 mg; plasma t½ about 10.2 h (SmPC 5.2). The SmPC states no duration of effect.",
-"strengths": "Tablets 5, 10, 20 mg. A 1 mg/ml oral solution (Rosemont) has the same ADHD licence and contains maltitol 200 mg/ml (avoid in hereditary fructose intolerance) (emc 13874).",
-"lic": "<strong>Children and adolescents 6–17</strong> when the response to methylphenidate is clinically inadequate (usually up to 20 mg/day; 40 mg rarely). \"Not licensed for use in adults\" (SmPC 4.2).",
+"strengths": "Tablets 5, 10, 20 mg. A 1 mg/ml oral solution (Rosemont) has the same ADHD licence (it also carries a separate adult narcolepsy indication) and contains maltitol 200 mg/ml (avoid in hereditary fructose intolerance), benzoic acid 0.6 mg/ml; use within 30 days of opening (emc 13874).",
+"lic": "<strong>Children and adolescents 6–17</strong> when the response to methylphenidate is clinically inadequate (usually up to 20 mg/day; 40 mg rarely). Not licensed for ADHD in adults: the tablet SmPC says \"not licensed for use in adults\" (SmPC 4.2). The solution and some generic tablets also carry an adult narcolepsy indication, a different condition.",
 "dose": "5 mg once or twice daily (e.g. breakfast and lunch), weekly 5 mg steps; usual max 20 mg/day, 40 mg in rare cases (SmPC 4.2).",
 "bnf": "BNFC: 2.5 mg 2–3 times daily, ↑5 mg weekly, usually max 1 mg/kg up to 20 mg (40 mg in some), in 2–4 doses. BNF adult: 5 mg BD, max 60 mg/day <span class=\"badge ol\">off-label</span>.",
 "admin": "Not too late after lunchtime (sleep). Take in a standardised way relative to meals (food effect not studied). Tablets can be divided along the score lines to help swallowing, not to give equal doses. Reduce gradually when stopping (SmPC 4.2).",
-"exc": "Isomalt 147.5 mg per tablet: not for hereditary fructose intolerance (SmPC 2, 4.4).",
-"inter": "Generic dexamfetamine tablets are interchangeable by dose.",
-"src": "Amfexa / Dexamfetamine Sulfate Medice SmPC (emc 102097); BNF/BNFC."
+"exc": "Isomalt (E953) per tablet: Amfexa 5 mg 147.5 mg, Amfexa 10 mg 147.7 mg, Amfexa 20 mg 137.7 mg, Orifarm 10 mg 148.5 mg. Not for hereditary fructose intolerance (SmPC 2, 4.4). The oral solution contains liquid maltitol 200 mg/ml with the same warning.",
+"inter": "No tablet SmPC (Amfexa, Medice, Orifarm, Waymade) says the brands are bioequivalent or interchangeable, although the dosing wording is identical. Swapping at the same dose is reasonable practice, not an SmPC statement. No SmPC says the oral solution and tablets are mg-for-mg interchangeable either.",
+"src": "Amfexa / Dexamfetamine Sulfate Medice SmPC (emc 5004, 7403, 7404; also emc 102097); oral solution SmPC (emc 13874); BNF/BNFC."
 },
 {
 "id": "atx",
