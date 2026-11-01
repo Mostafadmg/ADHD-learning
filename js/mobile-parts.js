@@ -25,11 +25,17 @@
   }
   function viewH() { return Math.max(520, (window.innerHeight || 700) - 150); }   /* the part of the screen left once the dock and top are counted */
 
+  /* the words of an element, with a space between neighbouring elements (so tab labels do not run together) */
+  function words(el) {
+    var w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), out = [], n;
+    while ((n = w.nextNode())) { var t = n.textContent.replace(/\s+/g, ' ').trim(); if (t && !(n.parentNode && /^(SCRIPT|STYLE)$/.test(n.parentNode.tagName))) out.push(t); }
+    return out.join(' ');
+  }
   function teaser(part) {
     var h = part.filter(function (e) { return /^H[34]$/.test(e.tagName); })[0];
-    if (h) return h.textContent.trim();
+    if (h) return words(h);
     var p = part.filter(function (e) { return e.tagName === 'P' && e.textContent.trim().length > 20; })[0] || part[0];
-    var t = p ? p.textContent.replace(/\s+/g, ' ').trim() : '';
+    var t = p ? words(p) : '';
     return t.length > 64 ? t.slice(0, 62).replace(/\s+\S*$/, '') + '…' : t;
   }
 
