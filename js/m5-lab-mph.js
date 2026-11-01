@@ -5,8 +5,10 @@
      SmPC table . SmPC statement . SPS equivalence . Guideline (no numbers) . Worked out from the SmPC table (not official) .
      No official conversion . SmPC table (Focusim XL only; MR source not named)
      (a "Local NHS protocol (not national)" badge is not used: no local protocol was found.)
-   The one modified-release to modified-release rule printed anywhere is the unnamed "MR" column of Focusim XL Table 1 (emc 100558,
-   re-read 1 Nov 2026): it is shown on every result whose new product is the Ritalin XL-type capsule group, and nowhere else.
+   The one SmPC dose rule for modified-release to modified-release is the unnamed "MR" column of Focusim XL Table 1 (emc 100558,
+   re-read 1 Nov 2026; rows for 10, 20, 30, 40 and 60 mg only). Its row is shown on every result whose new product is the Ritalin XL-type
+   capsule group, and nowhere else; the chip names it only when the chosen daily dose has a row, otherwise the answer stays "No official
+   conversion" and the row says so. (SPS separately allows same-dose swaps inside its two bioequivalent groups.)
    Charts are schematic: both curves are drawn for the SAME total daily amount of drug (the IR-equivalent total), so you compare
    the shape of the day, not the strength. Heights are relative, never blood levels.
    Text is kept short on purpose: the result must fit about two phone screens. */
@@ -46,7 +48,7 @@
       lasts: 8, lastsTxt: 'about 8 hours',
       mom: [{ h: 1.4, t: 'Strong start', d: 'Strong start (half released at once).' }, { h: 3.3, t: 'Second rise', d: 'Second rise about 3 h later, then a 3–4 h plateau.' }, { h: 8, end: true, t: 'Wears off', d: 'Designed to work about 8 h.' }],
       momAdult: [{ h: 1.4, t: 'Strong start', d: 'Morning dose: strong start, second rise about 3 h later.' }, { h: 6.4, t: 'Lunchtime dose', d: 'Lunchtime dose: a second round.' }, { h: 12.5, end: true, t: 'Wears off', d: 'Works to about 8 h after the lunchtime dose.' }],
-      take: 'With or after food, never on an empty stomach. Not with a PPI, H2 blocker or antacid (contraindications).',
+      take: 'With or after food, never on an empty stomach. Not with a PPI, H2 blocker or antacid (contraindications): the SmPC says together they could lead to a faster release of the total amount of active substance. Ask about over-the-counter antacids too.',
       smpc: 'Medikinet XL SmPC (emc 313)'
     },
     ambi: {
@@ -54,7 +56,7 @@
       lasts: 8, lastsTxt: 'about 8 hours',
       mom: [{ h: 1.4, t: 'Strong start', d: 'Strong start (half released at once).' }, { h: 3.3, t: 'Second rise', d: 'Second rise about 3 h later, then a 3–4 h plateau.' }, { h: 8, end: true, t: 'Wears off', d: 'Designed to work about 8 h.' }],
       momAdult: [{ h: 1.4, t: 'Strong start', d: 'Morning dose: strong start, second rise about 3 h later.' }, { h: 6.4, t: 'Lunchtime dose', d: 'Lunchtime dose: a second round.' }, { h: 12.5, end: true, t: 'Wears off', d: 'Works to about 8 h after the lunchtime dose.' }],
-      take: 'With or after food, never on an empty stomach. Not with a PPI, H2 blocker or antacid (contraindications).',
+      take: 'With or after food, never on an empty stomach. Not with a PPI, H2 blocker or antacid (contraindications): the SmPC says together they could lead to a faster release of the total amount of active substance. Ask about over-the-counter antacids too.',
       smpc: 'Ambinet XL SmPC (emc 102268)'
     },
     eqxl: {
@@ -96,8 +98,8 @@
     tab: { child: [18, 27, 36, 45, 54], adult: [18, 27, 36, 45, 54, 72] },
     kixel: { child: [18, 27, 36, 54], adult: [18, 27, 36, 54, 72] },
     cap: { child: [10, 20, 30, 40, 60], adult: [10, 20, 30, 40, 60] },
-    mkxl: { child: [5, 10, 20, 30, 40, 50, 60], adult: [5, 10, 20, 30, 40, 50, 60] },
-    ambi: { child: [5, 10, 20, 30, 40, 50, 60], adult: [5, 10, 20, 30, 40, 50, 60] },
+    mkxl: { child: [5, 10, 20, 30, 40, 50, 60], adult: [10, 20, 30, 40, 50, 60] },     /* adults start at 10 mg a day in two doses: the 5 mg capsule cannot be split */
+    ambi: { child: [5, 10, 20, 30, 40, 50, 60], adult: [10, 20, 30, 40, 50, 60] },
     eqxl: { child: [10, 20, 30, 40, 50, 60], adult: [10, 20, 30, 40, 50, 60] },
     addepta: { child: [10, 20, 30, 40, 50, 60], adult: [10, 20, 30, 40, 50, 60] },
     tuz: { child: [20, 30, 40, 60], adult: [20, 30, 40, 60] }
@@ -115,6 +117,7 @@
   };
   var NEWRX = 'New Schedule 2 prescription, written by brand.';
   var START = 'A starting dose only. Titrate against symptoms and side effects and review at about one month (the SmPCs say to stop if there is no improvement after one month of proper dose adjustment).';
+  var FOCUSIM_MR = [10, 20, 30, 40, 60];   /* the modified-release rows of Focusim XL Table 1 (emc 100558, re-read 1 Nov 2026) */
   var ILL = 10;      /* MR to MR charts compare shapes only: both lines are drawn at this one size, never at a real dose */
   var CLIN = '<b>Clinical practice, not a source:</b> treat it as a new start with specialist input. MHRA: frequent switching between products should be avoided.';
 
@@ -180,8 +183,9 @@
     return { tone: tone, badge: badge, head: head, rows: rows, notes: notes, src: src, chart: chart };
   }
   /* the MR column of the Focusim XL table: the only printed MR to MR rule (it names no product) */
-  function focusimRow(fromEqxl) {
-    return { h: 'One SmPC prints a rule', t: 'Only the Focusim XL SmPC (Table 1, “MR” column) prints a modified-release rule: 10 mg modified-release methylphenidate → Focusim XL 10 mg a day (the same for 20, 30, 40 and 60 mg). It names no product. The Ritalin XL, Metyrol XL and Meflynate XL tables have no MR row, and SPS gives no dose rule. Treat it as a start with specialist input, and follow the new product’s dosing (MHRA).' + (fromEqxl ? ' It does not override the SPS advice not to switch Equasym XL.' : '') };
+  function focusimRow(fromEqxl, D) {
+    var none = D != null && FOCUSIM_MR.indexOf(D) < 0;
+    return { h: 'One SmPC prints a rule', t: 'Only the Focusim XL SmPC (Table 1, “MR” column) prints a modified-release rule: 10 mg modified-release methylphenidate → Focusim XL 10 mg a day (the same for 20, 30, 40 and 60 mg). It names no product and has no row for any other dose.' + (none ? ' The Focusim XL column has no row for ' + D + ' mg.' : '') + ' The Ritalin XL, Metyrol XL and Meflynate XL tables have no MR row, and SPS gives no dose rule. Treat it as a start with specialist input, and follow the new product’s dosing (MHRA).' + (fromEqxl ? ' It does not override the SPS advice not to switch Equasym XL.' : '') };
   }
   /* "bracket" for an MR dose that has no row in the Concerta XL-type table */
   function bracket(D) {
@@ -210,7 +214,7 @@
   /* ---------- IR to MR ---------- */
   function irToMr(v) {
     var d = +v.ird, n = +v.irn === 3 ? 3 : 2, tot = d * n, t = v.to, T = PR[t], before = irWord(d, n), built, dose = null, status, tone = 'ok', head, src, rows = [], imp = [], spec = [];
-    var adult = who(v) === 'adult';
+    var adult = who(v) === 'adult', headTail = '';
     src = T.smpc + '; ' + SPS + '.';
     var w0 = irOverMax(tot, v); if (w0) imp.push(w0);
 
@@ -224,7 +228,7 @@
       } else if (n === 3) {
         status = BADGE.stmt; tone = 'warn';
         head = before + ': <b>above the table</b> (it stops at 20 mg three times a day)';
-        rows.push({ h: 'What the sources say', t: 'The ' + tn + ' table stops at 60 mg a day. Your total of ' + tot + ' mg a day is above it and above the licensed maximum of ' + maxOf(T, { who: 'adult' }) + ' mg. The dose is a clinical judgement.' });
+        rows.push({ h: 'What the sources say', t: 'The ' + tn + ' table stops at 60 mg a day of IR (20 mg three times a day gives 72 mg once daily). Your IR total of ' + tot + ' mg a day is above the table. The licensed maximum of the tablet itself is ' + maxOf(T, v) + ' mg a day for ' + (who(v) === 'child' ? 'children' : 'adults') + '. The dose is a clinical judgement.' });
       } else {
         status = BADGE.stmt; tone = 'warn';
         head = before + ': <b>no row in the table</b>, so the dose is a clinical judgement';
@@ -256,9 +260,10 @@
     } else if (t === 'eqxl' || t === 'addepta') {
       dose = tot; status = BADGE.stmt;
       head = before + ' → <b>' + T.name + ' ' + dose + ' mg once a day</b>, before breakfast';
+      if (tot % 10 !== 0 && tot <= 60) headTail = ' (no capsule makes ' + dose + ' mg: nearest ' + (dose - dose % 10) + ' mg or ' + (dose - dose % 10 + 10) + ' mg, or another product)';
       rows.push({ h: 'What the sources say', t: 'No table. The SmPC says to switch to “the milligram equivalent daily dose”. Worked example: 20 mg of ' + T.name + ' takes the place of 10 mg at breakfast plus 10 mg at lunchtime of IR. 10 mg once a day may replace IR 5 mg twice a day.' });
       var w4 = checkMax(dose, t, v); if (w4) { tone = 'warn'; imp.push(w4); }
-      if ((t === 'eqxl' || t === 'addepta') && tot % 10 !== 0) spec.push(T.name + ' capsules are 10, 20 and 30 mg, so ' + tot + ' mg a day cannot be made up exactly.');
+      if (tot % 10 !== 0) { tone = 'warn'; spec.push(T.name + ' capsules are 10, 20 and 30 mg, so ' + tot + ' mg a day cannot be made up exactly.'); }
     } else if (t === 'tuz') {
       if (n === 2 && TUZ_T[d]) { dose = TUZ_T[d]; status = BADGE.table; }
       else { dose = Math.min(tot, 60); status = BADGE.stmt; }
@@ -270,6 +275,7 @@
     if (t === 'tab' || t === 'kixel') { var w1 = dose ? checkMax(dose, t, v) : ''; if (w1) { tone = 'warn'; imp.push(w1); } }
 
     built = dayChart(v, t, T.name + (dose ? ' ' + dose + ' mg' : ''), mrDoses(t, tot, v), before, irDoses(d, n), plain(head));
+    head += headTail;
     var extra = (dose && dose !== tot ? 'Drawn at ' + tot + ' mg each (the dose is ' + dose + ' mg). ' : '') + 'IR at 07:30, ' + (n === 3 ? '11:30, 15:30' : '12:00') + ' (example times).' + (T.assumed ? ' The Tuzulby curve borrows the shape of other 30:70 products: its SmPC gives only a median highest level at about 5 h.' : '');
     rows.push(dayRow(built, extra));
     rows.push({ h: 'Watch for', t: T.take });
@@ -312,7 +318,7 @@
       /* Medikinet XL, Ambinet XL, Equasym XL, Addepta XL: the SmPC worked example, 20 mg = 10 mg + 10 mg of IR */
       tot = D; if (D === 5) { d = 5; n = 1; } else { d = D / 2; n = 2; }
       derive = 'The SmPC example (20 mg of ' + F.name + ' takes the place of 10 mg at breakfast plus 10 mg at lunchtime of IR) means 1 mg a day of MR is 1 mg a day of IR. Splitting it into two doses is an inference.';
-      if (D === 10 && (f === 'mkxl' || f === 'eqxl')) { status = BADGE.sps; spsline = 'SPS: “' + F.name + ' 10mg once daily is equivalent to a total daily dose of 10mg IR methylphenidate.”'; }
+      if (D === 10 && (f === 'mkxl' || f === 'eqxl')) { status = BADGE.sps; spsline = 'SPS: “' + F.name + ' 10mg once daily is equivalent to a total daily dose of 10mg IR methylphenidate.”' + (f === 'mkxl' && who(v) === 'adult' ? ' SPS words this as once daily; adults take Medikinet XL as two doses.' : ''); }
     }
     if (tot == null) {
       head = F.name + ' ' + D + ' mg → IR: <b>no source gives a figure for this dose</b>';
@@ -336,7 +342,7 @@
 
   /* ---------- MR to MR ---------- */
   function mrToMr(v) {
-    var f = v.from, t = v.to, F = PR[f], T = PR[t], D = +v.mr, r = route(f, t), head, rows = [], built;
+    var f = v.from, t = v.to, F = PR[f], T = PR[t], D = +v.mr, r = route(f, t, D), head, rows = [], built;
     if (f === t && f !== 'tab' && f !== 'cap') {
       return { tone: 'info', badge: 'Same product', head: 'You chose the same product on both sides: <b>there is nothing to convert</b>', rows: [{ h: 'What to do', t: 'Pick a different product in “To”, or use the swap button.' }], notes: [], src: '', chart: null };
     }
@@ -355,7 +361,7 @@
     head = F.name + ' ' + D + ' mg → ' + T.name + ': <b>' + r.head + '</b>';
     rows.push({ h: 'What the sources say', t: r.why });
     if (r.dose && r.tone !== 'stop') rows.push({ h: 'Dose', t: r.dose });
-    if (r.fo) rows.push(focusimRow(r.fo === 'eqxl'));
+    if (r.fo) rows.push(focusimRow(r.fo === 'eqxl', D));
     built = dayChart(v, t, T.name + ' (illustrative shape, not a dose)', mrDoses(t, ILL, v), F.name + ' (illustrative shape)', mrDoses(f, ILL, v), plain(head));
     rows.push(dayRow(built, 'Both lines are drawn at the same size (' + ILL + ' mg) only to compare the shape of the day: this is not a conversion and not a dose.' + (F.assumed || T.assumed ? ' The Tuzulby curve borrows the shape of other 30:70 products.' : '')));
     rows.push({ h: 'Watch for', t: T.take });
@@ -365,12 +371,16 @@
 
   /* ---------- the rule table (also drives the "Which switch is safe?" tab) ---------- */
   function names(list) { return list.map(function (k) { return PR[k].name; }).join(' and '); }
-  function route(f, t) {
+  function route(f, t, D) {
     var r = route0(f, t);
-    /* the new product is the Ritalin XL-type capsule group: the Focusim XL SmPC (MR column) is the only printed MR rule */
+    /* the new product is the Ritalin XL-type capsule group: the Focusim XL SmPC (MR column) is the only printed MR rule.
+       The chip says so only when that column has a row for the chosen daily dose; with no dose (the second tab) or another dose it stays "no official conversion". */
     if (t === 'cap' && f !== 'cap' && f !== 'ir') {
       r.fo = f === 'eqxl' ? 'eqxl' : true;
-      if (r.status === BADGE.none && f !== 'eqxl') { r.status = BADGE.focusim; r.head = r.head.replace('no official conversion', 'no SPS, NICE or MHRA conversion'); }
+      if (r.status === BADGE.none && f !== 'eqxl') {
+        r.head = r.head.replace('no official conversion', 'no SPS, NICE or MHRA conversion');
+        if (FOCUSIM_MR.indexOf(D) >= 0) r.status = BADGE.focusim;
+      }
     }
     return r;
   }
@@ -444,7 +454,7 @@
   };
   var safeTab = {
     kind: 'tool', label: 'Which switches have an official rule?',
-    intro: '<b>Green</b>: an official rule exists. <b>Amber</b>: possible, with particular care. <b>Red</b>: no conversion, or do not switch. The colour shows what the sources say, not whether a switch suits this person.',
+    intro: '<b>Green</b>: an official rule exists (an SmPC table or statement from IR, or a swap inside an SPS group). <b>Amber</b>: possible with particular care, an individualised approach (any modified-release to IR; Medikinet XL and the Ritalin XL-type capsules), or no source (IR brand to IR brand). <b>Red</b>: no conversion, or do not switch. The colour shows what the sources say, not whether a switch suits this person.',
     swap: ['from', 'to'],
     fields: [
       { id: 'from', type: 'select', label: 'I want to move from', value: 'mkxl', options: opts() },
