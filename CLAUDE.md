@@ -99,8 +99,11 @@ Also keep in mind:
   `js/explorers-config.js`; remove once no module needs them.
 - **Light explorers (28 Oct 2026):** the M4 pathway walker (`XP.registry.path` in `js/explorers-more.js`) no longer uses the
   dark `XP.form` card: it renders `.pw2` (route on the left, tap a step to go back; one step card coloured by tone; patient and
-  pharmacist points in a closed `details.mx`; route shrinks to numbered dots on phones). The other `.xp-mount` explorers
-  (day, tit, bp, growth, se, ix, dd, cd, brand, switcher, missed, comorb, scripts, drill) are still dark.
+  pharmacist points in a closed `details.mx`; route shrinks to numbered dots on phones). Since 1 Nov 2026 the `XP.form`
+  explorers (bp, growth, se, ix, dd, cd) are light too (`css/xp-light.css`, root class `.xpl`: presets as a scrolling chip
+  row, verdict directly under the controls, patient and pharmacist panels as two closed dropdowns, a sticky result strip),
+  and the M5 day builder is a three-step light tool (`js/daybuilder.js`, `css/m5-day.css`, classes `dy-*`). Only `XP.make`
+  based explorers (titration, `imp`, `pfc`) still use the old `.xp.card-dark` rules in `css/styles.css`.
   Section B lesson 1's phase grid (`.ph-grid`) is a four-column journey with a numbered step timeline per phase.
 
 - **One website (25 Oct 2026):** the course sidebar has a "Clinician workspace" group and the home page a workspace card; the workspace sidebar and sign-in screen link back to `../index.html#home`. Course deep links such as `adhd-assessment/index.html#form-phq9` survive sign-in (`AA.router.takePending()/afterSignIn()`). When changing a workspace script, add/bump `?v=` on its `<script>` tag (bundle.js strips the query).
@@ -148,6 +151,43 @@ Also keep in mind:
   link takes it back. Other open tabs pick up saves through the `storage` event, so a stale tab cannot overwrite newer
   progress. Progress is per browser and per site address (localhost and the live site are separate).
 - **Lessons end with a next-module button** (app.js): the last lesson's Next goes to the following page in the course menu (M11 → Course exam).
+
+## Phone study layer and medicine labs (1 Nov 2026)
+
+The owner studies mostly on a phone, so phone use comes first. Run the checks in `tools/phone/` (see its README) after any
+layout change: `audit.js` at 375 and 320px (no sideways scroll, 44px tap targets, no console errors) and `wdiff.py` before
+and after restructuring a module (no words may be lost).
+
+- **Phone shell** (screens up to 900px; `css/mobile.css`, loaded last): `js/mobile-dock.js` builds a fixed bottom bar (Back,
+  "3 of 10 · title" which opens the list of lessons as a bottom sheet, Next) from the lesson bar `app.js` already makes, and
+  clicks that bar's own buttons, so progress saving is untouched. The top bar slides away on scroll down. Form fields are 16px
+  (no iPhone zoom). Everything depending on the dock is gated on `body.has-dock`.
+- **Progressive reading** (`js/mobile-parts.js`, up to 700px): a lesson taller than about two screens opens a part at a time
+  (about 1.2 screens each, cut between blocks, never after a heading) with a "Keep going" card and a "Show the whole lesson"
+  link; the dock's Next says "Continue" until every part is open. Nothing is removed from the page. `scrollIntoView` is wrapped
+  so search results, anchors and "reread" links open the part that holds their target. Add `?noparts` to the URL to see full length.
+- **Per-module phone files:** `css/m6-phone.css` … `css/m9-phone.css` (+ `m8`, `m10`, `m11`, `m5` where present) and
+  `js/m7-extra.js`, `js/m9-extra.js`, `js/m5-extra.js`. They only change presentation (steppers, tabs, folded depth); lesson
+  ids, `data-title`, `data-min` and quiz keys must not change.
+- **Medicine labs (Module 5):** one engine, `js/m5-lab.js` + `css/m5-lab.css` (`window.M5LAB`; the header comment is the data spec),
+  and one data file per family: `js/m5-lab-mph.js` (methylphenidate: Convert and "Which switches have an official rule?"),
+  `js/m5-lab-amf.js` (lisdexamfetamine `lis`, dexamfetamine `dex`), `js/m5-lab-ns.js` (atomoxetine `atx`, guanfacine `gua`; new
+  curve models are in `js/release-model.js`). A lesson shows a lab with `<div data-ml="id"></div>`. Each lab has a day graph,
+  dose steps or calculator, and a switch/convert tool. **Every conversion result carries an honest status badge** (SmPC table,
+  SmPC statement, SPS equivalence, Guideline (no numbers), Local NHS protocol (not national), Worked out from the SmPC table
+  (not official), No official conversion). Never show a worked-out or local figure as official. Facts were verified against emc
+  SmPCs, SPS, NICE NG87 and MHRA on 1 Nov 2026 (BNF/BNFC were unreachable, so BNF-only figures stay in dropdowns labelled as
+  not re-checked) and then re-checked by independent reviewers who found and fixed blockers (for example a converted adult dose
+  above the licensed maximum with no warning). Tests: `node tests/m5-lab-mph.test.js`, `m5-lab-amf.test.js`, `m5-lab-ns.test.js`,
+  `m5-quiz-mph.test.js`; keep them green and extend them for any new rule. Curves are schematic and relative (the shared model
+  `js/release-model.js`), drawn at the same total area when two regimens are compared.
+- **Module 5 now has 13 lessons:** glance; methylphenidate doses; release profiles; switching methylphenidate products
+  (`#m5-switch`); day builder; lisdexamfetamine (`#m5-lis`); dexamfetamine (`#m5-dex`); atomoxetine; guanfacine;
+  contraindications; titration; switching, stopping and CD rules; recap. Lesson-check order and the extra module-quiz questions
+  are wired in `js/data-quiz-m5-wire.js` (loaded after `data-quiz-m5*.js`); quiz keys `m5x_mph_*`, `m5x_amf_*`, `m5x_ns_*`.
+- **No published conversion exists** between lisdexamfetamine, dexamfetamine and methylphenidate, or between stimulants and
+  non-stimulants (NICE says when, not how many mg). The labs say so plainly; the only mg table found for lisdexamfetamine to
+  dexamfetamine is in NHS local documents (two written for shortages) and is shown only as a labelled local row.
 
 ## Site map
 
