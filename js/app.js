@@ -88,13 +88,22 @@
       if(st){ var qs = state.quiz[id]; st.textContent = (state.done[id]?'✓ Completed':'Not completed') + (qs? ' · quiz best '+qs.best+'/'+qs.total : ''); }
     });
     $$('.js-complete').forEach(function(b){
-      var id=b.dataset.module; b.textContent = state.done[id] ? '✓ Marked complete (undo)' : 'Mark module as complete';
-      b.setAttribute('aria-pressed', state.done[id]?'true':'false');
+      var id=b.dataset.module, on=!!state.done[id];
+      b.textContent = on ? '✓ '+(/section/i.test(b.dataset.label) ? 'Section' : 'Module')+' complete' : b.dataset.label;
+      b.setAttribute('aria-pressed', on?'true':'false');
+      if(b._undo) b._undo.hidden = !on;
     });
   }
+  /* "Mark complete" only ever marks (a second click cannot undo it by accident); a separate Undo link takes it back.
+     Marking a module complete also ticks all of its lessons. */
   $$('.js-complete').forEach(function(b){
-    b.addEventListener('click', function(){ var id=b.dataset.module; state.done[id]=!state.done[id]; save(); renderProgress(); });
+    b.dataset.label = b.textContent.trim();
+    var undo = document.createElement('button'); undo.type = 'button'; undo.className = 'cl-undo'; undo.textContent = 'Undo'; undo.hidden = true;
+    b.insertAdjacentElement('afterend', undo); b._undo = undo;
+    b.addEventListener('click', function(){ var id=b.dataset.module; if(state.done[id]) return; state.done[id]=true; tickLessons(id); save(); renderProgress(); });
+    undo.addEventListener('click', function(){ delete state.done[b.dataset.module]; save(); renderProgress(); b.focus(); });
   });
+  function tickLessons(id){ lessonSets.forEach(function(s){ if(s.mod===id){ s.ls.forEach(function(l,i){ s.rec.done[i] = true; }); s.paint(); } }); }
   var reset = $('#resetProgress');
   if(reset) reset.addEventListener('click', function(){ if(confirm('Reset all progress, checklist ticks and quiz scores stored in this browser?')){ state=blank(); save(); location.reload(); } });
 
@@ -171,14 +180,26 @@
     var prev = $('.ls-prev', nav), next = $('.ls-next', nav), cur = 0, tprev = $('.ls-tprev', bar), tnext = $('.ls-tnext', bar);
     var intro = box.closest('.module') && $('.mod-head', box.closest('.module'));
     /* which module this is, from its number in the course menu: "Module 4", or "Module 3B" for the Module 3 sections */
-    var modEl = box.closest('.module'), modNum = modEl && $('nav.sidebar a[href="#'+modEl.id+'"] .num'), modTag = modNum && /^\d+[A-Z]?$/.test(modNum.textContent.trim()) ? 'Module '+modNum.textContent.trim() : '';   /* the overview is its own first screen */
+    var modEl = box.closest('.module'), modId = modEl && modEl.id, modNum =modEl && $('nav.sidebar a[href="#'+modEl.id+'"] .num'), modTag = modNum && /^\d+[A-Z]?$/.test(modNum.textContent.trim()) ? 'Module '+modNum.textContent.trim() : '';   /* the overview is its own first screen */
     /* after the last lesson, Next goes on to the following module in course order */
     var mods = $$('main > section.module').filter(function(m){ return m.id!=='home' && $('nav.sidebar a[href="#'+m.id+'"]'); });   /* only pages in the course menu */
     var after = mods[mods.indexOf(box.closest('.module'))+1] || null;
     var afterLabel = after ? (/^m\d+$/.test(after.id) ? 'Next module: ' : /^(exam|final)$/.test(after.id) ? 'Next: ' : 'Next section: ')+(after.dataset.title||after.id)+' →' : '';
     function toAfter(){ if(after) location.hash = '#'+after.id; }
+    /* A lesson counts as done once you move on to a later one, however you get there (Next, the arrows, the
+       progress bar, the lesson menu or the sidebar). When every lesson is done, the module is marked complete. */
+    function finish(i){
+      if(i<0) return; rec.done[i] = true;
+      if(modId && trackable.indexOf(modEl)>=0 && !state.done[modId] && ls.every(function(l,li){ return rec.done[li]; })){ state.done[modId] = true; renderProgress(); }
+    }
+    function paint(){
+      items.forEach(function(b){ var bi = +b.dataset.i; b.classList.toggle('cur', bi===cur); b.classList.toggle('done', bi>=0 && !!rec.done[bi]); b.setAttribute('aria-current', bi===cur?'step':'false'); });
+      steps.forEach(function(s,si){ s.className = 'ls-seg' + (si===cur ? ' cur' : (rec.done[si] ? ' done' : '')); s.setAttribute('aria-current', si===cur ? 'step' : 'false'); });
+    }
     function go(i, scroll){
-      cur = Math.max(intro ? -1 : 0, Math.min(n-1, i)); rec.at = cur; save();
+      var to = Math.max(intro ? -1 : 0, Math.min(n-1, i));
+      if(scroll && cur>=0 && to>cur) finish(cur);
+      cur = to; rec.at = cur; save();
       ls.forEach(function(l,li){ l.hidden = li!==cur; });
       $$('details.sources-d[open]', box).forEach(function(d){ d.open = false; });   /* sources start closed on every visit */
       var ov = cur===-1; if(intro) intro.hidden = !ov; bar.hidden = ov;
@@ -188,11 +209,10 @@
       tprev.disabled = cur===0 && !intro; tnext.disabled = cur===n-1 && !after;
       tprev.title = cur===0 ? 'Back to the overview' : (cur>0 ? 'Previous: '+ls[cur-1].dataset.title : ''); tnext.title = cur<n-1 ? 'Next: '+ls[cur+1].dataset.title : (after ? afterLabel.replace(/ →$/,'') : 'Last lesson');
       next.textContent = ov ? 'Start lesson 1: '+ls[0].dataset.title+' →' : (cur<n-1 ? 'Next: '+ls[cur+1].dataset.title+' →' : afterLabel);
-      items.forEach(function(b){ var bi = +b.dataset.i; b.classList.toggle('cur', bi===cur); b.classList.toggle('done', bi>=0 && !!rec.done[bi]); b.setAttribute('aria-current', bi===cur?'step':'false'); });
+      paint();
       if(scroll) window.scrollTo({top:0});
       if(ov){ if(scroll){ var h1 = $('h1', intro); if(h1) h1.focus({preventScroll:true}); } return; }
       pos.innerHTML = (modTag ? '<span class="ls-mod">'+modTag+'</span> · ' : '')+'<strong>Lesson '+(cur+1)+' of '+n+'</strong> · '+esc(ls[cur].dataset.title)+' · '+(ls[cur].dataset.min||'?')+' min <span class="ls-total">('+total+' min in total)</span>';
-      steps.forEach(function(s,si){ s.className = 'ls-seg' + (si===cur ? ' cur' : (rec.done[si] ? ' done' : '')); s.setAttribute('aria-current', si===cur ? 'step' : 'false'); });
       if(scroll){ var h = $('h2', ls[cur]); if(h){ h.setAttribute('tabindex','-1'); h.focus({preventScroll:true}); } }
     }
     function menuOpen(o){ mlist.hidden = !o; mbtn.setAttribute('aria-expanded', o?'true':'false'); }
@@ -204,12 +224,21 @@
     steps.forEach(function(b){ b.addEventListener('click', function(){ menuOpen(false); go(+b.dataset.i, true); }); });
     prev.addEventListener('click', function(){ go(cur-1, true); });
     tprev.addEventListener('click', function(){ menuOpen(false); go(cur-1, true); });
-    tnext.addEventListener('click', function(){ menuOpen(false); if(cur>=0) rec.done[cur] = true; if(cur===n-1){ save(); toAfter(); return; } go(cur+1, true); });
-    next.addEventListener('click', function(){ if(cur>=0) rec.done[cur] = true; if(cur===n-1){ save(); toAfter(); return; } go(cur+1, true); });
-    lessonSets.push({box:box, ls:ls, go:go});
+    tnext.addEventListener('click', function(){ menuOpen(false); if(cur===n-1){ finish(cur); save(); paint(); toAfter(); return; } go(cur+1, true); });
+    next.addEventListener('click', function(){ if(cur===n-1){ finish(cur); save(); paint(); toAfter(); return; } go(cur+1, true); });
+    lessonSets.push({box:box, ls:ls, go:go, key:key, rec:rec, mod:modId, paint:paint});
     go(typeof rec.at==='number' ? rec.at : -1, false);
   });
   window.__lessonReveal = function(l){ lessonSets.forEach(function(set){ var i = set.ls.indexOf(l); if(i>=0) set.go(i, false); }); };
+  /* Another tab of the course saved progress: take it on here too, so this tab never saves an older copy over it. */
+  window.addEventListener('storage', function(e){
+    if(e.key !== LS) return;
+    var inc; try{ inc = JSON.parse(e.newValue); }catch(x){ return; }
+    if(!inc || typeof inc !== 'object') inc = blank();
+    state.done = inc.done || {}; state.checks = inc.checks || {}; state.quiz = inc.quiz || {}; state.resetNotice = inc.resetNotice;
+    lessonSets.forEach(function(s){ var r = inc.lessons && inc.lessons[s.key]; s.rec.done = (r && r.done) || {}; s.paint(); });
+    renderProgress();
+  });
   /* A deep link on first load (#some-id inside a lesson) opens that lesson. */
   (function(){ var t = location.hash && document.getElementById(location.hash.slice(1)); var l = t && t.closest && t.closest('.lesson'); if(l) window.__lessonReveal(l); })();
 

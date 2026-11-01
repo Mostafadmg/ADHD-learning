@@ -34,6 +34,7 @@ nav.sidebar .navhead{text-transform:none;letter-spacing:0;font-size:.8rem;font-w
 nav.sidebar .num{border-radius:50%;background:#f2f5f8;color:var(--muted)}
 nav.sidebar a[aria-current="page"]{background:var(--teal-l);color:var(--navy);box-shadow:none}
 nav.sidebar a[aria-current="page"] .num{background:var(--teal);color:#fff}
+nav.sidebar #sb-list li.done>a .num{background:var(--teal);color:#fff}
 nav.sidebar li.sb-start>a{border-radius:999px;justify-content:center}
 
 /* Module menu: plain links, the module name, then the lessons as a progress track */

@@ -3975,7 +3975,10 @@ nav.sidebar li.sb-start+.navhead{border-top:0;padding-top:0}
 /* "Mark complete" once pressed: a soft green "done" state, still clearly a button you can press to undo */
 .btn.js-complete{transition:background .15s,color .15s,border-color .15s,box-shadow .15s}
 .btn.js-complete[aria-pressed="true"]{background:var(--green-l);color:var(--green);border:2px solid var(--green);font-weight:600}
-.btn.js-complete[aria-pressed="true"]:hover{background:#d2eedc;box-shadow:0 2px 8px rgba(29,122,62,.18)}
+.btn.js-complete[aria-pressed="true"]:hover{background:var(--green-l);box-shadow:none;cursor:default}
+.cl-undo{border:0;background:none;padding:.3rem .2rem;color:var(--muted);font:inherit;font-size:.9rem;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.cl-undo:hover{color:var(--navy)}
+.cl-undo:focus-visible{outline:3px solid var(--focus,#f2a541);outline-offset:2px;border-radius:4px}
 .btn.js-complete[aria-pressed="true"]:focus-visible{outline:3px solid var(--focus,#f2a541);outline-offset:2px}
 
 /* Sources: a small, quiet link at the end of a module, not a full-width card. Opens to the same list. */

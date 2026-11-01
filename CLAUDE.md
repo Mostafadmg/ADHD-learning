@@ -126,6 +126,11 @@ Also keep in mind:
   background, content column centred, the lesson bar and lesson joined into one card, the module overview card and the
   home page. The owner asked that lesson content keep its current look, so do not restyle lesson components there.
   Mock-ups of the three options (A, B route map, C dark focus) are in `docs/design-options/`.
+- **Progress saving (1 Nov 2026, `js/app.js`, key `adhdPharmLearn.v2`):** a lesson is ticked when you move on to a later
+  lesson by any route (Next, arrows, progress bar, lesson menu, sidebar), never when moving back. Ticking every lesson
+  marks the module complete. "Mark module/section as complete" only marks (it also ticks all lessons); a separate Undo
+  link takes it back. Other open tabs pick up saves through the `storage` event, so a stale tab cannot overwrite newer
+  progress. Progress is per browser and per site address (localhost and the live site are separate).
 - **Lessons end with a next-module button** (app.js): the last lesson's Next goes to the following page in the course menu (M11 → Course exam).
 
 ## Site map
