@@ -284,11 +284,11 @@ window.BRANDS=[
 "strengths": "20, 30, 40, 50, 60, 70 mg",
 "lic": "Children 6+ when the response to previous methylphenidate is clinically inadequate, and adults with pre-existing ADHD symptoms in childhood (SmPC 4.1). Max 70 mg/day; 50 mg in severe renal impairment (SmPC 4.2). Elvanse Adult has been discontinued; adults now use Elvanse.",
 "dose": "30 mg once daily in the morning (20 mg if a lower start is judged appropriate); increase by 10 or 20 mg at about weekly intervals; max 70 mg/day; severe renal impairment (GFR 15 to &lt;30 mL/min/1.73 m² or CrCl &lt;30 mL/min) max 50 mg; consider further reduction on dialysis. Stop if no improvement after 1 month of adjustment (SmPC 4.2).",
-"bnf": "Matches the SmPC (BNF/BNFC: max 70 mg; renal max 50 mg).",
+"bnf": "BNF/BNFC not re-checked on 1 Nov 2026 (the pages were blocked); follow the SmPC and your local protocol.",
 "admin": "With or without food, in the morning; afternoon doses should be avoided (insomnia). Swallow whole, or open and mix the entire contents with soft food (e.g. yoghurt) or water or orange juice and take at once; a film of inactive ingredients may remain. Do not divide a capsule or take less than one capsule a day. Missed dose: resume the next day (SmPC 4.2).",
 "exc": "Gelatine capsule. Erythrosine (E127) is in the capsule shell of the 30 mg and 70 mg strengths only (both have a pink cap); the 20, 40, 50 and 60 mg shells do not list it (SmPC 6.1, emc 14089, 14092 and the other strengths).",
-"inter": "No national mg-to-mg conversion to methylphenidate or dexamfetamine exists, and no SmPC says so: this is clinical practice and what every local protocol read assumes (none uses 1:1). The SmPC section 2 content figure (30 mg capsule = 8.9 mg dexamfetamine) is not a dose conversion. See the Module 5 lisdexamfetamine lab.",
-"src": "Elvanse SmPC (emc 14089); former Elvanse Adult SmPC (emc 6828); BNF/BNFC."
+"inter": "No national mg-to-mg conversion to methylphenidate or dexamfetamine exists, and no SmPC gives one. The SmPC section 2 content figure (30 mg capsule = 8.9 mg dexamfetamine) says what is in the capsule. The only other SmPC pairing is the abuse-liability study in section 5.1 (100 mg lisdexamfetamine against 40 mg immediate-release dexamfetamine sulphate, in people with a history of drug abuse): it measured drug liking, and 100 mg is above the 70 mg maximum, so neither is a switching rule. Local NHS tables exist (two written for lisdexamfetamine shortages, one a switching guide) and none uses 1:1. See the Module 5 lisdexamfetamine lab.",
+"src": "Elvanse SmPC (emc 14089); former Elvanse Adult SmPC (emc 6828)."
 },
 {
 "id": "dex",
@@ -296,17 +296,17 @@ window.BRANDS=[
 "grp": "dex",
 "model": "dex",
 "cd": "Schedule 2 CD",
-"mech": "Immediate-release tablet (cross-scored into quarters for swallowing only — not for equal doses).",
+"mech": "Immediate-release tablet. Amfexa, Medice and Orifarm tablets are scored in four for swallowing only (not for equal doses). The Waymade 5 mg and Brown &amp; Burk 5 mg tablets are single-scored, and their SmPCs say they can be divided into equal doses.",
 "ratio": "100:0",
 "time": "Tmax about 1.5 h after 5 mg; plasma t½ about 10.2 h (SmPC 5.2). The SmPC states no duration of effect.",
 "strengths": "Tablets 5, 10, 20 mg. A 1 mg/ml oral solution (Rosemont) has the same ADHD licence (it also carries a separate adult narcolepsy indication) and contains maltitol 200 mg/ml (avoid in hereditary fructose intolerance), benzoic acid 0.6 mg/ml; use within 30 days of opening (emc 13874).",
 "lic": "<strong>Children and adolescents 6–17</strong> when the response to methylphenidate is clinically inadequate (usually up to 20 mg/day; 40 mg rarely). Not licensed for ADHD in adults: the tablet SmPC says \"not licensed for use in adults\" (SmPC 4.2). The solution and some generic tablets also carry an adult narcolepsy indication, a different condition.",
 "dose": "5 mg once or twice daily (e.g. breakfast and lunch), weekly 5 mg steps; usual max 20 mg/day, 40 mg in rare cases (SmPC 4.2).",
-"bnf": "BNFC: 2.5 mg 2–3 times daily, ↑5 mg weekly, usually max 1 mg/kg up to 20 mg (40 mg in some), in 2–4 doses. BNF adult: 5 mg BD, max 60 mg/day <span class=\"badge ol\">off-label</span>.",
-"admin": "Not too late after lunchtime (sleep). Take in a standardised way relative to meals (food effect not studied). Tablets can be divided along the score lines to help swallowing, not to give equal doses. Reduce gradually when stopping (SmPC 4.2).",
+"bnf": "BNF/BNFC not re-checked on 1 Nov 2026 (the pages were blocked); follow the SmPC and your local protocol. For off-label adult use see the shared-care protocols in the Module 5 dexamfetamine lab.",
+"admin": "Not too late after lunchtime (sleep). Amfexa, Medice and Orifarm SmPCs: take in a standardised way relative to meals (food effect not studied), and reduce gradually when stopping; their tablets can be divided in four to help swallowing, not to give equal doses. The Waymade and Brown &amp; Burk 5 mg SmPCs say their single-scored tablet can be divided into equal doses and do not give the meals advice. Check the brand (SmPC 4.2).",
 "exc": "Isomalt (E953) per tablet: Amfexa 5 mg 147.5 mg, Amfexa 10 mg 147.7 mg, Amfexa 20 mg 137.7 mg, Orifarm 10 mg 148.5 mg. Not for hereditary fructose intolerance (SmPC 2, 4.4). The oral solution contains liquid maltitol 200 mg/ml with the same warning.",
-"inter": "No tablet SmPC (Amfexa, Medice, Orifarm, Waymade) says the brands are bioequivalent or interchangeable, although the dosing wording is identical. Swapping at the same dose is reasonable practice, not an SmPC statement. No SmPC says the oral solution and tablets are mg-for-mg interchangeable either.",
-"src": "Amfexa / Dexamfetamine Sulfate Medice SmPC (emc 5004, 7403, 7404; also emc 102097); oral solution SmPC (emc 13874); BNF/BNFC."
+"inter": "No tablet SmPC (Amfexa, Medice, Orifarm, Waymade) says the brands are bioequivalent or interchangeable, although the ADHD dosing wording is the same. Splitting and meals advice differ by brand (see above). Swapping at the same dose is reasonable practice, not an SmPC statement. No SmPC says the oral solution and tablets are mg-for-mg interchangeable either.",
+"src": "Amfexa / Dexamfetamine Sulfate Medice SmPC (emc 5004, 7403, 7404; also emc 102097); Orifarm (emc 102638), Waymade (emc 13729) and Brown &amp; Burk (emc 11004) tablet SmPCs; oral solution SmPC (emc 13874)."
 },
 {
 "id": "atx",
