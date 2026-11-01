@@ -3,7 +3,7 @@
 (function(){
   'use strict';
   var XP = window.XP, RM = window.RELMODEL; if(!XP || !RM) return;
-  var clamp=XP.clamp, esc=XP.esc, T=XP.t;
+  var clamp=XP.clamp, esc=XP.esc;
   var DT=0.02, H0=5, H1=24, N=Math.round((H1-H0)/DT)+1;
   var WLO=0.36, WHI=1.25, TOO=1.5, YMAX=2;
 
@@ -95,7 +95,7 @@
   var TIMES=[]; for(var m=360;m<=570;m+=30) TIMES.push(m);
   var ADD_T=[]; for(m=600;m<=1140;m+=30) ADD_T.push(m);
   function hhmm(mins){ mins=Math.round(mins); if(mins>=1440) return '24:00'; var h=Math.floor(mins/60)%24, mm=mins%60; return (h<10?'0':'')+h+':'+(mm<10?'0':'')+mm; }
-  var COLS=['#6fb3f2','#f2c14e','#b79cff'];
+  var COLS=['#2f6fb3','#b07400','#6b4fa3'];
   var SCEN=[
     {label:'School day: Concerta XL 36 mg', s:{g:'oros',b:0,d:36,t:450,age:'child',add:[]}},
     {label:'Medikinet XL + IR at 14:00', s:{g:'mk',b:0,d:20,t:450,age:'child',add:[{d:10,t:840}]}},
@@ -107,75 +107,148 @@
 
   function opt(v,l,sel){ return '<option value="'+v+'"'+(sel?' selected':'')+'>'+esc(l)+'</option>'; }
 
+  /* ---------- the guided builder: three steps, one at a time (Regimen, Top-ups, See the day) ---------- */
+  var PICKC={mphir:['#a8432e','#fbeae5'],oros:['#0b6664','#e3f4f3'],mk:['#2f6fb3','#e8f0fa'],rxl:['#2f6fb3','#e8f0fa'],eq:['#2f6fb3','#e8f0fa'],lis:['#6b4fa3','#f0ebf8'],dex:['#6b4fa3','#f0ebf8'],ato:['#55626f','#eef3f7'],gua:['#55626f','#eef3f7']};
+  var CLASSN={mph:'Methylphenidate',amf:'Amfetamine',ato:'Non-stimulant',gua:'Non-stimulant'};
+  var STEPS=[['Regimen','Choose the regimen'],['Top-ups','Add top-ups'],['See the day','See the day']];
+  var METERS=[{label:'Focus now',tone:'pos',good:1},{label:'Homework cover',sub:'16:00–18:00',tone:'pos2',good:1},{label:'Evening rebound risk',sub:'whole day',tone:'neg',good:0},{label:'Appetite now',sub:'higher = normal',tone:'pos',good:1},{label:'Sleep-onset risk',sub:'level at bedtime',tone:'neg',good:0},{label:'BP / HR load now',tone:'neg2',good:0}];
+  var SEV={danger:['Danger',0],high:['Important',1],warn:['Caution',2],info:['Note',3]};
+  var SVGO='<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">';
+  var ICON={check:SVGO+'<path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',next:SVGO+'<path d="M9 5l7 7-7 7"/></svg>',back:SVGO+'<path d="M15 5l-7 7 7 7"/></svg>',plus:SVGO+'<path d="M12 5v14M5 12h14"/></svg>',alert:SVGO+'<path d="M12 3.5l9.5 16.5h-19z"/><path d="M12 10v4.5M12 17.4v.2"/></svg>'};
+  var uidn=0;
+  function pad2(n){ return (n<10?'0':'')+n; }
+
   function build(mount){
-    var S={g:'oros',b:0,d:36,t:450,age:'child',add:[],time:600};
-    var id='db', h='<div class="xp card-dark db" id="dayBuilder">'
-      +'<p class="xp-kicker">Interactive model · Module 5</p><h3 class="xp-title">Medication day-profile builder</h3>'
-      +'<p class="xp-intro">Build a regimen: choose the medicine, brand, dose and time, then add up to two immediate-release top-ups. Drag across the chart or use the time slider to see what is happening at each point in the day. <strong>Schematic, not pharmacokinetic data:</strong> relative levels only.</p>'
-      +'<div class="xp-chart"><svg class="xp-svg" viewBox="0 0 360 250" role="img" aria-label="Day profile chart"></svg></div>'
-      +'<div class="db-legend"></div>'
-      +'<label class="xp-sl-label" for="db-r">Time of day <output class="xp-out" for="db-r"></output></label>'
-      +'<input class="xp-range" id="db-r" type="range" min="300" max="1440" step="15" value="600">'
-      +'<div class="xp-chips db-tchips" role="group" aria-label="Jump to time">'+TCHIPS.map(function(c,i){return '<button type="button" class="xp-chip" data-tm="'+c[1]+'" aria-pressed="false">'+c[0]+' '+hhmm(c[1])+'</button>';}).join('')+'</div>'
-      +'<div class="db-warn" role="status"></div>'
-      +'<div class="xp-state" aria-live="polite"><span class="xp-badge"></span><h4 class="xp-head"></h4></div>'
-      +'<div class="xp-text db-now"></div>'
-      +'<div class="xp-bars">'+XP.barsHTML([{label:'Focus now',tone:'pos'},{label:'Homework cover',sub:'16:00–18:00',tone:'pos2'},{label:'Evening rebound risk',sub:'whole day',tone:'neg'},{label:'Appetite now',sub:'higher = normal',tone:'pos'},{label:'Sleep-onset risk',sub:'level at bedtime',tone:'neg'},{label:'BP / HR load now',tone:'neg2'}])+'</div>'
-      +'<h4 class="db-build">Build the regimen</h4>'
-      +'<p class="db-step">Example regimens</p><div class="xp-chips db-scen" role="group" aria-label="Example regimens">'+XP.chipsHTML(SCEN)+'</div>'
-      +'<p class="db-step">1 · Medicine</p><div class="xp-chips db-meds" role="group" aria-label="Medicine">'+GROUPS.map(function(g){return '<button type="button" class="xp-chip" data-g="'+g.id+'" aria-pressed="false">'+esc(g.chip)+'</button>';}).join('')+'</div>'
-      +'<div class="db-form">'
-      +'<label>2 · Brand / product<select class="db-brand"></select></label>'
-      +'<label>3 · Dose<select class="db-dose"></select></label>'
-      +'<label>4 · Morning dose time<select class="db-time">'+TIMES.map(function(t){return opt(t,hhmm(t),t===450);}).join('')+'</select></label>'
-      +'<div class="db-age" role="group" aria-label="Patient"><span>5 · Patient</span><div class="xp-chips"><button type="button" class="xp-chip" data-age="child" aria-pressed="true">Child 6–17</button><button type="button" class="xp-chip" data-age="adult" aria-pressed="false">Adult</button></div></div>'
-      +'</div>'
-      +'<div class="db-adds"></div><button type="button" class="btn db-addbtn">+ Add a dose</button><p class="db-addnote"></p>'
-      +'<div class="xp-tiles db-tiles"></div>'
-      +'<details class="db-more" open><summary>Why the curve has this shape</summary><div class="db-shape"></div></details>'
-      +'<details class="db-more db-addrisk" open><summary>Risks of the extra dose(s)</summary><div class="db-addx"></div></details>'
-      +'<div class="xp-boxes"><div class="xp-box xp-pt"><h5>What this means for the patient</h5><div class="xp-ptx"></div></div>'
-      +'<div class="xp-box xp-ph"><h5>Pharmacist action</h5><div class="xp-phx"></div></div></div>'
-      +'<p class="xp-note">Schematic, not pharmacokinetic data. The curves are built from SPC descriptions of release (IR:MR ratio, Tmax, duration) using a simple one-compartment model, normalised so that the morning dose is assumed to be titrated into this person\'s window. Real levels and responses vary widely between people (NG87 1.7.21). Strengths shown: check the current product range (dm+d).</p>'
-      +'<details class="xp-src"><summary>Sources</summary><ul>'
-      +'<li>SPCs (emc): Ritalin; Medikinet tablets; Concerta XL; Xaggitin XL, Affenid XL, Xenidate XL (emc) and Delmosart (Accord UK SmPC) for 22:78 maxima (54 mg child, 72 mg adult). BNF/BNFC (accessed 21 Oct 2026): Concerta XL up to 108 mg/day (off-label), Delmosart and Xaggitin XL 54 mg/day in adults (SmPC 72 mg); this tool keeps each product\'s SmPC maximum and shows differing BNF figures as notes; Medikinet XL; Equasym XL; Elvanse; dexamfetamine; Strattera; Intuniv (sections 4.2, 5.2).</li>'
-      +'<li>NICE NG87 (live text checked Oct 2026): 1.7.8, 1.7.17, 1.7.21, 1.7.22, 1.7.23, 1.8.6, 1.8.9, 1.8.17.</li>'
-      +'<li>MHRA Drug Safety Update (2022): prescribe modified-release methylphenidate by brand.</li>'
-      +'<li>SPS: Methylphenidate modified-release preparations (updated 28 Aug 2025).</li>'
-      +'<li>Misuse of Drugs Regulations 2001 (Schedule 2 prescription requirements); Module 9.</li></ul></details>'
+    var S={g:'oros',b:0,d:36,t:450,age:'child',add:[],time:600,step:1};
+    var u='dy'+(++uidn);
+    var h='<div class="dy" id="dayBuilder'+(uidn>1?uidn:'')+'" data-step="1">'
+      /* step track */
+      +'<ol class="dy-track" aria-label="Steps">'+STEPS.map(function(s,i){
+        return '<li><button type="button" class="dy-tk" data-go="'+(i+1)+'" aria-label="Step '+(i+1)+' of 3: '+s[1]+'"><span class="dy-tn" aria-hidden="true">'+(i+1)+'</span><span class="dy-tl">'+s[0]+'</span></button></li>';
+      }).join('')+'</ol>'
+      /* step 1 */
+      +'<section class="dy-pane" data-pane="1" aria-labelledby="'+u+'-h1">'
+        +'<h4 class="dy-h" id="'+u+'-h1" tabindex="-1">1 · Choose the regimen</h4>'
+        +'<p class="dy-lead">Tap an example to jump straight to its day, or build your own below.</p>'
+        +'<div class="dy-f"><p class="dy-fl" id="'+u+'-ex">Quick start: tap an example</p><div class="dy-chips dy-scen" role="group" aria-labelledby="'+u+'-ex">'
+          +SCEN.map(function(s,i){return '<button type="button" class="dy-chip" data-i="'+i+'" aria-pressed="false">'+esc(s.label)+'</button>';}).join('')+'</div></div>'
+        +'<p class="dy-or"><span>or build your own</span></p>'
+        +'<div class="dy-f"><p class="dy-fl" id="'+u+'-md">Medicine</p><div class="dy-picks dy-meds" role="group" aria-labelledby="'+u+'-md">'
+          +GROUPS.map(function(g){var c=PICKC[g.id]; return '<button type="button" class="dy-pick" data-g="'+g.id+'" aria-pressed="false" style="--c:'+c[0]+';--l:'+c[1]+'"><b>'+esc(g.chip)+'</b></button>';}).join('')+'</div></div>'
+        +'<div class="dy-row">'
+          +'<div class="dy-f dy-f-brand"><label class="dy-fl" for="'+u+'-brand">Brand / product</label><select class="dy-brand" id="'+u+'-brand"></select><p class="dy-static dy-brand1" hidden></p></div>'
+          +'<div class="dy-f dy-f-dose"><p class="dy-fl" id="'+u+'-ds">Dose <span class="dy-dlbl"></span></p><div class="dy-seg dy-dose" role="group" aria-labelledby="'+u+'-ds"></div></div>'
+          +'<div class="dy-pair"><div class="dy-f dy-f-time"><label class="dy-fl" for="'+u+'-time">Morning dose time</label><select class="dy-time" id="'+u+'-time">'+TIMES.map(function(t){return opt(t,hhmm(t),t===450);}).join('')+'</select></div>'
+          +'<div class="dy-f dy-f-age"><p class="dy-fl" id="'+u+'-pt">Patient</p><div class="dy-seg dy-age" role="group" aria-labelledby="'+u+'-pt"><button type="button" data-age="child" aria-pressed="true">Child 6–17</button><button type="button" data-age="adult" aria-pressed="false">Adult</button></div></div></div>'
+        +'</div>'
+        +'<p class="dy-sum dy-sum1" hidden></p>'
+        +'<div class="dy-checks"></div>'
+        +'<div class="dy-nav dy-nav1"><button type="button" class="dy-btn" data-nav="2">Next: top-ups'+ICON.next+'</button></div>'
+      +'</section>'
+      /* step 2 */
+      +'<section class="dy-pane" data-pane="2" aria-labelledby="'+u+'-h2" hidden>'
+        +'<h4 class="dy-h" id="'+u+'-h2" tabindex="-1">2 · Add top-ups</h4>'
+        +'<p class="dy-sum"></p>'
+        +'<p class="dy-lead">Optional. A top-up is an extra immediate-release (IR) dose later in the day to stretch the cover. You can add up to two. Bedtime in this model is <b class="dy-bedt"></b>.</p>'
+        +'<div class="dy-adds"></div>'
+        +'<button type="button" class="dy-btn dy-sec dy-addbtn">'+ICON.plus+'Add a top-up</button>'
+        +'<p class="dy-addnote" role="status"></p>'
+        +'<div class="dy-empty"></div>'
+        +'<p class="dy-rule dy-sleep"></p>'
+        +'<details class="dy-more dy-risk" hidden><summary>Overlap and total-dose risks</summary><div class="dy-addx"></div></details>'
+        +'<div class="dy-checks"></div>'
+        +'<div class="dy-nav"><button type="button" class="dy-btn dy-sec" data-nav="1">'+ICON.back+'Back</button><button type="button" class="dy-btn" data-nav="3">See the day'+ICON.next+'</button></div>'
+      +'</section>'
+      /* step 3 */
+      +'<section class="dy-pane dy-p3" data-pane="3" aria-labelledby="'+u+'-h3" hidden>'
+        +'<h4 class="dy-h" id="'+u+'-h3" tabindex="-1">3 · See the day</h4>'
+        +'<div class="dy-colA">'
+          +'<p class="dy-sum"></p>'
+          +'<div class="dy-chart" tabindex="0" role="group" aria-label="Day chart. Drag across it, or use the left and right arrow keys, to move the time marker."><svg class="dy-svg" role="img"></svg></div>'
+          +'<p class="dy-cap"></p>'
+          +'<div class="dy-time3"><label class="dy-tlab" for="'+u+'-r">Time of day <output class="dy-out" for="'+u+'-r"></output></label>'
+          +'<input class="dy-range" id="'+u+'-r" type="range" min="300" max="1440" step="15" value="600"></div>'
+          +'<div class="dy-verdict" aria-live="polite" data-tone="ok"><span class="dy-badge"></span><h5 class="dy-vt"></h5><div class="dy-now"></div></div>'
+        +'</div>'
+        +'<div class="dy-colB">'
+          +'<div class="dy-f"><div class="dy-jump" role="group" aria-label="Jump to a time of day">'
+            +TCHIPS.map(function(c,i){return '<button type="button" data-tm="'+c[1]+'"'+(i===TCHIPS.length-1?' data-bed="1"':'')+' aria-pressed="false"><b>'+c[0]+'</b><small>'+hhmm(c[1])+'</small></button>';}).join('')+'</div></div>'
+          +'<dl class="dy-stats"></dl>'
+          +'<div class="dy-f"><p class="dy-fl">Six meters</p>'
+          +'<div class="dy-meters">'+METERS.map(function(m,i){return '<div class="dy-m dy-m-'+m.tone+'" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="'+esc(m.label+(m.sub?' ('+m.sub+')':''))+'"><span class="dy-ml">'+esc(m.label)+(m.sub?'<small>'+esc(m.sub)+'</small>':'')+'</span><span class="dy-mt"><span class="dy-mf" data-i="'+i+'"></span></span></div>';}).join('')+'</div></div>'
+        +'</div>'
+        +'<div class="dy-colC">'
+          +'<div class="dy-checks dy-checks3"></div>'
+          +'<details class="dy-more"><summary>Why the curve has this shape</summary><div class="dy-shape"></div></details>'
+          +'<details class="dy-more"><summary>What this means for the patient</summary><div class="dy-ptx"></div></details>'
+          +'<details class="dy-more"><summary>Pharmacist action</summary><div class="dy-phx"></div></details>'
+          +'<details class="dy-more"><summary>Sources and the schematic note</summary>'
+            +'<p class="dy-note">Schematic, not pharmacokinetic data. The curves are built from SPC descriptions of release (IR:MR ratio, Tmax, duration) using a simple one-compartment model, normalised so that the morning dose is assumed to be titrated into this person\'s window. Real levels and responses vary widely between people (NG87 1.7.21). Strengths shown: check the current product range (dm+d).</p>'
+            +'<ul class="dy-src">'
+            +'<li>SPCs (emc): Ritalin; Medikinet tablets; Concerta XL; Xaggitin XL, Affenid XL, Xenidate XL (emc) and Delmosart (Accord UK SmPC) for 22:78 maxima (54 mg child, 72 mg adult). BNF/BNFC (accessed 21 Oct 2026): Concerta XL up to 108 mg/day (off-label), Delmosart and Xaggitin XL 54 mg/day in adults (SmPC 72 mg); this tool keeps each product\'s SmPC maximum and shows differing BNF figures as notes; Medikinet XL; Equasym XL; Elvanse; dexamfetamine; Strattera; Intuniv (sections 4.2, 5.2).</li>'
+            +'<li>NICE NG87 (live text checked Oct 2026): 1.7.8, 1.7.17, 1.7.21, 1.7.22, 1.7.23, 1.8.6, 1.8.9, 1.8.17.</li>'
+            +'<li>MHRA Drug Safety Update (2022): prescribe modified-release methylphenidate by brand.</li>'
+            +'<li>SPS: Methylphenidate modified-release preparations (updated 28 Aug 2025).</li>'
+            +'<li>Misuse of Drugs Regulations 2001 (Schedule 2 prescription requirements); Module 9.</li></ul></details>'
+          +'<div class="dy-nav"><button type="button" class="dy-btn dy-sec" data-nav="2">'+ICON.back+'Back</button><button type="button" class="dy-btn" data-nav="1">Edit regimen</button></div>'
+        +'</div>'
+      +'</section>'
       +'</div>';
     mount.innerHTML=h;
-    var R=mount.firstChild, $=function(s){return R.querySelector(s);};
-    var svg=$('.xp-svg'), range=$('.xp-range'), out=$('.xp-out');
-    var selB=$('.db-brand'), selD=$('.db-dose'), selT=$('.db-time');
-    var curves=null, lastKey='', lastState='';
+    var R=mount.firstChild, $=function(s){return R.querySelector(s);}, $$=function(s){return Array.prototype.slice.call(R.querySelectorAll(s));};
+    var panes=$$('.dy-pane'), tks=$$('.dy-tk');
+    var wrap=$('.dy-chart'), svg=$('.dy-svg'), range=$('.dy-range'), out=$('.dy-out');
+    var selB=$('.dy-brand'), selT=$('.dy-time');
+    var curves=null, lastKey='', lastReg='', lastSt='', raf=0, geo=null, notesOpen=false, htmlCache={};
 
-    function fillSelects(){
-      var g=G[S.g];
+    function bedOf(){ return S.age==='child'?1260:1350; }
+    function setHTML(el,s){ if(el._h===s) return; el._h=s; el.innerHTML=s; }
+    function plain(s){ return s.replace(/<[^>]+>/g,''); }
+
+    /* ----- controls: step 1 ----- */
+    function brandsAndDoses(){
+      var g=G[S.g], one=g.brands.length<2, b1=$('.dy-brand1');
       selB.innerHTML=g.brands.map(function(b,i){return opt(i,b,i===S.b);}).join('');
+      selB.hidden=one; b1.hidden=!one; b1.textContent=g.brands[0];
       var ds=(g.brandDoses&&g.brandDoses[g.brands[S.b]])||g.doses;
       if(ds.indexOf(S.d)<0) S.d=ds.indexOf(g.def)>=0?g.def:ds[0];
-      selD.innerHTML=ds.map(function(d){return opt(d,d+' mg'+(g.id==='mphir'||g.id==='dex'?' (morning)':' once daily'),d===S.d);}).join('');
-      selT.value=S.t;
-      R.querySelectorAll('.db-meds .xp-chip').forEach(function(c){ c.setAttribute('aria-pressed', c.dataset.g===S.g?'true':'false'); });
-      R.querySelectorAll('.db-age .xp-chip').forEach(function(c){ c.setAttribute('aria-pressed', c.dataset.age===S.age?'true':'false'); });
+      $('.dy-dose').innerHTML=ds.map(function(d){return '<button type="button" data-d="'+d+'" aria-pressed="'+(d===S.d)+'">'+d+' mg</button>';}).join('');
+      $('.dy-dlbl').textContent='('+((g.id==='mphir'||g.id==='dex')?'morning dose':'once daily')+')';
+      $('.dy-f-time').hidden=!!g.flat;
     }
-    function addKind(){ var g=G[S.g]; return g.flat?null:(g.drug==='mph'?{name:'Methylphenidate IR',model:'ir',doses:[5,10,15,20],factor:1}:{name:'Dexamfetamine IR',model:'dex',doses:[5,10],factor:0.73}); }
-    function renderAdds(){
-      var k=addKind(), wrap=$('.db-adds');
-      if(!k){ S.add=[]; }
-      S.add.forEach(function(a){ if(k && k.doses.indexOf(a.d)<0) a.d=k.doses[1]; });
-      wrap.innerHTML=S.add.map(function(a,i){
-        return '<div class="db-add" style="--c:'+COLS[i+1]+'"><b>Extra dose '+(i+1)+' · '+esc(k.name)+'</b>'
-          +'<label>Dose<select data-i="'+i+'" data-f="d">'+k.doses.map(function(d){return opt(d,d+' mg',d===a.d);}).join('')+'</select></label>'
-          +'<label>Time<select data-i="'+i+'" data-f="t">'+ADD_T.map(function(t){return opt(t,hhmm(t),t===a.t);}).join('')+'</select></label>'
-          +'<button type="button" class="db-rm" data-i="'+i+'" aria-label="Remove extra dose '+(i+1)+'">Remove</button></div>';
-      }).join('');
-      var btn=$('.db-addbtn'), note=$('.db-addnote');
-      btn.disabled = !k || S.add.length>=2;
-      note.textContent = !k ? 'Extra IR doses do not apply: '+G[S.g].chip.replace(/ \(.*/,'')+' gives a steady effect. Combining with a stimulant is a specialist decision.' : (S.add.length>=2 ? 'Maximum of two extra doses in this model.' : '');
+    function syncPressed(){
+      $$('.dy-meds .dy-pick').forEach(function(c){ var on=c.dataset.g===S.g; c.setAttribute('aria-pressed',on); c.classList.toggle('on',on); });
+      $$('.dy-age button').forEach(function(c){ c.setAttribute('aria-pressed',c.dataset.age===S.age); });
+      $$('.dy-dose button').forEach(function(c){ c.setAttribute('aria-pressed',+c.dataset.d===S.d); });
+      selT.value=S.t;
+      var bc=$('.dy-jump button[data-bed]'); bc.dataset.tm=bedOf(); bc.querySelector('small').textContent=hhmm(bedOf());
+      $('.dy-bedt').textContent=hhmm(bedOf())+' ('+(S.age==='child'?'child':'adult')+')';
     }
 
+    /* ----- controls: step 2 ----- */
+    function addKind(){ var g=G[S.g]; return g.flat?null:(g.drug==='mph'?{name:'Methylphenidate IR',model:'ir',doses:[5,10,15,20],factor:1}:{name:'Dexamfetamine IR',model:'dex',doses:[5,10],factor:0.73}); }
+    function renderAdds(){
+      var k=addKind(), wr=$('.dy-adds');
+      if(!k){ S.add=[]; }
+      S.add.forEach(function(a){ if(k && k.doses.indexOf(a.d)<0) a.d=k.doses[1]; });
+      wr.innerHTML=S.add.map(function(a,i){
+        return '<div class="dy-add" style="--c:'+COLS[i+1]+'" data-i="'+i+'">'
+          +'<div class="dy-ah"><b><i aria-hidden="true"></i>Top-up '+(i+1)+'<small>'+esc(k.name)+'</small></b><button type="button" class="dy-rm" data-i="'+i+'" aria-label="Remove top-up '+(i+1)+'">Remove</button></div>'
+          +'<div class="dy-f"><p class="dy-fl" id="'+u+'-ad'+i+'">Dose</p><div class="dy-seg" role="group" aria-labelledby="'+u+'-ad'+i+'">'+k.doses.map(function(d){return '<button type="button" data-i="'+i+'" data-d="'+d+'" aria-pressed="'+(d===a.d)+'">'+d+' mg</button>';}).join('')+'</div></div>'
+          +'<div class="dy-f"><label class="dy-fl" for="'+u+'-at'+i+'">Time</label><select id="'+u+'-at'+i+'" data-i="'+i+'">'+ADD_T.map(function(t){return opt(t,hhmm(t),t===a.t);}).join('')+'</select></div>'
+          +'<p class="dy-gap"></p></div>';
+      }).join('');
+      var btn=$('.dy-addbtn'), note=$('.dy-addnote');
+      btn.disabled = !k || S.add.length>=2;
+      note.textContent = !k ? 'Top-ups do not apply: '+G[S.g].chip.replace(/ \(.*/,'')+' gives a steady effect. Combining with a stimulant is a specialist decision.' : (S.add.length>=2 ? 'Maximum of two top-ups in this model.' : '');
+      var sl='';
+      if(k){ sl = G[S.g].drug==='mph' ? 'Ritalin and Medikinet tablet SmPCs (4.2): the last dose should, in general, not be given within 4 hours before bedtime.'
+        : (S.g==='lis' ? 'Elvanse SPC: afternoon doses should be avoided because of the potential for insomnia. Dexamfetamine SPC: doses should not be taken too late after lunchtime, to avoid disturbing sleep.' : 'Dexamfetamine SPC: doses should not be taken too late after lunchtime, to avoid disturbing sleep.'); }
+      var sp=$('.dy-sleep'); sp.textContent=sl; sp.hidden=!sl;
+      lastReg='';
+    }
+
+    /* ----- model: unchanged ----- */
     function compute(){
       var g=G[S.g], key=JSON.stringify([S.g,S.b,S.d,S.t,S.add]);
       if(key===lastKey) return curves; lastKey=key;
@@ -183,14 +256,13 @@
       if(g.flat){ curves={flat:true, doses:[], total:null}; return curves; }
       var f=g.factor||1, base=unit(g.model), scale=0.85/(peakOf(base)*S.d*f);
       function place(model, mg, fac, tmin){
-        var u=unit(model), a=new Float64Array(N), off=Math.round((tmin/60-H0)/DT);
-        for(var i=off;i<N;i++) a[i]=u[i-off]*mg*fac*scale; return a;
+        var un=unit(model), a=new Float64Array(N), off=Math.round((tmin/60-H0)/DT);
+        for(var i=off;i<N;i++) a[i]=un[i-off]*mg*fac*scale; return a;
       }
       doses.push({lbl:g.brands[S.b].replace(/ \(.*\)$/,'')+' '+S.d+' mg', t:S.t, a:place(g.model,S.d,f,S.t), col:COLS[0]});
       var k=addKind();
       S.add.forEach(function(ad,i){ doses.push({lbl:k.name+' '+ad.d+' mg', t:ad.t, a:place(k.model,ad.d,k.factor,ad.t), col:COLS[i+1]}); });
       var tot=new Float64Array(N); doses.forEach(function(d){ for(var i=0;i<N;i++) tot[i]+=d.a[i]; });
-      // summary
       var segs=[], inW=false, s0=0, pk=0, pkI=0, tooT=null, hiT=null;
       for(var i=0;i<N;i++){ var L=tot[i]; if(L>pk){pk=L;pkI=i;} if(L>=TOO && tooT===null) tooT=i; if(L>WHI && hiT===null) hiT=i;
         if(L>=WLO && !inW){inW=true;s0=i;} if((L<WLO||i===N-1) && inW){inW=false; segs.push([s0,i]);} }
@@ -202,44 +274,52 @@
     function minOf(i){ return (H0+i*DT)*60; }
     function lvl(mins){ return curves.flat?0.7:curves.total[iOf(mins)]; }
 
-    /* ----- chart ----- */
-    var X0=44,X1=348,Y0=206,Y1=18;
-    function X(mins){ return X0+(X1-X0)*(mins/60-H0)/(H1-H0); }
-    function Y(L){ return Y0-(Y0-Y1)*clamp(L,0,YMAX)/YMAX; }
+    /* ----- chart (light, drawn at the real pixel width so the text stays readable) ----- */
     function draw(){
-      var c=curves, s='';
-      s+='<rect x="'+X0+'" y="'+Y1+'" width="'+(X1-X0)+'" height="'+(Y(TOO)-Y1)+'" fill="#ff7b7b" opacity=".12"/>';
-      s+=T(X0+6,Y1+17,'TOO MUCH',{fill:'#ff9a9a',weight:600,ls:1.2});
-      s+='<rect x="'+X0+'" y="'+Y(WHI)+'" width="'+(X1-X0)+'" height="'+(Y(WLO)-Y(WHI))+'" fill="#5fd3a6" opacity=".13"/>';
-      s+=T(X0+6,Y(WHI)+17,'WINDOW',{fill:'#7fe0b8',weight:600,ls:1.2});
-      for(var hh=6;hh<=24;hh+=3){ s+='<line x1="'+X(hh*60)+'" y1="'+Y1+'" x2="'+X(hh*60)+'" y2="'+Y0+'" stroke="#2a4866" stroke-width="1"/>'+T(X(hh*60),Y0+20,(hh<10?'0':'')+hh,{anchor:'middle'}); }
-      s+='<line x1="'+X0+'" y1="'+Y0+'" x2="'+X1+'" y2="'+Y0+'" stroke="#5f7a96"/>';
-      s+=T((X0+X1)/2,Y0+40,'Time of day (24-hour clock)',{anchor:'middle'})+T(16,(Y0+Y1)/2,'Relative level (schematic)',{anchor:'middle',rot:-90});
-      // bedtime marker
-      var bed=S.age==='child'?1260:1350;
-      s+='<line x1="'+X(bed)+'" y1="'+Y1+'" x2="'+X(bed)+'" y2="'+Y0+'" stroke="#b79cff" stroke-dasharray="2 4" opacity=".8"/>';
+      var c=curves, W=Math.round(wrap.clientWidth);
+      if(W<150){ geo=null; return; }
+      var narrow=W<460, H=narrow?224:292, ML=14, MR=14, PT=30, PB=30, PW=W-ML-MR, PH=H-PT-PB;
+      geo={W:W,ML:ML,PW:PW};
+      function X(m){ return ML+PW*(m/60-H0)/(H1-H0); }
+      function Y(L){ return PT+PH*(1-clamp(L,0,YMAX)/YMAX); }
+      var base=Y(0), s='', bed=bedOf(), i;
+      s+='<rect x="'+ML+'" y="'+PT+'" width="'+PW+'" height="'+(Y(TOO)-PT)+'" fill="#fbe9e4"/>';
+      s+='<text x="'+(ML+6)+'" y="'+(PT+15)+'" class="dy-zt" fill="#a8432e">TOO MUCH</text>';
+      s+='<rect x="'+ML+'" y="'+Y(WHI)+'" width="'+PW+'" height="'+(Y(WLO)-Y(WHI))+'" fill="#e4f5ea"/>';
+      s+='<text x="'+(ML+6)+'" y="'+(Y(WHI)+15)+'" class="dy-zt" fill="#1d7a3e">WINDOW</text>';
+      for(var hh=6;hh<=24;hh+=3){ var gx=X(hh*60);
+        s+='<line x1="'+gx+'" y1="'+PT+'" x2="'+gx+'" y2="'+base+'" stroke="#16324f" stroke-opacity=".12" stroke-dasharray="2 4"/>';
+        s+='<text x="'+gx+'" y="'+(base+18)+'" class="dy-ax" text-anchor="'+(hh===24?'end':'middle')+'">'+pad2(hh%24===0?24:hh)+'</text>'; }
+      s+='<line x1="'+ML+'" y1="'+base+'" x2="'+(W-MR)+'" y2="'+base+'" stroke="#8796a5" stroke-width="1.5"/>';
+      var bx=X(bed);
+      s+='<line x1="'+bx+'" y1="'+PT+'" x2="'+bx+'" y2="'+base+'" stroke="#6b4fa3" stroke-width="1.8" stroke-dasharray="3 4"/>';
+      s+='<text x="'+(bx-5)+'" y="'+(PT+15)+'" class="dy-zt" fill="#6b4fa3" text-anchor="end">BED '+hhmm(bed)+'</text>';
       if(c.flat){
-        var d='M'+X(300)+','+Y(0.7)+'L'+X(1440)+','+Y(0.7);
-        s+='<path d="'+d+'" stroke="#5fd3a6" stroke-width="4" fill="none"/>'+T(X(330),Y(0.7)-12,'steady effect after several weeks',{fill:'#dbe6f0'});
+        s+='<path d="M'+X(300)+','+Y(0.7)+'L'+X(1440)+','+Y(0.7)+'" stroke="#1d7a3e" stroke-width="4" stroke-linecap="round" fill="none"/>';
+        s+='<text x="'+(ML+PW/2)+'" y="'+(Y(0.7)-12)+'" class="dy-ax" text-anchor="middle" fill="#16324f">steady effect after several weeks</text>';
       } else {
-        function pth(a){ var d='',step=10; for(var i=0;i<N;i+=step){ d+=(i?'L':'M')+X(minOf(i)).toFixed(1)+','+Y(a[i]).toFixed(1); } d+='L'+X(minOf(N-1)).toFixed(1)+','+Y(a[N-1]).toFixed(1); return d; }
-        if(c.doses.length>1) c.doses.forEach(function(d){ s+='<path d="'+pth(d.a)+'" stroke="'+d.col+'" stroke-width="2.2" stroke-dasharray="6 5" fill="none"/>'; });
-        s+='<path d="'+pth(c.total)+'L'+X(1440)+','+Y0+'L'+X(300)+','+Y0+'Z" fill="url(#dbg)" opacity=".35"/>';
-        s='<defs><linearGradient id="dbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff" stop-opacity=".5"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient></defs>'+s;
-        s+='<path d="'+pth(c.total)+'" stroke="#ffffff" stroke-width="3.6" fill="none" stroke-linejoin="round"/>';
-        c.doses.forEach(function(d){ var x=X(d.t); s+='<path d="M'+x+','+(Y0-1)+'l-7,-11h14z" fill="'+d.col+'" stroke="#0f2236" stroke-width="1.5"/>'; });
+        var pth=function(a){ var d='',step=10; for(var j=0;j<N;j+=step){ d+=(j?'L':'M')+X(minOf(j)).toFixed(1)+','+Y(a[j]).toFixed(1); } d+='L'+X(minOf(N-1)).toFixed(1)+','+Y(a[N-1]).toFixed(1); return d; };
+        if(c.doses.length>1) c.doses.forEach(function(d){ s+='<path d="'+pth(d.a)+'" stroke="'+d.col+'" stroke-width="2.4" stroke-dasharray="6 4" fill="none"/>'; });
+        s='<defs><linearGradient id="'+u+'g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16324f" stop-opacity=".22"/><stop offset="1" stop-color="#16324f" stop-opacity="0"/></linearGradient></defs>'+s;
+        s+='<path d="'+pth(c.total)+'L'+X(1440)+','+base+'L'+X(300)+','+base+'Z" fill="url(#'+u+'g)"/>';
+        s+='<path d="'+pth(c.total)+'" stroke="#16324f" stroke-width="3.2" fill="none" stroke-linejoin="round" stroke-linecap="round"/>';
+        c.doses.forEach(function(d){ var x=X(d.t); s+='<path d="M'+x+','+(base-1)+'l-8,-13h16z" fill="'+d.col+'" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/>'; });
       }
-      var tx=X(S.time), L=lvl(S.time);
-      s+='<line x1="'+tx+'" y1="'+Y1+'" x2="'+tx+'" y2="'+Y0+'" stroke="#fff" stroke-width="1.5" opacity=".75"/>';
-      s+='<circle cx="'+tx+'" cy="'+Y(L)+'" r="12" fill="#fff" opacity=".16"/><circle cx="'+tx+'" cy="'+Y(L)+'" r="7.5" fill="#0f2236" stroke="#fff" stroke-width="3"/>';
+      var tx=X(S.time), ty=Y(lvl(S.time)), tw=46, tgx=clamp(tx-tw/2,ML,W-MR-tw);
+      s+='<line x1="'+tx+'" y1="'+(PT-2)+'" x2="'+tx+'" y2="'+base+'" stroke="#16324f" stroke-width="1.6" opacity=".6"/>';
+      s+='<circle cx="'+tx+'" cy="'+ty+'" r="14" fill="#16324f" opacity=".12"/><circle cx="'+tx+'" cy="'+ty+'" r="8.5" fill="#fff" stroke="#16324f" stroke-width="3.2"/>';
+      s+='<rect x="'+tgx+'" y="2" width="'+tw+'" height="22" rx="11" fill="#16324f"/><text x="'+(tgx+tw/2)+'" y="17.5" class="dy-ctag" text-anchor="middle" fill="#fff">'+hhmm(S.time)+'</text>';
+      svg.setAttribute('viewBox','0 0 '+W+' '+H); svg.setAttribute('width',W); svg.setAttribute('height',H);
       svg.innerHTML=s;
-      var lg=c.flat?'<span><i style="background:#5fd3a6"></i>Steady effect (no daily peak)</span>':c.doses.map(function(d){return '<span><i style="background:'+d.col+'"></i>'+esc(d.lbl)+' at '+hhmm(d.t)+'</span>';}).join('')+(c.doses.length>1?'<span><i class="tot"></i>Combined total (solid)</span>':'');
-      $('.db-legend').innerHTML=lg+'<span><i class="bed"></i>Bedtime '+hhmm(bed)+'</span><span><i class="win"></i>Therapeutic window (schematic)</span><span><i class="too"></i>Too much</span>';
       var sm=c.flat?'Flat steady effect over 24 hours.':'Combined level is in the window for about '+c.cover.toFixed(1)+' hours'+(c.segs.length?', from '+hhmm(minOf(c.segs[0][0]))+' to '+hhmm(minOf(c.segs[c.segs.length-1][1])):'')+'. Peak at '+hhmm(minOf(c.pkI))+'.';
-      svg.setAttribute('aria-label','Day profile chart. '+sm+' Cursor at '+hhmm(S.time)+'.');
+      svg.setAttribute('aria-label','Day profile chart. '+sm+' Time marker at '+hhmm(S.time)+'.');
+    }
+    function caption(){
+      var c=curves;
+      $('.dy-cap').textContent=(!c.flat&&c.doses.length>1?'Solid line: combined level. Dashed lines: each dose. ':'')+'Heights are relative (schematic), not blood levels.';
     }
 
-    /* ----- state at cursor ----- */
+    /* ----- state at the time marker ----- */
     function stateAt(){
       var g=G[S.g], c=curves;
       if(c.flat) return {k:'steady',tone:'ok',badge:'Steady state',title:'Steady 24-hour effect'};
@@ -265,22 +345,21 @@
       else base='The medicine has worn off and symptoms are back to baseline.';
       return '<p><strong>'+t+' ('+esc(name)+'):</strong> '+base+'</p>';
     }
-    function shapeText(){ return G[S.g].shape; }
     function addRisk(){
-      var g=G[S.g], k=addKind(), out=[];
-      if(!S.add.length){ out.push(g.flat?'<p>Not applicable to a steady-effect non-stimulant.</p>':'<p>No extra doses added. NICE suggests considering an MR methylphenidate preparation in the morning plus an IR dose at another time of day to extend the duration of effect (NG87 1.7.22). Use <em>Add a dose</em> to see the effect.</p>'); return out.join(''); }
-      var bed=S.age==='child'?1260:1350;
+      var g=G[S.g], each=[], rest=[];
+      if(!S.add.length){ rest.push(g.flat?'<p>Not applicable to a steady-effect non-stimulant.</p>':'<p>No top-ups added. NICE suggests considering an MR methylphenidate preparation in the morning plus an IR dose at another time of day to extend the duration of effect (NG87 1.7.22). Use <em>Add a top-up</em> to see the effect.</p>'); return {each:each,rest:rest}; }
+      var bed=bedOf();
       S.add.forEach(function(a,i){
-        var gap=(bed-a.t)/60, rest=lvl(bed);
-        out.push('<p><strong>Extra dose '+(i+1)+' ('+a.d+' mg at '+hhmm(a.t)+'):</strong> '+(gap<4.5?'only '+gap.toFixed(1).replace('.0','')+' h before bedtime: there is a high risk that it is still active at bedtime and delays sleep onset.':gap<6?'taken '+gap.toFixed(1).replace('.0','')+' h before bedtime: some effect may remain at bedtime; check sleep.':'well before bedtime, so the effect on sleep onset should be small, though this varies.')+'</p>');
+        var gap=(bed-a.t)/60, gs=gap.toFixed(1).replace('.0','');
+        each.push({tone:gap<4.5?'high':gap<6?'warn':'ok', html:'<strong>Top-up '+(i+1)+' ('+a.d+' mg at '+hhmm(a.t)+'):</strong> '+(gap<4.5?'only '+gs+' h before bedtime: there is a high risk that it is still active at bedtime and delays sleep onset.':gap<6?'taken '+gs+' h before bedtime: some effect may remain at bedtime; check sleep.':'well before bedtime, so the effect on sleep onset should be small, though this varies.')});
       });
-      if(curves.tooT!==null) out.push('<p><strong>Overlap:</strong> the extra dose lands while the morning dose is still high, so the combined level enters the "too much" zone at '+hhmm(minOf(curves.tooT))+'. A smaller top-up or a later time (if sleep allows) may be safer. This is a prescriber decision.</p>');
-      else if(curves.hiT!==null) out.push('<p><strong>Overlap:</strong> the combined level goes above the usual window from '+hhmm(minOf(curves.hiT))+'. Watch for over-focus, headache, appetite loss and raised pulse.</p>');
-      if(g.drug==='mph') out.push('<p><strong>Cumulative dose:</strong> extra doses count towards the total daily methylphenidate dose and the licensed maximum (see warnings above).</p>');
-      if(g.id==='mphir'||g.id==='dex') out.push('<p>For IR-only regimens the "extra doses" are simply the usual 2nd and 3rd doses of the day. The Ritalin SPC notes that if the effect wears off too early in the evening, disturbed behaviour and/or difficulty sleeping may recur. A small evening dose may help, weighing the pros and cons against problems falling asleep.</p>');
-      if(g.id==='lis') out.push('<p><strong>Lisdexamfetamine + dexamfetamine IR</strong> is outside NG87 1.7.22, which covers methylphenidate only. It is specialist-only practice. The Elvanse SPC advises avoiding afternoon doses because of insomnia.</p>');
-      if(g.id==='mk') out.push('<p>Medikinet XL already contains 50% IR. In adults the SPC allows a split dose (morning and lunchtime, with or after meals); an extra IR dose adds to this.</p>');
-      return out.join('');
+      if(curves.tooT!==null) rest.push('<p><strong>Overlap:</strong> the top-up lands while the morning dose is still high, so the combined level enters the "too much" zone at '+hhmm(minOf(curves.tooT))+'. A smaller top-up or a later time (if sleep allows) may be safer. This is a prescriber decision.</p>');
+      else if(curves.hiT!==null) rest.push('<p><strong>Overlap:</strong> the combined level goes above the usual window from '+hhmm(minOf(curves.hiT))+'. Watch for over-focus, headache, appetite loss and raised pulse.</p>');
+      if(g.drug==='mph') rest.push('<p><strong>Cumulative dose:</strong> top-ups count towards the total daily methylphenidate dose and the licensed maximum (see warnings above).</p>');
+      if(g.id==='mphir'||g.id==='dex') rest.push('<p>For IR-only regimens the "top-ups" are simply the usual 2nd and 3rd doses of the day. The Ritalin SPC notes that if the effect wears off too early in the evening, disturbed behaviour and/or difficulty sleeping may recur. A small evening dose may help, weighing the pros and cons against problems falling asleep.</p>');
+      if(g.id==='lis') rest.push('<p><strong>Lisdexamfetamine + dexamfetamine IR</strong> is outside NG87 1.7.22, which covers methylphenidate only. It is specialist-only practice. The Elvanse SPC advises avoiding afternoon doses because of insomnia.</p>');
+      if(g.id==='mk') rest.push('<p>Medikinet XL already contains 50% IR. In adults the SPC allows a split dose (morning and lunchtime, with or after meals); a top-up IR dose adds to this.</p>');
+      return {each:each,rest:rest};
     }
     function patientText(st){
       var g=G[S.g];
@@ -310,14 +389,13 @@
       var w=doseCheck(S);
       var bn=bnfNote(G[S.g],G[S.g].brands[S.b]||G[S.g].brands[0],S.age==='adult'); if(bn) w.push(['info',bn]);
       if(S.g==='lis') w.push(['info','Time in window is schematic (a threshold on a model curve). The Elvanse SPC reports effects still present at 13 h in children and 14 h in adults.']);
-      var bed=S.age==='child'?1260:1350;
-      S.add.forEach(function(a,i){ if(a.t>=bed-300) w.push(['warn','Extra dose '+(i+1)+' at '+hhmm(a.t)+' is less than 5 h before bedtime ('+hhmm(bed)+'): high risk of delayed sleep onset.']); });
+      var bed=bedOf();
+      S.add.forEach(function(a,i){ if(a.t>=bed-300) w.push(['warn','Top-up '+(i+1)+' at '+hhmm(a.t)+' is less than 5 h before bedtime ('+hhmm(bed)+'): high risk of delayed sleep onset.']); });
       if(curves && !curves.flat && curves.tooT!==null) w.push(['danger','Combined level reaches the "too much" zone at '+hhmm(minOf(curves.tooT))+' (schematic).']);
       return w;
     }
-
     function bars(){
-      var g=G[S.g], c=curves, L=lvl(S.time), bed=S.age==='child'?1260:1350;
+      var g=G[S.g], c=curves, L=lvl(S.time), bed=bedOf();
       if(c.flat){ var a=g.id==='ato';
         return [0.7, 0.7, 0.05, a?0.75:0.92, a?0.2:0.06, a?0.4:0.05]; }
       var focus = S.time<S.t?0.1: (L<=0.85 ? 0.1+0.85*Math.pow(clamp(L/0.85,0,1),0.9) : clamp(0.95-0.45*clamp((L-1.15)/0.7,0,1),0,1));
@@ -330,50 +408,132 @@
       return [focus,hw,reb,app,sl,bp];
     }
     function tiles(){
-      var c=curves, g=G[S.g];
+      var c=curves, g=G[S.g], bl=lvl(bedOf());
       if(c.flat) return [{label:'Hours of cover',value:'24 h (steady)',tone:'ok'},{label:'Onset of benefit',value:'Builds over weeks',tone:'info'},{label:g.id==='gua'?'BP / HR':'Controlled drug',value:g.id==='gua'?'Lowers: monitor':'No',tone:g.id==='gua'?'warn':'info'}];
       return [{label:'Time in window',value:'≈ '+c.cover.toFixed(1)+' h',tone:c.cover>=10?'ok':c.cover>=7?'mid':'warn'},
               {label:'In window',value:c.segs.length?hhmm(minOf(c.segs[0][0]))+'–'+hhmm(minOf(c.segs[c.segs.length-1][1])):'never',tone:'info'},
-              {label:'Level at bedtime',value:lvl(S.age==='child'?1260:1350)>=WLO?'Still active':lvl(S.age==='child'?1260:1350)>0.15?'Some effect':'Low',tone:lvl(S.age==='child'?1260:1350)>=WLO?'high':lvl(S.age==='child'?1260:1350)>0.15?'warn':'ok'}];
+              {label:'Level at bedtime',value:bl>=WLO?'Still active':bl>0.15?'Some effect':'Low',tone:bl>=WLO?'high':bl>0.15?'warn':'ok'}];
     }
 
-    var raf=0, regKey='';
+    /* ----- text blocks that follow the regimen ----- */
+    function summaryHTML(){
+      var g=G[S.g], name=esc(g.brands[S.b].replace(/ \(.*\)$/,'')), col=function(i){ return g.flat?'#1d7a3e':COLS[i]; };
+      var p='<span class="dy-dc" style="--c:'+col(0)+'"><i aria-hidden="true"></i><b>'+name+' '+S.d+' mg</b>'+(g.flat?' once daily':' at '+hhmm(S.t))+'</span>';
+      S.add.forEach(function(a,i){ p+='<span class="dy-dc" style="--c:'+COLS[i+1]+'"><i aria-hidden="true"></i><b>'+a.d+' mg IR</b> at '+hhmm(a.t)+'</span>'; });
+      return p+'<span class="dy-sumage">'+(S.age==='child'?'Child 6–17':'Adult')+'</span>';
+    }
+    /* Steps 1 and 2 show every caution in full; step 3 (the chart) shows only the danger and important ones in full and
+       folds the cautions and notes into one dropdown so the chart stays on screen. Nothing is dropped. */
+    function checksHTML(compact, ar){
+      var w=warnings().map(function(x,i){return {s:x[0],t:x[1],i:i};});
+      var cut=compact?1:2, cap=compact?1:2;
+      w.sort(function(a,b){return SEV[a.s][1]-SEV[b.s][1]||a.i-b.i;});
+      var main=w.filter(function(x,i){return SEV[x.s][1]<=cut;}).slice(0,cap);
+      var rest=w.filter(function(x){return main.indexOf(x)<0;});
+      var li=function(x){return '<p class="dy-w dy-w-'+x.s+'"><b class="dy-wl">'+SEV[x.s][0]+'</b>'+x.t+'</p>';};
+      var risk=(compact&&ar&&S.add.length)?'<h5 class="dy-sh">Top-up risks</h5>'+ar.each.map(function(x){return '<p>'+x.html+'</p>';}).join('')+ar.rest.join(''):'';
+      var lab=compact?(risk?'Cautions, notes and top-up risks':main.length?'More cautions and dose notes':'Cautions and dose notes'):(main.length?'More dose and licence notes':'Dose and licence notes');
+      var cnt=rest.length?' <span class="dy-ct dy-ct-'+rest[0].s+'">'+rest.length+'</span><span class="dy-sr"> (most serious: '+SEV[rest[0].s][0].toLowerCase()+')</span>':'';
+      return main.map(li).join('')+((rest.length||risk)?'<details class="dy-more dy-notes"'+(notesOpen?' open':'')+'><summary>'+lab+cnt+'</summary>'+rest.map(li).join('')+risk+'</details>':'');
+    }
+
+    function setMeters(vals){
+      var rows=$$('.dy-m');
+      vals.forEach(function(v,i){ var r=rows[i]; if(!r) return; var p=Math.round(clamp(v,0,1)*100);
+        r.querySelector('.dy-mf').style.transform='scaleX('+(p/100)+')';
+        r.setAttribute('aria-valuenow',p); r.setAttribute('aria-valuetext',p+' out of 100, '+(METERS[i].good?'higher is better':'lower is better')); });
+    }
+
+    var verdictKey='';
     function render(){
-      raf=0; compute();
-      draw();
-      out.textContent=hhmm(S.time); range.value=S.time; range.setAttribute('aria-valuetext',hhmm(S.time)); XP.rangeFill(range);
-      R.querySelectorAll('.db-tchips .xp-chip').forEach(function(c){ c.setAttribute('aria-pressed', +c.dataset.tm===S.time?'true':'false'); });
-      var st=stateAt(), sk=st.k+lastKey+S.age;
-      if(sk!==lastState){ lastState=sk;
-        var b=$('.xp-badge'); b.textContent=st.badge; b.className='xp-badge xp-t-'+st.tone; $('.xp-head').textContent=st.title; R.dataset.tone=st.tone;
-        $('.xp-ptx').innerHTML=patientText(st);
+      raf=0; compute(); draw(); caption();
+      var hh=hhmm(S.time);
+      out.textContent=hh; range.value=S.time; range.setAttribute('aria-valuetext',hh); XP.rangeFill(range);
+      $$('.dy-jump button').forEach(function(c){ c.setAttribute('aria-pressed', +c.dataset.tm===S.time?'true':'false'); });
+      var st=stateAt(), vk=st.k+lastKey+S.age;
+      var V=$('.dy-verdict');
+      if(vk!==verdictKey){ verdictKey=vk;
+        $('.dy-badge').textContent=st.badge; $('.dy-vt').textContent=st.title; V.dataset.tone=st.tone;
+        setHTML($('.dy-ptx'),patientText(st));
       }
-      $('.db-now').innerHTML=nowText(st);
+      setHTML($('.dy-now'),nowText(st));
       var rk=lastKey+S.age+S.b;
-      if(rk!==regKey){ regKey=rk;
-        $('.db-shape').innerHTML=shapeText(); $('.db-addx').innerHTML=addRisk(); $('.xp-phx').innerHTML=pharmText();
-        $('.db-warn').innerHTML=warnings().map(function(w){return '<p class="db-w db-w-'+w[0]+'">'+w[1]+'</p>';}).join('');
-        $('.db-tiles').innerHTML=tiles().map(function(t){ return '<div class="xp-tile xp-t-'+t.tone+'"><span>'+esc(t.label)+'</span><b>'+esc(t.value)+'</b></div>'; }).join('');
-        R.querySelectorAll('.db-scen .xp-chip').forEach(function(c,i){ var s=SCEN[i].s; c.setAttribute('aria-pressed', (s.g===S.g&&s.d===S.d&&s.t===S.t&&JSON.stringify(s.add)===JSON.stringify(S.add.map(function(a){return {d:a.d,t:a.t};})))?'true':'false'); });
+      if(rk!==lastReg){ lastReg=rk;
+        $('.dy-shape').innerHTML=G[S.g].shape; $('.dy-phx').innerHTML=pharmText();
+        var ar=addRisk(), cks=checksHTML(false), ck3=checksHTML(true,ar); $$('.dy-checks').forEach(function(e){ e.innerHTML=e.classList.contains('dy-checks3')?ck3:cks; });
+        $$('.dy-add').forEach(function(card,i){ var gp=card.querySelector('.dy-gap'), x=ar.each[i]; if(x){ gp.className='dy-gap dy-g-'+x.tone; gp.innerHTML=x.html; } });
+        var has=S.add.length>0;
+        $('.dy-empty').innerHTML=has?'':ar.rest.join(''); $('.dy-empty').hidden=has;
+        var rd=$('.dy-risk'); rd.hidden=!has; $('.dy-addx').innerHTML=has?ar.rest.join(''):'';
+        var tl=tiles(); $('.dy-stats').innerHTML=tl.map(function(t){return '<div class="dy-s dy-s-'+t.tone+'"><dt>'+esc(t.label)+'</dt><dd>'+esc(t.value)+'</dd></div>';}).join('');
+        $$('.dy-scen .dy-chip').forEach(function(c,i){ var s=SCEN[i].s; c.setAttribute('aria-pressed', (s.g===S.g&&s.d===S.d&&s.t===S.t&&JSON.stringify(s.add)===JSON.stringify(S.add.map(function(a){return {d:a.d,t:a.t};})))?'true':'false'); });
       }
-      XP.setBars(R, bars());
+      var sh=summaryHTML(); $$('.dy-sum').forEach(function(e){ setHTML(e,sh); }); $('.dy-sum1').hidden=!S.add.length;
+      setMeters(bars());
     }
     function req(){ if(!raf) raf=requestAnimationFrame(render); }
-    function full(){ fillSelects(); renderAdds(); render(); }
 
-    R.querySelectorAll('.db-meds .xp-chip').forEach(function(c){ c.addEventListener('click',function(){ S.g=c.dataset.g; S.b=0; S.d=G[S.g].def; full(); }); });
-    R.querySelectorAll('.db-age .xp-chip').forEach(function(c){ c.addEventListener('click',function(){ S.age=c.dataset.age; full(); }); });
-    R.querySelectorAll('.db-scen .xp-chip').forEach(function(c,i){ c.addEventListener('click',function(){ var s=SCEN[i].s; S.g=s.g;S.b=s.b;S.d=s.d;S.t=s.t;S.age=s.age;S.add=s.add.map(function(a){return {d:a.d,t:a.t};}); if(s.add.length) S.time=s.add[s.add.length-1].t+60; full(); }); });
-    R.querySelectorAll('.db-tchips .xp-chip').forEach(function(c){ c.addEventListener('click',function(){ S.time=+c.dataset.tm; render(); }); });
-    selB.addEventListener('change',function(){ S.b=+selB.value; full(); });
-    selD.addEventListener('change',function(){ S.d=+selD.value; full(); });
-    selT.addEventListener('change',function(){ S.t=+selT.value; full(); });
-    $('.db-addbtn').addEventListener('click',function(){ var k=addKind(); if(!k||S.add.length>=2) return; var last=S.add.length?S.add[S.add.length-1].t+180:(G[S.g].id==='mphir'||G[S.g].id==='dex'?720:840); S.add.push({d:k.doses[Math.min(1,k.doses.length-1)],t:Math.min(last,1140)}); renderAdds(); render(); var sels=R.querySelectorAll('.db-add select'); if(sels.length) sels[sels.length-2].focus(); });
-    $('.db-adds').addEventListener('change',function(e){ var s=e.target; if(s.tagName!=='SELECT') return; S.add[+s.dataset.i][s.dataset.f]=+s.value; render(); });
-    $('.db-adds').addEventListener('click',function(e){ var b=e.target.closest('.db-rm'); if(!b) return; S.add.splice(+b.dataset.i,1); renderAdds(); render(); $('.db-addbtn').focus(); });
+    /* ----- steps ----- */
+    /* After a step change, bring the new step into view just below the page's sticky bars (the top bar and this lesson's bar). */
+    function bring(n){
+      var sb=0, ls=R.closest('.lessons'), bars=[document.querySelector('.topbar'), ls&&ls.querySelector(':scope > .ls-bar')];
+      bars.forEach(function(e){ if(!e) return; var pos=getComputedStyle(e).position; if(pos==='sticky'||pos==='fixed'){ var b=e.getBoundingClientRect().bottom; if(b>sb) sb=b; } });
+      var r=(n===3?panes[2]:R).getBoundingClientRect();
+      if(r.top<sb+2 || r.top>window.innerHeight*0.5) window.scrollTo(0, window.pageYOffset+r.top-sb-8);
+    }
+    function go(n, quiet){
+      S.step=n; R.dataset.step=n;
+      panes.forEach(function(p,i){ p.hidden=(i+1)!==n; });
+      tks.forEach(function(t,i){ if(i+1===n) t.setAttribute('aria-current','step'); else t.removeAttribute('aria-current'); t.classList.toggle('done',i+1<n); t.querySelector('.dy-tn').innerHTML=(i+1<n)?ICON.check:String(i+1); });
+      render();
+      if(!quiet){ var hd=panes[n-1].querySelector('.dy-h'); try{ hd.focus({preventScroll:true}); }catch(e){ hd.focus(); } bring(n); }
+    }
+    function full(){ brandsAndDoses(); syncPressed(); renderAdds(); render(); }
+
+    /* ----- events ----- */
+    tks.forEach(function(t){ t.addEventListener('click',function(){ go(+t.dataset.go); }); });
+    $$('[data-nav]').forEach(function(b){ b.addEventListener('click',function(){ go(+b.dataset.nav); }); });
+    $$('.dy-scen .dy-chip').forEach(function(c,i){ c.addEventListener('click',function(){ var s=SCEN[i].s; S.g=s.g;S.b=s.b;S.d=s.d;S.t=s.t;S.age=s.age;S.add=s.add.map(function(a){return {d:a.d,t:a.t};}); if(s.add.length) S.time=s.add[s.add.length-1].t+60; full(); go(3); }); });
+    $$('.dy-meds .dy-pick').forEach(function(c){ c.addEventListener('click',function(){ S.g=c.dataset.g; S.b=0; S.d=G[S.g].def; full(); }); });
+    $('.dy-age').addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; S.age=b.dataset.age; syncPressed(); render(); });
+    $('.dy-dose').addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b) return; S.d=+b.dataset.d; syncPressed(); render(); });
+    selB.addEventListener('change',function(){ S.b=+selB.value; brandsAndDoses(); syncPressed(); renderAdds(); render(); });
+    selT.addEventListener('change',function(){ S.t=+selT.value; render(); });
+    $$('.dy-jump button').forEach(function(c){ c.addEventListener('click',function(){ S.time=+c.dataset.tm; render(); }); });
+    $('.dy-addbtn').addEventListener('click',function(){
+      var k=addKind(); if(!k||S.add.length>=2) return;
+      var last=S.add.length?S.add[S.add.length-1].t+180:(G[S.g].id==='mphir'||G[S.g].id==='dex'?720:840);
+      S.add.push({d:k.doses[Math.min(1,k.doses.length-1)],t:Math.min(last,1140)}); renderAdds(); render();
+      var card=$$('.dy-add').pop(); if(card){ var f=card.querySelector('.dy-seg button'); if(f) f.focus(); }
+    });
+    $('.dy-adds').addEventListener('change',function(e){ var s=e.target; if(s.tagName!=='SELECT') return; S.add[+s.dataset.i].t=+s.value; render(); });
+    $('.dy-adds').addEventListener('click',function(e){
+      var rm=e.target.closest('.dy-rm');
+      if(rm){ S.add.splice(+rm.dataset.i,1); renderAdds(); render(); $('.dy-addbtn').focus(); return; }
+      var b=e.target.closest('.dy-seg button'); if(!b) return;
+      var i=+b.dataset.i; S.add[i].d=+b.dataset.d;
+      Array.prototype.forEach.call(b.parentNode.children,function(x){ x.setAttribute('aria-pressed',x===b?'true':'false'); });
+      render();
+    });
+    R.addEventListener('toggle',function(e){ if(e.target.classList&&e.target.classList.contains('dy-notes')){ notesOpen=e.target.open; } },true);
     range.addEventListener('input',function(){ S.time=+range.value; req(); });
-    XP.dragChart(svg, range, X0, X1, 360);
-    full();
+
+    /* touch, mouse and pen on the chart: drag to move the time marker (vertical swipes still scroll the page) */
+    var dragging=false;
+    function timeFromX(cx){ var r=svg.getBoundingClientRect(), x=(cx-r.left)*(geo.W/r.width), f=clamp((x-geo.ML)/geo.PW,0,1); return clamp(Math.round((H0*60+f*(H1-H0)*60)/15)*15,300,1440); }
+    function moveTo(cx){ if(!geo) return; var m=timeFromX(cx); if(m!==S.time){ S.time=m; req(); } }
+    svg.addEventListener('pointerdown',function(e){ dragging=true; try{ svg.setPointerCapture(e.pointerId); }catch(x){} moveTo(e.clientX); });
+    svg.addEventListener('pointermove',function(e){ if(dragging) moveTo(e.clientX); });
+    ['pointerup','pointercancel','lostpointercapture'].forEach(function(t){ svg.addEventListener(t,function(){ dragging=false; }); });
+    wrap.addEventListener('keydown',function(e){
+      var d={ArrowRight:15,ArrowLeft:-15,PageUp:60,PageDown:-60}[e.key]; var m;
+      if(e.key==='Home') m=300; else if(e.key==='End') m=1440; else if(d!=null) m=clamp(S.time+d,300,1440); else return;
+      e.preventDefault(); S.time=m; req();
+    });
+    if(window.ResizeObserver){ var lastW=0; new ResizeObserver(function(){ var w=Math.round(wrap.clientWidth); if(w&&w!==lastW){ lastW=w; if(curves) draw(); } }).observe(wrap); }
+    else window.addEventListener('resize',function(){ if(curves) draw(); });
+
+    full(); go(1,true);
   }
   XP.dayBuilder = build;
 
