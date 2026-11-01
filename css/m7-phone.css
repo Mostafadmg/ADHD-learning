@@ -76,6 +76,16 @@
 #m7 .m7-mp-v .pill{margin-right:.35rem}
 #m7 .m7-mp-cap{font-size:.82rem;color:var(--muted);margin:.5rem 0 0}
 
+/* a day on a stimulant (lesson 2): four stops, built from the lesson's own words */
+#m7 .m7-day{list-style:none;margin:1rem 0 .2rem;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.25rem;position:relative}
+#m7 .m7-day::before{content:"";position:absolute;left:12.5%;right:12.5%;top:21px;height:3px;border-radius:2px;background:var(--line)}
+#m7 .m7-day li{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:.2rem;margin:0;padding:0;max-width:none}
+#m7 .m7-day li::before{content:none}
+#m7 .m7-day .d-ic{position:relative;z-index:1;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#fff;border:3px solid var(--teal);color:var(--teal)}
+#m7 .m7-day .d-bad .d-ic{border-color:#e3b341;color:#b4521a}
+#m7 .m7-day b{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+#m7 .m7-day .d-t{font-size:.9rem;line-height:1.25;font-weight:600;color:var(--navy)}
+
 /* ================= desktop tidy (wider than a phone) ================= */
 @media (min-width:701px){
   #m7 .m7-two{grid-template-columns:repeat(2,minmax(0,1fr))}
