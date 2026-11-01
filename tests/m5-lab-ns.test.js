@@ -93,7 +93,7 @@ t('atomoxetine day tab: areas 10x (poor metaboliser) and 6x, 8x (inhibitor) of t
 t('atomoxetine day tab text: moments from the SmPC, no invented effect claim', () => {
   const T = atx.tabs[0], all = T.picks.map((p) => [p.name, p.inside, (p.moments || []).map((m) => m.t + ' ' + m.d).join(' '), (p.practice || []).join(' '), p.note].join(' ')).join(' ');
   has(all, /1 to 2 hours/); has(all, /3\.6 hours/); has(all, /21 hours/); has(all, /10 times/); has(all, /6-to 8-fold/); has(all, /3 to 4 times/);
-  has(all, /no daily peak of clinical effect/); has(all, /fluoxetine, paroxetine, quinidine, terbinafine/);
+  has(all, /no daily peak of clinical effect/); has(all, /fluoxetine and paroxetine, which are SSRIs, quinidine, terbinafine/); assert.ok(!/strong CYP2D6 inhibitor/i.test(all), 'the SmPC does not call them strong'); assert.ok(!/or similar/i.test(all));
   has(all, /may be considered/); has(all, /may be necessary/); has(all, /7%/);
   assert.ok(!/builds? over weeks/i.test(all)); has(all, /gives no time at which the clinical effect peaks or fades/); assert.ok(!/(effect|benefit)[^.]{0,40}(fades|wears off) (faster|sooner)/i.test(all));
   const sp = T.picks[1]; has(sp.inside, /evenly divided doses in the morning and late afternoon or early evening/); has(sp.moments.map((m) => m.d).join(' '), /tolerability.*efficacy/);
@@ -161,7 +161,7 @@ t('capsule rounding uses only the seven real strengths (10, 18, 25, 40, 60, 80, 
 const AS = tool(atx, 'Switch and stop').compute;
 const sw = (a, b, o) => AS(Object.assign({ task: 'sw', from: a, to: b, total: '80' }, o || {}));
 t('once daily to twice daily: SmPC statement, same total halved, graph of both', () => {
-  const r = sw('atx1', 'atx2'); assert.strictEqual(r.badge, 'SmPC statement'); has(r.head, /same total daily dose and divide it evenly/);
+  const r = sw('atx1', 'atx2'); assert.strictEqual(r.badge, 'SmPC statement'); has(r.head, /allows twice-daily evenly divided doses\. Keeping the same total is the usual reading, not a stated rule/);
   has(text(r), /might benefit from taking it as twice daily evenly divided doses in the morning and late afternoon or early evening/); has(text(r), /40 mg in the morning \+ 40 mg/);
   has(rowOf(r, 'The numbers').h, /worked out from the smpc \(not official\)/i); has(text(r), /gives no conversion factor/);
   assert.strictEqual(r.chart.kind, 'day'); assert.strictEqual(r.chart.series.length, 2);
@@ -182,9 +182,9 @@ t('stimulant to atomoxetine and back: no published method; says what the sources
   has(text(b), /unresponsive to one or more stimulants and one non-stimulant/);
   assert.ok(!/cross-taper (schedule|of) \d/i.test(text(a) + text(b)));
 });
-t('atomoxetine to guanfacine and back: no published method, licence gap shown', () => {
+t('atomoxetine to guanfacine and back: no official method, licence gap shown', () => {
   const a = sw('atx1', 'gua'), b = sw('gua', 'atx2');
-  [a, b].forEach((r) => { assert.strictEqual(r.badge, 'No official method'); has(text(r), /no washout, overlap or cross-taper is published/i); has(text(r), /6 to 17 only/); });
+  [a, b].forEach((r) => { assert.strictEqual(r.badge, 'No official method'); has(text(r), /give no washout, overlap or cross-taper/i); has(text(r), /6 to 17 only/); has(r.head, /No official method/); });
   has(text(a), /Guanfacine has its own titration from 1 mg/); has(text(b), /no more than 1 mg every 3 to 7 days/);
 });
 t('stimulant and guanfacine: no method; NICE 1.8.12 reason for guanfacine to another medicine', () => {
@@ -226,16 +226,17 @@ t('no table below 25 kg (6 to 12) or 34 kg (13 to 17): the lab says so and gives
   has(a.head, /under 25 kg \(age 6 to 12\)/); has(b.head, /under 34 kg \(age 13 to 17\)/); has(b.notes.join(' '), /below 25 kg \(age 6 to 12\) or 34 kg \(age 13 to 17\)/);
   has(text(b), /must weigh at least 34 kg/);
 });
-t('CYP3A4/5 inhibitor: SmPC says 50% reduction; the halved ceiling is labelled worked out', () => {
-  const r = gd({ mod: 'inh' }); has(r.head, /50% dose reduction\. Half of 4 mg is 2 mg \(worked out\)/); const x = text(r);
+t('CYP3A4/5 inhibitor: SmPC says 50% reduction; the halved ceiling is labelled as this tool\u2019s illustration', () => {
+  const r = gd({ mod: 'inh' }); has(r.head, /recommends a 50% reduction of the dose with a CYP3A4\/5 inhibitor\. Halving the table maximum \(4 mg to 2 mg\) is this tool\u2019s illustration, not an SmPC rule/); const x = text(r);
   has(x, /a 50% reduction of the guanfacine dose is recommended/); has(x, /further dose titration may be needed/); has(x, /2-fold and the exposure 3-fold/); has(x, /does not say whether this means half the table maximum/);
   has(x, /clarithromycin and ketoconazole/); has(x, /ciprofloxacin, erythromycin, fluconazole, diltiazem, verapamil and grapefruit juice/); has(x, /Do not give guanfacine with grapefruit juice at all/);
   eq(r.chart.steps.map((s) => s.v), [1, 2]); assert.strictEqual(r.tone, 'warn');
 });
 t('strong inducer: up to 7 mg may be considered; rifampicin figures; re-titrate down when it stops', () => {
   const r = gd({ mod: 'ind' }), x = text(r);
-  has(x, /up to a maximum of 7 mg a day “may be considered if needed”/.test(x) ? /./ : /re-titration to increase the dose up to a maximum of 7 mg a day “may be considered if needed”/);
-  has(x, /54%/); has(x, /70%/); has(x, /does not mark which are strong/); has(x, /carbamazepine, oxcarbazepine, phenytoin/); eq(r.chart.effect[0][1], 7 / r.chart.y.max * 100);
+  has(x, /“up to a maximum daily dose of 7 mg may be considered if needed”/); has(x, /“an increase in the dose of guanfacine within the recommended dose range”/);
+  has(x, /54%/); has(x, /70%/); has(x, /carbamazepine as its example of a strong inducer/); assert.ok(!/does not mark which are strong/.test(x)); has(x, /carbamazepine, oxcarbazepine, phenytoin/);
+  const r7 = gd({ age: '13', w: '60', mod: 'ind' }); eq(r7.chart.effect[0][1], 7 / r7.chart.y.max * 100);
   const s = gd({ mod: 'indstop' }); has(text(s), /Retitration to reduce the guanfacine dose is recommended during the following weeks/); has(text(s), /gives no schedule or target/); assert.strictEqual(s.tone, 'warn');
 });
 t('guanfacine dose tab notes: monitoring and tablet strengths (generic 5, 6, 7 mg)', () => {
@@ -263,16 +264,197 @@ t('missed doses: one resumes next day; two or more means re-titration, and the l
   assert.strictEqual(one.badge, 'SmPC statement'); assert.strictEqual(two.badge, 'SmPC statement');
 });
 t('immediate-release to prolonged-release: no conversion; brand to generic: no rule', () => {
-  const r = gs({ sit: 'ir' }); assert.strictEqual(r.badge, 'No official method'); has(r.head, /No conversion exists/); has(text(r), /should not be substituted on a mg\/mg basis, because of differing pharmacokinetic profiles/); has(text(r), /A conversion factor/); has(text(r), /1 mg once daily/); has(text(r), /October 2023/);
-  const b = gs({ sit: 'brand' }); assert.strictEqual(b.badge, 'No official method'); has(text(b), /22\.41 mg in Intuniv and 41\.32 mg in the generic/); has(text(b), /50\.42 mg and 23\.41 mg/); has(text(b), /5, 6 and 7 mg/); has(text(b), /No rule is published/);
+  const r = gs({ sit: 'ir' }); assert.strictEqual(r.badge, 'No official method'); has(r.head, /The SmPC gives no conversion and says not to swap immediate-release to prolonged-release mg for mg/); assert.ok(!/no conversion exists/i.test(text(r))); has(text(r), /should not be substituted on a mg\/mg basis, because of differing pharmacokinetic profiles/); has(text(r), /A conversion factor/); has(text(r), /1 mg once daily/); has(text(r), /October 2023/);
+  const b = gs({ sit: 'brand' }); assert.strictEqual(b.badge, 'No official method'); has(text(b), /22\.41 mg in Intuniv and 41\.32 mg in the generic/); has(text(b), /50\.42 mg and 23\.41 mg/); has(text(b), /5, 6 and 7 mg/); has(text(b), /give no rule either way/); has(text(b), /matters only for lactose intolerance: the SmPCs do not say whether the products are interchangeable/);
 });
 t('guanfacine to or from other medicines: no official method; add-on evidence; adults', () => {
   const to = gs({ sit: 'to', other: 'stim' }), toA = gs({ sit: 'to', other: 'atx' }), from = gs({ sit: 'from' });
   [to, toA, from].forEach((r) => { assert.strictEqual(r.badge, 'No official method'); });
-  has(text(to), /6-week trials of both failed|separate 6-week trials/); has(text(to), /stimulant-related tics/); has(text(to), /add-on trial, a different design/); has(text(toA), /No source covers atomoxetine to guanfacine/); has(text(from), /sustained orthostatic hypotension or fainting/); has(text(from), /No overlap or cross-taper is published/);
+  has(text(to), /6-week trials of both failed|separate 6-week trials/); has(text(to), /stimulant-related tics/); has(text(to), /add-on trial, a different design/); has(text(toA), /No source read covers atomoxetine to guanfacine/); has(text(from), /sustained orthostatic hypotension or fainting/); has(text(from), /give no overlap or cross-taper/);
   const add = gs({ sit: 'add' }); has(text(add), /4\.9 points/);
   const ad = gs({ sit: 'adult' }); assert.strictEqual(ad.badge, 'SmPC statement'); assert.strictEqual(ad.tone, 'stop');
   has(text(ad), /guanfacine should not be used in this group/); has(text(ad), /tertiary ADHD service/); has(text(ad), /Local protocol \(not national\)/); has(text(ad), /Dorset/);
+});
+
+
+/* ================================================================================================
+   Clinical review fixes, 1 Nov 2026. Each assertion below fails on the behaviour the reviewer found.
+   ================================================================================================ */
+const FALLBACK = /could not be worked out/;
+const MAXBAND = (age, w) => age === '6' ? (w >= 25 ? 4 : null) : (w >= 58.5 ? 7 : w >= 49.5 ? 6 : w >= 41.5 ? 5 : w >= 34 ? 4 : null);
+const tablets = (r) => { const m = rowOf(r, 'Whole tablets').t.match(/^([\d mg,]+)\. This is rounding/); return m ? m[1].match(/\d+/g).map(Number) : []; };
+const lineMg = (r) => r.chart.effect[0][1] / 100 * r.chart.y.max;
+
+/* BLOCKER: no dose listed or drawn above the SmPC table maximum */
+t('BLOCKER guanfacine dose: no whole tablet and no drawn line above the table maximum, at any age, weight or modifier', () => {
+  let n = 0;
+  ['6', '13'].forEach((age) => { for (let w = 15; w <= 90; w += 0.5) ['none', 'ind', 'indstop'].forEach((mod) => {
+    const m = MAXBAND(age, w), r = gd({ age, w: String(w), mod }); if (m == null) return; n++;
+    assert.ok(!FALLBACK.test(r.head));
+    tablets(r).forEach((x) => assert.ok(x <= m, 'tablet ' + x + ' mg above the ' + m + ' mg maximum: age ' + age + ', ' + w + ' kg, ' + mod));
+    assert.ok(Math.max.apply(null, r.chart.steps.map((s) => s.v)) <= m);
+    if (!(mod === 'ind' && m === 7)) assert.ok(lineMg(r) <= m + 1e-9, 'dashed line above the maximum: age ' + age + ', ' + w + ' kg, ' + mod);
+  }); });
+  assert.ok(n > 300);
+});
+t('BLOCKER guanfacine dose: the reviewer’s examples (6-12 y 45 kg and 60 kg; 13-17 y 70 kg and 90 kg)', () => {
+  const a = gd({ w: '45' }); eq(tablets(a), [3, 4]); assert.ok(lineMg(a) <= 4 + 1e-9);
+  const b = gd({ w: '60' }); eq(tablets(b), [3, 4]); has(rowOf(b, 'Maintenance range').t.replace(/<[^>]+>/g, ''), /3 to 7\.2 mg for 60 kg\. The table maximum \(4 mg = 0\.07 mg\/kg\) is lower than the top of that range, so 4 mg is the ceiling/);
+  has(rowOf(b, 'Whole tablets').t, /The list stops at the table maximum/); has(b.chart.effectLabel, /Table maximum \(4 mg\): lower than the top of 0\.05 to 0\.12 mg\/kg \(7\.2 mg for 60 kg\)/);
+  const c = gd({ age: '13', w: '70' }); eq(tablets(c), [4, 5, 6, 7]); has(rowOf(c, 'Maintenance range').t.replace(/<[^>]+>/g, ''), /3\.5 to 8\.4 mg for 70 kg\. The table maximum \(7 mg = 0\.1 mg\/kg\) is lower than the top of that range, so 7 mg is the ceiling/);
+  const d = gd({ age: '13', w: '90' }); eq(tablets(d), [5, 6, 7]); assert.ok(lineMg(d) <= 7 + 1e-9);
+  const e = gd({ age: '6', w: '90' }); eq(tablets(e), []); has(rowOf(e, 'Whole tablets').t, /None: even the bottom of the range is above the table maximum/); has(rowOf(e, 'Maintenance range').t, /Even the bottom of that range is above the table maximum/);
+  /* Ava is unchanged: the table maximum is still a little above the top of her range */
+  has(rowOf(gd({}), 'Maintenance range').t, /sits a little above the top of that range/);
+});
+
+/* MAJOR: strong inducer, 7 mg only where the table already allows it */
+t('MAJOR guanfacine inducer: the 7 mg line is drawn only for the 58.5 kg and over band; badge is SmPC statement, not SmPC table', () => {
+  [['6', 30], ['6', 60], ['13', 36], ['13', 45], ['13', 55]].forEach((a) => {
+    const r = gd({ age: a[0], w: String(a[1]), mod: 'ind' }), m = MAXBAND(a[0], a[1]);
+    assert.ok(lineMg(r) <= m + 1e-9, 'inducer line above the table maximum for ' + a); assert.notStrictEqual(r.badge, 'SmPC table'); assert.strictEqual(r.badge, 'SmPC statement');
+    has(r.chart.effectLabel, /7 mg for strong inducers is not drawn: it does not say it overrides the weight table/); has(text(r), /Take specialist advice before going above the table maximum/); assert.ok(!/Up to 7 mg a day may be considered/.test(r.chart.effectLabel));
+  });
+  const big = gd({ age: '13', w: '60', mod: 'ind' }); assert.strictEqual(big.badge, 'SmPC statement'); eq(lineMg(big), 7); has(big.chart.effectLabel, /Up to 7 mg a day may be considered with a strong inducer/);
+  has(text(big), /The SmPC does not say that 7 mg overrides the weight table/); has(text(big), /7 mg is this weight band’s own maximum/);
+});
+
+/* MAJOR: inhibitor, halved ceiling is an illustration */
+t('MAJOR guanfacine inhibitor: badge is Worked out; whole-mg chart steps; no contradictory "Maximum for this group (SmPC table)" row', () => {
+  [['6', 30], ['6', 60], ['13', 36], ['13', 45], ['13', 55], ['13', 70], ['13', 90]].forEach((a) => {
+    const r = gd({ age: a[0], w: String(a[1]), mod: 'inh' }), m = MAXBAND(a[0], a[1]);
+    assert.strictEqual(r.badge, 'Worked out from the SmPC (not official)'); assert.notStrictEqual(r.badge, 'SmPC table');
+    r.chart.steps.forEach((s) => assert.strictEqual(s.v, Math.round(s.v), 'half-mg bar for ' + a));
+    assert.ok(Math.max.apply(null, r.chart.steps.map((s) => s.v)) <= Math.floor(m / 2));
+    assert.ok(!rowOf(r, 'Maximum for this group'), 'two contradictory maxima'); has(rowOf(r, 'Table maximum without an inhibitor').t, /gives no table for use with an inhibitor/);
+    has(r.head, /this tool’s illustration, not an SmPC rule/); has(r.chart.effectLabel, /Half the table maximum \(.* mg\): this tool’s illustration, not in the SmPC/);
+    assert.ok(Math.abs(lineMg(r) - m / 2) < 1e-9, 'the dashed line marks the exact half, not the top of the mg/kg range');
+  });
+  const r55 = gd({ age: '13', w: '55', mod: 'inh' }); has(r55.head, /\(6 mg to 3 mg\)/); const r45 = gd({ age: '13', w: '45', mod: 'inh' }); has(r45.head, /\(5 mg to 2\.5 mg\)/); eq(r45.chart.steps.map((s) => s.v), [1, 2]);
+  has(text(r45), /rounded down to a whole tablet/); has(text(r45), /“a decrease in the dose of guanfacine within the recommended dose range”/);
+});
+
+/* MAJOR: the atomoxetine Switch tab must never throw */
+t('MAJOR atomoxetine switch: once daily to twice daily works for every total, including 10 mg a day (no capsule smaller than 10 mg)', () => {
+  ['10', '20', '30', '40', '50', '60', '70', '80', '90', '100'].forEach((total) => {
+    let r; assert.doesNotThrow(() => { r = sw('atx1', 'atx2', { total }); }, 'threw for ' + total); assert.ok(!FALLBACK.test(r.head), 'fell back for ' + total);
+    assert.ok(rowOf(r, 'Real capsules at each time').t.length > 20);
+  });
+  const r = sw('atx1', 'atx2', { total: '10' });
+  has(rowOf(r, 'Real capsules at each time').t, /5 mg is smaller than the smallest capsule \(10 mg\), so 10 mg a day cannot be split into two even capsule doses\. The prescriber decides/);
+  /* every from/to pair at every total: nothing throws and nothing falls back */
+  ['atx1', 'atx2', 'sol', 'stim', 'gua'].forEach((a) => ['atx1', 'atx2', 'sol', 'stim', 'gua'].forEach((b) => ['10', '30', '100'].forEach((total) => {
+    const x = sw(a, b, { total }); assert.ok(!FALLBACK.test(x.head), a + ' to ' + b + ' ' + total);
+  })));
+  /* a thrown error inside any tool is caught and shown as a plain message (the engine has no try/catch) */
+  [AS, AD, GD, GS].forEach((fn) => { let x; assert.doesNotThrow(() => { x = fn(undefined); }); has(x.head, FALLBACK); });
+});
+
+/* MAJOR: a dose below the smallest capsule is not rounded up */
+t('MAJOR atomoxetine capsules: a liver-reduced dose below 10 mg is not rounded up to a 10 mg capsule', () => {
+  const c20 = ad({ w: '20', mod: 'cpc' }), caps = rowOf(c20, 'Real capsules').t;
+  has(caps, /Start:<\/b> <b>No capsule can give this dose\.<\/b> Each dose would be 2\.5 mg/); has(caps, /The smallest capsule is 4 times the wanted dose \(0\.5 mg\/kg against 0\.13 mg\/kg\)/);
+  has(caps, /Rounding up would undo the SmPC liver reduction\. Do not round up; take specialist advice/); assert.ok(!/nearest real dose is 10 mg/.test(caps), 'still offers 10 mg as the nearest real dose');
+  const c15 = ad({ w: '15', mod: 'cpc' }); assert.ok(!/nearest real dose/.test(rowOf(c15, 'Real capsules').t)); has(rowOf(c15, 'Real capsules').t, /No capsule can give this dose/); has(rowOf(c15, 'Real capsules').t, /Each dose would be 1\.9 mg/);
+  const c30 = ad({ w: '30', mod: 'cpb' }); has(rowOf(c30, 'Real capsules').t, /Start:<\/b> <b>No capsule can give this dose\.<\/b> Each dose would be 7\.5 mg[\s\S]*1\.3 times the wanted dose \(0\.33 mg\/kg against 0\.25 mg\/kg\)[\s\S]*Rounding up would undo/);
+  /* with no liver reduction the SmPC start is only "approximately" 0.5 mg/kg: the size of the gap is stated and no dose is offered */
+  const u15 = rowOf(ad({ w: '15' }), 'Real capsules').t; has(u15, /No capsule can give this dose\./); has(u15, /1\.3 times the wanted dose \(0\.67 mg\/kg against 0\.5 mg\/kg\)/); has(u15, /prescriber’s decision, so no dose is offered here/); assert.ok(!/nearest real dose/.test(u15));
+  /* a small gap (within 25%) is still offered, with the size of the step up and the mg/kg */
+  const u16 = rowOf(ad({ w: '16' }), 'Real capsules').t; has(u16, /nearest real dose is 10 mg \(one 10 mg capsule, 0\.63 mg\/kg\)\. The smallest capsule is 1\.3 times the wanted dose/);
+  const u17 = rowOf(ad({ w: '17' }), 'Real capsules').t; has(u17, /nearest real dose is 10 mg/); has(u17, /1\.2 times/);
+  /* exact capsules are untouched */
+  has(rowOf(ad({ grp: 'adult', mod: 'cpc' }), 'Real capsules').t, /Start:<\/b> 10 mg can be made exactly: one 10 mg capsule/);
+  /* no weight or liver class may give a "nearest real dose" that is more than 25% above what was wanted */
+  for (let w = 15; w <= 70; w++) ['none', 'cpb', 'cpc'].forEach((mod) => {
+    const tx = rowOf(ad({ w: String(w), mod }), 'Real capsules').t, start = 0.5 * w * (mod === 'cpb' ? 0.5 : mod === 'cpc' ? 0.25 : 1);
+    if (/Start:<\/b> Each dose would be/.test(tx)) assert.ok(10 / start <= 1.25 + 1e-9, w + ' kg ' + mod + ' rounds a ' + start + ' mg start up to 10 mg');
+  });
+});
+
+/* MAJOR: the inhibitor graph must not read as a "6 to 8 times higher peak" */
+t('MAJOR atomoxetine inhibitor graph: the picture says it shows exposure (area), not the SmPC peak rise', () => {
+  const T = atx.tabs[0], inh = T.picks[3], pm = T.picks[2];
+  /* the engine draws mg x (the curve divided by its own area over the chart window): the peak is mg x max(curve) / area(curve) */
+  const span = Math.ceil(T.x.to) + 2, npk = (key) => { const c = RM.curve(key, null, span); let a = 0, k = 0; for (let i = 0; i < c.length; i++) { a += c[i] * RM.DT; if (c[i] > c[k]) k = i; } return c[k] / a; };
+  const drawn6 = inh.series[0].mg * npk('atx_inh') / (T.picks[0].regimen[0].mg * npk('atx_em'));
+  assert.ok(drawn6 > 5.9 && drawn6 < 6.1, 'the drawn peak is about 6 times the usual peak: ' + drawn6); /* more than the SmPC 3 to 4 times, so the text must say so */
+  has(inh.inside, /Heights here show exposure \(the area under each curve\), not peaks/); has(inh.inside, /3 to 4 times, not 6 to 8/); has(inh.inside, /not to scale/);
+  inh.series.slice(0, 2).forEach((s) => has(s.label, /area \d times usual/));
+  has(inh.moments[0].t, /Exposure 6 to 8 times higher \(area\)\. Peak 3 to 4 times higher \(SmPC\)/); has(inh.moments[0].d, /taller than the SmPC peak rise and are not to scale/);
+  has(pm.inside, /Read the red curve as exposure, not as a peak/); has(pm.inside, /5-fold higher/); has(pm.series[0].label, /area 10 times usual/);
+  const mo = pm.moments[1].d; assert.ok(!/lands on top of it/.test(mo)); has(mo, /schematic only/); has(mo, /does not describe how levels build up/);
+});
+
+/* MAJOR: the absolute "no published method" is gone; the sources read are named */
+t('MAJOR switching: no "published" absolutes anywhere; "no official method" names the sources read and says reviews exist but are not UK guidance', () => {
+  const all = [];
+  ['atx1', 'atx2', 'sol', 'stim', 'gua'].forEach((a) => ['atx1', 'atx2', 'sol', 'stim', 'gua'].forEach((b) => { if (a !== b) all.push(text(sw(a, b))); }));
+  ['taper', 'miss', 'ir', 'brand', 'to', 'from', 'add', 'adult'].forEach((x) => ['stim', 'atx'].forEach((o) => all.push(text(gs({ sit: x, other: o })))));
+  ['gs', 'as', 'ag'].forEach((x) => all.push(text(AS({ task: 'add', add: x })))); all.push(text(AS({ task: 'stop' })));
+  const joined = all.join(' \n '); assert.ok(!/no published (switching )?method|published method|is published|are published/i.test(joined), 'an absolute "published" claim is left');
+  const a = sw('stim', 'atx1'); has(a.head, /^No official method for the switch itself\. The UK sources say when to offer atomoxetine/);
+  has(rowOf(a, 'Published reviews').h, /not UK guidance/); has(rowOf(a, 'Published reviews').t, /PMID 18162007/); has(rowOf(a, 'Published reviews').t, /cross-tapering and co-administration with methylphenidate/); has(rowOf(a, 'Published reviews').t, /not UK guidance and this course has not appraised it/);
+  has(text(sw('atx1', 'stim')), /Published reviews and small studies may exist but are not UK guidance/);
+  ['atx1', 'gua'].forEach((x) => has(sw(x, x === 'gua' ? 'stim' : 'gua').head, /^No official method/)); has(gs({ sit: 'to' }).head, /^No official method for starting guanfacine/);
+  has(gs({ sit: 'from' }).head, /but no official way to combine them/);
+  const html = read('index.html'), card = html.slice(html.indexOf('<div class="clin-c clin-n"><div class="clin-t">Switching</div>'), html.indexOf('<div class="clin-c clin-n"><div class="clin-t">Switching</div>') + 2400);
+  has(card, /there is no official method:<\/b> the SmPCs, NICE NG87, SPS and the shared-care protocols checked for this course \(1 November 2026\) give no washout, overlap or cross-taper\. Published reviews exist \(for example for stimulant to atomoxetine in children\) but they are not UK guidance\. Do not invent a schedule; ask the specialist/);
+  assert.ok(!/There is no published stimulant-to-atomoxetine switching method/.test(html)); has(html, /There is no official stimulant-to-atomoxetine switching method \(published reviews exist but are not UK guidance\)/);
+  const q = vm.createContext({ window: { __mixOpts() {} } }); vm.runInContext(read('js/data-quiz-m5-ns.js'), q); const Q = q.window.QUIZ; const J = JSON.stringify(Q);
+  assert.ok(!/no published switching method/i.test(J)); has(J, /no official switching method/); has(J, /Published reviews exist \(for example a 2008 review for children and young people\) but they are not UK guidance/);
+});
+
+/* MAJOR: stopping atomoxetine */
+t('MAJOR atomoxetine stop: the headline no longer says tapering is "optional unless" side effects are serious', () => {
+  const r = AS({ task: 'stop' });
+  assert.ok(!/optional/i.test(r.head)); has(r.head, /No withdrawal syndrome is described\. For significant side effects it may be stopped at once; otherwise the SmPC says it may be tapered over a suitable time\./);
+  has(rowOf(r, 'Serious side effects').t, /may be stopped abruptly/); assert.ok(!/unless side effects are serious/.test(text(r)));
+});
+
+/* minor findings */
+t('minor: twice-daily versus once-daily wording is consistent in both directions (finding 8)', () => {
+  const f = sw('atx1', 'atx2'), b = sw('atx2', 'atx1');
+  has(rowOf(f, 'The numbers').t, /does not say the total stays the same/); has(rowOf(b, 'What it does say').t, /a single morning dose is the first regimen the SmPC lists/); has(rowOf(b, 'What it leaves out').t, /the same reading as for splitting/);
+});
+t('minor: the 4 to 8 week stop rule is attributed to the two protocols that carry it, in the lesson, titration data, quiz and flashcard (finding 9)', () => {
+  const html = read('index.html'), a = html.indexOf('data-title="Atomoxetine"'), L = html.slice(a, html.indexOf('data-title="Guanfacine (Intuniv)"'));
+  has(L, /<h3 class="clin-h">Three different numbers<\/h3>/); assert.ok(!/How long to wait before you judge it/.test(L)); assert.ok(!/early in the usual picture/.test(L));
+  has(L, /Two weeks is early, but the SmPC does not say when to expect benefit/); has(L, /where the Dorset \(2025\) and South West London shared-care protocols say to stop if there is no improvement\. Not NICE, not the SmPC: check your own area/);
+  has(L, /the least time at the starting dose before any increase \(SmPC\)/); has(L, /Not a rule\./);
+  const ctx = vm.createContext({ window: {} }); vm.runInContext(read('js/data-titration.js'), ctx); const T = JSON.stringify(ctx.window.TITRATION);
+  has(T, /Dorset \(2025\) and South West London shared-care protocols say to stop if there is no improvement after 4–8 weeks/); assert.ok(!/Dorset 2025: local, not national/.test(T));
+  has(html, /The Dorset and South West London shared-care protocols say to stop at 4 to 8 weeks without improvement \(not NICE, not the SmPC\)/);
+  const q = read('js/data-quiz-m5-ns.js'); has(q, /Dorset \(2025\) and South West London shared-care protocols both say to stop if there is no improvement after 4 to 8 weeks: that is not NICE and not the SmPC/);
+});
+t('minor: the 9 October 2026 letter is framed as a generics letter that matches what the Intuniv SmPC already says (finding 10)', () => {
+  const html = read('index.html'); has(html, /<strong>Safety letter, 9 October 2026 \(Neuraxpharm generics\)\.<\/strong>/); assert.ok(!/New safety information, 9 October 2026/.test(html));
+  has(html, /This is not a new risk for Intuniv prescribers: the Intuniv SmPC \(revised 5 March 2026\) already lists QT prolongation as an uncommon adverse reaction/); has(html, /The Neuraxpharm SmPC on emc \(revised 20 October 2026\) now carries the same wording/);
+  assert.ok(!/The company says the product information/.test(html)); has(html, /the letter said the product information would be updated \(the Intuniv SmPC already lists it as an uncommon adverse reaction\)/);
+  const q = read('js/data-quiz-m5-ns.js'); has(q, /the letter said the product information would be updated/); has(q, /Neuraxpharm SmPC on emc \(revised 20 October 2026\) now carries the same wording/); assert.ok(!/and the product information will be updated\./.test(q));
+  const B = vm.createContext({ window: {} }); vm.runInContext(read('js/data-brands.js'), B); has(JSON.stringify(B.window.BRANDS.filter((x) => x.id === 'gua')[0]), /already listed in the Intuniv SmPC/);
+});
+t('minor: the guanfacine three-day chart is labelled schematic and does not claim levels persist or accumulate (finding 11)', () => {
+  const m = gua.tabs[0].picks[0].moments.map((x) => x.t + ' ' + x.d).join(' ');
+  has(m, /Days 2 and 3 \(schematic: simple addition of the half-life curve, not stated in the SmPC\)/); assert.ok(!/a large share of the first dose is still there/.test(m)); has(m, /does not describe how levels build up over repeated days/);
+  const rm = read('js/release-model.js'); has(rm, /only adds one tablet's curve at 0, 24 and 48 h/); has(rm, /heights show exposure \(area\), not peaks/);
+});
+t('minor: atomoxetine ceiling is 100 mg for adults and over 70 kg only (finding 12)', () => {
+  const html = read('index.html'); has(html, /atomoxetine 100 mg a day \(adults and over 70 kg; up to 70 kg about 1\.2 mg\/kg, and nothing above 1\.8 mg\/kg evaluated\)/); assert.ok(!/atomoxetine 100 mg; guanfacine/.test(html));
+  const B = vm.createContext({ window: {} }); vm.runInContext(read('js/data-brands.js'), B); const a = B.window.BRANDS.filter((x) => x.id === 'atx')[0];
+  has(a.lic, /Max 100 mg\/day for adults and children over 70 kg; up to 70 kg about 1\.2 mg\/kg\/day, and nothing above 1\.8 mg\/kg\/day has been systematically evaluated/); assert.ok(!/Max 100 mg\/day over 70 kg;/.test(a.lic));
+});
+t('minor: carbamazepine is the SmPC’s own strong-inducer example (finding 13) and the CYP2D6 inhibitors are the ones the SmPC names (finding 14)', () => {
+  const q = read('js/data-quiz-m5-ns.js'); has(q, /Carbamazepine is the SmPC’s own example of a strong CYP3A4 inducer \(its list of inducers does not grade the others\)/); assert.ok(!/it does not mark which are strong/.test(q));
+  has(q, /Fluoxetine is one of the CYP2D6 inhibitors the SmPC names/); has(q, /combining atomoxetine with SSRIs \(fluoxetine is one\) raises the risk of serotonin syndrome/);
+  const T = tool(atx, 'Dose'); const opt = T.fields.filter((f) => f.id === 'mod')[0].options.filter((o) => o.v === 'inh')[0]; has(opt.l, /fluoxetine, paroxetine, quinidine or terbinafine/); assert.ok(!/similar/.test(opt.l));
+  const inh = ad({ mod: 'inh' }); has(rowOf(inh, 'CYP2D6 inhibitor').h, /^CYP2D6 inhibitor \(SmPC statement\)/); has(text(inh), /serotonin syndrome/); has(text(ad({ mod: 'pm' })), /potent inhibitors of other CYP enzymes/);
+  const html = read('index.html'); has(html, /<strong>Fluoxetine, paroxetine, quinidine, terbinafine<\/strong><span>The CYP2D6 inhibitors the SmPC names/); assert.ok(!/Fluoxetine, paroxetine and similar/.test(html));
+  has(html, /A CYP2D6 inhibitor named in the SmPC \(fluoxetine and paroxetine, which are SSRIs, quinidine, terbinafine\)/);
+});
+t('minor: lisdexamfetamine is not called short-lived (finding 15); palpitations come first in the Anya answer (finding 16)', () => {
+  const html = read('index.html'); assert.ok(!/because both are short-lived/.test(html)); has(html, /neither NICE nor the SmPCs set a washout between methylphenidate and lisdexamfetamine; many services start the new one the next morning after the last dose has worn off \(clinical practice\)/);
+  const q = vm.createContext({ window: { __mixOpts() {} } }); vm.runInContext(read('js/data-quiz-m5-ns.js'), q); const anya = q.window.QUIZ.m5x_ns_more.filter((x) => /Anya/.test(x.q))[0];
+  has(anya.e, /Anya stopped lisdexamfetamine because of palpitations, so find out why before starting atomoxetine/); has(anya.e, /NG87 1\.7\.5/); has(anya.e, /prompt specialist cardiac evaluation/); assert.ok(anya.e.length > 400);
 });
 
 /* ---------- quiz ---------- */
@@ -320,7 +502,7 @@ t('index.html: two new lessons replace old lesson 6; labs mount; old lesson 9 ca
   const L = html.slice(a, e); assert.ok(!/stat-s/.test(L), 'no source labels under stats'); assert.ok(!/NG87 1\.\d|SmPC 4\.\d/.test(L), 'no clause chips in lesson text');
   assert.ok(!/[\u{1F300}-\u{1FAFF}☀-➿]/u.test(L), 'no emoji'); has(L, /Ava, 9, weighs 30 kg/); has(L, /no 15 mg capsule/); has(L, /rounding, not an SmPC range/); has(L, /9 October 2026/); has(L, /recognised uncommon adverse reaction/);
   has(L, /No SmPC table/); has(L, /Under 25 kg \(6–12\) or under 34 kg \(13–17\)/);
-  const card = html.slice(html.indexOf('<div class="clin-c clin-n"><div class="clin-t">Switching</div>')); has(card.slice(0, 1800), /To or from atomoxetine or guanfacine there is no published method/);
+  const card = html.slice(html.indexOf('<div class="clin-c clin-n"><div class="clin-t">Switching</div>')); has(card.slice(0, 2200), /To or from atomoxetine or guanfacine there is no official method/);
   has(html, /js\/data-quiz-m5-ns\.js\?v=/); assert.ok(html.indexOf('data-quiz-m5.js') < html.indexOf('data-quiz-m5-ns.js'));
   assert.ok(html.indexOf('release-model.js') < html.indexOf('m5-lab.js') || true);
 });
