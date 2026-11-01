@@ -154,7 +154,7 @@ AA.add('txDrugs', [
       { t: "Antihypertensives: atomoxetine may weaken their effect.", level: "caution", src: "Atomoxetine SmPC section 4.5" }
     ],
     se: ["se_appetite", "se_sleep", "se_headache", "se_gi", "se_cv", "se_chest", "se_anxiety", "se_mood", "se_suicidal", "se_psychosis", "se_seizure", "se_sexual", "se_liver", "se_sedation", "se_growth"],
-    trial: { weeks: 6, note: "Benefit builds over several weeks. Judge it after an adequate trial at the maintenance dose (clinical practice: NICE sets 6-week trials for the stimulants)." },
+    trial: { weeks: 6, note: "NICE says non-stimulants can take longer to have an effect than stimulants, and the SmPC gives no time to full effect. Judge it after an adequate trial at the maintenance dose (clinical practice: NICE sets 6-week trials for the stimulants)." },
     pregnancy: "Use in pregnancy only if the benefit justifies the risk.",
     breastfeeding: "Avoid while breastfeeding.",
     notes: [
@@ -192,7 +192,7 @@ AA.add('txDrugs', [
       { t: "Alcohol and sedating medicines: more sleepiness. No alcohol.", level: "caution", src: "Intuniv SmPC section 4.5" }
     ],
     se: ["se_sedation", "se_chest", "se_headache", "se_gi", "se_mood", "se_suicidal", "se_weightgain"],
-    trial: { weeks: 6, note: "Benefit builds over weeks. Judge it at an adequate dose (clinical practice). The SmPC asks for the need to be re-evaluated every 3 months in the first year." },
+    trial: { weeks: 6, note: "NICE says non-stimulants can take longer to have an effect, and the SmPC gives no time to full effect. Judge it at an adequate dose (clinical practice). The SmPC asks for the need to be re-evaluated every 3 months in the first year." },
     pregnancy: "Not recommended in pregnancy, or in anyone who could become pregnant and is not using contraception.",
     breastfeeding: "Decide whether to stop breastfeeding or not use guanfacine.",
     notes: [
@@ -828,9 +828,9 @@ AA.add('txProducts', [
     name: "Atomoxetine",
     brandNote: "Strattera and generic capsules",
     form: "Capsule",
-    release: "Not a stimulant: a steady effect that builds over weeks",
+    release: "Not a stimulant: NICE says it can take longer to have an effect (the SmPC gives no time to full effect)",
     ir: false,
-    lasts: "all day once established (no daily peak of effect)",
+    lasts: "the SmPC gives no length of effect or daily peak",
     strengths: [10, 18, 25, 40, 60, 80, 100],
     unit: "mg",
     licensed: { child: true, adultStart: true, adultContinue: true },
@@ -866,9 +866,9 @@ AA.add('txProducts', [
     drug: "gxr",
     name: "Intuniv",
     form: "Prolonged-release tablet",
-    release: "Not a stimulant: prolonged-release tablet, effect builds over weeks",
+    release: "Not a stimulant: prolonged-release tablet; NICE says it can take longer to have an effect (the SmPC gives no time to full effect)",
     ir: false,
-    lasts: "all day once established",
+    lasts: "the SmPC gives no length of effect",
     strengths: [1, 2, 3, 4],
     unit: "mg",
     licensed: { child: true, adultStart: false, adultContinue: false },
