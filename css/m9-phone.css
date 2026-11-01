@@ -1,0 +1,218 @@
+/* Module 9 (The pharmacist's role): phone-first layer.
+   Loaded after mobile.css. Everything is scoped to #m9. Goal at 375px: each lesson reads in about two screens, the first
+   screen shows the point, and anything long is stepped (one thing at a time) or folded.
+   Wide screens keep their layout: the tab sets below show all their panels again above 700px. */
+
+/* ---------- new markup that shows at every width ---------- */
+#m9 .gst-ex .go{background:var(--amber-l);border-left:4px solid var(--amber)}
+#m9 .gst-ex .go b{color:var(--amber)}
+#m9 .gst-ex .go b::before{content:"!";background:var(--amber)}
+#m9 .m9-h{display:block;color:var(--navy);font-weight:600;margin-bottom:.15rem}
+#m9 .m9-exc{margin:.2rem 0 .5rem;padding:.1rem 0 .1rem .8rem;border-left:4px solid var(--amber);color:var(--ink)}
+#m9 .m9-lead{font-weight:600;color:var(--navy);margin:.8rem 0 .3rem}
+#m9 .m9-tl-hint{margin:.2rem 0 .1rem;font-size:.88rem;color:var(--muted)}
+#m9 .m9-tab{cursor:pointer}
+/* lesson 6: the six signs (same look as the tiles they replace) */
+#m9 .m9-sign{display:flex;flex-direction:column;gap:.1rem;background:var(--amber-l);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:10px;padding:.55rem .7rem}
+
+/* ---------- wide screens: tab sets show every panel, as before ---------- */
+@media (min-width:701px){
+  #m9 .m9-seg>.pr-tabs{display:none}
+  #m9 .m9-seg>.pr-panel[hidden]{display:block}
+  #m9 .m9-seg>.pr-panel{min-width:0}
+  #m9 .m9-seg-signs>.pr-panel[hidden]{display:flex}
+}
+
+/* ---------- phones and small tablets ---------- */
+@media (max-width:700px){
+
+  /* reading rhythm: lead paragraphs a little smaller, tighter headings */
+  #m9 .lesson>p{font-size:1rem;line-height:1.55;margin:.45rem 0}
+  #m9 .lesson>h3{margin:1.1rem 0 .4rem;font-size:1.1rem}
+  #m9 .lesson .m9-small{font-size:.9rem;line-height:1.5}
+  #m9 .lesson>p.m9-exc{font-size:.93rem;line-height:1.5;margin:.3rem 0 .4rem}
+  #m9 .lesson>p.m9-lead{margin:.6rem 0 .2rem}
+  #m9 .lesson .callout{padding:.7rem .9rem;font-size:.97rem;line-height:1.5;margin:.7rem 0}
+  #m9 .lesson .say{padding:.9rem 1rem;margin:.7rem 0}
+  #m9 .lesson .say p{font-size:.95rem;line-height:1.5}
+  #m9 .lesson>h2.ls-h{margin-bottom:.4rem}
+  #m9 .lesson details.mx{margin:.5rem 0}
+  #m9 .lesson details.mx>summary{min-height:56px}
+  #m9 .lesson .mx-t small{font-size:.86rem;line-height:1.35}
+
+  /* "Go deeper" links: big, calm pills */
+  #m9 .deeper{display:flex;flex-wrap:wrap;gap:.3rem;margin:.8rem 0 .1rem}
+  #m9 .deeper>span{flex:0 0 100%;font-size:.85rem}
+  #m9 .deeper a{min-height:44px;display:inline-flex;align-items:center;padding:.2rem .85rem;font-size:.88rem;line-height:1.25}
+  /* links inside running text: a taller hit area without changing the line spacing */
+  #m9 .lesson p a,#m9 .lesson li a,#m9 .gst-body a{padding:.7rem .1rem;margin:-.7rem 0}
+
+  /* ---------- tab sets (lesson 1 settings, lesson 7 lanes): one card at a time ---------- */
+  #m9 .m9-seg{display:block;margin:.5rem 0 1rem}
+  #m9 .m9-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.4rem;margin:0 0 .6rem;padding:0;border:0}
+  #m9 .m9-tab{font:inherit;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;min-height:84px;margin:0;padding:.5rem .25rem;
+    border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--navy);text-align:center}
+  #m9 .m9-tab span{display:block;margin:0;padding:0;border-radius:0;background:none;color:inherit;font-size:inherit}
+  #m9 .m9-tab .m9-tt{font-size:.78rem;font-weight:600;line-height:1.2}
+  #m9 .m9-tab span.m9-ic{width:34px;height:34px;border-radius:9px;background:var(--teal);color:#fff;display:grid;place-items:center}
+  #m9 .m9-tab .m9-ic svg{width:19px;height:19px}
+  #m9 .m9-tab[aria-selected="true"]{border-color:var(--teal);background:var(--teal-l);box-shadow:0 0 0 1px var(--teal)}
+  #m9 .m9-tab[aria-selected="true"] span{background:none;color:inherit}
+  #m9 .m9-tab[aria-selected="true"] span.m9-ic{background:var(--teal);color:#fff}
+  #m9 .m9-seg>.pr-panel{margin:0}
+  #m9 .m9-seg .m9-role,#m9 .m9-seg .m9-lane{margin:0}
+  #m9 .m9-role p{font-size:.95rem}
+
+  /* signs: six chips, two across, and one detail card under them */
+  #m9 .m9-seg-signs .m9-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #m9 .m9-seg-signs .m9-tab{flex-direction:row;justify-content:flex-start;min-height:52px;padding:.4rem .6rem;text-align:left;border-left:4px solid var(--amber);border-radius:10px}
+  #m9 .m9-seg-signs .m9-tab .m9-tt{font-size:.82rem;line-height:1.25}
+  #m9 .m9-seg-signs .m9-tab[aria-selected="true"]{background:var(--amber-l);border-color:var(--amber);box-shadow:0 0 0 1px var(--amber)}
+  #m9 .m9-seg-signs>.pr-panel[hidden]{display:none}
+  #m9 .m9-seg-signs .m9-sign{margin:0;padding:.7rem .85rem}
+  #m9 .m9-seg-signs .m9-sign strong{display:none}
+  #m9 .m9-seg-signs .m9-sign span{font-size:.95rem;line-height:1.5;color:var(--ink)}
+
+  /* lanes: two by two, coloured by urgency */
+  #m9 .m9-seg-lanes .m9-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #m9 .m9-tab.l-now{--l:var(--red);--ll:var(--red-l)}
+  #m9 .m9-tab.l-day{--l:var(--coral);--ll:var(--coral-l)}
+  #m9 .m9-tab.l-next{--l:var(--amber);--ll:var(--amber-l)}
+  #m9 .m9-tab.l-rou{--l:var(--green);--ll:var(--green-l)}
+  #m9 .m9-seg-lanes .m9-tab{min-height:56px;border-top:5px solid var(--l);border-radius:12px}
+  #m9 .m9-seg-lanes .m9-tab .m9-tt{font-size:.92rem}
+  #m9 .m9-seg-lanes .m9-tab[aria-selected="true"]{background:var(--ll);border-color:var(--l);box-shadow:0 0 0 1px var(--l)}
+  #m9 .m9-seg-lanes .m9-lt{display:none}
+  #m9 .m9-lane{padding:.8rem .95rem}
+  #m9 .m9-lane h4{margin:0 0 .35rem;font-size:1.08rem}
+  #m9 .m9-lane li{font-size:.95rem;line-height:1.45}
+
+  /* ---------- lesson 1: the pathway as a route strip (js/m9-extra.js) ---------- */
+  #m9 .tl.m9-route{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));column-gap:.15rem;row-gap:0;margin:.3rem 0 .8rem}
+  #m9 .tl.m9-route::before{left:8.33%;right:8.33%;top:21px;bottom:auto;width:auto;height:4px;background:linear-gradient(90deg,var(--teal),var(--teal-2))}
+  #m9 .tl.m9-route li{display:contents}
+  #m9 .tl.m9-route .tl-node{grid-row:1;justify-self:center;align-self:start;width:46px;height:46px;border-width:3px;cursor:pointer;margin:0}
+  #m9 .tl.m9-route .tl-node .fx-ic{width:30px;height:30px}
+  #m9 .tl.m9-route .tl-node .fx-ic svg{width:17px;height:17px}
+  #m9 .tl.m9-route .tl-n{top:-7px;right:-7px;width:20px;height:20px;font-size:.7rem}
+  #m9 .tl.m9-route .tl-node:focus-visible{outline:3px solid #f2a541;outline-offset:2px}
+  #m9 .tl.m9-route li:nth-child(1) .tl-node{grid-column:1}
+  #m9 .tl.m9-route li:nth-child(2) .tl-node{grid-column:2}
+  #m9 .tl.m9-route li:nth-child(3) .tl-node{grid-column:3}
+  #m9 .tl.m9-route li:nth-child(4) .tl-node{grid-column:4}
+  #m9 .tl.m9-route li:nth-child(5) .tl-node{grid-column:5}
+  #m9 .tl.m9-route li:nth-child(6) .tl-node{grid-column:6}
+  #m9 .tl.m9-route li.sel .tl-node{box-shadow:0 0 0 4px var(--teal-l),0 2px 8px rgba(22,50,79,.18)}
+  #m9 .tl.m9-route li.out.sel .tl-node{box-shadow:0 0 0 4px #e3eaf2,0 2px 8px rgba(22,50,79,.12)}
+  #m9 .tl.m9-route li.out.sel .tl-node{border-color:#7f93a8}
+  #m9 .tl.m9-route li:not(.sel)>b,#m9 .tl.m9-route li:not(.sel)>.tl-d,#m9 .tl.m9-route li:not(.sel)>.tl-foot{display:none}
+  #m9 .tl.m9-route li>b{grid-column:1/-1;grid-row:2;margin:.75rem 0 0;padding-top:.7rem;border-top:1px solid var(--line);font-size:1.08rem;text-align:left}
+  #m9 .tl.m9-route li>.tl-d{grid-column:1/-1;grid-row:3;margin:.2rem 0 0;font-size:.95rem;line-height:1.5;text-align:left}
+  #m9 .tl.m9-route li>.tl-foot{grid-column:1/-1;grid-row:4;margin:.35rem 0 0;display:flex;flex-direction:row;flex-wrap:wrap;gap:.4rem;align-items:center;justify-content:flex-start}
+  #m9 .tl .tl-tag{min-height:44px;padding:.3rem .9rem;font-size:.85rem}
+  #m9 .tl-key{margin:.5rem 0 .1rem}
+
+  /* ---------- steppers (lessons 3, 6, 8, 9): the tabs become a labelled 2-column index ---------- */
+  #m9 .gst{margin:.6rem 0 1rem}
+  #m9 .gst-track{grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);overflow:visible;border-bottom:1px solid var(--line)}
+  #m9 .gst-t{flex-direction:row;justify-content:flex-start;align-items:center;gap:.55rem;min-height:52px;padding:.35rem .6rem;border-bottom:3px solid transparent;background:#fbfcfd;text-align:left}
+  #m9 .gst-t+.gst-t::before{display:none}
+  #m9 .gst-t b{flex:none;width:30px;height:30px;font-size:.9rem}
+  #m9 .gst-t span{font-size:.78rem;font-weight:600;line-height:1.2;text-align:left}
+  #m9 .gst-t:last-child:nth-child(odd){grid-column:1/-1}
+  #m9 .gst-t[aria-selected="true"]{background:#fff}
+  #m9 .gst-band{padding:.9rem 1rem .8rem}
+  #m9 .gst-head{gap:.7rem;margin-bottom:.45rem}
+  #m9 .gst-l{width:42px;height:42px;border-radius:12px;font-size:1.2rem}
+  #m9 .gst-head h4{font-size:1.15rem;line-height:1.25}
+  #m9 .gst-band .gst-rule{font-size:1rem;line-height:1.5}
+  #m9 .gst-body{padding:.8rem 1rem .1rem}
+  #m9 .gst-ex{gap:.6rem;margin:0 0 .8rem}
+  #m9 .gst-ex p{padding:.65rem .8rem;font-size:.95rem;line-height:1.5}
+  #m9 .gst-nav{padding:.7rem 1rem;gap:.6rem}
+  #m9 .gst-nav .btn{min-height:48px;font-size:.95rem;line-height:1.25}
+  #m9 .gst-ev i{font-size:.85rem;padding:.3rem .75rem}
+  #m9 .gst-areas{gap:.45rem}
+  #m9 .gst-areas li{padding:.6rem .8rem}
+  #m9 .gst-areas li>span{font-size:.92rem;line-height:1.45}
+
+  /* ordered checks (lessons 3 and 6): numbered circles on a line, the step's title is the panel heading */
+  #m9 .gst.m9-steps .gst-track{display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:0;background:#fbfcfd;padding:0}
+  #m9 .gst.m9-steps .gst-t{flex-direction:column;justify-content:center;align-items:center;gap:0;min-height:64px;padding:.5rem .1rem .4rem;background:none;text-align:center}
+  #m9 .gst.m9-steps .gst-t+.gst-t::before{display:block;top:calc(.5rem + 16px)}
+  #m9 .gst.m9-steps .gst-t b{width:34px;height:34px;font-size:.95rem}
+  #m9 .gst.m9-steps .gst-t:last-child:nth-child(odd){grid-column:auto}
+  #m9 .gst.m9-steps .gst-t span{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  #m9 .gst-nav .btn{padding:.4rem .6rem}
+  #m9 .gst-nav .btn[data-d="-1"]{flex:1 1 0;white-space:nowrap}
+  #m9 .gst-nav .btn[data-d="1"]{flex:1.7 1 0}
+  #m9 .gst-ev span{font-size:.76rem}
+
+  /* ---------- walkthrough pictures (lessons 2, 4, 5): smaller card, no repeated heading ---------- */
+  #m9 .lesson figure.wt.wt-step{padding:0;border:0;background:none;box-shadow:none;gap:.5rem;margin-top:.6rem}
+  #m9 figure.wt .overlay-fig{width:fit-content;max-width:100%;margin:0 auto}
+  #m9 figure.wt .overlay-fig img{width:auto;max-width:100%;height:auto;max-height:220px;object-fit:cover}
+  #m9 figure.wt.wt-step>figcaption{font-size:.92rem;line-height:1.45;margin:0}
+  #m9 figure.wt.wt-step .walk-d>summary{display:none}
+  #m9 figure.wt.wt-step ol.walk li{font-size:.97rem;line-height:1.5;padding:.7rem .8rem .7rem 2.7rem}
+  #m9 figure.wt.wt-step ol.walk li::before{left:.65rem;top:.7rem;width:26px;height:26px}
+  #m9 .wt-nav{margin-top:.5rem}
+  /* step dots: the button is 44px tall, the visible dot stays small */
+  #m9 .wt-nav{gap:.25rem}
+  #m9 .wt-dots{gap:0}
+  #m9 .wt-dot{width:40px;height:44px;border-radius:0;background:none}
+  #m9 .wt-dot::before{content:"";position:absolute;left:50%;top:50%;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--line)}
+  #m9 .wt-dot::after{display:none}
+  #m9 .wt-dot.cur{width:44px;background:none}
+  #m9 .wt-dot.cur::before{width:26px;margin-left:-13px;border-radius:999px;background:var(--coral)}
+
+  /* ---------- tiles: two across, compact ---------- */
+  #m9 .risk-grid.m9-signs,#m9 .risk-grid.m9-teal{grid-template-columns:repeat(2,minmax(0,1fr));gap:.4rem;margin:.5rem 0}
+  #m9 .risk-grid li{padding:.5rem .6rem}
+  #m9 .risk-grid strong{font-size:.9rem;line-height:1.25}
+  #m9 .risk-grid span{font-size:.84rem;line-height:1.4}
+  #m9 .stat-grid.m9-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;margin:.5rem 0 .8rem}
+  #m9 .stat-grid.m9-stats .stat{padding:.65rem .75rem;gap:.2rem}
+  #m9 .stat-grid.m9-stats .stat-n{font-size:1.7rem;line-height:1.1}
+  #m9 .stat-grid.m9-stats .stat-l{font-size:.85rem;line-height:1.35}
+
+  /* ---------- the rule banners ---------- */
+  #m9 .bf-rule{padding:.7rem .85rem;gap:.65rem;margin:.6rem 0}
+  #m9 .bf-rule p{font-size:.95rem;line-height:1.5}
+
+  /* ---------- overview ---------- */
+  #m9 .mod-head .mod-meta{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.35rem;margin:.5rem 0 .8rem}
+  #m9 .mod-head .mod-meta li{margin:0;padding:.4rem .65rem;font-size:.84rem;line-height:1.3;border-radius:12px}
+  #m9 .mod-head .mod-meta li:last-child{grid-column:1/-1}
+  #m9 .mod-head>div>p{font-size:1rem;line-height:1.55}
+  #m9 .mod-head .objectives{padding:1rem}
+  #m9 .mod-head .objectives ul{list-style:none;padding:0;margin:.55rem 0 0;display:grid;gap:.5rem}
+  #m9 .mod-head .objectives li{position:relative;margin:0;padding-left:1.75rem;font-size:.96rem;line-height:1.4}
+  #m9 .mod-head .objectives li::before{content:"";position:absolute;left:0;top:.2em;width:1.1rem;height:1.1rem;border-radius:50%;
+    background:var(--teal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/68% no-repeat}
+  #m9 .mod-head .callout{font-size:.92rem}
+
+  /* ---------- recap ---------- */
+  #m9 .takeaways{padding:1rem 1.1rem;margin:.2rem 0 1rem}
+  #m9 .takeaways ol{margin:.4rem 0 0;padding-left:1.25rem}
+  #m9 .takeaways li{font-size:.96rem;line-height:1.45;margin:.4rem 0}
+}
+
+@media (max-width:360px){
+  /* six numbered tabs would be under 44px wide on a 320px screen: two rows of three */
+  #m9 .gst.m9-steps .gst-track:has(.gst-t:nth-child(6)){grid-auto-flow:row;grid-template-columns:repeat(3,minmax(0,1fr))}
+  #m9 .gst.m9-steps .gst-track:has(.gst-t:nth-child(6)) .gst-t+.gst-t::before{display:none}
+  #m9 .lesson{padding-left:.75rem;padding-right:.75rem}
+  /* five dots do not fit between the two arrows on a 320px screen: the dots drop to their own row */
+  #m9 .wt-nav{flex-wrap:wrap;justify-content:center}
+  #m9 .wt-nav .btn{flex:1 1 0}
+  #m9 .wt-mid{order:3;flex:0 0 100%}
+  #m9 .tl.m9-route{column-gap:0}
+  #m9 .tl.m9-route .tl-node{width:44px;height:44px}
+  #m9 .tl.m9-route::before{top:20px}
+  #m9 .m9-seg:not(.m9-seg-lanes) .m9-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #m9 .m9-seg:not(.m9-seg-lanes) .m9-tab{flex-direction:row;justify-content:flex-start;gap:.55rem;min-height:56px;padding:.4rem .6rem;text-align:left}
+  #m9 .m9-tab .m9-tt{font-size:.78rem}
+  #m9 .risk-grid li{padding:.45rem .5rem}
+  #m9 .gst-t{padding:.35rem .45rem;gap:.4rem}
+}
