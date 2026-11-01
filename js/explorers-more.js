@@ -214,7 +214,7 @@
     seiz:{l:'New or worse seizures',redFlag:true,drugs:'Any ADHD medication',time:'Any time',mech:'Possible lowering of the seizure threshold (for example atomoxetine SPC).',m:['Before starting: check the history and interacting drugs that lower the seizure threshold.','','<strong>Same-day medical assessment.</strong> Then the specialist reviews the ADHD medication and stops any that might be contributing; after investigation, it is cautiously reintroduced if unlikely to be the cause (NG87 1.8.16).'],pt:'Any seizure needs medical assessment.'}
   };
   XP.registry.se = function(m){ XP.form(m,{
-    kicker:'Interactive explorer · Module 7', title:'Side-effect management explorer',
+    kicker:'Interactive explorer · Module 7', title:'Side-effect management explorer', visualLabel:'How management escalates (all three steps)',
     intro:'Pick an adverse effect, then how severe or persistent it is. The card shows typical timing and mechanism, and how management escalates. This summarises lessons 2–4, NG87 and the SPCs.',
     controls:[
       {type:'chips',id:'e',label:'Adverse effect',value:'app',options:Object.keys(SE).map(function(k){return {v:k,label:SE[k].l};})},
