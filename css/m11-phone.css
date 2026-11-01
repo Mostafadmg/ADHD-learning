@@ -1,0 +1,294 @@
+/* Module 11 (Practice handbook): phone-first layer. Loaded after mobile.css. Everything is scoped to #m11.
+   Goal at 375px: a quick reference. The first screen of each lesson is the look-up (a picker or the emergency step),
+   the explanation sits under it as tabs or compact rows, and depth is folded.
+   Components: .m11-look (a look-up: header + the tool, no box around it), .m11-tabs (tab set, bound by app.js through
+   [data-practice]), compact .pj journey rows, .hb-seg (the tool results split into groups, one group at a time on phones),
+   .m11-chk (compact numbered rows), .m11-conv (conversion table as cards), .m11-lic-pick (licence picker, js/m11-extra.js). */
+
+/* ================= shared (all widths) ================= */
+#m11 .m11-lead{font-size:1.02rem;line-height:1.55;color:var(--ink);max-width:none}
+
+/* look-up header: icon, title, one line. The tool sits directly under it (no box inside the lesson card). */
+#m11 .m11-look{margin:1rem 0 1.1rem}
+#m11 .m11-look-h{display:flex;align-items:center;gap:.7rem;padding:0 0 .6rem;margin:0 0 .7rem;border-bottom:2px solid var(--teal)}
+#m11 .m11-look-ic{flex:none;width:38px;height:38px;border-radius:11px;background:var(--teal);color:#fff;display:grid;place-items:center}
+#m11 .m11-look-ic svg{width:21px;height:21px;display:block}
+#m11 .m11-look-t{display:flex;flex-direction:column;gap:.1rem;min-width:0}
+#m11 .m11-look-t b{color:var(--navy);font-size:1.08rem;line-height:1.25}
+#m11 .m11-look-t small{color:var(--muted);font-size:.86rem;line-height:1.35}
+#m11 .m11-look .xp-mount{margin:0}
+#m11 .m11-look-sw .m11-look-ic{background:#2f6fb3}
+#m11 .m11-look-sw .m11-look-h{border-bottom-color:#2f6fb3}
+#m11 .m11-look-md .m11-look-ic{background:var(--amber)}
+#m11 .m11-look-md .m11-look-h{border-bottom-color:var(--amber)}
+#m11 .m11-look-co .m11-look-ic{background:#7a4fa8}
+#m11 .m11-look-co .m11-look-h{border-bottom-color:#7a4fa8}
+#m11 .m11-look-lic .m11-look-ic{background:var(--green)}
+#m11 .m11-look-lic .m11-look-h{border-bottom-color:var(--green)}
+
+/* tab sets: big equal tap targets */
+#m11 .m11-tabs{margin:.6rem 0 1rem}
+#m11 .m11-tabs>.pr-tabs{display:grid;gap:.4rem;margin:0 0 .8rem;padding:0;border:0}
+#m11 .m11-t2>.pr-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}
+#m11 .m11-t3>.pr-tabs{grid-template-columns:repeat(3,minmax(0,1fr))}
+#m11 .m11-t4>.pr-tabs{grid-template-columns:repeat(4,minmax(0,1fr))}
+#m11 .m11-tabs>.pr-tabs>.pr-tab{margin:0;min-height:52px;padding:.4rem .35rem;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--navy);font:inherit;font-size:.9rem;font-weight:600;line-height:1.2;text-align:center;cursor:pointer}
+#m11 .m11-tabs>.pr-tabs>.pr-tab:hover{border-color:var(--teal)}
+#m11 .m11-tabs>.pr-tabs>.pr-tab[aria-selected="true"]{background:var(--teal-l);border-color:var(--teal);box-shadow:0 0 0 1px var(--teal)}
+#m11 .m11-tabs>.pr-tabs>.pr-tab:focus-visible{outline:3px solid #f2a541;outline-offset:2px}
+#m11 .m11-tabs>.pr-panel>:first-child{margin-top:0}
+#m11 .m11-urgent>.pr-tabs>.pr-tab:first-child[aria-selected="true"]{background:var(--red-l);border-color:var(--red);box-shadow:0 0 0 1px var(--red)}
+#m11 .m11-tabs>.pr-panel.m11-s{margin:0}
+#m11 .m11-tabs>.pr-panel>.m11-c{margin:0}
+
+/* licence picker (lesson 5, js/m11-extra.js) */
+#m11 .m11-lic-pick{max-width:30rem}
+#m11 .m11-lic-pick .hb-sel{margin:0 0 .6rem}
+#m11 .m11-lic-pick select{width:100%;min-height:48px}
+#m11 .m11-lic-res{border:1px solid var(--line);border-left:5px solid var(--green);border-radius:0 12px 12px 0;background:#f3faf5;padding:.65rem .85rem;display:grid;gap:.25rem;justify-items:start}
+#m11 .m11-lic-res.is-no{border-left-color:var(--coral);background:#fdf6f4}
+#m11 .m11-lic-pill{font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--green);border-radius:999px;padding:.1rem .65rem}
+#m11 .m11-lic-res.is-no .m11-lic-pill{background:var(--coral)}
+#m11 .m11-lic-res b{color:var(--navy);font-size:1.1rem}
+#m11 .m11-lic-res p{margin:0;font-size:.92rem;line-height:1.45;max-width:none}
+#m11 .m11-lic-sym{font-weight:700;color:var(--navy)}
+
+/* the tool results, one group at a time (phones); all of it on wide screens */
+#m11 .hb-seg{display:none}
+#m11 .hb-seg-b{font:inherit;font-size:.88rem;font-weight:600;line-height:1.2;min-height:48px;padding:.35rem .4rem;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--navy);text-align:center;cursor:pointer}
+#m11 .hb-seg-b[aria-pressed="true"]{background:var(--teal-l);border-color:var(--teal);box-shadow:0 0 0 1px var(--teal)}
+#m11 .hb-seg-b:focus-visible{outline:3px solid #f2a541;outline-offset:2px}
+
+/* "How this tool works": the one-sentence how-to of a look-up tool, folded (closed on phones) */
+#m11 .hb-how{margin:.3rem 0 .6rem;border:0;background:none;box-shadow:none;border-radius:0}
+#m11 .hb-how>summary{cursor:pointer;color:var(--teal);font-weight:600;font-size:.9rem;min-height:44px;padding:.2rem 0;display:flex;align-items:center;gap:.4rem}
+#m11 .hb-how .hb-intro{margin:.1rem 0 .3rem}
+
+/* compact numbered rows (four checks, four moves) */
+#m11 .m11-chk{grid-template-columns:minmax(0,1fr);gap:.4rem}
+#m11 .m11-chk li{padding:.55rem .75rem .55rem 2.8rem;border-radius:12px;min-height:46px;justify-content:center}
+#m11 .m11-chk li::before{left:.65rem;top:.6rem;width:26px;height:26px;font-size:.88rem}
+#m11 .m11-chk span{font-size:.9rem;line-height:1.4}
+
+/* the overview: "Find it fast" is a list of questions; the goals sit in a closed dropdown */
+#m11 .m11-obj{margin:1rem 0 .4rem}
+#m11 .m11-obj .objectives{margin:0;background:none;padding:0}
+#m11 .m11-obj .objectives ul{margin:0;padding-left:1.2rem;display:grid;gap:.35rem}
+
+/* conversion table as cards (lesson 2) */
+#m11 .m11-conv{width:100%}
+
+/* licence callout and recap */
+#m11 .m11-take li{line-height:1.5}
+
+/* ================= wide screens ================= */
+@media (min-width:701px){
+  #m11 .m11-t4>.pr-tabs{max-width:44rem}
+  #m11 .m11-t2>.pr-tabs,#m11 .m11-t3>.pr-tabs{max-width:36rem}
+}
+
+/* ================= phones ================= */
+@media (max-width:700px){
+  /* reading rhythm */
+  #m11 .lessons>.lesson{padding:1rem .8rem 1.2rem}
+  #m11 .lesson{font-size:15.5px;line-height:1.5}
+  #m11 .lesson p{margin:.45em 0}
+  #m11 .lesson .ls-h{font-size:1.45rem;line-height:1.2;margin-bottom:.5rem}
+  #m11 .lesson h3{font-size:1.04rem;line-height:1.3;margin:1rem 0 .45rem}
+  #m11 .m11-lead{font-size:.95rem;line-height:1.48;margin:.3rem 0 .5rem}
+  #m11 .cl-progress{font-size:.84rem;line-height:1.45}
+  #m11 .lesson .clin-h{margin:1rem 0 .45rem}
+  #m11 .lesson details.mx{margin:.5rem 0}
+  #m11 .lesson details.mx>summary{min-height:56px}
+  #m11 .lesson .mx-t small{font-size:.86rem;line-height:1.35}
+  #m11 .callout{padding:.65rem .85rem;font-size:.95rem;line-height:1.5;margin:.7rem 0}
+  #m11 .say{padding:.85rem 1rem;margin:.8rem 0}
+  #m11 .say p{font-size:.95rem;line-height:1.5}
+
+  /* "Go deeper" links: big, calm pills */
+  #m11 .deeper{display:flex;flex-wrap:wrap;gap:.3rem;margin:.8rem 0 .1rem}
+  #m11 .deeper>span{flex:0 0 100%;font-size:.85rem}
+  #m11 .deeper a{min-height:44px;display:inline-flex;align-items:center;padding:.2rem .85rem;font-size:.88rem;line-height:1.25}
+
+  /* ---------- overview ---------- */
+  #m11 .mod-head .kicker{margin-bottom:.2rem}
+  #m11 .mod-head h1{font-size:1.55rem;line-height:1.2;margin:.1rem 0 .5rem}
+  #m11 .mod-head .mod-meta{gap:.3rem;margin:.1rem 0 .7rem}
+  #m11 .mod-head .mod-meta li{font-size:.76rem;padding:.12rem .55rem}
+  #m11 .mod-head>div>p{font-size:.93rem;line-height:1.5;margin:.7rem 0 .4rem}
+  #m11 .m11-fh{margin:.9rem 0 .45rem}
+  #m11 .m11-find{grid-template-columns:minmax(0,1fr);gap:.4rem}
+  #m11 .m11-find a{align-items:center;gap:.65rem;padding:.55rem .75rem;min-height:56px;border-radius:12px}
+  #m11 .m11-fn{width:30px;height:30px;border-radius:9px;font-size:.9rem}
+  #m11 .m11-ft b{font-size:.96rem;line-height:1.25}
+  #m11 .m11-ft small{font-size:.72rem}
+
+  /* ---------- look-up headers ---------- */
+  #m11 .m11-look{margin:.8rem 0 1rem}
+  #m11 .m11-look-h{padding-bottom:.5rem;margin-bottom:.6rem}
+
+  /* ---------- tab sets ---------- */
+  #m11 .m11-tabs{margin:.5rem 0 .9rem}
+  #m11 .m11-t4>.pr-tabs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #m11 .m11-t3>.pr-tabs>.pr-tab{font-size:.82rem}
+
+  /* ---------- the tools ---------- */
+  #m11 .hb-tool{display:flex;flex-direction:column}
+  #m11 .hb-how{order:8;margin:.4rem 0 0}
+  #m11 .hb-intro{font-size:.88rem;line-height:1.45;margin:.1rem 0 .3rem}
+  #m11 .hb-tool:has(.sc-chips)>.hb-intro{margin:0 0 .6rem}
+  #m11 .hb-tool>.hb-note{order:9;font-size:.82rem;margin:.6rem 0 0}
+  #m11 .hb-row{grid-template-columns:minmax(0,1fr);gap:.5rem;margin:.1rem 0 .7rem}
+  #m11 .hb-sel>span{font-size:.72rem}
+  #m11 .hb-sel select{min-height:48px}
+  /* switch planner: the dose and the times a day sit side by side */
+  #m11 .m11-look-sw .hb-row{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+  #m11 .m11-look-sw .hb-sel select{padding-left:.6rem;padding-right:1.9rem;font-size:.9rem}
+  #m11 .m11-look-sw .hb-row>.hb-sel{grid-column:1/-1}
+  #m11 .m11-look-sw .hb-row>.hb-sel:nth-child(2),#m11 .m11-look-sw .hb-row>.sw-fq-l:not([hidden]){grid-column:auto}
+  #m11 .m11-look-sw .hb-row>.hb-sel:nth-child(2):has(+ .sw-fq-l[hidden]){grid-column:1/-1}
+  #m11 .hb-state{margin:.2rem 0;padding-top:.5rem;gap:.45rem}
+  #m11 .hb-head{font-size:1.05rem;line-height:1.3}
+  #m11 .hb-text,#m11 .hb-text ul{font-size:.92rem;line-height:1.5}
+  #m11 .hb-text ul{padding-left:1.05rem}
+  #m11 .hb-text li{margin:.35rem 0}
+  /* brand look-up: the curve stays; the eight facts become three groups */
+  #m11 .hb-chart{margin:.1rem 0 .3rem}
+  #m11 .hb-svg{border:0;border-radius:0;max-width:100%}
+  #m11 .hb-legend{font-size:.82rem;gap:.25rem .8rem;margin:.2rem 0 .5rem}
+  #m11 .hb-lnote{font-size:.8rem}
+  #m11 .hb-h{margin:.5rem 0 .4rem;font-size:1.08rem}
+  #m11 .hb-seg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.35rem;margin:.1rem 0 .6rem}
+  #m11 .hb-dl{gap:.4rem}
+  #m11 .hb-dl>div{padding:.5rem .7rem}
+  #m11 .hb-dl dd{font-size:.9rem;line-height:1.45}
+  #m11 .hb-tool[data-show="how"] .hb-dl>div:not([data-g="how"]),
+  #m11 .hb-tool[data-show="take"] .hb-dl>div:not([data-g="take"]),
+  #m11 .hb-tool[data-show="lic"] .hb-dl>div:not([data-g="lic"]){display:none}
+  #m11 .hb-tool[data-show="take"] .hb-chart,#m11 .hb-tool[data-show="take"] .hb-legend,
+  #m11 .hb-tool[data-show="lic"] .hb-chart,#m11 .hb-tool[data-show="lic"] .hb-legend{display:none}
+  #m11 .hb-cmp>summary{min-height:48px}
+  /* co-existing conditions: chips in two columns, three sources one at a time */
+  #m11 .co-chips,#m11 .sc-chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.4rem;margin:.1rem 0 .8rem}
+  #m11 .co-chips .hb-chip,#m11 .sc-chips .hb-chip{border-radius:12px;min-height:52px;padding:.35rem .5rem;font-size:.88rem;font-weight:600;text-align:center}
+  #m11 .co-chips .hb-chip:last-child:nth-child(odd),#m11 .sc-chips .hb-chip:last-child:nth-child(odd){grid-column:1/-1}
+  #m11 .hb-boxes{grid-template-columns:minmax(0,1fr)}
+  #m11 .hb-tool[data-show="ng"] .hb-boxes>.hb-box:not([data-g="ng"]),
+  #m11 .hb-tool[data-show="smpc"] .hb-boxes>.hb-box:not([data-g="smpc"]),
+  #m11 .hb-tool[data-show="ph"] .hb-boxes>.hb-box:not([data-g="ph"]){display:none}
+  #m11 .hb-box{padding:.7rem .85rem;font-size:.92rem;line-height:1.5}
+  #m11 .hb-box h5{display:none}
+  /* scripts: one step open, the rest are one-line rows */
+  #m11 .sc-steps{margin:.1rem 0 .5rem}
+  #m11 .sc-steps li{padding:.55rem .75rem .55rem 2.7rem;min-height:46px;font-size:.92rem}
+  #m11 .sc-steps li.on{font-size:.95rem;line-height:1.5}
+  #m11 .hb-nav{flex-wrap:nowrap;gap:.4rem}
+  #m11 .hb-nav .btn{min-height:48px;flex:1 1 0;padding:.4rem .5rem}
+  #m11 .sc-pos{flex:0 0 auto;font-size:.8rem;text-align:center;min-width:5.2rem}
+  /* drill (practice tab) */
+  #m11 .dr-q{font-size:1rem}
+  #m11 .dr-card .hb-nav{flex-wrap:wrap}
+  #m11 .dr-card .hb-nav .btn{flex:1 1 30%}
+
+  /* ---------- journey rows from .bflow (lessons 2, 5, 7) ---------- */
+  #m11 .pj{margin:.5rem 0 .8rem}
+  #m11 .pj .pj-steps{gap:.4rem}
+  #m11 .pj-s{padding:.55rem .75rem .55rem 3rem;border-top:1px solid color-mix(in srgb,var(--g) 22%,#fff);border-left:4px solid var(--g);border-radius:12px;background:linear-gradient(90deg,var(--gl),#fff 70%)}
+  #m11 .pj-n{top:.55rem;left:.6rem;width:28px;height:28px;font-size:.85rem;box-shadow:none}
+  #m11 .pj-s:not(:last-child)::after{display:none}
+  #m11 .pj-s>b{font-size:.95rem;line-height:1.3;margin-bottom:.1rem}
+  #m11 .pj-s>p{font-size:.88rem;line-height:1.45;margin:0}
+  #m11 .pj-steps+.pj-fork::before,#m11 .pj-steps+.pj-rule::before{display:none}
+  #m11 .pj-fork{margin:.55rem 0 0;padding:.65rem .65rem .7rem;border-radius:12px}
+  #m11 .pj-q{justify-content:flex-start;margin:0 0 .5rem;font-size:.95rem}
+  #m11 .pj-ways{grid-template-columns:1fr;gap:.45rem}
+  #m11 .pj-way{padding:.55rem .75rem}
+  #m11 .pj-way p{font-size:.88rem;line-height:1.45;margin:.15rem 0 0}
+  #m11 .pj-rule{margin:.5rem 0 0;padding:.65rem .75rem;gap:.65rem;border-radius:12px}
+  #m11 .pj-rule p{font-size:.88rem;line-height:1.45}
+  #m11 .pj-ri{width:28px;height:28px}
+  #m11 .pj-tag{font-size:.75rem}
+
+  /* lesson 2: four questions, one answer open at a time */
+  #m11 .pj-acc .pj-s{padding-top:.1rem;padding-bottom:.1rem}
+  #m11 .pj-acc .pj-s>b{display:flex;align-items:center;justify-content:space-between;gap:.5rem;min-height:48px;margin:0;cursor:pointer;font-size:.97rem}
+  #m11 .pj-acc .pj-s>b::after{content:"";flex:none;width:9px;height:9px;border-right:2.5px solid var(--g);border-bottom:2.5px solid var(--g);transform:rotate(45deg) translateY(-2px);transition:transform .15s}
+  #m11 .pj-acc .pj-s.open>b::after{transform:rotate(-135deg) translateY(-2px)}
+  #m11 .pj-acc .pj-s>b:focus-visible{outline:3px solid #f2a541;outline-offset:2px;border-radius:8px}
+  #m11 .pj-acc .pj-s>p{display:none;margin:0 0 .5rem}
+  #m11 .pj-acc .pj-s.open>p{display:block}
+  #m11 .pj-acc .pj-n{top:.65rem}
+
+  /* ---------- cards ---------- */
+  #m11 .m11-c{padding:.7rem .85rem .65rem}
+  #m11 .m11-c p{font-size:.92rem;line-height:1.5}
+  #m11 .m11-s{padding:.65rem .8rem}
+  #m11 .m11-s li{font-size:.92rem;line-height:1.4}
+  #m11 .m11-sero{grid-template-columns:minmax(0,1fr);gap:.4rem;margin:.5rem 0 .8rem}
+  #m11 .m11-sero .m11-c{border-top-width:1px;border-left:5px solid var(--k)}
+  #m11 .clin-grid{gap:.45rem}
+  #m11 .clin-c{padding:.6rem .75rem}
+  #m11 .clin-t{font-size:.95rem;margin-bottom:.15rem}
+  #m11 .clin-c p{font-size:.9rem;line-height:1.45}
+  #m11 .m11-rules .clin-c{border-left-width:5px}
+  #m11 .m11-rules .clin-s{border-left-color:#e3b341}
+  #m11 .m11-rules .clin-p{border-left-color:var(--red);background:var(--red-l)}
+  #m11 .m11-rows li{grid-template-columns:minmax(0,1fr);gap:.1rem}
+  #m11 .m11-hunter{font-size:.93rem}
+
+  /* links inside the tool notes and running text: a taller hit area without changing the line spacing */
+  #m11 .hb-note a,#m11 .hb-tool a,#m11 .lesson p a,#m11 .lesson li a{padding:.9rem .1rem;margin:-.9rem 0}
+  #m11 .hb-cd{font-size:.75rem}
+
+  /* lesson 5: the two licence lists stack */
+  #m11 .m11-lic{grid-template-columns:minmax(0,1fr);gap:.5rem;margin:.6rem 0 .4rem}
+  #m11 .m11-lic>div{padding:.6rem .8rem}
+  #m11 .m11-chips span{font-size:.88rem;padding:.3rem .65rem}
+
+  /* ---------- tappable card pickers (table[data-cards]) ---------- */
+  #m11 .sxc-m11 .sxc-grid{gap:.4rem}
+  #m11 .sxc-m11 .sxc-card{min-height:60px;padding:.45rem .6rem}
+  #m11 .sxc-m11 .sxc-name{font-size:.95rem;line-height:1.25}
+  #m11 .sxc-m11 .sxc-cap{font-size:.86rem;margin:.1rem 0 .5rem}
+  #m11 .sxc-m11 .sxc-detail{padding:.7rem .85rem}
+  #m11 .sxc-m11 .sxc-cols{grid-template-columns:minmax(0,1fr);gap:.55rem}
+  #m11 .sxc-m11 .sxc-cols p{font-size:.92rem;line-height:1.5;margin:.1rem 0 0}
+
+  /* ---------- conversion table as cards (lesson 2) ---------- */
+  #m11 table.m11-conv tr{padding:.55rem .75rem;margin-bottom:.45rem;border-left-width:5px}
+  #m11 table.m11-conv td{padding:.1rem 0;font-size:.9rem;line-height:1.4}
+  #m11 table.m11-conv td:first-child{font-size:.93rem}
+  #m11 table.m11-conv td[data-label]:not(:first-child)::before{content:none}
+  #m11 table.m11-conv td[data-label]:not(:first-child):nth-child(2)::before{content:"\2192\00a0";display:inline;color:var(--teal);font-weight:700;font-size:inherit;text-transform:none;letter-spacing:0}
+  #m11 table.m11-conv td:nth-child(3){margin:.3rem 0;padding:.35rem .55rem;border-radius:8px;background:var(--teal-l);color:var(--navy);font-weight:600}
+  #m11 table.m11-conv td:nth-child(4){font-size:.8rem;color:var(--muted)}
+  #m11 table.m11-conv td[data-label]:not(:first-child):nth-child(4)::before{content:"Source: ";display:inline;font-size:inherit;text-transform:none;letter-spacing:0;font-weight:600}
+
+  /* ---------- recap ---------- */
+  #m11 .takeaways{padding:.85rem .95rem;margin:.4rem 0 1rem}
+  #m11 .takeaways h3{font-size:1.05rem;margin:0 0 .5rem}
+  #m11 .takeaways ol{padding-left:1.15rem;gap:.55rem}
+  #m11 .takeaways li{font-size:.93rem;line-height:1.5}
+  #m11 .practice>h2{font-size:1.2rem}
+}
+
+/* lesson 8: the four moves sit in one row */
+@media (max-width:700px){
+  #m11 .m11-t4.m11-row>.pr-tabs{grid-template-columns:repeat(4,minmax(0,1fr));gap:.3rem}
+  #m11 .m11-t4.m11-row>.pr-tabs>.pr-tab{font-size:.82rem;padding:.3rem .15rem;min-height:56px}
+  #m11 .m11-move{margin:0;padding:.65rem .85rem;border:1px solid #d3ebe8;border-left:5px solid var(--teal);border-radius:0 12px 12px 0;background:#f4fbfa;font-size:.95rem;line-height:1.45}
+  /* lesson 7: the first step is the emergency step */
+  #m11-l7 .pj-steps>li:first-child{--g:var(--red);--gl:var(--red-l)}
+}
+@media (min-width:701px){
+  #m11 .m11-t4.m11-row>.pr-tabs{grid-template-columns:repeat(4,minmax(0,1fr));max-width:36rem}
+  #m11 .m11-move{margin:0;padding:.65rem .85rem;border:1px solid #d3ebe8;border-left:5px solid var(--teal);border-radius:0 12px 12px 0;background:#f4fbfa}
+  #m11-l7 .pj-steps>li:first-child{--g:var(--red);--gl:var(--red-l)}
+}
+
+@media (max-width:360px){
+  #m11 .m11-tabs>.pr-tabs>.pr-tab{font-size:.84rem}
+  #m11 .m11-t3>.pr-tabs>.pr-tab{font-size:.78rem}
+  #m11 .hb-seg-b{font-size:.82rem}
+  #m11 .lessons>.lesson{padding:1rem .65rem 1.2rem}
+}

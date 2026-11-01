@@ -10,9 +10,13 @@
   XP.registry=XP.registry||{};
   function opt(v,l,sel){ return '<option value="'+esc(v)+'"'+(sel?' selected':'')+'>'+esc(l)+'</option>'; }
   /* One flat tool body: the lesson's closed dropdown (details.mx-tool) gives the title, so no inner card or kicker. */
-  function card(intro,body,note){
-    return '<div class="hb-tool">'+(intro?'<p class="hb-intro">'+intro+'</p>':'')+body+(note?'<p class="hb-note">'+note+'</p>':'')+'</div>';
+  function card(intro,body,note,fold){
+    /* fold: the how-to sentence sits in a small "How this tool works" dropdown (closed on phones, open on wide screens) */
+    var open=!(window.matchMedia&&window.matchMedia('(max-width:700px)').matches);
+    var i=intro?(fold?'<details class="hb-how"'+(open?' open':'')+'><summary>How this tool works</summary><p class="hb-intro">'+intro+'</p></details>':'<p class="hb-intro">'+intro+'</p>'):'';
+    return '<div class="hb-tool">'+i+body+(note?'<p class="hb-note">'+note+'</p>':'')+'</div>';
   }
+  function cardF(intro,body,note){ return card(intro,body,note,true); }
   function sel(label,cls,options){ return '<label class="hb-sel"><span>'+esc(label)+'</span><select class="'+cls+'">'+options+'</select></label>'; }
   var GRPNAME={tab:'Concerta XL-type tablets (SPS tablet group)',cap:'Ritalin XL-type capsules (SPS capsule group)',mk:'Medikinet XL (50:50)',eq:'Equasym XL (30:70)',ir:'Immediate-release methylphenidate',lis:'Lisdexamfetamine',dex:'Dexamfetamine',atx:'Atomoxetine',gua:'Guanfacine'};
   function brandOptions(selId,withNone){
@@ -57,15 +61,26 @@
     if(id==='medikinetxl') return ' Medikinet XL: the SmPC gives a mean Tmax of 2.75 h and a 3–4 h plateau at or above 75% of peak (SmPC 5.2). The model keeps the plateau, so its highest point falls later (about 3.7 h): read the plateau, not the exact peak.';
     return ''; }
   function legal(b){ return ' <span class="hb-cd'+(b.cd.indexOf('Schedule 2')>=0?' hb-cd2':'')+'">'+esc(b.cd)+'</span>'; }
+  /* Phones: a look-up shows one group at a time (css: #m11 .hb-seg, .hb-tool[data-show]). The segmented bar is drawn once
+     per tool and the tool root carries data-show. Wide screens hide the bar and show every group, as before. */
+  var FGROUPS=[['how','Release'],['take','Taking it'],['lic','Licence and swaps']];
+  function seg(groups,cur,label){
+    return '<div class="hb-seg" role="group" aria-label="'+esc(label)+'">'+groups.map(function(g){return '<button type="button" class="hb-seg-b" data-g="'+g[0]+'" aria-pressed="'+(g[0]===cur)+'">'+esc(g[1])+'</button>';}).join('')+'</div>';
+  }
+  function segBind(R,cur){
+    R.setAttribute('data-show',cur.g);
+    R.addEventListener('click',function(e){ var b=e.target.closest('.hb-seg-b'); if(!b||!R.contains(b)) return; cur.g=b.dataset.g; R.setAttribute('data-show',cur.g);
+      R.querySelectorAll('.hb-seg-b').forEach(function(x){x.setAttribute('aria-pressed',String(x.dataset.g===cur.g));}); });
+  }
   function facts(b){
-    var rows=[['How it releases',b.mech],['IR : MR',b.ratio],['Onset, peaks and duration',b.time],['Strengths',b.strengths],['Licence (SmPC 4.1, 4.2)',b.lic],['Food, swallowing and opening',b.admin],['Excipients to check',b.exc],['Can it be swapped?',b.inter]];
-    return '<dl class="hb-dl">'+rows.map(function(r){return '<div><dt>'+esc(r[0])+'</dt><dd>'+r[1]+'</dd></div>';}).join('')+'</dl><p class="hb-note">Source: '+b.src.replace(/\.\s*$/,'')+'. Starting doses, steps and BNF limits: <a href="#m5">Module 5</a>.</p>';
+    var rows=[['How it releases',b.mech,'how'],['IR : MR',b.ratio,'how'],['Onset, peaks and duration',b.time,'how'],['Strengths',b.strengths,'how'],['Licence (SmPC 4.1, 4.2)',b.lic,'lic'],['Food, swallowing and opening',b.admin,'take'],['Excipients to check',b.exc,'take'],['Can it be swapped?',b.inter,'lic']];
+    return '<dl class="hb-dl">'+rows.map(function(r){return '<div data-g="'+r[2]+'"><dt>'+esc(r[0])+'</dt><dd>'+r[1]+'</dd></div>';}).join('')+'</dl><p class="hb-note">Source: '+b.src.replace(/\.\s*$/,'')+'. Starting doses, steps and BNF limits: <a href="#m5">Module 5</a>.</p>';
   }
   XP.registry.brand=function(m){
-    var S={a:'concerta',b:'ritalinxl'};
-    m.innerHTML=card('Choose a product to see how it releases, how it is taken, what is in it, its licence and what it can be swapped with. Add a second product to overlay its release curve.',
+    var S={a:'concerta',b:'ritalinxl',g:'take'};
+    m.innerHTML=cardF('Choose a product to see how it releases, how it is taken, what is in it, its licence and what it can be swapped with. Add a second product to overlay its release curve.',
       '<div class="hb-row">'+sel('Product','hb-a',brandOptions(S.a))+sel('Compare with','hb-b',brandOptions(S.b,true))+'</div>'
-      +'<div class="hb-chart"></div><div class="hb-legend" aria-hidden="true"></div><div class="hb-facts" aria-live="polite"></div>',
+      +seg(FGROUPS,S.g,'Which facts to show')+'<div class="hb-chart"></div><div class="hb-legend" aria-hidden="true"></div><div class="hb-facts" aria-live="polite"></div>',
       'The curves are a schematic teaching model fitted to the timings in each SmPC section 5.2 and the SPS durations. Each curve is scaled to its own peak, so compare <em>timing and shape</em>, not height or dose. Not pharmacokinetic data; responses vary from person to person (NG87 1.7.21).');
     var R=m.firstChild, sa=R.querySelector('.hb-a'), sb=R.querySelector('.hb-b');
     function render(){
@@ -77,6 +92,7 @@
       R.querySelector('.hb-legend').innerHTML=(A.model?'<span><i style="background:'+C_A+'"></i>'+esc(A.name)+': peaks at '+pkTxt(S.a)+'</span>':'')+(Bp&&Bp.model?'<span><i class="dash" style="border-color:'+C_B+'"></i>'+esc(Bp.name)+': peaks at '+pkTxt(S.b)+'</span>':'')+((A.model||(Bp&&Bp.model))?'<span class="hb-lnote">Peak times come from the teaching model; the SmPC timings are in the facts below.'+CAVEAT(S.a)+(Bp?CAVEAT(S.b):'')+'</span>':'');
       R.querySelector('.hb-facts').innerHTML='<h4 class="hb-h">'+esc(A.name)+legal(A)+'</h4>'+facts(A)+(Bp?'<details class="hb-cmp"><summary>Show '+esc(Bp.name)+' details</summary><h4 class="hb-h">'+esc(Bp.name)+legal(Bp)+'</h4>'+facts(Bp)+'</details>':'');
     }
+    segBind(R,S);
     sa.addEventListener('change',render); sb.addEventListener('change',render); render();
   };
 
@@ -148,7 +164,7 @@
     return {tone:tone,badge:badgeTxt,head:head,html:'<ul>'+out.join('')+'</ul>'};
   }
   XP.registry.switcher=function(m){
-    m.innerHTML=card('Choose the current product and dose, then the product you are considering. The planner applies the SmPC conversion tables and the SPS bioequivalence groups, and says plainly when there is <em>no</em> conversion.',
+    m.innerHTML=cardF('Choose the current product and dose, then the product you are considering. The planner applies the SmPC conversion tables and the SPS bioequivalence groups, and says plainly when there is <em>no</em> conversion.',
       '<div class="hb-row">'+sel('Current product','sw-f',brandOptions('ritalin'))+sel('Dose','sw-d','')+'<label class="hb-sel sw-fq-l"><span>Times a day</span><select class="sw-fq">'+opt('2','Twice daily',false)+opt('3','Three times daily',true)+'</select></label>'+sel('Switch to','sw-t',brandOptions('concerta'))+'</div>'
       +'<div class="hb-state" aria-live="polite"><span class="hb-bslot"></span><h4 class="hb-head"></h4></div><div class="hb-text sw-out"></div>',
       'A teaching aid, not a prescribing tool. Every change of a Schedule 2 product needs a new prescription, a counselling conversation and follow-up.');
@@ -241,7 +257,7 @@
   }
   XP._missed=missed; XP._MD=MD; XP._WHEN=WHEN;
   XP.registry.missed=function(m){
-    m.innerHTML=card('Pick the medicine and when the dose was remembered. The advice quotes the SmPC where it gives a rule, and says plainly where it does not.',
+    m.innerHTML=cardF('Pick the medicine and when the dose was remembered. The advice quotes the SmPC where it gives a rule, and says plainly where it does not.',
       '<div class="hb-row">'+sel('Medicine','md-p',MD.map(function(x,i){return opt(x.id,x.l,i===0);}).join(''))+sel('Remembered','md-w',WHEN.map(function(x,i){return opt(x.v,x.l,i===1);}).join(''))+'</div>'
       +'<div class="hb-state" aria-live="polite"><span class="hb-bslot"></span><h4 class="hb-head"></h4></div><div class="hb-text md-out"></div>',
       'Each line cites the SmPC of that product only. Where the SmPC is silent, advice is labelled <em>General principle</em> or <em>Practical judgement</em>. Agree individual cut-off times with the prescriber in advance.');
@@ -277,14 +293,16 @@
       smpc:'Stimulant SmPCs 4.3 list cardiovascular contraindications (for example Elvanse: symptomatic cardiovascular disease, advanced arteriosclerosis, moderate to severe hypertension). Atomoxetine: severe cardiovascular or cerebrovascular disorders are contraindicated (4.3). Guanfacine lowers BP and pulse; taper to stop (4.2, 4.4).',
       ph:'Check BP and pulse when asked and refer sustained abnormal readings; advise against decongestant cold remedies with stimulants or atomoxetine (Module 7).'}
   };
+  var CGROUPS=[['ng','NICE NG87'],['smpc','SmPC'],['ph','In practice']];
   XP.registry.comorb=function(m){
     var keys=Object.keys(CO);
-    m.innerHTML=card('Tap a condition. Each panel separates what NICE recommends, what the SmPC warns and what you do in practice, so you can see where each piece of advice comes from.',
-      '<div class="hb-chips co-chips" role="group" aria-label="Condition">'+keys.map(function(k,i){return '<button type="button" class="hb-chip" data-k="'+k+'" aria-pressed="'+(i===0)+'">'+esc(CO[k].l)+'</button>';}).join('')+'</div><div class="co-out" aria-live="polite"></div>',
+    m.innerHTML=cardF('Tap a condition. Each panel separates what NICE recommends, what the SmPC warns and what you do in practice, so you can see where each piece of advice comes from.',
+      '<div class="hb-chips co-chips" role="group" aria-label="Condition">'+keys.map(function(k,i){return '<button type="button" class="hb-chip" data-k="'+k+'" aria-pressed="'+(i===0)+'">'+esc(CO[k].l)+'</button>';}).join('')+'</div>'+seg(CGROUPS,'ng','Which source to show')+'<div class="co-out" aria-live="polite"></div>',
       'NICE references are to NG87 (live text checked Oct 2026). SmPC statements come from the products in lesson 1.');
-    var R=m.firstChild;
+    var R=m.firstChild, cs={g:'ng'};
     function show(k){ var c=CO[k]; R.querySelectorAll('.co-chips .hb-chip').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.k===k));});
-      R.querySelector('.co-out').innerHTML='<div class="hb-boxes"><div class="hb-box hb-b-nice"><h5>NICE NG87</h5><div>'+c.ng+'</div></div><div class="hb-box hb-b-smpc"><h5>SmPC</h5><div>'+c.smpc+'</div></div><div class="hb-box hb-b-act"><h5>In practice</h5><div>'+c.ph+'</div></div></div>'; }
+      R.querySelector('.co-out').innerHTML='<div class="hb-boxes"><div class="hb-box hb-b-nice" data-g="ng"><h5>NICE NG87</h5><div>'+c.ng+'</div></div><div class="hb-box hb-b-smpc" data-g="smpc"><h5>SmPC</h5><div>'+c.smpc+'</div></div><div class="hb-box hb-b-act" data-g="ph"><h5>In practice</h5><div>'+c.ph+'</div></div></div>'; }
+    segBind(R,cs);
     R.querySelector('.co-chips').addEventListener('click',function(e){ var b=e.target.closest('.hb-chip'); if(b) show(b.dataset.k); });
     show(keys[0]);
   };
