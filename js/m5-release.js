@@ -3,6 +3,10 @@
    side panel), and a time cursor (drag or tap the chart, or use the arrow keys) shows which part is working.
    Shapes come from the shared release model (js/release-model.js, also used by the lesson 4 day builder) and heights
    are relative. Timings and durations in the text, and the "lasts" bars, are from the SmPCs and SPS (28 Aug 2025).
+   Corrected 1 Nov 2026 against the SmPCs, SPS and MHRA: IR lasts "up to about 4 hours"; the second peak of the Ritalin XL
+   group is 5-7 hours after the dose (SPS rounds it to 4); Concerta XL's 12 hours comes from the children's studies and
+   its 22:78 split from SPS; the acid-reducing medicines are contraindications in the Medikinet XL SmPC, which gives no
+   mechanism; adults take Medikinet XL as two doses, so it has an adult two-dose mode like the IR "Add a 12:00 dose".
    Markup: an empty [data-rp] box; this script builds everything inside it. */
 (function () {
   'use strict';
@@ -13,16 +17,17 @@
   var COL = { ir: ['#a8432e', '#e8bcb1'], b8: ['#2f6fb3', '#b9d1ec'], h12: ['#0b6664', '#a3d5cf'], lis: ['#6b4fa3', '#d5c9ec'] };
   var P = {
     ir: {
-      chip: 'IR tablets', tag: 'all at once', name: 'Immediate-release tablets', fam: 'ir', model: 'ir', split: [100, 0], lasts: 4, lastsTxt: 'about 4 hours',
+      chip: 'IR tablets', tag: 'all at once', name: 'Immediate-release tablets', fam: 'ir', model: 'ir', split: [100, 0], lasts: 4, lastsTxt: 'up to about 4 hours',
+      dose2: { label: 'Add a 12:00 dose', w: [1, 1], end: 4, lab: 'up to 4 h each', of: 'one dose’s highest point' },
       inside: 'A plain tablet: the whole dose is released at once.',
       moments: [
         { k: 'p1', t: 'Peak at 1–2 hours', d: 'Levels rise quickly and peak 1–2 hours after the dose.' },
-        { k: 'end', t: 'Gone after about 4 hours', d: 'The effect wears off by late morning, so the afternoon needs a second dose.' }
+        { k: 'end', t: 'Worn off by about 4 hours', d: 'The effect lasts up to about 4 hours and wears off by late morning, so the afternoon needs a second dose.' }
       ],
       moments2: [
-        { k: 'p1', t: 'Peak at 1–2 hours', d: 'The breakfast dose peaks 1–2 hours later and lasts about 4 hours.' },
+        { k: 'p1', t: 'Peak at 1–2 hours', d: 'The breakfast dose peaks 1–2 hours later and lasts up to about 4 hours.' },
         { k: 'p2', t: 'Second dose at 12:00', d: 'A lunchtime dose gives a second peak and covers the afternoon.' },
-        { k: 'end', t: 'Gone by about 16:00', d: 'About 4 hours after the second dose the effect has gone, before homework.' }
+        { k: 'end', t: 'Worn off by about 16:00', d: 'Up to about 4 hours after the second dose the effect has worn off, before homework.' }
       ],
       practice: ['A lunchtime dose means a controlled drug at school or work.', 'Flexible: useful while finding the dose, and as a later top-up.', 'Give the last dose at least 4 hours before bedtime.'],
       brands: 'Ritalin tablets (children and adults), Medikinet tablets and generic tablets (children only).',
@@ -42,13 +47,20 @@
     },
     mk: {
       chip: 'Medikinet XL', tag: '50:50 · with food', name: 'Medikinet XL capsules', fam: 'b8', model: 'mk', split: [50, 50], lasts: 8, lastsTxt: 'about 8 hours',
-      inside: 'A capsule of beads: 50% release at once; the other 50% are coated and release only after they leave the stomach.',
+      dose2: { label: 'Adult pattern: two doses (07:30 and 12:00)', w: [0.5, 0.5], end: 8, lab: 'about 8 h after each dose', of: 'the highest point of the whole daily amount taken at once' },
+      inside: 'A capsule of beads: 50% are released at once and the other 50% are a modified-release part that works later.',
       moments: [
         { k: 'p1', t: 'Strong start', d: 'Half the dose works at once, so the morning effect is strong, like an IR tablet.' },
         { k: 'p2', t: 'Second rise about 3 hours later', d: 'The coated half keeps levels at 75% of the peak or more for 3–4 hours.' },
         { k: 'end', t: 'Gone after about 8 hours', d: 'A 07:30 dose fades around 15:30.' }
       ],
-      practice: ['Must be taken with or after food: on an empty stomach it can release too much at once, giving a high peak and a shorter effect.', 'Acid-reducing medicines (PPIs, H2 blockers, antacids) can do the same, so they must not be taken with it.'],
+      moments2: [
+        { k: 't', h: 1.4, t: 'Strong start', d: 'Half of the morning dose works at once.' },
+        { k: 't', h: 3.3, t: 'Second rise about 3 hours later', d: 'The coated half keeps levels at 75% of the peak or more for 3–4 hours.' },
+        { k: 't', h: 6.4, t: 'Lunchtime dose at 12:00', d: 'The second half of the daily amount starts a second round of the same shape.' },
+        { k: 'end', t: 'Gone about 8 hours after lunch', d: 'The lunchtime dose fades around 20:00.' }
+      ],
+      practice: ['Must be taken with or after food. On an empty stomach it is absorbed much faster and release may not be sustained, so the peak is higher and the effect shorter.', 'Children take one dose with or after breakfast. Adults take it as two doses, morning and lunchtime, with or after meals: try the adult pattern above.', 'A PPI, an H2 blocker, an antacid and pronounced anacidity of the stomach are listed as contraindications in the SmPC. It does not say why.'],
       brands: 'Ambinet XL has the same 50:50, with-food design but is not interchangeable. Medikinet XL is not fully bioequivalent with the Ritalin XL group, so switch between them only with particular care.',
       strengths: '5, 10, 20, 30, 40, 50, 60 mg.'
     },
@@ -57,7 +69,7 @@
       inside: 'Equal amounts of immediate-release beads and delayed-release beads; the delayed beads dissolve after about 4 hours.',
       moments: [
         { k: 'p1', t: 'First peak at 1–2 hours', d: 'The immediate beads work like a breakfast IR dose.' },
-        { k: 'p2', t: 'Second peak at 5–7 hours', d: 'The delayed beads work like a built-in lunchtime dose: two distinct peaks about 4 hours apart.' },
+        { k: 'p2', t: 'Second peak at 5–7 hours', d: 'The delayed beads work like a built-in lunchtime dose: two distinct peaks about 4 hours apart. The SmPCs put the second peak 5–7 hours after the dose; SPS rounds it to 4 hours (4–5 for Focusim XL).' },
         { k: 'end', t: 'Gone after about 8 hours', d: 'A 07:30 dose fades around 15:30.' }
       ],
       practice: ['It copies IR at breakfast and lunch, without a dose at school or work.', 'With or without food. The capsule can be opened onto cool soft food.'],
@@ -66,14 +78,14 @@
     },
     oros: {
       chip: 'Concerta XL', tag: '22:78', name: 'Concerta XL tablets', fam: 'h12', model: 'oros', split: [22, 78], lasts: 12, lastsTxt: 'about 12 hours',
-      inside: 'An osmotic tablet: a coat holding 22% dissolves at once, and the core releases the other 78% gradually.',
+      inside: 'An osmotic tablet: a coat releases part of the dose at once (22%, the SPS figure; the SmPC gives no percentage) and the core releases the rest (78%) gradually.',
       moments: [
         { k: 'p1', t: 'Small first rise at 1–2 hours', d: 'Only about a fifth works straight away, so the first lesson or meeting can feel slow.' },
-        { k: 'p2', t: 'Peak at 6–8 hours', d: 'The core keeps releasing, so levels keep climbing into the afternoon.' },
-        { k: 'end', t: 'Gone after about 12 hours', d: 'A 07:30 dose covers homework and fades around 19:30.' }
+        { k: 'p2', t: 'Peak at 6–8 hours', d: 'The core keeps releasing, so levels keep climbing into the afternoon. This is the adult figure; in children aged 7–12 the SmPC gives a later mean peak, 8.1 to 9.4 hours.' },
+        { k: 'end', t: 'Gone after about 12 hours', d: 'In the children’s studies the effect was kept up to 12 hours, so a 07:30 dose covers homework and fades around 19:30.' }
       ],
       practice: ['Swallow whole: never chew, divide or crush, or the slow release is lost.', 'It may still be working in the evening: ask about sleep.'],
-      brands: 'Affenid XL, Atenza XL, Delmosart, Matoride XL, Xaggitin XL and Xenidate XL are bioequivalent: they can be swapped at the same dose and quantity. Delmosart and Xaggitin XL release 25:75. Kixel XL has the same timings but is not on the bioequivalence list.',
+      brands: 'Affenid XL, Atenza XL, Delmosart, Matoride XL, Xaggitin XL and Xenidate XL are bioequivalent: they can be swapped at the same dose and quantity. SPS gives Delmosart and Xaggitin XL as 25:75. Kixel XL has the same timings but is not on the bioequivalence list.',
       strengths: '18, 27, 36, 54 mg (Atenza XL also 45 mg; Matoride XL 18, 36, 54 mg).'
     },
     lis: {
@@ -103,17 +115,18 @@
     var id = key + (ir2 ? '+' : '');
     if (seriesCache[id]) return seriesCache[id];
     var p = P[key], m = RM.MODEL[p.model], span = H1 - DOSE + 0.5, DT = RM.DT;
+    if (ir2 && !p.dose2) ir2 = false;
     var single = RM.curve(p.model, null, span), peak = 0;
     for (var i = 0; i < single.length; i++) if (single[i] > peak) peak = single[i];
     var raws = [];
-    if (ir2) raws = [{ a: single, at: DOSE }, { a: single, at: IR2 }];
+    if (ir2) raws = [{ a: single, at: DOSE, w: p.dose2.w[0] }, { a: single, at: IR2, w: p.dose2.w[1] }];
     else if (m.comps.length > 1) raws = m.comps.map(function (c, j) { return { a: RM.curve(p.model, j, span), at: DOSE }; });
     else raws = [{ a: single, at: DOSE }];
     var t = [], parts = raws.map(function () { return []; }), total = [];
     for (var h = H0; h <= H1 + 1e-9; h += STEP) {
       var sum = 0;
       raws.forEach(function (r, j) {
-        var k = Math.round((h - r.at) / DT), v = k < 0 || k >= r.a.length ? 0 : r.a[k] / peak;
+        var k = Math.round((h - r.at) / DT), v = k < 0 || k >= r.a.length ? 0 : r.a[k] / peak * (r.w == null ? 1 : r.w);
         parts[j].push(v); sum += v;
       });
       t.push(+h.toFixed(2)); total.push(sum);
@@ -145,7 +158,7 @@
         '<div class="rp-read" aria-live="polite"></div>' +
         '<div class="rp-opts">' +
           '<label class="rp-tg rp-tg-parts"><input type="checkbox" checked> Show the two parts</label>' +
-          '<label class="rp-tg rp-tg-ir2" hidden><input type="checkbox"> Add a 12:00 dose</label>' +
+          '<label class="rp-tg rp-tg-ir2" hidden><input type="checkbox"> <span>Add a 12:00 dose</span></label>' +
           '<label class="rp-cmp">Compare with <select><option value="">Nothing</option>' + ORDER.map(function (k) { return '<option value="' + k + '">' + esc(P[k].chip) + '</option>'; }).join('') + '</select></label>' +
         '</div>' +
         '<p class="rp-note">Schematic: the shapes follow the timings in the product information. Heights are relative, not blood levels, and real responses vary.</p>' +
@@ -155,9 +168,11 @@
     var wrap = q('.rp-chart'), svg = q('.rp-svg'), read = q('.rp-read'), panel = q('.rp-panel');
     var tgParts = q('.rp-tg-parts input'), tgIr2 = q('.rp-tg-ir2 input'), cmpSel = q('.rp-cmp select');
 
-    function moments() { var p = P[S.k]; return S.k === 'ir' && S.ir2 ? p.moments2 : p.moments; }
+    function two() { return !!(S.ir2 && P[S.k].dose2); }   /* the product shown with its second dose at 12:00 */
+    function moments() { var p = P[S.k]; return two() ? p.moments2 : p.moments; }
     function momentAt(m, d) {   /* clock hour of a moment */
-      if (m.k === 'end') return S.k === 'ir' && S.ir2 ? IR2 + 4 : DOSE + P[S.k].lasts;
+      if (m.k === 'end') return two() ? IR2 + P[S.k].dose2.end : DOSE + P[S.k].lasts;
+      if (m.h != null) return DOSE + m.h;
       var pk = d.peaks[m.k === 'p1' ? 0 : 1];
       return pk == null ? DOSE + 1 : d.t[pk];
     }
@@ -207,7 +222,7 @@
       });
       for (var g = 9; g <= 21; g += 3) s += '<line x1="' + X(g) + '" x2="' + X(g) + '" y1="' + PT + '" y2="' + base + '" stroke="#dfe6ee" stroke-dasharray="2 4"/>';
       /* dose lines */
-      var doses = S.k === 'ir' && S.ir2 ? [DOSE, IR2] : [DOSE];
+      var doses = two() ? [DOSE, IR2] : [DOSE];
       doses.forEach(function (h, i) {
         s += '<line x1="' + X(h) + '" x2="' + X(h) + '" y1="' + (PT - 2) + '" y2="' + base + '" stroke="#16324f" stroke-width="1.5" stroke-dasharray="4 3"/>';
         s += '<text x="' + (X(h) + (i ? -4 : 4)) + '" y="' + (PT + 10) + '" class="rp-dl"' + (i ? ' text-anchor="end"' : '') + '>' + (i ? '2nd dose' : 'Dose') + '</text>';
@@ -255,10 +270,11 @@
       s += '<line x1="' + ML + '" x2="' + (W - MR) + '" y1="' + base + '" y2="' + base + '" stroke="#9aa8b6" stroke-width="1.5"/>';
       for (var a = 6; a <= 21; a += 3) s += '<text x="' + X(a) + '" y="' + (base + 17) + '" class="rp-ax">' + clock(a) + '</text>';
       /* how long it lasts (from the product information, not the curve) */
-      var by = base + 26, BH = 15, segs = S.k === 'ir' && S.ir2 ? [[DOSE, DOSE + 4], [IR2, IR2 + 4]] : [[DOSE, DOSE + p.lasts]];
+      var by = base + 26, BH = 15, segs = [[DOSE, DOSE + p.lasts]];
+      if (two()) { var de = p.dose2.end; segs = IR2 < DOSE + de ? [[DOSE, IR2 + de]] : [[DOSE, DOSE + de], [IR2, IR2 + de]]; }
       segs.forEach(function (g2) { s += '<rect x="' + X(g2[0]) + '" y="' + by + '" width="' + (X(Math.min(H1, g2[1])) - X(g2[0])) + '" height="' + BH + '" rx="7.5" fill="' + c[0] + '"/>'; });
       if (S.k === 'lis') s += '<rect x="' + X(DOSE + 13) + '" y="' + by + '" width="' + (X(DOSE + 14) - X(DOSE + 13)) + '" height="' + BH + '" rx="7.5" fill="' + c[1] + '"/>';
-      var lab = 'Lasts ' + (S.k === 'lis' ? '13–14 h' : (S.k === 'ir' && S.ir2 ? 'about 4 h each' : 'about ' + p.lasts + ' h'));
+      var lab = 'Lasts ' + (S.k === 'lis' ? '13–14 h' : two() ? p.dose2.lab : S.k === 'ir' ? 'up to 4 h' : 'about ' + p.lasts + ' h');
       var tw = lab.length * 6.6, x0 = X(segs[0][0]), w0 = X(Math.min(H1, segs[0][1])) - x0, x1 = X(Math.min(H1, segs[segs.length - 1][1]));
       if (w0 >= tw + 16) s += '<text x="' + (x0 + 8) + '" y="' + (by + 11.5) + '" class="rp-ll rp-lli">' + lab + '</text>';
       else if (x1 + 8 + tw <= W - 2) s += '<text x="' + (x1 + 8) + '" y="' + (by + 11.5) + '" class="rp-ll">' + lab + '</text>';
@@ -277,7 +293,7 @@
     function readout() {
       var p = P[S.k], c = COL[p.fam], d = series(S.k, S.ir2), i = idxOf(S.cur), tot = d.total[i];
       var head = '<b class="rp-rt">' + clock(S.cur) + '</b><span class="rp-ra">' + (S.cur < DOSE ? 'before the dose' : after(S.cur).replace('the dose', S.ir2 ? 'the first dose' : 'the dose')) + '</span>';
-      var body, of = S.ir2 ? 'one dose’s highest point' : 'its highest point';
+      var body, of = two() ? p.dose2.of : 'its highest point';
       if (S.cur < DOSE) body = '<span class="rp-rn">Nothing taken yet.</span>';
       else if (tot < 0.02) body = '<span class="rp-rn">' + (S.cur < DOSE + 1 ? 'Just taken: not absorbed yet.' : 'Almost nothing left.') + '</span>';
       else if (d.parts.length > 1) {
@@ -291,9 +307,9 @@
 
     function setProduct(k) {
       S.k = k; S.mo = -1;
-      if (k !== 'ir') S.ir2 = false;
+      S.ir2 = false;
       picks.forEach(function (b) { var on = b.dataset.k === k; b.setAttribute('aria-pressed', on ? 'true' : 'false'); b.classList.toggle('on', on); });
-      q('.rp-tg-ir2').hidden = k !== 'ir'; tgIr2.checked = S.ir2;
+      var d2 = P[k].dose2; q('.rp-tg-ir2').hidden = !d2; if (d2) q('.rp-tg-ir2 span').textContent = d2.label; tgIr2.checked = false;
       var single = !P[k].split || P[k].split[1] === 0;
       tgParts.disabled = single; q('.rp-tg-parts').classList.toggle('off', single);
       Array.prototype.forEach.call(cmpSel.options, function (o) { o.disabled = o.value === k; });
