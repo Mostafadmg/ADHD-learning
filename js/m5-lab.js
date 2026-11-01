@@ -319,8 +319,8 @@
       var head = '<b class="ml-rt">' + fmtX(h, sp.x.fmt) + '</b><span class="ml-ra">' + (h < S.t0 ? 'before the dose' : hrs(h - S.t0) + ' after the dose') + '</span>';
       var rows = sp.series.map(function (s, j) {
         var v = Math.round(d.v[j][i] * 100);
-        return '<span class="ml-rv"><i class="' + (s.dashed ? 'ml-dash' : '') + '" style="' + (s.dashed ? 'border-color:' + s.color : 'background:' + s.color) + '"></i>' + (sp.series.length > 1 ? esc(s.label) + ': ' : 'Level: ') + '<b>' + v + '%</b> of the highest point shown</span>';
-      }).join('');
+        return '<span class="ml-rv"><i class="' + (s.dashed ? 'ml-dash' : '') + '" style="' + (s.dashed ? 'border-color:' + s.color : 'background:' + s.color) + '"></i><span>' + (sp.series.length > 1 ? esc(s.label) + ': ' : 'Level: ') + '<b>' + v + '%</b></span></span>';
+      }).join('') + '<span class="ml-rn">Levels are percentages of the highest point shown on the chart.</span>';
       var end = p.lasts ? '<span class="ml-rn">From the product information the effect lasts ' + esc(p.lastsTxt || 'about ' + p.lasts + ' h') + ', so a first dose at ' + clock(S.t0) + ' wears off around ' + clock(S.t0 + p.lasts) +
         (T.bedtime != null && S.t0 + p.lasts > T.bedtime ? ': <b>after the ' + clock(T.bedtime) + ' bedtime marker</b>.' : '.') + '</span>' : '';
       read.innerHTML = head + rows + end;
@@ -407,7 +407,7 @@
         txt = '<b>' + (sp.x.unit === 'day' ? 'Day ' : 'Week ') + h + ':</b> ' + (st ? esc(sp.read ? sp.read(h, st) : st.v + ' ' + (sp.y.label || '')) : '');
       } else {
         var i = idxOf(sp, h);
-        txt = '<b>' + fmtX(h, sp.x.fmt) + '</b> ' + sp.series.map(function (s, j) { return '<span class="ml-rv"><i class="' + (s.dashed ? 'ml-dash' : '') + '" style="' + (s.dashed ? 'border-color:' + s.color : 'background:' + s.color) + '"></i>' + esc(s.label.split(':')[0]) + ' <b>' + Math.round(sp.data.v[j][i] * 100) + '%</b></span>'; }).join('');
+        txt = '<b>' + fmtX(h, sp.x.fmt) + '</b> ' + sp.series.map(function (s, j) { return '<span class="ml-rv"><i class="' + (s.dashed ? 'ml-dash' : '') + '" style="' + (s.dashed ? 'border-color:' + s.color : 'background:' + s.color) + '"></i><span>' + esc(s.label.split(':')[0]) + ' <b>' + Math.round(sp.data.v[j][i] * 100) + '%</b></span></span>'; }).join('');
       }
       ct.hidden = false; ct.innerHTML = txt;
     }

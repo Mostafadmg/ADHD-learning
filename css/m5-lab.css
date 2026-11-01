@@ -39,7 +39,8 @@
 .ml-cur{stroke:#16324f;stroke-width:1.5;opacity:.55}
 .ml-leg{display:flex;flex-wrap:wrap;gap:.3rem 1rem;margin:.5rem 0 0;font-size:.82rem;color:var(--ink)}
 .ml-leg[hidden]{display:none}
-.ml-leg span,.ml-rv{display:inline-flex;align-items:center;gap:.4rem}
+.ml-leg span,.ml-rv{display:inline-flex;align-items:baseline;gap:.4rem}
+.ml-rv>i{align-self:center}
 .ml-leg i,.ml-rv i{display:inline-block;width:14px;height:8px;border-radius:4px;flex:none}
 i.ml-dash{height:0;width:16px;border-top:3px dashed;border-radius:0;background:none!important}
 
