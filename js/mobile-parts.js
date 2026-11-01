@@ -8,6 +8,8 @@
    to an element (search results, "reread this step", case links, #anchors) opens the part that holds it first. */
 (function () {
   'use strict';
+  /* index.html?noparts#m5 turns this off (used to measure a lesson's full length) */
+  if (/[?&]noparts\b/.test(location.search)) { window.__partsInfo = function () { return null; }; window.__partsNext = function () { return false; }; return; }
   var mq = window.matchMedia ? window.matchMedia('(max-width:700px)') : { matches: false };
   var S = new WeakMap();             /* lesson -> { parts:[[el...]], shown:n, btns:[] } */
   var planned = [];                  /* lessons that have been cut up (so they can be put back) */
