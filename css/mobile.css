@@ -125,3 +125,8 @@ html.sheet-open{overflow:hidden}
 .pt-all{display:block;margin:.2rem auto 0;min-height:44px;padding:.4rem 1rem;border:0;background:none;color:var(--muted);font-size:.88rem;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 @media print{.lesson .pt-off{display:block!important}.pt-more,.pt-all{display:none!important}}
 @media (min-width:701px){.pt-more,.pt-all{display:none!important}}
+
+/* narrow phones: evidence groups never ask for more than the screen has */
+@media (max-width:480px){
+  #main .ev-group ul{grid-template-columns:minmax(0,1fr)}
+}

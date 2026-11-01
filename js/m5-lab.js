@@ -99,7 +99,7 @@
 
     function geom(W, S) {
       var narrow = W < 460;
-      return { W: W, H: narrow ? 236 : 292, ML: 22, MR: 22, PT: S.bands && S.bands.length ? 30 : 16, PB: S.lasts ? 58 : 32 };
+      return { W: W, H: narrow ? 250 : 292, ML: 22, MR: 22, PT: S.bands && S.bands.length ? 30 : 16, PB: S.lasts ? (W < 400 ? 72 : 58) : 32 };
     }
     function drawDay() {
       var S = C.spec, W = Math.max(250, wrap.clientWidth || 300), g = geom(W, S), PH = g.H - g.PT - g.PB, PW = W - g.ML - g.MR;
@@ -158,7 +158,8 @@
         s += '<rect x="' + x0 + '" y="' + by + '" width="' + Math.max(2, x1 - x0) + '" height="15" rx="7.5" fill="' + col + '"/>';
         if (x1 - x0 >= tw + 16) s += '<text x="' + (x0 + 8) + '" y="' + (by + 11.5) + '" class="ml-ll ml-lli">' + esc(lab) + '</text>';
         else if (x1 + 8 + tw <= W - 2) s += '<text x="' + (x1 + 8) + '" y="' + (by + 11.5) + '" class="ml-ll">' + esc(lab) + '</text>';
-        else s += '<text x="' + (x0 - 6) + '" y="' + (by + 11.5) + '" class="ml-ll" text-anchor="end">' + esc(lab) + '</text>';
+        else if (x0 - 6 - tw >= 2) s += '<text x="' + (x0 - 6) + '" y="' + (by + 11.5) + '" class="ml-ll" text-anchor="end">' + esc(lab) + '</text>';
+        else s += '<text x="' + g.ML + '" y="' + (by + 30) + '" class="ml-ll">' + esc(lab) + '</text>';   /* no room beside the bar: put the words under it */
       }
       svg.setAttribute('viewBox', '0 0 ' + W + ' ' + g.H); svg.setAttribute('width', W); svg.setAttribute('height', g.H);
       svg.innerHTML = '<title>' + esc(S.title || 'Chart') + '</title>' + s;
