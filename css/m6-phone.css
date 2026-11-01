@@ -1,0 +1,237 @@
+/* Module 6 (Monitoring, annual review & shared care): phone-first lesson design.
+   Loaded after css/mobile.css and scoped to #m6. Goals at 375px: each lesson reads in about two screens, the first
+   screen shows the point of the lesson, depth is folded (details.mx) or stepped (steppers and tabs), and every
+   control is at least 44px tall. Nothing here changes the words of a lesson. */
+
+/* ------------------------------------------------------------------ new small components (all widths) */
+
+/* "one thing at a time": medicine rows inside tab panels and stepper panels. Colour = the medicine class. */
+#m6 .m6-med{display:grid;gap:.45rem;margin:.1rem 0 .6rem}
+#m6 .m6-med-r{border-left:5px solid var(--c);background:var(--cl);border-radius:0 12px 12px 0;padding:.6rem .8rem}
+#m6 .m6-med-n{display:block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--c)}
+#m6 .m6-med-r p{margin:.15rem 0 0;font-size:.95rem;line-height:1.5;max-width:none}
+#m6 .m6-s{--c:#0b6664;--cl:#e3f4f3}
+#m6 .m6-a{--c:#2f6fb3;--cl:#e8f0fa}
+#m6 .m6-g{--c:#7a4fa8;--cl:#f1ebf8}
+#m6 .m6-key{font-size:.92rem;line-height:1.5;color:var(--muted);margin:.4rem 0 .7rem;max-width:none}
+#m6 .m6-key b{color:var(--navy)}
+
+/* two outcomes of a decision (green = fine, amber = act) */
+#m6 .m6-ways{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin:.1rem 0 .8rem}
+#m6 .m6-way{border-radius:12px;padding:.7rem .85rem;background:var(--wl);border-left:5px solid var(--wc)}
+#m6 .m6-ok{--wc:var(--green);--wl:var(--green-l)}
+#m6 .m6-go{--wc:var(--amber);--wl:var(--amber-l)}
+#m6 .m6-wt{display:inline-block;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#fff;background:var(--wc);border-radius:999px;padding:.12rem .65rem;margin-bottom:.35rem}
+#m6 .m6-way b{display:block;color:var(--navy)}
+#m6 .m6-way p{margin:.25rem 0 0;font-size:.93rem;line-height:1.5;max-width:none}
+
+/* compare card: NICE against the two SmPCs */
+#m6 .m6-cmp{border:1px solid #f3e2b8;border-radius:14px;background:#fff;margin:1rem 0;overflow:hidden}
+#m6 .m6-cmp-h{margin:0;padding:.65rem .9rem;font-size:1rem;line-height:1.3;background:var(--amber-l);color:var(--navy)}
+#m6 .m6-cr{padding:.6rem .9rem;border-left:5px solid var(--c);border-top:1px solid #eef2f6}
+#m6 .m6-cr p{margin:0;font-size:.95rem;line-height:1.5;max-width:none}
+#m6 .m6-cr-n{--c:var(--teal)}
+#m6 .m6-cr-m{--c:#e3b341}
+#m6 .m6-cr-g{--c:#3b6fb6}
+#m6 .m6-cmp-f{margin:0;padding:.6rem .9rem;font-weight:600;color:var(--navy);background:#f7f9fb;border-top:1px solid #eef2f6;max-width:none}
+
+/* tick-list for "what each person does" */
+#m6 .m6-ticks{list-style:none;margin:.2rem 0 .3rem;padding:0;display:grid;gap:.35rem}
+#m6 .m6-ticks li{position:relative;margin:0;max-width:none;padding:.45rem .6rem .45rem 2.05rem;border-radius:10px;background:#f7f9fb;font-size:.95rem;line-height:1.45}
+#m6 .m6-ticks li::before{content:"";position:absolute;left:.75rem;top:.78rem;width:.6rem;height:.32rem;border-left:2.5px solid var(--teal);border-bottom:2.5px solid var(--teal);transform:rotate(-45deg)}
+
+/* the order of a monitoring visit: four tiles, built from the checklist's own groups */
+#m6 .m6-visit{list-style:none;margin:.6rem 0 1rem;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.5rem;counter-reset:v}
+#m6 .m6-visit li{counter-increment:v;position:relative;display:flex;flex-direction:column;gap:.15rem;margin:0;max-width:none;padding:.65rem .75rem .7rem 3rem;border-radius:12px;background:var(--gl);border-left:5px solid var(--g)}
+#m6 .m6-visit li::before{content:counter(v);position:absolute;left:.7rem;top:.62rem;width:28px;height:28px;border-radius:50%;background:var(--g);color:#fff;display:grid;place-items:center;font-weight:700;font-size:.9rem}
+#m6 .m6-visit b{color:var(--navy);font-size:1rem}
+#m6 .m6-visit span{font-size:.85rem;line-height:1.35;color:var(--ink)}
+#m6 .m6-visit li:nth-child(1){--g:#0b6664;--gl:#e3f4f3}
+#m6 .m6-visit li:nth-child(2){--g:#2f6fb3;--gl:#e8f0fa}
+#m6 .m6-visit li:nth-child(3){--g:#7a4fa8;--gl:#f1ebf8}
+#m6 .m6-visit li:nth-child(4){--g:#a8432e;--gl:#fbe9e4}
+
+/* the checklist, grouped to match the visit order */
+#m6 .checklist .cl-grp{display:flex;justify-content:space-between;align-items:center;gap:.5rem;margin:.9rem 0 .25rem;padding:.4rem .7rem;border-radius:10px;background:var(--gl);border-left:5px solid var(--g);font-weight:700;color:var(--navy);font-size:.95rem}
+#m6 .checklist .cl-grp:first-child{margin-top:.3rem}
+#m6 .checklist .cl-grp small{font-size:.8rem;font-weight:600;color:var(--muted)}
+#m6 .checklist .cl-grp[data-g="0"]{--g:#0b6664;--gl:#e3f4f3}
+#m6 .checklist .cl-grp[data-g="1"]{--g:#2f6fb3;--gl:#e8f0fa}
+#m6 .checklist .cl-grp[data-g="2"]{--g:#7a4fa8;--gl:#f1ebf8}
+#m6 .checklist .cl-grp[data-g="3"]{--g:#a8432e;--gl:#fbe9e4}
+#m6 .checklist .cl-grp:hover{background:var(--gl)}
+#m6 .mx-ck .js-clear{margin-top:.8rem;min-height:48px}
+
+/* a chart-note card: one sentence per line */
+#m6 .m6-rec{border:1px solid var(--line);border-left:5px solid var(--navy);border-radius:0 14px 14px 0;background:#f7f9fb;padding:.65rem .9rem .75rem;margin:.6rem 0 1rem}
+#m6 .m6-rec-h{margin:0 0 .3rem;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);max-width:none}
+#m6 .m6-rec ul{list-style:none;margin:0;padding:0}
+#m6 .m6-rec li{margin:0;max-width:none;padding:.3rem 0;border-bottom:1px dashed #d9e1e8;font-size:.95rem;line-height:1.45}
+#m6 .m6-rec li:last-child{border-bottom:0}
+#m6 .m6-rec-f{margin:.4rem 0 0;font-size:.85rem;color:var(--muted);max-width:none}
+
+#m6 .mx .m6-rec{border:0;background:none;padding:0;margin:0}
+
+/* flat explorer inside a folded section: no second grey box */
+#m6 .fx.fx-flat{border:0;padding:0;background:none;margin:.3rem 0 0}
+#m6 .fx.fx-flat .fx-panel{box-shadow:none;border:1px solid var(--line)}
+#m6 .fx-panel .fx-h{font-size:1.15rem}
+
+/* a picture walkthrough inside a folded section sits directly on it: no second card */
+#m6 .mx-b figure.wt.wt-step{border:0;box-shadow:none;background:none;padding:0}
+
+/* two-column compact tiles for short lists (eight areas, six options, six items) */
+#m6 .risk-grid.rg-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+/* folded "look-alikes" inside an adverse-effect panel */
+#m6 details.m6-look{margin:.6rem 0 0}
+#m6 details.m6-look>summary{min-height:48px}
+#m6 details.m6-look .mx-b{padding:.6rem .6rem .7rem}
+
+
+/* tick boxes: a 44px tap target that draws a 26px box (checklist and annual review planner) */
+#m6 .checklist input[type="checkbox"],#m6 .rv-c{-webkit-appearance:none;appearance:none;box-sizing:border-box;width:44px;height:44px;flex:0 0 44px;margin:0;padding:0;border:0;border-radius:12px;cursor:pointer;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect x='9' y='9' width='26' height='26' rx='7' fill='white' stroke='%238896a5' stroke-width='2'/%3E%3C/svg%3E") center/44px 44px no-repeat}
+#m6 .checklist input[type="checkbox"]:checked,#m6 .rv-c:checked{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect x='9' y='9' width='26' height='26' rx='7' fill='%230b6664' stroke='%230b6664' stroke-width='2'/%3E%3Cpath d='M16 22.5l4.2 4.2 8.3-9.2' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+#m6 .checklist input[type="checkbox"]:focus-visible,#m6 .rv-c:focus-visible{outline:3px solid #f2a541;outline-offset:-3px}
+#m6 .checklist li{align-items:center}
+
+/* the dots under a picture walkthrough: same size, but the tap area is 44px tall */
+@media (max-width:900px){#m6 .wt-dot::after{inset:-16px -3px}}
+
+/* eyebrow labels are 12px, never smaller */
+#m6 :is(.gst-k,.mf-v,.fx-lbl,.sxc-lbl,.sxc-code,.stat-s,.ev-tag,.pj-tag,.tl-n,.m6-wt,.m6-med-n,.m6-rec-h){font-size:.75rem}
+
+/* ------------------------------------------------------------------ phone and small tablet */
+@media (max-width:860px){
+  /* explorer tabs become a grid of tiles: all choices visible, nothing hidden off to the side */
+  #m6 .fx{gap:.5rem;padding:.5rem}
+  #m6 .fx.fx-flat{padding:0}
+  #m6 .fx .fx-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.4rem;overflow:visible;padding:0;scroll-snap-type:none}
+  #m6 .fx .fx-tab{flex:none;min-height:52px;padding:.4rem .6rem;gap:.5rem;scroll-snap-align:none}
+  #m6 .fx .fx-tab:last-child:nth-child(odd){grid-column:1/-1}
+  #m6 .fx .fx-ic{flex:0 0 30px;height:30px}
+  #m6 .fx-tt b{font-size:.92rem;line-height:1.2}
+  #m6 .fx-panel{padding:.8rem .8rem}
+  #m6 .fx-what{font-size:.95rem;margin-bottom:.7rem}
+  #m6 .fx-box{padding:.6rem .75rem}
+  #m6 .fx-tabs.m6-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #m6 .fx-tabs.m6-3 .fx-tab{flex-direction:column;justify-content:center;text-align:center;gap:.25rem;min-height:76px;padding:.45rem .25rem}
+  #m6 .fx-tabs.m6-3 .fx-tab:last-child:nth-child(odd){grid-column:auto}
+  #m6 .fx-tabs.m6-3 .fx-tt{align-items:center}
+
+  /* "In clinic" cards: three short rows instead of three tall boxes */
+  #m6 .clin-h{margin:.9rem 0 .4rem}
+  #m6 .clin-grid{gap:.4rem}
+  #m6 .clin-c{padding:.6rem .8rem;border-radius:12px}
+  #m6 .clin-t{margin-bottom:.15rem}
+  #m6 .clin-c p{font-size:.92rem;line-height:1.45}
+}
+
+@media (max-width:700px){
+  /* overview: smaller chips, tighter list */
+  #m6 .mod-head .mod-meta{gap:.3rem;margin:.1rem 0 .7rem}
+  #m6 .mod-head .mod-meta li{font-size:.8rem;padding:.15rem .6rem}
+  #m6 .objectives{padding:.7rem .85rem}
+  #m6 .objectives ul{padding-left:1.1rem}
+  #m6 .objectives li{line-height:1.4;margin:.25rem 0;font-size:.95rem}
+
+  /* pathway links: tap-sized */
+  #m6 .deeper{gap:.4rem;margin:.7rem 0 .2rem}
+  #m6 .deeper a{display:inline-flex;align-items:center;min-height:44px;padding:.25rem .85rem}
+
+  /* timeline: a compact vertical rhythm. Number badge and icon on the left, title and link on one line */
+  #m6 .tl{gap:0;margin:.4rem 0 .6rem}
+  #m6 .tl::before{left:20px;top:26px;bottom:26px;width:3px}
+  #m6 .tl li{grid-template-columns:44px minmax(0,1fr) auto;grid-template-areas:"node t foot" "node d d";column-gap:.7rem;row-gap:.05rem;padding:.5rem 0;align-items:center}
+  #m6 .tl-node{grid-area:node;width:44px;height:44px;border-width:3px;align-self:start}
+  #m6 .tl-node .fx-ic{width:28px;height:28px}
+  #m6 .tl-node .fx-ic svg{width:16px;height:16px}
+  #m6 .tl-n{width:20px;height:20px;top:-6px;right:-6px;font-size:.75rem}
+  #m6 .tl li>b{grid-area:t;margin:0;font-size:1rem;align-self:center}
+  #m6 .tl-d{grid-area:d;font-size:.9rem;line-height:1.4}
+  #m6 .tl-foot{grid-area:foot;margin:0;flex-direction:row;justify-self:end;align-self:center}
+  #m6 .tl-tag{font-size:.78rem}
+  #m6 a.tl-tag{display:inline-flex;align-items:center;min-height:44px;padding:.2rem .75rem}
+  #m6 .tl-key{margin:.5rem 0 .1rem}
+
+  /* big numbers: one row each, number left, words right */
+  #m6 .stat-grid{gap:.4rem;margin:.6rem 0 .9rem}
+  #m6 .stat-grid.stat-3 .stat{flex-direction:row;align-items:center;gap:.85rem;padding:.55rem .85rem;border:1px solid #cfe8e6;border-left:5px solid var(--teal)}
+  #m6 .stat-grid.stat-3 .stat-n{flex:0 0 76px;font-size:1.75rem}
+  #m6 .stat-grid.stat-3 .stat-l{font-size:.92rem;line-height:1.35}
+
+  /* short tiles */
+  #m6 .risk-grid{gap:.4rem;margin:.6rem 0 .8rem}
+  #m6 .risk-grid li{padding:.5rem .65rem}
+  #m6 .risk-grid strong{font-size:.92rem;line-height:1.25}
+  #m6 .risk-grid span{font-size:.8rem;line-height:1.35}
+
+  /* folded sections and callouts */
+  #m6 .lesson details.mx{margin:.5rem 0}
+  #m6 .mx-b{padding:.7rem .8rem .8rem}
+  #m6 .callout{padding:.6rem .85rem;margin:.8rem 0}
+  #m6 .callout p{margin:.2rem 0}
+
+  /* "what the card shows": a smaller detail panel */
+  #m6 .sxc{margin:.6rem 0 .9rem}
+  #m6 .sxc-grid{gap:.4rem}
+  #m6 .sxc-card{min-height:64px;padding:.45rem .6rem;gap:.1rem}
+  #m6 .sxc-detail{padding:.65rem .8rem}
+  #m6 .sxc-cols{gap:.55rem}
+  #m6 .sxc-cols p{font-size:.93rem;line-height:1.45}
+
+  /* steppers */
+  #m6 .gst{margin:.6rem 0 1rem}
+  #m6 .gst-t span{font-size:.78rem}
+  #m6 .gst-t{min-height:72px}
+  #m6 .gst-l{width:40px;height:40px;font-size:1.2rem;border-radius:12px}
+  #m6 .gst-head h4{font-size:1.1rem;line-height:1.25}
+  #m6 .gst-band{padding:.85rem .9rem .8rem}
+  #m6 .gst-band .gst-head{margin-bottom:.45rem}
+  #m6 .gst-band .gst-rule{font-size:1rem;line-height:1.5}
+  #m6 .gst-body{padding:.9rem .9rem .1rem}
+  #m6 .gst-nav{gap:.5rem}
+  #m6 .gst-nav .btn{min-height:48px}
+  #m6 .gst-areas li,#m6 .gst-four li{padding-top:.55rem;padding-bottom:.55rem}
+  #m6 .gst-four li{padding-left:3rem}
+  #m6 .gst-areas span,#m6 .gst-four span{font-size:.9rem;line-height:1.4}
+  #m6 .m6-ways{grid-template-columns:1fr}
+
+  /* evidence-style lists inside a panel */
+  #m6 .ev-list{gap:.4rem;margin:.1rem 0 .8rem}
+  #m6 .ev-group{padding:.55rem .7rem}
+  #m6 .ev-group li span{font-size:.85rem}
+
+  /* myth cards, folded and compact */
+  #m6 .m6-mf .mf-grid{grid-template-columns:1fr;gap:.45rem;margin:.1rem 0}
+  #m6 .m6-mf .mf{padding:.6rem .8rem}
+  #m6 .m6-mf .mf-q{font-size:.98rem}
+  #m6 .m6-mf .mf-a{font-size:.92rem;line-height:1.45}
+
+  /* pictures: capped so the picture never takes a whole screen */
+  #m6 .visual-grid.wt-grid{margin:.5rem 0}
+  #m6 figure.wt .overlay-fig{max-width:391px;margin-left:auto;margin-right:auto}
+  #m6 figure.wt.m6-fig43 .overlay-fig{max-width:293px}
+  #m6 figure.wt.wt-step{padding:.7rem}
+  #m6 figure.wt figcaption{font-size:.92rem}
+  #m6 figure.wt.wt-step .walk-d[open]>summary{display:none}
+
+  /* tools */
+  #m6 .m6-visit{grid-template-columns:1fr 1fr;gap:.4rem}
+  #m6 .m6-visit li{padding:.55rem .6rem .6rem 2.7rem}
+  #m6 .m6-visit li::before{left:.55rem;top:.55rem;width:26px;height:26px;font-size:.85rem}
+  #m6 .m6-visit span{font-size:.82rem}
+  #m6 .checklist li{padding:.1rem .3rem;align-items:center;min-height:48px}
+  #m6 .checklist li.cl-grp{padding:.4rem .7rem;min-height:0}
+  #m6 .checklist label{flex:1;display:flex;align-items:center;min-height:44px;padding:.2rem 0;line-height:1.4;font-size:.95rem}
+  #m6 .say{margin:.8rem 0}
+  #m6 .lab-mount{margin:.2rem 0}
+}
+
+@media (max-width:360px){
+  #m6 .stat-grid.stat-3 .stat-n{flex-basis:64px;font-size:1.5rem}
+  #m6 .gst-t span{font-size:.75rem}
+  #m6 .m6-visit{grid-template-columns:1fr}
+  #m6 .tl-tag{padding:.2rem .5rem}
+}
