@@ -2,41 +2,14 @@
    (IR:MR ratios, Tmax, duration). Relative levels only, not pharmacokinetic data. */
 (function(){
   'use strict';
-  var XP = window.XP; if(!XP) return;
+  var XP = window.XP, RM = window.RELMODEL; if(!XP || !RM) return;
   var clamp=XP.clamp, esc=XP.esc, T=XP.t;
   var DT=0.02, H0=5, H1=24, N=Math.round((H1-H0)/DT)+1;
   var WLO=0.36, WHI=1.25, TOO=1.5, YMAX=2;
 
-  /* ---------- formulation models (tuned so cover is about the SPC durations) ---------- */
-  var MODEL = {
-    ir:   {comps:[{frac:1,lag:0,ka:1.8}], ke:0.36},
-    /* v5 (21 Oct 2026) re-fitted to SmPC 5.2 timings: Equasym XL peaks ~1.5 h and ~4.5 h; Medikinet XL second rise
-       ~3 h after the first with a 3-4 h plateau >=75% of peak; Ritalin XL-type peaks 1-2 h and 5-7 h (~4 h apart);
-       Concerta XL initial maximum 1-2 h, peak 6-8 h (Tmax 6.8 h), ~12 h. Checked with build/pkcheck.js. */
-    eq:   {comps:[{frac:.3,lag:0,ka:1.8},{frac:.7,lag:1.2,zero:[6,[[0,.2],[.3,1],[1,0]]]}], ke:0.36},
-    mk:   {comps:[{frac:.5,lag:0,ka:1.8},{frac:.5,lag:1.0,zero:[4,[[0,0],[.5,1],[1,0]]]}], ke:0.36},
-    rxl:  {comps:[{frac:.5,lag:0,ka:1.4},{frac:.5,lag:4.2,ka:1.0}], ke:0.36},
-    oros: {comps:[{frac:.22,lag:0,ka:2.2},{frac:.78,lag:0.6,zero:[10,[[0,.3],[.5,1.3],[1,.2]]]}], ke:0.40},
-    dex:  {comps:[{frac:1,lag:0,ka:1.0}], ke:0.28},
-    lis:  {comps:[{frac:1,lag:0,ka:1.5}], ke:0.12, kc:0.6}
-  };
-  function interp(pts,u){ for(var i=0;i<pts.length-1;i++){ var a=pts[i],b=pts[i+1]; if(u>=a[0]&&u<=b[0]) return a[1]+(b[1]-a[1])*(u-a[0])/(b[0]-a[0]); } return 0; }
-  var unitCache={};
-  function unit(key){
-    if(unitCache[key]) return unitCache[key];
-    var m=MODEL[key], out=new Float64Array(N), gut=m.comps.map(function(){return 0;}), pro=0, cen=0;
-    var areas=m.comps.map(function(c){ if(!c.zero) return 0; var p=c.zero[1],a=0; for(var i=0;i<p.length-1;i++) a+=(p[i+1][0]-p[i][0])*(p[i][1]+p[i+1][1])/2; return a; });
-    for(var i=0;i<N;i++){
-      var t=i*DT, inp=0;
-      m.comps.forEach(function(c,j){
-        if(c.zero){ var D=c.zero[0]; if(t>=c.lag && t<c.lag+D) inp+=c.frac*interp(c.zero[1],(t-c.lag)/D)/areas[j]/D*DT; }
-        else { if(Math.abs(t-c.lag)<DT/2) gut[j]+=c.frac; var a=gut[j]*c.ka*DT; gut[j]-=a; inp+=a; }
-      });
-      if(m.kc){ pro+=inp; var cv=pro*m.kc*DT; pro-=cv; inp=cv; }
-      cen+=inp-cen*m.ke*DT; out[i]=cen;
-    }
-    return (unitCache[key]=out);
-  }
+  /* ---------- formulation models: shared with the M5 lesson 3 explorer (js/release-model.js) ---------- */
+  var MODEL = RM.MODEL;
+  function unit(key){ return RM.curve(key, null, H1-H0); }
   /* ---------- pure dose/licence check (unit-tested: build/test_dosecheck.js) ---------- */
   function prodMaxOf(g,brand,adult){
     if(!adult) return g.childMax;

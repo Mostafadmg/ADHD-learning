@@ -586,28 +586,6 @@
     draw();
   }
 
-  /* ---------- MR methylphenidate profile explorer ---------- */
-  var mr = $('#mrExplorer');
-  if(mr){
-    var prof = {
-      'Concerta XL and bioequivalent tablets (Affenid XL, Atenza XL, Delmosart, Matoride XL, Xaggitin XL, Xenidate XL)':{ir:22,mr:78,dur:'about 12 h (second peak 6–8 h)',food:'With or without food; swallow whole with liquid; do not chew, divide or crush',strengths:'18, 27, 36, 54 mg (Atenza XL also 45 mg; Matoride XL 18, 36, 54 mg)',note:'Concerta XL, Affenid XL, Atenza XL and Matoride XL are osmotic tablets (the empty shell may appear in stool). SPS gives Delmosart and Xaggitin XL as 25:75 (the Xaggitin XL SmPC describes a polymer core and no shell) and Xenidate XL as a multiple-unit tablet; all are bioequivalent to Concerta XL (SPS).'},
-      'Ritalin XL-type capsules (Ritalin XL, Meflynate XL, Metyrol XL, Focusim XL)':{ir:50,mr:50,dur:'about 8 h (two peaks about 4 h apart)',food:'With or without food; capsule may be opened and the beads sprinkled on cool soft food and taken at once',strengths:'Ritalin XL 10–40 mg; Meflynate XL and Metyrol XL 10–60 mg; Focusim XL 10–40 mg',note:'SPS lists these four as bioequivalent to one another. Second peak at 5–7 h (Ritalin XL SmPC) or about 4 h (SPS table).'},
-      'Medikinet XL capsules':{ir:50,mr:50,dur:'about 8 h (second rise ~3 h after the first)',food:'Must be taken with or after food (risk of dose dumping on an empty stomach): children in the morning with breakfast; adults morning and lunchtime with meals; may be opened and sprinkled on apple sauce or yoghurt',strengths:'5, 10, 20, 30, 40, 50, 60 mg',note:'SPS: not completely bioequivalent with the Ritalin XL-type capsules, so switch with particular care.'},
-      'Equasym XL capsules':{ir:30,mr:70,dur:'about 8 h (peaks ~1.5 h and ~4.5 h)',food:'In the morning before breakfast; may be opened and sprinkled on a tablespoon of apple sauce',strengths:'10, 20, 30 mg',note:'SPS: no other MR product is bioequivalent, so do not switch or prescribe generically. Not licensed for adults.'},
-      'Immediate-release methylphenidate (Medikinet, Ritalin tablets)':{ir:100,mr:0,dur:'about 4 h',food:'Ritalin: with or without food. Medikinet: with or after meals, at the same times each day',strengths:'Medikinet 5, 10, 20 mg; Ritalin 10 mg',note:'Flexible; higher misuse and diversion potential (NICE 1.7.20, 1.7.24).'}
-    };
-    var ms = $('#mrSelect', mr), out = $('#mrOut', mr);
-    Object.keys(prof).forEach(function(k){ var o=document.createElement('option'); o.value=k; o.textContent=k.split(' (')[0]; ms.appendChild(o); });
-    function drawMR(){
-      var p = prof[ms.value];
-      out.innerHTML = '<div style="display:flex;height:34px;border-radius:9px;overflow:hidden;margin:.6rem 0" role="img" aria-label="'+p.ir+'% immediate release, '+p.mr+'% modified release">'+
-        '<div style="width:'+p.ir+'%;background:var(--coral);color:#fff;display:grid;place-items:center;font-size:.85rem">'+(p.ir?'IR '+p.ir+'%':'')+'</div>'+
-        '<div style="width:'+p.mr+'%;background:var(--teal);color:#fff;display:grid;place-items:center;font-size:.85rem">'+(p.mr?'MR '+p.mr+'%':'')+'</div></div>'+
-        '<table><tr><th>Duration</th><th>Administration</th><th>Strengths</th></tr><tr><td>'+p.dur+'</td><td>'+p.food+'</td><td>'+p.strengths+'</td></tr></table><p class="cl-progress">'+p.note+'</p>';
-    }
-    ms.addEventListener('change', drawMR); drawMR();
-  }
-
   /* ---------- BP/HR action helper ---------- */
   var bp = $('#bpTool');
   if(bp){
