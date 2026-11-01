@@ -42,7 +42,7 @@
         { k: 'end', t: 'Gone after about 8 hours', d: 'A 07:30 dose covers the school day and fades around 15:30, before homework.' }
       ],
       practice: ['Take it in the morning before breakfast.', 'Levels can be lower after school than with IR at breakfast and lunch.'],
-      brands: 'No other product is interchangeable with Equasym XL: never switch it or prescribe it generically. Addepta XL capsules and Tuzulby chewable tablets use the same 30:70 design, but they are separate products.',
+      brands: 'SPS: no other modified-release product is bioequivalent to Equasym XL, so never switch it or prescribe it generically. Addepta XL capsules and Tuzulby chewable tablets use the same 30:70 design, but SPS has not assessed them against it, so no source says they can be swapped.',
       strengths: '10, 20, 30 mg.'
     },
     mk: {
@@ -61,7 +61,7 @@
         { k: 'end', t: 'Gone about 8 hours after lunch', d: 'The lunchtime dose fades around 20:00.' }
       ],
       practice: ['Must be taken with or after food. On an empty stomach it is absorbed much faster and release may not be sustained, so the peak is higher and the effect shorter.', 'Children take one dose with or after breakfast. Adults take it as two doses, morning and lunchtime, with or after meals: try the adult pattern above.', 'A PPI, an H2 blocker, an antacid and pronounced anacidity of the stomach are listed as contraindications in the SmPC. It does not say why.'],
-      brands: 'Ambinet XL has the same 50:50, with-food design but is not interchangeable. Medikinet XL is not fully bioequivalent with the Ritalin XL group, so switch between them only with particular care.',
+      brands: 'Ambinet XL has the same 50:50, with-food design but is on no SPS list, so no source says the two can be swapped: keep the person on the brand they started. Medikinet XL is not fully bioequivalent with the Ritalin XL group, so switch between them only with particular care.',
       strengths: '5, 10, 20, 30, 40, 50, 60 mg.'
     },
     rxl: {

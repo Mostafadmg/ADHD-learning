@@ -3,7 +3,10 @@
    Every number here comes from the research file for this lab (UK SmPCs on emc, NHS SPS page updated 28 Aug 2025, MHRA Drug
    Safety Update 26 Sep 2022, NICE NG87), re-read 1 Nov 2026. Every result carries one honest status badge:
      SmPC table . SmPC statement . SPS equivalence . Guideline (no numbers) . Worked out from the SmPC table (not official) .
-     No official conversion      (a "Local NHS protocol (not national)" badge is not used: no local protocol was found.)
+     No official conversion . SmPC table (Focusim XL only; MR source not named)
+     (a "Local NHS protocol (not national)" badge is not used: no local protocol was found.)
+   The one modified-release to modified-release rule printed anywhere is the unnamed "MR" column of Focusim XL Table 1 (emc 100558,
+   re-read 1 Nov 2026): it is shown on every result whose new product is the Ritalin XL-type capsule group, and nowhere else.
    Charts are schematic: both curves are drawn for the SAME total daily amount of drug (the IR-equivalent total), so you compare
    the shape of the day, not the strength. Heights are relative, never blood levels.
    Text is kept short on purpose: the result must fit about two phone screens. */
@@ -65,7 +68,7 @@
       pick: 'Addepta XL capsules (30:70)', name: 'Addepta XL', fam: 'b8', model: 'eq', maxC: 60, maxA: null, child: true, nolist: true,
       lasts: 8, lastsTxt: 'about 8 hours',
       mom: [{ h: 1.5, t: 'First peak', d: 'First peak at 1–2 h (30% released at once).' }, { h: 4.5, t: 'Second peak', d: 'Second peak at about 4.5 h.' }, { h: 8, end: true, t: 'Wears off', d: 'Designed to work about 8 h.' }],
-      take: 'Morning, before breakfast. SPS (Aug 2025): licensed but not yet launched.',
+      take: 'Morning, before breakfast. SPS (28 Aug 2025) said Addepta XL was licensed but not yet launched; check current supply with the wholesaler or dm+d before choosing it.',
       smpc: 'Addepta XL SmPC (emc 102481)'
     },
     tuz: {
@@ -107,9 +110,12 @@
   var TAB_BACK = { 18: 5, 36: 10, 54: 15, 72: 20 };         /* reversed: once daily -> IR three times a day (mg each time) */
   var BADGE = {
     table: 'SmPC table', stmt: 'SmPC statement', sps: 'SPS equivalence', guide: 'Guideline (no numbers)',
-    worked: 'Worked out from the SmPC table (not official)', none: 'No official conversion'
+    worked: 'Worked out from the SmPC table (not official)', none: 'No official conversion',
+    focusim: 'SmPC table (Focusim XL only; MR source not named)'
   };
   var NEWRX = 'New Schedule 2 prescription, written by brand.';
+  var START = 'A starting dose only. Titrate against symptoms and side effects and review at about one month (the SmPCs say to stop if there is no improvement after one month of proper dose adjustment).';
+  var ILL = 10;      /* MR to MR charts compare shapes only: both lines are drawn at this one size, never at a real dose */
   var CLIN = '<b>Clinical practice, not a source:</b> treat it as a new start with specialist input. MHRA: frequent switching between products should be avoided.';
 
   /* ---------- small helpers ---------- */
@@ -156,14 +162,41 @@
     return { notes: out, off: off };
   }
   function checkMax(total, to, v) {
-    var m = maxOf(PR[to], v), ws = who(v) === 'child' ? 'children' : 'adults';
-    if (m == null) return '';
+    var P = PR[to], m = maxOf(P, v), ws = who(v) === 'child' ? 'children' : 'adults';
+    if (m == null) {      /* a children-only product used for an adult: there is no adult maximum, so the product maximum still applies */
+      return (who(v) === 'adult' && P.maxC != null && total > P.maxC) ? total + ' mg a day is above the licensed maximum of ' + P.maxC + ' mg a day for this product (it is licensed in children only).' : '';
+    }
     return total > m ? total + ' mg a day is above the licensed maximum of ' + m + ' mg a day for ' + ws + ' with this product.' : '';
   }
-  /* important notes first (licence, maximum), then at most one rule-specific note, then the prescription note */
-  function finish(tone, badge, head, rows, important, specific, src, chart) {
-    var notes = important.filter(Boolean).concat(specific.filter(Boolean)).slice(0, 2).concat(NEWRX);
+  /* the IR total typed in can itself be above the licensed IR maximum (Ritalin tablets: 60 mg a day in children, 80 mg in adults) */
+  function irOverMax(tot, v) {
+    var m = maxOf(PR.ir, v);
+    return tot > m ? 'Your IR total of ' + tot + ' mg a day is above the licensed IR maximum of ' + m + ' mg a day for ' + (who(v) === 'child' ? 'a child' : 'an adult') + '. A higher dose would be off-label and for the specialist to direct.' : '';
+  }
+  /* every important note (licence, maximum) is kept; rule-specific notes fill the list up to two; then an optional tail; then the prescription note */
+  function finish(tone, badge, head, rows, important, specific, src, chart, tail) {
+    var imp = important.filter(Boolean), spec = specific.filter(Boolean);
+    var notes = imp.concat(spec.slice(0, Math.max(0, 2 - imp.length))).concat(tail || []).concat(NEWRX);
     return { tone: tone, badge: badge, head: head, rows: rows, notes: notes, src: src, chart: chart };
+  }
+  /* the MR column of the Focusim XL table: the only printed MR to MR rule (it names no product) */
+  function focusimRow(fromEqxl) {
+    return { h: 'One SmPC prints a rule', t: 'Only the Focusim XL SmPC (Table 1, “MR” column) prints a modified-release rule: 10 mg modified-release methylphenidate → Focusim XL 10 mg a day (the same for 20, 30, 40 and 60 mg). It names no product. The Ritalin XL, Metyrol XL and Meflynate XL tables have no MR row, and SPS gives no dose rule. Treat it as a start with specialist input, and follow the new product’s dosing (MHRA).' + (fromEqxl ? ' It does not override the SPS advice not to switch Equasym XL.' : '') };
+  }
+  /* "bracket" for an MR dose that has no row in the Concerta XL-type table */
+  function bracket(D) {
+    var rows = [[5, 18], [10, 36], [15, 54], [20, 72]], i;
+    for (i = 0; i < rows.length - 1; i++) {
+      if (D > rows[i][1] && D < rows[i + 1][1]) return ' On the table it sits between ' + rows[i][1] + ' mg (' + rows[i][0] + ' mg three times a day, ' + rows[i][0] * 3 + ' mg a day of IR) and ' + rows[i + 1][1] + ' mg (' + rows[i + 1][0] + ' mg three times a day, ' + rows[i + 1][0] * 3 + ' mg a day).';
+    }
+    return '';
+  }
+  /* same SPS group: can every brand in the group supply this dose in the same quantity? (strengths on emc, read 1 Nov 2026) */
+  function supplyNote(f, D) {
+    if (f === 'tab' && D === 45) return 'Only Atenza XL makes a 45 mg tablet. Another brand would need two tablets (27 + 18 mg), so the quantity changes and the SPS rule “same dose and quantity” does not cover it. Stay on Atenza XL or ask the specialist.';
+    if (f === 'tab' && D === 27) return 'Matoride XL has no 27 mg tablet. Check that the brand you plan to use makes it.';
+    if (f === 'cap' && D === 60) return 'Only Metyrol XL and Meflynate XL make a 60 mg capsule. Ritalin XL and Focusim XL would need 40 + 20 mg, so the quantity changes. Stay on Metyrol XL or Meflynate XL, or ask the specialist.';
+    return '';
   }
   function tableContext(total) {
     var rows = [[15, 18], [30, 36], [45, 54], [60, 72]], i;
@@ -179,6 +212,7 @@
     var d = +v.ird, n = +v.irn === 3 ? 3 : 2, tot = d * n, t = v.to, T = PR[t], before = irWord(d, n), built, dose = null, status, tone = 'ok', head, src, rows = [], imp = [], spec = [];
     var adult = who(v) === 'adult';
     src = T.smpc + '; ' + SPS + '.';
+    var w0 = irOverMax(tot, v); if (w0) imp.push(w0);
 
     if (t === 'tab' || t === 'kixel') {
       var tn = t === 'tab' ? 'Concerta XL' : 'Kixel XL';
@@ -224,7 +258,7 @@
       head = before + ' → <b>' + T.name + ' ' + dose + ' mg once a day</b>, before breakfast';
       rows.push({ h: 'What the sources say', t: 'No table. The SmPC says to switch to “the milligram equivalent daily dose”. Worked example: 20 mg of ' + T.name + ' takes the place of 10 mg at breakfast plus 10 mg at lunchtime of IR. 10 mg once a day may replace IR 5 mg twice a day.' });
       var w4 = checkMax(dose, t, v); if (w4) { tone = 'warn'; imp.push(w4); }
-      if (t === 'eqxl' && tot % 10 !== 0) spec.push('Equasym XL capsules are 10, 20 and 30 mg, so ' + tot + ' mg a day cannot be made up exactly.');
+      if ((t === 'eqxl' || t === 'addepta') && tot % 10 !== 0) spec.push(T.name + ' capsules are 10, 20 and 30 mg, so ' + tot + ' mg a day cannot be made up exactly.');
     } else if (t === 'tuz') {
       if (n === 2 && TUZ_T[d]) { dose = TUZ_T[d]; status = BADGE.table; }
       else { dose = Math.min(tot, 60); status = BADGE.stmt; }
@@ -239,20 +273,20 @@
     var extra = (dose && dose !== tot ? 'Drawn at ' + tot + ' mg each (the dose is ' + dose + ' mg). ' : '') + 'IR at 07:30, ' + (n === 3 ? '11:30, 15:30' : '12:00') + ' (example times).' + (T.assumed ? ' The Tuzulby curve borrows the shape of other 30:70 products: its SmPC gives only a median highest level at about 5 h.' : '');
     rows.push(dayRow(built, extra));
     rows.push({ h: 'Watch for', t: T.take });
-    var ln = licNotes(v, t); if (ln.off && tone === 'ok') tone = 'warn';
-    return finish(tone, status, head, rows, ln.notes.concat(imp), spec, src, built.chart);
+    var ln = licNotes(v, t); if ((ln.off || w0) && tone === 'ok') tone = 'warn';
+    return finish(tone, status, head, rows, ln.notes.concat(imp), spec, src, built.chart, [START]);
   }
 
   /* ---------- IR to IR ---------- */
   function irToIr(v) {
-    var d = +v.ird, n = +v.irn === 3 ? 3 : 2, before = irWord(d, n);
+    var d = +v.ird, n = +v.irn === 3 ? 3 : 2, before = irWord(d, n), w0 = irOverMax(d * n, v);
     return {
       tone: 'warn', badge: BADGE.none, head: 'IR brand to IR brand: <b>no source says they are interchangeable by dose</b>',
       rows: [
         { h: 'What the sources say', t: 'None of the IR SmPCs, SPS or NICE says IR brands can be swapped by dose. Licences differ: Ritalin tablets are for children and adults; Medikinet tablets and the Viatris generic are for children only.' },
         { h: 'In practice', t: '<b>Clinical practice, not a source statement:</b> keep the same dose and times (' + before + ') and check the response. Write adult IR as Ritalin tablets by brand.' }
       ],
-      notes: ['Medikinet tablets: take doses at standard times in relation to meals. The last dose should in general not be within 4 hours of bedtime.', NEWRX],
+      notes: [w0, 'Medikinet tablets: take doses at standard times in relation to meals. The last dose should in general not be within 4 hours of bedtime.', NEWRX].filter(Boolean),
       src: 'Ritalin tablets SmPC (emc 15987); Medikinet tablets SmPC (emc 328); Viatris generic tablets SmPC (emc 8724).', chart: null
     };
   }
@@ -282,42 +316,48 @@
     }
     if (tot == null) {
       head = F.name + ' ' + D + ' mg → IR: <b>no source gives a figure for this dose</b>';
-      rows.push({ h: 'What the sources say', t: 'No table or SPS line covers ' + D + ' mg. On the table it sits between 18 mg (15 mg a day of IR) and 36 mg (30 mg a day). SPS: an individualised approach would be required.' });
+      rows.push({ h: 'What the sources say', t: 'No table or SPS line covers ' + D + ' mg.' + bracket(D) + ' SPS: an individualised approach would be required.' });
       rows.push({ h: 'What to do', t: 'Seek advice, or refer back to the specialist who started treatment (SPS), then re-titrate IR against symptoms and side effects.' });
       return finish('stop', BADGE.none, head, rows, [], [irLicence(v, f)], F.smpc + '; ' + SPS + '.', null);
     }
     var sched = n === 1 ? tot + ' mg once a day' : fmt(d) + ' mg ' + times(n) + ' (' + tot + ' mg a day)';
-    head = F.name + ' ' + D + ' mg once a day → <b>IR ' + sched + '</b>';
+    /* adults take Medikinet XL and Ambinet XL as two doses (morning and lunchtime), so the headline must not say "once a day" */
+    var twoDoses = who(v) === 'adult' && (f === 'mkxl' || f === 'ambi');
+    var from = twoDoses ? D + ' mg a day (taken as two doses, morning and lunchtime)' : D + ' mg once a day';
+    head = F.name + ' ' + from + ' → <b>IR ' + sched + '</b>';
     if (status === BADGE.sps) rows.push({ h: 'What the sources say', t: spsline + ' SPS also says an individualised approach is required.' });
     else rows.push({ h: 'What the sources say', t: '<b>No official MR-to-IR table exists.</b> ' + derive + ' This is arithmetic, not guidance. ' + (spsline ? spsline + ' ' : '') + 'SPS: an individualised approach is required.' });
     var irD = n === 1 ? [{ model: 'ir', at: 7.5, mg: d }] : irDoses(d, n);
-    var built = dayChart(v, 'ir', 'IR ' + (n === 1 ? tot + ' mg once a day' : fmt(d) + ' mg ' + times(n)), irD, F.name + ' ' + D + ' mg once a day', mrDoses(f, tot, v), plain(head));
-    rows.push(dayRow(built, 'IR is drawn at example times.' + (F.assumed ? ' The Tuzulby curve borrows the shape of other 30:70 products.' : '')));
+    var built = dayChart(v, 'ir', 'IR ' + (n === 1 ? tot + ' mg once a day' : fmt(d) + ' mg ' + times(n)), irD, F.name + ' ' + D + (twoDoses ? ' mg a day in two doses' : ' mg once a day'), mrDoses(f, tot, v), plain(head));
+    rows.push(dayRow(built, 'IR is drawn at example times.' + (tot !== D ? ' The modified-release product is drawn at the IR-equivalent total (' + tot + ' mg) so the shapes compare; the dose is ' + D + ' mg.' : '') + (F.assumed ? ' The Tuzulby curve borrows the shape of other 30:70 products.' : '')));
     rows.push({ h: 'Watch for', t: 'SPS: consider advice from, or referral back to, the specialist who started treatment; check tolerability and efficacy. ' + PR.ir.take });
     return finish(tone, status, head, rows, [], [irLicence(v, f)], F.smpc + '; ' + SPS + '.', built.chart);
   }
 
   /* ---------- MR to MR ---------- */
   function mrToMr(v) {
-    var f = v.from, t = v.to, F = PR[f], T = PR[t], D = +v.mr, r = route(f, t), head, rows = [], built, sameLabel = F.name + ' ' + D + ' mg';
+    var f = v.from, t = v.to, F = PR[f], T = PR[t], D = +v.mr, r = route(f, t), head, rows = [], built;
     if (f === t && f !== 'tab' && f !== 'cap') {
       return { tone: 'info', badge: 'Same product', head: 'You chose the same product on both sides: <b>there is nothing to convert</b>', rows: [{ h: 'What to do', t: 'Pick a different product in “To”, or use the swap button.' }], notes: [], src: '', chart: null };
     }
     if (r.same) {            /* same SPS group: the same dose and quantity */
       head = (f === 'tab' ? 'Tablet group' : 'Capsule group') + ': <b>' + D + ' mg stays ' + D + ' mg</b> (same dose, same quantity)';
       rows.push({ h: 'What the sources say', t: 'SPS lists these brands as bioequivalent: “Generic prescribing could be undertaken and products switched between using the same dose and quantity were that to be necessary.” Brands: ' + T.brands + '.' });
-      built = dayChart(v, t, 'new brand ' + D + ' mg', mrDoses(t, D, v), 'usual brand ' + D + ' mg', mrDoses(f, D, v), 'Same group: the day is expected to look the same');
-      rows.push({ h: 'What changes in the day', t: '<em>Nothing should change: that is what bioequivalent means.</em> The two lines sit on top of each other.' });
+      var sup = supplyNote(f, D);
+      if (sup) rows.push({ h: 'Can every brand supply it?', t: sup });
+      built = dayChart(v, t, 'new brand', mrDoses(t, D, v), 'usual brand', mrDoses(f, D, v), 'Same group: the day is expected to be similar');
+      rows.push({ h: 'What changes in the day', t: '<em>SPS treats these brands as bioequivalent, so the day is expected to look the same.</em> That is an average finding from studies, not a promise for one person, and SPS Table 1 shows small differences between brands (' + (f === 'tab' ? 'IR:MR splits of 22:78 and 25:75' : 'second peak at 4 h or 4 to 5 h') + '). The two lines overlap only because the chart uses one shape for the group. Ask the person to report any change and go back to the usual brand when you can.' });
       var spec = ['Use it only if necessary (for example a supply problem), go back to the usual brand as soon as you can, and avoid mixing brands to reach a daily dose.'];
-      var imp = f === 'tab' ? ['Matoride XL is children 6+ only (maximum 54 mg). No UK SmPC could be read for Delmosart.'] : ['Sprinkling advice and sucrose content differ between brands: check each SmPC.'];
-      return finish('ok', BADGE.sps, head, rows, imp, spec, F.smpc + '; ' + SPS + '.', built.chart);
+      var imp = f === 'tab' ? ['Matoride XL is children 6+ only (maximum 54 mg). Delmosart is not on emc: check the Accord SmPC on the MHRA site before relying on its licence or maximum.'] : ['Sprinkling advice and sucrose content differ between brands: check each SmPC.'];
+      return finish(sup ? 'warn' : 'ok', BADGE.sps, head, rows, imp, spec, F.smpc + '; ' + SPS + '.', built.chart);
     }
-    /* different products: no dose is converted, both are drawn at the same total */
+    /* different products: no dose is converted; both shapes are drawn at the same illustrative size, never at a real dose */
     head = F.name + ' ' + D + ' mg → ' + T.name + ': <b>' + r.head + '</b>';
     rows.push({ h: 'What the sources say', t: r.why });
     if (r.dose && r.tone !== 'stop') rows.push({ h: 'Dose', t: r.dose });
-    built = dayChart(v, t, T.name + ' (same total)', mrDoses(t, D, v), sameLabel, mrDoses(f, D, v), plain(head));
-    rows.push(dayRow(built, 'Both are drawn at ' + D + ' mg only to compare shapes: that is not a conversion.' + (F.assumed || T.assumed ? ' The Tuzulby curve borrows the shape of other 30:70 products.' : '')));
+    if (r.fo) rows.push(focusimRow(r.fo === 'eqxl'));
+    built = dayChart(v, t, T.name + ' (illustrative shape, not a dose)', mrDoses(t, ILL, v), F.name + ' (illustrative shape)', mrDoses(f, ILL, v), plain(head));
+    rows.push(dayRow(built, 'Both lines are drawn at the same size (' + ILL + ' mg) only to compare the shape of the day: this is not a conversion and not a dose.' + (F.assumed || T.assumed ? ' The Tuzulby curve borrows the shape of other 30:70 products.' : '')));
     rows.push({ h: 'Watch for', t: T.take });
     var ln = licNotes(v, t); var tone = r.tone; if (ln.off && tone === 'ok') tone = 'warn';
     return finish(tone, r.status, head, rows, ln.notes, [r.clin], r.src, built.chart);
@@ -326,12 +366,21 @@
   /* ---------- the rule table (also drives the "Which switch is safe?" tab) ---------- */
   function names(list) { return list.map(function (k) { return PR[k].name; }).join(' and '); }
   function route(f, t) {
+    var r = route0(f, t);
+    /* the new product is the Ritalin XL-type capsule group: the Focusim XL SmPC (MR column) is the only printed MR rule */
+    if (t === 'cap' && f !== 'cap' && f !== 'ir') {
+      r.fo = f === 'eqxl' ? 'eqxl' : true;
+      if (r.status === BADGE.none && f !== 'eqxl') { r.status = BADGE.focusim; r.head = r.head.replace('no official conversion', 'no SPS, NICE or MHRA conversion'); }
+    }
+    return r;
+  }
+  function route0(f, t) {
     var nl;
+    if (f === 'ir' && t === 'ir') return { tone: 'warn', badge: 'No source', status: BADGE.none, head: 'no source says IR brands are interchangeable by dose', why: 'None of the IR SmPCs, SPS or NICE says so, and licences differ (Ritalin tablets: children and adults; Medikinet tablets and the Viatris generic: children only).', todo: 'Keep the same total daily dose and times as clinical practice, check the response, and write adult IR as Ritalin tablets by brand.', src: 'Ritalin, Medikinet and Viatris IR tablet SmPCs.' };
     if (f === t && (f === 'tab' || f === 'cap')) {
       return { tone: 'ok', badge: 'Same SPS group', status: BADGE.sps, same: true, head: 'same SPS group: swap at the same dose and quantity if necessary', why: 'SPS lists these brands as bioequivalent to one another.', todo: 'Use it only if you must (for example a supply problem), go back to the usual brand as soon as you can, and tell the person.', src: SPS + '.' };
     }
     if (f === t) return { tone: 'info', badge: 'Same product', status: 'Same product', head: 'same product on both sides', why: 'Nothing to convert.', todo: 'Pick a different product.', src: '' };
-    if (f === 'ir' && t === 'ir') return { tone: 'warn', badge: 'No source', status: BADGE.none, head: 'no source says IR brands are interchangeable by dose', why: 'None of the IR SmPCs, SPS or NICE says so, and licences differ (Ritalin tablets: children and adults; Medikinet tablets and the Viatris generic: children only).', todo: 'Keep the same total daily dose and times as clinical practice, check the response, and write adult IR as Ritalin tablets by brand.', src: 'Ritalin, Medikinet and Viatris IR tablet SmPCs.' };
     if (f === 'ir') {
       var m = {
         tab: ['SmPC table', 'the SmPC has a table for IR taken three times a day (15 to 60 mg a day)', 'Other IR regimens: clinical judgement.'],
@@ -340,7 +389,7 @@
         mkxl: ['SmPC statement', 'the SmPC says to use the milligram-equivalent daily dose', 'Adults take it as two doses with food.'],
         ambi: ['SmPC statement', 'the SmPC says to use the milligram-equivalent daily dose', 'Ambinet XL is not on any SPS list.'],
         eqxl: ['SmPC statement', 'the SmPC says to use the milligram-equivalent daily dose', 'Children only; before breakfast.'],
-        addepta: ['SmPC statement', 'the SmPC says to use the milligram-equivalent daily dose', 'Children only; licensed but not yet launched (SPS, Aug 2025).'],
+        addepta: ['SmPC statement', 'the SmPC says to use the milligram-equivalent daily dose', 'Children only. SPS (28 Aug 2025) said Addepta XL was licensed but not yet launched; check current supply before choosing it.'],
         tuz: ['SmPC table', 'the SmPC has examples for IR taken twice a day (10 to 30 mg each time)', 'Children and young people 6 to 17 only; chewed.']
       }[t];
       return { tone: 'ok', badge: m[0], status: m[0], head: 'an official rule exists: ' + m[1], why: 'IR to modified-release is the one direction where the SmPCs give a rule.', todo: m[2] + ' Use the Convert tab for the dose.', src: PR[t].smpc + '.' };
@@ -351,13 +400,14 @@
     /* MR to MR */
     if (f === 'eqxl' || t === 'eqxl') {
       var other = f === 'eqxl' ? t : f;
-      return { tone: 'stop', badge: 'Do not switch', status: BADGE.none, head: 'do not switch', why: 'SPS: “No other MR products are bioequivalent to Equasym XL capsules and these should not be switched to or prescribed generically.”', todo: 'If supply fails, ask the specialist. In a supply shortage, SPS says to individualise treatment using IR products where no bioequivalent MR product is available.', src: SPS + '; ' + MHRA + '.',
+      var unassessed = ['addepta', 'tuz', 'ambi', 'kixel'].indexOf(other) >= 0;
+      return { tone: 'stop', badge: 'Do not switch', status: BADGE.none, head: 'do not switch', why: 'SPS: “No other MR products are bioequivalent to Equasym XL capsules and these should not be switched to or prescribed generically.”' + (unassessed ? ' SPS has not assessed ' + PR[other].name + ' against Equasym XL. No source says they are interchangeable, so the answer stays: do not switch without the specialist.' : ''), todo: 'If supply fails, ask the specialist. In a supply shortage, SPS says to individualise treatment using IR products where no bioequivalent MR product is available.', src: SPS + '; ' + MHRA + '.',
         dose: 'None. No source gives a conversion between Equasym XL and ' + (other === 'eqxl' ? 'another product' : PR[other].name) + '. MHRA: follow the dosage recommendations for the product you switch to.',
         clin: 'SPS (supply disruption): individualise treatment using IR products where bioequivalent MR products are not available. MHRA: frequent switching between products should be avoided.' };
     }
     if ((f === 'mkxl' && t === 'cap') || (f === 'cap' && t === 'mkxl')) {
       return { tone: 'warn', badge: 'Particular care', status: BADGE.guide, head: 'possible with particular care: SPS gives no dose rule', why: 'SPS: “whilst switches from or to Medikinet XL capsules are also possible, these should be undertaken with particular care since this product is not completely bioequivalent with the other four.”', todo: 'No dose rule exists: ask the specialist, follow the dosing advice for the product you move to, and review.', src: SPS + '; ' + MHRA + '.',
-        dose: 'None given. Food rules and adult dosing differ (Medikinet XL: with food, adults in two doses; capsule group: once daily, any food). MHRA: follow the dosage recommendations of the product you move to.',
+        dose: 'No SPS dose rule. Food rules and adult dosing differ (Medikinet XL: with food, adults in two doses; capsule group: once daily, any food). MHRA: follow the dosage recommendations of the product you move to.',
         clin: CLIN };
     }
     nl = [f, t].filter(function (k) { return PR[k].nolist; });
@@ -367,7 +417,7 @@
         dose: 'None. MHRA: follow the dosage recommendations for the product you switch to.',
         clin: CLIN };
     }
-    return { tone: 'stop', badge: 'No conversion', status: BADGE.none, head: 'no official conversion between these two designs', why: 'The tablet group is 22:78 and works for about 12 hours; the capsule group is 50:50 and works for about 8 hours. No SmPC, SPS, NICE or MHRA table converts between them. MHRA: follow the specific dosage recommendations for each formulation if considering a switch to another long-acting preparation.', todo: 'Treat it as a new start with specialist input and avoid frequent switching.', src: SPS + '; ' + MHRA + '.',
+    return { tone: 'stop', badge: 'No conversion', status: BADGE.none, head: 'no official conversion between these two designs', why: 'The tablet group is about 22:78 (Concerta XL is 22:78; SPS gives Delmosart and Xaggitin XL as 25:75) and works for about 12 hours; the capsule group and Medikinet XL are 50:50 and work for about 8 hours. No SPS, NICE or MHRA table converts between them' + (t === 'cap' ? ', and only one SmPC column prints a modified-release rule (below).' : '. The SmPC conversion tables start from immediate-release methylphenidate.') + ' MHRA: follow the specific dosage recommendations for each formulation if considering a switch to another long-acting preparation.', todo: 'Treat it as a new start with specialist input and avoid frequent switching.', src: SPS + '; ' + MHRA + '.',
       dose: 'None. Use the usual start and weekly steps of the product you move to.',
       clin: CLIN };
   }
@@ -384,7 +434,7 @@
       { id: 'to', type: 'select', label: 'To (new)', value: 'tab', options: opts() },
       { id: 'ird', type: 'step', label: 'IR dose each time', value: 10, min: 5, max: 30, step: 5, unit: 'mg', show: function (V) { return V.from === 'ir'; } },
       { id: 'irn', type: 'seg', label: 'Times a day', value: '3', options: [{ v: '2', l: 'Twice' }, { v: '3', l: 'Three times' }], show: function (V) { return V.from === 'ir'; } },
-      { id: 'mr', type: 'select', label: 'Daily dose now', value: '36', show: function (V) { return V.from !== 'ir'; }, options: function (V) { return dailyOptions(V.from, V).map(function (n) { return { v: String(n), l: n + ' mg a day' + (V.from === 'tab' && n === 45 ? ' (Atenza XL only)' : '') }; }); } }
+      { id: 'mr', type: 'select', label: 'Daily dose now', value: '36', show: function (V) { return V.from !== 'ir'; }, options: function (V) { return dailyOptions(V.from, V).map(function (n) { return { v: String(n), l: n + ' mg a day' + (V.from === 'tab' && n === 45 ? ' (Atenza XL only)' : V.from === 'tab' && n === 27 ? ' (not Matoride XL)' : V.from === 'cap' && n === 60 ? ' (Metyrol XL or Meflynate XL only)' : '') }; }); } }
     ],
     compute: function (v) {
       if (v.from === 'ir') return v.to === 'ir' ? irToIr(v) : irToMr(v);
@@ -393,8 +443,8 @@
     }
   };
   var safeTab = {
-    kind: 'tool', label: 'Which switch is safe?',
-    intro: '<b>Green</b>: an official rule exists. <b>Amber</b>: possible, with particular care. <b>Red</b>: no conversion, or do not switch.',
+    kind: 'tool', label: 'Which switches have an official rule?',
+    intro: '<b>Green</b>: an official rule exists. <b>Amber</b>: possible, with particular care. <b>Red</b>: no conversion, or do not switch. The colour shows what the sources say, not whether a switch suits this person.',
     swap: ['from', 'to'],
     fields: [
       { id: 'from', type: 'select', label: 'I want to move from', value: 'mkxl', options: opts() },
@@ -405,7 +455,7 @@
       return {
         tone: r.tone, badge: r.badge,
         head: word + ': ' + r.head,
-        rows: [{ h: 'Why', t: r.why }, { h: 'What to do', t: r.todo }, { h: 'Status of the rule', t: r.status }],
+        rows: [{ h: 'Why', t: r.why }, { h: 'What to do', t: r.todo }].concat(r.fo ? [focusimRow(r.fo === 'eqxl')] : [], [{ h: 'Status of the rule', t: r.status }]),
         notes: ['Check the licence for the person’s age: Equasym XL, Addepta XL, Tuzulby, Matoride XL, Medikinet tablets and the Viatris generic tablets are for children only.'],
         src: r.src
       };

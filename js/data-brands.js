@@ -1,5 +1,5 @@
 /* Brand-by-brand data for the Module 11 brand look-up and switch planner (js/handbook.js). Every field cites its source:
-   SmPC section on emc, SPS (updated 28 Aug 2025) or BNF/BNFC (accessed 21 Oct 2026; bnf fields are not shown in the course).
+   SmPC section on emc, SPS (updated 28 Aug 2025) or BNF/BNFC (accessed 21 Oct 2026; the BNF could not be reached on 1 Nov 2026, so those figures are unchecked. The bnf fields are not shown in the course and are not used in any quiz key or lab result).
    Licence, excipient and missed-dose facts re-checked on emc 28 Oct 2026. */
 window.BRANDS=[
 {
@@ -32,7 +32,7 @@ window.BRANDS=[
 "strengths": "18, 27, 36, 54 mg",
 "lic": "Children 6+ (max 54 mg/day) and adults (max 72 mg/day).",
 "dose": "18 mg steps about weekly; max 54 mg/day (children), 72 mg/day (adults); IR TDS conversion table as for Concerta XL (SmPC 4.2).",
-"bnf": "BNF/BNFC: max 54 mg/day in children <em>and adults</em> (the SmPC allows 72 mg in adults; the BNF figure is lower).",
+"bnf": "BNF/BNFC (21 Oct 2026; not re-checked, BNF unreachable on 1 Nov): max 54 mg/day in children <em>and adults</em>. The Xaggitin XL SmPC allows 72 mg in adults, so follow the SmPC.",
 "admin": "Once daily in the morning, with or without food. Swallow whole with liquid; must not be chewed, divided or crushed (SmPC 4.2).",
 "exc": "Lactose (183.8 mg per 18 mg tablet): not for rare galactose intolerance, total lactase deficiency or glucose–galactose malabsorption (SmPC 2, 4.4).",
 "inter": "SPS tablet group (bioequivalent to Concerta XL): Affenid XL, Atenza XL, Concerta XL, Delmosart, Matoride XL, Xaggitin XL, Xenidate XL. Can be switched at the same dose and quantity if necessary (SPS).",
@@ -44,13 +44,13 @@ window.BRANDS=[
 "grp": "tab",
 "model": "oros",
 "cd": "Schedule 2 CD",
-"mech": "Prolonged-release tablet bioequivalent to Concerta XL. Its bioequivalence studies are the same as those for Xaggitin XL (London Medicines Evaluation Network 2018). Not on emc; the Accord SmPC (v13.0, Oct 2025) was read in an earlier review.",
+"mech": "Prolonged-release tablet bioequivalent to Concerta XL. Its bioequivalence studies are the same as those for Xaggitin XL (London Medicines Evaluation Network 2018). Delmosart is not on emc: check the Accord SmPC on the MHRA site before relying on its licence or maximum (the Accord SmPC v13.0, Oct 2025, was read in an earlier review and could not be re-read on 1 Nov 2026).",
 "ratio": "25:75 (SPS)",
 "time": "Onset 1–2 h; second peak 6–8 h; duration about 12 h (SPS).",
 "strengths": "18, 27, 36, 54 mg (LMEN 2018)",
-"lic": "Children 6+ and adults, as for Xaggitin XL (Accord SmPC, read in an earlier review; Delmosart is not on emc). <span class=\"badge unv\">not verified on emc</span>",
+"lic": "Children 6+ and adults, as for Xaggitin XL (from an earlier read of the Accord SmPC). Delmosart is not on emc: check the Accord SmPC on the MHRA site before relying on this. <span class=\"badge unv\">not verified on emc</span>",
 "dose": "Max 54 mg/day (children), 72 mg/day (adults) per the SmPC.",
-"bnf": "BNF/BNFC: max 54 mg/day in children and adults (lower than the SmPC adult maximum).",
+"bnf": "BNF/BNFC (21 Oct 2026; not re-checked, BNF unreachable on 1 Nov): max 54 mg/day in children and adults. This is lower than the adult maximum in the Accord SmPC read earlier (72 mg), so check the Accord SmPC.",
 "admin": "Swallow whole; with or without food (SPS: no food requirement).",
 "exc": "Contains lactose (LMEN 2018). <span class=\"badge unv\">not verified on emc</span>",
 "inter": "SPS tablet group (bioequivalent to Concerta XL): Affenid XL, Atenza XL, Concerta XL, Delmosart, Matoride XL, Xaggitin XL, Xenidate XL. Can be switched at the same dose and quantity if necessary (SPS).",
@@ -197,7 +197,7 @@ window.BRANDS=[
 "bnf": "No brand-specific BNF/BNFC entry: follow the SmPC.",
 "admin": "Once daily in the morning, with or without food. Swallow whole, or open the capsule and sprinkle the beads on a small amount of soft food that is not warm (e.g. apple sauce) and take straight away; do not crush or chew the beads; do not store the mixture (SmPC 4.2).",
 "exc": "No sucrose listed (microcrystalline cellulose pellets); gelatin capsule (SmPC 6.1) — useful where sucrose must be avoided.",
-"inter": "SPS capsule group (bioequivalent to each other): Focusim XL, Meflynate XL, Metyrol XL, Ritalin XL. Switch at the same dose and quantity if necessary; switches to or from Medikinet XL need particular care (SPS).",
+"inter": "SPS capsule group (bioequivalent to each other): Focusim XL, Meflynate XL, Metyrol XL, Ritalin XL. Switch at the same dose and quantity if necessary; switches to or from Medikinet XL need particular care (SPS). The Focusim XL SmPC Table 1 also has an “MR” column (10, 20, 30, 40 or 60 mg modified-release methylphenidate → the same mg a day) but names no product, so it cannot be assumed to cover a tablet. The Ritalin XL, Metyrol XL and Meflynate XL tables have no MR row.",
 "src": "Focusim XL SmPC (emc 100558); SPS."
 },
 {
