@@ -45,4 +45,29 @@
     return (cache[id] = out);
   }
   window.RELMODEL = {DT: DT, MODEL: MODEL, curve: curve};
+
+  /* ---- Non-stimulants: added 1 Nov 2026 for the M5 atomoxetine and guanfacine labs (js/m5-lab-ns.js). ----
+     One dose taken at t = 0, one body compartment, first-order absorption. These keys are PLASMA-LEVEL shapes for teaching.
+     They are not clinical-effect curves and give no ng/ml values. Existing keys above are untouched.
+     atx_em   Atomoxetine, CYP2D6 extensive (normal) metaboliser. Fitted to the atomoxetine SmPC 5.2 (Zentiva, emc 10332,
+              text revised 06/12/2024; the Aurobindo/Milpharm SmPC emc 11171, revised 04/08/2026, has the same figures):
+              Cmax "approximately 1 to 2 hours after dosing" (drawn at 1.5 h, the middle) and mean elimination half-life 3.6 h.
+              Does NOT claim: a peak height, any food effect (the SmPC says "with or without food", no figure),
+              or when the clinical effect starts, peaks or fades (no SmPC states it).
+     atx_pm   Atomoxetine, CYP2D6 poor metaboliser. Same SmPC: mean elimination half-life 21 h. The absorption rate is raised so
+              the peak stays at 1.5 h, because the SmPC gives one Cmax time, not one per genotype. The lab scales its area to about
+              10 times the extensive metaboliser (SmPC: AUC "approximately 10-fold greater"). Does NOT claim: the peak height after
+              one dose (the SmPC's Css,max "about 5-fold greater" is a steady-state figure and is not drawn), or accumulation timing.
+     atx_inh  Atomoxetine with a strong CYP2D6 inhibitor (fluoxetine, paroxetine). The SmPC 4.5 gives only the size of the rise
+              (exposure "6-to 8-fold increased", Css,max "3 to 4 times higher") and no half-life, so this key is the atx_em shape and
+              the lab scales its area to 6 and 8 times. Does NOT claim a longer half-life, a different peak time, or the Css,max rise.
+     gua_pr   Guanfacine prolonged-release (Intuniv and generics). Fitted to the Intuniv SmPC 5.2 (emc 5099, revised 5 March 2026):
+              peak plasma concentration "approximately 5 hours after oral administration" in children and adolescents 6-17 and
+              elimination half-life "approximately 18 hours". Does NOT claim: the tablet's release profile, accumulation or steady
+              state (the SmPC states neither), the size or timing of the high-fat-meal rise (the SmPC gives +75% Cmax and +40% AUC in
+              adults, with no change in timing), blood pressure or heart-rate effects, or the time to benefit. */
+  MODEL.atx_em  = {comps:[{frac:1,lag:0,ka:1.534}], ke:Math.LN2/3.6};
+  MODEL.atx_pm  = {comps:[{frac:1,lag:0,ka:2.888}], ke:Math.LN2/21};
+  MODEL.atx_inh = {comps:[{frac:1,lag:0,ka:1.534}], ke:Math.LN2/3.6};
+  MODEL.gua_pr  = {comps:[{frac:1,lag:0,ka:0.573}], ke:Math.LN2/18};
 })();

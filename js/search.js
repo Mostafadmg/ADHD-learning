@@ -29,7 +29,9 @@
     kids:['child','children'], kid:['child'], child:['child','children'], teen:['adolescent','young'], adult:['adult','adults'], elderly:['older'], old:['older'], women:['women','girls','female'], girls:['girls','women','female'],
     dose:['dose','dosing','titrat'], doses:['dose','dosing'], weight:['weight'], appetite:['appetite'], sleep:['sleep','insomnia'], insomnia:['sleep','insomnia'], heart:['cardiac','heart','cardiovascular'], cardiac:['cardiac','cardiovascular','heart'],
     misuse:['misuse','diversion','substance'], pip:['prescriber','independent'], cdao:['accountable','controlled'], ssp:['shortage','protocol'], owing:['owing','owings'], diversion:['diversion','misuse'], drugs:['substance','drug'], alcohol:['alcohol','audit'], cannabis:['cannabis','substance'],
-    shared:['shared','care'], review:['review','annual'], monitoring:['monitoring','monitor'], side:['adverse','side'], effects:['effects','adverse'], interaction:['interaction','interactions'], interactions:['interaction','interactions']
+    shared:['shared','care'], review:['review','annual'], monitoring:['monitoring','monitor'], side:['adverse','side'], effects:['effects','adverse'], interaction:['interaction','interactions'], interactions:['interaction','interactions'],
+    convert:['conversion','switching','switch'], conversion:['convert','switching','switch'], converting:['conversion','switch'], switch:['switching','conversion'], swap:['switch','switching'],
+    ir:['immediate-release','immediate'], mr:['modified-release','modified'], xl:['modified-release'], er:['modified-release'], pr:['prolonged-release'], prodrug:['lisdexamfetamine'], taper:['stopping','stop'], qt:['qt','prolongation','guanfacine']
   };
 
   /* ---------- index ---------- */
