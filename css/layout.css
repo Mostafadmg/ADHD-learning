@@ -24,7 +24,7 @@ body{background:var(--page)}
 .progress-pill .bar span{background:var(--teal)}
 
 /* ---------- sidebar ---------- */
-nav.sidebar{background:#fff;border-right:1px solid var(--line)}
+nav.sidebar{background:#fff;border-right:1px solid var(--line);padding:1.1rem 1rem 2rem}
 .sb-toggle{border-color:transparent;color:var(--muted)}
 .sb-toggle:hover{background:#f4f7f9}
 .sb-toggle .sb-ico{background:#f2f5f8;color:var(--muted)}
@@ -34,13 +34,15 @@ nav.sidebar .navhead{text-transform:none;letter-spacing:0;font-size:.8rem;font-w
 nav.sidebar .num{border-radius:50%;background:#f2f5f8;color:var(--muted)}
 nav.sidebar a[aria-current="page"]{background:var(--teal-l);color:var(--navy);box-shadow:none}
 nav.sidebar a[aria-current="page"] .num{background:var(--teal);color:#fff}
-nav.sidebar li.sb-start>a{border-radius:999px}
+nav.sidebar li.sb-start>a{border-radius:999px;justify-content:center}
 
 /* Module menu: plain links, the module name, then the lessons as a progress track */
+.sb-context{gap:.55rem}
 .sb-context-back:not(.sb-context-start){border-color:transparent!important;background:transparent!important;box-shadow:none!important;padding:.35rem .25rem!important;color:var(--muted)!important;font-size:.92rem}
 .sb-context-back:not(.sb-context-start):hover{background:#f4f7f9!important}
 .sb-context-back:not(.sb-context-start) .sb-back-ic{background:transparent;color:var(--muted)}
-.sb-context-start{border-radius:999px!important}
+.sb-context-start{justify-content:center;padding:.6rem 1rem!important;border-radius:999px!important;font-size:.95rem}
+.sb-context-start .sb-back-ic{display:none!important}
 nav.sidebar .sb-context-head{grid-template-columns:1fr;padding:.85rem .25rem .25rem;background:transparent;border:0;box-shadow:none}
 nav.sidebar .sb-context-head .sb-context-num{display:none}
 nav.sidebar .sb-context-kicker{text-transform:none;letter-spacing:0;font-size:.85rem;font-weight:600}
@@ -55,14 +57,15 @@ nav.sidebar .sb-context-rule{display:none}
 .sb-context-list button.done:not([aria-current="step"]) .sb-lesson-num{border-color:var(--teal);background:var(--teal);color:#fff}
 .sb-context-list button[aria-current="step"]{background:var(--teal-l);box-shadow:none}
 .sb-context-list button[aria-current="step"] .sb-lesson-num{border:3px solid var(--teal);background:#fff;color:var(--teal)}
-.sb-context-list button[aria-current="step"] .sb-lesson-title{color:var(--navy)}
+.sb-context-list button[aria-current="step"] .sb-lesson-title{color:var(--navy);font-weight:600}
 .sb-lesson-title{font-size:.9rem;font-weight:500;color:#33475a}
 .sb-lesson-state{display:none}
 .sb-lesson-time{font-size:.75rem;color:#8796a5}
 
-/* Collapsed rail (desktop): keep the module number and centre the track on the icons */
+/* Collapsed rail (desktop): keep the module number and the start icon, and centre the track on the icons */
 @media (min-width:901px){
   html.sb-collapsed nav.sidebar .sb-context-head .sb-context-num{display:grid}
+  html.sb-collapsed .sb-context-start .sb-back-ic{display:grid!important}
   html.sb-collapsed .sb-context-list::before{left:21px}
   html.sb-collapsed .sb-context-list button[aria-current="step"] .sb-lesson-num{border-color:transparent}
 }
@@ -81,7 +84,9 @@ main{margin:0 auto}
 .ls-steps{gap:6px;margin-top:.7rem}
 .ls-seg span{height:5px;background:#e6ecf0}
 .ls-seg.done span{background:var(--teal)}
-.ls-seg.cur span,.ls-seg.cur:hover span{background:var(--navy)}
+.ls-seg:hover span,.ls-seg:focus-visible span{height:5px;margin-top:0;background:#a9d3cf}
+.ls-seg.done:hover span,.ls-seg.done:focus-visible span{background:var(--teal-2)}
+.ls-seg.cur span,.ls-seg.cur:hover span,.ls-seg.cur:focus-visible span{background:var(--navy)}
 .lessons>.lesson{border-radius:0 0 18px 18px;box-shadow:var(--card-shadow)}
 .mod-head{border-radius:18px;box-shadow:var(--card-shadow)}
 @media (max-width:600px){.lessons>.ls-bar{padding:.7rem 1rem .6rem}}
