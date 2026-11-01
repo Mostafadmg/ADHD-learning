@@ -1,0 +1,212 @@
+/* Module 8 on a phone. Loaded after styles.css and mobile.css, so these rules win over the module rules there.
+   Goal: every lesson is about two screens, one thing at a time, with the depth folded away.
+   Wide screens: the new parts (tab bars, "Next:" buttons, wrappers) are invisible or neutral, so the desktop look is
+   unchanged. Everything below the 700px query is the phone layout. */
+
+/* ---------- parts that only exist for phones ---------- */
+#m8 .m8x-grp,#m8 .m8x-chips{display:contents}
+#m8 .m8x-tabs,#m8 .m8x-more,#m8 .m8-sh-tabs,#m8 .m8x-go-n{display:none}
+
+@media (max-width:700px){
+  /* ---------- small labels are at least 12px ---------- */
+  #m8 .m8k span,#m8 .m8x-eb,#m8 .m8x-lb,#m8 .m8x-kind,#m8 .m8x-sl,#m8 .m8x-gl,#m8 .m8-sq-lb,#m8 .m8x-dec b,#m8 .m8-w b,
+  #m8 .m8-tg b,#m8 .m8x-h{font-size:.75rem}
+  #m8 .m8x-key,#m8 .m8x-fig figcaption,#m8 .m8-sh-key{font-size:.82rem}
+
+  /* ---------- the condition picker: every condition visible, two across, nothing to scroll ---------- */
+  #m8 .m8x-pick{display:block;overflow:visible;flex-wrap:wrap;padding:0;margin:0 0 .75rem}
+  #m8 .m8x-grp{display:block;margin:0 0 .55rem}
+  #m8 .m8x-grp:last-child{margin-bottom:0}
+  #m8 .m8x-gl{display:block;flex:none;margin:.1rem 0 .35rem;color:var(--c)}
+  #m8 .m8x-chips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.45rem}
+  #m8 .m8x-chip{white-space:normal;min-height:48px;justify-content:flex-start;border-radius:14px;padding:.4rem .7rem;font-size:.9rem;line-height:1.2}
+  #m8 .m8x-chip:last-child:nth-child(odd){grid-column:1/-1}
+
+  /* ---------- the condition card: three short screens ---------- */
+  #m8 .m8x-card{padding:.9rem .95rem 1rem}
+  #m8 .m8x-card header{margin-bottom:.7rem}
+  #m8 .m8x-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.35rem;margin:0 0 .85rem}
+  #m8 .m8x-tab{font:inherit;display:flex;align-items:center;justify-content:center;gap:.4rem;min-height:48px;padding:.3rem .25rem;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--muted);font-size:.9rem;font-weight:600;cursor:pointer;line-height:1.15}
+  #m8 .m8x-tab b{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#e9eff4;color:var(--navy);font-size:.78rem}
+  #m8 .m8x-tab[aria-pressed="true"]{background:var(--l);border-color:var(--c);color:var(--navy);box-shadow:0 0 0 1px var(--c)}
+  #m8 .m8x-tab[aria-pressed="true"] b{background:var(--c);color:#fff}
+  #m8 .m8x-tab:focus-visible,#m8 .m8-sh-tab:focus-visible,#m8 .m8x-chip:focus-visible{outline:3px solid #f2a541;outline-offset:2px}
+  /* every block says which screen it belongs to (data-s); only the chosen screen shows */
+  #m8 .m8x-card[data-sec="0"] [data-s]:not([data-s="0"]),
+  #m8 .m8x-card[data-sec="1"] [data-s]:not([data-s="1"]),
+  #m8 .m8x-card[data-sec="2"] [data-s]:not([data-s="2"]){display:none}
+  /* screen 1: just the clue and the questions to ask; screen 2: the fact, the course chart and the comparison */
+  #m8 .m8x-stat{margin:0 0 .8rem;font-size:.9rem}
+  #m8 .m8x-top{display:block;margin-bottom:0}
+  #m8 .m8x-fig{margin:0 0 .6rem}
+  #m8 .m8x-clue p{font-size:1.02rem;margin-bottom:.7rem}
+  #m8 .m8x-clue li{padding:.35rem 0 .35rem 1rem;font-size:.95rem}
+  #m8 .m8x-fig{max-width:none}
+  /* screen 2: rows, ADHD then the other condition */
+  #m8 .m8x-cmp{border-top:0;margin:0}
+  #m8 .m8x-r{padding:.7rem 0;gap:.4rem}
+  #m8 .m8x-r>b{font-size:1rem}
+  #m8 .m8x-r p{font-size:.95rem}
+  /* screen 3: the decision, then the checks and the way on */
+  #m8 .m8x-dec{gap:.55rem;margin-bottom:.8rem}
+  #m8 .m8x-dec p{font-size:.95rem}
+  #m8 .m8x-check{gap:.5rem;margin-bottom:.4rem}
+  #m8 .m8x-form{min-height:44px;padding:.3rem .9rem;font-size:.92rem}
+  #m8 .m8x-test{font-size:.95rem;flex-basis:100%}
+  #m8 .m8x-more{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;margin-top:1rem;border:1.5px solid var(--c);border-radius:14px;background:var(--l);color:var(--navy);font-size:1rem;font-weight:600;cursor:pointer}
+  #m8 .m8x-more:active{background:#fff}
+  /* the previous / next condition buttons close the last screen only */
+  #m8 .m8x-card:not([data-sec="2"]) footer{display:none}
+  #m8 .m8x-card footer{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.5rem;padding-top:.9rem;margin-top:.4rem}
+  #m8 .m8x-go{min-height:52px;font-size:.95rem;line-height:1.2;white-space:normal}
+  #m8 .m8x-go-n{display:block;font-size:.8rem;font-weight:500;opacity:.85}
+  #m8 .m8x-ws{grid-column:1/-1;order:3;text-align:left;display:flex;flex-wrap:wrap;align-items:center;gap:0 .6rem;font-size:.92rem}
+  #m8 .m8x-ws a{display:inline-flex;align-items:center;min-height:44px;margin:0;padding:0 .2rem}
+
+  /* ---------- lesson 2: the four course shapes, one at a time ---------- */
+  #m8 .m8-sh-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.4rem;margin:.4rem 0 .7rem}
+  #m8 .m8-sh-tab{font:inherit;display:flex;align-items:center;gap:.5rem;min-height:48px;padding:.3rem .6rem;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--muted);font-size:.9rem;font-weight:600;text-align:left;cursor:pointer;line-height:1.15}
+  #m8 .m8-sh-tab b{flex:none;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#e9eff4;color:var(--navy);font-size:.8rem}
+  #m8 .m8-sh-tab[aria-selected="true"]{background:var(--l);border-color:var(--c);color:var(--navy);box-shadow:0 0 0 1px var(--c)}
+  #m8 .m8-sh-tab[aria-selected="true"] b{background:var(--c);color:#fff}
+  #m8 .m8-sh-grid{display:block;overflow:visible;padding:0;margin:0 0 .3rem}
+  #m8 .m8-sh{display:none;flex:none}
+  #m8 .m8-sh.on{display:block}
+  #m8 .m8-sh-n{display:none}
+}
+
+/* ---------- new pieces that are the same at every width ---------- */
+#m8 .m8-def{margin:0 0 .4rem}
+#m8 .m8-crit{border-left:4px solid var(--teal);padding:.15rem 0 .15rem .85rem;margin:.6rem 0 .9rem}
+#m8 .m8-o-ic{display:block;margin:0 0 .3rem;color:var(--c)}
+/* lesson 2: the five clues stepper. One navy colour for all five (they are a sequence, not categories);
+   "points to ADHD" keeps the teal bar, "points elsewhere" gets the coral bar */
+#m8 .m8-clues [data-i]{--g:var(--navy);--gl:#e8edf3}
+#m8 .m8-yx>div+div{border-left-color:var(--coral);background:var(--coral-l)}
+#m8 .m8-x .gst-sys{background:var(--coral)}
+#m8 .m8-yx p{margin:.35rem 0 0}
+/* lesson 8: the three rules are red (stop), amber (change) and teal (slower); the plan starts red (safety) */
+#m8 .m8-rules-gst [data-i="0"]{--g:var(--red);--gl:var(--red-l)}
+#m8 .m8-rules-gst [data-i="1"]{--g:var(--amber);--gl:var(--amber-l)}
+#m8 .m8-rules-gst [data-i="2"]{--g:var(--teal);--gl:var(--teal-l)}
+#m8 .m8-plan-gst [data-i]{--g:var(--teal);--gl:var(--teal-l)}
+#m8 .m8-plan-gst [data-i="0"]{--g:var(--red);--gl:var(--red-l)}
+#m8 .m8-step-t{margin:0 0 .7rem;font-size:1.02rem;line-height:1.55;max-width:none}
+#m8 .m8-rules-gst .m8-titr{margin:.2rem 0 .8rem}
+#m8 .m8-gst .gst-rule{font-size:1rem}
+#m8 .m8-case-h{margin:0 0 .7rem;max-width:none}
+
+@media (max-width:700px){
+  /* ---------- overview ---------- */
+  #m8 .mod-head .mod-meta{gap:.3rem;margin:.1rem 0 .7rem}
+  #m8 .mod-meta li{font-size:.8rem;line-height:1.35;padding:.2rem .6rem}
+  #m8 .mod-head p{font-size:1rem;line-height:1.55}
+  #m8 .objectives{padding:.8rem .9rem}
+  #m8 .objectives ul{padding-left:1.1rem}
+  #m8 .objectives li{font-size:.95rem;line-height:1.45;margin-bottom:.3rem}
+
+  /* ---------- text blocks ---------- */
+  #m8 .m8-def{font-size:.97rem;line-height:1.45;margin:0 0 .35rem}
+  #m8 .m8k{padding:.75rem .9rem;margin-bottom:.9rem}
+  #m8 .m8k p{font-size:1rem;line-height:1.5}
+  #m8 .callout,#m8 .say{padding:.75rem .9rem}
+  #m8 .callout{font-size:.97rem;line-height:1.5}
+  #m8 .say p{font-size:1rem;line-height:1.5}
+  #m8 .deeper{gap:.35rem}
+  #m8 .deeper a{display:inline-flex;align-items:center;min-height:44px;padding:.2rem .8rem;font-size:.88rem;line-height:1.25}
+  #m8 .deeper span{font-size:.88rem}
+  #m8 .cl-progress{font-size:.92rem;line-height:1.5}
+
+  /* ---------- lesson 1: three possible answers, numbers, two ways to go wrong ---------- */
+  #m8 .m8-out{gap:.5rem;margin:.3rem 0 .8rem}
+  #m8 .m8-o{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:.75rem;align-items:start;padding:.7rem .85rem;border-top:1px solid var(--line);border-left:4px solid var(--c)}
+  #m8 .m8-o-ic{grid-row:1/3;grid-column:1;width:44px;height:auto;margin:.1rem 0 0}
+  #m8 .m8-ot,#m8 .m8-o p{grid-column:2}
+  #m8 .m8-o p{margin:.15rem 0 0;font-size:.93rem;line-height:1.4}
+  #m8 .stat-grid,#m8 .stat-grid.stat-3{grid-template-columns:1fr;gap:.45rem;margin:.4rem 0 .5rem}
+  #m8 .stat{display:grid;grid-template-columns:76px minmax(0,1fr);align-items:center;gap:.75rem;padding:.55rem .85rem}
+  #m8 .stat-n{font-size:1.75rem;line-height:1.1}
+  #m8 .stat-l{font-size:.93rem;line-height:1.35}
+  #m8 .m8-two{gap:.5rem}
+  #m8 .m8-w{padding:.65rem .85rem}
+  #m8 .m8-w p{font-size:.95rem}
+  #m8 .m8-crit{font-size:.93rem;line-height:1.45;margin:.5rem 0 .6rem}
+  /* the picture walkthrough: the step text and the two arrow buttons are enough on a phone (the numbers on the picture are 44px buttons too) */
+  #m8 .wt-dots{display:none}
+  #m8 .walk-d summary,#m8 .walk li{font-size:.97rem}
+
+  /* ---------- the stepper tabs (lessons 2 and 8) ---------- */
+  #m8 .gst{margin:.4rem 0 1rem}
+  #m8 .gst-t{min-height:72px;padding:.6rem .15rem .55rem}
+  #m8 .gst-t span{font-size:.78rem;line-height:1.15;overflow-wrap:anywhere}
+  #m8 .gst-5 .gst-track,#m8 .gst-4 .gst-track,#m8 .gst-3 .gst-track{grid-template-columns:repeat(var(--n,5),minmax(0,1fr));overflow:visible}
+  #m8 .gst-3 .gst-track{--n:3}
+  #m8 .gst-4 .gst-track{--n:4}
+  #m8 .gst-5 .gst-track{--n:5}
+  #m8 .gst-band{padding:.8rem .95rem .75rem}
+  #m8 .gst-l{width:40px;height:40px;font-size:1.15rem;border-radius:12px}
+  #m8 .gst-head{margin-bottom:.4rem}
+  #m8 .gst-head h4{font-size:1.1rem}
+  #m8 .gst-body{padding:.8rem .95rem .3rem}
+  #m8 .gst-cmp{gap:.55rem}
+  #m8 .gst-cmp>div{padding:.65rem .85rem}
+  #m8 .gst-cmp p{font-size:1rem;line-height:1.5}
+  #m8 .gst-nav{padding:.65rem .95rem}
+  #m8 .gst-nav .btn{min-height:48px;font-size:.92rem;line-height:1.2}
+  #m8 .gst-sys{font-size:.75rem}
+  #m8 .m8-titr{gap:.45rem}
+  #m8 .m8-tg{padding:.55rem .7rem}
+  #m8 .m8-tg span{font-size:.88rem}
+
+  /* ---------- lesson 8: the treat-first ladder, tighter ---------- */
+  #m8 [data-lab="treat"] .ag-tag{display:none}
+  #m8 [data-lab="treat"] .ag-w-h{margin-bottom:.3rem}
+  #m8 [data-lab="treat"] .ag-w>p{font-size:.95rem;line-height:1.5}
+  #m8 [data-lab="treat"] .ag-lad summary{min-height:48px;padding:.35rem .6rem;font-size:.95rem;line-height:1.25}
+  #m8 [data-lab="treat"] .ag-lad p{font-size:.95rem}
+
+  /* ---------- lesson 6: "If you hear this, check that" as quick rows ---------- */
+  #m8 .m8-hear{gap:.45rem}
+  #m8 .m8-hear li{padding:.6rem .8rem}
+  #m8 .m8-hear strong{font-size:.97rem;line-height:1.3}
+  #m8 .m8-hear span{display:block;margin-top:.2rem;font-size:.95rem;font-weight:600;color:var(--teal)}
+  #m8 .m8-hear span::before{content:"\2192\00a0"}
+
+  /* ---------- side topics and the recap ---------- */
+  #m8 .mx-b{padding-left:.9rem;padding-right:.9rem}
+  #m8 .m8-three{gap:.5rem}
+  #m8 .risk-grid.m8-2,#m8 .m8-hear{gap:.45rem}
+  #m8 .takeaways{padding:.9rem 1rem}
+  #m8 .takeaways li{font-size:.97rem;line-height:1.45}
+}
+
+/* ---------- small tab sets inside a lesson (js/m8-extra.js) ---------- */
+#m8 .m8t-bar,#m8 .m8t-more{display:none}
+#m8 .m8t-p>h3:first-child{margin-top:.2rem}
+@media (max-width:700px){
+  #m8 .m8t-bar{display:grid;grid-template-columns:repeat(var(--n,3),minmax(0,1fr));gap:.35rem;margin:.5rem 0 .8rem}
+  #m8 .m8t-b{font:inherit;display:flex;align-items:center;justify-content:center;gap:.4rem;min-height:52px;padding:.3rem .3rem;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--muted);font-size:.88rem;font-weight:600;line-height:1.15;cursor:pointer;text-align:left}
+  #m8 .m8t-b b{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#e9eff4;color:var(--navy);font-size:.78rem}
+  #m8 .m8t-b[aria-selected="true"]{background:var(--teal-l);border-color:var(--teal);color:var(--navy);box-shadow:0 0 0 1px var(--teal)}
+  #m8 .m8t-b[aria-selected="true"] b{background:var(--teal);color:#fff}
+  #m8 .m8t-b:focus-visible,#m8 .m8t-more:focus-visible{outline:3px solid #f2a541;outline-offset:2px}
+  #m8 .m8t-p:not(.on){display:none}
+  #m8 .m8t-more{display:flex;align-items:center;justify-content:center;width:100%;min-height:52px;margin-top:.9rem;border:1.5px solid var(--teal);border-radius:14px;background:var(--teal-l);color:var(--navy);font-size:1rem;font-weight:600;cursor:pointer}
+  #m8 .m8t-more:active{background:#fff}
+  #m8 .m8t-p>h3:first-child{margin-top:0;font-size:1.1rem}
+}
+
+/* ---------- very narrow phones (320 to 360px): drop the little number badges, tighten buttons ---------- */
+@media (max-width:700px){
+  #m8 .gst-nav{gap:.4rem}
+  #m8 .gst-nav .btn{padding:.4rem .5rem;font-size:.9rem}
+}
+@media (max-width:360px){
+  #m8 .m8x-tab b,#m8 .m8t-b b,#m8 .m8-sh-tab b{display:none}
+  #m8 .m8x-tab,#m8 .m8t-b,#m8 .m8-sh-tab{padding:.3rem .35rem;font-size:.86rem;justify-content:center;text-align:center}
+  #m8 .m8x-go{padding:.4rem .35rem;font-size:.9rem}
+  #m8 .gst-nav .btn{font-size:.86rem}
+  #m8 .gst-t span{font-size:.74rem}
+}
+#m8 .m8t-h{margin-bottom:.1rem}
+@media (max-width:700px){#m8 .m8t-h{margin:.2rem 0 0;font-size:1.1rem}}

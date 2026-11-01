@@ -396,11 +396,11 @@
     /* the age-12 line: everything before it counts as childhood onset */
     s += '<rect x="'+X(0)+'" y="'+T+'" width="'+(X(4)-X(0))+'" height="'+(H-T-B)+'" fill="#16324f" opacity=".04"/>';
     s += '<line x1="'+X(4)+'" y1="'+(T-4)+'" x2="'+X(4)+'" y2="'+(H-B)+'" stroke="#16324f" stroke-dasharray="2 3" opacity=".55"/>';
-    s += '<text x="'+(X(4)-4)+'" y="'+(T+2)+'" font-size="9.5" fill="#55626f" text-anchor="end">before 12</text>';
-    Object.keys(AGES).forEach(function(i){ var an = +i===0 ? 'start' : (+i===12 ? 'end' : 'middle'); s += '<text x="'+X(+i)+'" y="'+(H-8)+'" font-size="10" fill="#55626f" text-anchor="'+an+'">'+AGES[i]+'</text>'; });
+    s += '<text x="'+(X(4)-4)+'" y="'+(T+2)+'" font-size="11.5" fill="#55626f" text-anchor="end">before 12</text>';
+    Object.keys(AGES).forEach(function(i){ var an = +i===0 ? 'start' : (+i===12 ? 'end' : 'middle'); s += '<text x="'+X(+i)+'" y="'+(H-8)+'" font-size="11.5" fill="#55626f" text-anchor="'+an+'">'+AGES[i]+'</text>'; });
     var d = path(v);
     s += '<path d="'+d+' L'+X(12)+' '+(H-B)+' L'+X(0)+' '+(H-B)+' Z" fill="'+lt+'"/>';
-    if(ev){ var ex = X(ev[0]); s += '<line x1="'+ex+'" y1="'+(T-2)+'" x2="'+ex+'" y2="'+(H-B)+'" stroke="'+col+'" stroke-width="1.4" stroke-dasharray="3 3"/><text x="'+Math.min(Math.max(ex,30),W-30)+'" y="'+(T-8)+'" font-size="10" font-weight="600" fill="'+col+'" text-anchor="middle">'+esc(ev[1])+'</text>'; }
+    if(ev){ var ex = X(ev[0]); s += '<line x1="'+ex+'" y1="'+(T-2)+'" x2="'+ex+'" y2="'+(H-B)+'" stroke="'+col+'" stroke-width="1.4" stroke-dasharray="3 3"/><text x="'+Math.min(Math.max(ex,30),W-30)+'" y="'+(T-8)+'" font-size="11.5" font-weight="600" fill="'+col+'" text-anchor="middle">'+esc(ev[1])+'</text>'; }
     if(showAdhd!==false) s += '<path d="'+path(ADHD)+'" fill="none" stroke="#16324f" stroke-width="2" stroke-dasharray="5 4" opacity=".75"/>';
     s += '<path d="'+d+'" fill="none" stroke="'+col+'" stroke-width="2.6" stroke-linecap="round"/>';
     return s + '</svg>';
@@ -418,67 +418,112 @@
     }).join('');
   }
 
+  /* On phones (CSS, 700px) each condition card is three short screens instead of one long one:
+     1 the clue and the course chart, 2 how ADHD and the condition compare, 3 how to decide. The tab bar and the
+     "Next:" buttons are hidden on wider screens, where the whole card shows at once. */
+  var SECS = [['Clue', 'Next: compare them'], ['Compare', 'Next: how to decide'], ['Decide', '']];
+
+  /* keep the control the person just used on screen: scroll up only if it has gone above the top bar */
+  function keepInView(el){
+    if(!el || !el.getBoundingClientRect) return;
+    var r = el.getBoundingClientRect();
+    if(r.top < 64) window.scrollBy(0, r.top - 76);
+  }
+
   function mount(m){
     var keys = m.getAttribute('data-m8x').split(','), list = C.filter(function(c){ return keys.indexOf(c.g) >= 0; });
     if(!list.length) return;
-    var mk = keys.join(','), cur = 0;
+    var mk = keys.join(','), cur = 0, sec = 0;
     for(var i=0;i<list.length;i++) if(list[i].id===memo[mk]) cur = i;
     function draw(){
       var c = list[cur], g = G[c.g], k = KIND[c.k], n = list.length;
       var h = '<div class="m8x-pick" role="group" aria-label="Choose a condition">';
       keys.forEach(function(gk){
         var gl = list.filter(function(x){ return x.g===gk; });
+        h += '<div class="m8x-grp">';
         if(keys.length>1) h += '<span class="m8x-gl" style="--c:'+G[gk].c+'">'+esc(G[gk].t)+'</span>';
-        h += gl.map(function(x){ var j = list.indexOf(x); return '<button type="button" class="m8x-chip" style="--c:'+G[x.g].c+';--l:'+G[x.g].l+'" data-j="'+j+'" aria-pressed="'+(j===cur)+'" title="'+esc(x.t)+'"><i class="'+KIND[x.k][1]+'" aria-hidden="true"></i>'+esc(x.ch||x.t)+'</button>'; }).join('');
+        h += '<div class="m8x-chips">' + gl.map(function(x){ var j = list.indexOf(x); return '<button type="button" class="m8x-chip" style="--c:'+G[x.g].c+';--l:'+G[x.g].l+'" data-j="'+j+'" aria-pressed="'+(j===cur)+'" title="'+esc(x.t)+'"><i class="'+KIND[x.k][1]+'" aria-hidden="true"></i>'+esc(x.ch||x.t)+'</button>'; }).join('') + '</div></div>';
       });
       h += '</div>';
-      h += '<article class="m8x-card" style="--c:'+g.c+';--l:'+g.l+'" aria-live="polite">';
+      h += '<article class="m8x-card" style="--c:'+g.c+';--l:'+g.l+'" aria-live="polite" data-sec="'+sec+'">';
       h += '<header><div><span class="m8x-eb">ADHD or '+esc(c.s)+'? · '+(cur+1)+' of '+n+'</span><h3>'+esc(c.t)+'</h3></div><span class="m8x-kind '+k[1]+'">'+k[0]+'</span></header>';
-      if(c.stat) h += '<p class="m8x-stat">'+esc(c.stat)+'</p>';
-      h += '<div class="m8x-top"><figure class="m8x-fig">'+chart(c.v, g.c, g.l, c.ev, 'Typical course over life, not to scale. Dashed line: ADHD, present from early childhood. Solid line: '+c.t+'. '+c.cap)
+      /* Three screens on a phone. Every block carries data-s (0 clue, 1 compare, 2 decide); CSS shows the blocks of the
+         chosen screen only. On wider screens all blocks show, in the order they always had. */
+      h += '<div class="m8x-tabs" role="group" aria-label="Parts of this card">' + SECS.map(function(t,i){
+        return '<button type="button" class="m8x-tab" data-sec="'+i+'" aria-pressed="'+(i===sec)+'"><b>'+(i+1)+'</b><span>'+t[0]+'</span></button>';
+      }).join('') + '</div>';
+      if(c.stat) h += '<p class="m8x-stat" data-s="1">'+esc(c.stat)+'</p>';
+      h += '<div class="m8x-top"><figure class="m8x-fig" data-s="1">'+chart(c.v, g.c, g.l, c.ev, 'Typical course over life, not to scale. Dashed line: ADHD, present from early childhood. Solid line: '+c.t+'. '+c.cap)
         + '<figcaption><span class="m8x-key"><i class="ka"></i>ADHD</span><span class="m8x-key"><i class="kx"></i>'+esc(cap1(c.s))+'</span><span class="m8x-cap">'+esc(c.cap)+'</span></figcaption></figure>';
-      h += '<div class="m8x-clue"><span class="m8x-lb">Best clue</span><p>'+esc(c.clue)+'</p><span class="m8x-lb">Ask</span><ul>'+c.ask.map(function(q){ return '<li>“'+esc(q)+'”</li>'; }).join('')+'</ul></div></div>';
-      h += '<div class="m8x-cmp" role="table" aria-label="Points to ADHD or to '+esc(c.s)+'"><div class="m8x-r m8x-h" role="row"><span role="columnheader"></span><span role="columnheader" class="ha">Points to ADHD</span><span role="columnheader" class="hx">Points to '+esc(c.s)+'</span></div>'
+      h += '<div class="m8x-clue" data-s="0"><span class="m8x-lb">Best clue</span><p>'+esc(c.clue)+'</p><span class="m8x-lb">Ask</span><ul>'+c.ask.map(function(q){ return '<li>“'+esc(q)+'”</li>'; }).join('')+'</ul></div></div>';
+      h += '<button type="button" class="btn m8x-more" data-s="0" data-sec="1">'+SECS[0][1]+' →</button>';
+      h += '<div class="m8x-cmp" data-s="1" role="table" aria-label="Points to ADHD or to '+esc(c.s)+'"><div class="m8x-r m8x-h" role="row"><span role="columnheader"></span><span role="columnheader" class="ha">Points to ADHD</span><span role="columnheader" class="hx">Points to '+esc(c.s)+'</span></div>'
         + c.rows.map(function(r){ return '<div class="m8x-r" role="row"><b role="rowheader">'+esc(r[0])+'</b><p class="pa" role="cell"><span class="m8x-sl">ADHD</span>'+esc(r[1])+'</p><p class="px" role="cell"><span class="m8x-sl">'+esc(cap1(c.s))+'</span>'+esc(r[2])+'</p></div>'; }).join('') + '</div>';
-      h += '<div class="m8x-dec"><p class="d-mim"><b>'+esc(cap1(c.s))+' alone explains it when</b>'+esc(c.mimic)+'</p><p class="d-both"><b>Diagnose both when</b>'+esc(c.both)+'</p><p class="d-first"><b>If both: what comes first</b>'+esc(c.first)+'</p></div>';
-      h += '<div class="m8x-check"><span class="m8x-lb">Check</span>'+checkHTML(c)+'</div>';
-      h += '<footer><button type="button" class="btn secondary m8x-go" data-d="-1"'+(cur===0?' disabled':'')+'>← Previous</button>'
+      h += '<button type="button" class="btn m8x-more" data-s="1" data-sec="2">'+SECS[1][1]+' →</button>';
+      h += '<div class="m8x-dec" data-s="2"><p class="d-mim"><b>'+esc(cap1(c.s))+' alone explains it when</b>'+esc(c.mimic)+'</p><p class="d-both"><b>Diagnose both when</b>'+esc(c.both)+'</p><p class="d-first"><b>If both: what comes first</b>'+esc(c.first)+'</p></div>';
+      h += '<div class="m8x-check" data-s="2"><span class="m8x-lb">Check</span>'+checkHTML(c)+'</div>';
+      var pv = cur>0 ? list[cur-1] : null, nx = cur<n-1 ? list[cur+1] : null;
+      h += '<footer><button type="button" class="btn secondary m8x-go" data-d="-1"'+(cur===0?' disabled':'')+'>← Previous'+(pv?'<span class="m8x-go-n">'+esc(pv.ch||pv.t)+'</span>':'')+'</button>'
         + (c.ws.length ? '<span class="m8x-ws">Full reference: '+c.ws.map(function(w){ return '<a href="adhd-assessment/index.html#cond-'+w[0]+'" target="_blank" rel="noopener">'+esc(w[1])+' ↗</a>'; }).join(' ')+'</span>' : '<span class="m8x-ws"></span>')
-        + '<button type="button" class="btn m8x-go" data-d="1"'+(cur===n-1?' disabled':'')+'>Next →</button></footer></article>';
+        + '<button type="button" class="btn m8x-go" data-d="1"'+(cur===n-1?' disabled':'')+'>Next →'+(nx?'<span class="m8x-go-n">'+esc(nx.ch||nx.t)+'</span>':'')+'</button></footer></article>';
       m.innerHTML = h;
-      /* on phones the chips scroll sideways: keep the chosen one in view */
-      var pc = m.querySelector('.m8x-chip[aria-pressed="true"]'), row = pc && pc.parentNode;
-      if(row && row.scrollWidth > row.clientWidth) row.scrollLeft = Math.max(0, pc.offsetLeft - 12);
     }
     m.addEventListener('click', function(e){
       var b = e.target.closest('button'); if(!b || !m.contains(b)) return;
-      if(b.classList.contains('m8x-chip')){ cur = +b.dataset.j; }
-      else if(b.classList.contains('m8x-go')){ cur = Math.max(0, Math.min(list.length-1, cur + (+b.dataset.d))); }
+      var moved = false;
+      if(b.classList.contains('m8x-chip')){ cur = +b.dataset.j; sec = 0; moved = true; }
+      else if(b.classList.contains('m8x-go')){ cur = Math.max(0, Math.min(list.length-1, cur + (+b.dataset.d))); sec = 0; moved = true; }
+      else if(b.classList.contains('m8x-tab') || b.classList.contains('m8x-more')){ sec = +b.dataset.sec; }
       else if(b.classList.contains('m8x-form')){
         var id = b.dataset.form; location.hash = 'form-library';
         setTimeout(function(){ if(window.__m3form) window.__m3form(id); var p = document.querySelector('#form-library .fl-panel[data-form="'+id+'"]'); if(p && p.scrollIntoView) p.scrollIntoView({block:'start'}); }, 80);
         return;
       }
       else return;
-      remember(mk, list[cur].id);
+      if(moved) remember(mk, list[cur].id);
       var y = window.scrollY; draw(); window.scrollTo(0, y);
-      var f = m.querySelector(b.classList.contains('m8x-chip') ? '.m8x-chip[aria-pressed="true"]' : '.m8x-go[data-d="'+b.dataset.d+'"]:not([disabled])') || m.querySelector('.m8x-card h3');
+      /* a new condition: show the chips again; a new part of the card: show the tab bar again */
+      keepInView(m.querySelector(moved ? '.m8x-pick' : '.m8x-tabs') || m.querySelector('.m8x-card'));
+      var f = m.querySelector(b.classList.contains('m8x-chip') ? '.m8x-chip[aria-pressed="true"]'
+          : b.classList.contains('m8x-go') ? '.m8x-card h3'
+          : '.m8x-tab[aria-pressed="true"]') || m.querySelector('.m8x-card h3');
       if(f){ if(f.tagName==='H3') f.setAttribute('tabindex','-1'); f.focus({preventScroll:true}); }
+    });
+    m.addEventListener('keydown', function(e){
+      var t = e.target; if(!t || !t.classList || !t.classList.contains('m8x-tab')) return;
+      if(e.key!=='ArrowRight' && e.key!=='ArrowLeft') return;
+      e.preventDefault(); sec = Math.max(0, Math.min(2, sec + (e.key==='ArrowRight' ? 1 : -1))); draw();
+      var f = m.querySelector('.m8x-tab[aria-pressed="true"]'); if(f) f.focus({preventScroll:true});
     });
     draw();
   }
 
   /* ---------- lesson 2: four course shapes ---------- */
   var SH = [
-    {t:'Steady since childhood', d:'ADHD. Also autism and intellectual disability, so look at the pattern too.', c:'#16324f', l:'#e8edf3', v:ADHD, adhd:false},
-    {t:'Episodes', d:'Depression, bipolar disorder: a clear change from the usual self that comes and goes.', c:'#7b4fb3', l:'#f3edfa', v:[0.1,0.1,0.1,0.12,0.15,0.2,0.84,0.2,0.15,0.8,0.18,0.15,0.15]},
-    {t:'Starts later, after a change', d:'Head injury, substances, a new medicine, thyroid disease, menopause, psychosis, memory decline.', c:'#a8432e', l:'#fbe9e4', v:[0.06,0.06,0.06,0.06,0.07,0.08,0.1,0.72,0.68,0.64,0.62,0.6,0.6], ev:[6.5,'Event']},
-    {t:'Comes and goes with a trigger', d:'Anxiety, trauma, sleep loss: worse in feared situations or after bad nights, better on good days.', c:'#2f6fb3', l:'#e8f0fa', v:[0.1,0.14,0.2,0.42,0.24,0.56,0.3,0.6,0.34,0.52,0.3,0.46,0.3]}
+    {t:'Steady since childhood', b:'Steady', d:'ADHD. Also autism and intellectual disability, so look at the pattern too.', c:'#16324f', l:'#e8edf3', v:ADHD, adhd:false},
+    {t:'Episodes', b:'Episodes', d:'Depression, bipolar disorder: a clear change from the usual self that comes and goes.', c:'#7b4fb3', l:'#f3edfa', v:[0.1,0.1,0.1,0.12,0.15,0.2,0.84,0.2,0.15,0.8,0.18,0.15,0.15]},
+    {t:'Starts later, after a change', b:'Starts later', d:'Head injury, substances, a new medicine, thyroid disease, menopause, psychosis, memory decline.', c:'#a8432e', l:'#fbe9e4', v:[0.06,0.06,0.06,0.06,0.07,0.08,0.1,0.72,0.68,0.64,0.62,0.6,0.6], ev:[6.5,'Event']},
+    {t:'Comes and goes with a trigger', b:'Trigger', d:'Anxiety, trauma, sleep loss: worse in feared situations or after bad nights, better on good days.', c:'#2f6fb3', l:'#e8f0fa', v:[0.1,0.14,0.2,0.42,0.24,0.56,0.3,0.6,0.34,0.52,0.3,0.46,0.3]}
   ];
   function shapes(m){
-    m.innerHTML = '<div class="m8-sh-grid">' + SH.map(function(s,i){
-      return '<figure class="m8-sh" style="--c:'+s.c+';--l:'+s.l+'"><span class="m8-sh-n">'+(i+1)+'</span>'+chart(s.v, s.c, s.l, s.ev, s.t+': '+s.d, s.adhd!==false && i>0)+'<figcaption><b>'+esc(s.t)+'</b>'+esc(s.d)+'</figcaption></figure>';
+    var cur = 0;
+    m.innerHTML = '<div class="m8-sh-tabs" role="tablist" aria-label="Four course shapes">' + SH.map(function(s,i){
+      return '<button type="button" role="tab" class="m8-sh-tab" data-i="'+i+'" style="--c:'+s.c+';--l:'+s.l+'" aria-selected="'+(i===0)+'"><b>'+(i+1)+'</b><span>'+esc(s.b)+'</span></button>';
+    }).join('') + '</div><div class="m8-sh-grid">' + SH.map(function(s,i){
+      return '<figure class="m8-sh'+(i===0?' on':'')+'" role="tabpanel" data-i="'+i+'" style="--c:'+s.c+';--l:'+s.l+'"><span class="m8-sh-n">'+(i+1)+'</span>'+chart(s.v, s.c, s.l, s.ev, s.t+': '+s.d, s.adhd!==false && i>0)+'<figcaption><b>'+esc(s.t)+'</b>'+esc(s.d)+'</figcaption></figure>';
     }).join('') + '</div><p class="m8-sh-key"><span class="m8x-key"><i class="ka"></i>ADHD (dashed, for comparison)</span><span class="m8-sh-note">Shapes are typical patterns, not to scale. The shaded band is childhood, before age 12.</span></p>';
+    function show(i, focus){
+      cur = (i+SH.length)%SH.length;
+      Array.prototype.forEach.call(m.querySelectorAll('.m8-sh-tab'), function(t,j){ t.setAttribute('aria-selected', j===cur ? 'true' : 'false'); t.tabIndex = j===cur ? 0 : -1; });
+      Array.prototype.forEach.call(m.querySelectorAll('.m8-sh'), function(f,j){ f.classList.toggle('on', j===cur); });
+      if(focus) m.querySelector('.m8-sh-tab[aria-selected="true"]').focus();
+    }
+    m.addEventListener('click', function(e){ var b = e.target.closest('.m8-sh-tab'); if(b && m.contains(b)) show(+b.dataset.i); });
+    m.addEventListener('keydown', function(e){
+      if(!e.target.classList || !e.target.classList.contains('m8-sh-tab')) return;
+      if(e.key==='ArrowRight' || e.key==='ArrowLeft'){ e.preventDefault(); show(cur + (e.key==='ArrowRight' ? 1 : -1), true); }
+    });
+    show(0);
   }
 
   function init(){
