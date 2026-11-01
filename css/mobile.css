@@ -130,3 +130,14 @@ html.sheet-open{overflow:hidden}
 @media (max-width:480px){
   #main .ev-group ul{grid-template-columns:minmax(0,1fr)}
 }
+
+/* ---------- swipe hint and always-reachable step arrows ---------- */
+.sw-hint{display:none;margin:.35rem 0 0;font-size:.78rem;line-height:1.35;text-align:center;color:var(--muted)}
+@media (hover:none) and (pointer:coarse){
+  .sw-hint{display:block}
+  html.sw-known .sw-hint{display:none}
+}
+@media (max-width:700px){
+  /* the picture walkthrough's arrows stay just above the bottom bar while you read its steps, so you never scroll to reach them */
+  body.has-dock figure.wt-step .wt-nav{position:sticky;bottom:calc(80px + env(safe-area-inset-bottom,0px));z-index:6;background:#fff;padding-top:.5rem;padding-bottom:.5rem;box-shadow:0 -10px 14px -12px rgba(22,50,79,.35)}
+}
