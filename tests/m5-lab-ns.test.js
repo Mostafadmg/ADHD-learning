@@ -163,7 +163,7 @@ const sw = (a, b, o) => AS(Object.assign({ task: 'sw', from: a, to: b, total: '8
 t('once daily to twice daily: SmPC statement, same total halved, graph of both', () => {
   const r = sw('atx1', 'atx2'); assert.strictEqual(r.badge, 'SmPC statement'); has(r.head, /allows twice-daily evenly divided doses\. Keeping the same total is the usual reading, not a stated rule/);
   has(text(r), /might benefit from taking it as twice daily evenly divided doses in the morning and late afternoon or early evening/); has(text(r), /40 mg in the morning \+ 40 mg/);
-  has(rowOf(r, 'The numbers').h, /worked out from the smpc \(not official\)/i); has(text(r), /gives no conversion factor/);
+  has(rowOf(r, 'The numbers').h, /^The numbers \(worked out from the SmPC, not official\)$/); has(text(r), /gives no conversion factor/);
   assert.strictEqual(r.chart.kind, 'day'); assert.strictEqual(r.chart.series.length, 2);
   const o = sw('atx1', 'atx2', { total: '30' }); has(rowOf(o, 'Real capsules').t, /15 mg is not a capsule or a pair of capsules/);
 });
@@ -250,7 +250,7 @@ const gs = (o) => GS(Object.assign({ sit: 'taper', dose: '4', gap: '3', miss: '1
 t('taper: no more than 1 mg every 3 to 7 days; the example is labelled worked out, not official', () => {
   const r = gs({}); assert.strictEqual(r.badge, 'SmPC statement'); has(r.head, /Never stop suddenly/);
   has(rowOf(r, 'The rule').t, /decrements of no more than 1 mg every 3 to 7 days, and blood pressure and pulse should be monitored/);
-  has(rowOf(r, 'Example').h, /worked out from the smpc \(not official\)/i); has(rowOf(r, 'Example').t, /4 mg → 3 mg → 2 mg → 1 mg → stop, with one step every 3 days\. You are off guanfacine 9 days after the first reduction/);
+  has(rowOf(r, 'Example').h, /^Example from 4 mg \(worked out from the SmPC, not official\)$/); has(rowOf(r, 'Example').t, /4 mg → 3 mg → 2 mg → 1 mg → stop, with one step every 3 days\. You are off guanfacine 9 days after the first reduction/);
   eq(r.chart.steps.map((s) => [s.a, s.b, s.v]), [[0, 3, 3], [3, 6, 2], [6, 9, 1]]); has(r.notes.join(' '), /not an official schedule/);
   has(rowOf(r, 'Why').t, /7 of 158 children \(4\.4%\)/); has(rowOf(r, 'Why').t, /hypertensive encephalopathy/i);
   const s7 = gs({ gap: '7' }); has(rowOf(s7, 'Example').t, /21 days after the first reduction/);
@@ -455,6 +455,127 @@ t('minor: lisdexamfetamine is not called short-lived (finding 15); palpitations 
   const html = read('index.html'); assert.ok(!/because both are short-lived/.test(html)); has(html, /neither NICE nor the SmPCs set a washout between methylphenidate and lisdexamfetamine; many services start the new one the next morning after the last dose has worn off \(clinical practice\)/);
   const q = vm.createContext({ window: { __mixOpts() {} } }); vm.runInContext(read('js/data-quiz-m5-ns.js'), q); const anya = q.window.QUIZ.m5x_ns_more.filter((x) => /Anya/.test(x.q))[0];
   has(anya.e, /Anya stopped lisdexamfetamine because of palpitations, so find out why before starting atomoxetine/); has(anya.e, /NG87 1\.7\.5/); has(anya.e, /prompt specialist cardiac evaluation/); assert.ok(anya.e.length > 400);
+});
+
+/* ================================================================================================
+   Second review pass, 1 Nov 2026. Each assertion fails on the behaviour the second reviewer found.
+   ================================================================================================ */
+const plain = (x) => String(x).replace(/<[^>]+>/g, '');
+/* "Real capsules" row split into its Start / Target segments; the sentence about an option that is NOT offered is cut off before the options are read */
+function capSegments(grp, w, mod, sched) {
+  const r = ad({ grp, w: String(w), mod, sched }), light = grp === 'child' && w <= 70, f = mod === 'cpb' ? 0.5 : mod === 'cpc' ? 0.25 : 1;
+  const start = light ? 0.5 * w * f : 40 * f, lo = light ? 1.2 * w * f : 80 * f, hi = grp === 'adult' ? 100 * f : lo, wanted = [start, lo]; if (hi !== lo) wanted.push(hi);
+  const segs = rowOf(r, 'Real capsules').t.split('<br>'); assert.strictEqual(segs.length, wanted.length);
+  return segs.map((sg, i) => { const full = plain(sg), cut = full.indexOf('The next size up'); return { full, offered: cut >= 0 ? full.slice(0, cut) : full, omitted: cut >= 0, wanted: wanted[i], light }; });
+}
+const optionTotals = (txt) => { const out = [], re = /(\d+(?:\.\d+)?) mg \((?:one|two)[^)]*\)/g; let m; while ((m = re.exec(txt))) out.push(+m[1]); return out; };
+
+/* MAJOR (finding 4 of pass 1, partly fixed): the larger neighbouring capsule size is limited too */
+t('MAJOR atomoxetine capsules: no listed real dose is above 1.8 mg/kg (child up to 70 kg), above 100 mg, or more than 1.25 times the wanted dose, at any weight, liver class or schedule', () => {
+  let segs = 0, omitted = 0;
+  [['adult', [0]], ['child', Array.from({ length: 106 }, (_, i) => 15 + i)]].forEach(([grp, ws]) => ws.forEach((w) => ['none', 'cpb', 'cpc', 'pm', 'inh'].forEach((mod) => ['1', '2'].forEach((sched) => {
+    capSegments(grp, w, mod, sched).forEach((sg) => {
+      segs++; if (sg.omitted) omitted++;
+      optionTotals(sg.offered).forEach((tot) => {
+        if (sg.light) assert.ok(tot <= 1.8 * w + 1e-9, grp + ' ' + w + ' kg ' + mod + ' s' + sched + ' offers ' + tot + ' mg, above 1.8 mg/kg');
+        else assert.ok(tot <= 100, grp + ' ' + mod + ' offers ' + tot + ' mg, above 100 mg');
+        assert.ok(tot <= sg.wanted * 1.25 + 1e-9, grp + ' ' + w + ' kg ' + mod + ' s' + sched + ' offers ' + tot + ' mg for a wanted ' + sg.wanted + ' mg');
+      });
+      if (sg.omitted) { has(sg.full, /The nearest at or below is \d+ mg/); has(sg.full, /so it is not offered\./); has(sg.full, /The prescriber decides\.$/); }
+    });
+  }))));
+  assert.ok(segs > 2000 && omitted > 100, 'the sweep should reach the omitted-neighbour branch: ' + omitted);
+});
+t('MAJOR atomoxetine capsules: the reviewer’s examples (17 to 19 kg on two doses; Child-Pugh C adult on two doses; Child-Pugh B 20 kg; Child-Pugh C 34 kg)', () => {
+  [17, 18, 19].forEach((w) => ['none', 'pm', 'inh'].forEach((mod) => {
+    const tx = plain(rowOf(ad({ w: String(w), mod, sched: '2' }), 'Real capsules').t);
+    has(tx, /Target: No capsule, or pair of capsules, gives exactly/); has(tx, /The nearest at or below is 20 mg \(one 10 mg capsule at each of the two dose times/);
+    has(tx, new RegExp('The next size up, 36 mg \\(one 18 mg capsule at each of the two dose times, \\d(\\.\\d+)? mg/kg\\), is [\\d.]+ times the wanted dose and above the 1\\.8 mg/kg a day that the SmPC says has not been systematically evaluated \\(\\d+(\\.\\d+)? mg for ' + w + ' kg\\), so it is not offered\\. The prescriber decides\\.'));
+    assert.ok(!/The nearest are 20 mg/.test(tx), w + ' kg still lists 36 mg as a nearest dose');
+  }));
+  const c = plain(rowOf(ad({ grp: 'adult', mod: 'cpc', sched: '2' }), 'Real capsules').t);
+  has(c, /Target, low end: 20 mg can be made exactly/); has(c, /Target, high end: No capsule, or pair of capsules, gives exactly 25 mg\. The nearest at or below is 20 mg/); has(c, /The next size up, 36 mg[^,]*, is 1\.4 times the wanted dose, so it is not offered\. It would undo the SmPC liver reduction\./);
+  assert.ok(!/nearest are 20 mg/.test(c));
+  const b = plain(rowOf(ad({ w: '20', mod: 'cpb' }), 'Real capsules').t); has(b, /Target: No capsule, or pair of capsules, gives exactly 12 mg\. The nearest at or below is 10 mg \(one 10 mg capsule, 0\.5 mg\/kg\)\. The next size up, 18 mg \(one 18 mg capsule, 0\.9 mg\/kg\), is 1\.5 times the wanted dose, so it is not offered\. It would undo the SmPC liver reduction/);
+  const k = plain(rowOf(ad({ w: '34', mod: 'cpc' }), 'Real capsules').t); has(k, /The nearest at or below is 10 mg[\s\S]*?The next size up, 18 mg[\s\S]*?\), is 1\.8 times the wanted dose, so it is not offered/);
+});
+t('atomoxetine capsules: Ava’s start (15 mg, 10 mg or 18 mg) is within 25% and both nearest sizes are still offered', () => {
+  const tx = plain(rowOf(ad({}), 'Real capsules').t);
+  has(tx, /Start: No capsule, or pair of capsules, gives exactly 15 mg\. The nearest are 10 mg \(one 10 mg capsule, 0\.33 mg\/kg\) and 18 mg \(one 18 mg capsule, 0\.6 mg\/kg\)\./); assert.ok(!/not offered/.test(tx));
+});
+
+/* minor: the chart line says the table maximum and sits at the table maximum */
+t('minor guanfacine inducer: the dashed line is drawn at the table maximum the label states (not at 0.12 mg/kg x weight) for every weight', () => {
+  let n = 0;
+  ['6', '13'].forEach((age) => { for (let w = 15; w <= 90; w += 0.5) {
+    const m = MAXBAND(age, w); if (m == null || m === 7) continue; n++;
+    const r = gd({ age, w: String(w), mod: 'ind' }), lab = r.chart.effectLabel;
+    has(lab, new RegExp('^Table maximum for this weight \\(' + m + ' mg\\)\\.')); assert.ok(Math.abs(lineMg(r) - m) < 1e-9, age + ' y ' + w + ' kg: label says ' + m + ' mg but the line is at ' + lineMg(r));
+  } });
+  assert.ok(n > 100);
+  /* the three weights the reviewer named */
+  assert.ok(Math.abs(lineMg(gd({ w: '25', mod: 'ind' })) - 4) < 1e-9); assert.ok(Math.abs(lineMg(gd({ age: '13', w: '41.5', mod: 'ind' })) - 5) < 1e-9); assert.ok(Math.abs(lineMg(gd({ age: '13', w: '49.5', mod: 'ind' })) - 6) < 1e-9);
+});
+
+/* minor: row headings name the source in full, with no nested brackets and no lower-cased "SmPC" */
+t('minor headings: no row heading lower-cases SmPC or nests one bracket inside another, in any tool and any choice', () => {
+  const heads = []; const grab = (r) => { (r.rows || []).forEach((x) => heads.push(x.h)); };
+  ['child', 'adult'].forEach((grp) => ['none', 'cpb', 'cpc', 'pm', 'inh'].forEach((mod) => ['1', '2'].forEach((sched) => grab(ad({ grp, mod, sched })))));
+  ['atx1', 'atx2', 'sol', 'stim', 'gua'].forEach((a) => ['atx1', 'atx2', 'sol', 'stim', 'gua'].forEach((b) => { if (a !== b) grab(sw(a, b)); }));
+  ['gs', 'as', 'ag'].forEach((x) => grab(AS({ task: 'add', add: x }))); grab(AS({ task: 'stop' }));
+  ['6', '13'].forEach((age) => [30, 45, 60, 90].forEach((w) => ['none', 'inh', 'ind', 'indstop'].forEach((mod) => grab(gd({ age, w: String(w), mod })))));
+  ['taper', 'miss', 'ir', 'brand', 'to', 'from', 'add', 'adult'].forEach((x) => ['stim', 'atx'].forEach((o) => ['1', '2'].forEach((miss) => grab(gs({ sit: x, other: o, miss })))));
+  assert.ok(heads.length > 300);
+  heads.forEach((h) => { assert.ok(!/smpc/.test(h), 'lower-case smpc in "' + h + '"'); assert.ok(!/\([^)]*\(/.test(h), 'nested brackets in "' + h + '"'); });
+  const hd = (r, h) => assert.ok((r.rows || []).some((x) => x.h === h), 'no heading "' + h + '" in ' + (r.rows || []).map((x) => x.h).join(' | '));
+  hd(gd({}), 'Maximum for this group (SmPC table)'); hd(gd({}), 'Whole tablets in that range (worked out, not official)');
+  hd(gd({ mod: 'inh' }), 'Table maximum without an inhibitor (SmPC table)'); hd(gd({ mod: 'inh' }), 'Whole tablets up to the illustrative ceiling (worked out, not official)');
+  hd(sw('atx1', 'atx2'), 'The numbers (worked out from the SmPC, not official)'); hd(gs({}), 'Example from 4 mg (worked out from the SmPC, not official)');
+  hd(sw('stim', 'atx1'), 'When (guideline, no numbers)'); hd(gs({ sit: 'to' }), 'When (guideline, no numbers)'); hd(gs({ sit: 'from' }), 'Stopping guanfacine (SmPC statement)');
+  hd(gs({ sit: 'adult' }), 'Licence (SmPC statement)'); hd(gs({ sit: 'adult' }), 'NICE (guideline, no numbers)');
+});
+
+/* minor: the headline for a poor metaboliser or an inhibitor says the figures are not adjusted */
+t('minor atomoxetine dose: the headline for a poor metaboliser or a patient on an inhibitor says the doses are the usual ones, not adjusted', () => {
+  ['child', 'adult'].forEach((grp) => ['1', '2'].forEach((sched) => {
+    const pm = ad({ grp, mod: 'pm', sched }), inh = ad({ grp, mod: 'inh', sched });
+    has(pm.head, /These are the usual doses, not adjusted for this patient\. The SmPC says a lower start and slower titration may be considered, but gives no number\./);
+    has(inh.head, /These are the usual doses, not adjusted for this patient\. The SmPC says slower titration and a lower final dose may be necessary, but gives no number\./);
+    ['none', 'cpb', 'cpc'].forEach((mod) => assert.ok(!/not adjusted/.test(ad({ grp, mod, sched }).head), 'warning shown for ' + mod));
+    assert.strictEqual(pm.tone, 'warn'); assert.strictEqual(inh.tone, 'warn');
+  }));
+  has(ad({ grp: 'adult', mod: 'pm' }).head, /^Start 40 mg a day\. Aim for 80 mg to 100 mg a day\. <small>\(an adult\)<\/small>/);
+  assert.ok(!/</.test(ad({ mod: 'pm' }).chart.title), 'the chart title is plain text, not HTML');
+});
+
+/* minor: the M5 at-a-glance table matches the SmPC and Module 4 */
+t('minor index.html: at-a-glance table says no SmPC maximum up to 70 kg; non-stimulants are 3rd and dexamfetamine a side branch, as in Module 4', () => {
+  const html = read('index.html'), a = html.indexOf('<table class="cmp mt" data-nostack><caption>The five medicines side by si'), tb = html.slice(a, html.indexOf('</table>', a)); assert.ok(a > 0, 'the Module 5 table is found');
+  has(tb, /<th scope="row">Licensed maximum or recommended limit<\/th>/); assert.ok(!/<th scope="row">Licensed maximum<\/th>/.test(html));
+  has(tb, /<span class="mt-k">Up to 70 kg<\/span>no maximum in the SmPC \(usual 1\.2 mg\/kg\/day; above 1\.8 mg\/kg not evaluated\)<span class="mt-k">Over 70 kg and adults<\/span>100 mg\/day/);
+  assert.ok(!/about 1\.2 mg\/kg\/day \(no extra benefit above this\)/.test(tb));
+  has(tb, /<th scope="row">Children<\/th><td><b>1st<\/b><\/td><td><b>2nd<\/b><\/td><td><b>Side branch \(2b\)<\/b>: if lisdexamfetamine helps but its long effect is not tolerated<\/td><td><b>3rd<\/b>, with guanfacine<\/td><td><b>3rd<\/b>, with atomoxetine<\/td>/);
+  assert.ok(!/<b>4th<\/b>/.test(html));
+  const m4 = html.indexOf('<span class="bf-n">2b</span><div><b>Dexamfetamine</b>'); assert.ok(m4 > 0); has(html.slice(m4, m4 + 700), /<span class="bf-n">3<\/span><div><b>Atomoxetine or guanfacine<\/b>/);
+});
+
+/* minor: Module 2 does not say the benefit builds over weeks or that there is no wear-off */
+t('minor index.html: Module 2 atomoxetine and guanfacine lessons say what NICE and the SmPC say about onset, with no "builds over several weeks" or "no wear-off"', () => {
+  const html = read('index.html'), a = html.indexOf('<section class="lesson" data-title="Atomoxetine" data-min="4">'), e = html.indexOf('data-title="From mechanism to practice"', a);
+  assert.ok(a > 0 && e > a); const L = html.slice(a, e);
+  assert.ok(/data-title="Guanfacine"/.test(L), 'both lessons are in the slice');
+  assert.ok(!/Builds over several weeks/i.test(L)); assert.ok(!/builds? (steadily|gradually|over)[^.<]{0,30}weeks/i.test(L)); assert.ok(!/no wear-off|lasts all day|All-day cover/i.test(L)); assert.ok(!/No "on–off" effect/.test(L));
+  assert.strictEqual((L.match(/<dt>Starts<\/dt><dd>Slower than stimulants \(NICE\); the SmPC gives no time<\/dd>/g) || []).length, 2);
+  assert.strictEqual((L.match(/<b>Effect<\/b><span>Slower to start than a stimulant \(NICE\)\. The SmPC gives no time to full effect and no daily peak\.<\/span>/g) || []).length, 2);
+  assert.strictEqual((L.match(/<dt>Lasts<\/dt><dd>(Taken once daily; )?[Tt]he SmPC gives no length of effect<\/dd>/g) || []).length, 2);
+  has(L, /The SmPC gives no daily peak or wear-off time\. NICE says non-stimulants can take longer to have an effect/);
+  has(L, /NICE says non-stimulants can take longer to have an effect; the SmPC gives no time to full effect and no daily peak\./);
+});
+
+/* minor: guanfacine as an add-on is evidence, not an endorsement, so it is blue, not green */
+t('minor add-on: guanfacine added to a stimulant is shown as information (blue), not as an OK (green), from both tabs', () => {
+  const g = AS({ task: 'add', add: 'gs' }); assert.strictEqual(g.tone, 'info'); assert.strictEqual(g.badge, 'SmPC statement'); has(g.head, /not a dosing instruction/);
+  assert.strictEqual(gs({ sit: 'add' }).tone, 'info'); assert.strictEqual(gs({ sit: 'add' }).badge, 'SmPC statement');
 });
 
 /* ---------- quiz ---------- */

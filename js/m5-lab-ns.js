@@ -6,7 +6,9 @@
    Worked out from the SmPC (not official), or No official method. Nothing here invents a cross-taper, overlap or conversion.
    "No official method" means none of the UK sources read (SmPCs, NICE NG87, SPS, shared-care protocols) gives one: published
    reviews exist for some moves (for example stimulant to atomoxetine in children) but are not UK guidance. Every dose a result
-   lists or draws is capped at the SmPC ceiling for that group; a figure the SmPC does not give never carries the "SmPC table" badge.
+   lists or draws is capped at the SmPC ceiling for that group (the Real capsules rows too: a larger capsule option is left out when it is
+   more than 25% above the wanted dose, above 1.8 mg/kg a day for a child up to 70 kg, or above 100 mg a day); a figure the SmPC does not
+   give never carries the "SmPC table" badge.
    Curves are PLASMA-LEVEL shapes from js/release-model.js (keys atx_em, atx_pm, atx_inh, gua_pr; the comment there says what each is
    fitted to and what it does not claim). They are not clinical-effect curves. */
 (function () {
@@ -39,6 +41,9 @@
 
   var ST = { table: 'SmPC table', stmt: 'SmPC statement', guide: 'Guideline (no numbers)', local: 'Local NHS protocol (not national)',
     calc: 'Worked out from the SmPC (not official)', none: 'No official method' };
+  /* Source labels used inside row headings. Written out in full (never lower-cased from the badge names, which would turn "SmPC" into "smpc"
+     and nest one bracket inside another). */
+  var HD = { table: 'SmPC table', stmt: 'SmPC statement', guide: 'guideline, no numbers', calc: 'worked out from the SmPC, not official', calcShort: 'worked out, not official' };
   var SRC = {
     atx: 'Source: atomoxetine hard capsules SmPC (Zentiva, revised 6 December 2024; the Aurobindo/Milpharm SmPC revised 4 August 2026 has the same dosing wording).',
     gua: 'Source: Intuniv SmPC (Takeda UK, revised 5 March 2026).',
@@ -69,10 +74,13 @@
     return { below: below, above: above, exact: below !== null && above !== null && Math.abs(below - above) < 1e-9 };
   }
   /* Words for "what real capsules give this daily total at n dose times". w = weight in kg for mg/kg (or 0).
-     liver = true when the wanted dose is an SmPC liver reduction (50% or 25%). A wanted dose below the smallest capsule is only
-     rounded up to it when that capsule is within 25% of the wanted dose: otherwise no capsule can give the dose, and rounding up
-     would undo the reduction (or go well past the SmPC start), so the line says so and gives the size of the gap. */
-  var ROUND_UP_MAX = 1.25;
+     liver = true when the wanted dose is an SmPC liver reduction (50% or 25%). A real dose ABOVE the wanted amount is only offered
+     when it is within 25% of the wanted dose (ROUND_UP_MAX) and inside the SmPC limit for the group: a child up to 70 kg may not be
+     offered a total above 1.8 mg/kg a day (the SmPC says higher has not been systematically evaluated), and nobody is offered a
+     total above the 100 mg maximum recommended dose. This holds for the smallest capsule (nothing at or below the wanted dose)
+     and for the larger neighbour when a smaller capsule exists. Otherwise the line says what is not offered and why, so that
+     rounding up never undoes a liver reduction or goes past the SmPC limit. */
+  var ROUND_UP_MAX = 1.25, MAX_KG = 1.8, MAX_TOTAL = 100;
   function capsLine(total, n, w, liver) {
     var d = total / n, nr = nearest(d), per = n === 2 ? ' at each of the two dose times' : '';
     function one(s) { var tt = s * n; return mg(tt) + ' (' + capText(s) + per + (w ? ', ' + r2(tt / w) + ' mg/kg' : '') + ')'; }
@@ -85,7 +93,14 @@
           : 'The SmPC gives the weight-based doses as “approximately”; whether to use the smallest capsule is the prescriber’s decision, so no dose is offered here.');
     }
     if (nr.above === null) return mg(total) + ' needs more than two of the biggest capsule at a dose time. The nearest is ' + one(nr.below) + '.';
-    return 'No capsule, or pair of capsules, gives exactly ' + mg(total) + '. The nearest are ' + one(nr.below) + ' and ' + one(nr.above) + '.';
+    var lead = 'No capsule, or pair of capsules, gives exactly ' + mg(total) + '. ';
+    var upRatio = nr.above / d, upTot = nr.above * n, why = [];
+    if (upRatio > ROUND_UP_MAX + 1e-9) why.push('is ' + r1(upRatio) + ' times the wanted dose');
+    if (w && upTot > MAX_KG * w + 1e-9) why.push((why.length ? '' : 'is ') + 'above the ' + MAX_KG + ' mg/kg a day that the SmPC says has not been systematically evaluated (' + mg(MAX_KG * w) + ' for ' + w + ' kg)');
+    else if (!w && upTot > MAX_TOTAL + 1e-9) why.push((why.length ? '' : 'is ') + 'above the maximum recommended total daily dose of ' + MAX_TOTAL + ' mg');
+    if (!why.length) return lead + 'The nearest are ' + one(nr.below) + ' and ' + one(nr.above) + '.';
+    return lead + 'The nearest at or below is ' + one(nr.below) + '. The next size up, ' + one(nr.above) + ', ' + why.join(' and ') + ', so it is not offered.' +
+      (liver && upRatio > ROUND_UP_MAX + 1e-9 ? ' It would undo the SmPC liver reduction.' : '') + ' The prescriber decides.';
   }
 
   /* ================================================================================================
@@ -204,7 +219,7 @@
     else if (f === 1) { ceil = 100; ceilTxt = 'Maximum recommended total daily dose, 100 mg'; }
     var ymax = niceMax(Math.max(peak, ceil || 0));
     var chart = {
-      kind: 'weeks', x: { from: 1, to: 15, unit: 'day', title: 'Days from the first dose (earliest schedule)' }, y: { max: ymax, label: 'Total mg a day (same if split)' },
+      kind: 'weeks', title: head + ' (' + who + ')', x: { from: 1, to: 15, unit: 'day', title: 'Days from the first dose (earliest schedule)' }, y: { max: ymax, label: 'Total mg a day (same if split)' },
       color: '#0b6664', tint: '#a3d5cf',
       steps: [{ a: 1, b: 8, v: r1(start) }, { a: 8, b: 15, v: r1(lo) }],
       marks: [{ x: 8, t: 'Earliest increase' }],
@@ -215,7 +230,10 @@
     };
     if (ceil) { chart.effect = [[1, ceil / ymax * 100], [15, ceil / ymax * 100]]; chart.effectLabel = ceilTxt; }
 
-    return { tone: tone, badge: ST.stmt, head: head + ' <small>(' + who + ')</small>', rows: rows, notes: notes, src: SRC.atx + ' Capsule rows are worked out from those doses and the strengths on emc.', chart: chart };
+    /* a poor metaboliser or a patient on an inhibitor gets the usual figures in the head: say at once that they are not adjusted */
+    var unadj = v.mod === 'pm' ? ' <small>These are the usual doses, not adjusted for this patient. The SmPC says a lower start and slower titration may be considered, but gives no number.</small>'
+      : (v.mod === 'inh' ? ' <small>These are the usual doses, not adjusted for this patient. The SmPC says slower titration and a lower final dose may be necessary, but gives no number.</small>' : '');
+    return { tone: tone, badge: ST.stmt, head: head + ' <small>(' + who + ')</small>' + unadj, rows: rows, notes: notes, src: SRC.atx + ' Capsule rows are worked out from those doses and the strengths on emc.', chart: chart };
   }
 
   /* --- atomoxetine: switch, add on, stop --------------------------------------------------- */
@@ -251,7 +269,7 @@
       return { tone: 'ok', badge: ST.stmt, head: 'The SmPC allows twice-daily evenly divided doses. Keeping the same total is the usual reading, not a stated rule.',
         rows: [
           { h: 'What the SmPC says', t: 'If a single daily dose does not give a satisfactory response (for tolerability, for example nausea or somnolence, or for efficacy), the person “might benefit from taking it as twice daily evenly divided doses in the morning and late afternoon or early evening”.' },
-          { h: 'The numbers (' + ST.calc.toLowerCase() + ')', t: 'The SmPC gives no conversion factor and does not say the total stays the same. Taking the total as ' + mg(total) + ' and halving it gives <b>' + mg(half) + ' in the morning + ' + mg(half) + ' in the late afternoon or early evening</b>. The total daily maximum is still 100 mg.' },
+          { h: 'The numbers (' + HD.calc + ')', t: 'The SmPC gives no conversion factor and does not say the total stays the same. Taking the total as ' + mg(total) + ' and halving it gives <b>' + mg(half) + ' in the morning + ' + mg(half) + ' in the late afternoon or early evening</b>. The total daily maximum is still 100 mg.' },
           { h: 'Real capsules at each time', t: capTxt }
         ],
         notes: ['The SmPC gives no clock time for the second dose.', 'The graph shows the level in the blood after each plan, in someone with normal CYP2D6. The total is the same; the peaks are lower when split.'],
@@ -279,7 +297,7 @@
     if (a === 'stim' && isAtx(b)) {
       return { tone: 'warn', badge: ST.none, head: 'No official method for the switch itself. The UK sources say when to offer atomoxetine, not how to move across.',
         rows: [
-          { h: 'When (' + ST.guide.toLowerCase() + ')', t: 'NICE: offer atomoxetine if the stimulants are not tolerated, or if separate 6-week trials of lisdexamfetamine and methylphenidate have not worked (children from age 5 and young people; adults).' },
+          { h: 'When (' + HD.guide + ')', t: 'NICE: offer atomoxetine if the stimulants are not tolerated, or if separate 6-week trials of lisdexamfetamine and methylphenidate have not worked (children from age 5 and young people; adults).' },
           { h: 'How (no official source)', t: 'The atomoxetine SmPC, NG87, SPS and the shared-care protocols we read give no washout, overlap or cross-taper. Do not make one up.' },
           { h: 'Published reviews (not UK guidance)', t: 'Reviews do exist. For example, a 2008 review of switching children and young people from stimulants to atomoxetine (Paediatric Drugs, PMID 18162007) describes cross-tapering and co-administration with methylphenidate during the switch. It is not UK guidance and this course has not appraised it. Ask the specialist.' },
           { h: 'What the sources do give', t: 'Start atomoxetine on its own titration: about 0.5 mg/kg a day up to 70 kg, otherwise 40 mg, for at least 7 days. Check blood pressure and pulse after each dose change. The SmPC says to use it cautiously with medicines that may raise blood pressure (stimulants can). Ask the specialist how to handle the stimulant.' }
@@ -318,7 +336,7 @@
 
   function atxAddOn(v) {
     var k = v.add;
-    if (k === 'gs') return { tone: 'ok', badge: ST.stmt, head: 'Guanfacine has been studied as an add-on to long-acting stimulants. The SmPC reports the evidence; it is not a dosing instruction.',
+    if (k === 'gs') return { tone: 'info', badge: ST.stmt, head: 'Guanfacine has been studied as an add-on to long-acting stimulants. The SmPC reports the evidence; it is not a dosing instruction.',
       rows: [
         { h: 'The trial', t: 'A 9-week study of guanfacine 1 to 4 mg a day in children and teenagers 6 to 17 with a suboptimal partial response to a long-acting stimulant (amfetamine, lisdexamfetamine, methylphenidate or dexmethylphenidate). The add-on group improved 4.9 points more on the ADHD-RS-IV than add-on placebo (95% CI 2.6 to 7.2).' },
         { h: 'Interactions', t: 'No pharmacokinetic interaction with OROS methylphenidate. With lisdexamfetamine, guanfacine peak rose 19% and AUC 7%: “not expected to be clinically meaningful”.' },
@@ -461,9 +479,9 @@
       : 'Start 1 mg once daily. The table maximum is ' + m + ' mg a day.';
     rows.push({ h: 'Start and steps', t: '1 mg once daily, for everyone. Go up by no more than 1 mg a week. Dose changes, up or down, can be made at any weekly interval, by response and tolerability.' });
     if (inh) {
-      rows.push({ h: 'Table maximum without an inhibitor (' + ST.table.toLowerCase() + ')', t: '<b>' + m + ' mg a day</b> (' + band.label + '). The SmPC gives no table for use with an inhibitor: it says only that “a 50% reduction of the guanfacine dose is recommended” and that “further dose titration may be needed”.' });
+      rows.push({ h: 'Table maximum without an inhibitor (' + HD.table + ')', t: '<b>' + m + ' mg a day</b> (' + band.label + '). The SmPC gives no table for use with an inhibitor: it says only that “a 50% reduction of the guanfacine dose is recommended” and that “further dose titration may be needed”.' });
     } else {
-      rows.push({ h: 'Maximum for this group (' + ST.table.toLowerCase() + ')', t: '<b>' + m + ' mg a day</b> (' + band.label + '). You reach it in week ' + m + ' if you go up every week.' +
+      rows.push({ h: 'Maximum for this group (' + HD.table + ')', t: '<b>' + m + ' mg a day</b> (' + band.label + '). You reach it in week ' + m + ' if you go up every week.' +
         (m === 7 ? ' 7 mg only after at least 1 week on 6 mg and a “thorough review” of tolerability and efficacy.' : '') });
     }
     var rangeTxt = '0.05 to 0.12 mg/kg a day = <b>' + r1(lo) + ' to ' + r1(hi) + ' mg</b> for ' + w + ' kg.';
@@ -473,10 +491,10 @@
     else if (m > hi + 1e-9) rangeTxt += ' The table maximum (' + m + ' mg = ' + r2(m / w) + ' mg/kg) sits ' + (m / hi <= 1.25 ? 'a little ' : '') + 'above the top of that range.';
     rows.push({ h: 'Maintenance range by weight (SmPC)', t: rangeTxt });
     if (inh) {
-      rows.push({ h: 'Whole tablets up to the illustrative ceiling (' + ST.calc.toLowerCase() + ')',
+      rows.push({ h: 'Whole tablets up to the illustrative ceiling (' + HD.calcShort + ')',
         t: '1 mg to ' + useMax + ' mg, in whole-mg steps' + (Math.abs(half - useMax) > 1e-9 ? ' (half of ' + m + ' mg is ' + r1(half) + ' mg, rounded down to a whole tablet)' : '') + '. The SmPC gives no ceiling for use with an inhibitor, so the prescriber rounds and titrates by response.' });
     } else {
-      rows.push({ h: 'Whole tablets in that range (' + ST.calc.toLowerCase() + ')',
+      rows.push({ h: 'Whole tablets in that range (' + HD.calcShort + ')',
         t: (whole.length ? whole.join(' mg, ') + ' mg. ' : (lo > useMax + 1e-9 ? 'None: even the bottom of the range is above the table maximum. ' : 'No whole-mg tablet fits. ')) +
           'This is rounding. The SmPC gives no “2 to 3 mg” range or any other whole-tablet range.' +
           (capped ? ' The list stops at the table maximum.' : '') });
@@ -493,7 +511,7 @@
       rows.push({ h: 'Strong CYP3A4 inducer (SmPC statement)', t: 'The SmPC proposes “an increase in the dose of guanfacine within the recommended dose range”, and says a re-titration “up to a maximum daily dose of 7 mg may be considered if needed”. Rifampicin lowered the guanfacine peak by 54% and the exposure by 70%. The SmPC does not say that 7 mg overrides the weight table' + (m === 7 ? ' (7 mg is this weight band’s own maximum)' : '') + '. ' +
         (m === 7 ? '' : 'Take specialist advice before going above the table maximum (' + m + ' mg here).') });
       if (m === 7) { line = 7; lineLabel = 'Up to 7 mg a day may be considered with a strong inducer'; }
-      else { line = hiCap; lineLabel = 'Table maximum for this weight (' + m + ' mg). The SmPC’s 7 mg for strong inducers is not drawn: it does not say it overrides the weight table'; }
+      else { line = m; lineLabel = 'Table maximum for this weight (' + m + ' mg). The SmPC’s 7 mg for strong inducers is not drawn: it does not say it overrides the weight table'; }
       notes.push('Inducers in the SmPC list: carbamazepine, oxcarbazepine, phenytoin, phenobarbital, primidone, rifampicin, rifabutin, efavirenz, nevirapine, etravirine, modafinil, bosentan and St John’s wort. The SmPC gives carbamazepine as its example of a strong inducer; its list does not grade the others.');
     } else if (v.mod === 'indstop') {
       tone = 'warn';
@@ -525,7 +543,7 @@
     var rows = [
       { h: 'The rule (SmPC)', t: '“The dose must be tapered with decrements of no more than 1 mg every 3 to 7 days, and blood pressure and pulse should be monitored.” Patients and carers should not stop without talking to the prescriber.' },
       { h: 'Why', t: 'Blood pressure and pulse may rise after stopping. Hypertensive encephalopathy has been very rarely reported after abrupt stopping. In the withdrawal study, 7 of 158 children (4.4%) switched to placebo had a blood pressure rise of more than 5 mmHg to above the 95th percentile.' },
-      { h: 'Example from ' + mg(dose) + ' (' + ST.calc.toLowerCase() + ')', t: dose === 1 ? '1 mg is already a single step of 1 mg: stop, with blood pressure and pulse checks.'
+      { h: 'Example from ' + mg(dose) + ' (' + HD.calc + ')', t: dose === 1 ? '1 mg is already a single step of 1 mg: stop, with blood pressure and pulse checks.'
         : seq.join(' mg → ') + ' mg → stop, with one step every ' + gap + ' days. You are off guanfacine ' + off + ' days after the first reduction.' }
     ];
     var res = { tone: 'warn', badge: ST.stmt, head: 'Never stop suddenly. Taper by no more than 1 mg every 3 to 7 days.', rows: rows,
@@ -585,15 +603,15 @@
       case 'to':
         return { tone: 'warn', badge: ST.none, head: 'No official method for starting guanfacine in place of another ADHD medicine.',
           rows: [
-            { h: 'When (' + ST.guide.toLowerCase() + ')', t: 'NICE offers guanfacine to children from age 5 and young people if they cannot tolerate methylphenidate or lisdexamfetamine, or separate 6-week trials of both failed. For stimulant-related tics it suggests considering guanfacine (children and young people only). The licence is ages 6 to 17, when stimulants are unsuitable, not tolerated or ineffective.' },
+            { h: 'When (' + HD.guide + ')', t: 'NICE offers guanfacine to children from age 5 and young people if they cannot tolerate methylphenidate or lisdexamfetamine, or separate 6-week trials of both failed. For stimulant-related tics it suggests considering guanfacine (children and young people only). The licence is ages 6 to 17, when stimulants are unsuitable, not tolerated or ineffective.' },
             { h: 'How (no official source)', t: v.other === 'atx' ? 'No source read covers atomoxetine to guanfacine. NICE lists them as parallel options.' : 'No source read gives a washout, overlap or cross-taper. The only overlap study in them is the add-on trial, a different design. Published reviews on switching may exist but are not UK guidance.' },
             { h: 'What the SmPC does give', t: 'Start 1 mg once daily for everyone, with steps of no more than 1 mg a week and weekly checks. Ask the specialist.' }
           ], notes: [], src: SRC.ng + ' ' + SRC.gua };
       case 'from':
         return { tone: 'warn', badge: ST.none, head: 'The sources give a reason to switch and a rule for stopping, but no official way to combine them.',
           rows: [
-            { h: 'When (' + ST.guide.toLowerCase() + ')', t: 'NICE: if a person on guanfacine has sustained orthostatic hypotension or fainting, reduce the dose or switch to another ADHD medicine.' },
-            { h: 'Stopping guanfacine (' + ST.stmt.toLowerCase() + ')', t: 'Taper by no more than 1 mg every 3 to 7 days with blood pressure and pulse checks.' },
+            { h: 'When (' + HD.guide + ')', t: 'NICE: if a person on guanfacine has sustained orthostatic hypotension or fainting, reduce the dose or switch to another ADHD medicine.' },
+            { h: 'Stopping guanfacine (' + HD.stmt + ')', t: 'Taper by no more than 1 mg every 3 to 7 days with blood pressure and pulse checks.' },
             { h: 'How to combine them (no official source)', t: 'The sources read give no overlap or cross-taper. Blood pressure and pulse can rise after stopping guanfacine, and stimulants and atomoxetine can raise them too, so monitoring is the sensible safeguard (inference, not a stated rule). Ask the specialist.' }
           ], notes: [], src: SRC.ng + ' ' + SRC.gua };
       case 'add':
@@ -601,8 +619,8 @@
       case 'adult':
         return { tone: 'stop', badge: ST.stmt, head: 'Guanfacine is not for adults under its licence. NICE allows it only on tertiary advice.',
           rows: [
-            { h: 'Licence (' + ST.stmt.toLowerCase() + ')', t: '“The safety and efficacy of guanfacine in adult and the elderly with ADHD has not been established. Therefore, guanfacine should not be used in this group.”' },
-            { h: 'NICE (' + ST.guide.toLowerCase() + ')', t: 'Do not offer guanfacine to adults (off-label use) without advice from a tertiary ADHD service. The adult non-stimulant is atomoxetine.' },
+            { h: 'Licence (' + HD.stmt + ')', t: '“The safety and efficacy of guanfacine in adult and the elderly with ADHD has not been established. Therefore, guanfacine should not be used in this group.”' },
+            { h: 'NICE (' + HD.guide + ')', t: 'Do not offer guanfacine to adults (off-label use) without advice from a tertiary ADHD service. The adult non-stimulant is atomoxetine.' },
             { h: 'Local protocol (not national)', t: 'A Dorset shared-care protocol (February 2025) lets adults who showed clear benefit in childhood or adolescence continue at the same daily dose, off-label. Other areas may differ.' }
           ], notes: [], src: SRC.gua + ' ' + SRC.ng };
     }
