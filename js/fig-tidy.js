@@ -97,6 +97,11 @@
     });
     if (!ro) window.addEventListener('resize', function () { ovs.forEach(later); });
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { ovs.forEach(later); });
+    /* a picture inside a closed dropdown is laid out only once the dropdown opens ("toggle" does not bubble, so listen while it travels down) */
+    document.addEventListener('toggle', function (e) {
+      var d = e.target; if (!d || !d.open || !d.querySelectorAll) return;
+      Array.prototype.forEach.call(d.querySelectorAll('figure.wt .overlay-fig'), later);
+    }, true);
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
   window.__figTidy = function () { Array.prototype.forEach.call(document.querySelectorAll('figure.wt .overlay-fig'), tidy); };
