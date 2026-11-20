@@ -1096,12 +1096,16 @@
     var P = o.presentation ? D.PRESENTATIONS[o.presentation] : null;
     var PER = periods(a);
 
+    /* Adults: the DIVA 2.0 score form, how the score is worked out, and the filled official form (assess-diva.js). */
+    var divaCard = !PER.young && AA.divaUI && AA.divaUI.applies(a);
+    if (divaCard) AA.divaUI.scoreCard(el, ctx);
+
     /* Outcome banner */
     var codes = [];
     if (o.dsm) codes.push(['DSM-5-TR / ICD-10-CM', o.dsm]);
     if (o.icd11) codes.push(['ICD-11', o.icd11]);
     el.appendChild(h('section', { class: 'ab-outcome ab-out-' + (OUT_KIND[o.code] || 'neutral'), 'aria-labelledby': 'ab-out-t' },
-      h('p', { class: 'eyebrow' }, 'Recorded findings'),
+      h('p', { class: 'eyebrow' }, divaCard ? 'Today\'s criteria (DSM-5-TR, used by NICE)' : 'Recorded findings'),
       h('h2', { id: 'ab-out-t' }, o.title),
       P || o.severity ? h('p', { class: 'ab-out-sub' },
         P ? h('span', null, h('strong', null, 'Presentation: '), P.label) : null,
@@ -1148,7 +1152,7 @@
       h('p', { class: 'hint' }, 'An app heuristic, not a validated scale. It shows how well the sources agree and what would strengthen the evidence: collateral, agreement between scales and interview, resolved differentials, and validity.')));
 
     /* DIVA 2.0 (DSM-IV) score form view: an adult instrument, so hidden for young people. */
-    var dv = PER.young ? null : D.diva2(a);
+    var dv = PER.young || divaCard ? null : D.diva2(a);
     function yn(v) { return v === true ? ui.badge('Yes', 'ok') : v === false ? ui.badge('No', 'neutral') : ui.badge('Unknown', 'neutral'); }
     if (dv) el.appendChild(ui.details('DIVA 2.0 score form view (DSM-IV rules)', h('div', null,
       h('p', null, 'DIVA 2.0 was built on DSM-IV: 6 or more symptoms per domain in childhood and in adulthood, and onset before age 7. DSM-5-TR lowered the adult threshold to 5 and moved onset to before age 12. Use this view only to compare with older reports.'),

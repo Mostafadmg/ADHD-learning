@@ -21,7 +21,7 @@ module.exports = function (ctx) {
   /* ---------- a blank record ---------- */
   const blank = { patient: { ref: '', age: null, consent: false, informants: {}, sources: {}, young: {} }, step: 'setup', tools: {}, risk: {}, history: {}, symptoms: {}, supplement: {}, onset: {}, impairment: { adult: {}, child: {} }, collateral: {}, ddx: {}, validity: {}, formulation: {}, treatment: {} };
   let s = J.summary(blank);
-  eq(s.steps.length, 18, 'journey blank: 18 steps');
+  eq(s.steps.length, 19, 'journey blank: 19 steps');
   eq(s.done, 0, 'journey blank: nothing done');
   eq(s.next, 'setup', 'journey blank: next is setup');
   eq(s.steps[0].state, 'todo', 'journey blank: setup is to do');
@@ -45,7 +45,7 @@ module.exports = function (ctx) {
     }), name + ': every step status agrees with stepProgress');
     ok(sm.steps.every((st) => (st.state === 'done' || st.state === 'na') === (st.gaps.length === 0)), name + ': a step has gaps exactly when it is open');
     eq(sm.pct, Math.round(sm.done / sm.of * 100), name + ': percent = done of applicable');
-    eq(sm.of + sm.na, 18, name + ': applicable + not applicable = 18');
+    eq(sm.of + sm.na, 19, name + ': applicable + not applicable = 19');
     ok(J.index(sm.current) >= 0, name + ': current step is a known step');
     ok(sm.next === null || sm.steps[J.index(sm.next)].state !== 'done', name + ': next is never a finished step');
     ok(sm.phases.length === 5 && sm.phases.every((ph) => ph.of === ph.steps.filter((x) => x.state !== 'na').length), name + ': phase totals count applicable steps');

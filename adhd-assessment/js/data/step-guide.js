@@ -237,20 +237,59 @@ AA.add('stepGuide', {
     ]
   },
 
+  /* ------------------------------------------------------------------ pack (after setup) */
+  pack: {
+    goal: "Get the right information in before the interview: send the pre-assessment pack, track what comes back, chase it, decide whether to go ahead, and book the DIVA.",
+    time: "15 minutes to send; 10 minutes to triage when it is back",
+    do: [
+      "Record the date the referral was accepted, and the service name the letters should use.",
+      "Send the pack: the welcome letter, consent, the questionnaires for this age group, the informant forms, and requests for school reports and GP records. Mark each item Sent (Mark all required as sent today does the required ones at once).",
+      "Use Printable form and Official PDF to send the questionnaires; How to read it opens the forms guide for each one.",
+      "Copy each letter from Letters: the reference, dates, your name and the service fill in from this record. Nothing is sent from the portal.",
+      "When forms come back, mark them Back and enter the scores in Screening questionnaires and Co-occurring conditions. A safety flag (for example thoughts of self-harm) means acting today: open Safety and risk.",
+      "If the required forms are not back by the date shown (14 days after sending), send the reminder letter.",
+      "Make the triage decision: book the DIVA interview, wait for missing information, act on a safety concern first, or another route first. Write why in the notes.",
+      "Book the interview (about 90 minutes), invite a partner and a parent or older relative, and send the appointment letter."
+    ],
+    say: [
+      "Before we meet, I will send you some questionnaires. They help me use our time well, but they do not make the diagnosis on their own.",
+      "If someone who knew you as a child, such as a parent or an older brother or sister, can fill in a form or join the appointment, that helps a lot.",
+      "If you still have old school reports, especially from primary school, please bring them or send copies."
+    ],
+    watch: [
+      "Screening scales support the assessment; they do not diagnose ADHD on their own (NICE NG87).",
+      "Consent first: contacting a partner, a parent, a school or the GP needs the patient's agreement (or, for young people, the right consent for their age).",
+      "Long waits: repeat the mood and anxiety screens near the appointment if the wait is long, because they cover only the last few weeks.",
+      "Do not hold back the interview only because school reports are missing: many adults no longer have them. Record what was tried."
+    ],
+    done: [
+      "The pack is sent and the required forms are back, or marked as not needed with a reason.",
+      "The triage decision is recorded.",
+      "The interview date is booked and the right people are invited."
+    ],
+    next: "Enter the returned questionnaire results in Screening questionnaires, then check safety and risk before the interview.",
+    src: [
+      "NICE NG87 (rating scales and information from others support, but do not replace, the clinical assessment)",
+      "UKAAN AQAS 2024 (informant and school information)",
+      "RCPsych CR235 (2023)",
+      "Timings (reminder at 14 days, 90-minute interview): clinical practice"
+    ]
+  },
+
   /* ------------------------------------------------------------------ 6 */
   ia: {
-    goal: "Decide, with real examples, which of the nine inattention symptoms are present now (last 6 months) and were present in childhood (age 5 to 12).",
+    goal: "DIVA part 1: decide, with real examples, which of the nine attention-deficit symptoms (A1 to A9) are present in adulthood (the last 6 months) and were present in childhood (age 5 to 12).",
     time: "35-50 minutes",
     do: [
-      "Set the frame: adulthood means the last 6 months; childhood means primary school, roughly age 5 to 12. Allow 60 to 90 minutes for both parts of the interview. Press Start with (Continue with once you have begun), or open any symptom from the table.",
-      "Read the main question aloud as written, then wait. Let the patient answer in their own words before you offer any example.",
-      "Ask for a recent, specific example. Open the area of life they talk about, or type in Filter examples, and tick only the examples the patient actually describes. Type their own words in the box. Use Other ways to ask if the question does not land; do not read the example list out as a checklist.",
-      "Open Probe further and ask how often it happens, whether it is more than in other people of the same age, in which settings, and what it costs. Ask how they cope and what happens when the coping fails.",
-      "Score adulthood Yes, Unsure or No, using How to score this symptom and its calibration examples. Score Yes only when it is frequent, more than in peers, long-standing and causes problems. On a phone or tablet the scores sit in the bar at the bottom of the screen.",
-      "Switch to the Childhood tab. Anchor the period (school, teacher, house, friends), ask the childhood question, tick examples and score it the same way.",
-      "If an informant is present or you have school reports, rate their support for this symptom: 0 none, 1 some, 2 clear, or n/a.",
-      "If the problem might come from something else (low mood, anxiety, poor sleep, substances, a learning difficulty), open Could it be something else? and flag it for the differential step. If you are unsure, score Unsure and come back after collateral.",
-      "Move on with Next symptom (Next in the score bar on a phone or tablet, or the arrow keys on a keyboard). After the ninth symptom, answer the supplement question for adulthood and for childhood: are these problems greater than in others of the same age?"
+      "Set the frame: adulthood means the last 6 months; childhood means age 5 to 12. Allow about 90 minutes for the whole DIVA. Read out What to tell the patient and tick who is with the patient.",
+      "To show DIVA's exact questions and examples, load your own DIVA 2.0 PDF once (Load my DIVA 2.0 PDF). Without it the portal's own wording is used.",
+      "Press Start with A1. Read the question aloud as written, then wait. Let the patient answer in their own words before you offer any example.",
+      "Ask for a recent, specific example. Tick the DIVA examples the patient actually describes; if they are unsure, go through the examples one by one. Type their own words under Other. More examples holds the portal's wider list; anything ticked there goes into the Other box on the form.",
+      "Ask how often it happens, whether it is more than in other people of the same age, where, and what it costs (Help with A1, Probe). Ask the partner whether they agree, and rate their support 0, 1, 2 or n/a.",
+      "Decide Symptom present: Yes or No for adulthood. Yes only when it is frequent, more than in peers or clearly impairing, and long-standing rather than in episodes. Help with A1, How to decide, has real answers and how to mark them. Not sure yet marks it to come back to.",
+      "Then childhood: anchor the period (school, teacher, house, friends), ask how it was then, tick the childhood examples, ask a parent or older relative, and decide Yes or No.",
+      "If the problem might come from something else (low mood, anxiety, poor sleep, substances, a learning difficulty), flag it under Could it be something else? for the differential step.",
+      "Move on with Next (or the arrow keys). After A9, answer the supplement question for adulthood and for childhood: more of these symptoms than other people of the same age?"
     ],
     say: [
       "I am now going to ask about nine kinds of difficulty with attention and organisation. For each one I will ask about the last six months, then about when you were at primary school.",
@@ -268,36 +307,36 @@ AA.add('stepGuide', {
       "Unsure is a valid score. Return to it after collateral rather than forcing Yes or No."
     ],
     done: [
-      "All nine symptoms are scored for both adulthood and childhood (Unsure is allowed, to revisit).",
-      "Every symptom scored Yes has at least one ticked example or the patient's own words.",
+      "A1 to A9 each have a Yes or No for adulthood and for childhood (Not sure yet only as a reminder to come back).",
+      "Every Yes has at least one ticked example or the patient's own words.",
       "The supplement question is answered for adulthood and childhood.",
       "Possible mimics are flagged for the differential step."
     ],
-    next: "Go to Interview part 2: hyperactivity-impulsivity, using the same method. If the patient is tiring, take a short break first: fatigue lowers the quality of the answers.",
+    next: "Go to DIVA part 2: hyperactivity-impulsivity, using the same method. If the patient is tiring, take a short break first: fatigue lowers the quality of the answers.",
     src: [
       "DSM-5-TR criterion A1, inattention, and the criterion A note on defiance and not understanding tasks (paraphrased)",
       "UKAAN AQAS 2024 (systematic evaluation of all 18 symptoms in adulthood and childhood, open questions, clear examples)",
       "WHO ICD-11 CDDR 6A05 (boundaries with mood and anxiety disorders)",
       "RCPsych CR235 (2023) 9.2 and 9.6",
       "Young et al. 2020, UKAP ADHD and autism consensus",
-      "DIVA Foundation: interview structure only (adulthood then childhood, supplement question)",
+      "DIVA 2.0 (Kooij and Francken, DIVA Foundation 2010): structure; its questions and examples are shown only from the clinician's own copy, read on this device",
       "Interview time: clinical practice estimate (RCPsych: DIVA about 1.5 hours with practice)"
     ]
   },
 
   /* ------------------------------------------------------------------ 7 */
   hi: {
-    goal: "Decide, with real examples, which of the nine hyperactivity-impulsivity symptoms are present now and were present in childhood.",
+    goal: "DIVA part 2: decide, with real examples, which of the nine hyperactivity-impulsivity symptoms (H/I 1 to 9) are present in adulthood and were present in childhood.",
     time: "25-40 minutes",
     do: [
       "Explain that in adults restlessness is often felt on the inside rather than seen. Do not score from how still the patient sits in the room.",
-      "For each symptom, read the main question, wait, then ask for a recent example. Tick the examples the patient describes and type their own words.",
+      "For each question, read it as written, wait, then ask for a recent example. Tick the DIVA examples the patient describes and type their own words under Other.",
       "For the restlessness symptoms, ask about inner restlessness, how they cope with meetings, films and long journeys, and how they channel it (sport, pacing, fidgeting, active jobs).",
       "For the three impulsivity symptoms (answering before a question is finished, waiting their turn, interrupting), ask about conversations, queues and traffic, and impatience that leads to snap decisions. A partner's view is especially useful here.",
-      "Use Probe further for frequency, peers, settings and impact, then score adulthood Yes, Unsure or No.",
-      "Switch to Childhood: classroom, mealtimes, car journeys, the playground, accidents and injuries. Check school reports for comments such as fidgety, chatty or calls out. Score it.",
-      "Rate informant support, and flag possible mimics: episodes of elevated mood, anxiety, medicine side effects such as akathisia, caffeine or stimulant use, restless legs, or an overactive thyroid.",
-      "After the ninth symptom, answer the supplement question for both periods. Check the tallies against the threshold in the live summary."
+      "Probe frequency, peers, settings and impact (Help, Probe), then decide adulthood: Yes or No.",
+      "Then childhood: classroom, mealtimes, car journeys, the playground, accidents and injuries. Check school reports for comments such as fidgety, chatty or calls out. Decide Yes or No.",
+      "Rate partner and family support, and flag possible mimics: episodes of elevated mood, anxiety, medicine side effects such as akathisia, caffeine or stimulant use, restless legs, or an overactive thyroid.",
+      "After H/I 9, answer the supplement question for both life stages. The dots at the top show the count against the DIVA line at 6."
     ],
     say: [
       "Now I would like to ask about restlessness and acting on the spur of the moment. For some people this is mostly a feeling inside rather than moving about.",
@@ -314,12 +353,12 @@ AA.add('stepGuide', {
       "Hyperactivity often lessens with age, so childhood symptoms may be clearer than adult ones (ICD-11 CDDR). Judge talkativeness and activity against people of the same age and cultural background."
     ],
     done: [
-      "All nine symptoms are scored for adulthood and childhood.",
-      "Every symptom scored Yes has an example.",
-      "The supplement question is answered for both periods.",
+      "H/I 1 to 9 each have a Yes or No for adulthood and childhood.",
+      "Every Yes has an example.",
+      "The supplement question is answered for both life stages.",
       "The live summary shows the current presentation, or shows that the adult threshold is not reached."
     ],
-    next: "Go to Onset and impairment: when the symptoms began and what they cost the patient. These decide criteria B, C and D.",
+    next: "Go to DIVA part 3: when the symptoms began (criterion B) and what they cost the patient in five areas of life (criteria C and D).",
     src: [
       "DSM-5-TR criterion A2, hyperactivity-impulsivity (paraphrased)",
       "WHO ICD-11 CDDR 6A05 (adult restlessness, boundaries with mania, medication effects)",
@@ -332,17 +371,16 @@ AA.add('stepGuide', {
 
   /* ------------------------------------------------------------------ 8 */
   onset: {
-    goal: "Decide whether symptoms began in childhood (criterion B), occur in two or more settings (C) and cause clear, at least moderate impairment (D).",
+    goal: "DIVA part 3: decide whether the symptoms have always been there (criterion B) and cause at least moderate problems in two or more areas of life, in adulthood and in childhood (criteria C and D).",
     time: "15-20 minutes",
     do: [
-      "Ask whether the difficulties have always been there. If not, use memory aids (school year, teacher, house moves, the birth of a sibling) to date when they started.",
-      "Answer Were several symptoms present before age 12? using the childhood scores, the patient's memories and any reports. Choose Unsure if you are waiting for collateral.",
-      "If onset was after 12, read the late-onset cautions and look for another cause: mood or anxiety disorder, trauma, substances, sleep, head injury, medical illness, or a sharp rise in demands.",
-      "Confirm that the current symptoms have lasted at least 6 months and are present most of the time, not only in bad patches.",
-      "Rate adult impairment in each of the seven areas. Ask what happens, how often and what it has cost, tick examples, and choose None, Mild, Moderate or Severe against What each level means here.",
-      "Rate childhood and adolescence the same way, using memories, informants and school reports.",
-      "Check the live criteria. The app shows C as met when two or more areas are affected, and D as met when any area is at least moderate. Criterion C is about symptoms showing in two or more settings, so also check that your symptom examples come from more than one setting. For UK practice, check that at least two areas are moderate or severe: this is how UKAAN applies the NICE threshold.",
-      "Write a short note on onset and the main areas of impairment, in the patient's words. The report draws on it."
+      "Onset: ask DIVA's question, have these symptoms always been there? Yes means several were present before age 7 (the DSM-IV rule printed on DIVA 2.0). If No, use memory aids (school year, teacher, house moves, the birth of a sibling) and record the age they started.",
+      "Answer the DSM-5-TR question too: were several symptoms present before age 12? It is filled in as Yes when the DIVA answer is Yes. Choose Unsure if you are waiting for collateral.",
+      "If onset was after 12, read Help with onset, If it started late, and look for another cause: mood or anxiety disorder, trauma, substances, sleep, head injury, medical illness, or a sharp rise in demands. Confirm the adult symptoms have lasted at least 6 months.",
+      "Go through the five areas of life in order: work and education, relationships and family, social contacts, free time and hobbies, self-confidence and self-image. For each, tick the problems the patient recognises for adulthood and for childhood and add their own words under Other.",
+      "Rate how much each area is affected: None, Mild, Moderate or Severe. The line under the rating says what each level means here.",
+      "Two or more areas: check the suggestion, then answer Yes or No for adulthood and for childhood. DIVA needs at least moderate problems in two or more areas. For UK practice, check that at least two areas are moderate or severe: this is how UKAAN applies the NICE threshold.",
+      "Add anything else under Potential details, then open the summary of symptoms. Any open answers are listed there: go back and decide them."
     ],
     say: [
       "Have these difficulties always been there, as far back as you can remember?",
@@ -360,8 +398,8 @@ AA.add('stepGuide', {
       "Mild problems alone are below the NICE threshold. Rate against the anchors, not against the patient's distress alone."
     ],
     done: [
-      "Onset before 12 and the 6-month duration are answered.",
-      "All seven areas are rated for adulthood and for childhood.",
+      "The DIVA onset question, onset before 12 and the 6-month duration are answered.",
+      "The five areas are rated for adulthood and for childhood, and the two-or-more-areas question is answered for both.",
       "Criteria B, C and D show a status in the live summary, and you can name the areas with at least moderate impairment."
     ],
     next: "Go to Collateral information. Informants and school reports test the onset and impairment ratings you have just made.",

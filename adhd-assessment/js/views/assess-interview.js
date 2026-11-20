@@ -177,6 +177,8 @@
      =================================================================================== */
   function interviewStep(dim) {
     return { render: function (el, ctx) {
+      /* Adults (18 and over, or no age): the DIVA 2.0 interview (assess-diva.js). */
+      if (AA.divaUI && AA.divaUI.applies(ctx.a())) return AA.divaUI.part(el, ctx, dim);
       var m = modeOf(ctx.a());
       if (m.stop) { stopCard(el, ctx, m); return null; }
       var list = symsOf(dim);
@@ -788,6 +790,7 @@
      Onset and impairment (criteria B, C and D)
      =================================================================================== */
   AA.steps.onset = { render: function (el, ctx) {
+    if (AA.divaUI && AA.divaUI.applies(ctx.a())) return AA.divaUI.part3(el, ctx);
     var m = modeOf(ctx.a());
     if (m.stop) { stopCard(el, ctx, m); return null; }
     var I = imp(), on = I.onset || {}, dur = I.duration || {};

@@ -314,7 +314,7 @@ function dataTests() {
   (d.pathway || []).forEach((p) => (p.tools || []).forEach((t) => { if (!toolIds.has(t)) err('pathway ' + p.id + ' unknown tool ' + t); }));
 
   // step guide, forms guide, differential protocol
-  const STEPS = ['setup', 'screen', 'risk', 'history', 'comorbid', 'ia', 'hi', 'onset', 'collateral', 'ddx', 'validity', 'summary', 'txplan', 'baseline', 'prescribe', 'titrate', 'monitor', 'report'];
+  const STEPS = ['setup', 'pack', 'screen', 'risk', 'history', 'comorbid', 'ia', 'hi', 'onset', 'collateral', 'ddx', 'validity', 'summary', 'txplan', 'baseline', 'prescribe', 'titrate', 'monitor', 'report'];
   if (d.stepGuide) STEPS.forEach((k) => { const g = d.stepGuide[k]; if (!g || !g.goal || !isStrArr(g.do, 3) || !isStrArr(g.done, 1)) err('stepGuide.' + k + ' incomplete'); });
   else warn('stepGuide missing');
   if (d.formsGuide) {
@@ -405,6 +405,14 @@ function dataTests() {
   /* the journey engine, on the real data and both demos */
   console.log('\nJourney tests');
   require('./journey-tests.js')({ AA: sb.AA, ok, eq: (x, y, m) => ok(x === y, m + ' (got ' + JSON.stringify(x) + ', expected ' + JSON.stringify(y) + ')') });
+
+  /* the DIVA engine (parser on a synthetic layout, score form, fill plan) */
+  console.log('\nDIVA tests');
+  require('./diva-tests.js')({ AA: sb.AA, ok, eq: (x, y, m) => ok(x === y, m + ' (got ' + JSON.stringify(x) + ', expected ' + JSON.stringify(y) + ')') });
+
+  /* the pre-assessment pack engine */
+  console.log('\nPack tests');
+  require('./pack-tests.js')({ AA: sb.AA, ok, eq: (x, y, m) => ok(x === y, m + ' (got ' + JSON.stringify(x) + ', expected ' + JSON.stringify(y) + ')') });
 }
 
 const onlyData = process.argv.includes('--data');

@@ -161,7 +161,7 @@
         informants: { partner: false, parent: false, sibling: false, teacher: false, other: '' }, sources: { schoolReports: false, previousRecords: false },
         consent: false, interpreter: false, young: blankYoung() }, patient || {}),
       tools: {}, risk: {}, history: {}, symptoms: {}, supplement: {}, onset: {}, impairment: { adult: {}, child: {} },
-      collateral: {}, ddx: {}, validity: {}, formulation: {}, treatment: {}
+      collateral: {}, ddx: {}, validity: {}, formulation: {}, treatment: {}, diva: {}, pack: {}
     };
   }
 

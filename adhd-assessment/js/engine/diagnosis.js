@@ -223,6 +223,16 @@
     });
   }
   D.impairment = impairList;
+  /* Areas that must be rated for the onset and impairment step. Adults: the five DIVA areas (work and education,
+     relationships and family, social contacts, free time, self-image); daily life and safety stay optional. Young
+     people: every area. */
+  D.DIVA_DOMAINS = ['work', 'relationships', 'social', 'leisure', 'selfimage'];
+  D.requiredDomains = function (a, period) {
+    var l = impairList(a, period);
+    if (D.young(a)) return l;
+    var f = l.filter(function (x) { return D.DIVA_DOMAINS.indexOf(x.id) > -1; });
+    return f.length ? f : l;
+  };
 
   /* Criterion C for young people: several symptoms present in two or more settings (home, school, with
      friends or relatives, other activities). The impairment areas are mapped to settings; self-esteem and
@@ -574,6 +584,7 @@
         var okBasis = yAge !== null && yAge >= 16 ? (cb === 'capacity_16' || cb === 'lacks_capacity_16' || cb === 'parent_assent') : (cb === 'parent_assent' || cb === 'gillick');
         return { done: base + (okBasis ? 1 : 0), of: 4 };
       }
+      case 'pack': return AA.pack && AA.pack.progress ? AA.pack.progress(a) : { done: 0, of: 1 };
       case 'screen': return toolsStep('screen');
       case 'risk': return { done: a.risk && a.risk.reviewed ? 1 : 0, of: 1 };
       case 'history': {
@@ -595,7 +606,7 @@
         var o = a.onset || {};
         var doms = 0, rated = 0;
         periods.forEach(function (per) {
-          var l = impairList(a, per);
+          var l = D.requiredDomains(a, per);
           doms += l.length;
           rated += l.filter(function (x) { return x.sev !== null; }).length;
         });

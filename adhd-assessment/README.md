@@ -6,35 +6,36 @@ Part of the [ADHD-learning](../README.md) project. Live (after merge to `main`):
 
 ## What it does
 
-- **Assess and treat**: 18 guided steps in five phases. A live panel shows symptom counts and criteria status (and, in the Treat phase, the medicine, dose, latest blood pressure, pulse and weight, trial weeks and next review).
+- **Assess and treat**: 19 guided steps in five phases. A live panel shows symptom counts and criteria status (and, in the Treat phase, the medicine, dose, latest blood pressure, pulse and weight, trial weeks and next review).
 
   **Prepare**
   1. Before you start: age first (it sets the age group), patient reference, consent and who is present. For young people also school and year group, SEN support or EHCP, who has parental responsibility, the consent basis and the young person's assent.
-  2. Screening questionnaires: adults ASRS v1.1, WURS-25, WFIRS-S and ASRS-5 with instant scoring; young people parent, teacher and self-report scales (such as Conners 4, SNAP-IV, Vanderbilt, ADHD-RS-5, SDQ and WFIRS-P). Licensed scales are not reproduced: you enter the result.
-  3. Safety and risk (young people also safeguarding, exploitation, going missing, bullying, online harm and young carers).
-  4. Clinical history (development, school, work, mental and physical health, substances, family, forensic, sleep).
-  5. Co-occurring conditions screen (adults PHQ-9, GAD-7, MDQ, AUDIT, DAST-10, AQ-10, PCL-5, MSI-BPD, STOP-Bang; young people scales such as PHQ-A, MFQ, RCADS, CRAFFT, SCQ and the child or adolescent AQ-10).
+  2. Pre-assessment pack (onboarding): what to send for this age group and to whom (each item links to the printable form, the official PDF and the forms guide), tracking Sent, Back or Not needed, a 14-day reminder, letters to copy (welcome, informant, reminder, school, GP, appointment, information missing), the triage decision and booking the DIVA interview. Home shows every patient by stage with their next action.
+  3. Screening questionnaires: adults ASRS v1.1, WURS-25, WFIRS-S and ASRS-5 with instant scoring; young people parent, teacher and self-report scales (such as Conners 4, SNAP-IV, Vanderbilt, ADHD-RS-5, SDQ and WFIRS-P). Licensed scales are not reproduced: you enter the result.
+  4. Safety and risk (young people also safeguarding, exploitation, going missing, bullying, online harm and young carers).
+  5. Clinical history (development, school, work, mental and physical health, substances, family, forensic, sleep).
+  6. Co-occurring conditions screen (adults PHQ-9, GAD-7, MDQ, AUDIT, DAST-10, AQ-10, PCL-5, MSI-BPD, STOP-Bang; young people scales such as PHQ-A, MFQ, RCADS, CRAFFT, SCQ and the child or adolescent AQ-10).
 
   **Interview**
-  6. The 9 inattention symptoms. Adults: adulthood, then childhood. Young people: now (the last 6 months), with questions for the parent, the teacher and the young person; from age 12, also before age 12.
-  7. The 9 hyperactivity-impulsivity symptoms, in the same way.
-  8. Onset and impairment (DSM-5-TR criteria B, C, D). For a child aged 6 to 11 the current symptoms already count as "before 12", so this step asks when the problems started and whether they came on suddenly (a red flag for another cause).
-  9. Collateral information with a 0–2 support rating. Adults: partner, parent and school reports. Young people: parent or carer, teacher and the young person's own view.
+  7. The 9 inattention symptoms. Adults: DIVA 2.0 part 1, one question at a time (A1 to A9), adulthood then childhood, with the supplement question, a live count against the DIVA line of 6, and help for each question (how to decide, other ways to ask, probes, could it be something else). Young people: now (the last 6 months), with questions for the parent, the teacher and the young person; from age 12, also before age 12.
+  8. The 9 hyperactivity-impulsivity symptoms, in the same way (DIVA part 2 for adults).
+  9. Onset and impairment (DSM-5-TR criteria B, C, D). Adults: DIVA part 3 (criterion B, the five areas of life, two or more areas, the summary of symptoms). For a child aged 6 to 11 the current symptoms already count as "before 12", so this step asks when the problems started and whether they came on suddenly (a red flag for another cause).
+  10. Collateral information with a 0–2 support rating. Adults: partner, parent and school reports. Young people: parent or carer, teacher and the young person's own view.
 
   **Diagnose**
-  10. Differential diagnosis (criterion E: absent, co-occurring, better explains, uncertain). Young people add oppositional defiant disorder, conduct disorder, attachment difficulties and developmental trauma, developmental language disorder, FASD, relative age, family or school environment, sleep-disordered breathing in children, and separation anxiety.
-  11. Symptom validity and consistency.
-  12. Scoring and diagnosis (criteria A–E, presentation, severity, ICD-11 and ICD-10-CM codes, evidence strength).
+  11. Differential diagnosis (criterion E: absent, co-occurring, better explains, uncertain). Young people add oppositional defiant disorder, conduct disorder, attachment difficulties and developmental trauma, developmental language disorder, FASD, relative age, family or school environment, sleep-disordered breathing in children, and separation anxiety.
+  12. Symptom validity and consistency.
+  13. Scoring and diagnosis (criteria A–E, presentation, severity, ICD-11 and ICD-10-CM codes, evidence strength). Adults also get the DIVA 2.0 score form worked out from the interview, a plain explanation of how the score is reached (with today's DSM-5-TR rules alongside), and the official DIVA form filled in, to download or print.
 
   **Treat** (once ADHD is diagnosed)
-  13. Treatment plan: support first (the NICE items for the age group), the decision, and who can prescribe (see the scope note below).
-  14. Pre-treatment checks: heart history, blood pressure (adults: confirm a clinic reading of 140/90 or more with ambulatory or home readings; young people: the centile for age and height), pulse, height, weight, the contraindication and caution screen, misuse risk, pregnancy (from age 12) and driving (from 17), with a live verdict.
-  15. Choose and prescribe: previous medicines, the NICE order for the age group, products and their licences for this age, a dose plan, counselling and a controlled drug prescription (quantity in words and figures).
-  16. Titration and reviews: the trial clock (6 weeks at the optimised or maximum dose, not from the first dose) and one record per review, with flags (for example a heart rate over 120 or raised blood pressure on 2 occasions, weight loss, troublesome side effects).
-  17. Monitoring and shared care: the monitoring schedule with due dates, the annual review, a shared care letter to the GP, when to hand care back, and, for young people from age 13, planning the move to adult services.
+  14. Treatment plan: support first (the NICE items for the age group), the decision, and who can prescribe (see the scope note below).
+  15. Pre-treatment checks: heart history, blood pressure (adults: confirm a clinic reading of 140/90 or more with ambulatory or home readings; young people: the centile for age and height), pulse, height, weight, the contraindication and caution screen, misuse risk, pregnancy (from age 12) and driving (from 17), with a live verdict.
+  16. Choose and prescribe: previous medicines, the NICE order for the age group, products and their licences for this age, a dose plan, counselling and a controlled drug prescription (quantity in words and figures).
+  17. Titration and reviews: the trial clock (6 weeks at the optimised or maximum dose, not from the first dose) and one record per review, with flags (for example a heart rate over 120 or raised blood pressure on 2 occasions, weight loss, troublesome side effects).
+  18. Monitoring and shared care: the monitoring schedule with due dates, the annual review, a shared care letter to the GP, when to hand care back, and, for young people from age 13, planning the move to adult services.
 
   **Report**
-  18. Draft report and plan, including the treatment sections.
+  19. Draft report and plan, including the treatment sections.
 
 - **Age groups.** The age sets the questions, labels, tools, differentials and thresholds: child (6 to 11), young person (12 to 16), young person aged 17 (adult symptom threshold, driving) and adult (18 and over). **Under 6, the app stops at the first step and advises referral** to a service with expertise in ADHD in young children; it does not assess or treat under 6. It records only the referral details and safeguarding, and builds a short referral note.
 - **Demo patients.** Two made-up patients show every step filled in, from assessment to monitoring:
@@ -51,7 +52,7 @@ Part of the [ADHD-learning](../README.md) project. Live (after merge to `main`):
 - **Learn**: 12 training modules with quizzes, 16 practice cases and a mastery exam.
 - **Library**: every screening and rating tool: the ages it covers, when to use it, how to score it, licence, and a download link where redistribution is allowed.
 
-The interview follows the structure of the DIVA (Kooij and Francken), but all questions and examples are written for this app. Licensed instruments (DIVA-5, Young DIVA-5, CAARS 2, BAARS-IV, Conners 4, SDQ and others) are described and linked, not reproduced.
+**DIVA 2.0 and copyright.** DIVA is © DIVA Foundation, and its terms do not allow its wording to be stored in or published by an app like this. So the portal contains none of it. Load your own copy of the DIVA 2.0 (English) PDF once from DIVA part 1: it is read in your browser and kept there (never uploaded). The questions and examples then appear word for word, and at the end the portal fills in your copy of the official form: every example, the Yes or No answers, the supplement questions, onset, the five areas of life, the summary table with totals and the score form. Without a copy the interview uses the portal's own original questions and examples. About, privacy and data can remove the copy. For commercial or service-wide digital use of the DIVA, check the DIVA Foundation's terms. Licensed instruments (DIVA-5, Young DIVA-5, CAARS 2, BAARS-IV, Conners 4, SDQ and others) are described and linked, not reproduced.
 
 ## Who can diagnose and prescribe (pharmacist scope)
 
@@ -59,7 +60,7 @@ Diagnosing ADHD (NICE NG87 1.3.1) and starting ADHD medicine (NICE NG87 1.7.2) a
 
 ## Privacy
 
-Everything is stored in the browser's `localStorage` on the device in use. Nothing is sent to a server. Profiles can have a PIN, which is a lock, not encryption. Use a patient reference, not a name; copy the report into the clinical record and delete the assessment afterwards. **About, privacy and data** has export, import and delete-all.
+Everything is stored in the browser's `localStorage` on the device in use (your DIVA copy also uses IndexedDB, in the same browser). Nothing is sent to a server. Profiles can have a PIN, which is a lock, not encryption. Use a patient reference, not a name; copy the report into the clinical record and delete the assessment afterwards. **About, privacy and data** has export, import and delete-all.
 
 ## Run it
 
@@ -79,7 +80,7 @@ node tests/run.js        # engine unit tests (scoring, DSM-5-TR rules, age bands
 node tests/smoke.js      # headless browser: every route and step, console errors, phone-width overflow
 ```
 
-`tests/run.js` also runs `tests/young-tests.js` (age bands and the young-person rules) and `tests/tx-tests.js` (the treatment engine). `tests/dev.html` runs the app on small fixture data (`node tests/smoke.js --dev`).
+`tests/run.js` also runs `tests/young-tests.js` (age bands and the young-person rules), `tests/tx-tests.js` (the treatment engine), `tests/journey-tests.js`, `tests/diva-tests.js` (the DIVA reader, score form and form filling, on a synthetic layout) and `tests/pack-tests.js` (the pre-assessment pack). `tests/dev.html` runs the app on small fixture data (`node tests/smoke.js --dev`).
 
 ## How the code is organised
 

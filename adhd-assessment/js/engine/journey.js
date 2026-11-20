@@ -32,7 +32,7 @@
   ];
   /* Same order and ids as AA.STEP_LIST (the frame holds the titles). need: see the header. */
   J.ORDER = [
-    { id: 'setup', phase: 'prepare', need: true }, { id: 'screen', phase: 'prepare', need: false },
+    { id: 'setup', phase: 'prepare', need: true }, { id: 'pack', phase: 'prepare', need: false }, { id: 'screen', phase: 'prepare', need: false },
     { id: 'risk', phase: 'prepare', need: true }, { id: 'history', phase: 'prepare', need: true },
     { id: 'comorbid', phase: 'prepare', need: false },
     { id: 'ia', phase: 'interview', need: true }, { id: 'hi', phase: 'interview', need: true },
@@ -95,6 +95,7 @@
           if (!ok) g.push('Who consents, for this age');
         }
         break;
+      case 'pack': g = AA.pack && AA.pack.gaps ? AA.pack.gaps(a) : []; break;
       case 'screen': g = toolGaps(a, 'screen'); break;
       case 'comorbid': g = toolGaps(a, 'comorbid'); break;
       case 'risk': if (!(a.risk && a.risk.reviewed)) g.push('Safety review marked as done'); break;
@@ -128,7 +129,7 @@
         if (!o.duration6m) g.push('Present for at least 6 months?');
         periods.forEach(function (per) {
           var l = [];
-          try { l = d.impairment ? d.impairment(a, per) : []; } catch (e) { l = []; }
+          try { l = d.requiredDomains ? d.requiredDomains(a, per) : d.impairment ? d.impairment(a, per) : []; } catch (e) { l = []; }
           var rated = l.filter(function (x) { return x.sev !== null; }).length;
           if (l.length && rated < l.length) g.push(periodLabel(a, per) + ': impairment rated for ' + rated + ' of ' + l.length + ' areas');
         });

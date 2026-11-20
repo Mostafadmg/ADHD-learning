@@ -413,6 +413,9 @@ input:focus, select:focus, textarea:focus { border-color: var(--accent); box-sha
 .stepper.more-left .step-row { -webkit-mask-image: linear-gradient(to right, transparent, #000 28px); mask-image: linear-gradient(to right, transparent, #000 28px); }
 .stepper.more-left.more-right .step-row { -webkit-mask-image: linear-gradient(to right, transparent, #000 28px, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(to right, transparent, #000 28px, #000 calc(100% - 28px), transparent); }
 .step-row > li { flex: 0 0 auto; }
+/* The chips hold .sr-only text (position: absolute). Without a positioned ancestor inside the scrolling row, that
+   text belongs to the sticky .stepper, escapes the row's clipping and widens the page on phones. */
+.step-row, .step-chip { position: relative; }
 .step-chip { display: inline-flex; align-items: center; gap: .45rem; font: inherit; font-size: .88rem; font-weight: 600; min-height: 38px; padding: .28rem .75rem .28rem .3rem; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); cursor: pointer; white-space: nowrap; }
 .step-chip:hover { border-color: var(--accent); color: var(--ink); }
 .step-chip .step-n { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--surface-2); border: 1px solid var(--line); font-size: .75rem; font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; }
@@ -543,3 +546,20 @@ input:focus, select:focus, textarea:focus { border-color: var(--accent); box-sha
 }
 .main-bare { padding: 0; }
 .main-bare .main-inner { max-width: none; }
+
+/* ---------- Home: where each patient is (pipeline) and their next action ---------- */
+.pipe { list-style: none; margin: 0 0 .9rem; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .5rem; }
+.pipe-btn { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: .1rem; padding: .7rem .85rem; min-height: 64px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); font: inherit; color: inherit; cursor: pointer; text-align: left; position: relative; }
+.pipe-btn:hover { border-color: var(--accent); }
+.pipe-btn[aria-pressed="true"] { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-l); }
+.pipe-btn.is-empty { opacity: .6; box-shadow: none; }
+.pipe-n { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--brand); line-height: 1.1; }
+.pipe-l { font-size: .84rem; font-weight: 600; color: var(--muted); }
+.pipe-due { font-size: .72rem; font-weight: 700; color: var(--err); }
+.pipe li + li .pipe-btn::before { content: ""; position: absolute; left: -.42rem; top: 50%; width: .34rem; height: 2px; background: var(--line-2); }
+@media (max-width: 760px) { .pipe { grid-template-columns: repeat(3, minmax(0, 1fr)); } .pipe li + li .pipe-btn::before { display: none; } }
+@media (max-width: 420px) { .pipe { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.a-row-next { margin: .35rem 0 0; display: flex; flex-wrap: wrap; align-items: center; gap: .45rem; font-weight: 600; color: var(--brand); }
+.a-row-next.is-late { color: var(--err); }
+.a-row-next-k { font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 800; padding: .08rem .45rem; border-radius: 4px; background: var(--accent-l); color: var(--accent-2); }
+.a-row-next.is-late .a-row-next-k { background: var(--err-l); color: var(--err); }

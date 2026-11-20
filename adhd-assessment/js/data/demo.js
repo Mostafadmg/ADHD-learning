@@ -8,6 +8,24 @@
    Keep both treatment records complete (ARCHITECTURE 5.15): every heart and safety-screen item answered, every plan
    item that applies ticked, reviews tagged with their drug and product, and a newDose on each Increase review. */
 AA.add('demo', {
+ "pack": {
+  "service": "Adult ADHD Service",
+  "dates": { "referral": "2026-07-14", "sent": "2026-07-15", "returned": "2026-08-01" },
+  "items": {
+   "pk_welcome": { "s": "sent", "at": "2026-07-15" }, "pk_consent": { "s": "back", "at": "2026-07-24" },
+   "pk_history": { "s": "back", "at": "2026-07-24" }, "pk_asrs": { "s": "back", "at": "2026-07-24" },
+   "pk_wfirs": { "s": "back", "at": "2026-07-24" }, "pk_wurs": { "s": "back", "at": "2026-07-24" },
+   "pk_phq9": { "s": "back", "at": "2026-07-24" }, "pk_gad7": { "s": "back", "at": "2026-07-24" },
+   "pk_audit": { "s": "back", "at": "2026-07-24" }, "pk_dast": { "s": "back", "at": "2026-07-24" },
+   "pk_aq10": { "s": "back", "at": "2026-07-24" }, "pk_inf_partner": { "s": "back", "at": "2026-07-29" },
+   "pk_inf_parent": { "s": "back", "at": "2026-08-01" }, "pk_invite": { "s": "sent", "at": "2026-08-04" },
+   "pk_school": { "s": "back", "at": "2026-08-01" }, "pk_gp": { "s": "back", "at": "2026-07-30" },
+   "pk_health": { "s": "back", "at": "2026-07-24" }
+  },
+  "triage": "tr_book",
+  "triageNotes": "ASRS Part A positive; GAD-7 moderate anxiety (explore in the interview); PHQ-9 mild, item 9 zero. No safety concerns. Mother and partner forms back. Book DIVA.",
+  "interview": { "date": "2026-08-25", "time": "10:00", "mode": "in_person", "informants": { "partner": true, "parent": true }, "notes": "Mother joins by phone for the childhood questions." }
+ },
  "patient": {
   "ref": "DEMO-01",
   "age": 34,
@@ -1116,6 +1134,20 @@ AA.add('demo', {
 /* Child demo (6-11 band). The current period is stored under the 'adult' keys (symptoms.<id>.adult,
    impairment.adult); for a child of 6-11 that period is also "before age 12", so the 'child' keys stay empty. */
 AA.add('demoYoung', {
+ "pack": {
+  "service": "Child and Adolescent ADHD Service",
+  "dates": { "referral": "2026-08-04", "sent": "2026-08-05", "returned": "2026-08-27" },
+  "items": {
+   "pk_y_letter": { "s": "sent", "at": "2026-08-05" }, "pk_consent": { "s": "back", "at": "2026-08-12" },
+   "pk_y_history": { "s": "back", "at": "2026-08-12" }, "pk_y_parent": { "s": "back", "at": "2026-08-12" },
+   "pk_y_teacher": { "s": "back", "at": "2026-08-27" }, "pk_y_sdq": { "s": "back", "at": "2026-08-27" },
+   "pk_y_school": { "s": "back", "at": "2026-08-20" }, "pk_gp": { "s": "back", "at": "2026-08-19" },
+   "pk_invite": { "s": "sent", "at": "2026-08-28" }
+  },
+  "triage": "tr_book",
+  "triageNotes": "Parent and teacher ratings both above the cut-off; problems at home and at school. No safeguarding concerns. Book the assessment with mother and Leo.",
+  "interview": { "date": "2026-09-15", "time": "14:00", "mode": "in_person", "informants": { "parent": true }, "notes": "" }
+ },
  "patient": {
   "ref": "DEMO-Y1",
   "age": 8,

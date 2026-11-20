@@ -316,12 +316,31 @@
       stat('In progress', active.length), stat('Completed', done.length),
       stat('Training modules', modsDone + ' / ' + mods.length), stat('Practice cases', Object.keys(AA.progress.get('cases', {}) || {}).length + ' / ' + (AA.data.cases || []).length)));
 
-    var sec = h('section', { class: 'section' }, h('h2', null, 'Your assessments'));
+    var sec = h('section', { class: 'section' }, h('h2', null, 'Your patients'));
     if (!list.length) {
       sec.appendChild(ui.empty('No assessments yet', 'Start a new one, or open the demo patient to see a completed assessment with scores and a report.',
         h('div', { class: 'row', style: { justifyContent: 'center' } }, ui.btn({ label: 'New assessment', kind: 'primary', go: 'new' }))));
     } else {
-      sec.appendChild(h('div', { class: 'a-list' }, list.map(assessmentRow)));
+      /* Where each patient is, from referral to treatment, and what to do next. Tap a stage to filter. */
+      var stages = list.map(function (a) { return { a: a, st: stageOf(a) }; });
+      var filter = null;
+      var listEl = h('div', { class: 'a-list' });
+      var pipe = h('ol', { class: 'pipe', 'aria-label': 'Where your patients are' });
+      function paintList() {
+        U.clear(listEl);
+        stages.filter(function (x) { return !filter || x.st.group === filter; }).forEach(function (x) { listEl.appendChild(assessmentRow(x.a, x.st)); });
+        U.$$('.pipe-btn', pipe).forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-g') === filter ? 'true' : 'false'); });
+      }
+      PIPE.forEach(function (g) {
+        var n = stages.filter(function (x) { return x.st.group === g.id; }).length;
+        var due = stages.filter(function (x) { return x.st.group === g.id && x.st.late; }).length;
+        pipe.appendChild(h('li', null, h('button', { type: 'button', class: 'pipe-btn' + (n ? '' : ' is-empty') + (due ? ' is-late' : ''), 'data-g': g.id, 'aria-pressed': 'false',
+          onclick: function () { filter = filter === g.id ? null : g.id; paintList(); } },
+          h('span', { class: 'pipe-n' }, String(n)), h('span', { class: 'pipe-l' }, g.label), due ? h('span', { class: 'pipe-due' }, due + ' overdue') : null)));
+      });
+      sec.appendChild(pipe);
+      sec.appendChild(listEl);
+      paintList();
     }
     el.appendChild(sec);
 
@@ -366,7 +385,36 @@
     return { done: done, of: steps.length - na, na: na, label: cur ? 'Step ' + (idx + 1) + ': ' + cur.title : '' };
   }
 
-  function assessmentRow(a) {
+  /* The pipeline: one stage per patient, with the next action and the step that does it. */
+  var PIPE = [{ id: 'onboard', label: 'Onboarding' }, { id: 'interview', label: 'DIVA interview' }, { id: 'diagnose', label: 'Diagnosis and report' },
+    { id: 'treat', label: 'Treatment' }, { id: 'done', label: 'Completed' }];
+  function stageOf(a) {
+    var P = AA.pack, J = AA.journey, V = AA.diva;
+    var started = Object.keys(a.symptoms || {}).some(function (k) { var r = a.symptoms[k] || {}; return r.adult || r.child; });
+    function out(group, label, step, late) { return { group: group, label: label, step: step, late: !!late }; }
+    if (a.status === 'complete') return out('done', 'Completed', 'report');
+    if (!started && P) {
+      var s = P.status(a);
+      var iv = (a.pack || {}).interview || {};
+      if (s.stage === 'booked') return out('interview', 'DIVA interview on ' + U.fmtDate(iv.date) + (iv.time ? ', ' + iv.time : ''), 'ia');
+      return out('onboard', s.next, 'pack', s.overdue);
+    }
+    var dx = (a.formulation || {}).decision;
+    if (!dx) {
+      var prog = V && V.progress ? V.progress(a) : null;
+      if (prog && prog.done < prog.total) return out('interview', 'DIVA interview: ' + Math.round(100 * prog.done / prog.total) + '% done', a.step && /^(ia|hi|onset)$/.test(a.step) ? a.step : 'ia');
+      return out('diagnose', 'Score and diagnose', 'summary');
+    }
+    var sum = null;
+    try { sum = J ? J.summary(a) : null; } catch (e) { sum = null; }
+    var next = sum && sum.next ? (AA.STEP_LIST || []).filter(function (x) { return x.id === sum.next; })[0] : null;
+    if (next && next.phase === 'treat') return out('treat', 'Next: ' + next.title, next.id);
+    if (next) return out('diagnose', 'Next: ' + next.title, next.id);
+    return out('diagnose', 'Review and sign off', 'report');
+  }
+
+  function assessmentRow(a, stage) {
+    stage = stage || stageOf(a);
     var out = AA.diagnosis.outcome(a);
     var kinds = { met: 'ok', 'not-met': 'neutral', subthreshold: 'warn', 'better-explained': 'info', incomplete: 'neutral' };
     var labels = { met: 'Criteria met', 'not-met': 'Criteria not met', subthreshold: 'Subthreshold', 'better-explained': 'Better explained', incomplete: 'In progress' };
@@ -379,18 +427,33 @@
         h('div', { class: 'a-row-meta' },
           h('span', null, [p.age ? p.age + ' y' : null, p.sex || null].filter(Boolean).join(', ') || 'Age not recorded'),
           h('span', null, 'Updated ' + U.fmtDate(a.updatedAt, true))),
+        h('p', { class: 'a-row-next' + (stage.late ? ' is-late' : '') }, h('span', { class: 'a-row-next-k' }, 'Next'), stage.label),
         st.of ? h('div', { class: 'a-row-prog' },
           ui.progress(st.done, st.of, 'Steps complete'),
           h('span', { class: 'a-row-step' }, st.done + ' of ' + st.of + ' steps complete' + (st.na ? ' (' + st.na + ' not applicable yet)' : '') +
             (a.status !== 'complete' && st.label ? ' · ' + st.label : ''))) : null),
       h('div', { class: 'a-row-actions' },
         ui.btn({ label: a.status === 'complete' ? 'Open' : 'Continue', kind: 'primary', small: true, onClick: function () {
-          AA.progress.set('lastAssessment', a.id); AA.router.go('assess-' + a.id + '-' + (a.step || 'setup'));
+          AA.progress.set('lastAssessment', a.id); AA.router.go('assess-' + a.id + '-' + (stage.step || a.step || 'setup'));
         } }),
         ui.btn({ label: 'Delete', kind: 'quiet', small: true, onClick: function () {
           U.confirm({ title: 'Delete this assessment?', body: 'All answers and notes for ' + (p.ref || 'this patient') + ' will be removed from this browser. This cannot be undone.', ok: 'Delete', danger: true })
             .then(function (yes) { if (yes) { AA.assess.remove(a.id); U.toast('Assessment deleted'); AA.router.refresh(); } });
         } })));
+  }
+
+  /* Your DIVA copy on this device: what is kept, and a way to remove it. */
+  function divaCopyCard() {
+    var S = AA.divaSource;
+    if (!S) return null;
+    var m = S.meta();
+    return h('div', { class: 'callout callout-info' },
+      h('p', { class: 'callout-title' }, 'Your DIVA copy on this device'),
+      h('p', null, m ? 'Loaded: ' + (m.file || 'DIVA 2.0 PDF') + (m.loadedAt ? ', ' + U.fmtDate(m.loadedAt) : '') + '. Its text and the file are kept in this browser to show the wording and fill in the form.' : 'None loaded. Load it from DIVA part 1 in any adult assessment.'),
+      m ? ui.btn({ label: 'Remove my DIVA copy from this browser', kind: 'secondary', small: true, onClick: function () {
+        U.confirm({ title: 'Remove your DIVA copy?', body: 'The interview goes back to the portal\'s own wording until you load it again. Patient records are not changed.', ok: 'Remove', danger: true })
+          .then(function (yes) { if (yes) S.clear().then(function () { U.toast('DIVA copy removed from this browser.', 'ok'); AA.router.refresh(); }); });
+      } }) : null);
   }
 
   /* ---------- About, privacy and data ---------- */
@@ -400,7 +463,8 @@
       h('section', { class: 'card' }, h('h2', null, 'What this app is'),
         h('p', null, 'A training and decision-support workspace for clinicians who assess and treat ADHD in adults and in young people aged 6 to 17. One patient record runs from referral to shared care: assessment, diagnosis, treatment plan, pre-treatment checks, prescribing, titration, monitoring and the annual review. For a child under 6, it tells you to refer to a service with expertise in ADHD in young children.'),
         h('p', null, 'It follows the structure of the DIVA diagnostic interview (Kooij and Francken) and the DSM-5-TR and ICD-11 criteria, with UK NICE NG87 for the wider assessment, treatment and monitoring.'),
-        h('p', null, 'Interview questions and examples in this app are written for it. They do not reproduce the licensed DIVA-5 or Young DIVA-5 forms. Licensed instruments (for example DIVA-5, CAARS 2, BAARS-IV, Conners 4, SDQ) are described and linked, not copied: you can enter their results.'),
+        h('p', null, 'For adults the interview follows the DIVA 2.0. DIVA is \u00a9 DIVA Foundation, so its questions and examples are not part of this app: they appear word for word only after you load your own copy of the DIVA 2.0 PDF, which is read and kept in this browser and never uploaded. The portal\'s own questions and examples are original. Licensed instruments (for example DIVA-5, CAARS 2, BAARS-IV, Conners 4, SDQ) are described and linked, not copied: you can enter their results.'),
+        divaCopyCard(),
         h('p', null, 'Diagnosing ADHD and starting medicine belong to a specialist ADHD team. Anyone doing this, including a non-medical prescriber, needs the training and expertise for that medicine and age group, and agreed governance and supervision.'),
         h('p', { class: 'muted' }, 'It supports, and never replaces, a qualified clinician\'s judgement, local policy and the official instruments.')),
       h('section', { class: 'card' }, h('h2', null, 'Privacy'),

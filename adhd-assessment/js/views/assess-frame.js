@@ -11,6 +11,7 @@
 
   var STEPS = AA.STEP_LIST = [
     { id: 'setup', title: 'Before you start', short: 'Start', lead: 'Patient details, consent, who is present and what information you have.', phase: 'prepare' },
+    { id: 'pack', title: 'Pre-assessment pack', short: 'Pack', lead: 'What to send before the interview, when and to whom: track it, chase it, triage it and book the DIVA.', phase: 'prepare' },
     { id: 'screen', title: 'Screening questionnaires', short: 'Screening', lead: 'Self-report scales, ideally completed before the appointment: ASRS v1.1, WURS-25 and WFIRS-S.', phase: 'prepare' },
     { id: 'risk', title: 'Safety and risk', short: 'Risk', lead: 'Check safety first. Some answers mean the ADHD assessment should pause.', phase: 'prepare' },
     { id: 'history', title: 'Clinical history', short: 'History', lead: 'Development, school, work, relationships, mental and physical health, substances, family and forensic history.', phase: 'prepare' },
@@ -50,8 +51,15 @@
     return Array.isArray(p) ? p.indexOf('child') > -1 : ageBand(a) !== 'child';
   }
 
+  /* Adults: the interview steps carry DIVA titles (assess-diva.js). */
+  function titleFor(meta, a) {
+    var t = AA.divaUI && AA.divaUI.title ? AA.divaUI.title(meta, a) : null;
+    return t || meta.title;
+  }
   /* Step leads for young people, where the adult lead names adult tools or periods. */
   function leadFor(meta, a) {
+    var dl = AA.divaUI && AA.divaUI.lead ? AA.divaUI.lead(meta, a) : null;
+    if (dl) return dl;
     if (!isYoung(a)) return meta.lead;
     var before = showsBefore12(a);
     var noun = ageBand(a) === 'child' ? 'child' : 'young person';
@@ -150,9 +158,9 @@
     var JU = AA.journeyUI;
     var pbar = JU ? JU.patientBar(a, ctx) : null;
     if (pbar) el.appendChild(pbar.el);
-    var eyebrowEl = h('p', { class: 'eyebrow' }, eyebrowText(a)), leadEl = h('p', { class: 'lead' }, leadFor(meta, a));
+    var eyebrowEl = h('p', { class: 'eyebrow' }, eyebrowText(a)), leadEl = h('p', { class: 'lead' }, leadFor(meta, a)), titleEl = h('h1', null, titleFor(meta, a));
     el.appendChild(h('header', { class: 'page-head ws-head' + (sub ? ' is-sub' : '') },
-      h('div', { class: 'page-head-text' }, eyebrowEl, h('h1', null, meta.title), leadEl)));
+      h('div', { class: 'page-head-text' }, eyebrowEl, titleEl, leadEl)));
 
     /* Pathway: five phase buttons (Prepare, Interview, Diagnose, Treat, Report), then only the
        steps of the phase you are in. Each phase button opens the first step of that phase. */
@@ -312,6 +320,7 @@
         shownBand = nb;
         eyebrowEl.textContent = eyebrowText(cur);
         leadEl.textContent = leadFor(meta, cur);
+        titleEl.textContent = titleFor(meta, cur);
         if (guide && nb !== 'under6') {
           var g2 = stepGuide(step, !!sub, cur);
           if (g2) { guide.el.replaceWith(g2.el); guide = g2; }
@@ -340,7 +349,9 @@
     function list(x) { return Array.isArray(x) ? x : []; }
     var key = 'guideClosed.' + step;
     var pref = AA.progress.get(key, null);
-    var open = isSub ? false : pref === null || pref === undefined ? roomy() : !pref;
+    /* Closed on symptom cards and once the step is complete (the summary line still shows the goal and the status). */
+    var stepDone = (function () { var pr = progressOf(a, step); return pr.of > 0 && pr.done >= pr.of; })();
+    var open = isSub ? false : pref === null || pref === undefined ? roomy() && !stepDone : !pref;
     var statusHost = h('span', { class: 'guide-status' });
     var tabs = [];
     function add(id, label, items, render) { if (items.length) tabs.push({ id: id, label: label, count: items.length, render: render }); }

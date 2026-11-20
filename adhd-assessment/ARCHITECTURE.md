@@ -3,14 +3,14 @@
 This file is the contract between the core, the content (data files) and the views.
 Read it fully before adding or changing anything.
 
-The workspace runs one patient record through the whole pathway in 18 steps and five phases:
-Prepare, Interview, Diagnose, Treat (treatment plan, pre-treatment checks, prescribing, titration,
+The workspace runs one patient record through the whole pathway in 19 steps and five phases:
+Prepare (including the pre-assessment pack that onboards the patient), Interview, Diagnose, Treat (treatment plan, pre-treatment checks, prescribing, titration,
 monitoring and shared care) and Report. It covers adults (18 and over) and young people aged 6 to 17.
 Under 6 the app stops and tells the clinician to refer.
 
 ## 1. Principles
 
-- **Vanilla JavaScript, no build step, no framework.** Plain `<script>` tags in a fixed order (see `index.html`). Every file is an IIFE that attaches to `window.AA`. No ES modules, no `import`, no external JS libraries.
+- **Vanilla JavaScript, no build step, no framework.** Plain `<script>` tags in a fixed order (see `index.html`). Every file is an IIFE that attaches to `window.AA`. No ES modules, no `import`, no external JS libraries. One exception: the DIVA form features load two vendored PDF libraries on demand (`vendor/`, see `vendor/README.md`); nothing else may use them, and the app works without them.
 - **Data before UI.** Clinical content lives in `js/data/` as plain objects. Views never hard-code clinical content; they render data.
 - **Single source of truth.** All user state is in `AA.store` (one object, persisted to `localStorage`). Views read with `get`, write with `set`, and subscribe to changes. Never keep a second copy of user state in a view except short-lived local UI state.
 - **Pure logic is separate.** Scoring (`js/engine/scoring.js`), diagnostic rules (`js/engine/diagnosis.js`) and treatment rules (`js/engine/treatment.js`) are pure functions with no DOM code, tested in node (`tests/`). They cope with missing data collections: they return empty results instead of throwing.
@@ -35,6 +35,9 @@ css/v-library.css          tools library and pathway (prefix .lib-)
 css/v-learn.css            learning, quizzes, cases (prefix .lr-)
 css/v-reference.css        ddx, criteria, question bank, glossary (prefix .rf-)
 css/v-guides.css           forms guide and ddx protocol (prefix .gd-)
+css/v-journey.css          journey rail, patient bar, step bar, case overview (prefix .jn-)
+css/v-diva.css             DIVA 2.0 interview, score form and form filling (prefix .dv-)
+css/v-pack.css             pre-assessment pack step (prefix .pk-)
 js/core/ns.js              window.AA, AA.add(), AA.byId()
 js/core/util.js            AA.util: h(), $, $$, esc, uid, debounce, storage, sha256, toast, confirm, copyText, download, isEmbedded
 js/core/store.js           AA.store, AA.auth, AA.assess, AA.progress
@@ -44,7 +47,11 @@ js/engine/scoring.js       AA.scoring
 js/engine/diagnosis.js     AA.diagnosis (criteria, age bands, step progress)
 js/engine/treatment.js     AA.treatment (treatment rules; must load after diagnosis.js)
 js/engine/journey.js       AA.journey (per-patient journey: status, gaps, attention; must load after treatment.js)
+js/engine/diva.js          AA.diva (DIVA 2.0: parse the clinician's own PDF, score form, explanation, fill plan; pure)
+js/engine/pack.js          AA.pack (pre-assessment pack: status, progress, gaps, letter filling; pure)
 js/components/questionnaire.js  AA.components.questionnaire, AA.components.bands, AA.components.scoreBox
+js/components/diva-kit.js  AA.pdfkit (loads vendor/ PDF libraries on demand, reads, fills and previews a PDF) and
+                           AA.divaSource (the clinician's DIVA copy on this device: parsed content in localStorage, PDF in IndexedDB)
 js/data/tools-adhd.js      tools (5.4); also tools-comorbid.js, tools-info.js
 js/data/symptoms/*.js      symptoms ia1-ia9, hi1-hi9 (5.1), one file each
 js/data/impairment.js      impairment, onset, duration, supplement, collateral (5.2)
@@ -57,6 +64,7 @@ js/data/glossary.js        glossary (5.6)
 js/data/learn-1..3.js      training modules (5.7); cases-1.js, cases-2.js: cases (5.8)
 js/data/step-guide.js      stepGuide for the 13 assessment steps (5.9)
 js/data/forms-guide.js     formsGuide (5.10); ddx-protocol.js: ddxProtocol (5.11)
+js/data/pack.js            pack: pre-assessment pack items, timeline, letter templates, triage options (5.16)
 js/data/step-guide-young.js stepGuideYoung (5.13)
 js/data/tx-products.js     txDrugs, txProducts (5.14)
 js/data/tx-pathway.js      txSequence, txPlanItems, txCardiac, txCautions, txSideEffects, txCounsel, txRxChecks, txMonitor (5.14)
@@ -65,7 +73,10 @@ js/data/demo.js            demo (adult demo patient) and demoYoung (child demo, 
 js/views/shell.js          top bar, sidebar, routes: signin, home, new, about; AA.shell (demo loader)
 js/views/assess-frame.js   route: assess (workspace, step strip, live panel, step guide); AA.STEP_LIST, AA.STEP_PHASES
 js/views/assess-steps-a.js AA.steps: setup, screen, risk, history, comorbid
-js/views/assess-interview.js AA.steps: ia, hi, onset, collateral
+js/views/assess-pack.js    AA.steps.pack (pre-assessment pack: send, letters, triage, book the interview)
+js/views/assess-interview.js AA.steps: ia, hi, onset, collateral (adults hand ia, hi and onset to assess-diva.js)
+js/views/assess-diva.js    AA.divaUI: the DIVA 2.0 interview for adults (parts 1 to 3, summary of symptoms), and the score card
+                           in the summary step (score form, how the score works, fill in the DIVA form)
 js/views/assess-steps-b.js AA.steps: ddx, validity, summary, report; AA.components.assessmentReport, consistencyChecks
 js/views/assess-treat.js   AA.steps: txplan, baseline, prescribe, titrate, monitor; AA.components.treatPanel, treatmentReport, sharedCareLetter
 js/views/library.js        routes: tools, tool, pathway
@@ -76,6 +87,9 @@ js/app.js                  boot
 tests/run.js               node test runner: engine unit tests + data schema validation (section 9)
 tests/young-tests.js       young-person engine tests (called by run.js)
 tests/tx-tests.js          treatment engine tests (called by run.js)
+tests/diva-tests.js        DIVA engine tests on a synthetic form layout with placeholder words (called by run.js)
+tests/pack-tests.js        pre-assessment pack engine tests (called by run.js)
+vendor/                    PDF.js 3.11.174 and pdf-lib 1.17.1, unchanged, with their licences (vendor/README.md)
 tests/dev.html             the app on fixture data (tests/fixtures/data.js instead of js/data/*)
 tests/smoke.js             headless browser smoke test (Playwright)
 scripts/bundle.js          builds one self-contained HTML file from index.html
@@ -240,8 +254,8 @@ Progress:
   - `monitor`: shared care status and next review date, plus the transition plan for young people from age 13.
 
 ### AA.journey - js/engine/journey.js (pure, node-tested in tests/journey-tests.js)
-One patient's place on the 18-step pathway. It reuses `D.stepProgress` for counts (so the step strip and the journey never disagree) and adds the itemised gaps, needed-or-good-practice levels, blocked steps and safety attention items.
-- `J.ORDER` (18 `{id, phase, need}`; ids and phases must match `AA.STEP_LIST`, which a test checks), `J.PHASES`, `J.index(id)`.
+One patient's place on the 19-step pathway. It reuses `D.stepProgress` for counts (so the step strip and the journey never disagree) and adds the itemised gaps, needed-or-good-practice levels, blocked steps and safety attention items.
+- `J.ORDER` (19 `{id, phase, need}`; ids and phases must match `AA.STEP_LIST`, which a test checks), `J.PHASES`, `J.index(id)`.
 - `J.step(a, id)` -> `{id, phase, need, state: 'done'|'part'|'todo'|'na', done, of, gaps: [label], blocked: null|string, attention: []}`. A step has gaps exactly when it is open; `txplan` is `blocked` until a decision is recorded; under 6 only setup, risk and report apply.
 - `J.attention(a)` -> `[{step, level: 'stop'|'warn'|'refer', text}]`: under-6 referral (`refer`, a disposition that never counts as a stop), urgent or high safety answers (an urgent one is a `stop` until the safety step is marked reviewed AND `risk.action` is written; after that a warning), urgent scale flags (same rule), work started without a safety review, deferred or other-specified diagnosis, diagnosis-check issues, baseline stop/ECG/cardiology reasons, and urgent or act flags at the latest titration review (urgent stays a `stop` until the medicine is stopped or `flagOverride` is written).
 - `J.summary(a)` -> `{steps, phases, done, of, na, pct, current, next, attention, openNeeded, openGood, neededSteps, gapCount, stop, ready}`. `ready` = no needed step open, no `stop` item and no deferred diagnosis (`deferred`; `next` then points at the diagnosis step). `refer` is true for under 6. Collateral is a needed step for children and young people, good practice for adults. The app never blocks movement; it asks for a confirmation instead.
@@ -255,6 +269,27 @@ One patient's place on the 18-step pathway. It reuses `D.stepProgress` for count
 - `attentionFor(a, stepId)` -> `{el, paint(a)}`: callouts for the attention items on this step (repainted only when their text changes).
 - Route `journey-<id>` (the case overview; `case` was already the practice-case route): next best action (a skipped needed step comes first), attention list, one card per phase with each step's status and open items, and the sign-off check with Mark complete / Reopen (confirm when needed steps or a safety stop are open).
 - The frame repaints the patient bar, step bar and rail from its debounced store subscription.
+
+### AA.diva (`V`) - js/engine/diva.js (pure, tests/diva-tests.js)
+The DIVA 2.0 for adults. The portal holds the DIVA's LAYOUT only, never its words (section 8).
+- `V.ITEMS` (18: `{code: 'A1'..'A9' | 'HI1'..'HI9', label: 'A1' | 'H/I 1', id: 'ia1'.. | 'hi1'.., dim, n, dsm4: 'A1a'..}`), `V.DOMAINS` (the five DIVA areas: work, relationships, social, leisure, selfimage), `V.THRESHOLD` 6, `V.THRESHOLD_LOW` 4 (the form's footnote), `V.EXPECT_SIG` (example counts of the tested English DIVA 2.0), `V.SCORE_PATTERN`.
+- `V.pageFromPdfjs(n, {w, h}, textContent, annotations)` -> a plain page `{n, w, h, runs: [{s, x, y, sz, f, w}], boxes: [{k: 'cb'|'rb'|'tx', x, y, w, h}]}`.
+- `V.parse(pages)` -> the content model (header comment of diva.js): items with the question, the childhood part, the examples with the box each tick goes in, the Other box and the yes/no pair; both supplement questions; criterion B; the five areas per life stage; the two-areas question and details box; the summary table; the score form; the patient boxes; the instructions and the explanation for the patient. `ok` (usable for the interview), `canFill`, `problems[]`, `edition` (`'diva2-en'` when the structure matches `EXPECT_SIG`), `sig`, `hash` (FNV-1a of the wording, to tell copies apart). Never throws.
+- `V.counts(a, period)`, `V.impairment(a, period)` (five areas: sev and ticks), `V.twoAreasSuggest(a, period)` (`{v: 'yes'|'no'|null, from: 'ratings'|'ticks'|'none', areas, max}`: yes with two or more areas affected and one at least moderate), `V.eSuggest(a)` (from the differential verdicts).
+- `V.scoreForm(a)` -> `{A, B, CD, E, col, dx, dsm5}`: the score form as printed (DSM-IV: 6 or more of 9 in childhood and adulthood; onset before 7), with the clinician's answers in `diva.score` and `diva.twoAreas` winning over the suggestions (`set: true`). Criterion A fails only when 6 can no longer be reached. `dx.value` is `'no'|'combined'|'ia'|'hi'|null`; the subtype comes from adulthood (the form's footnote). `dsm5` compares with DSM-5-TR via `AA.diagnosis` (5 of 9 from age 17; `outcome`).
+- `V.explain(a)` -> `{steps: [{id, title, text, state: 'yes'|'no'|'open', nums?, result?}], S}`: the plain-language explanation of the score with this patient's numbers.
+- `V.fillPlan(a, C, extra)` -> `{ops: [{op: 'tick'|'text', box, text?, size?, align?, single?, bold?}]}`; `extra` holds what is typed at export and never saved (name, date of birth), and `portal` / `portalImp` (labels of the portal examples ticked, written into the Other boxes). `V.layout(text, w, h, measure, opts)` wraps and shrinks text into a box; `V.ukDate`.
+- `V.progress(a)` -> items, supplements, B, rated areas and two-areas answers.
+
+### AA.pdfkit and AA.divaSource - js/components/diva-kit.js
+- `AA.pdfkit.load('pdfjs'|'pdflib')` loads a vendored library once. `readPages(bytes)` -> pages for `V.parse`. `fillWith(PDFLib, bytes, plan)` removes the form's own widgets (some of its radio groups span both columns and cannot hold two answers), draws ticks and wrapped text, and returns a flat PDF; `fill(bytes, plan)` loads pdf-lib first; `preview(bytes, host, {pages, scale})` renders canvases.
+- `AA.divaSource`: `pick()` (file chooser), `importFile(file)` -> `{ok, content, problems}` (saves only a readable copy: content in localStorage `aa.diva2.content`, PDF bytes in IndexedDB `aa-diva`), `content()` (sync), `has()`, `meta()`, `restore()`, `bytes()`, `useFileForFill(file)` (must match the stored hash), `clear()`, `onChange(fn)`. Nothing leaves the browser. About, privacy and data has "Remove my DIVA copy".
+
+### AA.divaUI - js/views/assess-diva.js
+`applies(a)` (band adult), `title(meta, a)` / `lead(meta, a)` (frame hooks: DIVA titles for ia, hi, onset), `part(el, ctx, dim)` (sub: an item id or `sup`), `part3(el, ctx)` (sub: `b`, a DIVA area, `daily` or `safety` (optional portal areas), `two`, `sum`), `scoreCard(el, ctx)` (summary step), `summaryTable`, `sourceCard`, `loadCopy`, `exportPanel`, `portalTicks`. DIVA's own example ticks go in `symptoms.<id>.divaA|divaC` and `impairment.<p>.<d>.diva` (by index in the loaded copy; `diva.src` records which copy); the portal's in `exA|exC` and `.ex`. For adults only the five DIVA areas are required in the onset step (`D.requiredDomains`); daily life and safety stay optional.
+
+### AA.pack (`P`) - js/engine/pack.js (pure, tests/pack-tests.js)
+`P.items(a)` (the pack for this age), `P.state(a, id)`, `P.status(a, today?)` -> `{stage: 'start'|'sent'|'returned'|'triage'|'booked', next, due, overdue, returnBy, counts, allBack}` (return by and reminder: `P.REMIND_DAYS` = 14 days after sending; a required item is complete when back or not needed, or, for an `outgoing` letter, when sent), `P.progress(a)` (4: pack sent, required items complete, triage decision, interview booked), `P.gaps(a)`, `P.fill(template, a, {clinician})` (placeholders; unknown ones stay visible), `P.addDays`, `P.uk`. Home groups patients by stage (onboarding, DIVA interview, diagnosis and report, treatment, completed) with the next action.
 
 ### AA.components
 - `AA.components.questionnaire(tool, {answers, onAnswer(n, value), mode})` renders items + live score. The caller persists answers: in an assessment, `ctx.set('tools.' + tool.id + '.answers.' + n, value)` (value `null` -> pass `undefined` to delete).
@@ -300,6 +335,7 @@ One patient's place on the 18-step pathway. It reuses `D.stepProgress` for count
       adult: 'yes'|'no'|'unsure'|null, child: 'yes'|'no'|'unsure'|null,
       exA: { <exampleKey>: true }, exC: { <exampleKey>: true },   // ticked examples, key = "<ctx>.<index>"
       otherA: '', otherC: '',                                      // patient's own examples
+      divaA: { <index>: true }, divaC: { <index>: true },          // adults: DIVA's own examples ticked, by position in the loaded copy
       infA: 0|1|2|'na'|null, infC: 0|1|2|'na'|null,               // informant agreement
       by?: { parent: 'yes'|'no'|'unsure', teacher: ..., self: ... },   // young people: who reports it now (optional)
       notes: '', flags: { <ddxId>: true } } },                      // differential flags raised here
@@ -307,13 +343,21 @@ One patient's place on the 18-step pathway. It reuses `D.stepProgress` for count
   onset: { always: 'yes'|'no'|null, ageOnset: '', before12: 'yes'|'no'|'unsure'|null, duration6m: 'yes'|'no'|null, notes,
            abruptReviewed: bool, abruptNote: '' },                // ages 6-11 with before12 'no': which differential explains
                                                                   // or excludes the sudden start (criterion E waits for it)
-  impairment: { adult: { <domainId>: { sev: 0|1|2|3|null, ex: {<key>: true}, notes } }, child: { same } },
+  impairment: { adult: { <domainId>: { sev: 0|1|2|3|null, ex: {<key>: true}, notes,
+                            diva: { <index>: true }, other: '' } }, child: { same } },   // diva/other: DIVA criterion C (adults)
   collateral: { parent: 0|1|2|'na'|null, partner: ..., school: ..., who: {parent:'', partner:'', school:''},
                 answers: { <questionKey>: true }, notes,
                 self: '' },                                         // young person's own view (NICE NG87 1.3.6)
   ddx: { <condId>: { f: { <featureId>: true }, verdict: 'absent'|'comorbid'|'better'|'uncertain'|null, notes } },
   ddxProtocol?: { <checkId>: true },                                // differential protocol ticks (5.11)
   validity: { checks: { <id>: true }, concern: 'none'|'some'|'major'|null, notes },
+  diva: { src: { sig, hash, edition },                            // which DIVA copy the DIVA ticks belong to
+          twoAreas: { adult: 'yes'|'no', child: 'yes'|'no' },       // "evidence of impairment in two or more areas?" (else suggested)
+          details: '',                                              // "potential details" on the form
+          score: { B: 'yes'|'no', E: 'yes'|'no', eBy: '', dx: 'no'|'combined'|'ia'|'hi' } },   // score form answers (else suggested)
+  pack: { service: '', dates: { referral, sent, returned },       // pre-assessment pack (5.16); dates 'YYYY-MM-DD'
+          items: { <packItemId>: { s: 'sent'|'back'|'na', at } }, triage: '<triage id>', triageNotes: '',
+          interview: { date, time, mode: 'in_person'|'video'|'phone', informants: { partner: bool, parent: bool }, notes } },
   formulation: { decision: 'met'|'not-met'|'other-specified'|'deferred'|null, presentation, severity, remission: bool,
                  comorbid: '', notes, plan: { <planItemId>: true }, planNotes, reportReviewed: bool },
   treatment: { ... }                                                // below; {} on a new record
@@ -601,7 +645,7 @@ Shown at the top of every assessment step ("What to do in this step").
 { setup: { goal: 'One sentence: what this step achieves', time: '10 minutes',
            do: ['5-9 ordered actions, imperative'], say: ['2-5 lines the clinician can say to the patient'],
            watch: ['3-6 pitfalls / watch-outs'], done: ['2-4 "you are done when" checks'],
-           next: 'What happens next and why', src: ['sources'] }, ... }   // all 18 step ids
+           next: 'What happens next and why', src: ['sources'] }, ... }   // all 19 step ids
 ```
 `step-guide.js` holds the 13 assessment steps; `tx-guide.js` adds `txplan`, `baseline`, `prescribe`, `titrate`
 and `monitor` (written for adults and young people). Sources go only in `src`, which the frame shows in a closed
@@ -769,12 +813,31 @@ the medicine's `se` list recorded at each review, and `bpCentile` on the child's
 the chart). Then `T.baselineVerdict` is `ok` for both, `T.rxText` has no errors, and every treatment step is
 complete except the child's titration, which is still in progress at 36 mg.
 
+### 5.16 Pre-assessment pack (`AA.add('pack', {...})`) - js/data/pack.js
+
+```js
+{ intro: '',
+  stages: [ { id: 'referral'|'sent'|'chase'|'returned'|'triage'|'booked', title, day, what, do: [...] } ],
+  groups: [ { id: 'letters'|'self'|'informant'|'records'|'health', label } ],
+  items: [ { id: 'pk_asrs', group, ages: 'adult'|'young'|'all', title, who, why, required: bool, when?: 'full sentence (optional items)',
+             outgoing?: true,            // a letter that only goes out: Sent completes it
+             tool?: '<toolId>',          // entered in Screening or Co-occurring conditions
+             form?: '<toolId>',          // interactive tools only: ../forms/print.html?f=<toolId>
+             official?: '<file.pdf>',    // ../forms/official/<file>, opened through ../forms/view.html?f=<file>
+             guide?: '<formsGuide id>', template?: '<template id>' } ],
+  templates: [ { id: 'tpl_welcome', title, for, subject, body } ],   // placeholders {ref} {clinician} {service} {sentDate} {returnBy}
+                                                                     // {interviewDate} {interviewTime} {interviewMode}; names stay in [square brackets]
+  triage: [ { id: 'tr_book'|'tr_wait'|'tr_safety'|'tr_other', label, when } ],   // the engine reads tr_book and tr_safety
+  src: [...] }
+```
+Item ids are stored in records: never rename or reuse one. The pack links to the forms guide instead of repeating it.
+
 ## 6. Views and routes
 
 | Route | File | Purpose |
 |---|---|---|
 | `signin`, `home`, `new`, `about` | shell.js | profiles, dashboard (adult and child demo), new assessment, privacy and data |
-| `assess`, `assess-<id>-<step>[-<sub>]` | assess-frame.js | assessment workspace: all 18 steps, steps from assess-steps-a.js, assess-interview.js, assess-steps-b.js and assess-treat.js |
+| `assess`, `assess-<id>-<step>[-<sub>]` | assess-frame.js | assessment workspace: all 19 steps, steps from assess-steps-a.js, assess-pack.js, assess-interview.js (with assess-diva.js for adults), assess-steps-b.js and assess-treat.js |
 | `journey-<id>` | assess-journey.js | case overview: next best action, attention, every step and its open items, sign-off |
 | `tools`, `tool-<id>`, `pathway` | library.js | instrument library, practice scoring, pathway and guidelines |
 | `learn`, `module-<id>`, `quiz-<id>`, `exam`, `cases`, `case-<id>`, `glossary` | learn.js | training |
@@ -782,13 +845,13 @@ complete except the child's titration, which is still in progress at 36 mg.
 | `forms`, `form-<id>`, `ddxguide` | guides.js | pre-appointment forms guide, differential diagnosis protocol; also `AA.components.ddxProtocol(opts)` |
 
 ### Assessment steps
-`AA.STEP_LIST` (assess-frame.js) defines the order, titles and phase of the 18 steps. `AA.STEP_PHASES` lists the
+`AA.STEP_LIST` (assess-frame.js) defines the order, titles and phase of the 19 steps. `AA.STEP_PHASES` lists the
 phases in order: `{id, label}`.
 
 | Phase (`phase`) | Steps (`id`: title) | View file |
 |---|---|---|
-| Prepare (`prepare`) | `setup` Before you start, `screen` Screening questionnaires, `risk` Safety and risk, `history` Clinical history, `comorbid` Co-occurring conditions screen | assess-steps-a.js |
-| Interview (`interview`) | `ia` Interview part 1: inattention, `hi` Interview part 2: hyperactivity-impulsivity, `onset` Onset and impairment, `collateral` Collateral information | assess-interview.js |
+| Prepare (`prepare`) | `setup` Before you start, `pack` Pre-assessment pack (assess-pack.js), `screen` Screening questionnaires, `risk` Safety and risk, `history` Clinical history, `comorbid` Co-occurring conditions screen | assess-steps-a.js |
+| Interview (`interview`) | `ia` Interview part 1: inattention, `hi` Interview part 2: hyperactivity-impulsivity, `onset` Onset and impairment, `collateral` Collateral information. Adults: `ia`, `hi` and `onset` are DIVA parts 1 to 3 | assess-interview.js, assess-diva.js |
 | Diagnose (`diagnose`) | `ddx` Differential diagnosis, `validity` Symptom validity and consistency, `summary` Scoring and diagnosis | assess-steps-b.js |
 | Treat (`treat`) | `txplan` Treatment plan, `baseline` Pre-treatment checks, `prescribe` Choose and prescribe, `titrate` Titration and reviews, `monitor` Monitoring and shared care | assess-treat.js |
 | Report (`report`) | `report` Report and next steps | assess-steps-b.js |
@@ -837,7 +900,7 @@ Questionnaire: `.q-*` (owned by questionnaire.js).
 
 - Clinical accuracy first. Use the research briefs; never invent clause numbers, cut-offs, psychometrics or quotes. If not from a named source, label it "Clinical practice".
 - Paraphrase DSM-5-TR and ICD-11 wording; do not reproduce criteria verbatim beyond short phrases.
-- DIVA: the app follows DIVA's structure (adult then childhood, examples, supplement question, onset, impairment in five areas, collateral 0/1/2 rating) but all question and example wording is original. Do not copy the DIVA 2.0 or DIVA-5 example lists.
+- DIVA: DIVA is © DIVA Foundation. Its current terms forbid storing it in automated data files or putting it into an online platform without permission. So NO DIVA wording (questions, examples, score form text) may be stored in this repository, the data files, the tests or the demo. For adults the interview shows DIVA's exact wording only from the clinician's own copy of the DIVA 2.0 PDF, read on their device (`AA.divaSource`), and fills in that same copy at the end. Without a copy the portal's own original questions and examples are used. The parser knows layout only; its tests use a synthetic layout with placeholder words. DIVA-5 and Young DIVA-5 are not read.
 - Licensed instruments (DIVA-5, Young DIVA-5, CAARS 2, BAARS-IV, Conners 4, BRIEF-A, Brown EF/A, CAADID, Epworth, ISI, SDQ ...) are described and linked, with `interactive: false` and empty `items`. Their results can be entered (`tools.<id>.result`).
 - Treatment facts (doses, licences, the NICE order, controlled drug rules, monitoring) come from the SmPCs on emc, NICE NG87 and the other named sources, and match the main course. Never invent a dose, a cut-off or a clause number; where a fact is not confirmed, send the prescriber to the SmPC or BNF.
 - Sources sit in one closed "Sources" disclosure at the end of a card or step (`.guide-src`), not as clause numbers in brackets inside sentences.
@@ -846,7 +909,8 @@ Questionnaire: `.q-*` (owned by questionnaire.js).
 
 ## 9. Testing
 
-- `node tests/run.js` runs the engine unit tests and validates every data file against these schemas (ids unique, required fields, cross-references such as `mimics[].ddx`, `screen[]` tool ids, quiz answer indexes). It loads the files in the order of the `<script>` tags in `index.html` (ignoring `?v=`). The data checks include: step guides for all 18 steps, `stepGuideYoung` entries, `ageBands` tool and ddx ids, numeric `ageMin`/`ageMax` on every tool, `ages` values, collateral keys unique across all question sets, treatment ids and cross-references (drug cautions and side effects, product drugs, `hist` ids, counselling drugs), and a dose plan for every product at ages 9, 15 and 30. `node tests/run.js --data` runs only the data checks.
+- `node tests/run.js` runs the engine unit tests and validates every data file against these schemas (ids unique, required fields, cross-references such as `mimics[].ddx`, `screen[]` tool ids, quiz answer indexes). It loads the files in the order of the `<script>` tags in `index.html` (ignoring `?v=`). The data checks include: step guides for all 19 steps, `stepGuideYoung` entries, `ageBands` tool and ddx ids, numeric `ageMin`/`ageMax` on every tool, `ages` values, collateral keys unique across all question sets, treatment ids and cross-references (drug cautions and side effects, product drugs, `hist` ids, counselling drugs), and a dose plan for every product at ages 9, 15 and 30. `node tests/run.js --data` runs only the data checks.
+- `tests/diva-tests.js` (called by run.js): the parser on a synthetic DIVA-shaped document (items, wrapped labels, the childhood part split by font, both supplements, criterion B, ten areas over two pages, the two-areas question, the summary and the score form pattern, patient boxes; a broken copy is rejected without throwing), the score form (6 of 9; 5 of 9 is No on the DIVA rules but met on DSM-5-TR; clinician answers win; two-areas suggestions), the explanation, the fill plan (ticks, Other text with portal examples, UK dates, totals, collateral, subtype) and text layout. `tests/pack-tests.js`: pack items by age, the stages, overdue at 14 days, outgoing letters, progress and gaps, letter filling.
 - `tests/young-tests.js` (called by run.js): age bands at the edges (5, 6, 11, 12, 16, 17, 18, missing), the symptom threshold, periods and labels, band tool lists, criterion B for ages 6 to 11 (and before 12 for teenagers; a sudden start keeps B met and holds E until it is reviewed), criterion C by settings for young people, the setup consent basis, impairment labels, collateral keys and `agreement`, criterion E with the band's core list, confidence, the DIVA 2.0 view, band-aware step progress (interview, onset, history sections by age), behaviour without band data, `toolDone` and the hand-over to `AA.treatment.stepProgress`.
 - `tests/tx-tests.js` (called by run.js): group and age edges, applicability, `bpCheck` (adult 139/89, 140/90, 180/120, the lower of two readings, and young centiles), `baselineVerdict` with a 1.7.5 item, `cautionsFor`, `options` after earlier medicines, products and licences (Matoride XL not to start in adults), `dosePlan` (Concerta XL child and adult, atomoxetine by weight, guanfacine maximum by age and weight), `words`, `rxText` (including half tablets and the `ir` flag), `reviewFlags` (heart rate over 120 twice, urgent side effects), `nextDose`, `trial`, `monitorPlan`, `stepProgress` (including not applicable), `T.forAge` and the item lists the counts use, the pregnancy question, and missing data never throwing. It also
   covers the October 2026 safety review, one or more checks per finding: dose ceilings (guanfacine weight bands and
