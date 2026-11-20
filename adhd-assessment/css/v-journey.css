@@ -1,0 +1,195 @@
+/* Patient journey: sidebar rail (.jn-rail), patient bar (.jn-pbar), sticky step bar (.jn-sbar) and the case
+   overview (.jn-hero, .jn-card...). Colour tokens only, so light, dark and the Rx portal theme all follow. */
+
+/* Text on a filled green or amber dot: white in light mode, dark ink in dark mode (the fills are lighter there). */
+:root { --jn-on: #ffffff; }
+:root[data-theme="dark"] { --jn-on: #10231c; }
+
+/* ---------- Status dot (rail, overview) ---------- */
+.jn-dot { flex: none; width: 24px; height: 24px; border-radius: 50%; display: inline-grid; place-items: center; font: 600 .72rem/1 var(--font-ui); border: 2px solid var(--side-faint); color: var(--side-muted); background: transparent; }
+.jn-dot.is-done { background: var(--ok); border-color: var(--ok); color: var(--jn-on); font-size: .8rem; }
+.jn-dot.is-part { border-color: var(--accent); color: var(--accent); background: linear-gradient(90deg, var(--accent-l) 50%, transparent 50%); }
+.jn-dot.is-na { border-style: dashed; opacity: .6; }
+.jn-dot.is-missed { border-color: var(--warn); color: var(--warn); box-shadow: 0 0 0 3px var(--warn-l); }
+
+/* ---------- Sidebar rail ---------- */
+.jn-rail { display: grid; gap: .55rem; padding-bottom: .3rem; }
+.jn-case { border: 1px solid var(--side-line); border-radius: 10px; background: var(--side-hover); padding: .75rem; display: grid; gap: .6rem; }
+.jn-case-top { display: flex; gap: .7rem; align-items: center; }
+.jn-ring { --p: 0%; flex: none; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(var(--accent) var(--p), var(--side-line) 0); position: relative; }
+.jn-ring::before { content: ""; position: absolute; inset: 5px; border-radius: 50%; background: var(--side-bg); }
+.jn-ring span { position: relative; font: 700 .78rem/1 var(--font-display); color: var(--side-ink); }
+.jn-case-t { min-width: 0; }
+.jn-case-name { margin: 0; font: 600 .98rem/1.25 var(--font-display); color: var(--side-ink); overflow-wrap: anywhere; }
+.jn-case-sub, .jn-case-count { margin: .1rem 0 0; font-size: .78rem; color: var(--side-muted); }
+.jn-alert { display: block; padding: .45rem .6rem; border-radius: 8px; font-size: .8rem; font-weight: 600; text-decoration: none; line-height: 1.3; }
+.jn-alert.is-stop { background: var(--err-l); color: var(--err); box-shadow: inset 3px 0 0 var(--err); }
+.jn-alert.is-refer { background: var(--info-l); color: var(--info); box-shadow: inset 3px 0 0 var(--info); }
+.jn-alert.is-warn { background: var(--warn-l); color: var(--warn); box-shadow: inset 3px 0 0 var(--warn); }
+.jn-next { display: flex; align-items: center; justify-content: space-between; gap: .5rem; padding: .55rem .7rem; border-radius: 8px; background: var(--accent); color: var(--accent-ink); text-decoration: none; box-shadow: var(--btn-shadow); }
+.jn-next:hover { background: var(--accent-2); }
+.jn-next-k { font-size: .72rem; opacity: .9; }
+.jn-next-t { font-weight: 700; font-size: .92rem; }
+.jn-next::after { content: "→"; margin-left: auto; font-weight: 700; }
+.jn-all { margin: 0; font-size: .82rem; font-weight: 600; color: var(--ok); }
+.jn-over { font-size: .8rem; color: var(--side-muted); text-decoration: none; padding: .1rem .2rem; }
+.jn-over:hover, .jn-over[aria-current="page"] { color: var(--accent); text-decoration: underline; }
+
+.jn-ph { border-top: 1px solid var(--side-line); padding-top: .15rem; }
+.jn-ph:first-of-type { border-top: 0; }
+.jn-ph-h { display: flex; align-items: center; gap: .45rem; width: 100%; min-height: 38px; padding: .3rem .35rem; background: none; border: 0; border-radius: 8px; cursor: pointer; color: var(--side-ink); font: 600 .86rem/1 var(--font-ui); text-align: left; }
+.jn-ph-h:hover { background: var(--side-hover); }
+.jn-ph-chev { width: 8px; height: 8px; border-right: 2px solid var(--side-muted); border-bottom: 2px solid var(--side-muted); transform: rotate(-45deg); transition: transform .15s; margin-left: .15rem; }
+.jn-ph-h[aria-expanded="true"] .jn-ph-chev { transform: rotate(45deg); }
+.jn-ph-l { flex: 1; }
+.jn-ph-n { font-size: .75rem; font-weight: 600; color: var(--side-muted); background: var(--side-chip-bg); border-radius: 999px; padding: .1rem .5rem; }
+.jn-ph.is-done .jn-ph-n { background: var(--ok-l); color: var(--ok); }
+.jn-ph-miss { font-size: .68rem; font-weight: 700; color: var(--warn); background: var(--warn-l); border-radius: 999px; padding: .08rem .4rem; }
+.jn-steps { list-style: none; margin: 0 0 .25rem; padding: 0 0 0 .1rem; display: grid; gap: 1px; position: relative; }
+.jn-steps[hidden] { display: none; }
+.jn-step { display: flex; align-items: center; gap: .6rem; min-height: 38px; padding: .22rem .5rem; border-radius: 10px; color: var(--side-ink); text-decoration: none; font-size: .88rem; }
+.jn-step:hover { background: var(--side-hover); color: var(--side-hover-ink); }
+.jn-step-t { flex: 1; min-width: 0; line-height: 1.2; }
+.jn-step.is-na { color: var(--side-muted); }
+.jn-step.is-here, .jn-step.is-here:hover { background: var(--side-active-bg); color: var(--side-active-ink); font-weight: 600; box-shadow: 0 8px 18px -12px rgba(11, 65, 49, .75); }
+.jn-step.is-here .jn-dot { border-color: var(--side-accent); color: var(--side-accent); }
+.jn-step.is-here .jn-dot.is-done { background: var(--side-accent); border-color: var(--side-accent); color: #0b4131; }
+.jn-chip { flex: none; min-width: 20px; text-align: center; font-size: .72rem; font-weight: 700; padding: .05rem .4rem; border-radius: 999px; background: var(--accent-l); color: var(--accent); }
+.jn-chip.is-missed { background: var(--warn-l); color: var(--warn); }
+.jn-step.is-here .jn-chip { background: var(--side-active-chip-bg); color: var(--side-accent); }
+.jn-flag { flex: none; width: 9px; height: 9px; border-radius: 50%; }
+.jn-flag.is-stop { background: var(--err); box-shadow: 0 0 0 3px var(--err-l); }
+.jn-flag.is-refer { background: var(--info); box-shadow: 0 0 0 3px var(--info-l); }
+.jn-flag.is-stop { display: inline-grid; place-items: center; width: 14px; height: 14px; font: 700 .62rem/1 var(--font-ui); color: var(--jn-on); }
+.jn-flag.is-warn { background: var(--warn); box-shadow: 0 0 0 3px var(--warn-l); }
+.jn-tools { margin-top: .4rem; border-top: 1px solid var(--side-line); padding-top: .35rem; }
+.jn-tools > summary { cursor: pointer; font: 600 .86rem/1 var(--font-ui); padding: .55rem .35rem; color: var(--side-ink); list-style: none; display: flex; align-items: center; gap: .45rem; border-radius: 8px; min-height: 38px; }
+.jn-tools > summary::-webkit-details-marker { display: none; }
+.jn-tools > summary::before { content: ""; width: 8px; height: 8px; border-right: 2px solid var(--side-muted); border-bottom: 2px solid var(--side-muted); transform: rotate(-45deg); transition: transform .15s; margin-left: .15rem; }
+.jn-tools[open] > summary::before { transform: rotate(45deg); }
+.jn-tools > summary:hover { background: var(--side-hover); }
+
+/* ---------- Patient bar ---------- */
+.jn-pbar { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: .55rem .85rem; margin: 0 0 1rem; display: grid; gap: .5rem; }
+.jn-pbar-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1.2rem; }
+.jn-pwho { display: flex; flex-direction: column; min-width: 0; flex: 1 1 200px; }
+.jn-pwho strong { font: 600 1rem/1.25 var(--font-display); overflow-wrap: anywhere; }
+.jn-pmeta { font-size: .8rem; color: var(--muted); }
+.jn-pprog { flex: 1 1 220px; display: grid; gap: .3rem; max-width: 380px; }
+.jn-ptxt { font-size: .8rem; font-weight: 600; color: var(--muted); }
+.jn-pmeter { height: 8px; border-radius: 999px; background: var(--surface-3); overflow: hidden; }
+.jn-pmeter span { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), var(--side-accent)); border-radius: 999px; transition: width .25s; }
+.jn-pover { text-decoration: none; }
+.jn-pal { display: flex; align-items: center; gap: .6rem; padding: .5rem .7rem; border-radius: 8px; text-decoration: none; color: var(--ink); font-size: .88rem; line-height: 1.35; }
+.jn-pal.is-stop { background: var(--err-l); box-shadow: inset 4px 0 0 var(--err); }
+.jn-pal.is-warn { background: var(--warn-l); box-shadow: inset 4px 0 0 var(--warn); }
+.jn-pal.is-refer { background: var(--info-l); box-shadow: inset 4px 0 0 var(--info); }
+.jn-pal.is-refer .jn-pal-k { color: var(--info); }
+.jn-pal-k { flex: none; font-weight: 700; font-size: .78rem; }
+.jn-pal.is-stop .jn-pal-k { color: var(--err); }
+.jn-pal.is-warn .jn-pal-k { color: var(--warn); }
+.jn-pal-t { flex: 1; min-width: 0; }
+.jn-pal-go { flex: none; font-weight: 600; font-size: .8rem; text-decoration: underline; }
+.jn-attn { display: grid; gap: .6rem; margin: 0 0 1rem; }
+/* From 1100px the rail replaces the phase strip. The patient bar scrolls with the page, so the sticky score
+   control and live panel keep their own offsets (there is no stepper above them any more). */
+@media (min-width: 1100px) {
+  .stepper.jn-hide-wide { display: none; }
+  .iv-score { top: calc(var(--bar-h) + env(safe-area-inset-top, 0px) + 12px); }
+}
+
+/* ---------- Sticky step bar ---------- */
+.jn-sbar { position: sticky; bottom: 0; z-index: 25; margin: 1.6rem calc(-1 * .25rem) 0; padding: .6rem .25rem calc(.6rem + env(safe-area-inset-bottom, 0px)); background: var(--bg); border-top: 1px solid var(--line); box-shadow: var(--shadow-up); }
+.jn-srow { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+.jn-srow > .btn-ghost { flex: none; }
+.jn-srow > .btn-primary, .jn-srow > .btn-secondary { flex: none; margin-left: auto; min-width: 8rem; text-decoration: none; }
+.jn-sstat { flex: 1 1 200px; min-width: 0; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; font: 600 .88rem/1.3 var(--font-ui); color: var(--muted); padding: .3rem .5rem; background: none; border: 0; text-align: center; }
+.jn-sstat.is-done { color: var(--ok); }
+.jn-tick { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--ok); color: var(--jn-on); font-size: .72rem; }
+.jn-sstat.is-block { color: var(--warn); }
+.jn-sstat.is-open { cursor: pointer; color: var(--ink); border-radius: 999px; background: var(--warn-l); padding: .4rem .8rem; border: 1px solid transparent; }
+.jn-sstat.is-open:hover { border-color: var(--warn); }
+.jn-dotn { display: inline-grid; place-items: center; min-width: 22px; height: 22px; padding: 0 .3rem; border-radius: 999px; background: var(--warn); color: var(--jn-on); font-size: .76rem; }
+.jn-sstat-chev { width: 8px; height: 8px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(-135deg); margin-top: 3px; }
+.jn-sstat[aria-expanded="true"] .jn-sstat-chev { transform: rotate(45deg); margin-top: -2px; }
+.jn-pop { background: var(--surface); border: 1px solid var(--line-2); border-radius: var(--radius); box-shadow: var(--shadow); padding: .75rem 1rem; margin: 0 0 .6rem; max-height: 40vh; overflow: auto; }
+.jn-pop-t { margin: 0 0 .35rem; font-weight: 700; font-size: .85rem; }
+.jn-pop ul { margin: 0; padding-left: 1.2rem; display: grid; gap: .2rem; font-size: .9rem; }
+.jn-dlg-list { margin: .3rem 0 .6rem; padding-left: 1.2rem; }
+@media (max-width: 600px) {
+  .jn-srow { gap: .45rem; }
+  .jn-sstat { order: -1; flex: 1 0 100%; }
+  .jn-srow > .btn-ghost, .jn-srow > .btn-primary, .jn-srow > .btn-secondary { flex: 1 1 0; min-width: 0; margin: 0; }
+}
+
+/* ---------- Case overview ---------- */
+.jn-hero { display: flex; gap: 1.2rem; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.3rem 1.5rem; margin-bottom: 1rem; position: relative; overflow: hidden; }
+.jn-hero::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--brand-line); background-size: 100% 100%; }
+.jn-hero.is-stop::before { background: var(--err); }
+.jn-ring-lg { width: 96px; height: 96px; }
+.jn-ring-lg::before { inset: 8px; background: var(--surface); }
+.jn-ring-lg span { font-size: 1.15rem; color: var(--ink); }
+.jn-hero-t { min-width: 0; flex: 1; display: grid; gap: .35rem; }
+.jn-hero-k { margin: 0; font-weight: 600; font-size: .82rem; color: var(--accent); }
+.jn-hero.is-stop .jn-hero-k { color: var(--err); }
+.jn-hero h2 { margin: 0; font-size: 1.3rem; }
+.jn-hero-s { margin: 0; color: var(--muted); max-width: 62ch; }
+.jn-hero .row { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .4rem; }
+.jn-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.1rem 1.3rem; margin-bottom: 1rem; }
+.jn-h { display: flex; align-items: center; gap: .7rem; margin: 0 0 .7rem; font-size: 1.1rem; }
+.jn-count { margin-left: auto; font: 600 .78rem/1 var(--font-ui); color: var(--muted); background: var(--surface-3); border-radius: 999px; padding: .25rem .6rem; }
+.jn-phase.is-done .jn-count { background: var(--ok-l); color: var(--ok); }
+.jn-alist, .jn-rows, .jn-need { list-style: none; margin: 0; padding: 0; }
+.jn-alist { display: grid; gap: .5rem; }
+.jn-alist li { display: flex; align-items: center; gap: .7rem; padding: .55rem .8rem; border-radius: 8px; }
+.jn-alist li.is-stop { background: var(--err-l); box-shadow: inset 4px 0 0 var(--err); }
+.jn-alist li.is-warn { background: var(--warn-l); box-shadow: inset 4px 0 0 var(--warn); }
+.jn-alist li.is-refer { background: var(--info-l); box-shadow: inset 4px 0 0 var(--info); }
+.jn-alist li.is-refer .jn-alist-k { color: var(--info); }
+.jn-alist-k { flex: none; font-weight: 700; font-size: .8rem; }
+.jn-alist li.is-stop .jn-alist-k { color: var(--err); }
+.jn-alist li.is-warn .jn-alist-k { color: var(--warn); }
+.jn-alist-t { flex: 1; min-width: 0; }
+.jn-rows { display: grid; }
+.jn-row { display: flex; align-items: flex-start; gap: .8rem; padding: .7rem 0; border-top: 1px solid var(--line); }
+.jn-row:first-child { border-top: 0; }
+.jn-row .jn-dot { margin-top: .1rem; color: var(--muted); border-color: var(--line-2); }
+.jn-row .jn-dot.is-done { color: var(--jn-on); border-color: var(--ok); }
+.jn-row .jn-dot.is-part { color: var(--accent); border-color: var(--accent); }
+.jn-row .jn-dot.is-missed { color: var(--warn); border-color: var(--warn); }
+.jn-row-b { flex: 1; min-width: 0; }
+.jn-row-t { margin: 0; font-weight: 600; display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
+.jn-row-s { margin: .1rem 0 0; font-size: .85rem; color: var(--muted); }
+.jn-row.is-here .jn-row-t::after { content: "You are here"; font-size: .7rem; font-weight: 700; color: var(--accent); background: var(--accent-l); border-radius: 999px; padding: .1rem .5rem; }
+.jn-tag { font-size: .68rem; font-weight: 600; color: var(--muted); background: var(--surface-3); border-radius: 999px; padding: .1rem .5rem; }
+.jn-tag.is-need { color: var(--accent); background: var(--accent-l); }
+.jn-tag.is-miss { color: var(--warn); background: var(--warn-l); }
+.jn-gaps { margin: .35rem 0 0; padding-left: 1.1rem; font-size: .88rem; display: grid; gap: .1rem; }
+.jn-more { list-style: none; margin-left: -1.1rem; color: var(--muted); }
+.jn-row > .btn { flex: none; text-decoration: none; }
+.jn-need { display: grid; gap: .25rem; margin: .4rem 0 .6rem; }
+.jn-need a { font-weight: 600; }
+.jn-sign.is-ready { border-color: var(--ok); }
+.jn-sign.is-open { border-color: var(--warn); }
+.jn-sign-s { color: var(--muted); font-size: .9rem; }
+.jn-sign .row { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .6rem; }
+@media (max-width: 600px) {
+  .jn-hero { flex-direction: column; align-items: flex-start; padding: 1.1rem 1.1rem 1.1rem 1.3rem; }
+  .jn-row { flex-wrap: wrap; }
+  .jn-row > .btn { margin-left: calc(24px + .8rem); }
+  .jn-alist li { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) { .jn-pmeter span, .jn-ph-chev { transition: none; } }
+@media print { .jn-pbar, .jn-sbar { display: none !important; } }
+
+/* Phone: one compact patient bar (name and overview link on top, a slim progress line below). */
+@media (max-width: 600px) {
+  .jn-pbar { padding: .5rem .7rem; margin-bottom: .75rem; gap: .35rem; }
+  .jn-pbar-row { gap: .3rem .6rem; flex-wrap: wrap; }
+  .jn-pwho { flex: 1 1 0; }
+  .jn-pwho strong { font-size: .95rem; }
+  .jn-pover { order: 2; flex: none; }
+  .jn-pprog { order: 3; flex: 1 1 100%; max-width: none; display: flex; align-items: center; gap: .6rem; }
+  .jn-ptxt { white-space: nowrap; font-size: .76rem; }
+  .jn-pmeter { flex: 1; }
+}

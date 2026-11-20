@@ -24,6 +24,9 @@ Under 6 the app stops and tells the clinician to refer.
 ```
 index.html
 css/app.css                core tokens (light + dark) and shared component classes (incl. the step strip phase labels)
+                           Look = EveryDayMeds Rx portal (pharmacyMyEdit artifacts/pharmacist-rx, Sneat light + EDM greens:
+                           #157f60 accent, #0b4131 forest, #bfdf72 lime, Public Sans + Sora, 6px radius, white bar and sidebar).
+                           Theme "system" = follow the Rx portal (localStorage pharmacare:rx-theme, dark or light; default light).
 css/v-assess-a.css         assess-steps-a.js (prefix .as-)
 css/v-assess-iv.css        assess-interview.js (prefix .iv-)
 css/v-assess-b.css         assess-steps-b.js (prefix .ab-)
@@ -40,6 +43,7 @@ js/components/ui.js        AA.ui: pageHead, btn, badge, statusPill, sevChip, cal
 js/engine/scoring.js       AA.scoring
 js/engine/diagnosis.js     AA.diagnosis (criteria, age bands, step progress)
 js/engine/treatment.js     AA.treatment (treatment rules; must load after diagnosis.js)
+js/engine/journey.js       AA.journey (per-patient journey: status, gaps, attention; must load after treatment.js)
 js/components/questionnaire.js  AA.components.questionnaire, AA.components.bands, AA.components.scoreBox
 js/data/tools-adhd.js      tools (5.4); also tools-comorbid.js, tools-info.js
 js/data/symptoms/*.js      symptoms ia1-ia9, hi1-hi9 (5.1), one file each
@@ -79,6 +83,7 @@ scripts/bundle.js          builds one self-contained HTML file from index.html
 
 Order rules that matter:
 - `treatment.js` after `diagnosis.js`: it uses `AA.diagnosis.age` and `band` when they exist (it has its own fallback).
+- `journey.js` after `treatment.js` (it asks `AA.diagnosis.stepProgress`, which asks `AA.treatment`). `views/assess-journey.js` before `views/assess-frame.js` (the frame calls `AA.journeyUI` when it exists; without it the old step-nav buttons are drawn).
 - `tx-guide.js` after `step-guide.js`: `AA.add` merges object collections, so it adds the five treatment entries to `stepGuide`.
 - `ddx-young.js` after the adult `ddx-*.js` files, so lists show the adult conditions first; `demo.js` last among the data files.
 - Data before views. `assess-treat.js` after `assess-steps-b.js` (the report calls `AA.components.treatmentReport` when it builds).
@@ -233,6 +238,23 @@ Progress:
   - `prescribe`: medicine, product, start dose, start date and supply, then the counselling items and the non-optional prescription checks once a medicine is chosen.
   - `titrate`: at least one review of the current medicine, and its dose optimised (`T.medState`: no flag left to act on) or stopped.
   - `monitor`: shared care status and next review date, plus the transition plan for young people from age 13.
+
+### AA.journey - js/engine/journey.js (pure, node-tested in tests/journey-tests.js)
+One patient's place on the 18-step pathway. It reuses `D.stepProgress` for counts (so the step strip and the journey never disagree) and adds the itemised gaps, needed-or-good-practice levels, blocked steps and safety attention items.
+- `J.ORDER` (18 `{id, phase, need}`; ids and phases must match `AA.STEP_LIST`, which a test checks), `J.PHASES`, `J.index(id)`.
+- `J.step(a, id)` -> `{id, phase, need, state: 'done'|'part'|'todo'|'na', done, of, gaps: [label], blocked: null|string, attention: []}`. A step has gaps exactly when it is open; `txplan` is `blocked` until a decision is recorded; under 6 only setup, risk and report apply.
+- `J.attention(a)` -> `[{step, level: 'stop'|'warn'|'refer', text}]`: under-6 referral (`refer`, a disposition that never counts as a stop), urgent or high safety answers (an urgent one is a `stop` until the safety step is marked reviewed AND `risk.action` is written; after that a warning), urgent scale flags (same rule), work started without a safety review, deferred or other-specified diagnosis, diagnosis-check issues, baseline stop/ECG/cardiology reasons, and urgent or act flags at the latest titration review (urgent stays a `stop` until the medicine is stopped or `flagOverride` is written).
+- `J.summary(a)` -> `{steps, phases, done, of, na, pct, current, next, attention, openNeeded, openGood, neededSteps, gapCount, stop, ready}`. `ready` = no needed step open, no `stop` item and no deferred diagnosis (`deferred`; `next` then points at the diagnosis step). `refer` is true for under 6. Collateral is a needed step for children and young people, good practice for adults. The app never blocks movement; it asks for a confirmation instead.
+- Needed steps: setup, risk, history, ia, hi, onset, ddx, summary, baseline, prescribe. All others are good practice.
+- When a step's rules change in `diagnosis.js`/`treatment.js`, update `gapsFor` in journey.js and the demo tests together.
+
+### AA.journeyUI - js/views/assess-journey.js (css/v-journey.css, prefix `jn-`)
+- `rail(host, a, step, overview)` / `refreshRail()`: the sidebar rail (case card with ring and next action, five collapsible phases, one row per step with state dot, gap count chip, "skipped" amber ring and safety flag). The shell draws it when the route is `assess-<id>-...` or `journey-<id>` and puts the workspace menu in a closed "Tools and library" group below it.
+- `patientBar(a, ctx)` -> `{el, paint(a)}`: patient, age band, progress meter, "Case overview" and the top attention item. Sticky from 1100px; the old `.stepper` (phase track) is hidden from 1100px (class `jn-hide-wide`) because the rail replaces it, and stays on narrower screens.
+- `stepBar(a, ctx, {prev, next, ownPrimary})` -> `{el, paint(a)}`: sticky bottom bar with Previous, "N things left in this step" (opens the gap list) and Next. Next on a needed step with open gaps asks "Move on with N items still open?". The last step's Next is "Review and finish" (route `journey-<id>`).
+- `attentionFor(a, stepId)` -> `{el, paint(a)}`: callouts for the attention items on this step (repainted only when their text changes).
+- Route `journey-<id>` (the case overview; `case` was already the practice-case route): next best action (a skipped needed step comes first), attention list, one card per phase with each step's status and open items, and the sign-off check with Mark complete / Reopen (confirm when needed steps or a safety stop are open).
+- The frame repaints the patient bar, step bar and rail from its debounced store subscription.
 
 ### AA.components
 - `AA.components.questionnaire(tool, {answers, onAnswer(n, value), mode})` renders items + live score. The caller persists answers: in an assessment, `ctx.set('tools.' + tool.id + '.answers.' + n, value)` (value `null` -> pass `undefined` to delete).
@@ -753,6 +775,7 @@ complete except the child's titration, which is still in progress at 36 mg.
 |---|---|---|
 | `signin`, `home`, `new`, `about` | shell.js | profiles, dashboard (adult and child demo), new assessment, privacy and data |
 | `assess`, `assess-<id>-<step>[-<sub>]` | assess-frame.js | assessment workspace: all 18 steps, steps from assess-steps-a.js, assess-interview.js, assess-steps-b.js and assess-treat.js |
+| `journey-<id>` | assess-journey.js | case overview: next best action, attention, every step and its open items, sign-off |
 | `tools`, `tool-<id>`, `pathway` | library.js | instrument library, practice scoring, pathway and guidelines |
 | `learn`, `module-<id>`, `quiz-<id>`, `exam`, `cases`, `case-<id>`, `glossary` | learn.js | training |
 | `ddx`, `cond-<id>`, `criteria`, `bank`, `sym-<id>` | reference.js | interview aids |
@@ -807,7 +830,7 @@ Layout: `.section`, `.stack`, `.row`, `.grid` (auto cards), `.grid-2`, `.card`, 
 Controls: `.btn` + `.btn-primary|-ghost|-quiet|-danger|-sm`, `.seg`, `.check`, `.field`, `.form-grid`, `.search`.
 Status: `.badge-*`, `.pill-*`, `.callout-*`, `.meter`, `.empty`.
 Content: `.prose`, `.list`, `.table-wrap` + `.table`, `.kv`, `.disclosure`, `.tabs`, `.chip-list` + `.chip`.
-Assessment: `.ws`, `.ws-main`, `.ws-panel`, `.panel`, `.panel-fold`, `.stepper` (phase labels: `.stepper li.step-phase`), `.step-nav`, `.sx-ask`, `.sx-ask-sub`, `.sx-score`, `.ex-group`, `.ex-list`, `.flag-row`, `.report`, `.guide-src` (closed Sources disclosure).
+Assessment: `.ws`, `.ws-main`, `.ws-panel`, `.panel`, `.panel-fold`, `.stepper` (`.phase-track`, `.phase-btn`, `.step-row`, `.step-chip`; hidden from 1100px by `.jn-hide-wide`), `.step-nav`, `.sx-ask`, `.sx-ask-sub`, `.sx-score`, `.ex-group`, `.ex-list`, `.flag-row`, `.report`, `.guide-src` (closed Sources disclosure).
 Questionnaire: `.q-*` (owned by questionnaire.js).
 
 ## 8. Content rules

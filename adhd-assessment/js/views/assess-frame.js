@@ -137,60 +137,92 @@
       meta: meta
     };
 
+    function phaseSteps(phase) { return STEPS.filter(function (s) { return s.phase === phase; }); }
     function eyebrowText(cur) {
       var b = bandInfo(cur);
-      return 'Step ' + (idx + 1) + ' of ' + STEPS.length + (isYoung(cur) && b.label ? ' · ' + b.label : '') + (cur.demo ? ' · demo patient' : '');
+      var here = phaseSteps(meta.phase);
+      var nIn = 1;
+      for (var i = 0; i < here.length; i++) if (here[i].id === step) nIn = i + 1;
+      return phaseLabel(meta.phase) + ' · ' + nIn + ' of ' + here.length
+        + ' · step ' + (idx + 1) + ' of ' + STEPS.length
+        + (isYoung(cur) && b.label ? ' · ' + b.label : '') + (cur.demo ? ' · demo patient' : '');
     }
+    var JU = AA.journeyUI;
+    var pbar = JU ? JU.patientBar(a, ctx) : null;
+    if (pbar) el.appendChild(pbar.el);
     var eyebrowEl = h('p', { class: 'eyebrow' }, eyebrowText(a)), leadEl = h('p', { class: 'lead' }, leadFor(meta, a));
     el.appendChild(h('header', { class: 'page-head ws-head' + (sub ? ' is-sub' : '') },
       h('div', { class: 'page-head-text' }, eyebrowEl, h('h1', null, meta.title), leadEl)));
 
-    /* Step strip: one horizontally scrolling row. A small phase label (Prepare, Interview, Diagnose,
-       Treat, Report) sits before the first chip of each phase. The labels are visual dividers
-       (aria-hidden); screen readers hear the phase name inside the first chip of each phase. */
-    var items = [], lastPhase = null;
-    STEPS.forEach(function (s, i) {
-      var first = s.phase !== lastPhase;
-      if (first) {
-        lastPhase = s.phase;
-        items.push(h('li', { class: 'step-phase' + (i === 0 ? ' is-first' : '') + (s.phase === meta.phase ? ' is-cur' : ''), 'aria-hidden': 'true' }, phaseLabel(s.phase)));
-      }
-      items.push(h('li', null, h('button', { type: 'button', class: 'step-chip', 'aria-current': s.id === step ? 'step' : null, onclick: function () { ctx.go(s.id); } },
-        first ? h('span', { class: 'sr-only' }, phaseLabel(s.phase) + ' phase: ') : null,
-        h('span', { class: 'step-n', 'aria-hidden': 'true' }), h('span', { class: 'step-t' }, s.short), h('span', { class: 'sr-only step-sr' }))));
-    });
-    var stepList = h('ol', null, items);
-    var stepper = h('nav', { class: 'stepper', 'aria-label': 'Assessment steps' }, stepList);
+    /* Pathway: five phase buttons (Prepare, Interview, Diagnose, Treat, Report), then only the
+       steps of the phase you are in. Each phase button opens the first step of that phase. */
+    var hereSteps = phaseSteps(meta.phase);
+    var track = h('ol', { class: 'phase-track' }, PHASES.map(function (ph, pi) {
+      var mine = phaseSteps(ph.id);
+      var from = stepIndex(mine[0].id) + 1;
+      var to = from + mine.length - 1;
+      var first = mine[0];
+      return h('li', null, h('button', {
+        type: 'button', class: 'phase-btn' + (ph.id === meta.phase ? ' is-cur' : ''),
+        'aria-current': ph.id === meta.phase ? 'true' : null,
+        title: phaseLabel(ph.id) + ': ' + mine.map(function (s) { return s.short; }).join(', '),
+        onclick: function () { if (first && first.id !== step) ctx.go(first.id); }
+      },
+        h('span', { class: 'phase-n', 'aria-hidden': 'true' }, String(pi + 1)),
+        h('span', { class: 'phase-lab' }, phaseLabel(ph.id)),
+        h('span', { class: 'phase-meta' }, from === to ? String(from) : from + '–' + to)));
+    }));
+    var stepRow = h('ol', { class: 'step-row' }, hereSteps.map(function (s) {
+      return h('li', null, h('button', { type: 'button', class: 'step-chip', 'aria-current': s.id === step ? 'step' : null, onclick: function () { ctx.go(s.id); } },
+        h('span', { class: 'sr-only' }, phaseLabel(s.phase) + ' phase: '),
+        h('span', { class: 'step-n', 'aria-hidden': 'true' }), h('span', { class: 'step-t' }, s.short), h('span', { class: 'sr-only step-sr' })));
+    }));
+    var stepper = h('nav', { class: 'stepper' + (JU ? ' jn-hide-wide' : ''), 'aria-label': 'Assessment steps' }, track, stepRow);
     function paintSteps(cur) {
       U.$$('.step-chip', stepper).forEach(function (b, i) {
-        var pr = progressOf(cur, STEPS[i].id);
+        var def = hereSteps[i];
+        var pr = progressOf(cur, def.id);
         var na = pr.of === 0;
         var done = !na && pr.done >= pr.of, part = !na && !done && pr.done > 0;
+        var n = stepIndex(def.id) + 1;
         b.classList.toggle('done', done);
         b.classList.toggle('part', part);
-        b.querySelector('.step-n').textContent = done ? '✓' : na ? '–' : String(i + 1);
+        b.querySelector('.step-n').textContent = done ? '✓' : na ? '–' : String(n);
         b.querySelector('.step-sr').textContent = done ? ', complete' : na ? ', not applicable yet' : part ? ', started' : ', not started';
-        b.title = STEPS[i].title + (done ? ' (complete)' : na ? ' (not applicable yet)' : ' (' + pr.done + ' of ' + pr.of + ')');
+        b.title = def.title + (done ? ' (complete)' : na ? ' (not applicable yet)' : ' (' + pr.done + ' of ' + pr.of + ')');
+      });
+      U.$$('.phase-btn', stepper).forEach(function (b, i) {
+        var mine = phaseSteps(PHASES[i].id);
+        var applicable = 0, doneN = 0, started = 0;
+        mine.forEach(function (s) {
+          var pr = progressOf(cur, s.id);
+          if (pr.of === 0) return;
+          applicable += 1;
+          if (pr.done >= pr.of) doneN += 1;
+          else if (pr.done > 0) started += 1;
+        });
+        b.classList.toggle('is-done', applicable > 0 && doneN === applicable);
+        b.classList.toggle('is-part', doneN < applicable && (doneN > 0 || started > 0));
+        var sr = b.querySelector('.phase-sr');
+        if (!sr) { sr = h('span', { class: 'sr-only phase-sr' }); b.appendChild(sr); }
+        sr.textContent = applicable === 0 ? ', not applicable yet' : doneN === applicable ? ', complete' : (doneN > 0 || started > 0) ? ', started' : ', not started';
       });
     }
     paintSteps(a);
     /* Fade the edges that have more chips beyond them. */
     function paintEdges() {
-      var max = stepList.scrollWidth - stepList.clientWidth;
-      stepper.classList.toggle('more-left', stepList.scrollLeft > 4);
-      stepper.classList.toggle('more-right', stepList.scrollLeft < max - 4);
+      var max = stepRow.scrollWidth - stepRow.clientWidth;
+      stepper.classList.toggle('more-left', stepRow.scrollLeft > 4);
+      stepper.classList.toggle('more-right', max > 4 && stepRow.scrollLeft < max - 4);
     }
-    stepList.addEventListener('scroll', paintEdges, { passive: true });
+    stepRow.addEventListener('scroll', paintEdges, { passive: true });
     el.appendChild(stepper);
     setTimeout(function () {
       var cur = stepper.querySelector('[aria-current="step"]');
-      /* Centre the current chip; for the first chip of a phase keep its phase label in view too. */
-      var li = cur ? cur.parentNode : null;
-      var lab = li && li.previousSibling && li.previousSibling.classList && li.previousSibling.classList.contains('step-phase') ? li.previousSibling : null;
-      if (cur) {
-        var left = lab ? lab.offsetLeft : cur.offsetLeft;
-        var width = cur.offsetLeft + cur.offsetWidth - left;
-        stepList.scrollLeft = Math.max(0, left - (stepList.clientWidth - width) / 2);
+      if (cur && stepRow.clientWidth) {
+        var rail = stepRow.getBoundingClientRect();
+        var box = cur.getBoundingClientRect();
+        stepRow.scrollLeft += (box.left + box.width / 2) - (rail.left + rail.width / 2);
       }
       paintEdges();
     }, 0);
@@ -216,6 +248,8 @@
         'Under 6: refer, do not assess here'));
     }
 
+    var attn = JU && !sub ? JU.attentionFor(a, step) : null;
+    if (attn) main.appendChild(attn.el);
     var guide = under6 ? null : stepGuide(step, !!sub, a);
     if (guide) { main.appendChild(guide.el); guide.status(a); }
 
@@ -232,15 +266,19 @@
       main.appendChild(ui.callout('warn', h('p', null, 'This step is not available in this build.')));
     }
 
-    /* Previous / next. A symptom card has its own navigation, so the step buttons are left out there.
-       Next is the primary action unless the step already shows its own primary action. */
+    /* Previous / next. A symptom card has its own navigation, so the step bar is left out there.
+       The bar sticks to the bottom of the screen and says what is still open in this step; Next is the
+       primary action unless the step already shows its own primary action. */
     var prev = STEPS[idx - 1], next = STEPS[idx + 1];
-    if (!sub) {
-      var ownPrimary = !!main.querySelector('.btn-primary');
+    var sbar = null;
+    if (!sub && JU) {
+      sbar = JU.stepBar(a, ctx, { prev: prev, next: next, ownPrimary: !!main.querySelector('.btn-primary') });
+      main.appendChild(sbar.el);
+    } else if (!sub) {
       main.appendChild(h('div', { class: 'step-nav' },
         prev ? ui.btn({ label: '← ' + prev.short, kind: 'ghost', title: 'Previous step: ' + prev.title, onClick: function () { ctx.go(prev.id); } }) : h('span'),
-        next ? ui.btn({ label: 'Next: ' + next.short + ' →', kind: ownPrimary ? 'secondary' : 'primary', title: 'Next step: ' + next.title, onClick: function () { ctx.go(next.id); } })
-          : ui.btn({ label: a.status === 'complete' ? 'Reopen assessment' : 'Mark assessment complete', kind: a.status === 'complete' || ownPrimary ? 'secondary' : 'primary', onClick: function () {
+        next ? ui.btn({ label: 'Next: ' + next.short + ' →', kind: 'primary', title: 'Next step: ' + next.title, onClick: function () { ctx.go(next.id); } })
+          : ui.btn({ label: a.status === 'complete' ? 'Reopen assessment' : 'Mark assessment complete', kind: a.status === 'complete' ? 'secondary' : 'primary', onClick: function () {
             var done = AA.assess.get(id, 'status') === 'complete';
             AA.assess.set(id, 'status', done ? 'active' : 'complete');
             U.toast(done ? 'Assessment reopened' : 'Assessment marked complete', 'ok');
@@ -265,6 +303,10 @@
       if (!cur) return;
       paintPanel(cur);
       paintSteps(cur);
+      if (pbar) pbar.paint(cur);
+      if (attn) attn.paint(cur);
+      if (sbar) sbar.paint(cur);
+      if (JU) JU.refreshRail();
       var nb = ageBand(cur);
       if (nb !== shownBand) {
         shownBand = nb;

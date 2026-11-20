@@ -34,7 +34,7 @@
 
   /* The last assessment page visited in this session (including the symptom card), kept in memory only,
      so "back to the assessment" links return to the same place rather than the start of the step. */
-  var lastAssessRoute = null;
+  var lastAssessRoute = null, toolsOpen = false;
   shell.noteRoute = function (token) { lastAssessRoute = token; };
   shell.resumeRoute = function (a) {
     if (!a) return 'home';
@@ -53,8 +53,24 @@
     var name = route ? route.name : '';
     var map = { tool: 'tools', module: 'learn', quiz: 'learn', exam: 'learn', 'case': 'cases', cond: 'ddx', sym: 'bank', form: 'forms' };
     var active = map[name] || name;
+    /* Inside one patient's assessment (or its overview) the sidebar leads with that patient's journey rail;
+       the workspace tools move into a closed "Tools and library" group below it. */
+    var rail = null, jnId = route && (name === 'assess' || name === 'journey') ? route.params[0] : null;
+    var jnAssess = jnId && AA.journeyUI && AA.auth.current() ? AA.assess.get(jnId) : null;
+    if (jnAssess && jnAssess.clinicianId !== AA.auth.current().id) jnAssess = null;
+    var host = side;
+    if (jnAssess) {
+      var railHost = h('div', { id: 'jn-rail' });
+      side.appendChild(railHost);
+      var step = name === 'journey' ? jnAssess.step : route.params[1] || jnAssess.step;
+      if (!AA.journey || AA.journey.index(step) < 0) step = AA.journey && AA.journey.index(jnAssess.step) > -1 ? jnAssess.step : 'setup';
+      AA.journeyUI.rail(railHost, jnAssess, step, name === 'journey');
+      rail = h('details', { class: 'jn-tools', open: toolsOpen ? true : null, ontoggle: function (e) { toolsOpen = e.currentTarget.open; } }, h('summary', null, 'Tools and library'));
+      side.appendChild(rail);
+      host = rail;
+    }
     NAV.forEach(function (g) {
-      side.appendChild(h('div', { class: 'nav-group' },
+      host.appendChild(h('div', { class: 'nav-group' },
         g.title ? h('p', { class: 'nav-group-title' }, g.title) : null,
         h('ul', { class: 'nav' }, g.items.map(function (it) {
           var meta = typeof it.meta === 'function' ? it.meta() : it.meta;
@@ -63,7 +79,7 @@
         }))));
     });
     /* One website: a way back to the main ADHD course (the workspace lives in its adhd-assessment/ folder). */
-    side.appendChild(h('div', { class: 'nav-group' }, h('p', { class: 'nav-group-title' }, 'ADHD course'),
+    host.appendChild(h('div', { class: 'nav-group' }, h('p', { class: 'nav-group-title' }, 'ADHD course'),
       h('ul', { class: 'nav' }, h('li', null, h('a', { href: '../index.html#home' }, icon('home'), h('span', null, 'Back to the course modules'))))));
     var me = AA.auth.current();
     if (me) side.appendChild(h('div', { class: 'side-account' },
@@ -92,8 +108,9 @@
     U.$('#who').textContent = me.name + (me.role ? ' · ' + me.role : '');
     renderChip();
     renderNav(route);
-    U.$('#view').parentNode.classList.toggle('main-wide', route.name === 'assess');
-    U.$('#view').className = 'main-inner' + (route.name === 'assess' ? ' wide' : '');
+    var wide = route.name === 'assess' || route.name === 'journey';
+    U.$('#view').parentNode.classList.toggle('main-wide', wide);
+    U.$('#view').className = 'main-inner' + (wide ? ' wide' : '');
   }
 
   /* Current patient chip in the top bar (also refreshed while the patient details are typed). */
@@ -116,11 +133,18 @@
   }
 
   /* ---------- Theme ---------- */
+  /* 'system' means "match the EveryDayMeds Rx portal": the workspace opens inside the Rx portal as a tab,
+     and the portal keeps its theme in localStorage 'pharmacare:rx-theme' ('dark', otherwise light).
+     With no Rx setting the workspace is light, like the portal. */
+  function rxTheme() {
+    try { return window.localStorage.getItem('pharmacare:rx-theme') === 'dark' ? 'dark' : 'light'; } catch (e) { return 'light'; }
+  }
   function applyTheme(t) {
     var root = document.documentElement;
-    if (t === 'dark' || t === 'light') root.setAttribute('data-theme', t); else root.removeAttribute('data-theme');
+    var shown = (t === 'dark' || t === 'light') ? t : rxTheme();
+    if (shown === 'dark') root.setAttribute('data-theme', 'dark'); else root.removeAttribute('data-theme');
     var btn = U.$('#theme-btn');
-    if (btn) btn.title = 'Theme: ' + (t || 'system');
+    if (btn) btn.title = 'Theme: ' + (t === 'dark' || t === 'light' ? t : 'match the Rx portal');
   }
 
   /* ---------- Sign-in ---------- */
@@ -422,14 +446,16 @@
     /* Crisp menu icon (the markup has a text glyph as a fallback). */
     U.$('#menu-btn').innerHTML = '<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2.5 4.5h13M2.5 9h13M2.5 13.5h13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
     U.$('#theme-btn').addEventListener('click', function () {
-      /* The first press always changes what you see: from the system theme go to its opposite. */
-      var sysDark = false;
-      try { sysDark = window.matchMedia('(prefers-color-scheme: dark)').matches; } catch (e) { sysDark = false; }
-      var order = sysDark ? ['system', 'light', 'dark'] : ['system', 'dark', 'light'];
+      /* The first press always changes what you see: from the Rx portal's theme go to its opposite. */
+      var order = rxTheme() === 'dark' ? ['system', 'light', 'dark'] : ['system', 'dark', 'light'];
       var cur = AA.store.get('prefs.theme', 'system');
       var next = order[(order.indexOf(cur) + 1) % order.length];
       AA.store.set('prefs.theme', next); applyTheme(next);
-      U.toast('Theme: ' + next);
+      U.toast('Theme: ' + (next === 'system' ? 'match the Rx portal' : next));
+    });
+    /* Follow the Rx portal live when its theme changes in another tab or the parent page (same site). */
+    window.addEventListener('storage', function (e) {
+      if (e.key === 'pharmacare:rx-theme' && AA.store.get('prefs.theme', 'system') === 'system') applyTheme('system');
     });
     U.$('#signout-btn').addEventListener('click', function () { AA.store.flush(); AA.auth.signOut(); AA.router.go('signin'); });
     U.$('#menu-btn').addEventListener('click', function () { setDrawer(!U.$('#sidebar').classList.contains('open')); });

@@ -401,6 +401,10 @@ function dataTests() {
     if (DD) ok(DD.outcome(de).code === 'met', name + ' should meet the criteria (got ' + DD.outcome(de).code + ')');
   });
   if (d.demoYoung && sb.AA.diagnosis) ok(sb.AA.diagnosis.band(d.demoYoung) === 'child', 'demoYoung is in the 6-11 band');
+
+  /* the journey engine, on the real data and both demos */
+  console.log('\nJourney tests');
+  require('./journey-tests.js')({ AA: sb.AA, ok, eq: (x, y, m) => ok(x === y, m + ' (got ' + JSON.stringify(x) + ', expected ' + JSON.stringify(y) + ')') });
 }
 
 const onlyData = process.argv.includes('--data');
