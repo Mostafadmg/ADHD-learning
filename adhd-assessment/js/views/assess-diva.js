@@ -966,7 +966,9 @@
         h('div', { class: 'dv-sf-a' }, r.value ? auto(r.value) : auto(null), r.set ? h('span', { class: 'dv-sf-set' }, 'your answer') : r.value ? h('span', { class: 'dv-sf-set' }, 'suggested') : null));
     })));
     var eBy = ui.input({ value: S.E.set ? S.E.by : (obj(obj(ctx.a()).diva).score || {}).eBy || '', placeholder: 'Which disorder?', onSave: function (v) { ctx.set('diva.score.eBy', v.trim() ? v : undefined); } });
-    rows.push(sec('E', 'Criterion E: not better explained', [h('div', { class: 'dv-sf-row' }, h('div', { class: 'dv-sf-q' }, sf && sf.eNo ? sf.eNo.label : 'Can the symptoms be (better) explained by another psychiatric disorder?', h('p', { class: 'dv-sf-why' }, S.E.why)),
+    /* The form prints a double negative ("cannot be explained ... No / Yes, by"); ask it plainly, show the form's words below. */
+    rows.push(sec('E', 'Criterion E: not better explained', [h('div', { class: 'dv-sf-row' }, h('div', { class: 'dv-sf-q' }, 'Are the symptoms better explained by another psychiatric disorder?',
+      h('p', { class: 'dv-sf-why' }, S.E.why + ' No means criterion E is met.'), sf && sf.eNo && sf.eNo.label ? h('p', { class: 'dv-sf-note' }, 'On the form: "' + sf.eNo.label + '" (No / Yes, by).') : null),
       h('div', { class: 'dv-sf-a' }, ui.seg({ label: 'Criterion E', hideLabel: true, small: true, value: S.E.set ? S.E.value : null,
         options: [{ v: 'no', l: 'No' + (S.E.auto === 'no' && !S.E.set ? ' (suggested)' : ''), kind: 'yes' }, { v: 'yes', l: 'Yes, by…' + (S.E.auto === 'yes' && !S.E.set ? ' (suggested)' : ''), kind: 'no' }],
         onChange: function (v) { ctx.set('diva.score.E', nil(v)); } }), S.E.value === 'yes' ? eBy : null))]));
