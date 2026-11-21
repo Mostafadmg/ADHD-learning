@@ -1042,6 +1042,9 @@
   /* ===================================================================================
      Collateral information
      =================================================================================== */
+  /* Layout: the overall support first (live), then the sources one at a time in tabs (each tab shows its rating),
+     then notes and the guidance for missing or disagreeing sources. Every tab panel is rebuilt from the store when
+     it opens, so ratings and ticks made in another tab are never lost. */
   AA.steps.collateral = { render: function (el, ctx) {
     var a = ctx.a() || {};
     var m = modeOf(a);
@@ -1051,15 +1054,31 @@
     var c0 = a.collateral || {};
     var pat = a.patient || {};
     var inf = pat.informants || {}, srcs = pat.sources || {}, yp = pat.young || {};
-    var wrap = h('div', { class: 'iv stack' });
+    var wrap = h('div', { class: 'iv iv-col' });
+    function cur(k, fb) { return ctx.get('collateral.' + k, fb); }
+    function put(host, node) { U.clear(host); U.append(host, node); }
+    /* One card per purpose: an icon tile, the title, a one-line purpose and a status slot on the right. */
+    function colCard(o, content) {
+      var hid = ui.nid('iv-h');
+      return h('section', { class: 'card iv-ccard', 'aria-labelledby': hid },
+        h('header', { class: 'iv-chead' },
+          h('span', { class: 'iv-chead-ico', 'aria-hidden': 'true' }, ui.icon(o.icon)),
+          h('div', { class: 'iv-chead-t' }, h('h2', { id: hid }, o.title), o.sub ? h('p', { class: 'iv-csub' }, o.sub) : null),
+          o.side ? h('div', { class: 'iv-chead-side' }, o.side) : null),
+        content);
+    }
+    /* A borderless disclosure row inside a card. */
+    function colFold(summary, content, o) { o = o || {}; return ui.details(summary, content, { open: !!o.open, meta: o.meta, cls: 'iv-fold' }); }
 
-    var intro = m.young ? C.introYoung : C.intro;
-    wrap.appendChild(h('div', { class: 'iv-col-intro' },
-      h('p', { class: 'iv-lead' }, m.young
-        ? 'Rate how far each source supports the history: the parent or carer now, and the teacher or school. Then record the ' + m.selfWho + '\'s own view. Use n/a when a source is not available.'
-        : 'Rate how far each source supports the history: a parent or older relative for childhood, a partner or close friend for now, and school reports. Use n/a when a source is not available.'),
-      intro ? ui.details('Why collateral matters', h('p', { class: 'iv-intro-p' }, intro), { cls: 'iv-about' }) : null));
+    if (!imp().collateral) wrap.appendChild(ui.callout('info', h('p', null, 'Collateral guidance is not loaded in this build. You can still record the ratings.')));
 
+    /* Card 1: overall support, live. */
+    var sumBox = h('div', { class: 'iv-col-live', 'aria-live': 'polite' });
+    var sumSide = h('span');
+    wrap.appendChild(colCard({ icon: 'scale', title: 'Overall collateral support', side: sumSide,
+      sub: m.young ? 'How far the home and school sources support the history, and the ' + m.selfWho + '\'s own view.' : 'How far informants and school reports support the history.' }, sumBox));
+
+    /* Card 2: the sources, one at a time. */
     function ratingCtl(k, name) {
       var desc = h('p', { class: 'hint iv-rate-desc', 'aria-live': 'polite' });
       var paint = function (v) {
@@ -1067,7 +1086,7 @@
         desc.textContent = v === 'na' ? 'Not available: no one to ask, or not yet obtained.' : mm ? (mm.d || '') : 'Not rated yet.';
         desc.hidden = !desc.textContent;
       };
-      var val = has(c0[k]) ? c0[k] : null;
+      var val = has(cur(k)) ? cur(k) : null;
       paint(val);
       var seg = ui.seg({ label: name + ': support for the history', hideLabel: true,
         options: [{ v: 'na', l: 'n/a', title: 'Not available' }].concat(rating.map(function (x) { return { v: x.v, l: x.v + ' · ' + x.l, title: x.d }; })),
@@ -1075,82 +1094,112 @@
       seg.classList.add('iv-seg-stack');
       return h('div', { class: 'iv-rate' }, h('span', { class: 'seg-label', 'aria-hidden': 'true' }, 'Support for the history'), seg, desc);
     }
-
     function checkList(items, keyOf, textOf, summary, metaWord, hint) {
-      var answers = c0.answers || {};
+      var answers = cur('answers', {}) || {};
       var det = null;
       var meta = function () {
-        var cur = ctx.get('collateral.answers', {}) || {};
-        var n = items.filter(function (x, i) { return cur[keyOf(x, i)]; }).length;
+        var now = cur('answers', {}) || {};
+        var n = items.filter(function (x, i) { return now[keyOf(x, i)]; }).length;
         return n + ' of ' + items.length + ' ' + metaWord;
       };
-      det = ui.details(summary, h('div', null, h('p', { class: 'hint iv-col-hint' }, hint), h('div', { class: 'ex-list iv-col-list' }, items.map(function (x, i) {
+      det = colFold(summary, h('div', null, h('p', { class: 'hint iv-col-hint' }, hint), h('div', { class: 'ex-list iv-col-list' }, items.map(function (x, i) {
         var k = keyOf(x, i);
         return ui.check({ label: textOf(x), checked: !!answers[k], onChange: function (on) { ctx.set('collateral.answers.' + k, on ? true : undefined); setMeta(det, meta()); } });
       }))), { meta: meta() });
       return det;
     }
     function questionsOf(sec) { return arr(sec && sec.questions).filter(function (q) { return q && q.k; }); }
+    function qKey(q) { return q.k; }
+    function qText(q) { return q.q; }
     function whoField(k, ph) {
       return ui.field('Who gave the information', ui.input({ value: ctx.get('collateral.who.' + k, ''), placeholder: ph,
         onSave: function (v) { ctx.set('collateral.who.' + k, v.trim() ? v : undefined); } }));
     }
     var ASK_HINT = 'Tick each question the informant confirms. Leave it blank if not asked or not confirmed.';
-
-    function sourceCard(k, title, sec, setupNote) {
-      sec = sec || {};
-      var qs = questionsOf(sec);
-      return h('section', { class: 'card iv-src' },
-        h('div', { class: 'iv-src-head' }, h('h3', null, title), setupNote ? ui.badge(setupNote, 'info') : null),
-        sec.intro ? h('p', { class: 'muted' }, sec.intro) : null,
-        whoField(k, k === 'parent' ? (m.young ? 'e.g. mother, in clinic' : 'e.g. mother, by phone') : 'e.g. partner of 6 years, in clinic'),
-        ratingCtl(k, title),
-        qs.length ? checkList(qs, function (q) { return q.k; }, function (q) { return q.q; }, 'Questions to ask', 'confirmed', ASK_HINT) : null);
+    function panel(title, note, intro, body) {
+      return h('div', { class: 'iv-srcpanel' },
+        h('div', { class: 'iv-src-head' }, h('h3', null, title), note ? ui.badge(note, 'info') : null),
+        intro ? h('p', { class: 'iv-src-intro' }, intro) : null,
+        body);
     }
 
     var school = C.school || {};
     var look = arr(school.lookFor);
-    var srcSec = h('section', { class: 'iv-sec stack' }, h('h2', null, 'Sources'));
+    function phrases(word, hint) { return look.length ? checkList(look, function (x, i) { return 'school_' + i; }, function (x) { return x; }, word, 'found', hint) : null; }
+    function caution() { return arr(school.caution).length ? colFold('Read reports with care', ui.list(school.caution), { meta: String(arr(school.caution).length) }) : null; }
+    var tabs = [];
     if (!m.young) {
       var parentNote = inf.parent ? 'Parent available (setup)' : inf.sibling ? 'Sibling available (setup)' : null;
-      srcSec.appendChild(sourceCard('parent', 'Parent or older relative (childhood)', C.parent, parentNote));
-      srcSec.appendChild(sourceCard('partner', 'Partner or close friend (adulthood)', C.partner, inf.partner ? 'Partner available (setup)' : null));
-      srcSec.appendChild(h('section', { class: 'card iv-src' },
-        h('div', { class: 'iv-src-head' }, h('h3', null, 'School reports'), srcs.schoolReports ? ui.badge('Reports available (setup)', 'info') : null),
-        school.intro ? h('p', { class: 'muted' }, school.intro) : null,
-        ratingCtl('school', 'School reports'),
-        look.length ? checkList(look, function (x, i) { return 'school_' + i; }, function (x) { return x; }, 'Phrases to look for', 'found', 'Tick each phrase, or one with the same meaning, that you find in the reports.') : null,
-        arr(school.caution).length ? ui.callout('warn', ui.list(school.caution), 'Read reports with care') : null));
+      tabs.push({ id: 'parent', label: 'Parent or relative', count: '', render: function () {
+        var sec = C.parent || {}, qs = questionsOf(sec);
+        return panel('Parent or older relative (childhood)', parentNote, sec.intro, [
+          whoField('parent', 'e.g. mother, by phone'),
+          ratingCtl('parent', 'Parent or older relative (childhood)'),
+          qs.length ? checkList(qs, qKey, qText, 'Questions to ask', 'confirmed', ASK_HINT) : null]);
+      } });
+      tabs.push({ id: 'partner', label: 'Partner or friend', count: '', render: function () {
+        var sec = C.partner || {}, qs = questionsOf(sec);
+        return panel('Partner or close friend (adulthood)', inf.partner ? 'Partner available (setup)' : null, sec.intro, [
+          whoField('partner', 'e.g. partner of 6 years, in clinic'),
+          ratingCtl('partner', 'Partner or close friend (adulthood)'),
+          qs.length ? checkList(qs, qKey, qText, 'Questions to ask', 'confirmed', ASK_HINT) : null]);
+      } });
+      tabs.push({ id: 'school', label: 'School reports', count: '', render: function () {
+        return panel('School reports', srcs.schoolReports ? 'Reports available (setup)' : null, school.intro, [
+          ratingCtl('school', 'School reports'),
+          phrases('Phrases to look for', 'Tick each phrase, or one with the same meaning, that you find in the reports.'),
+          caution()]);
+      } });
     } else {
       /* Young people: parent or carer now, teacher or school, and the young person's own view. No partner. */
-      srcSec.appendChild(sourceCard('parent', 'Parent or carer (now)', C.parentNow, inf.parent ? 'Parent or carer available (setup)' : null));
-      var tSec = C.teacher || {};
-      var tQs = questionsOf(tSec);
-      var tNote = inf.teacher ? 'Teacher informant (setup)' : srcs.schoolReports ? 'Reports available (setup)' : null;
-      srcSec.appendChild(h('section', { class: 'card iv-src' },
-        h('div', { class: 'iv-src-head' }, h('h3', null, 'Teacher or school'), tNote ? ui.badge(tNote, 'info') : null),
-        tSec.intro ? h('p', { class: 'muted' }, tSec.intro) : null,
-        yp.schoolConsent ? null : h('p', { class: 'hint iv-col-consent' }, 'Consent to contact the school is not recorded in setup. Record it before you contact the school.'),
-        whoField('school', 'e.g. class teacher and SENCO, by questionnaire'),
-        ratingCtl('school', 'Teacher or school'),
-        tQs.length ? checkList(tQs, function (q) { return q.k; }, function (q) { return q.q; }, 'Questions to ask the teacher', 'confirmed', ASK_HINT) : null,
-        look.length ? checkList(look, function (x, i) { return 'school_' + i; }, function (x) { return x; }, 'Phrases to look for in reports', 'found', 'Tick each phrase, or one with the same meaning, that you find in school reports or teacher comments.') : null,
-        arr(school.caution).length ? ui.callout('warn', ui.list(school.caution), 'Read reports with care') : null));
-      var ySec = C.youngSelf || {};
-      var yQs = questionsOf(ySec);
-      var selfTitle = m.child ? 'The child\'s own view' : 'The young person\'s own view';
-      srcSec.appendChild(h('section', { class: 'card iv-src' },
-        h('div', { class: 'iv-src-head' }, h('h3', null, selfTitle), m.child ? null : (yp.seenAlone ? ui.badge('Seen alone (setup)', 'info') : null)),
-        ySec.intro ? h('p', { class: 'muted' }, ySec.intro) : null,
-        yQs.length ? checkList(yQs, function (q) { return q.k; }, function (q) { return q.q; }, 'Questions to ask', 'answered', 'Tick each question you asked and they answered.') : null,
-        ui.field('In their own words', ui.input({ rows: 4, value: c0.self || '',
-          placeholder: 'What they say about school, home, friends, their attention and activity, and what they want from the assessment',
-          onSave: function (v) { ctx.set('collateral.self', v.trim() ? v : undefined); } }))));
+      tabs.push({ id: 'parent', label: 'Parent or carer', count: '', render: function () {
+        var sec = C.parentNow || {}, qs = questionsOf(sec);
+        return panel('Parent or carer (now)', inf.parent ? 'Parent or carer available (setup)' : null, sec.intro, [
+          whoField('parent', 'e.g. mother, in clinic'),
+          ratingCtl('parent', 'Parent or carer (now)'),
+          qs.length ? checkList(qs, qKey, qText, 'Questions to ask', 'confirmed', ASK_HINT) : null]);
+      } });
+      tabs.push({ id: 'school', label: 'Teacher or school', count: '', render: function () {
+        var tSec = C.teacher || {}, tQs = questionsOf(tSec);
+        var tNote = inf.teacher ? 'Teacher informant (setup)' : srcs.schoolReports ? 'Reports available (setup)' : null;
+        return panel('Teacher or school', tNote, tSec.intro, [
+          yp.schoolConsent ? null : h('p', { class: 'hint iv-col-consent' }, 'Consent to contact the school is not recorded in setup. Record it before you contact the school.'),
+          whoField('school', 'e.g. class teacher and SENCO, by questionnaire'),
+          ratingCtl('school', 'Teacher or school'),
+          tQs.length ? checkList(tQs, qKey, qText, 'Questions to ask the teacher', 'confirmed', ASK_HINT) : null,
+          phrases('Phrases to look for in reports', 'Tick each phrase, or one with the same meaning, that you find in school reports or teacher comments.'),
+          caution()]);
+      } });
+      tabs.push({ id: 'self', label: m.child ? 'Child\'s view' : 'Young person\'s view', count: '', render: function () {
+        var ySec = C.youngSelf || {}, yQs = questionsOf(ySec);
+        return panel(m.child ? 'The child\'s own view' : 'The young person\'s own view', m.child ? null : (yp.seenAlone ? 'Seen alone (setup)' : null), ySec.intro, [
+          yQs.length ? checkList(yQs, qKey, qText, 'Questions to ask', 'answered', 'Tick each question you asked and they answered.') : null,
+          ui.field('In their own words', ui.input({ rows: 4, value: cur('self', '') || '',
+            placeholder: 'What they say about school, home, friends, their attention and activity, and what they want from the assessment',
+            onSave: function (v) { ctx.set('collateral.self', v.trim() ? v : undefined); } }))]);
+      } });
     }
-    wrap.appendChild(srcSec);
+    /* Open the first source with nothing recorded yet. */
+    var firstTab = tabs.filter(function (t) { return t.id === 'self' ? !String(c0.self || '').trim() : !has(c0[t.id]); })[0] || tabs[0];
+    var srcTabs = ui.tabs(tabs, firstTab.id);
+    srcTabs.classList.add('iv-ptabs');
+    var intro = m.young ? C.introYoung : C.intro;
+    wrap.appendChild(colCard({ icon: 'users', title: 'Sources', sub: m.young
+      ? 'Rate how far each source supports the history: the parent or carer now, and the teacher or school. Then record the ' + m.selfWho + '\'s own view. Use n/a when a source is not available.'
+      : 'Rate how far each source supports the history: a parent or older relative for childhood, a partner or close friend for now, and school reports. Use n/a when a source is not available.' }, [
+      srcTabs,
+      intro ? colFold('Why collateral matters', h('p', { class: 'iv-intro-p' }, intro)) : null]));
 
-    /* Live summary. */
-    var sumBox = h('div', { class: 'iv-col-live', 'aria-live': 'polite' });
+    /* Card 3: notes, and what to do when sources disagree or are missing. */
+    var disc = m.young ? arr(C.discrepancyYoung) : arr(C.discrepancy);
+    var noInf = m.young ? arr(C.noInformantYoung) : arr(C.noInformant);
+    wrap.appendChild(colCard({ icon: 'file', title: 'Notes and guidance', sub: 'Who was contacted, what they said, and how reliable it seems.' }, [
+      ui.field('Notes on collateral information', ui.input({ rows: 3, value: c0.notes || '', placeholder: 'Who was contacted, what they said, how reliable it seems',
+        onSave: function (v) { ctx.set('collateral.notes', v.trim() ? v : undefined); } })),
+      disc.length ? colFold('When informants disagree', ui.list(disc), { meta: String(disc.length) }) : null,
+      noInf.length ? colFold(m.young ? 'When a parent or school source is missing' : 'No informant available', ui.list(noInf), { meta: String(noInf.length) }) : null]));
+
+    /* Live summary and the rating on each tab. */
     var LEVEL = {
       clear: ['Clear support', 'ok', 'At least one source clearly supports the history. This strengthens the diagnosis.'],
       some: ['Some support', 'info', 'Sources partly support the history. Note where they agree and where they do not.'],
@@ -1161,13 +1210,14 @@
         ? 'No parent, carer or teacher rated yet. Aim for both a home and a school source; if one cannot be obtained, record why.'
         : 'No informant or report rated yet. If none can be obtained, record why and how you weighed the self-report.']
     };
+    var SHORT = { na: 'n/a', 0: 'None', 1: 'Some', 2: 'Clear' };
     function paintSum() {
-      var cur = ctx.a() || {};
-      var res = D.collateral(cur);
+      var curA = ctx.a() || {};
+      var res = D.collateral(curA);
       var L = LEVEL[res.level] || LEVEL.unavailable;
-      var cc = cur.collateral || {};
+      var cc = curA.collateral || {};
       var show = function (v) { return v === 'na' ? 'Not available' : typeof v === 'number' ? v + ' · ' + ((rating.filter(function (x) { return x.v === v; })[0] || {}).l || '') : 'Not rated'; };
-      U.clear(sumBox);
+      put(sumSide, ui.badge(L[0], L[1]));
       var rowsDl = m.young
         ? [h('dt', null, 'Parent or carer (now)'), h('dd', null, show(cc.parent)),
           h('dt', null, 'Teacher or school'), h('dd', null, show(cc.school)),
@@ -1175,34 +1225,24 @@
         : [h('dt', null, 'Parent or relative'), h('dd', null, show(cc.parent)),
           h('dt', null, 'Partner or friend'), h('dd', null, show(cc.partner)),
           h('dt', null, 'School reports'), h('dd', null, show(cc.school))];
-      U.append(sumBox, [
-        h('p', { class: 'iv-col-level' }, ui.badge(L[0], L[1]), h('span', null, L[2])),
-        h('dl', { class: 'iv-dl iv-dl-inline' }, rowsDl)
+      put(sumBox, [
+        h('p', { class: 'iv-col-level' }, h('span', { class: 'sr-only' }, L[0] + '. '), L[2]),
+        h('dl', { class: 'ds-kv iv-col-kv' }, rowsDl)
       ]);
       /* Parent versus teacher, from the per-source symptom ratings (young people). */
       if (m.young && D && typeof D.agreement === 'function') {
         var ag = null;
-        try { ag = D.agreement(cur); } catch (e) { ag = null; }
+        try { ag = D.agreement(curA); } catch (e) { ag = null; }
         if (ag && ag.pairs) {
           sumBox.appendChild(h('p', { class: 'hint iv-col-agree' }, 'Parent and teacher agree on ' + ag.agree + ' of ' + ag.pairs + ' symptoms they both rated' +
             (ag.differ && ag.differ.length ? '. Explore the ' + ag.differ.length + ' where they differ: different settings and demands, or one source over- or under-reporting.' : '.')));
         }
       }
+      tabs.forEach(function (t) {
+        srcTabs.setCount(t.id, t.id === 'self' ? (String(cc.self || '').trim() ? 'Recorded' : '–') : (has(cc[t.id]) && SHORT[cc[t.id]] !== undefined ? SHORT[cc[t.id]] : '–'));
+      });
     }
     paintSum();
-    wrap.appendChild(h('section', { class: 'card iv-col-sum' },
-      h('h2', null, 'Overall collateral support'), sumBox));
-
-    var disc = m.young ? arr(C.discrepancyYoung) : arr(C.discrepancy);
-    var noInf = m.young ? arr(C.noInformantYoung) : arr(C.noInformant);
-    wrap.appendChild(h('div', null,
-      disc.length ? ui.details('When informants disagree', ui.list(disc)) : null,
-      noInf.length ? ui.details(m.young ? 'When a parent or school source is missing' : 'No informant available', ui.list(noInf)) : null));
-
-    wrap.appendChild(ui.field('Notes on collateral information', ui.input({ rows: 3, value: c0.notes || '', placeholder: 'Who was contacted, what they said, how reliable it seems',
-      onSave: function (v) { ctx.set('collateral.notes', v.trim() ? v : undefined); } })));
-
-    if (!imp().collateral) wrap.insertBefore(ui.callout('info', h('p', null, 'Collateral guidance is not loaded in this build. You can still record the ratings.')), wrap.firstChild);
     ctx.onChange('collateral', paintSum);
     el.appendChild(wrap);
     return null;

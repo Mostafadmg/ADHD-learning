@@ -156,16 +156,6 @@
     d.ensure = ensure;
     return d;
   }
-  /* Open a disclosure, build it if needed and move focus to its summary. */
-  function reveal(d) {
-    if (!d) return;
-    d.hidden = false;
-    d.open = true;
-    if (d.ensure) d.ensure();
-    var s = d.querySelector('summary');
-    try { d.scrollIntoView({ block: 'start' }); } catch (e) { /* old browsers */ }
-    if (s) { try { s.focus({ preventScroll: true }); } catch (e) { s.focus(); } }
-  }
   function copy(text, what) {
     U.copyText(text).then(function (ok) { U.toast(ok ? what + ' copied' : 'Copy failed. Your browser blocked the clipboard.', ok ? 'ok' : 'err'); });
   }
@@ -174,6 +164,41 @@
   var SCORE_KIND = { yes: 'ok', no: 'neutral', unsure: 'warn' };
   function scoreBadge(v) { return SCORE_LABEL[v] ? ui.badge(SCORE_LABEL[v], SCORE_KIND[v]) : h('span', { class: 'ab-none' }, 'Not scored'); }
   var INF_LABEL = { na: 'n/a', 0: 'none', 1: 'some', 2: 'clear' };
+
+  /* ---------- Layout: cards, groups and folds (DESIGN.md: no boxes inside boxes) ---------- */
+
+  /* One card per purpose: an icon tile, the title, a one-line purpose and a status slot on the right.
+     o: {icon, title, sub, side (node), cls, id}. The returned card has .side (the status slot). */
+  function card(o, content) {
+    var hid = o.id || ui.nid('ab-h');
+    var side = h('div', { class: 'ab-chead-side' }, o.side || null);
+    var el = h('section', { class: 'card ab-card' + (o.cls ? ' ' + o.cls : ''), 'aria-labelledby': hid },
+      h('header', { class: 'ab-chead' },
+        o.icon ? h('span', { class: 'ab-chead-ico', 'aria-hidden': 'true' }, ui.icon(o.icon)) : null,
+        h('div', { class: 'ab-chead-t' }, h('h2', { id: hid }, o.title), o.sub ? h('p', { class: 'ab-csub' }, o.sub) : null),
+        side),
+      content);
+    el.side = side;
+    return el;
+  }
+  /* A borderless disclosure row inside a card: depth on demand. */
+  function fold(summary, content, o) {
+    o = o || {};
+    return ui.details(summary, content, { open: !!o.open, meta: o.meta, cls: 'ab-fold' + (o.cls ? ' ' + o.cls : ''), onToggle: o.onToggle });
+  }
+  /* The tick that completes a step: a row with an accent bar. */
+  function confirmRow(content, cls) { return h('div', { class: 'ab-confirm' + (cls ? ' ' + cls : '') }, content); }
+  /* A labelled row of a form: the label (and a short hint) on the left, the controls on the right. */
+  function formRow(label, content, o) {
+    o = o || {};
+    return h('div', { class: 'ab-frow' },
+      h('div', { class: 'ab-frow-k' },
+        o.forId ? h('label', { class: 'ab-frow-l', for: o.forId }, label) : h('h3', { class: 'ab-frow-l', id: o.id || null }, label),
+        o.hint ? h('p', { class: 'ab-frow-h' }, o.hint) : null),
+      h('div', { class: 'ab-frow-v' }, content));
+  }
+  /* Condition names without the bracketed detail, for chips (the full name shows in the title and the detail). */
+  function shortCond(c) { return String((c && (c.name || c.id)) || '').replace(/\s*\([^)]*\)/g, '').trim() || (c && c.id) || ''; }
 
   /* ---------- Differential verdicts and feature bands ---------- */
 
@@ -293,24 +318,29 @@
     ['Timeline', 'Draw a timeline with the family: pregnancy, early development, starting school, changes at home. Which came first? Do the problems persist when the other difficulty is treated or settles?']
   ];
 
+  /* Layout: criterion E (status, progress, still to review), the signals from earlier steps, a picker of the
+     conditions (filters, search, groups, a verdict dot on each) and one condition at a time in a detail card
+     (tabs for how it differs, questions, features, screens and tests; the verdict strip; previous and next). */
   AA.steps.ddx = { render: function (el, ctx) {
     var a0 = ctx.a() || {};
     var young0 = isYoung(a0);
     var conds = ddxFor(a0);
     var isCore = coreTest(a0);
     var reviewed0 = conds.filter(function (c) { var e = (a0.ddx || {})[c.id]; return e && e.verdict; }).length;
-    var rows = {};
+    var byId = {};
+    conds.forEach(function (c) { byId[c.id] = c; });
+    var selected = null, cur = null;
 
-    /* Criterion E summary and the decision rule. */
-    var eLive = h('div', { class: 'ab-crit', 'aria-live': 'polite' });
+    /* Card 1: criterion E, the progress on the core conditions and the ones still to review. */
+    var eSide = h('span', { 'aria-live': 'polite' });
+    var eLive = h('p', { class: 'ab-crit-d', 'aria-live': 'polite' });
     var eLists = h('div', { class: 'ab-elists' });
-    el.appendChild(h('section', { class: 'card ab-card' },
-      h('h2', null, 'Criterion E: is there a better explanation?'),
+    el.appendChild(card({ icon: 'target', title: 'Criterion E: is there a better explanation?', side: eSide,
+      sub: 'For each condition, record a verdict: absent, co-occurring, better explains, or uncertain.' }, [
       eLive, eLists,
-      h('h3', { class: 'ab-subh' }, 'For each condition, decide'),
-      h('dl', { class: 'ab-vdefs' }, VERDICTS.map(function (x) { return h('div', { class: 'ab-vdef' }, h('dt', null, verdictBadge(x.v)), h('dd', null, x.d)); })),
-      ui.details('How to judge', h('dl', { class: 'ab-judge' }, (young0 ? JUDGE_YOUNG : JUDGE).map(function (j) { return h('div', null, h('dt', null, j[0]), h('dd', null, j[1])); })),
-        { open: !reviewed0, meta: young0 ? 'Trait or episode, onset, settings, development, timeline' : 'Trait or episode, onset, settings, timeline', cls: 'ab-howto' })));
+      fold('What each verdict means', h('dl', { class: 'ab-vdefs' }, VERDICTS.map(function (x) { return h('div', { class: 'ab-vdef' }, h('dt', null, verdictBadge(x.v)), h('dd', null, x.d)); }))),
+      fold('How to judge', h('dl', { class: 'ab-judge' }, (young0 ? JUDGE_YOUNG : JUDGE).map(function (j) { return h('div', null, h('dt', null, j[0]), h('dd', null, j[1])); })),
+        { open: !reviewed0, meta: young0 ? 'Trait or episode, onset, settings, development, timeline' : 'Trait or episode, onset, settings, timeline' })]));
 
     function paintE() {
       var a = ctx.a() || {};
@@ -319,7 +349,8 @@
       var core = conds.filter(isCore);
       var coreDone = core.filter(function (c) { return rec[c.id] && rec[c.id].verdict; }).length;
       var all = conds.filter(function (c) { return rec[c.id] && rec[c.id].verdict; }).length;
-      fill(eLive, [ui.statusPill(E.status), h('p', { class: 'ab-crit-d' }, E.detail)]);
+      fill(eSide, ui.statusPill(E.status));
+      eLive.textContent = E.detail;
       var parts = [h('div', { class: 'ab-prog' },
         h('span', { class: 'ab-prog-k' }, 'Core conditions reviewed: ' + coreDone + ' of ' + core.length),
         h('div', { class: 'ab-prog-m' }, ui.progress(coreDone, core.length || 1, 'Core conditions reviewed')),
@@ -328,7 +359,7 @@
       if (todo.length && conds.length) {
         parts.push(h('div', { class: 'ab-todo' }, h('span', { class: 'ab-todo-k' }, 'Still to review:'),
           h('ul', { class: 'ab-chips' }, todo.map(function (c) {
-            return h('li', null, h('button', { type: 'button', class: 'ab-chipbtn', onclick: function () { if (rows[c.id]) reveal(rows[c.id].d); } }, condName(c)));
+            return h('li', null, h('button', { type: 'button', class: 'ds-chip ab-chipbtn', title: condName(c), onclick: function () { select(c.id, true); } }, shortCond(c)));
           }))));
       }
       fill(eLists, parts);
@@ -340,122 +371,299 @@
       return null;
     }
 
-    /* Signals gathered from the earlier steps (they do not change on this page). */
+    /* Card 2: signals gathered from the earlier steps (they do not change on this page). */
     var sigs = {};
     conds.forEach(function (c) { sigs[c.id] = signalsFor(a0, c); });
-    var sigHost = h('div');
-    el.appendChild(h('section', { class: 'card ab-card' },
-      h('h2', null, 'Signals from this assessment'),
-      h('p', { class: 'hint' }, 'Positive screens, history items and interview flags that point to a condition. Start with these.'),
-      sigHost));
-    function paintSignals() {
-      var rec = (ctx.a() || {}).ddx || {};
-      var hits = conds.filter(function (c) { return sigs[c.id].n; }).sort(function (x, y) { return sigs[y.id].n - sigs[x.id].n; });
-      if (!hits.length) {
-        fill(sigHost, h('p', { class: 'muted' }, 'No signals yet. Positive screens, history items linked to a condition and symptoms flagged in the interview will collect here. Still review the core conditions below.'));
-        return;
-      }
-      fill(sigHost, [h('ul', { class: 'ab-sigs' }, hits.map(function (c) {
+    var sigHost = h('div', { class: 'ab-sighost' }), sigSide = h('span');
+    var sigMore = false;
+    el.appendChild(card({ icon: 'spark', title: 'Signals from this assessment', side: sigSide,
+      sub: 'Positive screens, history items and interview flags that point to a condition. Start with these.' }, sigHost));
+    function sigRows(list, rec) {
+      return h('ul', { class: 'ab-sigs' }, list.map(function (c) {
         var e = rec[c.id] || {};
         return h('li', { class: 'ab-sig' },
           h('div', { class: 'ab-sig-head' },
-            h('button', { type: 'button', class: 'ab-link', onclick: function () { reveal(rows[c.id].d); }, 'aria-label': 'Review ' + condName(c) }, condName(c)),
-            ui.badge(U.plural(sigs[c.id].n, 'signal'), 'warn'), verdictBadge(e.verdict)),
+            h('button', { type: 'button', class: 'ab-link', onclick: function () { select(c.id, true); }, 'aria-label': 'Review ' + condName(c) }, condName(c)),
+            h('span', { class: 'ab-sig-chips' }, ui.badge(U.plural(sigs[c.id].n, 'signal'), 'warn'), verdictBadge(e.verdict))),
           signalList(sigs[c.id]));
-      })), conds.length > hits.length ? h('p', { class: 'hint' }, 'No signals for the other ' + U.plural(conds.length - hits.length, 'condition') + '.') : null]);
+      }));
     }
-
-    /* Systematic protocol (guides.js), when present: embedded in a disclosure, otherwise linked. */
-    if (AA.data.ddxProtocol) el.appendChild(protocolBlock(ctx));
-
-    /* Find a condition */
-    var found = h('p', { class: 'hint ab-found', 'aria-live': 'polite' });
-    var blocks = [];
-    function filter(q) {
-      var s = String(q || '').toLowerCase(), shown = 0;
-      Object.keys(rows).forEach(function (id) {
-        var hit = !s || rows[id].hay.indexOf(s) > -1;
-        rows[id].d.hidden = !hit;
-        if (hit) shown++;
-      });
-      blocks.forEach(function (b) {
-        var any = false;
-        b.groups.forEach(function (g) {
-          var vis = g.ids.some(function (id) { return !rows[id].d.hidden; });
-          g.el.hidden = !vis;
-          if (vis) any = true;
-        });
-        b.el.hidden = !any;
-      });
-      found.textContent = s ? (shown ? shown + ' of ' + conds.length + ' conditions match.' : 'No condition matches "' + q + '".') : '';
-    }
-    el.appendChild(h('div', { class: 'ab-findbar' }, ui.search('Find a condition, for example sleep or bipolar', filter), found));
-
-    /* One condition: summary row plus a body built on first open. */
-    function makeRow(c) {
-      var meta = h('span', { class: 'ab-meta' });
-      var r = { cond: c, meta: meta, refs: {}, sig: sigs[c.id] };
-      r.hay = [c.name, c.id, groupLabel(groupKey(c)), c.icd11, c.summary].join(' ').toLowerCase();
-      r.d = lazyDetails(h('span', { class: 'ab-ctitle' }, h('strong', null, condName(c)), isCore(c) ? ui.badge('Core', 'accent') : null),
-        function (body) { buildCond(ctx, c, body, r); paintRow(r); }, { meta: meta, cls: 'ab-cond' });
-      r.d.id = 'ab-c-' + c.id;
-      /* The next core condition without a verdict, offered once this one has a verdict. */
-      r.nextTodo = function () {
-        var rec = (ctx.a() || {}).ddx || {};
-        return conds.filter(function (x) { return isCore(x) && x.id !== c.id && !(rec[x.id] && rec[x.id].verdict); })[0] || null;
-      };
-      rows[c.id] = r;
-      paintRow(r);
-      return r;
-    }
-    function paintRow(r) {
-      var e = ctx.get('ddx.' + r.cond.id, {}) || {};
-      var sc = D.ddxScore(r.cond, e);
-      var b = bandOf(sc.band);
-      U.clear(r.meta);
-      if (r.sig.n) r.meta.appendChild(ui.badge(U.plural(r.sig.n, 'signal'), 'warn'));
-      if (sc.checked) r.meta.appendChild(ui.badge('Features: ' + b.l.toLowerCase() + ' ' + sc.score + '/' + sc.max, b.kind));
-      r.meta.appendChild(verdictBadge(e.verdict));
-      if (r.refs.score) paintScore(r.refs.score, r.cond, sc);
-      if (r.refs.vhint) r.refs.vhint.textContent = verdictOf(e.verdict) ? verdictOf(e.verdict).d : 'Not decided yet.';
-      if (r.refs.next) {
-        var nx = e.verdict ? r.nextTodo() : null;
-        fill(r.refs.next, nx ? ui.btn({ label: 'Next to review: ' + String(nx.name || nx.id).replace(/\s*\([^)]*\)/g, '') + ' →', kind: 'secondary', small: true,
-          onClick: function () { r.d.open = false; reveal(rows[nx.id].d); } }) : null);
+    function paintSignals() {
+      var rec = (ctx.a() || {}).ddx || {};
+      var hits = conds.filter(function (c) { return sigs[c.id].n; }).sort(function (x, y) { return sigs[y.id].n - sigs[x.id].n; });
+      fill(sigSide, hits.length ? ui.badge(U.plural(hits.length, 'condition'), 'warn') : ui.badge('None yet', 'neutral'));
+      if (!hits.length) {
+        fill(sigHost, h('p', { class: 'muted ab-p0' }, 'No signals yet. Positive screens, history items linked to a condition and symptoms flagged in the interview will collect here. Still review the core conditions below.'));
+        return;
       }
+      var first = hits.slice(0, 4), rest = hits.slice(4);
+      fill(sigHost, [sigRows(first, rec),
+        rest.length ? fold('Show ' + U.plural(rest.length, 'more condition'), sigRows(rest, rec), { open: sigMore, onToggle: function (v) { sigMore = v; } }) : null,
+        conds.length > hits.length ? h('p', { class: 'hint ab-sig-none' }, 'No signals for the other ' + U.plural(conds.length - hits.length, 'condition') + '.') : null]);
     }
-    function groupBlock(title, hint, list) {
-      if (!list.length) return;
-      var sec = h('section', { class: 'ab-sec' }, h('h2', null, title), hint ? h('p', { class: 'hint' }, hint) : null);
-      var groups = [];
+
+    /* Card 3: the picker. Filters, search, and the conditions grouped by kind, each with its verdict dot. */
+    var hay = {};
+    conds.forEach(function (c) { hay[c.id] = [c.name, c.id, groupLabel(groupKey(c)), c.icd11, c.summary].join(' ').toLowerCase(); });
+    function verdictNow(c) { var e = ctx.get('ddx.' + c.id, {}) || {}; return e.verdict || null; }
+    var FILTERS = [
+      { id: 'core', l: young0 ? 'Core at this age' : 'Core', test: function (c) { return isCore(c); } },
+      /* Young people: explanations that matter most in childhood (oppositional and conduct problems, attachment,
+         language, FASD, relative age, environment) that are not already in the core set for this age. */
+      young0 && conds.some(function (c) { return !isCore(c) && youngOnly(c); })
+        ? { id: 'young', l: 'Common in young people', test: function (c) { return !isCore(c) && youngOnly(c); } } : null,
+      { id: 'signals', l: 'With signals', test: function (c) { return sigs[c.id].n > 0; } },
+      { id: 'todo', l: 'Not reviewed', test: function (c) { return !verdictNow(c); } },
+      { id: 'all', l: 'All', test: function () { return true; } }
+    ].filter(Boolean);
+    var filt = 'core', query = '';
+    var fBtns = {};
+    var filterBar = h('div', { class: 'ab-filters', role: 'group', 'aria-label': 'Which conditions to show' }, FILTERS.map(function (f) {
+      var n = h('span', { class: 'ds-chip-n' });
+      var b = h('button', { type: 'button', class: 'ds-chip ab-fchip', 'aria-pressed': 'false', onclick: function () { filt = f.id; paintBoard(); } }, f.l, n);
+      fBtns[f.id] = { b: b, n: n };
+      return b;
+    }));
+    var search = ui.search('Find a condition, for example sleep or bipolar', function (q) { query = q; paintBoard(); });
+    var found = h('p', { class: 'hint ab-found', 'aria-live': 'polite' });
+    var board = h('div', { class: 'ab-board' });
+    el.appendChild(card({ icon: 'layers', title: 'Conditions', cls: 'ab-pick',
+      sub: young0 ? 'Review every core condition at this age. Open the others when the history, school reports or interview point to them. Pick one to review it below.'
+        : 'Review every core condition. Open the others when the history, screens or interview point to them. Pick one to review it below.' }, [
+      h('div', { class: 'ab-findbar' }, filterBar, search), found, board,
+      h('ul', { class: 'ab-legend', 'aria-label': 'Key to the dots' },
+        [h('li', null, h('span', { class: 'ab-vdot', 'aria-hidden': 'true' }), 'Not reviewed')].concat(VERDICTS.map(function (x) {
+          return h('li', { class: 'v-' + x.v }, h('span', { class: 'ab-vdot', 'aria-hidden': 'true' }), x.l);
+        })))]));
+
+    function shown() {
+      var f = FILTERS.filter(function (x) { return x.id === filt; })[0] || FILTERS[FILTERS.length - 1];
+      var s = String(query || '').toLowerCase();
+      return conds.filter(function (c) { return f.test(c) && (!s || hay[c.id].indexOf(s) > -1); });
+    }
+    function condChip(c, rec) {
+      var v = rec[c.id] && rec[c.id].verdict, m = verdictOf(v), n = sigs[c.id].n;
+      return h('button', { type: 'button', class: 'ab-cchip' + (m ? ' v-' + m.v : '') + (c.id === selected ? ' is-sel' : ''), 'aria-pressed': c.id === selected ? 'true' : 'false',
+        title: condName(c), onclick: function () { select(c.id, true); } },
+        h('span', { class: 'ab-vdot', 'aria-hidden': 'true' }),
+        h('span', { class: 'ab-cchip-t' }, shortCond(c)),
+        filt !== 'core' && isCore(c) ? h('span', { class: 'ab-cchip-core', 'aria-hidden': 'true' }, 'Core') : null,
+        n ? h('span', { class: 'ab-cchip-sig', 'aria-hidden': 'true' }, String(n)) : null,
+        h('span', { class: 'sr-only' }, ': ' + (m ? m.l : 'not reviewed') + (n ? ', ' + U.plural(n, 'signal') : '') + (isCore(c) ? ', core' : '')));
+    }
+    function paintBoard() {
+      var rec = (ctx.a() || {}).ddx || {};
+      FILTERS.forEach(function (f) {
+        var x = fBtns[f.id];
+        x.b.setAttribute('aria-pressed', f.id === filt ? 'true' : 'false');
+        x.b.classList.toggle('is-on', f.id === filt);
+        x.n.textContent = String(conds.filter(f.test).length);
+      });
+      var list = shown();
+      U.clear(board);
       groupOrder(list).forEach(function (g) {
         var members = list.filter(function (c) { return groupKey(c) === g; });
-        var box = h('div', { class: 'ab-group' }, h('h3', { class: 'ab-gh' }, groupLabel(g)));
-        members.forEach(function (c) { box.appendChild(makeRow(c).d); });
-        groups.push({ el: box, ids: members.map(function (c) { return c.id; }) });
-        sec.appendChild(box);
+        board.appendChild(h('div', { class: 'ab-bgrp' },
+          h('p', { class: 'ab-bgrp-t' }, h('span', null, groupLabel(g)), h('span', { class: 'ab-bgrp-n' }, String(members.length))),
+          h('ul', { class: 'ab-bchips' }, members.map(function (c) { return h('li', null, condChip(c, rec)); }))));
       });
-      blocks.push({ el: sec, groups: groups });
-      el.appendChild(sec);
-    }
-    if (!young0) {
-      groupBlock('Core conditions', 'Review these in every adult assessment. Each one can mimic ADHD or commonly co-occurs with it.', conds.filter(isCore));
-      groupBlock('Consider when relevant', 'Open these when the history, screens or interview point to them.', conds.filter(function (c) { return !isCore(c); }));
-    } else {
-      /* Young people: the core set for the age band, then explanations that matter most in childhood
-         (oppositional and conduct problems, attachment, language, FASD, relative age, environment). */
-      var yOnly = conds.filter(function (c) { return !isCore(c) && youngOnly(c); });
-      groupBlock('Core conditions at this age', 'Review these in every assessment at this age. Each one can mimic ADHD or commonly co-occurs with it.', conds.filter(isCore));
-      groupBlock('Common in children and young people', 'Open these when the history, school reports or interview point to them.', yOnly);
-      groupBlock('Consider when relevant', 'Open these when the history, screens or interview point to them.', conds.filter(function (c) { return !isCore(c) && yOnly.indexOf(c) < 0; }));
+      var s = String(query || '').trim();
+      found.textContent = s ? (list.length ? list.length + ' of ' + conds.length + ' conditions match.' : 'No condition matches "' + s + '".')
+        : list.length ? '' : filt === 'todo' ? 'Every condition has a verdict.' : 'No conditions to show here.';
     }
 
+    /* Card 4: one condition at a time. */
+    var detailHost = h('div', { class: 'ab-dhost' });
+    el.appendChild(detailHost);
+    function select(id, user) {
+      if (!byId[id]) return;
+      selected = id;
+      paintBoard();
+      renderDetail();
+      if (user && cur) {
+        try {
+          var r = cur.el.getBoundingClientRect();
+          if (r.top < 70 || r.top > (window.innerHeight || 800) * 0.55) cur.el.scrollIntoView({ block: 'start' });
+        } catch (e) { /* old browsers */ }
+        try { cur.title.focus({ preventScroll: true }); } catch (e) { cur.title.focus(); }
+      }
+    }
+    function renderDetail() {
+      var c = byId[selected];
+      cur = null;
+      if (!c) { U.clear(detailHost); return; }
+      cur = condDetail(c);
+      fill(detailHost, cur.el);
+      paintDetail();
+    }
+    /* The next core condition without a verdict, offered once this one has a verdict. */
+    function nextTodo(c) {
+      var rec = (ctx.a() || {}).ddx || {};
+      return conds.filter(function (x) { return isCore(x) && x.id !== c.id && !(rec[x.id] && rec[x.id].verdict); })[0] || null;
+    }
+    function paintDetail() {
+      if (!cur) return;
+      var c = cur.c;
+      var e = ctx.get('ddx.' + c.id, {}) || {};
+      var sc = D.ddxScore(c, e);
+      var b = bandOf(sc.band);
+      fill(cur.refs.chips, [isCore(c) ? ui.badge('Core', 'accent') : null,
+        sigs[c.id].n ? ui.badge(U.plural(sigs[c.id].n, 'signal'), 'warn') : null,
+        sc.checked ? ui.badge('Features: ' + b.l.toLowerCase() + ' ' + sc.score + '/' + sc.max, b.kind) : null,
+        verdictBadge(e.verdict)]);
+      if (cur.refs.score && cur.refs.score.isConnected) paintScore(cur.refs.score, c, sc);
+      if (cur.refs.tabs && cur.feats.length) cur.refs.tabs.setCount('features', sc.checked + ' of ' + cur.feats.length);
+      cur.refs.vhint.textContent = verdictOf(e.verdict) ? verdictOf(e.verdict).d : 'Not decided yet.';
+      var nx = e.verdict ? nextTodo(c) : null;
+      fill(cur.refs.next, nx ? ui.btn({ label: 'Next to review: ' + shortCond(nx) + ' →', kind: 'secondary', small: true, onClick: function () { select(nx.id, true); } }) : null);
+    }
+
+    /* The detail card of one condition: what it is, how it differs, questions, features, screens and tests,
+       the verdict, and previous / next through the conditions on show. */
+    function condDetail(c) {
+      var name = condName(c);
+      var entry = ctx.get('ddx.' + c.id, {}) || {};
+      var x = { c: c, refs: {} };
+      var hid = ui.nid('ab-dh');
+      x.title = h('h2', { id: hid, tabindex: '-1', class: 'ab-dtitle' }, name);
+      x.refs.chips = h('div', { class: 'ab-dchips', 'aria-live': 'polite' });
+      var coexist = { yes: 'Yes, it often co-occurs.', no: 'Usually not diagnosed together.', sometimes: 'Sometimes.' }[c.coexist];
+      var facts = [];
+      if (c.prevalence) facts.push(['How common', c.prevalence]);
+      if (coexist || c.coexistNote) facts.push(['Co-occurs with ADHD?', [coexist, c.coexistNote].filter(Boolean).join(' ')]);
+      if (c.icd11) facts.push(['ICD-11', c.icd11]);
+
+      var asks = arr(c.ask);
+      var feats = arr(c.features).filter(function (f) { return f && f.id; });
+      x.feats = feats;
+      /* only the screening tools made for this person's age (a teen scale is not offered to an adult, and the reverse) */
+      var aNow = ctx.a() || {};
+      var ageNow = D.age ? D.age(aNow) : null;
+      var screens = arr(c.screen).filter(function (id) {
+        var t = AA.byId('tools', id);
+        return !t || ageNow === null || ((typeof t.ageMin !== 'number' || ageNow >= t.ageMin) && (typeof t.ageMax !== 'number' || ageNow <= t.ageMax));
+      });
+      var inv = arr(c.investigations), pearls = arr(c.pearls), reds = arr(c.redFlags);
+
+      var tabs = [];
+      if (arr(c.overlap).length || arr(c.favoursADHD).length || arr(c.favoursAlt).length) tabs.push({ id: 'differs', label: 'How it differs', render: function () {
+        return h('div', { class: 'ab-tabbody' },
+          arr(c.overlap).length ? h('div', null, h('h4', { class: 'ab-h4' }, 'Where it overlaps with ADHD'), ui.list(c.overlap)) : null,
+          arr(c.favoursADHD).length || arr(c.favoursAlt).length ? h('div', { class: 'ab-cols' },
+            h('div', { class: 'ab-col ab-col-adhd' }, h('h4', { class: 'ab-h4' }, 'Points towards ADHD'), arr(c.favoursADHD).length ? ui.list(c.favoursADHD) : h('p', { class: 'muted' }, 'Not listed.')),
+            h('div', { class: 'ab-col ab-col-alt' }, h('h4', { class: 'ab-h4' }, 'Points towards ' + name), arr(c.favoursAlt).length ? ui.list(c.favoursAlt) : h('p', { class: 'muted' }, 'Not listed.'))) : null);
+      } });
+      if (asks.length) tabs.push({ id: 'ask', label: 'Questions', count: asks.length, render: function () {
+        return h('div', { class: 'ab-tabbody' },
+          h('div', { class: 'ab-subhead' }, h('p', { class: 'hint' }, 'Questions that tell them apart.'),
+            ui.btn({ label: 'Copy all questions', kind: 'ghost', small: true, onClick: function () { copy(asks.join('\n'), 'Questions'); } })),
+          h('ol', { class: 'list ab-asks' }, asks.map(function (q) { return h('li', null, q); })));
+      } });
+      if (feats.length) tabs.push({ id: 'features', label: 'Features', count: D.ddxScore(c, entry).checked + ' of ' + feats.length, render: function () {
+        var f0 = (ctx.get('ddx.' + c.id, {}) || {}).f || {};
+        var score = h('div', { class: 'ab-score', 'aria-live': 'polite' });
+        x.refs.score = score;
+        var node = h('div', { class: 'ab-tabbody' },
+          h('p', { class: 'hint' }, 'Tick what you found. More dots means the feature points more strongly to ' + name + '.'),
+          h('div', { class: 'ab-feats' }, feats.map(function (f) {
+            var w = U.clamp(parseInt(f.w, 10) || 1, 1, 3);
+            return ui.check({ label: [h('span', null, f.t || f.id), ' ', weightTag(w)], checked: !!f0[f.id], cls: 'ab-feat',
+              onChange: function (on) { ctx.set('ddx.' + c.id + '.f.' + f.id, on ? true : undefined); } });
+          })),
+          score);
+        paintScore(score, c, D.ddxScore(c, ctx.get('ddx.' + c.id, {}) || {}));
+        return node;
+      } });
+      if (screens.length || inv.length || pearls.length || reds.length) tabs.push({ id: 'tests', label: 'Screens and tests', render: function () {
+        var a = ctx.a() || {};
+        var T = D.STEP_TOOLS || {}, bi = bandInfo(a);
+        var inScreen = isYoung(a) && Array.isArray(bi.screen) ? bi.screen : arr(T.screen);
+        var inComorbid = isYoung(a) && Array.isArray(bi.comorbid) ? bi.comorbid : arr(T.comorbid);
+        return h('div', { class: 'ab-tabbody' },
+          screens.length ? h('div', null, h('h4', { class: 'ab-h4' }, 'Screening results'),
+            h('ul', { class: 'ab-screens' }, screens.map(function (id) {
+              var t = AA.byId('tools', id);
+              var res = scoreOf(a, id);
+              var ent = enteredResult(a, id);
+              var hasItems = !!(t && t.items && t.items.length);
+              var where = inScreen.indexOf(id) > -1 ? 'screen' : inComorbid.indexOf(id) > -1 ? 'comorbid' : null;
+              var status = !t ? h('span', { class: 'muted' }, 'Not in the tools library')
+                : hasItems && res ? (isPositive(res) ? ui.badge('Positive', 'warn') : res.complete ? ui.badge('Negative', 'ok') : ui.badge('Incomplete', 'neutral'))
+                : ent ? (ent.cutoff === 'yes' ? ui.badge('Above cut-off', 'warn') : ent.cutoff === 'no' ? ui.badge('Below cut-off', 'ok') : ui.badge('Result entered', 'neutral'))
+                : !hasItems ? ui.badge('Official form', 'neutral')
+                : ui.badge('Not done', 'neutral');
+              var text = res ? resultText(res) : ent ? enteredText(ent) : '';
+              return h('li', null,
+                h('span', { class: 'ab-scr-name' }, toolAbbr(id)),
+                status,
+                text ? h('span', { class: 'muted ab-scr-t' }, text) : null,
+                !res && !ent && where ? ui.btn({ label: 'Go to ' + (where === 'screen' ? 'screening' : 'co-occurring screen'), kind: 'quiet', small: true, onClick: function () { ctx.go(where); } })
+                  : t ? ui.btn({ label: 'Tool guide', kind: 'quiet', small: true, go: 'tool-' + id }) : null);
+            }))) : null,
+          inv.length ? h('div', null, h('h4', { class: 'ab-h4' }, 'Investigations to consider'), ui.list(inv)) : null,
+          reds.length ? ui.callout('warn', ui.list(reds), 'Red flags') : null,
+          pearls.length ? h('div', null, h('h4', { class: 'ab-h4' }, 'Clinical pearls'), ui.list(pearls)) : null);
+      } });
+      var tabsEl = tabs.length ? ui.tabs(tabs, tabs[0].id) : null;
+      if (tabsEl) { tabsEl.classList.add('ab-dtabs'); tabsEl.classList.add('ab-ptabs'); }
+      x.refs.tabs = tabsEl;
+
+      /* The verdict strip: how to decide (folded), the verdict, notes, and the next condition to review. */
+      var dc = c.decide || {};
+      x.refs.vhint = h('p', { class: 'hint ab-vhint', 'aria-live': 'polite' });
+      x.refs.next = h('div', { class: 'row ab-vnext', 'aria-live': 'polite' });
+      var verdictEl = h('div', { class: 'ab-verdict' },
+        h('h3', { class: 'ab-vh' }, 'Your verdict on ' + name),
+        dc.better || dc.both || dc.next ? fold('How to decide', h('dl', { class: 'ab-decide' },
+          dc.better ? h('div', { class: 'ab-dec' }, h('dt', null, 'Better explains the symptoms when'), h('dd', null, dc.better)) : null,
+          dc.both ? h('div', { class: 'ab-dec' }, h('dt', null, 'Diagnose both when'), h('dd', null, dc.both)) : null,
+          dc.next ? h('div', { class: 'ab-dec' }, h('dt', null, 'What to do next'), h('dd', null, dc.next)) : null)) : null,
+        ui.seg({ label: 'Verdict on ' + name, hideLabel: true, value: entry.verdict || null,
+          options: VERDICTS.map(function (v) { return { v: v.v, l: v.l, kind: v.kind, title: v.d }; }),
+          onChange: function (v) { ctx.set('ddx.' + c.id + '.verdict', nil(v)); } }),
+        x.refs.vhint,
+        ui.field('Notes on ' + name, ui.input({ rows: 2, value: entry.notes || '', placeholder: 'What you asked, what you found and why you decided this.',
+          onSave: function (v) { ctx.set('ddx.' + c.id + '.notes', textOrNone(v)); } })),
+        x.refs.next,
+        h('div', { class: 'row ab-vref' }, ui.btn({ label: 'Full reference page', kind: 'quiet', small: true, go: 'cond-' + c.id })));
+
+      /* Previous and next through the conditions on show (or through all of them when this one is filtered out). */
+      var list = shown();
+      var pool = list.indexOf(c) > -1 ? list : conds;
+      var i = pool.indexOf(c);
+      var prevC = pool[i - 1] || null, nextC = pool[i + 1] || null;
+      var nav = h('div', { class: 'ab-dnav' },
+        ui.btn({ label: '← Previous', kind: 'ghost', disabled: !prevC, title: prevC ? condName(prevC) : null, onClick: function () { if (prevC) select(prevC.id, true); } }),
+        h('span', { class: 'ab-dnav-n' }, (i + 1) + ' of ' + pool.length),
+        ui.btn({ label: nextC ? 'Next: ' + shortCond(nextC) + ' →' : 'Next →', kind: 'secondary', disabled: !nextC, title: nextC ? condName(nextC) : null, onClick: function () { if (nextC) select(nextC.id, true); } }));
+
+      x.el = h('section', { class: 'card ab-card ab-cdetail', id: 'ab-c-' + c.id, 'aria-labelledby': hid },
+        h('header', { class: 'ab-dhead' },
+          h('p', { class: 'ab-dk' }, groupLabel(groupKey(c)) + ' · ' + (isCore(c) ? 'Core condition' : 'Consider when relevant')),
+          x.title, x.refs.chips),
+        c.summary ? h('p', { class: 'ab-dsum' }, c.summary) : null,
+        facts.length ? fold('Key facts: ' + facts.map(function (f) { return f[0] === 'Co-occurs with ADHD?' ? 'co-occurrence' : f[0] === 'How common' ? 'how common' : f[0]; }).join(', '),
+          h('dl', { class: 'ds-kv ab-dfacts' }, facts.map(function (f) { return [h('dt', null, f[0]), h('dd', null, f[1])]; })), { cls: 'ab-factfold' }) : null,
+        sigs[c.id].n ? ui.callout('warn', signalList(sigs[c.id]), 'Signals in this assessment') : null,
+        tabsEl,
+        verdictEl,
+        nav);
+      return x;
+    }
+
+    /* Systematic protocol (guides.js), when present: in a closed disclosure, otherwise linked. */
+    if (AA.data.ddxProtocol) el.appendChild(protocolBlock(ctx));
+
+    var rec0 = a0.ddx || {};
+    var first = conds.filter(function (c) { return isCore(c) && !(rec0[c.id] && rec0[c.id].verdict); })[0] || conds.filter(isCore)[0] || conds[0];
+    selected = first ? first.id : null;
     paintE();
     paintSignals();
+    paintBoard();
+    renderDetail();
     ctx.onChange('ddx', U.debounce(function () {
       if (!el.isConnected) return;
-      paintE(); paintSignals();
-      Object.keys(rows).forEach(function (k) { paintRow(rows[k]); });
+      paintE(); paintSignals(); paintBoard(); paintDetail();
     }, 60));
     return null;
   } };
@@ -471,26 +679,32 @@
   }
   function protocolBlock(ctx) {
     var guideBtn = ui.btn({ label: 'Protocol guide page', kind: 'quiet', small: true, go: 'ddxguide' });
-    var sec = h('section', { class: 'ab-sec ab-protocol' }, h('h2', null, 'Step-by-step differential protocol'),
-      h('p', { class: 'hint' }, 'A systematic method so no condition is missed. Ticks are saved with this assessment.'));
-    if (typeof AA.components.ddxProtocol !== 'function') { sec.appendChild(h('div', { class: 'row' }, guideBtn)); return sec; }
+    var side = h('span', { 'aria-live': 'polite' });
+    function paintSide(c) { fill(side, c.of ? ui.badge(c.done + ' of ' + c.of + ' checks', c.done >= c.of ? 'ok' : 'neutral') : null); }
     var pc = protocolCounts(ctx.a());
-    var det = lazyDetails('Work through the protocol', function (body) {
-      var node = null;
-      try {
-        node = AA.components.ddxProtocol({
-          checked: ctx.get('ddxProtocol', {}) || {}, compact: true, actions: [guideBtn],
-          onCheck: function (id, on) { ctx.set('ddxProtocol.' + id, on ? true : undefined); }
-        });
-      } catch (e) { if (window.console) console.error(e); node = null; }
-      U.append(body, node instanceof Node ? node : h('div', { class: 'row' }, guideBtn));
-    }, { meta: pc.of ? pc.done + ' of ' + pc.of + ' checks ticked' : null, cls: 'ab-protodet' });
-    sec.appendChild(det);
-    ctx.onChange('ddxProtocol', U.debounce(function () {
-      var m = det.querySelector('.disclosure-meta'), c = protocolCounts(ctx.a());
-      if (m && c.of) m.textContent = c.done + ' of ' + c.of + ' checks ticked';
-    }, 80));
-    return sec;
+    paintSide(pc);
+    var content;
+    if (typeof AA.components.ddxProtocol !== 'function') content = h('div', { class: 'row' }, guideBtn);
+    else {
+      var det = lazyDetails('Work through the protocol', function (body) {
+        var node = null;
+        try {
+          node = AA.components.ddxProtocol({
+            checked: ctx.get('ddxProtocol', {}) || {}, compact: true, actions: [guideBtn],
+            onCheck: function (id, on) { ctx.set('ddxProtocol.' + id, on ? true : undefined); }
+          });
+        } catch (e) { if (window.console) console.error(e); node = null; }
+        U.append(body, node instanceof Node ? node : h('div', { class: 'row' }, guideBtn));
+      }, { meta: pc.of ? pc.done + ' of ' + pc.of + ' checks ticked' : null, cls: 'ab-fold ab-protodet' });
+      content = det;
+      ctx.onChange('ddxProtocol', U.debounce(function () {
+        var m = det.querySelector('.disclosure-meta'), c = protocolCounts(ctx.a());
+        if (m && c.of) m.textContent = c.done + ' of ' + c.of + ' checks ticked';
+        paintSide(c);
+      }, 80));
+    }
+    return card({ icon: 'route', title: 'Step-by-step differential protocol', side: side, cls: 'ab-protocol',
+      sub: 'A systematic method so no condition is missed. Ticks are saved with this assessment.' }, content);
   }
 
   function paintScore(host, cond, sc) {
@@ -502,119 +716,6 @@
         h('span', { class: 'muted' }, U.plural(sc.checked, 'feature') + ' ticked')),
       ui.progress(sc.score, sc.max || 1, 'Feature score for ' + condName(cond)),
       h('p', { class: 'hint' }, b.d + ' This is an app heuristic to organise your thinking, not a validated scale.')]);
-  }
-
-  /* Body of one condition: what it is, how it differs, questions, features, screens, guidance, verdict. */
-  function buildCond(ctx, c, body, r) {
-    var name = condName(c);
-    var entry = ctx.get('ddx.' + c.id, {}) || {};
-    var a = ctx.a() || {};
-    var coexist = { yes: 'Yes, it often co-occurs.', no: 'Usually not diagnosed together.', sometimes: 'Sometimes.' }[c.coexist];
-
-    body.appendChild(h('div', { class: 'ab-ov' },
-      c.summary ? h('p', null, c.summary) : null,
-      c.prevalence ? h('p', { class: 'hint' }, h('strong', null, 'How common: '), c.prevalence) : null,
-      coexist || c.coexistNote ? h('p', { class: 'hint' }, h('strong', null, 'Co-occurs with ADHD? '), [coexist, c.coexistNote].filter(Boolean).join(' ')) : null,
-      c.icd11 ? h('p', { class: 'hint' }, h('strong', null, 'ICD-11: '), c.icd11) : null));
-
-    /* The verdict sits at the end of a long body; a jump link keeps it one tap away. */
-    var verdictBox = null;
-    body.appendChild(h('div', { class: 'ab-jump' }, h('button', { type: 'button', class: 'btn btn-quiet btn-sm', onclick: function () {
-      if (!verdictBox) return;
-      try { verdictBox.scrollIntoView({ block: 'center' }); } catch (e) { verdictBox.scrollIntoView(); }
-      var first = verdictBox.querySelector('input'); if (first) { try { first.focus({ preventScroll: true }); } catch (e) { first.focus(); } }
-    } }, 'Go to your verdict ↓')));
-    if (r.sig.n) body.appendChild(ui.callout('warn', signalList(r.sig), 'Signals in this assessment'));
-    if (arr(c.overlap).length) body.appendChild(h('div', null, h('h4', { class: 'ab-h4' }, 'Where it overlaps with ADHD'), ui.list(c.overlap)));
-    if (arr(c.favoursADHD).length || arr(c.favoursAlt).length) {
-      body.appendChild(h('div', { class: 'ab-cols' },
-        h('div', { class: 'ab-col ab-col-adhd' }, h('h4', { class: 'ab-h4' }, 'Points towards ADHD'), arr(c.favoursADHD).length ? ui.list(c.favoursADHD) : h('p', { class: 'muted' }, 'Not listed.')),
-        h('div', { class: 'ab-col ab-col-alt' }, h('h4', { class: 'ab-h4' }, 'Points towards ' + name), arr(c.favoursAlt).length ? ui.list(c.favoursAlt) : h('p', { class: 'muted' }, 'Not listed.'))));
-    }
-
-    var asks = arr(c.ask);
-    if (asks.length) {
-      body.appendChild(h('div', { class: 'ab-subhead' }, h('h4', { class: 'ab-h4' }, 'Questions that tell them apart'),
-        ui.btn({ label: 'Copy all questions', kind: 'ghost', small: true, onClick: function () { copy(asks.join('\n'), 'Questions'); } })));
-      body.appendChild(h('ol', { class: 'list ab-asks' }, asks.map(function (q) { return h('li', null, q); })));
-    }
-
-    var feats = arr(c.features).filter(function (f) { return f && f.id; });
-    if (feats.length) {
-      var score = h('div', { class: 'ab-score', 'aria-live': 'polite' });
-      r.refs.score = score;
-      var f0 = entry.f || {};
-      body.appendChild(h('div', { class: 'ab-featbox' },
-        h('h4', { class: 'ab-h4' }, 'Features in this patient'),
-        h('p', { class: 'hint' }, 'Tick what you found. More dots means the feature points more strongly to ' + name + '.'),
-        h('div', { class: 'ab-feats' }, feats.map(function (f) {
-          var w = U.clamp(parseInt(f.w, 10) || 1, 1, 3);
-          return ui.check({ label: [h('span', null, f.t || f.id), ' ', weightTag(w)], checked: !!f0[f.id], cls: 'ab-feat',
-            onChange: function (on) { ctx.set('ddx.' + c.id + '.f.' + f.id, on ? true : undefined); } });
-        })),
-        score));
-    }
-
-    /* only the screening tools made for this person's age (a teen scale is not offered to an adult, and the reverse) */
-    var ageNow = D.age ? D.age(a) : null;
-    var screens = arr(c.screen).filter(function (id) {
-      var t = AA.byId('tools', id);
-      return !t || ageNow === null || ((typeof t.ageMin !== 'number' || ageNow >= t.ageMin) && (typeof t.ageMax !== 'number' || ageNow <= t.ageMax));
-    });
-    if (screens.length) {
-      var T = D.STEP_TOOLS || {}, bi = bandInfo(a);
-      var inScreen = isYoung(a) && Array.isArray(bi.screen) ? bi.screen : arr(T.screen);
-      var inComorbid = isYoung(a) && Array.isArray(bi.comorbid) ? bi.comorbid : arr(T.comorbid);
-      body.appendChild(h('div', null, h('h4', { class: 'ab-h4' }, 'Screening results'),
-        h('ul', { class: 'ab-screens' }, screens.map(function (id) {
-          var t = AA.byId('tools', id);
-          var res = scoreOf(a, id);
-          var ent = enteredResult(a, id);
-          var hasItems = !!(t && t.items && t.items.length);
-          var where = inScreen.indexOf(id) > -1 ? 'screen' : inComorbid.indexOf(id) > -1 ? 'comorbid' : null;
-          var status = !t ? h('span', { class: 'muted' }, 'Not in the tools library')
-            : hasItems && res ? (isPositive(res) ? ui.badge('Positive', 'warn') : res.complete ? ui.badge('Negative', 'ok') : ui.badge('Incomplete', 'neutral'))
-            : ent ? (ent.cutoff === 'yes' ? ui.badge('Above cut-off', 'warn') : ent.cutoff === 'no' ? ui.badge('Below cut-off', 'ok') : ui.badge('Result entered', 'neutral'))
-            : !hasItems ? ui.badge('Official form', 'neutral')
-            : ui.badge('Not done', 'neutral');
-          var text = res ? resultText(res) : ent ? enteredText(ent) : '';
-          return h('li', null,
-            h('span', { class: 'ab-scr-name' }, toolAbbr(id)),
-            status,
-            text ? h('span', { class: 'muted' }, text) : null,
-            !res && !ent && where ? ui.btn({ label: 'Go to ' + (where === 'screen' ? 'screening' : 'co-occurring screen'), kind: 'quiet', small: true, onClick: function () { ctx.go(where); } })
-              : t ? ui.btn({ label: 'Tool guide', kind: 'quiet', small: true, go: 'tool-' + id }) : null);
-        }))));
-    }
-
-    var inv = arr(c.investigations), pearls = arr(c.pearls);
-    if (inv.length || pearls.length) {
-      body.appendChild(h('div', { class: 'ab-cols' },
-        inv.length ? h('div', null, h('h4', { class: 'ab-h4' }, 'Investigations to consider'), ui.list(inv)) : null,
-        pearls.length ? h('div', null, h('h4', { class: 'ab-h4' }, 'Clinical pearls'), ui.list(pearls)) : null));
-    }
-    if (arr(c.redFlags).length) body.appendChild(ui.callout('warn', ui.list(c.redFlags), 'Red flags'));
-
-    var dc = c.decide || {};
-    if (dc.better || dc.both || dc.next) {
-      body.appendChild(h('div', { class: 'ab-decide' },
-        dc.better ? h('div', { class: 'ab-dec' }, h('h4', { class: 'ab-h4' }, 'Better explains the symptoms when'), h('p', null, dc.better)) : null,
-        dc.both ? h('div', { class: 'ab-dec' }, h('h4', { class: 'ab-h4' }, 'Diagnose both when'), h('p', null, dc.both)) : null,
-        dc.next ? h('div', { class: 'ab-dec' }, h('h4', { class: 'ab-h4' }, 'What to do next'), h('p', null, dc.next)) : null));
-    }
-
-    var vhint = h('p', { class: 'hint', 'aria-live': 'polite' });
-    r.refs.vhint = vhint;
-    body.appendChild(verdictBox = h('div', { class: 'ab-verdict' },
-      h('h4', { class: 'ab-h4' }, 'Your verdict on ' + name),
-      ui.seg({ label: 'Verdict on ' + name, hideLabel: true, value: entry.verdict || null,
-        options: VERDICTS.map(function (x) { return { v: x.v, l: x.l, kind: x.kind, title: x.d }; }),
-        onChange: function (v) { ctx.set('ddx.' + c.id + '.verdict', nil(v)); } }),
-      vhint,
-      ui.field('Notes on ' + name, ui.input({ rows: 2, value: entry.notes || '', placeholder: 'What you asked, what you found and why you decided this.',
-        onSave: function (v) { ctx.set('ddx.' + c.id + '.notes', textOrNone(v)); } })),
-      r.refs.next = h('div', { class: 'row', 'aria-live': 'polite' }),
-      h('div', { class: 'row' }, ui.btn({ label: 'Full reference page', kind: 'quiet', small: true, go: 'cond-' + c.id }))));
   }
 
   /* ===================================================================================
@@ -876,9 +977,10 @@
     { v: 'major', l: 'Major', kind: 'major', d: 'Marked inconsistency, implausible or exaggerated reporting, or failed validity tests. Do not diagnose on self-report alone. Seek objective evidence.' }
   ];
 
+  /* Layout: why it matters (one callout), the automatic checks (the ones to look at first), what you noticed
+     (indicators and incentives as two tabs), the overall concern, then reference material in one accordion. */
   AA.steps.validity = { render: function (el, ctx) {
     var V = AA.data.validity && typeof AA.data.validity === 'object' ? AA.data.validity : null;
-    var checks0 = ctx.get('validity.checks', {}) || {};
     var young0 = isYoung(ctx.a());
     /* Indicators and incentives for this age group (items tagged ages; missing = all). */
     var INDS = V ? arr(V.indicators).filter(function (x) { return x && x.id && agesOk(x, young0); }) : [];
@@ -898,89 +1000,102 @@
         h('p', null, 'No single sign proves exaggeration. Record what you checked and how much weight the history can bear.')), 'Why this matters'));
     }
 
-    /* Automatic checks from the record */
+    /* Card 1: automatic checks from the record, the ones to look at first. */
     var list = consistencyChecks(ctx.a());
     var nWarn = list.filter(function (x) { return x.status === 'warn'; }).length;
     var nNa = list.filter(function (x) { return x.status === 'na'; }).length;
-    el.appendChild(h('section', { class: 'card ab-card' },
-      h('h2', null, 'Consistency checks from this assessment'),
+    var RANK = { warn: 0, ok: 1, na: 2 };
+    var sorted = list.slice().sort(function (x, y) { return (RANK[x.status] || 0) - (RANK[y.status] || 0); });
+    el.appendChild(card({ icon: 'scale', title: 'Consistency checks from this assessment',
+      side: nWarn ? ui.badge(U.plural(nWarn, 'check') + ' to look at', 'warn') : ui.badge('✓ Nothing inconsistent', 'ok'),
+      sub: 'Worked out from the screening scales, interview, informant ratings and impairment. They update when you change those steps.' }, [
       h('p', { class: 'ab-live' }, nWarn ? U.plural(nWarn, 'check') + ' to look at.' : 'Nothing inconsistent found so far.',
         nNa ? h('span', { class: 'muted' }, ' ' + nNa + ' not available yet.') : null),
-      h('ul', { class: 'ab-checks' }, list.map(function (x) {
+      h('ul', { class: 'ab-checks' }, sorted.map(function (x) {
         var b = CHK_BADGE[x.status];
         return h('li', { class: 'ab-chk ab-chk-' + x.status }, h('div', { class: 'ab-chk-b' }, ui.badge(b[0], b[1])),
           h('div', null, h('p', { class: 'ab-chk-l' }, x.label), h('p', { class: 'ab-chk-t' }, x.text)));
-      })),
-      h('p', { class: 'hint' }, 'Worked out from the screening scales, interview, informant ratings and impairment. They update when you change those steps.')));
+      }))]));
 
-    /* Indicators and incentives */
+    /* Card 2: indicators and incentives, one tab each. */
     var indLive = h('p', { class: 'ab-live', 'aria-live': 'polite' });
     var indMeter = h('div', { class: 'ab-meter' });
+    var indSide = h('span');
+    var indTabs = null;
     function paintInd() {
       var c = ctx.get('validity.checks', {}) || {};
-      var inds = INDS;
       var max = 0, score = 0, n = 0;
-      inds.forEach(function (x) { var w = U.clamp(parseInt(x.w, 10) || 1, 1, 3); max += w; if (c[x.id]) { score += w; n++; } });
+      INDS.forEach(function (x) { var w = U.clamp(parseInt(x.w, 10) || 1, 1, 3); max += w; if (c[x.id]) { score += w; n++; } });
       var inc = INCS.filter(function (x) { return c[x.id]; }).length;
       indLive.textContent = 'Indicators ticked: ' + n + ' (weighted ' + score + ' of ' + max + '). External incentives: ' + inc + '.';
       fill(indMeter, ui.progress(score, max || 1, 'Weighted validity indicators'));
+      fill(indSide, n || inc ? ui.badge((n + inc) + ' ticked', 'warn') : ui.badge('None ticked', 'neutral'));
+      if (indTabs) {
+        if (INDS.length) indTabs.setCount('ind', n + ' of ' + INDS.length);
+        if (INCS.length) indTabs.setCount('inc', inc + ' of ' + INCS.length);
+      }
     }
     function checkRow(x, weighted) {
       var w = U.clamp(parseInt(x.w, 10) || 1, 1, 3);
-      return ui.check({ label: weighted ? [h('span', null, x.t || x.id), ' ', weightTag(w)] : (x.t || x.id), hint: x.why || null, checked: !!checks0[x.id], cls: 'ab-vcheck',
+      return ui.check({ label: weighted ? [h('span', null, x.t || x.id), ' ', weightTag(w)] : (x.t || x.id), hint: x.why || null, checked: !!ctx.get('validity.checks.' + x.id), cls: 'ab-vcheck',
         onChange: function (on) { ctx.set('validity.checks.' + x.id, on ? true : undefined); } });
     }
     if (V && (INDS.length || INCS.length)) {
-      el.appendChild(h('section', { class: 'card ab-card' },
-        h('h2', null, 'What did you notice?'),
-        h('div', { class: 'ab-indhead' }, indLive, indMeter),
-        INDS.length ? [h('h3', { class: 'ab-subh' }, 'Indicators of possible over-reporting'),
-          h('p', { class: 'hint' }, 'More dots means a stronger indicator. The total is a prompt for judgement, not a cut-off.'),
-          h('div', { class: 'ab-vlist' }, INDS.map(function (x) { return checkRow(x, true); }))] : null,
-        INCS.length ? [h('h3', { class: 'ab-subh' }, 'External incentives'),
-          h('p', { class: 'hint' }, young0 ? 'An incentive does not mean the account is false, whether it comes from the ' + youngNoun(ctx.a()) + ' or the family. It means the account needs support from other sources.'
+      var tabs = [];
+      if (INDS.length) tabs.push({ id: 'ind', label: 'Over-reporting indicators', count: '', render: function () {
+        return h('div', null, h('p', { class: 'hint ab-tabhint' }, 'More dots means a stronger indicator. The total is a prompt for judgement, not a cut-off.'),
+          h('div', { class: 'ab-vlist' }, INDS.map(function (x) { return checkRow(x, true); })));
+      } });
+      if (INCS.length) tabs.push({ id: 'inc', label: 'External incentives', count: '', render: function () {
+        return h('div', null, h('p', { class: 'hint ab-tabhint' }, young0 ? 'An incentive does not mean the account is false, whether it comes from the ' + youngNoun(ctx.a()) + ' or the family. It means the account needs support from other sources.'
             : 'An incentive does not mean the account is false. It means the account needs support from other sources.'),
-          h('div', { class: 'ab-vlist' }, INCS.map(function (x) { return checkRow(x, false); }))] : null));
+          h('div', { class: 'ab-vlist' }, INCS.map(function (x) { return checkRow(x, false); })));
+      } });
+      indTabs = ui.tabs(tabs, tabs[0].id);
+      indTabs.classList.add('ab-ptabs');
+      el.appendChild(card({ icon: 'eye', title: 'What did you notice?', side: indSide,
+        sub: 'Tick what you saw in the history, the forms and the room.' }, [h('div', { class: 'ab-indhead' }, indLive, indMeter), indTabs]));
       paintInd();
     }
-    if (CROSS.length) {
-      el.appendChild(h('section', { class: 'card ab-card' }, h('h2', null, 'Things to cross-check'), ui.list(CROSS)));
-    }
 
-    /* Overall concern and notes */
+    /* Card 3: overall concern and notes */
     var defs = {};
     var notesIn = ui.input({ rows: 3, value: ctx.get('validity.notes', ''), placeholder: 'What you checked, what was inconsistent, and how much weight you give the self-report.',
       onSave: function (v) { ctx.set('validity.notes', textOrNone(v)); } });
     var concernSeg = ui.seg({ label: 'Overall concern about symptom validity', hideLabel: true, value: ctx.get('validity.concern', null),
       options: CONCERN.map(function (x) { return { v: x.v, l: x.l, kind: x.kind, title: x.d }; }),
       onChange: function (v) { ctx.set('validity.concern', nil(v)); } });
-    el.appendChild(h('section', { class: 'card ab-card ab-concern' },
-      h('h2', null, 'Overall concern about validity'),
-      h('p', { class: 'hint' }, 'This feeds into the evidence strength on the scoring step and the report.'),
+    var concernSide = h('span', { 'aria-live': 'polite' });
+    el.appendChild(card({ icon: 'flag', title: 'Overall concern about validity', cls: 'ab-concern', side: concernSide,
+      sub: 'This feeds into the evidence strength on the scoring step and the report.' }, [
       concernSeg,
       h('dl', { class: 'ab-cdefs' }, CONCERN.map(function (x) {
         defs[x.v] = h('div', { class: 'ab-cdef' }, h('dt', null, x.l), h('dd', null, x.d));
         return defs[x.v];
       })),
-      ui.field('Notes on validity', notesIn)));
+      ui.field('Notes on validity', notesIn)]));
+    var CONCERN_KIND = { none: 'ok', some: 'warn', major: 'err' };
     function paintConcern() {
       var cur = ctx.get('validity.concern', null);
       CONCERN.forEach(function (x) {
         defs[x.v].classList.toggle('ab-on', cur === x.v);
         if (cur === x.v) defs[x.v].setAttribute('aria-current', 'true'); else defs[x.v].removeAttribute('aria-current');
       });
+      var m = CONCERN.filter(function (x) { return x.v === cur; })[0];
+      fill(concernSide, m ? ui.badge('Concern: ' + m.l.toLowerCase(), CONCERN_KIND[m.v] || 'neutral') : ui.badge('Not recorded', 'neutral'));
     }
     paintConcern();
 
-    /* Reference material */
-    if (V && arr(V.tests).length) {
-      el.appendChild(ui.details('Symptom validity measures', h('div', null,
+    /* Reference material, folded in one accordion: what to cross-check, validity measures, report wording. */
+    var refs = [];
+    if (CROSS.length) refs.push({ title: 'Things to cross-check', meta: String(CROSS.length), render: function () { return ui.list(CROSS); } });
+    if (V && arr(V.tests).length) refs.push({ title: 'Symptom validity measures', meta: String(arr(V.tests).length), render: function () {
+      return h('div', null,
         h('p', { class: 'hint' }, 'Embedded scales inside rating instruments and stand-alone performance tests. Use them only if you are trained to give and interpret them.'),
-        ui.table(['Measure', 'What it does', 'Note'], arr(V.tests).map(function (t) { return [t.name || '', t.what || '', t.note || '']; }), 'table-compact')),
-        { meta: String(arr(V.tests).length), cls: 'ab-ref' }));
-    }
-    if (WORDS.length) {
-      el.appendChild(ui.details('Example wording for the report', h('ul', { class: 'ab-wording' }, WORDS.map(function (w) {
+        ui.table(['Measure', 'What it does', 'Note'], arr(V.tests).map(function (t) { return [t.name || '', t.what || '', t.note || '']; }), 'table-compact'));
+    } });
+    if (WORDS.length) refs.push({ title: 'Example wording for the report', meta: String(WORDS.length), render: function () {
+      return h('ul', { class: 'ab-wording' }, WORDS.map(function (w) {
         return h('li', null, h('p', null, w), ui.btn({ label: 'Add to notes', kind: 'quiet', small: true, aria: 'Add this sentence to the validity notes', onClick: function () {
           var cur = String(ctx.get('validity.notes', '') || '');
           var next = cur.trim() ? cur.replace(/\s+$/, '') + '\n' + w : w;
@@ -988,16 +1103,22 @@
           ctx.set('validity.notes', next);
           U.toast('Added to the notes', 'ok');
         } }));
-      })), { meta: String(WORDS.length), cls: 'ab-ref' }));
+      }));
+    } });
+    if (refs.length) {
+      var acc = ui.acc(refs);
+      acc.classList.add('ab-acc');
+      acc.insertBefore(h('div', { class: 'ds-acc-head' }, h('h2', null, 'Reference')), acc.firstChild);
+      el.appendChild(acc);
     }
-    /* Sources. Young people: one closed disclosure with the source behind each indicator and incentive
-       shown above (src fields), then the general references. Adults: the reference line as before. */
+    /* Sources in one closed disclosure. Young people: the source behind each indicator and incentive shown
+       above (src fields), then the general references. Adults: the general references. */
     if (young0) {
       var vList = V ? [].concat(arr(V.srcYoung), arr(V.refs)) : [];
       var vLines = itemSourceLines(INDS.concat(INCS), function (x) { return x.t || x.id; });
       var vBox = sourcesBox(vList, vLines);
       if (vBox) el.appendChild(vBox);
-    } else if (V && arr(V.refs).length) el.appendChild(ui.source(arr(V.refs).join('; ')));
+    } else if (V && arr(V.refs).length) el.appendChild(sourcesBox(arr(V.refs)));
 
     ctx.onChange('validity', U.debounce(function () { if (!el.isConnected) return; paintInd(); paintConcern(); }, 60));
     return null;
@@ -1088,6 +1209,9 @@
     return { label: P.label, dsm: P.dsm, icd11: P.icd11 };
   }
 
+  /* Layout: the DIVA score card first (adults, from assess-diva.js), the recorded outcome, the criteria A to E as
+     a status table, the symptoms one domain at a time, the evidence strength, then the clinician's conclusion as
+     a labelled form. */
   AA.steps.summary = { render: function (el, ctx) {
     var a = ctx.a() || {};
     var o = D.outcome(a);
@@ -1107,49 +1231,52 @@
     el.appendChild(h('section', { class: 'ab-outcome ab-out-' + (OUT_KIND[o.code] || 'neutral'), 'aria-labelledby': 'ab-out-t' },
       h('p', { class: 'eyebrow' }, divaCard ? 'Today\'s criteria (DSM-5-TR, used by NICE)' : 'Recorded findings'),
       h('h2', { id: 'ab-out-t' }, o.title),
-      P || o.severity ? h('p', { class: 'ab-out-sub' },
-        P ? h('span', null, h('strong', null, 'Presentation: '), P.label) : null,
-        o.severity ? h('span', null, h('strong', null, 'Suggested severity: '), o.severity) : null) : null,
-      codes.length ? h('dl', { class: 'ab-codes' }, codes.map(function (c) { return h('div', null, h('dt', null, c[0]), h('dd', null, c[1])); })) : null,
+      P || o.severity || codes.length ? h('div', { class: 'ab-out-facts' },
+        P ? h('span', { class: 'ab-out-fact' }, h('span', { class: 'ab-out-k' }, 'Presentation'), h('span', null, P.label)) : null,
+        o.severity ? h('span', { class: 'ab-out-fact' }, h('span', { class: 'ab-out-k' }, 'Suggested severity'), h('span', null, o.severity)) : null,
+        codes.map(function (c) { return h('span', { class: 'ab-out-fact ab-out-code' }, h('span', { class: 'ab-out-k' }, c[0]), h('span', null, c[1])); })) : null,
       o.reasons && o.reasons.length ? ui.list(o.reasons, 'list ab-out-reasons') : null,
       h('p', { class: 'hint' }, 'This summarises what you recorded. It is not a diagnosis on its own: your conclusion is below.')));
 
-    /* Criteria A-E */
-    var crTable = h('div', { class: 'table-wrap ab-stack' }, h('table', { class: 'table' },
-      h('thead', null, h('tr', null, ['Criterion', 'What is needed', 'Status', 'What you recorded', ''].map(function (x, i) {
-        return h('th', { scope: 'col' }, i === 4 ? h('span', { class: 'sr-only' }, 'Go to step') : x);
-      }))),
+    /* Criteria A to E: one status table. What each needs sits under its name; Review opens the step. */
+    var metN = CRIT.filter(function (c) { return cr[c.k] && cr[c.k].status === 'met'; }).length;
+    var crTable = h('table', { class: 'table ab-crtable' },
+      h('thead', null, h('tr', null,
+        h('th', { scope: 'col' }, 'Criterion'), h('th', { scope: 'col' }, 'Status'), h('th', { scope: 'col' }, 'What you recorded'),
+        h('th', { scope: 'col' }, h('span', { class: 'sr-only' }, 'Go to step')))),
       h('tbody', null, CRIT.map(function (c) {
         var r = cr[c.k] || { status: 'pending', detail: '' };
-        return h('tr', null,
-          h('th', { scope: 'row' }, h('span', { class: 'ab-ck' }, c.k), ' ', c.name),
-          h('td', { 'data-label': 'Needed' }, critNeed(c.k, need, PER)),
-          h('td', { 'data-label': 'Status' }, ui.statusPill(r.status)),
-          h('td', { 'data-label': 'Recorded' }, r.detail),
-          h('td', { 'data-label': '' }, ui.btn({ label: 'Review', kind: 'quiet', small: true, aria: 'Review criterion ' + c.k, onClick: function () { ctx.go(c.step); } })));
-      }))));
-    el.appendChild(h('section', { class: 'ab-sec' }, h('h2', null, 'DSM-5-TR criteria A to E'), crTable));
+        return h('tr', { class: 'ab-cr ab-cr-' + r.status },
+          h('th', { scope: 'row', class: 'ab-crk' }, h('span', { class: 'ab-ck', 'aria-hidden': 'true' }, c.k),
+            h('span', { class: 'ab-crn' }, h('span', { class: 'ab-crname' }, h('span', { class: 'sr-only' }, 'Criterion ' + c.k + ': '), c.name),
+              h('span', { class: 'ab-crneed' }, 'Needs: ' + critNeed(c.k, need, PER)))),
+          h('td', { class: 'ab-crstat' }, ui.statusPill(r.status)),
+          h('td', { class: 'ab-crrec' }, r.detail),
+          h('td', { class: 'ab-cract' }, ui.btn({ label: 'Review', kind: 'quiet', small: true, aria: 'Review criterion ' + c.k, onClick: function () { ctx.go(c.step); } })));
+      })));
+    el.appendChild(card({ icon: 'check', title: 'DSM-5-TR criteria A to E', side: ui.badge(metN + ' of 5 met', metN === 5 ? 'ok' : 'neutral'),
+      sub: 'What each criterion needs, its status and what you recorded. Review opens the step where it is recorded.' }, h('div', { class: 'ab-crwrap' }, crTable)));
 
-    /* Symptom summary (like the DIVA summary of symptoms) */
+    /* Summary of symptoms (like the DIVA summary of symptoms), one domain at a time */
     var several = typeof D.SEVERAL === 'number' ? D.SEVERAL : 3;
-    el.appendChild(h('section', { class: 'ab-sec' }, h('h2', null, 'Summary of symptoms'), symptomTable(ctx, a),
-      h('p', { class: 'hint' }, !PER.young
+    el.appendChild(card({ icon: 'list', title: 'Summary of symptoms', sub: 'Select a symptom to open it in the interview.' }, [
+      symptomTabs(ctx, a),
+      h('p', { class: 'ab-note' }, !PER.young
         ? 'Adulthood: ' + need + ' or more in a domain (DSM-5-TR' + (need === 5 ? ', age 17 and over' : ', under 17') + '). Childhood: DSM-5-TR needs several symptoms before age 12 (this app counts 3 or more); the DIVA convention is 6 or more per domain.'
         : 'Now: ' + need + ' or more in a domain (DSM-5-TR, ' + (need === 5 ? 'age 17 and over' : 'under 17') + ').' +
           (PER.before ? ' Before 12: DSM-5-TR needs several symptoms before age 12 (this app counts ' + several + ' or more).'
-            : ' Ages 6 to 11: the current period is also the period before age 12, so onset is judged from the current symptoms and the age they started.'))));
+            : ' Ages 6 to 11: the current period is also the period before age 12, so onset is judged from the current symptoms and the age they started.'))]));
 
     /* Evidence strength */
     var cf = o.confidence || D.confidence(a);
     var lv = CONF[cf.level] || CONF.low;
-    el.appendChild(h('section', { class: 'card ab-card' },
-      h('h2', null, 'Evidence strength'),
-      h('div', { class: 'row' }, ui.badge(lv[0], lv[1]), h('span', { class: 'muted' }, 'Points: ' + cf.points)),
+    el.appendChild(card({ icon: 'scale', title: 'Evidence strength', side: ui.badge(lv[0], lv[1]),
+      sub: 'An app heuristic, not a validated scale. It shows how well the sources agree and what would strengthen the evidence: collateral, agreement between scales and interview, resolved differentials, and validity.' }, [
+      h('p', { class: 'ab-points' }, h('span', { class: 'muted' }, 'Points: '), h('strong', null, String(cf.points))),
       cf.reasons.length ? h('ul', { class: 'ab-reasons' }, cf.reasons.map(function (r) {
         var s = SIGN[r[0]] || SIGN['!'];
         return h('li', null, h('span', { class: 'ab-sign ab-sign-' + s[2], 'aria-hidden': 'true' }, s[0]), h('span', null, h('span', { class: 'sr-only' }, s[1] + ': '), r[1]));
-      })) : h('p', { class: 'muted' }, 'Nothing recorded yet.'),
-      h('p', { class: 'hint' }, 'An app heuristic, not a validated scale. It shows how well the sources agree and what would strengthen the evidence: collateral, agreement between scales and interview, resolved differentials, and validity.')));
+      })) : h('p', { class: 'muted' }, 'Nothing recorded yet.')]));
 
     /* DIVA 2.0 (DSM-IV) score form view: an adult instrument, so hidden for young people. */
     var dv = PER.young || divaCard ? null : D.diva2(a);
@@ -1173,10 +1300,12 @@
     var decHint = h('p', { class: 'hint', 'aria-live': 'polite' });
     var warnHost = h('div', { 'aria-live': 'polite' });
     var codeHost = h('div', { class: 'ab-codehost', 'aria-live': 'polite' });
+    var decSide = h('span', { 'aria-live': 'polite' });
 
     /* Short option text so the select is not clipped on phones; the codes show in the coding line. */
     var PRES_SHORT = { combined: 'Combined', ia: 'Predominantly inattentive', hi: 'Predominantly hyperactive-impulsive', other: 'Other specified ADHD', unspecified: 'Unspecified ADHD' };
-    var presSel = h('select', null, [h('option', { value: '' }, 'Not specified')].concat(Object.keys(D.PRESENTATIONS).map(function (k) {
+    var presId = ui.nid('ab-pres');
+    var presSel = h('select', { id: presId }, [h('option', { value: '' }, 'Not specified')].concat(Object.keys(D.PRESENTATIONS).map(function (k) {
       return h('option', { value: k }, (PRES_SHORT[k] || D.PRESENTATIONS[k].label) + (k === sugP ? ' (suggested)' : ''));
     })));
     presSel.value = (f.presentation !== undefined ? f.presentation : sugP) || '';
@@ -1190,7 +1319,8 @@
     }
     presSel.addEventListener('change', function () { ctx.set('formulation.presentation', presSel.value); });
 
-    var comIn = ui.input({ rows: 2, value: f.comorbid !== undefined ? f.comorbid : sugC, placeholder: 'For example: recurrent depressive disorder, currently in remission.',
+    var comId = ui.nid('ab-com'), notesId = ui.nid('ab-form');
+    var comIn = ui.input({ id: comId, rows: 2, value: f.comorbid !== undefined ? f.comorbid : sugC, placeholder: 'For example: recurrent depressive disorder, currently in remission.',
       onSave: function (v) { ctx.set('formulation.comorbid', v); } });
     var comHint = h('p', { class: 'hint' });
     function paintComHint() {
@@ -1199,37 +1329,34 @@
       comHint.hidden = !comHint.textContent;
     }
 
-    el.appendChild(h('section', { class: 'card ab-card ab-form' },
-      h('h2', null, 'Your conclusion'),
-      h('p', { class: 'hint' }, 'You make the diagnosis. Record your decision even when it differs from the recorded findings, and explain why.'),
-      h('div', { class: 'ab-q' },
-        h('h3', { class: 'ab-qh', id: 'ab-dec-h' }, 'Decision'),
+    el.appendChild(card({ icon: 'target', title: 'Your conclusion', cls: 'ab-form', side: decSide,
+      sub: 'You make the diagnosis. Record your decision even when it differs from the recorded findings, and explain why.' }, [
+      formRow('Decision', [
         ui.seg({ label: 'Decision', hideLabel: true, value: f.decision || null,
           options: DECISIONS.map(function (x) { return { v: x.v, l: x.l, kind: x.kind, title: x.d }; }),
           onChange: function (v) { ctx.set('formulation.decision', nil(v)); } }),
-        decHint, warnHost, codeHost),
-      h('div', { class: 'form-grid ab-fgrid' },
-        h('div', null, ui.field('Presentation', presSel), presHint),
-        h('div', { class: 'ab-q' },
-          h('h3', { class: 'ab-qh' }, 'Severity'),
-          ui.seg({ label: 'Severity', hideLabel: true, value: f.severity || null,
-            options: SEVERITY.map(function (x) { return { v: x.v, l: x.l + (x.v === sugS ? ' (suggested)' : ''), title: x.d }; }),
-            onChange: function (v) { ctx.set('formulation.severity', nil(v)); } }),
-          h('p', { class: 'hint' }, sugS ? 'Suggested: ' + sugS + ', from the symptoms beyond the threshold and the worst impairment.' : 'No severity suggested yet.'),
-          ui.details('What the levels mean', h('dl', { class: 'ab-judge' }, SEVERITY.map(function (x) { return h('div', null, h('dt', null, x.l), h('dd', null, x.d)); })), { cls: 'ab-mini' }))),
-      ui.check({ label: 'In partial remission', hint: 'Full criteria were met in the past. Fewer than full criteria in the past 6 months, with continuing impairment.',
-        checked: !!f.remission, onChange: function (on) { ctx.set('formulation.remission', on ? true : undefined); } }),
-      h('div', { class: 'stack ab-fstack' },
-        h('div', null, ui.field('Co-occurring conditions', comIn), comHint,
-          sugC ? ui.btn({ label: 'Fill from differential verdicts', kind: 'quiet', small: true, onClick: function () { comIn.value = sugC; ctx.set('formulation.comorbid', sugC); } }) : null),
-        ui.field('Formulation and reasoning', ui.input({ rows: 4, value: f.notes || '', placeholder: 'How the evidence fits together, what weighed most, and anything still uncertain.',
-          onSave: function (v) { ctx.set('formulation.notes', textOrNone(v)); } })))));
+        decHint, warnHost, codeHost], { id: 'ab-dec-h' }),
+      formRow('Presentation', [presSel, presHint], { forId: presId }),
+      formRow('Severity', [
+        ui.seg({ label: 'Severity', hideLabel: true, value: f.severity || null,
+          options: SEVERITY.map(function (x) { return { v: x.v, l: x.l + (x.v === sugS ? ' (suggested)' : ''), title: x.d }; }),
+          onChange: function (v) { ctx.set('formulation.severity', nil(v)); } }),
+        h('p', { class: 'hint' }, sugS ? 'Suggested: ' + sugS + ', from the symptoms beyond the threshold and the worst impairment.' : 'No severity suggested yet.'),
+        fold('What the levels mean', h('dl', { class: 'ab-judge' }, SEVERITY.map(function (x) { return h('div', null, h('dt', null, x.l), h('dd', null, x.d)); })), { cls: 'ab-mini' })]),
+      formRow('Remission', ui.check({ label: 'In partial remission', hint: 'Full criteria were met in the past. Fewer than full criteria in the past 6 months, with continuing impairment.',
+        checked: !!f.remission, onChange: function (on) { ctx.set('formulation.remission', on ? true : undefined); } })),
+      formRow('Co-occurring conditions', [comIn, comHint,
+        sugC ? ui.btn({ label: 'Fill from differential verdicts', kind: 'quiet', small: true, onClick: function () { comIn.value = sugC; ctx.set('formulation.comorbid', sugC); } }) : null], { forId: comId }),
+      formRow('Formulation and reasoning', ui.input({ id: notesId, rows: 4, value: f.notes || '', placeholder: 'How the evidence fits together, what weighed most, and anything still uncertain.',
+        onSave: function (v) { ctx.set('formulation.notes', textOrNone(v)); } }), { forId: notesId })]));
 
+    var DEC_KIND = { met: 'ok', 'other-specified': 'warn', 'not-met': 'neutral', deferred: 'info' };
     function paintDecision() {
       var cur = ctx.a() || {};
       var ff = cur.formulation || {};
       var d = DECISIONS.filter(function (x) { return x.v === ff.decision; })[0];
       decHint.textContent = d ? d.d : 'Not decided yet.';
+      fill(decSide, d ? ui.badge(d.l, DEC_KIND[d.v] || 'neutral') : ui.badge('Not decided', 'warn'));
       var list = conflicts(cur);
       fill(warnHost, list.length ? ui.callout('warn', h('div', null, ui.list(list),
         h('p', null, 'You can still record this decision. Explain your reasoning in the formulation notes.')), 'Your decision differs from the recorded findings') : null);
@@ -1244,8 +1371,8 @@
     return null;
   } };
 
-  /* 18-symptom summary table with totals per domain. */
-  function symptomTable(ctx, a) {
+  /* The 18 symptoms, one domain per tab (the tab shows the current count), with the totals at the end. */
+  function symptomTabs(ctx, a) {
     var list = syms();
     if (!list.length) return ui.empty('Symptom content not loaded', 'The symptom summary is not available in this build.');
     var rec = (a && a.symptoms) || {};
@@ -1254,12 +1381,8 @@
     /* Adults: Adult, Child, Informant (A/C agreement). Young people: Now, Before 12 (not for ages 6-11),
        Informant (per-source ratings from parent, teacher and the young person, plus agreement). */
     var head = ['Symptom', P.now].concat(P.before ? [P.pre] : []).concat(['Informant']);
-    var table = h('table', { class: 'table table-compact ab-symtable' },
-      h('thead', null, h('tr', null, head.map(function (x) { return h('th', { scope: 'col' }, x); }))));
-    [['IA', 'Inattention'], ['HI', 'Hyperactivity-impulsivity']].forEach(function (g) {
-      var gl = list.filter(function (s) { return s.dim === g[0]; });
-      if (!gl.length) return;
-      var tb = h('tbody', null, h('tr', { class: 'ab-grow' }, h('th', { scope: 'colgroup', colspan: String(head.length) }, g[1])));
+    function table(g, gl) {
+      var tb = h('tbody', null);
       gl.forEach(function (s) {
         var r = rec[s.id] || {};
         var inf = P.young ? bySourceBits(r, a) : [];
@@ -1267,19 +1390,31 @@
         if (has(r.infC) && P.before) inf.push((P.young ? 'Before 12: ' : 'C: ') + INF_LABEL[r.infC]);
         tb.appendChild(h('tr', null,
           h('th', { scope: 'row' }, h('span', { class: 'ab-code' }, symCode(s)), ' ', h('button', { type: 'button', class: 'ab-link', onclick: function () { ctx.go(s.dim === 'HI' ? 'hi' : 'ia', s.id); } }, s.title || s.id)),
-          h('td', null, scoreBadge(r.adult)),
-          P.before ? h('td', null, scoreBadge(r.child)) : null,
-          h('td', { class: 'ab-inf' + (P.young ? ' ab-inf-y' : '') }, inf.length ? inf.join(' · ') : h('span', { class: 'ab-none' }, '-'))));
+          h('td', { 'data-label': P.now }, scoreBadge(r.adult)),
+          P.before ? h('td', { 'data-label': P.pre }, scoreBadge(r.child)) : null,
+          h('td', { class: 'ab-inf' + (P.young ? ' ab-inf-y' : ''), 'data-label': 'Informant' }, inf.length ? inf.join(' · ') : h('span', { class: 'ab-none' }, '-'))));
       });
       var nA = ad[g[0]], nC = ch[g[0]], uA = ad['unsure' + g[0]];
       tb.appendChild(h('tr', { class: 'ab-total' },
         h('th', { scope: 'row' }, 'Total ' + g[1].toLowerCase()),
-        h('td', null, h('span', { class: 'ab-tnum' }, nA + '/' + gl.length), ' ', nA >= need ? ui.badge(need + '+ met', 'ok') : ui.badge('below ' + need, 'neutral')),
-        P.before ? h('td', null, h('span', { class: 'ab-tnum' }, nC + '/' + gl.length), ' ', !P.young && nC >= 6 ? ui.badge('6+', 'ok') : null) : null,
-        h('td', null, uA ? h('span', { class: 'muted' }, uA + ' unsure') : null)));
-      table.appendChild(tb);
+        h('td', { 'data-label': P.now }, h('span', { class: 'ab-tnum' }, nA + '/' + gl.length), ' ', nA >= need ? ui.badge(need + '+ met', 'ok') : ui.badge('below ' + need, 'neutral')),
+        P.before ? h('td', { 'data-label': P.pre }, h('span', { class: 'ab-tnum' }, nC + '/' + gl.length), ' ', !P.young && nC >= 6 ? ui.badge('6+', 'ok') : null) : null,
+        h('td', { class: 'ab-tunsure' }, uA ? h('span', { class: 'muted' }, uA + ' unsure') : null)));
+      return h('div', { class: 'ab-symwrap' }, h('table', { class: 'table table-compact ab-symtable' },
+        h('caption', { class: 'sr-only' }, g[1] + ' symptoms'),
+        h('thead', null, h('tr', null, head.map(function (x) { return h('th', { scope: 'col' }, x); }))), tb));
+    }
+    var tabs = [];
+    [['IA', 'Inattention'], ['HI', 'Hyperactivity-impulsivity']].forEach(function (g) {
+      var gl = list.filter(function (s) { return s.dim === g[0]; });
+      if (!gl.length) return;
+      tabs.push({ id: g[0], label: g[1], count: ad[g[0]] + '/' + gl.length, render: function () { return table(g, gl); } });
     });
-    return h('div', { class: 'table-wrap ab-symwrap' }, table);
+    if (!tabs.length) return ui.empty('Symptom content not loaded', 'The symptom summary is not available in this build.');
+    var t = ui.tabs(tabs, tabs[0].id);
+    t.classList.add('ab-symtabs');
+    t.classList.add('ab-ptabs');
+    return t;
   }
   /* Per-source ratings for one symptom (young people): "Parent: present", "Teacher: absent", ... */
   var BY_SRC = [['parent', 'Parent'], ['teacher', 'Teacher'], ['self', 'Young person']];
@@ -1804,20 +1939,44 @@
     return !(Array.isArray(x.bands) && x.bands.length && x.bands.indexOf(band) < 0);
   }
 
-  function reportNode(model) {
-    var box = h('article', { class: 'report ab-report', 'aria-label': 'Draft report' }, h('p', { class: 'ab-rtitle' }, model.title || REPORT_TITLE));
-    model.forEach(function (s) {
-      box.appendChild(h('h3', null, s.title));
-      s.blocks.forEach(function (b) {
-        if (b.p !== undefined) box.appendChild(h('p', null, b.p));
-        else if (b.list) box.appendChild(h('ul', null, b.list.map(function (x) { return h('li', null, x); })));
-        else if (b.kv) box.appendChild(h('dl', { class: 'ab-rkv' }, b.kv.map(function (r) { return h('div', null, h('dt', null, r[0]), h('dd', null, r[1])); })));
+  /* The draft as a document: the title, a numbered contents list, then numbered sections. Contents links scroll
+     within the page (the route stays the same). The plain-text copy (reportText) is unchanged.
+     o: {tocOpen: bool, onToc(open)}: the contents list folds (closed on phones unless the clinician opened it). */
+  function reportNode(model, o) {
+    o = o || {};
+    var secs = model.map(function (s, i) { return { id: ui.nid('ab-rs'), n: i + 1, s: s }; });
+    var toc = null;
+    if (secs.length > 3) {
+      toc = h('details', { class: 'ab-rtoc no-print', open: o.tocOpen !== false },
+        h('summary', null, h('span', { class: 'ab-rtoc-k' }, 'Contents'), h('span', { class: 'ab-rtoc-n' }, secs.length + ' sections')),
+        h('nav', { 'aria-label': 'Report contents' }, h('ol', null, secs.map(function (x) {
+          return h('li', null, h('a', { href: '#' + x.id, onclick: function (e) {
+            e.preventDefault();
+            var t = document.getElementById(x.id);
+            if (t && t.scrollIntoView) t.scrollIntoView({ block: 'start', behavior: 'smooth' });
+            var hd = t && t.querySelector('h3');
+            if (hd) { try { hd.focus({ preventScroll: true }); } catch (er) { /* ignore */ } }
+          } }, x.s.title));
+        }))));
+      if (o.onToc) toc.addEventListener('toggle', function () { o.onToc(toc.open); });
+    }
+    var box = h('article', { class: 'report ab-report', 'aria-label': 'Draft report' },
+      h('header', { class: 'ab-rhead' }, h('p', { class: 'ab-rk' }, 'Draft for the clinical record'), h('p', { class: 'ab-rtitle' }, model.title || REPORT_TITLE)),
+      toc);
+    secs.forEach(function (x) {
+      var sec = h('section', { class: 'ab-rsec', id: x.id, 'aria-labelledby': x.id + '-h' },
+        h('h3', { id: x.id + '-h', tabindex: '-1' }, h('span', { class: 'ab-rn', 'aria-hidden': 'true' }, String(x.n)), h('span', null, x.s.title)));
+      x.s.blocks.forEach(function (b) {
+        if (b.p !== undefined) sec.appendChild(h('p', null, b.p));
+        else if (b.list) sec.appendChild(h('ul', null, b.list.map(function (t) { return h('li', null, t); })));
+        else if (b.kv) sec.appendChild(h('dl', { class: 'ab-rkv' }, b.kv.map(function (r) { return h('div', null, h('dt', null, r[0]), h('dd', null, r[1])); })));
         else if (b.table) {
-          box.appendChild(h('div', { class: 'ab-rtable' }, h('table', null,
-            h('thead', null, h('tr', null, b.table.head.map(function (x) { return h('th', { scope: 'col' }, x); }))),
-            h('tbody', null, b.table.rows.map(function (r) { return h('tr', null, r.map(function (x) { return h('td', null, x); })); })))));
+          sec.appendChild(h('div', { class: 'ab-rtable' }, h('table', null,
+            h('thead', null, h('tr', null, b.table.head.map(function (t) { return h('th', { scope: 'col' }, t); }))),
+            h('tbody', null, b.table.rows.map(function (r) { return h('tr', null, r.map(function (t) { return h('td', null, t); })); })))));
         }
       });
+      box.appendChild(sec);
     });
     box.appendChild(h('p', { class: 'ab-rfoot' }, 'Draft prepared on ' + U.fmtDate(new Date().toISOString()) + '. To be checked and edited by the assessing clinician.'));
     return box;
@@ -1849,6 +2008,8 @@
 
   var PLAN_ORDER = ['Safety', 'After diagnosis', 'Before any medication', 'Other needs', 'If ADHD not diagnosed'];
 
+  /* Layout: what this page is (one callout), the plan (groups that fold, a count on each), then the draft as a
+     document card with its actions, a contents list and the tick that completes the step. */
   AA.steps.report = { render: function (el, ctx) {
     var a0 = ctx.a() || {};
     var f0 = a0.formulation || {};
@@ -1878,13 +2039,12 @@
     var covers0 = {};
     items.forEach(function (x) { var c = coverOf(a0, x); if (c) covers0[x.id] = c; });
     var nCover = Object.keys(covers0).length;
-    var planLive = h('p', { class: 'ab-live', 'aria-live': 'polite' });
-    var planSec = h('section', { class: 'card ab-card no-print' }, h('h2', null, 'Plan'));
+    var planLive = h('p', { class: 'sr-only', 'aria-live': 'polite' });
+    var planSide = h('span');
     var planGroups = [];
+    var planBody = [];
     if (items.length) {
-      planSec.appendChild(h('p', { class: 'hint' }, (dec ? 'Groups that fit your decision are open. Tick what you agreed with ' + who0 + '.' : 'Tick what you agreed with ' + who0 + '. Record your conclusion first to see which groups fit.') +
-        (nCover ? ' Items the treatment steps record are marked "Covered": they show what the Treatment plan and the Pre-treatment checks hold.' : '')));
-      planSec.appendChild(planLive);
+      planBody.push(planLive);
       var groups = [];
       items.forEach(function (x) { var g = x.group || 'Other needs'; if (groups.indexOf(g) < 0) groups.push(g); });
       groups.sort(function (x, y) {
@@ -1903,25 +2063,28 @@
         var gItems = items.filter(function (x) { return (x.group || 'Other needs') === g; });
         var meta = h('span', { class: 'ab-pmeta' });
         var anyTicked = gItems.some(function (x) { return plan0[x.id] || (covers0[x.id] && covers0[x.id].done); });
-        var det = ui.details(h('h3', { class: 'ab-pgh' }, h('span', null, g), fits ? ui.badge(fits, 'accent') : null),
+        /* A group opens when it fits the decision or has ticks, and folds once everything in it is done. */
+        var allDone = gItems.every(function (x) { return isDone(x, plan0); });
+        var det = fold(h('h3', { class: 'ab-pgh' }, h('span', null, g), fits ? ui.badge(fits, 'accent') : null),
           h('div', { class: 'ab-plist' }, gItems.map(function (x) {
             var cv = covers0[x.id];
             if (cv) return coveredRow(x, cv);
             return ui.check({ label: x.t || x.id, checked: !!plan0[x.id], cls: 'ab-pcheck',
               onChange: function (on) { ctx.set('formulation.plan.' + x.id, on ? true : undefined); } });
-          })), { open: !!fits || anyTicked, meta: meta, cls: 'ab-pgroup' });
+          })), { open: (!!fits || anyTicked) && !allDone, meta: meta, cls: 'ab-pgroup' });
         planGroups.push({ items: gItems, meta: meta });
-        planSec.appendChild(det);
+        planBody.push(det);
       });
     } else if (!u6) {
-      planSec.appendChild(h('p', { class: 'muted' }, 'Plan items are not available in this build. Write the plan in the notes below.'));
+      planBody.push(h('p', { class: 'muted' }, 'Plan items are not available in this build. Write the plan in the notes below.'));
     }
-    planSec.appendChild(ui.field('Plan notes', ui.input({ rows: 3, value: f0.planNotes || '', placeholder: young0 ? 'What was agreed with ' + who0 + ', school liaison, referrals, follow-up date, information given.' : 'What was agreed with the patient, referrals, follow-up date, information given.',
-      onSave: function (v) { ctx.set('formulation.planNotes', textOrNone(v)); } })));
+    planBody.push(h('div', { class: 'ab-pnotes' }, ui.field('Plan notes', ui.input({ rows: 3, value: f0.planNotes || '', placeholder: young0 ? 'What was agreed with ' + who0 + ', school liaison, referrals, follow-up date, information given.' : 'What was agreed with the patient, referrals, follow-up date, information given.',
+      onSave: function (v) { ctx.set('formulation.planNotes', textOrNone(v)); } }))));
     /* One closed Sources disclosure for the plan items, at the end of the card. */
-    var planSrc = sourcesBox(srcParts(items.map(function (x) { return x.src; })));
-    if (planSrc) planSec.appendChild(planSrc);
-    if (!u6) el.appendChild(planSec);
+    planBody.push(sourcesBox(srcParts(items.map(function (x) { return x.src; }))));
+    var planSub = items.length ? (dec ? 'Groups that fit your decision are open. Tick what you agreed with ' + who0 + '.' : 'Tick what you agreed with ' + who0 + '. Record your conclusion first to see which groups fit.') +
+      (nCover ? ' Items the treatment steps record are marked "Covered": they show what the Treatment plan and the Pre-treatment checks hold.' : '') : null;
+    if (!u6) el.appendChild(card({ icon: 'route', title: 'Plan', side: planSide, cls: 'no-print ab-plan', sub: planSub }, planBody));
     /* Items the treatment steps cover: read-only, done or not from the treatment record, with a link there. */
     function coveredRow(x, cv) {
       var state = cv.done ? 'Done in ' + cv.where : cv.na ? (cv.naText || 'Not needed: no medicine planned') : 'To do in ' + cv.where;
@@ -1935,16 +2098,21 @@
     function paintPlan() {
       if (!items.length) return;
       var p = ctx.get('formulation.plan', {}) || {};
-      planLive.textContent = items.filter(function (x) { return isDone(x, p); }).length + ' of ' + items.length + ' plan items done.';
+      var n = items.filter(function (x) { return isDone(x, p); }).length;
+      planLive.textContent = n + ' of ' + items.length + ' plan items done.';
+      fill(planSide, ui.badge(n + ' of ' + items.length + ' done', n === items.length ? 'ok' : 'neutral'));
       planGroups.forEach(function (g) {
-        var n = g.items.filter(function (x) { return isDone(x, p); }).length;
-        g.meta.textContent = n + ' of ' + g.items.length;
+        var k = g.items.filter(function (x) { return isDone(x, p); }).length;
+        g.meta.textContent = k + ' of ' + g.items.length;
       });
     }
 
     /* Report */
     var host = h('div', { class: 'ab-rhost' });
     var text = '';
+    /* The contents list starts open on wide screens and closed on phones; the clinician's choice is kept across rebuilds. */
+    var tocOpen = null;
+    function wideScreen() { try { return window.matchMedia('(min-width: 700px)').matches; } catch (e) { return true; } }
     function rebuild() {
       var model;
       try { model = buildReport(ctx.a() || {}); } catch (e) {
@@ -1954,7 +2122,7 @@
         return;
       }
       text = reportText(model);
-      fill(host, reportNode(model));
+      fill(host, reportNode(model, { tocOpen: tocOpen === null ? wideScreen() : tocOpen, onToc: function (v) { tocOpen = v; } }));
     }
     var ref = String((a0.patient || {}).ref || 'patient').replace(/[^A-Za-z0-9_]+/g, '_');
     var actions = [ui.btn({ label: 'Copy report', kind: 'primary', onClick: function () { copy(text, 'Report'); } })];
@@ -1965,14 +2133,15 @@
       } }));
       actions.push(ui.btn({ label: 'Print', kind: 'ghost', onClick: function () { try { window.print(); } catch (e) { U.toast('Printing is not available here.', 'warn'); } } }));
     }
-    el.appendChild(h('section', { class: 'ab-sec' },
-      h('div', { class: 'ab-rhead no-print' },
-        h('h2', null, 'Draft report'),
-        h('div', { class: 'row' }, actions)),
-      h('p', { class: 'hint no-print' }, 'Updates as you change the plan. Copy gives plain text that pastes cleanly into most record systems.'),
+    el.appendChild(h('section', { class: 'card ab-doc', 'aria-labelledby': 'ab-doc-h' },
+      h('header', { class: 'ab-doc-bar no-print' },
+        h('span', { class: 'ab-chead-ico', 'aria-hidden': 'true' }, ui.icon('file')),
+        h('div', { class: 'ab-chead-t' }, h('h2', { id: 'ab-doc-h' }, u6 ? 'Referral note' : 'Draft report'),
+          h('p', { class: 'ab-csub' }, 'Updates as you change the plan. Copy gives plain text that pastes cleanly into most record systems.')),
+        h('div', { class: 'row ab-doc-act' }, actions)),
       host,
-      h('div', { class: 'ab-reviewed no-print' }, ui.check({ label: 'I have reviewed and edited this draft', hint: 'This completes the report step.',
-        checked: !!f0.reportReviewed, onChange: function (on) { ctx.set('formulation.reportReviewed', on ? true : undefined); } }))));
+      h('div', { class: 'ab-doc-foot no-print' }, confirmRow(ui.check({ label: 'I have reviewed and edited this draft', hint: 'This completes the report step.',
+        checked: !!f0.reportReviewed, onChange: function (on) { ctx.set('formulation.reportReviewed', on ? true : undefined); } })))));
 
     rebuild();
     paintPlan();
