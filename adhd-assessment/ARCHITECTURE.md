@@ -656,6 +656,12 @@ and `monitor` (written for adults and young people). Sources go only in `src`, w
 Teaches what each pre-appointment form is, why it is sent, how to read and weigh it.
 ```js
 { intro: '<p>html</p>', principles: ['...'],
+  // Optional page structure (the forms page shows these as structure; without them it shows intro alone and groups by kind):
+  rule: { k: 'eyebrow', t: 'title', html: '<p>the one rule for every form</p>' },
+  scope: { can: ['...'], cannot: ['...'] },            // what forms can and cannot do
+  review: [ { t: 'step title', d: 'what to do' } ],    // how to review a returned pack, in order
+  order: 'how the list is arranged',
+  groups: [ { id: '', t: 'title', s: 'short label (optional)', d: 'one-line purpose', forms: ['form ids'] } ],
   forms: [ { id: 'asrs18', tool: 'asrs18'|null, title: '', kind: 'self'|'informant'|'records'|'history',
              what: '<p>html</p>', recommendedBy: ['NICE NG87 (rating scales as adjunct)', 'UKAAN', 'CADDRA'],
              whenSent: '', who: '', time: '',
@@ -670,6 +676,11 @@ Teaches what each pre-appointment form is, why it is sent, how to read and weigh
 A systematic, step-by-step method so no differential is missed.
 ```js
 { intro: '<p>html</p>', principles: ['...'],
+  // Optional page structure (views fall back to intro alone when these are missing):
+  questions: [ { t: 'DSM-5-TR criterion E', q: 'the question the protocol answers' } ],
+  stats: [ { n: '51.7%', l: 'label that names its source' } ],
+  tests: [ { id: 'onset', t: 'Onset', q: 'the test, as a question' } ],   // the six tests used in every step
+  caveat: 'what the protocol can and cannot promise (html)',
   steps: [ { id: 'p1', n: 1, title: 'Build the life-course timeline', goal: '',
              do: ['...'], ask: ['questions'], tools: ['tool ids'], conds: ['ddx ids'],
              decide: ['decision rules'], redFlags: ['...'],

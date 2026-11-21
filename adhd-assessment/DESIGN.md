@@ -43,7 +43,7 @@ calm, and professional**: short chunks, clear hierarchy, depth on demand. Brand 
 
 - `ui.icon(name)`: line icons (`ui.ICONS` lists them: check, clock, alert, info, book, layers, search, users, file,
   compass, target, repeat, eye, shield, heart, brain, list, link, flag, chart, calendar, pill, mail, route, school,
-  star, scale, timeline, moon, drop, spark, user, logout, trash, steps).
+  star, scale, timeline, moon, drop, spark, user, logout, trash, steps, x).
 - `ui.hero({ eyebrow, title, text, actions, aside, h1 })`.
 - `ui.stats([{ n, l, s }], { cls })`: number, label, source (small).
 - `ui.cards([{ icon | n, title, text, meta, tone, go | onClick }], { wide, cols })`: `wide` = cards at least 320px; `cols: 2 | 4` = fixed columns (one column on phones).

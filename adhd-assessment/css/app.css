@@ -228,6 +228,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--accent); box-sha
 
 /* Touch: larger targets on phones and touch screens (at least 40px high). */
 @media (max-width: 760px), (pointer: coarse) {
+  .btn { min-height: 44px; }
   .btn-sm { min-height: 40px; }
   .seg-opt label, .seg-sm .seg-opt label { min-height: 40px; }
   .check { min-height: 40px; }

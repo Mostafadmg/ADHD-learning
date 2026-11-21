@@ -180,3 +180,9 @@ button.ds-chip:hover, a.ds-chip:hover { border-color: var(--accent); color: var(
 .ds-note { display: flex; gap: .5rem; align-items: flex-start; color: var(--muted); font-size: .88rem; margin: .6rem 0 0; }
 .ds-note .ds-ico { color: var(--accent); margin-top: .1rem; }
 .ds-label { display: inline-block; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: var(--muted); margin: 0 0 .35rem; }
+
+/* Touch screens: 44px targets for stepper pips and chips. */
+@media (max-width: 760px), (pointer: coarse) {
+  .ds-stepper-pip { min-width: 44px; height: 44px; }
+  .ds-chip { min-height: 44px; }
+}
