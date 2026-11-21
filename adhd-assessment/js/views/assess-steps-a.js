@@ -4,7 +4,11 @@
    The frame renders the h1, step strip, live panel and previous/next buttons, so step content
    starts at h2. Steps write through ctx.set (undefined deletes) and re-read with ctx.get.
    Age: adults (18+) and young people (6-17) share one record. The age group comes from
-   AA.diagnosis.band/young/bandInfo (with a local fallback); under 6 the setup step stops and advises referral. */
+   AA.diagnosis.band/young/bandInfo (with a local fallback); under 6 the setup step stops and advises referral.
+   Layout (DESIGN.md): one card per purpose, each with an icon, a title, a one-line purpose and a status chip;
+   checklists are hairline rows grouped by purpose with a count; questionnaires sit in one grouped accordion per
+   group (core, optional) with the score on each row; the history areas show one at a time (ui.stepper); depth
+   folds away; sources sit in one closed disclosure at the end. */
 (function (AA) {
   'use strict';
   var U = AA.util, h = U.h, ui = AA.ui;
@@ -104,7 +108,46 @@
     return order.map(function (s) { return [s, by[s].filter(Boolean).join('; ')]; });
   }
 
-  /* ---------- Shared helpers ---------- */
+  /* ---------- Layout: cards, groups, rows (no boxes inside boxes) ---------- */
+
+  function fill(host, node) { U.clear(host); U.append(host, node); }
+
+  /* One card per purpose: an icon tile, the title, a one-line purpose and a status slot on the right.
+     o: {icon, title, sub, side (node), tone: 'err' | 'warn', cls}. The returned card has .side (the status slot). */
+  function card(o, content) {
+    var hid = ui.nid('as-h');
+    var side = h('div', { class: 'as-chead-side' }, o.side || null);
+    var el = h('section', { class: 'card as-card' + (o.tone ? ' as-tone-' + o.tone : '') + (o.cls ? ' ' + o.cls : ''), 'aria-labelledby': hid },
+      h('header', { class: 'as-chead' },
+        o.icon ? h('span', { class: 'as-chead-ico', 'aria-hidden': 'true' }, ui.icon(o.icon)) : null,
+        h('div', { class: 'as-chead-t' }, h('h2', { id: hid }, o.title), o.sub ? h('p', { class: 'as-csub' }, o.sub) : null),
+        side),
+      content);
+    el.side = side;
+    return el;
+  }
+  /* A titled group inside a card: a small heading, a count on the right and an optional one-line purpose. */
+  function group(title, content, o) {
+    o = o || {};
+    return h('div', { class: 'as-grp' + (o.cls ? ' ' + o.cls : '') },
+      h('div', { class: 'as-grp-head' }, h('h3', { class: 'as-grp-t' }, title), o.side ? h('span', { class: 'as-grp-n' }, o.side) : null),
+      o.sub ? h('p', { class: 'as-grp-p' }, o.sub) : null,
+      content);
+  }
+  /* Checkbox rows divided by hairlines. */
+  function rows(list, cls) { return h('div', { class: 'as-rows' + (cls ? ' ' + cls : '') }, list); }
+  /* Checkboxes shown as toggle pills, for short sets of options. */
+  function pills(list) { return h('div', { class: 'as-pills' }, list); }
+  /* A borderless disclosure row inside a card: depth on demand. */
+  function fold(summary, content, o) {
+    o = o || {};
+    return ui.details(summary, content, { open: !!o.open, meta: o.meta, cls: 'as-fold' + (o.cls ? ' ' + o.cls : ''), onToggle: o.onToggle });
+  }
+  /* The tick that completes a card: a row with an accent bar. */
+  function confirmRow(content) { return h('div', { class: 'as-confirm' }, content); }
+  function countText(n, of, word) { return n + ' of ' + of + (word ? ' ' + word : ''); }
+
+  /* ---------- Questionnaires ---------- */
 
   function toolList(ids) {
     return ids.map(function (id) { return AA.byId('tools', id); }).filter(Boolean);
@@ -147,7 +190,6 @@
 
   /* Result of an information-only (licensed) tool, entered by hand: tools.<id>.result. */
   var RATERS = [{ v: 'parent', l: 'Parent or carer' }, { v: 'teacher', l: 'Teacher' }, { v: 'self', l: 'Self' }, { v: 'clinician', l: 'Clinician' }];
-  function raterLabel(v) { var r = RATERS.filter(function (x) { return x.v === v; })[0]; return r ? r.l : ''; }
   function manualResult(ctx, t) {
     var r = ctx.get('tools.' + t.id + '.result', null);
     if (!r || typeof r !== 'object') return null;
@@ -173,34 +215,27 @@
   }
   function urgentFlags(r) { return r && r.flags ? r.flags.filter(function (f) { return f.level === 'urgent'; }) : []; }
 
-  function answeredNode(t, r) {
-    if (!hasItems(t)) return r && r.complete ? ui.badge('Result entered', 'ok') : h('span', { class: 'muted' }, 'Use the official form');
-    if (!r || !r.answered) return h('span', { class: 'muted' }, '0 of ' + (r ? r.of : t.items.length));
-    if (r.complete) return ui.badge('Complete', 'ok');
-    return h('span', null, r.answered + ' of ' + r.of);
-  }
-  function resultNode(r) {
-    if (r && r.manual) {
-      if (!r.score) return h('span', { class: 'muted' }, '-');
-      return h('span', { class: 'as-res' }, h('span', { class: 'as-mres' }, r.score), r.rater ? h('span', { class: 'as-rater' }, raterLabel(r.rater)) : null);
+  /* What a questionnaire row shows on the right: progress or score, the band, and the screen result as chips. */
+  function toolMeta(t, r) {
+    var out = [];
+    if (!hasItems(t)) {
+      if (r && r.complete) {
+        if (r.score) out.push(h('span', { class: 'as-mres' }, r.score));
+        out.push(isPositive(r) ? ui.badge('Positive', 'warn') : isNegative(r) ? ui.badge('Negative', 'ok') : ui.badge('Result entered', 'ok'));
+      } else out.push(ui.badge('Official form', 'neutral'));
+      return out;
     }
-    if (!r || !r.answered) return h('span', { class: 'muted' }, '-');
-    var num = r.total !== null && r.total !== undefined && r.max ? h('span', { class: 'as-num' }, r.total + ' / ' + r.max) : null;
-    var band = r.band ? ui.sevChip(r.sev, r.band) : null;
-    if (!num && !band) return h('span', { class: 'muted' }, 'Provisional');
-    return h('span', { class: 'as-res' }, num, band);
-  }
-  function screenNode(r) {
-    var out = h('span', { class: 'as-res' });
-    if (!r || !r.answered) out.appendChild(ui.badge('Not started', 'neutral'));
-    else if (isPositive(r)) out.appendChild(ui.badge('Positive', 'warn'));
-    else if (isNegative(r)) out.appendChild(ui.badge('Negative', 'ok'));
-    else if (r.manual) out.appendChild(ui.badge(r.cutoff === 'unsure' ? 'Unclear' : 'Cut-off not recorded', 'neutral'));
-    else out.appendChild(ui.badge('Incomplete', 'neutral'));
-    if (urgentFlags(r).length) out.appendChild(ui.badge('Urgent flag', 'err'));
+    if (!r || !r.answered) return [h('span', { class: 'as-mtext' }, 'Not started')];
+    if (!r.complete) out.push(h('span', { class: 'as-mtext' }, r.answered + ' of ' + r.of + ' answered'));
+    else {
+      if (r.total !== null && r.total !== undefined && r.max) out.push(h('span', { class: 'as-mscore' }, r.total + ' / ' + r.max));
+      if (r.band) out.push(h('span', { class: 'as-mband' }, r.band));
+    }
+    if (isPositive(r)) out.push(ui.badge('Positive', 'warn'));
+    else if (isNegative(r)) out.push(ui.badge('Negative', 'ok'));
+    if (urgentFlags(r).length) out.push(ui.badge('Urgent flag', 'err'));
     return out;
   }
-  function fill(host, node) { U.clear(host); U.append(host, node); }
 
   /* <details> whose body is built the first time it opens (questionnaires can be long). */
   function lazyDetails(summary, build, o) {
@@ -223,19 +258,20 @@
     if (s) { try { s.focus({ preventScroll: true }); } catch (e) { s.focus(); } }
   }
 
-  /* Short "about this tool" block: who, time, purpose, when, plus how and ADHD notes on demand. */
-  /* The facts line stays visible; the longer guidance folds away so the items come first. */
-  function aboutTool(t) {
-    var facts = [t.who, t.time, t.items_n ? U.plural(t.items_n, 'item') : null, t.ages].filter(Boolean).join(' · ');
+  /* Facts line for a tool (who, time, items, ages) and its longer guidance, folded away so the items come first. */
+  function toolFacts(t) { return [t.who, t.time, t.items_n ? U.plural(t.items_n, 'item') : null, t.ages].filter(Boolean).join(' · '); }
+  function toolAbout(t) {
     var more = [
       t.purpose ? h('p', null, t.purpose) : null,
       t.when ? h('p', null, h('strong', null, 'When: '), t.when) : null,
       t.how ? [h('h4', { class: 'as-abouth' }, 'How to give it'), h('p', null, t.how)] : null,
       t.adhdNotes ? [h('h4', { class: 'as-abouth' }, 'Reading the result in an ADHD assessment'), h('p', null, t.adhdNotes)] : null
     ].filter(Boolean);
-    return h('div', { class: 'as-about' },
-      facts ? h('p', { class: 'hint' }, facts) : null,
-      more.length ? ui.details('About this questionnaire', h('div', { class: 'as-aboutbody' }, more), { cls: 'as-aboutdet' }) : null);
+    return more.length ? fold('About this questionnaire', h('div', { class: 'as-aboutbody' }, more)) : null;
+  }
+  function aboutTool(t) {
+    var facts = toolFacts(t);
+    return h('div', { class: 'as-about' }, facts ? h('p', { class: 'as-facts' }, facts) : null, toolAbout(t));
   }
 
   /* Licence line with a link to the official source. */
@@ -252,7 +288,7 @@
     var r = ctx.get(base, {}) || {};
     function save(k, v) { ctx.set(base + '.' + k, v === '' || v === null || v === undefined ? undefined : v); }
     return h('div', { class: 'as-result' },
-      h('p', null, 'This instrument is not reproduced here because of its licence. Use the official form, score it as its manual says, then enter the result.'),
+      h('p', { class: 'as-result-p' }, 'This instrument is not reproduced here because of its licence. Use the official form, score it as its manual says, then enter the result.'),
       licenceLine(t),
       h('h3', { class: 'as-subh' }, 'Enter the result'),
       h('div', { class: 'form-grid' },
@@ -268,20 +304,19 @@
         onSave: function (v) { save('notes', v.trim() ? v : undefined); } })));
   }
 
-  /* One questionnaire inside a disclosure: about, items with live score (or result entry), notes, library link.
-     o: {open, optional, extra(t) -> {el, update}} */
+  /* One questionnaire as an accordion row: the row shows the score and the screen result; the body has the
+     facts, the items with a live score (or the result entry), notes and the library link. o: {open, extra(t) -> {el, update}, next} */
   function toolBlock(ctx, t, o) {
     var meta = h('span', { class: 'as-meta' });
     var extra = null;
     var nextHost = null;
-    var d = lazyDetails(h('span', null, h('strong', null, t.abbr || t.id), t.name ? h('span', { class: 'as-tname-inline' }, ' ' + t.name) : null), function (body) {
+    var d = lazyDetails(h('span', { class: 'as-ttl' }, h('strong', null, t.abbr || t.id), t.name ? h('span', { class: 'as-tname-inline' }, t.name) : null), function (body) {
       body.appendChild(aboutTool(t));
       if (hasItems(t)) {
-        body.appendChild(h('h3', { class: 'as-subh' }, 'Items and score'));
-        body.appendChild(AA.components.questionnaire(t, {
+        body.appendChild(h('div', { class: 'as-qwrap' }, AA.components.questionnaire(t, {
           answers: ctx.get('tools.' + t.id + '.answers', {}) || {},
           onAnswer: function (n, v) { ctx.set('tools.' + t.id + '.answers.' + n, v === null ? undefined : v); }
-        }));
+        })));
         /* Once this scale is complete, offer the next core scale that still needs answers. */
         nextHost = h('div', { class: 'row as-foot', 'aria-live': 'polite' });
         body.appendChild(nextHost);
@@ -302,22 +337,7 @@
     }, { open: o.open, meta: meta, cls: 'as-tool' });
     d.id = 'as-tool-' + t.id;
     function update(r) {
-      U.clear(meta);
-      if (o.optional) meta.appendChild(ui.badge('Optional', 'neutral'));
-      if (!hasItems(t)) {
-        meta.appendChild(ui.badge('Official form', 'neutral'));
-        if (r && r.complete) {
-          meta.appendChild(ui.badge('Result entered', 'ok'));
-          if (isPositive(r)) meta.appendChild(ui.badge('Positive', 'warn'));
-          else if (isNegative(r)) meta.appendChild(ui.badge('Negative', 'ok'));
-        }
-      } else if (!r || !r.answered) meta.appendChild(h('span', null, 'Not started'));
-      else {
-        meta.appendChild(r.complete ? ui.badge('Complete', 'ok') : h('span', null, r.answered + ' of ' + r.of));
-        if (isPositive(r)) meta.appendChild(ui.badge('Positive', 'warn'));
-        else if (isNegative(r)) meta.appendChild(ui.badge('Negative', 'ok'));
-        if (urgentFlags(r).length) meta.appendChild(ui.badge('Urgent flag', 'err'));
-      }
+      fill(meta, toolMeta(t, r));
       if (extra && extra.update) extra.update(r);
       if (nextHost) {
         var nb = r && r.complete && o.next ? o.next() : null;
@@ -326,37 +346,6 @@
       }
     }
     return { el: d, update: update, t: t };
-  }
-
-  /* Live results table. Rows stack into labelled blocks on phones.
-     o: {optional(t) -> bool, points: bool, onOpen(id)} */
-  function resultsTable(ctx, list, o) {
-    var head = ['Tool', 'Answered', 'Result', 'Screen'];
-    if (o.points) head.push('Points to');
-    var rows = list.map(function (t) {
-      var c = { ans: h('td', { 'data-label': 'Answered' }), res: h('td', { 'data-label': 'Result' }), pos: h('td', { 'data-label': 'Screen' }),
-        pts: o.points ? h('td', { 'data-label': 'Points to' }) : null };
-      var name = h('button', { type: 'button', class: 'as-linkbtn', onclick: function () { o.onOpen(t.id); }, 'aria-label': 'Go to ' + (t.abbr || t.id) },
-        t.abbr || t.id);
-      c.tr = h('tr', null,
-        h('th', { scope: 'row' }, name, t.name ? h('span', { class: 'as-tname' }, t.name) : null, o.optional(t) ? ui.badge('Optional', 'neutral') : null),
-        c.ans, c.res, c.pos, c.pts);
-      c.t = t;
-      return c;
-    });
-    var el = h('div', { class: 'table-wrap as-sum' }, h('table', { class: 'table' },
-      h('thead', null, h('tr', null, head.map(function (x) { return h('th', { scope: 'col' }, x); }))),
-      h('tbody', null, rows.map(function (c) { return c.tr; }))));
-    function update(results) {
-      rows.forEach(function (c) {
-        var r = results[c.t.id];
-        fill(c.ans, answeredNode(c.t, r));
-        fill(c.res, resultNode(r));
-        fill(c.pos, screenNode(r));
-        if (c.pts) fill(c.pts, pointsNode(ctx, c.t, r));
-      });
-    }
-    return { el: el, update: update };
   }
 
   /* Differentials whose screen list includes this tool. */
@@ -369,13 +358,6 @@
     return h('ul', { class: 'as-plist' }, conds.map(function (c) {
       return h('li', null, h('a', { href: '#cond-' + c.id, 'data-go': 'cond-' + c.id, title: c.name }, shortName(c)));
     }));
-  }
-  function pointsNode(ctx, t, r) {
-    var conds = condsFor(t.id);
-    if (!conds.length) return h('span', { class: 'muted' }, '-');
-    var list = conds.length > 3 ? ui.details(U.plural(conds.length, 'differential'), condLinks(conds), { cls: 'as-pts' }) : condLinks(conds);
-    return h('div', { class: 'as-points' }, list,
-      isPositive(r) ? ui.btn({ label: 'Review in differentials', kind: 'ghost', small: true, onClick: function () { ctx.go('ddx'); } }) : null);
   }
 
   /* Questionnaire flags for a set of tools, shown prominently. Re-renders only when the set changes,
@@ -406,7 +388,9 @@
     return { el: host, update: update };
   }
 
-  /* Shared body of the screening and co-occurring steps. */
+  /* Shared body of the screening and co-occurring steps: the rule, any flags, a results card, then one grouped
+     accordion per group (core, optional) where each row shows its score and screen result.
+     o: {tools, optional(t), intro, groups: [{title, hint, filter}], extra, points, emptyTitle, emptyBody, sources} */
   function questionnaireStep(el, ctx, o) {
     var list = o.tools;
     if (!list.length) {
@@ -425,16 +409,27 @@
 
     var blocks = {};
     function openTool(id) { if (blocks[id]) reveal(blocks[id].el); }
-    var table = resultsTable(ctx, list, { optional: o.optional, points: !!o.points, onOpen: openTool });
-    var live = h('p', { class: 'as-live', 'aria-live': 'polite' });
-    el.appendChild(h('section', { class: 'as-sec' }, h('h2', null, 'Results at a glance'), live, table.el,
-      h('p', { class: 'hint' }, 'Select a tool name to jump to it. Scores update as you answer.')));
 
-    /* Open the first interactive scale that is not finished; failing that, the first core official form without a result. */
+    /* Results at a glance: core progress, positive screens (each opens its scale) and, for the co-occurring
+       screen, the way on to the differentials. */
+    var coreList = list.filter(function (t) { return !o.optional(t) && (hasItems(t) || t.interactive === false); });
+    var progText = h('span', { class: 'as-kvnum' }), progMeter = h('div', { class: 'as-meter' }), posHost = h('div', { class: 'as-poshost' });
+    var live = h('p', { class: 'sr-only', 'aria-live': 'polite' });
+    var resSide = h('span');
+    el.appendChild(card({ icon: 'chart', title: 'Results at a glance', sub: 'Scores update as you answer. Select a positive screen to open it.', side: resSide }, [
+      h('dl', { class: 'ds-kv as-kv' },
+        h('dt', null, coreList.length ? 'Core scales' : 'Scales recorded'), h('dd', null, h('div', { class: 'as-kvrow' }, progText, progMeter)),
+        h('dt', null, 'Positive screens'), h('dd', null, posHost)),
+      live]));
+
+    /* Open the first core scale that is not finished; failing that, the first core official form without a result.
+       Optional scales stay folded (they are used when something points to them), except where no core list exists
+       (young people), where the first unfinished scale opens. */
     var firstOpen = null;
+    var openable = coreList.length ? function (t) { return !o.optional(t); } : function () { return true; };
     list.forEach(function (t) {
       var r = results[t.id];
-      if (!firstOpen && hasItems(t) && !(r && r.complete)) firstOpen = t.id;
+      if (!firstOpen && openable(t) && hasItems(t) && !(r && r.complete)) firstOpen = t.id;
     });
     if (!firstOpen) list.forEach(function (t) {
       var r = results[t.id];
@@ -449,31 +444,67 @@
       }
       return null;
     }
+    var groupCounts = [];
     o.groups.forEach(function (g) {
       var members = list.filter(g.filter);
       if (!members.length) return;
-      var sec = h('section', { class: 'as-sec' }, h('h2', null, g.title), g.hint ? h('p', { class: 'hint' }, g.hint) : null);
+      var count = h('span', { class: 'as-acc-n' });
+      var acc = h('section', { class: 'ds-acc as-acc', 'aria-label': g.title },
+        h('div', { class: 'ds-acc-head as-acchead' },
+          h('div', { class: 'as-acchead-t' }, h('h2', null, g.title), g.hint ? h('p', { class: 'as-acc-p' }, g.hint) : null),
+          count));
       members.forEach(function (t) {
         order.push(t.id);
-        var b = toolBlock(ctx, t, { open: t.id === firstOpen, optional: o.optional(t), extra: o.extra || null, next: function () { return nextCore(t.id); } });
+        var b = toolBlock(ctx, t, { open: t.id === firstOpen, extra: o.extra || null, next: function () { return nextCore(t.id); } });
         blocks[t.id] = b;
-        sec.appendChild(b.el);
+        acc.appendChild(b.el);
       });
-      el.appendChild(sec);
+      groupCounts.push({ el: count, members: members });
+      el.appendChild(acc);
+    });
+    /* One questionnaire open at a time: opening one folds the others and keeps the opened row in view. */
+    order.forEach(function (tid) {
+      var d = blocks[tid].el;
+      d.addEventListener('toggle', function () {
+        if (!d.open) return;
+        var moved = false;
+        order.forEach(function (other) { var od = blocks[other].el; if (od !== d && od.open) { od.open = false; moved = true; } });
+        if (moved) {
+          try { if (d.getBoundingClientRect().top < 100) d.scrollIntoView({ block: 'start' }); } catch (e) { /* old browsers */ }
+        }
+      });
     });
     if (o.sources) el.appendChild(o.sources);
 
+    var posSig = null;
     function update() {
       rescoreAll();
-      table.update(results);
       flags.update(list, results);
       list.forEach(function (t) { if (blocks[t.id]) blocks[t.id].update(results[t.id]); });
+      groupCounts.forEach(function (g) {
+        var n = g.members.filter(function (t) { return results[t.id] && results[t.id].complete; }).length;
+        fill(g.el, ui.badge(n + ' of ' + g.members.length + ' done', n === g.members.length ? 'ok' : 'neutral'));
+      });
       /* Core = scored scales plus official forms in the core list (complete once a result is entered). */
-      var core = list.filter(function (t) { return !o.optional(t) && (hasItems(t) || t.interactive === false); });
-      var done = core.filter(function (t) { return results[t.id] && results[t.id].complete; }).length;
-      var pos = list.filter(function (t) { return isPositive(results[t.id]); }).map(function (t) { return t.abbr || t.id; });
-      live.textContent = 'Core scales complete: ' + done + ' of ' + core.length + '. ' +
-        (pos.length ? 'Positive: ' + pos.join(', ') + '.' : 'No positive screens so far.');
+      var basis = coreList.length ? coreList : list;
+      var done = basis.filter(function (t) { return results[t.id] && results[t.id].complete; }).length;
+      var pos = list.filter(function (t) { return isPositive(results[t.id]); });
+      progText.textContent = countText(done, basis.length, coreList.length ? 'complete' : 'recorded');
+      fill(progMeter, ui.progress(done, basis.length, coreList.length ? 'Core scales complete' : 'Scales recorded'));
+      fill(resSide, done === basis.length ? ui.badge(coreList.length ? 'Core complete' : 'All recorded', 'ok') : ui.badge(countText(done, basis.length), 'neutral'));
+      var sig = pos.map(function (t) { return t.id; }).join(',');
+      if (sig !== posSig) {
+        posSig = sig;
+        fill(posHost, pos.length ? [
+          h('ul', { class: 'as-poslist' }, pos.map(function (t) {
+            return h('li', null, h('button', { type: 'button', class: 'ds-chip as-poschip', onclick: function () { openTool(t.id); } },
+              h('span', { class: 'as-posdot', 'aria-hidden': 'true' }), t.abbr || t.id, h('span', { class: 'sr-only' }, ': open the questionnaire')));
+          })),
+          o.points ? ui.btn({ label: 'Review in differentials', kind: 'ghost', small: true, onClick: function () { ctx.go('ddx'); } }) : null
+        ] : h('span', { class: 'muted' }, 'None so far.'));
+      }
+      live.textContent = (coreList.length ? 'Core scales complete: ' : 'Scales recorded: ') + done + ' of ' + basis.length + '. ' +
+        (pos.length ? 'Positive: ' + pos.map(function (t) { return t.abbr || t.id; }).join(', ') + '.' : 'No positive screens so far.');
     }
     update();
     ctx.onChange('tools', U.debounce(function () { if (el.isConnected) update(); }, 60));
@@ -505,6 +536,11 @@
     ['records', 'Referral letter and previous records reviewed (for example health visitor, GP, speech and language therapy, educational psychology, CAMHS)'],
     ['physical', 'Physical baseline possible: pulse and blood pressure with the right cuff size, height and weight against the normal range for age']
   ];
+  /* The checklist grouped by when it is done. Keys not listed here fall into the last group. */
+  var PREP_GROUPS = [
+    { title: 'Before the appointment', sub: 'Forms, records and booking.', keys: ['questionnaires', 'records', 'school', 'pr', 'time'] },
+    { title: 'On the day', sub: 'People, the room and the physical checks.', keys: ['informant', 'room', 'physical'] }
+  ];
   var SEN = [{ v: 'none', l: 'None' }, { v: 'sen_support', l: 'SEN support' }, { v: 'ehcp', l: 'EHCP' }];
 
   /* Consent basis for a young person. It depends on age (under 16, or 16 to 17), not the band: 16 sits inside the 12-16 band.
@@ -521,6 +557,22 @@
   }
 
   /* What to say at the start. The parent or carer and the child or young person each get their own version. */
+  function adultScript() {
+    return {
+      intro: 'Thank you for coming. Before we start, I will explain how today works.',
+      items: [
+        'I will ask about things like concentration, getting organised, restlessness and acting on the spur of the moment.',
+        'First we talk about the last six months. Then we go back to when you were at primary school, roughly age 5 to 12.',
+        'For each question I will ask for real examples from your own life. Examples help me understand what it is like for you.',
+        'With your permission, I would also like to hear from someone who knew you as a child, or knows you well now.',
+        'It usually takes between one and a half and three hours. We can take a break whenever you need one.',
+        'This is a conversation, not a test. There are no right or wrong answers. "I don\'t know" or "I can\'t remember" are fine answers.',
+        'At the end I will tell you what I think, or explain what else I need before I can give you an answer.',
+        'What you tell me is confidential. The exception is if I am worried about your safety or someone else\'s: then I may need to share it.'
+      ],
+      outro: 'Do you have any questions before we begin?'
+    };
+  }
   function parentScript(band) {
     var child = band === 'child';
     return {
@@ -564,8 +616,12 @@
       outro: 'Do you have any questions before we start?'
     };
   }
+  /* A script to read aloud: the opening line, the points in order, then the question to close. */
   function scriptBox(s) {
-    return h('div', { class: 'as-script' }, h('p', null, s.intro), h('ul', null, s.items.map(function (x) { return h('li', null, x); })), h('p', null, s.outro));
+    return h('div', { class: 'as-script' },
+      h('p', { class: 'as-script-say' }, s.intro),
+      h('ol', { class: 'as-script-list' }, s.items.map(function (x) { return h('li', null, x); })),
+      h('p', { class: 'as-script-say' }, s.outro));
   }
 
   var SETUP_SRC_YOUNG = [
@@ -587,7 +643,7 @@
     function renderTodo() {
       var q = ctx.get('patient', {}) || {};
       U.clear(todo);
-      todo.appendChild(h('span', { class: 'as-todo-k' }, bandOf(ctx.a()) === 'under6' ? 'Needed for the referral:' : 'Needed to complete this step:'));
+      todo.appendChild(h('span', { class: 'as-todo-k' }, bandOf(ctx.a()) === 'under6' ? 'Needed for the referral' : 'Needed to complete this step'));
       [['Reference', !!q.ref], ['Age', !!q.age], ['Consent', !!q.consent]].forEach(function (x) {
         todo.appendChild(h('span', { class: 'as-req' + (x[1] ? ' is-done' : '') }, h('span', { class: 'as-req-i', 'aria-hidden': 'true' }, x[1] ? '✓' : ''), x[0],
           h('span', { class: 'sr-only' }, x[1] ? ', done' : ', to do')));
@@ -595,21 +651,27 @@
     }
     el.appendChild(todo);
 
-    /* Age first: everything below adapts to the age group. */
+    /* Card 1, the patient: age first (everything below adapts to the age group), then the details. */
     var p0 = ctx.get('patient', {}) || {};
     var ageIn = ui.input({ type: 'number', inputmode: 'numeric', min: 0, max: 120, value: p0.age === null || p0.age === undefined ? '' : p0.age,
       onSave: function (v) { var n = parseInt(v, 10); ctx.set('patient.age', isNaN(n) || n < 0 ? null : n); } });
-    var bandHost = h('div', { class: 'as-span as-bandhost', 'aria-live': 'polite' });
-    el.appendChild(h('section', { class: 'card as-card as-agecard' },
-      h('h2', null, 'How old is the patient?'),
-      h('div', { class: 'form-grid' },
-        ui.field('Age (years)', ageIn, 'Enter this first. The steps adapt to the age group.'),
-        bandHost)));
+    var bandHost = h('div', { class: 'as-bandhost', 'aria-live': 'polite' });
+    var detailsHost = h('div', { class: 'as-details' });
+    var patientSide = h('span');
+    var patientCard = card({ icon: 'file', title: 'Patient', sub: 'Enter the age first. The steps adapt to the age group.', side: patientSide, cls: 'as-agecard' }, [
+      h('div', { class: 'as-agerow' }, h('div', { class: 'as-agefield' }, ui.field('Age (years)', ageIn)), bandHost),
+      detailsHost]);
+    el.appendChild(patientCard);
 
     var body = h('div', { class: 'as-setup' });
     el.appendChild(body);
 
     var bandSig = null, layout = null, api = {};
+
+    function paintPatient() {
+      var q = ctx.get('patient', {}) || {};
+      fill(patientSide, q.ref && q.age ? ui.badge('✓ Done', 'ok') : ui.badge(!q.ref && !q.age ? 'Reference and age needed' : !q.ref ? 'Reference needed' : 'Age needed', 'warn'));
+    }
 
     function renderBand(a) {
       var band = bandOf(a), age = ageOf(a), need = needOf(a);
@@ -638,31 +700,28 @@
 
     function stopCard(a) {
       var info = bandInfo(a);
-      return h('section', { class: 'card as-card as-stop' },
-        h('h2', null, 'Under 6: refer, do not assess here'),
-        h('p', { class: 'as-stop-lead' }, info.note || 'Refer to a service with expertise in ADHD in young children.'),
+      return card({ icon: 'alert', tone: 'err', title: 'Under 6: refer, do not assess here', sub: info.note || 'Refer to a service with expertise in ADHD in young children.' }, [
         ui.list([
           'This workspace covers people aged 6 and over. Do not continue the assessment steps here.',
           'Record the referral below: the concerns, how they affect the child and family at home and at nursery or school, the support already tried, whether parent training was offered, and any safeguarding concern.',
           'Act on any safety or safeguarding concern today, under local procedures, and record it in the safety step.',
           'The Report step builds a short referral note from what you record here.',
           'If the age is wrong, correct it above and the steps will open again.'
-        ]),
-        h('div', { class: 'row' },
+        ], 'list as-stoplist'),
+        h('div', { class: 'row as-actions' },
           ui.btn({ label: 'Open the referral note', kind: 'primary', onClick: function () { ctx.go('report'); } }),
           ui.btn({ label: 'Safety and safeguarding', kind: 'ghost', onClick: function () { ctx.go('risk'); } }),
           ui.btn({ label: 'Change the age', kind: 'ghost', onClick: function () { try { ageIn.focus(); ageIn.select(); } catch (e) { /* ignore */ } } })),
-        sourcesBox(srcList(info.src) || ['NICE NG87 1.5.7 to 1.5.9 (ADHD in children under 5)', 'Clinical practice: this workspace covers ages 6 and over']));
+        sourcesBox(srcList(info.src) || ['NICE NG87 1.5.7 to 1.5.9 (ADHD in children under 5)', 'Clinical practice: this workspace covers ages 6 and over'])]);
     }
     /* Under 6: the details a referral needs (reference, referrer, reason, who gave information, consent and the
        referral notes). No assessment fields. */
-    function referralForm() {
+    function referralCard() {
       var p = ctx.get('patient', {}) || {}, y = p.young || {}, inf = p.informants || {};
       function text(key, ph, rows) { return ui.input({ value: p[key], placeholder: ph, rows: rows, onSave: function (v) { ctx.set('patient.' + key, key === 'ref' ? v.trim() : v); } }); }
       var refIn = text('ref', 'For example AB0412 or J.S.');
       refIn.setAttribute('aria-required', 'true');
-      body.appendChild(h('section', { class: 'card as-card' },
-        h('h2', null, 'Referral details'),
+      return card({ icon: 'route', title: 'Referral details', sub: 'What the receiving service needs to know.' }, [
         h('div', { class: 'form-grid' },
           ui.field('Reference or initials', refIn, 'Required. Never a name or NHS number.'),
           ui.field('Referred by', text('referrer', 'For example GP, health visitor, nursery, paediatrician')),
@@ -670,13 +729,11 @@
           ui.field('Who has parental responsibility', ui.input({ value: y.pr, placeholder: 'For example both parents, a special guardian', onSave: function (v) { ctx.set('patient.young.pr', v); } })),
           h('div', { class: 'as-span' }, ui.field('Reason for referral', text('reason', 'The main concerns, in the parent\'s or carer\'s words', 3))),
           h('div', { class: 'as-span' }, ui.field('Referral notes', text('referralNotes', 'Concerns; impact at home and at nursery or school; support already tried; whether ADHD-focused group parent training was offered; any safeguarding concern and what you did', 6)))),
-        h('h3', null, 'Who gave information'),
-        h('div', { class: 'as-checkgrid' }, PRESENT_YOUNG.map(function (x) {
+        group('Who gave information', pills(PRESENT_YOUNG.map(function (x) {
           return ui.check({ label: x[0] === 'patient' ? 'The child' : x[0] === 'teacher' ? 'Nursery or school' : x[1], checked: !!inf[x[0]], onChange: function (v) { ctx.set('patient.informants.' + x[0], v); } });
-        })),
-        h('div', { class: 'as-confirm' },
-          ui.check({ label: 'A person with parental responsibility consents to the referral', hint: 'Record who consented. If consent is not given, note why and act on any safeguarding concern anyway.',
-            checked: !!p.consent, onChange: function (v) { ctx.set('patient.consent', v); } }))));
+        }))),
+        confirmRow(ui.check({ label: 'A person with parental responsibility consents to the referral', hint: 'Record who consented. If consent is not given, note why and act on any safeguarding concern anyway.',
+          checked: !!p.consent, onChange: function (v) { ctx.set('patient.consent', v); } }))]);
     }
 
     /* The rest of the step, built for the current age group. Rebuilt only when the layout changes. */
@@ -688,8 +745,9 @@
       if (key === layout) return;
       layout = key;
       U.clear(body);
+      U.clear(detailsHost);
       api = {};
-      if (band === 'under6') { body.appendChild(stopCard(a)); referralForm(); return; }
+      if (band === 'under6') { body.appendChild(stopCard(a)); body.appendChild(referralCard()); return; }
       details(isYoung(a), band, age);
     }
 
@@ -697,7 +755,7 @@
       var p = ctx.get('patient', {}) || {};
       var y = p.young || {};
 
-      /* Patient details */
+      /* Patient details, inside the patient card under the age. */
       var refMsg = h('p', { class: 'as-warnmsg', id: ui.nid('refmsg'), 'aria-live': 'polite' });
       var refHint = h('p', { class: 'hint', id: ui.nid('refhint') }, 'Required. Never a name or NHS number.');
       var refIn = ui.input({ value: p.ref, placeholder: 'For example AB0412 or J.S.', onSave: function (v) { ctx.set('patient.ref', v.trim()); refCheck(); } });
@@ -722,81 +780,56 @@
       function ytext(key, ph, rows) {
         return ui.input({ value: y[key], placeholder: ph, rows: rows, onSave: function (v) { ctx.set('patient.young.' + key, v); } });
       }
-      body.appendChild(h('section', { class: 'card as-card' },
-        h('h2', null, 'Patient details'),
-        h('div', { class: 'form-grid' },
-          refField,
-          ui.field('Sex', sexSel),
-          ui.field('Gender identity (optional)', text('gender', 'How the patient describes themselves')),
-          young ? ui.field('School', ytext('school', 'For example: primary school, secondary school, college')) : ui.field('Occupation', text('occupation', 'For example nurse, student, between jobs')),
-          young ? ui.field('Year group', ytext('year', 'For example Year 4')) : null,
-          ui.field('Referred by', text('referrer', young ? 'For example GP, school, paediatrician, CAMHS' : 'For example GP, self-referral, CAMHS transition')),
-          ui.field('Date of assessment', ui.input({ type: 'date', value: p.date || U.today(), onSave: function (v) { ctx.set('patient.date', v || undefined); } })),
-          h('div', { class: 'as-span' }, ui.field('Reason for referral', text('reason', young
-            ? 'The main concerns in the referral, in the parent\'s or carer\'s words and in the child\'s own words'
-            : 'The main concerns in the referral and in the patient\'s own words', 3))))));
+      detailsHost.appendChild(h('div', { class: 'form-grid as-detailgrid' },
+        refField,
+        ui.field('Sex', sexSel),
+        ui.field('Gender identity (optional)', text('gender', 'How the patient describes themselves')),
+        young ? ui.field('School', ytext('school', 'For example: primary school, secondary school, college')) : ui.field('Occupation', text('occupation', 'For example nurse, student, between jobs')),
+        young ? ui.field('Year group', ytext('year', 'For example Year 4')) : null,
+        ui.field('Referred by', text('referrer', young ? 'For example GP, school, paediatrician, CAMHS' : 'For example GP, self-referral, CAMHS transition')),
+        ui.field('Date of assessment', ui.input({ type: 'date', value: p.date || U.today(), onSave: function (v) { ctx.set('patient.date', v || undefined); } })),
+        h('div', { class: 'as-span' }, ui.field('Reason for referral', text('reason', young
+          ? 'The main concerns in the referral, in the parent\'s or carer\'s words and in the child\'s own words'
+          : 'The main concerns in the referral and in the patient\'s own words', 3)))));
 
-      /* Who gives information, and what you have */
+      /* Card 2: who gives information, and what you have. */
       var inf = p.informants || {}, src = p.sources || {};
-      if (!young) {
-        body.appendChild(h('div', { class: 'grid-2 as-grid' },
-          h('section', { class: 'card as-card' },
-            h('h2', null, 'Who is present today'),
-            h('p', { class: 'hint' }, 'The most useful informant knew the patient before age 12. If nobody is here, note who could be contacted.'),
-            PRESENT.map(function (x) {
+      var whoList = young ? PRESENT_YOUNG : PRESENT;
+      body.appendChild(card({ icon: 'users', title: young ? 'Who gives information' : 'Informants and records',
+        sub: young ? 'Hear from home and from school about how things are now, and hear the child\'s or young person\'s own view. If someone is not here, note how you will contact them.'
+          : 'The most useful informant knew the patient before age 12. If nobody is here, note who could be contacted.' }, [
+        h('div', { class: 'as-cols' },
+          group(young ? 'Informants' : 'Present today', [
+            pills(whoList.map(function (x) {
               return ui.check({ label: x[1], checked: !!inf[x[0]], onChange: function (v) { ctx.set('patient.informants.' + x[0], v); } });
-            }),
-            ui.field('Someone else (who)', ui.input({ value: inf.other, placeholder: 'For example friend, support worker', onSave: function (v) { ctx.set('patient.informants.other', v.trim()); } }))),
-          h('section', { class: 'card as-card' },
-            h('h2', null, 'Information available'),
-            ui.check({ label: 'School reports', hint: 'Primary school reports are the most useful.', checked: !!src.schoolReports, onChange: function (v) { ctx.set('patient.sources.schoolReports', v); } }),
-            ui.check({ label: 'Previous records or assessments', hint: 'For example GP records, CAMHS letters, educational psychology reports.', checked: !!src.previousRecords, onChange: function (v) { ctx.set('patient.sources.previousRecords', v); } }),
-            h('hr', { class: 'sep as-sep' }),
-            ui.check({ label: 'Interpreter needed', hint: 'Book a professional interpreter. Avoid family members interpreting.', checked: !!p.interpreter, onChange: function (v) { ctx.set('patient.interpreter', v); } }))));
-      } else {
-        body.appendChild(h('div', { class: 'grid-2 as-grid' },
-          h('section', { class: 'card as-card' },
-            h('h2', null, 'Who gives information'),
-            h('p', { class: 'hint' }, 'Hear from home and from school about how things are now, and hear the child\'s or young person\'s own view. If someone is not here, note how you will contact them.'),
-            PRESENT_YOUNG.map(function (x) {
-              return ui.check({ label: x[1], checked: !!inf[x[0]], onChange: function (v) { ctx.set('patient.informants.' + x[0], v); } });
-            }),
-            ui.field('Someone else (who)', ui.input({ value: inf.other, placeholder: 'For example foster carer, grandparent, SENCO, social worker', onSave: function (v) { ctx.set('patient.informants.other', v.trim()); } }))),
-          h('section', { class: 'card as-card' },
-            h('h2', null, 'School and records'),
-            ui.seg({ label: 'Special educational needs', options: SEN, value: y.sen || null, onChange: function (v) { ctx.set('patient.young.sen', v); } }),
-            h('p', { class: 'hint as-senhint' }, 'SEN support is extra help from the school. An EHCP (education, health and care plan, England) is a legal plan from the local authority.'),
-            ui.check({ label: 'School reports and work samples', hint: 'The current report, attendance and any exclusions. Earlier reports if concerns started sooner.', checked: !!src.schoolReports, onChange: function (v) { ctx.set('patient.sources.schoolReports', v); } }),
-            ui.check({ label: 'Previous records or assessments', hint: 'For example health visitor or GP records, speech and language therapy, educational psychology or CAMHS letters.', checked: !!src.previousRecords, onChange: function (v) { ctx.set('patient.sources.previousRecords', v); } }),
-            h('hr', { class: 'sep as-sep' }),
-            ui.check({ label: 'Interpreter needed', hint: 'Book a professional interpreter. Avoid family members, and never the child, interpreting.', checked: !!p.interpreter, onChange: function (v) { ctx.set('patient.interpreter', v); } }))));
-      }
+            })),
+            ui.field('Someone else (who)', ui.input({ value: inf.other, placeholder: young ? 'For example foster carer, grandparent, SENCO, social worker' : 'For example friend, support worker',
+              onSave: function (v) { ctx.set('patient.informants.other', v.trim()); } }))]),
+          group(young ? 'School and records' : 'Records to hand', [
+            young ? ui.seg({ label: 'Special educational needs', options: SEN, value: y.sen || null, onChange: function (v) { ctx.set('patient.young.sen', v); } }) : null,
+            young ? h('p', { class: 'hint as-senhint' }, 'SEN support is extra help from the school. An EHCP (education, health and care plan, England) is a legal plan from the local authority.') : null,
+            rows([
+              ui.check({ label: young ? 'School reports and work samples' : 'School reports', hint: young ? 'The current report, attendance and any exclusions. Earlier reports if concerns started sooner.' : 'Primary school reports are the most useful.',
+                checked: !!src.schoolReports, onChange: function (v) { ctx.set('patient.sources.schoolReports', v); } }),
+              ui.check({ label: 'Previous records or assessments', hint: young ? 'For example health visitor or GP records, speech and language therapy, educational psychology or CAMHS letters.' : 'For example GP records, CAMHS letters, educational psychology reports.',
+                checked: !!src.previousRecords, onChange: function (v) { ctx.set('patient.sources.previousRecords', v); } })])])),
+        h('div', { class: 'as-cardfoot' }, ui.check({ label: 'Interpreter needed', hint: young ? 'Book a professional interpreter. Avoid family members, and never the child, interpreting.' : 'Book a professional interpreter. Avoid family members interpreting.',
+          checked: !!p.interpreter, onChange: function (v) { ctx.set('patient.interpreter', v); } }))]));
 
+      /* Card 3: explain, and record consent. */
+      var consentSide = h('span', { 'aria-live': 'polite' });
       if (!young) {
-        /* Explain the interview (adults) */
-        body.appendChild(h('section', { class: 'card as-card' },
-          h('h2', null, 'Explain the interview'),
-          h('p', { class: 'hint' }, 'Read this aloud or say it in your own words.'),
-          h('div', { class: 'as-script' },
-            h('p', null, 'Thank you for coming. Before we start, I will explain how today works.'),
-            h('ul', null,
-              h('li', null, 'I will ask about things like concentration, getting organised, restlessness and acting on the spur of the moment.'),
-              h('li', null, 'First we talk about the last six months. Then we go back to when you were at primary school, roughly age 5 to 12.'),
-              h('li', null, 'For each question I will ask for real examples from your own life. Examples help me understand what it is like for you.'),
-              h('li', null, 'With your permission, I would also like to hear from someone who knew you as a child, or knows you well now.'),
-              h('li', null, 'It usually takes between one and a half and three hours. We can take a break whenever you need one.'),
-              h('li', null, 'This is a conversation, not a test. There are no right or wrong answers. "I don\'t know" or "I can\'t remember" are fine answers.'),
-              h('li', null, 'At the end I will tell you what I think, or explain what else I need before I can give you an answer.'),
-              h('li', null, 'What you tell me is confidential. The exception is if I am worried about your safety or someone else\'s: then I may need to share it.')),
-            h('p', null, 'Do you have any questions before we begin?')),
-          h('div', { class: 'as-confirm' },
-            ui.check({ label: 'Patient understands the purpose and agrees to the assessment', hint: 'Record verbal consent. If the patient does not agree, stop and note why.',
-              checked: !!p.consent, onChange: function (v) { ctx.set('patient.consent', v); } }))));
+        body.appendChild(card({ icon: 'shield', title: 'Explain the interview', sub: 'Read this aloud or say it in your own words.', side: consentSide }, [
+          scriptBox(adultScript()),
+          confirmRow(ui.check({ label: 'Patient understands the purpose and agrees to the assessment', hint: 'Record verbal consent. If the patient does not agree, stop and note why.',
+            checked: !!p.consent, onChange: function (v) { ctx.set('patient.consent', v); } }))]));
+        api.paint = function () {
+          var q = ctx.get('patient', {}) || {};
+          fill(consentSide, q.consent ? ui.badge('✓ Consent recorded', 'ok') : ui.badge('Consent needed', 'warn'));
+        };
       } else {
         /* Explain the assessment: one version for the parent or carer, one for the child or young person. */
-        body.appendChild(h('section', { class: 'card as-card' },
-          h('h2', null, 'Explain the assessment'),
-          h('p', { class: 'hint' }, 'Read these aloud or say them in your own words. Use the version for the person you are talking to.'),
+        body.appendChild(card({ icon: 'info', title: 'Explain the assessment', sub: 'Read these aloud or say them in your own words. Use the version for the person you are talking to.' },
           ui.tabs([
             { id: 'parent', label: 'To the parent or carer', render: function () { return scriptBox(parentScript(band)); } },
             { id: 'young', label: band === 'child' ? 'To the child' : 'To the young person', render: function () { return scriptBox(youngScript(band)); } }
@@ -820,50 +853,60 @@
           basisMsg.textContent = v && !cur ? 'The consent basis recorded does not fit this age. Choose it again.' : '';
           consentMsg.textContent = q.consent && !cur ? 'Record the consent basis above.' : '';
           swField.hidden = !yy.lac;
+          fill(consentSide, q.consent && cur ? ui.badge('✓ Consent recorded', 'ok') : q.consent ? ui.badge('Basis needed', 'warn') : ui.badge('Consent needed', 'warn'));
         };
-        body.appendChild(h('section', { class: 'card as-card' },
-          h('h2', null, 'Parental responsibility and consent'),
-          h('div', { class: 'form-grid' },
-            ui.field('Who has parental responsibility', ytext('pr', 'For example both parents, a special guardian, or the local authority with the parents'),
+        body.appendChild(card({ icon: 'shield', title: 'Parental responsibility and consent', sub: 'Who can consent, on what basis, and what the child or young person agrees to.', side: consentSide }, [
+          group('Who can consent', [
+            h('div', { class: 'as-narrow' }, ui.field('Who has parental responsibility', ytext('pr', 'For example both parents, a special guardian, or the local authority with the parents'),
               'Check who can consent before you start.')),
-          ui.check({ label: 'Looked after by the local authority', hint: 'Who can consent depends on the legal order. Record the social worker.', checked: !!y.lac,
-            onChange: function (v) { ctx.set('patient.young.lac', v); } }),
-          swField,
-          h('hr', { class: 'sep as-sep' }),
-          ui.seg({ label: 'Consent basis', options: copts.map(function (o) { return { v: o.v, l: o.l }; }), value: basisOf(y.consentBasis) || null,
-            onChange: function (v) { ctx.set('patient.young.consentBasis', v); } }),
-          basisDesc, basisMsg,
-          ui.check({ label: 'The child or young person agrees to take part (assent)', hint: 'Explain in words they understand and record their view. If they do not want to take part, pause and talk it through.',
-            checked: !!y.assent, onChange: function (v) { ctx.set('patient.young.assent', v); } }),
-          age !== null && age >= 12 ? ui.check({ label: 'Seen on their own for part of the assessment', hint: 'Explain confidentiality and its limits first.',
-            checked: !!y.seenAlone, onChange: function (v) { ctx.set('patient.young.seenAlone', v); } }) : null,
-          ui.check({ label: 'Consent to contact the school', hint: 'For a teacher report or rating scale now, and later to share the outcome and support plan.',
-            checked: !!y.schoolConsent, onChange: function (v) { ctx.set('patient.young.schoolConsent', v); } }),
-          h('div', { class: 'as-confirm' },
+            rows([ui.check({ label: 'Looked after by the local authority', hint: 'Who can consent depends on the legal order. Record the social worker.', checked: !!y.lac,
+              onChange: function (v) { ctx.set('patient.young.lac', v); } })]),
+            swField]),
+          group('Consent basis', [
+            ui.seg({ label: 'Consent basis', hideLabel: true, options: copts.map(function (o) { return { v: o.v, l: o.l }; }), value: basisOf(y.consentBasis) || null,
+              onChange: function (v) { ctx.set('patient.young.consentBasis', v); } }),
+            basisDesc, basisMsg]),
+          group('Agreement and school contact', rows([
+            ui.check({ label: 'The child or young person agrees to take part (assent)', hint: 'Explain in words they understand and record their view. If they do not want to take part, pause and talk it through.',
+              checked: !!y.assent, onChange: function (v) { ctx.set('patient.young.assent', v); } }),
+            age !== null && age >= 12 ? ui.check({ label: 'Seen on their own for part of the assessment', hint: 'Explain confidentiality and its limits first.',
+              checked: !!y.seenAlone, onChange: function (v) { ctx.set('patient.young.seenAlone', v); } }) : null,
+            ui.check({ label: 'Consent to contact the school', hint: 'For a teacher report or rating scale now, and later to share the outcome and support plan.',
+              checked: !!y.schoolConsent, onChange: function (v) { ctx.set('patient.young.schoolConsent', v); } })])),
+          confirmRow([
             ui.check({ label: 'Consent given on the basis above', hint: 'Record who gave consent and what was agreed. If consent is not given, stop and note why.',
               checked: !!p.consent, onChange: function (v) { ctx.set('patient.consent', v); } }),
-            consentMsg)));
-        api.paint();
+            consentMsg])]));
       }
+      api.paint();
 
-      /* Preparation checklist */
+      /* Card 4: preparation, grouped by when it is done. */
       var PL = young ? PREP_YOUNG : PREP;
-      var prepLive = h('p', { class: 'as-live', 'aria-live': 'polite' });
-      var prepMeter = h('div', { class: 'as-meter' });
+      var prepSide = h('span', { 'aria-live': 'polite' });
+      var prepMeter = h('div', { class: 'as-meter as-prepmeter' });
+      var prep = ctx.get('patient.prep', {}) || {};
+      var used = [], grpCounts = [];
+      var grpEls = PREP_GROUPS.map(function (g, gi) {
+        var its = g.keys.map(function (k) { return PL.filter(function (x) { return x[0] === k; })[0]; }).filter(Boolean);
+        if (gi === PREP_GROUPS.length - 1) its = its.concat(PL.filter(function (x) { return used.concat(its.map(function (i) { return i[0]; })).indexOf(x[0]) < 0; }));
+        its.forEach(function (x) { used.push(x[0]); });
+        if (!its.length) return null;
+        var n = h('span');
+        grpCounts.push({ el: n, its: its });
+        return group(g.title, rows(its.map(function (x) {
+          return ui.check({ label: x[1], checked: !!prep[x[0]], onChange: function (v) { ctx.set('patient.prep.' + x[0], v ? true : undefined); } });
+        })), { side: n, sub: g.sub });
+      });
+      body.appendChild(card({ icon: 'list', title: 'Have you got everything?', side: prepSide,
+        sub: 'Missing something is not a reason to stop. Note it, and plan how to fill the gap (for example, phone ' + (young ? 'the school' : 'an informant') + ' later).' }, [
+        prepMeter, h('div', { class: 'as-cols' }, grpEls)]));
       api.renderPrep = function () {
         var pr = ctx.get('patient.prep', {}) || {};
         var n = PL.filter(function (x) { return pr[x[0]]; }).length;
-        prepLive.textContent = n + ' of ' + PL.length + ' ready';
+        fill(prepSide, ui.badge(n + ' of ' + PL.length + ' ready', n === PL.length ? 'ok' : 'neutral'));
         fill(prepMeter, ui.progress(n, PL.length, 'Preparation checklist'));
+        grpCounts.forEach(function (g) { g.el.textContent = countText(g.its.filter(function (x) { return pr[x[0]]; }).length, g.its.length); });
       };
-      var prep = ctx.get('patient.prep', {}) || {};
-      body.appendChild(h('section', { class: 'card as-card' },
-        h('h2', null, 'Have you got everything?'),
-        h('div', { class: 'as-prephead' }, prepLive, prepMeter),
-        h('div', { class: 'as-checkgrid' }, PL.map(function (x) {
-          return ui.check({ label: x[1], checked: !!prep[x[0]], onChange: function (v) { ctx.set('patient.prep.' + x[0], v ? true : undefined); } });
-        })),
-        h('p', { class: 'hint' }, 'Missing something is not a reason to stop. Note it, and plan how to fill the gap (for example, phone ' + (young ? 'the school' : 'an informant') + ' later).')));
       api.renderPrep();
 
       if (young) body.appendChild(h('div', { class: 'as-srcend' }, sourcesBox(SETUP_SRC_YOUNG.concat(srcList(bandInfo(ctx.a()).src) || []))));
@@ -871,10 +914,12 @@
 
     build();
     renderTodo();
+    paintPatient();
     ctx.onChange('patient', U.debounce(function () {
       if (!el.isConnected) return;
       build();
       renderTodo();
+      paintPatient();
       if (api.renderPrep) api.renderPrep();
       if (api.paint) api.paint();
     }, 60));
@@ -887,22 +932,29 @@
     var core = ids.core;
     var all = ids.all.concat(core.filter(function (id) { return ids.all.indexOf(id) < 0; }));
     var list = toolList(all);
+    function optional(t) { return core.indexOf(t.id) < 0; }
     if (!ids.young) {
       questionnaireStep(el, ctx, {
         tools: list,
-        optional: function (t) { return core.indexOf(t.id) < 0; },
+        optional: optional,
         intro: ui.callout('info', h('p', null, 'Rating scales support the assessment but never make the diagnosis. A positive screen means "assess carefully". A negative screen does not rule ADHD out, especially in people who mask or have little insight.'), 'Scales support, the interview decides'),
-        groups: [{ title: 'Questionnaires', hint: 'Ideally completed before the appointment. Go through the answers with the patient and ask for an example of any high score.', filter: function () { return true; } }]
+        groups: [
+          { title: 'Core scales', hint: 'Ideally completed before the appointment. Go through the answers with the patient and ask for an example of any high score.', filter: function (t) { return !optional(t); } },
+          { title: 'Optional scales', hint: 'Use these when they add something to the picture.', filter: optional }
+        ]
       });
       return;
     }
     questionnaireStep(el, ctx, {
       tools: list,
-      optional: function (t) { return core.indexOf(t.id) < 0; },
+      optional: optional,
       intro: ui.callout('info', h('div', null,
         h('p', null, 'Parent and teacher rating scales are helpful added tools, but they never make the diagnosis on their own. A negative scale does not rule ADHD out.'),
         h('p', null, 'Ask for forms from home and from school. When raters disagree, ask each of them for recent examples: the gap is information, not a verdict.')), 'Scales support, the interview decides'),
-      groups: [{ title: 'Rating scales', hint: 'Ideally completed before the appointment by a parent or carer and by a teacher. Licensed scales are not reproduced here: score the official form, then enter the result.', filter: function () { return true; } }],
+      groups: [
+        { title: 'Core scales', hint: 'Complete these for everyone at this age.', filter: function (t) { return !optional(t); } },
+        { title: 'Rating scales', hint: 'Ideally completed before the appointment by a parent or carer and by a teacher. Licensed scales are not reproduced here: score the official form, then enter the result.', filter: optional }
+      ],
       emptyTitle: 'No rating scales listed for this age',
       emptyBody: 'Use your service\'s usual parent and teacher forms and record the results in your notes.',
       sources: h('div', { class: 'as-srcend' }, sourcesBox(['NICE NG87 1.3.1 (observer reports), 1.3.2 (rating scales such as the Conners and SDQ are added tools; school observation when in doubt)', 'Licences and official forms: see each tool\'s licence line']))
@@ -936,65 +988,74 @@
       ? 'Ask about safety early, and again if anything changes. This includes the child\'s or young person\'s own safety at home, at school, online and in the community. If there is immediate risk, pause the ADHD assessment and follow your local crisis or safeguarding pathway.'
       : 'Ask about safety early, and again if anything changes. If there is immediate risk, pause the ADHD assessment and follow your local crisis pathway.'), 'Safety first'));
 
-    el.appendChild(h('section', { class: 'card as-card' },
-      h('h2', null, 'Ask about safety'),
-      pick(R, 'intro', young) ? h('p', null, pick(R, 'intro', young)) : null,
-      young ? h('p', { class: 'hint' }, 'Ask the parent or carer, and ask the child or young person in words that suit their age. Where you can, see a young person on their own for part of this.') : null,
-      ask.length ? h('ol', { class: 'list as-asklist' }, ask.map(function (q) { return h('li', null, q); }))
-        : h('p', { class: 'muted' }, 'Risk prompts are not available in this build. Use your local risk assessment.')));
+    /* Card 1: the questions. */
+    var intro = pick(R, 'intro', young);
+    el.appendChild(card({ icon: 'search', title: 'Ask about safety',
+      sub: young ? 'Ask the parent or carer, and ask the child or young person in words that suit their age. Where you can, see a young person on their own for part of this.'
+        : 'Ask each question in your own words. Record what you find in the next card.' }, [
+      ask.length ? h('ol', { class: 'as-asklist' }, ask.map(function (q) { return h('li', null, q); }))
+        : h('p', { class: 'muted' }, 'Risk prompts are not available in this build. Use your local risk assessment.'),
+      intro ? fold('Why this matters', h('p', { class: 'as-foldp' }, intro)) : null]));
 
-    /* Findings, grouped by level. Ticks are stored as risk.<itemId> = true. */
+    /* Card 2: findings, grouped by level. Ticks are stored as risk.<itemId> = true. */
     var alerts = h('div', { class: 'as-alerts' });
-    var findings = h('section', { class: 'card as-card' }, h('h2', null, 'What did you find?'),
-      h('p', { class: 'hint' }, young ? 'Tick anything the child or young person, the parent or carer, or the school describes. Actions appear below as you tick.'
-        : 'Tick anything the patient describes. Actions appear below as you tick.'));
-    LEVELS.forEach(function (lv) {
+    var findSide = h('span', { 'aria-live': 'polite' });
+    var levelCounts = [];
+    var levelEls = LEVELS.map(function (lv) {
       var its = items.filter(function (it) { return levelOf(it) === lv.id; });
-      if (!its.length) return;
-      findings.appendChild(h('div', { class: 'as-level' },
-        h('h3', null, ui.badge(lv.badge, lv.kind), h('span', null, lv.title)),
-        its.map(function (it) {
-          return ui.check({ label: it.text || it.short || it.id, checked: !!ctx.get('risk.' + it.id), cls: 'as-rcheck',
+      if (!its.length) return null;
+      var n = h('span');
+      levelCounts.push({ el: n, its: its });
+      return h('div', { class: 'as-grp as-level as-level-' + lv.id },
+        h('div', { class: 'as-grp-head' }, h('h3', { class: 'as-grp-t' }, ui.badge(lv.badge, lv.kind), h('span', null, lv.title)), h('span', { class: 'as-grp-n' }, n)),
+        rows(its.map(function (it) {
+          return ui.check({ label: it.text || it.short || it.id, checked: !!ctx.get('risk.' + it.id),
             onChange: function (v) { ctx.set('risk.' + it.id, v ? true : undefined); renderAlerts(); } });
         })));
     });
-    if (!items.length) findings.appendChild(h('p', { class: 'muted' }, 'No risk items available. Record what you found in the notes.'));
-    findings.appendChild(alerts);
-    el.appendChild(findings);
+    el.appendChild(card({ icon: 'flag', title: 'What did you find?', side: findSide,
+      sub: young ? 'Tick anything the child or young person, the parent or carer, or the school describes. Actions appear below as you tick.'
+        : 'Tick anything the patient describes. Actions appear below as you tick.' }, [
+      items.length ? levelEls : h('p', { class: 'muted' }, 'No risk items available. Record what you found in the notes.'),
+      alerts]));
 
-    /* C-SSRS screen, when the tools library has it (and, for young people, it covers their age). */
+    /* Card 3: the C-SSRS screen, when the tools library has it (and, for young people, it covers their age).
+       Its questions fold away once the screen is complete; the result shows on the card. */
+    var csSide = h('span', { 'aria-live': 'polite' }), csMeta = h('span');
     if (cssrs) {
-      var cs = h('section', { class: 'card as-card' }, h('h2', null, cssrs.name || cssrs.abbr || 'C-SSRS'), aboutTool(cssrs));
+      var csBody;
       if (hasItems(cssrs)) {
-        cs.appendChild(AA.components.questionnaire(cssrs, {
-          answers: ctx.get('tools.cssrs.answers', {}) || {},
-          onAnswer: function (n, v) { ctx.set('tools.cssrs.answers.' + n, v === null ? undefined : v); renderAlerts(); }
-        }));
+        var r0 = cssrsResult();
+        csBody = lazyDetails('Questions', function (body) {
+          body.appendChild(h('div', { class: 'as-qwrap' }, AA.components.questionnaire(cssrs, {
+            answers: ctx.get('tools.cssrs.answers', {}) || {},
+            onAnswer: function (n, v) { ctx.set('tools.cssrs.answers.' + n, v === null ? undefined : v); renderAlerts(); }
+          })));
+        }, { open: !(r0 && r0.complete), meta: csMeta, cls: 'as-fold as-csfold' });
       } else {
-        cs.appendChild(ui.callout('info', h('p', null, 'Not reproduced here. Use the official form and record the result in the notes.')));
+        csBody = ui.callout('info', h('p', null, 'Not reproduced here. Use the official form and record the result in the notes.'));
       }
-      cs.appendChild(h('div', { class: 'row as-foot' }, ui.btn({ label: 'Scoring guide in the tools library', kind: 'quiet', small: true, go: 'tool-cssrs' })));
-      el.appendChild(cs);
+      el.appendChild(card({ icon: 'shield', title: cssrs.name || cssrs.abbr || 'C-SSRS', sub: toolFacts(cssrs), side: csSide }, [
+        toolAbout(cssrs),
+        csBody,
+        h('div', { class: 'row as-foot' }, ui.btn({ label: 'Scoring guide in the tools library', kind: 'quiet', small: true, go: 'tool-cssrs' }))]));
     }
 
-    /* Notes and plan */
+    /* Card 4: notes, the plan, and the tick that completes the step. */
     var actionHint = h('p', { class: 'as-warnmsg', 'aria-live': 'polite' });
-    el.appendChild(h('section', { class: 'card as-card' },
-      h('h2', null, 'Notes and plan'),
-      h('div', { class: 'stack' },
+    var revSide = h('span', { 'aria-live': 'polite' });
+    el.appendChild(card({ icon: 'file', title: 'Notes and plan', sub: 'What was said, what you did, and your confirmation.', side: revSide }, [
+      h('div', { class: 'as-fieldstack' },
         ui.field(young ? 'What the young person and the parent or carer said' : 'What the patient said', ui.input({ rows: 3, value: ctx.get('risk.notes', ''),
           placeholder: young ? 'Their words, protective factors, who is around them, any professionals involved.' : 'Their words, protective factors, supports, access to means.',
           onSave: function (v) { ctx.set('risk.notes', v.trim() ? v : undefined); } })),
         ui.field('Action taken or safety plan', ui.input({ rows: 3, value: ctx.get('risk.action', ''),
           placeholder: young ? 'Who you told (for example the safeguarding lead), what was agreed, crisis contacts given, follow-up.' : 'Who you told, what was agreed, crisis contacts given, follow-up.',
-          onSave: function (v) { ctx.set('risk.action', v.trim() ? v : undefined); } })))));
-
-    el.appendChild(h('section', { class: 'as-sec' },
-      h('h2', null, 'Confirm'),
-      h('div', { class: 'as-confirm' },
+          onSave: function (v) { ctx.set('risk.action', v.trim() ? v : undefined); } }))),
+      confirmRow([
         ui.check({ label: 'Safety reviewed: no immediate risk, or risk plan in place', hint: 'This completes the step. You can come back and change it at any time.',
           checked: !!ctx.get('risk.reviewed'), onChange: function (v) { ctx.set('risk.reviewed', v); } }),
-        actionHint)));
+        actionHint])]));
 
     /* One closed Sources disclosure for the step: the risk data's sources for this age group
        (risk.srcYoung for young people) and the source behind each finding shown above. */
@@ -1053,14 +1114,33 @@
       }
       var needAction = (hi.length || crHit) && !String(ctx.get('risk.action', '') || '').trim();
       actionHint.textContent = needAction ? 'Risk items are ticked: record the action taken or the safety plan above.' : '';
+      /* Status chips on the cards. */
+      var ticked = items.filter(function (it) { return r[it.id]; }).length;
+      fill(findSide, hi.length ? ui.badge(U.plural(hi.length, 'item') + ' to act on', 'err') : ticked ? ui.badge(ticked + ' noted', 'info') : ui.badge('Nothing ticked', 'neutral'));
+      levelCounts.forEach(function (g) { g.el.textContent = countText(g.its.filter(function (it) { return r[it.id]; }).length, g.its.length, 'ticked'); });
+      fill(revSide, r.reviewed ? ui.badge('✓ Reviewed', 'ok') : ui.badge('Not reviewed yet', 'warn'));
+      if (cssrs) {
+        fill(csSide, !hasItems(cssrs) ? ui.badge('Official form', 'neutral') : !cr || !cr.answered ? ui.badge('Not started', 'neutral')
+          : !cr.complete ? ui.badge(cr.answered + ' of ' + cr.of + ' answered', 'neutral') : ui.sevChip(cr.sev, cr.band || 'Complete'));
+        csMeta.textContent = !cr || !cr.answered ? 'Not started' : cr.complete ? 'Complete' : cr.answered + ' of ' + cr.of + ' answered';
+      }
     }
     renderAlerts();
     ctx.onChange('risk', U.debounce(function () { if (el.isConnected) renderAlerts(); }, 80));
+    if (cssrs) ctx.onChange('tools', U.debounce(function () { if (el.isConnected) renderAlerts(); }, 80));
   } };
 
   /* ---------- 4. Clinical history ---------- */
 
   var FLAG_TAG = { adhd: ['Supports ADHD', 'accent'], ddx: ['Consider differential', 'warn'], risk: ['Risk', 'err'], treat: ['Relevant to treatment', 'info'] };
+  /* Short names for the area track (the full title shows above each area). */
+  var AREA_SHORT = { presenting: 'Presenting problem', dev: 'Early life', school: 'Education', work: 'Work', relationships: 'Relationships', mental: 'Mental health',
+    substance: 'Substances', physical: 'Physical health', meds: 'Medicines', family: 'Family', forensic: 'Police and courts', social: 'Daily life', sleep: 'Sleep', strengths: 'Strengths and goals' };
+  function areaShort(s) {
+    if (AREA_SHORT[s.id]) return AREA_SHORT[s.id];
+    var t = String(s.title || s.id).split(/[,:]| and /)[0].trim();
+    return t.length > 3 ? t : String(s.title || s.id);
+  }
 
   function condName(id) { var c = AA.byId('ddx', id); return c ? c.name : id; }
   function condLink(id, text) {
@@ -1101,59 +1181,81 @@
       el.appendChild(ui.empty('History prompts are not available', 'Take the history as usual and record it in your notes.'));
       return;
     }
+    function covered(r) {
+      return !!(r && ((r.checks && Object.keys(r.checks).some(function (k) { return r.checks[k]; })) || r.notes || r.none));
+    }
 
+    /* Card 1: what the history has flagged so far. */
     var live = h('p', { class: 'as-live', 'aria-live': 'polite' });
-    var flagHost = h('div');
-    el.appendChild(h('section', { class: 'card as-card as-flags' }, h('h2', null, 'Flags from the history'), live, flagHost));
+    var flagHost = h('div', { class: 'as-flaghost' });
+    var covSide = h('span');
+    el.appendChild(card({ icon: 'flag', title: 'Flags from the history', sub: 'Items that point to a differential, to risk or to treatment choices collect here as you tick them.', side: covSide, cls: 'as-flags' }, [live, flagHost]));
 
-    var metas = {};
+    /* The areas, one at a time. Starts at the first area not covered yet. */
     var rec0 = ctx.get('history', {}) || {};
-    var firstOpen = null;
-    secs.forEach(function (s) { if (!firstOpen && !covered(rec0[s.id])) firstOpen = s.id; });
-
-    var list = h('section', { class: 'as-sec' }, h('h2', null, 'History by area'),
-      h('p', { class: 'hint' }, young
-        ? 'Open each area, ask the parent or carer and the child or young person the prompts that fit, and tick what applies. If there is nothing of note, tick "Nothing relevant".'
-        : 'Open each area, ask the prompts that fit, and tick what applies. If there is nothing of note, tick "Nothing relevant".'));
-    secs.forEach(function (s) {
-      var r = rec0[s.id] || {};
+    var start = 0;
+    secs.some(function (s, i) { if (!covered(rec0[s.id])) { start = i; return true; } return false; });
+    var cur = null;   /* {s, status, ticks}: the area on screen, repainted as answers change */
+    function paintArea() {
+      if (!cur) return;
+      var r = (ctx.get('history', {}) || {})[cur.s.id] || {};
+      var c = r.checks || {};
+      var n = cur.s.items.filter(function (it) { return c[it.id]; }).length;
+      var chips = [];
+      if (n) chips.push(ui.badge(U.plural(n, 'item') + ' ticked', 'accent'));
+      if (r.notes) chips.push(ui.badge('Notes', 'info'));
+      if (r.none) chips.push(ui.badge('Nothing relevant', 'neutral'));
+      chips.push(covered(r) ? ui.badge('✓ Covered', 'ok') : ui.badge('Not covered yet', 'warn'));
+      fill(cur.status, chips);
+      if (cur.ticks) cur.ticks.textContent = countText(n, cur.s.items.length, 'ticked');
+    }
+    function areaBody(s) {
+      var r = (ctx.get('history', {}) || {})[s.id] || {};
       var checks = r.checks || {};
-      var meta = h('span', { class: 'as-meta' });
-      metas[s.id] = meta;
-      var body = h('div', { class: 'as-dbody' },
-        s.why ? h('p', { class: 'muted' }, s.why) : null,
-        s.prompts && s.prompts.length ? [h('h3', { class: 'as-subh' }, 'Ask'), h('ul', { class: 'list as-prompts' }, s.prompts.map(function (q) { return h('li', null, q); }))] : null,
-        s.items && s.items.length ? [h('h3', { class: 'as-subh' }, 'Tick what applies'), h('div', { class: 'as-items' }, s.items.map(function (it) {
+      var status = h('div', { class: 'as-astatus', 'aria-live': 'polite' });
+      var ticks = h('span');
+      cur = { s: s, status: status, ticks: ticks };
+      var node = h('div', { class: 'as-area' },
+        status,
+        s.why ? fold('Why this area matters', h('p', { class: 'as-foldp' }, s.why)) : null,
+        s.prompts && s.prompts.length ? group('Ask', h('ul', { class: 'as-prompts' }, s.prompts.map(function (q) { return h('li', null, q); })), { side: U.plural(s.prompts.length, 'question') }) : null,
+        s.items && s.items.length ? group('Tick what applies', rows(s.items.map(function (it) {
           var row = ui.check({ label: it.t, hint: it.note || null, checked: !!checks[it.id], cls: 'as-item',
             onChange: function (v) { ctx.set('history.' + s.id + '.checks.' + it.id, v ? true : undefined); } });
           var tags = flagTags(it, young);
           if (tags) row.appendChild(tags);
           return row;
-        }))] : null,
+        }), 'as-items'), { side: ticks }) : null,
         h('div', { class: 'as-none' }, ui.check({ label: 'Nothing relevant in this area', checked: !!r.none,
           onChange: function (v) { ctx.set('history.' + s.id + '.none', v ? true : undefined); } })),
         ui.field('Notes: ' + s.title, ui.input({ rows: 3, value: r.notes || '',
           placeholder: young ? 'Details, dates, and what the parent or carer and the young person said.' : 'Details, dates and the patient\'s own words.',
           onSave: function (v) { ctx.set('history.' + s.id + '.notes', v.trim() ? v : undefined); } })));
-      var d = ui.details(s.title, body, { open: s.id === firstOpen, meta: meta, cls: 'as-hsec' });
-      d.id = 'as-h-' + s.id;
-      list.appendChild(d);
-    });
-    el.appendChild(list);
+      paintArea();
+      return node;
+    }
+    var stepper = ui.stepper(secs.map(function (s) {
+      return { title: s.title, label: areaShort(s), done: function () { return covered((ctx.get('history', {}) || {})[s.id]); }, render: function () { return areaBody(s); } };
+    }), { start: start, label: 'History areas', eyebrow: function (i) { return 'Area ' + (i + 1) + ' of ' + secs.length; } });
+    el.appendChild(h('div', { class: 'as-stephead' },
+      h('p', { class: 'ds-label' }, 'History by area'),
+      h('p', { class: 'hint' }, young
+        ? 'One area at a time. Ask the parent or carer and the child or young person the prompts that fit, and tick what applies. If there is nothing of note, tick "Nothing relevant". Green areas are covered.'
+        : 'One area at a time. Ask the prompts that fit and tick what applies. If there is nothing of note, tick "Nothing relevant". Green areas are covered.')));
+    el.appendChild(stepper);
 
     /* Mental state observations (NICE NG87 1.3.1). Stored with the history as history.mse.notes. */
-    el.appendChild(h('section', { class: 'card as-card as-mse' },
-      h('h2', null, 'Mental state observations'),
-      h('p', { class: 'hint' }, young
+    el.appendChild(card({ icon: 'eye', title: 'Mental state observations', cls: 'as-mse',
+      sub: young
         ? 'Observe the child throughout, including in the waiting room and with their parent or carer. A calm, focused child in a new one-to-one setting does not rule ADHD out. Note anything that points away from ADHD or needs action today.'
-        : 'Observe throughout the interview. Note anything that points away from ADHD or needs action today, such as low mood, elation, psychotic features or intoxication.'),
-      h('ul', { class: 'chip-list as-mse-areas', 'aria-label': 'Areas to cover' },
-        ['Appearance and behaviour', 'Restlessness and distractibility', 'Speech', 'Mood and affect', 'Thought form and content', 'Perception', 'Cognition', 'Insight'].map(function (x) { return h('li', { class: 'chip' }, x); })),
+        : 'Observe throughout the interview. Note anything that points away from ADHD or needs action today, such as low mood, elation, psychotic features or intoxication.' }, [
+      h('ul', { class: 'ds-chips as-mse-areas', 'aria-label': 'Areas to cover' },
+        ['Appearance and behaviour', 'Restlessness and distractibility', 'Speech', 'Mood and affect', 'Thought form and content', 'Perception', 'Cognition', 'Insight'].map(function (x) { return h('li', null, h('span', { class: 'ds-chip' }, x)); })),
       ui.field('What you observed', ui.input({ rows: 4, value: ctx.get('history.mse.notes', ''),
         placeholder: young
           ? 'For example: played with the toys, left the chair often, interrupted their parent, speech normal for age, mood "fine", no concerns about safety.'
           : 'For example: casually dressed, fidgeting throughout, speech normal rate, mood "fed up", reactive affect, no psychotic features, good insight.',
-        onSave: function (v) { ctx.set('history.mse.notes', v.trim() ? v : undefined); } }))));
+        onSave: function (v) { ctx.set('history.mse.notes', v.trim() ? v : undefined); } }))]));
 
     /* One closed Sources disclosure for the step: for each area, the sources behind its items
        (src fields, mostly on the young-person items) and any area-level source. */
@@ -1166,20 +1268,18 @@
     var histSrc = sourcesBox([], histLines, srcParts(histAll).length);
     if (histSrc) el.appendChild(h('div', { class: 'as-srcend' }, histSrc));
 
-    function covered(r) {
-      return !!(r && ((r.checks && Object.keys(r.checks).some(function (k) { return r.checks[k]; })) || r.notes || r.none));
+    function flagRows(list) {
+      return h('ul', { class: 'as-flaglist' }, list.map(function (x) { return h('li', null, h('span', { class: 'as-fl-name' }, x[0]), h('span', { class: 'as-fl-items' }, x[1])); }));
     }
-
     function update() {
       var rec = ctx.get('history', {}) || {};
       var byDdx = {}, order = [], treat = [], risk = [], adhd = 0, ticked = 0, done = 0;
       secs.forEach(function (s) {
         var r = rec[s.id] || {};
         var c = r.checks || {};
-        var n = 0;
         (s.items || []).forEach(function (it) {
           if (!c[it.id]) return;
-          n++; ticked++;
+          ticked++;
           var dx = ddxOf(it, young);
           if (dx) {
             if (!byDdx[dx]) { byDdx[dx] = []; order.push(dx); }
@@ -1190,14 +1290,11 @@
           if (it.flag === 'adhd') adhd++;
         });
         if (covered(r)) done++;
-        var m = metas[s.id];
-        U.clear(m);
-        if (n) m.appendChild(ui.badge(n + ' ticked', 'accent'));
-        if (r.notes) m.appendChild(ui.badge('Notes', 'info'));
-        if (r.none) m.appendChild(ui.badge('Nothing relevant', 'neutral'));
-        if (!covered(r)) m.appendChild(h('span', null, 'Not covered yet'));
       });
       live.textContent = done + ' of ' + secs.length + ' areas covered. ' + U.plural(ticked, 'item') + ' ticked' + (adhd ? ', ' + adhd + ' supporting ADHD' : '') + '.';
+      fill(covSide, ui.badge(done + ' of ' + secs.length + ' areas', done === secs.length ? 'ok' : 'neutral'));
+      stepper.refresh();
+      paintArea();
 
       U.clear(flagHost);
       if (!order.length && !treat.length && !risk.length) {
@@ -1205,21 +1302,17 @@
         return;
       }
       if (order.length) {
-        flagHost.appendChild(h('h3', null, 'Consider in the differential'));
-        flagHost.appendChild(h('ul', { class: 'as-flaglist' }, order.map(function (id) {
-          return h('li', null, h('span', { class: 'as-fl-name' }, condLink(id)), h('span', { class: 'as-fl-items' }, byDdx[id].join('; ')));
-        })));
-        flagHost.appendChild(h('div', { class: 'row' }, ui.btn({ label: 'Review in differentials', kind: 'ghost', small: true, onClick: function () { ctx.go('ddx'); } })));
+        flagHost.appendChild(group('Consider in the differential', [
+          h('ul', { class: 'as-flaglist' }, order.map(function (id) {
+            return h('li', null, h('span', { class: 'as-fl-name' }, condLink(id)), h('span', { class: 'as-fl-items' }, byDdx[id].join('; ')));
+          })),
+          h('div', { class: 'row as-foot' }, ui.btn({ label: 'Review in differentials', kind: 'ghost', small: true, onClick: function () { ctx.go('ddx'); } }))], { side: String(order.length) }));
       }
       if (risk.length) {
-        flagHost.appendChild(h('h3', null, 'Risk'));
-        flagHost.appendChild(h('ul', { class: 'as-flaglist' }, risk.map(function (x) { return h('li', null, h('span', { class: 'as-fl-name' }, x[0]), h('span', { class: 'as-fl-items' }, x[1])); })));
-        flagHost.appendChild(h('div', { class: 'row' }, ui.btn({ label: 'Go to safety and risk', kind: 'ghost', small: true, onClick: function () { ctx.go('risk'); } })));
+        flagHost.appendChild(group('Risk', [flagRows(risk),
+          h('div', { class: 'row as-foot' }, ui.btn({ label: 'Go to safety and risk', kind: 'ghost', small: true, onClick: function () { ctx.go('risk'); } }))], { side: String(risk.length) }));
       }
-      if (treat.length) {
-        flagHost.appendChild(h('h3', null, 'Relevant to treatment'));
-        flagHost.appendChild(h('ul', { class: 'as-flaglist' }, treat.map(function (x) { return h('li', null, h('span', { class: 'as-fl-name' }, x[0]), h('span', { class: 'as-fl-items' }, x[1])); })));
-      }
+      if (treat.length) flagHost.appendChild(group('Relevant to treatment', flagRows(treat), { side: String(treat.length) }));
     }
     update();
     ctx.onChange('history', U.debounce(function () { if (el.isConnected) update(); }, 80));

@@ -322,25 +322,52 @@
 }
 
 /* ---------- Collateral ---------- */
-.iv-lead { margin: 0; color: var(--muted); max-width: 75ch; }
+/* Cards with an icon header and a status chip (DESIGN.md); inside them only hairlines, labels and folds. */
+.iv-col { display: flex; flex-direction: column; }
+.iv-ccard { margin: 0 0 1.1rem; padding: 1.25rem 1.5rem 1.4rem; }
+.iv-chead { display: flex; align-items: flex-start; gap: .85rem; margin: 0 0 1.05rem; }
+.iv-chead-ico { flex: 0 0 auto; width: 2.4rem; height: 2.4rem; border-radius: 10px; display: inline-grid; place-items: center; background: var(--accent-l); color: var(--accent-2); }
+.iv-chead-ico .ds-ico { width: 1.3rem; height: 1.3rem; }
+.iv-chead-t { flex: 1 1 auto; min-width: 0; padding-top: .1rem; }
+.iv-ccard .iv-chead-t h2 { font-size: 1.16rem; margin: 0; }
+.iv-csub { margin: .25rem 0 0; color: var(--muted); font-size: .9rem; line-height: 1.5; max-width: 72ch; }
+.iv-chead-side { flex: 0 0 auto; display: flex; align-items: center; gap: .35rem; padding-top: .3rem; }
+@media (max-width: 560px) {
+  .iv-ccard { padding: 1rem 1rem 1.15rem; }
+  .iv-chead { flex-wrap: wrap; gap: .45rem .7rem; }
+  .iv-chead-ico { width: 2.1rem; height: 2.1rem; }
+  .iv-chead-t { flex-basis: calc(100% - 2.9rem); }
+  .iv-chead-side { padding: 0 0 0 2.8rem; }
+}
+.iv-fold { border: 0; border-top: 1px solid var(--line); border-radius: 0; margin: 1rem 0 0; background: transparent; box-shadow: none; }
+.iv-fold + .iv-fold { margin-top: 0; }
+.iv-fold > summary { padding: .6rem 0; min-height: 44px; border-radius: 0; flex-wrap: wrap; row-gap: .1rem; }
+.iv-fold > summary:hover { background: transparent; }
+.iv-fold > summary:hover .disclosure-title { color: var(--accent-2); }
+.iv-fold[open] > summary { border-bottom: 0; }
+.iv-fold > .disclosure-body { padding: 0 0 .5rem; }
+.iv-fold .disclosure-title { font-size: .94rem; }
+/* Source tabs as pills that wrap (each shows its rating), so no source hides off screen on a phone. */
+.iv-ptabs > .tabs { flex-wrap: wrap; gap: .4rem; overflow: visible; border-bottom: 0; margin: 0 0 1rem; }
+.iv-ptabs > .tabs .tab { min-height: 40px; padding: .4rem .9rem; border: 1px solid var(--line-2); border-radius: 999px; background: var(--surface); font-size: .88rem; white-space: nowrap; }
+.iv-ptabs > .tabs .tab:hover { border-color: var(--accent); }
+.iv-ptabs > .tabs .tab[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.iv-ptabs > .tabs .tab[aria-selected="true"] .tab-count { background: var(--surface); color: var(--accent-2); }
+.iv-ptabs > .tab-panel { border-top: 1px solid var(--line); padding-top: 1rem; }
 .iv-src-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem .8rem; }
-.iv-src-head h3 { margin: 0; }
-.iv-src > .muted { margin: .3rem 0 .8rem; font-size: .92rem; max-width: 75ch; }
-.iv-src > .field { max-width: 460px; margin: 0 0 .8rem; }
+.iv-src-head h3 { margin: 0; font-size: 1.02rem; }
+.iv-src-intro { margin: .35rem 0 1rem; font-size: .9rem; color: var(--muted); max-width: 75ch; }
+.iv-srcpanel > .field { max-width: 460px; margin: 0 0 .9rem; }
 .iv-rate { display: flex; flex-direction: column; gap: .35rem; align-items: flex-start; margin: 0 0 .5rem; }
 .iv-rate-desc { margin: 0; }
 .iv-col-list { margin-top: .2rem; }
-.iv-col-sum h2 { font-size: 1.2rem; }
-.iv-col-live > p { margin: .5rem 0; }
-.iv-col-level { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .6rem; }
+.iv-col-live > p { margin: 0 0 .6rem; }
+.iv-col-level { max-width: 75ch; }
+.iv-col-kv { margin: 0; }
+.iv-col-kv > dd { font-weight: 700; }
 .iv-col-hint { margin: 0 0 .4rem; }
-.iv-col-consent { margin: 0 0 .8rem; padding-left: .6rem; border-left: 3px solid var(--warn); max-width: 70ch; }
-.iv-col-agree { margin: .7rem 0 0; }
-.iv-src > .disclosure + .disclosure { margin-top: .4rem; }
-.iv-dl-inline { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .3rem 1rem; margin: .6rem 0 0; }
-.iv-dl-inline dt { margin: 0; font-weight: 400; color: var(--muted); }
-.iv-dl-inline dd { margin: 0; font-weight: 700; }
-@media (max-width: 420px) { .iv-dl-inline { grid-template-columns: minmax(0, 1fr); gap: 0; } .iv-dl-inline dd { margin-bottom: .4rem; } }
+.iv-col-consent { margin: 0 0 .9rem; padding-left: .6rem; border-left: 3px solid var(--warn); max-width: 70ch; }
+.iv-col-live > .iv-col-agree { margin: .8rem 0 0; }
 
 /* Checked Yes / Unsure use dark text on the light dark-theme fills (white text there is too faint).
    In the light theme --surface is white, so nothing changes. */
@@ -350,3 +377,6 @@
 /* Short phone screens: let the step strip scroll away on a symptom card, so the question and the
    score bar have room. */
 @media (max-width: 999px) and (max-height: 740px) { .ws-head.is-sub ~ .stepper { position: static; } }
+
+/* Phones and touch screens: the collateral source tabs are at least 44px tall. */
+@media (max-width: 760px), (pointer: coarse) { .iv-ptabs > .tabs .tab, .iv-col-list .check { min-height: 44px; } }
