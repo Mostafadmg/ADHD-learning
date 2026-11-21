@@ -160,7 +160,8 @@
           'Until you load it, the interview uses the portal\'s own questions and examples (original wording, same structure).',
           'For commercial or service-wide digital use of the DIVA, check the DIVA Foundation\'s terms.'
         ]), { cls: 'dv-src-more' })),
-      h('div', { class: 'dv-src-act' }, ui.btn({ label: 'Load my DIVA 2.0 PDF', kind: 'primary', small: !!compact, onClick: function () { loadCopy(); } })));
+      h('div', { class: 'dv-src-act' }, ui.btn({ label: [h('span', { class: 'dv-l-long' }, 'Load my DIVA 2.0 PDF'), h('span', { class: 'dv-l-short' }, 'Load PDF')],
+        aria: 'Load my DIVA 2.0 PDF', kind: 'primary', small: !!compact, onClick: function () { loadCopy(); } })));
   }
   DV.sourceCard = sourceCard;
 
