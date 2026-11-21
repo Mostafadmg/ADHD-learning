@@ -224,8 +224,9 @@
   };
 
   /* Stat tiles. items: [{n: '51.7%', l: 'what it means', s: 'source (small)'}] */
-  ui.stats = function (items) {
-    return h('div', { class: 'ds-stats' }, (items || []).map(function (x) {
+  ui.stats = function (items, o) {
+    o = o || {};
+    return h('div', { class: 'ds-stats' + (o.cls ? ' ' + o.cls : '') }, (items || []).map(function (x) {
       return h('div', { class: 'ds-stat' }, h('span', { class: 'ds-stat-n' }, String(x.n)), h('span', { class: 'ds-stat-l' }, x.l), x.s ? h('span', { class: 'ds-stat-s' }, x.s) : null);
     }));
   };
@@ -327,7 +328,7 @@
 
   /* Section with a heading and a one-line purpose. o: {id, title, text, actions} */
   ui.section = function (o, content) {
-    return h('section', { class: 'ds-section', id: o.id || null, 'aria-labelledby': o.id ? o.id + '-h' : null },
+    return h('section', { class: 'ds-section' + (o.cls ? ' ' + o.cls : ''), id: o.id || null, 'aria-labelledby': o.id ? o.id + '-h' : null },
       h('div', { class: 'ds-section-head' }, h('h2', { id: o.id ? o.id + '-h' : null }, o.title), o.actions || null, o.text ? h('p', { class: 'ds-section-p' }, o.text) : null),
       content);
   };

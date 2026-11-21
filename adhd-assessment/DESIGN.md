@@ -45,12 +45,12 @@ calm, and professional**: short chunks, clear hierarchy, depth on demand. Brand 
   compass, target, repeat, eye, shield, heart, brain, list, link, flag, chart, calendar, pill, mail, route, school,
   star, scale, timeline, moon, drop, spark, user, logout, trash, steps).
 - `ui.hero({ eyebrow, title, text, actions, aside, h1 })`.
-- `ui.stats([{ n, l, s }])`: number, label, source (small).
+- `ui.stats([{ n, l, s }], { cls })`: number, label, source (small).
 - `ui.cards([{ icon | n, title, text, meta, tone, go | onClick }], { wide, cols })`: `wide` = cards at least 320px; `cols: 2 | 4` = fixed columns (one column on phones).
 - `ui.steps([{ title, text }] | [strings])`.
 - `ui.stepper([{ title, sub, label, done, render }], { start, eyebrow, onChange, label })` -> `.show(i)`, `.index()`, `.refresh()`.
 - `ui.acc([{ title, meta, n, render, open }], { title, actions })`: bodies are built on first open.
-- `ui.section({ id, title, text, actions }, content)`.
+- `ui.section({ id, title, text, actions, cls }, content)`.
 - `ui.toc([{ id, label }], { label })`: highlights the section in view; becomes a chip row on narrow screens inside `ui.split`.
 - `ui.split(main, aside, { left })`, `ui.chips([{ label, n, on, onClick | go }])`.
 - Existing: `ui.pageHead`, `ui.btn`, `ui.badge`, `ui.callout`, `ui.details`, `ui.tabs`, `ui.table`, `ui.seg`, `ui.check`, `ui.field`, `ui.input`.
