@@ -563,3 +563,30 @@ input:focus, select:focus, textarea:focus { border-color: var(--accent); box-sha
 .a-row-next.is-late { color: var(--err); }
 .a-row-next-k { font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 800; padding: .08rem .45rem; border-radius: 4px; background: var(--accent-l); color: var(--accent-2); }
 .a-row-next.is-late .a-row-next-k { background: var(--err-l); color: var(--err); }
+
+/* ---------- New patient (route new) ---------- */
+.np { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 1.2rem; align-items: start; }
+@media (max-width: 900px) { .np { grid-template-columns: minmax(0, 1fr); } }
+.np-card { padding: 1.4rem 1.5rem 1.5rem; position: relative; overflow: hidden; }
+.np-card::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--brand-line); }
+.np-h { font-size: 1.05rem; margin: 0 0 .9rem; }
+.np-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .9rem 1rem; }
+.np-wide { grid-column: 1 / -1; }
+@media (max-width: 560px) { .np-grid { grid-template-columns: minmax(0, 1fr); } }
+.np-grid input, .np-grid select, .np-grid textarea { width: 100%; min-height: 44px; font: inherit; font-size: 1rem; padding: .45rem .6rem; border: 1px solid var(--line-2); border-radius: 6px; background: var(--surface); color: var(--ink); }
+.np-grid textarea { min-height: 88px; resize: vertical; }
+.np-grid .hint { margin: .1rem 0 0; font-size: .8rem; }
+.np-consent { display: flex; gap: .7rem; align-items: flex-start; margin: 1.1rem 0 0; padding: .8rem .9rem; border-radius: var(--radius); background: var(--surface-2); cursor: pointer; font-size: .92rem; }
+.np-consent input { width: 22px; height: 22px; flex: 0 0 22px; margin-top: .05rem; accent-color: var(--accent); }
+.np-err { margin: .8rem 0 0; color: var(--err); font-weight: 600; }
+.np-act { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.1rem; }
+.np-go { min-height: 48px; padding-inline: 1.3rem; font-size: 1rem; }
+@media (max-width: 560px) { .np-act .btn { flex: 1 1 100%; } }
+.np-next { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.4rem 1.5rem; }
+.np-steps { list-style: none; counter-reset: np; margin: 0 0 .8rem; padding: 0; }
+.np-steps li { counter-increment: np; position: relative; display: flex; flex-direction: column; gap: .1rem; padding: 0 0 1rem 2.6rem; }
+.np-steps li::before { content: counter(np); position: absolute; left: 0; top: 0; width: 1.9rem; height: 1.9rem; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: .85rem; background: var(--accent-l); color: var(--accent-2); }
+.np-steps li:not(:last-child)::after { content: ""; position: absolute; left: .93rem; top: 2.1rem; bottom: .2rem; width: 2px; background: var(--line); }
+.np-steps li:first-child::before { background: var(--accent); color: var(--accent-ink); }
+.np-steps strong { color: var(--brand); }
+.np-steps span { color: var(--muted); font-size: .9rem; }

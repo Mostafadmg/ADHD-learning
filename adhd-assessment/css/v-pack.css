@@ -19,7 +19,7 @@
 @media (max-width: 760px) { .pk-hero { grid-template-columns: minmax(0, 1fr); } }
 
 /* Timeline */
-.pk-line { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .4rem; }
+.pk-line { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(116px, 1fr)); gap: .4rem; }
 .pk-st { position: relative; display: flex; flex-direction: column; gap: .2rem; padding: .7rem .65rem .75rem; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); min-width: 0; }
 .pk-st.is-cur { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-l); }
 .pk-st.is-done { background: var(--surface-2); }

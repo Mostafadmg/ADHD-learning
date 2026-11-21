@@ -8,7 +8,7 @@ Part of the [ADHD-learning](../README.md) project. Live (after merge to `main`):
 
 - **Assess and treat**: 19 guided steps in five phases. A live panel shows symptom counts and criteria status (and, in the Treat phase, the medicine, dose, latest blood pressure, pulse and weight, trial weeks and next review).
 
-  **Prepare**
+  **Prepare** (New assessment opens a short new-patient screen: reference, age, sex, referrer, referral date, reason and consent, with what happens next; Create opens the pre-assessment pack)
   1. Before you start: age first (it sets the age group), patient reference, consent and who is present. For young people also school and year group, SEN support or EHCP, who has parental responsibility, the consent basis and the young person's assent.
   2. Pre-assessment pack (onboarding): what to send for this age group and to whom (each item links to the printable form, the official PDF and the forms guide), tracking Sent, Back or Not needed, a 14-day reminder, letters to copy (welcome, informant, reminder, school, GP, appointment, information missing), the triage decision and booking the DIVA interview. Home shows every patient by stage with their next action.
   3. Screening questionnaires: adults ASRS v1.1, WURS-25, WFIRS-S and ASRS-5 with instant scoring; young people parent, teacher and self-report scales (such as Conners 4, SNAP-IV, Vanderbilt, ADHD-RS-5, SDQ and WFIRS-P). Licensed scales are not reproduced: you enter the result.

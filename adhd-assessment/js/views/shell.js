@@ -223,7 +223,7 @@
         h('p', { class: 'eyebrow' }, 'ADHD · clinician workspace'),
         h('h1', null, 'ADHD Assessment'),
         h('p', null, 'One patient record for the whole ADHD pathway, from referral to shared care, for adults and for young people aged 6 to 17.'),
-        h('p', null, 'Assess step by step: rating scales with instant scoring, an interview of all 18 symptoms, onset and impairment, information from family and school, differentials, and a scored conclusion with a draft report. Then plan treatment: pre-treatment checks, prescribing, titration, monitoring and shared care.'),
+        h('p', null, 'Onboard the patient with the pre-assessment pack, then run the DIVA 2.0 interview for adults (DIVA\'s own wording, from your copy), with collateral, differentials and a scored conclusion: the DIVA score form, DSM-5-TR criteria, the filled official DIVA form and a draft report. Then plan treatment: pre-treatment checks, prescribing, titration, monitoring and shared care.'),
         h('ul', null,
           h('li', null, 'Learn the method in the assessor training, then practise on cases.'),
           h('li', null, 'Use it live in clinic: read the question, tick what the patient describes, score as you go.'),
@@ -276,17 +276,64 @@
   }
   shell.isBlankDraft = isBlankDraft;
 
-  AA.router.register('new', { title: 'New assessment', render: function () {
+  /* New patient: a short intake (the record is created only when the clinician presses Create), with what happens
+     next. Then the pre-assessment pack opens; under 6 the first step opens instead (it advises referral). */
+  AA.router.register('new', { title: 'New patient', render: function (el) {
     /* Remove earlier untouched drafts so abandoned "Untitled patient" rows do not pile up on Home. */
     AA.assess.list().forEach(function (a) { if (isBlankDraft(a)) AA.assess.remove(a.id); });
-    var id = AA.assess.create({});
-    AA.progress.set('lastAssessment', id);
-    /* Replace the "new" history entry, so Back does not create another blank assessment. */
-    setTimeout(function () {
-      var t = 'assess-' + id + '-setup';
-      try { history.replaceState(null, '', '#' + t); } catch (e) { /* sandboxed */ }
+    var today = U.today();
+    var refIn = h('input', { type: 'text', id: 'np-ref', autocomplete: 'off', placeholder: 'For example AB-1024', required: true, 'aria-describedby': 'np-ref-h' });
+    var ageIn = h('input', { type: 'number', id: 'np-age', min: '0', max: '120', inputmode: 'numeric', required: true, 'aria-describedby': 'np-age-h' });
+    var sexSel = h('select', { id: 'np-sex' }, [['', 'Not recorded'], ['Female', 'Female'], ['Male', 'Male'], ['Intersex', 'Intersex'], ['Prefer not to say', 'Prefer not to say']].map(function (o) { return h('option', { value: o[0] }, o[1]); }));
+    var refByIn = h('input', { type: 'text', id: 'np-by', autocomplete: 'off', placeholder: 'GP, self-referral, Right to Choose…' });
+    var dateIn = h('input', { type: 'date', id: 'np-date', value: today });
+    var reasonIn = h('textarea', { id: 'np-reason', rows: 3, placeholder: 'What the patient wants to know, in their own words' });
+    var consent = h('input', { type: 'checkbox', id: 'np-consent' });
+    var err = h('p', { class: 'np-err', role: 'alert', hidden: true });
+    var go = h('button', { type: 'submit', class: 'btn btn-primary np-go' }, 'Create patient and open the pack →');
+    function field(id, label, control, hint, wide) {
+      return h('div', { class: 'field' + (wide ? ' np-wide' : '') }, h('label', { for: id }, label), control, hint ? h('p', { class: 'hint', id: id + '-h' }, hint) : null);
+    }
+    var form = h('form', { class: 'np-form', novalidate: true },
+      h('div', { class: 'np-grid' },
+        field('np-ref', 'Reference or initials *', refIn, 'Never a name or NHS number.', true),
+        field('np-age', 'Age *', ageIn, 'Sets the age group: adults 18+, young people 6 to 17.'),
+        field('np-sex', 'Sex', sexSel),
+        field('np-by', 'Referred by', refByIn),
+        field('np-date', 'Referral accepted on', dateIn),
+        field('np-reason', 'Reason for referral', reasonIn, null, true)),
+      h('label', { class: 'np-consent', for: 'np-consent' }, consent, h('span', null, h('strong', null, 'Consent recorded. '), 'The patient agrees to the assessment, and to us contacting their GP and the people they name.')),
+      err,
+      h('div', { class: 'np-act' }, go, ui.btn({ label: 'Cancel', kind: 'ghost', go: 'home' })));
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var ref = refIn.value.trim(), age = parseInt(ageIn.value, 10);
+      var problems = [];
+      if (!ref) problems.push('a reference');
+      if (isNaN(age) || age < 0 || age > 120) problems.push('the age');
+      if (problems.length) { err.textContent = 'Please add ' + problems.join(' and ') + '.'; err.hidden = false; (ref ? ageIn : refIn).focus(); return; }
+      var id = AA.assess.create({ ref: ref, age: age, sex: sexSel.value, referrer: refByIn.value.trim(), reason: reasonIn.value.trim(), consent: consent.checked, date: today });
+      if (dateIn.value) AA.assess.set(id, 'pack.dates.referral', dateIn.value);
+      AA.progress.set('lastAssessment', id);
+      var t = 'assess-' + id + '-' + (age < 6 ? 'setup' : 'pack');
+      try { history.replaceState(null, '', '#' + t); } catch (e2) { /* sandboxed */ }
+      U.toast('Patient ' + ref + ' created.', 'ok');
       AA.router.go(t);
-    }, 0);
+    });
+    var steps = [
+      ['Onboard', 'Send the pre-assessment pack: questionnaires, informant forms, and requests for school reports and GP records.'],
+      ['Triage and book', 'Enter what comes back, check safety, decide, and book the interview.'],
+      ['DIVA interview', 'About 90 minutes, adulthood then childhood, with a partner or family member if possible.'],
+      ['Diagnose and report', 'Differentials, the DIVA score form, DSM-5-TR criteria, the filled DIVA form and the report.'],
+      ['Treat, if needed', 'Pre-treatment checks, prescribing, titration, monitoring and shared care.']];
+    el.appendChild(ui.pageHead({ eyebrow: 'New patient', title: 'Start a new assessment', lead: 'A few details now. Everything else is added as you go, step by step.' }));
+    el.appendChild(h('div', { class: 'np' },
+      h('section', { class: 'card np-card', 'aria-label': 'Patient details' }, h('h2', { class: 'np-h' }, 'Patient details'), form),
+      h('aside', { class: 'np-next', 'aria-label': 'What happens next' },
+        h('h2', { class: 'np-h' }, 'What happens next'),
+        h('ol', { class: 'np-steps' }, steps.map(function (s) { return h('li', null, h('strong', null, s[0]), h('span', null, s[1])); })),
+        h('p', { class: 'hint' }, 'Everything stays in this browser. Use a reference, never a name.'))));
+    setTimeout(function () { try { refIn.focus(); } catch (e) { /* ignore */ } }, 0);
   } });
 
   /* ---------- Home ---------- */

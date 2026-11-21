@@ -836,7 +836,7 @@ Item ids are stored in records: never rename or reuse one. The pack links to the
 
 | Route | File | Purpose |
 |---|---|---|
-| `signin`, `home`, `new`, `about` | shell.js | profiles, dashboard (adult and child demo), new assessment, privacy and data |
+| `signin`, `home`, `new`, `about` | shell.js | profiles, dashboard (patients by stage with the next action; adult and child demo), new patient (a short intake form; the record is created on Create, then the pack step opens, or setup under 6), privacy and data |
 | `assess`, `assess-<id>-<step>[-<sub>]` | assess-frame.js | assessment workspace: all 19 steps, steps from assess-steps-a.js, assess-pack.js, assess-interview.js (with assess-diva.js for adults), assess-steps-b.js and assess-treat.js |
 | `journey-<id>` | assess-journey.js | case overview: next best action, attention, every step and its open items, sign-off |
 | `tools`, `tool-<id>`, `pathway` | library.js | instrument library, practice scoring, pathway and guidelines |

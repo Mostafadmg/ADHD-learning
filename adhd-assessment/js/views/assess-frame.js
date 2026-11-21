@@ -16,9 +16,9 @@
     { id: 'risk', title: 'Safety and risk', short: 'Risk', lead: 'Check safety first. Some answers mean the ADHD assessment should pause.', phase: 'prepare' },
     { id: 'history', title: 'Clinical history', short: 'History', lead: 'Development, school, work, relationships, mental and physical health, substances, family and forensic history.', phase: 'prepare' },
     { id: 'comorbid', title: 'Co-occurring conditions screen', short: 'Comorbidity', lead: 'Brief scales for the conditions that most often co-occur with, or mimic, ADHD.', phase: 'prepare' },
-    { id: 'ia', title: 'Interview part 1: inattention', short: 'Inattention', lead: 'Nine inattention symptoms (DSM-5-TR A1). Ask about adulthood first, then childhood (age 5-12).', phase: 'interview' },
-    { id: 'hi', title: 'Interview part 2: hyperactivity-impulsivity', short: 'Hyperactivity', lead: 'Nine hyperactivity-impulsivity symptoms (DSM-5-TR A2), adulthood then childhood.', phase: 'interview' },
-    { id: 'onset', title: 'Onset and impairment', short: 'Onset & impairment', lead: 'When symptoms started (criterion B), where they cause problems (C) and how much (D).', phase: 'interview' },
+    { id: 'ia', title: 'Interview part 1: inattention', short: 'Part 1 · Attention', lead: 'Nine inattention symptoms (DSM-5-TR A1). Ask about adulthood first, then childhood (age 5-12).', phase: 'interview' },
+    { id: 'hi', title: 'Interview part 2: hyperactivity-impulsivity', short: 'Part 2 · Hyperactivity', lead: 'Nine hyperactivity-impulsivity symptoms (DSM-5-TR A2), adulthood then childhood.', phase: 'interview' },
+    { id: 'onset', title: 'Onset and impairment', short: 'Part 3 · Onset & impairment', lead: 'When symptoms started (criterion B), where they cause problems (C) and how much (D).', phase: 'interview' },
     { id: 'collateral', title: 'Collateral information', short: 'Collateral', lead: 'Informants and school reports: who supports the history, and how strongly.', phase: 'interview' },
     { id: 'ddx', title: 'Differential diagnosis', short: 'Differentials', lead: 'Could another condition explain the symptoms better (criterion E), or does it co-occur?', phase: 'diagnose' },
     { id: 'validity', title: 'Symptom validity and consistency', short: 'Validity', lead: 'How much weight can the account bear? Consistency, incentives and over-reporting.', phase: 'diagnose' },
@@ -351,7 +351,8 @@
     var pref = AA.progress.get(key, null);
     /* Closed on symptom cards and once the step is complete (the summary line still shows the goal and the status). */
     var stepDone = (function () { var pr = progressOf(a, step); return pr.of > 0 && pr.done >= pr.of; })();
-    var open = isSub ? false : pref === null || pref === undefined ? roomy() && !stepDone : !pref;
+    /* Folded by default (the summary line keeps the goal, the time and the status); a choice the clinician makes is remembered. */
+    var open = isSub || stepDone ? false : pref === null || pref === undefined ? false : !pref;
     var statusHost = h('span', { class: 'guide-status' });
     var tabs = [];
     function add(id, label, items, render) { if (items.length) tabs.push({ id: id, label: label, count: items.length, render: render }); }
