@@ -10,29 +10,60 @@
    DIVA wording is not used.
    Worked examples are fictional people. Prevalence figures marked 'illustrative' are teaching assumptions, not data.
    Sources: research briefs of 21 October 2026 (tools-adhd, tools-comorbid, guidelines-uk, guidelines-intl, ddx-evidence);
-   Schiweck et al. 2021 meta-analysis (Neurosci Biobehav Rev 124:100-123) for bipolar disorder in adult ADHD. */
+   Schiweck et al. 2021 meta-analysis (Neurosci Biobehav Rev 124:100-123) for bipolar disorder in adult ADHD.
+   Page structure: the introduction is split into parts the forms page shows as structure rather than prose: intro (what
+   the guide covers), rule (the one rule for every form: eyebrow k, title t, html), scope (what forms can and cannot do),
+   review (how to review a returned pack, in order: t, d), order (how the list is arranged) and groups (the forms by
+   purpose, in the order of the assessment: id, title t, optional short label s, one-line purpose d, form ids). Views
+   fall back to intro alone, and group forms by kind,
+   when these are missing. The main course reads only forms[].example from this file. */
 AA.add('formsGuide', {
   intro:
-    "<p>Before the first appointment most services send questionnaires to the patient and, with consent, to people who know them, and ask for old school reports and records. " +
-    "This guide explains each one: what it is, why it is sent, who completes it, how to score and read it step by step, what each result means and what to do next, with a worked example.</p>" +
-    "<p><strong>One rule governs all of them.</strong> NICE NG87 1.3.2: a diagnosis of ADHD should not be made solely on rating scales or observational data; scales are helpful added tools. " +
-    "The diagnosis rests on a full clinical and psychosocial assessment, a full developmental and psychiatric history, observer reports and a mental state assessment (NG87 1.3.1). " +
-    "UKAAN's quality standard (AQAS 2024) goes further: self-report symptom scales are a <strong>baseline for measuring change</strong>, not a formative part of the diagnosis.</p>" +
-    "<h4>What forms can and cannot do</h4>" +
-    "<table><thead><tr><th>Forms can</th><th>Forms cannot</th></tr></thead><tbody>" +
-    "<tr><td>Give a baseline for measuring change after treatment</td><td>Make or rule out the diagnosis</td></tr>" +
-    "<tr><td>Point to symptoms, settings and impairments to probe at interview</td><td>Show that symptoms began before 12, unless written at the time</td></tr>" +
-    "<tr><td>Flag co-occurring conditions, mimics and risk early</td><td>Tell you whether ADHD or another condition explains the picture</td></tr>" +
-    "<tr><td>Bring in independent, contemporaneous evidence (school reports, records)</td><td>Rate impairment severity for you: that is the clinician's judgement</td></tr>" +
-    "</tbody></table>" +
-    "<h4>How to review a returned pack</h4>" +
-    "<ol><li><strong>Safety first, the day it arrives:</strong> PHQ-9 item 9, suicide and self-harm items on any form, and free-text comments. See the C-SSRS entry.</li>" +
-    "<li>ADHD self-report (ASRS, CAARS 2, BAARS-IV), then childhood recall (WURS-25), then impairment (WFIRS-S).</li>" +
-    "<li>Informant forms, side by side with the patient's answers.</li>" +
-    "<li>History questionnaire, school reports and previous records: build a dated timeline.</li>" +
-    "<li>Co-occurring condition screens (WSR-II, PHQ-9, GAD-7, MDQ, AUDIT, DAST-10, AQ-10, PCL-5, MSI-BPD, STOP-Bang).</li>" +
-    "<li>Write a short pre-assessment summary: what the forms suggest, what they cannot tell you, three to five hypotheses (including the main alternatives), and the questions that will test them at interview.</li></ol>" +
-    "<p>The forms below follow the course of the assessment: ADHD self-report, childhood recall, impairment, informants, history and records, co-occurring conditions, then safety. Read the safety items first whenever a pack arrives. Each entry says which assessment step uses it.</p>",
+    "<p>Before the first appointment most services send questionnaires to the patient and, with consent, to people who know them, and ask for old school reports and records.</p>",
+
+  rule: {
+    k: "One rule governs all of them",
+    t: "Never diagnose on rating scales alone",
+    html:
+      "<p>NICE NG87 1.3.2: a diagnosis of ADHD should not be made solely on rating scales or observational data; scales are helpful added tools. " +
+      "The diagnosis rests on a full clinical and psychosocial assessment, a full developmental and psychiatric history, observer reports and a mental state assessment (NG87 1.3.1).</p>" +
+      "<p>UKAAN's quality standard (AQAS 2024) goes further: self-report symptom scales are a <strong>baseline for measuring change</strong>, not a formative part of the diagnosis.</p>"
+  },
+
+  scope: {
+    can: [
+      "Give a baseline for measuring change after treatment",
+      "Point to symptoms, settings and impairments to probe at interview",
+      "Flag co-occurring conditions, mimics and risk early",
+      "Bring in independent, contemporaneous evidence (school reports, records)"
+    ],
+    cannot: [
+      "Make or rule out the diagnosis",
+      "Show that symptoms began before 12, unless written at the time",
+      "Tell you whether ADHD or another condition explains the picture",
+      "Rate impairment severity for you: that is the clinician's judgement"
+    ]
+  },
+
+  review: [
+    { t: "Safety first, the day it arrives", d: "PHQ-9 item 9, suicide and self-harm items on any form, and free-text comments. See the C-SSRS entry." },
+    { t: "ADHD symptoms", d: "ADHD self-report (ASRS, CAARS 2, BAARS-IV), then childhood recall (WURS-25), then impairment (WFIRS-S)." },
+    { t: "Informants", d: "Informant forms, side by side with the patient's answers." },
+    { t: "History and records", d: "History questionnaire, school reports and previous records: build a dated timeline." },
+    { t: "Co-occurring conditions", d: "Co-occurring condition screens (WSR-II, PHQ-9, GAD-7, MDQ, AUDIT, DAST-10, AQ-10, PCL-5, MSI-BPD, STOP-Bang)." },
+    { t: "Pre-assessment summary", d: "Write a short pre-assessment summary: what the forms suggest, what they cannot tell you, three to five hypotheses (including the main alternatives), and the questions that will test them at interview." }
+  ],
+
+  order: "The forms below follow the course of the assessment: ADHD self-report, childhood recall, impairment, informants, history and records, co-occurring conditions, then safety. Read the safety items first whenever a pack arrives. Each entry says which assessment step uses it.",
+
+  groups: [
+    { id: "adhd", t: "ADHD self-report", d: "Symptom scales: a screen and a baseline for measuring change, not evidence for the diagnosis.", forms: ["asrs18", "asrs5", "caars2", "baars4"] },
+    { id: "childhood", t: "Childhood recall and impairment", s: "Childhood and impairment", d: "How the patient remembers their childhood, and how much problems affect each area of life.", forms: ["wurs25", "wfirs"] },
+    { id: "informants", t: "Informants", d: "Ratings from people who know the patient now, or knew them before age 12.", forms: ["informant_forms"] },
+    { id: "records", t: "History and records", d: "Background history, and documents written at the time, which carry more weight than recall.", forms: ["history_questionnaire", "school_reports", "previous_records"] },
+    { id: "comorbid", t: "Co-occurring conditions", s: "Co-occurring", d: "Screens for conditions that mimic ADHD or occur alongside it. They prompt questions; they do not diagnose.", forms: ["wsr2", "phq9", "gad7", "mdq", "audit", "dast10", "aq10", "pcl5", "msibpd", "stopbang"] },
+    { id: "safety", t: "Safety", d: "Suicide and self-harm questions. Act on safety items the day a pack arrives.", forms: ["cssrs"] }
+  ],
 
   principles: [
     "Screening is not diagnosis. NICE NG87 1.3.2: never diagnose solely on rating scales; they are helpful added tools. The NHSE ADHD Taskforce (2025) adds that a positive screen is not enough for referral on its own, and a negative screen should not be used to exclude people.",
