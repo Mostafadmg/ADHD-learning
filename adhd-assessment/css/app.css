@@ -171,7 +171,7 @@ hr.sep { border: 0; border-top: 1px solid var(--line); margin: 1.4rem 0; }
 .btn .ico { font-size: 1.05em; }
 
 /* Badges and pills */
-.badge { display: inline-flex; align-items: center; gap: .3rem; font-size: .78rem; font-weight: 700; line-height: 1.2; padding: .2rem .55rem; border-radius: 999px; border: 1px solid transparent; white-space: nowrap; }
+.badge { display: inline-flex; align-items: center; gap: .3rem; font-size: .8125rem; font-weight: 700; line-height: 1.2; padding: .2rem .55rem; border-radius: 999px; border: 1px solid transparent; white-space: nowrap; }
 .badge-neutral { background: var(--surface-2); color: var(--muted); border-color: var(--line); }
 .badge-ok { background: var(--ok-l); color: var(--ok); }
 .badge-warn { background: var(--warn-l); color: var(--warn); }

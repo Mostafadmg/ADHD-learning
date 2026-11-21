@@ -124,6 +124,11 @@ Also keep in mind:
   when, tracking, letters, triage and booking; the workspace now has 19 steps. Home groups patients by stage with the next action.
   `#new` is a short new-patient form (creates the record on Create, then opens the pack). Step guides start folded; the
   interview steps are named Part 1 · Attention, Part 2 · Hyperactivity, Part 3 · Onset & impairment (DIVA's parts).
+- **Workspace redesign (21 Nov 2026):** every workspace page follows `adhd-assessment/DESIGN.md` (rules, the text-to-structure
+  table and the `AA.ui` builders: hero, stats, cards, steps, stepper, acc, section, toc, split, chips). Shared styles: `css/ds.css`
+  (design system) and `css/shell.css` (top bar with account menu, sidebar, Home dashboard, sign-in, and the step frame: a context
+  card with a journey bar below 1100px, a step kicker above it, the step guide as one row, a floating step bar). View CSS stays in
+  each view's own file and prefix. Read DESIGN.md before changing any workspace page.
 - **Start an assessment (27 Oct 2026):** the course sidebar (right after Home, and inside every module's lesson menu), the home hero and a home card open `adhd-assessment/index.html#new`. The workspace now runs the whole pathway in 18 steps grouped Prepare · Interview · Diagnose · Treat · Report, for adults and young people 6–17 (under 6: refer). New files: `js/engine/treatment.js` (`AA.treatment`), `js/data/tx-products.js`, `tx-pathway.js`, `tx-guide.js`, `age-bands.js`, `ddx-young.js`, `step-guide-young.js`, `js/views/assess-treat.js`, `css/v-assess-tx.css`; tests `tests/tx-tests.js`, `tests/young-tests.js` (run by `tests/run.js`). Record keys: `adult` = current 6 months and `child` = before 12 at every age. Doses, licences and NICE order match the course (M4/M5/M11) and were reviewed adversarially; see `adhd-assessment/ARCHITECTURE.md` §3–§6 before changing anything. Two demos: adult (Elvanse) and an 8-year-old (Concerta XL).
 - **M5 lesson 2 (methylphenidate products)** is static cards in `index.html` driven by `js/m5-mph.js`. Edit doses in the cards; keep them matching `js/data-brands.js` and M11.
   It covers every UK methylphenidate product (emc search, all results read 25 Oct 2026; Ambinet XL, Addepta XL, Kixel XL,

@@ -61,7 +61,7 @@
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.5rem 1.6rem; margin: 0 0 1.4rem; }
 .ds-hero::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--brand-line); }
 .ds-hero.no-aside { grid-template-columns: minmax(0, 1fr); }
-.ds-hero-k { margin: 0 0 .3rem; font-size: .74rem; letter-spacing: .11em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+.ds-hero-k { margin: 0 0 .3rem; font-size: .8125rem; letter-spacing: .11em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
 .ds-hero-t { margin: 0; font-family: var(--font-display); font-size: clamp(1.25rem, 1rem + .9vw, 1.6rem); color: var(--brand); line-height: 1.25; }
 .ds-hero-p { margin: .5rem 0 0; color: var(--muted); max-width: 62ch; line-height: 1.55; }
 .ds-hero-act { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
@@ -72,11 +72,11 @@
 .ds-stat { padding: .8rem .9rem; border-radius: var(--radius); background: var(--surface-2); border: 1px solid var(--line); min-width: 0; }
 .ds-stat-n { display: block; font-family: var(--font-display); font-size: 1.55rem; font-weight: 700; color: var(--accent-2); line-height: 1.1; font-variant-numeric: tabular-nums; }
 .ds-stat-l { display: block; margin-top: .25rem; font-size: .86rem; font-weight: 600; color: var(--ink); line-height: 1.35; }
-.ds-stat-s { display: block; margin-top: .2rem; font-size: .74rem; color: var(--muted); }
+.ds-stat-s { display: block; margin-top: .2rem; font-size: .8125rem; color: var(--muted); }
 
 /* Icon cards: short ideas side by side instead of a list in prose. */
 .ds-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: .75rem; margin: .6rem 0 0; padding: 0; list-style: none; }
-.ds-cards.is-2 { grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
+.ds-cards.is-2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); }
 .ds-cards.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .ds-cards.cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 @media (max-width: 1100px) { .ds-cards.cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
@@ -166,7 +166,7 @@ button.ds-card:hover, a.ds-card:hover { border-color: var(--accent); box-shadow:
 button.ds-chip, a.ds-chip { cursor: pointer; }
 button.ds-chip:hover, a.ds-chip:hover { border-color: var(--accent); color: var(--accent-2); }
 .ds-chip[aria-pressed="true"], .ds-chip.is-on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
-.ds-chip-n { font-size: .74rem; font-weight: 700; padding: 0 .4rem; border-radius: 999px; background: var(--surface-3); color: var(--muted); }
+.ds-chip-n { font-size: .8125rem; font-weight: 700; padding: 0 .4rem; border-radius: 999px; background: var(--surface-3); color: var(--muted); }
 .ds-chip.is-on .ds-chip-n, .ds-chip[aria-pressed="true"] .ds-chip-n { background: rgba(255, 255, 255, .25); color: inherit; }
 
 /* Definition rows: label and value. */
