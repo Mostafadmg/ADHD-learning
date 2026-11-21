@@ -1,36 +1,116 @@
 /* Treatment steps: treatment plan, pre-treatment checks, choose and prescribe, titration and reviews,
    monitoring and shared care, and the treatment live panel (js/views/assess-treat.js). Prefix .tx-.
-   Colours come only from the tokens in app.css (light and dark). One card level: inside a card, meaning
-   is shown with a left bar, a dot or a label, never a tinted box. Disclosures inside cards are borderless. */
+   Every step: page-level notes (.tx-ready), a summary card (ui.hero + .tx-sum), parts as single cards (ui.section,
+   .tx-card, ui.acc, ui.stepper), and a closed Sources disclosure. Colours come only from the tokens in app.css
+   (light and dark). One card level: inside a card, meaning is a left bar, a dot or a label, never a box. */
 
-/* ---------- Cards and text ---------- */
-.tx-card { margin: 0 0 1rem; padding: 1.25rem 1.5rem; }
-.tx-card > h2 { font-size: 1.22rem; margin: 0 0 .5rem; }
+/* ---------- Page-level notes: safety and readiness, above the summary ---------- */
+.tx-ready { display: flex; flex-direction: column; gap: .6rem; margin: 0 0 1rem; }
+.tx-ready:empty { display: none; }
+.tx-ready > .tx-note { margin: 0; max-width: none; padding: .8rem 1.05rem .85rem; border-radius: 0 var(--radius) var(--radius) 0; background: var(--surface-2); }
+.tx-ready > .tx-note-ok { background: var(--ok-l); }
+.tx-ready > .tx-note-warn { background: var(--warn-l); }
+.tx-ready > .tx-note-err { background: var(--err-l); }
+.tx-ready > .tx-note-info { background: var(--info-l); }
+.tx-ready > .tx-note .tx-note-t { font-size: 1rem; }
+.tx-ready > .callout { margin: 0; }
+
+/* ---------- Summary card (ui.hero) ---------- */
+.tx-sumhost:empty { display: none; }
+.tx-sum { margin: 0 0 1.25rem; align-items: start; }
+.tx-sum::before { background: var(--accent); }
+.tx-sum-ok::before { background: var(--ok); }
+.tx-sum-warn::before { background: var(--warn); }
+.tx-sum-err::before { background: var(--err); height: 5px; }
+.tx-sum-info::before { background: var(--info); }
+.tx-sum-neutral::before { background: var(--line-2); }
+.tx-sum-err { background: linear-gradient(180deg, var(--err-l), var(--surface) 9rem); }
+.tx-sum-warn { background: linear-gradient(180deg, var(--warn-l), var(--surface) 7rem); }
+.tx-sum .ds-hero-k { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .35rem .8rem; margin-bottom: .45rem; }
+.tx-sum .ds-hero-k .badge { text-transform: none; letter-spacing: 0; font-size: .8rem; }
+.tx-sum .ds-hero-t { display: flex; align-items: flex-start; gap: .65rem; font-size: clamp(1.15rem, 1rem + .55vw, 1.42rem); }
+.tx-sum-t { min-width: 0; padding-top: .1rem; overflow-wrap: anywhere; }
+.tx-sum-ico { flex: 0 0 auto; width: 2.1rem; height: 2.1rem; border-radius: 50%; display: inline-grid; place-items: center; background: var(--accent-l); color: var(--accent-2); }
+.tx-sum-ico .ds-ico { width: 1.2rem; height: 1.2rem; }
+.tx-sum-ok .tx-sum-ico { background: var(--ok-l); color: var(--ok); }
+.tx-sum-warn .tx-sum-ico { background: var(--warn-l); color: var(--warn); }
+.tx-sum-err .tx-sum-ico { background: var(--err); color: var(--surface); }
+.tx-sum-info .tx-sum-ico { background: var(--info-l); color: var(--info); }
+.tx-sum-neutral .tx-sum-ico { background: var(--surface-2); color: var(--muted); }
+.tx-sum-body { min-width: 0; }
+.tx-sum-p { margin: .5rem 0 0; color: var(--muted); max-width: 72ch; line-height: 1.5; }
+.tx-sum-next { margin: .9rem 0 0; max-width: 72ch; line-height: 1.5; }
+.tx-sum-next > strong { color: var(--brand); }
+.tx-sum .ds-hero-act { margin-top: .8rem; }
+.tx-sum .ds-hero-act:empty { display: none; }
+.tx-sum .tx-reasons { margin-top: .9rem; }
+.tx-sum .tx-note { margin: .8rem 0 0; }
+
+/* Key facts: label, value and a small line, in a row (two columns on phones), below a hairline */
+.tx-facts { list-style: none; margin: 1rem 0 0; padding: .2rem 0 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 10.5rem), 1fr)); gap: 0 1.1rem; border-top: 1px solid var(--line); }
+.tx-facts > li { min-width: 0; display: flex; }
+.tx-fact { display: flex; flex-direction: column; gap: .12rem; width: 100%; min-width: 0; padding: .65rem 0 .5rem; font: inherit; color: inherit; text-align: left; background: none; border: 0; border-radius: 6px; }
+button.tx-fact { cursor: pointer; padding-left: .35rem; padding-right: .35rem; margin-left: -.35rem; }
+button.tx-fact:hover { background: var(--surface-2); }
+button.tx-fact:hover .tx-fact-v > span:last-child { color: var(--accent-2); text-decoration: underline; text-underline-offset: 2px; }
+.tx-fact-k { font-size: .7rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+.tx-fact-v { display: flex; align-items: baseline; gap: .45rem; font-weight: 700; color: var(--ink); line-height: 1.3; overflow-wrap: break-word; hyphens: auto; font-variant-numeric: tabular-nums; }
+.tx-fact-v > span:last-child { min-width: 0; }
+.tx-fact-s { font-size: .82rem; color: var(--muted); line-height: 1.35; overflow-wrap: anywhere; }
+.tx-fdot { flex: 0 0 auto; width: .6rem; height: .6rem; border-radius: 50%; background: var(--line-2); transform: translateY(-.05rem); }
+.tx-fdot-ok { background: var(--ok); }
+.tx-fdot-warn { background: var(--warn); }
+.tx-fdot-err { background: var(--err); }
+.tx-fdot-info { background: var(--info); }
+.tx-fdot-neutral { background: var(--line-2); }
+
+/* Progress line: a meter, its words and an optional badge */
+.tx-progline { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .9rem; margin: .75rem 0 0; }
+.tx-progline .meter { flex: 1 1 160px; max-width: 320px; height: 8px; }
+.tx-progtext { font-weight: 600; font-size: .92rem; font-variant-numeric: tabular-nums; }
+
+/* ---------- Sections and cards ---------- */
+.tx-sec { margin: 1.9rem 0 0; }
+.tx-sumhost + .tx-sec, .tx-sumhost + .tx-ready + .tx-sec { margin-top: .4rem; }
+/* Heading and actions on one row, the one-line purpose always on its own row below. */
+.tx-sec .ds-section-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: .25rem 1rem; }
+.tx-sec .ds-section-p { grid-column: 1 / -1; margin: 0; }
+.tx-sec-act { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: .5rem; }
+.tx-card { margin: 0; padding: 1.25rem 1.5rem; }
+.tx-card + .tx-card, .tx-card + .ds-acc, .ds-acc + .tx-card, .tx-prodhost + .tx-card, .tx-infohost:not(:empty) { margin-top: 1rem; }
+.tx-card-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .4rem .8rem; margin: 0 0 .7rem; }
+.tx-card-head:last-child { margin-bottom: 0; }
+.tx-card-h { margin: 0; font-size: 1.06rem; }
+.tx-card > .tx-live:first-child > .tx-note:first-child, .tx-card > .tx-note:first-child { margin-top: 0; }
 .tx-lead { margin: 0 0 .6rem; max-width: 72ch; }
-.tx-card > .hint:first-of-type { margin-top: 0; }
-.tx-k { font-size: .74rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); margin: 0 0 .2rem; }
-.tx-subh { font-size: .8rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 1rem 0 .35rem; }
-.tx-h3 { font-size: 1.08rem; margin: 0; }
-.tx-count { font-weight: 700; margin: .2rem 0 .4rem; font-variant-numeric: tabular-nums; }
-.tx-count:empty, .tx-live:empty, .tx-srchost:empty, .tx-histbar:empty, .tx-ready:empty, .tx-q-hist:empty, .tx-use:empty, .tx-flags:empty, .tx-cmp:empty, .tx-bmi:empty, .tx-repeat:empty { display: none; }
+.tx-tabhint { margin: 0 0 .6rem; max-width: 72ch; }
+.tx-subh { font-family: var(--font-ui); font-size: .76rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); margin: 1.15rem 0 .4rem; }
+.tx-subrow { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem .7rem; margin: 1.15rem 0 .4rem; }
+.tx-subrow > .tx-subh { margin: 0; }
+.tx-live:empty, .tx-srchost:empty, .tx-histbar:empty, .tx-q-hist:empty, .tx-use:empty, .tx-flags:empty, .tx-cmp:empty, .tx-bmi:empty, .tx-repeat:empty, .tx-earlier:empty, .tx-infohost:empty { display: none; }
 .tx-next { margin: .6rem 0 .3rem; max-width: 72ch; }
-.tx-plan { margin: .5rem 0; max-width: 72ch; font-weight: 600; }
-.tx-med { margin: 0 0 .4rem; }
-.tx-cls { margin: 0 0 .4rem; }
+.tx-plan { margin: .2rem 0 .5rem; max-width: 72ch; line-height: 1.55; }
 .tx-empty { margin: .6rem 0; }
 .tx-ul { margin: .3rem 0; padding-left: 1.2rem; }
 .tx-ul li { margin: .2rem 0; }
 .tx-fields { margin: .7rem 0 .4rem; align-items: start; }
+.tx-datef { grid-template-columns: minmax(0, 17rem); }
 .tx-fwrap { display: flex; flex-direction: column; align-items: flex-start; gap: .2rem; min-width: 0; }
 .tx-fwrap > .field { align-self: stretch; }
 .tx-sub { border-top: 1px solid var(--line); padding-top: .85rem; margin-top: 1rem; }
+.tx-sub > .tx-subh:first-child { margin-top: 0; }
 .tx-sub > .seg-field + .hint { margin-top: .35rem; }
 .tx-sub > .seg-field + .check { margin-top: .4rem; }
+.tx-sub > .seg-field + .seg-field { margin-top: .6rem; }
 .tx-rowend { justify-content: flex-end; margin-top: .6rem; }
-.tx-ready { margin: 0 0 .8rem; }
-.tx-ready > .tx-note { margin-top: 0; }
 
-/* ---------- Notes: a left bar, no tinted box (they sit inside cards) ---------- */
+/* Count chips: "6 of 9", green with a tick when complete */
+.tx-cnt { display: inline-flex; align-items: center; gap: .25rem; font-size: .78rem; font-weight: 700; line-height: 1.2; padding: .2rem .6rem; border-radius: 999px; border: 1px solid var(--line); background: var(--surface-2); color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.tx-cnt.is-part { background: var(--warn-l); border-color: transparent; color: var(--warn); }
+.tx-cnt.is-full { background: var(--ok-l); border-color: transparent; color: var(--ok); }
+.tx-cnt:empty { display: none; }
+
+/* ---------- Notes inside cards: a left bar, no tinted box ---------- */
 .tx-note { border-left: 4px solid var(--line-2); padding: .3rem 0 .35rem .85rem; margin: .7rem 0; max-width: 78ch; }
 .tx-note > p { margin: .15rem 0 0; overflow-wrap: anywhere; }
 .tx-note > p:first-child { margin-top: 0; }
@@ -52,17 +132,27 @@
 
 /* ---------- Checklists ---------- */
 .tx-checks { display: flex; flex-direction: column; }
-.tx-check { padding: .45rem 0; border-bottom: 1px solid var(--line); }
+.tx-check { padding: .5rem 0; border-bottom: 1px solid var(--line); }
 .tx-check:last-child { border-bottom: 0; }
 .tx-scope .tx-checks { margin: .3rem 0 .2rem; }
-/* Annual review: the NICE areas carry their number in a small circle */
+/* Annual review: the NICE areas carry their number in a small circle, two columns on wide screens */
 .tx-check-area label { display: grid; grid-template-columns: 1.7rem minmax(0, 1fr); column-gap: .45rem; align-items: start; }
-.tx-area { width: 1.55rem; height: 1.55rem; border-radius: 50%; display: inline-grid; place-items: center; background: var(--accent-l); color: var(--accent); font-size: .8rem; font-weight: 700; font-variant-numeric: tabular-nums; }
-.tx-checks + .tx-subh { margin-top: 1.1rem; }
+.tx-area { width: 1.55rem; height: 1.55rem; border-radius: 50%; display: inline-grid; place-items: center; background: var(--accent-l); color: var(--accent-2); font-size: .8rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.tx-areas { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr)); column-gap: 1.5rem; }
+.tx-areas > .tx-check:last-child { border-bottom: 1px solid var(--line); }
 /* Plan items that apply only in some situations: the text, then "Done or offered" / "Does not apply" */
 .tx-planq { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .35rem 1rem; align-items: start; }
 .tx-planq-t > p { margin: 0; }
 .tx-planq-t > .check-hint { display: block; margin-top: .15rem; }
+
+/* Grouped checklists (ui.acc): a title with its purpose, and a count chip */
+.tx-acc .disclosure-title { display: flex; flex-direction: column; gap: .1rem; min-width: 0; }
+.tx-acc-t { font-weight: 650; color: var(--brand); }
+.tx-acc-s { font-weight: 400; font-size: .85rem; color: var(--muted); line-height: 1.35; }
+.tx-acc > .disclosure > summary { min-height: 56px; }
+.tx-acc > .disclosure > .disclosure-body { padding-top: .1rem; }
+.tx-acc .ds-acc-head { flex-wrap: wrap; }
+.tx-acc-act { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
 
 /* Pre-treatment checks: centile chart row, and the pregnancy lines */
 .tx-chartrow { margin-top: .6rem; }
@@ -73,48 +163,54 @@
 
 /* ---------- Borderless disclosures inside cards ---------- */
 .tx-bare { border: 0; background: transparent; border-radius: 0; margin: .6rem 0 0; }
-.tx-bare > summary { padding: .45rem 0; min-height: 40px; font-size: .95rem; }
+.tx-bare > summary { padding: .45rem 0; min-height: 44px; font-size: .95rem; }
+.tx-bare > summary:hover { background: transparent; }
+.tx-bare[open] > summary { border-bottom: 0; }
 .tx-bare > .disclosure-body { padding: 0 0 .4rem; }
-.tx-srchost { margin: .4rem 0 0; }
+.tx-srchost { margin: 1.4rem 0 0; }
 .tx-srclist { margin: 0; padding-left: 1.1rem; }
 .tx-srclist li { margin: .15rem 0; }
 
-/* ---------- Verdict (pre-treatment checks): a top-level card with a coloured bar ---------- */
-.tx-verdict { border-left: 6px solid var(--line-2); }
-.tx-verdict h2 { font-size: 1.3rem; margin: 0 0 .5rem; }
-.tx-v-ok { border-left-color: var(--ok); background: var(--ok-l); }
-.tx-v-warn { border-left-color: var(--warn); background: var(--warn-l); }
-.tx-v-err { border-left-color: var(--err); background: var(--err-l); }
-.tx-v-info { border-left-color: var(--info); }
-.tx-progline { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem 1rem; margin: 0 0 .6rem; }
-.tx-progline .meter { flex: 1 1 140px; max-width: 280px; }
-.tx-progline .hint { margin: 0; font-variant-numeric: tabular-nums; }
-.tx-reasons, .tx-pflags { list-style: none; margin: .4rem 0; padding: 0; display: flex; flex-direction: column; gap: .4rem; }
-.tx-r { display: grid; grid-template-columns: .7rem minmax(0, 1fr); gap: .6rem; align-items: start; margin: 0; overflow-wrap: anywhere; }
+/* ---------- Verdict reasons (pre-treatment checks) and panel flags: a dot per reason ---------- */
+.tx-reasons, .tx-pflags { list-style: none; margin: .4rem 0; padding: 0; display: flex; flex-direction: column; gap: .45rem; }
+.tx-r { display: grid; grid-template-columns: .7rem minmax(0, 1fr); gap: .6rem; align-items: start; margin: 0; overflow-wrap: anywhere; line-height: 1.5; }
 .tx-dot { display: inline-block; width: .65rem; height: .65rem; border-radius: 50%; background: var(--line-2); margin-top: .45rem; flex: 0 0 auto; }
 .tx-r-ok .tx-dot { background: var(--ok); }
 .tx-r-warn .tx-dot { background: var(--warn); }
 .tx-r-err .tx-dot { background: var(--err); }
 .tx-r-info .tx-dot { background: var(--info); }
+.tx-miss { margin-top: .5rem; }
+.tx-r-due { color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+/* The four sets of checks (ui.stepper): labels on the track, wide pips. The pips hold .sr-only text (position:
+   absolute): with no positioned ancestor inside the scrolling track, off-screen pips would widen the page on
+   phones, so the track and the pips are positioned. */
+.tx-setstep .ds-stepper-track, .tx-setstep .ds-stepper-pip { position: relative; }
+.tx-setstep .ds-stepper-pip { padding: 0 .85rem; }
+.tx-setstep .ds-stepper-body { padding-top: .8rem; }
 
 /* ---------- Question rows (heart history, safety screen, side effects) ---------- */
 .tx-qs { display: flex; flex-direction: column; }
-.tx-q { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .35rem 1rem; align-items: start; padding: .6rem 0; border-bottom: 1px solid var(--line); }
+.tx-q { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: .35rem 1rem; align-items: start; padding: .7rem 0; border-bottom: 1px solid var(--line); }
 .tx-q:last-child { border-bottom: 0; }
 .tx-q-text { min-width: 0; }
-.tx-q-t { font-weight: 700; margin: 0; }
+.tx-q-t { font-weight: 700; margin: 0; line-height: 1.4; }
 .tx-q-ask { margin: .15rem 0 0; color: var(--ink); max-width: 70ch; }
-.tx-q-extra { margin: .2rem 0 0; font-size: .86rem; color: var(--muted); }
+.tx-q-extra { display: flex; flex-direction: column; gap: .1rem; margin: .3rem 0 0; font-size: .86rem; color: var(--muted); }
+.tx-aff strong { font-weight: 700; }
+.tx-aff-ci strong { color: var(--err); }
+.tx-aff-ca strong { color: var(--warn); }
 .tx-q-ctl { padding-top: .1rem; }
 .tx-hist { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .4rem; margin: .3rem 0 0; font-size: .86rem; color: var(--muted); }
 .tx-groups { border-top: 1px solid var(--line); margin-top: .6rem; }
 .tx-grp { border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; margin: 0; }
-.tx-grp > summary { padding: .7rem 0; min-height: 48px; flex-wrap: wrap; row-gap: .15rem; }
-.tx-grp > summary > .disclosure-title { flex: 1 1 14rem; }
+.tx-grp > summary { padding: .7rem .2rem; min-height: 52px; flex-wrap: wrap; row-gap: .3rem; border-radius: 0; }
+.tx-grp[open] > summary { border-bottom: 0; }
+.tx-grp > summary > .disclosure-title { flex: 1 1 12rem; }
 .tx-grp > .disclosure-body { padding: 0 0 .6rem; }
-.tx-gmeta { font-variant-numeric: tabular-nums; }
+.tx-gmeta { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .3rem; }
 .tx-repeat, .tx-ecg { margin-top: .2rem; }
-.tx-bmi { margin: 0 0 .3rem; }
+.tx-bmi { margin: .1rem 0 .3rem; }
 /* Third blood pressure reading (inside the second-reading block) */
 .tx-third:empty { display: none; }
 .tx-third { margin: .2rem 0 .6rem; }
@@ -129,163 +225,270 @@
 .tx-revcent { margin: .2rem 0 .5rem; }
 .tx-revcent .hint { margin: .3rem 0 0; }
 
-/* ---------- Rows: previous medicines and reviews (one open at a time) ---------- */
+/* ---------- Rows: previous medicines (one open at a time) ---------- */
 .tx-rows { border-top: 1px solid var(--line); margin: .6rem 0; }
 .tx-row { border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; margin: 0; }
-.tx-row > summary { padding: .65rem 0; min-height: 48px; flex-wrap: wrap; row-gap: .2rem; }
-.tx-row[open] > summary { color: var(--brand); }
+.tx-row > summary { padding: .65rem .2rem; min-height: 48px; flex-wrap: wrap; row-gap: .2rem; border-radius: 0; }
+.tx-row[open] > summary { color: var(--brand); border-bottom: 0; }
 .tx-row > .disclosure-body { padding: 0 0 1rem; }
 .tx-rowsum { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .3rem .6rem; font-weight: 700; }
-.tx-revdate { font-variant-numeric: tabular-nums; }
-.tx-revdose { font-weight: 400; color: var(--muted); font-variant-numeric: tabular-nums; }
-.tx-rowbody .tabs { margin: .4rem 0 .7rem; }
-/* Tabs inside treatment cards wrap instead of scrolling, at every width, so every tab stays in sight */
-.tx-card .tabs { flex-wrap: wrap; overflow: visible; row-gap: 0; }
+/* The review editor's tabs: pills in one strip (the step guide's style), so they read as part of the review */
+.tx-rowbody .tabs { display: inline-flex; flex-wrap: wrap; max-width: 100%; margin: .3rem 0 .8rem; gap: 2px; padding: 3px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 10px; overflow: visible; }
+.tx-rowbody .tab { font-size: .86rem; padding: .45rem .8rem; min-height: 36px; border-bottom: 0; border-radius: 8px; }
+.tx-rowbody .tab:hover { background: var(--surface); }
+.tx-rowbody .tab[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
+.tx-addrow { margin-top: .2rem; }
 /* New dose and the reason to go on despite flags (review decision tab) */
 .tx-newdose, .tx-override { margin: .5rem 0; }
 .tx-newdose { grid-template-columns: minmax(0, 18rem); }
 .tx-newdose[hidden], .tx-override[hidden] { display: none; }
-.tx-revmed { font-size: .82rem; }
-.tx-rowbody .tab { font-size: .88rem; padding: .5rem .7rem; }
 .tx-flags { margin: .2rem 0 .4rem; }
 .tx-cmp { margin: .2rem 0 0; }
 
-/* ---------- Prescribing stage track and stage ---------- */
-.tx-track ol { list-style: none; margin: 0 0 1rem; padding: 0 0 .85rem; display: flex; flex-wrap: wrap; gap: .4rem; border-bottom: 1px solid var(--line); }
-.tx-tstep { display: inline-flex; align-items: center; gap: .45rem; min-height: 40px; padding: .25rem .75rem .25rem .3rem; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--muted); font: inherit; font-size: .86rem; font-weight: 600; cursor: pointer; white-space: nowrap; }
-.tx-tstep:hover { border-color: var(--accent); color: var(--ink); }
-.tx-tn { width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--surface-2); border: 1px solid var(--line); font-size: .76rem; font-weight: 700; font-variant-numeric: tabular-nums; flex: 0 0 26px; }
-.tx-tstep.is-done .tx-tn { background: var(--ok); border-color: var(--ok); color: var(--surface); }
-.tx-tstep[aria-current="step"] { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
-.tx-tstep[aria-current="step"] .tx-tn { background: var(--brand-ink); border-color: var(--brand-ink); color: var(--brand); }
-.tx-stage-h { display: flex; flex-direction: column; gap: .1rem; font-size: 1.22rem; margin: 0 0 .5rem; outline: none; }
-.tx-stage-h:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
-.tx-stage-n { font-family: var(--font-ui); font-size: .74rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
-.tx-stage-body { min-width: 0; }
-.tx-stage-nav { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem; margin-top: 1.2rem; padding-top: .9rem; border-top: 1px solid var(--line); }
-
-/* NICE options: one row per step, the left bar shows its status */
-.tx-opts { list-style: none; margin: .4rem 0 0; padding: 0; display: flex; flex-direction: column; gap: .3rem; }
-.tx-opt { border-left: 4px solid var(--line); padding: .45rem 0 .55rem .85rem; }
-.tx-opt-next { border-left-color: var(--accent); }
-.tx-opt-possible { border-left-color: var(--info); }
-.tx-opt-tertiary { border-left-color: var(--warn); }
-.tx-opt-done, .tx-opt-blocked { border-left-color: var(--line-2); }
-.tx-opt-done .tx-opt-l, .tx-opt-blocked .tx-opt-l { color: var(--muted); }
-.tx-opt-head { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem .55rem; }
-.tx-opt-n { width: 24px; height: 24px; border-radius: 50%; display: inline-grid; place-items: center; background: var(--surface-2); border: 1px solid var(--line); font-size: .75rem; font-weight: 700; font-variant-numeric: tabular-nums; }
-.tx-opt-l { font-weight: 700; }
-.tx-opt-when { margin: .25rem 0 0; }
-.tx-opt-why { margin: .15rem 0 0; font-size: .9rem; color: var(--muted); max-width: 72ch; }
-.tx-opt-act { margin-top: .45rem; }
-.tx-druginfo { border-top: 1px solid var(--line); margin-top: 1rem; padding-top: .9rem; }
-.tx-druginfo:empty { display: none; }
-.tx-ints li { display: block; }
-
-/* Product picker: chips grouped by release type, one product shown */
-.tx-chips { display: flex; flex-wrap: wrap; gap: .45rem; margin: .2rem 0 .4rem; }
-.tx-chip { display: inline-flex; align-items: center; flex-wrap: wrap; gap: .1rem .45rem; min-height: 40px; padding: .3rem .8rem; border-radius: 999px; border: 1px solid var(--line-2); background: var(--surface); color: var(--ink); font: inherit; font-size: .9rem; font-weight: 600; cursor: pointer; text-align: left; max-width: 100%; }
-.tx-chip:hover { border-color: var(--accent); }
-.tx-chip[aria-pressed="true"] { border: 2px solid var(--accent); padding: calc(.3rem - 1px) calc(.8rem - 1px); }
-.tx-chip .tx-dot { margin-top: 0; }
-.tx-chip-ok .tx-dot { background: var(--ok); }
-.tx-chip-off .tx-dot { background: var(--warn); }
-.tx-chip-cond .tx-dot { background: var(--info); }
-.tx-chip-s:empty { display: none; }
-/* Licence condition tick (guanfacine, ages 6 to 17) above the product chips */
-.tx-licq { border-left: 4px solid var(--info); padding: .1rem 0 .2rem .85rem; margin: .2rem 0 .8rem; max-width: 78ch; }
-.tx-chip-bad .tx-dot { background: var(--err); }
-.tx-chip-bad .tx-chip-n { color: var(--muted); }
-.tx-chip-s { font-size: .78rem; font-weight: 400; color: var(--muted); }
-.tx-chip-c { font-size: .8rem; color: var(--ok); }
-.tx-chip-c:empty { display: none; }
-.tx-prod { border-top: 1px solid var(--line); margin-top: .8rem; padding-top: .9rem; }
-.tx-prod:empty { display: none; }
-.tx-prod-head { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem .7rem; margin: 0 0 .4rem; }
-.tx-badges { display: inline-flex; flex-wrap: wrap; gap: .3rem; }
-.tx-prod-act { margin-top: .8rem; }
-
-/* Dose plan and prescription wording */
-.tx-ladder { max-width: 560px; }
-.tx-perday { margin: .2rem 0 .4rem; }
-.tx-perday .hint { margin: .3rem 0 0; }
-.tx-doses { grid-template-columns: minmax(0, 24rem); margin-top: .2rem; }
-.tx-rx { border-left: 4px solid var(--accent); padding: .3rem 0 .35rem .9rem; margin: .8rem 0 .5rem; max-width: 72ch; }
-.tx-rx > p { margin: .2rem 0; font-weight: 600; overflow-wrap: anywhere; }
-.tx-rx > .tx-k { font-weight: 700; }
-
-/* Key and value lists */
-.tx-kv { display: grid; grid-template-columns: minmax(7rem, max-content) minmax(0, 1fr); gap: .35rem 1rem; margin: .6rem 0; }
-.tx-kv > div { display: contents; }
-.tx-kv dt { color: var(--muted); font-size: .9rem; }
-.tx-kv dd { margin: 0; overflow-wrap: anywhere; white-space: pre-line; }
-
-/* Titration */
+/* ---------- Titration: reviews as a timeline (newest first, down to the start date) ---------- */
+.tx-tl { list-style: none; margin: .1rem 0 0; padding: 0; }
+.tx-tl-item { position: relative; padding-left: 2rem; }
+.tx-tl-item::before { content: ""; position: absolute; left: .55rem; top: 0; bottom: 0; width: 2px; background: var(--line); }
+.tx-tl-item:first-child::before { top: 1.35rem; }
+.tx-tl-item:last-child::before { bottom: auto; height: 1.35rem; }
+.tx-tl-item:only-child::before { display: none; }
+.tx-tl-dot { position: absolute; left: .17rem; top: 1rem; width: .85rem; height: .85rem; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px var(--surface); z-index: 1; }
+.tx-tl-dot-ok { background: var(--ok); }
+.tx-tl-dot-warn { background: var(--warn); }
+.tx-tl-dot-err { background: var(--err); }
+.tx-tl-dot-info { background: var(--info); }
+.tx-tl-dot-neutral { background: var(--line-2); }
+.tx-tl-dot-start { background: var(--surface); border: 2px solid var(--accent); }
+.tx-rev { border: 0; border-bottom: 1px solid var(--line); border-radius: 0; background: transparent; margin: 0; }
+.tx-tl-item:last-child > .tx-rev, .tx-tl-item.is-start { border-bottom: 0; }
+.tx-rev > summary { padding: .7rem .2rem .7rem 0; min-height: 52px; align-items: flex-start; border-radius: 0; }
+.tx-rev[open] > summary { border-bottom: 0; }
+.tx-rev > .disclosure-body { padding: 0 0 1rem; }
+.tx-tl-sum { display: flex; flex-direction: column; gap: .2rem; min-width: 0; }
+.tx-tl-line { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem .6rem; font-weight: 700; }
+.tx-tl-meta { font-size: .84rem; font-weight: 400; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tx-revdate { font-variant-numeric: tabular-nums; }
+.tx-revdose { font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
+.tx-revmed { font-size: .82rem; font-weight: 400; color: var(--muted); }
+.tx-tl-start { display: flex; flex-wrap: wrap; gap: .3rem .6rem; align-items: baseline; margin: 0; padding: .78rem 0 .8rem; color: var(--muted); }
+.tx-tl-start .tx-revdate { font-weight: 700; color: var(--ink); }
+.tx-earlier { margin: 0 0 .5rem; }
 .tx-trial { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .9rem; margin: .3rem 0; }
-.tx-trial .meter { flex: 1 1 140px; max-width: 280px; }
+.tx-trial .meter { flex: 1 1 120px; max-width: 280px; }
 .tx-trial-k { font-weight: 700; font-variant-numeric: tabular-nums; }
 
-/* Monitoring */
+/* ---------- Prescribing: the stage track and the stage ---------- */
+.tx-track { margin: 0 0 1.25rem; padding: .45rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+.tx-track ol { position: relative; list-style: none; margin: 0; padding: 0; display: flex; gap: .3rem; }
+.tx-track li { flex: 1 1 0; min-width: 0; display: flex; }
+/* Wide screens: the number above its label, so every label fits on one or two lines without breaking a word. */
+.tx-tstep { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: .3rem; width: 100%; min-width: 0; min-height: 48px; padding: .45rem .3rem .5rem; border-radius: 8px; border: 1px solid transparent; background: transparent; color: var(--muted); font: inherit; font-size: .82rem; font-weight: 600; line-height: 1.2; cursor: pointer; text-align: center; }
+.tx-tstep:hover { background: var(--surface-2); color: var(--ink); }
+.tx-tl { min-width: 0; }
+.tx-tn { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--surface-2); border: 1px solid var(--line); font-size: .78rem; font-weight: 700; font-variant-numeric: tabular-nums; flex: 0 0 28px; }
+.tx-tstep.is-done .tx-tn { background: var(--ok-l); border-color: transparent; color: var(--ok); }
+.tx-tstep[aria-current="step"] { background: var(--accent-l); border-color: color-mix(in srgb, var(--accent) 40%, transparent); color: var(--accent-2); }
+.tx-tstep[aria-current="step"] .tx-tn { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.tx-stage-head { margin: 0 0 .5rem; }
+.tx-stage-n { margin: 0; font-size: .74rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+.tx-stage-h { margin: .15rem 0 0; font-size: 1.3rem; outline: none; }
+.tx-stage-h:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
+.tx-stage-p { margin: 0 0 1rem; color: var(--muted); max-width: 72ch; line-height: 1.5; }
+.tx-stage-body { min-width: 0; }
+.tx-stage-nav { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem; margin-top: 1.2rem; }
+
+/* NICE options: a numbered pathway; the circle shows each step's status */
+.tx-path { list-style: none; margin: 0; padding: 0; }
+.tx-path-i { position: relative; padding: 0 0 1.15rem 3rem; min-height: 2.4rem; }
+.tx-path-i:last-child { padding-bottom: .2rem; }
+.tx-path-i::before { content: ""; position: absolute; left: 1rem; top: 2.25rem; bottom: .3rem; width: 2px; background: var(--line); }
+.tx-path-i:last-child::before { display: none; }
+.tx-path-n { position: absolute; left: 0; top: 0; width: 2.1rem; height: 2.1rem; border-radius: 50%; display: grid; place-items: center; font-weight: 700; font-size: .9rem; background: var(--surface-2); color: var(--muted); border: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.tx-path-next .tx-path-n { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.tx-path-possible .tx-path-n { background: var(--info-l); border-color: transparent; color: var(--info); }
+.tx-path-tertiary .tx-path-n { background: var(--warn-l); border-color: transparent; color: var(--warn); }
+.tx-path-i.is-current .tx-path-n { box-shadow: 0 0 0 3px var(--surface), 0 0 0 5px var(--ok); }
+.tx-path-head { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem .55rem; padding-top: .3rem; }
+.tx-path-l { font-weight: 700; color: var(--brand); }
+.tx-path-done .tx-path-l, .tx-path-blocked .tx-path-l { color: var(--muted); }
+.tx-path-when { margin: .3rem 0 0; max-width: 72ch; }
+.tx-path-why { margin: .2rem 0 0; font-size: .9rem; color: var(--muted); max-width: 72ch; }
+.tx-path-act { margin-top: .55rem; }
+.tx-cls { color: var(--muted); font-size: .9rem; }
+.tx-shared { margin: 1rem 0 0; }
+.tx-ints li { display: block; }
+
+/* Product chooser: a filter by release type, comparison cards, one product's detail */
+.tx-pfilter { margin: 0 0 .8rem; }
+.tx-pfilter .ds-chip { min-height: 40px; }
+.tx-pcards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 13.5rem), 1fr)); gap: .75rem; }
+.tx-pcards > li { display: flex; min-width: 0; }
+.tx-pcard { position: relative; display: flex; flex-direction: column; gap: .3rem; width: 100%; min-width: 0; padding: 1rem 1rem .9rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); box-shadow: var(--shadow); font: inherit; color: inherit; text-align: left; cursor: pointer; overflow: hidden; transition: border-color .12s, box-shadow .12s; }
+.tx-pcard::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--line-2); }
+.tx-pcard.st-ok::before { background: var(--ok); }
+.tx-pcard.st-cond::before { background: var(--info); }
+.tx-pcard.st-off::before { background: var(--warn); }
+.tx-pcard.st-bad::before { background: var(--err); }
+.tx-pcard:hover { border-color: var(--accent); }
+.tx-pcard[aria-pressed="true"] { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent), var(--shadow); }
+.tx-pcard-top { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .2rem .5rem; }
+.tx-pcard-n { font-weight: 700; color: var(--brand); font-size: 1rem; }
+.tx-pcard.st-bad .tx-pcard-n { color: var(--muted); }
+.tx-pcard-c { font-size: .78rem; font-weight: 700; color: var(--ok); }
+.tx-pcard-c:empty { display: none; }
+.tx-pcard-f { font-size: .84rem; color: var(--muted); line-height: 1.4; }
+.tx-pcard-st { display: flex; align-items: flex-start; gap: .45rem; font-size: .86rem; font-weight: 600; line-height: 1.35; }
+.tx-pcard-st .tx-dot { margin-top: .32rem; }
+.tx-pcard.st-ok .tx-dot { background: var(--ok); }
+.tx-pcard.st-cond .tx-dot { background: var(--info); }
+.tx-pcard.st-off .tx-dot { background: var(--warn); }
+.tx-pcard.st-bad .tx-dot { background: var(--err); }
+.tx-pcard-s { margin-top: auto; padding-top: .2rem; font-size: .8rem; color: var(--faint); font-variant-numeric: tabular-nums; }
+.tx-prodhost:not(:empty) { margin-top: 1rem; }
+.tx-prod { position: relative; overflow: hidden; }
+.tx-prod::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--line-2); }
+.tx-prod-ok::before { background: var(--ok); }
+.tx-prod-cond::before { background: var(--info); }
+.tx-prod-off::before { background: var(--warn); }
+.tx-prod-bad::before { background: var(--err); }
+.tx-prod .tx-facts { margin-top: .5rem; border-top: 0; padding-top: 0; }
+.tx-brandnote { margin: -.3rem 0 .4rem; }
+.tx-badges { display: inline-flex; flex-wrap: wrap; gap: .3rem; }
+.tx-prod-act { margin-top: .8rem; }
+/* Licence condition tick (guanfacine, ages 6 to 17) above the product cards */
+.tx-licq { border-left: 4px solid var(--info); margin-bottom: 1rem; }
+
+/* Dose plan: the titration ladder */
+.tx-ladder { list-style: none; margin: .2rem 0 .4rem; padding: 0; max-width: 640px; }
+.tx-rung { display: grid; grid-template-columns: 4.3rem 7.2rem minmax(0, 1fr) auto; align-items: center; gap: .25rem .85rem; padding: .5rem 0; border-bottom: 1px solid var(--line); }
+.tx-rung:last-child { border-bottom: 0; }
+.tx-rung-w { font-size: .76rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+.tx-rung-d { font-weight: 700; color: var(--brand); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.tx-rung-u { font-weight: 400; font-size: .84rem; color: var(--muted); }
+.tx-rung-m { display: flex; flex-direction: column; gap: .2rem; min-width: 0; }
+.tx-rung-bar { display: block; height: 10px; border-radius: 99px; background: var(--surface-3); overflow: hidden; }
+.tx-rung-bar > span { display: block; height: 100%; border-radius: inherit; background: var(--accent); }
+.tx-rung.is-start .tx-rung-bar > span { background: var(--accent-2); }
+.tx-rung-g { font-size: .82rem; color: var(--muted); }
+.tx-rung-tags { display: inline-flex; flex-wrap: wrap; gap: .3rem; justify-content: flex-end; }
+.tx-perday { margin: .4rem 0 .4rem; }
+.tx-perday .hint { margin: .3rem 0 0; }
+.tx-doses { grid-template-columns: minmax(0, 24rem); margin-top: .2rem; }
+
+/* Prescription wording: the text a prescriber copies, with an accent bar */
+.tx-rx { border-left: 4px solid var(--accent); padding: .5rem 0 .55rem 1rem; margin: 0 0 .6rem; max-width: 72ch; background: var(--surface-2); border-radius: 0 var(--radius) var(--radius) 0; }
+.tx-rx > p { margin: .15rem 0; font-weight: 600; font-size: 1.02rem; overflow-wrap: anywhere; }
+
+/* Key and value lists */
+.tx-kv { display: grid; grid-template-columns: minmax(7rem, max-content) minmax(0, 1fr); gap: 0 1.2rem; margin: .6rem 0; }
+.tx-kv > div { display: contents; }
+.tx-kv dt, .tx-kv dd { padding: .45rem 0; border-top: 1px solid var(--line); }
+.tx-kv > div:first-child > dt, .tx-kv > div:first-child > dd { border-top: 0; }
+.tx-kv dt { color: var(--muted); font-size: .88rem; font-weight: 600; }
+.tx-kv dd { margin: 0; overflow-wrap: anywhere; white-space: pre-line; }
+
+/* ---------- Monitoring ---------- */
+.tx-moncard { padding-top: .6rem; }
+.tx-moncard > .tabs-wrap > .tabs { margin: 0 -.5rem 1rem; padding: 0 .5rem; }
+.tx-schedf { margin-top: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); }
 .tx-actions { list-style: none; margin: .2rem 0 0; padding: 0; display: flex; flex-direction: column; }
-.tx-actions li { display: flex; flex-direction: column; gap: .1rem; padding: .45rem 0; border-bottom: 1px solid var(--line); }
+.tx-actions li { display: flex; flex-direction: column; gap: .1rem; padding: .5rem 0; border-bottom: 1px solid var(--line); }
 .tx-actions li:last-child { border-bottom: 0; }
 .tx-sched th[scope="row"] { font-weight: 600; }
+.tx-due { display: inline-flex; flex-wrap: wrap; align-items: center; gap: .3rem .45rem; }
+.tx-date { white-space: nowrap; font-variant-numeric: tabular-nums; }
 .tx-letterdet { margin-top: 1rem; border-top: 1px solid var(--line); padding-top: .2rem; }
 .tx-letteract { margin: .2rem 0 .7rem; }
-.tx-letter { max-width: 860px; border: 0; border-left: 4px solid var(--line-2); border-radius: 0; padding: .1rem 0 .3rem 1.1rem; background: transparent; }
-.tx-letter h3 { font-size: 1.02rem; margin: 1.1rem 0 .35rem; padding-bottom: .2rem; border-bottom: 1px solid var(--line); }
+.tx-letter { max-width: 860px; border: 0; border-left: 4px solid var(--accent); border-radius: 0; padding: .2rem 0 .4rem 1.2rem; background: transparent; }
+.tx-letter h3 { font-size: .8rem; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); margin: 1.2rem 0 .35rem; padding-bottom: .25rem; border-bottom: 1px solid var(--line); }
 .tx-letter ul { padding-left: 1.2rem; margin: .3rem 0; }
 .tx-letter p { white-space: pre-line; overflow-wrap: anywhere; }
 .tx-letter-title { font-family: var(--font-display); font-weight: 600; font-size: 1.25rem; color: var(--brand); margin: 0 0 .2rem; }
 .tx-letter-foot { color: var(--faint); font-size: .85rem; margin-top: 1.2rem; }
+.tx-letter .tx-kv { margin: .3rem 0; }
 
-/* Tables that become labelled cards on phones (td data-label) */
+/* Tables that become labelled rows on phones (td data-label) */
 .tx-stack { border: 0; border-radius: 0; }   /* a plain table inside the card, not a framed box */
 .tx-stack .table td, .tx-stack .table th[scope="row"] { vertical-align: top; }
+.tx-stack .table thead th { background: transparent; }
 
 /* ---------- Live panel (treatment phase) ---------- */
 .tx-panel .tx-psec { display: flex; flex-direction: column; gap: .15rem; }
-.tx-pk { font-size: .72rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--faint); margin: 0; }
+.tx-pstate { margin: -.25rem 0 .1rem; }
+.tx-pk { font-size: .7rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--faint); margin: 0 0 .15rem; }
 .tx-pv { margin: 0; overflow-wrap: anywhere; }
+.tx-pmed { margin: 0; font-family: var(--font-ui); font-weight: 700; font-size: 1.05rem; color: var(--brand); overflow-wrap: anywhere; }
+.tx-pdrug { color: var(--muted); font-size: .9rem; }
+.tx-pdose { margin: .15rem 0 .2rem; font-weight: 700; color: var(--accent-2); font-variant-numeric: tabular-nums; }
 .tx-panel .badge { align-self: flex-start; }
-.tx-plist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .15rem; font-size: .92rem; }
-.tx-plist li { display: flex; justify-content: space-between; gap: .6rem; }
-.tx-pnum { font-weight: 700; font-variant-numeric: tabular-nums; color: var(--brand); }
-.tx-pflags { font-size: .88rem; margin: .3rem 0 0; }
+.tx-pstats { list-style: none; margin: .1rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .5rem; }
+.tx-pstats li { display: flex; flex-direction: column; min-width: 0; }
+.tx-pstat-k { font-size: .7rem; font-weight: 600; color: var(--muted); line-height: 1.25; }
+.tx-pstat-v { font-family: var(--font-ui); font-size: 1.08rem; font-weight: 700; color: var(--brand); font-variant-numeric: tabular-nums; line-height: 1.25; overflow-wrap: anywhere; }
+.tx-pstat-u { font-size: .74rem; color: var(--muted); }
+.tx-pflags { font-size: .88rem; margin: .45rem 0 0; }
 .tx-panel .tx-trial { margin: 0; }
-.tx-plinks { gap: .2rem; }
+.tx-pnext { font-weight: 700; }
+.tx-plinks .row { gap: .15rem .25rem; }
+.tx-plinks .btn { padding-inline: .45rem; }
+@media (max-width: 1239px) { .tx-pstate { display: none; } }
 
 /* ---------- Phones and touch ---------- */
 @media (max-width: 760px), (pointer: coarse) {
-  .tx-chip, .tx-tstep { min-height: 44px; }
+  .tx-tstep, .tx-pfilter .ds-chip { min-height: 44px; }
 }
 @media (max-width: 760px) {
-  .tx-stack:not(.tx-nostack) { border: 0; }
-  .tx-stack:not(.tx-nostack) .table, .tx-stack:not(.tx-nostack) .table tbody, .tx-stack:not(.tx-nostack) .table tr, .tx-stack:not(.tx-nostack) .table th, .tx-stack:not(.tx-nostack) .table td { display: block; width: 100%; }
-  .tx-stack:not(.tx-nostack) .table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
-  .tx-stack:not(.tx-nostack) .table { background: transparent; }
-  .tx-stack:not(.tx-nostack) .table tr { border-bottom: 1px solid var(--line); padding: .45rem 0 .5rem; }
-  .tx-stack:not(.tx-nostack) .table tr:last-child { border-bottom: 0; }
-  .tx-stack:not(.tx-nostack) .table th[scope="row"] { border: 0; padding: .15rem 0; white-space: normal; }
-  .tx-stack:not(.tx-nostack) .table td { display: grid; grid-template-columns: 6.4rem minmax(0, 1fr); gap: .6rem; align-items: start; border: 0; padding: .15rem 0; }
-  .tx-stack:not(.tx-nostack) .table td::before { content: attr(data-label); font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); padding-top: .15rem; }
+  .tx-stack { border: 0; }
+  .tx-stack .table, .tx-stack .table tbody, .tx-stack .table tr, .tx-stack .table th, .tx-stack .table td { display: block; width: 100%; }
+  .tx-stack .table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+  .tx-stack .table { background: transparent; }
+  .tx-stack .table tr { border-bottom: 1px solid var(--line); padding: .55rem 0 .6rem; }
+  .tx-stack .table tr:last-child { border-bottom: 0; }
+  .tx-stack .table tbody tr:hover > * { background: transparent; }
+  .tx-stack .table th[scope="row"] { border: 0; padding: .15rem 0 .25rem; white-space: normal; }
+  .tx-stack .table td { display: grid; grid-template-columns: 6.4rem minmax(0, 1fr); gap: .6rem; align-items: start; border: 0; padding: .15rem 0; }
+  .tx-stack .table td::before { content: attr(data-label); font-size: .72rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); padding-top: .15rem; }
+  /* Stage track: numbers only, spread across (the stage heading below names the current stage; each button
+     carries its name in aria-label and title) */
+  .tx-track ol { justify-content: space-between; gap: .2rem; }
+  .tx-track li { flex: 0 1 auto; }
+  .tx-tstep { justify-content: center; padding: .3rem; min-width: 44px; }
+  .tx-tstep .tx-tl { display: none; }
+  /* The decision: two by two */
+  .tx-deccard .seg { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
+  .tx-deccard .seg-opt label { width: 100%; }
 }
 @media (max-width: 640px) {
   .tx-card { padding: 1rem; }
-  .tx-card .tab { flex: 1 1 auto; padding-left: .55rem; padding-right: .55rem; }
   .tx-q, .tx-planq { grid-template-columns: minmax(0, 1fr); }
   .tx-q-ctl { padding-top: .2rem; }
-  /* Stage track: numbers only on one row (the stage heading below names the current stage;
-     each button carries its name in aria-label and title) */
-  .tx-track ol { gap: .35rem; flex-wrap: nowrap; }
-  .tx-tstep { padding: .25rem .45rem; }
-  .tx-tstep .tx-tl { display: none; }
   .tx-stage-nav .btn { flex: 1 1 0; min-width: 0; }
   .tx-letter { padding-left: .8rem; }
+  .tx-sum .ds-hero-act .btn { flex: 1 1 auto; }
+  .tx-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: .8rem; }
+  .tx-fact-v { font-size: .95rem; }
+  /* Short number fields two to a row; inputs line up at the bottom when a label wraps */
+  .tx-f2 { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: end; column-gap: .7rem; }
+  .tx-rung { grid-template-columns: 3.8rem 6.2rem minmax(0, 1fr); }
+  .tx-rung-tags { grid-column: 2 / -1; justify-content: flex-start; }
+  .tx-tl-item { padding-left: 1.7rem; }
+  .tx-rowbody .tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
+  .tx-rowbody .tab { min-height: 40px; padding-inline: .4rem; }
 }
 @media (max-width: 520px) {
-  .tx-kv { grid-template-columns: minmax(0, 1fr); gap: 0; }
-  .tx-kv dd { margin-bottom: .45rem; }
+  .tx-kv { grid-template-columns: minmax(0, 1fr); }
+  .tx-kv dd { border-top: 0; padding-top: 0; }
+  /* Products: two compact cards a row */
+  .tx-pcards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; }
+  .tx-pcard { padding: .85rem .75rem .7rem; gap: .25rem; }
+  .tx-pcard-n { font-size: .95rem; }
+  .tx-pcard-st { font-size: .82rem; }
+}
+@media (max-width: 340px) {
+  .tx-pcards { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 360px) {
+  .tx-facts { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* ---------- Print: the shared care letter only (body.tx-printing is set by the Print button) ---------- */

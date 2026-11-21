@@ -1,9 +1,14 @@
 /* Treatment steps (phase "Treat") of the assessment workspace:
-     txplan     Treatment plan              support first, the decision, and who can prescribe (scope)
-     baseline   Pre-treatment checks        measurements, heart history, the safety screen, live verdict
-     prescribe  Choose and prescribe        previous medicines > NICE options > product > dose > counselling > prescription
-     titrate    Titration and reviews       trial clock and one record per review, with flags
-     monitor    Monitoring and shared care  schedule, annual review, shared care letter and transition
+     txplan     Treatment plan              the decision, who can start the medicine (scope), support and NICE steps
+     baseline   Pre-treatment checks        the live verdict, then four sets of checks one at a time: measurements,
+                                            heart history, the safety screen, and medicines, misuse, pregnancy and driving
+     prescribe  Choose and prescribe        six stages, one at a time: previous medicines > NICE options > product
+                                            (comparison cards) > starting dose (titration ladder) > counselling > prescription
+     titrate    Titration and reviews       the dose now, the trial clock and the next dose, then a timeline of reviews
+     monitor    Monitoring and shared care  schedule with due and overdue chips, annual review, shared care letter, transition
+   Every step has the same shape (DESIGN.md): safety and readiness notes, a summary card (ui.hero: the status, key
+   facts and the next action), one card per part, and one closed "Sources" disclosure at the end. No card sits
+   inside another card: inside a card, meaning is a left bar, a dot or a label.
    Also exports AA.components.treatPanel(panelEl, a, ctx) (live panel for the treatment steps),
    AA.components.treatmentReport(a) (report sections) and AA.components.sharedCareLetter(a) ({title, sections}).
    Clinical rules live in js/engine/treatment.js (AA.treatment) and js/data/tx-*.js; this file renders them
@@ -340,8 +345,90 @@
         return h('tr', null, r.map(function (c, i) { return i === 0 ? h('th', { scope: 'row' }, c) : h('td', { 'data-label': head[i] }, c); }));
       }))));
   }
-  function card(title, children, cls) {
-    return h('section', { class: 'card tx-card' + (cls ? ' ' + cls : '') }, title ? h('h2', null, title) : null, children);
+  /* A card. The title (h3: cards sit under a section, stage or set heading) and an aside (badges, a count) are
+     optional. */
+  function card(title, children, cls, aside) {
+    var head = title || aside ? h('div', { class: 'tx-card-head' }, title ? h('h3', { class: 'tx-card-h' }, title) : null, aside || null) : null;
+    return h(title ? 'section' : 'div', { class: 'card tx-card' + (cls ? ' ' + cls : '') }, head, children);
+  }
+  /* A part of the page: a heading, one line on what it is for, then its card. */
+  function section(id, title, text, content, actions) {
+    var acts = arr(actions).filter(Boolean);
+    var s = ui.section({ id: id, title: title, text: text, actions: acts.length ? h('div', { class: 'tx-sec-act' }, acts) : null }, content);
+    s.classList.add('tx-sec');
+    return s;
+  }
+  /* Bring a part of the page into view and move the focus to its heading (summary facts and "Go to" buttons). */
+  function reveal(el) {
+    if (!el) return;
+    try { el.scrollIntoView({ block: 'start', behavior: 'smooth' }); } catch (e) { try { el.scrollIntoView(); } catch (e2) { /* ignore */ } }
+    var hd = el.querySelector && el.querySelector('h2, h3');
+    if (hd) {
+      if (!hd.hasAttribute('tabindex')) hd.setAttribute('tabindex', '-1');
+      try { hd.focus({ preventScroll: true }); } catch (e3) { /* ignore */ }
+    }
+  }
+  function narrow() { try { return window.matchMedia('(max-width: 760px)').matches; } catch (e) { return false; } }
+  /* Lower-case the first letter of a label, but not of an acronym ("NICE options" stays as it is). */
+  function low(s) { return String(s || '').replace(/^([A-Z])(?=[a-z])/, function (m) { return m.toLowerCase(); }); }
+  /* "6 of 9" count chip: green with a tick when complete, amber when started (the words say it too). With nothing
+     to count (every item does not apply yet), it says so. */
+  function paintCnt(el, done, of, suffix) {
+    var full = of > 0 && done >= of;
+    var cls = 'tx-cnt' + (full ? ' is-full' : done > 0 ? ' is-part' : '');
+    var txt = !of && !done ? 'Does not apply now' : (full ? '✓ ' : '') + done + ' of ' + of + (suffix ? ' ' + suffix : '');
+    if (el.className !== cls) el.className = cls;
+    if (el.textContent !== txt) el.textContent = txt;
+    return el;
+  }
+  function cnt(done, of, suffix) { return paintCnt(h('span'), done, of, suffix); }
+  /* Grouped disclosures (ui.acc) that keep one group open at a time. */
+  function oneOpen(wrap) {
+    var ds = U.$$('details', wrap).filter(function (d) { return d.parentNode === wrap; });
+    ds.forEach(function (d) { d.addEventListener('toggle', function () { if (d.open) ds.forEach(function (x) { if (x !== d && x.open) x.open = false; }); }); });
+    return wrap;
+  }
+  /* A group title with its one-line purpose. */
+  function accTitle(t, sub) { return [h('span', { class: 'tx-acc-t' }, t), sub ? h('span', { class: 'tx-acc-s' }, sub) : null]; }
+
+  /* ---------- The summary card at the top of each step ----------
+     Where things stand (a headline with an icon, a status badge and key facts) and the next action. Built on the
+     shared hero card (ui.hero); its top bar, icon and badge take the tone of the status, and the words say it too. */
+  var TONE_ICON = { ok: 'check', warn: 'alert', err: 'alert', info: 'info', neutral: 'info' };
+  /* Key facts in a row: [{k: label, v: value, s: small line, kind: ok|warn|err|info|neutral (a dot), onClick, title}].
+     A fact with onClick is a button that opens the part of the step it sums up. */
+  function factList(facts) {
+    facts = arr(facts).filter(Boolean);
+    if (!facts.length) return null;
+    return h('ul', { class: 'tx-facts' }, facts.map(function (f) {
+      var inner = [h('span', { class: 'tx-fact-k' }, f.k),
+        h('span', { class: 'tx-fact-v' }, f.kind ? h('span', { class: 'tx-fdot tx-fdot-' + f.kind, 'aria-hidden': 'true' }) : null, h('span', null, f.v)),
+        f.s ? h('span', { class: 'tx-fact-s' }, f.s) : null];
+      return h('li', null, f.onClick ? h('button', { type: 'button', class: 'tx-fact is-btn', onclick: f.onClick, title: f.title || null }, inner) : h('div', { class: 'tx-fact' }, inner));
+    }));
+  }
+  function progLine(done, of, text, label, extra) {
+    return h('div', { class: 'tx-progline' }, ui.progress(done || 0, of || 0, label || text), h('span', { class: 'tx-progtext' }, text), extra || null);
+  }
+  /* o: {kind: ok|warn|err|info|neutral, eyebrow, badge: [text, kind], title, text, progress (node), facts, extra
+     (nodes), next (text after "Next:"), nextLabel (instead of "Next"), actions: [buttons]} */
+  function summaryCard(o) {
+    var kind = o.kind || 'info';
+    var body = h('div', { class: 'tx-sum-body' },
+      o.progress || null,
+      o.text ? h('p', { class: 'tx-sum-p' }, typeof o.text === 'string' ? stripClauses(o.text) : o.text) : null,
+      factList(o.facts),
+      o.extra || null,
+      o.next ? h('p', { class: 'tx-sum-next' }, h('strong', null, (o.nextLabel || 'Next') + ': '), typeof o.next === 'string' ? stripClauses(o.next) : o.next) : null);
+    var hero = ui.hero({
+      eyebrow: [h('span', { class: 'tx-sum-k' }, o.eyebrow), o.badge ? ui.badge(o.badge[0], o.badge[1]) : null],
+      title: [h('span', { class: 'tx-sum-ico', 'aria-hidden': 'true' }, ui.icon(TONE_ICON[kind] || 'info')), h('span', { class: 'tx-sum-t' }, o.title)],
+      label: o.eyebrow,
+      text: body,
+      actions: arr(o.actions).filter(Boolean)
+    });
+    hero.classList.add('tx-sum', 'tx-sum-' + kind);
+    return hero;
   }
   function srcOf(x) {
     if (!x) return [];
@@ -602,16 +689,15 @@
     return null;
   }
   function pregFollowOpen(b) { var f = pregFollow(b); return !!f && !!AA.byId('txCautions', f.id) && obj(obj(b).ci)[f.id] !== 'yes' && obj(obj(b).ci)[f.id] !== 'no'; }
-  /* Which medicines a caution item rules out or needs care with (txDrugs ci / caution lists). */
-  function affects(id) {
+  /* Which medicines a caution item rules out or needs care with (txDrugs ci / caution lists), as two labelled lines. */
+  function affectsNode(id) {
     var ci = [], ca = [];
     arr(AA.data.txDrugs).forEach(function (d) {
       if (arr(d.ci).indexOf(id) > -1) ci.push(d.name); else if (arr(d.caution).indexOf(id) > -1) ca.push(d.name);
     });
-    var parts = [];
-    if (ci.length) parts.push('Rules out: ' + ci.join(', ') + '.');
-    if (ca.length) parts.push('Care with: ' + ca.join(', ') + '.');
-    return parts.join(' ');
+    if (!ci.length && !ca.length) return null;
+    return [ci.length ? h('span', { class: 'tx-aff tx-aff-ci' }, h('strong', null, 'Rules out: '), ci.join(', ') + '.') : null,
+      ca.length ? h('span', { class: 'tx-aff tx-aff-ca' }, h('strong', null, 'Care with: '), ca.join(', ') + '.') : null];
   }
   function histSentence(n, noun) {
     return (n === 1 ? 'One ' + noun + ' already has' : n + ' ' + noun + 's already have') + ' a yes in the clinical history. Check with the person, then save the answers.';
@@ -698,38 +784,29 @@
 
   /* =================================================================================
      Step: treatment plan
+     Notes > summary (the decision, scope and support counts, the next action) > Decision > Who can start the
+     medicine > Support and NICE steps (grouped, one group open at a time).
      ================================================================================= */
+  var PLAN_GROUP_SUB = {
+    'Before medication': 'Done before any ADHD medicine is started.',
+    'Non-drug support': 'Support alongside medicine, or instead of it.',
+    'If medication helps but problems remain': 'Only when medicine helps but significant impairment remains.'
+  };
   AA.steps.txplan = { render: function (el, ctx) {
     if (!ready()) { el.appendChild(notLoaded()); return null; }
     var Tx = T(), a0 = ctx.a() || {};
     var yng = isYoung(a0);
     var an = applicNote(ctx, a0, 'txplan');
     if (an) el.appendChild(an);
+    /* Findings that disagree with the diagnosis come first, above the summary. */
+    var attn = h('div', { class: 'tx-ready' });
+    el.appendChild(attn);
+    var sumHost = h('div', { class: 'tx-sumhost' });
+    el.appendChild(sumHost);
     var plan0 = obj(txOf(a0).plan), team0 = obj(plan0.team);
-
-    /* 1. Who can start the medicine (pharmacist scope gate) */
-    var scopeLive = h('div', { class: 'tx-live', 'aria-live': 'polite' });
-    el.appendChild(card('Who can start the medicine', [
-      h('p', { class: 'tx-lead' }, 'Only a healthcare professional with training and expertise in diagnosing and managing ADHD should start ADHD medicine. As a pharmacist independent prescriber, you do this only inside a specialist ADHD team, within your own competence, with supervision. Tick each one that is true.'),
-      h('div', { class: 'tx-checks' }, SCOPE.map(function (s) {
-        return ui.check({ label: s.l, hint: s.hint, checked: team0[s.k] === true, cls: 'tx-check',
-          onChange: function (on) { ctx.set('treatment.plan.team.' + s.k, on ? true : undefined); } });
-      })),
-      scopeLive
-    ], 'tx-scope'));
-    function paintScope(a) {
-      var n = scopeDone(obj(obj(txOf(a).plan).team));
-      fill(scopeLive, n === SCOPE.length
-        ? note('ok', 'Scope confirmed', 'You can start and adjust ADHD medicine for this patient within your team\'s governance.')
-        : note('warn', n ? (SCOPE.length - n) + ' of 3 not confirmed' : 'Scope not confirmed',
-          'Do not start ADHD medicine on your own. Next: ask the specialist prescriber in your team to start it, or agree your competence and supervision first. You can still record the plan.'));
-    }
-
-    /* 2. Support and NICE steps for this age group, one group at a time */
     var items = planItemsFor(a0);
     var groups = groupsOf(items, PLAN_GROUP_ORDER);
-    var planLive = h('p', { class: 'tx-count', 'aria-live': 'polite' });
-    var tabsWrap = null;
+
     /* Counts as the step progress does: a ticked item counts; an unticked one counts only when it applies to this
        person (AA.treatment.planItemApplies, for example parent training only with oppositional or conduct symptoms). */
     function applies(a, x) { var t = T(); return typeof t.planItemApplies !== 'function' || !!t.planItemApplies(a, x); }
@@ -738,7 +815,6 @@
       list.forEach(function (x) { var v = st[x.id]; if (v === 'na') return; if (v) { done++; of++; } else if (applies(a, x)) of++; });
       return { done: done, of: of };
     }
-    function groupCount(g, st, a) { var c = tally(a, g.items, st); return c.done + '/' + c.of; }
     var WHEN_TEXT = { oddcd: 'Only with oppositional or conduct symptoms (oppositional defiant or conduct disorder marked co-occurring or uncertain in Differentials).',
       medhelps: 'Only when medicine has helped but significant impairment remains.',
       nondrug: 'Only when non-drug treatment is indicated: the person chooses support without medicine, medicine did not help or was not tolerated, or it helped but significant impairment remains.',
@@ -763,63 +839,89 @@
         ui.seg({ label: x.t, hideLabel: true, small: true, options: PLAN_STATE, value: v,
           onChange: function (nv) { ctx.set('treatment.plan.steps.' + x.id, nv === 'done' ? true : nv === 'na' ? 'na' : undefined); } }));
     }
-    if (items.length) {
-      var st0 = obj(plan0.steps);
-      tabsWrap = ui.tabs(groups.map(function (g, i) {
-        return { id: 'g' + i, label: g.name, count: groupCount(g, st0, a0), render: function () {
-          var st = obj(ctx.get('treatment.plan.steps', {})), aNow = ctx.a() || {};
-          return h('div', { class: 'tx-checks' }, g.items.map(function (x) {
-            if (condOf(x)) return condRow(x, st, aNow);
-            var box = ui.check({ label: x.t, checked: !!st[x.id] && st[x.id] !== 'na', cls: 'tx-check',
-              hint: !st[x.id] && !applies(aNow, x) ? (WHEN_TEXT[x.when] || 'Only when it applies to this person.') + ' Not counted until then.' : null,
-              onChange: function (on) {
-                /* "Still meets the criteria and needs treatment": when the findings disagree with the diagnosis,
-                   the clinician reads the list before ticking it. */
-                var list = on && x.id === 'tp_recheck' ? dxConflicts(ctx.a() || {}) : [];
-                if (!list.length) { ctx.set('treatment.plan.steps.' + x.id, on ? true : undefined); return; }
-                U.confirm({ title: 'The recorded findings do not support the diagnosis yet', body: h('div', null, bullets(list),
-                  h('p', null, 'Tick this only if you have checked each point and the diagnosis still stands. Record why in the formulation.')), ok: 'Tick it' })
-                  .then(function (yes) {
-                    if (yes) ctx.set('treatment.plan.steps.' + x.id, true);
-                    else { var inp = box.querySelector('input'); if (inp) inp.checked = false; }
-                  });
-              } });
-            return box;
-          }));
-        } };
-      }), 'g0');
-    }
-    el.appendChild(card(yng ? 'Support and NICE steps for children and young people' : 'Support and NICE steps', [
-      h('p', { class: 'hint' }, yng ? 'Support comes first. Tick each item when it is done or offered to ' + who(a0) + ' and their family.' : 'Tick each item when it is done or offered.'),
-      planLive,
-      tabsWrap || h('p', { class: 'muted' }, 'Plan items are not available in this build. Write the plan in the notes below.')
-    ]));
-    function paintPlan(a) {
-      var st = obj(obj(txOf(a).plan).steps), c = tally(a, items, st);
-      planLive.textContent = items.length ? c.done + ' of ' + c.of + ' done or offered.' : '';
-      if (tabsWrap) groups.forEach(function (g, i) { tabsWrap.setCount('g' + i, groupCount(g, st, a)); });
+    function checkRow(x, st, aNow) {
+      var box = ui.check({ label: x.t, checked: !!st[x.id] && st[x.id] !== 'na', cls: 'tx-check',
+        hint: !st[x.id] && !applies(aNow, x) ? (WHEN_TEXT[x.when] || 'Only when it applies to this person.') + ' Not counted until then.' : null,
+        onChange: function (on) {
+          /* "Still meets the criteria and needs treatment": when the findings disagree with the diagnosis,
+             the clinician reads the list before ticking it. */
+          var list = on && x.id === 'tp_recheck' ? dxConflicts(ctx.a() || {}) : [];
+          if (!list.length) { ctx.set('treatment.plan.steps.' + x.id, on ? true : undefined); return; }
+          U.confirm({ title: 'The recorded findings do not support the diagnosis yet', body: h('div', null, bullets(list),
+            h('p', null, 'Tick this only if you have checked each point and the diagnosis still stands. Record why in the formulation.')), ok: 'Tick it' })
+            .then(function (yes) {
+              if (yes) ctx.set('treatment.plan.steps.' + x.id, true);
+              else { var inp = box.querySelector('input'); if (inp) inp.checked = false; }
+            });
+        } });
+      return box;
     }
 
-    /* 3. Decision */
+    /* 1. The decision */
     var decHost = h('div', { class: 'tx-live', 'aria-live': 'polite' });
-    el.appendChild(card('Decision', [
-      ui.seg({ label: 'What happens next', options: PLAN_DECISIONS, value: plan0.decision || null, onChange: function (v) { ctx.set('treatment.plan.decision', nil(v)); } }),
+    var secDec = section('tx-plan-dec', 'Decision', 'Choose one. "Medicine with support" leads on to the pre-treatment checks.', card(null, [
+      ui.seg({ label: 'What happens next', hideLabel: true, options: PLAN_DECISIONS, value: plan0.decision || null, onChange: function (v) { ctx.set('treatment.plan.decision', nil(v)); } }),
       decHost,
       h('div', { class: 'form-grid tx-fields' },
         ui.field(yng ? 'What ' + who(a0) + ' and their family prefer' : 'What the person prefers',
           textIn(plan0.prefer, function (v) { ctx.set('treatment.plan.prefer', v); }, { rows: 2, placeholder: 'Goals, worries and preferences about medicine' })),
         ui.field('Notes', textIn(plan0.notes, function (v) { ctx.set('treatment.plan.notes', v); }, { rows: 3, placeholder: 'For example who you referred to and why, or what needs to happen first' })))
-    ]));
+    ], 'tx-deccard'));
+
+    /* 2. Who can start the medicine (pharmacist scope gate) */
+    var scopeLive = h('div', { class: 'tx-live', 'aria-live': 'polite' });
+    var secScope = section('tx-plan-scope', 'Who can start the medicine', 'Only a healthcare professional with training and expertise in diagnosing and managing ADHD should start ADHD medicine.', card(null, [
+      h('p', { class: 'tx-lead' }, 'As a pharmacist independent prescriber, you do this only inside a specialist ADHD team, within your own competence, with supervision. Tick each one that is true.'),
+      h('div', { class: 'tx-checks' }, SCOPE.map(function (s) {
+        return ui.check({ label: s.l, hint: s.hint, checked: team0[s.k] === true, cls: 'tx-check',
+          onChange: function (on) { ctx.set('treatment.plan.team.' + s.k, on ? true : undefined); } });
+      })),
+      scopeLive
+    ], 'tx-scope'));
+
+    /* 3. Support and NICE steps for this age group: one group open at a time, each with its count */
+    var planCnt = h('span', { class: 'tx-cnt' });
+    var gMeta = groups.map(function () { return h('span', { class: 'tx-cnt' }); });
+    var st0 = obj(plan0.steps), firstOpen = -1;
+    groups.forEach(function (g, i) { var c = tally(a0, g.items, st0); if (firstOpen < 0 && c.done < c.of) firstOpen = i; });
+    var supportBody;
+    if (items.length) {
+      supportBody = oneOpen(ui.acc(groups.map(function (g, i) {
+        return { title: accTitle(g.name, PLAN_GROUP_SUB[g.name]), meta: gMeta[i], open: i === firstOpen, render: function () {
+          var st = obj(ctx.get('treatment.plan.steps', {})), aNow = ctx.a() || {};
+          return h('div', { class: 'tx-checks' }, g.items.map(function (x) { return condOf(x) ? condRow(x, st, aNow) : checkRow(x, st, aNow); }));
+        } };
+      })));
+      supportBody.classList.add('tx-acc');
+    } else supportBody = card(null, h('p', { class: 'muted' }, 'Plan items are not available in this build. Write the plan in the decision notes.'));
+    var secSupport = section('tx-plan-support', yng ? 'Support and NICE steps for children and young people' : 'Support and NICE steps',
+      yng ? 'Support comes first. Tick each item when it is done or offered to ' + who(a0) + ' and their family.' : 'Tick each item when it is done or offered.',
+      supportBody, items.length ? [planCnt] : null);
+    el.appendChild(secDec);
+    el.appendChild(secScope);
+    el.appendChild(secSupport);
+
+    function paintScope(a) {
+      var n = scopeDone(obj(obj(txOf(a).plan).team));
+      fill(scopeLive, n === SCOPE.length
+        ? note('ok', 'Scope confirmed', 'You can start and adjust ADHD medicine for this patient within your team\'s governance.')
+        : note('warn', n ? (SCOPE.length - n) + ' of 3 not confirmed' : 'Scope not confirmed',
+          'Do not start ADHD medicine on your own. Next: ask the specialist prescriber in your team to start it, or agree your competence and supervision first. You can still record the plan.'));
+    }
+    function paintPlan(a) {
+      var st = obj(obj(txOf(a).plan).steps);
+      if (items.length) { var c = tally(a, items, st); paintCnt(planCnt, c.done, c.of, 'done or offered'); }
+      groups.forEach(function (g, i) { var gc = tally(a, g.items, st); paintCnt(gMeta[i], gc.done, gc.of); });
+    }
     function paintDecision(a) {
       var p = obj(txOf(a).plan), d = p.decision, st = obj(p.steps), out = [];
-      if (d !== 'nondrug' && d !== 'refer') out.push(conflictNote(ctx, a));
-      if (!d) out.push(h('p', { class: 'hint' }, 'Choose one. "Medicine with support" leads on to the pre-treatment checks.'));
-      else if (d === 'medication') {
+      if (d === 'medication') {
         if (!Tx.applicable(a).ok) {
           out.push(note('warn', 'No diagnosis recorded for medicine', 'ADHD medicine needs a diagnosis (criteria met, or other specified ADHD). Next: record it in Scoring and diagnosis, or change this decision.', [goBtn(ctx, 'summary', 'Go to scoring and diagnosis')]));
         }
         if (scopeDone(obj(p.team)) < SCOPE.length) {
-          out.push(note('warn', 'Scope not confirmed', 'Next: a specialist prescriber in your team starts the medicine, or tick the three scope checks above once they are true.'));
+          out.push(note('warn', 'Scope not confirmed', 'Next: a specialist prescriber in your team starts the medicine, or tick the three scope checks below once they are true.',
+            [ui.btn({ label: 'Go to the scope checks', kind: 'ghost', small: true, onClick: function () { reveal(secScope); } })]));
         }
         if (yng && AA.byId('txPlanItems', 'tp_medcriteria') && !st.tp_medcriteria) {
           out.push(note('info', 'NICE conditions for medicine', 'For children and young people, NICE offers medicine only when all three conditions under "Before medication" hold. Next: tick that item when it is true.'));
@@ -827,19 +929,51 @@
         if (!yng && AA.byId('txPlanItems', 'tp_envmod_adult') && !st.tp_envmod_adult) {
           out.push(note('info', 'Environmental changes first', 'NICE offers medicine to adults when significant impairment remains after changes at work, study and home have been made and reviewed. Next: tick that item under "Before medication" when done.'));
         }
-        out.push(note('ok', 'Next: pre-treatment checks', 'Heart history, blood pressure, pulse, height, weight and the safety screen.', [goBtn(ctx, 'baseline', 'Go to pre-treatment checks')]));
-      } else if (d === 'nondrug') {
-        out.push(note('info', 'Support without medicine', 'The medicine steps are not needed. Record the support offered and when you will review it. Medicine can be reconsidered later.', [goBtn(ctx, 'report', 'Go to the report')]));
-      } else if (d === 'refer') {
-        out.push(note('info', 'Refer on', 'Next: write who you referred to and why in the notes (for example a tertiary ADHD service, paediatrics or another specialist service).'));
-      } else if (d === 'defer') {
-        out.push(note('info', 'Decide later', 'Next: write what needs to happen first, and when you will review it, in the notes.'));
       }
       fill(decHost, out);
     }
+    function paintAttn(a) {
+      var d = obj(txOf(a).plan).decision;
+      fill(attn, d !== 'nondrug' && d !== 'refer' ? [conflictNote(ctx, a)] : []);
+    }
+    function paintSummary(a) {
+      var ap = Tx.applicable(a), p = obj(txOf(a).plan), d = p.decision, st = obj(p.steps), sc = scopeDone(obj(p.team));
+      var c = tally(a, items, st), issues = d !== 'nondrug' && d !== 'refer' ? dxConflicts(a).length : 0;
+      var medicine = d === 'medication' || !!obj(txOf(a).choice).drug;
+      var o = { eyebrow: 'Treatment plan', kind: 'info', actions: [] };
+      if (!d) {
+        o.title = 'Choose the treatment decision';
+        o.next = 'choose what happens next under Decision.';
+        o.actions.push(ui.btn({ label: 'Go to the decision', kind: 'ghost', small: true, onClick: function () { reveal(secDec); } }));
+      } else if (d === 'medication') {
+        var problem = !ap.ok ? 'record the diagnosis first' : issues ? 'check the findings first' : sc < SCOPE.length ? 'confirm who starts it' : '';
+        o.kind = problem ? 'warn' : 'ok';
+        o.title = problem ? 'Medicine planned: ' + problem : 'Medicine with support: ready for the checks';
+        o.next = 'pre-treatment checks: heart history, blood pressure, pulse, height, weight and the safety screen.';
+        o.actions.push(goBtn(ctx, 'baseline', 'Go to pre-treatment checks'));
+      } else if (d === 'nondrug') {
+        o.kind = 'ok'; o.title = 'Support without medicine';
+        o.text = 'The medicine steps are not needed. Record the support offered and when you will review it. Medicine can be reconsidered later.';
+        o.actions.push(goBtn(ctx, 'report', 'Go to the report'));
+      } else if (d === 'refer') {
+        o.title = 'Refer on';
+        o.next = 'write who you referred to and why in the notes (for example a tertiary ADHD service, paediatrics or another specialist service).';
+      } else if (d === 'defer') {
+        o.title = 'Decide later';
+        o.next = 'write what needs to happen first, and when you will review it, in the notes.';
+      }
+      o.facts = [
+        { k: 'Decision', v: d ? DEC_TEXT[d] || d : 'Not chosen yet', kind: d ? 'ok' : 'neutral', onClick: function () { reveal(secDec); }, title: 'Go to the decision' },
+        { k: 'Prescriber scope', v: sc >= SCOPE.length ? 'Confirmed' : sc ? sc + ' of ' + SCOPE.length + ' confirmed' : 'Not confirmed', kind: sc >= SCOPE.length ? 'ok' : medicine ? 'warn' : 'neutral',
+          onClick: function () { reveal(secScope); }, title: 'Go to the scope checks' },
+        items.length ? { k: 'Support and NICE steps', v: c.done + ' of ' + c.of + ' done or offered', kind: c.of && c.done >= c.of ? 'ok' : c.done ? 'warn' : 'neutral',
+          onClick: function () { reveal(secSupport); }, title: 'Go to the support and NICE steps' } : null
+      ];
+      fill(sumHost, summaryCard(o));
+    }
 
     var src = stepSources(el, function () { return SCOPE_SRC.concat(items.map(function (x) { return x.src; })); });
-    function paintAll() { var a = ctx.a() || {}; paintScope(a); paintPlan(a); paintDecision(a); src.paint(a); }
+    function paintAll() { var a = ctx.a() || {}; paintAttn(a); paintSummary(a); paintScope(a); paintPlan(a); paintDecision(a); src.paint(a); }
     paintAll();
     ctx.onChange('treatment', U.debounce(function () { if (el.isConnected) paintAll(); }, 80));
     return null;
@@ -847,36 +981,42 @@
 
   /* =================================================================================
      Step: pre-treatment checks
+     Notes > the verdict (summary: headline, progress, one fact per set of checks, reasons, next action) > the four
+     sets of checks one at a time (ui.stepper): measurements, heart history, safety screen, medicines and the rest.
      ================================================================================= */
+  var VERDICT_BADGE = { stop: ['Do not start', 'err'], cardiology: ['Specialist opinion first', 'err'], ecg: ['ECG first', 'warn'], incomplete: ['Checks to do', 'neutral'],
+    caution: ['Cautions', 'warn'], ok: ['Checks clear', 'ok'], risk: ['Safety flags', 'err'], stopmix: ['Do not start', 'err'] };
   function verdictCard(ctx) {
-    var host = h('div');
+    var host = h('div', { class: 'tx-sumhost' });
     var say = h('p', { class: 'sr-only', 'aria-live': 'polite' });   /* announces only a change of verdict */
-    var box = h('section', { class: 'card tx-card tx-verdict' }, say, host);
-    function paint(a) {
+    var box = h('div', { class: 'tx-verdict' }, say, host);
+    function paint(a, facts) {
       var vv = verdictView(a), v = vv.v, m = vv.m;
-      box.className = 'card tx-card tx-verdict tx-v-' + kindOf(vv.level);
       if (say.textContent !== 'Verdict: ' + m.t) say.textContent = 'Verdict: ' + m.t;
       var reasons = arr(v.reasons);
-      var was = host.querySelector('details');
+      var was = host.querySelector('.tx-miss');
       var missOpen = !!(was && was.open);
-      fill(host, [
-        h('p', { class: 'tx-k' }, 'Verdict so far'),
-        h('h2', null, m.t),
-        h('div', { class: 'tx-progline' }, ui.progress(v.done || 0, v.of || 0, 'Checks recorded'), h('span', { class: 'hint' }, (v.done || 0) + ' of ' + (v.of || 0) + ' checks recorded')),
-        reasons.length || vv.rf.length ? h('ul', { class: 'tx-reasons' }, reasons.map(function (r) {
-          return h('li', { class: 'tx-r tx-r-' + kindOf(r.level) }, h('span', { class: 'tx-dot', 'aria-hidden': 'true' }), h('span', null, stripClauses(String(r.text || r))));
-        }).concat(vv.rf.map(function (it) {
-          return h('li', { class: 'tx-r tx-r-err' }, h('span', { class: 'tx-dot', 'aria-hidden': 'true' }), h('span', null, 'Safety step: ' + (it.short || it.text) + '. Act on this before starting.'));
-        }))) : null,
-        h('p', { class: 'tx-next' }, m.next),
-        vv.rf.length || vv.level === 'risk' || vv.level === 'stopmix' ? h('div', { class: 'row' }, goBtn(ctx, 'risk', 'Open safety and risk')) : null,
-        vv.level === 'ok' || vv.level === 'caution' ? h('div', { class: 'row' }, goBtn(ctx, 'prescribe', 'Go to choose and prescribe')) : null,
-        arr(v.missing).length ? ui.details('Still to record', bullets(v.missing), { cls: 'tx-bare', meta: String(v.missing.length), open: missOpen }) : null
-      ]);
+      var list = reasons.length || vv.rf.length ? h('ul', { class: 'tx-reasons' }, reasons.map(function (r) {
+        return h('li', { class: 'tx-r tx-r-' + kindOf(r.level) }, h('span', { class: 'tx-dot', 'aria-hidden': 'true' }), h('span', null, stripClauses(String(r.text || r))));
+      }).concat(vv.rf.map(function (it) {
+        return h('li', { class: 'tx-r tx-r-err' }, h('span', { class: 'tx-dot', 'aria-hidden': 'true' }), h('span', null, 'Safety step: ' + (it.short || it.text) + '. Act on this before starting.'));
+      }))) : null;
+      fill(host, summaryCard({
+        kind: kindOf(vv.level), eyebrow: 'Verdict so far', badge: VERDICT_BADGE[vv.level] || VERDICT_BADGE.incomplete, title: m.t,
+        progress: progLine(v.done || 0, v.of || 0, (v.done || 0) + ' of ' + (v.of || 0) + ' checks recorded', 'Checks recorded'),
+        facts: facts,
+        extra: [list, arr(v.missing).length ? ui.details('Still to record', bullets(v.missing), { cls: 'tx-bare tx-miss', meta: String(v.missing.length), open: missOpen }) : null],
+        next: String(m.next || '').replace(/^Next:\s*/, ''),
+        actions: [vv.rf.length || vv.level === 'risk' || vv.level === 'stopmix' ? goBtn(ctx, 'risk', 'Open safety and risk') : null,
+          vv.level === 'ok' || vv.level === 'caution' ? goBtn(ctx, 'prescribe', 'Go to choose and prescribe') : null]
+      }));
       return v;
     }
     return { el: box, paint: paint };
   }
+
+  /* Heart history questions answered from the examination or the readings, shown as their own group. */
+  var EXAM_CX = { cx_hf: 1, cx_murmur: 1, cx_htn: 1 };
 
   AA.steps.baseline = { render: function (el, ctx) {
     if (!ready()) { el.appendChild(notLoaded()); return null; }
@@ -887,7 +1027,7 @@
     var an = applicNote(ctx, a0, 'baseline');
     if (an) el.appendChild(an);
     var pn = planNote(ctx, a0);
-    if (pn) el.appendChild(pn);
+    if (pn) el.appendChild(h('div', { class: 'tx-ready' }, pn));
 
     var verdict = verdictCard(ctx);
     el.appendChild(verdict.el);
@@ -902,7 +1042,7 @@
         setB(key, v);
       };
     }
-    var live = {};   /* hosts of the tab on screen, repainted on change */
+    var live = {};   /* hosts of the set of checks on screen, repainted on change */
     var chartList = 'tx-bpcharts-' + U.uid();
 
     /* Young people: the clinician reads the centile from a chart and records which chart. NICE names none. */
@@ -922,7 +1062,7 @@
         ]), { cls: 'tx-bare' }));
     }
 
-    /* ---- Tab: measurements ---- */
+    /* ---- Set 1: measurements ---- */
     function measureTab() {
       var b = B();
       dateEl = ui.input({ type: 'date', value: b.date || today(), onSave: function (v) { setB('date', v || undefined); } });
@@ -931,20 +1071,23 @@
       live.repeat = h('div', { class: 'tx-repeat' });
       live.repeatSig = null;
       return h('div', null,
-        h('p', { class: 'hint' }, 'Use the right cuff size, with ' + who(a0) + ' seated and rested. ' + (yng ? 'Plot height and weight on the growth chart, and blood pressure on a centile chart for age and height.' : 'If the first reading is 140/90 or higher, take a second one: the lower of the two counts as the clinic blood pressure.')),
-        h('div', { class: 'form-grid tx-fields' },
-          ui.field('Date of the checks', dateEl),
+        h('p', { class: 'hint tx-tabhint' }, 'Use the right cuff size, with ' + who(a0) + ' seated and rested. ' + (yng ? 'Plot height and weight on the growth chart, and blood pressure on a centile chart for age and height.' : 'If the first reading is 140/90 or higher, take a second one: the lower of the two counts as the clinic blood pressure.')),
+        h('div', { class: 'form-grid tx-fields tx-datef' }, ui.field('Date of the checks', dateEl)),
+        h('h3', { class: 'tx-subh' }, 'Blood pressure and pulse'),
+        h('div', { class: 'form-grid tx-fields tx-f2' },
           ui.field('Systolic blood pressure (mmHg)', numIn(b.sbp, saveM('sbp'), { int: true })),
           ui.field('Diastolic blood pressure (mmHg)', numIn(b.dbp, saveM('dbp'), { int: true })),
           ui.field('Pulse (beats a minute)', numIn(b.pulse, saveM('pulse'), { int: true })),
-          ui.field('Cuff size', textIn(b.cuff, function (v) { setB('cuff', v); }, { placeholder: yng ? 'For example child, small adult' : 'For example standard adult, large adult' })),
-          ui.field('Height (cm)', numIn(b.heightCm, saveM('heightCm'))),
-          ui.field('Weight (kg)', numIn(b.weightKg, saveM('weightKg')))),
-        live.bmi,
+          ui.field('Cuff size', textIn(b.cuff, function (v) { setB('cuff', v); }, { placeholder: yng ? 'For example child, small adult' : 'For example standard adult, large adult' }))),
         yng ? centileBlock(b) : null,
         live.repeat,
         live.bp,
-        ui.field('Notes on pulse and blood pressure', textIn(b.hrNote, function (v) { setB('hrNote', v); }, { rows: 2, placeholder: 'For example anxious at the first reading, caffeine, irregular pulse' })));
+        ui.field('Notes on pulse and blood pressure', textIn(b.hrNote, function (v) { setB('hrNote', v); }, { rows: 2, placeholder: 'For example anxious at the first reading, caffeine, irregular pulse' })),
+        h('h3', { class: 'tx-subh' }, 'Height and weight'),
+        h('div', { class: 'form-grid tx-fields tx-f2' },
+          ui.field('Height (cm)', numIn(b.heightCm, saveM('heightCm'))),
+          ui.field('Weight (kg)', numIn(b.weightKg, saveM('weightKg')))),
+        live.bmi);
     }
     function paintMeasure(a) {
       if (!live.bp) return;
@@ -965,7 +1108,7 @@
           live.third = need ? h('div', { class: 'tx-third' }) : null;
           live.thirdSig = null;
           fill(live.repeat, need ? h('div', { class: 'tx-sub' },
-            h('p', { class: 'tx-subh' }, 'Second reading and confirmation'),
+            h('h3', { class: 'tx-subh' }, 'Second reading and confirmation'),
             h('p', { class: 'hint' }, 'Take a second reading in the same visit. The lower of the two readings counts as the clinic blood pressure. If it is 140/90 or higher but below 180/120, confirm with ambulatory or home readings.'),
             h('div', { class: 'form-grid tx-fields' },
               ui.field('Second systolic (mmHg)', numIn(rep.sbp, function (v) { setB('repeat.sbp', v); }, { int: true })),
@@ -1003,7 +1146,7 @@
       } else U.clear(live.third);
     }
 
-    /* ---- Tab: heart history ---- */
+    /* ---- Set 2: heart history (questions to ask, then the examination and the readings) ---- */
     function heartTab() {
       var a = ctx.a() || {}, b = obj(txOf(a).baseline), map = obj(b.cardiac);
       var items = cardiacItems(a);
@@ -1011,17 +1154,22 @@
       live.heartHist = h('div', { class: 'tx-histbar' });
       live.ecg = h('div', { class: 'tx-ecg' });
       live.ecgSig = null;
-      var rows = items.map(function (c) {
+      function rowFor(c) {
         var row = qRow(c, yng && c.askYoung ? c.askYoung : c.ask, map[c.id], function (v) { setB('cardiac.' + c.id, nil(v)); },
           c.action === 'ecg' ? 'A yes means an ECG before starting.' : null);
         row.item = c;
         live.heartRows.push(row);
         return row;
-      });
+      }
+      var ask = items.filter(function (c) { return !EXAM_CX[c.id]; }).map(rowFor);
+      var exam = items.filter(function (c) { return EXAM_CX[c.id]; }).map(rowFor);
       return h('div', null,
-        h('p', { class: 'hint' }, (yng ? 'The questions are worded for the parent or carer.' + (bandOf(a) === 'child' ? '' : ' Ask the young person too.') : 'Ask each question.') + ' A yes to a heart history question means a specialist heart opinion before starting.'),
+        h('p', { class: 'hint tx-tabhint' }, (yng ? 'The questions are worded for the parent or carer.' + (bandOf(a) === 'child' ? '' : ' Ask the young person too.') : 'Ask each question.') + ' A yes to a heart history question means a specialist heart opinion before starting.'),
         live.heartHist,
-        h('div', { class: 'tx-qs' }, rows),
+        ask.length && exam.length ? h('h3', { class: 'tx-subh' }, 'Ask about') : null,
+        ask.length ? h('div', { class: 'tx-qs' }, ask) : null,
+        exam.length ? h('h3', { class: 'tx-subh' }, 'Examination and readings') : null,
+        exam.length ? h('div', { class: 'tx-qs' }, exam) : null,
         live.ecg);
     }
     function paintHeart(a) {
@@ -1040,14 +1188,14 @@
       if (sig !== live.ecgSig) {
         live.ecgSig = sig;
         fill(live.ecg, need ? h('div', { class: 'tx-sub' },
-          h('p', { class: 'tx-subh' }, 'ECG and specialist opinion'),
+          h('h3', { class: 'tx-subh' }, 'ECG and specialist opinion'),
           ui.seg({ label: 'ECG', options: ECG, value: b.ecg || null, onChange: function (v) { setB('ecg', nil(v)); } }),
           ui.seg({ label: 'Cardiology or specialist opinion', options: CARDIO, value: b.cardiology || null, onChange: function (v) { setB('cardiology', nil(v)); } })) :
-          h('p', { class: 'hint' }, 'No ECG or heart opinion is needed so far. Routine ECGs are not needed before ADHD medicine.'));
+          h('p', { class: 'hint tx-sub' }, 'No ECG or heart opinion is needed so far. Routine ECGs are not needed before ADHD medicine.'));
       }
     }
 
-    /* ---- Tab: safety screen (contraindications and cautions), one group open at a time ---- */
+    /* ---- Set 3: safety screen (contraindications and cautions), one group open at a time ---- */
     function safetyTab() {
       var a = ctx.a() || {}, map = obj(obj(txOf(a).baseline).ci);
       var groups = cautionGroups(a);
@@ -1062,7 +1210,7 @@
       var groupEls = groups.map(function (g, i) {
         var meta = h('span', { class: 'tx-gmeta' });
         var rows = g.items.map(function (c) {
-          var row = qRow(c, c.ask, map[c.id], function (v) { setB('ci.' + c.id, nil(v)); afterCi(c.id, v); }, affects(c.id));
+          var row = qRow(c, c.ask, map[c.id], function (v) { setB('ci.' + c.id, nil(v)); afterCi(c.id, v); }, affectsNode(c.id));
           row.item = c;
           if (c.id === 'ci_hepatic') {
             /* Under the whole row (after the yes/no answer on phones), across both columns. */
@@ -1080,7 +1228,7 @@
         return d;
       });
       return h('div', null,
-        h('p', { class: 'hint' }, 'Ask about each condition and medicine. A yes shows which ADHD medicines it rules out or needs care with; the product cards use it too.'),
+        h('p', { class: 'hint tx-tabhint' }, 'Ask about each condition and medicine. A yes shows which ADHD medicines it rules out or needs care with; the product cards use it too.'),
         live.safeHist,
         h('div', { class: 'tx-groups' }, groupEls),
         h('div', { class: 'row tx-rowend' }, ui.btn({ label: 'Mark the rest "No"', kind: 'quiet', small: true, onClick: function () {
@@ -1091,7 +1239,7 @@
             ? 'Pregnancy and breastfeeding are not asked here. One pregnancy question covers them, under "' + otherLabel + '".'
             : 'Pregnancy and breastfeeding are not asked here. One pregnancy question covers them, from age 12.'),
           live.pregPend,
-          showPreg || pregShown[ctx.id] ? h('div', { class: 'row' }, ui.btn({ label: 'Go to the pregnancy question', kind: 'quiet', small: true, onClick: function () { tabs.show('other'); } })) : null) : null);
+          showPreg || pregShown[ctx.id] ? h('div', { class: 'row' }, ui.btn({ label: 'Go to the pregnancy question', kind: 'quiet', small: true, onClick: function () { openSet('other'); } })) : null) : null);
     }
     function paintSafety(a) {
       if (!live.safeHist) return;
@@ -1100,7 +1248,7 @@
       live.safeGroups.forEach(function (x) {
         var answered = 0, yes = 0;
         x.g.items.forEach(function (c) { var v = Tx.ciAnswer(a, c.id).v; if (v) answered++; if (v === 'yes') yes++; });
-        x.meta.textContent = answered + ' of ' + x.g.items.length + ' answered' + (yes ? ' · ' + yes + ' yes' : '');
+        fill(x.meta, [cnt(answered, x.g.items.length, 'answered'), yes ? ui.badge(yes + ' yes', 'warn') : null]);
       });
       var bl = obj(txOf(a).baseline);
       paintChildPugh(a, bl);
@@ -1146,7 +1294,7 @@
       }
     }
 
-    /* ---- Tab: medicines, misuse, pregnancy, driving ---- */
+    /* ---- Set 4: medicines, misuse, pregnancy, driving ---- */
     function otherTab() {
       var b = B();
       live.misuse = h('div', { class: 'tx-live', 'aria-live': 'polite' });
@@ -1159,7 +1307,8 @@
         pregBlock(b),
         showDrive ? h('div', { class: 'tx-sub' },
           ui.seg({ label: 'Driving', options: DRIVE, value: b.driving || null, onChange: function (v) { setB('driving', nil(v)); } })) : null,
-        ui.field('Other notes', textIn(b.notes, function (v) { setB('notes', v); }, { rows: 2, placeholder: 'Anything else that affects the choice of medicine' })));
+        h('div', { class: 'tx-sub' },
+          ui.field('Other notes', textIn(b.notes, function (v) { setB('notes', v); }, { rows: 2, placeholder: 'Anything else that affects the choice of medicine' }))));
     }
     /* One pregnancy question for pregnancy, breastfeeding and contraception (it also answers the
        pregnancy and breastfeeding items of the safety screen). Under 12 it stays closed until asked for. */
@@ -1168,7 +1317,7 @@
       if (!showPreg && !pregShown[ctx.id] && !b.pregnancy && b.contraception !== true) {
         return h('div', { class: 'tx-sub tx-pregoff' },
           h('p', { class: 'hint' }, 'Pregnancy and contraception are asked from age 12.'),
-          h('div', { class: 'row' }, ui.btn({ label: 'Show anyway', kind: 'quiet', small: true, onClick: function () { pregShown[ctx.id] = true; tabs.show('other'); src.paint(ctx.a() || {}); } })));
+          h('div', { class: 'row' }, ui.btn({ label: 'Show anyway', kind: 'quiet', small: true, onClick: function () { pregShown[ctx.id] = true; openSet('other', true); src.paint(ctx.a() || {}); } })));
       }
       live.preg = h('div', { class: 'tx-live', 'aria-live': 'polite' });
       live.pregMore = h('div', { class: 'tx-live tx-pregmore' });
@@ -1216,7 +1365,7 @@
       var a = ctx.a() || {}, n = 0;
       items.forEach(function (c) { var x = answerFn(a, c.id); if (x.fromHistory || x.fromRisk) { setB(prefix + c.id, 'yes'); n++; } });
       U.toast(n ? plural(n, 'answer') + ' saved' : 'Nothing to save', n ? 'ok' : 'warn');
-      if (tabs) tabs.show(curTab);
+      if (stepper) stepper.show(stepper.index());
     }
     /* Items linked to a ticked safety-step answer are never marked "No" in bulk: the clinician answers them. */
     /* Items linked to an older combined CYP3A4 yes are not marked "No" in bulk either. */
@@ -1230,13 +1379,14 @@
         .then(function (yes) {
           if (!yes) return;
           todo.forEach(function (c) { setB(prefix + c.id, 'no'); if (prefix === 'ci.') afterCi(c.id, 'no'); });
-          if (tabs) tabs.show(curTab);
+          if (stepper) stepper.show(stepper.index());
         });
     }
 
+    /* Recorded / of, for each set of checks (the summary facts and the stepper's ticks). */
     function counts(a) {
       var b = obj(txOf(a).baseline);
-      function c(list) { return list.filter(Boolean).length + '/' + list.length; }
+      function c(list) { return { done: list.filter(Boolean).length, of: list.length }; }
       return {
         m: c([!!b.date, bpOf(b) !== null, num(b.pulse) !== null, num(b.heightCm) !== null, num(b.weightKg) !== null].concat(yng ? [!!b.bpCentile] : [])),
         heart: c(cardiacItems(a).map(function (x) { return Tx.cardiacAnswer(a, x.id).v !== null; })),
@@ -1246,16 +1396,30 @@
           .concat(showDrive ? [!!b.driving] : []))
       };
     }
-    var c0 = counts(a0), curTab = 'm';
-    var tabs = ui.tabs([
-      { id: 'm', label: 'Measurements', count: c0.m, render: measureTab },
-      { id: 'heart', label: 'Heart history', count: c0.heart, render: heartTab },
-      { id: 'safety', label: 'Safety screen', count: c0.safety, render: safetyTab },
-      { id: 'other', label: otherLabel, count: c0.other, render: otherTab }
-    ], 'm', function (id) { curTab = id; var a = ctx.a() || {}; paintTab(a); });
-    el.appendChild(card('Checks', [tabs], 'tx-checkscard'));
+    var SETS = [
+      { id: 'm', label: 'Measurements', sub: 'Blood pressure, pulse, height and weight.', render: measureTab },
+      { id: 'heart', label: 'Heart history', sub: 'Heart symptoms, family history and the examination.', render: heartTab },
+      { id: 'safety', label: 'Safety screen', sub: 'Conditions and medicines that rule out an ADHD medicine or need care with it.', render: safetyTab },
+      { id: 'other', label: otherLabel, sub: showDrive ? 'Current medicines, misuse risk, pregnancy and driving.' : showPreg ? 'Current medicines, misuse risk and pregnancy.' : 'Current medicines and the risk of misuse.', render: otherTab }
+    ];
+    function setIndex(id) { for (var i = 0; i < SETS.length; i++) if (SETS[i].id === id) return i; return 0; }
+    var c0 = counts(a0), start = 0;
+    for (var si = 0; si < SETS.length; si++) { var x0 = c0[SETS[si].id]; if (x0.done < x0.of) { start = si; break; } }
+    var curTab = SETS[start].id, stepper = null;
+    stepper = ui.stepper(SETS.map(function (s) {
+      return { title: s.label, sub: s.sub, label: s.label, render: s.render,
+        done: function () { var x = counts(ctx.a() || {})[s.id]; return x.of > 0 && x.done >= x.of; } };
+    }), { start: start, label: 'Pre-treatment checks', eyebrow: function (i) { return 'Checks ' + (i + 1) + ' of ' + SETS.length; },
+      onChange: function (i) { curTab = SETS[i].id; paintTab(ctx.a() || {}); } });
+    stepper.classList.add('tx-setstep');
+    el.appendChild(stepper);
+    /* Open one set of checks (from a summary fact or a "Go to" button) and bring it into view. */
+    function openSet(id, stay) {
+      stepper.show(setIndex(id));
+      if (!stay) reveal(stepper);
+    }
 
-    /* Only the tab on screen is painted: each tab renders fresh hosts when it is shown. */
+    /* Only the set on screen is painted: each set renders fresh hosts when it is shown. */
     function paintTab(a) {
       if (curTab === 'm') paintMeasure(a);
       else if (curTab === 'heart') paintHeart(a);
@@ -1278,11 +1442,18 @@
         .concat(['NICE NG87 1.7.23–1.7.24 (misuse and diversion risk)'])
         .concat(pregDue(a) || pregShown[ctx.id] ? pregItems().map(function (x) { return x.src; }) : []);
     });
+    /* One fact per set of checks in the verdict: how many are recorded; a tap opens that set. */
+    function setFacts(a) {
+      var c = counts(a);
+      return SETS.map(function (s) {
+        var x = c[s.id];
+        return { k: s.label, v: x.done + ' of ' + x.of, kind: x.of && x.done >= x.of ? 'ok' : x.done ? 'warn' : 'neutral', title: 'Open ' + lc(s.label), onClick: function () { openSet(s.id); } };
+      });
+    }
     function paintAll() {
       var a = ctx.a() || {};
-      verdict.paint(a);
-      var c = counts(a);
-      tabs.setCount('m', c.m); tabs.setCount('heart', c.heart); tabs.setCount('safety', c.safety); tabs.setCount('other', c.other);
+      verdict.paint(a, setFacts(a));
+      stepper.refresh();
       paintTab(a);
       src.paint(a);
     }
@@ -1292,7 +1463,9 @@
   } };
 
   /* =================================================================================
-     Step: choose and prescribe (six stages, one open at a time)
+     Step: choose and prescribe (six stages, one at a time)
+     Notes > summary (medicine, product, starting dose, next prescription, the next stage) > stage track > the stage:
+     its own cards (NICE pathway, product comparison cards, the titration ladder, grouped checklists).
      ================================================================================= */
   var STAGES = [
     { id: 'prior', l: 'Previous medicines' },
@@ -1344,18 +1517,24 @@
     U.confirm({ title: 'Change the medicine?', body: 'This clears the starting dose, start date, counselling and prescription ticks recorded for ' + lc(drugName(ch.drug)) + '. Its reviews stay in the record but no longer set the dose: the new medicine starts at its own starting dose. If it was tried, record it under previous medicines first.', ok: 'Change medicine' })
       .then(function (yes) { if (yes) apply(); });
   }
+  function stageLead(text) { return h('p', { class: 'tx-stage-p' }, text); }
+  function firstNote(kind, title, label, onClick) {
+    return card(null, note(kind, title, null, [ui.btn({ label: label, kind: 'ghost', small: true, onClick: onClick })]));
+  }
 
   /* ---- Stage 1: previous medicines ---- */
   function stagePrior(host, ctx) {
     var openId = null, sig = null, rows = {};
     var listHost = h('div', { class: 'tx-rows' });
     var drugs = arr(AA.data.txDrugs);
-    host.appendChild(h('p', { class: 'tx-lead' }, 'Record each ADHD medicine taken before: the product, the highest daily dose, how many weeks, and how it went. The NICE options in the next stage use this.'));
-    host.appendChild(h('p', { class: 'hint' }, 'A trial counts as adequate after 6 weeks at the optimised or maximum dose, not 6 weeks from the first dose. If this is the first ADHD medicine, go on to the next stage.'));
-    host.appendChild(listHost);
-    host.appendChild(h('div', { class: 'row' }, ui.btn({ label: '+ Add a previous medicine', kind: 'ghost', onClick: function () {
-      var k = U.uid(); openId = k; ctx.set('treatment.prior.' + k, { drug: '' });
-    } })));
+    host.appendChild(stageLead('Record each ADHD medicine taken before: the product, the highest daily dose, how many weeks, and how it went. The NICE options in the next stage use this.'));
+    host.appendChild(card(null, [
+      h('p', { class: 'hint tx-tabhint' }, 'A trial counts as adequate after 6 weeks at the optimised or maximum dose, not 6 weeks from the first dose. If this is the first ADHD medicine, go on to the next stage.'),
+      listHost,
+      h('div', { class: 'row tx-addrow' }, ui.btn({ label: '+ Add a previous medicine', kind: 'ghost', onClick: function () {
+        var k = U.uid(); openId = k; ctx.set('treatment.prior.' + k, { drug: '' });
+      } }))
+    ], 'tx-priorcard'));
     function priorMap(a) { return obj(txOf(a).prior); }
     function sumText(p) {
       var bits = [p.drug ? drugName(p.drug) : 'Medicine not chosen'];
@@ -1421,30 +1600,30 @@
     return { refresh: refresh };
   }
 
-  /* ---- Stage 2: NICE options ---- */
+  /* ---- Stage 2: NICE options (a numbered pathway), then the chosen medicine ---- */
   function stageOptions(host, ctx, a0, go) {
-    var Tx = T(), listHost = h('div'), infoHost = h('div', { class: 'tx-druginfo', 'aria-live': 'polite' });
-    host.appendChild(h('p', { class: 'tx-lead' }, (isYoung(a0) ? 'The NICE order for children and young people (6 to 17).' : 'The NICE order for adults.') + ' The status of each step uses the previous medicines you recorded.'));
-    host.appendChild(listHost);
+    var Tx = T(), listHost = h('div'), infoHost = h('div', { class: 'tx-infohost', 'aria-live': 'polite' });
+    host.appendChild(stageLead((isYoung(a0) ? 'The NICE order for children and young people (6 to 17).' : 'The NICE order for adults.') + ' The status of each step uses the previous medicines you recorded.'));
+    host.appendChild(card(null, listHost, 'tx-pathcard'));
     host.appendChild(infoHost);
     function paint(a) {
       var opts = Tx.options(a), ch = obj(txOf(a).choice);
       if (!opts.length) {
         fill(listHost, note('err', 'No ADHD medicine in this tool for this age', 'Under 6: refer to a service with expertise in ADHD in young children.', [goBtn(ctx, 'setup', 'Back to the first step')]));
-        U.clear(infoHost);
+        U.clear(infoHost); infoHost.__txSig = null;
         return;
       }
-      fill(listHost, h('ol', { class: 'tx-opts' }, opts.map(function (o) {
+      fill(listHost, h('ol', { class: 'tx-path' }, opts.map(function (o) {
         var s = OPT_STATUS[o.status] || OPT_STATUS.possible;
-        return h('li', { class: 'tx-opt tx-opt-' + o.status + (o.current ? ' is-current' : '') },
-          h('div', { class: 'tx-opt-head' },
-            h('span', { class: 'tx-opt-n', 'aria-hidden': 'true' }, String(o.n)),
-            h('span', { class: 'tx-opt-l' }, o.label),
+        return h('li', { class: 'tx-path-i tx-path-' + o.status + (o.current ? ' is-current' : '') },
+          h('span', { class: 'tx-path-n', 'aria-hidden': 'true' }, String(o.n)),
+          h('div', { class: 'tx-path-head' },
+            h('span', { class: 'tx-path-l' }, h('span', { class: 'sr-only' }, 'Step ' + o.n + ': '), o.label),
             ui.badge(s[0], s[1]),
             o.current ? ui.badge('Chosen', 'ok') : null),
-          o.when ? h('p', { class: 'tx-opt-when' }, stripClauses(o.when)) : null,
-          o.why ? h('p', { class: 'tx-opt-why' }, stripClauses(o.why)) : null,
-          o.drugs.length ? h('div', { class: 'row tx-opt-act' }, o.drugs.map(function (d) {
+          o.when ? h('p', { class: 'tx-path-when' }, stripClauses(o.when)) : null,
+          o.why ? h('p', { class: 'tx-path-why' }, stripClauses(o.why)) : null,
+          o.drugs.length ? h('div', { class: 'row tx-path-act' }, o.drugs.map(function (d) {
             var chosen = ch.drug === d;
             return ui.btn({ label: chosen ? '✓ ' + drugName(d) + ' chosen' : 'Choose ' + lc(drugName(d)), kind: chosen ? 'secondary' : o.status === 'next' ? 'primary' : 'ghost', small: true,
               onClick: function () { chooseDrug(ctx, d, function () { go('product'); }); } });
@@ -1454,11 +1633,11 @@
     }
     function paintInfo(a, opts) {
       var ch = obj(txOf(a).choice), d = drugOf(ch.drug);
-      if (!d) { fill(infoHost, h('p', { class: 'hint' }, 'Choose a medicine with ' + who(a) + (isYoung(a) ? ' and their family' : '') + ': a shared decision.')); return; }
+      if (!d) { fill(infoHost, h('p', { class: 'hint tx-shared' }, 'Choose a medicine with ' + who(a) + (isYoung(a) ? ' and their family' : '') + ': a shared decision.')); return; }
       var mine = opts.filter(function (o) { return o.drugs.indexOf(d.id) > -1; });
       var usual = mine.some(function (o) { return o.status === 'next' || o.status === 'possible'; });
       var cs = Tx.cautionsFor(a, d.id), ci = cs.filter(function (c) { return c.level === 'ci'; }), ca = cs.filter(function (c) { return c.level !== 'ci'; });
-      var out = [h('h3', { class: 'tx-h3' }, d.name), h('p', { class: 'hint tx-cls' }, d.cls)];
+      var out = [];
       if (!usual) out.push(note('warn', 'Outside the usual NICE order for this age', 'Next: record the reason (for example specialist or tertiary advice) in "Reason for this choice" at the product stage.'));
       if (ci.length) out.push(note('err', 'Contraindicated for this person', [bullets(ci.map(String)), h('p', null, 'Next: do not prescribe ' + lc(d.name) + ' unless a specialist advises it. Choose another option.')]));
       if (ca.length) out.push(note('warn', 'Cautions for this person', [bullets(ca.map(String)), h('p', null, 'Next: weigh each one, check the SmPC and record your reasoning.')]));
@@ -1474,22 +1653,24 @@
         })), { cls: 'tx-bare', meta: String(ints.length) }));
       }
       if (arr(d.notes).length) out.push(ui.details('More about ' + lc(d.name), bullets(d.notes), { cls: 'tx-bare', meta: String(d.notes.length) }));
-      fill(infoHost, out);
+      fill(infoHost, card(d.name, out, 'tx-druginfo', h('span', { class: 'tx-cls' }, d.cls)));
     }
     paint(a0);
     return { refresh: paint };
   }
 
-  /* ---- Stage 3: product (chips grouped by release type, one product shown at a time) ---- */
+  /* ---- Stage 3: product: comparison cards grouped by release type, one product's detail below ---- */
   function productGroup(p) {
     if (p.ir) return 'Immediate release';
     var f = String(p.form || 'Other');
     return /(tablet|capsule)$/i.test(f) ? f + 's' : f;
   }
+  var PSTATE = { ok: 'Licensed for this age', cond: 'Licence condition to confirm', off: 'Off-label', bad: 'Not suitable for this person' };
+  function strengthLine(p) { return p.strengthText || (arr(p.strengths).length ? arr(p.strengths).join(', ') + ' ' + (p.unit || 'mg') : ''); }
   function stageProduct(host, ctx, a0, go) {
     var Tx = T(), ch0 = obj(txOf(a0).choice);
     if (!ch0.drug) {
-      host.appendChild(note('info', 'Choose a medicine first', null, [ui.btn({ label: 'Go to NICE options', kind: 'ghost', small: true, onClick: function () { go('options'); } })]));
+      host.appendChild(firstNote('info', 'Choose a medicine first', 'Go to NICE options', function () { go('options'); }));
       return null;
     }
     var drug = ch0.drug, rows = Tx.products(a0, drug), byId = {};
@@ -1502,62 +1683,80 @@
       g.ids.push(p.id);
     });
     var preview = byId[ch0.product] ? ch0.product : (rows[0] && rows[0].id) || null;
-    var chips = {};
-    var detailHost = h('div', { class: 'tx-prod', 'aria-live': 'polite' });
+    var active = 0;
+    groups.forEach(function (g, i) { if (g.ids.indexOf(preview) > -1) active = i; });
+    var cards = {}, chipEls = [];
+    var gridHost = h('ul', { class: 'tx-pcards', 'aria-label': 'Products for ' + lc(drugName(drug)) });
+    var detailHost = h('div', { class: 'tx-prodhost', 'aria-live': 'polite' });
     /* ok: licensed; cond: licensed once a licence condition is recorded; off: off-label; bad: not suitable */
     function stateOf(r) { return r.blocked.length ? 'bad' : r.licensed ? 'ok' : r.licence && r.licence.conditionUnconfirmed ? 'cond' : 'off'; }
-    var STATE_TEXT = { bad: 'not suitable', off: 'off-label', cond: 'licence to confirm', ok: '' };
-    function chipsFor(g) {
-      return h('div', { class: 'tx-chips', role: 'group', 'aria-label': g.key }, g.ids.map(function (pid) {
-        var r = byId[pid];
-        var b = h('button', { type: 'button', class: 'tx-chip', onclick: function () { preview = pid; paintChips(); paintDetail(ctx.a() || {}); } },
-          h('span', { class: 'tx-dot', 'aria-hidden': 'true' }),
-          h('span', { class: 'tx-chip-n' }, r.p.name),
-          h('span', { class: 'tx-chip-s' }, ''),
-          h('span', { class: 'tx-chip-c' }, ''));
-        chips[pid] = b;
-        return b;
-      }));
+    function cautionCount(r) { return r.cautions.filter(function (c) { return String(c) !== String(r.licenceNote || ''); }).length; }
+    function recompute(a) { rows = Tx.products(a, drug); byId = {}; rows.forEach(function (r) { byId[r.id] = r; }); }
+    function cardFor(pid) {
+      var r = byId[pid], p = r.p;
+      /* The form is left out where the release-type filter above already names it. */
+      var form = groups.length > 1 && !p.ir ? '' : String(p.form || '');
+      var b = h('button', { type: 'button', class: 'tx-pcard', 'aria-pressed': 'false', onclick: function () {
+        preview = pid; paintGrid(); paintDetail(ctx.a() || {});
+        if (narrow()) reveal(detailHost);
+      } },
+        h('span', { class: 'tx-pcard-top' }, h('span', { class: 'tx-pcard-n' }, p.name), h('span', { class: 'tx-pcard-c' })),
+        h('span', { class: 'tx-pcard-st' }, h('span', { class: 'tx-dot', 'aria-hidden': 'true' }), h('span', { class: 'tx-pcard-stt' })),
+        form || p.lasts ? h('span', { class: 'tx-pcard-f' }, [form, p.lasts ? (form ? 'lasts ' : 'Lasts ') + p.lasts : null].filter(Boolean).join(' · ')) : null,
+        strengthLine(p) ? h('span', { class: 'tx-pcard-s' }, strengthLine(p)) : null);
+      cards[pid] = b;
+      return h('li', null, b);
     }
-    /* The chips show the state worked out now (a licence condition or a screen answer can change it). */
-    function paintChips() {
+    function buildGrid() {
+      cards = {};
+      U.clear(gridHost);
+      var g = groups[active];
+      if (g) U.append(gridHost, g.ids.map(cardFor));
+      paintGrid();
+    }
+    /* The cards show the state worked out now (a licence condition or a screen answer can change it). */
+    function paintGrid() {
       var chosen = obj(ctx.get('treatment.choice', {})).product;
-      Object.keys(chips).forEach(function (pid) {
-        var b = chips[pid], st = byId[pid] ? stateOf(byId[pid]) : 'off';
-        ['ok', 'cond', 'off', 'bad'].forEach(function (k) { b.classList.toggle('tx-chip-' + k, k === st); });
-        b.querySelector('.tx-chip-s').textContent = STATE_TEXT[st] || '';
+      Object.keys(cards).forEach(function (pid) {
+        var b = cards[pid], r = byId[pid], st = r ? stateOf(r) : 'off', nc = r && st !== 'bad' ? cautionCount(r) : 0;
+        ['ok', 'cond', 'off', 'bad'].forEach(function (k) { b.classList.toggle('st-' + k, k === st); });
+        b.querySelector('.tx-pcard-stt').textContent = PSTATE[st] + (nc ? ' · ' + plural(nc, 'caution') : '');
         b.setAttribute('aria-pressed', pid === preview ? 'true' : 'false');
         b.classList.toggle('is-chosen', pid === chosen);
-        var c = b.querySelector('.tx-chip-c');
-        if (c) c.textContent = pid === chosen ? ' ✓ chosen' : '';
+        b.querySelector('.tx-pcard-c').textContent = pid === chosen ? '✓ Chosen' : '';
       });
     }
-    function recompute(a) { rows = Tx.products(a, drug); byId = {}; rows.forEach(function (r) { byId[r.id] = r; }); }
+    function selectGroup(i) {
+      active = i;
+      chipEls.forEach(function (b, j) { b.classList.toggle('is-on', j === i); b.setAttribute('aria-pressed', j === i ? 'true' : 'false'); });
+      var g = groups[i];
+      if (g && g.ids.indexOf(preview) < 0) {
+        var chosen = obj(ctx.get('treatment.choice', {})).product;
+        preview = g.ids.indexOf(chosen) > -1 ? chosen : g.ids.filter(function (pid) { return !byId[pid].blocked.length; })[0] || g.ids[0];
+      }
+      buildGrid();
+      paintDetail(ctx.a() || {});
+    }
     function bnfLine(p, a) {
       var key = isYoung(a) ? 'child' : 'adult', t = obj(p.bnf)[key];
       return t ? (key === 'child' ? 'BNFC: ' : 'BNF: ') + t : '';
     }
     function paintDetail(a) {
       var r = byId[preview];
-      if (!r) { U.clear(detailHost); return; }
-      var p = r.p, chosen = obj(txOf(a).choice).product === p.id;
+      if (!r) { U.clear(detailHost); detailHost.__txSig = null; return; }
+      var p = r.p, chosen = obj(txOf(a).choice).product === p.id, st = stateOf(r);
       var swallow = p.open ? (p.openHow || 'The capsule can be opened: check the SmPC.') : p.swallowWhole ? 'Swallow whole. Do not chew, divide or crush.' : '';
-      var out = [
-        h('div', { class: 'tx-prod-head' },
-          h('h3', { class: 'tx-h3' }, p.name),
-          p.brandNote ? h('span', { class: 'hint' }, p.brandNote) : null,
-          h('span', { class: 'tx-badges' },
-            r.blocked.length ? ui.badge('Do not offer', 'err') : null,
-            r.licensed ? ui.badge('Licensed for this age', 'ok') : licenceBadge(r.licence || { licensed: false }),
-            chosen ? ui.badge('Chosen', 'accent') : null))
-      ];
+      var badges = h('span', { class: 'tx-badges' },
+        r.blocked.length ? ui.badge('Do not offer', 'err') : null,
+        r.licensed ? ui.badge('Licensed for this age', 'ok') : licenceBadge(r.licence || { licensed: false }),
+        chosen ? ui.badge('Chosen', 'accent') : null);
+      var out = [];
+      if (p.brandNote) out.push(h('p', { class: 'hint tx-brandnote' }, p.brandNote));
       if (r.blocked.length) out.push(note('err', 'Not suitable for this person', [bullets(r.blocked.map(function (x) { return stripClauses(String(x)); })), h('p', null, 'Next: choose another product, or record the specialist advice that supports this one.')]));
       if (r.cautions.length) out.push(note('warn', 'Check before choosing', bullets(r.cautions.map(function (x) { return stripClauses(String(x)); }))));
+      out.push(factList([{ k: 'Form', v: p.form }, p.lasts ? { k: 'Lasts', v: p.lasts } : null, strengthLine(p) ? { k: 'Strengths', v: strengthLine(p) } : null]));
       out.push(kvList([
-        ['Form', p.form],
         ['Release', p.release],
-        ['Lasts', p.lasts],
-        ['Strengths', p.strengthText || (arr(p.strengths).length ? arr(p.strengths).join(', ') + ' ' + (p.unit || 'mg') : '')],
         ['Licence', p.licenceText],
         ['How to take', p.take],
         ['Food', p.food],
@@ -1586,52 +1785,65 @@
           }
           go('dose');
         } })));
-      fill(detailHost, out);
+      fill(detailHost, card(p.name, out, 'tx-prod tx-prod-' + st, badges));
     }
-    host.appendChild(h('p', { class: 'tx-lead' }, 'Products for ' + lc(drugName(drug)) + '. Each chip says whether it is licensed for this age, off-label, or not suitable for this person. Pick one to see it.'));
+    host.appendChild(stageLead('Products for ' + lc(drugName(drug)) + '. Each card says whether it is licensed for this age, off-label, or not suitable for this person. Pick one to see it.'));
     /* Guanfacine in children and young people is licensed only when stimulants are not suitable, not tolerated or
        not effective (Intuniv SmPC 4.1). Earlier stimulants that did not help count; otherwise the prescriber
        records it here (choice.stimulantsUnsuitable). */
     var stimCond = rows.some(function (r) { return r.licence && r.licence.condition && r.licence.condition.id === 'stim_unsuitable'; });
     if (stimCond || (isYoung(a0) && drug === 'gxr')) {
-      host.appendChild(h('div', { class: 'tx-licq' },
-        ui.check({ label: 'Stimulants are not suitable, not tolerated or not effective for ' + who(a0), checked: ch0.stimulantsUnsuitable === true,
-          hint: 'The guanfacine licence for ages 6 to 17 covers only this. Previous stimulants recorded as not helping or not tolerated count too. Write why in "Reason for this choice".',
-          onChange: function (on) { ctx.set('treatment.choice.stimulantsUnsuitable', on ? true : undefined); } })));
+      host.appendChild(card(null, ui.check({ label: 'Stimulants are not suitable, not tolerated or not effective for ' + who(a0), checked: ch0.stimulantsUnsuitable === true,
+        hint: 'The guanfacine licence for ages 6 to 17 covers only this. Previous stimulants recorded as not helping or not tolerated count too. Write why in "Reason for this choice".',
+        onChange: function (on) { ctx.set('treatment.choice.stimulantsUnsuitable', on ? true : undefined); } }), 'tx-licq'));
     }
     if (!rows.length) {
-      host.appendChild(note('warn', 'No products in the treatment data for this medicine', 'Next: check the SmPC and write the product in the notes.'));
-    } else if (groups.length > 1) {
-      var activeGroup = 0;
-      groups.forEach(function (g, i) { if (g.ids.indexOf(preview) > -1) activeGroup = i; });
-      var firstShow = true;
-      host.appendChild(ui.tabs(groups.map(function (g, i) {
-        return { id: 'p' + i, label: g.key, count: g.ids.length, render: function () { return chipsFor(g); } };
-      }), 'p' + activeGroup, function (id) {
-        var g = groups[parseInt(id.slice(1), 10)];
-        if (!firstShow && g && g.ids.indexOf(preview) < 0) {
-          var chosen = obj(ctx.get('treatment.choice', {})).product;
-          preview = g.ids.indexOf(chosen) > -1 ? chosen : g.ids.filter(function (pid) { return !byId[pid].blocked.length; })[0] || g.ids[0];
-        }
-        firstShow = false;
-        paintChips();
-        paintDetail(ctx.a() || {});
-      }));
+      host.appendChild(card(null, note('warn', 'No products in the treatment data for this medicine', 'Next: check the SmPC and write the product in the notes.')));
     } else {
-      host.appendChild(chipsFor(groups[0]));
+      if (groups.length > 1) {
+        var chips = ui.chips(groups.map(function (g, i) { return { label: g.key, n: g.ids.length, on: i === active, onClick: function () { selectGroup(i); } }; }));
+        chips.classList.add('tx-pfilter');
+        chips.setAttribute('aria-label', 'Release type');
+        chipEls = U.$$('button', chips);
+        host.appendChild(chips);
+      }
+      host.appendChild(gridHost);
+      host.appendChild(detailHost);
+      buildGrid();
     }
-    host.appendChild(detailHost);
-    host.appendChild(ui.field('Reason for this choice', textIn(ch0.why, function (v) { ctx.set('treatment.choice.why', v); }, { rows: 2, placeholder: 'Shared decision, hours of cover needed, swallowing, misuse risk, any off-label use and why' })));
-    paintChips();
+    host.appendChild(card(null, ui.field('Reason for this choice', textIn(ch0.why, function (v) { ctx.set('treatment.choice.why', v); }, { rows: 2, placeholder: 'Shared decision, hours of cover needed, swallowing, misuse risk, any off-label use and why' })), 'tx-whycard'));
     paintDetail(a0);
-    return { refresh: function (a) { recompute(a); paintChips(); paintDetail(a); } };
+    return { refresh: function (a) { recompute(a); paintGrid(); paintDetail(a); } };
   }
 
-  /* ---- Stage 4: starting dose ---- */
+  /* The titration ladder: one rung per step of the SmPC plan, with a bar for the size of the dose, how it is
+     given, and the starting dose and the maximum marked. */
+  function ladderNode(plan, steps, per, startDose) {
+    var doses = steps.map(function (s) { return num(s.dose); });
+    var cap = num(plan.max), um = num(plan.usualMax);
+    var scale = Math.max.apply(null, doses.concat(cap !== null ? [cap] : []));
+    var showGiven = per > 1 || steps.some(function (s) { return arr(s.perDose).length > 1; });
+    return h('ol', { class: 'tx-ladder' }, steps.map(function (s) {
+      var d = num(s.dose), tags = [];
+      if (startDose !== null && d === startDose) tags.push(ui.badge('Start', 'accent'));
+      if (um !== null && d === um) tags.push(ui.badge('Usual maximum', 'warn'));
+      else if (cap !== null && d === cap) tags.push(ui.badge('Maximum', 'neutral', plan.capLabel || (plan.maxSource === 'bnf' ? 'BNF off-label ceiling' : 'SmPC maximum')));
+      var pct = scale > 0 ? Math.max(6, Math.round(100 * d / scale)) : 0;
+      return h('li', { class: 'tx-rung' + (startDose !== null && d === startDose ? ' is-start' : '') },
+        h('span', { class: 'tx-rung-w' }, 'Week ' + s.week),
+        h('span', { class: 'tx-rung-d' }, fmt(d) + ' mg', h('span', { class: 'tx-rung-u' }, ' a day')),
+        h('span', { class: 'tx-rung-m' },
+          h('span', { class: 'tx-rung-bar', 'aria-hidden': 'true' }, h('span', { style: { width: pct + '%' } })),
+          showGiven ? h('span', { class: 'tx-rung-g' }, givenText(s, per)) : null),
+        tags.length ? h('span', { class: 'tx-rung-tags' }, tags) : null);
+    }));
+  }
+
+  /* ---- Stage 4: starting dose: the SmPC plan as a ladder, then the start ---- */
   function stageDose(host, ctx, a0, go) {
     var Tx = T(), ch0 = obj(txOf(a0).choice), p = prodOf(ch0.product);
     if (!p) {
-      host.appendChild(note('info', 'Choose a product first', null, [ui.btn({ label: 'Go to products', kind: 'ghost', small: true, onClick: function () { go('product'); } })]));
+      host.appendChild(firstNote('info', 'Choose a product first', 'Go to products', function () { go('product'); }));
       return null;
     }
     var plan0 = Tx.dosePlan(a0, p.id, num(ch0.weightKg));
@@ -1639,28 +1851,28 @@
     var checkHost = h('div', { class: 'tx-live', 'aria-live': 'polite' });
     var useHost = h('span', { class: 'tx-use' });
     var wHint = h('span');
-    host.appendChild(h('p', { class: 'tx-lead' }, p.name + ' for ' + (isYoung(a0) ? 'a child or young person' : 'an adult') + '. The dose plan comes from the SmPC in the treatment data.'));
-    if (plan0.weightBased) {
-      host.appendChild(ui.field('Weight for dosing (kg)', numIn(ch0.weightKg, function (v) { ctx.set('treatment.choice.weightKg', v); }), wHint));
-    }
-    host.appendChild(planHost);
+    host.appendChild(stageLead(p.name + ' for ' + (isYoung(a0) ? 'a child or young person' : 'an adult') + '. The dose plan comes from the SmPC in the treatment data.'));
+    host.appendChild(card('Dose plan', [
+      plan0.weightBased ? h('div', { class: 'form-grid tx-fields tx-datef' }, ui.field('Weight for dosing (kg)', numIn(ch0.weightKg, function (v) { ctx.set('treatment.choice.weightKg', v); }), wHint)) : null,
+      planHost
+    ], 'tx-plancard'));
     var startDate = dateIn(ch0.startDate, function (v) { ctx.set('treatment.choice.startDate', v); });
-    host.appendChild(h('div', { class: 'form-grid tx-fields' },
-      h('div', { class: 'tx-fwrap' }, ui.field('Starting dose (mg a day)', numIn(ch0.startDose, function (v) { ctx.set('treatment.choice.startDose', v); })), useHost),
-      ui.field('When to take it', textIn(ch0.times, function (v) { ctx.set('treatment.choice.times', v); }, { placeholder: p.take ? 'For example: ' + lc(String(p.take).split('. ')[0]).replace(/\.$/, '') : 'For example each morning' }),
-        'One regimen only, for example "each morning" or "morning and lunchtime". Never "or".'),
-      h('div', { class: 'tx-fwrap' }, ui.field('Start date', startDate),
-        ui.btn({ label: 'Today', kind: 'quiet', small: true, onClick: function () { startDate.value = today(); ctx.set('treatment.choice.startDate', today()); } }))));
-    /* The number of doses a day (choice.perDay): the prescription wording and the steps below use it. Only the
+    /* The number of doses a day (choice.perDay): the prescription wording and the steps above use it. Only the
        numbers this product may be given in are offered; empty means "read it from When to take it". */
     var perOpts = perDayOptions(p);
-    if (perOpts.length > 1 || num(ch0.perDay) !== null) {
-      host.appendChild(h('div', { class: 'tx-perday' },
+    host.appendChild(card('Starting dose and timing', [
+      h('div', { class: 'form-grid tx-fields' },
+        h('div', { class: 'tx-fwrap' }, ui.field('Starting dose (mg a day)', numIn(ch0.startDose, function (v) { ctx.set('treatment.choice.startDose', v); })), useHost),
+        ui.field('When to take it', textIn(ch0.times, function (v) { ctx.set('treatment.choice.times', v); }, { placeholder: p.take ? 'For example: ' + lc(String(p.take).split('. ')[0]).replace(/\.$/, '') : 'For example each morning' }),
+          'One regimen only, for example "each morning" or "morning and lunchtime". Never "or".'),
+        h('div', { class: 'tx-fwrap' }, ui.field('Start date', startDate),
+          ui.btn({ label: 'Today', kind: 'quiet', small: true, onClick: function () { startDate.value = today(); ctx.set('treatment.choice.startDate', today()); } }))),
+      perOpts.length > 1 || num(ch0.perDay) !== null ? h('div', { class: 'tx-perday' },
         ui.seg({ label: 'Doses a day', options: PER_DAY.filter(function (o) { return perOpts.indexOf(o.v) > -1 || o.v === num(ch0.perDay); }), value: num(ch0.perDay),
           onChange: function (v) { ctx.set('treatment.choice.perDay', v === null ? undefined : v); } }),
-        h('p', { class: 'hint' }, 'Leave it empty to read it from "When to take it". The two must agree.')));
-    }
-    host.appendChild(checkHost);
+        h('p', { class: 'hint' }, 'Leave it empty to read it from "When to take it". The two must agree.')) : null,
+      checkHost
+    ], 'tx-startcard'));
     function paint(a) {
       var ch = obj(txOf(a).choice);
       var plan = Tx.dosePlan(a, p.id, num(ch.weightKg));
@@ -1677,12 +1889,8 @@
         /* Each step says how it is given (the engine's perDose: 10 mg + 5 mg, or 5 mg twice a day), so a dose
            that cannot be split equally is never shown as a fraction of a tablet. */
         var per = num(ch.perDay) || num(plan.perDay) || 1;
-        var showGiven = per > 1 || steps.some(function (s) { return arr(s.perDose).length > 1; });
-        var head = ['Week', 'Dose a day'].concat(showGiven ? ['How it is given'] : []);
-        out.push(h('p', { class: 'tx-subh' }, 'A guide to the steps'));
-        out.push(stackTable(head, steps.map(function (s) {
-          return ['Week ' + s.week, fmt(num(s.dose)) + ' mg'].concat(showGiven ? [givenText(s, per)] : []);
-        }), 'tx-ladder tx-nostack'));
+        out.push(h('h4', { class: 'tx-subh' }, 'A guide to the steps'));
+        out.push(ladderNode(plan, steps, per, num(ch.startDose)));
         out.push(h('p', { class: 'hint' }, 'Increase only if more benefit is needed and the dose is tolerated. Check the SmPC.'));
       }
       fill(planHost, out);
@@ -1709,46 +1917,93 @@
     return { refresh: paint };
   }
 
-  /* ---- Stage 5: counselling ---- */
+  /* ---- Stage 5: counselling, grouped by purpose ---- */
+  /* Groups for the counselling points (presentation only: the data has no groups). An item that matches none
+     goes under "Other points". */
+  var COUNSEL_GROUPS = [
+    { l: 'How to take it', s: 'Timing, food, swallowing, missed doses and the daily routine.', test: /^cs_(take|missed)_|^cs_routine$/ },
+    { l: 'What to expect', s: 'When it works and how the dose is found.', test: /^cs_expect_/ },
+    { l: 'Safety and when to get help', s: 'Warning signs, alcohol, other medicines, operations and pregnancy.', test: /^cs_(report|alcohol|otc|other|surgery|pregnancy)/ },
+    { l: 'Controlled drug, storage and travel', s: 'Prescriptions, keeping it safe, school and travel.', test: /^cs_(cd|diversion|travel|school)/ },
+    { l: 'Driving', s: 'Driving while taking it, and the law.', test: /^cs_driving/ }
+  ];
+  function counselGroups(items) {
+    var gs = COUNSEL_GROUPS.map(function (g) { return { l: g.l, s: g.s, items: [] }; }), other = { l: 'Other points', s: '', items: [] };
+    items.forEach(function (c) {
+      var i = -1;
+      COUNSEL_GROUPS.some(function (g, j) { if (g.test.test(c.id)) { i = j; return true; } return false; });
+      (i > -1 ? gs[i] : other).items.push(c);
+    });
+    return gs.concat([other]).filter(function (g) { return g.items.length; });
+  }
   function stageCounsel(host, ctx, a0, go) {
     var ch0 = obj(txOf(a0).choice);
     if (!ch0.drug) {
-      host.appendChild(note('info', 'Choose a medicine first', null, [ui.btn({ label: 'Go to NICE options', kind: 'ghost', small: true, onClick: function () { go('options'); } })]));
+      host.appendChild(firstNote('info', 'Choose a medicine first', 'Go to NICE options', function () { go('options'); }));
       return null;
     }
-    var items = counselFor(a0), done0 = obj(ch0.counsel);
-    var live = h('p', { class: 'tx-count', 'aria-live': 'polite' });
-    host.appendChild(h('p', { class: 'tx-lead' }, 'Go through each point with ' + who(a0) + (isYoung(a0) ? ' and their parent or carer' : '') + '. Tick it when covered. Give it in writing too.'));
-    host.appendChild(live);
-    host.appendChild(h('div', { class: 'tx-checks' }, items.map(function (c) {
-      return ui.check({ label: c.t, checked: !!done0[c.id], cls: 'tx-check', onChange: function (on) { ctx.set('treatment.choice.counsel.' + c.id, on ? true : undefined); } });
-    })));
-    host.appendChild(h('div', { class: 'row' }, ui.btn({ label: 'Copy as a handout', kind: 'ghost', small: true, onClick: function () {
+    var items = counselFor(a0), done0 = obj(ch0.counsel), groups = counselGroups(items);
+    var total = h('span', { class: 'tx-cnt' });
+    var metas = groups.map(function () { return h('span', { class: 'tx-cnt' }); });
+    host.appendChild(stageLead('Go through each point with ' + who(a0) + (isYoung(a0) ? ' and their parent or carer' : '') + '. Tick it when covered. Give it in writing too.'));
+    var copyBtn = ui.btn({ label: 'Copy as a handout', kind: 'ghost', small: true, onClick: function () {
       var a = ctx.a() || {}, ch = obj(txOf(a).choice);
       copy(['Your ADHD medicine: ' + (ch.product ? prodName(ch.product) + ' (' + lc(drugName(ch.drug)) + ')' : drugName(ch.drug)), ''].concat(counselFor(a).map(function (c) { return '- ' + c.t; })).join('\n'), 'Counselling points');
-    } })));
+    } });
+    if (!items.length) {
+      host.appendChild(card(null, [h('p', { class: 'muted' }, 'No counselling points for this medicine in this build.'), h('div', { class: 'row' }, copyBtn)]));
+      return null;
+    }
+    var firstOpen = -1;
+    groups.forEach(function (g, i) { if (firstOpen < 0 && g.items.some(function (c) { return !done0[c.id]; })) firstOpen = i; });
+    var acc = oneOpen(ui.acc(groups.map(function (g, i) {
+      return { title: accTitle(g.l, g.s), meta: metas[i], open: i === firstOpen, render: function () {
+        var d = obj(obj(ctx.get('treatment.choice', {})).counsel);
+        return h('div', { class: 'tx-checks' }, g.items.map(function (c) {
+          return ui.check({ label: c.t, checked: !!d[c.id], cls: 'tx-check', onChange: function (on) { ctx.set('treatment.choice.counsel.' + c.id, on ? true : undefined); } });
+        }));
+      } };
+    }), { title: 'Counselling points', actions: h('div', { class: 'tx-acc-act' }, total, copyBtn) }));
+    acc.classList.add('tx-acc');
+    host.appendChild(acc);
     function paint(a) {
       var d = obj(obj(txOf(a).choice).counsel);
-      live.textContent = items.filter(function (c) { return d[c.id]; }).length + ' of ' + items.length + ' covered.';
+      paintCnt(total, items.filter(function (c) { return d[c.id]; }).length, items.length, 'covered');
+      groups.forEach(function (g, i) { paintCnt(metas[i], g.items.filter(function (c) { return d[c.id]; }).length, g.items.length); });
     }
     paint(a0);
     return { refresh: paint };
   }
 
-  /* ---- Stage 6: prescription ---- */
+  /* ---- Stage 6: prescription: dose and supply, the wording, then the checks grouped by purpose ---- */
+  var RX_GROUPS = [
+    { l: 'Every prescription', s: 'Patient details, directions, signature and brand.', ids: ['rx_basic', 'rx_brand'] },
+    { l: 'Controlled drug wording', s: 'What a Schedule 2 prescription must show.', ids: ['rx_dose', 'rx_form', 'rx_strength', 'rx_qty_words', 'rx_signed'] },
+    { l: 'Validity and supply', s: 'How long it is valid, how much to supply, and no repeats.', ids: ['rx_28days', 'rx_30days', 'rx_norepeat'] },
+    { l: 'Only if used', s: 'Instalments and private prescriptions.', ids: ['rx_instal', 'rx_private'] }
+  ];
+  function rxGroups(checks) {
+    var gs = RX_GROUPS.map(function (g) { return { l: g.l, s: g.s, items: [] }; }), other = { l: 'Other checks', s: '', items: [] };
+    checks.forEach(function (c) {
+      var i = -1;
+      RX_GROUPS.some(function (g, j) { if (g.ids.indexOf(c.id) > -1) { i = j; return true; } return false; });
+      (i > -1 ? gs[i] : other).items.push(c);
+    });
+    return gs.concat([other]).filter(function (g) { return g.items.length; });
+  }
   function stageRx(host, ctx, a0, go) {
     var Tx = T(), ch0 = obj(txOf(a0).choice), p = prodOf(ch0.product);
     if (!p) {
-      host.appendChild(note('info', 'Choose a product first', null, [ui.btn({ label: 'Go to products', kind: 'ghost', small: true, onClick: function () { go('product'); } })]));
+      host.appendChild(firstNote('info', 'Choose a product first', 'Go to products', function () { go('product'); }));
       return null;
     }
     var d = drugOf(p.drug) || {};
     var rxHost = h('div', { class: 'tx-live', 'aria-live': 'polite' });
+    var rxBadge = h('span', { class: 'tx-badges' });
     var reasonHost = h('div');
     var overHost = h('div');
     var dosesHost = h('div');
     var doseHint = h('span');
-    var live = h('p', { class: 'tx-count', 'aria-live': 'polite' });
     var reasonOn = null, overOn = null, dosesOn = null;
     /* Doses through the day (choice.doses, mg, morning first), for an immediate-release product given more than
        once a day: optional, for an unequal split such as 10 mg + 5 mg. The engine checks they add up. */
@@ -1763,27 +2018,40 @@
       if (typeof tc === 'number') return tc;
       var plan = Tx.dosePlan(a, p.id); return num(plan.perDay) || 1;
     }
-    host.appendChild(h('p', { class: 'tx-lead' }, p.name + '. ' + (d.cd || '')));
+    host.appendChild(stageLead(p.name + '. ' + (d.cd || '')));
     /* A typed dose belongs to this prescription: it is dated, and a newer review replaces it. */
-    host.appendChild(h('div', { class: 'form-grid tx-fields' },
-      ui.field('Daily dose on this prescription (mg)', numIn(ch0.rxDose, function (v) {
-        ctx.set('treatment.choice.rxDose', v);
-        ctx.set('treatment.choice.rxDoseDate', v === undefined ? undefined : today());
-      }), doseHint),
-      ui.field('Supply (days)', numIn(ch0.supplyDays, function (v) { ctx.set('treatment.choice.supplyDays', v); }, { int: true }), d.isCD ? 'Schedule 2: usually no more than 30 days.' : null),
-      ui.field('Quantity (optional)', numIn(ch0.quantity, function (v) { ctx.set('treatment.choice.quantity', v); }, { int: true }), 'Leave empty to work it out from the days.')));
-    host.appendChild(dosesHost);
-    host.appendChild(overHost);
-    host.appendChild(reasonHost);
-    host.appendChild(rxHost);
-    var checks = rxChecksFor(a0), rx0 = obj(ch0.rx);
-    host.appendChild(h('p', { class: 'tx-subh' }, d.isCD ? 'Controlled drug prescription checks' : 'Prescription checks'));
-    host.appendChild(live);
-    host.appendChild(h('div', { class: 'tx-checks' }, checks.map(function (c) {
-      return ui.check({ label: c.t, hint: c.optional ? 'Tick when checked, or when it does not apply.' : null, checked: !!rx0[c.id], cls: 'tx-check',
-        onChange: function (on) { ctx.set('treatment.choice.rx.' + c.id, on ? true : undefined); } });
-    })));
-    host.appendChild(ui.field('Prescription notes', textIn(ch0.notes, function (v) { ctx.set('treatment.choice.notes', v); }, { rows: 2, placeholder: 'For example instalments, who collects, the next prescription date' })));
+    host.appendChild(card('Dose and supply', [
+      h('div', { class: 'form-grid tx-fields' },
+        ui.field('Daily dose on this prescription (mg)', numIn(ch0.rxDose, function (v) {
+          ctx.set('treatment.choice.rxDose', v);
+          ctx.set('treatment.choice.rxDoseDate', v === undefined ? undefined : today());
+        }), doseHint),
+        ui.field('Supply (days)', numIn(ch0.supplyDays, function (v) { ctx.set('treatment.choice.supplyDays', v); }, { int: true }), d.isCD ? 'Schedule 2: usually no more than 30 days.' : null),
+        ui.field('Quantity (optional)', numIn(ch0.quantity, function (v) { ctx.set('treatment.choice.quantity', v); }, { int: true }), 'Leave empty to work it out from the days.')),
+      dosesHost,
+      overHost,
+      reasonHost,
+      ui.field('Prescription notes', textIn(ch0.notes, function (v) { ctx.set('treatment.choice.notes', v); }, { rows: 2, placeholder: 'For example instalments, who collects, the next prescription date' }))
+    ], 'tx-supplycard'));
+    host.appendChild(card('Prescription wording', rxHost, 'tx-rxcard', rxBadge));
+    var checks = rxChecksFor(a0), groups = rxGroups(checks);
+    var total = h('span', { class: 'tx-cnt' });
+    var metas = groups.map(function () { return h('span', { class: 'tx-cnt' }); });
+    var rx00 = obj(ch0.rx), firstOpen = -1;
+    groups.forEach(function (g, i) { if (firstOpen < 0 && g.items.some(function (c) { return !rx00[c.id]; })) firstOpen = i; });
+    if (checks.length) {
+      var acc = oneOpen(ui.acc(groups.map(function (g, i) {
+        return { title: accTitle(g.l, g.s), meta: metas[i], open: i === firstOpen, render: function () {
+          var rx0 = obj(obj(ctx.get('treatment.choice', {})).rx);
+          return h('div', { class: 'tx-checks' }, g.items.map(function (c) {
+            return ui.check({ label: c.t, hint: c.optional ? 'Tick when checked, or when it does not apply.' : null, checked: !!rx0[c.id], cls: 'tx-check',
+              onChange: function (on) { ctx.set('treatment.choice.rx.' + c.id, on ? true : undefined); } });
+          }));
+        } };
+      }), { title: d.isCD ? 'Controlled drug prescription checks' : 'Prescription checks', actions: total }));
+      acc.classList.add('tx-acc');
+      host.appendChild(acc);
+    }
     function doseSource(dn) {
       if (dn.from === 'review' && dn.review) return num(dn.review.newDose) !== null ? 'the new dose agreed at the review' + (dn.review.date ? ' on ' + dateText(dn.review.date) : '') : 'the dose at the latest review';
       return dn.from === 'start' ? 'the starting dose' : 'the current dose';
@@ -1829,24 +2097,26 @@
         fill(dosesHost, onD ? h('div', { class: 'form-grid tx-fields tx-doses' },
           ui.field('Doses through the day (mg, morning first)', dIn, 'Optional: only for an unequal split. Leave it empty and the daily dose is split for you. The doses must add up to the daily dose.')) : null);
       }
-      var out = [];
+      var out = [], errsAll = arr(rx.errors);
       if (dn.stopped) {
         out.push(note('warn', 'Medicine stopped: no prescription', dn.reason + '. Do not issue a prescription for it. If it is restarted, record a new review with the decision and the dose first.', [goBtn(ctx, 'titrate', 'Open titration and reviews')]));
       } else if (rx.lines.length) {
-        out.push(h('div', { class: 'tx-rx' }, h('p', { class: 'tx-k' }, 'Prescription wording'), rx.lines.map(function (l) { return h('p', null, l); })));
+        out.push(h('div', { class: 'tx-rx' }, rx.lines.map(function (l) { return h('p', null, l); })));
         out.push(h('div', { class: 'row' }, ui.btn({ label: 'Copy the wording', kind: 'ghost', small: true, onClick: function () { copy(rxTextOf(ctx.a() || {}).lines.join('\n'), 'Prescription wording'); } })));
         /* Errors (the engine's rxText marks them) come first, in red; the other warnings follow. */
-        var errs = arr(rx.errors), rest = arr(rx.warnings).filter(function (x) { return errs.indexOf(x) < 0; });
+        var errs = errsAll, rest = arr(rx.warnings).filter(function (x) { return errs.indexOf(x) < 0; });
         if (errs.length) out.push(note('err', 'Do not sign yet', bullets(errs.map(function (x) { return stripClauses(String(x)); }))));
         if (rest.length) out.push(note('info', 'Before you sign', bullets(rest.map(function (x) { return stripClauses(String(x)); }))));
       } else {
-        var errs0 = arr(rx.errors), rest0 = arr(rx.warnings).filter(function (x) { return errs0.indexOf(x) < 0; });
+        var errs0 = errsAll, rest0 = arr(rx.warnings).filter(function (x) { return errs0.indexOf(x) < 0; });
         if (errs0.length) out.push(note('err', 'The wording cannot be written yet', bullets(errs0.map(function (x) { return stripClauses(String(x)); }))));
         if (rest0.length || !errs0.length) out.push(note('warn', errs0.length ? 'Also check' : 'The wording cannot be written yet', bullets(rest0.length ? rest0.map(function (x) { return stripClauses(String(x)); }) : ['Enter the dose and the supply.'])));
       }
       fill(rxHost, out);
+      fill(rxBadge, dn.stopped ? ui.badge('No prescription', 'neutral') : errsAll.length ? ui.badge('Do not sign yet', 'err') : rx.lines.length ? ui.badge('Wording ready', 'ok') : ui.badge('Not ready', 'neutral'));
       var ok = obj(ch.rx);
-      live.textContent = checks.filter(function (c) { return ok[c.id]; }).length + ' of ' + checks.length + ' checked.';
+      paintCnt(total, checks.filter(function (c) { return ok[c.id]; }).length, checks.length, 'checked');
+      groups.forEach(function (g, i) { paintCnt(metas[i], g.items.filter(function (c) { return ok[c.id]; }).length, g.items.length); });
     }
     paint(a0);
     return { refresh: paint };
@@ -1861,6 +2131,8 @@
     if (an) el.appendChild(an);
     var readyHost = h('div', { class: 'tx-ready' });
     el.appendChild(readyHost);
+    var sumHost = h('div', { class: 'tx-sumhost' });
+    el.appendChild(sumHost);
 
     var trackBtns = {};
     var trackOl = h('ol', null, STAGES.map(function (s, i) {
@@ -1871,8 +2143,9 @@
       trackBtns[s.id] = b;
       return h('li', null, b);
     }));
+    el.appendChild(h('nav', { class: 'tx-track', 'aria-label': 'Prescribing stages' }, trackOl));
     var stageHost = h('div', { class: 'tx-stage' });
-    el.appendChild(h('section', { class: 'card tx-card tx-presc' }, h('nav', { class: 'tx-track', 'aria-label': 'Prescribing stages' }, trackOl), stageHost));
+    el.appendChild(stageHost);
 
     var cur = stageMem[ctx.id] || firstStage(a0), api = null, renderedDrug = null, renderedProduct = null;
     function paintTrack(a) {
@@ -1892,19 +2165,21 @@
       renderedDrug = ch.drug || null; renderedProduct = ch.product || null;
       U.clear(stageHost);
       var idx = stageIndex(cur), s = STAGES[idx], prev = STAGES[idx - 1], next = STAGES[idx + 1];
-      var hd = h('h2', { class: 'tx-stage-h', tabindex: '-1' }, h('span', { class: 'tx-stage-n' }, 'Stage ' + (idx + 1) + ' of ' + STAGES.length), h('span', null, s.l));
+      var hd = h('h2', { class: 'tx-stage-h', tabindex: '-1' }, s.l);
+      stageHost.appendChild(h('div', { class: 'tx-stage-head' }, h('p', { class: 'tx-stage-n' }, 'Stage ' + (idx + 1) + ' of ' + STAGES.length), hd));
       var body = h('div', { class: 'tx-stage-body' });
-      stageHost.appendChild(hd);
       stageHost.appendChild(body);
       api = STAGE_RENDER[s.id](body, ctx, a, go) || null;
       stageHost.appendChild(h('div', { class: 'tx-stage-nav' },
-        prev ? ui.btn({ label: '← ' + prev.l, kind: 'ghost', small: true, onClick: function () { go(prev.id); } }) : h('span'),
-        next ? ui.btn({ label: next.l + ' →', kind: 'ghost', small: true, onClick: function () { go(next.id); } }) : null));
+        prev ? ui.btn({ label: '← ' + prev.l, kind: 'ghost', onClick: function () { go(prev.id); } }) : h('span'),
+        next ? ui.btn({ label: 'Next: ' + low(next.l) + ' →', kind: 'secondary', onClick: function () { go(next.id); } }) : null));
       if (focus) { try { hd.focus(); } catch (e) { /* ignore */ } }
     }
     function go(sid) {
       cur = sid; stageMem[ctx.id] = sid;
-      paintTrack(ctx.a() || {});
+      var a = ctx.a() || {};
+      paintTrack(a);
+      paintSummary(a);
       renderStage(true);
     }
     function paintReady(a) {
@@ -1923,6 +2198,41 @@
       else if (v.level === 'incomplete') out.push(note('info', 'Pre-treatment checks not finished', plural(arr(v.missing).length, 'item') + ' still to record.', [goBtn(ctx, 'baseline', 'Open the pre-treatment checks')]));
       fill(readyHost, out);
     }
+    /* What is chosen so far, the state of the prescription, and the next stage to do. */
+    function paintSummary(a) {
+      var ch = obj(txOf(a).choice), d = drugOf(ch.drug), p = prodOf(ch.product);
+      var doneN = STAGES.filter(function (s) { return stageDone(a, s.id); }).length;
+      var open = STAGES.filter(function (s) { return !stageDone(a, s.id); })[0] || null;
+      var rx = p ? rxTextOf(a) : null, dn = ch.drug ? doseNow(a) : null, errs = rx ? arr(rx.errors) : [];
+      var lic = p ? Tx.licence(a, p) : null, sd = num(ch.startDose);
+      var o = { eyebrow: 'Choose and prescribe', actions: [] };
+      if (dn && dn.stopped) { o.kind = 'info'; o.badge = ['No prescription: stopped', 'neutral']; }
+      else if (errs.length) { o.kind = 'err'; o.badge = ['Do not sign yet', 'err']; }
+      else if (rx && rx.lines.length) { o.kind = doneN === STAGES.length ? 'ok' : 'info'; o.badge = ['Wording ready', 'ok']; }
+      else { o.kind = 'info'; o.badge = [doneN + ' of ' + STAGES.length + ' stages done', 'neutral']; }
+      o.title = p ? p.name + (d ? ' · ' + d.name : '') : d ? d.name + ': choose the product' : 'No medicine chosen yet';
+      o.facts = [
+        { k: 'Medicine', v: d ? d.name : 'Not chosen', s: d ? d.cls : null, kind: d ? 'ok' : 'neutral', onClick: function () { go('options'); }, title: 'Open the NICE options' },
+        { k: 'Product', v: p ? p.name : 'Not chosen', s: lic ? (lic.licensed ? 'Licensed for this age' : lic.conditionUnconfirmed ? 'Licence condition to confirm' : 'Off-label') : null,
+          kind: !p ? 'neutral' : lic && lic.licensed ? 'ok' : 'warn', onClick: function () { go('product'); }, title: 'Open the products' },
+        { k: 'Starting dose', v: sd !== null ? fmt(sd) + ' mg a day' : 'Not set', s: ch.startDate ? 'From ' + dateText(ch.startDate) : 'No start date yet',
+          kind: sd !== null && ch.startDate ? 'ok' : 'neutral', onClick: function () { go('dose'); }, title: 'Open the starting dose' },
+        { k: 'Next prescription', v: dn && dn.stopped ? 'None: stopped' : dn && dn.dose !== null ? fmt(dn.dose) + ' mg a day' : 'Not set',
+          s: num(ch.supplyDays) !== null ? plural(num(ch.supplyDays), 'day') + ' supply' : num(ch.quantity) !== null ? 'Quantity ' + num(ch.quantity) : null,
+          kind: errs.length ? 'err' : rx && rx.lines.length ? 'ok' : 'neutral', onClick: function () { go('rx'); }, title: 'Open the prescription' }
+      ];
+      if (errs.length && !(dn && dn.stopped)) {
+        o.next = 'fix ' + (errs.length === 1 ? 'the problem' : 'the ' + errs.length + ' problems') + ' in the prescription before signing.';
+        o.actions.push(ui.btn({ label: 'Open the prescription', kind: 'ghost', small: true, onClick: function () { go('rx'); } }));
+      } else if (open) {
+        o.next = 'stage ' + (stageIndex(open.id) + 1) + ', ' + low(open.l) + '.';
+        if (open.id !== cur) o.actions.push(ui.btn({ label: 'Open ' + low(open.l), kind: 'ghost', small: true, onClick: function () { go(open.id); } }));
+      } else {
+        o.next = 'titration and reviews. All six stages are done.';
+        o.actions.push(goBtn(ctx, 'titrate', 'Go to titration and reviews'));
+      }
+      fill(sumHost, summaryCard(o));
+    }
     var src = stepSources(el, function (a) {
       var ch = obj(txOf(a).choice), d = drugOf(ch.drug), p = prodOf(ch.product);
       return Tx.options(a).map(function (o) { return o.src; })
@@ -1934,19 +2244,21 @@
     function refresh() {
       if (!el.isConnected) return;
       var a = ctx.a() || {}, ch = obj(txOf(a).choice);
-      paintReady(a); paintTrack(a); src.paint(a);
+      paintReady(a); paintSummary(a); paintTrack(a); src.paint(a);
       var drugChanged = (ch.drug || null) !== renderedDrug;
       var prodChanged = (ch.product || null) !== renderedProduct && (cur === 'dose' || cur === 'rx' || cur === 'counsel');
       if (drugChanged || prodChanged) renderStage(false);
       else if (api && api.refresh) api.refresh(a);
     }
-    paintReady(a0); paintTrack(a0); renderStage(false); src.paint(a0);
+    paintReady(a0); paintSummary(a0); paintTrack(a0); renderStage(false); src.paint(a0);
     ctx.onChange('treatment', U.debounce(refresh, 80));
     return null;
   } };
 
   /* =================================================================================
      Step: titration and reviews
+     Notes > summary (the medicine and dose now, the trial clock, the next dose) > a timeline of reviews, newest
+     first, from the start date; each review opens to its four tabs.
      ================================================================================= */
   var openReview = {};   /* open review per assessment (screen state only) */
   function compareText(a, rv) {
@@ -1993,15 +2305,15 @@
     if (an) el.appendChild(an);
     var readyHost = h('div', { class: 'tx-ready' });
     el.appendChild(readyHost);
+    var say = h('p', { class: 'sr-only', 'aria-live': 'polite' });
+    var sumHost = h('div', { class: 'tx-sumhost' });
+    el.appendChild(say);
+    el.appendChild(sumHost);
 
-    var trialHost = h('div', { 'aria-live': 'polite' });
-    el.appendChild(card('Trial clock', trialHost, 'tx-trialcard'));
-    var listHost = h('div', { class: 'tx-rows' });
-    el.appendChild(card('Reviews', [
-      h('p', { class: 'hint' }, 'Add a review at each contact while the dose changes. Newest first; open one at a time.'),
-      h('div', { class: 'row' }, ui.btn({ label: '+ Add a review', kind: 'primary', onClick: addReview })),
-      listHost
-    ]));
+    var listHost = h('ol', { class: 'tx-tl', 'aria-label': 'Reviews, newest first' });
+    var earlierHost = h('p', { class: 'hint tx-earlier' });
+    el.appendChild(section('tx-tit-reviews', 'Reviews', 'Add a review at each contact while the dose changes. Newest first; open one at a time.',
+      card(null, [earlierHost, listHost], 'tx-revcard'), [ui.btn({ label: '+ Add a review', kind: 'primary', onClick: addReview })]));
     var src = stepSources(el, function (a) {
       var list = ['NICE NG87 1.7.8, 1.7.12–1.7.13 (an adequate 6-week trial)', 'NICE NG87 1.8.11 (heart rate and blood pressure on 2 occasions)', 'NICE NG87 1.8.6 (weight loss)'];
       T().reviewsSorted(a).forEach(function (r) { T().reviewFlags(a, r.id).forEach(function (f) { list.push(f.src); }); });
@@ -2011,28 +2323,38 @@
     function paintReady(a) {
       fill(readyHost, [planNote(ctx, a), scopeNote(ctx, a)]);
     }
-    function paintTrial(a) {
-      var ch = obj(txOf(a).choice), out = [];
+    function paintSummary(a) {
+      var ch = obj(txOf(a).choice);
       if (!ch.product) {
-        fill(trialHost, note('info', 'No medicine chosen yet', 'Choose the medicine and product first.', [goBtn(ctx, 'prescribe', 'Go to choose and prescribe')]));
+        fill(sumHost, summaryCard({ kind: 'info', eyebrow: 'Titration', title: 'No medicine chosen yet', text: 'Choose the medicine and product first.',
+          actions: [goBtn(ctx, 'prescribe', 'Go to choose and prescribe')] }));
+        say.textContent = '';
         return;
       }
-      var tv = trialView(a), tr = tv.tr, nd = nextDoseOf(a), dose = currentDose(a);
-      out.push(h('p', { class: 'tx-med' }, h('strong', null, prodName(ch.product)), ' · ' + drugName(ch.drug) + (tv.stopped ? ' · stopped' : dose !== null ? ' · ' + fmt(dose) + ' mg a day' : '')));
-      if (tr.days === null) {
-        out.push(note('info', 'Start date not recorded', 'The trial clock starts on the start date.', [goBtn(ctx, 'prescribe', 'Add it at the starting dose stage')]));
-      } else {
-        out.push(h('div', { class: 'tx-trial' },
-          h('span', { class: 'tx-trial-k' }, weekText(tr)),
-          ui.progress(weekProg(tr), tr.need, 'Weeks of the trial'),
-          tv.stopped ? ui.badge('Stopped', 'neutral') : tv.adequate ? ui.badge('Adequate trial', 'ok') : tv.optimised ? ui.badge('Dose optimised', 'ok') : tv.held ? ui.badge('Act on flags first', 'warn') : null));
-        out.push(h('p', null, stripClauses(tv.text)));
-      }
-      out.push(h('p', { class: 'tx-next' }, h('strong', null, 'Next dose: '), stripClauses(nd.text)));
-      /* At a usual maximum (dexamfetamine 20 mg) the next step waits for a recorded specialist reason. */
-      if (nd.usualMax && !textOrNone(ch.overMaxReason)) out.push(h('div', { class: 'row' }, ui.btn({ label: 'Record the reason', kind: 'ghost', small: true, onClick: function () { stageMem[ctx.id] = 'rx'; ctx.go('prescribe'); } })));
-      if (!curReviews(a).length && Tx.reviewsSorted(a).length) out.push(h('p', { class: 'hint' }, 'Reviews of an earlier medicine are kept below. They do not set this medicine\'s dose; their blood pressure, pulse and weight still count.'));
-      fill(trialHost, out);
+      var tv = trialView(a), tr = tv.tr, nd = nextDoseOf(a), dose = currentDose(a), cur = curReviews(a);
+      var st = cur.length ? panelState(a) : ['No reviews yet', 'neutral'];
+      var last = cur.length ? cur[cur.length - 1] : null;
+      var trialBadge = tv.adequate ? ui.badge('Adequate trial', 'ok') : tv.held ? ui.badge('Act on flags first', 'warn') : null;
+      var title = prodName(ch.product) + (tv.stopped ? ': stopped' : dose !== null ? ' · ' + fmt(dose) + ' mg a day' : '');
+      var o = {
+        kind: st[1] === 'neutral' || st[1] === 'accent' ? 'info' : st[1], eyebrow: 'Titration', badge: st, title: title,
+        progress: tr.days === null ? null : progLine(weekProg(tr), tr.need, weekText(tr), 'Weeks of the trial', trialBadge),
+        text: tr.days === null ? null : tv.text,
+        facts: [
+          { k: 'Medicine', v: drugName(ch.drug), s: drugOf(ch.drug) ? drugOf(ch.drug).cls : null },
+          { k: 'Started', v: ch.startDate ? dateText(ch.startDate) : 'Not recorded', s: num(ch.startDose) !== null ? 'At ' + fmt(num(ch.startDose)) + ' mg a day' : null, kind: ch.startDate ? null : 'warn' },
+          { k: 'Reviews of this medicine', v: String(cur.length), s: last && last.date ? 'Latest ' + dateText(last.date) : null }
+        ],
+        extra: tr.days === null ? note('info', 'Start date not recorded', 'The trial clock starts on the start date.',
+          [ui.btn({ label: 'Add it at the starting dose stage', kind: 'ghost', small: true, onClick: function () { stageMem[ctx.id] = 'dose'; ctx.go('prescribe'); } })]) : null,
+        next: stripClauses(nd.text), nextLabel: 'Next dose',
+        /* At a usual maximum (dexamfetamine 20 mg) the next step waits for a recorded specialist reason. */
+        actions: nd.usualMax && !textOrNone(ch.overMaxReason) ? [ui.btn({ label: 'Record the reason', kind: 'ghost', small: true, onClick: function () { stageMem[ctx.id] = 'rx'; ctx.go('prescribe'); } })] : []
+      };
+      fill(sumHost, summaryCard(o));
+      var line = title + '. ' + st[0] + '.';
+      if (say.textContent !== line) say.textContent = line;
+      earlierHost.textContent = !cur.length && Tx.reviewsSorted(a).length ? 'Reviews of an earlier medicine are kept below. They do not set this medicine\'s dose; their blood pressure, pulse and weight still count.' : '';
     }
 
     var rows = {}, sig = null;
@@ -2053,7 +2375,7 @@
       var id = r.id, base = 'treatment.reviews.' + id + '.';
       function cur() { return obj(ctx.get('treatment.reviews.' + id, {})); }
       function save(key) { return function (v) { ctx.set(base + key, v); }; }
-      var sum = h('span', { class: 'tx-rowsum' });
+      var sum = h('span', { class: 'tx-tl-sum' });
       var flagHost = h('div', { class: 'tx-flags', 'aria-live': 'polite' });
       var cmpHost = h('p', { class: 'hint tx-cmp' });
       var decHost = h('div', { class: 'tx-live', 'aria-live': 'polite' });
@@ -2062,7 +2384,7 @@
       function measures() {
         var rv = cur();
         return h('div', null,
-          h('div', { class: 'form-grid tx-fields' },
+          h('div', { class: 'form-grid tx-fields tx-f2' },
             ui.field('Date', dateIn(rv.date, save('date'))),
             ui.field('Dose (mg a day)', numIn(rv.dose, save('dose'))),
             ui.field('Systolic (mmHg)', numIn(rv.sbp, save('sbp'), { int: true })),
@@ -2156,16 +2478,26 @@
           Object.keys(rows).forEach(function (k) { if (k !== id && rows[k].d.open) rows[k].d.open = false; });
         } else if (openReview[ctx.id] === id) openReview[ctx.id] = null;
       } });
+      var dot = h('span', { class: 'tx-tl-dot', 'aria-hidden': 'true' });
+      var li = h('li', { class: 'tx-tl-item' }, dot, d);
       function paint(a) {
         var rv = obj(obj(txOf(a).reviews)[id]), fl = Tx.reviewFlags(a, id);
         var worst = fl.length ? fl[0].level : null, nd = num(rv.newDose), dd = num(rv.dose);
         var ch = obj(txOf(a).choice), mine = curReviews(a).some(function (x) { return x.id === id; });
+        var tone = worst ? kindOf(worst) : !mine ? 'neutral' : rv.decision === 'optimised' ? 'ok' : rv.decision === 'stop' ? 'neutral' : 'accent';
+        var dcls = 'tx-tl-dot tx-tl-dot-' + tone;
+        if (dot.className !== dcls) dot.className = dcls;
+        var vit = [bpOf(rv) ? 'BP ' + bpOf(rv) : null, rv.bpCentile ? lc(centileText(rv.bpCentile)) + ' centile' : null,
+          num(rv.pulse) !== null ? 'pulse ' + num(rv.pulse) : null, num(rv.weightKg) !== null ? fmt(num(rv.weightKg)) + ' kg' : null,
+          rv.effect ? 'benefit ' + lc(labelOf(EFFECT, rv.effect)) : null].filter(Boolean).join(' · ');
         fill(sum, [
-          h('span', { class: 'tx-revdate' }, rv.date ? dateText(rv.date) : 'No date'),
-          dd !== null ? h('span', { class: 'tx-revdose' }, fmt(dd) + ' mg a day' + (nd !== null && nd !== dd && NEW_DOSE_DEC[rv.decision] ? ' → ' + fmt(nd) + ' mg' : '')) : null,
-          !mine && (rv.product || rv.drug || ch.drug) ? h('span', { class: 'hint tx-revmed' }, rv.product ? prodName(rv.product) : rv.drug ? drugName(rv.drug) : 'Earlier medicine') : null,
-          rv.decision ? ui.badge(labelOf(REVIEW_DEC, rv.decision), rv.decision === 'optimised' ? 'ok' : rv.decision === 'stop' ? 'warn' : 'neutral') : null,
-          worst ? ui.badge(plural(fl.length, 'flag'), kindOf(worst)) : null
+          h('span', { class: 'tx-tl-line' },
+            h('span', { class: 'tx-revdate' }, rv.date ? dateText(rv.date) : 'No date'),
+            dd !== null ? h('span', { class: 'tx-revdose' }, fmt(dd) + ' mg a day' + (nd !== null && nd !== dd && NEW_DOSE_DEC[rv.decision] ? ' → ' + fmt(nd) + ' mg' : '')) : null,
+            !mine && (rv.product || rv.drug || ch.drug) ? h('span', { class: 'tx-revmed' }, rv.product ? prodName(rv.product) : rv.drug ? drugName(rv.drug) : 'Earlier medicine') : null,
+            rv.decision ? ui.badge(labelOf(REVIEW_DEC, rv.decision), rv.decision === 'optimised' ? 'ok' : rv.decision === 'stop' ? 'warn' : 'neutral') : null,
+            worst ? ui.badge(plural(fl.length, 'flag'), kindOf(worst)) : null),
+          vit ? h('span', { class: 'tx-tl-meta' }, vit) : null
         ]);
         if (!built) return;
         fill(flagHost, fl.map(function (f) { return note(f.level, f.text, 'Next: ' + f.do); }));
@@ -2201,7 +2533,7 @@
         fill(decHost, out);
       }
       if (d.open) build();
-      return { d: d, paint: paint };
+      return { d: d, li: li, paint: paint };
     }
     /* Switching: the current medicine goes into "previous medicines" with its weeks and highest dose. */
     function recordPrior() {
@@ -2225,16 +2557,29 @@
       U.toast('Added to previous medicines: record how it went', 'ok');
       ctx.go('prescribe');
     }
+    /* The start of the current medicine, as the first point of the timeline. */
+    function startItem(a) {
+      var ch = obj(txOf(a).choice);
+      if (!ch.product || !ch.startDate) return null;
+      return h('li', { class: 'tx-tl-item is-start' }, h('span', { class: 'tx-tl-dot tx-tl-dot-start', 'aria-hidden': 'true' }),
+        h('p', { class: 'tx-tl-start' }, h('span', { class: 'tx-revdate' }, dateText(ch.startDate)),
+          h('span', null, 'Started ' + prodName(ch.product) + (num(ch.startDose) !== null ? ' at ' + fmt(num(ch.startDose)) + ' mg a day' : ''))));
+    }
     function renderList(a) {
       U.clear(listHost); rows = {};
-      var rs = Tx.reviewsSorted(a).slice().reverse();
-      if (!rs.length) { listHost.appendChild(h('p', { class: 'muted tx-empty' }, 'No reviews yet.')); return; }
-      rs.forEach(function (r) { var row = reviewRow(r); rows[r.id] = row; listHost.appendChild(row.d); row.paint(a); });
+      var rs = Tx.reviewsSorted(a).slice().reverse(), ch = obj(txOf(a).choice);
+      var st = startItem(a), placed = !st;
+      if (!rs.length) listHost.appendChild(h('li', { class: 'tx-tl-item is-empty' }, h('span', { class: 'tx-tl-dot tx-tl-dot-neutral', 'aria-hidden': 'true' }), h('p', { class: 'muted tx-tl-start' }, 'No reviews yet.')));
+      rs.forEach(function (r) {
+        if (!placed && r.date && ch.startDate && r.date < ch.startDate) { listHost.appendChild(st); placed = true; }
+        var row = reviewRow(r); rows[r.id] = row; listHost.appendChild(row.li); row.paint(a);
+      });
+      if (!placed) listHost.appendChild(st);
     }
     function paintAll() {
-      var a = ctx.a() || {};
-      paintReady(a); paintTrial(a); src.paint(a);
-      var ids = Object.keys(obj(txOf(a).reviews)).sort().join('|');
+      var a = ctx.a() || {}, ch = obj(txOf(a).choice);
+      paintReady(a); paintSummary(a); src.paint(a);
+      var ids = Object.keys(obj(txOf(a).reviews)).sort().join('|') + '#' + (ch.product || '') + (ch.startDate || '') + ':' + (ch.startDose == null ? '' : ch.startDose);
       if (ids !== sig) { sig = ids; renderList(a); }
       else Object.keys(rows).forEach(function (k) { rows[k].paint(a); });
     }
@@ -2245,7 +2590,17 @@
 
   /* =================================================================================
      Step: monitoring and shared care
+     Notes > summary (anything overdue, the next specialist review, shared care, the annual review) > one card with
+     tabs: schedule (due and overdue chips), annual review, shared care, and adult services from 13.
      ================================================================================= */
+  /* Due within 30 days: a display cue only ("Due soon"), not a clinical threshold. */
+  function dueSoon(due, td) { var n = T().daysBetween(td, due); return n !== null && n >= 0 && n <= 30; }
+  function dueCell(x, td) {
+    if (!x.due) return '-';
+    var soon = !x.overdue && dueSoon(x.due, td);
+    return h('span', { class: 'tx-due' }, h('span', { class: 'tx-date' }, dateText(x.due)),
+      x.overdue ? ui.badge('Overdue', 'err') : soon ? ui.badge('Due soon', 'warn', 'Due within 30 days') : null);
+  }
   AA.steps.monitor = { render: function (el, ctx) {
     if (!ready()) { el.appendChild(notLoaded()); return null; }
     var Tx = T(), a0 = ctx.a() || {}, M = monitorData();
@@ -2253,6 +2608,8 @@
     if (an) el.appendChild(an);
     var readyHost = h('div', { class: 'tx-ready' });
     el.appendChild(readyHost);
+    var sumHost = h('div', { class: 'tx-sumhost' });
+    el.appendChild(sumHost);
     function MON() { return obj(ctx.get('treatment.monitor', {})); }
     function setM(key, v) { ctx.set('treatment.monitor.' + key, v); }
     var live = {};
@@ -2282,7 +2639,7 @@
       var acts = actionsFor(a), dItems = dateItems(a);
       return h('div', null,
         live.sched,
-        h('div', { class: 'form-grid tx-fields' },
+        h('div', { class: 'form-grid tx-fields tx-schedf' },
           h('div', { class: 'tx-fwrap' }, ui.field('Next specialist review', nextIn), live.suggest),
           dItems.map(function (x) {
             return ui.field(String(x.what || x.id), dateIn(mon[x.field], function (v) { setM(x.field, v); }),
@@ -2294,12 +2651,12 @@
     }
     function paintSchedule(a) {
       if (curTab !== 'sched' || !live.sched) return;
-      var plan = Tx.monitorPlan(a), ch = obj(txOf(a).choice), out = [];
+      var plan = Tx.monitorPlan(a), ch = obj(txOf(a).choice), out = [], td = today();
       if (!ch.startDate) out.push(note('info', 'Due dates start from the start date', null, [goBtn(ctx, 'prescribe', 'Add the start date')]));
       if (!plan.length) out.push(h('p', { class: 'muted' }, 'No monitoring items for this age in the treatment data.'));
       else {
         out.push(stackTable(['What', 'How often', 'Last done', 'Next due'], plan.map(function (x) {
-          return [x.specialistOnly ? h('span', null, x.what, ' ', ui.badge('Specialist team', 'neutral')) : x.what, x.freq || '', x.last ? dateText(x.last) : '-', x.due ? h('span', null, dateText(x.due), x.overdue ? [' ', ui.badge('Overdue', 'err')] : null) : '-'];
+          return [x.specialistOnly ? h('span', null, x.what, ' ', ui.badge('Specialist team', 'neutral')) : x.what, x.freq || '', x.last ? h('span', { class: 'tx-date' }, dateText(x.last)) : '-', dueCell(x, td)];
         }), 'tx-sched'));
       }
       fill(live.sched, out);
@@ -2313,19 +2670,20 @@
     function annualTab() {
       var mon = MON(), done = obj(mon.annual), items = annualItems();
       var areas = items.filter(function (x) { return num(x.area) !== null; }), rest = items.filter(function (x) { return num(x.area) === null; });
-      live.annual = h('p', { class: 'tx-count', 'aria-live': 'polite' });
+      live.annual = h('span', { class: 'tx-cnt' });
+      live.annualRest = h('span', { class: 'tx-cnt' });
+      live.annualAll = h('span', { class: 'tx-cnt' });
       function box(x) {
         var n = num(x.area);
         return ui.check({ label: n !== null ? [h('span', { class: 'tx-area', 'aria-hidden': 'true' }, String(n)), h('span', { class: 'sr-only' }, 'Area ' + n + ': '), x.t] : x.t,
           checked: !!done[x.id], cls: 'tx-check' + (n !== null ? ' tx-check-area' : ''), onChange: function (on) { setM('annual.' + x.id, on ? true : undefined); } });
       }
       return h('div', null,
-        h('p', { class: 'hint' }, 'At least once a year the specialist reviews the medicine and whether to continue. Tick each area as you cover it.'),
-        ui.field('Date of the last annual review', dateIn(mon.annualDate, function (v) { setM('annualDate', v); })),
-        live.annual,
-        areas.length ? h('p', { class: 'tx-subh' }, 'The ' + areas.length + ' areas to review') : null,
-        areas.length ? h('div', { class: 'tx-checks' }, areas.map(box)) : null,
-        rest.length ? h('p', { class: 'tx-subh' }, 'Then decide and record') : null,
+        h('p', { class: 'hint tx-tabhint' }, 'At least once a year the specialist reviews the medicine and whether to continue. Tick each area as you cover it.'),
+        h('div', { class: 'form-grid tx-fields tx-datef' }, ui.field('Date of the last annual review', dateIn(mon.annualDate, function (v) { setM('annualDate', v); }))),
+        areas.length ? h('div', { class: 'tx-subrow' }, h('h3', { class: 'tx-subh' }, 'The ' + areas.length + ' areas to review'), live.annual) : null,
+        areas.length ? h('div', { class: 'tx-checks tx-areas' }, areas.map(box)) : null,
+        rest.length ? h('div', { class: 'tx-subrow' }, h('h3', { class: 'tx-subh' }, areas.length ? 'Then decide and record' : 'Annual review'), areas.length ? live.annualRest : live.annualAll) : null,
         rest.length ? h('div', { class: 'tx-checks' }, rest.map(box)) : null);
     }
     function paintAnnual(a) {
@@ -2333,9 +2691,9 @@
       var done = obj(obj(txOf(a).monitor).annual), items = annualItems();
       var areas = items.filter(function (x) { return num(x.area) !== null; }), rest = items.filter(function (x) { return num(x.area) === null; });
       function n(list) { return list.filter(function (x) { return done[x.id]; }).length; }
-      live.annual.textContent = areas.length
-        ? n(areas) + ' of ' + areas.length + ' areas covered' + (rest.length ? '; ' + n(rest) + ' of ' + rest.length + ' decision steps done.' : '.')
-        : n(items) + ' of ' + items.length + ' covered.';
+      paintCnt(live.annual, n(areas), areas.length, 'covered');
+      paintCnt(live.annualRest, n(rest), rest.length, 'done');
+      paintCnt(live.annualAll, n(items), items.length, 'covered');
     }
 
     /* ---- Tab: shared care ---- */
@@ -2352,6 +2710,7 @@
       var mon = MON(), hb = obj(mon.handback), hbItems = arr(M.handback).filter(function (x) { return x && x.id; });
       live.sharedHint = h('div', { class: 'tx-live', 'aria-live': 'polite' });
       live.letter = h('div', { class: 'tx-letterhost' });
+      live.hbCnt = h('span', { class: 'tx-cnt' });
       var letterDet = ui.details('Shared care request letter', [
         h('p', { class: 'hint' }, 'Built from this record. Check every line and fill in the parts in square brackets.'),
         h('div', { class: 'row tx-letteract' }, letterActions()),
@@ -2366,7 +2725,7 @@
         h('div', { class: 'form-grid tx-fields' },
           ui.field('GP practice and contact', textIn(mon.gp, function (v) { setM('gp', v); }, { placeholder: 'Practice name, and who to contact' }))),
         hbItems.length ? h('div', { class: 'tx-sub' },
-          h('p', { class: 'tx-subh' }, 'When the GP hands care back'),
+          h('div', { class: 'tx-subrow' }, h('h3', { class: 'tx-subh' }, 'When the GP hands care back'), live.hbCnt),
           h('p', { class: 'hint' }, 'Tick the ones agreed with the GP. The letter lists the ticked ones, or all of them if none is ticked.'),
           h('div', { class: 'tx-checks' }, hbItems.map(function (x) {
             return ui.check({ label: x.t, checked: !!hb[x.id], cls: 'tx-check', onChange: function (on) { setM('handback.' + x.id, on ? true : undefined); } });
@@ -2400,6 +2759,8 @@
     function paintShared(a) {
       if (curTab !== 'shared' || !live.sharedHint) return;
       fill(live.sharedHint, sharedHint(a));
+      var hbItems = arr(M.handback).filter(function (x) { return x && x.id; }), hb = obj(obj(txOf(a).monitor).handback);
+      if (live.hbCnt) paintCnt(live.hbCnt, hbItems.filter(function (x) { return hb[x.id]; }).length, hbItems.length, 'agreed');
       if (live.letterDet && live.letterDet.open) paintLetter(a);
     }
     function paintLetter(a) { if (live.letter) fill(live.letter, letterNode(AA.components.sharedCareLetter(a))); }
@@ -2408,9 +2769,9 @@
     function transitionTab() {
       var mon = MON(), items = arr(M.transition).filter(function (x) { return x && x.id; }), age = ageOf(ctx.a() || {});
       return h('div', null,
-        h('p', { class: 'hint' }, age !== null && age >= 16 ? 'Plan the move to adult services now: transfer is usually complete by 18.' : 'Start planning the move to adult services early (by Year 9 at the latest).'),
-        items.length ? bullets(items.map(function (x) { return x.t; })) : null,
-        ui.check({ label: 'A transition plan is in place', checked: mon.transition === true, onChange: function (on) { setM('transition', on ? true : undefined); } }));
+        h('p', { class: 'hint tx-tabhint' }, age !== null && age >= 16 ? 'Plan the move to adult services now: transfer is usually complete by 18.' : 'Start planning the move to adult services early (by Year 9 at the latest).'),
+        items.length ? ui.steps(items.map(function (x) { return x.t; })) : null,
+        h('div', { class: 'tx-sub' }, ui.check({ label: 'A transition plan is in place', checked: mon.transition === true, onChange: function (on) { setM('transition', on ? true : undefined); } })));
     }
 
     var tabDefs = [
@@ -2421,12 +2782,64 @@
     if (transitionShown(a0)) tabDefs.push({ id: 'trans', label: 'Adult services', render: transitionTab });
     var curTab = 'sched';
     var tabs = ui.tabs(tabDefs, 'sched', function (id) { curTab = id; var a = ctx.a() || {}; paintSchedule(a); paintAnnual(a); paintShared(a); });
-    el.appendChild(card('Monitoring', [tabs], 'tx-moncard'));
+    var monCard = card(null, [tabs], 'tx-moncard');
+    el.appendChild(monCard);
+    /* Open a tab from a summary fact: bring the card into view and put the focus on the tab itself. */
+    function openTab(id) {
+      tabs.show(id);
+      try { monCard.scrollIntoView({ block: 'start', behavior: 'smooth' }); } catch (e) { /* ignore */ }
+      var b = monCard.querySelector('.tab[aria-selected="true"]');
+      if (b) { try { b.focus({ preventScroll: true }); } catch (e2) { /* ignore */ } }
+    }
 
     function paintReady(a) {
       var out = [], pn = planNote(ctx, a);
       if (pn) out.push(pn);
       fill(readyHost, out);
+    }
+    /* Anything overdue first, then the next specialist review, shared care and the annual review. */
+    function paintSummary(a) {
+      var plan = Tx.monitorPlan(a), ch = obj(txOf(a).choice), mon = obj(txOf(a).monitor), td = today();
+      var dated = plan.filter(function (x) { return x.due; }).sort(function (x, y) { return x.due < y.due ? -1 : x.due > y.due ? 1 : 0; });
+      var over = dated.filter(function (x) { return x.overdue; });
+      var soon = dated.filter(function (x) { return !x.overdue && dueSoon(x.due, td); });
+      var nextDue = dated.filter(function (x) { return !x.overdue; })[0] || null;
+      var annual = plan.filter(function (x) { return /annual/.test(lc(x.id)); })[0] || null;
+      var revPast = !!mon.nextReview && mon.nextReview < td;
+      var o = { eyebrow: 'Monitoring and shared care', actions: [] };
+      if (!ch.startDate) {
+        o.kind = 'info'; o.badge = ['Not started', 'neutral']; o.title = 'Due dates start from the start date';
+        o.actions.push(goBtn(ctx, 'prescribe', 'Add the start date'));
+      } else if (over.length) {
+        o.kind = 'err'; o.badge = [plural(over.length, 'check') + ' overdue', 'err'];
+        o.title = over.length === 1 ? 'One check is overdue' : over.length + ' checks are overdue';
+        o.extra = h('ul', { class: 'tx-reasons', 'aria-label': 'Overdue checks' }, over.map(function (x) {
+          return h('li', { class: 'tx-r tx-r-err' }, h('span', { class: 'tx-dot', 'aria-hidden': 'true' }),
+            h('span', null, String(x.what || '').replace(/\?$/, ''), ' ', h('span', { class: 'tx-r-due' }, '(due ' + dateText(x.due) + ')')));
+        }));
+        o.actions.push(ui.btn({ label: 'Open the schedule', kind: 'ghost', small: true, onClick: function () { openTab('sched'); } }));
+      } else {
+        o.kind = revPast || !mon.nextReview ? 'warn' : soon.length ? 'info' : 'ok';
+        o.badge = soon.length ? ['Due soon', 'warn'] : ['Up to date', 'ok'];
+        o.title = revPast ? 'The specialist review date has passed' : mon.nextReview ? 'Next specialist review on ' + dateText(mon.nextReview) : 'Set the next specialist review';
+        if (revPast || !mon.nextReview) {
+          o.next = revPast ? 'record the review, or set a new date in the schedule.' : 'set the date of the next specialist review in the schedule.';
+          o.actions.push(ui.btn({ label: 'Open the schedule', kind: 'ghost', small: true, onClick: function () { openTab('sched'); } }));
+        } else if (nextDue) {
+          o.next = String(nextDue.what || '').replace(/\?$/, '') + ', due ' + dateText(nextDue.due) + '.';
+          o.nextLabel = 'Next check';
+        }
+      }
+      o.facts = [
+        { k: 'Next specialist review', v: mon.nextReview ? dateText(mon.nextReview) : 'Not set', s: revPast ? 'Date has passed' : null, kind: mon.nextReview ? (revPast ? 'warn' : 'ok') : 'warn',
+          onClick: function () { openTab('sched'); }, title: 'Open the schedule' },
+        { k: 'Shared care', v: labelOf(SHARED, mon.shared) || 'Not recorded', s: textOrNone(mon.gp) ? String(mon.gp) : null,
+          kind: mon.shared === 'agreed' ? 'ok' : mon.shared === 'declined' ? 'warn' : mon.shared ? 'info' : 'neutral', onClick: function () { openTab('shared'); }, title: 'Open shared care' },
+        { k: 'Annual review', v: annual && annual.due ? 'Due ' + dateText(annual.due) : 'Not set', s: mon.annualDate ? 'Last on ' + dateText(mon.annualDate) : null,
+          kind: annual && annual.overdue ? 'err' : annual && annual.due ? 'ok' : 'neutral', onClick: function () { openTab('annual'); }, title: 'Open the annual review' },
+        transitionShown(a) ? { k: 'Adult services', v: mon.transition === true ? 'Plan in place' : 'No plan yet', kind: mon.transition === true ? 'ok' : 'warn', onClick: function () { openTab('trans'); }, title: 'Open adult services' } : null
+      ];
+      fill(sumHost, summaryCard(o));
     }
     var src = stepSources(el, function (a) {
       return Tx.monitorPlan(a).map(function (x) { return x.src; })
@@ -2439,7 +2852,7 @@
     });
     function paintAll() {
       var a = ctx.a() || {};
-      paintReady(a); paintSchedule(a); paintAnnual(a); paintShared(a); src.paint(a);
+      paintReady(a); paintSummary(a); paintSchedule(a); paintAnnual(a); paintShared(a); src.paint(a);
     }
     paintAll();
     ctx.onChange('treatment', U.debounce(function () { if (el.isConnected) paintAll(); }, 80));
@@ -2478,7 +2891,8 @@
     }
     var Tx = T(), t = txOf(a), ch = obj(t.choice), ap = Tx.applicable(a), mon = obj(t.monitor);
     var st = panelState(a), dn = doseNow(a), dose = dn.dose, p = prodOf(ch.product), tv = ch.startDate ? trialView(a) : null;
-    var secs = [h('h2', null, 'Treatment')];
+    /* The state badge sits under the heading on wide screens; narrower screens show it in the folded summary. */
+    var secs = [h('h2', null, 'Treatment'), h('div', { class: 'tx-pstate' }, ui.badge(st[0], st[1]))];
     if (!ap.ok) {
       secs.push(h('p', { class: 'hint' }, stripClauses(ap.reason)));
       if (ap.code !== 'under6') secs.push(h('div', { class: 'row' }, ui.btn({ label: 'Open scoring', kind: 'ghost', small: true, onClick: function () { ctx.go('summary'); } })));
@@ -2490,19 +2904,20 @@
     var lic = p ? Tx.licence(a, p) : null;
     secs.push(h('div', { class: 'panel-sec tx-psec' },
       h('p', { class: 'tx-pk' }, 'Medicine'),
-      ch.drug ? h('p', { class: 'tx-pv' }, h('strong', null, p ? p.name : drugName(ch.drug)), p ? ' · ' + drugName(ch.drug) : '') : h('p', { class: 'hint' }, 'Not chosen yet.'),
-      dn.stopped ? h('p', { class: 'tx-pv' }, stopText(medState(a))) : dose !== null ? h('p', { class: 'tx-pv' }, fmt(dose) + ' mg a day' + (dn.from === 'start' ? ' (starting dose)' : '')) : null,
+      ch.drug ? h('p', { class: 'tx-pmed' }, p ? p.name : drugName(ch.drug)) : h('p', { class: 'hint' }, 'Not chosen yet.'),
+      ch.drug && p ? h('p', { class: 'tx-pv tx-pdrug' }, drugName(ch.drug)) : null,
+      dn.stopped ? h('p', { class: 'tx-pv' }, stopText(medState(a))) : dose !== null ? h('p', { class: 'tx-pdose' }, fmt(dose) + ' mg a day' + (dn.from === 'start' ? ' (starting dose)' : '')) : null,
       lic ? licenceBadge(lic) : null));
-    /* Latest measures */
-    var rows = [['bp', 'Blood pressure'], ['pulse', 'Pulse'], ['weightKg', 'Weight']].map(function (k) {
+    /* Latest measures: three figures side by side */
+    var cells = [['bp', 'Blood pressure', 'mmHg'], ['pulse', 'Pulse', 'bpm'], ['weightKg', 'Weight', 'kg']].map(function (k) {
       var m = latestMeasure(a, k[0]);
-      return m ? h('li', null, h('span', null, k[1]), h('span', { class: 'tx-pnum' }, measureText(k[0], m.v))) : null;
+      return m ? h('li', null, h('span', { class: 'tx-pstat-k' }, k[1]), h('span', { class: 'tx-pstat-v' }, k[0] === 'weightKg' ? fmt(m.v) : String(m.v)), h('span', { class: 'tx-pstat-u' }, k[2])) : null;
     }).filter(Boolean);
     var flags = Tx.reviewsSorted(a).length ? Tx.latestFlags(a) : [];
     var bpl = !Tx.reviewsSorted(a).length ? Tx.bpCheck(a, obj(t.baseline)) : null;
     secs.push(h('div', { class: 'panel-sec tx-psec' },
       h('p', { class: 'tx-pk' }, 'Latest measures'),
-      rows.length ? h('ul', { class: 'tx-plist' }, rows) : h('p', { class: 'hint' }, 'None recorded yet.'),
+      cells.length ? h('ul', { class: 'tx-pstats' }, cells) : h('p', { class: 'hint' }, 'None recorded yet.'),
       flags.length ? h('ul', { class: 'tx-pflags' }, flags.slice(0, 3).map(function (f) {
         return h('li', { class: 'tx-r tx-r-' + kindOf(f.level) }, h('span', { class: 'tx-dot', 'aria-hidden': 'true' }), h('span', null, stripClauses(f.text)));
       })) : bpl && bpl.level !== 'ok' && bpl.level !== 'unknown' ? h('p', { class: 'tx-r tx-r-' + kindOf(bpl.level) }, h('span', { class: 'tx-dot', 'aria-hidden': 'true' }), h('span', null, 'Blood pressure: ' + ({ repeat: 'repeat the reading', confirm: 'confirm with ABPM or HBPM', refer: 'specialist opinion first', urgent: 'urgent review' }[bpl.level] || bpl.level))) : null));
@@ -2511,7 +2926,7 @@
       var tr = tv.tr;
       secs.push(h('div', { class: 'panel-sec tx-psec' },
         h('p', { class: 'tx-pk' }, 'Trial'),
-        h('div', { class: 'tx-trial' }, h('span', null, weekText(tr)), ui.progress(weekProg(tr), tr.need, 'Weeks of the trial'),
+        h('div', { class: 'tx-trial' }, h('span', { class: 'tx-trial-k' }, weekText(tr)), ui.progress(weekProg(tr), tr.need, 'Weeks of the trial'),
           tv.stopped ? ui.badge('Stopped', 'neutral') : tv.adequate ? ui.badge('Adequate', 'ok') : null)));
     }
     /* Next review and shared care. While the dose is still being titrated, the next contact is about a week on
@@ -2530,13 +2945,13 @@
     if (next) overdue = next < today();
     secs.push(h('div', { class: 'panel-sec tx-psec' },
       h('p', { class: 'tx-pk' }, nextNote ? 'Next titration contact' : 'Next review'),
-      next ? h('p', { class: 'tx-pv' }, (nextNote ? 'About ' : '') + dateText(next), overdue ? [' ', ui.badge(nextNote ? 'Due' : 'Overdue', nextNote ? 'warn' : 'err')] : null) : h('p', { class: 'hint' }, tv && !tv.optimised && !tv.stopped ? 'Not set: agree the next titration contact (about weekly).' : 'Not set.'),
+      next ? h('p', { class: 'tx-pv tx-pnext' }, (nextNote ? 'About ' : '') + dateText(next), overdue ? [' ', ui.badge(nextNote ? 'Due' : 'Overdue', nextNote ? 'warn' : 'err')] : null) : h('p', { class: 'hint' }, tv && !tv.optimised && !tv.stopped ? 'Not set: agree the next titration contact (about weekly).' : 'Not set.'),
       nextNote ? h('p', { class: 'hint' }, nextNote) : null,
       mon.shared ? h('p', { class: 'hint' }, 'Shared care: ' + lc(labelOf(SHARED, mon.shared))) : null));
     var links = [['txplan', 'Plan'], ['baseline', 'Checks'], ['prescribe', 'Prescribe'], ['titrate', 'Titration'], ['monitor', 'Monitoring']].filter(function (x) { return !ctx || x[0] !== ctx.step; });
-    secs.push(h('div', { class: 'panel-sec row tx-plinks' }, links.map(function (x) {
+    secs.push(h('div', { class: 'panel-sec tx-plinks' }, h('p', { class: 'tx-pk' }, 'Treatment steps'), h('div', { class: 'row' }, links.map(function (x) {
       return ui.btn({ label: x[1], kind: 'quiet', small: true, onClick: function () { if (ctx) ctx.go(x[0]); } });
-    })));
+    }))));
     var box = h('div', { class: 'panel tx-panel' }, secs);
     var fold = h('details', { class: 'panel-fold', open: wide() || foldOpen === true },
       h('summary', null,
