@@ -12,19 +12,35 @@
    reproduced. Interview questions are original prompts built from the cited discriminating features; they are
    not a validated instrument. Statements without a named source are clinical practice.
    Sources: research briefs of 21 October 2026 (ddx-evidence, guidelines-uk, guidelines-intl, tools-adhd,
-   tools-comorbid). */
+   tools-comorbid).
+   Page structure: the introduction is split into parts that the page shows as structure rather than prose:
+   intro (what the protocol is and how to use it), questions (the two questions it answers), stats (numbers
+   worth remembering; each label says where the figure comes from), tests (the six tests that run through every
+   step) and caveat (what the protocol can and cannot promise). Views fall back to intro alone when they are missing. */
 AA.add('ddxProtocol', {
 
-  intro: "<p>This protocol is a fixed route through the differential diagnosis of adult ADHD. Work through the steps in order. Each step names the conditions it covers, the tools that can help, the questions to ask and the rules for deciding. Tick the checks before you move on.</p>" +
-    "<p>The protocol answers two questions. First, <strong>DSM-5-TR criterion E</strong>: are the symptoms better explained by another condition, or do they occur only during a psychotic disorder? Second: <strong>which other conditions are present alongside ADHD</strong>? Both matter. About half of adults with ADHD in the WHO World Mental Health surveys (51.7%) had at least one other mental disorder in the past year, and the European Consensus puts lifetime comorbidity at 60-80%.</p>" +
-    "<p>The same six tests run through every step:</p>" +
-    "<ol><li><strong>Onset</strong>: were several symptoms present before age 12, and before the other condition began?</li>" +
-    "<li><strong>Course</strong>: are the symptoms trait-like and continuous, or do they come and go in episodes?</li>" +
-    "<li><strong>Persistence</strong>: are the symptoms still there when the other condition is absent or treated?</li>" +
-    "<li><strong>Pervasiveness</strong>: do they occur across settings and moods, or only in the situations and states that belong to the other condition?</li>" +
-    "<li><strong>Specific features</strong>: is there anything that belongs only to the other condition, such as reduced need for sleep, flashbacks or abandonment fear?</li>" +
-    "<li><strong>Independent evidence</strong>: what do informants, school reports and records say?</li></ol>" +
-    "<p>No screening score makes the differential. Screens are triggers for a closer look. Following the protocol makes the conclusion more reliable and easier to defend, but it remains a clinical judgement. When the picture is unclear, the honest verdict is <em>uncertain</em>, with a plan to reassess.</p>",
+  intro: "<p>This protocol is a fixed route through the differential diagnosis of adult ADHD. Work through the steps in order. Each step names the conditions it covers, the tools that can help, the questions to ask and the rules for deciding. Tick the checks before you move on.</p>",
+
+  questions: [
+    { t: "DSM-5-TR criterion E", q: "Are the symptoms better explained by another condition, or do they occur only during a psychotic disorder?" },
+    { t: "Co-occurring conditions", q: "Which other conditions are present alongside ADHD?" }
+  ],
+
+  stats: [
+    { n: "51.7%", l: "of adults with ADHD in the WHO World Mental Health surveys had at least one other mental disorder in the past year" },
+    { n: "60-80%", l: "lifetime comorbidity in adults with ADHD, according to the European Consensus" }
+  ],
+
+  tests: [
+    { id: "onset", t: "Onset", q: "Were several symptoms present before age 12, and before the other condition began?" },
+    { id: "course", t: "Course", q: "Are the symptoms trait-like and continuous, or do they come and go in episodes?" },
+    { id: "persistence", t: "Persistence", q: "Are the symptoms still there when the other condition is absent or treated?" },
+    { id: "pervasiveness", t: "Pervasiveness", q: "Do they occur across settings and moods, or only in the situations and states that belong to the other condition?" },
+    { id: "specific", t: "Specific features", q: "Is there anything that belongs only to the other condition, such as reduced need for sleep, flashbacks or abandonment fear?" },
+    { id: "evidence", t: "Independent evidence", q: "What do informants, school reports and records say?" }
+  ],
+
+  caveat: "No screening score makes the differential. Screens are triggers for a closer look. Following the protocol makes the conclusion more reliable and easier to defend, but it remains a clinical judgement. When the picture is unclear, the honest verdict is <em>uncertain</em>, with a plan to reassess.",
 
   principles: [
     "Diagnose both when both are present. A co-occurring condition does not rule out ADHD. It rules it out only when it better explains the symptoms (NICE NG87 1.2.10; WFADHD 2021). No condition has to be excluded before ADHD can be diagnosed (AADPA 2022).",
