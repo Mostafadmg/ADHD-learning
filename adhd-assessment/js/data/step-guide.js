@@ -18,7 +18,7 @@ AA.add('stepGuide', {
     goal: "Start safely: confirm the patient's details and consent, explain the assessment, and know what evidence and informants you have.",
     time: "5-10 minutes",
     do: [
-      "Before the appointment, send the pre-appointment forms (see Pre-appointment forms in the menu) and ask for school reports and previous records. On the day, read the referral, records and returned forms, and note the referral question and any red flags: suicidal thoughts, possible mania or psychosis, or a safeguarding concern.",
+      "Before the appointment, send the pre-assessment pack from the next step (Pre-assessment pack): the questionnaires, informant forms, and requests for school reports and previous records. On the day, read the referral, records and returned forms, and note the referral question and any red flags: suicidal thoughts, possible mania or psychosis, or a safeguarding concern.",
       "Enter a reference (initials or a local code, never a name or NHS number), age, sex and occupation. If the patient is under 18, check that an adult pathway is right; under 17 the DSM-5-TR threshold is 6 symptoms in a domain, not 5.",
       "Record who is present today and who could be contacted later. The best informants are someone who knew the patient before age 12 (usually a parent or older sibling) and someone who knows them well now.",
       "Tick the records you have, such as school reports and previous assessments. Ask now for anything missing, so it can arrive before you reach a conclusion.",
@@ -46,7 +46,7 @@ AA.add('stepGuide', {
       "You know who can give collateral information and how to reach them.",
       "Missing records or informants are noted, with a plan to obtain them."
     ],
-    next: "Go to Screening questionnaires. Check the forms the patient completed before the appointment: they give a baseline and show you where to probe later.",
+    next: "Go to Pre-assessment pack: send the forms and letters, track what comes back and book the interview. Then enter the returned questionnaires in Screening questionnaires.",
     src: [
       "NICE NG87 1.3.1",
       "UKAAN Adult ADHD Assessment Quality Assurance Standard (AQAS, Adamou et al. 2024): orientation to the process, informants, theme 4 (at least 2 hours in most cases)",

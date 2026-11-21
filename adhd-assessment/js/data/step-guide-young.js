@@ -45,7 +45,7 @@
         'You know who has parental responsibility, the consent basis, and whether you may contact the school.',
         'The parent or carer, the teacher and the child or young person each have a way to give their view.'
       ],
-      next: 'Go to Screening questionnaires and enter the parent and teacher rating scales you sent out before the appointment.',
+      next: 'Go to Pre-assessment pack: send the parent and teacher forms and letters, and track what comes back. Then enter the rating scales in Screening questionnaires.',
       src: [
         'NICE NG87 1.3.1 (who diagnoses ADHD; full assessment with observer reports) and 1.3.6 (the child\'s or young person\'s own views)',
         'NICE NG87 1.5.7-1.5.9 (children under 5)',
