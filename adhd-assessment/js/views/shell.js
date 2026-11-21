@@ -16,7 +16,7 @@
     { title: 'During the interview', items: [
       { go: 'bank', label: 'Question bank', ico: '?' },
       { go: 'ddxguide', label: 'Differential protocol', ico: '✓' },
-      { go: 'ddx', label: 'Differential diagnosis', ico: '⇄' },
+      { go: 'ddx', label: 'Conditions A to Z', ico: '⇄' },
       { go: 'criteria', label: 'Diagnostic criteria', ico: '≡' }
     ] },
     { title: 'Library', items: [
@@ -28,8 +28,7 @@
       { go: 'learn', label: 'Assessor training', ico: '◆' },
       { go: 'cases', label: 'Practice cases', ico: '◎' },
       { go: 'glossary', label: 'Glossary', ico: 'Aa' }
-    ] },
-    { title: '', items: [{ go: 'about', label: 'About, privacy and data', ico: 'i' }] }
+    ] }
   ];
 
   /* The last assessment page visited in this session (including the symptom card), kept in memory only,
@@ -78,21 +77,55 @@
             icon(it.go), h('span', null, it.label), meta ? h('span', { class: 'nav-meta' }, meta) : null));
         }))));
     });
-    /* One website: a way back to the main ADHD course (the workspace lives in its adhd-assessment/ folder). */
-    host.appendChild(h('div', { class: 'nav-group' }, h('p', { class: 'nav-group-title' }, 'ADHD course'),
-      h('ul', { class: 'nav' }, h('li', null, h('a', { href: '../index.html#home' }, icon('home'), h('span', null, 'Back to the course modules'))))));
-    var me = AA.auth.current();
-    if (me) side.appendChild(h('div', { class: 'side-account' },
-      h('p', { class: 'who-line' }, me.name + (me.role ? ' · ' + me.role : '')),
-      h('div', { class: 'row' },
-        ui.btn({ label: 'Theme', small: true, kind: 'ghost', onClick: function () { U.$('#theme-btn').click(); } }),
-        ui.btn({ label: 'Sign out', small: true, kind: 'ghost', onClick: function () { U.$('#signout-btn').click(); } }))));
+    /* About, and one website: a way back to the main ADHD course (the workspace lives in its adhd-assessment/ folder). */
+    host.appendChild(h('div', { class: 'nav-group nav-foot' },
+      h('ul', { class: 'nav' },
+        h('li', null, h('a', { href: '#about', 'data-go': 'about', 'aria-current': active === 'about' ? 'page' : null }, icon('about'), h('span', null, 'About, privacy and data'))),
+        h('li', null, h('a', { href: '../index.html#home' }, icon('learn'), h('span', null, 'Back to the ADHD course'))))));
   }
 
   function setDrawer(open) {
     U.$('#sidebar').classList.toggle('open', open);
     U.$('#scrim').classList.toggle('open', open);
     U.$('#menu-btn').setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  /* The journey bar above a step opens the drawer at the step list, with the current step in view. */
+  shell.openSteps = function () {
+    setDrawer(true);
+    setTimeout(function () {
+      var cur = U.$('#sidebar .jn-step[aria-current="step"]') || U.$('#sidebar .jn-next') || U.$('#sidebar a');
+      if (cur) { try { cur.scrollIntoView({ block: 'center' }); } catch (e) { /* old browsers */ } cur.focus(); }
+    }, 60);
+  };
+
+  /* ---------- Account menu (top bar) ---------- */
+  function setAcct(open) {
+    var m = U.$('#acct-menu'), b = U.$('#acct-btn');
+    if (!m || !b) return;
+    m.hidden = !open;
+    b.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) {
+      paintAcct();
+      var first = m.querySelector('.acct-tsel button[aria-pressed="true"], .acct-item');
+      if (first) first.focus();
+    }
+  }
+  function paintAcct() {
+    var host = U.$('#acct-items');
+    if (!host) return;
+    U.clear(host);
+    var cur = AA.store.get('prefs.theme', 'system');
+    var opts = [['system', 'Rx portal'], ['light', 'Light'], ['dark', 'Dark']];
+    host.appendChild(h('div', { class: 'acct-theme' },
+      h('p', { class: 'acct-theme-l', id: 'acct-theme-l' }, 'Theme'),
+      h('div', { class: 'acct-tsel', role: 'group', 'aria-labelledby': 'acct-theme-l' }, opts.map(function (o) {
+        return h('button', { type: 'button', 'aria-pressed': cur === o[0] ? 'true' : 'false', title: o[0] === 'system' ? 'Match the EveryDayMeds Rx portal' : null,
+          onclick: function () { AA.store.set('prefs.theme', o[0]); applyTheme(o[0]); paintAcct(); var b = U.$('.acct-tsel button[aria-pressed="true"]'); if (b) b.focus(); } }, o[1]);
+      }))));
+    host.appendChild(h('div', { class: 'acct-sep', role: 'presentation' }));
+    host.appendChild(h('a', { class: 'acct-item', href: '#about', 'data-go': 'about' }, ui.icon('shield'), 'About, privacy and data'));
+    host.appendChild(h('a', { class: 'acct-item', href: '../index.html#home' }, ui.icon('book'), 'Back to the ADHD course'));
+    host.appendChild(h('div', { class: 'acct-sep', role: 'presentation' }));
   }
 
   function renderChrome(route) {
@@ -103,9 +136,15 @@
     U.$('#main').classList.toggle('main-bare', !signedIn);
     /* Close the phone drawer on every route change, including sign-out (its scrim would block the sign-in page). */
     setDrawer(false);
+    setAcct(false);
     if (!signedIn) return;
     var me = AA.auth.current();
-    U.$('#who').textContent = me.name + (me.role ? ' · ' + me.role : '');
+    U.$('#who').textContent = me.name;
+    var roleEl = U.$('#who-role');
+    if (roleEl) roleEl.textContent = me.role || 'Clinician';
+    ['#acct-av', '#acct-av2'].forEach(function (sel) { var av = U.$(sel); if (av) av.textContent = initials(me.name); });
+    var ab = U.$('#acct-btn');
+    if (ab) ab.setAttribute('aria-label', 'Account and settings: ' + me.name);
     renderChip();
     renderNav(route);
     var wide = route.name === 'assess' || route.name === 'journey';
@@ -119,8 +158,12 @@
     var chip = U.$('#patient-chip');
     chip.hidden = !a;
     if (!a) return;
-    chip.textContent = (a.patient.ref || 'Untitled patient') + (a.patient.age ? ', ' + a.patient.age + ' y' : '');
+    U.clear(chip);
+    chip.appendChild(h('span', { class: 'pc-av', 'aria-hidden': 'true' }, ui.icon('user')));
+    chip.appendChild(h('span', { class: 'pc-t' }, a.patient.ref || 'Untitled patient'));
+    if (a.patient.age) chip.appendChild(h('span', { class: 'pc-m' }, a.patient.age + ' y'));
     chip.title = 'Open the current assessment';
+    chip.setAttribute('aria-label', 'Current patient: ' + (a.patient.ref || 'Untitled patient') + (a.patient.age ? ', ' + a.patient.age + ' years' : '') + '. Open the assessment.');
     chip.onclick = function () { AA.router.go(shell.resumeRoute(a)); };
   }
 
@@ -128,7 +171,7 @@
     var el = U.$('#save-state');
     if (!el) return;
     var s = AA.store.saveStatus();
-    el.className = 'save-state' + (s === 'unavailable' ? ' err' : '');
+    el.className = 'save-state' + (s === 'unavailable' ? ' err' : s === 'saving' ? ' is-saving' : '');
     el.textContent = s === 'unavailable' ? 'Not saved: browser storage blocked' : s === 'saving' ? 'Saving…' : 'Saved on this device';
   }
 
@@ -207,7 +250,8 @@
        A deep link waiting for sign-in (for example #new from the course) is dropped here: it is only
        used after a real sign-in, so the demo button always opens the demo. */
     function demoBtn(kind) {
-      return ui.btn({ label: kind === 'young' ? 'Explore with a child demo' : 'Explore with a demo patient', kind: 'secondary', onClick: function () {
+      var young = kind === 'young';
+      return h('button', { type: 'button', class: 'si-demo', onclick: function () {
         var existing = AA.auth.list().filter(function (p) { return p.guest; })[0];
         var start = existing ? AA.auth.signIn(existing.id).then(function () { return existing; }) : AA.auth.create({ name: 'Demo clinician', role: 'Guest', guest: true });
         start.then(function () {
@@ -215,27 +259,38 @@
           var id = shell.loadDemo(kind);
           AA.router.go(id ? 'assess-' + id + '-summary' : 'home');
         });
-      } });
+      } },
+        h('span', { class: 'si-demo-ico', 'aria-hidden': 'true' }, ui.icon(young ? 'school' : 'users')),
+        h('span', { class: 'si-demo-t' },
+          h('strong', null, young ? 'Explore with a child demo' : 'Explore with a demo patient'),
+          h('span', null, young ? 'An 8-year-old: assessment and treatment' : 'An adult: DIVA, diagnosis, treatment and report')));
     }
 
+    var feats = [
+      ['mail', 'Onboard', 'Send the pre-assessment pack, track what comes back, triage and book.'],
+      ['users', 'Interview', 'The DIVA 2.0 for adults, in DIVA\'s own wording from your copy, scored as you go.'],
+      ['scale', 'Diagnose', 'Collateral, differentials, the DIVA score form, DSM-5-TR criteria, the filled DIVA form and a draft report.'],
+      ['pill', 'Treat', 'Pre-treatment checks, prescribing, titration, monitoring and shared care.'],
+      ['book', 'Learn and practise', 'Assessor training with quizzes, then realistic practice cases.']];
     el.appendChild(h('div', { class: 'signin' }, h('div', { class: 'signin-card' },
       h('section', { class: 'signin-intro' },
-        h('p', { class: 'eyebrow' }, 'ADHD · clinician workspace'),
-        h('h1', null, 'ADHD Assessment'),
-        h('p', null, 'One patient record for the whole ADHD pathway, from referral to shared care, for adults and for young people aged 6 to 17.'),
-        h('p', null, 'Onboard the patient with the pre-assessment pack, then run the DIVA 2.0 interview for adults (DIVA\'s own wording, from your copy), with collateral, differentials and a scored conclusion: the DIVA score form, DSM-5-TR criteria, the filled official DIVA form and a draft report. Then plan treatment: pre-treatment checks, prescribing, titration, monitoring and shared care.'),
-        h('ul', null,
-          h('li', null, 'Learn the method in the assessor training, then practise on cases.'),
-          h('li', null, 'Use it live in clinic: read the question, tick what the patient describes, score as you go.'),
-          h('li', null, 'For a child under 6, the app tells you to refer to a service with expertise in young children.'),
-          h('li', null, 'Everything is stored only in this browser. Use a patient reference, not a name.')),
-        h('p', { class: 'signin-note' }, 'Decision support for qualified clinicians. It does not replace clinical judgement, local policy or the licensed instruments.'),
-        h('p', null, h('a', { href: '../index.html#home' }, '← Back to the ADHD course modules'))),
-      h('section', { class: 'signin-form' }, formHost, h('hr', { class: 'sep' }), h('div', null, h('p', { class: 'hint' }, 'No profile yet? You can look around first.'),
-        h('div', { class: 'row' }, demoBtn('adult'), AA.data.demoYoung ? demoBtn('young') : null))))));
+        h('div', { class: 'si-brand' }, brandMark(), h('span', { class: 'si-brand-t' }, h('strong', null, 'ADHD Assessment'), h('span', null, 'Clinician workspace'))),
+        h('h1', null, 'One record from referral to shared care'),
+        h('p', { class: 'si-lead' }, 'Assess and treat ADHD in adults and in young people aged 6 to 17, one step at a time. For a child under 6, it helps you refer to a service with expertise in young children.'),
+        h('ul', { class: 'si-feats' }, feats.map(function (f) {
+          return h('li', { class: 'si-feat' }, h('span', { class: 'si-feat-ico', 'aria-hidden': 'true' }, ui.icon(f[0])), h('span', null, h('strong', null, f[1]), h('span', null, f[2])));
+        })),
+        h('p', { class: 'si-priv' }, ui.icon('shield'), h('span', null, 'Everything is stored only in this browser. Use a patient reference, never a name. Decision support for qualified clinicians: it does not replace clinical judgement, local policy or the licensed instruments.')),
+        h('p', { class: 'si-back' }, h('a', { href: '../index.html#home' }, '← Back to the ADHD course modules'))),
+      h('section', { class: 'signin-form' }, formHost, h('hr', { class: 'sep' }),
+        h('div', { class: 'stack' }, h('div', null, h('p', { class: 'si-demo-h' }, 'Or look around first'), h('p', { class: 'hint' }, 'Opens a demo patient. No profile needed.')),
+          h('div', { class: 'si-demos' }, demoBtn('adult'), AA.data.demoYoung ? demoBtn('young') : null))))));
     showChooser();
   } });
 
+  function brandMark() {
+    return h('span', { 'aria-hidden': 'true', html: '<svg viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#0b4131"/><path d="M7 21.5 12.5 9l5.5 12.5M9.3 17h6.4" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="23.5" cy="11" r="2.6" fill="#bfdf72"/><path d="M21 21.5h5" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></svg>' });
+  }
   function initials(n) { return String(n || '?').split(/\s+/).filter(Boolean).slice(-2).map(function (x) { return x[0].toUpperCase(); }).join(''); }
 
   /* ---------- Demo ---------- */
@@ -320,12 +375,7 @@
       U.toast('Patient ' + ref + ' created.', 'ok');
       AA.router.go(t);
     });
-    var steps = [
-      ['Onboard', 'Send the pre-assessment pack: questionnaires, informant forms, and requests for school reports and GP records.'],
-      ['Triage and book', 'Enter what comes back, check safety, decide, and book the interview.'],
-      ['DIVA interview', 'About 90 minutes, adulthood then childhood, with a partner or family member if possible.'],
-      ['Diagnose and report', 'Differentials, the DIVA score form, DSM-5-TR criteria, the filled DIVA form and the report.'],
-      ['Treat, if needed', 'Pre-treatment checks, prescribing, titration, monitoring and shared care.']];
+    var steps = FLOW;
     el.appendChild(ui.pageHead({ eyebrow: 'New patient', title: 'Start a new assessment', lead: 'A few details now. Everything else is added as you go, step by step.' }));
     el.appendChild(h('div', { class: 'np' },
       h('section', { class: 'card np-card', 'aria-label': 'Patient details' }, h('h2', { class: 'np-h' }, 'Patient details'), form),
@@ -337,83 +387,183 @@
   } });
 
   /* ---------- Home ---------- */
+  /* The pathway in five stages: the same words on Home and on the new-patient screen. */
+  var FLOW = [
+    ['Onboard', 'Send the pre-assessment pack: questionnaires, informant forms, and requests for school reports and GP records.'],
+    ['Triage and book', 'Enter what comes back, check safety, decide, and book the interview.'],
+    ['DIVA interview', 'About 90 minutes, adulthood then childhood, with a partner or family member if possible.'],
+    ['Diagnose and report', 'Differentials, the DIVA score form, DSM-5-TR criteria, the filled DIVA form and the report.'],
+    ['Treat, if needed', 'Pre-treatment checks, prescribing, titration, monitoring and shared care.']];
+
   AA.router.register('home', { title: 'Home', render: function (el) {
     var me = AA.auth.current();
     var list = AA.assess.list();
     var active = list.filter(function (a) { return a.status !== 'complete'; });
     var done = list.filter(function (a) { return a.status === 'complete'; });
-    var mods = AA.data.learn || [];
-    var modsDone = mods.filter(function (m) { return AA.progress.get('modules.' + m.id + '.done', false); }).length;
 
     /* "Dr Sam Patel" greets as "Dr Patel", "Sam Patel" as "Sam". */
     var nm = String(me.name || '').trim().split(/\s+/);
     var greet = nm.length > 1 && /^(dr|prof|professor|mr|mrs|ms|miss|mx)\.?$/i.test(nm[0]) ? nm[0] + ' ' + nm[nm.length - 1] : nm[0];
-    function demoAction(kind) {
-      var young = kind === 'young';
-      var has = shell.hasDemo(kind);
-      return ui.btn({ label: young ? (has ? 'Open child demo' : 'Load child demo') : (has ? 'Open demo patient' : 'Load demo patient'), kind: 'ghost', onClick: function () {
-        var id = shell.loadDemo(kind); if (id) AA.router.go('assess-' + id + '-summary');
-      } });
-    }
-    el.appendChild(ui.pageHead({ eyebrow: 'Workspace', title: 'Welcome, ' + greet,
-      lead: 'Start or continue an assessment, look something up during the interview, or keep training.',
-      actions: [ui.btn({ label: 'New assessment', kind: 'primary', go: 'new', icon: '+' }), demoAction('adult'), AA.data.demoYoung ? demoAction('young') : null].filter(Boolean) }));
+    var now = new Date(), hr = now.getHours();
+    var hello = hr < 12 ? 'Good morning' : hr < 18 ? 'Good afternoon' : 'Good evening';
+    var day = now.toLocaleDateString('en-GB', { weekday: 'long', day: 'numeric', month: 'long' });
+    var lead = (active.length ? U.plural(active.length, 'patient') + ' in progress' : 'No patients in progress') + (done.length ? ' · ' + done.length + ' completed' : '') + '.';
+    el.appendChild(ui.pageHead({ eyebrow: day, title: hello + ', ' + greet, lead: lead,
+      actions: [ui.btn({ label: 'New patient', kind: 'primary', go: 'new', icon: '+' })] }));
 
-    el.appendChild(h('div', { class: 'stat-row' },
-      stat('In progress', active.length), stat('Completed', done.length),
-      stat('Training modules', modsDone + ' / ' + mods.length), stat('Practice cases', Object.keys(AA.progress.get('cases', {}) || {}).length + ' / ' + (AA.data.cases || []).length)));
-
-    var sec = h('section', { class: 'section' }, h('h2', null, 'Your patients'));
-    if (!list.length) {
-      sec.appendChild(ui.empty('No assessments yet', 'Start a new one, or open the demo patient to see a completed assessment with scores and a report.',
-        h('div', { class: 'row', style: { justifyContent: 'center' } }, ui.btn({ label: 'New assessment', kind: 'primary', go: 'new' }))));
-    } else {
-      /* Where each patient is, from referral to treatment, and what to do next. Tap a stage to filter. */
-      var stages = list.map(function (a) { return { a: a, st: stageOf(a) }; });
-      var filter = null;
-      var listEl = h('div', { class: 'a-list' });
-      var pipe = h('ol', { class: 'pipe', 'aria-label': 'Where your patients are' });
-      function paintList() {
-        U.clear(listEl);
-        stages.filter(function (x) { return !filter || x.st.group === filter; }).forEach(function (x) { listEl.appendChild(assessmentRow(x.a, x.st)); });
-        U.$$('.pipe-btn', pipe).forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-g') === filter ? 'true' : 'false'); });
-      }
-      PIPE.forEach(function (g) {
-        var n = stages.filter(function (x) { return x.st.group === g.id; }).length;
-        var due = stages.filter(function (x) { return x.st.group === g.id && x.st.late; }).length;
-        pipe.appendChild(h('li', null, h('button', { type: 'button', class: 'pipe-btn' + (n ? '' : ' is-empty') + (due ? ' is-late' : ''), 'data-g': g.id, 'aria-pressed': 'false',
-          onclick: function () { filter = filter === g.id ? null : g.id; paintList(); } },
-          h('span', { class: 'pipe-n' }, String(n)), h('span', { class: 'pipe-l' }, g.label), due ? h('span', { class: 'pipe-due' }, due + ' overdue') : null)));
-      });
-      sec.appendChild(pipe);
-      sec.appendChild(listEl);
-      paintList();
-    }
-    el.appendChild(sec);
-
-    /* The step count comes from the frame's step list (18: assessment, diagnosis, treatment and report). */
-    var nSteps = (AA.STEP_LIST || []).length;
-    el.appendChild(h('section', { class: 'section' }, h('h2', null, 'How to use this app'),
-      h('div', { class: 'grid home-steps' },
-        quick('1 · Learn', 'Assessor training', 'Criteria, interview technique, scoring rules, differentials and report writing, each with a quiz.', 'learn'),
-        quick('2 · Practise', 'Practice cases', 'Work through realistic adult cases and compare your decisions with the expert answer.', 'cases'),
-        quick('3 · Assess and treat', 'Run an assessment', (nSteps ? nSteps + ' guided steps' : 'Guided steps') + ' along the whole pathway, from referral to shared care: assessment, diagnosis, treatment plan, prescribing, titration and monitoring. For adults and young people aged 6 to 17. Each step tells you what to do, and scores update as you go.', 'new'))));
-    el.appendChild(h('section', { class: 'section' }, h('h2', null, 'Look things up'),
-      h('ul', { class: 'home-links' },
-        link('Question bank', 'Every interview question and example, by symptom, life area or keyword.', 'bank'),
-        link('Differential protocol', 'A step-by-step method so no alternative explanation is missed.', 'ddxguide'),
-        link('Pre-appointment forms', 'What each questionnaire is, how to read it and what the result means.', 'forms'),
-        link('Tools and scoring', 'Every screening and rating tool: when to use it, how to score it, where to get it.', 'tools'))));
+    var main = h('div', { class: 'hm-main' }), side = h('div', { class: 'hm-side' });
+    el.appendChild(h('div', { class: 'hm-layout' }, main, side));
+    main.appendChild(patientsCard(list));
+    main.appendChild(h('section', { class: 'hm-card', 'aria-labelledby': 'hm-flow-h' },
+      h('div', { class: 'hm-card-h' }, h('h2', { id: 'hm-flow-h' }, 'How the pathway works'),
+        h('p', { class: 'hm-card-s' }, (AA.STEP_LIST || []).length + ' guided steps for adults and young people aged 6 to 17. Each step says what to do, and scores update as you go.')),
+      h('ol', { class: 'hm-flow' }, FLOW.map(function (f) { return h('li', null, h('strong', null, f[0]), h('span', null, f[1])); }))));
+    side.appendChild(quickCard());
+    side.appendChild(trainingCard());
+    var dc = divaCard();
+    if (dc) side.appendChild(dc);
   } });
 
-  function stat(k, v) { return h('div', { class: 'stat' }, h('div', { class: 'stat-k' }, k), h('div', { class: 'stat-v' }, String(v))); }
-  function quick(eyebrow, title, body, go) {
-    return h('a', { class: 'card card-link', href: '#' + go, 'data-go': go }, h('p', { class: 'eyebrow' }, eyebrow), h('h3', null, title), h('p', { class: 'muted' }, body));
+  function demoAction(kind) {
+    var young = kind === 'young';
+    var has = shell.hasDemo(kind);
+    return ui.btn({ label: young ? (has ? 'Child demo' : 'Load child demo') : (has ? 'Adult demo' : 'Load adult demo'), kind: 'ghost', small: true,
+      title: young ? 'Open the demo patient aged 8' : 'Open the adult demo patient', onClick: function () {
+        var id = shell.loadDemo(kind); if (id) AA.router.go('assess-' + id + '-summary');
+      } });
   }
-  function link(title, body, go) {
-    return h('li', null, h('a', { class: 'home-link', href: '#' + go, 'data-go': go },
-      h('span', { class: 'home-link-ico' }, icon(go)), h('span', { class: 'home-link-text' }, h('strong', null, title), h('span', null, body))));
+
+  /* Patients: filter by stage, most urgent first, one row each with the next action and progress. */
+  function patientsCard(list) {
+    var card = h('section', { class: 'hm-card', 'aria-labelledby': 'hm-pt-h' });
+    card.appendChild(h('div', { class: 'hm-card-h' },
+      h('h2', { id: 'hm-pt-h' }, 'Patients', h('span', { class: 'hm-count' }, String(list.length))),
+      list.length ? h('div', { class: 'row' }, demoAction('adult'), AA.data.demoYoung ? demoAction('young') : null) : null));
+    if (!list.length) {
+      card.appendChild(h('div', { class: 'hm-empty' },
+        h('div', { class: 'hm-empty-ico', 'aria-hidden': 'true' }, ui.icon('users')),
+        h('h3', null, 'No patients yet'),
+        h('p', null, 'Start a new assessment, or open a demo patient to see a finished one with scores and a report.'),
+        h('div', { class: 'row' }, ui.btn({ label: 'New patient', kind: 'primary', go: 'new', icon: '+' }), demoAction('adult'), AA.data.demoYoung ? demoAction('young') : null)));
+      return card;
+    }
+    var rows = list.map(function (a) { return { a: a, st: stageOf(a) }; });
+    var rank = { onboard: 1, interview: 1, diagnose: 1, treat: 1, done: 3 };
+    rows.sort(function (x, y) {
+      var rx = x.st.late ? 0 : rank[x.st.group] || 2, ry = y.st.late ? 0 : rank[y.st.group] || 2;
+      if (rx !== ry) return rx - ry;
+      return String(y.a.updatedAt || '').localeCompare(String(x.a.updatedAt || ''));
+    });
+    var filter = null;
+    var chipsHost = h('div', { class: 'hm-filters' });
+    var listHost = h('div');
+    function paint(focusIdx) {
+      U.clear(chipsHost);
+      var items = [{ label: 'All', n: rows.length, on: !filter, onClick: function () { filter = null; paint(0); } }];
+      PIPE.forEach(function (g, i) {
+        var n = rows.filter(function (x) { return x.st.group === g.id; }).length;
+        var late = rows.filter(function (x) { return x.st.group === g.id && x.st.late; }).length;
+        items.push({ label: g.short + (late ? ' · ' + late + ' overdue' : ''), n: n, on: filter === g.id, onClick: function () { filter = filter === g.id ? null : g.id; paint(i + 1); } });
+      });
+      chipsHost.appendChild(ui.chips(items));
+      U.clear(listHost);
+      var shown = rows.filter(function (x) { return !filter || x.st.group === filter; });
+      if (!shown.length) listHost.appendChild(h('p', { class: 'hm-none' }, 'No patients at this stage.'));
+      else listHost.appendChild(h('ul', { class: 'hm-pt', 'aria-label': 'Patients' }, shown.map(function (x) { return patientRow(x.a, x.st); })));
+      if (typeof focusIdx === 'number') { var b = U.$$('.ds-chip', chipsHost)[focusIdx]; if (b) b.focus(); }
+    }
+    paint();
+    card.appendChild(chipsHost);
+    card.appendChild(listHost);
+    return card;
   }
+
+  function patientRow(a, stage) {
+    var out = AA.diagnosis.outcome(a);
+    var kinds = { met: 'ok', 'not-met': 'neutral', subthreshold: 'warn', 'better-explained': 'info', incomplete: 'neutral' };
+    var labels = { met: 'Criteria met', 'not-met': 'Criteria not met', subthreshold: 'Subthreshold', 'better-explained': 'Better explained', incomplete: 'In progress' };
+    var p = a.patient || {};
+    var name = p.ref || 'Untitled patient';
+    var st = stepState(a);
+    var meta = [p.age ? p.age + ' y' : null, p.sex || null, 'updated ' + U.fmtDate(a.updatedAt)].filter(Boolean).join(' · ');
+    var next = String(stage.label || '').replace(/^Next: /, '');
+    var stageLabel = (PIPE.filter(function (g) { return g.id === stage.group; })[0] || {}).label || '';
+    function open() { AA.progress.set('lastAssessment', a.id); AA.router.go('assess-' + a.id + '-' + (stage.step || a.step || 'setup')); }
+    return h('li', { class: 'hm-pt-row' },
+      h('span', { class: 'hm-av', 'aria-hidden': 'true' }, initials(name.replace(/[^A-Za-z0-9 ]+/g, ' ')) || '?'),
+      h('div', { class: 'hm-pt-body' },
+        h('div', { class: 'hm-pt-top' },
+          h('strong', { class: 'hm-pt-name' }, name),
+          a.demo ? h('span', { class: 'hm-tag' }, a.demo === 'young' ? 'Child demo' : 'Demo') : null,
+          h('span', { class: 'hm-stage is-' + stage.group }, h('span', { class: 'sr-only' }, 'Stage: '), stageLabel),
+          out.code !== 'incomplete' ? ui.badge(labels[out.code], kinds[out.code]) : null),
+        h('p', { class: 'hm-pt-meta' }, meta),
+        h('p', { class: 'hm-next' + (stage.late ? ' is-late' : '') },
+          h('span', { class: 'hm-next-k' }, stage.late ? 'Overdue' : a.status === 'complete' ? 'Done' : 'Next'),
+          h('span', { class: 'hm-next-t' }, next),
+          a.status !== 'complete' && st.label ? h('span', { class: 'hm-next-o' }, 'on ' + st.label.replace(/^Step (\d+): /, 'step $1, ')) : null)),
+      h('div', { class: 'hm-pt-side' },
+        st.of ? h('div', { class: 'hm-prog' }, ui.progress(st.done, st.of, 'Steps complete for ' + name),
+          h('span', { class: 'hm-prog-n', 'aria-hidden': 'true' }, st.done + '/' + st.of),
+          h('span', { class: 'sr-only' }, st.done + ' of ' + st.of + ' steps complete' + (st.na ? ', ' + st.na + ' not applicable yet' : ''))) : null,
+        h('div', { class: 'hm-act' },
+          ui.btn({ label: a.status === 'complete' ? 'Open' : 'Continue', kind: 'primary', small: true, onClick: open }),
+          h('button', { type: 'button', class: 'btn btn-quiet btn-sm hm-del', title: 'Delete', 'aria-label': 'Delete ' + name, onclick: function () {
+            U.confirm({ title: 'Delete this assessment?', body: 'All answers and notes for ' + name + ' will be removed from this browser. This cannot be undone.', ok: 'Delete', danger: true })
+              .then(function (yes) { if (yes) { AA.assess.remove(a.id); U.toast('Assessment deleted'); AA.router.refresh(); } });
+          } }, ui.icon('trash')))));
+  }
+
+  function quickCard() {
+    var links = [
+      ['bank', 'Question bank', 'Every question and example, by symptom or life area'],
+      ['ddxguide', 'Differential protocol', 'A step-by-step check for other explanations'],
+      ['ddx', 'Conditions A to Z', 'What overlaps with ADHD and how to tell them apart'],
+      ['criteria', 'Diagnostic criteria', 'DSM-5-TR and ICD-11 side by side'],
+      ['forms', 'Pre-appointment forms', 'What each form is and how to read it'],
+      ['tools', 'Tools and scoring', 'When to use each scale and how to score it']];
+    return h('section', { class: 'hm-card', 'aria-labelledby': 'hm-q-h' },
+      h('div', { class: 'hm-card-h' }, h('h2', { id: 'hm-q-h' }, 'Look something up')),
+      h('ul', { class: 'hm-links' }, links.map(function (l) {
+        return h('li', null, h('a', { class: 'hm-link', href: '#' + l[0], 'data-go': l[0] },
+          h('span', { class: 'hm-link-ico', 'aria-hidden': 'true' }, icon(l[0])), h('span', { class: 'hm-link-t' }, h('strong', null, l[1]), h('span', null, l[2]))));
+      })));
+  }
+
+  function trainingCard() {
+    var mods = AA.data.learn || [], cases = AA.data.cases || [];
+    var modsDone = mods.filter(function (m) { return AA.progress.get('modules.' + m.id + '.done', false); }).length;
+    var casesDone = cases.filter(function (c) { var r = AA.progress.get('cases.' + c.id, null); return r && typeof r.of === 'number'; }).length;
+    var ex = AA.progress.get('exam', null);
+    function meter(label, n, of) {
+      return h('div', { class: 'hm-meter' }, h('span', { class: 'hm-meter-l' }, label), h('span', { class: 'hm-meter-n' }, n + ' of ' + of), ui.progress(n, of, label));
+    }
+    return h('section', { class: 'hm-card', 'aria-labelledby': 'hm-t-h' },
+      h('div', { class: 'hm-card-h' }, h('h2', { id: 'hm-t-h' }, 'Training')),
+      h('div', { class: 'hm-card-b' },
+        h('div', { class: 'hm-meters' },
+          meter('Assessor training modules', modsDone, mods.length),
+          meter('Practice cases', casesDone, cases.length),
+          h('div', { class: 'hm-meter' }, h('span', { class: 'hm-meter-l' }, 'Mastery exam'), h('span', { class: 'hm-meter-n' }, ex && typeof ex.best === 'number' ? 'Best ' + ex.best + '%' : 'Not taken yet'))),
+        h('div', { class: 'row' }, ui.btn({ label: modsDone ? 'Continue training' : 'Start training', kind: 'secondary', small: true, go: 'learn' }), ui.btn({ label: 'Practice cases', kind: 'quiet', small: true, go: 'cases' }))));
+  }
+
+  /* Whether this browser holds the clinician's own DIVA 2.0 copy (the interview wording and the form come from it). */
+  function divaCard() {
+    var S = AA.divaSource;
+    if (!S) return null;
+    var m = S.meta();
+    return h('section', { class: 'hm-card', 'aria-labelledby': 'hm-d-h' },
+      h('div', { class: 'hm-card-h' }, h('h2', { id: 'hm-d-h' }, 'Your DIVA 2.0 copy')),
+      h('div', { class: 'hm-card-b' },
+        h('div', { class: 'hm-diva' }, h('span', { class: 'hm-diva-dot' + (m ? ' is-on' : ''), 'aria-hidden': 'true' }),
+          h('div', null,
+            h('strong', null, m ? 'Loaded on this device' : 'Not loaded'),
+            h('p', null, m ? (m.file || 'DIVA 2.0 PDF') + (m.loadedAt ? ', ' + U.fmtDate(m.loadedAt) : '') + '. Adult interviews show DIVA\'s own wording and fill in your form.'
+              : 'Load your own copy in DIVA part 1 of any adult assessment, so the interview shows DIVA\'s own wording.'))),
+        h('div', { class: 'row' }, ui.btn({ label: 'Manage', kind: 'quiet', small: true, go: 'about' }))));
+  }
+
   /* Where an assessment is up to: steps complete and the step it is on.
      A step whose progress is {of: 0} is not applicable yet (for example the treatment steps before a
      diagnosis, or when medicine is not planned): it is neither complete nor counted in the total. */
@@ -433,8 +583,8 @@
   }
 
   /* The pipeline: one stage per patient, with the next action and the step that does it. */
-  var PIPE = [{ id: 'onboard', label: 'Onboarding' }, { id: 'interview', label: 'DIVA interview' }, { id: 'diagnose', label: 'Diagnosis and report' },
-    { id: 'treat', label: 'Treatment' }, { id: 'done', label: 'Completed' }];
+  var PIPE = [{ id: 'onboard', label: 'Onboarding', short: 'Onboarding' }, { id: 'interview', label: 'DIVA interview', short: 'Interview' },
+    { id: 'diagnose', label: 'Diagnosis and report', short: 'Diagnosis' }, { id: 'treat', label: 'Treatment', short: 'Treatment' }, { id: 'done', label: 'Completed', short: 'Completed' }];
   function stageOf(a) {
     var P = AA.pack, J = AA.journey, V = AA.diva;
     var started = Object.keys(a.symptoms || {}).some(function (k) { var r = a.symptoms[k] || {}; return r.adult || r.child; });
@@ -458,35 +608,6 @@
     if (next && next.phase === 'treat') return out('treat', 'Next: ' + next.title, next.id);
     if (next) return out('diagnose', 'Next: ' + next.title, next.id);
     return out('diagnose', 'Review and sign off', 'report');
-  }
-
-  function assessmentRow(a, stage) {
-    stage = stage || stageOf(a);
-    var out = AA.diagnosis.outcome(a);
-    var kinds = { met: 'ok', 'not-met': 'neutral', subthreshold: 'warn', 'better-explained': 'info', incomplete: 'neutral' };
-    var labels = { met: 'Criteria met', 'not-met': 'Criteria not met', subthreshold: 'Subthreshold', 'better-explained': 'Better explained', incomplete: 'In progress' };
-    var p = a.patient || {};
-    var st = stepState(a);
-    return h('div', { class: 'a-row' },
-      h('div', { class: 'a-row-main' },
-        h('div', { class: 'a-row-title' }, (p.ref || 'Untitled patient') + (a.demo === 'young' ? ' (child demo)' : a.demo ? ' (demo)' : ''),
-          ui.badge(labels[out.code], kinds[out.code]), a.status === 'complete' ? ui.badge('Completed', 'accent') : null),
-        h('div', { class: 'a-row-meta' },
-          h('span', null, [p.age ? p.age + ' y' : null, p.sex || null].filter(Boolean).join(', ') || 'Age not recorded'),
-          h('span', null, 'Updated ' + U.fmtDate(a.updatedAt, true))),
-        h('p', { class: 'a-row-next' + (stage.late ? ' is-late' : '') }, h('span', { class: 'a-row-next-k' }, 'Next'), stage.label),
-        st.of ? h('div', { class: 'a-row-prog' },
-          ui.progress(st.done, st.of, 'Steps complete'),
-          h('span', { class: 'a-row-step' }, st.done + ' of ' + st.of + ' steps complete' + (st.na ? ' (' + st.na + ' not applicable yet)' : '') +
-            (a.status !== 'complete' && st.label ? ' · ' + st.label : ''))) : null),
-      h('div', { class: 'a-row-actions' },
-        ui.btn({ label: a.status === 'complete' ? 'Open' : 'Continue', kind: 'primary', small: true, onClick: function () {
-          AA.progress.set('lastAssessment', a.id); AA.router.go('assess-' + a.id + '-' + (stage.step || a.step || 'setup'));
-        } }),
-        ui.btn({ label: 'Delete', kind: 'quiet', small: true, onClick: function () {
-          U.confirm({ title: 'Delete this assessment?', body: 'All answers and notes for ' + (p.ref || 'this patient') + ' will be removed from this browser. This cannot be undone.', ok: 'Delete', danger: true })
-            .then(function (yes) { if (yes) { AA.assess.remove(a.id); U.toast('Assessment deleted'); AA.router.refresh(); } });
-        } })));
   }
 
   /* Your DIVA copy on this device: what is kept, and a way to remove it. */
@@ -571,7 +692,24 @@
     U.$('#signout-btn').addEventListener('click', function () { AA.store.flush(); AA.auth.signOut(); AA.router.go('signin'); });
     U.$('#menu-btn').addEventListener('click', function () { setDrawer(!U.$('#sidebar').classList.contains('open')); });
     U.$('#scrim').addEventListener('click', function () { setDrawer(false); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setDrawer(false); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      var m = U.$('#acct-menu');
+      if (m && !m.hidden) { setAcct(false); var b = U.$('#acct-btn'); if (b) b.focus(); return; }
+      setDrawer(false);
+    });
+    /* Account menu: the avatar button opens it; a click outside or Escape closes it. */
+    var acctBtn = U.$('#acct-btn');
+    if (acctBtn) {
+      acctBtn.addEventListener('click', function (e) { e.stopPropagation(); setAcct(U.$('#acct-menu').hidden); });
+      document.addEventListener('click', function (e) {
+        var m = U.$('#acct-menu');
+        if (m && !m.hidden && !e.target.closest('.acct')) setAcct(false);
+      });
+      U.$('#acct-menu').addEventListener('click', function (e) { if (e.target.closest('a')) setAcct(false); });
+      var so = U.$('#signout-btn');
+      if (so && !so.querySelector('.ds-ico')) so.insertBefore(ui.icon('logout'), so.firstChild);
+    }
     U.$('[data-skip]').addEventListener('click', function (e) { e.preventDefault(); U.$('#view').focus(); });
     AA.router.onChange(renderChrome);
     AA.store.subscribe('__save', renderSave);

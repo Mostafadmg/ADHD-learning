@@ -230,11 +230,13 @@
       var statusBtn;
       if (st.state === 'na') statusBtn = h('span', { class: 'jn-sstat is-na' }, 'Not applicable yet');
       else if (st.blocked) statusBtn = h('span', { class: 'jn-sstat is-block' }, st.blocked);
-      else if (st.state === 'done') statusBtn = h('span', { class: 'jn-sstat is-done' }, h('span', { class: 'jn-tick', 'aria-hidden': 'true' }, '✓'), 'This step is complete');
+      else if (st.state === 'done') statusBtn = h('span', { class: 'jn-sstat is-done' }, h('span', { class: 'jn-tick', 'aria-hidden': 'true' }, '✓'),
+        h('span', { class: 'jn-l-long' }, 'This step is complete'), h('span', { class: 'jn-l-short' }, 'Done'));
       else {
         statusBtn = h('button', { type: 'button', class: 'jn-sstat is-open', 'data-k': 'status', 'aria-expanded': open ? 'true' : 'false', 'aria-controls': 'jn-pop-' + ctx.id, onclick: function () { open = !open; paint(AA.assess.get(ctx.id)); },
           onkeydown: function (e) { if (e.key === 'Escape' && open) { open = false; paint(AA.assess.get(ctx.id)); } } },
-          h('span', { class: 'jn-dotn' }, String(n)), n === 1 ? '1 thing left in this step' : n + ' things left in this step', h('span', { class: 'jn-sstat-chev', 'aria-hidden': 'true' }));
+          h('span', { class: 'jn-dotn' }, String(n)), h('span', { class: 'jn-l-long' }, n === 1 ? 'thing left in this step' : 'things left in this step'),
+          h('span', { class: 'jn-l-short' }, 'left'), h('span', { class: 'jn-sstat-chev', 'aria-hidden': 'true' }));
       }
       if (open && n && st.state !== 'done') {
         el.appendChild(h('div', { class: 'jn-pop', id: 'jn-pop-' + ctx.id, role: 'region', 'aria-label': 'Still to do in this step' },
@@ -244,12 +246,15 @@
       var nextBtn;
       if (o.next) {
         var primary = !(o.ownPrimary && st.state !== 'done');
-        nextBtn = h('button', { type: 'button', class: 'btn ' + (primary ? 'btn-primary' : 'btn-secondary'), 'data-k': 'next', title: 'Next step: ' + o.next.title, onclick: function () { goNext(AA.assess.get(ctx.id)); } }, 'Next: ' + o.next.short + ' →');
+        nextBtn = h('button', { type: 'button', class: 'btn jn-go ' + (primary ? 'btn-primary' : 'btn-secondary'), 'data-k': 'next', title: 'Next step: ' + o.next.title, 'aria-label': 'Next step: ' + o.next.title,
+          onclick: function () { goNext(AA.assess.get(ctx.id)); } },
+          h('span', { class: 'jn-go-t' }, 'Next', h('span', { class: 'jn-go-name' }, ': ' + o.next.short)), h('span', { 'aria-hidden': 'true' }, '→'));
       } else {
-        nextBtn = h('a', { class: 'btn btn-primary', href: '#journey-' + ctx.id, 'data-go': 'journey-' + ctx.id }, 'Review and finish →');
+        nextBtn = h('a', { class: 'btn btn-primary jn-go', href: '#journey-' + ctx.id, 'data-go': 'journey-' + ctx.id }, h('span', { class: 'jn-go-t' }, 'Review and finish'), h('span', { 'aria-hidden': 'true' }, '→'));
       }
       el.appendChild(h('div', { class: 'jn-srow' },
-        o.prev ? h('button', { type: 'button', class: 'btn btn-ghost', title: 'Previous step: ' + o.prev.title, onclick: function () { ctx.go(o.prev.id); } }, '← ' + o.prev.short) : h('span'),
+        o.prev ? h('button', { type: 'button', class: 'btn btn-ghost jn-prev', 'data-k': 'prev', title: 'Previous step: ' + o.prev.title, 'aria-label': 'Previous step: ' + o.prev.title, onclick: function () { ctx.go(o.prev.id); } },
+          h('span', { 'aria-hidden': 'true' }, '←'), h('span', { class: 'jn-prev-t' }, o.prev.short)) : h('span', { class: 'jn-prev-gap' }),
         statusBtn, nextBtn));
       if (focusKey) { var back = el.querySelector('[data-k="' + focusKey + '"]'); if (back) back.focus(); }
     }
@@ -321,9 +326,8 @@
         }))));
     }
 
-    /* Phases */
-    var phasesEl = h('div', { class: 'jn-phases' });
-    sm.phases.forEach(function (ph) {
+    /* Phases: one tab each (one phase at a time), opening on the phase that holds the next action. */
+    function phaseRows(ph) {
       var rows = h('ol', { class: 'jn-rows' });
       ph.steps.forEach(function (s) {
         var m = meta(s.id), n = J.index(s.id) + 1, isMiss = !!miss[s.id];
@@ -337,11 +341,15 @@
             gapList),
           h('a', { class: 'btn btn-sm ' + (s.state === 'done' ? 'btn-ghost' : 'btn-secondary'), href: '#' + route(id, s.id), 'data-go': route(id, s.id) }, s.state === 'done' ? 'Review' : s.state === 'na' ? 'Look' : 'Open', h('span', { class: 'sr-only' }, ' ' + m.title))));
       });
-      phasesEl.appendChild(h('section', { class: 'jn-card jn-phase is-' + ph.state },
-        h('h2', { class: 'jn-h' }, ph.label, h('span', { class: 'jn-count' }, ph.of ? ph.done + ' of ' + ph.of : 'not applicable')),
-        rows));
-    });
-    el.appendChild(phasesEl);
+      return rows;
+    }
+    var focusStep = nextMeta ? nextMeta.id : cur;
+    var startPhase = (sm.steps[J.index(focusStep)] || {}).phase || (sm.phases[0] || {}).id;
+    el.appendChild(h('section', { class: 'jn-card jn-phases-card', 'aria-labelledby': 'jn-steps-h' },
+      h('h2', { class: 'jn-h', id: 'jn-steps-h' }, 'Steps', h('span', { class: 'jn-count' }, sm.done + ' of ' + sm.of + ' done')),
+      ui.tabs(sm.phases.map(function (ph) {
+        return { id: ph.id, label: ph.label, count: ph.of ? ph.done + '/' + ph.of : '–', render: function () { return phaseRows(ph); } };
+      }), startPhase)));
 
     /* Sign-off */
     var needed = sm.neededSteps.map(function (sid) { return meta(sid); });

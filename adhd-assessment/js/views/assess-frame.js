@@ -146,94 +146,56 @@
     };
 
     function phaseSteps(phase) { return STEPS.filter(function (s) { return s.phase === phase; }); }
-    function eyebrowText(cur) {
+    /* Step header kicker (wide screens): step number, phase, age band, demo. */
+    var eyebrowEl = h('p', { class: 'eyebrow ws-kick' });
+    function paintKick(cur) {
       var b = bandInfo(cur);
-      var here = phaseSteps(meta.phase);
-      var nIn = 1;
-      for (var i = 0; i < here.length; i++) if (here[i].id === step) nIn = i + 1;
-      return phaseLabel(meta.phase) + ' · ' + nIn + ' of ' + here.length
-        + ' · step ' + (idx + 1) + ' of ' + STEPS.length
-        + (isYoung(cur) && b.label ? ' · ' + b.label : '') + (cur.demo ? ' · demo patient' : '');
+      var bits = ['Step ' + (idx + 1) + ' of ' + STEPS.length, phaseLabel(meta.phase)];
+      if (isYoung(cur) && b.label) bits.push(b.label);
+      U.clear(eyebrowEl);
+      bits.forEach(function (t, i) {
+        if (i) eyebrowEl.appendChild(h('span', { class: 'ws-kick-sep', 'aria-hidden': 'true' }, '·'));
+        eyebrowEl.appendChild(h('span', null, t));
+      });
+      if (cur.demo) eyebrowEl.appendChild(ui.badge(cur.demo === 'young' ? 'Child demo' : 'Demo patient', 'neutral'));
     }
+    paintKick(a);
+
+    /* Context card (phones and tablets; from 1100px the sidebar rail shows the same): the patient, and a journey bar
+       with one segment per step, grouped by phase. It opens the full step list in the menu. */
     var JU = AA.journeyUI;
     var pbar = JU ? JU.patientBar(a, ctx) : null;
-    if (pbar) el.appendChild(pbar.el);
-    var eyebrowEl = h('p', { class: 'eyebrow' }, eyebrowText(a)), leadEl = h('p', { class: 'lead' }, leadFor(meta, a)), titleEl = h('h1', null, titleFor(meta, a));
+    var track = h('button', { type: 'button', class: 'ws-track', onclick: function () { if (AA.shell && AA.shell.openSteps) AA.shell.openSteps(); } });
+    function paintTrack(cur) {
+      var sm = null;
+      try { sm = AA.journey ? AA.journey.summary(cur) : null; } catch (e) { sm = null; }
+      U.clear(track);
+      track.appendChild(h('span', { class: 'ws-track-top' },
+        h('span', { class: 'ws-track-k' }, 'Step ' + (idx + 1) + ' of ' + STEPS.length, h('span', null, ' · ' + phaseLabel(meta.phase))),
+        h('span', { class: 'ws-track-all' }, 'All steps')));
+      var segs = h('span', { class: 'ws-segs', 'aria-hidden': 'true' });
+      PHASES.forEach(function (ph) {
+        var mine = phaseSteps(ph.id);
+        var g = h('span', { class: 'ws-seg-ph' });
+        g.style.setProperty('--n', String(mine.length));
+        mine.forEach(function (s) {
+          var row = sm && AA.journey ? sm.steps[AA.journey.index(s.id)] : null;
+          var state = row ? row.state : null;
+          if (!state) { var pr = progressOf(cur, s.id); state = pr.of === 0 ? 'na' : pr.done >= pr.of ? 'done' : pr.done > 0 ? 'part' : 'todo'; }
+          g.appendChild(h('span', { class: 'ws-seg is-' + state + (s.id === step ? ' is-here' : ''), title: s.title }));
+        });
+        segs.appendChild(g);
+      });
+      track.appendChild(segs);
+      track.setAttribute('aria-label', 'Step ' + (idx + 1) + ' of ' + STEPS.length + ': ' + meta.title + '. ' +
+        (sm ? sm.done + ' of ' + sm.of + ' steps complete. ' : '') + 'Show all steps.');
+    }
+    paintTrack(a);
+    el.appendChild(h('div', { class: 'ws-ctx' }, pbar ? pbar.el : null, track));
+
+    var leadEl = h('p', { class: 'lead' }, leadFor(meta, a)), titleEl = h('h1', null, titleFor(meta, a));
     el.appendChild(h('header', { class: 'page-head ws-head' + (sub ? ' is-sub' : '') },
       h('div', { class: 'page-head-text' }, eyebrowEl, titleEl, leadEl)));
-
-    /* Pathway: five phase buttons (Prepare, Interview, Diagnose, Treat, Report), then only the
-       steps of the phase you are in. Each phase button opens the first step of that phase. */
-    var hereSteps = phaseSteps(meta.phase);
-    var track = h('ol', { class: 'phase-track' }, PHASES.map(function (ph, pi) {
-      var mine = phaseSteps(ph.id);
-      var from = stepIndex(mine[0].id) + 1;
-      var to = from + mine.length - 1;
-      var first = mine[0];
-      return h('li', null, h('button', {
-        type: 'button', class: 'phase-btn' + (ph.id === meta.phase ? ' is-cur' : ''),
-        'aria-current': ph.id === meta.phase ? 'true' : null,
-        title: phaseLabel(ph.id) + ': ' + mine.map(function (s) { return s.short; }).join(', '),
-        onclick: function () { if (first && first.id !== step) ctx.go(first.id); }
-      },
-        h('span', { class: 'phase-n', 'aria-hidden': 'true' }, String(pi + 1)),
-        h('span', { class: 'phase-lab' }, phaseLabel(ph.id)),
-        h('span', { class: 'phase-meta' }, from === to ? String(from) : from + '–' + to)));
-    }));
-    var stepRow = h('ol', { class: 'step-row' }, hereSteps.map(function (s) {
-      return h('li', null, h('button', { type: 'button', class: 'step-chip', 'aria-current': s.id === step ? 'step' : null, onclick: function () { ctx.go(s.id); } },
-        h('span', { class: 'sr-only' }, phaseLabel(s.phase) + ' phase: '),
-        h('span', { class: 'step-n', 'aria-hidden': 'true' }), h('span', { class: 'step-t' }, s.short), h('span', { class: 'sr-only step-sr' })));
-    }));
-    var stepper = h('nav', { class: 'stepper' + (JU ? ' jn-hide-wide' : ''), 'aria-label': 'Assessment steps' }, track, stepRow);
-    function paintSteps(cur) {
-      U.$$('.step-chip', stepper).forEach(function (b, i) {
-        var def = hereSteps[i];
-        var pr = progressOf(cur, def.id);
-        var na = pr.of === 0;
-        var done = !na && pr.done >= pr.of, part = !na && !done && pr.done > 0;
-        var n = stepIndex(def.id) + 1;
-        b.classList.toggle('done', done);
-        b.classList.toggle('part', part);
-        b.querySelector('.step-n').textContent = done ? '✓' : na ? '–' : String(n);
-        b.querySelector('.step-sr').textContent = done ? ', complete' : na ? ', not applicable yet' : part ? ', started' : ', not started';
-        b.title = def.title + (done ? ' (complete)' : na ? ' (not applicable yet)' : ' (' + pr.done + ' of ' + pr.of + ')');
-      });
-      U.$$('.phase-btn', stepper).forEach(function (b, i) {
-        var mine = phaseSteps(PHASES[i].id);
-        var applicable = 0, doneN = 0, started = 0;
-        mine.forEach(function (s) {
-          var pr = progressOf(cur, s.id);
-          if (pr.of === 0) return;
-          applicable += 1;
-          if (pr.done >= pr.of) doneN += 1;
-          else if (pr.done > 0) started += 1;
-        });
-        b.classList.toggle('is-done', applicable > 0 && doneN === applicable);
-        b.classList.toggle('is-part', doneN < applicable && (doneN > 0 || started > 0));
-        var sr = b.querySelector('.phase-sr');
-        if (!sr) { sr = h('span', { class: 'sr-only phase-sr' }); b.appendChild(sr); }
-        sr.textContent = applicable === 0 ? ', not applicable yet' : doneN === applicable ? ', complete' : (doneN > 0 || started > 0) ? ', started' : ', not started';
-      });
-    }
-    paintSteps(a);
-    /* Fade the edges that have more chips beyond them. */
-    function paintEdges() {
-      var max = stepRow.scrollWidth - stepRow.clientWidth;
-      stepper.classList.toggle('more-left', stepRow.scrollLeft > 4);
-      stepper.classList.toggle('more-right', max > 4 && stepRow.scrollLeft < max - 4);
-    }
-    stepRow.addEventListener('scroll', paintEdges, { passive: true });
-    el.appendChild(stepper);
-    setTimeout(function () {
-      var cur = stepper.querySelector('[aria-current="step"]');
-      if (cur && stepRow.clientWidth) {
-        var rail = stepRow.getBoundingClientRect();
-        var box = cur.getBoundingClientRect();
-        stepRow.scrollLeft += (box.left + box.width / 2) - (rail.left + rail.width / 2);
-      }
-      paintEdges();
-    }, 0);
 
     var main = h('div', { class: 'ws-main' });
     var panel = h('aside', { class: 'ws-panel', 'aria-label': 'Live summary' });
@@ -310,7 +272,7 @@
       var cur = AA.assess.get(id);
       if (!cur) return;
       paintPanel(cur);
-      paintSteps(cur);
+      paintTrack(cur);
       if (pbar) pbar.paint(cur);
       if (attn) attn.paint(cur);
       if (sbar) sbar.paint(cur);
@@ -318,7 +280,7 @@
       var nb = ageBand(cur);
       if (nb !== shownBand) {
         shownBand = nb;
-        eyebrowEl.textContent = eyebrowText(cur);
+        paintKick(cur);
         leadEl.textContent = leadFor(meta, cur);
         titleEl.textContent = titleFor(meta, cur);
         if (guide && nb !== 'under6') {
@@ -361,15 +323,18 @@
     add('say', [h('span', { class: 'gl-long' }, 'You can say'), h('span', { class: 'gl-short' }, 'Say')], gSay, function () { return h('div', { class: 'guide-say' }, gSay.map(function (x) { return h('p', null, x); })); });
     add('watch', 'Watch for', gWatch, function () { return ui.list(gWatch, 'list guide-watch'); });
     add('done', 'Done when', gDone, function () { return ui.list(gDone, 'guide-done'); });
+    var timeEl = function (cls) { return g.time ? h('span', { class: 'guide-time' + (cls ? ' ' + cls : '') }, ui.icon('clock'), h('span', { class: 'sr-only' }, 'Usual time: '), g.time) : null; };
     var d = h('details', { class: 'guide', open: open },
       h('summary', null,
-        h('span', { class: 'guide-k' }, 'What to do in this step'),
+        h('span', { class: 'guide-ico', 'aria-hidden': 'true' }, ui.icon('compass')),
+        h('span', { class: 'guide-k' }, 'How to do this step'),
         h('span', { class: 'guide-goal' }, g.goal || ''),
         h('span', { class: 'guide-side' },
-          g.time ? h('span', { class: 'guide-time' }, h('span', { class: 'sr-only' }, 'Usual time: '), g.time) : null,
+          timeEl(),
           statusHost,
           h('span', { class: 'guide-toggle', 'aria-hidden': 'true' }))),
       h('div', { class: 'guide-body' },
+        timeEl('guide-time-b'),
         tabs.length ? ui.tabs(tabs, 'do') : null,
         g.next ? h('p', { class: 'guide-next' }, h('strong', null, 'Next: '), g.next) : null,
         gSrc.length ? ui.details('Sources', h('p', { class: 'source' }, gSrc.join('; ')), { cls: 'guide-src', meta: String(gSrc.length) }) : null));
@@ -441,6 +406,7 @@
     var pill = ui.statusPill(out.code === 'met' ? 'met' : out.code === 'incomplete' ? 'pending' : out.code === 'subthreshold' ? 'partial' : 'not-met');
     var fold = h('details', { class: 'panel-fold', open: wide() || foldOpen === true },
       h('summary', null,
+        h('span', { class: 'pf-ico', 'aria-hidden': 'true' }, ui.icon('chart')),
         h('span', { class: 'pf-title' }, 'Live summary'),
         h('span', { class: 'pf-counts' }, h('span', { class: 'sr-only' }, young ? 'Current symptoms: ' : 'Adult symptoms: '), 'IA ' + ad.IA + ' · HI ' + ad.HI),
         pill, h('span', { class: 'pf-chev', 'aria-hidden': 'true' })),
@@ -465,7 +431,7 @@
         ctx.step !== 'report' ? ui.btn({ label: 'Referral note', small: true, kind: 'ghost', onClick: function () { ctx.go('report'); } }) : null,
         ctx.step !== 'risk' ? ui.btn({ label: 'Safety and safeguarding', small: true, kind: 'quiet', onClick: function () { ctx.go('risk'); } }) : null));
     var fold = h('details', { class: 'panel-fold', open: wide() || foldOpen === true },
-      h('summary', null, h('span', { class: 'pf-title' }, 'Under 6: refer'), h('span', { class: 'pf-counts' }, todo.filter(function (x) { return x[1]; }).length + ' of ' + todo.length + ' recorded'),
+      h('summary', null, h('span', { class: 'pf-ico', 'aria-hidden': 'true' }, ui.icon('flag')), h('span', { class: 'pf-title' }, 'Under 6: refer'), h('span', { class: 'pf-counts' }, todo.filter(function (x) { return x[1]; }).length + ' of ' + todo.length + ' recorded'),
         ui.badge('Refer', 'err'), h('span', { class: 'pf-chev', 'aria-hidden': 'true' })),
       box);
     fold.addEventListener('toggle', function () { if (!wide()) foldOpen = fold.open; });

@@ -14,9 +14,9 @@
 
 /* ---------- Sidebar rail ---------- */
 .jn-rail { display: grid; gap: .55rem; padding-bottom: .3rem; }
-.jn-case { border: 1px solid var(--side-line); border-radius: 10px; background: var(--side-hover); padding: .75rem; display: grid; gap: .6rem; }
+.jn-case { padding: .35rem .3rem .9rem; display: grid; gap: .65rem; border-bottom: 1px solid var(--side-line); margin-bottom: .2rem; }
 .jn-case-top { display: flex; gap: .7rem; align-items: center; }
-.jn-ring { --p: 0%; flex: none; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(var(--accent) var(--p), var(--side-line) 0); position: relative; }
+.jn-ring { --p: 0%; flex: none; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(var(--accent) var(--p), var(--side-line) 0); position: relative; }
 .jn-ring::before { content: ""; position: absolute; inset: 5px; border-radius: 50%; background: var(--side-bg); }
 .jn-ring span { position: relative; font: 700 .78rem/1 var(--font-display); color: var(--side-ink); }
 .jn-case-t { min-width: 0; }
@@ -26,11 +26,11 @@
 .jn-alert.is-stop { background: var(--err-l); color: var(--err); box-shadow: inset 3px 0 0 var(--err); }
 .jn-alert.is-refer { background: var(--info-l); color: var(--info); box-shadow: inset 3px 0 0 var(--info); }
 .jn-alert.is-warn { background: var(--warn-l); color: var(--warn); box-shadow: inset 3px 0 0 var(--warn); }
-.jn-next { display: flex; align-items: center; justify-content: space-between; gap: .5rem; padding: .55rem .7rem; border-radius: 8px; background: var(--accent); color: var(--accent-ink); text-decoration: none; box-shadow: var(--btn-shadow); }
-.jn-next:hover { background: var(--accent-2); }
+.jn-rail .jn-next { display: flex; align-items: center; justify-content: space-between; gap: .5rem; min-height: 44px; padding: .5rem .8rem; border-radius: 8px; background: var(--accent); color: var(--accent-ink); text-decoration: none; box-shadow: var(--btn-shadow); }
+.jn-rail .jn-next:hover { background: var(--accent-2); color: var(--accent-ink); }
 .jn-next-k { font-size: .72rem; opacity: .9; }
-.jn-next-t { font-weight: 700; font-size: .92rem; }
-.jn-next::after { content: "→"; margin-left: auto; font-weight: 700; }
+.jn-rail .jn-next-t { font-weight: 700; font-size: .92rem; }
+.jn-rail .jn-next::after { content: "→"; margin-left: auto; font-weight: 700; }
 .jn-all { margin: 0; font-size: .82rem; font-weight: 600; color: var(--ok); }
 .jn-over { font-size: .8rem; color: var(--side-muted); text-decoration: none; padding: .1rem .2rem; }
 .jn-over:hover, .jn-over[aria-current="page"] { color: var(--accent); text-decoration: underline; }
@@ -47,11 +47,11 @@
 .jn-ph-miss { font-size: .68rem; font-weight: 700; color: var(--warn); background: var(--warn-l); border-radius: 999px; padding: .08rem .4rem; }
 .jn-steps { list-style: none; margin: 0 0 .25rem; padding: 0 0 0 .1rem; display: grid; gap: 1px; position: relative; }
 .jn-steps[hidden] { display: none; }
-.jn-step { display: flex; align-items: center; gap: .6rem; min-height: 38px; padding: .22rem .5rem; border-radius: 10px; color: var(--side-ink); text-decoration: none; font-size: .88rem; }
+.jn-step { display: flex; align-items: center; gap: .6rem; min-height: 38px; padding: .22rem .5rem; border-radius: 8px; color: var(--side-ink); text-decoration: none; font-size: .88rem; }
 .jn-step:hover { background: var(--side-hover); color: var(--side-hover-ink); }
 .jn-step-t { flex: 1; min-width: 0; line-height: 1.2; }
 .jn-step.is-na { color: var(--side-muted); }
-.jn-step.is-here, .jn-step.is-here:hover { background: var(--side-active-bg); color: var(--side-active-ink); font-weight: 600; box-shadow: 0 8px 18px -12px rgba(11, 65, 49, .75); }
+.jn-step.is-here, .jn-step.is-here:hover { background: var(--side-active-bg); color: var(--side-active-ink); font-weight: 600; box-shadow: 0 3px 8px -3px rgba(11, 65, 49, .5); }
 .jn-step.is-here .jn-dot { border-color: var(--side-accent); color: var(--side-accent); }
 .jn-step.is-here .jn-dot.is-done { background: var(--side-accent); border-color: var(--side-accent); color: #0b4131; }
 .jn-chip { flex: none; min-width: 20px; text-align: center; font-size: .72rem; font-weight: 700; padding: .05rem .4rem; border-radius: 999px; background: var(--accent-l); color: var(--accent); }
@@ -91,36 +91,45 @@
 .jn-pal-t { flex: 1; min-width: 0; }
 .jn-pal-go { flex: none; font-weight: 600; font-size: .8rem; text-decoration: underline; }
 .jn-attn { display: grid; gap: .6rem; margin: 0 0 1rem; }
-/* From 1100px the rail replaces the phase strip. The patient bar scrolls with the page, so the sticky score
-   control and live panel keep their own offsets (there is no stepper above them any more). */
-@media (min-width: 1100px) {
-  .stepper.jn-hide-wide { display: none; }
+/* There is no sticky step strip above the content any more, so the sticky score control sits just under the top bar. */
+@media (min-width: 1000px) {
   .iv-score { top: calc(var(--bar-h) + env(safe-area-inset-top, 0px) + 12px); }
 }
 
-/* ---------- Sticky step bar ---------- */
-.jn-sbar { position: sticky; bottom: 0; z-index: 25; margin: 1.6rem calc(-1 * .25rem) 0; padding: .6rem .25rem calc(.6rem + env(safe-area-inset-bottom, 0px)); background: var(--bg); border-top: 1px solid var(--line); box-shadow: var(--shadow-up); }
-.jn-srow { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
-.jn-srow > .btn-ghost { flex: none; }
-.jn-srow > .btn-primary, .jn-srow > .btn-secondary { flex: none; margin-left: auto; min-width: 8rem; text-decoration: none; }
-.jn-sstat { flex: 1 1 200px; min-width: 0; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; font: 600 .88rem/1.3 var(--font-ui); color: var(--muted); padding: .3rem .5rem; background: none; border: 0; text-align: center; }
+/* ---------- Sticky step bar: a floating card at the bottom of the step (one row on phones) ---------- */
+.jn-sbar { position: sticky; bottom: 12px; z-index: 25; margin: 1.8rem 0 0; padding: .55rem .6rem; background: color-mix(in srgb, var(--surface) 90%, transparent); -webkit-backdrop-filter: saturate(1.4) blur(10px); backdrop-filter: saturate(1.4) blur(10px); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 12px 32px -14px rgba(20, 30, 40, .38); }
+.jn-srow { display: flex; align-items: center; gap: .5rem; }
+.jn-srow > .btn { flex: none; min-height: 44px; text-decoration: none; }
+.jn-prev { gap: .45rem; }
+.jn-prev-gap { flex: none; width: 1px; }
+.jn-go { margin-left: auto; max-width: 60%; gap: .45rem; }
+.jn-prev-t, .jn-go-t { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.jn-sstat { flex: 1 1 auto; min-width: 0; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; font: 600 .88rem/1.3 var(--font-ui); color: var(--muted); padding: .3rem .5rem; background: none; border: 0; text-align: center; }
 .jn-sstat.is-done { color: var(--ok); }
-.jn-tick { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%; background: var(--ok); color: var(--jn-on); font-size: .72rem; }
+.jn-tick { display: inline-grid; place-items: center; flex: none; width: 20px; height: 20px; border-radius: 50%; background: var(--ok); color: var(--jn-on); font-size: .72rem; }
 .jn-sstat.is-block { color: var(--warn); }
-.jn-sstat.is-open { cursor: pointer; color: var(--ink); border-radius: 999px; background: var(--warn-l); padding: .4rem .8rem; border: 1px solid transparent; }
-.jn-sstat.is-open:hover { border-color: var(--warn); }
-.jn-dotn { display: inline-grid; place-items: center; min-width: 22px; height: 22px; padding: 0 .3rem; border-radius: 999px; background: var(--warn); color: var(--jn-on); font-size: .76rem; }
-.jn-sstat-chev { width: 8px; height: 8px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(-135deg); margin-top: 3px; }
+.jn-sstat.is-open { flex: 0 1 auto; margin: 0 auto; cursor: pointer; color: var(--ink); border-radius: 999px; background: var(--surface-2); padding: .45rem .9rem; border: 1px solid var(--line); }
+.jn-sstat.is-open:hover { border-color: var(--warn); background: var(--warn-l); }
+.jn-dotn { display: inline-grid; place-items: center; flex: none; min-width: 22px; height: 22px; padding: 0 .3rem; border-radius: 999px; background: var(--warn); color: var(--jn-on); font-size: .76rem; }
+.jn-sstat-chev { flex: none; width: 8px; height: 8px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: rotate(-135deg); margin-top: 3px; }
 .jn-sstat[aria-expanded="true"] .jn-sstat-chev { transform: rotate(45deg); margin-top: -2px; }
-.jn-pop { background: var(--surface); border: 1px solid var(--line-2); border-radius: var(--radius); box-shadow: var(--shadow); padding: .75rem 1rem; margin: 0 0 .6rem; max-height: 40vh; overflow: auto; }
+.jn-l-short { display: none; }
+.jn-pop { background: var(--surface); border: 1px solid var(--line-2); border-radius: 10px; padding: .75rem 1rem; margin: .1rem .1rem .6rem; max-height: 40vh; overflow: auto; }
 .jn-pop-t { margin: 0 0 .35rem; font-weight: 700; font-size: .85rem; }
 .jn-pop ul { margin: 0; padding-left: 1.2rem; display: grid; gap: .2rem; font-size: .9rem; }
 .jn-dlg-list { margin: .3rem 0 .6rem; padding-left: 1.2rem; }
 @media (max-width: 600px) {
-  .jn-srow { gap: .45rem; }
-  .jn-sstat { order: -1; flex: 1 0 100%; }
-  .jn-srow > .btn-ghost, .jn-srow > .btn-primary, .jn-srow > .btn-secondary { flex: 1 1 0; min-width: 0; margin: 0; }
+  .jn-sbar { bottom: calc(8px + env(safe-area-inset-bottom, 0px)); padding: .45rem; border-radius: 12px; }
+  .jn-srow { gap: .4rem; }
+  .jn-srow > .jn-prev { width: 44px; padding: 0; }
+  .jn-prev-t, .jn-l-long { display: none; }
+  .jn-l-short { display: inline; }
+  .jn-sstat { font-size: .82rem; padding: .3rem .2rem; }
+  .jn-sstat.is-open { padding: .4rem .65rem; margin: 0; }
+  .jn-srow > .jn-go { flex: 1 1 auto; max-width: none; min-width: 0; padding-inline: .8rem; }
+  .jn-srow > .jn-prev-gap + .jn-sstat { margin-left: 0; }
 }
+@media (max-width: 360px) { .jn-go-name { display: none; } }
 
 /* ---------- Case overview ---------- */
 .jn-hero { display: flex; gap: 1.2rem; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.3rem 1.5rem; margin-bottom: 1rem; position: relative; overflow: hidden; }
