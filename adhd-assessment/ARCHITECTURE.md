@@ -23,7 +23,10 @@ Under 6 the app stops and tells the clinician to refer.
 
 ```
 index.html
-css/app.css                core tokens (light + dark) and shared component classes (incl. the step strip phase labels)
+css/app.css                core tokens (light + dark) and shared component classes
+css/ds.css                 design system layer (see DESIGN.md): refreshed base components and .ds- building blocks
+css/shell.css              app shell: top bar and account menu, sidebar, home dashboard (.hm-), sign-in (.si-),
+                           step frame (.ws-ctx context card with the journey bar, step kicker, step guide row, live summary row)
                            Look = EveryDayMeds Rx portal (pharmacyMyEdit artifacts/pharmacist-rx, Sneat light + EDM greens:
                            #157f60 accent, #0b4131 forest, #bfdf72 lime, Public Sans + Sora, 6px radius, white bar and sidebar).
                            Theme "system" = follow the Rx portal (localStorage pharmacare:rx-theme, dark or light; default light).
@@ -71,13 +74,17 @@ js/data/tx-pathway.js      txSequence, txPlanItems, txCardiac, txCautions, txSid
 js/data/tx-guide.js        stepGuide entries for the 5 treatment steps (merged into stepGuide, 5.9)
 js/data/demo.js            demo (adult demo patient) and demoYoung (child demo, age 8), with treatment records (5.15). Last data file.
 js/views/shell.js          top bar, sidebar, routes: signin, home, new, about; AA.shell (demo loader)
-js/views/assess-frame.js   route: assess (workspace, step strip, live panel, step guide); AA.STEP_LIST, AA.STEP_PHASES
+js/views/assess-frame.js   route: assess (workspace: context card and journey bar, step header, step guide, live panel); AA.STEP_LIST, AA.STEP_PHASES
 js/views/assess-steps-a.js AA.steps: setup, screen, risk, history, comorbid
 js/views/assess-pack.js    AA.steps.pack (pre-assessment pack: send, letters, triage, book the interview)
 js/views/assess-interview.js AA.steps: ia, hi, onset, collateral (adults hand ia, hi and onset to assess-diva.js)
 js/views/assess-diva.js    AA.divaUI: the DIVA 2.0 interview for adults (parts 1 to 3, summary of symptoms), and the score card
                            in the summary step (score form, how the score works, fill in the DIVA form)
 js/views/assess-steps-b.js AA.steps: ddx, validity, summary, report; AA.components.assessmentReport, consistencyChecks
+                           Step layouts (assess-steps-a/b, collateral, assess-treat): one card per purpose (icon, title, one-line purpose,
+                           live status chip); long sets one at a time (history areas in ui.stepper, differentials as a picker then one
+                           condition, collateral as one tab per source, the treatment stages as a strip); summary card at the top of
+                           each treatment step; the report as a document with a numbered contents list.
 js/views/assess-treat.js   AA.steps: txplan, baseline, prescribe, titrate, monitor; AA.components.treatPanel, treatmentReport, sharedCareLetter
 js/views/library.js        routes: tools, tool, pathway
 js/views/learn.js          routes: learn, module, quiz, exam, cases, case, glossary
@@ -264,10 +271,10 @@ One patient's place on the 19-step pathway. It reuses `D.stepProgress` for count
 
 ### AA.journeyUI - js/views/assess-journey.js (css/v-journey.css, prefix `jn-`)
 - `rail(host, a, step, overview)` / `refreshRail()`: the sidebar rail (case card with ring and next action, five collapsible phases, one row per step with state dot, gap count chip, "skipped" amber ring and safety flag). The shell draws it when the route is `assess-<id>-...` or `journey-<id>` and puts the workspace menu in a closed "Tools and library" group below it.
-- `patientBar(a, ctx)` -> `{el, paint(a)}`: patient, age band, progress meter, "Case overview" and the top attention item. Sticky from 1100px; the old `.stepper` (phase track) is hidden from 1100px (class `jn-hide-wide`) because the rail replaces it, and stays on narrower screens.
-- `stepBar(a, ctx, {prev, next, ownPrimary})` -> `{el, paint(a)}`: sticky bottom bar with Previous, "N things left in this step" (opens the gap list) and Next. Next on a needed step with open gaps asks "Move on with N items still open?". The last step's Next is "Review and finish" (route `journey-<id>`).
+- `patientBar(a, ctx)` -> `{el, paint(a)}`: patient, age band, "Case overview" and the top attention item. The frame puts it in the context card (`.ws-ctx`, below 1100px only) with the journey bar: one segment per step grouped by phase, which opens the step list in the menu (`AA.shell.openSteps()`). From 1100px the rail shows the same, so the card is hidden.
+- `stepBar(a, ctx, {prev, next, ownPrimary})` -> `{el, paint(a)}`: a floating card at the bottom of the step with Previous, "N things left in this step" (opens the gap list) and Next; one row on phones (icon Previous, "N left", Next). Next on a needed step with open gaps asks "Move on with N items still open?". The last step's Next is "Review and finish" (route `journey-<id>`).
 - `attentionFor(a, stepId)` -> `{el, paint(a)}`: callouts for the attention items on this step (repainted only when their text changes).
-- Route `journey-<id>` (the case overview; `case` was already the practice-case route): next best action (a skipped needed step comes first), attention list, one card per phase with each step's status and open items, and the sign-off check with Mark complete / Reopen (confirm when needed steps or a safety stop are open).
+- Route `journey-<id>` (the case overview; `case` was already the practice-case route): next best action (a skipped needed step comes first), attention list, the steps in one tab per phase (opening on the phase with the next action) with each step's status and open items, and the sign-off check with Mark complete / Reopen (confirm when needed steps or a safety stop are open).
 - The frame repaints the patient bar, step bar and rail from its debounced store subscription.
 
 ### AA.diva (`V`) - js/engine/diva.js (pure, tests/diva-tests.js)

@@ -311,7 +311,7 @@
   ui.acc = function (items, o) {
     o = o || {};
     var wrap = h('div', { class: 'ds-acc' });
-    if (o.title) wrap.appendChild(h('div', { class: 'ds-acc-head' }, h('h3', null, o.title), o.actions || null));
+    if (o.title) wrap.appendChild(h('div', { class: 'ds-acc-head' }, h('h' + (o.level || 3), { class: 'ds-acc-h' }, o.title), o.actions || null));
     (items || []).forEach(function (x) {
       var body = h('div', { class: 'disclosure-body' });
       var built = false;

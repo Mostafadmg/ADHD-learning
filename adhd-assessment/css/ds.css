@@ -107,7 +107,7 @@ button.ds-card:hover, a.ds-card:hover { border-color: var(--accent); box-shadow:
 .ds-stepper { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; scroll-margin-top: calc(var(--bar-h) + 16px); }
 /* position: relative keeps the pips' screen-reader text inside the scrolling track (it would widen the page on phones). */
 .ds-stepper-track { position: relative; display: flex; gap: .35rem; padding: .8rem 1rem; border-bottom: 1px solid var(--line); overflow-x: auto; scrollbar-width: thin; background: var(--surface-2); }
-.ds-stepper-pip { flex: 0 0 auto; min-width: 2.4rem; height: 2.4rem; padding: 0 .55rem; border-radius: 999px; border: 1px solid var(--line-2); background: var(--surface); font: inherit; font-weight: 700; font-size: .86rem; color: var(--muted); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: .35rem; }
+.ds-stepper-pip { position: relative; flex: 0 0 auto; min-width: 2.4rem; height: 2.4rem; padding: 0 .55rem; border-radius: 999px; border: 1px solid var(--line-2); background: var(--surface); font: inherit; font-weight: 700; font-size: .86rem; color: var(--muted); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: .35rem; }
 .ds-stepper-pip:hover { border-color: var(--accent); color: var(--ink); }
 .ds-stepper-pip.is-done { background: var(--ok-l); border-color: transparent; color: var(--ok); }
 .ds-stepper-pip[aria-current="step"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
@@ -129,7 +129,7 @@ button.ds-card:hover, a.ds-card:hover { border-color: var(--accent); box-shadow:
 .ds-acc > .disclosure > .disclosure-body { padding: .2rem 1.25rem 1.1rem 1.25rem; background: var(--surface-2); }
 .ds-acc-n { flex: 0 0 auto; width: 1.9rem; height: 1.9rem; border-radius: 50%; display: inline-grid; place-items: center; font-size: .82rem; font-weight: 700; background: var(--accent-l); color: var(--accent-2); }
 .ds-acc-head { display: flex; align-items: center; justify-content: space-between; gap: .6rem; padding: .9rem 1.25rem; border-bottom: 1px solid var(--line); }
-.ds-acc-head h2, .ds-acc-head h3 { margin: 0; font-size: 1.05rem; }
+.ds-acc-head h2, .ds-acc-head h3, .ds-acc-head .ds-acc-h { margin: 0; font-size: 1.05rem; }
 
 /* Section: a heading, one line on what it is for, then the content. */
 .ds-section { margin: 2rem 0 0; scroll-margin-top: calc(var(--bar-h) + 16px); }
@@ -179,7 +179,7 @@ button.ds-chip:hover, a.ds-chip:hover { border-color: var(--accent); color: var(
 /* Quiet notes and section labels. */
 .ds-note { display: flex; gap: .5rem; align-items: flex-start; color: var(--muted); font-size: .88rem; margin: .6rem 0 0; }
 .ds-note .ds-ico { color: var(--accent); margin-top: .1rem; }
-.ds-label { display: inline-block; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: var(--muted); margin: 0 0 .35rem; }
+.ds-label { display: inline-block; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: var(--muted); margin: 0 0 .35rem; }
 
 /* Touch screens: 44px targets for stepper pips and chips. */
 @media (max-width: 760px), (pointer: coarse) {

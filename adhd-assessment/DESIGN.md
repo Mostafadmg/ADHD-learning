@@ -49,7 +49,7 @@ calm, and professional**: short chunks, clear hierarchy, depth on demand. Brand 
 - `ui.cards([{ icon | n, title, text, meta, tone, go | onClick }], { wide, cols })`: `wide` = cards at least 320px; `cols: 2 | 4` = fixed columns (one column on phones).
 - `ui.steps([{ title, text }] | [strings])`.
 - `ui.stepper([{ title, sub, label, done, render }], { start, eyebrow, onChange, label })` -> `.show(i)`, `.index()`, `.refresh()`.
-- `ui.acc([{ title, meta, n, render, open }], { title, actions })`: bodies are built on first open.
+- `ui.acc([{ title, meta, n, render, open }], { title, actions, level })`: bodies are built on first open; `level` sets the heading level of `title` (default 3).
 - `ui.section({ id, title, text, actions, cls }, content)`.
 - `ui.toc([{ id, label }], { label })`: highlights the section in view; becomes a chip row on narrow screens inside `ui.split`.
 - `ui.split(main, aside, { left })`, `ui.chips([{ label, n, on, onClick | go }])`.
