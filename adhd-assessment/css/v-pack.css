@@ -1,5 +1,5 @@
 /* Pre-assessment pack step (js/views/assess-pack.js), prefix .pk-. */
-.pk { min-width: 0; }
+.pk { min-width: 0; container-type: inline-size; container-name: pk; }
 .pk.stack > * + * { margin-top: 1rem; }
 .pk-k { margin: 0; font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
 .pk-h3 { font-size: 1rem; margin: 0 0 .5rem; font-weight: 700; color: var(--brand); }
@@ -19,7 +19,9 @@
 @media (max-width: 760px) { .pk-hero { grid-template-columns: minmax(0, 1fr); } }
 
 /* Timeline */
-.pk-line { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(116px, 1fr)); gap: .4rem; }
+.pk-line { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .4rem; }
+@container pk (max-width: 960px) { .pk-line { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@container pk (max-width: 480px) { .pk-line { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .pk-st { position: relative; display: flex; flex-direction: column; gap: .2rem; padding: .7rem .65rem .75rem; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); min-width: 0; }
 .pk-st.is-cur { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-l); }
 .pk-st.is-done { background: var(--surface-2); }
@@ -30,7 +32,7 @@
 .pk-st-day { font-size: .72rem; color: var(--muted); }
 .pk-st-i { font-size: .8rem; color: var(--muted); }
 .pk-date { width: 100%; min-height: 36px; font: inherit; font-size: .84rem; padding: .2rem .35rem; border: 1px solid var(--line-2); border-radius: 6px; background: var(--surface); color: var(--ink); }
-@media (max-width: 520px) { .pk-line { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .pk-date { font-size: 16px; } }
 
 /* Tabs body */
 .pk-tabs .tab-panel { background: var(--surface); border: 1px solid var(--line); border-top: 0; border-radius: 0 0 var(--radius) var(--radius); padding: 1.1rem 1.5rem 1.3rem; box-shadow: var(--shadow); }

@@ -626,18 +626,32 @@
 
   /* ---------- About, privacy and data ---------- */
   AA.router.register('about', { title: 'About and data', render: function (el) {
-    el.appendChild(ui.pageHead({ eyebrow: 'About', title: 'About, privacy and data' }));
-    el.appendChild(h('div', { class: 'grid-2' },
-      h('section', { class: 'card' }, h('h2', null, 'What this app is'),
-        h('p', null, 'A training and decision-support workspace for clinicians who assess and treat ADHD in adults and in young people aged 6 to 17. One patient record runs from referral to shared care: assessment, diagnosis, treatment plan, pre-treatment checks, prescribing, titration, monitoring and the annual review. For a child under 6, it tells you to refer to a service with expertise in ADHD in young children.'),
-        h('p', null, 'It follows the structure of the DIVA diagnostic interview (Kooij and Francken) and the DSM-5-TR and ICD-11 criteria, with UK NICE NG87 for the wider assessment, treatment and monitoring.'),
-        h('p', null, 'For adults the interview follows the DIVA 2.0. DIVA is \u00a9 DIVA Foundation, so its questions and examples are not part of this app: they appear word for word only after you load your own copy of the DIVA 2.0 PDF, which is read and kept in this browser and never uploaded. The portal\'s own questions and examples are original. Licensed instruments (for example DIVA-5, CAARS 2, BAARS-IV, Conners 4, SDQ) are described and linked, not copied: you can enter their results.'),
-        divaCopyCard(),
-        h('p', null, 'Diagnosing ADHD and starting medicine belong to a specialist ADHD team. Anyone doing this, including a non-medical prescriber, needs the training and expertise for that medicine and age group, and agreed governance and supervision.'),
-        h('p', { class: 'muted' }, 'It supports, and never replaces, a qualified clinician\'s judgement, local policy and the official instruments.')),
-      h('section', { class: 'card' }, h('h2', null, 'Privacy'),
-        h('p', null, 'Everything you enter stays in this browser (localStorage). Nothing is sent to a server. Anyone using this browser profile can read the data unless your profile has a PIN, and the PIN is a lock, not encryption.'),
-        h('p', null, 'Use a patient reference or initials, not names or NHS numbers. Copy the final report into your clinical record system, then delete the assessment here.'))));
+    el.appendChild(ui.pageHead({ eyebrow: 'About', title: 'About, privacy and data',
+      lead: 'A training and decision-support workspace for clinicians who assess and treat ADHD in adults and in young people aged 6 to 17.' }));
+
+    el.appendChild(ui.section({ id: 'ab-what', title: 'What this app is', text: 'One patient record runs from referral to shared care.' },
+      ui.cards([
+        { icon: 'route', title: 'The whole pathway', text: 'Assessment, diagnosis, treatment plan, pre-treatment checks, prescribing, titration, monitoring and the annual review.' },
+        { icon: 'book', title: 'Built on the standards', text: 'It follows the structure of the DIVA diagnostic interview (Kooij and Francken) and the DSM-5-TR and ICD-11 criteria, with UK NICE NG87 for the wider assessment, treatment and monitoring.' },
+        { icon: 'school', title: 'Children under 6', text: 'For a child under 6, it tells you to refer to a service with expertise in ADHD in young children.' },
+        { icon: 'users', title: 'Who should use it', text: 'Diagnosing ADHD and starting medicine belong to a specialist ADHD team. Anyone doing this, including a non-medical prescriber, needs the training and expertise for that medicine and age group, and agreed governance and supervision.', tone: 'info' }
+      ], { cols: 2 })));
+
+    el.appendChild(ui.section({ id: 'ab-diva', title: 'DIVA and licensed tools' },
+      h('div', { class: 'stack' },
+        h('div', { class: 'prose' },
+          h('p', null, 'For adults the interview follows the DIVA 2.0. DIVA is \u00a9 DIVA Foundation, so its questions and examples are not part of this app. They appear word for word only after you load your own copy of the DIVA 2.0 PDF, which is read and kept in this browser and never uploaded. The portal\'s own questions and examples are original.'),
+          h('p', null, 'Licensed instruments (for example DIVA-5, CAARS 2, BAARS-IV, Conners 4, SDQ) are described and linked, not copied: you can enter their results.')),
+        divaCopyCard())));
+
+    el.appendChild(ui.section({ id: 'ab-privacy', title: 'Privacy' },
+      ui.cards([
+        { icon: 'shield', title: 'Stays in this browser', text: 'Everything you enter is kept in this browser (localStorage). Nothing is sent to a server.' },
+        { icon: 'eye', title: 'A PIN is a lock, not encryption', text: 'Anyone using this browser profile can read the data unless your profile has a PIN.' },
+        { icon: 'user', title: 'A reference, never a name', text: 'Use a patient reference or initials, not names or NHS numbers.' },
+        { icon: 'file', title: 'Then delete it here', text: 'Copy the final report into your clinical record system, then delete the assessment here.' }
+      ], { cols: 4 })));
+    el.appendChild(h('p', { class: 'muted' }, 'It supports, and never replaces, a qualified clinician\'s judgement, local policy and the official instruments.'));
 
     var fileIn = h('input', { type: 'file', accept: 'application/json,.json', id: 'import-file', class: 'sr-only' });
     fileIn.addEventListener('change', function () {
@@ -654,8 +668,7 @@
       };
       r.readAsText(f);
     });
-    el.appendChild(h('section', { class: 'section card' }, h('h2', null, 'Your data'),
-      h('p', null, 'Export a backup to move your work to another computer. Import replaces everything stored here.'),
+    el.appendChild(ui.section({ id: 'ab-data', title: 'Your data', text: 'Export a backup to move your work to another computer. Import replaces everything stored here.' },
       h('div', { class: 'row' },
         ui.btn({ label: U.isEmbedded ? 'Copy backup as text' : 'Export backup (.json)', onClick: function () {
           var text = AA.store.exportJSON();

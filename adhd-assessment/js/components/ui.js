@@ -233,7 +233,7 @@
   /* Icon cards. items: [{icon: 'name' | n: '1', title, text, meta, tone: 'warn'|'err'|'info', go: 'route', onClick}] ; o: {wide} */
   ui.cards = function (items, o) {
     o = o || {};
-    return h('ul', { class: 'ds-cards' + (o.wide ? ' is-2' : '') }, (items || []).map(function (x) {
+    return h('ul', { class: 'ds-cards' + (o.wide ? ' is-2' : '') + (o.cols ? ' cols-' + o.cols : '') }, (items || []).map(function (x) {
       var inner = [
         x.icon || x.n !== undefined ? h('span', { class: 'ds-card-ico', 'aria-hidden': 'true' }, x.icon ? ui.icon(x.icon) : String(x.n)) : null,
         h('span', { class: 'ds-card-t' }, x.title),

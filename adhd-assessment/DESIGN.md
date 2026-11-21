@@ -46,7 +46,7 @@ calm, and professional**: short chunks, clear hierarchy, depth on demand. Brand 
   star, scale, timeline, moon, drop, spark, user, logout, trash, steps).
 - `ui.hero({ eyebrow, title, text, actions, aside, h1 })`.
 - `ui.stats([{ n, l, s }])`: number, label, source (small).
-- `ui.cards([{ icon | n, title, text, meta, tone, go | onClick }], { wide })`.
+- `ui.cards([{ icon | n, title, text, meta, tone, go | onClick }], { wide, cols })`: `wide` = cards at least 320px; `cols: 2 | 4` = fixed columns (one column on phones).
 - `ui.steps([{ title, text }] | [strings])`.
 - `ui.stepper([{ title, sub, label, done, render }], { start, eyebrow, onChange, label })` -> `.show(i)`, `.index()`, `.refresh()`.
 - `ui.acc([{ title, meta, n, render, open }], { title, actions })`: bodies are built on first open.

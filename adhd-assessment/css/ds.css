@@ -77,6 +77,10 @@
 /* Icon cards: short ideas side by side instead of a list in prose. */
 .ds-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: .75rem; margin: .6rem 0 0; padding: 0; list-style: none; }
 .ds-cards.is-2 { grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
+.ds-cards.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.ds-cards.cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 1100px) { .ds-cards.cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .ds-cards.cols-2, .ds-cards.cols-4 { grid-template-columns: minmax(0, 1fr); } }
 .ds-card { position: relative; display: flex; flex-direction: column; gap: .35rem; height: 100%; padding: 1rem 1.05rem; border: 1px solid var(--line); border-radius: var(--radius);
   background: var(--surface); text-align: left; font: inherit; color: inherit; min-width: 0; }
 .ds-card-ico { width: 2.3rem; height: 2.3rem; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; background: var(--accent-l); color: var(--accent-2); font-weight: 800; font-size: .95rem; }
@@ -131,7 +135,7 @@ button.ds-card:hover, a.ds-card:hover { border-color: var(--accent); box-shadow:
 .ds-section:first-child { margin-top: 0; }
 .ds-section-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: .4rem 1rem; margin: 0 0 .8rem; }
 .ds-section-head h2 { margin: 0; font-size: 1.2rem; }
-.ds-section-p { flex-basis: 100%; margin: .1rem 0 0; color: var(--muted); font-size: .93rem; max-width: 70ch; }
+.ds-section-p { flex-basis: 100%; margin: .1rem 0 0; color: var(--muted); font-size: .93rem; padding-right: max(0px, calc(100% - 70ch)); }
 
 /* On-page contents: a sticky list on wide screens, a scrolling chip row on narrow ones. */
 .ds-toc { font-size: .9rem; }
