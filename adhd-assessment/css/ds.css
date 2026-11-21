@@ -1,0 +1,177 @@
+/* Design system layer (loaded right after app.css). See DESIGN.md.
+   1. Refreshed base components used everywhere (page head, prose, disclosure, tabs, tables, callouts, lists).
+   2. Building blocks for scannable pages (prefix .ds-): hero, stat tiles, icon cards, numbered steps, a
+      one-at-a-time stepper, an on-page contents list, a grouped accordion, sections, chips and a split layout.
+   Tokens only (both themes). Brand colours and fonts stay those of app.css (they match the Rx portal). */
+
+/* ---------- 1. Base components, refreshed ---------- */
+.page-head { padding-bottom: .9rem; margin-bottom: 1.3rem; border-bottom: 1px solid var(--line); }
+.page-head h1 { font-size: clamp(1.45rem, 1.1rem + 1.2vw, 1.9rem); }
+.lead { line-height: 1.55; }
+.ws-head { border-bottom: 0; padding-bottom: 0; }
+
+.prose { max-width: 70ch; line-height: 1.65; }
+.prose p { margin: .55em 0 .75em; }
+.prose ul, .prose ol { padding-left: 1.25rem; }
+.prose li { margin: .35rem 0; padding-left: .15rem; }
+.prose ul > li::marker { color: var(--accent); }
+.prose ol > li::marker { color: var(--accent); font-weight: 700; }
+.prose strong { color: var(--brand); }
+.list > li::marker { color: var(--accent); }
+
+/* Disclosure: one clean row with the chevron on the right and a large tap target. */
+.disclosure { border-radius: var(--radius); box-shadow: none; }
+.disclosure > summary { min-height: 48px; padding: .7rem 1rem; gap: .75rem; border-radius: var(--radius); transition: background-color .12s; }
+.disclosure > summary:hover { background: var(--surface-2); }
+.disclosure > summary::before { order: 3; margin-left: .2rem; transform: rotate(45deg); border-color: var(--faint); }
+.disclosure[open] > summary::before { transform: rotate(-135deg) translate(-2px, -2px); }
+.disclosure[open] > summary { border-bottom: 1px solid var(--line); border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+.disclosure-title { font-weight: 650; color: var(--brand); }
+.disclosure-meta { order: 2; }
+.disclosure-body { padding: .9rem 1.1rem 1.05rem; }
+.disclosure + .disclosure { margin-top: .5rem; }
+
+/* Tabs: quiet underline tabs, clear active state, comfortable targets. */
+.tabs { gap: .15rem; }
+.tab { font-weight: 600; min-height: 44px; border-radius: 6px 6px 0 0; }
+.tab:hover { color: var(--ink); background: var(--surface-2); }
+.tab[aria-selected="true"] { color: var(--accent-2); }
+.tab-count { font-weight: 700; }
+.tab[aria-selected="true"] .tab-count { background: var(--accent-l); color: var(--accent-2); }
+
+/* Tables: calmer header, row hover, roomier cells. */
+.table th, .table td { padding: .65rem .8rem; }
+.table thead th { font-weight: 700; letter-spacing: .04em; }
+.table tbody tr:hover > * { background: var(--surface-2); }
+
+/* Callouts: meaning on a left bar, light tint. */
+.callout { border: 0; border-left: 4px solid var(--line-2); border-radius: 0 var(--radius) var(--radius) 0; padding: .85rem 1.05rem; }
+.callout-info { border-left-color: var(--info); }
+.callout-ok { border-left-color: var(--ok); }
+.callout-warn { border-left-color: var(--warn); }
+.callout-err { border-left-color: var(--err); }
+
+/* ---------- 2. Building blocks ---------- */
+/* Icons (ui.icon): 24px line icons, coloured by context. */
+.ds-ico { display: inline-flex; width: 1.25em; height: 1.25em; flex: 0 0 auto; }
+.ds-ico svg { width: 100%; height: 100%; }
+
+/* Hero: the first card of a page. Purpose, key actions, optional side content (stat tiles). */
+.ds-hero { position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 1.2rem 2rem; align-items: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1.5rem 1.6rem; margin: 0 0 1.4rem; }
+.ds-hero::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--brand-line); }
+.ds-hero.no-aside { grid-template-columns: minmax(0, 1fr); }
+.ds-hero-k { margin: 0 0 .3rem; font-size: .74rem; letter-spacing: .11em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+.ds-hero-t { margin: 0; font-family: var(--font-display); font-size: clamp(1.25rem, 1rem + .9vw, 1.6rem); color: var(--brand); line-height: 1.25; }
+.ds-hero-p { margin: .5rem 0 0; color: var(--muted); max-width: 62ch; line-height: 1.55; }
+.ds-hero-act { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
+@media (max-width: 860px) { .ds-hero { grid-template-columns: minmax(0, 1fr); padding: 1.25rem 1.1rem; } }
+
+/* Stat tiles: a number, what it means, and its source in small type. */
+.ds-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: .6rem; }
+.ds-stat { padding: .8rem .9rem; border-radius: var(--radius); background: var(--surface-2); border: 1px solid var(--line); min-width: 0; }
+.ds-stat-n { display: block; font-family: var(--font-display); font-size: 1.55rem; font-weight: 700; color: var(--accent-2); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.ds-stat-l { display: block; margin-top: .25rem; font-size: .86rem; font-weight: 600; color: var(--ink); line-height: 1.35; }
+.ds-stat-s { display: block; margin-top: .2rem; font-size: .74rem; color: var(--muted); }
+
+/* Icon cards: short ideas side by side instead of a list in prose. */
+.ds-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr)); gap: .75rem; margin: .6rem 0 0; padding: 0; list-style: none; }
+.ds-cards.is-2 { grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
+.ds-card { position: relative; display: flex; flex-direction: column; gap: .35rem; height: 100%; padding: 1rem 1.05rem; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--surface); text-align: left; font: inherit; color: inherit; min-width: 0; }
+.ds-card-ico { width: 2.3rem; height: 2.3rem; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; background: var(--accent-l); color: var(--accent-2); font-weight: 800; font-size: .95rem; }
+.ds-card-ico .ds-ico { width: 1.25rem; height: 1.25rem; }
+.ds-card-t { margin: .1rem 0 0; font-weight: 700; color: var(--brand); line-height: 1.3; }
+.ds-card-p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.5; }
+.ds-card-m { margin-top: auto; padding-top: .3rem; font-size: .8rem; font-weight: 600; color: var(--accent); }
+button.ds-card, a.ds-card { cursor: pointer; text-decoration: none; transition: border-color .12s, box-shadow .12s, transform .12s; }
+button.ds-card:hover, a.ds-card:hover { border-color: var(--accent); box-shadow: var(--shadow); color: inherit; }
+.ds-card.tone-warn .ds-card-ico { background: var(--warn-l); color: var(--warn); }
+.ds-card.tone-err .ds-card-ico { background: var(--err-l); color: var(--err); }
+.ds-card.tone-info .ds-card-ico { background: var(--info-l); color: var(--info); }
+
+/* Numbered steps: a short process, read top to bottom. */
+.ds-steps { list-style: none; margin: .4rem 0 0; padding: 0; counter-reset: ds; }
+.ds-steps > li { counter-increment: ds; position: relative; padding: 0 0 1rem 2.8rem; min-height: 2.2rem; }
+.ds-steps > li::before { content: counter(ds); position: absolute; left: 0; top: 0; width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center;
+  font-weight: 700; font-size: .88rem; background: var(--accent-l); color: var(--accent-2); }
+.ds-steps > li:not(:last-child)::after { content: ""; position: absolute; left: .97rem; top: 2.2rem; bottom: .25rem; width: 2px; background: var(--line); }
+.ds-steps-t { display: block; font-weight: 700; color: var(--brand); padding-top: .2rem; }
+.ds-steps-p { display: block; color: var(--muted); font-size: .92rem; margin-top: .1rem; line-height: 1.5; }
+
+/* Stepper: long sets shown one at a time, with a numbered track and Previous / Next. */
+.ds-stepper { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.ds-stepper-track { display: flex; gap: .35rem; padding: .8rem 1rem; border-bottom: 1px solid var(--line); overflow-x: auto; scrollbar-width: thin; background: var(--surface-2); }
+.ds-stepper-pip { flex: 0 0 auto; min-width: 2.4rem; height: 2.4rem; padding: 0 .55rem; border-radius: 999px; border: 1px solid var(--line-2); background: var(--surface); font: inherit; font-weight: 700; font-size: .86rem; color: var(--muted); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: .35rem; }
+.ds-stepper-pip:hover { border-color: var(--accent); color: var(--ink); }
+.ds-stepper-pip.is-done { background: var(--ok-l); border-color: transparent; color: var(--ok); }
+.ds-stepper-pip[aria-current="step"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.ds-stepper-head { padding: 1.1rem 1.5rem .2rem; }
+.ds-stepper-k { margin: 0; font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: var(--accent); }
+.ds-stepper-t { margin: .2rem 0 0; font-size: 1.2rem; color: var(--brand); }
+.ds-stepper-s { margin: .3rem 0 0; color: var(--muted); }
+.ds-stepper-body { padding: .6rem 1.5rem 1.2rem; }
+.ds-stepper-foot { display: flex; justify-content: space-between; align-items: center; gap: .6rem; padding: .8rem 1.5rem; border-top: 1px solid var(--line); background: var(--surface-2); }
+.ds-stepper-n { font-size: .84rem; color: var(--muted); }
+@media (max-width: 640px) { .ds-stepper-head, .ds-stepper-body { padding-left: 1rem; padding-right: 1rem; } .ds-stepper-foot { padding: .7rem 1rem; } .ds-stepper-n { display: none; } .ds-stepper-foot .btn { flex: 1 1 0; } }
+
+/* Grouped accordion: several disclosures in one card, separated by hairlines (no boxes in boxes). */
+.ds-acc { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.ds-acc > .disclosure { border: 0; border-radius: 0; margin: 0; background: transparent; }
+.ds-acc > .disclosure + .disclosure { border-top: 1px solid var(--line); margin: 0; }
+.ds-acc > .disclosure > summary { border-radius: 0; padding: .85rem 1.25rem; }
+.ds-acc > .disclosure[open] > summary { border-bottom: 0; background: var(--surface-2); }
+.ds-acc > .disclosure > .disclosure-body { padding: .2rem 1.25rem 1.1rem 1.25rem; background: var(--surface-2); }
+.ds-acc-n { flex: 0 0 auto; width: 1.9rem; height: 1.9rem; border-radius: 50%; display: inline-grid; place-items: center; font-size: .82rem; font-weight: 700; background: var(--accent-l); color: var(--accent-2); }
+.ds-acc-head { display: flex; align-items: center; justify-content: space-between; gap: .6rem; padding: .9rem 1.25rem; border-bottom: 1px solid var(--line); }
+.ds-acc-head h2, .ds-acc-head h3 { margin: 0; font-size: 1.05rem; }
+
+/* Section: a heading, one line on what it is for, then the content. */
+.ds-section { margin: 2rem 0 0; scroll-margin-top: calc(var(--bar-h) + 16px); }
+.ds-section:first-child { margin-top: 0; }
+.ds-section-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: .4rem 1rem; margin: 0 0 .8rem; }
+.ds-section-head h2 { margin: 0; font-size: 1.2rem; }
+.ds-section-p { flex-basis: 100%; margin: .1rem 0 0; color: var(--muted); font-size: .93rem; max-width: 70ch; }
+
+/* On-page contents: a sticky list on wide screens, a scrolling chip row on narrow ones. */
+.ds-toc { font-size: .9rem; }
+.ds-toc-k { margin: 0 0 .5rem; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 700; color: var(--muted); }
+.ds-toc ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+.ds-toc a { display: block; padding: .4rem .6rem; border-radius: 6px; color: var(--muted); text-decoration: none; border-left: 2px solid transparent; }
+.ds-toc a:hover { background: var(--surface-2); color: var(--ink); }
+.ds-toc a[aria-current="true"] { color: var(--accent-2); border-left-color: var(--accent); background: var(--accent-l); font-weight: 600; }
+
+/* Split: content plus a side column (contents, summary, actions) that sticks on wide screens. */
+.ds-split { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 1.6rem; align-items: start; }
+.ds-split.is-left { grid-template-columns: 240px minmax(0, 1fr); }
+.ds-split > .ds-aside { position: sticky; top: calc(var(--bar-h) + 16px); max-height: calc(100vh - var(--bar-h) - 32px); overflow: auto; }
+@media (max-width: 1100px) {
+  .ds-split, .ds-split.is-left { grid-template-columns: minmax(0, 1fr); }
+  .ds-split > .ds-aside { position: static; max-height: none; order: -1; }
+  .ds-split .ds-toc ol { flex-direction: row; overflow-x: auto; gap: .35rem; padding-bottom: .2rem; }
+  .ds-split .ds-toc a { white-space: nowrap; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); padding: .35rem .8rem; }
+  .ds-split .ds-toc a[aria-current="true"] { border-color: var(--accent); }
+  .ds-toc-k { display: none; }
+}
+
+/* Chips: short labels, filters and links. */
+.ds-chips { display: flex; flex-wrap: wrap; gap: .4rem; margin: .4rem 0 0; padding: 0; list-style: none; }
+.ds-chip { display: inline-flex; align-items: center; gap: .35rem; min-height: 32px; padding: .25rem .75rem; border-radius: 999px; border: 1px solid var(--line-2); background: var(--surface);
+  font: inherit; font-size: .84rem; font-weight: 600; color: var(--ink); text-decoration: none; white-space: nowrap; }
+button.ds-chip, a.ds-chip { cursor: pointer; }
+button.ds-chip:hover, a.ds-chip:hover { border-color: var(--accent); color: var(--accent-2); }
+.ds-chip[aria-pressed="true"], .ds-chip.is-on { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.ds-chip-n { font-size: .74rem; font-weight: 700; padding: 0 .4rem; border-radius: 999px; background: var(--surface-3); color: var(--muted); }
+.ds-chip.is-on .ds-chip-n, .ds-chip[aria-pressed="true"] .ds-chip-n { background: rgba(255, 255, 255, .25); color: inherit; }
+
+/* Definition rows: label and value. */
+.ds-kv { display: grid; grid-template-columns: minmax(8rem, max-content) minmax(0, 1fr); gap: 0; margin: .4rem 0; }
+.ds-kv > dt, .ds-kv > dd { padding: .55rem 0; border-top: 1px solid var(--line); margin: 0; }
+.ds-kv > dt { padding-right: 1rem; color: var(--muted); font-size: .88rem; font-weight: 600; }
+.ds-kv > dt:first-of-type, .ds-kv > dt:first-of-type + dd { border-top: 0; }
+@media (max-width: 560px) { .ds-kv { grid-template-columns: minmax(0, 1fr); } .ds-kv > dd { border-top: 0; padding-top: 0; } }
+
+/* Quiet notes and section labels. */
+.ds-note { display: flex; gap: .5rem; align-items: flex-start; color: var(--muted); font-size: .88rem; margin: .6rem 0 0; }
+.ds-note .ds-ico { color: var(--accent); margin-top: .1rem; }
+.ds-label { display: inline-block; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; color: var(--muted); margin: 0 0 .35rem; }
