@@ -1,9 +1,12 @@
 /* Assessor training: modules, module quizzes, the mastery exam, practice cases and the glossary.
    Routes: "learn", "module-<id>", "quiz-<id>", "exam", "cases", "case-<id>" and "glossary" (ARCHITECTURE.md, section 6).
-   Content comes from AA.data.learn, AA.data.cases and AA.data.glossary; this file only arranges it.
+   Content comes from AA.data.learn, AA.data.cases and AA.data.glossary; this file only arranges it, with the
+   design system builders (DESIGN.md): a hero per page, modules read one lesson at a time (ui.stepper), quizzes one
+   question at a time, case stages one at a time, the glossary one letter at a time.
    Saved progress lives in AA.progress (per clinician): modules.<id>.done/.at, quizzes.<id> = {best, last, at},
-   cases.<id> = {score, of, at} and exam = {best, last, at}. A quiz, exam or case in progress is short-lived UI
-   state kept in memory here (so AA.router.refresh() or a quick look at the module does not lose the attempt). */
+   cases.<id> = {score, of, at} and exam = {best, last, at}. A quiz, exam or case in progress, the lesson you were
+   on and the glossary letter are short-lived UI state kept in memory here (so AA.router.refresh() or a quick look
+   elsewhere does not lose the place). */
 (function (AA) {
   'use strict';
   var U = AA.util, h = U.h, ui = AA.ui;
@@ -13,6 +16,7 @@
   var LETTERS = 'ABCDEFGHIJKL';
   var LEVELS = { 1: 'Foundation', 2: 'Intermediate', 3: 'Advanced' };
   var LEVEL_KIND = { 1: 'info', 2: 'accent', 3: 'warn' };
+  var LEVEL_TEXT = { 1: 'Start here.', 2: 'The next step up.', 3: 'The hardest cases.' };
   /* Options that refer to other options ("Both A and B", "All of the above") keep their authored order. */
   var FIXED_ORDER = /\b(of the above|of these)\b|\b(options?|answers?) [a-e]\b|^(both|neither)\b/i;
 
@@ -45,12 +49,13 @@
     });
     return root;
   }
-  function prose(html) { return stackTables(ui.html(html), 'lr-stack'); }
+  function prose(html) { var p = stackTables(ui.html(html), 'lr-stack'); p.classList.add('lr-prose'); return p; }
 
   function modules() { return (AA.data.learn || []).filter(function (m) { return m && m.id; }).slice().sort(byN); }
   function moduleById(id) { return modules().filter(function (m) { return m.id === id; })[0] || null; }
   function modNo(m) { var i = modules().indexOf(m); return typeof m.n === 'number' ? m.n : i + 1; }
   function modTitle(m) { return txt(m.title) || 'Module ' + modNo(m); }
+  function lessonsOf(m) { return arr(m && m.sections).filter(function (s) { return s && typeof s === 'object' && (txt(s.h) || s.html); }); }
 
   function validQ(q) {
     return !!(q && txt(q.q) && Array.isArray(q.options) && q.options.length >= 2 &&
@@ -110,18 +115,19 @@
   function nextStep(st) {
     var mods = modules();
     var m = mods.filter(function (x) { return !isRead(x.id); })[0];
-    if (m) return { text: 'Next: read module ' + modNo(m) + ', ' + modTitle(m) + '.', label: 'Read module ' + modNo(m), go: 'module-' + m.id };
+    if (m) return { text: 'Next: read module ' + modNo(m) + ', ' + modTitle(m) + '.', label: 'Read module ' + modNo(m), go: 'module-' + m.id, mod: m };
     m = mods.filter(function (x) { return quizOf(x).length && !passed(x.id); })[0];
-    if (m) return { text: 'Next: pass the quiz for module ' + modNo(m) + ', ' + modTitle(m) + '.', label: 'Take quiz ' + modNo(m), go: 'quiz-' + m.id };
+    if (m) return { text: 'Next: pass the quiz for module ' + modNo(m) + ', ' + modTitle(m) + '.', label: 'Take quiz ' + modNo(m), go: 'quiz-' + m.id, mod: m };
     var c = cases().filter(function (x) { return !caseRec(x.id); })[0];
     if (c) return { text: 'Next: work through the practice case "' + (txt(c.title) || 'Untitled case') + '".', label: 'Open the case', go: 'case-' + c.id };
     if (st.examAvail && !st.examPassed) return { text: 'Next: take the mastery exam.', label: 'Start the exam', go: 'exam' };
     return { text: 'You have finished the training. You are ready to run an assessment.', label: 'Start an assessment', go: 'new' };
   }
 
-  /* ---------- Attempts in progress (memory only) ---------- */
+  /* ---------- Attempts and places in progress (memory only) ---------- */
 
   var attempts = {};
+  var memo = {};   // lesson index per module, glossary letter, cases level filter
   /* The last rendered route, so a render can tell a refresh (same route again) from arriving at the page. */
   var lastToken = null;
   AA.router.onChange(function (r) { lastToken = r ? r.token : null; });
@@ -151,10 +157,9 @@
 
   /* ---------- Small shared pieces ---------- */
 
-  function wide() { try { return window.matchMedia('(min-width: 1100px)').matches; } catch (e) { return true; } }
   function smooth() { try { return !window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } }
 
-  /* Move to an in-page heading without touching the route (hash links would navigate). */
+  /* Move to a block and focus its first heading, without touching the route (hash links would navigate). */
   function jumpTo(node) {
     if (!node) return;
     try { node.scrollIntoView({ block: 'start', behavior: smooth() ? 'smooth' : 'auto' }); } catch (e) { node.scrollIntoView(); }
@@ -168,6 +173,24 @@
     if (r.top < 70 || r.top > window.innerHeight - 140) { try { node.scrollIntoView({ block: 'start' }); } catch (e) { node.scrollIntoView(); } }
     var f = focusEl || node;
     if (f) { try { f.focus({ preventScroll: true }); } catch (e) { f.focus(); } }
+  }
+
+  /* ui.section and ui.stats marked as this view's (CSS keeps the purpose line on its own row, stats compact). */
+  function section(o, content) { var s = ui.section(o, content); s.classList.add('lr-dsec'); return s; }
+  function tiles(items) { var s = ui.stats(items); s.classList.add('lr-hstats'); return s; }
+  /* Disclosures inside a card are hairline rows (never a box in a box). */
+  function fold(title, content, meta, open) { return ui.details(title, content, { meta: meta || null, cls: 'lr-fold', open: !!open }); }
+  /* ui.stepper labels its button "Next: step N"; lessons and case stages say what comes next instead. */
+  function nextBtn(stepper) { return stepper ? stepper.querySelector('.ds-stepper-foot .btn-primary') : null; }
+  function relabelNext(stepper, label) { var b = nextBtn(stepper); if (b && label) b.textContent = label; }
+
+  /* A percentage ring (SVG drawn with tokens in CSS); the number sits in the middle. */
+  function ring(p, label, cls) {
+    var r = 26, c = 2 * Math.PI * r, v = Math.max(0, Math.min(100, p || 0));
+    return h('span', { class: 'lr-ring' + (cls ? ' ' + cls : ''), role: 'img', 'aria-label': label },
+      h('span', { class: 'lr-ring-svg', 'aria-hidden': 'true', html: '<svg viewBox="0 0 64 64"><circle class="lr-ring-track" cx="32" cy="32" r="' + r + '"/>' +
+        '<circle class="lr-ring-bar" cx="32" cy="32" r="' + r + '" stroke-dasharray="' + c.toFixed(2) + '" stroke-dashoffset="' + (c * (1 - v / 100)).toFixed(2) + '"/></svg>' }),
+      h('span', { class: 'lr-ring-v', 'aria-hidden': 'true' }, v + '%'));
   }
 
   function notFound(el, title, body, go, label) {
@@ -277,17 +300,30 @@
         .then(function (yes) { if (yes) go(); });
     }
 
+    /* One segment per question: answered right, answered wrong, the current one, still to come. */
+    function track(cur) {
+      var segs = s.items.map(function (it, k) {
+        return h('li', { class: k === cur ? 'is-cur' : s.checked[k] ? (s.picks[k] === it.q.a ? 'is-ok' : 'is-no') : '' });
+      });
+      var ol = h('ol', { class: 'lr-track', 'aria-hidden': 'true' }, segs);
+      ol.mark = function (k, ok) { if (segs[k]) segs[k].className = (k === cur ? 'is-cur ' : '') + (ok ? 'is-ok' : 'is-no'); };
+      return ol;
+    }
+
     function question() {
       var i = s.idx, n = s.items.length, it = s.items[i];
+      var tr = track(i);
+      var done = Object.keys(s.checked).length, right = s.items.filter(function (x, k) { return s.checked[k] && s.picks[k] === x.q.a; }).length;
       return h('div', { class: 'card lr-quiz' },
         h('div', { class: 'lr-quiz-top' },
           h('p', { class: 'lr-qcount' }, 'Question ' + (i + 1) + ' of ' + n),
-          ui.progress(i, n, 'Questions answered')),
+          done ? h('p', { class: 'lr-qscore' }, right + ' of ' + done + ' right so far') : null),
+        tr,
         ask(it.q, {
           order: it.order, pick: s.picks[i], checked: !!s.checked[i], tag: 'h2',
           lead: it.ctx ? it.ctx() : null,
           onPick: function (v) { s.picks[i] = v; },
-          onCheck: function () { s.checked[i] = true; },
+          onCheck: function (v) { s.checked[i] = true; tr.mark(i, v === it.q.a); },
           extra: it.src ? function () { return h('p', { class: 'lr-fb-src' }, it.src); } : null,
           nextLabel: i < n - 1 ? 'Next question' : 'See your result',
           onNext: function () { if (i < n - 1) s.idx = i + 1; else finish(); draw(true); },
@@ -316,13 +352,14 @@
       var showNext = r.passed && cfg.next;
       var wrap = h('div', { class: 'lr-result' },
         h('section', { class: 'card lr-score ' + (r.passed ? 'lr-score-pass' : 'lr-score-fail'), 'aria-labelledby': 'lr-res-h' },
-          h('h2', { id: 'lr-res-h', tabindex: '-1', 'data-focus': '' }, 'Your result'),
-          h('div', { class: 'lr-score-main', role: 'status' },
-            h('span', { class: 'lr-score-pct' }, r.pct + '%'),
-            h('span', { class: 'lr-score-of' }, r.correct + ' of ' + r.n + ' correct'),
-            r.passed ? ui.badge('✓ Passed', 'ok') : ui.badge('Not passed yet', 'warn')),
-          h('p', { class: 'lr-score-note' }, note),
-          best ? h('p', { class: 'hint' }, best) : null,
+          h('div', { class: 'lr-score-top' },
+            ring(r.pct, r.pct + '% correct', r.passed ? 'is-ok' : 'is-warn'),
+            h('div', { class: 'lr-score-main' },
+              h('h2', { id: 'lr-res-h', tabindex: '-1', 'data-focus': '' }, 'Your result'),
+              h('p', { class: 'lr-score-of', role: 'status' }, r.correct + ' of ' + r.n + ' correct (' + r.pct + '%) ',
+                r.passed ? ui.badge('✓ Passed', 'ok') : ui.badge('Not passed yet', 'warn')),
+              h('p', { class: 'lr-score-note' }, note),
+              best ? h('p', { class: 'hint' }, best) : null)),
           h('div', { class: 'row lr-score-actions' },
             showNext ? ui.btn({ label: cfg.next.label, kind: 'primary', go: cfg.next.go }) : null,
             ui.btn({ label: cfg.retryLabel || 'Retry', kind: r.passed ? 'ghost' : 'primary', onClick: function () { setAttempt(cfg.key, null); fresh(); draw(true); } }),
@@ -332,24 +369,31 @@
       return wrap;
     }
 
+    /* Every question as one row: open it for your answer, the correct answer and why. */
     function review() {
-      var wrong = s.items.filter(function (it, k) { return s.picks[k] !== it.q.a; }).length;
-      var list = h('ol', { class: 'lr-review' }, s.items.map(function (it, k) {
-        var q = it.q, pick = s.picks[k], right = pick === q.a;
-        var opt = function (orig) { return typeof orig === 'number' ? letter(it.order.indexOf(orig)) + '. ' + String(q.options[orig]) : 'Not answered'; };
-        return h('li', { class: 'lr-rv ' + (right ? 'is-right' : 'is-wrong') },
-          h('p', { class: 'lr-rv-q' }, txt(q.q)),
-          h('dl', { class: 'lr-rv-dl' },
-            h('dt', null, 'Your answer'),
-            h('dd', null, opt(pick), ' ', h('span', { class: right ? 'lr-ok' : 'lr-no' }, right ? '✓ Correct' : '✗ Incorrect')),
-            right ? null : [h('dt', null, 'Correct answer'), h('dd', null, opt(q.a))]),
-          txt(q.why) ? h('p', { class: 'lr-rv-why' }, txt(q.why)) : null,
-          it.src ? h('p', { class: 'lr-rv-src' }, it.src) : null);
+      var n = s.items.length;
+      var right = s.items.map(function (it, k) { return s.picks[k] === it.q.a; });
+      var wrong = right.filter(function (x) { return !x; }).length;
+      var acc = ui.acc(s.items.map(function (it, k) {
+        return { n: k + 1, title: txt(it.q.q), meta: right[k] ? '✓ Correct' : '✗ Incorrect', render: function () { return reviewBody(it, k); } };
       }));
-      return h('section', { class: 'section lr-review-sec', 'aria-labelledby': 'lr-rev-h' },
-        h('h2', { id: 'lr-rev-h' }, 'Review your answers'),
-        wrong && wrong < s.items.length ? ui.check({ label: 'Show only the questions I got wrong (' + wrong + ')', onChange: function (on) { list.classList.toggle('lr-only-wrong', on); } }) : null,
-        list);
+      acc.classList.add('lr-rv-acc');
+      Array.prototype.filter.call(acc.children, function (c) { return c.tagName === 'DETAILS'; })
+        .forEach(function (d, k) { d.classList.add(right[k] ? 'is-right' : 'is-wrong'); });
+      return section({ id: 'lr-review', title: 'Review your answers', text: 'Open a question to see your answer, the correct answer and why.' }, [
+        wrong && wrong < n ? ui.check({ label: 'Show only the questions I got wrong (' + wrong + ')', onChange: function (on) { acc.classList.toggle('lr-only-wrong', on); } }) : null,
+        acc]);
+    }
+    function reviewBody(it, k) {
+      var q = it.q, pick = s.picks[k], right = pick === q.a;
+      var opt = function (orig) { return typeof orig === 'number' ? letter(it.order.indexOf(orig)) + '. ' + String(q.options[orig]) : 'Not answered'; };
+      return h('div', { class: 'lr-rv' },
+        h('dl', { class: 'ds-kv lr-rv-kv' },
+          h('dt', null, 'Your answer'),
+          h('dd', null, opt(pick), ' ', h('span', { class: right ? 'lr-ok' : 'lr-no' }, right ? '✓ Correct' : '✗ Incorrect')),
+          right ? null : [h('dt', null, 'Correct answer'), h('dd', null, opt(q.a))]),
+        txt(q.why) ? h('p', { class: 'lr-rv-why' }, txt(q.why)) : null,
+        it.src ? h('p', { class: 'lr-rv-src' }, it.src) : null);
     }
 
     draw(false);
@@ -359,141 +403,157 @@
      Route: learn (training home)
      ====================================================================== */
 
-  function pathStep(n, title, body, status, done) {
-    return h('li', { class: 'lr-path-step' + (done ? ' is-done' : '') },
-      h('span', { class: 'lr-path-n', 'aria-hidden': 'true' }, done ? '✓' : String(n)),
-      h('div', { class: 'lr-path-body' },
-        h('p', { class: 'lr-path-t' }, h('span', { class: 'sr-only' }, 'Step ' + n + ': '), title, done ? h('span', { class: 'sr-only' }, ' (complete)') : null),
-        h('p', { class: 'lr-path-d' }, body),
-        h('p', { class: 'lr-path-s' }, status)));
+  function phase(n, title, body, status, p, done) {
+    return h('li', { class: 'lr-phase' + (done ? ' is-done' : '') },
+      h('span', { class: 'lr-phase-n', 'aria-hidden': 'true' }, done ? '✓' : String(n)),
+      h('div', { class: 'lr-phase-body' },
+        h('p', { class: 'lr-phase-t' }, h('span', { class: 'sr-only' }, 'Step ' + n + ': '), title, done ? h('span', { class: 'sr-only' }, ' (complete)') : null),
+        h('p', { class: 'lr-phase-d' }, body),
+        p !== null ? ui.progress(p, 100, title + ' progress') : null,
+        h('p', { class: 'lr-phase-s' }, status)));
   }
 
-  function stat(k, v, sub) {
-    return h('div', { class: 'stat lr-stat' }, h('div', { class: 'stat-k' }, k), h('div', { class: 'stat-v' }, String(v)), sub ? h('div', { class: 'lr-stat-sub' }, sub) : null);
-  }
-
-  function moduleItem(m) {
-    var no = modNo(m), qs = quizOf(m), st = modStatus(m), r = quizRec(m.id), obj = texts(m.objectives);
-    var meta = [m.minutes ? m.minutes + ' minutes' : null, qs.length ? U.plural(qs.length, 'quiz question') : 'No quiz yet',
-      r ? 'quiz best ' + r.best + '%' : null].filter(Boolean).join(' · ');
-    return h('li', { class: 'card lr-mod ' + st.cls },
-      h('span', { class: 'lr-mod-n', 'aria-hidden': 'true' }, String(no)),
-      h('div', { class: 'lr-mod-body' },
-        h('div', { class: 'lr-mod-top' },
-          h('h3', { class: 'lr-mod-title' }, h('span', { class: 'sr-only' }, 'Module ' + no + ': '), modTitle(m)),
-          ui.badge(st.label, st.kind)),
-        h('p', { class: 'lr-mod-meta' }, meta),
-        txt(m.summary) ? h('p', { class: 'lr-mod-sum' }, txt(m.summary)) : null,
-        obj.length ? ui.details('Learning objectives', ui.list(obj), { meta: String(obj.length), cls: 'lr-mod-obj' }) : null,
-        h('div', { class: 'lr-mod-actions' },
-          ui.btn({ label: 'Read', kind: isRead(m.id) ? 'ghost' : 'primary', small: true, go: 'module-' + m.id, aria: 'Read module ' + no }),
-          qs.length ? ui.btn({ label: 'Quiz', kind: st.cls === 'is-read' ? 'primary' : 'ghost', small: true, go: 'quiz-' + m.id, aria: 'Quiz for module ' + no }) : null)));
+  function moduleRow(m, isNext) {
+    var no = modNo(m), qs = quizOf(m), st = modStatus(m), r = quizRec(m.id), nl = lessonsOf(m).length;
+    var meta = [m.minutes ? m.minutes + ' min' : null, nl ? U.plural(nl, 'lesson') : null,
+      qs.length ? U.plural(qs.length, 'quiz question') : 'No quiz yet', r ? 'best ' + r.best + '%' : null].filter(Boolean).join(' · ');
+    return h('li', { class: 'lr-mrow ' + st.cls + (isNext ? ' is-next' : '') },
+      h('span', { class: 'lr-mrow-n', 'aria-hidden': 'true' }, st.cls === 'is-passed' ? '✓' : String(no)),
+      h('div', { class: 'lr-mrow-main' },
+        h('h3', { class: 'lr-mrow-t' }, h('a', { href: '#module-' + m.id, 'data-go': 'module-' + m.id }, h('span', { class: 'sr-only' }, 'Module ' + no + ': '), modTitle(m))),
+        h('p', { class: 'lr-mrow-meta' }, meta)),
+      h('div', { class: 'lr-mrow-side' },
+        isNext ? ui.badge('Up next', 'accent') : null,
+        ui.badge(st.label, st.kind),
+        qs.length ? ui.btn({ label: 'Quiz', kind: st.cls === 'is-read' ? 'primary' : 'ghost', small: true, go: 'quiz-' + m.id, aria: 'Quiz for module ' + no }) : null));
   }
 
   function renderLearn(el) {
-    var mods = modules(), cs = cases(), st = stats();
-    el.appendChild(ui.pageHead({
-      eyebrow: 'Learn', title: 'Assessor training',
-      lead: 'Learn the method, practise it on cases, then assess. When you have finished every module, the practice cases and the mastery exam, you can run an adult ADHD assessment with confidence.'
+    var mods = modules(), cs = cases(), st = stats(), nx = nextStep(st);
+    el.appendChild(ui.hero({
+      h1: true, eyebrow: 'Learn', title: 'Assessor training',
+      text: 'Learn the method, practise it on cases, then assess. When you have finished every module, the practice cases and the mastery exam, you can run an adult ADHD assessment with confidence.',
+      actions: [ui.btn({ label: nx.label, kind: 'primary', go: nx.go }), ui.btn({ label: 'Glossary', kind: 'ghost', go: 'glossary' })],
+      aside: h('div', { class: 'lr-overall' },
+        ring(st.overall, st.overall + '% of the training complete', 'is-lg'),
+        h('div', { class: 'lr-overall-t' },
+          h('p', { class: 'lr-overall-k' }, 'Your progress'),
+          h('p', { class: 'lr-overall-v' }, st.overall + '% of the training complete'),
+          h('p', { class: 'lr-overall-next' }, nx.text)))
     }));
 
     var learnDone = st.mods > 0 && st.read === st.mods && st.passed === st.quizzes;
-    el.appendChild(h('ol', { class: 'lr-path', 'aria-label': 'Training path' },
-      pathStep(1, 'Learn', 'Read each module and pass its quiz with ' + PASS + '% or more.', st.read + ' of ' + st.mods + ' read · ' + st.passed + ' of ' + st.quizzes + ' quizzes passed', learnDone),
-      pathStep(2, 'Practise', 'Work through realistic cases and compare your decisions with the expert answer.', st.cases + ' of ' + st.ncases + ' cases done', st.ncases > 0 && st.cases === st.ncases),
-      pathStep(3, 'Assess', 'Pass the mastery exam, then run a real assessment with the step guide open.', st.exam ? 'Exam best ' + st.exam.best + '%' + (st.examPassed ? ', passed' : '') : 'Exam not taken yet', st.examPassed)));
+    el.appendChild(section({ id: 'lr-path', title: 'Your path', text: 'Three steps, in order. Each one builds on the one before.' },
+      h('ol', { class: 'lr-path' },
+        phase(1, 'Learn', 'Read each module and pass its quiz with ' + PASS + '% or more.', st.read + ' of ' + st.mods + ' read · ' + st.passed + ' of ' + st.quizzes + ' quizzes passed',
+          pct(st.read + st.passed, st.mods + st.quizzes), learnDone),
+        phase(2, 'Practise', 'Work through realistic cases and compare your decisions with the expert answer.', st.cases + ' of ' + st.ncases + ' cases done',
+          st.ncases ? pct(st.cases, st.ncases) : null, st.ncases > 0 && st.cases === st.ncases),
+        phase(3, 'Assess', 'Pass the mastery exam, then run a real assessment with the step guide open.', st.exam ? 'Exam best ' + st.exam.best + '%' + (st.examPassed ? ', passed' : '') : 'Exam not taken yet',
+          null, st.examPassed))));
 
-    var nx = nextStep(st);
-    el.appendChild(h('section', { class: 'card lr-overview', 'aria-labelledby': 'lr-prog-h' },
-      h('div', { class: 'lr-overview-main' },
-        h('h2', { id: 'lr-prog-h' }, 'Your progress'),
-        h('p', { class: 'lr-overall' }, h('span', { class: 'lr-overall-v' }, st.overall + '%'), h('span', { class: 'lr-overall-k' }, 'of the training complete')),
-        ui.progress(st.overall, 100, 'Training complete'),
-        h('p', { class: 'lr-next' }, nx.text)),
-      h('div', { class: 'lr-overview-go' }, ui.btn({ label: nx.label, kind: 'primary', go: nx.go })),
-      h('div', { class: 'stat-row lr-stats' },
-        stat('Modules read', st.read + ' / ' + st.mods),
-        stat('Quizzes passed', st.passed + ' / ' + st.quizzes, 'Pass mark ' + PASS + '%'),
-        stat('Cases done', st.cases + ' / ' + st.ncases),
-        stat('Exam best', st.exam ? st.exam.best + '%' : '–', st.exam ? (st.examPassed ? 'Passed' : 'Not passed yet') : 'Not taken'))));
-
-    var modSec = h('section', { class: 'section', 'aria-labelledby': 'lr-mods-h' }, h('h2', { id: 'lr-mods-h' }, 'Modules'));
-    if (!mods.length) modSec.appendChild(ui.empty('No modules yet', 'Training modules are not available in this build.'));
+    if (!mods.length) el.appendChild(section({ id: 'lr-mods', title: 'Modules' }, ui.empty('No modules yet', 'Training modules are not available in this build.')));
     else {
       var mins = mods.reduce(function (t, m) { return t + (typeof m.minutes === 'number' ? m.minutes : 0); }, 0);
-      modSec.appendChild(h('p', { class: 'muted lr-sec-lead' }, U.plural(mods.length, 'module') + (mins ? ', about ' + (mins >= 90 ? Math.round(mins / 30) / 2 + ' hours' : mins + ' minutes') + ' of reading' : '') + '. Take them in order: each builds on the one before.'));
-      modSec.appendChild(h('ol', { class: 'lr-mods' }, mods.map(moduleItem)));
+      var upNext = nx.mod || null;
+      el.appendChild(section({ id: 'lr-mods', title: 'Modules',
+        text: U.plural(mods.length, 'module') + (mins ? ', about ' + (mins >= 90 ? Math.round(mins / 30) / 2 + ' hours' : mins + ' minutes') + ' of reading' : '') + '. Take them in order: each builds on the one before.' },
+        h('ol', { class: 'card lr-mlist' }, mods.map(function (m) { return moduleRow(m, m === upNext); }))));
     }
-    el.appendChild(modSec);
 
     var ex = st.exam, pool = examPool().length;
     var avg = cs.map(function (c) { return caseRec(c.id); }).filter(function (r) { return r && r.of; });
     var avgPct = avg.length ? pct(avg.reduce(function (t, r) { return t + r.score; }, 0), avg.reduce(function (t, r) { return t + r.of; }, 0)) : null;
-    el.appendChild(h('section', { class: 'section', 'aria-labelledby': 'lr-more-h' },
-      h('h2', { id: 'lr-more-h' }, 'Practise and test yourself'),
-      h('div', { class: 'grid lr-ctas' },
-        h('div', { class: 'card lr-cta' },
-          h('p', { class: 'eyebrow' }, 'Practise'),
-          h('h3', null, 'Practice cases'),
-          h('p', { class: 'muted' }, 'Staged adult cases. Decide at each step, then see the symptom profile and the expert answer.'),
-          h('p', { class: 'lr-cta-s' }, cs.length ? st.cases + ' of ' + cs.length + ' done' + (avgPct !== null ? ' · ' + avgPct + '% of questions correct' : '') : 'No cases in this build yet'),
-          h('div', { class: 'card-foot' }, ui.btn({ label: 'Open the cases', kind: 'primary', go: 'cases', disabled: !cs.length }))),
-        h('div', { class: 'card lr-cta' },
-          h('p', { class: 'eyebrow' }, 'Assess yourself'),
-          h('h3', null, 'Mastery exam'),
-          h('p', { class: 'muted' }, Math.min(EXAM_SIZE, pool) + ' questions from every module and the practice cases. Pass mark ' + PASS + '%. A self-assessment, not an accredited certificate.'),
-          h('p', { class: 'lr-cta-s' }, ex ? 'Best ' + ex.best + '% · last ' + ex.last + '%' + (ex.at ? ' on ' + U.fmtDate(ex.at) : '') : 'Not taken yet', ex && ex.best >= PASS ? [' ', ui.badge('✓ Passed', 'ok')] : null),
-          h('div', { class: 'card-foot' }, ui.btn({ label: ex ? 'Take it again' : 'Start the exam', kind: 'primary', go: 'exam', disabled: !pool }))),
-        h('a', { class: 'card card-link lr-cta', href: '#glossary', 'data-go': 'glossary' },
-          h('p', { class: 'eyebrow' }, 'Reference'),
-          h('h3', null, 'Glossary'),
-          h('p', { class: 'muted' }, 'Plain-English definitions of the terms used in the modules and the assessment.'),
-          h('p', { class: 'lr-cta-s' }, U.plural((AA.data.glossary || []).length, 'term'))))));
+    el.appendChild(section({ id: 'lr-more', title: 'Practise and test yourself' }, ui.cards([
+      { icon: 'users', title: 'Practice cases', text: 'Staged adult cases. Decide at each step, then see the symptom profile and the expert answer.',
+        meta: cs.length ? st.cases + ' of ' + cs.length + ' done' + (avgPct !== null ? ' · ' + avgPct + '% of questions correct' : '') : 'No cases in this build yet', go: 'cases' },
+      { icon: 'target', title: 'Mastery exam', text: Math.min(EXAM_SIZE, pool) + ' questions from every module and the practice cases. Pass mark ' + PASS + '%. A self-assessment, not an accredited certificate.',
+        meta: ex ? 'Best ' + ex.best + '% · last ' + ex.last + '%' + (ex.at ? ' on ' + U.fmtDate(ex.at) : '') + (ex.best >= PASS ? ' · passed ✓' : '') : 'Not taken yet', go: 'exam' },
+      { icon: 'book', title: 'Glossary', text: 'Plain-English definitions of the terms used in the modules and the assessment.',
+        meta: U.plural((AA.data.glossary || []).length, 'term'), go: 'glossary' }])));
   }
 
   /* ======================================================================
-     Route: module-<id>
+     Route: module-<id> (one lesson at a time, then a recap with key points and the quiz)
      ====================================================================== */
 
   function renderModule(el, params) {
     var m = moduleById(params[0]);
     if (!m) { notFound(el, 'Module not found', 'This module is not available in this build.', 'learn', 'All modules'); return; }
-    var mods = modules(), i = mods.indexOf(m), no = modNo(m), qs = quizOf(m);
-    el.appendChild(ui.pageHead({
-      eyebrow: 'Module ' + no + ' of ' + mods.length + (m.minutes ? ' · ' + m.minutes + ' minutes' : ''),
-      title: modTitle(m), lead: txt(m.summary) || null,
-      actions: [ui.btn({ label: 'All modules', kind: 'ghost', go: 'learn', icon: '←' })]
+    var mods = modules(), i = mods.indexOf(m), no = modNo(m), qs = quizOf(m), lessons = lessonsOf(m);
+    var obj = texts(m.objectives), kp = texts(m.keyPoints), pit = texts(m.pitfalls), refs = texts(m.refs);
+    var qr = quizRec(m.id), L = lessons.length;
+    var mk = akey('module-' + m.id);
+    var start = typeof memo[mk] === 'number' ? Math.min(memo[mk], L) : 0;
+    var reader = null;
+    var startLabel = start === 0 ? 'Start reading' : start < L ? 'Continue: lesson ' + (start + 1) : 'Continue: recap';
+
+    el.appendChild(ui.hero({
+      h1: true, eyebrow: 'Module ' + no + ' of ' + mods.length, title: modTitle(m),
+      text: txt(m.summary) || null,
+      actions: [L ? ui.btn({ label: startLabel, kind: 'primary', onClick: function () { jumpTo(reader); } }) : null,
+        qs.length ? ui.btn({ label: qr && qr.best >= PASS ? 'Retake the quiz' : 'Take the quiz', kind: 'ghost', go: 'quiz-' + m.id }) : null,
+        ui.btn({ label: 'All modules', kind: 'quiet', go: 'learn', icon: '←' })].filter(Boolean),
+      aside: tiles([
+        { n: m.minutes || '–', l: 'minutes of reading' },
+        { n: L, l: L === 1 ? 'lesson' : 'lessons' },
+        qr ? { n: qr.best + '%', l: 'quiz best' + (qr.best >= PASS ? ', passed' : '') } : { n: qs.length || '–', l: 'quiz questions' }])
     }));
 
-    var secs = [];   // {id, label, n, node} in page order, for the contents list
-    function sec(label, n, node) { secs.push({ id: node.id, label: label, n: n, node: node }); return node; }
-    var article = h('div', { class: 'lr-article' });
+    if (obj.length) {
+      el.appendChild(section({ id: 'lr-obj', title: 'By the end of this module you can' },
+        h('ul', { class: 'card lr-objs' }, obj.map(function (o) { return h('li', null, ui.icon('check'), h('span', null, o)); }))));
+    }
 
-    var obj = texts(m.objectives);
-    if (obj.length) article.appendChild(h('section', { class: 'lr-objectives', 'aria-labelledby': 'lr-obj-h' },
-      h('h2', { id: 'lr-obj-h' }, 'By the end of this module you can'), ui.list(obj, 'list lr-obj-list')));
+    if (!L) {
+      el.appendChild(ui.callout('info', h('p', null, 'The teaching content for this module is not available in this build.')));
+      el.appendChild(finishBlock(m, mods, i, qs));
+      return;
+    }
 
-    var count = 0;
-    arr(m.sections).forEach(function (s) {
-      if (!s || (!txt(s.h) && !s.html)) return;
-      count++;
-      var id = 'lr-s' + count;
-      article.appendChild(sec(txt(s.h) || 'Section ' + count, count, h('section', { class: 'lr-sec', id: id, 'aria-labelledby': id + 'h' },
-        h('h2', { id: id + 'h', tabindex: '-1' }, txt(s.h) || 'Section ' + count),
-        prose(typeof s.html === 'string' ? s.html : ''))));
+    /* Lessons you have opened in this visit get a tick in the track. */
+    var seen = {};
+    var items = lessons.map(function (s, k) {
+      return { title: txt(s.h) || 'Lesson ' + (k + 1), label: String(k + 1), done: function () { return !!seen[k]; },
+        render: function () { return h('div', { class: 'lr-lesson' }, prose(typeof s.html === 'string' ? s.html : '')); } };
     });
-    if (!count) article.appendChild(ui.callout('info', h('p', null, 'The teaching content for this module is not available in this build.')));
+    items.push({ title: 'Recap and next steps', label: 'Recap', render: function () { return recap(); } });
 
-    var kp = texts(m.keyPoints), pit = texts(m.pitfalls), refs = texts(m.refs);
-    if (kp.length) article.appendChild(sec('Key points', null, h('section', { class: 'lr-sec lr-sec-box', id: 'lr-key', 'aria-labelledby': 'lr-key-h' },
-      h('div', { class: 'lr-box lr-box-key' }, h('h2', { id: 'lr-key-h', tabindex: '-1' }, 'Key points'), ui.list(kp, 'lr-ticks')))));
-    if (pit.length) article.appendChild(sec('Common pitfalls', null, h('section', { class: 'lr-sec lr-sec-box', id: 'lr-pit', 'aria-labelledby': 'lr-pit-h' },
-      h('div', { class: 'lr-box lr-box-warn' }, h('h2', { id: 'lr-pit-h', tabindex: '-1' }, 'Common pitfalls'), ui.list(pit, 'lr-warns')))));
-    if (refs.length) article.appendChild(sec('References', null, h('section', { class: 'lr-sec lr-sec-refs', id: 'lr-refs', 'aria-labelledby': 'lr-refs-h' },
-      h('h2', { id: 'lr-refs-h', tabindex: '-1' }, 'References'),
-      h('ol', { class: 'lr-reflist' }, refs.map(function (r) { return h('li', { class: 'source' }, r); })))));
+    var navBtns = items.map(function (x, k) {
+      return h('button', { type: 'button', class: 'lr-lnav-b', onclick: function () { reader.show(k); jumpTo(reader); } },
+        h('span', { class: 'lr-lnav-n', 'aria-hidden': 'true' }, k < L ? String(k + 1) : '✓'), h('span', { class: 'lr-lnav-t' }, x.title));
+    });
+    function onLesson(k) {
+      seen[k] = true;
+      memo[mk] = k;
+      navBtns.forEach(function (b, j) { if (j === k) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current'); b.classList.toggle('is-done', !!seen[j] && j !== k); });
+      if (!reader) return;
+      relabelNext(reader, k < L - 1 ? 'Next: lesson ' + (k + 2) + ' →' : k === L - 1 ? 'Next: recap →' : 'Last step');
+      reader.refresh();
+    }
+    reader = ui.stepper(items, {
+      start: start, label: 'Lessons in this module',
+      eyebrow: function (k) { return k < L ? 'Lesson ' + (k + 1) + ' of ' + L : 'Recap'; },
+      onChange: onLesson
+    });
+    reader.classList.add('lr-stepper', 'lr-reader-steps');
+    onLesson(reader.index());
+    var nav = h('nav', { class: 'lr-lnav', 'aria-label': 'Lessons in this module' },
+      h('p', { class: 'lr-lnav-k' }, 'Lessons'), h('ol', null, navBtns.map(function (b) { return h('li', null, b); })));
+    el.appendChild(section({ id: 'lr-read', title: 'Lessons', text: 'One lesson at a time. Use Next, the numbers or the list to move around.' },
+      h('div', { class: 'lr-reader' }, ui.split(reader, nav))));
 
-    /* ---- Finish bar: mark as read, quiz, previous / next ---- */
+    function recap() {
+      return h('div', { class: 'lr-recap' },
+        kp.length ? [h('h3', { class: 'lr-h3' }, 'Key points'), h('ul', { class: 'lr-kps' }, kp.map(function (x) { return h('li', null, ui.icon('check'), h('span', null, x)); }))] : null,
+        pit.length ? fold('Common pitfalls', h('ul', { class: 'lr-warns' }, pit.map(function (x) { return h('li', null, x); })), U.plural(pit.length, 'pitfall')) : null,
+        refs.length ? fold('Sources', h('ol', { class: 'lr-reflist' }, refs.map(function (r) { return h('li', null, r); })), U.plural(refs.length, 'source')) : null,
+        finishBlock(m, mods, i, qs));
+    }
+  }
+
+  /* Finish the module: mark as read, the quiz, previous and next module. */
+  function finishBlock(m, mods, i, qs) {
     var readStatus = h('p', { class: 'lr-read-status', 'aria-live': 'polite' });
     var toggle = h('button', { type: 'button', class: 'btn lr-toggle', 'aria-pressed': 'false' }, h('span', { class: 'lr-toggle-box', 'aria-hidden': 'true' }), 'Mark as read');
     function paintRead() {
@@ -514,46 +574,16 @@
       return h('a', { class: 'lr-pager-link ' + cls, href: '#module-' + x.id, 'data-go': 'module-' + x.id },
         h('span', { class: 'lr-pager-k' }, k), h('span', { class: 'lr-pager-t' }, modNo(x) + '. ' + modTitle(x)));
     }
-    article.appendChild(h('section', { class: 'lr-finish', 'aria-labelledby': 'lr-fin-h' },
-      h('h2', { id: 'lr-fin-h', class: 'sr-only' }, 'Finish this module'),
-      h('div', { class: 'lr-modbar' },
-        h('div', { class: 'lr-modbar-read' }, toggle, readStatus),
-        h('div', { class: 'lr-modbar-quiz' },
-          qs.length ? h('p', { class: 'lr-modbar-q' }, qr ? 'Quiz best ' + qr.best + '%' + (qr.best >= PASS ? ' ✓ passed' : ' (pass mark ' + PASS + '%)') : U.plural(qs.length, 'question') + ' · pass mark ' + PASS + '%') : null,
-          qs.length ? ui.btn({ label: qr && qr.best >= PASS ? 'Retake the quiz' : 'Take the quiz', kind: qr && qr.best >= PASS ? 'ghost' : 'primary', go: 'quiz-' + m.id })
-            : h('p', { class: 'lr-modbar-q' }, 'No quiz for this module yet.'))),
+    return h('section', { class: 'lr-finish', 'aria-labelledby': 'lr-fin-h' },
+      h('h3', { id: 'lr-fin-h', class: 'lr-h3' }, 'Finish this module'),
+      h('div', { class: 'lr-finish-row' }, toggle, readStatus),
+      h('div', { class: 'lr-finish-row' },
+        qs.length ? h('p', { class: 'lr-finish-q' }, qr ? 'Quiz best ' + qr.best + '%' + (qr.best >= PASS ? ' ✓ passed' : ' (pass mark ' + PASS + '%)') : U.plural(qs.length, 'question') + ' · pass mark ' + PASS + '%') : null,
+        qs.length ? ui.btn({ label: qr && qr.best >= PASS ? 'Retake the quiz' : 'Take the quiz', kind: qr && qr.best >= PASS ? 'ghost' : 'primary', go: 'quiz-' + m.id })
+          : h('p', { class: 'lr-finish-q' }, 'No quiz for this module yet.')),
       prev || next ? h('nav', { class: 'lr-pager', 'aria-label': 'Other modules' },
         prev ? pager(prev, '← Previous module', 'lr-pager-prev') : h('span'),
-        next ? pager(next, 'Next module →', 'lr-pager-next') : h('span')) : null));
-
-    /* ---- Contents list (buttons scroll to the headings; the route and hash stay as they are) ---- */
-    var tocBtns = {};
-    var toc = secs.length > 1 ? h('nav', { class: 'lr-toc', 'aria-label': 'On this page' },
-      h('details', { class: 'lr-toc-d', open: wide() },
-        h('summary', null, h('span', null, 'On this page'), h('span', { class: 'lr-toc-meta' }, U.plural(count, 'section'))),
-        h('ol', null, secs.map(function (s) {
-          var b = h('button', { type: 'button', class: 'lr-toc-btn' + (s.n ? '' : ' lr-toc-extra'), onclick: function () { jumpTo(s.node); } },
-            s.n ? h('span', { class: 'lr-toc-n', 'aria-hidden': 'true' }, String(s.n)) : null, h('span', null, s.label));
-          tocBtns[s.id] = b;
-          return h('li', null, b);
-        })))) : null;
-    el.appendChild(h('div', { class: 'lr-doc' + (toc ? '' : ' lr-doc-notoc') }, toc, article));
-
-    /* ---- Highlight the section in view in the contents list ---- */
-    var spy = null;
-    if (toc && typeof window.IntersectionObserver === 'function') {
-      var seen = {};
-      try {
-        spy = new IntersectionObserver(function (entries) {
-          entries.forEach(function (e) { seen[e.target.id] = e.isIntersecting; });
-          var cur = secs.filter(function (s) { return seen[s.id]; })[0];
-          if (!cur) return;
-          Object.keys(tocBtns).forEach(function (k) { if (k === cur.id) tocBtns[k].setAttribute('aria-current', 'true'); else tocBtns[k].removeAttribute('aria-current'); });
-        }, { rootMargin: '-72px 0px -55% 0px' });
-        secs.forEach(function (s) { spy.observe(s.node); });
-      } catch (e) { spy = null; }
-    }
-    return function () { if (spy) spy.disconnect(); };
+        next ? pager(next, 'Next module →', 'lr-pager-next') : h('span')) : null);
   }
 
   /* ======================================================================
@@ -572,7 +602,7 @@
     var mods = modules(), i = mods.indexOf(m), no = modNo(m), qs = quizOf(m);
     el.appendChild(ui.pageHead({
       eyebrow: 'Quiz · module ' + no, title: modTitle(m),
-      lead: qs.length ? U.plural(qs.length, 'question') + '. Pass mark ' + PASS + '%. The options are shuffled on every attempt.' : null,
+      lead: qs.length ? U.plural(qs.length, 'question') + ', one at a time. Pass mark ' + PASS + '%. The options are shuffled on every attempt.' : null,
       actions: [ui.btn({ label: 'Back to module', kind: 'ghost', go: 'module-' + m.id, icon: '←' })]
     }));
     if (!qs.length) {
@@ -632,7 +662,7 @@
       });
     });
     return h('div', { class: 'lr-ctx' },
-      h('p', { class: 'lr-ctx-line' }, 'Practice case: ' + (txt(c.title) || 'Untitled case') + (txt(c.patient) ? ' (' + txt(c.patient) + ')' : '')), d);
+      h('p', { class: 'lr-ctx-line' }, ui.icon('users'), h('span', null, 'Practice case: ' + (txt(c.title) || 'Untitled case') + (txt(c.patient) ? ' (' + txt(c.patient) + ')' : ''))), d);
   }
 
   /* Balanced sample: round-robin over the sources (modules, cases) so every area is represented. */
@@ -670,9 +700,7 @@
         p >= PASS ? h('span', { class: 'lr-ok' }, '✓ Secure')
           : h('a', { href: '#' + g.go, 'data-go': g.go, class: 'lr-revise' }, id === '_cases' ? 'Revisit the cases' : 'Revise this module')];
     });
-    return h('section', { class: 'section', 'aria-labelledby': 'lr-bd-h' },
-      h('h2', { id: 'lr-bd-h' }, 'Results by module'),
-      h('p', { class: 'muted' }, 'Areas under ' + PASS + '% are worth revising before you assess on your own.'),
+    return section({ id: 'lr-bd', title: 'Results by module', text: 'Areas under ' + PASS + '% are worth revising before you assess on your own.' },
       ui.table(['Area', 'Correct', 'Next'], rows, 'lr-bd'));
   }
 
@@ -711,12 +739,16 @@
         var ex = examRec();
         return h('section', { class: 'card lr-intro', 'aria-labelledby': 'lr-intro-h' },
           h('h2', { id: 'lr-intro-h' }, 'Before you start'),
-          ui.list([
-            U.plural(size, 'question') + ', one at a time. You see the answer and the explanation after each one.',
-            'Questions come from ' + U.plural(nMods, 'module') + (hasCases ? ' and the practice cases' : '') + '. Every attempt draws a new set and shuffles the options.',
-            'Pass mark ' + PASS + '%. Your best and last scores are saved on this device, with a breakdown by module.',
-            'This is a self-assessment. It is not an accredited certificate.'
-          ], 'list lr-intro-list'),
+          tiles([
+            { n: size, l: 'questions, one at a time' },
+            { n: PASS + '%', l: 'pass mark' },
+            { n: nMods, l: (nMods === 1 ? 'module' : 'modules') + (hasCases ? ', plus the practice cases' : '') },
+            ex ? { n: ex.best + '%', l: 'your best so far' + (ex.best >= PASS ? ', passed' : '') } : { n: '–', l: 'not taken yet' }]),
+          h('ul', { class: 'lr-points' },
+            h('li', null, 'You see the answer and the explanation after each question.'),
+            h('li', null, 'Every attempt draws a new set and shuffles the options.'),
+            h('li', null, 'Your best and last scores are saved on this device, with a breakdown by module.'),
+            h('li', null, 'This is a self-assessment. It is not an accredited certificate.')),
           st.passed < st.quizzes ? ui.callout('info', h('p', null, 'You have passed ' + st.passed + ' of ' + st.quizzes + ' module quizzes. You can take the exam at any time, but it is easier once the modules are done.')) : null,
           ex ? priorLine(ex) : null,
           h('div', { class: 'row' }, ui.btn({ label: ex ? 'Start a new exam' : 'Start the exam', kind: 'primary', onClick: start })));
@@ -732,40 +764,74 @@
   }
 
   /* ======================================================================
-     Route: cases
+     Route: cases (grouped by level, one level at a time if you choose)
      ====================================================================== */
 
   function caseCard(c) {
     var r = caseRec(c.id), lv = level(c), tags = texts(c.tags), nq = caseQCount(c), ns = stagesOf(c).length;
     var meta = [U.plural(ns, 'stage'), nq ? U.plural(nq, 'question') : null, r && r.at ? 'done ' + U.fmtDate(r.at) : null].filter(Boolean).join(' · ');
-    return h('li', { class: 'card lr-case' + (r ? ' is-done' : '') },
+    var shown = tags.slice(0, 4), rest = tags.slice(4);
+    return h('li', null, h('article', { class: 'ds-card lr-case' + (r ? ' is-done' : '') },
       h('div', { class: 'lr-case-top' },
         lv ? ui.badge(lv, LEVEL_KIND[c.difficulty]) : h('span'),
         r ? ui.badge('✓ Done' + (r.of ? ': ' + r.score + ' of ' + r.of : ''), 'ok') : ui.badge('Not started', 'neutral')),
-      h('h2', { class: 'lr-case-title' }, h('a', { class: 'lr-stretch', href: '#case-' + c.id, 'data-go': 'case-' + c.id }, txt(c.title) || 'Untitled case')),
+      h('h3', { class: 'lr-case-title' }, h('a', { class: 'lr-stretch', href: '#case-' + c.id, 'data-go': 'case-' + c.id }, txt(c.title) || 'Untitled case')),
       txt(c.patient) ? h('p', { class: 'lr-case-pt' }, txt(c.patient)) : null,
       h('p', { class: 'lr-case-meta' }, meta),
-      tags.length ? h('ul', { class: 'chip-list lr-tags', 'aria-label': 'Topics' }, tags.map(function (t) { return h('li', { class: 'chip' }, t); })) : null);
+      shown.length ? h('ul', { class: 'lr-tags', 'aria-label': 'Topics' }, shown.map(function (t) { return h('li', null, t); }),
+        rest.length ? h('li', { class: 'lr-tag-more', title: rest.join(', ') }, '+' + rest.length, h('span', { class: 'sr-only' }, ' more: ' + rest.join(', '))) : null) : null));
   }
 
   function renderCases(el) {
     var cs = cases();
-    el.appendChild(ui.pageHead({
-      eyebrow: 'Practise', title: 'Practice cases',
-      lead: 'Realistic adult referrals. Read each stage, commit to an answer, then compare your thinking with the symptom profile and the expert answer.',
-      actions: [ui.btn({ label: 'Assessor training', kind: 'ghost', go: 'learn', icon: '←' })]
+    var done = cs.filter(function (c) { return caseRec(c.id); }).length;
+    var avg = cs.map(function (c) { return caseRec(c.id); }).filter(function (r) { return r && r.of; });
+    var avgPct = avg.length ? pct(avg.reduce(function (t, r) { return t + r.score; }, 0), avg.reduce(function (t, r) { return t + r.of; }, 0)) : null;
+    var nextCase = cs.filter(function (c) { return !caseRec(c.id); })[0] || null;
+    el.appendChild(ui.hero({
+      h1: true, eyebrow: 'Practise', title: 'Practice cases',
+      text: 'Realistic adult referrals. Read each stage, commit to an answer, then compare your thinking with the symptom profile and the expert answer.',
+      actions: [nextCase ? ui.btn({ label: done ? 'Next case' : 'Start the first case', kind: 'primary', go: 'case-' + nextCase.id }) : null,
+        ui.btn({ label: 'Assessor training', kind: 'ghost', go: 'learn', icon: '←' })].filter(Boolean),
+      aside: cs.length ? tiles([
+        { n: done + ' / ' + cs.length, l: 'cases done' },
+        { n: avgPct !== null ? avgPct + '%' : '–', l: 'of questions correct' },
+        { n: cs.reduce(function (t, c) { return t + caseQCount(c); }, 0), l: 'questions in all' }]) : null
     }));
     if (!cs.length) { el.appendChild(ui.empty('No practice cases yet', 'Cases are not available in this build.', ui.btn({ label: 'Assessor training', kind: 'primary', go: 'learn' }))); return; }
-    var done = cs.filter(function (c) { return caseRec(c.id); }).length;
-    el.appendChild(h('div', { class: 'lr-sumbar' },
-      h('p', null, h('strong', null, done + ' of ' + cs.length), ' cases done'),
-      ui.progress(done, cs.length, 'Cases done'),
-      h('p', { class: 'hint' }, 'Levels: Foundation, Intermediate, Advanced.')));
-    el.appendChild(h('ul', { class: 'lr-cases' }, cs.map(caseCard)));
+
+    /* Levels in order, then any case without a level. */
+    var groups = [1, 2, 3].map(function (d) { return { id: String(d), label: LEVELS[d], text: LEVEL_TEXT[d], list: cs.filter(function (c) { return c.difficulty === d; }) }; })
+      .concat([{ id: 'other', label: 'Other cases', text: '', list: cs.filter(function (c) { return !LEVELS[c.difficulty]; }) }])
+      .filter(function (g) { return g.list.length; });
+    var fk = akey('cases-level');
+    var cur = groups.some(function (g) { return g.id === memo[fk]; }) ? memo[fk] : '';
+    var chipBtns = {};
+    function chip(id, label, n) {
+      var b = h('button', { type: 'button', class: 'ds-chip', 'aria-pressed': 'false', onclick: function () { cur = id; memo[fk] = id; apply(); } },
+        label, h('span', { class: 'ds-chip-n' }, String(n), h('span', { class: 'sr-only' }, n === 1 ? ' case' : ' cases')));
+      chipBtns[id] = b;
+      return h('li', null, b);
+    }
+    var chips = h('ul', { class: 'ds-chips lr-lchips', 'aria-label': 'Show one level' },
+      [chip('', 'All levels', cs.length)].concat(groups.map(function (g) { return chip(g.id, g.label, g.list.length); })));
+    var secs = groups.map(function (g) {
+      var s = section({ id: 'lr-lv-' + g.id, title: [h('span', null, g.label), h('span', { class: 'lr-count-pill' }, String(g.list.length))], text: g.text || null },
+        h('ul', { class: 'lr-cases' }, g.list.map(caseCard)));
+      return { id: g.id, el: s };
+    });
+    el.appendChild(h('div', { class: 'lr-filterbar' }, chips));
+    secs.forEach(function (s) { el.appendChild(s.el); });
+    function apply() {
+      secs.forEach(function (s) { s.el.hidden = !!cur && s.id !== cur; });
+      Object.keys(chipBtns).forEach(function (k) { var on = k === cur; chipBtns[k].setAttribute('aria-pressed', on ? 'true' : 'false'); chipBtns[k].classList.toggle('is-on', on); });
+    }
+    apply();
   }
 
   /* ======================================================================
-     Route: case-<id>
+     Route: case-<id> (referral, stages and the expert answer, one at a time; each stage
+     opens only after you answer the question before it)
      ====================================================================== */
 
   function profileTable(c) {
@@ -785,8 +851,8 @@
     /* Column names repeated on each cell so the table can stack on phones. */
     U.$$('tbody tr', table).forEach(function (tr) { U.$$('td', tr).forEach(function (td, k) { td.setAttribute('data-label', cols[k]); }); });
     table.classList.add('lr-pf-wrap');
-    return h('section', { class: 'card lr-profile', 'aria-labelledby': 'lr-pf-h' },
-      h('h2', { id: 'lr-pf-h', tabindex: '-1' }, 'Symptom profile'),
+    return h('div', { class: 'lr-profile' },
+      h('h3', { class: 'lr-h3', id: 'lr-pf-h' }, 'Symptom profile'),
       table,
       h('p', { class: 'hint' }, 'Adult threshold ' + need + ' (DSM-5-TR' + (need === 5 ? ', age 17 and over' : '') + '). Childhood column uses the DIVA convention of 6.'),
       txt(p.impairment) ? h('p', { class: 'lr-pf-imp' }, h('strong', null, 'Impairment: '), txt(p.impairment)) : null);
@@ -795,72 +861,82 @@
   function expertAnswer(c) {
     var a = c.answer && typeof c.answer === 'object' ? c.answer : {};
     var ddx = texts(a.ddx), teach = texts(a.teaching);
-    return h('section', { class: 'card lr-answer', 'aria-labelledby': 'lr-ans-h' },
-      h('h2', { id: 'lr-ans-h' }, 'Expert answer'),
+    return h('div', { class: 'lr-answer' },
+      h('h3', { class: 'lr-h3' }, 'Expert answer'),
       txt(a.conclusion) ? h('p', { class: 'lr-conclusion' }, txt(a.conclusion)) : h('p', { class: 'muted' }, 'No expert answer is recorded for this case.'),
       txt(a.codes) ? h('p', { class: 'lr-codes' }, h('strong', null, 'Coding: '), txt(a.codes)) : null,
-      ddx.length ? [h('h3', null, 'Differentials and co-occurring conditions'), ui.list(ddx)] : null,
-      teach.length ? [h('h3', null, 'Teaching points'), ui.list(teach, 'lr-ticks')] : null);
+      ddx.length ? fold('Differentials and co-occurring conditions', h('ul', { class: 'lr-points' }, ddx.map(function (x) { return h('li', null, x); })), U.plural(ddx.length, 'point')) : null,
+      teach.length ? fold('Teaching points', h('ul', { class: 'lr-kps' }, teach.map(function (x) { return h('li', null, ui.icon('check'), h('span', null, x)); })), U.plural(teach.length, 'point'), true) : null);
   }
 
   function renderCase(el, params) {
     var c = caseById(params[0]);
     if (!c) { notFound(el, 'Case not found', 'This practice case is not available in this build.', 'cases', 'All cases'); return; }
     var all = cases(), ci = all.indexOf(c), next = all[ci + 1] || null;
-    var stages = stagesOf(c), lv = level(c), nq = caseQCount(c), tags = texts(c.tags);
-    var key = 'case-' + c.id;
-    el.appendChild(ui.pageHead({
-      eyebrow: 'Practice case' + (lv ? ' · ' + lv : ''), title: txt(c.title) || 'Practice case',
-      lead: [txt(c.patient), U.plural(stages.length, 'stage'), nq ? U.plural(nq, 'question') : null].filter(Boolean).join(' · '),
-      actions: [ui.btn({ label: 'All cases', kind: 'ghost', go: 'cases', icon: '←' })]
+    var stages = stagesOf(c), N = stages.length, lv = level(c), nq = caseQCount(c), tags = texts(c.tags);
+    var key = 'case-' + c.id, rec = caseRec(c.id);
+    el.appendChild(ui.hero({
+      h1: true, eyebrow: 'Practice case' + (lv ? ' · ' + lv : ''), title: txt(c.title) || 'Practice case',
+      text: h('div', null,
+        txt(c.patient) ? h('p', { class: 'ds-hero-p lr-case-who' }, txt(c.patient)) : null,
+        tags.length ? h('ul', { class: 'lr-tags lr-tags-hero', 'aria-label': 'Topics' }, tags.map(function (t) { return h('li', null, t); })) : null,
+        rec ? h('p', { class: 'lr-prior' }, 'Last done ' + (rec.at ? U.fmtDate(rec.at) : '') + (rec.of ? ': ' + rec.score + ' of ' + rec.of + ' correct' : '')) : null),
+      actions: [ui.btn({ label: 'All cases', kind: 'ghost', go: 'cases', icon: '←' })],
+      aside: tiles([{ n: N, l: N === 1 ? 'stage' : 'stages' }, { n: nq, l: nq === 1 ? 'question' : 'questions' },
+        rec && rec.of ? { n: rec.score + '/' + rec.of, l: 'your last score' } : { n: '–', l: rec ? 'done, no questions' : 'not done yet' }])
     }));
-    var rec = caseRec(c.id);
-    if (tags.length || rec) el.appendChild(h('div', { class: 'lr-case-info' },
-      tags.length ? h('ul', { class: 'chip-list', 'aria-label': 'Topics' }, tags.map(function (t) { return h('li', { class: 'chip' }, t); })) : null,
-      rec ? h('p', { class: 'lr-prior' }, 'Last done ' + (rec.at ? U.fmtDate(rec.at) : '') + (rec.of ? ': ' + rec.score + ' of ' + rec.of + ' correct' : '')) : null));
 
     var s = resume(key);
     function fresh() { s = { shown: 0, picks: {}, checked: {}, done: false, result: null }; setAttempt(key, s); }
     if (!s) fresh();
-    var body = h('div', { class: 'lr-casewrap' });
-    el.appendChild(body);
+    var stepper = null;
 
-    function advance() {
-      if (s.shown < stages.length) { s.shown++; draw('lr-st-' + (s.shown - 1)); }
-      else { finish(); draw('lr-pf-h'); }
-    }
+    /* Item 0 is the referral, 1..N the stages, N + 1 the expert answer. */
+    function unlocked(i) { return i === 0 || (i <= N ? i <= s.shown : s.done); }
+    function answered(i) { if (i < 1 || i > N) return true; var st = stages[i - 1]; return !validQ(st.q) || !!s.checked[i - 1]; }
     function finish() {
       if (s.done) return;
       var score = 0, of = 0;
-      stages.forEach(function (st, i) { if (validQ(st.q)) { of++; if (s.picks[i] === st.q.a) score++; } });
+      stages.forEach(function (st, k) { if (validQ(st.q)) { of++; if (s.picks[k] === st.q.a) score++; } });
       AA.progress.set('cases.' + c.id, { score: score, of: of, at: new Date().toISOString() });
       s.result = { score: score, of: of };
       s.done = true;
     }
-    function contLabel(i) { return i >= stages.length - 1 ? 'Show the expert answer' : 'Continue'; }
-
-    function stageEl(i) {
-      var st = stages[i], current = !s.done && i === s.shown - 1;
-      var li = h('li', { class: 'lr-stage' + (current ? ' is-current' : '') },
-        h('div', { class: 'card lr-stage-card' },
-          h('h2', { class: 'lr-stage-h', id: 'lr-st-' + i, tabindex: '-1' },
-            h('span', { class: 'lr-stage-k' }, 'Stage ' + (i + 1) + ' of ' + stages.length), h('span', { class: 'sr-only' }, ': '), txt(st.title) || 'What happens next'),
-          typeof st.html === 'string' && st.html ? prose(st.html) : null));
-      var card = li.firstChild;
-      if (validQ(st.q)) {
-        card.appendChild(ask(st.q, {
-          order: identity(st.q), pick: s.picks[i], checked: !!s.checked[i], tag: 'h3',
-          onPick: function (v) { s.picks[i] = v; },
-          onCheck: function () { s.checked[i] = true; },
-          nextLabel: contLabel(i), onNext: current ? advance : null
-        }));
-      } else if (current) {
-        card.appendChild(h('div', { class: 'lr-qactions' }, ui.btn({ label: contLabel(i), kind: 'primary', onClick: advance })));
+    /* Pips open only what you have reached; Next opens the next part once the question is answered. */
+    var gateNote = h('p', { class: 'lr-gate', 'aria-live': 'polite' });
+    function paintGate(i) {
+      if (!stepper) return;
+      U.$$('.ds-stepper-pip', stepper).forEach(function (b, k) { b.disabled = !unlocked(k); });
+      var nb = nextBtn(stepper);
+      var ok = i <= N && (unlocked(i + 1) || answered(i));
+      if (nb) {
+        nb.disabled = !ok;
+        nb.textContent = i === 0 ? (s.shown ? 'Next: stage 1 →' : 'Start the case →') : i < N ? 'Next: stage ' + (i + 1) + ' →' : i === N ? 'Show the expert answer →' : 'Case complete';
       }
-      return li;
+      gateNote.textContent = i >= 1 && i <= N && !ok ? 'Answer the question to open the next stage.' : '';
     }
 
-    function final() {
+    function referralBody() {
+      return h('div', { class: 'lr-referral' },
+        h('p', { class: 'lr-ref-text' }, txt(c.referral) || 'No referral text is recorded for this case.'),
+        h('p', { class: 'ds-note' }, ui.icon('info'), h('span', null, 'Read the referral, then open stage 1. Each stage has a question: answer it before you move on.')));
+    }
+    function stageBody(k) {
+      var st = stages[k];
+      if (k + 1 > s.shown) s.shown = k + 1;   // reaching a stage reveals it (the gate only lets you here when allowed)
+      return h('div', { class: 'lr-stage' },
+        typeof st.html === 'string' && st.html ? prose(st.html) : null,
+        validQ(st.q) ? ask(st.q, {
+          order: identity(st.q), pick: s.picks[k], checked: !!s.checked[k], tag: 'h3',
+          onPick: function (v) { s.picks[k] = v; },
+          onCheck: function () {
+            s.checked[k] = true;
+            if (stepper) { stepper.refresh(); paintGate(stepper.index()); var nb = nextBtn(stepper); if (nb && !nb.disabled) setTimeout(function () { nb.focus(); }, 0); }
+          }
+        }) : null);
+    }
+    function answerBody() {
+      finish();
       var r = s.result;
       return h('div', { class: 'lr-final' },
         h('div', { class: 'callout ' + (r.of && pct(r.score, r.of) >= PASS ? 'callout-ok' : 'callout-info') + ' lr-case-score', role: 'status' },
@@ -871,31 +947,30 @@
         h('div', { class: 'row lr-final-actions' },
           next ? ui.btn({ label: 'Next case: ' + (txt(next.title) || 'Untitled case'), kind: 'primary', go: 'case-' + next.id }) : ui.btn({ label: 'Back to training', kind: 'primary', go: 'learn' }),
           ui.btn({ label: 'Try again', kind: 'ghost', onClick: function () {
-            setAttempt(key, null); fresh(); draw('lr-ref-h');
-            try { window.scrollTo(0, 0); } catch (e) { /* ignore */ }
+            setAttempt(key, null); fresh(); stepper.show(0); paintGate(0); jumpTo(stepper);
           } }),
           ui.btn({ label: 'All cases', kind: 'quiet', go: 'cases' })));
     }
 
-    function draw(focusId) {
-      U.clear(body);
-      body.appendChild(h('section', { class: 'card lr-referral', 'aria-labelledby': 'lr-ref-h' },
-        h('h2', { id: 'lr-ref-h', tabindex: '-1' }, 'Referral'),
-        h('p', null, txt(c.referral) || 'No referral text is recorded for this case.'),
-        s.shown === 0 && !s.done ? h('div', { class: 'lr-qactions' }, ui.btn({ label: stages.length ? 'Start the case' : 'Show the expert answer', kind: 'primary', onClick: advance })) : null));
-      if (s.shown) {
-        var list = h('ol', { class: 'lr-stages' });
-        for (var i = 0; i < s.shown && i < stages.length; i++) list.appendChild(stageEl(i));
-        body.appendChild(list);
-      }
-      if (s.done) body.appendChild(final());
-      if (focusId) { var t = document.getElementById(focusId); if (t) reveal(t, t); }
-    }
-    draw(null);
+    var items = [{ title: 'Referral', label: 'Referral', render: referralBody }]
+      .concat(stages.map(function (st, k) {
+        return { title: txt(st.title) || 'What happens next', label: String(k + 1), done: function () { return answered(k + 1) && k + 1 <= s.shown; }, render: function () { return stageBody(k); } };
+      }))
+      .concat([{ title: 'Expert answer', label: 'Answer', done: function () { return s.done; }, render: answerBody }]);
+    stepper = ui.stepper(items, {
+      start: s.done ? N + 1 : s.shown, label: 'Case: referral, stages and expert answer',
+      eyebrow: function (i) { return i === 0 ? 'The referral' : i <= N ? 'Stage ' + i + ' of ' + N : 'The answer'; },
+      onChange: function (i) { paintGate(i); }
+    });
+    stepper.classList.add('lr-stepper', 'lr-case-steps');
+    var foot = stepper.querySelector('.ds-stepper-foot');
+    if (foot) foot.parentNode.insertBefore(gateNote, foot);
+    paintGate(stepper.index());
+    el.appendChild(h('div', { class: 'lr-casewrap' }, stepper));
   }
 
   /* ======================================================================
-     Route: glossary
+     Route: glossary (search, letters as chips; one letter at a time, or all)
      ====================================================================== */
 
   function renderGlossary(el) {
@@ -909,7 +984,7 @@
     }));
     if (!terms.length) { el.appendChild(ui.empty('No glossary yet', 'The glossary is not available in this build.')); return; }
 
-    /* Build every entry once; the filter only toggles "hidden". */
+    /* Build every entry once; the filters only toggle "hidden". */
     var groups = [], byLetter = {};
     terms.forEach(function (t) {
       var ch = t.term.charAt(0).toUpperCase();
@@ -921,43 +996,67 @@
     });
     groups.sort(function (a, b) { return a.letter === '#' ? -1 : b.letter === '#' ? 1 : a.letter.localeCompare(b.letter); });
     groups.forEach(function (g) {
-      g.node = h('section', { class: 'lr-gsec', id: 'lr-g-' + (g.letter === '#' ? 'num' : g.letter), 'aria-labelledby': 'lr-gh-' + (g.letter === '#' ? 'num' : g.letter) },
-        h('h2', { id: 'lr-gh-' + (g.letter === '#' ? 'num' : g.letter), tabindex: '-1' }, g.letter === '#' ? '0-9' : g.letter),
-        h('dl', { class: 'lr-gdl' }, g.items.map(function (x) { return x.row; })));
+      var gid = g.letter === '#' ? 'num' : g.letter;
+      g.node = h('section', { class: 'lr-gsec', id: 'lr-g-' + gid, 'aria-labelledby': 'lr-gh-' + gid },
+        h('h2', { id: 'lr-gh-' + gid, tabindex: '-1' }, g.letter === '#' ? '0-9' : g.letter),
+        h('dl', { class: 'card lr-gdl' }, g.items.map(function (x) { return x.row; })));
     });
 
+    var gk = akey('glossary-letter');
+    var cur = memo[gk] === '' || byLetter[memo[gk]] ? memo[gk] : groups[0].letter;
+    var q = '';
     var countEl = h('p', { class: 'lr-gcount', 'aria-live': 'polite' });
     var none = ui.empty('No matching terms', 'Try a shorter word, or clear the search.');
     none.hidden = true;
-    var letters = {};
-    var alpha = ['#'].concat('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')).filter(function (L) { return L !== '#' || byLetter['#']; });
-    var nav = h('nav', { 'aria-label': 'Jump to a letter' }, h('ul', { class: 'lr-letters' }, alpha.map(function (L) {
-      var b = h('button', { type: 'button', class: 'lr-letter', 'aria-label': L === '#' ? 'Numbers and symbols' : 'Letter ' + L, onclick: function () { if (byLetter[L]) jumpTo(byLetter[L].node); } }, L === '#' ? '0-9' : L);
-      letters[L] = b;
+    var nextBtnG = h('button', { type: 'button', class: 'btn btn-ghost lr-gnext' });
+    var chipBtns = {};
+    function chip(L, label, n, aria) {
+      var b = h('button', { type: 'button', class: 'ds-chip lr-letter', 'aria-pressed': 'false', 'aria-label': aria, onclick: function () { pick(L); } },
+        label, n !== null ? h('span', { class: 'ds-chip-n', 'aria-hidden': 'true' }, String(n)) : null);
+      chipBtns[L] = b;
       return h('li', null, b);
+    }
+    var chips = h('ul', { class: 'ds-chips lr-letters' }, [chip('', 'All', terms.length, 'All terms, ' + terms.length)].concat(groups.map(function (g) {
+      return chip(g.letter, g.letter === '#' ? '0-9' : g.letter, g.items.length, (g.letter === '#' ? 'Numbers and symbols' : 'Letter ' + g.letter) + ', ' + U.plural(g.items.length, 'term'));
     })));
-
-    function apply(q) {
-      var words = String(q || '').toLowerCase().split(/\s+/).filter(Boolean), shown = 0;
+    function pick(L) {
+      cur = L; memo[gk] = L;
+      if (search.value) { search.value = ''; q = ''; }
+      apply();
+    }
+    function apply() {
+      var words = q.toLowerCase().split(/\s+/).filter(Boolean), shown = 0;
       groups.forEach(function (g) {
         var n = 0;
+        var letterOn = !!words.length || !cur || g.letter === cur;
         g.items.forEach(function (x) {
-          var ok = words.every(function (w) { return x.hay.indexOf(w) > -1; });
+          var ok = letterOn && words.every(function (w) { return x.hay.indexOf(w) > -1; });
           x.row.hidden = !ok;
           if (ok) n++;
         });
         g.node.hidden = !n;
         shown += n;
       });
-      alpha.forEach(function (L) { letters[L].disabled = !(byLetter[L] && !byLetter[L].node.hidden); });
+      Object.keys(chipBtns).forEach(function (k) { var on = !words.length && k === cur; chipBtns[k].setAttribute('aria-pressed', on ? 'true' : 'false'); chipBtns[k].classList.toggle('is-on', on); });
       none.hidden = shown > 0;
-      countEl.textContent = words.length ? shown + ' of ' + U.plural(terms.length, 'term') + ' match "' + q + '"' : U.plural(terms.length, 'term');
+      var g = byLetter[cur];
+      countEl.textContent = words.length ? shown + ' of ' + U.plural(terms.length, 'term') + ' match "' + q + '"'
+        : cur && g ? U.plural(g.items.length, 'term') + ' under ' + (cur === '#' ? '0-9' : cur) + ' · ' + terms.length + ' in total' : U.plural(terms.length, 'term');
+      /* "Next letter" when browsing one letter at a time. */
+      var gi = groups.indexOf(g), nx = !words.length && cur && gi > -1 ? groups[gi + 1] : null;
+      nextBtnG.hidden = !nx;
+      if (nx) {
+        nextBtnG.textContent = 'Next: ' + (nx.letter === '#' ? '0-9' : nx.letter) + ' · ' + U.plural(nx.items.length, 'term') + ' →';
+        nextBtnG.onclick = function () { pick(nx.letter); jumpTo(nx.node); };
+      }
     }
-    var search = ui.search('Search terms and definitions', apply);
+    var search = ui.search('Search terms and definitions', function (v) { q = v; apply(); });
     search.removeAttribute('aria-label');   // the visible field label names it
-    el.appendChild(h('div', { class: 'lr-gtools' }, ui.field('Find a term', search), nav, countEl));
-    el.appendChild(h('div', { class: 'lr-glossary' }, groups.map(function (g) { return g.node; }), none));
-    apply('');
+    var tools = h('section', { class: 'card lr-gtools', 'aria-label': 'Find a term' },
+      h('div', { class: 'lr-gq' }, ui.field('Find a term', search)), chips, countEl);
+    el.appendChild(tools);
+    el.appendChild(h('div', { class: 'lr-glossary' }, groups.map(function (g) { return g.node; }), none, h('div', { class: 'lr-gfoot' }, nextBtnG)));
+    apply();
   }
 
   /* ---------- Routes ---------- */
