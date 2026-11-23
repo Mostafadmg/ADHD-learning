@@ -1,0 +1,33 @@
+STEP 00 start (HTTP 200)
+URL: https://start.struthealth.com/flow/6aa3d578f415d1603a6e0c85
+TITLE: Minoxidil Prod
+
+--- VISIBLE TEXT ---
+4%
+
+Ready to start your Strut Hair Loss journey
+
+Medical questionnaire
+
+This secure form collects important health information to help our licensed medical providers evaluate your eligibility and make informed decisions about your care.
+
+HOW IT WORKS
+1
+
+Answer the questionnaire honestly and as completely as possible.
+
+2
+
+A licensed medical provider will review your responses within 1 business day.
+
+3
+
+If any additional information is needed, our team will reach out via email or SMS.
+
+Continue
+
+--- CONTROLS ---
+  button (1): Continue
+
+--- LINKS ---
+

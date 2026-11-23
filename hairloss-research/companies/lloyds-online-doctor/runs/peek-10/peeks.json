@@ -1,0 +1,63 @@
+[
+ {
+  "from": "103270",
+  "option": "Liver condition",
+  "trail": [],
+  "result": {
+   "sig": "102639",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "102639",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Medical history",
+     "text": "Do any of these apply to your liver condition?",
+     "required": false,
+     "explanationAvailable": false,
+     "options": [
+      "I have alcohol related liver disease, cirrhosis or liver cancer",
+      "I see a hospital specialist for my condition",
+      "I have been advised to avoid certain medications",
+      "I am prescribed treatment or have regular monitoring ( not Statins or routine yearly blood tests for fatty liver disease)"
+     ],
+     "optionIds": [
+      "102639$101741",
+      "102639$101743",
+      "102639$101742",
+      "102639$101744"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-01-103270",
+  "text": "Exit consultation\nMedical history\nDo any of these apply to your liver condition?\nI have alcohol related liver disease, cirrhosis or liver cancer\nI see a hospital specialist for my condition\nI have been advised to avoid certain medications\nI am prescribed treatment or have regular monitoring (not Statins or routine yearly blood tests for fatty liver disease)\nNone of the above\nNext\nBack"
+ },
+ {
+  "from": "102639",
+  "option": "I see a hospital specialist for my condition",
+  "trail": [
+   "103270=Liver condition"
+  ],
+  "result": {
+   "sig": "SUMMARY",
+   "stepState": "SUMMARY",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": []
+  },
+  "onBaseline": false,
+  "shot": "peek-02-102639",
+  "text": "Exit consultation\nMedical history\nDo any of these apply to your liver condition?\nI have alcohol related liver disease, cirrhosis or liver cancer\nI see a hospital specialist for my condition\nI have been advised to avoid certain medications\nI am prescribed treatment or have regular monitoring (not Statins or routine yearly blood tests for fatty liver disease)\nNone of the above\nBack",
+  "endedEarly": true
+ }
+]

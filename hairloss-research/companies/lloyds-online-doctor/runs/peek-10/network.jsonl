@@ -36,3 +36,4 @@
 {"url":"https://core.onlinedoctor.lloydspharmacy.com/api/questionnaire/traversals/9904891/steps/current","method":"GET","status":200,"size":1513,"file":"steps/api-036.json"}
 {"url":"https://core.onlinedoctor.lloydspharmacy.com/api/questionnaire/traversals/9904891/steps/current","method":"POST","status":201,"size":198,"post":"{\"answers\":[{\"answerId\":\"102639$101741\",\"selected\":false},{\"answerId\":\"102639$101743\",\"selected\":true},{\"answerId\":\"102639$101742\",\"selected\":false},{\"answerId\":\"102639$101744\",\"selected\":false}]}","file":"steps/api-037.json"}
 {"url":"https://core.onlinedoctor.lloydspharmacy.com/api/questionnaire/traversals/9904891/steps/current","method":"GET","status":200,"size":205,"file":"steps/api-038.json"}
+{"url":"https://core.onlinedoctor.lloydspharmacy.com/api/questionnaire/traversals/9904891/summary","method":"GET","status":200,"size":2632,"file":"steps/api-039.json"}

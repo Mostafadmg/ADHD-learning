@@ -20,3 +20,11 @@
 16 [smt] (question) In 6 months' time, what do you want to see?  ->  ["Fuller, denser-looking hair that I feel confident about"]
 17 [pt] (question) Do you live with pets?  ->  ["Yes"]
 18 [tt] (question) Which treatment would suit you best?  ->  ["The Capsules"]
+19 [dt] (question)   ->  []
+20 [pg] (question) Are you pregnant, breastfeeding or likely to conceive?  ->  ["No","Yes, I've read and understood the information and would like to carry on."]
+21 [mp] (question) Do any of the following apply to you?  ->  ["None of the above"]
+22 [mdf] (question) Are you taking any of the following prescription medications?  ->  ["No, I don't take any medications"]
+23 [mcf] (question) Have you been diagnosed with any of the following conditions?  ->  ["None of the above"]
+24 [al] (question) Do you have any known allergies to the following?  ->  ["No known allergies"]
+   (variant: input type single_select_button)
+25 [rhf] (question) How have you felt about your hair in the last week?  ->  ["5"]
