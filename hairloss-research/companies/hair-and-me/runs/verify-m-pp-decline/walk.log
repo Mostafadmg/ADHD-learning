@@ -10,3 +10,23 @@
 07 [ls] (question) Which of these statements apply to you?  ->  ["None of these apply to me"]
 08 [htp] (question) Have you used any of the following products to help you achieve your hair goals in the last three months?  ->  ["None of the above"]
 09 [htam] (question) Where have you noticed hair thinning or loss?  ->  ["Across the hairline"]
+10 [htc] (question) When did you notice changes to your hair?  ->  ["Over a year ago"]
+11 [ar] (question)   ->  []
+   (variant: question 9346)
+12 [st] (question) How would you describe your skin tone?  ->  ["Fair. It often burns, but tans a little"]
+13 [sc] (question) How would you describe the condition of your scalp?  ->  ["Normal"]
+14 [scc] (question) Are you experiencing any of the following on your scalp?  ->  ["None of the above"]
+15 [smt] (question) In 6 months' time, what do you want to see?  ->  ["Fuller, denser-looking hair that I feel confident about"]
+16 [pt] (question) Do you live with pets?  ->  ["No"]
+17 [tt] (question) Which treatment would suit you best?  ->  ["The Capsules"]
+18 [pp] (question) Understanding Dutasteride and Finasteride  ->  ["I do not wish to be considered for dutasteride or finasteride"]
+19 [mdm] (question) Are you taking any of the following prescription medications?  ->  ["No, I don't take any medications"]
+20 [mcm] (question) Have you been diagnosed with any of the following conditions?  ->  ["None of the above"]
+21 [al] (question) Do you have any known allergies to the following?  ->  ["No known allergies"]
+   (variant: input type single_select_button)
+22 [rhf] (question) How have you felt about your hair in the last week?  ->  ["5"]
+23 [yna] (question) You’re not alone  ->  []
+   (variant: input type single_select_button)
+24 [rha] (question) How would you rate the appearance of your hair in the last week?  ->  ["5"]
+25 [di] (question) What most influenced your decision to sign-up today?  ->  ["I'm looking for a long-term effective haircare treatment"]
+26 [rj] (question)   ->  []

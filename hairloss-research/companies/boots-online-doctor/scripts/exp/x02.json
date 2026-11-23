@@ -1,0 +1,45 @@
+{
+ "start": "https://onlinedoctor-clinic.boots.com/Hair-Loss",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2000
+  },
+  {
+   "do": "click",
+   "selector": "input[name=zip]"
+  },
+  {
+   "do": "type",
+   "value": "N1 0QH"
+  },
+  {
+   "do": "wait",
+   "ms": 3000
+  },
+  {
+   "do": "click",
+   "selector": "#next-step"
+  },
+  {
+   "do": "wait",
+   "ms": 1500
+  },
+  {
+   "do": "click",
+   "text": "Female"
+  },
+  {
+   "do": "click",
+   "text": "NEXT"
+  },
+  {
+   "do": "wait",
+   "ms": 2000
+  },
+  {
+   "do": "wait",
+   "ms": 5000
+  }
+ ]
+}

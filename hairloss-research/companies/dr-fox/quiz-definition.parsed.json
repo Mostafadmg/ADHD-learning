@@ -1,0 +1,513 @@
+[
+ {
+  "id": "739",
+  "attrs": {
+   "data-id": "739",
+   "data-required": "1"
+  },
+  "title": "Are you requesting personal treatment for male 'pattern' hair loss and have you read the medical information?",
+  "text": "Are you requesting personal treatment for male 'pattern' hair loss and have you read the medical information?\nRead the hair loss medical information [#medical_information_tab] section.",
+  "options": [
+   {
+    "label": "Yes",
+    "value": "yes",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": ""
+   },
+   {
+    "label": "No",
+    "value": "no",
+    "type": "radio",
+    "correct": false,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": "It is important to read the hair loss medical information section before continuing. You can then change your answer and continue."
+   }
+  ],
+  "textarea": false
+ },
+ {
+  "id": "740",
+  "attrs": {
+   "data-id": "740",
+   "data-required": "1"
+  },
+  "title": "Do you have hair loss in patches or have a scalp skin problem (redness, itching, soreness, or pustules)?",
+  "text": "Do you have hair loss in patches or have a scalp skin problem (redness, itching, soreness, or pustules)?\nThese symptoms may indicate an underlying skin condition such as psoriasis or an infection which may require investigation.",
+  "options": [
+   {
+    "label": "Yes",
+    "value": "yes",
+    "type": "radio",
+    "correct": false,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": "Please consult with your GP about these symptoms. We are unable to provide treatment."
+   },
+   {
+    "label": "No",
+    "value": "no",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": ""
+   }
+  ],
+  "textarea": false
+ },
+ {
+  "id": "741",
+  "attrs": {
+   "data-id": "741",
+   "data-required": "1"
+  },
+  "title": "Have you experienced rapid unexplained hair loss, hair loss affecting the entire body (total alopecia), or hair loss caused by an illness or medication?",
+  "text": "Have you experienced rapid unexplained hair loss, hair loss affecting the entire body (total alopecia), or hair loss caused by an illness or medication?\nIf you have experienced hair falling out in clumps, or rapid hair loss over days or weeks, or total alopecia, or hair loss due to an illness, you should consult your GP as investigation may be required.",
+  "options": [
+   {
+    "label": "Yes",
+    "value": "yes",
+    "type": "radio",
+    "correct": false,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": "Please consult with your GP. We are unable to provide hair loss treatment as it may not work."
+   },
+   {
+    "label": "No",
+    "value": "no",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": ""
+   }
+  ],
+  "textarea": false
+ },
+ {
+  "id": "742",
+  "attrs": {
+   "data-id": "742",
+   "data-required": "1"
+  },
+  "title": "Do any of the following apply to you?",
+  "text": "Do any of the following apply to you?\n- Taking a medication similar to finasteride (e.g. dutasteride)\n- Taking finasteride 5mg for another condition, e.g. enlarged prostate gland\n- Known allergy to finasteride",
+  "options": [
+   {
+    "label": "Yes",
+    "value": "yes",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": "You should can not take Propecia/finasteride 1mg tablets or use Dr Fox Hair Growth Spray. You may be able to use Regaine/Sons minoxidil 5%. Please continue."
+   },
+   {
+    "label": "No",
+    "value": "no",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": ""
+   }
+  ],
+  "textarea": false
+ },
+ {
+  "id": "743",
+  "attrs": {
+   "data-id": "743",
+   "data-required": "1"
+  },
+  "title": "Manufacturers recommend caution before taking Propecia/finasteride tablets in some circumstances - do any of the following apply to you?",
+  "text": "Manufacturers recommend caution before taking Propecia/finasteride tablets in some circumstances - do any of the following apply to you?\n- Previously experienced sexual problems when taking finasteride or a similar medication e.g. dutasteride\n- Current depressive illness, or a history of severe depression or suicidal thoughts\n- Suspected, current, or previous diagnosis of prostate cancer. Current or previous diagnosis of male breast enlargement (gynaecomastia)\n- Liver disease",
+  "options": [
+   {
+    "label": "Yes",
+    "value": "yes",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": "You may be able to take Propecia/finasteride 1mg, but we are unable to provide this or Dr Fox Hair Growth Spray. Please contact a specialist hair loss clinic if you wish to use finasteride as further monitoring is required. You may be able to use Regaine/Sons minoxidil 5%. Please continue."
+   },
+   {
+    "label": "No",
+    "value": "no",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": ""
+   }
+  ],
+  "textarea": false
+ },
+ {
+  "id": "744",
+  "attrs": {
+   "data-id": "744",
+   "data-required": "1"
+  },
+  "title": "Are you aware that products containing finasteride are for men only?",
+  "text": "Are you aware that products containing finasteride are for men only?\nDr Fox cannot supply hair loss treatments to anyone who was not assigned male at birth. Finasteride may be harmful in pregnancy. Females (especially pregnant partners) should avoid touching crushed or broken tablets, or sprays containing finasteride.",
+  "options": [
+   {
+    "label": "Yes",
+    "value": "yes",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": ""
+   },
+   {
+    "label": "No",
+    "value": "no",
+    "type": "radio",
+    "correct": false,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": "If pregnant, finasteride may cause harm to an unborn baby and women should avoid touching crushed or broken tablets or sprays containing finasteride. If you were assigned female at birth please see the frequently asked question on female pattern hair loss [/hair-loss-treatments/faqs.html#question-38] for advice regarding hair growth products. You can change your answer and continue."
+   }
+  ],
+  "textarea": false
+ },
+ {
+  "id": "745",
+  "attrs": {
+   "data-id": "745",
+   "data-required": "1"
+  },
+  "title": "Do you wish to order Dr Fox Dual Action Hair Growth Spray?",
+  "text": "Do you wish to order Dr Fox Dual Action Hair Growth Spray?\nThe Dual Action Hair Growth Spray contains both finasteride and minoxidil so should not be used at the same time as taking oral finasteride/Propecia tablets or Regaine/SONs minoxidil spray.\nPlease note that the prescribing instructions have been updated to 6 sprays (1ml) once per day, 1 bottle will now last 2 months.",
+  "options": [
+   {
+    "label": "Yes",
+    "value": "yes",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": "Please note we are unable to also prescribe finasteride/Propecia tablets if you order the Dr Fox Hair Growth spray as they are not to be used together."
+   },
+   {
+    "label": "No",
+    "value": "no",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": "Please note we are unable to prescribe the Dr Fox Hair Growth spray if you order finasteride/Propecia tablets as they are not to be used together."
+   }
+  ],
+  "textarea": false
+ },
+ {
+  "id": "746",
+  "attrs": {
+   "data-id": "746",
+   "data-required": "1"
+  },
+  "title": "Do you currently have symptoms from low blood pressure (episodes of feeling dizzy, faint or blurred vision)?",
+  "text": "Do you currently have symptoms from low blood pressure (episodes of feeling dizzy, faint or blurred vision)?",
+  "options": [
+   {
+    "label": "Yes",
+    "value": "yes",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": "Minoxidil in Dr Fox Hair Growth Spray, Regaine, or Sons minoxidil 5% can lower blood pressure further, so Dr Fox is unable to prescribe these for you. Please continue."
+   },
+   {
+    "label": "No",
+    "value": "no",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": ""
+   }
+  ],
+  "textarea": false
+ },
+ {
+  "id": "747",
+  "attrs": {
+   "data-id": "747",
+   "data-required": "1"
+  },
+  "title": "Do you have high blood pressure, heart disease, abnormal heart rate or rhythm, angina / chest pains, or circulatory disorders?",
+  "text": "Do you have high blood pressure, heart disease, abnormal heart rate or rhythm, angina / chest pains, or circulatory disorders?",
+  "options": [
+   {
+    "label": "Yes",
+    "value": "yes",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": "Please consult your GP before using Dr Fox Dual Action Hair Growth Spray, Regaine, or Sons minoxidil 5%."
+   },
+   {
+    "label": "No",
+    "value": "no",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": ""
+   }
+  ],
+  "textarea": false
+ },
+ {
+  "id": "748",
+  "attrs": {
+   "data-id": "748",
+   "data-required": "1"
+  },
+  "title": "Do you agree to following treatments being supplied 'off label' (unlicensed)?",
+  "text": "Do you agree to following treatments being supplied 'off label' (unlicensed)?\n- Dr Fox Dual Action Hair Growth Spray\n- Regaine foam for those aged over 50 years\n- Regaine/SONs minoxidil 5% solution for those aged over 66 years\nIf ordering Propecia/finasteride 1mg tablets, or you are under the age limits stated for the Regaine/SONs products, answer 'YES' and continue.",
+  "options": [
+   {
+    "label": "Yes",
+    "value": "yes",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": ""
+   },
+   {
+    "label": "No",
+    "value": "no",
+    "type": "radio",
+    "correct": false,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": "If a medicine is used off-label (unlicensed [https://www.doctorfox.co.uk/news/off-label-medication/]) this means the manufacturer is not liable in case of adverse events, and the doctor takes responsibility for prescribing. You can change your answer and continue."
+   }
+  ],
+  "textarea": false
+ },
+ {
+  "id": "749",
+  "attrs": {
+   "data-id": "749",
+   "data-required": "1"
+  },
+  "title": "Are you aware there have been reports of depression and occasionally suicidal thoughts when taking Propecia/finasteride?",
+  "text": "Are you aware there have been reports of depression and occasionally suicidal thoughts when taking Propecia/finasteride?\nDeveloping depression and suicidal thoughts may be more likely if you have previously experienced depression. If these occur, stop treatment immediately and consult your GP, OR if there is a concern for safety attend the emergency department. You can assess your mood here. [https://blocksurvey.io/calculator/phq-2-calculator]",
+  "options": [
+   {
+    "label": "Yes",
+    "value": "yes",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": ""
+   },
+   {
+    "label": "No",
+    "value": "no",
+    "type": "radio",
+    "correct": false,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": "If you have concerns about possible side effects on your mental health when taking finasteride then please consider alternative treatments. You can change your answer and continue."
+   }
+  ],
+  "textarea": false
+ },
+ {
+  "id": "750",
+  "attrs": {
+   "data-id": "750",
+   "data-required": "1"
+  },
+  "title": "Are you aware that you should consult your GP about any changes in breast tissue such as lumps, pain, gynaecomastia (male breast growth), or nipple discharge?",
+  "text": "Are you aware that you should consult your GP about any changes in breast tissue such as lumps, pain, gynaecomastia (male breast growth), or nipple discharge?",
+  "options": [
+   {
+    "label": "Yes",
+    "value": "yes",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": ""
+   },
+   {
+    "label": "No",
+    "value": "no",
+    "type": "radio",
+    "correct": false,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": "Most breast changes are benign. Rarely male breast cancer has been reported after using Propecia/finasteride 1mg tablets. Any changes in breast tissue or nipple discharge should be reported to your GP. You can change your answer to continue."
+   }
+  ],
+  "textarea": false
+ },
+ {
+  "id": "751",
+  "attrs": {
+   "data-id": "751",
+   "data-required": "1"
+  },
+  "title": "Are you aware that Propecia/finasteride can reduce sex drive and/or cause erection difficulties?",
+  "text": "Are you aware that Propecia/finasteride can reduce sex drive and/or cause erection difficulties?\nApproximately 1% of men stop taking Propecia/finasteride due to these symptoms. On stopping treatment symptoms usually resolve but have been reported to continue in some cases. Read the patient leaflet [https://www.medicines.org.uk/emc/files/pil.2194.pdf] for further details.",
+  "options": [
+   {
+    "label": "Yes",
+    "value": "yes",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": ""
+   },
+   {
+    "label": "No",
+    "value": "no",
+    "type": "radio",
+    "correct": false,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": "Propecia/finasteride can cause reduced sex drive and/or erection difficulties, affecting between 1 in 100 to 1 in 1000 men. You can change your answer to 'Yes' and continue."
+   }
+  ],
+  "textarea": false
+ },
+ {
+  "id": "752",
+  "attrs": {
+   "data-id": "752",
+   "data-required": "1"
+  },
+  "title": "Are you aware that if hair loss continues beyond 12 months, with no increase in thickness or hair coverage, treatment should be stopped?",
+  "text": "Are you aware that if hair loss continues beyond 12 months, with no increase in thickness or hair coverage, treatment should be stopped?",
+  "options": [
+   {
+    "label": "Yes",
+    "value": "yes",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": ""
+   },
+   {
+    "label": "No",
+    "value": "no",
+    "type": "radio",
+    "correct": false,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": "If hair loss has continued, or if there has been no improvement in thickness or coverage after 12 months, treatment should be stopped. You can change your answer and continue."
+   }
+  ],
+  "textarea": false
+ },
+ {
+  "id": "805",
+  "attrs": {
+   "data-id": "805",
+   "data-required": "1"
+  },
+  "title": "Are you aware finasteride taken orally or used topically can affect PSA blood test levels?",
+  "text": "Are you aware finasteride taken orally or used topically can affect PSA blood test levels?\nPlease inform your doctor that you are taking or using finasteride if you are having a PSA test.",
+  "options": [
+   {
+    "label": "Yes",
+    "value": "yes",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": ""
+   },
+   {
+    "label": "No",
+    "value": "no",
+    "type": "radio",
+    "correct": false,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": "Finasteride can affect PSA blood test results. It is important that you inform your doctor that you are using finasteride when having a PSA test. You can change your answer to continue."
+   }
+  ],
+  "textarea": false
+ },
+ {
+  "id": "753",
+  "attrs": {
+   "data-id": "753",
+   "data-type": "freetext",
+   "data-required": "1"
+  },
+  "title": "Do you have any further questions or personal medical information you would like to add?",
+  "text": "Do you have any further questions or personal medical information you would like to add?\nIs there anything you do not understand or do you need further help?",
+  "options": [
+   {
+    "label": "Yes",
+    "value": "yes",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": ""
+   },
+   {
+    "label": "No",
+    "value": "no",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": "Please continue. You can post messages for the doctor from your My Account area at any time."
+   }
+  ],
+  "textarea": true
+ },
+ {
+  "id": "754",
+  "attrs": {
+   "data-id": "754",
+   "data-required": "1"
+  },
+  "title": "Do the following apply to you?",
+  "text": "Do the following apply to you?\n- I will inform my GP/regular doctor of treatment received from Dr Fox We can notify your GP for you if you provide GP surgery details when registering an account, or in your My details [https://www.doctorfox.co.uk/account] section of an existing Dr Fox account\n- The medication is for my own use and I will not share with anyone else\n- I will read the patient information leaflet supplied with the medicine pack\n- I am biologically male, over 18, and I agree to identity verification checks\n- I have completed this questionnaire myself and fully understand all the information\n- My responses are honest and accurate, and I understand that this is necessary for a safe medical assessment\n- I agree to the terms & conditions [/popup/tcs.html], privacy policy [/popup/privacy.html], data sharing policy [/popup/data-sharing-policy.html] & consent to cookies [/cookies.html]",
+  "options": [
+   {
+    "label": "Yes",
+    "value": "yes",
+    "type": "radio",
+    "correct": true,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": ""
+   },
+   {
+    "label": "No",
+    "value": "no",
+    "type": "radio",
+    "correct": false,
+    "product_id": null,
+    "multiexclusionrules": "0",
+    "message": "These conditions must apply before we can provide you with treatment."
+   }
+  ],
+  "textarea": false
+ }
+]

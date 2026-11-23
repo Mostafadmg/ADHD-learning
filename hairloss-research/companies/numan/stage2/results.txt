@@ -4,3 +4,9 @@ FLAGS: {"isFinasterideEligible":"true","isMinoxidilEligible":"true","hasAllergyT
 URL: https://www.numan.com/subscribe/hair-loss/7faadd7b-e471-4703-86ad-da9de8e4c507/product-selection
 FEATURED: Extra Strength Spray Extra | Recommended for you | £18.00
 OTHERS: Regaine £51.67 ; Rosemary Oil £14.00
+RC=0
+QUESTIONS(9): what_is_your_age > which_image_best_matches_your_hair_loss > when_did_you_notice > do_you_have_an_allergy_or_intolerance_to_any > tell_us_which_reactions_from_this_medicine > have_any_scalp_issues > are_any_of_the_following_true > what_is_most_important_when_choosing_product > medical_history 
+FLAGS: {"isFinasterideEligible":"true","isMinoxidilEligible":"true","hasAllergyToFinasteride":"false","hasAllergyToMinoxidil":"true","allergies":"[\"minoxidil_allergy\"]","numberOfQuestions":"9"}
+URL: https://www.numan.com/subscribe/hair-loss/62f850ba-57fa-4559-b0c4-ee14aa04c69f/product-selection
+FEATURED: undefined | Recommended for you | £16.80
+OTHERS: Rosemary Oil £14.00

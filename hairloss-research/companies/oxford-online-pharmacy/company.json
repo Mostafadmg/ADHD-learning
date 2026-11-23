@@ -1,891 +1,1006 @@
 {
- "slug": "oxford-online-pharmacy",
- "company": "Oxford Online Pharmacy",
- "market": "UK",
- "website": "https://www.oxfordonlinepharmacy.co.uk/",
- "parent": "Trading name of Frosts (Online) Limited (company no. 11232746, Banbury, Oxfordshire). A sister company, Frosts Online (Holdings) Limited (11233841), is registered at the same address.",
- "audiences": [
-  "men",
-  "women"
- ],
- "model": "Family-owned UK online pharmacy with its own prescribers: the customer picks a product, answers a medical questionnaire, pays, and a doctor or pharmacist prescriber approves or declines. One-off orders, no subscription. (Built from third-party public sources only; the company's own site could not be opened.)",
- "checkedOn": "2026-11-23",
- "stage": "rules",
- "access": {
-  "howTested": [
-   "public-docs"
+  "slug": "oxford-online-pharmacy",
+  "company": "Oxford Online Pharmacy",
+  "market": "UK",
+  "website": "https://www.oxfordonlinepharmacy.co.uk/",
+  "parent": "Trading name of Frosts (Online) Limited (company no. 11232746, Banbury, Oxfordshire). A sister company, Frosts Online (Holdings) Limited (11233841), is registered at the same address.",
+  "audiences": [
+    "men",
+    "women"
   ],
-  "accountWall": "Not seen: the site could not be opened. Customer reviews show that registration exists and that payment is taken before the prescriber decides, but where sign-in is forced relative to the questions is unknown.",
-  "blockers": [
-   "Cloudflare security check ('Performing security verification', HTTP 403) blocked the local browser on the home page (runs/probe-home). Tried once, as instructed, and not fought.",
-   "The WebFetch tool also got HTTP 403 on the home page and on /hair-loss; plain curl got HTTP 403 on /robots.txt and /sitemap.xml.",
-   "Web search was not available: the shared search budget for the whole workflow ran out after one query (which returned nothing from this company's site).",
-   "A Wayback Machine copy of /hair-loss exists (captured 1 Nov 2026) but could not be read: the fetch tool refuses web.archive.org and the session proxy resets the connection. Archive services were not pursued further.",
-   "Regulator pages that might describe the prescribing service were also blocked to the fetch tool today (CQC search HTTP 403, GPhC register HTTP 403).",
-   "Stage 2 (23 Nov 2026): walk.js on /hair-loss still got the Cloudflare check (runs/probe-hairloss-s2); WebFetch on /consultation/23 got HTTP 403. Web search with a domain filter worked and returned snippets of the company's own pages."
+  "model": "Family-owned UK online pharmacy with its own prescribers: the customer picks a product, answers a medical questionnaire, pays, and a doctor or pharmacist prescriber approves or declines. One-off orders, no subscription. (Built from third-party public sources only; the company's own site could not be opened.)",
+  "checkedOn": "2026-11-23",
+  "stage": "final",
+  "access": {
+    "howTested": [
+      "public-docs"
+    ],
+    "accountWall": "docs only, not observed: the women's page lists the steps as start consultation → complete the consultation (medical history, photos of hair) → add the programme to the basket → log in or create an account → pay. So the questions come before the account wall, and payment comes before prescriber review. Not seen live: the site blocks this machine.",
+    "blockers": [
+      "Cloudflare security check ('Performing security verification', HTTP 403) blocked the local browser on the home page (runs/probe-home). Tried once, as instructed, and not fought.",
+      "The WebFetch tool also got HTTP 403 on the home page and on /hair-loss; plain curl got HTTP 403 on /robots.txt and /sitemap.xml.",
+      "Web search was not available: the shared search budget for the whole workflow ran out after one query (which returned nothing from this company's site).",
+      "A Wayback Machine copy of /hair-loss exists (captured 1 Nov 2026) but could not be read: the fetch tool refuses web.archive.org and the session proxy resets the connection. Archive services were not pursued further.",
+      "Regulator pages that might describe the prescribing service were also blocked to the fetch tool today (CQC search HTTP 403, GPhC register HTTP 403).",
+      "Stage 2 (23 Nov 2026): walk.js on /hair-loss still got the Cloudflare check (runs/probe-hairloss-s2); WebFetch on /consultation/23 got HTTP 403. Web search with a domain filter worked and returned snippets of the company's own pages.",
+      "Stage 3 (23 Nov 2026): walk.js on /consultation/23 got the Cloudflare check again (runs/verify-consult); WebFetch on /hair-loss got HTTP 403. Domain-filtered web search still works."
+    ],
+    "coverageNote": "No page of the company's site could be opened, so no live replay and no one-change experiments were possible. Stage 2 added the product catalogue (16 items with pack prices) and the consultation's topics from web-search snippets of the company's own pages, including the hair-loss consultation page (/consultation/23). Search snippets are summaries of indexed copies, some years old; no exact question wording or option list is known. Stage 3 re-checked prices and rules against fresh domain-filtered search summaries; several prices were corrected and three products added. Still no live replay."
+  },
+  "products": [
+    {
+      "id": "p1",
+      "name": "Finasteride 1 mg tablets (generic; Accord pack also listed)",
+      "category": "rx-oral",
+      "actives": [
+        {
+          "name": "finasteride",
+          "strength": "1 mg"
+        }
+      ],
+      "form": "tablet",
+      "audience": "men",
+      "legalStatus": "Prescription-only medicine. Finasteride 1 mg is licensed in the UK for male pattern hair loss (general knowledge; not read from the company's site).",
+      "price": "£13.99 for 28 tablets",
+      "priceDetail": "Generic page (search snippet, 23 Nov 2026): 28 £13.99, 56 £23.99, 84 £32.99, 168 £54.99. Accord-brand listings: 28 £14.99, 168 £59.99 (/hair-loss/finasteride-accord). A blog table shows 168 at £58.94: cached copies differ in age.",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/finasteride",
+      "urlNote": "Category page address only (known to exist from a Wayback availability lookup). The product's own page address was not seen.",
+      "recommendedWhen": "Men and those assigned male at birth, over 18, with hereditary (male pattern) hair loss. The company presents it as the first-line prescription treatment; first-time patients are steered to finasteride plus Regaine rather than dutasteride. Not for women. Sources: company product pages and dutasteride page (search snippets); company reply on Trustpilot (Feb 2021).",
+      "evidence": "docs",
+      "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old. Also many Trustpilot reviews."
+    },
+    {
+      "id": "p2",
+      "name": "Propecia (branded finasteride 1 mg tablets)",
+      "category": "rx-oral",
+      "actives": [
+        {
+          "name": "finasteride",
+          "strength": "1 mg"
+        }
+      ],
+      "form": "tablet",
+      "audience": "men",
+      "legalStatus": "Prescription-only medicine, licensed for male pattern hair loss (general knowledge; not read from the company's site).",
+      "price": "£41.59 for 28 tablets",
+      "priceDetail": "28 £41.59, 56 £80.94, 84 £109.99, 168 £214.99 (£1.28 a tablet). One page dates its price note Nov 2024. Consultation needed before purchase.",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/propecia",
+      "urlNote": "Category page address only; product page not seen.",
+      "recommendedWhen": "Same eligibility as generic finasteride (men over 18); a branded choice the customer picks, not a separate engine outcome (inferred: catalogue model).",
+      "evidence": "docs",
+      "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
+    },
+    {
+      "id": "p3",
+      "name": "Dutasteride 0.5 mg capsules (generic)",
+      "category": "rx-oral",
+      "actives": [
+        {
+          "name": "dutasteride",
+          "strength": "0.5 mg"
+        }
+      ],
+      "form": "capsule",
+      "audience": "men",
+      "legalStatus": "Prescription-only medicine. Dutasteride is licensed in the UK for an enlarged prostate, so use for hair loss is off-label (inferred from the UK licence; the company's own wording was not seen).",
+      "price": "£18.99 for 30 capsules",
+      "priceDetail": "Generic page (search snippet, 23 Nov 2026): 30 £18.99, 60 £35.99, 90 £49.99, 120 £63.99, 150 £74.99, 180 £83.99 (47p a capsule). Corrected in stage 3: the earlier £39.99 for 30 is the branded Avodart price. Off-label for hair loss (licensed for BPH).",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/dutasteride",
+      "urlNote": "Category page address only; product page not seen.",
+      "recommendedWhen": "Men only. Only considered after at least 6 months on finasteride and with a clear reason (company blog on switching), not together with finasteride, and not for first-time patients (product page recommends Regaine plus finasteride instead). Off-label for hair loss. Sources: company pages (search snippets) and Trustpilot replies 2021 and 2025.",
+      "evidence": "docs",
+      "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
+    },
+    {
+      "id": "p4",
+      "name": "Minoxidil 2.5 mg tablets (generic oral minoxidil)",
+      "category": "rx-oral",
+      "actives": [
+        {
+          "name": "minoxidil",
+          "strength": "2.5 mg"
+        }
+      ],
+      "form": "tablet",
+      "audience": "men",
+      "legalStatus": "Prescription-only medicine. Minoxidil tablets are licensed for severe high blood pressure, so use for hair loss is off-label. Customers say the pharmacy sends a document about off-label use.",
+      "price": "£22.49 for 30 tablets",
+      "priceDetail": "30 £22.49, 60 £44.98 (a blog says £44.99), 120 £74.99, 180 £114.99. Only 2.5 mg is sold. Off-label (licensed only for severe hypertension).",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/minoxidil-generic",
+      "urlNote": "Category page address only; product page not seen.",
+      "recommendedWhen": "Men and those assigned male at birth only (the product page says clinicians cannot approve it for women). The consultation screens heart and blood-pressure problems, and the patient must agree to check blood pressure regularly; doses above the usual are refused (higher doses need a specialist). Off-label (licensed only for high blood pressure).",
+      "evidence": "docs",
+      "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old. Also Trustpilot reviews and replies."
+    },
+    {
+      "id": "p5",
+      "name": "Regaine for Men Extra Strength scalp foam (minoxidil 5%), 73 ml and 3 × 60 g packs",
+      "category": "otc-medicine",
+      "actives": [
+        {
+          "name": "minoxidil",
+          "strength": "5%"
+        }
+      ],
+      "form": "foam",
+      "audience": "both",
+      "legalStatus": "Licensed over-the-counter medicine (pharmacy or general sale; not checked on the company's site).",
+      "price": "£59.99 for 3 × 60 g",
+      "priceDetail": "Search snippet titles: \"Regaine For Men Extra Strength Foam, 3 x 60g for £59.99\" and a 73 ml listing (price not seen). Replaces the stage 1 entry built only from a 2015 review.",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/regaine-for-men-extra-strength-scalp-foam-3-x-60g",
+      "urlNote": "Category page address only; product page not seen.",
+      "recommendedWhen": "unknown",
+      "evidence": "docs",
+      "evidenceNote": "Trustpilot review search 'Regaine' (one review, 2015), read 23 Nov 2026."
+    },
+    {
+      "id": "p6",
+      "name": "Minoxidil (Loniten) 2.5 mg tablets, branded",
+      "category": "rx-oral",
+      "actives": [
+        {
+          "name": "minoxidil",
+          "strength": "2.5 mg"
+        }
+      ],
+      "form": "tablet",
+      "audience": "men",
+      "legalStatus": "Prescription-only medicine, licensed for high blood pressure; off-label for hair loss.",
+      "price": "£24.99 for 30 tablets",
+      "priceDetail": "Pfizer Loniten 2.5 mg: 30 £24.99, 60 £49.99, 120 £84.99, 180 £139.99. Off-label for hair loss.",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/minoxidil-loniten",
+      "recommendedWhen": "Same rules as generic oral minoxidil; a branded choice the customer picks (inferred: catalogue model).",
+      "evidence": "docs",
+      "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
+    },
+    {
+      "id": "p7",
+      "name": "Avodart (branded dutasteride 0.5 mg capsules)",
+      "category": "rx-oral",
+      "actives": [
+        {
+          "name": "dutasteride",
+          "strength": "0.5 mg"
+        }
+      ],
+      "form": "capsule",
+      "audience": "men",
+      "legalStatus": "Prescription-only medicine, licensed for enlarged prostate; off-label for hair loss.",
+      "price": "£39.99 for 30 capsules",
+      "priceDetail": "30 £39.99, 90 £113.99, 120 £1.08 a capsule (about £129.60), 180 £159.99 (89p a capsule). Off-label for hair loss.",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/avodart",
+      "recommendedWhen": "Same rules as generic dutasteride (after finasteride, men only).",
+      "evidence": "docs",
+      "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
+    },
+    {
+      "id": "p8",
+      "name": "Finasteride, minoxidil and tretinoin topical solution (spray), compounded",
+      "category": "rx-topical-compounded",
+      "actives": [
+        {
+          "name": "finasteride",
+          "strength": "unknown"
+        },
+        {
+          "name": "minoxidil",
+          "strength": "unknown"
+        },
+        {
+          "name": "tretinoin",
+          "strength": "unknown"
+        }
+      ],
+      "form": "spray (topical solution), 60 ml bottle, about 2 months",
+      "audience": "men",
+      "legalStatus": "POM (prescription required, says the blog table); unlicensed special (inferred: no licensed topical finasteride exists in the UK)",
+      "price": "unknown",
+      "priceDetail": "Two search summaries of the same ~2.6-year-old comparison table give different \"from\" prices (£44.99 and £18.99); £18.99 equals the generic dutasteride from-price, so the row cannot be trusted. Dosing is given as once daily on one page and twice daily on another. No product page for the spray was found in four domain-filtered searches (only blog posts), so it is not confirmed as on sale today. Strengths unknown.",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/blog/what-is-topical-finasteride-and-minoxidil-spray",
+      "urlNote": "Blog page that describes the product; product page address not found.",
+      "recommendedWhen": "unknown; blog posts present it as an all-in-one alternative to separate finasteride and minoxidil. Over 18 only.",
+      "evidence": "docs",
+      "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
+    },
+    {
+      "id": "p9",
+      "name": "Sons Minoxidil 5% solution, 60 ml",
+      "category": "otc-medicine",
+      "actives": [
+        {
+          "name": "minoxidil",
+          "strength": "5%"
+        }
+      ],
+      "form": "topical solution",
+      "audience": "men",
+      "legalStatus": "Pharmacy medicine (P) (inferred from minoxidil 5% status in the UK)",
+      "price": "£28.98 for 60 ml (listing about 3 years old)",
+      "priceDetail": "£28.98 for one 60 ml bottle, £53.98 for three (snippets of differing ages). GSL/P minoxidil 5%, no prescription.",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/sons-minoxidil-5-solution-for-hair-loss-60ml",
+      "recommendedWhen": "Bought from the catalogue; paired with finasteride in a bundle. Consultation route unknown.",
+      "evidence": "docs",
+      "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
+    },
+    {
+      "id": "p10",
+      "name": "Minoxidil 5% solution 60 ml (listing titled \"generic Regaine\"): probably the same Sons product as p9",
+      "category": "otc-medicine",
+      "actives": [
+        {
+          "name": "minoxidil",
+          "strength": "5%"
+        }
+      ],
+      "form": "topical solution",
+      "audience": "men",
+      "legalStatus": "Pharmacy medicine (P) (inferred)",
+      "price": "from £21.94 for 60 ml",
+      "priceDetail": "The URL /hair-loss/minoxidil-5-solution-for-hair-loss-generic-regaine-60ml is titled \"Sons Topical Minoxidil 5% Solution for hair loss 60ml\" in search results, so p10 is probably an older listing of p9, not a separate product. \"From £21.94\" not re-confirmed.",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/minoxidil-5-solution-for-hair-loss-generic-regaine-60ml",
+      "urlNote": "Category page; product page address not seen.",
+      "recommendedWhen": "Catalogue purchase; recommended alongside finasteride for first-time men (company pages).",
+      "evidence": "docs",
+      "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
+    },
+    {
+      "id": "p11",
+      "name": "Regaine for Men Extra Strength solution (minoxidil 5%), 60 ml",
+      "category": "otc-medicine",
+      "actives": [
+        {
+          "name": "minoxidil",
+          "strength": "5%"
+        }
+      ],
+      "form": "topical solution",
+      "audience": "men",
+      "legalStatus": "Pharmacy medicine (P)",
+      "price": "£33.60 for 60 ml (the same page's structured data says £28.00)",
+      "priceDetail": "Triple pack £69.98; 1-year supply (4 × triple packs) £239.95. Prices inconsistent between cached copies.",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/regaine-for-men-extra-strength-solution",
+      "recommendedWhen": "First-time male patients: the dutasteride page recommends Regaine plus finasteride 1 mg as the starting point.",
+      "evidence": "docs",
+      "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
+    },
+    {
+      "id": "p12",
+      "name": "Regaine for Women Regular Strength (minoxidil 2%), 60 ml",
+      "category": "otc-medicine",
+      "actives": [
+        {
+          "name": "minoxidil",
+          "strength": "2%"
+        }
+      ],
+      "form": "topical solution",
+      "audience": "women",
+      "legalStatus": "Pharmacy medicine (P), licensed for female pattern hair loss in women aged 18–65",
+      "price": "£27.77 for 60 ml",
+      "priceDetail": "From £27.77 on the women's page; a blog says £27.99.",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/regaine-for-women-regular-strength-60ml",
+      "recommendedWhen": "Women 18–65 with female pattern hair loss; the company calls topical minoxidil the only licensed treatment for women.",
+      "evidence": "docs",
+      "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
+    },
+    {
+      "id": "p13",
+      "name": "Bundle: finasteride 1 mg (28 tablets) + Sons Minoxidil 5% 60 ml, 1-month pack",
+      "category": "bundle",
+      "actives": [
+        {
+          "name": "finasteride",
+          "strength": "1 mg"
+        },
+        {
+          "name": "minoxidil",
+          "strength": "5%"
+        }
+      ],
+      "form": "tablets + topical solution",
+      "audience": "men",
+      "legalStatus": "Contains a prescription-only medicine",
+      "price": "from £34.99",
+      "priceDetail": "",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/oral-finasteride-sons-topical-minoxidil-1-month-treatment-pack",
+      "recommendedWhen": "Men eligible for finasteride who want the two-drug approach (company says combining works better).",
+      "evidence": "docs",
+      "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
+    },
+    {
+      "id": "p14",
+      "name": "Bundle: finasteride 1 mg (168 tablets) + oral minoxidil 2.5 mg (180 tablets)",
+      "category": "bundle",
+      "actives": [
+        {
+          "name": "finasteride",
+          "strength": "1 mg"
+        },
+        {
+          "name": "minoxidil",
+          "strength": "2.5 mg"
+        }
+      ],
+      "form": "tablets",
+      "audience": "men",
+      "legalStatus": "Prescription-only medicines (minoxidil off-label)",
+      "price": "from £169.98",
+      "priceDetail": "",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss",
+      "urlNote": "Product page address not seen.",
+      "recommendedWhen": "Men eligible for both finasteride and oral minoxidil (both safety screens passed).",
+      "evidence": "docs",
+      "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
+    },
+    {
+      "id": "p15",
+      "name": "Bundle: finasteride 1 mg (84 tablets) + 3 × Regaine 60 ml + Alpecin shampoo 250 ml",
+      "category": "bundle",
+      "actives": [
+        {
+          "name": "finasteride",
+          "strength": "1 mg"
+        },
+        {
+          "name": "minoxidil",
+          "strength": "5% (Regaine, inferred Extra Strength)"
+        },
+        {
+          "name": "caffeine shampoo (Alpecin)",
+          "strength": "n/a"
+        }
+      ],
+      "form": "tablets + topical solution + shampoo",
+      "audience": "men",
+      "legalStatus": "Contains a prescription-only medicine",
+      "price": "from £89.99 (Accord version from £99.99)",
+      "priceDetail": "Listing page may be several years old (indexed about 6 years ago).",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss",
+      "recommendedWhen": "Men eligible for finasteride; a catalogue bundle.",
+      "evidence": "docs",
+      "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
+    },
+    {
+      "id": "p16",
+      "name": "Oxford Female Hair Loss Programme",
+      "category": "service",
+      "actives": [
+        {
+          "name": "unnamed oral prescription treatment",
+          "strength": "unknown"
+        }
+      ],
+      "form": "online consultation + blood test + oral prescription",
+      "audience": "women",
+      "legalStatus": "Prescription service (contents not stated)",
+      "price": "£75.99 for the blood test plus 3 months of oral treatment",
+      "priceDetail": "Blood test (ferritin, TSH, free T4, B12, folate, vitamin D) sent the same day; results decide whether treatment is given or the patient is sent to their GP. The women's page says the consultation asks for photos of the hair. The oral drug is never named (probably low-dose oral minoxidil, inferred, not confirmed).",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/female-hair-loss",
+      "recommendedWhen": "Women with hair thinning (including menopausal). It starts with an online consultation and a blood test to check whether the treatment suits, or whether the GP is the better route. The drug is not named; the company elsewhere says finasteride, dutasteride and oral minoxidil are not supplied to women, so the oral treatment is unknown (spironolactone is a plausible guess but not confirmed).",
+      "evidence": "docs",
+      "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old. The female page and the oral-minoxidil page appear to conflict; it may be newer than the 2024 Trustpilot reply that said women are referred elsewhere."
+    },
+    {
+      "id": "p17",
+      "name": "Regaine for Women Extra Strength scalp foam (minoxidil 5%), 73 ml",
+      "category": "otc-medicine",
+      "actives": [
+        {
+          "name": "minoxidil",
+          "strength": "5%"
+        }
+      ],
+      "form": "foam",
+      "audience": "women",
+      "legalStatus": "GSL/P licensed medicine",
+      "price": "£34.80",
+      "priceDetail": "Search snippet, age of copy unknown.",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/regaine-for-women-scalp-foam-5-extra-strength-73",
+      "recommendedWhen": "Bought directly without a prescription; no consultation rule known.",
+      "evidence": "docs"
+    },
+    {
+      "id": "p18",
+      "name": "Bundle: Regaine for Women 60 ml + Florisene 90 tablets",
+      "category": "bundle",
+      "actives": [
+        {
+          "name": "minoxidil",
+          "strength": "2%"
+        },
+        {
+          "name": "Florisene (iron, vitamin C, L-lysine food supplement)",
+          "strength": "unknown"
+        }
+      ],
+      "form": "solution + tablets",
+      "audience": "women",
+      "legalStatus": "GSL/P medicine + food supplement",
+      "price": "£40.00",
+      "priceDetail": "Page said \"currently out of stock\" in the indexed copy. Florisene contents are from general knowledge of the brand, not the page (inferred).",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/regaine-for-women-60ml-and-florisene-90-tablets",
+      "recommendedWhen": "Bought directly; no consultation rule known. Possibly discontinued.",
+      "evidence": "docs"
+    }
   ],
-  "coverageNote": "No page of the company's site could be opened, so no live replay and no one-change experiments were possible. Stage 2 added the product catalogue (16 items with pack prices) and the consultation's topics from web-search snippets of the company's own pages, including the hair-loss consultation page (/consultation/23). Search snippets are summaries of indexed copies, some years old; no exact question wording or option list is known."
- },
- "products": [
-  {
-   "id": "p1",
-   "name": "Finasteride 1 mg tablets (generic; Accord pack also listed)",
-   "category": "rx-oral",
-   "actives": [
+  "unverifiedLeads": [
     {
-     "name": "finasteride",
-     "strength": "1 mg"
-    }
-   ],
-   "form": "tablet",
-   "audience": "men",
-   "legalStatus": "Prescription-only medicine. Finasteride 1 mg is licensed in the UK for male pattern hair loss (general knowledge; not read from the company's site).",
-   "price": "£13.99 for 28 tablets (generic page)",
-   "priceDetail": "Generic page: 28 tablets £13.99, 84 tablets £32.99, 168 tablets £54.99. Accord-branded page: 28 £14.99, 84 £34.99, 168 £59.99 (a separate 168-tablet Accord listing also exists). An older 2023 blog gave 168 tablets at £58.94. No subscription: one-off packs.",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/finasteride",
-   "urlNote": "Category page address only (known to exist from a Wayback availability lookup). The product's own page address was not seen.",
-   "recommendedWhen": "Men and those assigned male at birth, over 18, with hereditary (male pattern) hair loss. The company presents it as the first-line prescription treatment; first-time patients are steered to finasteride plus Regaine rather than dutasteride. Not for women. Sources: company product pages and dutasteride page (search snippets); company reply on Trustpilot (Feb 2021).",
-   "evidence": "docs",
-   "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old. Also many Trustpilot reviews."
-  },
-  {
-   "id": "p2",
-   "name": "Propecia (branded finasteride 1 mg tablets)",
-   "category": "rx-oral",
-   "actives": [
-    {
-     "name": "finasteride",
-     "strength": "1 mg"
-    }
-   ],
-   "form": "tablet",
-   "audience": "men",
-   "legalStatus": "Prescription-only medicine, licensed for male pattern hair loss (general knowledge; not read from the company's site).",
-   "price": "£214.99 for 168 tablets (£1.28 a tablet)",
-   "priceDetail": "A 168-tablet listing and a single-tablet listing exist. Smaller packs not seen.",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/propecia",
-   "urlNote": "Category page address only; product page not seen.",
-   "recommendedWhen": "Same eligibility as generic finasteride (men over 18); a branded choice the customer picks, not a separate engine outcome (inferred: catalogue model).",
-   "evidence": "docs",
-   "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
-  },
-  {
-   "id": "p3",
-   "name": "Dutasteride 0.5 mg capsules (generic)",
-   "category": "rx-oral",
-   "actives": [
-    {
-     "name": "dutasteride",
-     "strength": "0.5 mg (named in one August 2020 review; current strengths not confirmed)"
-    }
-   ],
-   "form": "capsule",
-   "audience": "men",
-   "legalStatus": "Prescription-only medicine. Dutasteride is licensed in the UK for an enlarged prostate, so use for hair loss is off-label (inferred from the UK licence; the company's own wording was not seen).",
-   "price": "£39.99 for 30 capsules",
-   "priceDetail": "30 capsules £39.99 (+£2.99 delivery), 60 £77.99, 90 £113.99, 120 £129.99, 180 £159.99; delivery free on the larger packs; returns not allowed. Some listings may be about two years old.",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/dutasteride",
-   "urlNote": "Category page address only; product page not seen.",
-   "recommendedWhen": "Men only. Only considered after at least 6 months on finasteride and with a clear reason (company blog on switching), not together with finasteride, and not for first-time patients (product page recommends Regaine plus finasteride instead). Off-label for hair loss. Sources: company pages (search snippets) and Trustpilot replies 2021 and 2025.",
-   "evidence": "docs",
-   "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
-  },
-  {
-   "id": "p4",
-   "name": "Minoxidil 2.5 mg tablets (generic oral minoxidil)",
-   "category": "rx-oral",
-   "actives": [
-    {
-     "name": "minoxidil",
-     "strength": "2.5 mg"
-    }
-   ],
-   "form": "tablet",
-   "audience": "men",
-   "legalStatus": "Prescription-only medicine. Minoxidil tablets are licensed for severe high blood pressure, so use for hair loss is off-label. Customers say the pharmacy sends a document about off-label use.",
-   "price": "£22.49 for 30 tablets",
-   "priceDetail": "30 tablets £22.49, 60 £44.98, 120 £74.99, 180 £114.99. A 2023 blog gave 60 tablets at £44.99. Only the 2.5 mg strength was found; no 5 mg or 1 mg listing. Dosing on the site: half a tablet daily for 14 days, then one tablet daily; a tablet cutter is suggested.",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/minoxidil-generic",
-   "urlNote": "Category page address only; product page not seen.",
-   "recommendedWhen": "Men and those assigned male at birth only (the product page says clinicians cannot approve it for women). The consultation screens heart and blood-pressure problems, and the patient must agree to check blood pressure regularly; doses above the usual are refused (higher doses need a specialist). Off-label (licensed only for high blood pressure).",
-   "evidence": "docs",
-   "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old. Also Trustpilot reviews and replies."
-  },
-  {
-   "id": "p5",
-   "name": "Regaine foam (minoxidil), twin pack: seen only in a 2015 customer review",
-   "category": "otc-medicine",
-   "actives": [
-    {
-     "name": "minoxidil",
-     "strength": "5% (inferred: Regaine foam is only made as 5%; the review does not state it)"
-    }
-   ],
-   "form": "foam",
-   "audience": "both",
-   "legalStatus": "Licensed over-the-counter medicine (pharmacy or general sale; not checked on the company's site).",
-   "price": "unknown today (the company's site could not be opened)",
-   "priceDetail": "The only evidence is a January 2015 customer review (£99, described as six cans for six months). It may not reflect today's range or price. Men's or women's version not stated.",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss",
-   "urlNote": "Category page address only; product page not seen.",
-   "recommendedWhen": "unknown",
-   "evidence": "docs",
-   "evidenceNote": "Trustpilot review search 'Regaine' (one review, 2015), read 23 Nov 2026."
-  },
-  {
-   "id": "p6",
-   "name": "Minoxidil (Loniten) 2.5 mg tablets, branded",
-   "category": "rx-oral",
-   "actives": [
-    {
-     "name": "minoxidil",
-     "strength": "2.5 mg"
-    }
-   ],
-   "form": "tablet",
-   "audience": "men",
-   "legalStatus": "Prescription-only medicine, licensed for high blood pressure; off-label for hair loss.",
-   "price": "£24.99 for 30 tablets",
-   "priceDetail": "30 £24.99, 60 £49.99, 120 £84.99, 180 £139.99.",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/minoxidil-loniten",
-   "recommendedWhen": "Same rules as generic oral minoxidil; a branded choice the customer picks (inferred: catalogue model).",
-   "evidence": "docs",
-   "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
-  },
-  {
-   "id": "p7",
-   "name": "Avodart (branded dutasteride 0.5 mg capsules)",
-   "category": "rx-oral",
-   "actives": [
-    {
-     "name": "dutasteride",
-     "strength": "0.5 mg"
-    }
-   ],
-   "form": "capsule",
-   "audience": "men",
-   "legalStatus": "Prescription-only medicine, licensed for enlarged prostate; off-label for hair loss.",
-   "price": "£1.08 a capsule in the 120-capsule pack (about £129.60)",
-   "priceDetail": "Only the 120-capsule listing was seen in search results; the pack total is worked out from the per-capsule figure in the page title.",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/avodart",
-   "recommendedWhen": "Same rules as generic dutasteride (after finasteride, men only).",
-   "evidence": "docs",
-   "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
-  },
-  {
-   "id": "p8",
-   "name": "Finasteride, minoxidil and tretinoin topical solution (spray), compounded",
-   "category": "rx-topical-compounded",
-   "actives": [
-    {
-     "name": "finasteride",
-     "strength": "unknown"
+      "lead": "Exact strengths and price of the compounded finasteride + minoxidil + tretinoin spray (p8)",
+      "status": "Product confirmed by the company blog (search snippets); strengths and price not found.",
+      "whereToLook": "https://www.oxfordonlinepharmacy.co.uk/blog/what-is-topical-finasteride-and-minoxidil-spray"
     },
     {
-     "name": "minoxidil",
-     "strength": "unknown"
+      "lead": "What oral drug the Oxford Female Hair Loss Programme prescribes",
+      "status": "Not named in any snippet.",
+      "whereToLook": "https://www.oxfordonlinepharmacy.co.uk/female-hair-loss"
     },
     {
-     "name": "tretinoin",
-     "strength": "unknown"
+      "lead": "Shampoos (Alpecin) and supplements sold on their own",
+      "status": "Alpecin seen only inside a bundle.",
+      "whereToLook": "https://www.oxfordonlinepharmacy.co.uk/hair-loss"
     }
-   ],
-   "form": "spray (topical solution), 60 ml bottle, about 2 months",
-   "audience": "men",
-   "legalStatus": "Prescription-only; the company lists topical finasteride as a compounded (unlicensed) prescription product.",
-   "price": "unknown (a comparison table shows \"From £44.99\" but the figure may belong to another row)",
-   "priceDetail": "60 ml lasts about 2 months, applied to the scalp twice daily. Strengths of the three actives were not found in any source.",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/blog/what-is-topical-finasteride-and-minoxidil-spray",
-   "urlNote": "Blog page that describes the product; product page address not found.",
-   "recommendedWhen": "Men over 18 with male pattern hair loss (company blog). How the consultation picks it over tablets is unknown; inferred to suit men who want to avoid oral finasteride side effects.",
-   "evidence": "docs",
-   "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
-  },
-  {
-   "id": "p9",
-   "name": "Sons Minoxidil 5% solution, 60 ml",
-   "category": "otc-medicine",
-   "actives": [
+  ],
+  "flows": [
     {
-     "name": "minoxidil",
-     "strength": "5%"
+      "id": "hair",
+      "name": "Hair-loss online consultation (not walked; outline from customer reviews only)",
+      "audience": "both",
+      "entryUrl": "https://www.oxfordonlinepharmacy.co.uk/consultation/23",
+      "entryUrlNote": "Hair-loss consultation page found in web search (title \"Hair Loss Treatment consultation\"); HTTP 403 when fetched. Category page: /hair-loss; women: /female-hair-loss.",
+      "stagesSummary": "Not walked (security check). From company pages and reviews: pick a product and pack on a product page (\"you need to complete a consultation before you can purchase\") → about 3-minute online consultation form (/consultation/23) → registration and payment (payment before prescriber review) → confidential clinical review by a doctor or pharmacist prescriber (may email/phone, ID check, GP blood tests) → dispatch, refund or alternative. No photos needed (company blog). New consultation for every reorder. Women: a separate Female Hair Loss Programme with consultation and blood test.",
+      "questions": [],
+      "questionsNote": "No exact question wording or answer options were seen (the form page returns HTTP 403; search snippets summarise it). The topics above are therefore not listed as questions, to avoid inventing wording.",
+      "knownTopicsFromReviews": [
+        {
+          "topic": "Height and weight",
+          "source": "Trustpilot reviews, Aug 2023 (hair) and Jul 2026 (treatment not named)"
+        },
+        {
+          "topic": "Age",
+          "source": "Trustpilot review, Aug 2023 (hair)"
+        },
+        {
+          "topic": "Medical conditions (heart disease and liver disease are named by one customer)",
+          "source": "Trustpilot reviews, Jun 2022 and Aug 2023 (hair)"
+        },
+        {
+          "topic": "Current medicines",
+          "source": "Trustpilot reviews, Jun 2022, Aug 2023, Jun 2025 (hair)"
+        },
+        {
+          "topic": "Previous use of the treatment",
+          "source": "Trustpilot review, Aug 2023 (hair)"
+        },
+        {
+          "topic": "Whether to inform your GP / share the consultation with your GP",
+          "source": "Trustpilot reviews, Aug 2023 (hair) and Aug 2026 (treatment not named)"
+        },
+        {
+          "topic": "Photos (requested for some prescription items; not confirmed for hair loss)",
+          "source": "Trustpilot reviews, May 2024, Jul and Aug 2026 (treatments not hair, or not named)"
+        },
+        {
+          "topic": "Identity check after ordering (automatic, not always flagged before checkout)",
+          "source": "Trustpilot review and company reply, Mar 2026 (oral minoxidil)"
+        },
+        {
+          "topic": "Sex: finasteride, dutasteride and oral minoxidil only for men and those assigned male at birth",
+          "source": "Search snippets of /consultation/23 and product pages, 23 Nov 2026"
+        },
+        {
+          "topic": "Partner pregnant or trying for a baby within the next 12 weeks (warning not to use finasteride or dutasteride)",
+          "source": "Search snippet of /consultation/23"
+        },
+        {
+          "topic": "Fast or irregular heartbeat; chest pain or breathlessness; low blood pressure with dizziness or fainting",
+          "source": "Search snippet of /consultation/23"
+        },
+        {
+          "topic": "Angina, recent heart attack, heart failure, left ventricular hypertrophy",
+          "source": "Search snippet of /consultation/23"
+        },
+        {
+          "topic": "Oral minoxidil: agree to check blood pressure regularly; warned about dizziness, fluid retention, breathlessness",
+          "source": "Search snippet of /consultation/23"
+        },
+        {
+          "topic": "Mood and depression history",
+          "source": "Search snippet of /consultation/23"
+        },
+        {
+          "topic": "Current and past hair-loss treatments",
+          "source": "Search snippet of /consultation/23"
+        },
+        {
+          "topic": "Liver or kidney problems; allergies",
+          "source": "Search snippet of /consultation/23"
+        },
+        {
+          "topic": "Permission to inform the NHS GP surgery",
+          "source": "Search snippet of /consultation/23"
+        },
+        {
+          "topic": "Age over 18",
+          "source": "Finasteride product page snippet"
+        }
+      ]
     }
-   ],
-   "form": "topical solution",
-   "audience": "men",
-   "legalStatus": "Pharmacy medicine (P) (inferred from minoxidil 5% status in the UK)",
-   "price": "£28.98 for 60 ml (listing about 3 years old)",
-   "priceDetail": "",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/sons-minoxidil-5-solution-for-hair-loss-60ml",
-   "recommendedWhen": "Bought from the catalogue; paired with finasteride in a bundle. Consultation route unknown.",
-   "evidence": "docs",
-   "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
-  },
-  {
-   "id": "p10",
-   "name": "Minoxidil 5% solution (generic Regaine), 60 ml",
-   "category": "otc-medicine",
-   "actives": [
+  ],
+  "rules": [
     {
-     "name": "minoxidil",
-     "strength": "5%"
-    }
-   ],
-   "form": "topical solution",
-   "audience": "men",
-   "legalStatus": "Pharmacy medicine (P) (inferred)",
-   "price": "from £21.94 for 60 ml",
-   "priceDetail": "Price from a company blog comparison list.",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss",
-   "urlNote": "Category page; product page address not seen.",
-   "recommendedWhen": "Catalogue purchase; recommended alongside finasteride for first-time men (company pages).",
-   "evidence": "docs",
-   "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
-  },
-  {
-   "id": "p11",
-   "name": "Regaine for Men Extra Strength solution (minoxidil 5%), 60 ml",
-   "category": "otc-medicine",
-   "actives": [
-    {
-     "name": "minoxidil",
-     "strength": "5%"
-    }
-   ],
-   "form": "topical solution",
-   "audience": "men",
-   "legalStatus": "Pharmacy medicine (P)",
-   "price": "from £33.60 for 60 ml",
-   "priceDetail": "Regaine foam (old 2015 review) is product p5; no current foam listing found.",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss",
-   "recommendedWhen": "First-time male patients: the dutasteride page recommends Regaine plus finasteride 1 mg as the starting point.",
-   "evidence": "docs",
-   "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
-  },
-  {
-   "id": "p12",
-   "name": "Regaine for Women Regular Strength (minoxidil 2%), 60 ml",
-   "category": "otc-medicine",
-   "actives": [
-    {
-     "name": "minoxidil",
-     "strength": "2%"
-    }
-   ],
-   "form": "topical solution",
-   "audience": "women",
-   "legalStatus": "Pharmacy medicine (P), licensed for female pattern hair loss in women aged 18–65",
-   "price": "£27.77 for 60 ml",
-   "priceDetail": "",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/regaine-for-women-regular-strength-60ml",
-   "recommendedWhen": "Women 18–65 with female pattern hair loss; the company calls topical minoxidil the only licensed treatment for women.",
-   "evidence": "docs",
-   "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
-  },
-  {
-   "id": "p13",
-   "name": "Bundle: finasteride 1 mg (28 tablets) + Sons Minoxidil 5% 60 ml, 1-month pack",
-   "category": "bundle",
-   "actives": [
-    {
-     "name": "finasteride",
-     "strength": "1 mg"
+      "id": "R1",
+      "flow": "hair",
+      "when": "The patient asks for dutasteride and has not tried finasteride first.",
+      "then": "Dutasteride is not supplied; finasteride is offered first. In one case the refusal came by phone after payment, although the customer says the questionnaire had 'recommended dutasteride'.",
+      "effectType": "product-switched",
+      "affects": [
+        "p3",
+        "p1"
+      ],
+      "evidence": "docs",
+      "proof": "Trustpilot reviews of 22 Jan 2021 (with a company reply of 2 Feb 2021 from the pharmacist manager: finasteride is first-line for patients who have not tried medication, after a September 2020 risk assessment) and 19 Aug 2025 (company reply: following clinical guidelines). https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=dutasteride",
+      "confidence": "medium"
     },
     {
-     "name": "minoxidil",
-     "strength": "5%"
-    }
-   ],
-   "form": "tablets + topical solution",
-   "audience": "men",
-   "legalStatus": "Contains a prescription-only medicine",
-   "price": "from £34.99",
-   "priceDetail": "",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/oral-finasteride-sons-topical-minoxidil-1-month-treatment-pack",
-   "recommendedWhen": "Men eligible for finasteride who want the two-drug approach (company says combining works better).",
-   "evidence": "docs",
-   "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
-  },
-  {
-   "id": "p14",
-   "name": "Bundle: finasteride 1 mg (168 tablets) + oral minoxidil 2.5 mg (180 tablets)",
-   "category": "bundle",
-   "actives": [
-    {
-     "name": "finasteride",
-     "strength": "1 mg"
+      "id": "R2",
+      "flow": "hair",
+      "when": "The patient wants dutasteride while still taking finasteride.",
+      "then": "The prescription is declined; the patient is told to stop finasteride and reorder. Company reply: it is 'not a licensed regime'.",
+      "effectType": "product-removed",
+      "affects": [
+        "p3"
+      ],
+      "evidence": "docs",
+      "proof": "Trustpilot review of 19 Feb 2021 and company reply of 25 Feb 2021. Old; not confirmed as current. https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=dutasteride",
+      "confidence": "low"
     },
     {
-     "name": "minoxidil",
-     "strength": "2.5 mg"
-    }
-   ],
-   "form": "tablets",
-   "audience": "men",
-   "legalStatus": "Prescription-only medicines (minoxidil off-label)",
-   "price": "from £169.98",
-   "priceDetail": "",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss",
-   "urlNote": "Product page address not seen.",
-   "recommendedWhen": "Men eligible for both finasteride and oral minoxidil (both safety screens passed).",
-   "evidence": "docs",
-   "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
-  },
-  {
-   "id": "p15",
-   "name": "Bundle: finasteride 1 mg (84 tablets) + 3 × Regaine 60 ml + Alpecin shampoo 250 ml",
-   "category": "bundle",
-   "actives": [
-    {
-     "name": "finasteride",
-     "strength": "1 mg"
+      "id": "R3",
+      "flow": "hair",
+      "when": "The patient asks for oral minoxidil above the usual dose (the limit itself is not stated).",
+      "then": "The higher dose is not supplied (part of the order was cancelled). Company reply: higher doses need a specialist prescriber.",
+      "effectType": "strength-changed",
+      "affects": [
+        "p4"
+      ],
+      "evidence": "docs",
+      "proof": "Trustpilot review of 18 Nov 2025 and company reply of 21 Nov 2025. https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=minoxidil",
+      "confidence": "medium"
     },
     {
-     "name": "minoxidil",
-     "strength": "5% (Regaine, inferred Extra Strength)"
+      "id": "R4",
+      "flow": "hair",
+      "when": "The patient orders oral minoxidil.",
+      "then": "Extra checks may follow: the GP is told and asked to monitor; one order was cancelled until GP blood tests were done; the oedema risk is flagged in the consultation and the patient agrees to tell their doctor.",
+      "effectType": "flag-for-clinician",
+      "affects": [
+        "p4"
+      ],
+      "evidence": "docs",
+      "proof": "Trustpilot reviews of 2 May 2025, 4 Jun 2025 (with company reply of 16 Jun 2025) and 16 Jun 2025. https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=minoxidil",
+      "confidence": "low"
     },
     {
-     "name": "caffeine shampoo (Alpecin)",
-     "strength": "n/a"
-    }
-   ],
-   "form": "tablets + topical solution + shampoo",
-   "audience": "men",
-   "legalStatus": "Contains a prescription-only medicine",
-   "price": "from £89.99 (Accord version from £99.99)",
-   "priceDetail": "Listing page may be several years old (indexed about 6 years ago).",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss",
-   "recommendedWhen": "Men eligible for finasteride; a catalogue bundle.",
-   "evidence": "docs",
-   "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old."
-  },
-  {
-   "id": "p16",
-   "name": "Oxford Female Hair Loss Programme",
-   "category": "service",
-   "actives": [
+      "id": "R5",
+      "flow": "hair",
+      "when": "A reorder is placed early, while the patient should still have supply left.",
+      "then": "The order is put on hold and queried, or declined by the doctor.",
+      "effectType": "flag-for-clinician",
+      "affects": [],
+      "evidence": "docs",
+      "proof": "Trustpilot reviews of 30 Aug 2025 (order on hold, company asked why) and Dec 2025 / 16 Jan 2026 (doctor declined a repeat with three months' supply left). https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=hair",
+      "confidence": "medium"
+    },
     {
-     "name": "unknown oral prescription treatment",
-     "strength": "unknown"
+      "id": "R6",
+      "flow": "hair",
+      "when": "A woman orders a hair-loss tablet (the tablet is not named).",
+      "then": "The order was refused in the one known case. Company reply: it must prescribe within its clinical team's limits, it is not a hair-loss specialist, and it is limited in what it can prescribe for female patients.",
+      "effectType": "hard-stop",
+      "affects": [],
+      "evidence": "docs",
+      "proof": "Trustpilot review of 17 Jun 2024 and company reply of 11 Jul 2024. https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=hair&page=3",
+      "confidence": "low"
+    },
+    {
+      "id": "R7",
+      "flow": "hair",
+      "when": "The patient takes antidepressants and orders finasteride.",
+      "then": "Finasteride was still prescribed in the one known case (the customer complained about this). So antidepressant use may not be a hard stop. One unverified account.",
+      "effectType": "none",
+      "affects": [
+        "p1"
+      ],
+      "evidence": "docs",
+      "proof": "Trustpilot review of 23 Oct 2026 and company reply. https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=finasteride",
+      "confidence": "low"
+    },
+    {
+      "id": "R8",
+      "flow": "hair",
+      "when": "The prescriber judges the chosen treatment unsuitable after payment.",
+      "then": "The order is declined with a full refund (refunds can take about 5 working days), or an alternative is offered which the patient can accept or decline.",
+      "effectType": "product-switched",
+      "affects": [],
+      "evidence": "docs",
+      "proof": "Company replies on Trustpilot of 2 Feb 2021, 11 Jul 2024 and 2 Jun 2025. https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=subscription",
+      "confidence": "medium"
+    },
+    {
+      "id": "R9",
+      "flow": "hair",
+      "when": "Sex = female (or assigned female at birth) and the request is finasteride, dutasteride or oral minoxidil",
+      "then": "Not supplied; clinicians will not approve. The patient is pointed to a specialist clinic or, on newer pages, to the Oxford Female Hair Loss Programme or Regaine for Women.",
+      "effectType": "hard-stop",
+      "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p6",
+        "p7",
+        "p14"
+      ],
+      "evidence": "docs",
+      "proof": "Search snippets of /consultation/23, /hair-loss/minoxidil-2-5mg-60-tablets-for-hair-loss and /hair-loss/dutasteride (23 Nov 2026); Trustpilot reply 11 Jul 2024",
+      "confidence": "high"
+    },
+    {
+      "id": "R10",
+      "flow": "hair",
+      "when": "Age under 18",
+      "then": "Finasteride (and the compounded spray) not supplied: product pages say over 18 only.",
+      "effectType": "hard-stop",
+      "affects": [
+        "p1",
+        "p2",
+        "p8"
+      ],
+      "evidence": "docs",
+      "proof": "Search snippets of /hair-loss/finasteride and /blog/what-is-topical-finasteride-and-minoxidil-spray",
+      "confidence": "medium"
+    },
+    {
+      "id": "R11",
+      "flow": "hair",
+      "when": "Request for dutasteride with less than 6 months on finasteride, or no clear reason to switch",
+      "then": "Dutasteride not prescribed; finasteride (plus Regaine for first-time patients) is the route. Strengthens R1.",
+      "effectType": "product-switched",
+      "affects": [
+        "p3",
+        "p7",
+        "p1",
+        "p11"
+      ],
+      "evidence": "docs",
+      "proof": "Search snippets of /blog/switching-from-finasteride-to-dutasteride and /hair-loss/dutasteride",
+      "confidence": "medium"
+    },
+    {
+      "id": "R12",
+      "flow": "hair",
+      "when": "Partner is pregnant, or trying for a baby within the next 12 weeks",
+      "then": "The form tells men not to use finasteride or dutasteride if their partner is pregnant or they are trying for a baby within 12 weeks; it also says pregnant women should not handle the tablets. Whether the engine stops the order or only warns is unknown.",
+      "effectType": "soft-warning",
+      "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p7",
+        "p13",
+        "p14",
+        "p15"
+      ],
+      "evidence": "docs",
+      "proof": "Search snippet of /consultation/23",
+      "confidence": "medium"
+    },
+    {
+      "id": "R13",
+      "flow": "hair",
+      "when": "Heart or blood-pressure problem declared (fast or irregular heartbeat, chest pain, breathlessness, low blood pressure with dizziness or fainting, angina, recent heart attack, heart failure, left ventricular hypertrophy)",
+      "then": "Inferred: oral minoxidil is not supplied (these are its listed contraindications and cautions); topical options and finasteride remain. Exact engine effect not seen. The questions themselves are confirmed (search summary of /consultation/23 lists angina, recent heart attack, LVH, heart failure, low blood pressure with dizziness or fainting); only the effect is inferred.",
+      "effectType": "product-removed",
+      "affects": [
+        "p4",
+        "p6",
+        "p14"
+      ],
+      "evidence": "inferred",
+      "proof": "Topics from search snippet of /consultation/23; effect inferred from the minoxidil tablet licence",
+      "confidence": "low"
+    },
+    {
+      "id": "R14",
+      "flow": "hair",
+      "when": "Oral minoxidil ordered",
+      "then": "The form asks \"If ordering Minoxidil (Loniten) tablets do you agree to check your blood pressure regularly\" (wording from a search summary, so treat as close, not exact) and warns about dizziness, fluid retention and breathlessness; the GP is told. What happens on \"No\" is unknown.",
+      "effectType": "flag-for-clinician",
+      "affects": [
+        "p4",
+        "p6",
+        "p14"
+      ],
+      "evidence": "docs",
+      "proof": "Search snippet of /consultation/23; Trustpilot replies Jun and Nov 2025",
+      "confidence": "medium"
+    },
+    {
+      "id": "R15",
+      "flow": "hair",
+      "when": "Woman with hair thinning (including menopause)",
+      "then": "Offered the Oxford Female Hair Loss Programme (£75.99): consultation (with hair photos) and a blood test first; an unnamed oral treatment for 3 months if suitable, otherwise GP advice. Regaine for Women (solution 2%, foam 5%) is also sold without a prescription.",
+      "effectType": "product-added",
+      "affects": [
+        "p16",
+        "p12",
+        "p17"
+      ],
+      "evidence": "docs",
+      "proof": "Search snippets of /female-hair-loss and /blog/5-best-products-to-treat-menopausal-hair-loss",
+      "confidence": "medium"
+    },
+    {
+      "id": "R16",
+      "flow": "hair",
+      "when": "Mood or depression history declared",
+      "then": "Asked in the form; the form tells patients to stop finasteride and seek advice if low mood develops (search summary of /consultation/23). Whether a \"yes\" stops the order is unknown; one reviewer on antidepressants still got finasteride (R7).",
+      "effectType": "flag-for-clinician",
+      "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p7"
+      ],
+      "evidence": "inferred",
+      "proof": "Topic in search snippet of /consultation/23 plus Trustpilot review 23 Oct 2026",
+      "confidence": "low"
+    },
+    {
+      "id": "R17",
+      "flow": "hair",
+      "when": "Woman orders the Female Hair Loss Programme",
+      "then": "A blood test (ferritin, TSH, free T4, B12, folate, vitamin D) must be done before oral treatment; results decide between treatment and referral to the GP. Conflicts with a men's blog post saying blood tests are normally not needed (that post is about the men's consultation).",
+      "effectType": "flag-for-clinician",
+      "affects": [
+        "p16"
+      ],
+      "evidence": "docs",
+      "proof": "Search summaries of /female-hair-loss and /blog/5-best-products-to-treat-menopausal-hair-loss (23 Nov 2026)",
+      "confidence": "medium"
     }
-   ],
-   "form": "online consultation + blood test + oral prescription",
-   "audience": "women",
-   "legalStatus": "Prescription service (contents not stated)",
-   "price": "unknown",
-   "priceDetail": "",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/female-hair-loss",
-   "recommendedWhen": "Women with hair thinning (including menopausal). It starts with an online consultation and a blood test to check whether the treatment suits, or whether the GP is the better route. The drug is not named; the company elsewhere says finasteride, dutasteride and oral minoxidil are not supplied to women, so the oral treatment is unknown (spironolactone is a plausible guess but not confirmed).",
-   "evidence": "docs",
-   "evidenceNote": "Seen only in web-search result snippets of the company's own page (23 Nov 2026); the page itself returned HTTP 403 and was not opened. Search-index copies can be months or years old. The female page and the oral-minoxidil page appear to conflict; it may be newer than the 2024 Trustpilot reply that said women are referred elsewhere."
+  ],
+  "experiments": [
+    {
+      "id": "probe-hairloss-s2",
+      "flow": "hair",
+      "changed": "None: access check of /hair-loss before experiments",
+      "result": "Cloudflare \"Performing security verification\" page again; no experiments possible.",
+      "run": "runs/probe-hairloss-s2"
+    },
+    {
+      "id": "verify-consult",
+      "flow": "hair",
+      "changed": "None: stage 3 access check of /consultation/23",
+      "result": "Cloudflare \"Performing security verification\" page; no experiments possible.",
+      "run": "runs/verify-consult"
+    }
+  ],
+  "recommendations": [
+    {
+      "profile": "Baseline man, 32, Norwood 3, no conditions, no previous treatment",
+      "offered": [
+        "p1",
+        "p11",
+        "p10",
+        "p13",
+        "p8"
+      ],
+      "default": "p1",
+      "note": "Catalogue model: the man chooses. Company pages steer first-time men to finasteride 1 mg plus Regaine (topical minoxidil); dutasteride is not offered first. Oral minoxidil is sold to men who pass the heart/blood-pressure screen. No live outcome seen.",
+      "evidence": "docs"
+    },
+    {
+      "profile": "Baseline woman, 38, diffuse thinning",
+      "offered": [
+        "p16",
+        "p12",
+        "p17"
+      ],
+      "default": "p16",
+      "note": "Finasteride, dutasteride and oral minoxidil refused. Female programme (£75.99, blood test + 3 months oral treatment) or Regaine for Women 2% solution / 5% foam bought directly.",
+      "evidence": "docs"
+    },
+    {
+      "profile": "Man asking for dutasteride without 6 months of finasteride",
+      "offered": [
+        "p1"
+      ],
+      "default": "p1",
+      "note": "Declined or switched to finasteride, sometimes only after payment.",
+      "evidence": "docs"
+    },
+    {
+      "profile": "Man with heart disease or low blood pressure",
+      "offered": [
+        "p1",
+        "p11",
+        "p10"
+      ],
+      "default": "p1",
+      "note": "Inferred: oral minoxidil removed.",
+      "evidence": "inferred"
+    },
+    {
+      "profile": "Under 18",
+      "offered": [],
+      "default": "",
+      "note": "Prescription products are for over-18s only.",
+      "evidence": "docs"
+    }
+  ],
+  "engineSummary": "Oxford Online Pharmacy is a catalogue pharmacy, not a recommender. The customer picks a product and pack size, then completes a short (about 3-minute) questionnaire. The form screens sex, age, partner pregnancy, heart and blood-pressure problems, mood, liver and kidney disease, allergies and previous treatment, and asks consent to tell the GP. Hard limits sit mainly with the prescriber after payment: men only for finasteride, dutasteride and oral minoxidil; over 18; dutasteride only after 6+ months of finasteride; oral minoxidil 2.5 mg only, at the usual dose, with blood-pressure checks. Women go to a separate programme that needs a blood test. None of this was seen live; it comes from the company's pages and reviews.",
+  "strengths": [
+    "Very wide range for men: generic and branded finasteride, dutasteride, oral minoxidil (generic and Loniten), a compounded finasteride + minoxidil + tretinoin spray, topical minoxidil and bundles.",
+    "Low, transparent pack prices with no subscription; long packs (168 tablets, 180 capsules) cut the monthly cost.",
+    "Clear safety stance: finasteride-first, off-label documents, GP informed, blood-pressure checks for oral minoxidil.",
+    "Large trust signal (35,000+ Trustpilot reviews, 4.7)."
+  ],
+  "weaknesses": [
+    "Payment is taken before the prescriber decides; refusals (dutasteride, early reorders, women) come after checkout.",
+    "Customer chooses the drug; the questionnaire does not appear to recommend or personalise a plan.",
+    "Weak women's offer: oral treatments refused, programme needs a blood test and the drug is not named; pages conflict.",
+    "Only 2.5 mg minoxidil tablets, so patients must split tablets for the usual starting dose.",
+    "New consultation for every reorder."
+  ],
+  "opportunities": [
+    "A guided consultation that recommends a plan (and screens before payment) would beat their pick-then-pay flow.",
+    "Women's hair loss: offer clear licensed and off-label options (topical minoxidil, oral minoxidil low dose, spironolactone) with transparent eligibility.",
+    "Lower-strength oral minoxidil (1.25 mg or less) to avoid tablet splitting.",
+    "Publish the compounded spray strengths and price clearly; Oxford does not.",
+    "Follow-up and progress tracking (photos, check-ins) are not part of their model."
+  ],
+  "sources": [
+    {
+      "title": "Trustpilot: Oxford Online Pharmacy company page (business facts)",
+      "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk"
+    },
+    {
+      "title": "Trustpilot review search: hair (pages 1 to 4 of 5 read)",
+      "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=hair"
+    },
+    {
+      "title": "Trustpilot review search: finasteride (page 1 of 4 read)",
+      "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=finasteride"
+    },
+    {
+      "title": "Trustpilot review search: dutasteride (page 1 read)",
+      "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=dutasteride"
+    },
+    {
+      "title": "Trustpilot review search: minoxidil (page 1 of 2 read)",
+      "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=minoxidil"
+    },
+    {
+      "title": "Trustpilot review search: questionnaire (page 1 of 4 read)",
+      "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=questionnaire"
+    },
+    {
+      "title": "Trustpilot review search: subscription",
+      "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=subscription"
+    },
+    {
+      "title": "Trustpilot review searches with no hair-loss result: spray, topical, solution, compounded, scalp, spironolactone",
+      "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=spray"
+    },
+    {
+      "title": "Companies House search: Frosts (Online) Limited, 11232746",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=frosts+%28online%29"
+    },
+    {
+      "title": "NOT READ (blocked here): Wayback Machine copy of the hair-loss category page, captured 1 Nov 2026",
+      "url": "http://web.archive.org/web/20261101123809/https://www.oxfordonlinepharmacy.co.uk/hair-loss"
+    },
+    {
+      "title": "Hair loss category",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss"
+    },
+    {
+      "title": "Hair Loss Treatment consultation (HTTP 403; seen via search snippets)",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/consultation/23"
+    },
+    {
+      "title": "Finasteride 1 mg",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/finasteride"
+    },
+    {
+      "title": "Dutasteride",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/dutasteride"
+    },
+    {
+      "title": "Minoxidil 2.5 mg tablets",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/minoxidil-generic"
+    },
+    {
+      "title": "Minoxidil (Loniten)",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/minoxidil-loniten"
+    },
+    {
+      "title": "Hair loss treatment for women",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/female-hair-loss"
+    },
+    {
+      "title": "What is topical finasteride and minoxidil spray?",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/blog/what-is-topical-finasteride-and-minoxidil-spray"
+    },
+    {
+      "title": "Switching from finasteride to dutasteride",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/blog/switching-from-finasteride-to-dutasteride"
+    },
+    {
+      "title": "Regaine for Women",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/regaine-for-women-regular-strength-60ml"
+    },
+    {
+      "title": "Female hair loss page (search summary)",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/female-hair-loss"
+    },
+    {
+      "title": "Generic dutasteride 180 capsules",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/dutasteride-0-5mg-capsules-generic-avodart-180"
+    },
+    {
+      "title": "Regaine for Men Extra Strength solution",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/regaine-for-men-extra-strength-solution"
+    }
+  ],
+  "limitations": [
+    "The company's website could not be opened (Cloudflare check, HTTP 403) at stage 1 or stage 2. Product, price and consultation facts come from web-search snippets of the company's own pages, which are summaries of indexed copies of varying age, not the live pages.",
+    "The compounded spray (p8) is confirmed, but its strengths and price are not.",
+    "All findings come from Trustpilot reviews and company replies, paraphrased by a fetch tool that will not quote at length. Reviews are one-sided, unverified and some are years old.",
+    "The 'rules' are prescriber behaviour reported by customers, not engine behaviour seen in a replay. None has been tested.",
+    "Web search was unavailable (shared budget used up), so press, help-centre pages and regulator reports were not found.",
+    "Not every page of each Trustpilot search was read (for example 'finasteride' pages 2 to 4 and 'hair' page 5).",
+    "No one-change experiments were run: the consultation could not be reached. Every option-level effect is untested; rules are labelled docs or inferred.",
+    "No exact question wording or answer options are known, so flows[0].questions is empty; the topics list is a summary only.",
+    "Not tested: every one-change experiment in the protocol (sex, age, pregnancy, heart, blood pressure, liver, kidney, mood, medicines, allergies, previous treatment, preference).",
+    "Stage 3 verification could only compare stage 2 claims with fresh search summaries of the same indexed pages, not with the live site; prices differ between cached copies of different ages."
+  ],
+  "verification": {
+    "checked": [
+      "Access: walk.js on /consultation/23 (runs/verify-consult) and WebFetch on /hair-loss: both still blocked (Cloudflare / HTTP 403). No baseline exists to replay; stage 1 and 2 had no live runs either.",
+      "Evidence labels: no product, rule or recommendation is labelled \"observed\" or \"code\", so no claim relied on a missing run folder. 0 questions exist, so no option-level claim needed checking.",
+      "p1 finasteride generic prices (28 £13.99, 84 £32.99, 168 £54.99): confirmed by a fresh search summary; 56 £23.99 added.",
+      "p2 Propecia 168 £214.99 (£1.28 each): confirmed; 28/56/84 prices added.",
+      "p3 generic dutasteride price: CONTRADICTED. £39.99 for 30 is Avodart; generic is £18.99 for 30, £83.99 for 180.",
+      "p7 Avodart: 120 at £1.08 each confirmed; 30 £39.99, 90 £113.99, 180 £159.99 added.",
+      "p4 generic oral minoxidil 2.5 mg 30 £22.49 / 180 £114.99: confirmed.",
+      "p6 Loniten 2.5 mg 30 £24.99: confirmed; other packs added.",
+      "p8 compounded spray: 60 ml / 2 months and prescription-only confirmed from blog posts; price and strengths still unknown; no product page found.",
+      "p9 Sons 5% 60 ml £28.98: confirmed. p11 Regaine Men Extra Strength £33.60: confirmed but the same page also shows £28.00. p12 Regaine for Women from £27.77: confirmed (blog £27.99). p13 £34.99 and p14 £169.98 bundles: confirmed. p15 Alpecin bundle £89.99 (blog) / from £99.99 (category page): confirmed as stated.",
+      "R9 (no finasteride, dutasteride or oral minoxidil for women): confirmed again from /consultation/23 and the account-wall summary; raised to high confidence.",
+      "R10 (over 18), R11 (dutasteride after 6 months of finasteride), R12 (partner pregnancy), R13 topics, R14 (BP agreement): the underlying statements were found again in fresh summaries; R12, R13, R14 effects remain untested.",
+      "R1–R8 rest on Trustpilot reviews; not re-checked (stage 1 sources; reviews are single accounts)."
+    ],
+    "corrected": [
+      "p3 generic dutasteride: price changed from £39.99 to £18.99 for 30 (the old figure was Avodart's).",
+      "p5: replaced the 2015-review \"Regaine foam twin pack\" with the current Regaine for Men Extra Strength foam listings (3 × 60 g £59.99).",
+      "p8: price set to unknown (two conflicting \"from\" figures, one equal to another product's price); noted that no product page was found and dosing conflicts.",
+      "p10: flagged as probably the same Sons 5% product as p9 (its URL is titled Sons in search results).",
+      "p11: noted the conflicting £28.00 price on the same page.",
+      "p16: added price £75.99, blood-test markers and that the consultation asks for hair photos.",
+      "Added p17 Regaine for Women 5% foam (£34.80) and p18 Regaine for Women + Florisene bundle (£40, out of stock).",
+      "Account wall: was unknown; now recorded from the company's own step list (questions → basket → log in or create account → pay), labelled docs, not observed.",
+      "R16 relabelled \"inferred\" (its effect is a guess). R13 kept \"inferred\". Added R17 (female programme blood test). R12/R14/R15 wording tightened."
+    ],
+    "stillUnverified": [
+      "Every question's exact wording and every answer option: nothing was seen live, so flows[0].questions stays empty.",
+      "Whether any answer stops the order in the form itself or only later with the prescriber (R1, R11, R12, R13, R14, R16).",
+      "Strengths and price of the compounded finasteride + minoxidil + tretinoin spray, and whether it is still sold.",
+      "The oral drug in the Female Hair Loss Programme.",
+      "Whether prices are current: search summaries come from cached copies of different ages (some 2–6 years old).",
+      "All Trustpilot-based rules (R1–R8): single customer accounts."
+    ],
+    "verdict": "Treat this as a desk-research profile, not a tested map of the engine. The Cloudflare check blocked every live and fetch attempt at all three stages, so no answer was ever changed and no screen was seen; every fact comes from search summaries of the company's own pages or from Trustpilot. Within that limit the labels are now honest: nothing claims to be observed or read from code, prices were re-checked and one clear error (generic dutasteride priced as Avodart) fixed, and the main eligibility rule (prescription hair-loss tablets for men only) is well supported. The product list is fairly complete for licensed and OTC items, but prices may be out of date, the compounded spray is barely documented, and the consultation's wording, options and in-form logic remain unknown."
   }
- ],
- "unverifiedLeads": [
-  {
-   "lead": "Exact strengths and price of the compounded finasteride + minoxidil + tretinoin spray (p8)",
-   "status": "Product confirmed by the company blog (search snippets); strengths and price not found.",
-   "whereToLook": "https://www.oxfordonlinepharmacy.co.uk/blog/what-is-topical-finasteride-and-minoxidil-spray"
-  },
-  {
-   "lead": "What oral drug the Oxford Female Hair Loss Programme prescribes",
-   "status": "Not named in any snippet.",
-   "whereToLook": "https://www.oxfordonlinepharmacy.co.uk/female-hair-loss"
-  },
-  {
-   "lead": "Shampoos (Alpecin) and supplements sold on their own",
-   "status": "Alpecin seen only inside a bundle.",
-   "whereToLook": "https://www.oxfordonlinepharmacy.co.uk/hair-loss"
-  }
- ],
- "flows": [
-  {
-   "id": "hair",
-   "name": "Hair-loss online consultation (not walked; outline from customer reviews only)",
-   "audience": "both",
-   "entryUrl": "https://www.oxfordonlinepharmacy.co.uk/consultation/23",
-   "entryUrlNote": "Hair-loss consultation page found in web search (title \"Hair Loss Treatment consultation\"); HTTP 403 when fetched. Category page: /hair-loss; women: /female-hair-loss.",
-   "stagesSummary": "Not walked (security check). From company pages and reviews: pick a product and pack on a product page (\"you need to complete a consultation before you can purchase\") → about 3-minute online consultation form (/consultation/23) → registration and payment (payment before prescriber review) → confidential clinical review by a doctor or pharmacist prescriber (may email/phone, ID check, GP blood tests) → dispatch, refund or alternative. No photos needed (company blog). New consultation for every reorder. Women: a separate Female Hair Loss Programme with consultation and blood test.",
-   "questions": [],
-   "questionsNote": "No exact question wording or answer options were seen (the form page returns HTTP 403; search snippets summarise it). The topics above are therefore not listed as questions, to avoid inventing wording.",
-   "knownTopicsFromReviews": [
-    {
-     "topic": "Height and weight",
-     "source": "Trustpilot reviews, Aug 2023 (hair) and Jul 2026 (treatment not named)"
-    },
-    {
-     "topic": "Age",
-     "source": "Trustpilot review, Aug 2023 (hair)"
-    },
-    {
-     "topic": "Medical conditions (heart disease and liver disease are named by one customer)",
-     "source": "Trustpilot reviews, Jun 2022 and Aug 2023 (hair)"
-    },
-    {
-     "topic": "Current medicines",
-     "source": "Trustpilot reviews, Jun 2022, Aug 2023, Jun 2025 (hair)"
-    },
-    {
-     "topic": "Previous use of the treatment",
-     "source": "Trustpilot review, Aug 2023 (hair)"
-    },
-    {
-     "topic": "Whether to inform your GP / share the consultation with your GP",
-     "source": "Trustpilot reviews, Aug 2023 (hair) and Aug 2026 (treatment not named)"
-    },
-    {
-     "topic": "Photos (requested for some prescription items; not confirmed for hair loss)",
-     "source": "Trustpilot reviews, May 2024, Jul and Aug 2026 (treatments not hair, or not named)"
-    },
-    {
-     "topic": "Identity check after ordering (automatic, not always flagged before checkout)",
-     "source": "Trustpilot review and company reply, Mar 2026 (oral minoxidil)"
-    },
-    {
-     "topic": "Sex: finasteride, dutasteride and oral minoxidil only for men and those assigned male at birth",
-     "source": "Search snippets of /consultation/23 and product pages, 23 Nov 2026"
-    },
-    {
-     "topic": "Partner pregnant or trying for a baby within the next 12 weeks (warning not to use finasteride or dutasteride)",
-     "source": "Search snippet of /consultation/23"
-    },
-    {
-     "topic": "Fast or irregular heartbeat; chest pain or breathlessness; low blood pressure with dizziness or fainting",
-     "source": "Search snippet of /consultation/23"
-    },
-    {
-     "topic": "Angina, recent heart attack, heart failure, left ventricular hypertrophy",
-     "source": "Search snippet of /consultation/23"
-    },
-    {
-     "topic": "Oral minoxidil: agree to check blood pressure regularly; warned about dizziness, fluid retention, breathlessness",
-     "source": "Search snippet of /consultation/23"
-    },
-    {
-     "topic": "Mood and depression history",
-     "source": "Search snippet of /consultation/23"
-    },
-    {
-     "topic": "Current and past hair-loss treatments",
-     "source": "Search snippet of /consultation/23"
-    },
-    {
-     "topic": "Liver or kidney problems; allergies",
-     "source": "Search snippet of /consultation/23"
-    },
-    {
-     "topic": "Permission to inform the NHS GP surgery",
-     "source": "Search snippet of /consultation/23"
-    },
-    {
-     "topic": "Age over 18",
-     "source": "Finasteride product page snippet"
-    }
-   ]
-  }
- ],
- "rules": [
-  {
-   "id": "R1",
-   "flow": "hair",
-   "when": "The patient asks for dutasteride and has not tried finasteride first.",
-   "then": "Dutasteride is not supplied; finasteride is offered first. In one case the refusal came by phone after payment, although the customer says the questionnaire had 'recommended dutasteride'.",
-   "effectType": "product-switched",
-   "affects": [
-    "p3",
-    "p1"
-   ],
-   "evidence": "docs",
-   "proof": "Trustpilot reviews of 22 Jan 2021 (with a company reply of 2 Feb 2021 from the pharmacist manager: finasteride is first-line for patients who have not tried medication, after a September 2020 risk assessment) and 19 Aug 2025 (company reply: following clinical guidelines). https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=dutasteride",
-   "confidence": "medium"
-  },
-  {
-   "id": "R2",
-   "flow": "hair",
-   "when": "The patient wants dutasteride while still taking finasteride.",
-   "then": "The prescription is declined; the patient is told to stop finasteride and reorder. Company reply: it is 'not a licensed regime'.",
-   "effectType": "product-removed",
-   "affects": [
-    "p3"
-   ],
-   "evidence": "docs",
-   "proof": "Trustpilot review of 19 Feb 2021 and company reply of 25 Feb 2021. Old; not confirmed as current. https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=dutasteride",
-   "confidence": "low"
-  },
-  {
-   "id": "R3",
-   "flow": "hair",
-   "when": "The patient asks for oral minoxidil above the usual dose (the limit itself is not stated).",
-   "then": "The higher dose is not supplied (part of the order was cancelled). Company reply: higher doses need a specialist prescriber.",
-   "effectType": "strength-changed",
-   "affects": [
-    "p4"
-   ],
-   "evidence": "docs",
-   "proof": "Trustpilot review of 18 Nov 2025 and company reply of 21 Nov 2025. https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=minoxidil",
-   "confidence": "medium"
-  },
-  {
-   "id": "R4",
-   "flow": "hair",
-   "when": "The patient orders oral minoxidil.",
-   "then": "Extra checks may follow: the GP is told and asked to monitor; one order was cancelled until GP blood tests were done; the oedema risk is flagged in the consultation and the patient agrees to tell their doctor.",
-   "effectType": "flag-for-clinician",
-   "affects": [
-    "p4"
-   ],
-   "evidence": "docs",
-   "proof": "Trustpilot reviews of 2 May 2025, 4 Jun 2025 (with company reply of 16 Jun 2025) and 16 Jun 2025. https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=minoxidil",
-   "confidence": "low"
-  },
-  {
-   "id": "R5",
-   "flow": "hair",
-   "when": "A reorder is placed early, while the patient should still have supply left.",
-   "then": "The order is put on hold and queried, or declined by the doctor.",
-   "effectType": "flag-for-clinician",
-   "affects": [],
-   "evidence": "docs",
-   "proof": "Trustpilot reviews of 30 Aug 2025 (order on hold, company asked why) and Dec 2025 / 16 Jan 2026 (doctor declined a repeat with three months' supply left). https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=hair",
-   "confidence": "medium"
-  },
-  {
-   "id": "R6",
-   "flow": "hair",
-   "when": "A woman orders a hair-loss tablet (the tablet is not named).",
-   "then": "The order was refused in the one known case. Company reply: it must prescribe within its clinical team's limits, it is not a hair-loss specialist, and it is limited in what it can prescribe for female patients.",
-   "effectType": "hard-stop",
-   "affects": [],
-   "evidence": "docs",
-   "proof": "Trustpilot review of 17 Jun 2024 and company reply of 11 Jul 2024. https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=hair&page=3",
-   "confidence": "low"
-  },
-  {
-   "id": "R7",
-   "flow": "hair",
-   "when": "The patient takes antidepressants and orders finasteride.",
-   "then": "Finasteride was still prescribed in the one known case (the customer complained about this). So antidepressant use may not be a hard stop. One unverified account.",
-   "effectType": "none",
-   "affects": [
-    "p1"
-   ],
-   "evidence": "docs",
-   "proof": "Trustpilot review of 23 Oct 2026 and company reply. https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=finasteride",
-   "confidence": "low"
-  },
-  {
-   "id": "R8",
-   "flow": "hair",
-   "when": "The prescriber judges the chosen treatment unsuitable after payment.",
-   "then": "The order is declined with a full refund (refunds can take about 5 working days), or an alternative is offered which the patient can accept or decline.",
-   "effectType": "product-switched",
-   "affects": [],
-   "evidence": "docs",
-   "proof": "Company replies on Trustpilot of 2 Feb 2021, 11 Jul 2024 and 2 Jun 2025. https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=subscription",
-   "confidence": "medium"
-  },
-  {
-   "id": "R9",
-   "flow": "hair",
-   "when": "Sex = female (or assigned female at birth) and the request is finasteride, dutasteride or oral minoxidil",
-   "then": "Not supplied; clinicians will not approve. The patient is pointed to a specialist clinic or, on newer pages, to the Oxford Female Hair Loss Programme or Regaine for Women.",
-   "effectType": "hard-stop",
-   "affects": [
-    "p1",
-    "p2",
-    "p3",
-    "p4",
-    "p6",
-    "p7",
-    "p14"
-   ],
-   "evidence": "docs",
-   "proof": "Search snippets of /consultation/23, /hair-loss/minoxidil-2-5mg-60-tablets-for-hair-loss and /hair-loss/dutasteride (23 Nov 2026); Trustpilot reply 11 Jul 2024",
-   "confidence": "high"
-  },
-  {
-   "id": "R10",
-   "flow": "hair",
-   "when": "Age under 18",
-   "then": "Finasteride (and the compounded spray) not supplied: product pages say over 18 only.",
-   "effectType": "hard-stop",
-   "affects": [
-    "p1",
-    "p2",
-    "p8"
-   ],
-   "evidence": "docs",
-   "proof": "Search snippets of /hair-loss/finasteride and /blog/what-is-topical-finasteride-and-minoxidil-spray",
-   "confidence": "medium"
-  },
-  {
-   "id": "R11",
-   "flow": "hair",
-   "when": "Request for dutasteride with less than 6 months on finasteride, or no clear reason to switch",
-   "then": "Dutasteride not prescribed; finasteride (plus Regaine for first-time patients) is the route. Strengthens R1.",
-   "effectType": "product-switched",
-   "affects": [
-    "p3",
-    "p7",
-    "p1",
-    "p11"
-   ],
-   "evidence": "docs",
-   "proof": "Search snippets of /blog/switching-from-finasteride-to-dutasteride and /hair-loss/dutasteride",
-   "confidence": "medium"
-  },
-  {
-   "id": "R12",
-   "flow": "hair",
-   "when": "Partner is pregnant, or trying for a baby within the next 12 weeks",
-   "then": "The form tells the patient not to use finasteride or dutasteride. Whether this is a stop or a warning is unknown.",
-   "effectType": "soft-warning",
-   "affects": [
-    "p1",
-    "p2",
-    "p3",
-    "p7",
-    "p13",
-    "p14",
-    "p15"
-   ],
-   "evidence": "docs",
-   "proof": "Search snippet of /consultation/23",
-   "confidence": "medium"
-  },
-  {
-   "id": "R13",
-   "flow": "hair",
-   "when": "Heart or blood-pressure problem declared (fast or irregular heartbeat, chest pain, breathlessness, low blood pressure with dizziness or fainting, angina, recent heart attack, heart failure, left ventricular hypertrophy)",
-   "then": "Inferred: oral minoxidil is not supplied (these are its listed contraindications and cautions); topical options and finasteride remain. Exact engine effect not seen.",
-   "effectType": "product-removed",
-   "affects": [
-    "p4",
-    "p6",
-    "p14"
-   ],
-   "evidence": "inferred",
-   "proof": "Topics from search snippet of /consultation/23; effect inferred from the minoxidil tablet licence",
-   "confidence": "low"
-  },
-  {
-   "id": "R14",
-   "flow": "hair",
-   "when": "Oral minoxidil ordered",
-   "then": "Patient must agree to check blood pressure regularly and is warned about dizziness, fluid retention and breathlessness; GP is told.",
-   "effectType": "flag-for-clinician",
-   "affects": [
-    "p4",
-    "p6",
-    "p14"
-   ],
-   "evidence": "docs",
-   "proof": "Search snippet of /consultation/23; Trustpilot replies Jun and Nov 2025",
-   "confidence": "medium"
-  },
-  {
-   "id": "R15",
-   "flow": "hair",
-   "when": "Woman with hair thinning (including menopause)",
-   "then": "Offered the Oxford Female Hair Loss Programme: consultation and blood test first, then an oral prescription treatment if suitable, otherwise GP advice. Topical Regaine for Women is also sold.",
-   "effectType": "product-added",
-   "affects": [
-    "p16",
-    "p12"
-   ],
-   "evidence": "docs",
-   "proof": "Search snippets of /female-hair-loss and /blog/5-best-products-to-treat-menopausal-hair-loss",
-   "confidence": "medium"
-  },
-  {
-   "id": "R16",
-   "flow": "hair",
-   "when": "Mood or depression history declared",
-   "then": "Unknown effect: asked in the form; one reviewer on antidepressants still got finasteride (R7), so probably a clinician flag rather than a stop.",
-   "effectType": "flag-for-clinician",
-   "affects": [
-    "p1",
-    "p2",
-    "p3",
-    "p7"
-   ],
-   "evidence": "inferred",
-   "proof": "Topic in search snippet of /consultation/23 plus Trustpilot review 23 Oct 2026",
-   "confidence": "low"
-  }
- ],
- "experiments": [
-  {
-   "id": "probe-hairloss-s2",
-   "flow": "hair",
-   "changed": "None: access check of /hair-loss before experiments",
-   "result": "Cloudflare \"Performing security verification\" page again; no experiments possible.",
-   "run": "runs/probe-hairloss-s2"
-  }
- ],
- "recommendations": [
-  {
-   "profile": "Baseline man, 32, Norwood 3, no conditions, no previous treatment",
-   "offered": [
-    "p1",
-    "p11",
-    "p10",
-    "p13",
-    "p8"
-   ],
-   "default": "p1",
-   "note": "Catalogue model: the man chooses. Company pages steer first-time men to finasteride 1 mg plus Regaine (topical minoxidil); dutasteride is not offered first. Oral minoxidil is sold to men who pass the heart/blood-pressure screen. No live outcome seen.",
-   "evidence": "docs"
-  },
-  {
-   "profile": "Baseline woman, 38, diffuse thinning",
-   "offered": [
-    "p16",
-    "p12"
-   ],
-   "default": "p16",
-   "note": "Finasteride, dutasteride and oral minoxidil refused. Female programme (consultation + blood test) or Regaine for Women 2%.",
-   "evidence": "docs"
-  },
-  {
-   "profile": "Man asking for dutasteride without 6 months of finasteride",
-   "offered": [
-    "p1"
-   ],
-   "default": "p1",
-   "note": "Declined or switched to finasteride, sometimes only after payment.",
-   "evidence": "docs"
-  },
-  {
-   "profile": "Man with heart disease or low blood pressure",
-   "offered": [
-    "p1",
-    "p11",
-    "p10"
-   ],
-   "default": "p1",
-   "note": "Inferred: oral minoxidil removed.",
-   "evidence": "inferred"
-  },
-  {
-   "profile": "Under 18",
-   "offered": [],
-   "default": "",
-   "note": "Prescription products are for over-18s only.",
-   "evidence": "docs"
-  }
- ],
- "engineSummary": "Oxford Online Pharmacy is a catalogue pharmacy, not a recommender. The customer picks a product and pack size, then completes a short (about 3-minute) questionnaire. The form screens sex, age, partner pregnancy, heart and blood-pressure problems, mood, liver and kidney disease, allergies and previous treatment, and asks consent to tell the GP. Hard limits sit mainly with the prescriber after payment: men only for finasteride, dutasteride and oral minoxidil; over 18; dutasteride only after 6+ months of finasteride; oral minoxidil 2.5 mg only, at the usual dose, with blood-pressure checks. Women go to a separate programme that needs a blood test. None of this was seen live; it comes from the company's pages and reviews.",
- "strengths": [
-  "Very wide range for men: generic and branded finasteride, dutasteride, oral minoxidil (generic and Loniten), a compounded finasteride + minoxidil + tretinoin spray, topical minoxidil and bundles.",
-  "Low, transparent pack prices with no subscription; long packs (168 tablets, 180 capsules) cut the monthly cost.",
-  "Clear safety stance: finasteride-first, off-label documents, GP informed, blood-pressure checks for oral minoxidil.",
-  "Large trust signal (35,000+ Trustpilot reviews, 4.7)."
- ],
- "weaknesses": [
-  "Payment is taken before the prescriber decides; refusals (dutasteride, early reorders, women) come after checkout.",
-  "Customer chooses the drug; the questionnaire does not appear to recommend or personalise a plan.",
-  "Weak women's offer: oral treatments refused, programme needs a blood test and the drug is not named; pages conflict.",
-  "Only 2.5 mg minoxidil tablets, so patients must split tablets for the usual starting dose.",
-  "New consultation for every reorder."
- ],
- "opportunities": [
-  "A guided consultation that recommends a plan (and screens before payment) would beat their pick-then-pay flow.",
-  "Women's hair loss: offer clear licensed and off-label options (topical minoxidil, oral minoxidil low dose, spironolactone) with transparent eligibility.",
-  "Lower-strength oral minoxidil (1.25 mg or less) to avoid tablet splitting.",
-  "Publish the compounded spray strengths and price clearly; Oxford does not.",
-  "Follow-up and progress tracking (photos, check-ins) are not part of their model."
- ],
- "sources": [
-  {
-   "title": "Trustpilot: Oxford Online Pharmacy company page (business facts)",
-   "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk"
-  },
-  {
-   "title": "Trustpilot review search: hair (pages 1 to 4 of 5 read)",
-   "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=hair"
-  },
-  {
-   "title": "Trustpilot review search: finasteride (page 1 of 4 read)",
-   "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=finasteride"
-  },
-  {
-   "title": "Trustpilot review search: dutasteride (page 1 read)",
-   "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=dutasteride"
-  },
-  {
-   "title": "Trustpilot review search: minoxidil (page 1 of 2 read)",
-   "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=minoxidil"
-  },
-  {
-   "title": "Trustpilot review search: questionnaire (page 1 of 4 read)",
-   "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=questionnaire"
-  },
-  {
-   "title": "Trustpilot review search: subscription",
-   "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=subscription"
-  },
-  {
-   "title": "Trustpilot review searches with no hair-loss result: spray, topical, solution, compounded, scalp, spironolactone",
-   "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=spray"
-  },
-  {
-   "title": "Companies House search: Frosts (Online) Limited, 11232746",
-   "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=frosts+%28online%29"
-  },
-  {
-   "title": "NOT READ (blocked here): Wayback Machine copy of the hair-loss category page, captured 1 Nov 2026",
-   "url": "http://web.archive.org/web/20261101123809/https://www.oxfordonlinepharmacy.co.uk/hair-loss"
-  },
-  {
-   "title": "Hair loss category",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss"
-  },
-  {
-   "title": "Hair Loss Treatment consultation (HTTP 403; seen via search snippets)",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/consultation/23"
-  },
-  {
-   "title": "Finasteride 1 mg",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/finasteride"
-  },
-  {
-   "title": "Dutasteride",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/dutasteride"
-  },
-  {
-   "title": "Minoxidil 2.5 mg tablets",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/minoxidil-generic"
-  },
-  {
-   "title": "Minoxidil (Loniten)",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/minoxidil-loniten"
-  },
-  {
-   "title": "Hair loss treatment for women",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/female-hair-loss"
-  },
-  {
-   "title": "What is topical finasteride and minoxidil spray?",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/blog/what-is-topical-finasteride-and-minoxidil-spray"
-  },
-  {
-   "title": "Switching from finasteride to dutasteride",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/blog/switching-from-finasteride-to-dutasteride"
-  },
-  {
-   "title": "Regaine for Women",
-   "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss/regaine-for-women-regular-strength-60ml"
-  }
- ],
- "limitations": [
-  "The company's website could not be opened (Cloudflare check, HTTP 403) at stage 1 or stage 2. Product, price and consultation facts come from web-search snippets of the company's own pages, which are summaries of indexed copies of varying age, not the live pages.",
-  "The compounded spray (p8) is confirmed, but its strengths and price are not.",
-  "All findings come from Trustpilot reviews and company replies, paraphrased by a fetch tool that will not quote at length. Reviews are one-sided, unverified and some are years old.",
-  "The 'rules' are prescriber behaviour reported by customers, not engine behaviour seen in a replay. None has been tested.",
-  "Web search was unavailable (shared budget used up), so press, help-centre pages and regulator reports were not found.",
-  "Not every page of each Trustpilot search was read (for example 'finasteride' pages 2 to 4 and 'hair' page 5).",
-  "No one-change experiments were run: the consultation could not be reached. Every option-level effect is untested; rules are labelled docs or inferred.",
-  "No exact question wording or answer options are known, so flows[0].questions is empty; the topics list is a summary only.",
-  "Not tested: every one-change experiment in the protocol (sex, age, pregnancy, heart, blood pressure, liver, kidney, mood, medicines, allergies, previous treatment, preference)."
- ]
 }

@@ -1,0 +1,1 @@
+{"start":"https://hairloss.philipkingsley.co.uk/welcome","steps":[{"do":"click","selector":"[data-quiz-step=men_quiz_step0]"},{"do":"wait","ms":1500}]}

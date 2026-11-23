@@ -1,0 +1,32 @@
+STEP 12 st AFTER ANSWERS ["Fair. It often burns, but tans a little"]
+URL: https://www.hairandme.com/c/suh/st
+
+--- VISIBLE TEXT ---
+How would you describe your skin tone?
+
+These answers are based on the Fitzpatrick scale, a widely recognised medical classification scheme for skin colour.
+
+Why are we asking?
+
+To help our Dermatology Clinicians prescribe your treatment accurately and safely.
+
+Pale
+Fair
+Darker shade of pale
+Light brown
+Brown
+Dark brown or black
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=9346] | Pale
+input:radio[name=9346] | Fair [checked]
+input:radio[name=9346] | Darker shade of pale
+input:radio[name=9346] | Light brown
+input:radio[name=9346] | Brown
+input:radio[name=9346] | Dark brown or black
+button:submit | NEXT QUESTION
+a -> /c/suh/st?action=previous | Back to previous page
