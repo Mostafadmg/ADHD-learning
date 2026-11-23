@@ -1,0 +1,29 @@
+STEP 02 click "Male"
+URL: https://start.treated.com/GBR/en/#/choose-gender/024
+TITLE: Treated UK - Choose Better - Medical Experts & Treatments Online
+
+--- VISIBLE TEXT ---
+What sex were you assigned at birth?
+
+We ask this because some things we offer, like birth control or erectile dysfunction tablets, aren't safe for everyone to take.
+
+Female
+Male
+Continue
+
+By clicking 'Continue', you're confirming that you're aged 18 or over and agreeing to our terms of use.
+
+Feedback
+How are you finding Treated?
+Select an option from 😠 to 😍, with 😠 being Not good at all and 😍 being Very good
+Not good at all
+Very good
+Next
+Skip
+
+--- CONTROLS ---
+  button (4): Continue  ·  Feedback  ·  Next [disabled]  ·  Skip
+  radio (1): (no label)
+
+--- LINKS ---
+

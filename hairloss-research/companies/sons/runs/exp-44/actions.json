@@ -1,0 +1,31 @@
+{
+ "_about": "Sons UK, stage 2 experiment exp-44 (oral-minoxidil-5mg flow). Changed: none: baseline for the 5 mg step-up form (some improvement but plateaued, no side effects, no changes); the consent box was left unticked and the form was not sent.  No contact details are typed and no form is sent.",
+ "start": "https://shop.sons.co.uk/consultation/?logged_in=false&oral_minoxidil_5mg=true",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 3500
+  },
+  {
+   "do": "click",
+   "text": "I've had some improvement but it now seems to have plateaued",
+   "_q": "5712 response so far"
+  },
+  {
+   "do": "click",
+   "text": "No",
+   "_q": "5713 side effects on 2.5 mg",
+   "nth": 0
+  },
+  {
+   "do": "click",
+   "text": "No",
+   "_q": "5715 changes to health or medicines",
+   "nth": 1
+  },
+  {
+   "do": "wait",
+   "ms": 1000
+  }
+ ]
+}

@@ -1,0 +1,23 @@
+STEP 10 click "label:text-is(\"I have been diagnosed with asthma.\")"
+URL: https://www.numan.com/subscribe/hair-loss/9c2eb7bd-0d47-405b-855d-36c522867736/sq/are_any_of_the_following_true
+TITLE: Are any of the following true? | Numan
+
+--- VISIBLE TEXT ---
+44%
+Are any of the following true?
+I have noticed hair loss on other areas of my body other than my head.
+I am undergoing PSA (prostate) monitoring or I have previously been diagnosed with prostate cancer.
+I have been diagnosed with high or low blood pressure.
+I have been diagnosed with asthma.
+I plan on trying for a baby in the next 12 weeks.
+I have previously experienced, or am currently experiencing, depression, anxiety or panic disorders
+No - none
+Back
+Next
+
+--- CONTROLS ---
+  checkbox (7): I have noticed hair loss on other areas of my body other than my head.  ·  I am undergoing PSA (prostate) monitoring or I have previously been diagnosed with prostate cancer.  ·  I have been diagnosed with high or low blood pressure.  ·  I have been diagnosed with asthma. [checked]  ·  I plan on trying for a baby in the next 12 weeks.  ·  I have previously experienced, or am currently experiencing, depression, anxiety or panic disorders  ·  No - none
+  button (2): Back  ·  Next
+
+--- LINKS ---
+  link (1): Visit the main page -> /

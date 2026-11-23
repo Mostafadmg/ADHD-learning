@@ -1,0 +1,80 @@
+{
+ "start": "https://www.hims.com/g/i/hl",
+ "steps": [
+  {
+   "n": 0,
+   "slug": "goals",
+   "url": "https://www.hims.com/g/i/hl/goals",
+   "text": "Something went wrong!\n\nWe're sorry, something went wrong. Please try again. If the problem persists, please contact support.\n\nTry again",
+   "choices": [],
+   "buttons": [
+    {
+     "label": "Try again",
+     "disabled": false
+    }
+   ],
+   "fields": [],
+   "serverSlug": "goals",
+   "serverType": "nodeModularScreen",
+   "serverStep": "2",
+   "outputSchema": {
+    "type": "object",
+    "required": [
+     "responses"
+    ],
+    "properties": {
+     "responses": {
+      "type": "object",
+      "required": [
+       "i-hl-hims-hair-goals"
+      ],
+      "properties": {
+       "i-hl-hims-hair-goals": {
+        "type": "object",
+        "required": [
+         "i-hl-hims-goals"
+        ],
+        "properties": {
+         "i-hl-hims-goals": {
+          "enum": [
+           "i-hl-hims-goals-receding",
+           "i-hl-hims-goals-regrow",
+           "i-hl-hims-goals-get-ahead"
+          ],
+          "type": "string"
+         }
+        },
+        "additionalProperties": false
+       }
+      },
+      "additionalProperties": false
+     }
+    }
+   },
+   "storedResponses": {}
+  }
+ ],
+ "end": {
+  "reason": "error",
+  "error": "Error: no visible choice matches \"Regrow a full head of hair\""
+ },
+ "postsSent": 2,
+ "storage": {
+  "local": [
+   "treatmentType",
+   "amplitude_unsent_73e87329fc87b9ed767fc1a55872fdc3",
+   "visitReason",
+   "amplitude_unsent_identify_73e87329fc87b9ed767fc1a55872fdc3",
+   "tcmu",
+   "_huetid",
+   "_gcl_ls",
+   "gbFeaturesCache"
+  ],
+  "session": [
+   "hl-node-history",
+   "hl:459a2a9d-2134-492c-b1ca-0433bfb65665:start-flow-fired",
+   "sessionId",
+   "tcms"
+  ]
+ }
+}

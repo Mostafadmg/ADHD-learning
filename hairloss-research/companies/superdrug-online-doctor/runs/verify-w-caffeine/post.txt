@@ -1,0 +1,54 @@
+AFTER SUBMIT
+URL: https://onlinedoctor.superdrug.com/assessment/147757#/product?step=product
+
+Help?
+Hair loss consultation
+Questionnaire	Your request	Delivery	Sign in or Register	Your Order	Payment Successful
+Please note:  This service is only available in the UK.
+Your request
+	 Regaine for Women2% w/w (60ml)		£25.00
+	 Nourkrin Woman Hair Growth Tablets(60 tablets)		£51.00
+	 Telephone Consultation with a Doctor (does not include prescription medication): Available 2-3pm Friday(Only Phone consultation)		£25.00
+Order
+Back
+Secure payment
+Authorised and regulated
+Regulation | Privacy notice | Terms and Conditions | Cookie policy | Cookie Preferences
+© 2026 Superdrug Online Doctor. All rights reserved | Registered Company Number: 07392646
+
+--- CONTROLS ---
+input:radio name=selected id=product_9895328 value=[object Object] qa= | Regaine for Women2% w/w (60ml)
+button:button name= id= value= qa= | Order
+input:radio name=selected id=product_9895329 value=[object Object] qa= | Nourkrin Woman Hair Growth Tablets(60 tablets)
+button:button name= id= value= qa= | Order
+input:radio name=selected id=product_9894989 value=[object Object] qa= | Telephone Consultation with a Doctor (does not include prescription medication): Available
+button:button name= id= value= qa= | Order
+button:submit name= id=next value= qa= | Order
+button:button name= id=back value= qa= | Back
+button:submit name= id=onetrust-pc-btn-handler value= qa= | Manage cookies
+button:submit name= id=onetrust-reject-all-handler value= qa= | Deny Cookies
+button:submit name= id=onetrust-accept-btn-handler value= qa= | Accept cookies
+button:submit name= id=close-pc-btn-handler value= qa= | 
+button:submit name= id=accept-recommended-btn-handler value= qa= | Accept cookies
+button:submit name= id= value= qa= | 
+button:submit name= id= value= qa= | View Vendor Details‎
+button:submit name= id= value= qa= | 
+input:checkbox name=ot-group-id-C0002 id=ot-group-id-C0002 value=on qa= | Performance cookies
+button:submit name= id= value= qa= | View Vendor Details‎
+button:submit name= id= value= qa= | 
+input:checkbox name=ot-group-id-C0003 id=ot-group-id-C0003 value=on qa= | Functional cookies
+button:submit name= id= value= qa= | View Vendor Details‎
+button:submit name= id= value= qa= | 
+input:checkbox name=ot-group-id-C0004 id=ot-group-id-C0004 value=on qa= | Marketing and social media cookies
+button:submit name= id= value= qa= | View Vendor Details‎
+button:submit name= id= value= qa= | Back Button
+input:text name=vendor-search-handler id=vendor-search-handler value= qa= | 
+button:submit name= id=filter-btn-handler value= qa= | Filter Icon
+button:submit name= id=clear-filters-handler value= qa= | Clear
+input:checkbox name= id=chkbox-id value=on qa= | checkbox label
+button:submit name= id=filter-apply-handler value= qa= | Apply
+button:submit name= id=filter-cancel-handler value= qa= | Cancel
+input:checkbox name= id=select-all-hosts-groups-handler value=on qa= | checkbox label
+input:checkbox name= id=select-all-vendor-groups-handler value=on qa= | checkbox label
+input:checkbox name= id=select-all-vendor-leg-handler value=on qa= | checkbox label
+button:submit name= id= value= qa= | Save preferences

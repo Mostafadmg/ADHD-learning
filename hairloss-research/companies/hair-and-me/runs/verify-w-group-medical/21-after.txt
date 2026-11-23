@@ -1,0 +1,22 @@
+STEP 21 pg AFTER ANSWERS ["No","Yes, I've read and understood the information and would like to carry on."]
+URL: https://www.hairandme.com/c/suh/pg
+
+--- VISIBLE TEXT ---
+Are you pregnant, breastfeeding or likely to conceive?
+Yes
+No
+
+You can’t use some of our prescription treatments if you're pregnant or breastfeeding. Get in touch with our Dermatology Support Team if you become pregnant while using Hair + Me.
+
+Yes, I've read and understood the information and would like to carry on.
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=3046] | Yes
+input:radio[name=3046] | No [checked]
+input:checkbox[name=3047] | Yes, I've read and understood the information and would like to carry on. [checked]
+button:submit | NEXT QUESTION
+a -> /c/suh/pg?action=previous | Back to previous page

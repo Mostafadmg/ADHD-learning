@@ -1,0 +1,17 @@
+STEP 11 click "Next"
+URL: https://www.numan.com/subscribe/hair-loss/0bd65851-c920-4747-a20f-97b939f45464/sq/clarify_psa
+TITLE: If you wish to be considered for finasteride you must tell your GP that you are taking finasteride so that they can interpret your results accordingly. | Numan
+
+--- VISIBLE TEXT ---
+51%
+If you wish to be considered for finasteride you must tell your GP that you are taking finasteride so that they can interpret your results accordingly.
+I understand and would like to be considered for finasteride containing preparations.
+I do not wish to be considered for finasteride containing preparations.
+Back
+
+--- CONTROLS ---
+  radio (2): I understand and would like to be considered for finasteride containing preparations.  ·  I do not wish to be considered for finasteride containing preparations.
+  button (1): Back
+
+--- LINKS ---
+  link (1): Visit the main page -> /

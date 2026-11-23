@@ -1,0 +1,17 @@
+STEP 02 js AFTER ANSWERS ["Ready to start treatment"]
+URL: https://www.hairandme.com/c/suh/js
+
+--- VISIBLE TEXT ---
+Where are you in your hair regrowth journey?
+Still exploring my options
+Ready to start treatment
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=8038] | Still exploring my options
+input:radio[name=8038] | Ready to start treatment [checked]
+button:submit | NEXT QUESTION
+a -> /c/suh/js?action=previous | Back to previous page

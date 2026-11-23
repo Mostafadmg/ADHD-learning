@@ -1,0 +1,22 @@
+STEP 16 click "label:text-is(\"No\")"
+URL: https://www.numan.com/subscribe/hair-loss/95efd148-c6cc-4e74-8ae2-0979d9455745/email
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+89%
+Get access to special offers
+
+Take the first step towards improving your overall health. You'll receive personalised health insights and exclusive monthly offers to Numan products.
+
+​
+Email address (optional)
+Back
+Next
+Skip
+
+--- CONTROLS ---
+  input:text (1): Email address (optional)
+  button (3): Back  ·  Next [disabled]  ·  Skip
+
+--- LINKS ---
+  link (1): Visit the main page -> /

@@ -2,6 +2,8 @@
 
 **Status:** COMPLETE (research 23 November 2026). Sections 1 to 4 were written first; sections 5 to 8, the three
 lists, the key facts and the summary were added in a second pass the same day, with a working web search.
+An independent fact-check of 30 high-impact claims was done the same day; corrections are marked **[Corrected in
+fact-check]** in the text and listed in the "Verification log" at the end.
 
 **Reader:** a UK pharmacist independent prescriber planning an online hair-loss service with personalised compounded
 topicals, competing with Hims UK, Voy, Hair + Me, Sons and Numan.
@@ -77,8 +79,12 @@ Source: https://www.legislation.gov.uk/ukpga/1968/67/section/10
   Order 2025 (SI 2025/1249, made 10 December 2025) will amend section 10 so that, in Great Britain, a registered
   pharmacy technician authorised by a pharmacist can do or supervise this work. legislation.gov.uk still lists these
   section 10 changes as "yet to be applied"; the Order says they start "on such days as the Privy Council may by order
-  appoint". **Whether a start date has been set was not checked.**
-  Sources: https://www.legislation.gov.uk/uksi/2025/1249/made and https://www.legislation.gov.uk/ukpga/1968/67/section/10
+  appoint". **[Corrected in fact-check, 23 Nov 2026]** A start date has been set: the Commencement Order of Council
+  (SI 2026/110, made 4 February 2026) makes **10 December 2026** "the appointed day for the coming into force of" the
+  2025 Order "in so far as it is not already in force". (The first part, on handing out checked and bagged
+  prescriptions, started on 7 January 2026.)
+  Sources: https://www.legislation.gov.uk/uksi/2025/1249/made , https://www.legislation.gov.uk/uksi/2026/110/made and
+  https://www.legislation.gov.uk/ukpga/1968/67/section/10
 
 **Is there a "special need" test on Route A?** The words "special needs" do not appear in section 10. MHRA Guidance
 Note 14 says its guidance and the regulation 167 exemption do "not apply to ... products prepared in a pharmacy under
@@ -566,6 +572,15 @@ of "hazardous" preparation for which the GPhC says to take specialist advice on 
 Source: the GPhC's "In practice: Guidance for pharmacist prescribers", updated April 2025, linked from
 https://www.pharmacyregulation.org/pharmacists/standards-and-guidance-pharmacy-professionals/guidance-pharmacy-professionals
 
+**[Fact-check note, 23 Nov 2026]** The April 2025 PDF could not be opened (the GPhC site returned 403/404 to automated
+reading). The "Prescribing and supplying" wording (separate prescribing from supply; a second suitably competent person
+"when possible"; the choice of another pharmacy) and the "registration ... at risk" line were checked word for word
+against the earlier version of the same guidance (section 4.2, 2019 text:
+https://www.jccp.org.uk/ckfinder/userfiles/files/in-practice-guidance-for-pharmacist-prescribers-november-2019.pdf).
+The "online questionnaires alone" sentence in the Online prescribing row does **not** appear in the 2019 text and could
+not be checked in the 2025 text: treat its exact wording as **[unverified]**. The same principle is verified in the
+GPhC distance guidance (section 3.2(a)).
+
 **Reading:** a founder who is the prescriber, the superintendent pharmacist and the owner of the compounding pharmacy
 holds three roles that the GPhC wants kept apart where possible. Plan for a second pharmacist to do the clinical and
 accuracy check on what you prescribe, and tell patients they may take the prescription elsewhere (for a compounded
@@ -596,7 +611,7 @@ supervise the treatment does.
 | The relevant activity is "Treatment of disease, disorder or injury". | It means "the provision of treatment for a disease, disorder or injury by or under the supervision of (a) a health care professional, or a team which includes a health care professional". | Schedule 1, paragraph 4(1), Health and Social Care Act 2008 (Regulated Activities) Regulations 2014: https://www.legislation.gov.uk/uksi/2014/2936/schedule/1 |
 | **Pharmacists are not on the list.** | "health care professional" means a medical practitioner, dental practitioner, dental hygienist, dental therapist, dental nurse, dental technician, orthodontic therapist, nurse, midwife, biomedical scientist, clinical scientist, operating department practitioner, paramedic, radiographer or (since 13 December 2024) an associate. | Schedule 1, paragraph 4(4), same link |
 | The CQC says so in terms. | "The list of professionals in the regulations does not include: ... pharmacists ... If you are one of these professionals and you run a standalone treatment service, you do not need to register for Treatment of disease, disorder or injury." | CQC, Scope of registration (August 2026): https://www.cqc.org.uk/system/files/2026-08/260826-Scope-of-Registration-updated-august-2026-1.1_0.pdf |
-| Pharmacy services are also a general exception. | "Services which are provided at or from premises that are a registered pharmacy ... and which are (a) pharmaceutical services ... or (b) services of a kind which, if provided in pursuance of that Act, would be provided as pharmaceutical services". | Schedule 2, paragraph 8, same Regulations: https://www.legislation.gov.uk/uksi/2014/2936/schedule/2 |
+| Pharmacy services are also a general exception. | "Services which are provided at or from premises that are a registered pharmacy ... and which are (a) pharmaceutical services ... or (b) services of a kind which, if provided in pursuance of that Act, would be provided as pharmaceutical services". **[Fact-check caution]** This exception covers NHS-type pharmaceutical services (dispensing and the like). Whether a private online prescribing service is "of a kind" that would be an NHS pharmaceutical service was not confirmed; do not rely on it. The firm ground is the row above: pharmacists are not on the list. | Schedule 2, paragraph 8, same Regulations: https://www.legislation.gov.uk/uksi/2014/2936/schedule/2 |
 | One doctor or nurse in the team changes the answer. | "If a multi-disciplinary team includes one of these healthcare professionals ... involved in their professional capacity, then the activity will be within scope and needs to be registered." | CQC, Scope of registration (PDF above) |
 | Doctors treating online are in scope. | The exception for doctors in private practice "does not apply ... to treatment provided remotely over the telephone, by video consultation or by email." | CQC, Scope of registration (PDF above) |
 
@@ -769,7 +784,7 @@ guidance; GPhC unlicensed-medicines guidance; MHRA finasteride updates):
 | Two legal grounds | "you must always identify an article 6 lawful basis for processing" and also "meet one of the conditions in article 9 of the UK GDPR". | https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/special-category-data/what-are-the-rules-on-special-category-data/ |
 | The usual health condition | Article 9(2)(h): provision of health care or treatment, with the Data Protection Act 2018 Schedule 1 condition for health or social care. It must be done by or under the responsibility of a professional under a duty of secrecy. | https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/special-category-data/what-are-the-conditions-for-processing/ |
 | Consent is usually the wrong basis | The ICO notes that in health care consent is often not the appropriate lawful basis; the common-law duty of confidentiality still applies alongside data protection. | same link |
-| DPIA | You must carry out a data protection impact assessment if you process special category data "on a large scale". | first link |
+| DPIA | **[Corrected in fact-check]** The ICO says "you must carry out a DPIA if you plan to process special category data: on a large scale; to determine access to a product, service, opportunity or benefit; or which includes genetic data or biometric data for the purpose of uniquely identifying someone." An online prescribing service uses health answers to decide whether a person gets a medicine, and a photo-ID check that matches a face is biometric, so **a DPIA is needed before launch whatever the size of the service**, not only "at large scale". | first link |
 | Records | "if you process special category data you must keep records, including documenting the categories of data", with your condition for processing. | first link |
 | Fee | Controllers pay the ICO data protection fee: tier 1 £52 (turnover up to £632,000 or up to 10 staff), tier 2 £78, tier 3 £3,763. | https://ico.org.uk/for-organisations/data-protection-fee/data-protection-fee/ |
 | Where data lives | GPhC: data "should be stored on servers which are hosted in the UK or in another jurisdiction which has equivalent levels of data protection"; card payments through a secure link such as PCI DSS; a privacy notice. | https://assets.pharmacyregulation.org/files/2025-02/gphc-guidance-registered-pharmacies-providing-pharmacy-services-distance-february-2025.pdf |
@@ -799,9 +814,12 @@ customers that named POMs (section 2.5).
   subscription contract entered into on or after section 254" of the Act comes into force. On 23 November 2026
   legislation.gov.uk still listed them as a draft that "has not yet been made".
   Source: https://www.legislation.gov.uk/ukdsi/2026/9780348287912
-- Government and CMA pages still say "expected to be in Spring 2027"
-  (https://www.gov.uk/government/news/consumers-to-save-around-400-million-every-year-from-government-crackdown-on-costly-subscription-traps).
-  **So the start date is 1 January 2027 if the draft is made as laid; treat it as not final until the made SI appears.**
+- **[Corrected in fact-check, 23 Nov 2026]** An earlier government release said "spring 2027"
+  (https://www.gov.uk/government/news/consumers-to-save-around-400-million-every-year-from-government-crackdown-on-costly-subscription-traps),
+  but that is out of date. The Prime Minister's announcement of 9 August 2026 says: "New rules will now come into force
+  in January 2027" (https://www.gov.uk/government/news/pm-starts-roll-out-of-everyday-fixes-on-the-cost-of-living-ending-rip-off-discounts-and-subscription-traps).
+  **So plan for 1 January 2027. The regulations were still a draft on legislation.gov.uk on 23 November 2026, and no
+  commencement order for section 254 was found, so check again before launch.**
 - What the draft requires (summary of the draft regulations at the link above): reminder notices "in writing on a
   durable medium" before renewals and when a discounted period ends; cooling-off rights, extended if you fail to give
   the cooling-off information; refunds generally within 14 days of a cancellation; a consumer may end the contract at
@@ -898,7 +916,7 @@ recorded individual need.
 - Show on the website the pharmacy's GPhC number, owner, superintendent, the prescriber's name, registration number and profession, and how to complain.
 - Pay the ICO fee, do a DPIA, keep a record of processing, use Article 6 plus Article 9(2)(h), host data in the UK or an equivalent jurisdiction.
 - Get CQC advice in writing before involving any doctor or nurse in treatment.
-- Build subscriptions to the DMCC Act rules (reminders, easy exit, cooling-off) before contracts made from 1 January 2027 (date not final).
+- Build subscriptions to the DMCC Act rules (reminders, easy exit, cooling-off) before contracts made from 1 January 2027 (date announced by government on 9 August 2026; regulations still in draft on 23 November 2026).
 
 ## You can
 
@@ -953,7 +971,7 @@ recorded individual need.
 20. Pharmacists are not "health care professionals" for CQC treatment registration; a pharmacist-only service does not need CQC registration, but one doctor or nurse in the team does. https://www.cqc.org.uk/system/files/2026-08/260826-Scope-of-Registration-updated-august-2026-1.1_0.pdf
 21. MHRA (11 May 2026): finasteride is associated with depression, suicidal ideation and persistent sexual dysfunction; ask history, review record, review regularly; patient cards kept. https://www.gov.uk/drug-safety-update/finasteride-and-dutasteride-updated-safety-warnings-for-psychiatric-side-effects-and-sexual-dysfunction
 22. EMA (final decision 22 August 2025): suicidal thoughts confirmed for finasteride tablets; no evidence linking them to finasteride skin sprays; precautionary warning for dutasteride. https://www.ema.europa.eu/en/medicines/human/referrals/finasteride-dutasteride-containing-medicinal-products
-23. Health data needs an Article 6 basis plus an Article 9 condition; large-scale processing needs a DPIA. https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/special-category-data/what-are-the-rules-on-special-category-data/
+23. Health data needs an Article 6 basis plus an Article 9 condition; a DPIA is required before launch (special category data used to decide access to a service, or biometric ID checks, trigger it, not only large scale). https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/special-category-data/what-are-the-rules-on-special-category-data/
 24. DMCC Act subscription rules: draft regulations say in force 1 January 2027, for new contracts only; not yet made on 23 November 2026. https://www.legislation.gov.uk/ukdsi/2026/9780348287912
 25. FDA (22 April 2025): no FDA-approved topical finasteride; 32 adverse event reports 2019 to 2024. https://www.fda.gov/drugs/human-drug-compounding/fda-alerts-health-care-providers-compounders-and-consumers-potential-risks-associated-compounded
 
@@ -969,3 +987,82 @@ recorded individual need.
 8. For finasteride, ask about depression and suicidal thoughts, give card-style warnings, review regularly and report on Yellow Card; this applies to compounded topicals too.
 9. Register with the ICO, do a DPIA, keep health data in the UK or equivalent, and build subscriptions to the DMCC rules expected from 1 January 2027.
 10. Get indemnity that names online, off-label and compounding work, plan for a second checking pharmacist, and take legal advice before launch.
+
+---
+
+## Verification log
+
+An independent, sceptical fact-check carried out on 23 November 2026. Each claim was checked against the primary source
+(the text of the law or the regulator's own document). Verdicts: **Confirmed** (the source says what the file says),
+**Corrected** (the file was changed; what changed is stated), **Unsupported** (could not be checked at the primary
+source; now marked [unverified] in the text).
+
+| # | Claim in the file | Verdict | What was checked, and any change | Source used |
+|---|---|---|---|---|
+| 1 | Reg 46(1) bans selling or supplying "an unauthorised medicinal product". | Confirmed | Wording matches word for word. | https://www.legislation.gov.uk/uksi/2012/1916/regulation/46 |
+| 2 | Medicines Act 1968 s10(1) lifts regs 17(1) and 46 for preparing to a prescription in a registered pharmacy under a pharmacist; s10(4)(b) allows stock for the same retail pharmacy business. | Confirmed | Both quotes match the current text. Small extra point: s10(1) also covers hospitals, care home services and health centres. | https://www.legislation.gov.uk/ukpga/1968/67/section/10 |
+| 3 | SI 2025/1249 (pharmacy technicians) amends s10; "whether a start date has been set was not checked". | **Corrected** | A start date exists: SI 2026/110 (made 4 February 2026) appoints **10 December 2026**. Text in 1.2 updated. | https://www.legislation.gov.uk/uksi/2026/110/made |
+| 4 | A pharmacist independent prescriber is an appropriate practitioner for any POM (reg 214(3)(e)). | Confirmed | | https://www.legislation.gov.uk/uksi/2012/1916/regulation/214 |
+| 5 | Reg 167 conditions (unsolicited order; PIP may specify; special needs; no advertisement "by any person"; MS licence holder). | Confirmed | Accurate. Not in the file but worth knowing: since 23 July 2025, condition E also allows an IMP manufacturing authorisation holder and has separate MM/POC rules; neither changes the hair-loss analysis. | https://www.legislation.gov.uk/uksi/2012/1916/regulation/167 |
+| 6 | Reg 170: specials records kept "for at least five years"; serious suspected reactions reported. | Confirmed | Applies to whoever sells or supplies under regs 167 to 169. | https://www.legislation.gov.uk/uksi/2012/1916/regulation/170 |
+| 7 | GN14: special need "does not include reasons of cost, convenience or operational needs"; licensed product used "even off-label" before an unlicensed one; liability "increased" off-label; s10 pharmacy products outside GN14; no QP needed on an MS licence. | Confirmed | All quotes found in the PDF. | https://assets.publishing.service.gov.uk/media/645e19f5ad8a03000c38b3bc/The_supply_of_unlicensed_medicinal_products__special_GN14.pdf |
+| 8 | Reg 279(1): no advert in GB for a medicine without a UK MA (or COR, THR or temporary authorisation). | Confirmed | | https://www.legislation.gov.uk/uksi/2012/1916/regulation/279 |
+| 9 | Reg 284(1): no advert "likely to lead to the use of a prescription only medicine". | Confirmed | Only exceptions are regs 291A and 292 (public health and vaccination campaigns). | https://www.legislation.gov.uk/uksi/2012/1916/regulation/284 |
+| 10 | Reg 286: no "consultation is unnecessary" claim; no offer of diagnosis or treatment "by post or by means of an electronic communications network". | Confirmed | Reg 286(3) also bans case histories that could lead to wrong self-diagnosis (relevant to before-and-after stories). | https://www.legislation.gov.uk/uksi/2012/1916/regulation/286 |
+| 11 | Reg 289: no reference to recommendation by scientists, health care professionals or celebrities. | Confirmed | | https://www.legislation.gov.uk/uksi/2012/1916/regulation/289 |
+| 12 | Reg 293(2): a medicines business may not supply a medicine for a promotional purpose to a non-prescriber. | Confirmed | 293(3) adds that a third party's promotional purpose counts too. | https://www.legislation.gov.uk/uksi/2012/1916/regulation/293 |
+| 13 | Reg 303: breach is a criminal offence; up to two years' prison and/or a fine on indictment. | Confirmed | Summary conviction: fine up to the statutory maximum. | https://www.legislation.gov.uk/uksi/2012/1916/regulation/303 |
+| 14 | Blue Guide Appendix 6: home page no named POMs or prices; indicative condition prices only; no "Buy Now"; no free offers; unlicensed medicines "should not be mentioned"; no POM in core URL; MHRA focuses on home pages and may refer to professional regulators. | Confirmed | All quotes found in the PDF. | https://assets.publishing.service.gov.uk/media/6012d8c9d3bf7f05c2040b4e/Appendix_6.pdf |
+| 15 | CAP Code rules 12.1, 12.2.1, 12.11, 12.12, 12.18, 12.19, 12.23 (hair-loss evidence rule). | Confirmed | Wording and numbers match the live code. | https://www.asa.org.uk/type/non_broadcast/code_section/12.html |
+| 16 | ASA v Hims & Hers UK: labelled "Topical Finasteride with Minoxidil", "Clinically proven prescription medication", "Start for £17/month"; upheld under 12.12 and 12.11; told not to advertise POMs or unlicensed medicines; first published 10 Aug 2022, reissued 8 Feb 2023. | Confirmed | The reissue changed only the Response section, not the decision. | https://www.asa.org.uk/rulings/hims---hers-uk-ltd-a22-1145016-hims--hers-uk-ltd-1.html |
+| 17 | ASA v Manual (Menwell), 4 June 2025: "Buy Oral Minoxidil - £14/Month"; upheld 12.12; oral minoxidil licensed "for ... some types of hypertension only". | Confirmed | The ruling says "We understood from the MHRA that..."; the file's "recorded the MHRA's advice" is fair. | https://www.asa.org.uk/rulings/menwell-ltd-a25-1277445-menwell-ltd.html |
+| 18 | ASA v Numan, 6 March 2024: a refund tied to hair regrowth implies a guarantee (BCAP 11.23), even without the word "guarantee". | Confirmed | | https://www.asa.org.uk/rulings/vir-health-ltd-a22-1178070-vir-health-ltd.html |
+| 19 | GPhC distance guidance is the February 2025 version; quotes on questionnaire-only prescribing, verification, recorded justification, ID checks, GP consent, website disclosure of prescriber type, UK-equivalent data hosting, no incentives to prescribers, joint liability of owner and superintendent. | Confirmed | All quotes found in the PDF. No newer edition found; see "Missing" below for the January 2026 inspection framework. | https://assets.pharmacyregulation.org/files/2025-02/gphc-guidance-registered-pharmacies-providing-pharmacy-services-distance-february-2025.pdf |
+| 20 | GPhC prescriber guidance (April 2025): keep prescribing separate from supply, second competent checker "when possible", offer another pharmacy; registration at risk; no high-risk prescribing on "online questionnaires alone". | Partly confirmed; one line **unsupported** | The April 2025 PDF could not be opened. The separation, choice-of-pharmacy and "registration at risk" wording was confirmed in the 2019 version of the same guidance. The "online questionnaires alone" sentence is not in the 2019 text and was not found elsewhere: marked [unverified] in 3.4. | https://www.jccp.org.uk/ckfinder/userfiles/files/in-practice-guidance-for-pharmacist-prescribers-november-2019.pdf |
+| 21 | CQC: pharmacists are not "health care professionals" for "Treatment of disease, disorder or injury"; "associate" added 13 Dec 2024; one doctor or nurse in the team brings the service into scope; remote doctors' treatment is in scope. | Confirmed | Schedule 1 para 4(4) list and the 13.12.2024 amendment (SI 2024/374) checked; CQC scope PDF quotes found word for word. | https://www.legislation.gov.uk/uksi/2014/2936/schedule/1 and https://www.cqc.org.uk/system/files/2026-08/260826-Scope-of-Registration-updated-august-2026-1.1_0.pdf |
+| 22 | Schedule 2 para 8 is a further "general exception" for pharmacy services. | **Corrected (overstated)** | The quote is accurate, but it covers NHS-type pharmaceutical services; it is not shown to cover private online prescribing. Caution added in 4.1. | https://www.legislation.gov.uk/uksi/2014/2936/schedule/2 |
+| 23 | MHRA Drug Safety Updates: 29 April 2024 (ask about depression and suicidal ideation; patient card in all packs; stop 1 mg if depression or suicidal thoughts) and 11 May 2026 (review medical record; review regularly; cards in 1 mg and 5 mg packs; "sexual dysfunction may contribute to mood disorders"; dutasteride precaution). | Confirmed | Neither update mentions topical finasteride, as the file says. | https://www.gov.uk/drug-safety-update/finasteride-reminder-of-the-risk-psychiatric-side-effects-and-of-sexual-side-effects-which-may-persist-after-discontinuation-of-treatment and https://www.gov.uk/drug-safety-update/finasteride-and-dutasteride-updated-safety-warnings-for-psychiatric-side-effects-and-sexual-dysfunction |
+| 24 | EMA Article 31 review: started 3 Oct 2024, PRAC 8 May 2025, CMDh 19 June 2025, EC decision 22 Aug 2025; suicidal ideation confirmed for tablets; "no evidence linking" it to skin sprays; dutasteride precaution. | Confirmed | | https://www.ema.europa.eu/en/medicines/human/referrals/finasteride-dutasteride-containing-medicinal-products |
+| 25 | DMCC Act: unfair-practice rules (fake reviews, drip pricing) apply from 6 April 2025, penalties up to the higher of £300,000 or 10% of worldwide turnover. | Confirmed | | https://www.gov.uk/government/publications/unfair-commercial-practices-cma207/unfair-commercial-practices |
+| 26 | DMCC subscription rules: draft regulations say 1 January 2027; "government and CMA pages still say Spring 2027". | **Corrected** | The draft's date (1 January 2027, new contracts only) is confirmed and still a draft. But the "Spring 2027" statement is out of date: the government announced on 9 August 2026 that the rules "will now come into force in January 2027". Text in 6.3 and "You must" updated. | https://www.legislation.gov.uk/ukdsi/2026/9780348287912 and https://www.gov.uk/government/news/pm-starts-roll-out-of-everyday-fixes-on-the-cost-of-living-ending-rip-off-discounts-and-subscription-traps |
+| 27 | ICO: Article 6 basis plus Article 9 condition; a DPIA is needed for special category data "on a large scale". | **Corrected (understated)** | The ICO also requires a DPIA when special category data is used "to determine access to a product, service" or involves biometric ID. An online prescribing service meets this from day one. Text in 6.1 and key fact 23 updated. | https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/special-category-data/what-are-the-rules-on-special-category-data/ |
+| 28 | ICO fee: tier 1 £52 (turnover up to £632,000 or up to 10 staff), tier 2 £78, tier 3 £3,763. | Confirmed | | https://ico.org.uk/for-organisations/data-protection-fee/data-protection-fee/ |
+| 29 | GPhC inspection of Voy Pharmacy, 11 Aug 2026: statutory enforcement; standard 1.4 unlawful POM advertising; standard 2.6 first-month discount; met on 13 Oct 2026; prescribing service is CQC-regulated. | Confirmed | Note: the 2.6 discount was on a weight-loss medicine, not a hair-loss product. | https://inspections.pharmacyregulation.org/pharmacy/download/9012909-2026-08-11-26590.pdf and https://inspections.pharmacyregulation.org/pharmacy/download/9012909-2026-10-13-26718.pdf |
+| 30 | Responsible Pharmacist Regulations 2008 reg 3: absence at most two hours in business hours; new GPhC RP rules not yet confirmed as made. | Confirmed | No source found showing the GPhC rules and standards were finally approved after the October 2026 Council meeting; the file's "not confirmed" stands. | https://www.legislation.gov.uk/uksi/2008/2789/regulation/3 |
+
+**Not re-checked in this pass** (lower consequence or already marked in the file): the individual MHRA monthly
+"advertising investigations" entries in 2.5 (other than those used above), competitor wording in 2.7, Scotland section
+10F, GPhC 2018 unlicensed-medicines guidance quotes, Blue Guide sections 4.2 and 9.5, and the US section.
+
+### Important things missing from the file
+
+1. **GPhC inspection framework, January 2026.** Secondary sources report that the GPhC published an updated inspection
+   framework on 13 January 2026 that checks whether online pharmacies follow the distance guidance and adds points on
+   websites and supervision. The framework itself was not read: **[unverified]**; read it before launch, since it is
+   what inspectors will use. Pointer: https://pharmaceutical-journal.com/article/news/gphc-inspection-framework-update-adds-guidance-on-supervision-websites-and-weight-loss
+2. **Northern Ireland.** Pharmacies in Northern Ireland are regulated by the Pharmaceutical Society of Northern Ireland,
+   not the GPhC, and reg 279(2) has its own list for adverts published in Northern Ireland. The file does not say whether
+   a GB pharmacy may post prescription and unlicensed medicines to patients in Northern Ireland, or under which rules.
+   **Not researched; take advice before accepting Northern Ireland patients.**
+3. **Reg 286(3) case histories.** Before-and-after stories and testimonials are a risk under reg 286(3) as well as
+   reg 289 and CAP 12.18 (added to the log above, row 10).
+4. **10 December 2026 change.** From that date a pharmacist can authorise a registered pharmacy technician to prepare
+   or supervise preparation under section 10 in Great Britain. This matters for staffing a compounding pharmacy, but the
+   GPhC standards that go with it were not final on 23 November 2026.
+
+### Fact-check summary
+
+- Claims checked: 30 (20 asked for, plus 10 extra where the source was already open).
+- **Confirmed: 25.** **Corrected: 4** (rows 3, 22, 26, 27). **Partly confirmed with one line unsupported: 1** (row 20).
+  (Row 22 is counted as corrected; no claim had to be removed.)
+- Most important corrections:
+  1. The pharmacy-technician changes to section 10 start on **10 December 2026** (SI 2026/110); the file said the date
+     was unknown.
+  2. A **DPIA is required before launch** for an online prescribing service, not only at "large scale".
+  3. The subscription rules: government now says **January 2027**; the "Spring 2027" line was out of date. The
+     regulations are still a draft.
+  4. Do not rely on the CQC Schedule 2 pharmacy exception for private prescribing; the "pharmacists are not on the list"
+     point carries the conclusion on its own.
+  5. The GPhC prescriber-guidance line on "online questionnaires alone" could not be verified at source.
+- Overall: the legal backbone of the file (HMR 2012 Parts 4, 10 and 14, Medicines Act s10, GN14, Appendix 6, the CAP
+  Code, the ASA rulings, the CQC scope and the MHRA finasteride updates) is accurate and well quoted.

@@ -1,0 +1,99 @@
+{
+ "run": "verify-w-htaf-receding",
+ "flow": "women",
+ "changed": "women-htaf: My middle parting is getting wider → I've noticed my hairline is going further back / receding",
+ "changedStep": "htaf",
+ "baselinesPooled": [
+  "baseline-women",
+  "women-a",
+  "s2-base-women-1",
+  "verify-base-women"
+ ],
+ "stepOrder": [
+  "tp",
+  "yhg",
+  "js",
+  "pds",
+  "pdsc",
+  "ht",
+  "hs",
+  "hw",
+  "hht",
+  "htp",
+  "hdw",
+  "htaf",
+  "htc",
+  "ar",
+  "st",
+  "sc",
+  "scc",
+  "smt",
+  "pt",
+  "tt",
+  "dt",
+  "pg",
+  "mp",
+  "mdf",
+  "mcf",
+  "al",
+  "rhf",
+  "rha",
+  "di",
+  "rj",
+  "el",
+  "ct",
+  "yd"
+ ],
+ "nSteps": 33,
+ "end": "account wall (yd)",
+ "newSteps": [],
+ "missingSteps": [],
+ "candidateEffects": [],
+ "noise": [
+  {
+   "step": "ar",
+   "key": "q429.config",
+   "where": "after-change",
+   "alsoIn": []
+  },
+  {
+   "step": "st",
+   "key": "q9346.options",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-m-gender-transwoman",
+    "s2-m-htam-allover-ext",
+    "s2-m-htam-crown"
+   ]
+  }
+ ],
+ "bag": {
+  "items": [
+   [
+    "hairTreatment",
+    "Personalised treatment",
+    "4 week supply · 12ml",
+    "Prescription",
+    3499,
+    null
+   ]
+  ],
+  "shipping": 0,
+  "total": 3499,
+  "promo": "",
+  "shippingMsg": "Your order qualifies for complimentary standard shipping."
+ },
+ "bagItemsSameAsBaseline": true,
+ "posted": {
+  "htaf": [
+   [
+    9322,
+    "I've noticed my hairline is going further back / receding"
+   ]
+  ]
+ },
+ "nextAfterChange": {
+  "htaf": "htc"
+ },
+ "sweep": false
+}

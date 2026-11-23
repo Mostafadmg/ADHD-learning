@@ -1,0 +1,96 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 2,
+   "sectionTitle": "YOUR HAIR"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 175,
+    "inputConfig": {
+     "displayTextV2": [
+      {
+       "text": [
+        {
+         "part": "These answers are based on the Fitzpatrick scale, a widely recognised medical classification scheme for skin colour."
+        }
+       ]
+      },
+      {
+       "header": "Why are we asking?",
+       "text": [
+        {
+         "part": "To help our Dermatology Clinicians prescribe your treatment accurately and safely."
+        }
+       ]
+      }
+     ]
+    },
+    "inputType": "display_text",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 9346,
+    "inputConfig": {
+     "options": [
+      {
+       "image": "skin-tone-1",
+       "label": "Pale. It always burns, never tans",
+       "value": "Pale. It always burns, never tans"
+      },
+      {
+       "image": "skin-tone-2",
+       "label": "Fair. It often burns, but tans a little",
+       "value": "Fair. It often burns, but tans a little"
+      },
+      {
+       "image": "skin-tone-3",
+       "label": "Darker shade of pale. It sometimes burns, tans evenly",
+       "value": "Darker shade of pale. It sometimes burns, tans evenly"
+      },
+      {
+       "image": "skin-tone-4",
+       "label": "Light brown. It burns minimally, tans easily",
+       "value": "Light brown. It burns minimally, tans easily"
+      },
+      {
+       "image": "skin-tone-5",
+       "label": "Brown. It very rarely burns, tans darkly easily",
+       "value": "Brown. It very rarely burns, tans darkly easily"
+      },
+      {
+       "image": "skin-tone-6",
+       "label": "Dark brown or black. It always tans darkly",
+       "value": "Dark brown or black. It always tans darkly"
+      }
+     ]
+    },
+    "inputType": "single_select_button_with_image",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Which best matches your skin?",
+  "type": "question"
+ }
+}

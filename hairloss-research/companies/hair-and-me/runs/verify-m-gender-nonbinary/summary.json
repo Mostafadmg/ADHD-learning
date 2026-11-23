@@ -1,0 +1,114 @@
+{
+ "run": "verify-m-gender-nonbinary",
+ "flow": "men",
+ "changed": "men-pds-gender: gender identity left blank → Non-Binary/Genderqueer/Agender/Gender Fluid (sex at birth still Male). Re-test of the 'You're not alone' rule with a second value as a single change",
+ "changedStep": "pds",
+ "baselinesPooled": [
+  "baseline-men",
+  "s2-base-men-1",
+  "verify-base-men"
+ ],
+ "stepOrder": [
+  "tp",
+  "yhg",
+  "pds",
+  "pdsc",
+  "mi",
+  "ht",
+  "hs",
+  "ls",
+  "htp",
+  "htam",
+  "htc",
+  "ar",
+  "st",
+  "sc",
+  "scc",
+  "smt",
+  "pt",
+  "tt",
+  "pp",
+  "mdm",
+  "mcm",
+  "al",
+  "rhf",
+  "rha",
+  "di",
+  "rj",
+  "el",
+  "ct",
+  "yd"
+ ],
+ "nSteps": 29,
+ "end": "account wall (yd)",
+ "newSteps": [],
+ "missingSteps": [
+  "yna"
+ ],
+ "candidateEffects": [],
+ "noise": [
+  {
+   "step": "pds",
+   "key": "title",
+   "where": "changed-step",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-17",
+    "s2-m-age-18"
+   ]
+  },
+  {
+   "step": "di",
+   "key": "q8015.options",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-85",
+    "s2-m-al-finasteride"
+   ]
+  },
+  {
+   "step": "ct",
+   "key": "q180026.config",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-85",
+    "s2-m-al-finasteride"
+   ]
+  }
+ ],
+ "bag": {
+  "items": [
+   [
+    "hairTreatment",
+    "Personalised treatment",
+    "4 week supply · 12ml",
+    "Prescription",
+    3499,
+    null
+   ]
+  ],
+  "shipping": 0,
+  "total": 3499,
+  "promo": "",
+  "shippingMsg": "Your order qualifies for complimentary standard shipping."
+ },
+ "bagItemsSameAsBaseline": true,
+ "posted": {
+  "pds": [
+   [
+    3039,
+    1
+   ],
+   [
+    3054,
+    5
+   ]
+  ]
+ },
+ "nextAfterChange": {
+  "pds": "pdsc"
+ },
+ "sweep": false
+}

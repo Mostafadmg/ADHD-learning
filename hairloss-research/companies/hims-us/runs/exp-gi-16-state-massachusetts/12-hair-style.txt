@@ -1,0 +1,33 @@
+STEP 12
+URL: https://www.hims.com/g/i/hl/hair-style
+SERVER NODE: hair-style (nodeModularScreen), step value 16
+
+--- VISIBLE TEXT ---
+How do you style your hair?
+No styling
+I let my hair do its thing
+Products
+Gel, mousse, etc.
+I usually wear a hat
+Protective styles
+Braids, locs, etc.
+Continue
+Already have an account? Sign In
+
+--- CHOICES ---
+[radio] No styling I let my hair do its thing
+[radio] Products Gel, mousse, etc.
+[radio] I usually wear a hat
+[radio] Protective styles Braids, locs, etc.
+
+--- BUTTONS ---
+Continue
+
+--- FIELDS ---
+
+
+--- LINKS ---
+Already have an account? Sign In -> /c/hl?skipToSignIn=true&goFlow=true&flowId=hl&sessionId=a47d5904-2419-4e5a-8acf-74268df6126e
+
+--- OUTPUT SCHEMA (server) ---
+{"type":"object","required":["responses"],"properties":{"responses":{"type":"object","required":["i-hl-hims-hair-style"],"properties":{"i-hl-hims-hair-style":{"type":"object","required":["i-hl-hims-hair-style"],"properties":{"i-hl-hims-hair-style":{"enum":["i-hl-hims-hair-style-none","i-hl-hims-hair-style-products","i-hl-hims-hair-style-hat","i-hl-hims-hair-style-protective"],"type":"string"}},"additionalProperties":false}},"additionalProperties":false}}}

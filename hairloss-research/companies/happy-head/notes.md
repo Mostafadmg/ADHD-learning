@@ -146,3 +146,14 @@ everything else, born 15 Jun 1988.
 - `runs/baseline-men`, `runs/baseline-women`, `runs/hc-docs`, `runs/q00` (first look at the start page).
 - `shots/` — welcome screen, first question, both recommendation screens, serious-symptoms and health-conditions
   screens, the women's birth-control branch, the account wall.
+
+# Stage 2 (EXPERIMENT) log, 23 Nov 2026
+
+- Answer files: `runs/s2/<id>.json` built by `tools/make-exps.py`; run one at a time with `bash tools/run-batch.sh <id>`
+  (uses `tools/walk-fast.js`; never parallel). Summarise with `python3 -I tools/summarise-run.py runs/s2/<id>`.
+- Choosing a card other than the pre-selected Dual card needs TWO clicks on its button (first click selects the card,
+  second continues). The answer files for m-choose-topical and m-oral-choose-capsule now do this.
+- Done and confirmed so far (all 0 consultation posts): baseline-men (runs/s2/baseline-men), base-women,
+  m-method-oral, m-method-topical, w-method-oral, w-method-topical, w-50plus, m-household-yes-decline
+  (no change at all: dutasteride stays in the plan), m-choose-topical (check-up, blood pressure and weight pages vanish;
+  product_ids = 116443 only).

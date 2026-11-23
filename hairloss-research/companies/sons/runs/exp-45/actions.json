@@ -1,0 +1,33 @@
+{
+ "_about": "Sons UK, stage 2 experiment exp-45 (men flow). Changed: men-q02 Female, then the \"Finish Consultation\" button on the stop notice is pressed. Follow-on to exp-02: shows where the stop screen leads. Per the served code this button sends nothing to the server. No contact details are typed and no form is sent.",
+ "start": "https://shop.sons.co.uk/consultation/?logged_in=false",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "click",
+   "text": "No",
+   "_q": "5140"
+  },
+  {
+   "do": "click",
+   "text": "Female",
+   "_q": "5141"
+  },
+  {
+   "do": "wait",
+   "ms": 1200
+  },
+  {
+   "do": "click",
+   "text": "Finish Consultation",
+   "_q": "only button on the female notice"
+  },
+  {
+   "do": "wait",
+   "ms": 5000
+  }
+ ]
+}

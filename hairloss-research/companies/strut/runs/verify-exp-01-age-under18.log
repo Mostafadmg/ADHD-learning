@@ -1,0 +1,9 @@
+
+===== FINAL (after 3 steps) =====
+URL: https://start.struthealth.com/flow/6aa3d578f415d1603a6e0c85
+TEXT: 75% ⏎ Age Verification ⏎ These medications are only available for patients 18 and older. If you selected the wrong answer, you can go back and update it. ⏎ Go back and update my answer ⏎ End questionnaire ⏎ Continue
+CONTROLS:
+  button (4): Go back  ·  Go back and update my answer [false]  ·  End questionnaire [false]  ·  Continue
+  links: 
+
+[walk] 3 step(s), exit 0, 2 JSON bodies saved -> runs/verify-exp-01-age-under18

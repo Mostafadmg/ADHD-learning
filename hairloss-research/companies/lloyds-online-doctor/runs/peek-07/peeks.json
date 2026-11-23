@@ -1,0 +1,21 @@
+[
+ {
+  "from": "103261",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "SUMMARY",
+   "stepState": "SUMMARY",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": []
+  },
+  "onBaseline": false,
+  "shot": "peek-01-103261",
+  "text": "Exit consultation\nYour hair loss\nHave you lost any hair in other areas of your body such as eyebrows or beard?\nYes\nNo\nBack",
+  "endedEarly": true
+ }
+]

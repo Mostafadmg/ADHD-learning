@@ -1,0 +1,25 @@
+STEP 65 click "button.questionnaire__btn-next"
+URL: https://onlinedoctor-clinic.boots.com/questions/14
+TITLE: Consultation | Boots Online Doctor
+
+--- VISIBLE TEXT ---
+Call us: Mon-Fri 8:30AM-6PM, Sat-Sun 9:30AM-4:30PM
+ 0203 3183773
+Boots Advantage Card Shop Boots.com
+Services
+Meet the team
+FAQ
+LOG IN
+83%
+You also need to know that these medicines can affect prostate blood test results. So if you need a prostate blood test, tell your doctor that you take finasteride or propecia.
+I understand that if I need a prostate blood test, the doctor will need to know I am on this medicine.
+NEXT
+Powered by:
+©2026 Boots Digital Health Limited
+
+--- CONTROLS ---
+  button (4): Cookie Preferences  ·  LOG IN  ·  I understand that if I need a prostate blood test, the doctor will need to know I am on this medicine.  ·  NEXT [disabled]
+  radio (1): I understand that if I need a prostate blood test, the doctor will need to know I am on this medicine.
+
+--- LINKS ---
+  link (6): 0203 3183773 -> tel:0203 3183773  ·  Boots Advantage Card -> https://www.boots.com/advantage-card  ·  Shop Boots.com -> https://boots.com  ·  Services ->   ·  Meet the team -> https://onlinedoctor.boots.com/meet-the-team  ·  FAQ -> 

@@ -1,0 +1,15 @@
+STEP 17 click "CHOOSE SUPERCAPSULE"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Medical Review
+Next, we'll ask a few questions about your health history to ensure your treatment is safe and appropriate.
+Takes 2 min
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

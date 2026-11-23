@@ -1,0 +1,32 @@
+STEP 01 wait 4000
+URL: https://start.struthealth.com/flow/6ad9e1d39fba7abfd231a5b3
+TITLE: Dutasteride Prod 2310
+
+--- VISIBLE TEXT ---
+3%
+See your treatment options
+
+Join for a tailored experience crafted by experts.
+
+I agree to the Consent, Privacy, Terms, and receiving recurring automated marketing texts from Strut Health.
+Continue
+
+Already have an account? Sign In.
+
+or
+Trusted by 10,000+ men
+⏱
+Takes 5 mins
+✦
+Free to start
+✓ Provider consult
+✓ FDA-registered pharmacy
+
+--- CONTROLS ---
+  input:email (1): Enter your e-mail
+  input:tel (1): Enter your phone number
+  checkbox (1): I agree to the Consent, Privacy, Terms, and receiving recurring automated marketing texts from Strut Health.
+  button (2): Continue [disabled]  ·  Sign In.
+
+--- LINKS ---
+  link (3): Consent -> https://www.struthealth.com/telemedicine-consent?_gl=1*mj0uer*_gcl_au*MjEzODIxNjQ2My4xNzkyNTY1NDUy  ·  Privacy -> https://www.struthealth.com/privacy-policy?_gl=1*14bje5y*_gcl_au*MjEzODIxNjQ2My4xNzkyNTY1NDUy  ·  Terms -> https://www.struthealth.com/terms-and-conditions?_gl=1*1p8r0up*_gcl_au*MjEzODIxNjQ2My4xNzkyNTY1NDUy

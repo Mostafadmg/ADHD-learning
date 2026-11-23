@@ -1,0 +1,17 @@
+{
+ "_note": "R8 legacy patchy",
+ "start": "https://www.keeps.com/quiz?step=1",
+ "locale": "en-US",
+ "timezone": "America/Chicago",
+ "steps": [
+  {
+   "do": "click",
+   "text": "Patchy",
+   "exact": false
+  },
+  {
+   "do": "wait",
+   "ms": 4000
+  }
+ ]
+}

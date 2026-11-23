@@ -1,0 +1,93 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 2,
+   "sectionTitle": "YOUR HAIR"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 250,
+    "inputConfig": {
+     "options": [
+      {
+       "label": "Minoxidil tablets",
+       "value": "Minoxidil tablets"
+      },
+      {
+       "label": "Finasteride tablets",
+       "value": "Finasteride tablets"
+      },
+      {
+       "label": "Spironolactone tablets",
+       "value": "Spironolactone tablets"
+      },
+      {
+       "label": "Minoxidil spray",
+       "value": "Minoxidil spray"
+      },
+      {
+       "label": "Finasteride spray",
+       "value": "Finasteride spray"
+      },
+      {
+       "label": "Dutasteride capsules",
+       "value": "Dutasteride capsules"
+      },
+      {
+       "exclusive": true,
+       "label": "None of the above",
+       "value": "None of the above"
+      }
+     ]
+    },
+    "inputType": "multi_select_checkbox",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 4443,
+    "inputConfig": {
+     "option": {
+      "label": "Yes, I understand this."
+     },
+     "renderConditions": [
+      {
+       "operator": "notEmpty",
+       "questionId": 250,
+       "value": null
+      },
+      {
+       "operator": "notContains",
+       "questionId": 250,
+       "value": "None of the above"
+      }
+     ]
+    },
+    "inputType": "boolean_checkbox",
+    "is_custom": false,
+    "label": null,
+    "text": "It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.",
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Have you used any of the following products to help you achieve your hair goals in the last three months?",
+  "type": "question"
+ }
+}

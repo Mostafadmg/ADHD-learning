@@ -1,0 +1,54 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 1,
+   "sectionTitle": "ABOUT YOU"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 3053,
+    "inputConfig": {
+     "info": {
+      "text": "You need to be over 18 to use our service."
+     },
+     "placeholder": "DD / MM / YYYY"
+    },
+    "inputType": "date_masked",
+    "is_custom": false,
+    "label": "Your date of birth (DD/MM/YYYY)",
+    "text": "Our treatments are powerful, and at the moment, not suitable for anyone under the age of 18.",
+    "value": null
+   },
+   {
+    "id": 2007,
+    "inputConfig": {
+     "option": {
+      "label": "Yes, I live in the UK (excluding Channel Islands)."
+     }
+    },
+    "inputType": "boolean_checkbox",
+    "is_custom": false,
+    "label": "Where you live",
+    "text": "Please confirm that you live in the UK (excluding Channel Islands).",
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Your eligibility",
+  "type": "question"
+ }
+}

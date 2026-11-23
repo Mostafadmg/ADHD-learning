@@ -1,0 +1,16 @@
+STEP 31 click "NEXT"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Do you have any customization requests?
+Yes, I have a customization request
+No, let the doctor customize it for me
+(Recommended)
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

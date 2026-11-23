@@ -1,0 +1,374 @@
+{
+ "start": "https://onlinedoctor-clinic.boots.com/Hair-Loss",
+ "note": "Route first-tablets, questionnaire 2049. Health questions start at step 24. Last screen should be /camera/id (ID photos): STOP there. Postcode N1 0QH is the placeholder found in the site's own code; no contact details are entered.",
+ "answers": [
+  "screen 1: Which of the following best describes your hair loss? (Tick all that a → Complete",
+  "screen 1: Do you have complete baldness? → Yes",
+  "screen 2: Do you have any of the following? Please select all that apply. → Any pain, burning/ blistering or pus-filled spots on the scalp",
+  "screen 3: Have you lost any hair elsewhere on your body? → Yes",
+  "screen 4: When did you start losing your hair? → Within the last month",
+  "screen 5: How did your hair loss start? → Suddenly",
+  "screen 5: Sudden hair loss is unusual. Treatment is designed to treat the initia → I understand and do not wish to continue. I will stop my consultation now.",
+  "screen 6: Are you currently using Finasteride or Propecia for hair loss? → Yes",
+  "screen 6: Is it effective? → No",
+  "screen 6: Do you experience any side effects? → Yes",
+  "screen 7: Is your partner pregnant or trying to get pregnant? → My partner is trying to get pregnant",
+  "screen 7: As your partner is trying to get pregnant, you should not use this med → I understand and will stop my consultation.",
+  "screen 8: Are you taking medication for a prostate condition? → No",
+  "screen 9: Are you taking any other prescription-only medicines, over-the-counter → No",
+  "screen 9: You've told me you don't take any medication at all. Is that right? → Correct - I'm not on any medication",
+  "screen 10: Do you have any of the following conditions? → Suicidal thoughts",
+  "screen 10: If you’re experiencing thoughts of self harm or suicide, help is avail → I understand that this medication is not suitable for me and will stop this application.",
+  "screen 11: Other than those already mentioned, do you have any other significant  → No",
+  "screen 12: Do you have any known allergies? → No",
+  "screen 13: I want to check your understanding of the hair loss treatment. Please  → True",
+  "screen 14: You also need to know that these medicines can affect prostate blood t → I understand that if I need a prostate blood test, the doctor will need to know I am on this medicine.",
+  "screen 15: You should know about the following important side effects that have o → I understand",
+  "screen 16: If you experience these side effects, please stop the medication and s → I understand and wish to proceed",
+  "screen 17: Would you like me to tell your GP about any care we provide? Ideally y → No (This won't affect our review of your order, but we would encourage you to tell your GP)",
+  "screen 18: Before we finish, is there anything else you want to tell me? → No",
+  "screen 19: Please confirm: you understand the questions asked; have answered them → Please tick to confirm that you understand and agree"
+ ],
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2000
+  },
+  {
+   "do": "click",
+   "selector": "input[name=zip]"
+  },
+  {
+   "do": "type",
+   "value": "N1 0QH"
+  },
+  {
+   "do": "wait",
+   "ms": 3000
+  },
+  {
+   "do": "click",
+   "selector": "#next-step"
+  },
+  {
+   "do": "wait",
+   "ms": 1500
+  },
+  {
+   "do": "click",
+   "text": "Male"
+  },
+  {
+   "do": "click",
+   "text": "NEXT"
+  },
+  {
+   "do": "wait",
+   "ms": 2000
+  },
+  {
+   "do": "click",
+   "selector": "#dob-preflight"
+  },
+  {
+   "do": "type",
+   "value": "15061994"
+  },
+  {
+   "do": "wait",
+   "ms": 3000
+  },
+  {
+   "do": "click",
+   "text": "NEXT"
+  },
+  {
+   "do": "wait",
+   "ms": 5000
+  },
+  {
+   "do": "click",
+   "text": "First time using this service"
+  },
+  {
+   "do": "wait",
+   "ms": 5000
+  },
+  {
+   "do": "click",
+   "selector": "[role=button]:has-text(\"£28\")"
+  },
+  {
+   "do": "wait",
+   "ms": 4000
+  },
+  {
+   "do": "click",
+   "text": "CONTINUE"
+  },
+  {
+   "do": "wait",
+   "ms": 5000
+  },
+  {
+   "do": "click",
+   "selector": "label[for=agreeRadio]"
+  },
+  {
+   "do": "click",
+   "selector": "#important-info button.btn"
+  },
+  {
+   "do": "wait",
+   "ms": 5000
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"Complete\")), .checkbox-answer:has(label:text-is(\"Complete\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"Yes\")), .checkbox-answer:has(label:text-is(\"Yes\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"Any pain, burning/ blistering or pus-filled spots on the scalp\")), .checkbox-answer:has(label:text-is(\"Any pain, burning/ blistering or pus-filled spots on the scalp\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"Yes\")), .checkbox-answer:has(label:text-is(\"Yes\"))"
+  },
+  {
+   "do": "fill",
+   "selector": "textarea.all-textarea-radio:visible, textarea.all-textarea-checkbox:visible",
+   "value": "test"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"Within the last month\")), .checkbox-answer:has(label:text-is(\"Within the last month\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"Suddenly\")), .checkbox-answer:has(label:text-is(\"Suddenly\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"I understand and do not wish to continue. I will stop my consultation now.\")), .checkbox-answer:has(label:text-is(\"I understand and do not wish to continue. I will stop my consultation now.\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"Yes\")), .checkbox-answer:has(label:text-is(\"Yes\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"No\")), .checkbox-answer:has(label:text-is(\"No\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"Yes\")), .checkbox-answer:has(label:text-is(\"Yes\"))"
+  },
+  {
+   "do": "fill",
+   "selector": "textarea.all-textarea-radio:visible, textarea.all-textarea-checkbox:visible",
+   "value": "test"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"My partner is trying to get pregnant\")), .checkbox-answer:has(label:text-is(\"My partner is trying to get pregnant\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"I understand and will stop my consultation.\")), .checkbox-answer:has(label:text-is(\"I understand and will stop my consultation.\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"No\")), .checkbox-answer:has(label:text-is(\"No\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"No\")), .checkbox-answer:has(label:text-is(\"No\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"Correct - I'm not on any medication\")), .checkbox-answer:has(label:text-is(\"Correct - I'm not on any medication\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"Suicidal thoughts\")), .checkbox-answer:has(label:text-is(\"Suicidal thoughts\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"I understand that this medication is not suitable for me and will stop this application.\")), .checkbox-answer:has(label:text-is(\"I understand that this medication is not suitable for me and will stop this application.\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"No\")), .checkbox-answer:has(label:text-is(\"No\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"No\")), .checkbox-answer:has(label:text-is(\"No\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"True\")), .checkbox-answer:has(label:text-is(\"True\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"I understand that if I need a prostate blood test, the doctor will need to know I am on this medicine.\")), .checkbox-answer:has(label:text-is(\"I understand that if I need a prostate blood test, the doctor will need to know I am on this medicine.\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"I understand\")), .checkbox-answer:has(label:text-is(\"I understand\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"I understand and wish to proceed\")), .checkbox-answer:has(label:text-is(\"I understand and wish to proceed\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"No (This won't affect our review of your order, but we would encourage you to tell your GP)\")), .checkbox-answer:has(label:text-is(\"No (This won't affect our review of your order, but we would encourage you to tell your GP)\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"No\")), .checkbox-answer:has(label:text-is(\"No\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"Please tick to confirm that you understand and agree\")), .checkbox-answer:has(label:text-is(\"Please tick to confirm that you understand and agree\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "wait",
+   "ms": 7000
+  }
+ ]
+}

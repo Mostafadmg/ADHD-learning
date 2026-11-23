@@ -168,3 +168,21 @@ L16 dandruff Yes → +240 · L17 thicker / L18 prevent → no change · L19 Hair
 - `node tools/validate.js keeps --stage rules` passes (0 errors, 0 warnings).
 - Not tested (see limitations in company.json): remaining no-effect options of the main/gel quiz one by one, most states,
   legacy multi-select combinations, anything after the account wall.
+
+## 10. Stage 3 (VERIFY) — 2026-11-23, independent reviewer
+
+How to replay: `bash verify/run.sh verify/<file>.json <run-id>` (one at a time, retries once after 30 s). Answer files are in `verify/`.
+`company.json` was patched by `python3 -I verify/stage3-patch.py` (safe to re-run; pre-patch copy in `verify/company.pre-stage3.json`).
+
+- Baselines replayed fresh: `runs/verify-baseline-men` (Chew+ 19277, $100.00 then $204.99), `-men-gel` (Gel+ 19267), `-men-legacy` (211,239). All match.
+- Served chunks 4186-023f24e4c45a5ed8, 6717-3380f3d5983e996c, 7039-8a2b3254b033213a are still the live versions, so the code reads stand.
+- Rules re-tested live, all confirmed: R1 (verify-R1-drop), R2 (verify-R2-afford), R3 (verify-R3-scalp), R4 (verify-R4-wv, verify-R4-de: two new refused
+  states), R5 (verify-R5-notick), R8, R9, R10, R15 (verify-R8-patchy … verify-R15-tret).
+- New gaps: picture 'Just Starting', goal 'Both', stage 'Early signs' → no change; gel 'Had side effects' → no change; legacy pills + tretinoin →
+  211,989 (pill preference blocks the spray swap; new rule R25). Gel side-effects = R26.
+- Products: `runs/verify-products` (10 product pages; `net/05-*graphql.json` is the full price list). 16 products matched on name, actives, strength and price.
+  The finasteride/minoxidil foam (p7) is the 'Foam' choice on the topical finasteride and minoxidil page.
+- Correction: the hair quizzes never route women to `/not-eligible-user/sex` (Nurx). That route is only named in the `_app` bundle. Women are stopped by the
+  tick box; the FAQ `/faq/can-women-use-keeps` says only people assigned male at birth can use Keeps. R24 rewritten.
+- Loader 'Finalizing your approval' is a fixed 5.1 s timer (chunk 6717).
+- `node tools/validate.js keeps --stage final` passes.

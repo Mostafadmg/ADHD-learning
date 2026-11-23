@@ -1,0 +1,32 @@
+STEP 14 st AFTER ANSWERS ["Fair. It often burns, but tans a little"]
+URL: https://www.hairandme.com/c/suh/st
+
+--- VISIBLE TEXT ---
+Which best matches your skin?
+
+These answers are based on the Fitzpatrick scale, a widely recognised medical classification scheme for skin colour.
+
+Why are we asking?
+
+To help our Dermatology Clinicians prescribe your treatment accurately and safely.
+
+Pale. It always burns, never tans
+Fair. It often burns, but tans a little
+Darker shade of pale. It sometimes burns, tans evenly
+Light brown. It burns minimally, tans easily
+Brown. It very rarely burns, tans darkly easily
+Dark brown or black. It always tans darkly
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=9346] | Pale. It always burns, never tans
+input:radio[name=9346] | Fair. It often burns, but tans a little [checked]
+input:radio[name=9346] | Darker shade of pale. It sometimes burns, tans evenly
+input:radio[name=9346] | Light brown. It burns minimally, tans easily
+input:radio[name=9346] | Brown. It very rarely burns, tans darkly easily
+input:radio[name=9346] | Dark brown or black. It always tans darkly
+button:submit | NEXT QUESTION
+a -> /c/suh/st?action=previous | Back to previous page

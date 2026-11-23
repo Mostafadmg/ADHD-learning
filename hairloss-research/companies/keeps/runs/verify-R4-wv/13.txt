@@ -1,0 +1,24 @@
+STEP 13 fill "input[id^=react-select]" = "West Virginia"
+URL: https://www.keeps.com/hair-assessment-quiz?step=15
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+Last step to see if you qualify.
+
+We need your state and a few details to match you with an available provider.
+
+option West Virginia focused, 50 of 55. 1 result available for search term West Virginia. Use Up and Down to choose options, press Enter to select the currently focused option, press Escape to exit the menu, press Tab to select the option and exit the menu.
+West Virginia
+
+I confirm I am 18+ and assigned male at birth
+
+Show my plan
+
+Keeps | Hair Loss Treatment for Men
+
+--- CONTROLS ---
+  button (2): Go back  ·  Show my plan [disabled]
+  input:text (1): react-select-2-input = "West Virginia"
+
+--- LINKS ---
+

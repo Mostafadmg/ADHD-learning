@@ -1,0 +1,27 @@
+STEP 16 click "Continue"
+URL: https://start.struthealth.com/flow/6aa3d578f415d1603a6e0c85
+TITLE: Minoxidil Prod
+
+--- VISIBLE TEXT ---
+41%
+
+Have you had any surgeries?
+
+Yes
+No
+Continue
+1
+2.5 mg · 90 Day Supply
+$65.00
+2.5 mg · 90 Day Supply
+$65.00
+Dose: 90 Day Supply - 2.5 mg
+Supply: 90 Day Supply
+Total
+$65.00
+
+--- CONTROLS ---
+  button (5): Go back  ·  Yes [false]  ·  No [false]  ·  Continue  ·  1 2.5 mg · 90 Day Supply $65.00
+
+--- LINKS ---
+

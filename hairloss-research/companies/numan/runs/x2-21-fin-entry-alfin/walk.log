@@ -1,0 +1,9 @@
+
+===== FINAL (after 21 steps) =====
+URL: https://www.numan.com/subscribe/hair-loss/3489f841-2e70-4fa8-ac90-cbb237559871/product-selection
+TEXT: Please select your treatment ⏎ Our clinicians will ensure you’re prescribed the most appropriate treatment. ⏎ Most effective ⏎ See results in 180 days ⏎ or your money back¹ ⏎ Finasteride ⏎ A daily pill that helps to reset a receding hairline and slow hair loss. ⏎ Learn more  ⏎ Price ⏎ £28.00 ⏎ Select treatment ⏎ ¹ Claim a full refund between 180-210 days from order approval if treatment is not effective at stabilising or reversing hair loss. First time users only. Full Ts&Cs. ⏎ ² In one study, finasteride was effective at stopping hair loss in 83% of men (McClellan,1999). ⏎ OTHER TREATMENTS ⏎ Extra Strength Spray ⏎ Extra Strength Spray is a sprayable minoxidil solution that helps to slow and reverse hair loss caused by male-pattern baldness. It can make hair appear thicker by increasing the diameter of the hair shaft, and improve scalp coverage by reversing the shrinkage of hair follicles. ⏎ £30.00 ⏎ Select ⏎   ⏎ Learn more ⏎ Regaine ⏎ Regaine contains minoxidil which has been clinically proven to reduce hair loss and stimulate hair regrowth in men with male-pattern baldness. ⏎ £65.00 ⏎ Select ⏎   ⏎ Learn more ⏎ Rosemary Oil ⏎ Rosemary Oil is a natural remedy for stronger, healthier-looking hair. Infused with nutrients and oils, it’s formulated to nourish the scalp and fortify hair from root to tip. ⏎ £23.33 ⏎ Select
+CONTROLS:
+  button (4): Help  ·  Select treatment  ·  Select  ·  Learn more
+  links: Back  ·  Visit the main page  ·  Learn more  ·  Full Ts&Cs.
+
+[walk] 21 step(s), exit 0, 49 JSON bodies saved -> runs/x2-21-fin-entry-alfin

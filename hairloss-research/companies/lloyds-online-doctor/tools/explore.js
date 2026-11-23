@@ -182,17 +182,10 @@ const timeUp = () => (Date.now() - T0) / 1000 > (pol.maxSeconds || 540);
       let seq1 = lastStep.seq;
       let hadBack = false;
       if (rd.sig === 'SUMMARY') {
-        // the answer ended the questions early: return through the summary's last "Change answer" link
-        rec.endedEarly = true;
-        try {
-          await page.waitForTimeout(2500); await shot(name + '-summary');
-          const ca = page.getByText('Change answer', { exact: true });
-          await ca.first().waitFor({ timeout: 8000 });
-          const k = await ca.count(); seq1 = lastStep.seq;
-          await ca.nth(k - 1).click({ timeout: 4000 }); hadBack = true;
-          const t2 = Date.now(); while (lastStep.seq <= seq1 && Date.now() - t2 < 6000) await page.waitForTimeout(250);
-          if (lastStep.seq <= seq1) { console.log(I + '  (no step after Change answer: reloading /consultation/current)'); await page.goto('https://core.onlinedoctor.lloydspharmacy.com/consultation/current', { waitUntil: 'domcontentloaded', timeout: 30000 }); }
-        } catch (e) { console.log(`${I}  (change-answer failed: ${e.message.split('\n')[0]})`); }
+        // the answer ended the questions early (straight to the answers summary, which has no Back): record and end the run
+        rec.endedEarly = true; await page.waitForTimeout(2500); await shot(name + '-summary');
+        console.log(`${I}  ENDED EARLY: ${q.questionId} = ${JSON.stringify(opt)} skips every remaining question. Add it to peekSkip and rerun.`);
+        stuck = true; return;
       } else hadBack = await clickBack();
       const back = hadBack ? await waitStep(seq1, 9000) : null;
       if (!back || sigOf(back.j.step) !== mySig) {
@@ -271,6 +264,7 @@ const timeUp = () => (Date.now() - T0) / 1000 > (pol.maxSeconds || 540);
         if (pol.peek && peeking && (st.questions || []).length === 1 && /CHOICE/.test(q.type) && !/CARD/.test(q.type) && !timeUp()) {
           await peekQuestion(st, q, a, 0, []);
           if (stuck) { stop = true; break; }
+          handled = lastStep.seq;
         }
         for (const one of (Array.isArray(a) ? a : [a])) { if (!await selectOption(q, one)) { stop = true; code = 2; break; } await page.waitForTimeout(350); }
         if (stop) break;

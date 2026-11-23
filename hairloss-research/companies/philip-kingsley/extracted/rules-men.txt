@@ -1,0 +1,568 @@
+==== SKU PHI1220 group Recommended keys ['sku', 'group', 'blockers']
+ -- blockers
+  CompositeCondition(or){
+    CompositeCondition(or){
+      [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      [GenericCondition] 'Are any of the following true?' or ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly', "It's not started yet"]
+      [GenericCondition] 'When did you first notice any hair loss?' or ["I haven't noticed any yet"]
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' and ['Finasteride', 'Minoxidil']
+    }
+    CompositeCondition(or){
+      [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly']
+      [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Minoxidil']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['Itching']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['Dandruff']
+    }
+  }
+==== SKU PHI1221 group Recommended keys ['sku', 'group', 'blockers']
+ -- blockers
+  CompositeCondition(or){
+    CompositeCondition(or){
+      [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      [GenericCondition] 'Are any of the following true?' or ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly', "It's not started yet"]
+      [GenericCondition] 'When did you first notice any hair loss?' or ["I haven't noticed any yet"]
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' and ['Finasteride', 'Minoxidil']
+    }
+    CompositeCondition(or){
+      [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly', "It's not started yet"]
+      [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      [GenericCondition] 'Are any of the following true?' or ['I have previously been diagnosed with breast cancer, prostate cancer, or I am curerrently undergoing PSA (prostate monitoring)', 'I have uncontrolled low or high blood pressure', 'I am currently trying for a baby']
+      [GenericCondition] 'There are occasional reports of depression and even suicidal thoughts with Finasteride (Propecia). If you are currently stable, and happy to stop this treatment and consult a doctor if this occurs, then click to accept you have understood the above.' or ['I would not like to be recommended Finasteride']
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Finasteride']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['Itching']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['Dandruff']
+    }
+  }
+==== SKU PHI1230 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Early signs']
+      [GenericCondition] 'Which image best represents your hair loss?' or ['I have less hair than before, but it is not very noticeable']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+    [GenericCondition] 'Are any of the following true?' or ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+    [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly', "It's not started yet"]
+    [GenericCondition] 'When did you first notice any hair loss?' or ["I haven't noticed any yet"]
+    [GenericCondition] 'Are you allergic to minoxidil or finasteride?' and ['Finasteride', 'Minoxidil']
+  }
+==== SKU PHI1301 group Other keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Early signs']
+      [GenericCondition] 'Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?' or ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      [GenericCondition] 'How old are you?' or ['18 to 29', '30 to 39', '40 to 49']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['No conditions']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Early signs']
+      [GenericCondition] 'Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?' or ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      [GenericCondition] 'How old are you?' or ['50 to 64', 'Over 65']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['No conditions']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples']
+      [GenericCondition] 'How old are you?' or ['18 to 29', '30 to 39', '40 to 49']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['No conditions']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples']
+      [GenericCondition] 'How old are you?' or ['50 to 64', 'Over 65']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['No conditions']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples and Crown']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['No conditions']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    CompositeCondition(or){
+      [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      [GenericCondition] 'Are any of the following true?' or ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly', "It's not started yet"]
+      [GenericCondition] 'When did you first notice any hair loss?' or ["I haven't noticed any yet"]
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' and ['Finasteride', 'Minoxidil']
+    }
+    CompositeCondition(or){
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Minoxidil']
+    }
+  }
+==== SKU PHI1302 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Early signs']
+      [GenericCondition] 'Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?' or ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      [GenericCondition] 'How old are you?' or ['18 to 29', '30 to 39', '40 to 49']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['No conditions']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Early signs']
+      [GenericCondition] 'Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?' or ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      [GenericCondition] 'How old are you?' or ['50 to 64', 'Over 65']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['No conditions']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples']
+      [GenericCondition] 'How old are you?' or ['18 to 29', '30 to 39', '40 to 49']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['No conditions']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples']
+      [GenericCondition] 'How old are you?' or ['50 to 64', 'Over 65']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['No conditions']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples and Crown']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['No conditions']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    CompositeCondition(or){
+      [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      [GenericCondition] 'Are any of the following true?' or ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly', "It's not started yet"]
+      [GenericCondition] 'When did you first notice any hair loss?' or ["I haven't noticed any yet"]
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' and ['Finasteride', 'Minoxidil']
+    }
+    CompositeCondition(or){
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Finasteride']
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Minoxidil']
+    }
+  }
+==== SKU PHI1303 group Other keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Early signs']
+      [GenericCondition] 'Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?' or ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      [GenericCondition] 'How old are you?' or ['18 to 29', '30 to 39', '40 to 49']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['No conditions']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples']
+      [GenericCondition] 'How old are you?' or ['18 to 29', '30 to 39', '40 to 49']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['No conditions']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples and Crown']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['No conditions']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    CompositeCondition(or){
+      [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      [GenericCondition] 'Are any of the following true?' or ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly', "It's not started yet"]
+      [GenericCondition] 'When did you first notice any hair loss?' or ["I haven't noticed any yet"]
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' and ['Finasteride', 'Minoxidil']
+    }
+    CompositeCondition(or){
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Finasteride']
+    }
+  }
+==== SKU PHI1304 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples & Crown with Reduced Density']
+      [GenericCondition] 'Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?' or ['My scalp is becoming slightly visible and my hair feels less dense', 'My scalp is very visible and my hair feels much less dense']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['No conditions']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    CompositeCondition(or){
+      [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      [GenericCondition] 'Are any of the following true?' or ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly', "It's not started yet"]
+      [GenericCondition] 'When did you first notice any hair loss?' or ["I haven't noticed any yet"]
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' and ['Finasteride', 'Minoxidil']
+    }
+    CompositeCondition(or){
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Finasteride']
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Minoxidil']
+    }
+  }
+==== SKU PHI1305 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Early signs']
+      [GenericCondition] 'Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?' or ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      [GenericCondition] 'How old are you?' or ['18 to 29', '30 to 39', '40 to 49']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['No conditions']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples']
+      [GenericCondition] 'How old are you?' or ['18 to 29', '30 to 39', '40 to 49']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['No conditions']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples and Crown']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['No conditions']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples and Crown with reduced density']
+      [GenericCondition] 'Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?' or ['My scalp is becoming slightly visible and my hair feels less dense', 'My scalp is very visible and my hair feels much less dense']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['No conditions']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    CompositeCondition(or){
+      [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      [GenericCondition] 'Are any of the following true?' or ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly', "It's not started yet"]
+      [GenericCondition] 'When did you first notice any hair loss?' or ["I haven't noticed any yet"]
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' and ['Finasteride', 'Minoxidil']
+    }
+    CompositeCondition(or){
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Finasteride']
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Minoxidil']
+    }
+  }
+==== SKU PHI1306 group Other keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Early signs']
+      [GenericCondition] 'Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?' or ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      [GenericCondition] 'How old are you?' or ['18 to 29', '30 to 39', '40 to 49']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Early signs']
+      [GenericCondition] 'Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?' or ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      [GenericCondition] 'How old are you?' or ['50 to 64', 'Over 65']
+      CompositeCondition(or){
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the eczema?' or ['Mild', 'Moderate']
+          [GenericCondition] 'How severe is the itching?' or ['Mild', 'Moderate']
+          [GenericCondition] 'How severe is your dandruff?' or ['Mild', 'Moderate']
+        }
+      }
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples']
+      [GenericCondition] 'How old are you?' or ['18 to 29', '30 to 39', '40 to 49']
+      CompositeCondition(or){
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the eczema?' or ['Mild', 'Moderate']
+          [GenericCondition] 'How severe is the itching?' or ['Mild', 'Moderate']
+          [GenericCondition] 'How severe is your dandruff?' or ['Mild', 'Moderate']
+        }
+      }
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples']
+      [GenericCondition] 'How old are you?' or ['50 to 64', 'Over 65']
+      CompositeCondition(or){
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the eczema?' or ['Mild', 'Moderate']
+          [GenericCondition] 'How severe is the itching?' or ['Mild', 'Moderate']
+          [GenericCondition] 'How severe is your dandruff?' or ['Mild', 'Moderate']
+        }
+      }
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples and Crown']
+      CompositeCondition(or){
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the eczema?' or ['Mild', 'Moderate']
+          [GenericCondition] 'How severe is the itching?' or ['Mild', 'Moderate']
+          [GenericCondition] 'How severe is your dandruff?' or ['Mild', 'Moderate']
+        }
+      }
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    CompositeCondition(or){
+      [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      [GenericCondition] 'Are any of the following true?' or ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly', "It's not started yet"]
+      [GenericCondition] 'When did you first notice any hair loss?' or ["I haven't noticed any yet"]
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' and ['Finasteride', 'Minoxidil']
+    }
+    CompositeCondition(or){
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Minoxidil']
+    }
+  }
+==== SKU PHI1307 group Other keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Early signs']
+      [GenericCondition] 'Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?' or ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      [GenericCondition] 'How old are you?' or ['18 to 29', '30 to 39', '40 to 49']
+      [GenericCondition] 'How severe is your dandruff?' or ['Mild']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples']
+      [GenericCondition] 'How old are you?' or ['18 to 29', '30 to 39', '40 to 49']
+      [GenericCondition] 'How severe is your dandruff?' or ['Mild']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples and Crown']
+      [GenericCondition] 'How severe is your dandruff?' or ['Mild']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    CompositeCondition(or){
+      [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      [GenericCondition] 'Are any of the following true?' or ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly', "It's not started yet"]
+      [GenericCondition] 'When did you first notice any hair loss?' or ["I haven't noticed any yet"]
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' and ['Finasteride', 'Minoxidil']
+    }
+    CompositeCondition(or){
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Minoxidil']
+    }
+  }
+==== SKU PHI1308 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Early signs']
+      [GenericCondition] 'Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?' or ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      [GenericCondition] 'How old are you?' or ['18 to 29', '30 to 39', '40 to 49']
+      [GenericCondition] 'How severe is your dandruff?' or ['Mild']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples']
+      [GenericCondition] 'How old are you?' or ['18 to 29', '30 to 39', '40 to 49']
+      [GenericCondition] 'How severe is your dandruff?' or ['Mild']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples and Crown']
+      [GenericCondition] 'How severe is your dandruff?' or ['Mild']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    CompositeCondition(or){
+      [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      [GenericCondition] 'Are any of the following true?' or ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly', "It's not started yet"]
+      [GenericCondition] 'When did you first notice any hair loss?' or ["I haven't noticed any yet"]
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' and ['Finasteride', 'Minoxidil']
+    }
+    CompositeCondition(or){
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Finasteride']
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Minoxidil']
+    }
+  }
+==== SKU PHI1309 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Early signs']
+      [GenericCondition] 'Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?' or ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      [GenericCondition] 'How old are you?' or ['18 to 29', '30 to 39', '40 to 49']
+      [GenericCondition] 'How severe is your dandruff?' or ['Mild', 'Moderate']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Early signs']
+      [GenericCondition] 'Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?' or ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      [GenericCondition] 'How old are you?' or ['18 to 29', '30 to 39', '40 to 49']
+      CompositeCondition(or){
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the eczema?' or ['Mild', 'Moderate']
+          [GenericCondition] 'How severe is the itching?' or ['Mild', 'Moderate']
+          [GenericCondition] 'How severe is your dandruff?' or ['Mild', 'Moderate']
+        }
+      }
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples']
+      [GenericCondition] 'How old are you?' or ['18 to 29', '30 to 39', '40 to 49']
+      [GenericCondition] 'How severe is your dandruff?' or ['Mild', 'Moderate']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples']
+      [GenericCondition] 'How old are you?' or ['18 to 29', '30 to 39', '40 to 49']
+      CompositeCondition(or){
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the eczema?' or ['Mild', 'Moderate']
+          [GenericCondition] 'How severe is the itching?' or ['Mild', 'Moderate']
+          [GenericCondition] 'How severe is your dandruff?' or ['Mild', 'Moderate']
+        }
+      }
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples and Crown']
+      [GenericCondition] 'How severe is your dandruff?' or ['Mild', 'Moderate']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples and Crown']
+      CompositeCondition(or){
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the eczema?' or ['Mild', 'Moderate']
+          [GenericCondition] 'How severe is the itching?' or ['Mild', 'Moderate']
+          [GenericCondition] 'How severe is your dandruff?' or ['Mild', 'Moderate']
+        }
+      }
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    CompositeCondition(or){
+      [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      [GenericCondition] 'Are any of the following true?' or ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly', "It's not started yet"]
+      [GenericCondition] 'When did you first notice any hair loss?' or ["I haven't noticed any yet"]
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' and ['Finasteride', 'Minoxidil']
+    }
+    CompositeCondition(or){
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Finasteride']
+    }
+  }
+==== SKU PHI1311 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Early signs']
+      [GenericCondition] 'Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?' or ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      [GenericCondition] 'How old are you?' or ['18 to 29', '30 to 39', '40 to 49']
+      [GenericCondition] 'How severe is your dandruff?' or ['Mild', 'Moderate']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples']
+      [GenericCondition] 'How old are you?' or ['18 to 29', '30 to 39', '40 to 49']
+      [GenericCondition] 'How severe is your dandruff?' or ['Mild', 'Moderate']
+    }
+    CompositeCondition(and){
+      [GenericCondition] 'Which image best represents your hair loss?' or ['Temples and Crown']
+      [GenericCondition] 'How severe is your dandruff?' or ['Mild', 'Moderate']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    CompositeCondition(or){
+      [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      [GenericCondition] 'Are any of the following true?' or ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly', "It's not started yet"]
+      [GenericCondition] 'When did you first notice any hair loss?' or ["I haven't noticed any yet"]
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' and ['Finasteride', 'Minoxidil']
+    }
+    CompositeCondition(or){
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Finasteride']
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Minoxidil']
+    }
+  }
+==== SKU PHI1770 group None keys ['sku', 'blockers', 'conditions']
+ -- conditions
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['Itching']
+    [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['Dandruff']
+  }
+ -- blockers
+  CompositeCondition(or){
+    CompositeCondition(or){
+      [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      [GenericCondition] 'Are any of the following true?' or ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly', "It's not started yet"]
+      [GenericCondition] 'When did you first notice any hair loss?' or ["I haven't noticed any yet"]
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' and ['Finasteride', 'Minoxidil']
+    }
+    CompositeCondition(or){
+      [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly']
+      [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Minoxidil']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['Itching']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['Dandruff']
+    }
+  }
+==== SKU PHI1771 group None keys ['sku', 'blockers', 'conditions']
+ -- conditions
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['Itching']
+    [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['Dandruff']
+  }
+ -- blockers
+  CompositeCondition(or){
+    CompositeCondition(or){
+      [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      [GenericCondition] 'Are any of the following true?' or ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly', "It's not started yet"]
+      [GenericCondition] 'When did you first notice any hair loss?' or ["I haven't noticed any yet"]
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' and ['Finasteride', 'Minoxidil']
+    }
+    CompositeCondition(or){
+      [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly', "It's not started yet"]
+      [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      [GenericCondition] 'Are any of the following true?' or ['I have previously been diagnosed with breast cancer, prostate cancer, or I am curerrently undergoing PSA (prostate monitoring)', 'I have uncontrolled low or high blood pressure', 'I am currently trying for a baby']
+      [GenericCondition] 'There are occasional reports of depression and even suicidal thoughts with Finasteride (Propecia). If you are currently stable, and happy to stop this treatment and consult a doctor if this occurs, then click to accept you have understood the above.' or ['I would not like to be recommended Finasteride']
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Finasteride']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['Itching']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['Dandruff']
+    }
+  }
+==== SKU PHI1772 group None keys ['sku', 'blockers', 'conditions']
+ -- conditions
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['Itching']
+    [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['Dandruff']
+  }
+ -- blockers
+  CompositeCondition(or){
+    CompositeCondition(or){
+      [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      [GenericCondition] 'Are any of the following true?' or ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly', "It's not started yet"]
+      [GenericCondition] 'When did you first notice any hair loss?' or ["I haven't noticed any yet"]
+      [GenericCondition] 'Are you allergic to minoxidil or finasteride?' and ['Finasteride', 'Minoxidil']
+    }
+    CompositeCondition(or){
+      CompositeCondition(or){
+        [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly', "It's not started yet"]
+        [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+        [GenericCondition] 'Are any of the following true?' or ['I have previously been diagnosed with breast cancer, prostate cancer, or I am curerrently undergoing PSA (prostate monitoring)', 'I have uncontrolled low or high blood pressure', 'I am currently trying for a baby']
+        [GenericCondition] 'There are occasional reports of depression and even suicidal thoughts with Finasteride (Propecia). If you are currently stable, and happy to stop this treatment and consult a doctor if this occurs, then click to accept you have understood the above.' or ['I would not like to be recommended Finasteride']
+        [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Finasteride']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['Itching']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['Dandruff']
+        [GenericCondition] 'How long did it take for your hair loss to get to this stage?' or ['It started to fall out quite suddenly']
+        [GenericCondition] 'Do you ever suffer from pain, burning or crusting on the scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding']
+        [GenericCondition] 'Are you allergic to minoxidil or finasteride?' or ['Minoxidil']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['Itching']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['Dandruff']
+      }
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['Itching']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions on your scalp?' or ['Dandruff']
+    }
+  }
+==== NO RESULTS RULES
+  {"question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?", "answer": "I have less hair than before, but it is not very noticeable", "template": "0 chars"}
+  {"question": "Which image best represents your hair loss?", "answer": "Patchy", "template": "0 chars"}
+  {"question": "Which image best represents your hair loss?", "answer": "Extensive", "template": "0 chars"}
+  {"question": "How did your hairloss start?", "answer": "Not started", "template": "0 chars"}
+  {"question": "How did your hair loss start?", "answer": "Suddenly", "template": "0 chars"}
+  {"question": "Do you ever suffer from pain, burning or crusting on the scalp?", "answer": "[\"Pain\",\"Burning\",\"Crusting\",\"Bleeding\"]", "template": "0 chars"}
+  {"question": "Are you allergic to minoxidil or finasteride?", "answer": "Minoxidil,Finasteride", "template": "0 chars"}
+  {"question": "Are any of the following true?", "answer": "[\"I have previously been diagnosed with breast cancer, prostate cancer, or I am curerrently undergoing PSA (prostate monitoring)\",\"I have uncontrolled low or high blood pressure\",\"I am currently trying for a baby\"]", "template": "0 chars"}
+  {"question": "There are occasional reports of depression and even suicidal thoughts with Finasteride (Propecia). If you are currently stable, and happy to stop this treatment and consult a doctor if this occurs, then click to accept you have understood the above.", "answer": "I would not like to be recommended Finasteride", "template": "0 chars"}
+  {"question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?", "answer": "My scalp is very visible and my hair feels much less dense", "template": "0 chars"}
+  {"question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?", "answer": "My hair has thinned extensively, or been lost entirely, throughout the top region", "template": "0 chars"}
+  {"question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?", "answer": "I have less hair than before, but it is not very noticeable", "template": "0 chars"}
+  {"question": "Which image best represents your hair loss?", "answer": "Patchy", "template": "0 chars"}
+  {"question": "Which image best represents your hair loss?", "answer": "Extensive", "template": "0 chars"}
+  {"question": "How did your hairloss start?", "answer": "Not started", "template": "0 chars"}
+  {"question": "How did your hair loss start?", "answer": "Suddenly", "template": "0 chars"}
+  {"question": "Do you ever suffer from pain, burning or crusting on the scalp?", "answer": "[\"Pain\",\"Burning\",\"Crusting\",\"Bleeding\"]", "template": "0 chars"}
+  {"question": "Are you allergic to minoxidil or finasteride?", "answer": "Minoxidil,Finasteride", "template": "0 chars"}
+  {"question": "Are any of the following true?", "answer": "[\"I have previously been diagnosed with breast cancer, prostate cancer, or I am curerrently undergoing PSA (prostate monitoring)\",\"I have uncontrolled low or high blood pressure\",\"I am currently trying for a baby\"]", "template": "0 chars"}
+  {"question": "There are occasional reports of depression and even suicidal thoughts with Finasteride (Propecia). If you are currently stable, and happy to stop this treatment and consult a doctor if this occurs, then click to accept you have understood the above.", "answer": "I would not like to be recommended Finasteride", "template": "0 chars"}
+  {"question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?", "answer": "My scalp is very visible and my hair feels much less dense", "template": "0 chars"}
+  {"question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?", "answer": "My hair has thinned extensively, or been lost entirely, throughout the top region", "template": "0 chars"}

@@ -1,0 +1,23 @@
+STEP 11 click "Next"
+URL: https://www.numan.com/subscribe/hair-loss/5af99948-be6c-44e8-a95c-3ce4b7fa3312/sq/are_any_of_the_following_true
+TITLE: Are any of the following true? | Numan
+
+--- VISIBLE TEXT ---
+44%
+Are any of the following true?
+I have noticed hair loss on other areas of my body other than my head.
+I am undergoing PSA (prostate) monitoring or I have previously been diagnosed with prostate cancer.
+I have been diagnosed with high or low blood pressure.
+I have been diagnosed with asthma.
+I plan on trying for a baby in the next 12 weeks.
+I have previously experienced, or am currently experiencing, depression, anxiety or panic disorders
+No - none
+Back
+Next
+
+--- CONTROLS ---
+  checkbox (7): I have noticed hair loss on other areas of my body other than my head.  ·  I am undergoing PSA (prostate) monitoring or I have previously been diagnosed with prostate cancer.  ·  I have been diagnosed with high or low blood pressure.  ·  I have been diagnosed with asthma.  ·  I plan on trying for a baby in the next 12 weeks.  ·  I have previously experienced, or am currently experiencing, depression, anxiety or panic disorders  ·  No - none
+  button (2): Back  ·  Next [disabled]
+
+--- LINKS ---
+  link (1): Visit the main page -> /

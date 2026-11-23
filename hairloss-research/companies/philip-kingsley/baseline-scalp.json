@@ -1,0 +1,121 @@
+{
+ "start": "https://hairloss.philipkingsley.co.uk/",
+ "note": "Synthetic scalp baseline (no protocol baseline exists for the scalp quiz): not diagnosed, mild-moderate dandruff, healthy scalp before, no chemo, no pain etc., medium wavy hair, medium length, healthy hair, no allergies. Stops at the account wall.",
+ "steps": [
+  {
+   "do": "click",
+   "selector": ".pk-quiz-button[data-url*=\"scalp_quiz_step0\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "text": "GET STARTED"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q1\"][data-quiz-selection=\"No\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q3\"][data-quiz-selection=\"Mild to Moderate Dandruff\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q4\"][data-quiz-selection=\"Healthy\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q5\"][data-quiz-selection=\"No\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q6\"][data-quiz-selection=\"None of the above\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q7\"][data-quiz-selection=\"Medium, can be wavy\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q8\"][data-quiz-selection=\"Medium (shoulder length)\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q9\"][data-quiz-selection=\"Healthy\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q10a\"][data-quiz-selection=\"No, I don't have any allergies\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "scroll"
+  }
+ ]
+}

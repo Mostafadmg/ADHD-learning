@@ -1,0 +1,19 @@
+STEP 00 start (HTTP 200)
+URL: https://checkout.struthealth.com/auth/sign-up
+TITLE: Strut | Checkout
+
+--- VISIBLE TEXT ---
+See your treatment options
+Join for a tailored experience crafted by experts.
+By creating an account using e-mail, Google, I agree to the Telemedicine Consent, Privacy Policy, Refund Policy and Terms & Conditions
+Already have an account? Sign In.
+or
+
+--- CONTROLS ---
+  input:email (1): Enter your e-mail
+  input:text (1): Enter your phone number
+  checkbox (1): By creating an account using e-mail, Google, I agree to the Telemedicine Consent, Privacy Policy, Refund Policy and Terms & Conditions
+  input:submit (1): (no label) = "Continue"
+
+--- LINKS ---
+  link (5): Telemedicine Consent -> https://www.struthealth.com/telemedicine-consent  ·  Privacy Policy -> https://www.strutyours.com/privacy-policy  ·  Refund Policy -> https://www.struthealth.com/refund-policy  ·  Terms & Conditions -> https://www.strutyours.com/terms-and-conditions  ·  Sign In. -> /auth/sign-in

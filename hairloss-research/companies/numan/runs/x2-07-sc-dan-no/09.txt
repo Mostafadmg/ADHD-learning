@@ -1,0 +1,17 @@
+STEP 09 click "Next"
+URL: https://www.numan.com/subscribe/hair-loss/60fe9a64-f67c-404d-9526-19b0df412305/sq/clarify_dandruff
+TITLE: Topical formulations (such as spray) may worsen dandruff. Would you still like to be considered for topical treatments? | Numan
+
+--- VISIBLE TEXT ---
+37%
+Topical formulations (such as spray) may worsen dandruff. Would you still like to be considered for topical treatments?
+Yes
+No
+Back
+
+--- CONTROLS ---
+  radio (2): Yes  ·  No
+  button (1): Back
+
+--- LINKS ---
+  link (1): Visit the main page -> /

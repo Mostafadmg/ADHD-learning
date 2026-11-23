@@ -1,0 +1,17 @@
+{
+ "actions": "exp-m16.json",
+ "about": "ONE-CHANGE EXPERIMENT exp-m16 from baseline-men.json: men-q2 hair pattern: C -> No pattern fits well (NO photos uploaded)",
+ "changed": "men-q2 hair pattern: C -> No pattern fits well (NO photos uploaded)",
+ "failedStep": null,
+ "submitDisabled": false,
+ "preTextLength": 4406,
+ "urlAfter": "https://onlinedoctor.superdrug.com/assessment/147929#/section/1039315014?step=1",
+ "reachedProductScreen": false,
+ "offerLines": [],
+ "products": [],
+ "postText": "Help?\nHair loss consultation\nQuestionnaire\tYour request\tDelivery\tSign in or Register\tYour Order\tPayment Successful\nPlease note:  This service is only available in the UK.\n×\nClose\nThese medical questions help our doctors treat you safely. Check that you fully understand them, and message us if you're unsure.\nHave you been diagnosed with Androgenic Alopecia (Male Pattern Baldness)?\nYes, by my GP\nYes, by a specialist\nNo, self-diagnosis\nPlease choose your hair pattern.\nA\nB\nC\nD\nE\nNo pattern fits well\nPlease upload 2 photos clearly showing your hair pattern.\nPlease upload photos\nPhoto Upload\nClick or Drag files here to upload\nAre you currently using finasteride (or the brand Propecia)?\nYes\nNo\nHave you taken finasteride or Propecia for hair loss before?\nYes\nNo\nWhen did you first notice any hair loss?\nIn the last month\nMore than a month ago\nHow did your hair loss start?\nSuddenly\nGradually (over months)\nHave you noticed any other changes to the areas where you are losing hair?\nSuch as redness, itching, flaking or soreness\nYes\nNo\nCan you always get and maintain an erection when you want one?\nYes\nNo\nDo you have, or have you had, any of the following conditions?\nProstate cancer\nBreast cancer\nLiver condition\nAny type of skin conditions\nNone of the above\nDo you have any other medical conditions not mentioned above?\nYes\nNo\nAre you currently taking any medication, or have you recently finished a course of medication?\nYes\nNo\nAre you allergic to any medicines or other substances?\nFor instance peanuts or soya.\nYes\nNo\nAlmost done. Important information to read and confirm you agree and understand:\n\nTrying for a baby\n\nFinasteride may affect male fertility while you are taking it.\nThese changes are usually reversible after stopping treatment, but recovery may take several months. If you are planning to try for a baby, it is best not to use this or to stop it several months before trying to conceive.\n\nDepression\n\nSome people have experienced severe depression when taking finasteride. Before taking finasteride, read and keep the finasteride patient cards and patient information leaflet within your pack and inform your doctor if you have any personal history of depression or suicidal thought. You should stop taking this medication immediately if you notice that your mood is affected and speak to your doctor.\n\nFinasteride and your prostate\n\nFinasteride can lower the level of a prostate protein called PSA (prostate-specific antigen) in your blood. Because of this, it’s recommended t",
+ "saveReply": [],
+ "productRulesReply": [],
+ "productRulesCalled": 0,
+ "apiCallsAfterLoad": []
+}

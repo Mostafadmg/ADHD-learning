@@ -1,0 +1,28 @@
+STEP 30 click "input[placeholder=\"Month\"]"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+What is your date of birth?
+We customize your hair growth formula based on your age to ensure the most effective and safe treatment. For example, certain ingredients are specifically tailored for customers over 50.
+Enter your date of birth
+Month
+Jan
+Feb
+Mar
+Apr
+May
+Jun
+Jul
+Aug
+Sep
+Oct
+Nov
+Dec
+
+--- CONTROLS ---
+  input:text (3): Year = "1994"  ·  Month  ·  Day
+
+--- LINKS ---
+

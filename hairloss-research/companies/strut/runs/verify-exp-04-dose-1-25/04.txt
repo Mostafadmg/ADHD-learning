@@ -1,0 +1,30 @@
+STEP 04 click "Add to cart"
+URL: https://start.struthealth.com/flow/6aa3d578f415d1603a6e0c85
+TITLE: Minoxidil Prod
+
+--- VISIBLE TEXT ---
+15%
+
+How long ago did you first notice signs of hair loss?
+
+1 month or less
+Less than 6 months
+6-12 months
+Over 1 year
+Over 2 years
+Continue
+1
+1.25 mg · 90 Day Supply
+$55.00
+1.25 mg · 90 Day Supply
+$55.00
+Dose: 90 Day Supply - 2.5 mg (1.25mg)
+Supply: 90 Day Supply
+Total
+$55.00
+
+--- CONTROLS ---
+  button (8): Go back  ·  1 month or less [false]  ·  Less than 6 months [false]  ·  6-12 months [false]  ·  Over 1 year [false]  ·  Over 2 years [false]  ·  Continue  ·  1 1.25 mg · 90 Day Supply $55.00
+
+--- LINKS ---
+

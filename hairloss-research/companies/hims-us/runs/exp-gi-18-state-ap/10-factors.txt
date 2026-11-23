@@ -1,0 +1,27 @@
+STEP 10
+URL: https://www.hims.com/g/i/hl/factors
+SERVER NODE: factors (nodeModularScreen), step value 18
+
+--- VISIBLE TEXT ---
+Factors like aging, family history, and stress can cause hair shedding and thinning.
+
+The good news?
+
+Prescription treatments can help you fight these root causes, so you can grow visibly thicker, fuller hair in just 3 to 6 months.
+
+Next
+
+--- CHOICES ---
+
+
+--- BUTTONS ---
+Next
+
+--- FIELDS ---
+
+
+--- LINKS ---
+
+
+--- OUTPUT SCHEMA (server) ---
+{"type":"object","required":["responses"],"properties":{"responses":{"type":"object","required":[],"additionalProperties":false}}}

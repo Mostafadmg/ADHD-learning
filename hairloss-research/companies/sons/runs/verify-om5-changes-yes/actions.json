@@ -1,0 +1,8 @@
+{"start":"https://shop.sons.co.uk/consultation/?logged_in=false&oral_minoxidil_5mg=true","steps":[
+{"do":"wait","ms":3500},
+{"do":"click","text":"I've had some improvement but it now seems to have plateaued"},
+{"do":"click","text":"No","nth":0,"_q":"5713 side effects No"},
+{"do":"wait","ms":800},
+{"do":"click","text":"Yes","nth":1,"_q":"5715 changes to health or medicines: Yes"},
+{"do":"wait","ms":1000}
+]}

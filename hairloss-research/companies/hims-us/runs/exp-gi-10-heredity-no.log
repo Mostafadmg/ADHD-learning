@@ -1,0 +1,47 @@
+00 [goals] What are your hair goals? / Fix my receding hairline / Regrow a full head of hair / Get ahead of hair loss / The quiz is not a medical assessment and your responses will not be shared with a medical provider. Hims uses your respon
+     choices: Fix my receding hairline | Regrow a full head of hair | Get ahead of hair loss
+     -> ["Regrow a full head of hair"]
+01 [changes] Where are you noticing changes to your hair? / Along the hairline / At the top / All over / Continue / Already have an account? Sign In
+     choices: Along the hairline | At the top | All over
+     -> ["Along the hairline"]
+02 [loss] How much hair have you lost? / A lot / It’s obvious to everyone / Some / Those close to me notice / A little / Only I notice / Continue / Already have an account? Sign In
+     choices: A lot It’s obvious to everyone | Some Those close to me notice | A little Only I notice
+     -> ["Some Those close to me notice"]
+03 [start] When did you start noticing changes to your hair? / Over a year ago / In the past year / In the past few months / Not sure / Continue / Already have an account? Sign In
+     choices: Over a year ago | In the past year | In the past few months | Not sure
+     -> ["Over a year ago"]
+04 [expectations] With treatment, what results are you hoping for? / Choose as many as you’d like. / A stronger, defined hairline / Visibly thicker, fuller hair / More scalp coverage / Keep the hair I have / All of the above / Continue / Already ha
+     choices: A stronger, defined hairline | Visibly thicker, fuller hair | More scalp coverage | Keep the hair I have | All of the above
+     -> ["Visibly thicker, fuller hair"] then [Continue]
+05 [type] What’s your hair type? / Straight or wavy / Curly or coily / Textured or processed / I don’t have hair / Continue / Already have an account? Sign In
+     choices: Straight or wavy | Curly or coily | Textured or processed | I don’t have hair
+     -> ["Straight or wavy"]
+06 [length] How long is your hair? / Buzzed, shaved, or bald / Short / Medium / Long / Continue / Already have an account? Sign In
+     choices: Buzzed, shaved, or bald | Short | Medium | Long
+     -> ["Short"]
+07 [lifestyle] Next, let’s talk about lifestyle factors. / Uncovering which root causes may be affecting you can help us better understand your hair needs. / Continue
+     choices: 
+     -> [] then [Continue]
+08 [hair-loss-heredity] Does hair loss run in your family? / Yes / No / Not sure / Why we ask / The most common cause of hair loss is hereditary hair loss. So if an immediate family member has a history of hair loss, there’s a good chance it’ll affect yo
+     choices: Yes | No | Not sure
+     -> ["No"]
+09 [stress] How often do you tend to experience stress? / All the time / Sometimes / Rarely / Not sure / Why we ask / If you experience stress, it could affect your hair. Stress can trigger and worsen a form of temporary hair loss called telo
+     choices: All the time | Sometimes | Rarely | Not sure
+     -> ["Sometimes"]
+10 [factors] Factors like aging, family history, and stress can cause hair shedding and thinning. / The good news? / Prescription treatments can help you fight these root causes, so you can grow visibly thicker, fuller hair in just 3 to 6 mont
+     choices: 
+     -> [] then [Next]
+11 [routine] Now let’s get to know your hair routine. / Your answers help determine which treatment types best fit into your day-to-day. / Continue
+     choices: 
+     -> [] then [Continue]
+12 [hair-style] How do you style your hair? / No styling / I let my hair do its thing / Products / Gel, mousse, etc. / I usually wear a hat / Protective styles / Braids, locs, etc. / Continue / Already have an account? Sign In
+     choices: No styling I let my hair do its thing | Products Gel, mousse, etc. | I usually wear a hat | Protective styles Braids, locs, etc.
+     -> ["No styling I let my hair do its thing"]
+13 [hair-style-duration] How much time do you spend on your hair every day? / We offer treatments that are quick, simple, and work with your routine. / Less than 5 minutes / 5-10 minutes / 10+ minutes / Continue / Already have an account? Sign In
+     choices: Less than 5 minutes | 5-10 minutes | 10+ minutes
+     -> ["Less than 5 minutes"]
+14 [select-state] Which state do you currently live in? / AA / AE / Alabama / Alaska / AP / Arizona / Arkansas / California / Colorado / Connecticut / Delaware / District of Columbia / Florida / Georgia / Hawaii / Idaho / Illinois / Indiana / Iowa 
+     choices: By clicking "Continue", I agree to the Terms and Conditions and Telehealth Consent and acknowledge the Privacy Policy.
+     fields: select-one:State
+     -> ["select Texas"] STOP: consent tick-box (not ticked). Continue button stays disabled without the tick.
+END {"reason":"consent-wall","slug":"select-state","url":"https://www.hims.com/g/i/hl/select-state","consentBox":["By clicking \"Continue\", I agree to the Terms and Conditions and Telehealth Consent and acknowledge the Privacy Policy."],"continueDisabledWithoutTick":true,"entered":["select Texas"]}

@@ -1,0 +1,23 @@
+STEP 15 click "I confirm I am 18+ and assigned male at birth"
+URL: https://www.keeps.com/hair-assessment-quiz?step=15
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+Last step to see if you qualify.
+
+We need your state and a few details to match you with an available provider.
+
+West Virginia
+
+I confirm I am 18+ and assigned male at birth
+
+Show my plan
+
+Keeps | Hair Loss Treatment for Men
+
+--- CONTROLS ---
+  button (2): Go back  ·  Show my plan
+  input:text (1): react-select-2-input
+
+--- LINKS ---
+

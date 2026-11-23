@@ -1,0 +1,28 @@
+STEP 01
+URL: https://www.hims.com/g/i/hl/changes
+SERVER NODE: changes (nodeModularScreen), step value 4
+
+--- VISIBLE TEXT ---
+Where are you noticing changes to your hair?
+Along the hairline
+At the top
+All over
+Continue
+Already have an account? Sign In
+
+--- CHOICES ---
+[radio] Along the hairline
+[radio] At the top
+[radio] All over
+
+--- BUTTONS ---
+Continue
+
+--- FIELDS ---
+
+
+--- LINKS ---
+Already have an account? Sign In -> /c/hl?skipToSignIn=true&goFlow=true&flowId=hl&sessionId=177df2ab-4a40-4338-a5c7-cd95cf9eee06
+
+--- OUTPUT SCHEMA (server) ---
+{"type":"object","required":["responses"],"properties":{"responses":{"type":"object","required":["i-hl-hims-hair-changes"],"properties":{"i-hl-hims-hair-changes":{"type":"object","required":["i-hl-hims-hair-changes"],"properties":{"i-hl-hims-hair-changes":{"enum":["i-hl-hims-changes-hairline","i-hl-hims-changes-top","i-hl-hims-changes-all-over"],"type":"string"}},"additionalProperties":false}},"additionalProperties":false}}}

@@ -1,0 +1,55 @@
+   [feature-test] {"experiment_id":"c77efccc-deab-436e-b750-ca5ded2a23ed","version":"control"}
+
+00 [tp] (question) Which treatment is right for you?  ->  ["Treatment for women"]
+01 [yhg] (question) What are your hair goals?  ->  ["Prevent, stop or reverse hair loss","Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us."]
+02 [pds] (question) Your medical history  ->  [{"select":"select[name='3039']","value":{"label":"Female"}}]
+03 [pdsc] (question) Please confirm your sex assigned at birth  ->  ["I confirm the above selection is accurate and true."]
+04 [ht] (question) Which option best describes your natural hair type?  ->  ["Straight"]
+05 [hs] (question) How do you usually style or treat your hair?  ->  ["None of the above"]
+06 [hw] (question) How often do you wash your hair?  ->  ["3-4 times per week"]
+07 [hht] (question) Are you hiding your hair loss in any of the following ways?  ->  ["None of the above"]
+08 [htp] (question) Have you used any of the following products to help you achieve your hair goals in the last three months?  ->  ["None of the above"]
+09 [hdw] (question) Do you know if you're in a hard water area?  ->  ["No"]
+10 [htaf] (question) Where have you noticed hair thinning or loss?  ->  ["My middle parting is getting wider"]
+11 [htc] (question) When did you notice changes to your hair?  ->  ["Over a year ago"]
+12 [ar] (question)   ->  []
+   (variant: question 9346)
+13 [st] (question) Which best matches your skin?  ->  ["Fair. It often burns, but tans a little"]
+14 [sc] (question) How would you describe the condition of your scalp?  ->  ["Normal"]
+15 [scc] (question) Are you experiencing any of the following on your scalp?  ->  ["None of the above"]
+16 [smt] (question) In 6 months' time, what do you want to see?  ->  ["Fuller, denser-looking hair that I feel confident about"]
+17 [pt] (question) Do you live with pets?  ->  ["No"]
+18 [tt] (question) Which treatment would suit you best?  ->  ["The Capsules"]
+19 [dt] (question)   ->  []
+20 [pg] (question) Are you pregnant, breastfeeding or likely to conceive?  ->  ["No","Yes, I've read and understood the information and would like to carry on."]
+21 [mp] (question) Do any of the following apply to you?  ->  ["None of the above"]
+22 [mdf] (question) Are you taking any of the following prescription medications?  ->  ["No, I don't take any medications"]
+23 [mcf] (question) Have you been diagnosed with any of the following conditions?  ->  ["None of the above"]
+24 [al] (question) Do you have any known allergies to the following?  ->  ["No known allergies"]
+   (variant: input type single_select_button)
+25 [rhf] (question) How have you felt about your hair in the last week?  ->  ["5"]
+   (variant: input type single_select_button)
+26 [rha] (question) How would you rate the appearance of your hair in the last week?  ->  ["5"]
+27 [di] (question) What most influenced your decision to sign-up today?  ->  ["I'm looking for a long-term effective haircare treatment"]
+28 [rj] (question)   ->  []
+   (variant: input type date_masked)
+29 [el] (question) Your eligibility  ->  [{"type":"input[name=\"3053\"]","value":"15122008"},"Yes, I live in the UK (excluding Channel Islands)."]
+
+===== STOP: no answer for step 30 [utt] (question) We’re unable to treat you at this time. =====
+URL: https://www.hairandme.com/c/suh/utt
+JSON: {"step":{"actionsList":[{"exit":{"label":"Goodbye for now"}},{"previous":{"label":"Back to consultation"}}],"description":null,"headerElement":null,"questions":[{"id":3041,"inputConfig":{"displayTextV2":[{"text":[{"part":"Thanks for your interest. At the moment, we're unable to treat your age group."},{"part":"We're working really hard to find ways to treat as many people as possible, and we hope to see you again in the future."}]}]},"inputType":"display_text","is_custom":false,"label":null,"text":null,"value":null}],"section":null,"title":"We’re unable to treat you at this time.","type":"question"}}
+TEXT: We’re unable to treat you at this time.
+
+Thanks for your interest. At the moment, we're unable to treat your age group.
+
+We're working really hard to find ways to treat as many people as possible, and we hope to see you again in the future.
+
+GOODBYE FOR NOW
+Back to consultation
+CONTROLS:
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+a -> / | GOODBYE FOR NOW
+a -> /c/suh/utt?action=previous | Back to consultation
+
+[autowalk] exit 0 -> runs/verify-w-age-17

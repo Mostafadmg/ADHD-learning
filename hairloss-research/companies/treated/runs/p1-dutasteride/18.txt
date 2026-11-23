@@ -1,0 +1,24 @@
+STEP 18 click "Continue"
+URL: https://start.treated.com/GBR/en/#/questionnaire
+TITLE: Treated UK - Choose Better - Medical Experts & Treatments Online
+
+--- VISIBLE TEXT ---
+Question 9 of 11
+
+Do you have any of the following symptoms?
+(Select all that apply.)
+Losing weight without trying
+Hot flushes
+Itchy scalp
+Skin or nail problems
+More frequent bowel movements than usual
+Problems passing urine
+No, none of the above
+Continue
+
+--- CONTROLS ---
+  checkbox (7): Losing weight without trying  ·  Hot flushes  ·  Itchy scalp  ·  Skin or nail problems  ·  More frequent bowel movements than usual  ·  Problems passing urine  ·  No, none of the above
+  button (1): Continue [disabled]
+
+--- LINKS ---
+

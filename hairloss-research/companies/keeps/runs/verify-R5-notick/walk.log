@@ -1,0 +1,10 @@
+
+===== FINAL (after 15 steps) =====
+URL: https://www.keeps.com/hair-assessment-quiz?step=15
+TEXT: Last step to see if you qualify. ⏎ We need your state and a few details to match you with an available provider. ⏎ option Texas, selected. Select is focused ,type to refine list, press Down to open the menu, ⏎ Texas ⏎ I confirm I am 18+ and assigned male at birth ⏎ Show my plan ⏎ Keeps | Hair Loss Treatment for Men
+CONTROLS:
+  button (2): Go back  ·  Show my plan [disabled]
+  input:text (1): react-select-2-input
+  links: 
+
+[walk] 15 step(s), exit 0, 3 JSON bodies saved -> runs/verify-R5-notick

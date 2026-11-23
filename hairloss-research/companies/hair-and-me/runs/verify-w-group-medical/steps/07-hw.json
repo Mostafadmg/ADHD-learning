@@ -1,0 +1,55 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 2,
+   "sectionTitle": "YOUR HAIR"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 8010,
+    "inputConfig": {
+     "options": [
+      {
+       "label": "Daily",
+       "value": "Daily"
+      },
+      {
+       "label": "3-4 times per week",
+       "value": "3-4 times per week"
+      },
+      {
+       "label": "Twice a week",
+       "value": "Twice a week"
+      },
+      {
+       "label": "Once a week or less",
+       "value": "Once a week or less"
+      }
+     ]
+    },
+    "inputType": "single_select_button",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "How often do you wash your hair?",
+  "type": "question"
+ }
+}

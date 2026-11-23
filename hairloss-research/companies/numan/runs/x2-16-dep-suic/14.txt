@@ -1,0 +1,17 @@
+STEP 14 fill "textarea, input[type=text]" = "Sertraline 50 mg once a day"
+URL: https://www.numan.com/subscribe/hair-loss/903bf41d-0c48-4817-bbf5-4c95e73538f6/sq/mental_health_medications
+TITLE: What medications do you take for your mental health condition? | Numan
+
+--- VISIBLE TEXT ---
+72%
+What medications do you take for your mental health condition?
+​
+Back
+Next
+
+--- CONTROLS ---
+  textarea (1): mental_health_medications
+  button (2): Back  ·  Next
+
+--- LINKS ---
+  link (1): Visit the main page -> /

@@ -1,0 +1,10 @@
+{"url":"https://start.treated.com/gbr/lottie/FindTreatment.json","method":"GET","status":200,"size":28523,"file":"net/01-start_treated_com_gbr_lottie_FindTreatment_json.json"}
+{"url":"https://start.treated.com/gbr/lottie/FindTreatment.json","method":"GET","status":200,"size":28523,"file":"net/02-start_treated_com_gbr_lottie_FindTreatment_json.json"}
+{"url":"https://start.treated.com/gbr/deployment-timestamp.json","method":"GET","status":200,"size":40}
+{"url":"https://cdp-eu.customer.io/v1/p","method":"POST","status":200,"size":16}
+{"url":"https://consumer.cloud.gist.build/api/v4/users?sessionId=f9703cf9-9fe6-4a5a-a6b4-82361374821f","method":"POST","status":200,"size":39}
+{"url":"https://start.treated.com/gbr/thirdparty/get-consultation-status?isFromEdencare=true","method":"POST","status":200,"size":595,"file":"net/03-start_treated_com_gbr_thirdparty_get_consultation_status_isFromEdencare_true.json","post":"{\"conditionUrl\":\"024\"}"}
+{"url":"https://cookie-cdn.cookiepro.com/scripttemplates/202511.1.0/assets/otCenterRounded.json","method":"GET","status":200,"size":10557,"file":"net/04-cookie_cdn_cookiepro_com_scripttemplates_202511_1_0_assets_otCenterRounded_json.json"}
+{"url":"https://cookie-cdn.cookiepro.com/scripttemplates/202511.1.0/assets/v2/otPcTab.json","method":"GET","status":200,"size":68617,"file":"net/05-cookie_cdn_cookiepro_com_scripttemplates_202511_1_0_assets_v2_otPcTab_json.json"}
+{"url":"https://start.treated.com/gbr/legalterms/GetLegalTermsIdType","method":"GET","status":200,"size":153496,"file":"net/06-start_treated_com_gbr_legalterms_GetLegalTermsIdType.json"}
+{"url":"https://start.treated.com/gbr/catalog/getquestionsbycountry","method":"POST","status":200,"size":17535,"file":"net/07-start_treated_com_gbr_catalog_getquestionsbycountry.json","post":"{\"conditionURL\":\"hair-loss\",\"gender\":\"Male\",\"productIds\":[]}"}

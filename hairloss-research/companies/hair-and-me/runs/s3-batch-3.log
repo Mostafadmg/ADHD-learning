@@ -3,3 +3,28 @@
 [22:56:04] start verify-m-mcm-heart
 [22:58:02] done  verify-m-mcm-heart exit=0 :: ===== STOP: no answer for step 29 [yd] (question) Personalise your account =====
 [22:58:08] start verify-m-pp-decline
+[23:00:09] done  verify-m-pp-decline exit=0 :: ===== STOP: no answer for step 29 [yd] (question) Personalise your account =====
+[23:00:15] start verify-m-al-minoxidil
+[23:02:20] done  verify-m-al-minoxidil exit=0 :: ===== STOP: no answer for step 30 [yd] (question) Personalise your account =====
+ALL-DONE
+[23:02:36] start verify-m-gender-nonbinary
+[23:04:37] done  verify-m-gender-nonbinary exit=0 :: ===== STOP: no answer for step 28 [yd] (question) Personalise your account =====
+[23:04:43] start verify-m-bp-elevated-reading
+[23:07:00] done  verify-m-bp-elevated-reading exit=0 :: ===== STOP: no answer for step 31 [yd] (question) Personalise your account =====
+[23:07:06] start verify-w-age-17
+[23:09:18] done  verify-w-age-17 exit=0 :: ===== STOP: no answer for step 30 [utt] (question) We’re unable to treat you at this time. =====
+[23:09:24] start verify-w-mcf-bp
+[23:11:43] done  verify-w-mcf-bp exit=0 :: ===== STOP: no answer for step 32 [yd] (question) Personalise your account =====
+ALL-DONE
+[23:11:58] start verify-w-htaf-receding
+[23:14:22] done  verify-w-htaf-receding exit=0 :: ===== STOP: no answer for step 32 [yd] (question) Personalise your account =====
+[23:14:28] start verify-w-htaf-dontknow
+[23:16:49] done  verify-w-htaf-dontknow exit=0 :: ===== STOP: no answer for step 32 [yd] (question) Personalise your account =====
+[23:16:55] start verify-w-entry-promo-drops
+[23:19:28] done  verify-w-entry-promo-drops exit=0 :: ===== STOP: no answer for step 32 [yd] (question) Personalise your account =====
+[23:19:34] start verify-m-group-medical
+[23:22:05] done  verify-m-group-medical exit=0 :: ===== STOP: no answer for step 29 [yd] (question) Personalise your account =====
+ALL-DONE
+[23:22:36] start verify-w-group-medical
+[23:25:00] done  verify-w-group-medical exit=0 :: ===== STOP: no answer for step 32 [yd] (question) Personalise your account =====
+[23:25:07] start verify-w-pt-yes

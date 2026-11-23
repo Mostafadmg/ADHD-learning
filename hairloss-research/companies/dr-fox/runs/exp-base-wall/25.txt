@@ -1,0 +1,42 @@
+STEP 25 click "#confirm-form button[type=submit], #confirm-form input[type=submit]"
+URL: https://www.doctorfox.co.uk/order/login
+TITLE: Log in to your account - Dr Fox
+
+--- VISIBLE TEXT ---
+Please login to continue.
+Create account or login
+Answer medical questions
+Choose treatment
+Complete order
+Login to your account
+Login email* 
+
+Password* 
+SHOW
+Login
+
+Forgot your password?
+
+If you are experiencing problems logging-in, please contact us.
+
+ Create new account 
+
+Important: Do not register multiple accounts or order for other people 
+Information
+
+Data security
+
+Information sent between your browser and the Dr Fox web server is encrypted so that it cannot be read or changed as it travels over the internet.
+
+Click the padlock icon in your browser address bar to verify.
+
+In addition Dr Fox servers are regularly scanned for any vulnerabilities.
+
+--- CONTROLS ---
+  input:text (1): Search…
+  button (4): Search  ·  More  ·  SHOW [false]  ·  Login
+  input:email (1): email
+  input:password (1): Password*
+
+--- LINKS ---
+  link (85): Online Doctor and Pharmacy -> https://www.doctorfox.co.uk/  ·  Skip to main content -> #main-content  ·  Login -> https://www.doctorfox.co.uk/login  ·  Basket 1 -> https://www.doctorfox.co.uk/order/confirm  ·  Contact Dr Fox -> https://www.doctorfox.co.uk/contact-us.html  ·  info@doctorfox.co.uk -> mailto:info@doctorfox.co.uk?subject=Enquiry  ·  Men -> https://www.doctorfox.co.uk/mens-health.html  ·  Women -> https://www.doctorfox.co.uk/womens-health.html  ·  Sexual -> https://www.doctorfox.co.uk/sexual-health.html  ·  Travel -> https://www.doctorfox.co.uk/travel-health.html  ·  Medications & prices -> #  ·  Reviews -> https://www.doctorfox.co.uk/customer-reviews.html  ·  Regulated -> https://www.doctorfox.co.uk/regulation.html  ·  Delivery -> https://www.doctorfox.co.uk/delivery.html  ·  Refunds -> https://www.doctorfox.co.uk/refunds.html  ·  About us -> https://www.doctorfox.co.uk/about-us.html  ·  FAQs -> https://www.doctorfox.co.uk/faqs.html  ·  Our team -> https://www.doctorfox.co.uk/our-team/  ·  Medications & prices -> https://www.doctorfox.co.uk/medications-online-prescriptions.html  ·  Antimalarials -> /anti-malaria-tablets/  ·  Erectile dysfunction -> /erectile-dysfunction/  ·  Male hair loss -> /hair-loss-treatments/  ·  Progestogen-only pill (mini pill) -> /progestogen-only-contraceptive-pill/  ·  Morning after pill -> /morning-after-pill/  ·  Combined contraceptive pill -> /contraceptive-pill/  ·  HRT/menopause treatment -> /hrt-menopause-treatment/  ·  Vaginal oestrogens -> /vaginal-oestrogens/  ·  Stop smoking -> /stop-smoking/  ·  Period delay -> /period-delay/  ·  Cystitis -> /cystitis/  ·  Bacterial vaginosis -> /bacterial-vaginosis/  ·  Female facial hair -> /female-facial-hair/  ·  Chlamydia -> /chlamydia/  ·  Altitude sickness -> /altitude-sickness/  ·  Acne -> /acne-treatment/  ·  Travellers' diarrhoea -> /travellers-diarrhoea/  ·  Travel sickness -> /travel-sickness/  ·  Hay fever -> /hay-fever/  ·  Rosacea -> /rosacea-treatment/  ·  Genital thrush -> /thrush/  ·  Jet lag -> /jet-lag/  ·  Irritable bowel syndrome -> /irritable-bowel-syndrome/  ·  Acid reflux -> /acid-reflux/  ·  Migraine -> /migraine/  ·  Eczema -> /eczema-dry-skin/  ·  Genital herpes -> /genital-herpes/  ·  Cold sores -> /cold-sore-treatments/  ·  Premature ejaculation -> /premature-ejaculation/  ·  Weight loss -> /weight-loss/  ·  Flu antivirals -> /flu-anti-virals/  ·  BBC Newsbeat -> https://www.bbc.co.uk/news/newsbeat-50592361  ·  Your guarantee -> https://www.trustedshops.co.uk/buyerrating/info_XCDBA406183B6F6A6B6A3FAE6291F711B.html  ·  Trusted Shops -> https://www.trustedshops.co.uk/buyerrating/info_XCDBA406183B6F6A6B6A3FAE6291F711B.html  ·  Forgot your password? -> https://www.doctorfox.co.uk/forgot-password  ·  contact us -> https://www.doctorfox.co.uk/contact-us.html  ·  Create new account -> https://www.doctorfox.co.uk/register  ·  Information -> #  ·  Fully UK regulated -> https://www.doctorfox.co.uk/regulation.html  ·  Independent reviews -> https://www.trustedshops.co.uk/buyerrating/info_XCDBA406183B6F6A6B6A3FAE6291F711B.html  ·  Read reviews -> https://www.trustedshops.co.uk/buyerrating/info_XCDBA406183B6F6A6B6A3FAE6291F711B.html  ·  UK delivery £2.90 -> https://www.doctorfox.co.uk/delivery.html  ·  More details -> https://www.doctorfox.co.uk/delivery.html  ·  Discreet parcel -> https://www.doctorfox.co.uk/discreet-packaging.html  ·  Returns -> https://www.doctorfox.co.uk/refunds.html  ·  Online prescriptions -> https://www.doctorfox.co.uk/medications-online-prescriptions.html  ·  1.07 Video: how it works -> https://vimeo.com/165135972?title=0&byline=0&portrait=&&autoplay=1  ·  Good -> https://www.cqc.org.uk/location/1-9709847380  ·  0117 2050198 -> tel:00441172050198  ·  info@doctorfox.co.uk -> mailto:info@doctorfox.co.uk  ·  Facebook -> https://www.facebook.com/doctorfoxpharmacy  ·  YouTube -> https://www.youtube.com/@DrFoxUK  ·  TikTok -> https://www.tiktok.com/@drfoxonlinepharmacy  ·  Instagram -> https://www.instagram.com/drfoxpharmacy/  ·  Data security -> https://www.doctorfox.co.uk/data-security.html  ·  Payment security -> https://www.doctorfox.co.uk/payment-security.html  ·  Terms of use -> https://www.doctorfox.co.uk/terms.html  ·  Terms & conditions -> https://www.doctorfox.co.uk/terms-and-conditions.html  ·  Privacy policy -> https://www.doctorfox.co.uk/privacy-policy.html  ·  Data sharing policy -> https://www.doctorfox.co.uk/data-sharing.html  ·  Cookie policy -> https://www.doctorfox.co.uk/cookies.html

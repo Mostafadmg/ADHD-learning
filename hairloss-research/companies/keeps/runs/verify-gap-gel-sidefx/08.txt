@@ -1,0 +1,32 @@
+STEP 08 click "Continue"
+URL: https://www.keeps.com/hair-assessment-quiz-gel?step=10
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+What's your top priority?
+
+This helps us match the right treatment approach to your goal precisely.
+
+Seeing results as soon as possible
+
+Stronger regrowth support
+
+Balanced results & long-term care
+
+Effective everyday treatment
+
+Keeping treatment simple & affordable
+
+Proven prevention-focused option
+
+I'm not sure - help me choose
+
+This helps us personalize your recommendation.
+
+Keeps | Hair Loss Treatment for Men
+
+--- CONTROLS ---
+  button (5): Go back  ·  Seeing results as soon as possible Stronger regrowth support  ·  Balanced results & long-term care Effective everyday treatment  ·  Keeping treatment simple & affordable Proven prevention-focused option  ·  I'm not sure - help me choose
+
+--- LINKS ---
+

@@ -1,0 +1,37 @@
+STEP 18 click "Skip"
+URL: https://www.numan.com/subscribe/hair-loss/13000e3f-5f5f-4d12-a2f1-a3e4bdf9b0f2/product-selection
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+Please select your treatment
+
+Our clinicians will ensure you’re prescribed the most appropriate treatment.
+
+Most effective
+
+See results in 180 days
+
+or your money back¹
+
+Regaine
+
+Regaine contains minoxidil, a medicine for hair loss that can slow male pattern baldness and stimulate hair regrowth in men. It works primarily on the follicles, extending their growth phase and increasing their size. As a result, it encourages the regrowth of denser hair that looks stronger and healthier.
+
+Learn more 
+Price
+£65.00
+Select treatment
+
+¹ Claim a full refund between 180-210 days from order approval if treatment is not effective at stabilising or reversing hair loss. First time users only. Full Ts&Cs.
+
+² 70.6% of men using 5% minoxidil for 16 weeks reported improvement in hair loss (Olsen, 2007).
+
+Prefer a different treatment?
+
+See all treatments
+
+--- CONTROLS ---
+  button (3): Help  ·  Select treatment  ·  See all treatments
+
+--- LINKS ---
+  link (4): Back -> #  ·  Visit the main page -> /  ·  Learn more -> #  ·  Full Ts&Cs. -> /legal/terms-of-sale#termsMoneyBackGuarantee

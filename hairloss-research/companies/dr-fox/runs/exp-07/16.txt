@@ -1,0 +1,222 @@
+STEP 16 click "label:has(input[name=\"answers[805]\"][value=\"yes\"])"
+URL: https://www.doctorfox.co.uk/hair-loss-treatments/#medical_questions_tab
+TITLE: Buy Hair Loss Medication Online - Dr Fox
+
+--- VISIBLE TEXT ---
+Male hair loss
+
+Hair loss prevention and improved growth for men: Propecia/finasteride 1mg tablets and Regaine Extra Strength, Sons minoxidil 5%, or Dr Fox Hair Growth Spray available to buy online.
+
+Read medical information and answer medical questions to buy treatment online.
+
+Treatment and prices
+Medical information
+Buy treatment
+Medical questions
+Choose treatment
+Complete order
+Answer medical questions to order
+
+Honest & accurate responses are necessary for safe medical assessment
+
+Are you requesting personal treatment for male 'pattern' hair loss and have you read the medical information?
+
+Read the hair loss medical information section.
+
+ Yes  No
+Do you have hair loss in patches or have a scalp skin problem (redness, itching, soreness, or pustules)?
+
+These symptoms may indicate an underlying skin condition such as psoriasis or an infection which may require investigation.
+
+ Yes  No
+Have you experienced rapid unexplained hair loss, hair loss affecting the entire body (total alopecia), or hair loss caused by an illness or medication?
+
+If you have experienced hair falling out in clumps, or rapid hair loss over days or weeks, or total alopecia, or hair loss due to an illness, you should consult your GP as investigation may be required.
+
+ Yes  No
+Do any of the following apply to you?
+Taking a medication similar to finasteride (e.g. dutasteride)
+Taking finasteride 5mg for another condition, e.g. enlarged prostate gland
+Known allergy to finasteride
+ Yes  No
+Manufacturers recommend caution before taking Propecia/finasteride tablets in some circumstances - do any of the following apply to you?
+Previously experienced sexual problems when taking finasteride or a similar medication e.g. dutasteride
+Current depressive illness, or a history of severe depression or suicidal thoughts
+Suspected, current, or previous diagnosis of prostate cancer. Current or previous diagnosis of male breast enlargement (gynaecomastia)
+Liver disease
+ Yes  No
+Are you aware that products containing finasteride are for men only?
+
+Dr Fox cannot supply hair loss treatments to anyone who was not assigned male at birth. Finasteride may be harmful in pregnancy. Females (especially pregnant partners) should avoid touching crushed or broken tablets, or sprays containing finasteride.
+
+ Yes  No
+Do you wish to order Dr Fox Dual Action Hair Growth Spray?
+
+The Dual Action Hair Growth Spray contains both finasteride and minoxidil so should not be used at the same time as taking oral finasteride/Propecia tablets or Regaine/SONs minoxidil spray.
+
+Please note that the prescribing instructions have been updated to 6 sprays (1ml) once per day, 1 bottle will now last 2 months.
+
+ Yes  No
+Please note we are unable to prescribe the Dr Fox Hair Growth spray if you order finasteride/Propecia tablets as they are not to be used together.
+Do you currently have symptoms from low blood pressure (episodes of feeling dizzy, faint or blurred vision)?
+ Yes  No
+Do you have high blood pressure, heart disease, abnormal heart rate or rhythm, angina / chest pains, or circulatory disorders?
+ Yes  No
+Please consult your GP before using Dr Fox Dual Action Hair Growth Spray, Regaine, or Sons minoxidil 5%.
+Do you agree to following treatments being supplied 'off label' (unlicensed)?
+Dr Fox Dual Action Hair Growth Spray
+Regaine foam for those aged over 50 years
+Regaine/SONs minoxidil 5% solution for those aged over 66 years
+
+If ordering Propecia/finasteride 1mg tablets, or you are under the age limits stated for the Regaine/SONs products, answer 'YES' and continue.
+
+ Yes  No
+Are you aware there have been reports of depression and occasionally suicidal thoughts when taking Propecia/finasteride?
+
+Developing depression and suicidal thoughts may be more likely if you have previously experienced depression. If these occur, stop treatment immediately and consult your GP, OR if there is a concern for safety attend the emergency department.
+You can assess your mood here.
+
+ Yes  No
+Are you aware that you should consult your GP about any changes in breast tissue such as lumps, pain, gynaecomastia (male breast growth), or nipple discharge?
+ Yes  No
+Are you aware that Propecia/finasteride can reduce sex drive and/or cause erection difficulties?
+
+Approximately 1% of men stop taking Propecia/finasteride due to these symptoms. On stopping treatment symptoms usually resolve but have been reported to continue in some cases. Read the patient leaflet for further details.
+
+ Yes  No
+Are you aware that if hair loss continues beyond 12 months, with no increase in thickness or hair coverage, treatment should be stopped?
+ Yes  No
+Are you aware finasteride taken orally or used topically can affect PSA blood test levels?
+
+Please inform your doctor that you are taking or using finasteride if you are having a PSA test.
+
+ Yes  No
+Do you have any further questions or personal medical information you would like to add?
+
+Is there anything you do not understand or do you need further help?
+
+ Yes  No
+Do the following apply to you?
+I will inform my GP/regular doctor of treatment received from Dr Fox
+We can notify your GP for you if you provide GP surgery details when registering an account, or in your My details section of an existing Dr Fox account
+The medication is for my own use and I will not share with anyone else
+I will read the patient information leaflet supplied with the medicine pack
+I am biologically male, over 18, and I agree to identity verification checks
+I have completed this questionnaire myself and fully understand all the information
+My responses are honest and accurate, and I understand that this is necessary for a safe medical assessment
+I agree to the terms & conditions, privacy policy, data sharing policy & consent to cookies
+ Yes  No
+Next: choose treatment
+Treatment and prices
+Medical information
+Buy treatment
+The order process 
+
+Answer short medical questionnaire
+
+ 
+
+Choose medication, register, and pay
+
+ 
+
+Dr Fox issues prescription online
+
+ 
+
+Pharmacy team post medication direct
+
+ 
+RECENT REVIEWS
+
+“Fast, simple and genuinely reassuring.
+The ordering process was clear, the consultation was straightforward and my medication arrived the next day. The service feels professional and trustworthy from start to finish.”
+09 October 2026 – Anonymous
+
+“Excellent service from start to finish.
+The website was easy to use, the doctor review was quick and my order was delivered promptly. I would absolutely use Dr Fox again.”
+08 October 2026 – A. R.
+
+“Fantastic experience.
+I was nervous about buying online, but the process was smooth, secure and extremely efficient. Delivery was quick and the whole experience felt very professional.”
+05 October 2026 – S. T.
+
+“Very impressed.
+The price was competitive, the consultation was clear and my order arrived quicker than expected. Customer service was also helpful and responsive when I had a question.”
+01 October 2026 – Anonymous
+
+“Best online pharmacy I have used.
+Everything was straightforward, from ordering to tracking my parcel. The communication was excellent and the medication arrived in perfect condition.”
+27 September 2026 – J. P.
+
+“Really good service.
+I needed something quickly and Dr Fox delivered. The website was easy to navigate, the prescription process was efficient and the package arrived within two days.”
+24 September 2026 – L. M.
+
+“Professional and trustworthy.
+I felt looked after throughout the process. The doctors reviewed my order quickly and the communication from the pharmacy was clear and reassuring.”
+19 September 2026 – Anonymous
+
+“Absolutely delighted.
+The service was streamlined and efficient, with clear updates about my delivery. I’ve recommended Dr Fox to friends who have also had a positive experience.”
+15 September 2026 – M. W.
+
+“Great value and super quick delivery.
+I compared a few options and Dr Fox was the best combination of price, speed and customer support. I’ll definitely order again.”
+11 September 2026 – K. D.
+
+“Smooth ordering and excellent follow-up.
+The process was simple, the medical questions were clear and I received helpful updates throughout. It felt safe, polished and efficient.”
+09 September 2026 – Anonymous
+
+“Simple, reliable and quick.
+The order was processed without any hassle and my medication arrived sooner than expected. The site is easy to use and the service feels very reputable.”
+06 September 2026 – C. H.
+
+“Excellent communication and service.
+I received updates at every stage and my order was delivered promptly. The medication was exactly as expected and the whole experience was stress-free.”
+02 September 2026 – B. N.
+
+“Very happy with the service.
+The order process was easy and the team was helpful when I contacted them. It was fast, efficient and I would definitely use them again.”
+28 August 2026 – Anonymous
+
+“I’m really pleased with Dr Fox.
+The site was easy to navigate, the consultation was well explained and I got my order quickly. It feels like a proper UK-regulated service that puts customer care first.”
+25 August 2026 – R. S.
+
+“A very polished online pharmacy.
+I valued the clear information, quick doctor review and the speed of delivery. Everything was handled efficiently and professionally from the moment I placed the order.”
+21 August 2026 – Anonymous
+
+“Everything went exactly as expected.
+The consultation was straightforward, the price was fair and the parcel arrived quickly. I wouldn’t hesitate to order from Dr Fox again.”
+18 August 2026 – T. J.
+
+“Excellent from start to finish.
+The process was hassle-free, the medication was dispatched quickly and the delivery updates were excellent. I felt confident and well looked after throughout.”
+14 August 2026 – P. A.
+
+Read all reviews 
+
+Independent reviews from Trusted Shops
+
+SUPPLEMENTARY INFORMATION
+Video: Propecia: before & after photos
+Male pattern hair loss
+Propecia patent expires
+ 
+Generic medicine FAQ
+NHS - Hair loss
+Home 
+Male hair loss
+Share on Facebook
+Share on Twitter
+
+--- CONTROLS ---
+  input:text (1): Search…
+  button (3): Search  ·  More  ·  Next: choose treatment
+  radio (34): Yes [checked]  ·  No  ·  Yes  ·  No [checked]  ·  Yes  ·  No [checked]  ·  Yes  ·  No [checked]  ·  Yes  ·  No [checked]  ·  Yes [checked]  ·  No  ·  Yes  ·  No [checked]  ·  Yes  ·  No [checked]  ·  Yes [checked]  ·  No  ·  Yes [checked]  ·  No  ·  Yes [checked]  ·  No  ·  Yes [checked]  ·  No  ·  Yes [checked]  ·  No  ·  Yes [checked]  ·  No  ·  Yes [checked]  ·  No  ·  Yes  ·  No  ·  Yes  ·  No
+
+--- LINKS ---
+  link (111): Online Doctor and Pharmacy -> https://www.doctorfox.co.uk/  ·  Skip to main content -> #main-content  ·  Login -> https://www.doctorfox.co.uk/login  ·  Basket 0 -> https://www.doctorfox.co.uk/order/confirm  ·  Contact Dr Fox -> https://www.doctorfox.co.uk/contact-us.html  ·  info@doctorfox.co.uk -> mailto:info@doctorfox.co.uk?subject=Enquiry  ·  Men -> https://www.doctorfox.co.uk/mens-health.html  ·  Women -> https://www.doctorfox.co.uk/womens-health.html  ·  Sexual -> https://www.doctorfox.co.uk/sexual-health.html  ·  Travel -> https://www.doctorfox.co.uk/travel-health.html  ·  Medications & prices -> #  ·  Reviews -> https://www.doctorfox.co.uk/customer-reviews.html  ·  Regulated -> https://www.doctorfox.co.uk/regulation.html  ·  Delivery -> https://www.doctorfox.co.uk/delivery.html  ·  Refunds -> https://www.doctorfox.co.uk/refunds.html  ·  About us -> https://www.doctorfox.co.uk/about-us.html  ·  FAQs -> https://www.doctorfox.co.uk/faqs.html  ·  Our team -> https://www.doctorfox.co.uk/our-team/  ·  Male hair loss -> /hair-loss-treatments/  ·  Propecia -> /hair-loss-treatments/propecia-tablets.html  ·  Finasteride -> /hair-loss-treatments/finasteride.html  ·  Hair Growth Spray -> /hair-loss-treatments/hair-growth-spray.html  ·  Sons Minoxidil 5% solution -> /hair-loss-treatments/minoxidil.html  ·  Regaine extra strength -> /hair-loss-treatments/regaine.html  ·  FAQs -> /hair-loss-treatments/faqs.html  ·  Medications & prices -> https://www.doctorfox.co.uk/medications-online-prescriptions.html  ·  Antimalarials -> /anti-malaria-tablets/  ·  Erectile dysfunction -> /erectile-dysfunction/  ·  Progestogen-only pill (mini pill) -> /progestogen-only-contraceptive-pill/  ·  Morning after pill -> /morning-after-pill/  ·  Combined contraceptive pill -> /contraceptive-pill/  ·  HRT/menopause treatment -> /hrt-menopause-treatment/  ·  Vaginal oestrogens -> /vaginal-oestrogens/  ·  Stop smoking -> /stop-smoking/  ·  Period delay -> /period-delay/  ·  Cystitis -> /cystitis/  ·  Bacterial vaginosis -> /bacterial-vaginosis/  ·  Female facial hair -> /female-facial-hair/  ·  Chlamydia -> /chlamydia/  ·  Altitude sickness -> /altitude-sickness/  ·  Acne -> /acne-treatment/  ·  Travellers' diarrhoea -> /travellers-diarrhoea/  ·  Travel sickness -> /travel-sickness/  ·  Hay fever -> /hay-fever/  ·  Rosacea -> /rosacea-treatment/  ·  Genital thrush -> /thrush/  ·  Jet lag -> /jet-lag/  ·  Irritable bowel syndrome -> /irritable-bowel-syndrome/  ·  Acid reflux -> /acid-reflux/  ·  Migraine -> /migraine/  ·  Eczema -> /eczema-dry-skin/  ·  Genital herpes -> /genital-herpes/  ·  Cold sores -> /cold-sore-treatments/  ·  Premature ejaculation -> /premature-ejaculation/  ·  Weight loss -> /weight-loss/  ·  Flu antivirals -> /flu-anti-virals/  ·  BBC Newsbeat -> https://www.bbc.co.uk/news/newsbeat-50592361  ·  Your guarantee -> https://www.trustedshops.co.uk/buyerrating/info_XCDBA406183B6F6A6B6A3FAE6291F711B.html  ·  Trusted Shops -> https://www.trustedshops.co.uk/buyerrating/info_XCDBA406183B6F6A6B6A3FAE6291F711B.html  ·  medical information -> #medical_information_tab  ·  buy treatment -> #medical_questions_tab  ·  Treatment and prices -> #medicine_prices_tab  ·  Medical information -> #medical_information_tab  ·  Buy treatment -> #medical_questions_tab  ·  hair loss medical information -> #medical_information_tab  ·  You can assess your mood here. -> https://blocksurvey.io/calculator/phq-2-calculator  ·  patient leaflet -> https://www.medicines.org.uk/emc/files/pil.2194.pdf  ·  My details -> https://www.doctorfox.co.uk/account  ·  terms & conditions -> /popup/tcs.html  ·  privacy policy -> /popup/privacy.html  ·  data sharing policy -> /popup/data-sharing-policy.html  ·  consent to cookies -> /cookies.html  ·  Answer short medical questionnaire -> #medical_questions_tab  ·  Read all reviews -> https://www.trustedshops.co.uk/buyerrating/info_XCDBA406183B6F6A6B6A3FAE6291F711B.html  ·  Video: Propecia: before & after photos -> https://vimeo.com/143859958  ·  Male pattern hair loss -> https://www.dermnetnz.org/topics/male-pattern-hair-loss/  ·  Propecia patent expires -> https://www.doctorfox.co.uk/news/patent-for-propecia-expires-in-the-uk/  ·  Generic medicine FAQ -> https://www.doctorfox.co.uk/news/generic-medicine-faqs/  ·  NHS - Hair loss -> https://www.nhs.uk/conditions/hair-loss/  ·  Home -> https://www.doctorfox.co.uk/

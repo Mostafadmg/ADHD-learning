@@ -1,0 +1,16 @@
+STEP 10 click "More than 3 months ago"
+URL: https://start.treated.com/GBR/en/#/questionnaire
+TITLE: Treated UK - Choose Better - Medical Experts & Treatments Online
+
+--- VISIBLE TEXT ---
+Question 3 of 11
+
+Have you seen a doctor about it?
+Yes
+No
+
+--- CONTROLS ---
+  radio (2): Yes  ·  No
+
+--- LINKS ---
+

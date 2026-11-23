@@ -1,0 +1,12 @@
+
+===== FINAL (after 1 steps) =====
+URL: https://checkout.struthealth.com/auth/sign-up
+TEXT: See your treatment options ⏎ Join for a tailored experience crafted by experts. ⏎ By creating an account using e-mail, Google, I agree to the Telemedicine Consent, Privacy Policy, Refund Policy and Terms & Conditions ⏎ Already have an account? Sign In. ⏎ or
+CONTROLS:
+  input:email (1): Enter your e-mail
+  input:text (1): Enter your phone number
+  checkbox (1): By creating an account using e-mail, Google, I agree to the Telemedicine Consent, Privacy Policy, Refund Policy and Terms & Conditions
+  input:submit (1): (no label) = "Continue"
+  links: Telemedicine Consent  ·  Privacy Policy  ·  Refund Policy  ·  Terms & Conditions  ·  Sign In.
+
+[walk] 1 step(s), exit 0, 2 JSON bodies saved -> runs/verify-wall-women-strut-hair-formula

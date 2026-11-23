@@ -1,0 +1,494 @@
+==== SKU PHI1618 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Fine and flat']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Itching', 'Mild to Moderate Dandruff']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1619 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Fine and flat']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Itching', 'Mild to Moderate Dandruff']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1619 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Medium, can be wavy']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Itching', 'Mild to Moderate Dandruff']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1621 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Medium, can be wavy']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Itching', 'Mild to Moderate Dandruff']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1622 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Coarse, can be curly or coily']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Itching', 'Mild to Moderate Dandruff']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1623 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Fine and flat']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Eczema']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1619 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Medium, can be wavy']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Eczema']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1621 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Medium, can be wavy']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Eczema']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1626 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Coarse, can be curly or coily']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Eczema']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1627 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Fine and flat']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Redness']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1628 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Medium, can be wavy']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Redness']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1629 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Coarse, can be curly or coily']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Redness']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1630 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Fine and flat']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Pimples, spots or acne', 'Mild to Moderate Eczema']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1635 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Fine and flat']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Pimples, spots or acne', 'Mild to Moderate Eczema']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1635 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Medium, can be wavy']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy', 'Oily']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Pimples, spots or acne', 'Mild to Moderate Dandruff']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1633 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Coarse, can be curly or coily']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy', 'Oily']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Pimples, spots or acne', 'Mild to Moderate Dandruff']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1630 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Fine and flat']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Itching', 'Mild to Moderate Dandruff']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1635 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Medium, can be wavy']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Itching', 'Mild to Moderate Dandruff', 'Mild to Moderate Eczema', 'Pimples, spots or acne']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1636 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Medium, can be wavy']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Itching', 'Mild to Moderate Dandruff', 'Mild to Moderate Eczema']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1637 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Coarse, can be curly or coily']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Itching', 'Mild to Moderate Eczema', 'Mild to Moderate Redness']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1635 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Medium, can be wavy']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Redness']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1636 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Medium, can be wavy']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Redness']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1630 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Fine and flat']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Redness']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1641 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Fine and flat', 'Medium, can be wavy']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Sensitive to fragrance']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Itching', 'Mild to Moderate Dandruff', 'Mild to Moderate Eczema']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1642 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Coarse, can be curly or coily']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Sensitive to fragrance']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Itching', 'Mild to Moderate Dandruff', 'Mild to Moderate Eczema']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1643 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Fine and flat', 'Medium, can be wavy']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Sensitive to fragrance']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Redness']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1644 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Coarse, can be curly or coily']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Sensitive to fragrance']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Mild to Moderate Redness']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1645 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Fine and flat', 'Medium, can be wavy']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Sensitive to fragrance']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Pimples, spots or acne']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== SKU PHI1646 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your natural hair?' or ['Coarse, can be curly or coily']
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Sensitive to fragrance']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Pimples, spots or acne']
+      [GenericCondition] 'How would you describe the condition of your hair?' or ['Healthy', 'Dry or Damaged']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'Do you ever suffer from any of the following symptoms on your scalp?' or ['Pain', 'Burning', 'Crusting', 'Bleeding', 'Patchy hair loss']
+    [GenericCondition] 'Do you have any allergies?' or ["Yes, I'm allergic to Minoxidil"]
+  }
+==== NO RESULTS RULES

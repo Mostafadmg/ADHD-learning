@@ -1,0 +1,18 @@
+STEP 36 wait 2500
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Let’s tailor your treatment to your biology.
+Which option best describes you?
+There is a discrepancy between your date of birth and the selected age range. Please review it and try again.
+Male
+Female under 50
+Female 50 or older
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

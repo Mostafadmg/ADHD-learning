@@ -1,12 +1,10 @@
 
-!!!!! STEP 17 FAILED: click "None of the above"
-nothing visible matches "None of the above"
-
-===== STEP 17 FAILED click "None of the above" =====
+===== FINAL (after 33 steps) =====
 URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
-TEXT: BACK ⏎ We Recommend ⏎ Dutasteride + MinoxidilRx ⏎ Dual Treatment delivers the best chance of regrowth. ⏎ FASTEST RESULTS ⏎ Dual Treatment Plan ⏎ Best For: ⏎ Best chance of regrowth, fastest results ⏎ TopicalRx Solution + Oral SuperCapsuleTM ⏎ Fastest, most effective results1 ⏎ Treats hair loss from two pathways — scalp and systemic ⏎ Apply topical twice + take one capsule daily ⏎ Dermatologist prescribed & shipped to you ⏎ 7/10 ⏎ Customers Choose This Plan2 ⏎ CHOOSE DUAL TREATMENT ⏎ TopicalRx Solution ⏎ Best For: ⏎ Starting simple, lower monthly cost ⏎ TopicalRx Solution ⏎ Treats hair loss at the scalp, one pathway ⏎ Apply topical twice daily ⏎ Dermatologist prescribed & shipped to you ⏎ CHOOSE TOPICAL ⏎ 1. Combination therapy has been shown to be more effective than single therapy in clinical studies ⏎ 2. Internal data from Happy Head, Jan—Dec 2025. ⏎ FDA-Approved Ingredients ⏎ Clinically Proven Ingredients ⏎ Free Shipping Always ⏎ Cancel or Adjust Anytime ⏎ Results may vary. See full safety information on product pages. ⏎ Active Ingredients ⏎ Dutasteride ⏎ Dutasteride is 3x more effective than Finasteride and suppresses DHT levels by 98%. 1 ⏎ Minoxidil ⏎ Happy Head formulations use up to 8% Minoxidil, the strongest available concentration compared to OTC Minoxidil at 5%. ⏎ 4/5 Experienced significant hair growth ⏎ when using Minoxidil. 2 ⏎ Retinoic Acid ⏎ Supercharges Minoxidil to promote denser hair regrowth. ⏎ Hydrocortisone ⏎ Prevents irritation and redness. ⏎ 1 Indian J
+TEXT: BACK ⏎ BLACK FRIDAY SALE ⏎ Up to 60% Off ⏎ Plus, FREE Dermaroller ⏎ Enter your details to unlock up to 60% off your personalized hair-growth plan. Plus, Free Dermaroller with any Rx subscription. ⏎ Up to 60% OFF your hair-growth plan ⏎ FREE Premium Dermaroller – our gift to you ⏎ Your personalized treatment plan, ready when you are ⏎ Email ⏎ Mobile Number ⏎ Get quick answers to questions & never miss a message. Opt out anytime. We'll only use this to send important updates about your care. Opt out anytime. ⏎ By checking this box you agree to our Terms, Privacy Policy, Drug Safety, Telehealth Consent, and MDI Telehealth Consent.
 CONTROLS:
-  button (2): CHOOSE DUAL TREATMENT  ·  CHOOSE TOPICAL
-  links (1, full list in 17.txt): Terms & Conditions
+  input:email (1): Enter your email
+  input:tel (1): Enter your number
+  links: Terms  ·  Privacy Policy  ·  Drug Safety  ·  Telehealth Consent  ·  MDI Telehealth Consent
 
-[walk] 17 step(s), exit 2, 24 JSON bodies saved -> runs/s2/m-choose-topical
+[walk] 33 step(s), exit 0, 35 JSON bodies saved -> runs/s2/m-choose-topical

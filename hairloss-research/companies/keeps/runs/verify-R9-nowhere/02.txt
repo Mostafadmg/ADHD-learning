@@ -1,0 +1,30 @@
+STEP 02 click "not sure"
+URL: https://www.keeps.com/quiz?step=2
+TITLE: Take the Hair Loss Quiz | Keeps
+
+--- VISIBLE TEXT ---
+Has anyone in your family experienced hair loss? Select all that apply.
+
+Select all that apply.
+
+Parent(s)
+
+Sibling(s)
+
+Father’s side of the family
+
+Mother’s side of the family
+
+No one in my family
+
+I’m not sure
+
+CONTINUE
+
+Take the Hair Loss Quiz | Keeps
+
+--- CONTROLS ---
+  button (7): Parent(s)  ·  Sibling(s)  ·  Father’s side of the family  ·  Mother’s side of the family  ·  No one in my family  ·  I’m not sure  ·  CONTINUE
+
+--- LINKS ---
+

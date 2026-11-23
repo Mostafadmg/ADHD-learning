@@ -1,0 +1,17 @@
+STEP 15 click "Next"
+URL: https://www.numan.com/subscribe/hair-loss/77549193-3de3-4353-b5a9-000414d38035/sq/mental_health_medications_changed_yes_no
+TITLE: Have the doses of your medications changed in the last 3 months? | Numan
+
+--- VISIBLE TEXT ---
+75%
+Have the doses of your medications changed in the last 3 months?
+Yes
+No
+Back
+
+--- CONTROLS ---
+  radio (2): Yes  ·  No
+  button (1): Back
+
+--- LINKS ---
+  link (1): Visit the main page -> /

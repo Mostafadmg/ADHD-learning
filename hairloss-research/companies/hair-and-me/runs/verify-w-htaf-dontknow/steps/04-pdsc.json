@@ -1,0 +1,71 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 1,
+   "sectionTitle": "ABOUT YOU"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 173,
+    "inputConfig": {
+     "displayTextV2": [
+      {
+       "header": "Why are we asking?",
+       "text": [
+        {
+         "part": "Hormones play a significant role in hair loss and regrowth, and our Dermatology Team needs to know if there’s any possibility you could become pregnant."
+        }
+       ]
+      }
+     ]
+    },
+    "inputType": "display_text",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 174,
+    "inputConfig": {
+     "content": "[class=\"pt-200\"]**You've selected the following as your sex assigned at birth:**\n\n## [class=\"mb-300\"]Female\n"
+    },
+    "inputType": "markdown",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 3050,
+    "inputConfig": {
+     "option": {
+      "label": "I confirm the above selection is accurate and true."
+     }
+    },
+    "inputType": "boolean_checkbox",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Please confirm your sex assigned at birth",
+  "type": "question"
+ }
+}

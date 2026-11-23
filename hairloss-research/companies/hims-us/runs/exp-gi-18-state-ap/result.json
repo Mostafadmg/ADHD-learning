@@ -1,0 +1,1371 @@
+{
+ "start": "https://www.hims.com/g/i/hl",
+ "steps": [
+  {
+   "n": 0,
+   "slug": "goals",
+   "url": "https://www.hims.com/g/i/hl/goals",
+   "text": "What are your hair goals?\nFix my receding hairline\nRegrow a full head of hair\nGet ahead of hair loss\nThe quiz is not a medical assessment and your responses will not be shared with a medical provider. Hims uses your responses to personalize your experience and for other uses as described in our Privacy Policy.\n\nContinue\nAlready have an account? Sign In",
+   "choices": [
+    {
+     "kind": "radio",
+     "label": "Fix my receding hairline"
+    },
+    {
+     "kind": "radio",
+     "label": "Regrow a full head of hair"
+    },
+    {
+     "kind": "radio",
+     "label": "Get ahead of hair loss"
+    }
+   ],
+   "buttons": [
+    {
+     "label": "Continue",
+     "disabled": false
+    }
+   ],
+   "fields": [],
+   "serverSlug": "goals",
+   "serverType": "nodeModularScreen",
+   "serverStep": "2",
+   "outputSchema": {
+    "type": "object",
+    "required": [
+     "responses"
+    ],
+    "properties": {
+     "responses": {
+      "type": "object",
+      "required": [
+       "i-hl-hims-hair-goals"
+      ],
+      "properties": {
+       "i-hl-hims-hair-goals": {
+        "type": "object",
+        "required": [
+         "i-hl-hims-goals"
+        ],
+        "properties": {
+         "i-hl-hims-goals": {
+          "enum": [
+           "i-hl-hims-goals-receding",
+           "i-hl-hims-goals-regrow",
+           "i-hl-hims-goals-get-ahead"
+          ],
+          "type": "string"
+         }
+        },
+        "additionalProperties": false
+       }
+      },
+      "additionalProperties": false
+     }
+    }
+   },
+   "storedResponses": {},
+   "chosen": [
+    "Regrow a full head of hair"
+   ],
+   "moved": true
+  },
+  {
+   "n": 1,
+   "slug": "changes",
+   "url": "https://www.hims.com/g/i/hl/changes",
+   "text": "Where are you noticing changes to your hair?\nAlong the hairline\nAt the top\nAll over\nContinue\nAlready have an account? Sign In",
+   "choices": [
+    {
+     "kind": "radio",
+     "label": "Along the hairline"
+    },
+    {
+     "kind": "radio",
+     "label": "At the top"
+    },
+    {
+     "kind": "radio",
+     "label": "All over"
+    }
+   ],
+   "buttons": [
+    {
+     "label": "Continue",
+     "disabled": false
+    }
+   ],
+   "fields": [],
+   "serverSlug": "changes",
+   "serverType": "nodeModularScreen",
+   "serverStep": "4",
+   "outputSchema": {
+    "type": "object",
+    "required": [
+     "responses"
+    ],
+    "properties": {
+     "responses": {
+      "type": "object",
+      "required": [
+       "i-hl-hims-hair-changes"
+      ],
+      "properties": {
+       "i-hl-hims-hair-changes": {
+        "type": "object",
+        "required": [
+         "i-hl-hims-hair-changes"
+        ],
+        "properties": {
+         "i-hl-hims-hair-changes": {
+          "enum": [
+           "i-hl-hims-changes-hairline",
+           "i-hl-hims-changes-top",
+           "i-hl-hims-changes-all-over"
+          ],
+          "type": "string"
+         }
+        },
+        "additionalProperties": false
+       }
+      },
+      "additionalProperties": false
+     }
+    }
+   },
+   "storedResponses": {
+    "i-hl-hims-hair-goals": {
+     "i-hl-hims-goals": "i-hl-hims-goals-regrow"
+    }
+   },
+   "chosen": [
+    "Along the hairline"
+   ],
+   "moved": true
+  },
+  {
+   "n": 2,
+   "slug": "loss",
+   "url": "https://www.hims.com/g/i/hl/loss",
+   "text": "How much hair have you lost?\nA lot\nIt’s obvious to everyone\nSome\nThose close to me notice\nA little\nOnly I notice\nContinue\nAlready have an account? Sign In",
+   "choices": [
+    {
+     "kind": "radio",
+     "label": "A lot It’s obvious to everyone"
+    },
+    {
+     "kind": "radio",
+     "label": "Some Those close to me notice"
+    },
+    {
+     "kind": "radio",
+     "label": "A little Only I notice"
+    }
+   ],
+   "buttons": [
+    {
+     "label": "Continue",
+     "disabled": false
+    }
+   ],
+   "fields": [],
+   "serverSlug": "loss",
+   "serverType": "nodeModularScreen",
+   "serverStep": "6",
+   "outputSchema": {
+    "type": "object",
+    "required": [
+     "responses"
+    ],
+    "properties": {
+     "responses": {
+      "type": "object",
+      "required": [
+       "i-hl-hims-hair-loss"
+      ],
+      "properties": {
+       "i-hl-hims-hair-loss": {
+        "type": "object",
+        "required": [
+         "i-hl-hims-hair-loss"
+        ],
+        "properties": {
+         "i-hl-hims-hair-loss": {
+          "enum": [
+           "i-hl-hims-hair-loss-lot",
+           "i-hl-hims-hair-loss-some",
+           "i-hl-hims-hair-loss-little"
+          ],
+          "type": "string"
+         }
+        },
+        "additionalProperties": false
+       }
+      },
+      "additionalProperties": false
+     }
+    }
+   },
+   "storedResponses": {
+    "i-hl-hims-hair-goals": {
+     "i-hl-hims-goals": "i-hl-hims-goals-regrow"
+    },
+    "i-hl-hims-hair-changes": {
+     "i-hl-hims-hair-changes": "i-hl-hims-changes-hairline"
+    }
+   },
+   "chosen": [
+    "Some Those close to me notice"
+   ],
+   "moved": true
+  },
+  {
+   "n": 3,
+   "slug": "start",
+   "url": "https://www.hims.com/g/i/hl/start",
+   "text": "When did you start noticing changes to your hair?\nOver a year ago\nIn the past year\nIn the past few months\nNot sure\nContinue\nAlready have an account? Sign In",
+   "choices": [
+    {
+     "kind": "radio",
+     "label": "Over a year ago"
+    },
+    {
+     "kind": "radio",
+     "label": "In the past year"
+    },
+    {
+     "kind": "radio",
+     "label": "In the past few months"
+    },
+    {
+     "kind": "radio",
+     "label": "Not sure"
+    }
+   ],
+   "buttons": [
+    {
+     "label": "Continue",
+     "disabled": false
+    }
+   ],
+   "fields": [],
+   "serverSlug": "start",
+   "serverType": "nodeModularScreen",
+   "serverStep": "9",
+   "outputSchema": {
+    "type": "object",
+    "required": [
+     "responses"
+    ],
+    "properties": {
+     "responses": {
+      "type": "object",
+      "required": [
+       "i-hl-hims-hair-start"
+      ],
+      "properties": {
+       "i-hl-hims-hair-start": {
+        "type": "object",
+        "required": [
+         "i-hl-hims-hair-start"
+        ],
+        "properties": {
+         "i-hl-hims-hair-start": {
+          "enum": [
+           "i-hl-hims-hair-start-over-a-year",
+           "i-hl-hims-hair-start-past-year",
+           "i-hl-hims-hair-start-past-months",
+           "i-hl-hims-hair-start-not-sure"
+          ],
+          "type": "string"
+         }
+        },
+        "additionalProperties": false
+       }
+      },
+      "additionalProperties": false
+     }
+    }
+   },
+   "storedResponses": {
+    "i-hl-hims-hair-goals": {
+     "i-hl-hims-goals": "i-hl-hims-goals-regrow"
+    },
+    "i-hl-hims-hair-changes": {
+     "i-hl-hims-hair-changes": "i-hl-hims-changes-hairline"
+    },
+    "i-hl-hims-hair-loss": {
+     "i-hl-hims-hair-loss": "i-hl-hims-hair-loss-some"
+    }
+   },
+   "chosen": [
+    "Over a year ago"
+   ],
+   "moved": true
+  },
+  {
+   "n": 4,
+   "slug": "expectations",
+   "url": "https://www.hims.com/g/i/hl/expectations",
+   "text": "With treatment, what results are you hoping for?\nChoose as many as you’d like.\nA stronger, defined hairline\nVisibly thicker, fuller hair\nMore scalp coverage\nKeep the hair I have\nAll of the above\nContinue\nAlready have an account? Sign In",
+   "choices": [
+    {
+     "kind": "checkbox",
+     "label": "A stronger, defined hairline"
+    },
+    {
+     "kind": "checkbox",
+     "label": "Visibly thicker, fuller hair"
+    },
+    {
+     "kind": "checkbox",
+     "label": "More scalp coverage"
+    },
+    {
+     "kind": "checkbox",
+     "label": "Keep the hair I have"
+    },
+    {
+     "kind": "checkbox",
+     "label": "All of the above"
+    }
+   ],
+   "buttons": [
+    {
+     "label": "Continue",
+     "disabled": false
+    }
+   ],
+   "fields": [],
+   "serverSlug": "expectations",
+   "serverType": "nodeModularScreen",
+   "serverStep": "11",
+   "outputSchema": {
+    "type": "object",
+    "required": [
+     "responses"
+    ],
+    "properties": {
+     "responses": {
+      "type": "object",
+      "required": [
+       "i-hl-hims-hair-expectations"
+      ],
+      "properties": {
+       "i-hl-hims-hair-expectations": {
+        "type": "object",
+        "required": [
+         "i-hl-hims-hair-expectations"
+        ],
+        "properties": {
+         "i-hl-hims-hair-expectations": {
+          "type": "array",
+          "items": {
+           "enum": [
+            "i-hl-hims-hair-expectations-defined",
+            "i-hl-hims-hair-expectations-fuller",
+            "i-hl-hims-hair-expectations-coverage",
+            "i-hl-hims-hair-expectations-keep",
+            "i-hl-hims-hair-expectations-all"
+           ],
+           "type": "string"
+          },
+          "minItems": 1
+         }
+        },
+        "additionalProperties": false
+       }
+      },
+      "additionalProperties": false
+     }
+    }
+   },
+   "storedResponses": {
+    "i-hl-hims-hair-goals": {
+     "i-hl-hims-goals": "i-hl-hims-goals-regrow"
+    },
+    "i-hl-hims-hair-changes": {
+     "i-hl-hims-hair-changes": "i-hl-hims-changes-hairline"
+    },
+    "i-hl-hims-hair-loss": {
+     "i-hl-hims-hair-loss": "i-hl-hims-hair-loss-some"
+    },
+    "i-hl-hims-hair-start": {
+     "i-hl-hims-hair-start": "i-hl-hims-hair-start-over-a-year"
+    }
+   },
+   "chosen": [
+    "Visibly thicker, fuller hair"
+   ],
+   "clicked": "Continue",
+   "moved": true
+  },
+  {
+   "n": 5,
+   "slug": "type",
+   "url": "https://www.hims.com/g/i/hl/type",
+   "text": "What’s your hair type?\nStraight or wavy\nCurly or coily\nTextured or processed\nI don’t have hair\nContinue\nAlready have an account? Sign In",
+   "choices": [
+    {
+     "kind": "radio",
+     "label": "Straight or wavy"
+    },
+    {
+     "kind": "radio",
+     "label": "Curly or coily"
+    },
+    {
+     "kind": "radio",
+     "label": "Textured or processed"
+    },
+    {
+     "kind": "radio",
+     "label": "I don’t have hair"
+    }
+   ],
+   "buttons": [
+    {
+     "label": "Continue",
+     "disabled": false
+    }
+   ],
+   "fields": [],
+   "serverSlug": "type",
+   "serverType": "nodeModularScreen",
+   "serverStep": "12",
+   "outputSchema": {
+    "type": "object",
+    "required": [
+     "responses"
+    ],
+    "properties": {
+     "responses": {
+      "type": "object",
+      "required": [
+       "i-hl-hims-hair-type"
+      ],
+      "properties": {
+       "i-hl-hims-hair-type": {
+        "type": "object",
+        "required": [
+         "i-hl-hims-hair-type"
+        ],
+        "properties": {
+         "i-hl-hims-hair-type": {
+          "enum": [
+           "i-hl-hims-hair-type-straight",
+           "i-hl-hims-hair-type-curly",
+           "i-hl-hims-hair-type-textured",
+           "i-hl-hims-hair-type-none"
+          ],
+          "type": "string"
+         }
+        },
+        "additionalProperties": false
+       }
+      },
+      "additionalProperties": false
+     }
+    }
+   },
+   "storedResponses": {
+    "i-hl-hims-hair-goals": {
+     "i-hl-hims-goals": "i-hl-hims-goals-regrow"
+    },
+    "i-hl-hims-hair-changes": {
+     "i-hl-hims-hair-changes": "i-hl-hims-changes-hairline"
+    },
+    "i-hl-hims-hair-loss": {
+     "i-hl-hims-hair-loss": "i-hl-hims-hair-loss-some"
+    },
+    "i-hl-hims-hair-start": {
+     "i-hl-hims-hair-start": "i-hl-hims-hair-start-over-a-year"
+    },
+    "i-hl-hims-hair-expectations": {
+     "i-hl-hims-hair-expectations": [
+      "i-hl-hims-hair-expectations-fuller"
+     ]
+    }
+   },
+   "chosen": [
+    "Straight or wavy"
+   ],
+   "moved": true
+  },
+  {
+   "n": 6,
+   "slug": "length",
+   "url": "https://www.hims.com/g/i/hl/length",
+   "text": "How long is your hair?\nBuzzed, shaved, or bald\nShort\nMedium\nLong\nContinue\nAlready have an account? Sign In",
+   "choices": [
+    {
+     "kind": "radio",
+     "label": "Buzzed, shaved, or bald"
+    },
+    {
+     "kind": "radio",
+     "label": "Short"
+    },
+    {
+     "kind": "radio",
+     "label": "Medium"
+    },
+    {
+     "kind": "radio",
+     "label": "Long"
+    }
+   ],
+   "buttons": [
+    {
+     "label": "Continue",
+     "disabled": false
+    }
+   ],
+   "fields": [],
+   "serverSlug": "length",
+   "serverType": "nodeModularScreen",
+   "serverStep": "13",
+   "outputSchema": {
+    "type": "object",
+    "required": [
+     "responses"
+    ],
+    "properties": {
+     "responses": {
+      "type": "object",
+      "required": [
+       "i-hl-hims-hair-length"
+      ],
+      "properties": {
+       "i-hl-hims-hair-length": {
+        "type": "object",
+        "required": [
+         "i-hl-hims-hair-length"
+        ],
+        "properties": {
+         "i-hl-hims-hair-length": {
+          "enum": [
+           "i-hl-hims-hair-length-buzzed",
+           "i-hl-hims-hair-length-short",
+           "i-hl-hims-hair-length-medium",
+           "i-hl-hims-hair-length-long"
+          ],
+          "type": "string"
+         }
+        },
+        "additionalProperties": false
+       }
+      },
+      "additionalProperties": false
+     }
+    }
+   },
+   "storedResponses": {
+    "i-hl-hims-hair-goals": {
+     "i-hl-hims-goals": "i-hl-hims-goals-regrow"
+    },
+    "i-hl-hims-hair-changes": {
+     "i-hl-hims-hair-changes": "i-hl-hims-changes-hairline"
+    },
+    "i-hl-hims-hair-loss": {
+     "i-hl-hims-hair-loss": "i-hl-hims-hair-loss-some"
+    },
+    "i-hl-hims-hair-start": {
+     "i-hl-hims-hair-start": "i-hl-hims-hair-start-over-a-year"
+    },
+    "i-hl-hims-hair-expectations": {
+     "i-hl-hims-hair-expectations": [
+      "i-hl-hims-hair-expectations-fuller"
+     ]
+    },
+    "i-hl-hims-hair-type": {
+     "i-hl-hims-hair-type": "i-hl-hims-hair-type-straight"
+    }
+   },
+   "chosen": [
+    "Short"
+   ],
+   "moved": true
+  },
+  {
+   "n": 7,
+   "slug": "lifestyle",
+   "url": "https://www.hims.com/g/i/hl/lifestyle",
+   "text": "Next, let’s talk about lifestyle factors.\n\nUncovering which root causes may be affecting you can help us better understand your hair needs.\n\nContinue",
+   "choices": [],
+   "buttons": [
+    {
+     "label": "Continue",
+     "disabled": false
+    }
+   ],
+   "fields": [],
+   "serverSlug": "lifestyle",
+   "serverType": "nodeModularScreen",
+   "serverStep": "5",
+   "outputSchema": {
+    "type": "object",
+    "required": [
+     "responses"
+    ],
+    "properties": {
+     "responses": {
+      "type": "object",
+      "required": [],
+      "additionalProperties": false
+     }
+    }
+   },
+   "storedResponses": {
+    "i-hl-hims-hair-goals": {
+     "i-hl-hims-goals": "i-hl-hims-goals-regrow"
+    },
+    "i-hl-hims-hair-changes": {
+     "i-hl-hims-hair-changes": "i-hl-hims-changes-hairline"
+    },
+    "i-hl-hims-hair-loss": {
+     "i-hl-hims-hair-loss": "i-hl-hims-hair-loss-some"
+    },
+    "i-hl-hims-hair-start": {
+     "i-hl-hims-hair-start": "i-hl-hims-hair-start-over-a-year"
+    },
+    "i-hl-hims-hair-expectations": {
+     "i-hl-hims-hair-expectations": [
+      "i-hl-hims-hair-expectations-fuller"
+     ]
+    },
+    "i-hl-hims-hair-type": {
+     "i-hl-hims-hair-type": "i-hl-hims-hair-type-straight"
+    },
+    "i-hl-hims-hair-length": {
+     "i-hl-hims-hair-length": "i-hl-hims-hair-length-short"
+    }
+   },
+   "chosen": [],
+   "clicked": "Continue",
+   "moved": true
+  },
+  {
+   "n": 8,
+   "slug": "hair-loss-heredity",
+   "url": "https://www.hims.com/g/i/hl/hair-loss-heredity",
+   "text": "Does hair loss run in your family?\nYes\nNo\nNot sure\nWhy we ask\n\nThe most common cause of hair loss is hereditary hair loss. So if an immediate family member has a history of hair loss, there’s a good chance it’ll affect you too.\n\nSource\nContinue\nAlready have an account? Sign In",
+   "choices": [
+    {
+     "kind": "radio",
+     "label": "Yes"
+    },
+    {
+     "kind": "radio",
+     "label": "No"
+    },
+    {
+     "kind": "radio",
+     "label": "Not sure"
+    }
+   ],
+   "buttons": [
+    {
+     "label": "Continue",
+     "disabled": false
+    }
+   ],
+   "fields": [],
+   "serverSlug": "hair-loss-heredity",
+   "serverType": "nodeModularScreen",
+   "serverStep": "14",
+   "outputSchema": {
+    "type": "object",
+    "required": [
+     "responses"
+    ],
+    "properties": {
+     "responses": {
+      "type": "object",
+      "required": [
+       "i-hl-hims-hair-loss-heredity"
+      ],
+      "properties": {
+       "i-hl-hims-hair-loss-heredity": {
+        "type": "object",
+        "required": [
+         "i-hl-hims-hair-loss-heredity"
+        ],
+        "properties": {
+         "i-hl-hims-hair-loss-heredity": {
+          "enum": [
+           "i-hl-hims-hair-loss-heredity-yes",
+           "i-hl-hims-hair-loss-heredity-no",
+           "i-hl-hims-hair-loss-heredity-unsure"
+          ],
+          "type": "string"
+         }
+        },
+        "additionalProperties": false
+       }
+      },
+      "additionalProperties": false
+     }
+    }
+   },
+   "storedResponses": {
+    "i-hl-hims-hair-goals": {
+     "i-hl-hims-goals": "i-hl-hims-goals-regrow"
+    },
+    "i-hl-hims-hair-changes": {
+     "i-hl-hims-hair-changes": "i-hl-hims-changes-hairline"
+    },
+    "i-hl-hims-hair-loss": {
+     "i-hl-hims-hair-loss": "i-hl-hims-hair-loss-some"
+    },
+    "i-hl-hims-hair-start": {
+     "i-hl-hims-hair-start": "i-hl-hims-hair-start-over-a-year"
+    },
+    "i-hl-hims-hair-expectations": {
+     "i-hl-hims-hair-expectations": [
+      "i-hl-hims-hair-expectations-fuller"
+     ]
+    },
+    "i-hl-hims-hair-type": {
+     "i-hl-hims-hair-type": "i-hl-hims-hair-type-straight"
+    },
+    "i-hl-hims-hair-length": {
+     "i-hl-hims-hair-length": "i-hl-hims-hair-length-short"
+    }
+   },
+   "chosen": [
+    "Yes"
+   ],
+   "moved": true
+  },
+  {
+   "n": 9,
+   "slug": "stress",
+   "url": "https://www.hims.com/g/i/hl/stress",
+   "text": "How often do you tend to experience stress?\nAll the time\nSometimes\nRarely\nNot sure\nWhy we ask\n\nIf you experience stress, it could affect your hair. Stress can trigger and worsen a form of temporary hair loss called telogen effluvium, which interrupts your hair’s natural growth cycle\n\nSource\nContinue\nAlready have an account? Sign In",
+   "choices": [
+    {
+     "kind": "radio",
+     "label": "All the time"
+    },
+    {
+     "kind": "radio",
+     "label": "Sometimes"
+    },
+    {
+     "kind": "radio",
+     "label": "Rarely"
+    },
+    {
+     "kind": "radio",
+     "label": "Not sure"
+    }
+   ],
+   "buttons": [
+    {
+     "label": "Continue",
+     "disabled": false
+    }
+   ],
+   "fields": [],
+   "serverSlug": "stress",
+   "serverType": "nodeModularScreen",
+   "serverStep": "15",
+   "outputSchema": {
+    "type": "object",
+    "required": [
+     "responses"
+    ],
+    "properties": {
+     "responses": {
+      "type": "object",
+      "required": [
+       "i-hl-hims-hair-stress"
+      ],
+      "properties": {
+       "i-hl-hims-hair-stress": {
+        "type": "object",
+        "required": [
+         "i-hl-hims-hair-stress"
+        ],
+        "properties": {
+         "i-hl-hims-hair-stress": {
+          "enum": [
+           "i-hl-hims-hair-stress-always",
+           "i-hl-hims-hair-stress-sometimes",
+           "i-hl-hims-hair-stress-rarely",
+           "i-hl-hims-hair-stress-unsure"
+          ],
+          "type": "string"
+         }
+        },
+        "additionalProperties": false
+       }
+      },
+      "additionalProperties": false
+     }
+    }
+   },
+   "storedResponses": {
+    "i-hl-hims-hair-goals": {
+     "i-hl-hims-goals": "i-hl-hims-goals-regrow"
+    },
+    "i-hl-hims-hair-changes": {
+     "i-hl-hims-hair-changes": "i-hl-hims-changes-hairline"
+    },
+    "i-hl-hims-hair-loss": {
+     "i-hl-hims-hair-loss": "i-hl-hims-hair-loss-some"
+    },
+    "i-hl-hims-hair-start": {
+     "i-hl-hims-hair-start": "i-hl-hims-hair-start-over-a-year"
+    },
+    "i-hl-hims-hair-expectations": {
+     "i-hl-hims-hair-expectations": [
+      "i-hl-hims-hair-expectations-fuller"
+     ]
+    },
+    "i-hl-hims-hair-type": {
+     "i-hl-hims-hair-type": "i-hl-hims-hair-type-straight"
+    },
+    "i-hl-hims-hair-length": {
+     "i-hl-hims-hair-length": "i-hl-hims-hair-length-short"
+    },
+    "i-hl-hims-hair-loss-heredity": {
+     "i-hl-hims-hair-loss-heredity": "i-hl-hims-hair-loss-heredity-yes"
+    }
+   },
+   "chosen": [
+    "Sometimes"
+   ],
+   "moved": true
+  },
+  {
+   "n": 10,
+   "slug": "factors",
+   "url": "https://www.hims.com/g/i/hl/factors",
+   "text": "Factors like aging, family history, and stress can cause hair shedding and thinning.\n\nThe good news?\n\nPrescription treatments can help you fight these root causes, so you can grow visibly thicker, fuller hair in just 3 to 6 months.\n\nNext",
+   "choices": [],
+   "buttons": [
+    {
+     "label": "Next",
+     "disabled": false
+    }
+   ],
+   "fields": [],
+   "serverSlug": "factors",
+   "serverType": "nodeModularScreen",
+   "serverStep": "18",
+   "outputSchema": {
+    "type": "object",
+    "required": [
+     "responses"
+    ],
+    "properties": {
+     "responses": {
+      "type": "object",
+      "required": [],
+      "additionalProperties": false
+     }
+    }
+   },
+   "storedResponses": {
+    "i-hl-hims-hair-goals": {
+     "i-hl-hims-goals": "i-hl-hims-goals-regrow"
+    },
+    "i-hl-hims-hair-changes": {
+     "i-hl-hims-hair-changes": "i-hl-hims-changes-hairline"
+    },
+    "i-hl-hims-hair-loss": {
+     "i-hl-hims-hair-loss": "i-hl-hims-hair-loss-some"
+    },
+    "i-hl-hims-hair-start": {
+     "i-hl-hims-hair-start": "i-hl-hims-hair-start-over-a-year"
+    },
+    "i-hl-hims-hair-expectations": {
+     "i-hl-hims-hair-expectations": [
+      "i-hl-hims-hair-expectations-fuller"
+     ]
+    },
+    "i-hl-hims-hair-type": {
+     "i-hl-hims-hair-type": "i-hl-hims-hair-type-straight"
+    },
+    "i-hl-hims-hair-length": {
+     "i-hl-hims-hair-length": "i-hl-hims-hair-length-short"
+    },
+    "i-hl-hims-hair-loss-heredity": {
+     "i-hl-hims-hair-loss-heredity": "i-hl-hims-hair-loss-heredity-yes"
+    },
+    "i-hl-hims-hair-stress": {
+     "i-hl-hims-hair-stress": "i-hl-hims-hair-stress-sometimes"
+    }
+   },
+   "chosen": [],
+   "clicked": "Next",
+   "moved": true
+  },
+  {
+   "n": 11,
+   "slug": "routine",
+   "url": "https://www.hims.com/g/i/hl/routine",
+   "text": "Now let’s get to know your hair routine.\n\nYour answers help determine which treatment types best fit into your day-to-day.\n\nContinue",
+   "choices": [],
+   "buttons": [
+    {
+     "label": "Continue",
+     "disabled": false
+    }
+   ],
+   "fields": [],
+   "serverSlug": "routine",
+   "serverType": "nodeModularScreen",
+   "serverStep": "19",
+   "outputSchema": {
+    "type": "object",
+    "required": [
+     "responses"
+    ],
+    "properties": {
+     "responses": {
+      "type": "object",
+      "required": [],
+      "additionalProperties": false
+     }
+    }
+   },
+   "storedResponses": {
+    "i-hl-hims-hair-goals": {
+     "i-hl-hims-goals": "i-hl-hims-goals-regrow"
+    },
+    "i-hl-hims-hair-changes": {
+     "i-hl-hims-hair-changes": "i-hl-hims-changes-hairline"
+    },
+    "i-hl-hims-hair-loss": {
+     "i-hl-hims-hair-loss": "i-hl-hims-hair-loss-some"
+    },
+    "i-hl-hims-hair-start": {
+     "i-hl-hims-hair-start": "i-hl-hims-hair-start-over-a-year"
+    },
+    "i-hl-hims-hair-expectations": {
+     "i-hl-hims-hair-expectations": [
+      "i-hl-hims-hair-expectations-fuller"
+     ]
+    },
+    "i-hl-hims-hair-type": {
+     "i-hl-hims-hair-type": "i-hl-hims-hair-type-straight"
+    },
+    "i-hl-hims-hair-length": {
+     "i-hl-hims-hair-length": "i-hl-hims-hair-length-short"
+    },
+    "i-hl-hims-hair-loss-heredity": {
+     "i-hl-hims-hair-loss-heredity": "i-hl-hims-hair-loss-heredity-yes"
+    },
+    "i-hl-hims-hair-stress": {
+     "i-hl-hims-hair-stress": "i-hl-hims-hair-stress-sometimes"
+    }
+   },
+   "chosen": [],
+   "clicked": "Continue",
+   "moved": true
+  },
+  {
+   "n": 12,
+   "slug": "hair-style",
+   "url": "https://www.hims.com/g/i/hl/hair-style",
+   "text": "How do you style your hair?\nNo styling\nI let my hair do its thing\nProducts\nGel, mousse, etc.\nI usually wear a hat\nProtective styles\nBraids, locs, etc.\nContinue\nAlready have an account? Sign In",
+   "choices": [
+    {
+     "kind": "radio",
+     "label": "No styling I let my hair do its thing"
+    },
+    {
+     "kind": "radio",
+     "label": "Products Gel, mousse, etc."
+    },
+    {
+     "kind": "radio",
+     "label": "I usually wear a hat"
+    },
+    {
+     "kind": "radio",
+     "label": "Protective styles Braids, locs, etc."
+    }
+   ],
+   "buttons": [
+    {
+     "label": "Continue",
+     "disabled": false
+    }
+   ],
+   "fields": [],
+   "serverSlug": "hair-style",
+   "serverType": "nodeModularScreen",
+   "serverStep": "16",
+   "outputSchema": {
+    "type": "object",
+    "required": [
+     "responses"
+    ],
+    "properties": {
+     "responses": {
+      "type": "object",
+      "required": [
+       "i-hl-hims-hair-style"
+      ],
+      "properties": {
+       "i-hl-hims-hair-style": {
+        "type": "object",
+        "required": [
+         "i-hl-hims-hair-style"
+        ],
+        "properties": {
+         "i-hl-hims-hair-style": {
+          "enum": [
+           "i-hl-hims-hair-style-none",
+           "i-hl-hims-hair-style-products",
+           "i-hl-hims-hair-style-hat",
+           "i-hl-hims-hair-style-protective"
+          ],
+          "type": "string"
+         }
+        },
+        "additionalProperties": false
+       }
+      },
+      "additionalProperties": false
+     }
+    }
+   },
+   "storedResponses": {
+    "i-hl-hims-hair-goals": {
+     "i-hl-hims-goals": "i-hl-hims-goals-regrow"
+    },
+    "i-hl-hims-hair-changes": {
+     "i-hl-hims-hair-changes": "i-hl-hims-changes-hairline"
+    },
+    "i-hl-hims-hair-loss": {
+     "i-hl-hims-hair-loss": "i-hl-hims-hair-loss-some"
+    },
+    "i-hl-hims-hair-start": {
+     "i-hl-hims-hair-start": "i-hl-hims-hair-start-over-a-year"
+    },
+    "i-hl-hims-hair-expectations": {
+     "i-hl-hims-hair-expectations": [
+      "i-hl-hims-hair-expectations-fuller"
+     ]
+    },
+    "i-hl-hims-hair-type": {
+     "i-hl-hims-hair-type": "i-hl-hims-hair-type-straight"
+    },
+    "i-hl-hims-hair-length": {
+     "i-hl-hims-hair-length": "i-hl-hims-hair-length-short"
+    },
+    "i-hl-hims-hair-loss-heredity": {
+     "i-hl-hims-hair-loss-heredity": "i-hl-hims-hair-loss-heredity-yes"
+    },
+    "i-hl-hims-hair-stress": {
+     "i-hl-hims-hair-stress": "i-hl-hims-hair-stress-sometimes"
+    }
+   },
+   "chosen": [
+    "No styling I let my hair do its thing"
+   ],
+   "moved": true
+  },
+  {
+   "n": 13,
+   "slug": "hair-style-duration",
+   "url": "https://www.hims.com/g/i/hl/hair-style-duration",
+   "text": "How much time do you spend on your hair every day?\nWe offer treatments that are quick, simple, and work with your routine.\nLess than 5 minutes\n5-10 minutes\n10+ minutes\nContinue\nAlready have an account? Sign In",
+   "choices": [
+    {
+     "kind": "radio",
+     "label": "Less than 5 minutes"
+    },
+    {
+     "kind": "radio",
+     "label": "5-10 minutes"
+    },
+    {
+     "kind": "radio",
+     "label": "10+ minutes"
+    }
+   ],
+   "buttons": [
+    {
+     "label": "Continue",
+     "disabled": false
+    }
+   ],
+   "fields": [],
+   "serverSlug": "hair-style-duration",
+   "serverType": "nodeModularScreen",
+   "serverStep": "17",
+   "outputSchema": {
+    "type": "object",
+    "required": [
+     "responses"
+    ],
+    "properties": {
+     "responses": {
+      "type": "object",
+      "required": [
+       "i-hl-hims-hair-style-duration"
+      ],
+      "properties": {
+       "i-hl-hims-hair-style-duration": {
+        "type": "object",
+        "required": [
+         "i-hl-hims-hair-style-duration"
+        ],
+        "properties": {
+         "i-hl-hims-hair-style-duration": {
+          "enum": [
+           "i-hl-hims-hair-style-duration-less-5",
+           "i-hl-hims-hair-style-duration-5-to-10",
+           "i-hl-hims-hair-style-duration-10-plus"
+          ],
+          "type": "string"
+         }
+        },
+        "additionalProperties": false
+       }
+      },
+      "additionalProperties": false
+     }
+    }
+   },
+   "storedResponses": {
+    "i-hl-hims-hair-goals": {
+     "i-hl-hims-goals": "i-hl-hims-goals-regrow"
+    },
+    "i-hl-hims-hair-changes": {
+     "i-hl-hims-hair-changes": "i-hl-hims-changes-hairline"
+    },
+    "i-hl-hims-hair-loss": {
+     "i-hl-hims-hair-loss": "i-hl-hims-hair-loss-some"
+    },
+    "i-hl-hims-hair-start": {
+     "i-hl-hims-hair-start": "i-hl-hims-hair-start-over-a-year"
+    },
+    "i-hl-hims-hair-expectations": {
+     "i-hl-hims-hair-expectations": [
+      "i-hl-hims-hair-expectations-fuller"
+     ]
+    },
+    "i-hl-hims-hair-type": {
+     "i-hl-hims-hair-type": "i-hl-hims-hair-type-straight"
+    },
+    "i-hl-hims-hair-length": {
+     "i-hl-hims-hair-length": "i-hl-hims-hair-length-short"
+    },
+    "i-hl-hims-hair-loss-heredity": {
+     "i-hl-hims-hair-loss-heredity": "i-hl-hims-hair-loss-heredity-yes"
+    },
+    "i-hl-hims-hair-stress": {
+     "i-hl-hims-hair-stress": "i-hl-hims-hair-stress-sometimes"
+    },
+    "i-hl-hims-hair-style": {
+     "i-hl-hims-hair-style": "i-hl-hims-hair-style-none"
+    }
+   },
+   "chosen": [
+    "Less than 5 minutes"
+   ],
+   "moved": true
+  },
+  {
+   "n": 14,
+   "slug": "select-state",
+   "url": "https://www.hims.com/g/i/hl/select-state",
+   "text": "Which state do you currently live in?\nAA\nAE\nAlabama\nAlaska\nAP\nArizona\nArkansas\nCalifornia\nColorado\nConnecticut\nDelaware\nDistrict of Columbia\nFlorida\nGeorgia\nHawaii\nIdaho\nIllinois\nIndiana\nIowa\nKansas\nKentucky\nLouisiana\nMaine\nMaryland\nMassachusetts\nMichigan\nMinnesota\nMississippi\nMissouri\nMontana\nNebraska\nNevada\nNew Hampshire\nNew Jersey\nNew Mexico\nNew York\nNorth Carolina\nNorth Dakota\nOhio\nOklahoma\nOregon\nPennsylvania\nRhode Island\nSouth Carolina\nSouth Dakota\nTennessee\nTexas\nUtah\nVermont\nVirginia\nWashington\nWest Virginia\nWisconsin\nWyoming\nState\n\nBy clicking \"Continue\", I agree to the Terms and Conditions and Telehealth Consent and acknowledge the Privacy Policy.\n\nContinue\nAlready have an account? Sign In",
+   "choices": [
+    {
+     "kind": "checkbox",
+     "label": "By clicking \"Continue\", I agree to the Terms and Conditions and Telehealth Consent and acknowledge the Privacy Policy."
+    }
+   ],
+   "buttons": [
+    {
+     "label": "Continue",
+     "disabled": true
+    }
+   ],
+   "fields": [
+    {
+     "tag": "select",
+     "type": "select-one",
+     "name": "_r_3b_",
+     "id": "_r_3b_",
+     "label": "State",
+     "placeholder": "",
+     "autocomplete": "",
+     "options": [
+      "",
+      "AA",
+      "AE",
+      "Alabama",
+      "Alaska",
+      "AP",
+      "Arizona",
+      "Arkansas",
+      "California",
+      "Colorado",
+      "Connecticut",
+      "Delaware",
+      "District of Columbia",
+      "Florida",
+      "Georgia",
+      "Hawaii",
+      "Idaho",
+      "Illinois",
+      "Indiana",
+      "Iowa",
+      "Kansas",
+      "Kentucky",
+      "Louisiana",
+      "Maine",
+      "Maryland",
+      "Massachusetts",
+      "Michigan",
+      "Minnesota",
+      "Mississippi",
+      "Missouri",
+      "Montana",
+      "Nebraska",
+      "Nevada",
+      "New Hampshire",
+      "New Jersey",
+      "New Mexico",
+      "New York",
+      "North Carolina",
+      "North Dakota",
+      "Ohio",
+      "Oklahoma",
+      "Oregon",
+      "Pennsylvania",
+      "Rhode Island",
+      "South Carolina",
+      "South Dakota",
+      "Tennessee",
+      "Texas",
+      "Utah",
+      "Vermont",
+      "Virginia",
+      "Washington",
+      "West Virginia",
+      "Wisconsin",
+      "Wyoming"
+     ]
+    }
+   ],
+   "serverSlug": "select-state",
+   "serverType": "nodeStateSelectionScreen",
+   "serverStep": "10",
+   "outputSchema": {
+    "type": "object",
+    "required": [
+     "responses"
+    ],
+    "properties": {
+     "responses": {
+      "type": "object",
+      "required": [
+       "i-hl-hims-state-selection"
+      ],
+      "properties": {
+       "i-hl-hims-state-selection": {
+        "type": "object",
+        "required": [
+         "shippingState"
+        ],
+        "properties": {
+         "shippingState": {
+          "type": "string"
+         }
+        },
+        "additionalProperties": false
+       }
+      },
+      "additionalProperties": false
+     }
+    }
+   },
+   "storedResponses": {
+    "i-hl-hims-hair-goals": {
+     "i-hl-hims-goals": "i-hl-hims-goals-regrow"
+    },
+    "i-hl-hims-hair-changes": {
+     "i-hl-hims-hair-changes": "i-hl-hims-changes-hairline"
+    },
+    "i-hl-hims-hair-loss": {
+     "i-hl-hims-hair-loss": "i-hl-hims-hair-loss-some"
+    },
+    "i-hl-hims-hair-start": {
+     "i-hl-hims-hair-start": "i-hl-hims-hair-start-over-a-year"
+    },
+    "i-hl-hims-hair-expectations": {
+     "i-hl-hims-hair-expectations": [
+      "i-hl-hims-hair-expectations-fuller"
+     ]
+    },
+    "i-hl-hims-hair-type": {
+     "i-hl-hims-hair-type": "i-hl-hims-hair-type-straight"
+    },
+    "i-hl-hims-hair-length": {
+     "i-hl-hims-hair-length": "i-hl-hims-hair-length-short"
+    },
+    "i-hl-hims-hair-loss-heredity": {
+     "i-hl-hims-hair-loss-heredity": "i-hl-hims-hair-loss-heredity-yes"
+    },
+    "i-hl-hims-hair-stress": {
+     "i-hl-hims-hair-stress": "i-hl-hims-hair-stress-sometimes"
+    },
+    "i-hl-hims-hair-style": {
+     "i-hl-hims-hair-style": "i-hl-hims-hair-style-none"
+    },
+    "i-hl-hims-hair-style-duration": {
+     "i-hl-hims-hair-style-duration": "i-hl-hims-hair-style-duration-less-5"
+    }
+   },
+   "chosen": [
+    "select AP"
+   ],
+   "consentBox": [
+    "By clicking \"Continue\", I agree to the Terms and Conditions and Telehealth Consent and acknowledge the Privacy Policy."
+   ],
+   "continueDisabledWithoutTick": true,
+   "action": "STOP: consent tick-box (not ticked). Continue button stays disabled without the tick."
+  }
+ ],
+ "end": {
+  "reason": "consent-wall",
+  "slug": "select-state",
+  "url": "https://www.hims.com/g/i/hl/select-state",
+  "consentBox": [
+   "By clicking \"Continue\", I agree to the Terms and Conditions and Telehealth Consent and acknowledge the Privacy Policy."
+  ],
+  "continueDisabledWithoutTick": true,
+  "entered": [
+   "select AP"
+  ]
+ },
+ "postsSent": 16,
+ "storage": {
+  "local": [
+   "treatmentType",
+   "amplitude_unsent_73e87329fc87b9ed767fc1a55872fdc3",
+   "visitReason",
+   "amplitude_unsent_identify_73e87329fc87b9ed767fc1a55872fdc3",
+   "_huetid",
+   "tcmr",
+   "_gcl_ls",
+   "gbFeaturesCache"
+  ],
+  "session": [
+   "hl:c11363d7-4591-4295-b958-403e9322d1fc:start-flow-fired",
+   "hl-node-history",
+   "sessionId",
+   "tcms"
+  ]
+ }
+}

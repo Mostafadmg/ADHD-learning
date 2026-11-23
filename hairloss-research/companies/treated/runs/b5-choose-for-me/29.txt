@@ -1,0 +1,38 @@
+STEP 29 click "Continue"
+URL: https://start.treated.com/GBR/en/#/medical-profile
+TITLE: Treated UK - Choose Better - Medical Experts & Treatments Online
+
+--- VISIBLE TEXT ---
+Here's your medical profile.
+
+Let us know if any of the below apply to you.
+
+I have one or more medical conditions
+I've had surgery before
+I'm taking medication(s)
+I have one or more allergies
+I smoke or used to smoke
+I drink alcohol
+I have one or more disabilities
+I have one or more close relatives with a medical condition
+I use recreational drugs
+Continue
+Does this look right?
+
+It's really important to tell us as much about your health as you can, so we can suggest the best option for you.
+
+You don't have any additional medical conditions.
+You aren't taking any medication.
+You have no allergies to any food, drugs or anything else.
+You don't have a disability.
+You don’t have a family history of any medical conditions.
+You aren't using any recreational drugs or narcotics.
+No, go back
+Yes, correct
+
+--- CONTROLS ---
+  checkbox (9): I have one or more medical conditions  ·  I've had surgery before  ·  I'm taking medication(s)  ·  I have one or more allergies  ·  I smoke or used to smoke  ·  I drink alcohol  ·  I have one or more disabilities  ·  I have one or more close relatives with a medical condition  ·  I use recreational drugs
+  button (3): Continue  ·  No, go back  ·  Yes, correct
+
+--- LINKS ---
+

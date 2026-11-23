@@ -70,7 +70,9 @@ Source: finasteride 1 mg SmPC, section 5.1, https://www.medicines.org.uk/emc/pro
 | Gupta 2022 network meta-analysis (JAMA Dermatology) | 23 trials of minoxidil, finasteride and dutasteride in men | Finasteride 1 mg gave the largest gain in **terminal** (thick) hair count at 48 weeks: 32.1 hairs/cm² more than topical minoxidil 2% and 26.2 more than topical minoxidil 5%. | https://pubmed.ncbi.nlm.nih.gov/35107565/ |
 
 Plain meaning: about half of men see visible regrowth and about nine in ten at least hold their ground over five
-years. Without treatment most men get visibly worse over the same time.
+years. Without treatment most men get visibly worse over the same time. Caution: by year 5 the placebo hair-count
+figure rests on only 15 men (n = 219 on finasteride), so the 5-year placebo number is imprecise
+(SmPC section 5.1, link above).
 
 **Dose.** 1 mg once a day, with or without food. Higher doses do not work better. Expect 3 to 6 months before loss
 steadies. If treatment stops, the gain starts to reverse by 6 months and is back to baseline by 9 to 12 months.
@@ -105,11 +107,13 @@ Source: SmPC section 4.2, https://www.medicines.org.uk/emc/product/7068/smpc
 - Do not combine with another 5-alpha reductase inhibitor.
 - Crushed or broken tablets must not be handled by women who are or may be pregnant. Intact tablets are coated.
 - Semen: less than 0.001% of the 1 mg dose per ejaculation; the SmPC judges this unlikely to harm a male fetus.
-- Fertility: reports of poor semen quality that improved after stopping. In a randomised trial in healthy men,
-  finasteride lowered total sperm count by 34.3% at 26 weeks; this had eased to −16.2% at 52 weeks and −6.2% 24 weeks
-  after stopping. Source: https://pubmed.ncbi.nlm.nih.gov/17299062/
+- Fertility: reports of poor semen quality that improved after stopping. In a randomised trial in 99 healthy men
+  that used **finasteride 5 mg** (the prostate dose, not the 1 mg hair dose), total sperm count fell 34.3% at
+  26 weeks; the fall was no longer significant at 52 weeks (−16.2%) or 24 weeks after stopping (−6.2%). No equivalent
+  trial of the 1 mg dose was checked here. Source: https://pubmed.ncbi.nlm.nih.gov/17299062/ *(Corrected on
+  verification, 23 Nov 2026: the earlier text did not say this trial used 5 mg.)*
 - **PSA (the prostate blood test):** finasteride lowers PSA (mean 0.7 to 0.5 ng/ml at 12 months in men aged 18 to 41).
-  The SmPC says to double the PSA result before interpreting it.
+  The SmPC says doubling the PSA result "should be considered" before comparing it with normal ranges.
 
 **Interactions.** Metabolised by CYP3A4. The SmPC says inhibitors and inducers will probably change levels but this is
 unlikely to matter clinically. No important interactions are listed.
@@ -181,16 +185,20 @@ Source: https://pubmed.ncbi.nlm.nih.gov/25074865/
 - **Regulator warning.** On 22 April 2025 the US FDA warned about compounded topical finasteride after 32 adverse
   event reports (2019 to 2024) including depression, anxiety, suicidal ideation, brain fog, fatigue, insomnia,
   reduced libido and testicular pain; most said the symptoms continued after stopping. Some patients had been told a
-  topical product carried no risk. The FDA also warned about transfer to women and children by skin contact.
+  topical product carried no risk. The FDA also warned about accidental exposure of others, "specifically females",
+  through transfer of the applied product. (The FDA alert does not mention children; the advice to keep children
+  away comes from the European product information, https://agence-prd.ansm.sante.fr/php/ecodex/rcp/R0422737.htm.)
   Source: https://www.fda.gov/drugs/human-drug-compounding/fda-alerts-health-care-providers-compounders-and-consumers-potential-risks-associated-compounded
 - The European 2025 review found no evidence linking the licensed skin spray to suicidal ideation and made no change
   to its product information. Source: https://www.ema.europa.eu/en/news/measures-minimise-risk-suicidal-thoughts-finasteride-dutasteride-medicines
 
-**UK status.** **Unlicensed special** as far as could be confirmed. A search of the emc on 23 November 2026 listed ten
+**UK status.** **Unlicensed special.** A search of the emc on 23 November 2026 listed ten
 finasteride products, all tablets (https://www.medicines.org.uk/emc/search?q=finasteride). A 2025 peer-reviewed paper
 states topical finasteride had not been approved by the MHRA (https://pmc.ncbi.nlm.nih.gov/articles/PMC12207719/).
-One UK pharmacy website says a spray called Finjuve has since been given a UK licence; this was **not verified**
-against the MHRA products register and should be checked before relying on it.
+On verification (23 November 2026) the MHRA products register listed only finasteride 1 mg and 5 mg tablets under
+the substance finasteride, and a search for "Finjuve" returned nothing
+(https://products.mhra.gov.uk/substance/?substance=FINASTERIDE). One UK pharmacy website claims Finjuve has a UK
+licence; the register does not support this. Re-check the register before launch, because new licences can appear.
 
 **Formulation notes**
 
@@ -209,7 +217,8 @@ against the MHRA products register and should be checked before relying on it.
 ### 2.3 Oral dutasteride
 
 **How it works (one line).** Blocks both type 1 and type 2 5-alpha reductase, lowering blood DHT further than
-finasteride (94% vs 73% in a head-to-head study in healthy men, https://pubmed.ncbi.nlm.nih.gov/17299062/).
+finasteride (94% vs 73% in a head-to-head study in healthy men of dutasteride 0.5 mg vs finasteride **5 mg**,
+https://pubmed.ncbi.nlm.nih.gov/17299062/).
 
 **Best evidence**
 
@@ -320,9 +329,13 @@ Sources: https://www.medicines.org.uk/emc/product/5765/smpc and https://www.medi
   every patient before they start.
 - Unwanted hair elsewhere (hypertrichosis) and headache. The product information also lists chest pain,
   palpitations, fast heartbeat, low blood pressure and swelling (peripheral oedema).
-- **Contraindicated in the SmPC in people with treated or untreated high blood pressure,** on an abnormal scalp
-  (for example psoriasis, sunburn, a shaved scalp, burns or scarring), in sudden or patchy hair loss, and with
-  occlusive dressings or other scalp medicines.
+- **Contraindicated in the Regaine 5% solution SmPC (section 4.3) in people with treated or untreated high blood
+  pressure,** in women, in anyone sensitive to minoxidil, ethanol or propylene glycol, on any scalp abnormality
+  (including psoriasis and sunburn), on a shaved scalp, and with occlusive dressings or other scalp medicines.
+  Sudden or patchy loss is a section 4.4 warning in the Regaine SmPC (use only for androgenetic alopecia) and a
+  listed contraindication ("sudden or uneven hair loss") in the generic axunio 5% spray SmPC, which also lists
+  burns and scarring (https://www.medicines.org.uk/emc/product/100306/smpc). *(Clarified on verification,
+  23 Nov 2026: wording differs between products.)*
 - **Infants:** excess hair has been reported in infants after skin contact with a carer's treated scalp. It reversed
   within months once contact stopped. Keep children away from the application site.
 - Accidental swallowing is dangerous: 2 ml of 5% solution contains 100 mg of minoxidil.
@@ -403,7 +416,7 @@ Source: https://www.medicines.org.uk/emc/product/5765/smpc
 - At hair-loss doses there are case reports (for example https://pubmed.ncbi.nlm.nih.gov/36117778/ and
   https://pubmed.ncbi.nlm.nih.gov/36425662/).
 - US adverse-event reports show a reporting signal even at 2.5 mg or less (reporting odds ratio 13.30; 5.34 in people
-  without heart impairment). This is a signal, not a rate. Source: https://pubmed.ncbi.nlm.nih.gov/39327649/
+  without heart impairment) and at 1.25 mg or less (16.41). This is a signal, not a rate. Source: https://pubmed.ncbi.nlm.nih.gov/39327649/
 - A cross-sectional ultrasound study of 100 patients found small, symptom-free effusions in 5.8% on LDOM and 6% of
   controls (no difference). Small study. Source: https://pubmed.ncbi.nlm.nih.gov/39231077/
 - The true rate at low dose is **unknown**. Screen for breathlessness, chest pain, new swelling or sudden weight gain.
@@ -411,6 +424,11 @@ Source: https://www.medicines.org.uk/emc/product/5765/smpc
 **International expert consensus (Akiska 2025; 43 hair specialists, 12 countries).**
 Source: https://pubmed.ncbi.nlm.nih.gov/39565602/ (open copy read at
 https://escholarship.org/content/qt2pp1b5gc/qt2pp1b5gc_noSplash_71a7c4141708a558a1b509800bdb7742.pdf)
+*Verification note (23 Nov 2026): the abstract confirms the panel (43 specialists, 12 countries), that dosing,
+contraindications, precautions, baseline tests and monitoring reached consensus, and that titration did not. The
+open copy would not load on re-check, so the dose figures and lists below are confirmed only by secondary summaries
+(for example https://www.epocrates.com/online/article/oral-minoxidil-for-hair-loss-expert-consensus-statement), not
+first-hand. Read the full paper (doi:10.1001/jamadermatol.2024.4593) before writing them into a protocol.*
 
 - **Adult men:** most common starting dose 2.5 mg daily; range 1.25 to 5 mg daily. (Adult women: start 1.25 mg;
   range 0.625 to 5 mg.) No agreement was reached on how to step doses up.
@@ -816,11 +834,11 @@ The logic that holds up: pair one drug that lowers DHT (finasteride or dutasteri
 | Date | Who | What | Source |
 |---|---|---|---|
 | 2017 | MHRA | First Drug Safety Update on depression and suicidal thoughts with finasteride. | Referred to in the 2024 update below |
-| **29 April 2024** | **MHRA** | Reminder that finasteride is linked to depression, suicidal thoughts and sexual dysfunction, and that sexual dysfunction can continue after stopping. **A patient card was introduced in all finasteride packs.** Prescribers told to ask about history of depression or suicidal thoughts before prescribing, to tell men on 1 mg to stop at once if they develop depression or suicidal thoughts, and to monitor for psychiatric and sexual effects. Yellow Card data to 5 April 2024: 426 reports of sexual dysfunction (in almost half the outcome was "not recovered" or "not resolved") and 281 psychiatric reports. | https://www.gov.uk/drug-safety-update/finasteride-reminder-of-the-risk-psychiatric-side-effects-and-of-sexual-side-effects-which-may-persist-after-discontinuation-of-treatment |
+| **29 April 2024** | **MHRA** | Reminder that finasteride is linked to depression, suicidal thoughts and sexual dysfunction, and that sexual dysfunction can continue after stopping. **A patient card "will be introduced" in all finasteride packs** (announced in April 2024 for introduction that year; the May 2026 update confirms the cards are now in the 1 mg and 5 mg packs). Prescribers told to ask about history of depression or suicidal thoughts before prescribing, to tell men on 1 mg to stop at once if they develop depression or suicidal thoughts, and to monitor for psychiatric and sexual effects. Yellow Card data to 5 April 2024 (finasteride 1 mg and 5 mg together): 426 reports of sexual dysfunction (in almost half the outcome was "not recovered" or "not resolved") and 281 reports of depressed mood disorders and suicidal and self-injurious behaviours. | https://www.gov.uk/drug-safety-update/finasteride-reminder-of-the-risk-psychiatric-side-effects-and-of-sexual-side-effects-which-may-persist-after-discontinuation-of-treatment |
 | April 2024 | MHRA public assessment report | Finasteride 1 mg is obtained "from private hair loss clinics or more often, purchased from online pharmacies". Online supply "does not easily allow" monitoring for psychiatric effects. The MHRA met online pharmacies: "some do have thorough screening and monitoring processes in place, others do not". An industry group (Digital Clinical Excellence) wrote best-practice guidelines for online prescribing of finasteride. The patient group asked for "post-finasteride syndrome" to be recognised as a diagnosis; the MHRA said this is outside its remit. | https://assets.publishing.service.gov.uk/media/6630abd087bdbae4ab19adc9/Finasteride_PAR_Accessible.pdf |
 | **8 May 2025** | **EMA safety committee (PRAC)** | **Suicidal ideation confirmed as a side effect of finasteride 1 mg and 5 mg tablets;** frequency unknown. 325 relevant reports in the European database (313 finasteride, 13 dutasteride, 1 both) against an estimated 270 million patient-years of finasteride and 82 million of dutasteride. Most cases were with the 1 mg hair-loss dose; where age was recorded, the median age of the finasteride cases was 30. A patient card to go in 1 mg packs in the EU. Sexual dysfunction may contribute to mood changes. **Dutasteride:** not enough evidence for a link, but a precautionary warning was added. **Finasteride skin spray:** no case linked to topical use alone and no change to its product information, but the committee said lower blood levels do "not fully exclude the risk of systemic adverse drug reactions". Benefits still judged to outweigh risks. | https://www.ema.europa.eu/en/news/measures-minimise-risk-suicidal-thoughts-finasteride-dutasteride-medicines and https://www.ema.europa.eu/en/documents/referral/finasteride-dutasteride-containing-medicinal-products-article-31-referral-assessment-report_en.pdf |
 | 22 April 2025 | US FDA | Alert on **compounded topical finasteride:** 32 reports, similar effects to tablets, some persisting; patients wrongly told there was no risk. | https://www.fda.gov/drugs/human-drug-compounding/fda-alerts-health-care-providers-compounders-and-consumers-potential-risks-associated-compounded |
-| **11 May 2026** | **MHRA** | Strengthened warnings. Finasteride 1 mg product information now says sexual dysfunction may contribute to mood disorders. **Dutasteride gets a precautionary mood warning.** Prescribers should review the medical record, ask about depression and suicidal thoughts, and **review patients regularly**. Yellow Card data to 31 May 2025: 170 reports of suicidal ideation and related terms for finasteride and 5 for dutasteride; 19 reports of completed suicide for finasteride, none for dutasteride. A report does not prove the medicine was the cause. The patient cards stay. | https://www.gov.uk/drug-safety-update/finasteride-and-dutasteride-updated-safety-warnings-for-psychiatric-side-effects-and-sexual-dysfunction |
+| **11 May 2026** | **MHRA** | Strengthened warnings. Finasteride 1 mg product information now says sexual dysfunction may contribute to mood disorders. **Dutasteride gets a precautionary mood warning.** Prescribers should review the medical record, ask about depression and suicidal thoughts, and **review patients regularly**. Yellow Card data from 1994 to 31 May 2025: 170 reports of suicidal ideation and related terms for finasteride (1 mg and 5 mg together) and 5 for dutasteride; 19 fatal reports of suicide for finasteride, none for dutasteride. A report does not prove the medicine was the cause. The patient cards stay. | https://www.gov.uk/drug-safety-update/finasteride-and-dutasteride-updated-safety-warnings-for-psychiatric-side-effects-and-sexual-dysfunction |
 | June to September 2026 | Product information | UK SmPCs updated: Propecia (29 June 2026), generic finasteride 1 mg (10 September 2026), Avodart (11 August 2026). | https://www.medicines.org.uk/emc/product/2194/smpc ; https://www.medicines.org.uk/emc/product/7068/smpc ; https://www.medicines.org.uk/emc/product/6758/smpc |
 
 **What this means in practice**
@@ -910,7 +928,11 @@ https://assets.publishing.service.gov.uk/media/645e19f5ad8a03000c38b3bc/The_supp
   patient".
 - A special need "does not include reasons of cost, convenience or operational needs". Examples given are
   intolerance or allergy to an ingredient, or inability to swallow solid dose forms.
-- **Particular specials must not be advertised.** A manufacturer may advertise its service but not specific products.
+- **Particular specials must not be advertised.** A specials manufacturer, importer or wholesaler may advertise its
+  service but not particular products (GN14 section 7). Separately, and more important for a prescribing service,
+  **no prescription-only medicine may be advertised to the general public** in the UK, licensed or not; this covers
+  finasteride, dutasteride and oral minoxidil, and websites and social media.
+  Source: https://www.gov.uk/guidance/advertise-your-medicines *(Added on verification, 23 Nov 2026.)*
 - Serious suspected adverse reactions must be reported to the MHRA and records kept.
 
 Plain meaning for the service: "one bottle is easier" is not a special need. Each compounded prescription needs a
@@ -980,9 +1002,8 @@ melatonin, caffeine, biotin and other supplements in men who are not deficient, 
 - **NICE CKS "Male pattern hair loss"** is blocked outside the UK, so it was not read. Check it before finalising
   any protocol: https://cks.nice.org.uk/topics/male-pattern-hair-loss-male-androgenetic-alopecia/
 - **BNF** entries were not checked.
-- **UK licence status of topical finasteride.** Not on the emc; one unverified report of a UK licence ("Finjuve").
-  The MHRA products register (https://products.mhra.gov.uk/) could not be searched from here (its data service
-  returned an error), so check it directly.
+- **UK licence status of topical finasteride.** Resolved on verification (23 November 2026): neither the emc nor the
+  MHRA products register lists a topical finasteride product (https://products.mhra.gov.uk/substance/?substance=FINASTERIDE).
 - **UK blood-donor deferral periods** for finasteride and dutasteride: reported, not read first-hand.
 - Research letters with no abstract (Ramos 2020, Bokhari 2022, Sanabria 2025, Carvalho Fonseca 2026): figures were
   taken from secondary summaries or left as unknown.
@@ -1010,7 +1031,7 @@ The 25 facts most likely to change a decision. Each has its source.
 5. In trials, drug-related sexual side effects in the first year were 3.8% on finasteride vs 2.1% on placebo;
    meta-analysis relative risk 1.66. https://www.medicines.org.uk/emc/product/7068/smpc and
    https://pubmed.ncbi.nlm.nih.gov/30206635/
-6. The MHRA (29 April 2024) introduced a patient card in all finasteride packs and told prescribers to ask about
+6. The MHRA (29 April 2024) announced a patient card for all finasteride packs and told prescribers to ask about
    depression and suicidal thoughts before prescribing.
    https://www.gov.uk/drug-safety-update/finasteride-reminder-of-the-risk-psychiatric-side-effects-and-of-sexual-side-effects-which-may-persist-after-discontinuation-of-treatment
 7. The European regulator (8 May 2025) confirmed suicidal ideation as a side effect of finasteride tablets
@@ -1049,8 +1070,9 @@ The 25 facts most likely to change a decision. Each has its source.
 20. The US FDA (April 2025) warned that compounded topical finasteride has been linked to 32 reports of mood, sexual
     and other effects, some lasting after stopping.
     https://www.fda.gov/drugs/human-drug-compounding/fda-alerts-health-care-providers-compounders-and-consumers-potential-risks-associated-compounded
-21. No topical finasteride product was listed on the UK emc on 23 November 2026, so it is an unlicensed special
-    unless the MHRA register shows otherwise. https://www.medicines.org.uk/emc/search?q=finasteride
+21. No topical finasteride product was listed on the UK emc or the MHRA products register on 23 November 2026, so
+    it is an unlicensed special in the UK. https://www.medicines.org.uk/emc/search?q=finasteride and
+    https://products.mhra.gov.uk/substance/?substance=FINASTERIDE
 22. Finasteride plus minoxidil together did better than either alone (improved in 94.1% vs 80.5% vs 59% at
     12 months). https://pubmed.ncbi.nlm.nih.gov/26031764/
 23. Microneedling added to minoxidil improves hair count over minoxidil alone (12 trials; about +13 hairs/cm² in a
@@ -1062,3 +1084,70 @@ The 25 facts most likely to change a decision. Each has its source.
     hair in people who are not deficient.
     https://www.fda.gov/medical-devices/in-vitro-diagnostics/biotin-interference-troponin-lab-tests-assays-subject-biotin-interference
     and https://pubmed.ncbi.nlm.nih.gov/28879195/
+
+---
+
+## Verification log
+
+**Independent fact-check, 23 November 2026.** 24 claims that drive prescribing decisions were re-checked against
+primary sources (PubMed abstracts, live emc SmPCs, MHRA, EMA, FDA, ANSM). Corrections are marked in the text above.
+
+| # | Claim (section) | Verdict | What changed / note | Source checked |
+|---|---|---|---|---|
+| 1 | Finasteride 1 mg: +107 and +138 hairs vs placebo at 1 and 2 years; 1,553 men; baseline 876 (2.1) | Confirmed | None | https://pubmed.ncbi.nlm.nih.gov/9777765/ |
+| 2 | 5-year data: +38 vs −239 hairs; 48% improved, 42% unchanged vs 25% on placebo (2.1) | Confirmed, context added | Added that the 5-year placebo count is based on only 15 men | https://www.medicines.org.uk/emc/product/7068/smpc |
+| 3 | Drug-related sexual effects 3.8% vs 2.1% in year 1; libido 1.8% (2.1) | Confirmed | None | https://www.medicines.org.uk/emc/product/7068/smpc |
+| 4 | Benefit reverses by 6 months and is back to baseline by 9 to 12 months after stopping (2.1) | Confirmed | None | https://www.medicines.org.uk/emc/product/7068/smpc |
+| 5 | PSA falls 0.7 to 0.5 ng/ml; "double the PSA" (2.1) | Corrected (wording) | SmPC says doubling "should be considered", not that it must be done | https://www.medicines.org.uk/emc/product/7068/smpc |
+| 6 | Finasteride lowered sperm count 34.3% (listed under finasteride 1 mg); DHT 94% vs 73% (2.1, 2.3) | **Corrected** | The trial used **finasteride 5 mg**, not 1 mg; fall not significant at 52 weeks. Both places now say 5 mg | https://pubmed.ncbi.nlm.nih.gov/17299062/ |
+| 7 | Mella 2010: RR 1.81/1.71, NNT 5.6/3.4, ED RR 2.22 (NNH 82) (2.1) | Confirmed | None | https://pubmed.ncbi.nlm.nih.gov/20956649/ |
+| 8 | Sexual dysfunction RR 1.66 finasteride, 1.37 dutasteride (2.1, 2.3) | Confirmed | None | https://pubmed.ncbi.nlm.nih.gov/30206635/ |
+| 9 | VigiBase ROR 1.63 / 3.47 / 2.06; Welk cohort HR 0.88, 1.88, 1.94; absolute 17 and 237 per 100,000 (2.1) | Confirmed | None | https://pubmed.ncbi.nlm.nih.gov/33175100/ and https://pubmed.ncbi.nlm.nih.gov/28319231/ |
+| 10 | Topical finasteride phase III: 458 men, +20.2 vs +6.7, DHT fall 34.5% vs 55.6%, Cmax >100 times lower (2.2) | Confirmed | None | https://pubmed.ncbi.nlm.nih.gov/34634163/ |
+| 11 | Licensed spray: 1 to 4 sprays of 50 µl (114 µg), max 4 a day, 18 to 41 years, no experience beyond 6 months (2.2) | Confirmed | None | https://agence-prd.ansm.sante.fr/php/ecodex/rcp/R0422737.htm |
+| 12 | 0.25% solution twice daily cut blood DHT 68 to 75% (2.2) | Confirmed | None | https://pubmed.ncbi.nlm.nih.gov/25074865/ |
+| 13 | FDA April 2025 alert on compounded topical finasteride: 32 reports, many persisting; transfer to "women and children" (2.2, 10.1) | **Corrected** | FDA mentions transfer to females only, not children; children advice now attributed to the EU product information | https://www.fda.gov/drugs/human-drug-compounding/fda-alerts-health-care-providers-compounders-and-consumers-potential-risks-associated-compounded |
+| 14 | Topical finasteride has no UK licence; "Finjuve" UK licence unverified (2.2, 12, key fact 21) | Confirmed and resolved | MHRA register lists only 1 mg and 5 mg tablets; "Finjuve" search empty. Text updated | https://products.mhra.gov.uk/substance/?substance=FINASTERIDE |
+| 15 | Gupta 2022 NMA: dutasteride +7.1 vs finasteride at 24 weeks; finasteride terminal hair +32.1 / +26.2 vs minoxidil 2% / 5% at 48 weeks; oral minoxidil 5 mg +43.6 vs 0.25 mg (2.1, 2.3, 3.2) | Confirmed | None | https://pubmed.ncbi.nlm.nih.gov/35107565/ |
+| 16 | Dutasteride: half-life 3 to 5 weeks; semen −23/−26/−18% at 52 weeks; sperm count still −23% 24 weeks after stopping; PSA −50% at 6 months; severe liver impairment contraindicated; condom advice (2.3) | Confirmed | None | https://www.medicines.org.uk/emc/product/6758/smpc (revised 11 Aug 2026) |
+| 17 | Minoxidil 5% vs 2% vs vehicle: +18.6 / +12.7 / +3.9 at 48 weeks; peak +35.3 at 16 weeks; 45% more than 2% (3.1) | Confirmed | None | https://pubmed.ncbi.nlm.nih.gov/12196747/ and https://www.medicines.org.uk/emc/product/5765/smpc |
+| 18 | Minoxidil 10% worse than 5% and more irritating (3.1) | Confirmed | None | https://pubmed.ncbi.nlm.nih.gov/31403367/ |
+| 19 | Topical minoxidil 5% contraindicated in treated or untreated hypertension; GSL; sudden/patchy loss contraindicated (3.1) | Confirmed, clarified | Hypertension and GSL confirmed. Sudden/patchy loss is a contraindication in the axunio SmPC but only a warning in the Regaine SmPC; text now says so and adds the ethanol/propylene glycol sensitivity contraindication | https://www.medicines.org.uk/emc/product/5765/smpc and https://www.medicines.org.uk/emc/product/100306/smpc |
+| 20 | Oral 5 mg not superior to topical 5% (Penha 2024); hypertrichosis 49% (3.2) | Confirmed | None | https://pubmed.ncbi.nlm.nih.gov/38598226/ |
+| 21 | LDOM safety cohort of 1,404: hypertrichosis 15.1%, fluid retention 1.3%, 1.7% stopped (3.2) | Confirmed | None | https://pubmed.ncbi.nlm.nih.gov/33639244/ |
+| 22 | Loniten SmPC: pericardial effusion in about 3 to 5%; 2.5 mg tablet can be halved. FAERS signal ROR 13.30 at 2.5 mg or less (3.2) | Confirmed, detail added | Added the stronger signal at 1.25 mg or less (ROR 16.41) | https://www.medicines.org.uk/emc/product/4294/smpc and https://pubmed.ncbi.nlm.nih.gov/39327649/ |
+| 23 | Consensus: start 2.5 mg in men (1.25 to 5 mg); contraindications and precautions lists (3.2, 10.2) | **Unsupported first-hand (partly verified)** | Abstract confirms the scope; dose and lists confirmed only by secondary summaries because the full text would not load. Marked in the text | https://pubmed.ncbi.nlm.nih.gov/39565602/ |
+| 24 | MHRA 29 April 2024 DSU: patient card "introduced" in all packs; 426 and 281 Yellow Card reports (10.1, key fact 6) | **Corrected** | The April 2024 DSU announced the card ("will be introduced"); the figures cover 1 mg and 5 mg together | https://www.gov.uk/drug-safety-update/finasteride-reminder-of-the-risk-psychiatric-side-effects-and-of-sexual-side-effects-which-may-persist-after-discontinuation-of-treatment |
+| 25 | EMA PRAC 8 May 2025: suicidal ideation confirmed for finasteride 1 and 5 mg, frequency unknown; 325 cases (313/13/1); 270 and 82 million patient-years; median age 30; spray "does not fully exclude" systemic risk (2.1, 10.1) | Confirmed | None | https://www.ema.europa.eu/en/news/measures-minimise-risk-suicidal-thoughts-finasteride-dutasteride-medicines and the Article 31 assessment report PDF |
+| 26 | MHRA 11 May 2026 DSU: review regularly; dutasteride precautionary warning; 170 / 5 reports; 19 fatal (10.1) | Confirmed, detail added | Added "1994 to 31 May 2025" and "1 mg and 5 mg together" | https://www.gov.uk/drug-safety-update/finasteride-and-dutasteride-updated-safety-warnings-for-psychiatric-side-effects-and-sexual-dysfunction |
+| 27 | MHRA PAR 2024: online pharmacies, "others do not", "does not easily allow" monitoring (10.1) | Confirmed | None | https://assets.publishing.service.gov.uk/media/6630abd087bdbae4ab19adc9/Finasteride_PAR_Accessible.pdf |
+| 28 | GN14: special need of an individual patient; not for "cost, convenience or operational needs"; pharmacist independent prescribers may order; specials must not be advertised (10.4) | Confirmed, clarified | The advertising rule in GN14 is aimed at manufacturers, importers and wholesalers; added the general ban on advertising any POM to the public, which is what binds the service | GN14 PDF (link in 10.4) and https://www.gov.uk/guidance/advertise-your-medicines |
+
+Other figures spot-checked and confirmed: Hu 2015 combination (94.1% vs 80.5% vs 59%,
+https://pubmed.ncbi.nlm.nih.gov/26031764/); Chaudhry 2026 (67% vs 73%, hypertrichosis 30% vs 9%,
+https://pubmed.ncbi.nlm.nih.gov/43047224/); Chen 2025 blood pressure meta-analysis
+(https://pubmed.ncbi.nlm.nih.gov/39521141/); Zhou 2019 (+28.57 hairs, https://pubmed.ncbi.nlm.nih.gov/30863034/);
+Dhurat 2013 microneedling (91.4 vs 22.2, https://pubmed.ncbi.nlm.nih.gov/23960389/); minoxidil plus microneedling
++13 hairs/cm² (https://pubmed.ncbi.nlm.nih.gov/38058547/); VDPHL01 Study 304 figures, as reported from the company
+release (https://practicaldermatology.com/news/phase-3-trial-of-oral-minoxidil-formulation-meets-primary-endpoints-in-male-pattern-hair-loss/2488751/).
+On the emc, the only minoxidil products licensed for men are the 5% solution, 5% foam and generic 5% spray; the 2%
+product is licensed for women only, so key fact 1 stands.
+
+**Important gaps found (not covered, or covered too lightly, above)**
+
+1. **Advertising.** Prescription-only medicines cannot be advertised to the public (added to 10.4). This shapes the
+   whole website and social media plan, not only compounded products.
+2. **Consensus details for oral minoxidil** need a first-hand read of the full paper before the protocol is written
+   (row 23).
+3. **NICE CKS and the BNF** have still not been read (section 12). The UK primary-care view is missing.
+4. **Prostate cancer.** The finasteride SmPC discusses high-grade (Gleason 7 to 10) prostate cancer from the
+   5 mg prevention trial; the review does not cover it. Low relevance for men under 41 but relevant to older men
+   (https://www.medicines.org.uk/emc/product/7068/smpc, section 4.4).
+5. **Blood-donor deferral** for finasteride and dutasteride is still unverified (section 10.2).
+
+**Summary:** 28 claims logged. 22 confirmed (rows 2, 14, 19, 22 and 26 with context, detail or clarification
+added), 5 corrected (rows 5, 6, 13, 24 and 28), 1 unsupported first-hand and marked in the text as partly verified
+(row 23). The most important
+corrections: the sperm-count and DHT figures came from finasteride 5 mg, not 1 mg; the FDA alert does not mention
+children; the 2024 MHRA patient card was announced rather than already in packs; topical finasteride is confirmed
+unlicensed on the MHRA register; and the UK ban on advertising prescription-only medicines to the public was missing.

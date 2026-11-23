@@ -1,0 +1,20 @@
+STEP 22 click "Yes"
+URL: https://start.struthealth.com/flow/6aa3d578f415d1603a6e0c85
+TITLE: Minoxidil Prod
+
+--- VISIBLE TEXT ---
+94%
+
+Safety Alert
+
+Your safety is our top priority. If you are having thoughts of hurting yourself, please contact the 988 Suicide and Crisis Lifeline by calling or texting 988, or call 911. A physician will still review your questionnaire. You may go back and update your answer, or end the questionnaire.
+
+Go back and update my answer
+End questionnaire
+Continue
+
+--- CONTROLS ---
+  button (4): Go back  ·  Go back and update my answer [false]  ·  End questionnaire [false]  ·  Continue
+
+--- LINKS ---
+

@@ -1,0 +1,84 @@
+{
+ "run": "verify-w-pg-yes",
+ "flow": "women",
+ "changed": "women-pg: No → Yes (pregnant, breastfeeding or likely to conceive); the 'Pregnancy safety information' screen was ticked to carry on. Independent re-test of runs/s2-w-pg-yes",
+ "changedStep": "pg",
+ "baselinesPooled": [
+  "baseline-women",
+  "women-a",
+  "s2-base-women-1",
+  "verify-base-women"
+ ],
+ "stepOrder": [
+  "tp",
+  "yhg",
+  "pds",
+  "pdsc",
+  "ht",
+  "hs",
+  "hw",
+  "hht",
+  "htp",
+  "hdw",
+  "htaf",
+  "htc",
+  "ar",
+  "st",
+  "sc",
+  "scc",
+  "smt",
+  "pt",
+  "tt",
+  "dt",
+  "pg",
+  "pgc",
+  "mp",
+  "mdf",
+  "mcf",
+  "al",
+  "rhf",
+  "rha",
+  "di",
+  "rj",
+  "el",
+  "ct",
+  "yd"
+ ],
+ "nSteps": 33,
+ "end": "account wall (yd)",
+ "newSteps": [
+  "pgc"
+ ],
+ "missingSteps": [],
+ "candidateEffects": [],
+ "noise": [],
+ "bag": {
+  "items": [
+   [
+    "hairTreatment",
+    "Personalised treatment",
+    "4 week supply · 12ml",
+    "Prescription",
+    3499,
+    null
+   ]
+  ],
+  "shipping": 0,
+  "total": 3499,
+  "promo": "",
+  "shippingMsg": "Your order qualifies for complimentary standard shipping."
+ },
+ "bagItemsSameAsBaseline": true,
+ "posted": {
+  "pg": [
+   [
+    3046,
+    "true"
+   ]
+  ]
+ },
+ "nextAfterChange": {
+  "pg": "pgc"
+ },
+ "sweep": false
+}

@@ -1,0 +1,32 @@
+STEP 05 click "Over 1 year"
+URL: https://start.struthealth.com/flow/6aa3d578f415d1603a6e0c85
+TITLE: Minoxidil Prod
+
+--- VISIBLE TEXT ---
+19%
+
+What symptoms of hair loss have you noticed? Select all that apply.
+
+Thinning at the front hairline
+Thinning at the temples
+Thinning on the top of the head
+Receding hairline
+Patchy bald spots
+Diffuse thinning (all over)
+Increased shedding
+Continue
+1
+2.5 mg · 90 Day Supply
+$65.00
+2.5 mg · 90 Day Supply
+$65.00
+Dose: 90 Day Supply - 2.5 mg
+Supply: 90 Day Supply
+Total
+$65.00
+
+--- CONTROLS ---
+  button (10): Go back  ·  Thinning at the front hairline [false]  ·  Thinning at the temples [false]  ·  Thinning on the top of the head [false]  ·  Receding hairline [false]  ·  Patchy bald spots [false]  ·  Diffuse thinning (all over) [false]  ·  Increased shedding [false]  ·  Continue  ·  1 2.5 mg · 90 Day Supply $65.00
+
+--- LINKS ---
+

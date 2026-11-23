@@ -1,0 +1,21 @@
+STEP 04 wait 1500
+URL: https://hairloss.philipkingsley.co.uk/quiz/step/view/stepId/men_quiz_step1
+TITLE: 
+
+--- VISIBLE TEXT ---
+QUESTION #1
+WHICH IMAGE BEST REPRESENTS YOUR HAIR LOSS?
+SELECT ONE
+Early signs
+Temples
+Patchy
+Temples and Crown
+Temples and Crown with reduced density
+Extensive
+BACK
+
+--- CONTROLS ---
+  button (1): BACK
+
+--- LINKS ---
+  link (4): SIGN IN -> https://hairloss.philipkingsley.co.uk/customer/account/  ·  TERMS OF SALE -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-of-sale  ·  TERMS & CONDITIONS -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-conditions  ·  PRIVACY POLICY -> https://hairloss.philipkingsley.co.uk/hair-loss-privacy-policy

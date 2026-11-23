@@ -312,3 +312,31 @@ About 80 of 261 options are still `unknown` (never chosen in a run). They are li
 - `src/strings.py <chunk.js>`: prints readable text from a JS chunk.
 - `shots/`: 8 screenshots (first screen, men's hair-loss pictures, finasteride acknowledgement, pregnancy branch,
   blood-pressure follow-up, under-18 stop, shopping bag, account wall).
+
+## 12. Stage 3 (VERIFY) log, 23 Nov 2026
+
+Tools: `tools/s3_make.py` writes `runs/verify-*.json`; `tools/s3_run.sh <id> ...` replays them one at a time; compare with
+`python3 tools/s2_diff.py <id>`. An earlier stage 3 attempt was interrupted mid-run in `verify-w-pg-yes`; it was re-run.
+
+| run | result |
+|---|---|
+| verify-base-men | ends at the wall (`yd`), bag `hairTreatment` £34.99, no new or missing steps: matches |
+| verify-base-women | same: matches |
+| verify-m-age-17 | stop `utt`, no bag: confirms R (under-18 stop) |
+| verify-w-pg-yes | extra `pgc` only, same bag: confirms |
+| verify-m-mcm-heart | no change, same bag: confirms "heart condition does not stop or change the bag" |
+| verify-m-pp-decline | no change, same bag: confirms |
+| verify-m-al-minoxidil | no change, same bag: confirms |
+| verify-m-gender-nonbinary | `yna` missing, all else same: confirms the gender-identity rule with a second value |
+| verify-m-bp-elevated-reading | extra `bp`; 'Often elevated' + typed 180/110 posted, next step `al`, same bag: a very high reading does nothing visible |
+| verify-w-age-17 | women: stop `utt` (new single-change proof for the women's route) |
+| verify-w-mcf-bp | women: extra `bp`; 'Well-controlled' tested for the first time; same bag |
+| verify-w-htaf-receding | women 'receding hairline': no change, same bag (first test of this option) |
+| verify-w-htaf-dontknow | women "I don't know what kind": no change, same bag (first test) |
+| verify-w-entry-promo-drops | drops promo link: same questions, bag £14.99 (was £34.99), code HGSHOPDROPS, same offer text as the capsules link: confirms |
+| verify-m-group-medical | GROUP: five previous products, five scalp symptoms, scalp steroids, hypertrichosis + PoTS, six allergies: no new or missing step, same bag |
+
+Product check (live support articles re-fetched to `src/verify/` today): price £34.99 every four weeks (254006); all 6 capsule
+and 10 drops formulas and strengths match the leaflets 254164, 254578, 258568. Vitamins: the article 619143 gives raw
+ingredient names only (it also names vitamin B12); the per-dose amounts come only from the site code
+`src/nxt/the-vitamins-*.js`, which does not list B12. Label stays `code`.

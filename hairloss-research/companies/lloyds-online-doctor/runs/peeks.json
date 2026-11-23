@@ -1,0 +1,413 @@
+[
+ {
+  "from": "105935",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "108139",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108139",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Your scalp symptoms need checking",
+     "text": "The symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection . These conditions can also contribute to your hair loss. Please ask your GP or healthcare professional to assess your symptoms and advise you about treatment. We're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "I understand"
+     ],
+     "optionIds": [
+      "108139$100618"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-01-105935",
+  "text": "Exit consultation\nYour scalp symptoms need checking\n\nThe symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection. These conditions can also contribute to your hair loss.\n\nPlease ask your GP or healthcare professional to assess your symptoms and advise you about treatment.\n\nWe're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.\n\nI understand\nNext\nBack"
+ },
+ {
+  "from": "108139",
+  "option": "I understand",
+  "trail": [
+   "105935=Yes"
+  ],
+  "result": {
+   "sig": "108014",
+   "title": "HL - Previous HL treatment and Side effects",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108014",
+     "type": "SINGLE_CHOICE",
+     "title": "Hair loss medication",
+     "text": "Have you ever taken any medication for hair loss?",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "108014$1",
+      "108014$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-02-108139"
+ },
+ {
+  "from": "105935",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "108139",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108139",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Your scalp symptoms need checking",
+     "text": "The symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection . These conditions can also contribute to your hair loss. Please ask your GP or healthcare professional to assess your symptoms and advise you about treatment. We're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "I understand"
+     ],
+     "optionIds": [
+      "108139$100618"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-03-105935",
+  "text": "Exit consultation\nYour scalp symptoms need checking\n\nThe symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection. These conditions can also contribute to your hair loss.\n\nPlease ask your GP or healthcare professional to assess your symptoms and advise you about treatment.\n\nWe're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.\n\nI understand\nNext\nBack"
+ },
+ {
+  "from": "105935",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "108139",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108139",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Your scalp symptoms need checking",
+     "text": "The symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection . These conditions can also contribute to your hair loss. Please ask your GP or healthcare professional to assess your symptoms and advise you about treatment. We're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "I understand"
+     ],
+     "optionIds": [
+      "108139$100618"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-04-105935",
+  "text": "Exit consultation\nYour scalp symptoms need checking\n\nThe symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection. These conditions can also contribute to your hair loss.\n\nPlease ask your GP or healthcare professional to assess your symptoms and advise you about treatment.\n\nWe're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.\n\nI understand\nNext\nBack"
+ },
+ {
+  "from": "105935",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "108139",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108139",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Your scalp symptoms need checking",
+     "text": "The symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection . These conditions can also contribute to your hair loss. Please ask your GP or healthcare professional to assess your symptoms and advise you about treatment. We're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "I understand"
+     ],
+     "optionIds": [
+      "108139$100618"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-05-105935",
+  "text": "Exit consultation\nYour scalp symptoms need checking\n\nThe symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection. These conditions can also contribute to your hair loss.\n\nPlease ask your GP or healthcare professional to assess your symptoms and advise you about treatment.\n\nWe're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.\n\nI understand\nNext\nBack"
+ },
+ {
+  "from": "105935",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "108139",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108139",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Your scalp symptoms need checking",
+     "text": "The symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection . These conditions can also contribute to your hair loss. Please ask your GP or healthcare professional to assess your symptoms and advise you about treatment. We're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "I understand"
+     ],
+     "optionIds": [
+      "108139$100618"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-06-105935",
+  "text": "Exit consultation\nYour scalp symptoms need checking\n\nThe symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection. These conditions can also contribute to your hair loss.\n\nPlease ask your GP or healthcare professional to assess your symptoms and advise you about treatment.\n\nWe're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.\n\nI understand\nNext\nBack"
+ },
+ {
+  "from": "105935",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "108139",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108139",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Your scalp symptoms need checking",
+     "text": "The symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection . These conditions can also contribute to your hair loss. Please ask your GP or healthcare professional to assess your symptoms and advise you about treatment. We're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "I understand"
+     ],
+     "optionIds": [
+      "108139$100618"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-07-105935",
+  "text": "Exit consultation\nYour scalp symptoms need checking\n\nThe symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection. These conditions can also contribute to your hair loss.\n\nPlease ask your GP or healthcare professional to assess your symptoms and advise you about treatment.\n\nWe're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.\n\nI understand\nNext\nBack"
+ },
+ {
+  "from": "105935",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "108139",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108139",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Your scalp symptoms need checking",
+     "text": "The symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection . These conditions can also contribute to your hair loss. Please ask your GP or healthcare professional to assess your symptoms and advise you about treatment. We're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "I understand"
+     ],
+     "optionIds": [
+      "108139$100618"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-08-105935",
+  "text": "Exit consultation\nYour scalp symptoms need checking\n\nThe symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection. These conditions can also contribute to your hair loss.\n\nPlease ask your GP or healthcare professional to assess your symptoms and advise you about treatment.\n\nWe're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.\n\nI understand\nNext\nBack"
+ },
+ {
+  "from": "105935",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "108139",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108139",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Your scalp symptoms need checking",
+     "text": "The symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection . These conditions can also contribute to your hair loss. Please ask your GP or healthcare professional to assess your symptoms and advise you about treatment. We're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "I understand"
+     ],
+     "optionIds": [
+      "108139$100618"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-09-105935",
+  "text": "Exit consultation\nYour scalp symptoms need checking\n\nThe symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection. These conditions can also contribute to your hair loss.\n\nPlease ask your GP or healthcare professional to assess your symptoms and advise you about treatment.\n\nWe're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.\n\nI understand\nNext\nBack"
+ },
+ {
+  "from": "105935",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "108139",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108139",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Your scalp symptoms need checking",
+     "text": "The symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection . These conditions can also contribute to your hair loss. Please ask your GP or healthcare professional to assess your symptoms and advise you about treatment. We're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "I understand"
+     ],
+     "optionIds": [
+      "108139$100618"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-10-105935",
+  "text": "Exit consultation\nYour scalp symptoms need checking\n\nThe symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection. These conditions can also contribute to your hair loss.\n\nPlease ask your GP or healthcare professional to assess your symptoms and advise you about treatment.\n\nWe're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.\n\nI understand\nNext\nBack"
+ },
+ {
+  "from": "105935",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "108139",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108139",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Your scalp symptoms need checking",
+     "text": "The symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection . These conditions can also contribute to your hair loss. Please ask your GP or healthcare professional to assess your symptoms and advise you about treatment. We're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "I understand"
+     ],
+     "optionIds": [
+      "108139$100618"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-11-105935",
+  "text": "Exit consultation\nYour scalp symptoms need checking\n\nThe symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection. These conditions can also contribute to your hair loss.\n\nPlease ask your GP or healthcare professional to assess your symptoms and advise you about treatment.\n\nWe're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.\n\nI understand\nNext\nBack"
+ },
+ {
+  "from": "105935",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "108139",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108139",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Your scalp symptoms need checking",
+     "text": "The symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection . These conditions can also contribute to your hair loss. Please ask your GP or healthcare professional to assess your symptoms and advise you about treatment. We're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "I understand"
+     ],
+     "optionIds": [
+      "108139$100618"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-12-105935",
+  "text": "Exit consultation\nYour scalp symptoms need checking\n\nThe symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection. These conditions can also contribute to your hair loss.\n\nPlease ask your GP or healthcare professional to assess your symptoms and advise you about treatment.\n\nWe're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.\n\nI understand\nNext\nBack"
+ }
+]

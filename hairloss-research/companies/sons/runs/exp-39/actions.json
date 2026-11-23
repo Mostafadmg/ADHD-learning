@@ -1,0 +1,64 @@
+{
+ "_about": "Sons UK, stage 2 experiment exp-39 (beard flow). Changed: beard-q4 pattern: Slow, patchy or thin growth areas → New/sudden well-defined areas of beard loss. Compared with exp-38. No contact details are typed and no form is sent.",
+ "start": "https://shop.sons.co.uk/beard-consultation/",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "click",
+   "text": "No",
+   "_q": "5140 existing customer"
+  },
+  {
+   "do": "click",
+   "text": "Male",
+   "_q": "5141 gender at birth"
+  },
+  {
+   "do": "click",
+   "text": "I accept",
+   "_q": "5142 declaration"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "_q": "5142 continue"
+  },
+  {
+   "do": "click",
+   "text": "New/sudden well-defined areas of beard loss",
+   "_q": "5172 beard pattern"
+  },
+  {
+   "do": "click",
+   "text": "No",
+   "_q": "5173 hair loss elsewhere on the body"
+  },
+  {
+   "do": "click",
+   "text": "No",
+   "_q": "5175 minoxidil before"
+  },
+  {
+   "do": "click",
+   "text": "No",
+   "_q": "5178 allergic to minoxidil or tretinoin"
+  },
+  {
+   "do": "click",
+   "text": "None of these",
+   "_q": "5179 face conditions"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "_q": "5179 continue"
+  },
+  {
+   "do": "wait",
+   "ms": 1500
+  }
+ ]
+}

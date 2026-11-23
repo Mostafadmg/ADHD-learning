@@ -1,0 +1,53 @@
+{
+ "start": "https://hairloss.philipkingsley.co.uk/welcome",
+ "steps": [
+  {
+   "do": "click",
+   "selector": "[data-quiz-step=women_quiz_step0]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "text": "GET STARTED"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q1\"][data-quiz-selection=\"No\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q2\"][data-quiz-selection=\"No\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q3a\"][data-quiz-selection=\"Seeing more of my scalp or wider parting\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q3c\"][data-quiz-selection=\"People close to me can notice it\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  }
+ ]
+}

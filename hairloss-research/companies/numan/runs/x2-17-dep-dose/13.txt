@@ -1,0 +1,17 @@
+STEP 13 click "label:text-is(\"GP\")"
+URL: https://www.numan.com/subscribe/hair-loss/77549193-3de3-4353-b5a9-000414d38035/sq/mental_health_medications
+TITLE: What medications do you take for your mental health condition? | Numan
+
+--- VISIBLE TEXT ---
+72%
+What medications do you take for your mental health condition?
+​
+Back
+Next
+
+--- CONTROLS ---
+  textarea (1): mental_health_medications
+  button (2): Back  ·  Next
+
+--- LINKS ---
+  link (1): Visit the main page -> /

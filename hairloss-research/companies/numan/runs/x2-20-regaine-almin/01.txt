@@ -1,0 +1,23 @@
+STEP 01 wait 4000
+URL: https://www.numan.com/subscribe/hair-loss/regaine
+TITLE: Numan | Hair loss
+
+--- VISIBLE TEXT ---
+The really important bit
+By clicking “Next”, you are confirming that you:
+Are completing this consultation for yourself and to the best of your knowledge.
+Were assigned male at birth.
+Will disclose any serious illnesses or operations you have had or any prescription medication you currently take.
+Will only use one method of hair loss treatment at a time and will not combine more than one different medication for the condition.
+Are aware that finasteride is associated with depression, suicidal thoughts, and sexual dysfunction including decreased sex drive, erectile dysfunction, and ejaculation problems. These side effects can occur independently of each other and may persist after stopping treatment. A clinician will review your suitability before any prescription is issued.
+Will answer the questions in the next section about your physical and mental health history honestly, and are aware that your responses are reviewed by a prescribing clinician and kept confidential.
+Are aware that you should not take finasteride if you’re trying for a baby.
+Are aware that you may be prescribed an unlicensed treatment.
+Are accepting our Terms & Conditions and Terms of Sale.
+Next
+
+--- CONTROLS ---
+  button (1): Next
+
+--- LINKS ---
+  link (4): Visit the main page -> /  ·  unlicensed -> https://help.numan.com/en/articles/9922010-what-is-an-unlicensed-or-off-label-medication  ·  Terms & Conditions -> /legal/terms-and-conditions  ·  Terms of Sale -> /legal/terms-of-sale

@@ -1,0 +1,25 @@
+STEP 58 click ".radio-answer:has(label:text-is(\"I understand that this medication is not suitable for me and will stop this application.\")), .checkbox-answer:has(label:text-is(\"I understand that this medication is not suitable for me and will stop this application.\"))"
+URL: https://onlinedoctor-clinic.boots.com/questions/10
+TITLE: Consultation | Boots Online Doctor
+
+--- VISIBLE TEXT ---
+Call us: Mon-Fri 8:30AM-6PM, Sat-Sun 9:30AM-4:30PM
+ 0203 3183773
+Boots Advantage Card Shop Boots.com
+Services
+Meet the team
+FAQ
+LOG IN
+66%
+If you’re experiencing thoughts of self harm or suicide, help is available. Please call NHS 111, your local NHS Mental Health Crisis service, or your GP. You can also call the Samaritans on 116 123 OR text Shout on 85258.
+I understand that this medication is not suitable for me and will stop this application.
+NEXT
+Powered by:
+©2026 Boots Digital Health Limited
+
+--- CONTROLS ---
+  button (4): Cookie Preferences  ·  LOG IN  ·  I understand that this medication is not suitable for me and will stop this application.  ·  NEXT
+  checkbox (1): I understand that this medication is not suitable for me and will stop this application. [checked]
+
+--- LINKS ---
+  link (6): 0203 3183773 -> tel:0203 3183773  ·  Boots Advantage Card -> https://www.boots.com/advantage-card  ·  Shop Boots.com -> https://boots.com  ·  Services ->   ·  Meet the team -> https://onlinedoctor.boots.com/meet-the-team  ·  FAQ -> 

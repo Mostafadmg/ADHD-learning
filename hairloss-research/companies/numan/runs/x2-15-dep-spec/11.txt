@@ -1,0 +1,17 @@
+STEP 11 click "Next"
+URL: https://www.numan.com/subscribe/hair-loss/a3ac2e80-a423-452f-ba1f-5b3537d6c89e/sq/mood_alterations
+TITLE: Mood alterations including depressed mood, depression and, less frequently, suicidal ideation have been reported in patients treated with finasteride. | Numan
+
+--- VISIBLE TEXT ---
+65%
+Mood alterations including depressed mood, depression and, less frequently, suicidal ideation have been reported in patients treated with finasteride.
+I accept the risk that finasteride can lead to detrimental effects on my mood and would like to be considered for finasteride and/or minoxidil.
+I would like to proceed with a minoxidil only treatment plan.
+Back
+
+--- CONTROLS ---
+  radio (2): I accept the risk that finasteride can lead to detrimental effects on my mood and would like to be considered for finasteride and/or minoxid  ·  I would like to proceed with a minoxidil only treatment plan.
+  button (1): Back
+
+--- LINKS ---
+  link (1): Visit the main page -> /

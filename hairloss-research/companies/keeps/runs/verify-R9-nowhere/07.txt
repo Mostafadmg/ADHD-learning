@@ -1,0 +1,18 @@
+STEP 07 click "CONTINUE"
+URL: https://www.keeps.com/quiz?step=5
+TITLE: Take the Hair Loss Quiz | Keeps
+
+--- VISIBLE TEXT ---
+Do you experience dandruff symptoms on your scalp? Flaking, itching, redness, or burning.
+
+Yes
+
+No
+
+Take the Hair Loss Quiz | Keeps
+
+--- CONTROLS ---
+  button (2): Yes  ·  No
+
+--- LINKS ---
+

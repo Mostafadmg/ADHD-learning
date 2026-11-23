@@ -1,0 +1,78 @@
+{
+ "_about": "Stage 3: beard baseline with minoxidil before = Yes and side effects = Yes (against exp-38).",
+ "start": "https://shop.sons.co.uk/beard-consultation/",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "click",
+   "text": "No",
+   "_q": "5140 existing customer"
+  },
+  {
+   "do": "click",
+   "text": "Male",
+   "_q": "5141 gender at birth"
+  },
+  {
+   "do": "click",
+   "text": "I accept",
+   "_q": "5142 declaration"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "_q": "5142 continue"
+  },
+  {
+   "do": "click",
+   "text": "Slow, patchy or thin growth areas",
+   "_q": "5172 beard pattern"
+  },
+  {
+   "do": "click",
+   "text": "No",
+   "_q": "5173 hair loss elsewhere on the body"
+  },
+  {
+   "do": "click",
+   "text": "Yes",
+   "_q": "5175 minoxidil before: Yes"
+  },
+  {
+   "do": "click",
+   "text": "Yes",
+   "_q": "5176 side effects: Yes"
+  },
+  {
+   "do": "fill",
+   "selector": "textarea",
+   "value": "test"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "No",
+   "_q": "5178 allergic to minoxidil or tretinoin"
+  },
+  {
+   "do": "click",
+   "text": "None of these",
+   "_q": "5179"
+  },
+  {
+   "do": "click",
+   "text": "None of these",
+   "_q": "5179"
+  },
+  {
+   "do": "wait",
+   "ms": 1500
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+{
+ "_note": "Q741 (rapid / total / illness or medicine-caused loss) = Yes",
+ "start": "https://www.doctorfox.co.uk/hair-loss-treatments/#medical_questions_tab",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 1500
+  },
+  {
+   "do": "click",
+   "selector": "label:has(input[name=\"answers[739]\"][value=\"yes\"])"
+  },
+  {
+   "do": "click",
+   "selector": "label:has(input[name=\"answers[740]\"][value=\"no\"])"
+  },
+  {
+   "do": "click",
+   "selector": "label:has(input[name=\"answers[741]\"][value=\"yes\"])"
+  },
+  {
+   "do": "click",
+   "selector": "label:has(input[name=\"answers[742]\"][value=\"no\"])"
+  },
+  {
+   "do": "click",
+   "selector": "label:has(input[name=\"answers[743]\"][value=\"no\"])"
+  },
+  {
+   "do": "click",
+   "selector": "label:has(input[name=\"answers[744]\"][value=\"yes\"])"
+  },
+  {
+   "do": "click",
+   "selector": "label:has(input[name=\"answers[745]\"][value=\"no\"])"
+  },
+  {
+   "do": "click",
+   "selector": "label:has(input[name=\"answers[746]\"][value=\"no\"])"
+  },
+  {
+   "do": "click",
+   "selector": "label:has(input[name=\"answers[747]\"][value=\"no\"])"
+  },
+  {
+   "do": "click",
+   "selector": "label:has(input[name=\"answers[748]\"][value=\"yes\"])"
+  },
+  {
+   "do": "click",
+   "selector": "label:has(input[name=\"answers[749]\"][value=\"yes\"])"
+  },
+  {
+   "do": "click",
+   "selector": "label:has(input[name=\"answers[750]\"][value=\"yes\"])"
+  },
+  {
+   "do": "click",
+   "selector": "label:has(input[name=\"answers[751]\"][value=\"yes\"])"
+  },
+  {
+   "do": "click",
+   "selector": "label:has(input[name=\"answers[752]\"][value=\"yes\"])"
+  },
+  {
+   "do": "click",
+   "selector": "label:has(input[name=\"answers[805]\"][value=\"yes\"])"
+  },
+  {
+   "do": "click",
+   "selector": "label:has(input[name=\"answers[753]\"][value=\"no\"])"
+  },
+  {
+   "do": "click",
+   "selector": "label:has(input[name=\"answers[754]\"][value=\"yes\"])"
+  },
+  {
+   "do": "click",
+   "selector": "#submit_btn"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  }
+ ]
+}

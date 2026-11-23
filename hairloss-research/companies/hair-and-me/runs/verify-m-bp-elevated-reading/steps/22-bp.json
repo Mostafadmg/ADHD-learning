@@ -1,0 +1,63 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 3,
+   "sectionTitle": "MEDICAL HISTORY"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 4420,
+    "inputConfig": {
+     "options": [
+      {
+       "label": "Well-controlled",
+       "value": "Well-controlled"
+      },
+      {
+       "label": "Often elevated",
+       "value": "Often elevated"
+      },
+      {
+       "label": "Often low",
+       "value": "Often low"
+      }
+     ]
+    },
+    "inputType": "single_select_button",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 4421,
+    "inputConfig": {
+     "isOptional": true,
+     "placeholder": "e.g. 120/80"
+    },
+    "inputType": "text",
+    "is_custom": false,
+    "label": "Please enter your last blood pressure reading if available (mmHg)",
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "How would you describe your blood pressure over the past 12 months?",
+  "type": "question"
+ }
+}

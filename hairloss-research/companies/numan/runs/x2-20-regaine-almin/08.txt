@@ -1,0 +1,17 @@
+STEP 08 fill "textarea, input[type=text]" = "Itchy skin rash"
+URL: https://www.numan.com/subscribe/hair-loss/13000e3f-5f5f-4d12-a2f1-a3e4bdf9b0f2/sq/tell_us_which_reactions_from_this_medicine
+TITLE: Please let us know how you react when you take this medicine | Numan
+
+--- VISIBLE TEXT ---
+20%
+Please let us know how you react when you take this medicine
+​
+Back
+Next
+
+--- CONTROLS ---
+  textarea (1): tell_us_which_reactions_from_this_medicine
+  button (2): Back  ·  Next
+
+--- LINKS ---
+  link (1): Visit the main page -> /

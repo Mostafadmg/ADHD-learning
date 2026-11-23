@@ -1,0 +1,36 @@
+STEP 28 click "100-200 pounds"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Have you ever been diagnosed with any of the following health conditions?
+None
+Heart condition
+(e.g., high/low blood pressure, heart failure, abnormal heart rate/EKG, pericarditis)
+Vascular disease
+(e.g., stroke, blood clots, uncontrolled lower leg swelling)
+Cancer
+(e.g. prostrate, breast cancer)
+Sexual Dysfunction
+(e.g. erectile dysfunction, low libido)
+Kidney disease
+Liver disease
+(e.g. cirrhosis)
+Eye disease
+(e.g. glaucoma, uveitis)
+Endocrine disease
+(e.g. thyroid disease, pheochromocytoma)
+Mental health conditions
+(e.g. depression, mood disorders)
+Other medical conditions
+NEXT
+Why we ask
+Certain health conditions may influence which treatment options are the best fit for you. This helps our dermatologists personalize recommendations with safety in mind.
+Your information is secure and always kept private.
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

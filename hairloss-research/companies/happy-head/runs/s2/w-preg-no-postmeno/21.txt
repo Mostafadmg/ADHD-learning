@@ -1,0 +1,18 @@
+STEP 21 click "No"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Are you taking any medications?
+Yes
+No
+Why we ask
+Certain medications can interact with hair loss treatments or influence which options may be the best fit for you.
+Your information is secure and always kept private.
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

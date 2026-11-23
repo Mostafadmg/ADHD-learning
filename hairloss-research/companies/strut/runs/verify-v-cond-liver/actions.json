@@ -1,0 +1,108 @@
+{
+ "start": "https://start.struthealth.com/f/6aa3d578f415d1603a6e0c85",
+ "locale": "en-US",
+ "timezone": "America/Chicago",
+ "note": "Stage 3 gap test: medical conditions: None -> Liver problems",
+ "steps": [
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "31-45"
+  },
+  {
+   "do": "click",
+   "text": "Add to cart"
+  },
+  {
+   "do": "wait",
+   "ms": 3000
+  },
+  {
+   "do": "click",
+   "text": "Over 1 year"
+  },
+  {
+   "do": "click",
+   "text": "Receding hairline"
+  },
+  {
+   "do": "click",
+   "text": "Thinning on the top of the head"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "None of the above"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "None of the above"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "None of the above"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "Liver problems"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "wait",
+   "ms": 3000
+  }
+ ]
+}

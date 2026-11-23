@@ -1,0 +1,22 @@
+STEP 04 click "label:text-is(\"Temples and Crown\")"
+URL: https://www.numan.com/subscribe/hair-loss/a6cdd95a-792d-423b-9423-e2e8eff39402/sq/which_image_best_matches_your_hair_loss
+TITLE: What kind of hair loss do you have? | Numan
+
+--- VISIBLE TEXT ---
+6%
+What kind of hair loss do you have?
+Temples
+Temples and Crown
+Moderate
+Extensive
+Patchy
+Complete
+Other hair loss pattern
+Back
+
+--- CONTROLS ---
+  radio (7): Temples  ·  Temples and Crown [checked]  ·  Moderate  ·  Extensive  ·  Patchy  ·  Complete  ·  Other hair loss pattern
+  button (1): Back
+
+--- LINKS ---
+  link (1): Visit the main page -> /

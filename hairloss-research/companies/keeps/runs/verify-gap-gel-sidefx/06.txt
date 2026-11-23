@@ -1,0 +1,22 @@
+STEP 06 click "Yes"
+URL: https://www.keeps.com/hair-assessment-quiz-gel?step=8
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+How did it go?
+
+Saw some results
+
+Didn't see results
+
+Stopped too early
+
+Had side effects
+
+Keeps | Hair Loss Treatment for Men
+
+--- CONTROLS ---
+  button (5): Go back  ·  Saw some results  ·  Didn't see results  ·  Stopped too early  ·  Had side effects
+
+--- LINKS ---
+

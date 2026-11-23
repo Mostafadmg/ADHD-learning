@@ -1,0 +1,61 @@
+{
+ "step": {
+  "title": "HL",
+  "questions": [
+   {
+    "questionId": "102639",
+    "explanationAvailable": false,
+    "displayText": " Do any of these apply to your liver condition?",
+    "type": "MULTIPLE_CHOICE",
+    "answerRequired": false,
+    "smoothTransition": false,
+    "answerChoices": [
+     {
+      "answerId": "102639$101741",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "102639",
+      "displayText": "I have alcohol related liver disease, cirrhosis or liver cancer",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "102639$101743",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "102639",
+      "displayText": "I see a hospital specialist for my condition",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "102639$101742",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "102639",
+      "displayText": "I have been advised to avoid certain medications",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "102639$101744",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "102639",
+      "displayText": "I am prescribed treatment or have regular monitoring  (<b>not</b> Statins or routine yearly blood tests for fatty liver disease) ",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false
+     }
+    ],
+    "titleOverride": "Medical history"
+   }
+  ],
+  "questionAnswerErrors": {},
+  "summaryRequiredBeforeStep": false,
+  "registrationRequiredBeforeStep": false,
+  "fastSummaryRequiredBeforeStep": false
+ },
+ "explanation": "/api/questionnaire/traversals/9904891/explanations",
+ "previous": "/api/questionnaire/traversals/9904891/steps/previous",
+ "current": "/api/questionnaire/traversals/9904891/steps/current"
+}

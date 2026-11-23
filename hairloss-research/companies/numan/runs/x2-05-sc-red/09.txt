@@ -1,0 +1,21 @@
+STEP 09 click "Next"
+URL: https://www.numan.com/subscribe/hair-loss/5af99948-be6c-44e8-a95c-3ce4b7fa3312/sq/clarify_red_rinds_or_rashes
+TITLE: You mentioned you have red rinds or rashes on your scalp. Have they been seen to or treated by a doctor? If so, what treatments have you received? Please give us a detailed description of your scalp condition below (including how long you’ve had it, its appearance and any other symptoms it is causing). | Numan
+
+--- VISIBLE TEXT ---
+34%
+You mentioned you have red rinds or rashes on your scalp.
+
+Have they been seen to or treated by a doctor?
+If so, what treatments have you received?
+Please give us a detailed description of your scalp condition below (including how long you’ve had it, its appearance and any other symptoms it is causing).
+​
+Back
+Next
+
+--- CONTROLS ---
+  textarea (1): clarify_red_rinds_or_rashes
+  button (2): Back  ·  Next
+
+--- LINKS ---
+  link (1): Visit the main page -> /

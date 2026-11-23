@@ -1,0 +1,16 @@
+STEP 13 click "Continue"
+URL: https://start.treated.com/GBR/en/#/questionnaire
+TITLE: Treated UK - Choose Better - Medical Experts & Treatments Online
+
+--- VISIBLE TEXT ---
+Question 5 of 11
+
+Do you have any scars near where your hair is falling out?
+Yes
+No
+
+--- CONTROLS ---
+  radio (2): Yes  ·  No
+
+--- LINKS ---
+

@@ -1,0 +1,31 @@
+STEP 00
+URL: https://www.hims.com/g/i/hl/goals
+SERVER NODE: goals (nodeModularScreen), step value 2
+
+--- VISIBLE TEXT ---
+What are your hair goals?
+Fix my receding hairline
+Regrow a full head of hair
+Get ahead of hair loss
+The quiz is not a medical assessment and your responses will not be shared with a medical provider. Hims uses your responses to personalize your experience and for other uses as described in our Privacy Policy.
+
+Continue
+Already have an account? Sign In
+
+--- CHOICES ---
+[radio] Fix my receding hairline
+[radio] Regrow a full head of hair
+[radio] Get ahead of hair loss
+
+--- BUTTONS ---
+Continue
+
+--- FIELDS ---
+
+
+--- LINKS ---
+Privacy Policy. -> https://www.hims.com/privacy-policy
+Already have an account? Sign In -> /c/hl?skipToSignIn=true&goFlow=true&flowId=hl&sessionId=193c810c-b74f-4f1c-8b1d-97fa18c4eb57
+
+--- OUTPUT SCHEMA (server) ---
+{"type":"object","required":["responses"],"properties":{"responses":{"type":"object","required":["i-hl-hims-hair-goals"],"properties":{"i-hl-hims-hair-goals":{"type":"object","required":["i-hl-hims-goals"],"properties":{"i-hl-hims-goals":{"enum":["i-hl-hims-goals-receding","i-hl-hims-goals-regrow","i-hl-hims-goals-get-ahead"],"type":"string"}},"additionalProperties":false}},"additionalProperties":false}}}

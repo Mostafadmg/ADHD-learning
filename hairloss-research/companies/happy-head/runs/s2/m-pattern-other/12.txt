@@ -1,0 +1,15 @@
+STEP 12 fill "textarea:visible, input[type=text]:visible" = "Thinning at the temples"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Please provide more details about your hair loss
+NEXT
+Your Preferred Method
+
+--- CONTROLS ---
+  textarea (1): Please describe where you are experiencing hair loss.
+
+--- LINKS ---
+

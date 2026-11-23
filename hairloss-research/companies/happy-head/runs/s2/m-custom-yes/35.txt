@@ -1,0 +1,15 @@
+STEP 35 click "NEXT"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Is there anything else you would like to share with your doctor about hair loss?
+Feel free to ask about any medical problems not already discussed or include anything else you would like the doctor to know.
+NEXT
+
+--- CONTROLS ---
+  textarea (1): If nothing else, please write “none” to confirm.
+
+--- LINKS ---
+

@@ -1,0 +1,30 @@
+STEP 03
+URL: https://www.hims.com/g/i/hl/start
+SERVER NODE: start (nodeModularScreen), step value 9
+
+--- VISIBLE TEXT ---
+When did you start noticing changes to your hair?
+Over a year ago
+In the past year
+In the past few months
+Not sure
+Continue
+Already have an account? Sign In
+
+--- CHOICES ---
+[radio] Over a year ago
+[radio] In the past year
+[radio] In the past few months
+[radio] Not sure
+
+--- BUTTONS ---
+Continue
+
+--- FIELDS ---
+
+
+--- LINKS ---
+Already have an account? Sign In -> /c/hl?skipToSignIn=true&goFlow=true&flowId=hl&sessionId=47d418e6-c4b7-41c3-a3b4-888ead94edaa
+
+--- OUTPUT SCHEMA (server) ---
+{"type":"object","required":["responses"],"properties":{"responses":{"type":"object","required":["i-hl-hims-hair-start"],"properties":{"i-hl-hims-hair-start":{"type":"object","required":["i-hl-hims-hair-start"],"properties":{"i-hl-hims-hair-start":{"enum":["i-hl-hims-hair-start-over-a-year","i-hl-hims-hair-start-past-year","i-hl-hims-hair-start-past-months","i-hl-hims-hair-start-not-sure"],"type":"string"}},"additionalProperties":false}},"additionalProperties":false}}}

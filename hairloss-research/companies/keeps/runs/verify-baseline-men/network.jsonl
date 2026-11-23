@@ -77,3 +77,7 @@
 {"url":"https://smp-paymentservices.apple.com/paymentservices/v3/checkStatus/merchant/139580118590e27dab71ff58c0ad4b4c981c44ca186525d0668d3756f52a38fd","method":"POST","status":200,"size":19}
 {"url":"https://m.stripe.com/6","method":"POST","status":200,"size":156}
 {"url":"https://m.stripe.com/6","method":"POST","status":200,"size":156}
+{"url":"https://api.hcaptcha.com/checksiteconfig?v=7b6de2b378178a05e8aa25e42494ec5883aa37f6&host=b.stripecdn.com&sitekey=24ed0064-62cf-4d42-9960-5dd1a41d4e29&sc=1&swa=1&spst=1","method":"POST","status":200,"size":937,"file":"net/13-api_hcaptcha_com_checksiteconfig_v_7b6de2b378178a05e8aa25e42494ec5883aa37f6_host.json"}
+{"url":"https://api.hcaptcha.com/checksiteconfig?v=7b6de2b378178a05e8aa25e42494ec5883aa37f6&host=b.stripecdn.com&sitekey=463b917e-e264-403f-ad34-34af0ee10294&sc=1&swa=1&spst=1","method":"POST","status":200,"size":953,"file":"net/14-api_hcaptcha_com_checksiteconfig_v_7b6de2b378178a05e8aa25e42494ec5883aa37f6_host.json"}
+{"url":"https://m.stripe.com/6","method":"POST","status":200,"size":156}
+{"url":"https://3re29w18fe.execute-api.us-west-2.amazonaws.com/prod/track","method":"POST","status":200,"size":133}

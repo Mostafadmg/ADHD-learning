@@ -1,0 +1,17 @@
+STEP 18 click "Next"
+URL: https://www.numan.com/subscribe/hair-loss/77549193-3de3-4353-b5a9-000414d38035/sq/mental_health_medications_changed_list
+TITLE: Please tell us which medications have been changed, your previous dose and your current dose. | Numan
+
+--- VISIBLE TEXT ---
+79%
+Please tell us which medications have been changed, your previous dose and your current dose.
+​
+Back
+Next
+
+--- CONTROLS ---
+  textarea (1): mental_health_medications_changed_list
+  button (2): Back  ·  Next
+
+--- LINKS ---
+  link (1): Visit the main page -> /

@@ -1,0 +1,9 @@
+
+===== FINAL (after 32 steps) =====
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TEXT: BACK ⏎ What is your date of birth? ⏎ We customize your hair growth formula based on your age to ensure the most effective and safe treatment. For example, certain ingredients are specifically tailored for customers over 50. ⏎ Enter your date of birth ⏎ You must be over 18
+CONTROLS:
+  input:text (3): Year = "2010"  ·  Month = "Jun"  ·  Day = "15"
+  links: 
+
+[walk] 32 step(s), exit 0, 36 JSON bodies saved -> runs/s2/m-dob-under18

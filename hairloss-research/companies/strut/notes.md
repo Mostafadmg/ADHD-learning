@@ -141,3 +141,15 @@ re-fetch them to check the version IDs have not changed, and look for public sou
 - exp-05 self-harm Yes -> "Safety Alert" screen (988 / 911); "Go back and update my answer" returns to the question. R5 confirmed.
 - exp-06 surgeries Yes, exp-07 medicines Yes, exp-08 anything else Yes -> one extra free-text screen each; cart and all other
   screens unchanged; ends at "Create account". R6 confirmed.
+
+## Stage 2, second session (23 Nov 2026)
+- Ran the eight prepared but unrun experiments, one at a time with `scripts/run_exp.sh`: exp-15 sexual dysfunction Yes,
+  exp-17 lost interest Yes, exp-18 noticed 1 month or less, exp-19 tried oral minoxidil, exp-20 heart attack, exp-21 kidney
+  disease, exp-22 scalp itching/pain/lesions, exp-23 diffuse thinning only. All eight: no change (18 screens, same wording,
+  cart 2.5 mg $65, ends at "Create account"). New rule R24 (observed); R14 now covers only the options still not replayed.
+- Re-loaded the four walled baselines (runs/recheck-finasteride-oral, -topical, -dutasteride, -women): walls unchanged.
+- exp-25 ("End questionnaire" broken redirect) is a real finding, not a failed run.
+- One web search: Trustpilot/Reviews.io reviews and affiliate guides only; nothing on hidden questionnaires or declines.
+- Totals: 27 oral minoxidil replays (1 baseline, 25 one-change, 1 combined), 24 rules, 31 experiment entries.
+  Backup of the build script before this session: scripts/build_company.stage2a.bak.py. Validator (--stage rules) passes.
+- Not done: the remaining single options listed in limitations (code shows no branch on them).

@@ -1,0 +1,20 @@
+STEP 14 wait 1500
+URL: https://hairloss.philipkingsley.co.uk/quiz/step/view/stepId/men_quiz_step6
+TITLE: 
+
+--- VISIBLE TEXT ---
+QUESTION #6
+HOW OLD ARE YOU?
+SELECT ONE
+18 TO 29
+30 TO 39
+40 TO 49
+50 TO 64
+OVER 65
+BACK
+
+--- CONTROLS ---
+  button (1): BACK
+
+--- LINKS ---
+  link (4): SIGN IN -> https://hairloss.philipkingsley.co.uk/customer/account/  ·  TERMS OF SALE -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-of-sale  ·  TERMS & CONDITIONS -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-conditions  ·  PRIVACY POLICY -> https://hairloss.philipkingsley.co.uk/hair-loss-privacy-policy

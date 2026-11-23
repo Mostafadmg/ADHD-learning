@@ -1,0 +1,68 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 3,
+   "sectionTitle": "MEDICAL HISTORY"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 3046,
+    "inputConfig": {
+     "options": [
+      {
+       "label": "Yes",
+       "value": "true"
+      },
+      {
+       "label": "No",
+       "value": "false"
+      }
+     ]
+    },
+    "inputType": "single_select_button",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 3047,
+    "inputConfig": {
+     "option": {
+      "label": "Yes, I've read and understood the information and would like to carry on.",
+      "value": true
+     },
+     "renderConditions": [
+      {
+       "operator": "eq",
+       "questionId": 3046,
+       "value": "false"
+      }
+     ]
+    },
+    "inputType": "boolean_checkbox",
+    "is_custom": false,
+    "label": null,
+    "text": "You can’t use some of our prescription treatments if you're pregnant or breastfeeding. Get in touch with our Dermatology Support Team if you become pregnant while using Hair + Me.",
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Are you pregnant, breastfeeding or likely to conceive?",
+  "type": "question"
+ }
+}

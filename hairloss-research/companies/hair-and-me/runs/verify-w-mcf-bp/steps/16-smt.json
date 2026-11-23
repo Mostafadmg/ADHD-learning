@@ -1,0 +1,55 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 2,
+   "sectionTitle": "YOUR HAIR"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 8021,
+    "inputConfig": {
+     "options": [
+      {
+       "label": "Hair that feels healthy from root to tip",
+       "value": "Hair that feels healthy from root to tip"
+      },
+      {
+       "label": "Hair that feels stronger and has less breakage",
+       "value": "Hair that feels stronger and has less breakage"
+      },
+      {
+       "label": "Noticeably less hair falling out",
+       "value": "Noticeably less hair falling out"
+      },
+      {
+       "label": "Fuller, denser-looking hair that I feel confident about",
+       "value": "Fuller, denser-looking hair that I feel confident about"
+      }
+     ]
+    },
+    "inputType": "multi_select_checkbox",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "In 6 months' time, what do you want to see?",
+  "type": "question"
+ }
+}

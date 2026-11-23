@@ -1,0 +1,520 @@
+#### PHI1220 (Recommended)
+ BLOCKERS:
+  OR {
+    OR {
+      Do you ever suffer from pain, burning or crusting  OR ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      Are any of the following true? OR ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      How long did it take for your hair loss to get to  OR ['It started to fall out quite suddenly', "It's not started yet"]
+      When did you first notice any hair loss? OR ["I haven't noticed any yet"]
+      Are you allergic to minoxidil or finasteride? AND ['Finasteride', 'Minoxidil']
+    }
+    OR {
+      How long did it take for your hair loss to get to  OR ['It started to fall out quite suddenly']
+      Do you ever suffer from pain, burning or crusting  OR ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      Are you allergic to minoxidil or finasteride? OR ['Minoxidil']
+      Are you currently experiencing any of the followin OR ['Itching']
+      Are you currently experiencing any of the followin OR ['Dandruff']
+    }
+  }
+#### PHI1221 (Recommended)
+ BLOCKERS:
+  OR {
+    OR {
+      Do you ever suffer from pain, burning or crusting  OR ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      Are any of the following true? OR ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      How long did it take for your hair loss to get to  OR ['It started to fall out quite suddenly', "It's not started yet"]
+      When did you first notice any hair loss? OR ["I haven't noticed any yet"]
+      Are you allergic to minoxidil or finasteride? AND ['Finasteride', 'Minoxidil']
+    }
+    OR {
+      How long did it take for your hair loss to get to  OR ['It started to fall out quite suddenly', "It's not started yet"]
+      Do you ever suffer from pain, burning or crusting  OR ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      Are any of the following true? OR ['I have previously been diagnosed with breast cancer, prostate cancer, or I am curerrently undergoing PSA (prostate monitoring)', 'I have uncontrolled low or high blood pressure', 'I am currently trying for a baby']
+      There are occasional reports of depression and eve OR ['I would not like to be recommended Finasteride']
+      Are you allergic to minoxidil or finasteride? OR ['Finasteride']
+      Are you currently experiencing any of the followin OR ['Itching']
+      Are you currently experiencing any of the followin OR ['Dandruff']
+    }
+  }
+#### PHI1230 (Recommended)
+ CONDITIONS:
+  OR {
+    AND {
+      Which image best represents your hair loss? OR ['Early signs']
+      Which image best represents your hair loss? OR ['I have less hair than before, but it is not very noticeable']
+    }
+  }
+ BLOCKERS:
+  OR {
+    Do you ever suffer from pain, burning or crusting  OR ['Pain', 'Burning', 'Crusting', 'Bleeding']
+    Are any of the following true? OR ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+    How long did it take for your hair loss to get to  OR ['It started to fall out quite suddenly', "It's not started yet"]
+    When did you first notice any hair loss? OR ["I haven't noticed any yet"]
+    Are you allergic to minoxidil or finasteride? AND ['Finasteride', 'Minoxidil']
+  }
+#### PHI1301 (Other)
+ CONDITIONS:
+  OR {
+    AND {
+      Which image best represents your hair loss? OR ['Early signs']
+      Now tell us about your hair density. In the areas  OR ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      How old are you? OR ['18 to 29', '30 to 39', '40 to 49']
+      Are you currently experiencing any of the followin OR ['No conditions']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Early signs']
+      Now tell us about your hair density. In the areas  OR ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      How old are you? OR ['50 to 64', 'Over 65']
+      Are you currently experiencing any of the followin OR ['No conditions']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples']
+      How old are you? OR ['18 to 29', '30 to 39', '40 to 49']
+      Are you currently experiencing any of the followin OR ['No conditions']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples']
+      How old are you? OR ['50 to 64', 'Over 65']
+      Are you currently experiencing any of the followin OR ['No conditions']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples and Crown']
+      Are you currently experiencing any of the followin OR ['No conditions']
+    }
+  }
+ BLOCKERS:
+  OR {
+    OR {
+      Do you ever suffer from pain, burning or crusting  OR ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      Are any of the following true? OR ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      How long did it take for your hair loss to get to  OR ['It started to fall out quite suddenly', "It's not started yet"]
+      When did you first notice any hair loss? OR ["I haven't noticed any yet"]
+      Are you allergic to minoxidil or finasteride? AND ['Finasteride', 'Minoxidil']
+    }
+    OR {
+      Are you allergic to minoxidil or finasteride? OR ['Minoxidil']
+    }
+  }
+#### PHI1302 (Recommended)
+ CONDITIONS:
+  OR {
+    AND {
+      Which image best represents your hair loss? OR ['Early signs']
+      Now tell us about your hair density. In the areas  OR ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      How old are you? OR ['18 to 29', '30 to 39', '40 to 49']
+      Are you currently experiencing any of the followin OR ['No conditions']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Early signs']
+      Now tell us about your hair density. In the areas  OR ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      How old are you? OR ['50 to 64', 'Over 65']
+      Are you currently experiencing any of the followin OR ['No conditions']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples']
+      How old are you? OR ['18 to 29', '30 to 39', '40 to 49']
+      Are you currently experiencing any of the followin OR ['No conditions']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples']
+      How old are you? OR ['50 to 64', 'Over 65']
+      Are you currently experiencing any of the followin OR ['No conditions']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples and Crown']
+      Are you currently experiencing any of the followin OR ['No conditions']
+    }
+  }
+ BLOCKERS:
+  OR {
+    OR {
+      Do you ever suffer from pain, burning or crusting  OR ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      Are any of the following true? OR ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      How long did it take for your hair loss to get to  OR ['It started to fall out quite suddenly', "It's not started yet"]
+      When did you first notice any hair loss? OR ["I haven't noticed any yet"]
+      Are you allergic to minoxidil or finasteride? AND ['Finasteride', 'Minoxidil']
+    }
+    OR {
+      Are you allergic to minoxidil or finasteride? OR ['Finasteride']
+      Are you allergic to minoxidil or finasteride? OR ['Minoxidil']
+    }
+  }
+#### PHI1303 (Other)
+ CONDITIONS:
+  OR {
+    AND {
+      Which image best represents your hair loss? OR ['Early signs']
+      Now tell us about your hair density. In the areas  OR ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      How old are you? OR ['18 to 29', '30 to 39', '40 to 49']
+      Are you currently experiencing any of the followin OR ['No conditions']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples']
+      How old are you? OR ['18 to 29', '30 to 39', '40 to 49']
+      Are you currently experiencing any of the followin OR ['No conditions']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples and Crown']
+      Are you currently experiencing any of the followin OR ['No conditions']
+    }
+  }
+ BLOCKERS:
+  OR {
+    OR {
+      Do you ever suffer from pain, burning or crusting  OR ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      Are any of the following true? OR ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      How long did it take for your hair loss to get to  OR ['It started to fall out quite suddenly', "It's not started yet"]
+      When did you first notice any hair loss? OR ["I haven't noticed any yet"]
+      Are you allergic to minoxidil or finasteride? AND ['Finasteride', 'Minoxidil']
+    }
+    OR {
+      Are you allergic to minoxidil or finasteride? OR ['Finasteride']
+    }
+  }
+#### PHI1304 (Recommended)
+ CONDITIONS:
+  OR {
+    AND {
+      Which image best represents your hair loss? OR ['Temples & Crown with Reduced Density']
+      Now tell us about your hair density. In the areas  OR ['My scalp is becoming slightly visible and my hair feels less dense', 'My scalp is very visible and my hair feels much less dense']
+      Are you currently experiencing any of the followin OR ['No conditions']
+    }
+  }
+ BLOCKERS:
+  OR {
+    OR {
+      Do you ever suffer from pain, burning or crusting  OR ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      Are any of the following true? OR ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      How long did it take for your hair loss to get to  OR ['It started to fall out quite suddenly', "It's not started yet"]
+      When did you first notice any hair loss? OR ["I haven't noticed any yet"]
+      Are you allergic to minoxidil or finasteride? AND ['Finasteride', 'Minoxidil']
+    }
+    OR {
+      Are you allergic to minoxidil or finasteride? OR ['Finasteride']
+      Are you allergic to minoxidil or finasteride? OR ['Minoxidil']
+    }
+  }
+#### PHI1305 (Recommended)
+ CONDITIONS:
+  OR {
+    AND {
+      Which image best represents your hair loss? OR ['Early signs']
+      Now tell us about your hair density. In the areas  OR ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      How old are you? OR ['18 to 29', '30 to 39', '40 to 49']
+      Are you currently experiencing any of the followin OR ['No conditions']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples']
+      How old are you? OR ['18 to 29', '30 to 39', '40 to 49']
+      Are you currently experiencing any of the followin OR ['No conditions']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples and Crown']
+      Are you currently experiencing any of the followin OR ['No conditions']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples and Crown with reduced density']
+      Now tell us about your hair density. In the areas  OR ['My scalp is becoming slightly visible and my hair feels less dense', 'My scalp is very visible and my hair feels much less dense']
+      Are you currently experiencing any of the followin OR ['No conditions']
+    }
+  }
+ BLOCKERS: same as previous rule
+#### PHI1306 (Other)
+ CONDITIONS:
+  OR {
+    AND {
+      Which image best represents your hair loss? OR ['Early signs']
+      Now tell us about your hair density. In the areas  OR ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      How old are you? OR ['18 to 29', '30 to 39', '40 to 49']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Early signs']
+      Now tell us about your hair density. In the areas  OR ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      How old are you? OR ['50 to 64', 'Over 65']
+      OR {
+        OR {
+          How severe is the eczema? OR ['Mild', 'Moderate']
+          How severe is the itching? OR ['Mild', 'Moderate']
+          How severe is your dandruff? OR ['Mild', 'Moderate']
+        }
+      }
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples']
+      How old are you? OR ['18 to 29', '30 to 39', '40 to 49']
+      OR {
+        OR {
+          How severe is the eczema? OR ['Mild', 'Moderate']
+          How severe is the itching? OR ['Mild', 'Moderate']
+          How severe is your dandruff? OR ['Mild', 'Moderate']
+        }
+      }
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples']
+      How old are you? OR ['50 to 64', 'Over 65']
+      OR {
+        OR {
+          How severe is the eczema? OR ['Mild', 'Moderate']
+          How severe is the itching? OR ['Mild', 'Moderate']
+          How severe is your dandruff? OR ['Mild', 'Moderate']
+        }
+      }
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples and Crown']
+      OR {
+        OR {
+          How severe is the eczema? OR ['Mild', 'Moderate']
+          How severe is the itching? OR ['Mild', 'Moderate']
+          How severe is your dandruff? OR ['Mild', 'Moderate']
+        }
+      }
+    }
+  }
+ BLOCKERS:
+  OR {
+    OR {
+      Do you ever suffer from pain, burning or crusting  OR ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      Are any of the following true? OR ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      How long did it take for your hair loss to get to  OR ['It started to fall out quite suddenly', "It's not started yet"]
+      When did you first notice any hair loss? OR ["I haven't noticed any yet"]
+      Are you allergic to minoxidil or finasteride? AND ['Finasteride', 'Minoxidil']
+    }
+    OR {
+      Are you allergic to minoxidil or finasteride? OR ['Minoxidil']
+    }
+  }
+#### PHI1307 (Other)
+ CONDITIONS:
+  OR {
+    AND {
+      Which image best represents your hair loss? OR ['Early signs']
+      Now tell us about your hair density. In the areas  OR ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      How old are you? OR ['18 to 29', '30 to 39', '40 to 49']
+      How severe is your dandruff? OR ['Mild']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples']
+      How old are you? OR ['18 to 29', '30 to 39', '40 to 49']
+      How severe is your dandruff? OR ['Mild']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples and Crown']
+      How severe is your dandruff? OR ['Mild']
+    }
+  }
+ BLOCKERS: same as previous rule
+#### PHI1308 (Recommended)
+ CONDITIONS:
+  OR {
+    AND {
+      Which image best represents your hair loss? OR ['Early signs']
+      Now tell us about your hair density. In the areas  OR ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      How old are you? OR ['18 to 29', '30 to 39', '40 to 49']
+      How severe is your dandruff? OR ['Mild']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples']
+      How old are you? OR ['18 to 29', '30 to 39', '40 to 49']
+      How severe is your dandruff? OR ['Mild']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples and Crown']
+      How severe is your dandruff? OR ['Mild']
+    }
+  }
+ BLOCKERS:
+  OR {
+    OR {
+      Do you ever suffer from pain, burning or crusting  OR ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      Are any of the following true? OR ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      How long did it take for your hair loss to get to  OR ['It started to fall out quite suddenly', "It's not started yet"]
+      When did you first notice any hair loss? OR ["I haven't noticed any yet"]
+      Are you allergic to minoxidil or finasteride? AND ['Finasteride', 'Minoxidil']
+    }
+    OR {
+      Are you allergic to minoxidil or finasteride? OR ['Finasteride']
+      Are you allergic to minoxidil or finasteride? OR ['Minoxidil']
+    }
+  }
+#### PHI1309 (Recommended)
+ CONDITIONS:
+  OR {
+    AND {
+      Which image best represents your hair loss? OR ['Early signs']
+      Now tell us about your hair density. In the areas  OR ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      How old are you? OR ['18 to 29', '30 to 39', '40 to 49']
+      How severe is your dandruff? OR ['Mild', 'Moderate']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Early signs']
+      Now tell us about your hair density. In the areas  OR ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      How old are you? OR ['18 to 29', '30 to 39', '40 to 49']
+      OR {
+        OR {
+          How severe is the eczema? OR ['Mild', 'Moderate']
+          How severe is the itching? OR ['Mild', 'Moderate']
+          How severe is your dandruff? OR ['Mild', 'Moderate']
+        }
+      }
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples']
+      How old are you? OR ['18 to 29', '30 to 39', '40 to 49']
+      How severe is your dandruff? OR ['Mild', 'Moderate']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples']
+      How old are you? OR ['18 to 29', '30 to 39', '40 to 49']
+      OR {
+        OR {
+          How severe is the eczema? OR ['Mild', 'Moderate']
+          How severe is the itching? OR ['Mild', 'Moderate']
+          How severe is your dandruff? OR ['Mild', 'Moderate']
+        }
+      }
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples and Crown']
+      How severe is your dandruff? OR ['Mild', 'Moderate']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples and Crown']
+      OR {
+        OR {
+          How severe is the eczema? OR ['Mild', 'Moderate']
+          How severe is the itching? OR ['Mild', 'Moderate']
+          How severe is your dandruff? OR ['Mild', 'Moderate']
+        }
+      }
+    }
+  }
+ BLOCKERS:
+  OR {
+    OR {
+      Do you ever suffer from pain, burning or crusting  OR ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      Are any of the following true? OR ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      How long did it take for your hair loss to get to  OR ['It started to fall out quite suddenly', "It's not started yet"]
+      When did you first notice any hair loss? OR ["I haven't noticed any yet"]
+      Are you allergic to minoxidil or finasteride? AND ['Finasteride', 'Minoxidil']
+    }
+    OR {
+      Are you allergic to minoxidil or finasteride? OR ['Finasteride']
+    }
+  }
+#### PHI1311 (Recommended)
+ CONDITIONS:
+  OR {
+    AND {
+      Which image best represents your hair loss? OR ['Early signs']
+      Now tell us about your hair density. In the areas  OR ['My hair has thinned/receded noticeably in some areas, but other areas are still dense']
+      How old are you? OR ['18 to 29', '30 to 39', '40 to 49']
+      How severe is your dandruff? OR ['Mild', 'Moderate']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples']
+      How old are you? OR ['18 to 29', '30 to 39', '40 to 49']
+      How severe is your dandruff? OR ['Mild', 'Moderate']
+    }
+    AND {
+      Which image best represents your hair loss? OR ['Temples and Crown']
+      How severe is your dandruff? OR ['Mild', 'Moderate']
+    }
+  }
+ BLOCKERS:
+  OR {
+    OR {
+      Do you ever suffer from pain, burning or crusting  OR ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      Are any of the following true? OR ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      How long did it take for your hair loss to get to  OR ['It started to fall out quite suddenly', "It's not started yet"]
+      When did you first notice any hair loss? OR ["I haven't noticed any yet"]
+      Are you allergic to minoxidil or finasteride? AND ['Finasteride', 'Minoxidil']
+    }
+    OR {
+      Are you allergic to minoxidil or finasteride? OR ['Finasteride']
+      Are you allergic to minoxidil or finasteride? OR ['Minoxidil']
+    }
+  }
+#### PHI1770 (None)
+ CONDITIONS:
+  OR {
+    Are you currently experiencing any of the followin OR ['Itching']
+    Are you currently experiencing any of the followin OR ['Dandruff']
+  }
+ BLOCKERS:
+  OR {
+    OR {
+      Do you ever suffer from pain, burning or crusting  OR ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      Are any of the following true? OR ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      How long did it take for your hair loss to get to  OR ['It started to fall out quite suddenly', "It's not started yet"]
+      When did you first notice any hair loss? OR ["I haven't noticed any yet"]
+      Are you allergic to minoxidil or finasteride? AND ['Finasteride', 'Minoxidil']
+    }
+    OR {
+      How long did it take for your hair loss to get to  OR ['It started to fall out quite suddenly']
+      Do you ever suffer from pain, burning or crusting  OR ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      Are you allergic to minoxidil or finasteride? OR ['Minoxidil']
+      Are you currently experiencing any of the followin OR ['Itching']
+      Are you currently experiencing any of the followin OR ['Dandruff']
+    }
+  }
+#### PHI1771 (None)
+ CONDITIONS:
+  OR {
+    Are you currently experiencing any of the followin OR ['Itching']
+    Are you currently experiencing any of the followin OR ['Dandruff']
+  }
+ BLOCKERS:
+  OR {
+    OR {
+      Do you ever suffer from pain, burning or crusting  OR ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      Are any of the following true? OR ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      How long did it take for your hair loss to get to  OR ['It started to fall out quite suddenly', "It's not started yet"]
+      When did you first notice any hair loss? OR ["I haven't noticed any yet"]
+      Are you allergic to minoxidil or finasteride? AND ['Finasteride', 'Minoxidil']
+    }
+    OR {
+      How long did it take for your hair loss to get to  OR ['It started to fall out quite suddenly', "It's not started yet"]
+      Do you ever suffer from pain, burning or crusting  OR ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      Are any of the following true? OR ['I have previously been diagnosed with breast cancer, prostate cancer, or I am curerrently undergoing PSA (prostate monitoring)', 'I have uncontrolled low or high blood pressure', 'I am currently trying for a baby']
+      There are occasional reports of depression and eve OR ['I would not like to be recommended Finasteride']
+      Are you allergic to minoxidil or finasteride? OR ['Finasteride']
+      Are you currently experiencing any of the followin OR ['Itching']
+      Are you currently experiencing any of the followin OR ['Dandruff']
+    }
+  }
+#### PHI1772 (None)
+ CONDITIONS:
+  OR {
+    Are you currently experiencing any of the followin OR ['Itching']
+    Are you currently experiencing any of the followin OR ['Dandruff']
+  }
+ BLOCKERS:
+  OR {
+    OR {
+      Do you ever suffer from pain, burning or crusting  OR ['Pain', 'Burning', 'Crusting', 'Bleeding']
+      Are any of the following true? OR ['I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring', ' I have uncontrolled low or high blood pressure', 'I am experiencing, or have previously experienced, depression, anxiety or panic disorders', 'I am currently trying for a baby']
+      How long did it take for your hair loss to get to  OR ['It started to fall out quite suddenly', "It's not started yet"]
+      When did you first notice any hair loss? OR ["I haven't noticed any yet"]
+      Are you allergic to minoxidil or finasteride? AND ['Finasteride', 'Minoxidil']
+    }
+    OR {
+      OR {
+        How long did it take for your hair loss to get to  OR ['It started to fall out quite suddenly', "It's not started yet"]
+        Do you ever suffer from pain, burning or crusting  OR ['Pain', 'Burning', 'Crusting', 'Bleeding']
+        Are any of the following true? OR ['I have previously been diagnosed with breast cancer, prostate cancer, or I am curerrently undergoing PSA (prostate monitoring)', 'I have uncontrolled low or high blood pressure', 'I am currently trying for a baby']
+        There are occasional reports of depression and eve OR ['I would not like to be recommended Finasteride']
+        Are you allergic to minoxidil or finasteride? OR ['Finasteride']
+        Are you currently experiencing any of the followin OR ['Itching']
+        Are you currently experiencing any of the followin OR ['Dandruff']
+        How long did it take for your hair loss to get to  OR ['It started to fall out quite suddenly']
+        Do you ever suffer from pain, burning or crusting  OR ['Pain', 'Burning', 'Crusting', 'Bleeding']
+        Are you allergic to minoxidil or finasteride? OR ['Minoxidil']
+        Are you currently experiencing any of the followin OR ['Itching']
+        Are you currently experiencing any of the followin OR ['Dandruff']
+      }
+      Are you currently experiencing any of the followin OR ['Itching']
+      Are you currently experiencing any of the followin OR ['Dandruff']
+    }
+  }

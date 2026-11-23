@@ -1,0 +1,22 @@
+STEP 14 click "I’m not sure / I don’t have a preference"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Here's what we know about you so far
+YOUR HAIR
+I want to regrow a receding hairline
+1-3 years
+Thinning at the hairline, Thinning at the top of the head, Another pattern of hair loss
+I need a treatment recommendation
+LIFESTYLE
+Male
+Hair loss runs in my family
+TAKE ME TO MY PLAN
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

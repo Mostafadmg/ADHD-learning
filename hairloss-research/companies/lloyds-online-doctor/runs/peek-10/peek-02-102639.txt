@@ -1,0 +1,11 @@
+URL: https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+
+Exit consultation
+Medical history
+Do any of these apply to your liver condition?
+I have alcohol related liver disease, cirrhosis or liver cancer
+I see a hospital specialist for my condition
+I have been advised to avoid certain medications
+I am prescribed treatment or have regular monitoring (not Statins or routine yearly blood tests for fatty liver disease)
+None of the above
+Back

@@ -1,0 +1,27 @@
+STEP 06 wait 3000
+URL: https://start.treated.com/GBR/en/#/questionnaire
+TITLE: Treated UK - Choose Better - Medical Experts & Treatments Online
+
+--- VISIBLE TEXT ---
+Question 1 of 11
+
+Which of the following options describe your hair loss?
+(Select all that apply.)
+It's falling out at the roots
+It's falling out at the scalp
+It's receding from the front
+It's thinning all over the top
+It's breaking at the middle of the strands
+It's falling out at the back and sides as well
+It's falling out on just one side of my head
+It's just very suddenly starting to fall out
+It's falling out because I'm on medication
+Other
+Continue
+
+--- CONTROLS ---
+  checkbox (10): It's falling out at the roots  ·  It's falling out at the scalp  ·  It's receding from the front  ·  It's thinning all over the top  ·  It's breaking at the middle of the strands  ·  It's falling out at the back and sides as well  ·  It's falling out on just one side of my head  ·  It's just very suddenly starting to fall out  ·  It's falling out because I'm on medication  ·  Other
+  button (1): Continue [disabled]
+
+--- LINKS ---
+

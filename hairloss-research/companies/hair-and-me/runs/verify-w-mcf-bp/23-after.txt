@@ -1,0 +1,27 @@
+STEP 23 mcf AFTER ANSWERS ["High blood pressure (hypertension) or low blood pressure (hypotension)"]
+URL: https://www.hairandme.com/c/suh/mcf
+
+--- VISIBLE TEXT ---
+Have you been diagnosed with any of the following conditions?
+Pheochromocytoma
+High blood pressure (hypertension) or low blood pressure (hypotension)
+Any heart or cardiovascular condition (e.g. stroke, heart attack, heart failure, angina, atrial fibrillation, valve disorder, irregular or fast heartbeat)
+Hypertrichosis (excessive hair growth anywhere on the body, unrelated to hormones)
+PoTS syndrome (postural tachycardia syndrome)
+Polyendocrine Metabolic Ovarian Syndrome (PMOS, formerly PCOS)
+None of the above
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:checkbox[name=4504] | Pheochromocytoma
+input:checkbox[name=4504] | High blood pressure (hypertension) or low blood pressure (hypotension) [checked]
+input:checkbox[name=4504] | Any heart or cardiovascular condition (e.g. stroke, heart attack, heart failure, angina, atrial fibrillation, valve disorder, irregular or fast heartbeat)
+input:checkbox[name=4504] | Hypertrichosis (excessive hair growth anywhere on the body, unrelated to hormones)
+input:checkbox[name=4504] | PoTS syndrome (postural tachycardia syndrome)
+input:checkbox[name=4504] | Polyendocrine Metabolic Ovarian Syndrome (PMOS, formerly PCOS)
+input:checkbox[name=4504] | None of the above [disabled]
+button:submit | NEXT QUESTION
+a -> /c/suh/mcf?action=previous | Back to previous page

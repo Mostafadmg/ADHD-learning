@@ -1,0 +1,191 @@
+STEP 07 click "Had side effects"
+URL: https://www.keeps.com/hair-assessment-quiz-gel?step=9
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+Our members see results in as little as 3 months.
+Month 0
+Month 3
+
+“I’ve been using Keeps for a while now, and my hair has grown back noticeably thicker. I also haven’t experienced any side effects, which was nice”
+
+Tristan B.
+
+Verified Customer
+
+Thinning Hair
+Hairline Recession
+Month 0
+Month 6
+
+“After about four months, I noticed a real difference in regrowth. My hair is coming back, and I’m genuinely happy with the results so far.”
+
+Bryon W.
+
+Verified Customer
+
+Advanced Thinning
+Crown Loss
+Month 0
+Month 9
+
+“My hair didn’t just stay the same, it actually grew back stronger. Seeing progress over time made sticking with the routine feel worth it.”
+
+Henry V.
+
+Verified Customer
+
+Hairline Thinning
+Long-Term Loss
+Month 0
+Month 8
+
+“I could clearly see my hair filling back in over time. The change felt natural, and it gave me a lot more confidence and I’m happy with how it looks now.”
+
+Virgil H.
+
+Verified Customer
+
+Diffuse Thinning
+Overall Density
+Month 0
+Month 6
+
+“I have hair again thanks to Keeps! The difference is noticeable. I definitely have more hair now than when I started before.”
+
+Jared L.
+
+Verified Customer
+
+Hairline Loss
+Early Balding
+Month 0
+Month 7
+
+“It’s as simple as taking one pill a day. Making it part of my routine helped me stay consistent and see real results. I’m satisfied!”
+
+Michael G.
+
+Verified Customer
+
+Hairline Thinning
+Maintenance
+Month 0
+Month 9
+
+“The product actually works! After months of use, my hair looks better again. I feel much more confident about how it’s progressing now.”
+
+Jeffrey R.
+
+Verified Customer
+
+Crown Thinning
+Overall Regrowth
+Month 0
+Month 11
+
+“Keeps helped my hair fill back in without noticeable side effects. The results look natural, which mattered most to me.”
+
+Yale S.
+
+Verified Customer
+
+Thinning at the Top
+Natural Look
+Month 0
+Month 6
+
+“My hair looks noticeably thicker now than it did a few months ago. The change wasn’t overnight, but the progress has been real.”
+
+Austin T.
+
+Verified Customer
+
+Thinning Hair
+Hairline Recession
+Month 0
+Month 9
+
+“I started seeing visible improvement around my crown over time. It feels steady and consistent, which made me confident I was on the right plan.”
+
+Omid K.
+
+Verified Customer
+
+Crown Loss
+Advanced Thinning
+Month 0
+Month 8
+
+“Seeing side-by-side photos really showed the difference for me. My hair looks healthier, and the thinning doesn’t stand out like it used to.”
+
+Nathan H.
+
+Verified Customer
+
+Hairline Thinning
+Early Loss
+Month 0
+Month 6
+
+“The gradual regrowth surprised me the most. Month by month, my hairline looked fuller, and that steady progress made it feel worth sticking with.”
+
+Addison F.
+
+Verified Customer
+
+Receding Hairline
+Progressive Loss
+Month 0
+Month 7
+
+“The thinning spot I was most worried about started filling in over time. My hair looks more balanced now, which feels like a real win.”
+
+Bo C.
+
+Verified Customer
+
+Crown Thinning
+Spot Loss
+Month 0
+Month 9
+
+“At first the changes were subtle, but they kept building. Over time, my hair started looking thicker and more consistent overall.”
+
+Chris S.
+
+Verified Customer
+
+Diffuse Thinning
+Long-Term Loss
+Month 0
+Month 11
+
+“I’d been dealing with thinning for years, so seeing regrowth again felt huge. The results weren’t instant, but they’ve been genuinely satisfying.”
+
+M J D.
+
+Verified Customer
+
+Severe Thinning
+Long-Standing Loss
+Month 0
+Month 11
+
+“My hair didn’t just maintain — it actually improved. It looks fuller now, and I feel much better about where things are headed.”
+
+Alex S.
+
+Verified Customer
+
+Hairline Thinning
+Early Intervention
+Continue
+
+Keeps | Hair Loss Treatment for Men
+
+--- CONTROLS ---
+  button (4): Go back  ·  Previous slide [disabled]  ·  Next slide  ·  Continue
+
+--- LINKS ---
+

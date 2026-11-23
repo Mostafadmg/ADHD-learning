@@ -1,0 +1,24 @@
+STEP 16 click "label:text-is(\"I do not have a major illness, ongoing medical condition, operation, allergy to medication or take prescribed or over the counter medication to tell you about.\")"
+URL: https://www.numan.com/subscribe/hair-loss/a3ac2e80-a423-452f-ba1f-5b3537d6c89e/sq/medical_history
+TITLE: It's really important to tell us about: Major illnesses Ongoing medical conditions Any medication prescribed or over the counter that you take Allergies to medication Operations This information is needed so that our clinicians can ensure the prescription is safe for you to take. | Numan
+
+--- VISIBLE TEXT ---
+89%
+It's really important to tell us about:
+
+Major illnesses
+Ongoing medical conditions
+Any medication prescribed or over the counter that you take
+Allergies to medication
+Operations
+This information is needed so that our clinicians can ensure the prescription is safe for you to take.
+I have a major illness, ongoing medical condition, operation, allergy to medication or take prescribed or over the counter medication to tell you about.
+I do not have a major illness, ongoing medical condition, operation, allergy to medication or take prescribed or over the counter medication to tell you about.
+Back
+
+--- CONTROLS ---
+  radio (2): I have a major illness, ongoing medical condition, operation, allergy to medication or take prescribed or over the counter medication to tel  ·  I do not have a major illness, ongoing medical condition, operation, allergy to medication or take prescribed or over the counter medication [checked]
+  button (1): Back
+
+--- LINKS ---
+  link (1): Visit the main page -> /

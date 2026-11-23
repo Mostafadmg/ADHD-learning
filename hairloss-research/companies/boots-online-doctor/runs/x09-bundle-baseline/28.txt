@@ -1,0 +1,28 @@
+STEP 28 click ".radio-answer:has(label:text-is(\"Temples and Crown\")), .checkbox-answer:has(label:text-is(\"Temples and Crown\"))"
+URL: https://onlinedoctor-clinic.boots.com/questions/2
+TITLE: Consultation | Boots Online Doctor
+
+--- VISIBLE TEXT ---
+Call us: Mon-Fri 8:30AM-6PM, Sat-Sun 9:30AM-4:30PM
+ 0203 3183773
+Boots Advantage Card Shop Boots.com
+Services
+Meet the team
+FAQ
+LOG IN
+8%
+Which of the following best describes your hair loss? (Tick all that apply)
+Temples only (receding at the front)
+Temples and Crown
+Random patches
+Complete
+NEXT
+Powered by:
+©2026 Boots Digital Health Limited
+
+--- CONTROLS ---
+  button (7): Cookie Preferences  ·  LOG IN  ·  Temples only (receding at the front)  ·  Temples and Crown  ·  Random patches  ·  Complete  ·  NEXT
+  checkbox (4): Temples only (receding at the front)  ·  Temples and Crown [checked]  ·  Random patches  ·  Complete
+
+--- LINKS ---
+  link (6): 0203 3183773 -> tel:0203 3183773  ·  Boots Advantage Card -> https://www.boots.com/advantage-card  ·  Shop Boots.com -> https://boots.com  ·  Services ->   ·  Meet the team -> https://onlinedoctor.boots.com/meet-the-team  ·  FAQ -> 

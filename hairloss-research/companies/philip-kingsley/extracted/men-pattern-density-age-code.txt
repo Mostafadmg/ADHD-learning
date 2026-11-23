@@ -1,0 +1,30 @@
+Early signs                              | I have less hair than before | <50: PHI1220,PHI1221                               | 50+: PHI1220,PHI1221
+Early signs                              | My hair has thinned/receded  | <50: PHI1220,PHI1221,PHI1301*,PHI1302,PHI1303*,PHI1305,PHI1306* | 50+: PHI1220,PHI1221,PHI1301*,PHI1302
+Early signs                              | My scalp is becoming slightl | <50: PHI1220,PHI1221                               | 50+: PHI1220,PHI1221
+Early signs                              | My scalp is very visible and | <50: PHI1220,PHI1221                               | 50+: PHI1220,PHI1221
+Early signs                              | My hair has thinned extensiv | <50: PHI1220,PHI1221                               | 50+: PHI1220,PHI1221
+Temples                                  | I have less hair than before | <50: PHI1220,PHI1221,PHI1301*,PHI1302,PHI1303*,PHI1305 | 50+: PHI1220,PHI1221,PHI1301*,PHI1302
+Temples                                  | My hair has thinned/receded  | <50: PHI1220,PHI1221,PHI1301*,PHI1302,PHI1303*,PHI1305 | 50+: PHI1220,PHI1221,PHI1301*,PHI1302
+Temples                                  | My scalp is becoming slightl | <50: PHI1220,PHI1221,PHI1301*,PHI1302,PHI1303*,PHI1305 | 50+: PHI1220,PHI1221,PHI1301*,PHI1302
+Temples                                  | My scalp is very visible and | <50: PHI1220,PHI1221,PHI1301*,PHI1302,PHI1303*,PHI1305 | 50+: PHI1220,PHI1221,PHI1301*,PHI1302
+Temples                                  | My hair has thinned extensiv | <50: PHI1220,PHI1221,PHI1301*,PHI1302,PHI1303*,PHI1305 | 50+: PHI1220,PHI1221,PHI1301*,PHI1302
+Patchy                                   | I have less hair than before | <50: PHI1220,PHI1221                               | 50+: PHI1220,PHI1221
+Patchy                                   | My hair has thinned/receded  | <50: PHI1220,PHI1221                               | 50+: PHI1220,PHI1221
+Patchy                                   | My scalp is becoming slightl | <50: PHI1220,PHI1221                               | 50+: PHI1220,PHI1221
+Patchy                                   | My scalp is very visible and | <50: PHI1220,PHI1221                               | 50+: PHI1220,PHI1221
+Patchy                                   | My hair has thinned extensiv | <50: PHI1220,PHI1221                               | 50+: PHI1220,PHI1221
+Temples and Crown                        | I have less hair than before | <50: PHI1220,PHI1221,PHI1301*,PHI1302,PHI1303*,PHI1305 | 50+: PHI1220,PHI1221,PHI1301*,PHI1302,PHI1303*,PHI1305
+Temples and Crown                        | My hair has thinned/receded  | <50: PHI1220,PHI1221,PHI1301*,PHI1302,PHI1303*,PHI1305 | 50+: PHI1220,PHI1221,PHI1301*,PHI1302,PHI1303*,PHI1305
+Temples and Crown                        | My scalp is becoming slightl | <50: PHI1220,PHI1221,PHI1301*,PHI1302,PHI1303*,PHI1305 | 50+: PHI1220,PHI1221,PHI1301*,PHI1302,PHI1303*,PHI1305
+Temples and Crown                        | My scalp is very visible and | <50: PHI1220,PHI1221,PHI1301*,PHI1302,PHI1303*,PHI1305 | 50+: PHI1220,PHI1221,PHI1301*,PHI1302,PHI1303*,PHI1305
+Temples and Crown                        | My hair has thinned extensiv | <50: PHI1220,PHI1221,PHI1301*,PHI1302,PHI1303*,PHI1305 | 50+: PHI1220,PHI1221,PHI1301*,PHI1302,PHI1303*,PHI1305
+Temples and Crown with reduced density   | I have less hair than before | <50: PHI1220,PHI1221                               | 50+: PHI1220,PHI1221
+Temples and Crown with reduced density   | My hair has thinned/receded  | <50: PHI1220,PHI1221                               | 50+: PHI1220,PHI1221
+Temples and Crown with reduced density   | My scalp is becoming slightl | <50: PHI1220,PHI1221,PHI1305                       | 50+: PHI1220,PHI1221,PHI1305
+Temples and Crown with reduced density   | My scalp is very visible and | <50: PHI1220,PHI1221,PHI1305                       | 50+: PHI1220,PHI1221,PHI1305
+Temples and Crown with reduced density   | My hair has thinned extensiv | <50: PHI1220,PHI1221                               | 50+: PHI1220,PHI1221
+Extensive                                | I have less hair than before | <50: PHI1220,PHI1221                               | 50+: PHI1220,PHI1221
+Extensive                                | My hair has thinned/receded  | <50: PHI1220,PHI1221                               | 50+: PHI1220,PHI1221
+Extensive                                | My scalp is becoming slightl | <50: PHI1220,PHI1221                               | 50+: PHI1220,PHI1221
+Extensive                                | My scalp is very visible and | <50: PHI1220,PHI1221                               | 50+: PHI1220,PHI1221
+Extensive                                | My hair has thinned extensiv | <50: PHI1220,PHI1221                               | 50+: PHI1220,PHI1221

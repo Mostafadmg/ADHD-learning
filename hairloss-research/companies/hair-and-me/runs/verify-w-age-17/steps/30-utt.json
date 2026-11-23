@@ -1,0 +1,45 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "exit": {
+     "label": "Goodbye for now"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to consultation"
+    }
+   }
+  ],
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 3041,
+    "inputConfig": {
+     "displayTextV2": [
+      {
+       "text": [
+        {
+         "part": "Thanks for your interest. At the moment, we're unable to treat your age group."
+        },
+        {
+         "part": "We're working really hard to find ways to treat as many people as possible, and we hope to see you again in the future."
+        }
+       ]
+      }
+     ]
+    },
+    "inputType": "display_text",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "We’re unable to treat you at this time.",
+  "type": "question"
+ }
+}

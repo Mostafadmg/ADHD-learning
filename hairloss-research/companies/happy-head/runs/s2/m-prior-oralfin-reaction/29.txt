@@ -1,0 +1,15 @@
+STEP 29 click "None"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+What is your date of birth?
+We customize your hair growth formula based on your age to ensure the most effective and safe treatment. For example, certain ingredients are specifically tailored for customers over 50.
+Enter your date of birth
+
+--- CONTROLS ---
+  input:text (3): Year  ·  Month  ·  Day
+
+--- LINKS ---
+

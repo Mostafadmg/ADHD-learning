@@ -1,0 +1,9 @@
+
+===== FINAL (after 20 steps) =====
+URL: https://www.numan.com/subscribe/hair-loss/fff0a5c5-45ec-401e-914c-31310316bbe7/product-selection
+TEXT: Please select your treatment ⏎ Our clinicians will ensure you’re prescribed the most appropriate treatment. ⏎ Recommended for you ⏎ See results in 180 days ⏎ or your money back¹ ⏎ Finasteride ⏎ A daily pill that helps to reset a receding hairline and slow hair loss. ⏎ Learn more  ⏎ Price ⏎ £16.80 ⏎ Save 40% ⏎ Select treatment ⏎ ¹ Claim a full refund between 180-210 days from order approval if treatment is not effective at stabilising or reversing hair loss. First time users only. Full Ts&Cs. ⏎ ² In one study, finasteride was effective at stopping hair loss in 83% of men (McClellan,1999). ⏎ OTHER TREATMENTS ⏎ Rosemary Oil ⏎ Rosemary Oil is a natural remedy for stronger, healthier-looking hair. Infused with nutrients and oils, it’s formulated to nourish the scalp and fortify hair from root to tip. ⏎ £14.00 ⏎   ⏎ £23.33 ⏎ Save 40% ⏎ Select
+CONTROLS:
+  button (3): Help  ·  Select treatment  ·  Select
+  links: Back  ·  Visit the main page  ·  Learn more  ·  Full Ts&Cs.
+
+[walk] 20 step(s), exit 0, 49 JSON bodies saved -> runs/x2-10-c-bp-no

@@ -1,0 +1,16 @@
+STEP 26 rj
+URL: https://www.hairandme.com/c/suh/rj
+
+--- VISIBLE TEXT ---
+What most influenced your decision to sign-up today?
+I want the discounted trial
+I'm looking for a long-term effective haircare treatment
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=8015] | I want the discounted trial
+input:radio[name=8015] | I'm looking for a long-term effective haircare treatment [checked]
+button:submit |  [disabled]
+a -> /c/suh/di?action=previous | Back to previous page

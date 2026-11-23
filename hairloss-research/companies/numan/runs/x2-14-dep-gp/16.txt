@@ -1,0 +1,17 @@
+STEP 16 click "label:text-is(\"No\")"
+URL: https://www.numan.com/subscribe/hair-loss/e3a53c15-3478-40db-9e94-1f2f8b12da35/sq/mental_health_suicidal
+TITLE: Have you had any suicidal thoughts or feelings of self-harm in the past year? | Numan
+
+--- VISIBLE TEXT ---
+82%
+Have you had any suicidal thoughts or feelings of self-harm in the past year?
+Yes
+No
+Back
+
+--- CONTROLS ---
+  radio (2): Yes  ·  No
+  button (1): Back
+
+--- LINKS ---
+  link (1): Visit the main page -> /

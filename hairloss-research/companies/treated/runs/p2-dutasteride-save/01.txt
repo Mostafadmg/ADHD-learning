@@ -1,0 +1,165 @@
+STEP 01 wait 3000
+URL: https://uk.treated.com/consultation-startup?condition=024&product=024-1973&uf=prod
+TITLE: Consultation startup - Treated UK - Choose Better - Medical Experts & Treatments Online
+
+--- VISIBLE TEXT ---
+Skip to main content
+Average time to complete:
+2 mins 21 secs
+Start now
+Hair loss:
+Let’s find your best options.
+We’ll ask you a few questions so we can recommend something for you.
+Start now
+What’s next?
+Previous
+
+Manage your subscription and cancel at any time.
+
+Everything online, no phone calls needed.
+
+Answer a few health questions.
+
+Takes less than 3 minutes on average.
+
+Choose a preferred treatment.
+
+Or let our doctors recommend one.
+
+Review by our medical team.
+
+They'll confirm that your treatment is right for you.
+
+Your treatment will be shipped.
+
+From our pharmacy with delivery within 48 hours.
+
+Manage your subscription and cancel at any time.
+
+Everything online, no phone calls needed.
+
+Answer a few health questions.
+
+Takes less than 3 minutes on average.
+
+Choose a preferred treatment.
+
+Or let our doctors recommend one.
+
+Review by our medical team.
+
+They'll confirm that your treatment is right for you.
+
+Your treatment will be shipped.
+
+From our pharmacy with delivery within 48 hours.
+
+Manage your subscription and cancel at any time.
+
+Everything online, no phone calls needed.
+
+Next
+1
+2
+3
+4
+5
+4.5
+
+Our average rating based on 2312 reviews. 
+
+We have 5 option(s) for Hair loss.
+ 
+Filter
+Search treatments
+Let our clinician choose for you.
+
+Not sure which to pick? We can suggest a treatment based on your medical profile, and you can decide whether to accept it.
+
+Dutasteride
+Read more
+Dutasteride
+
+Off-label. Prevents hair loss and hair thinning. Comes as a capsule that's taken daily.
+
+Starting from
+£34.95
+Used/taken
+Once a day
+Works in
+3-6 months
+Form
+Tablet
+Avodart
+Read more
+Dutasteride
+
+Branded version of Dutasteride. Daily tablet that’s similar to Finasteride (Propecia).
+
+Starting from
+£47.95
+Used/taken
+Once a day
+Works in
+3-6 months
+Form
+Tablet
+Finasteride
+Read more
+Finasteride
+
+Generic version of Propecia. Daily tablet that stops hair loss and encourages hair growth.
+
+Starting from
+£34.95
+Used/taken
+Once a day
+Works in
+3-6 months
+Form
+Tablet
+Regaine
+Read more
+Minoxidil
+
+Hair loss foam that you massage into your scalp. Contains Minoxidil, which promotes hair growth.
+
+Starting from
+£99.95
+Used/taken
+Twice a day
+Works in
+2-4 months
+Form
+Foam
+Propecia
+Read more
+Finasteride
+
+Like Finasteride, but the branded version. Gets to grips with the enzyme that causes hair loss.
+
+Starting from
+£66.95
+Used/taken
+Once a day
+Works in
+3-6 months
+Form
+Tablet
+Start now
+Feedback
+How are you finding Treated?
+Select an option from 😠 to 😍, with 😠 being Not good at all and 😍 being Very good
+Not good at all
+Very good
+Next
+Skip
+
+--- CONTROLS ---
+  button (6): Previous  ·  Next  ·  Search  ·  Feedback  ·  Next [disabled]  ·  Skip
+  tab (5): 1 [true]  ·  2  ·  3  ·  4  ·  5
+  input:text (1): Search treatments
+  radio (1): (no label)
+
+--- LINKS ---
+  link (17): Skip to main content -> #content  ·  Click to go to back -> javascript://  ·  UK -> https://uk.treated.com  ·  Start now -> https://start.treated.com/GBR/en/#/choose-gender/024/024-1973  ·  2312 -> https://uk.treated.com/service-reviews  ·  More information -> javascript:void(0);  ·  Go to next section -> #product_list  ·  Dutasteride -> https://uk.treated.com/hair-loss/dutasteride  ·  Read more -> https://uk.treated.com/hair-loss/dutasteride  ·  Avodart -> https://uk.treated.com/hair-loss/avodart  ·  Read more -> https://uk.treated.com/hair-loss/avodart  ·  Finasteride -> https://uk.treated.com/hair-loss/finasteride  ·  Read more -> https://uk.treated.com/hair-loss/finasteride  ·  Regaine -> https://uk.treated.com/hair-loss/regaine  ·  Read more -> https://uk.treated.com/hair-loss/regaine  ·  Propecia -> https://uk.treated.com/hair-loss/propecia  ·  Read more -> https://uk.treated.com/hair-loss/propecia

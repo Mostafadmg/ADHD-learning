@@ -1,4 +1,4 @@
-STEP 16 wait 3500
+STEP 16 wait 1500
 URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
 TITLE: Get Started Now | Happy Head
 

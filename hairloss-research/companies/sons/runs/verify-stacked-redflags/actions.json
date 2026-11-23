@@ -1,0 +1,162 @@
+{
+ "_about": "Stage 3: a man with every warning answer at once (sudden onset + all three follow-ups Yes, mood Yes + PHQ-2 Nearly every day twice, finasteride side effects Yes, high blood pressure + cardiovascular disease + sexual dysfunction). Not a one-change test: checks R3 (no stop for any man).",
+ "start": "https://shop.sons.co.uk/consultation/?logged_in=false",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "Male"
+  },
+  {
+   "do": "click",
+   "text": "I accept"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "Temples/Crown"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "click",
+   "text": "Suddenly (it fell out over a matter of days or a few weeks)"
+  },
+  {
+   "do": "click",
+   "text": "Yes",
+   "_q": "5144"
+  },
+  {
+   "do": "click",
+   "text": "Yes",
+   "_q": "5145"
+  },
+  {
+   "do": "click",
+   "text": "Yes",
+   "_q": "5146"
+  },
+  {
+   "do": "click",
+   "text": "Yes",
+   "_q": "3216 mood"
+  },
+  {
+   "do": "fill",
+   "selector": "textarea",
+   "value": "test"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "Nearly every day",
+   "_q": "3275"
+  },
+  {
+   "do": "click",
+   "text": "Nearly every day",
+   "_q": "3276"
+  },
+  {
+   "do": "click",
+   "text": "Finasteride or Propecia"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "I don’t mind - I want what’s most effective for me"
+  },
+  {
+   "do": "click",
+   "text": "Yes",
+   "_q": "5149"
+  },
+  {
+   "do": "fill",
+   "selector": "textarea",
+   "value": "test"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "High Blood Pressure"
+  },
+  {
+   "do": "click",
+   "text": "Cardiovascular Disease (incl. Heart Attack, Rhythm, Valve Disorder or Stroke)"
+  },
+  {
+   "do": "click",
+   "text": "Sexual Dysfunction"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "fill",
+   "selector": "textarea",
+   "value": "test"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "fill",
+   "selector": "textarea",
+   "value": "test"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "fill",
+   "selector": "textarea",
+   "value": "test"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "Read more"
+  },
+  {
+   "do": "click",
+   "text": "I confirm that I have read and understood the above statement"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "wait",
+   "ms": 1500
+  }
+ ]
+}

@@ -157,3 +157,18 @@ Do **not** choose "Yes" on the GP question (it opens a GP practice search = thir
 
 Run ids: `x00-baseline-replay`, `x01…` one change each. Each run's end state is read from the final screen, the final URL
 and the last `net/*orders_*.json` (status, admin_status, task statuses, product/sku).
+
+Results so far (end state = final URL + `node scripts/summ.js runs/<id>`):
+- x00 baseline replay (first-tablets, £28): /camera/id, order admin_status 4.1, sku 25-9, Health Questions task status 3. Same as stage 1.
+- x01 partner trying to conceive (+ only option "I understand and will stop my consultation."): flow carries on, identical end state.
+- x02 Female: "We're sorry, this service isn't available for the sex you were assigned at birth. Visit Boots Health Hub for advice." (hard stop at preflight).
+- x03 DOB 15/06/2009 (age 17): "Based on your age, you're not suitable for our online service. Please speak with a local GP or clinic".
+- x04 DOB 15/06/1951 (age 75): accepted; same product tiles and prices as baseline (bundles still listed).
+- x05 postcode JE2 4WD: "We do not currently provide our service to this postcode."
+- x06 Propecia £55 tile: same questionnaire 2049 as generic (sku 29-9).
+- x07 Random patches + circular patches Yes: identical end state (first attempt flaked on a click; retried once, passed).
+- x08 every red flag stacked (complete baldness, pus scalp, hair elsewhere, <1 month, sudden + "will stop", on finasteride not
+  effective + side effects, partner TTC + "will stop", suicidal thoughts + "not suitable, will stop"): identical end state.
+- x09 bundle baseline (£50.36, sku 817-9): questionnaire 2050, /camera/id, admin 4.1.
+- x10 bundle + BP medicine Yes + "change my prescription to tablets alone": order still the bundle at £50.36 (no switch on site).
+Helper: `scripts/summ.js`; experiment walk files and override files in `scripts/exp/`.

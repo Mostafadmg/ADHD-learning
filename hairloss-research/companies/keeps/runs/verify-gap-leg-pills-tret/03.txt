@@ -1,0 +1,24 @@
+STEP 03 click "CONTINUE"
+URL: https://www.keeps.com/quiz?step=3
+TITLE: Take the Hair Loss Quiz | Keeps
+
+--- VISIBLE TEXT ---
+Do you prefer taking pills or using topical treatments (foams/solutions/gels)?
+
+Topicals (applied directly to head)
+
+Pills (taken orally)
+
+I'm not sure / I don't have a preference
+
+WHY WE ASK THIS
+
+We offer treatments in several forms, and take your preferences into account. That said, we’ll always recommend the most effective treatment for you, regardless of format.
+
+Take the Hair Loss Quiz | Keeps
+
+--- CONTROLS ---
+  button (3): Topicals (applied directly to head)  ·  Pills (taken orally)  ·  I'm not sure / I don't have a preference
+
+--- LINKS ---
+

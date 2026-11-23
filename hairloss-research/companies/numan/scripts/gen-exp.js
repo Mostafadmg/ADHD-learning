@@ -35,7 +35,7 @@ const base = () => ({
   cond: multi(O.cNo), imp: multi(O.imp), hist: [{ ...L(O.mhNo), settle: 3500 }],
 });
 const depBranch = (mood, who, dose, suic) => {
-  const s = [...multi(O.cDep), ...single(mood), ...single(who)];
+  const s = [...multi(O.cDep), ...single(mood)]; if (!who) return s; s.push(...single(who));
   if (who === 'GP') { s.push(...TXT('Sertraline 50 mg once a day'), ...single(dose));
     if (dose === 'Yes') s.push(...TXT('Sertraline, was 25 mg, now 50 mg')); else s.push(...single(suic)); }
   return s;
@@ -61,14 +61,14 @@ const E = {
   'c-baby-yes': b => { b.cond = [...multi(O.cBaby), ...single(O.babyYes)]; },
   'c-baby-no': b => { b.cond = [...multi(O.cBaby), ...single(O.babyNo)]; },
   'dep-gp': b => { b.cond = depBranch(O.moodFin, 'GP', 'No', 'No'); },
-  'dep-minonly': b => { b.cond = depBranch(O.moodMin, 'GP', 'No', 'No'); },
+  'dep-minonly': b => { b.cond = depBranch(O.moodMin); },
   'dep-spec': b => { b.cond = depBranch(O.moodFin, 'Psychiatrist/Specialist/Consultant'); },
   'dep-dose': b => { b.cond = depBranch(O.moodFin, 'GP', 'Yes'); },
   'dep-suic': b => { b.cond = depBranch(O.moodFin, 'GP', 'No', 'Yes'); },
   'imp-se': b => { b.imp = multi(O.impSE); },
   'imp-scalp': b => { b.imp = multi(O.impScalp); },
   'imp-all': b => { b.imp = multi(O.impAll); },
-  'hist-yes': b => { b.hist = [L(O.mhYes), ...TXT('Mild hay fever in summer. No operations.'), { ...TXT('Cetirizine 10 mg when needed in summer.')[0] }, { ...NEXT, settle: 3500 }]; },
+  'hist-yes': b => { b.hist = [L(O.mhYes), ...TXT('Mild hay fever in summer. No operations.'), { do: 'wait', ms: 2000 }, ...TXT('Cetirizine 10 mg when needed in summer.'), { do: 'wait', ms: 2000 }]; },
   'age-65': b => { b.age = [...single(O.over65), ...single('Yes')]; },
   'age-65-no': b => { b.age = [...single(O.over65), ...single('No')]; },
   'pat-temples': b => { b.pattern = single('Temples'); },

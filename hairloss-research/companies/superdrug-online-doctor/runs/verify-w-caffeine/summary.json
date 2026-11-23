@@ -1,0 +1,33 @@
+{
+ "actions": "verify-w-caffeine.json",
+ "about": "STAGE 3 VERIFY: women-q7 allergy -> caffeine (R16)",
+ "changed": "women-q7 allergy -> caffeine (R16)",
+ "failedStep": null,
+ "submitDisabled": false,
+ "preTextLength": 2164,
+ "urlAfter": "https://onlinedoctor.superdrug.com/assessment/147757#/product?step=product",
+ "reachedProductScreen": true,
+ "offerLines": [
+  "Regaine for Women2% w/w (60ml) £25.00",
+  "Nourkrin Woman Hair Growth Tablets(60 tablets) £51.00",
+  "Telephone Consultation with a Doctor (does not include prescription medication): Available 2-3pm Friday(Only Phone consultation) £25.00"
+ ],
+ "products": [
+  "9895328 Regaine for Women2% w/w (60ml)",
+  "9895329 Nourkrin Woman Hair Growth Tablets(60 tablets)",
+  "9894989 Telephone Consultation with a Doctor (does not include prescription medication): Available"
+ ],
+ "postText": "Help?\nHair loss consultation\nQuestionnaire\tYour request\tDelivery\tSign in or Register\tYour Order\tPayment Successful\nPlease note:  This service is only available in the UK.\nYour request\n\t Regaine for Women2% w/w (60ml)\t\t£25.00\n\t Nourkrin Woman Hair Growth Tablets(60 tablets)\t\t£51.00\n\t Telephone Consultation with a Doctor (does not include prescription medication): Available 2-3pm Friday(Only Phone consultation)\t\t£25.00\nOrder\nBack\nSecure payment\nAuthorised and regulated\nRegulation | Privacy notice | Terms and Conditions | Cookie policy | Cookie Preferences\n© 2026 Superdrug Online Doctor. All rights reserved | Registered Company Number: 07392646",
+ "saveReply": [
+  "200 {\"status\":{\"code\":200,\"message\":\"Questionnaire Response added successfully to service 201132\"},\"data\":[],\"meta\":[],\"errors\":[]}"
+ ],
+ "productRulesReply": [
+  "200 {\"status\":{\"code\":200,\"message\":null},\"data\":[{\"suggestions\":[9895330,9895331]}],\"meta\":{},\"errors\":[]}"
+ ],
+ "productRulesCalled": 1,
+ "apiCallsAfterLoad": [
+  "/uk/api/v2/assessment/saveQuestionnaireResponse?serviceId=201132 200",
+  "/ecommerce/api/v2/section/1039315351 200",
+  "/consultation-triage/product-rules 200"
+ ]
+}

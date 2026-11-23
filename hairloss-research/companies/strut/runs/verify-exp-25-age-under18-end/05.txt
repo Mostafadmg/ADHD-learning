@@ -1,0 +1,21 @@
+STEP 05 wait 5000
+URL: https://start.struthealth.com/flow/www.struthealth.co
+TITLE: Pathwai Flow
+
+--- VISIBLE TEXT ---
+Oops, 
+you 
+seem 
+lost
+
+The flow you're looking for doesn't exist or is not published.
+
+Valid URL formats:
+
+/flow/[flowId]
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

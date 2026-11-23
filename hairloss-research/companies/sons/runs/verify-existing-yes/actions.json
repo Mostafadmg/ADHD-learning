@@ -1,0 +1,20 @@
+{
+ "_about": "Sons UK hair consultation, stage 2 one-change experiment exp-01. Changed: men-q01 existing customer: No → Yes. Everything else is the baseline man. The walk never types into the account form.",
+ "start": "https://shop.sons.co.uk/consultation/?logged_in=false",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2500,
+   "_q": "wait for survey to load"
+  },
+  {
+   "do": "click",
+   "text": "Yes",
+   "_q": "5140 existing customer"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  }
+ ]
+}

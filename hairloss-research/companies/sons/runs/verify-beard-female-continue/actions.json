@@ -1,0 +1,3 @@
+{"_about":"Stage 3: beard flow, Female, then press the Continue button still on screen (exp-42 did not press it).","start":"https://shop.sons.co.uk/beard-consultation/","steps":[
+{"do":"wait","ms":2500},{"do":"click","text":"No"},{"do":"click","text":"Female"},{"do":"wait","ms":1500},
+{"do":"click","text":"Continue"},{"do":"wait","ms":2500}]}

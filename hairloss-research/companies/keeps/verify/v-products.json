@@ -1,0 +1,125 @@
+{
+ "_note": "Stage 3 product-page check",
+ "start": "https://www.keeps.com/our-products",
+ "locale": "en-US",
+ "timezone": "America/Chicago",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 4000
+  },
+  {
+   "do": "scroll"
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/our-products/chew-3-in-1-finasteride-and-minoxidil"
+  },
+  {
+   "do": "wait",
+   "ms": 4000
+  },
+  {
+   "do": "scroll"
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/our-products/chew-plus-5-in-1-dutasteride-and-minoxidil"
+  },
+  {
+   "do": "wait",
+   "ms": 4000
+  },
+  {
+   "do": "scroll"
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/our-products/drop-4-in-1-finasteride-and-minoxidil"
+  },
+  {
+   "do": "wait",
+   "ms": 4000
+  },
+  {
+   "do": "scroll"
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/our-products/drop-plus-11-in-1-dutasteride-and-minoxidil"
+  },
+  {
+   "do": "wait",
+   "ms": 4000
+  },
+  {
+   "do": "scroll"
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/our-products/gel-plus-10-in-1-dutasteride-finasteride-and-minoxidil"
+  },
+  {
+   "do": "wait",
+   "ms": 4000
+  },
+  {
+   "do": "scroll"
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/our-products/finasteride"
+  },
+  {
+   "do": "wait",
+   "ms": 4000
+  },
+  {
+   "do": "scroll"
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/our-products/minoxidil-foam"
+  },
+  {
+   "do": "wait",
+   "ms": 4000
+  },
+  {
+   "do": "scroll"
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/our-products/ketoconazole"
+  },
+  {
+   "do": "wait",
+   "ms": 4000
+  },
+  {
+   "do": "scroll"
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/our-products/minoxidil-spray"
+  },
+  {
+   "do": "wait",
+   "ms": 4000
+  },
+  {
+   "do": "scroll"
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/our-products/topical-finasteride-and-minoxidil"
+  },
+  {
+   "do": "wait",
+   "ms": 4000
+  },
+  {
+   "do": "scroll"
+  }
+ ]
+}

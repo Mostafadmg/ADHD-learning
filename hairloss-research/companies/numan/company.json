@@ -2002,6 +2002,174 @@
    "changed": "NOT a one-change test. Mapping walk: 65 or over, Other pattern, all three allergy options, all four scalp symptoms, all six cautions, every 'still consider me' follow-up, specialist then GP, dose change No then Yes, 'I have' a medical history; free text was short fictional medical text",
    "result": "Reached 28 of the 29 questions in one draft. Flags: hasAllergyToFinasteride and hasAllergyToMinoxidil true after the allergy answer; isMinoxidilEligible false after the scalp answer; isFinasterideEligible false only while 'specialist' was selected. Product screen: Rosemary Oil only.",
    "run": "runs/s2-men-explore"
+  },
+  {
+   "id": "x2-00-baseline-full",
+   "flow": "men",
+   "changed": "none (baseline replay to the account wall)",
+   "result": "Still works. 8 questions. Featured three-part kit £26.67/month; six-monthly plan pre-selected; order summary at the wall: kit x3 every 3 months £216.00, promo -£40.00, total £176.00.",
+   "run": "runs/x2-00-baseline-full"
+  },
+  {
+   "id": "x2-01-baseline",
+   "flow": "men",
+   "changed": "none (baseline replay to the product screen; reference for all x2 runs)",
+   "result": "8 questions; flags isFinasterideEligible=true, isMinoxidilEligible=true. Featured three-part kit 'Most effective' £26.67; others: two-part kit £22.67, combination kit £26.67, Finasteride £16.80, Triple-Action £22.67, Extra Strength Spray £18.00, Regaine £51.67, Rosemary Oil £14.00.",
+   "run": "runs/x2-01-baseline"
+  },
+  {
+   "id": "x2-02-al-fin",
+   "flow": "men",
+   "changed": "allergy: 'I am not allergic…' → 'I am allergic to finasteride' (reaction text answered neutrally)",
+   "result": "Adds 1 question (reaction text). hasAllergyToFinasteride=true (isFinasterideEligible stays true). Finasteride group hidden. Featured: Extra Strength Spray, 'Recommended for you', £18.00; also Regaine £51.67 and Rosemary Oil £14.00. All three kits, Triple-Action Spray and Finasteride gone.",
+   "run": "runs/x2-02-al-fin"
+  },
+  {
+   "id": "x2-03-al-min",
+   "flow": "men",
+   "changed": "allergy: → 'I am allergic to minoxidil' (reaction text answered neutrally)",
+   "result": "Adds the reaction text question. hasAllergyToMinoxidil=true. Minoxidil group hidden. Featured: Finasteride, 'Recommended for you', £16.80; also Rosemary Oil £14.00. All kits, both sprays and Regaine gone.",
+   "run": "runs/x2-03-al-min"
+  },
+  {
+   "id": "x2-04-sc-pain",
+   "flow": "men",
+   "changed": "scalp: 'No' → 'Pain, itching, burning or bumps' (follow-up text answered neutrally)",
+   "result": "Adds clarify_pain_itching. isMinoxidilEligible=false. Minoxidil group hidden. Featured: Finasteride, 'Recommended for you', £16.80; also Rosemary Oil £14.00. All kits, both sprays and Regaine gone.",
+   "run": "runs/x2-04-sc-pain"
+  },
+  {
+   "id": "x2-05-sc-red",
+   "flow": "men",
+   "changed": "scalp: 'No' → 'Red rinds or rashes' (follow-up text answered neutrally)",
+   "result": "Adds clarify_red_rinds_or_rashes. isMinoxidilEligible=false. Minoxidil group hidden. Featured: Finasteride, 'Recommended for you', £16.80; also Rosemary Oil £14.00. All kits, both sprays and Regaine gone.",
+   "run": "runs/x2-05-sc-red"
+  },
+  {
+   "id": "x2-06-sc-dan-yes",
+   "flow": "men",
+   "changed": "scalp: 'No' → 'Dandruff'; follow-up 'still consider topical?' = Yes",
+   "result": "Adds clarify_dandruff. Offer identical to baseline: three-part kit featured ('Most effective', £26.67), all eight products listed. Flags unchanged (both drugs eligible).",
+   "run": "runs/x2-06-sc-dan-yes"
+  },
+  {
+   "id": "x2-07-sc-dan-no",
+   "flow": "men",
+   "changed": "scalp: 'No' → 'Dandruff'; follow-up 'still consider topical?' = No",
+   "result": "Adds clarify_dandruff. Offer identical to baseline: three-part kit featured ('Most effective', £26.67), all eight products listed. Flags unchanged (both drugs eligible). The 'No' (do not want topical) does not hide any spray; it only carries a clinician note.",
+   "run": "runs/x2-07-sc-dan-no"
+  },
+  {
+   "id": "x2-08-sc-pso",
+   "flow": "men",
+   "changed": "scalp: 'No' → 'Psoriasis or eczema' (follow-up text answered neutrally)",
+   "result": "Adds clarify_diagnosis_of_pso_ecz. Offer identical to baseline: three-part kit featured ('Most effective', £26.67), all eight products listed. Flags unchanged (both drugs eligible). Minoxidil stays on offer although the served clinician note says it is not suitable with an active scalp condition.",
+   "run": "runs/x2-08-sc-pso"
+  },
+  {
+   "id": "x2-09-c-psa-no",
+   "flow": "men",
+   "changed": "cautions: 'No - none' → PSA/prostate cancer; follow-up = 'I do not wish to be considered for finasteride…'",
+   "result": "Adds clarify_psa. Offer identical to baseline: three-part kit featured ('Most effective', £26.67), all eight products listed. Flags unchanged (both drugs eligible). The finasteride opt-out does not hide finasteride products.",
+   "run": "runs/x2-09-c-psa-no"
+  },
+  {
+   "id": "x2-10-c-bp-no",
+   "flow": "men",
+   "changed": "cautions: → high or low blood pressure; follow-up = 'I do not wish to be considered for minoxidil.'",
+   "result": "Adds clarify_uncontrolled_bp. isMinoxidilEligible=false. Minoxidil group hidden. Featured: Finasteride, 'Recommended for you', £16.80; also Rosemary Oil £14.00. All kits, both sprays and Regaine gone.",
+   "run": "runs/x2-10-c-bp-no"
+  },
+  {
+   "id": "x2-11-c-ast-no",
+   "flow": "men",
+   "changed": "cautions: → asthma; follow-up = 'I do not wish to be considered for topical formulations'",
+   "result": "Adds clarify_asthma. Offer identical to baseline: three-part kit featured ('Most effective', £26.67), all eight products listed. Flags unchanged (both drugs eligible). Sprays stay on offer despite the opt-out.",
+   "run": "runs/x2-11-c-ast-no"
+  },
+  {
+   "id": "x2-12-c-baby-no",
+   "flow": "men",
+   "changed": "cautions: → trying for a baby in 12 weeks; follow-up = 'I do not wish to be considered for preparations containing finasteride.'",
+   "result": "Adds clarify_plan_on_trying_for_baby. Offer identical to baseline: three-part kit featured ('Most effective', £26.67), all eight products listed. Flags unchanged (both drugs eligible). The finasteride opt-out does not hide finasteride products.",
+   "run": "runs/x2-12-c-baby-no"
+  },
+  {
+   "id": "x2-13-dep-minonly",
+   "flow": "men",
+   "changed": "cautions: → depression/anxiety; mood question = 'I would like to proceed with a minoxidil only treatment plan.'",
+   "result": "Adds mood_alterations only: the rest of the mental-health branch (who manages, medicines, dose change, suicidal thoughts) is skipped. isFinasterideEligible=false. Finasteride group hidden. Featured: Extra Strength Spray, 'Recommended for you', £18.00; also Regaine £51.67 and Rosemary Oil £14.00. All three kits, Triple-Action Spray and Finasteride gone.",
+   "run": "runs/x2-13-dep-minonly"
+  },
+  {
+   "id": "x2-14-dep-gp",
+   "flow": "men",
+   "changed": "cautions: → depression/anxiety; accept finasteride mood risk, GP, a fictional medicine, no dose change, no suicidal thoughts",
+   "result": "Adds 5 questions (13 in all). Offer identical to baseline: three-part kit featured ('Most effective', £26.67), all eight products listed. Flags unchanged (both drugs eligible).",
+   "run": "runs/x2-14-dep-gp"
+  },
+  {
+   "id": "x2-15-dep-spec",
+   "flow": "men",
+   "changed": "as x2-14 but who manages = 'Psychiatrist/Specialist/Consultant'",
+   "result": "Adds 2 questions; medicines, dose change and suicidal-thoughts questions are skipped. isFinasterideEligible=false. Finasteride group hidden. Featured: Extra Strength Spray, 'Recommended for you', £18.00; also Regaine £51.67 and Rosemary Oil £14.00. All three kits, Triple-Action Spray and Finasteride gone.",
+   "run": "runs/x2-15-dep-spec"
+  },
+  {
+   "id": "x2-16-dep-suic",
+   "flow": "men",
+   "changed": "as x2-14 but suicidal thoughts in the past year = Yes",
+   "result": "No stop screen. isFinasterideEligible=false. Finasteride group hidden. Featured: Extra Strength Spray, 'Recommended for you', £18.00; also Regaine £51.67 and Rosemary Oil £14.00. All three kits, Triple-Action Spray and Finasteride gone.",
+   "run": "runs/x2-16-dep-suic"
+  },
+  {
+   "id": "x2-17-dep-dose",
+   "flow": "men",
+   "changed": "as x2-14 but dose changed in last 3 months = Yes (list text answered neutrally)",
+   "result": "Adds the dose-change list and then SKIPS the suicidal-thoughts question. Offer identical to baseline: three-part kit featured ('Most effective', £26.67), all eight products listed. Flags unchanged (both drugs eligible).",
+   "run": "runs/x2-17-dep-dose"
+  },
+  {
+   "id": "x2-18-al-lac-none",
+   "flow": "men",
+   "changed": "allergy: → lactose intolerance; follow-up = 'I can’t tolerate any amount of lactose…'",
+   "result": "Adds lactose_tolerance. allergies=[lactose]. Offer identical to baseline: three-part kit featured ('Most effective', £26.67), all eight products listed. Flags unchanged (both drugs eligible). Finasteride tablets stay on offer.",
+   "run": "runs/x2-18-al-lac-none"
+  },
+  {
+   "id": "x2-19-c-body",
+   "flow": "men",
+   "changed": "cautions: → hair loss on other areas of the body (text answered neutrally)",
+   "result": "Adds clarify_noticed_hair_loss_on_my_body. Offer identical to baseline: three-part kit featured ('Most effective', £26.67), all eight products listed. Flags unchanged (both drugs eligible).",
+   "run": "runs/x2-19-c-body"
+  },
+  {
+   "id": "x2-20-regaine-almin",
+   "flow": "men-product-entry",
+   "changed": "entry link /subscribe/hair-loss/regaine (no promo code) + minoxidil allergy",
+   "result": "hasAllergyToMinoxidil=true. Regaine (minoxidil) is STILL featured, badge changes to 'Most effective', £65.00 (no first-order code on this link); others: Finasteride £28.00, Rosemary Oil £23.33. Kits and sprays hidden. The entry product escapes the allergy filter.",
+   "run": "runs/x2-20-regaine-almin"
+  },
+  {
+   "id": "x2-21-fin-entry-alfin",
+   "flow": "men-product-entry",
+   "changed": "entry link /subscribe/hair-loss/finasteride (no promo code) + finasteride allergy",
+   "result": "hasAllergyToFinasteride=true. Finasteride is STILL featured ('Most effective', £28.00); others: Extra Strength Spray £30.00, Regaine £65.00, Rosemary Oil £23.33. The entry product escapes the allergy filter.",
+   "run": "runs/x2-21-fin-entry-alfin"
+  },
+  {
+   "id": "x2-22-age-65",
+   "flow": "men",
+   "changed": "age: '18 - 65' → '65 or over'; confirmation = Yes",
+   "result": "Adds sixty_five_and_over_confirmation. Offer identical to baseline: three-part kit featured ('Most effective', £26.67), all eight products listed. Flags unchanged (both drugs eligible). (The API variants say ages 19-65, but nothing is hidden.)",
+   "run": "runs/x2-22-age-65"
+  },
+  {
+   "id": "x2-24-pat-other",
+   "flow": "men",
+   "changed": "pattern: 'Temples and Crown' → 'Other hair loss pattern' (text answered neutrally)",
+   "result": "Adds clarify_other_hair_loss_pattern. Offer identical to baseline: three-part kit featured ('Most effective', £26.67), all eight products listed. Flags unchanged (both drugs eligible).",
+   "run": "runs/x2-24-pat-other"
   }
  ],
  "recommendations": [

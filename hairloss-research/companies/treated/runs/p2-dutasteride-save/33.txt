@@ -1,0 +1,18 @@
+STEP 33 wait 7000
+URL: https://start.treated.com/GBR/en/#/secondary-questions
+TITLE: Treated UK - Choose Better - Medical Experts & Treatments Online
+
+--- VISIBLE TEXT ---
+Question 1 of 3
+
+Have you used Finasteride (Propecia) or Minoxidil (Regaine) before?
+Yes, it didn't work
+Yes, I had side effects and had to stop treatment
+Yes, the treatment worked well
+No, I've never used either
+
+--- CONTROLS ---
+  radio (4): Yes, it didn't work  ·  Yes, I had side effects and had to stop treatment  ·  Yes, the treatment worked well  ·  No, I've never used either
+
+--- LINKS ---
+

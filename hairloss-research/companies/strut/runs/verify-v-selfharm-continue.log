@@ -1,0 +1,9 @@
+
+===== FINAL (after 26 steps) =====
+URL: https://start.struthealth.com/flow/6aa3d578f415d1603a6e0c85
+TEXT: 94% ⏎ Safety Alert ⏎ Your safety is our top priority. If you are having thoughts of hurting yourself, please contact the 988 Suicide and Crisis Lifeline by calling or texting 988, or call 911. A physician will still review your questionnaire. You may go back and update your answer, or end the questionnaire. ⏎ Go back and update my answer ⏎ End questionnaire ⏎ An answer is required ⏎ Continue
+CONTROLS:
+  button (4): Go back  ·  Go back and update my answer [false]  ·  End questionnaire [false]  ·  Continue
+  links: 
+
+[walk] 26 step(s), exit 0, 2 JSON bodies saved -> runs/verify-v-selfharm-continue

@@ -1,0 +1,18 @@
+STEP 19 click "No"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Please specify why you cannot become pregnant:
+This helps our doctors safely determine if certain medications (e.g., Finasteride, Dutasteride, or Retinoic Acid) are appropriate and medically safe for your specific circumstances.
+I am post menopausal
+I have had a surgical procedure
+My partner has had a vasectomy
+Other reason
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

@@ -1,0 +1,12 @@
+{"url":"https://start.struthealth.com/api/sessions","method":"POST","status":200,"size":16}
+{"url":"https://www.struthealth.com/__strut/consent-region","method":"GET","status":200,"size":44}
+{"url":"https://sdk.iad-02.braze.com/api/v3/data/","method":"POST","status":201,"size":1637,"file":"net/01-sdk_iad_02_braze_com_api_v3_data_.json","post":"{\"respond_with\":{\"triggers\":true,\"config\":{\"config_time\":0}},\"events\":[{\"name\":\"ss\",\"time\":1795476296.527,\"data\":{},\"session_id\":\"d176e6e3-4bb3-a016-a901-f80b57f59c77\"}],\"device\":{\"browser\":\"Chrome\",\"browser_version\":\"157\",\"os_version\":\"Linux\",\"resolution\":\"1280x900\",\"locale\":\"en-us\",\"time_zone\":\"America/Chicago\",\"user_agent\":\"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36\"},\"api_key\":\"51ece8cc-ca46-4038-bb60-fceafa1ec1a5\",\"time\":1795476296,\"sdk_metadata\":[\"wcd\",\"gg\"],\"sdk_version\":\"5.9.1\",\"device_id\":\"a8f149b2-854f-5ea3-b555-c0155ee1ac9e\"}"}
+{"url":"https://pixel-config.reddit.com/pixels/a2_hqb617hxlblf/config","method":"GET","status":200,"size":53}
+{"url":"https://strut-health.sjv.io/xur/18908","method":"POST","status":200,"size":120}
+{"url":"https://app.shop.pe/app/init/params?siteid=627a5a7d7ffac3207a3de14b&product=start.struthealth.com&product_url=https%3A%2F%2Fstart.struthealth.com%2Fflow%2F6aa3d578f415d1603a6e0c85&image=&price=&currency=undefined&rating=0&rating_count=0&review_count=0&stock_status=&description=&update_product=true&s","method":"GET","status":200,"size":258}
+{"url":"https://app.shop.pe/app/init/params?siteid=627a5a7d7ffac3207a3de14b&product=start.struthealth.com&product_url=https%3A%2F%2Fstart.struthealth.com%2Fflow%2F6aa3d578f415d1603a6e0c85&image=&price=&currency=undefined&rating=0&rating_count=0&review_count=0&stock_status=&description=&update_product=true&s","method":"GET","status":200,"size":974,"file":"net/02-app_shop_pe_app_init_params_siteid_627a5a7d7ffac3207a3de14b_product_start_struth.json"}
+{"url":"https://app.shop.pe/app/datapartners/status?usersite_id=627a5a7d7ffac3207a3de14b","method":"GET","status":200,"size":34}
+{"url":"https://m.stripe.com/6","method":"POST","status":200,"size":156}
+{"url":"https://checkout-api.struthealth.com/api/Visiting/ValidateVisitingId","method":"POST","status":200,"size":87}
+{"url":"https://sdk.iad-02.braze.com/api/v3/data/","method":"POST","status":201,"size":2}
+{"url":"https://m.stripe.com/6","method":"POST","status":200,"size":156}

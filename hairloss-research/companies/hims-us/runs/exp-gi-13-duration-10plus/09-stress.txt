@@ -1,0 +1,36 @@
+STEP 09
+URL: https://www.hims.com/g/i/hl/stress
+SERVER NODE: stress (nodeModularScreen), step value 15
+
+--- VISIBLE TEXT ---
+How often do you tend to experience stress?
+All the time
+Sometimes
+Rarely
+Not sure
+Why we ask
+
+If you experience stress, it could affect your hair. Stress can trigger and worsen a form of temporary hair loss called telogen effluvium, which interrupts your hair’s natural growth cycle
+
+Source
+Continue
+Already have an account? Sign In
+
+--- CHOICES ---
+[radio] All the time
+[radio] Sometimes
+[radio] Rarely
+[radio] Not sure
+
+--- BUTTONS ---
+Continue
+
+--- FIELDS ---
+
+
+--- LINKS ---
+Source -> https://www.hims.com/blog/stress-hair-loss-take-control
+Already have an account? Sign In -> /c/hl?skipToSignIn=true&goFlow=true&flowId=hl&sessionId=39fc10de-021a-4a12-aff5-f6c10c4e3159
+
+--- OUTPUT SCHEMA (server) ---
+{"type":"object","required":["responses"],"properties":{"responses":{"type":"object","required":["i-hl-hims-hair-stress"],"properties":{"i-hl-hims-hair-stress":{"type":"object","required":["i-hl-hims-hair-stress"],"properties":{"i-hl-hims-hair-stress":{"enum":["i-hl-hims-hair-stress-always","i-hl-hims-hair-stress-sometimes","i-hl-hims-hair-stress-rarely","i-hl-hims-hair-stress-unsure"],"type":"string"}},"additionalProperties":false}},"additionalProperties":false}}}

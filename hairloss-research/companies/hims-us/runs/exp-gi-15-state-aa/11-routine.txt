@@ -1,0 +1,21 @@
+STEP 11
+URL: https://www.hims.com/g/i/hl/routine
+SERVER NODE: routine (nodeModularScreen), step value 19
+
+--- VISIBLE TEXT ---
+Continue
+
+--- CHOICES ---
+
+
+--- BUTTONS ---
+Continue
+
+--- FIELDS ---
+
+
+--- LINKS ---
+
+
+--- OUTPUT SCHEMA (server) ---
+{"type":"object","required":["responses"],"properties":{"responses":{"type":"object","required":[],"additionalProperties":false}}}

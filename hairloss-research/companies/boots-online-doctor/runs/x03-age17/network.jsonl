@@ -13,3 +13,7 @@
 {"url":"https://prod-api.lemonaidpims.co.uk/v2.0/content/web/frontendParameters","method":"GET","status":200,"size":66712,"file":"net/10-prod_api_lemonaidpims_co_uk_v2_0_content_web_frontendParameters.json"}
 {"url":"https://prod-api.lemonaidpims.co.uk/v2.0/content/web/frontendParameters","method":"GET","status":200,"size":66712,"file":"net/11-prod_api_lemonaidpims_co_uk_v2_0_content_web_frontendParameters.json"}
 {"url":"https://prod-api.lemonaidpims.co.uk/v2.0/content/web/categories/HAI","method":"GET","status":200,"size":125901,"file":"net/12-prod_api_lemonaidpims_co_uk_v2_0_content_web_categories_HAI.json"}
+{"url":"https://prod-api.lemonaidpims.co.uk/v2.0/users/me/eligibility?zip=N1%200QH","method":"GET","status":200,"size":29}
+{"url":"https://sapi.lemonaidpims.co.uk/zips/v1/zips/N1%200QH","method":"GET","status":200,"size":130}
+{"url":"https://prod-api.lemonaidpims.co.uk/v2.0/states/UK","method":"GET","status":200,"size":130980,"file":"net/13-prod_api_lemonaidpims_co_uk_v2_0_states_UK.json"}
+{"url":"https://prod-api.lemonaidpims.co.uk/v2.0/users/me/eligibility?dob=2009-06-14T00%3A00%3A00%2D11%3A00&state=UK&category_code=HAI","method":"GET","status":403,"size":151}

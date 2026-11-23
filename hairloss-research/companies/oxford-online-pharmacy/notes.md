@@ -166,3 +166,22 @@ machine: the block is on every URL, including robots.txt. In order of value:
 Walk `/consultation/23` anonymously, record wording, find the account wall, then test in this order: sex, age,
 partner pregnancy, each heart/BP item, mood, previous finasteride when ordering dutasteride. Check the spray product page
 for strengths.
+
+---
+
+# Stage 3 (VERIFY), 23 Nov 2026
+
+- Access re-checked: walk.js on `/consultation/23` → Cloudflare check (`runs/verify-consult`, answer file `verify-consult.json`);
+  WebFetch on `/hair-loss` → 403. No baseline existed to replay (no stage ever walked the site).
+- Domain-filtered web search still works; 8 fresh searches were used to re-check prices and rules.
+- **Main correction:** generic dutasteride is £18.99 for 30 (£83.99 for 180); the £39.99 recorded in stage 2 is Avodart.
+- Spray (p8): no product page found, only blog posts; "from" price snippets conflict (£44.99 / £18.99), so price is unknown.
+- p10 is probably the same Sons 5% product as p9 (its URL is titled "Sons" in search).
+- Added p17 Regaine for Women 5% foam (£34.80), p18 Regaine for Women + Florisene (£40, out of stock); p5 now the
+  current Regaine for Men Extra Strength foam.
+- Female programme: £75.99 = blood test (ferritin, TSH, free T4, B12, folate, vitamin D) + 3 months unnamed oral drug;
+  the women's page says the consultation asks for hair photos.
+- **Account wall (docs, not observed):** consultation → basket → log in / create account → pay. Questions come first.
+- Close-to-exact wording of one question from a search summary: "If ordering Minoxidil (Loniten) tablets do you agree to
+  check your blood pressure regularly" (in R14; not added as a question because options are unknown).
+- `verification` block added; validate `--stage final` passes.

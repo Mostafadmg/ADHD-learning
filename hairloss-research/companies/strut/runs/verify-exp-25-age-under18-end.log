@@ -1,0 +1,9 @@
+
+===== FINAL (after 5 steps) =====
+URL: https://start.struthealth.com/flow/www.struthealth.co
+TEXT: Oops,  ⏎ you  ⏎ seem  ⏎ lost ⏎ The flow you're looking for doesn't exist or is not published. ⏎ Valid URL formats: ⏎ /flow/[flowId]
+CONTROLS:
+
+  links: 
+
+[walk] 5 step(s), exit 0, 2 JSON bodies saved -> runs/verify-exp-25-age-under18-end

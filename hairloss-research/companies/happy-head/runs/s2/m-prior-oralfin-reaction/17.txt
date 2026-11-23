@@ -1,0 +1,23 @@
+STEP 17 click "Oral Finasteride (Propecia/Proscar™)"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Have you previously tried any of the following hair loss treatments? 
+Topical Minoxidil (Rogaine™)
+Topical Finasteride
+Oral Minoxidil
+Oral Finasteride (Propecia/Proscar™)
+Other
+None of the above
+NEXT
+Why we ask
+Previous treatments can provide important insight into your hair loss journey and help us understand what may work best for you.
+Your information is secure and always kept private.
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

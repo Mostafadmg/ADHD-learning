@@ -1,0 +1,17 @@
+STEP 05 click "label:text-is(\"My hair loss started gradually over the last few months or years\")"
+URL: https://www.numan.com/subscribe/hair-loss/3489f841-2e70-4fa8-ac90-cbb237559871/sq/when_did_you_notice
+TITLE: When did you start to notice your hair loss? | Numan
+
+--- VISIBLE TEXT ---
+13%
+When did you start to notice your hair loss?
+Over the last few days or weeks
+My hair loss started gradually over the last few months or years
+Back
+
+--- CONTROLS ---
+  radio (2): Over the last few days or weeks  ·  My hair loss started gradually over the last few months or years [checked]
+  button (1): Back
+
+--- LINKS ---
+  link (1): Visit the main page -> /

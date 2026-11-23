@@ -1,0 +1,57 @@
+STEP 33 wait 7000
+URL: https://start.treated.com/GBR/en/#/checkout
+TITLE: Treated UK - Choose Better - Medical Experts & Treatments Online
+
+--- VISIBLE TEXT ---
+Payment and delivery
+Patient details
+First name (as it appears on your ID)
+Last name
+Date of birth
+Email
++44
+Phone
+Continue
+Your address
+Payment
+Order summary
+Finasteride
+1mg x 28 tablets
+£34.95
+
+Repeat deliveries
+
+Deliver to me: every month*
+Price includes:
+24 hour delivery
+
+Delivery by secure courier in one working day.
+
+£0.00
+Access to our clinicians
+
+Ask our experts anything you like, any time you want.
+
+£0.00
+Total
+£34.95
+Edit my choice
+
+*This is a cancellable subscription that auto-renews. Cancel online, anytime, right up to the day before your next order is created.
+
+Feedback
+How are you finding Treated?
+Select an option from 😠 to 😍, with 😠 being Not good at all and 😍 being Very good
+Not good at all
+Very good
+Next
+Skip
+
+--- CONTROLS ---
+  input:text (3): First name (as it appears on your ID)  ·  Last name  ·  Email
+  input:tel (2): DD-MM-YYYY  ·  121 234 5678
+  button (5): Continue  ·  Edit my choice  ·  Feedback  ·  Next [disabled]  ·  Skip
+  radio (1): (no label)
+
+--- LINKS ---
+

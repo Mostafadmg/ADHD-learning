@@ -1,0 +1,26 @@
+STEP 25 click "button.questionnaire__btn-next"
+URL: https://onlinedoctor-clinic.boots.com/questions/1
+TITLE: Consultation | Boots Online Doctor
+
+--- VISIBLE TEXT ---
+Call us: Mon-Fri 8:30AM-6PM, Sat-Sun 9:30AM-4:30PM
+ 0203 3183773
+Boots Advantage Card Shop Boots.com
+Services
+Meet the team
+FAQ
+LOG IN
+6%
+Are you experiencing any areas of hair loss on your scalp that look like circular patches, with a smooth surface?
+Yes
+No
+NEXT
+Powered by:
+©2026 Boots Digital Health Limited
+
+--- CONTROLS ---
+  button (5): Cookie Preferences  ·  LOG IN  ·  Yes  ·  No  ·  NEXT [disabled]
+  checkbox (2): Yes  ·  No
+
+--- LINKS ---
+  link (6): 0203 3183773 -> tel:0203 3183773  ·  Boots Advantage Card -> https://www.boots.com/advantage-card  ·  Shop Boots.com -> https://boots.com  ·  Services ->   ·  Meet the team -> https://onlinedoctor.boots.com/meet-the-team  ·  FAQ -> 

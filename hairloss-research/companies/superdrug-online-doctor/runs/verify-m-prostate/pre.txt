@@ -1,0 +1,161 @@
+BEFORE SUBMIT (questionnaire as answered)
+URL: https://onlinedoctor.superdrug.com/assessment/147929#/section/1039315014?step=1
+
+Help?
+Hair loss consultation
+Questionnaire	Your request	Delivery	Sign in or Register	Your Order	Payment Successful
+Please note:  This service is only available in the UK.
+×
+Close
+These medical questions help our doctors treat you safely. Check that you fully understand them, and message us if you're unsure.
+Have you been diagnosed with Androgenic Alopecia (Male Pattern Baldness)?
+Yes, by my GP
+Yes, by a specialist
+No, self-diagnosis
+Please choose your hair pattern.
+A
+B
+C
+D
+E
+No pattern fits well
+Are you currently using finasteride (or the brand Propecia)?
+Yes
+No
+Have you taken finasteride or Propecia for hair loss before?
+Yes
+No
+When did you first notice any hair loss?
+In the last month
+More than a month ago
+How did your hair loss start?
+Suddenly
+Gradually (over months)
+Have you noticed any other changes to the areas where you are losing hair?
+Such as redness, itching, flaking or soreness
+Yes
+No
+Can you always get and maintain an erection when you want one?
+Yes
+No
+Do you have, or have you had, any of the following conditions?
+Prostate cancer
+Breast cancer
+Liver condition
+Any type of skin conditions
+None of the above
+Do you have any other medical conditions not mentioned above?
+Yes
+No
+Are you currently taking any medication, or have you recently finished a course of medication?
+Yes
+No
+Are you allergic to any medicines or other substances?
+For instance peanuts or soya.
+Yes
+No
+Almost done. Important information to read and confirm you agree and understand:
+
+Trying for a baby
+
+Finasteride may affect male fertility while you are taking it.
+These changes are usually reversible after stopping treatment, but recovery may take several months. If you are planning to try for a baby, it is best not to use this or to stop it several months before trying to conceive.
+
+Depression
+
+Some people have experienced severe depression when taking finasteride. Before taking finasteride, read and keep the finasteride patient cards and patient information leaflet within your pack and inform your doctor if you have any personal history of depression or suicidal thought. You should stop taking this medication immediately if you notice that your mood is affected and speak to your doctor.
+
+Finasteride and your prostate
+
+Finasteride can lower the level of a prostate protein called PSA (prostate-specific antigen) in your blood. Because of this, it’s recommended that you see your GP for a prostate check (rectal examination) and a PSA blood test before starting treatment, and then at regular intervals while taking it.
+
+How often this is needed will depend on your age and personal risk factors. These checks help to detect any prostate problems, including prostate cancer, as early as possible.
+
+Sexual problems
+
+If you experience decreased sex drive, difficulty having an erection or ejaculation problems on finasteride, you should contact your doctor for medical advice.
+
+This medication is prescribed for your own personal use
+
+If you are requesting any follow-up medication, you confirm you are tolerating your treatment and any side effects experienced.
+
+Your answers are used to make medical decisions
+
+Answer the questions honestly and as accurately as you can. Our doctors rely on this information to prescribe treatment safely. Missing or incorrect information can increase the risk of side effects or lead to serious risk to your health.
+
+In case of questions, please contact us.
+
+By continuing, you confirm that you have understood the information provided, especially around treatment options, side effects, and effectiveness.
+Please tick to acknowledge that it is best practice to inform your GP of any private treatment you receive. All treatment and messaging is completely confidential. However, you can easily update your GP by downloading a GP letter from the ‘Order History’ section of your account and sending it to them. If you prefer, we can send this letter directly to your GP, just send us their details
+Please tick here to signify that you have read, understand and agree to abide by our terms and conditions and privacy and cookie policy.
+Next
+Secure payment
+Authorised and regulated
+Regulation | Privacy notice | Terms and Conditions | Cookie policy | Cookie Preferences
+© 2026 Superdrug Online Doctor. All rights reserved | Registered Company Number: 07392646
+
+--- CONTROLS ---
+button:button name= id= value= qa= | × Close
+input:radio name=SingleChoice-option439401001 id= value=48318009 qa= | Yes, by my GP
+input:radio name=SingleChoice-option439401001 id= value=48318009.1 qa= | Yes, by a specialist
+input:radio name=SingleChoice-option439401001 id= value=441308009 qa= [checked] | No, self-diagnosis
+input:radio name=SingleChoice-option298000004 id= value=1 qa= | A
+input:radio name=SingleChoice-option298000004 id= value=2 qa= | B
+input:radio name=SingleChoice-option298000004 id= value=3 qa= [checked] | C
+input:radio name=SingleChoice-option298000004 id= value=4 qa= | D
+input:radio name=SingleChoice-option298000004 id= value=5 qa= | E
+input:radio name=SingleChoice-option298000004 id= value=6 qa= | No pattern fits well
+input:radio name=2304202 id= value=true qa= | Yes
+input:radio name=2304202 id= value=false qa= [checked] | No
+input:radio name=23042020 id= value=true qa= | Yes
+input:radio name=23042020 id= value=false qa= [checked] | No
+input:radio name=SingleChoice-option276131009 id= value=1 qa= | In the last month
+input:radio name=SingleChoice-option276131009 id= value=2 qa= [checked] | More than a month ago
+input:radio name=SingleChoice-option602 id= value=162463006 qa= | Suddenly
+input:radio name=SingleChoice-option602 id= value=2 qa= [checked] | Gradually (over months)
+input:radio name=716 id= value=true qa= | Yes
+input:radio name=716 id= value=false qa= [checked] | No
+input:radio name=021106 id= value=true qa= [checked] | Yes
+input:radio name=021106 id= value=false qa= | No
+input:checkbox name=MultiChoice-option723 id= value=254900004 qa= [checked] | Prostate cancer
+input:checkbox name=MultiChoice-option723 id= value=254837009 qa= | Breast cancer
+input:checkbox name=MultiChoice-option723 id= value=235856003 qa= | Liver condition
+input:checkbox name=MultiChoice-option723 id= value=95320005 qa= | Any type of skin conditions
+input:checkbox name=MultiChoice-option723 id= value=728 qa= | None of the above
+input:radio name=724 id= value=true qa= | Yes
+input:radio name=724 id= value=false qa= [checked] | No
+input:radio name=47 id= value=true qa= | Yes
+input:radio name=47 id= value=false qa= [checked] | No
+input:radio name=49 id= value=true qa= | Yes
+input:radio name=49 id= value=false qa= [checked] | No
+input:checkbox name=Disclaimer-option22042020 id= value=22042020 qa= [checked] | Almost done. Important information to read and confirm you agree and understand: Trying fo
+input:checkbox name=Disclaimer-option20102724 id= value=20102724 qa= [checked] | Please tick to acknowledge that it is best practice to inform your GP of any private treat
+input:checkbox name=Disclaimer-option56 id= value=56 qa= [checked] | Please tick here to signify that you have read, understand and agree to abide by our terms
+button:submit name= id= value= qa=cdc-questionnaire-submit | Next
+button:submit name= id=onetrust-pc-btn-handler value= qa= | Manage cookies
+button:submit name= id=onetrust-reject-all-handler value= qa= | Deny Cookies
+button:submit name= id=onetrust-accept-btn-handler value= qa= | Accept cookies
+button:submit name= id=close-pc-btn-handler value= qa= | 
+button:submit name= id=accept-recommended-btn-handler value= qa= | Accept cookies
+button:submit name= id= value= qa= | 
+button:submit name= id= value= qa= | View Vendor Details‎
+button:submit name= id= value= qa= | 
+input:checkbox name=ot-group-id-C0002 id=ot-group-id-C0002 value=on qa= | Performance cookies
+button:submit name= id= value= qa= | View Vendor Details‎
+button:submit name= id= value= qa= | 
+input:checkbox name=ot-group-id-C0003 id=ot-group-id-C0003 value=on qa= | Functional cookies
+button:submit name= id= value= qa= | View Vendor Details‎
+button:submit name= id= value= qa= | 
+input:checkbox name=ot-group-id-C0004 id=ot-group-id-C0004 value=on qa= | Marketing and social media cookies
+button:submit name= id= value= qa= | View Vendor Details‎
+button:submit name= id= value= qa= | Back Button
+input:text name=vendor-search-handler id=vendor-search-handler value= qa= | 
+button:submit name= id=filter-btn-handler value= qa= | Filter Icon
+button:submit name= id=clear-filters-handler value= qa= | Clear
+input:checkbox name= id=chkbox-id value=on qa= | checkbox label
+button:submit name= id=filter-apply-handler value= qa= | Apply
+button:submit name= id=filter-cancel-handler value= qa= | Cancel
+input:checkbox name= id=select-all-hosts-groups-handler value=on qa= | checkbox label
+input:checkbox name= id=select-all-vendor-groups-handler value=on qa= | checkbox label
+input:checkbox name= id=select-all-vendor-leg-handler value=on qa= | checkbox label
+button:submit name= id= value= qa= | Save preferences

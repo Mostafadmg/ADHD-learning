@@ -1,0 +1,16 @@
+STEP 22 click "Okay"
+URL: https://start.treated.com/GBR/en/#/questionnaire
+TITLE: Treated UK - Choose Better - Medical Experts & Treatments Online
+
+--- VISIBLE TEXT ---
+Question 11 of 11
+
+Would you like us to tell your GP about any treatment we give you?
+Yes
+No
+
+--- CONTROLS ---
+  radio (2): Yes  ·  No [checked]
+
+--- LINKS ---
+

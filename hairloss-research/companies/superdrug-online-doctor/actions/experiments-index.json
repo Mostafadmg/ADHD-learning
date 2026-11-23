@@ -178,5 +178,25 @@
   "id": "exp-m14",
   "base": "baseline-men.json",
   "changed": "men-q3b taken finasteride before: No -> Yes (follow-up: 'It worked but I had low mood and reduced sex drive, so I stopped')"
+ },
+ {
+  "id": "exp-m15",
+  "base": "baseline-men.json",
+  "changed": "men-q2 hair pattern: C -> D (no photo item expected)"
+ },
+ {
+  "id": "exp-m16",
+  "base": "baseline-men.json",
+  "changed": "men-q2 hair pattern: C -> No pattern fits well (NO photos uploaded)"
+ },
+ {
+  "id": "exp-m17",
+  "base": "baseline-men.json",
+  "changed": "men-q11 allergies: No -> Yes, men-q11a = Lactose only; men-q11c 'Can you take medication that contains lactose?' = No"
+ },
+ {
+  "id": "exp-m18",
+  "base": "baseline-men.json",
+  "changed": "men-q9 other medical conditions: No -> Yes (details: 'Hay fever')"
  }
 ]

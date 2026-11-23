@@ -1,0 +1,3699 @@
+{
+ "slug": "philip-kingsley",
+ "company": "Philip Kingsley (PK Lab)",
+ "market": "UK",
+ "website": "https://www.philipkingsley.co.uk/hair-loss/pklab/treatments",
+ "parent": "Philip Kingsley Products Limited (company 02834292, 54 Green Street, London W1K 6RU); Philip Kingsley Trichological Clinic",
+ "audiences": [
+  "men",
+  "women"
+ ],
+ "model": "Heritage trichology clinic and haircare brand selling compounded (unlicensed) minoxidil/finasteride subscriptions through an online quiz, with paid trichologist consultations as the fallback route.",
+ "checkedOn": "2026-11-23",
+ "access": {
+  "howTested": [
+   "live-walk",
+   "site-code",
+   "public-docs"
+  ],
+  "accountWall": "Straight after the last question of every quiz (step *_step_user, \"Almost done! Your details\": first name, last name, date of birth, email, password, GP and consent ticks). It comes BEFORE any result: the plan choice and the consultation screen are only shown after /quiz/step/register.",
+  "blockers": [
+   "Account wall before results: the recommendation screen and the consultation screen could not be seen live.",
+   "Some SKUs in the rules (PHI1220, PHI1221, PHI1306, PHI1307, PHI1309, PHI1749, women's add-ons, scalp products) have no public product page that could be found, so their names are unknown."
+  ],
+  "coverageNote": "Both hair-loss quizzes were walked live to the account wall with the protocol baselines (runs r05, r07); every screen matched the served quiz definition. The full quiz definition (all questions, show-if conditions, product rules with conditions and blockers, and the no-results template) is served in every quiz page and was saved; product effects for every option were computed by running the site's own rule logic (ported to scratch/engine.py) one change at a time from each baseline. These are \"code\" findings: the results page itself is after the wall. The scalp quiz was walked live to the wall with a synthetic baseline (r08). One wall check (exp-01) confirmed that a man whose answers block every product meets the same wall with no warning."
+ },
+ "products": [
+  {
+   "id": "p-min5",
+   "name": "Minoxidil 5% Scalp Drops (Density+ Minoxidil 5%) [SKU PHI1301]",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "5%"
+    },
+    {
+     "name": "caffeine",
+     "strength": "not stated"
+    },
+    {
+     "name": "zinc",
+     "strength": "not stated"
+    },
+    {
+     "name": "melatonin",
+     "strength": "not stated"
+    }
+   ],
+   "form": "scalp drops (solution with pipette), 100 ml bottle, about 40 doses of 2.5 ml",
+   "audience": "both",
+   "legalStatus": "POM, unlicensed special (compounded); the PK Labs leaflet says \"This medication is unlicensed and is made and dispensed under pharmacist supervision\"",
+   "price": "£40 (price shown on the product page; the page says the plan rolls every 3 months)",
+   "priceDetail": "Hair-loss T&Cs: men get 50% off the first subscription (1, 3 or 6 month) when signing up on hairloss.philipkingsley.co.uk. A web snippet seen in the market sweep (unverified) showed a minoxidil 5% + shampoo plan at £28 first delivery then £56.",
+   "url": "https://hairloss.philipkingsley.co.uk/minoxidil-5-scalp-drops.html",
+   "recommendedWhen": "Men: offered as an \"Other\" (second-line) choice when the hair-loss picture is Early signs + noticeable thinning, Temples, or Temples and Crown, with no scalp condition and no blocker (code). Women: not referenced under this SKU by the women's rules.",
+   "evidence": "code"
+  },
+  {
+   "id": "p-min3",
+   "name": "Minoxidil 3% Scalp Drops (Density+ Minoxidil 3%) [SKU PHI1300]",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "3%"
+    },
+    {
+     "name": "caffeine",
+     "strength": "not stated"
+    },
+    {
+     "name": "zinc",
+     "strength": "not stated"
+    },
+    {
+     "name": "melatonin",
+     "strength": "not stated"
+    }
+   ],
+   "form": "scalp drops, 100 ml bottle, about 40 doses of 2.5 ml",
+   "audience": "both",
+   "legalStatus": "POM, unlicensed special (compounded); the PK Labs leaflet says \"This medication is unlicensed and is made and dispensed under pharmacist supervision\"",
+   "price": "£36",
+   "priceDetail": "Product page price; plan length options not shown anonymously.",
+   "url": "https://hairloss.philipkingsley.co.uk/minoxidil-3-scalp-drops.html",
+   "recommendedWhen": "Not referenced by SKU in any quiz rule. The women's main SKU PHI1749 may be this or a women's minoxidil plan (unmapped).",
+   "evidence": "docs"
+  },
+  {
+   "id": "p-topcombo",
+   "name": "The Topical Combination Plan (Density+ Minoxidil 5% & Finasteride 0.1% Scalp Drops) [SKU PHI1302]",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "5%"
+    },
+    {
+     "name": "finasteride",
+     "strength": "0.1%"
+    },
+    {
+     "name": "melatonin",
+     "strength": "not stated"
+    },
+    {
+     "name": "zinc",
+     "strength": "not stated"
+    },
+    {
+     "name": "caffeine",
+     "strength": "not stated"
+    }
+   ],
+   "form": "scalp drops, 85 ml bottle, about 30 doses of 2.5 ml",
+   "audience": "men",
+   "legalStatus": "POM, unlicensed special (compounded); the PK Labs leaflet says \"This medication is unlicensed and is made and dispensed under pharmacist supervision\"",
+   "price": "£58",
+   "priceDetail": "Product page price. The leaflet says the drops suit people born male aged 18+ and people born female once post-menopausal, but no women's rule offers it. PK Lab page (search snippet, not re-checked) advertised 50% off the first order of this plan.",
+   "url": "https://hairloss.philipkingsley.co.uk/the-topical-combination-plan.html",
+   "recommendedWhen": "Men: \"Recommended\" group for Early signs + noticeable thinning, Temples, or Temples and Crown with no scalp condition and no finasteride/minoxidil blocker (code).",
+   "evidence": "code"
+  },
+  {
+   "id": "p-fin",
+   "name": "Oral Finasteride (Density+ Finasteride 1mg Complex) [SKU PHI1303]",
+   "category": "rx-oral-compounded",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "1 mg"
+    },
+    {
+     "name": "biotin",
+     "strength": "500 micrograms"
+    },
+    {
+     "name": "vitamin D",
+     "strength": "1000 IU"
+    }
+   ],
+   "form": "capsule, one a day",
+   "audience": "men",
+   "legalStatus": "POM, unlicensed special (compounded); the PK Labs leaflet says \"This medication is unlicensed and is made and dispensed under pharmacist supervision\"",
+   "price": "£40 on the hairloss store page; £42 on the www product page",
+   "priceDetail": "Two different prices on the same day (23 Nov 2026).",
+   "url": "https://hairloss.philipkingsley.co.uk/density-oral-finasteride.html",
+   "recommendedWhen": "Men: \"Other\" (second-line) choice in the same hair-loss pictures as the combination plans; removed by finasteride allergy, PSA/cancer, trying for a baby or depression history (code).",
+   "evidence": "code"
+  },
+  {
+   "id": "p-3combo",
+   "name": "The 3% Combination Plan [SKU PHI1304]",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "finasteride (oral)",
+     "strength": "1 mg (inferred)"
+    },
+    {
+     "name": "minoxidil (topical)",
+     "strength": "3% (inferred from the name)"
+    }
+   ],
+   "form": "capsules + scalp drops (inferred from \"dual-action ... inside and out\")",
+   "audience": "men",
+   "legalStatus": "POM, unlicensed special (compounded); the PK Labs leaflet says \"This medication is unlicensed and is made and dispensed under pharmacist supervision\"",
+   "price": "£76",
+   "priceDetail": "Product page price.",
+   "url": "https://hairloss.philipkingsley.co.uk/the-3-combination-plan.html",
+   "recommendedWhen": "Men: \"Recommended\" group only for some Early-signs pictures (code); not offered to the baseline man.",
+   "evidence": "code"
+  },
+  {
+   "id": "p-5combo",
+   "name": "The 5% Combination Plan (oral finasteride + minoxidil 5% drops) [SKU PHI1305]",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "finasteride (oral)",
+     "strength": "1 mg"
+    },
+    {
+     "name": "minoxidil (topical)",
+     "strength": "5%"
+    }
+   ],
+   "form": "capsules + scalp drops",
+   "audience": "men",
+   "legalStatus": "POM, unlicensed special (compounded); the PK Labs leaflet says \"This medication is unlicensed and is made and dispensed under pharmacist supervision\"",
+   "price": "£80",
+   "priceDetail": "Product page price; page metadata says subscription only.",
+   "url": "https://hairloss.philipkingsley.co.uk/the-5-combination-plan.html",
+   "recommendedWhen": "Men: \"Recommended\" group for Temples / Temples and Crown / Early signs with noticeable thinning, no scalp condition and no blocker (code). Offered to the baseline man.",
+   "evidence": "code"
+  },
+  {
+   "id": "p-hs-topcombo",
+   "name": "The Healthy Scalp Topical Combination Plan (topical minoxidil + finasteride drops + Healthy Scalp Shampoo) [SKU PHI1308]",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "5% (inferred: same drops as the Topical Combination Plan)"
+    },
+    {
+     "name": "finasteride",
+     "strength": "0.1% (inferred)"
+    }
+   ],
+   "form": "scalp drops + shampoo",
+   "audience": "men",
+   "legalStatus": "Drops: POM unlicensed special (compounded); shampoo: cosmetic",
+   "price": "£100",
+   "priceDetail": "Product page price.",
+   "url": "https://hairloss.philipkingsley.co.uk/healthy-scalp-topical-combination-plan.html",
+   "recommendedWhen": "Men with mild dandruff (code).",
+   "evidence": "code"
+  },
+  {
+   "id": "p-3hs",
+   "name": "The 3% Healthy Scalp Combination Plan [SKU PHI1310]",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "3% (from the name)"
+    },
+    {
+     "name": "finasteride",
+     "strength": "not stated"
+    }
+   ],
+   "form": "not stated (\"triple-action\" plan for hair loss with mild to moderate scalp flaking)",
+   "audience": "men",
+   "legalStatus": "POM unlicensed special(s) plus a cosmetic shampoo (inferred)",
+   "price": "£118",
+   "priceDetail": "Product page price.",
+   "url": "https://hairloss.philipkingsley.co.uk/minoxidil-3-healthy-scalp-combination-plan.html",
+   "recommendedWhen": "Not referenced by SKU in the men's rules.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p-5hs",
+   "name": "The 5% Healthy Scalp Combination Plan [SKU PHI1311]",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "5% (from the name)"
+    },
+    {
+     "name": "finasteride",
+     "strength": "not stated"
+    }
+   ],
+   "form": "not stated (plan with Healthy Scalp Shampoo, inferred)",
+   "audience": "men",
+   "legalStatus": "POM unlicensed special(s) plus a cosmetic shampoo (inferred)",
+   "price": "£122",
+   "priceDetail": "Product page price.",
+   "url": "https://hairloss.philipkingsley.co.uk/minoxidil-5-healthy-scalp-combination-plan.html",
+   "recommendedWhen": "Men with mild or moderate dandruff (code).",
+   "evidence": "code"
+  },
+  {
+   "id": "p-combination-plan",
+   "name": "The Combination Plan (www store) [SKU PHI1223]",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "finasteride (oral)",
+     "strength": "1 mg tablet/capsule"
+    },
+    {
+     "name": "minoxidil (topical)",
+     "strength": "not stated; page says 2 ml a day"
+    }
+   ],
+   "form": "oral + scalp drops",
+   "audience": "men",
+   "legalStatus": "POM, unlicensed special (compounded); the PK Labs leaflet says \"This medication is unlicensed and is made and dispensed under pharmacist supervision\"",
+   "price": "£216",
+   "priceDetail": "www product page price; no plan length shown. Not referenced by any quiz rule.",
+   "url": "https://www.philipkingsley.co.uk/the-combination-plan.html",
+   "recommendedWhen": "Not referenced by the quiz rules (www store page only).",
+   "evidence": "docs"
+  },
+  {
+   "id": "p-shedding",
+   "name": "Hair Shedding Drops [SKU PKC145]",
+   "category": "cosmetic",
+   "actives": [
+    {
+     "name": "Edelweiss extract",
+     "strength": "not stated"
+    },
+    {
+     "name": "Baicapil",
+     "strength": "not stated"
+    },
+    {
+     "name": "melatonin liposome",
+     "strength": "not stated"
+    },
+    {
+     "name": "Sandalore",
+     "strength": "not stated"
+    }
+   ],
+   "form": "scalp serum drops, 85 ml (image file name)",
+   "audience": "women",
+   "legalStatus": "cosmetic",
+   "price": "£65",
+   "priceDetail": "Women's page: \"1 bottle per month\".",
+   "url": "https://www.philipkingsley.co.uk/hair-shedding-drops.html",
+   "recommendedWhen": "Women whose main problem is \"More shedding than usual\", with no blocker (code).",
+   "evidence": "code"
+  },
+  {
+   "id": "p-sku1749",
+   "name": "Women's main hair-loss product, SKU PHI1749 (name not found; behaves like a minoxidil product)",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "unknown (inferred from its blockers: minoxidil allergy, oral minoxidil)"
+    }
+   ],
+   "form": "unknown",
+   "audience": "women",
+   "legalStatus": "unknown (if minoxidil drops: POM unlicensed special)",
+   "price": "unknown",
+   "priceDetail": "The women's page lists only \"Minoxidil Scalp Drops\" and \"Hair Shedding Scalp Drops\" as subscriptions (1 bottle a month).",
+   "url": "https://www.philipkingsley.co.uk/female-hair-loss/treatments",
+   "recommendedWhen": "Women with overall thinning, wider parting or temple thinning, no or mild scalp symptoms, no minoxidil allergy, not pregnant/breastfeeding, no chemo (code).",
+   "evidence": "inferred"
+  },
+  {
+   "id": "p-sku1220",
+   "name": "Men's SKU PHI1220 (name not found; behaves like a minoxidil-only product)",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "unknown (inferred: blocked by minoxidil allergy, itching and dandruff, not by finasteride answers)"
+    }
+   ],
+   "form": "unknown",
+   "audience": "men",
+   "legalStatus": "unknown",
+   "price": "unknown",
+   "priceDetail": "",
+   "url": "https://hairloss.philipkingsley.co.uk/",
+   "recommendedWhen": "Every man who passes the general safety blockers and has no minoxidil allergy/itching/dandruff, whatever his pattern (code). May be a retired product the server hides.",
+   "evidence": "inferred"
+  },
+  {
+   "id": "p-sku1221",
+   "name": "Men's SKU PHI1221 (name not found; behaves like a finasteride-containing product)",
+   "category": "rx-oral-compounded",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "unknown (inferred: blocked by finasteride allergy, \"no finasteride\", trying for a baby, blood pressure)"
+    }
+   ],
+   "form": "unknown",
+   "audience": "men",
+   "legalStatus": "unknown",
+   "price": "unknown",
+   "priceDetail": "",
+   "url": "https://hairloss.philipkingsley.co.uk/",
+   "recommendedWhen": "Every man who passes the general safety blockers and has no finasteride-related blocker, whatever his pattern (code). May be a retired product.",
+   "evidence": "inferred"
+  },
+  {
+   "id": "p-scalp-addons-men",
+   "name": "Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309 (names not found)",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "unknown",
+     "strength": "unknown"
+    }
+   ],
+   "form": "unknown",
+   "audience": "men",
+   "legalStatus": "unknown",
+   "price": "unknown",
+   "priceDetail": "Probably minoxidil + Healthy Scalp Shampoo style plans (inferred from when they appear and from a search result for a \"minoxidil-5-healthy-scalp-shampoo-plan\" page, now unavailable).",
+   "url": "https://hairloss.philipkingsley.co.uk/",
+   "recommendedWhen": "Men with mild/moderate itching, mild/moderate dandruff or mild/moderate eczema (code).",
+   "evidence": "inferred"
+  },
+  {
+   "id": "p-w-routine",
+   "name": "Women's \"Complete Your Routine\" haircare add-ons (names not mapped) [SKU PHI1651-PHI1694, PHI1827 (34 SKUs)]",
+   "category": "cosmetic",
+   "actives": [
+    {
+     "name": "Philip Kingsley haircare (shampoo/conditioner/treatments)",
+     "strength": "n/a"
+    }
+   ],
+   "form": "haircare products",
+   "audience": "women",
+   "legalStatus": "cosmetic (inferred)",
+   "price": "unknown",
+   "priceDetail": "Chosen by scalp type, hair texture, length and styling answers.",
+   "url": "https://www.philipkingsley.co.uk/",
+   "recommendedWhen": "One add-on per combination of scalp type (Q6), texture (Q7), length (Q8) and styling (Q9) for women who are not blocked (code).",
+   "evidence": "code"
+  },
+  {
+   "id": "p-scalp-range",
+   "name": "Scalp-assessment products (names not mapped) [SKU PHI1618-PHI1646 (29 rules)]",
+   "category": "cosmetic",
+   "actives": [
+    {
+     "name": "Philip Kingsley scalp care",
+     "strength": "n/a"
+    }
+   ],
+   "form": "scalp care products",
+   "audience": "both",
+   "legalStatus": "cosmetic (inferred)",
+   "price": "unknown",
+   "priceDetail": "",
+   "url": "https://hairloss.philipkingsley.co.uk/",
+   "recommendedWhen": "Scalp assessment only, chosen by symptom, scalp type and hair type (code).",
+   "evidence": "code"
+  },
+  {
+   "id": "p-consult-clinic",
+   "name": "Initial Consultation & Clinical Treatment (London clinic)",
+   "category": "service",
+   "actives": [],
+   "form": "in-person trichologist consultation plus treatment, 120 minutes",
+   "audience": "both",
+   "legalStatus": "service (trichology; not a regulated medical consultation as far as the pages say)",
+   "price": "from £345",
+   "priceDetail": "Clinic price list. Blood tests may be advised (extra fees).",
+   "url": "https://www.philipkingsley.co.uk/treatments",
+   "recommendedWhen": "Shown on the \"Choose your consultation type\" screen whenever no plan survives the rules (code).",
+   "evidence": "docs"
+  },
+  {
+   "id": "p-consult-virtual",
+   "name": "Virtual Initial Consultation (video)",
+   "category": "service",
+   "actives": [],
+   "form": "video call with a trichologist, 45-60 minutes; client form and photos sent 48 hours before",
+   "audience": "both",
+   "legalStatus": "service",
+   "price": "from £200",
+   "priceDetail": "Clinic price list says from £200; the /clinics/virtual-consultation page still says \"Pricing begins at £150\". Hair-loss T&Cs mention promotional discounts for a first virtual consultation booked via the assessment.",
+   "url": "https://www.philipkingsley.co.uk/clinics/virtual-consultation",
+   "recommendedWhen": "Shown on the \"Choose your consultation type\" screen whenever no plan survives the rules (code).",
+   "evidence": "docs"
+  }
+ ],
+ "flows": [
+  {
+   "id": "men",
+   "name": "Men's hair loss assessment (men_quiz)",
+   "audience": "men",
+   "entryUrl": "https://hairloss.philipkingsley.co.uk/",
+   "stagesSummary": "Select quiz -> Select gender at birth (Male) -> start declaration (incl. \"I am aware that Philip Kingsley's Finasteride and Minoxidil are unlicensed products\") -> 12 questions (+ follow-ups) -> ACCOUNT WALL (\"Almost done! Your details\": name, DOB, email, password, GP and consent ticks) -> server-rendered results: plan choice (\"Recommended\" / \"Other\" groups, subscription) or \"Choose your consultation type\" (virtual or clinic booking).",
+   "questions": [
+    {
+     "id": "men-select",
+     "stage": "anonymous",
+     "text": "Select quiz. \"If you are suffering from hair loss symptoms please select the Hair Loss Assessment below. If you are experiencing scalp irritation or have a scalp condition, please complete our Scalp Assessment below.\" (plus: treat scalp symptoms before hair loss)",
+     "type": "single",
+     "options": [
+      {
+       "label": "I am experiencing hair loss",
+       "effect": "Goes to \"Select gender at birth\" (hair-loss assessment).",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "I am experiencing scalp irritation",
+       "effect": "Goes to the separate Scalp Assessment (scalp products, not hair-loss medicines).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Splits hair-loss and scalp-irritation customers before any medical questions.",
+     "engineRole": "eligibility-gate",
+     "branches": true,
+     "branchDetail": "Scalp irritation -> scalp_quiz.",
+     "shownWhen": "always (first screen of https://hairloss.philipkingsley.co.uk/)",
+     "evidence": "observed",
+     "order": 1
+    },
+    {
+     "id": "men-gender",
+     "stage": "anonymous",
+     "text": "Select gender at birth",
+     "type": "single",
+     "options": [
+      {
+       "label": "Male",
+       "effect": "Starts the men's quiz (men_quiz).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Female",
+       "effect": "Starts the women's quiz (women_quiz).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Chooses the men's or women's quiz. A pop-up \"Why do we need this information?\" says people not assigned male or female at birth should call the clinical team to book a trichologist consultation.",
+     "engineRole": "eligibility-gate",
+     "branches": true,
+     "branchDetail": "Male -> men_quiz; Female -> women_quiz. No other option.",
+     "shownWhen": "after \"I am experiencing hair loss\"",
+     "evidence": "observed",
+     "order": 2
+    },
+    {
+     "id": "men-start",
+     "stage": "anonymous",
+     "text": "Welcome, let's get started... We're going to ask you some questions regarding your hair loss and medical history, to determine your suitability for this service, and prescribe a suitable treatment plan. / By clicking 'Get Started', you are confirming the below: / I am male, over 18 years old and live in the UK / I was assigned male at birth / I confirm all answers are provided by me, and will be truthful / I will disclose any prescription medication I currently take / I understand that I should not follow this treatment plan alongside treatments from another provider / I am aware that Philip Kingsley's Finasteride and Minoxidil are unlicensed products",
+     "type": "consent",
+     "options": [
+      {
+       "label": "GET STARTED",
+       "effect": "Confirms the statements and starts question 1.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Self-declaration before the questions (age, UK, honesty, medicines, unlicensed status).",
+     "engineRole": "consent",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 3
+    },
+    {
+     "id": "men-q1",
+     "stage": "anonymous",
+     "text": "Which image best represents your hair loss?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Early signs",
+       "effect": "Adds: Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309 (code; one change from the baseline).",
+       "effectType": "product-added",
+       "affects": [
+        "p-scalp-addons-men"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Temples",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Patchy",
+       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-min5",
+        "p-topcombo",
+        "p-fin",
+        "p-5combo"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Temples and Crown",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Temples and Crown with reduced density",
+       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-min5",
+        "p-topcombo",
+        "p-fin",
+        "p-5combo"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Extensive",
+       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-min5",
+        "p-topcombo",
+        "p-fin",
+        "p-5combo"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Picks the hair-loss pattern (Norwood-style pictures). Patchy, Extensive and \"Temples and Crown with reduced density\" (without a visible-scalp answer) remove every named plan; only the unmapped SKUs PHI1220/PHI1221 remain (code). The 3% Combination Plan rule expects the label \"Temples & Crown with Reduced Density\", which no option carries, so it never fires.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 4
+    },
+    {
+     "id": "men-q2a",
+     "stage": "anonymous",
+     "text": "Now tell us about your hair density. In the areas of your scalp where you are currently experiencing hair loss, how would you describe the change in the appearance of your hair?",
+     "type": "single",
+     "options": [
+      {
+       "label": "I have less hair than before, but it is not very noticeable",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "My hair has thinned/receded noticeably in some areas, but other areas are still dense",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "My scalp is becoming slightly visible and my hair feels less dense",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "My scalp is very visible and my hair feels much less dense",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "My hair has thinned extensively, or been lost entirely, throughout the top region",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Grades density; used with the pattern to pick plans. Internal label differs from the screen text (\"where are you currently\"); rules use the internal label. Density changes the plan only for Early signs (needs the \"thinned/receded noticeably\" answer) and Temples and Crown with reduced density (needs a \"scalp visible\" answer); see extracted/men-pattern-density-age-code.txt.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 5
+    },
+    {
+     "id": "men-q3",
+     "stage": "anonymous",
+     "text": "When did you first notice any hair loss?",
+     "type": "single",
+     "options": [
+      {
+       "label": "In the last month",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "More than a month ago",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "I haven't noticed any yet",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Screens out people with no hair loss yet.",
+     "engineRole": "eligibility-gate",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 6
+    },
+    {
+     "id": "men-q4",
+     "stage": "anonymous",
+     "text": "How long did it take for your hair loss to get to this stage?",
+     "type": "single",
+     "options": [
+      {
+       "label": "It started to fall out quite suddenly",
+       "effect": "Sudden loss: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Gradually over months/years",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "It's not started yet",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Sudden loss suggests a non-pattern cause (e.g. shedding or alopecia areata).",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 7
+    },
+    {
+     "id": "men-q5",
+     "stage": "anonymous",
+     "text": "Do you have any family history of early (before the age of 30) male pattern hair loss or thinning?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Don't know",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Family history supports male pattern hair loss.",
+     "engineRole": "diagnosis",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 8
+    },
+    {
+     "id": "men-q6",
+     "stage": "anonymous",
+     "text": "How old are you?",
+     "type": "single",
+     "options": [
+      {
+       "label": "18 to 29",
+       "effect": "Baseline band. Under 50, Early signs (with noticeable thinning) and Temples also get Oral Finasteride and the 5% Combination Plan (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "30 to 39",
+       "effect": "Baseline band. Under 50, Early signs (with noticeable thinning) and Temples also get Oral Finasteride and the 5% Combination Plan (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "40 to 49",
+       "effect": "Baseline band. Under 50, Early signs (with noticeable thinning) and Temples also get Oral Finasteride and the 5% Combination Plan (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "50 to 64",
+       "effect": "No change for the baseline (Temples and Crown). For the Early signs and Temples pictures this age band removes Oral Finasteride and the 5% Combination Plan (only minoxidil 5%, the Topical Combination Plan and the two unmapped SKUs stay) (code: extracted/men-pattern-density-age-code.txt).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-5combo"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Over 65",
+       "effect": "No change for the baseline (Temples and Crown). For the Early signs and Temples pictures this age band removes Oral Finasteride and the 5% Combination Plan (only minoxidil 5%, the Topical Combination Plan and the two unmapped SKUs stay) (code: extracted/men-pattern-density-age-code.txt).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-5combo"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Age band; matters only for the Early signs and Temples pictures (50+ loses the oral-finasteride plans). There is no under-18 or exact age option; under-18s are excluded only by the start-screen declaration.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 9
+    },
+    {
+     "id": "men-q7a",
+     "stage": "anonymous",
+     "text": "Are you currently experiencing any of the following conditions on your scalp?",
+     "type": "multi",
+     "options": [
+      {
+       "label": "Itching",
+       "effect": "Opens follow-up: How severe is the itching?. Outcome depends on that answer (see the follow-up). Without it: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Eczema",
+       "effect": "Opens follow-up: How severe is the eczema?. Outcome depends on that answer (see the follow-up). Without it: Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-min5",
+        "p-topcombo",
+        "p-fin",
+        "p-5combo"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Psoriasis",
+       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-min5",
+        "p-topcombo",
+        "p-fin",
+        "p-5combo"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Other",
+       "effect": "Opens follow-up: Please tell us about the condition. Outcome depends on that answer (see the follow-up). Without it: Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-min5",
+        "p-topcombo",
+        "p-fin",
+        "p-5combo"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Dandruff",
+       "effect": "Opens follow-up: How severe is your dandruff?. Outcome depends on that answer (see the follow-up). Without it: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Redness",
+       "effect": "Opens follow-up: How severe is the redness?. Outcome depends on that answer (see the follow-up). Without it: Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-min5",
+        "p-topcombo",
+        "p-fin",
+        "p-5combo"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Acne",
+       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-min5",
+        "p-topcombo",
+        "p-fin",
+        "p-5combo"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "No conditions",
+       "effect": "Exclusive choice (clears the others). No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Scalp conditions must be treated first; they swap hair-loss plans for scalp plans or end the online route.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 10
+    },
+    {
+     "id": "men-q7f",
+     "stage": "anonymous",
+     "text": "How severe is the itching?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Mild",
+       "effect": "Removes: Men's SKU PHI1220; Men's SKU PHI1221; Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan. Adds: Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309 (code; one change from the baseline).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-sku1220",
+        "p-sku1221",
+        "p-min5",
+        "p-topcombo",
+        "p-fin",
+        "p-5combo",
+        "p-scalp-addons-men"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Moderate",
+       "effect": "Removes: Men's SKU PHI1220; Men's SKU PHI1221; Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan. Adds: Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309 (code; one change from the baseline).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-sku1220",
+        "p-sku1221",
+        "p-min5",
+        "p-topcombo",
+        "p-fin",
+        "p-5combo",
+        "p-scalp-addons-men"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Severe",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Severity of itching.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "when q7a includes \"Itching\"",
+     "evidence": "observed",
+     "order": 11
+    },
+    {
+     "id": "men-q7b",
+     "stage": "anonymous",
+     "text": "How severe is your dandruff?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Mild",
+       "effect": "Removes: Men's SKU PHI1220; Men's SKU PHI1221; Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan. Adds: Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309; The 5% Healthy Scalp Combination Plan; The Healthy Scalp Topical Combination Plan (code; one change from the baseline).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-sku1220",
+        "p-sku1221",
+        "p-min5",
+        "p-topcombo",
+        "p-fin",
+        "p-5combo",
+        "p-scalp-addons-men",
+        "p-hs-topcombo",
+        "p-5hs"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Moderate",
+       "effect": "Removes: Men's SKU PHI1220; Men's SKU PHI1221; Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan. Adds: Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309; The 5% Healthy Scalp Combination Plan (code; one change from the baseline).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-sku1220",
+        "p-sku1221",
+        "p-min5",
+        "p-topcombo",
+        "p-fin",
+        "p-5combo",
+        "p-scalp-addons-men",
+        "p-5hs"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Severe",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Severity of dandruff.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "when q7a includes \"Dandruff\"",
+     "evidence": "observed",
+     "order": 12
+    },
+    {
+     "id": "men-q7c",
+     "stage": "anonymous",
+     "text": "How severe is the redness?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Mild",
+       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-min5",
+        "p-topcombo",
+        "p-fin",
+        "p-5combo"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Moderate",
+       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-min5",
+        "p-topcombo",
+        "p-fin",
+        "p-5combo"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Severe",
+       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-min5",
+        "p-topcombo",
+        "p-fin",
+        "p-5combo"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Severity of redness. Note: the options carry different internal labels ['How severe is the redness?', 'How severe is the redness??'], so rules keyed on one label miss the others.",
+     "engineRole": "data-capture",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "when q7a includes \"Redness\"",
+     "evidence": "observed",
+     "order": 13
+    },
+    {
+     "id": "men-q7d",
+     "stage": "anonymous",
+     "text": "How severe is the eczema?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Mild",
+       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan. Adds: Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309 (code; one change from the baseline).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-min5",
+        "p-topcombo",
+        "p-fin",
+        "p-5combo",
+        "p-scalp-addons-men"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Moderate",
+       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan. Adds: Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309 (code; one change from the baseline).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-min5",
+        "p-topcombo",
+        "p-fin",
+        "p-5combo",
+        "p-scalp-addons-men"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Severe",
+       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-min5",
+        "p-topcombo",
+        "p-fin",
+        "p-5combo"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Severity of eczema.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "when q7a includes \"Eczema\"",
+     "evidence": "observed",
+     "order": 14
+    },
+    {
+     "id": "men-q7e",
+     "stage": "anonymous",
+     "text": "Please tell us about the condition",
+     "type": "text",
+     "options": [],
+     "purpose": "Free text about the other scalp condition (for the reviewer).",
+     "engineRole": "data-capture",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "when q7a includes \"Other\"",
+     "evidence": "observed",
+     "order": 15
+    },
+    {
+     "id": "men-q8",
+     "stage": "anonymous",
+     "text": "Do you ever suffer from pain, burning or crusting on the scalp?",
+     "type": "multi",
+     "options": [
+      {
+       "label": "Pain",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Burning",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Crusting",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Bleeding",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "None of the above",
+       "effect": "Exclusive choice (clears the others). No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Pain, burning, crusting or bleeding suggests scarring or inflammatory scalp disease.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 16
+    },
+    {
+     "id": "men-q9",
+     "stage": "anonymous",
+     "text": "Are any of the following true?",
+     "type": "multi",
+     "options": [
+      {
+       "label": "I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "I have uncontrolled low or high blood pressure",
+       "effect": "Removes: Men's SKU PHI1221 (code; one change from the baseline). Only PHI1221 is removed because the main safety blocker lists this answer with a leading space (\" I have uncontrolled...\") so it never matches: a man with uncontrolled blood pressure is still offered minoxidil products (code; configuration error).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-sku1221"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "I am experiencing, or have previously experienced, depression, anxiety or panic disorders",
+       "effect": "Opens follow-up: There are occasional reports of depression and even suicidal thoughts with Finasteride (Propecia). If you are currently stable, and happy to stop this treatment and consult a doctor if this occurs, then click to accept you have understood the above.. Outcome depends on that answer (see the follow-up). Without it: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "I am currently trying for a baby",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "None of the above",
+       "effect": "Exclusive choice (clears the others). No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Finasteride and minoxidil contraindications and cautions (cancer/PSA, blood pressure, mood, conception).",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 17
+    },
+    {
+     "id": "men-q9e",
+     "stage": "anonymous",
+     "text": "There are occasional reports of depression and even suicidal thoughts with Finasteride (Propecia). If you are currently stable, and happy to stop this treatment and consult a doctor if this occurs, then click to accept you have understood the above.",
+     "type": "single",
+     "options": [
+      {
+       "label": "I'm happy to be recommended Finasteride",
+       "effect": "Either answer ends the same way: the depression/anxiety answer in Q9 already trips the main safety blocker for every SKU, so no plan survives and the consultation screen is shown (code). The finasteride opt-out has no separate effect.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "I would not like to be recommended Finasteride",
+       "effect": "Either answer ends the same way: the depression/anxiety answer in Q9 already trips the main safety blocker for every SKU, so no plan survives and the consultation screen is shown (code). The finasteride opt-out has no separate effect.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Finasteride mood warning with a choice to accept or decline finasteride.",
+     "engineRole": "consent",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "when q9 includes \"I am experiencing, or have previously experienced, depression, anxiety or panic disorders\"",
+     "evidence": "observed",
+     "order": 18
+    },
+    {
+     "id": "men-q10a",
+     "stage": "anonymous",
+     "text": "Are you currently taking any medication, or have you recently finished a course of medication?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Opens two free-text boxes (medicine names and doses; what they are for). No rule reads them; no change to products (code). Presumably for human review.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Medicines for the reviewer to check.",
+     "engineRole": "data-capture",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 19
+    },
+    {
+     "id": "men-q10b",
+     "stage": "anonymous",
+     "text": "Please list the names and dosage of all these medications, including if you are currently taking them or when you completed the coarse.",
+     "type": "text",
+     "options": [],
+     "purpose": "Names and doses of medicines.",
+     "engineRole": "data-capture",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "when q10a includes \"Yes\"",
+     "evidence": "observed",
+     "order": 20
+    },
+    {
+     "id": "men-q10c",
+     "stage": "anonymous",
+     "text": "What do you use these medications for?",
+     "type": "text",
+     "options": [],
+     "purpose": "What the medicines are for.",
+     "engineRole": "data-capture",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "when q10a includes \"Yes\"",
+     "evidence": "observed",
+     "order": 21
+    },
+    {
+     "id": "men-q11a",
+     "stage": "anonymous",
+     "text": "Are you allergic to minoxidil or finasteride?",
+     "type": "multi",
+     "options": [
+      {
+       "label": "Minoxidil",
+       "effect": "Removes: Men's SKU PHI1220; Minoxidil 5% Scalp Drops; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-sku1220",
+        "p-min5",
+        "p-topcombo",
+        "p-5combo"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Finasteride",
+       "effect": "Removes: Men's SKU PHI1221; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-sku1221",
+        "p-topcombo",
+        "p-fin",
+        "p-5combo"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "None",
+       "effect": "Exclusive choice (clears the others). No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Allergy to either active removes products that contain it.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 22
+    },
+    {
+     "id": "men-q12a",
+     "stage": "anonymous",
+     "text": "Do you have any other allergies?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Opens follow-up: Please describe your allergy, including the symptoms and severity. Outcome depends on that answer (see the follow-up). Without it: No change to the products offered (code).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Other allergies for the reviewer.",
+     "engineRole": "data-capture",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 23
+    },
+    {
+     "id": "men-q12b",
+     "stage": "anonymous",
+     "text": "Please describe your allergy, including the symptoms and severity",
+     "type": "text",
+     "options": [],
+     "purpose": "Description of the allergy.",
+     "engineRole": "data-capture",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "when q12a includes \"Yes\"",
+     "evidence": "observed",
+     "order": 24
+    },
+    {
+     "id": "men-wall",
+     "stage": "anonymous",
+     "text": "Almost done! / Your details: First Name, Last Name, Date of Birth (dd/MM/y), Email, Create password, Confirm Password / Statement to agree before proceeding: Please tick to acknowledge that it is best practice to inform your GP of any private treatment that you receive. All treatment and messaging is completely confidential. (required) / I understand the questions asked and have answered them honestly and truthfully. I understand the side effects of the treatment options, their effectiveness and alternative options and I am happy to continue with my request. I confirm and agree that any treatment prescribed for me is for my personal use only. I agree to the website terms and conditions and privacy policy. (required) / I would like to receive the Philip Kingsley newsletter... (optional) / Your details are secure and protected",
+     "type": "contact",
+     "options": [],
+     "purpose": "ACCOUNT WALL: creates a customer account (/quiz/step/register) before any result is shown. Not filled (protocol).",
+     "engineRole": "identity",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "after the last question, always",
+     "evidence": "observed",
+     "order": 25
+    },
+    {
+     "id": "men-result",
+     "stage": "after-account",
+     "text": "Results page (server-rendered after registration). If no product rule survives, the template \"CHOOSE YOUR CONSULTATION TYPE / ASSESSMENT COMPLETE. / Book your first Consultation with your Trichologist. Due to the nature of your hair loss, one of our world-renowned Trichologists will need to see you in a Consultation to confirm your diagnosis and prescribe a more suitable treatment plan for you.\" is shown, with a booking calendar (Trichologist or Senior Trichologist, male or female consultant).",
+     "type": "info",
+     "options": [],
+     "purpose": "Shows the plan choice (Recommended / Other groups) or routes to a paid consultation.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Plan list = SKUs whose rule passes (conditions true, blockers false); empty list = consultation screen.",
+     "shownWhen": "after the account wall (not seen live)",
+     "evidence": "code",
+     "order": 26
+    }
+   ]
+  },
+  {
+   "id": "women",
+   "name": "Women's hair loss assessment (women_quiz)",
+   "audience": "women",
+   "entryUrl": "https://hairloss.philipkingsley.co.uk/",
+   "stagesSummary": "Select quiz -> Select gender at birth (Female) -> \"How it works\" start screen -> 12 questions (+ follow-ups) -> ACCOUNT WALL -> results: main product (SKU PHI1749, minoxidil-type) or Hair Shedding Drops plus a \"Complete Your Routine\" haircare add-on, or \"Choose your consultation type\".",
+   "questions": [
+    {
+     "id": "women-select",
+     "stage": "anonymous",
+     "text": "Select quiz. \"If you are suffering from hair loss symptoms please select the Hair Loss Assessment below. If you are experiencing scalp irritation or have a scalp condition, please complete our Scalp Assessment below.\" (plus: treat scalp symptoms before hair loss)",
+     "type": "single",
+     "options": [
+      {
+       "label": "I am experiencing hair loss",
+       "effect": "Goes to \"Select gender at birth\" (hair-loss assessment).",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "I am experiencing scalp irritation",
+       "effect": "Goes to the separate Scalp Assessment (scalp products, not hair-loss medicines).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Splits hair-loss and scalp-irritation customers before any medical questions.",
+     "engineRole": "eligibility-gate",
+     "branches": true,
+     "branchDetail": "Scalp irritation -> scalp_quiz.",
+     "shownWhen": "always (first screen of https://hairloss.philipkingsley.co.uk/)",
+     "evidence": "observed",
+     "order": 1
+    },
+    {
+     "id": "women-gender",
+     "stage": "anonymous",
+     "text": "Select gender at birth",
+     "type": "single",
+     "options": [
+      {
+       "label": "Male",
+       "effect": "Starts the men's quiz (men_quiz).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Female",
+       "effect": "Starts the women's quiz (women_quiz).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Chooses the men's or women's quiz. A pop-up \"Why do we need this information?\" says people not assigned male or female at birth should call the clinical team to book a trichologist consultation.",
+     "engineRole": "eligibility-gate",
+     "branches": true,
+     "branchDetail": "Male -> men_quiz; Female -> women_quiz. No other option.",
+     "shownWhen": "after \"I am experiencing hair loss\"",
+     "evidence": "observed",
+     "order": 2
+    },
+    {
+     "id": "women-start",
+     "stage": "anonymous",
+     "text": "Welcome, let's get started / How it works / Start by answering a few questions on your current hair & scalp condition. / We'll then recommend your best treatment options which can be a treatment plan to address your concerns, or a Clinic or Virtual Consultation to get a better understanding of your condition and personalise your treatment plan.",
+     "type": "consent",
+     "options": [
+      {
+       "label": "GET STARTED",
+       "effect": "Confirms the statements and starts question 1.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Self-declaration before the questions (age, UK, honesty, medicines).",
+     "engineRole": "consent",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 3
+    },
+    {
+     "id": "women-q1",
+     "stage": "anonymous",
+     "text": "Are you currently pregnant or breastfeeding?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Pregnancy or breastfeeding ends the online route.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 4
+    },
+    {
+     "id": "women-q2",
+     "stage": "anonymous",
+     "text": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Chemotherapy or radiotherapy ends the online route.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 5
+    },
+    {
+     "id": "women-q3a",
+     "stage": "anonymous",
+     "text": "How would you describe your hair loss?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Overall thinning",
+       "effect": "Opens follow-up: How noticable would you say your Overall Thinning is?. Outcome depends on that answer (see the follow-up). Without it: No change to the products offered (code).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "More shedding than usual (in the shower/on my brush)",
+       "effect": "Opens follow-up: How noticable has your shedding become?. Outcome depends on that answer (see the follow-up). Without it: Removes: Women's main hair-loss product, SKU PHI1749. Adds: Hair Shedding Drops. Swaps the SKU within: Women's \"Complete Your Routine\" haircare add-ons (PHI1670 -> PHI1668) (code; one change from the baseline).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-sku1749",
+        "p-shedding",
+        "p-w-routine"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Seeing more of my scalp or wider parting",
+       "effect": "Opens follow-up: How visible would you say your wider parting has become?. Outcome depends on that answer (see the follow-up). Without it: No change to the products offered (code).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Thinning at temples",
+       "effect": "Opens follow-up: How noticable would you say your Thinning at Temples is?. Outcome depends on that answer (see the follow-up). Without it: No change to the products offered (code).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Circular bald patches",
+       "effect": "Opens follow-up: How noticable are your circular bald patches?. Outcome depends on that answer (see the follow-up). Without it: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Bandlike recession",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Something else",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Main picture: pattern thinning gets the main plan, shedding gets Hair Shedding Drops, patches or band-like loss go to a consultation.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 6
+    },
+    {
+     "id": "women-q3b",
+     "stage": "anonymous",
+     "text": "How noticable would you say your Overall Thinning is?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Only I can notice it",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "People close to me can notice it",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Everyone can notice it",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "How noticeable overall thinning is.",
+     "engineRole": "data-capture",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "when q3a includes \"Overall thinning\"",
+     "evidence": "observed",
+     "order": 7
+    },
+    {
+     "id": "women-q3d",
+     "stage": "anonymous",
+     "text": "How noticable would you say your Thinning at Temples is?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Only I can notice it",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "People close to me can notice it",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Everyone can notice it",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "How noticeable temple thinning is.",
+     "engineRole": "data-capture",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "when q3a includes \"Thinning at temples\"",
+     "evidence": "observed",
+     "order": 8
+    },
+    {
+     "id": "women-q3c",
+     "stage": "anonymous",
+     "text": "How visible would you say your wider parting has become?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Only I can notice it",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "People close to me can notice it",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Everyone can notice it",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "How visible the wider parting is.",
+     "engineRole": "data-capture",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "when q3a includes \"Seeing more of my scalp or wider parting\"",
+     "evidence": "observed",
+     "order": 9
+    },
+    {
+     "id": "women-q3e",
+     "stage": "anonymous",
+     "text": "How noticable has your shedding become?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Only I can notice it",
+       "effect": "Removes: Women's main hair-loss product, SKU PHI1749. Adds: Hair Shedding Drops. Swaps the SKU within: Women's \"Complete Your Routine\" haircare add-ons (PHI1670 -> PHI1668) (code; one change from the baseline).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-sku1749",
+        "p-shedding",
+        "p-w-routine"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "People close to me can notice it",
+       "effect": "Removes: Women's main hair-loss product, SKU PHI1749. Adds: Hair Shedding Drops. Swaps the SKU within: Women's \"Complete Your Routine\" haircare add-ons (PHI1670 -> PHI1668) (code; one change from the baseline).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-sku1749",
+        "p-shedding",
+        "p-w-routine"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Everyone can notice it",
+       "effect": "Removes: Women's main hair-loss product, SKU PHI1749. Adds: Hair Shedding Drops. Swaps the SKU within: Women's \"Complete Your Routine\" haircare add-ons (PHI1670 -> PHI1668) (code; one change from the baseline).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-sku1749",
+        "p-shedding",
+        "p-w-routine"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "How noticeable the shedding is.",
+     "engineRole": "data-capture",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "when q3a includes \"More shedding than usual (in the shower/on my brush)\"",
+     "evidence": "observed",
+     "order": 10
+    },
+    {
+     "id": "women-q3f",
+     "stage": "anonymous",
+     "text": "How noticable are your circular bald patches?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Only I can notice it",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "People close to me can notice it",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Everyone can notice it",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "How noticeable the bald patches are.",
+     "engineRole": "data-capture",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "when q3a includes \"Circular bald patches\"",
+     "evidence": "observed",
+     "order": 11
+    },
+    {
+     "id": "women-q4",
+     "stage": "anonymous",
+     "text": "When did you first notice any hair loss or thinning?",
+     "type": "single",
+     "options": [
+      {
+       "label": "It's happened very suddenly",
+       "effect": "For the baseline picture (wider parting) nothing changes, because the sudden-onset blocker lists every picture EXCEPT \"Seeing more of my scalp or wider parting\". For overall thinning, temple thinning or shedding, sudden onset leaves no plan and routes to the consultation screen (code).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "It's been happening for a few months",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "It's been happening gradually for over a year",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Sudden onset is meant to send people to a consultation (but see the gap for a wider parting).",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 12
+    },
+    {
+     "id": "women-q5a",
+     "stage": "anonymous",
+     "text": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+     "type": "multi",
+     "options": [
+      {
+       "label": "Itching",
+       "effect": "Opens follow-up: How severe is the itching?. Outcome depends on that answer (see the follow-up). Without it: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Dandruff",
+       "effect": "Opens follow-up: How severe is the dandruff?. Outcome depends on that answer (see the follow-up). Without it: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Eczema",
+       "effect": "Opens follow-up: How severe is the eczema?. Outcome depends on that answer (see the follow-up). Without it: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Other or Not Sure",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Redness",
+       "effect": "Opens follow-up: How severe is the redness?. Outcome depends on that answer (see the follow-up). Without it: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Psoriasis",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Pimples, spots or acne",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "I don't have any of these symptoms",
+       "effect": "Exclusive choice (clears the others). No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Scalp symptoms: mild itching/dandruff/eczema keep the plan, anything more goes to a consultation.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 13
+    },
+    {
+     "id": "women-q5f",
+     "stage": "anonymous",
+     "text": "How severe is the itching?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Mild",
+       "effect": "Swaps the SKU within: Women's \"Complete Your Routine\" haircare add-ons (PHI1670 -> PHI1688) (code; one change from the baseline).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-w-routine"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Moderate",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Severe",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Severity of itching.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "when q5a includes \"Itching\"",
+     "evidence": "observed",
+     "order": 14
+    },
+    {
+     "id": "women-q5b",
+     "stage": "anonymous",
+     "text": "How severe is the dandruff?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Mild",
+       "effect": "Swaps the SKU within: Women's \"Complete Your Routine\" haircare add-ons (PHI1670 -> PHI1688) (code; one change from the baseline).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-w-routine"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Moderate",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Severe",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Severity of dandruff.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "when q5a includes \"Dandruff\"",
+     "evidence": "observed",
+     "order": 15
+    },
+    {
+     "id": "women-q5c",
+     "stage": "anonymous",
+     "text": "How severe is the redness?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Mild",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Moderate",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Severe",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Severity of redness.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "when q5a includes \"Redness\"",
+     "evidence": "observed",
+     "order": 16
+    },
+    {
+     "id": "women-q5d",
+     "stage": "anonymous",
+     "text": "How severe is the eczema?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Mild",
+       "effect": "Removes: Women's \"Complete Your Routine\" haircare add-ons (code; one change from the baseline).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-w-routine"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Moderate",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Severe",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Severity of eczema.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "when q5a includes \"Eczema\"",
+     "evidence": "observed",
+     "order": 17
+    },
+    {
+     "id": "women-q6",
+     "stage": "anonymous",
+     "text": "How would you describe your scalp before these symptoms started?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Healthy",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Sensitive to fragrance",
+       "effect": "Swaps the SKU within: Women's \"Complete Your Routine\" haircare add-ons (PHI1670 -> PHI1680) (code; one change from the baseline).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-w-routine"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Oily",
+       "effect": "Swaps the SKU within: Women's \"Complete Your Routine\" haircare add-ons (PHI1670 -> PHI1686) (code; one change from the baseline).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-w-routine"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Scalp type; picks the haircare add-on.",
+     "engineRole": "personalisation",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 18
+    },
+    {
+     "id": "women-q7",
+     "stage": "anonymous",
+     "text": "How would you describe your natural hair texture?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Fine",
+       "effect": "Swaps the SKU within: Women's \"Complete Your Routine\" haircare add-ons (PHI1670 -> PHI1684) (code; one change from the baseline).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-w-routine"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Medium",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Coarse",
+       "effect": "Swaps the SKU within: Women's \"Complete Your Routine\" haircare add-ons (PHI1670 -> PHI1678,PHI1652) (code; one change from the baseline).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-w-routine"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Coiled Curls",
+       "effect": "Swaps the SKU within: Women's \"Complete Your Routine\" haircare add-ons (PHI1670 -> PHI1678,PHI1652) (code; one change from the baseline).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-w-routine"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Hair texture; picks the haircare add-on.",
+     "engineRole": "personalisation",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 19
+    },
+    {
+     "id": "women-q8",
+     "stage": "anonymous",
+     "text": "What is your hair length?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Short",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Medium (shoulder length)",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Long",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Hair length; picks the haircare add-on for some textures.",
+     "engineRole": "personalisation",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 20
+    },
+    {
+     "id": "women-q9",
+     "stage": "anonymous",
+     "text": "How do you style your hair?",
+     "type": "multi",
+     "options": [
+      {
+       "label": "Colour-treat (highlights, at-home colour)",
+       "effect": "Swaps the SKU within: Women's \"Complete Your Routine\" haircare add-ons (PHI1670 -> PHI1664) (code; one change from the baseline).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-w-routine"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Heat-style (Hair dryer, straighteners, curlers)",
+       "effect": "Swaps the SKU within: Women's \"Complete Your Routine\" haircare add-ons (PHI1670 -> PHI1664) (code; one change from the baseline).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-w-routine"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Chemical Treatments (perms, relaxing)",
+       "effect": "Swaps the SKU within: Women's \"Complete Your Routine\" haircare add-ons (PHI1670 -> PHI1664) (code; one change from the baseline).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-w-routine"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "None of the above",
+       "effect": "Exclusive choice (clears the others). No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Styling habits; picks the haircare add-on.",
+     "engineRole": "personalisation",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 21
+    },
+    {
+     "id": "women-q10a",
+     "stage": "anonymous",
+     "text": "Have you started or are you going through menopause?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "No rule uses menopause status (code): post-menopausal women are NOT offered the topical finasteride drops even though the drops leaflet says they suit post-menopausal women.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "effect": "No rule uses menopause status (code): post-menopausal women are NOT offered the topical finasteride drops even though the drops leaflet says they suit post-menopausal women.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Menopause status (asked but not used by any rule).",
+     "engineRole": "data-capture",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 22
+    },
+    {
+     "id": "women-q10b",
+     "stage": "anonymous",
+     "text": "Are you on HRT (hormone replacement therapy)?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "HRT use (not used by any rule).",
+     "engineRole": "data-capture",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "when q10a includes \"Yes\"",
+     "evidence": "observed",
+     "order": 23
+    },
+    {
+     "id": "women-q11a",
+     "stage": "anonymous",
+     "text": "Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.",
+     "type": "multi",
+     "options": [
+      {
+       "label": "Minoxidil",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Other, please state",
+       "effect": "Opens follow-up: Please describe your allergy, including the symptoms and severity. Outcome depends on that answer (see the follow-up). Without it: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "I have no allergies",
+       "effect": "Exclusive choice (clears the others). No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Minoxidil allergy or other allergy ends the online route.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 24
+    },
+    {
+     "id": "women-q11b",
+     "stage": "anonymous",
+     "text": "Please describe your allergy, including the symptoms and severity",
+     "type": "text",
+     "options": [],
+     "purpose": "Description of the allergy.",
+     "engineRole": "data-capture",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "when q11a includes \"Other, please state\"",
+     "evidence": "observed",
+     "order": 25
+    },
+    {
+     "id": "women-q12a",
+     "stage": "anonymous",
+     "text": "Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?",
+     "type": "multi",
+     "options": [
+      {
+       "label": "Yes, I have a medical condition, please state",
+       "effect": "Opens follow-up: Please describe your medical conditions. Outcome depends on that answer (see the follow-up). Without it: No change to the products offered (code).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "No, I do not have a medical condition and am not taking any medication",
+       "effect": "Exclusive choice (clears the others). No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "I am taking oral minoxidil",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Oral minoxidil use ends the online route; other conditions are free text for the reviewer.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 26
+    },
+    {
+     "id": "women-q12b",
+     "stage": "anonymous",
+     "text": "Please describe your medical conditions",
+     "type": "text",
+     "options": [],
+     "purpose": "Description of the medical condition.",
+     "engineRole": "data-capture",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "when q12a includes \"Yes, I have a medical condition, please state\"",
+     "evidence": "observed",
+     "order": 27
+    },
+    {
+     "id": "women-wall",
+     "stage": "anonymous",
+     "text": "Almost done! / Your details: First Name, Last Name, Date of Birth, Email, Create password, Confirm Password / Statements to agree before proceeding: Please tick to acknowledge that it is best practice to inform your GP of any private treatment that you receive. All treatment and communication is completely confidential. (required) / I understand the questions asked and have answered them honestly and truthfully. I confirm I will read any material shared with me regarding side effects and effectiveness of treatment options I am provided with by my Trichologist. I confirm and agree that any treatment prescribed for me is for my personal use only. I agree to the website terms and conditions and privacy policy. (required) / Newsletter opt-in (optional) / Your details are secure and protected",
+     "type": "contact",
+     "options": [],
+     "purpose": "ACCOUNT WALL: creates a customer account (/quiz/step/register) before any result is shown. Not filled (protocol).",
+     "engineRole": "identity",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "after the last question, always",
+     "evidence": "observed",
+     "order": 28
+    },
+    {
+     "id": "women-result",
+     "stage": "after-account",
+     "text": "Results page (server-rendered after registration). If no product rule survives, the template \"CHOOSE YOUR CONSULTATION TYPE / ASSESSMENT COMPLETE. / Book your first Consultation with your Trichologist. Due to the nature of your hair loss, one of our world-renowned Trichologists will need to see you in a Consultation to confirm your diagnosis and prescribe a more suitable treatment plan for you.\" is shown, with a booking calendar (Trichologist or Senior Trichologist, male or female consultant).",
+     "type": "info",
+     "options": [],
+     "purpose": "Shows the plan choice (Recommended / Other groups) or routes to a paid consultation.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Plan list = SKUs whose rule passes (conditions true, blockers false); empty list = consultation screen.",
+     "shownWhen": "after the account wall (not seen live)",
+     "evidence": "code",
+     "order": 29
+    }
+   ]
+  },
+  {
+   "id": "scalp",
+   "name": "Scalp assessment (scalp_quiz)",
+   "audience": "both",
+   "entryUrl": "https://hairloss.philipkingsley.co.uk/quiz/step/start/stepId/scalp_quiz_step0/",
+   "stagesSummary": "Select quiz (\"I am experiencing scalp irritation\") -> start declaration -> 10 questions (Q2 only if already diagnosed) -> account wall -> scalp-care products (cosmetic, SKUs not mapped) or consultation. Walked live to the account wall with a synthetic baseline (run r08; Q1 = No skipped Q2 as the code says); product effects from code.",
+   "questions": [
+    {
+     "id": "scalp-select",
+     "stage": "anonymous",
+     "text": "Select quiz. \"If you are suffering from hair loss symptoms please select the Hair Loss Assessment below. If you are experiencing scalp irritation or have a scalp condition, please complete our Scalp Assessment below.\" (plus: treat scalp symptoms before hair loss)",
+     "type": "single",
+     "options": [
+      {
+       "label": "I am experiencing hair loss",
+       "effect": "Goes to \"Select gender at birth\" (hair-loss assessment).",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "I am experiencing scalp irritation",
+       "effect": "Goes to the separate Scalp Assessment (scalp products, not hair-loss medicines).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Splits hair-loss and scalp-irritation customers before any medical questions.",
+     "engineRole": "eligibility-gate",
+     "branches": true,
+     "branchDetail": "Scalp irritation -> scalp_quiz.",
+     "shownWhen": "always (first screen of https://hairloss.philipkingsley.co.uk/)",
+     "evidence": "observed",
+     "order": 1
+    },
+    {
+     "id": "scalp-start",
+     "stage": "anonymous",
+     "text": "Welcome, let's get started... We're going to ask you some questions regarding your scalp and medical history, to determine your suitability for this service, and prescribe a suitable treatment plan. / By clicking 'Get Started', you are confirming the below: / I am age 18 or older / I live in the UK / I confirm all answers and information is provided by me and is accurate / I will disclose any prescription medication I currently take / I understand that I should not follow this treatment plan alongside treatments from another provider",
+     "type": "consent",
+     "options": [
+      {
+       "label": "GET STARTED",
+       "effect": "Confirms the statements and starts question 1.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Self-declaration before the questions (age, UK, honesty, medicines).",
+     "engineRole": "consent",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 2
+    },
+    {
+     "id": "scalp-q1",
+     "stage": "anonymous",
+     "text": "Have you already been diagnosed with a Scalp Condition with a Trichologist or Dermatoligist?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Already diagnosed? \"No\" skips the diagnosis question.",
+     "engineRole": "diagnosis",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 3
+    },
+    {
+     "id": "scalp-q2",
+     "stage": "anonymous",
+     "text": "What was your diagnosis?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Seborrhoeic Dermatitis",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Rosacea",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Pityriasis Amiantacea",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Neurodermatitis",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Lichen Simplex",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Psoriasis",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Contact Dermatitis",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Folliculitis",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Other",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Existing diagnosis from a trichologist or dermatologist.",
+     "engineRole": "diagnosis",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only when Q1 = \"Yes\" (conditional transition: Q1 = \"No\" skips to Q3)",
+     "evidence": "code",
+     "order": 4
+    },
+    {
+     "id": "scalp-q3",
+     "stage": "anonymous",
+     "text": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+     "type": "multi",
+     "options": [
+      {
+       "label": "Mild to Moderate Itching",
+       "effect": "Removes: Scalp-assessment products (code; one change from a synthetic scalp baseline: no diagnosis, mild-moderate dandruff, healthy scalp, medium hair).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-scalp-range"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Severe Itching",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Mild to Moderate Dandruff",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Severe Dandruff",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Mild to Moderate Eczema",
+       "effect": "Removes: Scalp-assessment products (code; one change from a synthetic scalp baseline: no diagnosis, mild-moderate dandruff, healthy scalp, medium hair).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-scalp-range"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Severe Eczema",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Mild to Moderate Redness",
+       "effect": "Swaps the SKU within: Scalp-assessment products (PHI1619,PHI1635 -> PHI1628) (code; one change from a synthetic scalp baseline: no diagnosis, mild-moderate dandruff, healthy scalp, medium hair).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-scalp-range"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Severe Redness",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Psoriasis",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Pimples, spots or acne",
+       "effect": "Removes: Scalp-assessment products (code; one change from a synthetic scalp baseline: no diagnosis, mild-moderate dandruff, healthy scalp, medium hair).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-scalp-range"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Other or Not Sure",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "I don't have any of these symptoms",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Current scalp symptoms with severity; chooses scalp products or a consultation.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 5
+    },
+    {
+     "id": "scalp-q4",
+     "stage": "anonymous",
+     "text": "How would you describe your scalp before these symptoms started?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Healthy",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Sensitive to fragrance",
+       "effect": "Swaps the SKU within: Scalp-assessment products (PHI1619,PHI1635 -> PHI1641) (code; one change from a synthetic scalp baseline: no diagnosis, mild-moderate dandruff, healthy scalp, medium hair).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-scalp-range"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Oily",
+       "effect": "Removes: Scalp-assessment products (code; one change from a synthetic scalp baseline: no diagnosis, mild-moderate dandruff, healthy scalp, medium hair).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-scalp-range"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Scalp type before symptoms; personalises products.",
+     "engineRole": "personalisation",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 6
+    },
+    {
+     "id": "scalp-q5",
+     "stage": "anonymous",
+     "text": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Chemotherapy or radiotherapy screen.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 7
+    },
+    {
+     "id": "scalp-q6",
+     "stage": "anonymous",
+     "text": "Do you ever suffer from any of the following symptoms on your scalp?",
+     "type": "multi",
+     "options": [
+      {
+       "label": "Pain",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Burning",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Crusting",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Bleeding",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Patchy hair loss",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "None of the above",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Pain, burning, crusting, bleeding or patchy hair loss (possible scarring or inflammatory disease).",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 8
+    },
+    {
+     "id": "scalp-q7",
+     "stage": "anonymous",
+     "text": "How would you describe your natural hair?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Fine and flat",
+       "effect": "Swaps the SKU within: Scalp-assessment products (PHI1619,PHI1635 -> PHI1618) (code; one change from a synthetic scalp baseline: no diagnosis, mild-moderate dandruff, healthy scalp, medium hair).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-scalp-range"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Medium, can be wavy",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Coarse, can be curly or coily",
+       "effect": "Swaps the SKU within: Scalp-assessment products (PHI1619,PHI1635 -> PHI1622,PHI1633) (code; one change from a synthetic scalp baseline: no diagnosis, mild-moderate dandruff, healthy scalp, medium hair).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-scalp-range"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Hair type; personalises products.",
+     "engineRole": "personalisation",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 9
+    },
+    {
+     "id": "scalp-q8",
+     "stage": "anonymous",
+     "text": "How long is your hair?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Short",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Medium (shoulder length)",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Long (longer than shoulder length)",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Hair length; personalises products.",
+     "engineRole": "personalisation",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 10
+    },
+    {
+     "id": "scalp-q9",
+     "stage": "anonymous",
+     "text": "How would you describe the condition of your hair?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Healthy",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Dry or Damaged",
+       "effect": "Adds: Scalp-assessment products (code; one change from a synthetic scalp baseline: no diagnosis, mild-moderate dandruff, healthy scalp, medium hair).",
+       "effectType": "product-added",
+       "affects": [
+        "p-scalp-range"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Hair condition; personalises products.",
+     "engineRole": "personalisation",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 11
+    },
+    {
+     "id": "scalp-q10a",
+     "stage": "anonymous",
+     "text": "Do you have any allergies?",
+     "type": "single",
+     "options": [
+      {
+       "label": "No, I don't have any allergies",
+       "effect": "No change to the products offered (code).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Yes, I'm allergic to Minoxidil",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-consult-virtual",
+        "p-consult-clinic"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Yes, other",
+       "effect": "Opens follow-up: Please describe your allergy, including the symptoms and severity. Outcome depends on that answer (see the follow-up). Without it: No change to the products offered (code).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Allergies (minoxidil named).",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "order": 12
+    },
+    {
+     "id": "scalp-q10b",
+     "stage": "anonymous",
+     "text": "Please describe your allergy, including the symptoms and severity",
+     "type": "text",
+     "options": [],
+     "purpose": "Description of the allergy.",
+     "engineRole": "data-capture",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "when q10a includes \"Yes, other\"",
+     "evidence": "code",
+     "order": 13
+    },
+    {
+     "id": "scalp-wall",
+     "stage": "anonymous",
+     "text": "Almost done! / Your details form (same fields as the hair-loss quizzes, read from code only)",
+     "type": "contact",
+     "options": [],
+     "purpose": "ACCOUNT WALL: creates a customer account (/quiz/step/register) before any result is shown. Not filled (protocol).",
+     "engineRole": "identity",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "after the last question, always",
+     "evidence": "observed",
+     "order": 14
+    },
+    {
+     "id": "scalp-result",
+     "stage": "after-account",
+     "text": "Results page (server-rendered after registration). If no product rule survives, the template \"CHOOSE YOUR CONSULTATION TYPE / ASSESSMENT COMPLETE. / Book your first Consultation with your Trichologist. Due to the nature of your hair loss, one of our world-renowned Trichologists will need to see you in a Consultation to confirm your diagnosis and prescribe a more suitable treatment plan for you.\" is shown, with a booking calendar (Trichologist or Senior Trichologist, male or female consultant).",
+     "type": "info",
+     "options": [],
+     "purpose": "Shows the plan choice (Recommended / Other groups) or routes to a paid consultation.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Plan list = SKUs whose rule passes (conditions true, blockers false); empty list = consultation screen.",
+     "shownWhen": "after the account wall (not seen live)",
+     "evidence": "code",
+     "order": 15
+    }
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "id": "R1",
+   "flow": "men",
+   "when": "Any of: men-q3 = \"I haven't noticed any yet\"; men-q4 = \"It started to fall out quite suddenly\" or \"It's not started yet\"; men-q8 = Pain, Burning, Crusting or Bleeding; men-q9 = cancer/PSA, depression-anxiety-panic, or trying for a baby; allergy to BOTH minoxidil and finasteride",
+   "then": "Every SKU is blocked, so no plan is offered and the consultation booking screen (\"Choose your consultation type\": virtual from £200, clinic from £345) is shown after the account wall.",
+   "effectType": "hard-stop",
+   "affects": [
+    "p-consult-virtual",
+    "p-consult-clinic"
+   ],
+   "evidence": "code",
+   "proof": "quiz-definition-men.json rules[*].blockers (first OR group, shared by all SKUs); evaluated with scratch/engine.py, table extracted/men-one-change-code.json",
+   "confidence": "high"
+  },
+  {
+   "id": "R2",
+   "flow": "men",
+   "when": "men-q7a includes Itching or Dandruff and severity (men-q7f / men-q7b) = Severe",
+   "then": "No plan; consultation screen.",
+   "effectType": "hard-stop",
+   "affects": [
+    "p-consult-virtual",
+    "p-consult-clinic"
+   ],
+   "evidence": "code",
+   "proof": "extracted/men-one-change-code.json (q7f/q7b = Severe)",
+   "confidence": "high"
+  },
+  {
+   "id": "R3",
+   "flow": "men",
+   "when": "men-q7a includes Itching (mild/moderate) or Dandruff (mild/moderate) or Eczema (mild/moderate)",
+   "then": "Hair-loss plans are replaced by scalp plans: unmapped SKUs PHI1306/PHI1309 (+PHI1307, Healthy Scalp Topical Combination Plan PHI1308 and 5% Healthy Scalp Combination Plan PHI1311 for mild dandruff; PHI1311 also for moderate dandruff).",
+   "effectType": "product-switched",
+   "affects": [
+    "p-scalp-addons-men",
+    "p-hs-topcombo",
+    "p-5hs",
+    "p-min5",
+    "p-topcombo",
+    "p-fin",
+    "p-5combo"
+   ],
+   "evidence": "code",
+   "proof": "extracted/men-one-change-code.json (q7f, q7b, q7d)",
+   "confidence": "high"
+  },
+  {
+   "id": "R4",
+   "flow": "men",
+   "when": "men-q7a includes Psoriasis, Redness, Acne or Other (or severe eczema)",
+   "then": "All named plans are removed; only unmapped SKUs PHI1220/PHI1221 remain. If those SKUs are retired on the server, the person reaches the consultation screen.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-min5",
+    "p-topcombo",
+    "p-fin",
+    "p-5combo"
+   ],
+   "evidence": "code",
+   "proof": "extracted/men-one-change-code.json",
+   "confidence": "medium"
+  },
+  {
+   "id": "R5",
+   "flow": "men",
+   "when": "men-q1 = Patchy or Extensive, or \"Temples and Crown with reduced density\" without a visible-scalp density answer, or Early signs with any density other than \"thinned/receded noticeably\"",
+   "then": "All named plans are removed; only unmapped PHI1220/PHI1221 remain (the no_results_rules list shows Patchy and Extensive were meant to go to a consultation).",
+   "effectType": "product-removed",
+   "affects": [
+    "p-min5",
+    "p-topcombo",
+    "p-fin",
+    "p-5combo"
+   ],
+   "evidence": "code",
+   "proof": "extracted/men-pattern-density-age-code.txt; quiz-definition-men.json no_results_rules",
+   "confidence": "medium"
+  },
+  {
+   "id": "R6",
+   "flow": "men",
+   "when": "men-q1 = Early signs (with noticeable thinning) or Temples, and men-q6 = 50 to 64 or Over 65",
+   "then": "Oral Finasteride and the 5% Combination Plan are removed; minoxidil 5% and the Topical Combination Plan stay.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-fin",
+    "p-5combo"
+   ],
+   "evidence": "code",
+   "proof": "extracted/men-pattern-density-age-code.txt",
+   "confidence": "high"
+  },
+  {
+   "id": "R7",
+   "flow": "men",
+   "when": "men-q11a = Minoxidil",
+   "then": "Removes Minoxidil 5%, the Topical Combination Plan and the 5% Combination Plan; Oral Finasteride (and PHI1221) stay.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-min5",
+    "p-topcombo",
+    "p-5combo"
+   ],
+   "evidence": "code",
+   "proof": "extracted/men-one-change-code.json q11a",
+   "confidence": "high"
+  },
+  {
+   "id": "R8",
+   "flow": "men",
+   "when": "men-q11a = Finasteride",
+   "then": "Removes Oral Finasteride, the Topical Combination Plan and the 5% Combination Plan; Minoxidil 5% (and PHI1220) stay.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-fin",
+    "p-topcombo",
+    "p-5combo"
+   ],
+   "evidence": "code",
+   "proof": "extracted/men-one-change-code.json q11a",
+   "confidence": "high"
+  },
+  {
+   "id": "R9",
+   "flow": "men",
+   "when": "men-q9 = \"I have uncontrolled low or high blood pressure\"",
+   "then": "Only PHI1221 is removed; minoxidil products stay because the main blocker value has a leading space and never matches (configuration error).",
+   "effectType": "product-removed",
+   "affects": [
+    "p-sku1221"
+   ],
+   "evidence": "code",
+   "proof": "quiz-definition-men.json rules PHI1220 blockers value \" I have uncontrolled low or high blood pressure\"",
+   "confidence": "high"
+  },
+  {
+   "id": "R10",
+   "flow": "men",
+   "when": "Rule for SKU PHI1304 (3% Combination Plan)",
+   "then": "Never fires: it requires the Q1 answer \"Temples & Crown with Reduced Density\", but the option is \"Temples and Crown with reduced density\". PHI1230 (wrong question label) and PHI1770-1772 (require itching/dandruff but are blocked by them) also never fire.",
+   "effectType": "none",
+   "affects": [
+    "p-3combo"
+   ],
+   "evidence": "code",
+   "proof": "quiz-definition-men.json rules PHI1304, PHI1230, PHI1770-PHI1772",
+   "confidence": "high"
+  },
+  {
+   "id": "R16",
+   "flow": "men",
+   "when": "Answers that block every product (e.g. men-q8 = Pain)",
+   "then": "The person still meets the same account wall after Q12; nothing on screen says they will be sent to a paid consultation.",
+   "effectType": "none",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/exp-01-men-q8-pain vs runs/r05-baseline-men",
+   "confidence": "high"
+  },
+  {
+   "id": "R11",
+   "flow": "women",
+   "when": "Any of: women-q1 pregnant/breastfeeding = Yes; women-q2 chemo/radiotherapy = Yes; women-q3a = Circular bald patches, Bandlike recession or Something else; women-q5a = Redness, Psoriasis, Pimples/acne, Other or Not Sure, or Moderate/Severe itching, dandruff or eczema; women-q11a = Minoxidil or Other allergy; women-q12a = \"I am taking oral minoxidil\"",
+   "then": "No plan; consultation screen.",
+   "effectType": "hard-stop",
+   "affects": [
+    "p-consult-virtual",
+    "p-consult-clinic"
+   ],
+   "evidence": "code",
+   "proof": "extracted/women-one-change-code.json",
+   "confidence": "high"
+  },
+  {
+   "id": "R12",
+   "flow": "women",
+   "when": "women-q4 = \"It's happened very suddenly\"",
+   "then": "Consultation for overall thinning, temple thinning or shedding, but NOT for \"Seeing more of my scalp or wider parting\", which still gets the main product (gap in the blocker list).",
+   "effectType": "hard-stop",
+   "affects": [
+    "p-consult-virtual",
+    "p-consult-clinic",
+    "p-sku1749"
+   ],
+   "evidence": "code",
+   "proof": "quiz-definition-women.json PHI1749 blockers (AND group lists every picture except the wider parting)",
+   "confidence": "high"
+  },
+  {
+   "id": "R13",
+   "flow": "women",
+   "when": "women-q3a = \"More shedding than usual (in the shower/on my brush)\"",
+   "then": "Main product PHI1749 is replaced by Hair Shedding Drops (cosmetic, PKC145).",
+   "effectType": "product-switched",
+   "affects": [
+    "p-sku1749",
+    "p-shedding"
+   ],
+   "evidence": "code",
+   "proof": "extracted/women-one-change-code.json q3a",
+   "confidence": "high"
+  },
+  {
+   "id": "R14",
+   "flow": "women",
+   "when": "women-q6 scalp type, women-q7 texture, women-q8 length, women-q9 styling",
+   "then": "Only change which \"Complete Your Routine\" haircare add-on SKU is shown (e.g. Fine -> PHI1684, Coarse/Coiled -> PHI1652 + PHI1678, any styling -> PHI1664, oily scalp -> PHI1686).",
+   "effectType": "product-switched",
+   "affects": [
+    "p-w-routine"
+   ],
+   "evidence": "code",
+   "proof": "extracted/women-one-change-code.json q6-q9",
+   "confidence": "high"
+  },
+  {
+   "id": "R15",
+   "flow": "women",
+   "when": "women-q10a menopause = Yes (with or without HRT)",
+   "then": "No effect: no women's rule offers a finasteride product, so post-menopausal women never get the topical finasteride drops online.",
+   "effectType": "none",
+   "affects": [],
+   "evidence": "code",
+   "proof": "quiz-definition-women.json rules (no SKU references menopause)",
+   "confidence": "high"
+  }
+ ],
+ "experiments": [
+  {
+   "id": "exp-01",
+   "flow": "men",
+   "changed": "men-q8: None of the above -> Pain (a code-predicted consultation case)",
+   "result": "Same account wall straight after Q12, with no hint that no plan will be offered; the consultation screen is only reachable after creating an account.",
+   "run": "runs/exp-01-men-q8-pain"
+  }
+ ],
+ "recommendations": [
+  {
+   "profile": "Man, 32, Temples and Crown (Norwood 3 with crown), gradual, family history, no conditions (baseline)",
+   "offered": [
+    "p-topcombo",
+    "p-5combo",
+    "p-min5",
+    "p-fin",
+    "p-sku1220",
+    "p-sku1221"
+   ],
+   "default": "p-5combo",
+   "note": "Recommended group: Topical Combination Plan, 5% Combination Plan, PHI1220, PHI1221. Other group: Minoxidil 5%, Oral Finasteride. The default/first item on the real page is unknown (after the wall). Code result; the live walk confirmed the questions and the wall only.",
+   "evidence": "code"
+  },
+  {
+   "profile": "Man 50+, Temples or Early signs",
+   "offered": [
+    "p-topcombo",
+    "p-min5",
+    "p-sku1220",
+    "p-sku1221"
+   ],
+   "default": "",
+   "note": "Oral finasteride plans drop out.",
+   "evidence": "code"
+  },
+  {
+   "profile": "Man with Patchy or Extensive loss",
+   "offered": [
+    "p-sku1220",
+    "p-sku1221"
+   ],
+   "default": "",
+   "note": "Only unmapped SKUs; if retired, consultation screen.",
+   "evidence": "code"
+  },
+  {
+   "profile": "Man with sudden loss, scalp pain/burning/crusting/bleeding, cancer/PSA, depression history or trying for a baby",
+   "offered": [
+    "p-consult-virtual",
+    "p-consult-clinic"
+   ],
+   "default": "",
+   "note": "Consultation route only.",
+   "evidence": "code"
+  },
+  {
+   "profile": "Woman, 38, wider parting, gradual, no scalp symptoms, medium hair (baseline)",
+   "offered": [
+    "p-sku1749",
+    "p-w-routine"
+   ],
+   "default": "p-sku1749",
+   "note": "Main product PHI1749 (minoxidil-type, name not found) + haircare add-on PHI1670.",
+   "evidence": "code"
+  },
+  {
+   "profile": "Woman with mainly shedding",
+   "offered": [
+    "p-shedding",
+    "p-w-routine"
+   ],
+   "default": "p-shedding",
+   "note": "Hair Shedding Drops (cosmetic) + add-on PHI1668.",
+   "evidence": "code"
+  },
+  {
+   "profile": "Woman pregnant/breastfeeding, on chemo, with patches, band-like loss, moderate+ scalp symptoms, minoxidil allergy or on oral minoxidil",
+   "offered": [
+    "p-consult-virtual",
+    "p-consult-clinic"
+   ],
+   "default": "",
+   "note": "Consultation route only.",
+   "evidence": "code"
+  }
+ ],
+ "engineSummary": "All logic is client-side and visible. Each product SKU has a rule: \"conditions\" (pattern, density, age, scalp state) that must be true and \"blockers\" (safety answers) that must all be false; questions are matched by their label text. Every SKU that passes is listed, split into \"Recommended\" and \"Other\" groups. If nothing passes, the person is sent to a paid trichologist consultation (virtual from £200, clinic from £345). Results of either kind are shown only after an account is created. The three routes are therefore: subscribe (some SKU passes), consultation (all blocked), and the clinic booking link that skips the quiz.",
+ "strengths": [
+  "Whole quiz in plain sight and logically simple: a clear triage to subscription or consultation.",
+  "Distinct consultation fallback with a calendar (trichologist or senior trichologist, male or female consultant) instead of a flat refusal.",
+  "Women have their own quiz with scalp-symptom triage and a shedding route (cosmetic drops).",
+  "Scalp-first philosophy: scalp symptoms swap hair-loss plans for scalp plans or a consultation; a separate scalp quiz exists.",
+  "Leaflets state plainly that the products are unlicensed and compounded under pharmacist supervision; the men's start screen makes the person confirm it."
+ ],
+ "weaknesses": [
+  "Account wall before any result: the person gives name, DOB, email and password before learning whether they get a plan or a £200+ consultation.",
+  "Configuration errors in served rules: blood-pressure blocker has a leading space (minoxidil still offered with uncontrolled BP); the 3% Combination Plan rule can never fire; PHI1230 and PHI1770-1772 can never fire; label typos (\"curerrently\", \"redness??\").",
+  "Women: sudden onset with a widening parting is not routed to a consultation; post-menopausal women are never offered the finasteride drops despite the leaflet saying they suit them; menopause and HRT answers are unused.",
+  "Mixed messages: the men's treatments page says \"FULLY LICENSED - Tested and certified for the UK\" while the leaflets and start screen say unlicensed.",
+  "Different prices for the same product on two store views (oral finasteride £40 vs £42); virtual consultation \"from £150\" on one page and \"from £200\" on the price list; dosing 2 ml vs 2.5 ml on different pages.",
+  "No exact age question (bands only, no under-18 option); no blood pressure or heart questions beyond one tick-box; medicines are free text no rule reads.",
+  "Who prescribes is not stated anywhere seen (trichologists are not prescribers; the leaflet only says \"pharmacist supervision\")."
+ ],
+ "opportunities": [
+  "Show the outcome (plan or consultation) before asking for an account, or at least say which route the person is on.",
+  "A prescriber-led women's offer: PK's women's online route is minoxidil-type drops or cosmetic shedding drops only; no spironolactone, no finasteride for post-menopausal women online.",
+  "Clear, consistent licensing and prescriber information as a trust advantage.",
+  "A cheaper, faster path for people PK routes to a £200-£345 consultation (sudden shedding, mild scalp symptoms) with a photo review by a prescriber."
+ ],
+ "sources": [
+  {
+   "title": "PK Lab men's treatments page",
+   "url": "https://www.philipkingsley.co.uk/hair-loss/pklab/treatments"
+  },
+  {
+   "title": "Women's treatments page",
+   "url": "https://www.philipkingsley.co.uk/female-hair-loss/treatments"
+  },
+  {
+   "title": "Assessment (select quiz)",
+   "url": "https://hairloss.philipkingsley.co.uk/"
+  },
+  {
+   "title": "Men's quiz start (serves the quiz definition)",
+   "url": "https://hairloss.philipkingsley.co.uk/quiz/step/start/?stepId=men_quiz_step0"
+  },
+  {
+   "title": "Women's quiz start (serves the quiz definition)",
+   "url": "https://hairloss.philipkingsley.co.uk/quiz/step/start/?stepId=women_quiz_step0"
+  },
+  {
+   "title": "Scalp quiz start",
+   "url": "https://hairloss.philipkingsley.co.uk/quiz/step/start/stepId/scalp_quiz_step0/"
+  },
+  {
+   "title": "Quiz engine JS",
+   "url": "https://hairloss.philipkingsley.co.uk/static/version1795163952/frontend/philipkingsley/hairloss/en_GB/PhilipKingsley_Quiz/js/quiz.min.js"
+  },
+  {
+   "title": "Leaflet: Minoxidil 5% & Finasteride 0.1% Scalp Drops",
+   "url": "https://www.philipkingsley.co.uk/pklabs-patient-information"
+  },
+  {
+   "title": "Leaflet: Finasteride 1mg Complex",
+   "url": "https://www.philipkingsley.co.uk/pklabs-patient-information-finasteride-1mg-complex"
+  },
+  {
+   "title": "Leaflet: Topical Minoxidil 5% and 3%",
+   "url": "https://www.philipkingsley.co.uk/pklabs-patient-information-topical-minoxidil"
+  },
+  {
+   "title": "Hair-loss terms of sale (subscriptions)",
+   "url": "https://www.philipkingsley.co.uk/hair-loss-terms-of-sale"
+  },
+  {
+   "title": "Hair-loss terms and conditions (50% first-subscription offer for men)",
+   "url": "https://hairloss.philipkingsley.co.uk/hair-loss-terms-conditions"
+  },
+  {
+   "title": "Clinic services and price list",
+   "url": "https://www.philipkingsley.co.uk/treatments"
+  },
+  {
+   "title": "Virtual consultation page",
+   "url": "https://www.philipkingsley.co.uk/clinics/virtual-consultation"
+  },
+  {
+   "title": "The 5% Combination Plan",
+   "url": "https://hairloss.philipkingsley.co.uk/the-5-combination-plan.html"
+  },
+  {
+   "title": "The Topical Combination Plan",
+   "url": "https://hairloss.philipkingsley.co.uk/the-topical-combination-plan.html"
+  },
+  {
+   "title": "The 3% Combination Plan",
+   "url": "https://hairloss.philipkingsley.co.uk/the-3-combination-plan.html"
+  },
+  {
+   "title": "The Healthy Scalp Topical Combination Plan",
+   "url": "https://hairloss.philipkingsley.co.uk/healthy-scalp-topical-combination-plan.html"
+  },
+  {
+   "title": "The 3% Healthy Scalp Combination Plan",
+   "url": "https://hairloss.philipkingsley.co.uk/minoxidil-3-healthy-scalp-combination-plan.html"
+  },
+  {
+   "title": "The 5% Healthy Scalp Combination Plan",
+   "url": "https://hairloss.philipkingsley.co.uk/minoxidil-5-healthy-scalp-combination-plan.html"
+  },
+  {
+   "title": "Minoxidil 5% Scalp Drops",
+   "url": "https://hairloss.philipkingsley.co.uk/minoxidil-5-scalp-drops.html"
+  },
+  {
+   "title": "Minoxidil 3% Scalp Drops",
+   "url": "https://hairloss.philipkingsley.co.uk/minoxidil-3-scalp-drops.html"
+  },
+  {
+   "title": "Oral Finasteride",
+   "url": "https://hairloss.philipkingsley.co.uk/density-oral-finasteride.html"
+  },
+  {
+   "title": "The Combination Plan (www)",
+   "url": "https://www.philipkingsley.co.uk/the-combination-plan.html"
+  },
+  {
+   "title": "Hair Shedding Drops",
+   "url": "https://www.philipkingsley.co.uk/hair-shedding-drops.html"
+  }
+ ],
+ "limitations": [
+  "The results page is behind the account wall, so the real plan list, its order, the default choice and plan-length prices (1/2/3-month) were not seen; product effects come from running the served rules, not from a live results screen.",
+  "The server may hide retired SKUs (for example PHI1220/PHI1221) on the results page; if so, Patchy/Extensive men and men with psoriasis/redness/acne would reach the consultation screen instead. This cannot be tested without an account.",
+  "Product prices are the single prices shown on product pages; whether they are per month or per 3-month delivery is not stated clearly (the pages say the plan \"rolls on a three monthly basis\"; the treatments page says every 1, 2 or 3 months).",
+  "Several SKUs could not be named. Contents of the 3%/5% and Healthy Scalp combination plans are partly inferred from their names.",
+  "Who prescribes and which pharmacy compounds and dispenses was not found in public pages."
+ ]
+}

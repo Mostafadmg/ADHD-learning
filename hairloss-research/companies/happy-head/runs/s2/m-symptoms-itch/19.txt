@@ -1,0 +1,14 @@
+STEP 19 click "NEXT"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Please provide more details about your symptoms.
+NEXT
+
+--- CONTROLS ---
+  textarea (1): Your doctor will evaluate you symptoms and may disqualify you from treatment. Please describe your symptoms in more detail.
+
+--- LINKS ---
+

@@ -1,0 +1,50 @@
+[
+ {
+  "id": "exp-38",
+  "flow": "beard",
+  "changed": "none: baseline for the beard flow (male, slow patchy growth, no hair loss elsewhere, no minoxidil before, no allergy, no face conditions)",
+  "neutral": ""
+ },
+ {
+  "id": "exp-39",
+  "flow": "beard",
+  "changed": "beard-q4 pattern: Slow, patchy or thin growth areas → New/sudden well-defined areas of beard loss",
+  "neutral": "Compared with exp-38."
+ },
+ {
+  "id": "exp-40",
+  "flow": "beard",
+  "changed": "beard-q10 allergic to minoxidil or tretinoin: No → Yes",
+  "neutral": "Compared with exp-38."
+ },
+ {
+  "id": "exp-41",
+  "flow": "beard",
+  "changed": "beard-q11 face conditions: None of these → Psoriasis",
+  "neutral": "Compared with exp-38. The \"willing to proceed?\" question that opened was answered Yes."
+ },
+ {
+  "id": "exp-42",
+  "flow": "beard",
+  "changed": "beard-q2 gender at birth: Male → Female",
+  "neutral": "Compared with exp-38. The button on the screen was not pressed."
+ },
+ {
+  "id": "exp-44",
+  "flow": "oral-minoxidil-5mg",
+  "changed": "none: baseline for the 5 mg step-up form (some improvement but plateaued, no side effects, no changes); the consent box was left unticked and the form was not sent",
+  "neutral": ""
+ },
+ {
+  "id": "exp-43",
+  "flow": "oral-minoxidil-5mg",
+  "changed": "om5-q2 side effects on 2.5 mg: No → Yes",
+  "neutral": "Compared with exp-44. The text box that opened was left empty; the form was not sent."
+ },
+ {
+  "id": "exp-45",
+  "flow": "men",
+  "changed": "men-q02 Female, then the \"Finish Consultation\" button on the stop notice is pressed",
+  "neutral": "Follow-on to exp-02: shows where the stop screen leads. Per the served code this button sends nothing to the server."
+ }
+]

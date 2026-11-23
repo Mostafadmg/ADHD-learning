@@ -1,0 +1,164 @@
+[
+ {
+  "from": "105935",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "108139",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108139",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Your scalp symptoms need checking",
+     "text": "The symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection . These conditions can also contribute to your hair loss. Please ask your GP or healthcare professional to assess your symptoms and advise you about treatment. We're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "I understand"
+     ],
+     "optionIds": [
+      "108139$100618"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-01-105935",
+  "text": "Exit consultation\nYour scalp symptoms need checking\n\nThe symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection. These conditions can also contribute to your hair loss.\n\nPlease ask your GP or healthcare professional to assess your symptoms and advise you about treatment.\n\nWe're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.\n\nI understand\nNext\nBack"
+ },
+ {
+  "from": "108139",
+  "option": "I understand",
+  "trail": [
+   "105935=Yes"
+  ],
+  "result": {
+   "sig": "108014",
+   "title": "HL - Previous HL treatment and Side effects",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108014",
+     "type": "SINGLE_CHOICE",
+     "title": "Hair loss medication",
+     "text": "Have you ever taken any medication for hair loss?",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "108014$1",
+      "108014$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-02-108139"
+ },
+ {
+  "from": "108014",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "108015",
+   "title": "HL - Previous HL treatment and Side effects",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108015",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Which hair loss treatments have you used before?",
+     "text": "Include any treatments you currently use. Some products contain more than one medication, so please select all that apply.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Topical minoxidil (e.g. Regaine foam, solution or spray, Sons Minoxidil Solution, etc.)",
+      "Oral Minoxidil (e.g. tablets, capsules, etc.)",
+      "Finasteride tablets (e.g. Propecia or generic finasteride, etc.)",
+      "Other hair loss medication (e.g. compounded sprays containing finasteride or dutasteride)"
+     ],
+     "optionIds": [
+      "108015$105205",
+      "108015$105206",
+      "108015$105207",
+      "108015$105210"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-03-108014",
+  "text": "Exit consultation\nWhich hair loss treatments have you used before?\n\nInclude any treatments you currently use. Some products contain more than one medication, so please select all that apply.\n\nTopical minoxidil\n(e.g. Regaine foam, solution or spray, Sons Minoxidil Solution, etc.)\nOral Minoxidil\n(e.g. tablets, capsules, etc.)\nFinasteride tablets\n(e.g. Propecia or generic finasteride, etc.)\nOther hair loss medication\n(e.g. compounded sprays containing finasteride or dutasteride)\nNext\nBack"
+ },
+ {
+  "from": "108015",
+  "option": "Topical minoxidil (e.g. Regaine foam, solution or spray, Sons Minoxidil Solution, etc.)",
+  "trail": [
+   "108014=Yes"
+  ],
+  "error": "could not click"
+ },
+ {
+  "from": "108015",
+  "option": "Oral Minoxidil (e.g. tablets, capsules, etc.)",
+  "trail": [
+   "108014=Yes"
+  ],
+  "error": "could not click"
+ },
+ {
+  "from": "108015",
+  "option": "Finasteride tablets (e.g. Propecia or generic finasteride, etc.)",
+  "trail": [
+   "108014=Yes"
+  ],
+  "error": "could not click"
+ },
+ {
+  "from": "108015",
+  "option": "Other hair loss medication (e.g. compounded sprays containing finasteride or dutasteride)",
+  "trail": [
+   "108014=Yes"
+  ],
+  "error": "could not click"
+ },
+ {
+  "from": "103270",
+  "option": "Alopecia",
+  "trail": [],
+  "result": {
+   "sig": "SUMMARY",
+   "stepState": "SUMMARY",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": []
+  },
+  "onBaseline": false,
+  "shot": "peek-04-103270",
+  "text": "Exit consultation\nMedical history\nHave you ever had any of the following conditions?\nAlopecia\nBreast cancer\nBreast tissue enlargement\nDepression\nCurrent or history of suicidal thoughts, self-harm, or attempts\nObstructive uropathy\nProstate cancer\nLiver condition\nPhaeochromocytoma\nPorphyria\nProblems with my sex life\nSystemic Lupus Erythematosus (SLE)\nNone of the above\nBack",
+  "endedEarly": true
+ }
+]

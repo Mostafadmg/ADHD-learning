@@ -107,7 +107,7 @@ loss (telogen effluvium), and patchy immune hair loss (alopecia areata). Alopeci
 | In five European countries including the UK, 47% of men aged 18 to 45 reported hair loss. Of those, **fewer than 10% were pursuing treatment** and **three in four had never tried any treatment**. | [Alfonso 2005](https://pubmed.ncbi.nlm.nih.gov/16307704/) (telephone survey, 1,536 men) |
 | On a German online prescribing platform, 55.4% of 2,904 patients had never seen a doctor about their hair loss and 76.1% had never taken finasteride before. | Abeck 2022, summarised in a [2025 review](https://pmc.ncbi.nlm.nih.gov/articles/PMC12716827/) |
 | On a US online platform, 32% of 8,983 patients had never thought about treating their hair loss until they heard of the platform. | Young 2023, summarised in the same [2025 review](https://pmc.ncbi.nlm.nih.gov/articles/PMC12716827/) |
-| About 4 million people in the US used over-the-counter minoxidil in 2025 and about 1 million used prescription finasteride or oral minoxidil. These are a research firm's figures, not official ones. | [Mordor Intelligence](https://www.mordorintelligence.com/industry-reports/hair-loss-treatment-products-market) (page updated 22 Oct 2026) |
+| About 4 million people in the US used over-the-counter minoxidil in 2025 and about 1 million used prescription finasteride or oral minoxidil. These are estimates by Veradermics (a company developing a hair-loss drug, so not neutral), quoted on a research firm's page; they are not official figures. | [Mordor Intelligence](https://www.mordorintelligence.com/industry-reports/hair-loss-treatment-products-market) (page updated 22 Oct 2026) |
 
 **ESTIMATE:** 5 million US users against 80 million people affected is about 6% on medical treatment (some people
 use both, so the true share may be lower). If the same share applied to the UK estimate above, well under
@@ -152,7 +152,7 @@ evidence is bottom-up, from company filings:
 |---|---|---|---|
 | Hims & Hers total revenue (all conditions; hair is not split out) | US$2,347.6m | 2025 | [10-K](https://www.sec.gov/Archives/edgar/data/1773751/000177375126000022/hims-20251231.htm) |
 | Men given a Hims compounded finasteride and minoxidil spray or serum in the US | 638,629 men | April 2021 to April 2025 | [Hims study, JMIR Dermatology 2026](https://pmc.ncbi.nlm.nih.gov/articles/PMC12826577/) |
-| Hims & Hers UK Limited turnover ("primarily focused on sexual health and hair growth") | £23.9m | 2025 | [Companies House](https://find-and-update.company-information.service.gov.uk/company/11602781/filing-history) |
+| Hims & Hers UK Limited turnover ("primarily focused on sexual health and hair growth"; the notes say turnover covers sexual health, hair loss and, from December 2025, weight loss) | £23.9m | 2025 | [Companies House](https://find-and-update.company-information.service.gov.uk/company/11602781/filing-history) |
 | Skin + Me group turnover (personalised skincare, plus Hair + Me from March 2025) | £42.5m | year to Aug 2025 | [Companies House](https://find-and-update.company-information.service.gov.uk/company/11523394/filing-history) |
 | Hair + Me customers (brand claim, not audited) | "more than 250,000" in under 18 months | July 2026 | [Retail Focus](https://retail-focus.co.uk/?p=25553) |
 | Growth in visits to online hair-loss sites over the study period | Keeps +846%, Shapiro MD +109%, MySpring +427% | published 2023 | [Abeck 2023](https://pubmed.ncbi.nlm.nih.gov/37041819/) |
@@ -236,13 +236,14 @@ Expansion in the UK and Europe:
   ([Wikipedia, citing The Observer 2019 and TechCrunch 2021](https://en.wikipedia.org/wiki/Hims_%26_Hers_Health)).
   Companies House shows Hims & Hers UK Limited was formerly named Honest Health Limited
   ([register](https://find-and-update.company-information.service.gov.uk/company/11602781)).
-- **ZAVA.** Announced 3 June 2025, all cash, price not given in the release. ZAVA had "about 1.3 million active
+- **ZAVA.** Announced 3 June 2025, all cash, price not given in the release. ZAVA had "more than 1.3 million active
   customers" and "nearly 2.3 million consultations in 2024" across the UK, Germany, France and Ireland
   ([Hims release](https://investors.hims.com/news/news-details/2025/Hims--Hers-Announces-Plans-to-Acquire-ZAVA-Accelerating-Major-European-Growth-Across-the-UK-Germany-France-and-Ireland/default.aspx)).
   The deal completed on 1 July 2025 ([Health Bridge accounts](https://find-and-update.company-information.service.gov.uk/company/07392646/filing-history)).
-  The 10-K records the purchase price as EUR 219.2m (US$258.0m)
-  ([10-K](https://www.sec.gov/Archives/edgar/data/1773751/000177375126000022/hims-20251231.htm); figure taken from a
-  search summary of the filing, not re-read line by line).
+  The purchase price for accounting purposes was EUR 219.2m (US$258.0m): EUR 142.2m cash up front plus contingent
+  payments with a fair value of EUR 77.0m at the date of purchase
+  ([Hims 10-Q for Q3 2025, note 3](https://www.sec.gov/Archives/edgar/data/1773751/000177375125000354/hims-20250930.htm),
+  re-read 23 November 2026). A search summary of the 10-K puts the maximum earn-out at EUR 100.0m **[unverified]**.
 - **Eucalyptus** (Juniper, Pilot; Australia, UK, Germany, Canada, Japan). Agreed February 2026 for up to
   US$1.15bn: about US$240m at closing, about US$710m in later instalments and up to about US$200m tied to results
   ([10-K](https://www.sec.gov/Archives/edgar/data/1773751/000177375126000022/hims-20251231.htm)). It closed in June 2026
@@ -250,8 +251,10 @@ Expansion in the UK and Europe:
 - **Markets now.** US, Canada, UK, Germany, Ireland, France and Spain
   ([10-K](https://www.sec.gov/Archives/edgar/data/1773751/000177375126000022/hims-20251231.htm)), plus Australia through Eucalyptus.
 - **Other purchases** named in the 10-K: MedisourceRx (US compounding facility, September 2024), Trybe Labs
-  (laboratory testing, February 2025), Livewell (Canada, November 2025) and YourBio Health (January 2026). Prices
-  were not found.
+  (laboratory testing, February 2025), Livewell (Canada; legal name Medici Technologies, which the 10-K lists as
+  "Medici", completed November 2025; Hims announced its Canada launch on 4 December 2025,
+  [Fasken](https://www.fasken.com/en/experience/2025/12/himshers-completed-the-acquisition-of-livewell)) and YourBio
+  Health (January 2026). Prices were not found.
 - **What this means in the UK.** One group now owns Hims UK, Hers UK, ZAVA, the platform behind Superdrug Online
   Doctor and Asda Online Doctor, and Juniper UK. In the US, "personalized offerings represented over 70% of
   United States Revenue" in 2025
@@ -300,14 +303,14 @@ Expansion in the UK and Europe:
 |---|---|---|---|---|---|---|
 | **Finasteride 1 mg tablets** | £23 a month on a 12-month plan (£276) ([page](https://www.forhims.co.uk/hair-loss/finasteride)) | From £13 a month on a 6-month plan, promo ([page](https://www.joinvoy.com/hair-loss/treatments/finasteride)) | £28 a month, billed quarterly (£84) ([page](https://www.numan.com/hair-loss/finasteride)) | £22.67 a month (£136 for 6 months) ([page](https://sons.co.uk/products/finasteride)) | Not sold alone | Dr Fox £10 for 28 plus £1 to £4 prescription fee and £2.90 delivery ([page](https://www.doctorfox.co.uk/hair-loss-treatments/)); Superdrug £27 ([page](https://onlinedoctor.superdrug.com/finasteride.html)); Boots £28, or £245 for 364 ([page](https://onlinedoctor.boots.com/treatments/finasteride)); Treated from £34.95 ([page](https://uk.treated.com/hair-loss)) |
 | **Topical minoxidil** | 5% alcohol-free serum £21 a month on a 12-month plan ([page](https://www.forhims.co.uk/hair-loss/minoxidil)) | 10% spray from £14 a month on a 6-month plan, promo ([page](https://www.joinvoy.com/hair-loss/treatments/minoxidil)) | 6% spray £30 a month, billed quarterly ([page](https://www.numan.com/hair-loss/minoxidil)) | 5% spray £16.50 a month (£99 for 6 months) ([page](https://sons.co.uk/products/minoxidil)) | 5% drops inside the £34.99 plan | Sons minoxidil 60 ml £19.95 and Regaine foam £29.50 at Dr Fox ([page](https://www.doctorfox.co.uk/hair-loss-treatments/)); Regaine foam 3 cans £65.99 at Superdrug ([page](https://onlinedoctor.superdrug.com/regaine-for-men.html)) |
-| **Combined topical (finasteride + minoxidil)** | 0.3% + 6% spray **£16.50 a month** on a 6-month plan (£99); with ketoconazole and biotin £22 ([page](https://www.forhims.co.uk/hair-loss)) | Sold (finasteride 0.1% + minoxidil 10% + azelaic acid); public price unknown | Minoxidil 10% + azelaic acid 5% + finasteride 0.1%: **£36 a month**, billed quarterly ([page](https://help.numan.com/en/articles/9929731-combination-spray)) | Finasteride 0.15% + minoxidil 5% + tretinoin: **£31.50 a month** (£189 for 6 months) ([page](https://sons.co.uk/products/topical-finasteride-minoxidil-spray)) | Drops with minoxidil 5% + finasteride 0.1%, with or without tretinoin: **£34.99 every 4 weeks** ([leaflet](https://www.hairandme.com/support/en/articles/254578-hair-me-patient-information-leaflet-topical-treatments)) | Dr Fox finasteride 0.3% + minoxidil 5% + tretinoin 0.01%: **£13 a month** (£26 for 60 ml) ([page](https://www.doctorfox.co.uk/hair-loss-treatments/hair-growth-spray.html)); e-Surgery from £16.95 (UK sweep) |
+| **Combined topical (finasteride + minoxidil)** | 0.3% + 6% spray **£16.50 a month** on a 6-month plan (£99); with ketoconazole and biotin £22 ([page](https://www.forhims.co.uk/hair-loss)) | Sold (finasteride 0.1% + minoxidil 10% + azelaic acid); public price unknown | Minoxidil 10% + azelaic acid 5% + finasteride 0.1%: **£36 a month**, billed quarterly ([page](https://help.numan.com/en/articles/9929731-combination-spray)) | Finasteride 0.15% + minoxidil 5% + tretinoin: **£31.50 a month** (£189 for 6 months; 3 months £106). Black Friday first-order price "from £18.90 a month" on 23 Nov 2026 ([page](https://sons.co.uk/products/topical-finasteride-minoxidil-spray)) | Drops with minoxidil 5% + finasteride 0.1% to 0.2%, with or without tretinoin 0.01%: **£34.99 every 4 weeks** ([leaflet](https://www.hairandme.com/support/en/articles/254578-hair-me-patient-information-leaflet-topical-treatments)) | Dr Fox finasteride 0.3% + minoxidil 5% + tretinoin 0.01%: **£13 a month** (£26 for 60 ml) ([page](https://www.doctorfox.co.uk/hair-loss-treatments/hair-growth-spray.html)); e-Surgery from £16.95 (UK sweep) |
 | **Oral minoxidil** | Men: 3 mg chew with vitamins £16.50 a month on a 6-month plan. Women: 1.5 mg chew from £13; with spironolactone 44 mg from £20 ([men](https://www.forhims.co.uk/hair-loss), [women](https://forhers.co.uk/hair-blends)) | Men: 2.5 mg from £14 a month, promo. Women: from £15 (£25 struck through) ([men](https://www.joinvoy.com/hair-loss/a/hair-loss-tablets), [women](https://www.joinvoy.com/female-hair-loss/shopping-oral-tablets)) | Not listed | 2.5 mg capsule £23.67 a month; 5 mg £31.20 ([page](https://sons.co.uk/products/oral-minoxidil)) | 0.5, 1.25 or 2.5 mg capsules inside the £34.99 plan ([leaflet](https://www.hairandme.com/support/en/articles/254164-hair-me-patient-information-leaflet-oral-treatments)) | Minoxidil 2.5 mg tablets from £17.99 (Click2Pharmacy) to £45 for 60 (Simple Online Pharmacy), men only at most (UK sweep) |
 | **Combined oral (finasteride + minoxidil in one)** | 1.1 mg + 3 mg + vitamins: £16.50 a month on a 6-month plan ([page](https://www.forhims.co.uk/hair-loss)) | 1 mg + 2.5 mg + biotin capsule from £19 a month on a 6-month plan, promo ([page](https://www.joinvoy.com/hair-loss/a/all-in-one-treatment)) | Not listed | 1 mg + 2.5 mg capsule £31.50 a month ([page](https://sons.co.uk/products/combination-capsule)) | Finasteride 1 mg + minoxidil 2.5 or 5 mg, or dutasteride 0.5 mg + minoxidil 1.25 mg: £34.99 | Not found at ordinary pharmacies |
 | **Personalised compounded formula** | The sprays and chews above are sold as "personalised" | Clinician sets strength for women's minoxidil; from £24 a month ([page](https://www.joinvoy.com/female-hair-loss/treatments/minoxidil-plans)) | None | None | **One price whatever the formula: £34.99 every 4 weeks**, free delivery ([site](https://www.hairandme.com/)) | City Skin Clinic bespoke serum £120 per 3 months (UK sweep) |
 | **Bundles** | Finasteride tablets + minoxidil serum £30 a month on a 12-month plan (£360) ([page](https://www.forhims.co.uk/hair-loss/finasteride-and-minoxidil)) | Finasteride + minoxidil spray from £19 a month on a 6-month plan, promo. List: £44 monthly, £39.67 on 3 months, £33.17 on 6 months ([page](https://www.joinvoy.com/hair-loss/treatments/complete-hair-loss-plan); list grid per this project's Voy notes) | Spray + finasteride £36; with supplement £40; billed quarterly ([page](https://www.numan.com/subscribe/hair-loss)) | Core Plan £31.50; Ultimate Plan £49.83 (6 months) ([page](https://sons.co.uk/products/the-duo-plan)) | None | Boots finasteride + Regaine foam £50.36 for one month, £334.39 for 12 ([page](https://onlinedoctor.boots.com/propecia-online)) |
 | **Supplements** | Vitamin chew £16.50 a month on a 6-month plan | Hair vitamins £18 a month ([page](https://www.joinvoy.com/female-hair-loss/treatments/hair-vitamins)) | Hair Growth Support £28 a month ([page](https://www.numan.com/supplements/hair-support)) | Hair Growth Complex £28 a month; biotin £9 ([page](https://sons.co.uk/products/hair-growth-complex)) | Multivitamins, price shown only to members | Nourkrin Woman £51 for a month at Superdrug ([page](https://onlinedoctor.superdrug.com/nourkrin-woman.html)) |
 | **Plan lengths** | 6 and 12 months, paid up front | 1, 3 and 6 months | Quarterly | 6 months | Every 4 weeks | One-off packs |
-| **First-order offers seen** | None recorded | Black Friday banner "50% off hair loss plans. Free shampoo with every plan" (16 to 30 Nov 2026); women's page "From £39 £14.99, save 60%" | Sign-up link carries a code named `hl-organic-50off` (amount not checked) | List prices shown with promotions (not recorded here) | £14.99 instead of £34.99 for each of the first three months (57% off) | None |
+| **First-order offers seen** | None recorded | Black Friday banner "50% off hair loss plans. Free shampoo with every plan" (16 to 30 Nov 2026); women's page "From £39 £14.99, save 60%" | "Save 50% off your first order (max. £40)" banner, read on numan.com on 23 November 2026; the sign-up link carries code `hl-organic-50off` | List prices shown with promotions (not recorded here) | £14.99 instead of £34.99 for each of the first three months (57% off) | None |
 | **Consultation fee** | Free | Free | Free | Free | Free | Dr Fox £1 to £4; Superdrug phone consultation £25 |
 
 Treated also lists dutasteride from £34.95, Propecia from £66.95 and Regaine from £99.95, and shows "Finasteride +
@@ -408,7 +411,7 @@ No UK competitor publishes CAC. Hims does not publish it either. What can be sai
 
 | Evidence | Figure | Source |
 |---|---|---|
-| Hims lost subscribers the moment it slowed its marketing | 2,891,000 in June 2026 to 2,788,000 in September 2026 (down about 103,000 in one quarter) | [Q2 2026](https://www.sec.gov/Archives/edgar/data/0001773751/000177375126000161/hims-20260630x8xkearningsr.htm), [Q3 2026](https://www.sec.gov/Archives/edgar/data/0001773751/000177375126000242/hims-20260930x8xkearningsr.htm) |
+| Hims lost subscribers in a quarter when it cut marketing | 2,891,000 in June 2026 to 2,788,000 in September 2026 (down about 103,000). Marketing fell from US$262.2m (Q2) to US$247.3m (Q3) and the company said it was "intentionally pacing marketing spend"; marketing was still higher than a year earlier. That the cut caused the fall is the author's inference. | [Q2 2026](https://www.sec.gov/Archives/edgar/data/0001773751/000177375126000161/hims-20260630x8xkearningsr.htm), [Q3 2026](https://www.sec.gov/Archives/edgar/data/0001773751/000177375126000242/hims-20260930x8xkearningsr.htm) |
 | Only a quarter of Hims hair patients answered the check-in sent about 130 days after starting | 151,352 of 638,629 (23.7%) | [Hims study 2026](https://pmc.ncbi.nlm.nih.gov/articles/PMC12826577/) |
 | Of those who answered, most were satisfied | 80.4% satisfied; 2.7% reported side effects | same |
 | Self-reported "full adherence" on a German platform | 87% on finasteride tablets; 74.4% on a finasteride and minoxidil gel | [2025 review](https://pmc.ncbi.nlm.nih.gov/articles/PMC12716827/) |
@@ -686,9 +689,9 @@ the higher standard.
 | 8 | A second firm puts global "hair loss treatment products" at only US$3.14bn in 2026. Definitions differ 17-fold. | 2026 | [Mordor Intelligence](https://www.mordorintelligence.com/industry-reports/hair-loss-treatment-products-market) |
 | 9 | Online pharmacies are the fastest-growing sales channel (12.7% a year); women the faster-growing sex (9.1%). | 2025 forecast | [Grand View Research](https://www.grandviewresearch.com/industry-analysis/alopecia-market) |
 | 10 | Hims & Hers: revenue US$2,347.6m (+59%), 2.51 million subscribers, 2,442 employees. | 2025 | [10-K](https://www.sec.gov/Archives/edgar/data/1773751/000177375126000022/hims-20251231.htm) |
-| 11 | Hims & Hers: 2,788,000 subscribers, down about 103,000 in a quarter after it slowed marketing; revenue per subscriber US$105 a month. | Sept 2026 | [Q3 2026](https://www.sec.gov/Archives/edgar/data/0001773751/000177375126000242/hims-20260930x8xkearningsr.htm), [Q2 2026](https://www.sec.gov/Archives/edgar/data/0001773751/000177375126000161/hims-20260630x8xkearningsr.htm) |
+| 11 | Hims & Hers: 2,788,000 subscribers, down about 103,000 in a quarter in which marketing was cut (US$262.2m to US$247.3m); revenue per subscriber US$105 a month. | Sept 2026 | [Q3 2026](https://www.sec.gov/Archives/edgar/data/0001773751/000177375126000242/hims-20260930x8xkearningsr.htm), [Q2 2026](https://www.sec.gov/Archives/edgar/data/0001773751/000177375126000161/hims-20260630x8xkearningsr.htm) |
 | 12 | Hims & Hers spent 39% of revenue on marketing (46% the year before). | 2025 | [FY2025 release](https://investors.hims.com/news/news-details/2026/Hims--Hers-Health-Inc--Reports-Fourth-Quarter-and-Full-Year-2025-Financial-Results/default.aspx) |
-| 13 | Hims bought ZAVA (1.3 million active customers; completed 1 July 2025) and Eucalyptus (up to US$1.15bn; closed June 2026). | 2025, 2026 | [ZAVA release](https://investors.hims.com/news/news-details/2025/Hims--Hers-Announces-Plans-to-Acquire-ZAVA-Accelerating-Major-European-Growth-Across-the-UK-Germany-France-and-Ireland/default.aspx), [10-K](https://www.sec.gov/Archives/edgar/data/1773751/000177375126000022/hims-20251231.htm) |
+| 13 | Hims bought ZAVA (more than 1.3 million active customers; EUR 219.2m; completed 1 July 2025) and Eucalyptus (up to US$1.15bn; closed June 2026). | 2025, 2026 | [ZAVA release](https://investors.hims.com/news/news-details/2025/Hims--Hers-Announces-Plans-to-Acquire-ZAVA-Accelerating-Major-European-Growth-Across-the-UK-Germany-France-and-Ireland/default.aspx), [10-K](https://www.sec.gov/Archives/edgar/data/1773751/000177375126000022/hims-20251231.htm) |
 | 14 | Hims prescribed compounded finasteride and minoxidil topicals to 638,629 US men; 80.4% of those who answered were satisfied; only 23.7% answered. | 2021 to 2025 | [JMIR Dermatology](https://pmc.ncbi.nlm.nih.gov/articles/PMC12826577/) |
 | 15 | Voy (Menwell): turnover £227.4m (UK £187.9m), gross margin 46%, operating loss £26.5m, 631 staff. | 2025 | [Companies House](https://find-and-update.company-information.service.gov.uk/company/11476975/filing-history) |
 | 16 | Numan (Vir Health): turnover £69.3m (+132%), gross margin 50%, operating loss £2.3m, 176 staff. | 2024 | [Companies House](https://find-and-update.company-information.service.gov.uk/company/11449267/filing-history) |
@@ -743,6 +746,69 @@ the higher standard.
 5. Voy (£227m, 2025) and Numan (£69m, 2024) are big because of weight loss; Hims UK (£24m) and Hair + Me's group (£43m) are the closer hair comparisons.
 6. A UK combined or personalised hair product lists at £31 to £36 a month; Hims UK charges £16.50 prepaid; Dr Fox sets the floor at £10 to £13.
 7. Hair and skin prescribing earns about 78% gross margin, but marketing takes 39% to 46% of revenue at Hims and first orders go at half price.
-8. No rival publishes CAC or churn; Hims lost about 103,000 subscribers in one quarter when it cut marketing, so retention must be measured from day one.
+8. No rival publishes CAC or churn; Hims lost about 103,000 subscribers in a quarter in which it trimmed marketing, so retention must be measured from day one.
 9. UK law bans advertising prescription and unlicensed medicines; brands sell the condition and the service, and regulators ruled against Voy's, ZAVA's and Juniper's owners in 2025 to 2026.
 10. Best openings: women, trust and clinical quality, and a high-margin niche the giants treat as secondary. Biggest threats: rivals' money, falling prices and tighter rules.
+
+---
+
+## 12. Verification log
+
+**Independent fact-check, 23 November 2026.** I picked the 20 figures a founder would rely on most and checked each one
+against a primary source that I opened myself. Companies House accounts were downloaded again from the register and
+read with text recognition (OCR), with the key pages also checked by eye. Hims & Hers figures were re-read in its SEC
+filings and investor releases.
+
+Key: **Confirmed** = matches the primary source. **Corrected** = the file is now fixed. **Unverified** = could not be
+checked again; it is labelled in the text.
+
+| # | Figure in the file | Verdict | What the primary source says |
+|---|---|---|---|
+| 1 | Hims & Hers 2025 revenue US$2,347.6m, up 59% (2024 US$1,476.5m); net income US$128.4m; 2,442 employees | Confirmed | 10-K: revenue $2,347,637k vs $1,476,514k; "net income of $128.4 million"; "2,442 employees" ([10-K](https://www.sec.gov/Archives/edgar/data/1773751/000177375126000022/hims-20251231.htm)) |
+| 2 | Subscribers 2,511,000 (end 2025) and 2,229,000 (end 2024); US$83 a month per subscriber | Confirmed | 10-K: 2,511k and 2,229k; $83 (2024: $65) |
+| 3 | Q3 2026: revenue US$890.4m (+49%), 2,788,000 subscribers, US$105 a month, gross margin 57%, net loss US$33.0m, rest-of-world US$233.3m, 2026 outlook US$3.13bn to US$3.15bn | Confirmed | Q3 2026 release: revenue $890,373k; subscribers 2,788k; $105; 57% (Q3 2025: 74%); net loss $33.0m; rest of world about $233.3m ([Q3 2026](https://www.sec.gov/Archives/edgar/data/0001773751/000177375126000242/hims-20260930x8xkearningsr.htm)) |
+| 4 | 2,891,000 subscribers at June 2026 and a fall of about 103,000 by September | Confirmed, **wording corrected** | Q2 2026 release: 2,891k ([Q2 2026](https://www.sec.gov/Archives/edgar/data/0001773751/000177375126000161/hims-20260630x8xkearningsr.htm)). The file said Hims lost subscribers "the moment it slowed its marketing". Marketing did fall from US$262.2m (Q2) to US$247.3m (Q3), and the CFO spoke of "intentionally pacing marketing spend", but it was still above Q3 2025 (US$232.2m). Sections 5.4, 9 and 11 now give the numbers and mark the cause as the author's inference. |
+| 5 | Marketing US$919.3m = 39% of revenue in 2025 (2024: US$678.8m = 46%) | Confirmed | FY2025 release: $919,296k and $678,844k; percentages worked out from revenue ([release](https://investors.hims.com/news/news-details/2026/Hims--Hers-Health-Inc--Reports-Fourth-Quarter-and-Full-Year-2025-Financial-Results/default.aspx)) |
+| 6 | Group gross margin 79% (2024), 74% (2025), 57% (Q3 2026) | Confirmed | FY2025 release and Q3 2026 release |
+| 7 | ZAVA: "about 1.3 million active customers"; price EUR 219.2m (US$258.0m) "from a search summary" | **Corrected** | The release says "more than 1.3 million" ([ZAVA release](https://investors.hims.com/news/news-details/2025/Hims--Hers-Announces-Plans-to-Acquire-ZAVA-Accelerating-Major-European-Growth-Across-the-UK-Germany-France-and-Ireland/default.aspx)). The price is in the Q3 2025 10-Q, not the cited 10-K: EUR 219.2m = EUR 142.2m cash up front + EUR 77.0m fair value of contingent payments ([10-Q](https://www.sec.gov/Archives/edgar/data/1773751/000177375125000354/hims-20250930.htm)). Section 3.2 and fact 13 are fixed. The EUR 100m maximum earn-out is from a search summary only and is marked [unverified]. |
+| 8 | Eucalyptus: up to US$1.15bn (about US$240m at closing, US$710m deferred, up to US$200m earn-out); closed June 2026 | Confirmed | 10-K business-combination note; Q2 2026 release ("the close of our Eucalyptus acquisition in June"). A side point was **corrected**: the Canadian purchase is named "Medici" in the 10-K (Livewell's legal company); section 3.2 now says so ([Fasken](https://www.fasken.com/en/experience/2025/12/himshers-completed-the-acquisition-of-livewell)). |
+| 9 | Voy (Menwell Ltd) turnover £227.4m (2024 £104.4m), gross margin 46% (53%), debt £35.5m | Confirmed | Group strategic report KPIs, accounts to 31 Dec 2025 filed 24 Sep 2026 ([filing history](https://find-and-update.company-information.service.gov.uk/company/11476975/filing-history)). Operating loss £26.5m and 631 staff were not re-read (OCR did not reach those pages). |
+| 10 | Numan (Vir Health Ltd) turnover £69.3m (+132%), operating loss £2.3m; 2024 is the latest filed year | Confirmed | Accounts to 31 Dec 2024: turnover £69,251k (2023 £29,883k, +132%), operating loss £2,259k. The register shows the 2025 accounts are not due until 31 Dec 2026, so 2024 is still the latest. Gross margin 50% and 176 staff not re-read. |
+| 11 | Hair + Me group (Mr & Mrs Oliver Ltd) turnover £42.5m (+15%), gross margin 78% (80%), pre-tax loss £4.4m (2024 profit £3.8m) | Confirmed | Accounts to 31 Aug 2025: turnover £42,519,255 (2024 £36,910,760), gross margin 78% (80%), pre-tax loss £4,439,687 (2024 profit £3,847,789) |
+| 12 | Hims & Hers UK turnover £23.9m (+13.6%), gross margin 77.5%, operating profit £3.2m, admin costs 64% of sales | Confirmed, **note added** | Accounts to 31 Dec 2025: turnover £23,855,340 (2024 £20,994,831), cost of sales £5,365,300, administrative expenses £15,260,359, operating profit £3,210,473. Note 6 says turnover covers "sexual health, hair loss, and weight loss"; weight loss only began in December 2025. Section 2.2 now says so. |
+| 13 | ZAVA UK (Health Bridge Ltd) turnover £40.2m (+97%), net profit £3.6m, growth from GLP-1 weight loss | Confirmed | Accounts to 31 Dec 2024: turnover £40,174,544 (2023 £20,365,755), net profit £3,566,730, "the success of our GLP1 weight loss business". 2024 is still the latest year (2025 due 31 Dec 2026). |
+| 14 | Juniper UK (Fill Function UK Ltd) turnover £72.0m (2024 £15.6m), gross margin 21%, profit £3.4m | Confirmed | Accounts to 30 Jun 2025: turnover £71,957,010, cost of sales £56,544,639 (gross margin 21.4%), profit £3,385,423 |
+| 15 | Sons (Careforsons Ltd): net liabilities £3.2m, loss of about £1.0m, 30 staff, £4m facility with £1.3m unused | Confirmed | Abridged balance sheet at 31 Dec 2025: net liabilities £3,233,228; retained earnings moved from -£3,354,596 to -£4,377,426 (about £1.02m loss); 30 staff (2024: 22); "credit facility of 4m, of which 1.3m was undrawn" ([filing history](https://find-and-update.company-information.service.gov.uk/company/11557956/filing-history)) |
+| 16 | Grand View: global alopecia market US$53.3bn (2025) to US$100.6bn (2033), 8.5% a year; UK US$2.03bn to US$3.55bn, 7.5%; 70.8% pattern hair loss; men 63.2%; online pharmacies 12.7% a year | Confirmed (as the firm's claim) | [Global page](https://www.grandviewresearch.com/industry-analysis/alopecia-market); [UK page](https://www.grandviewresearch.com/horizon/outlook/alopecia-market/uk): US$2,027.1m to US$3,553.6m. These are a paid research firm's unaudited figures; the file already warns about this. |
+| 17 | Mordor: hair loss treatment products US$3.14bn (2026) to US$4.69bn (2032); 4 million US users of OTC minoxidil and 1 million of prescription treatment | Confirmed, **source corrected** | [Mordor](https://www.mordorintelligence.com/industry-reports/hair-loss-treatment-products-market) (updated 22 Oct 2026). The user numbers are Veradermics' estimates quoted by Mordor, not Mordor's own. Veradermics develops a hair-loss drug, so it has an interest. Section 1.3 is fixed. |
+| 18 | Hair + Me "more than 250,000" customers in under 18 months | Confirmed (as a brand claim) | [Retail Focus, 9 July 2026](https://retail-focus.co.uk/?p=25553). Not audited. |
+| 19 | UK prices: Dr Fox finasteride £10 for 28, prescription fee £1 to £4, delivery £2.90, triple spray £26 for 60 ml (two months); Hims UK finasteride £276 a year; Sons combination spray £189 for 6 months; Numan triple-action spray £36 a month quarterly; Hair + Me £34.99 every 4 weeks | Confirmed, **two details corrected** | Dr Fox prices read live ([Dr Fox](https://www.doctorfox.co.uk/hair-loss-treatments/)). Hims UK finasteride page lists GBP 276.00 ([page](https://www.forhims.co.uk/hair-loss/finasteride)). Sons product data: 6 months £189 (crossed-out £258), 3 months £106; first-order Black Friday price £18.90 a month. Numan: the live page shows "Save 50% off your first order (max. £40)", which the file had as "amount not checked" (now fixed). The £36 spray price matches this project's Numan data (`companies/numan/scripts/build-company.py`); the live plan page needs JavaScript and could not be re-read. Hair + Me's own site needs JavaScript; £34.99 is supported by this project's observed checkout and a [Time Out offer page](https://checkout.timeout.com/london/thicker-fuller-hair-starts-here-try-hair-me-for-just-1499-61400/). Its leaflet gives finasteride **0.1% to 0.2%**, not 0.1% (fixed in section 4.2). |
+| 20 | Cost inputs: Stripe 1.5% + 20p for standard UK cards plus 0.7% for Billing; NHS Band 8a £57,528 to £64,750 from April 2026 | Confirmed | [Stripe UK pricing](https://stripe.com/gb/pricing); [NHS Health Careers](https://www.healthcareers.nhs.uk/working-health/working-nhs/nhs-pay-and-benefits/agenda-change-pay-rates) |
+
+**Not re-checked in this pass:**
+
+- Voy's prices and Black Friday banner (joinvoy.com returned "429 Too Many Requests").
+- Hims UK's £16.50 combined spray. The product URL tried returned 404, and the page needs JavaScript. The figure rests
+  on this project's own observed data (`companies/hims-uk/company.stage1.json`: "£99 for 2 bottles").
+- The US prices.
+- The prevalence studies (section 1).
+
+The CAC and lifetime-value lines in sections 5.3 and 5.6 are the author's estimates, not sourced figures, and are
+already labelled that way. No public CAC or churn figure exists for any UK rival.
+
+### Summary of corrections
+
+1. **ZAVA deal:** the price now cites the primary source (Q3 2025 10-Q) instead of a search summary, with the split:
+   EUR 142.2m cash plus EUR 77.0m contingent. Customers are "more than", not "about", 1.3 million.
+2. **The Hims subscriber fall** is no longer presented as proof that cutting marketing causes churn. Marketing was cut
+   by about 6% between quarters but was still up on the year. The cause is now labelled as an inference.
+3. **The US user numbers** (4 million on minoxidil, 1 million on prescription treatment) are now credited to
+   Veradermics, a drug developer with an interest, not to the research firm.
+4. **Numan's first-order offer** is now known: 50% off, up to £40.
+5. **Hair + Me** drops contain finasteride 0.1% to 0.2%, not just 0.1%.
+6. **Sons** combined spray: added the 3-month price (£106) and the £18.90 first-order price.
+7. **Hims UK turnover** now includes a small amount of weight-loss sales (from December 2025).
+8. **The Canadian purchase** is named Livewell / Medici.
+
+All seven sets of UK company accounts were re-downloaded and agree with the turnover figures in the file. No
+headline figure was wrong.

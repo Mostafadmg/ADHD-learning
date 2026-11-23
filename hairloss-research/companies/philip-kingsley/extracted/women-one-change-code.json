@@ -1,0 +1,493 @@
+{
+ "q1=Yes": [],
+ "q1=No": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q2=Yes": [],
+ "q2=No": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q3a=Overall thinning": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q3a=More shedding than usual (in the shower/on my brush)": [
+  [
+   "PHI1668",
+   "Complete Your Routine"
+  ],
+  [
+   "PKC145",
+   "Recommended"
+  ]
+ ],
+ "q3a=Seeing more of my scalp or wider parting": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q3a=Thinning at temples": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q3a=Circular bald patches": [],
+ "q3a=Bandlike recession": [],
+ "q3a=Something else": [],
+ "q3b=Only I can notice it": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q3b=People close to me can notice it": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q3b=Everyone can notice it": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q3d=Only I can notice it": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q3d=People close to me can notice it": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q3d=Everyone can notice it": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q3c=Only I can notice it": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q3c=People close to me can notice it": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q3c=Everyone can notice it": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q3e=Only I can notice it": [
+  [
+   "PHI1668",
+   "Complete Your Routine"
+  ],
+  [
+   "PKC145",
+   "Recommended"
+  ]
+ ],
+ "q3e=People close to me can notice it": [
+  [
+   "PHI1668",
+   "Complete Your Routine"
+  ],
+  [
+   "PKC145",
+   "Recommended"
+  ]
+ ],
+ "q3e=Everyone can notice it": [
+  [
+   "PHI1668",
+   "Complete Your Routine"
+  ],
+  [
+   "PKC145",
+   "Recommended"
+  ]
+ ],
+ "q3f=Only I can notice it": [],
+ "q3f=People close to me can notice it": [],
+ "q3f=Everyone can notice it": [],
+ "q4=It's happened very suddenly": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q4=It's been happening for a few months": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q4=It's been happening gradually for over a year": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q5a=Itching": [],
+ "q5a=Dandruff": [],
+ "q5a=Eczema": [],
+ "q5a=Other or Not Sure": [],
+ "q5a=Redness": [],
+ "q5a=Psoriasis": [],
+ "q5a=Pimples, spots or acne": [],
+ "q5a=I don't have any of these symptoms": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q5f=Mild": [
+  [
+   "PHI1688",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q5f=Moderate": [],
+ "q5f=Severe": [],
+ "q5b=Mild": [
+  [
+   "PHI1688",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q5b=Moderate": [],
+ "q5b=Severe": [],
+ "q5c=Mild": [],
+ "q5c=Moderate": [],
+ "q5c=Severe": [],
+ "q5d=Mild": [
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q5d=Moderate": [],
+ "q5d=Severe": [],
+ "q6=Healthy": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q6=Sensitive to fragrance": [
+  [
+   "PHI1680",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q6=Oily": [
+  [
+   "PHI1686",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q7=Fine": [
+  [
+   "PHI1684",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q7=Medium": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q7=Coarse": [
+  [
+   "PHI1652",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1678",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q7=Coiled Curls": [
+  [
+   "PHI1652",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1678",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q8=Short": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q8=Medium (shoulder length)": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q8=Long": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q9=Colour-treat (highlights, at-home colour)": [
+  [
+   "PHI1664",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q9=Heat-style (Hair dryer, straighteners, curlers)": [
+  [
+   "PHI1664",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q9=Chemical Treatments (perms, relaxing)": [
+  [
+   "PHI1664",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q9=None of the above": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q10a=Yes": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q10a=No": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q10b=Yes": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q10b=No": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q11a=Minoxidil": [],
+ "q11a=Other, please state": [],
+ "q11a=I have no allergies": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q12a=Yes, I have a medical condition, please state": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q12a=No, I do not have a medical condition and am not taking any medication": [
+  [
+   "PHI1670",
+   "Complete Your Routine"
+  ],
+  [
+   "PHI1749",
+   "Recommended"
+  ]
+ ],
+ "q12a=I am taking oral minoxidil": []
+}

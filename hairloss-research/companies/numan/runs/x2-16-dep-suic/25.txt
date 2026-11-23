@@ -1,0 +1,63 @@
+STEP 25 scroll ""
+URL: https://www.numan.com/subscribe/hair-loss/903bf41d-0c48-4817-bbf5-4c95e73538f6/product-selection
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+Please select your treatment
+
+Our clinicians will ensure you’re prescribed the most appropriate treatment.
+
+Recommended for you
+
+See results in 180 days
+
+or your money back¹
+
+Extra Strength Spray
+
+Can be sprayed directly onto thinning patches to encourage the regrowth of thicker, more visible hair.
+
+Learn more 
+Price
+£18.00
+Save 40%
+Select treatment
+
+¹ Claim a full refund between 180-210 days from order approval if treatment is not effective at stabilising or reversing hair loss. First time users only. Full Ts&Cs.
+
+² 70.6% of men using 5% minoxidil for 16 weeks reported improvement in hair loss (Olsen, 2007).
+
+OTHER TREATMENTS
+
+Regaine
+
+Regaine contains minoxidil which has been clinically proven to reduce hair loss and stimulate hair regrowth in men with male-pattern baldness.
+
+£51.67
+
+ 
+
+£65.00
+
+Save 21%
+Select
+ 
+Learn more
+Rosemary Oil
+
+Rosemary Oil is a natural remedy for stronger, healthier-looking hair. Infused with nutrients and oils, it’s formulated to nourish the scalp and fortify hair from root to tip.
+
+£14.00
+
+ 
+
+£23.33
+
+Save 40%
+Select
+
+--- CONTROLS ---
+  button (4): Help  ·  Select treatment  ·  Select  ·  Learn more
+
+--- LINKS ---
+  link (4): Back -> #  ·  Visit the main page -> /  ·  Learn more -> #  ·  Full Ts&Cs. -> /legal/terms-of-sale#termsMoneyBackGuarantee

@@ -1,0 +1,1649 @@
+==== SKU PHI1749 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(or){
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Medium']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Coarse', 'Coiled Curls']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        CompositeCondition(and){
+          [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+          CompositeCondition(or){
+            [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+            [GenericCondition] 'How severe is the itching?' or ['Mild']
+            [GenericCondition] 'How severe is the eczema?' or ['Mild']
+          }
+        }
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        CompositeCondition(and){
+          [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+          CompositeCondition(or){
+            [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+            [GenericCondition] 'How severe is the itching?' or ['Mild']
+            [GenericCondition] 'How severe is the eczema?' or ['Mild']
+          }
+        }
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        CompositeCondition(and){
+          [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+          CompositeCondition(or){
+            [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+            [GenericCondition] 'How severe is the itching?' or ['Mild']
+            [GenericCondition] 'How severe is the eczema?' or ['Mild']
+          }
+        }
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Medium']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        CompositeCondition(and){
+          [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+          CompositeCondition(or){
+            [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+            [GenericCondition] 'How severe is the itching?' or ['Mild']
+            [GenericCondition] 'How severe is the eczema?' or ['Mild']
+          }
+        }
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Coarse', 'Coiled Curls']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Sensitive to fragrance']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine', 'Medium', 'Coarse', 'Coiled Curls']
+        [GenericCondition] 'How do you style your hair?' or ['Colour-treat (highlights, at-home colour)', 'Heat-style (Hair dryer, straighteners, curlers)', 'Chemical Treatments (perms, relaxing)', 'None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        CompositeCondition(and){
+          [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+          CompositeCondition(or){
+            [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+            [GenericCondition] 'How severe is the itching?' or ['Mild']
+            [GenericCondition] 'How severe is the eczema?' or ['Mild']
+          }
+        }
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Sensitive to fragrance']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine', 'Medium', 'Coarse', 'Coiled Curls']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Medium']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Coarse', 'Coiled Curls']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        CompositeCondition(and){
+          [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+          CompositeCondition(or){
+            [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+            [GenericCondition] 'How severe is the itching?' or ['Mild']
+            [GenericCondition] 'How severe is the eczema?' or ['Mild']
+          }
+        }
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        CompositeCondition(and){
+          [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+          CompositeCondition(or){
+            [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+            [GenericCondition] 'How severe is the itching?' or ['Mild']
+            [GenericCondition] 'How severe is the eczema?' or ['Mild']
+          }
+        }
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        CompositeCondition(and){
+          [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+          CompositeCondition(or){
+            [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+            [GenericCondition] 'How severe is the itching?' or ['Mild']
+            [GenericCondition] 'How severe is the eczema?' or ['Mild']
+          }
+        }
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Medium']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        CompositeCondition(and){
+          [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+          CompositeCondition(or){
+            [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+            [GenericCondition] 'How severe is the itching?' or ['Mild']
+            [GenericCondition] 'How severe is the eczema?' or ['Mild']
+          }
+        }
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Coarse', 'Coiled Curls']
+        [GenericCondition] 'How do you style your hair?' or ['Colour-treat (highlights, at-home colour)', 'Heat-style (Hair dryer, straighteners, curlers)', 'Chemical Treatments (perms, relaxing)', 'None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine', 'Medium']
+        [GenericCondition] 'How do you style your hair?' or ['Colour-treat (highlights, at-home colour)', 'Heat-style (Hair dryer, straighteners, curlers)', 'Chemical Treatments (perms, relaxing)']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Coarse', 'Coiled Curls']
+        [GenericCondition] 'How do you style your hair?' or ['Colour-treat (highlights, at-home colour)', 'Heat-style (Hair dryer, straighteners, curlers)', 'Chemical Treatments (perms, relaxing)', 'None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine', 'Medium']
+        [GenericCondition] 'How do you style your hair?' or ['Colour-treat (highlights, at-home colour)', 'Heat-style (Hair dryer, straighteners, curlers)', 'Chemical Treatments (perms, relaxing)']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PKC145 group Recommended keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(or){
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Medium']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Coarse', 'Coiled Curls']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+        CompositeCondition(and){
+          [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+          CompositeCondition(or){
+            [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+            [GenericCondition] 'How severe is the itching?' or ['Mild']
+            [GenericCondition] 'How severe is the eczema?' or ['Mild']
+          }
+        }
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine', 'Medium']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+        CompositeCondition(and){
+          [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+          CompositeCondition(or){
+            [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+            [GenericCondition] 'How severe is the itching?' or ['Mild']
+            [GenericCondition] 'How severe is the eczema?' or ['Mild']
+          }
+        }
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Coarse', 'Coiled Curls']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Sensitive to fragrance']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine', 'Medium', 'Coarse', 'Coiled Curls']
+        [GenericCondition] 'How do you style your hair?' or ['Colour-treat (highlights, at-home colour)', 'Heat-style (Hair dryer, straighteners, curlers)', 'Chemical Treatments (perms, relaxing)', 'None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+        CompositeCondition(and){
+          [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+          CompositeCondition(or){
+            [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+            [GenericCondition] 'How severe is the itching?' or ['Mild']
+            [GenericCondition] 'How severe is the eczema?' or ['Mild']
+          }
+        }
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Sensitive to fragrance']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine', 'Medium', 'Coarse', 'Coiled Curls']
+        [GenericCondition] 'How do you style your hair?' or ['Colour-treat (highlights, at-home colour)', 'Heat-style (Hair dryer, straighteners, curlers)', 'Chemical Treatments (perms, relaxing)', 'None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+        CompositeCondition(and){
+          [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema', "I don't have any of these symptoms"]
+          CompositeCondition(or){
+            [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+            [GenericCondition] 'How severe is the itching?' or ['Mild', '']
+            [GenericCondition] 'How severe is the eczema?' or ['Mild', '']
+          }
+        }
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+        CompositeCondition(and){
+          [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema', "I don't have any of these symptoms"]
+          CompositeCondition(or){
+            [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+            [GenericCondition] 'How severe is the itching?' or ['Mild', '']
+            [GenericCondition] 'How severe is the eczema?' or ['Mild', '']
+          }
+        }
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+        CompositeCondition(and){
+          [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema', "I don't have any of these symptoms"]
+          CompositeCondition(or){
+            [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+            [GenericCondition] 'How severe is the itching?' or ['Mild', '']
+            [GenericCondition] 'How severe is the eczema?' or ['Mild', '']
+          }
+        }
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Medium']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+        CompositeCondition(and){
+          [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema', "I don't have any of these symptoms"]
+          CompositeCondition(or){
+            [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+            [GenericCondition] 'How severe is the itching?' or ['Mild', '']
+            [GenericCondition] 'How severe is the eczema?' or ['Mild', '']
+          }
+        }
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Coarse', 'Coiled Curls']
+        [GenericCondition] 'How do you style your hair?' or ['None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+        CompositeCondition(and){
+          [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema', "I don't have any of these symptoms"]
+          CompositeCondition(or){
+            [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+            [GenericCondition] 'How severe is the itching?' or ['Mild', '']
+            [GenericCondition] 'How severe is the eczema?' or ['Mild', '']
+          }
+        }
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+        [GenericCondition] 'How do you style your hair?' or ['Colour-treat (highlights, at-home colour)', 'Heat-style (Hair dryer, straighteners, curlers)', 'Chemical Treatments (perms, relaxing)']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+        CompositeCondition(and){
+          [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema', "I don't have any of these symptoms"]
+          CompositeCondition(or){
+            [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+            [GenericCondition] 'How severe is the itching?' or ['Mild', '']
+            [GenericCondition] 'How severe is the eczema?' or ['Mild', '']
+          }
+        }
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+        [GenericCondition] 'How do you style your hair?' or ['Colour-treat (highlights, at-home colour)', 'Heat-style (Hair dryer, straighteners, curlers)', 'Chemical Treatments (perms, relaxing)']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+        CompositeCondition(and){
+          [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema', "I don't have any of these symptoms"]
+          CompositeCondition(or){
+            [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+            [GenericCondition] 'How severe is the itching?' or ['Mild', '']
+            [GenericCondition] 'How severe is the eczema?' or ['Mild', '']
+          }
+        }
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Medium']
+        [GenericCondition] 'How do you style your hair?' or ['Colour-treat (highlights, at-home colour)', 'Heat-style (Hair dryer, straighteners, curlers)', 'Chemical Treatments (perms, relaxing)']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+        CompositeCondition(and){
+          [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema', "I don't have any of these symptoms"]
+          CompositeCondition(or){
+            [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+            [GenericCondition] 'How severe is the itching?' or ['Mild', '']
+            [GenericCondition] 'How severe is the eczema?' or ['Mild', '']
+          }
+        }
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Coarse', 'Coiled Curls']
+        [GenericCondition] 'How do you style your hair?' or ['Colour-treat (highlights, at-home colour)', 'Heat-style (Hair dryer, straighteners, curlers)', 'Chemical Treatments (perms, relaxing)']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine', 'Medium']
+        [GenericCondition] 'How do you style your hair?' or ['Colour-treat (highlights, at-home colour)', 'Heat-style (Hair dryer, straighteners, curlers)', 'Chemical Treatments (perms, relaxing)', 'None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+      CompositeCondition(and){
+        [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+        [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+        [GenericCondition] 'How would you describe your natural hair texture?' or ['Coarse', 'Coiled Curls']
+        [GenericCondition] 'How do you style your hair?' or ['Colour-treat (highlights, at-home colour)', 'Heat-style (Hair dryer, straighteners, curlers)', 'Chemical Treatments (perms, relaxing)', 'None of the above']
+        [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+        [GenericCondition] 'What is your hair length?' or ['Short', 'Medium (shoulder length)', 'Long']
+      }
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1674 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+      [GenericCondition] 'What is your hair length?' or ['Short']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1684 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+      [GenericCondition] 'What is your hair length?' or ['Medium (shoulder length)', 'Long']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1670 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Medium']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1678 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Coarse', 'Coiled Curls']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1685 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      CompositeCondition(and){
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the itching?' or ['Mild']
+        }
+      }
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+      [GenericCondition] 'What is your hair length?' or ['Short']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1671 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      CompositeCondition(and){
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the itching?' or ['Mild']
+        }
+      }
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+      [GenericCondition] 'What is your hair length?' or ['Medium (shoulder length)', 'Long']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1688 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      CompositeCondition(and){
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the itching?' or ['Mild']
+        }
+      }
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Medium']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1689 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      CompositeCondition(and){
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the itching?' or ['Mild']
+        }
+      }
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Coarse', 'Coiled Curls']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1680 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Sensitive to fragrance']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1687 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      CompositeCondition(and){
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the itching?' or ['Mild']
+        }
+      }
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Sensitive to fragrance']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1672 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+      [GenericCondition] 'What is your hair length?' or ['Short']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1682 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+      [GenericCondition] 'What is your hair length?' or ['Medium (shoulder length)', 'Long']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1686 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Medium']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1673 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Coarse', 'Coiled Curls']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1676 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      CompositeCondition(and){
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the itching?' or ['Mild']
+        }
+      }
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+      [GenericCondition] 'What is your hair length?' or ['Short']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1669 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      CompositeCondition(and){
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the itching?' or ['Mild']
+        }
+      }
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+      [GenericCondition] 'What is your hair length?' or ['Medium (shoulder length)', 'Long']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1677 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      CompositeCondition(and){
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the itching?' or ['Mild']
+        }
+      }
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Medium']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1656 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      CompositeCondition(and){
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the itching?' or ['Mild']
+        }
+      }
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Coarse', 'Coiled Curls']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1664 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine', 'Medium']
+      [GenericCondition] 'How do you style your hair?' or ['Colour-treat (highlights, at-home colour)', 'Heat-style (Hair dryer, straighteners, curlers)', 'Chemical Treatments (perms, relaxing)']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1652 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Coarse', 'Coiled Curls']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1659 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'Seeing more of my scalp or wider parting', 'Thinning at temples']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine', 'Medium']
+      [GenericCondition] 'How do you style your hair?' or ['Colour-treat (highlights, at-home colour)', 'Heat-style (Hair dryer, straighteners, curlers)', 'Chemical Treatments (perms, relaxing)']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1653 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+      [GenericCondition] 'What is your hair length?' or ['Short']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1667 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+      [GenericCondition] 'What is your hair length?' or ['Medium (shoulder length)', 'Long']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1668 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Medium']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1660 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Coarse', 'Coiled Curls']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1665 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+      CompositeCondition(and){
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the itching?' or ['Mild']
+        }
+      }
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine', 'Medium']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1654 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+      CompositeCondition(and){
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the itching?' or ['Mild']
+        }
+      }
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Coarse', 'Coiled Curls']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1662 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Sensitive to fragrance']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1666 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+      CompositeCondition(and){
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema']
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild']
+          [GenericCondition] 'How severe is the itching?' or ['Mild']
+        }
+      }
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Sensitive to fragrance']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1655 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+      CompositeCondition(and){
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema', "I don't have any of these symptoms"]
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+          [GenericCondition] 'How severe is the itching?' or ['Mild', '']
+        }
+      }
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+      [GenericCondition] 'What is your hair length?' or ['Short']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1658 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+      CompositeCondition(and){
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema', "I don't have any of these symptoms"]
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+          [GenericCondition] 'How severe is the itching?' or ['Mild', '']
+        }
+      }
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+      [GenericCondition] 'What is your hair length?' or ['Medium (shoulder length)', 'Long']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1651 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+      CompositeCondition(and){
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema', "I don't have any of these symptoms"]
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+          [GenericCondition] 'How severe is the itching?' or ['Mild', '']
+        }
+      }
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Medium']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1690 group Complete Your Routine keys ['sku', 'group', 'row', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+      CompositeCondition(and){
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema', "I don't have any of these symptoms"]
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+          [GenericCondition] 'How severe is the itching?' or ['Mild', '']
+        }
+      }
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Coarse', 'Coiled Curls']
+      [GenericCondition] 'How do you style your hair?' or ['None of the above']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1691 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+      CompositeCondition(and){
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema', "I don't have any of these symptoms"]
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+          [GenericCondition] 'How severe is the itching?' or ['Mild', '']
+        }
+      }
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+      [GenericCondition] 'What is your hair length?' or ['Short']
+      [GenericCondition] 'How do you style your hair?' or ['Colour-treat (highlights, at-home colour)', 'Heat-style (Hair dryer, straighteners, curlers)', 'Chemical Treatments (perms, relaxing)']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1692 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+      CompositeCondition(and){
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema', "I don't have any of these symptoms"]
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+          [GenericCondition] 'How severe is the itching?' or ['Mild', '']
+        }
+      }
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine']
+      [GenericCondition] 'What is your hair length?' or ['Medium (shoulder length)', 'Long']
+      [GenericCondition] 'How do you style your hair?' or ['Colour-treat (highlights, at-home colour)', 'Heat-style (Hair dryer, straighteners, curlers)', 'Chemical Treatments (perms, relaxing)']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1693 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+      CompositeCondition(and){
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema', "I don't have any of these symptoms"]
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+          [GenericCondition] 'How severe is the itching?' or ['Mild', '']
+        }
+      }
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Medium']
+      [GenericCondition] 'How do you style your hair?' or ['Colour-treat (highlights, at-home colour)', 'Heat-style (Hair dryer, straighteners, curlers)', 'Chemical Treatments (perms, relaxing)']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1694 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+      CompositeCondition(and){
+        [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Dandruff', 'Itching', 'Eczema', "I don't have any of these symptoms"]
+        CompositeCondition(or){
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+          [GenericCondition] 'How severe is the dandruff?' or ['Mild', '']
+          [GenericCondition] 'How severe is the itching?' or ['Mild', '']
+        }
+      }
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Oily']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Coarse', 'Coiled Curls']
+      [GenericCondition] 'How do you style your hair?' or ['Colour-treat (highlights, at-home colour)', 'Heat-style (Hair dryer, straighteners, curlers)', 'Chemical Treatments (perms, relaxing)']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1691 group Complete Your Routine keys ['sku', 'group', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Coarse', 'Coiled Curls']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== SKU PHI1827 group Complete Your Routine keys ['sku', 'group', 'row', 'conditions', 'blockers']
+ -- conditions
+  CompositeCondition(or){
+    CompositeCondition(and){
+      [GenericCondition] 'How would you describe your hair loss?' or ['More shedding than usual (in the shower/on my brush)']
+      [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ["I don't have any of these symptoms"]
+      [GenericCondition] 'How would you describe your scalp before these symptoms started?' or ['Healthy']
+      [GenericCondition] 'How would you describe your natural hair texture?' or ['Fine', 'Medium']
+      [GenericCondition] 'How do you style your hair?' or ['Colour-treat (highlights, at-home colour)', 'Heat-style (Hair dryer, straighteners, curlers)', 'Chemical Treatments (perms, relaxing)']
+      [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['I have no allergies']
+    }
+  }
+ -- blockers
+  CompositeCondition(or){
+    [GenericCondition] 'Are you currently pregnant or breastfeeding?' or ['Yes']
+    [GenericCondition] 'Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?' or ['Yes']
+    [GenericCondition] 'How would you describe your hair loss?' or ['Circular bald patches', 'Bandlike recession', 'Something else']
+    CompositeCondition(and){
+      [GenericCondition] 'When did you first notice any hair loss or thinning?' or ["It's happened very suddenly"]
+      [GenericCondition] 'How would you describe your hair loss?' or ['Overall thinning', 'More shedding than usual (in the shower/on my brush)', 'Thinning at temples', 'Circular bald patches', 'Bandlike recession', 'Something else']
+    }
+    [GenericCondition] 'Are you currently experiencing any of the following conditions or symptoms on your scalp?' or ['Severe Itching', 'Severe Dandruff', 'Severe Eczema', 'Severe Redness', 'Psoriasis']
+    [GenericCondition] 'Do you have any allergies? If you have an allergy not listed, please give us more detail about how severe the allergy is and if it is a topical or oral consumption allergy.' or ['Minoxidil']
+    [GenericCondition] 'Do you have any medical conditions that you are being treated for and are you taking any of the below medications already?' or ['I am taking oral minoxidil']
+  }
+==== NO RESULTS RULES

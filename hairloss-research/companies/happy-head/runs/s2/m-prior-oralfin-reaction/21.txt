@@ -1,0 +1,19 @@
+STEP 21 click "NEXT"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Do you have any of these unusual symptoms that may disqualify you for treatment?
+Your honest responses help our dermatologists safely determine the most suitable hair growth formulation for you.
+Severe itching, burning, or rash on my scalp
+Severe pain, pimples, pus, bumps, or sores on my scalp
+Loss of brows, lashes, facial, or body hair
+None of the above
+NEXT
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

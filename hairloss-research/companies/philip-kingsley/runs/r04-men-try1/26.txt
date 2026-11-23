@@ -1,0 +1,21 @@
+STEP 26 wait 1500
+URL: https://hairloss.philipkingsley.co.uk/quiz/step/view/stepId/men_quiz_step9
+TITLE: 
+
+--- VISIBLE TEXT ---
+QUESTION #9
+ARE ANY OF THE FOLLOWING TRUE?
+SELECT ANY THAT APPLY
+I HAVE PREVIOUSLY BEEN DIAGNOSED WITH BREAST CANCER, PROSTATE CANCER, OR I AM CURRENTLY UNDERGOING PSA (PROSTATE) MONITORING
+I HAVE UNCONTROLLED LOW OR HIGH BLOOD PRESSURE
+I AM EXPERIENCING, OR HAVE PREVIOUSLY EXPERIENCED, DEPRESSION, ANXIETY OR PANIC DISORDERS
+I AM CURRENTLY TRYING FOR A BABY
+NONE OF THE ABOVE
+NEXT
+BACK
+
+--- CONTROLS ---
+  button (2): NEXT  ·  BACK
+
+--- LINKS ---
+  link (4): SIGN IN -> https://hairloss.philipkingsley.co.uk/customer/account/  ·  TERMS OF SALE -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-of-sale  ·  TERMS & CONDITIONS -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-conditions  ·  PRIVACY POLICY -> https://hairloss.philipkingsley.co.uk/hair-loss-privacy-policy

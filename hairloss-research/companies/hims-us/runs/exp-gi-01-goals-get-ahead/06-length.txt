@@ -1,0 +1,30 @@
+STEP 06
+URL: https://www.hims.com/g/i/hl/length
+SERVER NODE: length (nodeModularScreen), step value 13
+
+--- VISIBLE TEXT ---
+How long is your hair?
+Buzzed, shaved, or bald
+Short
+Medium
+Long
+Continue
+Already have an account? Sign In
+
+--- CHOICES ---
+[radio] Buzzed, shaved, or bald
+[radio] Short
+[radio] Medium
+[radio] Long
+
+--- BUTTONS ---
+Continue
+
+--- FIELDS ---
+
+
+--- LINKS ---
+Already have an account? Sign In -> /c/hl?skipToSignIn=true&goFlow=true&flowId=hl&sessionId=177df2ab-4a40-4338-a5c7-cd95cf9eee06
+
+--- OUTPUT SCHEMA (server) ---
+{"type":"object","required":["responses"],"properties":{"responses":{"type":"object","required":["i-hl-hims-hair-length"],"properties":{"i-hl-hims-hair-length":{"type":"object","required":["i-hl-hims-hair-length"],"properties":{"i-hl-hims-hair-length":{"enum":["i-hl-hims-hair-length-buzzed","i-hl-hims-hair-length-short","i-hl-hims-hair-length-medium","i-hl-hims-hair-length-long"],"type":"string"}},"additionalProperties":false}},"additionalProperties":false}}}

@@ -200,3 +200,19 @@ Interim results (women, Regaine entry; product-rules reply in each run's `api.js
   w14 ethanol, w15 propylene glycol: Regaine removed. w16 peanuts/soya, w17 lactose, w18 penicillin, w19 other medicine
   'Ibuprofen', w20 other substance 'Latex': nothing removed. w21 pregnant via Nourkrin entry: nothing removed (same as w01).
   w22 fish allergy via Nourkrin entry: Nourkrin removed (same rule as w12; entry does not matter, only list order).
+- Men m01 (pattern E, warning ticked, no photo) and m02 (pattern A, no photo): Next does nothing; a red "Please upload photos"
+  error shows on the photo box and no save call is made. So for A and E a photo is **required** in practice: our route stops
+  there (we never upload). m03 prostate cancer, m04 breast cancer, m05 liver condition, m06 finasteride allergy, m07 erection
+  problems: same 9 products as baseline, no message, no product-rules call (men's filter is off).
+- m08 scalp changes, m09 sudden start, m10 last month, m11 already on finasteride, m12 GP-diagnosed, m13 medicine,
+  m15 pattern D, m17 lactose allergy (cannot take lactose), m18 other condition: same 9 products, no stop. m16 "No pattern
+  fits well": photo required, same stop as A and E. Warning texts seen in pre.txt: ED warning (m07), "see your GP first" (m08).
+
+## Stage 2 finished (23 Nov 2026)
+
+- Baselines replayed: `runs/s2-baseline-men` (walk.js, 9 options, prices unchanged), `runs/s2b-women-regaine`, `runs/s2b-women-nourkrin` (5 options, product-rules empty).
+- 40 one-change runs in total (exp-w01…w22, exp-m01…m18). Added m15 (pattern D), m16 (no pattern fits), m17 (lactose, cannot take lactose), m18 (other condition) to `make-experiments.py`.
+- **company.json is now written by `local-tools/stage2-patch.py`** (it edits the stage-1 JSON in place). Do not run
+  `build-company.py` again: it would wipe the stage-2 results. Re-run stage2-patch.py on a fresh stage-1 file if needed.
+- Validator: `node tools/validate.js superdrug-online-doctor --stage rules` passes (0 errors, 0 warnings).
+- Not tested: combinations (e.g. caffeine + fish allergy), men-q1 specialist, pattern B, men skin-condition option, men peanut/other allergies, delivery options.

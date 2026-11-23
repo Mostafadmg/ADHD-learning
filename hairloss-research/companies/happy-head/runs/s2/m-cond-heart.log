@@ -1,0 +1,10 @@
+
+===== FINAL (after 37 steps) =====
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TEXT: BACK ⏎ BLACK FRIDAY SALE ⏎ Up to 60% Off ⏎ Plus, FREE Dermaroller ⏎ Enter your details to unlock up to 60% off your personalized hair-growth plan. Plus, Free Dermaroller with any Rx subscription. ⏎ Up to 60% OFF your hair-growth plan ⏎ FREE Premium Dermaroller – our gift to you ⏎ Your personalized treatment plan, ready when you are ⏎ Email ⏎ Mobile Number ⏎ Get quick answers to questions & never miss a message. Opt out anytime. We'll only use this to send important updates about your care. Opt out anytime. ⏎ By checking this box you agree to our Terms, Privacy Policy, Drug Safety, Telehealth Consent, and MDI Telehealth Consent.
+CONTROLS:
+  input:email (1): Enter your email
+  input:tel (1): Enter your number
+  links: Terms  ·  Privacy Policy  ·  Drug Safety  ·  Telehealth Consent  ·  MDI Telehealth Consent
+
+[walk] 37 step(s), exit 0, 38 JSON bodies saved -> runs/s2/m-cond-heart

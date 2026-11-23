@@ -1,0 +1,24 @@
+{
+ "_about": "Sons UK, stage 2 experiment exp-42 (beard flow). Changed: beard-q2 gender at birth: Male → Female. Compared with exp-38. The button on the screen was not pressed. No contact details are typed and no form is sent.",
+ "start": "https://shop.sons.co.uk/beard-consultation/",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "click",
+   "text": "No",
+   "_q": "5140 existing customer"
+  },
+  {
+   "do": "click",
+   "text": "Female",
+   "_q": "5141 gender at birth"
+  },
+  {
+   "do": "wait",
+   "ms": 2000
+  }
+ ]
+}

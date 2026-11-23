@@ -1,0 +1,429 @@
+[
+ {
+  "from": "103270",
+  "option": "Breast cancer",
+  "trail": [],
+  "result": {
+   "sig": "101561",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "101561",
+     "type": "SINGLE_CHOICE",
+     "title": "Medical history",
+     "text": "Do you have Chronic Kidney Disease (CKD) or a reduced kidney function?",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "101561$1",
+      "101561$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-01-103270"
+ },
+ {
+  "from": "103270",
+  "option": "Breast tissue enlargement",
+  "trail": [],
+  "result": {
+   "sig": "101561",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "101561",
+     "type": "SINGLE_CHOICE",
+     "title": "Medical history",
+     "text": "Do you have Chronic Kidney Disease (CKD) or a reduced kidney function?",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "101561$1",
+      "101561$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-02-103270"
+ },
+ {
+  "from": "103270",
+  "option": "Depression",
+  "trail": [],
+  "result": {
+   "sig": "103268",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "103268",
+     "type": "SINGLE_CHOICE",
+     "title": "Medical history",
+     "text": "Finasteride and Propecia tablets has been associated with causing low mood, depression, and suicidal thoughts. If your mood or mental wellbeing worsens while taking this medication, stop taking Finasteride or Propecia tablets and seek medical advice as soon as possible. If you ever feel at risk of harming yourself or have seriously harmed yourself, call emergency services on 999 immediately. Please confirm that you understand this and are happy to continue.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "I understand and would like to continue",
+      "I don't want to use finasteride tablets"
+     ],
+     "optionIds": [
+      "103268$103976",
+      "103268$105289"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-03-103270",
+  "text": "Exit consultation\nMedical history\n\nFinasteride and Propecia tablets has been associated with causing low mood, depression, and suicidal thoughts. If your mood or mental wellbeing worsens while taking this medication, stop taking Finasteride or Propecia tablets and seek medical advice as soon as possible.\n\nIf you ever feel at risk of harming yourself or have seriously harmed yourself, call emergency services on 999 immediately.\n\nPlease confirm that you understand this and are happy to continue.\nI understand and would like to continue\nI don't want to use finasteride tablets\nNext\nBack"
+ },
+ {
+  "from": "103268",
+  "option": "I understand and would like to continue",
+  "trail": [
+   "103270=Depression"
+  ],
+  "result": {
+   "sig": "108416+108417+108418+108419",
+   "title": "HL - Depression history",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108416",
+     "type": "TEXT_AREA",
+     "title": "",
+     "text": "Some hair loss treatments can affect mood, so we need to understand a bit more about your mental health: Please list all the mental health conditions you have, or have had. For each condition, tell us when it started and whether it has resolved, is stable, or has come back or got worse recently.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      ""
+     ],
+     "optionIds": [
+      "108416$100516"
+     ],
+     "cards": []
+    },
+    {
+     "id": "108417",
+     "type": "TEXT_AREA",
+     "title": "",
+     "text": "Who manages your mental health condition(s)? (e.g your GP, a psychiatrist)",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      ""
+     ],
+     "optionIds": [
+      "108417$104255"
+     ],
+     "cards": []
+    },
+    {
+     "id": "108418",
+     "type": "TEXT_AREA",
+     "title": "",
+     "text": "List all medication you have taken for your mental health condition(s). Tell us about any that didn't work, and any that were started, increased or changed in the last 12 months because you were feeling worse.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      ""
+     ],
+     "optionIds": [
+      "108418$100516"
+     ],
+     "cards": []
+    },
+    {
+     "id": "108419",
+     "type": "SINGLE_CHOICE",
+     "title": "",
+     "text": "Have any of the following ever happened to you? Symptoms so severe you couldn't work or manage day-to-day life Being admitted to hospital for your mental health Being seen by a crisis team or home treatment team",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "108419$1",
+      "108419$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-04-103268",
+  "text": "Exit consultation\nYour Consultation\n\nSome hair loss treatments can affect mood, so we need to understand a bit more about your mental health:\n\nPlease list all the mental health conditions you have, or have had. For each condition, tell us when it started and whether it has resolved, is stable, or has come back or got worse recently.\n\n0/511 characters\nWho manages your mental health condition(s)? (e.g your GP, a psychiatrist)\n0/279 characters\nList all medication you have taken for your mental health condition(s). Tell us about any that didn't work, and any that were started, increased or changed in the last 12 months because you were feeling worse.\n0/511 characters\nHave any of the following ever happened to you?\nSymptoms so severe you couldn't work or manage day-to-day life\nBeing admitted to hospital for your mental health\nBeing seen by a crisis team or home treatment team\nYes\nNo\nNext\nBack"
+ },
+ {
+  "from": "103268",
+  "option": "I don't want to use finasteride tablets",
+  "trail": [
+   "103270=Depression"
+  ],
+  "result": {
+   "sig": "101561",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "101561",
+     "type": "SINGLE_CHOICE",
+     "title": "Medical history",
+     "text": "Do you have Chronic Kidney Disease (CKD) or a reduced kidney function?",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "101561$1",
+      "101561$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-05-103268"
+ },
+ {
+  "from": "103270",
+  "option": "Current or history of suicidal thoughts, self-harm, or attempts",
+  "trail": [],
+  "result": {
+   "sig": "108131",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108131",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Medical history",
+     "text": "If you are currently experiencing thoughts of harming yourself or suicide, it's important to seek help as soon as possible. Contact NHS 111 or your GP for advice You can call Samaritans free on 116 123 for confidential support (available 24 hours a day) If you feel you are in immediate danger, call 999 or go to A&E",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "I understand that if I am currently experiencing thoughts of self-harm or suicide I should seek medical advice immediately"
+     ],
+     "optionIds": [
+      "108131$105317"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-06-103270",
+  "text": "Exit consultation\nMedical history\n\nIf you are currently experiencing thoughts of harming yourself or suicide, it's important to seek help as soon as possible.\n\nContact NHS 111 or your GP for advice\nYou can call Samaritans free on 116 123 for confidential support (available 24 hours a day)\nIf you feel you are in immediate danger, call 999 or go to A&E\nI understand that if I am currently experiencing thoughts of self-harm or suicide I should seek medical advice immediately\nNext\nBack"
+ },
+ {
+  "from": "108131",
+  "option": "I understand that if I am currently experiencing thoughts of self-harm or suicide I should seek medical advice immediately",
+  "trail": [
+   "103270=Current or history of suicidal thoughts, self-harm, or attempts"
+  ],
+  "result": {
+   "sig": "101561",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "101561",
+     "type": "SINGLE_CHOICE",
+     "title": "Medical history",
+     "text": "Do you have Chronic Kidney Disease (CKD) or a reduced kidney function?",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "101561$1",
+      "101561$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-07-108131"
+ },
+ {
+  "from": "103270",
+  "option": "Obstructive uropathy",
+  "trail": [],
+  "result": {
+   "sig": "103275",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "103275",
+     "type": "TEXT_AREA",
+     "title": "Medical history",
+     "text": "Please provide details for the cause of the obstructive uropathy and the treatment received.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      ""
+     ],
+     "optionIds": [
+      "103275$100516"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-08-103270",
+  "text": "Exit consultation\nMedical history\nPlease provide details for the cause of the obstructive uropathy and the treatment received.\n0/511 characters\nNext\nBack"
+ },
+ {
+  "from": "103270",
+  "option": "Prostate cancer",
+  "trail": [],
+  "result": {
+   "sig": "101561",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "101561",
+     "type": "SINGLE_CHOICE",
+     "title": "Medical history",
+     "text": "Do you have Chronic Kidney Disease (CKD) or a reduced kidney function?",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "101561$1",
+      "101561$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-09-103270"
+ },
+ {
+  "from": "103270",
+  "option": "Liver condition",
+  "trail": [],
+  "result": {
+   "sig": "102639",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "102639",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Medical history",
+     "text": "Do any of these apply to your liver condition?",
+     "required": false,
+     "explanationAvailable": false,
+     "options": [
+      "I have alcohol related liver disease, cirrhosis or liver cancer",
+      "I see a hospital specialist for my condition",
+      "I have been advised to avoid certain medications",
+      "I am prescribed treatment or have regular monitoring ( not Statins or routine yearly blood tests for fatty liver disease)"
+     ],
+     "optionIds": [
+      "102639$101741",
+      "102639$101743",
+      "102639$101742",
+      "102639$101744"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-10-103270",
+  "text": "Exit consultation\nMedical history\nDo any of these apply to your liver condition?\nI have alcohol related liver disease, cirrhosis or liver cancer\nI see a hospital specialist for my condition\nI have been advised to avoid certain medications\nI am prescribed treatment or have regular monitoring (not Statins or routine yearly blood tests for fatty liver disease)\nNone of the above\nNext\nBack"
+ },
+ {
+  "from": "102639",
+  "option": "I have alcohol related liver disease, cirrhosis or liver cancer",
+  "trail": [
+   "103270=Liver condition"
+  ],
+  "result": {
+   "sig": "SUMMARY",
+   "stepState": "SUMMARY",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": []
+  },
+  "onBaseline": false,
+  "shot": "peek-11-102639",
+  "text": "Exit consultation\nMedical history\nDo any of these apply to your liver condition?\nI have alcohol related liver disease, cirrhosis or liver cancer\nI see a hospital specialist for my condition\nI have been advised to avoid certain medications\nI am prescribed treatment or have regular monitoring (not Statins or routine yearly blood tests for fatty liver disease)\nNone of the above\nBack",
+  "endedEarly": true
+ }
+]

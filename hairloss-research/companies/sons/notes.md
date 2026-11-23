@@ -160,3 +160,20 @@ Suggested order:
 4. Check whether anything in the served code reads the hair picture, the sudden-onset follow-ups or the scalp tick boxes
    (I found none). If still none, record them as "prescriber only, effect unknown".
 5. Look for public evidence of what the prescriber refuses (reviews, help pages) to fill the gap the code cannot.
+
+## 10. Stage 2 (EXPERIMENT), finished 23 Nov 2026
+
+- Experiment list: `scripts/s2-experiments.json` (exp-01…37, hair flow) and `scripts/s2-experiments-extra.json` (exp-38…45,
+  beard, 5 mg step-up, female "Finish Consultation"). Action files are made by `scripts/s2-make.js` / `s2-make-extra.js`;
+  replay with `bash scripts/s2-run.sh exp-NN …` (one browser at a time). Log: `runs/s2-batch.log`.
+- Offline engine runs: `scripts/s2-offline.js` → `runs/offline/results.json` (off-00…off-58) and `truthtable.json`.
+- Everything in company.json for stage 2 (experiments, rules, recommendations, option effects, summary lists) is written
+  by `scripts/s2-overlay.js`, which `scripts/build-company.js` calls. Hand-written live results are in
+  `scripts/s2-manual-results.json`. Edit those files and re-run `node scripts/build-company.js`, never the JSON.
+- The first stage 2 attempt was cut off at exp-27 (browser closed mid-walk). The second attempt re-ran exp-27 and ran
+  exp-28…45 and exp-03; all ended normally.
+- New live findings in the second attempt: beard flow "Female" is a silent dead end (stays on the gender question, no
+  notice; runs/exp-42). "Finish Consultation" on the hair flow's female notice goes to the home page (runs/exp-45).
+  5 mg step-up: Yes to side effects opens a free-text box (runs/exp-43 screen 03; a later click in that walk reset the
+  answer to No, so only screen 03 counts). Scalp red flags, NHS and GP consents behaved as the definition says.
+- Validate: `node tools/validate.js sons --stage rules` passes (43 rules, 73 experiments, 16 profiles).

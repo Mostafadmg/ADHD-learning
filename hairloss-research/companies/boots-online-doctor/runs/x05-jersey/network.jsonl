@@ -1,0 +1,15 @@
+{"url":"https://prod-api.lemonaidpims.co.uk/v2.0/content/web/frontendParameters","method":"GET","status":200,"size":66712,"file":"net/01-prod_api_lemonaidpims_co_uk_v2_0_content_web_frontendParameters.json"}
+{"url":"https://prod-api.lemonaidpims.co.uk/v2.0/products/categories","method":"GET","status":200,"size":44540,"file":"net/02-prod_api_lemonaidpims_co_uk_v2_0_products_categories.json"}
+{"url":"https://prod-api.lemonaidpims.co.uk/v2.0/content/web/frontendVersion","method":"GET","status":200,"size":156}
+{"url":"https://prod-api.lemonaidpims.co.uk/v2.0/content/web/frontendParameters","method":"GET","status":200,"size":66712,"file":"net/03-prod_api_lemonaidpims_co_uk_v2_0_content_web_frontendParameters.json"}
+{"url":"https://consent.api.osano.com/record","method":"POST","status":204,"size":0}
+{"url":"https://prod-api.lemonaidpims.co.uk/v2.0/content/web/frontendParameters","method":"GET","status":200,"size":66712,"file":"net/04-prod_api_lemonaidpims_co_uk_v2_0_content_web_frontendParameters.json"}
+{"url":"https://prod-api.lemonaidpims.co.uk/v2.0/content/web/frontendParameters","method":"GET","status":200,"size":66712,"file":"net/05-prod_api_lemonaidpims_co_uk_v2_0_content_web_frontendParameters.json"}
+{"url":"https://prod-api.lemonaidpims.co.uk/v2.0/meta/?platform=ios","method":"GET","status":200,"size":3515,"file":"net/06-prod_api_lemonaidpims_co_uk_v2_0_meta_platform_ios.json"}
+{"url":"https://prod-api.lemonaidpims.co.uk/v2.0/content/web/frontendParameters","method":"GET","status":200,"size":66712,"file":"net/07-prod_api_lemonaidpims_co_uk_v2_0_content_web_frontendParameters.json"}
+{"url":"https://pixel.mtrcs.samba.tv/v2/tag/boots/uk-pharma/load?sa_referrer=&sa_fullurl=https%3A%2F%2Fonlinedoctor-clinic.boots.com%2FHair-Loss&c=1795474906321","method":"GET","status":200,"size":569,"file":"net/08-pixel_mtrcs_samba_tv_v2_tag_boots_uk_pharma_load_sa_referrer_sa_fullurl_https_3A.json"}
+{"url":"https://prod-api.lemonaidpims.co.uk/v2.0/content/web/frontendParameters","method":"GET","status":200,"size":66712,"file":"net/09-prod_api_lemonaidpims_co_uk_v2_0_content_web_frontendParameters.json"}
+{"url":"https://dcinfos-cache.abtasty.com/v1/ua-parser","method":"GET","status":200,"size":92}
+{"url":"https://dcinfos-cache.abtasty.com/v1/geoip?weather=false","method":"GET","status":200,"size":335,"file":"net/10-dcinfos_cache_abtasty_com_v1_geoip_weather_false.json"}
+{"url":"https://onlinedoctor-clinic.boots.com/dredition-madeseruant-Seedie-our-Macd-Lenox-Heer?d=onlinedoctor-clinic.boots.com","method":"POST","status":200,"size":656,"file":"net/11-onlinedoctor_clinic_boots_com_dredition_madeseruant_Seedie_our_Macd_Lenox_Heer_d.json"}
+{"url":"https://prod-api.lemonaidpims.co.uk/v2.0/content/web/categories/HAI","method":"GET","status":200,"size":125901,"file":"net/12-prod_api_lemonaidpims_co_uk_v2_0_content_web_categories_HAI.json"}

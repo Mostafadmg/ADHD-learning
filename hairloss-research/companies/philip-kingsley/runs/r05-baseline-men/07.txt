@@ -1,0 +1,18 @@
+STEP 07 click ".pk-quiz-control[data-quiz-question=\"q2a\"][data-quiz-selection=\"My hair has thinned/receded noticeably in some areas, but other areas are still dense\"]"
+URL: https://hairloss.philipkingsley.co.uk/quiz/step/view/stepId/men_quiz_step3
+TITLE: 
+
+--- VISIBLE TEXT ---
+QUESTION #3
+WHEN DID YOU FIRST NOTICE ANY HAIR LOSS?
+SELECT ONE
+IN THE LAST MONTH
+MORE THAN A MONTH AGO
+I HAVEN'T NOTICED ANY YET
+BACK
+
+--- CONTROLS ---
+  button (1): BACK
+
+--- LINKS ---
+  link (4): SIGN IN -> https://hairloss.philipkingsley.co.uk/customer/account/  ·  TERMS OF SALE -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-of-sale  ·  TERMS & CONDITIONS -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-conditions  ·  PRIVACY POLICY -> https://hairloss.philipkingsley.co.uk/hair-loss-privacy-policy

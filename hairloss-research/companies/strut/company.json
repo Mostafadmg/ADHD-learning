@@ -20,9 +20,9 @@
   "blockers": [
    "The help centre (support.struthealth.com) returned HTTP 403 with a \"Just a moment...\" security checkpoint to curl and to the fetch tool; it was not read.",
    "Three of the four new forms and every old-checkout product ask for an e-mail and phone number on the first screen, so they could not be walked or tested.",
-   "Web search was not available in stage 2 (the shared search allowance was used up), so no third-party accounts of the hidden questionnaires or of provider decisions could be looked for."
+   "Web search was unavailable for most of stage 2. One late search (23 Nov 2026) found Trustpilot and Reviews.io reviews, a press release and affiliate-style guides, but nothing that describes the hidden questionnaires or when a provider declines."
   ],
-  "coverageNote": "Stage 1 read the full definition of the four new intake forms (every screen, option and branch condition, including everything behind the account wall, and the product cards with prices) from the HTML served to an anonymous browser: those items are labelled \"code\". Stage 2 replayed the one walkable form, oral minoxidil, 19 times (1 baseline, 17 one-change runs, 1 combined worst-case run): those items are labelled \"observed\" and name their run folder. Six rules read from code were confirmed live exactly as coded (under-18 stop, self-harm stop, three free-text follow-ups, dose picker price). 37 options of that form were not replayed on their own because the definition shows no branch on them; they keep the label \"code\". The oral finasteride, topical finasteride and dutasteride forms cannot be tested without an account. The questionnaires for the women's Strut Hair Formula, Hair Booster, ketoconazole shampoo, HairfectRx capsules and the combos are served only to signed-in users and were not seen; a few entries quote what Strut's public pages say the provider needs (\"docs\")."
+  "coverageNote": "Stage 1 read the full definition of the four new intake forms (every screen, option and branch condition, including everything behind the account wall, and the product cards with prices) from the HTML served to an anonymous browser: those items are labelled \"code\". Stage 2 replayed the one walkable form, oral minoxidil, 27 times (1 baseline, 25 one-change runs, 1 combined worst-case run), and re-loaded the four walled baselines to confirm the walls: those items are labelled \"observed\" and name their run folder. Six rules read from code were confirmed live exactly as coded (under-18 stop, self-harm stop, three free-text follow-ups, dose picker price), and so was the code reading that the other screens have no branch (16 single options replayed). About 30 options of that form were not replayed on their own because the definition shows no branch on them; they keep the label \"code\". The oral finasteride, topical finasteride and dutasteride forms cannot be tested without an account. The questionnaires for the women's Strut Hair Formula, Hair Booster, ketoconazole shampoo, HairfectRx capsules and the combos are served only to signed-in users and were not seen; a few entries quote what Strut's public pages say the provider needs (\"docs\")."
  },
  "products": [
   {
@@ -234,7 +234,7 @@
    "price": "$55 for a 90-day supply (1.25 mg)",
    "priceDetail": "$65 for a 90-day supply (2.5 mg), which is the pre-selected dose in the form (observed). Code: price IDs 798 and 797, slug oral_minoxidil_men. The form does not ask sex before the account card; the slug says \"men\" and the product page does not name an audience.",
    "url": "https://www.struthealth.com/hair-loss/oral-minoxidil",
-   "recommendedWhen": "Offered to every adult who opens the oral minoxidil form: the dose picker (2.5 mg pre-selected, or 1.25 mg) is the second screen, before any medical question. In 18 replays nothing removed it or changed its dose: not heart failure, low blood pressure, pheochromocytoma, a minoxidil allergy, patchy or sudden hair loss, or age 61+ (observed). Only \"Under 18\" and self-harm \"Yes\" stop the form. The provider decides after checkout.",
+   "recommendedWhen": "Offered to every adult who opens the oral minoxidil form: the dose picker (2.5 mg pre-selected, or 1.25 mg) is the second screen, before any medical question. In 26 one-change replays nothing removed it or changed its dose: not heart failure, heart attack, low blood pressure, pheochromocytoma, kidney disease, a minoxidil allergy, earlier use of oral minoxidil, patchy or sudden hair loss, or age 61+ (observed). Only \"Under 18\" and self-harm \"Yes\" stop the form. The provider decides after checkout.",
    "evidence": "observed"
   },
   {
@@ -3936,7 +3936,7 @@
    "name": "Oral minoxidil intake form (new PathwAI form)",
    "audience": "both",
    "entryUrl": "https://start.struthealth.com/f/6aa3d578f415d1603a6e0c85",
-   "stagesSummary": "Welcome screen, age, dose picker (\"Add to cart\"), then 13 questions and one warning screen (up to 3 extra free-text screens), all anonymous; then the account wall (\"Create account\") at 75%; then address, Persona ID check, cart, card, order submitted. No sex question, no blood pressure or heart rate question, no photos. Stage 2: 18 one-change replays confirmed three kinds of branch only (under-18 stop, self-harm stop, three free-text follow-ups) plus the dose picker changing the price; no medical answer changed anything.",
+   "stagesSummary": "Welcome screen, age, dose picker (\"Add to cart\"), then 13 questions and one warning screen (up to 3 extra free-text screens), all anonymous; then the account wall (\"Create account\") at 75%; then address, Persona ID check, cart, card, order submitted. No sex question, no blood pressure or heart rate question, no photos. Stage 2: 26 one-change replays confirmed three kinds of branch only (under-18 stop, self-harm stop, three free-text follow-ups) plus the dose picker changing the price; no medical answer changed anything.",
    "questions": [
     {
      "id": "oral-minoxidil-q01",
@@ -4075,7 +4075,7 @@
      "options": [
       {
        "label": "1 month or less",
-       "effect": "No change seen, but it was only ticked together with other high-risk answers in runs/exp-26-worst-case (not a one-change test). That run had the same screens, wording and cart as the baseline, and the served definition has no branch on this option.",
+       "effect": "No change when replayed: the same later screens with the same wording, the same cart line (2.5 mg, 90 days, $65.00), no warning, and the walk ends at \"Create account\" as in the baseline (runs/exp-18-duration-1month against runs/baseline-us). Very recent loss is a reason to look for another cause, yet the form shows no warning. The answer is only stored for the reviewing provider.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed"
@@ -4160,10 +4160,10 @@
       },
       {
        "label": "Diffuse thinning (all over)",
-       "effect": "Not replayed on its own. No effect inside the form (read from the served definition): every option of this question goes to the same next screen, with no warning and no change to the product, strength or price. The answer is stored for the reviewing provider; what the provider does with it is not visible.",
+       "effect": "No change when replayed: the same later screens with the same wording, the same cart line (2.5 mg, 90 days, $65.00), no warning, and the walk ends at \"Create account\" as in the baseline (runs/exp-23-symptom-diffuse-shedding against runs/baseline-us). Ticked on its own in place of the two baseline answers. Diffuse loss can have other causes (thyroid, iron, stress shedding), yet the form asks nothing more. The answer is only stored for the reviewing provider.",
        "effectType": "none",
        "affects": [],
-       "evidence": "code"
+       "evidence": "observed"
       },
       {
        "label": "Increased shedding",
@@ -4189,10 +4189,10 @@
      "options": [
       {
        "label": "Itching, pain, burning, or lesions",
-       "effect": "Not replayed on its own. No effect inside the form (read from the served definition): every option of this question goes to the same next screen, with no warning and no change to the product, strength or price. The answer is stored for the reviewing provider; what the provider does with it is not visible.",
+       "effect": "No change when replayed: the same later screens with the same wording, the same cart line (2.5 mg, 90 days, $65.00), no warning, and the walk ends at \"Create account\" as in the baseline (runs/exp-22-scalp-itch-lesions against runs/baseline-us). A sore or scaly scalp can mean a skin condition that needs treating first, yet the form asks nothing more. The answer is only stored for the reviewing provider.",
        "effectType": "none",
        "affects": [],
-       "evidence": "code"
+       "evidence": "observed"
       },
       {
        "label": "Dry skin or dandruff",
@@ -4253,10 +4253,10 @@
       },
       {
        "label": "Minoxidil oral tablets",
-       "effect": "Not replayed on its own. No effect inside the form (read from the served definition): every option of this question goes to the same next screen, with no warning and no change to the product, strength or price. The answer is stored for the reviewing provider; what the provider does with it is not visible.",
+       "effect": "No change when replayed: the same later screens with the same wording, the same cart line (2.5 mg, 90 days, $65.00), no warning, and the walk ends at \"Create account\" as in the baseline (runs/exp-19-tried-oral-minoxidil against runs/baseline-us). A patient who has already taken oral minoxidil gets no question about how it went, what dose or what side effects. The answer is only stored for the reviewing provider.",
        "effectType": "none",
        "affects": [],
-       "evidence": "code"
+       "evidence": "observed"
       },
       {
        "label": "Finasteride (Propecia)",
@@ -4338,7 +4338,7 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "No change seen, but it was only ticked together with other high-risk answers in runs/exp-26-worst-case (not a one-change test). That run had the same screens, wording and cart as the baseline, and the served definition has no branch on this option.",
+       "effect": "No change when replayed: the same later screens with the same wording, the same cart line (2.5 mg, 90 days, $65.00), no warning, and the walk ends at \"Create account\" as in the baseline (runs/exp-15-sexual-yes against runs/baseline-us). The answer is only stored for the reviewing provider.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed"
@@ -4473,7 +4473,7 @@
       },
       {
        "label": "Heart attack or coronary artery disease",
-       "effect": "No change seen, but it was only ticked together with other high-risk answers in runs/exp-26-worst-case (not a one-change test). That run had the same screens, wording and cart as the baseline, and the served definition has no branch on this option.",
+       "effect": "No change when replayed: the same later screens with the same wording, the same cart line (2.5 mg, 90 days, $65.00), no warning, and the walk ends at \"Create account\" as in the baseline (runs/exp-20-cond-heart-attack against runs/baseline-us). Oral minoxidil's label warns about recent heart attack and angina, but the form does not react. The answer is only stored for the reviewing provider.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed"
@@ -4508,7 +4508,7 @@
       },
       {
        "label": "Kidney disease",
-       "effect": "No change seen, but it was only ticked together with other high-risk answers in runs/exp-26-worst-case (not a one-change test). That run had the same screens, wording and cart as the baseline, and the served definition has no branch on this option.",
+       "effect": "No change when replayed: the same later screens with the same wording, the same cart line (2.5 mg, 90 days, $65.00), no warning, and the walk ends at \"Create account\" as in the baseline (runs/exp-21-cond-kidney against runs/baseline-us). The answer is only stored for the reviewing provider.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed"
@@ -4573,7 +4573,7 @@
      "purpose": "Medical history check (heart, blood pressure, liver, kidney, cancer and so on).",
      "engineRole": "safety-screen",
      "branches": false,
-     "branchDetail": "None. Heart failure, low blood pressure and pheochromocytoma were each replayed on their own, and six heart, blood pressure and kidney conditions together: no stop, no warning, no extra question, same cart (observed).",
+     "branchDetail": "None. Heart failure, heart attack, low blood pressure, pheochromocytoma and kidney disease were each replayed on their own, and six heart, blood pressure and kidney conditions together: no stop, no warning, no extra question, same cart (observed).",
      "shownWhen": "always",
      "evidence": "observed"
     },
@@ -4701,7 +4701,7 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "No change seen, but it was only ticked together with other high-risk answers in runs/exp-26-worst-case (not a one-change test). That run had the same screens, wording and cart as the baseline, and the served definition has no branch on this option.",
+       "effect": "No change when replayed: the same later screens with the same wording, the same cart line (2.5 mg, 90 days, $65.00), no warning, and the walk ends at \"Create account\" as in the baseline (runs/exp-17-interest-yes against runs/baseline-us). Only the self-harm question can stop the form; low mood answers do not. The answer is only stored for the reviewing provider.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed"
@@ -5204,9 +5204,22 @@
    "confidence": "high"
   },
   {
+   "id": "R24",
+   "flow": "oral-minoxidil",
+   "when": "sexual dysfunction = \"Yes\"; lost interest = \"Yes\"; noticed \"1 month or less\"; tried \"Minoxidil oral tablets\"; condition \"Heart attack or coronary artery disease\" or \"Kidney disease\"; scalp \"Itching, pain, burning, or lesions\"; symptom \"Diffuse thinning (all over)\" (each on its own)",
+   "then": "Nothing: no stop, no warning, no extra question; oral minoxidil 2.5 mg, $65, stays in the cart and the account card is reached. Confirms the code reading that these screens have a single way out.",
+   "effectType": "none",
+   "affects": [
+    "p8"
+   ],
+   "evidence": "observed",
+   "proof": "runs/exp-15-sexual-yes, exp-17-interest-yes, exp-18-duration-1month, exp-19-tried-oral-minoxidil, exp-20-cond-heart-attack, exp-21-cond-kidney, exp-22-scalp-itch-lesions, exp-23-symptom-diffuse-shedding against runs/baseline-us",
+   "confidence": "high"
+  },
+  {
    "id": "R14",
    "flow": "oral-minoxidil",
-   "when": "any option not replayed on its own (duration, other hair-loss symptoms, other scalp symptoms, treatments tried, other allergies, other conditions, sexual dysfunction, lost interest)",
+   "when": "any option not replayed on its own (other durations, other hair-loss symptoms, other scalp symptoms, other treatments tried, other allergies, other conditions)",
    "then": "No effect inside the form: each of these screens has one way out and no condition on it.",
    "effectType": "none",
    "affects": [
@@ -5302,7 +5315,7 @@
     "p5"
    ],
    "evidence": "code",
-   "proof": "quiz-definition-fin_oral.json, quiz-definition-fin_topical.json, quiz-definition-dut.json (single outgoing edges); live behaviour of the same questions in runs/exp-09 to runs/exp-16",
+   "proof": "quiz-definition-fin_oral.json, quiz-definition-fin_topical.json, quiz-definition-dut.json (single outgoing edges); live behaviour of the same questions in runs/exp-09 to runs/exp-23",
    "confidence": "medium"
   },
   {
@@ -5475,6 +5488,90 @@
    "run": "runs/exp-16-mood-yes"
   },
   {
+   "id": "exp-15-sexual-yes",
+   "flow": "oral-minoxidil",
+   "changed": "sexual dysfunction: No -> Yes",
+   "result": "No change: same 18 screens and wording, cart \"90 Day Supply - 2.5 mg, $65.00\", ends at \"Create account\" (75%).",
+   "run": "runs/exp-15-sexual-yes"
+  },
+  {
+   "id": "exp-17-interest-yes",
+   "flow": "oral-minoxidil",
+   "changed": "lost interest or pleasure in the last 2 weeks: No -> Yes",
+   "result": "No change: same 18 screens and wording, cart \"90 Day Supply - 2.5 mg, $65.00\", ends at \"Create account\" (75%). Only the self-harm question stops the form.",
+   "run": "runs/exp-17-interest-yes"
+  },
+  {
+   "id": "exp-18-duration-1month",
+   "flow": "oral-minoxidil",
+   "changed": "how long ago noticed: Over 1 year -> 1 month or less",
+   "result": "No change: same 18 screens and wording, cart \"90 Day Supply - 2.5 mg, $65.00\", ends at \"Create account\" (75%).",
+   "run": "runs/exp-18-duration-1month"
+  },
+  {
+   "id": "exp-19-tried-oral-minoxidil",
+   "flow": "oral-minoxidil",
+   "changed": "treatments tried: None of the above -> Minoxidil oral tablets",
+   "result": "No change: same 18 screens and wording, cart \"90 Day Supply - 2.5 mg, $65.00\", ends at \"Create account\" (75%). No follow-up about dose, result or side effects.",
+   "run": "runs/exp-19-tried-oral-minoxidil"
+  },
+  {
+   "id": "exp-20-cond-heart-attack",
+   "flow": "oral-minoxidil",
+   "changed": "medical conditions: None of the above -> Heart attack or coronary artery disease",
+   "result": "No change: same 18 screens and wording, cart \"90 Day Supply - 2.5 mg, $65.00\", ends at \"Create account\" (75%).",
+   "run": "runs/exp-20-cond-heart-attack"
+  },
+  {
+   "id": "exp-21-cond-kidney",
+   "flow": "oral-minoxidil",
+   "changed": "medical conditions: None of the above -> Kidney disease",
+   "result": "No change: same 18 screens and wording, cart \"90 Day Supply - 2.5 mg, $65.00\", ends at \"Create account\" (75%).",
+   "run": "runs/exp-21-cond-kidney"
+  },
+  {
+   "id": "exp-22-scalp-itch-lesions",
+   "flow": "oral-minoxidil",
+   "changed": "scalp symptoms: None of the above -> Itching, pain, burning, or lesions",
+   "result": "No change: same 18 screens and wording, cart \"90 Day Supply - 2.5 mg, $65.00\", ends at \"Create account\" (75%).",
+   "run": "runs/exp-22-scalp-itch-lesions"
+  },
+  {
+   "id": "exp-23-symptom-diffuse-shedding",
+   "flow": "oral-minoxidil",
+   "changed": "hair-loss symptoms: Receding hairline + Thinning on the top of the head -> Diffuse thinning (all over) only",
+   "result": "No change: same 18 screens and wording, cart \"90 Day Supply - 2.5 mg, $65.00\", ends at \"Create account\" (75%).",
+   "run": "runs/exp-23-symptom-diffuse-shedding"
+  },
+  {
+   "id": "recheck-finasteride-oral",
+   "flow": "men-finasteride-oral",
+   "changed": "none: stage 2 re-check of the oral finasteride baseline (page load only)",
+   "result": "First screen is still the account card (\"See your treatment options\": e-mail, phone, consent tick box). Account wall unchanged.",
+   "run": "runs/recheck-finasteride-oral"
+  },
+  {
+   "id": "recheck-finasteride-topical",
+   "flow": "finasteride-topical",
+   "changed": "none: stage 2 re-check of the topical finasteride baseline (page load only)",
+   "result": "First screen is still the account card. Account wall unchanged.",
+   "run": "runs/recheck-finasteride-topical"
+  },
+  {
+   "id": "recheck-dutasteride",
+   "flow": "dutasteride",
+   "changed": "none: stage 2 re-check of the dutasteride baseline (page load only)",
+   "result": "First screen is still the account card. Account wall unchanged.",
+   "run": "runs/recheck-dutasteride"
+  },
+  {
+   "id": "recheck-women",
+   "flow": "old-checkout",
+   "changed": "none: stage 2 re-check of the women's formula baseline (old checkout)",
+   "result": "Still redirects straight to checkout.struthealth.com/auth/sign-up (e-mail and phone). Account wall unchanged.",
+   "run": "runs/recheck-women"
+  },
+  {
    "id": "exp-26-worst-case",
    "flow": "oral-minoxidil",
    "changed": "NOT a one-change run. All at once: age 61+, noticed 1 month or less, patchy bald spots, scalp sudden hair loss + bleeding, sexual dysfunction Yes, allergy Minoxidil, conditions heart failure + heart attack + stroke + low blood pressure + pheochromocytoma + kidney disease, mood Yes, lost interest Yes",
@@ -5521,7 +5618,7 @@
     "p8"
    ],
    "default": "p8",
-   "note": "Exactly the same offer as the baseline man: oral minoxidil 2.5 mg, $65, up to the account card. Any refusal can only come from the provider after sign-up, ID check and card. Proof: runs/exp-26-worst-case, plus one-change runs exp-09 to exp-14.",
+   "note": "Exactly the same offer as the baseline man: oral minoxidil 2.5 mg, $65, up to the account card. Any refusal can only come from the provider after sign-up, ID check and card. Proof: runs/exp-26-worst-case, plus one-change runs exp-09 to exp-23.",
    "evidence": "observed"
   },
   {
@@ -5578,7 +5675,7 @@
    "evidence": "docs"
   }
  ],
- "engineSummary": "Strut has no recommendation engine. The patient chooses a product on the marketing site, and each product has its own form that sells only that product. The form is an order form with a medical questionnaire attached: in the one form that can be walked without an account (oral minoxidil) the dose and price are chosen on the second screen, before any medical question. Live testing found only three kinds of reaction: \"Under 18\" stops the form, \"Yes\" to thoughts of self-harm shows a crisis screen that cannot be passed, and \"Yes\" to surgeries, medicines or \"anything else\" adds one free-text box each. Nothing else does anything. Heart failure, low blood pressure, pheochromocytoma, an allergy to minoxidil, patchy or sudden hair loss and age 61+ were each tried, then all together: same screens, same wording, same $65 cart, no warning. The served code shows the same design in the three forms behind the account wall, with two extra switches: \"Female\" is stopped in the oral finasteride form and swapped to a women's product in the topical finasteride form, and the dutasteride form lets the patient pick topical or oral. There is no scoring. Every clinical decision (approve, decline, strength, which actives go into a compounded formula) is made by a provider after the patient has created an account, passed an ID check and saved a card; Strut says patients who are \"not a good candidate\" are not charged.",
+ "engineSummary": "Strut has no recommendation engine. The patient chooses a product on the marketing site, and each product has its own form that sells only that product. The form is an order form with a medical questionnaire attached: in the one form that can be walked without an account (oral minoxidil) the dose and price are chosen on the second screen, before any medical question. Live testing found only three kinds of reaction: \"Under 18\" stops the form, \"Yes\" to thoughts of self-harm shows a crisis screen that cannot be passed, and \"Yes\" to surgeries, medicines or \"anything else\" adds one free-text box each. Nothing else does anything. Heart failure, heart attack, low blood pressure, pheochromocytoma, kidney disease, an allergy to minoxidil, earlier oral minoxidil, patchy, diffuse or sudden hair loss, a sore scalp, low mood, sexual dysfunction and age 61+ were each tried on their own, then together: same screens, same wording, same $65 cart, no warning. The served code shows the same design in the three forms behind the account wall, with two extra switches: \"Female\" is stopped in the oral finasteride form and swapped to a women's product in the topical finasteride form, and the dutasteride form lets the patient pick topical or oral. There is no scoring. Every clinical decision (approve, decline, strength, which actives go into a compounded formula) is made by a provider after the patient has created an account, passed an ID check and saved a card; Strut says patients who are \"not a good candidate\" are not charged.",
  "strengths": [
   "Very wide compounded range: topical finasteride or dutasteride with minoxidil 7.5%, tretinoin and fluocinolone; oral combination capsules (finasteride or dutasteride with oral minoxidil 5 mg); a latanoprost booster; a women's spironolactone and finasteride topical.",
   "The patient can ask for a formula (which actives to include) and for gel or solution, so the product feels made to order.",
@@ -5709,7 +5806,7 @@
    "url": "https://start.struthealth.com/f/6ad9e1d39fba7abfd231a5b3"
   },
   {
-   "title": "Intake form: oral minoxidil (replayed 19 times in stage 2)",
+   "title": "Intake form: oral minoxidil (replayed 27 times in stage 2)",
    "url": "https://start.struthealth.com/f/6aa3d578f415d1603a6e0c85"
   },
   {
@@ -5729,10 +5826,10 @@
   "Only the oral minoxidil form could be tested live. The oral finasteride, topical finasteride and dutasteride forms start with an account card, so their rules come from the served definition (\"code\"), not from replays.",
   "What the reviewing provider does with any answer (declines, lowers the dose, removes an active) is not visible anywhere public. \"No effect\" in this report always means no effect inside the form, not no effect on the final prescription.",
   "The questionnaires of the old-checkout products, including the main women's product, were not seen at all. No baseline woman could be walked on any route.",
-  "Not replayed on their own in the oral minoxidil form (the definition shows no branch on any of them): age 46-60; durations \"Less than 6 months\", \"6-12 months\", \"Over 2 years\"; symptoms \"Thinning at the front hairline\", \"Thinning at the temples\", \"Diffuse thinning (all over)\", \"Increased shedding\"; scalp \"Itching, pain, burning, or lesions\", \"Dry skin or dandruff\", \"Rash\"; every \"treatments tried\" option; every allergy except \"Minoxidil\"; conditions liver, thyroid, breast or prostate cancer, BPH, HIV, autoimmune, glaucoma; \"Other\" on treatments and allergies. Tested only in the combined worst-case run: \"1 month or less\", \"Bleeding\", sexual dysfunction \"Yes\", lost interest \"Yes\", heart attack, stroke, kidney disease.",
+  "Not replayed on their own in the oral minoxidil form (the definition shows no branch on any of them): age 46-60; durations \"Less than 6 months\", \"6-12 months\", \"Over 2 years\"; symptoms \"Thinning at the front hairline\", \"Thinning at the temples\", \"Increased shedding\"; scalp \"Dry skin or dandruff\", \"Rash\"; every \"treatments tried\" option except \"Minoxidil oral tablets\"; every allergy except \"Minoxidil\"; conditions liver, thyroid, breast or prostate cancer, BPH, HIV, autoimmune, glaucoma; \"Other\" on treatments and allergies. Tested only in the combined worst-case run: \"Bleeding\" and stroke. Sixteen single options from the same screens were replayed with no effect, which matches the code, so these are labelled \"code\" with high confidence.",
   "Free-text answers (surgeries, medicines, anything else) were given one short neutral note each; whether particular words trigger anything is unknown, though the definition has no rule on text.",
   "Nothing after the account card was tested: address (state availability), identity check, cart, promo codes, payment and the order confirmation are from code only.",
-  "No third-party sources (reviews, forums, videos) were searched in stage 2 because web search was unavailable; the help centre could not be read.",
+  "Third-party sources were barely searched (one web search late in stage 2 found nothing about the questionnaire content or declines); the help centre could not be read.",
   "State availability by product is not published beyond \"all states except Arkansas\" and \"certain medications may not be available in all states\".",
   "Replays used a copy of the shared walk tool with a shorter wait (scripts/walk_fast.js); the baseline was also run with the standard tool and matched. Each replay created an anonymous, unsubmitted form record and a cart session on Strut's side; no account, contact detail, photo, payment or order was ever entered."
  ],

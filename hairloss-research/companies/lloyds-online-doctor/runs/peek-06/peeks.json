@@ -1,0 +1,21 @@
+[
+ {
+  "from": "107954",
+  "option": "Suddenly, over days or weeks",
+  "trail": [],
+  "result": {
+   "sig": "SUMMARY",
+   "stepState": "SUMMARY",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": []
+  },
+  "onBaseline": false,
+  "shot": "peek-01-107954",
+  "text": "Exit consultation\nYour hair loss\nHow did your hair loss start?\nGradually, over months or years\nSuddenly, over days or weeks\nBack",
+  "endedEarly": true
+ }
+]
