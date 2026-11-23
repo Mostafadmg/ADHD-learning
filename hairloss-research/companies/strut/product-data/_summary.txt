@@ -1,0 +1,156 @@
+===== hair-loss_dutasteride-hair-combo.json
+ ACTIVES: 
+   - Dutasteride Topical Formula : Customizable gels and solutions may include: Dutasteride, Minoxidil, Tretinoin, Fluocinolone, Biotin.
+   - Dutasteride Capsules : Retail: Dutasteride
+Compounded: Dutasteride with Biotin
+   - StrutVite : Daily hair, skin, and nail vitamins. See details below.
+   ! ( Instructions )
+   ! Contraindications and warnings : $35
+   ! ( Allergies )
+   ! Conditions : We have evaluated your health history and the specific health information you provided us, however, if anything changes and you develop or discover any new conditions please contact us and your healthcare provider to make sure this medication is still appropriate for you. | This medication may have interactions with certain disease states, tell your healthcare provider if you have any of the following: | Breathing problems ; Seizures ; Chest pain ; Sick sinus syndrome ; AV block ; Slow heartbeats ; Low blood pressure ; Liver disease ; Heart disease ; Kidney disease ; Inability to urinate ; Urinary obstruction ; Enlarged prostate ; Prostate cancer ; Diabetes ; Cushing's Syndrome
+   ! ( Pregnancy and Breastfeeding )
+   ! ( Side Effects )
+   ! ( Medicines and Supplements )
+   ! ( Risks )
+   ! ( Treatment Failure )
+   ! ( Share with Your Healthcare Team )
+   ! ( Important Safety Information for Dutasteride Capsules )
+   ! ( Before taking this medication )
+   ! ( Drug Interactions )
+   ! ( Side Effects )
+===== hair-loss_dutasteride.json
+ ACTIVES: Active Ingredient: Dutasteride (Oral: + Biotin | Topical: + Minoxidil, Tretinoin, Fluocinolone, Biotin)
+   - Dutasteride : Dual 5-alpha reductase inhibitor that may block both Type I and II enzymes, associated with approximately 90% DHT reduction.*
+   - Also included in topical formula: Minoxidil + Tretinoin + Fluocinolone + Biotin : Minoxidil may support regrowth, tretinoin may support absorption, fluocinolone may help calm, biotin may support strength.*
+   ! ( Common side effects )
+   ! Tell your healthcare provider : Share any history of liver disease, prostate conditions, current prescriptions including alpha blockers, and any plans for blood donation while on dutasteride.
+   ! Do not use if : You are a woman or a child. Dutasteride is a medication for men only. Women who are or may become pregnant should never handle dutasteride-containing medications.
+   ! ( Seek medical care )
+===== hair-loss_dutasteride_oral.json
+ ACTIVES: Active Ingredients: Dutasteride, Biotin (0.1mg compounded capsule)
+   - Dutasteride : Dual 5-alpha reductase inhibitor. Oral capsule for systemic DHT reduction.*
+   - Biotin : A B vitamin that may support healthy hair growth. Included in the 0.1mg compounded capsule, not in the retail 0.5mg capsule.
+   ! ( Common side effects )
+   ! Tell your healthcare provider : Share any history of liver disease, prostate conditions, current prescriptions including alpha blockers, and any plans for blood donation while on dutasteride.
+   ! Do not use if : You are a woman or a child. Dutasteride is a medication for men only. Women who are or may become pregnant should never handle dutasteride-containing medications.
+   ! ( Seek medical care )
+===== hair-loss_dutasteride_topical.json
+ ACTIVES: Active Ingredients: Dutasteride, Minoxidil, Tretinoin, Fluocinolone, Biotin
+   - Dutasteride 0.1% : Dual 5-alpha reductase inhibitor applied topically, intended for localized scalp DHT reduction.*
+   - Minoxidil : Vasodilator that may increase blood flow and nutrient delivery to hair follicles.*
+   - Tretinoin : A vitamin A derivative that may stimulate hair growth and exfoliate the scalp to help medications penetrate deeper.*
+   - Fluocinolone : A mild topical corticosteroid that can help reduce scalp inflammation that may contribute to hair loss and follicle damage.*
+   - Biotin : B-vitamin that may support keratin production.*
+   ! ( Common side effects )
+   ! Tell your healthcare provider : Share any history of scalp conditions, sensitivities to topical medications, current prescriptions, and any history of low blood pressure or fainting.
+   ! Do not use if : You are a woman or a child. Dutasteride is a medication for men only. Women who are or may become pregnant should never handle dutasteride-containing medications.
+   ! ( Seek medical care )
+===== hair-loss_finasteride.json
+ ACTIVES: Active Ingredients: Finasteride. Available as a compounded topical formula (with Minoxidil, Tretinoin, Fluocinolone, Biotin) or FDA-approved oral tablet (Finasteride 1mg).
+   - Finasteride : Type II 5-alpha reductase inhibitor. May lower DHT levels by approximately 70%.*
+   - Minoxidil (Topical) : Included in the topical formula to stimulate blood flow to hair follicles and encourage hair growth and thickness.*
+   - Tretinoin (Topical) : Included in the topical formula to enhance absorption of other active ingredients through the scalp.*
+   - Fluocinolone (Topical) : Included in the topical formula to reduce scalp inflammation that can contribute to hair loss and follicle damage.*
+   ! ( Common side effects )
+   ! Tell your healthcare provider : Share any history of liver disease, prostate conditions, current prescriptions, and any plans for blood donation while on finasteride.
+   ! Do not use if : You are a woman or a child. Finasteride is a medication for men only. Women who are or may become pregnant should never handle finasteride-containing medications.
+   ! ( Seek medical care )
+===== hair-loss_finasteride_oral.json
+ ACTIVES: Active Ingredient: Finasteride 1mg oral tablet. 30 tablets (one-month supply).
+   - Finasteride 1mg : The standard clinical dose for male pattern hair loss. May block type II 5-alpha reductase, which may lower DHT by approximately 7
+   - 5-Alpha Reductase : The enzyme that converts testosterone to DHT. Finasteride targets the type II isoform.
+   - DHT (Dihydrotestosterone) : The primary hormone behind male pattern hair loss. Lower DHT may slow loss and support regrowth.*
+   ! ( Common side effects )
+   ! Tell your healthcare provider : Share any history of liver disease, prostate conditions, current prescriptions, and any plans for blood donation while on finasteride.
+   ! Do not use if : You are a woman or a child. Finasteride is a medication for men only. Women who are or may become pregnant should never handle finasteride-containing medications.
+   ! ( Seek medical care )
+===== hair-loss_finasteride_topical.json
+ ACTIVES: Active Ingredients: Finasteride, Minoxidil, Fluocinolone, Tretinoin and Biotin in a compounded gel formulated for scalp adhesion.
+   - Finasteride : Topical 5-alpha reductase inhibitor applied to the scalp, intended for localized scalp DHT reduction.*
+   - Minoxidil : Vasodilator that may increase blood flow and nutrient delivery to hair follicles.*
+   - Tretinoin : May enhance the penetration of other active ingredients through the scalp.*
+   - Fluocinolone : A mild topical corticosteroid that may calm irritation, itching, and inflammation that can contribute to hair loss.*
+   - Biotin : B-vitamin that may support keratin production.*
+   ! ( Common side effects )
+   ! Tell your healthcare provider : Share any history of scalp conditions, sensitivities to topical medications, current prescriptions, and any history of low blood pressure or fainting.
+   ! Do not use if : You are a woman or a child. Finasteride is a medication for men only. Women who are or may become pregnant should never handle finasteride-containing medications.
+   ! ( Seek medical care )
+===== hair-loss_hair-booster.json
+ ACTIVES: 
+   - Latanoprost 0.03% : The main active ingredient, used to help support the hair growth phase and increase hair density.*
+   - Melatonin : May increase hair density, prolong the hair growth phase, and reduce hair shedding.
+   - Caffeine : May support hair growth and help limit hair thinning.*
+   - Biotin : An essential vitamin that supports production of keratin, the protein that makes up your hair, skin, and nails.
+   ! (  )
+   ! ( Directions for Use )
+   ! ( Pregnancy & Breastfeeding Warning )
+   ! ( Contraindications & Drug Interactions )
+   ! ( Potential Side Effects )
+   ! ( When to Seek Immediate Emergency Care )
+===== hair-loss_hairfect-combo.json
+ ACTIVES: 
+   - Finasteride 1mg : Finasteride inhibits 5-alpha-reductase, reducing DHT levels and helping slow the progression of male pattern hair loss in men.
+   - StrutVite : Daily hair, skin, and nail vitamins. See details below.
+   ! ( Important Safety Information for Finasteride Tablets )
+   ! ( Before taking this medication )
+   ! ( Drug Interactions )
+   ! ( Side Effects )
+===== hair-loss_hairfect-gel-combo.json
+ ACTIVES: 
+   - Finasteride Topical Formula : Customizable gels and solutions may include: Finasteride, Minoxidil, Tretinoin, Fluocinolone, Biotin
+   - StrutVite : Daily hair, skin, and nail vitamins. See details below.
+   ! ( Instructions )
+   ! Contraindications and warnings : Finasteride is a medication for men, women can only use Finasteride in certain situations when approved by a healthcare provider, and children should never use Finasteride containing medications. | Finasteride is not indicated for use in women or pediatric patients. | Women who are pregnant or potentially may be pregnant should not handle or use Finasteride containing medications due to the risk of birth defects in a male fetus. | If a pregnant woman comes in contact with Finasteride medications, wash the contact area with soap and water right away and a healthcare provider should be contacted. | Finasteride normally causes a decrease in PSA levels. If your PSA levels go up while you are taking Finasteride it may signal the presence of prostate cancer and should be evaluated by a healthcare provider. | Fluocinolone is a topical steroid, and including Fluocinolone as an ingredient in this
+   ! ( Allergies )
+   ! Conditions : We have evaluated your health history and the specific health information you provided us. However, if anything changes and you develop or discover any new condition please contact us and your healthcare provider to make sure this medication is still appropriate for you. | This medication may have interactions with certain disease states, tell your healthcare provider if you have any of the following: | breathing problems ; seizures ; chest pain ; sick sinus syndrome ; AV block ; slow heartbeats ; low blood pressure ; liver disease ; heart disease ; kidney disease ; inability to urinate ; urinary obstruction ; enlarged prostate ; prostate cancer ; diabetes ; Cushing's Syndrome
+   ! ( Pregnancy and Breastfeeding )
+   ! ( Side Effects )
+   ! ( Medicines and Supplements )
+   ! ( Risks )
+   ! ( Treatment Failure )
+   ! ( Share with Your Healthcare Team )
+===== hair-loss_hairfectrx-dutasteride.json
+ ACTIVES: Active Ingredients: dutasteride, minoxidil 5mg, D-biotin, vitamin C, methyltetrahydrofolate, vitamin D3, zinc picolinate, and vitamin A, in a compounded liposomal capsule for absorption.
+   - Dutasteride 0.4mg : Dual 5-alpha reductase inhibitor potentially reducing DHT by ~90%.* Core active ingredient in HairfectRx.
+   - Oral Minoxidil 5mg : May support hair growth by increasing blood flow to hair follicles and extending the anagen (growth) phase of the hair cycle.*
+   - D-Biotin : May support keratin production and overall hair health.* One of 6 essential nutrients included in the HairfectRx vitamin complex.
+   - Vitamin Complex : D-Biotin, Vitamin C, CA-5 Methyltetrahydrofolate, Vitamin D3, Zinc Picolinate, and Vitamin A support healthy hair from the inside 
+   ! ( Common side effects )
+   ! Tell your healthcare provider : Share any history of liver disease, prostate conditions, low blood pressure, heart conditions, current prescriptions including alpha blockers, and any plans for blood donation while on dutasteride.
+   ! Do not use if : You are a woman or a child. Dutasteride is a medication for men only. Women who are or may become pregnant should never handle dutasteride-containing medications.
+   ! ( Seek medical care )
+===== hair-loss_hairfectrx-finasteride.json
+ ACTIVES: Active Ingredients: finasteride 1mg, minoxidil 5mg, D-biotin, vitamin C, methyltetrahydrofolate, vitamin D3, zinc picolinate, and vitamin A, in a compounded liposomal capsule for absorption.
+   - Finasteride 1mg : May block type II 5-alpha reductase; may lower DHT by approximately 70%.*
+   - Oral Minoxidil 5mg : May support hair growth by increasing blood flow to the follicles and extending the growth phase of the hair cycle.*
+   - D-Biotin : May support keratin production and overall hair health.*
+   - Vitamin Complex : Vitamins C, D3, A, folate, and zinc to support follicle health.
+   ! ( Common side effects )
+   ! Tell your healthcare provider : Share any history of liver disease, prostate conditions, low blood pressure, heart conditions, current prescriptions, and any plans for blood donation while on finasteride.
+   ! Do not use if : You are a woman or a child. Finasteride is a medication for men only. Women who are or may become pregnant should never handle finasteride-containing medications.
+   ! ( Seek medical care )
+===== hair-loss_ketoconazole-shampoo.json
+ ACTIVES: 
+   - Ketoconazole 2% : Works by reducing fungus and yeast on areas where it is applied. May also exert an anti-inflammatory effect on the scalp.*
+   ! ( Do Not Use If: )
+   ! ( Important Precautions & Usage Instructions )
+   ! ( Common Side Effects )
+   ! ( When to Seek Immediate Medical Attention )
+===== hair-loss_oral-minoxidil.json
+ ACTIVES: 
+   - Minoxidil 1.25mg : May increase the size of hair follicles and extend the hair growth phase.*
+   ! ( Information: )
+   ! ( Tell your healthcare provider about: )
+   ! ( What you should avoid while taking Minoxidil )
+   ! ( Side Effects )
+===== hair-loss_strut-hair-formula.json
+ ACTIVES: Topical Actives: Spironolactone, Finasteride, Minoxidil, Tretinoin, Fluocinolone, Biotin
+   - Spironolactone 1% : Anti-androgen that may block DHT receptors at the hair follicle.*
+   - Finasteride 0.25% : Topical DHT blocker intended for localized 5-alpha reductase inhibition.*
+   - Minoxidil 0–7.5% : Vasodilator that may increase blood flow and nutrient delivery to hair follicles.*
+   - Tretinoin + Biotin : Retinoid enhancer and B-vitamin that may support follicle absorption and hair shaft strength.*
+   - Fluocinolone (optional) : May help calm scalp irritation and clear build up.*
+   ! ( Common side effects )
+   ! Tell your healthcare provider : Share any history of scalp conditions, allergies to topical medications, current prescriptions, pregnancy or breastfeeding status, and any history of low blood pressure or fainting.
+   ! Do not use if : You are pregnant, planning to become pregnant, or breastfeeding. Finasteride-containing medications carry risk of fetal harm and must be avoided in those scenarios.
+   ! ( Seek medical care )

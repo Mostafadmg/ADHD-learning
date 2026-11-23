@@ -1,0 +1,167 @@
+307 GET document https://www.hims.com/c/hl/goals
+200 GET document https://www.hims.com/c/hl/goals
+NAV https://www.hims.com/c/hl/goals
+403 GET font https://www.hims.com/css/fonts/caresans/v1/CareSans-VF-Roman-subset.woff2
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+FAILED GET font https://www.hims.com/css/fonts/caresans/v1/CareSans-VF-Roman-subset.woff2 :: net::ERR_ABORTED
+200 GET script https://transcend-cdn.com/cm/65e802e0-6168-4b45-a620-aa644d14dbc7/airgap.js
+200 GET script https://accounts.google.com/gsi/client
+403 GET script https://www.hims.com/hims.us.modern.bundle-vendors.8f758cdc13ce30d33599.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.bundle-vendors.8f758cdc13ce30d33599.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.bundle-vendors.8f758cdc13ce30d33599.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.80243.ae1cd456a8bf36ea11de.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.80243.ae1cd456a8bf36ea11de.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.80243.ae1cd456a8bf36ea11de.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.46598.ec879f4ba8c1cb6e25af.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.46598.ec879f4ba8c1cb6e25af.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.46598.ec879f4ba8c1cb6e25af.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.31769.e8edb15e14adf43ee3d1.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.31769.e8edb15e14adf43ee3d1.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.31769.e8edb15e14adf43ee3d1.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.bundle.0b4e6cd569b6b1dd34df.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.bundle.0b4e6cd569b6b1dd34df.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.bundle.0b4e6cd569b6b1dd34df.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.43105.032bb07cdd17c443ffbf.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.43105.032bb07cdd17c443ffbf.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.43105.032bb07cdd17c443ffbf.js :: net::ERR_ABORTED
+200 GET script https://tm.hims.com/gtm.js?id=GTM-KZL9BCQ
+403 GET script https://www.hims.com/hims.us.modern.73049.5a2dbb2b2d2fd61d95a2.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.73049.5a2dbb2b2d2fd61d95a2.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.73049.5a2dbb2b2d2fd61d95a2.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.15410.835fad0380cfe874a8b8.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.15410.835fad0380cfe874a8b8.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.15410.835fad0380cfe874a8b8.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.20627.c84dacbf4e8a7c428e38.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.20627.c84dacbf4e8a7c428e38.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.20627.c84dacbf4e8a7c428e38.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.35005.b37ba132895c732e2a8e.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.35005.b37ba132895c732e2a8e.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.35005.b37ba132895c732e2a8e.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.1498.b0b74a5b9c3ed68d2fc1.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.1498.b0b74a5b9c3ed68d2fc1.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.1498.b0b74a5b9c3ed68d2fc1.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.94268.4ae577ef7342e05d8ac0.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.94268.4ae577ef7342e05d8ac0.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.94268.4ae577ef7342e05d8ac0.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.77323.75e20de9b3a0723ace35.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.77323.75e20de9b3a0723ace35.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.77323.75e20de9b3a0723ace35.js :: net::ERR_ABORTED
+200 GET script https://www.googletagmanager.com/gtm.js?id=GTM-KZL9BCQ&gtg_health=1
+403 GET script https://www.hims.com/hims.us.modern.99756.95344cc5014811bcad17.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.99756.95344cc5014811bcad17.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.99756.95344cc5014811bcad17.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.34946.0265341159f921b1f041.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.34946.0265341159f921b1f041.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.34946.0265341159f921b1f041.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.81299.09cbe422ec0cee1e2b8f.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.81299.09cbe422ec0cee1e2b8f.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.81299.09cbe422ec0cee1e2b8f.js :: net::ERR_ABORTED
+200 POST fetch https://www.google.com/ccm/collect?rcb=8&frm=0&apvc=1&ae=g&auid=1081640093.1795473021&en=page_view&dl=https%3A%2F%2Fwww.hims.com%2Fc%2Fhl%2Fgoals&scrsrc=tm.hims.com&rnd=1384753854.1795473021&navt=n&npa=0&ep.ads_data_redaction=0&gdid=dODQ2Mj&_tu=AAAAA
+403 GET script https://www.hims.com/hims.us.modern.89156.4648d720cc42fbe9311d.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.89156.4648d720cc42fbe9311d.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.89156.4648d720cc42fbe9311d.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.99263.3c3b5e15e2295921fc33.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.99263.3c3b5e15e2295921fc33.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.99263.3c3b5e15e2295921fc33.js :: net::ERR_ABORTED
+204 POST fetch https://ad.doubleclick.net/ccm/s/collect?auid=1081640093.1795473021&gtm=45Fe6bh1v77681289za204zd77681289xeaxf3xg4&fmt=8
+403 GET script https://www.hims.com/hims.us.modern.58000.70eafbdca3ed063d2dc7.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.58000.70eafbdca3ed063d2dc7.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.58000.70eafbdca3ed063d2dc7.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.75643.03460f83c4e4d24db491.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.75643.03460f83c4e4d24db491.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.75643.03460f83c4e4d24db491.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.74915.dd80cf0cb73e27ba7554.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.74915.dd80cf0cb73e27ba7554.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.74915.dd80cf0cb73e27ba7554.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.42459.9143f7d6c8fe91f12037.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.42459.9143f7d6c8fe91f12037.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.42459.9143f7d6c8fe91f12037.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.42694.370e17309b119f4bb50c.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.42694.370e17309b119f4bb50c.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.42694.370e17309b119f4bb50c.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.96661.f3823c7a00aebab8f70b.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.96661.f3823c7a00aebab8f70b.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.96661.f3823c7a00aebab8f70b.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.14773.6bdd2c0ebc82a17f5aa8.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.14773.6bdd2c0ebc82a17f5aa8.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.14773.6bdd2c0ebc82a17f5aa8.js :: net::ERR_ABORTED
+200 GET script https://tm.hims.com/gtag/js?id=G-F7TTLSRMQB&cx=c&gtm=4e6bh1&sign=267451a6bf209f65340128cfef42fde3ab5f521e9ac73aacfb1ef2d9ca7a34eb_20261123
+403 GET script https://www.hims.com/hims.us.modern.45119.c5d32bea23db62a623d5.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.45119.c5d32bea23db62a623d5.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.45119.c5d32bea23db62a623d5.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.65466.3a0bd09c43590c85ee76.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.65466.3a0bd09c43590c85ee76.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.65466.3a0bd09c43590c85ee76.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.53367.7d20cbf87586aa72310a.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.53367.7d20cbf87586aa72310a.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.53367.7d20cbf87586aa72310a.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.37884.47daba8b19d74dcbe56a.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.37884.47daba8b19d74dcbe56a.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.37884.47daba8b19d74dcbe56a.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.77373.ab35ae23774d33e5584d.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.77373.ab35ae23774d33e5584d.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.77373.ab35ae23774d33e5584d.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.66377.1f1119e41456dedf3b6f.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.66377.1f1119e41456dedf3b6f.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.66377.1f1119e41456dedf3b6f.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.25162.78453d7ad79846aa5bf0.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.25162.78453d7ad79846aa5bf0.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.25162.78453d7ad79846aa5bf0.js :: net::ERR_ABORTED
+200 POST fetch https://api.forhims.com/dpe/producer/unauth
+200 GET document https://tm.hims.com/_/service_worker/6b40/sw_iframe.html?origin=https%3A%2F%2Fwww.hims.com&1p=1
+403 GET script https://www.hims.com/hims.us.modern.65652.1eef46c33ba3f1996f55.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.65652.1eef46c33ba3f1996f55.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.65652.1eef46c33ba3f1996f55.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.79171.95b0c7e29150bad876e1.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.79171.95b0c7e29150bad876e1.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.79171.95b0c7e29150bad876e1.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.80768.43a42d175ca1f108b266.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.80768.43a42d175ca1f108b266.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.80768.43a42d175ca1f108b266.js :: net::ERR_ABORTED
+403 GET script https://www.hims.com/hims.us.modern.4034.da83102211dce2351a78.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.4034.da83102211dce2351a78.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.4034.da83102211dce2351a78.js :: net::ERR_ABORTED
+200 GET fetch https://tm.hims.com/g/collect?v=2&tid=G-F7TTLSRMQB&gtm=45he6bh1v898338689za20szb77681289zd77681289xf3xg4&_p=1795473020576&gcs=G111&gcd=13t3tPt2t5l1&npa=0&dma_cps=a&dma=1&ecid=689846422&_eu=AAAAACA&_fplc=0&cid=2139218707.1795473022&ec_mode=c&frm=0&ibt
+403 GET script https://www.hims.com/hims.us.modern.domains-consultation-hair-loss.95eddaecbb3e5482d8f4.js
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE error Refused to execute script from 'https://www.hims.com/hims.us.modern.domains-consultation-hair-loss.95eddaecbb3e5482d8f4.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled.
+FAILED GET script https://www.hims.com/hims.us.modern.domains-consultation-hair-loss.95eddaecbb3e5482d8f4.js :: net::ERR_ABORTED
+200 GET script https://transcend-cdn.com/cm/65e802e0-6168-4b45-a620-aa644d14dbc7/ui.js
+200 GET stylesheet https://transcend-cdn.com/cm/65e802e0-6168-4b45-a620-aa644d14dbc7/cm.css
+200 GET fetch https://transcend-cdn.com/cm/65e802e0-6168-4b45-a620-aa644d14dbc7/translations/en.json

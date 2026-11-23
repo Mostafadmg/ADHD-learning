@@ -1,0 +1,26 @@
+STEP 00 start (HTTP 200)
+URL: https://core.onlinedoctor.lloydspharmacy.com/loginprompt/0?return_url=%2Fapi%2Fquestionnaire%2Fclinic%2Fhair-loss
+TITLE: Login
+
+--- VISIBLE TEXT ---
+Welcome to your online consultation
+
+In order for our clinicians to assess your suitability for treatment, you will be asked to complete a short medical questionnaire at the next step.
+
+Register as a new patient
+Continue as a new patient
+Returning patient
+Email 
+Password 
+Forgot your password?
+Sign in
+
+--- CONTROLS ---
+  button (8): Reject unrequired cookies  ·  Allow all cookies  ·  Search  ·  Account  ·  Close ×  ·  Sign in  ·  Close  ·  Continue with UK service
+  input:search (1): Search condition or treatment
+  input:text (1): Email
+  input:password (1): Password
+
+--- LINKS ---
+  link (9): Select cookie preferences -> #  ·  Privacy Statement. -> https://onlinedoctor.lloydspharmacy.com/pages/cookies-notice  ·  Terms and conditions apply -> /pages/promotion-and-prize-draw-terms  ·  Go to LloydsOnlineDoctor homepage -> https://onlinedoctor.lloydspharmacy.com  ·  Basket -> https://onlinedoctor.lloydspharmacy.com/cart  ·  Log in or Register -> 
+https://core.onlinedoctor.lloydspharmacy.com/login  ·  Continue as a new patient -> /api/questionnaire/clinic/hair-loss?guest  ·  Forgot your password? -> /login/forgot?return_url=%2Floginprompt%2F0%3Freturn_url%3D%2Fapi%2Fquestionnaire%2Fclinic%2Fhair-loss&sku=0  ·  here -> https://onlinedoctor.lloydspharmacy.com/pages/delivery-and-collection

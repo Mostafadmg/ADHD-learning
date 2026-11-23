@@ -1,0 +1,22 @@
+STEP 04 click "1-3 years"
+URL: https://www.keeps.com/hair-assessment-quiz?step=6
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+Has anyone noticed or commented on your hair loss?
+
+This helps us understand progression - many men notice changes before others do.
+
+Yes
+
+No
+
+I'm not sure
+
+Keeps | Hair Loss Treatment for Men
+
+--- CONTROLS ---
+  button (4): Go back  ·  Yes  ·  No  ·  I'm not sure
+
+--- LINKS ---
+

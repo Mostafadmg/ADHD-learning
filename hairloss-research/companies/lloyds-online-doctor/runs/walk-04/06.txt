@@ -1,0 +1,12 @@
+STEP 06 click "Next"
+URL: https://core.onlinedoctor.lloydspharmacy.com/consultation/3756/guest
+TITLE: Online Doctor Consultation
+
+--- VISIBLE TEXT ---
+Exit consultation
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+  link (1): Exit consultation -> //core.onlinedoctor.lloydspharmacy.com

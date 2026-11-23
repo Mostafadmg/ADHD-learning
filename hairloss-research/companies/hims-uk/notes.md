@@ -1,6 +1,8 @@
 # Hims UK (and Hers UK): working notes, stage 1 (MAP)
 
 > **Stage 2 (EXPERIMENT) notes start at the heading 'Stage 2 (EXPERIMENT): working notes' further down.** Stage 1's notes are kept unchanged below; where stage 2 corrected them, see section S2.8.
+>
+> **Stage 3 (VERIFY) notes are at the end, under 'Stage 3 (VERIFY): reviewer's notes'.** `company.json` is now the final, independently checked file; the stage 2 file is kept as `company.stage2.json`.
 
 Checked on 23 November 2026. Written for the next investigator. Read `company.json` for the tidy result and
 `quiz-definition.json` for the full quiz as served.
@@ -290,3 +292,82 @@ Eight rules were first read in the served definition or code and then seen happe
 `company.json` under `codeRulesConfirmedLive`: one path only; six answers played back; fixed 'Great news' text; stored
 values; 'All of the above' stands alone; goals question required; auto-advance and submit with no result; no anonymous
 quiz for Hers.
+
+---
+
+# Stage 3 (VERIFY): reviewer's notes
+
+Done on 23 November 2026 by a reviewer who did not do stages 1 and 2. `company.json` is the final file. The file stage 2
+left is kept as `company.stage2.json`.
+
+## S3.1 The short version
+
+- **The observed part holds up.** Both baselines were replayed from fresh browsers and ended exactly as recorded (men:
+  21 quiz screens, then the email wall; women: the name screen). Six one-change runs were repeated with the same result.
+  All 43 stage 2 experiments were checked against their run folders: no mismatch.
+- **New behaviour tested** (stage 2 had listed it as untested): going back and changing an answer, leaving and returning
+  part-way, 'Delete my answers', contradictory answers, every warning-sign answer together, a product code followed to the
+  wall, more multi-select patterns. None of it moves the engine. New rules R39 to R42.
+- **Nothing behind the wall was seen**, as before. The reviewer re-read the code and the leaflet lines behind every
+  after-the-wall rule. The quotes are right; several labels were too strong and were lowered (section S3.4).
+- **Status: partial.** Trustworthy as labelled; the engine that picks products is still unseen.
+
+## S3.2 Reviewer runs (all in runs/verify-*)
+
+| Run | What | Result |
+|---|---|---|
+| verify-baseline-men, verify-00-baseline-full | baseline, twice | same 24 screens as stages 1 and 2 |
+| verify-baseline-women, verify-17-hers-anon-route | Hers entry; anonymous-quiz address on the Hers site | name wall both times |
+| verify-01 to verify-06 | six one-change repeats | identical apart from one summary line |
+| verify-07, -13, -14 | multi-select patterns | 'All of the above' stands alone; untick disables Continue; four ticks sent as four values |
+| verify-08, -09 | skip the quiz; return after finishing | same email screen |
+| verify-10, -19 | contradictory answers; all eight warning signs | no check, no warning, no stop |
+| verify-11, -15 | back arrow | changing an answer works; on question 1 it leaves the quiz |
+| verify-12, -18 | 'Delete my answers' | confirmation box; on confirming, answers deleted on the server and quiz restarts. Unconfirmed: the quiz resumes where he left off |
+| verify-16 | phone layout with one change | same quiz |
+| verify-20 | /c/hl?gst=s2hF6Mdn to the wall | same quiz; the code stays in the sign-up address, changes nothing on screen |
+| verify-21 | 'Important Safety Information' on a product page | opens the leaflet panel (see 01.jpg; the text capture misses it) |
+| verify-22 | back arrow on the sign-up screen | goes to the Hims home page, not the quiz; no 'Your answers' menu there (the run ends with a 'failed step' on purpose) |
+| verify-pages, verify-pages-html | 16 public pages; one page source | product names, forms, 'from' prices and the embedded price table match |
+
+How to repeat one: `bash scripts/verify_batch.sh verify-03-all-over` (delete or rename the run folder first), then
+`python3 -I scripts/verify_compare.py runs/verify-00-baseline-full runs/verify-03-all-over`.
+`scripts/verify_make.py` writes most of the action files; the later ones (verify-18 to verify-22) were written by hand
+into `experiments/`.
+
+## S3.3 Things a stranger should know
+
+- `scripts/verify_compare.py` is the reviewer's own comparison (screens, posted answers, server next step). It was written
+  without looking at `scripts/compare_runs.py`, and the two agree.
+- The walker's text capture does **not** include the 'Important Safety Information' panel. Look at the picture.
+- `page.innerText` of the www product pages misses the product list lower down the page (hidden carousel). The 'From £…'
+  lines are in the page source: `runs/verify-pages-html/serum-shopping.txt`.
+- Three safety-information addresses (2-in-1 spray, both chews) now redirect to `/hair-loss`. Their text is still in the
+  product data embedded in every www page (`HIMS_TANSTACK_STORE`), and 21 quoted lines were found there again on the day.
+- One feature-flag setting changed for every visitor at about 22:00 UTC (`cfg_supported_triage_event_types`: hair gained
+  'REACTIVATION_REVIEW_CONSULTATION'). The platform was still being changed on the day of the check, so re-check before
+  relying on any detail.
+- An earlier reviewer session was cut off part-way through verify-13; its half-finished folder is kept as
+  `runs/_interrupted-verify-13-multi-edge` and the run was repeated.
+
+## S3.4 Label changes made by the reviewer
+
+- R11, R15, R37: 'docs' → 'inferred' (leaflets say 'talk to your doctor'; the outcome is a prediction).
+- R12: 'docs' → 'inferred', medium → low, text rewritten (the help page gives advice; it does not describe a stop).
+- R9, R10, R14, R17: medium → low. R9, R10, R13, R14, R34, R35 now say that a leaflet's 'do not use' line is not an
+  observed engine action.
+- R29 softened; R31 and R26 corrected; details added to R6, R8, R18.
+- Products: a 'verified' note and a 'priceEvidence' label on each. Six Hims products have no price on any public page.
+
+## S3.5 How the file was changed
+
+`python3 -I scripts/stage3_verify.py` applies `scripts/stage3_text.py` to `company.json`. It is safe to run twice. If
+`scripts/stage2_update.py` is ever run again, run `stage3_verify.py` afterwards. Then:
+`node ../../tools/validate.js hims-uk --stage final`.
+
+## S3.6 Still worth doing, if the rules ever allow it
+
+1. Read the archived old consultation (10 June 2026 copy of `/c/hl`): unreachable from this machine.
+2. Watch the checkout prices on the new platform (needs an account, so not allowed here).
+3. Re-run the baseline after the platform move is finished: flags and wording were changing on the day.
+

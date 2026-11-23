@@ -1,0 +1,89 @@
+REQUESTED: https://www.forhims.co.uk/how-it-works
+FINAL URL: https://www.forhims.co.uk/how-it-works
+HTTP: 200
+TITLE: How Hims Works | hims
+ERROR: 
+
+--- TEXT ---
+About cookies on our site
+
+We use cookies and similar technologies to run and secure our services, understand how they are used, and, with your permission, to personalise content and show you relevant ads. Some data is shared with third parties for these purposes. For more information, please read our Privacy Policy.
+
+Accept all
+Customise
+
+We're moving to a new platform. Your account, treatment, and prescriptions stay the same. Click here for details.
+
+Weight
+Hair
+Sex
+Learn
+Treatments
+Messaging
+Profile
+LOGIN
+Through Hims, the journey to better health is powered by transformative technology and personalised care.
+Simple online
+consultations
+
+Answer a few simple questions about yourself
+and your wellness goals.
+
+Get quick access to a licensed provider—no
+waiting weeks for an appointment.
+
+Rest easy knowing your personal info stays
+encrypted and confidential.
+
+Get Started
+Gold standard treatments & products
+
+Award-winning products loved by thousands of
+customers.
+
+Clinically-proven treatments for everything from hair loss to sexual health.
+
+Medications filled at a licensed pharmacy, and
+shipped to you directly.
+
+Get Started
+
+--- LINKS ---
+Privacy Policy -> https://www.forhims.co.uk/privacy-policy
+We're moving to a new platform. Your account, treatment, and prescriptions stay  -> /migration-privacy
+Link to homepage -> /
+Weight -> /weight-loss
+Hair -> /hair-loss
+ -> /erectile-dysfunction
+ -> /premature-ejaculation
+ -> /blog
+ -> /conditions
+Treatments -> /customer/treatments
+Messaging -> /customer/support
+Profile -> /customer/profile
+Get Started -> /c
+ -> /c
+ -> /weight-loss
+ -> /hair-loss
+ -> /erectile-dysfunction/sildenafil
+ -> /erectile-dysfunction/tadalafil
+ -> /erectile-dysfunction/viagra-connect
+ -> /hair-loss/finasteride
+ -> /hair-loss/minoxidil
+ -> /premature-ejaculation/dapoxetine
+ -> /about
+ -> /how-it-works
+ -> /purpose
+ -> /hims-reviews
+ -> https://investors.hims.com
+ -> https://www.hims.com/careers-professionals
+ -> https://ukhims.zendesk.com/hc/en-gb
+ -> https://ukhims.zendesk.com/hc/en-gb/articles/63706980826521-How-do-I-contact-Hims-UK
+ -> mailto:press@forhims.co.uk
+ -> /terms-and-conditions
+ -> /privacy-policy
+ -> /pharmacy-terms
+ -> https://www.forhims.co.uk/sitemap.html
+ -> /complaints
+ -> https://www.legitscript.com/websites/?checker_keywords=forhims.co.uk
+ -> https://www.cqc.org.uk/location/1-6683249283

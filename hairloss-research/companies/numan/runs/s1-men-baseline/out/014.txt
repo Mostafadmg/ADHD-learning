@@ -1,0 +1,50 @@
+COMMAND 014 {"steps":[{"do":"click","text":"Skip","settle":3500},{"do":"snap","settle":800}]}
+URL: https://www.numan.com/subscribe/hair-loss/5d3494f9-26f6-4c72-a833-e88e646ac7a1/product-selection
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+Back
+Help
+Please select your treatment
+
+Our clinicians will ensure you’re prescribed the most appropriate treatment.
+
+Most effective
+
+See results in 180 days
+
+or your money back¹
+
+Hair Kit - Medicated Spray, Finasteride & Supplement
+Medicated Spray
+A sprayable minoxidil solution that not only helps to slow down hair loss, but also activates new hair growth.
+Finasteride
+A daily pill that helps to reset a receding hairline by promoting hair growth.
+Hair Growth Support supplement
+Contains vitamins A, C, E, and biotin. These help to maintain the health of each follicle for thicker, fuller hair.
+Learn more 
+Price
+£26.67
+Save 33%
+Select treatment
+
+¹ Claim a full refund between 180-210 days from order approval if treatment is not effective at stabilising or reversing hair loss. First time users only. Full Ts&Cs.
+
+² 94% men who used finasteride and 5% minoxidil combined showed an improvement in hair loss.
+
+Prefer a different treatment?
+
+See all treatments
+
+--- CONTROLS ---
+  button (3):
+    - Help
+    - Select treatment
+    - See all treatments
+
+--- LINKS ---
+  link (4):
+    - Back -> #
+    - Visit the main page -> /
+    - Learn more -> #
+    - Full Ts&Cs. -> /legal/terms-of-sale#termsMoneyBackGuarantee

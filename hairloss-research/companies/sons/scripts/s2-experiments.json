@@ -1,0 +1,356 @@
+[
+ {
+  "id": "exp-01",
+  "changed": "men-q01 existing customer: No → Yes",
+  "patch": {
+   "existing": "Yes"
+  },
+  "neutral": ""
+ },
+ {
+  "id": "exp-02",
+  "changed": "men-q02 gender at birth: Male → Female",
+  "patch": {
+   "gender": "Female"
+  },
+  "neutral": ""
+ },
+ {
+  "id": "exp-03",
+  "changed": "men-q03 declaration: ticked → left unticked",
+  "patch": {
+   "accept": false
+  },
+  "neutral": ""
+ },
+ {
+  "id": "exp-04",
+  "changed": "men-q04 picture: Temples/Crown → Temples only (receding at the front)",
+  "patch": {
+   "picture": "Temples only (receding at the front)"
+  },
+  "neutral": ""
+ },
+ {
+  "id": "exp-05",
+  "changed": "men-q04 picture: Temples/Crown → Random patches",
+  "patch": {
+   "picture": "Random patches"
+  },
+  "neutral": ""
+ },
+ {
+  "id": "exp-06",
+  "changed": "men-q04 picture: Temples/Crown → Completely bald",
+  "patch": {
+   "picture": "Completely bald"
+  },
+  "neutral": ""
+ },
+ {
+  "id": "exp-07",
+  "changed": "men-q05 onset: Gradually → Suddenly",
+  "patch": {
+   "onset": "Suddenly (it fell out over a matter of days or a few weeks)"
+  },
+  "neutral": "The three follow-ups that opened were all answered No."
+ },
+ {
+  "id": "exp-08",
+  "changed": "men-q06 body hair loss: No → Yes (on top of Suddenly)",
+  "patch": {
+   "onset": "Suddenly (it fell out over a matter of days or a few weeks)",
+   "body": "Yes"
+  },
+  "neutral": "Compared with exp-07, not with the baseline. Other follow-ups No."
+ },
+ {
+  "id": "exp-09",
+  "changed": "men-q07 new medicines recently: No → Yes (on top of Suddenly)",
+  "patch": {
+   "onset": "Suddenly (it fell out over a matter of days or a few weeks)",
+   "newmeds": "Yes"
+  },
+  "neutral": "Compared with exp-07. Other follow-ups No."
+ },
+ {
+  "id": "exp-10",
+  "changed": "men-q08 other physical symptoms: No → Yes (on top of Suddenly)",
+  "patch": {
+   "onset": "Suddenly (it fell out over a matter of days or a few weeks)",
+   "symptoms": "Yes"
+  },
+  "neutral": "Compared with exp-07. Other follow-ups No."
+ },
+ {
+  "id": "exp-11",
+  "changed": "men-q09 mood or antidepressants: No → Yes",
+  "patch": {
+   "mood": "Yes"
+  },
+  "neutral": "Text box given the word \"test\"; both two-week questions answered \"Not at all\"."
+ },
+ {
+  "id": "exp-12",
+  "changed": "men-q11 little interest or pleasure: Not at all → Nearly every day (on top of mood Yes)",
+  "patch": {
+   "mood": "Yes",
+   "phq1": "Nearly every day"
+  },
+  "neutral": "Compared with exp-11."
+ },
+ {
+  "id": "exp-13",
+  "changed": "men-q12 down, depressed or hopeless: Not at all → Nearly every day (on top of mood Yes)",
+  "patch": {
+   "mood": "Yes",
+   "phq2": "Nearly every day"
+  },
+  "neutral": "Compared with exp-11."
+ },
+ {
+  "id": "exp-14",
+  "changed": "men-q13 past medicines: None → Finasteride or Propecia",
+  "patch": {
+   "meds": [
+    "Finasteride or Propecia"
+   ]
+  },
+  "neutral": "Side-effect question that opened answered No."
+ },
+ {
+  "id": "exp-15",
+  "changed": "men-q15 finasteride side effects: No → Yes (on top of exp-14)",
+  "patch": {
+   "meds": [
+    "Finasteride or Propecia"
+   ],
+   "finSE": "Yes"
+  },
+  "neutral": "Compared with exp-14. Optional text box given the word \"test\"."
+ },
+ {
+  "id": "exp-16",
+  "changed": "men-q13 past medicines: None → Minoxidil or Regaine",
+  "patch": {
+   "meds": [
+    "Minoxidil or Regaine"
+   ]
+  },
+  "neutral": "Side-effect question that opened answered No."
+ },
+ {
+  "id": "exp-17",
+  "changed": "men-q17 minoxidil side effects: No → Yes (on top of exp-16)",
+  "patch": {
+   "meds": [
+    "Minoxidil or Regaine"
+   ],
+   "minSE": "Yes"
+  },
+  "neutral": "Compared with exp-16. Optional text box given the word \"test\"."
+ },
+ {
+  "id": "exp-18",
+  "changed": "men-q13 past medicines: None → Topical Finasteride Minoxidil Combination",
+  "patch": {
+   "meds": [
+    "Topical Finasteride Minoxidil Combination"
+   ]
+  },
+  "neutral": "Side-effect question that opened answered No."
+ },
+ {
+  "id": "exp-19",
+  "changed": "men-q19 combination side effects: No → Yes (on top of exp-18)",
+  "patch": {
+   "meds": [
+    "Topical Finasteride Minoxidil Combination"
+   ],
+   "comboSE": "Yes"
+  },
+  "neutral": "Compared with exp-18. Optional text box given the word \"test\"."
+ },
+ {
+  "id": "exp-20",
+  "changed": "men-q14 format preference: I don’t mind → Topical sprays",
+  "patch": {
+   "pref": "Topical sprays - (apply to scalp)"
+  },
+  "neutral": ""
+ },
+ {
+  "id": "exp-21",
+  "changed": "men-q14 format preference: I don’t mind → Oral capsule",
+  "patch": {
+   "pref": "Oral capsule - (take once a day)"
+  },
+  "neutral": ""
+ },
+ {
+  "id": "exp-22",
+  "changed": "men-q21 conditions: None → High Blood Pressure",
+  "patch": {
+   "conditions": [
+    "High Blood Pressure"
+   ]
+  },
+  "neutral": "Text box that opened given the word \"test\"."
+ },
+ {
+  "id": "exp-23",
+  "changed": "men-q21 conditions: None → Cardiovascular Disease (incl. Heart Attack, Rhythm, Valve Disorder or Stroke)",
+  "patch": {
+   "conditions": [
+    "Cardiovascular Disease (incl. Heart Attack, Rhythm, Valve Disorder or Stroke)"
+   ]
+  },
+  "neutral": "Text box that opened given the word \"test\"."
+ },
+ {
+  "id": "exp-24",
+  "changed": "men-q21 conditions: None → Severe Kidney or Liver Disease",
+  "patch": {
+   "conditions": [
+    "Severe Kidney or Liver Disease"
+   ]
+  },
+  "neutral": "Text box that opened given the word \"test\"."
+ },
+ {
+  "id": "exp-25",
+  "changed": "men-q21 conditions: None → Prostate Disease, Male Breast Cancer or Testicular Cancer",
+  "patch": {
+   "conditions": [
+    "Prostate Disease, Male Breast Cancer or Testicular Cancer"
+   ]
+  },
+  "neutral": "Text box that opened given the word \"test\"."
+ },
+ {
+  "id": "exp-26",
+  "changed": "men-q21 conditions: None → Rheumatoid Arthritis, Systemic Lupus or on Methotrexate",
+  "patch": {
+   "conditions": [
+    "Rheumatoid Arthritis, Systemic Lupus or on Methotrexate"
+   ]
+  },
+  "neutral": "Text box that opened given the word \"test\"."
+ },
+ {
+  "id": "exp-27",
+  "changed": "men-q21 conditions: None → Scalp Disorders (including Scalp Psoriasis, Eczema, Dermatitis or Infection)",
+  "patch": {
+   "conditions": [
+    "Scalp Disorders (including Scalp Psoriasis, Eczema, Dermatitis or Infection)"
+   ]
+  },
+  "neutral": "Text box \"test\"; the three scalp tick-box screens answered None of the above / I haven’t tried anything yet / None of the above."
+ },
+ {
+  "id": "exp-28",
+  "changed": "men-q21 conditions: None → Phaeochromocytoma",
+  "patch": {
+   "conditions": [
+    "Phaeochromocytoma"
+   ]
+  },
+  "neutral": "Text box that opened given the word \"test\"."
+ },
+ {
+  "id": "exp-29",
+  "changed": "men-q21 conditions: None → Diagnosed Lactose Allergy",
+  "patch": {
+   "conditions": [
+    "Diagnosed Lactose Allergy"
+   ]
+  },
+  "neutral": "Text box that opened given the word \"test\"."
+ },
+ {
+  "id": "exp-30",
+  "changed": "men-q21 conditions: None → Sexual Dysfunction",
+  "patch": {
+   "conditions": [
+    "Sexual Dysfunction"
+   ]
+  },
+  "neutral": "Text box that opened given the word \"test\"."
+ },
+ {
+  "id": "exp-31",
+  "changed": "men-q30 scalp red flags: None of the above → Open sores, broken skin or infection on the scalp (on top of Scalp Disorders)",
+  "patch": {
+   "conditions": [
+    "Scalp Disorders (including Scalp Psoriasis, Eczema, Dermatitis or Infection)"
+   ],
+   "scalp3": [
+    "Open sores, broken skin or infection on the scalp"
+   ]
+  },
+  "neutral": "Compared with exp-27."
+ },
+ {
+  "id": "exp-32",
+  "changed": "men-q30 scalp red flags: None of the above → Severe scalp pain, oozing or signs of infection (on top of Scalp Disorders)",
+  "patch": {
+   "conditions": [
+    "Scalp Disorders (including Scalp Psoriasis, Eczema, Dermatitis or Infection)"
+   ],
+   "scalp3": [
+    "Severe scalp pain, oozing or signs of infection"
+   ]
+  },
+  "neutral": "Compared with exp-27."
+ },
+ {
+  "id": "exp-33",
+  "changed": "men-q28 scalp symptoms: None of the above → Previously diagnosed with seborrheic dermatitis (on top of Scalp Disorders)",
+  "patch": {
+   "conditions": [
+    "Scalp Disorders (including Scalp Psoriasis, Eczema, Dermatitis or Infection)"
+   ],
+   "scalp1": [
+    "Previously diagnosed with seborrheic dermatitis"
+   ]
+  },
+  "neutral": "Compared with exp-27."
+ },
+ {
+  "id": "exp-34",
+  "changed": "men-q29 scalp treatments tried: I haven’t tried anything yet → Prescription scalp treatments (on top of Scalp Disorders)",
+  "patch": {
+   "conditions": [
+    "Scalp Disorders (including Scalp Psoriasis, Eczema, Dermatitis or Infection)"
+   ],
+   "scalp2": [
+    "Prescription scalp treatments"
+   ]
+  },
+  "neutral": "Compared with exp-27."
+ },
+ {
+  "id": "exp-35",
+  "changed": "men-q37 finasteride statement tick: ticked → left unticked",
+  "patch": {
+   "finAgree": false
+  },
+  "neutral": ""
+ },
+ {
+  "id": "exp-36",
+  "changed": "men-q38 NHS Summary Care Record consent: not given → I agree",
+  "patch": {
+   "nhs": true
+  },
+  "neutral": ""
+ },
+ {
+  "id": "exp-37",
+  "changed": "men-q39 GP sharing consent: not given → I agree",
+  "patch": {
+   "gp": true
+  },
+  "neutral": ""
+ }
+]

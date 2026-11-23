@@ -1,0 +1,17 @@
+{
+ "start": "https://www.forhims.co.uk/hair-loss/all-in-one-topical-hair-loss-solution-shopping",
+ "steps": [
+  {"do": "click", "text": "Important Safety Information", "settle": 3000},
+  {"do": "wait", "ms": 1500},
+  {"do": "goto", "url": "https://www.forhims.co.uk/safety-information/finasteride"},
+  {"do": "wait", "ms": 2500},
+  {"do": "goto", "url": "https://www.forhims.co.uk/safety-information/finasteride-and-minoxidil"},
+  {"do": "wait", "ms": 2500}
+ ],
+ "_about": {
+  "experiment": "verify-21-safety-modal",
+  "stage": "verify",
+  "changed": "nothing answered: the 'Important Safety Information' link on the serum shopping page is opened, then two safety-information pages",
+  "why": "Checks that the leaflet wording behind the 'docs' rules is really shown to the public (the compounded products' safety-information addresses now redirect to /hair-loss). Public pages only; nothing typed."
+ }
+}

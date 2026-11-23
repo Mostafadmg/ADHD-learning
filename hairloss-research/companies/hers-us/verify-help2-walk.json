@@ -1,0 +1,17 @@
+{
+  "_comment": "Stage 3 verify, read-only: look in the shared help centre for company statements on ID, age, availability, spironolactone and the hair quiz. No clicks, no forms.",
+  "start": "https://support.hims.com/hc/en-us/articles/9586237484571-Where-is-Hims-Hers-available",
+  "locale": "en-US",
+  "timezone": "America/New_York",
+  "steps": [
+    {"do": "wait", "ms": 2000},
+    {"do": "goto", "url": "https://support.hims.com/hc/en-us/search?query=photo+ID+verify+identity"},
+    {"do": "wait", "ms": 2000},
+    {"do": "goto", "url": "https://support.hims.com/hc/en-us/search?query=18+years+old+age"},
+    {"do": "wait", "ms": 2000},
+    {"do": "goto", "url": "https://support.hims.com/hc/en-us/search?query=spironolactone"},
+    {"do": "wait", "ms": 2000},
+    {"do": "goto", "url": "https://support.hims.com/hc/en-us/search?query=finasteride+women+menopause"},
+    {"do": "wait", "ms": 2000}
+  ]
+}

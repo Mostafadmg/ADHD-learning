@@ -1,0 +1,27 @@
+STEP 13 click "Continue"
+URL: https://start.struthealth.com/flow/6aa3d578f415d1603a6e0c85
+TITLE: Minoxidil Prod
+
+--- VISIBLE TEXT ---
+30%
+
+Do you have any issues with sexual dysfunction currently?
+
+Yes
+No
+Continue
+1
+1.25 mg · 90 Day Supply
+$55.00
+1.25 mg · 90 Day Supply
+$55.00
+Dose: 90 Day Supply - 2.5 mg (1.25mg)
+Supply: 90 Day Supply
+Total
+$55.00
+
+--- CONTROLS ---
+  button (5): Go back  ·  Yes [false]  ·  No [false]  ·  Continue  ·  1 1.25 mg · 90 Day Supply $55.00
+
+--- LINKS ---
+

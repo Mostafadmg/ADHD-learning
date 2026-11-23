@@ -1,0 +1,68 @@
+SCHEMA name='Roman Revive Shampoo OTC' code=restr-sha-onb-intent version=19 id=7514 meta={"theme": "hipp-1.5", "sideEffects": [{"type": "SET_DELIVERY_SCHEDULE", "value": "03_quarterly"}, {"type": "LOAD_PRODUCTS", "include_product_codes": ["roman-revive-conditioner-24", "roman-hair-support-supplement"]}, {"type": "ADD_PRODUCTS", "products": [{"quantity": 1, "filters": {"meta": {"code": "ReviveShampooBottle24"}}}]}]}
+
+================ GROUP START pos=10 n=3
+
+### qid 1 [control] next=5 mtype=HIShipmentFrequency
+TEXT: 'Roman Revive Shampoo'
+  m.do_not_count_as_question: true
+  m.HiShipmentFrequency: {"button": "Continue", "description": "Enriched with saw palmetto, pumpkin seed oil, salicylic acid, and caffeine to cleanse the scalp for thicker-looking hair-8 oz, peppermint scented.", "hasDeliveryChoice": false, "headline": "Revive Shampoo", "title": "Cleanse & Thicken", "image": {"src": "https://imgctf--assets.ro.co/jj2wf7627pjc/1mOIwLGfxcKtVVKpgVwZRP/54340fd57f0b83966e5354894951fa25/revive-shampoo-product.png"}, "infoList": [{"text": "Free shipping", "icon": "FreeShipping", "image": {"src": "https://assets.ro.co/ov/truck-ef27239d.png", "width": 52}}, {"text": "Modify or cancel any time", "icon": "Renewal", "image": {"src": "https://assets.ro.co/ov/auto-refill-6dd7f5a0.png", "width": 24…[+377]
+  m.breadcrumbs: [{"isActive": true, "key": "your-plan", "label": "Your Plan"}, {"key": "your-account", "label": "Your Account"}, {"key": "checkout", "label": "Checkout"}]
+
+### qid 10 [control] next=20 mtype=HISignUp
+TEXT: 'Your Account'
+  m.extraText: Ro takes your security very seriously. All your confidential data is encrypted and handled securely.
+  m.should_hide_chemical_compound: true
+  m.HiSignUp: {"button": "Continue to check out", "infoList": [{"text": "Free shipping", "icon": "FreeShipping", "image": {"src": "https://assets.ro.co/ov/truck-ef27239d.png", "width": 52}}, {"text": "Modify or cancel any time", "icon": "Renewal", "image": {"src": "https://assets.ro.co/ov/auto-refill-6dd7f5a0.png", "width": 24}}, {"text": "Backed by U.S.-licensed physicians and medical advisors", "icon": "HealthcareProvider", "image": {"src": "https://assets.ro.co/ov/physicians-ebbbbd47.png", "width": 49}}]}
+  m.breadcrumbs: [{"key": "your-plan", "label": "Your Plan"}, {"isActive": true, "key": "your-account", "label": "Your Account"}, {"key": "checkout", "label": "Checkout"}]
+  m.planSummary: {"pricingTableType": "CartSummary", "cartSummaryProps": {"hasEditMedicationButton": false, "hideHeader": true, "mode": "otc"}}
+
+### qid 100 [control] next=-1 mtype=CreateTreatmentRequests
+TEXT: 'Thank you'
+  m.do_not_count_as_question: true
+  m.final_step: true
+  m.hold_next_question: true
+  m.final: {"extraText": "Your order is complete", "nextSteps": {"heading": "What’s next?", "list": {"shipment": {"text": "We will process your order and will deliver it straight to your door with free shipping. Manage your order in your account.", "heading": "You're all set—your shipment will arrive in 3-5 days!", "thumb": {"height": 50, "src": "https://assets.ro.co/ov/shipping-c7583e96.png", "width": 95}}}}, "support": {"buttonText": "Go to my account", "heading": "Continued support from Ro", "list": {"changeFrequency": {"text": "Want to change how often you get your shipment? You can schedule your shipment to come sooner, delay it, or switch to on-demand at any time through your account.", "thumb": …[+365]
+  m.sections: [{"component": "Checkout/ThankYouModal", "props": {}}]
+
+================ GROUP SIGN_IN pos=130 n=1
+
+### qid 21 [choice] next=30 mtype=SignInDynamic
+TEXT: 'Log in'
+  m.doNotCountAsQuestion: true
+  m.extraText: Looks like you already have an account with us.
+  m.formHeader: Please log in to your Ro platform account to continue.
+  m.holdNextQuestion: true
+  m.tooltip: Ro is a telehealth platform.
+  m.breadcrumbs: [{"key": "your-plan", "label": "Your Plan"}, {"isActive": true, "key": "your-account", "label": "Your Account"}, {"key": "checkout", "label": "Checkout"}]
+  - [successful-sign-in] 'Successful sign-in' -> 30 meta={"type": "GO_FURTHER"}
+
+================ GROUP CHECKOUT pos=160 n=1
+
+### qid 30 [choice] next=100 mtype=HICheckout
+TEXT: 'Confirm Payment'
+  m.do_not_count_as_question: true
+  m.hold_next_question: true
+  m.redirectToAccountOnFinish: false
+  m.skipTreatmentRequestCreation: true
+  m.breadcrumbs: [{"key": "your-plan", "label": "Your Plan"}, {"key": "your-account", "label": "Your Account"}, {"isActive": true, "key": "checkout", "label": "Checkout"}]
+  m.planSummary: {"pricingTableType": "CartSummary", "title": "Order summary", "cartSummaryProps": {"hasEditMedicationButton": false, "hideHeader": true, "mode": "otc", "addons": [{"code": "ReviveConditionerBottle24"}]}}
+  m.sections: [{"component": "Checkout/Form", "sections": [{"component": "Checkout/ShippingAddressForm", "props": {"title": "Shipping Address"}}, {"component": "Checkout/Addons", "props": {"hasInfoModal": true, "thumbnailSize": "large", "title": "Popular add-ons", "addons": [{"code": "ReviveConditionerBottle24", "hasButton": true, "heading": "Restore Conditioner", "information": "Roman Restore Conditioner Formulated with targeted plant proteins, coconut oil, and shea butter to fortify and moisturize for thicker-looking hair-8oz, peppermint scented.", "schemaUri": "/roman/conditioner/?utm_term=cross-poll-ov", "learnMore": {"content": "Formulated with targeted plant proteins, coconut oil, and shea butter to…[+685]
+  - [finish] 'Finish' -> 100 meta={"type": "FINISH"}
+
+================ GROUP FORK_0 pos=499 n=1
+
+### qid 5 [fork] next=None mtype=SignInDynamic
+TEXT: 'FORK'
+  m.doNotCountAsQuestion: true
+  m.holdNextQuestion: true
+FORKING_RULES: [["30", "memberIsLoggedIn == true"], ["10", "1 == 1"]]
+
+================ GROUP FORK_1 pos=500 n=1
+
+### qid 20 [fork] next=None mtype=SignInDynamic
+TEXT: 'FORK - Continue or Sign In'
+  m.doNotCountAsQuestion: true
+  m.extraText: Looks like you have an existing account on the Ro platform
+  m.formHeader: Log in to your account to continue
+  m.holdNextQuestion: true
+FORKING_RULES: [["21", "memberExists == 1"], ["30", "memberExists == 0"]]

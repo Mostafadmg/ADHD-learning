@@ -1,0 +1,30 @@
+{
+ "_changed": "gel-picture: 'Moderate' → 'Not seeing a match?' → 'Mostly Scalp'",
+ "start": "https://www.keeps.com/hair-assessment-quiz-gel",
+ "locale": "en-US",
+ "timezone": "America/Chicago",
+ "steps": [
+  {
+   "do": "click",
+   "text": "Regrow lost hair - Regrow"
+  },
+  {
+   "do": "click",
+   "text": "Receding hairline or crown thinning",
+   "exact": false
+  },
+  {
+   "do": "click",
+   "text": "Not seeing a match?",
+   "exact": false
+  },
+  {
+   "do": "click",
+   "text": "Mostly Scalp"
+  },
+  {
+   "do": "wait",
+   "ms": 2000
+  }
+ ]
+}

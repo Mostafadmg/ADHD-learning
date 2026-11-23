@@ -1,0 +1,41 @@
+COMMAND 002 {"steps":[{"do":"goto","url":"https://www.numan.com/subscribe/supplements/hair-growth-support?pc=supp-organic-50off","settle":5000},{"do":"snap","settle":1500}]}
+URL: https://www.numan.com/subscribe/supplements/ec8aafe9-1dbb-4bea-8a62-825e99720fbc/shipping-frequency
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+Back
+Select your preferred shipping frequency
+Every month
+1 bottle
+£28.00 / mo
+Every 3 months
+3 bottles
+£28
+Save £8.33
+£19.67 / mo
+Every 6 months
+6 bottles
+£28
+Save £11.33
+£16.67 / mo
+Every 12 months
+12 bottles
+£28
+Save £15.33
+£12.67 / mo
+First order coupon
+- £14.00
+Total due today
+£14.00
+Next
+
+Billed monthly. Pause or cancel anytime.
+
+--- CONTROLS ---
+  button (1):
+    - Next
+
+--- LINKS ---
+  link (2):
+    - Back -> #
+    - Visit the main page -> /

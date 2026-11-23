@@ -1,0 +1,23 @@
+COMMAND 002 {"steps":[{"do":"click","text":"Reject All"},{"do":"snap"}]}
+URL: https://www.numan.com/subscribe/hair-loss/5d3494f9-26f6-4c72-a833-e88e646ac7a1/sq/what_is_your_age
+TITLE: Please tell us your age. | Numan
+
+--- VISIBLE TEXT ---
+0%
+Please tell us your age.
+65 or over
+18 - 65
+Under 18
+Back
+
+--- CONTROLS ---
+  radio (3):
+    - 65 or over (name: what_is_your_age)
+    - 18 - 65 (name: what_is_your_age)
+    - Under 18 (name: what_is_your_age)
+  button (1):
+    - Back
+
+--- LINKS ---
+  link (1):
+    - Visit the main page -> /

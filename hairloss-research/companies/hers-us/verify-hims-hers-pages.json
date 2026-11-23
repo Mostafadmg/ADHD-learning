@@ -1,0 +1,13 @@
+{
+  "_comment": "Stage 3 verify, read-only: does the sister site hims.com (which loads) serve any Hers hair pages? Three public page addresses that exist on forhers.com, tried once each on hims.com. No clicks, no forms.",
+  "start": "https://www.hims.com/hair-loss/spironolactone",
+  "locale": "en-US",
+  "timezone": "America/New_York",
+  "steps": [
+    {"do": "wait", "ms": 2500},
+    {"do": "goto", "url": "https://www.hims.com/treatment/hair-loss/spironolactone"},
+    {"do": "wait", "ms": 2500},
+    {"do": "goto", "url": "https://www.hims.com/hair-loss/oral-minoxidil"},
+    {"do": "wait", "ms": 2500}
+  ]
+}

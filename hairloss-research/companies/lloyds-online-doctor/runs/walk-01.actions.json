@@ -1,0 +1,5 @@
+{ "start": "https://core.onlinedoctor.lloydspharmacy.com/api/questionnaire/clinic/hair-loss", "steps": [
+ {"do":"click","text":"Continue with UK service"},
+ {"do":"click","text":"Continue as a new patient"},
+ {"do":"wait","ms":2500}
+] }

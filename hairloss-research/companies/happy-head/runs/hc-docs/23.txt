@@ -1,0 +1,43 @@
+STEP 23 goto "https://happyhead.zendesk.com/hc/en-us/articles/42296905667479-Does-Happy-Head-accept-outside-insurance-FSA-or-HSA"
+URL: https://happyhead.zendesk.com/hc/en-us/articles/42296905667479-Does-Happy-Head-accept-outside-insurance-FSA-or-HSA
+TITLE: Does Happy Head accept outside insurance, FSA, or HSA? – Happy Head
+
+--- VISIBLE TEXT ---
+Happy Head  Billing
+Articles in this section
+Does Happy Head accept outside insurance, FSA, or HSA?
+About Happy Head's pricing
+Subscription vs. One-Time Orders
+Do you offer discounts for first-time customers?
+What is your return policy?
+Does Happy Head accept outside insurance, FSA, or HSA?
+3 months ago Updated
+
+Happy Head does not accept outside insurance. Our treatments are categorized as cosmetic, and cosmetic treatments are generally not covered by insurance or HSA/FSA plans.
+
+Customers may try using an HSA or FSA card at checkout, but acceptance is not guaranteed and depends on the card provider.
+
+If a customer needs documentation for FSA or HSA reimbursement, they can request a receipt or invoice for their order or prescription from their assigned Happy Head dermatologist.
+
+We understand this may be disappointing and apologize for the inconvenience. If you have any additional questions, please reach out to our support team. We are happy to help!
+
+Have more questions? Submit a request
+Recently viewed articles
+How can I update my health information for my Annual Health Check?
+How can I make updates or customize my prescription medication?
+TopicalRx Copper Peptide Formula (GHK-Cu)
+Topical Rx Beard Formula: An In-Depth Guide
+TopicalRx Dandruff Solution: Clobetasol + Ketoconazole by Happy Head
+Related articles
+About Happy Head's pricing
+Subscription vs. One-Time Orders
+What is your return policy?
+Do you offer discounts for first-time customers?
+
+--- CONTROLS ---
+  button (2): Why Happy Head?  ·  Products
+  checkbox (1): (no label)
+  input:search (1): Search
+
+--- LINKS ---
+  link (50): MEN -> https://www.happyhead.com/home  ·  WOMEN -> https://www.happyhead.com/women  ·  LOGIN -> https://my.happyhead.com/my-account  ·  START NOW -> https://www.form.happyhead.com/get-started/?l=false&ph=true  ·  Men -> https://www.happyhead.com/home  ·  Women -> /women  ·  Happy Head -> /hc/en-us  ·  Billing -> /hc/en-us/sections/1500002710942-Billing  ·  Does Happy Head accept outside insurance, FSA, or HSA? -> /hc/en-us/articles/42296905667479-Does-Happy-Head-accept-outside-insurance-FSA-or-HSA  ·  About Happy Head's pricing -> /hc/en-us/articles/31042509646871-About-Happy-Head-s-pricing  ·  Subscription vs. One-Time Orders -> /hc/en-us/articles/17571301347607-Subscription-vs-One-Time-Orders  ·  Do you offer discounts for first-time customers? -> /hc/en-us/articles/16253925907863-Do-you-offer-discounts-for-first-time-customers  ·  What is your return policy? -> /hc/en-us/articles/4402314831383-What-is-your-return-policy  ·  Submit a request -> /hc/en-us/requests/new  ·  TopicalRx Copper Peptide Formula (GHK-Cu) -> /hc/en-us/articles/42614001770903-TopicalRx-Copper-Peptide-Formula-GHK-Cu  ·  Topical Rx Beard Formula: An In-Depth Guide -> /hc/en-us/articles/35817027675287-Topical-Rx-Beard-Formula-An-In-Depth-Guide  ·  About Happy Head's pricing -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBeswqU7HDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJeTCQR4Jjo  ·  Subscription vs. One-Time Orders -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBfRLCP7DzoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJeTCQR4Jjo  ·  What is your return policy? -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBdmaf4ABDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJeTCQR4Jjo  ·  Do you offer discounts for first-time customers? -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJfdemnIDjoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJeTCQR4Jjo  ·  Get Started -> https://www.happyhead.com/get-started  ·  Ultimate Growth Bundle -> https://www.happyhead.com/products/topical-solution-supercapsule-finasteride-minoxidil  ·  Custom TopicalRx Solution -> https://www.happyhead.com/products/topical-solution-dutasteride-minoxidil  ·  SuperCapsuleTM -> https://www.happyhead.com/products/supercapsule-finasteride-minoxidil-vitamin-d3  ·  TopicalRx SuperSolutionTM -> https://www.happyhead.com/products/topical-supersolution-finasteride-minoxidil-and-liposomal  ·  DutasterideRx -> https://www.happyhead.com/collections/dutasteride  ·  FinasterideRx -> https://www.happyhead.com/collections/finasteride  ·  MinoxidilRx -> https://www.happyhead.com/collections/minoxidil  ·  About Us -> https://www.happyhead.com/about-us  ·  Blog -> https://www.happyhead.com/hair-loss-blog  ·  How It Works -> https://www.happyhead.com/how-it-works  ·  Getting Started -> https://www.happyhead.com/getting-started  ·  FAQ -> https://www.happyhead.com/faq  ·  The Science -> https://www.happyhead.com/science  ·  Contact Us -> https://happyhead.zendesk.com/hc/en-us  ·  Refer-A-Friend -> https://www.happyhead.com/refer  ·  Stylist Program -> https://www.happyhead.com/stylist  ·  Influencer Program -> https://www.happyhead.com/ambassador  ·  Affiliate Program -> https://www.happyhead.com/affiliates  ·  CCPA: Do Not Sell My Information -> https://www.happyhead.com/legal/ccpa-do-not-sell-my-information  ·  Terms & Conditions -> https://www.happyhead.com/legal/terms-of-use  ·  Subscription Terms -> https://www.happyhead.com/legal/subscription-terms  ·  Privacy Policy -> https://www.happyhead.com/legal/privacy-policy  ·  Cookie Policy -> https://www.happyhead.com/legal/privacy-policy  ·  Acceptable Use Policy -> https://www.happyhead.com/legal/terms-of-use  ·  Telehealth Consent -> https://www.happyhead.com/legal/telehealth-consent  ·  Drug Safety Information & Consent -> https://www.happyhead.com/legal/drug-safety-information  ·  Refund & Return Policy -> https://www.happyhead.com/legal/terms-of-use  ·  Warning To Consumers -> https://www.happyhead.com/legal/drug-safety-information  ·  XML Sitemap -> https://www.happyhead.com/sitemap.xml

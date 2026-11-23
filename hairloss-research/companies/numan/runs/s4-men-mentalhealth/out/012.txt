@@ -1,0 +1,21 @@
+COMMAND 012 {"do":"snap"}
+URL: https://www.numan.com/subscribe/hair-loss/2a4aca7c-c774-4fc3-8901-0684d205d1ec/sq/mental_health_suicidal
+TITLE: Have you had any suicidal thoughts or feelings of self-harm in the past year? | Numan
+
+--- VISIBLE TEXT ---
+82%
+Have you had any suicidal thoughts or feelings of self-harm in the past year?
+Yes
+No
+Back
+
+--- CONTROLS ---
+  radio (2):
+    - Yes (name: mental_health_suicidal)
+    - No (name: mental_health_suicidal)
+  button (1):
+    - Back
+
+--- LINKS ---
+  link (1):
+    - Visit the main page -> /

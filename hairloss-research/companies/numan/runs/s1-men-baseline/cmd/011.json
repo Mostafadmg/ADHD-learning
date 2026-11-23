@@ -1,0 +1,1 @@
+{"steps":[{"do":"click","selector":"label:text-is(\"Effectiveness of the product\")","settle":500},{"do":"click","text":"Next","settle":2800},{"do":"snap","settle":600}]}

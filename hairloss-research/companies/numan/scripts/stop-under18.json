@@ -1,0 +1,10 @@
+{
+  "_about": "Shows the stop (reject) screen: age Under 18. Two clicks, no contact details.",
+  "start": "https://www.numan.com/subscribe/hair-loss?pc=hl-organic-50off",
+  "steps": [
+    {"do": "wait", "ms": 4000},
+    {"do": "click", "text": "Next", "settle": 3500},
+    {"do": "click", "selector": "label:text-is(\"Under 18\")", "settle": 3500},
+    {"do": "wait", "ms": 1500}
+  ]
+}

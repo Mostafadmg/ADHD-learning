@@ -1,0 +1,21 @@
+STEP 01 click "Continue"
+URL: https://start.struthealth.com/flow/6aa3d578f415d1603a6e0c85
+TITLE: Minoxidil Prod
+
+--- VISIBLE TEXT ---
+7%
+
+What is your age?
+
+Under 18
+18-30
+31-45
+46-60
+61+
+Continue
+
+--- CONTROLS ---
+  button (7): Go back  ·  Under 18 [false]  ·  18-30 [false]  ·  31-45 [false]  ·  46-60 [false]  ·  61+ [false]  ·  Continue
+
+--- LINKS ---
+

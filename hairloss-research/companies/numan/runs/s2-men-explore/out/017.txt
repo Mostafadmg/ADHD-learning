@@ -1,0 +1,21 @@
+COMMAND 017 {"steps":[{"do":"click","selector":"label:text-is(\"I understand and would like to be considered for finasteride containing preparations.\")","settle":2800},{"do":"snap","settle":600}]}
+URL: https://www.numan.com/subscribe/hair-loss/4b4e30d9-9042-49e8-a32b-7557d60d5aec/sq/clarify_uncontrolled_bp
+TITLE: Taking minoxidil alongside your regular blood pressure medication may cause your blood pressure to decrease further, potentially causing light-headedness, dizziness and fainting. | Numan
+
+--- VISIBLE TEXT ---
+55%
+Taking minoxidil alongside your regular blood pressure medication may cause your blood pressure to decrease further, potentially causing light-headedness, dizziness and fainting.
+I understand that minoxidil may lower my blood pressure and would like to be considered for minoxidil.
+I do not wish to be considered for minoxidil.
+Back
+
+--- CONTROLS ---
+  radio (2):
+    - I understand that minoxidil may lower my blood pressure and would like to be considered for minoxidil. (name: clarify_uncontrolled_bp)
+    - I do not wish to be considered for minoxidil. (name: clarify_uncontrolled_bp)
+  button (1):
+    - Back
+
+--- LINKS ---
+  link (1):
+    - Visit the main page -> /

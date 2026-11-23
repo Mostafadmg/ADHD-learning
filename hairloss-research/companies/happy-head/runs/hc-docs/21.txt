@@ -1,0 +1,53 @@
+STEP 21 goto "https://happyhead.zendesk.com/hc/en-us/articles/4402321956247-How-can-I-make-updates-or-customize-my-prescription-medication"
+URL: https://happyhead.zendesk.com/hc/en-us/articles/4402321956247-How-can-I-make-updates-or-customize-my-prescription-medication
+TITLE: How can I make updates or customize my prescription medication? – Happy Head
+
+--- VISIBLE TEXT ---
+Happy Head  Changing Account Info
+Articles in this section
+How can I update my health information for my Annual Health Check?
+How can I update my payment information?
+How do I change my billing or shipping address?
+How can I make updates or customize my prescription medication?
+How can I make updates or customize my prescription medication?
+7 months ago Updated
+
+Happy Head offers customization for many prescription formulas, including most topical treatments. If you are a new customer, you can request changes to your formula during the ordering process. To get started, select your desired product on the Happy Head products page or click Start Now. As part of checkout, you will complete a tele-health questionnaire that includes a dedicated field for customization requests. This is where you can ask to adjust the strength of active ingredients, request specific ingredients, or exclude ingredients due to sensitivities or allergies.
+
+ 
+
+After you place your order, your assigned board-certified dermatologist will review your medical history and any customization requests to determine the best formula for you. If you have additional questions or would like to discuss your preferences in more detail, you will also have the opportunity to communicate directly with your dermatologist during your consultation. Once your prescription is confirmed, the pharmacy will compound your customized formula and ship it directly to your door.
+
+ 
+
+If you choose a one-time order, please note that one-time orders for topical and oral prescriptions are not eligible for customization. In that case, you will need to choose from the standard formula options listed on the product page.
+
+ 
+
+If you are an existing customer and would like to request an update to your prescription, you can contact Happy Head through the Help Center. You may also send a private message to your Happy Head dermatologist through the patient portal to ask about adjustments to your formula.
+
+ 
+
+Please note that most topical ingredients are customizable, but some base formula options cannot be changed. The products that support customization are identified on the Happy Head products page.
+
+Have more questions? Submit a request
+Recently viewed articles
+TopicalRx Copper Peptide Formula (GHK-Cu)
+Topical Rx Beard Formula: An In-Depth Guide
+TopicalRx Dandruff Solution: Clobetasol + Ketoconazole by Happy Head
+What is TopicalRx SuperSolution™ ProBlend
+What is Topical Rx Advanced ProBlend?
+Related articles
+Which of your hair growth solutions are customizable?
+How can I cancel my subscription?
+How can I change my shipping frequency?
+How can I pause my subscription?
+What is the ordering process for Happy Head?
+
+--- CONTROLS ---
+  button (2): Why Happy Head?  ·  Products
+  checkbox (1): (no label)
+  input:search (1): Search
+
+--- LINKS ---
+  link (55): MEN -> https://www.happyhead.com/home  ·  WOMEN -> https://www.happyhead.com/women  ·  LOGIN -> https://my.happyhead.com/my-account  ·  START NOW -> https://www.form.happyhead.com/get-started/?l=false&ph=true  ·  Men -> https://www.happyhead.com/home  ·  Women -> /women  ·  Happy Head -> /hc/en-us  ·  Changing Account Info -> /hc/en-us/sections/1500002710982-Changing-Account-Info  ·  How can I update my payment information? -> /hc/en-us/articles/4402321978263-How-can-I-update-my-payment-information  ·  How do I change my billing or shipping address? -> /hc/en-us/articles/4402314805399-How-do-I-change-my-billing-or-shipping-address  ·  Happy Head products page -> https://www2.happyhead.com/products  ·  product page -> https://www.happyhead.com/products  ·  Help Center -> http://happyhead.com/help  ·  patient portal -> https://patient.mdintegrations.com/login  ·  Happy Head products page -> https://www.happyhead.com/products  ·  Submit a request -> /hc/en-us/requests/new  ·  TopicalRx Copper Peptide Formula (GHK-Cu) -> /hc/en-us/articles/42614001770903-TopicalRx-Copper-Peptide-Formula-GHK-Cu  ·  Topical Rx Beard Formula: An In-Depth Guide -> /hc/en-us/articles/35817027675287-Topical-Rx-Beard-Formula-An-In-Depth-Guide  ·  What is TopicalRx SuperSolution™ ProBlend -> /hc/en-us/articles/32104727861783-What-is-TopicalRx-SuperSolution-ProBlend  ·  What is Topical Rx Advanced ProBlend? -> /hc/en-us/articles/32006248028439-What-is-Topical-Rx-Advanced-ProBlend  ·  Which of your hair growth solutions are customizable? -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJeaqqAHEDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJcd1v4ABDo  ·  How can I cancel my subscription? -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJcA1%2F4ABDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJcd1v4AB  ·  How can I change my shipping frequency? -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBc0aP4ABDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJcd1v4ABDo  ·  How can I pause my subscription? -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBfY1f4ABDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJcd1v4ABDo  ·  What is the ordering process for Happy Head? -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBcV1f4ABDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJcd1v4ABDo  ·  Get Started -> https://www.happyhead.com/get-started  ·  Ultimate Growth Bundle -> https://www.happyhead.com/products/topical-solution-supercapsule-finasteride-minoxidil  ·  Custom TopicalRx Solution -> https://www.happyhead.com/products/topical-solution-dutasteride-minoxidil  ·  SuperCapsuleTM -> https://www.happyhead.com/products/supercapsule-finasteride-minoxidil-vitamin-d3  ·  TopicalRx SuperSolutionTM -> https://www.happyhead.com/products/topical-supersolution-finasteride-minoxidil-and-liposomal  ·  DutasterideRx -> https://www.happyhead.com/collections/dutasteride  ·  FinasterideRx -> https://www.happyhead.com/collections/finasteride  ·  MinoxidilRx -> https://www.happyhead.com/collections/minoxidil  ·  About Us -> https://www.happyhead.com/about-us  ·  Blog -> https://www.happyhead.com/hair-loss-blog  ·  How It Works -> https://www.happyhead.com/how-it-works  ·  Getting Started -> https://www.happyhead.com/getting-started  ·  FAQ -> https://www.happyhead.com/faq  ·  The Science -> https://www.happyhead.com/science  ·  Contact Us -> https://happyhead.zendesk.com/hc/en-us  ·  Refer-A-Friend -> https://www.happyhead.com/refer  ·  Stylist Program -> https://www.happyhead.com/stylist  ·  Influencer Program -> https://www.happyhead.com/ambassador  ·  Affiliate Program -> https://www.happyhead.com/affiliates  ·  CCPA: Do Not Sell My Information -> https://www.happyhead.com/legal/ccpa-do-not-sell-my-information  ·  Terms & Conditions -> https://www.happyhead.com/legal/terms-of-use  ·  Subscription Terms -> https://www.happyhead.com/legal/subscription-terms  ·  Privacy Policy -> https://www.happyhead.com/legal/privacy-policy  ·  Cookie Policy -> https://www.happyhead.com/legal/privacy-policy  ·  Acceptable Use Policy -> https://www.happyhead.com/legal/terms-of-use  ·  Telehealth Consent -> https://www.happyhead.com/legal/telehealth-consent  ·  Drug Safety Information & Consent -> https://www.happyhead.com/legal/drug-safety-information  ·  Refund & Return Policy -> https://www.happyhead.com/legal/terms-of-use  ·  Warning To Consumers -> https://www.happyhead.com/legal/drug-safety-information  ·  XML Sitemap -> https://www.happyhead.com/sitemap.xml

@@ -1,0 +1,1 @@
+{"steps":[{"do":"click","selector":"label:has-text(\"Billed six-monthly\")","settle":1500},{"do":"click","text":"Continue","settle":5000},{"do":"snap","settle":1500}]}

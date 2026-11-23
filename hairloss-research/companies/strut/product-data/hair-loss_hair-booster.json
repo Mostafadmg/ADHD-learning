@@ -1,0 +1,130 @@
+{
+ "heading": "What is Strut Hair Booster?",
+ "body": "Strut Hair Booster is a prescription topical formula combining latanoprost, melatonin, caffeine, and biotin in a gentle topical base, designed to support fuller-looking hair and can be combined with treatments like finasteride, dutasteride, or minoxidil.",
+ "activeIngredientsLabel": "",
+ "ingredients": [
+  {
+   "name": "Latanoprost 0.03%",
+   "body": "The main active ingredient, used to help support the hair growth phase and increase hair density.*"
+  },
+  {
+   "name": "Melatonin",
+   "body": "May increase hair density, prolong the hair growth phase, and reduce hair shedding."
+  },
+  {
+   "name": "Caffeine",
+   "body": "May support hair growth and help limit hair thinning.*"
+  },
+  {
+   "name": "Biotin",
+   "body": "An essential vitamin that supports production of keratin, the protein that makes up your hair, skin, and nails."
+  }
+ ],
+ "safety": [
+  {
+   "title": "",
+   "body": "Strut Hair Booster is a compounded topical formula for the scalp. Compounded medications are not FDA-approved and have not been evaluated by the FDA for safety, effectiveness, or quality."
+  },
+  {
+   "title": "Directions for Use",
+   "body": [
+    {
+     "kind": "ul",
+     "items": [
+      {
+       "lead": "Application:",
+       "text": "Apply once daily at night to dry, clean scalp areas as directed by your prescriber. Wash hands thoroughly after application."
+      },
+      {
+       "lead": "Precautions:",
+       "text": "For topical scalp use only. Do not ingest or apply near the eyes, mouth, or open wounds. If contact with eyes occurs, rinse thoroughly with water."
+      },
+      {
+       "lead": "Handling:",
+       "text": "Allow the application area to dry completely (at least 4 hours) before lying down or washing. Wash any non-treatment areas immediately to prevent unwanted hair growth."
+      },
+      {
+       "lead": "Storage:",
+       "text": "Store at room temperature away from heat and moisture. Keep bottle tightly closed."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Pregnancy & Breastfeeding Warning",
+   "body": "Do not use or handle this product if you are pregnant, planning to become pregnant, or breastfeeding without explicit authorization from your healthcare provider. Latanoprost has not been adequately studied in pregnant women and may pose risks to a developing fetus."
+  },
+  {
+   "title": "Contraindications & Drug Interactions",
+   "body": [
+    {
+     "kind": "p",
+     "text": "Inform your healthcare provider before using this product if you have a history of:"
+    },
+    {
+     "kind": "ul",
+     "items": [
+      "Glaucoma, elevated intraocular pressure, or active eye conditions.",
+      "Active scalp conditions (psoriasis, eczema, infections, or broken skin).",
+      "Breathing disorders, asthma, or cardiovascular conditions (chest pain, angina).",
+      "Concurrent use of other ophthalmic or topical prostaglandin analogs (e.g., bimatoprost, or latanoprost eye drops)."
+     ]
+    },
+    {
+     "kind": "p",
+     "text": "Avoid applying other irritating scalp products (alcohol-based tonics, harsh hair dyes, chemical treatments, or abrasive soaps) to the treatment area unless advised by your healthcare provider."
+    }
+   ]
+  },
+  {
+   "title": "Potential Side Effects",
+   "body": [
+    {
+     "kind": "ul",
+     "items": [
+      {
+       "lead": "Common Local Effects:",
+       "text": "Scalp itching, burning, redness, flaking, dryness, stinging, or mild irritation at the application site."
+      },
+      {
+       "lead": "Pigmentation Changes:",
+       "text": "Localized skin darkening on the scalp or darkening of hair strands in the treatment area."
+      },
+      {
+       "lead": "Uncommon Effects:",
+       "text": "Mild muscle, joint, or back discomfort."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "When to Seek Immediate Emergency Care",
+   "body": [
+    {
+     "kind": "p",
+     "text": "Stop using this medication and call 911 or get emergency medical help immediately if you experience:"
+    },
+    {
+     "kind": "ul",
+     "items": [
+      "Signs of a severe allergic reaction (hives, difficulty breathing, swelling of the face, lips, tongue, or throat).",
+      "Sudden chest pain, chest tightness, or rapid/pounding heartbeat.",
+      "Vision changes or eye pain/irritation."
+     ]
+    },
+    {
+     "kind": "p",
+     "text": "To report suspected adverse reactions, contact the prescribing clinic or the FDA at 1-800-FDA-1088 or www.fda.gov/medwatch."
+    }
+   ]
+  }
+ ],
+ "disclaimer": [
+  "Compounded medications are not FDA-approved and have not been evaluated by the FDA for safety, effectiveness, or quality. A licensed provider may prescribe a compounded medication when they determine it is clinically appropriate for you.",
+  "$2f"
+ ],
+ "imageSrc": "/assets/v3-hair-booster-closeup.png",
+ "imageAlt": "Hand holding a dropper above an open black Strut Hair Booster bottle"
+}

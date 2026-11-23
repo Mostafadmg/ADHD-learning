@@ -119,8 +119,8 @@ SWEEPS = [
   "SWEEP (men, 7 non-medical answers changed together): goals 'Improve my hairline, parting or crown' + 'Boost overall hair health' (top goal: Improve my hairline...); gender identity Transwoman/Transgirl; Curly; three styling habits; All over – moderate; timing Unsure; skin Darker shade of pale"),
  ('s2-m-sweep-3', 'men', {
    'pds': sex('Male', 'Prefer not to say'), 'htam': ["Other/unsure"], 'st': tone("Light brown. It burns minimally, tans easily", 58),
-   'di': ["I want the discounted trial"]},
-  "SWEEP (men, 4 non-medical answers changed together): gender identity Prefer not to say; Other/unsure; skin Light brown; influenced by the discounted trial"),
+   'sc': ["Oily"], 'di': ["I want the discounted trial"]},
+  "SWEEP (men, 5 non-medical answers changed together): gender identity Prefer not to say; Other/unsure; skin Light brown; scalp Oily; influenced by the discounted trial"),
  ('s2-w-sweep-1', 'women', {
    'pds': sex('Female', 'Woman/Girl'), 'ht': ["Wavy"], 'hw': ["Twice a week"],
    'hht': ["Using hairstyles to hide thin areas", "Shaving my head", "Wearing a wig, hairpiece or extensions"], 'hdw': ["Unsure"],
@@ -129,15 +129,20 @@ SWEEPS = [
   "SWEEP (women, 9 non-medical answers changed together): gender identity Woman/Girl; Wavy; washes twice a week; three ways of hiding hair loss; hard water Unsure; front of parting wider; three to six months ago; skin Brown; three other six-month wishes"),
  ('s2-w-sweep-2', 'women', {
    'pds': sex('Female', 'Transman/Transboy'), 'ht': ["Curly"], 'hw': ["Once a week or less"],
+   'hs': ["Air dry", "Colour treatments", "Product-based styling", "Heat-based styling tools"],
    'htaf': ["I'm losing hair or thinning at my temples"], 'htc': ["Unsure"], 'st': tone("Dark brown or black. It always tans darkly", 92)},
-  "SWEEP (women, 6 non-medical answers changed together): gender identity Transman/Transboy; Curly; washes once a week or less; thinning at the temples; timing Unsure; skin Dark brown or black"),
+  "SWEEP (women, 7 non-medical answers changed together): gender identity Transman/Transboy; Curly; four styling habits; washes once a week or less; thinning at the temples; timing Unsure; skin Dark brown or black"),
  ('s2-w-sweep-3', 'women', {
-   'pds': sex('Female', 'Don’t know'), 'htaf': ["I'm losing hair or thinning at my crown"], 'htc': ["Recently, in the past few weeks"]},
-  "SWEEP (women, 3 answers changed together): gender identity Don't know; thinning at the crown; noticed recently, in the past few weeks"),
+   'pds': sex('Female', 'Don’t know'), 'js': ["Still exploring my options"], 'ht': ["Coily"],
+   'hs': ["Heatless styling", "Protective styles", "Chemical processing"], 'sc': ["Dry"],
+   'htaf': ["I'm losing hair or thinning at my crown"], 'htc': ["Recently, in the past few weeks"], 'di': ["I want the discounted trial"]},
+  "SWEEP (women, 8 non-medical answers changed together): gender identity Don't know; Still exploring; Coily; three styling habits; scalp Dry; thinning at the crown; noticed recently, in the past few weeks; influenced by the discounted trial"),
 ]
 EXPS += [
  ('s2-w-htaf-receding', 'women', 'htaf', ["I've noticed my hairline is going further back"], "women-htaf: My middle parting is getting wider → I've noticed my hairline is going further back / receding"),
  ('s2-w-htaf-dontknow', 'women', 'htaf', ["I don't know what kind of hair loss I have"], "women-htaf: My middle parting is getting wider → I don't know what kind of hair loss I have"),
+ # follow-up to the group test s2-m-sweep-2, where the men's 'You're not alone' screen went missing
+ ('s2-m-gender-transwoman', 'men', 'pds', sex('Male', 'Transwoman/Transgirl'), "men-pds-gender: gender identity left blank → Transwoman/Transgirl (sex at birth still Male)"),
 ]
 def res(step, v):
     if isinstance(v, list): return [resolve(step, x) for x in v]

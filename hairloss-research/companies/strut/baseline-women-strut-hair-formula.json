@@ -1,0 +1,3 @@
+{ "start": "https://checkout.struthealth.com/womens-hair-growth-rx-formula?priceId=226",
+  "note": "Baseline woman cannot be walked: the old checkout redirects at once to /auth/sign-up (e-mail + phone). This file only records that first screen. Run saved as runs/old-womens-00.",
+  "steps": [ {"do":"wait","ms":4000} ] }

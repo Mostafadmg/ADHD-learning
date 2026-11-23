@@ -1,0 +1,180 @@
+{
+ "run": "s2-m-pt-yes",
+ "flow": "men",
+ "changed": "men-pt: No → Yes (lives with pets)",
+ "changedStep": "pt",
+ "baselinesPooled": [
+  "baseline-men",
+  "s2-base-men-1"
+ ],
+ "stepOrder": [
+  "tp",
+  "yhg",
+  "pds",
+  "pdsc",
+  "mi",
+  "ht",
+  "ls",
+  "htp",
+  "htam",
+  "htc",
+  "ar",
+  "st",
+  "sc",
+  "scc",
+  "smt",
+  "pt",
+  "tt",
+  "pp",
+  "mdm",
+  "mcm",
+  "al",
+  "rhf",
+  "yna",
+  "rha",
+  "di",
+  "rj",
+  "el",
+  "ct",
+  "yd"
+ ],
+ "nSteps": 29,
+ "end": "account wall (yd)",
+ "newSteps": [],
+ "missingSteps": [],
+ "candidateEffects": [
+  {
+   "step": "tt",
+   "key": "q180028.options",
+   "exp": "[[\"The Drops\", [], \"Applied directly to your scalp with a pipette either once or twice daily\"], [\"The Capsules\", [\"Most popular\", \"Better for pet owners\"], \"Taken once daily before bed\"]]",
+   "baseline": "[[\"The Drops\", [], \"Applied directly to your scalp with a pipette either once or twice daily\"], [\"The Capsules\", [\"Most popular\"], \"Taken once daily before bed\"]]",
+   "alsoIn": [],
+   "alsoInRelated": [
+    "scout-men-2",
+    "scout-women-2"
+   ],
+   "where": "after-change"
+  }
+ ],
+ "noise": [
+  {
+   "step": "st",
+   "key": "q9346.options",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9346.type",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9348.options",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9348.type",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9349.config",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9349.type",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "ct",
+   "key": "q180026.config",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-85",
+    "s2-m-al-finasteride"
+   ]
+  },
+  {
+   "step": "ct",
+   "key": "q180037.config",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-m-age-18",
+    "s2-m-htam-allover-ext",
+    "s2-m-htam-crown"
+   ]
+  },
+  {
+   "step": "ct",
+   "key": "title",
+   "where": "after-change",
+   "alsoIn": [
+    "baseline-women",
+    "entry-promo-caps-men",
+    "s2-m-age-18"
+   ]
+  }
+ ],
+ "bag": {
+  "items": [
+   [
+    "hairTreatment",
+    "Personalised treatment",
+    "4 week supply · 12ml",
+    "Prescription",
+    3499,
+    null
+   ]
+  ],
+  "shipping": 0,
+  "total": 3499,
+  "promo": "",
+  "shippingMsg": null
+ },
+ "bagItemsSameAsBaseline": true,
+ "posted": {
+  "pt": [
+   [
+    8007,
+    "Yes"
+   ]
+  ]
+ },
+ "nextAfterChange": {
+  "pt": "tt"
+ },
+ "sweep": false
+}

@@ -1,0 +1,141 @@
+[
+ {
+  "url": "https://shop.sons.co.uk/locales/en/translation.json",
+  "method": "GET",
+  "status": 200,
+  "ct": "application/json; charset=UTF-8",
+  "size": 53269,
+  "file": "01-shop_sons_co_uk_locales_en_translation_json.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://api.sons.co.uk/cart/data?logged_in=false&oral_minoxidil_5mg=true",
+  "method": "GET",
+  "status": 200,
+  "ct": "application/json",
+  "size": 2717,
+  "file": "02-api_sons_co_uk_cart_data_logged_in_false_oral_minoxidil_5mg_true.txt",
+  "reqHeaders": {
+   "accept": "application/json, text/plain, */*"
+  }
+ },
+ {
+  "url": "https://api.sons.co.uk/barber/account/app/customer/confirm?data=null",
+  "method": "GET",
+  "status": 200,
+  "ct": "text/html; charset=UTF-8",
+  "size": 102,
+  "file": "03-api_sons_co_uk_barber_account_app_customer_confirm_data_null.txt",
+  "reqHeaders": {
+   "content-type": "application/json"
+  }
+ },
+ {
+  "url": "https://shop.sons.co.uk/locales/en/translation.json",
+  "method": "GET",
+  "status": 200,
+  "ct": "application/json; charset=UTF-8",
+  "size": 53269,
+  "file": "04-shop_sons_co_uk_locales_en_translation_json.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://api.sons.co.uk/barber/account/menu",
+  "method": "GET",
+  "status": 200,
+  "ct": "text/html; charset=UTF-8",
+  "size": 1827,
+  "file": "05-api_sons_co_uk_barber_account_menu.txt",
+  "reqHeaders": {
+   "content-type": "application/json"
+  }
+ },
+ {
+  "url": "https://api.sons.co.uk/barber/account/app/customer/confirm?data=null",
+  "method": "GET",
+  "status": 200,
+  "ct": "text/html; charset=UTF-8",
+  "size": 102,
+  "file": "06-api_sons_co_uk_barber_account_app_customer_confirm_data_null.txt",
+  "reqHeaders": {
+   "content-type": "application/json"
+  }
+ },
+ {
+  "url": "https://api.sons.co.uk/cart/data?logged_in=false&oral_minoxidil_5mg=true",
+  "method": "GET",
+  "status": 200,
+  "ct": "application/json",
+  "size": 2717,
+  "file": "07-api_sons_co_uk_cart_data_logged_in_false_oral_minoxidil_5mg_true.txt",
+  "reqHeaders": {
+   "accept": "application/json, text/plain, */*"
+  }
+ },
+ {
+  "url": "https://shop.sons.co.uk/consultation?oral_minoxidil_5mg=true&_rsc=idy4p",
+  "method": "GET",
+  "status": 200,
+  "ct": "text/x-component",
+  "size": 1895,
+  "file": "08-shop_sons_co_uk_consultation_oral_minoxidil_5mg_true_rsc_idy4p.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://api.sons.co.uk/barber/account/app/customer/confirm?data=null",
+  "method": "GET",
+  "status": 200,
+  "ct": "text/html; charset=UTF-8",
+  "size": 102,
+  "file": "09-api_sons_co_uk_barber_account_app_customer_confirm_data_null.txt",
+  "reqHeaders": {
+   "content-type": "application/json"
+  }
+ },
+ {
+  "url": "https://api.sons.co.uk/barber/survey/code/loader?code=oral_minoxidil_5mg_consultation&pharmacy=tip",
+  "method": "GET",
+  "status": 200,
+  "ct": "text/html; charset=UTF-8",
+  "size": 1548,
+  "file": "10-api_sons_co_uk_barber_survey_code_loader_code_oral_minoxidil_5mg_consultation_pharmacy_tip.txt",
+  "reqHeaders": {
+   "barbershop": "front",
+   "content-type": "application/json",
+   "token": "null"
+  }
+ },
+ {
+  "url": "https://api.sons.co.uk/barber/account/app/customer/confirm?data=null",
+  "method": "GET",
+  "status": 200,
+  "ct": "text/html; charset=UTF-8",
+  "size": 102,
+  "file": "11-api_sons_co_uk_barber_account_app_customer_confirm_data_null.txt",
+  "reqHeaders": {
+   "content-type": "application/json"
+  }
+ },
+ {
+  "url": "https://api.sons.co.uk/barber/account/app/customer/confirm?data=null",
+  "method": "GET",
+  "status": 200,
+  "ct": "text/html; charset=UTF-8",
+  "size": 102,
+  "file": "12-api_sons_co_uk_barber_account_app_customer_confirm_data_null.txt",
+  "reqHeaders": {
+   "content-type": "application/json"
+  }
+ },
+ {
+  "url": "https://api.sons.co.uk/barber/account/app/customer/confirm?data=null",
+  "method": "GET",
+  "status": 200,
+  "ct": "text/html; charset=UTF-8",
+  "size": 102,
+  "file": "13-api_sons_co_uk_barber_account_app_customer_confirm_data_null.txt",
+  "reqHeaders": {
+   "content-type": "application/json"
+  }
+ }
+]

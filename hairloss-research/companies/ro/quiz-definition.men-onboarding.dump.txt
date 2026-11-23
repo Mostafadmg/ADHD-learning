@@ -1,0 +1,610 @@
+SCHEMA name='Hair loss onboarding' code=hl-onb-consult-2rx version=77 id=7637 type=onboarding/normal condition=roman:hair-loss meta={"hasMinimalisticHeader": true, "include_product_codes": ["roman-revive-conditioner-24", "roman-revive-shampoo-24", "roman-hair-support-supplement"]}
+
+GROUP ov pos=1 n=102
+
+### qid 1 [choice] show_as=automated_message required=False next=None alias=None id=694556
+TEXT: 'FORK: GOOGLE SHOPPING - LOGIN'
+META: {"message_type": "hidden", "no_history": true, "type": "AutoAnswer"}
+  - [gs-schema-logged-in] 'Is Google Shopping Schema, Member logged in' -> next=112 meta={"condition": "isGSSchema == true && memberIsLoggedIn == true"}
+  - [gs-schema] 'Is Google Shopping Schema' -> next=7 meta={"condition": "isGSSchema == true"}
+  - [not-gs-schema] 'Is NOT Google Shopping Schema' -> next=20 meta={"condition": "1 == 1"}
+
+### qid 7 [control] show_as=automated_message required=False next=70 alias=None id=694557
+TEXT: 'Sign up'
+META: {"do_not_count_as_question": true, "hasNameFields": false, "heading": "Getting started with your hair loss visit.", "message_type": "hidden", "type": "StartOnlineVisitSignUp", "header": {"has_help_button": true, "title": "Welcome"}, "info_list": [{"text": "Medical evaluation and prescriptions by U.S.-licensed physicians", "alt": "U.S.-licensed physicians", "icon": "HealthcareProvider", "image": "https://assets.ro.co/ov/sign-up-list-1-03018af2.jpg", "image_width": 49}, {"text": "Free shipping", "alt": "Free shipping", "icon": "FreeShipping", "image": "https://assets.ro.co/ov/free-shipping-ico-2c38686f.png", "image_width": 24}, {"text": "Continued support from your doctor and the care team", "alt": "Continued support", "icon": "Messages", "image": "https://assets.ro.co/ov/support-ico-145dbc0b.jpg", "image_width": 24}], "testimonial": {"text": "This program has seriously helped me with something I never thought I’d feel comfortable addressing. So thanks for the work you’re doing.", "author": "Ro Member, California"}}
+
+### qid 20 [multichoice] show_as=automated_message required=False next=22 alias=None id=694558
+TEXT: 'What are your top hair goals?'
+META: {"button_text": "Continue", "question_wrapper_type": "secondary", "header": {"current_section": 2, "has_help_button": true, "number_of_sections": 4}}
+VARIABLE_MODIFICATIONS: [["goalRegrowth", "0"], ["goalThickerAndFuller", "0"], ["goalPrevention", "0"]]
+  - [regrow-my-hair] 'Regrow my hair' -> next=22 varmods=[["goalRegrowth", "1"]]
+  - [get-thicker-fuller-hair] 'Get thicker, fuller hair' -> next=22 varmods=[["goalThickerAndFuller", "1"]]
+  - [proactively-prevent-hair-loss] 'Proactively prevent hair loss' -> next=22 varmods=[["goalPrevention", "1"]]
+
+### qid 22 [multichoice] show_as=automated_message required=False next=25 alias=None id=694559
+TEXT: 'What hair loss solutions have you tried, if any?'
+META: {"button_text": "Continue", "description": "Select all that apply.", "question_wrapper_type": "secondary", "type": "CheckboxSecondary", "header": {"current_section": 2, "has_help_button": true, "number_of_sections": 4}}
+VARIABLE_MODIFICATIONS: [["hasTriedNonPrescription", "0"], ["hasTriedPrescription", "0"], ["hasNotTriedAnyPrescription", "0"]]
+  - [hair-loss-solutions-non-prescription] 'Non-prescription solutions (e.g. Rogaine, supplements)' -> next=25 varmods=[["hasTriedNonPrescription", "1"]]
+  - [hair-loss-solutions-prescription-medications] 'Prescription medications (e.g. Propecia, oral minoxidil)' -> next=25 varmods=[["hasTriedPrescription", "1"]]
+  - [hair-loss-solutions-none-of-the-above] 'None of the above' -> next=25 EXCLUSIVE varmods=[["hasNotTriedAnyPrescription", "1"]]
+
+### qid 25 [fork] show_as=automated_message required=False next=None alias=None id=694560
+TEXT: 'FORK: Tried prescription/non-prescription vs not tried hair loss solutions'
+FORKING_RULES: [["28", "hasTriedNonPrescription == true or hasTriedPrescription == true"], ["26", "1 == 1"]]
+
+### qid 26 [choice] show_as=automated_message required=False next=50 alias=None id=694561
+TEXT: 'What’s the main reason you haven’t tried hair loss treatment before?'
+META: {"button_text": "Continue", "question_wrapper_type": "secondary", "type": "choice", "header": {"current_section": 2, "has_help_button": true, "number_of_sections": 4, "title": "Medical Questions"}}
+VARIABLE_MODIFICATIONS: [["notSureAboutHairLossTreatment", "0"], ["didntWantOrNeedHairLossTreatment", "0"]]
+  - [not-sure-itll-work] "Not sure it'll work" -> next=50 varmods=[["notSureAboutHairLossTreatment", "1"]]
+  - [seems-too-expensive] 'Seems too expensive' -> next=50
+  - [nervous-about-side-effects] 'Nervous about side effects' -> next=50
+  - [didnt-want-or-need-to-until-now] "Didn't want or need to until now" -> next=50 varmods=[["didntWantOrNeedHairLossTreatment", "1"]]
+
+### qid 28 [choice] show_as=automated_message required=False next=50 alias=None id=694562
+TEXT: 'What’s the main reason you’re looking for hair loss solutions now?'
+META: {"button_text": "Continue", "question_wrapper_type": "secondary", "type": "choice", "header": {"current_section": 2, "has_help_button": true, "number_of_sections": 4, "title": "Medical Questions"}}
+VARIABLE_MODIFICATIONS: [["lookingBecauseOtcNotWork", "0"], ["lookingForEasierSolution", "0"]]
+  - [over-the-counter-solutions-didnt-work-for-me] "Over-the-counter solutions didn't work for me" -> next=50 varmods=[["lookingBecauseOtcNotWork", "1"]]
+  - [i-want-to-maximize-results-with-a-new-or-additional-product] 'I want to maximize results with a new or additional product' -> next=50
+  - [i-want-an-easier-or-more-convenient-solution-like-a-pill-or-a-spray] 'I want an easier or more convenient solution (like a pill or a spray)' -> next=50 varmods=[["lookingForEasierSolution", "1"]]
+  - [ive-experienced-side-effects-with-past-solutions] 'I’ve experienced side effects with past solutions' -> next=50
+
+### qid 50 [fork] show_as=automated_message required=False next=None alias=None id=694563
+TEXT: 'FORK - sign in or sign up'
+META: {"doNotCountAsQuestion": true, "holdNextQuestion": true, "noHistory": true, "type": "SignInDynamic"}
+FORKING_RULES: [["132", "isGSSchema == true"], ["112", "memberIsLoggedIn == true"], ["55", "1 == 1"]]
+
+### qid 55 [control] show_as=automated_message required=False next=70 alias=None id=694564
+TEXT: 'Ro members start seeing results in as little as three months'
+META: {"question_header_type": "secondary", "question_wrapper_type": "secondary", "type": "TestimonialCarousel", "header": {"current_section": 2, "number_of_sections": 5, "title": "", "type": "secondary"}}
+
+### qid 70 [choice] show_as=automated_message required=False next=None alias=None id=694565
+TEXT: 'FORK - Continue or Sign In'
+META: {"message_type": "hidden", "no_history": true, "type": "AutoAnswer"}
+  - [member-exists] 'Member exists' -> next=80 meta={"condition": "memberExists == 1"}
+  - [member-does-not-exist] 'Member does NOT exist' -> next=112 meta={"condition": "memberExists == 0"}
+
+### qid 80 [choice] show_as=automated_message required=False next=112 alias=None id=694566
+TEXT: 'Log in'
+META: {"doNotCountAsQuestion": true, "extraText": "Looks like you already have an account with us.", "formHeader": "Please log in to your Ro platform account to continue.", "holdNextQuestion": true, "noHistory": true, "questionHeaderType": "secondary", "tooltip": "Ro is a telehealth platform.", "type": "SignInDynamic", "header": {"has_help_button": true, "title": "Member Login"}, "image": {"alt": "ro, roman, rory, zero", "src": "https://assets.ro.co/ov/member-login-thumb-dark-88173dc8.png"}}
+  - [successful-sign-in] 'Successful sign-in' -> next=112 meta={"type": "GO_FURTHER"}
+
+### qid 112 [choice] show_as=automated_message required=False next=None alias=None id=694567
+TEXT: 'Answer a few questions to see if you’re eligible for treatment.'
+META: {"current_section": 1, "description": "It’s just like the intake forms at the doctor.", "do_not_count_as_question": false, "enableDuplicateMemberCheck": true, "isSmsVerificationSkipEnabled": true, "message_type": "hidden", "minAge": 18, "number_of_sections": 4, "type": "Basics", "allowedGenders": ["male"], "birthdate": {"inputPlaceholder": "MM/DD/YYYY", "label": "Birthdate", "tooltip": "These questions will help us make sure you're eligible for telemedicine."}, "header": {"current_section": 1, "has_help_button": true, "number_of_sections": 4, "show_promo_banner": true, "title": "The Basics"}, "phone": {"inputPlaceholder": "(###) ### - ####", "label": "Mobile phone number"}, "sex": {"label": "Sex Assigned at Birth", "tooltip": "Your sex assigned at birth is needed by your doctor for making medical decisions."}, "zipcode": {"inputPlaceholder": "#####", "label": "Zipcode", "tooltip": "We are making sure if we can ship our treatment to your location."}}
+  - [not-supported-zip-code] 'Not supported zip code' -> next=7030 meta={"type": "ZIPCODE_NOT_SUPPORTED"}
+  - [under-18-years-old] 'Under 18 years old' -> next=7010 meta={"type": "TOO_YOUNG"}
+  - [female] 'Female' -> next=7060 meta={"type": "GENDER_NOT_SUPPORTED"}
+  - [next] 'Next' -> next=125 meta={"type": "GO_FURTHER"}
+
+### qid 125 [fork] show_as=automated_message required=False next=None alias=None id=694568
+TEXT: 'FORK: GOOGLE SHOPPING - MEDICAL QUESTIONS'
+FORKING_RULES: [["20", "isGSSchema == true"], ["132", "1 == 1"]]
+
+### qid 132 [multichoice] show_as=automated_message required=False next=None alias=None id=694569
+TEXT: 'Where are you noticing hair loss or thinning?'
+META: {"hasPrivacyChoicesButton": true, "questionWrapperType": "secondary", "header": {"hasHelpButton": true, "hasLogo": true}, "interstitial": {"id": 3, "template": {"text": "Great, now a few questions about your overall health.", "name": "PatientEducation", "subheader": "Let’s talk about your health."}}}
+VARIABLE_MODIFICATIONS: [["thinningHairline", "0"], ["thinningCrown", "0"], ["thinningOverall", "0"], ["noRecTopicalCombined", "0"], ["noRecOralMin", "0"], ["noRecOralFin", "0"]]
+  - [hairline] 'Hairline (along my forehead or temples)' -> next=150 meta={"props": {"image": {"alt": "Receding Hairline", "src": "https://imgctf--assets.ro.co/jj2wf7627pjc/6Ib7k142TaszJlrF9oogY/7184256b0526fbe355d446817f251d4f/thinning-hairline.png", "width": 40}}} varmods=[["thinningHairline", "1"]]
+  - [crown] 'Crown (top of my head)' -> next=150 meta={"props": {"image": {"alt": "Thinning Crown", "src": "https://imgctf--assets.ro.co/jj2wf7627pjc/50wgQPGxyyPTsPiAx70EPr/79d5067dd45e4c1a9c07eee98e13da99/thinning-crown.png", "width": 40}}} varmods=[["thinningCrown", "1"]]
+  - [overall-thinning] 'Overall thinning' -> next=150 meta={"props": {"image": {"alt": "Thinning Overall", "src": "https://imgctf--assets.ro.co/jj2wf7627pjc/4nouK5emIScjR6MPmjpLgT/e4eddb18d0fb241345f5fa0df20b4ae6/thinning-overall.png", "width": 40}}} varmods=[["thinningOverall", "1"]]
+  - [patches] 'Random golf-ball size bald patches scattered all over scalp' -> next=229 meta={"highlight": "negative", "props": {"image": {"alt": "Random Patchy Loss", "src": "https://imgctf--assets.ro.co/jj2wf7627pjc/2kYvT763yTjMomPqfaf8Dc/5fe13cc8e954b8d2da1d37bba7c69ce3/thinning-random.png", "width": 40}}} varmods=[["noRecTopicalCombined", "1"], ["noRecOralMin", "1"], ["noRecOralFin", "1"]]
+  - [prevent-hair-loss] 'Nowhere yet, but I’d like to prevent future hair loss' -> next=229 EXCLUSIVE meta={"props": {"image": {"alt": "No Hair Loss", "src": "https://imgctf--assets.ro.co/jj2wf7627pjc/4GJPysFSAvqWc0J9EgkRwf/398ea970c66d588e99c81f429df301d1/thinning-none.png", "width": 40}}}
+
+### qid 150 [choice] show_as=automated_message required=False next=160 alias=None id=694570
+TEXT: 'How did your hair loss start?'
+META: {"questionWrapperType": "secondary", "header": {"hasHelpButton": true, "hasLogo": true}}
+  - [very-suddenly] 'Very suddenly' -> next=160 meta={"explanation": "I didn’t have any hair loss until the last few weeks", "highlight": "negative"} varmods=[["noRecTopicalCombined", "1"], ["noRecOralMin", "1"], ["noRecOralFin", "1"]]
+  - [gradually] 'Gradually' -> next=160 meta={"explanation": "I’ve been noticing it slowly changing over the last few months or years"}
+  - [not-sure] 'Not sure' -> next=160 meta={"highlight": "caution"}
+
+### qid 160 [choice] show_as=automated_message required=False next=170 alias=None id=694571
+TEXT: 'How would you describe the severity of your current hair loss?'
+META: {"description": "We’ll track this along your hair journey to see how it changes over time.", "questionWrapperType": "secondary", "header": {"hasHelpButton": true}}
+  - [very-mild] 'Very mild' -> next=170 meta={"explanation": "It's hardly noticeable to anyone but me"}
+  - [mild] 'Mild' -> next=170 meta={"explanation": "It's noticeable to myself and maybe others"}
+  - [moderate] 'Moderate' -> next=170 meta={"explanation": "It's noticeable to myself and probably others"}
+  - [severe] 'Severe' -> next=170 meta={"explanation": "It's definitely noticeable to myself and others"}
+  - [extremely-severe] 'Extremely severe' -> next=170 meta={"explanation": "It's very obvious that I'm experiencing hair loss"}
+
+### qid 170 [multichoice] show_as=automated_message required=False next=None alias=None id=694572
+TEXT: 'Have you noticed any of the following?'
+META: {"button_text": "Continue", "description": "Select all that apply.", "question_wrapper_type": "secondary", "type": "CheckboxSecondary", "header": {"has_help_button": true}}
+  - [redness-or-rashes] 'Redness or rashes on scalp' -> next=229 meta={"highlight": "caution"} varmods=[["noRecTopicalCombined", "1"], ["noRecOralMin", "1"], ["noRecOralFin", "1"]]
+  - [pain-soreness-burning-tingling-in-areas-of-hair-loss] 'Pain, soreness, burning, and/or tingling in areas of hair loss' -> next=229 meta={"highlight": "caution"}
+  - [recurrent-pus-bumps-or-open-sores] 'Recurrent pus bumps or open sores on scalp' -> next=229 meta={"highlight": "caution"}
+  - [partial-or-complete-loss-of-eyebrows-or-eyelashes] 'Partial or complete loss of eyebrows or eyelashes' -> next=229 meta={"highlight": "caution"}
+  - [none] 'None of the above' -> next=229 EXCLUSIVE
+
+### qid 229 [fork] show_as=automated_message required=False next=None alias=None id=694573
+TEXT: 'FORK 3: Tried prescription/non-prescription (240) vs default - not tried hair loss solutions (370)'
+FORKING_RULES: [["240", "hasTriedPrescription == true or hasTriedNonPrescription == true"], ["370", "1 == 1"]]
+
+### qid 240 [multichoice] show_as=automated_message required=False next=250 alias=None id=694574
+TEXT: 'What hair loss treatments have you used?'
+META: {"button_text": "Next", "description": "Select all that apply", "question_wrapper_type": "secondary", "type": "CheckboxSecondary", "header": {"has_help_button": true}, "trackEvents": [{"eventName": "Member's previous treatment for the condition", "sendSelectedAnswerPositions": true, "params": {}}]}
+VARIABLE_MODIFICATIONS: [["treatmentOralMinoxidil", "0"], ["treatmentTopicalMinoxidil", "0"], ["treatmentOralFinasteride", "0"], ["treatmentTopicalFinasteride", "0"], ["treatmentOther", "0"]]
+  - [oral-minoxidil] 'Oral minoxidil' -> next=250 varmods=[["treatmentOralMinoxidil", "1"], ["isEligibleFor6And12MonthShipments", "1"]]
+  - [topical-minoxidil] 'Topical minoxidil' -> next=250 varmods=[["treatmentTopicalMinoxidil", "1"]]
+  - [oral-finasteride] 'Oral Finasteride' -> next=250 varmods=[["treatmentOralFinasteride", "1"], ["isEligibleFor6And12MonthShipments", "1"]]
+  - [topical-finasteride] 'Topical finasteride' -> next=250 varmods=[["treatmentTopicalFinasteride", "1"]]
+  - [steroid-injections] 'Steroid injections in the scalp' -> next=250 meta={"highlight": "negative"} varmods=[["noRecTopicalCombined", "1"], ["noRecOralMin", "1"], ["noRecOralFin", "1"]]
+  - [other-treatment] 'Other' -> next=250 varmods=[["treatmentOther", "1"]]
+
+### qid 250 [fork] show_as=automated_message required=False next=None alias=None id=694575
+TEXT: 'FORK - treatmentOralMinoxidil follow up'
+FORKING_RULES: [["255", "treatmentOralMinoxidil == 1"], ["280", "1 == 1"]]
+
+### qid 255 [choice] show_as=automated_message required=False next=None alias=None id=694576
+TEXT: 'What dose of oral minoxidil did you use?'
+META: {"question_wrapper_type": "secondary", "header": {"has_help_button": true}}
+  - [2mg-daily] '2.0mg daily' -> next=265
+  - [2-point-5-mg-daily] '2.5mg daily' -> next=265
+  - [3mg-daily] '3.0mg daily' -> next=265
+  - [3-point-5mg-daily] '3.5mg daily' -> next=265
+  - [4mg-daily] '4.0mg daily' -> next=265
+  - [5mg-daily] '5.0mg daily' -> next=265
+  - [oral-min-dosage-other] 'Other' -> next=260
+
+### qid 260 [text] show_as=automated_message required=False next=265 alias=None id=694577
+TEXT: 'Explain your treatment'
+META: {"button_text": "Save and continue", "description": "What daily dosage of oral minoxidil were you taking most recently?", "question_wrapper_type": "secondary", "type": "longtext", "header": {"has_help_button": true}}
+
+### qid 265 [choice] show_as=automated_message required=False next=None alias=None id=694578
+TEXT: 'Did oral minoxidil work well for you?'
+META: {"question_wrapper_type": "secondary", "header": {"has_help_button": true}}
+  - [oral-min-yes-continue-same-regimen] 'Yes, it worked well' -> next=280
+  - [oral-min-no-problematic-side-effects] 'No, I had problematic side effects' -> next=280 meta={"highlight": "caution"} varmods=[["noRecOralMin", "1"]]
+  - [oral-min-no-dose-not-effective] "No, this dose wasn't effective" -> next=280 meta={"highlight": "caution"} varmods=[["noRecOralMin", "1"]]
+  - [oral-min-no-allergic-to-medication] 'No, I found out I was allergic to it' -> next=280 meta={"highlight": "caution"} varmods=[["noRecOralMin", "1"], ["noRecTopicalCombined", "1"]]
+  - [oral-min-effectiveness-other] 'Other' -> next=270
+
+### qid 270 [text] show_as=automated_message required=False next=280 alias=None id=694579
+TEXT: 'Explain your treatment'
+META: {"button_text": "Save and continue", "description": "Let us know how your oral minoxidil treatment went when you were treated most recently.", "question_wrapper_type": "secondary", "type": "longtext", "header": {"has_help_button": true}}
+
+### qid 280 [fork] show_as=automated_message required=False next=None alias=None id=694580
+TEXT: 'FORK - treatmentTopicalMinoxidil follow up'
+FORKING_RULES: [["285", "treatmentTopicalMinoxidil == 1"], ["300", "1 == 1"]]
+
+### qid 285 [choice] show_as=automated_message required=False next=None alias=None id=694581
+TEXT: 'Did topical minoxidil work well for you?'
+META: {"question_wrapper_type": "secondary", "header": {"has_help_button": true}}
+  - [topical-min-yes-continue-same-regimen] 'Yes, it worked well' -> next=300
+  - [topical-min-no-problematic-side-effects] 'No, I had problematic side effects' -> next=300 meta={"highlight": "caution"}
+  - [topical-min-no-dose-not-effective] 'No, it wasn’t effective' -> next=300 meta={"highlight": "caution"}
+  - [topical-min-no-allergic-to-medication] 'No, I found out I was allergic to it' -> next=300 meta={"highlight": "caution"} varmods=[["noRecTopicalCombined", "1"]]
+  - [topical-min-effectiveness-other] 'Other' -> next=290
+
+### qid 290 [text] show_as=automated_message required=False next=300 alias=None id=694582
+TEXT: 'Explain your treatment'
+META: {"button_text": "Save and continue", "description": "Let us know how your topical minoxidil treatment went when you were treated most recently.", "question_wrapper_type": "secondary", "type": "longtext", "header": {"has_help_button": true}}
+
+### qid 300 [fork] show_as=automated_message required=False next=None alias=None id=694583
+TEXT: 'FORK - treatmentOralFinasteride follow up'
+FORKING_RULES: [["305", "treatmentOralFinasteride == 1"], ["330", "1 == 1"]]
+
+### qid 305 [choice] show_as=automated_message required=False next=None alias=None id=694584
+TEXT: 'What dose of oral finasteride did you use?'
+META: {"question_wrapper_type": "secondary", "header": {"has_help_button": true}}
+  - [1mg-daily] '1mg' -> next=315
+  - [oral-fin-dosage-other] 'Other' -> next=310
+
+### qid 310 [text] show_as=automated_message required=False next=315 alias=None id=694585
+TEXT: 'Explain your treatment'
+META: {"button_text": "Save and continue", "description": "What daily dosage of oral finasteride were you taking most recently?", "question_wrapper_type": "secondary", "type": "longtext", "header": {"has_help_button": true}}
+
+### qid 315 [choice] show_as=automated_message required=False next=None alias=None id=694586
+TEXT: 'Did oral finasteride work well for you?'
+META: {"question_wrapper_type": "secondary", "header": {"has_help_button": true}}
+  - [oral-fin-yes-continue-same-regimen] 'Yes, it worked well' -> next=330
+  - [oral-fin-no-problematic-side-effects] 'No, I had problematic side effects' -> next=330 meta={"highlight": "caution"} varmods=[["noRecTopicalCombined", "1"], ["noRecOralFin", "1"]]
+  - [oral-fin-no-dose-not-effective] "No, this dose wasn't effective" -> next=330 meta={"highlight": "caution"} varmods=[["noRecOralFin", "1"]]
+  - [oral-fin-no-allergic-to-medication] 'No, I found out I was allergic to it' -> next=330 meta={"highlight": "caution"} varmods=[["noRecTopicalCombined", "1"], ["noRecOralFin", "1"]]
+  - [oral-fin-effectiveness-other] 'Other' -> next=320
+
+### qid 320 [text] show_as=automated_message required=False next=330 alias=None id=694587
+TEXT: 'Explain your treatment'
+META: {"button_text": "Save and continue", "description": "Let us know how your oral finasteride treatment went when you were treated most recently.", "question_wrapper_type": "secondary", "type": "longtext", "header": {"has_help_button": true}}
+
+### qid 330 [fork] show_as=automated_message required=False next=None alias=None id=694588
+TEXT: 'FORK - treatmentTopicalFinasteride follow up'
+FORKING_RULES: [["335", "treatmentTopicalFinasteride == 1"], ["350", "1 == 1"]]
+
+### qid 335 [choice] show_as=automated_message required=False next=None alias=None id=694589
+TEXT: 'Did topical finasteride work well for you?'
+META: {"question_wrapper_type": "secondary", "header": {"has_help_button": true}}
+  - [topical-fin-yes-continue-same-regimen] 'Yes, it worked well' -> next=350
+  - [topical-fin-no-problematic-side-effects] 'No, I had problematic side effects' -> next=350 meta={"highlight": "caution"}
+  - [topical-fin-no-dose-not-effective] 'No, it wasn’t effective' -> next=350 meta={"highlight": "caution"}
+  - [topical-fin-no-allergic-to-medication] 'No, I found out I was allergic to it' -> next=350 meta={"highlight": "caution"} varmods=[["noRecTopicalCombined", "1"]]
+  - [topical-fin-effectiveness-other] 'Other' -> next=340
+
+### qid 340 [text] show_as=automated_message required=False next=350 alias=None id=694590
+TEXT: 'Explain your treatment'
+META: {"button_text": "Save and continue", "description": "Let us know how your topical finasteride treatment went when you were treated most recently.", "question_wrapper_type": "secondary", "type": "longtext", "header": {"has_help_button": true}}
+
+### qid 350 [fork] show_as=automated_message required=False next=None alias=None id=694591
+TEXT: 'FORK - treatmentOther follow up'
+FORKING_RULES: [["355", "treatmentOther == 1"], ["370", "1 == 1"]]
+
+### qid 355 [text] show_as=automated_message required=False next=370 alias=None id=694592
+TEXT: 'Explain your treatment'
+META: {"button_text": "Save and continue", "description": "What other hair loss treatments have you tried?", "question_wrapper_type": "secondary", "type": "longtext", "header": {"has_help_button": true}}
+
+### qid 370 [choice] show_as=automated_message required=False next=None alias=None id=694593
+TEXT: 'Have you ever been diagnosed with or treated for high or low blood pressure?'
+META: {"button_text": "Continue", "question_wrapper_type": "secondary", "header": {"has_help_button": true}}
+VARIABLE_MODIFICATIONS: [["followupHighBloodPressure", "0"], ["followupLowBloodPressure", "0"]]
+  - [yes-have-been-diagnosed-or-treated-for-high-bp] 'Yes, for high blood pressure' -> next=380 varmods=[["followupHighBloodPressure", "1"]]
+  - [yes-have-been-diagnosed-or-treated-for-low-bp] 'Yes, for low blood pressure' -> next=380 varmods=[["followupLowBloodPressure", "1"]]
+  - [not-sure-if-diagnosed-or-treated-for-high-or-low-bp] "I'm not sure" -> next=395 EXCLUSIVE
+  - [no-never-been-diagnosed-with-high-or-low-bp] 'No' -> next=1000 EXCLUSIVE
+
+### qid 380 [fork] show_as=automated_message required=False next=None alias=None id=694594
+TEXT: 'FORK BP 1 - Very High Blood Pressure'
+FORKING_RULES: [["381", "followupHighBloodPressure == 1"], ["390", "1 == 1"]]
+
+### qid 381 [choice] show_as=automated_message required=False next=None alias=None id=694595
+TEXT: 'Since being diagnosed with or treated for high blood pressure, have your blood pressure readings still been “very high”?'
+META: {"description": "<BloodPressureVisualWithRanges highlightedRangeKey=\"very_high\" />", "header": {"has_help_button": true}}
+  - [yes-very-high-bp-reading] 'Yes, I still have “very high” blood pressure readings' -> next=390 meta={"highlight": "negative"} varmods=[["noRecOralMin", "1"]]
+  - [no-have-not-had-multiple-very-high-bp-readings] 'No, my blood pressure reading is never “very high”' -> next=390
+  - [not-sure] 'I’m not sure' -> next=390
+
+### qid 390 [fork] show_as=automated_message required=False next=None alias=None id=694596
+TEXT: 'FORK BP 2 - Very Low Blood Pressure'
+FORKING_RULES: [["391", "followupLowBloodPressure == 1"], ["395", "1 == 1"]]
+
+### qid 391 [choice] show_as=automated_message required=False next=None alias=None id=694597
+TEXT: 'Since being diagnosed with or treated for low blood pressure, have your blood pressure readings still been “low”?'
+META: {"description": "<BloodPressureVisualWithRanges highlightedRangeKey=\"low\" />", "header": {"has_help_button": true}}
+  - [yes-very-low-bp-reading] 'Yes, I still have “low” blood pressure readings' -> next=395 meta={"highlight": "negative"} varmods=[["noRecTopicalCombined", "1"], ["noRecOralMin", "1"], ["noRecOralFin", "1"]]
+  - [no-have-not-had-multiple-very-low-bp-readings] 'No, my blood pressure reading is never “low”' -> next=395
+  - [not-sure] 'I’m not sure' -> next=395
+
+### qid 395 [choice] show_as=automated_message required=False next=None alias=None id=694598
+TEXT: 'High or low blood pressure readings can be associated with increased risks when using certain hair loss treatments.'
+META: {"description": "If you have had high or low blood pressure readings, our treatment options may still be suitable for you. Since out-of-range blood pressure can pose health risks, we recommend discussing it with your primary care provider. \n\nIf you haven’t checked your blood pressure recently, consider scheduling an annual visit with your provider.", "doNotCountAsQuestion": true, "question_wrapper_type": "secondary", "type": "single", "header": {"has_help_button": true}}
+  - [i-understand-high-or-low-bp-risks] 'I understand, continue' -> next=1000 EXCLUSIVE
+
+### qid 1000 [multichoice] show_as=automated_message required=False next=None alias=None id=694599
+TEXT: 'Do you have, or have you ever had, any of the following conditions?'
+META: {"button_text": "Continue", "description": "Select all that apply", "question_wrapper_type": "secondary", "type": "CheckboxSecondary", "header": {"has_help_button": true}}
+  - [stroke] 'Stroke' -> next=1250 meta={"highlight": "caution"} varmods=[["stroke", "1"]]
+  - [prostate-cancer] 'Prostate cancer' -> next=1250 meta={"highlight": "caution"} varmods=[["noRecTopicalCombined", "1"]]
+  - [kidney-disease] 'Kidney disease' -> next=1250 meta={"highlight": "caution"} varmods=[["kidneyDisease", "1"]]
+  - [liver-diseases] 'Liver failure or liver cirrhosis' -> next=1250 meta={"highlight": "negative"} varmods=[["liverDisease", "1"]]
+  - [erectile-dysfunction] 'Erectile dysfunction' -> next=1250 meta={"highlight": "caution"} varmods=[["ed", "1"], ["noRecTopicalCombined", "1"], ["noRecOralFin", "1"]]
+  - [anxiety] 'Anxiety' -> next=1250 meta={"highlight": "caution"} varmods=[["anxiety", "1"], ["noRecTopicalCombined", "1"], ["noRecOralFin", "1"]]
+  - [depression] 'Depression' -> next=1250 meta={"highlight": "caution"} varmods=[["depression", "1"], ["noRecTopicalCombined", "1"], ["noRecOralFin", "1"]]
+  - [pheochromocytoma] 'Pheochromocytoma (adrenal gland tumor)' -> next=1250 meta={"highlight": "negative"} varmods=[["noRecOralMin", "1"]]
+  - [none] 'None of the above' -> next=1300 EXCLUSIVE
+
+### qid 1250 [fork] show_as=automated_message required=False next=None alias=None id=694600
+TEXT: 'FORK - stroke'
+FORKING_RULES: [["1255", "stroke == 1"], ["1270", "1 == 1"]]
+
+### qid 1255 [choice] show_as=automated_message required=False next=1260 alias=None id=694601
+TEXT: 'What type of stroke did you have?'
+META: {"question_wrapper_type": "secondary", "header": {"current_section": 2, "has_help_button": true, "number_of_sections": 4, "title": "Medical Questions"}}
+  - [hemorrhagic-stroke] 'Hemorrhagic stroke: a blood vessel leaked blood into the brain' -> next=1260
+  - [ischemic-stroke] 'Ischemic stroke: a blood vessel was blocked by a clot or plaque' -> next=1260
+
+### qid 1260 [choice] show_as=automated_message required=False next=None alias=None id=694602
+TEXT: 'When did your stroke occur?'
+META: {"question_wrapper_type": "secondary", "header": {"current_section": 2, "has_help_button": true, "number_of_sections": 4, "title": "Medical Questions"}}
+  - [stroke-less-than-6-months] 'Less than 6 months ago' -> next=1270 meta={"highlight": "negative"} varmods=[["noRecOralMin", "1"]]
+  - [stroke-7-to-12-months] '7-12 months ago' -> next=1270
+  - [stroke-1-to-2-years] '1-2 years ago' -> next=1270
+  - [stroke-2-plus-years] '2+ years ago' -> next=1270
+
+### qid 1270 [fork] show_as=automated_message required=False next=None alias=None id=694603
+TEXT: 'FORK - kidneyDisease'
+FORKING_RULES: [["1275", "kidneyDisease == 1"], ["1280", "1 == 1"]]
+
+### qid 1275 [choice] show_as=automated_message required=False next=None alias=None id=694604
+TEXT: 'What kind of kidney disease do you have?'
+META: {"question_wrapper_type": "secondary", "header": {"has_help_button": true}}
+  - [kidney-disease-temporary-decrease-in-kidney-function] 'Temporary decrease in kidney function only' -> next=1280
+  - [kidney-disease-chronic-stage-1] 'Chronic kidney disease stage 1' -> next=1280
+  - [kidney-disease-chronic-stage-2] 'Chronic kidney disease stage 2' -> next=1280
+  - [kidney-disease-chronic-stage-3a] 'Chronic kidney disease stage 3a' -> next=1280
+  - [kidney-disease-chronic-stage-3b] 'Chronic kidney disease stage 3b' -> next=1280
+  - [kidney-disease-chronic-stage-4] 'Chronic kidney disease stage 4' -> next=1280
+  - [kidney-disease-chronic-stage-5] 'Chronic kidney disease stage 5 (kidney failure)' -> next=1280 meta={"highlight": "negative"}
+
+### qid 1280 [fork] show_as=automated_message required=False next=None alias=None id=694605
+TEXT: 'FORK - liverDisease'
+FORKING_RULES: [["1285", "liverDisease == 1"], ["1300", "1 == 1"]]
+
+### qid 1285 [choice] show_as=automated_message required=False next=None alias=None id=694606
+TEXT: 'Which of these liver conditions do you have?'
+META: {"question_wrapper_type": "secondary", "header": {"has_help_button": true}}
+  - [liver-failure] 'Liver failure' -> next=1300 meta={"highlight": "negative"}
+  - [liver-cirrhosis] 'Liver cirrhosis' -> next=1300 meta={"highlight": "negative"}
+  - [liver-failure-and-cirrhosis] 'Both' -> next=1300 meta={"highlight": "negative"}
+
+### qid 1300 [multichoice] show_as=automated_message required=False next=None alias=None id=694607
+TEXT: 'Do you have, or have you ever had, any of the following heart-related conditions?'
+META: {"button_text": "Continue", "description": "Select all that apply", "question_wrapper_type": "secondary", "type": "CheckboxSecondary", "header": {"has_help_button": true}}
+  - [angina] 'Repeated chest pain or tightness, also called angina' -> next=1310 meta={"highlight": "negative"} varmods=[["noRecOralMin", "1"]]
+  - [artery-disease] 'Coronary artery disease, or narrowing of the heart vessels' -> next=1310 meta={"highlight": "caution"}
+  - [heart-attack] 'Heart attack' -> next=1310 meta={"highlight": "caution"} varmods=[["heartAttack", "1"]]
+  - [coronary-bypass-surgery] 'Coronary bypass surgery' -> next=1310 meta={"highlight": "caution", "datapoints": [{"display": "Coronary Artery Bypass Graft - CABG", "id": "101674", "system": "ro_clinical_concepts"}]} varmods=[["coronaryBypassSurgery", "1"]]
+  - [heart-failure] 'Heart failure' -> next=1310 meta={"highlight": "negative"} varmods=[["noRecOralMin", "1"]]
+  - [arrhythmia] 'Arrhythmia' -> next=1310 meta={"highlight": "caution"} varmods=[["arrhythmia", "1"]]
+  - [pericarditis] 'Pericarditis' -> next=1310 meta={"highlight": "negative"} varmods=[["noRecOralMin", "1"]]
+  - [pulmonary-hypertension] 'Pulmonary hypertension' -> next=1310 meta={"highlight": "negative"} varmods=[["noRecOralMin", "1"]]
+  - [none] 'None of the above' -> next=2200 EXCLUSIVE
+
+### qid 1310 [fork] show_as=automated_message required=False next=None alias=None id=694608
+TEXT: 'FORK - heartAttack'
+FORKING_RULES: [["1315", "heartAttack == 1"], ["1350", "1 == 1"]]
+
+### qid 1315 [choice] show_as=automated_message required=False next=None alias=None id=694609
+TEXT: 'When did your heart attack occur?'
+META: {"question_wrapper_type": "secondary", "header": {"has_help_button": true}}
+  - [heart-attack-less-than-6-months] 'Less than 6 months ago' -> next=1320 meta={"highlight": "negative"} varmods=[["noRecOralMin", "1"]]
+  - [heart-attack-7-to-12-months] '7-12 months ago' -> next=1320
+  - [heart-attack-1-to-2-years] '1-2 years ago' -> next=1320
+  - [heart-attack-2-plus-years] '2+ years ago' -> next=1320
+
+### qid 1320 [choice] show_as=automated_message required=False next=None alias=None id=694610
+TEXT: 'Are you seeing a cardiologist regularly for your history of heart attack?'
+META: {"question_wrapper_type": "secondary", "header": {"has_help_button": true}}
+  - [heart-attack-seeing-cardiologist-yes] 'Yes' -> next=1350
+  - [heart-attack-seeing-cardiologist-no] 'No' -> next=1350 meta={"highlight": "negative"} varmods=[["noRecOralMin", "1"]]
+
+### qid 1350 [fork] show_as=automated_message required=False next=None alias=None id=694611
+TEXT: 'FORK - coronaryBypassSurgery'
+FORKING_RULES: [["1355", "coronaryBypassSurgery == 1"], ["1410", "1 == 1"]]
+
+### qid 1355 [choice] show_as=automated_message required=False next=None alias=None id=694612
+TEXT: 'When was your coronary bypass surgery?'
+META: {"question_wrapper_type": "secondary", "header": {"has_help_button": true}}
+  - [coronary-bypass-surgery-less-than-6-months] 'Less than 6 months ago' -> next=1360 meta={"highlight": "negative", "datapoints": [{"display": "Coronary Artery Bypass Graft - CABG", "id": "101674", "system": "ro_clinical_concepts", "attribute": {"display": "Within the past 6 months", "id": "101906", "system": "ro_clinical_concepts"}}]} varmods=[["noRecOralMin", "1"]]
+  - [coronary-bypass-surgery-7-to-12-months] '7-12 months ago' -> next=1360 meta={"datapoints": [{"display": "Coronary Artery Bypass Graft - CABG", "id": "101674", "system": "ro_clinical_concepts", "attribute": {"display": "7-12 months ago", "id": "101907", "system": "ro_clinical_concepts"}}]}
+  - [coronary-bypass-surgery-1-to-2-years] '1-2 years ago' -> next=1360 meta={"datapoints": [{"display": "Coronary Artery Bypass Graft - CABG", "id": "101674", "system": "ro_clinical_concepts", "attribute": {"display": "1-2 years ago", "id": "101908", "system": "ro_clinical_concepts"}}]}
+  - [coronary-bypass-surgery-2-plus-years] '2+ years ago' -> next=1360 meta={"datapoints": [{"display": "Coronary Artery Bypass Graft - CABG", "id": "101674", "system": "ro_clinical_concepts", "attribute": {"display": ">2 years ago", "id": "101909", "system": "ro_clinical_concepts"}}]}
+
+### qid 1360 [choice] show_as=automated_message required=False next=None alias=None id=694613
+TEXT: 'Are you seeing a cardiologist regularly as a follow-up to your coronary bypass surgery?'
+META: {"question_wrapper_type": "secondary", "header": {"has_help_button": true}}
+  - [coronary-bypass-surgery-seeing-cardiologist-yes] 'Yes' -> next=1410
+  - [coronary-bypass-surgery-seeing-cardiologist-no] 'No' -> next=1410 meta={"highlight": "negative"} varmods=[["noRecOralMin", "1"]]
+
+### qid 1410 [fork] show_as=automated_message required=False next=None alias=None id=694614
+TEXT: 'FORK - arrhythmia'
+FORKING_RULES: [["1420", "arrhythmia == 1"], ["2200", "1 == 1"]]
+
+### qid 1420 [multichoice] show_as=automated_message required=False next=None alias=None id=694615
+TEXT: 'What type of arrhythmia have you been diagnosed with?'
+META: {"button_text": "Next", "description": "Select all that apply", "question_wrapper_type": "secondary", "type": "CheckboxSecondary", "header": {"current_section": 2, "has_help_button": true, "number_of_sections": 4, "title": "Medical Questions"}}
+  - [atrial-fibrillation] 'Atrial fibrillation (afib)' -> next=1425 varmods=[["atrialFibrillation", "1"]]
+  - [atrial-flutter] 'Atrial flutter' -> next=1425 meta={"highlight": "negative"} varmods=[["noRecOralMin", "1"]]
+  - [premature-ventricular-contractions] 'Premature ventricular contractions (PVCs)' -> next=1425
+  - [bradycardia] 'Bradycardia' -> next=1425 meta={"highlight": "caution"} varmods=[["bradycardia", "1"]]
+  - [paroxysmal-supraventricular-tachycardia] 'Paroxysmal supraventricular tachycardia (PSVT)' -> next=1425 meta={"highlight": "negative"} varmods=[["noRecOralMin", "1"]]
+  - [wolff-parkinson-white-syndrome] 'Wolff-Parkinson-White syndrome' -> next=1425 meta={"highlight": "negative"} varmods=[["noRecOralMin", "1"]]
+  - [ventricular-fibrillation] 'Ventricular fibrillation' -> next=1425 meta={"highlight": "negative"} varmods=[["noRecOralMin", "1"]]
+  - [arrhythmia-type-other] 'Other' -> next=1425 varmods=[["arrhythmiaTypeOther", "1"]]
+
+### qid 1425 [fork] show_as=automated_message required=False next=None alias=None id=694616
+TEXT: 'FORK - arrhythmia - atrialFibrillation'
+FORKING_RULES: [["1430", "atrialFibrillation == 1"], ["1450", "1 == 1"]]
+
+### qid 1430 [choice] show_as=automated_message required=False next=None alias=None id=694617
+TEXT: 'Have you had an ablation procedure?'
+META: {"question_wrapper_type": "secondary", "header": {"current_section": 2, "has_help_button": true, "number_of_sections": 4, "title": "Medical Questions"}}
+  - [ablation-procedure-yes] 'Yes' -> next=1435 meta={"datapoints": [{"display": "Ablation Procedure", "id": "101882", "system": "ro_clinical_concepts"}]}
+  - [ablation-procedure-no] 'No' -> next=1440
+
+### qid 1435 [choice] show_as=automated_message required=False next=None alias=None id=694618
+TEXT: 'Have you had afib since your ablation?'
+META: {"question_wrapper_type": "secondary", "header": {"current_section": 2, "has_help_button": true, "number_of_sections": 4, "title": "Medical Questions"}}
+  - [afib-since-ablation-procedure-yes] 'Yes' -> next=1440
+  - [afib-since-ablation-procedure-no] 'No' -> next=1440
+
+### qid 1440 [choice] show_as=automated_message required=False next=None alias=None id=694619
+TEXT: 'Are you currently taking any medications for your afib?'
+META: {"question_wrapper_type": "secondary", "header": {"current_section": 2, "has_help_button": true, "number_of_sections": 4, "title": "Medical Questions"}}
+  - [meds-for-afib-yes] 'Yes' -> next=1450
+  - [meds-for-afib-no] 'No' -> next=1450
+
+### qid 1450 [fork] show_as=automated_message required=False next=None alias=None id=694620
+TEXT: 'FORK - arrhythmia - bradycardia'
+FORKING_RULES: [["1455", "bradycardia == 1"], ["1470", "1 == 1"]]
+
+### qid 1455 [choice] show_as=automated_message required=False next=1460 alias=None id=694621
+TEXT: 'What is your resting heart rate?'
+META: {"question_wrapper_type": "secondary", "header": {"has_help_button": true}}
+  - [resting-rate-less-than-50] 'Less than 50' -> next=1460 meta={"highlight": "negative"} varmods=[["noRecOralMin", "1"]]
+  - [resting-rate-50-to-59] '50-59' -> next=1460
+  - [resting-rate-60-to-69] '60-69' -> next=1460
+  - [resting-rate-70-plus] '70+' -> next=1460
+
+### qid 1460 [choice] show_as=automated_message required=False next=None alias=None id=694622
+TEXT: 'Have you ever fainted due to a low heart rate?'
+META: {"question_wrapper_type": "secondary", "header": {"current_section": 2, "has_help_button": true, "number_of_sections": 4, "title": "Medical Questions"}}
+  - [fainted-from-low-heart-rate-yes] 'Yes' -> next=1470 meta={"highlight": "negative"} varmods=[["noRecOralMin", "1"]]
+  - [fainted-from-low-heart-rate-no] 'No' -> next=1470
+
+### qid 1470 [fork] show_as=automated_message required=False next=None alias=None id=694623
+TEXT: 'FORK - arrhythmia - arrhythmiaTypeOther'
+FORKING_RULES: [["1475", "arrhythmiaTypeOther == 1"], ["2200", "1 == 1"]]
+
+### qid 1475 [text] show_as=automated_message required=False next=2200 alias=None id=694624
+TEXT: 'Please explain your arrhythmia diagnosis'
+META: {"button_text": "Save and continue", "category": "Please Tell us more", "question_wrapper_type": "secondary", "type": "longtext", "header": {"current_section": 2, "has_help_button": true, "number_of_sections": 4, "title": "Medical Questions"}}
+
+### qid 2200 [choice] show_as=automated_message required=False next=2300 alias=None id=694625
+TEXT: 'What medications are you currently taking?'
+META: {"customDisclaimer": "Our Clinicians use this information in determining an appropriate treatment.", "extraText": "Your provider needs to know about the prescription or over-the-counter medications, treatments and supplements you’re taking.", "type": "StructuredMedications", "header": {"has_help_button": true}, "online_visit_history_sync": ["medications"]}
+  - [im-taking-medications] 'I’m taking medications' -> next=2300 meta={"type": "STRUCTURED_MEDICATION_PROVIDED", "health_survey_sync": [{"id": 49, "value": "Yes"}]}
+  - [i-dont-take-any-medications] "I don't take any medications" -> next=2300 meta={"type": "STRUCTURED_MEDICATION_NOT_PROVIDED", "health_survey_sync": [{"id": 49, "value": "No"}]}
+
+### qid 2300 [choice] show_as=automated_message required=False next=-1 alias=None id=694626
+TEXT: 'Do you have any allergies?'
+META: {"customDisclaimer": "Our Clinicians use this information in determining an appropriate treatment.", "extraText": "Include allergies to prescription or over-the-counter medicines, herbs, vitamins, supplements, food, dyes or anything else.", "type": "StructuredAllergies", "header": {"title": "Medical Questions"}, "online_visit_history_sync": ["allergies"]}
+  - [i-have-allergies] 'I have allergies' -> next=2340 meta={"highlight": "caution", "type": "STRUCTURED_ALLERGIES_PROVIDED", "health_survey_sync": [{"id": 51, "value": "Yes"}]}
+  - [i-dont-have-allergies] "I don't have allergies" -> next=2340 meta={"type": "STRUCTURED_ALLERGIES_NOT_PROVIDED", "health_survey_sync": [{"id": 51, "value": "No"}]}
+
+### qid 2340 [fork] show_as=automated_message required=False next=None alias=None id=694627
+TEXT: 'FORK - MHL CONSULTATIVE OV: Family planning question'
+FORKING_RULES: [["2350", "hasMhlConsultativeOvExperiment == 1"], ["2400", "1 == 1"]]
+
+### qid 2350 [choice] show_as=automated_message required=False next=None alias=None id=694628
+TEXT: 'Are you and your partner trying to get pregnant in the next 3 months?'
+META: {"button_text": "Continue", "description": "Some treatment options for hair loss can affect your ability to conceive.", "question_wrapper_type": "secondary", "header": {"has_help_button": true}}
+VARIABLE_MODIFICATIONS: [["isTryingToGetPregnantInNext3Months", "0"]]
+  - [trying-to-get-pregnant-yes-we-are] 'Yes, we are' -> next=2355 varmods=[["isTryingToGetPregnantInNext3Months", "1"], ["noRecTopicalCombined", "1"], ["noRecOralFin", "1"]]
+  - [trying-to-get-pregnantn-no-we-are-not] 'No, we are not' -> next=2400
+
+### qid 2355 [choice] show_as=automated_message required=False next=None alias=None id=694629
+TEXT: 'A word of caution if you’re planning to get pregnant.'
+META: {"description": "Some hair loss treatments contain finasteride, which studies have shown to be linked to instances of sexual dysfunction and decrease in sperm count (in oral or topical form).\n\nIf you are currently trying to conceive (or plan to in the near future), you should be aware of these potential side effects.\n\nWe recommend speaking with a provider on our platform or your primary care physician if you have any questions.", "question_wrapper_type": "secondary", "type": "single", "header": {"has_help_button": true}}
+  - [if-trying-to-get-pregnant-acknowledge-and-continue] 'Acknowledge and continue' -> next=2400 EXCLUSIVE meta={"value": "Acknowledge and continue"}
+
+### qid 2400 [multichoice] show_as=automated_message required=False next=2500 alias=None id=694630
+TEXT: 'What other health goals are on your mind?'
+META: {"button_text": "Next", "question_header_type": "secondary", "question_wrapper_type": "secondary", "header": {"current_section": 2, "has_help_button": true, "has_shadow": true, "number_of_sections": 4, "title": "Medical Questions", "type": "secondary"}}
+  - [weight-loss] 'Weight loss' -> next=2500
+  - [stronger-erections] 'Stronger erections' -> next=2500
+  - [climax-control] 'Climax control' -> next=2500
+  - [herpes-cold-sores-outbreaks] 'Herpes or cold sores outbreaks' -> next=2500
+  - [longevity] 'Longevity' -> next=2500
+  - [nutrition] 'Nutrition' -> next=2500
+  - [skincare] 'Skincare' -> next=2500
+  - [none-of-the-above] 'None of the above' -> next=2500 EXCLUSIVE
+
+### qid 2500 [text] show_as=automated_message required=False next=3150 alias=None id=694631
+TEXT: 'Is there anything else you want your doctor to know about your condition or health?'
+META: {"category": "BEFORE WE WRAP UP", "hideFollowups": true, "key": "masterQuestionTest", "questionHeaderType": "secondary", "questionWrapperType": "secondary", "type": "MasterQuestion", "header": {"current_section": 2, "has_help_button": true, "number_of_sections": 4, "title": "Medical Questions"}, "subQuestionsQids": [2510, 2520]}
+
+### qid 2510 [choice] show_as=automated_message required=False next=None alias=None id=694632
+TEXT: 'Is there anything else you want your Ro-affiliated doctor to know about your condition or health?'
+META: {"immediateSubmit": true, "key": "pastTreatment", "type": "RadioEmbedded"}
+  - [no] 'No' -> next=3150
+  - [yes] 'Yes' -> next=2520 meta={"highlight": "ack-nonclinical"}
+
+### qid 2520 [text] show_as=automated_message required=False next=3150 alias=None id=694633
+TEXT: 'Please leave your message to your doctor here.'
+META: {"hasTitle": true, "isFollowup": true, "key": "drugsTaking", "questionHeaderType": "secondary", "questionWrapperType": "secondary", "type": "ExplanationEmbedded"}
+
+### qid 3150 [fork] show_as=automated_message required=False next=None alias=None id=694634
+TEXT: 'FORK - MHL CONSULTATIVE OV'
+FORKING_RULES: [["3177", "hasMhlConsultativeOvExperiment == 1"], ["3180", "1 == 1"]]
+
+### qid 3177 [choice] show_as=automated_message required=False next=None alias=None id=694635
+TEXT: 'We use ingredients clinically proven to stop hair loss and regrow hair'
+META: {"description": "**90% of members** say they saw reduced hair loss or thinning after treatment through Ro", "type": "single", "desktop_img": {"alt": "Hair Loss Illustration", "src": "https://imgctf--assets.ro.co/jj2wf7627pjc/5vfk5RgvUITfef3l0ieNuV/be8a37b2bb03306b5f19ee7f91acc40f/hair-loss-ill.png", "variant": "rounded"}, "header": {"has_help_button": true, "has_shadow": true, "title": "Medical Questions", "type": "secondary"}, "interstitial": {"id": 2, "template": {"name": "RomanMhlLoader", "header": "Reviewing your responses", "subheader": "Here’s a quick recap"}}, "mobile_img": {"alt": "Hair Loss Illustration", "src": "https://imgctf--assets.ro.co/jj2wf7627pjc/5vfk5RgvUITfef3l0ieNuV/be8a37b2bb03306b5f19ee7f91acc40f/hair-loss-ill.png", "variant": "rounded"}}
+  - [continue] 'Continue' -> next=3178 EXCLUSIVE meta={"value": "Continue"}
+
+### qid 3178 [choice] show_as=automated_message required=False next=3210 alias=None id=694636
+TEXT: 'MHL Treatment Recommendation'
+choice_open: true
+META: {"description": "Your provider will review your preference and determine the best option for you.", "hideDescriptionInTheProviderApp": true, "type": "MHLRecommenderResults", "useV2UI": true, "header": {"has_help_button": true}, "products": [{"code": "hl-topical-spray-group", "questionTitle": "The Ro Mane Spray is our **most comprehensive** treatment, designed for **easy, once-daily** use", "sectionFooter": "*Lower risk of systemic side effects as compared to oral treatments", "sectionTitle": "If you want **a spray** to **stop hair loss + regrow hair**", "subtitle": "finasteride + minoxidil + tretinoin", "title": "Ro Mane Spray", "image": {"alt": "", "src": "https://assets.ro.co/cms/topical-spray-3549920f895b2.jpg"}, "marketingClaims": [{"title": "Great for", "value": "Stopping hair loss & regrowing hair"}, {"title": "Results in", "value": "3-6 months"}], "price": {"bolded": {"text": "Starting at $43/mo"}}, "valueProps": [{"iconName": "Rx", "key": "stronger", "label": "A stronger, more effective treatment than finasteride or minoxidil alone"}, {"iconName": "Science", "key": "tretinoin", "label": "Includes tretinoin for better absorption"}, {"iconName": "Certification", "key": "easy", "label": "Easy, once-daily spray,  with lower risk of side effects* — compounded in the USA"}]}, {"code": "hs-finasteride", "questionTitle": "Oral finasteride is great for **stopping hair loss** in a daily pill", "sectionTitle": "If you want **a pill** to **stop hair loss**", "subtitle": "Generic Propecia", "title": "Oral finasteride", "image": {"alt": "", "src": "https://assets.ro.co/cms/oral-finasteride-2-bfc54a1f76357.jpg"}, "marketingClaims": [{"title": "Great for", "value": "Preventing hair loss"}, {"title": "Results in", "value": "3-6 months"}], "price": {"bolded": {"text": "Starting at $16/mo"}}, "valueProps": [{"iconName": "Rx", "key": "effective", "label": "More effective at preventing hair loss than generic Rogaine"}, {"iconName": "Science", "key": "stopsFurtherHairLoss", "label": "Blocks DHT hormone to stop further hair loss"}, {"iconName": "Certification", "key": "easy", "label": "Easy, once-daily pill"}]}, {"code": "hl-oral-minoxidil", "questionTitle": "Oral minoxidil is great for **regrowing hair** in a daily pill", "sectionTitle": "If you want **a pill** to **regrow hair**", "subtitle": "Same active ingredient as Rogaine", "title": "Oral minoxidil", "image": {"alt": "", "src": "https://assets.ro.co/cms/oral-minoxidil-3-4038152e3dc2f.png"}, "marketingClaims": [{"title": "Great for", "value": "Regrowing hair"}, {"title": "Results in", "value": "3-6 months"}], "price": {"bolded": {"text": "Starting at $24/mo"}}, "valueProps": [{"iconName": "Rx", "key": "effective", "label": "More effective at regrowing thicker, fuller hair than generic Rogaine"}, {"iconName": "Science", "key": "regrowHair", "label": "Reactivates dead hair follicles to regrow hair"}, {"iconName": "Certification", "key": "easy", "label": "Easy, once-daily pill"}]}], "sideEffects": [{"type": "REGISTER_DROPOFF_STEP"}]}
+  - [select-topical-compounded] 'Select topical compounded spray' -> next=3210 meta={"code": "hl-topical-spray-group", "type": "CHOOSE_PRODUCT", "sideEffects": [{"type": "CLEAR_CART"}, {"type": "ADD_PRODUCTS", "products": [{"filters": {"code": "hl-topical-spray-product"}}]}]} varmods=[["hasTopicalCompounded", "1"]]
+  - [select-minoxidil] 'Select oral minoxidil' -> next=3210 meta={"code": "hl-oral-minoxidil", "type": "CHOOSE_PRODUCT", "sideEffects": [{"type": "CLEAR_CART"}, {"type": "ADD_PRODUCTS", "products": [{"filters": {"code": "oral-minoxidil-2-5-mg"}}]}]} varmods=[["hasMinoxidil", "1"]]
+  - [select-finasteride] 'Select oral finasteride' -> next=3210 meta={"code": "hs-finasteride", "type": "CHOOSE_PRODUCT", "sideEffects": [{"type": "CLEAR_CART"}, {"type": "ADD_PRODUCTS", "products": [{"filters": {"code": "Finasteride1mg"}}]}]} varmods=[["hasFinasteride", "1"]]
+
+### qid 3180 [choice] show_as=automated_message required=False next=3200 alias=None id=694637
+TEXT: 'Treatment Details'
+META: {"category": "WRAPPING UP", "current_section": 3, "description": "Let's figure out the logistics for your treatment", "do_not_count_as_question": false, "header_text": "Treatment Details", "message_type": "hidden", "number_of_sections": 4, "type": "single", "desktop_img": {"height": 440, "src": "https://assets.ro.co/ov/hl-bottle-3-e53dbee4.jpg", "width": 440}, "header": {"current_section": 3, "has_help_button": true, "number_of_sections": 4, "title": "Treatment Details"}, "mobile_img": {"height": 440, "src": "https://assets.ro.co/ov/hl-bottle-3-e53dbee4.jpg", "width": 440}, "sideEffects": [{"type": "TRACK_EVENT", "event": {"eventName": "Treatment Details", "targets": ["google-tag-manager"]}}]}
+  - [continue] 'Continue' -> next=3200 EXCLUSIVE meta={"value": "Continue"}
+
+### qid 3200 [choice] show_as=automated_message required=False next=None alias=None id=694638
+TEXT: 'Do you have a specific treatment for hair loss that you would prefer to be prescribed?'
+choice_open: true
+META: {"description": "Ultimately, your provider will make a decision based on your medical history, taking your preference into account.\n\n<Modal markdown=\"We've gathered information about both drugs to help you learn about the differences between the treatments.\n\nYour provider will decide which treatment is right for you, taking your preferences into account.\n\n<TestimonialV2 headline='The bottom line' text='These medications have not been directly compared to each other. They work in different ways and have different side effect profiles. Please review the potential side effects below to learn more.' authorName='Dr. Addie Ganik' authorRole='Dermatologist and Senior Manager, Medical Content & Education at Ro' authorPhoto='https://assets.ro.co/ov/addie-ganik-5cb5a137.jpg' /><Collapse title='How both drugs work'>**Finasteride**\n\nFinasteride works by blocking 5-alpha reductase, an enzyme that converts testosterone to DHT. DHT is the hormone responsible for male pattern baldness in people who are genetically susceptible to it. By reducing levels of DHT, finasteride can slow or stop hair loss and even regrow hair in some cases.\n\n**Oral Minoxidil**\n\nThe jury is still out on exactly how minoxidil works with regards to hair loss. While the exact mechanism is not completely understood, it’s thought to increase the length of the growth phase of hair follicles (a process called “anagen”) and increase the size of hair follicles, which is thought to promote hair regrowth.\n\nMinoxidil is also thought to relax smooth muscle in blood vessel walls, causing them to widen and increase blood flow. This may be one of the ways that minoxidil works to stop or slow hair loss and, in some cases, maybe even regrow hair.\n\n</Collapse><Collapse title='Comparison of side effects'>**Finasteride**\n\nSide effects include a decrease in sex drive, trouble getting or keeping an erection, and a decrease in the amount of semen.\n\nThere may also be an increased risk of high grade prostate cancer. These and other side effects have been reported in those taking the 5mg dose rather than the 1mg dose.\n\n**Oral Minoxidil**\n\nMinoxidil has a black box warning for pericardial effusion, or an abnormal accumulation of fluid around the heart, which can sometimes compromise heart function. Minoxidil can also worsen angina pectoris in patients with heart disease\n\nCommon side effects or oral minoxidil can include low blood pressure (hypotension) and swelling in the legs (edema), among others. Some people experience headaches, although those typically improve over time.\n\nOthers may experience additional hair growth on the face or body (hypertrichosis). This is the most common side effect of taking oral minoxidil, though the complaint is more common among women than men and is also more common when taking over 5 mg per day.\n\nTo read the full safety information for oral minoxidil (including the boxed warning) read through the <a href='https://ro.co/safety-info/oral-minoxidil/' target='_blank'>Important Safety Information</a>.</Collapse><Collapse title='How effective are both drugs?'>**Finasteride**\n\nFinasteride has been shown to be effective at preventing hair loss and even regrowing hair in some men. One paper summarized the findings of 3 studies that included a total of 1879 men and evaluated the effects of finasteride 1 mg on male pattern hair loss. Two of the studies were performed on men with hair loss primarily at the crown of the head and one study was performed on men with hair loss primarily at the hairline.\n\nBased on the studies:\n\n- 83% of men balding at the crown of the head had further hair loss prevented\n- 70% of men with hairline recession had further hair loss prevented\n\n**Oral Minoxidil**\n\nThere has not been extensive research into the effectiveness of oral minoxidil to treat hair loss. Oral minoxidil has not been clinically tested or approved as a hair loss treatment by the FDA.\n\nOral minoxidil was originally studied for blood pressure, and the hair growth effects were unintentional. In clinical trials, patients who experienced hypertrichosis (“elongation, thickening, and enhanced pigmentation of body hair”) noticed it on the forehead and temples, between the eyebrows, or on the upper part of the cheeks within three to six weeks after beginning treatment. Hair growth on the scalp was observed at a later date.\n\nSimilar to topical minoxidil, oral minoxidil takes a few months to produce noticeable results to your crown and hairline. If you stop taking oral minoxidil, new hair growth will stop as well.</Collapse><Collapse title='How common are the side effects of both drugs?'>**Finasteride**\n\nIn clinical trials, less than 2% of men experienced sexual dysfunction due to finasteride. In addition, finasteride can lower serum prostate-specific antigen (PSA) and may increase the risk of high-grade prostate cancers. Finasteride is not approved for use in women, and pregnant women should not handle finasteride.\n\nIf any of these severe side effects occur, seek medical care immediately.\n\nThese are not all the possible side effects of finasteride. See Important Safety Information for more.\n\n**Oral Minoxidil**\n\nOral minoxidil has not been extensively studied as a treatment for hair loss, and therefore we cannot say with confidence the exact percentage likelihood that someone may experience side effects.  \n\nFor more information on the side effects of oral minoxidil, please see the full <a href='https://ro.co/safety-info/oral-minoxidil/' target='_blank'>Important Safety Information</a>.</Collapse>\" key=\"compareTreatmentOptions\" linkLabel=\"Need help picking a treatment?\" title=\"Compare treatment options\" onOpenEventName=\"Need help picking a treatment? - clicked\"/>", "hideDescriptionInTheProviderApp": true, "question_wrapper_type": "secondary", "type": "ChooseProductsGroup", "choose_products_group": {"is_secondary": true, "sections": [{"component": "Sections/GroupItemV2", "group": {"code": "hs-finasteride"}, "props": {"info": "Recommended for those interested in a multi-faceted approach to treating hair loss and would like to also use topical minoxidil (generic Rogaine)."}}, {"component": "Sections/GroupItemV2", "group": {"code": "hl-oral-minoxidil"}, "props": {"info": "Identical active ingredient to topical minoxidil. May be preferred by men who do not want to risk the known (slight) chance of sexual side effects from taking finasteride."}}]}, "header": {"current_section": 3, "has_help_button": true, "number_of_sections": 4, "title": "Treatment Preference"}, "sideEffects": [{"type": "REGISTER_DROPOFF_STEP"}]}
+  - [please-tell-the-physician-i-dont-have-a-preference] 'Please tell the physician I don’t have a preference.' -> next=3210 meta={"type": "PRODUCT_NO_PREFERENCE", "no_preference_button": {"content": "I want my provider to determine the best treatment and plan for me.", "title": "Not sure / no preference", "type": "radio"}}
+  - [select-finasteride] 'Select finasteride' -> next=3210 meta={"code": "hs-finasteride", "type": "CHOOSE_PRODUCT", "sideEffects": [{"type": "CLEAR_CART"}, {"type": "ADD_PRODUCTS", "products": [{"filters": {"code": "Finasteride1mg"}}]}]} varmods=[["hasFinasteride", "1"]]
+  - [select-minoxidil] 'Select minoxidil' -> next=3210 meta={"code": "hl-oral-minoxidil", "type": "CHOOSE_PRODUCT", "sideEffects": [{"type": "CLEAR_CART"}, {"type": "ADD_PRODUCTS", "products": [{"filters": {"code": "oral-minoxidil-2-5-mg"}}]}]} varmods=[["hasMinoxidil", "1"]]
+
+### qid 3210 [fork] show_as=automated_message required=False next=None alias=None id=694639
+TEXT: 'Fork Side Effects Dependent on MHL Treatment Recommendation selection'
+FORKING_RULES: [["3230", "hasTopicalCompounded == 1"], ["3240", "hasFinasteride == 1"], ["3250", "hasMinoxidil == 1"], ["3230", "1 == 1"]]
+
+### qid 3230 [choice] show_as=automated_message required=False next=4000 alias=None id=694640
+TEXT: 'Please take a moment to review the possible side effects of this medication.'
+META: {"button_text": "Got it, continue", "description": "The medications in your selected treatment can have certain side effects, which you should be aware of before getting started.\n\n## Finasteride\n\n<Collapse title=\"Psychological side effects\">\nThis type of medication may cause or worsen depression and anxiety.\n</Collapse>\n\n<Collapse title=\"Sexual side effects\">\nThese may include decreased semen volume, decreased libido, and erectile dysfunction.\n</Collapse>\n\n<Collapse title=\"How likely are side effects?\">\nWhile there is controversy, the possibility of persistent side effects exists, even after the medication is stopped.\n\nOverall, sexual side effects occur in about 4% of patients taking medication versus about 2% taking a placebo (a \"sugar pill\"). For over 50% of patients, the side effects go away even if the medication is continued, and nearly always go away if stopped.\n</Collapse>\n\n<Collapse title=\"What if I experience side effects?\">\nIf side effects occur, no matter how mild or uncommon, it is vital to report them as soon as possible and consider stopping the medication.\n</Collapse>\n\n## Minoxidil\n\n<Collapse title=\"Common side effects\">Common side effects can include low blood pressure (hypotension) and swelling in the legs (edema), among others. Some people experience headaches, although those typically improve over time. Others may experience additional hair growth on the face or body (hypertrichosis). This is the most common side effect of taking oral minoxidil, though the complaint is more common among women than men and is also more common when taking over 5 mg per day.\n\nSide effects of oral minoxidil may be more pronounced when the drug is prescribed at higher doses. For full safety information (including the boxed warning) read through the Important Safety Information here.</Collapse>\n\n<Collapse title=\"Serious side effects\">These serious side effects can occur with oral minoxidil. You or a caregiver should carefully monitor for these side effects, especially in the beginning of treatment and with dose changes.\n\n- Salt and water retention: Monitor for fluid retention and increase in body weight. If you quickly gain five or more pounds, or if there is any swelling or puffiness in the face, hands, ankles, or stomach area, this could be a sign that you are retaining body fluids. Contact your Ro-affiliated provider or your in-person provider.\n- Increased heart rate (tachycardia): You should measure your heart rate by counting your pulse rate while you are resting. If you have an increase of 20 beats or more a minute over your normal pulse, contact your Ro-affiliated provider or your in-person provider immediately.\n- Pericarditis, Pericardial Effusion and Tamponade: Oral minoxidil can cause an accumulation of fluids in the sac surrounding the heart. Monitor for sharp pain in the chest, arm, or shoulder; signs of severe indigestion; or shortness of breath, dizziness, lightheadedness, and fainting. These could be signs of serious heart problems and you should seek immediate emergency care.\n- Hazard of Rapid Control of Blood Pressure: A sudden or too large of a drop in blood pressure can lead to fainting, heart attack, and loss of blood flow to certain organs.</Collapse>\n\n<Collapse title=\"How likely are serious side effects?\">Oral minoxidil has not been extensively studied as a treatment for hair loss, and therefore we cannot say with confidence the exact percentage likelihood that someone may experience side effects. For more information on the side effects of oral minoxidil, please see the full Important Safety Information.</Collapse>\n\n<Collapse title=\"What if I experience side effects?\">If you notice side effects, let your healthcare provider know as soon as possible. They’ll be able to advise you about how you can use minoxidil safely. If you experience chest pain, chest tightness, or shortness of breath, stop taking minoxidil and let your provider know immediately. You or a caregiver should carefully monitor for side effects, especially in the beginning of treatment and with dose changes. For more information on the side effects of oral minoxidil, please see the full Important Safety Information.</Collapse>", "doNotCountAsQuestion": true, "question_wrapper_type": "secondary", "type": "single", "header": {"current_section": 2, "has_help_button": true, "number_of_sections": 4, "title": "Medical Questions"}}
+  - [got-it-continue] 'Got it, continue' -> next=4000 EXCLUSIVE meta={"value": "Continue"}
+
+### qid 3240 [choice] show_as=automated_message required=False next=4000 alias=None id=694641
+TEXT: 'Please take a moment to review the possible side effects of this medication.'
+META: {"button_text": "Got it, continue", "description": "The medications in your selected treatment can have certain side effects, which you should be aware of before getting started.\n\n## Finasteride\n\n<Collapse title=\"Psychological side effects\">\nThis type of medication may cause or worsen depression and anxiety.\n</Collapse>\n\n<Collapse title=\"Sexual side effects\">\nThese may include decreased semen volume, decreased libido, and erectile dysfunction.\n</Collapse>\n\n<Collapse title=\"How likely are side effects?\">\nWhile there is controversy, the possibility of persistent side effects exists, even after the medication is stopped.\n\nOverall, sexual side effects occur in about 4% of patients taking medication versus about 2% taking a placebo (a \"sugar pill\"). For over 50% of patients, the side effects go away even if the medication is continued, and nearly always go away if stopped.\n</Collapse>\n\n<Collapse title=\"What if I experience side effects?\">\nIf side effects occur, no matter how mild or uncommon, it is vital to report them as soon as possible and consider stopping the medication.</Collapse>", "doNotCountAsQuestion": true, "question_wrapper_type": "secondary", "type": "single", "header": {"current_section": 2, "has_help_button": true, "number_of_sections": 4, "title": "Medical Questions"}}
+  - [got-it-continue] 'Got it, continue' -> next=4000 EXCLUSIVE meta={"value": "Continue"}
+
+### qid 3250 [choice] show_as=automated_message required=False next=4000 alias=None id=694642
+TEXT: 'Please take a moment to review the possible side effects of this medication.'
+META: {"button_text": "Got it, continue", "description": "The medications in your selected treatment can have certain side effects, which you should be aware of before getting started.\n\n## Minoxidil\n\n<Collapse title=\"Common side effects\">Common side effects can include low blood pressure (hypotension) and swelling in the legs (edema), among others. Some people experience headaches, although those typically improve over time. Others may experience additional hair growth on the face or body (hypertrichosis). This is the most common side effect of taking oral minoxidil, though the complaint is more common among women than men and is also more common when taking over 5 mg per day.\n\nSide effects of oral minoxidil may be more pronounced when the drug is prescribed at higher doses. For full safety information (including the boxed warning) read through the Important Safety Information here.</Collapse>\n\n<Collapse title=\"Serious side effects\">These serious side effects can occur with oral minoxidil. You or a caregiver should carefully monitor for these side effects, especially in the beginning of treatment and with dose changes.\n\n- Salt and water retention: Monitor for fluid retention and increase in body weight. If you quickly gain five or more pounds, or if there is any swelling or puffiness in the face, hands, ankles, or stomach area, this could be a sign that you are retaining body fluids. Contact your Ro-affiliated provider or your in-person provider.\n- Increased heart rate (tachycardia): You should measure your heart rate by counting your pulse rate while you are resting. If you have an increase of 20 beats or more a minute over your normal pulse, contact your Ro-affiliated provider or your in-person provider immediately.\n- Pericarditis, Pericardial Effusion and Tamponade: Oral minoxidil can cause an accumulation of fluids in the sac surrounding the heart. Monitor for sharp pain in the chest, arm, or shoulder; signs of severe indigestion; or shortness of breath, dizziness, lightheadedness, and fainting. These could be signs of serious heart problems and you should seek immediate emergency care.\n- Hazard of Rapid Control of Blood Pressure: A sudden or too large of a drop in blood pressure can lead to fainting, heart attack, and loss of blood flow to certain organs.</Collapse>\n\n<Collapse title=\"How likely are serious side effects?\">Oral minoxidil has not been extensively studied as a treatment for hair loss, and therefore we cannot say with confidence the exact percentage likelihood that someone may experience side effects. For more information on the side effects of oral minoxidil, please see the full Important Safety Information.</Collapse>\n\n<Collapse title=\"What if I experience side effects?\">If you notice side effects, let your healthcare provider know as soon as possible. They’ll be able to advise you about how you can use minoxidil safely. If you experience chest pain, chest tightness, or shortness of breath, stop taking minoxidil and let your provider know immediately. You or a caregiver should carefully monitor for side effects, especially in the beginning of treatment and with dose changes. For more information on the side effects of oral minoxidil, please see the full Important Safety Information.</Collapse>", "doNotCountAsQuestion": true, "question_wrapper_type": "secondary", "type": "single", "header": {"current_section": 2, "has_help_button": true, "number_of_sections": 4, "title": "Medical Questions"}}
+  - [got-it-continue] 'Got it, continue' -> next=4000 EXCLUSIVE meta={"value": "Continue"}
+
+### qid 4000 [fork] show_as=automated_message required=False next=None alias=None id=694643
+TEXT: 'FORK - SELFIE PHOTO'
+FORKING_RULES: [["5000", "skipManualIdVerification == 1"], ["5000", "hasVerifiedPhoneNumber == 1 and hasTruliooVerificationExperiment == 1"], ["5000", "hasUploadedSelfiePhoto == 1"], ["4010", "1 == 1"]]
+
+### qid 4010 [choice] show_as=automated_message required=False next=4020 alias=Share a photo of yourself - Verification id=694644
+TEXT: 'Share a photo of yourself'
+META: {"photoType": "selfie", "type": "PhotoUploadWithVerification", "header": {"has_help_button": true, "title": "Identity Verification"}, "intro": {"howItWorksModal": {"content": "<Image align=\"left\" src=\"https://assets.ro.co/ov/question-mark-51a0b7e1.jpg\" width=\"64px\" />## How does this work?\n\nPrior to reviewing your treatment request, your doctor or nurse practitioner will use your photos to verify your identity.\n\n### How should I take the photo?\n\n#### For ID:\n\nIf you add a driver’s license, take a photo of the front of the ID on a flat surface. If you add a photo of your passport, take a photo of the page with your picture on it.\n\nMake sure your ID is well lit and clear – your doctor or nurse practitioner must be able to read your name and date of birth.\n\n#### For photo of your face:\n\nPlease ensure your face is well-lit and not blurry, you are the only person in the photo, and nothing is covering your face, including sunglasses or a hat."}, "image": {"alt": "selfie", "height": "240px", "src": "https://assets.ro.co/ov/selfie-6a050b73.jpg", "width": "240px"}, "pickPhotoButton": {"label": "Upload photo"}, "questionContent": {"content": "Your doctor or nurse practitioner will use this photo to verify your identity. This helps us confirm that you’re really you.", "heading": "Share a photo of yourself", "headline": "Step 1 of 2"}, "skipModal": {"content": "Remember: your provider will have to verify your identity in order to prescribe treatment.\nAfter you complete your visit, you can upload your ID and selfie in your Ro account."}, "takeOrUploadPhotoButton": {"label": "Take or upload photo"}, "takePhotoButton": {"label": "Take photo"}, "valueNudge": {"text": "Your photos won’t be shared with anyone besides your doctor or nurse practitioner.", "image": {"src": "https://assets.ro.co/ov/secure-20c6485b.png"}}}, "photoConfig": {"code": "photoContent", "name": "photoContent", "customCamera": "face", "mask": "face"}, "sideEffects": [{"type": "REGISTER_DROPOFF_STEP"}]}
+  - [submit] 'Upload completed' -> next=4020 meta={"type": "GO_FORWARD"}
+  - [skip] 'skip' -> next=4020 meta={"type": "SKIP"}
+
+### qid 4020 [fork] show_as=automated_message required=False next=None alias=None id=694645
+TEXT: 'FORK - ID PHOTO'
+FORKING_RULES: [["5000", "skipManualIdVerification == 1"], ["5000", "hasVerifiedPhoneNumber == 1 and hasTruliooVerificationExperiment == 1"], ["5000", "hasUploadedGovernmentIdPhoto == 1"], ["4030", "1 == 1"]]
+
+### qid 4030 [choice] show_as=automated_message required=False next=5000 alias=None id=694646
+TEXT: 'Take a photo of your government-issued ID'
+META: {"hasAdditionalVerification": true, "photoType": "id", "type": "PhotoUploadWithVerification", "header": {"has_help_button": true, "title": "Identity Verification"}, "intro": {"howItWorksModal": {"content": "<Image align=\"left\" src=\"https://assets.ro.co/ov/question-mark-51a0b7e1.jpg\" width=\"64px\" />## How does this work?\n\nPrior to reviewing your treatment request, your doctor or nurse practitioner will use your photos to verify your identity.\n\n### How should I take the photo?\n\n#### For ID:\n\nIf you add a driver’s license, take a photo of the front of the ID on a flat surface. If you add a photo of your passport, take a photo of the page with your picture on it.\n\nMake sure your ID is well lit and clear – your doctor or nurse practitioner must be able to read your name and date of birth.\n\n#### For photo of your face:\n\nPlease ensure your face is well-lit and not blurry, you are the only person in the photo, and nothing is covering your face, including sunglasses or a hat.", "title": "How does this work?", "image": {"height": "64px", "src": "https://assets.ro.co/ov/question-mark-51a0b7e1.jpg", "width": "64px"}}, "image": {"alt": "id", "hasExampleWrapper": true, "height": "240px", "src": "https://assets.ro.co/ov/example_id_img_male-9131e3db.png", "width": "240px"}, "pickPhotoButton": {"label": "Upload id photo"}, "questionContent": {"content": "Your doctor or nurse practitioner will use this photo to verify your identity. Please ensure that your government-issued ID includes your face, and your date of birth.", "heading": "Take a photo of your government-issued ID", "headline": "Step 2 of 2"}, "skipButton": {"label": "Skip for now"}, "skipModal": {"content": "Remember: your provider will have to verify your identity in order to prescribe treatment.\nAfter you complete your visit, you can upload your ID and selfie in your Ro account."}, "takeOrUploadPhotoButton": {"label": "Take or upload id photo"}, "takePhotoButton": {"label": "Take id photo"}, "valueNudge": {"text": "Your photos won’t be shared with anyone besides your doctor or nurse practitioner.", "image": {"src": "https://assets.ro.co/ov/secure-20c6485b.png"}}}, "photoConfig": {"code": "photo2Content", "name": "photo2Content", "customCamera": "document", "mask": "document"}, "sideEffects": [{"type": "REGISTER_DROPOFF_STEP"}]}
+  - [submit] 'submit id' -> next=5000 meta={"type": "GO_FORWARD"}
+  - [skip] 'skip' -> next=5000 meta={"type": "SKIP"}
+
+### qid 5000 [fork] show_as=automated_message required=False next=None alias=None id=694647
+TEXT: 'FORK - Shipping Info with (5060) or without custom pharmacy (5030)'
+FORKING_RULES: [["5030", "hasTopicalCompounded == 1"], ["5060", "1 == 1"]]
+
+### qid 5030 [control] show_as=automated_message required=False next=5140 alias=None id=694648
+TEXT: 'Shipping Info'
+META: {"collapseAdditionalFields": true, "do_not_count_as_question": true, "hasMinimalisticUI": true, "hasNameFields": true, "hasPhoneField": false, "hide_custom_pharmacy_button": true, "hold_next_question": true, "question_wrapper_type": "secondary", "type": "ShippingAddress", "header": {"has_help_button": true, "title": "Checkout"}, "shipping_address": {"hasSmsNotification": false, "alternate_pharmacy": {"cancel_button": "Nevermind, pick Ro pharmacy", "confirm_button": "Yes, I’m sure", "heading": "Need alternate pharmacy?", "text_sections": ["If you pick a pharmacy outside of the Ro Pharmacy Network, and qualify for a prescription, we will not be able to guarantee the price of the medication and provide free monthly delivery."]}, "form_header": {"on_pharmacy_address": {"heading": "Shipping from"}, "on_pharmacy_address_user_address": {"text": "We also need your home address for your account information.", "heading": "Your home address"}, "on_shipping_address": {"heading": "Shipping to"}}, "pharmacy_info": {"displayBelowShippingForm": true, "on_pharmacy_address": {"button_text": "Ship with our pharmacy", "heading": "If you ship with our pharmacy", "show_button_inside": true, "list": ["FREE Shipping", "Discreet Packaging", "Guaranteed Pricing"], "thumb": {"alt": "Ro Pharmacy", "src": "https://assets.ro.co/ov/hl-shipping-info-fcda27a4.jpg"}}, "on_shipping_address": {"hasChangePharmacyButton": false, "heading": "Our Pharmacy", "show_button_inside": false, "list": ["FREE Shipping", "Discreet Packaging", "Guaranteed Pricing"], "thumb": {"alt": "Ro Pharmacy", "src": "https://assets.ro.co/ov/hl-shipping-info-fcda27a4.jpg"}}}}}
+
+### qid 5060 [control] show_as=automated_message required=False next=5140 alias=None id=694649
+TEXT: 'Shipping Info'
+META: {"collapseAdditionalFields": true, "do_not_count_as_question": true, "hasMinimalisticUI": true, "hasNameFields": true, "hasPhoneField": false, "hold_next_question": true, "question_wrapper_type": "secondary", "type": "ShippingAddress", "header": {"has_help_button": true, "title": "Checkout"}, "shipping_address": {"hasSmsNotification": false, "alternate_pharmacy": {"cancel_button": "Nevermind, pick Ro pharmacy", "confirm_button": "Yes, I’m sure", "heading": "Need alternate pharmacy?", "text_sections": ["If you pick a pharmacy outside of the Ro Pharmacy Network, and qualify for a prescription, we will not be able to guarantee the price of the medication and provide free monthly delivery."]}, "form_header": {"on_pharmacy_address": {"heading": "Shipping from"}, "on_pharmacy_address_user_address": {"text": "We also need your home address for your account information.", "heading": "Your home address"}, "on_shipping_address": {"heading": "Shipping to"}}, "pharmacy_info": {"displayBelowShippingForm": true, "on_pharmacy_address": {"button_text": "Ship with our pharmacy", "heading": "If you ship with our pharmacy", "show_button_inside": true, "list": ["FREE Shipping", "Discreet Packaging", "Guaranteed Pricing"], "thumb": {"alt": "Ro Pharmacy", "src": "https://assets.ro.co/ov/hl-shipping-info-fcda27a4.jpg"}}, "on_shipping_address": {"button_text": "Select Different Pharmacy", "heading": "Our Pharmacy", "show_button_inside": false, "list": ["FREE Shipping", "Discreet Packaging", "Guaranteed Pricing"], "thumb": {"alt": "Ro Pharmacy", "src": "https://assets.ro.co/ov/hl-shipping-info-fcda27a4.jpg"}}}}}
+
+### qid 5140 [choice] show_as=automated_message required=False next=6500 alias=None id=694650
+TEXT: 'Finalize your order'
+META: {"do_not_count_as_question": true, "hasMainHeaderText": false, "hold_next_question": true, "question_header_type": "hidden", "question_wrapper_type": "secondary", "redirectToAccountOnFinish": false, "skipTreatmentRequestCreation": true, "type": "Checkout", "header": {"has_help_button": true, "title": "Checkout"}, "sections": [{"component": "Checkout/CartSummary/PaymentWrapper", "props": {"hasCardStyle": true}, "sections": [{"component": "Checkout/CartSummary", "props": {"hasEditMedicationButton": false, "showCartSummaryV3UI": true, "informationModal": {"content": "For medication that requires a prescription, the doctor will review your online visit to determine if the medication is right for your health condition. You won’t be charged for any prescription medication until this review is completed and you have been approved for treatment. This review typically occurs within 24 hours.", "title": "When do we charge for your treatment cost?", "button": {"label": "Got it"}, "image": {"centered": true, "height": "189px", "spaced": true, "src": "https://assets.ro.co/ov/info-1a8df219.png", "width": "239px"}, "trigger": {"label": "When am I charged?"}}}}, {"component": "Checkout/Form", "sections": [{"component": "Checkout/PaymentMethodsRedesigned", "props": {"hasHeader": false, "hasPaymentOptionsV2": true, "simplifiedCheckout": true, "simplifiedExpressPay": true}}]}, {"component": "Checkout/Footer", "props": {"hasPoweredBy": false}}]}], "sideEffects": [{"type": "SET_DELIVERY_SCHEDULE", "value": "03_quarterly"}, {"type": "REGISTER_DROPOFF_STEP"}]}
+  - [finish] 'Finish' -> next=6500 meta={"type": "FINISH"}
+
+### qid 6500 [control] show_as=automated_message required=False next=-1 alias=None id=694651
+TEXT: 'Thank you'
+META: {"do_not_count_as_question": true, "final_step": true, "hold_next_question": true, "question_header_type": "hidden", "question_wrapper_type": "secondary", "type": "CreateTreatmentRequests", "final": {"description": "The answers from your online visit have been sent to your Ro-affiliated doctor via our secure electronic medical record system.", "nextSteps": {"heading": "What’s next?", "type": "timeline", "list": {"type": "timeline", "idSkip": {"buttonLabel": "Submit id verification", "heading": "Complete ID verification so your<br />doctor can respond to your request.", "thumb": {"height": 64, "src": "https://assets.ro.co/ov/ico-id-roman-70dda99f.png", "width": 64}}, "phoneCall": {"text": "Based on telehealth requirements in your state, your doctor will reach out to you over the phone after reviewing your online visit responses. If you miss the call, make sure to schedule another call through “Talk to Doc” on your account.", "heading": "Talk to your doctor over<br />the phone", "thumb": {"height": 64, "src": "https://assets.ro.co/ov/ico-doc-roman-2ec0a9a3.png", "width": 64}}, "review": {"text": "In order to determine the appropriate treatment for you, your doctor will review your online visit and, if necessary, ask for any other information. ", "heading": "Your doctor will review your medical history ", "thumb": {"height": 64, "src": "https://assets.ro.co/ov/ico-history-roman-649af882.png", "width": 64}}, "shipment": {"text": "After your doctor has prescribed your treatment, our pharmacy will process your order. Then we’ll deliver it to your door with free shipping.", "heading": "Your treatment will arrive in 3–5 days", "thumb": {"height": 64, "src": "https://assets.ro.co/ov/ico-shipping-roman-2c82460e.png", "width": 64}}, "talkToDoc": {"text": "Based on telehealth requirements in your state, your doctor will reach out over the phone or schedule a video call with you through the secure messaging portal on your MyRo account.", "heading": "Talk to your doctor over<br />phone or video.", "thumb": {"height": 64, "src": "https://assets.ro.co/ov/ico-doc-roman-2ec0a9a3.png", "width": 64}}, "videoCall": {"text": "Your doctor will reach out to you via our secure messaging portal to schedule a video call. Make sure to schedule the video chat by clicking the scheduling link through “Talk to Doc” on your account.", "heading": "Video chat with<br />your doctor ", "thumb": {"height": 64, "src": "https://assets.ro.co/ov/ico-doc-roman-2ec0a9a3.png", "width": 64}}}}, "support": {"buttonText": "Go to my account", "heading": "Continued support from Ro", "list": {"changeFrequency": {"text": "If you have medical questions about results or side effects, you can check in with your doctor through the secure messaging portal in your account.", "thumb": {"src": "https://assets.ro.co/ov/Group-ad5c6bcf.png", "width": 24}}, "talkToDoc": {"text": "Want to change how often you get your treatment? You can schedule your shipment to arrive sooner, delay it, or switch to on-demand at any time through your account.", "thumb": {"src": "https://assets.ro.co/ov/auto-refill-f179ebc0.png", "width": 24}}, "questions": {"text": "Any other questions? We’re here for you! Visit the <a href='https://ro.co/my/help-center/'>help center</a> or contact the Ro Care Team at <a href='mailto:care@ro.co'>care@ro.co</a>.", "thumb": {"src": "https://assets.ro.co/ov/support-3-01f7971a.png", "width": 37}}}}}, "header": {"has_help_button": true, "has_shadow": true, "hideBackButton": true, "title": "Thank you", "type": "secondary"}, "sections": [{"component": "Checkout/ThankYouModal", "props": {}}]}
+
+### qid 7010 [control] show_as=automated_message required=False next=7020 alias=Exit: age under 18 id=694652
+TEXT: 'How can we help?'
+META: {"description": "Unfortunately our hair loss treatment is not available to people under 18. However, we would love to know if there is anything we can do to help. Please confirm your email and leave comments below we will get back to you as soon as we can.", "reason": "60_under_18", "submit_label": "Submit", "type": "LeaveComment", "header": {"has_help_button": true, "title": "How can we help?"}}
+
+### qid 7020 [control] show_as=automated_message required=False next=-1 alias=None id=694653
+TEXT: 'Thank you!'
+META: {"extraText": "We will review your message and get back to you as soon as possible.", "type": "ThankYouSecondary", "header": {"has_help_button": true, "title": "Thank you"}}
+
+### qid 7030 [control] show_as=automated_message required=False next=7020 alias=Exit: Not supported zip code id=694654
+TEXT: 'Be notified when we’re in your area!'
+META: {"description": "We're currently not serving people in your area yet. Be along the first to find out when we are there.", "reason": "00_zip_not_supported", "submit_label": "Be notified!", "type": "LeaveComment", "header": {"has_help_button": true, "title": "Be notified!"}}
+
+### qid 7060 [fork] show_as=automated_message required=False next=7020 alias=None id=694655
+TEXT: 'FORK: redirect or exit'
+FORKING_RULES: [["7061", "hasRomanHairLossFemaleRedirectFlag == 1"], ["7062", "1 == 1"]]
+
+### qid 7061 [choice] show_as=automated_message required=False next=7020 alias=Exit: Female id=694656
+TEXT: 'We have a better experience for you!'
+META: {"description": "The treatments prescribed in this visit are designed to treat male pattern hair loss. Luckily, we have a separate suite of offerings designed specifically for women.", "doNotCountAsQuestion": true, "question_header_type": "secondary", "question_wrapper_type": "secondary", "type": "CustomChoice", "header": {"has_help_button": true, "has_shadow": true, "title": "How can we help?", "type": "secondary"}}
+  - [continue-to-women-s-hair-loss-visit] "Continue to women's hair loss visit" -> next=7020 meta={"component": "ButtonLink", "ButtonLink": {"url": "/tefcyb"}}
+
+### qid 7062 [control] show_as=automated_message required=False next=7020 alias=Exit: Female id=694657
+TEXT: 'How can we help?'
+META: {"description": "Unfortunately our hair loss treatment is currently only available to men. However, we would love to know if there’s anything we can do to help.", "reason": "50_not_supported_gender", "submit_label": "Submit", "type": "LeaveComment", "header": {"has_help_button": true, "has_shadow": true, "title": "How can we help?", "type": "secondary"}}

@@ -1,0 +1,37 @@
+STEP 23 wait 2500
+URL: https://www.keeps.com/register
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+Checkout
+2
+Account
+3
+Medical Intake
+Finish setting up your account
+
+Required before a provider can review your information and prescribe treatment.
+
+Email
+First name
+Last name
+Date of Birth
+Required by law for your physician to prescribe
+Phone number
+State
+Select state
+Create Password
+Confirm Password
+
+Your information is HIPAA-protected and seen only by your care team.
+
+Continue
+
+--- CONTROLS ---
+  input:email (1): Email
+  input:text (5): First name  ·  Last name  ·  Date of Birth  ·  Phone number = "(___) ___-____"  ·  react-select-2-input
+  input:password (2): Create Password  ·  Confirm Password
+  button (2): Show password  ·  Continue [disabled]
+
+--- LINKS ---
+

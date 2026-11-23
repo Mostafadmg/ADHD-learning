@@ -1,0 +1,34 @@
+STEP 20 mdm AFTER ANSWERS ["Other",{"fill":"textarea","value":"Vitamin D"}]
+URL: https://www.hairandme.com/c/suh/mdm
+
+--- VISIBLE TEXT ---
+Are you taking any of the following prescription medications?
+Antidepressants, anti-anxiety or medication for mental health reasons
+
+(e.g. Diazepam, amitriptyline, propranolol, fluoxetine, citalopram, sertraline or phenelzine)
+
+Medication to treat benign prostate hyperplasia (BPH)
+
+(e.g. alpha blockers like doxazosin, tamsulosin, alfuzosin or finasteride 5mg)
+
+Steroids or other medications for psoriasis or eczema on your scalp
+
+(e.g. Hydrocortisone or betamethasone)
+
+Other
+No, I don't take any medications
+Tell us about your other medications
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:checkbox[name=4454] | Antidepressants, anti-anxiety or medication for mental health reasons (e.g. Diazepam, amitriptyline, propranolol, fluoxetine, citalopram, sertraline or phenelzi
+input:checkbox[name=4454] | Medication to treat benign prostate hyperplasia (BPH) (e.g. alpha blockers like doxazosin, tamsulosin, alfuzosin or finasteride 5mg)
+input:checkbox[name=4454] | Steroids or other medications for psoriasis or eczema on your scalp (e.g. Hydrocortisone or betamethasone)
+input:checkbox[name=4454] | Other [checked]
+input:checkbox[name=4454] | No, I don't take any medications [disabled]
+textarea:textarea[name=4456] | Tell us about your other medications
+button:submit | NEXT QUESTION
+a -> /c/suh/mdm?action=previous | Back to previous page

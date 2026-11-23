@@ -1,0 +1,314 @@
+[
+ {
+  "url": "https://script.crazyegg.com/pages/data-scripts/0133/7340/site/shop.sons.co.uk.json?t=1",
+  "method": "GET",
+  "status": 200,
+  "ct": "application/json",
+  "size": 53320,
+  "file": "01-script_crazyegg_com_pages_data_scripts_0133_7340_site_shop_sons_co_uk_json_t_1.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://script.crazyegg.com/pages/data-scripts/0133/7340/sampling/shop.sons.co.uk.json?t=1",
+  "method": "GET",
+  "status": 200,
+  "ct": "application/json",
+  "size": 204,
+  "file": "02-script_crazyegg_com_pages_data_scripts_0133_7340_sampling_shop_sons_co_uk_json_t_1.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://shop.sons.co.uk/locales/en/translation.json",
+  "method": "GET",
+  "status": 200,
+  "ct": "application/json; charset=UTF-8",
+  "size": 53269,
+  "file": "03-shop_sons_co_uk_locales_en_translation_json.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://www.google.com/ccm/collect?rcb=9&frm=0&apvc=1&ae=g&auid=662469748.1795470937&dt=Sons&en=page_view&dl=https%3A%2F%2Fshop.sons.co.uk%2Fconsultation%3Flogged_in%3Dfalse&scrsrc=www.googletagmanager.com&rnd=404458470.1795470937&navt=n&npa=0&ep.ads_data_redaction=0&gtm=45He6bh1v9131698558za200zd9131698558xeaxf1&gcd=13l3l3l3l1l1&dma=0&tag_exp=115938465~115938468~118012008~120385423~120469145~120469153~121049589~121246026~121246034~123322203&tft=1795470937414&tfd=4115&fmt=8",
+  "method": "POST",
+  "status": 200,
+  "size": 0,
+  "file": "04-www_google_com_ccm_collect_rcb_9_frm_0_apvc_1_ae_g_auid_662469748_1795470937_dt_Sons_en_pa.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://shop.sons.co.uk/locales/en/translation.json",
+  "method": "GET",
+  "status": 200,
+  "ct": "application/json; charset=UTF-8",
+  "size": 53269,
+  "file": "05-shop_sons_co_uk_locales_en_translation_json.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://pagead2.googlesyndication.com/ccm/collect?rcb=10&frm=0&apvc=0&tid=DC-14692393&en=page_view&dl=https%3A%2F%2Fshop.sons.co.uk%2Fconsultation%3Flogged_in%3Dfalse&scrsrc=www.googletagmanager.com&rnd=404458470.1795470937&navt=n&npa=1&gtm=45fe6bh1v9187972762za20ozb9131698558zd9131698558xecxf1&gcs=G100&gcd=13q3q3q3q5l1&dma_cps=-&dma=0&tag_exp=115616985~115938465~115938469~120213116~120385423~120469145~120469153~121246026~121246034&tft=1795470937723&tfd=4425&tids=DC-14692393&fmt=8",
+  "method": "POST",
+  "status": 200,
+  "size": 0,
+  "file": "06-pagead2_googlesyndication_com_ccm_collect_rcb_10_frm_0_apvc_0_tid_DC_14692393_en_page_view.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://pagead2.googlesyndication.com/ccm/collect?rcb=18&frm=0&apvc=0&tid=AW-712734607&en=page_view&dl=https%3A%2F%2Fshop.sons.co.uk%2Fconsultation%3Flogged_in%3Dfalse&scrsrc=www.googletagmanager.com&rnd=404458470.1795470937&navt=n&npa=1&gtm=45je6bh1v9122414055za208zb9131698558zd9131698558xecxf1&gcs=G100&gcd=13q3q3q3q5l1&dma_cps=-&dma=0&tag_exp=115938465~115938469~120213116~120385423~120469145~120469153~121246026~121246034~123785232&tft=1795470937866&tfd=4568&tids=AW-712734607&fmt=8",
+  "method": "POST",
+  "status": 200,
+  "size": 0,
+  "file": "07-pagead2_googlesyndication_com_ccm_collect_rcb_18_frm_0_apvc_0_tid_AW_712734607_en_page_vie.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://tags.srv.stackadapt.com/saq_pxl?uid=Ml50VFgT6QteEIbgtdSVEQ&is_js=true&landing_url=https%3A%2F%2Fshop.sons.co.uk%2Fconsultation%3Flogged_in%3Dfalse&t=Sons&tip=oeDf_L8Pf0QkoslhnSW4QexOyBCIa6yVzCAo4hp_nHI&host=https%3A%2F%2Fshop.sons.co.uk&sa_conv_data_css_value=%27CiQwMWEyMGE2OC00ZTZkLTczMDItYjhiMC0zOWY0ZTA2MmQ3ODYQBBoCTkEgNg%27&sa_conv_data_image_value=ffd8ffe000104a46494600010101006000600000ffdb004300080606070605080707070909080a0c140d0c0b0b0c1912130f141d1a1f1e1d1a1c1c20242e2720222c231c1c2837292c30313434341f27393d38323c2e333432ffdb0043010909090c0b0c180d0d1832211c213232323232323232323232323232323232323232323232323232323232323232323232323232323232323232323232323232ffc00011080001000103012200021101031101ffc4001f0000010501010101010100000000000000000102030405060708090a0bffc400b5100002010303020403050504040000017d01020300041105122131410613516107227114328191a1082342b1c11552d1f02433627282090a161718191a25262728292a3435363738393a434445464748494a535455565758595a636465666768696a737475767778797a838485868788898a92939495969798999aa2a3a4a5a6a7a8a9aab2b3b4b5b6b7b8b9bac2c3c4c5c6c7c8c9cad2d3d4d5d6d7d8d9dae1e2e3e4e5e6e7e8e9eaf1f2f3f4f5f6f7f8f9faffc4001f0100030101010101010101010000000000000102030405060708090a0bffc400b51100020102040403040705040400010277000102031104052131061241510761711322328108144291a1b1c109233352f0156272d10a162434e125f11718191a262728292a35363738393a434445464748494a535455565758595a636465666768696a737475767778797a82838485868788898a92939495969798999aa2a3a4a5a6a7a8a9aab2b3b4b5b6b7b8b9bac2c3c4c5c6c7c8c9cad2d3d4d5d6d7d8d9dae2e3e4e5e6e7e8e9eaf2f3f4f5f6f7f8f9faffda000c03010002110311003f00f7fa28a2803fffd9436951774d5745794d4745324f4330305a6a426c4c5463774d6d49744f57597a4f43316a5a5446694e7a59325a544d784f54635142426f43546b45674b77&l_src=&l_src_d=&u_src=&u_src_d=&shop=true&sa-user-id-v4=s%253ACiQwMWEyMGE2OC00ZTZkLTczMDItYjhiMC0zOWY0ZTA2MmQ3ODYQBBoCTkEgNg.zzNEKq%252BbzeSL44s7ucJGmym4%252F0iPItvq%252BXHF6TfLSuw&sa-user-id-v2=s%253A4LfKAv4nVTJ6dBy6fzo3AaBPahE.EMSXMrIyIOYTxSkpMli54Fs9BZgSxtT1XRcV3zbYEgU&sa-user-id=s%253A0-e0b7ca02-fe27-5532-7a74-1cba7f3a3701.txoT8wK94gSbRLkNxXw%252FZqHmE5kWZWNt4tzdiU6ltsg",
+  "method": "GET",
+  "status": 200,
+  "ct": "text/plain; charset=utf-8",
+  "size": 138,
+  "file": "08-tags_srv_stackadapt_com_saq_pxl_uid_Ml50VFgT6QteEIbgtdSVEQ_is_js_true_landing_url_https_3A.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://pagead2.googlesyndication.com/pagead/conversion/712734607/?random=1795470937825&cv=11&fst=1795470937825&fmt=8&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45je6bh1v9122414055z89131698558za200zb9131698558zd9131698558xeaxf1&gcs=G100&gcd=13q3q3q3q5l1&dma_cps=-&dma=0&tag_exp=115938465~115938469~120213116~120385423~120469145~120469153~121246026~121246034~123785232&u_w=1280&u_h=900&url=https%3A%2F%2Fshop.sons.co.uk%2Fconsultation%3Flogged_in%3Dfalse&rcb=18&label=ZncCCL-flZwaEI_v7dMC&frm=0&tiba=Sons&bttype=purchase&value=0&hn=www.googleadservices.com&npa=1&pscdl=denied&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CHeadlessChrome%3B157.0.8103.78%7CChromium%3B157.0.8103.78&uamb=0&uam=&uap=Linux&uapv=&uaw=0&_tu=CA&category=acrcp_v1_512&ept=6",
+  "method": "POST",
+  "status": 204,
+  "ct": "text/html; charset=UTF-8",
+  "size": 0,
+  "file": "09-pagead2_googlesyndication_com_pagead_conversion_712734607_random_1795470937825_cv_11_fst_1.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://pagead2.googlesyndication.com/pagead/conversion/712734607/?random=1795470937833&cv=11&fst=1795470937833&fmt=8&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45je6bh1v9122414055z89131698558za200zb9131698558zd9131698558xeaxf1&gcs=G100&gcd=13q3q3q3q5l1&dma_cps=-&dma=0&tag_exp=115938465~115938469~120213116~120385423~120469145~120469153~121246026~121246034~123785232&u_w=1280&u_h=900&url=https%3A%2F%2Fshop.sons.co.uk%2Fconsultation%3Flogged_in%3Dfalse&rcb=18&label=uuXQCImtpbYaEI_v7dMC&frm=0&tiba=Sons&bttype=purchase&value=0&hn=www.googleadservices.com&npa=1&pscdl=denied&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CHeadlessChrome%3B157.0.8103.78%7CChromium%3B157.0.8103.78&uamb=0&uam=&uap=Linux&uapv=&uaw=0&_tu=CA&category=acrcp_v1_512&ept=6",
+  "method": "POST",
+  "status": 204,
+  "ct": "text/html; charset=UTF-8",
+  "size": 0,
+  "file": "10-pagead2_googlesyndication_com_pagead_conversion_712734607_random_1795470937833_cv_11_fst_1.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-J0JXKQHBRW&gtm=45je6bh1v9122414055za200zb9131698558zd9131698558xf1&_p=1795470934620&gcs=G100&gcd=13q3q3q3q5l1&npa=1&dma_cps=-&dma=0&ecid=418804426&_eu=AAAAAGAC&cid=1353977357.1795470938&ec_mode=a&frm=0&pscdl=denied&rcb=18&sr=1280x900&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CHeadlessChrome%3B157.0.8103.78%7CChromium%3B157.0.8103.78&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-gb&gaf=2&_s=1&tag_exp=115938465~115938469~120213116~120385423~120469145~120469153~121246026~121246034~123785232&sid=1795470937&sct=1&seg=0&dl=https%3A%2F%2Fshop.sons.co.uk%2Fconsultation%3Flogged_in%3Dfalse&dt=Sons&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=4563",
+  "method": "POST",
+  "status": 204,
+  "ct": "text/plain",
+  "size": 0,
+  "file": "11-www_google_analytics_com_g_collect_v_2_tid_G_J0JXKQHBRW_gtm_45je6bh1v9122414055za200zb9131.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://pagead2.googlesyndication.com/pagead/conversion/712734607/?random=1795470937847&cv=11&fst=1795470937847&fmt=8&bg=ffffff&guid=ON&async=1&en=conversion&gtm=45je6bh1v9122414055za200zb9131698558zd9131698558xecxf1&gcs=G100&gcd=13q3q3q3q5l1&dma_cps=-&dma=0&tag_exp=115938465~115938469~120213116~120385423~120469145~120469153~121246026~121246034~123785232&u_w=1280&u_h=900&url=https%3A%2F%2Fshop.sons.co.uk%2Fconsultation%3Flogged_in%3Dfalse&rcb=18&label=L0lwCNjvrNUcEI_v7dMC&gtm_ee=1&frm=0&tiba=Sons&oid=n0yp4ekckr8fzniqq0hwc&hn=www.googleadservices.com&npa=1&pscdl=denied&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CHeadlessChrome%3B157.0.8103.78%7CChromium%3B157.0.8103.78&uamb=0&uam=&uap=Linux&uapv=&uaw=0&data=event%3Dconversion&category=acrcp_v1_512&ept=6",
+  "method": "POST",
+  "status": 204,
+  "ct": "text/html; charset=UTF-8",
+  "size": 0,
+  "file": "12-pagead2_googlesyndication_com_pagead_conversion_712734607_random_1795470937847_cv_11_fst_1.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://api.sons.co.uk/cart/data?logged_in=false",
+  "method": "GET",
+  "status": 200,
+  "ct": "application/json",
+  "size": 2717,
+  "file": "13-api_sons_co_uk_cart_data_logged_in_false.txt",
+  "reqHeaders": {
+   "accept": "application/json, text/plain, */*"
+  }
+ },
+ {
+  "url": "https://pagead2.googlesyndication.com/ccm/collect?rcb=18&frm=0&apvc=0&tid=AW-712734607&en=page_view&dl=https%3A%2F%2Fshop.sons.co.uk%2Fconsultation%3Flogged_in%3Dfalse&scrsrc=www.googletagmanager.com&rnd=404458470.1795470937&navt=n&npa=1&ep.transaction_id=n0yp4ekckr8fzniqq0hwc&gtm=45je6bh1v9122414055za200zb9131698558zd9131698558xecxf1&gcs=G100&gcd=13q3q3q3q5l1&dma_cps=-&dma=0&tag_exp=115938465~115938469~120213116~120385423~120469145~120469153~121246026~121246034~123785232&tft=1795470937867&tfd=4568&tids=AW-712734607&fmt=8",
+  "method": "POST",
+  "status": 200,
+  "size": 0,
+  "file": "14-pagead2_googlesyndication_com_ccm_collect_rcb_18_frm_0_apvc_0_tid_AW_712734607_en_page_vie.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://api.sons.co.uk/barber/account/app/customer/confirm?data=null",
+  "method": "GET",
+  "status": 200,
+  "ct": "text/html; charset=UTF-8",
+  "size": 102,
+  "file": "15-api_sons_co_uk_barber_account_app_customer_confirm_data_null.txt",
+  "reqHeaders": {
+   "content-type": "application/json"
+  }
+ },
+ {
+  "url": "https://api.sons.co.uk/cart/data?logged_in=false",
+  "method": "GET",
+  "status": 200,
+  "ct": "application/json",
+  "size": 2717,
+  "file": "16-api_sons_co_uk_cart_data_logged_in_false.txt",
+  "reqHeaders": {
+   "accept": "application/json, text/plain, */*"
+  }
+ },
+ {
+  "url": "https://api.sons.co.uk/barber/account/menu",
+  "method": "GET",
+  "status": 200,
+  "ct": "text/html; charset=UTF-8",
+  "size": 1827,
+  "file": "17-api_sons_co_uk_barber_account_menu.txt",
+  "reqHeaders": {
+   "content-type": "application/json"
+  }
+ },
+ {
+  "url": "https://shop.sons.co.uk/consultation?_rsc=idy4p",
+  "method": "GET",
+  "status": 200,
+  "ct": "text/x-component",
+  "size": 1800,
+  "file": "18-shop_sons_co_uk_consultation_rsc_idy4p.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://api.sons.co.uk/barber/account/app/customer/confirm?data=null",
+  "method": "GET",
+  "status": 200,
+  "ct": "text/html; charset=UTF-8",
+  "size": 102,
+  "file": "19-api_sons_co_uk_barber_account_app_customer_confirm_data_null.txt",
+  "reqHeaders": {
+   "content-type": "application/json"
+  }
+ },
+ {
+  "url": "https://api.sons.co.uk/barber/account/app/customer/confirm?data=null",
+  "method": "GET",
+  "status": 200,
+  "ct": "text/html; charset=UTF-8",
+  "size": 102,
+  "file": "20-api_sons_co_uk_barber_account_app_customer_confirm_data_null.txt",
+  "reqHeaders": {
+   "content-type": "application/json"
+  }
+ },
+ {
+  "url": "https://api.sons.co.uk/barber/survey/code/loader?code=uk_consultation&pharmacy=tip",
+  "method": "GET",
+  "status": 200,
+  "ct": "text/html; charset=UTF-8",
+  "size": 62679,
+  "file": "21-api_sons_co_uk_barber_survey_code_loader_code_uk_consultation_pharmacy_tip.txt",
+  "reqHeaders": {
+   "barbershop": "front",
+   "content-type": "application/json",
+   "token": "null"
+  }
+ },
+ {
+  "url": "https://api.sons.co.uk/barber/account/app/customer/confirm?data=null",
+  "method": "GET",
+  "status": 200,
+  "ct": "text/html; charset=UTF-8",
+  "size": 102,
+  "file": "22-api_sons_co_uk_barber_account_app_customer_confirm_data_null.txt",
+  "reqHeaders": {
+   "content-type": "application/json"
+  }
+ },
+ {
+  "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-J0JXKQHBRW&gtm=45je6bh1v9122414055za200zb9131698558zd9131698558xf1&_p=1795470934620&gcs=G100&gcd=13q3q3q3q5l1&npa=1&dma_cps=-&dma=0&ecid=418804426&_eu=AEAAAGAC&ae=a&cid=1353977357.1795470938&frm=0&pscdl=denied&rcb=18&sr=1280x900&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CHeadlessChrome%3B157.0.8103.78%7CChromium%3B157.0.8103.78&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-gb&gaf=2&_s=2&tag_exp=115938465~115938469~120213116~120385423~120469145~120469153~121246026~121246034~123785232&sid=1795470937&sct=1&seg=0&dl=https%3A%2F%2Fshop.sons.co.uk%2Fconsultation%3Flogged_in%3Dfalse&dt=Sons&en=scroll&epn.percent_scrolled=90&_et=15&tfd=6188",
+  "method": "POST",
+  "status": 204,
+  "ct": "text/plain",
+  "size": 0,
+  "file": "23-www_google_analytics_com_g_collect_v_2_tid_G_J0JXKQHBRW_gtm_45je6bh1v9122414055za200zb9131.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-J0JXKQHBRW&gtm=45je6bh1v9122414055za200zb9131698558zd9131698558xf1&_p=1795470934620&gcs=G100&gcd=13q3q3q3q5l1&npa=1&dma_cps=-&dma=0&ecid=418804426&_eu=AAAAAGAC&cid=1353977357.1795470938&frm=0&pscdl=denied&rcb=18&sr=1280x900&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CHeadlessChrome%3B157.0.8103.78%7CChromium%3B157.0.8103.78&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-gb&gaf=2&tag_exp=115938465~115938469~120213116~120385423~120469145~120469153~121246026~121246034~123785232&sid=1795470937&sct=1&seg=0&dl=https%3A%2F%2Fshop.sons.co.uk%2Fconsultation&dt=Sons&_s=3&tfd=6233",
+  "method": "POST",
+  "status": 204,
+  "ct": "text/plain",
+  "size": 0,
+  "file": "24-www_google_analytics_com_g_collect_v_2_tid_G_J0JXKQHBRW_gtm_45je6bh1v9122414055za200zb9131.txt",
+  "reqHeaders": {
+   "content-type": "text/plain;charset=UTF-8"
+  }
+ },
+ {
+  "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-J0JXKQHBRW&gtm=45je6bh1v9122414055za200zb9131698558zd9131698558xf1&_p=1795470934620&em=tv.1~em.KaJmNKTzGRJ7p6e5bHNhTeD2nIahPgnCReHC_ARebIg&emd=tvd.1~i1.fem.ma.r16.n16.lP.s!b64!Ym9keT4uYmctYmxhY2suTXVpQm94LXJvb3QuY3NzLThhdHFoYjpudGgtY2hpbGQoNDA&gcs=G100&gcd=13q3q3q3q5l1&npa=1&dma_cps=-&dma=0&ecid=418804426&_eu=AAAAAGAC&_prs=ok&cid=1353977357.1795470938&ec_mode=a&frm=0&pscdl=denied&rcb=18&sr=1280x900&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CHeadlessChrome%3B157.0.8103.78%7CChromium%3B157.0.8103.78&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-gb&gaf=2&_s=4&tag_exp=115938465~115938469~120213116~120385423~120469145~120469153~121246026~121246034~123785232&sid=1795470937&sct=1&seg=0&dl=https%3A%2F%2Fshop.sons.co.uk%2Fconsultation&dt=Sons&en=consultation_started&_c=1&_ee=1&epn.step_number=1&ep.step_name=squeeze_page&ep.consultation_id=consult_1795470939447_y3jzusk37&ep.traffic_source=direct&ep.campaign=&_et=1585&tfd=6234",
+  "method": "POST",
+  "status": 204,
+  "ct": "text/plain",
+  "size": 0,
+  "file": "25-www_google_analytics_com_g_collect_v_2_tid_G_J0JXKQHBRW_gtm_45je6bh1v9122414055za200zb9131.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-J0JXKQHBRW&gtm=45je6bh1v9122414055za200zb9131698558zd9131698558xf1&_p=1795470934620&em=tv.1~em.KaJmNKTzGRJ7p6e5bHNhTeD2nIahPgnCReHC_ARebIg&emd=tvd.1~i1.fem.ma.r16.n16.lP.s!b64!Ym9keT4uYmctYmxhY2suTXVpQm94LXJvb3QuY3NzLThhdHFoYjpudGgtY2hpbGQoNDA&gcs=G100&gcd=13q3q3q3q5l1&npa=1&dma_cps=-&dma=0&ecid=418804426&_eu=AAAAAGAC&cid=1353977357.1795470938&ec_mode=a&frm=0&pscdl=denied&rcb=18&sr=1280x900&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CHeadlessChrome%3B157.0.8103.78%7CChromium%3B157.0.8103.78&uam=&uamb=0&uap=Linux&uapv=&uaw=0&ul=en-gb&gaf=2&_s=5&tag_exp=115938465~115938469~120213116~120385423~120469145~120469153~121246026~121246034~123785232&sid=1795470937&dt=Welcome%20%26%20Eligibility&dp=%2Fconsultation%2Fs-00&sct=1&seg=1&dl=https%3A%2F%2Fshop.sons.co.uk%2Fconsultation&en=page_view&_ee=1&epn.step_number=1&ep.step_name=existing_customer&ep.consultation_id=consult_1795470939447_y3jzusk37&ep.screen_id=S-00&_et=10&tfd=6235",
+  "method": "POST",
+  "status": 204,
+  "ct": "text/plain",
+  "size": 0,
+  "file": "26-www_google_analytics_com_g_collect_v_2_tid_G_J0JXKQHBRW_gtm_45je6bh1v9122414055za200zb9131.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://pagead2.googlesyndication.com/measurement/conversion?random=1795470939461&cv=11&tid=G-J0JXKQHBRW&fst=1795470939461&fmt=8&en=consultation_started&gtm=45je6bh1v9122414055za200zb9131698558zd9131698558xecxf1&gcs=G100&gcd=13q3q3q3q5l1&dma_cps=-&dma=0&tag_exp=115938465~115938469~120213116~120385423~120469145~120469153~121246026~121246034~123785232&u_w=1280&u_h=900&url=https%3A%2F%2Fshop.sons.co.uk%2Fconsultation&gacid=1353977357.1795470938&hn=www.googleadservices.com&frm=0&tiba=Sons&npa=1&pscdl=denied&gtm_ee=1&uaa=x86&uab=64&uafvl=Not-A.Brand%3B99.0.0.0%7CHeadlessChrome%3B157.0.8103.78%7CChromium%3B157.0.8103.78&uamb=0&uam=&uap=Linux&uapv=&uaw=0&rcb=18",
+  "method": "POST",
+  "status": 204,
+  "size": 0,
+  "file": "27-pagead2_googlesyndication_com_measurement_conversion_random_1795470939461_cv_11_tid_G_J0JX.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://pagead2.googlesyndication.com/ccm/collect?rcb=18&frm=0&apvc=0&tid=AW-712734607&en=consultation_started&dl=https%3A%2F%2Fshop.sons.co.uk%2Fconsultation&scrsrc=www.googletagmanager.com&rnd=404458470.1795470937&navt=n&npa=1&epn.step_number=1&ep.step_name=squeeze_page&ep.session_id=session_1795470936624_538j2k5mb&ep.consultation_id=consult_1795470939447_y3jzusk37&ep.traffic_source=direct&gtm=45je6bh1v9122414055za200zb9131698558zd9131698558xecxf1&gcs=G100&gcd=13q3q3q3q5l1&dma_cps=-&dma=0&tag_exp=115938465~115938469~120213116~120385423~120469145~120469153~121246026~121246034~123785232&tft=1795470939523&tfd=6225&tids=AW-712734607&fmt=8",
+  "method": "POST",
+  "status": 200,
+  "size": 0,
+  "file": "28-pagead2_googlesyndication_com_ccm_collect_rcb_18_frm_0_apvc_0_tid_AW_712734607_en_consulta.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://pagead2.googlesyndication.com/ccm/collect?rcb=18&frm=0&apvc=0&dt=Welcome%20%26%20Eligibility&tid=AW-712734607&en=page_view&dl=https%3A%2F%2Fshop.sons.co.uk%2Fconsultation&scrsrc=www.googletagmanager.com&rnd=404458470.1795470937&navt=n&npa=1&epn.step_number=1&ep.step_name=existing_customer&ep.session_id=session_1795470936624_538j2k5mb&ep.consultation_id=consult_1795470939447_y3jzusk37&ep.screen_id=S-00&ep.page_path=%2Fconsultation%2Fs-00&gtm=45je6bh1v9122414055za200zb9131698558zd9131698558xecxf1&gcs=G100&gcd=13q3q3q3q5l1&dma_cps=-&dma=0&tag_exp=115938465~115938469~120213116~120385423~120469145~120469153~121246026~121246034~123785232&tft=1795470939525&tfd=6227&tids=AW-712734607&fmt=8",
+  "method": "POST",
+  "status": 200,
+  "size": 0,
+  "file": "29-pagead2_googlesyndication_com_ccm_collect_rcb_18_frm_0_apvc_0_dt_Welcome_20_26_20Eligibili.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://pagead2.googlesyndication.com/ccm/collect?rcb=18&frm=0&apvc=0&tid=AW-712734607&en=consultation_step_viewed&dl=https%3A%2F%2Fshop.sons.co.uk%2Fconsultation&scrsrc=www.googletagmanager.com&rnd=404458470.1795470937&navt=n&npa=1&epn.step_number=1&ep.step_name=existing_customer&ep.session_id=session_1795470936624_538j2k5mb&ep.consultation_id=consult_1795470939447_y3jzusk37&gtm=45je6bh1v9122414055za200zb9131698558zd9131698558xecxf1&gcs=G100&gcd=13q3q3q3q5l1&dma_cps=-&dma=0&tag_exp=115938465~115938469~120213116~120385423~120469145~120469153~121246026~121246034~123785232&tft=1795470939524&tfd=6226&tids=AW-712734607&fmt=8",
+  "method": "POST",
+  "status": 200,
+  "size": 0,
+  "file": "30-pagead2_googlesyndication_com_ccm_collect_rcb_18_frm_0_apvc_0_tid_AW_712734607_en_consulta.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://pagead2.googlesyndication.com/ccm/collect?rcb=18&frm=0&apvc=0&tid=AW-712734607&en=screen_view_welcome&dl=https%3A%2F%2Fshop.sons.co.uk%2Fconsultation&scrsrc=www.googletagmanager.com&rnd=404458470.1795470937&navt=n&npa=1&epn.step_number=1&ep.step_name=existing_customer&ep.session_id=session_1795470936624_538j2k5mb&ep.consultation_id=consult_1795470939447_y3jzusk37&ep.screen_id=S-00&ep.screen_name=Welcome%20%26%20Eligibility&gtm=45je6bh1v9122414055za200zb9131698558zd9131698558xecxf1&gcs=G100&gcd=13q3q3q3q5l1&dma_cps=-&dma=0&tag_exp=115938465~115938469~120213116~120385423~120469145~120469153~121246026~121246034~123785232&tft=1795470939525&tfd=6226&tids=AW-712734607&fmt=8",
+  "method": "POST",
+  "status": 200,
+  "size": 0,
+  "file": "31-pagead2_googlesyndication_com_ccm_collect_rcb_18_frm_0_apvc_0_tid_AW_712734607_en_screen_v.txt",
+  "reqHeaders": {}
+ },
+ {
+  "url": "https://api.sons.co.uk/barber/account/app/customer/confirm?data=null",
+  "method": "GET",
+  "status": 200,
+  "ct": "text/html; charset=UTF-8",
+  "size": 102,
+  "file": "32-api_sons_co_uk_barber_account_app_customer_confirm_data_null.txt",
+  "reqHeaders": {
+   "content-type": "application/json"
+  }
+ },
+ {
+  "url": "https://api.sons.co.uk/barber/account/app/customer/confirm?data=null",
+  "method": "GET",
+  "status": 200,
+  "ct": "text/html; charset=UTF-8",
+  "size": 102,
+  "file": "33-api_sons_co_uk_barber_account_app_customer_confirm_data_null.txt",
+  "reqHeaders": {
+   "content-type": "application/json"
+  }
+ }
+]

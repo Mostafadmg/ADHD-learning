@@ -1,0 +1,21 @@
+STEP 01 wait 5000
+URL: https://app.forhers.co.uk/start/signup?t=hair
+TITLE: Hers
+
+--- VISIBLE TEXT ---
+Good hair starts with great hair loss care.
+
+Welcome to Hers. To get started, tell us your name. By entering your details, you agree to our Terms & Conditions and acknowledge our Privacy Notice.
+
+Continue
+
+Already have an account? Sign in
+
+←
+
+--- CONTROLS ---
+  input:text (2): First Name  ·  Last Name
+  button (2): Continue [disabled]  ·  ←
+
+--- LINKS ---
+  link (4): Terms & Conditions -> https://forhers.co.uk/terms-and-conditions  ·  Privacy Notice -> https://forhers.co.uk/privacy-policy  ·  Sign in -> /login?redirect=%2Fstart%2Fconfirm%3Ft%3Dhair  ·  Navigate home -> /profile

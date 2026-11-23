@@ -1,0 +1,212 @@
+[
+ {
+  "id": "exp-01",
+  "flow": "men",
+  "changed": "men-form: 'I'm not sure - help me choose' → 'Topical Drop (Rx Serum)'"
+ },
+ {
+  "id": "exp-02",
+  "flow": "men",
+  "changed": "men-priority: 'Balanced results & long-term care' → 'Keeping treatment simple & affordable'"
+ },
+ {
+  "id": "exp-03",
+  "flow": "men",
+  "changed": "men-priority: 'Balanced…' → 'Keeping treatment simple & affordable', on top of exp-01 (form = Topical Drop)"
+ },
+ {
+  "id": "exp-04",
+  "flow": "men",
+  "changed": "men-form: 'I'm not sure - help me choose' → 'Daily Chew (Oral Rx)'"
+ },
+ {
+  "id": "exp-05",
+  "flow": "men",
+  "changed": "men-priority: 'Balanced…' → 'Seeing results as soon as possible'"
+ },
+ {
+  "id": "exp-06",
+  "flow": "men",
+  "changed": "men-priority: 'Balanced…' → skip link 'I'm not sure - help me choose'"
+ },
+ {
+  "id": "exp-07",
+  "flow": "men",
+  "changed": "men-picture: 'Moderate' → 'Not seeing a match?' → 'Mostly Scalp'"
+ },
+ {
+  "id": "exp-08",
+  "flow": "men",
+  "changed": "men-picture: 'Moderate' → 'Not seeing a match?' → 'Patchy Loss'"
+ },
+ {
+  "id": "exp-09",
+  "flow": "men",
+  "changed": "men-state: Texas → Idaho (one of the 12 states the code refuses)"
+ },
+ {
+  "id": "exp-09a-arkansas-gate",
+  "flow": "men",
+  "changed": "men-state: Texas → Arkansas (typed 'Kansas'; the search box matched Arkansas first). Stopped before 'Show my plan'."
+ },
+ {
+  "id": "exp-10",
+  "flow": "men",
+  "changed": "men-state: Texas → California"
+ },
+ {
+  "id": "exp-11",
+  "flow": "men",
+  "changed": "men-treated: 'No' → 'Yes', then new question 'How did it go?' = 'Had side effects'"
+ },
+ {
+  "id": "exp-12",
+  "flow": "men",
+  "changed": "men-duration: '1-3 years' → 'Less than 6 months'"
+ },
+ {
+  "id": "exp-13",
+  "flow": "men",
+  "changed": "men-stage: 'Receding hairline or crown thinning' → 'Advanced hair loss'"
+ },
+ {
+  "id": "exp-14",
+  "flow": "men",
+  "changed": "men-goal: 'Regrow lost hair - Regrow' → 'Keep my hair - Preserve'"
+ },
+ {
+  "id": "exp-15",
+  "flow": "men",
+  "changed": "men-picture: 'Moderate' → 'Advanced'"
+ },
+ {
+  "id": "exp-16",
+  "flow": "men",
+  "changed": "men-comments: 'No' → 'Yes'"
+ },
+ {
+  "id": "exp-17",
+  "flow": "men",
+  "changed": "men-plan: baseline answers, then click 'Want to switch to topical solutions?' on the plan page"
+ },
+ {
+  "id": "exp-18",
+  "flow": "men",
+  "changed": "men-treated: 'No' → 'Yes', then 'How did it go?' = 'Didn't see results'"
+ },
+ {
+  "id": "exp-19",
+  "flow": "men",
+  "changed": "men-picture: 'Moderate' → 'Not seeing a match?' → 'Diffuse Thinning'"
+ },
+ {
+  "id": "exp-g1",
+  "flow": "men-gel",
+  "changed": "gel-priority: 'Balanced…' → 'Keeping treatment simple & affordable'"
+ },
+ {
+  "id": "exp-g2",
+  "flow": "men-gel",
+  "changed": "gel-plan: baseline answers, then click 'Want to switch to oral solutions?' on the plan page"
+ },
+ {
+  "id": "exp-g3",
+  "flow": "men-gel",
+  "changed": "gel-picture: 'Moderate' → 'Not seeing a match?' → 'Mostly Scalp'"
+ },
+ {
+  "id": "exp-L01",
+  "flow": "men-legacy",
+  "changed": "leg-where: 'A bit of both' → 'Hairline'"
+ },
+ {
+  "id": "exp-L02",
+  "flow": "men-legacy",
+  "changed": "leg-where: 'A bit of both' → 'Crown'"
+ },
+ {
+  "id": "exp-L03",
+  "flow": "men-legacy",
+  "changed": "leg-where: 'A bit of both' → 'Patchy (coin-sized bald spots)'"
+ },
+ {
+  "id": "exp-L04",
+  "flow": "men-legacy",
+  "changed": "leg-where: 'A bit of both' → 'Nowhere yet, but I'd like to prevent future hair loss' (new family question answered 'I'm not sure')"
+ },
+ {
+  "id": "exp-L05",
+  "flow": "men-legacy",
+  "changed": "leg-form: 'no preference' → 'Pills (taken orally)'"
+ },
+ {
+  "id": "exp-L06",
+  "flow": "men-legacy",
+  "changed": "leg-form: 'no preference' → 'Topicals (applied directly to head)'"
+ },
+ {
+  "id": "exp-L07",
+  "flow": "men-legacy",
+  "changed": "leg-form: 'no preference' → 'Topicals', on top of exp-L01 (where = Hairline)"
+ },
+ {
+  "id": "exp-L08",
+  "flow": "men-legacy",
+  "changed": "leg-ingredients: 'I'm not sure' → 'Products with finasteride' only"
+ },
+ {
+  "id": "exp-L09",
+  "flow": "men-legacy",
+  "changed": "leg-ingredients: 'I'm not sure' → 'Products with minoxidil' only"
+ },
+ {
+  "id": "exp-L10",
+  "flow": "men-legacy",
+  "changed": "leg-ingredients: 'I'm not sure' → 'Products with tretinoin' only"
+ },
+ {
+  "id": "exp-L11",
+  "flow": "men-legacy",
+  "changed": "leg-ingredients: 'I'm not sure' → 'Products with saw palmetto' only"
+ },
+ {
+  "id": "exp-L12",
+  "flow": "men-legacy",
+  "changed": "leg-ingredients: 'I'm not sure' → 'Products with ketoconazole' only"
+ },
+ {
+  "id": "exp-L13",
+  "flow": "men-legacy",
+  "changed": "leg-otc: 'not interested' → 'Vitamins and supplements' only"
+ },
+ {
+  "id": "exp-L14",
+  "flow": "men-legacy",
+  "changed": "leg-otc: 'not interested' → 'Hair care products (shampoo and conditioner)' only"
+ },
+ {
+  "id": "exp-L15",
+  "flow": "men-legacy",
+  "changed": "leg-otc: 'not interested' → 'Hair styling products (pomade)' only"
+ },
+ {
+  "id": "exp-L16",
+  "flow": "men-legacy",
+  "changed": "leg-dandruff: 'No' → 'Yes'"
+ },
+ {
+  "id": "exp-L17",
+  "flow": "men-legacy",
+  "changed": "leg-expect: 'I want to regrow my hair' → 'I want thicker hair' only"
+ },
+ {
+  "id": "exp-L18",
+  "flow": "men-legacy",
+  "changed": "leg-expect: 'I want to regrow my hair' → 'I want to prevent hair loss' only"
+ },
+ {
+  "id": "exp-L19",
+  "flow": "men-legacy",
+  "changed": "leg-form: 'no preference' → 'Pills', on top of exp-L01 (where = Hairline)"
+ }
+]

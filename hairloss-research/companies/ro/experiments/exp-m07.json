@@ -1,0 +1,38 @@
+{
+ "start": "https://start.ro.co/fxdxbh/",
+ "locale": "en-US",
+ "timezone": "America/Chicago",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "click",
+   "text": "Regrow my hair"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 3500
+  },
+  {
+   "do": "click",
+   "text": "None of the above"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 3500
+  },
+  {
+   "do": "click",
+   "text": "Nervous about side effects",
+   "settle": 4000
+  },
+  {
+   "do": "wait",
+   "ms": 3000
+  }
+ ]
+}

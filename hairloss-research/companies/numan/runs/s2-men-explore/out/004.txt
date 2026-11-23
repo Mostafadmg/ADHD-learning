@@ -1,0 +1,28 @@
+COMMAND 004 {"steps":[{"do":"click","selector":"label:text-is(\"Other hair loss pattern\")","settle":2800},{"do":"snap","settle":600}]}
+URL: https://www.numan.com/subscribe/hair-loss/4b4e30d9-9042-49e8-a32b-7557d60d5aec/sq/clarify_other_hair_loss_pattern
+TITLE: Please tell us about your hair loss: can you describe the appearance of your hair loss do you have a diagnosis for your hair loss? for how long has it occurred? has anything made it better or worse, such as stress? do you have any other symptoms? This information is needed so that our clinicians can ensure the prescription is safe for you to take. | Numan
+
+--- VISIBLE TEXT ---
+10%
+Please tell us about your hair loss:
+
+can you describe the appearance of your hair loss
+do you have a diagnosis for your hair loss?
+for how long has it occurred?
+has anything made it better or worse, such as stress?
+do you have any other symptoms?
+This information is needed so that our clinicians can ensure the prescription is safe for you to take.
+​
+Back
+Next
+
+--- CONTROLS ---
+  textarea (1):
+    - clarify_other_hair_loss_pattern
+  button (2):
+    - Back
+    - Next
+
+--- LINKS ---
+  link (1):
+    - Visit the main page -> /

@@ -1,0 +1,126 @@
+# Keeps (US) — working notes
+
+Stage 1 (MAP) finished 2026-11-23. Everything here comes from public pages and code served to an anonymous browser.
+No account, no contact details, no photos, no payment. Nine walker replays were used (budget was 25).
+
+## 1. The short version
+
+- Keeps (keeps.com, owned by Thirty Madison) treats **men only**. Women are sent to Nurx (`/not-eligible-user/sex`).
+- The site is a Next.js app. Build id on the day: `P4aieEbp7XXsoIDdfc_hQ`. No bot protection was met. `curl` and the walker both work.
+- There are **three quizzes**, and all three have their full definition in public JavaScript:
+  1. **Main "Keeps 2.0" quiz** `/hair-assessment-quiz` → plan page `/hair-treatment-plan` → wall at `/express/checkout`.
+  2. **Gel quiz** `/hair-assessment-quiz-gel` → `/hair-treatment-plan-gel` → same wall.
+  3. **Legacy mini quiz** `/quiz` (same page at `/find-my-plan`) → wall at `/quiz/lead`.
+- In the main quiz **only two answers change the product**: "How would you like to treat your hair loss?" (chew or drop) and
+  "What's your top priority?" (affordable or not). Everything else is stored in the browser and played back.
+- The plan page says **"Good news - you're approved"** before any medical question. The medical intake is after payment.
+
+## 2. Files in this folder
+
+| file | what it is |
+|---|---|
+| `company.json` | the map (20 products, 5 flows, 63 questions, 12 rules). Built by `build-company.py`: edit that script and re-run it rather than editing JSON by hand. |
+| `quiz-definition.js` | exact copy of the served chunk `/_next/static/chunks/4186-023f24e4c45a5ed8.js`: main + gel quiz questions, `hideIf` rules and the recommendation function. |
+| `quiz-definition.legacy-mini-quiz.js` | exact excerpts for the legacy quiz: questions (`_app` chunk, module 7679) and rules (chunk 5819, module 5737). |
+| `quiz-definition.json` | my structured read of all three: every question, option, stored value, skip rule and the rules as pseudo-code. Start here. |
+| `baseline-men.json` | replayable baseline, main quiz → plan page → checkout form (nothing typed there). Run folder `runs/baseline-men/`. |
+| `baseline-men-gel.json` | baseline, gel quiz → gel plan page. `runs/baseline-men-gel/`. |
+| `baseline-men-legacy-quiz.json` | baseline, legacy quiz → `/quiz/lead`. `runs/baseline-men-legacy-quiz/`. |
+| `runs/catalogue/` | browse of `/our-products` and each product page; `net/` holds the price data. |
+| `runs/entry-points/` | anonymous visits to landers, `/plan-selection`, `/request/lead`, `/consultation/intake`, `/register`, not-eligible pages. |
+| `raw/` | saved evidence: `buildManifest.js` + `routes.json` (118 routes), `chunks/` (156 served JS files), `pages/` (product pages), `faq/` + `faq-extract.json`, `hair-treatment-plan.pageprops.json`, `hair-treatment-plan-gel.pageprops.json`, `catalogue-hair-lineitems.json` (every hair product id with list and first-order price), `product-pages.pageprops.json` (product copy and FAQs), `states.json`. |
+| `shots/` | 8 key screenshots (first question, picture question, state gate, plan page, checkout wall, gel plan, legacy wall). |
+| `tools-strip.py` | helper: `python3 -I tools-strip.py raw/chunks/<file> "<phrase>" [before] [after]` prints served JS around a phrase with image blobs removed. |
+
+## 3. How to replay
+
+```
+cd /home/user/ADHD-learning/hairloss-research/companies/keeps
+node ../../tools/walk.js baseline-men.json runs/<new-run> --last          # about 90 seconds
+```
+
+- Use `"locale": "en-US", "timezone": "America/Chicago"` (already in the baseline files).
+- Answer buttons are matched by text. Options with a subtitle need `"exact": false` (for example "Receding hairline or crown thinning").
+- The two loader screens advance on their own after about 5 seconds: keep the `wait` steps (6500 and 7000 ms).
+- The state box is a react-select: `fill` the selector `input[id^=react-select]` with the state name, then `press Enter`.
+- The tick box is clicked by its text "I confirm I am 18+ and assigned male at birth".
+- On the plan page there are two "Continue to checkout" buttons; only the selected card's button is enabled
+  (for the baseline that is the second one, `"nth": 1`).
+- Legacy quiz: start at `/quiz?step=1` to skip the intro. Multi-select screens need a click on `CONTINUE`.
+- **Fast check without a browser**: the main quiz keeps answers in `sessionStorage` (see `runs/baseline-men/storage.json`) and
+  the result is just the `productId` in the plan page address: 19277 Chew+, 18640 Chew, 18636 Drop+, 18635 Drop, 19267 Gel+.
+  In the legacy quiz the result is the `products=` list in the `/quiz/lead` address (211 finasteride, 239 minoxidil foam,
+  11840 spray, 240 ketoconazole, 499/500 shampoo/conditioner, 682 pomade, 989 oral minoxidil, 2874 supplement).
+
+## 4. Where the account walls are
+
+| flow | wall | what is shown just before it |
+|---|---|---|
+| main / gel | `/express/checkout?products=<id>`: name, address, phone, date of birth, email and card on one page, button "Complete Purchase" | the plan page: "Good news - you're approved", the recommended product, both plan lengths and prices |
+| legacy quiz | `/quiz/lead?products=…`: first name, last name, email, phone ("Create your account to unlock your personalized plan") | a one-line loader "You're just one step away from better hair"; the plan is NOT shown, but the product ids are in the address |
+| request flow | `/request/lead`: first name, last name, email, on the very first screen | nothing |
+| medical intake | `/consultation/intake` redirects to `/auth/sign-in` | — |
+
+Order of steps after the wall in the main funnel (seen on `/register`): **Checkout → Account → Medical Intake**.
+Checkout small print: "Your order will be reviewed by a licensed healthcare provider, who may require additional personal or
+medical information, and is not prescribed until approved. Your fees are refundable if your prescription is not approved."
+
+## 5. What is known about the hidden medical intake (code only)
+
+- The consultation pages load a quiz schema by name from a back-end bucket. The names are listed in the public feature flag
+  `quiz-configs` (`runs/probe-haq/net/02-*.json`): `keeps/intake-consultation`, `keeps/dermatology`,
+  `keeps/titration-consultation`, `keeps/blood-pressure-pulse`, `keeps/phq9-consultation`, `keeps/arc` (annual check-in),
+  `keeps/update-treatment-miniquiz` and others.
+- **I did not fetch those schemas.** The anonymous browser never requests them (the pages redirect to sign-in first), and the
+  protocol forbids calling URLs the anonymous page did not call. The only bucket file the anonymous page loads is `outages.json`.
+- Hard-coded screens in `raw/chunks/8921-08fc9b2c1414f459.js` show what the intake can do: ask for a blood pressure and pulse
+  reading ("We won't be able to prescribe until we confirm your blood pressure"), a "Seek Medical Attention" stop for
+  "Irregular heartbeat, chest pain, shortness of breath, and swelling", a self-harm safety screen with 988 crisis numbers, a
+  mood check for people on oral finasteride, three hair photos and a photo of government ID.
+- A titration route exists (`/consultation/titration/[productDrugType]`), and the price data holds a lower-dose Chew+
+  (dutasteride 0.2 mg, ids 18637/18638) beside the "Higher Dose" 0.5 mg one that the quiz sells. Likely a dose-step path; not confirmed.
+
+## 6. Odd things worth knowing
+
+- "Chew" has two meanings in the data. The card and product page say finasteride 1 mg + minoxidil 2.5 mg + vitamin D3 (ids 18639/18640).
+  Ids 18156/18157 are also called "Chew" but contain dutasteride 0.5 mg + minoxidil 1.25 mg + vitamin D3; they are in the plan
+  page's price data and not shown on screen.
+- The "analysis" screen's lines ("You're a strong candidate", "86% of similar profiles see results") are fixed text.
+- The loaders ("Confirming clinical eligibility", "Selecting prescription compounds") are 5-second timers. No request is sent.
+- A product page FAQ says "You won't be charged until your prescription is approved"; the checkout says you are charged now
+  ($100.00 for Chew+) and refunded if not approved, then $204.99 every 3 months.
+- The new quiz does not stop "Patchy Loss" or "Less than 6 months"; the old quiz sends "Patchy" to a clinician request.
+- The legacy quiz's "Vitamins and supplements" tick also swaps minoxidil foam for the compounded Minoxidil+ Spray (same code path as "tretinoin").
+- Feature flags seen (PostHog): `enable-quiz-phone-collection = control` (phone screen off), `hl_funnel_gender_checkbox_default = unchecked`,
+  `keeps-offer-experiment-flag = control` (a `free_gift` variant exists in code), `keeps-gel-funnel = true`. Another visitor may get other variants.
+- Current offer id 1040: "Exclusive Offer: Up to 50% Off First Order" / Black Friday banner. Legacy products show a flat 30% off the first order.
+
+## 7. Dead ends
+
+- `/robots.txt` and `/sitemap.xml` return 404. `/server-sitemap.xml` works (FAQ and blog URLs only).
+- `/recommendation-quiz-1` is the erectile-dysfunction quiz, not hair.
+- `/quiz/results?products=…` redirects to `/quiz` without an account. `/get-started/your-info` does the same.
+- `/request/consultation` shows "Something went wrong" without an account.
+- Product pages' server data has empty price maps; prices load in the browser (use `runs/catalogue/net/` or `raw/catalogue-hair-lineitems.json`).
+- `/our-products/oral-minoxidil` is a 404; oral minoxidil is sold from `https://buy.keeps.com/low-dose-oral-minoxidil` (a separate landing-page platform, not read in detail).
+- `/product-info/<product>` (medication overviews with contraindications) and `/drug-facts/<slug>` were found but not read in full.
+
+## 8. What stage 2 should test first (one change each, against `baseline-men.json`)
+
+1. **Form = "Topical Drop (Rx Serum)"** → expect `productId=18636` (Drop+). Proves rule R1.
+2. **Priority = "Keeping treatment simple & affordable"** → expect 18640 (Chew). With topical → 18635 (Drop). Proves R2.
+3. **Priority = "Seeing results as soon as possible"** and **priority skipped** → expect no change (19277).
+4. **Picture: "Not seeing a match?" → "Mostly Scalp"** → expect the stop screen. Then **"Patchy Loss"** → expect no stop.
+5. **State = Kansas (or DC, Idaho, New Mexico…)** → expect "We currently don't serve in your state." Try one accepted state other than Texas.
+6. **Leave the 18+ / male box unticked** → button stays disabled (already seen once).
+7. **Treated before = Yes → "Had side effects"** → expect no change. This is the most telling "safety answer ignored" test.
+8. **Duration "Less than 6 months", stage "Advanced", goal "Preserve"** → expect no change (R6). One replay each, or trust the code and spot-check two.
+9. Plan page: click **"Want to switch to topical solutions?"** and record the Drop / Drop+ cards and prices on screen.
+10. Legacy quiz (`baseline-men-legacy-quiz.json`), reading the `products=` list each time:
+    Hairline + no preference (expect 211 + 989 oral minoxidil) · Hairline + topicals (expect 211 only) · Crown + pills (expect 211 + 989) ·
+    "Nowhere yet" (expect 239 + 499 + 500, no 211) · Patchy (expect a jump to `/request/lead`) · dandruff Yes (adds 240) ·
+    tretinoin (239 → 11840) · saw palmetto (adds 2874) · hair care (adds 499, 500) · pomade (adds 682) · vitamins (adds 2874 and swaps to 11840).
+11. Gel quiz: change any one answer and confirm it still ends on 19267.
+
+Not possible without breaking the rules: anything in the medical intake, the provider's decisions, and whether the provider
+ever changes the quiz's product.

@@ -1,0 +1,1334 @@
+{
+ "source": "Numan hair-loss consultation, served to an anonymous browser by api.numan.com (see scripts/build-quiz-definition.py for the exact endpoints)",
+ "captured_on": "2026-11-23",
+ "meta": {
+  "questionnaire_id": "hair_loss",
+  "questionnaire_version": 14,
+  "questionnaire_revision": "smart",
+  "number_of_questions": 29
+ },
+ "questions": [
+  {
+   "id": "what_is_your_age",
+   "question_index": 0,
+   "type": "single_choice",
+   "content": "Please tell us your age.",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "options": [
+    {
+     "id": "sixtyfive_and_over",
+     "content": "65 or over",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "eighteen_to_sixtyfive",
+     "content": "18 - 65",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "under_eighteen",
+     "content": "Under 18",
+     "result": {
+      "type": "reject",
+      "content": "The safety of our patients is our top priority. Unfortunately, as hair loss under the age of 18 could be a sign of an underlying condition, we’re unable to recommend a hair loss treatment for you. Please contact your doctor for advice.<br/><br/> If you’d like to talk to our clinicians about this, please email <a href='mailto:clinic@numan.com'>clinic@numan.com</a> and we’ll do our best to find a solution or recommend next steps."
+     }
+    }
+   ],
+   "seen_in": [
+    "s1-men-baseline",
+    "s2-men-explore",
+    "s4-men-mentalhealth"
+   ],
+   "results_known": true
+  },
+  {
+   "id": "sixty_five_and_over_confirmation",
+   "question_index": 1,
+   "type": "single_choice",
+   "content": "Hair loss products are not guaranteed to show results in individuals over the age of 65, however, there is still a possibility for hair growth to reoccur. Would you still like to be considered for treatments?",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "options": [
+    {
+     "id": "yes",
+     "content": "Yes",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "no",
+     "content": "No",
+     "result": {
+      "type": "reject",
+      "content": "Unfortunately, we’re unable to recommend a hair loss treatment for you. Please contact your doctor for advice.<br/><br/> If you’d like to talk to our clinicians about this, please email <a href='mailto:clinic@numan.com'>clinic@numan.com</a> and we’ll do our best to find a solution or recommend next steps."
+     }
+    }
+   ],
+   "seen_in": [
+    "s2-men-explore"
+   ],
+   "results_known": true
+  },
+  {
+   "id": "which_image_best_matches_your_hair_loss",
+   "question_index": 2,
+   "type": "single_choice",
+   "content": "What kind of hair loss do you have?",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "options": [
+    {
+     "id": "temples",
+     "content": "Temples",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "temples_and_crown",
+     "content": "Temples and Crown",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "moderate",
+     "content": "Moderate",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "extensive",
+     "content": "Extensive",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "patchy",
+     "content": "Patchy",
+     "result": {
+      "type": "reject",
+      "content": "Defined circular areas of hair loss on the head may suggest a form of alopecia, therefore it is best to consult your GP so they can investigate.<br/><br/>If you’d like to talk to our clinicians about this, please email <a href='mailto:clinic@numan.com'>clinic@numan.com</a> and we’ll do our best to find a solution or recommend next steps."
+     }
+    },
+    {
+     "id": "complete",
+     "content": "Complete",
+     "result": {
+      "type": "reject",
+      "content": "Our treatments are not effective in individuals who have experienced complete hair loss.<br/><br/>If you’d like to talk to our clinicians about this, please email  <a href='mailto:clinic@numan.com'>clinic@numan.com</a> and we’ll do our best to find a solution or recommend next steps."
+     }
+    },
+    {
+     "id": "other_hair_loss_pattern",
+     "content": "Other hair loss pattern",
+     "result": {
+      "type": "proceed",
+      "query_clinically": "Hair loss of this nature may be caused by underlying medical conditions which may require further investigation. Some patients may fall into the typical hair loss patterns for MAA but did not identify with the images online. This could be due to their hair style, or misunderstanding of the images.Minoxidil may work in other hair loss conditions due to its ability to promote hair growth.  Prescribing for these conditions require clinical decision making on a case by case basis. Query into the clinical team if unsure. If further information needed send Hair loss: Further information needed (other hair loss pattern)"
+     }
+    }
+   ],
+   "seen_in": [
+    "s1-men-baseline",
+    "s2-men-explore",
+    "s4-men-mentalhealth"
+   ],
+   "results_known": true
+  },
+  {
+   "id": "clarify_other_hair_loss_pattern",
+   "question_index": 3,
+   "type": "text",
+   "content": "Please tell us about your hair loss:<br/> <ul> <li>can you describe the appearance of your hair loss</li> <li>do you have a diagnosis for your hair loss?</li> <li>for how long has it occurred?</li> <li>has anything made it better or worse, such as stress?</li> <li>do you have any other symptoms?</li> </ul> This information is needed so that our clinicians can ensure the prescription is safe for you to take.",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "seen_in": [
+    "s2-men-explore"
+   ]
+  },
+  {
+   "id": "when_did_you_notice",
+   "question_index": 4,
+   "type": "single_choice",
+   "content": "When did you start to notice your hair loss?",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "options": [
+    {
+     "id": "sudden",
+     "content": "Over the last few days or weeks",
+     "result": {
+      "type": "reject",
+      "content": "The safety of our patients is our top priority. Unfortunately, our treatments are not suitable for you because they are not designed for sudden hair loss. Sudden hair loss can have a number of causes and we recommend you seek advice from your usual GP to investigate causes for your sudden hair loss.<br/><br/> If you’d like to talk to our clinicians about this, please email <a href='mailto:clinic@numan.com'>clinic@numan.com</a> and we’ll do our best to find a solution or recommend next steps."
+     }
+    },
+    {
+     "id": "gradual",
+     "content": "My hair loss started gradually over the last few months or years",
+     "result": {
+      "type": "proceed"
+     }
+    }
+   ],
+   "seen_in": [
+    "s1-men-baseline",
+    "s2-men-explore",
+    "s4-men-mentalhealth"
+   ],
+   "results_known": true
+  },
+  {
+   "id": "do_you_have_an_allergy_or_intolerance_to_any",
+   "question_index": 5,
+   "type": "multi_choice",
+   "content": "Do you have an allergy or intolerance to any of the following?",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "options": [
+    {
+     "id": "minoxidil_allergy",
+     "content": "I am allergic to minoxidil",
+     "result": {
+      "type": "proceed",
+      "query_clinically": true
+     }
+    },
+    {
+     "id": "finasteride_allergy",
+     "content": "I am allergic to finasteride",
+     "result": {
+      "type": "proceed",
+      "query_clinically": true
+     }
+    },
+    {
+     "id": "lactose_intolerance_or_allergy",
+     "content": "I have a lactose intolerance or allergy",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "not_allergic_to_any_above",
+     "content": "I am not allergic to any of the above",
+     "is_exclusive": true,
+     "result": {
+      "type": "proceed"
+     }
+    }
+   ],
+   "seen_in": [
+    "s1-men-baseline",
+    "s2-men-explore",
+    "s4-men-mentalhealth"
+   ],
+   "results_known": true
+  },
+  {
+   "id": "tell_us_which_reactions_from_this_medicine",
+   "question_index": 6,
+   "type": "text",
+   "content": "Please let us know how you react when you take this medicine",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "seen_in": [
+    "s2-men-explore"
+   ]
+  },
+  {
+   "id": "lactose_tolerance",
+   "question_index": 7,
+   "type": "single_choice",
+   "content": "Finasteride tablets contain very small amounts of lactose. If you have taken a tablet formulation before without experiencing symptoms, it is unlikely that you will get undesirable effects from the lactose within our tablets.",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "options": [
+    {
+     "id": "cant_tolerate_any",
+     "content": "I can’t tolerate any amount of lactose and I would like to be considered for non-lactose containing preparations only",
+     "result": {
+      "type": "proceed",
+      "query_clinically": "Confirm prescription request is for a treatment that does not contain lactose.If prescription request is for a treatment that contains lactose, e.g. tablets requested, contact patient to confirm lactose intolerance and offer alternative treatments. Send macro ‘Hair loss: Lactose intolerance’."
+     }
+    },
+    {
+     "id": "can_tolerate_very_small_amounts",
+     "content": "I can tolerate very small amounts of lactose",
+     "result": {
+      "type": "proceed"
+     }
+    }
+   ],
+   "seen_in": [
+    "s2-men-explore"
+   ],
+   "results_known": true
+  },
+  {
+   "id": "have_any_scalp_issues",
+   "question_index": 8,
+   "type": "multi_choice",
+   "content": "Are you experiencing any of the following symptoms on your scalp?",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "options": [
+    {
+     "id": "pain_itching",
+     "content": "Pain, itching, burning or bumps",
+     "result": {
+      "type": "proceed",
+      "query_clinically": "Pain, itching, burning or bumps may be symptoms of psoriasis, dermatitis or other scalp conditions.For these patients, minoxidil is not suitable unless the patient confirms they are not currently suffering with an active condition. Review information provided by patient, if suitable for treatment with minoxidil, prescribe & safety net with macro ‘Hair loss: scalp condition’."
+     }
+    },
+    {
+     "id": "red_rinds_or_rashes",
+     "content": "Red rinds or rashes",
+     "result": {
+      "type": "proceed",
+      "query_clinically": "Red rinds or rashses may be symptoms of psoriasis, dermatitis or other scalp conditions. For these patients, minoxidil is not suitable unless the patient confirms they are not currently suffering with an active condition. Review information provided by patient, if suitable for treatment with minoxidil, prescribe & safety net with macro ‘Hair loss: scalp condition’."
+     }
+    },
+    {
+     "id": "dandruff",
+     "content": "Dandruff",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "diagnosis_of_pso_ecz",
+     "content": "Psoriasis or eczema",
+     "result": {
+      "type": "proceed",
+      "query_clinically": "Minoxidil is not suitable in patients with an active scalp condition, such as, eczema or psoriasis. Review information provided by patient, if suitable for treatment with minoxidil, prescribe & safety net with macro ‘Hair loss: scalp condition’."
+     }
+    },
+    {
+     "id": "no_none",
+     "content": "No",
+     "is_exclusive": true,
+     "result": {
+      "type": "proceed"
+     }
+    }
+   ],
+   "seen_in": [
+    "s1-men-baseline",
+    "s2-men-explore",
+    "s4-men-mentalhealth"
+   ],
+   "results_known": true
+  },
+  {
+   "id": "clarify_pain_itching",
+   "question_index": 9,
+   "type": "text",
+   "content": "You mentioned you have pain, itching, burning or bumps on your scalp.</br> <ul> <li>Have they been seen to or treated by a doctor? </li> <li>If so, what treatments have you received?</li> <li>Please give us a detailed description of your scalp condition below (including how long you’ve had it, its appearance and any other symptoms it is causing)</li> </ul>",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "seen_in": [
+    "s2-men-explore"
+   ]
+  },
+  {
+   "id": "clarify_red_rinds_or_rashes",
+   "question_index": 10,
+   "type": "text",
+   "content": "You mentioned you have red rinds or rashes on your scalp.</br> <ul> <li>Have they been seen to or treated by a doctor? </li> <li>If so, what treatments have you received?</li> <li>Please give us a detailed description of your scalp condition below (including how long you’ve had it, its appearance and any other symptoms it is causing).</li> </ul>",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "seen_in": [
+    "s2-men-explore"
+   ]
+  },
+  {
+   "id": "clarify_dandruff",
+   "question_index": 11,
+   "type": "single_choice",
+   "content": "Topical formulations (such as spray) may worsen dandruff. Would you still like to be considered for topical treatments?",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "options": [
+    {
+     "id": "yes",
+     "content": "Yes",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "no",
+     "content": "No",
+     "result": {
+      "type": "proceed",
+      "query_clinically": "Confirm prescription request is not for a topical treatment. If prescription request is for a topical treatment, contact patient to confirm treatment request"
+     }
+    }
+   ],
+   "seen_in": [
+    "s2-men-explore"
+   ],
+   "results_known": true
+  },
+  {
+   "id": "clarify_diagnosis_of_pso_ecz",
+   "question_index": 12,
+   "type": "text",
+   "content": "You mentioned you have eczema or psoriasis on your scalp.</br> <ul> <li>Have they been seen to or treated by a doctor? </li> <li>If so, what treatments have you received?</li> <li>Please give us a detailed description of your scalp condition below (including how long you’ve had it, its appearance and any other symptoms it is causing)</li> </ul>",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "seen_in": [
+    "s2-men-explore"
+   ]
+  },
+  {
+   "id": "are_any_of_the_following_true",
+   "question_index": 13,
+   "type": "multi_choice",
+   "content": "Are any of the following true?",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "options": [
+    {
+     "id": "noticed_hair_loss_on_my_body",
+     "content": "I have noticed hair loss on other areas of my body other than my head.",
+     "result": {
+      "type": "proceed",
+      "query_clinically": "Finasteride is unlikely to work in hair loss conditions other than male pattern baldness.Minoxidil may work in other hair loss conditions due to its ability to promote hair growth.  Prescribing for these conditions require clinical decision making on a case by case basis. Query into the clinical team if unsure. If further information needed send hair loss: Further information needed (patchy/other hair loss pattern)."
+     }
+    },
+    {
+     "id": "undergoing_psa",
+     "content": "I am undergoing PSA (prostate) monitoring or I have previously been diagnosed with prostate cancer.",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "uncontrolled_bp",
+     "content": "I have been diagnosed with high or low blood pressure.",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "asthma",
+     "content": "I have been diagnosed with asthma.",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "plan_on_trying_for_baby",
+     "content": "I plan on trying for a baby in the next 12 weeks.",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "experienced_disorders",
+     "content": "I have previously experienced, or am currently experiencing, depression, anxiety or panic disorders",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "no_none",
+     "content": "No - none",
+     "is_exclusive": true,
+     "result": {
+      "type": "proceed"
+     }
+    }
+   ],
+   "seen_in": [
+    "s1-men-baseline",
+    "s2-men-explore",
+    "s4-men-mentalhealth"
+   ],
+   "results_known": true
+  },
+  {
+   "id": "clarify_noticed_hair_loss_on_my_body",
+   "question_index": 14,
+   "type": "text",
+   "content": "Please tell us about hair loss in areas other than your head.<br></br>This information is needed so that our clinicians can ensure the prescription is safe for you to take.",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "seen_in": [
+    "s2-men-explore"
+   ]
+  },
+  {
+   "id": "clarify_psa",
+   "question_index": 15,
+   "type": "single_choice",
+   "content": "If you wish to be considered for finasteride you must tell your GP that you are taking finasteride so that they can interpret your results accordingly.",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "options": [
+    {
+     "id": "considered_for_finasteride",
+     "content": "I understand and would like to be considered for finasteride containing preparations.",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "not_considered_for_finasteride",
+     "content": "I do not wish to be considered for finasteride containing preparations.",
+     "result": {
+      "type": "proceed"
+     }
+    }
+   ],
+   "seen_in": [
+    "s2-men-explore"
+   ],
+   "results_known": true
+  },
+  {
+   "id": "clarify_uncontrolled_bp",
+   "question_index": 16,
+   "type": "single_choice",
+   "content": "Taking minoxidil alongside your regular blood pressure medication may cause your blood pressure to decrease further, potentially causing light-headedness, dizziness and fainting.",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "options": [
+    {
+     "id": "considered_for_minoxidil",
+     "content": "I understand that minoxidil may lower my blood pressure and would like to be considered for minoxidil.",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "not_considered_for_minoxidil",
+     "content": "I do not wish to be considered for minoxidil.",
+     "result": {
+      "type": "proceed"
+     }
+    }
+   ],
+   "seen_in": [
+    "s2-men-explore"
+   ],
+   "results_known": true
+  },
+  {
+   "id": "clarify_asthma",
+   "question_index": 17,
+   "type": "single_choice",
+   "content": "Topical formulations (such as spray) may contain alcohol, inhaling this spray may worsen your asthma symptoms and cause you to become short of breath.",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "options": [
+    {
+     "id": "considered_for_spray",
+     "content": "I understand that topical formulations (such as spray) may worsen my asthma and would like to be considered topical formulations.",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "not_considered_for_spray",
+     "content": "I do not wish to be considered for topical formulations (such as spray).",
+     "result": {
+      "type": "proceed"
+     }
+    }
+   ],
+   "seen_in": [
+    "s2-men-explore"
+   ],
+   "results_known": true
+  },
+  {
+   "id": "clarify_plan_on_trying_for_baby",
+   "question_index": 18,
+   "type": "single_choice",
+   "content": "Traces of finasteride have been found in the semen (which could affect the feotus), it is advised to stop taking finasteride 12 weeks prior to trying for a baby.",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "options": [
+    {
+     "id": "considered_for_finasteride_baby",
+     "content": "I would like to be considered for finasteride and will stop taking finasteride 12 weeks prior to trying for a baby.",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "not_considered_for_finasteride_baby",
+     "content": "I do not wish to be considered for preparations containing finasteride.",
+     "result": {
+      "type": "proceed"
+     }
+    }
+   ],
+   "seen_in": [
+    "s2-men-explore"
+   ],
+   "results_known": true
+  },
+  {
+   "id": "mood_alterations",
+   "question_index": 19,
+   "type": "single_choice",
+   "content": "Mood alterations including depressed mood, depression and, less frequently, suicidal ideation have been reported in patients treated with finasteride.",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "options": [
+    {
+     "id": "considered_for_finasteride",
+     "content": "I accept the risk that finasteride can lead to detrimental effects on my mood and would like to be considered for finasteride and/or minoxidil.",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "considered_for_minoxidil",
+     "content": "I would like to proceed with a minoxidil only treatment plan.",
+     "result": {
+      "type": "proceed"
+     }
+    }
+   ],
+   "seen_in": [
+    "s2-men-explore",
+    "s4-men-mentalhealth"
+   ],
+   "results_known": true
+  },
+  {
+   "id": "who_manages_your_mental_health",
+   "question_index": 20,
+   "type": "single_choice",
+   "content": "Who manages your mental health condition?",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "options": [
+    {
+     "id": "specialist",
+     "content": "Psychiatrist/Specialist/Consultant",
+     "result": {
+      "type": "proceed",
+      "query_clinically": "The Specialist should be informed of the treatment request and confirmation of this provided to Numan (via the patient). This  approves for the patient to be started on finasteride under our care.Send macro ‘Hair loss: MH Patient Pre-approval’ to patient."
+     }
+    },
+    {
+     "id": "gp",
+     "content": "GP",
+     "result": {
+      "type": "proceed"
+     }
+    }
+   ],
+   "seen_in": [
+    "s2-men-explore",
+    "s4-men-mentalhealth"
+   ],
+   "results_known": true
+  },
+  {
+   "id": "mental_health_medications",
+   "question_index": 21,
+   "type": "text",
+   "content": "What medications do you take for your mental health condition?",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "seen_in": [
+    "s2-men-explore",
+    "s4-men-mentalhealth"
+   ]
+  },
+  {
+   "id": "mental_health_medications_changed_yes_no",
+   "question_index": 22,
+   "type": "single_choice",
+   "content": "Have the doses of your medications changed in the last 3 months?",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "options": [
+    {
+     "id": "yes",
+     "content": "Yes",
+     "result": {
+      "type": "proceed",
+      "query_clinically": "There are no contraindications for finasteride with depression but a change in dose indicates the patient’s mental health condition may not be stable.Patients managed by their GP who have had a recent dose change should provide a letter from their GP, confirming that their GP is aware and approves for them to be started on finasteride under our care.Send macro ‘Hair loss: MH Patient Pre-approval’ to patient."
+     }
+    },
+    {
+     "id": "no",
+     "content": "No",
+     "result": {
+      "type": "proceed"
+     }
+    }
+   ],
+   "seen_in": [
+    "s2-men-explore",
+    "s4-men-mentalhealth"
+   ],
+   "results_known": true
+  },
+  {
+   "id": "mental_health_medications_changed_list",
+   "question_index": 23,
+   "type": "text",
+   "content": "Please tell us which medications have been changed, your previous dose and your current dose.",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "seen_in": [
+    "s2-men-explore"
+   ]
+  },
+  {
+   "id": "mental_health_suicidal",
+   "question_index": 24,
+   "type": "single_choice",
+   "content": "Have you had any suicidal thoughts or feelings of self-harm in the past year?",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "options": [
+    {
+     "id": "yes",
+     "content": "Yes",
+     "result": {
+      "type": "proceed",
+      "query_clinically": "Finasteride should not be prescribed for patients with suicidal ideation within the past year. These patients should not be considered for finasteride, consider them for non-finasteride containing preparations only."
+     }
+    },
+    {
+     "id": "no",
+     "content": "No",
+     "result": {
+      "type": "proceed",
+      "query_clinically": "If finasteride is prescribed, on approval, for all patients with a history of mental health condition(s) - send ‘Hair loss: MH post-approval safety net’"
+     }
+    }
+   ],
+   "seen_in": [
+    "s2-men-explore",
+    "s4-men-mentalhealth"
+   ],
+   "results_known": true
+  },
+  {
+   "id": "what_is_most_important_when_choosing_product",
+   "question_index": 25,
+   "type": "multi_choice",
+   "content": "What’s most important to you when choosing a hair loss product? (Select all that apply)",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "options": [
+    {
+     "id": "effective_formulation",
+     "content": "Effectiveness of the product",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "minimal_side_effects",
+     "content": "Minimal side effects",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "scalp_friendly_options",
+     "content": "Scalp-friendly options",
+     "result": {
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "all_of_the_above",
+     "content": "All of the above",
+     "is_exclusive": true,
+     "result": {
+      "type": "proceed"
+     }
+    }
+   ],
+   "seen_in": [
+    "s1-men-baseline",
+    "s2-men-explore",
+    "s4-men-mentalhealth"
+   ],
+   "results_known": true
+  },
+  {
+   "id": "medical_history",
+   "question_index": 26,
+   "type": "single_choice",
+   "content": "It's really important to tell us about:<br/> <ul> <li>Major illnesses</li> <li>Ongoing medical conditions</li> <li>Any medication prescribed or over the counter that you take</li> <li>Allergies to medication</li> <li>Operations</li> </ul> This information is needed so that our clinicians can ensure the prescription is safe for you to take.",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "options": [
+    {
+     "id": "have_medical_history",
+     "content": "I have a major illness, ongoing medical condition, operation, allergy to medication or take prescribed or over the counter medication to tell you about.",
+     "result": {
+      "query_clinically": true,
+      "type": "proceed"
+     }
+    },
+    {
+     "id": "have_no_medical_history",
+     "content": "I do not have a major illness, ongoing medical condition, operation, allergy to medication or take prescribed or over the counter medication to tell you about.",
+     "result": {
+      "type": "complete"
+     }
+    }
+   ],
+   "seen_in": [
+    "s1-men-baseline",
+    "s2-men-explore"
+   ],
+   "results_known": true
+  },
+  {
+   "id": "tell_us_about_medical_history",
+   "question_index": 27,
+   "type": "text",
+   "content": "Please tell us about your major illness, ongoing medical condition, allergy, or operation you've had.<br></br> This information is needed so that our clinicians can ensure the prescription is safe for you to take.",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "seen_in": [
+    "s2-men-explore"
+   ]
+  },
+  {
+   "id": "tell_us_about_medication_history",
+   "question_index": 28,
+   "type": "text",
+   "content": "Please include a full list of any medications, prescribed or over the counter, that you are currently taking.<br></br> This information is needed so that our clinicians can ensure the prescription is safe for you to take.",
+   "is_optional": null,
+   "placeholder": null,
+   "validate_number": null,
+   "action": null,
+   "seen_in": [
+    "s2-men-explore"
+   ]
+  }
+ ],
+ "observed_transitions": [
+  {
+   "run": "s1-men-baseline",
+   "question": "what_is_your_age",
+   "answer": [
+    "eighteen_to_sixtyfive"
+   ],
+   "hint": "proceed",
+   "next": "which_image_best_matches_your_hair_loss"
+  },
+  {
+   "run": "s1-men-baseline",
+   "question": "which_image_best_matches_your_hair_loss",
+   "answer": [
+    "temples_and_crown"
+   ],
+   "hint": "proceed",
+   "next": "when_did_you_notice"
+  },
+  {
+   "run": "s1-men-baseline",
+   "question": "when_did_you_notice",
+   "answer": [
+    "gradual"
+   ],
+   "hint": "proceed",
+   "next": "do_you_have_an_allergy_or_intolerance_to_any"
+  },
+  {
+   "run": "s1-men-baseline",
+   "question": "do_you_have_an_allergy_or_intolerance_to_any",
+   "answer": [
+    "not_allergic_to_any_above"
+   ],
+   "hint": "proceed",
+   "next": "have_any_scalp_issues"
+  },
+  {
+   "run": "s1-men-baseline",
+   "question": "have_any_scalp_issues",
+   "answer": [
+    "no_none"
+   ],
+   "hint": "proceed",
+   "next": "are_any_of_the_following_true"
+  },
+  {
+   "run": "s1-men-baseline",
+   "question": "are_any_of_the_following_true",
+   "answer": [
+    "no_none"
+   ],
+   "hint": "proceed",
+   "next": "what_is_most_important_when_choosing_product"
+  },
+  {
+   "run": "s1-men-baseline",
+   "question": "what_is_most_important_when_choosing_product",
+   "answer": [
+    "effective_formulation"
+   ],
+   "hint": "proceed",
+   "next": "medical_history"
+  },
+  {
+   "run": "s1-men-baseline",
+   "question": "medical_history",
+   "answer": [
+    "have_no_medical_history"
+   ],
+   "hint": "complete",
+   "next": null
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "what_is_your_age",
+   "answer": [
+    "sixtyfive_and_over"
+   ],
+   "hint": "proceed",
+   "next": "sixty_five_and_over_confirmation"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "sixty_five_and_over_confirmation",
+   "answer": [
+    "yes"
+   ],
+   "hint": "proceed",
+   "next": "which_image_best_matches_your_hair_loss"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "which_image_best_matches_your_hair_loss",
+   "answer": [
+    "other_hair_loss_pattern"
+   ],
+   "hint": "proceed",
+   "next": "clarify_other_hair_loss_pattern"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "clarify_other_hair_loss_pattern",
+   "answer": [
+    "Diffuse thinning on top for about 2 years. No diagnosis. Nothing makes it better or worse. No other symptoms."
+   ],
+   "hint": "proceed",
+   "next": "when_did_you_notice"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "when_did_you_notice",
+   "answer": [
+    "gradual"
+   ],
+   "hint": "proceed",
+   "next": "do_you_have_an_allergy_or_intolerance_to_any"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "do_you_have_an_allergy_or_intolerance_to_any",
+   "answer": [
+    "minoxidil_allergy",
+    "finasteride_allergy",
+    "lactose_intolerance_or_allergy"
+   ],
+   "hint": "proceed",
+   "next": "tell_us_which_reactions_from_this_medicine"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "tell_us_which_reactions_from_this_medicine",
+   "answer": [
+    "Itchy skin rash"
+   ],
+   "hint": "proceed",
+   "next": "lactose_tolerance"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "lactose_tolerance",
+   "answer": [
+    "cant_tolerate_any"
+   ],
+   "hint": "proceed",
+   "next": "have_any_scalp_issues"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "have_any_scalp_issues",
+   "answer": [
+    "pain_itching",
+    "red_rinds_or_rashes",
+    "dandruff",
+    "diagnosis_of_pso_ecz"
+   ],
+   "hint": "proceed",
+   "next": "clarify_pain_itching"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "clarify_pain_itching",
+   "answer": [
+    "Mild itching for 6 months. Not seen by a doctor. No treatment."
+   ],
+   "hint": "proceed",
+   "next": "clarify_red_rinds_or_rashes"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "clarify_red_rinds_or_rashes",
+   "answer": [
+    "Small red patch for 6 months. Not seen by a doctor. No treatment."
+   ],
+   "hint": "proceed",
+   "next": "clarify_dandruff"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "clarify_dandruff",
+   "answer": [
+    "yes"
+   ],
+   "hint": "proceed",
+   "next": "clarify_diagnosis_of_pso_ecz"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "clarify_diagnosis_of_pso_ecz",
+   "answer": [
+    "Mild scalp eczema, seen by GP years ago, uses emollient only."
+   ],
+   "hint": "proceed",
+   "next": "are_any_of_the_following_true"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "are_any_of_the_following_true",
+   "answer": [
+    "noticed_hair_loss_on_my_body",
+    "undergoing_psa",
+    "uncontrolled_bp",
+    "asthma",
+    "plan_on_trying_for_baby",
+    "experienced_disorders"
+   ],
+   "hint": "proceed",
+   "next": "clarify_noticed_hair_loss_on_my_body"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "clarify_noticed_hair_loss_on_my_body",
+   "answer": [
+    "Slightly thinner hair on forearms over the last 2 years."
+   ],
+   "hint": "proceed",
+   "next": "clarify_psa"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "clarify_psa",
+   "answer": [
+    "considered_for_finasteride"
+   ],
+   "hint": "proceed",
+   "next": "clarify_uncontrolled_bp"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "clarify_uncontrolled_bp",
+   "answer": [
+    "considered_for_minoxidil"
+   ],
+   "hint": "proceed",
+   "next": "clarify_asthma"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "clarify_asthma",
+   "answer": [
+    "considered_for_spray"
+   ],
+   "hint": "proceed",
+   "next": "clarify_plan_on_trying_for_baby"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "clarify_plan_on_trying_for_baby",
+   "answer": [
+    "considered_for_finasteride_baby"
+   ],
+   "hint": "proceed",
+   "next": "mood_alterations"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "mood_alterations",
+   "answer": [
+    "considered_for_finasteride"
+   ],
+   "hint": "proceed",
+   "next": "who_manages_your_mental_health"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "who_manages_your_mental_health",
+   "answer": [
+    "specialist"
+   ],
+   "hint": "proceed",
+   "next": "what_is_most_important_when_choosing_product"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "who_manages_your_mental_health",
+   "answer": [
+    "gp"
+   ],
+   "hint": "proceed",
+   "next": "mental_health_medications"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "mental_health_medications",
+   "answer": [
+    "Sertraline 50 mg once a day"
+   ],
+   "hint": "proceed",
+   "next": "mental_health_medications_changed_yes_no"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "mental_health_medications_changed_yes_no",
+   "answer": [
+    "no"
+   ],
+   "hint": "proceed",
+   "next": "mental_health_suicidal"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "mental_health_medications_changed_yes_no",
+   "answer": [
+    "yes"
+   ],
+   "hint": "proceed",
+   "next": "mental_health_medications_changed_list"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "mental_health_medications_changed_list",
+   "answer": [
+    "Sertraline, was 25 mg, now 50 mg"
+   ],
+   "hint": "proceed",
+   "next": "what_is_most_important_when_choosing_product"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "what_is_most_important_when_choosing_product",
+   "answer": [
+    "all_of_the_above"
+   ],
+   "hint": "proceed",
+   "next": "medical_history"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "medical_history",
+   "answer": [
+    "have_medical_history"
+   ],
+   "hint": "proceed",
+   "next": "tell_us_about_medical_history"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "tell_us_about_medical_history",
+   "answer": [
+    "Mild asthma, high blood pressure, depression managed by GP. No operations."
+   ],
+   "hint": "proceed",
+   "next": "tell_us_about_medication_history"
+  },
+  {
+   "run": "s2-men-explore",
+   "question": "tell_us_about_medication_history",
+   "answer": [
+    "Sertraline 50 mg daily, ramipril 5 mg daily, salbutamol inhaler when needed"
+   ],
+   "hint": "complete",
+   "next": null
+  },
+  {
+   "run": "s4-men-mentalhealth",
+   "question": "what_is_your_age",
+   "answer": [
+    "eighteen_to_sixtyfive"
+   ],
+   "hint": "proceed",
+   "next": "which_image_best_matches_your_hair_loss"
+  },
+  {
+   "run": "s4-men-mentalhealth",
+   "question": "which_image_best_matches_your_hair_loss",
+   "answer": [
+    "temples_and_crown"
+   ],
+   "hint": "proceed",
+   "next": "when_did_you_notice"
+  },
+  {
+   "run": "s4-men-mentalhealth",
+   "question": "when_did_you_notice",
+   "answer": [
+    "gradual"
+   ],
+   "hint": "proceed",
+   "next": "do_you_have_an_allergy_or_intolerance_to_any"
+  },
+  {
+   "run": "s4-men-mentalhealth",
+   "question": "do_you_have_an_allergy_or_intolerance_to_any",
+   "answer": [
+    "not_allergic_to_any_above"
+   ],
+   "hint": "proceed",
+   "next": "have_any_scalp_issues"
+  },
+  {
+   "run": "s4-men-mentalhealth",
+   "question": "have_any_scalp_issues",
+   "answer": [
+    "no_none"
+   ],
+   "hint": "proceed",
+   "next": "are_any_of_the_following_true"
+  },
+  {
+   "run": "s4-men-mentalhealth",
+   "question": "are_any_of_the_following_true",
+   "answer": [
+    "experienced_disorders"
+   ],
+   "hint": "proceed",
+   "next": "mood_alterations"
+  },
+  {
+   "run": "s4-men-mentalhealth",
+   "question": "mood_alterations",
+   "answer": [
+    "considered_for_finasteride"
+   ],
+   "hint": "proceed",
+   "next": "who_manages_your_mental_health"
+  },
+  {
+   "run": "s4-men-mentalhealth",
+   "question": "who_manages_your_mental_health",
+   "answer": [
+    "gp"
+   ],
+   "hint": "proceed",
+   "next": "mental_health_medications"
+  },
+  {
+   "run": "s4-men-mentalhealth",
+   "question": "mental_health_medications",
+   "answer": [
+    "Sertraline 50 mg once a day"
+   ],
+   "hint": "proceed",
+   "next": "mental_health_medications_changed_yes_no"
+  },
+  {
+   "run": "s4-men-mentalhealth",
+   "question": "mental_health_medications_changed_yes_no",
+   "answer": [
+    "no"
+   ],
+   "hint": "proceed",
+   "next": "mental_health_suicidal"
+  },
+  {
+   "run": "s4-men-mentalhealth",
+   "question": "mental_health_suicidal",
+   "answer": [
+    "no"
+   ],
+   "hint": "proceed",
+   "next": "what_is_most_important_when_choosing_product"
+  }
+ ]
+}

@@ -1,0 +1,370 @@
+{
+  "slug": "oxford-online-pharmacy",
+  "company": "Oxford Online Pharmacy",
+  "market": "UK",
+  "website": "https://www.oxfordonlinepharmacy.co.uk/",
+  "parent": "Trading name of Frosts (Online) Limited (company no. 11232746, Banbury, Oxfordshire). A sister company, Frosts Online (Holdings) Limited (11233841), is registered at the same address.",
+  "audiences": [
+    "men",
+    "women"
+  ],
+  "model": "Family-owned UK online pharmacy with its own prescribers: the customer picks a product, answers a medical questionnaire, pays, and a doctor or pharmacist prescriber approves or declines. One-off orders, no subscription. (Built from third-party public sources only; the company's own site could not be opened.)",
+  "checkedOn": "2026-11-23",
+  "stage": "map (blocked)",
+  "access": {
+    "howTested": [
+      "public-docs"
+    ],
+    "accountWall": "Not seen: the site could not be opened. Customer reviews show that registration exists and that payment is taken before the prescriber decides, but where sign-in is forced relative to the questions is unknown.",
+    "blockers": [
+      "Cloudflare security check ('Performing security verification', HTTP 403) blocked the local browser on the home page (runs/probe-home). Tried once, as instructed, and not fought.",
+      "The WebFetch tool also got HTTP 403 on the home page and on /hair-loss; plain curl got HTTP 403 on /robots.txt and /sitemap.xml.",
+      "Web search was not available: the shared search budget for the whole workflow ran out after one query (which returned nothing from this company's site).",
+      "A Wayback Machine copy of /hair-loss exists (captured 1 Nov 2026) but could not be read: the fetch tool refuses web.archive.org and the session proxy resets the connection. Archive services were not pursued further.",
+      "Regulator pages that might describe the prescribing service were also blocked to the fetch tool today (CQC search HTTP 403, GPhC register HTTP 403)."
+    ],
+    "coverageNote": "No page of the company's own site was read. There was no live walk, no site code and no quiz definition, so the product catalogue, prices, entry points and question wording are NOT mapped. Everything here comes from the company's Trustpilot page and Trustpilot's own review search (words: hair, finasteride, dutasteride, minoxidil, spray, topical, solution, compounded, scalp, Regaine, spironolactone, questionnaire, subscription), read through a fetch tool that paraphrases reviews, plus a Companies House search. Reviews are customers' own accounts and are not verified. The compounded sprays named in the task brief could not be confirmed from any source read today, so they are listed under unverifiedLeads, not under products."
+  },
+  "products": [
+    {
+      "id": "p1",
+      "name": "Finasteride 1 mg tablets (generic)",
+      "category": "rx-oral",
+      "actives": [
+        {
+          "name": "finasteride",
+          "strength": "1 mg"
+        }
+      ],
+      "form": "tablet",
+      "audience": "men",
+      "legalStatus": "Prescription-only medicine. Finasteride 1 mg is licensed in the UK for male pattern hair loss (general knowledge; not read from the company's site).",
+      "price": "unknown (the company's site could not be opened)",
+      "priceDetail": "One customer names a 168-tablet pack (24 weeks) in July 2026; others describe six-monthly reorders. Customers call the price competitive. Company reply (March 2026): the price-match guarantee applies only to the same brand, strength, quantity and medicine. Generic brands customers say they received: Accord, Milpharm, Rudipharm (two 2025 reviews complain the brand changed without warning).",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss",
+      "urlNote": "Category page address only (known to exist from a Wayback availability lookup). The product's own page address was not seen.",
+      "recommendedWhen": "Company reply on Trustpilot (Feb 2021): finasteride is offered first-line to patients who have not tried medication. Exact rule in the consultation is unknown.",
+      "evidence": "docs",
+      "evidenceNote": "Trustpilot review search 'finasteride' and 'hair', read 23 Nov 2026."
+    },
+    {
+      "id": "p2",
+      "name": "Propecia (branded finasteride 1 mg): named in one 2023 customer review",
+      "category": "rx-oral",
+      "actives": [
+        {
+          "name": "finasteride",
+          "strength": "1 mg"
+        }
+      ],
+      "form": "tablet",
+      "audience": "men",
+      "legalStatus": "Prescription-only medicine, licensed for male pattern hair loss (general knowledge; not read from the company's site).",
+      "price": "unknown (the company's site could not be opened)",
+      "priceDetail": "",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss",
+      "urlNote": "Category page address only; product page not seen.",
+      "recommendedWhen": "unknown",
+      "evidence": "docs",
+      "evidenceNote": "Named by one customer in an August 2023 Trustpilot review. Not confirmed as still stocked."
+    },
+    {
+      "id": "p3",
+      "name": "Dutasteride capsules",
+      "category": "rx-oral",
+      "actives": [
+        {
+          "name": "dutasteride",
+          "strength": "0.5 mg (named in one August 2020 review; current strengths not confirmed)"
+        }
+      ],
+      "form": "capsule",
+      "audience": "men",
+      "legalStatus": "Prescription-only medicine. Dutasteride is licensed in the UK for an enlarged prostate, so use for hair loss is off-label (inferred from the UK licence; the company's own wording was not seen).",
+      "price": "unknown today (the company's site could not be opened)",
+      "priceDetail": "One customer paid £138.99 for a six-month supply in February 2021. That price is old and may not hold now.",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss",
+      "urlNote": "Category page address only; product page not seen.",
+      "recommendedWhen": "Only after finasteride has been tried, and not together with finasteride. Sources: customer reviews of January and February 2021 and August 2025, and company replies. One August 2025 reviewer says the online questionnaire itself 'recommended dutasteride' and the refusal came afterwards by phone, so the block may sit with the prescriber, not the questionnaire.",
+      "evidence": "docs",
+      "evidenceNote": "Trustpilot review search 'dutasteride' (20+ reviews, 2020 to 2026), read 23 Nov 2026."
+    },
+    {
+      "id": "p4",
+      "name": "Oral minoxidil 2.5 mg tablets (Loniten named by one customer)",
+      "category": "rx-oral",
+      "actives": [
+        {
+          "name": "minoxidil",
+          "strength": "2.5 mg"
+        }
+      ],
+      "form": "tablet",
+      "audience": "men",
+      "legalStatus": "Prescription-only medicine. Minoxidil tablets are licensed for severe high blood pressure, so use for hair loss is off-label. Customers say the pharmacy sends a document about off-label use.",
+      "price": "unknown (the company's site could not be opened)",
+      "priceDetail": "",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss",
+      "urlNote": "Category page address only; product page not seen.",
+      "recommendedWhen": "unknown. Reviews show extra care around it: questions about health and current medicines, the GP is told and asked to monitor, one order was cancelled pending GP blood tests (May 2025), an ID check can follow the order, and a higher dose was refused (company reply, November 2025: higher doses need a specialist prescriber). Whether women can have it is unknown.",
+      "evidence": "docs",
+      "evidenceNote": "Trustpilot review search 'minoxidil' and 'hair', read 23 Nov 2026."
+    },
+    {
+      "id": "p5",
+      "name": "Regaine foam (minoxidil), twin pack: seen only in a 2015 customer review",
+      "category": "otc-medicine",
+      "actives": [
+        {
+          "name": "minoxidil",
+          "strength": "5% (inferred: Regaine foam is only made as 5%; the review does not state it)"
+        }
+      ],
+      "form": "foam",
+      "audience": "both",
+      "legalStatus": "Licensed over-the-counter medicine (pharmacy or general sale; not checked on the company's site).",
+      "price": "unknown today (the company's site could not be opened)",
+      "priceDetail": "The only evidence is a January 2015 customer review (£99, described as six cans for six months). It may not reflect today's range or price. Men's or women's version not stated.",
+      "url": "https://www.oxfordonlinepharmacy.co.uk/hair-loss",
+      "urlNote": "Category page address only; product page not seen.",
+      "recommendedWhen": "unknown",
+      "evidence": "docs",
+      "evidenceNote": "Trustpilot review search 'Regaine' (one review, 2015), read 23 Nov 2026."
+    }
+  ],
+  "unverifiedLeads": [
+    {
+      "lead": "Compounded topical hair-loss sprays and solutions (for example topical finasteride, topical dutasteride, higher-strength minoxidil combinations)",
+      "formulasAndStrengths": "unknown: none was seen",
+      "basis": "Only the project scouting hint in the task brief. No source read today confirms it: Trustpilot review searches for spray, topical, solution, compounded and scalp returned no hair-loss spray or solution.",
+      "status": "Not verified. Deliberately kept out of the products list so it is not shown as a fact. First thing to check once the site can be read.",
+      "whereToLook": "https://www.oxfordonlinepharmacy.co.uk/hair-loss (category page)"
+    },
+    {
+      "lead": "Topical minoxidil sold today (Regaine or generic, men and women), shampoos, supplements",
+      "formulasAndStrengths": "unknown",
+      "basis": "Customers mention using minoxidil morning and night with finasteride (2025), which suggests a topical product, but the form is not stated. Regaine foam appears only in a 2015 review.",
+      "status": "Not verified.",
+      "whereToLook": "https://www.oxfordonlinepharmacy.co.uk/hair-loss"
+    }
+  ],
+  "flows": [
+    {
+      "id": "hair",
+      "name": "Hair-loss online consultation (not walked; outline from customer reviews only)",
+      "audience": "both",
+      "entryUrl": "https://www.oxfordonlinepharmacy.co.uk/hair-loss",
+      "entryUrlNote": "Hair-loss category page (exists per a Wayback availability lookup, 1 Nov 2026 capture). The real consultation entry points (men, women, per product) were not seen.",
+      "stagesSummary": "Not walked: the site blocked the browser. Outline from customer reviews: choose a product (reviews mention a wide range of products, pack sizes and treatment lengths, and 'a choice of different tablets') → online medical questionnaire → registration and payment (payment is taken before the prescriber decides) → review by a doctor or pharmacist prescriber, sometimes with an email or phone call, an automatic ID check, a request for photos, or a request for GP blood tests → dispatch, or decline with a refund, or an alternative offered. A fresh consultation is needed for every reorder, with earlier answers pre-filled. No subscription.",
+      "questions": [],
+      "questionsNote": "No question wording was seen, so none is listed. Never treat the topics below as question text.",
+      "knownTopicsFromReviews": [
+        {
+          "topic": "Height and weight",
+          "source": "Trustpilot reviews, Aug 2023 (hair) and Jul 2026 (treatment not named)"
+        },
+        {
+          "topic": "Age",
+          "source": "Trustpilot review, Aug 2023 (hair)"
+        },
+        {
+          "topic": "Medical conditions (heart disease and liver disease are named by one customer)",
+          "source": "Trustpilot reviews, Jun 2022 and Aug 2023 (hair)"
+        },
+        {
+          "topic": "Current medicines",
+          "source": "Trustpilot reviews, Jun 2022, Aug 2023, Jun 2025 (hair)"
+        },
+        {
+          "topic": "Previous use of the treatment",
+          "source": "Trustpilot review, Aug 2023 (hair)"
+        },
+        {
+          "topic": "Whether to inform your GP / share the consultation with your GP",
+          "source": "Trustpilot reviews, Aug 2023 (hair) and Aug 2026 (treatment not named)"
+        },
+        {
+          "topic": "Photos (requested for some prescription items; not confirmed for hair loss)",
+          "source": "Trustpilot reviews, May 2024, Jul and Aug 2026 (treatments not hair, or not named)"
+        },
+        {
+          "topic": "Identity check after ordering (automatic, not always flagged before checkout)",
+          "source": "Trustpilot review and company reply, Mar 2026 (oral minoxidil)"
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": "R1",
+      "flow": "hair",
+      "when": "The patient asks for dutasteride and has not tried finasteride first.",
+      "then": "Dutasteride is not supplied; finasteride is offered first. In one case the refusal came by phone after payment, although the customer says the questionnaire had 'recommended dutasteride'.",
+      "effectType": "product-switched",
+      "affects": [
+        "p3",
+        "p1"
+      ],
+      "evidence": "docs",
+      "proof": "Trustpilot reviews of 22 Jan 2021 (with a company reply of 2 Feb 2021 from the pharmacist manager: finasteride is first-line for patients who have not tried medication, after a September 2020 risk assessment) and 19 Aug 2025 (company reply: following clinical guidelines). https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=dutasteride",
+      "confidence": "medium"
+    },
+    {
+      "id": "R2",
+      "flow": "hair",
+      "when": "The patient wants dutasteride while still taking finasteride.",
+      "then": "The prescription is declined; the patient is told to stop finasteride and reorder. Company reply: it is 'not a licensed regime'.",
+      "effectType": "product-removed",
+      "affects": [
+        "p3"
+      ],
+      "evidence": "docs",
+      "proof": "Trustpilot review of 19 Feb 2021 and company reply of 25 Feb 2021. Old; not confirmed as current. https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=dutasteride",
+      "confidence": "low"
+    },
+    {
+      "id": "R3",
+      "flow": "hair",
+      "when": "The patient asks for oral minoxidil above the usual dose (the limit itself is not stated).",
+      "then": "The higher dose is not supplied (part of the order was cancelled). Company reply: higher doses need a specialist prescriber.",
+      "effectType": "strength-changed",
+      "affects": [
+        "p4"
+      ],
+      "evidence": "docs",
+      "proof": "Trustpilot review of 18 Nov 2025 and company reply of 21 Nov 2025. https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=minoxidil",
+      "confidence": "medium"
+    },
+    {
+      "id": "R4",
+      "flow": "hair",
+      "when": "The patient orders oral minoxidil.",
+      "then": "Extra checks may follow: the GP is told and asked to monitor; one order was cancelled until GP blood tests were done; the oedema risk is flagged in the consultation and the patient agrees to tell their doctor.",
+      "effectType": "flag-for-clinician",
+      "affects": [
+        "p4"
+      ],
+      "evidence": "docs",
+      "proof": "Trustpilot reviews of 2 May 2025, 4 Jun 2025 (with company reply of 16 Jun 2025) and 16 Jun 2025. https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=minoxidil",
+      "confidence": "low"
+    },
+    {
+      "id": "R5",
+      "flow": "hair",
+      "when": "A reorder is placed early, while the patient should still have supply left.",
+      "then": "The order is put on hold and queried, or declined by the doctor.",
+      "effectType": "flag-for-clinician",
+      "affects": [],
+      "evidence": "docs",
+      "proof": "Trustpilot reviews of 30 Aug 2025 (order on hold, company asked why) and Dec 2025 / 16 Jan 2026 (doctor declined a repeat with three months' supply left). https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=hair",
+      "confidence": "medium"
+    },
+    {
+      "id": "R6",
+      "flow": "hair",
+      "when": "A woman orders a hair-loss tablet (the tablet is not named).",
+      "then": "The order was refused in the one known case. Company reply: it must prescribe within its clinical team's limits, it is not a hair-loss specialist, and it is limited in what it can prescribe for female patients.",
+      "effectType": "hard-stop",
+      "affects": [],
+      "evidence": "docs",
+      "proof": "Trustpilot review of 17 Jun 2024 and company reply of 11 Jul 2024. https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=hair&page=3",
+      "confidence": "low"
+    },
+    {
+      "id": "R7",
+      "flow": "hair",
+      "when": "The patient takes antidepressants and orders finasteride.",
+      "then": "Finasteride was still prescribed in the one known case (the customer complained about this). So antidepressant use may not be a hard stop. One unverified account.",
+      "effectType": "none",
+      "affects": [
+        "p1"
+      ],
+      "evidence": "docs",
+      "proof": "Trustpilot review of 23 Oct 2026 and company reply. https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=finasteride",
+      "confidence": "low"
+    },
+    {
+      "id": "R8",
+      "flow": "hair",
+      "when": "The prescriber judges the chosen treatment unsuitable after payment.",
+      "then": "The order is declined with a full refund (refunds can take about 5 working days), or an alternative is offered which the patient can accept or decline.",
+      "effectType": "product-switched",
+      "affects": [],
+      "evidence": "docs",
+      "proof": "Company replies on Trustpilot of 2 Feb 2021, 11 Jul 2024 and 2 Jun 2025. https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=subscription",
+      "confidence": "medium"
+    }
+  ],
+  "experiments": [],
+  "recommendations": [],
+  "engineSummary": "Not observed. From customer reviews and company replies only: this looks like a catalogue pharmacy, not a recommending quiz. The customer chooses the product, strength and pack size; a questionnaire (height, weight, age, conditions, medicines, previous use, GP details) screens for safety; payment is taken; then a human prescriber makes the real decision and may decline, refund, or offer something else. Known prescriber rules: finasteride before dutasteride, no finasteride and dutasteride together, no high-dose oral minoxidil, GP involvement for oral minoxidil, early reorders are held, and limited prescribing for women. Whether any of these are built into the questionnaire, or all sit with the prescriber, is unknown.",
+  "strengths": [
+    "No subscription: one-off orders, which several customers praise (company reply of 24 Oct 2026 calls it a 'no-subscription approach').",
+    "Low prices and a price-match guarantee (same brand, strength, quantity and medicine); free UK delivery over £40.",
+    "Sells oral dutasteride and oral minoxidil for hair loss, which many UK online clinics do not.",
+    "Long trading history and very large review base (35,929 Trustpilot reviews, TrustScore 4.7 on 23 Nov 2026).",
+    "Answers are saved and pre-filled for reorders."
+  ],
+  "weaknesses": [
+    "Payment is taken before the prescriber decides, so refusals arrive after payment and refunds take days (several 1-star reviews).",
+    "The customer is shown a choice of products rather than a recommendation (one customer complaint, July 2026; treatment not named).",
+    "Generic brand can change without warning (2025 and 2026 reviews).",
+    "Limited offer for women (company reply, July 2024).",
+    "ID checks are not always flagged before checkout (company reply, March 2026)."
+  ],
+  "opportunities": [
+    "Tell the patient what they are eligible for before taking payment (for example the finasteride-before-dutasteride rule), instead of refusing afterwards.",
+    "Give a clear recommendation instead of a list of products to choose from.",
+    "A proper women's hair-loss pathway, which this company says it is limited in."
+  ],
+  "sources": [
+    {
+      "title": "Trustpilot: Oxford Online Pharmacy company page (business facts)",
+      "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk"
+    },
+    {
+      "title": "Trustpilot review search: hair (pages 1 to 4 of 5 read)",
+      "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=hair"
+    },
+    {
+      "title": "Trustpilot review search: finasteride (page 1 of 4 read)",
+      "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=finasteride"
+    },
+    {
+      "title": "Trustpilot review search: dutasteride (page 1 read)",
+      "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=dutasteride"
+    },
+    {
+      "title": "Trustpilot review search: minoxidil (page 1 of 2 read)",
+      "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=minoxidil"
+    },
+    {
+      "title": "Trustpilot review search: questionnaire (page 1 of 4 read)",
+      "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=questionnaire"
+    },
+    {
+      "title": "Trustpilot review search: subscription",
+      "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=subscription"
+    },
+    {
+      "title": "Trustpilot review searches with no hair-loss result: spray, topical, solution, compounded, scalp, spironolactone",
+      "url": "https://uk.trustpilot.com/review/oxfordonlinepharmacy.co.uk?search=spray"
+    },
+    {
+      "title": "Companies House search: Frosts (Online) Limited, 11232746",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=frosts+%28online%29"
+    },
+    {
+      "title": "NOT READ (blocked here): Wayback Machine copy of the hair-loss category page, captured 1 Nov 2026",
+      "url": "http://web.archive.org/web/20261101123809/https://www.oxfordonlinepharmacy.co.uk/hair-loss"
+    }
+  ],
+  "limitations": [
+    "The company's own website was not read at all, so there is no verified product catalogue, no prices, no compounded formulas or strengths, no entry points and no question wording.",
+    "The compounded sprays and solutions named in the task brief are unconfirmed (see unverifiedLeads; they are not in the products list).",
+    "All findings come from Trustpilot reviews and company replies, paraphrased by a fetch tool that will not quote at length. Reviews are one-sided, unverified and some are years old.",
+    "The 'rules' are prescriber behaviour reported by customers, not engine behaviour seen in a replay. None has been tested.",
+    "Web search was unavailable (shared budget used up), so press, help-centre pages and regulator reports were not found.",
+    "Not every page of each Trustpilot search was read (for example 'finasteride' pages 2 to 4 and 'hair' page 5)."
+  ]
+}

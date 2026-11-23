@@ -1,0 +1,21 @@
+COMMAND 018 {"steps":[{"do":"click","selector":"label:text-is(\"I understand that minoxidil may lower my blood pressure and would like to be considered for minoxidil.\")","settle":2800},{"do":"snap","settle":600}]}
+URL: https://www.numan.com/subscribe/hair-loss/4b4e30d9-9042-49e8-a32b-7557d60d5aec/sq/clarify_asthma
+TITLE: Topical formulations (such as spray) may contain alcohol, inhaling this spray may worsen your asthma symptoms and cause you to become short of breath. | Numan
+
+--- VISIBLE TEXT ---
+58%
+Topical formulations (such as spray) may contain alcohol, inhaling this spray may worsen your asthma symptoms and cause you to become short of breath.
+I understand that topical formulations (such as spray) may worsen my asthma and would like to be considered topical formulations.
+I do not wish to be considered for topical formulations (such as spray).
+Back
+
+--- CONTROLS ---
+  radio (2):
+    - I understand that topical formulations (such as spray) may worsen my asthma and would like to be considered topical formulations. (name: clarify_asthma)
+    - I do not wish to be considered for topical formulations (such as spray). (name: clarify_asthma)
+  button (1):
+    - Back
+
+--- LINKS ---
+  link (1):
+    - Visit the main page -> /

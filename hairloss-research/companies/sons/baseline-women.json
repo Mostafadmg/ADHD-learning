@@ -1,0 +1,10 @@
+{
+  "_about": "Sons UK hair-loss consultation, baseline woman from PROTOCOL.md. The flow stops at question 2: choosing Female shows a notice that Sons does not treat people born female. None of the woman's other baseline answers can be given because no further questions are shown.",
+  "start": "https://shop.sons.co.uk/consultation/?logged_in=false",
+  "steps": [
+    {"do":"wait","ms":2500, "_q":"wait for survey to load"},
+    {"do":"click","text":"No", "_q":"5140 Are you an existing Sons customer?"},
+    {"do":"click","text":"Female", "_q":"5141 What is your gender at birth?"},
+    {"do":"wait","ms":1500, "_q":"female-client-notice (stop screen)"}
+  ]
+}

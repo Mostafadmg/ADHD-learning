@@ -1,0 +1,1 @@
+{ "start": "https://onlinedoctor.superdrug.com/hair-loss-consultation.html", "steps": [ {"do":"goto","url":"https://onlinedoctor.superdrug.com/assessment/147929"}, {"do":"wait","ms":4000} ] }

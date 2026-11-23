@@ -1,0 +1,1 @@
+{ "start": "https://www.form.happyhead.com/get-started/?l=false&ph=true", "steps": [ {"do":"wait","ms":3000} ] }

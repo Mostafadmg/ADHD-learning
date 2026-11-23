@@ -1,0 +1,98 @@
+{
+ "start": "https://www.keeps.com/hair-treatment",
+ "locale": "en-US",
+ "timezone": "America/Chicago",
+ "steps": [
+  {
+   "do": "scroll"
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/hair-treatment-gel"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/plan-selection"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/quiz/results?products=211%2C239"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/request/lead"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/consultation/intake"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/request/consultation"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/get-started/your-info"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/not-eligible-user/sex"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/not-eligible-user/state"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/not-eligible-user/alternatives"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/register"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  }
+ ]
+}

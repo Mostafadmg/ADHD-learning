@@ -1,0 +1,20 @@
+STEP 01 wait 3000
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+A Custom Hair Growth Plan in 2-3 Minutes
+You're a few questions away from a solution with real results, made just for you.
+GET MY CUSTOM PLAN
+Need help? Talk to a Hair Specialist
+How can we contact you?
+One of our hair specialists will reach out soon to gather the necessary details.
+GET CONNECTED NOW
+Average Callback Time: 1-2 min
+By clicking 'Get Connected Now', you consent to receive marketing calls and SMS messages from Happy Head, including messages sent using automated technology. Message and data rates may apply. Your consent is not a condition of purchase.
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

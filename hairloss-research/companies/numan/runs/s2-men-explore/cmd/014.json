@@ -1,0 +1,1 @@
+{"steps":[{"do":"fill","selector":"textarea, input[type=text], input[type=number]","value":"Mild scalp eczema, seen by GP years ago, uses emollient only."},{"do":"click","text":"Next","settle":2800},{"do":"snap","settle":600}]}

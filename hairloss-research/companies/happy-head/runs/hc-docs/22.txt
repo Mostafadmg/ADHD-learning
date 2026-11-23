@@ -1,0 +1,51 @@
+STEP 22 goto "https://happyhead.zendesk.com/hc/en-us/articles/19957315243159-How-can-I-update-my-health-information-for-my-Annual-Health-Check"
+URL: https://happyhead.zendesk.com/hc/en-us/articles/19957315243159-How-can-I-update-my-health-information-for-my-Annual-Health-Check
+TITLE: How can I update my health information for my Annual Health Check? – Happy Head
+
+--- VISIBLE TEXT ---
+Happy Head  Changing Account Info
+Articles in this section
+How can I update my health information for my Annual Health Check?
+How can I update my payment information?
+How do I change my billing or shipping address?
+How can I make updates or customize my prescription medication?
+How can I update my health information for my Annual Health Check?
+7 months ago Updated
+
+As part of your continued care at Happy Head to continue receiving prescription treatment, all patients are required to complete a health check at least once each year. This annual update allows your doctor to review any changes to your medical history or medications and confirm that your current treatment remains safe and appropriate. It is also a good opportunity to share your progress and ask your doctor any questions you may have.
+
+ 
+
+To complete your Annual Health Check, log in to your account and visit my.happyhead.com/health-update. You can also use this page anytime to update your health information.
+
+ 
+
+If your updated health information has not yet been received, your dermatologist may be unable to continue prescribing your current treatment until the required information is submitted. In that case, your prescription treatment will be paused and your subscription will automatically transition to the Non-Rx Growth Plan so you can continue treatment without interruption.
+
+ 
+
+The Non-Rx Growth Plan will be offered at a price that is equal to or lower than your current plan. Billing for this plan occurs every 26 days, which may differ from your existing billing schedule. If needed, you may cancel at any time here.
+
+ 
+
+Have more questions? Submit a request
+Recently viewed articles
+How can I make updates or customize my prescription medication?
+TopicalRx Copper Peptide Formula (GHK-Cu)
+Topical Rx Beard Formula: An In-Depth Guide
+TopicalRx Dandruff Solution: Clobetasol + Ketoconazole by Happy Head
+What is TopicalRx SuperSolution™ ProBlend
+Related articles
+How can I make updates or customize my prescription medication?
+How can I cancel my subscription?
+How can I update my payment information?
+How long do orders take to arrive?
+How can I change my shipping frequency?
+
+--- CONTROLS ---
+  button (2): Why Happy Head?  ·  Products
+  checkbox (1): (no label)
+  input:search (1): Search
+
+--- LINKS ---
+  link (50): MEN -> https://www.happyhead.com/home  ·  WOMEN -> https://www.happyhead.com/women  ·  LOGIN -> https://my.happyhead.com/my-account  ·  START NOW -> https://www.form.happyhead.com/get-started/?l=false&ph=true  ·  Men -> https://www.happyhead.com/home  ·  Women -> /women  ·  Happy Head -> /hc/en-us  ·  Changing Account Info -> /hc/en-us/sections/1500002710982-Changing-Account-Info  ·  How can I update my payment information? -> /hc/en-us/articles/4402321978263-How-can-I-update-my-payment-information  ·  How do I change my billing or shipping address? -> /hc/en-us/articles/4402314805399-How-do-I-change-my-billing-or-shipping-address  ·  my.happyhead.com/health-update -> https://my.happyhead.com/health-update/  ·  here -> https://links.email1.happyhead.com/z/a82ajr4g12af04?uid=06a9f59d-d028-41bb-8c3d-ad37bb02f0de&txnid=013b9a3e-d7a1-49d9-87  ·  Submit a request -> /hc/en-us/requests/new  ·  TopicalRx Copper Peptide Formula (GHK-Cu) -> /hc/en-us/articles/42614001770903-TopicalRx-Copper-Peptide-Formula-GHK-Cu  ·  Topical Rx Beard Formula: An In-Depth Guide -> /hc/en-us/articles/35817027675287-Topical-Rx-Beard-Formula-An-In-Depth-Guide  ·  What is TopicalRx SuperSolution™ ProBlend -> /hc/en-us/articles/32104727861783-What-is-TopicalRx-SuperSolution-ProBlend  ·  How can I cancel my subscription? -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJcA1%2F4ABDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJeMr6wmE  ·  How can I update my payment information? -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJdz1v4ABDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJeMr6wmEjo  ·  How long do orders take to arrive? -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJdlav4ABDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJeMr6wmEjo  ·  How can I change my shipping frequency? -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBc0aP4ABDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJeMr6wmEjo  ·  Get Started -> https://www.happyhead.com/get-started  ·  Ultimate Growth Bundle -> https://www.happyhead.com/products/topical-solution-supercapsule-finasteride-minoxidil  ·  Custom TopicalRx Solution -> https://www.happyhead.com/products/topical-solution-dutasteride-minoxidil  ·  SuperCapsuleTM -> https://www.happyhead.com/products/supercapsule-finasteride-minoxidil-vitamin-d3  ·  TopicalRx SuperSolutionTM -> https://www.happyhead.com/products/topical-supersolution-finasteride-minoxidil-and-liposomal  ·  DutasterideRx -> https://www.happyhead.com/collections/dutasteride  ·  FinasterideRx -> https://www.happyhead.com/collections/finasteride  ·  MinoxidilRx -> https://www.happyhead.com/collections/minoxidil  ·  About Us -> https://www.happyhead.com/about-us  ·  Blog -> https://www.happyhead.com/hair-loss-blog  ·  How It Works -> https://www.happyhead.com/how-it-works  ·  Getting Started -> https://www.happyhead.com/getting-started  ·  FAQ -> https://www.happyhead.com/faq  ·  The Science -> https://www.happyhead.com/science  ·  Contact Us -> https://happyhead.zendesk.com/hc/en-us  ·  Refer-A-Friend -> https://www.happyhead.com/refer  ·  Stylist Program -> https://www.happyhead.com/stylist  ·  Influencer Program -> https://www.happyhead.com/ambassador  ·  Affiliate Program -> https://www.happyhead.com/affiliates  ·  CCPA: Do Not Sell My Information -> https://www.happyhead.com/legal/ccpa-do-not-sell-my-information  ·  Terms & Conditions -> https://www.happyhead.com/legal/terms-of-use  ·  Subscription Terms -> https://www.happyhead.com/legal/subscription-terms  ·  Privacy Policy -> https://www.happyhead.com/legal/privacy-policy  ·  Cookie Policy -> https://www.happyhead.com/legal/privacy-policy  ·  Acceptable Use Policy -> https://www.happyhead.com/legal/terms-of-use  ·  Telehealth Consent -> https://www.happyhead.com/legal/telehealth-consent  ·  Drug Safety Information & Consent -> https://www.happyhead.com/legal/drug-safety-information  ·  Refund & Return Policy -> https://www.happyhead.com/legal/terms-of-use  ·  Warning To Consumers -> https://www.happyhead.com/legal/drug-safety-information  ·  XML Sitemap -> https://www.happyhead.com/sitemap.xml

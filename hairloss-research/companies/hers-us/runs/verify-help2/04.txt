@@ -1,0 +1,44 @@
+STEP 04 goto "https://support.hims.com/hc/en-us/search?query=18+years+old+age"
+URL: https://support.hims.com/hc/en-us/search?query=18+years+old+age
+TITLE: Search results – Hims, Inc.
+
+--- VISIBLE TEXT ---
+Help Center
+Everything you need to know, all in one place.
+By Category
+All Categories (3)
+Product Drug Information (2)
+My Account (1)
+Show more categories
+3 results for "18 years old age"
+Birth Control
+Hims, Inc.
+Product Drug Information
+Product Drug Information
+
+(OCs) use. This risk increases with age, particularly in women over 35 years of age, and with the number of cigarettes smoked
+
+Hims & Hers Health July 10, 2025 at 7:07 PM 0 comments
+Do you have more flexible payment options?  -1
+Hims, Inc.
+My Account
+Payment Information
+
+States or its territories, be at least eighteen years old or of legal age in your state of residence, have a valid card/bank
+
+Theresa November 3, 2025 at 11:17 AM 0 comments
+Birth Control (Progestin only)
+Hims, Inc.
+Product Drug Information
+Product Drug Information
+
+side effects. This chance increases with age (mainly older than 35 years of age) and the number of cigarettes smoked. It
+
+Hims & Hers Health July 10, 2025 at 7:08 PM 0 comments
+
+--- CONTROLS ---
+  button (2): Toggle Navigation  ·  Show more categories
+  input:search (1): How can we help you? = "18 years old age"
+
+--- LINKS ---
+  link (12): Contact us -> /hc/requests/new?ticket_form_id=25593136373787  ·  All Categories (3) -> /hc/en-us/search?filter_by=knowledge_base&query=18+years+old+age&utf8=%E2%9C%93  ·  Product Drug Information (2) -> /hc/en-us/search?category=38833832380955&filter_by=knowledge_base&query=18+years+old+age&utf8=%E2%9C%93  ·  My Account (1) -> /hc/en-us/search?category=360002039332&filter_by=knowledge_base&query=18+years+old+age&utf8=%E2%9C%93  ·  Birth Control -> /hc/en-us/search/click?data=BAh7DjoHaWRsKwib5vSGVCM6D2FjY291bnRfaWRpA5a3HzoJdHlwZUkiDGFydGljbGUGOgZFVDoIdXJsSSJMaHR0cHM6  ·  Hims, Inc. -> https://support.hims.com  ·  Product Drug Information -> https://support.hims.com/hc/en-us/categories/38833832380955-Product-Drug-Information  ·  Product Drug Information -> https://support.hims.com/hc/en-us/sections/38833926851099-Product-Drug-Information  ·  Do you have more flexible payment options? -> /hc/en-us/search/click?data=BAh7DjoHaWRsKwgbWDhXBSc6D2FjY291bnRfaWRpA5a3HzoJdHlwZUkiDGFydGljbGUGOgZFVDoIdXJsSSJoaHR0cHM6  ·  My Account -> https://support.hims.com/hc/en-us/categories/360002039332-My-Account  ·  Payment Information -> https://support.hims.com/hc/en-us/sections/360006262372-Payment-Information  ·  Birth Control (Progestin only) -> /hc/en-us/search/click?data=BAh7DjoHaWRsKwib8f6IVCM6D2FjY291bnRfaWRpA5a3HzoJdHlwZUkiDGFydGljbGUGOgZFVDoIdXJsSSJbaHR0cHM6

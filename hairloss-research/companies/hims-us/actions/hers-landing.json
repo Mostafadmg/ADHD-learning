@@ -1,0 +1,2 @@
+{ "start": "https://www.forhers.com/hair-loss", "locale": "en-US", "timezone": "America/New_York",
+  "steps": [ {"do":"wait","ms":8000}, {"do":"scroll"} ] }

@@ -1,0 +1,7568 @@
+{
+ "note": "Offline simulation of the served schema (scripts/simulate.py + scripts/sweep.py). Evidence type: code. Not live replays.",
+ "baseline": {
+  "path": [
+   [
+    20,
+    "What are your top hair goals?",
+    [
+     "regrow-my-hair"
+    ]
+   ],
+   [
+    22,
+    "What hair loss solutions have you tried, if any?",
+    [
+     "hair-loss-solutions-none-of-the-above"
+    ]
+   ],
+   [
+    26,
+    "What’s the main reason you haven’t tried hair loss treatment before?",
+    [
+     "didnt-want-or-need-to-until-now"
+    ]
+   ],
+   [
+    55,
+    "Ro members start seeing results in as little as three months",
+    []
+   ],
+   [
+    112,
+    "Answer a few questions to see if you’re eligible for treatment.",
+    [
+     "next"
+    ]
+   ],
+   [
+    132,
+    "Where are you noticing hair loss or thinning?",
+    [
+     "hairline",
+     "crown"
+    ]
+   ],
+   [
+    150,
+    "How did your hair loss start?",
+    [
+     "gradually"
+    ]
+   ],
+   [
+    160,
+    "How would you describe the severity of your current hair loss?",
+    [
+     "moderate"
+    ]
+   ],
+   [
+    170,
+    "Have you noticed any of the following?",
+    [
+     "none"
+    ]
+   ],
+   [
+    370,
+    "Have you ever been diagnosed with or treated for high or low blood pre",
+    [
+     "no-never-been-diagnosed-with-high-or-low-bp"
+    ]
+   ],
+   [
+    1000,
+    "Do you have, or have you ever had, any of the following conditions?",
+    [
+     "none"
+    ]
+   ],
+   [
+    1300,
+    "Do you have, or have you ever had, any of the following heart-related ",
+    [
+     "none"
+    ]
+   ],
+   [
+    2200,
+    "What medications are you currently taking?",
+    [
+     "i-dont-take-any-medications"
+    ]
+   ],
+   [
+    2300,
+    "Do you have any allergies?",
+    [
+     "i-dont-have-allergies"
+    ]
+   ],
+   [
+    2350,
+    "Are you and your partner trying to get pregnant in the next 3 months?",
+    [
+     "trying-to-get-pregnantn-no-we-are-not"
+    ]
+   ],
+   [
+    2400,
+    "What other health goals are on your mind?",
+    [
+     "none-of-the-above"
+    ]
+   ],
+   [
+    2510,
+    "Is there anything else you want your Ro-affiliated doctor to know abou",
+    [
+     "no"
+    ]
+   ],
+   [
+    3177,
+    "We use ingredients clinically proven to stop hair loss and regrow hair",
+    [
+     "continue"
+    ]
+   ],
+   [
+    3178,
+    "MHL Treatment Recommendation"
+   ]
+  ],
+  "outcome": {
+   "end": 3178,
+   "flags": {
+    "noRecTopicalCombined": 0,
+    "noRecOralFin": 0,
+    "noRecOralMin": 0
+   },
+   "recommended": "Ro Mane Spray"
+  }
+ },
+ "experiments": [
+  {
+   "id": "sim-m-q20-get-thicker-fuller-hair",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 20,
+   "slug": "get-thicker-fuller-hair",
+   "changed": "men-q20: Regrow my hair -> Get thicker, fuller hair",
+   "answers": {
+    "20": [
+     "get-thicker-fuller-hair"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "goalThickerAndFuller",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q20-proactively-prevent-hair-loss",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 20,
+   "slug": "proactively-prevent-hair-loss",
+   "changed": "men-q20: Regrow my hair -> Proactively prevent hair loss",
+   "answers": {
+    "20": [
+     "proactively-prevent-hair-loss"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "goalPrevention",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q22-hair-loss-solutions-non-prescription",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 22,
+   "slug": "hair-loss-solutions-non-prescription",
+   "changed": "men-q22: None of the above -> Non-prescription solutions (e.g. Rogaine, supplements)",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ]
+   },
+   "added": [
+    [
+     28,
+     "What’s the main reason you’re looking for hair loss solutions now?"
+    ],
+    [
+     240,
+     "What hair loss treatments have you used?"
+    ],
+    [
+     285,
+     "Did topical minoxidil work well for you?"
+    ]
+   ],
+   "removed": [
+    [
+     26,
+     "What’s the main reason you haven’t tried hair loss treatment before?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "hasTriedNonPrescription",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q28-over-the-counter-solutions-didnt-work-fo-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-non-prescription",
+   "qid": 28,
+   "slug": "over-the-counter-solutions-didnt-work-for-me",
+   "changed": "men-q28: I want to maximize results with a new or additional product -> Over-the-counter solutions didn't work for me",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "28": [
+     "over-the-counter-solutions-didnt-work-for-me"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "lookingBecauseOtcNotWork",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q28-i-want-an-easier-or-more-convenient-solu-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-non-prescription",
+   "qid": 28,
+   "slug": "i-want-an-easier-or-more-convenient-solution-like-a-pill-or-a-spray",
+   "changed": "men-q28: I want to maximize results with a new or additional product -> I want an easier or more convenient solution (like a pill or a spray)",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "28": [
+     "i-want-an-easier-or-more-convenient-solution-like-a-pill-or-a-spray"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "lookingForEasierSolution",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q28-ive-experienced-side-effects-with-past-s-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-non-prescription",
+   "qid": 28,
+   "slug": "ive-experienced-side-effects-with-past-solutions",
+   "changed": "men-q28: I want to maximize results with a new or additional product -> I’ve experienced side effects with past solutions",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "28": [
+     "ive-experienced-side-effects-with-past-solutions"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q240-oral-minoxidil-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-non-prescription",
+   "qid": 240,
+   "slug": "oral-minoxidil",
+   "changed": "men-q240: Topical minoxidil -> Oral minoxidil",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ]
+   },
+   "added": [
+    [
+     255,
+     "What dose of oral minoxidil did you use?"
+    ],
+    [
+     265,
+     "Did oral minoxidil work well for you?"
+    ]
+   ],
+   "removed": [
+    [
+     285,
+     "Did topical minoxidil work well for you?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "treatmentOralMinoxidil",
+     "1"
+    ],
+    [
+     "isEligibleFor6And12MonthShipments",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q255-2mg-daily-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-minoxidil-d1",
+   "qid": 255,
+   "slug": "2mg-daily",
+   "changed": "men-q255: 2.5mg daily -> 2.0mg daily",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ],
+    "255": [
+     "2mg-daily"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q255-3mg-daily-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-minoxidil-d1",
+   "qid": 255,
+   "slug": "3mg-daily",
+   "changed": "men-q255: 2.5mg daily -> 3.0mg daily",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ],
+    "255": [
+     "3mg-daily"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q255-3-point-5mg-daily-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-minoxidil-d1",
+   "qid": 255,
+   "slug": "3-point-5mg-daily",
+   "changed": "men-q255: 2.5mg daily -> 3.5mg daily",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ],
+    "255": [
+     "3-point-5mg-daily"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q255-4mg-daily-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-minoxidil-d1",
+   "qid": 255,
+   "slug": "4mg-daily",
+   "changed": "men-q255: 2.5mg daily -> 4.0mg daily",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ],
+    "255": [
+     "4mg-daily"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q255-5mg-daily-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-minoxidil-d1",
+   "qid": 255,
+   "slug": "5mg-daily",
+   "changed": "men-q255: 2.5mg daily -> 5.0mg daily",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ],
+    "255": [
+     "5mg-daily"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q255-oral-min-dosage-other-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-minoxidil-d1",
+   "qid": 255,
+   "slug": "oral-min-dosage-other",
+   "changed": "men-q255: 2.5mg daily -> Other",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ],
+    "255": [
+     "oral-min-dosage-other"
+    ]
+   },
+   "added": [
+    [
+     260,
+     "Explain your treatment"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q265-oral-min-no-problematic-side-effects-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-minoxidil-d1",
+   "qid": 265,
+   "slug": "oral-min-no-problematic-side-effects",
+   "changed": "men-q265: Yes, it worked well -> No, I had problematic side effects",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ],
+    "265": [
+     "oral-min-no-problematic-side-effects"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q265-oral-min-no-dose-not-effective-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-minoxidil-d1",
+   "qid": 265,
+   "slug": "oral-min-no-dose-not-effective",
+   "changed": "men-q265: Yes, it worked well -> No, this dose wasn't effective",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ],
+    "265": [
+     "oral-min-no-dose-not-effective"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q265-oral-min-no-allergic-to-medication-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-minoxidil-d1",
+   "qid": 265,
+   "slug": "oral-min-no-allergic-to-medication",
+   "changed": "men-q265: Yes, it worked well -> No, I found out I was allergic to it",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ],
+    "265": [
+     "oral-min-no-allergic-to-medication"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "oral finasteride"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ],
+    [
+     "noRecTopicalCombined",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q265-oral-min-effectiveness-other-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-minoxidil-d1",
+   "qid": 265,
+   "slug": "oral-min-effectiveness-other",
+   "changed": "men-q265: Yes, it worked well -> Other",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ],
+    "265": [
+     "oral-min-effectiveness-other"
+    ]
+   },
+   "added": [
+    [
+     270,
+     "Explain your treatment"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q240-oral-finasteride-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-non-prescription",
+   "qid": 240,
+   "slug": "oral-finasteride",
+   "changed": "men-q240: Topical minoxidil -> Oral Finasteride",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "oral-finasteride"
+    ]
+   },
+   "added": [
+    [
+     305,
+     "What dose of oral finasteride did you use?"
+    ],
+    [
+     315,
+     "Did oral finasteride work well for you?"
+    ]
+   ],
+   "removed": [
+    [
+     285,
+     "Did topical minoxidil work well for you?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "treatmentOralFinasteride",
+     "1"
+    ],
+    [
+     "isEligibleFor6And12MonthShipments",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q305-oral-fin-dosage-other-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-finasteride-d1",
+   "qid": 305,
+   "slug": "oral-fin-dosage-other",
+   "changed": "men-q305: 1mg -> Other",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "oral-finasteride"
+    ],
+    "305": [
+     "oral-fin-dosage-other"
+    ]
+   },
+   "added": [
+    [
+     310,
+     "Explain your treatment"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q315-oral-fin-no-problematic-side-effects-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-finasteride-d1",
+   "qid": 315,
+   "slug": "oral-fin-no-problematic-side-effects",
+   "changed": "men-q315: Yes, it worked well -> No, I had problematic side effects",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "oral-finasteride"
+    ],
+    "315": [
+     "oral-fin-no-problematic-side-effects"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 1,
+     "noRecOralMin": 0
+    },
+    "recommended": "oral minoxidil"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "noRecTopicalCombined",
+     "1"
+    ],
+    [
+     "noRecOralFin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q315-oral-fin-no-dose-not-effective-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-finasteride-d1",
+   "qid": 315,
+   "slug": "oral-fin-no-dose-not-effective",
+   "changed": "men-q315: Yes, it worked well -> No, this dose wasn't effective",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "oral-finasteride"
+    ],
+    "315": [
+     "oral-fin-no-dose-not-effective"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 1,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "noRecOralFin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q315-oral-fin-no-allergic-to-medication-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-finasteride-d1",
+   "qid": 315,
+   "slug": "oral-fin-no-allergic-to-medication",
+   "changed": "men-q315: Yes, it worked well -> No, I found out I was allergic to it",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "oral-finasteride"
+    ],
+    "315": [
+     "oral-fin-no-allergic-to-medication"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 1,
+     "noRecOralMin": 0
+    },
+    "recommended": "oral minoxidil"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "noRecTopicalCombined",
+     "1"
+    ],
+    [
+     "noRecOralFin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q315-oral-fin-effectiveness-other-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-finasteride-d1",
+   "qid": 315,
+   "slug": "oral-fin-effectiveness-other",
+   "changed": "men-q315: Yes, it worked well -> Other",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "oral-finasteride"
+    ],
+    "315": [
+     "oral-fin-effectiveness-other"
+    ]
+   },
+   "added": [
+    [
+     320,
+     "Explain your treatment"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q240-topical-finasteride-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-non-prescription",
+   "qid": 240,
+   "slug": "topical-finasteride",
+   "changed": "men-q240: Topical minoxidil -> Topical finasteride",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "topical-finasteride"
+    ]
+   },
+   "added": [
+    [
+     335,
+     "Did topical finasteride work well for you?"
+    ]
+   ],
+   "removed": [
+    [
+     285,
+     "Did topical minoxidil work well for you?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "treatmentTopicalFinasteride",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q335-topical-fin-no-problematic-side-effects-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-topical-finasteride-d1",
+   "qid": 335,
+   "slug": "topical-fin-no-problematic-side-effects",
+   "changed": "men-q335: Yes, it worked well -> No, I had problematic side effects",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "topical-finasteride"
+    ],
+    "335": [
+     "topical-fin-no-problematic-side-effects"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": []
+  },
+  {
+   "id": "sim-m-q335-topical-fin-no-dose-not-effective-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-topical-finasteride-d1",
+   "qid": 335,
+   "slug": "topical-fin-no-dose-not-effective",
+   "changed": "men-q335: Yes, it worked well -> No, it wasn’t effective",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "topical-finasteride"
+    ],
+    "335": [
+     "topical-fin-no-dose-not-effective"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": []
+  },
+  {
+   "id": "sim-m-q335-topical-fin-no-allergic-to-medication-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-topical-finasteride-d1",
+   "qid": 335,
+   "slug": "topical-fin-no-allergic-to-medication",
+   "changed": "men-q335: Yes, it worked well -> No, I found out I was allergic to it",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "topical-finasteride"
+    ],
+    "335": [
+     "topical-fin-no-allergic-to-medication"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "oral finasteride"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "noRecTopicalCombined",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q335-topical-fin-effectiveness-other-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-topical-finasteride-d1",
+   "qid": 335,
+   "slug": "topical-fin-effectiveness-other",
+   "changed": "men-q335: Yes, it worked well -> Other",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "topical-finasteride"
+    ],
+    "335": [
+     "topical-fin-effectiveness-other"
+    ]
+   },
+   "added": [
+    [
+     340,
+     "Explain your treatment"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q240-steroid-injections-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-non-prescription",
+   "qid": 240,
+   "slug": "steroid-injections",
+   "changed": "men-q240: Topical minoxidil -> Steroid injections in the scalp",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "steroid-injections"
+    ]
+   },
+   "added": [],
+   "removed": [
+    [
+     285,
+     "Did topical minoxidil work well for you?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 1,
+     "noRecOralMin": 1
+    },
+    "recommended": "no-recommendation"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecTopicalCombined",
+     "1"
+    ],
+    [
+     "noRecOralMin",
+     "1"
+    ],
+    [
+     "noRecOralFin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q240-other-treatment-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-non-prescription",
+   "qid": 240,
+   "slug": "other-treatment",
+   "changed": "men-q240: Topical minoxidil -> Other",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "240": [
+     "other-treatment"
+    ]
+   },
+   "added": [
+    [
+     355,
+     "Explain your treatment"
+    ]
+   ],
+   "removed": [
+    [
+     285,
+     "Did topical minoxidil work well for you?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "treatmentOther",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q285-topical-min-no-problematic-side-effects-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-non-prescription",
+   "qid": 285,
+   "slug": "topical-min-no-problematic-side-effects",
+   "changed": "men-q285: Yes, it worked well -> No, I had problematic side effects",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "285": [
+     "topical-min-no-problematic-side-effects"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": []
+  },
+  {
+   "id": "sim-m-q285-topical-min-no-dose-not-effective-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-non-prescription",
+   "qid": 285,
+   "slug": "topical-min-no-dose-not-effective",
+   "changed": "men-q285: Yes, it worked well -> No, it wasn’t effective",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "285": [
+     "topical-min-no-dose-not-effective"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": []
+  },
+  {
+   "id": "sim-m-q285-topical-min-no-allergic-to-medication-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-non-prescription",
+   "qid": 285,
+   "slug": "topical-min-no-allergic-to-medication",
+   "changed": "men-q285: Yes, it worked well -> No, I found out I was allergic to it",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "285": [
+     "topical-min-no-allergic-to-medication"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "oral finasteride"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "noRecTopicalCombined",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q285-topical-min-effectiveness-other-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-non-prescription",
+   "qid": 285,
+   "slug": "topical-min-effectiveness-other",
+   "changed": "men-q285: Yes, it worked well -> Other",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription"
+    ],
+    "285": [
+     "topical-min-effectiveness-other"
+    ]
+   },
+   "added": [
+    [
+     290,
+     "Explain your treatment"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q22-hair-loss-solutions-prescription-medicat",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 22,
+   "slug": "hair-loss-solutions-prescription-medications",
+   "changed": "men-q22: None of the above -> Prescription medications (e.g. Propecia, oral minoxidil)",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ]
+   },
+   "added": [
+    [
+     28,
+     "What’s the main reason you’re looking for hair loss solutions now?"
+    ],
+    [
+     240,
+     "What hair loss treatments have you used?"
+    ],
+    [
+     285,
+     "Did topical minoxidil work well for you?"
+    ]
+   ],
+   "removed": [
+    [
+     26,
+     "What’s the main reason you haven’t tried hair loss treatment before?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "hasTriedPrescription",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q28-over-the-counter-solutions-didnt-work-fo-d1x",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-prescription-medicat",
+   "qid": 28,
+   "slug": "over-the-counter-solutions-didnt-work-for-me",
+   "changed": "men-q28: I want to maximize results with a new or additional product -> Over-the-counter solutions didn't work for me",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "28": [
+     "over-the-counter-solutions-didnt-work-for-me"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "lookingBecauseOtcNotWork",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q28-i-want-an-easier-or-more-convenient-solu-d1x",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-prescription-medicat",
+   "qid": 28,
+   "slug": "i-want-an-easier-or-more-convenient-solution-like-a-pill-or-a-spray",
+   "changed": "men-q28: I want to maximize results with a new or additional product -> I want an easier or more convenient solution (like a pill or a spray)",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "28": [
+     "i-want-an-easier-or-more-convenient-solution-like-a-pill-or-a-spray"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "lookingForEasierSolution",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q28-ive-experienced-side-effects-with-past-s-d1x",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-prescription-medicat",
+   "qid": 28,
+   "slug": "ive-experienced-side-effects-with-past-solutions",
+   "changed": "men-q28: I want to maximize results with a new or additional product -> I’ve experienced side effects with past solutions",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "28": [
+     "ive-experienced-side-effects-with-past-solutions"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q240-oral-minoxidil-d1x",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-prescription-medicat",
+   "qid": 240,
+   "slug": "oral-minoxidil",
+   "changed": "men-q240: Topical minoxidil -> Oral minoxidil",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ]
+   },
+   "added": [
+    [
+     255,
+     "What dose of oral minoxidil did you use?"
+    ],
+    [
+     265,
+     "Did oral minoxidil work well for you?"
+    ]
+   ],
+   "removed": [
+    [
+     285,
+     "Did topical minoxidil work well for you?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "treatmentOralMinoxidil",
+     "1"
+    ],
+    [
+     "isEligibleFor6And12MonthShipments",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q255-2mg-daily-d2x",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-minoxidil-d1x",
+   "qid": 255,
+   "slug": "2mg-daily",
+   "changed": "men-q255: 2.5mg daily -> 2.0mg daily",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ],
+    "255": [
+     "2mg-daily"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q255-3mg-daily-d2x",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-minoxidil-d1x",
+   "qid": 255,
+   "slug": "3mg-daily",
+   "changed": "men-q255: 2.5mg daily -> 3.0mg daily",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ],
+    "255": [
+     "3mg-daily"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q255-3-point-5mg-daily-d2x",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-minoxidil-d1x",
+   "qid": 255,
+   "slug": "3-point-5mg-daily",
+   "changed": "men-q255: 2.5mg daily -> 3.5mg daily",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ],
+    "255": [
+     "3-point-5mg-daily"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q255-4mg-daily-d2x",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-minoxidil-d1x",
+   "qid": 255,
+   "slug": "4mg-daily",
+   "changed": "men-q255: 2.5mg daily -> 4.0mg daily",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ],
+    "255": [
+     "4mg-daily"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q255-5mg-daily-d2x",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-minoxidil-d1x",
+   "qid": 255,
+   "slug": "5mg-daily",
+   "changed": "men-q255: 2.5mg daily -> 5.0mg daily",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ],
+    "255": [
+     "5mg-daily"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q255-oral-min-dosage-other-d2x",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-minoxidil-d1x",
+   "qid": 255,
+   "slug": "oral-min-dosage-other",
+   "changed": "men-q255: 2.5mg daily -> Other",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ],
+    "255": [
+     "oral-min-dosage-other"
+    ]
+   },
+   "added": [
+    [
+     260,
+     "Explain your treatment"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q265-oral-min-no-problematic-side-effects-d2x",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-minoxidil-d1x",
+   "qid": 265,
+   "slug": "oral-min-no-problematic-side-effects",
+   "changed": "men-q265: Yes, it worked well -> No, I had problematic side effects",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ],
+    "265": [
+     "oral-min-no-problematic-side-effects"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q265-oral-min-no-dose-not-effective-d2x",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-minoxidil-d1x",
+   "qid": 265,
+   "slug": "oral-min-no-dose-not-effective",
+   "changed": "men-q265: Yes, it worked well -> No, this dose wasn't effective",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ],
+    "265": [
+     "oral-min-no-dose-not-effective"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q265-oral-min-no-allergic-to-medication-d2x",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-minoxidil-d1x",
+   "qid": 265,
+   "slug": "oral-min-no-allergic-to-medication",
+   "changed": "men-q265: Yes, it worked well -> No, I found out I was allergic to it",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ],
+    "265": [
+     "oral-min-no-allergic-to-medication"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "oral finasteride"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ],
+    [
+     "noRecTopicalCombined",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q265-oral-min-effectiveness-other-d2x",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-minoxidil-d1x",
+   "qid": 265,
+   "slug": "oral-min-effectiveness-other",
+   "changed": "men-q265: Yes, it worked well -> Other",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "oral-minoxidil"
+    ],
+    "265": [
+     "oral-min-effectiveness-other"
+    ]
+   },
+   "added": [
+    [
+     270,
+     "Explain your treatment"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q240-oral-finasteride-d1x",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-prescription-medicat",
+   "qid": 240,
+   "slug": "oral-finasteride",
+   "changed": "men-q240: Topical minoxidil -> Oral Finasteride",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "oral-finasteride"
+    ]
+   },
+   "added": [
+    [
+     305,
+     "What dose of oral finasteride did you use?"
+    ],
+    [
+     315,
+     "Did oral finasteride work well for you?"
+    ]
+   ],
+   "removed": [
+    [
+     285,
+     "Did topical minoxidil work well for you?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "treatmentOralFinasteride",
+     "1"
+    ],
+    [
+     "isEligibleFor6And12MonthShipments",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q305-oral-fin-dosage-other-d2x",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-finasteride-d1x",
+   "qid": 305,
+   "slug": "oral-fin-dosage-other",
+   "changed": "men-q305: 1mg -> Other",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "oral-finasteride"
+    ],
+    "305": [
+     "oral-fin-dosage-other"
+    ]
+   },
+   "added": [
+    [
+     310,
+     "Explain your treatment"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q315-oral-fin-no-problematic-side-effects-d2x",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-finasteride-d1x",
+   "qid": 315,
+   "slug": "oral-fin-no-problematic-side-effects",
+   "changed": "men-q315: Yes, it worked well -> No, I had problematic side effects",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "oral-finasteride"
+    ],
+    "315": [
+     "oral-fin-no-problematic-side-effects"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 1,
+     "noRecOralMin": 0
+    },
+    "recommended": "oral minoxidil"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "noRecTopicalCombined",
+     "1"
+    ],
+    [
+     "noRecOralFin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q315-oral-fin-no-dose-not-effective-d2x",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-finasteride-d1x",
+   "qid": 315,
+   "slug": "oral-fin-no-dose-not-effective",
+   "changed": "men-q315: Yes, it worked well -> No, this dose wasn't effective",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "oral-finasteride"
+    ],
+    "315": [
+     "oral-fin-no-dose-not-effective"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 1,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "noRecOralFin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q315-oral-fin-no-allergic-to-medication-d2x",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-finasteride-d1x",
+   "qid": 315,
+   "slug": "oral-fin-no-allergic-to-medication",
+   "changed": "men-q315: Yes, it worked well -> No, I found out I was allergic to it",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "oral-finasteride"
+    ],
+    "315": [
+     "oral-fin-no-allergic-to-medication"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 1,
+     "noRecOralMin": 0
+    },
+    "recommended": "oral minoxidil"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "noRecTopicalCombined",
+     "1"
+    ],
+    [
+     "noRecOralFin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q315-oral-fin-effectiveness-other-d2x",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-oral-finasteride-d1x",
+   "qid": 315,
+   "slug": "oral-fin-effectiveness-other",
+   "changed": "men-q315: Yes, it worked well -> Other",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "oral-finasteride"
+    ],
+    "315": [
+     "oral-fin-effectiveness-other"
+    ]
+   },
+   "added": [
+    [
+     320,
+     "Explain your treatment"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q240-topical-finasteride-d1x",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-prescription-medicat",
+   "qid": 240,
+   "slug": "topical-finasteride",
+   "changed": "men-q240: Topical minoxidil -> Topical finasteride",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "topical-finasteride"
+    ]
+   },
+   "added": [
+    [
+     335,
+     "Did topical finasteride work well for you?"
+    ]
+   ],
+   "removed": [
+    [
+     285,
+     "Did topical minoxidil work well for you?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "treatmentTopicalFinasteride",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q335-topical-fin-no-problematic-side-effects-d2x",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-topical-finasteride-d1x",
+   "qid": 335,
+   "slug": "topical-fin-no-problematic-side-effects",
+   "changed": "men-q335: Yes, it worked well -> No, I had problematic side effects",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "topical-finasteride"
+    ],
+    "335": [
+     "topical-fin-no-problematic-side-effects"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": []
+  },
+  {
+   "id": "sim-m-q335-topical-fin-no-dose-not-effective-d2x",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-topical-finasteride-d1x",
+   "qid": 335,
+   "slug": "topical-fin-no-dose-not-effective",
+   "changed": "men-q335: Yes, it worked well -> No, it wasn’t effective",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "topical-finasteride"
+    ],
+    "335": [
+     "topical-fin-no-dose-not-effective"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": []
+  },
+  {
+   "id": "sim-m-q335-topical-fin-no-allergic-to-medication-d2x",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-topical-finasteride-d1x",
+   "qid": 335,
+   "slug": "topical-fin-no-allergic-to-medication",
+   "changed": "men-q335: Yes, it worked well -> No, I found out I was allergic to it",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "topical-finasteride"
+    ],
+    "335": [
+     "topical-fin-no-allergic-to-medication"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "oral finasteride"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "noRecTopicalCombined",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q335-topical-fin-effectiveness-other-d2x",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q240-topical-finasteride-d1x",
+   "qid": 335,
+   "slug": "topical-fin-effectiveness-other",
+   "changed": "men-q335: Yes, it worked well -> Other",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "topical-finasteride"
+    ],
+    "335": [
+     "topical-fin-effectiveness-other"
+    ]
+   },
+   "added": [
+    [
+     340,
+     "Explain your treatment"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q240-steroid-injections-d1x",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-prescription-medicat",
+   "qid": 240,
+   "slug": "steroid-injections",
+   "changed": "men-q240: Topical minoxidil -> Steroid injections in the scalp",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "steroid-injections"
+    ]
+   },
+   "added": [],
+   "removed": [
+    [
+     285,
+     "Did topical minoxidil work well for you?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 1,
+     "noRecOralMin": 1
+    },
+    "recommended": "no-recommendation"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecTopicalCombined",
+     "1"
+    ],
+    [
+     "noRecOralMin",
+     "1"
+    ],
+    [
+     "noRecOralFin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q240-other-treatment-d1x",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-prescription-medicat",
+   "qid": 240,
+   "slug": "other-treatment",
+   "changed": "men-q240: Topical minoxidil -> Other",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "240": [
+     "other-treatment"
+    ]
+   },
+   "added": [
+    [
+     355,
+     "Explain your treatment"
+    ]
+   ],
+   "removed": [
+    [
+     285,
+     "Did topical minoxidil work well for you?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "treatmentOther",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q285-topical-min-no-problematic-side-effects-d1x",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-prescription-medicat",
+   "qid": 285,
+   "slug": "topical-min-no-problematic-side-effects",
+   "changed": "men-q285: Yes, it worked well -> No, I had problematic side effects",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "285": [
+     "topical-min-no-problematic-side-effects"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": []
+  },
+  {
+   "id": "sim-m-q285-topical-min-no-dose-not-effective-d1x",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-prescription-medicat",
+   "qid": 285,
+   "slug": "topical-min-no-dose-not-effective",
+   "changed": "men-q285: Yes, it worked well -> No, it wasn’t effective",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "285": [
+     "topical-min-no-dose-not-effective"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": []
+  },
+  {
+   "id": "sim-m-q285-topical-min-no-allergic-to-medication-d1x",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-prescription-medicat",
+   "qid": 285,
+   "slug": "topical-min-no-allergic-to-medication",
+   "changed": "men-q285: Yes, it worked well -> No, I found out I was allergic to it",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "285": [
+     "topical-min-no-allergic-to-medication"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "oral finasteride"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "noRecTopicalCombined",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q285-topical-min-effectiveness-other-d1x",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q22-hair-loss-solutions-prescription-medicat",
+   "qid": 285,
+   "slug": "topical-min-effectiveness-other",
+   "changed": "men-q285: Yes, it worked well -> Other",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-prescription-medications"
+    ],
+    "285": [
+     "topical-min-effectiveness-other"
+    ]
+   },
+   "added": [
+    [
+     290,
+     "Explain your treatment"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q26-not-sure-itll-work",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 26,
+   "slug": "not-sure-itll-work",
+   "changed": "men-q26: Didn't want or need to until now -> Not sure it'll work",
+   "answers": {
+    "26": [
+     "not-sure-itll-work"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "notSureAboutHairLossTreatment",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q26-seems-too-expensive",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 26,
+   "slug": "seems-too-expensive",
+   "changed": "men-q26: Didn't want or need to until now -> Seems too expensive",
+   "answers": {
+    "26": [
+     "seems-too-expensive"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q26-nervous-about-side-effects",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 26,
+   "slug": "nervous-about-side-effects",
+   "changed": "men-q26: Didn't want or need to until now -> Nervous about side effects",
+   "answers": {
+    "26": [
+     "nervous-about-side-effects"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q132-hairline",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 132,
+   "slug": "hairline",
+   "changed": "men-q132: Hairline (along my forehead or temples) + Crown (top of my head) -> Hairline (along my forehead or temples)",
+   "answers": {
+    "132": [
+     "hairline"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "thinningHairline",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q132-crown",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 132,
+   "slug": "crown",
+   "changed": "men-q132: Hairline (along my forehead or temples) + Crown (top of my head) -> Crown (top of my head)",
+   "answers": {
+    "132": [
+     "crown"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "thinningCrown",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q132-overall-thinning",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 132,
+   "slug": "overall-thinning",
+   "changed": "men-q132: Hairline (along my forehead or temples) + Crown (top of my head) -> Overall thinning",
+   "answers": {
+    "132": [
+     "overall-thinning"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "thinningOverall",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q132-patches",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 132,
+   "slug": "patches",
+   "changed": "men-q132: Hairline (along my forehead or temples) + Crown (top of my head) -> Random golf-ball size bald patches scattered all over scalp",
+   "answers": {
+    "132": [
+     "patches"
+    ]
+   },
+   "added": [],
+   "removed": [
+    [
+     150,
+     "How did your hair loss start?"
+    ],
+    [
+     160,
+     "How would you describe the severity of your current hair loss?"
+    ],
+    [
+     170,
+     "Have you noticed any of the following?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 1,
+     "noRecOralMin": 1
+    },
+    "recommended": "no-recommendation"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecTopicalCombined",
+     "1"
+    ],
+    [
+     "noRecOralMin",
+     "1"
+    ],
+    [
+     "noRecOralFin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q132-prevent-hair-loss",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 132,
+   "slug": "prevent-hair-loss",
+   "changed": "men-q132: Hairline (along my forehead or temples) + Crown (top of my head) -> Nowhere yet, but I’d like to prevent future hair loss",
+   "answers": {
+    "132": [
+     "prevent-hair-loss"
+    ]
+   },
+   "added": [],
+   "removed": [
+    [
+     150,
+     "How did your hair loss start?"
+    ],
+    [
+     160,
+     "How would you describe the severity of your current hair loss?"
+    ],
+    [
+     170,
+     "Have you noticed any of the following?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q150-very-suddenly",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 150,
+   "slug": "very-suddenly",
+   "changed": "men-q150: Gradually -> Very suddenly",
+   "answers": {
+    "150": [
+     "very-suddenly"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 1,
+     "noRecOralMin": 1
+    },
+    "recommended": "no-recommendation"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecTopicalCombined",
+     "1"
+    ],
+    [
+     "noRecOralMin",
+     "1"
+    ],
+    [
+     "noRecOralFin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q150-not-sure",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 150,
+   "slug": "not-sure",
+   "changed": "men-q150: Gradually -> Not sure",
+   "answers": {
+    "150": [
+     "not-sure"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": []
+  },
+  {
+   "id": "sim-m-q160-very-mild",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 160,
+   "slug": "very-mild",
+   "changed": "men-q160: Moderate -> Very mild",
+   "answers": {
+    "160": [
+     "very-mild"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q160-mild",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 160,
+   "slug": "mild",
+   "changed": "men-q160: Moderate -> Mild",
+   "answers": {
+    "160": [
+     "mild"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q160-severe",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 160,
+   "slug": "severe",
+   "changed": "men-q160: Moderate -> Severe",
+   "answers": {
+    "160": [
+     "severe"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q160-extremely-severe",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 160,
+   "slug": "extremely-severe",
+   "changed": "men-q160: Moderate -> Extremely severe",
+   "answers": {
+    "160": [
+     "extremely-severe"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q170-redness-or-rashes",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 170,
+   "slug": "redness-or-rashes",
+   "changed": "men-q170: None of the above -> Redness or rashes on scalp",
+   "answers": {
+    "170": [
+     "redness-or-rashes"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 1,
+     "noRecOralMin": 1
+    },
+    "recommended": "no-recommendation"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "noRecTopicalCombined",
+     "1"
+    ],
+    [
+     "noRecOralMin",
+     "1"
+    ],
+    [
+     "noRecOralFin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q170-pain-soreness-burning-tingling-in-areas-",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 170,
+   "slug": "pain-soreness-burning-tingling-in-areas-of-hair-loss",
+   "changed": "men-q170: None of the above -> Pain, soreness, burning, and/or tingling in areas of hair loss",
+   "answers": {
+    "170": [
+     "pain-soreness-burning-tingling-in-areas-of-hair-loss"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": []
+  },
+  {
+   "id": "sim-m-q170-recurrent-pus-bumps-or-open-sores",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 170,
+   "slug": "recurrent-pus-bumps-or-open-sores",
+   "changed": "men-q170: None of the above -> Recurrent pus bumps or open sores on scalp",
+   "answers": {
+    "170": [
+     "recurrent-pus-bumps-or-open-sores"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": []
+  },
+  {
+   "id": "sim-m-q170-partial-or-complete-loss-of-eyebrows-or-",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 170,
+   "slug": "partial-or-complete-loss-of-eyebrows-or-eyelashes",
+   "changed": "men-q170: None of the above -> Partial or complete loss of eyebrows or eyelashes",
+   "answers": {
+    "170": [
+     "partial-or-complete-loss-of-eyebrows-or-eyelashes"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": []
+  },
+  {
+   "id": "sim-m-q370-yes-have-been-diagnosed-or-treated-for-h",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 370,
+   "slug": "yes-have-been-diagnosed-or-treated-for-high-bp",
+   "changed": "men-q370: No -> Yes, for high blood pressure",
+   "answers": {
+    "370": [
+     "yes-have-been-diagnosed-or-treated-for-high-bp"
+    ]
+   },
+   "added": [
+    [
+     381,
+     "Since being diagnosed with or treated for high blood pressure, have your blood pressure re"
+    ],
+    [
+     395,
+     "High or low blood pressure readings can be associated with increased risks when using cert"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "followupHighBloodPressure",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q381-yes-very-high-bp-reading-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q370-yes-have-been-diagnosed-or-treated-for-h",
+   "qid": 381,
+   "slug": "yes-very-high-bp-reading",
+   "changed": "men-q381: No, my blood pressure reading is never “very high” -> Yes, I still have “very high” blood pressure readings",
+   "answers": {
+    "370": [
+     "yes-have-been-diagnosed-or-treated-for-high-bp"
+    ],
+    "381": [
+     "yes-very-high-bp-reading"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q381-not-sure-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q370-yes-have-been-diagnosed-or-treated-for-h",
+   "qid": 381,
+   "slug": "not-sure",
+   "changed": "men-q381: No, my blood pressure reading is never “very high” -> I’m not sure",
+   "answers": {
+    "370": [
+     "yes-have-been-diagnosed-or-treated-for-high-bp"
+    ],
+    "381": [
+     "not-sure"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q370-yes-have-been-diagnosed-or-treated-for-l",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 370,
+   "slug": "yes-have-been-diagnosed-or-treated-for-low-bp",
+   "changed": "men-q370: No -> Yes, for low blood pressure",
+   "answers": {
+    "370": [
+     "yes-have-been-diagnosed-or-treated-for-low-bp"
+    ]
+   },
+   "added": [
+    [
+     391,
+     "Since being diagnosed with or treated for low blood pressure, have your blood pressure rea"
+    ],
+    [
+     395,
+     "High or low blood pressure readings can be associated with increased risks when using cert"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "followupLowBloodPressure",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q391-yes-very-low-bp-reading-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q370-yes-have-been-diagnosed-or-treated-for-l",
+   "qid": 391,
+   "slug": "yes-very-low-bp-reading",
+   "changed": "men-q391: No, my blood pressure reading is never “low” -> Yes, I still have “low” blood pressure readings",
+   "answers": {
+    "370": [
+     "yes-have-been-diagnosed-or-treated-for-low-bp"
+    ],
+    "391": [
+     "yes-very-low-bp-reading"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 1,
+     "noRecOralMin": 1
+    },
+    "recommended": "no-recommendation"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecTopicalCombined",
+     "1"
+    ],
+    [
+     "noRecOralMin",
+     "1"
+    ],
+    [
+     "noRecOralFin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q391-not-sure-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q370-yes-have-been-diagnosed-or-treated-for-l",
+   "qid": 391,
+   "slug": "not-sure",
+   "changed": "men-q391: No, my blood pressure reading is never “low” -> I’m not sure",
+   "answers": {
+    "370": [
+     "yes-have-been-diagnosed-or-treated-for-low-bp"
+    ],
+    "391": [
+     "not-sure"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q370-not-sure-if-diagnosed-or-treated-for-hig",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 370,
+   "slug": "not-sure-if-diagnosed-or-treated-for-high-or-low-bp",
+   "changed": "men-q370: No -> I'm not sure",
+   "answers": {
+    "370": [
+     "not-sure-if-diagnosed-or-treated-for-high-or-low-bp"
+    ]
+   },
+   "added": [
+    [
+     395,
+     "High or low blood pressure readings can be associated with increased risks when using cert"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1000-stroke",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1000,
+   "slug": "stroke",
+   "changed": "men-q1000: None of the above -> Stroke",
+   "answers": {
+    "1000": [
+     "stroke"
+    ]
+   },
+   "added": [
+    [
+     1255,
+     "What type of stroke did you have?"
+    ],
+    [
+     1260,
+     "When did your stroke occur?"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": [
+    [
+     "stroke",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1255-hemorrhagic-stroke-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1000-stroke",
+   "qid": 1255,
+   "slug": "hemorrhagic-stroke",
+   "changed": "men-q1255: Ischemic stroke: a blood vessel was blocked by a clot or plaque -> Hemorrhagic stroke: a blood vessel leaked blood into the brain",
+   "answers": {
+    "1000": [
+     "stroke"
+    ],
+    "1255": [
+     "hemorrhagic-stroke"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1260-stroke-less-than-6-months-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1000-stroke",
+   "qid": 1260,
+   "slug": "stroke-less-than-6-months",
+   "changed": "men-q1260: 2+ years ago -> Less than 6 months ago",
+   "answers": {
+    "1000": [
+     "stroke"
+    ],
+    "1260": [
+     "stroke-less-than-6-months"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1260-stroke-7-to-12-months-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1000-stroke",
+   "qid": 1260,
+   "slug": "stroke-7-to-12-months",
+   "changed": "men-q1260: 2+ years ago -> 7-12 months ago",
+   "answers": {
+    "1000": [
+     "stroke"
+    ],
+    "1260": [
+     "stroke-7-to-12-months"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1260-stroke-1-to-2-years-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1000-stroke",
+   "qid": 1260,
+   "slug": "stroke-1-to-2-years",
+   "changed": "men-q1260: 2+ years ago -> 1-2 years ago",
+   "answers": {
+    "1000": [
+     "stroke"
+    ],
+    "1260": [
+     "stroke-1-to-2-years"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1000-prostate-cancer",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1000,
+   "slug": "prostate-cancer",
+   "changed": "men-q1000: None of the above -> Prostate cancer",
+   "answers": {
+    "1000": [
+     "prostate-cancer"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "oral finasteride"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "noRecTopicalCombined",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1000-kidney-disease",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1000,
+   "slug": "kidney-disease",
+   "changed": "men-q1000: None of the above -> Kidney disease",
+   "answers": {
+    "1000": [
+     "kidney-disease"
+    ]
+   },
+   "added": [
+    [
+     1275,
+     "What kind of kidney disease do you have?"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": [
+    [
+     "kidneyDisease",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1275-kidney-disease-temporary-decrease-in-kid-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1000-kidney-disease",
+   "qid": 1275,
+   "slug": "kidney-disease-temporary-decrease-in-kidney-function",
+   "changed": "men-q1275: Chronic kidney disease stage 1 -> Temporary decrease in kidney function only",
+   "answers": {
+    "1000": [
+     "kidney-disease"
+    ],
+    "1275": [
+     "kidney-disease-temporary-decrease-in-kidney-function"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1275-kidney-disease-chronic-stage-2-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1000-kidney-disease",
+   "qid": 1275,
+   "slug": "kidney-disease-chronic-stage-2",
+   "changed": "men-q1275: Chronic kidney disease stage 1 -> Chronic kidney disease stage 2",
+   "answers": {
+    "1000": [
+     "kidney-disease"
+    ],
+    "1275": [
+     "kidney-disease-chronic-stage-2"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1275-kidney-disease-chronic-stage-3a-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1000-kidney-disease",
+   "qid": 1275,
+   "slug": "kidney-disease-chronic-stage-3a",
+   "changed": "men-q1275: Chronic kidney disease stage 1 -> Chronic kidney disease stage 3a",
+   "answers": {
+    "1000": [
+     "kidney-disease"
+    ],
+    "1275": [
+     "kidney-disease-chronic-stage-3a"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1275-kidney-disease-chronic-stage-3b-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1000-kidney-disease",
+   "qid": 1275,
+   "slug": "kidney-disease-chronic-stage-3b",
+   "changed": "men-q1275: Chronic kidney disease stage 1 -> Chronic kidney disease stage 3b",
+   "answers": {
+    "1000": [
+     "kidney-disease"
+    ],
+    "1275": [
+     "kidney-disease-chronic-stage-3b"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1275-kidney-disease-chronic-stage-4-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1000-kidney-disease",
+   "qid": 1275,
+   "slug": "kidney-disease-chronic-stage-4",
+   "changed": "men-q1275: Chronic kidney disease stage 1 -> Chronic kidney disease stage 4",
+   "answers": {
+    "1000": [
+     "kidney-disease"
+    ],
+    "1275": [
+     "kidney-disease-chronic-stage-4"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1275-kidney-disease-chronic-stage-5-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1000-kidney-disease",
+   "qid": 1275,
+   "slug": "kidney-disease-chronic-stage-5",
+   "changed": "men-q1275: Chronic kidney disease stage 1 -> Chronic kidney disease stage 5 (kidney failure)",
+   "answers": {
+    "1000": [
+     "kidney-disease"
+    ],
+    "1275": [
+     "kidney-disease-chronic-stage-5"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "negative",
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1000-liver-diseases",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1000,
+   "slug": "liver-diseases",
+   "changed": "men-q1000: None of the above -> Liver failure or liver cirrhosis",
+   "answers": {
+    "1000": [
+     "liver-diseases"
+    ]
+   },
+   "added": [
+    [
+     1285,
+     "Which of these liver conditions do you have?"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "negative",
+   "vars": [
+    [
+     "liverDisease",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1285-liver-failure-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1000-liver-diseases",
+   "qid": 1285,
+   "slug": "liver-failure",
+   "changed": "men-q1285: Liver cirrhosis -> Liver failure",
+   "answers": {
+    "1000": [
+     "liver-diseases"
+    ],
+    "1285": [
+     "liver-failure"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "negative",
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1285-liver-failure-and-cirrhosis-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1000-liver-diseases",
+   "qid": 1285,
+   "slug": "liver-failure-and-cirrhosis",
+   "changed": "men-q1285: Liver cirrhosis -> Both",
+   "answers": {
+    "1000": [
+     "liver-diseases"
+    ],
+    "1285": [
+     "liver-failure-and-cirrhosis"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "negative",
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1000-erectile-dysfunction",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1000,
+   "slug": "erectile-dysfunction",
+   "changed": "men-q1000: None of the above -> Erectile dysfunction",
+   "answers": {
+    "1000": [
+     "erectile-dysfunction"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 1,
+     "noRecOralMin": 0
+    },
+    "recommended": "oral minoxidil"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "ed",
+     "1"
+    ],
+    [
+     "noRecTopicalCombined",
+     "1"
+    ],
+    [
+     "noRecOralFin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1000-anxiety",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1000,
+   "slug": "anxiety",
+   "changed": "men-q1000: None of the above -> Anxiety",
+   "answers": {
+    "1000": [
+     "anxiety"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 1,
+     "noRecOralMin": 0
+    },
+    "recommended": "oral minoxidil"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "anxiety",
+     "1"
+    ],
+    [
+     "noRecTopicalCombined",
+     "1"
+    ],
+    [
+     "noRecOralFin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1000-depression",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1000,
+   "slug": "depression",
+   "changed": "men-q1000: None of the above -> Depression",
+   "answers": {
+    "1000": [
+     "depression"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 1,
+     "noRecOralMin": 0
+    },
+    "recommended": "oral minoxidil"
+   },
+   "changedOutcome": true,
+   "highlight": "caution",
+   "vars": [
+    [
+     "depression",
+     "1"
+    ],
+    [
+     "noRecTopicalCombined",
+     "1"
+    ],
+    [
+     "noRecOralFin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1000-pheochromocytoma",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1000,
+   "slug": "pheochromocytoma",
+   "changed": "men-q1000: None of the above -> Pheochromocytoma (adrenal gland tumor)",
+   "answers": {
+    "1000": [
+     "pheochromocytoma"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1300-angina",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1300,
+   "slug": "angina",
+   "changed": "men-q1300: None of the above -> Repeated chest pain or tightness, also called angina",
+   "answers": {
+    "1300": [
+     "angina"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1300-artery-disease",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1300,
+   "slug": "artery-disease",
+   "changed": "men-q1300: None of the above -> Coronary artery disease, or narrowing of the heart vessels",
+   "answers": {
+    "1300": [
+     "artery-disease"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1300-heart-attack",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1300,
+   "slug": "heart-attack",
+   "changed": "men-q1300: None of the above -> Heart attack",
+   "answers": {
+    "1300": [
+     "heart-attack"
+    ]
+   },
+   "added": [
+    [
+     1315,
+     "When did your heart attack occur?"
+    ],
+    [
+     1320,
+     "Are you seeing a cardiologist regularly for your history of heart attack?"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": [
+    [
+     "heartAttack",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1315-heart-attack-less-than-6-months-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1300-heart-attack",
+   "qid": 1315,
+   "slug": "heart-attack-less-than-6-months",
+   "changed": "men-q1315: 2+ years ago -> Less than 6 months ago",
+   "answers": {
+    "1300": [
+     "heart-attack"
+    ],
+    "1315": [
+     "heart-attack-less-than-6-months"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1315-heart-attack-7-to-12-months-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1300-heart-attack",
+   "qid": 1315,
+   "slug": "heart-attack-7-to-12-months",
+   "changed": "men-q1315: 2+ years ago -> 7-12 months ago",
+   "answers": {
+    "1300": [
+     "heart-attack"
+    ],
+    "1315": [
+     "heart-attack-7-to-12-months"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1315-heart-attack-1-to-2-years-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1300-heart-attack",
+   "qid": 1315,
+   "slug": "heart-attack-1-to-2-years",
+   "changed": "men-q1315: 2+ years ago -> 1-2 years ago",
+   "answers": {
+    "1300": [
+     "heart-attack"
+    ],
+    "1315": [
+     "heart-attack-1-to-2-years"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1320-heart-attack-seeing-cardiologist-no-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1300-heart-attack",
+   "qid": 1320,
+   "slug": "heart-attack-seeing-cardiologist-no",
+   "changed": "men-q1320: Yes -> No",
+   "answers": {
+    "1300": [
+     "heart-attack"
+    ],
+    "1320": [
+     "heart-attack-seeing-cardiologist-no"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1300-coronary-bypass-surgery",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1300,
+   "slug": "coronary-bypass-surgery",
+   "changed": "men-q1300: None of the above -> Coronary bypass surgery",
+   "answers": {
+    "1300": [
+     "coronary-bypass-surgery"
+    ]
+   },
+   "added": [
+    [
+     1355,
+     "When was your coronary bypass surgery?"
+    ],
+    [
+     1360,
+     "Are you seeing a cardiologist regularly as a follow-up to your coronary bypass surgery?"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": [
+    [
+     "coronaryBypassSurgery",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1355-coronary-bypass-surgery-less-than-6-mont-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1300-coronary-bypass-surgery",
+   "qid": 1355,
+   "slug": "coronary-bypass-surgery-less-than-6-months",
+   "changed": "men-q1355: 2+ years ago -> Less than 6 months ago",
+   "answers": {
+    "1300": [
+     "coronary-bypass-surgery"
+    ],
+    "1355": [
+     "coronary-bypass-surgery-less-than-6-months"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1355-coronary-bypass-surgery-7-to-12-months-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1300-coronary-bypass-surgery",
+   "qid": 1355,
+   "slug": "coronary-bypass-surgery-7-to-12-months",
+   "changed": "men-q1355: 2+ years ago -> 7-12 months ago",
+   "answers": {
+    "1300": [
+     "coronary-bypass-surgery"
+    ],
+    "1355": [
+     "coronary-bypass-surgery-7-to-12-months"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1355-coronary-bypass-surgery-1-to-2-years-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1300-coronary-bypass-surgery",
+   "qid": 1355,
+   "slug": "coronary-bypass-surgery-1-to-2-years",
+   "changed": "men-q1355: 2+ years ago -> 1-2 years ago",
+   "answers": {
+    "1300": [
+     "coronary-bypass-surgery"
+    ],
+    "1355": [
+     "coronary-bypass-surgery-1-to-2-years"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1360-coronary-bypass-surgery-seeing-cardiolog-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1300-coronary-bypass-surgery",
+   "qid": 1360,
+   "slug": "coronary-bypass-surgery-seeing-cardiologist-no",
+   "changed": "men-q1360: Yes -> No",
+   "answers": {
+    "1300": [
+     "coronary-bypass-surgery"
+    ],
+    "1360": [
+     "coronary-bypass-surgery-seeing-cardiologist-no"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1300-heart-failure",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1300,
+   "slug": "heart-failure",
+   "changed": "men-q1300: None of the above -> Heart failure",
+   "answers": {
+    "1300": [
+     "heart-failure"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1300-arrhythmia",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1300,
+   "slug": "arrhythmia",
+   "changed": "men-q1300: None of the above -> Arrhythmia",
+   "answers": {
+    "1300": [
+     "arrhythmia"
+    ]
+   },
+   "added": [
+    [
+     1420,
+     "What type of arrhythmia have you been diagnosed with?"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": [
+    [
+     "arrhythmia",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1420-atrial-fibrillation-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1300-arrhythmia",
+   "qid": 1420,
+   "slug": "atrial-fibrillation",
+   "changed": "men-q1420: Premature ventricular contractions (PVCs) -> Atrial fibrillation (afib)",
+   "answers": {
+    "1300": [
+     "arrhythmia"
+    ],
+    "1420": [
+     "atrial-fibrillation"
+    ]
+   },
+   "added": [
+    [
+     1430,
+     "Have you had an ablation procedure?"
+    ],
+    [
+     1440,
+     "Are you currently taking any medications for your afib?"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "atrialFibrillation",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1430-ablation-procedure-yes-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q1420-atrial-fibrillation-d1",
+   "qid": 1430,
+   "slug": "ablation-procedure-yes",
+   "changed": "men-q1430: No -> Yes",
+   "answers": {
+    "1300": [
+     "arrhythmia"
+    ],
+    "1420": [
+     "atrial-fibrillation"
+    ],
+    "1430": [
+     "ablation-procedure-yes"
+    ]
+   },
+   "added": [
+    [
+     1435,
+     "Have you had afib since your ablation?"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1435-afib-since-ablation-procedure-yes-d3",
+   "flow": "men",
+   "depth": 3,
+   "parent": "sim-m-q1430-ablation-procedure-yes-d2",
+   "qid": 1435,
+   "slug": "afib-since-ablation-procedure-yes",
+   "changed": "men-q1435: No -> Yes",
+   "answers": {
+    "1300": [
+     "arrhythmia"
+    ],
+    "1420": [
+     "atrial-fibrillation"
+    ],
+    "1430": [
+     "ablation-procedure-yes"
+    ],
+    "1435": [
+     "afib-since-ablation-procedure-yes"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1440-meds-for-afib-yes-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q1420-atrial-fibrillation-d1",
+   "qid": 1440,
+   "slug": "meds-for-afib-yes",
+   "changed": "men-q1440: No -> Yes",
+   "answers": {
+    "1300": [
+     "arrhythmia"
+    ],
+    "1420": [
+     "atrial-fibrillation"
+    ],
+    "1440": [
+     "meds-for-afib-yes"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1420-atrial-flutter-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1300-arrhythmia",
+   "qid": 1420,
+   "slug": "atrial-flutter",
+   "changed": "men-q1420: Premature ventricular contractions (PVCs) -> Atrial flutter",
+   "answers": {
+    "1300": [
+     "arrhythmia"
+    ],
+    "1420": [
+     "atrial-flutter"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1420-bradycardia-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1300-arrhythmia",
+   "qid": 1420,
+   "slug": "bradycardia",
+   "changed": "men-q1420: Premature ventricular contractions (PVCs) -> Bradycardia",
+   "answers": {
+    "1300": [
+     "arrhythmia"
+    ],
+    "1420": [
+     "bradycardia"
+    ]
+   },
+   "added": [
+    [
+     1455,
+     "What is your resting heart rate?"
+    ],
+    [
+     1460,
+     "Have you ever fainted due to a low heart rate?"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": [
+    [
+     "bradycardia",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1455-resting-rate-less-than-50-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q1420-bradycardia-d1",
+   "qid": 1455,
+   "slug": "resting-rate-less-than-50",
+   "changed": "men-q1455: 60-69 -> Less than 50",
+   "answers": {
+    "1300": [
+     "arrhythmia"
+    ],
+    "1420": [
+     "bradycardia"
+    ],
+    "1455": [
+     "resting-rate-less-than-50"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1455-resting-rate-50-to-59-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q1420-bradycardia-d1",
+   "qid": 1455,
+   "slug": "resting-rate-50-to-59",
+   "changed": "men-q1455: 60-69 -> 50-59",
+   "answers": {
+    "1300": [
+     "arrhythmia"
+    ],
+    "1420": [
+     "bradycardia"
+    ],
+    "1455": [
+     "resting-rate-50-to-59"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1455-resting-rate-70-plus-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q1420-bradycardia-d1",
+   "qid": 1455,
+   "slug": "resting-rate-70-plus",
+   "changed": "men-q1455: 60-69 -> 70+",
+   "answers": {
+    "1300": [
+     "arrhythmia"
+    ],
+    "1420": [
+     "bradycardia"
+    ],
+    "1455": [
+     "resting-rate-70-plus"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q1460-fainted-from-low-heart-rate-yes-d2",
+   "flow": "men",
+   "depth": 2,
+   "parent": "sim-m-q1420-bradycardia-d1",
+   "qid": 1460,
+   "slug": "fainted-from-low-heart-rate-yes",
+   "changed": "men-q1460: No -> Yes",
+   "answers": {
+    "1300": [
+     "arrhythmia"
+    ],
+    "1420": [
+     "bradycardia"
+    ],
+    "1460": [
+     "fainted-from-low-heart-rate-yes"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1420-paroxysmal-supraventricular-tachycardia-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1300-arrhythmia",
+   "qid": 1420,
+   "slug": "paroxysmal-supraventricular-tachycardia",
+   "changed": "men-q1420: Premature ventricular contractions (PVCs) -> Paroxysmal supraventricular tachycardia (PSVT)",
+   "answers": {
+    "1300": [
+     "arrhythmia"
+    ],
+    "1420": [
+     "paroxysmal-supraventricular-tachycardia"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1420-wolff-parkinson-white-syndrome-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1300-arrhythmia",
+   "qid": 1420,
+   "slug": "wolff-parkinson-white-syndrome",
+   "changed": "men-q1420: Premature ventricular contractions (PVCs) -> Wolff-Parkinson-White syndrome",
+   "answers": {
+    "1300": [
+     "arrhythmia"
+    ],
+    "1420": [
+     "wolff-parkinson-white-syndrome"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1420-ventricular-fibrillation-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1300-arrhythmia",
+   "qid": 1420,
+   "slug": "ventricular-fibrillation",
+   "changed": "men-q1420: Premature ventricular contractions (PVCs) -> Ventricular fibrillation",
+   "answers": {
+    "1300": [
+     "arrhythmia"
+    ],
+    "1420": [
+     "ventricular-fibrillation"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1420-arrhythmia-type-other-d1",
+   "flow": "men",
+   "depth": 1,
+   "parent": "sim-m-q1300-arrhythmia",
+   "qid": 1420,
+   "slug": "arrhythmia-type-other",
+   "changed": "men-q1420: Premature ventricular contractions (PVCs) -> Other",
+   "answers": {
+    "1300": [
+     "arrhythmia"
+    ],
+    "1420": [
+     "arrhythmia-type-other"
+    ]
+   },
+   "added": [
+    [
+     1475,
+     "Please explain your arrhythmia diagnosis"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "arrhythmiaTypeOther",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1300-pericarditis",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1300,
+   "slug": "pericarditis",
+   "changed": "men-q1300: None of the above -> Pericarditis",
+   "answers": {
+    "1300": [
+     "pericarditis"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q1300-pulmonary-hypertension",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1300,
+   "slug": "pulmonary-hypertension",
+   "changed": "men-q1300: None of the above -> Pulmonary hypertension",
+   "answers": {
+    "1300": [
+     "pulmonary-hypertension"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 1
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "noRecOralMin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q2200-im-taking-medications",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 2200,
+   "slug": "im-taking-medications",
+   "changed": "men-q2200: I don't take any medications -> I’m taking medications",
+   "answers": {
+    "2200": [
+     "im-taking-medications"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q2300-i-have-allergies",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 2300,
+   "slug": "i-have-allergies",
+   "changed": "men-q2300: I don't have allergies -> I have allergies",
+   "answers": {
+    "2300": [
+     "i-have-allergies"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": []
+  },
+  {
+   "id": "sim-m-q2350-trying-to-get-pregnant-yes-we-are",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 2350,
+   "slug": "trying-to-get-pregnant-yes-we-are",
+   "changed": "men-q2350: No, we are not -> Yes, we are",
+   "answers": {
+    "2350": [
+     "trying-to-get-pregnant-yes-we-are"
+    ]
+   },
+   "added": [
+    [
+     2355,
+     "A word of caution if you’re planning to get pregnant."
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 1,
+     "noRecOralMin": 0
+    },
+    "recommended": "oral minoxidil"
+   },
+   "changedOutcome": true,
+   "highlight": null,
+   "vars": [
+    [
+     "isTryingToGetPregnantInNext3Months",
+     "1"
+    ],
+    [
+     "noRecTopicalCombined",
+     "1"
+    ],
+    [
+     "noRecOralFin",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-m-q2400-weight-loss",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 2400,
+   "slug": "weight-loss",
+   "changed": "men-q2400: None of the above -> Weight loss",
+   "answers": {
+    "2400": [
+     "weight-loss"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q2400-stronger-erections",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 2400,
+   "slug": "stronger-erections",
+   "changed": "men-q2400: None of the above -> Stronger erections",
+   "answers": {
+    "2400": [
+     "stronger-erections"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q2400-climax-control",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 2400,
+   "slug": "climax-control",
+   "changed": "men-q2400: None of the above -> Climax control",
+   "answers": {
+    "2400": [
+     "climax-control"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q2400-herpes-cold-sores-outbreaks",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 2400,
+   "slug": "herpes-cold-sores-outbreaks",
+   "changed": "men-q2400: None of the above -> Herpes or cold sores outbreaks",
+   "answers": {
+    "2400": [
+     "herpes-cold-sores-outbreaks"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q2400-longevity",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 2400,
+   "slug": "longevity",
+   "changed": "men-q2400: None of the above -> Longevity",
+   "answers": {
+    "2400": [
+     "longevity"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q2400-nutrition",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 2400,
+   "slug": "nutrition",
+   "changed": "men-q2400: None of the above -> Nutrition",
+   "answers": {
+    "2400": [
+     "nutrition"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q2400-skincare",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 2400,
+   "slug": "skincare",
+   "changed": "men-q2400: None of the above -> Skincare",
+   "answers": {
+    "2400": [
+     "skincare"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-m-q2510-yes",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 2510,
+   "slug": "yes",
+   "changed": "men-q2510: No -> Yes",
+   "answers": {
+    "2510": [
+     "yes"
+    ]
+   },
+   "added": [
+    [
+     2520,
+     "Please leave your message to your doctor here."
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false,
+   "highlight": "ack-nonclinical",
+   "vars": []
+  },
+  {
+   "id": "sim-m-q132-hairline+patches",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "men-q132: Hairline + Crown -> Hairline + Random golf-ball size bald patches (mixed pick)",
+   "answers": {
+    "132": [
+     "hairline",
+     "patches"
+    ]
+   },
+   "age": null,
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 1,
+     "noRecOralMin": 1
+    },
+    "recommended": "no-recommendation"
+   },
+   "changedOutcome": true
+  },
+  {
+   "id": "sim-m-q112-under18",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "men-q112 (basics): age 32 -> under 18",
+   "answers": {
+    "112": [
+     "under-18-years-old"
+    ]
+   },
+   "age": null,
+   "added": [
+    [
+     7010,
+     "How can we help?"
+    ]
+   ],
+   "removed": [
+    [
+     132,
+     "Where are you noticing hair loss or thinning?"
+    ],
+    [
+     150,
+     "How did your hair loss start?"
+    ],
+    [
+     160,
+     "How would you describe the severity of your current hair loss?"
+    ],
+    [
+     170,
+     "Have you noticed any of the following?"
+    ],
+    [
+     370,
+     "Have you ever been diagnosed with or treated for high or low blood pressure?"
+    ],
+    [
+     1000,
+     "Do you have, or have you ever had, any of the following conditions?"
+    ],
+    [
+     1300,
+     "Do you have, or have you ever had, any of the following heart-related conditions?"
+    ],
+    [
+     2200,
+     "What medications are you currently taking?"
+    ],
+    [
+     2300,
+     "Do you have any allergies?"
+    ],
+    [
+     2350,
+     "Are you and your partner trying to get pregnant in the next 3 months?"
+    ],
+    [
+     2400,
+     "What other health goals are on your mind?"
+    ],
+    [
+     2510,
+     "Is there anything else you want your Ro-affiliated doctor to know about your condition or "
+    ],
+    [
+     3177,
+     "We use ingredients clinically proven to stop hair loss and regrow hair"
+    ],
+    [
+     3178,
+     "MHL Treatment Recommendation"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 7010,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "(recommender screen not reached)"
+   },
+   "changedOutcome": true
+  },
+  {
+   "id": "sim-m-q112-female",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "men-q112 (basics): male -> female",
+   "answers": {
+    "112": [
+     "female"
+    ]
+   },
+   "age": null,
+   "added": [
+    [
+     7062,
+     "How can we help?"
+    ]
+   ],
+   "removed": [
+    [
+     132,
+     "Where are you noticing hair loss or thinning?"
+    ],
+    [
+     150,
+     "How did your hair loss start?"
+    ],
+    [
+     160,
+     "How would you describe the severity of your current hair loss?"
+    ],
+    [
+     170,
+     "Have you noticed any of the following?"
+    ],
+    [
+     370,
+     "Have you ever been diagnosed with or treated for high or low blood pressure?"
+    ],
+    [
+     1000,
+     "Do you have, or have you ever had, any of the following conditions?"
+    ],
+    [
+     1300,
+     "Do you have, or have you ever had, any of the following heart-related conditions?"
+    ],
+    [
+     2200,
+     "What medications are you currently taking?"
+    ],
+    [
+     2300,
+     "Do you have any allergies?"
+    ],
+    [
+     2350,
+     "Are you and your partner trying to get pregnant in the next 3 months?"
+    ],
+    [
+     2400,
+     "What other health goals are on your mind?"
+    ],
+    [
+     2510,
+     "Is there anything else you want your Ro-affiliated doctor to know about your condition or "
+    ],
+    [
+     3177,
+     "We use ingredients clinically proven to stop hair loss and regrow hair"
+    ],
+    [
+     3178,
+     "MHL Treatment Recommendation"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 7062,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "(recommender screen not reached)"
+   },
+   "changedOutcome": true
+  },
+  {
+   "id": "sim-m-q112-zip",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "men-q112 (basics): served zip -> zip not served",
+   "answers": {
+    "112": [
+     "not-supported-zip-code"
+    ]
+   },
+   "age": null,
+   "added": [
+    [
+     7030,
+     "Be notified when we’re in your area!"
+    ]
+   ],
+   "removed": [
+    [
+     132,
+     "Where are you noticing hair loss or thinning?"
+    ],
+    [
+     150,
+     "How did your hair loss start?"
+    ],
+    [
+     160,
+     "How would you describe the severity of your current hair loss?"
+    ],
+    [
+     170,
+     "Have you noticed any of the following?"
+    ],
+    [
+     370,
+     "Have you ever been diagnosed with or treated for high or low blood pressure?"
+    ],
+    [
+     1000,
+     "Do you have, or have you ever had, any of the following conditions?"
+    ],
+    [
+     1300,
+     "Do you have, or have you ever had, any of the following heart-related conditions?"
+    ],
+    [
+     2200,
+     "What medications are you currently taking?"
+    ],
+    [
+     2300,
+     "Do you have any allergies?"
+    ],
+    [
+     2350,
+     "Are you and your partner trying to get pregnant in the next 3 months?"
+    ],
+    [
+     2400,
+     "What other health goals are on your mind?"
+    ],
+    [
+     2510,
+     "Is there anything else you want your Ro-affiliated doctor to know about your condition or "
+    ],
+    [
+     3177,
+     "We use ingredients clinically proven to stop hair loss and regrow hair"
+    ],
+    [
+     3178,
+     "MHL Treatment Recommendation"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 7030,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "(recommender screen not reached)"
+   },
+   "changedOutcome": true
+  },
+  {
+   "id": "sim-m-age70",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "men-q112 (basics): age 32 -> 70",
+   "answers": {},
+   "age": 70,
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false
+  },
+  {
+   "id": "sim-m-q22-both",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "men-q22: None of the above -> both \"tried\" boxes",
+   "answers": {
+    "22": [
+     "hair-loss-solutions-non-prescription",
+     "hair-loss-solutions-prescription-medications"
+    ]
+   },
+   "age": null,
+   "added": [
+    [
+     28,
+     "What’s the main reason you’re looking for hair loss solutions now?"
+    ],
+    [
+     240,
+     "What hair loss treatments have you used?"
+    ],
+    [
+     285,
+     "Did topical minoxidil work well for you?"
+    ]
+   ],
+   "removed": [
+    [
+     26,
+     "What’s the main reason you haven’t tried hair loss treatment before?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "changedOutcome": false
+  },
+  {
+   "id": "sim-m-combo-dep+hf",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "TWO changes: depression (q1000) + heart failure (q1300)",
+   "answers": {
+    "1000": [
+     "depression"
+    ],
+    "1300": [
+     "heart-failure"
+    ]
+   },
+   "age": null,
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 1,
+     "noRecOralMin": 1
+    },
+    "recommended": "no-recommendation"
+   },
+   "changedOutcome": true
+  },
+  {
+   "id": "sim-m-combo-pc+brady",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "THREE changes: prostate cancer + depression + heart failure",
+   "answers": {
+    "1000": [
+     "prostate-cancer",
+     "depression"
+    ],
+    "1300": [
+     "heart-failure"
+    ]
+   },
+   "age": null,
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 1,
+     "noRecOralFin": 1,
+     "noRecOralMin": 1
+    },
+    "recommended": "no-recommendation"
+   },
+   "changedOutcome": true
+  },
+  {
+   "id": "sim-m-old-flow",
+   "flow": "men",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "experiment mhlConsultativeOv switched off (older two-product screen)",
+   "answers": {},
+   "age": null,
+   "added": [
+    [
+     3180,
+     "Treatment Details"
+    ],
+    [
+     3200,
+     "Do you have a specific treatment for hair loss that you would prefer to be prescribed?"
+    ]
+   ],
+   "removed": [
+    [
+     2350,
+     "Are you and your partner trying to get pregnant in the next 3 months?"
+    ],
+    [
+     3177,
+     "We use ingredients clinically proven to stop hair loss and regrow hair"
+    ],
+    [
+     3178,
+     "MHL Treatment Recommendation"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 3178,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "Ro Mane Spray"
+   },
+   "outcome": {
+    "end": 3200,
+    "flags": {
+     "noRecTopicalCombined": 0,
+     "noRecOralFin": 0,
+     "noRecOralMin": 0
+    },
+    "recommended": "(recommender screen not reached)"
+   },
+   "changedOutcome": true
+  }
+ ]
+}

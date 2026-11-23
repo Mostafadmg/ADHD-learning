@@ -1,0 +1,28 @@
+{
+  "_about": "Numan REGAINE-specific entry point, same baseline patient (man 32, temples and crown, gradual, no allergies, no scalp symptoms, no conditions, no medicines). Replays with tools/walk.js from a clean browser. No contact details are typed anywhere: the optional email screen is skipped and the walk stops at the account wall (/profile). Each replay creates one anonymous draft on Numan's side, so replay sparingly.",
+  "start": "https://www.numan.com/subscribe/hair-loss/regaine?pc=hl-organic-50off",
+  "steps": [
+    {"do": "wait", "ms": 4000},
+    {"do": "click", "text": "Next", "settle": 3500},
+    {"do": "click", "selector": "label:text-is(\"18 - 65\")", "settle": 2800},
+    {"do": "click", "selector": "label:text-is(\"Temples and Crown\")", "settle": 2800},
+    {"do": "click", "selector": "label:text-is(\"My hair loss started gradually over the last few months or years\")", "settle": 2800},
+    {"do": "click", "selector": "label:text-is(\"I am not allergic to any of the above\")", "settle": 600},
+    {"do": "click", "text": "Next", "settle": 2800},
+    {"do": "click", "selector": "label:text-is(\"No\")", "settle": 600},
+    {"do": "click", "text": "Next", "settle": 2800},
+    {"do": "click", "selector": "label:text-is(\"No - none\")", "settle": 600},
+    {"do": "click", "text": "Next", "settle": 2800},
+    {"do": "click", "selector": "label:text-is(\"Effectiveness of the product\")", "settle": 600},
+    {"do": "click", "text": "Next", "settle": 2800},
+    {"do": "click", "selector": "label:text-is(\"I do not have a major illness, ongoing medical condition, operation, allergy to medication or take prescribed or over the counter medication to tell you about.\")", "settle": 3500},
+    {"do": "click", "selector": "label:text-is(\"No\")", "settle": 3500},
+    {"do": "click", "text": "Skip", "settle": 4500},
+    {"do": "click", "text": "See all treatments", "settle": 2500},
+    {"do": "scroll"},
+    {"do": "click", "selector": "button:has-text(\"Select treatment\")", "settle": 5000},
+    {"do": "click", "text": "Continue", "settle": 5000},
+    {"do": "click", "text": "Continue", "settle": 5000},
+    {"do": "click", "text": "Continue", "settle": 6000}
+  ]
+}

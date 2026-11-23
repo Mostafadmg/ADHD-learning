@@ -1,0 +1,29 @@
+COMMAND 009 {"steps":[{"do":"click","selector":"label:text-is(\"I can’t tolerate any amount of lactose and I would like to be considered for non-lactose containing preparations only\")","settle":2800},{"do":"snap","settle":600}]}
+URL: https://www.numan.com/subscribe/hair-loss/4b4e30d9-9042-49e8-a32b-7557d60d5aec/sq/have_any_scalp_issues
+TITLE: Are you experiencing any of the following symptoms on your scalp? | Numan
+
+--- VISIBLE TEXT ---
+27%
+Are you experiencing any of the following symptoms on your scalp?
+Pain, itching, burning or bumps
+Red rinds or rashes
+Dandruff
+Psoriasis or eczema
+No
+Back
+Next
+
+--- CONTROLS ---
+  checkbox (5):
+    - Pain, itching, burning or bumps (name: have_any_scalp_issues)
+    - Red rinds or rashes (name: have_any_scalp_issues)
+    - Dandruff (name: have_any_scalp_issues)
+    - Psoriasis or eczema (name: have_any_scalp_issues)
+    - No (name: have_any_scalp_issues)
+  button (2):
+    - Back
+    - Next [disabled]
+
+--- LINKS ---
+  link (1):
+    - Visit the main page -> /

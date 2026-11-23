@@ -1,0 +1,64 @@
+COMMAND 003 {"steps":[{"do":"goto","url":"https://www.numan.com/subscribe","settle":5000},{"do":"snap","settle":1500}]}
+URL: https://www.numan.com/subscribe
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+Erectile dysfunction
+
+Continue
+
+Weight Loss
+
+Continue
+
+Hair loss
+
+Continue
+
+Testosterone optimisation
+
+Continue
+
+Supplements
+
+Continue
+
+Diagnostics
+
+Continue
+What can we help you with today?
+
+Sexual health
+
+Weight loss
+
+Hair health
+
+Low testosterone
+
+Supplements
+
+Diagnostics
+
+Doctor consultation
+
+--- CONTROLS ---
+  button (3):
+    - Continue
+    - Sexual health
+    - Hair health
+
+--- LINKS ---
+  link (12):
+    - Visit the main page -> /
+    - Erectile dysfunction Continue -> /subscribe/erectile-dysfunction/tadalafil-daily
+    - Weight Loss Continue -> /subscribe/weight-loss
+    - Hair loss Continue -> /subscribe/hair-loss
+    - Testosterone optimisation Continue -> /subscribe/low-testosterone
+    - Supplements Continue -> /subscribe/supplements
+    - Diagnostics Continue -> /subscribe/fear-nothing
+    - Weight loss -> /subscribe/weight-loss
+    - Low testosterone -> /subscribe/low-testosterone
+    - Supplements -> /subscribe/supplements
+    - Diagnostics -> /subscribe/fear-nothing
+    - Doctor consultation -> /subscribe/consultations

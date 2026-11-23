@@ -1,0 +1,3 @@
+{ "start": "https://start.struthealth.com/f/6ad9e1d39fba7abfd231a5b3",
+  "note": "Dutasteride (topical or oral) intake form. The first screen is the account card (email + phone), so the anonymous walk stops at screen 1. The rest of the flow is read from the served definition (quiz-definition-dut.json).",
+  "steps": [ {"do":"wait","ms":4000} ] }

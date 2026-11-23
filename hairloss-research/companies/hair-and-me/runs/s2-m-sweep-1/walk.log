@@ -1,0 +1,63 @@
+   [feature-test] {"experiment_id":"c77efccc-deab-436e-b750-ca5ded2a23ed","version":"control"}
+
+00 [tp] (question) Which treatment is right for you?  ->  ["Treatment for men"]
+01 [yhg] (question) What are your hair goals?  ->  ["Reverse hair thinning","Improve my hairline, parting or crown","Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us."]
+02 [hgp] (question) Which hair goal do you want to tackle most?  ->  ["Reverse hair thinning"]
+03 [js] (question) Where are you in your hair regrowth journey?  ->  ["Still exploring my options"]
+04 [pds] (question) Your medical history  ->  [{"select":"select[name='3039']","value":{"label":"Male"}},{"select":"select[name='3054']","value":{"label":"Man/Boy"}}]
+05 [pdsc] (question) Please confirm your sex assigned at birth  ->  ["I confirm the above selection is accurate and true."]
+06 [mi] (question)   ->  []
+07 [ht] (question) Which option best describes your natural hair type?  ->  ["Wavy"]
+08 [hs] (question) How do you usually style or treat your hair?  ->  ["Air dry","Colour treatments, bleaching and dyes","Product-based styling (e.g. wax, clay, pomade, hairspray)","Heat-based styling tools (e.g. straightening, curling, blow-drying)"]
+09 [ls] (question) Which of these statements apply to you?  ->  ["I rarely get more than 7 hours' sleep","I've recently been through a major life event"]
+10 [htp] (question) Have you used any of the following products to help you achieve your hair goals in the last three months?  ->  ["None of the above"]
+11 [htam] (question) Where have you noticed hair thinning or loss?  ->  ["At the temples"]
+12 [htc] (question) When did you notice changes to your hair?  ->  ["Around three to six months ago"]
+13 [ar] (question)   ->  []
+   (variant: question 9346)
+14 [st] (question) Which best matches your skin?  ->  ["Pale. It always burns, never tans"]
+15 [sc] (question) How would you describe the condition of your scalp?  ->  ["Normal"]
+16 [scc] (question) Are you experiencing any of the following on your scalp?  ->  ["None of the above"]
+17 [smt] (question) In 6 months' time, what do you want to see?  ->  ["Hair that feels healthy from root to tip","Hair that feels stronger and has less breakage","Noticeably less hair falling out"]
+18 [pt] (question) Do you live with pets?  ->  ["No"]
+19 [tt] (question) Which treatment would suit you best?  ->  ["The Capsules"]
+20 [pp] (question) Understanding Dutasteride and Finasteride  ->  ["I agree to the information above and wish to be considered for dutasteride or finasteride. I agree to read the Patient Information Leaflet"]
+21 [mdm] (question) Are you taking any of the following prescription medications?  ->  ["No, I don't take any medications"]
+22 [mcm] (question) Have you been diagnosed with any of the following conditions?  ->  ["None of the above"]
+23 [al] (question) Do you have any known allergies to the following?  ->  ["No known allergies"]
+   (variant: input type number_slider)
+24 [rhf] (question) How have you felt about your hair in the last week?  ->  []
+25 [yna] (question) Lots of people feel this way  ->  []
+   (variant: input type number_slider)
+26 [rha] (question) How would you rate the appearance of your hair in the last week?  ->  []
+27 [di] (question) What most influenced your decision to sign-up today?  ->  ["I'm looking for a long-term effective haircare treatment"]
+28 [rj] (question)   ->  []
+   (variant: input type date_masked)
+29 [el] (question) Your eligibility  ->  [{"type":"input[name=\"3053\"]","value":"15061994"},"Yes, I live in the UK (excluding Channel Islands)."]
+30 [ct] (question) Your shopping bag  ->  []
+
+===== STOP: no answer for step 31 [yd] (question) Personalise your account =====
+URL: https://www.hairandme.com/c/suh/yd
+JSON: {"step":{"actionsList":[{"next":{"label":"Next question"}},{"previous":{"label":"Back to previous page"}}],"breadcrumb":{"sectionNumber":4,"sectionTitle":"YOUR DETAILS"},"description":null,"headerElement":null,"questions":[{"id":3044,"inputConfig":{"placeholder":"John/Jane"},"inputType":"text","is_custom":false,"label":"Your legal first name","text":null,"value":null},{"id":3045,"inputConfig":{"placeholder":"Doe"},"inputType":"text","is_custom":false,"label":"Your legal last name","text":null,"value":null},{"id":3043,"inputConfig":{"info":{"text":"This will appear on your personalised products, and in your account. If left empty, we’ll use your legal first name."},"isOptional":true,"placeholder":"Your nickname or chosen name"},"inputType":"text","is_custom":false,"label":"Your preferred name","text":null,"value":null},{"id":3055,"inputConfig":{"defaultEngravedName":"you","description":"Our service is fully personalised – right down to the name on the treatment:","firstNameQuestionId":3044,"imageKey":"unengraved-hair-doser","preferredNameQuestionId":3043,"title":"Engraved just for you"},"inputType":"engraved_doser","is_custom":false,"label":null,"text":null,"value":null}],"section":null,"title":"Personalise your account","type":"question"}}
+TEXT: Personalise your account
+Your legal first name
+Your legal last name
+Your preferred name
+
+This will appear on your personalised products, and in your account. If left empty, we’ll use your legal first name.
+
+Engraved just for you
+Our service is fully personalised – right down to the name on the treatment:
+FOR YOU
+NEXT QUESTION
+Back to previous page
+CONTROLS:
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:text[name=3044] | Your legal first name
+input:text[name=3045] | Your legal last name
+input:text[name=3043] | Your preferred name
+button:submit | NEXT QUESTION [disabled]
+a -> /c/suh/yd?action=previous | Back to previous page
+
+[autowalk] exit 0 -> runs/s2-m-sweep-1

@@ -1,0 +1,1 @@
+{ "start": "https://onlinedoctor.superdrug.com/hair-loss-consultation.html", "steps": [ {"do":"click","text":"Request Treatment"}, {"do":"wait","ms":3000} ] }

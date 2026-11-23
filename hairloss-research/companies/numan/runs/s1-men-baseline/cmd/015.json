@@ -1,0 +1,1 @@
+{"steps":[{"do":"click","text":"See all treatments","settle":3000},{"do":"scroll"},{"do":"snap","settle":800}]}

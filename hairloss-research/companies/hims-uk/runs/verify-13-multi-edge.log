@@ -1,12 +1,11 @@
 
-!!!!! STEP 11 FAILED: click "Straight or wavy"
-page.waitForTimeout: Target page, context or browser has been closed
-
-===== STEP 11 FAILED click "Straight or wavy" =====
-URL: https://app.forhims.co.uk/flow/a9a88e4a-89b9-47ae-8138-3a1acaa41594?t=hair&anon_flow_key=hair
-TEXT: (could not read page: Error: page.evaluate: Target page, context or browser has been closed)
+===== FINAL (after 27 steps) =====
+URL: https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+TEXT: Ready to see if you’re eligible? ⏎ Next we'll cover your health and medical history as well as treatment options. ⏎ Continue ⏎ ←
 CONTROLS:
+  input:email (1): Email address
+  button (2): Continue [disabled]  ·  ←
+  links: Navigate home
 
-  links (0, full list in 11.txt): 
-
-[walk] 11 step(s), exit 2, 17 JSON bodies saved -> runs/verify-13-multi-edge
+[walk] 27 step(s), exit 0, 34 JSON bodies saved -> runs/verify-13-multi-edge
+runs/verify-13-multi-edge redacted 25

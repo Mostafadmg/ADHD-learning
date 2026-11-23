@@ -1,0 +1,21 @@
+COMMAND 008 {"steps":[{"do":"click","selector":"label:text-is(\"I accept the risk that finasteride can lead to detrimental effects on my mood and would like to be considered for finasteride and/or minoxidil.\")","settle":2800},{"do":"snap","settle":600}]}
+URL: https://www.numan.com/subscribe/hair-loss/2a4aca7c-c774-4fc3-8901-0684d205d1ec/sq/who_manages_your_mental_health
+TITLE: Who manages your mental health condition? | Numan
+
+--- VISIBLE TEXT ---
+68%
+Who manages your mental health condition?
+Psychiatrist/Specialist/Consultant
+GP
+Back
+
+--- CONTROLS ---
+  radio (2):
+    - Psychiatrist/Specialist/Consultant (name: who_manages_your_mental_health)
+    - GP (name: who_manages_your_mental_health)
+  button (1):
+    - Back
+
+--- LINKS ---
+  link (1):
+    - Visit the main page -> /

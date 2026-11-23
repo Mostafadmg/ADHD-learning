@@ -1,5 +1,5 @@
 {
- "_about": "Stage 2 SWEEP s2-w-sweep-2 (women baseline): several low-priority answers changed at once as a group test. SWEEP (women, 6 non-medical answers changed together): gender identity Transman/Transboy; Curly; washes once a week or less; thinning at the temples; timing Unsure; skin Dark brown or black",
+ "_about": "Stage 2 SWEEP s2-w-sweep-2 (women baseline): several low-priority answers changed at once as a group test. SWEEP (women, 7 non-medical answers changed together): gender identity Transman/Transboy; Curly; four styling habits; washes once a week or less; thinning at the temples; timing Unsure; skin Dark brown or black",
  "start": "https://www.hairandme.com/c/suh/new",
  "answers": {
   "tp": [
@@ -34,7 +34,10 @@
    "Curly"
   ],
   "hs": [
-   "None of the above"
+   "Air dry",
+   "Colour treatments, bleaching and dyes",
+   "Product-based styling (e.g. wax, clay, pomade, hairspray)",
+   "Heat-based styling tools (e.g. straightening, curling, blow-drying)"
   ],
   "hw": [
    "Once a week or less"
@@ -167,11 +170,12 @@
    "pds",
    "ht",
    "hw",
+   "hs",
    "htaf",
    "htc",
    "st"
   ],
   "sweep": true,
-  "desc": "SWEEP (women, 6 non-medical answers changed together): gender identity Transman/Transboy; Curly; washes once a week or less; thinning at the temples; timing Unsure; skin Dark brown or black"
+  "desc": "SWEEP (women, 7 non-medical answers changed together): gender identity Transman/Transboy; Curly; four styling habits; washes once a week or less; thinning at the temples; timing Unsure; skin Dark brown or black"
  }
 }

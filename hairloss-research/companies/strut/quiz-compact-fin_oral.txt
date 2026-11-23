@@ -1,0 +1,250 @@
+FLOW Finasteride Tablet Prod 2310 6adb53275c3d5e719ab02595 nodes 35
+
+[00] node-start-1784100995818 (start)
+   PATH "Default"*                   -> node-1778105320499 
+
+[01] node-1778105320499 (react-block)
+   COMPONENT "Starting card" {}
+   NEXT -> node-1792598347844
+
+[02] node-1792598347844 (react-block)
+   COMPONENT "DOB Card" {}
+   NEXT -> node-1
+
+[03] node-1 (react-block)
+   LABEL: What is your age?
+   INPUT multi-choice id=block-1784100322077-3 alias=block-1784100322077-3 :: What is your age? {"required": true, "allowMulti": false}
+        (c0) Under 18
+        (c1) 18-30
+        (c2) 31-45
+        (c3) 46-60
+        (c4) 61+
+   PATH "Under 18"                   -> node-20 when (node-1.block-1784100322077-3 equal "c0")
+   PATH "18 or older"*               -> node-2 
+
+[04] node-2 (react-block)
+   LABEL: What sex were you assigned at birth?
+   INPUT multi-choice id=block-1784100322077-3 alias=block-1784100322077-3 :: Which hair loss product are you interested in? {"required": true, "allowMulti": false}
+        sub: You can select one or more options
+        (c0) Male
+        (c1) Female
+   PATH "Female"                     -> node-1789033271452 when (node-2.block-1784100322077-3 equal "c1")
+   PATH "Male"*                      -> node-1779173368444 
+
+[05] node-1779173368444 (react-block)
+   COMPONENT "finasteride tablet" {"title": "Finasteride Tablets", "audienceLabel": "For Men", "subtitle": "Oral finasteride 1mg for hair loss · dispensed by a US licensed pharmacy", "imageUrl": "https://www.struthealth.com/assets/v3-hl-oral-finasteride.webp", "subAxisLabel": "Supply", "defaultSupply": "s1", "pricePeriodSuffix": "", "trustItem1": "Doctor consult", "trustItem2": "FDA-registered pharmacy", "totalLabel": "Total today", "ctaLabel": "Add to cart"}
+   NEXT -> node-3
+
+[06] node-3 (react-block)
+   LABEL: How long ago did you first notice signs of hair loss?
+   INPUT multi-choice id=block-1784100322077-3 alias=block-1784100322077-3 :: How long ago did you first notice signs of hair loss? {"required": true, "allowMulti": false}
+        (c0) 1 month or less
+        (c1) Less than 6 months
+        (c2) 6-12 months
+        (c3) Over 1 year
+        (c4) Over 2 years
+   NEXT -> node-4
+
+[07] node-4 (react-block)
+   LABEL: What symptoms of hair loss have you noticed? Select all that apply.
+   INPUT multi-choice id=block-1784100322077-3 alias=block-1784100322077-3 :: What symptoms of hair loss have you noticed? Select all that apply. {"required": true, "allowMulti": true}
+        (c0) Thinning at the front hairline
+        (c1) Thinning at the temples
+        (c2) Thinning on the top of the head
+        (c3) Receding hairline
+        (c4) Patchy bald spots
+        (c5) Diffuse thinning (all over)
+        (c6) Increased shedding
+   NEXT -> node-5
+
+[08] node-5 (react-block)
+   LABEL: Have you noticed any scalp symptoms? Select all that apply.
+   INPUT multi-choice id=node-5-b2 alias=block-1784100322077-3 :: Have you noticed any scalp symptoms? Select all that apply. {"required": false, "allowMulti": true}
+        (c0) Itching, pain, burning, or lesions
+        (c1) Dry skin or dandruff
+        (c2) Rash
+        (c3) Bleeding
+        (c4) Sudden hair loss
+        (1777426303825) None of the above [deselect-others]
+   PATH "Next"*                      -> node-6 
+
+[09] node-6 (react-block)
+   LABEL: What treatments have you tried before? Select all that apply.
+   INPUT multi-choice id=node-6-b2 alias=block-1784100322077-3 :: What treatments have you tried before? Select all that apply. {"required": false, "allowMulti": true}
+        (c0) Minoxidil (Rogaine) topical
+        (c1) Minoxidil oral tablets
+        (c2) Finasteride (Propecia)
+        (c3) Dutasteride (Avodart)
+        (c4) Biotin or biotin-based vitamins
+        (c5) Ketoconazole shampoo
+        (c6) Steroid-based scalp injections
+        (c7) Hair transplant
+        (c8) PRP (platelet-rich plasma)
+        (1776845700752) Other [allow-other]
+        (1777426294162) None of the above [deselect-others]
+   PATH "Next"*                      -> node-7 
+
+[10] node-7 (react-block)
+   LABEL: Do you have any issues with sexual dysfunction currently?
+   INPUT yes-no id=block-1784100322077-3 alias=block-1784100322077-3 :: Do you have any issues with sexual dysfunction currently? {"required": true}
+   NEXT -> node-8
+
+[11] node-8 (react-block)
+   LABEL: Are you allergic to any of the following? Select all that apply.
+   INPUT multi-choice id=node-8-b2 alias=block-1784100322077-3 :: Are you allergic to any of the following? Select all that apply. {"required": false, "allowMulti": true}
+        (c0) Finasteride
+        (c1) Dutasteride
+        (c2) Minoxidil
+        (c3) Tretinoin
+        (c4) Ketoconazole
+        (c5) Latanoprost or Bimatoprost
+        (c6) Azelaic Acid
+        (c7) Caffeine
+        (c8) Melatonin
+        (c9) Fluocinolone or Hydrocortisone
+        (1776845724343) Other [allow-other]
+        (1777426322448) None of the above [deselect-others]
+   PATH "Next"*                      -> node-9 
+
+[12] node-9 (react-block)
+   LABEL: Do you have any of the following medical conditions? Select all that apply.
+   INPUT multi-choice id=block-1784100322077-3 alias=block-1784100322077-3 :: Do you have any of the following medical conditions? Select all that apply. {"required": false, "allowMulti": true}
+        (c0) Heart failure or heart disease
+        (c1) Heart attack or coronary artery disease
+        (c2) Stroke
+        (c3) Low blood pressure
+        (c4) Pheochromocytoma
+        (c5) Liver problems
+        (c6) Kidney disease
+        (c7) Thyroid disease
+        (c8) Breast or prostate cancer
+        (c9) Prostate enlargement (BPH)
+        (c10) HIV
+        (c11) Autoimmune disease
+        (c12) Glaucoma or eye conditions
+        (1776845737667) Other [allow-other]
+        (1777426317622) None of the above [deselect-others]
+   NEXT -> node-10
+
+[13] node-10 (react-block)
+   LABEL: Have you had any surgeries?
+   INPUT yes-no id=block-1784100322077-3 alias=block-1784100322077-3 :: Have you had any surgeries? {"required": true}
+   PATH "Yes"                        -> node-11 when (node-10.block-1784100322077-3 equal "yes")
+   PATH "No"*                        -> node-12 when (node-10.block-1784100322077-3 equal "no")
+
+[14] node-12 (react-block)
+   LABEL: Are you currently taking any medications, vitamins, or supplements?
+   INPUT yes-no id=block-1784100322077-3 alias=block-1784100322077-3 :: Are you currently taking any medications, vitamins, or supplements? {"required": true}
+   PATH "Yes"                        -> node-13 when (node-12.block-1784100322077-3 equal "yes")
+   PATH "No"*                        -> node-14 when (node-12.block-1784100322077-3 equal "no")
+
+[15] node-14 (react-block)
+   LABEL: Do you have concerns about your mood, depression, anxiety, or excessive worrying?
+   INPUT yes-no id=block-1784100322077-3 alias=block-1784100322077-3 :: Do you have concerns about your mood, depression, anxiety, or excessive worrying? {"required": true}
+   NEXT -> node-15
+
+[16] node-15 (react-block)
+   LABEL: In the last 2 weeks, have you lost interest in doing your daily routine?
+   INPUT yes-no id=block-1784100322077-3 alias=block-1784100322077-3 :: In the last 2 weeks, have you lost interest in doing your daily routine? {"required": true}
+   NEXT -> node-16
+
+[17] node-16 (react-block)
+   LABEL: In the last 2 weeks, have you had any thoughts of hurting yourself?
+   INPUT yes-no id=block-1784100322077-3 alias=block-1784100322077-3 :: In the last 2 weeks, have you had any thoughts of hurting yourself? {"required": true}
+   PATH "Yes - Self-harm risk"       -> node-21 when (node-16.block-1784100322077-3 equal "yes")
+   PATH "No"*                        -> node-17 when (node-16.block-1784100322077-3 equal "no")
+
+[18] node-17 (react-block)
+   LABEL: Important Mental Health Warning
+   INPUT statement id=block-1784100322077-3 alias=None :: Important Mental Health Warning {"content": "<p><strong>Important:</strong> Finasteride and dutasteride (5-alpha-reductase inhibitors) may worsen depression or anxiety symptoms. Oral use carries higher risk than topical. If you experience thoughts of self-harm while using this medication, discontinue immediately and call 911.</p>\n<p>Please read the above carefully before continuing.</p>"}
+   NEXT -> node-18
+
+[19] node-18 (react-block)
+   LABEL: Is there anything else you want your doctor to know about your condition or health?
+   INPUT yes-no id=block-1784100322077-3 alias=block-1784100322077-3 :: Is there anything else you want your doctor to know about your condition or health? {"required": true}
+   PATH "Yes"                        -> node-19 when (node-18.block-1784100322077-3 equal "yes")
+   PATH "No"*                        -> node-1789033684206 
+
+[20] node-1789033684206 (react-block)
+   COMPONENT "ProfileCard" {}
+   NEXT -> node-1789034152572
+
+[21] node-1789034152572 (react-block)
+   LABEL: What is your address? || SUB: Start typing to search for your address
+   INPUT address id=block-1789034152571-3 alias=None :: What is your address? {"required": false, "placeholder": "Search for your address...", "showStreet2": true, "street2Placeholder": "Apt, suite, unit, etc. (optional)", "restrictToCountry": ""}
+        sub: Start typing to search for your address
+   NEXT -> node-1789034195795
+
+[22] node-1789034195795 (react-block)
+   LABEL: Verify your identity
+   COMPONENT "Strut ID Verification" {"templateId": "itmpl_AYktNaeqzVDExKKwVqTj3ZyJCHpeja", "environment": "production", "subject": "person_v1", "ctaText": "Start Identity Verification", "prefillNameFirst": "{{user.profile.firstName}}", "prefillNameLast": "{{user.profile.lastName}}", "prefillNameMiddle": "", "prefillBirthdate": "{{user.profile.dob}}", "prefillEmailAddress": "{{user.profile.email}}", "prefillPhoneNumber": "{{user.profile.phone}}", "prefillAddressStreet1": "{{user.profile.address.street}}", "prefillAddressStreet2": "{{user.profile.address.street2}}", "prefillAddressCity": "{{user.profile.address.city}}", "prefillAddressSubdivision": "{{user.profile.address.state}}", "prefillAddressPostalCode": "{{user.profile.address.zip}}", "prefillAddressCountryCode": "{{user.profile.address.country}}"}
+   PATH "Path A"                     -> node-1792666132563 when (node-1789034195795.block-1789034195795-3.route equal "selfie")
+   PATH "Path B"*                    -> node-1789034230453 
+
+[23] node-1789034230453 (react-block)
+   COMPONENT "Shopping Cart" {"buttonText": "Proceed to Checkout"}
+   NEXT -> node-1789034253878
+
+[24] node-1789034253878 (react-block)
+   LABEL: Payment Details
+   INPUT payment id=block-1789034253878-3 alias=None :: Payment Details {"required": true, "processor": "authorize-net", "environment": "production", "mode": "setup", "customerEmail": "", "currency": "usd", "buttonText": "Save Card", "collectBillingAddress": true, "billingAddress": "{{user.profile.address}}", "billingFirstName": "{{user.profile.firstName}}", "billingLastName": "{{user.profile.lastName}}"}
+        sub: Your payment information is securely processed.
+   NEXT -> node-1789034285701
+
+[25] node-1789034285701 (react-block)
+   COMPONENT "Strut Finalize" {}
+   PATH "Card declined"              -> node-1789034253878 when (node-1789034285701.block-1789034285701-3.status equal "declined")
+   PATH "Success"*                   -> node-1789034321274 
+
+[26] node-1789034321274 (react-block)
+   COMPONENT "OrderSuccess" {"thankYouTitle": "Order completed", "thankYouMessage": "Thank you — we received your order.", "reviewMessage": "A doctor from our team will review your order and we will email you once your prescription has been written.", "expectationMessage": "You should hear from us within 48 hours.", "detailsHeading": "Your order"}
+   COMPONENT "Go to struthealth" {}
+
+[27] node-1792666132563 (react-block)
+   COMPONENT "Selfie Input" {"eyebrow": "Identity verification", "heading": "Verification failed", "failureMessage": "Sorry we could not verify you through Persona. Your doctor will review the information you provided and verify you at that time. Please upload the requested photos and press Next.", "helperText": "Since you are receiving treatment, your doctor needs a couple images to complete your prescription.", "documentLabel": "Photo ID", "documentHint": "Take a picture of your government ID, or upload one you already have.", "selfieLabel": "Selfie", "selfieHint": "Open the camera for a live photo, or upload a selfie. You can replace or remove it."}
+   NEXT -> node-1789034230453
+
+[28] node-19 (react-block)
+   LABEL: Please share any additional information for your doctor.
+   INPUT text-area id=block-1784100322077-3 alias=block-1784100322077-3 :: Please explain: {"required": true, "placeholder": "Share any additional health information...", "maxLength": 1000, "rows": 5}
+        sub: Please provide your detailed response
+   NEXT -> node-1789033684206
+
+[29] node-21 (react-block)
+   LABEL: Safety Alert || SUB: Your safety is our top priority. If you are having thoughts of hurting yourself, please contact the 988 Suicide and Crisis Lifeline by calling or texting 988, or call 911. A physician will still review your questionnaire. You may go back and update your answer, or end the questionnaire.
+   INPUT multi-choice id=block-1784100322077-3 alias=None :: Safety Alert {"required": true, "allowMulti": false}
+        sub: Your safety is our top priority. If you are having thoughts of hurting yourself, please contact the 988 Suicide and Crisis Lifeline by calling or texting 988, or call 911. A physician will still review your questionnaire. You may go back and update your answer, or end the questionnaire.
+        (c0) Go back and update my answer
+        (c1) End questionnaire
+   PATH "Go back"                    -> node-16 when (node-21.block-1784100322077-3 equal "c0")
+   PATH "End"*                       -> node-23 when (node-21.block-1784100322077-3 equal "end")
+
+[30] node-23 (ending-ds)
+   ENDING {"mode": "redirect", "blocks": [], "redirect": {"url": "www.struthealth.co", "appendFlowVariables": false, "appendQueryParams": []}, "sideEffects": []}
+
+[31] node-13 (react-block)
+   LABEL: Please list all current medications, vitamins, and supplements with dosages:
+   INPUT text-area id=block-1784100322077-3 alias=block-1784100322077-3 :: Please list all current medications, vitamins, and supplements with dosages: {"required": true, "placeholder": "List your medications...", "rows": 4}
+   NEXT -> node-14
+
+[32] node-11 (react-block)
+   LABEL: Please describe your surgical history:
+   INPUT text-area id=block-1784100322077-3 alias=block-1784100322077-3 :: Please describe your surgical history: {"required": true, "placeholder": "Describe your surgeries...", "rows": 4}
+   NEXT -> node-12
+
+[33] node-1789033271452 (react-block)
+   LABEL: Available for Male Patients Only || SUB: These medications are only available for male. If you selected the wrong answer, you can go back and update it.
+   INPUT multi-choice-ds id=zxdd2fk alias=None :: None {"required": false, "allowMulti": false}
+        (a) Go back and update my answer
+        (b) End questionnaire
+   PATH "Go back and update "        -> node-2 when (node-1789033271452.zxdd2fk equal "a")
+   PATH "Path A"*                    -> node-23 
+
+[34] node-20 (react-block)
+   LABEL: Age Verification || SUB: These medications are only available for patients 18 and older. If you selected the wrong answer, you can go back and update it.
+   INPUT multi-choice id=block-1784100322077-3 alias=None :: Age Verification {"required": true, "allowMulti": false}
+        sub: These medications are only available for patients 18 and older. If you selected the wrong answer, you can go back and update it.
+        (c0) Go back and update my answer
+        (c1) End questionnaire
+   PATH "Go back"                    -> node-1 when (node-20.block-1784100322077-3 equal "c0")
+   PATH "End"*                       -> node-23 when (node-20.block-1784100322077-3 equal "end")

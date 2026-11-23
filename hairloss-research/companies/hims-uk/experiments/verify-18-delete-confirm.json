@@ -1,0 +1,58 @@
+{
+ "start": "https://www.forhims.co.uk/c/hl",
+ "steps": [
+  {
+   "do": "click",
+   "text": "Experiencing hair loss, ready to start treatment",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Along the hairline",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Some",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Over a year ago",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Your answers",
+   "settle": 2000
+  },
+  {
+   "do": "click",
+   "text": "Delete my answers",
+   "settle": 3000
+  },
+  {
+   "do": "click",
+   "text": "Delete my answers",
+   "settle": 5000
+  },
+  {
+   "do": "wait",
+   "ms": 4000
+  },
+  {
+   "do": "goto",
+   "url": "https://www.forhims.co.uk/c/hl"
+  },
+  {
+   "do": "wait",
+   "ms": 6000
+  }
+ ],
+ "_about": {
+  "experiment": "verify-18-delete-confirm",
+  "stage": "verify",
+  "changed": "four answers given, then 'Your answers' → 'Delete my answers' → 'Delete my answers' again in the confirmation box, then /c/hl opened again",
+  "why": "verify-12 stopped at the confirmation box. This run confirms it. Only the anonymous answers are deleted; nothing is typed."
+ }
+}

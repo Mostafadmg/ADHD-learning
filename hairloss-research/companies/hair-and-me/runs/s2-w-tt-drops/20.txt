@@ -1,0 +1,13 @@
+STEP 20 dt
+URL: https://www.hairandme.com/c/suh/dt
+
+--- VISIBLE TEXT ---
+Our Dermatology Team have a few more questions
+Skip
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+a -> /c/suh/dt | Skip
+a -> /c/suh/dt?action=previous | Back to previous page

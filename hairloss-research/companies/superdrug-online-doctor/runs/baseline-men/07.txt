@@ -1,0 +1,105 @@
+STEP 07 click "input[name='23042020'][value='false']"
+URL: https://onlinedoctor.superdrug.com/assessment/147929#/section/1039315014?step=1
+TITLE: The Superdrug Online Doctor
+
+--- VISIBLE TEXT ---
+Help?
+Hair loss consultation
+Questionnaire	Your request	Delivery	Sign in or Register	Your Order	Payment Successful
+Please note:  This service is only available in the UK.
+×
+Close
+These medical questions help our doctors treat you safely. Check that you fully understand them, and message us if you're unsure.
+Have you been diagnosed with Androgenic Alopecia (Male Pattern Baldness)?
+Yes, by my GP
+Yes, by a specialist
+No, self-diagnosis
+Please choose your hair pattern.
+A
+B
+C
+D
+E
+No pattern fits well
+Are you currently using finasteride (or the brand Propecia)?
+Yes
+No
+Have you taken finasteride or Propecia for hair loss before?
+Yes
+No
+When did you first notice any hair loss?
+In the last month
+More than a month ago
+How did your hair loss start?
+Suddenly
+Gradually (over months)
+Have you noticed any other changes to the areas where you are losing hair?
+Such as redness, itching, flaking or soreness
+Yes
+No
+Can you always get and maintain an erection when you want one?
+Yes
+No
+Do you have, or have you had, any of the following conditions?
+Prostate cancer
+Breast cancer
+Liver condition
+Any type of skin conditions
+None of the above
+Do you have any other medical conditions not mentioned above?
+Yes
+No
+Are you currently taking any medication, or have you recently finished a course of medication?
+Yes
+No
+Are you allergic to any medicines or other substances?
+For instance peanuts or soya.
+Yes
+No
+Almost done. Important information to read and confirm you agree and understand:
+
+Trying for a baby
+
+Finasteride may affect male fertility while you are taking it.
+These changes are usually reversible after stopping treatment, but recovery may take several months. If you are planning to try for a baby, it is best not to use this or to stop it several months before trying to conceive.
+
+Depression
+
+Some people have experienced severe depression when taking finasteride. Before taking finasteride, read and keep the finasteride patient cards and patient information leaflet within your pack and inform your doctor if you have any personal history of depression or suicidal thought. You should stop taking this medication immediately if you notice that your mood is affected and speak to your doctor.
+
+Finasteride and your prostate
+
+Finasteride can lower the level of a prostate protein called PSA (prostate-specific antigen) in your blood. Because of this, it’s recommended that you see your GP for a prostate check (rectal examination) and a PSA blood test before starting treatment, and then at regular intervals while taking it.
+
+How often this is needed will depend on your age and personal risk factors. These checks help to detect any prostate problems, including prostate cancer, as early as possible.
+
+Sexual problems
+
+If you experience decreased sex drive, difficulty having an erection or ejaculation problems on finasteride, you should contact your doctor for medical advice.
+
+This medication is prescribed for your own personal use
+
+If you are requesting any follow-up medication, you confirm you are tolerating your treatment and any side effects experienced.
+
+Your answers are used to make medical decisions
+
+Answer the questions honestly and as accurately as you can. Our doctors rely on this information to prescribe treatment safely. Missing or incorrect information can increase the risk of side effects or lead to serious risk to your health.
+
+In case of questions, please contact us.
+
+By continuing, you confirm that you have understood the information provided, especially around treatment options, side effects, and effectiveness.
+Please tick to acknowledge that it is best practice to inform your GP of any private treatment you receive. All treatment and messaging is completely confidential. However, you can easily update your GP by downloading a GP letter from the ‘Order History’ section of your account and sending it to them. If you prefer, we can send this letter directly to your GP, just send us their details
+Please tick here to signify that you have read, understand and agree to abide by our terms and conditions and privacy and cookie policy.
+Next
+Secure payment
+Authorised and regulated
+Regulation | Privacy notice | Terms and Conditions | Cookie policy | Cookie Preferences
+© 2026 Superdrug Online Doctor. All rights reserved | Registered Company Number: 07392646
+
+--- CONTROLS ---
+  button (2): × Close  ·  Next [disabled]
+  radio (27): Yes, by my GP  ·  Yes, by a specialist  ·  No, self-diagnosis [checked]  ·  A  ·  B  ·  C [checked]  ·  D  ·  E  ·  No pattern fits well  ·  Yes  ·  No [checked]  ·  Yes  ·  No [checked]  ·  In the last month  ·  More than a month ago  ·  Suddenly  ·  Gradually (over months)  ·  Yes  ·  No  ·  Yes  ·  No  ·  Yes  ·  No  ·  Yes  ·  No  ·  Yes  ·  No
+  checkbox (8): Prostate cancer  ·  Breast cancer  ·  Liver condition  ·  Any type of skin conditions  ·  None of the above  ·  Almost done. Important information to read and confirm you agree and understand: Trying for a baby Finasteride may affect male fertility whi  ·  Please tick to acknowledge that it is best practice to inform your GP of any private treatment you receive. All treatment and messaging is c  ·  Please tick here to signify that you have read, understand and agree to abide by our terms and conditions and privacy and cookie policy.
+
+--- LINKS ---
+  link (9): Help? -> #  ·  message us -> /account/#/message/new/?utm_source=weight-loss&utm_campaign=questionnaire&utm_term=&utm_content=message-us  ·  terms and conditions -> https://onlinedoctor.superdrug.com/terms.html  ·  privacy and cookie policy -> https://onlinedoctor.superdrug.com/privacy.html  ·  Regulation -> /regulation.html  ·  Privacy notice -> /privacy.html  ·  Terms and Conditions -> /terms.html  ·  Cookie policy -> /cookie-notice.html  ·  Cookie Preferences -> javascript: window.OneTrust.ToggleInfoDisplay()

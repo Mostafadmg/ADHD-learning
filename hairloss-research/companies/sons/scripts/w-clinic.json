@@ -1,0 +1,1 @@
+{ "start": "https://shop.sons.co.uk/clinics/british-hair-clinic", "steps": [ {"do":"wait","ms":3000} ] }

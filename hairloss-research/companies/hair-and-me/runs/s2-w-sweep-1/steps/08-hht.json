@@ -1,0 +1,64 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 2,
+   "sectionTitle": "YOUR HAIR"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 8009,
+    "inputConfig": {
+     "options": [
+      {
+       "label": "Wearing a hat or head covering",
+       "value": "Wearing a hat or head covering"
+      },
+      {
+       "label": "Using hairstyles to hide thin areas",
+       "value": "Using hairstyles to hide thin areas"
+      },
+      {
+       "label": "Shaving my head",
+       "value": "Shaving my head"
+      },
+      {
+       "label": "Wearing a wig, hairpiece or extensions",
+       "value": "Wearing a wig, hairpiece or extensions"
+      },
+      {
+       "label": "Applying hair fibres",
+       "value": "Applying hair fibres"
+      },
+      {
+       "exclusive": true,
+       "label": "None of the above",
+       "value": "None of the above"
+      }
+     ]
+    },
+    "inputType": "multi_select_checkbox",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Are you hiding your hair loss in any of the following ways?",
+  "type": "question"
+ }
+}

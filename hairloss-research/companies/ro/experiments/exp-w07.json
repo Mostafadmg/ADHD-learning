@@ -1,0 +1,39 @@
+{
+ "start": "https://start.ro.co/tefcyb/",
+ "locale": "en-US",
+ "timezone": "America/Chicago",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "click",
+   "text": "More than a year",
+   "settle": 3500
+  },
+  {
+   "do": "click",
+   "text": "Gradually",
+   "settle": 3500
+  },
+  {
+   "do": "click",
+   "text": "All over"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 3500
+  },
+  {
+   "do": "click",
+   "text": "3",
+   "settle": 4000
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  }
+ ]
+}

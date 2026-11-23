@@ -1,0 +1,9 @@
+{ "start": "https://onlinedoctor.superdrug.com/propecia.html", "steps": [
+ {"do":"goto","url":"https://onlinedoctor.superdrug.com/regaine-for-men.html"},
+ {"do":"goto","url":"https://onlinedoctor.superdrug.com/alpecin.html"},
+ {"do":"goto","url":"https://onlinedoctor.superdrug.com/topical-finasteride.html"},
+ {"do":"goto","url":"https://onlinedoctor.superdrug.com/minoxidil.html"},
+ {"do":"goto","url":"https://onlinedoctor.superdrug.com/hair-loss-in-women.html"},
+ {"do":"goto","url":"https://onlinedoctor.superdrug.com/our-services.html"},
+ {"do":"goto","url":"https://onlinedoctor.superdrug.com/sitemap.xml"}
+] }

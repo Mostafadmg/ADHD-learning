@@ -1,0 +1,1 @@
+{ "start": "https://uk.treated.com/consultation-startup?condition=024&uf=cond", "steps": [ {"do":"click","text":"Start now"}, {"do":"wait","ms":5000} ] }

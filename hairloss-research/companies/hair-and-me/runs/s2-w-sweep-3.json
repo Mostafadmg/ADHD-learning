@@ -1,5 +1,5 @@
 {
- "_about": "Stage 2 SWEEP s2-w-sweep-3 (women baseline): several low-priority answers changed at once as a group test. SWEEP (women, 3 answers changed together): gender identity Don't know; thinning at the crown; noticed recently, in the past few weeks",
+ "_about": "Stage 2 SWEEP s2-w-sweep-3 (women baseline): several low-priority answers changed at once as a group test. SWEEP (women, 8 non-medical answers changed together): gender identity Don't know; Still exploring; Coily; three styling habits; scalp Dry; thinning at the crown; noticed recently, in the past few weeks; influenced by the discounted trial",
  "start": "https://www.hairandme.com/c/suh/new",
  "answers": {
   "tp": [
@@ -10,7 +10,7 @@
    "Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us."
   ],
   "js": [
-   "Ready to start treatment"
+   "Still exploring my options"
   ],
   "pds": [
    {
@@ -31,10 +31,12 @@
   ],
   "mi": [],
   "ht": [
-   "Straight"
+   "Coily"
   ],
   "hs": [
-   "None of the above"
+   "Heatless styling (e.g. rollers, curling rods)",
+   "Protective styles (e.g. braids, twists, faux locs)",
+   "Chemical processing (e.g. perms, relaxers, keratin treatments)"
   ],
   "hw": [
    "3-4 times per week"
@@ -72,7 +74,7 @@
    }
   },
   "sc": [
-   "Normal"
+   "Dry"
   ],
   "scc": [
    "None of the above"
@@ -121,7 +123,7 @@
    }
   },
   "di": [
-   "I'm looking for a long-term effective haircare treatment"
+   "I want the discounted trial"
   ],
   "rj": [],
   "el": {
@@ -165,10 +167,15 @@
   "flow": "women",
   "steps": [
    "pds",
+   "js",
+   "ht",
+   "hs",
+   "sc",
    "htaf",
-   "htc"
+   "htc",
+   "di"
   ],
   "sweep": true,
-  "desc": "SWEEP (women, 3 answers changed together): gender identity Don't know; thinning at the crown; noticed recently, in the past few weeks"
+  "desc": "SWEEP (women, 8 non-medical answers changed together): gender identity Don't know; Still exploring; Coily; three styling habits; scalp Dry; thinning at the crown; noticed recently, in the past few weeks; influenced by the discounted trial"
  }
 }

@@ -1,0 +1,15 @@
+STEP 22 click "Next →"
+URL: https://app.forhims.co.uk/flow/a9a88e4a-89b9-47ae-8138-3a1acaa41594?t=hair&anon_flow_key=hair
+TITLE: Hims
+
+--- VISIBLE TEXT ---
+At Hims, we offer treatments with ingredients that have been shown to stop hair loss and promote regrowth.
+
+Why these two? →
+←
+
+--- CONTROLS ---
+  button (3): Why these two? →  ·  ←  ·  Your answers
+
+--- LINKS ---
+  link (1): Navigate home -> /profile

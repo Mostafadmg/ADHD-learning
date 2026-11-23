@@ -1,0 +1,13 @@
+
+!!!!! STEP 25 FAILED: click "Your answers"
+nothing visible matches "Your answers"
+
+===== STEP 25 FAILED click "Your answers" =====
+URL: https://www.forhims.co.uk/
+TEXT: Personalised ⏎ healthcare ⏎ for you ⏎ Get the treatment you need today. ⏎ Approved online with free delivery. ⏎   ⏎ Explore treatments ⏎ Lose weight ⏎ Have great sex ⏎ Regrow hair ⏎ Have longer sex ⏎ Access a range of  ⏎ doctor-trusted weight  ⏎ loss treatments ⏎ Care for your schedule ⏎ Get 100% online care with access to 24/7 messaging, check-ins and flexible treatment tailored to your evolving goals. ⏎ Guides for your goals ⏎ Get a personalised weight loss plan designed with one goal in mind: helping you feel happy in your body. ⏎ We’re on a mission to help the world feel great through the power of better health. ⏎ Get started
+CONTROLS:
+  button (6): Accept all  ·  Customise  ·  Sex  ·  Learn  ·  LOGIN  ·  Explore treatments
+  links (12, full list in 25.txt): Privacy Policy  ·  Link to homepage  ·  Weight  ·  Hair  ·  Treatments  ·  Messaging  ·  Profile  ·  Lose weight  ·  Have great sex  ·  Regrow hair  ·  Have longer sex  ·  Get started
+
+[walk] 25 step(s), exit 2, 39 JSON bodies saved -> runs/verify-22-back-from-wall
+runs/verify-22-back-from-wall redacted 23

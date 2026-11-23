@@ -1,0 +1,1 @@
+{"steps":[{"do":"click","selector":"label:text-is(\"I would like to be considered for finasteride and will stop taking finasteride 12 weeks prior to trying for a baby.\")","settle":2800},{"do":"snap","settle":600}]}

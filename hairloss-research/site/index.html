@@ -1,0 +1,285 @@
+<title>Hair Loss Consultation Atlas</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: one reading column (max 980px). A sticky top bar switches between four views;
+   a company opens as its own view with a tab row. Meaning is carried by small coloured labels, never by nested boxes. */
+:root {
+  --bg: #eef3f3; --surface: #ffffff; --ink: #11272b; --muted: #55696e; --line: #d5e0e1; --soft: #f5f8f8;
+  --accent: #0b7a75; --accent-ink: #075955; --accent-soft: #dcf1ee;
+  --stop: #b93424; --stop-soft: #fbe6e2; --remove: #b05a06; --remove-soft: #fcecd9; --add: #1b7f3a; --add-soft: #def3e4;
+  --switch: #6b42b8; --switch-soft: #ebe4f8; --more: #1f5fa8; --more-soft: #e0ecf9; --warn: #8a6a00; --warn-soft: #f8efcc;
+  --none: #5f7074; --none-soft: #e9eeee;
+  --display: "Fredoka", "Trebuchet MS", system-ui, sans-serif; --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --r: 14px;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0e191b; --surface: #15262a; --ink: #e4efef; --muted: #9cb1b5; --line: #29403f; --soft: #1a2f33;
+  --accent: #55cfc4; --accent-ink: #8fe3da; --accent-soft: #173c3a;
+  --stop: #ff8f7e; --stop-soft: #43201b; --remove: #f5ae62; --remove-soft: #40290f; --add: #6fd591; --add-soft: #163724;
+  --switch: #bda2f2; --switch-soft: #2d2348; --more: #86b9f2; --more-soft: #172f4b; --warn: #e6c85a; --warn-soft: #3a3110;
+  --none: #9fb0b3; --none-soft: #22363a; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0e191b; --surface: #15262a; --ink: #e4efef; --muted: #9cb1b5; --line: #29403f; --soft: #1a2f33;
+  --accent: #55cfc4; --accent-ink: #8fe3da; --accent-soft: #173c3a;
+  --stop: #ff8f7e; --stop-soft: #43201b; --remove: #f5ae62; --remove-soft: #40290f; --add: #6fd591; --add-soft: #163724;
+  --switch: #bda2f2; --switch-soft: #2d2348; --more: #86b9f2; --more-soft: #172f4b; --warn: #e6c85a; --warn-soft: #3a3110;
+  --none: #9fb0b3; --none-soft: #22363a; color-scheme: dark }
+
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--ink); font: 400 16px/1.55 var(--body); margin: 0 }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface) }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.2; text-wrap: balance; margin: 0 }
+h1 { font-size: clamp(1.6rem, 4.5vw, 2.15rem) } h2 { font-size: 1.3rem } h3 { font-size: 1.05rem }
+p { margin: 0 } a { color: var(--accent-ink) } a:focus-visible, button:focus-visible, summary:focus-visible, select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px }
+button { font: inherit; color: inherit; cursor: pointer }
+.wrap { max-width: 980px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+
+/* top bar */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9; background: var(--surface); border-bottom: 1px solid var(--line) }
+.bar .wrap { display: flex; align-items: center; gap: 12px; padding-block: 8px; flex-wrap: wrap }
+.brand { font: 600 1.02rem var(--display); margin-right: auto; white-space: nowrap }
+.nav { display: flex; gap: 4px; overflow-x: auto; max-width: 100%; scrollbar-width: none } .nav button { white-space: nowrap }
+@media (max-width: 640px) { .bar .wrap { gap: 2px } .brand { font-size: .9rem; width: 100% } .nav button { padding: 6px 10px; min-height: 36px } }
+.nav button { border: 0; background: none; padding: 8px 12px; border-radius: 999px; font-weight: 500; min-height: 40px; color: var(--muted) }
+.nav button[aria-current="page"] { background: var(--accent-soft); color: var(--accent-ink) }
+main { padding-block: 22px 60px; display: flex; flex-direction: column; gap: 20px }
+.lede { color: var(--muted); max-width: 68ch }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 20px }
+.stack { display: flex; flex-direction: column; gap: 12px } .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center }
+.muted { color: var(--muted) } .small { font-size: .875rem } .eyebrow { font: 600 .74rem var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }
+
+/* labels */
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px; border-radius: 999px; font-size: .8rem; font-weight: 500; background: var(--none-soft); color: var(--none); white-space: nowrap }
+.chip.acc { background: var(--accent-soft); color: var(--accent-ink) }
+.e-hard-stop { background: var(--stop-soft); color: var(--stop) } .e-product-removed { background: var(--remove-soft); color: var(--remove) }
+.e-product-added { background: var(--add-soft); color: var(--add) } .e-product-switched, .e-strength-changed { background: var(--switch-soft); color: var(--switch) }
+.e-extra-questions, .e-skip-questions { background: var(--more-soft); color: var(--more) } .e-soft-warning, .e-flag-for-clinician { background: var(--warn-soft); color: var(--warn) }
+.ev { font-size: .74rem; padding: 1px 8px; border-radius: 6px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap }
+.ev-observed { border-color: var(--accent); color: var(--accent-ink) } .ev-code { border-color: var(--more); color: var(--more) }
+.ev-inferred, .ev-unknown { border-style: dashed }
+
+/* method strip + stats */
+.method { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px }
+.method b { font-family: var(--display); font-size: 1.02rem; display: block } .method .n { color: var(--accent-ink); font: 600 .8rem var(--body); letter-spacing: .06em }
+.stats { display: flex; gap: 22px; flex-wrap: wrap } .stats div { min-width: 0 } .stats b { font: 600 1.5rem var(--display); font-variant-numeric: tabular-nums; display: block; line-height: 1.1 }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: .85rem; color: var(--muted) } .legend span { display: inline-flex; gap: 6px; align-items: center }
+
+/* company grid */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px }
+.co { text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 16px; display: flex; flex-direction: column; gap: 10px; min-width: 0 }
+.co:hover { border-color: var(--accent) } .co h3 { font-size: 1.12rem }
+.co .model { color: var(--muted); font-size: .9rem; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden }
+.co .nums { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; font-variant-numeric: tabular-nums }
+.co .nums b { font: 600 1.1rem var(--display); display: block } .co .nums span { font-size: .72rem; color: var(--muted) }
+.co .wall { font-size: .82rem; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden }
+
+/* tabs */
+.tabs { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 2px; scrollbar-width: thin }
+.tabs button { border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: 8px 14px; min-height: 42px; white-space: nowrap; font-weight: 500 }
+.tabs button[aria-selected="true"] { background: var(--accent); border-color: var(--accent); color: var(--surface) }
+.filters { display: flex; gap: 6px; flex-wrap: wrap }
+.filters button { border: 1px solid var(--line); background: none; border-radius: 999px; padding: 5px 12px; font-size: .85rem; min-height: 36px }
+.filters button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink) }
+
+/* rules */
+.rule { border-top: 1px solid var(--line); padding: 14px 0; display: flex; flex-direction: column; gap: 6px } .rule:first-child { border-top: 0; padding-top: 0 }
+.rule .k { font: 600 .72rem var(--body); letter-spacing: .07em; text-transform: uppercase; color: var(--muted); margin-right: 6px }
+.rule .then { font-weight: 500 }
+/* questions */
+details.q { border-top: 1px solid var(--line) } details.q:first-of-type { border-top: 0 }
+details.q > summary { list-style: none; cursor: pointer; padding: 12px 0; display: grid; grid-template-columns: 2.2rem 1fr; gap: 6px 8px; align-items: start }
+details.q > summary::-webkit-details-marker { display: none }
+.qn { font: 600 .95rem var(--display); color: var(--accent-ink); font-variant-numeric: tabular-nums }
+.qmeta { grid-column: 2; display: flex; gap: 6px; flex-wrap: wrap }
+.qbody { padding: 0 0 16px 2.2rem; display: flex; flex-direction: column; gap: 10px }
+.opt { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 8px 0; border-top: 1px dashed var(--line) }
+.opt .lab { font-weight: 600 } .opt .fx { color: var(--muted); font-size: .92rem }
+@media (max-width: 560px) { .qbody { padding-left: 0 } }
+/* products */
+.prod { border-top: 1px solid var(--line); padding: 14px 0; display: flex; flex-direction: column; gap: 6px } .prod:first-of-type { border-top: 0 }
+.kv { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 2px 10px; font-size: .92rem } .kv dt { color: var(--muted) } .kv dd { margin: 0 }
+@media (max-width: 480px) { .kv { grid-template-columns: 1fr } .kv dd { margin-bottom: 4px } }
+ul.plain { margin: 0; padding-left: 1.15rem; display: flex; flex-direction: column; gap: 6px }
+details.more > summary { cursor: pointer; color: var(--accent-ink); font-weight: 500; padding: 6px 0 }
+/* tables */
+.scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r); background: var(--surface) }
+table { border-collapse: collapse; width: 100%; font-size: .86rem } th, td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top }
+th { font-weight: 600; background: var(--soft); white-space: nowrap } tbody th { position: sticky; left: 0; background: var(--surface); z-index: 1; white-space: normal; min-width: 8.5rem }
+td.yes { color: var(--ink) } td.no { color: var(--line) } .cmp { font-size: .7rem; color: var(--accent-ink); font-weight: 600; letter-spacing: .04em }
+.md h1 { font-size: 1.4rem; margin: 1.2em 0 .5em } .md h2 { margin: 1.4em 0 .5em } .md h3 { margin: 1.1em 0 .4em } .md p, .md ul, .md ol { margin: 0 0 .8em; max-width: 72ch } .md li { margin-bottom: .3em }
+.md table { margin-bottom: 1em } .md .tw { overflow-x: auto } .md blockquote { margin: 0 0 .8em; padding-left: 12px; border-left: 3px solid var(--line); color: var(--muted) } .md a { overflow-wrap: anywhere }
+.back { border: 0; background: none; color: var(--accent-ink); font-weight: 500; padding: 6px 0; min-height: 40px; text-align: left }
+.note { background: var(--warn-soft); color: var(--ink); border-radius: var(--r); padding: 14px 16px } .note b { color: var(--warn) }
+.empty { color: var(--muted); padding: 30px 0; text-align: center }
+select { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); min-height: 42px; max-width: 100% }
+</style>
+
+<div class="bar"><div class="wrap">
+  <span class="brand">Hair Loss Consultation Atlas</span>
+  <nav class="nav" id="nav" aria-label="Sections">
+    <button data-go="home">Companies</button><button data-go="compare">Compare</button><button data-go="blueprint">Our company</button><button data-go="evidence">Background</button>
+  </nav>
+</div></div>
+<main class="wrap" id="app"><p class="empty">Loading the research…</p></main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+<script>
+(() => {
+  const app = document.getElementById('app');
+  const S = { index: null, cache: {}, tab: 'engine', eff: 'all', flow: null, onlyDeciding: true, doc: null, extra: {} };
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const CAT = { 'rx-topical-compounded': 'Prescription topical, compounded', 'rx-topical-licensed': 'Prescription topical, licensed', 'rx-oral': 'Prescription tablets and capsules', 'rx-oral-compounded': 'Prescription oral, compounded', 'otc-medicine': 'Pharmacy medicine (no prescription)', 'cosmetic': 'Cosmetic', 'supplement': 'Supplement', 'device': 'Device', 'bundle': 'Bundle', 'service': 'Plan or service' };
+  const ROLE = { 'eligibility-gate': 'Eligibility gate', 'safety-screen': 'Safety screen', 'diagnosis': 'Diagnosis', 'product-selector': 'Product selector', 'personalisation': 'Personalisation', 'expectation-setting': 'Sets expectations', 'marketing': 'Marketing', 'data-capture': 'Data capture', 'consent': 'Consent', 'identity': 'Identity' };
+  const QUIET = ['none', 'next-question', 'marketing-only', 'unknown'];
+  let EFF = {};
+  const effChip = t => `<span class="chip e-${esc(t)}">${esc(EFF[t] || t)}</span>`;
+  const ev = e => `<span class="ev ev-${esc(e)}" title="Evidence level">${esc(e)}</span>`;
+  const get = async f => { if (S.cache[f]) return S.cache[f]; const r = await fetch('data/' + f); if (!r.ok) throw new Error(f); return S.cache[f] = await r.json(); };
+  const getOpt = async f => { try { return await get(f); } catch (e) { return null; } };
+  const clip = (s, n) => { s = String(s || ''); return s.length > n ? s.slice(0, n - 1).replace(/\s+\S*$/, '') + '…' : s; };
+  const more = (s, n) => { s = String(s || ''); return s.length <= n ? `<p>${esc(s)}</p>` : `<p>${esc(clip(s, n))}</p><details class="more"><summary>Read the full note</summary><p>${esc(s)}</p></details>`; };
+  const list = a => (a && a.length) ? `<ul class="plain">${a.map(x => `<li>${esc(typeof x === 'string' ? x : (x.text || JSON.stringify(x)))}</li>`).join('')}</ul>` : '<p class="muted">Nothing recorded.</p>';
+
+  // ---------- home ----------
+  function home() {
+    const cs = S.index.companies; const tot = k => cs.reduce((n, c) => n + (c.counts[k] || 0), 0);
+    const groups = [...new Set(cs.map(c => c.group))];
+    const f = S.extra.findings;
+    return `
+    <header class="stack"><p class="eyebrow">Competitor research · built ${esc(S.index.built)}</p>
+      <h1>How every major hair-loss company decides what to sell you</h1>
+      <p class="lede">Each company's online consultation was mapped question by question. Then one answer was changed at a time to see what the engine does: add questions, stop the patient, or remove, add or switch a product.</p></header>
+    <section class="card stack">
+      <div class="stats"><div><b>${cs.length}</b><span class="muted small">companies</span></div><div><b>${tot('questions')}</b><span class="muted small">questions mapped</span></div><div><b>${tot('rules')}</b><span class="muted small">engine rules</span></div><div><b>${tot('experiments')}</b><span class="muted small">one-change tests</span></div><div><b>${tot('products')}</b><span class="muted small">products</span></div></div>
+      <div class="method">
+        <div><span class="n">STEP 1</span><b>Map</b><span class="muted small">Every product, every question and every answer option, word for word.</span></div>
+        <div><span class="n">STEP 2</span><b>Change one answer</b><span class="muted small">Replay the consultation with one answer different. Compare what comes next and what is offered.</span></div>
+        <div><span class="n">STEP 3</span><b>Verify</b><span class="muted small">A second reviewer re-runs the key tests and corrects the report.</span></div>
+      </div>
+      <div class="legend"><span>${ev('observed')} seen in a live replay</span><span>${ev('code')} read in the site's own code</span><span>${ev('docs')} the company says so</span><span>${ev('inferred')} reasoned, not seen</span></div>
+      <p class="small muted">Only public pages and steps that work without an account were used. No accounts were made, nothing was submitted to a clinician and nothing was ordered, so anything behind a sign-in is described from public documents and labelled.</p>
+    </section>
+    ${f ? `<section class="card stack"><h2>The big findings</h2>${f.map(x => `<div class="rule"><p class="then">${esc(x.title)}</p><p class="muted">${esc(x.text)}</p></div>`).join('')}</section>` : ''}
+    ${groups.map(g => `<section class="stack"><h2>${esc(g)}</h2><div class="grid">${cs.filter(c => c.group === g).map(card).join('')}</div></section>`).join('')}`;
+  }
+  const card = c => `<button class="co" data-go="${esc(c.slug)}">
+    <div class="row"><h3>${esc(c.company)}</h3>${c.verified ? '<span class="chip acc">verified</span>' : '<span class="chip">in review</span>'}</div>
+    <p class="model">${esc(c.model)}</p>
+    <div class="nums"><div><b>${c.counts.products}</b><span>products</span></div><div><b>${c.counts.questions}</b><span>questions</span></div><div><b>${c.counts.rules}</b><span>rules</span></div><div><b>${c.counts.hardStops}</b><span>stops</span></div></div>
+    <p class="wall"><b>Sign-in wall:</b> ${esc(c.accountWall || 'none found')}</p></button>`;
+
+  // ---------- compare ----------
+  function compare() {
+    const cs = S.index.companies, cols = S.index.matrixColumns;
+    const cell = (c, k) => { const m = c.matrix[k]; if (!m) return '<td class="no">·</td>'; const st = m.strengths.map(s => clip(s.split('(')[0].trim(), 14)).filter(Boolean).slice(0, 4).join(', '); return `<td class="yes">${esc(st || 'yes')}${m.compounded ? '<br><span class="cmp">COMPOUNDED</span>' : ''}</td>`; };
+    return `<header class="stack"><h1>Compare</h1><p class="lede">Who sells which active ingredient, and how much each consultation really asks before it wants an account.</p></header>
+    <section class="stack"><h2>Who sells what</h2><p class="muted small">Strengths as listed by each company. "Compounded" means an unlicensed, made-to-order product. A dot means not found on sale.</p>
+      <div class="scroll"><table><thead><tr><th>Company</th>${cols.map(c => `<th>${esc(c.name)}<br><span class="muted">${esc(c.route)}</span></th>`).join('')}</tr></thead>
+      <tbody>${cs.map(c => `<tr><th><a href="#${esc(c.slug)}">${esc(c.company)}</a></th>${cols.map(k => cell(c, k.key)).join('')}</tr>`).join('')}</tbody></table></div></section>
+    <section class="stack"><h2>How much does each consultation decide?</h2><p class="muted small">"Deciding questions" branch the flow or change the offer. Everything else is marketing, data capture or a note for the clinician.</p>
+      <div class="scroll"><table><thead><tr><th>Company</th><th>Questions</th><th>Before sign-in</th><th>Deciding</th><th>Hard stops</th><th>Rules</th><th>Where sign-in is forced</th></tr></thead>
+      <tbody>${cs.map(c => `<tr><th><a href="#${esc(c.slug)}">${esc(c.company)}</a></th><td>${c.counts.questions}</td><td>${c.counts.anonymousQuestions}</td><td>${c.counts.decidingQuestions}</td><td>${c.counts.hardStops}</td><td>${c.counts.rules}</td><td>${esc(clip(c.accountWall || 'none found', 150))}</td></tr>`).join('')}</tbody></table></div></section>`;
+  }
+
+  // ---------- one company ----------
+  const TABS = [['engine', 'Engine rules'], ['questions', 'Questions'], ['products', 'Products'], ['who', 'Who gets what'], ['verdict', 'Verdict'], ['proof', 'Proof and limits']];
+  function company(d) {
+    const s = S.index.companies.find(c => c.slug === d.slug) || { counts: {} };
+    return `<button class="back" data-go="home">‹ All companies</button>
+    <header class="stack"><p class="eyebrow">${esc(d.market)} · checked ${esc(d.checkedOn)}</p><h1>${esc(d.company)}</h1><p class="lede">${esc(d.model)}</p>
+      <div class="row">${(d.audiences || []).map(a => `<span class="chip acc">${esc(a)}</span>`).join('')}${(d.access.howTested || []).map(a => `<span class="chip">${esc(a.replace('-', ' '))}</span>`).join('')}<a class="small" href="${esc(d.website)}" target="_blank" rel="noopener">${esc(String(d.website).replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''))}</a></div></header>
+    <section class="note stack"><p><b>How far this could be tested.</b> Sign-in wall: ${esc(d.access.accountWall || 'none found')}</p>
+      <details class="more"><summary>What was and was not tested</summary><div class="stack"><p>${esc(d.access.coverageNote)}</p>${list(d.access.blockers)}</div></details></section>
+    <div class="tabs" role="tablist">${TABS.map(([k, t]) => `<button role="tab" aria-selected="${S.tab === k}" data-tab="${k}">${t}</button>`).join('')}</div>
+    <section class="card stack" id="pane">${pane(d)}</section>`;
+  }
+  function pane(d) {
+    const P = Object.fromEntries((d.products || []).map(p => [p.id, p.name])); const names = ids => (ids || []).map(i => P[i] || i);
+    if (S.tab === 'engine') {
+      const rules = d.rules || []; const counts = rules.reduce((m, r) => (m[r.effectType] = (m[r.effectType] || 0) + 1, m), {});
+      const shown = rules.filter(r => S.eff === 'all' || r.effectType === S.eff);
+      return `<h2>How the engine decides</h2>${more(d.engineSummary || 'No summary yet.', 520)}
+        <div class="filters" role="group" aria-label="Filter rules by effect"><button aria-pressed="${S.eff === 'all'}" data-eff="all">All ${rules.length}</button>${Object.keys(counts).sort((a, b) => counts[b] - counts[a]).map(k => `<button aria-pressed="${S.eff === k}" data-eff="${esc(k)}">${esc(EFF[k] || k)} ${counts[k]}</button>`).join('')}</div>
+        <div>${shown.map(r => `<article class="rule"><div class="row">${effChip(r.effectType)}<span class="small muted">${esc(r.id)} · ${esc(r.flow)}</span>${ev(r.evidence)}<span class="small muted">${esc(r.confidence)} confidence</span></div>
+          <p><span class="k">When</span>${esc(r.when)}</p><p class="then"><span class="k">Then</span>${esc(r.then)}</p>
+          ${(r.affects || []).length ? `<p class="small muted">Affects: ${esc(names(r.affects).join(' · '))}</p>` : ''}</article>`).join('') || '<p class="empty">No rules of this kind.</p>'}</div>`;
+    }
+    if (S.tab === 'questions') {
+      const flows = d.flows || []; if (!flows.length) return '<p class="empty">No consultation could be mapped for this company.</p>';
+      const f = flows.find(x => x.id === S.flow) || flows[0];
+      const deciding = q => q.branches || (q.options || []).some(o => !QUIET.includes(o.effectType));
+      const qs = (f.questions || []).slice().sort((a, b) => a.order - b.order); const shown = S.onlyDeciding ? qs.filter(deciding) : qs;
+      return `<h2>The consultation, question by question</h2>
+        ${flows.length > 1 ? `<label class="small muted" for="flowsel">Route</label><select id="flowsel">${flows.map(x => `<option value="${esc(x.id)}" ${x.id === f.id ? 'selected' : ''}>${esc(x.name)} (${(x.questions || []).length})</option>`).join('')}</select>` : `<p class="muted">${esc(f.name)}</p>`}
+        <p class="small muted">${esc(f.stagesSummary)}</p>
+        <div class="filters"><button aria-pressed="${S.onlyDeciding}" data-deciding="1">Only questions that change something (${qs.filter(deciding).length})</button><button aria-pressed="${!S.onlyDeciding}" data-deciding="0">All ${qs.length} questions</button></div>
+        <div>${shown.map(q => `<details class="q"><summary><span class="qn">${esc(q.order)}</span><span>${esc(q.text)}</span>
+            <span class="qmeta"><span class="chip">${esc(ROLE[q.engineRole] || q.engineRole)}</span>${q.branches ? '<span class="chip e-extra-questions">branches</span>' : ''}${q.stage !== 'anonymous' ? `<span class="chip e-soft-warning">${esc(q.stage === 'after-account' ? 'behind sign-in' : q.stage)}</span>` : ''}${ev(q.evidence)}</span></summary>
+          <div class="qbody"><dl class="kv"><dt>Why they ask</dt><dd>${esc(q.purpose)}</dd><dt>Shown</dt><dd>${esc(q.shownWhen)}</dd>${q.branchDetail ? `<dt>Downstream</dt><dd>${esc(q.branchDetail)}</dd>` : ''}<dt>Answer type</dt><dd>${esc(q.type)}</dd></dl>
+            ${(q.options || []).map(o => `<div class="opt"><div class="row"><span class="lab">${esc(o.label)}</span>${effChip(o.effectType)}${ev(o.evidence)}</div><p class="fx">${esc(o.effect)}${(o.affects || []).length ? ` <em>Affects: ${esc(names(o.affects).join(' · '))}</em>` : ''}</p></div>`).join('')}</div></details>`).join('') || '<p class="empty">No question on this route changes anything a visitor can see. Switch to all questions to read them.</p>'}</div>`;
+    }
+    if (S.tab === 'products') {
+      const cats = [...new Set((d.products || []).map(p => p.category))];
+      return `<h2>Products</h2>${cats.map(c => `<div class="stack"><p class="eyebrow">${esc(CAT[c] || c)} · ${(d.products || []).filter(p => p.category === c).length}</p><div>${(d.products || []).filter(p => p.category === c).map(p => `<article class="prod">
+        <div class="row"><h3>${p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.name)}</a>` : esc(p.name)}</h3>${ev(p.evidence)}</div>
+        <div class="row">${(p.actives || []).map(a => `<span class="chip acc">${esc(a.name)}${a.strength ? ' ' + esc(clip(a.strength, 40)) : ''}</span>`).join('')}</div>
+        <dl class="kv"><dt>Form</dt><dd>${esc(p.form)} · for ${esc(p.audience)}</dd><dt>Legal status</dt><dd>${esc(p.legalStatus)}</dd><dt>Price</dt><dd>${esc(p.price)}${p.priceDetail ? `<details class="more"><summary>More on price</summary>${esc(p.priceDetail)}</details>` : ''}</dd><dt>Offered when</dt><dd>${esc(p.recommendedWhen)}</dd></dl></article>`).join('')}</div></div>`).join('')}`;
+    }
+    if (S.tab === 'who') {
+      return `<h2>Who gets what</h2><p class="muted small">Each row is one kind of patient and what the consultation offered at the end.</p><div>${(d.recommendations || []).map(r => `<article class="rule"><p class="then">${esc(r.profile)}</p>
+        <div class="row">${names(r.offered).map(n => `<span class="chip acc">${esc(clip(n, 60))}</span>`).join('') || '<span class="chip e-hard-stop">nothing offered</span>'}${ev(r.evidence)}</div>${r.note ? more(r.note, 260) : ''}</article>`).join('') || '<p class="empty">No end offers could be recorded.</p>'}</div>`;
+    }
+    if (S.tab === 'verdict') {
+      return `<h2>Verdict</h2><div class="stack"><p class="eyebrow">What they do well</p>${list(d.strengths)}</div><div class="stack"><p class="eyebrow">Where they are weak</p>${list(d.weaknesses)}</div><div class="stack"><p class="eyebrow">Gaps we could use</p>${list(d.opportunities)}</div>`;
+    }
+    const v = d.verification;
+    return `<h2>Proof and limits</h2>${v ? `<div class="stack"><p class="eyebrow">Independent reviewer's verdict</p><p>${esc(v.verdict)}</p>
+        <details class="more"><summary>Re-checked (${(v.checked || []).length})</summary>${list(v.checked)}</details><details class="more"><summary>Corrected (${(v.corrected || []).length})</summary>${list(v.corrected)}</details><details class="more"><summary>Still unverified (${(v.stillUnverified || []).length})</summary>${list(v.stillUnverified)}</details></div>` : '<p class="muted">The independent review of this company has not finished yet.</p>'}
+      <div class="stack"><p class="eyebrow">What this report cannot tell you</p>${list(d.limitations)}</div>
+      <details class="more"><summary>One-change tests run (${(d.experiments || []).length})</summary><div class="scroll"><table><thead><tr><th>Test</th><th>What was changed</th><th>What happened</th></tr></thead><tbody>${(d.experiments || []).map(x => `<tr><td>${esc(x.id)}</td><td>${esc(x.changed)}</td><td>${esc(x.result)}</td></tr>`).join('')}</tbody></table></div></details>
+      <details class="more"><summary>Sources (${(d.sources || []).length})</summary><ul class="plain">${(d.sources || []).map(x => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title || x.url)}</a></li>`).join('')}</ul></details>`;
+  }
+
+  // ---------- documents (blueprint + background) ----------
+  const mdHtml = md => window.marked ? marked.parse(md, { mangle: false, headerIds: false }).replace(/<table>/g, '<div class="tw scroll"><table>').replace(/<\/table>/g, '</table></div>') : `<pre>${esc(md)}</pre>`;
+  async function docs(kind) {
+    const lib = await getOpt('docs.json');
+    const items = lib ? lib.filter(x => x.kind === kind) : [];
+    if (!items.length) return `<header class="stack"><h1>${kind === 'blueprint' ? 'Our company' : 'Background research'}</h1></header><p class="empty">${kind === 'blueprint' ? 'The plan for the new company is being written. It appears here once the competitor research is complete.' : 'The background research is still being fact-checked.'}</p>`;
+    const cur = items.find(x => x.id === S.doc) || items[0]; const body = await getOpt(cur.file);
+    return `<header class="stack"><h1>${kind === 'blueprint' ? 'Our company' : 'Background research'}</h1><p class="lede">${kind === 'blueprint' ? 'The competitor we would build, based on the gaps found in every company above.' : 'The clinical evidence, the UK rules, what customers complain about and the market numbers. Each file was fact-checked by a second reviewer.'}</p></header>
+      <div class="tabs" role="tablist">${items.map(x => `<button role="tab" aria-selected="${x.id === cur.id}" data-doc="${esc(x.id)}">${esc(x.title)}</button>`).join('')}</div>
+      <section class="card md">${body ? mdHtml(body.markdown) : '<p class="empty">Could not load this file.</p>'}</section>`;
+  }
+
+  // ---------- router ----------
+  async function render() {
+    const h = (location.hash || '#home').slice(1) || 'home';
+    document.querySelectorAll('#nav button').forEach(b => b.setAttribute('aria-current', (b.dataset.go === h || (b.dataset.go === 'home' && S.index.companies.some(c => c.slug === h))) ? 'page' : 'false'));
+    try {
+      if (h === 'home') app.innerHTML = home();
+      else if (h === 'compare') app.innerHTML = compare();
+      else if (h === 'blueprint' || h === 'evidence') app.innerHTML = await docs(h);
+      else if (S.index.companies.some(c => c.slug === h)) { const d = await get(h + '.json'); if (S.cur !== h) { S.cur = h; S.tab = 'engine'; S.eff = 'all'; S.flow = null; S.onlyDeciding = true; } app.innerHTML = company(d); }
+      else app.innerHTML = home();
+    } catch (e) { app.innerHTML = '<p class="empty">That part of the research could not be loaded. Go back to Companies and try again.</p>'; }
+  }
+  const go = h => { if (location.hash.slice(1) === h) render(); else location.hash = h; window.scrollTo(0, 0); };
+  document.addEventListener('click', async e => {
+    const t = e.target.closest('[data-go],[data-tab],[data-eff],[data-deciding],[data-doc]'); if (!t) return;
+    if (t.dataset.go) return go(t.dataset.go);
+    if (t.dataset.doc) { S.doc = t.dataset.doc; return render(); }
+    if (t.dataset.tab) S.tab = t.dataset.tab; if (t.dataset.eff) S.eff = t.dataset.eff; if (t.dataset.deciding) S.onlyDeciding = t.dataset.deciding === '1';
+    const d = S.cache[S.cur + '.json']; if (!d) return;
+    document.querySelectorAll('.tabs [data-tab]').forEach(b => b.setAttribute('aria-selected', b.dataset.tab === S.tab));
+    document.getElementById('pane').innerHTML = pane(d);
+  });
+  document.addEventListener('change', e => { if (e.target.id === 'flowsel') { S.flow = e.target.value; const d = S.cache[S.cur + '.json']; if (d) document.getElementById('pane').innerHTML = pane(d); } });
+  window.addEventListener('hashchange', render);
+  (async () => {
+    try { S.index = await get('index.json'); EFF = S.index.effectLabels || {}; S.extra.findings = await getOpt('findings.json'); render(); }
+    catch (e) { app.innerHTML = '<p class="empty">The research data could not be loaded.</p>'; }
+  })();
+})();
+</script>

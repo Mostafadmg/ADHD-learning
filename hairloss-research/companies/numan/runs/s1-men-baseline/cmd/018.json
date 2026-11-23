@@ -1,0 +1,1 @@
+{"steps":[{"do":"click","selector":"button:has-text(\"Select treatment\")","settle":5000},{"do":"snap","settle":1500}]}

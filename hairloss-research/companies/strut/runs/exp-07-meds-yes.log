@@ -1,0 +1,15 @@
+
+===== FINAL (after 27 steps) =====
+URL: https://start.struthealth.com/flow/6aa3d578f415d1603a6e0c85
+TEXT: 76% ⏎ Create account ⏎ A few details and you are ready to continue. ⏎ Sign up ⏎ Sign in ⏎ OR ⏎ FIRST NAME ⏎ LAST NAME ⏎ DATE OF BIRTH ⏎ PHONE NUMBER ⏎ EMAIL ⏎ PASSWORD ⏎ Show ⏎ Create account ⏎ Already have an account? Sign in
+CONTROLS:
+  button (4): Go back  ·  Show  ·  Create account [disabled]  ·  Sign in
+  tab (2): Sign up [true]  ·  Sign in [false]
+  input:text (2): FIRST NAME  ·  LAST NAME
+  input:date (1): DATE OF BIRTH
+  input:tel (1): PHONE NUMBER
+  input:email (1): EMAIL
+  input:password (1): PASSWORD
+  links: 
+
+[walk] 27 step(s), exit 0, 2 JSON bodies saved -> runs/exp-07-meds-yes

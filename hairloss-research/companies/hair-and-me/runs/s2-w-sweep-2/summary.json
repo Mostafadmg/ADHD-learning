@@ -1,0 +1,149 @@
+{
+ "run": "s2-w-sweep-2",
+ "flow": "women",
+ "changed": "SWEEP (women, 7 non-medical answers changed together): gender identity Transman/Transboy; Curly; four styling habits; washes once a week or less; thinning at the temples; timing Unsure; skin Dark brown or black",
+ "changedStep": null,
+ "baselinesPooled": [
+  "baseline-women",
+  "women-a",
+  "s2-base-women-1"
+ ],
+ "stepOrder": [
+  "tp",
+  "yhg",
+  "js",
+  "pds",
+  "pdsc",
+  "ht",
+  "hs",
+  "hw",
+  "hht",
+  "htp",
+  "hdw",
+  "htaf",
+  "htc",
+  "ar",
+  "st",
+  "sc",
+  "scc",
+  "smt",
+  "pt",
+  "tt",
+  "dt",
+  "pg",
+  "mp",
+  "mdf",
+  "mcf",
+  "al",
+  "rhf",
+  "rha",
+  "di",
+  "rj",
+  "el",
+  "ct",
+  "yd"
+ ],
+ "nSteps": 33,
+ "end": "account wall (yd)",
+ "newSteps": [],
+ "missingSteps": [],
+ "candidateEffects": [],
+ "noise": [
+  {
+   "step": "ar",
+   "key": "q429.config",
+   "where": "after-change",
+   "alsoIn": []
+  },
+  {
+   "step": "st",
+   "key": "q9346.options",
+   "where": "changed-step",
+   "alsoIn": [
+    "s2-m-htam-allover-ext",
+    "s2-m-htam-crown",
+    "s2-m-mcm-bp-elevated"
+   ]
+  }
+ ],
+ "bag": {
+  "items": [
+   [
+    "hairTreatment",
+    "Personalised treatment",
+    "4 week supply · 12ml",
+    "Prescription",
+    3499,
+    null
+   ]
+  ],
+  "shipping": 0,
+  "total": 3499,
+  "promo": "",
+  "shippingMsg": "Your order qualifies for complimentary standard shipping."
+ },
+ "bagItemsSameAsBaseline": true,
+ "posted": {
+  "hs": [
+   [
+    253,
+    [
+     "Air dry",
+     "Colour treatments, bleaching and dyes",
+     "Product-based styling (e.g. wax, clay, pomade, hairspray)",
+     "Heat-based styling tools (e.g. straightening, curling, blow-drying)"
+    ]
+   ]
+  ],
+  "ht": [
+   [
+    4446,
+    "Curly"
+   ]
+  ],
+  "htaf": [
+   [
+    9322,
+    "I'm losing hair or thinning at my temples"
+   ]
+  ],
+  "htc": [
+   [
+    9310,
+    "Unsure"
+   ]
+  ],
+  "hw": [
+   [
+    8010,
+    "Once a week or less"
+   ]
+  ],
+  "pds": [
+   [
+    3039,
+    2
+   ],
+   [
+    3054,
+    4
+   ]
+  ],
+  "st": [
+   [
+    9346,
+    "Dark brown or black. It always tans darkly"
+   ]
+  ]
+ },
+ "nextAfterChange": {
+  "hs": "hw",
+  "ht": "hs",
+  "htaf": "htc",
+  "htc": "ar",
+  "hw": "hht",
+  "pds": "pdsc",
+  "st": "sc"
+ },
+ "sweep": true
+}

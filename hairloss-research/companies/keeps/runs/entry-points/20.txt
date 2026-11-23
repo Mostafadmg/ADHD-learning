@@ -1,0 +1,98 @@
+STEP 20 goto "https://www.keeps.com/not-eligible-user/alternatives"
+URL: https://www.keeps.com/not-eligible-user/alternatives
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+EXCLUSIVE OFFER: UP TO 50% OFF FIRST ORDER GET STARTED
+
+HAIR LOSS
+SEXUAL HEALTH
+NEW
+LEARN
+GET STARTED
+SIGN IN
+CART
+Consider these alternatives
+Unfortunately, we cannot provide prescription treatments to individuals assigned female at birth. We encourage you to explore these treatment alternatives.
+
+Over-the-counter options that are FDA-approved to treat hair loss
+
+Hair thickening shower and styling products
+
+SHOP KEEPS
+
+Prescription and over-the-counter treatments targeting women’s hair loss, regrowth, and dandruff
+
+Online evaluation and a personalized, provider-recommended treatment plan
+
+Consultation includes unlimited follow-ups with your provider for a full year
+
+VISIT NURX
+
+Providing inclusive care is important to us. If you have thoughts on how we can improve, please let us know athelp@keeps.com.
+
+GET STARTED
+
+OUR PRODUCTS
+
+HAIR LOSS 101
+
+LEARN
+
+OUR STORY
+
+FAQS
+
+CONTACT
+
+PRESS
+
+CAREERS
+
+Keep in the loop
+
+Thanks! You've signed up successfully.
+
+Keeps
+
+Cove
+
+Facet
+
+Nurx
+
+© 2026 Keeps
+
+Privacy
+
+Terms
+
+Informed Consent
+
+Accessibility
+
+Returns
+
+Shipping
+
+Your Privacy Choices
+
+My Cart
+
+Your cart is empty.
+
+Add an item to your cart to begin your journey with Keeps.
+
+SEE OUR PRODUCTS
+
+Not sure what’s right for you?
+
+Take the quiz
+
+--- CONTROLS ---
+  button (5): GET STARTED  ·  SIGN IN  ·  CART  ·  SHOP KEEPS  ·  VISIT NURX
+  input:email (1): Your Email
+  input:submit (1): (no label) = "Submit"
+
+--- LINKS ---
+  link (26): GET STARTED -> /hair-assessment-quiz  ·  SHOP KEEPS -> /our-products  ·  VISIT NURX -> https://app.nurx.com/service/hair-scalp-treatment  ·  help@keeps.com -> mailto:help@keeps.com  ·  GET STARTED -> /quiz  ·  OUR PRODUCTS -> /our-products  ·  HAIR LOSS 101 -> /hair-loss  ·  LEARN -> /learn  ·  OUR STORY -> /about-us  ·  FAQS -> /faq  ·  CONTACT -> /contact  ·  PRESS -> /press  ·  CAREERS -> /careers  ·  Keeps -> https://www.keeps.com/  ·  Cove -> https://www.withcove.com/  ·  Facet -> https://facet.thirtymadison.com/  ·  Nurx -> https://www.nurx.com  ·  Privacy -> https://patient.thirtymadison.com/dashboard/legals/privacy  ·  Terms -> https://patient.thirtymadison.com/dashboard/legals/terms-and-conditions  ·  Informed Consent -> https://patient.thirtymadison.com/dashboard/legals/informed-consent  ·  Accessibility -> https://patient.thirtymadison.com/dashboard/legals/accessibility  ·  Returns -> /faq/what-is-the-keeps-refund-and-return-policy  ·  Shipping -> /faq/category/orders-and-shipping  ·  Your Privacy Choices -> /not-eligible-user/alternatives#your-privacy-choices  ·  SEE OUR PRODUCTS -> /our-products  ·  Take the quiz -> /quiz

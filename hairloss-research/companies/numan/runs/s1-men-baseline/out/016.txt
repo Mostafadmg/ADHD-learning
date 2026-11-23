@@ -1,0 +1,198 @@
+COMMAND 016 {"steps":[{"do":"click","selector":"a:has-text(\"Learn more\")","settle":2500},{"do":"snap","settle":800}]}
+URL: https://www.numan.com/subscribe/hair-loss/5d3494f9-26f6-4c72-a833-e88e646ac7a1/product-selection#
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+Back
+Help
+Please select your treatment
+
+Our clinicians will ensure you’re prescribed the most appropriate treatment.
+
+Most effective
+
+See results in 180 days
+
+or your money back¹
+
+Hair Kit - Medicated Spray, Finasteride & Supplement
+Medicated Spray
+A sprayable minoxidil solution that not only helps to slow down hair loss, but also activates new hair growth.
+Finasteride
+A daily pill that helps to reset a receding hairline by promoting hair growth.
+Hair Growth Support supplement
+Contains vitamins A, C, E, and biotin. These help to maintain the health of each follicle for thicker, fuller hair.
+Learn more 
+Price
+£26.67
+Save 33%
+Select treatment
+
+¹ Claim a full refund between 180-210 days from order approval if treatment is not effective at stabilising or reversing hair loss. First time users only. Full Ts&Cs.
+
+² 94% men who used finasteride and 5% minoxidil combined showed an improvement in hair loss.
+
+OTHER TREATMENTS
+
+Hair Kit - Medicated Spray & Finasteride
+
+This kit combines two effective hair loss treatments — Medicated Spray and Finasteride — which have been clinically proven to reduce and reverse hair loss at the hairline and crown of the head.
+
+£22.67
+
+ 
+
+£36.00
+
+Save 37%
+Select
+ 
+Learn more
+Hair Kit - Combination Spray & Supplement
+
+This hair kit combines our Combination Spray - containing the 3 most effective treatments in 1 bottle - together with Hair Growth support supplement delivering a powerful blend of vitamins and minerals to improve the long-term hair health.
+
+£26.67
+
+ 
+
+£40.00
+
+Save 33%
+Select
+ 
+Learn more
+Finasteride
+
+Finasteride is the generic version of a medicine called Propecia. It has been clinically proven to be an effective treatment for male-pattern hair loss in 9 out of 10 men.
+
+£16.80
+
+ 
+
+£28.00
+
+Save 40%
+Select
+ 
+Learn more
+Triple-Action Spray
+
+Combat hair loss with the 3 most effective treatments in 1 easy-to-use spray. Finasteride reduces the conversion of testosterone to dihydrotestosterone (DHT). Minoxidil combats thinning hair and stimulate regrowth. Azelaic acid promotes hair growth and helps prevent further hair loss.
+
+£22.67
+
+ 
+
+£36.00
+
+Save 37%
+Select
+ 
+Learn more
+Extra Strength Spray
+
+Extra Strength Spray is a sprayable minoxidil solution that helps to slow and reverse hair loss caused by male-pattern baldness. It can make hair appear thicker by increasing the diameter of the hair shaft, and improve scalp coverage by reversing the shrinkage of hair follicles.
+
+£18.00
+
+ 
+
+£30.00
+
+Save 40%
+Select
+ 
+Learn more
+Regaine
+
+Regaine contains minoxidil which has been clinically proven to reduce hair loss and stimulate hair regrowth in men with male-pattern baldness.
+
+£51.67
+
+ 
+
+£65.00
+
+Save 21%
+Select
+ 
+Learn more
+Rosemary Oil
+
+Rosemary Oil is a natural remedy for stronger, healthier-looking hair. Infused with nutrients and oils, it’s formulated to nourish the scalp and fortify hair from root to tip.
+
+£14.00
+
+ 
+
+£23.33
+
+Save 40%
+Select
+Hair Kit - Medicated Spray, Finasteride & Supplement
+
+The Complete Hair Kit Pro provides a three-pronged attack against hair loss — Medicated Spray, Finasteride and Hair Growth Support Supplement — which can reduce and reverse hair loss across the entire scalp, including at the hairline and crown of the head. Medicated Spray is sprayed directly onto balding patches to encourage the regrowth of thicker hair. Finasteride is a daily tablet that can slow hair loss and help to restore a receding hairline. Our hair growth support supplements contain vitamins A, C, and E combined with grape seed extract, biotin, and selenium to improve your hair health inside and out.
+
+Effects last:
+Continuously when used daily
+Type of treatment:
+Tablets, liquid spray and capsules
+Contains:
+Finasteride (1mg), minoxidil (6%), vitamins A, C, E, biotin, selenium, and grape-seed extract
+How to use Medicated Spray
+
+When using a hair regrowth treatment such as Medicated Spray, it’s important to use it correctly for the best results. Using it properly will also help you to use it safely, which is key when applying any hair loss treatment to your hair.
+
+For the best regrowth results, it’s recommended that Medicated Spray is used twice a day (once in the morning and once at night).
+
+To use Medicated Spray
+In the morning:
+Make sure the scalp is completely dry before applying the spray.
+Aim the spray nozzle over the centre of the bald area of the scalp.
+Spray the solution once and spread the liquid with your fingertips to cover the bald area.
+Repeat a further five times to apply a dose of 1ml of the solution.
+Wash your hands thoroughly after use.
+At night:
+
+Perform steps 1-5 as described above.
+
+Do not use more than 2ml of Medicated Spray daily. Exceeding the recommended dose will not regrow your hair any faster and you may increase the risk of side effects.
+
+Side effects to be aware of
+Mental health: Finasteride can cause depression and suicidal thoughts. If you experience low mood or thoughts of self-harm, stop taking finasteride and contact your doctor immediately. If you are at risk of serious harm, call 999.
+Sexual dysfunction: Decreased libido, erectile dysfunction, and ejaculation problems can occur. These may happen without any change in mood.
+Persistence: Both mental health and sexual side effects may continue even after you stop taking finasteride. Report any side effects to your clinician promptly.
+Fertility: Do not take finasteride if you are trying to conceive.
+
+Full safety information and instructions are provided with your Medicated Spray, which you should read thoroughly before use.
+
+How to take finasteride
+
+Take one tablet each day. It usually takes about 3-6 months to notice an increase in hair density or reduction in hair loss when using finasteride. The best results are normally observed after 6 months of treatment.
+
+Finasteride will not work faster or better if you take it more than once a day.
+
+If you forget to take your tablet on a given day, do not take a double dose the next day.
+
+Full safety information and instructions are provided with your Finasteride, which you should read thoroughly before use.
+
+How to take the Hair Growth Support Supplement
+
+Take one tablet once per day. Do not exceed the stated dose. This product contains vitamin A. Do not take if you are pregnant or expecting to become pregnant except on the advice of a doctor.
+
+Full ingredients list, instructions and safety information are provided with your Hair Growth Support Supplement, which you should read thoroughly before use.
+
+--- CONTROLS ---
+  button (4):
+    - Help
+    - Select treatment
+    - Select
+    - Learn more
+
+--- LINKS ---
+  link (4):
+    - Back -> #
+    - Visit the main page -> /
+    - Learn more -> #
+    - Full Ts&Cs. -> /legal/terms-of-sale#termsMoneyBackGuarantee

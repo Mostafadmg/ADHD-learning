@@ -1,0 +1,21 @@
+COMMAND 010 {"steps":[{"do":"fill","selector":"textarea, input[type=text], input[type=number]","value":"Sertraline 50 mg once a day"},{"do":"click","text":"Next","settle":2800},{"do":"snap","settle":600}]}
+URL: https://www.numan.com/subscribe/hair-loss/2a4aca7c-c774-4fc3-8901-0684d205d1ec/sq/mental_health_medications_changed_yes_no
+TITLE: Have the doses of your medications changed in the last 3 months? | Numan
+
+--- VISIBLE TEXT ---
+75%
+Have the doses of your medications changed in the last 3 months?
+Yes
+No
+Back
+
+--- CONTROLS ---
+  radio (2):
+    - Yes (name: mental_health_medications_changed_yes_no)
+    - No (name: mental_health_medications_changed_yes_no)
+  button (1):
+    - Back
+
+--- LINKS ---
+  link (1):
+    - Visit the main page -> /

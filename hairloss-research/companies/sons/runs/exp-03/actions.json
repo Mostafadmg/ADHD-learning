@@ -1,0 +1,30 @@
+{
+ "_about": "Sons UK hair consultation, stage 2 one-change experiment exp-03. Changed: men-q03 declaration: ticked → left unticked. Everything else is the baseline man. The walk never types into the account form.",
+ "start": "https://shop.sons.co.uk/consultation/?logged_in=false",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2500,
+   "_q": "wait for survey to load"
+  },
+  {
+   "do": "click",
+   "text": "No",
+   "_q": "5140 existing customer"
+  },
+  {
+   "do": "click",
+   "text": "Male",
+   "_q": "5141 gender at birth"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "_q": "5142 continue"
+  },
+  {
+   "do": "wait",
+   "ms": 1000
+  }
+ ]
+}

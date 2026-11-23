@@ -1,0 +1,52 @@
+{
+ "heading": "Five actives. One compounded gel.",
+ "body": "A compounded topical gel that combines finasteride, minoxidil, tretinoin, fluocinolone, and biotin in one topical base, applied to the scalp once daily to target hair loss locally with potentially lower systemic exposure than oral options.*",
+ "activeIngredientsLabel": "Active Ingredients: Finasteride, Minoxidil, Fluocinolone, Tretinoin and Biotin in a compounded gel formulated for scalp adhesion.",
+ "ingredients": [
+  {
+   "name": "Finasteride",
+   "body": "Topical 5-alpha reductase inhibitor applied to the scalp, intended for localized scalp DHT reduction.*"
+  },
+  {
+   "name": "Minoxidil",
+   "body": "Vasodilator that may increase blood flow and nutrient delivery to hair follicles.*"
+  },
+  {
+   "name": "Tretinoin",
+   "body": "May enhance the penetration of other active ingredients through the scalp.*"
+  },
+  {
+   "name": "Fluocinolone",
+   "body": "A mild topical corticosteroid that may calm irritation, itching, and inflammation that can contribute to hair loss.*"
+  },
+  {
+   "name": "Biotin",
+   "body": "B-vitamin that may support keratin production.*"
+  }
+ ],
+ "safety": [
+  {
+   "title": "Common side effects",
+   "body": "Itching, burning, redness, flaking, dryness, scaling, peeling, stinging, changes in hair color or texture, irritation at the application site, and increased sun sensitivity."
+  },
+  {
+   "title": "Tell your healthcare provider",
+   "body": "Share any history of scalp conditions, sensitivities to topical medications, current prescriptions, and any history of low blood pressure or fainting."
+  },
+  {
+   "title": "Do not use if",
+   "body": "You are a woman or a child. Finasteride is a medication for men only. Women who are or may become pregnant should never handle finasteride-containing medications."
+  },
+  {
+   "title": "Seek medical care",
+   "body": "Severe scalp swelling, persistent rash, unexpected facial swelling, chest pain, fainting, or signs of an allergic reaction."
+  }
+ ],
+ "disclaimer": [
+  "All prescription medications require a valid and complete online consultation prior to approval and final pricing is determined. Compounded medications are not FDA-approved and have not been evaluated by the FDA for safety, effectiveness, or quality. A licensed provider may prescribe a compounded medication when they determine it is clinically appropriate for you.",
+  "Compounded Topical Finasteride Formula is not FDA-approved. Statements regarding hair loss, hair growth, scalp health, and follicle support have not been evaluated by the FDA.",
+  "The drug and medical information provided on this website is not meant to cover all adverse effects, drug interactions, warnings, medical uses, directions and precautions. The information provided is a medical resource and the judgment of your healthcare provider should not be substituted."
+ ],
+ "imageSrc": "/assets/v3-topicalfin-ingredients-scalp-apply.webp",
+ "imageAlt": "Hand applying a Hair Loss Solution dropper to a scalp"
+}

@@ -1,0 +1,23 @@
+STEP 10 goto "https://www.keeps.com/consultation/intake"
+URL: https://www.keeps.com/auth/sign-in?next=/consultation/intake
+TITLE: Sign In to Your Account | Keeps
+
+--- VISIBLE TEXT ---
+EXCLUSIVE OFFER: UP TO 50% OFF FIRST ORDER GET STARTED
+
+Welcome back!
+Please sign in
+EMAIL
+PASSWORD
+SIGN IN
+SIGN IN WITH GOOGLE
+SIGN UP
+FORGOT PASSWORD?
+
+--- CONTROLS ---
+  input:email (1): EMAIL
+  input:password (1): PASSWORD
+  button (2): SIGN IN  ·  SIGN IN WITH GOOGLE
+
+--- LINKS ---
+  link (3): GET STARTED -> /hair-assessment-quiz  ·  SIGN UP -> /quiz  ·  FORGOT PASSWORD? -> /users/password/new

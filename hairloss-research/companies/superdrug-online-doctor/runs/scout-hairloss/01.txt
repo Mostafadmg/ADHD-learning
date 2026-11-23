@@ -1,0 +1,22 @@
+STEP 01 scroll ""
+URL: https://onlinedoctor.superdrug.com/hair-loss.html
+TITLE: 404 - Page not found | Superdrug Online Doctor
+
+--- VISIBLE TEXT ---
+This is not what the doctor ordered…
+
+Sorry, we could not find that page on our website
+
+We are really sorry, this page can’t be found. We suggest searching for a service, product or topic.
+
+Useful links:
+
+All treatments and test kits
+Contact us
+
+--- CONTROLS ---
+  input:search (1): (no label)
+  button (3): Manage cookies  ·  Deny Cookies  ·  Accept cookies
+
+--- LINKS ---
+  link (14): Skip to content -> #main-content  ·  Skip to login -> #login-button  ·  Skip to search -> #search-button  ·  Account -> /account/  ·  Men's Health -> /mens-health.html  ·  Women's Health -> /womens-health.html  ·  Weight Loss & Wellbeing -> /wellbeing.html  ·  Sexual Health -> /sexual-health.html  ·  Skin & Hair Health -> /skin-condition-treatments.html  ·  Chronic Health -> /chronic-health.html  ·  Travel Health -> /travel.html  ·  Testing Services -> /at-home-test-kits.html  ·  All treatments and test kits -> /our-services.html  ·  Contact us -> /contact.html

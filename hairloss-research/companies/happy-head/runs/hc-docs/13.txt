@@ -1,0 +1,78 @@
+STEP 13 goto "https://happyhead.zendesk.com/hc/en-us/articles/4402314831383-What-is-your-return-policy"
+URL: https://happyhead.zendesk.com/hc/en-us/articles/4402314831383-What-is-your-return-policy
+TITLE: What is your return policy? – Happy Head
+
+--- VISIBLE TEXT ---
+Happy Head  Billing
+Articles in this section
+Does Happy Head accept outside insurance, FSA, or HSA?
+About Happy Head's pricing
+Subscription vs. One-Time Orders
+Do you offer discounts for first-time customers?
+What is your return policy?
+What is your return policy?
+2 months ago Updated
+
+We want you to feel confident in your purchase.
+
+Prescription products
+If you are not satisfied with your most recent prescription order, you may request either:
+a complimentary reformulation, pending the dermatologist’s recommendation, or
+a refund if you choose to cancel.
+To receive a refund, the newest bottle(1) must be returned within 30 days of delivery.
+The product must be returned in its original packaging.
+Customers are responsible for the cost of return shipping.
+If the return is approved, the refund will cover the full purchase amount excluding return shipping costs.
+Non-prescription products
+
+We do not accept returns for non-prescription items, including:
+
+Shampoo
+Conditioner
+Hair serum
+Scalp dermaroller
+2% Minoxidil Topical Solution, USP (Women’s Formula)
+5% Minoxidil Topical Solution, USP (Men’s Formula)
+Anti-Gray Serum
+Hair Growth Supplements
+Reformulation Option
+
+If you are unsatisfied with your prescription treatment, you may be eligible for a complimentary reformulation.
+
+Reformulations are available pending the dermatologist’s recommendation.
+This option may be offered instead of a return, depending on your treatment needs and medical review.
+Subscription Management
+
+You can manage your subscription at any time through your account settings.
+
+You may adjust your monthly subscription directly in your account.
+To prevent any further charges, you must contact customer support directly to request cancellation.
+How to Get Help
+
+To request a return, ask about a reformulation, or cancel your subscription, please contact customer support directly.
+
+ 
+
+ 
+
+Have more questions? Submit a request
+Recently viewed articles
+How can I cancel my subscription?
+Subscription vs. One-Time Orders
+How do I know if the SuperCapsule™ + ED Performance is right for me?
+Should I choose a SuperCapsule™ or topical treatment?
+What if I don't want a prescription?
+Related articles
+How can I cancel my subscription?
+Do you offer discounts for first-time customers?
+Subscription vs. One-Time Orders
+How can I pause my subscription?
+How do I change my billing or shipping address?
+
+--- CONTROLS ---
+  button (2): Why Happy Head?  ·  Products
+  checkbox (1): (no label)
+  input:search (1): Search
+
+--- LINKS ---
+  link (52): MEN -> https://www.happyhead.com/home  ·  WOMEN -> https://www.happyhead.com/women  ·  LOGIN -> https://my.happyhead.com/my-account  ·  START NOW -> https://www.form.happyhead.com/get-started/?l=false&ph=true  ·  Men -> https://www.happyhead.com/home  ·  Women -> /women  ·  Happy Head -> /hc/en-us  ·  Billing -> /hc/en-us/sections/1500002710942-Billing  ·  Does Happy Head accept outside insurance, FSA, or HSA? -> /hc/en-us/articles/42296905667479-Does-Happy-Head-accept-outside-insurance-FSA-or-HSA  ·  About Happy Head's pricing -> /hc/en-us/articles/31042509646871-About-Happy-Head-s-pricing  ·  Subscription vs. One-Time Orders -> /hc/en-us/articles/17571301347607-Subscription-vs-One-Time-Orders  ·  Do you offer discounts for first-time customers? -> /hc/en-us/articles/16253925907863-Do-you-offer-discounts-for-first-time-customers  ·  What is your return policy? -> /hc/en-us/articles/4402314831383-What-is-your-return-policy  ·  Submit a request -> /hc/en-us/requests/new  ·  How can I cancel my subscription? -> /hc/en-us/articles/4402322014359-How-can-I-cancel-my-subscription  ·  Should I choose a SuperCapsule™ or topical treatment? -> /hc/en-us/articles/16932799651479-Should-I-choose-a-SuperCapsule-or-topical-treatment  ·  What if I don't want a prescription? -> /hc/en-us/articles/16254317138967-What-if-I-don-t-want-a-prescription  ·  How can I cancel my subscription? -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJcA1%2F4ABDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCBdmaf4AB  ·  Do you offer discounts for first-time customers? -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJfdemnIDjoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCBdmaf4ABDo  ·  Subscription vs. One-Time Orders -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBfRLCP7DzoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCBdmaf4ABDo  ·  How can I pause my subscription? -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBfY1f4ABDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCBdmaf4ABDo  ·  How do I change my billing or shipping address? -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJcAaf4ABDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCBdmaf4ABDo  ·  Get Started -> https://www.happyhead.com/get-started  ·  Ultimate Growth Bundle -> https://www.happyhead.com/products/topical-solution-supercapsule-finasteride-minoxidil  ·  Custom TopicalRx Solution -> https://www.happyhead.com/products/topical-solution-dutasteride-minoxidil  ·  SuperCapsuleTM -> https://www.happyhead.com/products/supercapsule-finasteride-minoxidil-vitamin-d3  ·  TopicalRx SuperSolutionTM -> https://www.happyhead.com/products/topical-supersolution-finasteride-minoxidil-and-liposomal  ·  DutasterideRx -> https://www.happyhead.com/collections/dutasteride  ·  FinasterideRx -> https://www.happyhead.com/collections/finasteride  ·  MinoxidilRx -> https://www.happyhead.com/collections/minoxidil  ·  About Us -> https://www.happyhead.com/about-us  ·  Blog -> https://www.happyhead.com/hair-loss-blog  ·  How It Works -> https://www.happyhead.com/how-it-works  ·  Getting Started -> https://www.happyhead.com/getting-started  ·  FAQ -> https://www.happyhead.com/faq  ·  The Science -> https://www.happyhead.com/science  ·  Contact Us -> https://happyhead.zendesk.com/hc/en-us  ·  Refer-A-Friend -> https://www.happyhead.com/refer  ·  Stylist Program -> https://www.happyhead.com/stylist  ·  Influencer Program -> https://www.happyhead.com/ambassador  ·  Affiliate Program -> https://www.happyhead.com/affiliates  ·  CCPA: Do Not Sell My Information -> https://www.happyhead.com/legal/ccpa-do-not-sell-my-information  ·  Terms & Conditions -> https://www.happyhead.com/legal/terms-of-use  ·  Subscription Terms -> https://www.happyhead.com/legal/subscription-terms  ·  Privacy Policy -> https://www.happyhead.com/legal/privacy-policy  ·  Cookie Policy -> https://www.happyhead.com/legal/privacy-policy  ·  Acceptable Use Policy -> https://www.happyhead.com/legal/terms-of-use  ·  Telehealth Consent -> https://www.happyhead.com/legal/telehealth-consent  ·  Drug Safety Information & Consent -> https://www.happyhead.com/legal/drug-safety-information  ·  Refund & Return Policy -> https://www.happyhead.com/legal/terms-of-use  ·  Warning To Consumers -> https://www.happyhead.com/legal/drug-safety-information  ·  XML Sitemap -> https://www.happyhead.com/sitemap.xml

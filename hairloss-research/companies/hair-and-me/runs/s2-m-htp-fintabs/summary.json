@@ -1,0 +1,183 @@
+{
+ "run": "s2-m-htp-fintabs",
+ "flow": "men",
+ "changed": "men-htp: None of the above → Finasteride tablets (+ the must-tick 'Yes, I understand this.' that appears)",
+ "changedStep": "htp",
+ "baselinesPooled": [
+  "baseline-men",
+  "s2-base-men-1"
+ ],
+ "stepOrder": [
+  "tp",
+  "yhg",
+  "pds",
+  "pdsc",
+  "mi",
+  "ht",
+  "ls",
+  "htp",
+  "htam",
+  "htc",
+  "ar",
+  "st",
+  "sc",
+  "scc",
+  "smt",
+  "pt",
+  "tt",
+  "pp",
+  "mdm",
+  "mcm",
+  "al",
+  "rhf",
+  "yna",
+  "rha",
+  "di",
+  "rj",
+  "el",
+  "ct",
+  "yd"
+ ],
+ "nSteps": 29,
+ "end": "account wall (yd)",
+ "newSteps": [],
+ "missingSteps": [],
+ "candidateEffects": [],
+ "noise": [
+  {
+   "step": "pds",
+   "key": "title",
+   "where": "before-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-17",
+    "s2-m-age-18"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9346.options",
+   "where": "after-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9346.type",
+   "where": "after-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9348.options",
+   "where": "after-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9348.type",
+   "where": "after-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9349.config",
+   "where": "after-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9349.type",
+   "where": "after-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "di",
+   "key": "q8015.options",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-85",
+    "s2-m-al-finasteride"
+   ]
+  },
+  {
+   "step": "ct",
+   "key": "q180026.config",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-85",
+    "s2-m-al-finasteride"
+   ]
+  },
+  {
+   "step": "ct",
+   "key": "title",
+   "where": "after-change",
+   "alsoIn": [
+    "baseline-women",
+    "entry-promo-caps-men",
+    "s2-m-age-18"
+   ]
+  }
+ ],
+ "bag": {
+  "items": [
+   [
+    "hairTreatment",
+    "Personalised treatment",
+    "4 week supply · 12ml",
+    "Prescription",
+    3499,
+    null
+   ]
+  ],
+  "shipping": 0,
+  "total": 3499,
+  "promo": "",
+  "shippingMsg": "Your order qualifies for complimentary standard shipping."
+ },
+ "bagItemsSameAsBaseline": true,
+ "posted": {
+  "htp": [
+   [
+    250,
+    [
+     "Finasteride tablets"
+    ]
+   ],
+   [
+    4443,
+    true
+   ]
+  ]
+ },
+ "nextAfterChange": {
+  "htp": "htam"
+ },
+ "sweep": false
+}

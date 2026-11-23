@@ -1,0 +1,48 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "autoNext": {
+     "duration": 7000,
+     "label": "Next"
+    }
+   }
+  ],
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 429,
+    "inputConfig": {
+     "content": [
+      {
+       "answer": "I want to improve the appearance of my hairline, parting or crown",
+       "image": "hair-goal",
+       "question_title": "Your hair goal"
+      },
+      {
+       "answer": "Curly",
+       "image": "hair-type-curly",
+       "question_title": "Your hair type"
+      },
+      {
+       "answer": "All over – moderate",
+       "image": "hair-thinning",
+       "question_title": "Your hair thinning"
+      }
+     ],
+     "interstitialType": "answers-review",
+     "title": "Here’s what we know..."
+    },
+    "inputType": "interstitial",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": null,
+  "type": "question"
+ }
+}

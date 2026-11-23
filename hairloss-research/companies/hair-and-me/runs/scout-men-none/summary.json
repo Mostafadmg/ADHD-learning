@@ -118,7 +118,7 @@
    "alsoIn": [
     "s2-base-women-1",
     "s2-m-age-85",
-    "s2-w-htaf-allover"
+    "s2-m-al-finasteride"
    ]
   },
   {
@@ -128,7 +128,7 @@
    "alsoIn": [
     "s2-base-women-1",
     "s2-m-age-85",
-    "s2-m-tile-women"
+    "s2-m-al-finasteride"
    ]
   },
   {
@@ -137,8 +137,8 @@
    "where": "after-change",
    "alsoIn": [
     "s2-m-age-18",
-    "s2-w-htaf-allover",
-    "s2-w-pg-yes"
+    "s2-m-mcm-bp",
+    "s2-m-mcm-bph"
    ]
   },
   {

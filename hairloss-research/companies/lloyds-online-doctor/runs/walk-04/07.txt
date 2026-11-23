@@ -1,0 +1,16 @@
+STEP 07 wait 3000
+URL: https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+TITLE: Online Doctor Consultation
+
+--- VISIBLE TEXT ---
+Your details
+What was your sex at birth?
+Male
+Female
+Next
+
+--- CONTROLS ---
+  button (1): Next
+
+--- LINKS ---
+  link (1): Exit consultation -> //core.onlinedoctor.lloydspharmacy.com

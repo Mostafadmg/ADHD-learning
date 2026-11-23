@@ -1,0 +1,58 @@
+{
+ "_changed": "leg-expect: 'I want to regrow my hair' → 'I want to prevent hair loss' only",
+ "start": "https://www.keeps.com/quiz?step=1",
+ "locale": "en-US",
+ "timezone": "America/Chicago",
+ "steps": [
+  {
+   "do": "click",
+   "text": "A bit of both",
+   "exact": false
+  },
+  {
+   "do": "click",
+   "text": "I want to prevent hair loss"
+  },
+  {
+   "do": "click",
+   "text": "CONTINUE",
+   "exact": false
+  },
+  {
+   "do": "click",
+   "text": "I'm not sure / I don't have a preference",
+   "exact": false
+  },
+  {
+   "do": "click",
+   "text": "I'm not sure / I'm interested in any effective ingredients!",
+   "exact": false
+  },
+  {
+   "do": "click",
+   "text": "CONTINUE",
+   "exact": false
+  },
+  {
+   "do": "click",
+   "text": "I'm not interested in any specific over-the-counter products",
+   "exact": false
+  },
+  {
+   "do": "click",
+   "text": "CONTINUE",
+   "exact": false
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "wait",
+   "ms": 5000
+  },
+  {
+   "do": "scroll"
+  }
+ ]
+}

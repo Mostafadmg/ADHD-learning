@@ -1,0 +1,19 @@
+STEP 01 wait 3000
+URL: https://www.oxfordonlinepharmacy.co.uk/
+TITLE: Just a moment...
+
+--- VISIBLE TEXT ---
+www.oxfordonlinepharmacy.co.uk
+Performing security verification
+
+This website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot.
+
+Ray ID: a5f38f23dd3e949d
+Performance and Security by Cloudflare
+Privacy
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+  link (2): Cloudflare -> https://www.cloudflare.com?utm_source=challenge&utm_campaign=m  ·  Privacy -> https://www.cloudflare.com/privacypolicy/

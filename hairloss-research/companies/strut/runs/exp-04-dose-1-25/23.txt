@@ -1,0 +1,29 @@
+STEP 23 click "No"
+URL: https://start.struthealth.com/flow/6aa3d578f415d1603a6e0c85
+TITLE: Minoxidil Prod
+
+--- VISIBLE TEXT ---
+64%
+
+Important Mental Health Warning
+
+Important: Finasteride and dutasteride (5-alpha-reductase inhibitors) may worsen depression or anxiety symptoms. Oral use carries higher risk than topical. If you experience thoughts of self-harm while using this medication, discontinue immediately and call 911.
+
+Please read the above carefully before continuing.
+
+Continue
+1
+1.25 mg · 90 Day Supply
+$55.00
+1.25 mg · 90 Day Supply
+$55.00
+Dose: 90 Day Supply - 2.5 mg (1.25mg)
+Supply: 90 Day Supply
+Total
+$55.00
+
+--- CONTROLS ---
+  button (3): Go back  ·  Continue  ·  1 1.25 mg · 90 Day Supply $55.00
+
+--- LINKS ---
+

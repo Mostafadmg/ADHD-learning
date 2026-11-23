@@ -1,0 +1,21 @@
+STEP 05 ht AFTER ANSWERS ["Curly"]
+URL: https://www.hairandme.com/c/suh/ht
+
+--- VISIBLE TEXT ---
+Which option best describes your natural hair type?
+Straight
+Wavy
+Curly
+Coily
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=4446] | Straight
+input:radio[name=4446] | Wavy
+input:radio[name=4446] | Curly [checked]
+input:radio[name=4446] | Coily
+button:submit | NEXT QUESTION
+a -> /c/suh/ht?action=previous | Back to previous page

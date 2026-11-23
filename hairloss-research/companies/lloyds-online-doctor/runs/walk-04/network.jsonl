@@ -1,0 +1,16 @@
+{"url":"https://otlp-http-production.shopifysvc.com/v1/metrics","method":"POST","status":200,"size":21}
+{"url":"https://otlp-http-production.shopifysvc.com/v1/metrics","method":"POST","status":200,"size":21}
+{"url":"https://api.onlinedoctor.lloydspharmacy.com/geolocations","method":"GET","status":200,"size":21}
+{"url":"https://experiments-api.fabric-analytics.com/api/features/sdk-et4oODlBfr8mZis","method":"GET","status":200,"size":86}
+{"url":"https://consent-eu.cookiehub.net/v3/token","method":"POST","status":200,"size":210}
+{"url":"https://otlp-http-production.shopifysvc.com/v1/metrics","method":"POST","status":200,"size":21}
+{"url":"https://cdn.cookiehub.eu/client/e6e7d991/en.json","method":"GET","status":200,"size":15955,"file":"net/01-cdn_cookiehub_eu_client_e6e7d991_en_json.json"}
+{"url":"https://consent-eu.cookiehub.net/v3/events","method":"POST","status":202,"size":21}
+{"url":"https://cdn.cookiehub.eu/client/e6e7d991/en.json","method":"GET","status":200,"size":15955,"file":"net/02-cdn_cookiehub_eu_client_e6e7d991_en_json.json"}
+{"url":"https://experiments-api.fabric-analytics.com/api/features/sdk-et4oODlBfr8mZis","method":"GET","status":200,"size":86}
+{"url":"https://core.onlinedoctor.lloydspharmacy.com/api/questionnaire/clinic","method":"GET","status":202,"size":53695,"file":"net/03-core_onlinedoctor_lloydspharmacy_com_api_questionnaire_clinic.json"}
+{"url":"https://cdn.cookiehub.eu/client/e6e7d991/en.json","method":"GET","status":200,"size":15955,"file":"net/04-cdn_cookiehub_eu_client_e6e7d991_en_json.json"}
+{"url":"https://cdn.shopify.com/s/files/1/0611/1284/4476/files/globalconfig.json?v=1785848933","method":"GET","status":200,"size":397,"file":"net/05-cdn_shopify_com_s_files_1_0611_1284_4476_files_globalconfig_json_v_1785848933.json"}
+{"url":"https://cdn.shopify.com/s/files/1/0611/1284/4476/files/globalconfig.json?v=1785848933","method":"GET","status":200,"size":397,"file":"net/06-cdn_shopify_com_s_files_1_0611_1284_4476_files_globalconfig_json_v_1785848933.json"}
+{"url":"https://core.onlinedoctor.lloydspharmacy.com/api/questionnaire/traversals","method":"POST","status":201,"size":181}
+{"url":"https://core.onlinedoctor.lloydspharmacy.com/api/questionnaire/traversals/4901634/steps/current","method":"GET","status":200,"size":827,"file":"net/07-core_onlinedoctor_lloydspharmacy_com_api_questionnaire_traversals_4901634_steps_.json"}

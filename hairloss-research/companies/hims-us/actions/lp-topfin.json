@@ -1,0 +1,2 @@
+{ "start": "https://www.hims.com/lp/hair-start-top-fin-fa", "locale": "en-US", "timezone": "America/New_York",
+  "steps": [ {"do":"wait","ms":2500}, {"do":"scroll"} ] }

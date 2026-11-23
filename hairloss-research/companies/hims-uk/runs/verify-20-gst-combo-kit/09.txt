@@ -1,0 +1,35 @@
+STEP 09 click "Continue"
+URL: https://app.forhims.co.uk/flow/a9a88e4a-89b9-47ae-8138-3a1acaa41594?gst=s2hF6Mdn&t=hair&anon_flow_key=hair
+TITLE: Hims
+
+--- VISIBLE TEXT ---
+Next,
+let's
+talk
+about
+lifestyle
+factors
+Uncovering
+which
+root
+causes
+may
+be
+affecting
+you
+can
+help
+us
+better
+understand
+your
+hair
+needs.
+Continue
+←
+
+--- CONTROLS ---
+  button (3): Continue  ·  ←  ·  Your answers
+
+--- LINKS ---
+  link (1): Navigate home -> /profile

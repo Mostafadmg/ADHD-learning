@@ -1,0 +1,115 @@
+{
+ "_about": "Sons UK hair consultation, stage 2 one-change experiment exp-11. Changed: men-q09 mood or antidepressants: No → Yes. Text box given the word \"test\"; both two-week questions answered \"Not at all\". Everything else is the baseline man. The walk never types into the account form.",
+ "start": "https://shop.sons.co.uk/consultation/?logged_in=false",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2500,
+   "_q": "wait for survey to load"
+  },
+  {
+   "do": "click",
+   "text": "No",
+   "_q": "5140 existing customer"
+  },
+  {
+   "do": "click",
+   "text": "Male",
+   "_q": "5141 gender at birth"
+  },
+  {
+   "do": "click",
+   "text": "I accept",
+   "_q": "5142 declaration"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "_q": "5142 continue"
+  },
+  {
+   "do": "click",
+   "text": "Temples/Crown",
+   "_q": "5147 hair picture"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "click",
+   "text": "Gradually over months and years",
+   "_q": "5143 onset"
+  },
+  {
+   "do": "click",
+   "text": "Yes",
+   "_q": "3216 mood"
+  },
+  {
+   "do": "fill",
+   "selector": "textarea",
+   "value": "test",
+   "_q": "3217 free text (neutral filler)"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "_q": "3217 continue"
+  },
+  {
+   "do": "click",
+   "text": "Not at all",
+   "_q": "3275 PHQ interest"
+  },
+  {
+   "do": "click",
+   "text": "Not at all",
+   "_q": "3276 PHQ low mood"
+  },
+  {
+   "do": "click",
+   "text": "None of these",
+   "_q": "5148 past medicines"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "_q": "5148 continue"
+  },
+  {
+   "do": "click",
+   "text": "I don’t mind - I want what’s most effective for me",
+   "_q": "treatment type preference"
+  },
+  {
+   "do": "click",
+   "text": "None of these",
+   "_q": "5155 conditions"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "_q": "5155 continue"
+  },
+  {
+   "do": "click",
+   "text": "Read more",
+   "_q": "expand the finasteride statement (information only)"
+  },
+  {
+   "do": "click",
+   "text": "I confirm that I have read and understood the above statement",
+   "_q": "finasteride-agreement (required tick)"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "_q": "finasteride page -> account form (ACCOUNT WALL: nothing is entered there) continue"
+  },
+  {
+   "do": "wait",
+   "ms": 1500
+  }
+ ]
+}

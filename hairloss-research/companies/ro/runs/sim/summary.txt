@@ -1,0 +1,293 @@
+===== men: baseline 19 screens -> {'end': 3178, 'flags': {'noRecTopicalCombined': 0, 'noRecOralFin': 0, 'noRecOralMin': 0}, 'recommended': 'Ro Mane Spray'}
+  sim-m-q20-get-thicker-fuller-hair                          | men-q20: Regrow my hair -> Get thicker, fuller hair | +[] -[] | Ro Mane Spray | 000
+  sim-m-q20-proactively-prevent-hair-loss                    | men-q20: Regrow my hair -> Proactively prevent hair loss | +[] -[] | Ro Mane Spray | 000
+  sim-m-q22-hair-loss-solutions-non-prescription             | men-q22: None of the above -> Non-prescription solutions (e.g. Rogaine, supplements) | +[28, 240, 285] -[26] | Ro Mane Spray | 000
+  sim-m-q28-over-the-counter-solutions-didnt-work-fo-d1      | men-q28: I want to maximize results with a new or additional product -> Over-the-counter solutions didn't work | +[] -[] | Ro Mane Spray | 000
+  sim-m-q28-i-want-an-easier-or-more-convenient-solu-d1      | men-q28: I want to maximize results with a new or additional product -> I want an easier or more convenient so | +[] -[] | Ro Mane Spray | 000
+  sim-m-q28-ive-experienced-side-effects-with-past-s-d1      | men-q28: I want to maximize results with a new or additional product -> I’ve experienced side effects with pas | +[] -[] | Ro Mane Spray | 000
+  sim-m-q240-oral-minoxidil-d1                               | men-q240: Topical minoxidil -> Oral minoxidil | +[255, 265] -[285] | Ro Mane Spray | 000
+  sim-m-q255-2mg-daily-d2                                    | men-q255: 2.5mg daily -> 2.0mg daily | +[] -[] | Ro Mane Spray | 000
+  sim-m-q255-3mg-daily-d2                                    | men-q255: 2.5mg daily -> 3.0mg daily | +[] -[] | Ro Mane Spray | 000
+  sim-m-q255-3-point-5mg-daily-d2                            | men-q255: 2.5mg daily -> 3.5mg daily | +[] -[] | Ro Mane Spray | 000
+  sim-m-q255-4mg-daily-d2                                    | men-q255: 2.5mg daily -> 4.0mg daily | +[] -[] | Ro Mane Spray | 000
+  sim-m-q255-5mg-daily-d2                                    | men-q255: 2.5mg daily -> 5.0mg daily | +[] -[] | Ro Mane Spray | 000
+  sim-m-q255-oral-min-dosage-other-d2                        | men-q255: 2.5mg daily -> Other | +[260] -[] | Ro Mane Spray | 000
+  sim-m-q265-oral-min-no-problematic-side-effects-d2         | men-q265: Yes, it worked well -> No, I had problematic side effects | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q265-oral-min-no-dose-not-effective-d2               | men-q265: Yes, it worked well -> No, this dose wasn't effective | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q265-oral-min-no-allergic-to-medication-d2           | men-q265: Yes, it worked well -> No, I found out I was allergic to it | +[] -[] | oral finasteride | 101  <== CHANGED
+  sim-m-q265-oral-min-effectiveness-other-d2                 | men-q265: Yes, it worked well -> Other | +[270] -[] | Ro Mane Spray | 000
+  sim-m-q240-oral-finasteride-d1                             | men-q240: Topical minoxidil -> Oral Finasteride | +[305, 315] -[285] | Ro Mane Spray | 000
+  sim-m-q305-oral-fin-dosage-other-d2                        | men-q305: 1mg -> Other | +[310] -[] | Ro Mane Spray | 000
+  sim-m-q315-oral-fin-no-problematic-side-effects-d2         | men-q315: Yes, it worked well -> No, I had problematic side effects | +[] -[] | oral minoxidil | 110  <== CHANGED
+  sim-m-q315-oral-fin-no-dose-not-effective-d2               | men-q315: Yes, it worked well -> No, this dose wasn't effective | +[] -[] | Ro Mane Spray | 010  <== CHANGED
+  sim-m-q315-oral-fin-no-allergic-to-medication-d2           | men-q315: Yes, it worked well -> No, I found out I was allergic to it | +[] -[] | oral minoxidil | 110  <== CHANGED
+  sim-m-q315-oral-fin-effectiveness-other-d2                 | men-q315: Yes, it worked well -> Other | +[320] -[] | Ro Mane Spray | 000
+  sim-m-q240-topical-finasteride-d1                          | men-q240: Topical minoxidil -> Topical finasteride | +[335] -[285] | Ro Mane Spray | 000
+  sim-m-q335-topical-fin-no-problematic-side-effects-d2      | men-q335: Yes, it worked well -> No, I had problematic side effects | +[] -[] | Ro Mane Spray | 000
+  sim-m-q335-topical-fin-no-dose-not-effective-d2            | men-q335: Yes, it worked well -> No, it wasn’t effective | +[] -[] | Ro Mane Spray | 000
+  sim-m-q335-topical-fin-no-allergic-to-medication-d2        | men-q335: Yes, it worked well -> No, I found out I was allergic to it | +[] -[] | oral finasteride | 100  <== CHANGED
+  sim-m-q335-topical-fin-effectiveness-other-d2              | men-q335: Yes, it worked well -> Other | +[340] -[] | Ro Mane Spray | 000
+  sim-m-q240-steroid-injections-d1                           | men-q240: Topical minoxidil -> Steroid injections in the scalp | +[] -[285] | no-recommendation | 111  <== CHANGED
+  sim-m-q240-other-treatment-d1                              | men-q240: Topical minoxidil -> Other | +[355] -[285] | Ro Mane Spray | 000
+  sim-m-q285-topical-min-no-problematic-side-effects-d1      | men-q285: Yes, it worked well -> No, I had problematic side effects | +[] -[] | Ro Mane Spray | 000
+  sim-m-q285-topical-min-no-dose-not-effective-d1            | men-q285: Yes, it worked well -> No, it wasn’t effective | +[] -[] | Ro Mane Spray | 000
+  sim-m-q285-topical-min-no-allergic-to-medication-d1        | men-q285: Yes, it worked well -> No, I found out I was allergic to it | +[] -[] | oral finasteride | 100  <== CHANGED
+  sim-m-q285-topical-min-effectiveness-other-d1              | men-q285: Yes, it worked well -> Other | +[290] -[] | Ro Mane Spray | 000
+  sim-m-q22-hair-loss-solutions-prescription-medicat         | men-q22: None of the above -> Prescription medications (e.g. Propecia, oral minoxidil) | +[28, 240, 285] -[26] | Ro Mane Spray | 000
+  sim-m-q28-over-the-counter-solutions-didnt-work-fo-d1x     | men-q28: I want to maximize results with a new or additional product -> Over-the-counter solutions didn't work | +[] -[] | Ro Mane Spray | 000
+  sim-m-q28-i-want-an-easier-or-more-convenient-solu-d1x     | men-q28: I want to maximize results with a new or additional product -> I want an easier or more convenient so | +[] -[] | Ro Mane Spray | 000
+  sim-m-q28-ive-experienced-side-effects-with-past-s-d1x     | men-q28: I want to maximize results with a new or additional product -> I’ve experienced side effects with pas | +[] -[] | Ro Mane Spray | 000
+  sim-m-q240-oral-minoxidil-d1x                              | men-q240: Topical minoxidil -> Oral minoxidil | +[255, 265] -[285] | Ro Mane Spray | 000
+  sim-m-q255-2mg-daily-d2x                                   | men-q255: 2.5mg daily -> 2.0mg daily | +[] -[] | Ro Mane Spray | 000
+  sim-m-q255-3mg-daily-d2x                                   | men-q255: 2.5mg daily -> 3.0mg daily | +[] -[] | Ro Mane Spray | 000
+  sim-m-q255-3-point-5mg-daily-d2x                           | men-q255: 2.5mg daily -> 3.5mg daily | +[] -[] | Ro Mane Spray | 000
+  sim-m-q255-4mg-daily-d2x                                   | men-q255: 2.5mg daily -> 4.0mg daily | +[] -[] | Ro Mane Spray | 000
+  sim-m-q255-5mg-daily-d2x                                   | men-q255: 2.5mg daily -> 5.0mg daily | +[] -[] | Ro Mane Spray | 000
+  sim-m-q255-oral-min-dosage-other-d2x                       | men-q255: 2.5mg daily -> Other | +[260] -[] | Ro Mane Spray | 000
+  sim-m-q265-oral-min-no-problematic-side-effects-d2x        | men-q265: Yes, it worked well -> No, I had problematic side effects | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q265-oral-min-no-dose-not-effective-d2x              | men-q265: Yes, it worked well -> No, this dose wasn't effective | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q265-oral-min-no-allergic-to-medication-d2x          | men-q265: Yes, it worked well -> No, I found out I was allergic to it | +[] -[] | oral finasteride | 101  <== CHANGED
+  sim-m-q265-oral-min-effectiveness-other-d2x                | men-q265: Yes, it worked well -> Other | +[270] -[] | Ro Mane Spray | 000
+  sim-m-q240-oral-finasteride-d1x                            | men-q240: Topical minoxidil -> Oral Finasteride | +[305, 315] -[285] | Ro Mane Spray | 000
+  sim-m-q305-oral-fin-dosage-other-d2x                       | men-q305: 1mg -> Other | +[310] -[] | Ro Mane Spray | 000
+  sim-m-q315-oral-fin-no-problematic-side-effects-d2x        | men-q315: Yes, it worked well -> No, I had problematic side effects | +[] -[] | oral minoxidil | 110  <== CHANGED
+  sim-m-q315-oral-fin-no-dose-not-effective-d2x              | men-q315: Yes, it worked well -> No, this dose wasn't effective | +[] -[] | Ro Mane Spray | 010  <== CHANGED
+  sim-m-q315-oral-fin-no-allergic-to-medication-d2x          | men-q315: Yes, it worked well -> No, I found out I was allergic to it | +[] -[] | oral minoxidil | 110  <== CHANGED
+  sim-m-q315-oral-fin-effectiveness-other-d2x                | men-q315: Yes, it worked well -> Other | +[320] -[] | Ro Mane Spray | 000
+  sim-m-q240-topical-finasteride-d1x                         | men-q240: Topical minoxidil -> Topical finasteride | +[335] -[285] | Ro Mane Spray | 000
+  sim-m-q335-topical-fin-no-problematic-side-effects-d2x     | men-q335: Yes, it worked well -> No, I had problematic side effects | +[] -[] | Ro Mane Spray | 000
+  sim-m-q335-topical-fin-no-dose-not-effective-d2x           | men-q335: Yes, it worked well -> No, it wasn’t effective | +[] -[] | Ro Mane Spray | 000
+  sim-m-q335-topical-fin-no-allergic-to-medication-d2x       | men-q335: Yes, it worked well -> No, I found out I was allergic to it | +[] -[] | oral finasteride | 100  <== CHANGED
+  sim-m-q335-topical-fin-effectiveness-other-d2x             | men-q335: Yes, it worked well -> Other | +[340] -[] | Ro Mane Spray | 000
+  sim-m-q240-steroid-injections-d1x                          | men-q240: Topical minoxidil -> Steroid injections in the scalp | +[] -[285] | no-recommendation | 111  <== CHANGED
+  sim-m-q240-other-treatment-d1x                             | men-q240: Topical minoxidil -> Other | +[355] -[285] | Ro Mane Spray | 000
+  sim-m-q285-topical-min-no-problematic-side-effects-d1x     | men-q285: Yes, it worked well -> No, I had problematic side effects | +[] -[] | Ro Mane Spray | 000
+  sim-m-q285-topical-min-no-dose-not-effective-d1x           | men-q285: Yes, it worked well -> No, it wasn’t effective | +[] -[] | Ro Mane Spray | 000
+  sim-m-q285-topical-min-no-allergic-to-medication-d1x       | men-q285: Yes, it worked well -> No, I found out I was allergic to it | +[] -[] | oral finasteride | 100  <== CHANGED
+  sim-m-q285-topical-min-effectiveness-other-d1x             | men-q285: Yes, it worked well -> Other | +[290] -[] | Ro Mane Spray | 000
+  sim-m-q26-not-sure-itll-work                               | men-q26: Didn't want or need to until now -> Not sure it'll work | +[] -[] | Ro Mane Spray | 000
+  sim-m-q26-seems-too-expensive                              | men-q26: Didn't want or need to until now -> Seems too expensive | +[] -[] | Ro Mane Spray | 000
+  sim-m-q26-nervous-about-side-effects                       | men-q26: Didn't want or need to until now -> Nervous about side effects | +[] -[] | Ro Mane Spray | 000
+  sim-m-q132-hairline                                        | men-q132: Hairline (along my forehead or temples) + Crown (top of my head) -> Hairline (along my forehead or t | +[] -[] | Ro Mane Spray | 000
+  sim-m-q132-crown                                           | men-q132: Hairline (along my forehead or temples) + Crown (top of my head) -> Crown (top of my head) | +[] -[] | Ro Mane Spray | 000
+  sim-m-q132-overall-thinning                                | men-q132: Hairline (along my forehead or temples) + Crown (top of my head) -> Overall thinning | +[] -[] | Ro Mane Spray | 000
+  sim-m-q132-patches                                         | men-q132: Hairline (along my forehead or temples) + Crown (top of my head) -> Random golf-ball size bald patch | +[] -[150, 160, 170] | no-recommendation | 111  <== CHANGED
+  sim-m-q132-prevent-hair-loss                               | men-q132: Hairline (along my forehead or temples) + Crown (top of my head) -> Nowhere yet, but I’d like to pre | +[] -[150, 160, 170] | Ro Mane Spray | 000
+  sim-m-q150-very-suddenly                                   | men-q150: Gradually -> Very suddenly | +[] -[] | no-recommendation | 111  <== CHANGED
+  sim-m-q150-not-sure                                        | men-q150: Gradually -> Not sure | +[] -[] | Ro Mane Spray | 000
+  sim-m-q160-very-mild                                       | men-q160: Moderate -> Very mild | +[] -[] | Ro Mane Spray | 000
+  sim-m-q160-mild                                            | men-q160: Moderate -> Mild | +[] -[] | Ro Mane Spray | 000
+  sim-m-q160-severe                                          | men-q160: Moderate -> Severe | +[] -[] | Ro Mane Spray | 000
+  sim-m-q160-extremely-severe                                | men-q160: Moderate -> Extremely severe | +[] -[] | Ro Mane Spray | 000
+  sim-m-q170-redness-or-rashes                               | men-q170: None of the above -> Redness or rashes on scalp | +[] -[] | no-recommendation | 111  <== CHANGED
+  sim-m-q170-pain-soreness-burning-tingling-in-areas-        | men-q170: None of the above -> Pain, soreness, burning, and/or tingling in areas of hair loss | +[] -[] | Ro Mane Spray | 000
+  sim-m-q170-recurrent-pus-bumps-or-open-sores               | men-q170: None of the above -> Recurrent pus bumps or open sores on scalp | +[] -[] | Ro Mane Spray | 000
+  sim-m-q170-partial-or-complete-loss-of-eyebrows-or-        | men-q170: None of the above -> Partial or complete loss of eyebrows or eyelashes | +[] -[] | Ro Mane Spray | 000
+  sim-m-q370-yes-have-been-diagnosed-or-treated-for-h        | men-q370: No -> Yes, for high blood pressure | +[381, 395] -[] | Ro Mane Spray | 000
+  sim-m-q381-yes-very-high-bp-reading-d1                     | men-q381: No, my blood pressure reading is never “very high” -> Yes, I still have “very high” blood pressure r | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q381-not-sure-d1                                     | men-q381: No, my blood pressure reading is never “very high” -> I’m not sure | +[] -[] | Ro Mane Spray | 000
+  sim-m-q370-yes-have-been-diagnosed-or-treated-for-l        | men-q370: No -> Yes, for low blood pressure | +[391, 395] -[] | Ro Mane Spray | 000
+  sim-m-q391-yes-very-low-bp-reading-d1                      | men-q391: No, my blood pressure reading is never “low” -> Yes, I still have “low” blood pressure readings | +[] -[] | no-recommendation | 111  <== CHANGED
+  sim-m-q391-not-sure-d1                                     | men-q391: No, my blood pressure reading is never “low” -> I’m not sure | +[] -[] | Ro Mane Spray | 000
+  sim-m-q370-not-sure-if-diagnosed-or-treated-for-hig        | men-q370: No -> I'm not sure | +[395] -[] | Ro Mane Spray | 000
+  sim-m-q1000-stroke                                         | men-q1000: None of the above -> Stroke | +[1255, 1260] -[] | Ro Mane Spray | 000
+  sim-m-q1255-hemorrhagic-stroke-d1                          | men-q1255: Ischemic stroke: a blood vessel was blocked by a clot or plaque -> Hemorrhagic stroke: a blood vess | +[] -[] | Ro Mane Spray | 000
+  sim-m-q1260-stroke-less-than-6-months-d1                   | men-q1260: 2+ years ago -> Less than 6 months ago | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q1260-stroke-7-to-12-months-d1                       | men-q1260: 2+ years ago -> 7-12 months ago | +[] -[] | Ro Mane Spray | 000
+  sim-m-q1260-stroke-1-to-2-years-d1                         | men-q1260: 2+ years ago -> 1-2 years ago | +[] -[] | Ro Mane Spray | 000
+  sim-m-q1000-prostate-cancer                                | men-q1000: None of the above -> Prostate cancer | +[] -[] | oral finasteride | 100  <== CHANGED
+  sim-m-q1000-kidney-disease                                 | men-q1000: None of the above -> Kidney disease | +[1275] -[] | Ro Mane Spray | 000
+  sim-m-q1275-kidney-disease-temporary-decrease-in-kid-d1    | men-q1275: Chronic kidney disease stage 1 -> Temporary decrease in kidney function only | +[] -[] | Ro Mane Spray | 000
+  sim-m-q1275-kidney-disease-chronic-stage-2-d1              | men-q1275: Chronic kidney disease stage 1 -> Chronic kidney disease stage 2 | +[] -[] | Ro Mane Spray | 000
+  sim-m-q1275-kidney-disease-chronic-stage-3a-d1             | men-q1275: Chronic kidney disease stage 1 -> Chronic kidney disease stage 3a | +[] -[] | Ro Mane Spray | 000
+  sim-m-q1275-kidney-disease-chronic-stage-3b-d1             | men-q1275: Chronic kidney disease stage 1 -> Chronic kidney disease stage 3b | +[] -[] | Ro Mane Spray | 000
+  sim-m-q1275-kidney-disease-chronic-stage-4-d1              | men-q1275: Chronic kidney disease stage 1 -> Chronic kidney disease stage 4 | +[] -[] | Ro Mane Spray | 000
+  sim-m-q1275-kidney-disease-chronic-stage-5-d1              | men-q1275: Chronic kidney disease stage 1 -> Chronic kidney disease stage 5 (kidney failure) | +[] -[] | Ro Mane Spray | 000
+  sim-m-q1000-liver-diseases                                 | men-q1000: None of the above -> Liver failure or liver cirrhosis | +[1285] -[] | Ro Mane Spray | 000
+  sim-m-q1285-liver-failure-d1                               | men-q1285: Liver cirrhosis -> Liver failure | +[] -[] | Ro Mane Spray | 000
+  sim-m-q1285-liver-failure-and-cirrhosis-d1                 | men-q1285: Liver cirrhosis -> Both | +[] -[] | Ro Mane Spray | 000
+  sim-m-q1000-erectile-dysfunction                           | men-q1000: None of the above -> Erectile dysfunction | +[] -[] | oral minoxidil | 110  <== CHANGED
+  sim-m-q1000-anxiety                                        | men-q1000: None of the above -> Anxiety | +[] -[] | oral minoxidil | 110  <== CHANGED
+  sim-m-q1000-depression                                     | men-q1000: None of the above -> Depression | +[] -[] | oral minoxidil | 110  <== CHANGED
+  sim-m-q1000-pheochromocytoma                               | men-q1000: None of the above -> Pheochromocytoma (adrenal gland tumor) | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q1300-angina                                         | men-q1300: None of the above -> Repeated chest pain or tightness, also called angina | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q1300-artery-disease                                 | men-q1300: None of the above -> Coronary artery disease, or narrowing of the heart vessels | +[] -[] | Ro Mane Spray | 000
+  sim-m-q1300-heart-attack                                   | men-q1300: None of the above -> Heart attack | +[1315, 1320] -[] | Ro Mane Spray | 000
+  sim-m-q1315-heart-attack-less-than-6-months-d1             | men-q1315: 2+ years ago -> Less than 6 months ago | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q1315-heart-attack-7-to-12-months-d1                 | men-q1315: 2+ years ago -> 7-12 months ago | +[] -[] | Ro Mane Spray | 000
+  sim-m-q1315-heart-attack-1-to-2-years-d1                   | men-q1315: 2+ years ago -> 1-2 years ago | +[] -[] | Ro Mane Spray | 000
+  sim-m-q1320-heart-attack-seeing-cardiologist-no-d1         | men-q1320: Yes -> No | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q1300-coronary-bypass-surgery                        | men-q1300: None of the above -> Coronary bypass surgery | +[1355, 1360] -[] | Ro Mane Spray | 000
+  sim-m-q1355-coronary-bypass-surgery-less-than-6-mont-d1    | men-q1355: 2+ years ago -> Less than 6 months ago | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q1355-coronary-bypass-surgery-7-to-12-months-d1      | men-q1355: 2+ years ago -> 7-12 months ago | +[] -[] | Ro Mane Spray | 000
+  sim-m-q1355-coronary-bypass-surgery-1-to-2-years-d1        | men-q1355: 2+ years ago -> 1-2 years ago | +[] -[] | Ro Mane Spray | 000
+  sim-m-q1360-coronary-bypass-surgery-seeing-cardiolog-d1    | men-q1360: Yes -> No | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q1300-heart-failure                                  | men-q1300: None of the above -> Heart failure | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q1300-arrhythmia                                     | men-q1300: None of the above -> Arrhythmia | +[1420] -[] | Ro Mane Spray | 000
+  sim-m-q1420-atrial-fibrillation-d1                         | men-q1420: Premature ventricular contractions (PVCs) -> Atrial fibrillation (afib) | +[1430, 1440] -[] | Ro Mane Spray | 000
+  sim-m-q1430-ablation-procedure-yes-d2                      | men-q1430: No -> Yes | +[1435] -[] | Ro Mane Spray | 000
+  sim-m-q1435-afib-since-ablation-procedure-yes-d3           | men-q1435: No -> Yes | +[] -[] | Ro Mane Spray | 000
+  sim-m-q1440-meds-for-afib-yes-d2                           | men-q1440: No -> Yes | +[] -[] | Ro Mane Spray | 000
+  sim-m-q1420-atrial-flutter-d1                              | men-q1420: Premature ventricular contractions (PVCs) -> Atrial flutter | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q1420-bradycardia-d1                                 | men-q1420: Premature ventricular contractions (PVCs) -> Bradycardia | +[1455, 1460] -[] | Ro Mane Spray | 000
+  sim-m-q1455-resting-rate-less-than-50-d2                   | men-q1455: 60-69 -> Less than 50 | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q1455-resting-rate-50-to-59-d2                       | men-q1455: 60-69 -> 50-59 | +[] -[] | Ro Mane Spray | 000
+  sim-m-q1455-resting-rate-70-plus-d2                        | men-q1455: 60-69 -> 70+ | +[] -[] | Ro Mane Spray | 000
+  sim-m-q1460-fainted-from-low-heart-rate-yes-d2             | men-q1460: No -> Yes | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q1420-paroxysmal-supraventricular-tachycardia-d1     | men-q1420: Premature ventricular contractions (PVCs) -> Paroxysmal supraventricular tachycardia (PSVT) | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q1420-wolff-parkinson-white-syndrome-d1              | men-q1420: Premature ventricular contractions (PVCs) -> Wolff-Parkinson-White syndrome | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q1420-ventricular-fibrillation-d1                    | men-q1420: Premature ventricular contractions (PVCs) -> Ventricular fibrillation | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q1420-arrhythmia-type-other-d1                       | men-q1420: Premature ventricular contractions (PVCs) -> Other | +[1475] -[] | Ro Mane Spray | 000
+  sim-m-q1300-pericarditis                                   | men-q1300: None of the above -> Pericarditis | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q1300-pulmonary-hypertension                         | men-q1300: None of the above -> Pulmonary hypertension | +[] -[] | Ro Mane Spray | 001  <== CHANGED
+  sim-m-q2200-im-taking-medications                          | men-q2200: I don't take any medications -> I’m taking medications | +[] -[] | Ro Mane Spray | 000
+  sim-m-q2300-i-have-allergies                               | men-q2300: I don't have allergies -> I have allergies | +[] -[] | Ro Mane Spray | 000
+  sim-m-q2350-trying-to-get-pregnant-yes-we-are              | men-q2350: No, we are not -> Yes, we are | +[2355] -[] | oral minoxidil | 110  <== CHANGED
+  sim-m-q2400-weight-loss                                    | men-q2400: None of the above -> Weight loss | +[] -[] | Ro Mane Spray | 000
+  sim-m-q2400-stronger-erections                             | men-q2400: None of the above -> Stronger erections | +[] -[] | Ro Mane Spray | 000
+  sim-m-q2400-climax-control                                 | men-q2400: None of the above -> Climax control | +[] -[] | Ro Mane Spray | 000
+  sim-m-q2400-herpes-cold-sores-outbreaks                    | men-q2400: None of the above -> Herpes or cold sores outbreaks | +[] -[] | Ro Mane Spray | 000
+  sim-m-q2400-longevity                                      | men-q2400: None of the above -> Longevity | +[] -[] | Ro Mane Spray | 000
+  sim-m-q2400-nutrition                                      | men-q2400: None of the above -> Nutrition | +[] -[] | Ro Mane Spray | 000
+  sim-m-q2400-skincare                                       | men-q2400: None of the above -> Skincare | +[] -[] | Ro Mane Spray | 000
+  sim-m-q2510-yes                                            | men-q2510: No -> Yes | +[2520] -[] | Ro Mane Spray | 000
+  sim-m-q132-hairline+patches                                | men-q132: Hairline + Crown -> Hairline + Random golf-ball size bald patches (mixed pick) | +[] -[] | no-recommendation | 111  <== CHANGED
+  sim-m-q112-under18                                         | men-q112 (basics): age 32 -> under 18 | +[7010] -[132, 150, 160, 170, 370, 1000, 1300, 2200, 2300, 2350, 2400, 2510, 3177, 3178] | (recommender screen not reached) | 000  <== CHANGED
+  sim-m-q112-female                                          | men-q112 (basics): male -> female | +[7062] -[132, 150, 160, 170, 370, 1000, 1300, 2200, 2300, 2350, 2400, 2510, 3177, 3178] | (recommender screen not reached) | 000  <== CHANGED
+  sim-m-q112-zip                                             | men-q112 (basics): served zip -> zip not served | +[7030] -[132, 150, 160, 170, 370, 1000, 1300, 2200, 2300, 2350, 2400, 2510, 3177, 3178] | (recommender screen not reached) | 000  <== CHANGED
+  sim-m-age70                                                | men-q112 (basics): age 32 -> 70 | +[] -[] | Ro Mane Spray | 000
+  sim-m-q22-both                                             | men-q22: None of the above -> both "tried" boxes | +[28, 240, 285] -[26] | Ro Mane Spray | 000
+  sim-m-combo-dep+hf                                         | TWO changes: depression (q1000) + heart failure (q1300) | +[] -[] | no-recommendation | 111  <== CHANGED
+  sim-m-combo-pc+brady                                       | THREE changes: prostate cancer + depression + heart failure | +[] -[] | no-recommendation | 111  <== CHANGED
+  sim-m-old-flow                                             | experiment mhlConsultativeOv switched off (older two-product screen) | +[3180, 3200] -[2350, 3177, 3178] | (recommender screen not reached) | 000  <== CHANGED
+===== women: baseline 31 screens -> {'end': 4025, 'vars': {'ifNotEligibleForOralMinoxidil': 0, 'ifNotEligibleForTopicalMinoxidil': 0, 'userAge': 38}, 'result': 'choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)'}
+  sim-w-q4-months                                            | women-q4: More than a year -> Months | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q4-within-the-last-year                              | women-q4: More than a year -> Within the last year | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q6-suddenly                                          | women-q6: Gradually -> Suddenly | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q6-not-sure                                          | women-q6: Gradually -> Not sure | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q8-temples                                           | women-q8: Top of head/crown -> Temples | +[] -[10] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q8-frontal-scalp                                     | women-q8: Top of head/crown -> Frontal scalp | +[] -[10] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q8-all-over                                          | women-q8: Top of head/crown -> All over | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q10-1                                                | women-q10: 3 -> 1 | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q10-2                                                | women-q10: 3 -> 2 | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q10-4                                                | women-q10: 3 -> 4 | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q10-5                                                | women-q10: 3 -> 5 | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1055-yes                                            | women-q1055: No -> Yes | +[6020] -[1057, 1059, 12, 1062, 1070, 1074, 1076, 1078, 1080, 1083, 1086, 1090, 1094, 1096, 1185, 1250, 1620, 1626, 1630, 1640, 2200, 2010, 4025] | STOP: pregnancy | 0038  <== CHANGED
+  sim-w-q6020-got-it-d1                                      | women-q6020: (nothing) -> Got it | +[] -[] | STOP: pregnancy | 0038
+  sim-w-q1055-not-sure                                       | women-q1055: No -> Not sure | +[6020] -[1057, 1059, 12, 1062, 1070, 1074, 1076, 1078, 1080, 1083, 1086, 1090, 1094, 1096, 1185, 1250, 1620, 1626, 1630, 1640, 2200, 2010, 4025] | STOP: pregnancy | 0038  <== CHANGED
+  sim-w-q6020-got-it-d1x                                     | women-q6020: (nothing) -> Got it | +[] -[] | STOP: pregnancy | 0038
+  sim-w-q1057-yes                                            | women-q1057: No -> Yes | +[4030] -[4025] | Hair Solution Rx only | 1038  <== CHANGED
+  sim-w-q1059-yes                                            | women-q1059: No -> Yes | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q12-very-mild                                        | women-q12: Moderate -> Very Mild | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q12-mild                                             | women-q12: Moderate -> Mild | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q12-severe                                           | women-q12: Moderate -> Severe | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q12-extremely-severe                                 | women-q12: Moderate -> Extremely severe | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1062-i-m-shedding-more-hair-than-is-normal-fo       | women-q1062: My hair is gradually thinning (I’m slowly noticing more of my scalp showing through or my scalp s | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1062-both                                           | women-q1062: My hair is gradually thinning (I’m slowly noticing more of my scalp showing through or my scalp s | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1062-unsure                                         | women-q1062: My hair is gradually thinning (I’m slowly noticing more of my scalp showing through or my scalp s | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1070-1                                              | women-q1070: 2 -> 1 | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1070-3                                              | women-q1070: 2 -> 3 | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1070-4                                              | women-q1070: 2 -> 4 | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1070-5                                              | women-q1070: 2 -> 5 | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1074-a-patch-or-patches-of-hair-loss-that-is-       | women-q1074: None of the above -> A patch or patches of hair loss that is nearly or completely bald | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1074-pain-soreness-burning-and-or-tingling-in       | women-q1074: None of the above -> Pain, soreness, burning, and/or tingling in areas of hair loss | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1074-redness-or-rashes-on-scalp                     | women-q1074: None of the above -> Redness or rashes on scalp | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1074-recurrent-pus-bumps-or-open-sores-on-sca       | women-q1074: None of the above -> Recurrent pus bumps or open sores on scalp | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1074-partial-or-complete-loss-of-eyebrows-or-       | women-q1074: None of the above -> Partial or complete loss of eyebrows or eyelashes | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1076-no                                             | women-q1076: Yes -> No | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1076-i-don-t-know                                   | women-q1076: Yes -> I don't know | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1078-1-not-at-all                                   | women-q1078: 3 - Somewhat -> 1 - Not at all | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1078-2-a-little-bit                                 | women-q1078: 3 - Somewhat -> 2 - A little bit | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1078-4-quite-a-bit                                  | women-q1078: 3 - Somewhat -> 4 - Quite a bit | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1078-5-a-lot                                        | women-q1078: 3 - Somewhat -> 5 - A lot | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1080-1-not-at-all                                   | women-q1080: 3 - Somewhat -> 1 - Not at all | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1080-2-a-little-bit                                 | women-q1080: 3 - Somewhat -> 2 - A little bit | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1080-4-quite-a-bit                                  | women-q1080: 3 - Somewhat -> 4 - Quite a bit | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1080-5-a-lot                                        | women-q1080: 3 - Somewhat -> 5 - A lot | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1083-yes                                            | women-q1083: No -> Yes | +[1084] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1086-alopecia-areata                                | women-q1086: None of the above -> Alopecia areata | +[6040] -[1090, 1094, 1096, 1185, 1250, 1620, 1626, 1630, 1640, 2200, 2010, 4025] | STOP: see an in-person dermatologist | 0038  <== CHANGED
+  sim-w-q6040-got-it-d1                                      | women-q6040: (nothing) -> Got it | +[] -[] | STOP: see an in-person dermatologist | 0038
+  sim-w-q1086-lichen-planopilaris                            | women-q1086: None of the above -> Lichen planopilaris | +[6040] -[1090, 1094, 1096, 1185, 1250, 1620, 1626, 1630, 1640, 2200, 2010, 4025] | STOP: see an in-person dermatologist | 0038  <== CHANGED
+  sim-w-q6040-got-it-d1x                                     | women-q6040: (nothing) -> Got it | +[] -[] | STOP: see an in-person dermatologist | 0038
+  sim-w-q1086-frontal-fibrosing-alopecia-ffa                 | women-q1086: None of the above -> Frontal fibrosing alopecia (FFA) | +[6040] -[1090, 1094, 1096, 1185, 1250, 1620, 1626, 1630, 1640, 2200, 2010, 4025] | STOP: see an in-person dermatologist | 0038  <== CHANGED
+  sim-w-q6040-got-it-d1xx                                    | women-q6040: (nothing) -> Got it | +[] -[] | STOP: see an in-person dermatologist | 0038
+  sim-w-q1086-central-centrifugal-cicatricial-alopecia       | women-q1086: None of the above -> Central centrifugal cicatricial alopecia (CCCA) | +[6040] -[1090, 1094, 1096, 1185, 1250, 1620, 1626, 1630, 1640, 2200, 2010, 4025] | STOP: see an in-person dermatologist | 0038  <== CHANGED
+  sim-w-q6040-got-it-d1xxx                                   | women-q6040: (nothing) -> Got it | +[] -[] | STOP: see an in-person dermatologist | 0038
+  sim-w-q1086-traction-alopecia                              | women-q1086: None of the above -> Traction alopecia | +[6040] -[1090, 1094, 1096, 1185, 1250, 1620, 1626, 1630, 1640, 2200, 2010, 4025] | STOP: see an in-person dermatologist | 0038  <== CHANGED
+  sim-w-q6040-got-it-d1xxxx                                  | women-q6040: (nothing) -> Got it | +[] -[] | STOP: see an in-person dermatologist | 0038
+  sim-w-q1086-lupus                                          | women-q1086: None of the above -> Lupus | +[6040] -[1090, 1094, 1096, 1185, 1250, 1620, 1626, 1630, 1640, 2200, 2010, 4025] | STOP: see an in-person dermatologist | 0038  <== CHANGED
+  sim-w-q6040-got-it-d1xxxxx                                 | women-q6040: (nothing) -> Got it | +[] -[] | STOP: see an in-person dermatologist | 0038
+  sim-w-q1090-excess-body-hair-on-chest-abdomen-back         | women-q1090: None of the above -> Excess body hair on chest, abdomen, back | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1090-excess-facial-hair                             | women-q1090: None of the above -> Excess facial hair | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1090-severe-acne                                    | women-q1090: None of the above -> Severe acne | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1090-irregular-periods                              | women-q1090: None of the above -> Irregular periods | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1090-enlargement-of-the-clitoris                    | women-q1090: None of the above -> Enlargement of the clitoris | +[6040] -[1094, 1096, 1185, 1250, 1620, 1626, 1630, 1640, 2200, 2010, 4025] | STOP: see an in-person dermatologist | 0038  <== CHANGED
+  sim-w-q6040-got-it-d1xxxxxx                                | women-q6040: (nothing) -> Got it | +[] -[] | STOP: see an in-person dermatologist | 0038
+  sim-w-q1090-discharge-from-the-nipples                     | women-q1090: None of the above -> Discharge from the nipple(s) | +[6040] -[1094, 1096, 1185, 1250, 1620, 1626, 1630, 1640, 2200, 2010, 4025] | STOP: see an in-person dermatologist | 0038  <== CHANGED
+  sim-w-q6040-got-it-d1xxxxxxx                               | women-q6040: (nothing) -> Got it | +[] -[] | STOP: see an in-person dermatologist | 0038
+  sim-w-q1090-deepening-of-your-voice                        | women-q1090: None of the above -> Deepening of your voice | +[6040] -[1094, 1096, 1185, 1250, 1620, 1626, 1630, 1640, 2200, 2010, 4025] | STOP: see an in-person dermatologist | 0038  <== CHANGED
+  sim-w-q6040-got-it-d1xxxxxxxx                              | women-q6040: (nothing) -> Got it | +[] -[] | STOP: see an in-person dermatologist | 0038
+  sim-w-q1094-gone-through-perimenopause-or-menopause        | women-q1094: None of the above -> Gone through perimenopause or menopause | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1094-significant-weight-loss                        | women-q1094: None of the above -> Significant weight loss | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1094-flare-of-a-chronic-disease                     | women-q1094: None of the above -> Flare of a chronic disease | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1094-hospitalization                                | women-q1094: None of the above -> Hospitalization | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1094-major-illness-e-g-covid                        | women-q1094: None of the above -> Major illness (e.g. COVID) | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1094-major-life-stressor-e-g-moving-job-loss-       | women-q1094: None of the above -> Major life stressor (e.g. moving, job loss, ending a relationship, or a love | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1094-started-stopped-or-changed-birth-control       | women-q1094: None of the above -> Started, stopped, or changed birth control pills or any other kind of hormon | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1094-received-chemotherapy-as-part-of-cancer-       | women-q1094: None of the above -> Received chemotherapy as part of cancer treatment | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1094-major-surgery                                  | women-q1094: None of the above -> Major surgery | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1096-heart-condition-coronary-artery-disease-       | women-q1096: None of the above -> Heart condition (coronary artery disease, angina/chest pain, heart failure,  | +[1160, 4030] -[4025] | Hair Solution Rx only | 1038  <== CHANGED
+  sim-w-q1096-stroke                                         | women-q1096: None of the above -> Stroke | +[1162, 4030] -[4025] | Hair Solution Rx only | 1038  <== CHANGED
+  sim-w-q1096-kidney-disease                                 | women-q1096: None of the above -> Kidney disease | +[1164] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1096-liver-disease                                  | women-q1096: None of the above -> Liver disease | +[1166] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1096-thyroid-disorder                               | women-q1096: None of the above -> Thyroid disorder | +[1172] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1096-anemia-low-red-blood-cell-count                | women-q1096: None of the above -> Anemia (low red blood cell count) | +[1168] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1096-iron-deficiency                                | women-q1096: None of the above -> Iron deficiency | +[1170] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1096-polycystic-ovary-disease                       | women-q1096: None of the above -> Polycystic ovary disease | +[1174] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1096-lupus-or-other-autoimmune-disorder             | women-q1096: None of the above -> Lupus or other autoimmune disorder | +[6040] -[1185, 1250, 1620, 1626, 1630, 1640, 2200, 2010, 4025] | STOP: see an in-person dermatologist | 1138  <== CHANGED
+  sim-w-q6040-got-it-d1xxxxxxxxx                             | women-q6040: (nothing) -> Got it | +[] -[] | STOP: see an in-person dermatologist | 1138
+  sim-w-q1096-pheochromocytoma-adrenal-gland-tumor           | women-q1096: None of the above -> Pheochromocytoma (adrenal gland tumor) | +[1178, 4030] -[4025] | Hair Solution Rx only | 1038  <== CHANGED
+  sim-w-q1096-pulmonary-hypertension                         | women-q1096: None of the above -> Pulmonary hypertension | +[1180, 4030] -[4025] | Hair Solution Rx only | 1038  <== CHANGED
+  sim-w-q1096-high-blood-pressure                            | women-q1096: None of the above -> High blood pressure | +[1182, 4030] -[4025] | Hair Solution Rx only | 1038  <== CHANGED
+  sim-w-q1185-yes                                            | women-q1185: No -> Yes | +[1186] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1250-spironolactone                                 | women-q1250: None of the above -> Spironolactone | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1250-oral-minoxidil                                 | women-q1250: None of the above -> Oral minoxidil | +[1254] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1254-yes-d1                                         | women-q1254: No -> Yes | +[6040] -[1620, 1626, 1630, 1640, 2200, 2010, 4025] | STOP: see an in-person dermatologist | 0038  <== CHANGED
+  sim-w-q6040-got-it-d2                                      | women-q6040: (nothing) -> Got it | +[] -[] | STOP: see an in-person dermatologist | 0038
+  sim-w-q1254-unsure-d1                                      | women-q1254: No -> Unsure | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1250-topical-minoxidil                              | women-q1250: None of the above -> Topical minoxidil | +[1256] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1256-yes-d1                                         | women-q1256: No -> Yes | +[1258] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1258-foam-d2                                        | women-q1258: Liquid -> Foam | +[6040] -[1620, 1626, 1630, 1640, 2200, 2010, 4025] | STOP: see an in-person dermatologist | 0038  <== CHANGED
+  sim-w-q6040-got-it-d3                                      | women-q6040: (nothing) -> Got it | +[] -[] | STOP: see an in-person dermatologist | 0038
+  sim-w-q1258-both-d2                                        | women-q1258: Liquid -> Both | +[6040] -[1620, 1626, 1630, 1640, 2200, 2010, 4025] | STOP: see an in-person dermatologist | 0038  <== CHANGED
+  sim-w-q6040-got-it-d3x                                     | women-q6040: (nothing) -> Got it | +[] -[] | STOP: see an in-person dermatologist | 0038
+  sim-w-q1256-unsure-d1                                      | women-q1256: No -> Unsure | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1250-steroid-injections-into-the-scalp              | women-q1250: None of the above -> Steroid injections into the scalp | +[6040] -[1620, 1626, 1630, 1640, 2200, 2010, 4025] | STOP: see an in-person dermatologist | 0038  <== CHANGED
+  sim-w-q6040-got-it-d1xxxxxxxxxx                            | women-q6040: (nothing) -> Got it | +[] -[] | STOP: see an in-person dermatologist | 0038
+  sim-w-q1250-oral-supplements-e-g-biotin-nutrafol-viv       | women-q1250: None of the above -> Oral supplements (e.g. Biotin, Nutrafol, Viviscal) | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1250-other                                          | women-q1250: None of the above -> Other | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1620-i-have-conditions                              | women-q1620: I don't have any conditions -> I have conditions | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1626-yes                                            | women-q1626: No -> Yes | +[1627] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1630-im-taking-medications                          | women-q1630: I don't take any medications -> I’m taking medications | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q1640-i-have-allergies                               | women-q1640: I don't have allergies -> I have allergies | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q2200-white                                          | women-q2200: I prefer not to answer -> White | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q2200-hispanic-or-latino                             | women-q2200: I prefer not to answer -> Hispanic or Latino | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q2200-black-or-african-american                      | women-q2200: I prefer not to answer -> Black or African American | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q2200-native-american-or-american-indian             | women-q2200: I prefer not to answer -> Native American or American Indian | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q2200-asian-pacific-islander                         | women-q2200: I prefer not to answer -> Asian / Pacific Islander | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q2200-other                                          | women-q2200: I prefer not to answer -> Other | +[2202] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-age17                                                | women-q30 (basics): age 38 -> under 18 | +[6010] -[1050, 1055, 1057, 1059, 12, 1062, 1070, 1074, 1076, 1078, 1080, 1083, 1086, 1090, 1094, 1096, 1185, 1250, 1620, 1626, 1630, 1640, 2200, 2010, 4025] | STOP: under 18 | 0038  <== CHANGED
+  sim-w-male                                                 | women-q30 (basics): female -> male | +[6030] -[1050, 1055, 1057, 1059, 12, 1062, 1070, 1074, 1076, 1078, 1080, 1083, 1086, 1090, 1094, 1096, 1185, 1250, 1620, 1626, 1630, 1640, 2200, 2010, 4025] | redirect to men | 0038  <== CHANGED
+  sim-w-zip                                                  | women-q30 (basics): served zip -> zip not served | +[6000] -[1050, 1055, 1057, 1059, 12, 1062, 1070, 1074, 1076, 1078, 1080, 1083, 1086, 1090, 1094, 1096, 1185, 1250, 1620, 1626, 1630, 1640, 2200, 2010, 4025] | STOP: zip | 0038  <== CHANGED
+  sim-w-age18                                                | women-q30 (basics): age 38 -> 18 | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0018  <== CHANGED
+  sim-w-age21                                                | women-q30 (basics): age 38 -> 21 | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0021  <== CHANGED
+  sim-w-age64                                                | women-q30 (basics): age 38 -> 64 | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0064  <== CHANGED
+  sim-w-age65                                                | women-q30 (basics): age 38 -> 65 | +[] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0065  <== CHANGED
+  sim-w-age66                                                | women-q30 (basics): age 38 -> 66 | +[4030] -[4025] | Hair Solution Rx only | 0066  <== CHANGED
+  sim-w-age80                                                | women-q30 (basics): age 38 -> 80 | +[4030] -[4025] | Hair Solution Rx only | 0080  <== CHANGED
+  sim-w-q8-temples+frontal                                   | women-q8: Top of head/crown -> Temples + Frontal scalp | +[] -[10] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-combo-bf+age66                                       | TWO changes: breastfeeding + age 66 | +[4030] -[4025] | Hair Solution Rx only | 1066  <== CHANGED
+  sim-w-combo-liquid-allergy                                 | women: used topical minoxidil, allergic, to the LIQUID form | +[1256, 1258] -[] | choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil) | 0038
+  sim-w-q4025-oral                                           | women-q4025 (choice screen): pick Oral Minoxidil | +[4040, 4042, 5041] -[] | ended at qid 5041 | 0038  <== CHANGED
+  sim-w-q4025-topical                                        | women-q4025 (choice screen): pick Hair Solution Rx | +[4030, 5042] -[] | ended at qid 5042 | 0038  <== CHANGED
+  sim-w-q4025-nopref                                         | women-q4025 (choice screen): pick No preference | +[5041] -[] | ended at qid 5041 | 0038  <== CHANGED

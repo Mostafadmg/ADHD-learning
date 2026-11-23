@@ -1,0 +1,1 @@
+{"steps":[{"do":"click","selector":"label:has-text(\"My hair loss started gradually over the last few months or years\")","settle":2800},{"do":"snap","settle":600}]}

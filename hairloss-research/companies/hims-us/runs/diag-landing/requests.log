@@ -1,0 +1,202 @@
+307 GET document https://www.hims.com/hair-loss
+200 GET document https://www.hims.com/hair-loss
+NAV https://www.hims.com/hair-loss
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/b265c64bb81c9971.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/c3dccb3855de1234.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/6ae1a5368fc3f0d9.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/b7f5a298e88a875c.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/813549846ec9a450.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/b530c85f13ebb13c.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/e97ad6a40be9a979.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/0ca60128708863bb.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/82be060e3f6709ee.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/f3e790e94c585866.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/17ae29e97bb4065d.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/a88ef569754b942a.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/c2d88556810c53ca.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/fd92b4f908ad4539.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/fa5c14af164fe94a.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/d5aae2ada958cf75.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/ab45c45742eef05c.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/1d4dce4c8096f18f.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/b467262a90114045.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/7f7477f6ae107cec.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/41210ce963bd4ce5.css
+200 GET stylesheet https://www.hims.com/shop/_next/static/css/0637c812870cd0bf.css
+200 GET script https://www.hims.com/shop/_next/static/chunks/6a7e6506-0d3232363a89c5d9.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/9413-269f6835ac8df05a.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/main-app-354a2c32230b9441.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/1c99b9a4-90d50b7cc78d70ab.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/12fc970d-b79b05330a1dcbfc.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/9132-63f46ddde1c15b01.js
+403 GET font https://www.hims.com/css/fonts/caresans/v1/CareSans-VF-Roman-subset.woff2
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+FAILED GET font https://www.hims.com/css/fonts/caresans/v1/CareSans-VF-Roman-subset.woff2 :: net::ERR_ABORTED
+200 GET script https://www.hims.com/shop/_next/static/chunks/2384-1ecdc6897d5692e1.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/6902-8584f1d0b9b99664.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/1155-6be1b7edf41604e8.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/9624-0fb7c8c40d1a6f2d.js
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/ar_3:4,c_fill,g_auto/v1/Hims/hair/LP/hair-start-comparison-dlp/12-15-23/Hims-Hair-ATF-Carousel-4-D
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/ar_3:4,c_fill,g_auto/v1/cms/hims/hair/lp/hair-start-comparison-dlp-sem/07-19-24/Hims-Hair-ATF-Carousel-2-D
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/ar_3:4,c_fill,g_auto/v1/cms/hims/hair/lp/hair-start-comparison-dlp/07-22-25/Hims-Hair-ATF-Carousel-01
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+200 GET script https://www.hims.com/shop/_next/static/chunks/9200-ca998df4374a27ee.js
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/ar_3:4,c_fill,g_auto/v1/Hims/hair/LP/hair-start-comparison-dlp/Hims-Hair-ATF-Josh-D
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+200 GET script https://www.hims.com/shop/_next/static/chunks/2131-581be5621b28f420.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/app/error-3daf328a135e1b70.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/7213-4f667368269e24c1.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/app/layout-a5522ee0af5ec7a0.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/4990-6f794afb9bb1c380.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/9669-72947ab02a022382.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/7891-f8c730925cb3bef1.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/9725-0867c6a2b25927a6.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/7506-9eca8ce2e69617ab.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/app/%5B...path%5D/page-bdc9f41869d39c6c.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/webpack-c0f53dd87efa8f41.js
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/ar_3:4,c_fill,g_auto/v1/Hims/hair/LP/hair-start-comparison-dlp/12-15-23/Hims-Hair-ATF-Carousel-1-D
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/ar_3:4,c_fill,g_auto/v1/cms/hims/hair/lp/hair-start-comparison-dlp/07-22-25/Hims-Hair-ATF-Carousel-06
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/ar_3:4,c_fill,g_auto/v1/cms/hims/hair/lp/hair-start-comparison-dlp/07-22-25/Hims-Hair-ATF-Carousel-07
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_180/q_auto:good:sensitive/f_auto,fl_lossy/v1/cms/hims/hair/user-generated-content-ugc/hims-hair-ugc-2024-20-img-10
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_180/q_auto:good:sensitive/f_auto,fl_lossy/v1/cms/hims/hair/user-generated-content-ugc/hims-hair-ugc-2024-20-img-9
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_180/q_auto:good:sensitive/f_auto,fl_lossy/v1/cms/hims/hair/user-generated-content-ugc/Hair-Anthony-After
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_180/q_auto:good:sensitive/f_auto,fl_lossy/v1/cms/hims/hair/user-generated-content-ugc/Hair-JohnT-After
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_180/q_auto:good:sensitive/f_auto,fl_lossy/v1/cms/hims/hair/user-generated-content-ugc/Hair-Joshua-Before
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_180/q_auto:good:sensitive/f_auto,fl_lossy/v1/cms/hims/hair/user-generated-content-ugc/Hair-JohnT-Before
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_180/q_auto:good:sensitive/f_auto,fl_lossy/v1/cms/hims/hair/user-generated-content-ugc/Hair-Anthony-Before
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_180/q_auto:good:sensitive/f_auto,fl_lossy/v1/cms/hims/hair/user-generated-content-ugc/Hair-Joshua-After
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE warning [transcend] Bad initialization
+NAV https://www.hims.com/hair-loss
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_180/q_auto:good:sensitive/f_auto,fl_lossy/v1/cms/hims/hair/user-generated-content-ugc/Hair-Antonio-Before
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+CONSOLE warning [transcend] Bad initialization
+CONSOLE warning [transcend] Bad initialization
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_180/q_auto:good:sensitive/f_auto,fl_lossy/v1/cms/hims/hair/user-generated-content-ugc/Hair-Antonio-After
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_180/q_auto:good:sensitive/f_auto,fl_lossy/v1/cms/hims/hair/user-generated-content-ugc/Hair-Phillip-Before
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_180/q_auto:good:sensitive/f_auto,fl_lossy/v1/cms/hims/hair/user-generated-content-ugc/Hair-Phillip-After
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/v1/cms/hims/hair/storefront/hair-loss/07-07-26/hims-hair-why-01-d
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/ar_3:4,c_fill,g_auto/v1/cms/hims/hair/lp/hair-start-comparison-dlp/07-22-25/Hims-Hair-UGC-Final-Card-D
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/v1/cms/hims/hair/storefront/hair-loss/07-16-25/Hims-Hair-Why-02
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/v1/cms/hims/wl/storefront/weight-loss/03-17-25/Hims-Why-Choose-3
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/v1/cms/hims/hair/storefront/hair-loss/07-16-25/Hims-Hair-Why-05
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/v1/cms/hims/hair/lp/gs/hair-top-fin-minox-spray/02-24-2025/Hims-Hair-Hybrids-Science-01-cropped-medium
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/v1/cms/hims/hair/lp/gs/hair-top-fin-minox-spray/02-24-2025/Hims-Hair-Hybrids-Science-03-cropped-medium
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/v1/cms/hims/hair/lp/gs/hair-top-fin-minox-spray/02-24-2025/Hims-Hair-Hybrids-Science-02-cropped-medium
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/ar_16:9,c_fill,g_auto/v1/cms/products/hims/hair/rx-pill-single/Hims-Hair-Rx-Pill-Single-16_9
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/ar_16:9,c_fill,g_auto/v1/cms/hims/hair/products/Hair%20chews/Hair-chews-product-16_9
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/ar_16:9,c_fill,g_auto/v1/cms/hims/products/hair-loss/topical-finasteride-minoxidil-spray/topical-finasteride-minoxidil-premium-spray-16_9
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/ar_16:9,c_fill,g_auto/v1/cms/hims/products/hair-loss/topical-finasteride-minoxidil-ketoconazole-biotin-spray/topical-finasteride-minoxidil-spray-16_
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+200 GET script https://transcend-cdn.com/cm/65e802e0-6168-4b45-a620-aa644d14dbc7/airgap.js
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/ar_16:9,c_fill,g_auto/v1/cms/hims/products/hair-loss/topical-finasteride-minoxidil-serum/topical-finasteride-minoxidil-serum-16_9
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+403 GET image https://www.hims.com/forhims/image/upload/c_scale,dpr_1.0,w_429/q_auto:good:sensitive/f_auto,fl_lossy/ar_16:9,c_fill,g_auto/v1/cms/hims/products/hair-loss/oral-finasteride/oral-finasteride-product-16_9
+CONSOLE error Failed to load resource: the server responded with a status of 403 (Forbidden)
+200 GET script https://www.hims.com/shop/_next/static/chunks/6540.747e12c2c1a33475.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/5600.490a42a875683184.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/8410.0521c280a3ccf1cc.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/528.a943c62e7df9f292.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/6404.969f222e3171d7a1.js
+200 GET script https://www.hims.com/shop/_next/static/chunks/7564.417726a1e5b0c2cb.js
+200 GET script https://transcend-cdn.com/cm/65e802e0-6168-4b45-a620-aa644d14dbc7/ui.js
+202 POST fetch https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pubd8164535adfc8cfa284b4ad6a639ab0f&dd-evp-origin-version=6.33.0&dd-evp-origin=browser&dd-request-id=d2cbb01e-8e59-4575-8cd6-bf2c4cde7bbb&batch_time=1795471125833&_dd.api=fet
+202 POST fetch https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pubd8164535adfc8cfa284b4ad6a639ab0f&dd-evp-origin-version=6.33.0&dd-evp-origin=browser&dd-request-id=ef36a4c5-f84f-48fb-ba48-57eabe190343&batch_time=1795471125834&_dd.api=fet
+202 POST fetch https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pubd8164535adfc8cfa284b4ad6a639ab0f&dd-evp-origin-version=6.33.0&dd-evp-origin=browser&dd-request-id=7c5b33ee-fd09-4c02-897d-3950df1e23ee&batch_time=1795471125829&_dd.api=fet
+200 GET fetch https://transcend-cdn.com/cm/65e802e0-6168-4b45-a620-aa644d14dbc7/translations/en.json
+200 GET stylesheet https://transcend-cdn.com/cm/65e802e0-6168-4b45-a620-aa644d14dbc7/cm.css
+202 POST fetch https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pubd8164535adfc8cfa284b4ad6a639ab0f&dd-evp-origin-version=6.33.0&dd-evp-origin=browser&dd-request-id=6c7ff2cc-864d-4fdb-9ac6-fd91b49ee873&batch_time=1795471125943&_dd.api=fet
+200 GET script https://tm.hims.com/gtm.js?id=GTM-KZL9BCQ
+202 POST fetch https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pubd8164535adfc8cfa284b4ad6a639ab0f&dd-evp-origin-version=6.33.0&dd-evp-origin=browser&dd-request-id=64ac29cd-a52c-40f5-9b41-bee51ca80ac0&batch_time=1795471125945&_dd.api=fet
+202 POST fetch https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pubd8164535adfc8cfa284b4ad6a639ab0f&dd-evp-origin-version=6.33.0&dd-evp-origin=browser&dd-request-id=ff07f470-d5cb-419c-a697-7f74fd85dd3a&batch_time=1795471126078&_dd.api=fet
+200 GET image https://www.facebook.com/tr?id=1926350194273730&ev=ViewContent&fbp=fb.1.1795471126349.363017463&event_id=ba9de1009abc90ea6ec2c9fb606c61c08bc33e43cee32395209223ce2d5ecfbd_ViewContent&eid=ba9de1009abc90ea6ec2c9fb606c61c08bc33e43cee32395209223ce2d5ecfbd
+200 GET image https://www.facebook.com/tr?id=1926350194273730&ev=PageView&fbp=fb.1.1795471126349.363017463&event_id=ba9de1009abc90ea6ec2c9fb606c61c08bc33e43cee32395209223ce2d5ecfbd_PageView&eid=ba9de1009abc90ea6ec2c9fb606c61c08bc33e43cee32395209223ce2d5ecfbd_PageV
+202 POST fetch https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pubd8164535adfc8cfa284b4ad6a639ab0f&dd-evp-origin-version=6.33.0&dd-evp-origin=browser&dd-request-id=8df8315a-ad56-4d80-b06a-d98991e5603a&batch_time=1795471126204&_dd.api=fet
+200 GET script https://www.googletagmanager.com/gtm.js?id=GTM-KZL9BCQ&gtg_health=1
+202 POST fetch https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pubd8164535adfc8cfa284b4ad6a639ab0f&dd-evp-origin-version=6.33.0&dd-evp-origin=browser&dd-request-id=cdbec12e-0e07-41a0-8803-952f35a1fc82&batch_time=1795471126100&_dd.api=fet
+202 POST fetch https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pubd8164535adfc8cfa284b4ad6a639ab0f&dd-evp-origin-version=6.33.0&dd-evp-origin=browser&dd-request-id=6b65f0bd-89df-4160-8246-03f34cc65c8a&batch_time=1795471126105&_dd.api=fet
+204 GET image https://bat.bing.com/action/0?&ti=6001120&ver=2.3&mid=7424a54e-eca4-698d-0116-15f35b5dbcd5&evt=pageLoad&rn=639168&asc=G
+200 GET image https://alb.reddit.com/rp.gif?id=t2_1tiwmdhg&event=PageVisit&integration=noscript&click_id=&m.conversionId=ba9de1009abc90ea6ec2c9fb606c61c08bc33e43cee32395209223ce2d5ecfbd_PageVisit&external_id=
+200 GET image https://tags.srv.stackadapt.com/conv?cid=GElZmBprMj2zVmVHVch6oE
+302 GET image https://insight.adsrvr.org/track/pxl/?adv=ziistu0&ct=0:5nut3x3&fmt=3
+200 GET image https://tr.snapchat.com/p?pid=b037611b-6268-4fb2-a079-3c32affe023b&ev=VIEW_CONTENT&v=2.3&rand=aExIiZ3DnORS3tXl&pl=https://www.hims.com/57ac036f192b5d553b9a41506ae278663dca9f64b5e41815dae71a16cf49b22b
+200 GET script https://aws-us-east-prod-web-assets.s3.amazonaws.com/assets/file.js
+200 GET image https://bh.contextweb.com/bh/set.aspx?action=add&pid=1&advid=7286&token=CGHIZR&do=add
+200 GET image https://alb.reddit.com/rp.gif?id=t2_1tiwmdhg&event=Custom&integration=noscript&click_id=&m.conversionId=ba9de1009abc90ea6ec2c9fb606c61c08bc33e43cee32395209223ce2d5ecfbd_GreenV&m.customEventName=GreenV&external_id=
+200 GET image https://ct.pinterest.com/v3/?event=init&tid=2616402022694&noscript=1
+204 POST fetch https://ad.doubleclick.net/ccm/s/collect?auid=471031752.1795471127&gtm=45Fe6bh1v77681289za204zd77681289xeaxf3xg4&fmt=8
+200 POST fetch https://www.google.com/ccm/collect?rcb=6&frm=0&apvc=1&ae=g&auid=471031752.1795471127&dt=Hair%20Loss%20Treatment%20for%20Men%20%7C%20Hims%20%7C%20Hims&en=page_view&dl=https%3A%2F%2Fwww.hims.com%2Fhair-loss&scrsrc=tm.hims.com&rnd=1397087549.1795471127&
+200 GET image https://ad.ipredictive.com/d/track/event?upid=115406&url=www.hims.com&p1=pagevisits&cache_buster=1795471126523&ps=2
+200 GET image https://mgln.ai/view?token=c4336c06d8a44faa87dc02230ac5c367&url=https%3A%2F%2Fwww.hims.com
+302 GET image https://ad.doubleclick.net/ddm/activity/src=15407095;type=count0;cat=himsp0;u12=https://www.hims.com/;u14=pageView;ord=1?
+307 GET image https://ib.adnxs.com/getuid?https%3a%2f%2fmatch.adsrvr.org%2ftrack%2fcmf%2fappnexus%3fttd%3d1%26anid%3d%24UID&ttd_tdid=3f8c9937-6cfb-40fd-9776-1a6f6bc91e19
+303 GET image https://cnv.event.prod.bidr.io/log/cnv?tag_id=12&buzz_key=pmg&value=&segment_key=pmg-38&account_id=8&order=&ord=2075167680
+200 GET image https://tr.snapchat.com/p?pid=b037611b-6268-4fb2-a079-3c32affe023b&ev=PAGE_VIEW&v=2.3&rand=LWmOjm7bArGINdOz&pl=https://www.hims.com/57ac036f192b5d553b9a41506ae278663dca9f64b5e41815dae71a16cf49b22b
+303 GET image https://cnv.event.prod.bidr.io/log/cnv?tag_id=22&buzz_key=pmg&value=&segment_key=pmg-48&account_id=8&order=&ord=2078918624
+200 POST fetch https://api.forhims.com/dpe/producer/unauth
+200 GET image https://servedby.flashtalking.com/segment/2/read/a;;pixel/?s=17932&r=/
+200 POST fetch https://api.forhims.com/dpe/producer/unauth
+200 GET image https://cnv.event.prod.bidr.io/log/cnv?tag_id=12&buzz_key=pmg&value=&segment_key=pmg-38&account_id=8&order=&ord=2075167680&_bee_ppp=1
+202 POST fetch https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pubd8164535adfc8cfa284b4ad6a639ab0f&dd-evp-origin-version=6.33.0&dd-evp-origin=browser&dd-request-id=ea7c25e8-2d80-403b-95f6-dc87e6d9b8fe&batch_time=1795471126953&_dd.api=fet
+200 GET image https://cnv.event.prod.bidr.io/log/cnv?tag_id=22&buzz_key=pmg&value=&segment_key=pmg-48&account_id=8&order=&ord=2078918624&_bee_ppp=1
+200 GET image https://sslwidget.criteo.com/event?a=51838&rt=gif&v=5.7.1&p0=e%3Dexd%26site_type%3Dundefined&p1=e%3Dvp%26p%3D1&p2=e%3Ddis&adce=1&tld=about:blank&dtycbr=18691
+200 POST fetch https://www.google.com/ccm/collect?rcb=6&frm=0&apvc=1&ae=g&auid=471031752.1795471127&dt=Hair%20Loss%20Treatment%20for%20Men%20%7C%20Hims%20%7C%20Hims&en=source_update&dl=https%3A%2F%2Fwww.hims.com%2Fhair-loss&scrsrc=tm.hims.com&rnd=1397087549.1795471
+200 GET image https://ct.pinterest.com/v3/?event=pagevisit&tid=2616402022694&ed[event_id]=ba9de1009abc90ea6ec2c9fb606c61c08bc33e43cee32395209223ce2d5ecfbd&pd[external_id]=&pd[click_id]=&noscript=1
+200 GET image https://collector-53449.us.tvsquared.com/tv2track.php?idsite=TV-4563545409-1&rec=1&cookie=1
+200 GET script https://cdn.amplitude.com/libs/session-replay-browser-1.7.0-min.js.gz
+200 POST fetch https://api.forhims.com/dpe/producer/unauth
+302 GET image https://ib.adnxs.com/bounce?%2Fgetuid%3Fhttps%253a%252f%252fmatch.adsrvr.org%252ftrack%252fcmf%252fappnexus%253fttd%253d1%2526anid%253d%2524UID%26ttd_tdid%3D3f8c9937-6cfb-40fd-9776-1a6f6bc91e19
+200 POST fetch https://api.forhims.com/dpe/producer/unauth
+302 GET image https://ad.doubleclick.net/ddm/activity/src=15407095;dc_pre=CKG77ZWLn5gDFS_r4wcdmTQpng;type=count0;cat=himsp0;u12=https:/www.hims.com/;u14=pageView;ord=1?
+200 GET image https://collector-53449.us.tvsquared.com/tv2track.php?idsite=TV-4563545409-1&r=854881794&h=16&m=58&s=46&url=hims.com&_id=ee9a9152c3a47e8c&_idts=1795471126&_idvc=0&_idn=1&rec=1&cookie=1&cvar=%7B%225%22%3A%5B%22Hims%20-%20GreenV%22%2C%22%7B%7D%22%5D%7D
+200 POST xhr https://api.amplitude.com/
+302 GET image https://match.adsrvr.org/track/cmf/appnexus?ttd=1&anid=8202509526624973856&ttd_tdid=3f8c9937-6cfb-40fd-9776-1a6f6bc91e19
+200 GET script https://tm.hims.com/gtag/js?id=G-F7TTLSRMQB&cx=c&gtm=4e6bh1&sign=267451a6bf209f65340128cfef42fde3ab5f521e9ac73aacfb1ef2d9ca7a34eb_20261123
+200 POST fetch https://api.forhims.com/dpe/producer/unauth
+202 POST fetch https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pubd8164535adfc8cfa284b4ad6a639ab0f&dd-evp-origin-version=6.33.0&dd-evp-origin=browser&dd-request-id=87eb221b-bbd9-4ae7-8837-dfc7dfc4ca1b&batch_time=1795471127360&_dd.api=fet
+200 GET image https://sp.analytics.yahoo.com/sp.pl?a=10000&.yp=10210449
+302 GET image https://pixel.rubiconproject.com/tap.php?v=8981&nid=2307&put=3f8c9937-6cfb-40fd-9776-1a6f6bc91e19&gdpr=0&gdpr_consent=&expires=30&next=https%3A%2F%2Fmatch.adsrvr.org%2Ftrack%2Fcmf%2Frubicon
+200 GET image https://www.google.com/gmp/conversion/_dc_unique_id=12094229997384146130;_dc_ptd=ChAIgOWP2AYQoYCY9PHNmcFoEisAlZWppEkjU9vZRdHMSx4vVgRhrA-K6moGgIF-U1PMllsEr1iS6iedaSvM;_dc_time=1795471127;src=15407095;dc_pre=CKG77ZWLn5gDFS_r4wcdmTQpng;type=count0;cat=h
+200 POST xhr https://api.amplitude.com/
+200 GET document https://tm.hims.com/_/service_worker/6b40/sw_iframe.html?origin=https%3A%2F%2Fwww.hims.com&1p=1
+302 GET image https://match.adsrvr.org/track/cmf/rubicon?gdpr=0
+200 GET fetch https://tm.hims.com/g/collect?v=2&tid=G-F7TTLSRMQB&gtm=45he6bh1v898338689za20szb77681289zd77681289xf3xg4&_p=1795471125893&gcs=G111&gcd=13t3tPt2t5l1&npa=0&dma_cps=a&dma=1&ecid=1180913978&_eu=AAAAACA&_fplc=0&cid=632110356.1795471128&ec_mode=c&frm=0&ibt
+200 GET fetch https://sr-client-cfg.amplitude.com/config?api_key=73e87329fc87b9ed767fc1a55872fdc3&config_keys=sessionReplay
+200 GET fetch https://sr-client-cfg.amplitude.com/config?api_key=73e87329fc87b9ed767fc1a55872fdc3&config_keys=sessionReplay
+302 GET image https://cm.g.doubleclick.net/pixel?google_nid=TheTradeDesk&google_cm&google_sc&google_hm=M2Y4Yzk5MzctNmNmYi00MGZkLTk3NzYtMWE2ZjZiYzkxZTE5&gdpr=0&gdpr_consent=&ttd_tdid=3f8c9937-6cfb-40fd-9776-1a6f6bc91e19
+200 GET fetch https://www.googleadservices.com/pagead/conversion/828688373/?random=1780399992&fst=1795471127824&cv=10&fmt=7&label=aVX2CNqyndcYEPWPk4sD&bg=ffffff&guid=ON&u_w=1280&u_h=900&gtm=45h91e6bh1v898338689z9852199006za20szb77681289zd77681289xf3xg4&auid=471031
+302 GET image https://match.adsrvr.org/track/cmf/google?g_uuid=&gdpr=0&gdpr_consent=&ttd_tdid=3f8c9937-6cfb-40fd-9776-1a6f6bc91e19&google_error=15
+302 GET image https://dsum-sec.casalemedia.com/rum?cm_dsp_id=39&external_user_id=3f8c9937-6cfb-40fd-9776-1a6f6bc91e19&expiration=1798063128&gdpr=0&gdpr_consent=
+200 POST fetch https://api.forhims.com/dpe/producer/unauth
+200 GET image https://dsum-sec.casalemedia.com/rum?cm_dsp_id=39&external_user_id=3f8c9937-6cfb-40fd-9776-1a6f6bc91e19&expiration=1798063128&gdpr=0&gdpr_consent=&C=1
+200 POST xhr https://api.amplitude.com/
+202 POST fetch https://browser-intake-datadoghq.com/api/v2/rum?ddsource=browser&dd-api-key=pubd8164535adfc8cfa284b4ad6a639ab0f&dd-evp-origin-version=6.33.0&dd-evp-origin=browser&dd-request-id=bbc7f44f-5c38-4ce3-8904-84415bd285cd&batch_time=1795471128270&_dd.api=fet
+302 POST fetch https://googleads.g.doubleclick.net/pagead/viewthroughconversion/828688373/?random=483542606&fst=1795471127824&cv=10&fmt=8&label=aVX2CNqyndcYEPWPk4sD&bg=ffffff&guid=ON&u_w=1280&u_h=900&gtm=45h91e6bh1v898338689z9852199006za20szb77681289zd77681289xf3xg
+200 GET fetch https://www.google.com/pagead/1p-conversion/828688373/?random=483542606&fst=1795471127824&cv=10&fmt=8&label=aVX2CNqyndcYEPWPk4sD&bg=ffffff&guid=ON&u_w=1280&u_h=900&gtm=45h91e6bh1v898338689z9852199006za20szb77681289zd77681289xf3xg4&auid=471031752.1795
+200 GET script https://www.hims.com/shop/_next/static/chunks/6263.2fb6ba97f8a20bcc.js

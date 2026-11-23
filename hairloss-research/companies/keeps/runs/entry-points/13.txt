@@ -1,0 +1,16 @@
+STEP 13 wait 2500
+URL: https://www.keeps.com/something-went-wrong
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+EXCLUSIVE OFFER: UP TO 50% OFF FIRST ORDER GET STARTED
+
+Something went wrong
+
+Take me to www.keeps.com
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+  link (2): GET STARTED -> /hair-assessment-quiz  ·  www.keeps.com -> /

@@ -1,0 +1,663 @@
+SCHEMA name="Derm Woman's Hair Loss Standard Onboarding" code=derm-whl-onb version=32 id=7489 meta={"targetGender": "female", "theme": "roderm-default", "sideEffects": [{"type": "SET_DELIVERY_SCHEDULE", "value": "03_quarterly"}]}
+
+================ GROUP INTRO pos=10 n=5
+
+### qid 4 [choice] next=None
+TEXT: 'Firstly, how long have you been experiencing hair loss?'
+  m.description: Our goal is to understand your hair loss experience and your goals so we can find the right treatment for you.
+  m.show_image_above_header: true
+VARIABLE_MODIFICATIONS: [["hairLossExperience", "0"]]
+  - [months] 'Months' -> 6 VARS=[["hairLossExperience", "months"]]
+  - [within-the-last-year] 'Within the last year' -> 6 VARS=[["hairLossExperience", "withinTheLastYear"]]
+  - [more-than-a-year] 'More than a year' -> 6 VARS=[["hairLossExperience", "moreThanAYear"]]
+
+### qid 6 [choice] next=None
+TEXT: 'How did your hair loss start?'
+  - [suddenly] 'Suddenly' -> 8
+  - [gradually] 'Gradually' -> 8
+  - [not-sure] 'Not sure' -> 8
+
+### qid 8 [multichoice] next=None mtype=CheckboxSecondary
+TEXT: 'Where on your head have you noticed hair loss?'
+  m.description: Select all that apply.
+  m.show_image_above_header: true
+VARIABLE_MODIFICATIONS: [["ifTopOfHead", "0"], ["ifAllOver", "0"]]
+  - [top-of-head-crown] 'Top of head/crown' -> 9 meta={"highlight": "ack-clinical"} VARS=[["ifTopOfHead", "1"]]
+  - [temples] 'Temples' -> 9 meta={"highlight": "ack-clinical"}
+  - [frontal-scalp] 'Frontal scalp' -> 9 meta={"highlight": "ack-clinical"}
+  - [all-over] 'All over' -> 9 EXCL meta={"highlight": "ack-clinical"} VARS=[["ifAllOver", "1"]]
+
+### qid 10 [choice] next=None mtype=CustomChoice
+TEXT: 'Which picture most closely resembles your part line?'
+  - [1] '1' -> 15 meta={"component": "DermOptionWithImage", "DermOptionWithImage": {"image": {"alt": "Normal Hair Part", "src": "https://assets.ro.co/ov/whl-hair-part-image-1-eb7cc701.png", "props": {"style": {"width": "100px"}}}}}
+  - [2] '2' -> 15 meta={"component": "DermOptionWithImage", "DermOptionWithImage": {"image": {"alt": "Slightly Wide Hair Part", "src": "https://assets.ro.co/ov/whl-hair-part-image-2-5fed6f0b.png", "props": {"style": {"width": "100px"}}}}}
+  - [3] '3' -> 15 meta={"component": "DermOptionWithImage", "DermOptionWithImage": {"image": {"alt": "Wider Hair Part", "src": "https://assets.ro.co/ov/whl-hair-part-image-3-0c1207b5.png", "props": {"style": {"width": "100px"}}}}}
+  - [4] '4' -> 15 meta={"component": "DermOptionWithImage", "DermOptionWithImage": {"image": {"alt": "Very Wide Hair Part", "src": "https://assets.ro.co/ov/whl-hair-part-image-4-74403fd7.png", "props": {"style": {"width": "100px"}}}}}
+  - [5] '5' -> 15 meta={"component": "DermOptionWithImage", "DermOptionWithImage": {"image": {"alt": "Extremely Wide Hair Part", "src": "https://assets.ro.co/ov/whl-hair-part-image-5-c28dea40.png", "props": {"style": {"width": "100px"}}}}}
+
+### qid 12 [choice] next=None
+TEXT: 'How would you describe the severity of your current hair loss?'
+  m.description: We’ll track this along your hair journey to see how it changes over time.
+  - [very-mild] 'Very Mild' -> 1062
+  - [mild] 'Mild' -> 1062
+  - [moderate] 'Moderate' -> 1062
+  - [severe] 'Severe' -> 1062
+  - [extremely-severe] 'Extremely severe' -> 1062
+
+================ GROUP SIGN UP/SCREENERS pos=20 n=3
+
+### qid 16 [control] next=18 mtype=StartOnlineVisitSignUp
+TEXT: 'Sign up'
+  m.text: Next, you’ll tell your provider about your health, medical history, and lifestyle. Your provider will use this information to evaluate your symptoms and, if appropriate, prescribe medication for treatment.
+  m.do_not_count_as_question: true
+  m.heading: Thanks for sharing. Ready to go deeper?
+  m.info_list: [{"text": "Medical evaluation and prescriptions by U.S.-licensed physicians", "alt": "U.S.-licensed physicians", "icon": "HealthcareProvider", "image": "https://assets.ro.co/ov/derm_provider_photos-9637d1a9.jpg", "image_width": 68}, {"text": "Free shipping", "alt": "Free shipping", "icon": "FreeShipping", "image": "https://assets.ro.co/ov/free-shipping-ico-2c38686f.png", "image_width": 24}, {"text": "Continued support from your doctor and our care team", "alt": "Continued support", "icon": "Mess…[+87]
+
+### qid 19 [choice] next=None mtype=SignInDynamic
+TEXT: 'Log in'
+  m.doNotCountAsQuestion: true
+  m.extraText: Looks like you already have an account with us.
+  m.formHeader: Please log in to your Ro platform account to continue.
+  m.holdNextQuestion: true
+  m.tooltip: Ro is a telehealth platform.
+  - [successful-sign-in] 'Successful sign-in' -> 30 meta={"type": "GO_FURTHER"}
+
+### qid 30 [choice] next=None mtype=Basics
+TEXT: 'The Basics'
+  m.category: Start with
+  m.current_section: 1
+  m.do_not_count_as_question: false
+  m.extraText: This information helps your doctor determine if you’re eligible for treatment.
+  m.minAge: 18
+  m.number_of_sections: 4
+  m.allowedGenders: ["female"]
+  m.birthdate: {"inputPlaceholder": "MM/DD/YYYY", "label": "Birthdate", "tooltip": "Your birthdate is required to determine if you’re eligible for telemedicine."}
+  m.phone: {"inputPlaceholder": "(###) ### - ####", "label": "Phone number"}
+  m.sex: {"label": "Sex Assigned at Birth", "tooltip": "Your sex assigned at birth is important for your doctor to make medical decisions."}
+  m.zipcode: {"inputPlaceholder": "#####", "label": "Zip code", "tooltip": "Your doctor will be licensed in your state."}
+VARIABLE_MODIFICATIONS: [["ifNotEligibleForOralMinoxidil", "0"], ["ifNotEligibleForTopicalMinoxidil", "0"]]
+  - [not-supported-zip-code] 'Not supported zip code' -> 6000 meta={"type": "ZIPCODE_NOT_SUPPORTED"}
+  - [under-18-yo] 'Under 18 yo' -> 6010 meta={"type": "TOO_YOUNG"}
+  - [male] 'Male' -> 6030 meta={"type": "GENDER_NOT_SUPPORTED"}
+  - [next] 'Next' -> 1050 meta={"type": "GO_FURTHER"}
+
+================ GROUP YOUR HAIR LOSS + PHO pos=30 n=14
+
+### qid 999 [text] next=-1
+TEXT: '-------------- !!!!! HISTORY AND TREATMENT OF CONDITIONS !!!!! --------------'
+
+### qid 1050 [choice] next=None mtype=single
+TEXT: 'Let’s talk about your medical history'
+  m.category: Next up
+  m.description: Our overall health can impact our hair health. It's important for your doctor to understand the bigger picture of your medical history to evaluate your hair loss.
+  m.show_image_above_header: true
+  - [continue] 'Continue' -> 1055 EXCL meta={"value": "Continue"}
+
+### qid 1055 [choice] next=None
+TEXT: 'Are you pregnant, or possibly pregnant?'
+  m.extraText: If you are pregnant, or trying to get pregnant, it may impact your recommended treatment options.
+  - [yes] 'Yes' -> 6020 meta={"highlight": "negative"}
+  - [no] 'No' -> 1057
+  - [not-sure] 'Not sure' -> 6020 meta={"highlight": "negative"}
+
+### qid 1057 [choice] next=None
+TEXT: 'Are you currently breastfeeding?'
+  m.description: If you are breastfeeding, this may impact your recommended treatment options.
+  - [yes] 'Yes' -> 1059 meta={"highlight": "negative"} VARS=[["ifNotEligibleForOralMinoxidil", "1"]]
+  - [no] 'No' -> 1059
+
+### qid 1059 [choice] next=None
+TEXT: 'Have you given birth in the last year?'
+  - [yes] 'Yes' -> 12 meta={"highlight": "ack-clinical"}
+  - [no] 'No' -> 12
+
+### qid 1062 [choice] next=None
+TEXT: 'How would you describe your hair loss?'
+  - [i-m-shedding-more-hair-than-is-normal-for-me-i-notice-more-fallout-in-the-shower-on-my-pillow-etc] 'I’m shedding more hair than is normal for me (I notice more fallout in the shower, on my pillow, etc.)' -> 1070
+  - [my-hair-is-gradually-thinning-i-m-slowly-noticing-more-of-my-scalp-showing-through-or-my-part-seems-wider-or-my-ponytail-is-thinner] 'My hair is gradually thinning (I’m slowly noticing more of my scalp showing through or my scalp seems wider or my ponytail is thinner)' -> 1070
+  - [both] 'Both' -> 1070
+  - [unsure] 'Unsure' -> 1070
+
+### qid 1074 [multichoice] next=None mtype=CheckboxSecondary
+TEXT: 'Have you noticed any of the following?'
+  m.description: Select all that apply.
+  - [a-patch-or-patches-of-hair-loss-that-is-nearly-or-completely-bald] 'A patch or patches of hair loss that is nearly or completely bald' -> 1076 meta={"highlight": "negative"}
+  - [pain-soreness-burning-and-or-tingling-in-areas-of-hair-loss] 'Pain, soreness, burning, and/or tingling in areas of hair loss' -> 1076 meta={"highlight": "caution"}
+  - [redness-or-rashes-on-scalp] 'Redness or rashes on scalp' -> 1076 meta={"highlight": "negative"}
+  - [recurrent-pus-bumps-or-open-sores-on-scalp] 'Recurrent pus bumps or open sores on scalp' -> 1076 meta={"highlight": "caution"}
+  - [partial-or-complete-loss-of-eyebrows-or-eyelashes] 'Partial or complete loss of eyebrows or eyelashes' -> 1076 meta={"highlight": "caution"}
+  - [none-of-the-above] 'None of the above' -> 1076 EXCL
+
+### qid 1076 [choice] next=None
+TEXT: 'Do you have any family history of hair thinning or balding (parents, siblings, grandparents, aunts, uncles)? Consider both sides of the family.'
+  - [yes] 'Yes' -> 1078 meta={"highlight": "ack-clinical"}
+  - [no] 'No' -> 1078
+  - [i-don-t-know] "I don't know" -> 1078
+
+### qid 1078 [choice] next=None
+TEXT: 'To what extent has your hair been negatively affecting your self-confidence?'
+  m.description: We’ll track this along your hair journey to see how it changes over time.
+  - [1-not-at-all] '1 - Not at all' -> 1080
+  - [2-a-little-bit] '2 - A little bit' -> 1080
+  - [3-somewhat] '3 - Somewhat' -> 1080
+  - [4-quite-a-bit] '4 - Quite a bit' -> 1080
+  - [5-a-lot] '5 - A lot' -> 1080
+
+### qid 1080 [choice] next=None
+TEXT: 'Hair loss can be stressful. How much is your hair loss affecting your overall stress levels?'
+  m.description: We’ll track this along your hair journey to see how it changes over time.
+  - [1-not-at-all] '1 - Not at all' -> 1082
+  - [2-a-little-bit] '2 - A little bit' -> 1082
+  - [3-somewhat] '3 - Somewhat' -> 1082
+  - [4-quite-a-bit] '4 - Quite a bit' -> 1082
+  - [5-a-lot] '5 - A lot' -> 1082
+
+### qid 1082 [text] next=1086 mtype=MasterQuestion
+TEXT: 'Have you ever been evaluated for hair loss in the past?'
+  m.hideFollowups: true
+  m.subQuestionsQids: [1083, 1084]
+
+### qid 1083 [choice] next=None mtype=RadioEmbedded
+TEXT: 'Have you ever been evaluated for hair loss in the past?'
+  m.immediateSubmit: true
+  - [yes] 'Yes' -> 1084
+  - [no] 'No' -> 1086
+
+### qid 1084 [text] next=1086 mtype=ExplanationEmbedded
+TEXT: 'Please share more details: How long ago and were any lab tests done? Did the doctor remove a small piece of your scalp skin for testing (scalp biopsy)? Did you receive a diagnosis?'
+  m.category: Tell us more
+  m.hasTitle: true
+  m.isFollowup: true
+
+### qid 1086 [multichoice] next=1087 mtype=CheckboxSecondary
+TEXT: 'Have you ever been diagnosed with any of the following scalp conditions?'
+  m.description: Select all that apply.
+VARIABLE_MODIFICATIONS: [["ifNotDiagnosedWithAnyScalpConditions", "0"]]
+  - [alopecia-areata] 'Alopecia areata' -> 1087
+  - [lichen-planopilaris] 'Lichen planopilaris' -> 1087
+  - [frontal-fibrosing-alopecia-ffa] 'Frontal fibrosing alopecia (FFA)' -> 1087
+  - [central-centrifugal-cicatricial-alopecia-ccca] 'Central centrifugal cicatricial alopecia (CCCA)' -> 1087
+  - [traction-alopecia] 'Traction alopecia' -> 1087
+  - [lupus] 'Lupus' -> 1087
+  - [none-of-the-above] 'None of the above' -> 1087 EXCL VARS=[["ifNotDiagnosedWithAnyScalpConditions", "1"]]
+
+================ GROUP SCALP HEALTH pos=40 n=11
+
+### qid 1090 [multichoice] next=None mtype=CheckboxSecondary
+TEXT: 'Do you have any of the following? Select all that apply.'
+  m.description: We’re asking these questions to assess whether your hair loss may be hormonally related.
+VARIABLE_MODIFICATIONS: [["ifHairLossHormonalRelated", "0"]]
+  - [excess-body-hair-on-chest-abdomen-back] 'Excess body hair on chest, abdomen, back' -> 1091
+  - [excess-facial-hair] 'Excess facial hair' -> 1091
+  - [severe-acne] 'Severe acne' -> 1091
+  - [irregular-periods] 'Irregular periods' -> 1091
+  - [enlargement-of-the-clitoris] 'Enlargement of the clitoris' -> 1091 VARS=[["ifHairLossHormonalRelated", "1"]]
+  - [discharge-from-the-nipples] 'Discharge from the nipple(s)' -> 1091 VARS=[["ifHairLossHormonalRelated", "1"]]
+  - [deepening-of-your-voice] 'Deepening of your voice' -> 1091 VARS=[["ifHairLossHormonalRelated", "1"]]
+  - [none-of-the-above] 'None of the above' -> 1091 EXCL
+
+### qid 1091 [fork] next=None
+TEXT: 'FORK If hair loss is hormonal related'
+FORKING_RULES: [["6040", "ifHairLossHormonalRelated == 1"], ["1094", "1 == 1"]]
+
+### qid 1094 [multichoice] next=1096 mtype=CheckboxSecondary
+TEXT: 'Have you experienced any of the following in the last year?'
+  m.description: Select all that apply.
+VARIABLE_MODIFICATIONS: [["ifExperienceIsNoneOfTheAbove", "0"]]
+  - [gone-through-perimenopause-or-menopause] 'Gone through perimenopause or menopause' -> 1096
+  - [significant-weight-loss] 'Significant weight loss' -> 1096
+  - [flare-of-a-chronic-disease] 'Flare of a chronic disease' -> 1096
+  - [hospitalization] 'Hospitalization' -> 1096
+  - [major-illness-e-g-covid] 'Major illness (e.g. COVID)' -> 1096
+  - [major-life-stressor-e-g-moving-job-loss-ending-a-relationship-or-a-loved-one-s-passing] "Major life stressor (e.g. moving, job loss, ending a relationship, or a loved one's passing)" -> 1096
+  - [started-stopped-or-changed-birth-control-pills-or-any-other-kind-of-hormonal-contraception-e-g-iud-patch-ring-implant-injection-or-started-or-stopped-any-other-kind-of-hormonal-treatment] 'Started, stopped, or changed birth control pills or any other kind of hormonal contraception (e.g. IUD, patch, ring, implant, injection) or started or stopped any other kind of hormonal treatment' -> 1096
+  - [received-chemotherapy-as-part-of-cancer-treatment] 'Received chemotherapy as part of cancer treatment' -> 1096 meta={"highlight": "ack-clinical"}
+  - [major-surgery] 'Major surgery' -> 1096
+  - [none-of-the-above] 'None of the above' -> 1096 EXCL
+
+### qid 1096 [multichoice] next=None mtype=CheckboxSecondary
+TEXT: 'Do you have, or have you ever had, any of the following conditions?'
+  m.description: Select all that apply.
+VARIABLE_MODIFICATIONS: [["ifHeartCondition", "0"], ["ifStroke", "0"], ["ifKidneyDisease", "0"], ["ifLiverDisease", "0"], ["ifThyroidDisorder", "0"], ["ifAnemia", "0"], ["ifIronDeficiency", "0"], ["ifPolycysticOvaryDisease", "0"], ["ifLupusOrOtherAutoimmuneDisorder", "0"], ["ifPheochromocytoma", "0"], ["ifPulmonaryHypertension", "0"], ["ifHighBloodPressure", "0"]]
+  - [heart-condition-coronary-artery-disease-angina-chest-pain-heart-failure-heart-attack-pericarditis] 'Heart condition (coronary artery disease, angina/chest pain, heart failure, heart attack, pericarditis)' -> 1159 meta={"highlight": "negative"} VARS=[["ifHeartCondition", "1"], ["ifNotEligibleForOralMinoxidil", "1"]]
+  - [stroke] 'Stroke' -> 1159 meta={"highlight": "negative"} VARS=[["ifStroke", "1"], ["ifNotEligibleForOralMinoxidil", "1"]]
+  - [kidney-disease] 'Kidney disease' -> 1159 meta={"highlight": "caution"} VARS=[["ifKidneyDisease", "1"]]
+  - [liver-disease] 'Liver disease' -> 1159 meta={"highlight": "caution"} VARS=[["ifLiverDisease", "1"]]
+  - [thyroid-disorder] 'Thyroid disorder' -> 1159 meta={"highlight": "ack-clinical"} VARS=[["ifThyroidDisorder", "1"]]
+  - [anemia-low-red-blood-cell-count] 'Anemia (low red blood cell count)' -> 1159 meta={"highlight": "ack-clinical"} VARS=[["ifAnemia", "1"]]
+  - [iron-deficiency] 'Iron deficiency' -> 1159 meta={"highlight": "ack-clinical"} VARS=[["ifIronDeficiency", "1"]]
+  - [polycystic-ovary-disease] 'Polycystic ovary disease' -> 1159 meta={"highlight": "caution"} VARS=[["ifPolycysticOvaryDisease", "1"]]
+  - [lupus-or-other-autoimmune-disorder] 'Lupus or other autoimmune disorder' -> 1159 meta={"highlight": "negative"} VARS=[["ifLupusOrOtherAutoimmuneDisorder", "1"], ["ifNotEligibleForOralMinoxidil", "1"], ["ifNotEligibleForTopicalMinoxidil", "1"]]
+  - [pheochromocytoma-adrenal-gland-tumor] 'Pheochromocytoma (adrenal gland tumor)' -> 1159 meta={"highlight": "negative"} VARS=[["ifPheochromocytoma", "1"], ["ifNotEligibleForOralMinoxidil", "1"]]
+  - [pulmonary-hypertension] 'Pulmonary hypertension' -> 1159 meta={"highlight": "negative"} VARS=[["ifPulmonaryHypertension", "1"], ["ifNotEligibleForOralMinoxidil", "1"]]
+  - [high-blood-pressure] 'High blood pressure' -> 1159 meta={"highlight": "negative"} VARS=[["ifHighBloodPressure", "1"], ["ifNotEligibleForOralMinoxidil", "1"]]
+  - [none-of-the-above] 'None of the above' -> 1159 EXCL
+
+### qid 1599 [text] next=-1
+TEXT: '-------------- !!!!! GENERAL HEALTH !!!!! --------------'
+
+### qid 1620 [choice] next=1625 mtype=StructuredConditions
+TEXT: 'Search and select any medical problems or conditions that you currently have.'
+  m.extraText: We will ask about surgeries, procedures and medications next.
+  m.online_visit_history_sync: ["conditions"]
+  - [i-have-conditions] 'I have conditions' -> 1625 meta={"type": "STRUCTURED_CONDITIONS_PROVIDED"}
+  - [i-dont-have-conditions] "I don't have any conditions" -> 1625 meta={"type": "STRUCTURED_CONDITIONS_NOT_PROVIDED"}
+
+### qid 1625 [text] next=1630 mtype=MasterQuestion
+TEXT: 'Have you had any past surgeries or procedures?'
+  m.hideFollowups: true
+  m.key: masterQuestionTest
+  m.subQuestionsQids: [1626, 1627]
+
+### qid 1626 [choice] next=None mtype=RadioEmbedded
+TEXT: 'Have you had any past surgeries or procedures?'
+  m.immediateSubmit: true
+  - [no] 'No' -> 1630
+  - [yes] 'Yes' -> 1627 meta={"highlight": "ack-clinical"}
+
+### qid 1627 [text] next=1630 mtype=ExplanationEmbedded
+TEXT: 'Please list your past surgeries and procedures.'
+  m.hasTitle: true
+  m.isFollowup: true
+  m.placeholder: Please type your surgeries and procedures here.
+
+### qid 1630 [choice] next=1640 mtype=StructuredMedications
+TEXT: 'Search and select any medications, vitamins, dietary supplements, and topical creams you are currently taking or using.'
+  m.extraText: Include prescription and over-the-counter medications, herbs, minerals, inhalers, injections, and medication implants or patches. Do not include any medications that Ro is prescribing.
+  m.online_visit_history_sync: ["medications"]
+  - [im-taking-medications] 'I’m taking medications' -> 1640 meta={"type": "STRUCTURED_MEDICATION_PROVIDED", "health_survey_sync": [{"id": 49, "value": "Yes"}]}
+  - [i-dont-take-any-medications] "I don't take any medications" -> 1640 meta={"type": "STRUCTURED_MEDICATION_NOT_PROVIDED", "health_survey_sync": [{"id": 49, "value": "No"}]}
+
+### qid 1640 [choice] next=-1 mtype=StructuredAllergies
+TEXT: 'Search and select all allergies you have'
+  m.extraText: Include allergies to prescription or over-the-counter medicines, herbs, vitamins, supplements, food, dyes, or anything else.
+  m.online_visit_history_sync: ["allergies"]
+  - [i-have-allergies] 'I have allergies' -> 2200 meta={"highlight": "caution", "type": "STRUCTURED_ALLERGIES_PROVIDED", "health_survey_sync": [{"id": 51, "value": "Yes"}]}
+  - [i-dont-have-allergies] "I don't have allergies" -> 2200 meta={"type": "STRUCTURED_ALLERGIES_NOT_PROVIDED", "health_survey_sync": [{"id": 51, "value": "No"}]}
+
+================ GROUP HEALTH HISTORY pos=45 n=15
+
+### qid 1160 [text] next=1161 mtype=longtext
+TEXT: 'Please describe your heart related condition(s).'
+  m.hasTitle: true
+  m.isFollowup: true
+
+### qid 1162 [text] next=1163 mtype=longtext
+TEXT: 'Please tell us more about your stroke.'
+  m.hasTitle: true
+  m.isFollowup: true
+
+### qid 1164 [text] next=1165 mtype=longtext
+TEXT: 'Please tell us more about your kidney disease.'
+  m.hasTitle: true
+  m.isFollowup: true
+
+### qid 1166 [text] next=1167 mtype=longtext
+TEXT: 'Please tell us more about your liver disease.'
+  m.hasTitle: true
+  m.isFollowup: true
+
+### qid 1168 [text] next=1169 mtype=longtext
+TEXT: 'Please describe your condition and let us know if you’re currently anemic.'
+  m.hasTitle: true
+  m.isFollowup: true
+
+### qid 1170 [text] next=1171 mtype=longtext
+TEXT: 'Please let us know when you were diagnosed with iron deficiency and if you’re currently taking iron supplements'
+  m.hasTitle: true
+  m.isFollowup: true
+
+### qid 1172 [text] next=1173 mtype=longtext
+TEXT: 'Please describe your thyroid condition and let us know if you’re currently receiving treatment.'
+  m.hasTitle: true
+  m.isFollowup: true
+
+### qid 1174 [text] next=1175 mtype=longtext
+TEXT: 'Please let us know when you were diagnosed with PCOS and if you’re currently receiving treatment.'
+  m.hasTitle: true
+  m.isFollowup: true
+
+### qid 1176 [text] next=1177 mtype=longtext
+TEXT: 'Please tell us more about your lupus or other autoimmune disorder.'
+  m.hasTitle: true
+  m.isFollowup: true
+
+### qid 1178 [text] next=1179 mtype=longtext
+TEXT: 'Please tell us more about your pheochromocytoma.'
+  m.hasTitle: true
+  m.isFollowup: true
+
+### qid 1180 [text] next=1181 mtype=longtext
+TEXT: 'Please tell us more about your pulmonary hypertension.'
+  m.hasTitle: true
+  m.isFollowup: true
+
+### qid 1182 [text] next=1184 mtype=longtext
+TEXT: 'Please let us know when you were diagnosed, and whether you have taken or are currently taking any medication(s) to control your blood pressure. Please include medication names and dosages.'
+  m.hasTitle: true
+  m.isFollowup: true
+
+### qid 1184 [text] next=1250 mtype=MasterQuestion
+TEXT: 'Have you ever been told that you have low blood pressure?'
+  m.hideFollowups: true
+  m.subQuestionsQids: [1185, 1186]
+
+### qid 1185 [choice] next=None mtype=RadioEmbedded
+TEXT: 'Have you ever been told that you have low blood pressure?'
+  m.immediateSubmit: true
+  - [yes] 'Yes' -> 1186 meta={"highlight": "caution"}
+  - [no] 'No' -> 1250
+
+### qid 1186 [text] next=1250 mtype=ExplanationEmbedded
+TEXT: 'Please tell us more, including whether you’ve ever had any symptoms of low blood pressure, such as fainting or feeling lightheaded or dizzy (particularly when getting up from a sitting position).'
+  m.category: Tell us more
+  m.hasTitle: true
+  m.isFollowup: true
+
+================ GROUP MEDICATION HISTORY pos=50 n=5
+
+### qid 1999 [text] next=-1
+TEXT: '-------------- !!!!! LIFESTYLE !!!!! --------------'
+
+### qid 2010 [control] next=4020 mtype=MultiplePhotosUpload
+TEXT: 'One last thing, {firstName}'
+  m.description: To help your doctor see your specific areas of concern, we'll ask you to take photos of different areas and angles of your head.
+  m.do_not_count_as_question: true
+  m.hold_next_question: true
+  m.button: {"text": "Get started"}
+
+### qid 2200 [multichoice] next=2201 mtype=CheckboxSecondary
+TEXT: 'How would you describe yourself? Select all that apply.'
+  m.buttonText: Next
+  m.description: Knowing your race and/or ethnic background helps us work toward improving equally accessible, high-quality care for everyone on our platform. However, you are <b>not required</b> to provide this information, and it won't impact your treatment if you don't.
+VARIABLE_MODIFICATIONS: [["followupOther", "0"]]
+  - [white] 'White' -> 2201
+  - [hispanic-or-latino] 'Hispanic or Latino' -> 2201
+  - [black-or-african-american] 'Black or African American' -> 2201
+  - [native-american-or-american-indian] 'Native American or American Indian' -> 2201
+  - [asian-pacific-islander] 'Asian / Pacific Islander' -> 2201
+  - [other] 'Other' -> 2201 VARS=[["followupOther", "1"]]
+  - [no-answer] 'I prefer not to answer' -> 2201 EXCL
+
+### qid 2201 [fork] next=2202
+TEXT: 'Fork Ethnicity'
+FORKING_RULES: [["2202", "followupOther == 1"], ["2010", "followupOther == 0"]]
+
+### qid 2202 [text] next=2010 mtype=longtext
+TEXT: 'Please list your ethnicity.'
+  m.buttonText: Save and continue
+  m.category: Please Tell us more
+  m.reason: other_ethnicity
+
+================ GROUP LIFESTYLE & HAIRCARE pos=55 n=0
+
+================ GROUP DRUG PREFERENCE pos=60 n=2
+
+### qid 3999 [text] next=-1
+TEXT: '-------------- !!!!! DRUG PREFERENCE !!!!! --------------'
+
+### qid 4025 [choice] next=5040 mtype=ChooseProductsGroup
+TEXT: 'Is there a specific type of hair loss treatment you’d like to be prescribed?'
+  m.description: Ultimately, your provider will make the final decision on which type of treatment is most appropriate for you and your goals.
+  m.trigger_robot: true
+  m.choose_products_group: {"is_secondary": true, "sections": [{"component": "Sections/GroupItemV2", "group": {"code": "derm-oral-minoxidil-product-group"}, "props": {"info": "An oral tablet. Recommended for patients who prefer to take a once-daily medication instead of applying a topical treatment.", "pricePerMonth": "$30", "learnMore": {"buttonText": "Got it!", "description": "Disclaimer: This is not medical advice. You and your physician will determine if (and potentially how) you should take oral minoxidil.\n\nThe act…[+3214]
+VARIABLE_MODIFICATIONS: [["ifPrefersOralMinoxidil", "0"], ["ifPrefersTopicalMinoxidil", "0"]]
+  - [oral-minoxidil] 'Oral Minoxidil' -> 4040 meta={"code": "derm-oral-minoxidil-product-group", "type": "CHOOSE_PRODUCT", "sideEffects": [{"type": "CLEAR_CART"}, {"type": "ADD_PRODUCTS", "products": [{"filters": {"meta": {"code": "derm-oral-minoxidil-product"}}}]}, {"type": "SET_DELIVERY_SCHEDULE", "value": "03_quarterly"}]} VARS=[["ifPrefersOralMinoxidil", "1"]]
+  - [hair-solution-rx] 'Hair Solution Rx' -> 4030 meta={"code": "derm-minoxidil-topical-solution-product-group", "type": "CHOOSE_PRODUCT", "sideEffects": [{"type": "CLEAR_CART"}, {"type": "ADD_PRODUCTS", "products": [{"filters": {"meta": {"code": "derm-minoxidil-topical-solution-product"}}}]}, {"type": "SET_DELIVERY_SCHEDULE", "value": "03_quarterly"}]} VARS=[["ifPrefersTopicalMinoxidil", "1"]]
+  - [no-preference] 'No preference' -> 5040 meta={"type": "PRODUCT_NO_PREFERENCE", "no_preference_button": {"content": "If you select this option, you'll see oral minoxidil on the checkout screen. Your provider will determine the best treatment for you and will reach out if another treatment is more suitable.", "title": "No preference", "type": "radio"}, "sideEffects": [{"type": "CLEAR_CART"}, {"type": "ADD_PRODUCTS", "products": [{"filters": {"…[+112]
+
+================ GROUP CHECKOUT + ID pos=70 n=5
+
+### qid 4900 [text] next=-1
+TEXT: '-------------- !!!!! CHECKOUT !!!!! --------------'
+
+### qid 5040 [fork] next=5050
+TEXT: 'FORK - shipping info with or without custom pharmacy'
+FORKING_RULES: [["5042", "ifPrefersTopicalMinoxidil == 1"], ["5041", "1 == 1"]]
+
+### qid 5041 [control] next=5050 mtype=ShippingAddress
+TEXT: 'Shipping Info'
+  m.collapseAdditionalFields: true
+  m.do_not_count_as_question: true
+  m.hasPhoneField: false
+  m.hold_next_question: true
+  m.shipping_address: {"hasSmsNotification": false, "alternate_pharmacy": {"cancel_button": "Nevermind, pick Ro pharmacy", "confirm_button": "Yes, I’m sure", "heading": "Need alternate pharmacy?", "text_sections": ["If you pick a pharmacy outside of the Ro Pharmacy Network, and qualify for a prescription, we will not be able to guarantee the price of the medication and provide free monthly delivery.", "If you're selecting a local pharmacy for insurance purposes, there's a strong chance that your plan won't cover Hair…[+1097]
+
+### qid 5042 [control] next=5050 mtype=ShippingAddress
+TEXT: 'Shipping Info'
+  m.collapseAdditionalFields: true
+  m.do_not_count_as_question: true
+  m.hasPhoneField: false
+  m.hold_next_question: true
+  m.shipping_address: {"hasSmsNotification": false, "form_header": {"on_shipping_address": {"text": "If prescribed, where do you want your medication to be shipped?", "heading": "Shipping Address"}}, "pharmacy_info": {"on_shipping_address": {"hasChangePharmacyButton ": false, "heading": "RO’S PHARMACY OFFERS", "show_button_inside": false, "list": ["Free shipping", "Guaranteed Pricing"], "thumb": {"alt": "Ro Derm Pharmacy", "src": "https://assets.ro.co/ov/whl-pha-team-photo-41d46b87.png"}}}}
+
+### qid 5050 [choice] next=5500 mtype=Checkout
+TEXT: 'Review treatment and pay'
+  m.do_not_count_as_question: true
+  m.hold_next_question: true
+  m.redirect: /home
+  m.redirectToAccountOnFinish: false
+  m.skipTreatmentRequestCreation: true
+  m.sections: [{"component": "Checkout/CartSummary/PaymentWrapper", "props": {"hasBofExperiment": true}, "sections": [{"component": "SelectShippingFrequency", "props": {}}, {"component": "Checkout/CartSummary", "props": {"hasBofExperiment": true, "hasEditMedicationButton": false, "informationModal": {"content": "For medication that requires a prescription, the doctor will review your online visit to determine if the medication is right for your health condition. You won’t be charged for any prescription medic…[+641]
+  m.sideEffects: [{"type": "REGISTER_DROPOFF_STEP"}]
+  - [finish] 'Finish' -> 5500 meta={"type": "FINISH"}
+
+================ GROUP POST CHECKOUT pos=75 n=1
+
+### qid 5500 [control] next=-1 mtype=CreateTreatmentRequests
+TEXT: 'Thank You'
+  m.do_not_count_as_question: true
+  m.final_step: true
+  m.hold_next_question: true
+  m.redirect: /home
+  m.redirectToAccountOnFinish: false
+  m.final: {"extraText": "The answers from your online visit have been sent to your doctor via our secure electronic medical record system.", "nextSteps": {"heading": "What’s next?", "list": {"idSkip": {"buttonLabel": "Submit id verification", "heading": "Complete the ID verification so your<br />doctor can respond to your request.", "thumb": {"height": 64, "src": "https://assets.ro.co/ov/rory_thankyou_id-5b9719a3.png", "width": 64}}, "phoneCall": {"text": "Based on telehealth requirements in your state, y…[+3054]
+  m.sections: [{"component": "Checkout/ThankYouModal", "props": {}}]
+
+================ GROUP EXITS pos=80 n=7
+
+### qid 5999 [text] next=-1
+TEXT: '-------------- !!!!! EXITS !!!!! --------------'
+
+### qid 6000 [control] next=6005 alias='Exit Hair Loss: Not supported zip code' mtype=ZipCodeNotSupported
+TEXT: 'Be notified when we’re in your state!'
+  m.extraText: We’re not currently serving people in your state. Confirm your email address and be among the first to find out when we’re there.
+  m.incentive_image: false
+  m.reason: 00_zip_not_supported
+  m.submit_label: Be notified!
+
+### qid 6005 [control] next=-1 mtype=ThankYouSecondary
+TEXT: 'Thank you!'
+  m.extraText: We will review your message and get back to you as soon as possible.
+
+### qid 6010 [choice] next=-1 mtype=CustomChoice
+TEXT: 'Unfortunately we are not currently able to treat anyone under the age of 18 on our platform.'
+  m.category: Next steps
+  m.description: Please discuss your hair loss concerns with your healthcare provider.
+
+<Collapse title="What if I don’t have a primary healthcare provider?">.
+We strongly recommend that our members have a primary healthcare provider that they see on a regular basis. If you do not have a primary healthcare provider, please visit [Zocdoc](https://www.zocdoc.com/) or [search federally qualified health centers](https://findahealthcenter.hrsa.gov/) to find one in your area.
+</Collapse>
+  - [got-it] 'Got it' -> -1 meta={"component": "ButtonLink", "ButtonLink": {"url": "https://www.ro.co/derm"}}
+
+### qid 6020 [choice] next=-1 mtype=CustomChoice
+TEXT: 'Unfortunately, our treatments are not available for use during pregnancy.'
+  m.description: If you’re interested in learning more about Ro and the health conditions that we treat, please visit the Ro website.<Collapse title="What if I’m not sure if I’m pregnant?">
+If you are unsure whether you are currently pregnant or not, we recommend visiting your primary healthcare provider in person. If you do not have a primary healthcare provider, please visit [Zocdoc](https://www.zocdoc.com/) or [search federally qualified health centers](https://findahealthcenter.hrsa.gov/) to find one in your…[+197]
+  m.doNotCountAsQuestion: true
+  - [got-it] 'Got it' -> -1 meta={"component": "ButtonLink", "ButtonLink": {"url": "https://www.ro.co/derm"}}
+
+### qid 6030 [choice] next=-1 mtype=CustomChoice
+TEXT: "Want to be redirected to the men's hair loss visit?"
+  m.description: The treatments prescribed in this online visit are only available to those assigned female at birth, and are not designed for male pattern hair loss.
+  m.doNotCountAsQuestion: true
+  - [continue-to-men-s-hair-loss-visit] "Continue to men's hair loss visit" -> -1 meta={"component": "ButtonLink", "ButtonLink": {"url": "https://start.ro.co/fxdxbh"}}
+
+### qid 6040 [choice] next=-1 mtype=CustomChoice
+TEXT: 'Based on some of your responses, we will unfortunately be unable to evaluate and treat your hair loss condition on the Ro platform. We recommend that you visit an in-person dermatologist for further assessment and treatment.'
+  m.description: If you don’t have a dermatologist, the American Academy of Dermatology (AAD) can help you find one in your area. Visit [find-a-derm.aad.org](https://find-a-derm.aad.org/)
+  m.doNotCountAsQuestion: true
+  - [got-it] 'Got it' -> -1 meta={"component": "ButtonLink", "ButtonLink": {"url": "https://www.ro.co/derm"}}
+
+================ GROUP FORKS pos=90 n=21
+
+### qid 9 [fork] next=None
+TEXT: 'FORK'
+FORKING_RULES: [["10", "ifTopOfHead == 1 or ifAllOver == 1"], ["15", "1 == 1"]]
+
+### qid 15 [fork] next=None
+TEXT: 'FORK'
+FORKING_RULES: [["30", "memberIsLoggedIn == true"], ["16", "1 == 1"]]
+
+### qid 18 [fork] next=None
+TEXT: 'FORK - Continue or Sign In'
+FORKING_RULES: [["19", "memberExists == 1"], ["30", "memberExists == 0"]]
+
+### qid 1070 [choice] next=None mtype=CustomChoice
+TEXT: 'Which picture most closely resembles how much hair you are losing per day?'
+  m.description: Remember, some daily shedding is normal. All of our hair follicles cycle through a growing, resting, and shedding phase—but they don’t do this in sync. There are follicles growing, resting and shedding all the time. Once a follicle sheds its hair, the cycle starts again.
+  - [1] '1' -> 1074 meta={"component": "DermOptionWithImage", "DermOptionWithImage": {"image": {"alt": "Few strands of hair", "src": "https://assets.ro.co/ov/whl-hair-loss-image-1-58b9e921.png", "props": {"style": {"width": "100px"}}}}}
+  - [2] '2' -> 1074 meta={"component": "DermOptionWithImage", "DermOptionWithImage": {"image": {"alt": "Some strands of hair", "src": "https://assets.ro.co/ov/whl-hair-loss-image-2-17e20fef.png", "props": {"style": {"width": "100px"}}}}}
+  - [3] '3' -> 1074 meta={"component": "DermOptionWithImage", "DermOptionWithImage": {"image": {"alt": "Many strands of hair", "src": "https://assets.ro.co/ov/whl-hair-loss-image-3-e36aab52.png", "props": {"style": {"width": "100px"}}}}}
+  - [4] '4' -> 1074 meta={"component": "DermOptionWithImage", "DermOptionWithImage": {"image": {"alt": "Clump of hair", "src": "https://assets.ro.co/ov/whl-hair-loss-image-4-637a77dd.png", "props": {"style": {"width": "100px"}}}}}
+  - [5] '5' -> 1074 meta={"component": "DermOptionWithImage", "DermOptionWithImage": {"image": {"alt": "Extreme amount of hair", "src": "https://assets.ro.co/ov/whl-hair-loss-image-5-178171ec.png", "props": {"style": {"width": "100px"}}}}}
+
+### qid 1087 [fork] next=None
+TEXT: 'FORK If none of the scalp conditions'
+FORKING_RULES: [["1090", "ifNotDiagnosedWithAnyScalpConditions == 1"], ["6040", "1 == 1"]]
+
+### qid 1159 [fork] next=None
+TEXT: 'FORK: If ineligible for both Oral and Topical Minoxidil or Heart condition?'
+FORKING_RULES: [["6040", "ifNotEligibleForTopicalMinoxidil == 1 and (userAge > 65 or ifNotEligibleForOralMinoxidil == 1)"], ["1160", "ifHeartCondition == 1"], ["1161", "1 == 1"]]
+
+### qid 1161 [fork] next=None
+TEXT: 'FORK: If stroke?'
+FORKING_RULES: [["1162", "ifStroke == 1"], ["1163", "1 == 1"]]
+
+### qid 1163 [fork] next=None
+TEXT: 'FORK: If kidney disease?'
+FORKING_RULES: [["1164", "ifKidneyDisease == 1"], ["1165", "1 == 1"]]
+
+### qid 1165 [fork] next=None
+TEXT: 'FORK: If liver disease?'
+FORKING_RULES: [["1166", "ifLiverDisease == 1"], ["1167", "1 == 1"]]
+
+### qid 1167 [fork] next=None
+TEXT: 'FORK: If anemia?'
+FORKING_RULES: [["1168", "ifAnemia == 1"], ["1169", "1 == 1"]]
+
+### qid 1169 [fork] next=None
+TEXT: 'FORK: If iron deficiency?'
+FORKING_RULES: [["1170", "ifIronDeficiency == 1"], ["1171", "1 == 1"]]
+
+### qid 1171 [fork] next=None
+TEXT: 'FORK: If thyroid disorder?'
+FORKING_RULES: [["1172", "ifThyroidDisorder == 1"], ["1173", "1 == 1"]]
+
+### qid 1173 [fork] next=None
+TEXT: 'FORK: If polycystic ovary disease?'
+FORKING_RULES: [["1174", "ifPolycysticOvaryDisease == 1"], ["1175", "1 == 1"]]
+
+### qid 1175 [fork] next=None
+TEXT: 'FORK: If Lupus or other autoimmune disorder?'
+FORKING_RULES: [["1176", "ifLupusOrOtherAutoimmuneDisorder == 1"], ["1177", "1 == 1"]]
+
+### qid 1177 [fork] next=None
+TEXT: 'FORK: if Pheochromocytoma (adrenal gland tumor)'
+FORKING_RULES: [["1178", "ifPheochromocytoma == 1"], ["1179", "1 == 1"]]
+
+### qid 1179 [fork] next=None
+TEXT: 'FORK: if Pulmonary hypertension'
+FORKING_RULES: [["1180", "ifPulmonaryHypertension == 1"], ["1181", "1 == 1"]]
+
+### qid 1181 [fork] next=None
+TEXT: 'FORK: if High blood pressure'
+FORKING_RULES: [["1182", "ifHighBloodPressure == 1"], ["1184", "1 == 1"]]
+
+### qid 1251 [fork] next=None
+TEXT: 'FORK If past treatments include steroid injections'
+FORKING_RULES: [["6040", "ifPastTreatmentsIncludeSteroidInjections == 1"], ["1253", "1 == 1"]]
+
+### qid 1253 [fork] next=None
+TEXT: 'FORK If past treatments include oral minoxidil'
+FORKING_RULES: [["1254", "ifPastTreatmentsIncludeOralMinoxidil == 1"], ["1255", "1 == 1"]]
+
+### qid 1255 [fork] next=None
+TEXT: 'FORK If past treatments include topical minoxidil'
+FORKING_RULES: [["1256", "ifPastTreatmentsIncludeTopicalMinoxidil == 1"], ["1620", "1 == 1"]]
+
+### qid 4020 [fork] next=None
+TEXT: 'FORK If eligble for both then go to product recommendation or inelgible for both Oral and Topical Minoxidil'
+FORKING_RULES: [["6040", "(ifNotEligibleForOralMinoxidil == 1 or userAge > 65) and ifNotEligibleForTopicalMinoxidil == 1"], ["4040", "(ifNotEligibleForOralMinoxidil == 0 and userAge < 65) and ifNotEligibleForTopicalMinoxidil == 1"], ["4030", "(ifNotEligibleForOralMinoxidil == 1 or userAge > 65) and ifNotEligibleForTopicalMinoxidil == 0 "], ["4025", "1 == 1"]]
+
+================ GROUP EYE HEALTH pos=100 n=0
+
+================ GROUP CONTRAINDICATIONS/PRECAUTIONS pos=110 n=1
+
+### qid 1299 [text] next=-1
+TEXT: '-------------- !!!!! CONTRAINDICATIONS/PRECAUTIONS !!!!! --------------'
+
+================ GROUP PATIENT HEALTH OUTCOMES pos=120 n=0
+
+================ GROUP FINAL QUESTIONS pos=130 n=4
+
+### qid 1250 [multichoice] next=1251 mtype=CheckboxSecondary
+TEXT: 'Which of the following treatments, if any, have you used to treat your hair loss in the past?'
+  m.description: Select all that apply.
+VARIABLE_MODIFICATIONS: [["ifPastTreatmentsIncludeOralMinoxidil", "0"], ["ifPastTreatmentsIncludeTopicalMinoxidil", "0"], ["ifPastTreatmentsIncludeSteroidInjections", "0"]]
+  - [spironolactone] 'Spironolactone' -> 1251
+  - [oral-minoxidil] 'Oral minoxidil' -> 1251 VARS=[["ifPastTreatmentsIncludeOralMinoxidil", "1"]]
+  - [topical-minoxidil] 'Topical minoxidil' -> 1251 meta={"highlight": "caution"} VARS=[["ifPastTreatmentsIncludeTopicalMinoxidil", "1"]]
+  - [steroid-injections-into-the-scalp] 'Steroid injections into the scalp' -> 1251 VARS=[["ifPastTreatmentsIncludeSteroidInjections", "1"]]
+  - [oral-supplements-e-g-biotin-nutrafol-viviscal] 'Oral supplements (e.g. Biotin, Nutrafol, Viviscal)' -> 1251
+  - [other] 'Other' -> 1251
+  - [none-of-the-above] 'None of the above' -> 1251 EXCL VARS=[["ifPastTreatmentsAreNoneOfTheAbove", "1"]]
+
+### qid 1254 [choice] next=None
+TEXT: 'As far as you know, do you have an allergy to oral minoxidil?'
+  - [yes] 'Yes' -> 6040
+  - [no] 'No' -> 1255
+  - [unsure] 'Unsure' -> 1255
+
+### qid 1256 [choice] next=None
+TEXT: 'As far as you know, do you have an allergy to topical minoxidil?'
+  - [yes] 'Yes' -> 1258
+  - [no] 'No' -> 1620
+  - [unsure] 'Unsure' -> 1620
+
+### qid 1258 [choice] next=None
+TEXT: 'What form of topical minoxidil did you have an allergic reaction to?'
+  - [foam] 'Foam' -> 6040 meta={"highlight": "negative"}
+  - [liquid] 'Liquid' -> 1620 meta={"highlight": "caution"}
+  - [both] 'Both' -> 6040 meta={"highlight": "negative"}
+
+================ GROUP PHOTO UPLOAD pos=140 n=0
+
+================ GROUP PRODUCT RECOMMEND pos=150 n=3
+
+### qid 4030 [control] next=5040 mtype=DermProductRecommend
+TEXT: 'Thanks for providing all the information {firstName}'
+  m.description: To help your doctor see your specific areas of concern, we'll ask you to take photos of different areas and angles of your head.
+  m.do_not_count_as_question: true
+  m.followUpText: Your doctor will review your information to see if you are a good candidate for Hair Solution Rx.
+  m.hold_next_question: true
+  m.button: {"label": "Continue"}
+  m.product: {"name": "Hair Solution Rx", "details": ["Convenient once-daily application", "Dermatologist-designed formula", "Made with minoxidil to help prevent hair thinning and promote regrowth"], "image": {"alt": "Droplet", "src": "https://assets.ro.co/ov/whl-topical-droplet-ce6b13f5.png"}, "learnMore": {"buttonText": "Got it!", "description": "Disclaimer: This is not medical advice. You and your physician will determine if (and potentially how) you should take Hair Solution Rx.\n\nHair Solution Rx is a …[+493]
+  m.sideEffects: [{"type": "CLEAR_CART"}, {"type": "ADD_PRODUCTS", "products": [{"filters": {"meta": {"code": "derm-minoxidil-topical-solution-product"}}}]}, {"type": "SET_DELIVERY_SCHEDULE", "value": "03_quarterly"}]
+
+### qid 4040 [control] next=4042 mtype=DermProductRecommend
+TEXT: 'Thanks for providing all the information {firstName}'
+  m.description: To help your doctor see your specific areas of concern, we'll ask you to take photos of different areas and angles of your head.
+  m.do_not_count_as_question: true
+  m.followUpText: Your doctor will review your information to see if you are a good candidate for Oral Minoxidil
+  m.hold_next_question: true
+  m.button: {"label": "Continue"}
+  m.product: {"name": "Oral Minoxidil", "details": ["Convenient once-daily medication", "Helps slow hair loss and stimulate regrowth", "Non-hormonal treatment"], "image": {"alt": "Oral Minoxidil Tablet", "src": "https://assets.ro.co/ov/whl-oral-tablet-84aacc0e.png"}, "learnMore": {"buttonText": "Got it!", "description": "Disclaimer: This is not medical advice. You and your physician will determine if (and potentially how) you should take oral minoxidil.\n\nThe active ingredient in oral minoxidil is the same …[+1997]
+  m.sideEffects: [{"type": "CLEAR_CART"}, {"type": "ADD_PRODUCTS", "products": [{"filters": {"meta": {"code": "derm-oral-minoxidil-product"}}}, {"type": "SET_DELIVERY_SCHEDULE", "value": "03_quarterly"}]}]
+
+### qid 4042 [choice] next=5040 mtype=single
+TEXT: 'Please take a moment to understand the possible side effects of this medication.'
+  m.description: Oral Minoxidil can have certain side effects, which you should be aware of before starting treatment.<Collapse title="Common side effects">
+Common side effects can include low blood pressure (hypotension) and swelling in the legs (edema), among others. Some people experience headaches, although those typically improve over time. Others may experience additional hair growth on the face or body (hypertrichosis). This is the most common side effect of taking oral minoxidil, though the complaint is …[+2721]
+  m.doNotCountAsQuestion: true
+  - [got-it] 'Got it' -> 5040 EXCL

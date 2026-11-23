@@ -1,0 +1,101 @@
+{
+ "start": "https://happyhead.zendesk.com/hc/en-us/articles/16254069704983-What-medications-does-Happy-Head-offer",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 1500
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/17624946350743-Which-of-your-hair-growth-solutions-are-customizable"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/31042509646871-About-Happy-Head-s-pricing"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/31044488677655-What-non-prescription-products-does-Happy-Head-offer"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/4402321888535-What-is-the-ordering-process-for-Happy-Head"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/16253781819415-Why-do-you-need-my-photos"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/16253838547095-Why-do-you-need-my-photo-ID"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/16254317138967-What-if-I-don-t-want-a-prescription"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/16932799651479-Should-I-choose-a-SuperCapsule-or-topical-treatment"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/21018342179863-How-do-I-know-if-the-SuperCapsule-ED-Performance-is-right-for-me"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/17571301347607-Subscription-vs-One-Time-Orders"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/4402322014359-How-can-I-cancel-my-subscription"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/4402314831383-What-is-your-return-policy"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/17624465131415-Do-you-ship-internationally"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/31569172936599-Why-Happy-Head-Asks-for-Your-Age-and-Gender"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/32006248028439-What-is-Topical-Rx-Advanced-ProBlend"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/32104727861783-What-is-TopicalRx-SuperSolution-ProBlend"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/35813909022103-TopicalRx-Dandruff-Solution-Clobetasol-Ketoconazole-by-Happy-Head"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/35817027675287-Topical-Rx-Beard-Formula-An-In-Depth-Guide"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/42614001770903-TopicalRx-Copper-Peptide-Formula-GHK-Cu"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/4402321956247-How-can-I-make-updates-or-customize-my-prescription-medication"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/19957315243159-How-can-I-update-my-health-information-for-my-Annual-Health-Check"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/42296905667479-Does-Happy-Head-accept-outside-insurance-FSA-or-HSA"
+  },
+  {
+   "do": "goto",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/43349402230167-What-Is-Dutasteride-for-Hair-Loss"
+  }
+ ]
+}

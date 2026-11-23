@@ -1,0 +1,19 @@
+{
+  "_comment": "Stage 3 verify, read-only: re-read the six shared Hims & Hers help-centre articles that the rules rest on. No clicks, no forms.",
+  "start": "https://support.hims.com/hc/en-us/articles/38944589097883-Minoxidil",
+  "locale": "en-US",
+  "timezone": "America/New_York",
+  "steps": [
+    {"do": "wait", "ms": 2500},
+    {"do": "goto", "url": "https://support.hims.com/hc/en-us/articles/38838928667419-Minoxidil-Supplements"},
+    {"do": "wait", "ms": 2500},
+    {"do": "goto", "url": "https://support.hims.com/hc/en-us/articles/38844763548059-Compounded-Topical-Combination"},
+    {"do": "wait", "ms": 2500},
+    {"do": "goto", "url": "https://support.hims.com/hc/en-us/articles/38945518659227-Spironolactone-Generic-for-Aldactone"},
+    {"do": "wait", "ms": 2500},
+    {"do": "goto", "url": "https://support.hims.com/hc/en-us/articles/360032844051-How-does-this-work"},
+    {"do": "wait", "ms": 2500},
+    {"do": "goto", "url": "https://support.hims.com/hc/en-us/articles/115002248531-Do-I-need-a-prescription"},
+    {"do": "wait", "ms": 2500}
+  ]
+}

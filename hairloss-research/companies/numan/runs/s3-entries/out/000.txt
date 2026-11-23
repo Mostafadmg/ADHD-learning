@@ -1,0 +1,102 @@
+COMMAND 000 start https://www.numan.com/subscribe/hair-loss/rosemary-oil?purchase=true&pc=HL-ROSEMARY-50OFF
+URL: https://www.numan.com/subscribe/hair-loss/c89b74ca-ad77-4339-b36e-dd97a7c80b38/profile
+TITLE: Numan | A few details about you
+
+--- VISIBLE TEXT ---
+Cookies
+
+This website uses cookies to personalise and improve your experience. See our Cookies Policy to learn more.
+
+Customize
+Reject All
+Accept All
+Back
+Order summary
+Your order
+Rosemary Oil
+100ml
+£28.00
+Subtotal
+£28.00
+Discounts
+Promo
+Remove
+-£14.00
+Save 50% on your first order
+Delivery
+Free
+Total
+£14.00
+1
+Create an account
+
+Have an account? Log in
+
+​
+Email address
+We will let you know via email once your prescription has been issued.
+​
+Password
+
+Password must be at least 12 characters, including a mix of letters, numbers, and special characters.
+
+We are required to confirm the identity of our members. Any incorrect details will cause delays to your order.
+​
+Legal first name
+Please write your name as it appears on your passport or ID. We need your full legal name to confirm your identity.
+​
+Legal surname
+​
+Date of birth
+​
+Phone number
+In very rare cases our clinicians may need to call you. They will always be discreet.
+​
+Sex
+What sex were you assigned at birth, as shown on your original birth certificate. This is important for us to know because it allows us to provide you with treatments as safely as possible.
+2
+Delivery address
+Please make sure your address is accurate. Try using our auto-complete option. This will help us confirm your identity.
+​
+Address
+​
+City
+​
+Postcode
+Yes, I agree to Numan's Terms & Conditions and Privacy Policy.
+I do not wish to receive marketing communications that include special offers, promotions, or educational content.
+Continue
+
+--- CONTROLS ---
+  button (6):
+    - Customize
+    - Reject All
+    - Accept All
+    - Remove
+    - ​ Sex
+    - Continue
+  input:text (7):
+    - Email address (placeholder:  ) (name: email)
+    - Legal first name (placeholder:  ) (name: firstName)
+    - Legal surname (placeholder:  ) (name: lastName)
+    - Date of birth (placeholder: Day / Month / Year)
+    - Sex (placeholder: Choose sex)
+    - City (placeholder:  ) (name: city)
+    - Postcode (placeholder:  ) (name: postcode)
+  input:password (1):
+    - Password (placeholder:  ) (name: password)
+  input:tel (1):
+    - Phone number (placeholder:  ) (name: phoneNumber)
+  textarea (1):
+    - Address (placeholder:  )
+  checkbox (2):
+    - Yes, I agree to Numan's Terms & Conditions and Privacy Policy. (name: acceptedTermsAndConditions)
+    - I do not wish to receive marketing communications that include special offers, promotions, or educational content. (name: acceptedMarketingEmail)
+
+--- LINKS ---
+  link (5):
+    - our Cookies Policy -> https://www.numan.com/legal/cookies-policy
+    - Back -> #
+    - Visit the main page -> /
+    - Terms & Conditions -> /legal/terms-and-conditions
+    - Privacy Policy. -> /legal/privacy-policy

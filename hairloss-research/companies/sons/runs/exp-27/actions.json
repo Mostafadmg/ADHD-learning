@@ -1,0 +1,135 @@
+{
+ "_about": "Sons UK hair consultation, stage 2 one-change experiment exp-27. Changed: men-q21 conditions: None → Scalp Disorders (including Scalp Psoriasis, Eczema, Dermatitis or Infection). Text box \"test\"; the three scalp tick-box screens answered None of the above / I haven’t tried anything yet / None of the above. Everything else is the baseline man. The walk never types into the account form.",
+ "start": "https://shop.sons.co.uk/consultation/?logged_in=false",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2500,
+   "_q": "wait for survey to load"
+  },
+  {
+   "do": "click",
+   "text": "No",
+   "_q": "5140 existing customer"
+  },
+  {
+   "do": "click",
+   "text": "Male",
+   "_q": "5141 gender at birth"
+  },
+  {
+   "do": "click",
+   "text": "I accept",
+   "_q": "5142 declaration"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "_q": "5142 continue"
+  },
+  {
+   "do": "click",
+   "text": "Temples/Crown",
+   "_q": "5147 hair picture"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "click",
+   "text": "Gradually over months and years",
+   "_q": "5143 onset"
+  },
+  {
+   "do": "click",
+   "text": "No",
+   "_q": "3216 mood"
+  },
+  {
+   "do": "click",
+   "text": "None of these",
+   "_q": "5148 past medicines"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "_q": "5148 continue"
+  },
+  {
+   "do": "click",
+   "text": "I don’t mind - I want what’s most effective for me",
+   "_q": "treatment type preference"
+  },
+  {
+   "do": "click",
+   "text": "Scalp Disorders (including Scalp Psoriasis, Eczema, Dermatitis or Infection)",
+   "_q": "5155 conditions"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "_q": "5155 continue"
+  },
+  {
+   "do": "fill",
+   "selector": "textarea",
+   "value": "test",
+   "_q": "5163 free text (neutral filler)"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "_q": "5163 continue"
+  },
+  {
+   "do": "click",
+   "text": "None of the above",
+   "_q": "5613 scalp symptoms"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "_q": "5613 continue"
+  },
+  {
+   "do": "click",
+   "text": "I haven’t tried anything yet",
+   "_q": "5614 scalp treatments tried"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "_q": "5614 continue"
+  },
+  {
+   "do": "click",
+   "text": "None of the above",
+   "_q": "5615 scalp red flags"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "_q": "5615 continue"
+  },
+  {
+   "do": "click",
+   "text": "Read more",
+   "_q": "expand the finasteride statement (information only)"
+  },
+  {
+   "do": "click",
+   "text": "I confirm that I have read and understood the above statement",
+   "_q": "finasteride-agreement (required tick)"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "_q": "finasteride page -> account form (ACCOUNT WALL: nothing is entered there) continue"
+  },
+  {
+   "do": "wait",
+   "ms": 1500
+  }
+ ]
+}

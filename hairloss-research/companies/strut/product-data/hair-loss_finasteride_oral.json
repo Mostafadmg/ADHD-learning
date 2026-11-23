@@ -1,0 +1,44 @@
+{
+ "heading": "Simple. Daily. Effective.",
+ "body": "Finasteride is an oral medication, FDA-approved for male pattern hair loss, that blocks the type II 5-alpha reductase enzyme to lower DHT, the hormone behind hair loss, by about 70%.*",
+ "activeIngredientsLabel": "Active Ingredient: Finasteride 1mg oral tablet. 30 tablets (one-month supply).",
+ "ingredients": [
+  {
+   "name": "Finasteride 1mg",
+   "body": "The standard clinical dose for male pattern hair loss. May block type II 5-alpha reductase, which may lower DHT by approximately 70%.*"
+  },
+  {
+   "name": "5-Alpha Reductase",
+   "body": "The enzyme that converts testosterone to DHT. Finasteride targets the type II isoform."
+  },
+  {
+   "name": "DHT (Dihydrotestosterone)",
+   "body": "The primary hormone behind male pattern hair loss. Lower DHT may slow loss and support regrowth.*"
+  }
+ ],
+ "safety": [
+  {
+   "title": "Common side effects",
+   "body": "Decreased libido, erectile dysfunction, decreased semen volume, breast tenderness or enlargement, and mood changes."
+  },
+  {
+   "title": "Tell your healthcare provider",
+   "body": "Share any history of liver disease, prostate conditions, current prescriptions, and any plans for blood donation while on finasteride."
+  },
+  {
+   "title": "Do not use if",
+   "body": "You are a woman or a child. Finasteride is a medication for men only. Women who are or may become pregnant should never handle finasteride-containing medications."
+  },
+  {
+   "title": "Seek medical care",
+   "body": "Severe allergic reaction (rash, swelling, trouble breathing), persistent breast changes, severe mood changes, or signs of high-grade prostate disease."
+  }
+ ],
+ "disclaimer": [
+  "All prescription medications require a valid and complete online consultation prior to approval, and final pricing is determined at that time. Finasteride 1mg tablets are an FDA-approved prescription medication for male pattern hair loss in men.",
+  "Oral Finasteride 1mg is FDA-approved for male pattern hair loss in men. Individual results vary. This medication is not for use by women or children. Statements regarding compounded products on this site have not been evaluated by the Food and Drug Administration.",
+  "The drug and medical information provided on this website is not meant to cover all adverse effects, drug interactions, warnings, medical uses, directions and precautions. The information provided is a medical resource and the judgment of your healthcare provider should not be substituted."
+ ],
+ "imageSrc": "/assets/v3-oralfin-ingredients-bathroom.jpg",
+ "imageAlt": "Hand pouring a Finasteride tablet onto a palm, bathroom counter"
+}

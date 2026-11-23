@@ -1,0 +1,26 @@
+STEP 15 pt AFTER ANSWERS ["Yes"]
+URL: https://www.hairandme.com/c/suh/pt
+
+--- VISIBLE TEXT ---
+Do you live with pets?
+Yes
+No
+
+Why are we asking?
+
+Some of our treatments contain minoxidil, which is toxic to cats and dogs. The main risk is them licking it off fingers/hair after use.
+
+Capsules are less likely to have a risk, as the product doesn’t sit on your hair in the same way. They’re still toxic if your pet ingests the capsule.
+
+Keep all medication out of reach of your pets.
+
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=8007] | Yes [checked]
+input:radio[name=8007] | No
+button:submit | NEXT QUESTION
+a -> /c/suh/pt?action=previous | Back to previous page

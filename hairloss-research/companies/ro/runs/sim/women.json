@@ -1,0 +1,6598 @@
+{
+ "note": "Offline simulation of the served schema (scripts/simulate.py + scripts/sweep.py). Evidence type: code. Not live replays.",
+ "baseline": {
+  "path": [
+   [
+    4,
+    "Firstly, how long have you been experiencing hair loss?",
+    [
+     "more-than-a-year"
+    ]
+   ],
+   [
+    6,
+    "How did your hair loss start?",
+    [
+     "gradually"
+    ]
+   ],
+   [
+    8,
+    "Where on your head have you noticed hair loss?",
+    [
+     "top-of-head-crown"
+    ]
+   ],
+   [
+    10,
+    "Which picture most closely resembles your part line?",
+    [
+     "3"
+    ]
+   ],
+   [
+    16,
+    "Sign up",
+    []
+   ],
+   [
+    30,
+    "The Basics",
+    [
+     "next"
+    ]
+   ],
+   [
+    1050,
+    "Let’s talk about your medical history",
+    [
+     "continue"
+    ]
+   ],
+   [
+    1055,
+    "Are you pregnant, or possibly pregnant?",
+    [
+     "no"
+    ]
+   ],
+   [
+    1057,
+    "Are you currently breastfeeding?",
+    [
+     "no"
+    ]
+   ],
+   [
+    1059,
+    "Have you given birth in the last year?",
+    [
+     "no"
+    ]
+   ],
+   [
+    12,
+    "How would you describe the severity of your current hair loss?",
+    [
+     "moderate"
+    ]
+   ],
+   [
+    1062,
+    "How would you describe your hair loss?",
+    [
+     "my-hair-is-gradually-thinning-i-m-slowly-noticing-more-of-my-scalp-showing-through-or-my-part-seems-wider-or-my-ponytail-is-thinner"
+    ]
+   ],
+   [
+    1070,
+    "Which picture most closely resembles how much hair you are losing per ",
+    [
+     "2"
+    ]
+   ],
+   [
+    1074,
+    "Have you noticed any of the following?",
+    [
+     "none-of-the-above"
+    ]
+   ],
+   [
+    1076,
+    "Do you have any family history of hair thinning or balding (parents, s",
+    [
+     "yes"
+    ]
+   ],
+   [
+    1078,
+    "To what extent has your hair been negatively affecting your self-confi",
+    [
+     "3-somewhat"
+    ]
+   ],
+   [
+    1080,
+    "Hair loss can be stressful. How much is your hair loss affecting your ",
+    [
+     "3-somewhat"
+    ]
+   ],
+   [
+    1083,
+    "Have you ever been evaluated for hair loss in the past?",
+    [
+     "no"
+    ]
+   ],
+   [
+    1086,
+    "Have you ever been diagnosed with any of the following scalp condition",
+    [
+     "none-of-the-above"
+    ]
+   ],
+   [
+    1090,
+    "Do you have any of the following? Select all that apply.",
+    [
+     "none-of-the-above"
+    ]
+   ],
+   [
+    1094,
+    "Have you experienced any of the following in the last year?",
+    [
+     "none-of-the-above"
+    ]
+   ],
+   [
+    1096,
+    "Do you have, or have you ever had, any of the following conditions?",
+    [
+     "none-of-the-above"
+    ]
+   ],
+   [
+    1185,
+    "Have you ever been told that you have low blood pressure?",
+    [
+     "no"
+    ]
+   ],
+   [
+    1250,
+    "Which of the following treatments, if any, have you used to treat your",
+    [
+     "none-of-the-above"
+    ]
+   ],
+   [
+    1620,
+    "Search and select any medical problems or conditions that you currentl",
+    [
+     "i-dont-have-conditions"
+    ]
+   ],
+   [
+    1626,
+    "Have you had any past surgeries or procedures?",
+    [
+     "no"
+    ]
+   ],
+   [
+    1630,
+    "Search and select any medications, vitamins, dietary supplements, and ",
+    [
+     "i-dont-take-any-medications"
+    ]
+   ],
+   [
+    1640,
+    "Search and select all allergies you have",
+    [
+     "i-dont-have-allergies"
+    ]
+   ],
+   [
+    2200,
+    "How would you describe yourself? Select all that apply.",
+    [
+     "no-answer"
+    ]
+   ],
+   [
+    2010,
+    "One last thing, {firstName}",
+    []
+   ],
+   [
+    4025,
+    "Is there a specific type of hair loss treatment you’d like to be presc"
+   ]
+  ],
+  "outcome": {
+   "end": 4025,
+   "vars": {
+    "ifNotEligibleForOralMinoxidil": 0,
+    "ifNotEligibleForTopicalMinoxidil": 0,
+    "userAge": 38
+   },
+   "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+  }
+ },
+ "experiments": [
+  {
+   "id": "sim-w-q4-months",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 4,
+   "slug": "months",
+   "changed": "women-q4: More than a year -> Months",
+   "answers": {
+    "4": [
+     "months"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "hairLossExperience",
+     "months"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q4-within-the-last-year",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 4,
+   "slug": "within-the-last-year",
+   "changed": "women-q4: More than a year -> Within the last year",
+   "answers": {
+    "4": [
+     "within-the-last-year"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "hairLossExperience",
+     "withinTheLastYear"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q6-suddenly",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 6,
+   "slug": "suddenly",
+   "changed": "women-q6: Gradually -> Suddenly",
+   "answers": {
+    "6": [
+     "suddenly"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q6-not-sure",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 6,
+   "slug": "not-sure",
+   "changed": "women-q6: Gradually -> Not sure",
+   "answers": {
+    "6": [
+     "not-sure"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q8-temples",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 8,
+   "slug": "temples",
+   "changed": "women-q8: Top of head/crown -> Temples",
+   "answers": {
+    "8": [
+     "temples"
+    ]
+   },
+   "added": [],
+   "removed": [
+    [
+     10,
+     "Which picture most closely resembles your part line?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": "ack-clinical",
+   "vars": []
+  },
+  {
+   "id": "sim-w-q8-frontal-scalp",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 8,
+   "slug": "frontal-scalp",
+   "changed": "women-q8: Top of head/crown -> Frontal scalp",
+   "answers": {
+    "8": [
+     "frontal-scalp"
+    ]
+   },
+   "added": [],
+   "removed": [
+    [
+     10,
+     "Which picture most closely resembles your part line?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": "ack-clinical",
+   "vars": []
+  },
+  {
+   "id": "sim-w-q8-all-over",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 8,
+   "slug": "all-over",
+   "changed": "women-q8: Top of head/crown -> All over",
+   "answers": {
+    "8": [
+     "all-over"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": "ack-clinical",
+   "vars": [
+    [
+     "ifAllOver",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q10-1",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 10,
+   "slug": "1",
+   "changed": "women-q10: 3 -> 1",
+   "answers": {
+    "10": [
+     "1"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q10-2",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 10,
+   "slug": "2",
+   "changed": "women-q10: 3 -> 2",
+   "answers": {
+    "10": [
+     "2"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q10-4",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 10,
+   "slug": "4",
+   "changed": "women-q10: 3 -> 4",
+   "answers": {
+    "10": [
+     "4"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q10-5",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 10,
+   "slug": "5",
+   "changed": "women-q10: 3 -> 5",
+   "answers": {
+    "10": [
+     "5"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1055-yes",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1055,
+   "slug": "yes",
+   "changed": "women-q1055: No -> Yes",
+   "answers": {
+    "1055": [
+     "yes"
+    ]
+   },
+   "added": [
+    [
+     6020,
+     "Unfortunately, our treatments are not available for use during pregnancy."
+    ]
+   ],
+   "removed": [
+    [
+     1057,
+     "Are you currently breastfeeding?"
+    ],
+    [
+     1059,
+     "Have you given birth in the last year?"
+    ],
+    [
+     12,
+     "How would you describe the severity of your current hair loss?"
+    ],
+    [
+     1062,
+     "How would you describe your hair loss?"
+    ],
+    [
+     1070,
+     "Which picture most closely resembles how much hair you are losing per day?"
+    ],
+    [
+     1074,
+     "Have you noticed any of the following?"
+    ],
+    [
+     1076,
+     "Do you have any family history of hair thinning or balding (parents, siblings, grandparent"
+    ],
+    [
+     1078,
+     "To what extent has your hair been negatively affecting your self-confidence?"
+    ],
+    [
+     1080,
+     "Hair loss can be stressful. How much is your hair loss affecting your overall stress level"
+    ],
+    [
+     1083,
+     "Have you ever been evaluated for hair loss in the past?"
+    ],
+    [
+     1086,
+     "Have you ever been diagnosed with any of the following scalp conditions?"
+    ],
+    [
+     1090,
+     "Do you have any of the following? Select all that apply."
+    ],
+    [
+     1094,
+     "Have you experienced any of the following in the last year?"
+    ],
+    [
+     1096,
+     "Do you have, or have you ever had, any of the following conditions?"
+    ],
+    [
+     1185,
+     "Have you ever been told that you have low blood pressure?"
+    ],
+    [
+     1250,
+     "Which of the following treatments, if any, have you used to treat your hair loss in the pa"
+    ],
+    [
+     1620,
+     "Search and select any medical problems or conditions that you currently have."
+    ],
+    [
+     1626,
+     "Have you had any past surgeries or procedures?"
+    ],
+    [
+     1630,
+     "Search and select any medications, vitamins, dietary supplements, and topical creams you a"
+    ],
+    [
+     1640,
+     "Search and select all allergies you have"
+    ],
+    [
+     2200,
+     "How would you describe yourself? Select all that apply."
+    ],
+    [
+     2010,
+     "One last thing, {firstName}"
+    ],
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 6020,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: pregnancy"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": []
+  },
+  {
+   "id": "sim-w-q6020-got-it-d1",
+   "flow": "women",
+   "depth": 1,
+   "parent": "sim-w-q1055-yes",
+   "qid": 6020,
+   "slug": "got-it",
+   "changed": "women-q6020: (nothing) -> Got it",
+   "answers": {
+    "1055": [
+     "yes"
+    ],
+    "6020": [
+     "got-it"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 6020,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: pregnancy"
+   },
+   "outcome": {
+    "end": 6020,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: pregnancy"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1055-not-sure",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1055,
+   "slug": "not-sure",
+   "changed": "women-q1055: No -> Not sure",
+   "answers": {
+    "1055": [
+     "not-sure"
+    ]
+   },
+   "added": [
+    [
+     6020,
+     "Unfortunately, our treatments are not available for use during pregnancy."
+    ]
+   ],
+   "removed": [
+    [
+     1057,
+     "Are you currently breastfeeding?"
+    ],
+    [
+     1059,
+     "Have you given birth in the last year?"
+    ],
+    [
+     12,
+     "How would you describe the severity of your current hair loss?"
+    ],
+    [
+     1062,
+     "How would you describe your hair loss?"
+    ],
+    [
+     1070,
+     "Which picture most closely resembles how much hair you are losing per day?"
+    ],
+    [
+     1074,
+     "Have you noticed any of the following?"
+    ],
+    [
+     1076,
+     "Do you have any family history of hair thinning or balding (parents, siblings, grandparent"
+    ],
+    [
+     1078,
+     "To what extent has your hair been negatively affecting your self-confidence?"
+    ],
+    [
+     1080,
+     "Hair loss can be stressful. How much is your hair loss affecting your overall stress level"
+    ],
+    [
+     1083,
+     "Have you ever been evaluated for hair loss in the past?"
+    ],
+    [
+     1086,
+     "Have you ever been diagnosed with any of the following scalp conditions?"
+    ],
+    [
+     1090,
+     "Do you have any of the following? Select all that apply."
+    ],
+    [
+     1094,
+     "Have you experienced any of the following in the last year?"
+    ],
+    [
+     1096,
+     "Do you have, or have you ever had, any of the following conditions?"
+    ],
+    [
+     1185,
+     "Have you ever been told that you have low blood pressure?"
+    ],
+    [
+     1250,
+     "Which of the following treatments, if any, have you used to treat your hair loss in the pa"
+    ],
+    [
+     1620,
+     "Search and select any medical problems or conditions that you currently have."
+    ],
+    [
+     1626,
+     "Have you had any past surgeries or procedures?"
+    ],
+    [
+     1630,
+     "Search and select any medications, vitamins, dietary supplements, and topical creams you a"
+    ],
+    [
+     1640,
+     "Search and select all allergies you have"
+    ],
+    [
+     2200,
+     "How would you describe yourself? Select all that apply."
+    ],
+    [
+     2010,
+     "One last thing, {firstName}"
+    ],
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 6020,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: pregnancy"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": []
+  },
+  {
+   "id": "sim-w-q6020-got-it-d1x",
+   "flow": "women",
+   "depth": 1,
+   "parent": "sim-w-q1055-not-sure",
+   "qid": 6020,
+   "slug": "got-it",
+   "changed": "women-q6020: (nothing) -> Got it",
+   "answers": {
+    "1055": [
+     "not-sure"
+    ],
+    "6020": [
+     "got-it"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 6020,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: pregnancy"
+   },
+   "outcome": {
+    "end": 6020,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: pregnancy"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1057-yes",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1057,
+   "slug": "yes",
+   "changed": "women-q1057: No -> Yes",
+   "answers": {
+    "1057": [
+     "yes"
+    ]
+   },
+   "added": [
+    [
+     4030,
+     "Thanks for providing all the information {firstName}"
+    ]
+   ],
+   "removed": [
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4030,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 1,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "Hair Solution Rx only"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "ifNotEligibleForOralMinoxidil",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q1059-yes",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1059,
+   "slug": "yes",
+   "changed": "women-q1059: No -> Yes",
+   "answers": {
+    "1059": [
+     "yes"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": "ack-clinical",
+   "vars": []
+  },
+  {
+   "id": "sim-w-q12-very-mild",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 12,
+   "slug": "very-mild",
+   "changed": "women-q12: Moderate -> Very Mild",
+   "answers": {
+    "12": [
+     "very-mild"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q12-mild",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 12,
+   "slug": "mild",
+   "changed": "women-q12: Moderate -> Mild",
+   "answers": {
+    "12": [
+     "mild"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q12-severe",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 12,
+   "slug": "severe",
+   "changed": "women-q12: Moderate -> Severe",
+   "answers": {
+    "12": [
+     "severe"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q12-extremely-severe",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 12,
+   "slug": "extremely-severe",
+   "changed": "women-q12: Moderate -> Extremely severe",
+   "answers": {
+    "12": [
+     "extremely-severe"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1062-i-m-shedding-more-hair-than-is-normal-fo",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1062,
+   "slug": "i-m-shedding-more-hair-than-is-normal-for-me-i-notice-more-fallout-in-the-shower-on-my-pillow-etc",
+   "changed": "women-q1062: My hair is gradually thinning (I’m slowly noticing more of my scalp showing through or my scalp seems wider or my ponytail is thinner) -> I’m shedding more hair than is normal for me (I notice more fallout in the shower, on my pillow, etc.)",
+   "answers": {
+    "1062": [
+     "i-m-shedding-more-hair-than-is-normal-for-me-i-notice-more-fallout-in-the-shower-on-my-pillow-etc"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1062-both",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1062,
+   "slug": "both",
+   "changed": "women-q1062: My hair is gradually thinning (I’m slowly noticing more of my scalp showing through or my scalp seems wider or my ponytail is thinner) -> Both",
+   "answers": {
+    "1062": [
+     "both"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1062-unsure",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1062,
+   "slug": "unsure",
+   "changed": "women-q1062: My hair is gradually thinning (I’m slowly noticing more of my scalp showing through or my scalp seems wider or my ponytail is thinner) -> Unsure",
+   "answers": {
+    "1062": [
+     "unsure"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1070-1",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1070,
+   "slug": "1",
+   "changed": "women-q1070: 2 -> 1",
+   "answers": {
+    "1070": [
+     "1"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1070-3",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1070,
+   "slug": "3",
+   "changed": "women-q1070: 2 -> 3",
+   "answers": {
+    "1070": [
+     "3"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1070-4",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1070,
+   "slug": "4",
+   "changed": "women-q1070: 2 -> 4",
+   "answers": {
+    "1070": [
+     "4"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1070-5",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1070,
+   "slug": "5",
+   "changed": "women-q1070: 2 -> 5",
+   "answers": {
+    "1070": [
+     "5"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1074-a-patch-or-patches-of-hair-loss-that-is-",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1074,
+   "slug": "a-patch-or-patches-of-hair-loss-that-is-nearly-or-completely-bald",
+   "changed": "women-q1074: None of the above -> A patch or patches of hair loss that is nearly or completely bald",
+   "answers": {
+    "1074": [
+     "a-patch-or-patches-of-hair-loss-that-is-nearly-or-completely-bald"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": "negative",
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1074-pain-soreness-burning-and-or-tingling-in",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1074,
+   "slug": "pain-soreness-burning-and-or-tingling-in-areas-of-hair-loss",
+   "changed": "women-q1074: None of the above -> Pain, soreness, burning, and/or tingling in areas of hair loss",
+   "answers": {
+    "1074": [
+     "pain-soreness-burning-and-or-tingling-in-areas-of-hair-loss"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1074-redness-or-rashes-on-scalp",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1074,
+   "slug": "redness-or-rashes-on-scalp",
+   "changed": "women-q1074: None of the above -> Redness or rashes on scalp",
+   "answers": {
+    "1074": [
+     "redness-or-rashes-on-scalp"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": "negative",
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1074-recurrent-pus-bumps-or-open-sores-on-sca",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1074,
+   "slug": "recurrent-pus-bumps-or-open-sores-on-scalp",
+   "changed": "women-q1074: None of the above -> Recurrent pus bumps or open sores on scalp",
+   "answers": {
+    "1074": [
+     "recurrent-pus-bumps-or-open-sores-on-scalp"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1074-partial-or-complete-loss-of-eyebrows-or-",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1074,
+   "slug": "partial-or-complete-loss-of-eyebrows-or-eyelashes",
+   "changed": "women-q1074: None of the above -> Partial or complete loss of eyebrows or eyelashes",
+   "answers": {
+    "1074": [
+     "partial-or-complete-loss-of-eyebrows-or-eyelashes"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1076-no",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1076,
+   "slug": "no",
+   "changed": "women-q1076: Yes -> No",
+   "answers": {
+    "1076": [
+     "no"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1076-i-don-t-know",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1076,
+   "slug": "i-don-t-know",
+   "changed": "women-q1076: Yes -> I don't know",
+   "answers": {
+    "1076": [
+     "i-don-t-know"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1078-1-not-at-all",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1078,
+   "slug": "1-not-at-all",
+   "changed": "women-q1078: 3 - Somewhat -> 1 - Not at all",
+   "answers": {
+    "1078": [
+     "1-not-at-all"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1078-2-a-little-bit",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1078,
+   "slug": "2-a-little-bit",
+   "changed": "women-q1078: 3 - Somewhat -> 2 - A little bit",
+   "answers": {
+    "1078": [
+     "2-a-little-bit"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1078-4-quite-a-bit",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1078,
+   "slug": "4-quite-a-bit",
+   "changed": "women-q1078: 3 - Somewhat -> 4 - Quite a bit",
+   "answers": {
+    "1078": [
+     "4-quite-a-bit"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1078-5-a-lot",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1078,
+   "slug": "5-a-lot",
+   "changed": "women-q1078: 3 - Somewhat -> 5 - A lot",
+   "answers": {
+    "1078": [
+     "5-a-lot"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1080-1-not-at-all",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1080,
+   "slug": "1-not-at-all",
+   "changed": "women-q1080: 3 - Somewhat -> 1 - Not at all",
+   "answers": {
+    "1080": [
+     "1-not-at-all"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1080-2-a-little-bit",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1080,
+   "slug": "2-a-little-bit",
+   "changed": "women-q1080: 3 - Somewhat -> 2 - A little bit",
+   "answers": {
+    "1080": [
+     "2-a-little-bit"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1080-4-quite-a-bit",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1080,
+   "slug": "4-quite-a-bit",
+   "changed": "women-q1080: 3 - Somewhat -> 4 - Quite a bit",
+   "answers": {
+    "1080": [
+     "4-quite-a-bit"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1080-5-a-lot",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1080,
+   "slug": "5-a-lot",
+   "changed": "women-q1080: 3 - Somewhat -> 5 - A lot",
+   "answers": {
+    "1080": [
+     "5-a-lot"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1083-yes",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1083,
+   "slug": "yes",
+   "changed": "women-q1083: No -> Yes",
+   "answers": {
+    "1083": [
+     "yes"
+    ]
+   },
+   "added": [
+    [
+     1084,
+     "Please share more details: How long ago and were any lab tests done? Did the doctor remove"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1086-alopecia-areata",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1086,
+   "slug": "alopecia-areata",
+   "changed": "women-q1086: None of the above -> Alopecia areata",
+   "answers": {
+    "1086": [
+     "alopecia-areata"
+    ]
+   },
+   "added": [
+    [
+     6040,
+     "Based on some of your responses, we will unfortunately be unable to evaluate and treat you"
+    ]
+   ],
+   "removed": [
+    [
+     1090,
+     "Do you have any of the following? Select all that apply."
+    ],
+    [
+     1094,
+     "Have you experienced any of the following in the last year?"
+    ],
+    [
+     1096,
+     "Do you have, or have you ever had, any of the following conditions?"
+    ],
+    [
+     1185,
+     "Have you ever been told that you have low blood pressure?"
+    ],
+    [
+     1250,
+     "Which of the following treatments, if any, have you used to treat your hair loss in the pa"
+    ],
+    [
+     1620,
+     "Search and select any medical problems or conditions that you currently have."
+    ],
+    [
+     1626,
+     "Have you had any past surgeries or procedures?"
+    ],
+    [
+     1630,
+     "Search and select any medications, vitamins, dietary supplements, and topical creams you a"
+    ],
+    [
+     1640,
+     "Search and select all allergies you have"
+    ],
+    [
+     2200,
+     "How would you describe yourself? Select all that apply."
+    ],
+    [
+     2010,
+     "One last thing, {firstName}"
+    ],
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": true,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q6040-got-it-d1",
+   "flow": "women",
+   "depth": 1,
+   "parent": "sim-w-q1086-alopecia-areata",
+   "qid": 6040,
+   "slug": "got-it",
+   "changed": "women-q6040: (nothing) -> Got it",
+   "answers": {
+    "1086": [
+     "alopecia-areata"
+    ],
+    "6040": [
+     "got-it"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1086-lichen-planopilaris",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1086,
+   "slug": "lichen-planopilaris",
+   "changed": "women-q1086: None of the above -> Lichen planopilaris",
+   "answers": {
+    "1086": [
+     "lichen-planopilaris"
+    ]
+   },
+   "added": [
+    [
+     6040,
+     "Based on some of your responses, we will unfortunately be unable to evaluate and treat you"
+    ]
+   ],
+   "removed": [
+    [
+     1090,
+     "Do you have any of the following? Select all that apply."
+    ],
+    [
+     1094,
+     "Have you experienced any of the following in the last year?"
+    ],
+    [
+     1096,
+     "Do you have, or have you ever had, any of the following conditions?"
+    ],
+    [
+     1185,
+     "Have you ever been told that you have low blood pressure?"
+    ],
+    [
+     1250,
+     "Which of the following treatments, if any, have you used to treat your hair loss in the pa"
+    ],
+    [
+     1620,
+     "Search and select any medical problems or conditions that you currently have."
+    ],
+    [
+     1626,
+     "Have you had any past surgeries or procedures?"
+    ],
+    [
+     1630,
+     "Search and select any medications, vitamins, dietary supplements, and topical creams you a"
+    ],
+    [
+     1640,
+     "Search and select all allergies you have"
+    ],
+    [
+     2200,
+     "How would you describe yourself? Select all that apply."
+    ],
+    [
+     2010,
+     "One last thing, {firstName}"
+    ],
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": true,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q6040-got-it-d1x",
+   "flow": "women",
+   "depth": 1,
+   "parent": "sim-w-q1086-lichen-planopilaris",
+   "qid": 6040,
+   "slug": "got-it",
+   "changed": "women-q6040: (nothing) -> Got it",
+   "answers": {
+    "1086": [
+     "lichen-planopilaris"
+    ],
+    "6040": [
+     "got-it"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1086-frontal-fibrosing-alopecia-ffa",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1086,
+   "slug": "frontal-fibrosing-alopecia-ffa",
+   "changed": "women-q1086: None of the above -> Frontal fibrosing alopecia (FFA)",
+   "answers": {
+    "1086": [
+     "frontal-fibrosing-alopecia-ffa"
+    ]
+   },
+   "added": [
+    [
+     6040,
+     "Based on some of your responses, we will unfortunately be unable to evaluate and treat you"
+    ]
+   ],
+   "removed": [
+    [
+     1090,
+     "Do you have any of the following? Select all that apply."
+    ],
+    [
+     1094,
+     "Have you experienced any of the following in the last year?"
+    ],
+    [
+     1096,
+     "Do you have, or have you ever had, any of the following conditions?"
+    ],
+    [
+     1185,
+     "Have you ever been told that you have low blood pressure?"
+    ],
+    [
+     1250,
+     "Which of the following treatments, if any, have you used to treat your hair loss in the pa"
+    ],
+    [
+     1620,
+     "Search and select any medical problems or conditions that you currently have."
+    ],
+    [
+     1626,
+     "Have you had any past surgeries or procedures?"
+    ],
+    [
+     1630,
+     "Search and select any medications, vitamins, dietary supplements, and topical creams you a"
+    ],
+    [
+     1640,
+     "Search and select all allergies you have"
+    ],
+    [
+     2200,
+     "How would you describe yourself? Select all that apply."
+    ],
+    [
+     2010,
+     "One last thing, {firstName}"
+    ],
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": true,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q6040-got-it-d1xx",
+   "flow": "women",
+   "depth": 1,
+   "parent": "sim-w-q1086-frontal-fibrosing-alopecia-ffa",
+   "qid": 6040,
+   "slug": "got-it",
+   "changed": "women-q6040: (nothing) -> Got it",
+   "answers": {
+    "1086": [
+     "frontal-fibrosing-alopecia-ffa"
+    ],
+    "6040": [
+     "got-it"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1086-central-centrifugal-cicatricial-alopecia",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1086,
+   "slug": "central-centrifugal-cicatricial-alopecia-ccca",
+   "changed": "women-q1086: None of the above -> Central centrifugal cicatricial alopecia (CCCA)",
+   "answers": {
+    "1086": [
+     "central-centrifugal-cicatricial-alopecia-ccca"
+    ]
+   },
+   "added": [
+    [
+     6040,
+     "Based on some of your responses, we will unfortunately be unable to evaluate and treat you"
+    ]
+   ],
+   "removed": [
+    [
+     1090,
+     "Do you have any of the following? Select all that apply."
+    ],
+    [
+     1094,
+     "Have you experienced any of the following in the last year?"
+    ],
+    [
+     1096,
+     "Do you have, or have you ever had, any of the following conditions?"
+    ],
+    [
+     1185,
+     "Have you ever been told that you have low blood pressure?"
+    ],
+    [
+     1250,
+     "Which of the following treatments, if any, have you used to treat your hair loss in the pa"
+    ],
+    [
+     1620,
+     "Search and select any medical problems or conditions that you currently have."
+    ],
+    [
+     1626,
+     "Have you had any past surgeries or procedures?"
+    ],
+    [
+     1630,
+     "Search and select any medications, vitamins, dietary supplements, and topical creams you a"
+    ],
+    [
+     1640,
+     "Search and select all allergies you have"
+    ],
+    [
+     2200,
+     "How would you describe yourself? Select all that apply."
+    ],
+    [
+     2010,
+     "One last thing, {firstName}"
+    ],
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": true,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q6040-got-it-d1xxx",
+   "flow": "women",
+   "depth": 1,
+   "parent": "sim-w-q1086-central-centrifugal-cicatricial-alopecia",
+   "qid": 6040,
+   "slug": "got-it",
+   "changed": "women-q6040: (nothing) -> Got it",
+   "answers": {
+    "1086": [
+     "central-centrifugal-cicatricial-alopecia-ccca"
+    ],
+    "6040": [
+     "got-it"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1086-traction-alopecia",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1086,
+   "slug": "traction-alopecia",
+   "changed": "women-q1086: None of the above -> Traction alopecia",
+   "answers": {
+    "1086": [
+     "traction-alopecia"
+    ]
+   },
+   "added": [
+    [
+     6040,
+     "Based on some of your responses, we will unfortunately be unable to evaluate and treat you"
+    ]
+   ],
+   "removed": [
+    [
+     1090,
+     "Do you have any of the following? Select all that apply."
+    ],
+    [
+     1094,
+     "Have you experienced any of the following in the last year?"
+    ],
+    [
+     1096,
+     "Do you have, or have you ever had, any of the following conditions?"
+    ],
+    [
+     1185,
+     "Have you ever been told that you have low blood pressure?"
+    ],
+    [
+     1250,
+     "Which of the following treatments, if any, have you used to treat your hair loss in the pa"
+    ],
+    [
+     1620,
+     "Search and select any medical problems or conditions that you currently have."
+    ],
+    [
+     1626,
+     "Have you had any past surgeries or procedures?"
+    ],
+    [
+     1630,
+     "Search and select any medications, vitamins, dietary supplements, and topical creams you a"
+    ],
+    [
+     1640,
+     "Search and select all allergies you have"
+    ],
+    [
+     2200,
+     "How would you describe yourself? Select all that apply."
+    ],
+    [
+     2010,
+     "One last thing, {firstName}"
+    ],
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": true,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q6040-got-it-d1xxxx",
+   "flow": "women",
+   "depth": 1,
+   "parent": "sim-w-q1086-traction-alopecia",
+   "qid": 6040,
+   "slug": "got-it",
+   "changed": "women-q6040: (nothing) -> Got it",
+   "answers": {
+    "1086": [
+     "traction-alopecia"
+    ],
+    "6040": [
+     "got-it"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1086-lupus",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1086,
+   "slug": "lupus",
+   "changed": "women-q1086: None of the above -> Lupus",
+   "answers": {
+    "1086": [
+     "lupus"
+    ]
+   },
+   "added": [
+    [
+     6040,
+     "Based on some of your responses, we will unfortunately be unable to evaluate and treat you"
+    ]
+   ],
+   "removed": [
+    [
+     1090,
+     "Do you have any of the following? Select all that apply."
+    ],
+    [
+     1094,
+     "Have you experienced any of the following in the last year?"
+    ],
+    [
+     1096,
+     "Do you have, or have you ever had, any of the following conditions?"
+    ],
+    [
+     1185,
+     "Have you ever been told that you have low blood pressure?"
+    ],
+    [
+     1250,
+     "Which of the following treatments, if any, have you used to treat your hair loss in the pa"
+    ],
+    [
+     1620,
+     "Search and select any medical problems or conditions that you currently have."
+    ],
+    [
+     1626,
+     "Have you had any past surgeries or procedures?"
+    ],
+    [
+     1630,
+     "Search and select any medications, vitamins, dietary supplements, and topical creams you a"
+    ],
+    [
+     1640,
+     "Search and select all allergies you have"
+    ],
+    [
+     2200,
+     "How would you describe yourself? Select all that apply."
+    ],
+    [
+     2010,
+     "One last thing, {firstName}"
+    ],
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": true,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q6040-got-it-d1xxxxx",
+   "flow": "women",
+   "depth": 1,
+   "parent": "sim-w-q1086-lupus",
+   "qid": 6040,
+   "slug": "got-it",
+   "changed": "women-q6040: (nothing) -> Got it",
+   "answers": {
+    "1086": [
+     "lupus"
+    ],
+    "6040": [
+     "got-it"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1090-excess-body-hair-on-chest-abdomen-back",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1090,
+   "slug": "excess-body-hair-on-chest-abdomen-back",
+   "changed": "women-q1090: None of the above -> Excess body hair on chest, abdomen, back",
+   "answers": {
+    "1090": [
+     "excess-body-hair-on-chest-abdomen-back"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1090-excess-facial-hair",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1090,
+   "slug": "excess-facial-hair",
+   "changed": "women-q1090: None of the above -> Excess facial hair",
+   "answers": {
+    "1090": [
+     "excess-facial-hair"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1090-severe-acne",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1090,
+   "slug": "severe-acne",
+   "changed": "women-q1090: None of the above -> Severe acne",
+   "answers": {
+    "1090": [
+     "severe-acne"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1090-irregular-periods",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1090,
+   "slug": "irregular-periods",
+   "changed": "women-q1090: None of the above -> Irregular periods",
+   "answers": {
+    "1090": [
+     "irregular-periods"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1090-enlargement-of-the-clitoris",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1090,
+   "slug": "enlargement-of-the-clitoris",
+   "changed": "women-q1090: None of the above -> Enlargement of the clitoris",
+   "answers": {
+    "1090": [
+     "enlargement-of-the-clitoris"
+    ]
+   },
+   "added": [
+    [
+     6040,
+     "Based on some of your responses, we will unfortunately be unable to evaluate and treat you"
+    ]
+   ],
+   "removed": [
+    [
+     1094,
+     "Have you experienced any of the following in the last year?"
+    ],
+    [
+     1096,
+     "Do you have, or have you ever had, any of the following conditions?"
+    ],
+    [
+     1185,
+     "Have you ever been told that you have low blood pressure?"
+    ],
+    [
+     1250,
+     "Which of the following treatments, if any, have you used to treat your hair loss in the pa"
+    ],
+    [
+     1620,
+     "Search and select any medical problems or conditions that you currently have."
+    ],
+    [
+     1626,
+     "Have you had any past surgeries or procedures?"
+    ],
+    [
+     1630,
+     "Search and select any medications, vitamins, dietary supplements, and topical creams you a"
+    ],
+    [
+     1640,
+     "Search and select all allergies you have"
+    ],
+    [
+     2200,
+     "How would you describe yourself? Select all that apply."
+    ],
+    [
+     2010,
+     "One last thing, {firstName}"
+    ],
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": true,
+   "highlight": null,
+   "vars": [
+    [
+     "ifHairLossHormonalRelated",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q6040-got-it-d1xxxxxx",
+   "flow": "women",
+   "depth": 1,
+   "parent": "sim-w-q1090-enlargement-of-the-clitoris",
+   "qid": 6040,
+   "slug": "got-it",
+   "changed": "women-q6040: (nothing) -> Got it",
+   "answers": {
+    "1090": [
+     "enlargement-of-the-clitoris"
+    ],
+    "6040": [
+     "got-it"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1090-discharge-from-the-nipples",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1090,
+   "slug": "discharge-from-the-nipples",
+   "changed": "women-q1090: None of the above -> Discharge from the nipple(s)",
+   "answers": {
+    "1090": [
+     "discharge-from-the-nipples"
+    ]
+   },
+   "added": [
+    [
+     6040,
+     "Based on some of your responses, we will unfortunately be unable to evaluate and treat you"
+    ]
+   ],
+   "removed": [
+    [
+     1094,
+     "Have you experienced any of the following in the last year?"
+    ],
+    [
+     1096,
+     "Do you have, or have you ever had, any of the following conditions?"
+    ],
+    [
+     1185,
+     "Have you ever been told that you have low blood pressure?"
+    ],
+    [
+     1250,
+     "Which of the following treatments, if any, have you used to treat your hair loss in the pa"
+    ],
+    [
+     1620,
+     "Search and select any medical problems or conditions that you currently have."
+    ],
+    [
+     1626,
+     "Have you had any past surgeries or procedures?"
+    ],
+    [
+     1630,
+     "Search and select any medications, vitamins, dietary supplements, and topical creams you a"
+    ],
+    [
+     1640,
+     "Search and select all allergies you have"
+    ],
+    [
+     2200,
+     "How would you describe yourself? Select all that apply."
+    ],
+    [
+     2010,
+     "One last thing, {firstName}"
+    ],
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": true,
+   "highlight": null,
+   "vars": [
+    [
+     "ifHairLossHormonalRelated",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q6040-got-it-d1xxxxxxx",
+   "flow": "women",
+   "depth": 1,
+   "parent": "sim-w-q1090-discharge-from-the-nipples",
+   "qid": 6040,
+   "slug": "got-it",
+   "changed": "women-q6040: (nothing) -> Got it",
+   "answers": {
+    "1090": [
+     "discharge-from-the-nipples"
+    ],
+    "6040": [
+     "got-it"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1090-deepening-of-your-voice",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1090,
+   "slug": "deepening-of-your-voice",
+   "changed": "women-q1090: None of the above -> Deepening of your voice",
+   "answers": {
+    "1090": [
+     "deepening-of-your-voice"
+    ]
+   },
+   "added": [
+    [
+     6040,
+     "Based on some of your responses, we will unfortunately be unable to evaluate and treat you"
+    ]
+   ],
+   "removed": [
+    [
+     1094,
+     "Have you experienced any of the following in the last year?"
+    ],
+    [
+     1096,
+     "Do you have, or have you ever had, any of the following conditions?"
+    ],
+    [
+     1185,
+     "Have you ever been told that you have low blood pressure?"
+    ],
+    [
+     1250,
+     "Which of the following treatments, if any, have you used to treat your hair loss in the pa"
+    ],
+    [
+     1620,
+     "Search and select any medical problems or conditions that you currently have."
+    ],
+    [
+     1626,
+     "Have you had any past surgeries or procedures?"
+    ],
+    [
+     1630,
+     "Search and select any medications, vitamins, dietary supplements, and topical creams you a"
+    ],
+    [
+     1640,
+     "Search and select all allergies you have"
+    ],
+    [
+     2200,
+     "How would you describe yourself? Select all that apply."
+    ],
+    [
+     2010,
+     "One last thing, {firstName}"
+    ],
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": true,
+   "highlight": null,
+   "vars": [
+    [
+     "ifHairLossHormonalRelated",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q6040-got-it-d1xxxxxxxx",
+   "flow": "women",
+   "depth": 1,
+   "parent": "sim-w-q1090-deepening-of-your-voice",
+   "qid": 6040,
+   "slug": "got-it",
+   "changed": "women-q6040: (nothing) -> Got it",
+   "answers": {
+    "1090": [
+     "deepening-of-your-voice"
+    ],
+    "6040": [
+     "got-it"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1094-gone-through-perimenopause-or-menopause",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1094,
+   "slug": "gone-through-perimenopause-or-menopause",
+   "changed": "women-q1094: None of the above -> Gone through perimenopause or menopause",
+   "answers": {
+    "1094": [
+     "gone-through-perimenopause-or-menopause"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1094-significant-weight-loss",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1094,
+   "slug": "significant-weight-loss",
+   "changed": "women-q1094: None of the above -> Significant weight loss",
+   "answers": {
+    "1094": [
+     "significant-weight-loss"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1094-flare-of-a-chronic-disease",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1094,
+   "slug": "flare-of-a-chronic-disease",
+   "changed": "women-q1094: None of the above -> Flare of a chronic disease",
+   "answers": {
+    "1094": [
+     "flare-of-a-chronic-disease"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1094-hospitalization",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1094,
+   "slug": "hospitalization",
+   "changed": "women-q1094: None of the above -> Hospitalization",
+   "answers": {
+    "1094": [
+     "hospitalization"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1094-major-illness-e-g-covid",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1094,
+   "slug": "major-illness-e-g-covid",
+   "changed": "women-q1094: None of the above -> Major illness (e.g. COVID)",
+   "answers": {
+    "1094": [
+     "major-illness-e-g-covid"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1094-major-life-stressor-e-g-moving-job-loss-",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1094,
+   "slug": "major-life-stressor-e-g-moving-job-loss-ending-a-relationship-or-a-loved-one-s-passing",
+   "changed": "women-q1094: None of the above -> Major life stressor (e.g. moving, job loss, ending a relationship, or a loved one's passing)",
+   "answers": {
+    "1094": [
+     "major-life-stressor-e-g-moving-job-loss-ending-a-relationship-or-a-loved-one-s-passing"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1094-started-stopped-or-changed-birth-control",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1094,
+   "slug": "started-stopped-or-changed-birth-control-pills-or-any-other-kind-of-hormonal-contraception-e-g-iud-patch-ring-implant-injection-or-started-or-stopped-any-other-kind-of-hormonal-treatment",
+   "changed": "women-q1094: None of the above -> Started, stopped, or changed birth control pills or any other kind of hormonal contraception (e.g. IUD, patch, ring, implant, injection) or started or stopped any other kind of hormonal treatment",
+   "answers": {
+    "1094": [
+     "started-stopped-or-changed-birth-control-pills-or-any-other-kind-of-hormonal-contraception-e-g-iud-patch-ring-implant-injection-or-started-or-stopped-any-other-kind-of-hormonal-treatment"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1094-received-chemotherapy-as-part-of-cancer-",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1094,
+   "slug": "received-chemotherapy-as-part-of-cancer-treatment",
+   "changed": "women-q1094: None of the above -> Received chemotherapy as part of cancer treatment",
+   "answers": {
+    "1094": [
+     "received-chemotherapy-as-part-of-cancer-treatment"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": "ack-clinical",
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1094-major-surgery",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1094,
+   "slug": "major-surgery",
+   "changed": "women-q1094: None of the above -> Major surgery",
+   "answers": {
+    "1094": [
+     "major-surgery"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1096-heart-condition-coronary-artery-disease-",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1096,
+   "slug": "heart-condition-coronary-artery-disease-angina-chest-pain-heart-failure-heart-attack-pericarditis",
+   "changed": "women-q1096: None of the above -> Heart condition (coronary artery disease, angina/chest pain, heart failure, heart attack, pericarditis)",
+   "answers": {
+    "1096": [
+     "heart-condition-coronary-artery-disease-angina-chest-pain-heart-failure-heart-attack-pericarditis"
+    ]
+   },
+   "added": [
+    [
+     1160,
+     "Please describe your heart related condition(s)."
+    ],
+    [
+     4030,
+     "Thanks for providing all the information {firstName}"
+    ]
+   ],
+   "removed": [
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4030,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 1,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "Hair Solution Rx only"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "ifHeartCondition",
+     "1"
+    ],
+    [
+     "ifNotEligibleForOralMinoxidil",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q1096-stroke",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1096,
+   "slug": "stroke",
+   "changed": "women-q1096: None of the above -> Stroke",
+   "answers": {
+    "1096": [
+     "stroke"
+    ]
+   },
+   "added": [
+    [
+     1162,
+     "Please tell us more about your stroke."
+    ],
+    [
+     4030,
+     "Thanks for providing all the information {firstName}"
+    ]
+   ],
+   "removed": [
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4030,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 1,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "Hair Solution Rx only"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "ifStroke",
+     "1"
+    ],
+    [
+     "ifNotEligibleForOralMinoxidil",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q1096-kidney-disease",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1096,
+   "slug": "kidney-disease",
+   "changed": "women-q1096: None of the above -> Kidney disease",
+   "answers": {
+    "1096": [
+     "kidney-disease"
+    ]
+   },
+   "added": [
+    [
+     1164,
+     "Please tell us more about your kidney disease."
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": [
+    [
+     "ifKidneyDisease",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q1096-liver-disease",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1096,
+   "slug": "liver-disease",
+   "changed": "women-q1096: None of the above -> Liver disease",
+   "answers": {
+    "1096": [
+     "liver-disease"
+    ]
+   },
+   "added": [
+    [
+     1166,
+     "Please tell us more about your liver disease."
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": [
+    [
+     "ifLiverDisease",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q1096-thyroid-disorder",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1096,
+   "slug": "thyroid-disorder",
+   "changed": "women-q1096: None of the above -> Thyroid disorder",
+   "answers": {
+    "1096": [
+     "thyroid-disorder"
+    ]
+   },
+   "added": [
+    [
+     1172,
+     "Please describe your thyroid condition and let us know if you’re currently receiving treat"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": "ack-clinical",
+   "vars": [
+    [
+     "ifThyroidDisorder",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q1096-anemia-low-red-blood-cell-count",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1096,
+   "slug": "anemia-low-red-blood-cell-count",
+   "changed": "women-q1096: None of the above -> Anemia (low red blood cell count)",
+   "answers": {
+    "1096": [
+     "anemia-low-red-blood-cell-count"
+    ]
+   },
+   "added": [
+    [
+     1168,
+     "Please describe your condition and let us know if you’re currently anemic."
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": "ack-clinical",
+   "vars": [
+    [
+     "ifAnemia",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q1096-iron-deficiency",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1096,
+   "slug": "iron-deficiency",
+   "changed": "women-q1096: None of the above -> Iron deficiency",
+   "answers": {
+    "1096": [
+     "iron-deficiency"
+    ]
+   },
+   "added": [
+    [
+     1170,
+     "Please let us know when you were diagnosed with iron deficiency and if you’re currently ta"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": "ack-clinical",
+   "vars": [
+    [
+     "ifIronDeficiency",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q1096-polycystic-ovary-disease",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1096,
+   "slug": "polycystic-ovary-disease",
+   "changed": "women-q1096: None of the above -> Polycystic ovary disease",
+   "answers": {
+    "1096": [
+     "polycystic-ovary-disease"
+    ]
+   },
+   "added": [
+    [
+     1174,
+     "Please let us know when you were diagnosed with PCOS and if you’re currently receiving tre"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": [
+    [
+     "ifPolycysticOvaryDisease",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q1096-lupus-or-other-autoimmune-disorder",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1096,
+   "slug": "lupus-or-other-autoimmune-disorder",
+   "changed": "women-q1096: None of the above -> Lupus or other autoimmune disorder",
+   "answers": {
+    "1096": [
+     "lupus-or-other-autoimmune-disorder"
+    ]
+   },
+   "added": [
+    [
+     6040,
+     "Based on some of your responses, we will unfortunately be unable to evaluate and treat you"
+    ]
+   ],
+   "removed": [
+    [
+     1185,
+     "Have you ever been told that you have low blood pressure?"
+    ],
+    [
+     1250,
+     "Which of the following treatments, if any, have you used to treat your hair loss in the pa"
+    ],
+    [
+     1620,
+     "Search and select any medical problems or conditions that you currently have."
+    ],
+    [
+     1626,
+     "Have you had any past surgeries or procedures?"
+    ],
+    [
+     1630,
+     "Search and select any medications, vitamins, dietary supplements, and topical creams you a"
+    ],
+    [
+     1640,
+     "Search and select all allergies you have"
+    ],
+    [
+     2200,
+     "How would you describe yourself? Select all that apply."
+    ],
+    [
+     2010,
+     "One last thing, {firstName}"
+    ],
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 1,
+     "ifNotEligibleForTopicalMinoxidil": 1,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "ifLupusOrOtherAutoimmuneDisorder",
+     "1"
+    ],
+    [
+     "ifNotEligibleForOralMinoxidil",
+     "1"
+    ],
+    [
+     "ifNotEligibleForTopicalMinoxidil",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q6040-got-it-d1xxxxxxxxx",
+   "flow": "women",
+   "depth": 1,
+   "parent": "sim-w-q1096-lupus-or-other-autoimmune-disorder",
+   "qid": 6040,
+   "slug": "got-it",
+   "changed": "women-q6040: (nothing) -> Got it",
+   "answers": {
+    "1096": [
+     "lupus-or-other-autoimmune-disorder"
+    ],
+    "6040": [
+     "got-it"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 1,
+     "ifNotEligibleForTopicalMinoxidil": 1,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 1,
+     "ifNotEligibleForTopicalMinoxidil": 1,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1096-pheochromocytoma-adrenal-gland-tumor",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1096,
+   "slug": "pheochromocytoma-adrenal-gland-tumor",
+   "changed": "women-q1096: None of the above -> Pheochromocytoma (adrenal gland tumor)",
+   "answers": {
+    "1096": [
+     "pheochromocytoma-adrenal-gland-tumor"
+    ]
+   },
+   "added": [
+    [
+     1178,
+     "Please tell us more about your pheochromocytoma."
+    ],
+    [
+     4030,
+     "Thanks for providing all the information {firstName}"
+    ]
+   ],
+   "removed": [
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4030,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 1,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "Hair Solution Rx only"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "ifPheochromocytoma",
+     "1"
+    ],
+    [
+     "ifNotEligibleForOralMinoxidil",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q1096-pulmonary-hypertension",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1096,
+   "slug": "pulmonary-hypertension",
+   "changed": "women-q1096: None of the above -> Pulmonary hypertension",
+   "answers": {
+    "1096": [
+     "pulmonary-hypertension"
+    ]
+   },
+   "added": [
+    [
+     1180,
+     "Please tell us more about your pulmonary hypertension."
+    ],
+    [
+     4030,
+     "Thanks for providing all the information {firstName}"
+    ]
+   ],
+   "removed": [
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4030,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 1,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "Hair Solution Rx only"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "ifPulmonaryHypertension",
+     "1"
+    ],
+    [
+     "ifNotEligibleForOralMinoxidil",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q1096-high-blood-pressure",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1096,
+   "slug": "high-blood-pressure",
+   "changed": "women-q1096: None of the above -> High blood pressure",
+   "answers": {
+    "1096": [
+     "high-blood-pressure"
+    ]
+   },
+   "added": [
+    [
+     1182,
+     "Please let us know when you were diagnosed, and whether you have taken or are currently ta"
+    ],
+    [
+     4030,
+     "Thanks for providing all the information {firstName}"
+    ]
+   ],
+   "removed": [
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4030,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 1,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "Hair Solution Rx only"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": [
+    [
+     "ifHighBloodPressure",
+     "1"
+    ],
+    [
+     "ifNotEligibleForOralMinoxidil",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q1185-yes",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1185,
+   "slug": "yes",
+   "changed": "women-q1185: No -> Yes",
+   "answers": {
+    "1185": [
+     "yes"
+    ]
+   },
+   "added": [
+    [
+     1186,
+     "Please tell us more, including whether you’ve ever had any symptoms of low blood pressure,"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1250-spironolactone",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1250,
+   "slug": "spironolactone",
+   "changed": "women-q1250: None of the above -> Spironolactone",
+   "answers": {
+    "1250": [
+     "spironolactone"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1250-oral-minoxidil",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1250,
+   "slug": "oral-minoxidil",
+   "changed": "women-q1250: None of the above -> Oral minoxidil",
+   "answers": {
+    "1250": [
+     "oral-minoxidil"
+    ]
+   },
+   "added": [
+    [
+     1254,
+     "As far as you know, do you have an allergy to oral minoxidil?"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "ifPastTreatmentsIncludeOralMinoxidil",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q1254-yes-d1",
+   "flow": "women",
+   "depth": 1,
+   "parent": "sim-w-q1250-oral-minoxidil",
+   "qid": 1254,
+   "slug": "yes",
+   "changed": "women-q1254: No -> Yes",
+   "answers": {
+    "1250": [
+     "oral-minoxidil"
+    ],
+    "1254": [
+     "yes"
+    ]
+   },
+   "added": [
+    [
+     6040,
+     "Based on some of your responses, we will unfortunately be unable to evaluate and treat you"
+    ]
+   ],
+   "removed": [
+    [
+     1620,
+     "Search and select any medical problems or conditions that you currently have."
+    ],
+    [
+     1626,
+     "Have you had any past surgeries or procedures?"
+    ],
+    [
+     1630,
+     "Search and select any medications, vitamins, dietary supplements, and topical creams you a"
+    ],
+    [
+     1640,
+     "Search and select all allergies you have"
+    ],
+    [
+     2200,
+     "How would you describe yourself? Select all that apply."
+    ],
+    [
+     2010,
+     "One last thing, {firstName}"
+    ],
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": true,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q6040-got-it-d2",
+   "flow": "women",
+   "depth": 2,
+   "parent": "sim-w-q1254-yes-d1",
+   "qid": 6040,
+   "slug": "got-it",
+   "changed": "women-q6040: (nothing) -> Got it",
+   "answers": {
+    "1250": [
+     "oral-minoxidil"
+    ],
+    "1254": [
+     "yes"
+    ],
+    "6040": [
+     "got-it"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1254-unsure-d1",
+   "flow": "women",
+   "depth": 1,
+   "parent": "sim-w-q1250-oral-minoxidil",
+   "qid": 1254,
+   "slug": "unsure",
+   "changed": "women-q1254: No -> Unsure",
+   "answers": {
+    "1250": [
+     "oral-minoxidil"
+    ],
+    "1254": [
+     "unsure"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1250-topical-minoxidil",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1250,
+   "slug": "topical-minoxidil",
+   "changed": "women-q1250: None of the above -> Topical minoxidil",
+   "answers": {
+    "1250": [
+     "topical-minoxidil"
+    ]
+   },
+   "added": [
+    [
+     1256,
+     "As far as you know, do you have an allergy to topical minoxidil?"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": [
+    [
+     "ifPastTreatmentsIncludeTopicalMinoxidil",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q1256-yes-d1",
+   "flow": "women",
+   "depth": 1,
+   "parent": "sim-w-q1250-topical-minoxidil",
+   "qid": 1256,
+   "slug": "yes",
+   "changed": "women-q1256: No -> Yes",
+   "answers": {
+    "1250": [
+     "topical-minoxidil"
+    ],
+    "1256": [
+     "yes"
+    ]
+   },
+   "added": [
+    [
+     1258,
+     "What form of topical minoxidil did you have an allergic reaction to?"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1258-foam-d2",
+   "flow": "women",
+   "depth": 2,
+   "parent": "sim-w-q1256-yes-d1",
+   "qid": 1258,
+   "slug": "foam",
+   "changed": "women-q1258: Liquid -> Foam",
+   "answers": {
+    "1250": [
+     "topical-minoxidil"
+    ],
+    "1256": [
+     "yes"
+    ],
+    "1258": [
+     "foam"
+    ]
+   },
+   "added": [
+    [
+     6040,
+     "Based on some of your responses, we will unfortunately be unable to evaluate and treat you"
+    ]
+   ],
+   "removed": [
+    [
+     1620,
+     "Search and select any medical problems or conditions that you currently have."
+    ],
+    [
+     1626,
+     "Have you had any past surgeries or procedures?"
+    ],
+    [
+     1630,
+     "Search and select any medications, vitamins, dietary supplements, and topical creams you a"
+    ],
+    [
+     1640,
+     "Search and select all allergies you have"
+    ],
+    [
+     2200,
+     "How would you describe yourself? Select all that apply."
+    ],
+    [
+     2010,
+     "One last thing, {firstName}"
+    ],
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": []
+  },
+  {
+   "id": "sim-w-q6040-got-it-d3",
+   "flow": "women",
+   "depth": 3,
+   "parent": "sim-w-q1258-foam-d2",
+   "qid": 6040,
+   "slug": "got-it",
+   "changed": "women-q6040: (nothing) -> Got it",
+   "answers": {
+    "1250": [
+     "topical-minoxidil"
+    ],
+    "1256": [
+     "yes"
+    ],
+    "1258": [
+     "foam"
+    ],
+    "6040": [
+     "got-it"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1258-both-d2",
+   "flow": "women",
+   "depth": 2,
+   "parent": "sim-w-q1256-yes-d1",
+   "qid": 1258,
+   "slug": "both",
+   "changed": "women-q1258: Liquid -> Both",
+   "answers": {
+    "1250": [
+     "topical-minoxidil"
+    ],
+    "1256": [
+     "yes"
+    ],
+    "1258": [
+     "both"
+    ]
+   },
+   "added": [
+    [
+     6040,
+     "Based on some of your responses, we will unfortunately be unable to evaluate and treat you"
+    ]
+   ],
+   "removed": [
+    [
+     1620,
+     "Search and select any medical problems or conditions that you currently have."
+    ],
+    [
+     1626,
+     "Have you had any past surgeries or procedures?"
+    ],
+    [
+     1630,
+     "Search and select any medications, vitamins, dietary supplements, and topical creams you a"
+    ],
+    [
+     1640,
+     "Search and select all allergies you have"
+    ],
+    [
+     2200,
+     "How would you describe yourself? Select all that apply."
+    ],
+    [
+     2010,
+     "One last thing, {firstName}"
+    ],
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": true,
+   "highlight": "negative",
+   "vars": []
+  },
+  {
+   "id": "sim-w-q6040-got-it-d3x",
+   "flow": "women",
+   "depth": 3,
+   "parent": "sim-w-q1258-both-d2",
+   "qid": 6040,
+   "slug": "got-it",
+   "changed": "women-q6040: (nothing) -> Got it",
+   "answers": {
+    "1250": [
+     "topical-minoxidil"
+    ],
+    "1256": [
+     "yes"
+    ],
+    "1258": [
+     "both"
+    ],
+    "6040": [
+     "got-it"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1256-unsure-d1",
+   "flow": "women",
+   "depth": 1,
+   "parent": "sim-w-q1250-topical-minoxidil",
+   "qid": 1256,
+   "slug": "unsure",
+   "changed": "women-q1256: No -> Unsure",
+   "answers": {
+    "1250": [
+     "topical-minoxidil"
+    ],
+    "1256": [
+     "unsure"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1250-steroid-injections-into-the-scalp",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1250,
+   "slug": "steroid-injections-into-the-scalp",
+   "changed": "women-q1250: None of the above -> Steroid injections into the scalp",
+   "answers": {
+    "1250": [
+     "steroid-injections-into-the-scalp"
+    ]
+   },
+   "added": [
+    [
+     6040,
+     "Based on some of your responses, we will unfortunately be unable to evaluate and treat you"
+    ]
+   ],
+   "removed": [
+    [
+     1620,
+     "Search and select any medical problems or conditions that you currently have."
+    ],
+    [
+     1626,
+     "Have you had any past surgeries or procedures?"
+    ],
+    [
+     1630,
+     "Search and select any medications, vitamins, dietary supplements, and topical creams you a"
+    ],
+    [
+     1640,
+     "Search and select all allergies you have"
+    ],
+    [
+     2200,
+     "How would you describe yourself? Select all that apply."
+    ],
+    [
+     2010,
+     "One last thing, {firstName}"
+    ],
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": true,
+   "highlight": null,
+   "vars": [
+    [
+     "ifPastTreatmentsIncludeSteroidInjections",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-q6040-got-it-d1xxxxxxxxxx",
+   "flow": "women",
+   "depth": 1,
+   "parent": "sim-w-q1250-steroid-injections-into-the-scalp",
+   "qid": 6040,
+   "slug": "got-it",
+   "changed": "women-q6040: (nothing) -> Got it",
+   "answers": {
+    "1250": [
+     "steroid-injections-into-the-scalp"
+    ],
+    "6040": [
+     "got-it"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "outcome": {
+    "end": 6040,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: see an in-person dermatologist"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1250-oral-supplements-e-g-biotin-nutrafol-viv",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1250,
+   "slug": "oral-supplements-e-g-biotin-nutrafol-viviscal",
+   "changed": "women-q1250: None of the above -> Oral supplements (e.g. Biotin, Nutrafol, Viviscal)",
+   "answers": {
+    "1250": [
+     "oral-supplements-e-g-biotin-nutrafol-viviscal"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1250-other",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1250,
+   "slug": "other",
+   "changed": "women-q1250: None of the above -> Other",
+   "answers": {
+    "1250": [
+     "other"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1620-i-have-conditions",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1620,
+   "slug": "i-have-conditions",
+   "changed": "women-q1620: I don't have any conditions -> I have conditions",
+   "answers": {
+    "1620": [
+     "i-have-conditions"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1626-yes",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1626,
+   "slug": "yes",
+   "changed": "women-q1626: No -> Yes",
+   "answers": {
+    "1626": [
+     "yes"
+    ]
+   },
+   "added": [
+    [
+     1627,
+     "Please list your past surgeries and procedures."
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": "ack-clinical",
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1630-im-taking-medications",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1630,
+   "slug": "im-taking-medications",
+   "changed": "women-q1630: I don't take any medications -> I’m taking medications",
+   "answers": {
+    "1630": [
+     "im-taking-medications"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q1640-i-have-allergies",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 1640,
+   "slug": "i-have-allergies",
+   "changed": "women-q1640: I don't have allergies -> I have allergies",
+   "answers": {
+    "1640": [
+     "i-have-allergies"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": "caution",
+   "vars": []
+  },
+  {
+   "id": "sim-w-q2200-white",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 2200,
+   "slug": "white",
+   "changed": "women-q2200: I prefer not to answer -> White",
+   "answers": {
+    "2200": [
+     "white"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q2200-hispanic-or-latino",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 2200,
+   "slug": "hispanic-or-latino",
+   "changed": "women-q2200: I prefer not to answer -> Hispanic or Latino",
+   "answers": {
+    "2200": [
+     "hispanic-or-latino"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q2200-black-or-african-american",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 2200,
+   "slug": "black-or-african-american",
+   "changed": "women-q2200: I prefer not to answer -> Black or African American",
+   "answers": {
+    "2200": [
+     "black-or-african-american"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q2200-native-american-or-american-indian",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 2200,
+   "slug": "native-american-or-american-indian",
+   "changed": "women-q2200: I prefer not to answer -> Native American or American Indian",
+   "answers": {
+    "2200": [
+     "native-american-or-american-indian"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q2200-asian-pacific-islander",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 2200,
+   "slug": "asian-pacific-islander",
+   "changed": "women-q2200: I prefer not to answer -> Asian / Pacific Islander",
+   "answers": {
+    "2200": [
+     "asian-pacific-islander"
+    ]
+   },
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": []
+  },
+  {
+   "id": "sim-w-q2200-other",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "qid": 2200,
+   "slug": "other",
+   "changed": "women-q2200: I prefer not to answer -> Other",
+   "answers": {
+    "2200": [
+     "other"
+    ]
+   },
+   "added": [
+    [
+     2202,
+     "Please list your ethnicity."
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false,
+   "highlight": null,
+   "vars": [
+    [
+     "followupOther",
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "sim-w-age17",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "women-q30 (basics): age 38 -> under 18",
+   "answers": {
+    "30": [
+     "under-18-yo"
+    ]
+   },
+   "age": null,
+   "added": [
+    [
+     6010,
+     "Unfortunately we are not currently able to treat anyone under the age of 18 on our platfor"
+    ]
+   ],
+   "removed": [
+    [
+     1050,
+     "Let’s talk about your medical history"
+    ],
+    [
+     1055,
+     "Are you pregnant, or possibly pregnant?"
+    ],
+    [
+     1057,
+     "Are you currently breastfeeding?"
+    ],
+    [
+     1059,
+     "Have you given birth in the last year?"
+    ],
+    [
+     12,
+     "How would you describe the severity of your current hair loss?"
+    ],
+    [
+     1062,
+     "How would you describe your hair loss?"
+    ],
+    [
+     1070,
+     "Which picture most closely resembles how much hair you are losing per day?"
+    ],
+    [
+     1074,
+     "Have you noticed any of the following?"
+    ],
+    [
+     1076,
+     "Do you have any family history of hair thinning or balding (parents, siblings, grandparent"
+    ],
+    [
+     1078,
+     "To what extent has your hair been negatively affecting your self-confidence?"
+    ],
+    [
+     1080,
+     "Hair loss can be stressful. How much is your hair loss affecting your overall stress level"
+    ],
+    [
+     1083,
+     "Have you ever been evaluated for hair loss in the past?"
+    ],
+    [
+     1086,
+     "Have you ever been diagnosed with any of the following scalp conditions?"
+    ],
+    [
+     1090,
+     "Do you have any of the following? Select all that apply."
+    ],
+    [
+     1094,
+     "Have you experienced any of the following in the last year?"
+    ],
+    [
+     1096,
+     "Do you have, or have you ever had, any of the following conditions?"
+    ],
+    [
+     1185,
+     "Have you ever been told that you have low blood pressure?"
+    ],
+    [
+     1250,
+     "Which of the following treatments, if any, have you used to treat your hair loss in the pa"
+    ],
+    [
+     1620,
+     "Search and select any medical problems or conditions that you currently have."
+    ],
+    [
+     1626,
+     "Have you had any past surgeries or procedures?"
+    ],
+    [
+     1630,
+     "Search and select any medications, vitamins, dietary supplements, and topical creams you a"
+    ],
+    [
+     1640,
+     "Search and select all allergies you have"
+    ],
+    [
+     2200,
+     "How would you describe yourself? Select all that apply."
+    ],
+    [
+     2010,
+     "One last thing, {firstName}"
+    ],
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 6010,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: under 18"
+   },
+   "changedOutcome": true
+  },
+  {
+   "id": "sim-w-male",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "women-q30 (basics): female -> male",
+   "answers": {
+    "30": [
+     "male"
+    ]
+   },
+   "age": null,
+   "added": [
+    [
+     6030,
+     "Want to be redirected to the men's hair loss visit?"
+    ]
+   ],
+   "removed": [
+    [
+     1050,
+     "Let’s talk about your medical history"
+    ],
+    [
+     1055,
+     "Are you pregnant, or possibly pregnant?"
+    ],
+    [
+     1057,
+     "Are you currently breastfeeding?"
+    ],
+    [
+     1059,
+     "Have you given birth in the last year?"
+    ],
+    [
+     12,
+     "How would you describe the severity of your current hair loss?"
+    ],
+    [
+     1062,
+     "How would you describe your hair loss?"
+    ],
+    [
+     1070,
+     "Which picture most closely resembles how much hair you are losing per day?"
+    ],
+    [
+     1074,
+     "Have you noticed any of the following?"
+    ],
+    [
+     1076,
+     "Do you have any family history of hair thinning or balding (parents, siblings, grandparent"
+    ],
+    [
+     1078,
+     "To what extent has your hair been negatively affecting your self-confidence?"
+    ],
+    [
+     1080,
+     "Hair loss can be stressful. How much is your hair loss affecting your overall stress level"
+    ],
+    [
+     1083,
+     "Have you ever been evaluated for hair loss in the past?"
+    ],
+    [
+     1086,
+     "Have you ever been diagnosed with any of the following scalp conditions?"
+    ],
+    [
+     1090,
+     "Do you have any of the following? Select all that apply."
+    ],
+    [
+     1094,
+     "Have you experienced any of the following in the last year?"
+    ],
+    [
+     1096,
+     "Do you have, or have you ever had, any of the following conditions?"
+    ],
+    [
+     1185,
+     "Have you ever been told that you have low blood pressure?"
+    ],
+    [
+     1250,
+     "Which of the following treatments, if any, have you used to treat your hair loss in the pa"
+    ],
+    [
+     1620,
+     "Search and select any medical problems or conditions that you currently have."
+    ],
+    [
+     1626,
+     "Have you had any past surgeries or procedures?"
+    ],
+    [
+     1630,
+     "Search and select any medications, vitamins, dietary supplements, and topical creams you a"
+    ],
+    [
+     1640,
+     "Search and select all allergies you have"
+    ],
+    [
+     2200,
+     "How would you describe yourself? Select all that apply."
+    ],
+    [
+     2010,
+     "One last thing, {firstName}"
+    ],
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 6030,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "redirect to men"
+   },
+   "changedOutcome": true
+  },
+  {
+   "id": "sim-w-zip",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "women-q30 (basics): served zip -> zip not served",
+   "answers": {
+    "30": [
+     "not-supported-zip-code"
+    ]
+   },
+   "age": null,
+   "added": [
+    [
+     6000,
+     "Be notified when we’re in your state!"
+    ]
+   ],
+   "removed": [
+    [
+     1050,
+     "Let’s talk about your medical history"
+    ],
+    [
+     1055,
+     "Are you pregnant, or possibly pregnant?"
+    ],
+    [
+     1057,
+     "Are you currently breastfeeding?"
+    ],
+    [
+     1059,
+     "Have you given birth in the last year?"
+    ],
+    [
+     12,
+     "How would you describe the severity of your current hair loss?"
+    ],
+    [
+     1062,
+     "How would you describe your hair loss?"
+    ],
+    [
+     1070,
+     "Which picture most closely resembles how much hair you are losing per day?"
+    ],
+    [
+     1074,
+     "Have you noticed any of the following?"
+    ],
+    [
+     1076,
+     "Do you have any family history of hair thinning or balding (parents, siblings, grandparent"
+    ],
+    [
+     1078,
+     "To what extent has your hair been negatively affecting your self-confidence?"
+    ],
+    [
+     1080,
+     "Hair loss can be stressful. How much is your hair loss affecting your overall stress level"
+    ],
+    [
+     1083,
+     "Have you ever been evaluated for hair loss in the past?"
+    ],
+    [
+     1086,
+     "Have you ever been diagnosed with any of the following scalp conditions?"
+    ],
+    [
+     1090,
+     "Do you have any of the following? Select all that apply."
+    ],
+    [
+     1094,
+     "Have you experienced any of the following in the last year?"
+    ],
+    [
+     1096,
+     "Do you have, or have you ever had, any of the following conditions?"
+    ],
+    [
+     1185,
+     "Have you ever been told that you have low blood pressure?"
+    ],
+    [
+     1250,
+     "Which of the following treatments, if any, have you used to treat your hair loss in the pa"
+    ],
+    [
+     1620,
+     "Search and select any medical problems or conditions that you currently have."
+    ],
+    [
+     1626,
+     "Have you had any past surgeries or procedures?"
+    ],
+    [
+     1630,
+     "Search and select any medications, vitamins, dietary supplements, and topical creams you a"
+    ],
+    [
+     1640,
+     "Search and select all allergies you have"
+    ],
+    [
+     2200,
+     "How would you describe yourself? Select all that apply."
+    ],
+    [
+     2010,
+     "One last thing, {firstName}"
+    ],
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 6000,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "STOP: zip"
+   },
+   "changedOutcome": true
+  },
+  {
+   "id": "sim-w-age18",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "women-q30 (basics): age 38 -> 18",
+   "answers": {},
+   "age": 18,
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 18
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": true
+  },
+  {
+   "id": "sim-w-age21",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "women-q30 (basics): age 38 -> 21",
+   "answers": {},
+   "age": 21,
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 21
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": true
+  },
+  {
+   "id": "sim-w-age64",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "women-q30 (basics): age 38 -> 64",
+   "answers": {},
+   "age": 64,
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 64
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": true
+  },
+  {
+   "id": "sim-w-age65",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "women-q30 (basics): age 38 -> 65",
+   "answers": {},
+   "age": 65,
+   "added": [],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 65
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": true
+  },
+  {
+   "id": "sim-w-age66",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "women-q30 (basics): age 38 -> 66",
+   "answers": {},
+   "age": 66,
+   "added": [
+    [
+     4030,
+     "Thanks for providing all the information {firstName}"
+    ]
+   ],
+   "removed": [
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4030,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 66
+    },
+    "result": "Hair Solution Rx only"
+   },
+   "changedOutcome": true
+  },
+  {
+   "id": "sim-w-age80",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "women-q30 (basics): age 38 -> 80",
+   "answers": {},
+   "age": 80,
+   "added": [
+    [
+     4030,
+     "Thanks for providing all the information {firstName}"
+    ]
+   ],
+   "removed": [
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4030,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 80
+    },
+    "result": "Hair Solution Rx only"
+   },
+   "changedOutcome": true
+  },
+  {
+   "id": "sim-w-q8-temples+frontal",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "women-q8: Top of head/crown -> Temples + Frontal scalp",
+   "answers": {
+    "8": [
+     "temples",
+     "frontal-scalp"
+    ]
+   },
+   "age": null,
+   "added": [],
+   "removed": [
+    [
+     10,
+     "Which picture most closely resembles your part line?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false
+  },
+  {
+   "id": "sim-w-combo-bf+age66",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "TWO changes: breastfeeding + age 66",
+   "answers": {
+    "1057": [
+     "yes"
+    ]
+   },
+   "age": 66,
+   "added": [
+    [
+     4030,
+     "Thanks for providing all the information {firstName}"
+    ]
+   ],
+   "removed": [
+    [
+     4025,
+     "Is there a specific type of hair loss treatment you’d like to be prescribed?"
+    ]
+   ],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4030,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 1,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 66
+    },
+    "result": "Hair Solution Rx only"
+   },
+   "changedOutcome": true
+  },
+  {
+   "id": "sim-w-combo-liquid-allergy",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "women: used topical minoxidil, allergic, to the LIQUID form",
+   "answers": {
+    "1250": [
+     "topical-minoxidil"
+    ],
+    "1256": [
+     "yes"
+    ],
+    "1258": [
+     "liquid"
+    ]
+   },
+   "age": null,
+   "added": [
+    [
+     1256,
+     "As far as you know, do you have an allergy to topical minoxidil?"
+    ],
+    [
+     1258,
+     "What form of topical minoxidil did you have an allergic reaction to?"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "changedOutcome": false
+  },
+  {
+   "id": "sim-w-q4025-oral",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "women-q4025 (choice screen): pick Oral Minoxidil",
+   "answers": {
+    "4025": [
+     "oral-minoxidil"
+    ]
+   },
+   "age": null,
+   "added": [
+    [
+     4040,
+     "Thanks for providing all the information {firstName}"
+    ],
+    [
+     4042,
+     "Please take a moment to understand the possible side effects of this medication."
+    ],
+    [
+     5041,
+     "Shipping Info"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 5041,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "ended at qid 5041"
+   },
+   "changedOutcome": true
+  },
+  {
+   "id": "sim-w-q4025-topical",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "women-q4025 (choice screen): pick Hair Solution Rx",
+   "answers": {
+    "4025": [
+     "hair-solution-rx"
+    ]
+   },
+   "age": null,
+   "added": [
+    [
+     4030,
+     "Thanks for providing all the information {firstName}"
+    ],
+    [
+     5042,
+     "Shipping Info"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 5042,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "ended at qid 5042"
+   },
+   "changedOutcome": true
+  },
+  {
+   "id": "sim-w-q4025-nopref",
+   "flow": "women",
+   "depth": 0,
+   "parent": "baseline",
+   "changed": "women-q4025 (choice screen): pick No preference",
+   "answers": {
+    "4025": [
+     "no-preference"
+    ]
+   },
+   "age": null,
+   "added": [
+    [
+     5041,
+     "Shipping Info"
+    ]
+   ],
+   "removed": [],
+   "parentOutcome": {
+    "end": 4025,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "choice: Oral Minoxidil / Hair Solution Rx / No preference (default oral minoxidil)"
+   },
+   "outcome": {
+    "end": 5041,
+    "vars": {
+     "ifNotEligibleForOralMinoxidil": 0,
+     "ifNotEligibleForTopicalMinoxidil": 0,
+     "userAge": 38
+    },
+    "result": "ended at qid 5041"
+   },
+   "changedOutcome": true
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+STEP 03 pds AFTER ANSWERS [{"select":"select[name='3039']","value":{"label":"Male"}},{"select":"select[name='3054']","value":{"label":"Transwoman/Transgirl"}}]
+URL: https://www.hairandme.com/c/suh/pds
+
+--- VISIBLE TEXT ---
+Understanding your hormones
+
+Why are we asking?
+
+Hormones play a significant role in hair loss and regrowth, and our Dermatology Team needs to know if there’s any possibility you could become pregnant. We understand your assigned sex at birth and gender identity may be different.
+
+Tell us the sex you were assigned at birth
+Male
+Male
+Female
+Tell us your gender identity
+Transwoman/Transgirl
+Woman/Girl
+Man/Boy
+Transwoman/Transgirl
+Transman/Transboy
+Non-Binary/Genderqueer/Agender/Gender Fluid
+Don’t know
+Prefer not to say
+Other
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+button:button | Male
+select:select-one[name=3039] | Male Female
+button:button | Transwoman/Transgirl
+select:select-one[name=3054] | Woman/Girl Man/Boy Transwoman/Transgirl Transman/Transboy Non-Binary/Genderqueer/Agender/Gender Fluid Don’t know Prefer not to say Other
+button:submit | NEXT QUESTION
+a -> /c/suh/pds?action=previous | Back to previous page

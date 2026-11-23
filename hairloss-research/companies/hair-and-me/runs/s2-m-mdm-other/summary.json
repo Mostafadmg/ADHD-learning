@@ -1,0 +1,165 @@
+{
+ "run": "s2-m-mdm-other",
+ "flow": "men",
+ "changed": "men-mdm: No medicines → Other, with 'Vitamin D' typed in the free-text box that opens",
+ "changedStep": "mdm",
+ "baselinesPooled": [
+  "baseline-men",
+  "s2-base-men-1"
+ ],
+ "stepOrder": [
+  "tp",
+  "yhg",
+  "js",
+  "pds",
+  "pdsc",
+  "mi",
+  "ht",
+  "hs",
+  "ls",
+  "htp",
+  "htam",
+  "htc",
+  "ar",
+  "st",
+  "sc",
+  "scc",
+  "smt",
+  "pt",
+  "tt",
+  "pp",
+  "mdm",
+  "mcm",
+  "al",
+  "rhf",
+  "yna",
+  "rha",
+  "di",
+  "rj",
+  "el",
+  "ct",
+  "yd"
+ ],
+ "nSteps": 31,
+ "end": "account wall (yd)",
+ "newSteps": [],
+ "missingSteps": [],
+ "candidateEffects": [],
+ "noise": [
+  {
+   "step": "st",
+   "key": "q9346.options",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9346.type",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9348.options",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9348.type",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9349.config",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9349.type",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "di",
+   "key": "q8015.options",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-85",
+    "s2-m-al-finasteride"
+   ]
+  },
+  {
+   "step": "ct",
+   "key": "title",
+   "where": "after-change",
+   "alsoIn": [
+    "baseline-women",
+    "entry-promo-caps-men",
+    "s2-m-age-18"
+   ]
+  }
+ ],
+ "bag": {
+  "items": [
+   [
+    "hairTreatment",
+    "Personalised treatment",
+    "4 week supply · 12ml",
+    "Prescription",
+    3499,
+    null
+   ]
+  ],
+  "shipping": 0,
+  "total": 3499,
+  "promo": "",
+  "shippingMsg": "Your order qualifies for complimentary standard shipping."
+ },
+ "bagItemsSameAsBaseline": true,
+ "posted": {
+  "mdm": [
+   [
+    4454,
+    [
+     "Other"
+    ]
+   ],
+   [
+    4456,
+    "Vitamin D"
+   ]
+  ]
+ },
+ "nextAfterChange": {
+  "mdm": "mcm"
+ },
+ "sweep": false
+}

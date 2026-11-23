@@ -1,0 +1,35 @@
+STEP 12 goto "https://onlinedoctor.boots.com/off-label-medicines"
+URL: https://onlinedoctor.boots.com/off-label-medicines
+TITLE: Off Label Medicines Online | Boots Online Doctor UK
+
+--- VISIBLE TEXT ---
+"OFF-LABEL" MEDICINES
+
+We hope the information below helps you understand what it means when we prescribe a medicine "off-label".
+
+LICENSED MEDICINES
+
+Medicines are products used to prevent or treat a medical condition. They can come in various forms (e.g. tablets, capsules, liquids, creams). A pharmaceutical company must have a product licence to market and sell a medicine. The licence will state which illness or condition the medicine can be used for; the age of patients it can be given to; how much to give and how to give it. The licence is provided by a government organisation called the MHRA (Medicines and Healthcare products Regulatory Agency).
+
+To get a licence, the pharmaceutical company must prove that the medicine works for the illness or condition to be treated and is safe. They do this by trying it first in clinical trials, usually in adults aged 18-65 years. Information from the clinical trials is then given to the MHRA when the pharmaceutical company applies for a licence.
+
+The pharmaceutical company cannot market or make any recommendations about using a medicine outside the terms of its licence. The licensing process and clinical trials are very expensive. This means that once a medicine is on the market, the company may decide not to try getting the original licence extended if it is found to treat other symptoms.
+
+"OFF-LABEL" USE
+
+"Off-label" use means that the medicine is licensed but being used in a way that is different to that described in the licence.
+
+Some examples of "off-label" uses are:
+
+Using a medicine for a different illness to that stated in the licence. Clinicians may have found that the medicine works very well for this illness or condition. This use may be supported by expert groups, but the drug manufacturer has not extended the licence
+Using a medicine at a different dose than stated in the licence
+
+"Off-label" medicines are only prescribed after careful consideration of other options available but it's a relatively common practice. When our clinical team prescribe medicines "off-label" we only do it when we've read information from medical publications supporting its use and may also have taken advice from other experts. We'll only prescribe a medicine "off-label" if it's the most appropriate medicine for you and your illness or condition.
+
+If you've got any further questions, please message us through your Boots Online Doctor account.
+
+--- CONTROLS ---
+  button (1): Cookie Preferences
+
+--- LINKS ---
+  link (26): Skip to main content -> #main-content  ·  0203 3183773 -> tel:02033183773  ·  Boots Advantage Card -> https://www.boots.com/advantage-card  ·  Shop Boots.com -> https://www.boots.com  ·  Services -> #  ·  Meet the team -> /clinician-bio/  ·  FAQ -> /faq  ·  LOG IN -> https://onlinedoctor-clinic.boots.com/login  ·  Home -> /  ·  Women's health -> /womens-health  ·  Men's health -> /mens-health  ·  Skin Health -> /acne-skin-conditions  ·  Sexual health -> /sexual-health  ·  General health -> /general-health  ·  Testing services -> /home-testing-kits  ·  Careers -> https://www.boots.jobs/support-office/boots-online-doctor-careers  ·  Patient guide -> /patient-guide  ·  Terms and conditions -> /terms-and-conditions  ·  Privacy policy -> /privacy-policy  ·  Cookie policy -> /cookie-policy  ·  FAQs -> /faq  ·  Contact us -> /contact-us  ·  Pick up and delivery -> /pick-up-and-delivery  ·  Off-label medicines -> /off-label-medicines  ·  Store locator -> https://www.boots.com/StoreLookupView  ·  See the report -> https://www.cqc.org.uk/location/1-15661319227?referer=widget3

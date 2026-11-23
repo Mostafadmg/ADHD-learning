@@ -1,0 +1,29 @@
+COMMAND 018 {"steps":[{"do":"click","selector":"button:has-text(\"Select treatment\")","settle":5000},{"do":"snap","settle":1500}]}
+URL: https://www.numan.com/subscribe/hair-loss/5d3494f9-26f6-4c72-a833-e88e646ac7a1/hair-expectations
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+Back
+Hair regrowth timeline: what to expect
+1-2 Months: Save it
+
+There will likely be no visible change in the first two months. Though some people may shed more fine hairs than before. This is temporary and normal.
+
+3-6 Months: Regrow it
+
+At this point, it may become noticeable that hair loss has slowed, stopped, or in some cases maybe even reversed. Take a photo to track your progress.
+
+6 Months and Beyond
+
+By now, hair loss may have considerably slowed or stopped, and some people may see signs of regrowth (usually at the crown of the head). Consistent daily treatment is required to maintain results and increase the chance of regrowth.
+
+Continue
+
+--- CONTROLS ---
+  button (1):
+    - Continue
+
+--- LINKS ---
+  link (2):
+    - Back -> #
+    - Visit the main page -> /

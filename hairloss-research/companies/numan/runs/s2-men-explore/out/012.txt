@@ -1,0 +1,21 @@
+COMMAND 012 {"steps":[{"do":"fill","selector":"textarea, input[type=text], input[type=number]","value":"Small red patch for 6 months. Not seen by a doctor. No treatment."},{"do":"click","text":"Next","settle":2800},{"do":"snap","settle":600}]}
+URL: https://www.numan.com/subscribe/hair-loss/4b4e30d9-9042-49e8-a32b-7557d60d5aec/sq/clarify_dandruff
+TITLE: Topical formulations (such as spray) may worsen dandruff. Would you still like to be considered for topical treatments? | Numan
+
+--- VISIBLE TEXT ---
+37%
+Topical formulations (such as spray) may worsen dandruff. Would you still like to be considered for topical treatments?
+Yes
+No
+Back
+
+--- CONTROLS ---
+  radio (2):
+    - Yes (name: clarify_dandruff)
+    - No (name: clarify_dandruff)
+  button (1):
+    - Back
+
+--- LINKS ---
+  link (1):
+    - Visit the main page -> /

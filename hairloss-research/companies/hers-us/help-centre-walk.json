@@ -1,0 +1,15 @@
+{
+  "_comment": "Read-only: shared Hims & Hers help centre (support.hims.com). Patient drug information for products Hers sells for hair loss. No clicks, no forms.",
+  "start": "https://support.hims.com/hc/en-us/articles/38945518659227-Spironolactone-Generic-for-Aldactone",
+  "locale": "en-US",
+  "timezone": "America/New_York",
+  "steps": [
+    {"do": "wait", "ms": 2500},
+    {"do": "goto", "url": "https://support.hims.com/hc/en-us/articles/38834273003547-Minoxidil-Supplements-Compounded-Tablet"},
+    {"do": "wait", "ms": 2500},
+    {"do": "goto", "url": "https://support.hims.com/hc/en-us/search?query=hers+hair"},
+    {"do": "wait", "ms": 2500},
+    {"do": "goto", "url": "https://support.hims.com/hc/en-us/search?query=women+hair+loss+quiz"},
+    {"do": "wait", "ms": 2500}
+  ]
+}

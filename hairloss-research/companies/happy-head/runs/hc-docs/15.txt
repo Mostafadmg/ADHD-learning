@@ -1,0 +1,78 @@
+STEP 15 goto "https://happyhead.zendesk.com/hc/en-us/articles/31569172936599-Why-Happy-Head-Asks-for-Your-Age-and-Gender"
+URL: https://happyhead.zendesk.com/hc/en-us/articles/31569172936599-Why-Happy-Head-Asks-for-Your-Age-and-Gender
+TITLE: Why Happy Head Asks for Your Age and Gender – Happy Head
+
+--- VISIBLE TEXT ---
+Happy Head  Ordering
+Articles in this section
+Do you offer bulk order discounts?
+Why Happy Head Asks for Your Age and Gender
+Why choose Happy Head?
+Can I order my topical or oral medication one at a time?
+How do I upload my hair loss photos and photo ID?
+Why do you need my photo ID?
+Why do you need my photos?
+How can I cancel my subscription?
+How can I pause my subscription?
+How can I change my shipping frequency?
+See more
+Why Happy Head Asks for Your Age and Gender
+3 months ago Updated
+
+Happy Head asks for your age and gender during the ordering process to help ensure your prescription is safe, appropriate, and legally compliant.
+
+This information helps our licensed healthcare professionals determine which treatments may be right for you.
+
+ 
+Why We Ask for Your Age
+
+We ask for your age for the following reasons:
+
+Prescription medications are only available to adults age 18 and older
+Legal and medical guidelines require us to verify age before prescribing
+Formulation requirements may vary by age group
+Some treatment options may differ for individuals under 50 and 50 or older
+Age may affect your eligibility for certain medications
+ 
+Why We Ask for Your Gender
+
+We ask for your gender to help match you with the most appropriate treatment options.
+
+This information is important because:
+
+Some ingredients may not be suitable for everyone
+Certain formulations include gender-specific considerations
+Your tele-health questionnaire responses help determine which options may be appropriate for you
+Gender may affect your eligibility for some prescription formulations
+ 
+How We Determine Your Prescription
+
+Your prescription is based on:
+
+Your age
+Your gender
+Your tele-health questionnaire responses
+Your individual needs
+The clinical judgment of our licensed healthcare professionals
+ 
+Important to Know
+
+Not every customer is eligible for every treatment option.
+
+Your final prescription, if approved, will be customized based on your information and your provider’s recommendation.
+
+Have more questions? Submit a request
+Recently viewed articles
+Do you ship internationally?
+What is your return policy?
+How can I cancel my subscription?
+Subscription vs. One-Time Orders
+How do I know if the SuperCapsule™ + ED Performance is right for me?
+
+--- CONTROLS ---
+  button (2): Why Happy Head?  ·  Products
+  checkbox (1): (no label)
+  input:search (1): Search
+
+--- LINKS ---
+  link (53): MEN -> https://www.happyhead.com/home  ·  WOMEN -> https://www.happyhead.com/women  ·  LOGIN -> https://my.happyhead.com/my-account  ·  START NOW -> https://www.form.happyhead.com/get-started/?l=false&ph=true  ·  Men -> https://www.happyhead.com/home  ·  Women -> /women  ·  Happy Head -> /hc/en-us  ·  Ordering -> /hc/en-us/sections/1500002739541-Ordering  ·  Do you offer bulk order discounts? -> /hc/en-us/articles/43514514213783-Do-you-offer-bulk-order-discounts  ·  Why Happy Head Asks for Your Age and Gender -> /hc/en-us/articles/31569172936599-Why-Happy-Head-Asks-for-Your-Age-and-Gender  ·  Why choose Happy Head? -> /hc/en-us/articles/31042166725911-Why-choose-Happy-Head  ·  Can I order my topical or oral medication one at a time? -> /hc/en-us/articles/17571437041047-Can-I-order-my-topical-or-oral-medication-one-at-a-time  ·  How do I upload my hair loss photos and photo ID? -> /hc/en-us/articles/17016630374039-How-do-I-upload-my-hair-loss-photos-and-photo-ID  ·  Why do you need my photo ID? -> /hc/en-us/articles/16253838547095-Why-do-you-need-my-photo-ID  ·  Why do you need my photos? -> /hc/en-us/articles/16253781819415-Why-do-you-need-my-photos  ·  How can I cancel my subscription? -> /hc/en-us/articles/4402322014359-How-can-I-cancel-my-subscription  ·  How can I pause my subscription? -> /hc/en-us/articles/4402321938455-How-can-I-pause-my-subscription  ·  How can I change my shipping frequency? -> /hc/en-us/articles/4402314753047-How-can-I-change-my-shipping-frequency  ·  See more -> /hc/en-us/sections/1500002739541-Ordering  ·  Submit a request -> /hc/en-us/requests/new  ·  Do you ship internationally? -> /hc/en-us/articles/17624465131415-Do-you-ship-internationally  ·  What is your return policy? -> /hc/en-us/articles/4402314831383-What-is-your-return-policy  ·  Subscription vs. One-Time Orders -> /hc/en-us/articles/17571301347607-Subscription-vs-One-Time-Orders  ·  Get Started -> https://www.happyhead.com/get-started  ·  Ultimate Growth Bundle -> https://www.happyhead.com/products/topical-solution-supercapsule-finasteride-minoxidil  ·  Custom TopicalRx Solution -> https://www.happyhead.com/products/topical-solution-dutasteride-minoxidil  ·  SuperCapsuleTM -> https://www.happyhead.com/products/supercapsule-finasteride-minoxidil-vitamin-d3  ·  TopicalRx SuperSolutionTM -> https://www.happyhead.com/products/topical-supersolution-finasteride-minoxidil-and-liposomal  ·  DutasterideRx -> https://www.happyhead.com/collections/dutasteride  ·  FinasterideRx -> https://www.happyhead.com/collections/finasteride  ·  MinoxidilRx -> https://www.happyhead.com/collections/minoxidil  ·  About Us -> https://www.happyhead.com/about-us  ·  Blog -> https://www.happyhead.com/hair-loss-blog  ·  How It Works -> https://www.happyhead.com/how-it-works  ·  Getting Started -> https://www.happyhead.com/getting-started  ·  FAQ -> https://www.happyhead.com/faq  ·  The Science -> https://www.happyhead.com/science  ·  Contact Us -> https://happyhead.zendesk.com/hc/en-us  ·  Refer-A-Friend -> https://www.happyhead.com/refer  ·  Stylist Program -> https://www.happyhead.com/stylist  ·  Influencer Program -> https://www.happyhead.com/ambassador  ·  Affiliate Program -> https://www.happyhead.com/affiliates  ·  CCPA: Do Not Sell My Information -> https://www.happyhead.com/legal/ccpa-do-not-sell-my-information  ·  Terms & Conditions -> https://www.happyhead.com/legal/terms-of-use  ·  Subscription Terms -> https://www.happyhead.com/legal/subscription-terms  ·  Privacy Policy -> https://www.happyhead.com/legal/privacy-policy  ·  Cookie Policy -> https://www.happyhead.com/legal/privacy-policy  ·  Acceptable Use Policy -> https://www.happyhead.com/legal/terms-of-use  ·  Telehealth Consent -> https://www.happyhead.com/legal/telehealth-consent  ·  Drug Safety Information & Consent -> https://www.happyhead.com/legal/drug-safety-information  ·  Refund & Return Policy -> https://www.happyhead.com/legal/terms-of-use  ·  Warning To Consumers -> https://www.happyhead.com/legal/drug-safety-information  ·  XML Sitemap -> https://www.happyhead.com/sitemap.xml

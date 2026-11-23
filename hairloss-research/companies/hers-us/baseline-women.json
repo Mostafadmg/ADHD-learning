@@ -1,0 +1,12 @@
+{
+  "_comment": "Hers US women's hair-loss entry. On 2026-11-23 this ends at a Cloudflare security checkpoint (HTTP 403) from this machine, so there are no answers to replay yet. When the site opens, add the quiz clicks after the wait. Never type into an email, name or phone field.",
+  "start": "https://www.forhers.com/hair-loss",
+  "locale": "en-US",
+  "timezone": "America/New_York",
+  "steps": [
+    {
+      "do": "wait",
+      "ms": 10000
+    }
+  ]
+}

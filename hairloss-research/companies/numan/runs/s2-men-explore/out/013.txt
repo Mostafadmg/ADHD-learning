@@ -1,0 +1,25 @@
+COMMAND 013 {"steps":[{"do":"click","selector":"label:text-is(\"Yes\")","settle":2800},{"do":"snap","settle":600}]}
+URL: https://www.numan.com/subscribe/hair-loss/4b4e30d9-9042-49e8-a32b-7557d60d5aec/sq/clarify_diagnosis_of_pso_ecz
+TITLE: You mentioned you have eczema or psoriasis on your scalp. Have they been seen to or treated by a doctor? If so, what treatments have you received? Please give us a detailed description of your scalp condition below (including how long you’ve had it, its appearance and any other symptoms it is causing) | Numan
+
+--- VISIBLE TEXT ---
+41%
+You mentioned you have eczema or psoriasis on your scalp.
+
+Have they been seen to or treated by a doctor?
+If so, what treatments have you received?
+Please give us a detailed description of your scalp condition below (including how long you’ve had it, its appearance and any other symptoms it is causing)
+​
+Back
+Next
+
+--- CONTROLS ---
+  textarea (1):
+    - clarify_diagnosis_of_pso_ecz
+  button (2):
+    - Back
+    - Next
+
+--- LINKS ---
+  link (1):
+    - Visit the main page -> /

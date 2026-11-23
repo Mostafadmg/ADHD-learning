@@ -1,0 +1,8 @@
+{ "start": "https://onlinedoctor.superdrug.com/hair-loss-in-women.html", "fullPage": true, "steps": [
+ {"do":"goto","url":"https://onlinedoctor.superdrug.com/assessment/147757"},
+ {"do":"wait","ms":5000},
+ {"do":"click","selector":"#onetrust-reject-all-handler"},
+ {"do":"wait","ms":1000},
+ {"do":"goto","url":"https://onlinedoctor.superdrug.com/assessment/147778"},
+ {"do":"wait","ms":6000}
+] }

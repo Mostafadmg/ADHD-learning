@@ -1,0 +1,28 @@
+STEP 05 wait 2500
+URL: https://www.hims.com/hair-loss/oral-minoxidil
+TITLE: Telehealth for a healthy, handsome you | hims
+
+--- VISIBLE TEXT ---
+Personalized care you can access anywhere
+(except this particular page, which doesn't exist). Back to hims.com.
+Personalized treatments
+Labs
+Weight Loss
+Sexual Health
+Hair Loss
+Mental Health
+Testosterone
+Skincare
+Learn
+Home
+About Us
+How it Works
+Medical Experts
+Blog
+Help Center
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+  link (26): Navigate to homepage -> https://www.hims.com/  ·  hims.com -> https://www.hims.com/  ·  Labs -> /labs  ·  Weight Loss -> /weight-loss  ·  Sexual Health -> /sexual-health  ·  Hair Loss -> /hair-loss  ·  Mental Health -> /mental-health  ·  Testosterone -> /testosterone  ·  Skincare -> /skin-care  ·  Home -> /  ·  About Us -> /about  ·  How it Works -> /about/how-it-works  ·  Medical Experts -> /our-medical-experts  ·  Blog -> /blog  ·  Help Center -> https://support.hims.com/hc/en-us  ·  Hims on Facebook -> https://facebook.com/wearehims  ·  Hims on Twitter -> https://x.com/wearehims  ·  Hims on Instagram -> https://www.instagram.com/hims  ·  Hims on TikTok -> https://www.tiktok.com/@hims  ·  visit forhers.com -> https://www.forhers.com  ·  Terms & conditions -> https://www.hims.com/terms-and-conditions  ·  Privacy policy -> https://www.hims.com/privacy-policy  ·  Sitemap -> https://www.hims.com/sitemap.html  ·  Telehealth Consent & Open Payments -> https://www.hims.com/telehealth-consent  ·  Consumer Health Data Privacy Policy -> https://www.hims.com/consumer-health-data-privacy-policy  ·  Your privacy choices -> https://support.hims.com/hc/en-us/articles/360037813632-Privacy-Request

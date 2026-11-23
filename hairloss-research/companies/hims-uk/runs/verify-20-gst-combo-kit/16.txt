@@ -1,0 +1,15 @@
+STEP 16 click "Less than 5 minutes"
+URL: https://app.forhims.co.uk/flow/a9a88e4a-89b9-47ae-8138-3a1acaa41594?gst=s2hF6Mdn&t=hair&anon_flow_key=hair
+TITLE: Hims
+
+--- VISIBLE TEXT ---
+Great news—we have options that may work for you.
+
+Next
+←
+
+--- CONTROLS ---
+  button (3): Next  ·  ←  ·  Your answers
+
+--- LINKS ---
+  link (1): Navigate home -> /profile

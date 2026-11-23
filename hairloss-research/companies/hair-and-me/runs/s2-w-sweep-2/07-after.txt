@@ -1,0 +1,21 @@
+STEP 07 hw AFTER ANSWERS ["Once a week or less"]
+URL: https://www.hairandme.com/c/suh/hw
+
+--- VISIBLE TEXT ---
+How often do you wash your hair?
+Daily
+3-4 times per week
+Twice a week
+Once a week or less
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=8010] | Daily
+input:radio[name=8010] | 3-4 times per week
+input:radio[name=8010] | Twice a week
+input:radio[name=8010] | Once a week or less [checked]
+button:submit | NEXT QUESTION
+a -> /c/suh/hw?action=previous | Back to previous page

@@ -1,0 +1,27 @@
+COMMAND 007 {"steps":[{"do":"click","selector":"label:has-text(\"My hair loss started gradually over the last few months or years\")","settle":2800},{"do":"snap","settle":600}]}
+URL: https://www.numan.com/subscribe/hair-loss/5d3494f9-26f6-4c72-a833-e88e646ac7a1/sq/do_you_have_an_allergy_or_intolerance_to_any
+TITLE: Do you have an allergy or intolerance to any of the following? | Numan
+
+--- VISIBLE TEXT ---
+17%
+Do you have an allergy or intolerance to any of the following?
+I am allergic to minoxidil
+I am allergic to finasteride
+I have a lactose intolerance or allergy
+I am not allergic to any of the above
+Back
+Next
+
+--- CONTROLS ---
+  checkbox (4):
+    - I am allergic to minoxidil (name: do_you_have_an_allergy_or_intolerance_to_any)
+    - I am allergic to finasteride (name: do_you_have_an_allergy_or_intolerance_to_any)
+    - I have a lactose intolerance or allergy (name: do_you_have_an_allergy_or_intolerance_to_any)
+    - I am not allergic to any of the above (name: do_you_have_an_allergy_or_intolerance_to_any)
+  button (2):
+    - Back
+    - Next [disabled]
+
+--- LINKS ---
+  link (1):
+    - Visit the main page -> /

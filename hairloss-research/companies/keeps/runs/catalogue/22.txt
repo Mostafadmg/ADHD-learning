@@ -1,0 +1,191 @@
+STEP 22 wait 2500
+URL: https://www.keeps.com/our-products/daily-hair-defense-supplement
+TITLE: Buy Daily Hair Defense Supplement Online | Keeps
+
+--- VISIBLE TEXT ---
+EXCLUSIVE OFFER: UP TO 50% OFF FIRST ORDER GET STARTED
+
+HAIR LOSS
+SEXUAL HEALTH
+NEW
+LEARN
+GET STARTED
+SIGN IN
+CART
+
+NUTRITIONAL SUPPORT FOR HAIR LOSS
+
+Daily Hair Defense Supplement
+
+180 TABLETS
+
+Boost hair health with clinically-proven saw palmetto, plus a doctor-formulated mix of vitamins and minerals with full-body benefits.*
+
+SUBSCRIBE AND SAVE 37%
+Subscription
+$90
+ $18.90/month
+One-time purchase
+ $90
+ADD TO CART
+
+HOW IT WORKS
+
+Key ingredient saw palmetto stabilizes hair loss and promotes healthy hair growth
+Paired with Vitamins A, B6, B12, C, D, Calcium, Selenium, Zinc, and Biotin that support overall health, immune function, and vitality*
+Take just two tablets daily
+
+ABOUT THIS TREATMENT
+
+DAILY HAIR DEFENSE SUPPLEMENT supplies your system with a formulated blend of potent ingredients including saw palmetto to nourish hair follicles, promote healthy hair growth, and support thicker, stronger hair from within.
+
+More Daily Hair Defense Supplement Drug Facts
+
+Not sure if this treatment is right for you?
+
+TAKE OUR QUIZ
+Hair loss support without a prescription
+Doctor-formulated for men experiencing hair loss
+Available as an over-the-counter supplement and does not require a prescription or consultation
+A dose of saw palmetto extract, backed by clinical evidence, that assists in stabilizing hair loss and supporting the healthy growth of hair
+Start strong without an Rx, or boost your existing treatment plan
+Get hair loss support and essential daily vitamins at the same time
+Building blocks for hair and health
+Full body nutrients, targeted hair support*
+
+Saw palmetto inhibits the enzyme responsible for converting testosterone to dihydrotestosterone (DHT), which may be beneficial for male pattern hair loss
+
+Vitamins A, B6, B12, C, and D contribute in maintaining healthy hair and overall body health, providing essential nutrients
+
+Calcium, selenium, and zinc support hair growth, strength, and overall body health*
+
+Fortify your hair*
+
+Daily Hair Defense Supplement packs a punch of essential daily vitamins and minerals, plus naturally-derived saw palmetto to help stabilize hair loss and promote healthy hair growth.*
+
+Why Keeps?
+
+2 out of 3 guys will experience hair loss by the age of 35. There is no magic cure for baldness but you can prevent hair loss from happening in the first place. Take action today with our scientific and affordable approach.
+
+Less than you’d pay at your local pharmacy
+
+Clinically-proven treatments and science-backed formulas
+
+Free one-time consultation for your new purchase to ensure your treatment plan is right for you
+
+Shipped and delivered directly to your door
+
+PICK MY PLAN
+
+How Keeps works
+
+1. Pick your plan
+
+Pick the clinically-proven treatment that's right for you. A licensed medical provider will confirm it's everything you need.
+
+2. Get it delivered
+
+Your Keeps treatment arrives at your door every three, six, or twelve months—at a fraction of the cost of your local pharmacy.
+
+3. Keep your hair
+
+Easily track progress as you experience less hair loss and hair regrowth. Adjust, pause, or cancel your plan at any time.
+
+Frequently asked questions
+
+What is saw palmetto?
+
+Saw palmetto is a small palm tree native to the southeastern U.S. The fruit of the saw palmetto tree provides an extract that has been shown in clinical studies to help stabilize hair loss and promote healthy hair growth.
+
+Can supplements help with hair loss?
+
+Clinical studies show that the dosage of saw palmetto included in the Daily Hair Defense Supplement can help stabilize hair loss and promote healthy hair growth. A dietary supplement can be an easy and convenient way to start hair loss treatment (as it is available over-the-counter and does not require a prescription or consultation) or can be used in combination with your existing hair loss treatment plan. Please discuss your medical history including any medications you are currently taking with your healthcare provider. You can refer to product warnings and precautions here.
+
+Was Daily Hair Defense Supplement formulated by doctors?
+
+The vitamins and minerals included in Daily Hair Defense Supplement were specially selected by expert doctors at Keeps for men experiencing hair loss. The specific dosage of saw palmetto in Daily Hair Defense has been shown in clinical studies to help stabilize hair loss and promote healthy hair growth.
+
+What precautions should I take when using Daily Hair Defense Supplement?
+
+Please discuss your medical history including any medications you are currently taking with your healthcare provider. You can refer to product warnings and precautions here.
+
+Consult your physician prior to using this product if you are pregnant, nursing, taking medication, or have a medical condition. Infrequent, mild side effects, including headache, nausea, and dizziness, may occur with the use of saw palmetto. Saw palmetto might slow blood clotting and might cause extra bleeding during and after surgery. Stop using saw palmetto at least 2 weeks before a scheduled surgery due to concerns over possible increased bleeding risk. Taking saw palmetto along with medications that also slow blood clotting might increase the risk of bleeding and bruising. If you are currently taking blood thinners, anticoagulants (e.g. warfarin), antiplatelet medications (e.g. clopidogrel) or regularly taking aspirin or NSAIDs (e.g. ibuprofen, naproxen), please first discuss with your medical provider before using saw palmetto.
+
+Taking high doses of biotin (>10 mg/day) may affect certain lab tests.  The dose of biotin contained in the Keeps Daily Hair Defense Supplement is .01 mg, and the recommended daily dietary intake of biotin is .03 mg/day. Please inform your healthcare providers if you are taking additional sources of biotin.
+
+CHECK OUT OUR FAQ’S
+
+* This statement has not been evaluated by the FDA. This product is not intended to diagnose, treat, cure, or prevent any disease.
+
+† Individual results may vary.
+
+‡ The information provided here is not a substitute for professional medical advice, diagnosis, or treatment. You should not rely upon the content provided here for specific medical advice. If you have any questions or concerns, please talk to your doctor.
+
+FEATURED IN:
+
+GET STARTED
+
+OUR PRODUCTS
+
+HAIR LOSS 101
+
+LEARN
+
+OUR STORY
+
+FAQS
+
+CONTACT
+
+PRESS
+
+CAREERS
+
+Keep in the loop
+
+Thanks! You've signed up successfully.
+
+Keeps
+
+Cove
+
+Facet
+
+Nurx
+
+© 2026 Keeps
+
+Privacy
+
+Terms
+
+Informed Consent
+
+Accessibility
+
+Returns
+
+Shipping
+
+Your Privacy Choices
+
+My Cart
+
+Your cart is empty.
+
+Add an item to your cart to begin your journey with Keeps.
+
+SEE OUR PRODUCTS
+
+Not sure what’s right for you?
+
+Take the quiz
+
+--- CONTROLS ---
+  button (7): GET STARTED  ·  SIGN IN  ·  CART  ·  ADD TO CART  ·  TAKE OUR QUIZ  ·  PICK MY PLAN  ·  CHECK OUT OUR FAQ’S
+  radio (2): Subscription $90 $18.90/month  ·  One-time purchase $90 [checked]
+  input:email (1): Your Email
+  input:submit (1): (no label) = "Submit"
+
+--- LINKS ---
+  link (25): GET STARTED -> /hair-assessment-quiz  ·  More Daily Hair Defense Supplement Drug Facts -> /drug-facts/daily-hair-defense-supplement  ·  PICK MY PLAN -> /our-products  ·  GET STARTED -> /quiz  ·  OUR PRODUCTS -> /our-products  ·  HAIR LOSS 101 -> /hair-loss  ·  LEARN -> /learn  ·  OUR STORY -> /about-us  ·  FAQS -> /faq  ·  CONTACT -> /contact  ·  PRESS -> /press  ·  CAREERS -> /careers  ·  Keeps -> https://www.keeps.com/  ·  Cove -> https://www.withcove.com/  ·  Facet -> https://facet.thirtymadison.com/  ·  Nurx -> https://www.nurx.com  ·  Privacy -> https://patient.thirtymadison.com/dashboard/legals/privacy  ·  Terms -> https://patient.thirtymadison.com/dashboard/legals/terms-and-conditions  ·  Informed Consent -> https://patient.thirtymadison.com/dashboard/legals/informed-consent  ·  Accessibility -> https://patient.thirtymadison.com/dashboard/legals/accessibility  ·  Returns -> /faq/what-is-the-keeps-refund-and-return-policy  ·  Shipping -> /faq/category/orders-and-shipping  ·  Your Privacy Choices -> /our-products/daily-hair-defense-supplement#your-privacy-choices  ·  SEE OUR PRODUCTS -> /our-products?product=daily-hair-defense-supplement  ·  Take the quiz -> /quiz?product=daily-hair-defense-supplement

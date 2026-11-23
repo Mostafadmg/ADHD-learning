@@ -1,0 +1,1 @@
+{"steps":[{"do":"fill","selector":"textarea, input[type=text], input[type=number]","value":"Slightly thinner hair on forearms over the last 2 years."},{"do":"click","text":"Next","settle":2800},{"do":"snap","settle":600}]}

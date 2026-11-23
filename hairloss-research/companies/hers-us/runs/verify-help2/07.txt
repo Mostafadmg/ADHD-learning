@@ -1,0 +1,43 @@
+STEP 07 wait 2000
+URL: https://support.hims.com/hc/en-us/search?query=spironolactone
+TITLE: Search results – Hims, Inc.
+
+--- VISIBLE TEXT ---
+Help Center
+Everything you need to know, all in one place.
+By Category
+All Categories (3)
+Product Drug Information (3)
+Show more categories
+3 results for "spironolactone"
+Spironolactone (Generic for Aldactone)
+Hims, Inc.
+Product Drug Information
+Product Drug Information
+
+your medical provider. Spironolactone is used to treat cardiovascular conditions. Spironolactone is used off-label to treat
+
+Hims & Hers Health July 14, 2025 at 1:24 PM 0 comments
+Compounded Oral Tablet with Vitamins (ED and/or PE)  1
+Hims, Inc.
+Product Drug Information
+Product Drug Information
+
+medications called potassium sparing diuretics such as spironolactone, eplerenone, triamterene, amiloride or have kidney disease
+
+Hims & Hers Health July 14, 2025 at 1:33 PM 0 comments
+Compounded Oral Tablet with Vitamins
+Hims, Inc.
+Product Drug Information
+Product Drug Information
+
+medications called potassium sparing diuretics such as spironolactone, eplerenone, triamterene, amiloride or have kidney disease
+
+Hims & Hers Health July 10, 2025 at 6:30 PM 0 comments
+
+--- CONTROLS ---
+  button (2): Toggle Navigation  ·  Show more categories
+  input:search (1): How can we help you? = "spironolactone"
+
+--- LINKS ---
+  link (9): Contact us -> /hc/requests/new?ticket_form_id=25593136373787  ·  All Categories (3) -> /hc/en-us/search?filter_by=knowledge_base&query=spironolactone&utf8=%E2%9C%93  ·  Product Drug Information (3) -> /hc/en-us/search?category=38833832380955&filter_by=knowledge_base&query=spironolactone&utf8=%E2%9C%93  ·  Spironolactone (Generic for Aldactone) -> /hc/en-us/search/click?data=BAh7DjoHaWRsKwibJs61ayM6D2FjY291bnRfaWRpA5a3HzoJdHlwZUkiDGFydGljbGUGOgZFVDoIdXJsSSJjaHR0cHM6  ·  Hims, Inc. -> https://support.hims.com  ·  Product Drug Information -> https://support.hims.com/hc/en-us/categories/38833832380955-Product-Drug-Information  ·  Product Drug Information -> https://support.hims.com/hc/en-us/sections/38833926851099-Product-Drug-Information  ·  Compounded Oral Tablet with Vitamins (ED and/or PE) -> /hc/en-us/search/click?data=BAh7DjoHaWRsKwibKHHUayM6D2FjY291bnRfaWRpA5a3HzoJdHlwZUkiDGFydGljbGUGOgZFVDoIdXJsSSJwaHR0cHM6  ·  Compounded Oral Tablet with Vitamins -> /hc/en-us/search/click?data=BAh7DjoHaWRsKwibeMBGVCM6D2FjY291bnRfaWRpA5a3HzoJdHlwZUkiDGFydGljbGUGOgZFVDoIdXJsSSJjaHR0cHM6

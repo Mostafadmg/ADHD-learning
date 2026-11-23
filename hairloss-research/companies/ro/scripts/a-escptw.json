@@ -1,0 +1,1 @@
+{ "start": "https://start.ro.co/escptw/", "locale": "en-US", "timezone": "America/Chicago", "steps": [ {"do":"wait","ms":4000} ] }

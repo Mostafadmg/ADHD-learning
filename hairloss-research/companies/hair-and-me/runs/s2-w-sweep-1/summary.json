@@ -1,0 +1,160 @@
+{
+ "run": "s2-w-sweep-1",
+ "flow": "women",
+ "changed": "SWEEP (women, 9 non-medical answers changed together): gender identity Woman/Girl; Wavy; washes twice a week; three ways of hiding hair loss; hard water Unsure; front of parting wider; three to six months ago; skin Brown; three other six-month wishes",
+ "changedStep": null,
+ "baselinesPooled": [
+  "baseline-women",
+  "women-a",
+  "s2-base-women-1"
+ ],
+ "stepOrder": [
+  "tp",
+  "yhg",
+  "js",
+  "pds",
+  "pdsc",
+  "ht",
+  "hs",
+  "hw",
+  "hht",
+  "htp",
+  "hdw",
+  "htaf",
+  "htc",
+  "ar",
+  "st",
+  "sc",
+  "scc",
+  "smt",
+  "pt",
+  "tt",
+  "dt",
+  "pg",
+  "mp",
+  "mdf",
+  "mcf",
+  "al",
+  "rhf",
+  "rha",
+  "di",
+  "rj",
+  "el",
+  "ct",
+  "yd"
+ ],
+ "nSteps": 33,
+ "end": "account wall (yd)",
+ "newSteps": [],
+ "missingSteps": [],
+ "candidateEffects": [],
+ "noise": [
+  {
+   "step": "ar",
+   "key": "q429.config",
+   "where": "after-change",
+   "alsoIn": []
+  }
+ ],
+ "bag": {
+  "items": [
+   [
+    "hairTreatment",
+    "Personalised treatment",
+    "4 week supply · 12ml",
+    "Prescription",
+    3499,
+    null
+   ]
+  ],
+  "shipping": 0,
+  "total": 3499,
+  "promo": "",
+  "shippingMsg": "Your order qualifies for complimentary standard shipping."
+ },
+ "bagItemsSameAsBaseline": true,
+ "posted": {
+  "hdw": [
+   [
+    8003,
+    "Unsure"
+   ]
+  ],
+  "hht": [
+   [
+    8009,
+    [
+     "Using hairstyles to hide thin areas",
+     "Shaving my head",
+     "Wearing a wig, hairpiece or extensions"
+    ]
+   ]
+  ],
+  "ht": [
+   [
+    4446,
+    "Wavy"
+   ]
+  ],
+  "htaf": [
+   [
+    9322,
+    "The front of my parting is getting wider"
+   ]
+  ],
+  "htc": [
+   [
+    9310,
+    "Around three to six months ago"
+   ]
+  ],
+  "hw": [
+   [
+    8010,
+    "Twice a week"
+   ]
+  ],
+  "pds": [
+   [
+    3039,
+    2
+   ],
+   [
+    3054,
+    1
+   ]
+  ],
+  "smt": [
+   [
+    8021,
+    [
+     "Hair that feels healthy from root to tip",
+     "Hair that feels stronger and has less breakage",
+     "Noticeably less hair falling out"
+    ]
+   ]
+  ],
+  "st": [
+   [
+    9348,
+    "Brown. It very rarely burns, tans darkly easily"
+   ],
+   [
+    9349,
+    75
+   ]
+  ]
+ },
+ "nextAfterChange": {
+  "hdw": "htaf",
+  "hht": "htp",
+  "ht": "hs",
+  "htaf": "htc",
+  "htc": "ar",
+  "hw": "hht",
+  "pds": "pdsc",
+  "smt": "pt",
+  "st": "sc"
+ },
+ "sweep": true
+}

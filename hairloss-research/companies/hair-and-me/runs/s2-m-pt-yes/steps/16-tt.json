@@ -1,0 +1,73 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 2,
+   "sectionTitle": "YOUR HAIR"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 169,
+    "inputConfig": {
+     "displayTextV2": [
+      {
+       "header": "Why are we asking?",
+       "text": [
+        {
+         "part": "You’ll get the best results from consistent, daily use, so choose a treatment option that works for you. We’ll do our best to accommodate your preference, but ultimately, this will be determined by our Dermatology Team."
+        }
+       ]
+      }
+     ]
+    },
+    "inputType": "display_text",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 180028,
+    "inputConfig": {
+     "options": [
+      {
+       "description": "Applied directly to your scalp with a pipette either once or twice daily",
+       "label": "The Drops",
+       "value": "The Drops"
+      },
+      {
+       "badges": [
+        "Most popular",
+        "Better for pet owners"
+       ],
+       "description": "Taken once daily before bed",
+       "label": "The Capsules",
+       "value": "The Capsules"
+      }
+     ]
+    },
+    "inputType": "single_select_button",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Which treatment would suit you best?",
+  "type": "question"
+ }
+}

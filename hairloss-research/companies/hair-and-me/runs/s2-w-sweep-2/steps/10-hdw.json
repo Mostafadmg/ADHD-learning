@@ -1,0 +1,63 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 2,
+   "sectionTitle": "YOUR HAIR"
+  },
+  "description": "Hard water can dry your scalp.",
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 8004,
+    "inputConfig": {
+     "content": "\n**How to check for signs of hard water:**\n\n- White spots on dishes and glassware (from calcium and magnesium deposits).\n- Soap doesn’t lather well when washing hands or showering.\n- Dry skin and dull hair after bathing.\n- Scale buildup in kettles, coffee makers, or water heaters.\n\n\n"
+    },
+    "inputType": "markdown",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 8003,
+    "inputConfig": {
+     "isOptional": true,
+     "options": [
+      {
+       "label": "Yes",
+       "value": "Yes"
+      },
+      {
+       "label": "No",
+       "value": "No"
+      },
+      {
+       "label": "Unsure",
+       "value": "Unsure"
+      }
+     ]
+    },
+    "inputType": "single_select_button",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Do you know if you're in a hard water area?",
+  "type": "question"
+ }
+}

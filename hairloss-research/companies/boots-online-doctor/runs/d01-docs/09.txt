@@ -1,0 +1,39 @@
+STEP 09 wait 2500
+URL: https://onlinedoctor.boots.com/pick-up-and-delivery
+TITLE: Pick Up And Delivery | Boots Online Doctor UK
+
+--- VISIBLE TEXT ---
+PICK UP AND DELIVERY
+WHERE CAN I PICK UP MY MEDICINES?
+
+Pick up is the quickest way to get the medicine you order. You can pick up the medicines we prescribe in any Boots pharmacy, other than stores in Jersey and Guernsey.
+
+Our clinical team aims to review all orders within 24 hours. Once we’ve written your prescription, you should be able to pick up your medicine from a Boots store within 2 business hours.
+
+If you place an order for the morning after pill or cystitis treatment before 1pm, you can pick it up same day.
+
+The Boots pharmacy will send you a text when your order is ready to pick up.
+
+IS DELIVERY FREE?
+
+Yes, delivery is free for almost all of our services. Where Royal Mail Special Delivery is required (for example, for medications that require temperature controlled delivery) this service is chargeable.
+
+DO I NEED TO SIGN FOR DELIVERIES?
+
+For our Royal Mail Tracked 48 services you don’t need to sign for a medicine delivery or for the delivery of a home test kit. The only exception is when the quantity of your medicine is too big to fit through your letterbox; if that happens, we’ll need a signature. For any services that use Special Delivery, a signature is required.
+
+If you’re worried about a delivery because of children or pets or any other reason, please choose pick up in store.
+
+HOW FAST IS DELIVERY?
+
+We use Royal Mail Tracked 48 for the majority of our services and this means Royal Mail aims to make delivery within 2-3 days of us posting your medicine or home test kit. For some of our services we use Special Delivery; you will receive a text notification from Royal Mail the evening before your delivery.
+
+IS THE PACKAGING DISCREET?
+
+Yes, our packaging is discreet. The box that we put all medicines in for deliveries says Boots on it, but it doesn’t say what’s inside. The envelope that we put all home test kits in for deliveries does not say Boots on the outside.
+
+--- CONTROLS ---
+  button (1): Cookie Preferences
+
+--- LINKS ---
+  link (26): Skip to main content -> #main-content  ·  0203 3183773 -> tel:02033183773  ·  Boots Advantage Card -> https://www.boots.com/advantage-card  ·  Shop Boots.com -> https://www.boots.com  ·  Services -> #  ·  Meet the team -> /clinician-bio/  ·  FAQ -> /faq  ·  LOG IN -> https://onlinedoctor-clinic.boots.com/login  ·  Home -> /  ·  Women's health -> /womens-health  ·  Men's health -> /mens-health  ·  Skin Health -> /acne-skin-conditions  ·  Sexual health -> /sexual-health  ·  General health -> /general-health  ·  Testing services -> /home-testing-kits  ·  Careers -> https://www.boots.jobs/support-office/boots-online-doctor-careers  ·  Patient guide -> /patient-guide  ·  Terms and conditions -> /terms-and-conditions  ·  Privacy policy -> /privacy-policy  ·  Cookie policy -> /cookie-policy  ·  FAQs -> /faq  ·  Contact us -> /contact-us  ·  Pick up and delivery -> /pick-up-and-delivery  ·  Off-label medicines -> /off-label-medicines  ·  Store locator -> https://www.boots.com/StoreLookupView  ·  See the report -> https://www.cqc.org.uk/location/1-15661319227?referer=widget3

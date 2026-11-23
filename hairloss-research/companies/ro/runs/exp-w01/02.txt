@@ -1,0 +1,15 @@
+STEP 02 click "Months"
+URL: https://start.ro.co/tefcyb/online-visit/6
+TITLE: Online Visit
+
+--- VISIBLE TEXT ---
+How did your hair loss start?
+Suddenly
+Gradually
+Not sure
+
+--- CONTROLS ---
+  radio (3): Suddenly [false]  ·  Gradually [false]  ·  Not sure [false]
+
+--- LINKS ---
+

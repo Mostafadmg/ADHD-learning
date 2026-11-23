@@ -1,0 +1,133 @@
+STEP 18 scroll ""
+URL: https://www.numan.com/subscribe/hair-loss/db9a4637-2c8b-4d9c-bf12-e895f513754d/product-selection
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+Please select your treatment
+
+Our clinicians will ensure you’re prescribed the most appropriate treatment.
+
+Recommended for you
+
+See results in 180 days
+
+or your money back¹
+
+Regaine
+
+Regaine contains minoxidil, a medicine for hair loss that can slow male pattern baldness and stimulate hair regrowth in men. It works primarily on the follicles, extending their growth phase and increasing their size. As a result, it encourages the regrowth of denser hair that looks stronger and healthier.
+
+Learn more 
+Price
+£51.67
+Save 21%
+Select treatment
+
+¹ Claim a full refund between 180-210 days from order approval if treatment is not effective at stabilising or reversing hair loss. First time users only. Full Ts&Cs.
+
+² 70.6% of men using 5% minoxidil for 16 weeks reported improvement in hair loss (Olsen, 2007).
+
+OTHER TREATMENTS
+
+Hair Kit - Medicated Spray, Finasteride & Supplement
+
+Cover all angles in your battle for thicker, fuller hair. Our most complete hair kit combines finasteride, minoxidil, and Hair Growth Support supplement for a three-pronged attack against hair loss. Utilise the efficacy of each product to give your hair the best chance of regrowth.
+
+£26.67
+
+ 
+
+£40.00
+
+Save 33%
+Select
+ 
+Learn more
+Hair Kit - Medicated Spray & Finasteride
+
+This kit combines two effective hair loss treatments — Medicated Spray and Finasteride — which have been clinically proven to reduce and reverse hair loss at the hairline and crown of the head.
+
+£22.67
+
+ 
+
+£36.00
+
+Save 37%
+Select
+ 
+Learn more
+Hair Kit - Combination Spray & Supplement
+
+This hair kit combines our Combination Spray - containing the 3 most effective treatments in 1 bottle - together with Hair Growth support supplement delivering a powerful blend of vitamins and minerals to improve the long-term hair health.
+
+£26.67
+
+ 
+
+£40.00
+
+Save 33%
+Select
+ 
+Learn more
+Finasteride
+
+Finasteride is the generic version of a medicine called Propecia. It has been clinically proven to be an effective treatment for male-pattern hair loss in 9 out of 10 men.
+
+£16.80
+
+ 
+
+£28.00
+
+Save 40%
+Select
+ 
+Learn more
+Triple-Action Spray
+
+Combat hair loss with the 3 most effective treatments in 1 easy-to-use spray. Finasteride reduces the conversion of testosterone to dihydrotestosterone (DHT). Minoxidil combats thinning hair and stimulate regrowth. Azelaic acid promotes hair growth and helps prevent further hair loss.
+
+£22.67
+
+ 
+
+£36.00
+
+Save 37%
+Select
+ 
+Learn more
+Extra Strength Spray
+
+Extra Strength Spray is a sprayable minoxidil solution that helps to slow and reverse hair loss caused by male-pattern baldness. It can make hair appear thicker by increasing the diameter of the hair shaft, and improve scalp coverage by reversing the shrinkage of hair follicles.
+
+£18.00
+
+ 
+
+£30.00
+
+Save 40%
+Select
+ 
+Learn more
+Rosemary Oil
+
+Rosemary Oil is a natural remedy for stronger, healthier-looking hair. Infused with nutrients and oils, it’s formulated to nourish the scalp and fortify hair from root to tip.
+
+£14.00
+
+ 
+
+£23.33
+
+Save 40%
+Select
+
+--- CONTROLS ---
+  button (4): Help  ·  Select treatment  ·  Select  ·  Learn more
+
+--- LINKS ---
+  link (4): Back -> #  ·  Visit the main page -> /  ·  Learn more -> #  ·  Full Ts&Cs. -> /legal/terms-of-sale#termsMoneyBackGuarantee

@@ -1,0 +1,520 @@
+{
+ "_about": "Structured extract of the quiz definitions Keeps serves in public JavaScript (build P4aieEbp7XXsoIDdfc_hQ, read 2026-11-23). Answers are [label shown | subtitle, value stored in sessionStorage]. Raw copies: quiz-definition.js and quiz-definition.legacy-mini-quiz.js.",
+ "mainQuiz": {
+  "url": "https://www.keeps.com/hair-assessment-quiz",
+  "source": "/_next/static/chunks/4186-023f24e4c45a5ed8.js (questions, hideIf, recommendation); /_next/static/chunks/6717-3380f3d5983e996c.js (screen text, state gate)",
+  "storage": "Each answer is saved in sessionStorage under its name as a JSON array, e.g. priority = [\"Balanced Results\"]. A skip link saves \"Not Sure\".",
+  "steps": [
+   {
+    "step": 0,
+    "name": "hairLossGoal",
+    "title": "What's your hair goal?",
+    "subtitle": "This helps determine your treatment match.",
+    "answers": [
+     [
+      "Regrow lost hair - Regrow",
+      "Regrow"
+     ],
+     [
+      "Keep my hair - Preserve",
+      "Preserve"
+     ],
+     [
+      "Both - Regrow & Preserve",
+      "Regrow & Preserve"
+     ]
+    ]
+   },
+   {
+    "step": 1,
+    "name": "hairLossStage",
+    "title": "How would you describe your hair loss stage right now?",
+    "answers": [
+     [
+      "Early signs of hair loss | Starting to notice thinning",
+      "Early"
+     ],
+     [
+      "Visible hair loss | Noticeable thinning or shedding",
+      "Visible"
+     ],
+     [
+      "Receding hairline or crown thinning | Patterned hair loss",
+      "Patterned"
+     ],
+     [
+      "Advanced hair loss | Extensive thinning or balding",
+      "Advanced"
+     ]
+    ],
+    "skipText": "I'm not sure - help me choose",
+    "skipValue": "Not Sure"
+   },
+   {
+    "step": 2,
+    "name": "hairLossPicture",
+    "title": "Which best matches you?",
+    "subtitle": "Choose the option that looks closest today.",
+    "answers": [
+     [
+      "Just Starting",
+      "Just Starting"
+     ],
+     [
+      "Mild",
+      "Mild"
+     ],
+     [
+      "Moderate",
+      "Moderate"
+     ],
+     [
+      "Advanced",
+      "Advanced"
+     ]
+    ],
+    "skipText": "Not seeing a match? View more options",
+    "skipValue": "Not Sure",
+    "answerKind": "pictures"
+   },
+   {
+    "step": 3,
+    "name": "hairLossPicture",
+    "title": "Which best matches you?",
+    "subtitle": "Choose the option that looks closest today.",
+    "answers": [
+     [
+      "Receding Hairline",
+      "Receding Hairline"
+     ],
+     [
+      "Diffuse Thinning",
+      "Diffuse Thinning"
+     ],
+     [
+      "Patchy Loss",
+      "Patchy Loss"
+     ],
+     [
+      "Mostly Scalp",
+      "Mostly Scalp"
+     ]
+    ],
+    "skipText": "← Back to main options",
+    "skipAsBack": true,
+    "hideIf": {
+     "field": "hairLossPicture",
+     "op": "notEquals",
+     "value": "Not Sure"
+    },
+    "answerKind": "pictures"
+   },
+   {
+    "step": 4,
+    "interstitial": "mostlyScalpKickout",
+    "isKickout": true,
+    "hideIf": {
+     "field": "hairLossPicture",
+     "op": "notEquals",
+     "value": "Mostly Scalp"
+    },
+    "text": "This treatment may not be a good fit right now. | Based on your answers, prescription hair loss treatments are unlikely to be effective at this stage. | Tip: Many people at this stage explore options like hair restoration or cosmetic solutions. | Button: Back to homepage"
+   },
+   {
+    "step": 5,
+    "name": "duration",
+    "title": "How long has this been happening?",
+    "answers": [
+     [
+      "Less than 6 months",
+      "Less than 6 months"
+     ],
+     [
+      "6-12 months",
+      "6-12 months"
+     ],
+     [
+      "1-3 years",
+      "1-3 years"
+     ],
+     [
+      "3+ years",
+      "3+ years"
+     ]
+    ],
+    "skipText": "I'm not sure",
+    "skipValue": "Not Sure"
+   },
+   {
+    "step": 6,
+    "name": "receivedComments",
+    "title": "Has anyone noticed or commented on your hair loss?",
+    "subtitle": "This helps us understand progression - many men notice changes before others do.",
+    "answers": [
+     [
+      "Yes",
+      "yes"
+     ],
+     [
+      "No",
+      "no"
+     ]
+    ],
+    "skipText": "I'm not sure",
+    "skipValue": "Not Sure"
+   },
+   {
+    "step": 7,
+    "name": "treatedBefore",
+    "title": "Have you treated hair loss before?",
+    "subtitle": "This helps us avoid what didn't work.",
+    "answers": [
+     [
+      "Yes",
+      "yes"
+     ],
+     [
+      "No",
+      "no"
+     ]
+    ]
+   },
+   {
+    "step": 8,
+    "name": "previousTreatmentResults",
+    "title": "How did it go?",
+    "answers": [
+     [
+      "Saw some results",
+      "Saw Some Results"
+     ],
+     [
+      "Didn't see results",
+      "No Results"
+     ],
+     [
+      "Stopped too early",
+      "Stopped Too Early"
+     ],
+     [
+      "Had side effects",
+      "Had Side Effects"
+     ]
+    ],
+    "hideIf": {
+     "field": "treatedBefore",
+     "op": "notEquals",
+     "value": "yes"
+    }
+   },
+   {
+    "step": 9,
+    "interstitial": "progress",
+    "text": "Our members see results in as little as 3 months. (before/after carousel) | Button: Continue"
+   },
+   {
+    "step": 10,
+    "name": "treatmentType",
+    "title": "How would you like to treat your hair loss?",
+    "tip": "This helps us personalize your recommendation.",
+    "answers": [
+     [
+      "Daily Chew (Oral Rx) | Easy, once-daily • Oral tablet",
+      "Oral Prescription"
+     ],
+     [
+      "Topical Drop (Rx Serum) | Applied directly to the scalp",
+      "Topical Prescription"
+     ]
+    ],
+    "skipText": "I'm not sure - help me choose",
+    "skipValue": "Not Sure",
+    "omittedWhen": "isValpak or isGelFunnel"
+   },
+   {
+    "step": 11,
+    "name": "priority",
+    "title": "What's your top priority?",
+    "subtitle": "This helps us match the right treatment approach to your goal precisely.",
+    "tip": "This helps us personalize your recommendation.",
+    "answers": [
+     [
+      "Seeing results as soon as possible | Stronger regrowth support",
+      "Results ASAP"
+     ],
+     [
+      "Balanced results & long-term care | Effective everyday treatment",
+      "Balanced Results"
+     ],
+     [
+      "Keeping treatment simple & affordable | Proven prevention-focused option",
+      "Simple & Affordable"
+     ]
+    ],
+    "skipText": "I'm not sure - help me choose",
+    "skipValue": "Not Sure"
+   },
+   {
+    "step": 12,
+    "interstitial": "goodHands",
+    "text": "You're in good hands. | Matched using clinician-guided treatment protocols & targeting combination meds. | 98% experience hair stabilization within the first 3 months | 86% experience visible regrowth by month 3 | 94% overall member satisfaction | Button: Continue"
+   },
+   {
+    "step": 13,
+    "interstitial": "analysis",
+    "text": "Your analysis is complete. | Your custom prescription treatment plan is being tailored to your profile now... | Your Profile: Goal, Hair Loss Stage, Duration, Treatment Type (if answered), Expected Results = 3 months | You're a strong candidate | 86% of similar profiles see results | Multi-pathway approach recommended | Button: Continue"
+   },
+   {
+    "step": 14,
+    "interstitial": "firstLoader",
+    "text": "Matching your prescription treatment. | Analyzing hair loss pattern | Selecting prescription compounds | Adjusting strength for your stage | Finalizing clinician match (auto-advances after 5.1 seconds)"
+   },
+   {
+    "step": "15 (only if flag)",
+    "interstitial": "phoneCollection",
+    "includedWhen": "feature flag enable-quiz-phone-collection == 'interstitial_enabled'",
+    "text": "How can we reach you if necessary? | Our medical teams and pharmacy use text for patient communication. | phone field '(___) ___-____' | tick box: Clinician + delivery updates, plus special offers. Unsubscribe anytime. | Tip: HIPAA-compliant. We never sell or share your data. | Button: Continue"
+   },
+   {
+    "step": 15,
+    "interstitial": "lead",
+    "text": "Last step to see if you qualify. | We need your state and a few details to match you with an available provider. | [Select state] | tick box: I confirm I am 18+ and assigned male at birth | Button: Show my plan",
+    "excludedStates": [
+     "AA",
+     "AE",
+     "AP",
+     "DC",
+     "DE",
+     "ID",
+     "KS",
+     "MS",
+     "NM",
+     "PR",
+     "RI",
+     "WV"
+    ],
+    "excludedMessage": "We currently don't serve in your state. Please check back soon.",
+    "checkboxDefault": "flag hl_funnel_gender_checkbox_default (was 'unchecked')"
+   },
+   {
+    "step": 16,
+    "interstitial": "finalLoader",
+    "text": "Finalizing your approval. | Confirming clinical eligibility | Locking in recommended plan | Preparing results summary | Completing approval (auto-advances after 5.1 seconds)"
+   }
+  ],
+  "navigation": "After each answer the next step is step+1, skipping any step whose hideIf matches (op 'notEquals': hidden when the stored value differs from 'value'). The URL carries ?step=N.",
+  "recommendation": {
+   "pseudoCode": [
+    "if isValpak: return CHEW_PLUS_THREE_MONTH (19277)",
+    "t = treatmentType; p = priority",
+    "if t == 'Topical Prescription': return DROP_THREE_MONTH (18635) if p == 'Simple & Affordable' else DROP_PLUS_THREE_MONTH (18636)",
+    "else: return FIN_CHEW_THREE_MONTH (18640) if p == 'Simple & Affordable' else CHEW_PLUS_THREE_MONTH (19277)"
+   ],
+   "then": "Browser goes to /hair-treatment-plan?productId=<id>. No answers are sent to a server before that page."
+  }
+ },
+ "gelQuiz": {
+  "url": "https://www.keeps.com/hair-assessment-quiz-gel",
+  "source": "/_next/static/chunks/pages/hair-assessment-quiz-gel-ba1be2bfffa241ea.js",
+  "steps": "Same list as mainQuiz built with isGelFunnel=true: the treatmentType step is left out and the phone step is never included.",
+  "recommendation": "Always GEL_PLUS_THREE_MONTH (19267) -> /hair-treatment-plan-gel?productId=19267"
+ },
+ "legacyMiniQuiz": {
+  "url": "https://www.keeps.com/quiz (also /find-my-plan)",
+  "source": "_app chunk module 7679 (questions); chunk 5819 module 5737 (rules)",
+  "questions": [
+   {
+    "name": "where",
+    "title": "Where on your head are you losing your hair or experiencing thinning?",
+    "description": "Select one that applies to you best.",
+    "multi": false,
+    "answers": [
+     [
+      "Hairline",
+      "hairline"
+     ],
+     [
+      "Crown",
+      "crown"
+     ],
+     [
+      "A bit of both",
+      "both"
+     ],
+     [
+      "Patchy (coin-sized bald spots)",
+      "patchy"
+     ],
+     [
+      "Nowhere yet, but I'd like to prevent future hair loss",
+      "not_yet"
+     ]
+    ]
+   },
+   {
+    "name": "familyExperience",
+    "shownWhen": "where includes not_yet (replaces expectedResult)",
+    "title": "Has anyone in your family experienced hair loss? Select all that apply.",
+    "multi": true,
+    "answers": [
+     [
+      "Parent(s)",
+      "parents"
+     ],
+     [
+      "Sibling(s)",
+      "siblings"
+     ],
+     [
+      "Father’s side of the family",
+      "fathers"
+     ],
+     [
+      "Mother’s side of the family",
+      "mothers"
+     ],
+     [
+      "No one in my family",
+      "no_one"
+     ],
+     [
+      "I’m not sure",
+      "not_sure"
+     ]
+    ]
+   },
+   {
+    "name": "expectedResult",
+    "shownWhen": "where does not include not_yet",
+    "title": "What results are you expecting from your treatment?",
+    "multi": true,
+    "answers": [
+     [
+      "I want to prevent hair loss",
+      "prevention"
+     ],
+     [
+      "I want to regrow my hair",
+      "regrow"
+     ],
+     [
+      "I want thicker hair",
+      "hair-thickening"
+     ]
+    ]
+   },
+   {
+    "name": "treatmentType",
+    "shownWhen": "where does not include not_yet",
+    "title": "Do you prefer taking pills or using topical treatments (foams/solutions/gels)?",
+    "multi": false,
+    "tip": "We offer treatments in several forms, and take your preferences into account. That said, we’ll always recommend the most effective treatment for you, regardless of format.",
+    "answers": [
+     [
+      "Topicals (applied directly to head)",
+      "topical"
+     ],
+     [
+      "Pills (taken orally)",
+      "pills"
+     ],
+     [
+      "I'm not sure / I don't have a preference",
+      "dontCare"
+     ]
+    ]
+   },
+   {
+    "name": "activeIngredientInterests",
+    "title": "Are you interested in any specific active ingredients?",
+    "multi": true,
+    "answers": [
+     [
+      "Products with finasteride (e.g., Propecia®) [hidden when where = not_yet]",
+      "finasteride"
+     ],
+     [
+      "Products with minoxidil (e.g., Rogaine®)",
+      "minoxidil"
+     ],
+     [
+      "Products with tretinoin",
+      "tretinoin"
+     ],
+     [
+      "Products with saw palmetto",
+      "saw_palmetto"
+     ],
+     [
+      "Products with ketoconazole",
+      "ketoconazole"
+     ],
+     [
+      "I'm not sure / I'm interested in any effective ingredients!",
+      "not_sure"
+     ]
+    ]
+   },
+   {
+    "name": "otcInterests",
+    "title": "Are you interested in any specific types of over-the-counter products?",
+    "multi": true,
+    "answers": [
+     [
+      "Vitamins and supplements",
+      "vitamins_supplements"
+     ],
+     [
+      "Hair care products (shampoo and conditioner)",
+      "hair_care"
+     ],
+     [
+      "Hair styling products (pomade)",
+      "hair_styling"
+     ],
+     [
+      "I'm not interested in any specific over-the-counter products",
+      "not_interested"
+     ]
+    ]
+   },
+   {
+    "name": "dandruff",
+    "title": "Do you experience dandruff symptoms on your scalp? Flaking, itching, redness, or burning.",
+    "multi": false,
+    "answers": [
+     [
+      "Yes",
+      1
+     ],
+     [
+      "No",
+      0
+     ]
+    ]
+   }
+  ],
+  "rules": {
+   "helpers": {
+    "S": "where includes not_yet",
+    "O": "where includes both or crown",
+    "B": "treatmentType includes pills",
+    "R": "(S or O) and not B",
+    "L": "activeIngredientInterests includes tretinoin, or otcInterests includes vitamins_supplements",
+    "N": "B and O"
+   },
+   "include": {
+    "finasteride (id 211)": "not S",
+    "minoxidil foam (id 239)": "R and not L",
+    "Minoxidil+ Spray (id 11840)": "R and L",
+    "ketoconazole shampoo (id 240)": "dandruff = Yes, or activeIngredientInterests includes ketoconazole",
+    "thickening shampoo (499) and conditioner (500)": "default rule set: S or otcInterests includes hair_care. 'LBS' campaign rule set: also when expectedResult includes hair-thickening",
+    "thickening pomade (682)": "otcInterests includes hair_styling",
+    "oral minoxidil (989)": "(where includes hairline and (B or treatmentType = dontCare)) or N",
+    "Daily Hair Defense Supplement (2874)": "activeIngredientInterests includes saw_palmetto, or otcInterests includes vitamins_supplements"
+   },
+   "special": "where includes patchy -> askDr: no products, browser sent to the request-a-consultation flow. Otherwise the product ids are joined into /quiz/lead?products=...",
+   "ruleSetChoice": "The 'LBS' rule set is used only when the utm campaign contains 'lb' (and not 'sb') and the source is not facebook; otherwise the default ('SBS') rule set."
+  }
+ }
+}

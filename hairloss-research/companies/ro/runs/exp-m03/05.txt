@@ -1,0 +1,16 @@
+STEP 05 click "Continue"
+URL: https://start.ro.co/fxdxbh/online-visit/28
+TITLE: Online Visit
+
+--- VISIBLE TEXT ---
+What’s the main reason you’re looking for hair loss solutions now?
+Over-the-counter solutions didn't work for me
+I want to maximize results with a new or additional product
+I want an easier or more convenient solution (like a pill or a spray)
+I’ve experienced side effects with past solutions
+
+--- CONTROLS ---
+  radio (4): Over-the-counter solutions didn't work for me [false]  ·  I want to maximize results with a new or additional product [false]  ·  I want an easier or more convenient solution (like a pill or a spray) [false]  ·  I’ve experienced side effects with past solutions [false]
+
+--- LINKS ---
+

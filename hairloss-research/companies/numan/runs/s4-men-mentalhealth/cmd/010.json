@@ -1,0 +1,1 @@
+{"steps":[{"do":"fill","selector":"textarea, input[type=text], input[type=number]","value":"Sertraline 50 mg once a day"},{"do":"click","text":"Next","settle":2800},{"do":"snap","settle":600}]}

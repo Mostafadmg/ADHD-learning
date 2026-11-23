@@ -1,0 +1,89 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 8007,
+    "inputConfig": {
+     "options": [
+      {
+       "label": "Yes",
+       "value": "Yes"
+      },
+      {
+       "label": "No",
+       "value": "No"
+      }
+     ]
+    },
+    "inputType": "single_select_button",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 180004,
+    "inputConfig": {
+     "displayTextWithImage": [
+      {
+       "header": "Why are we asking?",
+       "imageKey": "person-with-pets",
+       "text": [
+        {
+         "part": "Some of our treatments contain minoxidil, which is toxic to cats and dogs. The main risk is them licking it off fingers/hair after use."
+        }
+       ]
+      }
+     ],
+     "renderConditions": [
+      {
+       "operator": "eq",
+       "questionId": 8007,
+       "value": "Yes"
+      }
+     ]
+    },
+    "inputType": "display_text_with_image",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 180005,
+    "inputConfig": {
+     "content": "\n**Capsules are less likely to have a risk**, as the product doesn’t sit on your hair in the same way. They’re still toxic if your pet ingests the capsule.\n\n\nKeep all medication out of reach of your pets.\n",
+     "renderConditions": [
+      {
+       "operator": "eq",
+       "questionId": 8007,
+       "value": "Yes"
+      }
+     ]
+    },
+    "inputType": "markdown",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Do you live with pets?",
+  "type": "question"
+ }
+}

@@ -1,0 +1,21 @@
+COMMAND 016 {"steps":[{"do":"fill","selector":"textarea, input[type=text], input[type=number]","value":"Slightly thinner hair on forearms over the last 2 years."},{"do":"click","text":"Next","settle":2800},{"do":"snap","settle":600}]}
+URL: https://www.numan.com/subscribe/hair-loss/4b4e30d9-9042-49e8-a32b-7557d60d5aec/sq/clarify_psa
+TITLE: If you wish to be considered for finasteride you must tell your GP that you are taking finasteride so that they can interpret your results accordingly. | Numan
+
+--- VISIBLE TEXT ---
+51%
+If you wish to be considered for finasteride you must tell your GP that you are taking finasteride so that they can interpret your results accordingly.
+I understand and would like to be considered for finasteride containing preparations.
+I do not wish to be considered for finasteride containing preparations.
+Back
+
+--- CONTROLS ---
+  radio (2):
+    - I understand and would like to be considered for finasteride containing preparations. (name: clarify_psa)
+    - I do not wish to be considered for finasteride containing preparations. (name: clarify_psa)
+  button (1):
+    - Back
+
+--- LINKS ---
+  link (1):
+    - Visit the main page -> /

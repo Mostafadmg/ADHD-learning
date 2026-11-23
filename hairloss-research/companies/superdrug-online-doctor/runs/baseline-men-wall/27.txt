@@ -1,0 +1,47 @@
+STEP 27 click button:has-text('Next'):visible
+URL: https://onlinedoctor.superdrug.com/assessment/147929#/delivery?step=delivery
+
+ 
+Help?
+Hair loss consultation
+Questionnaire	Your request	Delivery	Sign in or Register	Your Order	Payment Successful
+Please note:  This service is only available in the UK.
+Choose your delivery
+Free Standard Delivery
+FREE
+
+Someone must be home to sign for your package, but it doesn't need to be you. We dispatch orders every day from Monday to Sunday. Please keep an eye out for tracking information which is provided directly by our courier via email. This will provide more information on when within the estimated delivery dates you can expect your order. You cannot have your order delivered to an Superdrug store, If you wish to collect, you must choose Click & Collect. Do not submit delivery requests with Royal Mail this will cause delays and invalidate claims.
+
+Estimated delivery: Friday, 27 Nov 2026 - Sunday, 29 Nov 2026
+
+Deliver without a signature
+
+By choosing this, you confirm it’s safe to leave the parcel at your address without a signature. The courier may leave it in a safe place, with a neighbour, or post it through your letterbox if it fits.
+
+Superdrug Pharmacy Collect
+FREE
+
+Collect directly from a Superdrug Pharmacy in as little as 2 hours after your order is approved. Same day Click & Collect is available for orders approved before 2pm. Check the operating hours of your chosen Superdrug Pharmacy before collecting. If you wish to collect your order sooner, please contact the Pharmacy directly. Please note: Superdrug pharmacies are closed on Sundays.
+
+Available to collect: Tuesday, 24 Nov 2026, after 11am
+
+Find a location near
+ Search
+Express Delivery
+£3.99
+
+Someone must be home to sign for your package, but it doesn't need to be you. We dispatch orders every day from Monday to Sunday. If your order is approved before 4pm, it will be delivered the next day. Orders approved after 3pm will arrive in 2 days. Please keep an eye out for tracking information which is provided directly by our courier via email. This will provide more information on when within the estimated delivery dates you can expect your order. You cannot have your order delivered to an Superdrug store, If you wish to collect, you must choose Click & Collect. Do not submit delivery r
+
+Estimated delivery: Wednesday, 25 Nov 2026
+
+Deliver without a signature
+
+By choosing this, you confirm it’s safe to leave the parcel at your address without a signature. The courier may leave it in a safe place, with a neighbour, or post it through your letterbox if it fits.
+
+Secure payment
+Authorised and regulated
+Regulation | Privacy notice | Terms and Conditions | Cookie policy | Cookie Preferences
+© 2026 Superdrug Online Doctor. All rights reserved | Registered Company Number: 07392646
+
+--- CHECKED ---
+delivery=on

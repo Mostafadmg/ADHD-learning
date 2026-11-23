@@ -1,0 +1,2 @@
+{ "start": "https://www.hims.com/c/hl", "locale": "en-US", "timezone": "America/New_York",
+  "steps": [ {"do":"wait","ms":3000} ] }

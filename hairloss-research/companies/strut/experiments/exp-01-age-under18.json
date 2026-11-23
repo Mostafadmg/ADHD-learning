@@ -1,0 +1,20 @@
+{
+ "start": "https://start.struthealth.com/f/6aa3d578f415d1603a6e0c85",
+ "locale": "en-US",
+ "timezone": "America/Chicago",
+ "note": "age: 31-45 -> Under 18 (stop expected; walk ends at the stop screen)",
+ "steps": [
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "Under 18"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+STEP 06 goto "https://www.keeps.com/quiz/results?products=211%2C239"
+URL: https://www.keeps.com/quiz
+TITLE: Take the Hair Loss Quiz | Keeps
+
+--- VISIBLE TEXT ---
+EXCLUSIVE OFFER: UP TO 50% OFF FIRST ORDER
+
+Finally, get the right treatment
+for your hair loss.
+
+Takes approximately 1 min
+
+Answer a few questions to see if Keeps is right for you and we'll recommend a plan based on your results.
+
+CLINICALLY PROVEN FORMULA
+
+GUIDANCE FROM HAIR LOSS EXPERTS
+
+AFFORDABLE TREATMENT OPTIONS
+
+Prescription treatments require a medical consultation
+
+GET STARTED
+
+Already know what you're looking for?
+Browse our products
+
+--- CONTROLS ---
+  button (2): GET STARTED  ·  Browse our products
+
+--- LINKS ---
+

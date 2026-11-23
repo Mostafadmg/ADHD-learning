@@ -1,0 +1,421 @@
+=== PRODUCT 10366728405040 Sons Minoxidil spray | ppuLabel day | skuOverride 3756
+  keys ['id', 'title', 'imageURL', 'pricePerUnitLabel', 'usps', 'options', 'variants', 'pricing', 'moreInformation', 'skuOverride', 'metadata']
+  usps ['Applied to the scalp twice a day', 'Stimulates hair growth', 'Requires continued use for results']
+  options [{'name': 'Pack size', 'values': ['1 Month', '3 months', '6 months']}, {'name': 'Strength', 'values': ['5%']}]
+  metadata {'productTitle': 'Sons Minoxidil Spray', 'subtitle': 'Minoxidil 5% spray', 'banner': '71% showed improved hair density³', 'timeLabel': 'a week'}
+  V {'id': 51041735475248, 'sku': 4491, 'title': 'Sons Minoxidil spray - 1 Month / 5%', 'inStock': False, 'currency': '£', 'pricePerUnitQuantity': 1, 'pricePerUnitLabelAlt': 'day', 'option1': '1 Month', 'option2': '5%', 'option3': '', 'price': '33.00', 'subscriptionFrequency': ''}
+  V {'id': 51041696481328, 'sku': 4297, 'title': 'Sons Minoxidil spray - 3 months / 5%', 'inStock': False, 'currency': '£', 'pricePerUnitQuantity': 1, 'pricePerUnitLabelAlt': 'day', 'option1': '3 months', 'option2': '5%', 'option3': '', 'price': '54.00', 'subscriptionFrequency': ''}
+  V {'id': 51041696514096, 'sku': 4490, 'title': 'Sons Minoxidil spray - 6 months / 5%', 'inStock': False, 'currency': '£', 'pricePerUnitQuantity': 1, 'pricePerUnitLabelAlt': 'day', 'option1': '6 months', 'option2': '5%', 'option3': '', 'price': '99.00', 'subscriptionFrequency': ''}
+  pricing [{"dosage": "1 Month", "tiers": [{"label": "1 month", "price": 33, "pricePerUnit": 33, "pricePerWeekLabel": "Price per week", "pricePerWeek": 7.7}]}, {"dosage": "3 months", "tiers": [{"label": "3 month", "price": 54, "pricePerUnit": 54, "pricePerWeekLabel": "Price per week", "pricePerWeek": 12.6}]}, {"dosage": "6 months", "tiers": [{"label": "6 months", "price": 99, "pricePerUnit": 99, "pricePerWeekLabel": "Price per week", "pricePerWeek": 23.1}]}]
+  MI: Description =>
+Sons Minoxidil 5% Solution, Spray contains minoxidil, one of the few clinically established medicines used to treat male pattern hair loss. 
+It is applied directly to affected areas of the scalp and works by increasing the supply of blood and nutrients to hair follicles. This helps stimulate hair growth and may slow the process of hair loss. 
+The patient information leaflet can be found [LINK https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_Minoxidil_MA_Leaflet_10_Web.pdf?v=1610549768] here .
+  MI: Ingredients =>
+Active ingredient: Minoxidil 5% w/v. 
+ Excipients (inactive ingredients): ethanol 96%, propylene glycol and purified water.
+  MI: Directions =>
+The solution comes in a small bottle with a pump. Use the pump to apply 1ml of the solution to your scalp each morning and night. 
+It is important to apply it only to dry scalp and wash your hands after use. 
+Allow the solution to dry completely before using other hair products or going to bed, and avoid washing your hair for at least 4 hours after application . 
+It is important to use Minoxidil consistently , as this helps maintain its effect. 
+If you miss a dose, take the next dose at the usual time. Do not take a double dose. 
+If you miss an application, continue with the next scheduled dose. Do not apply extra solution. 
+If accidentally swallowed, seek urgent medical advice. 
+This medicine is for external use on the scalp only. 
+Avoid contact with the eyes, mouth, or broken or irritated skin. 
+Avoid inhaling the spray during application. 
+You must continue to use Minoxidil 5% for the treatment to work.
+  MI: FAQS =>
+How effective is Minoxidil 5% Spray? 
+Clinical studies have shown that many men experience improvement in their hair loss while using minoxidil consistently. In one study, 71% showed improved hair density over 16 weeks and in another study, 84% of patients found the treatment effective over 52 weeks. Individual results vary, and not everyone will respond to treatment. 
+ How long does it take to work? 
+The treatment begins working when you start using it, but visible results may not be noticed for between 3 and 9 months. 
+You will usually need to use Minoxidil continuously for at least 6 to 12 months before assessing whether it is working for you. Continued treatment is required to maintain any benefits. If treatment is stopped, hair loss will generally begin to return over time. 
+ Can I use Minoxidil with Finasteride? 
+Yes. Many men use Minoxidil alongside Finasteride. If clinically appropriate, combination treatment may provide additional benefit compared with either treatment alone. 
+ Why am I shedding more hair when I start treatment? 
+Temporary increased shedding can occur during the first few weeks or months of treatment. This is a recognised effect of minoxidil and is usually temporary as the hair growth cycle adjusts. 
+ Is Minoxidil suitable for everyone? 
+No. Minoxidil is intended for men aged 18 years and over with male pattern hair loss and may not be suitable if you: 
+are allergic to any of the ingredients 
+have high blood pressure or a heart condition 
+have an infected, irritated or inflamed scalp 
+have psoriasis or sunburn affecting the scalp 
+have a dressing or bandage on the scalp 
+have a fully shaved scalp 
+ Is Minoxidil toxic to pets? 
+Yes. Minoxidil can be highly toxic to cats and may also be harmful to other pets. Store the product safely and prevent pets from contacting the product, treated scalp areas or contaminated bedding and fabrics.
+  MI: Warnings =>
+Keep away from pets, particularly cats, as accidental exposure can be serious or fatal. 
+ Do not use Minoxidil: 
+if you are allergic to minoxidil or any of the other ingredients of this medicine 
+if you are a female 
+if you are under the age of 18 or over the age of 65 
+if you are using any other medicines on the scalp 
+if you have any kind of dressing or bandage on your scalp 
+if you suffer from sudden or uneven hair loss 
+if you have any condition that affects your scalp, including psoriasis (an itchy inflammatory skin condition), sunburn, shaved scalp, or if your scalp skin is damaged by scars or burns, since no hair roots are present 
+if you have total baldness or complete loss of all body hair 
+if you have any signs of cardiovascular disease or heart rhythm problems 
+if you suffer from high blood pressure 
+if you have a red, inflamed or painful scalp 
+if you do not know why you are losing your hair 
+if you are not sure if your hair loss is hereditary 
+ You should stop Minoxidil and consult a doctor if: 
+you are found to have low blood pressure 
+you develop chest pain, a faster heartbeat, weakness or dizziness 
+you experience sudden and unexplained weight gain 
+you develop swollen hands or feet 
+you have persistent redness or irritation of the scalp 
+you experience any other unexpected new symptoms 
+ Possible side effects 
+ Very common (may affect more than 1 in 10 people): 
+headache 
+ Common (may affect up to 1 in 10 people): 
+itching 
+increased hair growth beyond the scalp (including facial hair growth in women) 
+inflammatory skin reactions, including acneiform rash and skin rash 
+shortness of breath or difficulty breathing 
+swollen arms and legs 
+weight gain 
+high blood pressure 
+irritation of the scalp such as stinging, burning, dryness, itching, scaling, or infected and inflamed hair follicles 
+ Uncommon (may affect up to 1 in 100 people): 
+dizziness 
+nausea 
+ Rare (may affect up to 1 in 1,000 people): 
+change in hair texture. If this happens, you should stop using Minoxidil.
+
+=== PRODUCT 10366685872176 Dual Action - Tablet + Spray | ppuLabel day | skuOverride 3756
+  keys ['id', 'defaultVariantSku', 'title', 'imageURL', 'pricePerUnitLabel', 'usps', 'options', 'variants', 'moreInformation', 'skuOverride', 'metadata']
+  usps ['Daily tablet and twice-daily spray', 'Can slow or promote hair regrowth in some men', 'Treatment only available following clinical suitability']
+  options [{'name': 'Pack size', 'values': ['3 months', '6 months']}]
+  metadata {'productTitle': 'Dual Action - Tablet + Spray', 'subtitle': 'Finasteride 1mg tablet + Minoxidil 5% spray', 'banner': '94%\xa0experience an improvement in hair loss¹', 'timeLabel': 'a week', 'displayOrder': 1}
+  V {'id': 51041633796144, 'sku': 4497, 'title': 'Dual Action - Tablet + Spray - 3 months', 'inStock': False, 'currency': '£', 'pricePerUnitQuantity': 1, 'pricePerUnitLabelAlt': 'day', 'option1': '3 months', 'option2': '', 'option3': '', 'price': '106.00', 'subscriptionFrequency': ''}
+  V {'id': 51041633828912, 'sku': 4498, 'title': 'Dual Action - Tablet + Spray - 6 months', 'inStock': True, 'currency': '£', 'pricePerUnitQuantity': 1, 'pricePerUnitLabelAlt': 'day', 'option1': '6 months', 'option2': '', 'option3': '', 'price': '189.00', 'subscriptionFrequency': ''}
+  pricing null
+  MI: Description =>
+This combination pairs two licensed treatments for male pattern hair loss that work in different ways: 
+ Finasteride 1mg tablets: A medicine that reduces DHT (dihydrotestosterone), a hormone involved in hair loss. 
+ Minoxidil 5% solution: A topical treatment applied to the scalp that increases blood supply to hair follicles. 
+The Patient Information Leaflet (PIL) for Minoxidil can be found [LINK https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_Minoxidil_MA_Leaflet_10_Web.pdf?v=1610549768] here . 
+The Patient Information Leaflet (PIL) for Finasteride can be found [LINK https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Finasteride_PIL_04.06.pdf?v=1781187217] here .
+  MI: Ingredients =>
+Finasteride 1mg tablets 
+ Active ingredient: Finasteride 1mg. 
+ Excipients (inactive ingredients): Lactose monohydrate, maize starch pregelatinised, docusate sodium, iron oxide yellow (E172), sodium starch glycolate (type A), microcrystalline cellulose, colloidal anhydrous silica, magnesium stearate, purified water, hydroxypropyl cellulose, hypromellose, talc, titanium dioxide (E171), iron oxide red (E172) and iron oxide yellow (E172). 
+ Minoxidil 5% solution 
+ Active ingredient: Minoxidil 5% w/v. 
+ Excipients (inactive ingredients): Ethanol 96%, propylene glycol and purified water.
+  MI: Directions =>
+Finasteride 1mg tablets 
+Take 1 tablet once daily, with or without food. 
+Swallow the tablet whole. Do not crush or break the tablet. 
+If you miss a dose, take the next dose at the usual time. Do not take a double dose. 
+ Minoxidil 5% solution 
+Use the pump to apply 1ml of solution to the scalp each morning and night. 
+Apply only to a dry scalp . 
+Wash your hands after application. 
+Allow the solution to dry completely before using other hair products or going to bed. 
+Avoid washing your hair for at least 4 hours after application . 
+If you miss an application, continue with the next scheduled dose. Do not apply extra solution. 
+This medicine is for external use on the scalp only. 
+Avoid contact with the eyes, mouth, or broken or irritated skin. 
+Avoid inhaling the spray during application. 
+If accidentally swallowed, seek urgent medical advice. 
+You must continue to use both medicines consistently for the treatment to work.
+  MI: FAQS =>
+How effective is finasteride and minoxidil? 
+Finasteride and minoxidil are two of the most commonly used treatments for male pattern hair loss. They work in different ways and may be used together when clinically appropriate. 
+In one 12‑month randomised study involving 450 men with male pattern hair loss (Hu et al., Dermatologic Therapy, 2015), a higher proportion of patients experienced improvement when finasteride and minoxidil were used together compared with either treatment alone. Individual results varied, and not all patients responded to treatment. 
+Hair growth is gradual and it may take several months before any improvement becomes noticeable. Continued treatment is usually required to maintain any benefits. 
+ How long does it take to work? 
+The treatment begins working when you start using it, but visible results may not be noticed for between 3 and 9 months. 
+You will usually need to take finasteride and minoxidil continuously for at least 6 to 12 months before assessing whether it is working for you. Continued treatment is required to maintain any benefits. If treatment is stopped, hair loss will generally begin to return over time. 
+ Can I use minoxidil with finasteride? 
+Yes. Many men use minoxidil alongside finasteride. If clinically appropriate, combination treatment may provide additional benefit compared with either treatment alone. 
+ Why am I shedding more hair when I start treatment? 
+Temporary increased shedding can occur during the first few weeks or months of treatment. This is a recognised effect of minoxidil and is usually temporary as the hair growth cycle adjusts. 
+ Is minoxidil and finasteride suitable for everyone? 
+No. This treatment is intended for men aged 18 years and over with male pattern hair loss. 
+Minoxidil may not be suitable if you: 
+Are allergic to any of the ingredients. 
+Have high blood pressure or a heart condition. 
+Have an infected, irritated or inflamed scalp. 
+Have psoriasis or sunburn affecting the scalp. 
+Have a dressing or bandage on the scalp. 
+Have a fully shaved scalp. 
+Do not take finasteride if you: 
+Are allergic to finasteride or any of the ingredients. 
+Are a woman. 
+Are already taking finasteride or dutasteride for benign prostatic hyperplasia (BPH). 
+Your partner is trying to become pregnant. 
+ Is minoxidil toxic to pets? 
+Yes. Minoxidil can be highly toxic to cats and may also be harmful to other pets. Store the product safely and prevent pets from contacting the product, treated scalp areas or contaminated bedding and fabrics. 
+ Can finasteride affect fertility or sexual function? 
+Yes. Finasteride can cause sexual side effects in some men, including reduced sex drive (libido), erectile dysfunction and problems with ejaculation. 
+Some patients have reported sexual side effects that continued after treatment was stopped. The MHRA has also advised that sexual dysfunction may contribute to mood-related symptoms in some people. 
+Finasteride has been associated with low mood, depression and suicidal thoughts. If you experience any changes in your mood, mental wellbeing or sexual function while taking finasteride, speak to your healthcare professional. 
+Finasteride has also been associated with reduced semen quality and fertility problems in some men. Available evidence suggests these effects are generally reversible after discontinuing treatment. 
+ Does finasteride cause depression? 
+Finasteride has been associated with depression, suicidal thoughts and sexual dysfunction. 
+Depression may include feelings of low self-esteem, loss of interest in activities, hopelessness, tiredness, headaches and disturbed sleep patterns. 
+If you develop suicidal thoughts, stop taking finasteride immediately and seek urgent medical help. If you require urgent help call 111, 999 or attend A&amp;E.
+  MI: Warnings =>
+Important MHRA safety information for finasteride 
+The MHRA has highlighted reports of psychiatric side effects and sexual dysfunction in patients taking finasteride. 
+Finasteride has been associated with depressed mood, depression, suicidal thoughts and sexual dysfunction. 
+Sexual side effects may include reduced sex drive, erectile dysfunction and ejaculation disorders. 
+Some patients have reported sexual side effects that continued after stopping treatment. 
+You will be provided with a Patient Information Leaflet and a Finasteride Patient Card. Please read both. 
+Tell your clinician before starting treatment if you have a personal history of depression, low mood or suicidal thoughts. 
+If you experience sexual dysfunction while taking finasteride, contact your healthcare professional. 
+If you develop depressed mood, depression or suicidal thoughts while taking finasteride, stop treatment and contact a healthcare professional as soon as possible. 
+If you feel at risk of harming yourself, or have seriously harmed yourself, call 999 or seek emergency medical help immediately. 
+ Keep minoxidil solution away from pets 
+Minoxidil can be highly toxic to cats and may also harm other pets. Store it securely and keep pets away from the product, your treated scalp and any bedding or fabric it may have touched. 
+ Talk to your doctor or pharmacist before starting treatment if: 
+You are allergic to finasteride, minoxidil or any ingredient in either product. 
+You are female. 
+You are under 18 years old. 
+You are already taking finasteride or dutasteride for a prostate condition. 
+You are using any other medicine on your scalp. 
+You have a dressing or bandage on your scalp. 
+You have sudden or uneven hair loss, total baldness, or unexplained hair loss. 
+You have a scalp condition such as psoriasis, sunburn, damaged skin, redness, inflammation or scalp pain. 
+You have signs of cardiovascular disease, a heart rhythm problem or high blood pressure. 
+You are due to have a PSA blood test. 
+ Pregnancy and fertility 
+Finasteride should not be taken by women. 
+Women who are pregnant or trying to become pregnant should not handle crushed or broken finasteride tablets. 
+Whole coated tablets can be handled normally. 
+If contact occurs with a crushed or broken tablet during pregnancy, seek medical advice. 
+Infertility has been reported in some men taking long-term finasteride. Semen quality generally improves after stopping treatment. 
+ Stop treatment and contact a doctor if you experience: 
+Signs of an allergic reaction, including swelling of the lips, face, tongue or throat, difficulty swallowing, hives or difficulty breathing. Seek urgent medical attention immediately. 
+Depression or feelings of severe sadness, hopelessness or worthlessness. 
+Breast lumps, pain, enlargement or nipple discharge. 
+Low blood pressure, chest pain, a faster heartbeat, weakness, dizziness, sudden unexplained weight gain, swollen hands or feet, or persistent scalp irritation. 
+Any other unexpected new symptom. 
+ Possible side effects of finasteride 
+ Uncommon (up to 1 in 100 people): 
+Difficulty getting or keeping an erection. 
+Reduced desire for sex. 
+Changes in ejaculation, including reduced semen volume. 
+ Not known (frequency cannot be estimated): 
+Breast swelling or tenderness. 
+Testicular pain. 
+Blood in semen. 
+Palpitations. 
+Persistent erectile, libido or ejaculation problems after stopping treatment. 
+Male infertility and/or reduced semen quality. 
+Changes in liver function seen on blood tests. 
+Anxiety. 
+Suicidal thoughts. 
+ Possible side effects of minoxidil 5% solution 
+ Very common (more than 1 in 10 people): 
+Headache. 
+ Common (up to 1 in 10 people): 
+Itching. 
+Increased hair growth beyond the scalp. 
+Skin reactions including acne-like rash. 
+Shortness of breath. 
+Swollen arms and legs. 
+Weight gain. 
+High blood pressure. 
+Scalp irritation including stinging, burning, dryness, itching, scaling or inflamed hair follicles. 
+ Uncommon (up to 1 in 100 people): 
+Dizziness. 
+Nausea. 
+ Rare (up to 1 in 1,000 people): 
+Change in hair texture. 
+If any side effect becomes serious, or you notice a side effect not listed here, speak to your doctor or pharmacist.
+
+=== PRODUCT 10366498406448 Dual Action - Tablets | ppuLabel day | skuOverride 3756
+  keys ['id', 'title', 'imageURL', 'pricePerUnitLabel', 'usps', 'options', 'variants', 'moreInformation', 'skuOverride', 'metadata']
+  usps ['Two tablets once a day', 'Lowers DHT and boosts blood flow to follicles', 'Targets hair loss in two ways']
+  options [{'name': 'Pack size', 'values': ['3 months', '6 months']}]
+  metadata {'productTitle': 'Dual Action - Tablets', 'subtitle': 'Finasteride 1mg tablet + Minoxidil 2.5mg tablet', 'banner': 'We recommend as an oral alternative to the classic combo', 'unitLabel': 'tablet', 'timeLabel': 'a week', 'displayOrder': 2}
+  V {'id': 51040466501680, 'sku': 4499, 'title': 'Dual Action - Tablets - 3 months', 'inStock': False, 'currency': '£', 'pricePerUnitQuantity': 1, 'pricePerUnitLabelAlt': 'day', 'option1': '3 months', 'option2': '', 'option3': '', 'price': '106.00', 'subscriptionFrequency': ''}
+  V {'id': 51040466534448, 'sku': 4500, 'title': 'Dual Action - Tablets - 6 months', 'inStock': False, 'currency': '£', 'pricePerUnitQuantity': 1, 'pricePerUnitLabelAlt': 'day', 'option1': '6 months', 'option2': '', 'option3': '', 'price': '189.00', 'subscriptionFrequency': ''}
+  pricing null
+  MI: Description =>
+This combination pairs a licensed treatment for male pattern hair loss with a treatment used off-label for hair loss: 
+ Finasteride 1mg (tablet, taken orally): a medicine licensed to treat male pattern hair loss in adult men. It works by reducing DHT, a hormone involved in hair loss. 
+ Minoxidil 2.5mg (tablet, taken orally): a medicine originally licensed for severe high blood pressure. When prescribed for hair loss it is used off-label, meaning it is not licensed in the UK specifically for androgenetic alopecia. It is thought to improve blood flow to hair follicles and prolong the hair growth phase. Suitability for oral minoxidil is assessed individually by your clinician. 
+The patient information leaflet can be found [LINK https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Finasteride_PIL_04.06.pdf?v=1781187217] here for finasteride and [LINK https://www.medicines.org.uk/emc/files/pil.4294.pdf] here for minoxidil. Note that the minoxidil leaflet describes its licensed use for high blood pressure. Your clinician can explain how this relates to the lower, off-label dose used here.
+  MI: Ingredients =>
+Finasteride 1mg tablet: 
+ Active ingredient: Finasteride 1mg. 
+ Excipients (inactive ingredients): Tablet core: lactose monohydrate, maize starch pregelatinised, docusate sodium, iron oxide yellow (E172), sodium starch glycolate (type A), cellulose microcrystalline, silica colloidal anhydrous, magnesium stearate, water purified. Tablet coat: hydroxypropyl cellulose, hypromellose, talc, titanium dioxide (E171), iron oxide red (E172), iron oxide yellow (E172). 
+ Minoxidil 2.5mg tablet: 
+ Active ingredient: Minoxidil 2.5mg. 
+ Excipients (inactive ingredients): Excipients vary by manufacturer. Refer to the supplied PIL. Examples include lactose hydrous, microcrystalline cellulose, starch, colloidal silicon dioxide and magnesium stearate.
+  MI: Directions =>
+Finasteride 1mg tablet: 
+Take 1 tablet once daily, with or without food. Swallow the tablet whole. Do not crush or break the tablet. 
+If you miss a dose, take the next dose at the usual time. Do not take a double dose. 
+ Minoxidil 2.5mg tablet: 
+The starting dose used within this service is 2.5mg once daily. 
+Take at the same time each day, with or without food. 
+If you miss a dose, take the next dose at the usual time. Do not double doses. 
+You must continue to take both medicines for the treatment to work.
+  MI: FAQS =>
+How effective is finasteride and oral minoxidil together? 
+Finasteride and minoxidil work in different ways and may be used together when clinically appropriate. Because oral minoxidil is used off-label for hair loss, the evidence for this specific combination is more limited than for finasteride alone, or for finasteride combined with topical minoxidil. Individual results vary, and not everyone responds to treatment. Your clinician can talk you through the reasoning behind recommending this combination for you specifically. 
+ Does oral minoxidil work as well as topical minoxidil? 
+Yes. Research so far suggests it can work about as well. 
+Several studies have compared oral minoxidil with topical minoxidil. Three studies published between 2024 and 2025 found that both treatments improved hair thickness and hair growth by a similar amount. 
+One of these studies combined the results from multiple clinical trials and found no meaningful difference between oral and topical minoxidil at the doses tested. This research is still relatively new, and treatment responses vary between individuals. Speak to your clinician if you have questions about what this means for you. 
+ How long does it take to work? 
+The treatment begins working when you start taking it, but visible results may not be noticed for several months. You will usually need to take finasteride and oral minoxidil continuously for at least 6 to 12 months before assessing whether it is working for you. Continued treatment is required to maintain any benefits. If treatment is stopped, hair loss will generally begin to return over time. 
+ Why is oral minoxidil prescribed off-label for hair loss? 
+Although oral minoxidil is licensed for severe hypertension, clinicians may prescribe it off-label for hair loss at a much lower dose than normally used for high blood pressure when they believe it is appropriate and in the patient's best interests. 
+ Why am I shedding more hair when I start treatment? 
+Some people notice more hair shedding in the first few weeks or months of starting minoxidil. This can be alarming, but it is a recognised and usually temporary effect as older hairs are shed to make way for new growth. It does not necessarily mean treatment is not working, and not everyone experiences it. 
+Contact your clinician if shedding is severe, continues for an extended period, or you are concerned about the pattern of your hair loss changing. 
+ Will oral minoxidil lower my blood pressure? 
+Minoxidil lowers blood pressure by relaxing blood vessels. The dose used for hair loss is much lower than the dose used to treat hypertension, and evidence to date suggests most people with normal blood pressure do not experience a clinically significant drop at this lower dose. However, the evidence base is smaller and less mature than for the licensed hypertension use, and individual responses vary. 
+ Can finasteride affect fertility or sexual function? 
+Yes. Finasteride can cause sexual side effects in some men, including reduced sex drive (libido), erectile dysfunction and problems with ejaculation. 
+Some patients have reported sexual side effects that continued after treatment was stopped. The MHRA has also advised that sexual dysfunction may contribute to mood-related symptoms in some people. 
+Finasteride has been associated with low mood, depression and suicidal thoughts. If you experience any changes in your mood, mental wellbeing or sexual function while taking finasteride, speak to your healthcare professional. 
+Finasteride has also been associated with reduced semen quality and fertility problems in some men. Available evidence suggests these effects are generally reversible after discontinuing treatment. 
+ Does finasteride cause depression? 
+Finasteride has been associated with depression, suicidal thoughts and sexual dysfunction. 
+Depression may include feelings of low self-esteem, loss of interest in activities and feelings of hopelessness. Physical symptoms of depression may include headaches, tiredness and disturbed sleep patterns. 
+If you develop any suicidal thoughts, stop finasteride immediately and seek urgent help from your GP. If you require urgent help, call 111 or 999, or go to A&amp;E. 
+ Is finasteride and oral minoxidil suitable for everyone? 
+No. This combination is intended for adult men with male pattern hair loss and is only offered following individual clinical assessment. See the Warnings section below for who shouldn't take this combination, and who needs to discuss it with a clinician first.
+  MI: Warnings =>
+Important MHRA safety information for finasteride 
+MHRA has highlighted reports of psychiatric side effects and sexual dysfunction in patients taking finasteride. 
+Finasteride has been associated with depressed mood, depression, suicidal thoughts, and sexual dysfunction. 
+Sexual side effects may include reduced sex drive, erectile dysfunction, and ejaculation disorders. 
+Some patients have reported sexual side effects that continued after stopping treatment. 
+You will be given a Patient Information Leaflet and a Finasteride Patient Card. Please read both. 
+Tell your clinician before starting if you have a personal history of depression, low mood, or suicidal thoughts. 
+If you experience sexual dysfunction while taking finasteride, contact your healthcare professional for advice. 
+If you develop depressed mood, depression, or suicidal thoughts while taking finasteride, stop treatment and contact a healthcare professional as soon as possible. 
+If you feel at risk of harming yourself, or have seriously harmed yourself, call 999 or seek emergency medical help immediately. 
+ Important information about oral minoxidil 
+This treatment is prescribed off-label for hair loss in male pattern baldness following an assessment by a clinician and should not be used by women. 
+Tell your clinician before starting treatment if you have a history of heart disease, heart failure, chest pain (angina), a previous heart attack, kidney disease, or blood pressure problems. 
+Minoxidil can cause your body to retain salt and water, which may lead to swelling of the ankles, feet, hands or legs and unexpected weight gain. 
+Minoxidil can increase your heart rate and may cause palpitations. In some people, chest pain (angina) may occur or worsen. 
+Unwanted hair growth (hypertrichosis) is a very common side effect. This may affect the face, arms, legs or other areas of the body. 
+You may feel dizzy or light-headed when starting treatment, particularly when standing up quickly. Taking your dose in the evening may help reduce this effect. 
+ Do not take this combination if 
+you are allergic to finasteride, minoxidil, or any other ingredient in either product 
+you are female 
+you have phaeochromocytoma 
+you are already taking finasteride or dutasteride for a prostate condition (BPH) 
+your partner is trying to get pregnant 
+you have a history of heart disease, heart failure, angina, a previous heart attack, kidney disease, or blood pressure problems 
+ Stop treatment and contact a doctor if you experience 
+signs of an allergic reaction: swelling of the lips, face, tongue, or throat; difficulty swallowing; hives; breathing difficulties. Stop immediately and seek medical help. 
+depression, or feelings of severe sadness or worthlessness 
+changes in breast tissue, including lumps, pain, enlargement, or nipple discharge, which can be a sign of a serious condition 
+light-headedness, dizziness or faintness, particularly on standing (minoxidil) 
+signs of fluid retention, including swelling of the ankles, feet or hands, tighter-fitting rings, or unexplained weight gain 
+increasing breathlessness, wheeze, or unusual tiredness, especially with an existing heart condition 
+new chest pain, or existing chest pain (angina) becoming more frequent or severe 
+any other unexpected new symptom 
+ Possible side effects of finasteride 
+ Uncommon (up to 1 in 100 people): 
+difficulty getting or keeping an erection 
+reduced desire for sex 
+changes in ejaculation, for example a decrease in the amount of semen released. This does not appear to affect normal sexual function. 
+ Not known (frequency cannot be estimated from available data): 
+breast swelling or tenderness 
+testicular pain 
+blood in semen 
+palpitations 
+persistent erectile, libido, or ejaculation problems after stopping treatment 
+male infertility and/or poor semen quality 
+changes in liver function shown on a blood test 
+anxiety 
+suicidal thoughts 
+ Possible side effects of minoxidil tablet 
+Common side effects at the low dose used for hair loss: 
+increased hair growth on the face or body 
+headache 
+dizziness 
+ankle swelling 
+palpitations 
+ Possible side effects of minoxidil 2.5mg tablet listed in the patient information leaflet at the higher doses used for hypertension 
+These are included because they form part of the licensed product's known side-effect profile. Some are reported more often at hypertension doses than would be expected at the low dose used here, but you should still be aware of them. 
+ Very common (more than 1 in 10 people): 
+increased heart rate 
+inflammation of the lining that surrounds the heart 
+abnormal electrocardiogram (ECG) 
+increased hair growth 
+hair colour changes 
+ Common (up to 1 in 10 people): 
+accumulation of fluid around the heart 
+compression of the heart due to a build-up of fluid 
+fluid retention 
+gastrointestinal disorder 
+ Uncommon (up to 1 in 100 people): 
+accumulation of fluid between the layers of tissue that line the lungs and chest cavity 
+breast tenderness 
+ Rare (up to 1 in 1,000 people): 
+decrease in white blood cells 
+reduction in blood platelets, which increases the risk of bleeding or bruising 
+serious illness with blistering of the skin, mouth, eyes and genitals (Stevens-Johnson syndrome) 
+inflammation and blistering of the skin 
+rash 
+ Not known: 
+chest pain (angina) 
+swelling of the ankles, feet or fingers associated with or independent of weight gain 
+reduced kidney function resulting in increased creatinine and urea levels in your blood 
+extensive peeling and detachment of the skin on much of the body surface (toxic epidermal necrolysis) 
+If any side effect becomes serious, or you notice one that is not listed here, tell your doctor or pharmacist. It may help to note down what happened, when it started, and how long it lasted.
+
+=== PRODUCT 10362767376432 Minoxidil tablets | ppuLabel  | skuOverride 3756
+  keys ['id', 'defaultVariantSku', 'title', 'imageURL', 'pricePerUnitLabel', 'usps', 'options', 'variants', 'pricing', 'moreInformation', 'skuOverride', 'metadata']
+  usps ['One tablet a day', 'Boosts blood flow to hair follicles', 'Encourages thicker, fuller-looking hair']
+  options [{'name': 'Pack size', 'values': ['1 month', '3 months', '6 months']}, {'name': 'Strength', 'values': ['2.5mg']}]
+  metadata {'productTitle': 'Minoxidil 2.5mg tablets', 'subtitle': 'Minoxidil 2.5mg tablet', 'banner': 'we recommend as an oral alternative to topical minoxidil', 'timeLabel': 'a week'}
+  V {'id': 51020792234032, 'sku': 4492, 'title': 'Minoxidil tablets - 1 month / 2.5mg', 'inStock': False, 'currency': '£', 'pricePerUnitQuantity': 1, 'pricePerUnitLabelAlt': 'day', 'option1': '1 month', 'option2': '2.5mg', 'option3': '', 'price': '29.00', 'subscriptionFrequency': ''}
+  V {'id': 51020792266800, 'sku': 4493, 'title': 'Minoxidil tablets - 3 months / 2.5mg', 'inStock': False, 'currency': '£', 'pricePerUnitQuantity': 1, 'pricePerUnitLabelAlt': 'day', 'option1': '3 months', 'option2': '2.5mg', 'option3': '', 'price': '77.00', 'subscriptionFrequency': ''}
+  V {'id': 51020792299568, 'sku': 4494, 'title': 'Minoxidil tablets - 6 months / 2.5mg', 'inStock': True, 'currency': '£', 'pricePerUnitQuantity': 1, 'pricePerUnitLabelAlt': 'day', 'option1': '6 months', 'option2': '2.5mg', 'option3': '', 'price': '142.00', 'subscriptionFrequency': ''}
+  pricing [{"dosage": "1 month", "tiers": [{"label": "1 month", "price": 29, "pricePerUnit": 29, "pricePerWeekLabel": "Price per week", "pricePerWeek": 6.77}]}, {"dosage": "3 months", "tiers": [{"label": "3 month", "price": 77, "pricePerUnit": 77, "pricePerWeekLabel": "Price per week", "pricePerWeek": 17.97}]}, {"dosage": "6 months", "tiers": [{"label": "6 months", "price": 142, "pricePerUnit": 142, "pricePerWeekLabel": "Price per week", "pricePerWeek": 33.13}]}]
+  MI: Description =>
+Minoxidil 2.5mg tablets contain minoxidil, a medicine originally licensed for severe high blood pressure. When prescribed for hair loss it is used off-label, meaning it is not licensed in the UK specifically for androgenetic alopecia. 
+Minoxidil is thought to improve blood flow around hair follicles and prolong the hair growth phase. 
+Suitability is assessed individually by a clinician. Oral minoxidil may be considered for some patients with hair loss where the potential benefits outweigh the risks. 
+The patient information leaflet can be found [LINK https://www.medicines.org.uk/emc/files/pil.4294.pdf] here .
+
+=== PRODUCT 7894878814396 Propecia (branded Finasteride) | ppuLabel Tablet | skuOverride None
+  keys ['id', 'defaultVariantSku', 'title', 'imageURL', 'pricePerUnitLabel', 'usps', 'options', 'variants', 'moreInformation']
+  usps ['Oral tablet (one a day)', 'Shown to prevent hair loss in 90% of men', 'Can promote hair regrowth in some men']
+  options [{'name': 'Strength', 'values': ['1mg']}, {'name': 'Pack size', 'values': ['4 Weeks', '12 Weeks', '24 Weeks']}]
+  metadata None
+  V {'id': 42726836076732, 'sku': 3748, 'title': 'Propecia (branded Finasteride) - 1mg / 4 Weeks', 'inStock': True, 'currency': '£', 'option1': '1mg', 'option2': '4 Weeks', 'option3': '', 'price': '60.50', 'subscriptionFrequency': ''}
+  V {'id': 42726836142268, 'sku': 3750, 'title': 'Propecia (branded Finasteride) - 1mg / 12 Weeks', 'inStock': True, 'currency': '£', 'option1': '1mg', 'option2': '12 Weeks', 'option3': '', 'price': '148.50', 'subscriptionFrequency': ''}
+  V {'id': 42726836175036, 'sku': 3751, 'title': 'Propecia (branded Finasteride) - 1mg / 24 Weeks', 'inStock': True, 'currency': '£', 'option1': '1mg', 'option2': '24 Weeks', 'option3': '', 'price': '210.00', 'subscriptionFrequency': ''}
+  pricing null
+
+=== PRODUCT 7894878650556 Finasteride and Regaine hair loss bundle | ppuLabel Month | skuOverride None
+  keys ['id', 'defaultVariantSku', 'title', 'imageURL', 'pricePerUnitLabel', 'usps', 'options', 'variants', 'moreInformation']
+  usps ['Daily tablet and scalp foam', 'Can slow hair loss for up to 9/10 men', 'Can also promote hair regrowth in some men']
+  options [{'name': 'Strength', 'values': ['Finasteride and Regaine']}, {'name': 'Pack size', 'values': ['3 Months']}]
+  metadata None
+  V {'id': 42726835912892, 'sku': 4285, 'title': 'Finasteride and Regaine hair loss bundle - Finasteride and Regaine / 3 Months', 'inStock': True, 'currency': '£', 'option1': 'Finasteride and Regaine', 'option2': '3 Months', 'option3': '', 'price': '134.00', 'subscriptionFrequency': ''}
+  pricing null
+
+=== PRODUCT 7894878552252 Finasteride tablets (generic Propecia) | ppuLabel Tablet | skuOverride None
+  keys ['id', 'defaultVariantSku', 'title', 'imageURL', 'pricePerUnitLabel', 'usps', 'options', 'variants', 'moreInformation']
+  usps ['Stops hair loss for 90% of men', 'Finasteride 1mg single tablet taken daily', 'Available for delivery or collect same-day from pharmacies']
+  options [{'name': 'Purchase Type', 'values': ['One-off', 'Subscription']}, {'name': 'Strength', 'values': ['1mg']}, {'name': 'Pack size', 'values': ['4 Weeks', '12 Weeks', '24 Weeks']}]
+  metadata None
+  V {'id': 42726835585212, 'sku': 3740, 'title': 'Finasteride tablets (generic Propecia) - 1mg / 4 Weeks', 'inStock': True, 'currency': '£', 'option1': 'One-off', 'option2': '1mg', 'option3': '4 Weeks', 'price': '34.00', 'subscriptionFrequency': ''}
+  V {'id': 42726835585212, 'sku': 3777, 'title': 'Finasteride tablets (generic Propecia) - 1mg / 4 Weeks', 'inStock': True, 'currency': '£', 'option1': 'Subscription', 'option2': '1mg', 'option3': '4 Weeks', 'price': '28.0', 'subscriptionFrequency': '4 weeks'}
+  V {'id': 42726835650748, 'sku': 3742, 'title': 'Finasteride tablets (generic Propecia) - 1mg / 12 Weeks', 'inStock': True, 'currency': '£', 'option1': 'One-off', 'option2': '1mg', 'option3': '12 Weeks', 'price': '95.00', 'subscriptionFrequency': ''}
+  V {'id': 42726835650748, 'sku': 4232, 'title': 'Finasteride tablets (generic Propecia) - 1mg / 12 Weeks', 'inStock': True, 'currency': '£', 'option1': 'Subscription', 'option2': '1mg', 'option3': '12 Weeks', 'price': '80.0', 'subscriptionFrequency': '12 weeks'}
+  V {'id': 42726835683516, 'sku': 3743, 'title': 'Finasteride tablets (generic Propecia) - 1mg / 24 Weeks', 'inStock': True, 'currency': '£', 'option1': 'One-off', 'option2': '1mg', 'option3': '24 Weeks', 'price': '163.00', 'subscriptionFrequency': ''}
+  V {'id': 42726835683516, 'sku': 3779, 'title': 'Finasteride tablets (generic Propecia) - 1mg / 24 Weeks', 'inStock': True, 'currency': '£', 'option1': 'Subscription', 'option2': '1mg', 'option3': '24 Weeks', 'price': '138.0', 'subscriptionFrequency': '24 weeks'}
+  pricing null
+

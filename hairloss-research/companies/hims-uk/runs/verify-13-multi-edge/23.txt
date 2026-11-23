@@ -1,0 +1,22 @@
+STEP 23 click "Why these two? →"
+URL: https://app.forhims.co.uk/flow/a9a88e4a-89b9-47ae-8138-3a1acaa41594?t=hair&anon_flow_key=hair
+TITLE: Hims
+
+--- VISIBLE TEXT ---
+Finasteride and minoxidil are popular treatments often prescribed by dermatologists to treat hair loss.
+90%
+saw reduced shedding with finasteride.1
+
+80%
+experienced significant hair regrowth with minoxidil.2
+
+Sources
+
+How do I get them? →
+←
+
+--- CONTROLS ---
+  button (3): How do I get them? →  ·  ←  ·  Your answers
+
+--- LINKS ---
+  link (1): Navigate home -> /profile

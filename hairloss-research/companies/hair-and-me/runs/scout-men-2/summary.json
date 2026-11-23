@@ -52,6 +52,7 @@
    "baseline": "[[\"The Drops\", [], \"Applied directly to your scalp with a pipette either once or twice daily\"], [\"The Capsules\", [\"Most popular\"], \"Taken once daily before bed\"]]",
    "alsoIn": [],
    "alsoInRelated": [
+    "s2-m-pt-yes",
     "scout-women-2"
    ],
    "where": "changed-step"
@@ -63,9 +64,9 @@
    "key": "q9346.options",
    "where": "before-change",
    "alsoIn": [
+    "s2-m-gender-transwoman",
     "s2-m-htam-allover-ext",
-    "s2-m-htam-crown",
-    "s2-w-htaf-patches"
+    "s2-m-htam-crown"
    ]
   },
   {
@@ -165,7 +166,7 @@
    "alsoIn": [
     "s2-base-women-1",
     "s2-m-age-85",
-    "s2-m-htam-crown"
+    "s2-m-gender-transwoman"
    ]
   }
  ],

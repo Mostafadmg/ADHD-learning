@@ -1,0 +1,52 @@
+{
+ "heading": "Freshly Made, Potent, Customized For You.",
+ "body": "A prescription topical formula with up to 6 actives, designed to address women's hair loss.",
+ "activeIngredientsLabel": "Topical Actives: Spironolactone, Finasteride, Minoxidil, Tretinoin, Fluocinolone, Biotin",
+ "ingredients": [
+  {
+   "name": "Spironolactone 1%",
+   "body": "Anti-androgen that may block DHT receptors at the hair follicle.*"
+  },
+  {
+   "name": "Finasteride 0.25%",
+   "body": "Topical DHT blocker intended for localized 5-alpha reductase inhibition.*"
+  },
+  {
+   "name": "Minoxidil 0–7.5%",
+   "body": "Vasodilator that may increase blood flow and nutrient delivery to hair follicles.*"
+  },
+  {
+   "name": "Tretinoin + Biotin",
+   "body": "Retinoid enhancer and B-vitamin that may support follicle absorption and hair shaft strength.*"
+  },
+  {
+   "name": "Fluocinolone (optional)",
+   "body": "May help calm scalp irritation and clear build up.*"
+  }
+ ],
+ "safety": [
+  {
+   "title": "Common side effects",
+   "body": "Itching, burning, redness, flaking, dryness, scaling, peeling, stinging, changes in hair color or texture, irritation at the application site, and increased sun sensitivity."
+  },
+  {
+   "title": "Tell your healthcare provider",
+   "body": "Share any history of scalp conditions, allergies to topical medications, current prescriptions, pregnancy or breastfeeding status, and any history of low blood pressure or fainting."
+  },
+  {
+   "title": "Do not use if",
+   "body": "You are pregnant, planning to become pregnant, or breastfeeding. Finasteride-containing medications carry risk of fetal harm and must be avoided in those scenarios."
+  },
+  {
+   "title": "Seek medical care",
+   "body": "Severe scalp swelling, persistent rash, unexpected facial swelling, chest pain, fainting, or signs of an allergic reaction."
+  }
+ ],
+ "disclaimer": [
+  "All prescription medications require a valid and complete online consultation prior to approval and final pricing is determined. Compounded medications are not FDA-approved and have not been evaluated by the FDA for safety, effectiveness, or quality. A licensed provider may prescribe a compounded medication when they determine it is clinically appropriate for you.",
+  "Compounded Strut Women's Hair Growth Formula is not FDA-approved. Statements regarding hair loss, hair growth, scalp health, and follicle support have not been evaluated by the FDA.",
+  "The drug and medical information provided on this website is not meant to cover all adverse effects, drug interactions, warnings, medical uses, directions and precautions. The information provided is a medical resource and the judgment of your healthcare provider should not be substituted."
+ ],
+ "imageSrc": "/assets/v3-hairformula-ingredients-apply.jpg",
+ "imageAlt": "Applying hair loss solution with a dropper"
+}

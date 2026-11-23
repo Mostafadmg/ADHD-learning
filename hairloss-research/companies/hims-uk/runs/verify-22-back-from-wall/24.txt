@@ -1,0 +1,41 @@
+STEP 24 click "←"
+URL: https://www.forhims.co.uk/
+TITLE: Telehealth for a healthy, handsome you | hims
+
+--- VISIBLE TEXT ---
+Personalised
+healthcare
+for you
+
+Get the treatment you need today.
+Approved online with free delivery.
+
+ 
+
+Explore treatments
+
+Lose weight
+
+Have great sex
+
+Regrow hair
+
+Have longer sex
+
+Access a range of 
+doctor-trusted weight 
+loss treatments
+Care for your schedule
+
+Get 100% online care with access to 24/7 messaging, check-ins and flexible treatment tailored to your evolving goals.
+
+Guides for your goals
+Get a personalised weight loss plan designed with one goal in mind: helping you feel happy in your body.
+We’re on a mission to help the world feel great through the power of better health.
+Get started
+
+--- CONTROLS ---
+  button (6): Accept all  ·  Customise  ·  Sex  ·  Learn  ·  LOGIN  ·  Explore treatments
+
+--- LINKS ---
+  link (12): Privacy Policy -> https://www.forhims.co.uk/privacy-policy  ·  Link to homepage -> /  ·  Weight -> /weight-loss  ·  Hair -> /hair-loss  ·  Treatments -> /customer/treatments  ·  Messaging -> /customer/support  ·  Profile -> /customer/profile  ·  Lose weight -> /c/wl  ·  Have great sex -> /c/e  ·  Regrow hair -> /c/hl  ·  Have longer sex -> /c/p  ·  Get started -> /c

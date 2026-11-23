@@ -1,0 +1,30 @@
+STEP 17 click "Continue"
+URL: https://app.forhims.co.uk/flow/a9a88e4a-89b9-47ae-8138-3a1acaa41594?t=hair&anon_flow_key=hair
+TITLE: Hims
+
+--- VISIBLE TEXT ---
+How do you style your hair?
+
+No styling
+
+I let my hair do its thing
+
+Products
+
+Gel, mousse, etc.
+
+Hat
+
+I usually wear a hat
+
+Protective styles
+
+Braids, locs, etc.
+
+←
+
+--- CONTROLS ---
+  button (6): No styling I let my hair do its thing [false]  ·  Products Gel, mousse, etc. [false]  ·  Hat I usually wear a hat [false]  ·  Protective styles Braids, locs, etc. [false]  ·  ←  ·  Your answers
+
+--- LINKS ---
+  link (1): Navigate home -> /profile

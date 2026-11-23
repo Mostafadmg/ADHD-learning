@@ -1,0 +1,18 @@
+{
+  "_note": "Legacy 'mini quiz' at /quiz (also served at /find-my-plan). Baseline man: hairline + crown ('A bit of both'), wants regrowth, no preference on form, no ingredient or OTC interests, no dandruff. Stops at /quiz/lead (asks for contact details = account wall). Nothing is typed there.",
+  "start": "https://www.keeps.com/quiz?step=1",
+  "locale": "en-US", "timezone": "America/Chicago",
+  "steps": [
+    {"do":"click","text":"A bit of both"},
+    {"do":"click","text":"I want to regrow my hair"},
+    {"do":"click","text":"CONTINUE", "exact": false},
+    {"do":"click","text":"I'm not sure / I don't have a preference"},
+    {"do":"click","text":"I'm not sure / I'm interested in any effective ingredients!"},
+    {"do":"click","text":"CONTINUE", "exact": false},
+    {"do":"click","text":"I'm not interested in any specific over-the-counter products"},
+    {"do":"click","text":"CONTINUE", "exact": false},
+    {"do":"click","text":"No"},
+    {"do":"wait","ms":5000},
+    {"do":"scroll"}
+  ]
+}

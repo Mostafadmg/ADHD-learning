@@ -1,0 +1,1 @@
+{"steps":[{"do":"click","selector":"label:text-is(\"I understand that minoxidil may lower my blood pressure and would like to be considered for minoxidil.\")","settle":2800},{"do":"snap","settle":600}]}

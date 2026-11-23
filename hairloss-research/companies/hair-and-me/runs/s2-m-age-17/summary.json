@@ -55,8 +55,8 @@
    "where": "before-change",
    "alsoIn": [
     "s2-base-women-1",
-    "s2-m-htam-patches",
-    "s2-m-htc-recent"
+    "s2-m-al-minoxidil",
+    "s2-m-htam-patches"
    ]
   },
   {
@@ -64,8 +64,9 @@
    "key": "q429.config",
    "where": "before-change",
    "alsoIn": [
+    "s2-m-gender-transwoman",
     "s2-m-htc-recent",
-    "scout-neither"
+    "s2-m-mcm-bp"
    ]
   },
   {
@@ -134,8 +135,8 @@
    "where": "changed-step",
    "alsoIn": [
     "s2-base-women-1",
-    "s2-m-htam-crown",
-    "s2-w-htaf-allover"
+    "s2-m-gender-transwoman",
+    "s2-m-htam-crown"
    ]
   },
   {
@@ -144,8 +145,8 @@
    "where": "changed-step",
    "alsoIn": [
     "s2-base-women-1",
-    "s2-m-htam-crown",
-    "s2-w-htaf-allover"
+    "s2-m-gender-transwoman",
+    "s2-m-htam-crown"
    ]
   },
   {
@@ -154,8 +155,8 @@
    "where": "changed-step",
    "alsoIn": [
     "s2-base-women-1",
-    "s2-m-htam-crown",
-    "s2-w-htaf-allover"
+    "s2-m-gender-transwoman",
+    "s2-m-htam-crown"
    ]
   },
   {
@@ -164,8 +165,8 @@
    "where": "changed-step",
    "alsoIn": [
     "s2-base-women-1",
-    "s2-m-htam-crown",
-    "s2-w-htaf-allover"
+    "s2-m-gender-transwoman",
+    "s2-m-htam-crown"
    ]
   },
   {
@@ -174,8 +175,8 @@
    "where": "changed-step",
    "alsoIn": [
     "s2-base-women-1",
-    "s2-m-htam-crown",
-    "s2-w-htaf-allover"
+    "s2-m-gender-transwoman",
+    "s2-m-htam-crown"
    ]
   },
   {
@@ -184,8 +185,8 @@
    "where": "changed-step",
    "alsoIn": [
     "s2-base-women-1",
-    "s2-m-htam-crown",
-    "s2-w-htaf-allover"
+    "s2-m-gender-transwoman",
+    "s2-m-htam-crown"
    ]
   },
   {
@@ -194,8 +195,8 @@
    "where": "changed-step",
    "alsoIn": [
     "s2-base-women-1",
-    "s2-m-htam-crown",
-    "s2-w-htaf-allover"
+    "s2-m-gender-transwoman",
+    "s2-m-htam-crown"
    ]
   },
   {
@@ -204,8 +205,8 @@
    "where": "changed-step",
    "alsoIn": [
     "s2-base-women-1",
-    "s2-m-htam-crown",
-    "s2-w-htaf-allover"
+    "s2-m-gender-transwoman",
+    "s2-m-htam-crown"
    ]
   }
  ],

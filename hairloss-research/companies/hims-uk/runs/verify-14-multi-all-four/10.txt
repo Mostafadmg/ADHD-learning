@@ -1,0 +1,22 @@
+STEP 10 click "Straight or wavy"
+URL: https://app.forhims.co.uk/flow/a9a88e4a-89b9-47ae-8138-3a1acaa41594?t=hair&anon_flow_key=hair
+TITLE: Hims
+
+--- VISIBLE TEXT ---
+How long is your hair?
+
+Buzzed, shaved, or bald
+
+Short
+
+Medium
+
+Long
+
+←
+
+--- CONTROLS ---
+  button (6): Buzzed, shaved, or bald [false]  ·  Short [false]  ·  Medium [false]  ·  Long [false]  ·  ←  ·  Your answers
+
+--- LINKS ---
+  link (1): Navigate home -> /profile

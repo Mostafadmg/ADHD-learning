@@ -1,0 +1,24 @@
+STEP 14 press "Enter"
+URL: https://www.keeps.com/hair-assessment-quiz?step=15
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+Last step to see if you qualify.
+
+We need your state and a few details to match you with an available provider.
+
+option Idaho, selected. Select is focused ,type to refine list, press Down to open the menu,
+Idaho
+
+I confirm I am 18+ and assigned male at birth
+
+Show my plan
+
+Keeps | Hair Loss Treatment for Men
+
+--- CONTROLS ---
+  button (2): Go back  ·  Show my plan [disabled]
+  input:text (1): react-select-2-input
+
+--- LINKS ---
+

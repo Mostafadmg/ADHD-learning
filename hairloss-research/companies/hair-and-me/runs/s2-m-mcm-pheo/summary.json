@@ -1,0 +1,141 @@
+{
+ "run": "s2-m-mcm-pheo",
+ "flow": "men",
+ "changed": "men-mcm: None of the above → Pheochromocytoma",
+ "changedStep": "mcm",
+ "baselinesPooled": [
+  "baseline-men",
+  "s2-base-men-1"
+ ],
+ "stepOrder": [
+  "tp",
+  "yhg",
+  "js",
+  "pds",
+  "pdsc",
+  "mi",
+  "ht",
+  "hs",
+  "ls",
+  "htp",
+  "htam",
+  "htc",
+  "ar",
+  "st",
+  "sc",
+  "scc",
+  "smt",
+  "pt",
+  "tt",
+  "pp",
+  "mdm",
+  "mcm",
+  "al",
+  "rhf",
+  "yna",
+  "rha",
+  "di",
+  "rj",
+  "el",
+  "ct",
+  "yd"
+ ],
+ "nSteps": 31,
+ "end": "account wall (yd)",
+ "newSteps": [],
+ "missingSteps": [],
+ "candidateEffects": [],
+ "noise": [
+  {
+   "step": "st",
+   "key": "q9346.options",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9346.type",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9348.options",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9348.type",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9349.config",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9349.type",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  }
+ ],
+ "bag": {
+  "items": [
+   [
+    "hairTreatment",
+    "Personalised treatment",
+    "4 week supply · 12ml",
+    "Prescription",
+    3499,
+    null
+   ]
+  ],
+  "shipping": 0,
+  "total": 3499,
+  "promo": "",
+  "shippingMsg": "Your order qualifies for complimentary standard shipping."
+ },
+ "bagItemsSameAsBaseline": true,
+ "posted": {
+  "mcm": [
+   [
+    4453,
+    [
+     "4"
+    ]
+   ]
+  ]
+ },
+ "nextAfterChange": {
+  "mcm": "al"
+ },
+ "sweep": false
+}

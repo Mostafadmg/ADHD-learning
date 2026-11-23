@@ -1,0 +1,35 @@
+COMMAND 040 {"steps":[{"do":"click","text":"Skip","settle":4500},{"do":"snap","settle":800}]}
+URL: https://www.numan.com/subscribe/hair-loss/4b4e30d9-9042-49e8-a32b-7557d60d5aec/product-selection
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+Back
+Help
+Please select your treatment
+
+Our clinicians will ensure you’re prescribed the most appropriate treatment.
+
+Most effective
+
+See results in 180 days
+
+or your money back¹
+
+Rosemary Oil
+
+Rosemary Oil is a natural remedy for stronger, healthier-looking hair. Infused with nutrients and oils, it’s formulated to nourish the scalp and fortify hair from root to tip.
+
+Price
+£14.00
+Save 40%
+Select treatment
+
+--- CONTROLS ---
+  button (2):
+    - Help
+    - Select treatment
+
+--- LINKS ---
+  link (2):
+    - Back -> #
+    - Visit the main page -> /

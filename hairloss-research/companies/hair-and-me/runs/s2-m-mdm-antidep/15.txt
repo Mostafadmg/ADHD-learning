@@ -1,0 +1,21 @@
+STEP 15 smt
+URL: https://www.hairandme.com/c/suh/smt
+
+--- VISIBLE TEXT ---
+In 6 months' time, what do you want to see?
+Hair that feels healthy from root to tip
+Hair that feels stronger and has less breakage
+Noticeably less hair falling out
+Fuller, denser-looking hair that I feel confident about
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:checkbox[name=8021] | Hair that feels healthy from root to tip
+input:checkbox[name=8021] | Hair that feels stronger and has less breakage
+input:checkbox[name=8021] | Noticeably less hair falling out
+input:checkbox[name=8021] | Fuller, denser-looking hair that I feel confident about
+button:submit | NEXT QUESTION [disabled]
+a -> /c/suh/smt?action=previous | Back to previous page

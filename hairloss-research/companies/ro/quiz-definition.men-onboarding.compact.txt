@@ -1,0 +1,708 @@
+SCHEMA name='Hair loss onboarding' code=hl-onb-consult-2rx version=77 id=7637 meta={"hasMinimalisticHeader": true, "include_product_codes": ["roman-revive-conditioner-24", "roman-revive-shampoo-24", "roman-hair-support-supplement"]}
+
+================ GROUP ov pos=1 n=102
+
+### qid 1 [choice] next=None mtype=AutoAnswer
+TEXT: 'FORK: GOOGLE SHOPPING - LOGIN'
+  - [gs-schema-logged-in] 'Is Google Shopping Schema, Member logged in' -> 112 meta={"condition": "isGSSchema == true && memberIsLoggedIn == true"}
+  - [gs-schema] 'Is Google Shopping Schema' -> 7 meta={"condition": "isGSSchema == true"}
+  - [not-gs-schema] 'Is NOT Google Shopping Schema' -> 20 meta={"condition": "1 == 1"}
+
+### qid 7 [control] next=70 mtype=StartOnlineVisitSignUp
+TEXT: 'Sign up'
+  m.do_not_count_as_question: true
+  m.hasNameFields: false
+  m.heading: Getting started with your hair loss visit.
+  m.info_list: [{"text": "Medical evaluation and prescriptions by U.S.-licensed physicians", "alt": "U.S.-licensed physicians", "icon": "HealthcareProvider", "image": "https://assets.ro.co/ov/sign-up-list-1-03018af2.jpg", "image_width": 49}, {"text": "Free shipping", "alt": "Free shipping", "icon": "FreeShipping", "image": "https://assets.ro.co/ov/free-shipping-ico-2c38686f.png", "image_width": 24}, {"text": "Continued support from your doctor and the care team", "alt": "Continued support", "icon": "Messages",…[+81]
+  m.testimonial: {"text": "This program has seriously helped me with something I never thought I’d feel comfortable addressing. So thanks for the work you’re doing.", "author": "Ro Member, California"}
+
+### qid 20 [multichoice] next=22
+TEXT: 'What are your top hair goals?'
+VARIABLE_MODIFICATIONS: [["goalRegrowth", "0"], ["goalThickerAndFuller", "0"], ["goalPrevention", "0"]]
+  - [regrow-my-hair] 'Regrow my hair' -> 22 VARS=[["goalRegrowth", "1"]]
+  - [get-thicker-fuller-hair] 'Get thicker, fuller hair' -> 22 VARS=[["goalThickerAndFuller", "1"]]
+  - [proactively-prevent-hair-loss] 'Proactively prevent hair loss' -> 22 VARS=[["goalPrevention", "1"]]
+
+### qid 22 [multichoice] next=25 mtype=CheckboxSecondary
+TEXT: 'What hair loss solutions have you tried, if any?'
+  m.description: Select all that apply.
+VARIABLE_MODIFICATIONS: [["hasTriedNonPrescription", "0"], ["hasTriedPrescription", "0"], ["hasNotTriedAnyPrescription", "0"]]
+  - [hair-loss-solutions-non-prescription] 'Non-prescription solutions (e.g. Rogaine, supplements)' -> 25 VARS=[["hasTriedNonPrescription", "1"]]
+  - [hair-loss-solutions-prescription-medications] 'Prescription medications (e.g. Propecia, oral minoxidil)' -> 25 VARS=[["hasTriedPrescription", "1"]]
+  - [hair-loss-solutions-none-of-the-above] 'None of the above' -> 25 EXCL VARS=[["hasNotTriedAnyPrescription", "1"]]
+
+### qid 25 [fork] next=None
+TEXT: 'FORK: Tried prescription/non-prescription vs not tried hair loss solutions'
+FORKING_RULES: [["28", "hasTriedNonPrescription == true or hasTriedPrescription == true"], ["26", "1 == 1"]]
+
+### qid 26 [choice] next=50 mtype=choice
+TEXT: 'What’s the main reason you haven’t tried hair loss treatment before?'
+VARIABLE_MODIFICATIONS: [["notSureAboutHairLossTreatment", "0"], ["didntWantOrNeedHairLossTreatment", "0"]]
+  - [not-sure-itll-work] "Not sure it'll work" -> 50 VARS=[["notSureAboutHairLossTreatment", "1"]]
+  - [seems-too-expensive] 'Seems too expensive' -> 50
+  - [nervous-about-side-effects] 'Nervous about side effects' -> 50
+  - [didnt-want-or-need-to-until-now] "Didn't want or need to until now" -> 50 VARS=[["didntWantOrNeedHairLossTreatment", "1"]]
+
+### qid 28 [choice] next=50 mtype=choice
+TEXT: 'What’s the main reason you’re looking for hair loss solutions now?'
+VARIABLE_MODIFICATIONS: [["lookingBecauseOtcNotWork", "0"], ["lookingForEasierSolution", "0"]]
+  - [over-the-counter-solutions-didnt-work-for-me] "Over-the-counter solutions didn't work for me" -> 50 VARS=[["lookingBecauseOtcNotWork", "1"]]
+  - [i-want-to-maximize-results-with-a-new-or-additional-product] 'I want to maximize results with a new or additional product' -> 50
+  - [i-want-an-easier-or-more-convenient-solution-like-a-pill-or-a-spray] 'I want an easier or more convenient solution (like a pill or a spray)' -> 50 VARS=[["lookingForEasierSolution", "1"]]
+  - [ive-experienced-side-effects-with-past-solutions] 'I’ve experienced side effects with past solutions' -> 50
+
+### qid 50 [fork] next=None mtype=SignInDynamic
+TEXT: 'FORK - sign in or sign up'
+  m.doNotCountAsQuestion: true
+  m.holdNextQuestion: true
+FORKING_RULES: [["132", "isGSSchema == true"], ["112", "memberIsLoggedIn == true"], ["55", "1 == 1"]]
+
+### qid 55 [control] next=70 mtype=TestimonialCarousel
+TEXT: 'Ro members start seeing results in as little as three months'
+
+### qid 70 [choice] next=None mtype=AutoAnswer
+TEXT: 'FORK - Continue or Sign In'
+  - [member-exists] 'Member exists' -> 80 meta={"condition": "memberExists == 1"}
+  - [member-does-not-exist] 'Member does NOT exist' -> 112 meta={"condition": "memberExists == 0"}
+
+### qid 80 [choice] next=112 mtype=SignInDynamic
+TEXT: 'Log in'
+  m.doNotCountAsQuestion: true
+  m.extraText: Looks like you already have an account with us.
+  m.formHeader: Please log in to your Ro platform account to continue.
+  m.holdNextQuestion: true
+  m.tooltip: Ro is a telehealth platform.
+  - [successful-sign-in] 'Successful sign-in' -> 112 meta={"type": "GO_FURTHER"}
+
+### qid 112 [choice] next=None mtype=Basics
+TEXT: 'Answer a few questions to see if you’re eligible for treatment.'
+  m.current_section: 1
+  m.description: It’s just like the intake forms at the doctor.
+  m.do_not_count_as_question: false
+  m.enableDuplicateMemberCheck: true
+  m.isSmsVerificationSkipEnabled: true
+  m.minAge: 18
+  m.number_of_sections: 4
+  m.allowedGenders: ["male"]
+  m.birthdate: {"inputPlaceholder": "MM/DD/YYYY", "label": "Birthdate", "tooltip": "These questions will help us make sure you're eligible for telemedicine."}
+  m.phone: {"inputPlaceholder": "(###) ### - ####", "label": "Mobile phone number"}
+  m.sex: {"label": "Sex Assigned at Birth", "tooltip": "Your sex assigned at birth is needed by your doctor for making medical decisions."}
+  m.zipcode: {"inputPlaceholder": "#####", "label": "Zipcode", "tooltip": "We are making sure if we can ship our treatment to your location."}
+  - [not-supported-zip-code] 'Not supported zip code' -> 7030 meta={"type": "ZIPCODE_NOT_SUPPORTED"}
+  - [under-18-years-old] 'Under 18 years old' -> 7010 meta={"type": "TOO_YOUNG"}
+  - [female] 'Female' -> 7060 meta={"type": "GENDER_NOT_SUPPORTED"}
+  - [next] 'Next' -> 125 meta={"type": "GO_FURTHER"}
+
+### qid 125 [fork] next=None
+TEXT: 'FORK: GOOGLE SHOPPING - MEDICAL QUESTIONS'
+FORKING_RULES: [["20", "isGSSchema == true"], ["132", "1 == 1"]]
+
+### qid 132 [multichoice] next=None
+TEXT: 'Where are you noticing hair loss or thinning?'
+  m.hasPrivacyChoicesButton: true
+  m.interstitial: {"id": 3, "template": {"text": "Great, now a few questions about your overall health.", "name": "PatientEducation", "subheader": "Let’s talk about your health."}}
+VARIABLE_MODIFICATIONS: [["thinningHairline", "0"], ["thinningCrown", "0"], ["thinningOverall", "0"], ["noRecTopicalCombined", "0"], ["noRecOralMin", "0"], ["noRecOralFin", "0"]]
+  - [hairline] 'Hairline (along my forehead or temples)' -> 150 VARS=[["thinningHairline", "1"]]
+  - [crown] 'Crown (top of my head)' -> 150 VARS=[["thinningCrown", "1"]]
+  - [overall-thinning] 'Overall thinning' -> 150 VARS=[["thinningOverall", "1"]]
+  - [patches] 'Random golf-ball size bald patches scattered all over scalp' -> 229 meta={"highlight": "negative"} VARS=[["noRecTopicalCombined", "1"], ["noRecOralMin", "1"], ["noRecOralFin", "1"]]
+  - [prevent-hair-loss] 'Nowhere yet, but I’d like to prevent future hair loss' -> 229 EXCL
+
+### qid 150 [choice] next=160
+TEXT: 'How did your hair loss start?'
+  - [very-suddenly] 'Very suddenly' -> 160 meta={"explanation": "I didn’t have any hair loss until the last few weeks", "highlight": "negative"} VARS=[["noRecTopicalCombined", "1"], ["noRecOralMin", "1"], ["noRecOralFin", "1"]]
+  - [gradually] 'Gradually' -> 160 meta={"explanation": "I’ve been noticing it slowly changing over the last few months or years"}
+  - [not-sure] 'Not sure' -> 160 meta={"highlight": "caution"}
+
+### qid 160 [choice] next=170
+TEXT: 'How would you describe the severity of your current hair loss?'
+  m.description: We’ll track this along your hair journey to see how it changes over time.
+  - [very-mild] 'Very mild' -> 170 meta={"explanation": "It's hardly noticeable to anyone but me"}
+  - [mild] 'Mild' -> 170 meta={"explanation": "It's noticeable to myself and maybe others"}
+  - [moderate] 'Moderate' -> 170 meta={"explanation": "It's noticeable to myself and probably others"}
+  - [severe] 'Severe' -> 170 meta={"explanation": "It's definitely noticeable to myself and others"}
+  - [extremely-severe] 'Extremely severe' -> 170 meta={"explanation": "It's very obvious that I'm experiencing hair loss"}
+
+### qid 170 [multichoice] next=None mtype=CheckboxSecondary
+TEXT: 'Have you noticed any of the following?'
+  m.description: Select all that apply.
+  - [redness-or-rashes] 'Redness or rashes on scalp' -> 229 meta={"highlight": "caution"} VARS=[["noRecTopicalCombined", "1"], ["noRecOralMin", "1"], ["noRecOralFin", "1"]]
+  - [pain-soreness-burning-tingling-in-areas-of-hair-loss] 'Pain, soreness, burning, and/or tingling in areas of hair loss' -> 229 meta={"highlight": "caution"}
+  - [recurrent-pus-bumps-or-open-sores] 'Recurrent pus bumps or open sores on scalp' -> 229 meta={"highlight": "caution"}
+  - [partial-or-complete-loss-of-eyebrows-or-eyelashes] 'Partial or complete loss of eyebrows or eyelashes' -> 229 meta={"highlight": "caution"}
+  - [none] 'None of the above' -> 229 EXCL
+
+### qid 229 [fork] next=None
+TEXT: 'FORK 3: Tried prescription/non-prescription (240) vs default - not tried hair loss solutions (370)'
+FORKING_RULES: [["240", "hasTriedPrescription == true or hasTriedNonPrescription == true"], ["370", "1 == 1"]]
+
+### qid 240 [multichoice] next=250 mtype=CheckboxSecondary
+TEXT: 'What hair loss treatments have you used?'
+  m.description: Select all that apply
+VARIABLE_MODIFICATIONS: [["treatmentOralMinoxidil", "0"], ["treatmentTopicalMinoxidil", "0"], ["treatmentOralFinasteride", "0"], ["treatmentTopicalFinasteride", "0"], ["treatmentOther", "0"]]
+  - [oral-minoxidil] 'Oral minoxidil' -> 250 VARS=[["treatmentOralMinoxidil", "1"], ["isEligibleFor6And12MonthShipments", "1"]]
+  - [topical-minoxidil] 'Topical minoxidil' -> 250 VARS=[["treatmentTopicalMinoxidil", "1"]]
+  - [oral-finasteride] 'Oral Finasteride' -> 250 VARS=[["treatmentOralFinasteride", "1"], ["isEligibleFor6And12MonthShipments", "1"]]
+  - [topical-finasteride] 'Topical finasteride' -> 250 VARS=[["treatmentTopicalFinasteride", "1"]]
+  - [steroid-injections] 'Steroid injections in the scalp' -> 250 meta={"highlight": "negative"} VARS=[["noRecTopicalCombined", "1"], ["noRecOralMin", "1"], ["noRecOralFin", "1"]]
+  - [other-treatment] 'Other' -> 250 VARS=[["treatmentOther", "1"]]
+
+### qid 250 [fork] next=None
+TEXT: 'FORK - treatmentOralMinoxidil follow up'
+FORKING_RULES: [["255", "treatmentOralMinoxidil == 1"], ["280", "1 == 1"]]
+
+### qid 255 [choice] next=None
+TEXT: 'What dose of oral minoxidil did you use?'
+  - [2mg-daily] '2.0mg daily' -> 265
+  - [2-point-5-mg-daily] '2.5mg daily' -> 265
+  - [3mg-daily] '3.0mg daily' -> 265
+  - [3-point-5mg-daily] '3.5mg daily' -> 265
+  - [4mg-daily] '4.0mg daily' -> 265
+  - [5mg-daily] '5.0mg daily' -> 265
+  - [oral-min-dosage-other] 'Other' -> 260
+
+### qid 260 [text] next=265 mtype=longtext
+TEXT: 'Explain your treatment'
+  m.description: What daily dosage of oral minoxidil were you taking most recently?
+
+### qid 265 [choice] next=None
+TEXT: 'Did oral minoxidil work well for you?'
+  - [oral-min-yes-continue-same-regimen] 'Yes, it worked well' -> 280
+  - [oral-min-no-problematic-side-effects] 'No, I had problematic side effects' -> 280 meta={"highlight": "caution"} VARS=[["noRecOralMin", "1"]]
+  - [oral-min-no-dose-not-effective] "No, this dose wasn't effective" -> 280 meta={"highlight": "caution"} VARS=[["noRecOralMin", "1"]]
+  - [oral-min-no-allergic-to-medication] 'No, I found out I was allergic to it' -> 280 meta={"highlight": "caution"} VARS=[["noRecOralMin", "1"], ["noRecTopicalCombined", "1"]]
+  - [oral-min-effectiveness-other] 'Other' -> 270
+
+### qid 270 [text] next=280 mtype=longtext
+TEXT: 'Explain your treatment'
+  m.description: Let us know how your oral minoxidil treatment went when you were treated most recently.
+
+### qid 280 [fork] next=None
+TEXT: 'FORK - treatmentTopicalMinoxidil follow up'
+FORKING_RULES: [["285", "treatmentTopicalMinoxidil == 1"], ["300", "1 == 1"]]
+
+### qid 285 [choice] next=None
+TEXT: 'Did topical minoxidil work well for you?'
+  - [topical-min-yes-continue-same-regimen] 'Yes, it worked well' -> 300
+  - [topical-min-no-problematic-side-effects] 'No, I had problematic side effects' -> 300 meta={"highlight": "caution"}
+  - [topical-min-no-dose-not-effective] 'No, it wasn’t effective' -> 300 meta={"highlight": "caution"}
+  - [topical-min-no-allergic-to-medication] 'No, I found out I was allergic to it' -> 300 meta={"highlight": "caution"} VARS=[["noRecTopicalCombined", "1"]]
+  - [topical-min-effectiveness-other] 'Other' -> 290
+
+### qid 290 [text] next=300 mtype=longtext
+TEXT: 'Explain your treatment'
+  m.description: Let us know how your topical minoxidil treatment went when you were treated most recently.
+
+### qid 300 [fork] next=None
+TEXT: 'FORK - treatmentOralFinasteride follow up'
+FORKING_RULES: [["305", "treatmentOralFinasteride == 1"], ["330", "1 == 1"]]
+
+### qid 305 [choice] next=None
+TEXT: 'What dose of oral finasteride did you use?'
+  - [1mg-daily] '1mg' -> 315
+  - [oral-fin-dosage-other] 'Other' -> 310
+
+### qid 310 [text] next=315 mtype=longtext
+TEXT: 'Explain your treatment'
+  m.description: What daily dosage of oral finasteride were you taking most recently?
+
+### qid 315 [choice] next=None
+TEXT: 'Did oral finasteride work well for you?'
+  - [oral-fin-yes-continue-same-regimen] 'Yes, it worked well' -> 330
+  - [oral-fin-no-problematic-side-effects] 'No, I had problematic side effects' -> 330 meta={"highlight": "caution"} VARS=[["noRecTopicalCombined", "1"], ["noRecOralFin", "1"]]
+  - [oral-fin-no-dose-not-effective] "No, this dose wasn't effective" -> 330 meta={"highlight": "caution"} VARS=[["noRecOralFin", "1"]]
+  - [oral-fin-no-allergic-to-medication] 'No, I found out I was allergic to it' -> 330 meta={"highlight": "caution"} VARS=[["noRecTopicalCombined", "1"], ["noRecOralFin", "1"]]
+  - [oral-fin-effectiveness-other] 'Other' -> 320
+
+### qid 320 [text] next=330 mtype=longtext
+TEXT: 'Explain your treatment'
+  m.description: Let us know how your oral finasteride treatment went when you were treated most recently.
+
+### qid 330 [fork] next=None
+TEXT: 'FORK - treatmentTopicalFinasteride follow up'
+FORKING_RULES: [["335", "treatmentTopicalFinasteride == 1"], ["350", "1 == 1"]]
+
+### qid 335 [choice] next=None
+TEXT: 'Did topical finasteride work well for you?'
+  - [topical-fin-yes-continue-same-regimen] 'Yes, it worked well' -> 350
+  - [topical-fin-no-problematic-side-effects] 'No, I had problematic side effects' -> 350 meta={"highlight": "caution"}
+  - [topical-fin-no-dose-not-effective] 'No, it wasn’t effective' -> 350 meta={"highlight": "caution"}
+  - [topical-fin-no-allergic-to-medication] 'No, I found out I was allergic to it' -> 350 meta={"highlight": "caution"} VARS=[["noRecTopicalCombined", "1"]]
+  - [topical-fin-effectiveness-other] 'Other' -> 340
+
+### qid 340 [text] next=350 mtype=longtext
+TEXT: 'Explain your treatment'
+  m.description: Let us know how your topical finasteride treatment went when you were treated most recently.
+
+### qid 350 [fork] next=None
+TEXT: 'FORK - treatmentOther follow up'
+FORKING_RULES: [["355", "treatmentOther == 1"], ["370", "1 == 1"]]
+
+### qid 355 [text] next=370 mtype=longtext
+TEXT: 'Explain your treatment'
+  m.description: What other hair loss treatments have you tried?
+
+### qid 370 [choice] next=None
+TEXT: 'Have you ever been diagnosed with or treated for high or low blood pressure?'
+VARIABLE_MODIFICATIONS: [["followupHighBloodPressure", "0"], ["followupLowBloodPressure", "0"]]
+  - [yes-have-been-diagnosed-or-treated-for-high-bp] 'Yes, for high blood pressure' -> 380 VARS=[["followupHighBloodPressure", "1"]]
+  - [yes-have-been-diagnosed-or-treated-for-low-bp] 'Yes, for low blood pressure' -> 380 VARS=[["followupLowBloodPressure", "1"]]
+  - [not-sure-if-diagnosed-or-treated-for-high-or-low-bp] "I'm not sure" -> 395 EXCL
+  - [no-never-been-diagnosed-with-high-or-low-bp] 'No' -> 1000 EXCL
+
+### qid 380 [fork] next=None
+TEXT: 'FORK BP 1 - Very High Blood Pressure'
+FORKING_RULES: [["381", "followupHighBloodPressure == 1"], ["390", "1 == 1"]]
+
+### qid 381 [choice] next=None
+TEXT: 'Since being diagnosed with or treated for high blood pressure, have your blood pressure readings still been “very high”?'
+  m.description: <BloodPressureVisualWithRanges highlightedRangeKey="very_high" />
+  - [yes-very-high-bp-reading] 'Yes, I still have “very high” blood pressure readings' -> 390 meta={"highlight": "negative"} VARS=[["noRecOralMin", "1"]]
+  - [no-have-not-had-multiple-very-high-bp-readings] 'No, my blood pressure reading is never “very high”' -> 390
+  - [not-sure] 'I’m not sure' -> 390
+
+### qid 390 [fork] next=None
+TEXT: 'FORK BP 2 - Very Low Blood Pressure'
+FORKING_RULES: [["391", "followupLowBloodPressure == 1"], ["395", "1 == 1"]]
+
+### qid 391 [choice] next=None
+TEXT: 'Since being diagnosed with or treated for low blood pressure, have your blood pressure readings still been “low”?'
+  m.description: <BloodPressureVisualWithRanges highlightedRangeKey="low" />
+  - [yes-very-low-bp-reading] 'Yes, I still have “low” blood pressure readings' -> 395 meta={"highlight": "negative"} VARS=[["noRecTopicalCombined", "1"], ["noRecOralMin", "1"], ["noRecOralFin", "1"]]
+  - [no-have-not-had-multiple-very-low-bp-readings] 'No, my blood pressure reading is never “low”' -> 395
+  - [not-sure] 'I’m not sure' -> 395
+
+### qid 395 [choice] next=None mtype=single
+TEXT: 'High or low blood pressure readings can be associated with increased risks when using certain hair loss treatments.'
+  m.description: If you have had high or low blood pressure readings, our treatment options may still be suitable for you. Since out-of-range blood pressure can pose health risks, we recommend discussing it with your primary care provider. 
+
+If you haven’t checked your blood pressure recently, consider scheduling an annual visit with your provider.
+  m.doNotCountAsQuestion: true
+  - [i-understand-high-or-low-bp-risks] 'I understand, continue' -> 1000 EXCL
+
+### qid 1000 [multichoice] next=None mtype=CheckboxSecondary
+TEXT: 'Do you have, or have you ever had, any of the following conditions?'
+  m.description: Select all that apply
+  - [stroke] 'Stroke' -> 1250 meta={"highlight": "caution"} VARS=[["stroke", "1"]]
+  - [prostate-cancer] 'Prostate cancer' -> 1250 meta={"highlight": "caution"} VARS=[["noRecTopicalCombined", "1"]]
+  - [kidney-disease] 'Kidney disease' -> 1250 meta={"highlight": "caution"} VARS=[["kidneyDisease", "1"]]
+  - [liver-diseases] 'Liver failure or liver cirrhosis' -> 1250 meta={"highlight": "negative"} VARS=[["liverDisease", "1"]]
+  - [erectile-dysfunction] 'Erectile dysfunction' -> 1250 meta={"highlight": "caution"} VARS=[["ed", "1"], ["noRecTopicalCombined", "1"], ["noRecOralFin", "1"]]
+  - [anxiety] 'Anxiety' -> 1250 meta={"highlight": "caution"} VARS=[["anxiety", "1"], ["noRecTopicalCombined", "1"], ["noRecOralFin", "1"]]
+  - [depression] 'Depression' -> 1250 meta={"highlight": "caution"} VARS=[["depression", "1"], ["noRecTopicalCombined", "1"], ["noRecOralFin", "1"]]
+  - [pheochromocytoma] 'Pheochromocytoma (adrenal gland tumor)' -> 1250 meta={"highlight": "negative"} VARS=[["noRecOralMin", "1"]]
+  - [none] 'None of the above' -> 1300 EXCL
+
+### qid 1250 [fork] next=None
+TEXT: 'FORK - stroke'
+FORKING_RULES: [["1255", "stroke == 1"], ["1270", "1 == 1"]]
+
+### qid 1255 [choice] next=1260
+TEXT: 'What type of stroke did you have?'
+  - [hemorrhagic-stroke] 'Hemorrhagic stroke: a blood vessel leaked blood into the brain' -> 1260
+  - [ischemic-stroke] 'Ischemic stroke: a blood vessel was blocked by a clot or plaque' -> 1260
+
+### qid 1260 [choice] next=None
+TEXT: 'When did your stroke occur?'
+  - [stroke-less-than-6-months] 'Less than 6 months ago' -> 1270 meta={"highlight": "negative"} VARS=[["noRecOralMin", "1"]]
+  - [stroke-7-to-12-months] '7-12 months ago' -> 1270
+  - [stroke-1-to-2-years] '1-2 years ago' -> 1270
+  - [stroke-2-plus-years] '2+ years ago' -> 1270
+
+### qid 1270 [fork] next=None
+TEXT: 'FORK - kidneyDisease'
+FORKING_RULES: [["1275", "kidneyDisease == 1"], ["1280", "1 == 1"]]
+
+### qid 1275 [choice] next=None
+TEXT: 'What kind of kidney disease do you have?'
+  - [kidney-disease-temporary-decrease-in-kidney-function] 'Temporary decrease in kidney function only' -> 1280
+  - [kidney-disease-chronic-stage-1] 'Chronic kidney disease stage 1' -> 1280
+  - [kidney-disease-chronic-stage-2] 'Chronic kidney disease stage 2' -> 1280
+  - [kidney-disease-chronic-stage-3a] 'Chronic kidney disease stage 3a' -> 1280
+  - [kidney-disease-chronic-stage-3b] 'Chronic kidney disease stage 3b' -> 1280
+  - [kidney-disease-chronic-stage-4] 'Chronic kidney disease stage 4' -> 1280
+  - [kidney-disease-chronic-stage-5] 'Chronic kidney disease stage 5 (kidney failure)' -> 1280 meta={"highlight": "negative"}
+
+### qid 1280 [fork] next=None
+TEXT: 'FORK - liverDisease'
+FORKING_RULES: [["1285", "liverDisease == 1"], ["1300", "1 == 1"]]
+
+### qid 1285 [choice] next=None
+TEXT: 'Which of these liver conditions do you have?'
+  - [liver-failure] 'Liver failure' -> 1300 meta={"highlight": "negative"}
+  - [liver-cirrhosis] 'Liver cirrhosis' -> 1300 meta={"highlight": "negative"}
+  - [liver-failure-and-cirrhosis] 'Both' -> 1300 meta={"highlight": "negative"}
+
+### qid 1300 [multichoice] next=None mtype=CheckboxSecondary
+TEXT: 'Do you have, or have you ever had, any of the following heart-related conditions?'
+  m.description: Select all that apply
+  - [angina] 'Repeated chest pain or tightness, also called angina' -> 1310 meta={"highlight": "negative"} VARS=[["noRecOralMin", "1"]]
+  - [artery-disease] 'Coronary artery disease, or narrowing of the heart vessels' -> 1310 meta={"highlight": "caution"}
+  - [heart-attack] 'Heart attack' -> 1310 meta={"highlight": "caution"} VARS=[["heartAttack", "1"]]
+  - [coronary-bypass-surgery] 'Coronary bypass surgery' -> 1310 meta={"highlight": "caution"} VARS=[["coronaryBypassSurgery", "1"]]
+  - [heart-failure] 'Heart failure' -> 1310 meta={"highlight": "negative"} VARS=[["noRecOralMin", "1"]]
+  - [arrhythmia] 'Arrhythmia' -> 1310 meta={"highlight": "caution"} VARS=[["arrhythmia", "1"]]
+  - [pericarditis] 'Pericarditis' -> 1310 meta={"highlight": "negative"} VARS=[["noRecOralMin", "1"]]
+  - [pulmonary-hypertension] 'Pulmonary hypertension' -> 1310 meta={"highlight": "negative"} VARS=[["noRecOralMin", "1"]]
+  - [none] 'None of the above' -> 2200 EXCL
+
+### qid 1310 [fork] next=None
+TEXT: 'FORK - heartAttack'
+FORKING_RULES: [["1315", "heartAttack == 1"], ["1350", "1 == 1"]]
+
+### qid 1315 [choice] next=None
+TEXT: 'When did your heart attack occur?'
+  - [heart-attack-less-than-6-months] 'Less than 6 months ago' -> 1320 meta={"highlight": "negative"} VARS=[["noRecOralMin", "1"]]
+  - [heart-attack-7-to-12-months] '7-12 months ago' -> 1320
+  - [heart-attack-1-to-2-years] '1-2 years ago' -> 1320
+  - [heart-attack-2-plus-years] '2+ years ago' -> 1320
+
+### qid 1320 [choice] next=None
+TEXT: 'Are you seeing a cardiologist regularly for your history of heart attack?'
+  - [heart-attack-seeing-cardiologist-yes] 'Yes' -> 1350
+  - [heart-attack-seeing-cardiologist-no] 'No' -> 1350 meta={"highlight": "negative"} VARS=[["noRecOralMin", "1"]]
+
+### qid 1350 [fork] next=None
+TEXT: 'FORK - coronaryBypassSurgery'
+FORKING_RULES: [["1355", "coronaryBypassSurgery == 1"], ["1410", "1 == 1"]]
+
+### qid 1355 [choice] next=None
+TEXT: 'When was your coronary bypass surgery?'
+  - [coronary-bypass-surgery-less-than-6-months] 'Less than 6 months ago' -> 1360 meta={"highlight": "negative"} VARS=[["noRecOralMin", "1"]]
+  - [coronary-bypass-surgery-7-to-12-months] '7-12 months ago' -> 1360
+  - [coronary-bypass-surgery-1-to-2-years] '1-2 years ago' -> 1360
+  - [coronary-bypass-surgery-2-plus-years] '2+ years ago' -> 1360
+
+### qid 1360 [choice] next=None
+TEXT: 'Are you seeing a cardiologist regularly as a follow-up to your coronary bypass surgery?'
+  - [coronary-bypass-surgery-seeing-cardiologist-yes] 'Yes' -> 1410
+  - [coronary-bypass-surgery-seeing-cardiologist-no] 'No' -> 1410 meta={"highlight": "negative"} VARS=[["noRecOralMin", "1"]]
+
+### qid 1410 [fork] next=None
+TEXT: 'FORK - arrhythmia'
+FORKING_RULES: [["1420", "arrhythmia == 1"], ["2200", "1 == 1"]]
+
+### qid 1420 [multichoice] next=None mtype=CheckboxSecondary
+TEXT: 'What type of arrhythmia have you been diagnosed with?'
+  m.description: Select all that apply
+  - [atrial-fibrillation] 'Atrial fibrillation (afib)' -> 1425 VARS=[["atrialFibrillation", "1"]]
+  - [atrial-flutter] 'Atrial flutter' -> 1425 meta={"highlight": "negative"} VARS=[["noRecOralMin", "1"]]
+  - [premature-ventricular-contractions] 'Premature ventricular contractions (PVCs)' -> 1425
+  - [bradycardia] 'Bradycardia' -> 1425 meta={"highlight": "caution"} VARS=[["bradycardia", "1"]]
+  - [paroxysmal-supraventricular-tachycardia] 'Paroxysmal supraventricular tachycardia (PSVT)' -> 1425 meta={"highlight": "negative"} VARS=[["noRecOralMin", "1"]]
+  - [wolff-parkinson-white-syndrome] 'Wolff-Parkinson-White syndrome' -> 1425 meta={"highlight": "negative"} VARS=[["noRecOralMin", "1"]]
+  - [ventricular-fibrillation] 'Ventricular fibrillation' -> 1425 meta={"highlight": "negative"} VARS=[["noRecOralMin", "1"]]
+  - [arrhythmia-type-other] 'Other' -> 1425 VARS=[["arrhythmiaTypeOther", "1"]]
+
+### qid 1425 [fork] next=None
+TEXT: 'FORK - arrhythmia - atrialFibrillation'
+FORKING_RULES: [["1430", "atrialFibrillation == 1"], ["1450", "1 == 1"]]
+
+### qid 1430 [choice] next=None
+TEXT: 'Have you had an ablation procedure?'
+  - [ablation-procedure-yes] 'Yes' -> 1435
+  - [ablation-procedure-no] 'No' -> 1440
+
+### qid 1435 [choice] next=None
+TEXT: 'Have you had afib since your ablation?'
+  - [afib-since-ablation-procedure-yes] 'Yes' -> 1440
+  - [afib-since-ablation-procedure-no] 'No' -> 1440
+
+### qid 1440 [choice] next=None
+TEXT: 'Are you currently taking any medications for your afib?'
+  - [meds-for-afib-yes] 'Yes' -> 1450
+  - [meds-for-afib-no] 'No' -> 1450
+
+### qid 1450 [fork] next=None
+TEXT: 'FORK - arrhythmia - bradycardia'
+FORKING_RULES: [["1455", "bradycardia == 1"], ["1470", "1 == 1"]]
+
+### qid 1455 [choice] next=1460
+TEXT: 'What is your resting heart rate?'
+  - [resting-rate-less-than-50] 'Less than 50' -> 1460 meta={"highlight": "negative"} VARS=[["noRecOralMin", "1"]]
+  - [resting-rate-50-to-59] '50-59' -> 1460
+  - [resting-rate-60-to-69] '60-69' -> 1460
+  - [resting-rate-70-plus] '70+' -> 1460
+
+### qid 1460 [choice] next=None
+TEXT: 'Have you ever fainted due to a low heart rate?'
+  - [fainted-from-low-heart-rate-yes] 'Yes' -> 1470 meta={"highlight": "negative"} VARS=[["noRecOralMin", "1"]]
+  - [fainted-from-low-heart-rate-no] 'No' -> 1470
+
+### qid 1470 [fork] next=None
+TEXT: 'FORK - arrhythmia - arrhythmiaTypeOther'
+FORKING_RULES: [["1475", "arrhythmiaTypeOther == 1"], ["2200", "1 == 1"]]
+
+### qid 1475 [text] next=2200 mtype=longtext
+TEXT: 'Please explain your arrhythmia diagnosis'
+  m.category: Please Tell us more
+
+### qid 2200 [choice] next=2300 mtype=StructuredMedications
+TEXT: 'What medications are you currently taking?'
+  m.customDisclaimer: Our Clinicians use this information in determining an appropriate treatment.
+  m.extraText: Your provider needs to know about the prescription or over-the-counter medications, treatments and supplements you’re taking.
+  m.online_visit_history_sync: ["medications"]
+  - [im-taking-medications] 'I’m taking medications' -> 2300 meta={"type": "STRUCTURED_MEDICATION_PROVIDED", "health_survey_sync": [{"id": 49, "value": "Yes"}]}
+  - [i-dont-take-any-medications] "I don't take any medications" -> 2300 meta={"type": "STRUCTURED_MEDICATION_NOT_PROVIDED", "health_survey_sync": [{"id": 49, "value": "No"}]}
+
+### qid 2300 [choice] next=-1 mtype=StructuredAllergies
+TEXT: 'Do you have any allergies?'
+  m.customDisclaimer: Our Clinicians use this information in determining an appropriate treatment.
+  m.extraText: Include allergies to prescription or over-the-counter medicines, herbs, vitamins, supplements, food, dyes or anything else.
+  m.online_visit_history_sync: ["allergies"]
+  - [i-have-allergies] 'I have allergies' -> 2340 meta={"highlight": "caution", "type": "STRUCTURED_ALLERGIES_PROVIDED", "health_survey_sync": [{"id": 51, "value": "Yes"}]}
+  - [i-dont-have-allergies] "I don't have allergies" -> 2340 meta={"type": "STRUCTURED_ALLERGIES_NOT_PROVIDED", "health_survey_sync": [{"id": 51, "value": "No"}]}
+
+### qid 2340 [fork] next=None
+TEXT: 'FORK - MHL CONSULTATIVE OV: Family planning question'
+FORKING_RULES: [["2350", "hasMhlConsultativeOvExperiment == 1"], ["2400", "1 == 1"]]
+
+### qid 2350 [choice] next=None
+TEXT: 'Are you and your partner trying to get pregnant in the next 3 months?'
+  m.description: Some treatment options for hair loss can affect your ability to conceive.
+VARIABLE_MODIFICATIONS: [["isTryingToGetPregnantInNext3Months", "0"]]
+  - [trying-to-get-pregnant-yes-we-are] 'Yes, we are' -> 2355 VARS=[["isTryingToGetPregnantInNext3Months", "1"], ["noRecTopicalCombined", "1"], ["noRecOralFin", "1"]]
+  - [trying-to-get-pregnantn-no-we-are-not] 'No, we are not' -> 2400
+
+### qid 2355 [choice] next=None mtype=single
+TEXT: 'A word of caution if you’re planning to get pregnant.'
+  m.description: Some hair loss treatments contain finasteride, which studies have shown to be linked to instances of sexual dysfunction and decrease in sperm count (in oral or topical form).
+
+If you are currently trying to conceive (or plan to in the near future), you should be aware of these potential side effects.
+
+We recommend speaking with a provider on our platform or your primary care physician if you have any questions.
+  - [if-trying-to-get-pregnant-acknowledge-and-continue] 'Acknowledge and continue' -> 2400 EXCL meta={"value": "Acknowledge and continue"}
+
+### qid 2400 [multichoice] next=2500
+TEXT: 'What other health goals are on your mind?'
+  - [weight-loss] 'Weight loss' -> 2500
+  - [stronger-erections] 'Stronger erections' -> 2500
+  - [climax-control] 'Climax control' -> 2500
+  - [herpes-cold-sores-outbreaks] 'Herpes or cold sores outbreaks' -> 2500
+  - [longevity] 'Longevity' -> 2500
+  - [nutrition] 'Nutrition' -> 2500
+  - [skincare] 'Skincare' -> 2500
+  - [none-of-the-above] 'None of the above' -> 2500 EXCL
+
+### qid 2500 [text] next=3150 mtype=MasterQuestion
+TEXT: 'Is there anything else you want your doctor to know about your condition or health?'
+  m.category: BEFORE WE WRAP UP
+  m.hideFollowups: true
+  m.key: masterQuestionTest
+  m.subQuestionsQids: [2510, 2520]
+
+### qid 2510 [choice] next=None mtype=RadioEmbedded
+TEXT: 'Is there anything else you want your Ro-affiliated doctor to know about your condition or health?'
+  m.immediateSubmit: true
+  m.key: pastTreatment
+  - [no] 'No' -> 3150
+  - [yes] 'Yes' -> 2520 meta={"highlight": "ack-nonclinical"}
+
+### qid 2520 [text] next=3150 mtype=ExplanationEmbedded
+TEXT: 'Please leave your message to your doctor here.'
+  m.hasTitle: true
+  m.isFollowup: true
+  m.key: drugsTaking
+
+### qid 3150 [fork] next=None
+TEXT: 'FORK - MHL CONSULTATIVE OV'
+FORKING_RULES: [["3177", "hasMhlConsultativeOvExperiment == 1"], ["3180", "1 == 1"]]
+
+### qid 3177 [choice] next=None mtype=single
+TEXT: 'We use ingredients clinically proven to stop hair loss and regrow hair'
+  m.description: **90% of members** say they saw reduced hair loss or thinning after treatment through Ro
+  m.interstitial: {"id": 2, "template": {"name": "RomanMhlLoader", "header": "Reviewing your responses", "subheader": "Here’s a quick recap"}}
+  - [continue] 'Continue' -> 3178 EXCL meta={"value": "Continue"}
+
+### qid 3178 [choice] next=3210 mtype=MHLRecommenderResults
+TEXT: 'MHL Treatment Recommendation'
+  m.description: Your provider will review your preference and determine the best option for you.
+  m.hideDescriptionInTheProviderApp: true
+  m.useV2UI: true
+  m.products: [{"code": "hl-topical-spray-group", "questionTitle": "The Ro Mane Spray is our **most comprehensive** treatment, designed for **easy, once-daily** use", "sectionFooter": "*Lower risk of systemic side effects as compared to oral treatments", "sectionTitle": "If you want **a spray** to **stop hair loss + regrow hair**", "subtitle": "finasteride + minoxidil + tretinoin", "title": "Ro Mane Spray", "image": {"alt": "", "src": "https://assets.ro.co/cms/topical-spray-3549920f895b2.jpg"}, "marketingClai…[+2233]
+  m.sideEffects: [{"type": "REGISTER_DROPOFF_STEP"}]
+  - [select-topical-compounded] 'Select topical compounded spray' -> 3210 meta={"code": "hl-topical-spray-group", "type": "CHOOSE_PRODUCT", "sideEffects": [{"type": "CLEAR_CART"}, {"type": "ADD_PRODUCTS", "products": [{"filters": {"code": "hl-topical-spray-product"}}]}]} VARS=[["hasTopicalCompounded", "1"]]
+  - [select-minoxidil] 'Select oral minoxidil' -> 3210 meta={"code": "hl-oral-minoxidil", "type": "CHOOSE_PRODUCT", "sideEffects": [{"type": "CLEAR_CART"}, {"type": "ADD_PRODUCTS", "products": [{"filters": {"code": "oral-minoxidil-2-5-mg"}}]}]} VARS=[["hasMinoxidil", "1"]]
+  - [select-finasteride] 'Select oral finasteride' -> 3210 meta={"code": "hs-finasteride", "type": "CHOOSE_PRODUCT", "sideEffects": [{"type": "CLEAR_CART"}, {"type": "ADD_PRODUCTS", "products": [{"filters": {"code": "Finasteride1mg"}}]}]} VARS=[["hasFinasteride", "1"]]
+
+### qid 3180 [choice] next=3200 mtype=single
+TEXT: 'Treatment Details'
+  m.category: WRAPPING UP
+  m.current_section: 3
+  m.description: Let's figure out the logistics for your treatment
+  m.do_not_count_as_question: false
+  m.header_text: Treatment Details
+  m.number_of_sections: 4
+  m.sideEffects: [{"type": "TRACK_EVENT", "event": {"eventName": "Treatment Details", "targets": ["google-tag-manager"]}}]
+  - [continue] 'Continue' -> 3200 EXCL meta={"value": "Continue"}
+
+### qid 3200 [choice] next=None mtype=ChooseProductsGroup
+TEXT: 'Do you have a specific treatment for hair loss that you would prefer to be prescribed?'
+  m.description: Ultimately, your provider will make a decision based on your medical history, taking your preference into account.
+
+<Modal markdown="We've gathered information about both drugs to help you learn about the differences between the treatments.
+
+Your provider will decide which treatment is right for you, taking your preferences into account.
+
+<TestimonialV2 headline='The bottom line' text='These medications have not been directly compared to each other. They work in different ways and have different…[+5188]
+  m.hideDescriptionInTheProviderApp: true
+  m.choose_products_group: {"is_secondary": true, "sections": [{"component": "Sections/GroupItemV2", "group": {"code": "hs-finasteride"}, "props": {"info": "Recommended for those interested in a multi-faceted approach to treating hair loss and would like to also use topical minoxidil (generic Rogaine)."}}, {"component": "Sections/GroupItemV2", "group": {"code": "hl-oral-minoxidil"}, "props": {"info": "Identical active ingredient to topical minoxidil. May be preferred by men who do not want to risk the known (slight) chanc…[+54]
+  m.sideEffects: [{"type": "REGISTER_DROPOFF_STEP"}]
+  - [please-tell-the-physician-i-dont-have-a-preference] 'Please tell the physician I don’t have a preference.' -> 3210 meta={"type": "PRODUCT_NO_PREFERENCE", "no_preference_button": {"content": "I want my provider to determine the best treatment and plan for me.", "title": "Not sure / no preference", "type": "radio"}}
+  - [select-finasteride] 'Select finasteride' -> 3210 meta={"code": "hs-finasteride", "type": "CHOOSE_PRODUCT", "sideEffects": [{"type": "CLEAR_CART"}, {"type": "ADD_PRODUCTS", "products": [{"filters": {"code": "Finasteride1mg"}}]}]} VARS=[["hasFinasteride", "1"]]
+  - [select-minoxidil] 'Select minoxidil' -> 3210 meta={"code": "hl-oral-minoxidil", "type": "CHOOSE_PRODUCT", "sideEffects": [{"type": "CLEAR_CART"}, {"type": "ADD_PRODUCTS", "products": [{"filters": {"code": "oral-minoxidil-2-5-mg"}}]}]} VARS=[["hasMinoxidil", "1"]]
+
+### qid 3210 [fork] next=None
+TEXT: 'Fork Side Effects Dependent on MHL Treatment Recommendation selection'
+FORKING_RULES: [["3230", "hasTopicalCompounded == 1"], ["3240", "hasFinasteride == 1"], ["3250", "hasMinoxidil == 1"], ["3230", "1 == 1"]]
+
+### qid 3230 [choice] next=4000 mtype=single
+TEXT: 'Please take a moment to review the possible side effects of this medication.'
+  m.description: The medications in your selected treatment can have certain side effects, which you should be aware of before getting started.
+
+## Finasteride
+
+<Collapse title="Psychological side effects">
+This type of medication may cause or worsen depression and anxiety.
+</Collapse>
+
+<Collapse title="Sexual side effects">
+These may include decreased semen volume, decreased libido, and erectile dysfunction.
+</Collapse>
+
+<Collapse title="How likely are side effects?">
+While there is controversy, the possibility…[+3634]
+  m.doNotCountAsQuestion: true
+  - [got-it-continue] 'Got it, continue' -> 4000 EXCL meta={"value": "Continue"}
+
+### qid 3240 [choice] next=4000 mtype=single
+TEXT: 'Please take a moment to review the possible side effects of this medication.'
+  m.description: The medications in your selected treatment can have certain side effects, which you should be aware of before getting started.
+
+## Finasteride
+
+<Collapse title="Psychological side effects">
+This type of medication may cause or worsen depression and anxiety.
+</Collapse>
+
+<Collapse title="Sexual side effects">
+These may include decreased semen volume, decreased libido, and erectile dysfunction.
+</Collapse>
+
+<Collapse title="How likely are side effects?">
+While there is controversy, the possibility…[+546]
+  m.doNotCountAsQuestion: true
+  - [got-it-continue] 'Got it, continue' -> 4000 EXCL meta={"value": "Continue"}
+
+### qid 3250 [choice] next=4000 mtype=single
+TEXT: 'Please take a moment to review the possible side effects of this medication.'
+  m.description: The medications in your selected treatment can have certain side effects, which you should be aware of before getting started.
+
+## Minoxidil
+
+<Collapse title="Common side effects">Common side effects can include low blood pressure (hypotension) and swelling in the legs (edema), among others. Some people experience headaches, although those typically improve over time. Others may experience additional hair growth on the face or body (hypertrichosis). This is the most common side effect of taking …[+2713]
+  m.doNotCountAsQuestion: true
+  - [got-it-continue] 'Got it, continue' -> 4000 EXCL meta={"value": "Continue"}
+
+### qid 4000 [fork] next=None
+TEXT: 'FORK - SELFIE PHOTO'
+FORKING_RULES: [["5000", "skipManualIdVerification == 1"], ["5000", "hasVerifiedPhoneNumber == 1 and hasTruliooVerificationExperiment == 1"], ["5000", "hasUploadedSelfiePhoto == 1"], ["4010", "1 == 1"]]
+
+### qid 4010 [choice] next=4020 alias='Share a photo of yourself - Verification' mtype=PhotoUploadWithVerification
+TEXT: 'Share a photo of yourself'
+  m.photoType: selfie
+  m.intro: {"howItWorksModal": {"content": "<Image align=\"left\" src=\"https://assets.ro.co/ov/question-mark-51a0b7e1.jpg\" width=\"64px\" />## How does this work?\n\nPrior to reviewing your treatment request, your doctor or nurse practitioner will use your photos to verify your identity.\n\n### How should I take the photo?\n\n#### For ID:\n\nIf you add a driver’s license, take a photo of the front of the ID on a flat surface. If you add a photo of your passport, take a photo of the page with your picture…[+1209]
+  m.photoConfig: {"code": "photoContent", "name": "photoContent", "customCamera": "face", "mask": "face"}
+  m.sideEffects: [{"type": "REGISTER_DROPOFF_STEP"}]
+  - [submit] 'Upload completed' -> 4020 meta={"type": "GO_FORWARD"}
+  - [skip] 'skip' -> 4020 meta={"type": "SKIP"}
+
+### qid 4020 [fork] next=None
+TEXT: 'FORK - ID PHOTO'
+FORKING_RULES: [["5000", "skipManualIdVerification == 1"], ["5000", "hasVerifiedPhoneNumber == 1 and hasTruliooVerificationExperiment == 1"], ["5000", "hasUploadedGovernmentIdPhoto == 1"], ["4030", "1 == 1"]]
+
+### qid 4030 [choice] next=5000 mtype=PhotoUploadWithVerification
+TEXT: 'Take a photo of your government-issued ID'
+  m.hasAdditionalVerification: true
+  m.photoType: id
+  m.intro: {"howItWorksModal": {"content": "<Image align=\"left\" src=\"https://assets.ro.co/ov/question-mark-51a0b7e1.jpg\" width=\"64px\" />## How does this work?\n\nPrior to reviewing your treatment request, your doctor or nurse practitioner will use your photos to verify your identity.\n\n### How should I take the photo?\n\n#### For ID:\n\nIf you add a driver’s license, take a photo of the front of the ID on a flat surface. If you add a photo of your passport, take a photo of the page with your picture…[+1493]
+  m.photoConfig: {"code": "photo2Content", "name": "photo2Content", "customCamera": "document", "mask": "document"}
+  m.sideEffects: [{"type": "REGISTER_DROPOFF_STEP"}]
+  - [submit] 'submit id' -> 5000 meta={"type": "GO_FORWARD"}
+  - [skip] 'skip' -> 5000 meta={"type": "SKIP"}
+
+### qid 5000 [fork] next=None
+TEXT: 'FORK - Shipping Info with (5060) or without custom pharmacy (5030)'
+FORKING_RULES: [["5030", "hasTopicalCompounded == 1"], ["5060", "1 == 1"]]
+
+### qid 5030 [control] next=5140 mtype=ShippingAddress
+TEXT: 'Shipping Info'
+  m.collapseAdditionalFields: true
+  m.do_not_count_as_question: true
+  m.hasMinimalisticUI: true
+  m.hasNameFields: true
+  m.hasPhoneField: false
+  m.hide_custom_pharmacy_button: true
+  m.hold_next_question: true
+  m.shipping_address: {"hasSmsNotification": false, "alternate_pharmacy": {"cancel_button": "Nevermind, pick Ro pharmacy", "confirm_button": "Yes, I’m sure", "heading": "Need alternate pharmacy?", "text_sections": ["If you pick a pharmacy outside of the Ro Pharmacy Network, and qualify for a prescription, we will not be able to guarantee the price of the medication and provide free monthly delivery."]}, "form_header": {"on_pharmacy_address": {"heading": "Shipping from"}, "on_pharmacy_address_user_address": {"text": "…[+789]
+
+### qid 5060 [control] next=5140 mtype=ShippingAddress
+TEXT: 'Shipping Info'
+  m.collapseAdditionalFields: true
+  m.do_not_count_as_question: true
+  m.hasMinimalisticUI: true
+  m.hasNameFields: true
+  m.hasPhoneField: false
+  m.hold_next_question: true
+  m.shipping_address: {"hasSmsNotification": false, "alternate_pharmacy": {"cancel_button": "Nevermind, pick Ro pharmacy", "confirm_button": "Yes, I’m sure", "heading": "Need alternate pharmacy?", "text_sections": ["If you pick a pharmacy outside of the Ro Pharmacy Network, and qualify for a prescription, we will not be able to guarantee the price of the medication and provide free monthly delivery."]}, "form_header": {"on_pharmacy_address": {"heading": "Shipping from"}, "on_pharmacy_address_user_address": {"text": "…[+799]
+
+### qid 5140 [choice] next=6500 mtype=Checkout
+TEXT: 'Finalize your order'
+  m.do_not_count_as_question: true
+  m.hasMainHeaderText: false
+  m.hold_next_question: true
+  m.redirectToAccountOnFinish: false
+  m.skipTreatmentRequestCreation: true
+  m.sections: [{"component": "Checkout/CartSummary/PaymentWrapper", "props": {"hasCardStyle": true}, "sections": [{"component": "Checkout/CartSummary", "props": {"hasEditMedicationButton": false, "showCartSummaryV3UI": true, "informationModal": {"content": "For medication that requires a prescription, the doctor will review your online visit to determine if the medication is right for your health condition. You won’t be charged for any prescription medication until this review is completed and you have been a…[+623]
+  m.sideEffects: [{"type": "SET_DELIVERY_SCHEDULE", "value": "03_quarterly"}, {"type": "REGISTER_DROPOFF_STEP"}]
+  - [finish] 'Finish' -> 6500 meta={"type": "FINISH"}
+
+### qid 6500 [control] next=-1 mtype=CreateTreatmentRequests
+TEXT: 'Thank you'
+  m.do_not_count_as_question: true
+  m.final_step: true
+  m.hold_next_question: true
+  m.final: {"description": "The answers from your online visit have been sent to your Ro-affiliated doctor via our secure electronic medical record system.", "nextSteps": {"heading": "What’s next?", "type": "timeline", "list": {"type": "timeline", "idSkip": {"buttonLabel": "Submit id verification", "heading": "Complete ID verification so your<br />doctor can respond to your request.", "thumb": {"height": 64, "src": "https://assets.ro.co/ov/ico-id-roman-70dda99f.png", "width": 64}}, "phoneCall": {"text": "B…[+2711]
+  m.sections: [{"component": "Checkout/ThankYouModal", "props": {}}]
+
+### qid 7010 [control] next=7020 alias='Exit: age under 18' mtype=LeaveComment
+TEXT: 'How can we help?'
+  m.description: Unfortunately our hair loss treatment is not available to people under 18. However, we would love to know if there is anything we can do to help. Please confirm your email and leave comments below we will get back to you as soon as we can.
+  m.reason: 60_under_18
+  m.submit_label: Submit
+
+### qid 7020 [control] next=-1 mtype=ThankYouSecondary
+TEXT: 'Thank you!'
+  m.extraText: We will review your message and get back to you as soon as possible.
+
+### qid 7030 [control] next=7020 alias='Exit: Not supported zip code' mtype=LeaveComment
+TEXT: 'Be notified when we’re in your area!'
+  m.description: We're currently not serving people in your area yet. Be along the first to find out when we are there.
+  m.reason: 00_zip_not_supported
+  m.submit_label: Be notified!
+
+### qid 7060 [fork] next=7020
+TEXT: 'FORK: redirect or exit'
+FORKING_RULES: [["7061", "hasRomanHairLossFemaleRedirectFlag == 1"], ["7062", "1 == 1"]]
+
+### qid 7061 [choice] next=7020 alias='Exit: Female' mtype=CustomChoice
+TEXT: 'We have a better experience for you!'
+  m.description: The treatments prescribed in this visit are designed to treat male pattern hair loss. Luckily, we have a separate suite of offerings designed specifically for women.
+  m.doNotCountAsQuestion: true
+  - [continue-to-women-s-hair-loss-visit] "Continue to women's hair loss visit" -> 7020 meta={"component": "ButtonLink", "ButtonLink": {"url": "/tefcyb"}}
+
+### qid 7062 [control] next=7020 alias='Exit: Female' mtype=LeaveComment
+TEXT: 'How can we help?'
+  m.description: Unfortunately our hair loss treatment is currently only available to men. However, we would love to know if there’s anything we can do to help.
+  m.reason: 50_not_supported_gender
+  m.submit_label: Submit

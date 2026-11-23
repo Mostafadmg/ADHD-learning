@@ -1,0 +1,149 @@
+{
+ "heading": "What is Oral Finasteride?",
+ "body": "Finasteride works by reducing the amount of DHT in the scalp, which may slow the progression of hair loss and may support hair regrowth in some men.",
+ "activeIngredientsLabel": "",
+ "ingredients": [
+  {
+   "name": "Finasteride 1mg",
+   "body": "Finasteride inhibits 5-alpha-reductase, reducing DHT levels and helping slow the progression of male pattern hair loss in men."
+  },
+  {
+   "name": "StrutVite",
+   "body": "Daily hair, skin, and nail vitamins. See details below."
+  }
+ ],
+ "safety": [
+  {
+   "title": "Important Safety Information for Finasteride Tablets",
+   "body": [
+    {
+     "kind": "h",
+     "text": "Contraindications and warnings:"
+    },
+    {
+     "kind": "ul",
+     "items": [
+      "Finasteride is a medication for men only, women and children should never take Finasteride.",
+      "Finasteride is not indicated for use in women or pediatric patients.",
+      "Women who are pregnant or potentially may be pregnant should not handle whole or crushed Finasteride tablets due to the risk of birth defects in a male fetus. If a pregnant woman comes in contact with crushed or broken Finasteride tablets, wash the contact area with soap and water right away and a healthcare provider should be contacted.",
+      "Finasteride normally causes a decrease in PSA levels. If your PSA levels go up while you are taking Finasteride it may signal the presence of prostate cancer and should be evaluated by a healthcare provider.",
+      "5 Alpha-Reductase Inhibitors may increase the risk of high grade prostate cancer.",
+      "Do not take Finasteride if you are allergic to any of the ingredients in the tablet."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Before taking this medication",
+   "body": [
+    {
+     "kind": "p",
+     "text": "You should not use Finasteride if you are allergic to it, or:"
+    },
+    {
+     "kind": "ul",
+     "items": [
+      "If you are a woman or a child.",
+      "If you are a woman who is pregnant or may be pregnant. Finasteride may harm an unborn baby."
+     ]
+    },
+    {
+     "kind": "h",
+     "text": "Tell your healthcare provider about:"
+    },
+    {
+     "kind": "ul",
+     "items": [
+      "Any health conditions that you have, including liver or prostate problems.",
+      "All other medications that you take, including over the counter medications or vitamins and supplements.",
+      "Keep a list of all medications you take to show your healthcare provider and pharmacist."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Drug Interactions",
+   "body": [
+    {
+     "kind": "ul",
+     "items": [
+      "Other finasteride containing products: Do not take Finasteride tablets alongside other prescription products containing finasteride, as this could result in taking too much of the active ingredient.",
+      "Cytochrome P450-Linked Drug Metabolizing Enzyme System: No drug interactions of clinical importance have been identified. Finasteride does not appear to affect the cytochrome P450-linked drug-metabolizing enzyme system. Compounds that have been tested in man include antipyrine, digoxin, propranolol, theophylline, and warfarin and no clinically meaningful interactions were found.",
+      "Other Concomitant Therapy: Although specific interaction studies were not performed, finasteride doses of 1 mg or more were concomitantly used in clinical studies with acetaminophen, acetylsalicylic acid, α-blockers, analgesics, angiotensin-converting enzyme (ACE) inhibitors, anticonvulsants, benzodiazepines, beta blockers, calcium-channel blockers, cardiac nitrates, diuretics, H2 antagonists, HMG-CoA reductase inhibitors, prostaglandin synthetase inhibitors (also referred to as NSAIDs), and quinolone anti-infectives without evidence of clinically significant adverse interactions."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Side Effects",
+   "body": [
+    {
+     "kind": "h",
+     "text": "Get emergency medical help if you have signs of an allergic reaction to Finasteride:"
+    },
+    {
+     "kind": "ul",
+     "items": [
+      "Hives, difficulty breathing, swelling of your face, lips, tongue, or throat."
+     ]
+    },
+    {
+     "kind": "h",
+     "text": "Potential side effects of Finasteride:"
+    },
+    {
+     "kind": "ul",
+     "items": [
+      "Decrease in your blood Prostate Specific Antigen (PSA) levels. Finasteride may lower your PSA levels. If your PSA levels increase during the time that you are taking Finasteride, this may be a sign of the presence of prostate cancer and should be evaluated, even if this increase is still within normal limits.",
+      "Potential increased risk of a more serious form of prostate cancer in men taking finasteride at 5 times the dose of Finasteride for hair loss."
+     ]
+    },
+    {
+     "kind": "h",
+     "text": "Common Finasteride side effects may include:"
+    },
+    {
+     "kind": "ul",
+     "items": [
+      "Decrease in sex drive",
+      "Trouble getting or keeping an erection",
+      "Decrease in the amount of semen"
+     ]
+    },
+    {
+     "kind": "h",
+     "text": "The following less common side effects have been reported with Finasteride use:"
+    },
+    {
+     "kind": "ul",
+     "items": [
+      "Breast tenderness and enlargement. Tell your healthcare provider about any changes in your breasts such as lumps, pain or nipple discharge.",
+      "Depression",
+      "Suicidal thoughts or behavior have been reported.",
+      "Decrease in sex drive that continued after stopping the medication",
+      "Allergic reactions including rash, itching, hives and swelling of the lips, tongue, throat, and face",
+      "Problems with ejaculation that continued after stopping medication",
+      "Testicular pain",
+      "Difficulty in achieving an erection that continued after stopping the medication;",
+      "male infertility and/or poor quality of semen",
+      "In rare cases, male breast cancer"
+     ]
+    },
+    {
+     "kind": "p",
+     "text": "Tell your health care provider if you have any side effect that bothers you or does not go away."
+    },
+    {
+     "kind": "p",
+     "text": "This is not a complete list of side effects and others may occur. Call your healthcare provider for medical advice about side effects. You may report side effects to FDA at 1-800-FDA-1088."
+    }
+   ]
+  }
+ ],
+ "disclaimer": [
+  "All prescription medications require a valid and complete online consultation prior to approval and final pricing is determined.",
+  "The drug and medical information provided on this website is not meant to cover all adverse effects, drug interactions, warnings, medical uses, directions and precautions. The information provided is a medical resource and the judgment of your healthcare provider should not be substituted."
+ ],
+ "imageSrc": "/assets/v3-oral-finasteride-hand-bathroom.png",
+ "imageAlt": "Man pouring Finasteride tablets from a bottle into his hand at a bathroom counter"
+}

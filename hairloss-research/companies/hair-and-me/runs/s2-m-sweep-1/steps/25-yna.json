@@ -1,0 +1,54 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "autoNext": {
+     "duration": 2500,
+     "label": "Go to next page"
+    }
+   },
+   {
+    "skipAsNext": {
+     "label": "Skip"
+    }
+   }
+  ],
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 417,
+    "inputConfig": {
+     "content": {
+      "disclaimer": "*Based on responses from 89 participants",
+      "items": [
+       {
+        "description": "felt a negative emotional or psychological impact",
+        "percentage": "100%"
+       },
+       {
+        "description": "mentioned a loss of confidence or self-esteem",
+        "percentage": "90%"
+       },
+       {
+        "description": "described feeling embarrassed or insecure",
+        "percentage": "58%"
+       }
+      ],
+      "paragraph": "We spoke to men in our community about their experiences of hair loss, and found that:"
+     },
+     "interstitialType": "you-are-not-alone",
+     "title": "Your hair journey starts here"
+    },
+    "inputType": "interstitial",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Lots of people feel this way",
+  "type": "question"
+ }
+}

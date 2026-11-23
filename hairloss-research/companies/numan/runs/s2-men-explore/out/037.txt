@@ -1,0 +1,24 @@
+COMMAND 037 {"steps":[{"do":"click","selector":"label:text-is(\"Yes\")","settle":2800},{"do":"snap","settle":600}]}
+URL: https://www.numan.com/subscribe/hair-loss/4b4e30d9-9042-49e8-a32b-7557d60d5aec/gp-notification-choice
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+96%
+Would you like your GP to be informed of this consultation?
+
+To ensure we provide the best and safest service for you, we strongly encourage you to share your GP details so we can inform them about your treatment.
+
+Yes
+No
+Back
+
+--- CONTROLS ---
+  radio (2):
+    - Yes [checked] (name: radio-777)
+    - No (name: radio-777)
+  button (1):
+    - Back
+
+--- LINKS ---
+  link (1):
+    - Visit the main page -> /

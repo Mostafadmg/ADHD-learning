@@ -1,0 +1,1 @@
+{"steps":[{"do":"fill","selector":"textarea","value":"Itchy skin rash"},{"do":"click","text":"Next","settle":2800},{"do":"snap","settle":600}]}

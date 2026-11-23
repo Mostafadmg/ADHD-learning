@@ -1,0 +1,91 @@
+STEP 19 wait 2500
+URL: https://www.keeps.com/not-eligible-user/state
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+EXCLUSIVE OFFER: UP TO 50% OFF FIRST ORDER GET STARTED
+
+HAIR LOSS
+SEXUAL HEALTH
+NEW
+LEARN
+GET STARTED
+SIGN IN
+CART
+Thanks for your interest in Keeps!
+
+Regulations in your state currently prevent us from providing online doctor consultations in your area.
+
+If you already have a finasteride prescription, you can easily transfer it to our pharmacy (we’ll send you instruction on how to do this), and we’ll ship your order straight to your door. Otherwise, you can still purchase finasteride through Keeps, however you’ll need to obtain a prescription from a doctor in-person.
+
+GOT IT
+
+If now is not a good time to see the doctor, minoxidil is an over-the-counter treatment that you can purchase through us here.
+
+FEATURED IN:
+
+GET STARTED
+
+OUR PRODUCTS
+
+HAIR LOSS 101
+
+LEARN
+
+OUR STORY
+
+FAQS
+
+CONTACT
+
+PRESS
+
+CAREERS
+
+Keep in the loop
+
+Thanks! You've signed up successfully.
+
+Keeps
+
+Cove
+
+Facet
+
+Nurx
+
+© 2026 Keeps
+
+Privacy
+
+Terms
+
+Informed Consent
+
+Accessibility
+
+Returns
+
+Shipping
+
+Your Privacy Choices
+
+My Cart
+
+Your cart is empty.
+
+Add an item to your cart to begin your journey with Keeps.
+
+SEE OUR PRODUCTS
+
+Not sure what’s right for you?
+
+Take the quiz
+
+--- CONTROLS ---
+  button (4): GET STARTED  ·  SIGN IN  ·  CART  ·  GOT IT
+  input:email (1): Your Email
+  input:submit (1): (no label) = "Submit"
+
+--- LINKS ---
+  link (25): GET STARTED -> /hair-assessment-quiz  ·  GOT IT -> /get-started/checkout  ·  here -> /our-products  ·  GET STARTED -> /quiz  ·  OUR PRODUCTS -> /our-products  ·  HAIR LOSS 101 -> /hair-loss  ·  LEARN -> /learn  ·  OUR STORY -> /about-us  ·  FAQS -> /faq  ·  CONTACT -> /contact  ·  PRESS -> /press  ·  CAREERS -> /careers  ·  Keeps -> https://www.keeps.com/  ·  Cove -> https://www.withcove.com/  ·  Facet -> https://facet.thirtymadison.com/  ·  Nurx -> https://www.nurx.com  ·  Privacy -> https://patient.thirtymadison.com/dashboard/legals/privacy  ·  Terms -> https://patient.thirtymadison.com/dashboard/legals/terms-and-conditions  ·  Informed Consent -> https://patient.thirtymadison.com/dashboard/legals/informed-consent  ·  Accessibility -> https://patient.thirtymadison.com/dashboard/legals/accessibility  ·  Returns -> /faq/what-is-the-keeps-refund-and-return-policy  ·  Shipping -> /faq/category/orders-and-shipping  ·  Your Privacy Choices -> /not-eligible-user/state#your-privacy-choices  ·  SEE OUR PRODUCTS -> /our-products?reason=state  ·  Take the quiz -> /quiz?reason=state

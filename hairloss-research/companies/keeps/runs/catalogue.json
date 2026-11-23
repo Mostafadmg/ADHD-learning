@@ -1,0 +1,101 @@
+{
+ "start": "https://www.keeps.com/our-products",
+ "locale": "en-US",
+ "timezone": "America/Chicago",
+ "steps": [
+  {
+   "do": "scroll"
+  },
+  {
+   "do": "wait",
+   "ms": 1500
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/our-products/finasteride"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/our-products/minoxidil-foam"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/our-products/minoxidil-solution"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/our-products/topical-finasteride-and-minoxidil"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/our-products/minoxidil-spray"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/our-products/ketoconazole"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/our-products/thickening-shampoo"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/our-products/thickening-conditioner"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/our-products/thickening-pomade"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "goto",
+   "url": "https://www.keeps.com/our-products/daily-hair-defense-supplement"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "goto",
+   "url": "https://buy.keeps.com/low-dose-oral-minoxidil"
+  },
+  {
+   "do": "scroll"
+  }
+ ]
+}

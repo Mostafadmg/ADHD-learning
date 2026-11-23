@@ -1,0 +1,52 @@
+{
+ "heading": "Comprehensive. Topical. Strong.",
+ "body": "Our multi-active compounded topical hair loss formula, combining 5 actives in a gel applied nightly to dry scalp.",
+ "activeIngredientsLabel": "Active Ingredients: Dutasteride, Minoxidil, Tretinoin, Fluocinolone, Biotin",
+ "ingredients": [
+  {
+   "name": "Dutasteride 0.1%",
+   "body": "Dual 5-alpha reductase inhibitor applied topically, intended for localized scalp DHT reduction.*"
+  },
+  {
+   "name": "Minoxidil",
+   "body": "Vasodilator that may increase blood flow and nutrient delivery to hair follicles.*"
+  },
+  {
+   "name": "Tretinoin",
+   "body": "A vitamin A derivative that may stimulate hair growth and exfoliate the scalp to help medications penetrate deeper.*"
+  },
+  {
+   "name": "Fluocinolone",
+   "body": "A mild topical corticosteroid that can help reduce scalp inflammation that may contribute to hair loss and follicle damage.*"
+  },
+  {
+   "name": "Biotin",
+   "body": "B-vitamin that may support keratin production.*"
+  }
+ ],
+ "safety": [
+  {
+   "title": "Common side effects",
+   "body": "Itching, burning, redness, flaking, dryness, scaling, peeling, stinging, changes in hair color or texture, irritation at the application site, and increased sun sensitivity."
+  },
+  {
+   "title": "Tell your healthcare provider",
+   "body": "Share any history of scalp conditions, sensitivities to topical medications, current prescriptions, and any history of low blood pressure or fainting."
+  },
+  {
+   "title": "Do not use if",
+   "body": "You are a woman or a child. Dutasteride is a medication for men only. Women who are or may become pregnant should never handle dutasteride-containing medications."
+  },
+  {
+   "title": "Seek medical care",
+   "body": "Severe scalp swelling, persistent rash, unexpected facial swelling, chest pain, fainting, or signs of an allergic reaction."
+  }
+ ],
+ "disclaimer": [
+  "All prescription medications require a valid and complete online consultation prior to approval and final pricing is determined. Compounded medications are not FDA-approved and have not been evaluated by the FDA for safety, effectiveness, or quality. A licensed provider may prescribe a compounded medication when they determine it is clinically appropriate for you.",
+  "Compounded Topical Dutasteride Formula is not FDA-approved. Statements regarding hair loss, hair growth, scalp health, and follicle support have not been evaluated by the FDA.",
+  "The drug and medical information provided on this website is not meant to cover all adverse effects, drug interactions, warnings, medical uses, directions and precautions. The information provided is a medical resource and the judgment of your healthcare provider should not be substituted."
+ ],
+ "imageSrc": "/assets/v3-topicalduta-ingredients-scalp-apply.jpg",
+ "imageAlt": "Hand applying Hair Loss Solution dropper directly to scalp"
+}

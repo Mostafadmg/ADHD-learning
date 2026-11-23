@@ -1,0 +1,47 @@
+STEP 10 goto "https://onlinedoctor.boots.com/patient-guide"
+URL: https://onlinedoctor.boots.com/patient-guide
+TITLE: Patient Guide | Boots Online Doctor UK
+
+--- VISIBLE TEXT ---
+PATIENT GUIDE
+WHO WE ARE AND WHAT WE DO
+
+Boots Digital Health runs the Boots Online Doctor Service. We’re an online healthcare provider. In that sense we don’t meet our patients in person. We’re a private service and not part of the NHS.
+
+We’re registered with and regulated by the Care Quality Commission (CQC), the independent healthcare regulator in England, with provider ID 1-10153778719. We’re also registered with and regulated by Northern Ireland’s Regulation and Quality Improvement Authority (RQIA) as an Independent Medical Agency providing private doctor services, with registration number 020876. Our address as a registered provider with the CQC and RQIA is Unit 238, Business Design Center, 52 Upper Street, London N1 0QH.
+
+Our Registered Manager is Mr Thomas McKay and the Chief Medical Officer/Responsible Individual is Dr Christina Hennessey. Our clinical team is made up of doctors, pharmacist independent prescribers and nurse prescribers. Our clinical team are all based in the UK.
+
+Our mission is to improve access to great care by providing a convenient, private alternative to the NHS for specific areas of primary care that we can manage safely online. We also want to help you make informed decisions about which treatments are right for you.
+
+Our services include treatment services and home test kits where you send a physical sample. Concepta Diagnostics Limited provides our laboratory services.
+
+Most of our services are available to patients aged 18 and up. Patients aged 16 and up can use some of our services, such as acne treatment and contraception. Different services have different upper age limits based on our evidence-based clinical protocols.
+
+When we prescribe a medicine, you have the choice to pick up your medicine at your local Boots store or to have Boots deliver the medicine in the post using Royal Mail. We can also send a hard copy paper prescription to any pharmacy other than Boots, but you’d need to pay the pharmacy for the medicine directly.
+
+TERMS AND CONDITIONS AND FEES
+
+Please read our Terms and Conditions and Privacy Policy.
+
+COMPLAINTS PROCEDURE
+
+It’s simple to give us feedback or to make a complaint. Just message us through your Boots Online Doctor account or call us on 0203 3183773.
+
+If your feedback raises concerns that aren’t satisfactorily resolved, we can register your feedback as an official complaint. Please email complaints@bootsdigitalhealth.co.uk. Once we receive an official complaint, we’ll acknowledge receipt within 2 business days.
+
+Within 20 days of a complaint, we’ll tell you the result of any investigation, outcome and action to be taken, if any. We’ll keep you informed of the status of your complaint while we work to investigate and resolve it. We’ll maintain patient confidentiality whilst managing complaints, except when we are required to share information, such as in safeguarding cases.
+
+CONTACT DETAILS FOR THE CARE QUALITY COMMISSION
+
+You can call the CQC on 03000 616161. You can email the CQC at enquiries@cqc.org.uk.
+
+CONTACT DETAILS FOR THE REGULATION AND QUALITY IMPROVEMENT AUTHORITY
+
+You can call the RQIA’s Guidance Team on 028 9536 1990. You can write to the RQIA at 1st Floor, James House, 2-4 Cromac Avenue, Belfast, BT7 2JA. You can email the RQIA at info@rqia.org.uk. Please note that the RQIA does not investigate complaints. Once the RQIA has conducted their first inspection of Boots Digital Health then you will be able to obtain a copy of that report from the RQIA website or by messaging or calling us.
+
+--- CONTROLS ---
+  button (1): Cookie Preferences
+
+--- LINKS ---
+  link (30): Skip to main content -> #main-content  ·  0203 3183773 -> tel:02033183773  ·  Boots Advantage Card -> https://www.boots.com/advantage-card  ·  Shop Boots.com -> https://www.boots.com  ·  Services -> #  ·  Meet the team -> /clinician-bio/  ·  FAQ -> /faq  ·  LOG IN -> https://onlinedoctor-clinic.boots.com/login  ·  Home -> /  ·  Terms and Conditions -> /terms-and-conditions  ·  Privacy Policy -> /privacy-policy  ·  complaints@bootsdigitalhealth.co.uk -> mailto:complaints@bootsdigitalhealth.co.uk  ·  enquiries@cqc.org.uk -> mailto:enquiries@cqc.org.uk  ·  Women's health -> /womens-health  ·  Men's health -> /mens-health  ·  Skin Health -> /acne-skin-conditions  ·  Sexual health -> /sexual-health  ·  General health -> /general-health  ·  Testing services -> /home-testing-kits  ·  Careers -> https://www.boots.jobs/support-office/boots-online-doctor-careers  ·  Patient guide -> /patient-guide  ·  Terms and conditions -> /terms-and-conditions  ·  Privacy policy -> /privacy-policy  ·  Cookie policy -> /cookie-policy  ·  FAQs -> /faq  ·  Contact us -> /contact-us  ·  Pick up and delivery -> /pick-up-and-delivery  ·  Off-label medicines -> /off-label-medicines  ·  Store locator -> https://www.boots.com/StoreLookupView  ·  See the report -> https://www.cqc.org.uk/location/1-15661319227?referer=widget3

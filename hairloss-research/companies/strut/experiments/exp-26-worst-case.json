@@ -1,0 +1,129 @@
+{
+ "start": "https://start.struthealth.com/f/6aa3d578f415d1603a6e0c85",
+ "locale": "en-US",
+ "timezone": "America/Chicago",
+ "note": "NOT a one-change run: every high-risk answer at once (61+, 1 month, patchy, sudden loss + bleeding scalp, minoxidil allergy, six heart/BP/kidney conditions, mood Yes x2)",
+ "steps": [
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "61+"
+  },
+  {
+   "do": "click",
+   "text": "Add to cart"
+  },
+  {
+   "do": "wait",
+   "ms": 3000
+  },
+  {
+   "do": "click",
+   "text": "1 month or less"
+  },
+  {
+   "do": "click",
+   "text": "Patchy bald spots"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "Sudden hair loss"
+  },
+  {
+   "do": "click",
+   "text": "Bleeding"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "None of the above"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "Yes"
+  },
+  {
+   "do": "click",
+   "text": "Minoxidil",
+   "exact": true
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "Heart failure or heart disease"
+  },
+  {
+   "do": "click",
+   "text": "Heart attack or coronary artery disease"
+  },
+  {
+   "do": "click",
+   "text": "Stroke"
+  },
+  {
+   "do": "click",
+   "text": "Low blood pressure"
+  },
+  {
+   "do": "click",
+   "text": "Pheochromocytoma"
+  },
+  {
+   "do": "click",
+   "text": "Kidney disease"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "Yes"
+  },
+  {
+   "do": "click",
+   "text": "Yes"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "wait",
+   "ms": 3000
+  }
+ ]
+}

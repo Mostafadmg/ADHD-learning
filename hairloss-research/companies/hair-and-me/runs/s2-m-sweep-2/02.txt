@@ -1,0 +1,20 @@
+STEP 02 hgp
+URL: https://www.hairandme.com/c/suh/hgp
+
+--- VISIBLE TEXT ---
+Which hair goal do you want to tackle most?
+
+We can treat all the goals you've selected, but focus on your number one goal, for now.
+
+Improve my hairline, parting or crown
+Boost overall hair health
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=9308] | Improve my hairline, parting or crown
+input:radio[name=9308] | Boost overall hair health
+button:submit | NEXT QUESTION [disabled]
+a -> /c/suh/hgp?action=previous | Back to previous page

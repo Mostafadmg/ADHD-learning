@@ -1,0 +1,282 @@
+{
+ "start": "https://onlinedoctor-clinic.boots.com/Hair-Loss",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2000
+  },
+  {
+   "do": "click",
+   "selector": "input[name=zip]"
+  },
+  {
+   "do": "type",
+   "value": "N1 0QH"
+  },
+  {
+   "do": "wait",
+   "ms": 3000
+  },
+  {
+   "do": "click",
+   "selector": "#next-step"
+  },
+  {
+   "do": "wait",
+   "ms": 1500
+  },
+  {
+   "do": "click",
+   "text": "Male"
+  },
+  {
+   "do": "click",
+   "text": "NEXT"
+  },
+  {
+   "do": "wait",
+   "ms": 2000
+  },
+  {
+   "do": "click",
+   "selector": "#dob-preflight"
+  },
+  {
+   "do": "type",
+   "value": "15061994"
+  },
+  {
+   "do": "wait",
+   "ms": 3000
+  },
+  {
+   "do": "click",
+   "text": "NEXT"
+  },
+  {
+   "do": "wait",
+   "ms": 5000
+  },
+  {
+   "do": "click",
+   "text": "First time using this service"
+  },
+  {
+   "do": "wait",
+   "ms": 5000
+  },
+  {
+   "do": "click",
+   "selector": "[role=button]:has-text(\"£28\")"
+  },
+  {
+   "do": "wait",
+   "ms": 4000
+  },
+  {
+   "do": "click",
+   "text": "CONTINUE"
+  },
+  {
+   "do": "wait",
+   "ms": 5000
+  },
+  {
+   "do": "click",
+   "selector": "label[for=agreeRadio]"
+  },
+  {
+   "do": "click",
+   "selector": "#important-info button.btn"
+  },
+  {
+   "do": "wait",
+   "ms": 5000
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"Temples and Crown\")), .checkbox-answer:has(label:text-is(\"Temples and Crown\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"None of the above\")), .checkbox-answer:has(label:text-is(\"None of the above\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"No\")), .checkbox-answer:has(label:text-is(\"No\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"More than a month ago\")), .checkbox-answer:has(label:text-is(\"More than a month ago\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"Gradually\")), .checkbox-answer:has(label:text-is(\"Gradually\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"No\")), .checkbox-answer:has(label:text-is(\"No\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"None of these apply\")), .checkbox-answer:has(label:text-is(\"None of these apply\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"No\")), .checkbox-answer:has(label:text-is(\"No\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"No\")), .checkbox-answer:has(label:text-is(\"No\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has-text(\"Correct - I\"), .checkbox-answer:has-text(\"Correct - I\")"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"None of these apply\")), .checkbox-answer:has(label:text-is(\"None of these apply\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"No\")), .checkbox-answer:has(label:text-is(\"No\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"No\")), .checkbox-answer:has(label:text-is(\"No\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"True\")), .checkbox-answer:has(label:text-is(\"True\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has-text(\"if I need a prostate blood test\"), .checkbox-answer:has-text(\"if I need a prostate blood test\")"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"I understand\")), .checkbox-answer:has(label:text-is(\"I understand\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"I understand and wish to proceed\")), .checkbox-answer:has(label:text-is(\"I understand and wish to proceed\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has-text(\"affect our review\"), .checkbox-answer:has-text(\"affect our review\")"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has(label:text-is(\"No\")), .checkbox-answer:has(label:text-is(\"No\"))"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "click",
+   "selector": ".radio-answer:has-text(\"Please tick to confirm\"), .checkbox-answer:has-text(\"Please tick to confirm\")"
+  },
+  {
+   "do": "click",
+   "selector": "button.questionnaire__btn-next",
+   "settle": 1500
+  },
+  {
+   "do": "wait",
+   "ms": 7000
+  }
+ ],
+ "note": "Baseline man: 32 (DOB 15/06/1994), male, temples and crown, gradual, more than a month, no scalp problems, no medicines, no conditions, no allergies, not using finasteride, partner not pregnant, GP not informed. Postcode N1 0QH is the placeholder the site itself hard-codes for another service; no contact details are entered. STOP at the ID photo screen: never upload photos, never register."
+}

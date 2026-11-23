@@ -1,0 +1,9 @@
+{ "start": "https://core.onlinedoctor.lloydspharmacy.com/api/questionnaire/clinic/hair-loss", "steps": [
+ {"do":"click","text":"Reject unrequired cookies"},
+ {"do":"click","text":"Continue with UK service"},
+ {"do":"goto","url":"https://core.onlinedoctor.lloydspharmacy.com/api/questionnaire/clinic/hair-loss?guest"},
+ {"do":"click","text":"Next"},
+ {"do":"click","selector":"label:has-text(\"I confirm the above\")"},
+ {"do":"click","text":"Next"},
+ {"do":"wait","ms":3000}
+] }

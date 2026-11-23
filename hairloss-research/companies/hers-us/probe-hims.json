@@ -1,0 +1,1 @@
+{ "start": "https://www.hims.com/hair-loss", "locale": "en-US", "timezone": "America/New_York", "steps": [ {"do": "wait", "ms": 4000}, {"do": "scroll"} ] }

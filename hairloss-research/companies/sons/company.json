@@ -1,0 +1,3843 @@
+{
+ "slug": "sons",
+ "company": "Sons",
+ "market": "UK",
+ "website": "https://www.sons.co.uk/",
+ "parent": "Careforsons Ltd (trading as Sons), company number 11557956, London. Sister sites sons.ie and sonshaar.de.",
+ "audiences": [
+  "men"
+ ],
+ "model": "Men-only UK hair-loss subscription brand. Its own Shopify store and consultation app sell licensed finasteride 1 mg and minoxidil 5% (Sons holds the licences), unlicensed compounded sprays and capsules, supplements and shampoos; prescribing and dispensing are done by a partner, The Independent Pharmacy (ABSM Healthcare Ltd, GPhC 9012559).",
+ "checkedOn": "2026-11-23",
+ "access": {
+  "howTested": [
+   "live-walk",
+   "site-code",
+   "public-docs"
+  ],
+  "accountWall": "After the last consent screen (finasteride statement). The next screen is an account form (first name, last name, email, phone, date of birth, password) titled \"Based on your questionnaire results, we are now preparing your personalised health plan. Please complete your account set up to continue.\" No recommendation, product or price is shown before it. Pressing \"Get my personalised plan\" creates the account and sends the consultation together. Answering \"Yes\" to \"Are you an existing Sons customer?\" hits the sign-in page at question 1.",
+  "blockers": [
+   "sons.co.uk/agents.md (listed in the sitemap) returned a Cloudflare \"Verifying your connection\" check to curl; not pursued.",
+   "Recommendation, plan choice, basket and checkout screens need an account, so they were read from served code only."
+  ],
+  "coverageNote": "Walked live with the baseline man to the account form (11 screens), then once more with every branch switched on, so all 24 conditional screens were also seen live. The baseline woman is stopped at question 2. The full question set (38 pages) was read from the survey definition the page itself downloads, and the rules that turn answers into plans were read from two copies of the recommendation code that the site serves to anonymous visitors. Nothing behind the account form was tested live: no account, email, phone or order was created. Product strengths come from public leaflets and the shop app code; prices from the public product feed."
+ },
+ "products": [
+  {
+   "id": "p-fin",
+   "name": "Finasteride (\"Hair Loss Tablet\" / \"Oral Tablet\")",
+   "category": "rx-oral",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "1 mg"
+    }
+   ],
+   "form": "tablet, one a day",
+   "audience": "men",
+   "legalStatus": "POM, licensed. Careforsons Ltd is named as marketing authorisation holder in its own leaflet and in the consultation statement.",
+   "price": "£136 for 6 months (£22.67 a month) list price",
+   "priceDetail": "1 month £29 · 3 months £83 · 6 months £136 · 12 months £272. Page headline \"From £13.60 / month\" is the first-order offer price. List prices from the public product feed (sons.co.uk/products.json, 23 Nov 2026). A Black Friday offer was running on the day: about 40% off the first order of selected 6-month plans and 35% off 3-month plans, new customers only; later orders renew at list price. Delivery is free over £40, otherwise £2.99.",
+   "url": "https://sons.co.uk/products/finasteride",
+   "recommendedWhen": "In both served recommendation lists. Removed when oral finasteride is blocked: sudden onset, PHQ answer of \"More than half the days\" or worse, past finasteride side effects, severe kidney or liver disease, prostate/breast/testicular cancer group, rheumatoid/lupus/methotrexate group, lactose allergy, sexual dysfunction, age over 65, or the account tag finasteride_disallowed. Shown as one card with a Tablet/Spray toggle paired with topical finasteride.",
+   "evidence": "code",
+   "handles": [
+    "finasteride",
+    "oral-tablet"
+   ],
+   "ageOnPage": "18-75",
+   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Finasteride_PIL_04.06.pdf"
+  },
+  {
+   "id": "p-min",
+   "name": "Minoxidil Spray",
+   "category": "otc-medicine",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "5% cutaneous solution"
+    }
+   ],
+   "form": "scalp spray, 1 ml (10 pumps) twice a day",
+   "audience": "men",
+   "legalStatus": "Licensed non-prescription medicine (Careforsons says it holds the marketing authorisation for 5% minoxidil solution). Whether it is classed P or GSL was not confirmed. The shop still routes new buyers through the consultation.",
+   "price": "£99 for 6 months (£16.50 a month) list price",
+   "priceDetail": "1 month £33 · 3 months £54 · 6 months £99 · 12 months £180. List prices from the public product feed (sons.co.uk/products.json, 23 Nov 2026). A Black Friday offer was running on the day: about 40% off the first order of selected 6-month plans and 35% off 3-month plans, new customers only; later orders renew at list price. Delivery is free over £40, otherwise £2.99.",
+   "url": "https://sons.co.uk/products/minoxidil",
+   "recommendedWhen": "In both lists. Removed when topical minoxidil is blocked: high blood pressure, cardiovascular disease, scalp disorder, past minoxidil side effects, tag minoxidil_disallowed (and, in the newer code only, age over 65). It is one of the few items left after a \"sudden onset\" answer.",
+   "evidence": "code",
+   "handles": [
+    "minoxidil"
+   ],
+   "ageOnPage": "18-65",
+   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Minoxidil_PIL_2C_v5_2C_260526.pdf"
+  },
+  {
+   "id": "p-oralmin",
+   "name": "Oral Minoxidil (\"Oral Capsule\")",
+   "category": "rx-oral-compounded",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "2.5 mg"
+    },
+    {
+     "name": "biotin",
+     "strength": "50 micrograms"
+    }
+   ],
+   "form": "capsule, one a day",
+   "audience": "men",
+   "legalStatus": "POM, unlicensed special, used off-label for hair loss. Leaflet: made by Xeal Pharma Ltd (MS 46688) for Careforsons.",
+   "price": "£142 for 6 months (£23.67 a month) list price",
+   "priceDetail": "3 months £77 · 6 months £142. Page headline \"From £14.20 / month\" is the first-order offer price. List prices from the public product feed (sons.co.uk/products.json, 23 Nov 2026). A Black Friday offer was running on the day: about 40% off the first order of selected 6-month plans and 35% off 3-month plans, new customers only; later orders renew at list price. Delivery is free over £40, otherwise £2.99.",
+   "url": "https://sons.co.uk/products/oral-minoxidil",
+   "recommendedWhen": "In both lists. Removed when oral minoxidil is blocked: sudden onset, high blood pressure, cardiovascular disease, phaeochromocytoma, lactose allergy, past minoxidil side effects, age over 65, tag minoxidil_disallowed. Shown as one card with a Capsule/Spray toggle paired with Minoxidil Spray. The basket code also has an off-label consent tick for oral minoxidil.",
+   "evidence": "code",
+   "handles": [
+    "oral-minoxidil",
+    "oral-capsule"
+   ],
+   "ageOnPage": "18-65",
+   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_Oral_Minoxidil__Biotin_PIL_Outlined_4.pdf"
+  },
+  {
+   "id": "p-oralmin5",
+   "name": "Oral Minoxidil 5mg (two 2.5 mg capsules a day)",
+   "category": "rx-oral-compounded",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "5 mg a day (2 x 2.5 mg)"
+    }
+   ],
+   "form": "capsules",
+   "audience": "men",
+   "legalStatus": "POM, unlicensed special, off-label.",
+   "price": "£187.20 for 6 months (£31.20 a month)",
+   "priceDetail": "3 months £105.30 · 6 months £187.20.",
+   "url": "https://sons.co.uk/products/oral-minoxidil-5mg",
+   "recommendedWhen": "Existing customers only: the product page shows \"Log In\", and a separate four-question step-up consultation (flow oral-minoxidil-5mg) is for men already on 2.5 mg. The basket data has a server flag is_oral_minoxidil_eligible; how it is set is unknown.",
+   "evidence": "code",
+   "handles": [
+    "oral-minoxidil-5mg"
+   ],
+   "ageOnPage": "18-65"
+  },
+  {
+   "id": "p-topfin",
+   "name": "Topical Finasteride (\"Hair Loss Spray\")",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "0.15%"
+    }
+   ],
+   "form": "scalp spray, 4 pumps (0.664 ml) once a day",
+   "audience": "men",
+   "legalStatus": "POM, unlicensed medicine (the product page and leaflet say so).",
+   "price": "£136 for 6 months (£22.67 a month) list price",
+   "priceDetail": "3 months £83 · 6 months £136. List prices from the public product feed (sons.co.uk/products.json, 23 Nov 2026). A Black Friday offer was running on the day: about 40% off the first order of selected 6-month plans and 35% off 3-month plans, new customers only; later orders renew at list price. Delivery is free over £40, otherwise £2.99.",
+   "url": "https://sons.co.uk/products/topical-hair-loss-spray",
+   "recommendedWhen": "In both lists, paired with finasteride tablets on one card. Removed when topical finasteride is blocked: sudden onset, PHQ answer of \"More than half the days\" or worse, past finasteride side effects, kidney/liver, prostate/cancer, rheumatoid/lupus/methotrexate, sexual dysfunction, age over 65, tag finasteride_disallowed. It survives a lactose allergy answer. The product page button says \"Log In\" for visitors, yet the code offers it to new customers after the consultation.",
+   "evidence": "code",
+   "handles": [
+    "topical-hair-loss-spray"
+   ],
+   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Topical_Finasteride_PIL_Site_Version.pdf"
+  },
+  {
+   "id": "p-combospray",
+   "name": "Combination Spray (\"Finasteride and Minoxidil\", with tretinoin)",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "0.15%"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "5%"
+    },
+    {
+     "name": "tretinoin",
+     "strength": "0.015%"
+    }
+   ],
+   "form": "scalp spray, 4 pumps (0.664 ml) once a day; one bottle lasts 90 days",
+   "audience": "men",
+   "legalStatus": "POM, unlicensed medicine made for Careforsons.",
+   "price": "£189 for 6 months (£31.50 a month) list price",
+   "priceDetail": "3 months £106 · 6 months £189. Page headline \"From £18.90 / month\" is the first-order offer price. List prices from the public product feed (sons.co.uk/products.json, 23 Nov 2026). A Black Friday offer was running on the day: about 40% off the first order of selected 6-month plans and 35% off 3-month plans, new customers only; later orders renew at list price. Delivery is free over £40, otherwise £2.99.",
+   "url": "https://sons.co.uk/products/topical-finasteride-minoxidil-spray",
+   "recommendedWhen": "In both lists. In the newer code it is the first item of both lists, so it is the single primary recommendation for a man with no blocks. Removed when the \"topical combo\" flag is off, which nearly every block switches off: sudden onset, PHQ answers, any past side effects (finasteride, minoxidil or combination), high blood pressure, cardiovascular disease, kidney/liver, prostate/cancer, rheumatoid/lupus/methotrexate, scalp disorder, sexual dysfunction, age over 65, either account tag. It survives phaeochromocytoma and lactose allergy.",
+   "evidence": "code",
+   "handles": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "ageOnPage": "18-70",
+   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_MinoFinaTret_Topical_PIL_1126_site.pdf",
+   "strengthNote": "Strengths are from the November 2026 leaflet and the shop app code. The topical finasteride product page still says its 0.15% is \"slightly higher\" than the Combination Spray, which suggests the page text predates a reformulation."
+  },
+  {
+   "id": "p-combocap",
+   "name": "Combination Capsule",
+   "category": "rx-oral-compounded",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "1 mg"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "2.5 mg"
+    },
+    {
+     "name": "biotin",
+     "strength": "50 micrograms"
+    }
+   ],
+   "form": "capsule, one a day",
+   "audience": "men",
+   "legalStatus": "POM, unlicensed medicine.",
+   "price": "£189 for 6 months (£31.50 a month) list price",
+   "priceDetail": "1 month £32 · 3 months £106 · 6 months £189. Partner-clinic routes apply codes worth 50-55% off (HQHT45, KSLCLINIC, BHC50 appear in the code).",
+   "url": "https://sons.co.uk/products/combination-capsule",
+   "recommendedWhen": "Not in the standard lists. Added to the top only when the account carries the tag combo_pill_eligible AND the visit came through a \"combo\" route (consultation URL with combo_pill=true or a partner-clinic flag). Needs oral finasteride and oral minoxidil both allowed. The product page shows \"Log In\" to visitors.",
+   "evidence": "code",
+   "handles": [
+    "combination-capsule",
+    "combination-capsule-ads"
+   ],
+   "ageOnPage": "18-70",
+   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_Combo_Cap_Leaflet_01_Site.pdf"
+  },
+  {
+   "id": "p-dutaspray",
+   "name": "Dutasteride Combination Spray",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "dutasteride",
+     "strength": "0.1%"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "5%"
+    },
+    {
+     "name": "tretinoin",
+     "strength": "0.01%"
+    }
+   ],
+   "form": "scalp spray",
+   "audience": "men",
+   "legalStatus": "POM, unlicensed medicine made for Careforsons.",
+   "price": "£199 for 6 months (£33.17 a month)",
+   "priceDetail": "3 months £111 · 6 months £199.",
+   "url": "https://sons.co.uk/products/dutasteride-combination-spray",
+   "recommendedWhen": "Not in the standard lists. Added to the top only when the account carries the tag dutasteride_eligible (how an account earns that tag is unknown; likely set by the clinical team for men who did not respond to finasteride). The product page shows \"Log In\" to visitors.",
+   "evidence": "code",
+   "handles": [
+    "dutasteride-combination-spray"
+   ],
+   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_Dutasteride_Mino_Tret_PIL_0726.pdf"
+  },
+  {
+   "id": "p-keto",
+   "name": "Ketoconazole Shampoo",
+   "category": "otc-medicine",
+   "actives": [
+    {
+     "name": "ketoconazole",
+     "strength": "2%"
+    }
+   ],
+   "form": "medicated shampoo, 60 ml",
+   "audience": "men",
+   "legalStatus": "Medicated anti-dandruff shampoo (non-prescription medicine; P or GSL class not confirmed). The checkout code makes the buyer accept ketoconazole terms.",
+   "price": "£16 for 6 months",
+   "priceDetail": "3 months £9.49 · 6 months £16.",
+   "url": "https://sons.co.uk/products/ketoconazole",
+   "recommendedWhen": "Not in the recommendation lists. Sold as an add-on; the scalp questions (5613-5615) added to the consultation look designed to support it, but no served rule links them (unknown).",
+   "evidence": "docs",
+   "handles": [
+    "ketoconazole",
+    "ketoconazole-1"
+   ]
+  },
+  {
+   "id": "p-hgc",
+   "name": "Hair Growth Complex",
+   "category": "supplement",
+   "actives": [
+    {
+     "name": "nine-ingredient blend including AnaGain, marine collagen, biotin, saw palmetto",
+     "strength": "not stated"
+    }
+   ],
+   "form": "capsule/tablet, daily",
+   "audience": "men",
+   "legalStatus": "Food supplement.",
+   "price": "£168 for 6 months (£28 a month) list price",
+   "priceDetail": "1 month £35 · 3 months £96 · 6 months £168 · 12 months £300. Can be added to the basket without a consultation.",
+   "url": "https://sons.co.uk/products/hair-growth-complex",
+   "recommendedWhen": "Last item of both lists and never removed by any block, so it is always offered. Also inside the Ultimate and Advanced plans.",
+   "evidence": "code",
+   "handles": [
+    "hair-growth-complex",
+    "hair-growth-complex-1"
+   ]
+  },
+  {
+   "id": "p-biotin",
+   "name": "Biotin",
+   "category": "supplement",
+   "actives": [
+    {
+     "name": "biotin",
+     "strength": "900 micrograms (from the shop app code)"
+    }
+   ],
+   "form": "tablet, daily",
+   "audience": "men",
+   "legalStatus": "Food supplement.",
+   "price": "£54 for 6 months (£9 a month)",
+   "priceDetail": "1 month £12.99 · 3 months £30 · 6 months £54 · 12 months £96. Add to cart without a consultation.",
+   "url": "https://sons.co.uk/products/biotin",
+   "recommendedWhen": "Not recommended on its own; part of the Non-Prescription, Full Works and Simplicity plans.",
+   "evidence": "docs",
+   "handles": [
+    "biotin"
+   ]
+  },
+  {
+   "id": "p-shampoo",
+   "name": "Strengthening Shampoo (\"DHT-blocking\")",
+   "category": "cosmetic",
+   "actives": [
+    {
+     "name": "saw palmetto, caffeine, argan oil, vitamin B3",
+     "strength": "cosmetic"
+    }
+   ],
+   "form": "shampoo, 200 ml",
+   "audience": "men",
+   "legalStatus": "Cosmetic.",
+   "price": "£66 for 6 months (£11 a month)",
+   "priceDetail": "1 month £15 · 3 months £39 · 6 months £66 · 12 months £108. Add to cart without a consultation.",
+   "url": "https://sons.co.uk/products/shampoo",
+   "recommendedWhen": "Not recommended on its own; part of the Ultimate, Non-Prescription, Full Works and Simplicity plans.",
+   "evidence": "docs",
+   "handles": [
+    "shampoo"
+   ]
+  },
+  {
+   "id": "p-conditioner",
+   "name": "Strengthening Conditioner",
+   "category": "cosmetic",
+   "actives": [
+    {
+     "name": "Octopirox, biotin, argan oil, amino acids",
+     "strength": "cosmetic"
+    }
+   ],
+   "form": "conditioner",
+   "audience": "men",
+   "legalStatus": "Cosmetic.",
+   "price": "£66 for 6 months (£11 a month)",
+   "priceDetail": "1 month £17.99 · 3 months £39 · 6 months £66 · 12 months £108.",
+   "url": "https://sons.co.uk/products/conditioner",
+   "recommendedWhen": "Never recommended by the consultation; add-on.",
+   "evidence": "docs",
+   "handles": [
+    "conditioner"
+   ]
+  },
+  {
+   "id": "p-showerduo",
+   "name": "Shower Duo (shampoo + conditioner)",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "see shampoo and conditioner",
+     "strength": "cosmetic"
+    }
+   ],
+   "form": "shampoo and conditioner",
+   "audience": "men",
+   "legalStatus": "Cosmetic bundle.",
+   "price": "£120 for 6 months (£20 a month)",
+   "priceDetail": "1 month £28 · 3 months £72 · 6 months £120.",
+   "url": "https://sons.co.uk/products/shampoo-conditioner",
+   "recommendedWhen": "Never recommended by the consultation; add-on.",
+   "evidence": "docs",
+   "handles": [
+    "shampoo-conditioner"
+   ]
+  },
+  {
+   "id": "p-clay",
+   "name": "Thickening Hair Clay",
+   "category": "cosmetic",
+   "actives": [
+    {
+     "name": "kaolin clay, caffeine, biotin",
+     "strength": "cosmetic"
+    }
+   ],
+   "form": "styling clay, 75 ml",
+   "audience": "men",
+   "legalStatus": "Cosmetic.",
+   "price": "£54 for 6 months (£9 a month)",
+   "priceDetail": "1 month £15.99 · 3 months £30 · 6 months £54.",
+   "url": "https://sons.co.uk/products/hair-thickening-clay",
+   "recommendedWhen": "Never recommended by the consultation; add-on.",
+   "evidence": "docs",
+   "handles": [
+    "hair-thickening-clay"
+   ]
+  },
+  {
+   "id": "p-dermaroller",
+   "name": "Dermaroller",
+   "category": "device",
+   "actives": [],
+   "form": "microneedling roller",
+   "audience": "men",
+   "legalStatus": "Device/accessory.",
+   "price": "£14 one pack",
+   "priceDetail": "One-off item.",
+   "url": "https://sons.co.uk/products/dermaroller",
+   "recommendedWhen": "Never recommended by the consultation; pitched at men already using the minoxidil spray.",
+   "evidence": "docs",
+   "handles": [
+    "dermaroller"
+   ]
+  },
+  {
+   "id": "p-shine",
+   "name": "Ultimate Shine Spray (a joke product)",
+   "category": "cosmetic",
+   "actives": [],
+   "form": "spray",
+   "audience": "men",
+   "legalStatus": "Novelty item; the page says \"this product is a joke\".",
+   "price": "£10 one bottle",
+   "priceDetail": "",
+   "url": "https://sons.co.uk/products/ultimate-shine-spray",
+   "recommendedWhen": "Never recommended; marketing stunt.",
+   "evidence": "docs",
+   "handles": [
+    "ultimate-shine-spray"
+   ]
+  },
+  {
+   "id": "p-core",
+   "name": "Core Plan (spray version)",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "1 mg tablet"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "5% spray"
+    }
+   ],
+   "form": "tablet + scalp spray",
+   "audience": "men",
+   "legalStatus": "Bundle of a licensed POM (finasteride) and a licensed non-prescription medicine (minoxidil 5%).",
+   "price": "£189 for 6 months (£31.50 a month) list price",
+   "priceDetail": "1 month £43 · 3 months £106 · 6 months £189 · 12 months £378. Page headline \"From £18.90 / month\" is the first-order offer price. List prices from the public product feed (sons.co.uk/products.json, 23 Nov 2026). A Black Friday offer was running on the day: about 40% off the first order of selected 6-month plans and 35% off 3-month plans, new customers only; later orders renew at list price. Delivery is free over £40, otherwise £2.99.",
+   "url": "https://sons.co.uk/products/the-duo-plan",
+   "recommendedWhen": "Top of the \"topical\" list in the older code (shown first when the man prefers sprays). Needs oral finasteride and topical minoxidil both allowed. Shown as one card with a Spray/Capsule toggle with Core Plan - Capsule.",
+   "evidence": "code",
+   "handles": [
+    "the-duo-plan"
+   ],
+   "ageOnPage": "18-65"
+  },
+  {
+   "id": "p-core-cap",
+   "name": "Core Plan - Capsule",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "1 mg tablet"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "2.5 mg capsule (with biotin 50 micrograms)"
+    }
+   ],
+   "form": "tablet + capsule",
+   "audience": "men",
+   "legalStatus": "Bundle of a licensed POM and an unlicensed special (oral minoxidil).",
+   "price": "£189 for 6 months (£31.50 a month) list price",
+   "priceDetail": "3 months £106 · 6 months £189. List prices from the public product feed (sons.co.uk/products.json, 23 Nov 2026). A Black Friday offer was running on the day: about 40% off the first order of selected 6-month plans and 35% off 3-month plans, new customers only; later orders renew at list price. Delivery is free over £40, otherwise £2.99.",
+   "url": "https://sons.co.uk/products/oral-duo-plan",
+   "recommendedWhen": "Top of the \"oral\" list in the older code (shown first when the man prefers capsules or does not mind). Needs oral finasteride and oral minoxidil both allowed. If the man arrived from the Core Plan product page, the code treats that stored choice as this capsule version.",
+   "evidence": "code",
+   "handles": [
+    "oral-duo-plan"
+   ],
+   "ageOnPage": "18-65"
+  },
+  {
+   "id": "p-ultimate",
+   "name": "Ultimate Plan (spray version)",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "1 mg tablet"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "5% spray"
+    },
+    {
+     "name": "Hair Growth Complex",
+     "strength": "supplement"
+    },
+    {
+     "name": "Strengthening Shampoo",
+     "strength": "cosmetic"
+    }
+   ],
+   "form": "tablet + spray + supplement + shampoo",
+   "audience": "men",
+   "legalStatus": "Bundle: licensed POM + licensed non-prescription medicine + supplement + cosmetic.",
+   "price": "£299 for 6 months (£49.83 a month) list price",
+   "priceDetail": "1 month £59 · 3 months £168 · 6 months £299 · 12 months £566.40. Page headline \"From £29.90 / month\" is the first-order offer price. List prices from the public product feed (sons.co.uk/products.json, 23 Nov 2026). A Black Friday offer was running on the day: about 40% off the first order of selected 6-month plans and 35% off 3-month plans, new customers only; later orders renew at list price. Delivery is free over £40, otherwise £2.99.",
+   "url": "https://sons.co.uk/products/ultimate-hair-loss-plan",
+   "recommendedWhen": "In both lists (fifth or sixth). Needs oral finasteride and topical minoxidil allowed. Tagged \"most popular\". Toggle card with the capsule version.",
+   "evidence": "code",
+   "handles": [
+    "ultimate-hair-loss-plan"
+   ],
+   "ageOnPage": "18-65"
+  },
+  {
+   "id": "p-ultimate-cap",
+   "name": "Ultimate Plan - Capsule",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "1 mg tablet"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "2.5 mg capsule"
+    },
+    {
+     "name": "Hair Growth Complex",
+     "strength": "supplement"
+    },
+    {
+     "name": "Strengthening Shampoo",
+     "strength": "cosmetic"
+    }
+   ],
+   "form": "tablet + capsule + supplement + shampoo",
+   "audience": "men",
+   "legalStatus": "Bundle: licensed POM + unlicensed special + supplement + cosmetic.",
+   "price": "£299 for 6 months (£49.83 a month) list price",
+   "priceDetail": "3 months £168 · 6 months £299. List prices from the public product feed (sons.co.uk/products.json, 23 Nov 2026). A Black Friday offer was running on the day: about 40% off the first order of selected 6-month plans and 35% off 3-month plans, new customers only; later orders renew at list price. Delivery is free over £40, otherwise £2.99.",
+   "url": "https://sons.co.uk/products/ultimate-hair-loss-plan-capsule",
+   "recommendedWhen": "In both lists. Needs oral finasteride and oral minoxidil allowed.",
+   "evidence": "code",
+   "handles": [
+    "ultimate-hair-loss-plan-capsule"
+   ],
+   "ageOnPage": "18-65"
+  },
+  {
+   "id": "p-topfin-oralmin",
+   "name": "Topical Finasteride & Oral Minoxidil",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "0.15% spray"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "2.5 mg capsule"
+    }
+   ],
+   "form": "scalp spray + capsule",
+   "audience": "men",
+   "legalStatus": "Bundle of two unlicensed medicines (POM).",
+   "price": "£189 for 6 months (£31.50 a month) list price",
+   "priceDetail": "3 months £106 · 6 months £189. List prices from the public product feed (sons.co.uk/products.json, 23 Nov 2026). A Black Friday offer was running on the day: about 40% off the first order of selected 6-month plans and 35% off 3-month plans, new customers only; later orders renew at list price. Delivery is free over £40, otherwise £2.99.",
+   "url": "https://sons.co.uk/products/hair-loss-spray-hair-loss-capsule",
+   "recommendedWhen": "Fourth in both lists. Needs topical finasteride and oral minoxidil both allowed. It stays on offer for a man who ticks only \"Scalp Disorders\" (topical minoxidil blocked) and goes when oral minoxidil or topical finasteride is blocked.",
+   "evidence": "code",
+   "handles": [
+    "hair-loss-spray-hair-loss-capsule"
+   ]
+  },
+  {
+   "id": "p-nonrx",
+   "name": "Non-Prescription plan",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "5% spray"
+    },
+    {
+     "name": "biotin",
+     "strength": "supplement"
+    },
+    {
+     "name": "Strengthening Shampoo",
+     "strength": "cosmetic"
+    }
+   ],
+   "form": "spray + supplement + shampoo",
+   "audience": "men",
+   "legalStatus": "Bundle with no prescription-only medicine. The product page lets a visitor pick a plan length and add it to the cart without the consultation.",
+   "price": "£198 for 6 months (£33 a month) list price",
+   "priceDetail": "1 month £42 · 3 months £109 · 6 months £198 · 12 months £380. On the day: 6 months £118.80 first order (40% off), then £198 every 6 months.",
+   "url": "https://sons.co.uk/products/the-non-prescription-plan",
+   "recommendedWhen": "In both lists (second to last). Removed only when topical minoxidil is blocked. It is what is left, with minoxidil spray and Hair Growth Complex, when finasteride and oral minoxidil are blocked (for example sudden onset). The medical FAQ also points men trying for a baby to it.",
+   "evidence": "code",
+   "handles": [
+    "the-non-prescription-plan"
+   ]
+  },
+  {
+   "id": "p-advanced",
+   "name": "Advanced Plan and Advanced Plan - Capsule",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "1 mg tablet"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "5% spray or 2.5 mg capsule"
+    },
+    {
+     "name": "Hair Growth Complex",
+     "strength": "supplement"
+    }
+   ],
+   "form": "tablet + spray or capsule + supplement",
+   "audience": "men",
+   "legalStatus": "Bundle: POM + minoxidil + supplement.",
+   "price": "£254 for 6 months (£42.33 a month)",
+   "priceDetail": "Spray version: 1 month £48 · 3 months £142 · 6 months £254 · 12 months £460.80. Capsule version: 3 months £142 · 6 months £254.",
+   "url": "https://sons.co.uk/products/advanced-hair-loss-plan",
+   "recommendedWhen": "Published product pages, but not in the served recommendation lists and not on the current plans page. Reachable as a cross-sell and through the plan customiser.",
+   "evidence": "docs",
+   "handles": [
+    "advanced-hair-loss-plan",
+    "advanced-hair-loss-plan-capsule"
+   ]
+  },
+  {
+   "id": "p-fullworks",
+   "name": "Full Works and Oral Full Works",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "1 mg tablet"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "5% spray or 2.5 mg capsule"
+    },
+    {
+     "name": "biotin",
+     "strength": "supplement"
+    },
+    {
+     "name": "Strengthening Shampoo",
+     "strength": "cosmetic"
+    }
+   ],
+   "form": "tablet + spray or capsule + supplement + shampoo",
+   "audience": "men",
+   "legalStatus": "Bundle: POM + minoxidil + supplement + cosmetic.",
+   "price": "£269 for 6 months (£44.83 a month)",
+   "priceDetail": "Full Works: 1 month £54 · 3 months £148 · 6 months £269 · 12 months £422.40. Oral Full Works: 3 months £148 · 6 months £269.",
+   "url": "https://sons.co.uk/products/the-full-works-plan",
+   "recommendedWhen": "Older flagship plan. Still published and tagged \"consultation\" and \"most popular\", but not in the served recommendation lists (the Ultimate Plan has taken its place).",
+   "evidence": "docs",
+   "handles": [
+    "the-full-works-plan",
+    "oral-full-works"
+   ]
+  },
+  {
+   "id": "p-simplicity",
+   "name": "Simplicity plan",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "1 mg tablet"
+    },
+    {
+     "name": "biotin",
+     "strength": "supplement"
+    },
+    {
+     "name": "Strengthening Shampoo",
+     "strength": "cosmetic"
+    }
+   ],
+   "form": "tablet + supplement + shampoo",
+   "audience": "men",
+   "legalStatus": "Bundle: POM + supplement + cosmetic.",
+   "price": "£254 for 6 months (£42.33 a month)",
+   "priceDetail": "1 month £48 · 3 months £142 · 6 months £254 · 12 months £412.80.",
+   "url": "https://sons.co.uk/products/the-simplicity-plan",
+   "recommendedWhen": "Older plan; published but not in the served recommendation lists.",
+   "evidence": "docs",
+   "handles": [
+    "the-simplicity-plan"
+   ]
+  },
+  {
+   "id": "p-legacy-combos",
+   "name": "Customiser combination plans (12 legacy two- and three-item plans)",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "mixes of finasteride, minoxidil (spray or capsule), biotin, shampoo",
+     "strength": "as the single products"
+    }
+   ],
+   "form": "various",
+   "audience": "men",
+   "legalStatus": "Mixed: prescription and non-prescription combinations.",
+   "price": "From £78 for 6 months (Biotin & Shampoo) to £213 for 6 months (oral three-item plans)",
+   "priceDetail": "Feed handles and list prices (1 / 3 / 6 / 12 months where sold): shampoo-biotin-plan £18/£42/£78/£201.50 · shampoo-minoxidil-plan, biotin-minoxidil-plan, shampoo-finasteride-plan, bioitin-finasteride-plan £31/£84/£150/£326.30 · no-biotin-plan and no-shampoo-plan £48/£118/£208/£412.80 · shampoo-oral-minoxidil-plan and biotin-oral-minoxidil-plan 3 months £96, 6 months £169 · oral-no-biotin-plan and oral-no-shampoo-plan 3 months £119, 6 months £213.",
+   "url": "https://sons.co.uk/collections/all",
+   "recommendedWhen": "Not recommended by the consultation. These are the plan SKUs the \"customise products\" tool in the account maps to when a customer removes or swaps an item.",
+   "evidence": "docs",
+   "handles": [
+    "shampoo-biotin-plan",
+    "shampoo-minoxidil-plan",
+    "biotin-minoxidil-plan",
+    "shampoo-finasteride-plan",
+    "bioitin-finasteride-plan",
+    "no-biotin-plan",
+    "no-shampoo-plan",
+    "shampoo-oral-minoxidil-plan",
+    "biotin-oral-minoxidil-plan",
+    "oral-no-biotin-plan",
+    "oral-no-shampoo-plan"
+   ]
+  },
+  {
+   "id": "p-transplant-bundle",
+   "name": "Hair Transplant Clinic Bundle",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "not stated"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "not stated"
+    },
+    {
+     "name": "ketoconazole shampoo",
+     "strength": "not stated"
+    },
+    {
+     "name": "Hair Growth Complex",
+     "strength": "supplement"
+    },
+    {
+     "name": "shampoo",
+     "strength": "cosmetic"
+    }
+   ],
+   "form": "bundle",
+   "audience": "men",
+   "legalStatus": "Bundle containing prescription medicine (contents taken from the product tags).",
+   "price": "£142.97 for 3 months",
+   "priceDetail": "3 months £142.97 · 6 months £257.23 (marked unavailable in the feed).",
+   "url": "https://sons.co.uk/products/hair-transplant-clinic-bundle",
+   "recommendedWhen": "Offered through partner hair-transplant clinic pages (pre- and post-procedure plan lists come from the clinic record), not through the standard recommendation lists.",
+   "evidence": "code",
+   "handles": [
+    "hair-transplant-clinic-bundle"
+   ]
+  },
+  {
+   "id": "p-marketplace-packs",
+   "name": "One-off retail packs (minoxidil 5% spray, ketoconazole shampoo, hair clay)",
+   "category": "otc-medicine",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "5%"
+    },
+    {
+     "name": "ketoconazole",
+     "strength": "2%"
+    }
+   ],
+   "form": "spray / shampoo / clay packs",
+   "audience": "men",
+   "legalStatus": "Non-prescription medicines and a cosmetic, sold as fixed packs.",
+   "price": "£29.99 for minoxidil 60 ml + ketoconazole 60 ml",
+   "priceDetail": "Minoxidil 5% 3 x 60 ml + ketoconazole 2 x 60 ml £79.99 · minoxidil 1 x 60 ml + ketoconazole 1 x 60 ml £29.99 · ketoconazole 60 ml + clay 75 ml £19.99 · ketoconazole 2 x 60 ml + clay 3 x 75 g £49.99 · ketoconazole 60 ml £9.46, two for £14.25. SKUs end in \"TM\"; they read like marketplace listings and are not linked from the main site menus.",
+   "url": "https://sons.co.uk/collections/all",
+   "recommendedWhen": "Not part of the consultation.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p-free-packs",
+   "name": "Free packs (Welcome Pack; post-transplant Free Care Pack)",
+   "category": "bundle",
+   "actives": [],
+   "form": "wash bag, pill box, travel bottles; or neck pillow, saline spray, anti-itch shampoo",
+   "audience": "men",
+   "legalStatus": "Not medicines.",
+   "price": "£0 (gift)",
+   "priceDetail": "Welcome Pack: free with selected first 6-month plans during the offer. Free Care Pack \"worth £49.99\": for men referred by a partner transplant clinic who give a procedure date.",
+   "url": "https://sons.co.uk/products/the-sons-welcome-pack",
+   "recommendedWhen": "Gift logic, not clinical.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p-beard",
+   "name": "Beard Booster",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "6%"
+    },
+    {
+     "name": "tretinoin",
+     "strength": "0.01%"
+    }
+   ],
+   "form": "cream/serum for the beard area",
+   "audience": "men",
+   "legalStatus": "POM, unlicensed medicine.",
+   "price": "£180 for 6 months (£30 a month)",
+   "priceDetail": "1 month £46 · 3 months £105 · 6 months £180.",
+   "url": "https://sons.co.uk/products/beard-booster",
+   "recommendedWhen": "Separate beard consultation (flow beard). Facial hair, not scalp hair loss; listed because it shares the engine.",
+   "evidence": "docs",
+   "handles": [
+    "beard-booster"
+   ],
+   "ageOnPage": "18-75",
+   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_Beard_Booster_PIL_A522UKA01_260526.pdf"
+  }
+ ],
+ "flows": [
+  {
+   "id": "men",
+   "name": "Hair-loss consultation (the only route in for scalp hair loss; survey code uk_consultation)",
+   "audience": "men",
+   "entryUrl": "https://shop.sons.co.uk/consultation/?logged_in=false",
+   "stagesSummary": "2 gate questions (existing customer, sex at birth) → self-declaration tick → 6 core screens for a healthy man (picture, onset, mood, past medicines, format preference, conditions) with up to 24 extra conditional screens → finasteride statement and optional NHS/GP consents → ACCOUNT WALL (account form; consultation is sent with it) → recommendation page, plan length, basket, checkout, identity check, prescriber review (not tested; read from code and public pages).",
+   "entryPoints": [
+    {
+     "label": "\"Start consultation\" on sons.co.uk/pages/consultation-hair (linked from the home page, menu \"Consultation\", and the \"Get started\" button on almost every hair product and plan page)",
+     "url": "https://sons.co.uk/pages/consultation-hair",
+     "evidence": "observed"
+    },
+    {
+     "label": "Duplicate landing page",
+     "url": "https://sons.co.uk/pages/consultation-hair-2",
+     "evidence": "docs"
+    },
+    {
+     "label": "The app itself",
+     "url": "https://shop.sons.co.uk/consultation/?logged_in=false",
+     "evidence": "observed"
+    },
+    {
+     "label": "URL switches read by the app, all loading the same questions: combo_pill=true, from_clinic=yes, from_ksl_clinic=yes, bhc-clinic=yes (send the man to a \"combo\" recommendation page), is_google=true (recommendation/google), health_check=true (repeat health check for subscribers), clinic_consultation + clinic_id (partner clinic), customer=<token> (auto sign-in)",
+     "url": "https://shop.sons.co.uk/consultation/",
+     "evidence": "code"
+    },
+    {
+     "label": "Product pages for Oral Minoxidil 5mg, Combination Capsule, Dutasteride spray, Topical Finasteride and Topical Finasteride & Oral Minoxidil show \"Log In\" instead of \"Get started\"",
+     "url": "https://sons.co.uk/products/combination-capsule",
+     "evidence": "docs"
+    },
+    {
+     "label": "No consultation at all: Non-Prescription plan, Hair Growth Complex, biotin, shampoo, conditioner, clay, dermaroller have plan pickers / \"Add to cart\" on their pages",
+     "url": "https://sons.co.uk/products/the-non-prescription-plan",
+     "evidence": "docs"
+    }
+   ],
+   "questions": [
+    {
+     "id": "men-q01",
+     "order": 1,
+     "codeId": "5140",
+     "stage": "anonymous",
+     "text": "Are you an existing Sons customer?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Yes",
+       "value": 1,
+       "effect": "The questionnaire is cleared and the browser goes to sons.co.uk/account/login?return_url=/pages/consultation-hair. Account wall straight away.",
+       "effectType": "skip-questions",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "No",
+       "value": 0,
+       "effect": "Moves to the next question. No effect on what is offered.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Sends existing customers to sign in instead of creating a second account.",
+     "engineRole": "identity",
+     "branches": true,
+     "branchDetail": "Yes leaves the questionnaire for the sign-in page.",
+     "shownWhen": "always (first screen)",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q02",
+     "order": 2,
+     "codeId": "5141",
+     "stage": "anonymous",
+     "text": "What is your gender at birth?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Female",
+       "value": 1,
+       "effect": "Hard stop. Shows the notice \"Sons products are formulated for those born male…\" with a \"Finish Consultation\" button. The code then shows the message \"Unfortunately you are ineligible for prescription based products. Redirecting to the home page.\" and nothing is sent.",
+       "effectType": "hard-stop",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Male",
+       "value": 0,
+       "effect": "Moves to the next question. No effect on what is offered.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Sons only treats people born male. This is the only stop screen before the account form.",
+     "engineRole": "eligibility-gate",
+     "branches": true,
+     "branchDetail": "Female hides every other page and shows the female notice.",
+     "shownWhen": "always (second screen)",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q03",
+     "order": 3,
+     "codeId": "5142",
+     "stage": "anonymous",
+     "text": "Please read the statement and accept if you meet all the criteria",
+     "detail": "• I am male and over 18 years old • I currently live in the UK • I am using this service of my own free will • I shall be the sole user of any medication offered to me through this service and prescribed by Son's independent prescribing partners • I agree to the terms of service, terms of subscription, and privacy policy • I confirm all answers will be provided honestly and truthfully",
+     "type": "consent",
+     "required": true,
+     "options": [
+      {
+       "label": "I accept",
+       "value": 0,
+       "effect": "Required tick. Without it the Continue button will not move on.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Self-declaration: male, over 18, lives in the UK, sole user, accepts terms, answers honestly. Age is not checked here; date of birth is only asked on the account form.",
+     "engineRole": "consent",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always (for anyone who answered Male)",
+     "visibleIfInCode": "{5141} anyof ['0']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q04",
+     "order": 4,
+     "codeId": "5147",
+     "stage": "anonymous",
+     "text": "Please select the image that best describes your hair loss:",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Temples only (receding at the front)",
+       "value": 0,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Typical male pattern.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Temples/Crown",
+       "value": 1,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Typical male pattern (used for the baseline man).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Random patches",
+       "value": 2,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Patchy loss would normally point away from male pattern baldness, yet no warning or stop appears. Whether the prescriber acts on it is unknown.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Completely bald",
+       "value": 3,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. No stop screen appears even though treatment cannot help a fully bald scalp. The app code knows notice pages called \"extensive-loss-notice\" and \"Sudden Hair Loss Notice\" (from another market or an earlier version), but the current UK questionnaire contains neither.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Rough pattern of hair loss, picked from four drawings. It is the only \"how bad is it\" question; there is no Norwood scale.",
+     "engineRole": "diagnosis",
+     "branches": false,
+     "branchDetail": "No branch and no stop for any option, including \"Random patches\" and \"Completely bald\" (seen live: the next question is the same for all).",
+     "shownWhen": "always (for anyone who answered Male)",
+     "visibleIfInCode": "{5141} anyof ['0']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q05",
+     "order": 5,
+     "codeId": "5143",
+     "stage": "anonymous",
+     "text": "Can you please state how your hair loss started?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Gradually over months and years",
+       "value": 0,
+       "effect": "Moves to the next question. No effect on what is offered.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Suddenly (it fell out over a matter of days or a few weeks)",
+       "value": 1,
+       "effect": "Recommendation code switches off oral finasteride, topical finasteride, oral minoxidil and the combination spray, so these are taken out of the list of plans shown. Topical minoxidil is NOT switched off, so Minoxidil Spray, the Non-Prescription plan and Hair Growth Complex are still offered. It also adds three follow-up questions (seen live).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-topfin",
+        "p-oralmin",
+        "p-combospray",
+        "p-core",
+        "p-core-cap",
+        "p-ultimate",
+        "p-ultimate-cap",
+        "p-topfin-oralmin",
+        "p-combocap",
+        "p-dutaspray"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Separates slow male-pattern loss from sudden shedding, which needs a doctor.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Suddenly adds three yes/no questions (body hair, new medicines, other symptoms).",
+     "shownWhen": "always (for anyone who answered Male)",
+     "visibleIfInCode": "{5141} anyof ['0']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q06",
+     "order": 6,
+     "codeId": "5144",
+     "stage": "anonymous",
+     "text": "Is their hair loss over other parts of your body?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Yes",
+       "value": 1,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Likely for the prescriber (not confirmed).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "value": 0,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Likely for the prescriber (not confirmed).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Looks for alopecia areata / general hair loss.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if hair loss started \"Suddenly\"",
+     "visibleIfInCode": "{5143} anyof ['1']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q07",
+     "order": 7,
+     "codeId": "5145",
+     "stage": "anonymous",
+     "text": "Have you started any new medications recently?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Yes",
+       "value": 1,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Likely for the prescriber (not confirmed). Note there is no free-text box to name the medicine.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "value": 0,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Likely for the prescriber (not confirmed). Note there is no free-text box to name the medicine.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Looks for drug-induced hair loss.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if hair loss started \"Suddenly\"",
+     "visibleIfInCode": "{5143} anyof ['1']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q08",
+     "order": 8,
+     "codeId": "5146",
+     "stage": "anonymous",
+     "text": "Have you noticed any other physical symptoms?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Yes",
+       "value": 1,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Likely for the prescriber (not confirmed). No free-text box follows.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "value": 0,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Likely for the prescriber (not confirmed). No free-text box follows.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Looks for illness behind sudden shedding.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if hair loss started \"Suddenly\"",
+     "visibleIfInCode": "{5143} anyof ['1']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q09",
+     "order": 9,
+     "codeId": "3216",
+     "stage": "anonymous",
+     "text": "Do you have any concerns about your mood, or are you currently taking antidepressants?",
+     "detail": "This includes things like low mood, depression, or any treatment or support you’re receiving for your mental health. This helps us make sure this treatment is safe and suitable for you.",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Yes",
+       "value": 1,
+       "effect": "Adds three screens: a free-text box and two \"over the past two weeks\" questions. On its own it does not remove any product: the line that would block finasteride for a plain Yes is commented out in the served code.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "No",
+       "value": 0,
+       "effect": "Moves to the next question. No effect on what is offered.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Finasteride mood warning (MHRA). Opens a short depression screen.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Yes adds a free-text box and two PHQ-2 style questions.",
+     "shownWhen": "always (for anyone who answered Male)",
+     "visibleIfInCode": "{5141} anyof ['0']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q10",
+     "order": 10,
+     "codeId": "3217",
+     "stage": "anonymous",
+     "text": "Please tell us a bit more, if you feel comfortable.",
+     "detail": "For example: When this was first diagnosed or noticed Any treatment or support you’re currently receiving When you last reviewed this with your doctor Any changes you’ve noticed in your mood, energy, or sex drive",
+     "type": "text",
+     "required": true,
+     "options": [],
+     "purpose": "Free text on diagnosis, treatment, last review, changes in mood, energy or sex drive. Required.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if mood question = Yes",
+     "visibleIfInCode": "{3216} anyof ['1']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q11",
+     "order": 11,
+     "codeId": "3275",
+     "stage": "anonymous",
+     "text": "Over the past two weeks, how often have you had little interest or pleasure in doing things?",
+     "detail": "Please answer relating to your general day-to-day feelings about life, rather than the anxiety caused by specific situations such as presentations or exams.",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Not at all",
+       "value": 0,
+       "effect": "No product change.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Several days",
+       "value": 1,
+       "effect": "No product change.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "More than half the days",
+       "value": 2,
+       "effect": "Recommendation code switches off oral finasteride, topical finasteride and the combination spray (score of 2 or more on either question), so these are taken out of the list of plans shown. Minoxidil products stay.",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-topfin",
+        "p-combospray",
+        "p-core",
+        "p-core-cap",
+        "p-ultimate",
+        "p-ultimate-cap",
+        "p-topfin-oralmin",
+        "p-combocap",
+        "p-dutaspray"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Nearly every day",
+       "value": 3,
+       "effect": "Recommendation code switches off oral finasteride, topical finasteride and the combination spray (score of 2 or more on either question), so these are taken out of the list of plans shown. Minoxidil products stay.",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-topfin",
+        "p-combospray",
+        "p-core",
+        "p-core-cap",
+        "p-ultimate",
+        "p-ultimate-cap",
+        "p-topfin-oralmin",
+        "p-combocap",
+        "p-dutaspray"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "First PHQ-2 depression question.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if mood question = Yes",
+     "visibleIfInCode": "{3216} anyof ['1']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q12",
+     "order": 12,
+     "codeId": "3276",
+     "stage": "anonymous",
+     "text": "Over the past two weeks, how often have you felt down, depressed, or hopeless?",
+     "detail": "Please answer relating to your general day-to-day feelings about life, rather than the anxiety caused by specific situations such as presentations or exams.",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Not at all",
+       "value": 0,
+       "effect": "No product change.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Several days",
+       "value": 1,
+       "effect": "No product change.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "More than half the days",
+       "value": 2,
+       "effect": "Recommendation code switches off oral finasteride, topical finasteride and the combination spray (score of 2 or more on either question), so these are taken out of the list of plans shown. Minoxidil products stay.",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-topfin",
+        "p-combospray",
+        "p-core",
+        "p-core-cap",
+        "p-ultimate",
+        "p-ultimate-cap",
+        "p-topfin-oralmin",
+        "p-combocap",
+        "p-dutaspray"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Nearly every day",
+       "value": 3,
+       "effect": "Recommendation code switches off oral finasteride, topical finasteride and the combination spray (score of 2 or more on either question), so these are taken out of the list of plans shown. Minoxidil products stay.",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-topfin",
+        "p-combospray",
+        "p-core",
+        "p-core-cap",
+        "p-ultimate",
+        "p-ultimate-cap",
+        "p-topfin-oralmin",
+        "p-combocap",
+        "p-dutaspray"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Second PHQ-2 depression question.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if mood question = Yes",
+     "visibleIfInCode": "{3216} anyof ['1']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q13",
+     "order": 13,
+     "codeId": "5148",
+     "stage": "anonymous",
+     "text": "Have you ever taken any of the below medicines before?",
+     "type": "multi",
+     "required": true,
+     "options": [
+      {
+       "label": "Finasteride or Propecia",
+       "value": 0,
+       "effect": "Adds the finasteride side-effect question later.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Minoxidil or Regaine",
+       "value": 1,
+       "effect": "Adds the minoxidil side-effect question later.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Topical Finasteride Minoxidil Combination",
+       "value": 2,
+       "effect": "Adds the combination side-effect question later.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "None of these",
+       "value": "none",
+       "effect": "Moves to the next question. No effect on what is offered.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Treatment history; decides which side-effect questions follow.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Each ticked medicine adds its own \"Have you experienced any adverse effects?\" screen, shown after the treatment preference question.",
+     "shownWhen": "always (for anyone who answered Male)",
+     "visibleIfInCode": "{5141} anyof ['0']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q14",
+     "order": 14,
+     "codeId": "What treatment type do you prefer?",
+     "stage": "anonymous",
+     "text": "What treatment type do you prefer?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Topical sprays - (apply to scalp)",
+       "value": 0,
+       "effect": "Uses the \"topical\" order. Older page script: Core Plan (tablet + minoxidil spray) first, each paired card opens on its spray version. Newer app code: the Combination Spray is first either way.",
+       "effectType": "product-switched",
+       "affects": [
+        "p-core",
+        "p-core-cap",
+        "p-combospray"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Oral capsule - (take once a day)",
+       "value": 1,
+       "effect": "Uses the \"oral\" order. Older page script: Core Plan - Capsule first, paired cards open on the capsule/tablet version.",
+       "effectType": "product-switched",
+       "affects": [
+        "p-core-cap",
+        "p-core",
+        "p-combospray"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "I don’t mind - I want what’s most effective for me",
+       "value": 2,
+       "effect": "Treated exactly like \"Oral capsule\" (the code only tests for answer 0 = topical).",
+       "effectType": "product-switched",
+       "affects": [
+        "p-core-cap",
+        "p-core",
+        "p-combospray"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "The one product-choice question. It only changes the ORDER of plans, never what is allowed.",
+     "engineRole": "product-selector",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always (for anyone who answered Male)",
+     "visibleIfInCode": "{5141} anyof ['0']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q15",
+     "order": 15,
+     "codeId": "5149",
+     "stage": "anonymous",
+     "text": "Have you experienced any adverse effects?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Yes",
+       "value": 1,
+       "effect": "Recommendation code switches off oral finasteride, topical finasteride and the combination spray, so these are taken out of the list of plans shown. Also opens a free-text box (seen live).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-topfin",
+        "p-combospray",
+        "p-core",
+        "p-core-cap",
+        "p-ultimate",
+        "p-ultimate-cap",
+        "p-topfin-oralmin",
+        "p-combocap",
+        "p-dutaspray"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "value": 0,
+       "effect": "No product change.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Past finasteride side effects.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Yes adds an optional free-text box.",
+     "shownWhen": "only if \"Finasteride or Propecia\" was ticked",
+     "visibleIfInCode": "{5148} anyof ['0']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q16",
+     "order": 16,
+     "codeId": "5150",
+     "stage": "anonymous",
+     "text": "Have you experienced any adverse effects from taking Finasteride or Propecia?",
+     "type": "text",
+     "required": false,
+     "options": [],
+     "purpose": "Free text about finasteride side effects. Optional.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if finasteride side effects = Yes",
+     "visibleIfInCode": "{5149} anyof ['1']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q17",
+     "order": 17,
+     "codeId": "5151",
+     "stage": "anonymous",
+     "text": "Have you experienced any adverse effects?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Yes",
+       "value": 1,
+       "effect": "Recommendation code switches off oral minoxidil, topical minoxidil and the combination spray, so these are taken out of the list of plans shown. Also opens a free-text box (seen live).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-min",
+        "p-oralmin",
+        "p-combospray",
+        "p-core",
+        "p-core-cap",
+        "p-ultimate",
+        "p-ultimate-cap",
+        "p-topfin-oralmin",
+        "p-nonrx",
+        "p-combocap",
+        "p-dutaspray"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "value": 0,
+       "effect": "No product change.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Past minoxidil side effects.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Yes adds an optional free-text box.",
+     "shownWhen": "only if \"Minoxidil or Regaine\" was ticked",
+     "visibleIfInCode": "{5148} anyof ['1']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q18",
+     "order": 18,
+     "codeId": "5152",
+     "stage": "anonymous",
+     "text": "Can you tell us what side effects you experienced from using Minoxidil or Regaine?",
+     "type": "text",
+     "required": false,
+     "options": [],
+     "purpose": "Free text about minoxidil side effects. Optional.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if minoxidil side effects = Yes",
+     "visibleIfInCode": "{5151} anyof ['1']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q19",
+     "order": 19,
+     "codeId": "5153",
+     "stage": "anonymous",
+     "text": "Have you experienced any adverse effects?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Yes",
+       "value": 1,
+       "effect": "Recommendation code switches off the combination spray only, so these are taken out of the list of plans shown. Separate finasteride and minoxidil products stay. Also opens a free-text box (seen live).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-combospray",
+        "p-dutaspray"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "value": 0,
+       "effect": "No product change.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Past side effects from a topical finasteride + minoxidil mix.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Yes adds an optional free-text box.",
+     "shownWhen": "only if \"Topical Finasteride Minoxidil Combination\" was ticked",
+     "visibleIfInCode": "{5148} anyof ['2']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q20",
+     "order": 20,
+     "codeId": "5154",
+     "stage": "anonymous",
+     "text": "Can you tell us what side effects you experienced when using a Topical Finasteride Minoxidil Combination?",
+     "type": "text",
+     "required": false,
+     "options": [],
+     "purpose": "Free text about combination side effects. Optional.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if combination side effects = Yes",
+     "visibleIfInCode": "{5153} anyof ['1']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q21",
+     "order": 21,
+     "codeId": "5155",
+     "stage": "anonymous",
+     "text": "Do any of the following apply to you?",
+     "type": "multi",
+     "required": true,
+     "options": [
+      {
+       "label": "High Blood Pressure",
+       "value": 0,
+       "effect": "Recommendation code switches off oral minoxidil, topical minoxidil and the combination spray, so these are taken out of the list of plans shown. Finasteride tablets, topical finasteride and Hair Growth Complex stay. No check of whether blood pressure is controlled in this version. Adds an optional free-text box.",
+       "effectType": "product-removed",
+       "affects": [
+        "p-min",
+        "p-oralmin",
+        "p-combospray",
+        "p-core",
+        "p-core-cap",
+        "p-ultimate",
+        "p-ultimate-cap",
+        "p-topfin-oralmin",
+        "p-nonrx",
+        "p-combocap",
+        "p-dutaspray"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Cardiovascular Disease (incl. Heart Attack, Rhythm, Valve Disorder or Stroke)",
+       "value": 1,
+       "effect": "Recommendation code switches off oral minoxidil, topical minoxidil and the combination spray, so these are taken out of the list of plans shown. Same effect as High Blood Pressure. Adds a required free-text box.",
+       "effectType": "product-removed",
+       "affects": [
+        "p-min",
+        "p-oralmin",
+        "p-combospray",
+        "p-core",
+        "p-core-cap",
+        "p-ultimate",
+        "p-ultimate-cap",
+        "p-topfin-oralmin",
+        "p-nonrx",
+        "p-combocap",
+        "p-dutaspray"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Severe Kidney or Liver Disease",
+       "value": 2,
+       "effect": "Recommendation code switches off oral finasteride, topical finasteride and the combination spray, so these are taken out of the list of plans shown. Minoxidil spray, oral minoxidil, Non-Prescription plan and Hair Growth Complex stay. Adds a required free-text box.",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-topfin",
+        "p-combospray",
+        "p-core",
+        "p-core-cap",
+        "p-ultimate",
+        "p-ultimate-cap",
+        "p-topfin-oralmin",
+        "p-combocap",
+        "p-dutaspray"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Prostate Disease, Male Breast Cancer or Testicular Cancer",
+       "value": 3,
+       "effect": "Recommendation code switches off oral finasteride, topical finasteride and the combination spray, so these are taken out of the list of plans shown. Adds a required free-text box.",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-topfin",
+        "p-combospray",
+        "p-core",
+        "p-core-cap",
+        "p-ultimate",
+        "p-ultimate-cap",
+        "p-topfin-oralmin",
+        "p-combocap",
+        "p-dutaspray"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Rheumatoid Arthritis, Systemic Lupus or on Methotrexate",
+       "value": 4,
+       "effect": "Recommendation code switches off oral finasteride, topical finasteride and the combination spray, so these are taken out of the list of plans shown. Adds a required free-text box about medicines.",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-topfin",
+        "p-combospray",
+        "p-core",
+        "p-core-cap",
+        "p-ultimate",
+        "p-ultimate-cap",
+        "p-topfin-oralmin",
+        "p-combocap",
+        "p-dutaspray"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Scalp Disorders (including Scalp Psoriasis, Eczema, Dermatitis or Infection)",
+       "value": 5,
+       "effect": "Recommendation code switches off topical minoxidil and the combination spray, so these are taken out of the list of plans shown. Oral routes stay: Core Plan - Capsule, Ultimate - Capsule, oral minoxidil, finasteride tablets, topical finasteride. Adds four screens: free text plus three scalp tick-box questions.",
+       "effectType": "product-removed",
+       "affects": [
+        "p-min",
+        "p-combospray",
+        "p-core",
+        "p-ultimate",
+        "p-nonrx",
+        "p-dutaspray"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Phaeochromocytoma",
+       "value": 6,
+       "effect": "Recommendation code switches off oral minoxidil only, so these are taken out of the list of plans shown. Topical minoxidil and all finasteride options stay. Adds a required free-text box.",
+       "effectType": "product-removed",
+       "affects": [
+        "p-oralmin",
+        "p-core-cap",
+        "p-ultimate-cap",
+        "p-topfin-oralmin",
+        "p-combocap"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Diagnosed Lactose Allergy",
+       "value": 7,
+       "effect": "Recommendation code switches off oral finasteride and oral minoxidil (both contain lactose), so these are taken out of the list of plans shown. Left on offer: Combination Spray, Minoxidil Spray, topical finasteride, Non-Prescription plan, Hair Growth Complex. Adds a required free-text box.",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-core",
+        "p-core-cap",
+        "p-ultimate",
+        "p-ultimate-cap",
+        "p-oralmin",
+        "p-topfin-oralmin",
+        "p-combocap"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Sexual Dysfunction",
+       "value": 8,
+       "effect": "Recommendation code switches off oral finasteride, topical finasteride and the combination spray, so these are taken out of the list of plans shown. Adds a required free-text box.",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-topfin",
+        "p-combospray",
+        "p-core",
+        "p-core-cap",
+        "p-ultimate",
+        "p-ultimate-cap",
+        "p-topfin-oralmin",
+        "p-combocap",
+        "p-dutaspray"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "None of these",
+       "value": "none",
+       "effect": "Moves to the next question. No effect on what is offered.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "The main medical screen: nine tick boxes. Each one switches whole drug families off in the recommendation code and opens its own free-text box.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Every ticked condition adds a free-text screen. Scalp Disorders adds four screens. No tick causes a stop: with all nine ticked the flow still reaches the account form (run all-branches-men).",
+     "shownWhen": "always (for anyone who answered Male)",
+     "visibleIfInCode": "{5141} anyof ['0']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q22",
+     "order": 22,
+     "codeId": "5158",
+     "stage": "anonymous",
+     "text": "Please can you tell us more about this condition?",
+     "detail": "For example, when it was diagnosed, what medications are you taking for it?",
+     "type": "text",
+     "required": false,
+     "options": [],
+     "purpose": "Detail on high blood pressure. Optional (the only condition box that can be left empty).",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if High Blood Pressure ticked",
+     "visibleIfInCode": "{5155} anyof ['0']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q23",
+     "order": 23,
+     "codeId": "5159",
+     "stage": "anonymous",
+     "text": "Please can you tell us more about your condition and how you are managing it?",
+     "type": "text",
+     "required": true,
+     "options": [],
+     "purpose": "Detail on cardiovascular disease. Required.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if Cardiovascular Disease ticked",
+     "visibleIfInCode": "{5155} anyof ['1']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q24",
+     "order": 24,
+     "codeId": "5160",
+     "stage": "anonymous",
+     "text": "Please can you tell us more about your diagnosis and what medications you are using to manage this condition?",
+     "type": "text",
+     "required": true,
+     "options": [],
+     "purpose": "Detail on severe kidney or liver disease. Required.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if Severe Kidney or Liver Disease ticked",
+     "visibleIfInCode": "{5155} anyof ['2']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q25",
+     "order": 25,
+     "codeId": "5161",
+     "stage": "anonymous",
+     "text": "Please can you tell us more about this diagnosis and the treatment you are receiving for it",
+     "type": "text",
+     "required": true,
+     "options": [],
+     "purpose": "Detail on prostate disease or cancer. Required.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if Prostate Disease, Male Breast Cancer or Testicular Cancer ticked",
+     "visibleIfInCode": "{5155} anyof ['3']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q26",
+     "order": 26,
+     "codeId": "5162",
+     "stage": "anonymous",
+     "text": "Please can you tell us more about the medications that you are taking to manage this condition?",
+     "type": "text",
+     "required": true,
+     "options": [],
+     "purpose": "Medicines for rheumatoid arthritis or lupus (methotrexate). Required.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if Rheumatoid Arthritis, Systemic Lupus or on Methotrexate ticked",
+     "visibleIfInCode": "{5155} anyof ['4']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q27",
+     "order": 27,
+     "codeId": "5163",
+     "stage": "anonymous",
+     "text": "Please can you tell us more about your scalp and how you are managing it currently?",
+     "type": "text",
+     "required": true,
+     "options": [],
+     "purpose": "Detail on the scalp condition. Required.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if Scalp Disorders ticked",
+     "visibleIfInCode": "{5155} anyof ['5']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q28",
+     "order": 28,
+     "codeId": "5613",
+     "stage": "anonymous",
+     "text": "Which of the following scalp symptoms do you experience?",
+     "type": "multi",
+     "required": false,
+     "options": [
+      {
+       "label": "Persistent dandruff or flaking",
+       "value": 0,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Optional question; Continue works with nothing ticked (seen live). Probably supports the newer ketoconazole shampoo (not confirmed).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Greasy or yellow scales on the scalp",
+       "value": 1,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Optional question; Continue works with nothing ticked (seen live). Probably supports the newer ketoconazole shampoo (not confirmed).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Scalp itching associated with dandruff",
+       "value": 2,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Optional question; Continue works with nothing ticked (seen live). Probably supports the newer ketoconazole shampoo (not confirmed).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Red or irritated areas on the scalp",
+       "value": 3,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Optional question; Continue works with nothing ticked (seen live). Probably supports the newer ketoconazole shampoo (not confirmed).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Previously diagnosed with seborrheic dermatitis",
+       "value": 4,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Optional question; Continue works with nothing ticked (seen live). Probably supports the newer ketoconazole shampoo (not confirmed).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "None of the above",
+       "value": 5,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Optional question; Continue works with nothing ticked (seen live). Probably supports the newer ketoconazole shampoo (not confirmed).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Dandruff / seborrhoeic dermatitis symptom list. Newer question ids (56xx) than the rest, so recently added.",
+     "engineRole": "diagnosis",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if Scalp Disorders ticked",
+     "visibleIfInCode": "{5155} anyof ['5']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q29",
+     "order": 29,
+     "codeId": "5614",
+     "stage": "anonymous",
+     "text": "Have you tried any treatments for scalp concerns before?",
+     "type": "multi",
+     "required": false,
+     "options": [
+      {
+       "label": "Anti‑dandruff shampoos (e.g. ketoconazole, selenium sulphide, zinc)",
+       "value": 0,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Optional question; Continue works with nothing ticked (seen live). Probably supports the newer ketoconazole shampoo (not confirmed).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Prescription scalp treatments",
+       "value": 1,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Optional question; Continue works with nothing ticked (seen live). Probably supports the newer ketoconazole shampoo (not confirmed).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Regular cosmetic shampoos only",
+       "value": 2,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Optional question; Continue works with nothing ticked (seen live). Probably supports the newer ketoconazole shampoo (not confirmed).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "I haven’t tried anything yet",
+       "value": 3,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Optional question; Continue works with nothing ticked (seen live). Probably supports the newer ketoconazole shampoo (not confirmed).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "What the man has already tried for his scalp.",
+     "engineRole": "diagnosis",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if Scalp Disorders ticked",
+     "visibleIfInCode": "{5155} anyof ['5']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q30",
+     "order": 30,
+     "codeId": "5615",
+     "stage": "anonymous",
+     "text": "Do any of the following apply to you?",
+     "type": "multi",
+     "required": false,
+     "options": [
+      {
+       "label": "Open sores, broken skin or infection on the scalp",
+       "value": 0,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Optional question; Continue works with nothing ticked (seen live). Probably supports the newer ketoconazole shampoo (not confirmed).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Severe scalp pain, oozing or signs of infection",
+       "value": 1,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Optional question; Continue works with nothing ticked (seen live). Probably supports the newer ketoconazole shampoo (not confirmed).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "None of the above",
+       "value": 2,
+       "effect": "No effect on the plans shown: the answer is stored and sent with the consultation, but neither copy of the served recommendation code reads it. What the server or the prescriber does with it is unknown. Optional question; Continue works with nothing ticked (seen live). Probably supports the newer ketoconazole shampoo (not confirmed).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Scalp red flags: open sores, infection, severe pain. No warning or stop appears when ticked (not ticked in any run; from the definition there is no linked page).",
+     "engineRole": "diagnosis",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if Scalp Disorders ticked",
+     "visibleIfInCode": "{5155} anyof ['5']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q31",
+     "order": 31,
+     "codeId": "5164",
+     "stage": "anonymous",
+     "text": "When was this diagnosed and did you have surgery to correct this?",
+     "type": "text",
+     "required": true,
+     "options": [],
+     "purpose": "Detail on phaeochromocytoma. Required.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if Phaeochromocytoma ticked",
+     "visibleIfInCode": "{5155} anyof ['6']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q32",
+     "order": 32,
+     "codeId": "5165",
+     "stage": "anonymous",
+     "text": "Please can you tell us more as the oral treatments only have minute amounts of lactose in and most people can take these without issue - so that I can understand please tell me more about your allergy?",
+     "type": "text",
+     "required": true,
+     "options": [],
+     "purpose": "Detail on lactose allergy. Required. The wording tells the man the oral treatments hold only tiny amounts of lactose.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if Diagnosed Lactose Allergy ticked",
+     "visibleIfInCode": "{5155} anyof ['7']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q33",
+     "order": 33,
+     "codeId": "5166",
+     "stage": "anonymous",
+     "text": "Please can you tell me more about the sexual dysfunction you experience and how you manage it currently?",
+     "type": "text",
+     "required": true,
+     "options": [],
+     "purpose": "Detail on sexual dysfunction. Required.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if Sexual Dysfunction ticked",
+     "visibleIfInCode": "{5155} anyof ['8']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q34",
+     "order": 34,
+     "codeId": "5167",
+     "stage": "anonymous",
+     "text": "What is the date of the first order for this customer?",
+     "type": "date",
+     "required": false,
+     "options": [],
+     "purpose": "Internal field for staff/system use. It has no input type, so it is never drawn on screen.",
+     "engineRole": "data-capture",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "never shown to the patient (blank question type in the definition)",
+     "visibleIfInCode": "{5141} anyof ['0']",
+     "evidence": "code"
+    },
+    {
+     "id": "men-q35",
+     "order": 35,
+     "codeId": "5168",
+     "stage": "anonymous",
+     "text": "When was your most recent health check?",
+     "type": "date",
+     "required": false,
+     "options": [],
+     "purpose": "Internal field for the repeat \"health check\". Never drawn on screen.",
+     "engineRole": "data-capture",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "never shown to the patient (blank question type in the definition)",
+     "visibleIfInCode": "{5141} anyof ['0']",
+     "evidence": "code"
+    },
+    {
+     "id": "men-q36",
+     "order": 36,
+     "codeId": "finasteride-statement",
+     "stage": "anonymous",
+     "text": "Please confirm that you've read and understood the following:",
+     "detail": "Please confirm that you've read and understood the following: It's important to be aware that if you experience any side effects, please stop taking the treatments and speak to your doctor as soon as possible. Finasteride can very rarely cause changes in mood, including depression, or changes in sexual function. These effects usually resolve after stopping treatment, and your doctor can explore other options to support your hair loss goals. Read more You must stop using Finasteride-containing products at least 3 months prior to trying for a baby/conception, and must not continue with using Finasteride-containing products unless at least 3-months post-conception. Further information can be found here: https://mothertobaby.org/fact-sheets/finasteride/ Sons are license holders and hold Marketing Authorisation for Finasteride 1mg and 5% Minoxidil solution. Other treatment plans can contain different preparations of medications such as Minoxidil and Finasteride which are off-license usage or unlicensed 'specials' which are produced by a specials manufacturer.",
+     "type": "info",
+     "required": false,
+     "options": [],
+     "purpose": "Finasteride safety statement: mood and sexual side effects, stop three months before trying for a baby, and a note that some plans contain off-label or unlicensed \"specials\". Shown to every man whatever he answered.",
+     "engineRole": "expectation-setting",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always (for anyone who answered Male)",
+     "visibleIfInCode": "{5141} anyof ['0']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q37",
+     "order": 37,
+     "codeId": "finasteride-agreement",
+     "stage": "anonymous",
+     "text": "I confirm that I have read and understood the above statement",
+     "type": "consent",
+     "required": true,
+     "options": [
+      {
+       "label": "I confirm that I have read and understood the above statement",
+       "value": "I confirm that I have read and understood the above statement",
+       "effect": "Required. Unlocks the account form.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Required tick before the account form.",
+     "engineRole": "consent",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always (for anyone who answered Male)",
+     "visibleIfInCode": "{5141} anyof ['0']",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q38",
+     "order": 38,
+     "codeId": "nhs-summary-of-care",
+     "stage": "anonymous",
+     "text": "NHS Summary Of Care (optional): \"Do you consent to us accessing your NHS Summary Care Record (the medical details held by your GP) or requesting further information on your medical history from your GP?\"",
+     "type": "consent",
+     "required": false,
+     "options": [
+      {
+       "label": "NHS Summary Of Care",
+       "value": "NHS Summary Of Care",
+       "effect": "Opens a second tick box \"I agree\". Optional; no effect on the plans shown.",
+       "effectType": "flag-for-clinician",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Optional consent for the prescriber to read the NHS Summary Care Record. Product pages say the final decision rests on the consultation \"and NHS Summary Care Record\".",
+     "engineRole": "consent",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always (for anyone who answered Male)",
+     "visibleIfInCode": "{5141} anyof ['0']",
+     "evidence": "code"
+    },
+    {
+     "id": "men-q39",
+     "order": 39,
+     "codeId": "gp-share",
+     "stage": "anonymous",
+     "text": "GP Consent (optional): \"Do you consent to us sharing consultation information with your GP?\"",
+     "type": "consent",
+     "required": false,
+     "options": [
+      {
+       "label": "GP Consent",
+       "value": "GP Consent",
+       "effect": "Opens a second tick box \"I agree\"; agreeing adds GP surgery fields to the account form.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Optional consent to tell the GP. If agreed, the account form adds GP surgery name and address fields.",
+     "engineRole": "consent",
+     "branches": true,
+     "branchDetail": "Agreeing adds five GP surgery fields to the account form.",
+     "shownWhen": "always (for anyone who answered Male)",
+     "visibleIfInCode": "{5141} anyof ['0']",
+     "evidence": "code"
+    },
+    {
+     "id": "men-q40",
+     "order": 40,
+     "codeId": "account-create",
+     "stage": "anonymous",
+     "text": "Based on your questionnaire results, we are now preparing your personalised health plan. Please complete your account set up to continue.",
+     "type": "contact",
+     "detail": "Fields: First name of male patient · Last name of male patient · Email Address · Phone number · Date of Birth · Your GP Surgery's name · Your GP Surgery's Address · Your GP Surgery's Town/City · Your GP Surgery's County · Your GP Surgery's Postcode · Password · Confirm Password · I agree to the Terms & Conditions, Privacy Policy and confirm that I am male and at least 18 years of age. · I consent to receive marketing communications via. Button: \"Get my personalised plan\". Marketing consent boxes (Email, SMS and Postal Mail; Whatsapp) are pre-ticked.",
+     "required": true,
+     "options": [],
+     "purpose": "THE ACCOUNT WALL. Name, email, phone, date of birth and a password are needed to see any recommendation. Pressing the button creates the account and sends the whole consultation in one request (customer/survey). Date of birth is checked here: under 18 is refused on screen.",
+     "engineRole": "identity",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always, after the finasteride statement",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q41",
+     "order": 41,
+     "codeId": "female-client-notice",
+     "stage": "anonymous",
+     "text": "Sons products are formulated for those born male and we do not currently provide treatment for those who were born female. Whilst some of these treatments may be suitable for those born female, we would recommend a face to face consultation with a hair loss specialist or GP to ensure the most appropriate treatment options.",
+     "type": "info",
+     "required": false,
+     "options": [],
+     "purpose": "Stop screen for anyone who answers Female.",
+     "engineRole": "eligibility-gate",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if gender at birth = Female",
+     "evidence": "observed"
+    },
+    {
+     "id": "men-q42",
+     "order": 42,
+     "codeId": "recommendation",
+     "stage": "after-account",
+     "text": "Based on your responses in the consultation, our medical team recommend the following plan for you:",
+     "type": "info",
+     "detail": "Not seen live. Wording from the page script.",
+     "required": false,
+     "options": [],
+     "purpose": "Recommendation screen (\"<first name>'s Hair Growth Recommendations\"). One or two primary plan cards, then \"See more plans\". The list is built in the browser from the answers by the code saved in recommendation-engine.excerpt.js.",
+     "engineRole": "product-selector",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "after account creation",
+     "evidence": "code"
+    },
+    {
+     "id": "men-q43",
+     "order": 43,
+     "codeId": "plan-length",
+     "stage": "after-account",
+     "text": "Choose your plan (subscription length)",
+     "type": "single",
+     "required": false,
+     "options": [
+      {
+       "label": "1 month",
+       "effect": "Sets how many months are sent and billed up front; longer plans cost less per month. Not every product has every length (minoxidil 1-month is hidden on the recommendation page).",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "3 months",
+       "effect": "Sets how many months are sent and billed up front; longer plans cost less per month. Not every product has every length (minoxidil 1-month is hidden on the recommendation page).",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "6 months",
+       "effect": "Sets how many months are sent and billed up front; longer plans cost less per month. Not every product has every length (minoxidil 1-month is hidden on the recommendation page).",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "12 months",
+       "effect": "Sets how many months are sent and billed up front; longer plans cost less per month. Not every product has every length (minoxidil 1-month is hidden on the recommendation page).",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Plan length = billing period. Paid up front, renews at the same interval.",
+     "engineRole": "personalisation",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "after account creation",
+     "evidence": "code"
+    },
+    {
+     "id": "men-q44",
+     "order": 44,
+     "codeId": "how_did_you_hear",
+     "stage": "checkout",
+     "text": "How did you hear about Sons?",
+     "type": "single",
+     "required": false,
+     "options": [
+      {
+       "label": "Facebook/Instagram",
+       "effect": "Marketing attribution only.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Search Engine",
+       "effect": "Marketing attribution only.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Recommended by Friend / Family",
+       "effect": "Marketing attribution only.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "TV Advertisement",
+       "effect": "Marketing attribution only.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Print Media (magazines, billboards)",
+       "effect": "Marketing attribution only.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Sports Team Partnership",
+       "effect": "Marketing attribution only.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Podcast / Radio",
+       "effect": "Marketing attribution only.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Clinic Referral",
+       "effect": "Marketing attribution only.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Online Reviews",
+       "effect": "Marketing attribution only.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Tiktok",
+       "effect": "Marketing attribution only.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Reddit",
+       "effect": "Marketing attribution only.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Youtube",
+       "effect": "Marketing attribution only.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "ChatGPT",
+       "effect": "Marketing attribution only.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Train Poster",
+       "effect": "Marketing attribution only.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Attribution survey at checkout.",
+     "engineRole": "marketing",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "checkout",
+     "evidence": "code"
+    },
+    {
+     "id": "men-q45",
+     "order": 45,
+     "codeId": "oral_minoxidil_consent",
+     "stage": "checkout",
+     "text": "I confirm that I have been informed that Minoxidil 2.5mg is approved for the treatment of high blood pressure, but is prescribed off-label for hair loss treatment and that approved alternatives exist. I agree to this off-label prescription.",
+     "type": "consent",
+     "required": false,
+     "options": [
+      {
+       "label": "I have read the notice and explicitly agree to off-label prescription.",
+       "effect": "Not tested (behind the account wall).",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Off-label consent for oral minoxidil. The text sits in the shared translation file with an error message \"Please accept terms & conditions for this oral minoxidil product\"; which markets show it was not confirmed.",
+     "engineRole": "consent",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "checkout, when the basket holds oral minoxidil (market not confirmed)",
+     "evidence": "code"
+    },
+    {
+     "id": "men-q46",
+     "order": 46,
+     "codeId": "keto_terms",
+     "stage": "checkout",
+     "text": "Ketoconazole terms and conditions (exact wording not served to anonymous visitors)",
+     "type": "consent",
+     "required": false,
+     "options": [],
+     "purpose": "The checkout refuses to place the order until \"all terms and conditions for this Ketoconazole product\" are accepted.",
+     "engineRole": "consent",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "checkout, when the basket holds ketoconazole shampoo",
+     "evidence": "code"
+    },
+    {
+     "id": "men-q47",
+     "order": 47,
+     "codeId": "pharmacy_disclaimer",
+     "stage": "checkout",
+     "text": "Pharmacy disclaimer (exact wording not served to anonymous visitors)",
+     "type": "consent",
+     "required": false,
+     "options": [],
+     "purpose": "Error text in code: \"Please accept the pharmacy disclaimer.\"",
+     "engineRole": "consent",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "checkout",
+     "evidence": "code"
+    },
+    {
+     "id": "men-q48",
+     "order": 48,
+     "codeId": "identity",
+     "stage": "checkout",
+     "text": "Identity verification: British passport or driving licence number",
+     "type": "text",
+     "required": false,
+     "options": [],
+     "purpose": "If automatic identity checks fail, the customer is asked for passport MRZ digits or driving licence number. Orders \"without a male patient name will be held\".",
+     "engineRole": "identity",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "after order, only if the automatic check fails",
+     "evidence": "code"
+    },
+    {
+     "id": "men-q49",
+     "order": 49,
+     "codeId": "health_check",
+     "stage": "after-account",
+     "text": "Before your next order can be dispatched, we require you to confirm if you've experienced any changes in your health status whilst using your prescription medication",
+     "type": "single",
+     "required": false,
+     "options": [
+      {
+       "label": "No changes in my health status",
+       "effect": "Not tested (behind the account wall).",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "unknown"
+      },
+      {
+       "label": "My health status has changed",
+       "effect": "Not tested (behind the account wall).",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Repeat \"health check\" for subscribers. \"Changed\" reopens the consultation in health_check mode; the answer page can report \"eligibility_changed\".",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "existing subscribers, before a renewal is sent",
+     "evidence": "code"
+    }
+   ]
+  },
+  {
+   "id": "oral-minoxidil-5mg",
+   "name": "Oral minoxidil 5 mg step-up consultation (existing customers on 2.5 mg)",
+   "audience": "men",
+   "entryUrl": "https://shop.sons.co.uk/consultation/?logged_in=false&oral_minoxidil_5mg=true",
+   "stagesSummary": "One page, four visible questions plus two conditional text boxes. The questions render for an anonymous visitor; submitting needs a signed-in customer (not tested).",
+   "questions": [
+    {
+     "id": "om5-q1",
+     "order": 1,
+     "codeId": "5712",
+     "stage": "anonymous",
+     "text": "How would you describe your response to oral minoxidil 2.5 mg so far?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "I've had a good response and I'm happy to continue improving",
+       "effect": "Effect on approval unknown; the form is a single page with no stop screens.",
+       "effectType": "unknown",
+       "affects": [
+        "p-oralmin5"
+       ],
+       "evidence": "unknown"
+      },
+      {
+       "label": "I've had some improvement but it now seems to have plateaued",
+       "effect": "Effect on approval unknown; the form is a single page with no stop screens.",
+       "effectType": "unknown",
+       "affects": [
+        "p-oralmin5"
+       ],
+       "evidence": "unknown"
+      },
+      {
+       "label": "I've had only a limited improvement so far",
+       "effect": "Effect on approval unknown; the form is a single page with no stop screens.",
+       "effectType": "unknown",
+       "affects": [
+        "p-oralmin5"
+       ],
+       "evidence": "unknown"
+      },
+      {
+       "label": "I've seen little or no improvement",
+       "effect": "Effect on approval unknown; the form is a single page with no stop screens.",
+       "effectType": "unknown",
+       "affects": [
+        "p-oralmin5"
+       ],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Has 2.5 mg worked? Step-up is pitched at men who have plateaued.",
+     "engineRole": "personalisation",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "observed"
+    },
+    {
+     "id": "om5-q2",
+     "order": 2,
+     "codeId": "5713",
+     "stage": "anonymous",
+     "text": "Have you experienced any side effects whilst taking oral minoxidil 2.5 mg?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Opens a required free-text box. Effect on approval unknown (reviewed by the prescriber).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "effect": "No extra box.",
+       "effectType": "unknown",
+       "affects": [
+        "p-oralmin5"
+       ],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Side effects on 2.5 mg.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Yes shows the free-text box that follows.",
+     "shownWhen": "always",
+     "evidence": "observed"
+    },
+    {
+     "id": "om5-q3",
+     "order": 3,
+     "codeId": "5714",
+     "stage": "anonymous",
+     "text": "Please can you tell us more about the side effects you have experienced?",
+     "type": "text",
+     "required": true,
+     "options": [],
+     "purpose": "Free text on side effects.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if the question before = Yes",
+     "evidence": "code"
+    },
+    {
+     "id": "om5-q4",
+     "order": 4,
+     "codeId": "5715",
+     "stage": "anonymous",
+     "text": "Since starting oral minoxidil, have there been any changes to your health or medicines?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Opens a required free-text box. Effect on approval unknown (reviewed by the prescriber).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "effect": "No extra box.",
+       "effectType": "unknown",
+       "affects": [
+        "p-oralmin5"
+       ],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Changes in health or medicines since starting.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Yes shows the free-text box that follows.",
+     "shownWhen": "always",
+     "evidence": "observed"
+    },
+    {
+     "id": "om5-q5",
+     "order": 5,
+     "codeId": "5716",
+     "stage": "anonymous",
+     "text": "Please can you tell us more about what has changed?",
+     "type": "text",
+     "required": true,
+     "options": [],
+     "purpose": "Free text on what changed.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if the question before = Yes",
+     "evidence": "code"
+    },
+    {
+     "id": "om5-q6",
+     "order": 6,
+     "codeId": "5717",
+     "stage": "anonymous",
+     "text": "I confirm that I wish to increase my oral minoxidil treatment from 2.5 mg to 5 mg. I understand that this is a higher dose and that if I develop any side effects or concerning symptoms, I should stop treatment and seek advice from a healthcare professional.",
+     "type": "consent",
+     "required": true,
+     "options": [
+      {
+       "label": "I confirm",
+       "effect": "Effect on approval unknown; the form is a single page with no stop screens.",
+       "effectType": "unknown",
+       "affects": [
+        "p-oralmin5"
+       ],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Consent to double the dose.",
+     "engineRole": "consent",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "observed"
+    }
+   ]
+  },
+  {
+   "id": "beard",
+   "name": "Beard consultation (Beard Booster; facial hair, not scalp)",
+   "audience": "men",
+   "entryUrl": "https://shop.sons.co.uk/beard-consultation/",
+   "stagesSummary": "Same two gates and declaration → 4 to 9 beard questions → ACCOUNT WALL → Beard Booster product page. Only the first screen was seen live; the rest is from the definition the page downloaded.",
+   "questions": [
+    {
+     "id": "beard-q1",
+     "order": 1,
+     "codeId": "5140",
+     "stage": "anonymous",
+     "text": "Are you an existing Sons customer?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      },
+      {
+       "label": "No",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Existing customers are sent to sign in.",
+     "engineRole": "identity",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "code"
+    },
+    {
+     "id": "beard-q2",
+     "order": 2,
+     "codeId": "5141",
+     "stage": "anonymous",
+     "text": "What is your gender at birth?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Female",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      },
+      {
+       "label": "Male",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Born-male gate (same as the hair flow).",
+     "engineRole": "eligibility-gate",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "code"
+    },
+    {
+     "id": "beard-q3",
+     "order": 3,
+     "codeId": "5142",
+     "stage": "anonymous",
+     "text": "Please read the statement and accept if you meet all the criteria",
+     "detail": "• I am male and over 18 years old • I currently live in the UK • I am using this service of my own free will • I shall be the sole user of any medication offered to me through this service and prescribed by Son's independent prescribing partners • I agree to the terms of service, terms of subscription, and privacy policy • I confirm all answers will be provided honestly and truthfully",
+     "type": "consent",
+     "required": true,
+     "options": [
+      {
+       "label": "I accept",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Self-declaration tick.",
+     "engineRole": "consent",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "code condition: {5141} anyof ['0']",
+     "evidence": "code"
+    },
+    {
+     "id": "beard-q4",
+     "order": 4,
+     "codeId": "5172",
+     "stage": "anonymous",
+     "text": "Please select the answer that best describes your beard hair loss",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Slow, patchy or thin growth areas",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      },
+      {
+       "label": "New/sudden well-defined areas of beard loss",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      },
+      {
+       "label": "Inflamed/irritated skin with beard loss",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      },
+      {
+       "label": "No growth",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Pattern of beard loss. Sudden well-defined patches or inflamed skin point away from simple patchy growth.",
+     "engineRole": "diagnosis",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "code condition: {5141} anyof ['0']",
+     "evidence": "code"
+    },
+    {
+     "id": "beard-q5",
+     "order": 5,
+     "codeId": "5173",
+     "stage": "anonymous",
+     "text": "Have you noticed any hair loss on other parts of your body apart from your beard and head?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      },
+      {
+       "label": "No",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Hair loss elsewhere on the body.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "",
+     "shownWhen": "code condition: {5141} anyof ['0']",
+     "evidence": "code"
+    },
+    {
+     "id": "beard-q6",
+     "order": 6,
+     "codeId": "5174",
+     "stage": "anonymous",
+     "text": "Please tell us more about your hair loss on the rest of your body?",
+     "type": "text",
+     "required": true,
+     "options": [],
+     "purpose": "Free text.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "code condition: {5173} anyof ['1']",
+     "evidence": "code"
+    },
+    {
+     "id": "beard-q7",
+     "order": 7,
+     "codeId": "5175",
+     "stage": "anonymous",
+     "text": "Have you taken minoxidil/regaine before/in the last 12 months?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      },
+      {
+       "label": "No",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Minoxidil history.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "",
+     "shownWhen": "code condition: {5141} anyof ['0']",
+     "evidence": "code"
+    },
+    {
+     "id": "beard-q8",
+     "order": 8,
+     "codeId": "5176",
+     "stage": "anonymous",
+     "text": "Did you experience any side effects?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      },
+      {
+       "label": "No",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Minoxidil side effects.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "",
+     "shownWhen": "code condition: {5175} anyof ['1']",
+     "evidence": "code"
+    },
+    {
+     "id": "beard-q9",
+     "order": 9,
+     "codeId": "5177",
+     "stage": "anonymous",
+     "text": "Please can you tell us what side effects you have experienced from minoxidil/regaine?",
+     "type": "text",
+     "required": true,
+     "options": [],
+     "purpose": "Free text.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "code condition: {5176} anyof ['1']",
+     "evidence": "code"
+    },
+    {
+     "id": "beard-q10",
+     "order": 10,
+     "codeId": "5178",
+     "stage": "anonymous",
+     "text": "Are you allergic to minoxidil or tretinoin?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      },
+      {
+       "label": "No",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Allergy to either active ingredient.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "code condition: {5141} anyof ['0']",
+     "evidence": "code"
+    },
+    {
+     "id": "beard-q11",
+     "order": 11,
+     "codeId": "5179",
+     "stage": "anonymous",
+     "text": "Do you suffer from any of the following affecting the face?",
+     "type": "multi",
+     "required": true,
+     "options": [
+      {
+       "label": "Psoriasis",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      },
+      {
+       "label": "Eczema",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      },
+      {
+       "label": "Scalp/skin infections",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      },
+      {
+       "label": "Any other medical conditions/operations' affecting the face/beard area",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      },
+      {
+       "label": "None of these",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Skin conditions of the face.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "",
+     "shownWhen": "code condition: {5141} anyof ['0']",
+     "evidence": "code"
+    },
+    {
+     "id": "beard-q12",
+     "order": 12,
+     "codeId": "5180",
+     "stage": "anonymous",
+     "text": "Psoriasis, eczema and related skin conditions can be exacerbated with the use of topical minoxidil and tretinoin. Are you willing to proceed?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      },
+      {
+       "label": "No",
+       "effect": "Not tested. The app code names a \"Beard Booster Not Recommended\" notice, but the current definition has no such page.",
+       "effectType": "unknown",
+       "affects": [
+        "p-beard"
+       ],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Informed-risk question for psoriasis.",
+     "engineRole": "consent",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "code condition: {5179} anyof ['0']",
+     "evidence": "code"
+    },
+    {
+     "id": "beard-q13",
+     "order": 13,
+     "codeId": "5181",
+     "stage": "anonymous",
+     "text": "Please, can you tell us more about the issues that you have with your face?",
+     "type": "text",
+     "required": true,
+     "options": [],
+     "purpose": "Free text.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "code condition: {5179} anyof ['3']",
+     "evidence": "code"
+    },
+    {
+     "id": "beard-q14",
+     "order": 14,
+     "codeId": "account-create",
+     "stage": "anonymous",
+     "text": "Based on your questionnaire results, we are now preparing your personalised health plan. Please complete your account set up to continue.",
+     "type": "contact",
+     "required": true,
+     "options": [],
+     "purpose": "Account wall (same form as the hair flow). After it the code sends the man to the Beard Booster product page.",
+     "engineRole": "identity",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always, last screen",
+     "evidence": "code"
+    }
+   ]
+  },
+  {
+   "id": "clinic",
+   "name": "Partner hair-transplant clinic entry",
+   "audience": "men",
+   "entryUrl": "https://shop.sons.co.uk/clinics/british-hair-clinic",
+   "stagesSummary": "Clinic landing page (treatment type, procedure date) → the standard hair consultation with the clinic attached → clinic recommendation page with the clinic's own pre-/post-procedure plan list. Only the landing page was opened.",
+   "questions": [
+    {
+     "id": "clinic-q1",
+     "order": 1,
+     "codeId": "treatment_type",
+     "stage": "anonymous",
+     "text": "What is your treatment type?",
+     "type": "single",
+     "required": true,
+     "options": [
+      {
+       "label": "transplant (the only value in the clinic record for British Hair Clinic; the on-screen label was not opened)",
+       "effect": "Unknown. The clinic record carries separate pre-procedure and post-procedure plan lists.",
+       "effectType": "unknown",
+       "affects": [
+        "p-transplant-bundle"
+       ],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Partner hair-transplant clinic landing page. Ties the man to the clinic and to a pre- or post-procedure plan list.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Leads to a procedure date question, then the standard consultation with clinic_id attached.",
+     "shownWhen": "on shop.sons.co.uk/clinics/<clinic>",
+     "evidence": "observed"
+    },
+    {
+     "id": "clinic-q2",
+     "order": 2,
+     "codeId": "procedure_date",
+     "stage": "anonymous",
+     "text": "What is your procedure date?",
+     "type": "date",
+     "required": true,
+     "options": [],
+     "purpose": "Decides pre-op versus post-op plans and the free post-op pack (\"You're eligible for a free* post-op transplant pack worth £49.99\").",
+     "engineRole": "product-selector",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "after treatment type",
+     "evidence": "code"
+    }
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "id": "R1",
+   "flow": "men",
+   "when": "Gender at birth = Female",
+   "then": "Hard stop with a notice; redirected to the home page; nothing sent.",
+   "effectType": "hard-stop",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/baseline-women",
+   "confidence": "high"
+  },
+  {
+   "id": "R2",
+   "flow": "men",
+   "when": "Existing Sons customer = Yes",
+   "then": "Questionnaire dropped; sent to the sign-in page.",
+   "effectType": "skip-questions",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/existing-customer-yes",
+   "confidence": "high"
+  },
+  {
+   "id": "R3",
+   "flow": "men",
+   "when": "Male, any combination of answers",
+   "then": "No stop screen before the account form. Even sudden onset + every condition ticked reaches the account form.",
+   "effectType": "none",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/all-branches-men vs runs/baseline-men",
+   "confidence": "high"
+  },
+  {
+   "id": "R4",
+   "flow": "men",
+   "when": "Treatment preference = Topical sprays",
+   "then": "Plan list uses the topical order; otherwise the oral order (\"I don't mind\" counts as oral).",
+   "effectType": "product-switched",
+   "affects": [
+    "p-core",
+    "p-core-cap",
+    "p-combospray"
+   ],
+   "evidence": "code",
+   "proof": "recommendation-engine.excerpt.js (older page script) and src/chunks/app__recommendation__page-9574552c5f8ec4c0.pretty.js (newer app code)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R5",
+   "flow": "men",
+   "when": "Hair loss started Suddenly",
+   "then": "Oral finasteride, topical finasteride, oral minoxidil and the combination spray are removed. Minoxidil spray, Non-Prescription plan and Hair Growth Complex remain.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-fin",
+    "p-topfin",
+    "p-oralmin",
+    "p-combospray",
+    "p-core",
+    "p-core-cap",
+    "p-ultimate",
+    "p-ultimate-cap",
+    "p-topfin-oralmin",
+    "p-combocap",
+    "p-dutaspray"
+   ],
+   "evidence": "code",
+   "proof": "recommendation-engine.excerpt.js (older page script) and src/chunks/app__recommendation__page-9574552c5f8ec4c0.pretty.js (newer app code)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R6",
+   "flow": "men",
+   "when": "Either PHQ question = More than half the days or Nearly every day",
+   "then": "All finasteride (tablet, spray, combination) removed.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-fin",
+    "p-topfin",
+    "p-combospray",
+    "p-core",
+    "p-core-cap",
+    "p-ultimate",
+    "p-ultimate-cap",
+    "p-topfin-oralmin",
+    "p-combocap",
+    "p-dutaspray"
+   ],
+   "evidence": "code",
+   "proof": "recommendation-engine.excerpt.js (older page script) and src/chunks/app__recommendation__page-9574552c5f8ec4c0.pretty.js (newer app code)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R7",
+   "flow": "men",
+   "when": "Mood question = Yes but both PHQ answers below 2",
+   "then": "No product removed (the blocking line is commented out).",
+   "effectType": "none",
+   "affects": [],
+   "evidence": "code",
+   "proof": "recommendation-engine.excerpt.js (older page script) and src/chunks/app__recommendation__page-9574552c5f8ec4c0.pretty.js (newer app code)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R8",
+   "flow": "men",
+   "when": "Past finasteride side effects = Yes",
+   "then": "All finasteride removed.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-fin",
+    "p-topfin",
+    "p-combospray",
+    "p-core",
+    "p-core-cap",
+    "p-ultimate",
+    "p-ultimate-cap",
+    "p-topfin-oralmin",
+    "p-combocap",
+    "p-dutaspray"
+   ],
+   "evidence": "code",
+   "proof": "recommendation-engine.excerpt.js (older page script) and src/chunks/app__recommendation__page-9574552c5f8ec4c0.pretty.js (newer app code)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R9",
+   "flow": "men",
+   "when": "Past minoxidil side effects = Yes",
+   "then": "All minoxidil (spray, capsule, combination, Non-Prescription plan) removed.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-min",
+    "p-oralmin",
+    "p-combospray",
+    "p-core",
+    "p-core-cap",
+    "p-ultimate",
+    "p-ultimate-cap",
+    "p-topfin-oralmin",
+    "p-nonrx",
+    "p-combocap",
+    "p-dutaspray"
+   ],
+   "evidence": "code",
+   "proof": "recommendation-engine.excerpt.js (older page script) and src/chunks/app__recommendation__page-9574552c5f8ec4c0.pretty.js (newer app code)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R10",
+   "flow": "men",
+   "when": "Past combination side effects = Yes",
+   "then": "Combination spray removed only.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-combospray",
+    "p-dutaspray"
+   ],
+   "evidence": "code",
+   "proof": "recommendation-engine.excerpt.js (older page script) and src/chunks/app__recommendation__page-9574552c5f8ec4c0.pretty.js (newer app code)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R11",
+   "flow": "men",
+   "when": "High Blood Pressure or Cardiovascular Disease ticked",
+   "then": "All minoxidil removed, topical included. Finasteride tablet, topical finasteride and Hair Growth Complex remain.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-min",
+    "p-oralmin",
+    "p-combospray",
+    "p-core",
+    "p-core-cap",
+    "p-ultimate",
+    "p-ultimate-cap",
+    "p-topfin-oralmin",
+    "p-nonrx",
+    "p-combocap",
+    "p-dutaspray"
+   ],
+   "evidence": "code",
+   "proof": "recommendation-engine.excerpt.js (older page script) and src/chunks/app__recommendation__page-9574552c5f8ec4c0.pretty.js (newer app code)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R12",
+   "flow": "men",
+   "when": "Severe Kidney or Liver Disease, Prostate/Breast/Testicular cancer group, Rheumatoid/Lupus/Methotrexate, or Sexual Dysfunction ticked",
+   "then": "All finasteride removed. Minoxidil options remain.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-fin",
+    "p-topfin",
+    "p-combospray",
+    "p-core",
+    "p-core-cap",
+    "p-ultimate",
+    "p-ultimate-cap",
+    "p-topfin-oralmin",
+    "p-combocap",
+    "p-dutaspray"
+   ],
+   "evidence": "code",
+   "proof": "recommendation-engine.excerpt.js (older page script) and src/chunks/app__recommendation__page-9574552c5f8ec4c0.pretty.js (newer app code)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R13",
+   "flow": "men",
+   "when": "Scalp Disorders ticked",
+   "then": "Topical minoxidil and the combination spray removed. Oral options and topical finasteride remain.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-min",
+    "p-combospray",
+    "p-core",
+    "p-ultimate",
+    "p-nonrx",
+    "p-dutaspray"
+   ],
+   "evidence": "code",
+   "proof": "recommendation-engine.excerpt.js (older page script) and src/chunks/app__recommendation__page-9574552c5f8ec4c0.pretty.js (newer app code)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R14",
+   "flow": "men",
+   "when": "Phaeochromocytoma ticked",
+   "then": "Oral minoxidil removed only.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-oralmin",
+    "p-core-cap",
+    "p-ultimate-cap",
+    "p-topfin-oralmin",
+    "p-combocap"
+   ],
+   "evidence": "code",
+   "proof": "recommendation-engine.excerpt.js (older page script) and src/chunks/app__recommendation__page-9574552c5f8ec4c0.pretty.js (newer app code)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R15",
+   "flow": "men",
+   "when": "Diagnosed Lactose Allergy ticked",
+   "then": "Finasteride tablets and oral minoxidil removed; sprays remain.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-fin",
+    "p-core",
+    "p-core-cap",
+    "p-ultimate",
+    "p-ultimate-cap",
+    "p-oralmin",
+    "p-topfin-oralmin",
+    "p-combocap"
+   ],
+   "evidence": "code",
+   "proof": "recommendation-engine.excerpt.js (older page script) and src/chunks/app__recommendation__page-9574552c5f8ec4c0.pretty.js (newer app code)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R16",
+   "flow": "men",
+   "when": "Age over 65 (from date of birth on the account)",
+   "then": "Older page script: finasteride (tablet and spray), oral minoxidil and combination spray removed, minoxidil spray kept. Newer app code: everything including minoxidil spray removed. Product pages meanwhile say finasteride suits ages 18-75.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-fin",
+    "p-topfin",
+    "p-oralmin",
+    "p-combospray",
+    "p-core",
+    "p-core-cap",
+    "p-ultimate",
+    "p-ultimate-cap",
+    "p-topfin-oralmin",
+    "p-combocap",
+    "p-dutaspray"
+   ],
+   "evidence": "code",
+   "proof": "recommendation-engine.excerpt.js (older page script) and src/chunks/app__recommendation__page-9574552c5f8ec4c0.pretty.js (newer app code)",
+   "confidence": "low"
+  },
+  {
+   "id": "R17",
+   "flow": "men",
+   "when": "Date of birth under 18 on the account form",
+   "then": "Form refuses: \"You must be at least 18 years old to continue.\"",
+   "effectType": "hard-stop",
+   "affects": [],
+   "evidence": "code",
+   "proof": "recommendation-engine.excerpt.js (older page script) and src/chunks/app__recommendation__page-9574552c5f8ec4c0.pretty.js (newer app code)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R18",
+   "flow": "men",
+   "when": "Account tag finasteride_disallowed / minoxidil_disallowed (set by staff or server; trigger unknown)",
+   "then": "Removes that whole drug family from the list.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-fin",
+    "p-topfin",
+    "p-combospray",
+    "p-core",
+    "p-core-cap",
+    "p-ultimate",
+    "p-ultimate-cap",
+    "p-topfin-oralmin",
+    "p-combocap",
+    "p-dutaspray",
+    "p-min",
+    "p-oralmin",
+    "p-nonrx"
+   ],
+   "evidence": "code",
+   "proof": "recommendation-engine.excerpt.js (older page script) and src/chunks/app__recommendation__page-9574552c5f8ec4c0.pretty.js (newer app code)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R19",
+   "flow": "men",
+   "when": "Account tag dutasteride_eligible",
+   "then": "Dutasteride Combination Spray is put first in the list.",
+   "effectType": "product-added",
+   "affects": [
+    "p-dutaspray"
+   ],
+   "evidence": "code",
+   "proof": "recommendation-engine.excerpt.js (older page script) and src/chunks/app__recommendation__page-9574552c5f8ec4c0.pretty.js (newer app code)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R20",
+   "flow": "men",
+   "when": "Account tag combo_pill_eligible AND a combo route (combo_pill=true or partner-clinic flag)",
+   "then": "Combination Capsule is put first in the list.",
+   "effectType": "product-added",
+   "affects": [
+    "p-combocap"
+   ],
+   "evidence": "code",
+   "proof": "recommendation-engine.excerpt.js (older page script) and src/chunks/app__recommendation__page-9574552c5f8ec4c0.pretty.js (newer app code)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R21",
+   "flow": "men",
+   "when": "Visitor came from a product page that stored a chosen product",
+   "then": "That product is moved to the top (Core Plan is swapped for Core Plan - Capsule, Oral Capsule for Oral Minoxidil, Oral Tablet for Finasteride) if it survives the blocks.",
+   "effectType": "product-switched",
+   "affects": [
+    "p-core-cap",
+    "p-oralmin",
+    "p-fin"
+   ],
+   "evidence": "code",
+   "proof": "recommendation-engine.excerpt.js (older page script) and src/chunks/app__recommendation__page-9574552c5f8ec4c0.pretty.js (newer app code)",
+   "confidence": "low"
+  },
+  {
+   "id": "R22",
+   "flow": "men",
+   "when": "Hair-loss picture (any of four), body hair loss, new medicines, other symptoms, scalp tick boxes, free-text answers",
+   "then": "Not read by the recommendation code. Saved for the prescriber; effect on approval unknown.",
+   "effectType": "none",
+   "affects": [],
+   "evidence": "code",
+   "proof": "recommendation-engine.excerpt.js (older page script) and src/chunks/app__recommendation__page-9574552c5f8ec4c0.pretty.js (newer app code)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R23",
+   "flow": "men",
+   "when": "Nothing blocked",
+   "then": "Older page script shows two primary cards (first two of the list); if finasteride tablets or minoxidil spray are blocked it shows one. Newer app code always shows one primary card. Hair Growth Complex is never removed.",
+   "effectType": "none",
+   "affects": [
+    "p-hgc"
+   ],
+   "evidence": "code",
+   "proof": "recommendation-engine.excerpt.js (older page script) and src/chunks/app__recommendation__page-9574552c5f8ec4c0.pretty.js (newer app code)",
+   "confidence": "medium"
+  }
+ ],
+ "experiments": [],
+ "recommendations": [
+  {
+   "profile": "Man, 32, temples and crown, gradual onset, no mood concerns, no past treatment, no conditions, \"I don't mind\" on format (the baseline man)",
+   "offered": [
+    "p-core-cap",
+    "p-core",
+    "p-combospray",
+    "p-topfin-oralmin",
+    "p-ultimate-cap",
+    "p-ultimate",
+    "p-oralmin",
+    "p-min",
+    "p-fin",
+    "p-topfin",
+    "p-nonrx",
+    "p-hgc"
+   ],
+   "default": "p-core-cap",
+   "note": "READ FROM CODE, NOT SEEN LIVE (the page needs an account). Older page script on sons.co.uk/pages/recommendation: two primary cards, Core Plan (opening on the capsule version, spray on a toggle) and the Combination Spray; the other ten sit under \"See more plans\". Newer app code at shop.sons.co.uk/recommendation: one primary card, the Combination Spray, then the rest. Which copy a new customer lands on today was not confirmed; the consultation code redirects to the sons.co.uk page. The newer function was also run offline on these answers (node scripts/engine-run.js) and returned the Combination Spray as the primary card.",
+   "evidence": "code"
+  },
+  {
+   "profile": "Woman, 38 (the baseline woman)",
+   "offered": [],
+   "default": null,
+   "note": "Stopped at question 2 with a notice to see a GP or hair-loss specialist. The medical FAQ adds that 5% minoxidil \"cannot be sold to females as Sons are not permitted to do so under UK licensing\".",
+   "evidence": "observed"
+  }
+ ],
+ "engineSummary": "One short questionnaire for men only. It never stops a man before the account form: sex at birth is the only gate. Every clinical answer is carried forward and, after sign-up, a script running in the customer's browser turns the answers into five on/off switches (finasteride tablet, finasteride spray, minoxidil capsule, minoxidil spray, combination spray). Each ticked condition or reported side effect flips whole drug families off, a fixed ordered list of twelve plans is filtered by those switches, and the format preference only picks which of two orders is used. The top one or two survivors are shown as the recommendation. The partner pharmacy's prescriber reviews the order afterwards. Rules below are read from the served code, not yet replayed.",
+ "strengths": [
+  "Very short: a healthy man clicks through 10 screens before the account form, most of them one tap.",
+  "Holds its own UK licences for finasteride 1 mg and minoxidil 5%, and says so; it is open that sprays and capsules are unlicensed specials.",
+  "Wide format choice (tablet, spray, capsule, combined spray, combined capsule) with a Spray/Capsule toggle on each plan card.",
+  "PHQ-2 style mood questions and a finasteride safety statement sit inside the flow.",
+  "Optional NHS Summary Care Record and GP-sharing consents.",
+  "Money-back \"Sons Promise\" after six months, a repeat health check before renewals, and a partner-clinic programme for transplant patients."
+ ],
+ "weaknesses": [
+  "No recommendation, price or product is shown until the visitor hands over name, email, phone, date of birth and a password.",
+  "The hair picture (including \"Random patches\" and \"Completely bald\") and the sudden-onset follow-ups do not change what is offered in the served code; a man with sudden patchy loss is still shown minoxidil and a supplement.",
+  "Age is not asked before the wall; the over-65 rule differs between the two code copies and from the product pages (18-75 for finasteride).",
+  "No questions on current medicines (apart from one yes/no after sudden onset), allergies, low blood pressure, family history, how long hair has been thinning, or goals.",
+  "The whole rule set runs in the browser and is readable by anyone, with a hidden \"Debug (Dev Only)\" block of reasons in the page.",
+  "Women are turned away with no alternative product or signposting beyond \"see a GP\".",
+  "Small wording and data slips: \"Is their hair loss over other parts of your body?\", the drawing for \"Random patches\" looks like a larger temples-and-crown pattern rather than patches, product pages that disagree with the leaflet on the combination spray strength."
+ ],
+ "opportunities": [
+  "Show a provisional plan and price before asking for contact details.",
+  "Use the pattern picture and onset answers for real triage (stop or refer for patchy, sudden or scarring loss) and explain why.",
+  "Serve women, whom Sons refuses outright.",
+  "Ask about current medicines, blood pressure and goals, and explain each exclusion to the patient instead of silently hiding plans.",
+  "Offer a clear route for men over 65 and men trying for a baby."
+ ],
+ "sources": [
+  {
+   "title": "Sons consultation landing page",
+   "url": "https://sons.co.uk/pages/consultation-hair"
+  },
+  {
+   "title": "Consultation app",
+   "url": "https://shop.sons.co.uk/consultation/?logged_in=false"
+  },
+  {
+   "title": "Survey definition requested by the consultation page (saved as quiz-definition.json)",
+   "url": "https://api.sons.co.uk/barber/survey/code/loader?code=uk_consultation&pharmacy=tip"
+  },
+  {
+   "title": "Recommendation page whose inline script holds the rules (saved as recommendation-engine.excerpt.js)",
+   "url": "https://sons.co.uk/pages/recommendation"
+  },
+  {
+   "title": "Public product feed",
+   "url": "https://sons.co.uk/products.json?limit=250"
+  },
+  {
+   "title": "Hair loss plans page",
+   "url": "https://sons.co.uk/pages/hair-loss"
+  },
+  {
+   "title": "Medical FAQs",
+   "url": "https://sons.co.uk/pages/medical-faqs"
+  },
+  {
+   "title": "Subscription and order FAQs",
+   "url": "https://sons.co.uk/pages/subscription-faqs"
+  },
+  {
+   "title": "Finasteride FAQs",
+   "url": "https://sons.co.uk/pages/finasteride-faqs"
+  },
+  {
+   "title": "Minoxidil FAQs",
+   "url": "https://sons.co.uk/pages/minoxidil-faqs"
+  },
+  {
+   "title": "Terms and conditions (pharmacy partner, prescribers, subscription, cancellation)",
+   "url": "https://sons.co.uk/pages/terms-conditions"
+  },
+  {
+   "title": "Sons Promise (money-back guarantee terms)",
+   "url": "https://sons.co.uk/pages/sons-promise"
+  },
+  {
+   "title": "Refund policy",
+   "url": "https://sons.co.uk/pages/refund-policy"
+  },
+  {
+   "title": "Leaflet: topical finasteride 0.15%, minoxidil 5%, tretinoin 0.015% spray",
+   "url": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_MinoFinaTret_Topical_PIL_1126_site.pdf"
+  },
+  {
+   "title": "Leaflet: finasteride topical spray 0.15%",
+   "url": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Topical_Finasteride_PIL_Site_Version.pdf"
+  },
+  {
+   "title": "Leaflet: minoxidil 2.5 mg and biotin capsules",
+   "url": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_Oral_Minoxidil__Biotin_PIL_Outlined_4.pdf"
+  },
+  {
+   "title": "Leaflet: finasteride, minoxidil and biotin combination capsule",
+   "url": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_Combo_Cap_Leaflet_01_Site.pdf"
+  },
+  {
+   "title": "Leaflet: dutasteride 0.1%, minoxidil 5%, tretinoin 0.01% spray",
+   "url": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_Dutasteride_Mino_Tret_PIL_0726.pdf"
+  },
+  {
+   "title": "Leaflet: Beard Booster (minoxidil 6%, tretinoin 0.01%)",
+   "url": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_Beard_Booster_PIL_A522UKA01_260526.pdf"
+  },
+  {
+   "title": "Partner clinic page (example)",
+   "url": "https://shop.sons.co.uk/clinics/british-hair-clinic"
+  },
+  {
+   "title": "The Independent Pharmacy hair-loss page (partner pharmacy)",
+   "url": "https://www.theindependentpharmacy.co.uk/hair-loss-treatments"
+  }
+ ],
+ "limitations": [
+  "Nothing after the account form was seen live. The recommendation rules are read from code the site serves; the server may add or override them (it can send its own ordered list and sets account tags such as finasteride_disallowed).",
+  "What the prescriber at the partner pharmacy does with the answers, how often orders are refused, and whether photos are ever requested are unknown.",
+  "Two copies of the recommendation code disagree in places (order of the list, number of primary cards, over-65 rule). Which one new customers see was not confirmed.",
+  "Prices are list prices on one day during a Black Friday sale; first-order discounts change often.",
+  "Legal class of the minoxidil spray and ketoconazole shampoo (P or GSL) was not checked against the MHRA register.",
+  "The exact wording of checkout consents (pharmacy disclaimer, ketoconazole terms) is not served to anonymous visitors."
+ ]
+}

@@ -1,0 +1,21 @@
+COMMAND 024 {"steps":[{"do":"click","selector":"label:text-is(\"GP\")","settle":2800},{"do":"snap","settle":600}]}
+URL: https://www.numan.com/subscribe/hair-loss/4b4e30d9-9042-49e8-a32b-7557d60d5aec/sq/who_manages_your_mental_health
+TITLE: Who manages your mental health condition? | Numan
+
+--- VISIBLE TEXT ---
+68%
+Who manages your mental health condition?
+Psychiatrist/Specialist/Consultant
+GP
+Back
+
+--- CONTROLS ---
+  radio (2):
+    - Psychiatrist/Specialist/Consultant (name: who_manages_your_mental_health)
+    - GP [checked] (name: who_manages_your_mental_health)
+  button (1):
+    - Back
+
+--- LINKS ---
+  link (1):
+    - Visit the main page -> /

@@ -1,0 +1,1 @@
+{"steps":[{"do":"fill","selector":"textarea, input[type=text], input[type=number]","value":"Mild asthma, high blood pressure, depression managed by GP. No operations."},{"do":"click","text":"Next","settle":2800},{"do":"snap","settle":600}]}

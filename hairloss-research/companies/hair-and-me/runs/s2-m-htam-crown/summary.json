@@ -55,9 +55,9 @@
    "key": "q9346.options",
    "where": "after-change",
    "alsoIn": [
-    "s2-w-htaf-patches",
-    "s2-w-pg-yes",
-    "scout-men-2"
+    "s2-m-gender-transwoman",
+    "s2-m-mcm-bp-elevated",
+    "s2-m-mcm-bph"
    ]
   },
   {
@@ -147,7 +147,7 @@
    "alsoIn": [
     "s2-base-women-1",
     "s2-m-age-85",
-    "s2-m-tile-women"
+    "s2-m-al-finasteride"
    ]
   },
   {
@@ -156,8 +156,8 @@
    "where": "after-change",
    "alsoIn": [
     "s2-m-age-18",
-    "s2-w-htaf-allover",
-    "s2-w-pg-yes"
+    "s2-m-mcm-bp",
+    "s2-m-mcm-bph"
    ]
   }
  ],

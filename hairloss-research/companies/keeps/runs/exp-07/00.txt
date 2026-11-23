@@ -1,0 +1,20 @@
+STEP 00 start (HTTP 200)
+URL: https://www.keeps.com/hair-assessment-quiz
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+What's your hair goal?
+
+This helps determine your treatment match.
+
+Regrow lost hair - Regrow
+
+Keep my hair - Preserve
+
+Both - Regrow & Preserve
+
+--- CONTROLS ---
+  button (4): Go back  ·  Regrow lost hair - Regrow  ·  Keep my hair - Preserve  ·  Both - Regrow & Preserve
+
+--- LINKS ---
+

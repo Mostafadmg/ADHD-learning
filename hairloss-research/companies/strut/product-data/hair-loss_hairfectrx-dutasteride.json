@@ -1,0 +1,48 @@
+{
+ "heading": "8 ingredients. 1 compounded capsule.",
+ "body": "Dutasteride 0.4mg",
+ "activeIngredientsLabel": "Active Ingredients: dutasteride, minoxidil 5mg, D-biotin, vitamin C, methyltetrahydrofolate, vitamin D3, zinc picolinate, and vitamin A, in a compounded liposomal capsule for absorption.",
+ "ingredients": [
+  {
+   "name": "Dutasteride 0.4mg",
+   "body": "Dual 5-alpha reductase inhibitor potentially reducing DHT by ~90%.* Core active ingredient in HairfectRx."
+  },
+  {
+   "name": "Oral Minoxidil 5mg",
+   "body": "May support hair growth by increasing blood flow to hair follicles and extending the anagen (growth) phase of the hair cycle.*"
+  },
+  {
+   "name": "D-Biotin",
+   "body": "May support keratin production and overall hair health.* One of 6 essential nutrients included in the HairfectRx vitamin complex."
+  },
+  {
+   "name": "Vitamin Complex",
+   "body": "D-Biotin, Vitamin C, CA-5 Methyltetrahydrofolate, Vitamin D3, Zinc Picolinate, and Vitamin A support healthy hair from the inside out.*"
+  }
+ ],
+ "safety": [
+  {
+   "title": "Common side effects",
+   "body": "Decreased libido, erectile dysfunction, decreased semen volume, breast tenderness or enlargement, mood changes, and minoxidil-related side effects such as fluid retention, dizziness, or unwanted body hair growth."
+  },
+  {
+   "title": "Tell your healthcare provider",
+   "body": "Share any history of liver disease, prostate conditions, low blood pressure, heart conditions, current prescriptions including alpha blockers, and any plans for blood donation while on dutasteride."
+  },
+  {
+   "title": "Do not use if",
+   "body": "You are a woman or a child. Dutasteride is a medication for men only. Women who are or may become pregnant should never handle dutasteride-containing medications."
+  },
+  {
+   "title": "Seek medical care",
+   "body": "Severe allergic reaction (rash, swelling, trouble breathing), persistent breast changes, severe mood changes, dizziness or fainting, rapid heart rate, or signs of high-grade prostate disease."
+  }
+ ],
+ "disclaimer": [
+  "All prescription medications require a valid and complete online consultation prior to approval and final pricing is determined. Compounded medications are not FDA-approved and have not been evaluated by the FDA for safety, effectiveness, or quality. A licensed provider may prescribe a compounded medication when they determine it is clinically appropriate for you.",
+  "Compounded HairfectRx Capsules with Dutasteride is not FDA-approved. Statements regarding hair loss, hair growth, scalp health, and follicle support have not been evaluated by the FDA.",
+  "The drug and medical information provided on this website is not meant to cover all adverse effects, drug interactions, warnings, medical uses, directions and precautions. The information provided is a medical resource and the judgment of your healthcare provider should not be substituted."
+ ],
+ "imageSrc": "/assets/v3-hfd-ingredients-kitchen.jpg",
+ "imageAlt": "Man pouring a dutasteride capsule into his palm, kitchen counter"
+}

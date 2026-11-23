@@ -1,0 +1,18 @@
+STEP 22 wait 8000
+URL: https://app.forhims.co.uk/start/signup?gst=s2hF6Mdn&t=hair&anon_flow_key=hair
+TITLE: Hims
+
+--- VISIBLE TEXT ---
+Ready to see if you’re eligible?
+
+Next we'll cover your health and medical history as well as treatment options.
+
+Continue
+←
+
+--- CONTROLS ---
+  input:email (1): Email address
+  button (2): Continue [disabled]  ·  ←
+
+--- LINKS ---
+  link (1): Navigate home -> /profile

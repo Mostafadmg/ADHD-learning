@@ -1,0 +1,48 @@
+{
+ "heading": "8 ingredients. 1 compounded capsule.",
+ "body": "Finasteride 1mg",
+ "activeIngredientsLabel": "Active Ingredients: finasteride 1mg, minoxidil 5mg, D-biotin, vitamin C, methyltetrahydrofolate, vitamin D3, zinc picolinate, and vitamin A, in a compounded liposomal capsule for absorption.",
+ "ingredients": [
+  {
+   "name": "Finasteride 1mg",
+   "body": "May block type II 5-alpha reductase; may lower DHT by approximately 70%.*"
+  },
+  {
+   "name": "Oral Minoxidil 5mg",
+   "body": "May support hair growth by increasing blood flow to the follicles and extending the growth phase of the hair cycle.*"
+  },
+  {
+   "name": "D-Biotin",
+   "body": "May support keratin production and overall hair health.*"
+  },
+  {
+   "name": "Vitamin Complex",
+   "body": "Vitamins C, D3, A, folate, and zinc to support follicle health."
+  }
+ ],
+ "safety": [
+  {
+   "title": "Common side effects",
+   "body": "Decreased libido, erectile dysfunction, decreased semen volume, breast tenderness or enlargement, mood changes, and minoxidil-related side effects such as fluid retention, dizziness, or unwanted body hair growth."
+  },
+  {
+   "title": "Tell your healthcare provider",
+   "body": "Share any history of liver disease, prostate conditions, low blood pressure, heart conditions, current prescriptions, and any plans for blood donation while on finasteride."
+  },
+  {
+   "title": "Do not use if",
+   "body": "You are a woman or a child. Finasteride is a medication for men only. Women who are or may become pregnant should never handle finasteride-containing medications."
+  },
+  {
+   "title": "Seek medical care",
+   "body": "Severe allergic reaction (rash, swelling, trouble breathing), persistent breast changes, severe mood changes, dizziness or fainting, or signs of high-grade prostate disease."
+  }
+ ],
+ "disclaimer": [
+  "All prescription medications require a valid and complete online consultation prior to approval and final pricing is determined. Compounded medications are not FDA-approved and have not been evaluated by the FDA for safety, effectiveness, or quality. A licensed provider may prescribe a compounded medication when they determine it is clinically appropriate for you.",
+  "Compounded HairfectRx Capsules with Finasteride is not FDA-approved. Statements regarding hair loss, hair growth, scalp health, and follicle support have not been evaluated by the FDA.",
+  "The drug and medical information provided on this website is not meant to cover all adverse effects, drug interactions, warnings, medical uses, directions and precautions. The information provided is a medical resource and the judgment of your healthcare provider should not be substituted."
+ ],
+ "imageSrc": "/assets/v3-hff-ingredients-bathroom.jpg",
+ "imageAlt": "Man taking a finasteride capsule with a glass of water, bathroom counter"
+}

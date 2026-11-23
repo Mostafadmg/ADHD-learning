@@ -1,0 +1,28 @@
+{
+ "start": "https://start.struthealth.com/f/6aa3d578f415d1603a6e0c85",
+ "locale": "en-US",
+ "timezone": "America/Chicago",
+ "note": "age: Under 18, then \"End questionnaire\" on the stop screen",
+ "steps": [
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "Under 18"
+  },
+  {
+   "do": "wait",
+   "ms": 2000
+  },
+  {
+   "do": "click",
+   "text": "End questionnaire"
+  },
+  {
+   "do": "wait",
+   "ms": 5000
+  }
+ ]
+}

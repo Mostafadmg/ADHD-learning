@@ -1,0 +1,12 @@
+{ "start": "https://start.treated.com/GBR/en/#/choose-gender/024", "steps": [
+ {"do":"wait","ms":3000},
+ {"do":"click","text":"Male"},
+ {"do":"click","text":"Continue"},
+ {"do":"wait","ms":3000},
+ {"do":"click","text":"It's receding from the front"},
+ {"do":"click","text":"It's thinning all over the top"},
+ {"do":"click","text":"Continue"},
+ {"do":"wait","ms":1500},
+ {"do":"click","text":"More than 3 months ago"},
+ {"do":"wait","ms":1500}
+] }

@@ -1,0 +1,37 @@
+STEP 22 mcm
+URL: https://www.hairandme.com/c/suh/mcm
+
+--- VISIBLE TEXT ---
+Have you been diagnosed with any of the following conditions?
+Pheochromocytoma
+High blood pressure (hypertension) or low blood pressure (hypotension)
+Any heart or cardiovascular condition (e.g. stroke, heart attack, heart failure, angina, atrial fibrillation, valve disorder, irregular or fast heartbeat)
+Undergoing prostate-specific antigen (PSA) monitoring or have a personal or family history of prostate or testicular cancer
+Benign prostatic hyperplasia (BPH) or any other disease of the prostate
+Sexual dysfunction (e.g. erectile dysfunction)
+Current or history of depression, anxiety or mental health concerns
+Personal or family history of male breast cancer
+Hypertrichosis (excessive hair growth anywhere on the body, unrelated to hormones)
+PoTS syndrome (postural tachycardia syndrome)
+Liver disease (e.g. hepatitis, cirrhosis, non-alcoholic fatty liver disease)
+None of the above
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:checkbox[name=4453] | Pheochromocytoma
+input:checkbox[name=4453] | High blood pressure (hypertension) or low blood pressure (hypotension)
+input:checkbox[name=4453] | Any heart or cardiovascular condition (e.g. stroke, heart attack, heart failure, angina, atrial fibrillation, valve disorder, irregular or fast heartbeat)
+input:checkbox[name=4453] | Undergoing prostate-specific antigen (PSA) monitoring or have a personal or family history of prostate or testicular cancer
+input:checkbox[name=4453] | Benign prostatic hyperplasia (BPH) or any other disease of the prostate
+input:checkbox[name=4453] | Sexual dysfunction (e.g. erectile dysfunction)
+input:checkbox[name=4453] | Current or history of depression, anxiety or mental health concerns
+input:checkbox[name=4453] | Personal or family history of male breast cancer
+input:checkbox[name=4453] | Hypertrichosis (excessive hair growth anywhere on the body, unrelated to hormones)
+input:checkbox[name=4453] | PoTS syndrome (postural tachycardia syndrome)
+input:checkbox[name=4453] | Liver disease (e.g. hepatitis, cirrhosis, non-alcoholic fatty liver disease)
+input:checkbox[name=4453] | None of the above
+button:submit | NEXT QUESTION [disabled]
+a -> /c/suh/mcm?action=previous | Back to previous page

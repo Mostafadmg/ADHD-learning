@@ -1,0 +1,33 @@
+COMMAND 014 {"steps":[{"do":"fill","selector":"textarea, input[type=text], input[type=number]","value":"Mild scalp eczema, seen by GP years ago, uses emollient only."},{"do":"click","text":"Next","settle":2800},{"do":"snap","settle":600}]}
+URL: https://www.numan.com/subscribe/hair-loss/4b4e30d9-9042-49e8-a32b-7557d60d5aec/sq/are_any_of_the_following_true
+TITLE: Are any of the following true? | Numan
+
+--- VISIBLE TEXT ---
+44%
+Are any of the following true?
+I have noticed hair loss on other areas of my body other than my head.
+I am undergoing PSA (prostate) monitoring or I have previously been diagnosed with prostate cancer.
+I have been diagnosed with high or low blood pressure.
+I have been diagnosed with asthma.
+I plan on trying for a baby in the next 12 weeks.
+I have previously experienced, or am currently experiencing, depression, anxiety or panic disorders
+No - none
+Back
+Next
+
+--- CONTROLS ---
+  checkbox (7):
+    - I have noticed hair loss on other areas of my body other than my head. (name: are_any_of_the_following_true)
+    - I am undergoing PSA (prostate) monitoring or I have previously been diagnosed with prostate cancer. (name: are_any_of_the_following_true)
+    - I have been diagnosed with high or low blood pressure. (name: are_any_of_the_following_true)
+    - I have been diagnosed with asthma. (name: are_any_of_the_following_true)
+    - I plan on trying for a baby in the next 12 weeks. (name: are_any_of_the_following_true)
+    - I have previously experienced, or am currently experiencing, depression, anxiety or panic disorders (name: are_any_of_the_following_true)
+    - No - none (name: are_any_of_the_following_true)
+  button (2):
+    - Back
+    - Next [disabled]
+
+--- LINKS ---
+  link (1):
+    - Visit the main page -> /

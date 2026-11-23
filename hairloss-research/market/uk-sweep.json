@@ -1,0 +1,1950 @@
+[
+  {
+    "name": "Dr Fox",
+    "url": "https://www.doctorfox.co.uk/hair-loss-treatments/",
+    "description": "Long-running low-cost UK online doctor (CQC-regulated, own GPhC pharmacy); pay-per-order, no subscription.",
+    "audience": "men only (states it cannot supply hair-loss treatment to anyone not assigned male at birth)",
+    "products": [
+      {
+        "name": "Finasteride 1mg tablets (generic)",
+        "actives": "finasteride 1 mg",
+        "price": "28 tabs £10.00; 56 £18.80; 84 £26.50; 168 £43.50 (plus prescription fee £1-£4 and £2.90 delivery)"
+      },
+      {
+        "name": "Propecia 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "28 tabs £42.40; 168 £214.00"
+      },
+      {
+        "name": "Dr Fox Dual Action Hair Growth Spray",
+        "actives": "finasteride 0.3% + minoxidil 5% + tretinoin 0.01% (topical, 60 ml = two months, 1 ml once daily)",
+        "price": "60 ml £26.00; 2 x 60 ml £48.00; 3 x 60 ml £72.00"
+      },
+      {
+        "name": "Regaine Extra Strength foam / solution",
+        "actives": "minoxidil 5%",
+        "price": "foam 73 ml £29.50; solution 60 ml £29.00"
+      },
+      {
+        "name": "Sons minoxidil 5% solution",
+        "actives": "minoxidil 5%",
+        "price": "60 ml £19.95; 3 x 60 ml £48.75"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Short online yes/no medical questionnaire with optional free text; identity check; doctor reviews and prescribes. No photos or video mentioned.",
+    "distinctive": "Sells its own unlicensed 'special' triple spray (made by Xeal Pharma, MS 46688) at about £13 a month, far below the subscription brands; patient must consent to an unlicensed medicine; no subscription.",
+    "sizeSignal": "Trusted Shops 4.94/5 from 56,280 reviews (shown on page, Nov 2026); operating since 2010 (own claim); Trustpilot 4.9 from 1,003 reviews.",
+    "deservesDeepDive": true,
+    "sources": [
+      "https://www.doctorfox.co.uk/hair-loss-treatments/",
+      "https://www.doctorfox.co.uk/hair-loss-treatments/hair-growth-spray.html",
+      "https://www.doctorfox.co.uk/finasteride-landing-page.html",
+      "https://uk.trustpilot.com/review/www.doctorfox.co.uk"
+    ]
+  },
+  {
+    "name": "Pharmica",
+    "url": "https://www.pharmica.co.uk/hair-loss/",
+    "description": "Large London online pharmacy; licensed medicines only for hair loss.",
+    "audience": "men (finasteride, Regaine for Men) and women (Regaine for Women)",
+    "products": [
+      {
+        "name": "Finasteride",
+        "actives": "finasteride 1 mg",
+        "price": "from £15.99"
+      },
+      {
+        "name": "Propecia",
+        "actives": "finasteride 1 mg",
+        "price": "from £49.99"
+      },
+      {
+        "name": "Regaine for Men solution / foam",
+        "actives": "minoxidil 5%",
+        "price": "from £29.99 / from £31.99"
+      },
+      {
+        "name": "Regaine for Women foam / solution",
+        "actives": "minoxidil 5% foam / 2% solution",
+        "price": "from £49.99 / £24.99"
+      },
+      {
+        "name": "Hair Regrowth Kit",
+        "actives": "three-product bundle (contents not named on category page)",
+        "price": "from £105.47"
+      },
+      {
+        "name": "Alpecin, Plantur 39, Nizoral, OneVit Biotin",
+        "actives": "caffeine shampoos; ketoconazole shampoo; biotin 10,000 µg",
+        "price": "£6.49 to £14.99"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Short online questionnaire ('takes less than 2 minutes'); no photos or video mentioned.",
+    "distinctive": "Scale and review volume; nothing compounded or off-label on the hair-loss page.",
+    "sizeSignal": "Site claims 2.25 million+ customers and 255,783+ customer reviews; finasteride product shows 6,376 reviews; Trustpilot 4.9 from 53,453 reviews.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.pharmica.co.uk/hair-loss/",
+      "https://uk.trustpilot.com/review/pharmica.co.uk"
+    ]
+  },
+  {
+    "name": "The Independent Pharmacy",
+    "url": "https://www.theindependentpharmacy.co.uk/hair-loss",
+    "description": "Bristol-based online pharmacy with prescriber service; broad hair-loss range including off-label tablets.",
+    "audience": "men mainly; Regaine for Women listed",
+    "products": [
+      {
+        "name": "Finasteride 1mg tablets",
+        "actives": "finasteride 1 mg",
+        "price": "£13.89"
+      },
+      {
+        "name": "Minoxidil tablets",
+        "actives": "oral minoxidil (strength not shown on category page)",
+        "price": "from £44.99"
+      },
+      {
+        "name": "Dutasteride 0.5mg capsules",
+        "actives": "dutasteride 0.5 mg",
+        "price": "£22.79 (Avodart £42.99)"
+      },
+      {
+        "name": "Propecia 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "£51.99"
+      },
+      {
+        "name": "Regaine for Men Extra Strength solution / foam",
+        "actives": "minoxidil 5%",
+        "price": "from £35.99 / from £34.99"
+      },
+      {
+        "name": "Regaine for Women",
+        "actives": "minoxidil 2%",
+        "price": "£21.99"
+      },
+      {
+        "name": "Sons Minoxidil 5% spray and Sons shampoo, biotin, derma roller",
+        "actives": "minoxidil 5%; cosmetics and supplements",
+        "price": "spray from £28.99; others £9.99 to £29.99"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Short online assessment ('less than 3 minutes'), reviewed by UK medical team; no photos or video mentioned.",
+    "distinctive": "Stocks oral minoxidil and dutasteride (off-label for hair loss) alongside Sons-branded retail products.",
+    "sizeSignal": "Finasteride product shows 142 reviews; site says 1,350+ medicines for 94 conditions. No patient count given; Trustpilot 4.8 from 18,021 reviews.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.theindependentpharmacy.co.uk/hair-loss",
+      "https://uk.trustpilot.com/review/theindependentpharmacy.co.uk"
+    ]
+  },
+  {
+    "name": "Well Pharmacy (Well Online Clinic)",
+    "url": "https://well.co.uk/shop/online-clinic/hair-loss/",
+    "description": "Online clinic of the Well pharmacy chain; a thin hair-loss offer.",
+    "audience": "men",
+    "products": [
+      {
+        "name": "Finasteride 1mg tablets",
+        "actives": "finasteride 1 mg",
+        "price": "from £28.00"
+      },
+      {
+        "name": "Propecia 1mg tablets",
+        "actives": "finasteride 1 mg",
+        "price": "from £49.00"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online form ('no more than 10 minutes') reviewed by a pharmacist; no photos or video mentioned.",
+    "distinctive": "Only two products; expensive against online-only rivals.",
+    "sizeSignal": "Part of the Well pharmacy chain (chain size not stated on the page).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://well.co.uk/shop/online-clinic/hair-loss/"
+    ]
+  },
+  {
+    "name": "Chemist4U",
+    "url": "https://www.chemist-4-u.com/hair-loss",
+    "description": "Large discount online pharmacy with an online clinic; low finasteride price and off-label oral minoxidil.",
+    "audience": "men for prescription items; Regaine and Nourkrin for women",
+    "products": [
+      {
+        "name": "Finasteride 1mg tablets",
+        "actives": "finasteride 1 mg",
+        "price": "from £9.89"
+      },
+      {
+        "name": "Minoxidil tablets 2.5mg (oral, off-label)",
+        "actives": "minoxidil 2.5 mg",
+        "price": "from £21.99"
+      },
+      {
+        "name": "Hair Loss Bundle (oral minoxidil 2.5mg + finasteride 1mg)",
+        "actives": "minoxidil 2.5 mg + finasteride 1 mg (separate tablets)",
+        "price": "from £30.79"
+      },
+      {
+        "name": "Hair Loss Bundle (minoxidil 5% spray + finasteride 1mg)",
+        "actives": "minoxidil 5% topical + finasteride 1 mg",
+        "price": "from £28.79"
+      },
+      {
+        "name": "Sons Minoxidil 5% cutaneous solution",
+        "actives": "minoxidil 5%",
+        "price": "1 month £19.99; 3 months £39.99; 6 months £74.99"
+      },
+      {
+        "name": "Regaine for Men / Women",
+        "actives": "minoxidil 5% (2% for women's regular strength)",
+        "price": "men 60 ml £33.99; women's foam 2 months £34.99"
+      },
+      {
+        "name": "Propecia 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "from £49.99"
+      },
+      {
+        "name": "Nourkrin Woman, Alpecin C1",
+        "actives": "supplement; caffeine shampoo",
+        "price": "£95.99 (3 months); £6.99"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Free online consultation for prescription items; 'a few quick questions' for pharmacy medicines. No photos or video mentioned.",
+    "distinctive": "Among the cheapest finasteride in the UK; sells oral minoxidil described as off-label 'for men on prescription'.",
+    "sizeSignal": "Trustpilot 4.8 from 133,344 reviews; one of the largest UK online pharmacies by review volume.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.chemist-4-u.com/hair-loss",
+      "https://uk.trustpilot.com/review/chemist-4-u.com"
+    ]
+  },
+  {
+    "name": "MedExpress",
+    "url": "https://www.medexpress.co.uk/clinics/hair-loss",
+    "description": "High-volume online prescriber best known for weight loss; standard licensed hair-loss range.",
+    "audience": "men",
+    "products": [
+      {
+        "name": "Finasteride 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "28 tabs £18.99; 56 £35.99; 84 £51.99; 168 £101.99"
+      },
+      {
+        "name": "Propecia",
+        "actives": "finasteride 1 mg",
+        "price": "28 tabs £58.99; 168 £282.99"
+      },
+      {
+        "name": "Regaine Extra Strength foam / solution",
+        "actives": "minoxidil 5%",
+        "price": "3 months £67.99; 12 months £249.99"
+      },
+      {
+        "name": "Vitabiotics Perfectil Extra Support",
+        "actives": "multivitamin",
+        "price": "£15.99 (60 tablets)"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online medical questions ('takes 2 minutes'), clinician review; no photos or video mentioned.",
+    "distinctive": "Nothing unusual in hair loss; strength is traffic from other categories.",
+    "sizeSignal": "Page states 'Trusted by over 2.6 million people' and Trustpilot 4.3/5; Trustpilot 4.3 from 61,779 reviews.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.medexpress.co.uk/clinics/hair-loss",
+      "https://uk.trustpilot.com/review/medexpress.co.uk"
+    ]
+  },
+  {
+    "name": "Click2Pharmacy",
+    "url": "https://www.click2pharmacy.co.uk/online-clinic/hair-loss/",
+    "description": "Independent online pharmacy with pharmacist prescribers; wide off-label range at low prices.",
+    "audience": "men for prescription items; Regaine and Nourkrin for women",
+    "products": [
+      {
+        "name": "Finasteride 1mg tablets",
+        "actives": "finasteride 1 mg",
+        "price": "from £9.69"
+      },
+      {
+        "name": "Minoxidil tablets",
+        "actives": "oral minoxidil 2.5 mg (off-label)",
+        "price": "from £17.99"
+      },
+      {
+        "name": "Dutasteride 0.5mg capsules",
+        "actives": "dutasteride 0.5 mg (off-label)",
+        "price": "£22.79 (Avodart £39.98)"
+      },
+      {
+        "name": "Propecia 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "from £36.99"
+      },
+      {
+        "name": "Regaine for Men / Women; Sons minoxidil",
+        "actives": "minoxidil 5% / 2%",
+        "price": "Regaine men from £33.99; women from £17.98; Sons from £19.99"
+      },
+      {
+        "name": "Nioxin, Alpecin, Hairburst, Nourkrin",
+        "actives": "cosmetic shampoos and supplements",
+        "price": "£6.25 to £95.99"
+      }
+    ],
+    "compounded": false,
+    "consultation": "10-step online questionnaire (about 2 minutes) including hair-loss pattern, mental health history, blood pressure and pulse readings; consent to NHS Summary Care Record check; ID and photo only 'if requested'; pharmacist review.",
+    "distinctive": "Asks for blood pressure and pulse and makes the patient confirm off-label use of dutasteride and oral minoxidil.",
+    "sizeSignal": "'Rated Excellent on Trustpilot (8,300+ reviews)' shown in header.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.click2pharmacy.co.uk/online-clinic/hair-loss/"
+    ]
+  },
+  {
+    "name": "Chemist Click",
+    "url": "https://www.chemistclick.co.uk/hair-loss-treatment",
+    "description": "Online pharmacy with pharmacist-approved consultations; small licensed range.",
+    "audience": "men",
+    "products": [
+      {
+        "name": "Finasteride tablets",
+        "actives": "finasteride 1 mg",
+        "price": "from £13.89"
+      },
+      {
+        "name": "Minoxidil Spray For Hair Loss (topical)",
+        "actives": "minoxidil (strength not shown on category page)",
+        "price": "from £26.92"
+      },
+      {
+        "name": "Propecia tablets",
+        "actives": "finasteride 1 mg",
+        "price": "from £49.99"
+      },
+      {
+        "name": "Regaine Extra Strength Foam for Men",
+        "actives": "minoxidil 5%",
+        "price": "from £49.99"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Free online questionnaire approved by a pharmacist; no photos or video mentioned.",
+    "distinctive": "None for hair loss.",
+    "sizeSignal": "Site shows 10,594 reviews and claims 300,000+ patients in the header (200,000+ on the hair-loss page).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.chemistclick.co.uk/hair-loss-treatment"
+    ]
+  },
+  {
+    "name": "e-Surgery",
+    "url": "https://e-surgery.com/product-category/mens-health/hair-loss/",
+    "description": "Online pharmacy with prescribers that has added compounded hair-loss sprays and combined-tablet packs.",
+    "audience": "men for prescription items; one Regaine product for women",
+    "products": [
+      {
+        "name": "Triple Action Hair Loss Spray",
+        "actives": "finasteride 0.1% + minoxidil 5% + tretinoin 0.01% (30 ml = 1 month)",
+        "price": "from £16.95; one-off or every 1, 2 or 3 months"
+      },
+      {
+        "name": "Double Action Hair Loss Spray",
+        "actives": "minoxidil 5% + finasteride 0.1% (60 ml bottle)",
+        "price": "from £26.95"
+      },
+      {
+        "name": "Minoxidil And Finasteride Tablets For Hair Loss",
+        "actives": "oral minoxidil + finasteride, sold as a 2-month pack of 60 + 56 tablets (strengths not stated on product page)",
+        "price": "from £49.95"
+      },
+      {
+        "name": "Oral Minoxidil Tablets (2.5mg)",
+        "actives": "minoxidil 2.5 mg",
+        "price": "£35.95"
+      },
+      {
+        "name": "Finasteride 1mg Tablets",
+        "actives": "finasteride 1 mg",
+        "price": "from £13.45"
+      },
+      {
+        "name": "Hair & Scalp Strength Pack",
+        "actives": "finasteride + high-strength biotin",
+        "price": "£21.95"
+      },
+      {
+        "name": "Regaine Extra for Men / Regaine for Women",
+        "actives": "minoxidil",
+        "price": "from £35.95 / from £29.95"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Quick online questionnaire ('takes under 2 minutes') reviewed by a prescriber; no photos or video described.",
+    "distinctive": "One of the cheapest compounded triple sprays in the UK (from £16.95 a month); product pages say it is 'a compounded medicine made up specifically for you' but do not use the word unlicensed.",
+    "sizeSignal": "Trustpilot 4.8 from 12,796 reviews; GPhC pharmacy number 9012167.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://e-surgery.com/product-category/mens-health/hair-loss/",
+      "https://e-surgery.com/product/triple-action-hair-loss-spray/",
+      "https://e-surgery.com/product/double-action-hair-loss-spray/",
+      "https://e-surgery.com/product/minoxidil-finasteride-tablets-for-hair-loss/",
+      "https://e-surgery.com/product-category/womens-health/womens-hair-loss/",
+      "https://uk.trustpilot.com/review/e-surgery.com"
+    ]
+  },
+  {
+    "name": "Courier Pharmacy (Gro range)",
+    "url": "https://courierpharmacy.co.uk/treatments/gro/",
+    "description": "Derby online pharmacy (Rapid Medical Solutions Ltd) with a wide compounded topical range called Gro, made by APC Labs Ltd.",
+    "audience": "adults with pattern hair loss (page does not split men and women)",
+    "products": [
+      {
+        "name": "Gro single-active topicals",
+        "actives": "finasteride 0.05%, 0.1% or 0.2%; or dutasteride 0.05%, 0.1% or 0.2%; or minoxidil 5%; each as liquid, foam or TrichoSol solution, 30 ml",
+        "price": "from £29.99 a bottle (6 bottles £174.94)"
+      },
+      {
+        "name": "Gro dual-active topicals",
+        "actives": "finasteride or dutasteride (0.05% to 0.2%) + minoxidil 5%",
+        "price": "from £29.99 a bottle"
+      },
+      {
+        "name": "Gro triple-active topicals",
+        "actives": "finasteride or dutasteride (0.05% to 0.2%) + minoxidil 5% + tretinoin 0.01%",
+        "price": "from £29.99 a bottle"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Free online consultation (concerns, treatment history, scalp sensitivity, goals) reviewed by a clinician; TrichoTest genetic results can be used.",
+    "distinctive": "Menu of strengths and vehicles (liquid, foam, propylene-glycol-free TrichoSol), topical dutasteride, and a genetic test (TrichoTest) to guide choice.",
+    "sizeSignal": "Small: Trustpilot 4.3 from 216 reviews; independent pharmacy, GPhC 9010051.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://courierpharmacy.co.uk/treatments/gro/",
+      "https://courierpharmacy.co.uk/product/finasteride-0-1-minoxidil-5-topical-hair-loss-liquid/",
+      "https://uk.trustpilot.com/review/courierpharmacy.co.uk"
+    ]
+  },
+  {
+    "name": "City Skin Clinic",
+    "url": "https://cityskinclinic.com/hair-scalp-treatments/hair-loss-treatment-women/",
+    "description": "Doctor-led online skin clinic that prescribes one bespoke compounded scalp serum per patient; no tablets.",
+    "audience": "men and women (finasteride and dutasteride only for men and post-menopausal women)",
+    "products": [
+      {
+        "name": "Personalised hair-loss serum (3-month supply)",
+        "actives": "doctor-chosen mix of minoxidil, finasteride, dutasteride (stated range 0.001% to 0.25%), spironolactone, melatonin, caffeine, tretinoin, hydrocortisone; ethanol/propylene glycol or ethanol/water base",
+        "price": "£120 per 3 months (about £40 a month) including delivery; £30 consultation credited against first treatment; no subscription"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Online form or video consultation with the same GMC-registered doctor throughout; reviews between courses.",
+    "distinctive": "Truly bespoke formula for women as well as men, including topical spironolactone; states plainly that compounded treatments are unlicensed medicines; no subscription or auto-renewal; heavy SEO content comparing rivals.",
+    "sizeSignal": "Small: Trustpilot 4.8 from 87 reviews; operated by Brainworks Interactive Ltd (company no. 08177006).",
+    "deservesDeepDive": true,
+    "sources": [
+      "https://cityskinclinic.com/hair-scalp-treatments/hair-loss-treatment-women/",
+      "https://cityskinclinic.com/online-hair-loss-clinics/",
+      "https://cityskinclinic.com/dutasteride-online-uk/",
+      "https://cityskinclinic.com/spironolactone-hair-loss-online-uk/",
+      "https://uk.trustpilot.com/review/cityskinclinic.com"
+    ]
+  },
+  {
+    "name": "Harley Street Hair Transplant Clinics",
+    "url": "https://www.harleystreethairtransplant.co.uk/our-medications/",
+    "description": "Hair transplant clinic that also sells its own medication range online after an eligibility form.",
+    "audience": "not stated on the medication page (finasteride products imply men)",
+    "products": [
+      {
+        "name": "Finasteride and Minoxidil Complete Capsules",
+        "actives": "minoxidil 2.5 mg + finasteride 1 mg + biotin 10 mg in one capsule",
+        "price": "£95 per 3 months (£85 on subscription)"
+      },
+      {
+        "name": "Finasteride and Minoxidil Combination Spray",
+        "actives": "minoxidil 10% + finasteride 0.1% + azelaic acid 2%",
+        "price": "£95 per 3 months (£85 on subscription)"
+      },
+      {
+        "name": "Finasteride tablets",
+        "actives": "finasteride 1 mg",
+        "price": "£75 per 12 weeks (£65 on subscription)"
+      },
+      {
+        "name": "Minoxidil tablets",
+        "actives": "minoxidil 2.5 mg",
+        "price": "£75 per 3 months (£65 on subscription)"
+      }
+    ],
+    "compounded": "unknown",
+    "consultation": "Online eligibility form reviewed by a clinician; WhatsApp contact; no video mentioned.",
+    "distinctive": "All-in-one oral capsule and a 10% minoxidil spray; the page does not say these are compounded or unlicensed, although no licensed UK product has those combinations (inferred).",
+    "sizeSignal": "Single clinic brand; no review or patient count on the page.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.harleystreethairtransplant.co.uk/?p=6932",
+      "https://www.harleystreethairtransplant.co.uk/our-medications/"
+    ]
+  },
+  {
+    "name": "Hair Repair Clinic",
+    "url": "https://hairrepairclinic.co.uk/hair-loss-treatment-uk",
+    "description": "New online hair-loss brand (More On Top Ltd, company no. 16995843) pairing a build-your-own compounded formula shop with hair transplants.",
+    "audience": "men and women (women: topical spironolactone, melatonin, minoxidil)",
+    "products": [
+      {
+        "name": "Custom Topical Solution (builder)",
+        "actives": "up to four actives chosen from finasteride, dutasteride, minoxidil, tretinoin, melatonin and others, in TrichoSol or PG base",
+        "price": "from £50"
+      },
+      {
+        "name": "Topical finasteride / dutasteride (TrichoSol, 100 ml)",
+        "actives": "finasteride 0.025% to 0.2%; dutasteride 0.025% to 0.2% (optional minoxidil or tretinoin)",
+        "price": "£65 to £66 / £75 per 100 ml"
+      },
+      {
+        "name": "Topical minoxidil (100 ml) and minoxidil cream (50 g)",
+        "actives": "minoxidil 2%, 5% or 10% solution; 5%, 10% or 15% cream",
+        "price": "£55 to £57 / from £45"
+      },
+      {
+        "name": "Topical spironolactone / melatonin (100 ml)",
+        "actives": "spironolactone 2% (1% to 3% in builder); melatonin 0.1% to 0.3%",
+        "price": "from £70 each"
+      },
+      {
+        "name": "Finasteride + minoxidil capsules (100) / dutasteride + minoxidil capsules",
+        "actives": "finasteride 0.5 or 1 mg + minoxidil 2.5 or 5 mg; dutasteride + minoxidil",
+        "price": "£100 / £125 per 100"
+      },
+      {
+        "name": "Oral minoxidil",
+        "actives": "2.5 mg (60 tabs), 5 mg, or custom 0.25 to 1 mg capsules",
+        "price": "£35 / from £50 / custom"
+      },
+      {
+        "name": "Finasteride 1mg; dutasteride 0.5mg; Avodart",
+        "actives": "finasteride 1 mg; dutasteride 0.5 mg",
+        "price": "finasteride from £15 a month (84 tabs £40); dutasteride from £20; Avodart from £25"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Online medical questionnaire ('under 5 minutes') reviewed by a UK prescriber at an unnamed GPhC partner pharmacy; 'book a call' option; no photos mentioned.",
+    "distinctive": "Widest self-serve menu found: the customer builds the formula (base, up to four actives, strengths) and a pharmacist reviews it; combined oral capsules; topical spironolactone and melatonin for women; publishes a full price list.",
+    "sizeSignal": "Very new and small: company number 16995843 suggests 2026 incorporation (unverified); no reviews shown.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://hairrepairclinic.co.uk/hair-loss-treatment-uk",
+      "https://hairrepairclinic.co.uk/hair-science/hair-loss-medicine-prices-uk"
+    ]
+  },
+  {
+    "name": "Simple Online Pharmacy",
+    "url": "https://www.simpleonlinepharmacy.co.uk/online-doctor/hair-loss/",
+    "description": "Glasgow-based online pharmacy and online doctor; licensed tablets plus off-label oral minoxidil and dutasteride.",
+    "audience": "men",
+    "products": [
+      {
+        "name": "Finasteride 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "28 tabs £13.95; 56 £23.45; 168 £55.95 (search snippet of product page)"
+      },
+      {
+        "name": "Oral minoxidil",
+        "actives": "minoxidil 2.5 mg (generic or Loniten)",
+        "price": "60 tabs £45.00; 120 £75.00 (Loniten £50 / £85)"
+      },
+      {
+        "name": "Dutasteride 0.5mg",
+        "actives": "dutasteride 0.5 mg (generic or Avodart)",
+        "price": "30 caps £19; 60 £36; 90 £51 (Avodart 30 £40)"
+      },
+      {
+        "name": "Propecia",
+        "actives": "finasteride 1 mg",
+        "price": "from £41.65"
+      },
+      {
+        "name": "Finasteride + oral minoxidil bundle",
+        "actives": "finasteride 1 mg x 56 + oral minoxidil x 60",
+        "price": "from £66.99 for two months"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online assessment form reviewed by a doctor (site is behind a bot check, so the form was not viewed; description from a third-party article).",
+    "distinctive": "Publishes patient guides on topical finasteride but sells tablets only.",
+    "sizeSignal": "Trustpilot 4.6 from 53,274 reviews. The drfelix.co.uk address now redirects here. Prices come from search-result snippets and need a manual check because the site blocked automated reading.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.simpleonlinepharmacy.co.uk/online-doctor/hair-loss/",
+      "https://www.simpleonlinepharmacy.co.uk/online-doctor/hair-loss/finasteride/",
+      "https://www.simpleonlinepharmacy.co.uk/online-doctor/hair-loss/oral-minoxidil/",
+      "https://www.simpleonlinepharmacy.co.uk/online-doctor/hair-loss/dutasteride/",
+      "https://cityskinclinic.com/dutasteride-online-uk/",
+      "https://uk.trustpilot.com/review/simpleonlinepharmacy.co.uk"
+    ]
+  },
+  {
+    "name": "PrivateDoc",
+    "url": "https://www.privatedoc.com/hair-loss",
+    "description": "UK online doctor service; small hair-loss range with off-licence Avodart.",
+    "audience": "men",
+    "products": [
+      {
+        "name": "Finasteride",
+        "actives": "finasteride",
+        "price": "not shown on category page"
+      },
+      {
+        "name": "Avodart",
+        "actives": "dutasteride (off-licence for hair loss)",
+        "price": "not shown on category page"
+      },
+      {
+        "name": "Regaine for Men Extra Strength",
+        "actives": "minoxidil 5%",
+        "price": "not shown on category page"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online visit (medical history and symptoms) reviewed by a UK-registered doctor; 'diagnosis in as little as 4 hours'.",
+    "distinctive": "None for hair loss.",
+    "sizeSignal": "Trustpilot 4.7 from 4,842 reviews (shown on page).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.privatedoc.com/hair-loss"
+    ]
+  },
+  {
+    "name": "The Family Chemist",
+    "url": "https://www.thefamilychemist.co.uk/hair-loss/",
+    "description": "Online pharmacy with clinician-reviewed questionnaire; full oral range including off-label tablets.",
+    "audience": "men mainly",
+    "products": [
+      {
+        "name": "Finasteride 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "from £10.99"
+      },
+      {
+        "name": "Dutasteride / Avodart",
+        "actives": "dutasteride",
+        "price": "from £14.99 / from £34.99"
+      },
+      {
+        "name": "Minoxidil tablets / Loniten",
+        "actives": "oral minoxidil 2.5 mg",
+        "price": "from £43.99 / from £48.99"
+      },
+      {
+        "name": "Hair Loss Dual Action",
+        "actives": "finasteride tablets + Regaine (minoxidil)",
+        "price": "from £46.99"
+      },
+      {
+        "name": "Propecia; Regaine",
+        "actives": "finasteride 1 mg; minoxidil",
+        "price": "from £49.99; from £34.98"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online questionnaire, choose treatment, clinician review with possible follow-up questions.",
+    "distinctive": "Cheapest dutasteride found in this sweep (from £14.99).",
+    "sizeSignal": "Trustpilot '5 Star Service' badge with no count on page.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.thefamilychemist.co.uk/hair-loss/"
+    ]
+  },
+  {
+    "name": "Medical Specialists",
+    "url": "https://www.medical-specialists.co.uk/mens-health/male-hair-loss.html",
+    "description": "Long-established Bury online pharmacy and prescriber (GPhC 1104466) with separate male and female hair-loss pages.",
+    "audience": "men and women",
+    "products": [
+      {
+        "name": "Propecia (finasteride) 1mg, 28 tablets",
+        "actives": "finasteride 1 mg",
+        "price": "price shown as 'from 27p' (likely per tablet; unclear)"
+      },
+      {
+        "name": "Regaine Lotion / Foam for Men Extra Strength (3 months)",
+        "actives": "minoxidil 5%",
+        "price": "lotion from £23.50; foam price not shown"
+      },
+      {
+        "name": "Regaine for Women Once a Day Foam",
+        "actives": "minoxidil 5%",
+        "price": "not shown"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online consultation form must be completed before adding medicine to basket; prescriber review. A third-party article says it offers oral spironolactone to women who have first seen their GP or dermatologist and had blood tests (not confirmed on its own page).",
+    "distinctive": "One of the few online pharmacies with a dedicated female hair-loss page; mentions anti-androgenic contraceptive pills (Dianette) in its advice.",
+    "sizeSignal": "'Highly rated on Feefo' (no count); claims to have treated female hair loss since 1980.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.medical-specialists.co.uk/mens-health/male-hair-loss.html",
+      "https://www.medical-specialists.co.uk/womens-health/female-hair-loss.html",
+      "https://cityskinclinic.com/spironolactone-hair-loss-online-uk/"
+    ]
+  },
+  {
+    "name": "Cloud Pharmacy",
+    "url": "https://www.cloudpharmacy.co.uk/clinic/hair-loss/",
+    "description": "Online pharmacy and clinic; finasteride and Propecia only.",
+    "audience": "men",
+    "products": [
+      {
+        "name": "Finasteride tablets",
+        "actives": "finasteride 1 mg",
+        "price": "from £9.99"
+      },
+      {
+        "name": "Propecia 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "from £49.99"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online questions ('less than 5 minutes') reviewed by UK clinicians.",
+    "distinctive": "Low finasteride price.",
+    "sizeSignal": "Claims '1,000,000+ registered members'; rating 4.6 out of 5 shown.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.cloudpharmacy.co.uk/clinic/hair-loss/"
+    ]
+  },
+  {
+    "name": "Prescription Doctor",
+    "url": "https://www.prescriptiondoctor.com/hair-loss",
+    "description": "Online prescriber and pharmacy; headline price is the lowest seen for finasteride.",
+    "audience": "men (Regaine for men and women)",
+    "products": [
+      {
+        "name": "Finasteride",
+        "actives": "finasteride 1 mg",
+        "price": "from £6.95 (pack size not stated; a June 2026 third-party check found £13.95 for a month)"
+      },
+      {
+        "name": "Propecia",
+        "actives": "finasteride 1 mg",
+        "price": "from £13.95 as displayed (looks wrong for a branded pack; treat as unverified)"
+      },
+      {
+        "name": "Regaine Extra Strength foam or solution",
+        "actives": "minoxidil",
+        "price": "£29.50 (out of stock when checked)"
+      },
+      {
+        "name": "Dutasteride",
+        "actives": "dutasteride",
+        "price": "not listed"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online health questionnaire reviewed by a prescriber; price includes consultation, prescription and shipping.",
+    "distinctive": "All-in pricing.",
+    "sizeSignal": "Links to Trustpilot; no count shown on page.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.prescriptiondoctor.com/hair-loss",
+      "https://www.medino.com/article/finasteride-price-comparison-for-uk-online-pharmacies"
+    ]
+  },
+  {
+    "name": "Webmed Pharmacy",
+    "url": "https://webmedpharmacy.co.uk/treatments/for-men/hair-loss",
+    "description": "Small online pharmacy; finasteride with shampoo and minoxidil bundles.",
+    "audience": "men",
+    "products": [
+      {
+        "name": "Finasteride 1mg tablets",
+        "actives": "finasteride 1 mg",
+        "price": "from £0.79 a tablet (28) down to £0.45 a tablet (168)"
+      },
+      {
+        "name": "Propecia 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "from £1.37 a tablet"
+      },
+      {
+        "name": "Scalp Maintenance / Growth Boost bundles",
+        "actives": "finasteride 1 mg + Tony Maleedy shampoo (+ conditioner + minoxidil 5% solution in Growth Boost)",
+        "price": "not stated"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online consultation reviewed by a prescriber before supply.",
+    "distinctive": "Bundles with a trichologist-branded shampoo.",
+    "sizeSignal": "None shown.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://webmedpharmacy.co.uk/treatments/for-men/hair-loss"
+    ]
+  },
+  {
+    "name": "medino",
+    "url": "https://www.medino.com/condition/hair-loss",
+    "description": "London online pharmacy and retailer; cheap finasteride plus a wide shelf of non-prescription hair brands.",
+    "audience": "men and women",
+    "products": [
+      {
+        "name": "Finasteride 1mg 28 tablets",
+        "actives": "finasteride 1 mg",
+        "price": "£10.99"
+      },
+      {
+        "name": "Propecia 1mg 28 tablets",
+        "actives": "finasteride 1 mg",
+        "price": "£54.99"
+      },
+      {
+        "name": "Regaine for Men foam 73 ml / Regaine for Women 2% solution 60 ml",
+        "actives": "minoxidil 5% / 2%",
+        "price": "£38.99 / £18.99"
+      },
+      {
+        "name": "Nourkrin Woman 180 tablets; Nourkrin Man 60 tablets",
+        "actives": "supplement (Marilex)",
+        "price": "£119.99; £45.99"
+      },
+      {
+        "name": "Alpecin, Plantur 39, Nioxin, Sebamed",
+        "actives": "cosmetic shampoos and tonics",
+        "price": "£6.99 to £39.99"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Not described on the category page (prescription items go through its online clinic).",
+    "distinctive": "Publishes a dated finasteride price comparison across 14 UK pharmacies.",
+    "sizeSignal": "Not shown on the page.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.medino.com/condition/hair-loss",
+      "https://www.medino.com/article/finasteride-price-comparison-for-uk-online-pharmacies"
+    ]
+  },
+  {
+    "name": "The Care Pharmacy",
+    "url": "https://thecarepharmacy.com/condition/hair-loss/",
+    "description": "Small online pharmacy; finasteride only.",
+    "audience": "men",
+    "products": [
+      {
+        "name": "Finasteride 1mg film-coated tablets",
+        "actives": "finasteride 1 mg",
+        "price": "28 tabs £11.99; 84 tabs £27.99 (delivery £3.99, free over £40)"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online assessment reviewed by a UK prescriber.",
+    "distinctive": "None.",
+    "sizeSignal": "'Over 1000+ 5-star reviews on Trustpilot & Google' (own claim).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://thecarepharmacy.com/condition/hair-loss/",
+      "https://thecarepharmacy.com/finasteride-prices-comparison-uk/"
+    ]
+  },
+  {
+    "name": "Menschem",
+    "url": "https://www.menschem.co.uk/online-doctor/hair-loss/",
+    "description": "Leicester men's-health online pharmacy (SPK Pharma Ltd, GPhC 9011908).",
+    "audience": "men",
+    "products": [
+      {
+        "name": "Finasteride 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "from £12.49"
+      },
+      {
+        "name": "Dutasteride / Avodart",
+        "actives": "dutasteride 0.5 mg",
+        "price": "from £17.99 / from £39.99"
+      },
+      {
+        "name": "Combo Pack",
+        "actives": "finasteride + minoxidil (oral and topical; 1, 3 or 6 months)",
+        "price": "from £34.99"
+      },
+      {
+        "name": "Regaine Extra Strength; Propecia",
+        "actives": "minoxidil; finasteride 1 mg",
+        "price": "from £29.99; from £49.99"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Simple online assessment reviewed by a UK prescriber.",
+    "distinctive": "None.",
+    "sizeSignal": "None shown.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.menschem.co.uk/online-doctor/hair-loss/",
+      "https://www.menschem.co.uk/?p=238061"
+    ]
+  },
+  {
+    "name": "Morrisons Clinic",
+    "url": "https://clinic.morrisons.com/male-health/hair-loss",
+    "description": "Supermarket-branded online clinic run with Phlo Technologies; one hair-loss product.",
+    "audience": "men 18+",
+    "products": [
+      {
+        "name": "Finasteride 1mg, 28 tablets",
+        "actives": "finasteride 1 mg",
+        "price": "£16.99 including tracked delivery"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online questionnaire (about 3 minutes) reviewed by prescribing pharmacists.",
+    "distinctive": "Supermarket brand on a white-label digital pharmacy (Phlo).",
+    "sizeSignal": "Morrisons supermarket brand; Trustpilot 4.8 shown without a count.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://clinic.morrisons.com/male-health/hair-loss"
+    ]
+  },
+  {
+    "name": "Mars (frommars.com)",
+    "url": "https://frommars.com/uk/hair-loss",
+    "description": "Men's health telehealth brand; hair loss is a minor line with finasteride and Propecia only.",
+    "audience": "men only",
+    "products": [
+      {
+        "name": "Finasteride",
+        "actives": "finasteride 1 mg",
+        "price": "not shown on page"
+      },
+      {
+        "name": "Propecia",
+        "actives": "finasteride 1 mg",
+        "price": "not shown on page"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Free online health questionnaire (about 5 minutes) reviewed by a UK prescriber.",
+    "distinctive": "None for hair loss.",
+    "sizeSignal": "None shown.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://frommars.com/uk/hair-loss"
+    ]
+  },
+  {
+    "name": "Click Pharmacy",
+    "url": "https://www.clickpharmacy.co.uk/hair-loss",
+    "description": "Online pharmacy with prescriber review; tablets including dutasteride, plus retail shampoos.",
+    "audience": "men for prescription items; Regaine for Women listed",
+    "products": [
+      {
+        "name": "Finasteride",
+        "actives": "finasteride 1 mg",
+        "price": "from £14.99"
+      },
+      {
+        "name": "Dutasteride / Avodart",
+        "actives": "dutasteride",
+        "price": "from £18.99 / from £34.00"
+      },
+      {
+        "name": "Propecia",
+        "actives": "finasteride 1 mg",
+        "price": "from £45.99"
+      },
+      {
+        "name": "Sons Minoxidil 5% Spray; Regaine for Men Extra Strength; Regaine for Women",
+        "actives": "minoxidil",
+        "price": "£17.50; £32.99; £18.99"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online assessment reviewed by a UK-registered prescriber.",
+    "distinctive": "None.",
+    "sizeSignal": "Links to Trustpilot; no count shown.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.clickpharmacy.co.uk/hair-loss"
+    ]
+  },
+  {
+    "name": "Pharmacy Online",
+    "url": "https://www.pharmacyonline.co.uk/online-doctor/hair-loss",
+    "description": "Online pharmacy with online doctor; three licensed products.",
+    "audience": "men",
+    "products": [
+      {
+        "name": "Finasteride",
+        "actives": "finasteride 1 mg",
+        "price": "from £13.90"
+      },
+      {
+        "name": "Propecia",
+        "actives": "finasteride 1 mg",
+        "price": "from £51.99"
+      },
+      {
+        "name": "Regaine Foam for Men",
+        "actives": "minoxidil 5%",
+        "price": "from £74.99"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Short online assessment, then a prescription from a medical professional.",
+    "distinctive": "None.",
+    "sizeSignal": "None shown.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.pharmacyonline.co.uk/online-doctor/hair-loss"
+    ]
+  },
+  {
+    "name": "Assured Pharmacy",
+    "url": "https://www.assuredpharmacy.co.uk/treatments/hair-loss",
+    "description": "Online pharmacy; finasteride and Propecia sold as six-month courses.",
+    "audience": "men (women and under-18s excluded)",
+    "products": [
+      {
+        "name": "Finasteride 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "£14.33 a month (six months £85.99)"
+      },
+      {
+        "name": "Propecia 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "£39.17 a month (six months £234.99)"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Free online assessment reviewed by a UK prescriber; follow-up by video or phone call or messaging.",
+    "distinctive": "Offers a prescriber call or video follow-up.",
+    "sizeSignal": "Claims 15,000+ verified reviews, 4.6/5.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.assuredpharmacy.co.uk/treatments/hair-loss"
+    ]
+  },
+  {
+    "name": "Pharmacy Planet",
+    "url": "https://www.pharmacyplanet.com/mens-health/hair-loss.html",
+    "description": "Online pharmacy; two low-priced products.",
+    "audience": "men (minoxidil for men and women)",
+    "products": [
+      {
+        "name": "Finasteride 1mg, 28 tablets",
+        "actives": "finasteride 1 mg",
+        "price": "from £10.00"
+      },
+      {
+        "name": "Minoxidil 5% scalp solution (Regaine), 60 ml",
+        "actives": "minoxidil 5%",
+        "price": "from £19.50"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online clinical consultation reviewed by a prescribing team.",
+    "distinctive": "None.",
+    "sizeSignal": "None shown.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.pharmacyplanet.com/mens-health/hair-loss.html"
+    ]
+  },
+  {
+    "name": "PostMyMeds",
+    "url": "https://www.postmymeds.co.uk/treatments/hair-loss/",
+    "description": "Online pharmacy with a '60 second consultation'.",
+    "audience": "men; Regaine for Women listed",
+    "products": [
+      {
+        "name": "Finasteride 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "£13.95"
+      },
+      {
+        "name": "Propecia 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "£49.49"
+      },
+      {
+        "name": "Regaine for Men foam; Regaine for Women foam (2 pack)",
+        "actives": "minoxidil 5%",
+        "price": "£34.99; £49.99"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online medical form ('60 second consultation'); prescriber decides.",
+    "distinctive": "None.",
+    "sizeSignal": "None shown.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.postmymeds.co.uk/treatments/hair-loss/"
+    ]
+  },
+  {
+    "name": "Rightangled",
+    "url": "https://rightangled.com/collections/hair-loss-treatment",
+    "description": "Online pharmacy and DNA-testing company; small hair-loss shelf.",
+    "audience": "men and women",
+    "products": [
+      {
+        "name": "Finasteride 1mg (Accord)",
+        "actives": "finasteride 1 mg",
+        "price": "£24.99"
+      },
+      {
+        "name": "Regaine for Men foam 5%; Regaine for Women foam 5%",
+        "actives": "minoxidil 5%",
+        "price": "£36.99; from £36.99"
+      },
+      {
+        "name": "Perfectil Hair",
+        "actives": "supplement",
+        "price": "£16.99"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online assessment (2 to 3 minutes) reviewed by a clinician.",
+    "distinctive": "Sells DNA and blood tests, but none are tied to hair loss on this page.",
+    "sizeSignal": "None shown.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://rightangled.com/collections/hair-loss-treatment"
+    ]
+  },
+  {
+    "name": "myPharmacy",
+    "url": "https://www.mypharmacy.co.uk/oral-minoxidil-2-5mg-tablets",
+    "description": "Online pharmacy; cheap finasteride and off-label oral minoxidil for men only.",
+    "audience": "men for prescription items (states it does not prescribe oral minoxidil to people assigned female at birth); Regaine for Women listed",
+    "products": [
+      {
+        "name": "Oral Minoxidil 2.5mg tablets",
+        "actives": "minoxidil 2.5 mg",
+        "price": "from £23.99 a month (1, 2, 4 or 6 month packs)"
+      },
+      {
+        "name": "Finasteride 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "£10.99"
+      },
+      {
+        "name": "Propecia 1mg, 28 tablets",
+        "actives": "finasteride 1 mg",
+        "price": "£59.99"
+      },
+      {
+        "name": "Sons Minoxidil 5% solution; Regaine for Women Regular Strength 60 ml",
+        "actives": "minoxidil 5%; 2%",
+        "price": "£22.99; £22.99"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online consultation with a healthcare professional (format not described); excludes anyone with high blood pressure or cardiovascular disease for oral minoxidil.",
+    "distinctive": "None.",
+    "sizeSignal": "None shown.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.mypharmacy.co.uk/oral-minoxidil-2-5mg-tablets"
+    ]
+  },
+  {
+    "name": "NowPatient",
+    "url": "https://nowpatient.com/en-gb/treatments/hair-loss",
+    "description": "Digital health app and GPhC pharmacy that uses a short video consultation instead of a form.",
+    "audience": "men",
+    "products": [
+      {
+        "name": "Finasteride 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "from £14.89"
+      },
+      {
+        "name": "Propecia 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "from £40.90"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Face-to-face video consultation with a UK-registered pharmacist, nurse or doctor; free, pay only if prescribed.",
+    "distinctive": "Video by default, which is rare at this price.",
+    "sizeSignal": "'Rated excellent on Trustpilot' (no count on page).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://nowpatient.com/en-gb/treatments/hair-loss"
+    ]
+  },
+  {
+    "name": "DoktorABC",
+    "url": "https://www.doktorabc.com/uk/mens-health/hair-loss/minoxidil",
+    "description": "European telehealth marketplace (REBOOST.COM UK LIMITED) with a UK site; men's hair-loss funnel including oral minoxidil.",
+    "audience": "men",
+    "products": [
+      {
+        "name": "Minoxidil tablets (oral, off-label)",
+        "actives": "minoxidil (strengths and UK prices not shown on the page read)",
+        "price": "not captured"
+      },
+      {
+        "name": "Finasteride",
+        "actives": "finasteride",
+        "price": "not captured"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Confidential medical questionnaire reviewed by a UK-registered prescriber; monthly plan or one-off order.",
+    "distinctive": "Cross-border operator; one-off orders 'can take up to 14 days'.",
+    "sizeSignal": "Claims 1M+ customers and 4M+ orders across its markets.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.doktorabc.com/uk/mens-health/hair-loss/minoxidil"
+    ]
+  },
+  {
+    "name": "The Treatment Rooms London",
+    "url": "https://www.treatmentroomslondon.com/hair-loss/hair-loss-treatments/",
+    "description": "Surgeon-led hair transplant clinic; describes minoxidil and finasteride but shows no online prescribing or prices.",
+    "audience": "men and women",
+    "products": [
+      {
+        "name": "Minoxidil; finasteride (advice pages)",
+        "actives": "minoxidil; finasteride",
+        "price": "none listed"
+      }
+    ],
+    "compounded": "unknown",
+    "consultation": "Clinic consultation; remote prescribing not described.",
+    "distinctive": "States PRP is not provided.",
+    "sizeSignal": "Single London clinic.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.treatmentroomslondon.com/hair-loss/hair-loss-treatments/"
+    ]
+  },
+  {
+    "name": "ZAVA",
+    "url": "https://www.zavamed.com/uk/hair-loss-treatment.html",
+    "description": "One of Europe's largest online doctors (Health Bridge Ltd); Hims & Hers announced in June 2025 that it was buying it.",
+    "audience": "men",
+    "products": [
+      {
+        "name": "Finasteride 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "28 tabs £19.95; 56 £34.95; 84 £44.95; 168 £79.95 (search snippet of ZAVA page)"
+      },
+      {
+        "name": "Propecia 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "28 tabs £41.00; 56 £80.00; 84 £105.00; 168 £195.00 (search snippet)"
+      },
+      {
+        "name": "Regaine (mentioned)",
+        "actives": "minoxidil",
+        "price": "not captured"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online questionnaire reviewed by a UK doctor; pay per order, not a subscription (site sits behind a bot check, so the form was not viewed).",
+    "distinctive": "Hims & Hers announced in June 2025 that it was buying ZAVA (expected to close in the second half of 2025; completion not checked here). ZAVA also runs Asda Online Doctor, so several UK hair-loss storefronts would sit under one owner. Third-party articles disagree on whether ZAVA prescribes dutasteride for hair loss.",
+    "sizeSignal": "1.3 million active customers across Europe and 2.3 million consultations in 2024 (press report of the Hims deal); ZAVA's own site claims over 7 million UK consultations.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.zavamed.com/uk/hair-loss-treatment.html",
+      "https://www.zavamed.com/uk/finasteride.html",
+      "https://www.zavamed.com/uk/propecia.html",
+      "https://htn.co.uk/2025/06/06/hims-hers-health-acquires-uk-based-zava-in-significant-step-in-its-global-expansion/",
+      "https://www.zavamed.com/uk/about-us.html",
+      "https://cityskinclinic.com/get-hair-loss-treatments-online-uk/"
+    ]
+  },
+  {
+    "name": "Asda Online Doctor (by ZAVA)",
+    "url": "https://onlinedoctor.asda.com/uk/hair-loss-treatment.html",
+    "description": "Supermarket-branded online doctor operated by ZAVA, with collection from Asda pharmacies.",
+    "audience": "men",
+    "products": [
+      {
+        "name": "Finasteride 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "28 tabs £25.00; 56 £49; 84 £70; 168 £125 (search snippet)"
+      },
+      {
+        "name": "Propecia 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "28 tabs £47.00; 84 £110; 168 £200 (search snippet)"
+      },
+      {
+        "name": "Dutasteride 0.5mg",
+        "actives": "dutasteride 0.5 mg (off-label)",
+        "price": "30 capsules £19.97 (a dedicated page exists, but the finasteride page says only two treatments are offered; unconfirmed)"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Short health questionnaire reviewed by a doctor; delivery or collection from an Asda Pharmacy (site is behind a bot check; details from search snippets).",
+    "distinctive": "Click-and-collect at a supermarket pharmacy; higher prices than online-only rivals.",
+    "sizeSignal": "Asda supermarket brand on ZAVA's platform.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://onlinedoctor.asda.com/uk/hair-loss-treatment.html",
+      "https://onlinedoctor.asda.com/uk/finasteride.html",
+      "https://onlinedoctor.asda.com/uk/dutasteride.html",
+      "https://onlinedoctor.asda.com/uk/propecia.html",
+      "https://thecarepharmacy.com/finasteride-prices-comparison-uk/"
+    ]
+  },
+  {
+    "name": "Pharmacy2U",
+    "url": "https://www.pharmacy2u.co.uk/online-doctor/hair-loss",
+    "description": "The UK's largest online pharmacy by review volume, with a CQC-registered online doctor; resells Sons minoxidil.",
+    "audience": "men",
+    "products": [
+      {
+        "name": "Finasteride 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "4 weeks £17.50; 8 weeks £32.99; 12 weeks £44.99; 24 weeks £79.99 (search snippet)"
+      },
+      {
+        "name": "Propecia",
+        "actives": "finasteride 1 mg",
+        "price": "1 month £50.00; 3 months £135.00; 6 months £240.00 (search snippet)"
+      },
+      {
+        "name": "Sons Minoxidil 5% spray",
+        "actives": "minoxidil 5%",
+        "price": "1 month £33.00; 3 months £54.00; 6 months £99.00 (search snippet; another page showed £19.42)"
+      },
+      {
+        "name": "Sons finasteride tablets + 5% minoxidil spray",
+        "actives": "finasteride 1 mg + minoxidil 5% (separate products)",
+        "price": "3 months £106.00; 6 months £189.00 (search snippet)"
+      },
+      {
+        "name": "Finasteride + Regaine foam bundle",
+        "actives": "finasteride 1 mg + minoxidil 5%",
+        "price": "12 weeks £89.99 (search snippet)"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online doctor questionnaire (site is geo-blocked from the research machine, so the form was not viewed).",
+    "distinctive": "Uses Sons as its minoxidil and bundle brand rather than its own label.",
+    "sizeSignal": "Trustpilot 4.6 from 1,053,693 reviews.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.pharmacy2u.co.uk/online-doctor/hair-loss",
+      "https://www.pharmacy2u.co.uk/online-doctor/hair-loss/sons-finasteride-tablets-5-minoxidil-spray",
+      "https://uk.trustpilot.com/review/pharmacy2u.co.uk",
+      "https://www.medino.com/article/finasteride-price-comparison-for-uk-online-pharmacies"
+    ]
+  },
+  {
+    "name": "UK Meds",
+    "url": "https://www.ukmeds.co.uk/finasteride",
+    "description": "Nottingham online prescriber with subscriptions; licensed range only.",
+    "audience": "men (Nourkrin and Regaine also listed)",
+    "products": [
+      {
+        "name": "Finasteride 1mg",
+        "actives": "finasteride 1 mg",
+        "price": "28 tabs £14.39; 56 £19.79; 84 £26.98; 168 £44.99"
+      },
+      {
+        "name": "Propecia",
+        "actives": "finasteride 1 mg",
+        "price": "from £65.95 (search snippet)"
+      },
+      {
+        "name": "Regaine for Men; Nourkrin; Alpecin",
+        "actives": "minoxidil; supplement; caffeine shampoo",
+        "price": "not shown on pages read"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Short online medical questionnaire reviewed by prescribers; one-off or subscription every 1, 2 or 3 months.",
+    "distinctive": "'Plus' membership discounts; publishes price comparisons against Hims, Sons, Numan and Lloyds.",
+    "sizeSignal": "Trustpilot 3.5 from 15,648 reviews.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.ukmeds.co.uk/finasteride",
+      "https://www.ukmeds.co.uk/blog/finasteride-subscriptions-uk-meds-vs-lloyds-vs-hims-sons-uk-vs-numan",
+      "https://uk.trustpilot.com/review/ukmeds.co.uk"
+    ]
+  },
+  {
+    "name": "HealthExpress",
+    "url": "https://www.healthexpress.co.uk/finasteride",
+    "description": "Long-running online clinic; finasteride and Propecia only.",
+    "audience": "men",
+    "products": [
+      {
+        "name": "Finasteride 1mg, 28 tablets",
+        "actives": "finasteride 1 mg",
+        "price": "£14.99 including next-day delivery and prescription (search snippet)"
+      },
+      {
+        "name": "Propecia",
+        "actives": "finasteride 1 mg",
+        "price": "from £49.99 (search snippet)"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online consultation (site is behind a bot check; not viewed).",
+    "distinctive": "None.",
+    "sizeSignal": "Not captured.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.healthexpress.co.uk/finasteride",
+      "https://www.healthexpress.co.uk/propecia"
+    ]
+  },
+  {
+    "name": "Dermatica",
+    "url": "https://www.dermatica.co.uk/",
+    "description": "Large UK prescription-skincare subscription that moved into women's hair thinning in February 2026 with a clinician-prescribed daily scalp serum.",
+    "audience": "women",
+    "products": [
+      {
+        "name": "Hair thinning treatment plan (daily scalp serum)",
+        "actives": "topical minoxidil solution formulated with panthenol and allantoin (strength not found in the sources read)",
+        "price": "first month £14.99, then £29.99 a month (search snippet of a Dermatica page; unverified)"
+      }
+    ],
+    "compounded": "unknown",
+    "consultation": "Customer uploads photos and answers questions, then an online consultation with the dermatology team; regular progress check-ins and 24/7 support.",
+    "distinctive": "A skincare brand with a large existing female subscriber base cross-selling hair loss, the same play as Skin + Me with Hair + Me. On 23 Nov 2026 the public page /treatments/hair-loss returned 404 although 'Hair loss' is still a pathway in the site's data, so current status needs checking.",
+    "sizeSignal": "Trustpilot 4.2 from 8,760 reviews; trade press coverage of the launch (Cosmetics Business, 25 Feb 2026).",
+    "deservesDeepDive": true,
+    "sources": [
+      "https://cosmeticsbusiness.com/dermatica-hair-loss-treatment-women-scalp-care-entry",
+      "https://www.dermatica.co.uk/treatments/hair-loss",
+      "https://uk.trustpilot.com/review/dermatica.co.uk",
+      "https://www.mumsnet.com/talk/style_and_beauty/5515139-anyone-tried-dermatica-for-thinning-hair-and-minoxidil-side-effects",
+      "https://www.dermatica.co.uk/pricing",
+      "https://www.dermatica.co.uk/skinlab/minoxidil_hair_loss/"
+    ]
+  },
+  {
+    "name": "Philip Kingsley (PK Lab)",
+    "url": "https://www.philipkingsley.co.uk/hair-loss/pklab/treatments",
+    "description": "Heritage trichology clinic and premium haircare brand that now sells prescription hair-loss subscriptions online alongside its clinic.",
+    "audience": "men and women (combination drops: men 18+ and post-menopausal women only)",
+    "products": [
+      {
+        "name": "Density+ Minoxidil 5% & Finasteride 0.1% Scalp Drops",
+        "actives": "minoxidil 5% + finasteride 0.1% with melatonin, zinc and caffeine",
+        "price": "search snippet: £36 first delivery then £73 per delivery (unverified)"
+      },
+      {
+        "name": "Minoxidil 5% Scalp Drops (100 ml)",
+        "actives": "minoxidil 5%",
+        "price": "£40 (search snippet of plan page: £28 first delivery, then £56)"
+      },
+      {
+        "name": "Minoxidil 3% Scalp Drops",
+        "actives": "minoxidil 3%",
+        "price": "£36"
+      },
+      {
+        "name": "Finasteride oral tablet plan",
+        "actives": "finasteride 1 mg (leaflet title: 'Finasteride 1mg Complex')",
+        "price": "not captured"
+      },
+      {
+        "name": "Density Scalp Drops, Tricho range (cosmetic)",
+        "actives": "cosmetic actives",
+        "price": "about £52"
+      }
+    ],
+    "compounded": true,
+    "consultation": "2-minute online assessment; if eligible the customer picks a subscription (every 1, 2 or 3 months) or books a trichologist: virtual consultation from £200 (60 minutes, photos sent 48 hours before) or in clinic from £345.",
+    "distinctive": "Trichologist-formulated compounded drops; its own leaflet says the combination is unlicensed and 'made and dispensed under pharmacist supervision'; a triage that routes people to subscription, video or clinic; strong female clientele.",
+    "sizeSignal": "Claims 60,000+ clients and 65 years of practice; clinics in London and New York; products sold at major beauty retailers.",
+    "deservesDeepDive": true,
+    "sources": [
+      "https://www.philipkingsley.co.uk/hair-loss/pklab/treatments",
+      "https://www.philipkingsley.co.uk/pklabs-patient-information",
+      "https://www.philipkingsley.co.uk/minoxidil-5-scalp-drops.html",
+      "https://www.philipkingsley.co.uk/minoxidil-3-scalp-drops.html",
+      "https://www.philipkingsley.co.uk/female-hair-loss",
+      "https://www.philipkingsley.co.uk/clinics/clinic-london",
+      "https://www.philipkingsley.co.uk/treatments"
+    ]
+  },
+  {
+    "name": "The Belgravia Centre",
+    "url": "https://www.belgraviacentre.com/hairlosstreatments",
+    "description": "London hair-loss clinic with an in-house pharmacy and pharmaceutical laboratory; sells bespoke high-strength minoxidil courses in clinic and by post after an online consultation.",
+    "audience": "men and women",
+    "products": [
+      {
+        "name": "Belgravia high-strength minoxidil formulations",
+        "actives": "topical minoxidil with added medroxyprogesterone, azelaic acid and caffeine (strengths not published; a patient review quotes 12.5%, unverified); a 'high strength minoxidil cream' is also listed",
+        "price": "not published; one patient review reports £696 a year for minoxidil 12.5% (unverified)"
+      },
+      {
+        "name": "Finasteride 1mg (oral or topical)",
+        "actives": "finasteride",
+        "price": "not published"
+      },
+      {
+        "name": "Oral minoxidil",
+        "actives": "minoxidil tablet, once daily",
+        "price": "not published"
+      },
+      {
+        "name": "Hair Vitalics supplements; HairMax LaserBand",
+        "actives": "biotin, zinc, selenium; low-level laser device",
+        "price": "not published"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Free consultation in clinic, or an online consultation form with diagnosis and recommendation 'wherever you live', then Zoom; periodic photo monitoring; 12-month courses recommended.",
+    "distinctive": "Clinic-plus-pharmacy model: 'specially prepared medications prescribed for your pattern and stage of hair loss', treatment advisers, photo tracking and what it calls the world's largest collection of success stories. Prices are only given after consultation, and the site does not say whether its formulations are unlicensed.",
+    "sizeSignal": "Trustpilot 4.9 from 2,863 reviews; claims the 'world's largest collection of success stories'.",
+    "deservesDeepDive": true,
+    "sources": [
+      "https://www.belgraviacentre.com/hairlosstreatments",
+      "https://www.belgraviacentre.com/femaleminoxidil",
+      "https://www.belgraviacentre.com/blog/question-roughly-how-much-does-a-full-hair-loss-treatment-course-cost",
+      "https://uk.trustpilot.com/review/www.belgraviacentre.com",
+      "https://medihair.com/en/clinic/belgravia-centre/",
+      "https://www.belgraviacentre.com/hair-loss-pharmacy"
+    ]
+  },
+  {
+    "name": "DrHair",
+    "url": "https://drhair.co.uk/",
+    "description": "Harley Street-addressed men's hair-loss brand (Infinity Group Pharmaceuticals Ltd, company no. 15558224) selling unlicensed combination sprays on subscription.",
+    "audience": "men",
+    "products": [
+      {
+        "name": "Finasteride Minoxidil Spray (60 ml)",
+        "actives": "minoxidil 5% + finasteride 0.1% + caffeine 0.5% + azelaic acid 2%",
+        "price": "£26.99 one-off; £24.99 a month on a 3-month plan; £23.99 a month on a 6-month plan"
+      },
+      {
+        "name": "Finasteride (1mg) + Minoxidil 5% Spray",
+        "actives": "finasteride 1 mg tablets + spray of minoxidil 5% and azelaic acid 2%",
+        "price": "£38.99 one-off; £34.99 (3-month plan) or £33.99 (6-month plan) a month"
+      },
+      {
+        "name": "DrHair Power Shampoo",
+        "actives": "caffeine, biotin, saw palmetto",
+        "price": "£19.99"
+      }
+    ],
+    "compounded": true,
+    "consultation": "100% online clinical assessment reviewed by a prescriber within 2 to 24 hours; supplied on a named-patient basis; dispensed by Infinity Medical Pharmacy or iPharmacy.",
+    "distinctive": "Four-active spray; pages label the product 'unlicensed' but subscription boxes on the same page say 'UK licensed treatment' (inconsistent).",
+    "sizeSignal": "Claims '20,000+ satisfied customers' (own claim).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://drhair.co.uk/",
+      "https://drhair.co.uk/treatment/finasteride-minoxidil/",
+      "https://drhair.co.uk/treatment/finasteride-minoxidil-topical/"
+    ]
+  },
+  {
+    "name": "UsMen",
+    "url": "https://usmen.co.uk/treatment-info/topical-minoxidil-finasteride-spray-for-hair-loss-treatment/",
+    "description": "Men's health arm of Live Well Pharmacy, Huddersfield (Concept Medicine Ltd, GPhC 9012516).",
+    "audience": "men",
+    "products": [
+      {
+        "name": "Topical Finasteride 0.1% & Minoxidil 5% Spray (60 ml)",
+        "actives": "finasteride 0.1% + minoxidil 5%",
+        "price": "1 month £23.00; 3 months £65.00; 6 months £120.00; no subscription required"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Online clinical consultation with prescriber review; pharmacist phone line.",
+    "distinctive": "Says plainly: 'There is no licensed topical finasteride product in the UK, so our spray is an unlicensed medicine.'",
+    "sizeSignal": "Single independent pharmacy.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://usmen.co.uk/treatment-info/topical-minoxidil-finasteride-spray-for-hair-loss-treatment/"
+    ]
+  },
+  {
+    "name": "PharmaBee",
+    "url": "https://pharmabee.co.uk/product/minoxidil-5-finasteride-0-1-spray/",
+    "description": "Cumbria online pharmacy (Mulla Pharm Ltd) selling a compounded combination spray.",
+    "audience": "men",
+    "products": [
+      {
+        "name": "Minoxidil 5% / Finasteride 0.1% spray",
+        "actives": "minoxidil 5% + finasteride 0.1%",
+        "price": "60 ml £35.00 (£31.50 a month on subscription); 120 ml £70; 180 ml £105"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Confidential online consultation; no in-person appointment.",
+    "distinctive": "None.",
+    "sizeSignal": "Single independent pharmacy.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://pharmabee.co.uk/product/minoxidil-5-finasteride-0-1-spray/"
+    ]
+  },
+  {
+    "name": "Totiva",
+    "url": "https://www.totiva.co.uk/blog/topical-finasteride-side-effects",
+    "description": "New Chesterfield online pharmacy (ZapMeds Ltd, company no. 16665533, GPhC 9012997) competing on finasteride price.",
+    "audience": "men",
+    "products": [
+      {
+        "name": "Finasteride 1mg, 28 tablets",
+        "actives": "finasteride 1 mg",
+        "price": "£9.49"
+      },
+      {
+        "name": "Minoxidil 5% (Sons)",
+        "actives": "minoxidil 5%",
+        "price": "from £19.99"
+      },
+      {
+        "name": "Finasteride + minoxidil combination",
+        "actives": "finasteride 1 mg + minoxidil 5% (separate products)",
+        "price": "from £27.99"
+      },
+      {
+        "name": "Regaine",
+        "actives": "minoxidil",
+        "price": "from £33.60"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online consultation (format not described on the page read).",
+    "distinctive": "States it does not supply topical finasteride because it is unlicensed.",
+    "sizeSignal": "New company.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.totiva.co.uk/blog/topical-finasteride-side-effects"
+    ]
+  },
+  {
+    "name": "Daily Chemist",
+    "url": "https://www.dailychemist.com/product-category/online-doctor/hair-loss/",
+    "description": "Online pharmacy; finasteride and Regaine foam.",
+    "audience": "men aged 18 to 65",
+    "products": [
+      {
+        "name": "Finasteride",
+        "actives": "finasteride 1 mg",
+        "price": "from £13.99"
+      },
+      {
+        "name": "Regaine for Men Extra Strength foam",
+        "actives": "minoxidil 5%",
+        "price": "73 ml £21.99; 3 x 73 ml £62.99"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online yes/no questionnaire reviewed by prescribers.",
+    "distinctive": "None.",
+    "sizeSignal": "None shown.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.dailychemist.com/product-category/online-doctor/hair-loss/"
+    ]
+  },
+  {
+    "name": "SkinDoc and Midland Skin (private dermatology with online consultations)",
+    "url": "https://cityskinclinic.com/spironolactone-hair-loss-online-uk/",
+    "description": "Two private dermatology services reported to prescribe oral spironolactone off-label for female pattern hair loss after an online or video consultation.",
+    "audience": "women",
+    "products": [
+      {
+        "name": "Oral spironolactone (off-label)",
+        "actives": "spironolactone (dose set by the doctor)",
+        "price": "consultation fee plus medicine and blood tests; amounts not stated"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Video or online-form consultation with a doctor; blood tests and, for Midland Skin, possible in-person visits.",
+    "distinctive": "Among the few routes to oral anti-androgens for women; details come from a competitor's article and were not checked on the providers' own sites.",
+    "sizeSignal": "Small specialist practices (unverified).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://cityskinclinic.com/spironolactone-hair-loss-online-uk/"
+    ]
+  },
+  {
+    "name": "Regaine (Kenvue)",
+    "url": "https://www.regaine.co.uk/",
+    "description": "The licensed over-the-counter minoxidil brand that every prescription service is priced against; sold in supermarkets and pharmacies without a consultation.",
+    "audience": "men (label: 18 to 49 for the foam) and women",
+    "products": [
+      {
+        "name": "Regaine for Men Extra Strength Scalp Foam 5% (73 ml)",
+        "actives": "minoxidil 5% w/w; general sales list medicine",
+        "price": "about £29.50 to £38.99 a can at the pharmacies in this sweep"
+      },
+      {
+        "name": "Regaine for Men Extra Strength Scalp Solution 5% (60 ml)",
+        "actives": "minoxidil 5%",
+        "price": "£37.00 at Tesco; £29.00 at Dr Fox"
+      },
+      {
+        "name": "Regaine for Women Once a Day Scalp Foam 5% (73 ml)",
+        "actives": "minoxidil 5%",
+        "price": "£37.00 at Tesco"
+      },
+      {
+        "name": "Regaine for Women Regular Strength (60 ml)",
+        "actives": "minoxidil 2%",
+        "price": "£17.98 to £24.99"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None; bought off the shelf.",
+    "distinctive": "Licensed, on general sale and stocked everywhere; the default first step for most customers and a standard add-on in online pharmacies' bundles.",
+    "sizeSignal": "Owned by Kenvue; stocked by Tesco, Boots and nearly every pharmacy in this sweep. No UK sales figure found.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.medicines.org.uk/emc/product/5781/smpc",
+      "https://www.tesco.com/shop/en-GB/products/323327886",
+      "https://www.tesco.com/shop/en-GB/products/323790670",
+      "https://kenvuepro.com/en-gb/brands/regaine/products/regaine-for-men-extra-strength-scalp-foam-5-ww-cutaneous-foam-73ml",
+      "https://www.doctorfox.co.uk/hair-loss-treatments/",
+      "https://www.medino.com/condition/hair-loss"
+    ]
+  },
+  {
+    "name": "Scandinavian Biolabs",
+    "url": "https://scandinavianbiolabs.co.uk/",
+    "description": "Danish 'drug-free' hair-growth serum brand sold on subscription with a money-back guarantee; competes directly for people wary of finasteride.",
+    "audience": "men and women (separate versions)",
+    "products": [
+      {
+        "name": "Bio-Pilixin Activation Serum",
+        "actives": "cosmetic plant-based blend (Bio-Pilixin, niacinamide, Capilia Longa, plant exosomes); no medicine",
+        "price": "from £44 a month"
+      },
+      {
+        "name": "Hairline Booster",
+        "actives": "cosmetic",
+        "price": "from £26 a month"
+      },
+      {
+        "name": "Hair Growth Routine (serum, shampoo, conditioner)",
+        "actives": "cosmetic",
+        "price": "from £68 a month"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None.",
+    "distinctive": "150-day 'results or your money back' guarantee; sold in Boots and Well; heavy discounting (50% off a 3-month subscription for Black Friday 2026).",
+    "sizeSignal": "Claims 200,000+ customers; Trustpilot 4.5 from 8,000+ reviews (own site); raised about €4 million in 2024.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://scandinavianbiolabs.co.uk/",
+      "https://scandinavianbiolabs.com/pages/denmark-based-hair-loss-brand-scandinavian-biolabs-announces-4-million-capital-raise",
+      "https://www.beautyindependent.com/hair-growth-brand-scandinavian-biolabs-funding"
+    ]
+  },
+  {
+    "name": "Viviscal (Church & Dwight)",
+    "url": "https://www.viviscal.co.uk/",
+    "description": "Best-known hair-growth supplement brand in UK pharmacies.",
+    "audience": "women and men (separate products)",
+    "products": [
+      {
+        "name": "Hair Growth Vitamins for Women / for Men",
+        "actives": "food supplement (marine protein complex; ingredients not listed on home page)",
+        "price": "from £42.74 on offer (regular £56.99)"
+      },
+      {
+        "name": "Professional Strength Hair Growth Tablets",
+        "actives": "food supplement",
+        "price": "£60.00"
+      },
+      {
+        "name": "Thickening shampoo, conditioner, serum",
+        "actives": "cosmetic",
+        "price": "£8.24 to £16.49 on offer"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None.",
+    "distinctive": "Markets '7 published clinical trials' and a menopause-friendly badge.",
+    "sizeSignal": "Church & Dwight brand (privacy policy points to churchdwight.co.uk); no UK sales figure found.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.viviscal.co.uk/"
+    ]
+  },
+  {
+    "name": "Nioxin (Wella)",
+    "url": "https://www.nioxin.com/en-GB",
+    "description": "Salon scalp-care and thinning-hair range sold as numbered system kits.",
+    "audience": "men and women",
+    "products": [
+      {
+        "name": "Nioxin System kits (1 to 6)",
+        "actives": "cosmetic (niacinamide, caffeine, biotin per retailer listings)",
+        "price": "trial kits about £25 to £48 at UK pharmacies"
+      },
+      {
+        "name": "Hair Fall Defense serum and shampoo; Night Density Rescue",
+        "actives": "cosmetic",
+        "price": "shampoo £27.25 at Click2Pharmacy"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None (salon and retail).",
+    "distinctive": "Claims to be the '#1 professional brand exclusive to scalp care and hair thinning'.",
+    "sizeSignal": "Owned by Wella; no UK sales figure found.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.nioxin.com/en-GB",
+      "https://www.click2pharmacy.co.uk/online-clinic/hair-loss/",
+      "https://www.medino.com/condition/hair-loss"
+    ]
+  },
+  {
+    "name": "Alpecin and Plantur 39 (Dr. Wolff)",
+    "url": "https://www.alpecin.com/en-gb",
+    "description": "Caffeine shampoos for men (Alpecin) and for women, pitched at menopause (Plantur 39); the cheapest mass-market entry point.",
+    "audience": "men (Alpecin); women (Plantur 39)",
+    "products": [
+      {
+        "name": "Alpecin Caffeine Shampoo C1 (250 ml)",
+        "actives": "caffeine (cosmetic)",
+        "price": "£4.99 to £7.99 at UK pharmacies"
+      },
+      {
+        "name": "Alpecin Caffeine DMG Shampoo / Serum (200 ml)",
+        "actives": "caffeine + DMG (cosmetic)",
+        "price": "£20.00 / £30.00 on alpecin.com"
+      },
+      {
+        "name": "Plantur 39 Phyto-Caffeine Shampoo (250 ml)",
+        "actives": "caffeine (cosmetic)",
+        "price": "£10.99 to £14.69"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None.",
+    "distinctive": "Sits on almost every online pharmacy's hair-loss page next to finasteride.",
+    "sizeSignal": "Dr. Kurt Wolff GmbH & Co. KG; no UK sales figure found.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.alpecin.com/en-gb",
+      "https://www.pharmica.co.uk/hair-loss/",
+      "https://www.medino.com/condition/hair-loss",
+      "https://www.chemist-4-u.com/hair-loss"
+    ]
+  },
+  {
+    "name": "Nourkrin",
+    "url": "https://www.medino.com/condition/hair-loss",
+    "description": "Premium supplement programme for hair shedding, sold through pharmacies.",
+    "audience": "women mainly; a men's version exists",
+    "products": [
+      {
+        "name": "Nourkrin Woman, 180 tablets (3 months)",
+        "actives": "food supplement (Marilex, biotin, silica)",
+        "price": "£95.99 to £119.99"
+      },
+      {
+        "name": "Nourkrin Man, 60 tablets (1 month)",
+        "actives": "food supplement",
+        "price": "£45.99"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None.",
+    "distinctive": "Priced above many prescription treatments (about £32 to £46 a month).",
+    "sizeSignal": "Stocked by several pharmacies in this sweep; no company figures found.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.medino.com/condition/hair-loss",
+      "https://www.chemist-4-u.com/hair-loss",
+      "https://www.click2pharmacy.co.uk/online-clinic/hair-loss/"
+    ]
+  },
+  {
+    "name": "Hairburst",
+    "url": "https://www.hairburst.com/",
+    "description": "UK direct-to-consumer hair vitamin and haircare brand aimed at women with thinning, breakage or shedding.",
+    "audience": "women (a men's vitamin is sold through pharmacies)",
+    "products": [
+      {
+        "name": "Advanced+ Hair Growth Starter Kit",
+        "actives": "supplements and cosmetic haircare",
+        "price": "£49.99 (1 month); £98.99 (3 months); £164.99 (6 months)"
+      },
+      {
+        "name": "Healthy Hair Vitamins",
+        "actives": "food supplement",
+        "price": "£25.99"
+      },
+      {
+        "name": "Multi-Active Hair Growth Serum",
+        "actives": "cosmetic",
+        "price": "£55.99"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None.",
+    "distinctive": "'Guaranteed results in 90 days'; targets life stages (pregnancy, 35+, menopause).",
+    "sizeSignal": "Claims 1 million+ customers and shows 5,521 reviews.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.hairburst.com/",
+      "https://www.click2pharmacy.co.uk/online-clinic/hair-loss/"
+    ]
+  },
+  {
+    "name": "Nanogen",
+    "url": "https://www.nanogen.com/blogs/treatments/minoxidil",
+    "description": "UK hair-thickening keratin fibres: concealment rather than treatment, often used alongside minoxidil.",
+    "audience": "men and women",
+    "products": [
+      {
+        "name": "Hair Thickening Keratin Fibres 30 g (2 months)",
+        "actives": "keratin fibres (cosmetic)",
+        "price": "£30.00 at Boots; 15 g £18.95 at Lookfantastic"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None.",
+    "distinctive": "Instant cosmetic cover; the brand positions fibres as a bridge while minoxidil takes effect.",
+    "sizeSignal": "Nanogen Ltd; stocked by Boots. No sales figure found.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.nanogen.com/blogs/treatments/minoxidil",
+      "https://boots.com/nanogen-hair-thickening-keratin-fibres-light-brown-30g-2-month-supply-10115963"
+    ]
+  },
+  {
+    "name": "CurrentBody Skin LED Hair Growth Helmet",
+    "url": "https://www.currentbody.com/products/currentbody-skin-led-hair-regrowth-device",
+    "description": "UK beauty-device retailer's red-light helmet; a one-off purchase that competes with a year or two of prescription treatment.",
+    "audience": "men and women",
+    "products": [
+      {
+        "name": "LED Hair Growth Helmet",
+        "actives": "device: 120 red LEDs, 620 to 660 nm, 10 minutes a day",
+        "price": "£649.99"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None.",
+    "distinctive": "Device route for people who do not want a medicine; efficacy claims come from the maker's own 31-person study.",
+    "sizeSignal": "229 reviews, 4.6 out of 5, on the product page.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.currentbody.com/products/currentbody-skin-led-hair-regrowth-device"
+    ]
+  }
+]

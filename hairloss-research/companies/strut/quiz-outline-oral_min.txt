@@ -1,0 +1,994 @@
+FLOW oral_min  "Minoxidil Prod"  id=6aa3d578f415d1603a6e0c85 version=6aa3d578f415d1603a6e0c87 status=published
+nodes 31, edges 37
+variables: [{"key": "coupon", "description": "for promo codes coming from URL to put on promo code field on order summary and apply discount"}]
+
+ORDER (walk from start, default path first): node-start-1784100995818 > node-1778105320499 > node-1 > node-1779173500330 > node-3 > node-4 > node-5 > node-6 > node-7 > node-8 > node-9 > node-10 > node-12 > node-14 > node-15 > node-16 > node-17 > node-18 > node-1788948098392 > node-1788948272849 > node-1788948320318 > node-1788948362991 > node-1788948387059 > node-1788948428853 > node-1788948455105 > node-19 > node-21 > node-23 > node-13 > node-11 > node-20
+
+====================================================================================================
+  edges out: edge-start-1784100995818 -> node-1778105320499 "1. Default"
+node-start-1784100995818  type=start  {}
+  PATH "Default" (default) -> node-1778105320499   when - 
+====================================================================================================
+  edges out: edge-1778105332704 -> node-1 null
+node-1778105320499  type=react-block  {"navigationButtonStyleOverride": "minimal", "hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"required": false, "version": 2}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: Ready to start your Strut Hair Loss journey
+      sublabel: 
+  - block 8oq98q6 [component:Condition badge] 
+      text: Medical questionnaire
+      backgroundColor: #c4697c
+      textColor: #ffffff
+      fontFamily: 'Plus Jakarta Sans', -apple-system, sans-serif
+      fontSize: 12
+      fontWeight: 600
+      letterSpacing: 0
+      textTransform: none
+      paddingX: 8
+      paddingY: 4
+      borderRadius: 4
+      alignment: left
+      marginTop: 0
+      marginBottom: 0
+  - block block-1778105320499 [component:Welcome Screen Badge] 
+      cardBg: #FFFFFF
+  - block block-1784100322077-3 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+====================================================================================================
+  edges out: edge-1789540004266 -> node-1779173500330 "3. Path C"; edge-2 -> node-20 "2. Under 18"
+node-1  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"version": 2, "omitHeader": true}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: What is your age?
+      sublabel: 
+  - block block-1784100322077-3 [multi-choice] {"outputAlias": "block-1784100322077-3"}
+      label: What is your age?
+      required: true
+      allowMulti: false
+      alwaysShowNextButton: true
+      layout: list
+      options:
+        * {"id": "c0", "label": "Under 18", "value": "under-18"}
+        * {"id": "c1", "label": "18-30", "value": "18-30"}
+        * {"id": "c2", "label": "31-45", "value": "31-45"}
+        * {"id": "c3", "label": "46-60", "value": "46-60"}
+        * {"id": "c4", "label": "61+", "value": "61+"}
+  - block block-1784100322077-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+  - block cart-drawer-node-1 [component:Cart] 
+      drawerHeight: 480
+  PATH "Under 18" -> node-20   when (node-1.block-1784100322077-3 equal "c0") 
+  PATH "18 or older" (default) -> node-1779173500330   when (node-1.block-1784100322077-3 not-equal "c0") 
+====================================================================================================
+  edges out: edge-1779173906359 -> node-3 null
+node-1779173500330  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"required": false, "version": 2, "autoContinueOnSelect": false, "omitHeader": true}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block c0p3zpi [component:Minoxidil : Dose selection] 
+      brandColor: #161336
+      discColor: #f1ece1
+      imageFit: cover
+      textColor: #0F1714
+      textMutedColor: #6B7670
+      borderColor: #E5E1D8
+      borderSoftColor: #EFECE3
+      surfaceColor: #FBFAF7
+      controlOffColor: #D9D4C5
+      borderHoverColor: #C9C2AF
+      selectedBgColor: #161336
+      selectedBgOpacity: 0.06
+      title: Minoxidil Tablets
+      subtitle: Oral minoxidil for hair loss · compounded by a US licensed pharmacy
+      imageUrl: https://www.struthealth.com/assets/v3-hl-oral-minoxidil.webp
+      subAxisLabel: Dose
+      defaultDose: dose_2_5
+      pricePeriodSuffix: for 90 days
+      trustItem1: Doctor consult
+      trustItem2: FDA-registered pharmacy
+      totalLabel: Total today
+      ctaLabel: Add to cart
+      borderRadius: 12
+  - block block-1784100322077-3 [navigation-buttons] 
+      hideNavigationButton: true
+      autoProceedDelay: 0
+  - block cart-drawer-node-prod [component:Cart] 
+      drawerHeight: 480
+====================================================================================================
+  edges out: edge-4 -> node-4 "Next"
+node-3  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"version": 2, "omitHeader": true}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: How long ago did you first notice signs of hair loss?
+      sublabel: 
+  - block block-1784100322077-3 [multi-choice] 
+      label: How long ago did you first notice signs of hair loss?
+      required: true
+      allowMulti: false
+      alwaysShowNextButton: true
+      layout: list
+      options:
+        * {"id": "c0", "label": "1 month or less", "value": "1-month"}
+        * {"id": "c1", "label": "Less than 6 months", "value": "6-months"}
+        * {"id": "c2", "label": "6-12 months", "value": "6-12-months"}
+        * {"id": "c3", "label": "Over 1 year", "value": "1-year"}
+        * {"id": "c4", "label": "Over 2 years", "value": "2-years"}
+  - block block-1784100322077-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+  - block cart-drawer-node-3 [component:Cart] 
+      drawerHeight: 480
+====================================================================================================
+  edges out: edge-5 -> node-5 "Next"
+node-4  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"version": 2, "omitHeader": true}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: What symptoms of hair loss have you noticed? Select all that apply.
+      sublabel: 
+  - block block-1784100322077-3 [multi-choice] 
+      label: What symptoms of hair loss have you noticed? Select all that apply.
+      required: true
+      allowMulti: true
+      columns: 3
+      labelPlacement: inside-under
+      showCheckbox: true
+      layout: list
+      options:
+        * {"id": "c0", "label": "Thinning at the front hairline", "value": "front-thinning"}
+        * {"id": "c1", "label": "Thinning at the temples", "value": "temple-thinning"}
+        * {"id": "c2", "label": "Thinning on the top of the head", "value": "top-thinning"}
+        * {"id": "c3", "label": "Receding hairline", "value": "receding"}
+        * {"id": "c4", "label": "Patchy bald spots", "value": "patchy"}
+        * {"id": "c5", "label": "Diffuse thinning (all over)", "value": "diffuse"}
+        * {"id": "c6", "label": "Increased shedding", "value": "shedding"}
+  - block block-1784100322077-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+  - block cart-drawer-node-4 [component:Cart] 
+      drawerHeight: 480
+====================================================================================================
+  edges out: edge-6 -> node-6 "Next"
+node-5  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"version": 2, "omitHeader": true, "autoContinueOnSelect": false}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: Have you noticed any scalp symptoms? Select all that apply.
+      sublabel: 
+  - block block-1784100322077-3 [multi-choice] 
+      label: Have you noticed any scalp symptoms? Select all that apply.
+      sublabel: 
+      required: false
+      allowMulti: true
+      showCheckbox: true
+      layout: list
+      options:
+        * {"id": "c0", "label": "Itching, pain, burning, or lesions", "value": "itching-pain"}
+        * {"id": "c1", "label": "Dry skin or dandruff", "value": "dry-skin"}
+        * {"id": "c2", "label": "Rash", "value": "rash"}
+        * {"id": "c3", "label": "Bleeding", "value": "bleeding"}
+        * {"id": "c4", "label": "Sudden hair loss", "value": "sudden-loss"}
+        * {"id": "1777426303825", "label": "None of the above", "value": "none-of-the-above", "selectBehavior": "deselect-others"}
+  - block block-1784100322077-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+  - block cart-drawer-node-5 [component:Cart] 
+      drawerHeight: 480
+====================================================================================================
+  edges out: edge-7 -> node-7 "Next"
+node-6  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"version": 2, "omitHeader": true}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: What treatments have you tried before? Select all that apply.
+      sublabel: 
+  - block block-1784100322077-3 [multi-choice] 
+      label: What treatments have you tried before? Select all that apply.
+      sublabel: 
+      required: false
+      allowMulti: true
+      showCheckbox: true
+      layout: list
+      options:
+        * {"id": "c0", "label": "Minoxidil (Rogaine) topical", "value": "minoxidil-topical"}
+        * {"id": "c1", "label": "Minoxidil oral tablets", "value": "minoxidil-oral"}
+        * {"id": "c2", "label": "Finasteride (Propecia)", "value": "finasteride"}
+        * {"id": "c3", "label": "Dutasteride (Avodart)", "value": "dutasteride"}
+        * {"id": "c4", "label": "Biotin or biotin-based vitamins", "value": "biotin"}
+        * {"id": "c5", "label": "Ketoconazole shampoo", "value": "ketoconazole-shampoo"}
+        * {"id": "c6", "label": "Steroid-based scalp injections", "value": "steroid-injections"}
+        * {"id": "c7", "label": "Hair transplant", "value": "transplant"}
+        * {"id": "c8", "label": "PRP (platelet-rich plasma)", "value": "prp"}
+        * {"id": "1776845700752", "label": "Other", "value": "other", "selectBehavior": "allow-other"}
+        * {"id": "1777426294162", "label": "None of the above", "value": "none-of-the-above", "selectBehavior": "deselect-others"}
+  - block block-1784100322077-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+  - block cart-drawer-node-6 [component:Cart] 
+      drawerHeight: 480
+====================================================================================================
+  edges out: edge-8 -> node-8 "Next"
+node-7  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"version": 2, "omitHeader": true}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: Do you have any issues with sexual dysfunction currently?
+      sublabel: 
+  - block block-1784100322077-3 [yes-no] 
+      label: Do you have any issues with sexual dysfunction currently?
+      required: true
+      alwaysShowNextButton: true
+  - block block-1784100322077-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+  - block cart-drawer-node-7 [component:Cart] 
+      drawerHeight: 480
+====================================================================================================
+  edges out: edge-9 -> node-9 "Next"
+node-8  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"version": 2, "omitHeader": true}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: Are you allergic to any of the following? Select all that apply.
+      sublabel: 
+  - block block-1784100322077-3 [multi-choice] 
+      label: Are you allergic to any of the following? Select all that apply.
+      sublabel: 
+      required: false
+      allowMulti: true
+      showCheckbox: true
+      layout: list
+      options:
+        * {"id": "c0", "label": "Finasteride", "value": "finasteride"}
+        * {"id": "c1", "label": "Dutasteride", "value": "dutasteride"}
+        * {"id": "c2", "label": "Minoxidil", "value": "minoxidil"}
+        * {"id": "c3", "label": "Tretinoin", "value": "tretinoin"}
+        * {"id": "c4", "label": "Ketoconazole", "value": "ketoconazole"}
+        * {"id": "c5", "label": "Latanoprost or Bimatoprost", "value": "latanoprost"}
+        * {"id": "c6", "label": "Azelaic Acid", "value": "azelaic"}
+        * {"id": "c7", "label": "Caffeine", "value": "caffeine"}
+        * {"id": "c8", "label": "Melatonin", "value": "melatonin"}
+        * {"id": "c9", "label": "Fluocinolone or Hydrocortisone", "value": "steroid"}
+        * {"id": "1776845724343", "label": "Other", "value": "other", "selectBehavior": "allow-other"}
+        * {"id": "1777426322448", "label": "None of the above", "value": "none-of-the-above", "selectBehavior": "deselect-others"}
+  - block block-1784100322077-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+  - block cart-drawer-node-8 [component:Cart] 
+      drawerHeight: 480
+====================================================================================================
+  edges out: edge-10 -> node-10 "Next"
+node-9  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"version": 2, "omitHeader": true}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: Do you have any of the following medical conditions? Select all that apply.
+      sublabel: 
+  - block block-1784100322077-3 [multi-choice] 
+      label: Do you have any of the following medical conditions? Select all that apply.
+      sublabel: 
+      required: false
+      allowMulti: true
+      layout: list
+      options:
+        * {"id": "c0", "label": "Heart failure or heart disease", "value": "heart-failure"}
+        * {"id": "c1", "label": "Heart attack or coronary artery disease", "value": "heart-attack"}
+        * {"id": "c2", "label": "Stroke", "value": "stroke"}
+        * {"id": "c3", "label": "Low blood pressure", "value": "low-bp"}
+        * {"id": "c4", "label": "Pheochromocytoma", "value": "pheochromocytoma"}
+        * {"id": "c5", "label": "Liver problems", "value": "liver"}
+        * {"id": "c6", "label": "Kidney disease", "value": "kidney"}
+        * {"id": "c7", "label": "Thyroid disease", "value": "thyroid"}
+        * {"id": "c8", "label": "Breast or prostate cancer", "value": "cancer"}
+        * {"id": "c9", "label": "Prostate enlargement (BPH)", "value": "bph"}
+        * {"id": "c10", "label": "HIV", "value": "hiv"}
+        * {"id": "c11", "label": "Autoimmune disease", "value": "autoimmune"}
+        * {"id": "c12", "label": "Glaucoma or eye conditions", "value": "glaucoma"}
+        * {"id": "1776845737667", "label": "Other", "value": "other", "selectBehavior": "allow-other"}
+        * {"id": "1777426317622", "label": "None of the above", "value": "none-of-the-above", "selectBehavior": "deselect-others"}
+  - block block-1784100322077-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+  - block cart-drawer-node-9 [component:Cart] 
+      drawerHeight: 480
+====================================================================================================
+  edges out: edge-11 -> node-11 "Yes"; edge-12 -> node-12 "No"
+node-10  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"version": 2, "omitHeader": true}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: Have you had any surgeries?
+      sublabel: 
+  - block block-1784100322077-3 [yes-no] {"outputAlias": "block-1784100322077-3"}
+      label: Have you had any surgeries?
+      required: true
+      alwaysShowNextButton: true
+  - block block-1784100322077-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+  - block cart-drawer-node-10 [component:Cart] 
+      drawerHeight: 480
+  PATH "Yes" -> node-11   when (node-10.block-1784100322077-3 equal "yes") 
+  PATH "No" (default) -> node-12   when (node-10.block-1784100322077-3 equal "no") 
+====================================================================================================
+  edges out: edge-14 -> node-13 "Yes"; edge-15 -> node-14 "No"
+node-12  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"version": 2, "omitHeader": true}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: Are you currently taking any medications, vitamins, or supplements?
+      sublabel: 
+  - block block-1784100322077-3 [yes-no] {"outputAlias": "block-1784100322077-3"}
+      label: Are you currently taking any medications, vitamins, or supplements?
+      required: true
+      alwaysShowNextButton: true
+  - block block-1784100322077-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+  - block cart-drawer-node-12 [component:Cart] 
+      drawerHeight: 480
+  PATH "Yes" -> node-13   when (node-12.block-1784100322077-3 equal "yes") 
+  PATH "No" (default) -> node-14   when (node-12.block-1784100322077-3 equal "no") 
+====================================================================================================
+  edges out: edge-17 -> node-15 "Next"
+node-14  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"version": 2, "omitHeader": true}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: Do you have concerns about your mood, depression, anxiety, or excessive worrying?
+      sublabel: 
+  - block block-1784100322077-3 [yes-no] 
+      label: Do you have concerns about your mood, depression, anxiety, or excessive worrying?
+      required: true
+      alwaysShowNextButton: true
+  - block block-1784100322077-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+  - block cart-drawer-node-14 [component:Cart] 
+      drawerHeight: 480
+====================================================================================================
+  edges out: edge-18 -> node-16 "Next"
+node-15  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"version": 2, "omitHeader": true}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: In the last 2 weeks, have you lost interest in doing your daily routine?
+      sublabel: 
+  - block block-1784100322077-3 [yes-no] 
+      label: In the last 2 weeks, have you lost interest in doing your daily routine?
+      required: true
+      alwaysShowNextButton: true
+  - block block-1784100322077-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+  - block cart-drawer-node-15 [component:Cart] 
+      drawerHeight: 480
+====================================================================================================
+  edges out: edge-19 -> node-21 "Yes"; edge-20 -> node-17 "No"
+node-16  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"version": 2, "omitHeader": true}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: In the last 2 weeks, have you had any thoughts of hurting yourself?
+      sublabel: 
+  - block block-1784100322077-3 [yes-no] {"outputAlias": "block-1784100322077-3"}
+      label: In the last 2 weeks, have you had any thoughts of hurting yourself?
+      required: true
+      alwaysShowNextButton: true
+  - block block-1784100322077-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+  - block cart-drawer-node-16 [component:Cart] 
+      drawerHeight: 480
+  PATH "Yes - Self-harm risk" -> node-21   when (node-16.block-1784100322077-3 equal "yes") 
+  PATH "No" (default) -> node-17   when (node-16.block-1784100322077-3 equal "no") 
+====================================================================================================
+  edges out: edge-21 -> node-18 "Next"
+node-17  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"version": 2, "omitHeader": true}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: Important Mental Health Warning
+      sublabel: 
+  - block block-1784100322077-3 [statement] 
+      label: Important Mental Health Warning
+      content: <p><strong>Important:</strong> Finasteride and dutasteride (5-alpha-reductase inhibitors) may worsen depression or anxiety symptoms. Oral use carries higher risk than topical. If you experience thoughts of self-harm while using this medication, discontinue immediately and call 911.</p> <p>Please read the above carefully before continuing.</p>
+  - block block-1784100322077-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+  - block cart-drawer-node-17 [component:Cart] 
+      drawerHeight: 480
+====================================================================================================
+  edges out: edge-1788948121318 -> node-1788948098392 "2. Path B"; edge-22 -> node-19 "1. Path A"
+node-18  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"version": 2, "omitHeader": true}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: Is there anything else you want your doctor to know about your condition or health?
+      sublabel: 
+  - block block-1784100322077-3 [yes-no] {"outputAlias": "block-1784100322077-3"}
+      label: Is there anything else you want your doctor to know about your condition or health?
+      required: true
+      alwaysShowNextButton: true
+  - block block-1784100322077-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+  - block cart-drawer-node-18 [component:Cart] 
+      drawerHeight: 480
+  PATH "Path A" -> node-19   when (node-18.block-1784100322077-3 equal "yes") 
+  PATH "Path B" (default) -> node-1788948098392   when - 
+====================================================================================================
+  edges out: edge-1788948272850 -> node-1788948272849 "Next"
+node-1788948098392  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"required": false, "version": 2, "autoContinueOnSelect": false}
+  - block wh2ip7r [component:Custom Strut Header] 
+      logoUrl: https://assets.pathwai.care/organizations/69aa4bdd25bc7851eb9bac29/assets/logo-1777588358394-7a97a2dd424217ff.svg
+      logoHeight: 28
+      showArrow: true
+      showPercent: true
+      showRemaining: false
+      remainingText: steps left
+      fillColor: var(--pw-progress-fill, #161336)
+      trackColor: var(--pw-progress-track, #EFEFEC)
+      arrowColor: var(--pw-header-fg, #1C1C21)
+      percentColor: var(--pw-color-muted, #71717a)
+      barHeight: 4
+      barRadius: 999
+      gap: 12
+      maxWidth: 710
+      sidePadding: 20
+      fallbackPercent: 0
+  - block block-1788948098391-3 [component:Strut Auth] 
+      defaultMode: signup
+====================================================================================================
+  edges out: edge-1788948320318 -> node-1788948320318 "Next"
+node-1788948272849  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"required": false, "version": 2, "autoContinueOnSelect": false}
+  - block msknw7a [component:Custom Strut Header] 
+      logoUrl: https://assets.pathwai.care/organizations/69aa4bdd25bc7851eb9bac29/assets/logo-1777588358394-7a97a2dd424217ff.svg
+      logoHeight: 28
+      showArrow: true
+      showPercent: true
+      showRemaining: false
+      remainingText: steps left
+      fillColor: var(--pw-progress-fill, #161336)
+      trackColor: var(--pw-progress-track, #EFEFEC)
+      arrowColor: var(--pw-header-fg, #1C1C21)
+      percentColor: var(--pw-color-muted, #71717a)
+      barHeight: 4
+      barRadius: 999
+      gap: 12
+      maxWidth: 710
+      sidePadding: 20
+      fallbackPercent: 0
+  - block block-1788948272849-2 [label] 
+      label: What is your address?
+      sublabel: 
+  - block block-1788948272849-3 [address] 
+      required: false
+      label: What is your address?
+      sublabel: Start typing to search for your address
+      placeholder: Search for your address...
+      showStreet2: true
+      street2Placeholder: Apt, suite, unit, etc. (optional)
+      restrictToCountry: 
+  - block block-1788948272849-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+====================================================================================================
+  edges out: edge-1788948362992 -> node-1788948362991 "Next"
+node-1788948320318  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"required": false, "version": 2, "autoContinueOnSelect": false}
+  - block lp5s61x [component:Custom Strut Header] 
+      logoUrl: https://assets.pathwai.care/organizations/69aa4bdd25bc7851eb9bac29/assets/logo-1777588358394-7a97a2dd424217ff.svg
+      logoHeight: 28
+      showArrow: true
+      showPercent: true
+      showRemaining: false
+      remainingText: steps left
+      fillColor: var(--pw-progress-fill, #161336)
+      trackColor: var(--pw-progress-track, #EFEFEC)
+      arrowColor: var(--pw-header-fg, #1C1C21)
+      percentColor: var(--pw-color-muted, #71717a)
+      barHeight: 4
+      barRadius: 999
+      gap: 12
+      maxWidth: 710
+      sidePadding: 20
+      fallbackPercent: 0
+  - block block-1788948320318-2 [label] 
+      label: Verify your identity
+      sublabel: 
+  - block block-1788948320318-3 [component:Strut ID Verification] 
+      templateId: itmpl_QPBfFdfmLGm2itLsWEkeWGgJ
+      environment: production
+      subject: person_v1
+      brandColor: #161336
+      textColor: #0F1714
+      mutedColor: #6B7670
+      ctaText: Start Identity Verification
+      prefillNameFirst: {{user.profile.firstName}}
+      prefillNameLast: {{user.profile.lastName}}
+      prefillNameMiddle: 
+      prefillBirthdate: {{user.profile.dob}}
+      prefillEmailAddress: {{user.profile.email}}
+      prefillPhoneNumber: {{user.profile.phone}}
+      prefillAddressStreet1: {{user.profile.address.street}}
+      prefillAddressStreet2: {{user.profile.address.street2}}
+      prefillAddressCity: {{user.profile.address.city}}
+      prefillAddressSubdivision: {{user.profile.address.state}}
+      prefillAddressPostalCode: {{user.profile.address.zip}}
+      prefillAddressCountryCode: {{user.profile.address.country}}
+====================================================================================================
+  edges out: edge-1788948387059 -> node-1788948387059 "Next"
+node-1788948362991  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"required": false, "version": 2, "autoContinueOnSelect": false}
+  - block block-1788948362991-3 [component:Custom Strut Header] 
+      logoUrl: https://assets.pathwai.care/organizations/69aa4bdd25bc7851eb9bac29/assets/logo-1777588358394-7a97a2dd424217ff.svg
+      logoHeight: 28
+      showArrow: true
+      showPercent: true
+      showRemaining: false
+      remainingText: steps left
+      fillColor: var(--pw-progress-fill, #161336)
+      trackColor: var(--pw-progress-track, #EFEFEC)
+      arrowColor: var(--pw-header-fg, #1C1C21)
+      percentColor: var(--pw-color-muted, #71717a)
+      barHeight: 4
+      barRadius: 999
+      gap: 12
+      maxWidth: 710
+      sidePadding: 20
+      fallbackPercent: 0
+  - block sa1t0c7 [component:Shopping Cart] 
+      buttonText: Proceed to Checkout
+====================================================================================================
+  edges out: edge-1788948428854 -> node-1788948428853 "Next"
+node-1788948387059  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"required": false, "version": 2, "autoContinueOnSelect": false}
+  - block wox0ca6 [component:Custom Strut Header] 
+      logoUrl: https://assets.pathwai.care/organizations/69aa4bdd25bc7851eb9bac29/assets/logo-1777588358394-7a97a2dd424217ff.svg
+      logoHeight: 28
+      showArrow: true
+      showPercent: true
+      showRemaining: false
+      remainingText: steps left
+      fillColor: var(--pw-progress-fill, #161336)
+      trackColor: var(--pw-progress-track, #EFEFEC)
+      arrowColor: var(--pw-header-fg, #1C1C21)
+      percentColor: var(--pw-color-muted, #71717a)
+      barHeight: 4
+      barRadius: 999
+      gap: 12
+      maxWidth: 710
+      sidePadding: 20
+      fallbackPercent: 0
+  - block block-1788948387059-2 [label] 
+      label: Payment Details
+      sublabel: 
+  - block block-1788948387059-3 [payment] 
+      required: true
+      processor: authorize-net
+      environment: production
+      label: Payment Details
+      sublabel: Your payment information is securely processed.
+      mode: setup
+      customerEmail: 
+      currency: usd
+      buttonText: Save Card
+      collectBillingAddress: false
+      billingAddress: {{user.profile.address}}
+      billingFirstName: {{user.profile.firstName}}
+      billingLastName: {{user.profile.lastName}}
+====================================================================================================
+  edges out: edge-1788948455106 -> node-1788948455105 "2. Success"; edge-1788948483008 -> node-1788948387059 "1. Card declined"
+node-1788948428853  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"required": false, "version": 2, "autoContinueOnSelect": false}
+  - block block-1788948428853-3 [component:Strut Finalize] 
+  PATH "Card declined" -> node-1788948387059   when (node-1788948428853.block-1788948428853-3.status equal "declined") 
+  PATH "Success" (default) -> node-1788948455105   when - 
+====================================================================================================
+  edges out: 
+node-1788948455105  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"required": false, "version": 2, "autoContinueOnSelect": false}
+  - block 9tytj9m [component:Custom Strut Header] 
+      logoUrl: https://assets.pathwai.care/organizations/69aa4bdd25bc7851eb9bac29/assets/logo-1777588358394-7a97a2dd424217ff.svg
+      logoHeight: 28
+      showArrow: true
+      showPercent: true
+      showRemaining: false
+      remainingText: steps left
+      fillColor: var(--pw-progress-fill, #161336)
+      trackColor: var(--pw-progress-track, #EFEFEC)
+      arrowColor: var(--pw-header-fg, #1C1C21)
+      percentColor: var(--pw-color-muted, #71717a)
+      barHeight: 4
+      barRadius: 999
+      gap: 12
+      maxWidth: 710
+      sidePadding: 20
+      fallbackPercent: 0
+  - block block-1788948455105-3 [component:OrderSuccess] 
+      thankYouTitle: Order completed
+      thankYouMessage: Thank you — we received your order.
+      reviewMessage: A doctor from our team will review your order and we will email you once your prescription has been written.
+      expectationMessage: You should hear from us within 48 hours.
+      detailsHeading: Your order
+  - block rzsm6l0 [component:Go to struthealth] 
+====================================================================================================
+  edges out: edge-1788948098392 -> node-1788948098392 "Next"
+node-19  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true, "layoutPinned": true}
+  config: {"version": 2, "autoContinueOnSelect": false, "omitHeader": true}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: Please share any additional information for your doctor.
+      sublabel: 
+  - block block-1784100322077-3 [text-area] 
+      label: Please explain:
+      sublabel: Please provide your detailed response
+      required: true
+      placeholder: Share any additional health information...
+      maxLength: 1000
+      rows: 5
+  - block block-1784100322077-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+  - block cart-drawer-node-19 [component:Cart] 
+      drawerHeight: 480
+====================================================================================================
+  edges out: edge-27 -> node-16 "1. Go back"; edge-28 -> node-23 "2. End"
+node-21  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"version": 2}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: Safety Alert
+      sublabel: Your safety is our top priority. If you are having thoughts of hurting yourself, please contact the 988 Suicide and Crisis Lifeline by calling or texting 988, or call 911. A physician will still review your questionnaire. You may go back and update your answer, or end the questionnaire.
+  - block block-1784100322077-3 [multi-choice] 
+      label: Safety Alert
+      sublabel: Your safety is our top priority. If you are having thoughts of hurting yourself, please contact the 988 Suicide and Crisis Lifeline by calling or texting 988, or call 911. A physician will still review your questionnaire. You may go back and update your answer, or end the questionnaire.
+      required: true
+      allowMulti: false
+      layout: list
+      options:
+        * {"id": "c0", "label": "Go back and update my answer", "value": "go-back"}
+        * {"id": "c1", "label": "End questionnaire", "value": "end"}
+  - block block-1784100322077-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+  PATH "Go back" -> node-16   when (node-21.block-1784100322077-3 equal "c0") 
+  PATH "End" (default) -> node-23   when (node-21.block-1784100322077-3 equal "end") 
+====================================================================================================
+  edges out: 
+node-23  type=ending-ds  {"hideLabel": true, "hideFooter": true}
+  config: {"mode": "redirect", "redirect": {"url": "www.struthealth.co", "appendFlowVariables": false, "appendQueryParams": []}, "sideEffects": []}
+====================================================================================================
+  edges out: edge-16 -> node-14 "Next"
+node-13  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"version": 2, "omitHeader": true}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: Please list all current medications, vitamins, and supplements with dosages:
+      sublabel: 
+  - block block-1784100322077-3 [text-area] 
+      label: Please list all current medications, vitamins, and supplements with dosages:
+      required: true
+      placeholder: List your medications...
+      rows: 4
+  - block block-1784100322077-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+  - block cart-drawer-node-13 [component:Cart] 
+      drawerHeight: 480
+====================================================================================================
+  edges out: edge-13 -> node-12 "Next"
+node-11  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"version": 2, "omitHeader": true}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: Please describe your surgical history:
+      sublabel: 
+  - block block-1784100322077-3 [text-area] 
+      label: Please describe your surgical history:
+      required: true
+      placeholder: Describe your surgeries...
+      rows: 4
+  - block block-1784100322077-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+  - block cart-drawer-node-11 [component:Cart] 
+      drawerHeight: 480
+====================================================================================================
+  edges out: edge-25 -> node-1 "1. Go back"; edge-26 -> node-23 "2. End"
+node-20  type=react-block  {"hideHeader": true, "hideFooter": true, "hideLabel": true}
+  config: {"version": 2}
+  - block block-1784100322077-1 [component:Custom Strut Header] 
+  - block block-1784100322077-2 [label] 
+      label: Age Verification
+      sublabel: These medications are only available for patients 18 and older. If you selected the wrong answer, you can go back and update it.
+  - block block-1784100322077-3 [multi-choice] 
+      label: Age Verification
+      sublabel: These medications are only available for patients 18 and older. If you selected the wrong answer, you can go back and update it.
+      required: true
+      allowMulti: false
+      layout: list
+      options:
+        * {"id": "c0", "label": "Go back and update my answer", "value": "go-back"}
+        * {"id": "c1", "label": "End questionnaire", "value": "end"}
+  - block block-1784100322077-4 [navigation-buttons] 
+      hideNavigationButton: false
+      autoProceedDelay: 0
+  PATH "Go back" -> node-1   when (node-20.block-1784100322077-3 equal "c0") 
+  PATH "End" (default) -> node-23   when (node-20.block-1784100322077-3 equal "end") 
+
+EDGES
+  edge-10: node-9 -> node-10  {"label": "Next"}
+  edge-11: node-10 -> node-11  {"label": "Yes"}
+  edge-12: node-10 -> node-12  {"label": "No"}
+  edge-13: node-11 -> node-12  {"label": "Next"}
+  edge-14: node-12 -> node-13  {"label": "Yes"}
+  edge-15: node-12 -> node-14  {"label": "No"}
+  edge-16: node-13 -> node-14  {"label": "Next"}
+  edge-17: node-14 -> node-15  {"label": "Next"}
+  edge-1778105332704: node-1778105320499 -> node-1  {}
+  edge-1779173906359: node-1779173500330 -> node-3  {}
+  edge-1788948098392: node-19 -> node-1788948098392  {"condition": "default", "label": "Next"}
+  edge-1788948121318: node-18 -> node-1788948098392  {"label": "2. Path B"}
+  edge-1788948272850: node-1788948098392 -> node-1788948272849  {"condition": "default", "label": "Next"}
+  edge-1788948320318: node-1788948272849 -> node-1788948320318  {"condition": "default", "label": "Next"}
+  edge-1788948362992: node-1788948320318 -> node-1788948362991  {"condition": "default", "label": "Next"}
+  edge-1788948387059: node-1788948362991 -> node-1788948387059  {"condition": "default", "label": "Next"}
+  edge-1788948428854: node-1788948387059 -> node-1788948428853  {"condition": "default", "label": "Next"}
+  edge-1788948455106: node-1788948428853 -> node-1788948455105  {"condition": "default", "label": "2. Success"}
+  edge-1788948483008: node-1788948428853 -> node-1788948387059  {"label": "1. Card declined"}
+  edge-1789540004266: node-1 -> node-1779173500330  {"label": "3. Path C"}
+  edge-18: node-15 -> node-16  {"label": "Next"}
+  edge-19: node-16 -> node-21  {"label": "Yes"}
+  edge-2: node-1 -> node-20  {"label": "2. Under 18"}
+  edge-20: node-16 -> node-17  {"label": "No"}
+  edge-21: node-17 -> node-18  {"label": "Next"}
+  edge-22: node-18 -> node-19  {"label": "1. Path A"}
+  edge-25: node-20 -> node-1  {"label": "1. Go back"}
+  edge-26: node-20 -> node-23  {"label": "2. End"}
+  edge-27: node-21 -> node-16  {"label": "1. Go back"}
+  edge-28: node-21 -> node-23  {"label": "2. End"}
+  edge-4: node-3 -> node-4  {"label": "Next"}
+  edge-5: node-4 -> node-5  {"label": "Next"}
+  edge-6: node-5 -> node-6  {"label": "Next"}
+  edge-7: node-6 -> node-7  {"label": "Next"}
+  edge-8: node-7 -> node-8  {"label": "Next"}
+  edge-9: node-8 -> node-9  {"label": "Next"}
+  edge-start-1784100995818: node-start-1784100995818 -> node-1778105320499  {"label": "1. Default"}
+
+SCRIPTS
+{
+ "onStarted": "/**\n * window.strut \u2014 PathwAI Oral Minoxidil Men event file / checkout SDK.\n *\n * Paste this entire file into the Minoxidil PathwAI flow only.\n * Do not paste into BHRT, SuperStrut, Semaglutide, Sildenafil, Tadalafil,\n * Tirzepatide, Dutasteride, Enclomiphene, or Finasteride.\n *\n * Staging price map (admin / checkout.strut-test.com/oral_minoxidil_men):\n *   dose_2_5   \u2192 2256  ($65 / 90 Day Supply - 2.5 mg)\n *   dose_1_25  \u2192 2257  ($55 / 90 Day Supply - 2.5 mg (1.25mg))\n * Production (checkout.struthealth.com/oral_minoxidil_men):\n *   dose_2_5   \u2192 797   ($65 / 90 Day Supply - 2.5 mg)\n *   dose_1_25  \u2192 798   ($55 / 90 Day Supply - 2.5 mg (1.25mg))\n *\n * Env: window.strut_env = 'staging' | 'production'\n *   Staging PathwAI flow \u2192 leave as 'staging' (default below).\n *   Production PathwAI flow \u2192 set window.strut_env = 'production' before this file runs.\n *\n * FinishOrderV2 always sends productPriceId so checkout does not fall\n * back to a leftover SKU from another flow.\n *\n * Paste pathwai-minoxidil-pricing-card.tsx into the Add to cart / product card.\n * That card calls strut.addToCart() \u2192 validateVisiting \u2192 pathwai.flow.next().\n *\n *   await strut.status()\n *   await strut.validateVisiting('oral_minoxidil_men', strut.skuId('dose_2_5'))\n *   await strut.validateVisiting('oral_minoxidil_men', strut.skuId('dose_1_25'))\n *   await strut.finishOrderV2({ customerProfileId, paymentProfileId })\n *\n * A selfie or ID photo is uploaded with PUT media/UploadFiles, then attached\n * with POST checkout/SavePhotoUpload before FinishOrderV2. Admin and physician\n * Photos read those PhotoUpload rows after the order succeeds.\n */\n//window.strut_env = 'staging';\n(function () {\n  'use strict';\n\n  function detectEnv() {\n    const isStaging = window.strut_env === 'staging';\n    if (isStaging) {\n      return {\n        api: 'https://checkout-api.strut-test.com/api',\n        checkout: 'https://checkout.strut-test.com',\n        account: 'https://my.strut-test.com',\n        namespace: 'struthealthProd',\n      };\n    }\n    return {\n      api: 'https://checkout-api.struthealth.com/api',\n      checkout: 'https://checkout.struthealth.com',\n      account: 'https://my.struthealth.com',\n      namespace: 'struthealthGoLive',\n    };\n  }\n\n  const ENV = detectEnv();\n  const LS = {\n    ACCESS_TOKEN:   `${ENV.namespace}_AccessToken`,\n    VISITING:       'Visiting',\n    VISITING_ORDER: 'Visiting.OrderId',\n    AUTH_PARAMS:    'AuthParams',\n    LINK_CHECKOUT:  'LinkCheckout',\n    QUESTIONS:      'QuestionAnswers',\n    SELECTED_PRICE: 'Strut.MinoxidilPriceId',\n    AUTHNET:        'Strut.MinoxidilAuthNet',\n    FINISH_LOCK:    'Strut.MinoxidilOrderSubmitted',\n    PHOTOS:         'Strut.MinoxidilPhotos',\n    PHOTOS_SAVED:   'Strut.MinoxidilPhotosSaved',\n  };\n\n  // PathwAI SKU map. Prod ids are invalid on staging and vice versa.\n  const MINOXIDIL = [\n    { key: 'dose_2_5',  staging: 2256, prod: 797, amount: 65, form: 'oral', qty: 1, label: '90 Day Supply - 2.5 mg' },\n    { key: 'dose_1_25', staging: 2257, prod: 798, amount: 55, form: 'oral', qty: 1, label: '90 Day Supply - 2.5 mg (1.25mg)' },\n  ];\n\n  function lsGet(key) {\n    const raw = localStorage.getItem(key);\n    if (!raw || raw === 'undefined') return null;\n    try { return JSON.parse(raw); } catch { return null; }\n  }\n  function lsSet(key, value) { localStorage.setItem(key, JSON.stringify(value)); }\n  function lsDel(key) { localStorage.removeItem(key); }\n\n  function isJwtExpired(token) {\n    if (!token) return true;\n    try {\n      const payload = JSON.parse(atob(token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/')));\n      return typeof payload.exp === 'number' && Date.now() / 1000 >= payload.exp;\n    } catch (e) {\n      return true;\n    }\n  }\n\n  function getToken() {\n    const user = lsGet(LS.ACCESS_TOKEN);\n    const token = user?.AccessToken?.Token || null;\n    if (!token) return null;\n    if (isJwtExpired(token)) {\n      _log('Ignoring expired AccessToken');\n      return null;\n    }\n    return token;\n  }\n\n  function setTokenFromBearer(bearerString) {\n    const token = bearerString.replace(/^Bearer\\s+/i, '').trim();\n    const existing = lsGet(LS.ACCESS_TOKEN) || {};\n    if (!existing.AccessToken) existing.AccessToken = {};\n    existing.AccessToken.Token = token;\n    lsSet(LS.ACCESS_TOKEN, existing);\n    _log('Token stored under', LS.ACCESS_TOKEN);\n    return token;\n  }\n\n  function isCheckoutApiUrl(url) {\n    return /checkout-api\\.strut(-test)?\\.com/i.test(String(url || ''));\n  }\n\n  /** PathwAI Persona / GetCurrentVisiting often omit Authorization \u2014 inject Strut JWT. */\n  function withAuthHeaders(headers, token) {\n    if (!token) return headers;\n    const next = headers || {};\n    if (typeof Headers !== 'undefined' && next instanceof Headers) {\n      if (!next.has('Authorization')) next.set('Authorization', `Bearer ${token}`);\n      return next;\n    }\n    const plain = { ...(typeof next === 'object' ? next : {}) };\n    const hasAuth = Object.keys(plain).some(k => k.toLowerCase() === 'authorization');\n    if (!hasAuth) plain.Authorization = `Bearer ${token}`;\n    return plain;\n  }\n\n  function base() { return ENV.api.replace(/\\/$/, ''); }\n\n  function jsonHeaders(token) {\n    const h = { 'Accept': 'application/json', 'Content-Type': 'application/json' };\n    if (token) h['Authorization'] = `Bearer ${token}`;\n    return h;\n  }\n\n  function formHeaders(token) {\n    const h = { 'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded' };\n    if (token) h['Authorization'] = `Bearer ${token}`;\n    return h;\n  }\n\n  function toForm(obj) {\n    return Object.entries(obj)\n      .filter(([, v]) => v !== undefined && v !== null)\n      .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)\n      .join('&');\n  }\n\n  async function a
+
+COMPONENTS
+  69bd42d363005a53b934cd34  Cart  props=["drawerHeight"]
+  69c528014abdf8a3c3ba4a44  Demo Pricing step  props=["productName", "productImage", "productDescription", "accentColor", "buttonText"]
+  69c53fa11126ba9c176820af  Mojo Grid  props=["productName", "productImage", "productDescription", "accentColor"]
+  69c5411d1126ba9c176820b4  Mojo Selector v2  props=["productName", "productImage", "productDescription", "accentColor", "buttonText"]
+  69e72c7d5c56180cbadc3fe0  Welcome Screen Animation  props=["image", "image2", "imageDuration", "headline", "subtitle", "body", "badge", "headlineColor", "subtitleColor", "bodyColor", "badgeColor", "gradientStart", "gradientEnd", "cardBorderRadius", "headingFont", "bodyFont"]
+  69e72dce5c56180cbadc407a  Trust Pilot Widget  props=["rating", "reviewCount", "reviewsUrl", "textColor", "linkColor", "bodyFont"]
+  69e72f095c56180cbadc40bb  Weight meter AI  props=["defaultValue", "unit", "showUnitToggle", "accentColor", "headingFont", "bodyFont", "tickColor", "tickBigColor", "labelColor", "valueColor", "unitColor", "indicatorWidth"]
+  69e730735c56180cbadc412e  Body Comp Man  props=["accentColor", "glowColor", "labelActiveColor", "labelInactiveColor", "dotActiveColor", "dotInactiveColor", "headingFont", "bodyFont", "bodyImage"]
+  69e730d35c56180cbadc4160  Body Comp Female  props=["accentColor", "glowColor", "labelActiveColor", "labelInactiveColor", "dotActiveColor", "dotInactiveColor", "headingFont", "bodyFont", "bodyImage"]
+  69e731425c56180cbadc4192  Social Proof Carrousel 1  props=["cardBg", "pillColor", "pillTextColor", "nameColor", "durationColor", "benefitColor", "benefitBg", "nameFont", "bodyFont", "speed", "card1Name", "card1Lost", "card1Duration", "card1Benefit", "card1Img", "card2Name", "card2Lost", "card2Duration", "card2Benefit", "card2Img", "card3Name", "card3Lost", …[487 chars]
+  69e7322d5c56180cbadc41f0  BMI AI  props=["useMetric", "accentColor", "trackColor", "defaultBmiColor", "inputBackground", "inputBorderColor", "inputFocusBorderColor", "labelColor", "placeholderColor", "inputBorderWidth", "inputBorderRadius", "bodyFont", "headingFont"]
+  69e733075c56180cbadc4240  Weight loss summary  props=["startWeight", "goalWeight", "unit", "goalDateOverride", "weeklyLossRate", "dateFormat", "curveColor", "curveWidth", "curveGlow", "fillColor", "fillOpacity", "dotFill", "dotStroke", "dotStrokeWidth", "dotRadius", "showStartPill", "showGoalPill", "weightPillBg", "weightPillTextColor", "weightPillFon …[688 chars]
+  69e733c15c56180cbadc427b  Insight panel AI  props=["image", "heading", "headingColor", "headingSize", "accentColor", "headingFont", "bodyFont"]
+  69e734925c56180cbadc42cb  Loader AI  props=["accentColor", "checkColor", "bodyFont", "headingFont", "ringSize", "ringStroke", "ringTrackColor", "percentColor", "activeTextColor", "stepDoneColor", "stepPendingColor", "percentLabel", "step1Text", "step2Text", "step3Text", "step4Text", "doneTitle", "doneSubtitle"]
+  69f2ac60a3481dcf3620aa75  Strut Auth (overlay)  props=[]
+  69f2c121d6cf90f7414d1a6c  Payment method  props=["authnetApiLoginId", "authnetClientKey"]
+  69f3c997b5372966016cea32  Welcome Screen Carrousel  props=["image", "image2", "imageDuration", "headline", "subtitle", "body", "badge", "headlineColor", "subtitleColor", "bodyColor", "badgeColor", "gradientStart", "gradientEnd", "cardBorderRadius", "headingFont", "bodyFont"]
+  69f3ccbfb5372966016ceb3e  Strut Logo Animation  props=["color", "backgroundColor", "maxWidth", "strokeWidth", "drawDuration", "fillDuration", "staggerDelay", "fadeInDuration", "fullScreen", "zIndex"]
+  69f3d22eb5372966016cec04  Welcome Screen Badge  props=[]
+  69f3dbabb5372966016ceec3  Condition badge  props=[]
+  69f3dc52b5372966016ceeed  Component 21  props=["title", "backgroundColor"]
+  69fbc6bfaa198805cede98f2  Informational card  props=["showLead", "leadText", "showBody", "bodyText", "showClosing", "closingText", "cardBg", "cardBorderColor", "cardBorderWidth", "cardBorderRadius", "cardShadow", "cardMaxWidth", "alignment", "marginTop", "marginBottom", "outerPaddingX", "leadColor", "bodyColor", "closingColor", "leadFontWeight", "bod …[367 chars]
+  6a0bcd4847d2dff2c5c0a4a9  Enclomiphene + Tadalafil  props=["brandColor", "discColor", "bottleImageUrl", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "titleBase", "subtitle", "supplyLabel", "doseLabel", "supply1Label", "supply1Month …[991 chars]
+  6a0bf4bb47d2dff2c5c0a7d4  Product selection 3 (simple)  props=["brandColor", "discColor", "bottleImageUrl", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "smallLabel", "titleBase", "doseText", "showAsLowAs", "asLowAsPrefix", "asLowAsSuffix", "asLowAsTe …[698 chars]
+  6a0c0a4247d2dff2c5c0aaa4  Product selection 4  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultFormula", "pricePeriodSuffix", "trustItem1" …[357 chars]
+  6a0c2ce747d2dff2c5c0aee2  Sildenafil : Dose selection  props=["brandColor", "discColor", "bottleImageUrl", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "titleBase", "subtitle", "supplyLabel", "sec1Label", "sec1Dose1Label", "sec1Dose1S …[1278 chars]
+  6a0c34d147d2dff2c5c0afb5  ParoxetineRx  props=["brandColor", "discColor", "bottleImageUrl", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "titleBase", "subtitle", "bundleSectionLabel", "bundle1Title", "bundle1Ingredients …[1168 chars]
+  6a0c416b47d2dff2c5c0b065  Product selection 7  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultVial", "pricePeriodSuffix", "trustItem1", " …[354 chars]
+  6a127347e844fccb9d83731b  Trust Badge 1  props=["text", "textColor", "borderColor", "bodyFont"]
+  6a127f1ee844fccb9d8373da  Recognition badge  props=[]
+  6a1606ffe986904eacaf25a5  Strut Auth  props=["defaultMode"]
+  6a161682e986904eacaf2661  Lab Option Selector  props=["optionBPrice", "optionBProductId", "optionCPrice", "optionCProductId"]
+  6a162468e986904eacaf273c  Trust badge 2  props=[]
+  6a18e4c6cbe1feea57db7e12  Disclaimer 1  props=["text", "icon", "showIcon", "variant", "brandColor", "textColor", "warningColor", "successColor", "neutralColor", "borderRadius", "fontSize", "marginTop", "marginBottom"]
+  6a18ea51cbe1feea57db7ec6  Block 35  props=["col1Icon", "col1Label", "col2Icon", "col2Label", "col3Icon", "col3Label", "col4Icon", "col4Label", "col5Icon", "col5Label", "showDividers", "brandColor", "circleBgColor", "iconColor", "labelColor", "dividerColor", "labelFontWeight", "maxWidth", "paddingY"]
+  6a311715f08224833c0ac538  Strut Finalize  props=[]
+  6a4b4686a06a4fb95ea510ba  BHRT Product selection  props=["nameProgesteroneCapsule", "nameEstradiolCapsule", "nameEstradiolPatch", "nameBiestCream", "nameEstriolCream", "nameProgesteroneCream", "imgProgesteroneCapsule", "imgEstradiolCapsule", "imgEstradiolPatch", "imgBiestCream", "imgEstriolCream", "imgProgesteroneCream", "bottleImageUrl", "imageFit", "di …[450 chars]
+  6a4b4a6ea06a4fb95ea510c1  Progesterone product  props=["brandColor", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "cardShadowOpacity", "borderRadius", "title", "subtitle", "supplyLabel", "price", "originalPrice", "perMonthNote", "badge", "subnote", "markersTitle", "markers", "trust1Label", "trust1Icon", "trust2Label" …[428 chars]
+  6a4dc1075eaf5ad8b39503aa  Strut Lab Upload  props=["brandColor", "textColor", "mutedColor", "borderColor", "surfaceColor", "errorColor", "borderRadius", "ctaText", "maxFiles", "maxFileSizeMB", "multiple", "allowedFormats", "requireAtLeastOne"]
+  6a4dc8073f91d3eebc1aa488  Strut ID Verification  props=["templateId", "environment", "subject", "brandColor", "textColor", "mutedColor", "ctaText", "prefillNameFirst", "prefillNameLast", "prefillNameMiddle", "prefillBirthdate", "prefillEmailAddress", "prefillPhoneNumber", "prefillAddressStreet1", "prefillAddressStreet2", "prefillAddressCity", "prefillAd …[375 chars]
+  6a4efe9c575b119d8d5be3d9  Cart 1 (depricated)  props=["drawerHeight"]
+  6a4f000f575b119d8d5be413  New Block  props=["questionLabel", "exampleText", "systolicLabel", "systolicHint", "systolicPlaceholder", "diastolicLabel", "diastolicHint", "diastolicPlaceholder", "unitLabel", "ctaLabel", "required", "brandColor"]
+  6a55523bcaefddf27abcee7c  Strut Eligibility Gate  props=[]
+  6a562e942244fe6bd14b9bcd  Strut Login Link  props=[]
+  6a56f69a76d126689f3127c5  Custom Strut Header  props=["logoUrl", "logoHeight", "showArrow", "showPercent", "showRemaining", "remainingText", "fillColor", "trackColor", "arrowColor", "percentColor", "barHeight", "barRadius", "gap", "maxWidth", "sidePadding", "sideRailWidth", "fallbackPercent"]
+  6a5f8c587c80ca7282153773  Label (custom)  props=["label", "sublabel"]
+  6a70cc68e5ea1e1a83030047  New Block  props=["title", "colorUnderweight", "colorNormal", "colorOverweight", "colorObese"]
+  6a734c4a2e1383fd39af4314  Shopping Cart  props=["buttonText"]
+  6a73b8edd2984ea6605c789d  Card declined notice  props=[]
+  6a75657ed71901bc9e838c5f  Why this visit matters  props=["title", "body", "reassurance"]
+  6a756582d71901bc9e838c61  Safety screening  props=["title", "body", "reassurance"]
+  6a756589d71901bc9e838c63  Kidney health  props=["title", "body", "whyTitle", "whyBody", "nextTitle", "nextBody"]
+  6a75658ed71901bc9e838c65  About metformin  props=["eyebrow", "title", "lead"]
+  6a756815d71901bc9e838c70  About Low-Dose Naltrexone  props=["eyebrow", "title"]
+  6a7568aed71901bc9e838c89  Opioid safety check  props=["title", "body", "footerNote"]
+  6a7568ccd71901bc9e838c8b  You're almost there  props=["eyebrow", "title", "body"]
+  6a7587b9acd91326fd94b292  Ejecting embedded blocks to custom TSX: A polished “You’re a  props=["title", "body"]
+  6a7587ebacd91326fd94b29a  Ejecting embedded blocks to custom TSX: Polished “About Low-  props=["title", "lead"]
+  6a75a8e39c0d8a815483fb8b  New Block  props=["title", "backgroundColor"]
+  6a75c7c0d6531b64cfb5d39d  About This Medication  props=["title", "bodyText", "buttonText"]
+  6a7961c31ced3c3005ac8413  About metformin  props=["title", "lead"]
+  6a7961e01ced3c3005ac8415  You're almost there!  props=["title", "body", "ctaLabel"]
+  6a796e1fe7a5e6f5ca841640  You're almost there!  props=[]
+  6a796e20e7a5e6f5ca841642  About this medication  props=["eyebrow", "title"]
+  6a79a766e1014e9274a12ea6  About this medication  props=["title", "body"]
+  6a79a76ae1014e9274a12ea8  Opioid safety screening  props=["title", "body"]
+  6a79bd374e5a0ea5d65c6263  About this medication  props=["eyebrow", "title"]
+  6a7ac4c0ba3019e64e120f6b  Component 68  props=["title", "subtitle", "option1", "option2", "option3", "option4", "otherLabel", "otherPlaceholder"]
+  6a7c0353fdf38d096e19ab7e  Why we ask about opioids  props=["eyebrow", "title", "body"]
+  6a7c0359fdf38d096e19ab80  About Low-Dose Naltrexone  props=["eyebrow", "title", "body"]
+  6a7c89b2f435c7288ef8a23c  OrderSuccess  props=["thankYouTitle", "thankYouMessage", "reviewMessage", "expectationMessage", "detailsHeading"]
+  6a7caa0515644ca730dbffe5  Navigation (custom)  props=[]
+  6a7cab21a9da0f59e17af44c  Navigation (custom)  props=[]
+  6a7caca46bbd27a0e29c8e41  Ejecting embedded blocks to custom TSX: Order-completed than  props=["thankYouTitle", "thankYouMessage", "reviewMessage", "expectationMessage", "detailsHeading"]
+  6a7cb04566b8458310f9d638  Custom Component  props=["thankYouTitle", "thankYouMessage", "detailsHeading", "reviewMessage", "expectationMessage"]
+  6a7cb09766b8458310f9d644  Ejecting embedded blocks to custom TSX: Thank-you / order co  props=["thankYouTitle", "thankYouMessage", "detailsHeading", "reviewMessage", "expectationMessage"]
+  6a7cb3f92ec827b11cfad3f1  Go to struthealth  props=[]
+  6a7d5f84bc3b2e59c278af62  Choose your Progesterone Capsule supply  props=["eyebrow", "supportingLine", "productName", "productForm", "imageUrl", "helperText"]
+  6a7d63f7bc3b2e59c278af85  Ejecting embedded blocks to custom TSX: Custom Estradiol Ora  props=["title", "subtitle"]
+  6a7d649ed9052529c0d2540e  Progesterone protection  props=["headline", "clinicalCopy"]
+  6a7d6fb4a2a5246528f4c267  Ready to start your Estradiol Capsule journey  props=["headline", "sublabel", "ctaLabel"]
+  6a7d6fd9a2a5246528f4c269  Progesterone add-on required  props=["title", "body", "productName"]
+  6a7d7003a2a5246528f4c26b  Choose your Estradiol Capsule plan  props=["title", "subtitle"]
+  6a7d70b2be700be05a70e009  Ejecting embedded blocks to custom TSX: Progesterone add-on  props=["title", "body", "acceptLabel", "declineLabel"]
+  6a7d7b4a4cd83444a3cc76bf  Ejecting embedded blocks to custom TSX: Replaced the non-TSX  props=["imgEstradiolCapsule", "baseCheckoutUrl", "ctaLabel"]
+  6a7d844d34857b1c7d8d6267  Ready to start your Estradiol Patch journey  props=["title", "subtitle", "body", "ctaLabel"]
+  6a7d847234857b1c7d8d6269  Choose your Estradiol Patch supply  props=["productName", "productDescription", "imageUrl", "startingPriceLabel", "ctaLabel"]
+  6a7d84c84cd83444a3cc7772  Ejecting embedded blocks to custom TSX: Estradiol Patch supp  props=["title", "sublabel", "productName", "productImage", "ctaLabel"]
+  6a7d85304cd83444a3cc7795  Choose your Estradiol Patch supply  props=["productName", "productImage", "productDescription", "ctaLabel"]
+  6a7d8a814cd83444a3cc77cb  Ready to start Estradiol Patch  props=["badge", "eyebrow", "headline", "subcopy", "footnote"]
+  6a7d8abe4cd83444a3cc77cd  Confirm your Estradiol Patch plan  props=["productName", "productImage", "subtitle", "description"]
+  6a7d8c824cd83444a3cc7803  Ejecting embedded blocks to custom TSX: Estradiol Patch prod  props=["subtitle", "productLabel", "supplyLabel", "ctaLabel", "baseCheckoutUrl", "imgEstradiolPatch", "disclaimerText"]
+  6a7d8d9f34857b1c7d8d62e6  Ejecting embedded blocks to custom TSX: Custom Estradiol Pat  props=["productName", "productImage", "productId", "price30", "price90", "price150"]
+  6a7d92c834857b1c7d8d6302  Ejecting embedded blocks to custom TSX: Progesterone Capsule  props=["productName", "productForm", "productImage"]
+  6a7d99ecf45cad5505778c37  Ejecting embedded blocks to custom TSX: Progesterone E4M pro  props=["productName", "productImage"]
+  6a7dadc6f45cad5505778daf  Ejecting embedded blocks to custom TSX: Single-plan Estradio  props=["productName", "productSublabel", "productImage", "productId", "price30", "trustLine", "ctaLabel"]
+  6a7db1ef3a1ce9ef4a9d137c  Ejecting embedded blocks to custom TSX: Custom Estriol Vagin  props=["productName", "productSublabel", "productImage", "productId", "price30", "trustLine", "ctaLabel", "drawerHeight"]
+  6a7db7083a1ce9ef4a9d13ac  Ejecting embedded blocks to custom TSX: Custom Progesterone  props=["productName", "productImage", "subtitle", "ctaLabel"]
+  6a7dc4c982d5908542c99926  Ejecting embedded blocks to custom TSX: Progesterone Cream p  props=["productName", "productSublabel", "productImage", "productId", "price30", "trustLine", "ctaLabel"]
+  6a7dcb8a762704c398cea03d  Component 100  props=["title", "backgroundColor"]
+  6a7ebf5916f914f010954f37  Label (Design System) (custom)  props=["label", "sublabel"]
+  6a7ec07016f914f010954fa5  Label (Design System) (custom)  props=["label", "sublabel"]
+  6a7ec0ab16f914f010954fbd  Phone Number (Design System) (custom)  props=["placeholder"]
+  6a7ec14d16f914f010955015  Label (Design System) (custom)  props=["label", "sublabel"]
+  6a7eccc1b78f829ac1e07bbb  Component 105  props=["title", "backgroundColor"]
+  6a7eda3d121ee51b55499116  Ready to start your Strut BHRT journey  props=["cardBg"]
+  6a7eda7cc78503a4fe2e32f0  Ejecting embedded blocks to custom TSX: Aligned the BHRT “re  props=["title", "continueLabel"]
+  6a854c20b41c5104b1d91db2  LDN is prescribed off-label  props=["eyebrow", "title", "card1Heading", "card1Body", "card2Heading", "card2Body", "card3Heading", "card3Body", "footer"]
+  6a854cd3b41c5104b1d91dd9  Ejecting embedded blocks to custom TSX: Informational off-la  props=[]
+  6a8fce797a953dfd205e1522  A note about your first order  props=["title", "body", "badgeLabel"]
+  6a9a84a0a470af66dce6409e  Component 112  props=["title", "backgroundColor"]
+  6a9fdad8820b1f2cb8b2cdb2  Nad Injection : Dose Selection  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultFormula", "pricePeriodSuffix", "totalLabel" …[329 chars]
+  6a9fe44875dd152fdcc5521f  Sermorelin Oral  props=["brandColor", "discColor", "bottleImageUrl", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "titleBase", "subtitle", "supplyLabel", "doseLabel", "supply1Label", "supply1Month …[859 chars]
+  6a9fe68375dd152fdcc552b5  Sermorelin Injection  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultFormula", "pricePeriodSuffix", "totalLabel" …[329 chars]
+  6a9fe9c03e47b3a14af9571d  Semaglutide Oral  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "badgeColor", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultDose", "pricePeriodSuffix", " …[340 chars]
+  6aa0eb635f285f3e21f082af  minoxidil: cart  props=["buttonText"]
+  6aa0f35b5f285f3e21f08523  Component 117  props=["title", "backgroundColor"]
+  6aa0f8275f285f3e21f086aa  Tirzeptide oral  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "badgeColor", "title", "subtitle", "imageUrl", "doseLabel", "defaultDose", "pricePeriodSuffix", "tot …[337 chars]
+  6aa0f8c5c6de0519290c2479  Tirzeptide injectable : Dose selection  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultVial", "pricePeriodSuffix", "totalLabel", " …[326 chars]
+  6aa0f978c6de0519290c24c4  Tirzeptide cart  props=["buttonText"]
+  6aa0f9bdc6de0519290c24eb  Component 121  props=["title", "backgroundColor"]
+  6aa0ff4ecf0b58fa49d00d52  Tadalafil  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "borderHoverColor", "controlOffColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "strengthLabel", "perDose5mg", "perDose5mgDaily", "perDose10mg", "perDose20mg", "su …[389 chars]
+  6aa12dc0a02041f4dc0e5b26  Minoxidil : Dose selection  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultDose", "pricePeriodSuffix", "totalLabel", " …[326 chars]
+  6aa13e02c0e5318bdeae0a44  Component 124  props=["title", "backgroundColor"]
+  6aa14e7e615ed321473f9f92  Minoxidil : cart  props=["buttonText"]
+  6aa279996871f9a99e4293e1  finasteride men : Dose selection  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "audienceLabel", "subtitle", "imageUrl", "subAxisLabel", "defaultFormula", "pricePeriodSuff …[346 chars]
+  6aa27ab56871f9a99e429413  finasteride women : Dose selection  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "audienceLabel", "subtitle", "imageUrl", "subAxisLabel", "defaultFormula", "pricePeriodSuff …[346 chars]
+  6aa293911536172952f70250  New cart  props=["drawerHeight"]
+  6aa392124acca53673e22e75  Dutasteride : Dose selection  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultFormula", "pricePeriodSuffix", "trustItem1" …[357 chars]
+  6aa3e55af415d1603a6e1560  Semaglutide injectable : Dose selection  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultVial", "pricePeriodSuffix", "totalLabel", " …[326 chars]
+  6aa3febe63401a7b26cc78b8  Longevity Labs Pricing Card  props=["panelTitle", "panelSubnote", "markers", "ctaLabel"]
+  6aa90f386fa91b88284c2463  Navigation (Design System) (custom)  props=[]
+  6aaa48071693639b20d71bdb  finasteride tablet  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "audienceLabel", "subtitle", "imageUrl", "subAxisLabel", "defaultSupply", "pricePeriodSuffi …[345 chars]
+  6aab8ccb94eaf7a989db51d1  Component 134  props=["title", "backgroundColor"]
+  6aabb504b290fd36739a52cd  Age  props=["title"]
+  6aabd04dc252ce14a9000913  Ivermectin : dose selection  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultVariant", "pricePeriodSuffix", "totalLabel" …[329 chars]
+  6aabe9cc241348541258a70d  LDN : Dose selection  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultSupply", "pricePeriodSuffix", "trustItem1", …[356 chars]
+  6aabee8958caeb0c4920e724  About this medication  props=["title"]
+  6aacdad9acaa87e1bd36cc4e  Metformin : Dose selection  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultSupply", "pricePeriodSuffix", "totalLabel", …[328 chars]
+  6aace9b536e4e11e818b7d24  Select your desired dose. A Strut Physician will ultimately  props=["title", "subtitle", "ctaLabel", "finePrint"]
+  6ab2b2353011ad7fc6fb2644  Do you know your most recent kidney function result (eGFR)?  props=["title", "sublabel"]
+  6ab4d550379d3ee5b584a695  Component 142  props=["title", "backgroundColor"]
+  6ab4d6ab379d3ee5b584a755  Multiple Choice (Design System) (custom)  props=["optionALabel", "optionAText", "optionBLabel", "optionBText", "followUpText"]
+  6ab4ec2fda23ad2828f4e4d9  Dutasteride topical : Dose selection  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultFormula", "pricePeriodSuffix", "totalLabel" …[329 chars]
+  6ab4ecbe8f31bc997aaa207d  Dutasteride Oral : Dose selection  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "pricePeriodSuffix", "totalLabel", "ctaLabel", "bor …[311 chars]
+  6aba6f99d080a246fcd4b097  Carousel Cart  props=["buttonText"]
+  6abb5141f3dc41364d3a08c1  State Selector (custom)  props=["placeholder"]
+  6abb5758ddba7deee64593cc  State Selector (Design System) (custom)  props=["placeholder"]
+  6abb5b3f2fa3054c7df0a62c  State Selector (Design System) (custom)  props=["placeholder"]
+  6abb61047fe94abc15c368c0  Component 150  props=["title", "backgroundColor"]
+  6abb61147fe94abc15c368cb  Component 151  props=["title", "backgroundColor"]
+  6abb68f37fe94abc15c36a9a  State Selector (Design System) (custom)  props=["placeholder"]
+  6abb7e2a2a172ad4d11b9fb0  State Selector (Design System) (custom)  props=["placeholder"]
+  6abbd2dcb9d013623d5a46d2  Hormone Lab Pricing Card  props=["optionBPrice", "optionBProductId", "ctaLabel"]
+  6abbd6037fc7d6a0449ae13c  New Block  props=["title", "backgroundColor"]
+  6abc049aa8470742152ab09d  Navigation (Design System) (custom)  props=[]
+  6abc04baa8470742152ab0b1  Navigation (Design System) (custom)  props=[]
+  6abc04f5a8470742152ab0cd  Navigation (Design System) (custom)  props=[]
+  6ad70c2b8abae0ea3f1938f4  Selfie Input  props=["eyebrow", "heading", "failureMessage", "helperText", "documentLabel", "documentHint", "selfieLabel", "selfieHint"]
+  6ad833ce494b7b761dab2fd6  Lab Option Selector (panel only, Mojo rebuild)  props=["showUploadOption", "optionBPrice", "optionBProductId", "optionCPrice", "optionCProductId"]
+  6ad8459f407fe491b1eeff30  Starting card  props=[]
+  6ad87bff063869fc4def7ec2  New Block  props=["title", "backgroundColor"]
+  6ad87c39063869fc4def7ef2  DOB Card  props=[]
+  6ad89ea051b336a743275dc1  ProfileCard  props=[]
+  6ad942cbdb9cf934b8ff048d  Navigation (Design System) (custom) (copy)  props=[]
+  6ad942dddb9cf934b8ff0491  Mojo: Product card (compact)  props=["brandColor", "discColor", "bottleImageUrl", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "titleBase", "subtitle", "supplyLabel", "doseLabel", "supply1Label", "supply1Month …[1021 chars]
+  6ad94b20c0a2e9fcd399951f  Mojo: Free hormone panel  props=["panelName", "markers", "regularPrice", "freeLabel", "terms", "note", "ctaLabel", "productId", "otherPanelProductIds", "region", "brandColor", "textColor", "mutedColor", "borderColor"]
+  6ad94b90b89a11aa0ef2648c  Mojo: Longevity upgrade  props=["panelName", "regularPrice", "offerPrice", "savingsLabel", "blurb", "yesLabel", "noLabel", "freePanelName", "freePanelProductId", "productId", "region", "brandColor", "textColor", "mutedColor", "borderColor"]
+  6ad94fa2111a4ffea76eefdf  Mojo: Order summary  props=["buttonText"]
+  6ad950b743b6995dda083f3e  Mojo: Date of birth  props=[]
+  6ad954e5980ba3d87fd2d208  Mojo: Cart bar  props=["drawerHeight", "compact"]
+  6ad9748c9aeaf75b0bb2ba93  Mojo: Next on None  props=["optionText", "delayMs"]
+  6ad99128c54dab8a8e7f8270  Mojo: Trust  props=["layout", "line1", "line2", "note", "point1Title", "point1Text", "point2Title", "point2Text", "point3Title", "point3Text", "starColor", "textColor", "mutedColor", "borderColor", "tintColor"]
+  6ad99160c54dab8a8e7f8283  Mojo: Order next steps  props=["mode", "step1Title", "step1Text", "step2Title", "step2Text", "step2UploadTitle", "step2UploadText", "step3Title", "step3Text", "footnote", "laterText", "brandColor", "textColor", "mutedColor", "borderColor"]
+  6ad9920470b435cbac332485  Mojo: Starting card  props=["headline", "subheadline", "trustLine1", "trustLine2", "note"]
+  6ada4c72b1112a85cba13516  Age&Gender  props=[]
+  6ada55824cba59986df3cddf  Mojo: Product card V2  props=["brandColor", "discColor", "bottleImageUrl", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "titleBase", "subtitle", "supplyLabel", "doseLabel", "supply1Label", "supply1Month …[1049 chars]
+  6ada5a7dada4f788be969723  Mojo: Longevity upgrade (copy)  props=["panelName", "regularPrice", "offerPrice", "savingsLabel", "blurb", "yesLabel", "noLabel", "freePanelName", "freePanelProductId", "productId", "brandColor", "textColor", "mutedColor", "borderColor"]
+  6ada5d8d2708555574800ef0  Blood Pressure (custom)  props=[]
+  6ada60ab2708555574800fb6  EncloSymptomRatingCard  props=[]
+  6ada69d7a1f7ebf954d6cf5c  EncloConditionsCard  props=[]
+  6adb2dab683e3c8dba0f9056  None of the above advance  props=[]
+  6adc703435b08aed6e00a999  New Block  props=["title", "backgroundColor"]
+  6adc70b235b08aed6e00a9d1  New Block  props=["title", "backgroundColor"]
+  6adc747e0effa15cb6f56950  New Block  props=["title", "backgroundColor"]
+  6adc769da76ce4a2f7b26c68  glp-1 compounded  props=["showOralOption"]
+  6ae03e25aafd46e91906ff18  Shopping cart 27 oct  props=["buttonText"]
+  6ae03e9baafd46e91906ffed  LDN dose selection card 27 oct  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultSupply", "pricePeriodSuffix", "trustItem1", …[356 chars]
+  6ae1d4da927159497600ab97  Component 189  props=["title", "backgroundColor"]
+  6ae1d5e2927159497600ac25  Order summary for promo  props=["buttonText"]
+  6ae1d62c927159497600ac5a  finasteride tablet promo  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "audienceLabel", "subtitle", "imageUrl", "subAxisLabel", "defaultSupply", "pricePeriodSuffi …[373 chars]
+  6ae1ef6c367395a58652a9a9  order success promo  props=["thankYouTitle", "thankYouMessage", "reviewMessage", "expectationMessage", "detailsHeading"]
+  6ae1f7c8dcb1a016b4876578  Component 193  props=["title", "backgroundColor"]
+  6ae34c6d61a56cd020d3bde4  Hairloss photo input  props=[]
+  6af2a169c1c5bf43b2b9c880  Finasteride men : Dose selection promo  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "audienceLabel", "subtitle", "imageUrl", "subAxisLabel", "defaultFormula", "pricePeriodSuff …[374 chars]
+  6af2a600c1c5bf43b2b9c9d2  cart promo  props=["drawerHeight"]
+  6afafb273a31f584f5d662bd  finasteride men : dose selection promo  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "audienceLabel", "subtitle", "imageUrl", "subAxisLabel", "defaultFormula", "pricePeriodSuff …[374 chars]
+  6afafe893a31f584f5d663c1  finasteride women : dose selection promo  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "audienceLabel", "subtitle", "imageUrl", "subAxisLabel", "defaultFormula", "pricePeriodSuff …[374 chars]
+  6afb00137cc91d99f29bfc06  dutasteride topical : promo  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "audienceLabel", "subtitle", "imageUrl", "subAxisLabel", "defaultFormula", "pricePeriodSuff …[374 chars]
+  6afb00757cc91d99f29bfc39  dutasteride oral : promo  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "audienceLabel", "subtitle", "imageUrl", "subAxisLabel", "defaultFormula", "pricePeriodSuff …[374 chars]
+  6afb019201a7d73416a7e538  minoxidil : dose selection promo  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "audienceLabel", "subtitle", "imageUrl", "subAxisLabel", "defaultDose", "pricePeriodSuffix" …[371 chars]
+  6afc148b4cfef4fef92a6a08  Tadalafil : Dose selection promo  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "borderHoverColor", "controlOffColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "strengthLabel", "perDose5mg", "perDose5mgDaily", "perDose10mg", "perDose20mg", "su …[389 chars]
+  6afc1772529a86345edc3f6a  Paroxetine RX : Dose selection promo  props=["brandColor", "discColor", "bottleImageUrl", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "titleBase", "subtitle", "bundleSectionLabel", "bundle1Title", "bundle1Ingredients …[1210 chars]
+  6afc1e431757cc8226620419  Nad+ Dose selection promo  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultFormula", "pricePeriodSuffix", "totalLabel" …[329 chars]
+  6afc29b24db0c910020c60db  sermorelin oral : dose promo  props=["brandColor", "discColor", "bottleImageUrl", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "titleBase", "subtitle", "supplyLabel", "doseLabel", "supply1Label", "supply1Month …[887 chars]
+  6afc2adb9937826cfb61ebc7  sermorelin injectible : dose promo  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultFormula", "pricePeriodSuffix", "trustItem1" …[357 chars]
+  6afc2e11c7ccc1edc7d8928e  semaglutide oral : dose selection promo  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "badgeColor", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultDose", "pricePeriodSuffix", " …[368 chars]
+  6afc2eb0dfc9a29c55d85300  semaglutide inj : Dose selection promo  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultVial", "pricePeriodSuffix", "totalLabel", " …[326 chars]
+  6afd558f7bfa7568f543e374  tirzeptide: dose selection promo  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "badgeColor", "title", "subtitle", "imageUrl", "doseLabel", "defaultDose", "pricePeriodSuffix", "tru …[365 chars]
+  6afd565d108fd8d451b09443  tirzeptide inj : dose selction promo  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultVial", "pricePeriodSuffix", "trustItem1", " …[354 chars]
+  6afd56e8108fd8d451b094be  Tirzeptide inj : dose selection promo  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultVial", "pricePeriodSuffix", "trustItem1", " …[354 chars]
+  6afd58df108fd8d451b0967d  Ivermectin : Dose selection promo  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultVariant", "pricePeriodSuffix", "trustItem1" …[357 chars]
+  6afd5a86108fd8d451b097c3  Metformin : Dose selection promo  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultSupply", "pricePeriodSuffix", "trustItem1", …[356 chars]
+  6afd5c68108fd8d451b098ef  LDN : Dose selection promo  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultSupply", "pricePeriodSuffix", "trustItem1", …[356 chars]
+  6afe8b0b0fb10b33e96ca220  semaglutide oral : flatrate  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "badgeColor", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultDose", "pricePeriodSuffix", " …[368 chars]
+  6afe8f320fb10b33e96ca3b6  semaglutide injectible : Flatrate  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultVial", "pricePeriodSuffix", "totalLabel", " …[326 chars]
+  6afe9f07e1371bf1aff4988e  tirzeptide oral : Flatrate  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "badgeColor", "title", "subtitle", "imageUrl", "doseLabel", "defaultDose", "pricePeriodSuffix", "tru …[365 chars]
+  6afea0ede1371bf1aff49947  tirzeptide inj : Flatrate  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "subtitle", "imageUrl", "subAxisLabel", "defaultVial", "pricePeriodSuffix", "trustItem1", " …[354 chars]
+  6b03edf27e23919f09f7e4aa  shopping cart : promo  props=["buttonText"]
+  6b03ff44fd64f4acacdd59fa  Dutasteride topical : dose selection promo  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "audienceLabel", "subtitle", "imageUrl", "subAxisLabel", "defaultFormula", "pricePeriodSuff …[374 chars]
+  6b03ffa4fd64f4acacdd5a29  Dutasteride Oral : dose selection promo  props=["brandColor", "discColor", "imageFit", "textColor", "textMutedColor", "borderColor", "borderSoftColor", "surfaceColor", "controlOffColor", "borderHoverColor", "selectedBgColor", "selectedBgOpacity", "title", "audienceLabel", "subtitle", "imageUrl", "subAxisLabel", "defaultFormula", "pricePeriodSuff …[374 chars]
+
+PAGE PROPS (not flow)
+{}

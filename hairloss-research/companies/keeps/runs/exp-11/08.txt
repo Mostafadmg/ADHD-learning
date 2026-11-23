@@ -1,0 +1,26 @@
+STEP 08 click "Continue"
+URL: https://www.keeps.com/hair-assessment-quiz?step=10
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+How would you like to treat your hair loss?
+
+Daily Chew (Oral Rx)
+
+Easy, once-daily • Oral tablet
+
+Topical Drop (Rx Serum)
+
+Applied directly to the scalp
+
+I'm not sure - help me choose
+
+This helps us personalize your recommendation.
+
+Keeps | Hair Loss Treatment for Men
+
+--- CONTROLS ---
+  button (4): Go back  ·  Daily Chew (Oral Rx) Easy, once-daily • Oral tablet  ·  Topical Drop (Rx Serum) Applied directly to the scalp  ·  I'm not sure - help me choose
+
+--- LINKS ---
+

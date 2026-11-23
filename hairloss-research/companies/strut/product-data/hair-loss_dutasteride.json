@@ -1,0 +1,40 @@
+{
+ "heading": "Two Formats. Flexible Dosing.",
+ "body": "Most male pattern hair loss is driven by DHT, a hormone that causes genetically susceptible hair follicles to shrink over time. Dutasteride may help to reduce DHT, supporting healthier follicles and helping slow the progression of hair loss.*",
+ "activeIngredientsLabel": "Active Ingredient: Dutasteride (Oral: + Biotin | Topical: + Minoxidil, Tretinoin, Fluocinolone, Biotin)",
+ "ingredients": [
+  {
+   "name": "Dutasteride",
+   "body": "Dual 5-alpha reductase inhibitor that may block both Type I and II enzymes, associated with approximately 90% DHT reduction.*"
+  },
+  {
+   "name": "Also included in topical formula: Minoxidil + Tretinoin + Fluocinolone + Biotin",
+   "body": "Minoxidil may support regrowth, tretinoin may support absorption, fluocinolone may help calm, biotin may support strength.*"
+  }
+ ],
+ "safety": [
+  {
+   "title": "Common side effects",
+   "body": "Decreased libido, erectile dysfunction, decreased semen volume, breast tenderness or enlargement, and mood changes."
+  },
+  {
+   "title": "Tell your healthcare provider",
+   "body": "Share any history of liver disease, prostate conditions, current prescriptions including alpha blockers, and any plans for blood donation while on dutasteride."
+  },
+  {
+   "title": "Do not use if",
+   "body": "You are a woman or a child. Dutasteride is a medication for men only. Women who are or may become pregnant should never handle dutasteride-containing medications."
+  },
+  {
+   "title": "Seek medical care",
+   "body": "Severe allergic reaction (rash, swelling, trouble breathing), persistent breast changes, severe mood changes, or signs of high-grade prostate disease."
+  }
+ ],
+ "disclaimer": [
+  "All prescription medications require a valid and complete online consultation prior to approval and final pricing is determined. Compounded medications are not FDA-approved and have not been evaluated by the FDA for safety, effectiveness, or quality. A licensed provider may prescribe a compounded medication when they determine it is clinically appropriate for you.",
+  "Compounded Dutasteride is not FDA-approved for hair loss. Statements regarding hair loss, hair growth, scalp health, and follicle support have not been evaluated by the FDA.",
+  "The drug and medical information provided on this website is not meant to cover all adverse effects, drug interactions, warnings, medical uses, directions and precautions. The information provided is a medical resource and the judgment of your healthcare provider should not be substituted."
+ ],
+ "imageSrc": "/assets/v3-dutasteride-ingredients-nightstand.jpg",
+ "imageAlt": "Hand picking up a Dutasteride Capsules bottle next to a Hair Loss Solution dropper bottle"
+}

@@ -104,14 +104,21 @@ for key, repl in T.LIST_REPLACE.items():
 for key, items in T.LIST_ADD.items():
     for s in items:
         if s not in d[key]: d[key].append(s)
-have_src = {s['url'] for s in d['sources']}
+have_src = {s['title'] for s in d['sources']}
 for s in T.NEW_SOURCES:
-    if s['url'] not in have_src: d['sources'].append(s)
+    if s['title'] not in have_src: d['sources'].append(s)
+for s in d['sources']:
+    if s['url'] in getattr(T, 'SOURCE_RETITLE', {}): s['title'] = T.SOURCE_RETITLE[s['url']]
+have_cr = {c['codeRule'] for c in d.get('codeRulesConfirmedLive', [])}
+for c in getattr(T, 'CODE_CONFIRMED_ADD', []):
+    if c['codeRule'] not in have_cr: d.setdefault('codeRulesConfirmedLive', []).append(c)
 d['engineSummary'] = add_once(d['engineSummary'], T.ENGINE_SUMMARY_ADD)
 d['access']['coverageNote'] = add_once(d['access']['coverageNote'], T.COVERAGE_ADD)
 for b in T.BLOCKERS_ADD:
     if b not in d['access']['blockers']: d['access']['blockers'].append(b)
 d['stage'] = 'final (stage 3 of 3: independently verified on 23 November 2026)'
+missing = [q['id'] for f in d['flows'] for q in f['questions'] if q['evidence'] == 'observed' and not q.get('proof')]
+if missing: print('stage3: WARNING observed questions without proof:', missing)
 d['verification'] = T.VERIFICATION
 
 json.dump(d, open(path, 'w', encoding='utf-8'), indent=1, ensure_ascii=False)

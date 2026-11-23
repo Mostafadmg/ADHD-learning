@@ -1,0 +1,24 @@
+COMMAND 038 {"do":"snap","settle":2500}
+URL: https://www.numan.com/subscribe/hair-loss/4b4e30d9-9042-49e8-a32b-7557d60d5aec/gp-notification
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+96%
+Please enter your GP's email address
+​
+GP’s e-mail address
+Skip
+Back
+Next
+
+--- CONTROLS ---
+  input:text (1):
+    - GP’s e-mail address
+  button (3):
+    - Skip
+    - Back
+    - Next
+
+--- LINKS ---
+  link (1):
+    - Visit the main page -> /

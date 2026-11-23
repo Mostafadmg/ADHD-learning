@@ -1,0 +1,1 @@
+{"steps":[{"do":"click","selector":"label:text-is(\"I have previously experienced, or am currently experiencing, depression, anxiety or panic disorders\")","settle":500},{"do":"click","text":"Next","settle":2800},{"do":"snap","settle":600}]}

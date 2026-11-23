@@ -1,0 +1,1 @@
+{ "start": "https://core.onlinedoctor.lloydspharmacy.com/api/questionnaire/clinic/hair-loss", "steps": [ {"do":"wait","ms":2500} ] }

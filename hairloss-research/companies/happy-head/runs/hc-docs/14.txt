@@ -1,0 +1,38 @@
+STEP 14 goto "https://happyhead.zendesk.com/hc/en-us/articles/17624465131415-Do-you-ship-internationally"
+URL: https://happyhead.zendesk.com/hc/en-us/articles/17624465131415-Do-you-ship-internationally
+TITLE: Do you ship internationally? – Happy Head
+
+--- VISIBLE TEXT ---
+Happy Head  Shipping
+Articles in this section
+Do you ship internationally?
+My product arrived damaged. What can I do?
+How long do orders take to arrive?
+What shipping service does Happy Head use?
+How can I check where my order is?
+Do you ship internationally?
+9 months ago Updated
+
+Unfortunately, we do not ship internationally. Happy Head only operates and ships within the USA at this time. Our doctors are licensed to prescribe medication exclusively within the USA, and we must adhere to these regulations to ensure compliance and patient safety. 
+
+Have more questions? Submit a request
+Recently viewed articles
+What is your return policy?
+How can I cancel my subscription?
+Subscription vs. One-Time Orders
+How do I know if the SuperCapsule™ + ED Performance is right for me?
+Should I choose a SuperCapsule™ or topical treatment?
+Related articles
+What shipping service does Happy Head use?
+How long do orders take to arrive?
+My product arrived damaged. What can I do?
+Everything You Need to Know About the Advanced Laser Helmet Hair Growth System
+How do I change my billing or shipping address?
+
+--- CONTROLS ---
+  button (2): Why Happy Head?  ·  Products
+  checkbox (1): (no label)
+  input:search (1): Search
+
+--- LINKS ---
+  link (52): MEN -> https://www.happyhead.com/home  ·  WOMEN -> https://www.happyhead.com/women  ·  LOGIN -> https://my.happyhead.com/my-account  ·  START NOW -> https://www.form.happyhead.com/get-started/?l=false&ph=true  ·  Men -> https://www.happyhead.com/home  ·  Women -> /women  ·  Happy Head -> /hc/en-us  ·  Shipping -> /hc/en-us/sections/1500002739561-Shipping  ·  Do you ship internationally? -> /hc/en-us/articles/17624465131415-Do-you-ship-internationally  ·  My product arrived damaged. What can I do? -> /hc/en-us/articles/4402314900119-My-product-arrived-damaged-What-can-I-do  ·  How long do orders take to arrive? -> /hc/en-us/articles/4402314896791-How-long-do-orders-take-to-arrive  ·  What shipping service does Happy Head use? -> /hc/en-us/articles/4402314876951-What-shipping-service-does-Happy-Head-use  ·  How can I check where my order is? -> /hc/en-us/articles/4402322027287-How-can-I-check-where-my-order-is  ·  Submit a request -> /hc/en-us/requests/new  ·  What is your return policy? -> /hc/en-us/articles/4402314831383-What-is-your-return-policy  ·  How can I cancel my subscription? -> /hc/en-us/articles/4402322014359-How-can-I-cancel-my-subscription  ·  Subscription vs. One-Time Orders -> /hc/en-us/articles/17571301347607-Subscription-vs-One-Time-Orders  ·  Should I choose a SuperCapsule™ or topical treatment? -> /hc/en-us/articles/16932799651479-Should-I-choose-a-SuperCapsule-or-topical-treatment  ·  What shipping service does Happy Head use? -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCBcYav4ABDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJfH%2B4MHE  ·  How long do orders take to arrive? -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJdlav4ABDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJfH%2B4MHE  ·  My product arrived damaged. What can I do? -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJdyav4ABDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJfH%2B4MHE  ·  How do I change my billing or shipping address? -> /hc/en-us/related/click?data=BAh7CjobZGVzdGluYXRpb25fYXJ0aWNsZV9pZGwrCJcAaf4ABDoYcmVmZXJyZXJfYXJ0aWNsZV9pZGwrCJfH%2B4MHE  ·  Get Started -> https://www.happyhead.com/get-started  ·  Ultimate Growth Bundle -> https://www.happyhead.com/products/topical-solution-supercapsule-finasteride-minoxidil  ·  Custom TopicalRx Solution -> https://www.happyhead.com/products/topical-solution-dutasteride-minoxidil  ·  SuperCapsuleTM -> https://www.happyhead.com/products/supercapsule-finasteride-minoxidil-vitamin-d3  ·  TopicalRx SuperSolutionTM -> https://www.happyhead.com/products/topical-supersolution-finasteride-minoxidil-and-liposomal  ·  DutasterideRx -> https://www.happyhead.com/collections/dutasteride  ·  FinasterideRx -> https://www.happyhead.com/collections/finasteride  ·  MinoxidilRx -> https://www.happyhead.com/collections/minoxidil  ·  About Us -> https://www.happyhead.com/about-us  ·  Blog -> https://www.happyhead.com/hair-loss-blog  ·  How It Works -> https://www.happyhead.com/how-it-works  ·  Getting Started -> https://www.happyhead.com/getting-started  ·  FAQ -> https://www.happyhead.com/faq  ·  The Science -> https://www.happyhead.com/science  ·  Contact Us -> https://happyhead.zendesk.com/hc/en-us  ·  Refer-A-Friend -> https://www.happyhead.com/refer  ·  Stylist Program -> https://www.happyhead.com/stylist  ·  Influencer Program -> https://www.happyhead.com/ambassador  ·  Affiliate Program -> https://www.happyhead.com/affiliates  ·  CCPA: Do Not Sell My Information -> https://www.happyhead.com/legal/ccpa-do-not-sell-my-information  ·  Terms & Conditions -> https://www.happyhead.com/legal/terms-of-use  ·  Subscription Terms -> https://www.happyhead.com/legal/subscription-terms  ·  Privacy Policy -> https://www.happyhead.com/legal/privacy-policy  ·  Cookie Policy -> https://www.happyhead.com/legal/privacy-policy  ·  Acceptable Use Policy -> https://www.happyhead.com/legal/terms-of-use  ·  Telehealth Consent -> https://www.happyhead.com/legal/telehealth-consent  ·  Drug Safety Information & Consent -> https://www.happyhead.com/legal/drug-safety-information  ·  Refund & Return Policy -> https://www.happyhead.com/legal/terms-of-use  ·  Warning To Consumers -> https://www.happyhead.com/legal/drug-safety-information  ·  XML Sitemap -> https://www.happyhead.com/sitemap.xml

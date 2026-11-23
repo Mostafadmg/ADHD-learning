@@ -1,0 +1,21 @@
+STEP 11 htc AFTER ANSWERS ["Unsure"]
+URL: https://www.hairandme.com/c/suh/htc
+
+--- VISIBLE TEXT ---
+When did you notice changes to your hair?
+Recently, in the past few weeks
+Around three to six months ago
+Over a year ago
+Unsure
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=9310] | Recently, in the past few weeks
+input:radio[name=9310] | Around three to six months ago
+input:radio[name=9310] | Over a year ago
+input:radio[name=9310] | Unsure [checked]
+button:submit | NEXT QUESTION
+a -> /c/suh/htc?action=previous | Back to previous page

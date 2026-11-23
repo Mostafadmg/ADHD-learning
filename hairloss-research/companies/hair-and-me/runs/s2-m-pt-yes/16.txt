@@ -1,0 +1,26 @@
+STEP 16 tt
+URL: https://www.hairandme.com/c/suh/tt
+
+--- VISIBLE TEXT ---
+Which treatment would suit you best?
+
+Why are we asking?
+
+You’ll get the best results from consistent, daily use, so choose a treatment option that works for you. We’ll do our best to accommodate your preference, but ultimately, this will be determined by our Dermatology Team.
+
+The Drops
+Applied directly to your scalp with a pipette either once or twice daily
+Most popular
+Better for pet owners
+The Capsules
+Taken once daily before bed
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=180028] | The Drops Applied directly to your scalp with a pipette either once or twice daily
+input:radio[name=180028] | The Capsules Taken once daily before bed
+button:submit | NEXT QUESTION [disabled]
+a -> /c/suh/tt?action=previous | Back to previous page

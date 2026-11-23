@@ -1,0 +1,59 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 2,
+   "sectionTitle": "YOUR HAIR"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 4446,
+    "inputConfig": {
+     "options": [
+      {
+       "image": "hair-type-straight",
+       "label": "Straight",
+       "value": "Straight"
+      },
+      {
+       "image": "hair-type-wavy",
+       "label": "Wavy",
+       "value": "Wavy"
+      },
+      {
+       "image": "hair-type-curly",
+       "label": "Curly",
+       "value": "Curly"
+      },
+      {
+       "image": "hair-type-coily",
+       "label": "Coily",
+       "value": "Coily"
+      }
+     ]
+    },
+    "inputType": "single_select_button_with_image",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Which option best describes your natural hair type?",
+  "type": "question"
+ }
+}

@@ -1,0 +1,36 @@
+STEP 27 rha
+URL: https://www.hairandme.com/c/suh/rha
+
+--- VISIBLE TEXT ---
+How would you rate the appearance of your hair in the last week?
+
+1 is really not happy with it, 10 is couldn't be happier.
+
+1 - The worst it's ever been
+2
+3
+4
+5
+6
+7
+8
+9
+10 - The best it's ever been
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=245] | 1 - The worst it's ever been
+input:radio[name=245] | 2
+input:radio[name=245] | 3
+input:radio[name=245] | 4
+input:radio[name=245] | 5
+input:radio[name=245] | 6
+input:radio[name=245] | 7
+input:radio[name=245] | 8
+input:radio[name=245] | 9
+input:radio[name=245] | 10 - The best it's ever been
+button:submit | NEXT QUESTION [disabled]
+a -> /c/suh/rha?action=previous | Back to previous page

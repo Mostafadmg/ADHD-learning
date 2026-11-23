@@ -1,0 +1,24 @@
+STEP 04 wait 3000
+URL: https://core.onlinedoctor.lloydspharmacy.com/pages/preconsultation
+TITLE: Pre-Consultation
+
+--- VISIBLE TEXT ---
+Before we begin
+
+Dr. Sameer Sanghvi
+
+General Practitioner (GP)
+GMC no. 7085078
+
+"Your consultation will help us understand your hair loss and determine which treatments may be safe and suitable for you"
+
+This service is for men experiencing signs of male pattern hair loss (androgenetic alopecia)
+Complete a short assessment to receive personalised treatment recommendations
+Choose and pay for your treatment, then select your preferred delivery option
+Next
+
+--- CONTROLS ---
+  button (1): Next
+
+--- LINKS ---
+  link (1): Exit consultation -> /

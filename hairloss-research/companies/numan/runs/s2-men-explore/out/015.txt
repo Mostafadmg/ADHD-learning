@@ -1,0 +1,23 @@
+COMMAND 015 {"steps":[{"do":"click","selector":"label:text-is(\"I have noticed hair loss on other areas of my body other than my head.\")","settle":500},{"do":"click","selector":"label:text-is(\"I am undergoing PSA (prostate) monitoring or I have previously been diagnosed with prostate cancer.\")","settle":500},{"do":"click","selector":"label:text-is(\"I have been diagnosed with high or low blood pressure.\")","settle":500},{"do":"click","selector":"label:text-is(\"I have been diagnosed with asthma.\")","settle":500},{"do":"click","selector":"label:text-is(\"I plan on trying for a baby in the next 12 weeks.\")","settle":500},{"do":"click","selector":"label:text-is(\"I have previously experienced, or am currently experiencing, depression, anxiety or panic disorders\")","settle":500},{"do":"click","text":"Next","settle":2800},{"do":"snap","settle":600}]}
+URL: https://www.numan.com/subscribe/hair-loss/4b4e30d9-9042-49e8-a32b-7557d60d5aec/sq/clarify_noticed_hair_loss_on_my_body
+TITLE: Please tell us about hair loss in areas other than your head.This information is needed so that our clinicians can ensure the prescription is safe for you to take. | Numan
+
+--- VISIBLE TEXT ---
+48%
+Please tell us about hair loss in areas other than your head.
+
+This information is needed so that our clinicians can ensure the prescription is safe for you to take.
+​
+Back
+Next
+
+--- CONTROLS ---
+  textarea (1):
+    - clarify_noticed_hair_loss_on_my_body
+  button (2):
+    - Back
+    - Next
+
+--- LINKS ---
+  link (1):
+    - Visit the main page -> /

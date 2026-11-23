@@ -1,0 +1,28 @@
+STEP 01 yhg AFTER ANSWERS ["Reverse hair thinning","Improve my hairline, parting or crown","Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us."]
+URL: https://www.hairandme.com/c/suh/yhg
+
+--- VISIBLE TEXT ---
+What are your hair goals?
+
+Tell us what you’d like to achieve with Hair + Me – we can help with all of the below.
+
+Prevent, stop or reverse hair loss
+Reverse hair thinning
+Improve my hairline, parting or crown
+Grow thicker and fuller hair
+Boost overall hair health
+Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us.
+NEXT QUESTION
+Already a Hair + Me member?
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:checkbox[name=9307] | Prevent, stop or reverse hair loss
+input:checkbox[name=9307] | Reverse hair thinning [checked]
+input:checkbox[name=9307] | Improve my hairline, parting or crown [checked]
+input:checkbox[name=9307] | Grow thicker and fuller hair
+input:checkbox[name=9307] | Boost overall hair health
+input:checkbox[name=3042] | Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us. [checked]
+button:submit | NEXT QUESTION
+a -> /account/login | Already a Hair + Me member?

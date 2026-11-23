@@ -1,0 +1,17 @@
+{
+  "what": "The three-question on-page 'pre-quiz' on Hims US hair landing pages. Extracted from the page's own streamed data (Next.js payload) on 23 Nov 2026. This is NOT the medical consultation at /c/hl, which could not be opened (see notes.md).",
+  "sourceUrl": "https://www.hims.com/lp/hair-start-top-fin-fa",
+  "sourceFile": "raw/pages/www_hims_com_lp_hair_start_top_fin_fa.rsc.txt (search for 'asked-and-answered')",
+  "component": "Contentful content type ComponentNgQuizQuestion, rendered by 'asked-and-answered' (reduced list). Entry ids: 1lpVTPkhVe3luraU0wErV3, 2WT3bSOzG5bfuBOpvJ90HT, yHrzcelFQKDQ0MtafZreL",
+  "questions": [
+    { "order": 1, "tracking": "q1_what-are-your-hair-goals", "text": "What are your hair goals?", "type": "single",
+      "options": [ {"label": "Stop hair loss", "source": "plaintext", "target": null}, {"label": "Regrow hair", "source": "plaintext", "target": null}, {"label": "Both", "source": "plaintext", "target": null} ] },
+    { "order": 2, "text": "Are you looking for a simple solution to regrow your hair?", "type": "single",
+      "options": [ {"label": "Yes", "source": "plaintext", "target": null}, {"label": "No", "source": "plaintext", "target": null} ] },
+    { "order": 3, "tracking": "q3_are-you-interested-in-prescription-strength", "text": "Are you interested in prescription-strength Rx treatments?", "type": "single",
+      "options": [ {"label": "Yes", "source": "hyperlink-entry", "target": "7iFPgDm1VFwqfOML5ug6Pv"}, {"label": "Not sure yet", "source": "hyperlink-entry", "target": "7iFPgDm1VFwqfOML5ug6Pv"} ] }
+  ],
+  "branching": "None in the served data. Options of questions 1 and 2 are plain text with no target: any answer only moves to the next question. Both options of question 3 point to the same on-page entry (7iFPgDm1VFwqfOML5ug6Pv), the 'Prescription-strength ingredients for real results' block with the buttons 'Get the spray' and 'See if treatment is right for me', both linking to /c/hl.",
+  "disclaimerOnPage": "The above on-page quiz questions are not a medical assessment, and your responses will not be shared with a medical provider. Hims uses your responses to personalize your experience and for other uses as described in our Privacy Policy.",
+  "observed": "runs/baseline-lp-prequiz: Both -> Yes -> Yes. The page stayed on the same URL, made no consultation network call and scrolled to the product block."
+}

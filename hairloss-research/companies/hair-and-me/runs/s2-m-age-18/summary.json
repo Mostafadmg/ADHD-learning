@@ -51,8 +51,8 @@
    "where": "before-change",
    "alsoIn": [
     "s2-base-women-1",
-    "s2-m-htam-patches",
-    "s2-m-htc-recent"
+    "s2-m-al-minoxidil",
+    "s2-m-htam-patches"
    ]
   },
   {
@@ -121,8 +121,8 @@
    "where": "changed-step",
    "alsoIn": [
     "s2-base-women-1",
-    "s2-m-htam-crown",
-    "s2-w-htaf-allover"
+    "s2-m-gender-transwoman",
+    "s2-m-htam-crown"
    ]
   },
   {
@@ -131,8 +131,8 @@
    "where": "changed-step",
    "alsoIn": [
     "s2-base-women-1",
-    "s2-m-htam-crown",
-    "s2-w-htaf-allover"
+    "s2-m-gender-transwoman",
+    "s2-m-htam-crown"
    ]
   },
   {
@@ -141,8 +141,8 @@
    "where": "changed-step",
    "alsoIn": [
     "s2-base-women-1",
-    "s2-m-htam-crown",
-    "s2-w-htaf-allover"
+    "s2-m-gender-transwoman",
+    "s2-m-htam-crown"
    ]
   },
   {
@@ -151,8 +151,8 @@
    "where": "changed-step",
    "alsoIn": [
     "s2-base-women-1",
-    "s2-m-htam-crown",
-    "s2-w-htaf-allover"
+    "s2-m-gender-transwoman",
+    "s2-m-htam-crown"
    ]
   },
   {
@@ -161,8 +161,8 @@
    "where": "changed-step",
    "alsoIn": [
     "s2-base-women-1",
-    "s2-m-htam-crown",
-    "s2-w-htaf-allover"
+    "s2-m-gender-transwoman",
+    "s2-m-htam-crown"
    ]
   },
   {
@@ -171,8 +171,8 @@
    "where": "changed-step",
    "alsoIn": [
     "s2-base-women-1",
-    "s2-m-htam-crown",
-    "s2-w-htaf-allover"
+    "s2-m-gender-transwoman",
+    "s2-m-htam-crown"
    ]
   },
   {
@@ -181,8 +181,8 @@
    "where": "changed-step",
    "alsoIn": [
     "s2-base-women-1",
-    "s2-m-htam-crown",
-    "s2-w-htaf-allover"
+    "s2-m-gender-transwoman",
+    "s2-m-htam-crown"
    ]
   },
   {
@@ -191,8 +191,8 @@
    "where": "changed-step",
    "alsoIn": [
     "s2-base-women-1",
-    "s2-m-htam-crown",
-    "s2-w-htaf-allover"
+    "s2-m-gender-transwoman",
+    "s2-m-htam-crown"
    ]
   },
   {
@@ -202,7 +202,7 @@
    "alsoIn": [
     "s2-m-htam-allover-ext",
     "s2-m-htam-crown",
-    "s2-w-htaf-allover"
+    "s2-m-mcm-bp"
    ]
   },
   {
@@ -212,7 +212,7 @@
    "alsoIn": [
     "baseline-women",
     "entry-promo-caps-men",
-    "s2-m-htam-allover-ext"
+    "s2-m-al-finasteride"
    ]
   }
  ],

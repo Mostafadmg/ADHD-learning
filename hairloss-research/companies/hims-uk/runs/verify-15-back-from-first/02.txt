@@ -1,0 +1,12 @@
+STEP 02 wait 3000
+URL: about:blank
+TITLE: 
+
+--- VISIBLE TEXT ---
+
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

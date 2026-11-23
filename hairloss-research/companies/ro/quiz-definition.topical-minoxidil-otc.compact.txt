@@ -1,0 +1,100 @@
+SCHEMA name='HL High Intent OTC' code=hl-onb-intent version=27 id=7495 meta={"theme": "hi-dark", "sideEffects": [{"type": "SET_DELIVERY_SCHEDULE", "value": "03_quarterly"}, {"type": "LOAD_PRODUCTS", "include_product_codes": ["roman-revive-conditioner-24", "roman-revive-shampoo-24", "roman-hair-support-supplement"]}, {"type": "ADD_PRODUCTS", "products": [{"quantity": 1, "filters": {"meta": {"code": "hl-product-minoxidil"}}}]}]}
+
+================ GROUP START pos=10 n=1
+
+### qid 10 [control] next=20 mtype=HISignUp
+TEXT: 'Your Account'
+  m.extraText: Ro takes your security very seriously and encrypts all of your information, meaning that your confidential data is handled securely.
+  m.HiSignUp: {"button": "Continue to check out", "infoList": [{"text": "Free shipping", "icon": "FreeShipping", "image": {"src": "https://assets.ro.co/ov/truck-ef27239d.png", "width": 52}}, {"text": "Modify or cancel your plan any time", "icon": "Renewal", "image": {"src": "https://assets.ro.co/ov/auto-refill-6dd7f5a0.png", "width": 24}}, {"text": "Backed by U.S.-licensed physicians and medical advisors", "icon": "HealthcareProvider", "image": {"src": "https://assets.ro.co/ov/physicians-ebbbbd47.png", "width": 49}}]}
+  m.breadcrumbs: [{"isActive": true, "key": "your-account", "label": "Your Account"}, {"key": "checkout", "label": "Checkout"}]
+  m.planSummary: {"pricingTableType": "CartSummary", "cartSummaryProps": {"hasEditMedicationButton": false, "hideHeader": true, "mode": "otc"}}
+
+================ GROUP ZIP_CODE pos=20 n=0
+
+================ GROUP DOB pos=30 n=0
+
+================ GROUP EMAIL pos=40 n=0
+
+================ GROUP SEX pos=50 n=0
+
+================ GROUP PHONE_VIDEO pos=55 n=0
+
+================ GROUP PRODUCT pos=60 n=0
+
+================ GROUP HEALTH_SURVEY pos=70 n=0
+
+================ GROUP PHARMACY pos=80 n=0
+
+================ GROUP BASIC pos=90 n=0
+
+================ GROUP BASIC_VM pos=100 n=0
+
+================ GROUP MEDICAL pos=110 n=0
+
+================ GROUP MEDICAL_VM pos=120 n=0
+
+================ GROUP SIGN_IN pos=130 n=1
+
+### qid 21 [choice] next=31 mtype=SignInDynamic
+TEXT: 'Log in'
+  m.doNotCountAsQuestion: true
+  m.extraText: Looks like you already have an account with us.
+  m.formHeader: Please log in to your Ro platform account to continue.
+  m.holdNextQuestion: true
+  m.tooltip: Ro is a telehealth platform.
+  m.breadcrumbs: [{"key": "your-plan", "label": "Your Plan"}, {"isActive": true, "key": "your-account", "label": "Your Account"}, {"key": "checkout", "label": "Checkout"}]
+VARIABLE_MODIFICATIONS: [["memberExists", "0"]]
+  - [successful-sign-in] 'Successful sign-in' -> 31 meta={"type": "GO_FURTHER"}
+
+================ GROUP ACCOUNT_CREATION pos=140 n=0
+
+================ GROUP IDENTITY_VERIFICATION pos=150 n=0
+
+================ GROUP CHECKOUT pos=160 n=2
+
+### qid 31 [choice] next=50 mtype=HICheckout
+TEXT: 'Confirm Payment'
+  m.do_not_count_as_question: true
+  m.hold_next_question: true
+  m.redirect: /home
+  m.redirectToAccountOnFinish: false
+  m.skipTreatmentRequestCreation: true
+  m.breadcrumbs: [{"key": "your-account", "label": "Your Account"}, {"isActive": true, "key": "checkout", "label": "Checkout"}]
+  m.planSummary: {"pricingTableType": "CartSummary", "cartSummaryProps": {"hasEditMedicationButton": false, "hideHeader": true, "mode": "otc"}}
+  m.sections: [{"component": "Checkout/Form", "sections": [{"component": "Sections/SelectShippingFrequencyV2", "props": {"mainProductIsOTC": true}}, {"component": "Checkout/ShippingAddressForm", "props": {"title": "Shipping Address"}}, {"component": "Checkout/PaymentMethodsRedesigned", "props": {"hasHeader": false, "hasPaymentOptionsV2": true}}]}, {"component": "Checkout/Footer", "props": {"hasPoweredBy": false}}]
+  m.sideEffects: [{"type": "SET_DELIVERY_SCHEDULE", "value": "03_quarterly"}, {"type": "REGISTER_DROPOFF_STEP"}]
+  - [finish] 'Finish' -> 50 meta={"type": "FINISH"}
+
+### qid 50 [control] next=-1 mtype=CreateTreatmentRequests
+TEXT: 'Thank you'
+  m.do_not_count_as_question: true
+  m.final_step: true
+  m.hold_next_question: true
+  m.final: {"extraText": "Your order is complete", "nextSteps": {"heading": "What’s next?", "list": {"shipment": {"text": "We will process your order and will deliver it straight to your door with free shipping. Manage your order in your account.", "heading": "You're all set—your shipment will arrive in 3-5 days!", "thumb": {"height": 50, "src": "https://assets.ro.co/ov/shipping-c7583e96.png", "width": 95}}}}, "support": {"buttonText": "Go to my account", "heading": "Continued support from Ro", "list": {"changeFrequency": {"text": "Want to change how often you get your shipment? You can schedule your shipment to come sooner, delay it, or switch to on-demand at any time through your account.", "thumb": …[+365]
+  m.sections: [{"component": "Checkout/ThankYouModal", "props": {}}]
+
+================ GROUP EXIT pos=170 n=0
+
+================ GROUP FORK_0 pos=499 n=0
+
+================ GROUP FORK_1 pos=500 n=1
+
+### qid 20 [fork] next=None mtype=SignInDynamic
+TEXT: 'FORK - Continue or Sign In'
+  m.doNotCountAsQuestion: true
+  m.extraText: Looks like you have an existing account on the Ro platform
+  m.formHeader: Log in to your account to continue
+  m.holdNextQuestion: true
+FORKING_RULES: [["21", "memberExists == 1"], ["31", "memberExists == 0"]]
+
+================ GROUP FORK_2 pos=510 n=0
+
+================ GROUP FORK_3 pos=520 n=0
+
+================ GROUP FORK_4 pos=530 n=0
+
+================ GROUP FORK_5 pos=540 n=0
+
+================ GROUP FORK_6 pos=550 n=0
+
+================ GROUP FORK_7 pos=560 n=0

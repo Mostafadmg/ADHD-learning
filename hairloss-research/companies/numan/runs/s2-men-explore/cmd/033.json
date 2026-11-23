@@ -1,0 +1,1 @@
+{"steps":[{"do":"click","selector":"label:text-is(\"I have a major illness, ongoing medical condition, operation, allergy to medication or take prescribed or over the counter medication to tell you about.\")","settle":2800},{"do":"snap","settle":600}]}

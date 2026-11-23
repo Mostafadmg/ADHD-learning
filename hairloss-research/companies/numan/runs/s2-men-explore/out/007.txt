@@ -1,0 +1,21 @@
+COMMAND 007 {"steps":[{"do":"click","selector":"label:text-is(\"I am allergic to minoxidil\")","settle":500},{"do":"click","selector":"label:text-is(\"I am allergic to finasteride\")","settle":500},{"do":"click","selector":"label:text-is(\"I have a lactose intolerance or allergy\")","settle":500},{"do":"click","text":"Next","settle":2800},{"do":"snap","settle":600}]}
+URL: https://www.numan.com/subscribe/hair-loss/4b4e30d9-9042-49e8-a32b-7557d60d5aec/sq/tell_us_which_reactions_from_this_medicine
+TITLE: Please let us know how you react when you take this medicine | Numan
+
+--- VISIBLE TEXT ---
+20%
+Please let us know how you react when you take this medicine
+​
+Back
+Next
+
+--- CONTROLS ---
+  textarea (1):
+    - tell_us_which_reactions_from_this_medicine
+  button (2):
+    - Back
+    - Next
+
+--- LINKS ---
+  link (1):
+    - Visit the main page -> /

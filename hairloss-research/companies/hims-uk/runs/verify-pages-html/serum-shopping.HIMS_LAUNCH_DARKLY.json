@@ -1,0 +1,32 @@
+{
+ "overrides": {},
+ "enabledIntakeProblemTypes": [
+  "WEIGHT_LOSS",
+  "HAIR",
+  "ERECTILE",
+  "PREMATURE"
+ ],
+ "bootstrap": {
+  "$valid": true,
+  "ff_hims_uk_migration": true,
+  "ff_hims_uk_ketch_consent": true,
+  "ff_hims_uk_storefront_trt_live": false,
+  "$flagsState": {
+   "ff_hims_uk_migration": {
+    "variation": 0,
+    "version": 5
+   },
+   "ff_hims_uk_ketch_consent": {
+    "variation": 0,
+    "version": 9,
+    "trackEvents": true
+   },
+   "ff_hims_uk_storefront_trt_live": {
+    "variation": 1,
+    "version": 2,
+    "trackEvents": true
+   }
+  }
+ },
+ "bootstrapAt": 1795472236197
+}

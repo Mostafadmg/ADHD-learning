@@ -1,0 +1,127 @@
+STEP 03 goto "https://onlinedoctor.superdrug.com/mens-health.html"
+URL: https://onlinedoctor.superdrug.com/mens-health.html
+TITLE: Men's Health Services | Superdrug Online Doctor
+
+--- VISIBLE TEXT ---
+Men's Health
+Take the reins when it comes to healthcare with fast and discreet tests and treatments online
+
+Get online care when and how it suits you, including treatment for Erectile Dysfunction, Premature Ejaculation, Hair Loss, Testosterone, and STI Tests.
+
+See All Services
+Request Repeat Treatments
+In the Spotlight
+
+Erectile Dysfunction
+
+Order online, deliver in bed
+
+Hair Loss
+
+Reverse male pattern hair loss
+
+Cialis Together
+
+Over-the-counter ED treatment
+
+Explore Our Men's Health Services and Treatments
+Top Men's Services
+Erectile Dysfunction Treatment
+Hair Loss Treatment
+Weight Loss Treatment
+See more
+Weight Loss
+Mounjaro
+Wegovy
+alli
+See more
+Hair Loss
+Finasteride
+Propecia
+See more
+PrEP
+HIV Test Kit
+See more
+Testosterone
+Testosterone Test Kit
+Testogel
+Tostran Gel
+See more
+Erectile Dysfunction
+Viagra
+Sildenafil
+Viagra Connect
+See more
+Men's Fertility Testing
+Sperm Test
+See more
+Premature Ejaculation
+Priligy
+EMLA Cream
+See more
+Testing Services
+Chlamydia and Gonorrhoea Test Kit
+Erectile Dysfunction Test Kit
+Uric Acid Test Kit
+See more
+Thrush
+Clotrimazole
+See more
+How it Works
+Complete questionnaire
+Answer a few short questions about your health and request treatment.
+Doctor review
+A doctor reviews your answers and approves your treatment if suitable.
+Delivery or collection
+Get your treatment delivered in 1-3 days or collect from a Superdrug pharmacy within 2-3 hours of approval.
+Related Services
+
+Hair and Skin Health
+
+Stay confident in yourself and your health
+
+Testing Services
+
+Home kits with reliable results and advice
+
+Weight Loss & Wellbeing
+
+Invest in a healthier quality of life
+
+With Superdrug Online Doctor you can message our Doctors for FREE via your patient account.
+
+Create FREE Patient Account
+Meet Our Doctors
+
+Behind every prescription and treatment at Superdrug Online Doctor, there is always a GMC-registered doctor.
+
+See More
+Dr Nicholas Antonakapoulos
+Dr Clair Grainger
+Dr Charlotte Hammerton
+Popular Reads
+
+Viagra Dosage
+
+What to know about 25mg, 50mg and 100mg
+
+How to Last Longer in Bed
+
+Treatments and other advice to delay orgasm
+
+How To Increase Your Testosterone
+
+Higher T-levels with or without treatment
+
+Authorisation and Regulation
+Online Doctor registered by the CQC
+Medication from GPhC-registered pharmacies
+What Our Patients Have to Say
+Home  Men's Health
+
+--- CONTROLS ---
+  input:search (2): (no label)  ·  Search our range of services
+  button (5): Next  ·  Cookie preferences  ·  Manage cookies  ·  Deny Cookies  ·  Accept cookies
+
+--- LINKS ---
+  link (95): Skip to content -> #main-content  ·  Skip to login -> #login-button  ·  Skip to search -> #search-button  ·  Account -> /account/  ·  Men's Health -> /mens-health.html  ·  Women's Health -> /womens-health.html  ·  Weight Loss & Wellbeing -> /wellbeing.html  ·  Sexual Health -> /sexual-health.html  ·  Skin & Hair Health -> /skin-condition-treatments.html  ·  Chronic Health -> /chronic-health.html  ·  Travel Health -> /travel.html  ·  Testing Services -> /at-home-test-kits.html  ·  T&Cs apply -> /discounts-and-promotions.html  ·  Erectile Dysfunction -> /erectile-dysfunction-treatment.html  ·  Premature Ejaculation -> /premature-ejaculation-treatment.html  ·  Hair Loss -> /hair-loss-treatment.html  ·  Testosterone -> /testosterone-replacement-therapy.html  ·  STI Tests -> /sti-tests.html  ·  See All Services -> #explore-our-men-s-health-services-and-treatments  ·  Request Repeat Treatments -> https://onlinedoctor.superdrug.com/account/  ·  Erectile Dysfunction Order online, deliver in bed -> /erectile-dysfunction-treatment.html  ·  Hair Loss Reverse male pattern hair loss -> /hair-loss-treatment.html  ·  Cialis Together Over-the-counter ED treatment -> /cialis-together.html  ·  Erectile Dysfunction Treatment -> /erectile-dysfunction-treatment.html  ·  Hair Loss Treatment -> /hair-loss-treatment.html  ·  Weight Loss Treatment -> /weight-loss-treatments.html  ·  See more -> #in-the-spotlight  ·  Mounjaro -> /mounjaro.html  ·  Wegovy -> /wegovy.html  ·  alli -> /alli.html  ·  See more -> /weight-loss-treatments.html  ·  Finasteride -> /finasteride.html  ·  Propecia -> /propecia.html  ·  See more -> /hair-loss-treatment.html  ·  HIV Test Kit -> /hiv-tests.html  ·  See more -> /prep.html  ·  Testosterone Test Kit -> /testosterone-test-kit.html  ·  Testogel -> /testogel.html  ·  Tostran Gel -> /tostran-gel.html  ·  See more -> /testosterone-replacement-therapy.html  ·  Viagra -> /viagra.html  ·  Sildenafil -> /sildenafil.html  ·  Viagra Connect -> /viagra-connect.html  ·  See more -> /erectile-dysfunction-treatment.html  ·  Sperm Test -> /sperm-test.html  ·  See more -> /male-fertility-tests.html  ·  Priligy -> /priligy.html  ·  EMLA Cream -> /emla-cream.html  ·  See more -> /premature-ejaculation-treatment.html  ·  Chlamydia and Gonorrhoea Test Kit -> /chlamydia-gonorrhoea-test-kit.html  ·  Erectile Dysfunction Test Kit -> /erectile-dysfunction-test.html  ·  Uric Acid Test Kit -> /uric-acid-test-kits.html  ·  See more -> /at-home-test-kits.html  ·  Clotrimazole -> /clotrimazole.html  ·  See more -> /thrush-treatment-for-men.html  ·  Testing Services Home kits with reliable results and advice -> /at-home-test-kits.html  ·  Create FREE Patient Account -> https://onlinedoctor.superdrug.com/account/  ·  See More -> /online-doctor-team.html  ·  Dr Nicholas Antonakapoulos -> /dr-nicholas-antonakopoulos.html   ·  Dr Clair Grainger -> /dr-clair-grainger.html   ·  Dr Charlotte Hammerton -> /dr-charlotte-hammerton.html   ·  Viagra Dosage What to know about 25mg, 50mg and 100mg -> /viagra-dosage.html  ·  Online Doctor registered by the CQC -> https://www.cqc.org.uk/location/1-6683249283  ·  Medication from GPhC-registered pharmacies -> https://www.pharmacyregulation.org/registers/pharmacy/registrationnumber/9010736  ·  Home -> https://onlinedoctor.superdrug.com/  ·  Weight Loss -> /weight-loss-treatments.html  ·  Erectile Dysfunction -> https://onlinedoctor.superdrug.com/erectile-dysfunction-treatment.html  ·  Contraceptive Pill -> https://onlinedoctor.superdrug.com/contraceptive-pill.html  ·  Morning After Pill -> https://onlinedoctor.superdrug.com/morning-after-pill.html  ·  Chlamydia Treatment -> https://onlinedoctor.superdrug.com/chlamydia-treatment.html  ·  Hair Loss -> https://onlinedoctor.superdrug.com/hair-loss-treatment.html  ·  All Services -> https://onlinedoctor.superdrug.com/our-services.html  ·  Health Clinics -> https://healthclinics.superdrug.com/  ·  Video GP -> https://www.superdrug.com/videogp  ·  About Us -> https://onlinedoctor.superdrug.com/about.html  ·  Contact Us -> https://onlinedoctor.superdrug.com/contact.html  ·  How It Works -> https://onlinedoctor.superdrug.com/how-it-works.html  ·  Help and Frequently Asked Questions -> /help.html  ·  Discounts & Promotions -> https://onlinedoctor.superdrug.com/discounts-and-promotions.html  ·  Delivery & Returns -> https://onlinedoctor.superdrug.com/delivery-and-returns.html

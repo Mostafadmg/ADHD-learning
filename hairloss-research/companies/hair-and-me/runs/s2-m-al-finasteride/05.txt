@@ -1,0 +1,27 @@
+STEP 05 mi
+URL: https://www.hairandme.com/c/suh/mi
+
+--- VISIBLE TEXT ---
+Ingredients that see results
+94%
+
+Saw an improvement in hair growth with minoxidil + finasteride capsules*
+
+87%
+
+Saw an increase in hair growth with finasteride*
+
+71%
+
+Saw an improvement in hair density with minoxidil*
+
+Dutasteride is more effective than finasteride in treating hair loss over 24 weeks*.
+
+* Read about our citations here
+Skip
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+a -> https://www.hairandme.com/support/en/articles/284617-medical-citations | * Read about our citations here
+a -> /c/suh/mi | Skip

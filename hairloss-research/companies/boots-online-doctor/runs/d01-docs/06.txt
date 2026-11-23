@@ -1,0 +1,26 @@
+STEP 06 goto "https://onlinedoctor.boots.com/faq"
+URL: https://onlinedoctor.boots.com/faq
+TITLE: Frequently Asked Questions | Boots Online Doctor UK
+
+--- VISIBLE TEXT ---
+FREQUENTLY ASKED QUESTIONS
+ABOUT THE BOOTS ONLINE DOCTOR SERVICE
+How can the Online Doctor Service help me?
+Who can use the Online Doctor Service?
+How do treatment services work?
+How do testing services work?
+How much does the service cost?
+How fast is the service?
+Do I need to sign for delivery?
+Which pharmacy is dealing with my order?
+CREATING AN ACCOUNT
+Why do I need to create an account?
+Do you need me to prove who I am?
+Can I create an account over the phone?
+How do I reset my password?
+
+--- CONTROLS ---
+  button (1): Cookie Preferences
+
+--- LINKS ---
+  link (26): Skip to main content -> #main-content  ·  0203 3183773 -> tel:02033183773  ·  Boots Advantage Card -> https://www.boots.com/advantage-card  ·  Shop Boots.com -> https://www.boots.com  ·  Services -> #  ·  Meet the team -> /clinician-bio/  ·  FAQ -> /faq  ·  LOG IN -> https://onlinedoctor-clinic.boots.com/login  ·  Home -> /  ·  Women's health -> /womens-health  ·  Men's health -> /mens-health  ·  Skin Health -> /acne-skin-conditions  ·  Sexual health -> /sexual-health  ·  General health -> /general-health  ·  Testing services -> /home-testing-kits  ·  Careers -> https://www.boots.jobs/support-office/boots-online-doctor-careers  ·  Patient guide -> /patient-guide  ·  Terms and conditions -> /terms-and-conditions  ·  Privacy policy -> /privacy-policy  ·  Cookie policy -> /cookie-policy  ·  FAQs -> /faq  ·  Contact us -> /contact-us  ·  Pick up and delivery -> /pick-up-and-delivery  ·  Off-label medicines -> /off-label-medicines  ·  Store locator -> https://www.boots.com/StoreLookupView  ·  See the report -> https://www.cqc.org.uk/location/1-15661319227?referer=widget3

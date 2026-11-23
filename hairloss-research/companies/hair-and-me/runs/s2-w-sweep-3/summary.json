@@ -1,0 +1,165 @@
+{
+ "run": "s2-w-sweep-3",
+ "flow": "women",
+ "changed": "SWEEP (women, 8 non-medical answers changed together): gender identity Don't know; Still exploring; Coily; three styling habits; scalp Dry; thinning at the crown; noticed recently, in the past few weeks; influenced by the discounted trial",
+ "changedStep": null,
+ "baselinesPooled": [
+  "baseline-women",
+  "women-a",
+  "s2-base-women-1"
+ ],
+ "stepOrder": [
+  "tp",
+  "yhg",
+  "js",
+  "pds",
+  "pdsc",
+  "ht",
+  "hs",
+  "hw",
+  "hht",
+  "htp",
+  "hdw",
+  "htaf",
+  "htc",
+  "ar",
+  "st",
+  "sc",
+  "scc",
+  "smt",
+  "pt",
+  "tt",
+  "dt",
+  "pg",
+  "mp",
+  "mdf",
+  "mcf",
+  "al",
+  "rhf",
+  "rha",
+  "di",
+  "rj",
+  "el",
+  "ct",
+  "yd"
+ ],
+ "nSteps": 33,
+ "end": "account wall (yd)",
+ "newSteps": [],
+ "missingSteps": [],
+ "candidateEffects": [],
+ "noise": [
+  {
+   "step": "ar",
+   "key": "q429.config",
+   "where": "after-change",
+   "alsoIn": []
+  },
+  {
+   "step": "st",
+   "key": "q9346.options",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-m-htam-allover-ext",
+    "s2-m-htam-crown",
+    "s2-m-mcm-bp-elevated"
+   ]
+  },
+  {
+   "step": "ct",
+   "key": "q180037.config",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-m-age-18",
+    "s2-m-htam-allover-ext",
+    "s2-m-htam-crown"
+   ]
+  }
+ ],
+ "bag": {
+  "items": [
+   [
+    "hairTreatment",
+    "Personalised treatment",
+    "4 week supply · 12ml",
+    "Prescription",
+    3499,
+    null
+   ]
+  ],
+  "shipping": 0,
+  "total": 3499,
+  "promo": "",
+  "shippingMsg": null
+ },
+ "bagItemsSameAsBaseline": true,
+ "posted": {
+  "di": [
+   [
+    8015,
+    "I want the discounted trial"
+   ]
+  ],
+  "hs": [
+   [
+    253,
+    [
+     "Heatless styling (e.g. rollers, curling rods)",
+     "Protective styles (e.g. braids, twists, faux locs)",
+     "Chemical processing (e.g. perms, relaxers, keratin treatments)"
+    ]
+   ]
+  ],
+  "ht": [
+   [
+    4446,
+    "Coily"
+   ]
+  ],
+  "htaf": [
+   [
+    9322,
+    "I'm losing hair or thinning at my crown"
+   ]
+  ],
+  "htc": [
+   [
+    9310,
+    "Recently, in the past few weeks"
+   ]
+  ],
+  "js": [
+   [
+    8038,
+    "Still exploring my options"
+   ]
+  ],
+  "pds": [
+   [
+    3039,
+    2
+   ],
+   [
+    3054,
+    6
+   ]
+  ],
+  "sc": [
+   [
+    9320,
+    "Dry"
+   ]
+  ]
+ },
+ "nextAfterChange": {
+  "di": "rj",
+  "hs": "hw",
+  "ht": "hs",
+  "htaf": "htc",
+  "htc": "ar",
+  "js": "pds",
+  "pds": "pdsc",
+  "sc": "scc"
+ },
+ "sweep": true
+}

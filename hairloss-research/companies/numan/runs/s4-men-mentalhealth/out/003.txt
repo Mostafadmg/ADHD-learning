@@ -1,0 +1,21 @@
+COMMAND 003 {"steps":[{"do":"click","selector":"label:text-is(\"Temples and Crown\")","settle":2800},{"do":"snap","settle":600}]}
+URL: https://www.numan.com/subscribe/hair-loss/2a4aca7c-c774-4fc3-8901-0684d205d1ec/sq/when_did_you_notice
+TITLE: When did you start to notice your hair loss? | Numan
+
+--- VISIBLE TEXT ---
+13%
+When did you start to notice your hair loss?
+Over the last few days or weeks
+My hair loss started gradually over the last few months or years
+Back
+
+--- CONTROLS ---
+  radio (2):
+    - Over the last few days or weeks (name: when_did_you_notice)
+    - My hair loss started gradually over the last few months or years (name: when_did_you_notice)
+  button (1):
+    - Back
+
+--- LINKS ---
+  link (1):
+    - Visit the main page -> /

@@ -1,0 +1,105 @@
+{
+ "start": "https://onlinedoctor-clinic.boots.com/Hair-Loss",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2000
+  },
+  {
+   "do": "click",
+   "selector": "input[name=zip]"
+  },
+  {
+   "do": "type",
+   "value": "N1 0QH"
+  },
+  {
+   "do": "wait",
+   "ms": 3000
+  },
+  {
+   "do": "click",
+   "selector": "#next-step"
+  },
+  {
+   "do": "wait",
+   "ms": 1500
+  },
+  {
+   "do": "click",
+   "text": "Male"
+  },
+  {
+   "do": "click",
+   "text": "NEXT"
+  },
+  {
+   "do": "wait",
+   "ms": 2000
+  },
+  {
+   "do": "click",
+   "selector": "#dob-preflight"
+  },
+  {
+   "do": "type",
+   "value": "15061994"
+  },
+  {
+   "do": "wait",
+   "ms": 3000
+  },
+  {
+   "do": "click",
+   "text": "NEXT"
+  },
+  {
+   "do": "wait",
+   "ms": 5000
+  },
+  {
+   "do": "click",
+   "text": "Returning for this service"
+  },
+  {
+   "do": "wait",
+   "ms": 5000
+  },
+  {
+   "do": "click",
+   "text": "See more treatment options"
+  },
+  {
+   "do": "wait",
+   "ms": 2000
+  },
+  {
+   "do": "click",
+   "selector": "[role=button]:has-text(\"£50.36\")"
+  },
+  {
+   "do": "wait",
+   "ms": 4000
+  },
+  {
+   "do": "click",
+   "text": "CONTINUE"
+  },
+  {
+   "do": "wait",
+   "ms": 5000
+  },
+  {
+   "do": "click",
+   "selector": "label[for=agreeRadio]"
+  },
+  {
+   "do": "click",
+   "selector": "#important-info button.btn"
+  },
+  {
+   "do": "wait",
+   "ms": 6000
+  }
+ ]
+}

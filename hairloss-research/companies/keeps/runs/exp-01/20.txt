@@ -1,0 +1,182 @@
+STEP 20 wait 4000
+URL: https://www.keeps.com/express/checkout?products=18636
+TITLE: Hair Loss Treatment Checkout | Keeps
+
+--- VISIBLE TEXT ---
+Questions? Call us
+(551) 290-3248
+1. Shipping Information
+First Name
+Last Name
+Address line 1
+Address line 2
+City
+State
+Select state
+ZIP code
+Phone Number
+Date of birth
+Email
+Confirm Email
+2. Payment Method
+Complete Purchase
+Backed by Keeps Hair Regrowth Warranty 🔒
+
+By clicking the "Complete Purchase" button, you agree to accept our Terms and Conditions and Privacy Policy, accept informed Consent for Telehealth Services, and acknowledge receipt of the KMG Notice of Privacy Practices.
+
+Money Back Guarantee
+
+Follow your treatment as directed — if you don't see visible progress, we'll refund you every penny. It's that simple.
+
+By clicking Complete Purchase, you agree that you will be enrolled in an automatically-renewing subscription for your treatment plan. You will be charged $149.93 for your first 3 months supply and $214.99 for each 3 months supply thereafter unless you cancel. Your first refill is billed 75 days after your initial purchase, then every 3 months, so each shipment arrives before your current supply runs out. Your order will be reviewed by a licensed healthcare provider, who may require additional personal or medical information, and is not prescribed until approved. Your fees are refundable if your prescription is not approved. Your subscription will renew unless canceled at least 48 hours before your renewal date. You may cancel anytime in your account settings. By continuing, you also agree to the Privacy Policy, Terms of Use, and consent to receive transactional and marketing text messages from Keeps (msg & data rates may apply; reply STOP to opt out).
+
+Choose
+
+›
+
+Checkout
+
+Order Summary
+FSA/HSA eligible for reimbursement
+
+11-In-1: Dutasteride & Minoxidil
+
+3-month plan
+
+As low as
+
+$1.67/day
+
+Apply once daily
+Ships every 3 months
+Money-back guarantee
+Standard Price
+$209.99
+Exclusive Discount
+-$60.06
+Online Clinician Visit
+$49.99
+FREE
+Expedited Shipping
+$19.99
+FREE
+Hair Regrowth Warranty
+Activated
+Total Due Today
+$149.93
+You're saving $60.06 with this plan. Nice pick!
+
+Est. Delivery: Within 48 hours
+
+Your all-inclusive plan includes upgraded benefits:
+
+Unlimited access to licensed clinicians
+
+$129
+
+FREE
+
+On-time refills guaranteed
+
+$89
+
+FREE
+
+100% U.S. based Keeps care agents
+
+$69
+
+FREE
+
+180-day money-back guarantee
+
+$50
+
+FREE
+
+Find why over 2 million guys have loved Keeps.
+
+Excellent
+
+4.7
+
+134 reviews on
+
+Trustpilot
+
+Dec 9, 2025
+
+Reliable company and good pricing
+
+Reliable company with lower prices than the same brand name products. They replaced a few items that were damaged during shipping quickly and easily. Make sure to keep track of your subscriptions as items cannot be cancelled or returned once an order is placed. Solid experience without having to see a doctor in-person.
+
+Naum Kaluzhny
+
+Verified Customer
+
+Dec 9, 2025
+
+Great Product and Great Service
+
+Keeps has provided great service since day 1. Product works (my hair isn’t falling out anymore) and the customer service has always been helpful and timely. It was easy to set up treatment, and easy to pause refills if necessary.
+
+Sam Guttosch
+
+Verified Customer
+
+Nov 30, 2025
+
+Positively Satisfied
+
+I've had nothing but positive and consistent results partnering with Keeps. I haven't lost any hair since I started utilizing their services. Furthermore, the subscription process was easy and user friendly.
+
+Leo Abate
+
+Verified Customer
+
+Nov 28, 2025
+
+Keeps has the best customer service
+
+Keeps provides the same sort of products as other companies like Hims, etc. However, what really stands out is their customer service and user friendly online platform. I am usually able to make edits to my account and message my provider very easily.
+
+Sammy
+
+Verified Customer
+
+180-day money-back guarantee.
+
+Free shipping. Ships in 48hrs.
+
+Unlimited virtual appointments.
+
+Honest & transparent pricing.
+
+Over 2 million prescriptions written.
+
+No insurance. No waitlist. No hassles.
+
+Keep in the loop
+Submit
+
+© 2026 Keeps
+
+Privacy
+Terms
+Informed Consent
+Accessibility
+Returns
+Shipping
+
+The 180-Day Money-Back Guarantee applies only to the following five new products: Chew 3-in-1, Chew+ 5-in-1, Drop 4-in-1, Drop+ 11-in-1, and Gel+ 10-in-1, and is available to new patients only. To be eligible, patients must (i) take the prescribed medication continuously and as directed for a full 180 days, and (ii) submit required before-and-after progress photos in accordance with provided guidelines within the specified timeframe. Refund requests must be submitted within 30 days of completing the required 180-day period, and refunds apply only to the cost of the eligible medication(s); shipping and consultation fees are non-refundable. Failure to meet any eligibility requirements, provide required documentation, or complete the full 180-day treatment period will void eligibility.
+
+Hair Loss Treatment Checkout | Keeps
+
+--- CONTROLS ---
+  input:text (8): First Name  ·  Last Name  ·  Address line 1  ·  Address line 2  ·  City  ·  react-select-3-input  ·  Phone Number = "(___) ___-____"  ·  Date of birth
+  input:tel (1): ZIP code
+  input:email (3): Email  ·  Confirm Email  ·  Your Email
+  button (4): Complete Purchase Backed by Keeps Hair Regrowth Warranty 🔒  ·  Previous slide [disabled]  ·  Next slide  ·  Submit
+
+--- LINKS ---
+  link (13): Questions? Call us (551) 290-3248 -> tel:+15512903248  ·  Terms and Conditions -> https://patient.thirtymadison.com/dashboard/legals/terms-and-conditions  ·  Privacy Policy -> https://patient.thirtymadison.com/dashboard/legals/privacy  ·  Consent for Telehealth Services -> https://patient.thirtymadison.com/dashboard/legals/informed-consent  ·  KMG Notice of Privacy Practices -> https://patient.thirtymadison.com/legals/kmg-notice-of-privacy-practices  ·  Terms of Use -> https://patient.thirtymadison.com/dashboard/legals/terms-and-conditions  ·  Choose -> /hair-treatment-plan  ·  Privacy -> https://patient.thirtymadison.com/dashboard/legals/privacy  ·  Terms -> https://patient.thirtymadison.com/dashboard/legals/terms-and-conditions  ·  Informed Consent -> https://patient.thirtymadison.com/dashboard/legals/informed-consent  ·  Accessibility -> https://patient.thirtymadison.com/dashboard/legals/accessibility  ·  Returns -> /faq/what-is-the-keeps-refund-and-return-policy  ·  Shipping -> /faq/category/orders-and-shipping

@@ -1,0 +1,15 @@
+{ "start": "https://onlinedoctor.boots.com/propecia-online", "steps": [
+  {"do":"scroll"},
+  {"do":"goto","url":"https://onlinedoctor.boots.com/propecia-online-important-info"},
+  {"do":"wait","ms":2500},
+  {"do":"goto","url":"https://onlinedoctor.boots.com/propecia-online-helpful-info"},
+  {"do":"wait","ms":2500},
+  {"do":"goto","url":"https://onlinedoctor.boots.com/faq"},
+  {"do":"wait","ms":2500},
+  {"do":"goto","url":"https://onlinedoctor.boots.com/pick-up-and-delivery"},
+  {"do":"wait","ms":2500},
+  {"do":"goto","url":"https://onlinedoctor.boots.com/patient-guide"},
+  {"do":"wait","ms":2500},
+  {"do":"goto","url":"https://onlinedoctor.boots.com/off-label-medicines"},
+  {"do":"wait","ms":2500}
+] }

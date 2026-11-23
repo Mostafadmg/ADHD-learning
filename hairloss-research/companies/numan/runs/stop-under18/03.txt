@@ -1,0 +1,21 @@
+STEP 03 click "label:text-is(\"Under 18\")"
+URL: https://www.numan.com/subscribe/hair-loss/7235bff8-3245-4535-a18d-152f2ec24bf7/sq/what_is_your_age/reject/under_eighteen
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+No suitable treatment
+
+The safety of our patients is our top priority. Unfortunately, as hair loss under the age of 18 could be a sign of an underlying condition, we’re unable to recommend a hair loss treatment for you. Please contact your doctor for advice.
+
+If you’d like to talk to our clinicians about this, please email clinic@numan.com and we’ll do our best to find a solution or recommend next steps.
+
+Did you make a mistake in your consultation? Providing false information can lead to serious harm to your health.
+
+Review your answers
+Back to homepage
+
+--- CONTROLS ---
+  button (1): Review your answers
+
+--- LINKS ---
+  link (3): Visit the main page -> /  ·  clinic@numan.com -> mailto:clinic@numan.com  ·  Back to homepage -> https://www.numan.com/

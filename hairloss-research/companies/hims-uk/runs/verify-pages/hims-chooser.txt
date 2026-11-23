@@ -1,0 +1,23 @@
+REQUESTED: https://www.forhims.co.uk/c
+FINAL URL: https://www.forhims.co.uk/c
+HTTP: 200
+TITLE: 
+ERROR: 
+
+--- TEXT ---
+About cookies on our site
+
+We use cookies and similar technologies to run and secure our services, understand how they are used, and, with your permission, to personalise content and show you relevant ads. Some data is shared with third parties for these purposes. For more information, please read our Privacy Policy.
+
+Accept all
+Customise
+What are you looking to do?
+Grow thicker, fuller hair
+Perform your best in bed
+Reach your healthy weight goal
+
+--- LINKS ---
+Privacy Policy -> https://www.forhims.co.uk/privacy-policy
+Grow thicker, fuller hair -> /c/hl
+Perform your best in bed -> /c/edpej-treatment-guidance
+Reach your healthy weight goal -> /c/wl

@@ -1,0 +1,16 @@
+STEP 01 wait 4000
+URL: https://start.ro.co/tefcyb/
+TITLE: Online Visit
+
+--- VISIBLE TEXT ---
+Firstly, how long have you been experiencing hair loss?
+Our goal is to understand your hair loss experience and your goals so we can find the right treatment for you.
+Months
+Within the last year
+More than a year
+
+--- CONTROLS ---
+  radio (3): Months [false]  ·  Within the last year [false]  ·  More than a year [false]
+
+--- LINKS ---
+

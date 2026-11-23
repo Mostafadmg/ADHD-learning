@@ -1,0 +1,27 @@
+COMMAND 039 {"steps":[{"do":"click","text":"Skip","settle":3500},{"do":"snap","settle":800}]}
+URL: https://www.numan.com/subscribe/hair-loss/4b4e30d9-9042-49e8-a32b-7557d60d5aec/email
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+96%
+Get access to special offers
+
+Take the first step towards improving your overall health. You'll receive personalised health insights and exclusive monthly offers to Numan products.
+
+​
+Email address (optional)
+Back
+Next
+Skip
+
+--- CONTROLS ---
+  input:text (1):
+    - Email address (optional) (name: email)
+  button (3):
+    - Back
+    - Next [disabled]
+    - Skip
+
+--- LINKS ---
+  link (1):
+    - Visit the main page -> /

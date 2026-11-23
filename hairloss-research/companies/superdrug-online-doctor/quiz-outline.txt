@@ -1,0 +1,229 @@
+MEN: service 147929
+FHIR Questionnaire id 201037 name hair_loss_sduk_questionnaire version 7 tags ['zava.questionnaire_evaluator.cds']
+
+linkId 439401001 | choice | required=True
+  text: Have you been diagnosed with Androgenic Alopecia (Male Pattern Baldness)?
+  option code 48318009: Yes, by my GP
+  option code 48318009.1: Yes, by a specialist
+  option code 441308009: No, self-diagnosis
+
+linkId 298000004 | choice | required=True
+  text: Please choose your hair pattern.
+  option code 1: A
+  option code 2: B
+  option code 3: C
+  option code 4: D
+  option code 5: E
+  option code 6: No pattern fits well
+
+linkId 713128006 | attachment | required=False
+  text: Please upload 2 photos clearly showing your hair pattern.
+  shown when (any): 298000004 = code 1 ; 298000004 = code 5 ; 298000004 = code 6
+
+linkId 2980000045 | boolean [checkbox] | required=True
+  text: From the hair distribution image that you've selected, your hair loss may be quite extensive. In this case it is unlikely that this medication will lead to a significant improvement in your hair distribution. It is also possible that the side effects or possible risks of treatment may outweigh any benefits. Please tick to confirm if you would like to continue with the assessment.
+  shown when (any/single): 298000004 = code 5
+
+linkId 2304202 | boolean | required=False
+  text: Are you currently using finasteride (or the brand Propecia)?
+
+linkId 23042020 | boolean | required=False
+  text: Have you taken finasteride or Propecia for hair loss before?
+  shown when (any/single): 2304202 = False (operator exists)
+
+linkId 2304202.1 | text | required=False
+  text: Are you finding it effective? Have you had any side effects?
+  shown when (any/single): 2304202 = True (operator exists)
+
+linkId 23042020.1 | text | required=False
+  text: Was it effective? Did you have any side effects?
+  shown when (any/single): 23042020 = True (operator exists)
+
+linkId 276131009 | choice | required=True
+  text: When did you first notice any hair loss?
+  option code 1: In the last month
+  option code 2: More than a month ago
+
+linkId 602 | choice | required=True
+  text: How did your hair loss start?
+  option code 162463006: Suddenly
+  option code 2: Gradually (over months)
+
+linkId 162463006.1 | text | required=False
+  text: Do you think your hair loss could be due to any other causes?
+  shown when (any/single): 602 = code 162463006
+
+linkId 162463006.2 | text | required=False
+  text: Can you give more details about how your hair loss started?
+  shown when (any/single): 602 = code 162463006
+
+linkId 716 | boolean | required=False
+  text: Have you noticed any other changes to the areas where you are losing hair?
+  help: Such as redness, itching, flaking or soreness
+
+linkId 248283007 | display | required=True
+  text: These symptoms suggest there could be other causes contributing to your hair loss, other than male pattern hair loss, which may improve with other treatments. We'd suggest you see your GP first to consider any other causes before taking this medication.
+  shown when (any/single): 716 = True (operator exists)
+
+linkId 716.1 | text | required=False
+  text: Please describe the all changes that you've noticed
+  shown when (any/single): 716 = True (operator exists)
+
+linkId 021106 | boolean | required=True
+  text: Can you always get and maintain an erection when you want one?
+
+linkId 021107 | display | required=True
+  text: One of the side effects of finasteride and Propecia, which occurs in around 2% of men, is problems with sexual function, including erectile dysfunction, meaning your symptoms of ED may worsen.
+  shown when (any/single): 021106 = False (operator exists)
+
+linkId 723 | choice (multi) | required=True
+  text: Do you have, or have you had, any of the following conditions?
+  option code 254900004: Prostate cancer
+  option code 254837009: Breast cancer
+  option code 235856003: Liver condition
+  option code 95320005: Any type of skin conditions
+  option code 728: None of the above (exclusive)
+
+linkId 729 | text | required=True
+  text: Please provide more details.
+  shown when (any): 723 = code 235856003 ; 723 = code 95320005
+
+linkId 724 | boolean | required=False
+  text: Do you have any other medical conditions not mentioned above?
+
+linkId 724.1 | text | required=False
+  text: Please provide more details
+  shown when (any/single): 724 = True (operator exists)
+
+linkId 47 | boolean | required=True
+  text: Are you currently taking any medication, or have you recently finished a course of medication?
+
+linkId 48 | text | required=True
+  text: Please list the names and doses of all these medications?
+  shown when (any/single): 47 = True (operator exists)
+
+linkId 48.1 | text | required=True
+  text: What do you use these medications for?
+  shown when (any/single): 47 = True (operator exists)
+
+linkId 49 | boolean | required=True
+  text: Are you allergic to any medicines or other substances?
+  help: For instance peanuts or soya.
+
+linkId 49.1 | choice (multi) | required=True
+  text: What allergies do you have?
+  option code 386963006: Finasteride
+  option code 112: Peanuts or Soya
+  option code 47703008: Lactose
+  option code 115: Other medications
+  option code 116: Other substances
+  shown when (all): 49 = True (operator exists)
+
+linkId 2004 | boolean [checkbox] | required=True
+  text: Our pharmacists source medication from a wide range of approved manufacturers to ensure we have a good supply available. Some manufacturers produce medication that isn’t suitable for people who suffer with peanut or soya allergies. Before starting your medication, it’s important to check the enclosed manufacturer’s leaflet to make sure the medication you’ve received is suitable for people with peanut or soya allergies. We also recommend checking with your local pharmacist. Please tick if you’d still like to proceed with your order.
+  shown when (any/single): 49.1 = code 112
+
+linkId 49.2 | boolean | required=False
+  text: Can you take medication that contains lactose?
+  shown when (any/single): 49.1 = code 47703008
+
+linkId 49.3 | text | required=True
+  text: Please tell us what medications or substances you’re allergic to.
+  shown when (any): 49.1 = code 115 ; 49.1 = code 116
+
+linkId 22042020 | boolean [checkbox] | required=True
+  text: Almost done. Important information to read and confirm you agree and understand: Trying for a baby Finasteride may affect male fertility while you are taking it. These changes are usually reversible after stopping treatment, but recovery may take several months. If you are planning to try for a baby, it is best not to use this or to stop it several months before trying to conceive. Depression Some people have experienced severe depression when taking finasteride. Before taking finasteride , read and keep the finasteride patient cards and patient information leaflet within your pack and inform your doctor if you have any personal history of depression or suicidal thought. You should stop taking this medication immediately if you notice that your mood is affected and speak to your doctor. Finasteride and your prostate Finasteride can lower the level of a prostate protein called PSA (prostate-specific antigen) in your blood. Because of this, it’s recommended that you see your GP for a prostate check (rectal examination) and a PSA blood test before starting treatment, and then at regular intervals while taking it. How often this is needed will depend on your age and personal risk factors. These checks help to detect any prostate problems, including prostate cancer, as early as possible. Sexual problems If you experience decreased sex drive, difficulty having an erection or ejaculation problems on finasteride, you should contact your doctor for medical advice. This medication is prescribed for your own personal use If you are requesting any follow-up medication, you confirm you are tolerating your treatment and any side effects experienced. Your answers are used to make medical decisions Answer the questions honestly and as accurately as you can. Our doctors rely on this information to prescribe treatment safely. Missing or incorrect information can increase the risk of side effects or lead to serious risk to your health. In case of questions, please contact us. By continuing, you confirm that you have understood the information provided, especially around treatment options, side effects, and effectiveness.
+
+linkId 20102724 | boolean [checkbox] | required=True
+  text: Please tick to acknowledge that it is best practice to inform your GP of any private treatment you receive. All treatment and messaging is completely confidential. However, you can easily update your GP by downloading a GP letter from the ‘Order History’ section of your account and sending it to them. If you prefer, we can send this letter directly to your GP, just send us their details
+
+linkId 56 | boolean [checkbox] | required=True
+  text: Please tick here to signify that you have read, understand and agree to abide by our terms and conditions and privacy and cookie policy .
+
+
+================================================================================
+
+WOMEN: services 147757 and 147778
+FHIR Questionnaire id 201132 name Hairloss_women_sduk_questionnaire version 8 tags ['zava.questionnaire_evaluator.cds', 'zava.consultation_triage.product_rule']
+
+linkId 717 | choice (multi) | required=True
+  text: Do you have or have you had:
+  option code 728: a shaved scalp
+  option code 724: sudden or patchy hair loss
+  option code 725: skin problems on the scalp - such as sunburn or psoriasis
+  option code 726: hair loss associated with childbirth
+  option code 7729: none of the above (exclusive)
+
+linkId 38341003 | boolean | required=False
+  text: Do you have, or are you using treatment for, high blood pressure?
+
+linkId 719 | boolean | required=False
+  text: Do you have any conditions affecting your heart?
+  help: Including an irregular heart beat.
+
+linkId 719.1 | text | required=True
+  text: Please provide more details:
+  shown when (any): 719 = True (operator exists)
+
+linkId 718 | choice | required=True
+  text: Are you pregnant or breastfeeding?
+  option code 7181: No
+  option code 7182: I'm pregnant
+  option code 7184: I'm breastfeeding
+
+linkId 1153 | boolean | required=True
+  text: Do you have any other health conditions?
+
+linkId 1154 | text | required=False
+  text: Please provide more details
+  shown when (any/single): 1153 = True (operator exists)
+
+linkId 47 | boolean | required=True
+  text: Are you currently taking any medication, or have you recently finished a course of medication?
+
+linkId 48 | text | required=True
+  text: Please list the names and doses of all these medications?
+  shown when (any/single): 47 = True (operator exists)
+
+linkId 48.1 | text | required=True
+  text: What do you use these medications for?
+  shown when (any/single): 47 = True (operator exists)
+
+linkId 49 | boolean | required=True
+  text: Are you allergic to any medicines or other substances?
+
+linkId 49.1 | choice (multi) | required=True
+  text: Please tick all of the allergies that apply to you.
+  option code 101: Minoxidil
+  option code 111: Penicillin
+  option code 117: Fish
+  option code 118: Caffeine
+  option code 112: Peanuts or Soya
+  option code 119: Ethanol
+  option code 120: Propylene glycol
+  option code 47703008: Lactose
+  option code 115: Other medication
+  option code 116: Other substance
+  shown when (all): 49 = True (operator exists)
+
+linkId 49.3 | text | required=True
+  text: Please provide more details.
+  shown when (any): 49.1 = code 115 ; 49.1 = code 116
+
+linkId 20102724 | boolean [checkbox] | required=True
+  text: Please tick to acknowledge that it is best practice to inform your GP of any private treatment you receive. All treatment and messaging is completely confidential. However, you can easily update your GP by downloading a GP letter from the ‘Order History’ section of your account and sending it to them. If you prefer, we can send this letter directly to your GP, just send us their details
+
+linkId 55 | boolean [checkbox] | required=True
+  text: I fully understand the questions asked & have answered honestly & truthfully. I fully understand the side-effects of the treatment options, their effectiveness and alternative options & am happy to continue with my request. I confirm & agree that any treatment prescribed for me is for my personal use only.
+
+linkId 56 | boolean [checkbox] | required=True
+  text: Please tick here to signify that you have read, understand and agree to abide by our terms and conditions and privacy and cookie policy .
+
+
+Selectors on the live page (seen in the DOM):
+  single choice : input[name='SingleChoice-option<linkId>'][value='<code>']
+  multi choice  : input[name='MultiChoice-option<linkId>'][value='<code>']
+  yes/no        : input[name='<linkId>'][value='true'|'false']
+  tick box      : input[name='Disclaimer-option<linkId>']
+  submit        : button[data-qa='cdc-questionnaire-submit']   (cookie banner first: #onetrust-reject-all-handler)
+  free-text boxes were not inspected (they only appear after a branch answer).

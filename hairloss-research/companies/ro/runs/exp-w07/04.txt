@@ -1,0 +1,18 @@
+STEP 04 click "All over"
+URL: https://start.ro.co/tefcyb/online-visit/8
+TITLE: Online Visit
+
+--- VISIBLE TEXT ---
+Where on your head have you noticed hair loss?
+Select all that apply.
+Top of head/crown
+Temples
+Frontal scalp
+All over
+Continue
+
+--- CONTROLS ---
+  button (5): Top of head/crown [false]  ·  Temples [false]  ·  Frontal scalp [false]  ·  All over [true]  ·  Continue
+
+--- LINKS ---
+

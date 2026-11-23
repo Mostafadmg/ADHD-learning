@@ -1,0 +1,17 @@
+[21:55:21] start s2-m-tt-drops
+[21:57:16] done  s2-m-tt-drops exit=0 :: ===== STOP: no answer for step 29 [yd] (question) Personalise your account =====
+[21:57:22] start s2-m-pp-decline
+[21:59:12] done  s2-m-pp-decline exit=0 :: ===== STOP: no answer for step 28 [yd] (question) Personalise your account =====
+[21:59:18] start s2-w-tt-drops
+[22:01:27] done  s2-w-tt-drops exit=0 :: ===== STOP: no answer for step 32 [yd] (question) Personalise your account =====
+[22:01:33] start s2-m-pt-yes
+[22:03:28] done  s2-m-pt-yes exit=0 :: ===== STOP: no answer for step 28 [yd] (question) Personalise your account =====
+[22:03:34] start s2-m-yhg-two
+[22:05:40] done  s2-m-yhg-two exit=0 :: ===== STOP: no answer for step 30 [yd] (question) Personalise your account =====
+[22:05:46] start s2-m-al-minoxidil
+[22:07:56] done  s2-m-al-minoxidil exit=0 :: ===== STOP: no answer for step 29 [yd] (question) Personalise your account =====
+[22:08:02] start s2-m-al-finasteride
+[22:10:00] done  s2-m-al-finasteride exit=0 :: ===== STOP: no answer for step 30 [yd] (question) Personalise your account =====
+[22:10:06] start s2-m-htp-fintabs
+[22:11:58] done  s2-m-htp-fintabs exit=0 :: ===== STOP: no answer for step 28 [yd] (question) Personalise your account =====
+ALL-DONE

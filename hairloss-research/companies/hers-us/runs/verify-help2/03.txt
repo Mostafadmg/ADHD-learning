@@ -1,0 +1,36 @@
+STEP 03 wait 2000
+URL: https://support.hims.com/hc/en-us/search?query=photo+ID+verify+identity
+TITLE: Search results – Hims, Inc.
+
+--- VISIBLE TEXT ---
+Help Center
+Everything you need to know, all in one place.
+By Category
+All Categories (2)
+The Basics (1)
+Troubleshooting (1)
+Show more categories
+2 results for "photo ID verify identity"
+Why do I need to verify my identity with a driver's license for testosterone treatment?
+Hims, Inc.
+The Basics
+Getting Started
+
+checkout, we're required to verify your identity. To do this, you'll need to upload a clear photo of a valid, unexpired driver's
+
+Theresa October 19, 2026 at 11:19 AM 0 comments
+Troubleshooting Login Issues  -23
+Hims, Inc.
+Troubleshooting
+Quick Tips
+
+credentials to ensure they are entered correctly. It is crucial to verify that both your username and password are accurate. The
+
+Theresa April 25, 2024 at 7:09 PM 0 comments
+
+--- CONTROLS ---
+  button (2): Toggle Navigation  ·  Show more categories
+  input:search (1): How can we help you? = "photo ID verify identity"
+
+--- LINKS ---
+  link (10): Contact us -> /hc/requests/new?ticket_form_id=25593136373787  ·  All Categories (2) -> /hc/en-us/search?filter_by=knowledge_base&query=photo+ID+verify+identity&utf8=%E2%9C%93  ·  The Basics (1) -> /hc/en-us/search?category=360002033551&filter_by=knowledge_base&query=photo+ID+verify+identity&utf8=%E2%9C%93  ·  Troubleshooting (1) -> /hc/en-us/search?category=23202419437595&filter_by=knowledge_base&query=photo+ID+verify+identity&utf8=%E2%9C%93  ·  Hims, Inc. -> https://support.hims.com  ·  The Basics -> https://support.hims.com/hc/en-us/categories/360002033551-The-Basics  ·  Getting Started -> https://support.hims.com/hc/en-us/sections/360006103992-Getting-Started  ·  Troubleshooting Login Issues -> /hc/en-us/search/click?data=BAh7DjoHaWRsKwgbCbdY6RY6D2FjY291bnRfaWRpA5a3HzoJdHlwZUkiDGFydGljbGUGOgZFVDoIdXJsSSJbaHR0cHM6  ·  Troubleshooting -> https://support.hims.com/hc/en-us/categories/23202419437595-Troubleshooting  ·  Quick Tips -> https://support.hims.com/hc/en-us/sections/360006106172-Quick-Tips

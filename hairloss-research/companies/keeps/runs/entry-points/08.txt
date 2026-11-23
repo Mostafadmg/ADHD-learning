@@ -1,0 +1,40 @@
+STEP 08 goto "https://www.keeps.com/request/lead"
+URL: https://www.keeps.com/request/lead
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+EXCLUSIVE OFFER: UP TO 50% OFF FIRST ORDER GET STARTED
+
+ BACK
+
+YOUR PLAN
+
+ACCOUNT
+
+CONSULTATION
+
+Start your consultation
+
+Enter your name and email to access personalized support and secure your treatment recommendation.
+
+FIRST NAME*
+
+LAST NAME*
+
+The name provided here must be the legal name of the person signing up for treatment.
+
+EMAIL*
+
+CONTINUE
+OR SIGN IN WITH
+GOOGLE
+
+By continuing, you agree to accept our Terms & Conditions and Privacy Policy.
+
+--- CONTROLS ---
+  button (3): BACK  ·  CONTINUE  ·  GOOGLE
+  input:text (2): FIRST NAME*  ·  LAST NAME*
+  input:email (1): EMAIL*
+
+--- LINKS ---
+  link (3): GET STARTED -> /hair-assessment-quiz  ·  Terms & Conditions -> https://patient.thirtymadison.com/dashboard/legals/terms-and-conditions  ·  Privacy Policy -> https://patient.thirtymadison.com/dashboard/legals/privacy

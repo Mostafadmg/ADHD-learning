@@ -1,0 +1,68 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 3,
+   "sectionTitle": "MEDICAL HISTORY"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 4504,
+    "inputConfig": {
+     "options": [
+      {
+       "label": "Pheochromocytoma",
+       "value": "4"
+      },
+      {
+       "label": "High blood pressure (hypertension) or low blood pressure (hypotension)",
+       "value": "15"
+      },
+      {
+       "label": "Any heart or cardiovascular condition (e.g. stroke, heart attack, heart failure, angina, atrial fibrillation, valve disorder, irregular or fast heartbeat)",
+       "value": "24"
+      },
+      {
+       "label": "Hypertrichosis (excessive hair growth anywhere on the body, unrelated to hormones)",
+       "value": "10"
+      },
+      {
+       "label": "PoTS syndrome (postural tachycardia syndrome)",
+       "value": "11"
+      },
+      {
+       "label": "Polyendocrine Metabolic Ovarian Syndrome (PMOS, formerly PCOS)",
+       "value": "25"
+      },
+      {
+       "exclusive": true,
+       "label": "None of the above",
+       "value": "13"
+      }
+     ]
+    },
+    "inputType": "multi_select_checkbox",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Have you been diagnosed with any of the following conditions?",
+  "type": "question"
+ }
+}

@@ -123,7 +123,7 @@ def evidence_for(flow, sid, qid, label):
     if sw:
         v = [visible(r) for r in sw]; n = RUN[sw[0]]['nChanged']
         if not any(v): return f"Group test ({cite(sw)}: {n} non-medical answers changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall.", 'sweep', sw
-        return f"Group test ({cite(sw)}: {n} answers changed together): {v[0]}. " + T.SWEEP_NOTE.get((sid, label), 'Which of the changed answers caused it is set out in the rules.'), 'sweep', sw
+        return f"Group test ({cite(sw)}: {n} non-medical answers changed together, this one among them): {v[0]}. " + T.SWEEP_NOTE.get((sid, label), 'So this answer by itself changes nothing a visitor can see before the account wall.'), 'sweep', sw
     if sc:
         bag = [r for r in sc if RUN[r]['reachedBag']]
         if bag: return f"Stage 1 multi-change scout ({cite(bag)}): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test.", 'scout', sc
@@ -135,7 +135,7 @@ def evidence_for(flow, sid, qid, label):
         v = visible(best[0]) if (oc2 or sw2) else ''
         oth = "men's" if flow == 'women' else "women's"
         return f"Not replayed on this route. The same screen is served on the {oth} route, where a {kind} ({cite(best)}) showed " + (v if v else "nothing visible changing") + ".", 'other-route', best
-    return "Not chosen in any replay (48 stage 2 replays had to be prioritised): effect untested.", 'untested', []
+    return f"Not chosen in any replay (the {N_S2} stage 2 replays had to be prioritised): effect untested.", 'untested', []
 
 VIS_TYPE = T.VIS_TYPE  # (step, label prefix) -> effectType when the replay showed something visible
 

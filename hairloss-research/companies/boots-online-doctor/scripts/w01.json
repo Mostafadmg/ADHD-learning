@@ -1,0 +1,8 @@
+{ "start": "https://onlinedoctor-clinic.boots.com/Hair-Loss", "steps": [
+  {"do":"wait","ms":2500},
+  {"do":"fill","selector":"input[type=text]","value":"N1 0QH"},
+  {"do":"press","key":"Tab"},
+  {"do":"wait","ms":2500},
+  {"do":"click","text":"NEXT"},
+  {"do":"wait","ms":2000}
+] }

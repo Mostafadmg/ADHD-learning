@@ -1,0 +1,226 @@
+FLOW Minoxidil Prod 6aa3d578f415d1603a6e0c85 nodes 31
+
+[00] node-start-1784100995818 (start)
+   PATH "Default"*                   -> node-1778105320499 
+
+[01] node-1778105320499 (react-block)
+   LABEL: Ready to start your Strut Hair Loss journey
+   COMPONENT "Condition badge" {"text": "Medical questionnaire", "fontFamily": "'Plus Jakarta Sans', -apple-system, sans-serif", "fontSize": 12, "fontWeight": 600, "letterSpacing": 0, "textTransform": "none", "paddingX": 8, "paddingY": 4, "alignment": "left", "marginTop": 0, "marginBottom": 0}
+   COMPONENT "Welcome Screen Badge" {"cardBg": "#FFFFFF"}
+   NEXT -> node-1
+
+[02] node-1 (react-block)
+   LABEL: What is your age?
+   INPUT multi-choice id=block-1784100322077-3 alias=block-1784100322077-3 :: What is your age? {"required": true, "allowMulti": false}
+        (c0) Under 18
+        (c1) 18-30
+        (c2) 31-45
+        (c3) 46-60
+        (c4) 61+
+   PATH "Under 18"                   -> node-20 when (node-1.block-1784100322077-3 equal "c0")
+   PATH "18 or older"*               -> node-1779173500330 when (node-1.block-1784100322077-3 not-equal "c0")
+
+[03] node-1779173500330 (react-block)
+   COMPONENT "Minoxidil : Dose selection" {"title": "Minoxidil Tablets", "subtitle": "Oral minoxidil for hair loss · compounded by a US licensed pharmacy", "imageUrl": "https://www.struthealth.com/assets/v3-hl-oral-minoxidil.webp", "subAxisLabel": "Dose", "defaultDose": "dose_2_5", "pricePeriodSuffix": "for 90 days", "trustItem1": "Doctor consult", "trustItem2": "FDA-registered pharmacy", "totalLabel": "Total today", "ctaLabel": "Add to cart"}
+   NEXT -> node-3
+
+[04] node-3 (react-block)
+   LABEL: How long ago did you first notice signs of hair loss?
+   INPUT multi-choice id=block-1784100322077-3 alias=None :: How long ago did you first notice signs of hair loss? {"required": true, "allowMulti": false}
+        (c0) 1 month or less
+        (c1) Less than 6 months
+        (c2) 6-12 months
+        (c3) Over 1 year
+        (c4) Over 2 years
+   NEXT -> node-4
+
+[05] node-4 (react-block)
+   LABEL: What symptoms of hair loss have you noticed? Select all that apply.
+   INPUT multi-choice id=block-1784100322077-3 alias=None :: What symptoms of hair loss have you noticed? Select all that apply. {"required": true, "allowMulti": true}
+        (c0) Thinning at the front hairline
+        (c1) Thinning at the temples
+        (c2) Thinning on the top of the head
+        (c3) Receding hairline
+        (c4) Patchy bald spots
+        (c5) Diffuse thinning (all over)
+        (c6) Increased shedding
+   NEXT -> node-5
+
+[06] node-5 (react-block)
+   LABEL: Have you noticed any scalp symptoms? Select all that apply.
+   INPUT multi-choice id=block-1784100322077-3 alias=None :: Have you noticed any scalp symptoms? Select all that apply. {"required": false, "allowMulti": true}
+        (c0) Itching, pain, burning, or lesions
+        (c1) Dry skin or dandruff
+        (c2) Rash
+        (c3) Bleeding
+        (c4) Sudden hair loss
+        (1777426303825) None of the above [deselect-others]
+   NEXT -> node-6
+
+[07] node-6 (react-block)
+   LABEL: What treatments have you tried before? Select all that apply.
+   INPUT multi-choice id=block-1784100322077-3 alias=None :: What treatments have you tried before? Select all that apply. {"required": false, "allowMulti": true}
+        (c0) Minoxidil (Rogaine) topical
+        (c1) Minoxidil oral tablets
+        (c2) Finasteride (Propecia)
+        (c3) Dutasteride (Avodart)
+        (c4) Biotin or biotin-based vitamins
+        (c5) Ketoconazole shampoo
+        (c6) Steroid-based scalp injections
+        (c7) Hair transplant
+        (c8) PRP (platelet-rich plasma)
+        (1776845700752) Other [allow-other]
+        (1777426294162) None of the above [deselect-others]
+   NEXT -> node-7
+
+[08] node-7 (react-block)
+   LABEL: Do you have any issues with sexual dysfunction currently?
+   INPUT yes-no id=block-1784100322077-3 alias=None :: Do you have any issues with sexual dysfunction currently? {"required": true}
+   NEXT -> node-8
+
+[09] node-8 (react-block)
+   LABEL: Are you allergic to any of the following? Select all that apply.
+   INPUT multi-choice id=block-1784100322077-3 alias=None :: Are you allergic to any of the following? Select all that apply. {"required": false, "allowMulti": true}
+        (c0) Finasteride
+        (c1) Dutasteride
+        (c2) Minoxidil
+        (c3) Tretinoin
+        (c4) Ketoconazole
+        (c5) Latanoprost or Bimatoprost
+        (c6) Azelaic Acid
+        (c7) Caffeine
+        (c8) Melatonin
+        (c9) Fluocinolone or Hydrocortisone
+        (1776845724343) Other [allow-other]
+        (1777426322448) None of the above [deselect-others]
+   NEXT -> node-9
+
+[10] node-9 (react-block)
+   LABEL: Do you have any of the following medical conditions? Select all that apply.
+   INPUT multi-choice id=block-1784100322077-3 alias=None :: Do you have any of the following medical conditions? Select all that apply. {"required": false, "allowMulti": true}
+        (c0) Heart failure or heart disease
+        (c1) Heart attack or coronary artery disease
+        (c2) Stroke
+        (c3) Low blood pressure
+        (c4) Pheochromocytoma
+        (c5) Liver problems
+        (c6) Kidney disease
+        (c7) Thyroid disease
+        (c8) Breast or prostate cancer
+        (c9) Prostate enlargement (BPH)
+        (c10) HIV
+        (c11) Autoimmune disease
+        (c12) Glaucoma or eye conditions
+        (1776845737667) Other [allow-other]
+        (1777426317622) None of the above [deselect-others]
+   NEXT -> node-10
+
+[11] node-10 (react-block)
+   LABEL: Have you had any surgeries?
+   INPUT yes-no id=block-1784100322077-3 alias=block-1784100322077-3 :: Have you had any surgeries? {"required": true}
+   PATH "Yes"                        -> node-11 when (node-10.block-1784100322077-3 equal "yes")
+   PATH "No"*                        -> node-12 when (node-10.block-1784100322077-3 equal "no")
+
+[12] node-12 (react-block)
+   LABEL: Are you currently taking any medications, vitamins, or supplements?
+   INPUT yes-no id=block-1784100322077-3 alias=block-1784100322077-3 :: Are you currently taking any medications, vitamins, or supplements? {"required": true}
+   PATH "Yes"                        -> node-13 when (node-12.block-1784100322077-3 equal "yes")
+   PATH "No"*                        -> node-14 when (node-12.block-1784100322077-3 equal "no")
+
+[13] node-14 (react-block)
+   LABEL: Do you have concerns about your mood, depression, anxiety, or excessive worrying?
+   INPUT yes-no id=block-1784100322077-3 alias=None :: Do you have concerns about your mood, depression, anxiety, or excessive worrying? {"required": true}
+   NEXT -> node-15
+
+[14] node-15 (react-block)
+   LABEL: In the last 2 weeks, have you lost interest in doing your daily routine?
+   INPUT yes-no id=block-1784100322077-3 alias=None :: In the last 2 weeks, have you lost interest in doing your daily routine? {"required": true}
+   NEXT -> node-16
+
+[15] node-16 (react-block)
+   LABEL: In the last 2 weeks, have you had any thoughts of hurting yourself?
+   INPUT yes-no id=block-1784100322077-3 alias=block-1784100322077-3 :: In the last 2 weeks, have you had any thoughts of hurting yourself? {"required": true}
+   PATH "Yes - Self-harm risk"       -> node-21 when (node-16.block-1784100322077-3 equal "yes")
+   PATH "No"*                        -> node-17 when (node-16.block-1784100322077-3 equal "no")
+
+[16] node-17 (react-block)
+   LABEL: Important Mental Health Warning
+   INPUT statement id=block-1784100322077-3 alias=None :: Important Mental Health Warning {"content": "<p><strong>Important:</strong> Finasteride and dutasteride (5-alpha-reductase inhibitors) may worsen depression or anxiety symptoms. Oral use carries higher risk than topical. If you experience thoughts of self-harm while using this medication, discontinue immediately and call 911.</p>\n<p>Please read the above carefully before continuing.</p>"}
+   NEXT -> node-18
+
+[17] node-18 (react-block)
+   LABEL: Is there anything else you want your doctor to know about your condition or health?
+   INPUT yes-no id=block-1784100322077-3 alias=block-1784100322077-3 :: Is there anything else you want your doctor to know about your condition or health? {"required": true}
+   PATH "Path A"                     -> node-19 when (node-18.block-1784100322077-3 equal "yes")
+   PATH "Path B"*                    -> node-1788948098392 
+
+[18] node-1788948098392 (react-block)
+   COMPONENT "Strut Auth" {"defaultMode": "signup"}
+   NEXT -> node-1788948272849
+
+[19] node-1788948272849 (react-block)
+   LABEL: What is your address?
+   INPUT address id=block-1788948272849-3 alias=None :: What is your address? {"required": false, "placeholder": "Search for your address...", "showStreet2": true, "street2Placeholder": "Apt, suite, unit, etc. (optional)", "restrictToCountry": ""}
+        sub: Start typing to search for your address
+   NEXT -> node-1788948320318
+
+[20] node-1788948320318 (react-block)
+   LABEL: Verify your identity
+   COMPONENT "Strut ID Verification" {"templateId": "itmpl_QPBfFdfmLGm2itLsWEkeWGgJ", "environment": "production", "subject": "person_v1", "ctaText": "Start Identity Verification", "prefillNameFirst": "{{user.profile.firstName}}", "prefillNameLast": "{{user.profile.lastName}}", "prefillNameMiddle": "", "prefillBirthdate": "{{user.profile.dob}}", "prefillEmailAddress": "{{user.profile.email}}", "prefillPhoneNumber": "{{user.profile.phone}}", "prefillAddressStreet1": "{{user.profile.address.street}}", "prefillAddressStreet2": "{{user.profile.address.street2}}", "prefillAddressCity": "{{user.profile.address.city}}", "prefillAddressSubdivision": "{{user.profile.address.state}}", "prefillAddressPostalCode": "{{user.profile.address.zip}}", "prefillAddressCountryCode": "{{user.profile.address.country}}"}
+   NEXT -> node-1788948362991
+
+[21] node-1788948362991 (react-block)
+   COMPONENT "Shopping Cart" {"buttonText": "Proceed to Checkout"}
+   NEXT -> node-1788948387059
+
+[22] node-1788948387059 (react-block)
+   LABEL: Payment Details
+   INPUT payment id=block-1788948387059-3 alias=None :: Payment Details {"required": true, "processor": "authorize-net", "environment": "production", "mode": "setup", "customerEmail": "", "currency": "usd", "buttonText": "Save Card", "collectBillingAddress": false, "billingAddress": "{{user.profile.address}}", "billingFirstName": "{{user.profile.firstName}}", "billingLastName": "{{user.profile.lastName}}"}
+        sub: Your payment information is securely processed.
+   NEXT -> node-1788948428853
+
+[23] node-1788948428853 (react-block)
+   COMPONENT "Strut Finalize" {}
+   PATH "Card declined"              -> node-1788948387059 when (node-1788948428853.block-1788948428853-3.status equal "declined")
+   PATH "Success"*                   -> node-1788948455105 
+
+[24] node-1788948455105 (react-block)
+   COMPONENT "OrderSuccess" {"thankYouTitle": "Order completed", "thankYouMessage": "Thank you — we received your order.", "reviewMessage": "A doctor from our team will review your order and we will email you once your prescription has been written.", "expectationMessage": "You should hear from us within 48 hours.", "detailsHeading": "Your order"}
+   COMPONENT "Go to struthealth" {}
+
+[25] node-19 (react-block)
+   LABEL: Please share any additional information for your doctor.
+   INPUT text-area id=block-1784100322077-3 alias=None :: Please explain: {"required": true, "placeholder": "Share any additional health information...", "maxLength": 1000, "rows": 5}
+        sub: Please provide your detailed response
+   NEXT -> node-1788948098392
+
+[26] node-21 (react-block)
+   LABEL: Safety Alert || SUB: Your safety is our top priority. If you are having thoughts of hurting yourself, please contact the 988 Suicide and Crisis Lifeline by calling or texting 988, or call 911. A physician will still review your questionnaire. You may go back and update your answer, or end the questionnaire.
+   INPUT multi-choice id=block-1784100322077-3 alias=None :: Safety Alert {"required": true, "allowMulti": false}
+        sub: Your safety is our top priority. If you are having thoughts of hurting yourself, please contact the 988 Suicide and Crisis Lifeline by calling or texting 988, or call 911. A physician will still review your questionnaire. You may go back and update your answer, or end the questionnaire.
+        (c0) Go back and update my answer
+        (c1) End questionnaire
+   PATH "Go back"                    -> node-16 when (node-21.block-1784100322077-3 equal "c0")
+   PATH "End"*                       -> node-23 when (node-21.block-1784100322077-3 equal "end")
+
+[27] node-23 (ending-ds)
+   ENDING {"mode": "redirect", "blocks": [], "redirect": {"url": "www.struthealth.co", "appendFlowVariables": false, "appendQueryParams": []}, "sideEffects": []}
+
+[28] node-13 (react-block)
+   LABEL: Please list all current medications, vitamins, and supplements with dosages:
+   INPUT text-area id=block-1784100322077-3 alias=None :: Please list all current medications, vitamins, and supplements with dosages: {"required": true, "placeholder": "List your medications...", "rows": 4}
+   NEXT -> node-14
+
+[29] node-11 (react-block)
+   LABEL: Please describe your surgical history:
+   INPUT text-area id=block-1784100322077-3 alias=None :: Please describe your surgical history: {"required": true, "placeholder": "Describe your surgeries...", "rows": 4}
+   NEXT -> node-12
+
+[30] node-20 (react-block)
+   LABEL: Age Verification || SUB: These medications are only available for patients 18 and older. If you selected the wrong answer, you can go back and update it.
+   INPUT multi-choice id=block-1784100322077-3 alias=None :: Age Verification {"required": true, "allowMulti": false}
+        sub: These medications are only available for patients 18 and older. If you selected the wrong answer, you can go back and update it.
+        (c0) Go back and update my answer
+        (c1) End questionnaire
+   PATH "Go back"                    -> node-1 when (node-20.block-1784100322077-3 equal "c0")
+   PATH "End"*                       -> node-23 when (node-20.block-1784100322077-3 equal "end")

@@ -1,0 +1,44 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 3,
+   "sectionTitle": "MEDICAL HISTORY"
+  },
+  "description": "Choose the number from 0-10 that best reflects your answer.",
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 255,
+    "inputConfig": {
+     "isOptional": true,
+     "leftLabel": "The worst it's ever been",
+     "max": 10,
+     "min": 0,
+     "rightLabel": "The best it's ever been",
+     "start": 5,
+     "step": 1
+    },
+    "inputType": "number_slider",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "How would you rate the appearance of your hair in the last week?",
+  "type": "question"
+ }
+}

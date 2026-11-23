@@ -1,0 +1,78 @@
+{
+ "heading": "What is Ketoconazole shampoo?",
+ "body": "Ketoconazole is an antifungal used for dandruff and tinea versicolor (pityriasis versicolor).",
+ "activeIngredientsLabel": "",
+ "ingredients": [
+  {
+   "name": "Ketoconazole 2%",
+   "body": "Works by reducing fungus and yeast on areas where it is applied. May also exert an anti-inflammatory effect on the scalp.*"
+  }
+ ],
+ "safety": [
+  {
+   "title": "Do Not Use If:",
+   "body": "You are allergic to ketoconazole or any inactive ingredients in this shampoo, or if you have had an allergic reaction to other azole antifungals (such as clotrimazole, miconazole, or fluconazole)."
+  },
+  {
+   "title": "Important Precautions & Usage Instructions",
+   "body": [
+    {
+     "kind": "ul",
+     "items": [
+      {
+       "lead": "For External Use Only:",
+       "text": "Do not ingest. Avoid contact with your eyes, nose, or mouth. If contact occurs, rinse thoroughly with water."
+      },
+      {
+       "lead": "Pregnancy & Breastfeeding:",
+       "text": "Inform your healthcare provider if you are pregnant, planning to become pregnant, or breastfeeding. While minimal amounts are absorbed through the skin, your provider will determine if this treatment is appropriate for you."
+      },
+      {
+       "lead": "Medical History & Medications:",
+       "text": "Tell your provider about all existing medical conditions, active skin conditions, and any prescription or over-the-counter products you use."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "title": "Common Side Effects",
+   "body": [
+    {
+     "kind": "ul",
+     "items": [
+      "Scalp or skin irritation, burning, dryness, itching, or redness at the application site.",
+      "Changes in hair texture or color, or loss of curl in permanently waved hair.",
+      "Mild hair thinning or shedding."
+     ]
+    }
+   ]
+  },
+  {
+   "title": "When to Seek Immediate Medical Attention",
+   "body": [
+    {
+     "kind": "p",
+     "text": "Stop using the shampoo and seek emergency medical care immediately if you experience signs of a severe allergic reaction, including:"
+    },
+    {
+     "kind": "ul",
+     "items": [
+      "Hives, severe skin rash, blistering, or peeling.",
+      "Swelling of the face, lips, tongue, or throat (angioedema).",
+      "Difficulty breathing or swallowing."
+     ]
+    },
+    {
+     "kind": "p",
+     "text": "Tell your healthcare provider if you experience any side effect that bothers you or does not go away. You may report side effects to the FDA at 1-800-FDA-1088 or www.fda.gov/medwatch."
+    }
+   ]
+  }
+ ],
+ "disclaimer": [
+  "$2e"
+ ],
+ "imageSrc": "/assets/v3-keto-ingredients-pic.webp",
+ "imageAlt": "Ketoconazole 2% Shampoo ingredients"
+}

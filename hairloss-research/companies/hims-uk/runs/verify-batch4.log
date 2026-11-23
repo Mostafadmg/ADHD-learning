@@ -1,0 +1,8 @@
+[verify] 22:10:14 start verify-18-delete-confirm
+[verify] 22:11:12 end verify-18-delete-confirm exit 0
+[verify] 22:11:18 start verify-19-all-warning-signs
+[verify] 22:12:45 end verify-19-all-warning-signs exit 0
+[verify] 22:12:51 start verify-20-gst-combo-kit
+[verify] 22:15:15 end verify-20-gst-combo-kit exit 0
+[verify] ALL DONE
+[verify4] ALL DONE

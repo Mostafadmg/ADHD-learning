@@ -1,0 +1,184 @@
+
+Treatments, Prescriptions & Healthcare | LloydsPharmacy Online Doctor
+Save £50 on your first weight loss consultation with code BFRIDAY50. From £49.99^. [A:/pages/promotion-and-prize-draw-terms] Terms and conditions apply.
+ [A:https://onlinedoctor.lloydspharmacy.com] 
+[FORM action=/search method=get]
+ [INPUT type=search name=q id=header-search placeholder=Search condition or treatment] 
+ [BTN] 
+ [BTN] 
+ [BTN] 
+ [A:https://onlinedoctor.lloydspharmacy.com/cart] Basket
+ [BTN] Account
+ [BTN] Close ×
+Which service do you want to login to?
+ [A:
+https://core.onlinedoctor.lloydspharmacy.com/login] Log in or Register
+Weight Loss
+ [A:/collections/weight-loss] Weight loss
+ [A:/collections/weight-loss-injections] Weight loss injections
+ [A:/collections/weight-loss-tablets] Weight loss tablets
+ [A:/products/wegovy-tablets] Wegovy tablets
+ [A:/products/foundayo-orforglipron] Foundayo tablets
+ [A:/products/mounjaro-tirzepatide-weight-loss-injection] Mounjaro
+ [A:/products/wegovy-semaglutide-weight-loss-injection] Wegovy
+ [A:/collections/weight-management-app] Weight management app
+ [A:/blogs/weight-management-advice] Weight management advice hub
+Sexual Health
+ [A:/collections/sti-test-kits] STI test kits
+ [A:/products/mens-womens-msm-4-sti-test-kit] 4-In-1 STI test kit: Chlamydia, gonorrhoea, syphilis & HIV
+ [A:/products/hiv-test-kit] At home HIV test kit
+ [A:/products/chlamydia-gonorrhoea-test-kit] Chlamydia and Gonorrhoea STI test kits
+ [A:/products/trichomoniasis-sti-test-kit] Chlamydia, Gonorrhoea & Trichomoniasis tests
+ [A:/products/gp-photo-service] Genital photo assessment service
+ [A:/collections/sti-treatments] STI treatments
+ [A:/collections/contraception] Contraception & birth control pills
+ [A:/collections/morning-after-pill-contraceptive] Morning after pill
+ [A:/collections/erectile-dysfunction] Erectile dysfunction (ED) treatments
+ [A:https://onlinedoctor.lloydspharmacy.com/products/viagra-connect-erectile-dysfunction] Viagra Connect (branded Sildenafil)
+ [A:https://onlinedoctor.lloydspharmacy.com/products/cialis-erectile-dysfunction] Cialis (Branded Tadalafil)
+ [A:https://onlinedoctor.lloydspharmacy.com/products/combo-trial-pack-erectile-dysfunction] ED Combo Pack
+ [A:https://onlinedoctor.lloydspharmacy.com/products/sildenafil-erectile-dysfunction] Sildenafil Tablets
+ [A:https://onlinedoctor.lloydspharmacy.com/products/tadalafil-erectile-dysfunction] Tadalafil Tablets
+ [A:https://onlinedoctor.lloydspharmacy.com/products/spedra-erectile-dysfunction] Spedra
+ [A:/collections/premature-ejaculation] Premature ejaculation (PE) treatments
+ [A:https://onlinedoctor.lloydspharmacy.com/products/emla-cream-premature-ejaculation] EMLA Cream
+ [A:https://onlinedoctor.lloydspharmacy.com/products/priligy-dapoxetine-premature-ejaculation] Priligy
+ [A:/collections/hpv-vaccine] HPV vaccine
+ [A:/blogs/sexual-health-advice] Sexual health & relationships advice hub
+Men's Health
+ [A:/collections/erectile-dysfunction] Erectile dysfunction (ED) treatments
+ [A:/collections/premature-ejaculation] Premature ejaculation (PE) treatments
+ [A:/collections/hair-loss] Hair loss treatments
+ [A:/products/finasteride-hair-loss] Finasteride tablets
+ [A:/products/propecia-hair-loss] Propecia
+ [A:/products/minoxidil-solution] Sons Minoxidil spray
+ [A:/products/hair-loss-tablets] Hair loss tablets
+ [A:/products/dual-action-tablets-spray] Dual Action - Tablet + Spray
+ [A:/products/dual-action-tablets] Dual Action - Tablets
+ [A:/collections/sti-test-kits] STI tests kits
+ [A:/collections/sti-treatments] STI treatments
+ [A:/products/mens-health-blood-test] Men's home blood test
+ [A:/blogs/mens-health-advice] Men's health advice hub
+Women's Health
+ [A:/collections/cystitis-utis] Cystitis & UTI treatment
+ [A:/collections/contraception] Contraception & birth control pills
+ [A:/collections/morning-after-pill-contraceptive] Morning after pill
+ [A:/collections/period-delay] Period delay tablets
+ [A:/collections/female-facial-hair-removal] Female facial hair removal
+ [A:/collections/sti-test-kits] STI tests kits
+ [A:/collections/sti-treatments] STI treatments
+ [A:/products/womens-hormones-blood-test] Women's home blood test
+ [A:/blogs/womens-health-advice] Women's health advice hub
+General Health
+ [A:/collections/home-blood-test] Home blood tests
+ [A:/collections/migraine] Migraine tablets
+ [A:/collections/acne] Acne treatments
+ [A:/collections/asthma] Asthma treatments
+ [A:/collections/allergy] Allergy and hay fever
+ [A:/collections/stop-smoking] Stop smoking aids
+ [A:/collections/occupational-health] Occupational health
+ [A:/collections/weight-loss] Weight loss treatments
+ [A:/blogs/wellbeing-and-lifestyle-advice] Advice health hub
+ [A:https://uk.trustpilot.com/review/onlinedoctor.lloydspharmacy.com] Trustpilot
+## Popular tests, treatments and services
+ [A:/collections/weight-loss] 
+Weight loss
+ [A:/collections/erectile-dysfunction] 
+Erectile Dysfunction
+ [A:/collections/contraception] 
+Contraception
+ [A:/collections/hair-loss] 
+Hair loss
+ [A:/collections/morning-after-pill-contraceptive] 
+Morning after pill
+ [A:/collections/migraine] 
+Migraine
+ [A:/collections/sti-test-kits] 
+STI tests
+ [A:/collections/allergy] 
+Allergy & hay fever
+## All our services
+The right treatment & advice for you, when you need it.
+### General health
+ [A:/collections/acne] Acne [A:/collections/allergy] Allergy [A:/collections/asthma] Asthma [A:/collections/covid-test-kits] COVID-19 test kits [A:/collections/home-blood-test] Home blood tests [A:/collections/migraine] Migraine [A:/collections/occupational-health] Occupational health [A:/collections/weight-loss] Weight loss [A:/blogs/wellbeing-and-lifestyle-advice] All general health
+### Women's health
+ [A:/collections/contraception] Contraception [A:/collections/cystitis-utis] Cystitis [A:/collections/female-facial-hair-removal] Facial hair removal [A:/collections/morning-after-pill-contraceptive] Morning after pill [A:/collections/period-delay] Period delay [A:/blogs/womens-health-advice] All women's health
+### Men's health
+ [A:/collections/erectile-dysfunction] Erectile Dysfunction [A:/pages/erectile-dysfunction-subscription] Erectile dysfunction subscriptions [A:/collections/hair-loss] Hair loss [A:/pages/hair-loss-subscription] Hair loss subscriptions [A:/collections/premature-ejaculation] Premature ejaculation [A:/blogs/mens-health-advice] All men's health
+### Sexual health
+ [A:/collections/hpv-vaccine] HPV vaccine [A:/collections/sti-test-kits] STI tests [A:/collections/sti-treatments] STI treatments [A:/blogs/sexual-health-advice] All sexual health
+### Travel
+ [A:/collections/jet-lag-tablets] Jet lag [A:/collections/malaria-treatment] Malaria [A:/blogs/travel-advice] All travel health
+### Lifestyle
+ [A:/collections/home-blood-test] Home blood tests [A:/products/nutrition-coaching] Nutrition Coaching [A:/collections/stop-smoking] Stop smoking [A:/collections/weight-loss] Weight loss [A:/blogs/wellbeing-and-lifestyle-advice] All lifestyle health
+#### Complete consultation
+Complete our simple, confidential online consultation.
+#### Clinician review
+A UK clinician checks your answers the same day.*
+#### Fast delivery
+Delivered discreetly to your door or local pharmacy if approved.
+## Meet our clinical team
+Based in our London office, our doctors and independent pharmacists have years of experience caring for patients in NHS hospitals, GP surgeries or in community pharmacies.
+#### Dr Kieran Seyan
+GMC: 6104204
+#### Dr Gigi Taguri
+GMC: 6129350
+#### Dr Mitra Dutt
+GMC: 6077868
+#### Dr Neel Patel
+GMC: 7085151
+ [A:/blogs/clinical-team] Meet the whole team
+ [A:/blogs/wellbeing-and-lifestyle-advice] View our advice hub
+*There may be occasions where prescribing or delivery takes a little longer. This can happen if your medical history requires further clinical review before we can prescribe. There are also some instances where it may take longer to get a response from one of our clinicians.  ^For patients new to our weight-management service. Use code BFRIDAY50. Ends 26 December 2026 at 23:59 UK time. Clinical assessment required. Treatment is only offered where clinically appropriate. [A:/pages/promotion-and-prize-draw-terms] Offer terms apply.
+## We're always here for you, day and night, with support, advice and healthcare essentials for you and your family.
+Our website is not support by your current browser, come and join us on:
+ [A:https://www.google.com/intl/en_uk/chrome/] Get Chrome
+ [A:https://www.mozilla.org/en-GB/firefox/new/] Get Firefox
+ [A:https://support.apple.com/en_GB/downloads/safari] Get Safari
+ [A:https://www.microsoft.com/en-us/edge/download?form=MA13FJ] Get Edge
+## Regulated and certified
+ [A:https://www.cqc.org.uk/location/1-347369219] 
+ [A:https://www.rqia.org.uk/] 
+ [A:https://digitalclinicalexcellence.com/] 
+ [A:https://www.ncsc.gov.uk/cyberessentials/overview] 
+#### Customer services
+Online Doctor [A:tel:02079899888] 020 7989 9888
+Mon-Fri: 9am-5pm
+Sat: 9am-1pm
+ [A:/pages/contact-us] Contact us
+#### Patient support & Our company
+ [A:/pages/faqs] FAQs
+ [A:/pages/delivery-and-collection] Delivery & collection
+ [A:/pages/payment-information] Payment information
+ [A:https://www.studentbeans.com/en-gb/uk/beansid-connect/hosted/lloyds-pharmacy-online-doctor/multi-ccg] Student & graduates
+ [A:/pages/about-us] About us
+ [A:/blogs/clinical-team] Meet the clinical team
+ [A:/pages/patient-guide] Patient guide
+ [A:/pages/stores] LloydsPharmacy stores
+ [A:https://signup.partnerize.com/signup/en/lloydspharmacyonlinedoctor] Affiliates program
+ [A:/pages/terms-and-conditions] Terms and conditions
+ [A:/pages/regulation] Regulations
+ [A:/pages/cookies-notice] Cookies notice
+ [BTN] Cookie preferences
+ [A:/pages/privacy-notice] Privacy notice
+ [A:/pages/sitemap-html] Sitemap
+#### Online Doctor services & Useful sites
+ [A:/collections/weight-loss] Weight loss treatments
+ [A:/collections/erectile-dysfunction] Erectile dysfunction treatments
+ [A:/collections/hair-loss] Hair loss treatments
+ [A:/collections/contraception] Contraception & birth control 
+ [A:/blogs/sexual-health-advice] Sexual health
+ [A:/blogs/womens-health-advice] Women's health
+ [A:/blogs/mens-health-advice] Men's health
+ [A:/blogs/wellbeing-and-lifestyle-advice] General health
+ [A:https://lloydspharmacy.com/] LloydsPharmacy
+©2026 Expert Health Limited. All rights reserved
+GPhC registration no. 9011437
+*Available on orders approved before 5pm Monday–Friday. Weekend cut-off times apply. Exclusions apply. See  [A:https://onlinedoctor.lloydspharmacy.com/pages/delivery-and-collection] here for full next day delivery details and terms.
+#### Find us on social media
+ [A:https://www.facebook.com/lloydspharmacyonlinedoc/] 
+ [A:https://x.com/LPOnlineDoctor] 
+ [A:https://www.youtube.com/@lloydspharmacyonlinedr] 
+ [A:https://www.instagram.com/LloydsPharmacyOnlineDR/] 
+ [A:https://www.tiktok.com/@lloydspharmacyonlinedr] 
+

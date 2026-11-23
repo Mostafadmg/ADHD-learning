@@ -1,0 +1,2 @@
+{ "_about": "Screen check only: answering Yes to 'Are you an existing Sons customer?'. Stops on whatever page it lands on; nothing is typed.",
+  "start": "https://shop.sons.co.uk/consultation/?logged_in=false", "steps": [ {"do":"wait","ms":2500}, {"do":"click","text":"Yes"}, {"do":"wait","ms":4000} ] }

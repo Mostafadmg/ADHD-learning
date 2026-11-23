@@ -1,0 +1,1 @@
+{"steps":[{"do":"fill","selector":"textarea, input[type=text], input[type=number]","value":"Mild itching for 6 months. Not seen by a doctor. No treatment."},{"do":"click","text":"Next","settle":2800},{"do":"snap","settle":600}]}

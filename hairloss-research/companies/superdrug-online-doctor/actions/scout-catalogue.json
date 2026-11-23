@@ -1,0 +1,8 @@
+{ "start": "https://onlinedoctor.superdrug.com/hair-loss-treatment.html", "steps": [
+ {"do":"scroll"},
+ {"do":"goto","url":"https://onlinedoctor.superdrug.com/skin-condition-treatments.html"},
+ {"do":"goto","url":"https://onlinedoctor.superdrug.com/mens-health.html"},
+ {"do":"goto","url":"https://onlinedoctor.superdrug.com/womens-health.html"},
+ {"do":"goto","url":"https://onlinedoctor.superdrug.com/finasteride.html"},
+ {"do":"scroll"}
+] }

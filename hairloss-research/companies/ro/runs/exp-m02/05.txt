@@ -1,0 +1,16 @@
+STEP 05 click "Continue"
+URL: https://start.ro.co/fxdxbh/online-visit/26
+TITLE: Online Visit
+
+--- VISIBLE TEXT ---
+What’s the main reason you haven’t tried hair loss treatment before?
+Not sure it'll work
+Seems too expensive
+Nervous about side effects
+Didn't want or need to until now
+
+--- CONTROLS ---
+  radio (4): Not sure it'll work [false]  ·  Seems too expensive [false]  ·  Nervous about side effects [false]  ·  Didn't want or need to until now [false]
+
+--- LINKS ---
+

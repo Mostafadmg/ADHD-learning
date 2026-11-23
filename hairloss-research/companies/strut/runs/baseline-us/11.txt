@@ -1,0 +1,36 @@
+STEP 11 click "None of the above"
+URL: https://start.struthealth.com/flow/6aa3d578f415d1603a6e0c85
+TITLE: Minoxidil Prod
+
+--- VISIBLE TEXT ---
+26%
+
+What treatments have you tried before? Select all that apply.
+
+Minoxidil (Rogaine) topical
+Minoxidil oral tablets
+Finasteride (Propecia)
+Dutasteride (Avodart)
+Biotin or biotin-based vitamins
+Ketoconazole shampoo
+Steroid-based scalp injections
+Hair transplant
+PRP (platelet-rich plasma)
+Other
+None of the above
+Continue
+1
+2.5 mg · 90 Day Supply
+$65.00
+2.5 mg · 90 Day Supply
+$65.00
+Dose: 90 Day Supply - 2.5 mg
+Supply: 90 Day Supply
+Total
+$65.00
+
+--- CONTROLS ---
+  button (14): Go back  ·  Minoxidil (Rogaine) topical [false]  ·  Minoxidil oral tablets [false]  ·  Finasteride (Propecia) [false]  ·  Dutasteride (Avodart) [false]  ·  Biotin or biotin-based vitamins [false]  ·  Ketoconazole shampoo [false]  ·  Steroid-based scalp injections [false]  ·  Hair transplant [false]  ·  PRP (platelet-rich plasma) [false]  ·  Other [false]  ·  None of the above [true]  ·  Continue  ·  1 2.5 mg · 90 Day Supply $65.00
+
+--- LINKS ---
+

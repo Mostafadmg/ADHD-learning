@@ -1,0 +1,35 @@
+STEP 20 click "Next"
+URL: https://app.forhims.co.uk/flow/a9a88e4a-89b9-47ae-8138-3a1acaa41594?t=hair&anon_flow_key=hair
+TITLE: Hims
+
+--- VISIBLE TEXT ---
+Here’s what we know about your hair so far:
+Your Hair
+Hair changes
+
+Along the hairline
+
+Noticed: Over a year ago
+
+Lifestyle factors
+
+Family history: Yes
+
+Stress: Sometimes
+
+Hair routine
+
+No styling I let my hair do its thing
+
+Less than 5 minutes routine
+
+Now, let’s go over what you can expect with treatment through Hims.
+
+Next →
+←
+
+--- CONTROLS ---
+  button (3): Next →  ·  ←  ·  Your answers
+
+--- LINKS ---
+  link (1): Navigate home -> /profile

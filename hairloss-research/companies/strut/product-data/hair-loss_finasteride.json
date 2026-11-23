@@ -1,0 +1,48 @@
+{
+ "heading": "Two formats. One goal: less DHT.",
+ "body": "A provider-prescribed approach to male pattern hair loss - available as a once-daily oral finasteride tablet that may lower DHT by about 70%, or a compounded 5-active topical gel that targets the scalp locally with potentially lower systemic exposure.*",
+ "activeIngredientsLabel": "Active Ingredients: Finasteride. Available as a compounded topical formula (with Minoxidil, Tretinoin, Fluocinolone, Biotin) or FDA-approved oral tablet (Finasteride 1mg).",
+ "ingredients": [
+  {
+   "name": "Finasteride",
+   "body": "Type II 5-alpha reductase inhibitor. May lower DHT levels by approximately 70%.*"
+  },
+  {
+   "name": "Minoxidil (Topical)",
+   "body": "Included in the topical formula to stimulate blood flow to hair follicles and encourage hair growth and thickness.*"
+  },
+  {
+   "name": "Tretinoin (Topical)",
+   "body": "Included in the topical formula to enhance absorption of other active ingredients through the scalp.*"
+  },
+  {
+   "name": "Fluocinolone (Topical)",
+   "body": "Included in the topical formula to reduce scalp inflammation that can contribute to hair loss and follicle damage.*"
+  }
+ ],
+ "safety": [
+  {
+   "title": "Common side effects",
+   "body": "Decreased libido, erectile dysfunction, decreased semen volume, breast tenderness or enlargement, and mood changes."
+  },
+  {
+   "title": "Tell your healthcare provider",
+   "body": "Share any history of liver disease, prostate conditions, current prescriptions, and any plans for blood donation while on finasteride."
+  },
+  {
+   "title": "Do not use if",
+   "body": "You are a woman or a child. Finasteride is a medication for men only. Women who are or may become pregnant should never handle finasteride-containing medications."
+  },
+  {
+   "title": "Seek medical care",
+   "body": "Severe allergic reaction (rash, swelling, trouble breathing), persistent breast changes, severe mood changes, or signs of high-grade prostate disease."
+  }
+ ],
+ "disclaimer": [
+  "All prescription medications require a valid and complete online consultation prior to approval and final pricing is determined. Compounded medications are not FDA-approved and have not been evaluated by the FDA for safety, effectiveness, or quality. A licensed provider may prescribe a compounded medication when they determine it is clinically appropriate for you.",
+  "Compounded Finasteride is not FDA-approved for hair loss in topical form. Statements regarding hair loss, hair growth, scalp health, and follicle support have not been evaluated by the FDA.",
+  "The drug and medical information provided on this website is not meant to cover all adverse effects, drug interactions, warnings, medical uses, directions and precautions. The information provided is a medical resource and the judgment of your healthcare provider should not be substituted."
+ ],
+ "imageSrc": "/assets/v3-finasteride-ingredients-bathroom.jpg",
+ "imageAlt": "Hand picking up a Finasteride Tablets bottle next to a Hair Loss Solution dropper bottle"
+}

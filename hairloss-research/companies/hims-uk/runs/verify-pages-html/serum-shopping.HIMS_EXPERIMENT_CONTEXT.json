@@ -1,0 +1,26 @@
+{
+ "allocation": {
+  "exp-2026-previous-hl-treatment": {
+   "bucket": "C",
+   "triggered": false
+  },
+  "exp-2026-consultation-no-progress-bar-ed-pej": {
+   "bucket": "C",
+   "triggered": false
+  }
+ },
+ "allocationSource": "upstream",
+ "rules": [
+  {
+   "name": "exp-2026-previous-hl-treatment",
+   "id": "exp-2026-previous-hl-treatment",
+   "allocationTreatment": 5
+  },
+  {
+   "name": "exp-2026-consultation-no-progress-bar-ed-pej",
+   "id": "exp-2026-consultation-no-progress-bar-ed-pej",
+   "allocationTreatment": 0
+  }
+ ],
+ "triggered": []
+}

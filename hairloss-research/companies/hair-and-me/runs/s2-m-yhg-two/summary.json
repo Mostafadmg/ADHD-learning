@@ -1,0 +1,128 @@
+{
+ "run": "s2-m-yhg-two",
+ "flow": "men",
+ "changed": "men-yhg: one goal → two goals (added 'Grow thicker and fuller hair'); the new top-goal screen was answered with the baseline goal",
+ "changedStep": "yhg",
+ "baselinesPooled": [
+  "baseline-men",
+  "s2-base-men-1"
+ ],
+ "stepOrder": [
+  "tp",
+  "yhg",
+  "hgp",
+  "js",
+  "pds",
+  "pdsc",
+  "mi",
+  "ht",
+  "ls",
+  "htp",
+  "htam",
+  "htc",
+  "ar",
+  "st",
+  "sc",
+  "scc",
+  "smt",
+  "pt",
+  "tt",
+  "pp",
+  "mdm",
+  "mcm",
+  "al",
+  "rhf",
+  "yna",
+  "rha",
+  "di",
+  "rj",
+  "el",
+  "ct",
+  "yd"
+ ],
+ "nSteps": 31,
+ "end": "account wall (yd)",
+ "newSteps": [
+  "hgp"
+ ],
+ "missingSteps": [],
+ "candidateEffects": [],
+ "noise": [
+  {
+   "step": "pds",
+   "key": "title",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-17",
+    "s2-m-age-18"
+   ]
+  },
+  {
+   "step": "ar",
+   "key": "q429.config",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-m-age-17",
+    "s2-m-age-85",
+    "s2-m-gender-transwoman"
+   ]
+  },
+  {
+   "step": "ct",
+   "key": "q180037.config",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-m-age-18",
+    "s2-m-htam-allover-ext",
+    "s2-m-htam-crown"
+   ]
+  },
+  {
+   "step": "ct",
+   "key": "title",
+   "where": "after-change",
+   "alsoIn": [
+    "baseline-women",
+    "entry-promo-caps-men",
+    "s2-m-age-18"
+   ]
+  }
+ ],
+ "bag": {
+  "items": [
+   [
+    "hairTreatment",
+    "Personalised treatment",
+    "4 week supply · 12ml",
+    "Prescription",
+    3499,
+    null
+   ]
+  ],
+  "shipping": 0,
+  "total": 3499,
+  "promo": "",
+  "shippingMsg": null
+ },
+ "bagItemsSameAsBaseline": true,
+ "posted": {
+  "yhg": [
+   [
+    9307,
+    [
+     "7",
+     "10"
+    ]
+   ],
+   [
+    3042,
+    true
+   ]
+  ]
+ },
+ "nextAfterChange": {
+  "yhg": "hgp"
+ },
+ "sweep": false
+}

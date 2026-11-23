@@ -1,0 +1,211 @@
+{
+ "run": "s2-m-sweep-1",
+ "flow": "men",
+ "changed": "SWEEP (men, 11 non-medical answers changed together): goals 'Reverse hair thinning' + 'Improve my hairline, parting or crown' (top goal: Reverse hair thinning); Still exploring; gender identity Man/Boy; Wavy; four styling habits; little sleep + major life event; At the temples; three to six months ago; skin Pale; three other six-month wishes",
+ "changedStep": null,
+ "baselinesPooled": [
+  "baseline-men",
+  "s2-base-men-1"
+ ],
+ "stepOrder": [
+  "tp",
+  "yhg",
+  "hgp",
+  "js",
+  "pds",
+  "pdsc",
+  "mi",
+  "ht",
+  "hs",
+  "ls",
+  "htp",
+  "htam",
+  "htc",
+  "ar",
+  "st",
+  "sc",
+  "scc",
+  "smt",
+  "pt",
+  "tt",
+  "pp",
+  "mdm",
+  "mcm",
+  "al",
+  "rhf",
+  "yna",
+  "rha",
+  "di",
+  "rj",
+  "el",
+  "ct",
+  "yd"
+ ],
+ "nSteps": 32,
+ "end": "account wall (yd)",
+ "newSteps": [
+  "hgp"
+ ],
+ "missingSteps": [],
+ "candidateEffects": [],
+ "noise": [
+  {
+   "step": "ar",
+   "key": "q429.config",
+   "where": "after-change",
+   "alsoIn": []
+  },
+  {
+   "step": "st",
+   "key": "q9346.options",
+   "where": "changed-step",
+   "alsoIn": [
+    "s2-m-mcm-bp-elevated",
+    "s2-m-mcm-bph",
+    "s2-m-mcm-breast"
+   ]
+  },
+  {
+   "step": "di",
+   "key": "q8015.options",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-85",
+    "s2-m-al-finasteride"
+   ]
+  },
+  {
+   "step": "ct",
+   "key": "title",
+   "where": "after-change",
+   "alsoIn": [
+    "baseline-women",
+    "entry-promo-caps-men",
+    "s2-m-age-18"
+   ]
+  }
+ ],
+ "bag": {
+  "items": [
+   [
+    "hairTreatment",
+    "Personalised treatment",
+    "4 week supply · 12ml",
+    "Prescription",
+    3499,
+    null
+   ]
+  ],
+  "shipping": 0,
+  "total": 3499,
+  "promo": "",
+  "shippingMsg": "Your order qualifies for complimentary standard shipping."
+ },
+ "bagItemsSameAsBaseline": true,
+ "posted": {
+  "hgp": [
+   [
+    9308,
+    8
+   ]
+  ],
+  "hs": [
+   [
+    253,
+    [
+     "Air dry",
+     "Colour treatments, bleaching and dyes",
+     "Product-based styling (e.g. wax, clay, pomade, hairspray)",
+     "Heat-based styling tools (e.g. straightening, curling, blow-drying)"
+    ]
+   ]
+  ],
+  "ht": [
+   [
+    4446,
+    "Wavy"
+   ]
+  ],
+  "htam": [
+   [
+    9318,
+    "At the temples"
+   ]
+  ],
+  "htc": [
+   [
+    9310,
+    "Around three to six months ago"
+   ]
+  ],
+  "js": [
+   [
+    8038,
+    "Still exploring my options"
+   ]
+  ],
+  "ls": [
+   [
+    8014,
+    [
+     "I rarely get more than 7 hours' sleep",
+     "I've recently been through a major life event"
+    ]
+   ]
+  ],
+  "pds": [
+   [
+    3039,
+    1
+   ],
+   [
+    3054,
+    2
+   ]
+  ],
+  "smt": [
+   [
+    8021,
+    [
+     "Hair that feels healthy from root to tip",
+     "Hair that feels stronger and has less breakage",
+     "Noticeably less hair falling out"
+    ]
+   ]
+  ],
+  "st": [
+   [
+    9346,
+    "Pale. It always burns, never tans"
+   ]
+  ],
+  "yhg": [
+   [
+    9307,
+    [
+     "8",
+     "9"
+    ]
+   ],
+   [
+    3042,
+    true
+   ]
+  ]
+ },
+ "nextAfterChange": {
+  "hgp": "js",
+  "hs": "ls",
+  "ht": "hs",
+  "htam": "htc",
+  "htc": "ar",
+  "js": "pds",
+  "ls": "htp",
+  "pds": "pdsc",
+  "smt": "pt",
+  "st": "sc",
+  "yhg": "hgp"
+ },
+ "sweep": true
+}

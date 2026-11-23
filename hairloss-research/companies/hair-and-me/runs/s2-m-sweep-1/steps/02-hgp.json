@@ -1,0 +1,49 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 1,
+   "sectionTitle": "ABOUT YOU"
+  },
+  "description": "We can treat all the goals you've selected, but focus on your number one goal, for now.",
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 9308,
+    "inputConfig": {
+     "options": [
+      {
+       "image": null,
+       "label": "Reverse hair thinning",
+       "value": 8
+      },
+      {
+       "image": null,
+       "label": "Improve my hairline, parting or crown",
+       "value": 9
+      }
+     ]
+    },
+    "inputType": "single_select_button",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Which hair goal do you want to tackle most?",
+  "type": "question"
+ }
+}

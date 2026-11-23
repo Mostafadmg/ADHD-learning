@@ -1,0 +1,320 @@
+{
+ "_about": "The mapping walk that reached 28 of the 29 questions (runs/s2-men-explore), converted to tools/walk.js format from the commands that were actually sent. NOT a one-change test: it ticks everything. The free-text answers are short fictional medical notes, never contact details. It includes two 'Back' steps (specialist → GP, dose change No → Yes). This converted file itself has not been replayed with walk.js; if a step fails, read the screen list walk.js prints.",
+ "start": "https://www.numan.com/subscribe/hair-loss?pc=hl-organic-50off",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 4000
+  },
+  {
+   "do": "click",
+   "text": "Reject All",
+   "settle": 800
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 4000
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"65 or over\")",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"Yes\")",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"Other hair loss pattern\")",
+   "settle": 2800
+  },
+  {
+   "do": "fill",
+   "selector": "textarea",
+   "value": "Diffuse thinning on top for about 2 years. No diagnosis. Nothing makes it better or worse. No other symptoms."
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"My hair loss started gradually over the last few months or years\")",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"I am allergic to minoxidil\")",
+   "settle": 500
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"I am allergic to finasteride\")",
+   "settle": 500
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"I have a lactose intolerance or allergy\")",
+   "settle": 500
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 2800
+  },
+  {
+   "do": "fill",
+   "selector": "textarea",
+   "value": "Itchy skin rash"
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"I can’t tolerate any amount of lactose and I would like to be considered for non-lactose containing preparations only\")",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"Pain, itching, burning or bumps\")",
+   "settle": 500
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"Red rinds or rashes\")",
+   "settle": 500
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"Dandruff\")",
+   "settle": 500
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"Psoriasis or eczema\")",
+   "settle": 500
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 2800
+  },
+  {
+   "do": "fill",
+   "selector": "textarea, input[type=text], input[type=number]",
+   "value": "Mild itching for 6 months. Not seen by a doctor. No treatment."
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 2800
+  },
+  {
+   "do": "fill",
+   "selector": "textarea, input[type=text], input[type=number]",
+   "value": "Small red patch for 6 months. Not seen by a doctor. No treatment."
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"Yes\")",
+   "settle": 2800
+  },
+  {
+   "do": "fill",
+   "selector": "textarea, input[type=text], input[type=number]",
+   "value": "Mild scalp eczema, seen by GP years ago, uses emollient only."
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"I have noticed hair loss on other areas of my body other than my head.\")",
+   "settle": 500
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"I am undergoing PSA (prostate) monitoring or I have previously been diagnosed with prostate cancer.\")",
+   "settle": 500
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"I have been diagnosed with high or low blood pressure.\")",
+   "settle": 500
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"I have been diagnosed with asthma.\")",
+   "settle": 500
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"I plan on trying for a baby in the next 12 weeks.\")",
+   "settle": 500
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"I have previously experienced, or am currently experiencing, depression, anxiety or panic disorders\")",
+   "settle": 500
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 2800
+  },
+  {
+   "do": "fill",
+   "selector": "textarea, input[type=text], input[type=number]",
+   "value": "Slightly thinner hair on forearms over the last 2 years."
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"I understand and would like to be considered for finasteride containing preparations.\")",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"I understand that minoxidil may lower my blood pressure and would like to be considered for minoxidil.\")",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"I understand that topical formulations (such as spray) may worsen my asthma and would like to be considered topical formulations.\")",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"I would like to be considered for finasteride and will stop taking finasteride 12 weeks prior to trying for a baby.\")",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"I accept the risk that finasteride can lead to detrimental effects on my mood and would like to be considered for finasteride and/or minoxidil.\")",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"Psychiatrist/Specialist/Consultant\")",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "text": "Back",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"GP\")",
+   "settle": 2800
+  },
+  {
+   "do": "fill",
+   "selector": "textarea, input[type=text], input[type=number]",
+   "value": "Sertraline 50 mg once a day"
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"No\")",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "text": "Back",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"Yes\")",
+   "settle": 2800
+  },
+  {
+   "do": "fill",
+   "selector": "textarea, input[type=text], input[type=number]",
+   "value": "Sertraline, was 25 mg, now 50 mg"
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"No\")",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"All of the above\")",
+   "settle": 500
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"I have a major illness, ongoing medical condition, operation, allergy to medication or take prescribed or over the counter medication to tell you about.\")",
+   "settle": 2800
+  },
+  {
+   "do": "fill",
+   "selector": "textarea, input[type=text], input[type=number]",
+   "value": "Mild asthma, high blood pressure, depression managed by GP. No operations."
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 2800
+  },
+  {
+   "do": "fill",
+   "selector": "textarea, input[type=text], input[type=number]",
+   "value": "Sertraline 50 mg daily, ramipril 5 mg daily, salbutamol inhaler when needed"
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"Yes\")",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "text": "Skip",
+   "settle": 3500
+  },
+  {
+   "do": "click",
+   "text": "Skip",
+   "settle": 4500
+  }
+ ]
+}

@@ -1,0 +1,1 @@
+import{j as e,T as t}from"./index-ffd10041.js";import{L as n}from"./Header-9ef3003e.js";import{S as a}from"./StaticPage-2546775b.js";const s=()=>e.exports.jsxs(a,{pageTitle:t.maintenanceTitle,children:[e.exports.jsx("p",{children:t.maintenanceMessage}),e.exports.jsx(n,{href:"/",isButton:!0,children:t.goToHomepage})]}),c=s;export{c as default};

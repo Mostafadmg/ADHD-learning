@@ -1,0 +1,47 @@
+COMMAND 020 {"steps":[{"do":"click","selector":"label:has-text(\"Billed quarterly\")","settle":1500},{"do":"snap","settle":500}]}
+URL: https://www.numan.com/subscribe/hair-loss/5d3494f9-26f6-4c72-a833-e88e646ac7a1/billing-frequency
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+Back
+Pay upfront and save big on your treatment
+
+See results in 180 days
+
+or your money back¹
+
+Billed quarterly
+
+£40.00 per month
+Delivered every 3 months
+Pause anytime
+Continuous care and support included
+Most effective
+
+Billed six-monthly
+
+£36.00 £48.00 per month
+
+Billed annually
+
+£32.00 £48.00 per month
+Continue
+
+¹ Claim a full refund between 180-210 days from order approval if treatment is not effective at stabilising or reversing hair loss. First time users only. Full Ts&Cs.
+
+--- CONTROLS ---
+  button (4):
+    - Billed quarterly £40.00 per month
+    - Most effective Billed six-monthly £36.00 £48.00 per month
+    - Billed annually £32.00 £48.00 per month
+    - Continue
+  radio (3):
+    - Billed quarterly £40.00 per month [checked] (name: radio-389)
+    - Billed six-monthly £36.00 £48.00 per month (name: radio-389)
+    - Billed annually £32.00 £48.00 per month (name: radio-389)
+
+--- LINKS ---
+  link (3):
+    - Back -> #
+    - Visit the main page -> /
+    - Full Ts&Cs. -> /legal/terms-of-sale#termsMoneyBackGuarantee

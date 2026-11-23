@@ -1,5 +1,5 @@
 {
- "_about": "Stage 2 SWEEP s2-m-sweep-3 (men baseline): several low-priority answers changed at once as a group test. SWEEP (men, 4 non-medical answers changed together): gender identity Prefer not to say; Other/unsure; skin Light brown; influenced by the discounted trial",
+ "_about": "Stage 2 SWEEP s2-m-sweep-3 (men baseline): several low-priority answers changed at once as a group test. SWEEP (men, 5 non-medical answers changed together): gender identity Prefer not to say; Other/unsure; skin Light brown; scalp Oily; influenced by the discounted trial",
  "start": "https://www.hairandme.com/c/suh/new",
  "answers": {
   "tp": [
@@ -63,7 +63,7 @@
    }
   },
   "sc": [
-   "Normal"
+   "Oily"
   ],
   "scc": [
    "None of the above"
@@ -153,9 +153,10 @@
    "pds",
    "htam",
    "st",
+   "sc",
    "di"
   ],
   "sweep": true,
-  "desc": "SWEEP (men, 4 non-medical answers changed together): gender identity Prefer not to say; Other/unsure; skin Light brown; influenced by the discounted trial"
+  "desc": "SWEEP (men, 5 non-medical answers changed together): gender identity Prefer not to say; Other/unsure; skin Light brown; scalp Oily; influenced by the discounted trial"
  }
 }

@@ -1,0 +1,1763 @@
+[
+  {
+    "name": "Rex MD",
+    "country": "United States",
+    "url": "https://rexmd.com/hair-growth/",
+    "description": "Men's telehealth brand (ED, weight loss, testosterone) that sells one hair-loss product: generic finasteride tablets on a quarterly plan.",
+    "audience": "Men only, all 50 US states.",
+    "products": [
+      {
+        "name": "Finasteride (\"The Finasteride Regrowth Plan\")",
+        "actives": "Finasteride 1 mg tablet, once daily, 90-day supply",
+        "price": "From US$13.50 a month (advertised with a 50% first-order saving); sold only as quarterly plans"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Free online question-and-answer form; a US-licensed provider reviews it and may follow up by chat or email (audio or video call in states that require it). Free 2-day shipping.",
+    "distinctive": "Nothing new in hair: a single low-price generic. Its strength is price and a large men's-health customer base. Its own pages mention minoxidil but list no minoxidil product.",
+    "sizeSignal": "Site-wide claims: \"Over 475,000\" men and \"58+ million doses\" delivered (all conditions, not hair alone).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://rexmd.com/hair-growth/",
+      "https://rexmd.com/our-medications/hair-loss/",
+      "https://rexmd.com/our-medications/",
+      "https://rexmd.com/hair-loss"
+    ]
+  },
+  {
+    "name": "Lemonaid Health",
+    "country": "United States",
+    "url": "https://www.lemonaidhealth.com/services/hair-loss",
+    "description": "General telehealth service offering generic finasteride and a compounded three-in-one scalp spray for men.",
+    "audience": "Men only (the page says it cannot treat anyone whose birth sex is female).",
+    "products": [
+      {
+        "name": "Generic finasteride",
+        "actives": "Finasteride 1 mg tablet",
+        "price": "Price not shown on the page; US$25 online visit; shipped free in 3-month supplies; \"$30 off first delivery\" offer"
+      },
+      {
+        "name": "Headstrong Spray Rx",
+        "actives": "Minoxidil 5% + finasteride 0.3% + tretinoin 0.015% scalp spray (propylene glycol and alcohol base), once daily",
+        "price": "Not shown publicly"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Online assessment (about 5 minutes) reviewed by a clinician within 24 hours; immediate video visit in some states. US$25 visit fee for the finasteride route. Messaging with clinicians included.",
+    "distinctive": "The Headstrong spray adds tretinoin (thought to help minoxidil absorb) to topical finasteride and minoxidil in one once-daily spray.",
+    "sizeSignal": "No hair-specific numbers published. Mid-size general telehealth brand.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.lemonaidhealth.com/services/hair-loss",
+      "https://www.lemonaidhealth.com/drug/headstrong-spray",
+      "https://www.lemonaidhealth.com/safety-information/hair-loss"
+    ]
+  },
+  {
+    "name": "Sesame (and Costco member pricing)",
+    "country": "United States",
+    "url": "https://sesamecare.com/symptom/hair-loss",
+    "description": "A cash-price marketplace for video visits with independent clinicians, including dermatologists; prescriptions go to the patient's own pharmacy. Costco members get discounted Sesame visits.",
+    "audience": "Men and women, with or without insurance.",
+    "products": [
+      {
+        "name": "Hair-loss video visit",
+        "actives": "Clinician may prescribe finasteride, dutasteride, minoxidil (including prescription strength) or spironolactone; medicines are collected from a local pharmacy",
+        "price": "Set by each provider and shown up front (one review site quotes about US$29 for a first hair-loss visit; unverified)"
+      },
+      {
+        "name": "Skincare Rx subscription",
+        "actives": "Ongoing dermatology care: video visits, unlimited messaging, same-day prescriptions and refills",
+        "price": "US$59 a month"
+      },
+      {
+        "name": "Costco member virtual appointment",
+        "actives": "Visit for a new prescription or refill, after verifying Costco membership",
+        "price": "US$29, plus 10% off other Sesame services"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Real-time video visit with a named clinician chosen by the patient (reviews, times and prices shown). No insurance accepted; card, HSA or FSA.",
+    "distinctive": "A marketplace, not a product brand: the patient picks a named dermatologist and a price, then uses any pharmacy (often very cheap generics). Offers dutasteride and spironolactone, which many questionnaire-only brands avoid. Retail partnership with Costco.",
+    "sizeSignal": "Costco partnership announced September 2023 (wide national press coverage). No hair-specific numbers.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://sesamecare.com/symptom/hair-loss",
+      "https://sesamecare.com/costco",
+      "https://www.cbsnews.com/news/costco-virtual-medical-checkups-for-29",
+      "https://www.top10.com/hair-loss/reviews/sesame"
+    ]
+  },
+  {
+    "name": "Nurx",
+    "country": "United States",
+    "url": "https://www.nurx.com/hair-loss/",
+    "description": "Women's telehealth brand (it calls Keeps its partner for men; shared ownership under Thirty Madison is widely reported but was not re-verified in this sweep) with a women's hair-loss service built around a compounded spray and oral minoxidil.",
+    "audience": "Women with female pattern hair loss or traction alopecia. Men are sent to sister brand Keeps. Does not treat telogen effluvium, alopecia areata or scarring alopecia (CCCA).",
+    "products": [
+      {
+        "name": "Nurx RegrowRx Spray",
+        "actives": "Minoxidil 5% + melatonin 0.1% + tretinoin 0.01% + caffeine 0.2% (compounded, prescription only)",
+        "price": "Not itemised; \"most women's hair loss patients pay about $20 a month\""
+      },
+      {
+        "name": "Minoxidil foam",
+        "actives": "Minoxidil 5% foam",
+        "price": "Not itemised"
+      },
+      {
+        "name": "Oral minoxidil",
+        "actives": "Minoxidil tablet (strength not stated)",
+        "price": "Not itemised"
+      },
+      {
+        "name": "Scalp treatments",
+        "actives": "Ketoconazole 2% cream (60 g); selenium sulfide shampoo",
+        "price": "Not itemised"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Health questions plus photos of hair and scalp, no appointment; a licensed provider reviews in a couple of days. One-off US$80 consultation fee covers a scheduled check-in and a year of unlimited messaging. No insurance; HSA/FSA accepted.",
+    "distinctive": "Melatonin and caffeine added to a minoxidil and tretinoin spray (a hormone-free combination for women). Clear list of the hair-loss types it will not treat. Year-long care fee instead of a monthly membership.",
+    "sizeSignal": "No hair-specific numbers published.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.nurx.com/hair-loss/",
+      "https://www.nurx.com/womens-hair-loss/oral-minoxidil/"
+    ]
+  },
+  {
+    "name": "Wisp",
+    "country": "United States",
+    "url": "https://hellowisp.com/products/oral-minoxidil",
+    "description": "Women's sexual and reproductive telehealth brand that now sells oral minoxidil and spironolactone for hormonal hair loss.",
+    "audience": "Women: female pattern hair loss, perimenopause and menopause, postpartum, PCOS.",
+    "products": [
+      {
+        "name": "Oral Minoxidil",
+        "actives": "Minoxidil tablet, once daily (strength not shown)",
+        "price": "From US$36 (one-off or subscription)"
+      },
+      {
+        "name": "Oral Spironolactone",
+        "actives": "Spironolactone 50 mg or 100 mg tablets",
+        "price": "From US$24"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Medical intake form, with a phone or video call when needed; an independent physician decides. Prescription can be sent to any pharmacy, usually within 3 hours.",
+    "distinctive": "Sells hair-loss tablets one-off as well as on subscription, and positions them inside menopause and PCOS care (links to a menopause consult and a symptoms quiz).",
+    "sizeSignal": "No hair-specific numbers found.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://hellowisp.com/products/oral-minoxidil",
+      "https://hellowisp.com/products/spironolactone"
+    ]
+  },
+  {
+    "name": "Amazon One Medical (Pay-per-visit) and Amazon Pharmacy",
+    "country": "United States",
+    "url": "https://health.amazon.com/onemedical/Male-hair-loss-treatment/dp/B0BVC7BBN2",
+    "description": "Amazon's flat-fee telehealth: a message or video visit for men's hair loss, with generic medicine delivered by Amazon Pharmacy.",
+    "audience": "Men aged 18 to 64 (also transgender women, and transgender men on testosterone). Women with hair loss are told telehealth is not the right route. Not for people on Medicare or Medicaid.",
+    "products": [
+      {
+        "name": "Pay-per-visit consultation",
+        "actives": "Message visit or video visit; 14 days of follow-up messages",
+        "price": "US$29 message visit (where available); US$49 video visit"
+      },
+      {
+        "name": "Finasteride via Amazon Pharmacy",
+        "actives": "Finasteride tablets, 90-day supply",
+        "price": "Search result of the live page: \"from $39\" for visit plus 90-day supply; launch coverage (Nov 2024) quoted US$16 a month. Check live page"
+      },
+      {
+        "name": "Minoxidil 5%",
+        "actives": "Topical minoxidil 5% (over the counter)",
+        "price": "Retail price"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Check-in with an AI assistant (\"Health AI\"), then a One Medical provider by message or video; prescription sent to Amazon Pharmacy or any pharmacy. Oral minoxidil is not offered (Amazon says it needs lab tests first). Men with a prostate condition or family history of prostate cancer are sent elsewhere.",
+    "distinctive": "Lowest all-in price from a household name, with fast free delivery for Prime members. Conservative clinical scope: only licensed finasteride and topical minoxidil, no compounding, no women.",
+    "sizeSignal": "Amazon. The November 2024 launch of fixed prices for hair loss knocked Hims & Hers shares down about 15% in a day (NBC/CNBC report).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://health.amazon.com/onemedical/Male-hair-loss-treatment/dp/B0BVC7BBN2",
+      "https://www.onemedical.com/amazon/pay-per-visit/",
+      "https://techcrunch.com/2024/11/14/amazons-telehealth-platform-adds-low-cost-plans-for-hair-loss-skin-care-and-more",
+      "https://www.nbcsandiego.com/news/business/money-report/amazon-launches-fixed-pricing-to-treat-conditions-like-hair-loss-hims-hers-stock-drops-15/3676377"
+    ]
+  },
+  {
+    "name": "GoodRx for Hair Loss",
+    "country": "United States",
+    "url": "https://www.goodrx.com/care/services/hair-loss",
+    "description": "The drug-discount company's own men's hair-loss subscription, launched October 2025: one price covers the online visit, generic tablets and delivery.",
+    "audience": "Men.",
+    "products": [
+      {
+        "name": "Finasteride (generic Propecia)",
+        "actives": "Finasteride 1 mg tablet",
+        "price": "As low as US$16 a month"
+      },
+      {
+        "name": "Oral minoxidil",
+        "actives": "Minoxidil 2.5 mg tablet (off-label)",
+        "price": "As low as US$20 a month"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online telehealth visit included in the subscription price; cancel any time. (The GoodRx page blocked automated reading, so details come from the press release and search summaries.)",
+    "distinctive": "\"One clear price\" for visit, medicine and delivery from a brand people already use to compare pharmacy prices. No compounded or topical products.",
+    "sizeSignal": "GoodRx is a listed US company with a very large drug-price-comparison audience; no hair subscriber numbers published.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://investors.goodrx.com/news-releases/news-release-details/goodrx-launches-new-hair-loss-subscription-men-simplify-access",
+      "https://www.businesswire.com/news/home/20251014655126/en/GoodRx",
+      "https://www.goodrx.com/care/services/hair-loss/finasteride-online",
+      "https://www.goodrx.com/care/services/hair-loss/minoxidil-online"
+    ]
+  },
+  {
+    "name": "Curology (Hair FormulaRx)",
+    "country": "United States",
+    "url": "https://curology.com/hair-loss/",
+    "description": "The personalised prescription skincare brand's move into hair (February 2024): a custom compounded scalp serum for pattern hair loss.",
+    "audience": "Men and women with androgenetic alopecia.",
+    "products": [
+      {
+        "name": "Hair FormulaRx",
+        "actives": "Custom topical: three actives chosen by the provider from minoxidil, finasteride, ketoconazole, spironolactone, caffeine and melatonin (strengths not published; minoxidil said to be above over-the-counter strength)",
+        "price": "First box US$24.99 for new subscribers; ongoing price not shown on the page; subscription required"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Online skin-style consultation with photos; a licensed dermatology provider customises the formula. Asynchronous.",
+    "distinctive": "The \"three actives from a menu of six\" model copied from its acne business, in one bottle. Topical spironolactone and melatonin as options. Sold in the same account as a customer's skincare.",
+    "sizeSignal": "Well-known US personalised prescription-skincare subscription brand; hair launched 1 Feb 2024 (trade press). No hair numbers published.",
+    "deservesDeepDive": true,
+    "sources": [
+      "https://curology.com/hair-loss/",
+      "https://prnewswire.com/news-releases/personalized-skincare-brand-curology-launches-into-hair-care-category-with-hair-formula-rx-302050632.html",
+      "https://www.glossy.co/beauty/curology-takes-on-hair-loss-with-new-rx-treatment",
+      "https://support.curology.com/en_us/curology-hair-formularx-S1Wy1Td8T"
+    ]
+  },
+  {
+    "name": "Bosley (BosleyRx and BosleyMD)",
+    "country": "United States",
+    "url": "https://www.bosleyrx.com/",
+    "description": "Large US hair-transplant chain (it calls itself \"America's #1 Hair Restoration Experts\"). BosleyRx is its telehealth prescription arm; BosleyMD is its shop and salon range of shampoos, minoxidil and supplements.",
+    "audience": "Men and women (BosleyRx lists men's hair loss, women's hair loss and men's sexual health).",
+    "products": [
+      {
+        "name": "Finasteride",
+        "actives": "Finasteride 1 mg tablet",
+        "price": "From US$17.50 a month (Bosley's own page); \"first month free on select products\""
+      },
+      {
+        "name": "Finasteride + Minoxidil kit",
+        "actives": "Finasteride 1 mg tablet + minoxidil 5% topical",
+        "price": "Not shown"
+      },
+      {
+        "name": "Oral minoxidil",
+        "actives": "Minoxidil 2.5 mg tablet (off-label)",
+        "price": "Not shown"
+      },
+      {
+        "name": "Compounded oral finasteride and minoxidil",
+        "actives": "Finasteride + minoxidil in one compounded oral product (strengths not shown)",
+        "price": "Not shown"
+      },
+      {
+        "name": "BosleyMD range (non-prescription)",
+        "actives": "Minoxidil 5% (men) and 2% (women), shampoos, serums, supplements",
+        "price": "Third-party estimate only: shampoos US$25-40, serums US$45-85 (unverified)"
+      }
+    ],
+    "compounded": true,
+    "consultation": "\"Fast, online telehealth visits\" (questionnaire reviewed by a provider). Orders are one-off shipments by default; auto-refill every 3, 6 or 12 months is optional.",
+    "distinctive": "The only large player that runs the whole ladder: shop products, prescriptions, then surgery. One-off shipment by default (no forced subscription).",
+    "sizeSignal": "\"Over 1 million patients served\" and \"over 50 years of experience\" (company claims, mostly transplants). BosleyRx launched November 2020.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.bosleyrx.com/",
+      "https://www.bosleyrx.com/products/finasteride",
+      "https://www.bosleyrx.com/products/finasteride-minoxidil",
+      "https://bosley.com/non-surgical/bosleyrx",
+      "https://www.businesswire.com/news/home/20201118006018/en/Bosley-Launches-New-Prescription-Based-Hair-Restoration-service-BosleyRx"
+    ]
+  },
+  {
+    "name": "Miiskin",
+    "country": "United States",
+    "url": "https://miiskin.com/online-dermatologist/hair-loss-treatment",
+    "description": "A dermatology app and platform that connects patients with independent US board-certified dermatologists, who can prescribe a wide menu of compounded hair formulas from partner pharmacies.",
+    "audience": "Men and women; state coverage depends on the dermatologist.",
+    "products": [
+      {
+        "name": "Single-ingredient compounded items",
+        "actives": "Minoxidil, finasteride or dutasteride (topical or oral, via partner pharmacy)",
+        "price": "US$24.99 each"
+      },
+      {
+        "name": "Compounded combinations",
+        "actives": "For example minoxidil + finasteride; minoxidil + dutasteride; combinations including latanoprost",
+        "price": "US$48.99 (minoxidil + finasteride) up to US$68.99 (combinations with latanoprost)"
+      },
+      {
+        "name": "Dermatologist consultation",
+        "actives": "Photo-based, asynchronous",
+        "price": "US$59 first consult; about US$30-49 follow-up (pages differ)"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Photo-based consultation in an app with a named board-certified dermatologist; reply in 1 to 2 working days. No subscription; the patient can choose their pharmacy.",
+    "distinctive": "Real dermatologists and the widest public menu of unusual actives at fixed prices: topical dutasteride and latanoprost.",
+    "sizeSignal": "Small in hair. No customer numbers published.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://miiskin.com/online-dermatologist/hair-loss-treatment",
+      "https://miiskin.com/foothills-professional-pharmacy/compounded-prescriptions-hair/",
+      "https://miiskin.com/online-dermatologist/get-topical-dutasteride-minoxidil-prescription",
+      "https://miiskin.com/hair-loss/medications-for-hair-loss/topical-dutasteride"
+    ]
+  },
+  {
+    "name": "Alloy Women's Health",
+    "country": "United States",
+    "url": "https://www.myalloy.com/hair-lash-brow-care",
+    "description": "Menopause telehealth brand with a \"Hair, Lash & Brow\" line: oral minoxidil, spironolactone and a prescription lash and brow serum, prescribed by menopause-trained doctors.",
+    "audience": "Women in perimenopause and menopause.",
+    "products": [
+      {
+        "name": "Low-Dose Oral Minoxidil",
+        "actives": "Minoxidil with vitamin D (ingredients listed as \"minoxidil, vitamin D, and cellulose\"; a customer review describes compounded minoxidil 1 mg / vitamin D 1000 IU capsules, so this appears to be compounded: inferred); 90-day supply",
+        "price": "US$99 per 3 months (\"starting at $33/mo\")"
+      },
+      {
+        "name": "Spironolactone",
+        "actives": "Spironolactone tablets (anti-androgen)",
+        "price": "US$99 per 3 months"
+      },
+      {
+        "name": "Lash & Brow Serum Rx",
+        "actives": "Generic Latisse (bimatoprost) solution",
+        "price": "US$175"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Online intake reviewed by a menopause-trained, board-certified doctor; free unlimited doctor messaging. Hair products can sit alongside HRT in one plan.",
+    "distinctive": "Hair loss treated as a menopause symptom next to HRT. Oral minoxidil combined with vitamin D. Bundle discount for stacking (two products save US$30, three save US$60). Lash and brow regrowth sold with scalp hair.",
+    "sizeSignal": "No hair-specific numbers found.",
+    "deservesDeepDive": true,
+    "sources": [
+      "https://www.myalloy.com/hair-lash-brow-care",
+      "https://www.myalloy.com/solutions/oral-minoxidil-1",
+      "https://www.wardrobeoxygen.com/?p=123880"
+    ]
+  },
+  {
+    "name": "Midi Health",
+    "country": "United States",
+    "url": "https://www.joinmidi.com/hair-skin",
+    "description": "Insurance-covered virtual menopause clinic that treats midlife hair thinning as part of a wider care plan.",
+    "audience": "Women in perimenopause and menopause; all 50 states (not Medicare).",
+    "products": [
+      {
+        "name": "Hair Regrowth Serum / Minoxidil/Finasteride Hair Regrowth Spray",
+        "actives": "Compounded topical minoxidil + finasteride (strengths not shown)",
+        "price": "Not shown; visits billed to insurance"
+      },
+      {
+        "name": "Oral options named in Midi's guides",
+        "actives": "Oral minoxidil; spironolactone (both off-label)",
+        "price": "Pharmacy price / insurance"
+      },
+      {
+        "name": "Ketoconazole shampoo; supplements",
+        "actives": "Ketoconazole; Midi-curated supplements",
+        "price": "Not shown"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Video visit with a Midi clinician, covered by many insurers; hair is handled inside a whole menopause care plan (HRT, skin, nutrition, dermatologist referral).",
+    "distinctive": "Insurance pays for the visit, which is rare in hair loss. Topical finasteride prescribed to midlife women. Also sells a prescription cream for unwanted facial hair, the opposite problem in the same patient.",
+    "sizeSignal": "Available in all 50 states with insurance coverage (company claim); no hair numbers published.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.joinmidi.com/hair-skin",
+      "https://joinmidi.com/post/oral-minoxidil",
+      "https://joinmidi.com/post/spironolactone-for-hair-loss"
+    ]
+  },
+  {
+    "name": "Felix",
+    "country": "Canada",
+    "url": "https://www.felixforyou.ca/ailment/hair-loss/",
+    "description": "One of Canada's largest general telehealth brands (weight loss, ED, hair, skin, mental health) with separate men's and women's hair-loss services.",
+    "audience": "Men and women across Canada.",
+    "products": [
+      {
+        "name": "Finasteride",
+        "actives": "Finasteride 1 mg or 5 mg tablets, packs of 30 or 100",
+        "price": "Hair-loss medication \"starting at CA$41.23 per 30 pills\" before the pharmacy fill fee; varies by province and refill schedule"
+      },
+      {
+        "name": "Minoxidil",
+        "actives": "Topical minoxidil (non-prescription in Canada; requested through a short assessment)",
+        "price": "Not shown"
+      },
+      {
+        "name": "Women's hair-loss plan",
+        "actives": "\"Personalized treatment plan complete with products made to manage female hair loss\" (prescription and non-prescription; actives not named publicly)",
+        "price": "Not shown"
+      },
+      {
+        "name": "Initial visit",
+        "actives": "Online assessment reviewed by a Canadian practitioner",
+        "price": "CA$40 (shown as free on promotion, Nov 2026)"
+      }
+    ],
+    "compounded": "unknown",
+    "consultation": "Online health assessment, then a treatment plan from a licensed Canadian practitioner (doctor or nurse practitioner), delivery and ongoing messaging. Direct insurance billing is offered.",
+    "distinctive": "Scale and trust in Canada, plus direct billing to private insurers. A dedicated women's hair-loss route. Canadian rules limit what can be said publicly about prescription drugs, so product detail sits behind the assessment.",
+    "sizeSignal": "\"Trusted by over 1.8 million Canadians\" (all conditions); 4.8 on Trustpilot (company claim).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.felixforyou.ca/ailment/hair-loss/",
+      "https://www.felixforyou.ca/ailment/hair-loss/womens/",
+      "https://www.felixforyou.ca/medications/finasteride/",
+      "https://www.felixforyou.ca/faqs/how-much-does-hair-loss-medication-cost"
+    ]
+  },
+  {
+    "name": "Jack Health",
+    "country": "Canada",
+    "url": "https://jack.health/hair",
+    "description": "Canadian men's health clinic selling personalised hair programmes, including a compounded three-active topical.",
+    "audience": "Men across Canada.",
+    "products": [
+      {
+        "name": "Hello Hair",
+        "actives": "Topical spray or serum: minoxidil 5% + finasteride 0.1% + latanoprost 0.03% (strengths from Jack's own comparison article)",
+        "price": "Not shown publicly (prescription)"
+      },
+      {
+        "name": "Halt + Regrow",
+        "actives": "Finasteride tablet daily + minoxidil 5% serum",
+        "price": "Not shown publicly"
+      },
+      {
+        "name": "Minoxidil 5%",
+        "actives": "Minoxidil 5% topical",
+        "price": "CA$120 for a 3-month supply"
+      },
+      {
+        "name": "Full & Thick Pack",
+        "actives": "Supplement: zinc, biotin, saw palmetto, vitamin D3",
+        "price": "CA$180 for a 3-month supply"
+      },
+      {
+        "name": "Rosemary Oil",
+        "actives": "Rosemary oil (cosmetic)",
+        "price": "CA$35"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Hair quiz, then a free digital consultation (CA$0 visit fee) with a licensed provider; a partner pharmacy prepares and ships; messaging for questions and plan changes.",
+    "distinctive": "Latanoprost (a prostaglandin eye-drop drug that lengthens the growth phase) added to topical finasteride and minoxidil: a triple topical not seen at the big US or UK brands. Also sells a C$99 quarterly 55-biomarker blood test under the same brand.",
+    "sizeSignal": "\"Trusted by 300,000 Canadians\" in \"more than 500 communities\" (company claim, all conditions).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://jack.health/hair",
+      "https://www.jack.health/",
+      "https://jack.health/hello-hair",
+      "https://jack.health/finasteride-vs-minoxidil-vs-hello-hair-solutions"
+    ]
+  },
+  {
+    "name": "myRocky (Rocky Health)",
+    "country": "Canada",
+    "url": "https://www.myrocky.ca/hair",
+    "description": "Canadian online clinic (weight loss, sexual health, hair, mental health) with a combined finasteride and minoxidil foam as its lead hair product.",
+    "audience": "Men across Canada.",
+    "products": [
+      {
+        "name": "2-in-1 Foam (Finasteride & Minoxidil Topical Foam)",
+        "actives": "Finasteride + minoxidil in one topical foam (strengths not shown)",
+        "price": "CA$185 for a 2-month supply (billed every 2 months)"
+      },
+      {
+        "name": "Tablet and topical solution bundle",
+        "actives": "Finasteride tablets + minoxidil solution",
+        "price": "CA$180 for a 3-month supply"
+      },
+      {
+        "name": "Minoxidil topical solution",
+        "actives": "Minoxidil solution (dropper)",
+        "price": "CA$101.25 for 3 months (list CA$135)"
+      },
+      {
+        "name": "Finasteride tablets",
+        "actives": "Finasteride tablets",
+        "price": "CA$123.75 for 3 months"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Add a product to the cart to start an online consultation; licensed doctors, nurse practitioners and pharmacists review. Pause or cancel any time.",
+    "distinctive": "A foam (not a spray or solution) that carries both finasteride and minoxidil. The combination is not a licensed product, so it must be made by a compounding pharmacy (inferred). Prices shown openly, which is unusual in Canada.",
+    "sizeSignal": "\"Trusted by 350K+ Canadians\" (company claim, all conditions).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.myrocky.ca/hair",
+      "https://www.myrocky.ca/product/finasteride-minoxidil-topical-foam",
+      "https://www.myrocky.ca/"
+    ]
+  },
+  {
+    "name": "UPGUYS",
+    "country": "Canada",
+    "url": "https://upguys.com/hair-loss",
+    "description": "Canadian men's online pharmacy and clinic for ED, hair loss and premature ejaculation.",
+    "audience": "Men 18+ in every province and territory except Yukon.",
+    "products": [
+      {
+        "name": "Finasteride (generic Propecia)",
+        "actives": "Finasteride 1 mg, 28 tablets",
+        "price": "CA$49 (before dispensing fee)"
+      },
+      {
+        "name": "Minoxidil AM/PM",
+        "actives": "Two \"extra strength\" minoxidil solutions, one for morning and one for night, 2 x 30 ml (strength not shown)",
+        "price": "CA$69"
+      },
+      {
+        "name": "Finasteride + Minoxidil",
+        "actives": "28 finasteride 1 mg tablets + AM and PM minoxidil solutions",
+        "price": "CA$118"
+      }
+    ],
+    "compounded": "unknown",
+    "consultation": "Online visit with a Canadian practitioner; prescription required before dispensing.",
+    "distinctive": "Separate morning and evening minoxidil formulas (an AM/PM routine idea).",
+    "sizeSignal": "\"Trusted by more than 200,000 patients\"; 4.9 from 2,600+ Google reviews (company claim).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://upguys.com/hair-loss",
+      "https://upguys.com/H/medications"
+    ]
+  },
+  {
+    "name": "Phoenix",
+    "country": "Canada",
+    "url": "https://www.phoenix.ca/treatments/hair-loss",
+    "description": "Canadian men's digital health clinic; hair-loss care is an online assessment that can lead to finasteride.",
+    "audience": "Men in Canada.",
+    "products": [
+      {
+        "name": "Finasteride",
+        "actives": "Finasteride (details behind the assessment)",
+        "price": "Not shown publicly"
+      }
+    ],
+    "compounded": "unknown",
+    "consultation": "Secure online assessment about hair loss, history and medicines; a licensed Canadian provider reviews and may ask for photos.",
+    "distinctive": "Nothing distinctive found in hair.",
+    "sizeSignal": "No numbers found.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.phoenix.ca/treatments/hair-loss",
+      "https://www.phoenix.ca/medications/finasteride"
+    ]
+  },
+  {
+    "name": "Mosh and Moshy",
+    "country": "Australia",
+    "url": "https://www.getmosh.com.au/hair-loss",
+    "description": "Australian men's telehealth brand (since 2016) with tiered hair-loss plans, and a newer sister programme, Moshy, for women's hair loss.",
+    "audience": "Men (Mosh) and women (Moshy) in Australia.",
+    "products": [
+      {
+        "name": "Prevention Only",
+        "actives": "Not disclosed publicly (Australian law bans advertising prescription medicines)",
+        "price": "A$24 a month"
+      },
+      {
+        "name": "Prevention & Regrowth (most popular)",
+        "actives": "Not disclosed; Mosh says its treatments \"combine two active ingredients, in tablet or spray form\"",
+        "price": "A$45 a month"
+      },
+      {
+        "name": "Hair Loss Clinic Plan",
+        "actives": "Not disclosed; \"targets loss from multiple angles\", optional vitamins and shampoo",
+        "price": "A$56 a month"
+      },
+      {
+        "name": "Moshy women's hair programme",
+        "actives": "Not disclosed; personalised plan",
+        "price": "From A$69 (includes consult, support and delivery)"
+      }
+    ],
+    "compounded": "unknown",
+    "consultation": "5-minute quiz, photos and history, then an online consultation with an Australian practitioner; unlimited messaging with the hair team. Quarterly subscriptions.",
+    "distinctive": "The widest set of guarantees seen in this sweep: 180-day money-back guarantee, a \"reformulation guarantee\" (treatment adjusted if too strong or causing side effects) and a price-match guarantee. \"85+ possible plan variations\". A separate women's brand.",
+    "sizeSignal": "\"Over 60,000 men\" treated for hair; \"over 150,000 Aussies\" overall (company claims).",
+    "deservesDeepDive": true,
+    "sources": [
+      "https://www.getmosh.com.au/hair-loss",
+      "https://www.getmosh.com.au/female-hair",
+      "https://www.getmoshy.com.au/hair",
+      "https://finvsfin.com/mosh-hair-loss-reviews/"
+    ]
+  },
+  {
+    "name": "hub.health",
+    "country": "Australia",
+    "url": "https://hub.health/treatment/hair-loss/",
+    "description": "Australian telehealth platform with three low-priced men's hair plans, including a personalised all-in-one capsule.",
+    "audience": "Men in Australia.",
+    "products": [
+      {
+        "name": "Regrowth: Receding Hair",
+        "actives": "\"Customised formulation\" (actives not disclosed publicly)",
+        "price": "A$19 a month"
+      },
+      {
+        "name": "Prevention & Regrowth: Thinning & Receding (most popular)",
+        "actives": "Combined treatments \"in one convenient capsule personalised to you\"",
+        "price": "A$39 a month"
+      },
+      {
+        "name": "Prevention: Thinning Hair",
+        "actives": "Not disclosed",
+        "price": "A$29 a month"
+      },
+      {
+        "name": "Consultation",
+        "actives": "Flat-fee clinician consult (no Medicare rebate)",
+        "price": "A$35"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Online eligibility questionnaire, then a paid A$35 consult with a clinician (\"all you need is a phone\"). No lock-in subscriptions.",
+    "distinctive": "The cheapest personalised capsule found (from about A$0.65 a day) and a 180-day satisfaction guarantee. Plans are named by hair pattern (receding, thinning, both), which makes choosing simple.",
+    "sizeSignal": "\"Trusted by 300,000+ Aussies\" (company claim, all conditions).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://hub.health/treatment/hair-loss/",
+      "https://hub.health/"
+    ]
+  },
+  {
+    "name": "The Hairy Pill",
+    "country": "Australia",
+    "url": "https://www.thehairypill.com.au/",
+    "description": "A single personalised, compounded once-daily pill for hair loss, developed by dermatologist Professor Rodney Sinclair (who also holds a patent related to sublingual minoxidil), with phone consultations by partner doctors.",
+    "audience": "Men and women in Australia.",
+    "products": [
+      {
+        "name": "The Hairy Pill subscription",
+        "actives": "Personalised compounded capsule; ingredients are not listed online (the company cites advertising rules). Third-party reports say low-dose oral minoxidil with finasteride or dutasteride (men) plus vitamins: unverified",
+        "price": "A$75 a month; first 3 months paid upfront (or 4 payments of A$56.25, or from A$10 a week)"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Online quiz, then a doctor phone call; a pharmacist calls before express delivery. Unlimited telehealth reviews; doctors adjust strength, dose or ingredients over time.",
+    "distinctive": "One pill instead of several products. \"Side Effect Protect\": dose or ingredient changes at no extra charge if side effects appear. Regular phone reviews with photo progress. Built on a named professor's clinic protocol. Publishes outcome data from 1,000 sampled patients treated for 12+ months.",
+    "sizeSignal": "Launched 2020. Company cites a sample of \"1,000 randomly sampled active patients treated for 12+ months\", so the active base is larger than that.",
+    "deservesDeepDive": true,
+    "sources": [
+      "https://www.thehairypill.com.au/",
+      "https://www.dmarge.com/grooming/hairy-pill-review",
+      "https://www.hairlosscure2020.com/the-hairy-pill-from-dr-rodney-sinclair/",
+      "https://pubmed.ncbi.nlm.nih.gov/34420241/"
+    ]
+  },
+  {
+    "name": "Gro Clinics",
+    "country": "Australia and New Zealand",
+    "url": "https://groclinics.com.au/pages/prescription-haircare",
+    "description": "Doctor-led hair-transplant clinic chain that also sells \"Prescription Haircare\" plans by telehealth.",
+    "audience": "Men and women in Australia and New Zealand.",
+    "products": [
+      {
+        "name": "Mono plan",
+        "actives": "One active ingredient, chosen after consultation (not named publicly)",
+        "price": "From A$36.25 a month (12-month billing; 3- and 6-month billing also offered)"
+      },
+      {
+        "name": "Combo plan",
+        "actives": "Two active ingredients",
+        "price": "From A$57.50 a month"
+      },
+      {
+        "name": "Telehealth consultation",
+        "actives": "15-minute call with a practitioner",
+        "price": "Free"
+      }
+    ],
+    "compounded": "unknown",
+    "consultation": "A real 15-minute telehealth call (\"a real consultation, not a quiz\") with a registered practitioner; plan \"built from 37 treatment options\"; delivered at a chosen interval.",
+    "distinctive": "Sells a live consultation as the difference from quiz-based rivals. Pricing by number of actives (mono or combo). A path from medicine to in-person therapies and transplant surgery in the same company.",
+    "sizeSignal": "14 transplant clinic locations listed in Australia plus Auckland; \"trusted by over 15,000 men and women\" (company claim).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://groclinics.com.au/pages/prescription-haircare",
+      "https://groclinics.com.au/online-care",
+      "https://groclinics.com.au/pages/hair-loss-treatment-sydney"
+    ]
+  },
+  {
+    "name": "Hers Australia (formerly Juniper) and Hims Australia (formerly Pilot)",
+    "country": "Australia",
+    "url": "https://investors.hims.com/news/news-details/2026/Hers-Launches-in-Australia-Built-to-Care-for-the-Whole-Woman/default.aspx",
+    "description": "Hims & Hers bought Eucalyptus (owner of Pilot, Juniper, Kin and Software) in 2026 for up to US$1.15 billion. Pilot became Hims in August 2026 and Juniper became Hers on 12 October 2026, adding a women's hair programme.",
+    "audience": "Women (Hers) and men (Hims) in Australia.",
+    "products": [
+      {
+        "name": "Hers Hair programme",
+        "actives": "\"New, innovative formulations of clinically proven treatment options for hair regrowth\" (actives and prices not given in the release)",
+        "price": "Not published in the release"
+      }
+    ],
+    "compounded": "unknown",
+    "consultation": "Online consultation with Australian practitioners; 24/7 care team access (per the launch release).",
+    "distinctive": "Shows where the market is heading: the US leader now owns the Australian leader and Europe's ZAVA, and is rolling the same personalised hair formulas into each country. Pilot itself is covered in a separate deep dive.",
+    "sizeSignal": "Eucalyptus reported an annual revenue run-rate above US$450 million at the time of the deal; Juniper community of more than 27,000 women.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://investors.hims.com/news/news-details/2026/Hers-Launches-in-Australia-Built-to-Care-for-the-Whole-Woman/default.aspx",
+      "https://www.fiercehealthcare.com/digital-health/hims-hers-eyes-international-growth-115b-eucalyptus-acquisition",
+      "https://www.businesswire.com/news/home/20260219578605/en/"
+    ]
+  },
+  {
+    "name": "MySpring (Spring, Wellster Healthtech)",
+    "country": "Germany",
+    "url": "https://www.myspring.com/p/finasterid",
+    "description": "A leading German men's telehealth brand (Wellster Healthtech, Munich), selling finasteride tablets, minoxidil and a combined pack after an online doctor assessment.",
+    "audience": "Men in Germany.",
+    "products": [
+      {
+        "name": "Finasterid tablets",
+        "actives": "Finasteride 1 mg film-coated tablets (Finasterid NIO)",
+        "price": "From EUR 35.99"
+      },
+      {
+        "name": "Finasterid & Minoxidil Pack",
+        "actives": "98 finasteride 1 mg tablets + 3 x 60 ml minoxidil 5% solution (50 mg/ml), a 3-month supply",
+        "price": "From EUR 134"
+      },
+      {
+        "name": "Minoxidil",
+        "actives": "Minoxidil 5% solution (non-prescription in Germany)",
+        "price": "Not captured"
+      },
+      {
+        "name": "Finasteride-minoxidil scalp solution (earlier product)",
+        "actives": "Compounded finasteride + minoxidil solution, 50 ml",
+        "price": "EUR 55 per bottle, or a monthly subscription that waived the EUR 19 treatment fee (trade-press report; current status unverified)"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Online medical questionnaire reviewed by a doctor; prescription filled by a partner mail-order pharmacy; delivery in 2 to 3 working days.",
+    "distinctive": "A cautionary tale for compounding: German pharmacy press reports a court fight over whether its batch-made finasteride-minoxidil solution (\"Defektur\") and its advertising of prescription medicines were lawful, reaching the Federal Court of Justice in February 2026 (outcome not found).",
+    "sizeSignal": "Wellster reported EUR 50 million revenue and first full-year profit for 2025 (driven mainly by its weight-loss brand); \"more than 2 million\" people had used its platforms by 2022.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.myspring.com/p/finasterid",
+      "https://www.myspring.com/p/bundle-finasterid-minoxidil",
+      "https://www.apotheke-adhoc.de/nachrichten/detail/markt/myspring-defektur-trick-und-rx-werbung-wellster-uebernimmt-versandapotheke/",
+      "https://www.cbinsights.com/company/wellster-healthtech"
+    ]
+  },
+  {
+    "name": "ZAVA (owned by Hims & Hers)",
+    "country": "Germany, France, Ireland (and UK)",
+    "url": "https://www.zavamed.com/de/haarausfall.html",
+    "description": "Large European online doctor service, bought by Hims & Hers in July 2025. In Germany it prescribes licensed medicines for men's hair loss, including a licensed finasteride scalp spray and off-label dutasteride.",
+    "audience": "Men (hair loss) in Germany, France and Ireland; UK site covered in the UK sweep.",
+    "products": [
+      {
+        "name": "Fynzur",
+        "actives": "Licensed finasteride scalp spray, 2.275 mg/ml (114 micrograms per spray)",
+        "price": "From EUR 75.32"
+      },
+      {
+        "name": "Generic finasteride",
+        "actives": "Finasteride 1 mg tablets",
+        "price": "From EUR 27.37"
+      },
+      {
+        "name": "Propecia",
+        "actives": "Finasteride 1 mg tablets (brand)",
+        "price": "From EUR 59.88"
+      },
+      {
+        "name": "Dutasteride (off-label)",
+        "actives": "Dutasteride 0.5 mg capsules (Dutasterid Aristo, AXiromed)",
+        "price": "From EUR 27.27"
+      },
+      {
+        "name": "Treatment fee",
+        "actives": "Doctor assessment",
+        "price": "EUR 19.99 (paper prescription by post EUR 15)"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online medical questionnaire assessed by a ZAVA doctor; messaging with doctors through the patient account; medicine by post or prescription to a pharmacy.",
+    "distinctive": "Sells a licensed (not compounded) topical finasteride spray, which exists in many EU countries but is not on sale as a licensed product in the UK (UK status not verified here). Openly offers off-label dutasteride capsules online.",
+    "sizeSignal": "\"More than 1.3 million active customers\" and nearly 2.3 million consultations in 2024 across four markets (Hims & Hers release).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.zavamed.com/de/haarausfall.html",
+      "https://investors.hims.com/news/news-details/2025/Hims--Hers-Announces-Plans-to-Acquire-ZAVA-Accelerating-Major-European-Growth-Across-the-UK-Germany-France-and-Ireland/default.aspx",
+      "https://www.patienteninfo-service.de/a-z-liste/f/fynzur-fuer-maenner-2275-mgml-spray-zur-anwendung-auf-der-haut-kopfhaut-loesung",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9297965"
+    ]
+  },
+  {
+    "name": "Charles",
+    "country": "France",
+    "url": "https://www.charles.co/consulter-cheveux/",
+    "description": "French men's health telehealth platform (sexual health, sleep, hair) offering fixed-price hair-loss teleconsultations with doctors under a protocol written by a hospital dermatologist.",
+    "audience": "Men in France.",
+    "products": [
+      {
+        "name": "Hair-loss teleconsultation",
+        "actives": "3-minute questionnaire, then a doctor by video, phone or messages; prescription sent to a pharmacy if appropriate",
+        "price": "EUR 35 fixed price"
+      },
+      {
+        "name": "Treatments described",
+        "actives": "Oral treatment (drug not named on the page, in line with French advertising rules), mesotherapy, shampoos, lotions and food supplements",
+        "price": "Not shown"
+      }
+    ],
+    "compounded": "unknown",
+    "consultation": "Questionnaire first, then a real doctor consultation by video, phone or secure messages, usually within 24 hours, 7 days a week; unlimited follow-up by message or phone.",
+    "distinctive": "The patient chooses the channel (video, phone or chat) for the same fixed price. A named hospital dermatologist (Dr Pierre Schneider, Hôpital Saint-Louis) fronts the protocol.",
+    "sizeSignal": "\"Over 100,000 people have consulted\" through Charles; 20,124 on-site reviews averaging 4.6/5 (company claims).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.charles.co/consulter-cheveux/",
+      "https://www.charles.co/pathologies/cheveux/perte-de-cheveux/"
+    ]
+  },
+  {
+    "name": "Hårklinikken",
+    "country": "Denmark (US clinics in Los Angeles and New York)",
+    "url": "https://harklinikken.com/products/extract",
+    "description": "Danish premium hair-clinic brand built on one product: a plant-derived \"Hair Gain Extract\" that is customised and re-blended for each client after an assessment. No drugs.",
+    "audience": "Women and men; sold online and through its own clinics (Los Angeles and New York in the US).",
+    "products": [
+      {
+        "name": "Hair Gain Extract",
+        "actives": "Proprietary fermented blend from burdock root, marigold, apple, sandalwood and cow's milk; individually formulated",
+        "price": "US$102 a bottle; 10% off on a 3-month subscription, 20% off on 6 months"
+      },
+      {
+        "name": "Consultation with a Hair Specialist",
+        "actives": "Online or in clinic; baseline photos; follow-up advised every two months",
+        "price": "Initial US$250, follow-up US$150 (promotion to 31 Dec: US$95 and US$75)"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online Hair Assessment checks eligibility first (the company says the Extract only suits certain kinds of thinning), then a virtual or in-clinic consultation with a \"Hair Specialist\" (30 minutes, baseline photos); the formula is adjusted over time.",
+    "distinctive": "Screens people out before selling (an \"only if we can help you\" promise), charges for consultations, and re-blends the product at each review. A non-drug brand using the personalised-formula and clinic-follow-up model at premium prices.",
+    "sizeSignal": "In business since 1992 (company claim); 4,106 reviews on the Extract page. No revenue figures found.",
+    "deservesDeepDive": true,
+    "sources": [
+      "https://harklinikken.com/products/extract",
+      "https://www.harklinikken.com/pages/consultation",
+      "https://www.harklinikken.com",
+      "https://www.marieclaire.com/beauty/hair/harklinikken-extract-danish-hair-brand/",
+      "https://harklinikken.com/pages/book-consultation"
+    ]
+  },
+  {
+    "name": "Scandinavian Biolabs",
+    "country": "Denmark",
+    "url": "https://scandinavianbiolabs.com/",
+    "description": "Copenhagen non-drug hair-growth brand sold direct and through retailers, built around its \"Bio-Pilixin\" plant-based activation serum.",
+    "audience": "Men and women across Europe, the UK and the US.",
+    "products": [
+      {
+        "name": "Bio-Pilixin Activation Serum",
+        "actives": "Plant-based multi-ingredient serum (no minoxidil or finasteride)",
+        "price": "EUR 55 (list EUR 65)"
+      },
+      {
+        "name": "Hair Growth Routine bundles",
+        "actives": "Serum + shampoo + conditioner; nutrient supplements",
+        "price": "Not captured"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None (cosmetic products).",
+    "distinctive": "150-day money-back guarantee tied to the length of its own clinical study (30 people, 150 days). More than 70% of new customers take a subscription (2024 trade interview).",
+    "sizeSignal": "\"1M+ products sold\", 4,100+ Trustpilot reviews (company claim); raised about EUR 4 million in 2024.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://scandinavianbiolabs.com/pages/hairlossstartnow",
+      "https://www.beautyindependent.com/hair-growth-brand-scandinavian-biolabs-funding",
+      "https://scandinavianbiolabs.com/pages/science",
+      "https://scandinavianbiolabs.com/collections/hair-growth-serums"
+    ]
+  },
+  {
+    "name": "DoktorABC",
+    "country": "Germany (dispensing from the Netherlands)",
+    "url": "https://www.doktorabc.com/de/maennergesundheit/haarausfall",
+    "description": "Large German-language online prescription platform: a questionnaire reviewed by doctors, with medicines dispensed by a Dutch mail-order pharmacy or German partner pharmacies. Hair loss is one of 40+ categories.",
+    "audience": "Men (hair loss) in Germany.",
+    "products": [
+      {
+        "name": "Hair-loss prescription medicines",
+        "actives": "Listed on a separate treatment page that was not captured",
+        "price": "Not captured"
+      }
+    ],
+    "compounded": "unknown",
+    "consultation": "Short confidential questionnaire reviewed by doctors; delivery in 1 to 2 working days or pick-up at a partner pharmacy.",
+    "distinctive": "Scale and a hybrid model (post or local pharmacy pick-up). Nothing new in hair.",
+    "sizeSignal": "\"Over 1 million customers\" and \"over 4 million orders\" (company claim, all conditions).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.doktorabc.com/de/maennergesundheit/haarausfall"
+    ]
+  },
+  {
+    "name": "Ulo",
+    "country": "United States",
+    "url": "https://ulo.co/",
+    "description": "A newer hair-only telehealth compounder, co-founded by the hair-loss education site Perfect Hair Health, built around a \"Treatment Customizer\" with unusual actives, strength choices and delivery forms.",
+    "audience": "Men and women (age bands 19-49 and 50+); prescriptions in all 50 US states; non-prescription products shipped worldwide.",
+    "products": [
+      {
+        "name": "0.005% Topical Finasteride (6-in-1), men",
+        "actives": "Finasteride 0.005% (a deliberate micro-dose) + minoxidil 7% + tretinoin + melatonin 0.01% + caffeine 0.2% + cetirizine 1%; a 0.2% full-strength option also exists",
+        "price": "From US$42 a month (longest plan)"
+      },
+      {
+        "name": "0.2% Topical Dutasteride (6-in-1), men",
+        "actives": "Dutasteride 0.2% + minoxidil 7% + tretinoin 0.01% + melatonin 0.01% + caffeine 0.2% + cetirizine 1%",
+        "price": "From US$61 a month"
+      },
+      {
+        "name": "7% Topical Minoxidil (5-in-1)",
+        "actives": "Minoxidil 7% + tretinoin + melatonin + caffeine + cetirizine (no DHT blocker)",
+        "price": "From US$35 a month (men); from US$32 (women)"
+      },
+      {
+        "name": "Oral options, men",
+        "actives": "Dutasteride 0.5 mg; finasteride 1 mg; minoxidil 2.5 mg",
+        "price": "From US$29, US$18 and US$22 a month"
+      },
+      {
+        "name": "Sublingual Minoxidil, women",
+        "actives": "Minoxidil 2.25 mg under-the-tongue + folic acid 0.4 mg + vitamin D 1000 IU",
+        "price": "From US$42 a month"
+      },
+      {
+        "name": "Oral Spironolactone combination, women",
+        "actives": "Spironolactone 50 mg + minoxidil 0.625 mg + folic acid 1 mg + vitamin D 1000 IU (also spironolactone 200 mg alone; oral minoxidil 1.25 mg alone)",
+        "price": "From US$59 a month (200 mg alone from US$44; minoxidil 1.25 mg from US$18)"
+      },
+      {
+        "name": "0.2% Topical Finasteride, postmenopausal women",
+        "actives": "Finasteride 0.2% topical",
+        "price": "From US$38 a month"
+      }
+    ],
+    "compounded": true,
+    "consultation": "2-minute hair quiz matches a protocol; after purchase a short medical intake is reviewed by a licensed provider. Subscriptions include on-demand access to hair specialists and doctors.",
+    "distinctive": "The most adventurous menu found: sublingual minoxidil, topical cetirizine (an antihistamine studied for hair), melatonin and caffeine boosters, micro-dose (0.005%) versus full-strength (0.2%) topical finasteride, topical dutasteride, 7% minoxidil, and no propylene glycol in any formula. The customer builds the treatment: delivery form, DHT reducer, growth stimulant, add-ons. 12-month (365-day) money-back guarantee.",
+    "sizeSignal": "Small and young: about 65-70 Trustpilot reviews (mixed). No customer numbers published. The most detailed review is by its own co-founder (conflict of interest).",
+    "deservesDeepDive": true,
+    "sources": [
+      "https://ulo.co/",
+      "https://perfecthairhealth.com/ulo-review/",
+      "https://ca.trustpilot.com/review/ulo.co"
+    ]
+  },
+  {
+    "name": "Shapiro MD (LifeMD)",
+    "country": "United States",
+    "url": "https://new.shapiromd.com/",
+    "description": "Hair-loss brand owned by listed telehealth group LifeMD (which also owns Rex MD): a dermatologist-formulated shampoo, conditioner and foam system, minoxidil, a laser device and a telehealth prescription route.",
+    "audience": "Men and women.",
+    "products": [
+      {
+        "name": "Shapiro MD system (non-prescription)",
+        "actives": "Shampoo, conditioner and leave-in foam with the brand's botanical DHT-blocking complex; over-the-counter minoxidil",
+        "price": "Third-party estimates only: bundles about US$40-80 a month (unverified)"
+      },
+      {
+        "name": "Prescription options",
+        "actives": "Third-party reports: oral finasteride 1 mg, topical finasteride 0.25% solution, minoxidil 5% (unverified against the live site)",
+        "price": "Not captured"
+      }
+    ],
+    "compounded": "unknown",
+    "consultation": "Online hair quiz; \"hair growth experts\" build a plan; prescription items need an online provider review. Free rush shipping.",
+    "distinctive": "Hybrid of a mass-market infomercial-style cosmetic system and a prescription upsell under one brand.",
+    "sizeSignal": "\"Chosen by over 350,000 customers\" (company claim). Parent LifeMD reported 2025 revenue of US$194.1 million across all brands.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://new.shapiromd.com/",
+      "https://finviz.com/news/334297/lifemd-reports-fourth-quarter-and-full-year-2025-results",
+      "https://healthrx.com/brands-shapiro-md/overview"
+    ]
+  },
+  {
+    "name": "Minoxidil Max",
+    "country": "Online seller (reported as Canadian; unverified)",
+    "url": "https://www.minoxidilmax.com/",
+    "description": "Long-running grey-market web shop for very high-strength minoxidil mixes (up to 15%) with finasteride, azelaic acid and retinoids, popular on hair-loss forums. Its site could not be reached from this research environment, so details below come from third-party listings.",
+    "audience": "Mostly men; international mail order.",
+    "products": [
+      {
+        "name": "DualGen-15 (with or without propylene glycol; \"Plus\" versions)",
+        "actives": "Minoxidil 15% + azelaic acid 5%; \"Plus\" adds finasteride 0.1%, retinol or tretinoin 0.025% and caffeine",
+        "price": "About US$42-50 per 2 oz (59 ml) bottle (third-party listings)"
+      }
+    ],
+    "compounded": true,
+    "consultation": "None reported (direct purchase). Whether any prescription check exists is unverified.",
+    "distinctive": "Shows the demand for strengths above anything licensed (15% minoxidil) and for propylene-glycol-free bases. Not a model to copy: no clinical oversight.",
+    "sizeSignal": "No figures. Listed on forum product databases (Tressless) for many years.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://tressless.com/products/p/dualgen_15-no-pg-plus-g83GX",
+      "https://tressless.com/products/p/dualgen_15-with-pg-plus-bg0kX",
+      "https://skinsort.com/products/minoxidilmax/dualgen-15-with-pg-plus"
+    ]
+  },
+  {
+    "name": "Retail pharmacy telehealth: Walgreens Virtual Healthcare and Optum",
+    "country": "United States",
+    "url": "https://www.walgreens.com/topic/virtual-healthcare/mens-hair-loss.jsp",
+    "description": "The big pharmacy and insurer groups now sell simple online hair-loss visits that lead to generic finasteride.",
+    "audience": "Men; Walgreens lists 30 states.",
+    "products": [
+      {
+        "name": "Walgreens men's hair-loss visit",
+        "actives": "Finasteride tablets if prescribed; own-brand \"Extra Strength\" minoxidil solution over the counter",
+        "price": "Condition visits cost US$33-45 (Walgreens FAQ; hair-specific price not shown)"
+      },
+      {
+        "name": "Optum online care, hair loss",
+        "actives": "Finasteride",
+        "price": "From US$15 a month (Optum page via search; a Healthline review quotes from US$10)"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online questionnaire reviewed by a licensed provider; pick-up or delivery from the pharmacy.",
+    "distinctive": "Nothing new clinically. Their value is trust, local pick-up and same-day delivery.",
+    "sizeSignal": "National pharmacy and insurer brands; no hair numbers.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.walgreens.com/topic/virtual-healthcare/mens-hair-loss.jsp",
+      "https://www.walgreens.com/topic/help/virtualhealthcare.jsp",
+      "https://www.healthline.com/health/optum-hair-loss-review"
+    ]
+  },
+  {
+    "name": "Mark Cuban Cost Plus Drugs",
+    "country": "United States",
+    "url": "https://costplusdrugs.com/",
+    "description": "Transparent-pricing online pharmacy (cost + 15% + pharmacy fee + shipping). Not a hair brand, but it sets the price floor for generic finasteride and oral minoxidil once a patient has a prescription.",
+    "audience": "Anyone with a US prescription.",
+    "products": [
+      {
+        "name": "Finasteride 1 mg",
+        "actives": "Finasteride 1 mg tablets",
+        "price": "Reported at about US$3.60 for 30 tablets before shipping (third-party report; live page blocked automated reading)"
+      },
+      {
+        "name": "Minoxidil tablets",
+        "actives": "Minoxidil 2.5 mg tablets",
+        "price": "Cost plus 15% plus a US$5 pharmacy fee (model per FAQ; exact price not captured)"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None of its own (it fills prescriptions written elsewhere).",
+    "distinctive": "Makes plain generics almost free, which pushes telehealth brands towards compounded combinations, service and guarantees to justify their prices.",
+    "sizeSignal": "Widely covered national brand; no hair numbers.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://costplusdrugs.com/faq/",
+      "https://healthrx.com/reviews-finasteride/cost-reports",
+      "https://healthrx.com/skin-hair-aesthetics-rx/cost-of-oral-minoxidil"
+    ]
+  },
+  {
+    "name": "Rogaine (Kenvue)",
+    "country": "United States",
+    "url": "https://www.rogaine.com/",
+    "description": "The best-known over-the-counter minoxidil brand: 5% minoxidil foam for men and for women.",
+    "audience": "Men and women; sold in every US pharmacy and big-box store.",
+    "products": [
+      {
+        "name": "Men's Rogaine 5% Minoxidil Foam",
+        "actives": "Minoxidil 5% foam",
+        "price": "US$49.97 for a 3-month supply at Walmart (retailer snapshot)"
+      },
+      {
+        "name": "Women's Rogaine 5% Minoxidil Foam",
+        "actives": "Minoxidil 5% foam, once daily",
+        "price": "US$29.97 for 2 months; US$44.97 for 4 months at Walmart (retailer snapshot)"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None.",
+    "distinctive": "The reference product every prescription brand compares itself with. Brand claim: \"#1 dermatologist recommended brand\".",
+    "sizeSignal": "Stocked by every large US retailer (Walmart, Target). No sales figure found in this sweep.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.walmart.com/ip/Men-s-Rogaine-5-Minoxidil-Foam-Treatment-3-Month-Supply/11081994",
+      "https://www.walmart.com/ip/Women-s-Rogaine-5-Minoxidil-Foam-for-Hair-Regrowth-4-Month-Supply/38695499",
+      "https://ro.co/hair-loss/how-much-does-minoxidil-cost/"
+    ]
+  },
+  {
+    "name": "Kirkland Signature Minoxidil (Costco)",
+    "country": "United States",
+    "url": "https://www.costco.com/kirkland-signature-pharmacy-hair.html",
+    "description": "Costco's own-brand 5% minoxidil solution and foam, sold in six-month packs: the cheapest mainstream hair-loss treatment in the US.",
+    "audience": "Men (labelled for men); Costco members.",
+    "products": [
+      {
+        "name": "Kirkland Signature Minoxidil 5% solution, 6 x 2 fl oz",
+        "actives": "Minoxidil 5% topical solution, six-month supply",
+        "price": "Deal posts show US$13.99-16.99 for six months (late 2025); current price not confirmed"
+      },
+      {
+        "name": "Kirkland Signature Minoxidil 5% foam, 6-pack",
+        "actives": "Minoxidil 5% foam",
+        "price": "US$39.99 in a December 2025 sale post"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None.",
+    "distinctive": "Sets the price floor: under US$3 a month. Any paid service has to offer something this cannot (combination actives, oral forms, oversight, tracking).",
+    "sizeSignal": "Costco own brand; purchase limits per member suggest heavy demand.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.costco.com/kirkland-signature-hair-regrowth-treatment-extra-strength-for-men,-5%25-minoxidil-topical-solution,-2-fl.-oz,-6-pack.product.11501138.html",
+      "https://slickdeals.net/f/19019587-today-only-12-25-2025-minoxidil-sale-at-costco-com-topical-solution-13-99-5-99-or-foam-39-99-5-99-shipping",
+      "https://app.warehouserunner.com/costco/778151-kirkland-signature-minoxidil-5-for-men-6-2-fl-oz"
+    ]
+  },
+  {
+    "name": "Keranique",
+    "country": "United States",
+    "url": "https://keranique.com/",
+    "description": "Direct-response (TV and phone order) women's hair regrowth system built around 2% minoxidil plus shampoo, conditioner and lift spray.",
+    "audience": "Women.",
+    "products": [
+      {
+        "name": "Keranique Hair Regrowth System",
+        "actives": "Minoxidil (women's strength) treatment + shampoo, conditioner, styling spray",
+        "price": "Special-offer pricing only; not captured"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None.",
+    "distinctive": "Shows how large the women's over-the-counter market is when sold as a full routine.",
+    "sizeSignal": "\"Trusted by over 2 million women\" (company claim).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://keranique.com/"
+    ]
+  },
+  {
+    "name": "Vegamour",
+    "country": "United States",
+    "url": "https://vegamour.com/products/gro-hair-serum",
+    "description": "Vegan, drug-free hair wellness brand sold direct and at Sephora; hero product is the GRO Hair Serum.",
+    "audience": "Mostly women.",
+    "products": [
+      {
+        "name": "GRO Hair Serum",
+        "actives": "Plant actives and peptides: caffeine, biotin, turmeric callus media, clover and mung bean sprout extracts, peptides",
+        "price": "US$64 list for one month; US$54.40 on subscription; 3-month subscription US$140.25"
+      },
+      {
+        "name": "GRO+ Advanced Hair Serum",
+        "actives": "Stronger version of the serum (ingredients not captured)",
+        "price": "From US$66.30 (list US$78)"
+      },
+      {
+        "name": "GRO+ Advanced supplements",
+        "actives": "Hair growth and density supplement",
+        "price": "US$74.80 (list US$88)"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None (online quiz only).",
+    "distinctive": "\"Clean\", drug-free positioning with consumer-perception study claims (a 120-day study of 40 people) and a 30-day money-back guarantee. Subscription discounts by plan length.",
+    "sizeSignal": "5,749 reviews on the hero product page; Dealroom puts revenue in the US$10-50 million band (estimate); revenue reported to have grown 1,900% from 2019 to 2021.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://vegamour.com/products/gro-hair-serum",
+      "https://dealroom.co/companies/vegamour/",
+      "https://www.thedrum.com/news/2022/11/29/how-vegamour-turned-its-unethical-marketing-outcry-global-vegan-hair-brand"
+    ]
+  },
+  {
+    "name": "Divi",
+    "country": "United States",
+    "url": "https://www.diviofficial.com/collections/all-products",
+    "description": "Influencer-founded (Dani Austin) scalp-health brand; hero product is a daily Scalp Serum, with shampoos and, since January 2026, hair growth vitamins (trade press).",
+    "audience": "Mostly women.",
+    "products": [
+      {
+        "name": "Scalp Serum 30 ml",
+        "actives": "Cosmetic peptide and botanical scalp serum (no drug actives)",
+        "price": "US$48 list (US$33.60 in the Nov 2026 sale)"
+      },
+      {
+        "name": "Scalp Serum 100 ml",
+        "actives": "Three-month supply",
+        "price": "US$136 list (US$95.20 on sale)"
+      },
+      {
+        "name": "Hair Growth Vitamins",
+        "actives": "Supplement",
+        "price": "US$78 list (US$46.80 on sale)"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None.",
+    "distinctive": "A founder-led, social-media-driven brand; three-month serum size sold at a discount per ml.",
+    "sizeSignal": "No reliable revenue figure found.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.diviofficial.com/collections/all-products"
+    ]
+  },
+  {
+    "name": "Prose",
+    "country": "United States",
+    "url": "https://prose.com/products/custom-hair-supplements",
+    "description": "Made-to-order personalised haircare brand; its hair-growth product is the custom \"Root Source\" supplement, formulated from an online consultation.",
+    "audience": "Mostly women; men also served.",
+    "products": [
+      {
+        "name": "Custom Root Source Hair Supplements",
+        "actives": "Personalised two-capsule daily supplement built around the brand's \"PureCatalyst\" growth complex (99% natural ingredients)",
+        "price": "US$66 one-off; first subscription order US$19.80 (70% off), then 15% off"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online questionnaire (\"takes under 10 minutes\") covering hair, scalp, lifestyle and environment; no clinician.",
+    "distinctive": "Personalisation as the whole brand (\"Personalization works better\"): each order is made for one person. Deep first-order discount to win subscribers.",
+    "sizeSignal": "\"600k+ 5-star reviews\" across the brand (company claim).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://prose.com/products/custom-hair-supplements"
+    ]
+  },
+  {
+    "name": "Viviscal (Church & Dwight)",
+    "country": "United States",
+    "url": "https://www.viviscal.com/",
+    "description": "Long-established marine-protein hair growth supplement brand (ownership by Church & Dwight is widely reported but was not re-verified in this sweep).",
+    "audience": "Women mainly; a men's version exists.",
+    "products": [
+      {
+        "name": "Hair Growth Supplement (women)",
+        "actives": "Marine-protein complex supplement (full ingredient list not re-verified in this sweep)",
+        "price": "From US$40"
+      },
+      {
+        "name": "4D Hair Growth Cycle Supplement",
+        "actives": "Newer multi-pathway supplement",
+        "price": "From US$70"
+      },
+      {
+        "name": "Men's Hair Growth Supplement",
+        "actives": "Marine complex supplement for men",
+        "price": "From US$40"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None.",
+    "distinctive": "30 years of brand history; a newer \"4D\" premium supplement at nearly twice the price.",
+    "sizeSignal": "\"For over 30 years ... helped millions of women\" (company claim).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.viviscal.com/"
+    ]
+  },
+  {
+    "name": "MDhair",
+    "country": "United States",
+    "url": "https://www.mdhair.co/",
+    "description": "Personalised non-prescription hair kits (serum, supplements, shampoo, over-the-counter minoxidil) chosen by a quiz and an AI analysis of a scalp photo, with dermatologist chat support.",
+    "audience": "Men and women.",
+    "products": [
+      {
+        "name": "Customised kit",
+        "actives": "Customised serum, supplement (20+ vitamins and plant complexes), shampoo, marine collagen; optional over-the-counter minoxidil",
+        "price": "Kit price not shown (\"up to 60% off subscription kits\" in Nov 2026)"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Quiz plus a scalp photo for a free AI assessment; unlimited dermatologist chat and progress tracking for subscribers. No prescriptions.",
+    "distinctive": "AI scalp-photo assessment as the front door, with ongoing photo progress tracking, all without prescription medicines.",
+    "sizeSignal": "\"Over 1,000,000 happy customers\" (company claim).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.mdhair.co/"
+    ]
+  },
+  {
+    "name": "HairMax",
+    "country": "United States",
+    "url": "https://hairmax.com/collections/laser-devices",
+    "description": "Long-established home laser hair-growth device brand (laser combs, bands and caps), FDA-cleared for men and women.",
+    "audience": "Men (Norwood IIa-V) and women (Ludwig I-II), Fitzpatrick skin types I-IV.",
+    "products": [
+      {
+        "name": "Laser combs",
+        "actives": "Ultima 12 and Actonis 18 LaserComb, 8-minute treatment",
+        "price": "US$299 and US$499"
+      },
+      {
+        "name": "LaserBand 41 / 82",
+        "actives": "41 or 82 laser diodes; 3 minutes or 90 seconds",
+        "price": "US$649 / US$849"
+      },
+      {
+        "name": "PowerFlex 272 cap / Lumina",
+        "actives": "272 laser diodes; 7 minutes",
+        "price": "US$1,799 / US$1,999"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None.",
+    "distinctive": "Six-month money-back guarantee on all laser devices (20% return fee). Wide price ladder from US$299.",
+    "sizeSignal": "No unit sales found.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://hairmax.com/collections/laser-devices"
+    ]
+  },
+  {
+    "name": "Capillus (Curallux)",
+    "country": "United States",
+    "url": "https://www.capillus.com/",
+    "description": "Laser cap brand sold direct and through hair clinics; a baseball-cap design worn six minutes a day.",
+    "audience": "Men and women with pattern hair loss.",
+    "products": [
+      {
+        "name": "Capillus PRO",
+        "actives": "272 laser diodes, single wavelength",
+        "price": "US$1,499"
+      },
+      {
+        "name": "Capillus Spectrum",
+        "actives": "312 laser diodes, dual wavelength",
+        "price": "US$2,699"
+      },
+      {
+        "name": "Capillus TriSpectrum",
+        "actives": "312 laser diodes plus near-infrared",
+        "price": "US$3,299"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None (also sold through physicians).",
+    "distinctive": "Highest prices in the category; the site itself notes that only the CapillusPro has a clinical trial (17 weeks).",
+    "sizeSignal": "\"Trusted by thousands\"; no unit sales found. Past advertising claims drew FTC and NAD attention.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.capillus.com/",
+      "https://www.ftc.gov/system/files/documents/public_statements/1577627/staff-closing-letter-capillus.pdf"
+    ]
+  },
+  {
+    "name": "iRestore",
+    "country": "United States",
+    "url": "https://irestorelaser.com/",
+    "description": "Mass-market red-light helmet brand that has widened into face and body light devices and its own topicals and supplements.",
+    "audience": "Men and women.",
+    "products": [
+      {
+        "name": "iRestore Essential / Professional / Elite",
+        "actives": "120, 282 or 500 laser and LED diodes",
+        "price": "Sold mainly in bundles: Professional bundle US$1,797; Elite bundle US$2,697 (standalone prices not captured)"
+      },
+      {
+        "name": "REVIVE Max Growth Kit",
+        "actives": "Topical serum and supplement kit",
+        "price": "US$170 (REVIVE+ US$220)"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None.",
+    "distinctive": "12-month money-back guarantee, the longest device guarantee seen. Bundles device plus topicals plus supplements.",
+    "sizeSignal": "Facebook community of 20,090+ members (company page); strong Amazon presence (not quantified here).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://irestorelaser.com/"
+    ]
+  },
+  {
+    "name": "Theradome",
+    "country": "United States",
+    "url": "https://theradome.com/",
+    "description": "US-made laser helmet brand (lasers only, no LEDs) founded by a former NASA scientist.",
+    "audience": "Men and women.",
+    "products": [
+      {
+        "name": "Theradome PRO",
+        "actives": "Laser helmet",
+        "price": "US$695 in the Nov 2026 sale"
+      },
+      {
+        "name": "Theradome EVO",
+        "actives": "Smaller laser helmet",
+        "price": "US$395 in the Nov 2026 sale"
+      }
+    ],
+    "compounded": false,
+    "consultation": "A hair quiz qualifies the buyer and unlocks a 12-month money-back guarantee and a \"personalised trichology session\".",
+    "distinctive": "Ties a longer guarantee and a one-to-one trichology session to completing a quiz: a clever way to collect data and screen out poor candidates.",
+    "sizeSignal": "\"Over 100 million treatments performed across 57 countries\" (company claim).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://theradome.com/"
+    ]
+  },
+  {
+    "name": "REVIAN RED",
+    "country": "United States",
+    "url": "https://revian.com/",
+    "description": "LED (not laser) dual-wavelength cap controlled by a phone app, FDA-cleared, sold direct and through dermatologists.",
+    "audience": "Men and women aged 18-65 with pattern hair loss.",
+    "products": [
+      {
+        "name": "REVIAN RED (102 diodes)",
+        "actives": "Dual-wavelength LED cap, 10 minutes a day",
+        "price": "US$1,295"
+      },
+      {
+        "name": "REVIAN RED (119 diodes, greater coverage)",
+        "actives": "Dual-wavelength LED cap",
+        "price": "US$1,995"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None.",
+    "distinctive": "Wireless cap with a phone app that starts treatments, tracks compliance and keeps a photo journal of results. Its own placebo-controlled trial reported 26.3 more hairs per cm2 in compliant users. 100% money-back guarantee.",
+    "sizeSignal": "\"6+ million treatments completed\" (company claim).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://revian.com/"
+    ]
+  },
+  {
+    "name": "Kiierr",
+    "country": "United States",
+    "url": "https://kiierr.com/",
+    "description": "Direct-to-consumer laser cap brand with supporting shampoo, gummies, peptide serum and DHT-blocking vitamins.",
+    "audience": "Men and women.",
+    "products": [
+      {
+        "name": "Laser caps",
+        "actives": "Premier 272, DualWave 272 and 312, UltraFlex 302 diode caps",
+        "price": "Not captured (\"save up to 50%\" sale)"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None.",
+    "distinctive": "Seven-month money-back guarantee.",
+    "sizeSignal": "\"100,000+ happy customers\" (company claim).",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://kiierr.com/"
+    ]
+  },
+  {
+    "name": "Daniel Alain (Minoxidil Response Test)",
+    "country": "United States",
+    "url": "https://www.danielalain.com/",
+    "description": "Wig and hair-care company that sells a mail-in test to predict whether topical minoxidil will work for a person, plus its own minoxidil, an enzyme \"booster\" and an anti-shedding product.",
+    "audience": "Men and women thinking about, or disappointed by, minoxidil.",
+    "products": [
+      {
+        "name": "Minoxidil Response Test (MRT)",
+        "actives": "Plucked hairs are posted to the company's CLIA-certified lab, which measures the follicle enzyme (SULT1A1, a sulfotransferase) that switches minoxidil on",
+        "price": "US$139 (or 4 payments of US$35); results in 1 to 2 weeks"
+      },
+      {
+        "name": "INTACT Anti Hair Shedding Treatment; enzyme booster supplement",
+        "actives": "Cosmetic anti-shedding treatment; supplement said to raise the enzyme",
+        "price": "Not captured"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None (home test kit).",
+    "distinctive": "A response-prediction test: \"find out before you spend six months on it\". Company-linked studies report about 93-95% sensitivity for predicting response; independent dermatologists quoted by Healthline were cautious. The company says only about half of men and 30-40% of women respond to topical minoxidil.",
+    "sizeSignal": "Niche. No sales figures found.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://blog.danielalain.com/articles/comparing-the-cost-of-different-hair-loss-tests",
+      "https://www.healthline.com/health-news/this-mail-in-test-may-show-if-minoxidil-will-help-your-hair-loss",
+      "https://pubmed.ncbi.nlm.nih.gov/24773771/",
+      "https://www.danielalain.com/blogs/newsroom/new-minoxidil-response-test-identifies-if-topical-minoxidil-will-work-to-grow-hair"
+    ]
+  },
+  {
+    "name": "Fagron TrichoTest",
+    "country": "Netherlands / Belgium (sold through clinics and pharmacies in Europe, including the UK)",
+    "url": "https://fagron.com/news-media/post/new-discoveries-show-genetic-links-to-androgenetic-alopecia/",
+    "description": "A cheek-swab DNA test from the compounding group Fagron. The report suggests which hair-loss actives should suit the patient, and a compounding pharmacy then makes that formula.",
+    "audience": "Men and women, through clinicians and pharmacies.",
+    "products": [
+      {
+        "name": "TrichoTest",
+        "actives": "Genetic test (Fagron cites 48 variations in 13-16 genes across 7 treatment categories; sources differ on the counts), with a report recommending personalised compounded formulas",
+        "price": "About GBP 349-399 at a UK pharmacy; EUR 249-390 at a Lithuanian seller"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Ordered through a clinician or pharmacist, who receives the report and prescribes or compounds from it.",
+    "distinctive": "Links a diagnostic directly to a personalised compounded prescription. Evidence for its predictive value comes mainly from Fagron and sellers; treat with caution. Already available in the UK through clinics, so it is not a gap, but no UK online brand has built it into a consultation.",
+    "sizeSignal": "Fagron is a global compounding supplier; test launched 2021.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://prnewswire.com/news-releases/the-first-genetic-test-for-hair-loss-introducing-trichotest-from-fagron-301303646.html",
+      "https://courierpharmacy.co.uk/product/trichotest/",
+      "https://trichotest.lt/en",
+      "https://gr.fagron.com/en-gr/trichotest"
+    ]
+  },
+  {
+    "name": "Traya",
+    "country": "India",
+    "url": "https://traya.health/",
+    "description": "A leading Indian hair-loss-only brand. A free online \"Hair Test\" assigns a root cause and a monthly kit that mixes dermatology, Ayurvedic herbs and nutrition, with a personal hair coach and a diet plan.",
+    "audience": "Men and women in India.",
+    "products": [
+      {
+        "name": "Customised monthly kit (Kits 1-6 by stage and cause)",
+        "actives": "Doctor-prescribed plan combining dermatology products, Ayurvedic supplements (for example Hair Ras herbs), nutrition supplements, shampoo and scalp oil (the exact drug actives were not visible on the public page)",
+        "price": "Individual items are priced about INR 190-800 each on the site; kit price depends on the plan"
+      }
+    ],
+    "compounded": false,
+    "consultation": "Online Hair Test (questions on family history, stress, gut, sleep, scalp) reviewed by doctors; a named hair coach follows up by phone and app; diet plan included.",
+    "distinctive": "Treats hair loss as several root causes at once (genetics, nutrition, stress, gut, dandruff) and sells adherence: coach calls, an app with over 10 million installs (\"1Cr+\"), diet plans and rewards. Publishes its own outcome study (\"93% saw results\", 300 participants over 5+ months). Also earns from hair transplants.",
+    "sizeSignal": "Revenue about INR 338 crore in the year to March 2025 (about GBP 30 million), up 43%, with a loss of about INR 23 crore after heavy marketing spend.",
+    "deservesDeepDive": true,
+    "sources": [
+      "https://traya.health/",
+      "https://entrackr.com/fintrackr/traya-returns-to-losses-in-fy25-as-marketing-and-employee-costs-surge-10961037",
+      "https://pulse.d2cinsider.com/haircare-brand-traya-delivers-43-fy25-revenue-growth-as-it-scales-brand-products-and-reach/",
+      "https://india.entrepreneur.com/entrepreneurs/hair-care-revolutioner/484157"
+    ]
+  },
+  {
+    "name": "Man Matters (Mosaic Wellness)",
+    "country": "India",
+    "url": "https://manmatters.com/",
+    "description": "Indian men's health brand with stage-based hair regrowth kits and, since 2026, an at-home blood test aimed at hair health.",
+    "audience": "Men in India.",
+    "products": [
+      {
+        "name": "Hair regrowth kits by stage (Stage 1 to 4)",
+        "actives": "Minoxidil and finasteride (prescription) with cosmetic serums such as Redensyl and Procapil, shampoo, gummies and a derma roller",
+        "price": "Third-party price trackers quote kits from about INR 999 (unverified)"
+      },
+      {
+        "name": "At-home blood test for hair health",
+        "actives": "Home sample collection by an accredited lab; doctor explains nutritional and metabolic markers",
+        "price": "Not found"
+      }
+    ],
+    "compounded": false,
+    "consultation": "App-based doctor consultation; kits chosen by hair-loss stage.",
+    "distinctive": "Home blood test booked in the app and tied to the hair plan. Kits sold by Norwood-style stage, which is easy for customers to understand.",
+    "sizeSignal": "No figure verified in this sweep.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://mediabrief.com/man-matters-introduces-at-home-blood-testing-for-hair-health/",
+      "https://indiantelevision.com/mam/man-matters-launches-indias-first-at-home-blood-test-focused-on-mens-hair-health/",
+      "https://zoutons.com/news/man-matters-hair-regrowth-kit-price-2026"
+    ]
+  },
+  {
+    "name": "Noah",
+    "country": "Singapore",
+    "url": "https://www.ofnoah.sg/physical-health/hair-loss",
+    "description": "Singapore men's digital clinic offering finasteride, a tablet-plus-tonic pack and a prescription combination foam after a video consult.",
+    "audience": "Men in Singapore.",
+    "products": [
+      {
+        "name": "Finasteride 1 mg",
+        "actives": "Generic finasteride 1 mg, 28 tablets a month",
+        "price": "From S$0.95 a dose (S$1.30 a dose on the shown plan)"
+      },
+      {
+        "name": "Pill + tonic",
+        "actives": "Finasteride tablet + minoxidil 5% tonic",
+        "price": "From S$54.60 a pack"
+      },
+      {
+        "name": "Grow Foam",
+        "actives": "Finasteride 0.1% + minoxidil 5% foam \"with a follicle booster\" (3-in-1)",
+        "price": "From S$96 a bottle"
+      },
+      {
+        "name": "Propecia 1 mg",
+        "actives": "Brand finasteride",
+        "price": "From S$3.30 a dose"
+      }
+    ],
+    "compounded": true,
+    "consultation": "Online assessment, then a video consult with a Singapore-registered doctor for every prescription (S$20.10); free unlimited follow-ups; pay for treatment only if prescribed.",
+    "distinctive": "Prices shown per dose, which makes treatment look tiny. Charges only after the doctor approves. A combination foam.",
+    "sizeSignal": "Claims \"4 in 5 kept or grew hair\" (company claim; basis not captured). No customer numbers.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.ofnoah.sg/physical-health/hair-loss"
+    ]
+  },
+  {
+    "name": "Olistic",
+    "country": "Spain",
+    "url": "https://www.olisticscience.com/",
+    "description": "Spanish nutraceutical brand: a once-daily drinkable vial for hair, with separate formulas for women, women over 45 and men, endorsed by Spanish hair dermatologists.",
+    "audience": "Women 18-45, women 45+ and men; Spain and wider Europe.",
+    "products": [
+      {
+        "name": "Olistic Women",
+        "actives": "Daily liquid vial supplement",
+        "price": "From EUR 42 a month"
+      },
+      {
+        "name": "Olistic Next +45",
+        "actives": "Daily liquid vial for women over 45",
+        "price": "From EUR 46 a month"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None.",
+    "distinctive": "A drinkable vial instead of capsules, segmented by life stage (a 45+ menopause formula), with a double-blind placebo-controlled trial in 106 women over 6 months.",
+    "sizeSignal": "No revenue figure found.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.olisticscience.com/"
+    ]
+  },
+  {
+    "name": "Online AGA clinics in Japan (category)",
+    "country": "Japan",
+    "url": "https://www.hiro-clinic.or.jp/beauty/price/aga-men/?lang=en",
+    "description": "Japan has many low-price clinic chains for male pattern hair loss (\"AGA\") that consult online and post monthly medicine packs: finasteride, dutasteride and oral minoxidil, often combined.",
+    "audience": "Men mainly; some women's (FAGA) lines.",
+    "products": [
+      {
+        "name": "Monthly oral packs",
+        "actives": "Finasteride, dutasteride and oral minoxidil tablets, singly or as sets",
+        "price": "Typically about JPY 3,000-10,000 a month; one Tokyo clinic lists dutasteride from JPY 1,980 on promotion (regular JPY 7,200)"
+      }
+    ],
+    "compounded": "unknown",
+    "consultation": "Online video or phone consultation with a doctor; medicines posted monthly.",
+    "distinctive": "Dutasteride (approved for male pattern hair loss in Japan and South Korea, per published reviews) and oral minoxidil are routine options sold as cheap sets.",
+    "sizeSignal": "Many chains; market size not found in this sweep.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://www.hiro-clinic.or.jp/beauty/price/aga-men/?lang=en",
+      "https://kojihifu.com/english/?p=8908",
+      "https://ic-clinic.com/en/treatment/aga-drug/",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC9561294",
+      "https://www.pmda.go.jp/files/000245812.pdf"
+    ]
+  },
+  {
+    "name": "Great Many",
+    "country": "United States",
+    "url": "https://femtechinsider.com/great-many-pre-seed/",
+    "description": "New York hair-growth studio (flagship in NoHo) offering expert-led personalised plans, in-studio PRP treatments and its own hair-care line, with telehealth planned.",
+    "audience": "Men and women, with a strong focus on women.",
+    "products": [
+      {
+        "name": "In-studio Plasma Hair Restoration (PRP)",
+        "actives": "Platelet-rich plasma injections",
+        "price": "Not given"
+      },
+      {
+        "name": "GrowthFactor Formula hair-care line",
+        "actives": "Proprietary cosmetic line (actives not given)",
+        "price": "Not given"
+      }
+    ],
+    "compounded": "unknown",
+    "consultation": "In-studio expert consultation; telehealth consultations and at-home treatments announced as the use of its 2024 funding.",
+    "distinctive": "A physical \"hair growth studio\" on a shopping street as the front door, combining procedures, products and (planned) telehealth.",
+    "sizeSignal": "US$3.6 million pre-seed round, August 2024 (led by BrandProject). Early stage.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://femtechinsider.com/great-many-pre-seed/"
+    ]
+  },
+  {
+    "name": "OneSkin (OS-01 Hair)",
+    "country": "United States",
+    "url": "https://fortune.com/article/best-hair-loss-treatments/",
+    "description": "Longevity-science skincare brand with a peptide scalp serum (OS-01 Hair) sold as a drug-free hair product.",
+    "audience": "Men and women.",
+    "products": [
+      {
+        "name": "OS-01 Hair peptide scalp serum",
+        "actives": "OS-01 peptide (cosmetic), fragrance-free",
+        "price": "US$62, US$176 or US$321 depending on size (as listed by Fortune)"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None.",
+    "distinctive": "Sells hair thinning as an ageing (\"scalp longevity\") problem, a different story from DHT and hormones.",
+    "sizeSignal": "Included in Fortune's 2026 list of best hair-loss treatments next to the big prescription brands.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://fortune.com/article/best-hair-loss-treatments/"
+    ]
+  },
+  {
+    "name": "Hairlust",
+    "country": "Denmark",
+    "url": "https://hairlust.com/",
+    "description": "Danish drug-free haircare and supplement brand with hair-growth serums and gummies for women and men.",
+    "audience": "Mostly women; sold across Europe and the US.",
+    "products": [
+      {
+        "name": "Concentrated hair growth serum",
+        "actives": "Cosmetic actives Redensyl, Capixyl and AnaGain",
+        "price": "US$79 on sale (list US$112)"
+      },
+      {
+        "name": "Hair Formula Gummies for Women",
+        "actives": "Food supplement gummies",
+        "price": "US$32 on sale (list US$45)"
+      }
+    ],
+    "compounded": false,
+    "consultation": "None.",
+    "distinctive": "Gummy supplements and branded cosmetic actives; permanent-looking list-versus-sale pricing.",
+    "sizeSignal": "No figures found.",
+    "deservesDeepDive": false,
+    "sources": [
+      "https://hairlust.com/"
+    ]
+  }
+]

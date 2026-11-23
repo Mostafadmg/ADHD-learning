@@ -1,0 +1,31 @@
+[verify] 21:55:26 start verify-13-multi-edge
+[verify] 21:57:23 end verify-13-multi-edge exit 0
+[verify] 21:57:29 start verify-14-multi-all-four
+[verify] 22:00:15 end verify-14-multi-all-four exit 0
+[verify] 22:00:21 start verify-00-baseline-full
+[verify] 22:02:47 end verify-00-baseline-full exit 0
+[verify] 22:02:53 start verify-15-back-from-first
+[verify] 22:03:12 end verify-15-back-from-first exit 0
+[verify] 22:03:18 start verify-17-hers-anon-route
+[verify] 22:03:33 end verify-17-hers-anon-route exit 0
+[verify] ALL DONE
+[verify] 22:03:39 start verify-16-mobile-all-over
+[verify] 22:06:10 end verify-16-mobile-all-over exit 0
+[verify] ALL DONE
+[pages] hims-hair-loss HTTP 200 final https://www.forhims.co.uk/hair-loss text 3222 chars 
+[pages] hims-finasteride HTTP 200 final https://www.forhims.co.uk/hair-loss/finasteride text 3171 chars 
+[pages] hims-minoxidil HTTP 200 final https://www.forhims.co.uk/hair-loss/minoxidil text 3200 chars 
+[pages] hims-combo-kit HTTP 200 final https://www.forhims.co.uk/hair-loss/finasteride-and-minoxidil text 3520 chars 
+[pages] hims-serum-shopping HTTP 200 final https://www.forhims.co.uk/hair-loss/all-in-one-topical-hair-loss-solution-shopping text 3282 chars 
+[pages] hims-combo-kit-shopping HTTP 200 final https://www.forhims.co.uk/hair-loss/combo-kit-shopping text 3546 chars 
+[pages] hims-safety-spray HTTP 200 final https://www.forhims.co.uk/hair-loss text 3222 chars 
+[pages] hims-safety-chew HTTP 200 final https://www.forhims.co.uk/hair-loss text 3222 chars 
+[pages] hims-safety-min-chew HTTP 200 final https://www.forhims.co.uk/hair-loss text 3222 chars 
+[pages] hims-safety-finasteride HTTP 200 final https://www.forhims.co.uk/safety-information/finasteride text 8091 chars 
+[pages] hims-safety-fin-min HTTP 200 final https://www.forhims.co.uk/safety-information/finasteride-and-minoxidil text 13845 chars 
+[pages] hims-chooser HTTP 200 final https://www.forhims.co.uk/c text 450 chars 
+[pages] hims-how-it-works HTTP 200 final https://www.forhims.co.uk/how-it-works text 1138 chars 
+[pages] hers-hair HTTP 200 final https://forhers.co.uk/hair text 6640 chars 
+[pages] hers-hair-blends HTTP 200 final https://forhers.co.uk/hair-blends text 4047 chars 
+[pages] hers-home HTTP 200 final https://forhers.co.uk/ text 4463 chars 
+[verify3] ALL DONE

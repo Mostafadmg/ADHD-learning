@@ -1,0 +1,31 @@
+STEP 10 htam
+URL: https://www.hairandme.com/c/suh/htam
+
+--- VISIBLE TEXT ---
+Where have you noticed hair thinning or loss?
+Across the hairline
+At the temples
+At the crown
+All over – moderate
+All over – extensive
+One or more patches of complete hair loss
+Complete hair loss
+Other/unsure
+None
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=9318] | Across the hairline
+input:radio[name=9318] | At the temples
+input:radio[name=9318] | At the crown
+input:radio[name=9318] | All over – moderate
+input:radio[name=9318] | All over – extensive
+input:radio[name=9318] | One or more patches of complete hair loss
+input:radio[name=9318] | Complete hair loss
+input:radio[name=9318] | Other/unsure
+input:radio[name=9318] | None
+button:submit | NEXT QUESTION [disabled]
+a -> /c/suh/htam?action=previous | Back to previous page

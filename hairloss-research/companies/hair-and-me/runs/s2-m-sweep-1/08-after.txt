@@ -1,0 +1,29 @@
+STEP 08 hs AFTER ANSWERS ["Air dry","Colour treatments, bleaching and dyes","Product-based styling (e.g. wax, clay, pomade, hairspray)","Heat-based styling tools (e.g. straightening, curling, blow-drying)"]
+URL: https://www.hairandme.com/c/suh/hs
+
+--- VISIBLE TEXT ---
+How do you usually style or treat your hair?
+Air dry
+Colour treatments, bleaching and dyes
+Product-based styling (e.g. wax, clay, pomade, hairspray)
+Heat-based styling tools (e.g. straightening, curling, blow-drying)
+Heatless styling (e.g. rollers, curling rods)
+Protective styles (e.g. braids, twists, faux locs)
+Chemical processing (e.g. perms, relaxers, keratin treatments)
+None of the above
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:checkbox[name=253] | Air dry [checked]
+input:checkbox[name=253] | Colour treatments, bleaching and dyes [checked]
+input:checkbox[name=253] | Product-based styling (e.g. wax, clay, pomade, hairspray) [checked]
+input:checkbox[name=253] | Heat-based styling tools (e.g. straightening, curling, blow-drying) [checked]
+input:checkbox[name=253] | Heatless styling (e.g. rollers, curling rods)
+input:checkbox[name=253] | Protective styles (e.g. braids, twists, faux locs)
+input:checkbox[name=253] | Chemical processing (e.g. perms, relaxers, keratin treatments)
+input:checkbox[name=253] | None of the above [disabled]
+button:submit | NEXT QUESTION
+a -> /c/suh/hs?action=previous | Back to previous page

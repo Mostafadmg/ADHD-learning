@@ -1,0 +1,54 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 2,
+   "sectionTitle": "YOUR HAIR"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 9320,
+    "inputConfig": {
+     "options": [
+      {
+       "description": "No recurring or chronic scalp issues",
+       "label": "Normal",
+       "value": "Normal"
+      },
+      {
+       "description": "Hair looks and feels greasy from excess oil, possibly with dandruff",
+       "label": "Oily",
+       "value": "Oily"
+      },
+      {
+       "description": "Flaky and/or tight from lack of moisture, possibly with dandruff",
+       "label": "Dry",
+       "value": "Dry"
+      }
+     ]
+    },
+    "inputType": "single_select_button",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "How would you describe the condition of your scalp?",
+  "type": "question"
+ }
+}
