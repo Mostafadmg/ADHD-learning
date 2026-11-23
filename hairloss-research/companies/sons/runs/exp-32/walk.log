@@ -1,0 +1,14 @@
+
+===== FINAL (after 26 steps) =====
+URL: https://shop.sons.co.uk/consultation
+TEXT: Menu ⏎ Based on your questionnaire results, we are now preparing your personalised health plan. Please complete your account set up to continue. ⏎ First name of male patient ⏎ Last name of male patient ⏎ Email Address ⏎ Phone number ⏎ Date of Birth ⏎ Password ⏎ Confirm Password ⏎ I agree to the Terms & Conditions, Privacy Policy and confirm that I am male and at least 18 years of age. ⏎ I consent to receive marketing communications via ⏎ Email, SMS and Postal Mail ⏎ Whatsapp ⏎ Sons ⏎ About Us ⏎ People & Planet ⏎ Hair Loss Science ⏎ Testimonials ⏎ Our Blog ⏎ Refer A Friend ⏎ FAQs ⏎ Legal Info ⏎ Delivery & Info ⏎ Terms & Conditions ⏎ Privacy Policy ⏎ Refund Policy ⏎ Make A Complaint ⏎ Indemnity Insurance ⏎ Responsible Pharmacist ⏎ Get In Touch ⏎ hello@sons.co.uk ⏎ 0208 154 2524 ⏎ The Independent Pharmacy is our partner pharmacy and independent prescribing service. ABSM Healthcare Ltd, 14 - 16 Dixon Road, Brislington, Bristol, BS4 5QW. ⏎ Our medical products have been licensed for sale in the UK and are regulated by the Medicines & Healthcare products Regulatory Agency (MHRA). ⏎ ©2026 CAREFORSONS LTD. ALL RIGHTS RESERVED.
+CONTROLS:
+  input:text (2): First name  ·  Last name
+  input:email (1): Email address
+  input:tel (1): Phone number
+  input:date (1): sq_144i
+  input:password (2): Password  ·  Confirm Password
+  input:button (2): (no label) = "<"  ·  (no label) = "Get my personalised plan"
+  links: About Us  ·  People & Planet  ·  Hair Loss Science  ·  Testimonials  ·  Our Blog  ·  Refer A Friend  ·  FAQs  ·  Delivery & Info  ·  Terms & Conditions  ·  Privacy Policy  ·  Refund Policy  ·  Make A Complaint  ·  Indemnity Insurance  ·  Responsible Pharmacist  ·  CAREFORSONS LTD
+
+[walk] 26 step(s), exit 0, 5 JSON bodies saved -> companies/sons/runs/exp-32

@@ -25,7 +25,7 @@ Continue
 
 --- LINKS ---
 Privacy Policy. -> https://www.hims.com/privacy-policy
-Already have an account? Sign In -> /c/hl?skipToSignIn=true&goFlow=true&flowId=hl&sessionId=1e867014-6e0a-4e90-8200-8af0f5048523
+Already have an account? Sign In -> /c/hl?skipToSignIn=true&goFlow=true&flowId=hl&sessionId=152a3eff-4591-4dfb-a5fa-00ffc715c540
 
 --- OUTPUT SCHEMA (server) ---
 {"type":"object","required":["responses"],"properties":{"responses":{"type":"object","required":["i-hl-hims-hair-goals"],"properties":{"i-hl-hims-hair-goals":{"type":"object","required":["i-hl-hims-goals"],"properties":{"i-hl-hims-goals":{"enum":["i-hl-hims-goals-receding","i-hl-hims-goals-regrow","i-hl-hims-goals-get-ahead"],"type":"string"}},"additionalProperties":false}},"additionalProperties":false}}}

@@ -628,4 +628,344 @@ supervise the treatment does.
 
 ---
 
-<!-- MORE BELOW -->
+## 5. Prescribing standards
+
+### 5.1 Off-label and unlicensed prescribing: what the prescriber takes on
+
+The MHRA's statement of prescribers' responsibilities (Drug Safety Update, first April 2009, republished 11 December
+2014) is short and applies to every pharmacist independent prescriber.
+
+| Duty | MHRA wording |
+|---|---|
+| Unlicensed: licensed first | "be satisfied that an alternative, licensed medicine would not meet the patient's needs" |
+| Off-label: better than the licensed option | "be satisfied that such use would better serve the patient's needs than an appropriately licensed alternative" |
+| Evidence | "be satisfied that there is a sufficient evidence base and/or experience of using the medicine" |
+| Ownership | "take responsibility for prescribing the medicine and for overseeing the patient's care" |
+| Information | give "sufficient information about the proposed treatment, including known serious or common adverse reactions, to enable them to make an informed decision"; where evidence is limited, "explain the reasons for prescribing a medicine off-label or prescribing an unlicensed medicine" |
+| Records | "record the medicine prescribed and, where common practice is not being followed, the reasons for prescribing this medicine"; "you may wish to record that you have discussed the issue with the patient" |
+
+Source: https://www.gov.uk/drug-safety-update/off-label-or-unlicensed-use-of-medicines-prescribers-responsibilities
+
+The GPhC prescriber guidance (section 3.4) says the same in its own words: sufficient evidence, and "a record of
+discussions, especially when prescribing ... is for an unlicensed or 'off-label' medicine". GN14 adds that "the
+prescriber's responsibility and potential liability are increased when prescribing off-label" (section 1.5).
+
+**What this means for the three common hair-loss products**
+
+| Product | Legal status in the UK | What the prescriber must be able to show |
+|---|---|---|
+| Finasteride 1 mg tablets | Licensed POM for male pattern hair loss (https://www.medicines.org.uk/emc/product/7068/smpc) | Normal licensed prescribing, plus the 2024 and 2026 MHRA safety steps (5.3). |
+| Oral minoxidil (low dose) | Licensed POM, but only for some types of hypertension; off-label for hair (ASA, Manual 2025: https://www.asa.org.uk/rulings/menwell-ltd-a25-1277445-menwell-ltd.html) | Why off-label use better serves this patient than licensed topical minoxidil; evidence base; cardiovascular screening and follow-up recorded. |
+| Compounded topical finasteride (alone or with minoxidil) | Unlicensed (section 1.6) | The patient's special clinical need (GN14), the evidence base, and that the patient was told it is unlicensed and what that means. |
+
+### 5.2 Remote prescribing guidance
+
+Two documents set the standard for prescribing at a distance:
+
+1. **GPhC "In practice: Guidance for pharmacist prescribers" (April 2025)** and the **GPhC distance-selling guidance
+   (February 2025)**: summarised in sections 3.2 and 3.4. The key lines: no high-risk prescribing "based on online
+   questionnaires alone"; "a method of timely two-way communication"; independent verification of the history for the
+   listed categories; a recorded justification if you choose not to talk to the patient or cannot contact the GP.
+2. **"High level principles for good practice in remote consultations and prescribing"**, agreed by the UK health
+   regulators (GPhC, GMC, NMC and others) and published 8 November 2019. The GPhC's summary says professionals should
+   recognise and protect vulnerable patients, carry out clinical assessments and medical record checks, and raise
+   concerns when safeguards are missing. It is not new guidance; it is "underpinned by existing standards".
+   Sources: https://www.pharmacyregulation.org/news/principles-good-practice-issued-protect-patients-online-0 and
+   https://www.gmc-uk.org/professional-standards/learning-materials/remote-prescribing-high-level-principles
+   (the GMC page blocked automated reading on 23 November 2026, so the ten principles were not quoted here).
+
+The Royal Pharmaceutical Society's "Competency Framework for all Prescribers" (updated 2021) is the profession's
+description of good prescribing and is the usual yardstick for scope-of-practice and CPD evidence.
+Source: https://www.rpharms.com/resources/frameworks/prescribing-competency-framework/competency-framework
+
+### 5.3 Finasteride: the MHRA safety updates of April 2024 and May 2026
+
+**April 2024 (Drug Safety Update, 29 April 2024).** Prescribers should:
+
+- know that "finasteride has been associated with depression, suicidal thoughts and sexual dysfunction", and that
+  sexual dysfunction has "persisted ... even after treatment was stopped";
+- "before prescribing finasteride, ask patients if they have a history of depression or suicidal ideation";
+- "advise patients to stop finasteride 1mg (Propecia) for male pattern hair loss immediately if they develop depression
+  or suicidal thoughts and to contact their doctor as soon as possible";
+- "monitor patients for psychiatric and sexual side effects";
+- note that "a patient card will be introduced in all finasteride packs";
+- report suspected reactions on the Yellow Card scheme.
+
+Sources: https://www.gov.uk/drug-safety-update/finasteride-reminder-of-the-risk-psychiatric-side-effects-and-of-sexual-side-effects-which-may-persist-after-discontinuation-of-treatment
+and the MHRA press release of the same day, which asks patients to show the card and leaflet to friends and family
+because they may not notice mood changes themselves:
+https://www.gov.uk/government/news/men-on-finasteride-asked-to-stay-vigilant-for-possible-psychiatric-and-sexual-side-effects
+
+**May 2026 (Drug Safety Update, 11 May 2026): strengthened warnings, now including dutasteride.**
+
+- "finasteride is associated with depression, suicidal ideation and sexual dysfunction which may persist after
+  treatment is stopped".
+- "inform patients of the risks at point of prescribing" and "advise patients to read the Finasteride patient cards
+  and the patient leaflet ... which are both supplied in the 1 mg and 5 mg packs".
+- The finasteride 1 mg product information gains a warning "that sexual dysfunction may contribute to mood disorders".
+- "when prescribing finasteride, review their medical record", "ask patients if they have a history of depression or
+  suicidal ideation" and "review patients regularly for psychiatric and/or sexual side effects".
+- Finasteride 1 mg: stop if suicidal thoughts or depression develop, and contact a healthcare professional as soon
+  as possible.
+- Dutasteride: as a precaution its product information will say "that mood alterations have been reported with the
+  same class of medicine (finasteride)"; patients should seek advice as soon as possible if they develop suicidal
+  thoughts or depression.
+- The UK patient cards introduced in 2024 are kept.
+
+Source: https://www.gov.uk/drug-safety-update/finasteride-and-dutasteride-updated-safety-warnings-for-psychiatric-side-effects-and-sexual-dysfunction
+
+**Reading:** the patient card is in the manufacturer's pack. A compounded topical finasteride has no pack card and no
+legal leaflet, and the GPhC expects written information for pharmacy-prepared medicines (section 3.3). The safe
+practice is to give every finasteride patient, oral or topical, the same card-style information in writing, ask and
+record the depression and suicidal-ideation history, check the medical record where available, and book regular
+reviews that ask about mood and sexual function. Dutasteride for hair loss is off-label in the UK
+**[licence status for hair loss not re-checked in this file; see `clinical-men.md`]**.
+
+### 5.4 The European review (Article 31 referral, 2024 to 2025)
+
+| Step | Date |
+|---|---|
+| Review started | 3 October 2024 |
+| PRAC (safety committee) recommendation published | 8 May 2025 |
+| CMDh position | 19 June 2025 |
+| European Commission final decision | 22 August 2025 |
+
+Findings: the EMA "confirms suicidal thoughts as side effect of finasteride tablets", frequency unknown, with most
+cases on the 1 mg hair-loss tablet; a patient card goes in the 1 mg pack. For finasteride **skin sprays** it found "no
+evidence linking suicidal ideation" to them, so their product information was not changed. For dutasteride it found
+"insufficient evidence to establish a causal association" but added a precautionary warning. The benefits of both
+medicines "continue to outweigh their risks for all approved uses".
+Source: https://www.ema.europa.eu/en/medicines/human/referrals/finasteride-dutasteride-containing-medicinal-products
+
+**Reading:** "no evidence linking" is not the same as "safe". The EU sprays reviewed are licensed products; a UK
+compounded spray has no such data behind its particular formula. The EMA finding cannot be used in UK marketing for
+an unlicensed product (section 2), and it should not be used to skip the mood screening in 5.3.
+
+### 5.5 Consent and record keeping: the minimum a hair-loss record should hold
+
+Pulled together from the sources above (MHRA prescribers' responsibilities; GPhC prescriber guidance; GPhC distance
+guidance; GPhC unlicensed-medicines guidance; MHRA finasteride updates):
+
+1. Identity check result and date (GPhC distance guidance).
+2. History, including the answers to the finasteride mood questions and any record or GP check made (MHRA 2024 and 2026).
+3. Photos or other assessment used, and whether two-way contact took place; if not, why not (GPhC distance guidance).
+4. Options discussed, licensed first. For an unlicensed product: the special clinical need and why licensed options
+   will not do (GN14). For off-label: why it better serves the patient (MHRA).
+5. That the patient was told the product is unlicensed or off-label "and what this means" (GPhC unlicensed guidance),
+   and the written information given.
+6. GP or regular prescriber details, consent to share, and what was shared; or the recorded justification (GPhC).
+7. Monitoring and follow-up plan (GPhC distance guidance: "Include monitoring and follow-up plans").
+8. For specials or compounded products: batch number, source and supply details kept "for at least five years"
+   (regulation 170 for specials; GPhC batch records for pharmacy preparation).
+
+---
+
+## 6. Data protection, identity and age, and subscriptions
+
+### 6.1 Health data
+
+| Rule | Source text | Link |
+|---|---|---|
+| Two legal grounds | "you must always identify an article 6 lawful basis for processing" and also "meet one of the conditions in article 9 of the UK GDPR". | https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/special-category-data/what-are-the-rules-on-special-category-data/ |
+| The usual health condition | Article 9(2)(h): provision of health care or treatment, with the Data Protection Act 2018 Schedule 1 condition for health or social care. It must be done by or under the responsibility of a professional under a duty of secrecy. | https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/special-category-data/what-are-the-conditions-for-processing/ |
+| Consent is usually the wrong basis | The ICO notes that in health care consent is often not the appropriate lawful basis; the common-law duty of confidentiality still applies alongside data protection. | same link |
+| DPIA | You must carry out a data protection impact assessment if you process special category data "on a large scale". | first link |
+| Records | "if you process special category data you must keep records, including documenting the categories of data", with your condition for processing. | first link |
+| Fee | Controllers pay the ICO data protection fee: tier 1 £52 (turnover up to £632,000 or up to 10 staff), tier 2 £78, tier 3 £3,763. | https://ico.org.uk/for-organisations/data-protection-fee/data-protection-fee/ |
+| Where data lives | GPhC: data "should be stored on servers which are hosted in the UK or in another jurisdiction which has equivalent levels of data protection"; card payments through a secure link such as PCI DSS; a privacy notice. | https://assets.pharmacyregulation.org/files/2025-02/gphc-guidance-registered-pharmacies-providing-pharmacy-services-distance-february-2025.pdf |
+| Marketing emails and texts | Need specific consent, or the "soft opt-in" for an existing customer who bought a similar product or service and was given a simple opt-out at collection and in every message. | https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/electronic-mail-marketing/ |
+
+**Reading:** the soft opt-in makes a marketing email *lawful under data rules*; it does not make it lawful to name a POM
+in it. The ASA (Voy, May 2026) and the MHRA (Numan, April 2023) both upheld complaints about emails to opted-in
+customers that named POMs (section 2.5).
+
+### 6.2 Identity and age
+
+- The GPhC requires "an identity check appropriate for the medicine being supplied" for P and POM supplies, for
+  example a credit reference database or a photo-ID verification service, or the NHS "Identity Verification and
+  Authentication Standard for Digital Health and Care Services", plus systems that flag multiple accounts, shared
+  payment details and too-frequent orders (section 3.2(b)).
+- **Age.** No hair-loss-specific age rule was found in the GPhC distance guidance. Age follows from the product
+  licence and the prescriber's competence (for example finasteride 1 mg is licensed for men; see its SmPC:
+  https://www.medicines.org.uk/emc/product/7068/smpc). **Reading:** verify date of birth as part of the ID check and
+  refuse under-18s unless the service has the competence and safeguarding set-up for young people.
+- Capacity: "It is especially important when prescribing at a distance that pharmacist prescribers assess the
+  capacity of the person seeking care" (GPhC prescriber guidance, section 3.4).
+
+### 6.3 Subscriptions: the Digital Markets, Competition and Consumers Act 2024
+
+- The subscription rules sit in Part 4, Chapter 2 of the Act. The draft **Consumer Subscription Contracts
+  (Cancellation and Information) Regulations 2026** say they "come into force on 1st January 2027" and apply "only to a
+  subscription contract entered into on or after section 254" of the Act comes into force. On 23 November 2026
+  legislation.gov.uk still listed them as a draft that "has not yet been made".
+  Source: https://www.legislation.gov.uk/ukdsi/2026/9780348287912
+- Government and CMA pages still say "expected to be in Spring 2027"
+  (https://www.gov.uk/government/news/consumers-to-save-around-400-million-every-year-from-government-crackdown-on-costly-subscription-traps).
+  **So the start date is 1 January 2027 if the draft is made as laid; treat it as not final until the made SI appears.**
+- What the draft requires (summary of the draft regulations at the link above): reminder notices "in writing on a
+  durable medium" before renewals and when a discounted period ends; cooling-off rights, extended if you fail to give
+  the cooling-off information; refunds generally within 14 days of a cancellation; a consumer may end the contract at
+  any time; failure to give pre-contract information or reminders gives the consumer a right to cancel.
+- Draft CMA-style guidance: the rules "only apply to new subscription contracts entered into on or after the
+  subscription regime comes into force on the 1 January 2027."
+  Source: https://assets.publishing.service.gov.uk/media/6acf97da2de3184ccf8b814e/subscription-contracts-rules-guidance.pdf
+- Already in force since 6 April 2025 under the same Act: the fake-review and drip-pricing bans and the CMA's direct
+  fining power (section 2.4).
+
+**Reading for a medicines subscription:** each repeat supply of a POM still needs a valid prescription and a
+clinical decision. Build the subscription so that a failed review or a stop on safety grounds ends supply cleanly,
+reminders do not name POMs (advertising rules), and cancellation is as easy as sign-up.
+
+---
+
+## 7. Indemnity, the responsible pharmacist and the superintendent
+
+### 7.1 Indemnity
+
+- Every pharmacist must have appropriate indemnity cover to register (Pharmacy Order 2010, article 32), defined by
+  "the nature and extent of the risks". Cover can be personal, from an employer or through a professional body or
+  defence organisation. You must tell the GPhC within seven days if cover lapses. The GPhC "cannot advise" on the
+  amount. Source: https://www.pharmacyregulation.org/pharmacists/registering-pharmacist/indemnity-requirements
+- The pharmacy itself must have "Appropriate indemnity or insurance arrangements ... in place for the pharmacy
+  services provided" (Standards for registered pharmacies, standard 1.5).
+  Source: https://assets.pharmacyregulation.org/files/document/standards_for_registered_pharmacies_june_2018_0.pdf
+- Prescribers who widen their scope should "check that they are covered by their professional indemnity insurer"
+  (GPhC prescriber guidance, section 3.4), and patients must be told the indemnity and regulatory arrangements for
+  associated prescribers (GPhC distance guidance, section 3.2).
+- **Reading:** tell the insurer in writing that the service (a) prescribes online, (b) prescribes off-label oral
+  minoxidil, (c) prepares unlicensed topicals in-house, including finasteride, and (d) supplies by post across the UK.
+  Product liability for a pharmacy-made medicine sits with the pharmacy, not a manufacturer, so check the policy covers it.
+
+### 7.2 The responsible pharmacist (RP)
+
+| Rule | Source |
+|---|---|
+| A retail pharmacy business must have a responsible pharmacist "in charge of the business" at each premises, with a notice displayed showing the RP's name, registration number and that they are in charge. | Medicines Act 1968, sections 70 and 71: https://www.legislation.gov.uk/ukpga/1968/67/section/71 |
+| The RP's duty is "to secure the safe and effective running of the pharmacy business" at the premises. A person may not be RP for more than one premises at a time, except as GPhC rules allow. | Section 72A: https://www.legislation.gov.uk/ukpga/1968/67/section/72A |
+| Pharmacy procedures (SOPs) must cover ordering, storing, **preparing**, selling, supplying, **delivering outside the pharmacy** and disposing of medicines, staff competence, complaints and incidents; written or electronic, and "reviewed regularly". | Responsible Pharmacist Regulations 2008, regulation 4: https://www.legislation.gov.uk/uksi/2008/2789/regulation/4 |
+| The RP record (name, registration number, times on and off duty, absences) must be kept for "not less than five years". | Regulation 5: https://www.legislation.gov.uk/uksi/2008/2789/regulation/5 |
+| The RP may be absent for at most "two hours during the pharmacy's business hours", and only if contactable and able to return, or with another pharmacist available. | Regulation 3: https://www.legislation.gov.uk/uksi/2008/2789/regulation/3 |
+
+### 7.3 The superintendent pharmacist
+
+- A company running a pharmacy needs a superintendent who is a pharmacist **and** "a senior manager of the retail
+  pharmacy business who has the authority to make decisions that affect the running" of it; a signed statement goes
+  to the registrar; a superintendent who leaves must notify the registrar within 28 days (section 71(6), (7A), (8)).
+  Source: https://www.legislation.gov.uk/ukpga/1968/67/section/71
+- The GPhC distance guidance makes the owner and the superintendent jointly answerable for meeting it, and names
+  "any pharmacists prescribing 'at a distance'" among those it applies to (section 3.1).
+- **Change under way.** The Pharmacy (Responsible Pharmacists, Superintendent Pharmacists etc.) Order 2022 lets the
+  GPhC set RP rules and professional standards for superintendents and RPs. The GPhC consulted on draft Medicines
+  (Pharmacies) (Responsible Pharmacist) Rules 2026 and draft standards for both roles from December 2025; the
+  consultation closed on 25 March 2026. The draft moves responsibility for setting and reviewing procedures from the
+  RP to the superintendent. Whether final rules have been made was **not confirmed**; until they are, the 2008
+  Regulations above apply.
+  Source: https://assets.pharmacyregulation.org/files/2025-12/consultation-on-draft-rules-and-standards-for-responsible-pharmacists-and-draft-standards-for-superintendent-pharmacists-December-2025.pdf?VersionId=jYUJed3SMEP3CtiU5Ljng.TTZg3PdOG1
+
+**Reading:** a solo founder can legally be owner, superintendent, RP and prescriber, but the GPhC wants prescribing
+kept separate from supply "when possible" with a second competent person doing the clinical and accuracy check
+(section 3.4), and the August 2026 Voy inspection shows inspectors test whether the pharmacy really checks the
+prescriptions it dispenses. Budget for a second pharmacist from launch.
+
+---
+
+## 8. How the US rules differ (short note)
+
+| Point | United States | United Kingdom |
+|---|---|---|
+| Legal basis for pharmacy compounding | Section 503A of the Federal Food, Drug, and Cosmetic Act (21 U.S.C. 353a): a compounded drug is exempt from FDA approval (section 355), adequate-directions labelling (352(f)(1)) and cGMP (351(a)(2)(B)) if "compounded for an identified individual patient based on the receipt of a valid prescription order" by a licensed pharmacist or physician. Source: https://www.law.cornell.edu/uscode/text/21/353a | Section 10 Medicines Act 1968 pharmacy exemption, or a specials licence (section 1). |
+| Copies of approved drugs | A 503A pharmacy must not compound "regularly or in inordinate amounts ... any drug products that are essentially copies of a commercially available drug product"; a change for an identified patient that the prescriber judges makes a significant difference is not a copy (353a(b)(1)(D) and (b)(2)). Same link. | GN14: no supply where a licensed product, even off-label, meets the need; cost and convenience do not count. |
+| Advertising | Compounded products are widely marketed by US telehealth firms (the FDA notes "compounders and telemedicine platforms that market topical formulations of finasteride"). | No advertising of unlicensed medicines at all (regulation 279), and no POM advertising to the public. **This is the biggest practical difference.** |
+| Topical finasteride | FDA alert of 22 April 2025: "Currently, there is no FDA-approved topical formulation of finasteride"; 32 adverse event reports in FAERS from 2019 to 2024, including "erectile dysfunction, anxiety, suicidal ideation, brain fog", most continuing after stopping; providers should "educate patients on potential risks of using compounded topical finasteride", including handling and transfer to women. Source: https://www.fda.gov/drugs/human-drug-compounding/fda-alerts-health-care-providers-compounders-and-consumers-potential-risks-associated-compounded | No licensed UK topical finasteride found; the MHRA's finasteride updates (5.3) do not mention topical products. |
+
+**Reading:** a US-style model (house-brand compounded spray marketed directly to consumers) cannot be copied into the
+UK. The UK model must be: market the service, assess, offer licensed options first, then prescribe a compound only for a
+recorded individual need.
+
+---
+
+## You must
+
+- Run the dispensing and any compounding from a GPhC-registered pharmacy, under a pharmacist, against a prescription (Medicines Act 1968 s10).
+- Have a superintendent pharmacist (if a company) and a responsible pharmacist signed in at the premises, with SOPs and an RP record kept five years.
+- Hold appropriate personal and pharmacy indemnity that names online prescribing, off-label use and in-house compounding.
+- Offer and record licensed options first; record each patient's special clinical need before prescribing an unlicensed product (GN14).
+- Tell the patient in writing that a product is unlicensed or off-label and what that means.
+- Follow the GPhC distance guidance: written risk assessment, appropriate identity checks, two-way contact available, verification where needed, GP sharing or a recorded reason.
+- Ask about depression and suicidal ideation before finasteride, give card-style written warnings, review mood and sexual function regularly, and report suspected reactions on the Yellow Card scheme.
+- Keep a second competent person checking prescriptions you write where possible, and tell patients they may use another pharmacy.
+- Keep batch, ingredient and supply records for compounded products, and a recall system.
+- Show on the website the pharmacy's GPhC number, owner, superintendent, the prescriber's name, registration number and profession, and how to complain.
+- Pay the ICO fee, do a DPIA, keep a record of processing, use Article 6 plus Article 9(2)(h), host data in the UK or an equivalent jurisdiction.
+- Get CQC advice in writing before involving any doctor or nurse in treatment.
+- Build subscriptions to the DMCC Act rules (reminders, easy exit, cooling-off) before contracts made from 1 January 2027 (date not final).
+
+## You can
+
+- Prepare unlicensed topicals in your own registered pharmacy without a manufacturer's licence, including stock in advance for your own business.
+- Prescribe unlicensed and off-label medicines as a pharmacist independent prescriber, within your competence.
+- Order specials from an MS-licensed manufacturer instead of making them.
+- Run a pharmacist-only prescribing service from a registered pharmacy in England without CQC registration.
+- Promote the service and the condition, show indicative prices for the condition on the home page, and give a balanced, non-promotional overview of treatment options on deeper pages.
+- Publish a factual price list without product claims (not on the home page).
+- Answer a patient's own unsolicited question about an unlicensed or off-label product factually.
+- Offer refunds tied to satisfaction, not to results.
+- Email existing customers under the soft opt-in, as long as the email does not name or point to a POM.
+
+## You cannot say or do
+
+- Name any POM (finasteride, oral minoxidil, dutasteride) on the home page, in paid search, in social posts, in the web address or in marketing emails.
+- Mention, picture or make any claim for an unlicensed (compounded) product in advertising; no labelled bottles.
+- Call a treatment that includes an unlicensed medicine "clinically proven" or similar.
+- Say "prescription medication" or list prescription ingredients in adverts.
+- Use "Buy now", "Add to basket" or "Buy [drug]" buttons for POMs.
+- Promise results or refund only if hair does not grow back.
+- Say "no side effects", "safe", "best", "strongest" or "better than" another treatment.
+- Use doctors, pharmacists, scientists, celebrities or customer testimonials to endorse a medicine.
+- Give free medicines or headline discounts on POMs; run "free trials" that are not clearly a free consultation.
+- Let affiliates or refer-a-friend users post codes naming POMs (you answer for them).
+- Move every patient to the compound by default, or justify it by cost, convenience or "our house product".
+- Prescribe higher-risk medicines on a questionnaire alone without verification or a recorded reason.
+- Wholesale your pharmacy-made products to other pharmacies or clinics without an MS licence.
+- Copy US-style direct marketing of compounded topical finasteride.
+
+## Key facts (the 25 most decision-relevant)
+
+1. Selling or supplying an unauthorised medicine is banned unless an exemption applies (HMR 2012 reg 46). https://www.legislation.gov.uk/uksi/2012/1916/regulation/46
+2. Preparing a medicine against a prescription in a registered pharmacy under a pharmacist needs no manufacturer's licence (Medicines Act 1968 s10; HMR reg 4). https://www.legislation.gov.uk/ukpga/1968/67/section/10
+3. A pharmacist independent prescriber is an appropriate practitioner for any POM (HMR reg 214). https://www.legislation.gov.uk/uksi/2012/1916/regulation/214
+4. Specials must be for an individual patient's "special needs", unsolicited, made by an MS licence holder, with no advertising (reg 167). https://www.legislation.gov.uk/uksi/2012/1916/regulation/167
+5. GN14: special need "does not include reasons of cost, convenience or operational needs". https://assets.publishing.service.gov.uk/media/645e19f5ad8a03000c38b3bc/The_supply_of_unlicensed_medicinal_products__special_GN14.pdf
+6. GN14: a UK licensed product, even off-label, should be used before an unlicensed one. (same link)
+7. Specials supply records must be kept at least five years (reg 170). https://www.legislation.gov.uk/uksi/2012/1916/regulation/170
+8. No advert for a medicine without a marketing authorisation (reg 279). https://www.legislation.gov.uk/uksi/2012/1916/regulation/279
+9. No advert "likely to lead to the use of a prescription only medicine" to the public (reg 284). https://www.legislation.gov.uk/uksi/2012/1916/regulation/284
+10. Advertising breaches are criminal: up to two years' prison and/or a fine (reg 303). https://www.legislation.gov.uk/uksi/2012/1916/regulation/303
+11. Blue Guide Appendix 6: no named POMs or POM prices on the home page; no "Buy now"; no free offers; unlicensed medicines "should not be mentioned". https://assets.publishing.service.gov.uk/media/6012d8c9d3bf7f05c2040b4e/Appendix_6.pdf
+12. ASA upheld against Hims & Hers UK for showing a labelled topical finasteride and minoxidil bottle and "clinically proven prescription medication" (2022, reissued 2023). https://www.asa.org.uk/rulings/hims---hers-uk-ltd-a22-1145016-hims--hers-uk-ltd-1.html
+13. ASA upheld against Manual for "Buy Oral Minoxidil" paid search (June 2025). https://www.asa.org.uk/rulings/menwell-ltd-a25-1277445-menwell-ltd.html
+14. A results-based refund is read as a guarantee even without the word (ASA, Numan, March 2024). https://www.asa.org.uk/rulings/vir-health-ltd-a22-1178070-vir-health-ltd.html
+15. The GPhC moved to statutory enforcement against Voy Pharmacy in August 2026, partly for unlawful POM advertising. https://inspections.pharmacyregulation.org/pharmacy/download/9012909-2026-08-11-26590.pdf
+16. GPhC distance guidance (Feb 2025): some medicines must not be prescribed by questionnaire alone; verify independently or record why not. https://assets.pharmacyregulation.org/files/2025-02/gphc-guidance-registered-pharmacies-providing-pharmacy-services-distance-february-2025.pdf
+17. The website must name the prescriber, their registration number and whether they are a doctor or a pharmacist (same link).
+18. GPhC: patients must be told a pharmacy is preparing an unlicensed medicine and what that means, in writing if possible. https://assets.pharmacyregulation.org/files/document/guidance_for_registered_pharmacies_preparing_unlicensed_medicines_august_2018_0.pdf
+19. GPhC prescriber guidance: keep prescribing separate from supply where possible, with a second person checking. https://www.pharmacyregulation.org/pharmacists/standards-and-guidance-pharmacy-professionals/guidance-pharmacy-professionals
+20. Pharmacists are not "health care professionals" for CQC treatment registration; a pharmacist-only service does not need CQC registration, but one doctor or nurse in the team does. https://www.cqc.org.uk/system/files/2026-08/260826-Scope-of-Registration-updated-august-2026-1.1_0.pdf
+21. MHRA (11 May 2026): finasteride is associated with depression, suicidal ideation and persistent sexual dysfunction; ask history, review record, review regularly; patient cards kept. https://www.gov.uk/drug-safety-update/finasteride-and-dutasteride-updated-safety-warnings-for-psychiatric-side-effects-and-sexual-dysfunction
+22. EMA (final decision 22 August 2025): suicidal thoughts confirmed for finasteride tablets; no evidence linking them to finasteride skin sprays; precautionary warning for dutasteride. https://www.ema.europa.eu/en/medicines/human/referrals/finasteride-dutasteride-containing-medicinal-products
+23. Health data needs an Article 6 basis plus an Article 9 condition; large-scale processing needs a DPIA. https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/lawful-basis/special-category-data/what-are-the-rules-on-special-category-data/
+24. DMCC Act subscription rules: draft regulations say in force 1 January 2027, for new contracts only; not yet made on 23 November 2026. https://www.legislation.gov.uk/ukdsi/2026/9780348287912
+25. FDA (22 April 2025): no FDA-approved topical finasteride; 32 adverse event reports 2019 to 2024. https://www.fda.gov/drugs/human-drug-compounding/fda-alerts-health-care-providers-compounders-and-consumers-potential-risks-associated-compounded
+
+## Summary
+
+1. You can legally make compounded hair-loss topicals in your own GPhC-registered pharmacy against your own prescriptions, with no MHRA licence.
+2. You cannot sell them to other businesses without a Manufacturer's Specials licence.
+3. Each unlicensed prescription needs a recorded individual clinical need; cost, convenience and "house product" do not count, and licensed or off-label options come first.
+4. You cannot advertise an unlicensed medicine at all, or a POM to the public: market the condition and the consultation only.
+5. Regulators have repeatedly acted against Hims, Numan, Manual/Voy, Sons and others for exactly this; copy their compliant patterns, not their live risks.
+6. GPhC distance guidance requires ID checks, two-way contact, verification or a recorded reason, GP sharing, and a visible prescriber identity.
+7. A pharmacist-only service from a registered pharmacy in England does not need CQC registration; adding a doctor or nurse to treatment does.
+8. For finasteride, ask about depression and suicidal thoughts, give card-style warnings, review regularly and report on Yellow Card; this applies to compounded topicals too.
+9. Register with the ICO, do a DPIA, keep health data in the UK or equivalent, and build subscriptions to the DMCC rules expected from 1 January 2027.
+10. Get indemnity that names online, off-label and compounding work, plan for a second checking pharmacist, and take legal advice before launch.

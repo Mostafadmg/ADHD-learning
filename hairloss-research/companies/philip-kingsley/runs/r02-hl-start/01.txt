@@ -1,0 +1,21 @@
+STEP 01 wait 2500
+URL: https://hairloss.philipkingsley.co.uk/
+TITLE: Select quiz
+
+--- VISIBLE TEXT ---
+ASSESSMENT
+SELECT QUIZ
+
+If you are suffering from hair loss symptoms please select the Hair Loss Assessment below. If you are experiencing scalp irritation or have a scalp condition, please complete our Scalp Assessment below.
+
+If you're experiencing symptoms on your scalp, it's important that we treat your scalp symptoms before we look to treat your hair loss. If we treat your hair loss while you're experiencing scalp irritation, it can make your scalp symptoms worse, and your hair loss treatments will be less effective.
+
+SELECT ONE
+I AM EXPERIENCING HAIR LOSS
+I AM EXPERIENCING SCALP IRRITATION
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+  link (4): SIGN IN -> https://hairloss.philipkingsley.co.uk/customer/account/  ·  TERMS OF SALE -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-of-sale  ·  TERMS & CONDITIONS -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-conditions  ·  PRIVACY POLICY -> https://hairloss.philipkingsley.co.uk/hair-loss-privacy-policy

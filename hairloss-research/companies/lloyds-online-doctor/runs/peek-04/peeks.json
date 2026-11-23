@@ -1,0 +1,22 @@
+[
+ {
+  "from": "103257",
+  "option": "Complete",
+  "trail": [],
+  "result": {
+   "sig": "SUMMARY",
+   "stepState": "SUMMARY",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": []
+  },
+  "onBaseline": false,
+  "shot": "peek-01-103257",
+  "text": "Exit consultation\nYour hair loss\nPlease select which of the images below best represents your hair loss\nTemples only\nTemples and Crown\nModerate\nExtensive\nComplete\nRandom patches\nBack",
+  "endedEarly": true,
+  "stuck": true
+ }
+]

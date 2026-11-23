@@ -21,12 +21,12 @@ Goal: a ranked list of unmet needs that a new UK competitor could win on.
 |---|---|
 | Trustpilot (uk.trustpilot.com) | Read with a headless browser earlier in the day. Logged-out visitors can open only the first 10 pages (200 reviews) of any filtered list, so counts are from samples, not every review. Later the same day Trustpilot started blocking the research machine as a bot, so single review pages could not be re-opened for this write-up. |
 | Reddit (r/tressless, r/FemaleHairLoss, UK subreddits) | **Blocked.** reddit.com returned "You've been blocked by network security" and old.reddit.com demanded a login. No Reddit posts were read, so none are quoted. |
-| Better Business Bureau (bbb.org) | Complaint pages read for Hims & Hers, Ro, Nutrafol and Happy Head. |
+| Better Business Bureau (bbb.org) | Search pages loaded, but every company profile and complaint page (Hims & Hers, Nutrafol, Happy Head, Ro) returned a bot check. **No BBB complaint text was read.** |
 | Apple App Store written reviews | Read through Apple's public review feed for Hims (US), Hers (US), Ro, Numan, Voy, Musely. |
 | ASA rulings, MHRA, EMA, FDA, BBC | Read directly. |
 | Mumsnet, MoneySavingExpert forum, ConsumerAffairs, Feefo, The Student Room, Yelp, Guardian | **Blocked** (bot check or 403). |
 | HairLossTalk forum | Thread list readable; thread search needs a login. |
-| General web search | Not used in the first session (allowance used up); see section 1.4 for what was added later. |
+| General web search | Used in the second session for the FTC case against Hims & Hers, the UK subscription law (DMCCA) and pet safety of minoxidil. Women-focused UK press found only clinic blogs with unsourced survey figures, which are left out. |
 
 ### 1.2 How the Trustpilot reviews were counted
 

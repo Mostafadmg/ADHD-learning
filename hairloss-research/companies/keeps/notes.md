@@ -149,3 +149,22 @@ Main quiz results so far (baseline replay `runs/baseline-men-r2` = Chew+ 19277, 
 | exp-11 | treated before → Yes → 'Had side effects' | extra question shown; no warning; 19277; plan text identical |
 | exp-12..16 | duration <6 months, stage Advanced, goal Preserve, picture Advanced, comments Yes | no change to product, price or wording except the echoed label |
 | exp-17 | plan page: 'Want to switch to topical solutions?' | Drop and Drop+ cards shown, Drop (cheaper) pre-selected; banner still says 'Recommended for you: Chew+' |
+| exp-18 | treated before → Yes → 'Didn't see results' | extra question shown; no change (19277) |
+| exp-19 | picture → more options → Diffuse Thinning | no stop; 19277; only the echoed label changes |
+| exp-g1..g3 | gel: priority affordable / switch-to-oral link / Mostly Scalp | Gel+ unchanged / Chew+Chew cards / same stop screen |
+
+Legacy quiz (`/quiz/lead?products=` list; baseline r2 = 211,239): L01 Hairline → 211,989 · L02 Crown → 211,239 · L03 Patchy →
+`/request/lead` · L04 Nowhere yet → 239,499,500 (family question replaces expectations + pill preference) · L05 Pills → 211,989 ·
+L06 Topicals → 211,239 · L07 Hairline+Topicals → 211 · L08/L09 finasteride/minoxidil tick → no change · L10 tretinoin → 211,11840 ·
+L11 saw palmetto → +2874 · L12 ketoconazole → +240 · L13 vitamins → 211,2874,11840 · L14 hair care → +499,500 · L15 pomade → +682 ·
+L16 dandruff Yes → +240 · L17 thicker / L18 prevent → no change · L19 Hairline+Pills → 211,989. Every code-read rule matched.
+
+### Stage 2 finished (2026-11-23)
+
+- All three baselines replayed fine (`runs/baseline-men-r2`, `-gel-r2`, `-legacy-quiz-r2`); 41 one-change experiments in total.
+- `company.json` = output of `build-company.py` (stage 1) **then** `python3 -I stage2-patch.py` (stage 2: experiments[],
+  observed evidence, rules R1–R24, 18 recommendation profiles, summary fields). The patch is NOT idempotent: to rebuild,
+  run build-company.py first, then the patch once. Pre-patch copy was not kept in this folder.
+- `node tools/validate.js keeps --stage rules` passes (0 errors, 0 warnings).
+- Not tested (see limitations in company.json): remaining no-effect options of the main/gel quiz one by one, most states,
+  legacy multi-select combinations, anything after the account wall.

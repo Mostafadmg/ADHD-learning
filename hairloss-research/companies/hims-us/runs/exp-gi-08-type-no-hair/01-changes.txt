@@ -22,7 +22,7 @@ Continue
 
 
 --- LINKS ---
-Already have an account? Sign In -> /c/hl?skipToSignIn=true&goFlow=true&flowId=hl&sessionId=1e867014-6e0a-4e90-8200-8af0f5048523
+Already have an account? Sign In -> /c/hl?skipToSignIn=true&goFlow=true&flowId=hl&sessionId=152a3eff-4591-4dfb-a5fa-00ffc715c540
 
 --- OUTPUT SCHEMA (server) ---
 {"type":"object","required":["responses"],"properties":{"responses":{"type":"object","required":["i-hl-hims-hair-changes"],"properties":{"i-hl-hims-hair-changes":{"type":"object","required":["i-hl-hims-hair-changes"],"properties":{"i-hl-hims-hair-changes":{"enum":["i-hl-hims-changes-hairline","i-hl-hims-changes-top","i-hl-hims-changes-all-over"],"type":"string"}},"additionalProperties":false}},"additionalProperties":false}}}
