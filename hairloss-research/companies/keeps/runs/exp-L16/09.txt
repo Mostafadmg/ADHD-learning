@@ -1,0 +1,14 @@
+STEP 09 click "Yes"
+URL: https://www.keeps.com/quiz?step=6
+TITLE: Take the Hair Loss Quiz | Keeps
+
+--- VISIBLE TEXT ---
+You're just one step away from better hair
+
+Take the Hair Loss Quiz | Keeps
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

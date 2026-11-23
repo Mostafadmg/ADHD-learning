@@ -1,0 +1,12 @@
+STEP 04 click "End questionnaire"
+URL: https://start.struthealth.com/flow/6aa3d578f415d1603a6e0c85
+TITLE: 
+
+--- VISIBLE TEXT ---
+(could not read page: Error: page.evaluate: Execution context was destroyed, most likely because of a navigation)
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

@@ -1,0 +1,138 @@
+{
+ "step": {
+  "title": "HL",
+  "questions": [
+   {
+    "questionId": "103270",
+    "explanationAvailable": false,
+    "displayText": "Have you ever had any of the following conditions?",
+    "type": "MULTIPLE_CHOICE",
+    "answerRequired": false,
+    "smoothTransition": false,
+    "answerChoices": [
+     {
+      "answerId": "103270$102159",
+      "maxValue": "0",
+      "explanationAvailable": true,
+      "questionId": "103270",
+      "displayText": "Alopecia",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false,
+      "explanationHref": "/api/questionnaire/traversals/10778542/explanations/103270$102159"
+     },
+     {
+      "answerId": "103270$102157",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "103270",
+      "displayText": "Breast cancer",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "103270$105165",
+      "maxValue": "0",
+      "explanationAvailable": true,
+      "questionId": "103270",
+      "displayText": "Breast tissue enlargement",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false,
+      "explanationHref": "/api/questionnaire/traversals/10778542/explanations/103270$105165"
+     },
+     {
+      "answerId": "103270$102160",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "103270",
+      "displayText": "Depression",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "103270$105304",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "103270",
+      "displayText": "Current or history of suicidal thoughts, self-harm, or attempts",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "103270$102158",
+      "maxValue": "0",
+      "explanationAvailable": true,
+      "questionId": "103270",
+      "displayText": "Obstructive uropathy",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false,
+      "explanationHref": "/api/questionnaire/traversals/10778542/explanations/103270$102158"
+     },
+     {
+      "answerId": "103270$102155",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "103270",
+      "displayText": "Prostate cancer",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "103270$102065",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "103270",
+      "displayText": "Liver condition",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "103270$104302",
+      "maxValue": "0",
+      "explanationAvailable": true,
+      "questionId": "103270",
+      "displayText": "Phaeochromocytoma",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false,
+      "explanationHref": "/api/questionnaire/traversals/10778542/explanations/103270$104302"
+     },
+     {
+      "answerId": "103270$100027",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "103270",
+      "displayText": "Porphyria",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "103270$102152",
+      "maxValue": "0",
+      "explanationAvailable": true,
+      "questionId": "103270",
+      "displayText": "Problems with my sex life",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false,
+      "explanationHref": "/api/questionnaire/traversals/10778542/explanations/103270$102152"
+     },
+     {
+      "answerId": "103270$104183",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "103270",
+      "displayText": "Systemic Lupus Erythematosus (SLE)",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false
+     }
+    ],
+    "titleOverride": "Medical history"
+   }
+  ],
+  "questionAnswerErrors": {},
+  "summaryRequiredBeforeStep": false,
+  "registrationRequiredBeforeStep": false,
+  "fastSummaryRequiredBeforeStep": false
+ },
+ "explanation": "/api/questionnaire/traversals/10778542/explanations",
+ "previous": "/api/questionnaire/traversals/10778542/steps/previous",
+ "current": "/api/questionnaire/traversals/10778542/steps/current"
+}

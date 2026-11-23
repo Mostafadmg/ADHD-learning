@@ -56,8 +56,10 @@ def bag(st):
             'promo': (promo[0]['inputConfig'].get('promotionCode') or {}).get('code') if promo else None,
             'shippingMsg': ic.get('shippingEligibilityMessage')}
 
-BASES = {'men': ['baseline-men'] + sorted(os.path.basename(p) for p in glob.glob(os.path.join(base, 's2-base-men-*')) if os.path.isdir(p)),
-         'women': ['baseline-women', 'women-a'] + sorted(os.path.basename(p) for p in glob.glob(os.path.join(base, 's2-base-women-*')) if os.path.isdir(p))}
+def _b(*pats): return sorted(os.path.basename(p) for pat in pats for p in glob.glob(os.path.join(base, pat)) if os.path.isdir(p))
+# stage 3 (verify) baseline replays join the pools: runs/verify-base-men*, runs/verify-base-women*
+BASES = {'men': ['baseline-men'] + _b('s2-base-men-*', 'verify-base-men*'),
+         'women': ['baseline-women', 'women-a'] + _b('s2-base-women-*', 'verify-base-women*')}
 ALLBASE = set(BASES['men'] + BASES['women'])
 _all = {}
 def allruns():

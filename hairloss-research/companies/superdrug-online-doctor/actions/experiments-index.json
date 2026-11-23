@@ -1,0 +1,182 @@
+[
+ {
+  "id": "exp-w01",
+  "base": "baseline-women-regaine.json",
+  "changed": "women-q4 pregnant or breastfeeding: No -> I'm pregnant"
+ },
+ {
+  "id": "exp-w02",
+  "base": "baseline-women-regaine.json",
+  "changed": "women-q4 pregnant or breastfeeding: No -> I'm breastfeeding"
+ },
+ {
+  "id": "exp-w03",
+  "base": "baseline-women-regaine.json",
+  "changed": "women-q2 high blood pressure: No -> Yes"
+ },
+ {
+  "id": "exp-w04",
+  "base": "baseline-women-regaine.json",
+  "changed": "women-q3 heart condition: No -> Yes (details box filled neutrally: 'Occasional palpitations, checked by GP, no treatment needed')"
+ },
+ {
+  "id": "exp-w05",
+  "base": "baseline-women-regaine.json",
+  "changed": "women-q1: none of the above -> a shaved scalp"
+ },
+ {
+  "id": "exp-w06",
+  "base": "baseline-women-regaine.json",
+  "changed": "women-q1: none of the above -> sudden or patchy hair loss"
+ },
+ {
+  "id": "exp-w07",
+  "base": "baseline-women-regaine.json",
+  "changed": "women-q1: none of the above -> skin problems on the scalp"
+ },
+ {
+  "id": "exp-w08",
+  "base": "baseline-women-regaine.json",
+  "changed": "women-q1: none of the above -> hair loss associated with childbirth"
+ },
+ {
+  "id": "exp-w09",
+  "base": "baseline-women-regaine.json",
+  "changed": "women-q5 other health conditions: No -> Yes (details: 'Hay fever')"
+ },
+ {
+  "id": "exp-w10",
+  "base": "baseline-women-regaine.json",
+  "changed": "women-q6 taking medication: No -> Yes (details: 'Cetirizine 10mg once a day' / 'Hay fever')"
+ },
+ {
+  "id": "exp-w11",
+  "base": "baseline-women-regaine.json",
+  "changed": "women-q7 allergies: No -> Yes, women-q7a = Minoxidil only"
+ },
+ {
+  "id": "exp-w12",
+  "base": "baseline-women-regaine.json",
+  "changed": "women-q7 allergies: No -> Yes, women-q7a = Fish only"
+ },
+ {
+  "id": "exp-w13",
+  "base": "baseline-women-regaine.json",
+  "changed": "women-q7 allergies: No -> Yes, women-q7a = Caffeine only"
+ },
+ {
+  "id": "exp-w14",
+  "base": "baseline-women-regaine.json",
+  "changed": "women-q7 allergies: No -> Yes, women-q7a = Ethanol only"
+ },
+ {
+  "id": "exp-w15",
+  "base": "baseline-women-regaine.json",
+  "changed": "women-q7 allergies: No -> Yes, women-q7a = Propylene glycol only"
+ },
+ {
+  "id": "exp-w16",
+  "base": "baseline-women-regaine.json",
+  "changed": "women-q7 allergies: No -> Yes, women-q7a = Peanuts or Soya only"
+ },
+ {
+  "id": "exp-w17",
+  "base": "baseline-women-regaine.json",
+  "changed": "women-q7 allergies: No -> Yes, women-q7a = Lactose only"
+ },
+ {
+  "id": "exp-w18",
+  "base": "baseline-women-regaine.json",
+  "changed": "women-q7 allergies: No -> Yes, women-q7a = Penicillin only"
+ },
+ {
+  "id": "exp-w19",
+  "base": "baseline-women-regaine.json",
+  "changed": "women-q7 allergies: No -> Yes, women-q7a = Other medication only (details: 'Ibuprofen')"
+ },
+ {
+  "id": "exp-w20",
+  "base": "baseline-women-regaine.json",
+  "changed": "women-q7 allergies: No -> Yes, women-q7a = Other substance only (details: 'Latex')"
+ },
+ {
+  "id": "exp-w21",
+  "base": "baseline-women-nourkrin.json",
+  "changed": "Nourkrin entry, women-q4: No -> I'm pregnant"
+ },
+ {
+  "id": "exp-w22",
+  "base": "baseline-women-nourkrin.json",
+  "changed": "Nourkrin entry, women-q7 allergies: No -> Yes, women-q7a = Fish only"
+ },
+ {
+  "id": "exp-m01",
+  "base": "baseline-men.json",
+  "changed": "men-q2 hair pattern: C -> E (warning tick ticked; NO photos uploaded)"
+ },
+ {
+  "id": "exp-m02",
+  "base": "baseline-men.json",
+  "changed": "men-q2 hair pattern: C -> A (no visible loss; NO photos uploaded)"
+ },
+ {
+  "id": "exp-m03",
+  "base": "baseline-men.json",
+  "changed": "men-q8 conditions: None of the above -> Prostate cancer"
+ },
+ {
+  "id": "exp-m04",
+  "base": "baseline-men.json",
+  "changed": "men-q8 conditions: None of the above -> Breast cancer"
+ },
+ {
+  "id": "exp-m05",
+  "base": "baseline-men.json",
+  "changed": "men-q8 conditions: None of the above -> Liver condition (details: 'Fatty liver found on a scan, liver blood tests normal')"
+ },
+ {
+  "id": "exp-m06",
+  "base": "baseline-men.json",
+  "changed": "men-q11 allergies: No -> Yes, men-q11a = Finasteride only"
+ },
+ {
+  "id": "exp-m07",
+  "base": "baseline-men.json",
+  "changed": "men-q7 always get and keep an erection: Yes -> No"
+ },
+ {
+  "id": "exp-m08",
+  "base": "baseline-men.json",
+  "changed": "men-q6 other scalp changes: No -> Yes (details: 'Itchy, flaky scalp')"
+ },
+ {
+  "id": "exp-m09",
+  "base": "baseline-men.json",
+  "changed": "men-q5 how it started: Gradually -> Suddenly (follow-up boxes: 'Not sure' / 'Noticed more hair in the shower over two weeks')"
+ },
+ {
+  "id": "exp-m10",
+  "base": "baseline-men.json",
+  "changed": "men-q4 first noticed: More than a month ago -> In the last month"
+ },
+ {
+  "id": "exp-m11",
+  "base": "baseline-men.json",
+  "changed": "men-q3 currently using finasteride: No -> Yes (follow-up: 'Yes, it has slowed the loss. No side effects.'); men-q3b is no longer shown"
+ },
+ {
+  "id": "exp-m12",
+  "base": "baseline-men.json",
+  "changed": "men-q1 diagnosed: No, self-diagnosis -> Yes, by my GP"
+ },
+ {
+  "id": "exp-m13",
+  "base": "baseline-men.json",
+  "changed": "men-q10 taking medication: No -> Yes (details: 'Cetirizine 10mg once a day' / 'Hay fever')"
+ },
+ {
+  "id": "exp-m14",
+  "base": "baseline-men.json",
+  "changed": "men-q3b taken finasteride before: No -> Yes (follow-up: 'It worked but I had low mood and reduced sex drive, so I stopped')"
+ }
+]

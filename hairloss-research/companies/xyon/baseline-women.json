@@ -1,0 +1,16 @@
+{ "start": "https://consultation.xyonhealth.com/en-US/hair-treatment-rx/welcome",
+  "note": "Baseline woman: 38 (born 15 Jun 1988), California, female, not pregnant / trying / breastfeeding / fertility treatment. Stops at the account form: nothing is typed there.",
+  "steps": [
+    {"do":"click","text":"Start Questionnaire"},
+    {"do":"click","text":"United States"},
+    {"do":"click","selector":"[role=combobox]"},
+    {"do":"click","selector":"[role=option]:has-text(\"California\")"},
+    {"do":"fill","label":"Month (MM)","value":"6"},
+    {"do":"fill","label":"Day (DD)","value":"15"},
+    {"do":"fill","label":"Year (YYYY)","value":"1988"},
+    {"do":"click","text":"Continue"},
+    {"do":"click","text":"Female"},
+    {"do":"click","text":"No"},
+    {"do":"click","text":"Create Account"},
+    {"do":"wait","ms":1500}
+  ] }

@@ -1,0 +1,20 @@
+STEP 04 click "Mostly Scalp"
+URL: https://www.keeps.com/hair-assessment-quiz-gel?step=4
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+This treatment may not be a good fit right now.
+
+Based on your answers, prescription hair loss treatments are unlikely to be effective at this stage.
+
+Many people at this stage explore options like hair restoration or cosmetic solutions.
+
+Back to homepage
+
+Keeps | Hair Loss Treatment for Men
+
+--- CONTROLS ---
+  button (2): Go back  ·  Back to homepage
+
+--- LINKS ---
+

@@ -1,0 +1,8 @@
+{ "start": "https://www.musely.com/facerx/find/concerns", "locale": "en-US", "timezone": "America/Chicago",
+  "steps": [
+    {"do": "wait", "ms": 3500},
+    {"do": "press", "key": "Escape"},
+    {"do": "click", "selector": "[role=checkbox]:has-text('Hair')"},
+    {"do": "click", "text": "Continue"},
+    {"do": "wait", "ms": 2500}
+  ] }

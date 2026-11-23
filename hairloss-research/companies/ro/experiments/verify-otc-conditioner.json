@@ -1,0 +1,16 @@
+{
+ "start": "https://start.ro.co/qcalmd/",
+ "locale": "en-US",
+ "timezone": "America/Chicago",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 4000
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 4000
+  }
+ ]
+}

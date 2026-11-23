@@ -1,0 +1,2781 @@
+{
+ "slug": "xyon",
+ "company": "XYON Health",
+ "market": "US and Canada",
+ "website": "https://xyonhealth.com/",
+ "parent": null,
+ "audiences": [
+  "men",
+  "women"
+ ],
+ "model": "Doctor-founded telehealth brand that sells compounded topical finasteride, dutasteride and finasteride-plus-minoxidil in its patented SiloxysSystem gel (plus oral options and hair-care cosmetics), prescribed after an online questionnaire and photo review, with a second channel through partner hair clinics.",
+ "checkedOn": "2026-11-23",
+ "access": {
+  "howTested": [
+   "live-walk",
+   "site-code",
+   "public-docs"
+  ],
+  "accountWall": "After the eligibility gate. Men answer 4 questions (country, state or province, date of birth, biological sex), women 5 (plus pregnancy / conception / breastfeeding / fertility), then see \"Congrats! You are eligible.\" and must create an account (legal first and last name, email, password, consent tick-box). The whole medical history, treatment preference, plan choice, photos and ID sit behind that account. Nothing is recommended before the wall.",
+  "blockers": [
+   "Medical-history question wording is only served after sign-in: /en-US/hair-treatment-rx/mens/new and /womens/new redirect anonymous visitors to /en-US/login, and the JS chunk for those routes is not referenced by any public page.",
+   "Web search was unavailable (shared search budget used up), so third-party reviews, press and regulator listings were not checked.",
+   "Four help-centre articles linked from the help index return 404 (ineligible conditions; which topical is right for me; treatments for men; treatments for women)."
+  ],
+  "coverageNote": "Stage 1 (map). Walked live: the full anonymous eligibility flow for the baseline man and woman up to the account form, one stop screen (pregnancy = Yes), and the 3-question marketing quiz. Read from publicly served code: the whole eligibility schema with every branch and stop reason, the country and region lists, the product and variant enums, the field keys and step groups of the signed-in medical history (keys only, not wording), feature flags. Read from public pages: the Shopify product feed (all 64 products with prices and sex-eligibility tags), seven prescription product pages with safety information, the how-it-works page, help-centre articles and policies. Not tested: anything after the account wall, Canadian (en-CA) prices and wording, one-change experiments."
+ },
+ "products": [
+  {
+   "id": "p1",
+   "name": "Topical Finasteride with SiloxysSystem Gel",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "2.5%"
+    }
+   ],
+   "form": "gel in a pump bottle (1 mL once daily; 30 mL = 1 oz bottle, 90 mL = 3 oz bottle)",
+   "audience": "men",
+   "legalStatus": "US compounded prescription medicine (not FDA-approved; off-label topical use). Also supplied in Canada.",
+   "price": "$109 every 30 days on subscription (US)",
+   "priceDetail": "Subscription: $109 per 30 days, or $297 per 90 days ($99 a month). One-time: $119 for 30 days or $327 for 90 days, plus a $20 consultation fee on the first one-time order (checkout SKUs: $139 and $347 for \"New\", $119 and $327 for \"Refill\"). Free shipping. Prices from raw/products.json and the product page; Canadian prices not captured.",
+   "url": "https://xyonhealth.com/products/topical-finasteride",
+   "recommendedWhen": "Men only (Shopify tag MALE_ELIGIBLE, no FEMALE_ELIGIBLE tag). The patient can flag it as a preferred treatment in the signed-in intake; the prescribing doctor decides. Exact rule not observable without an account: unknown.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p2",
+   "name": "Topical Dutasteride with SiloxysSystem Gel",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "dutasteride",
+     "strength": "2%"
+    }
+   ],
+   "form": "gel in a pump bottle (1 mL once daily; 30 mL or 90 mL)",
+   "audience": "both",
+   "legalStatus": "US compounded prescription medicine (not FDA-approved; off-label). Also supplied in Canada.",
+   "price": "$139 every 30 days on subscription (US)",
+   "priceDetail": "Subscription: $139 per 30 days, or $387 per 90 days ($129 a month). One-time: $149 for 30 days or $417 for 90 days, plus the $20 first-order consultation fee (checkout SKUs $169 / $437 \"New\"). Black and Taupe pack variants exist.",
+   "url": "https://xyonhealth.com/products/topical-dutasteride",
+   "recommendedWhen": "Tagged MALE_ELIGIBLE and FEMALE_ELIGIBLE. Product page: not for people with liver disease, or women who are pregnant, may be pregnant or breastfeeding. Doctor decides after the signed-in intake; exact selection rule unknown.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p3",
+   "name": "Topical Finasteride & Minoxidil with SiloxysSystem Gel",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "2.5%"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "3%"
+    }
+   ],
+   "form": "gel in a pump bottle (once daily; 30 mL or 90 mL)",
+   "audience": "both",
+   "legalStatus": "US compounded prescription medicine (not FDA-approved; off-label). Also supplied in Canada.",
+   "price": "$129 every 30 days on subscription (US)",
+   "priceDetail": "Subscription: $129 per 30 days, or $357 per 90 days ($119 a month). One-time: $139 for 30 days or $387 for 90 days, plus the $20 first-order consultation fee (checkout SKUs $159 / $407 \"New\"). Black and Taupe pack variants exist.",
+   "url": "https://xyonhealth.com/products/topical-finasteride-and-minoxidil",
+   "recommendedWhen": "The marketing quiz at /pages/hl-qlp always shows this product as \"Recommended for you\", whatever is answered. In the real consultation it is tagged for both sexes; the doctor decides. Exact rule unknown.",
+   "evidence": "observed"
+  },
+  {
+   "id": "p4",
+   "name": "Topical Finasteride & Minoxidil Solution",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "not stated on the public pages"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "not stated on the public pages"
+    }
+   ],
+   "form": "alcohol-based liquid solution (about 1 mL once daily; 30 mL or 90 mL)",
+   "audience": "both",
+   "legalStatus": "US compounded prescription medicine (not FDA-approved; off-label).",
+   "price": "$204 every 90 days on subscription ($68 a month, US)",
+   "priceDetail": "Product page offers 90-day only: $204 subscription, $234 one-time plus the $20 first-order consultation fee. Checkout SKUs also exist for 30 mL: $78 subscription, $88 one-time refill, $108 one-time new. This is the cheaper, non-SiloxysSystem topical; its Shopify handle is \"xyon-ld-subscription-fin-min\" and the consultation code has a product reference \"topicalFinasteridePlusMinoxidilLowDose\" and an application-method option \"Topical (LowDose)\", which most likely point to this product (inferred from the names).",
+   "url": "https://xyonhealth.com/products/topical-finasteride-and-minoxidil-solution",
+   "recommendedWhen": "Unknown. Probably offered when the patient picks the \"Topical (LowDose)\" application method in the signed-in intake (inferred from code names, not observed).",
+   "evidence": "docs"
+  },
+  {
+   "id": "p5",
+   "name": "Oral Finasteride",
+   "category": "rx-oral",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "1 mg"
+    }
+   ],
+   "form": "tablet, one a day (30 or 90 tablets)",
+   "audience": "men",
+   "legalStatus": "US prescription medicine: generic of Propecia, FDA-approved for male pattern hair loss (the page also carries XYON's standard compounded-medicine notice).",
+   "price": "$105 every 90 days on subscription ($35 a month, US)",
+   "priceDetail": "Product page: 90-day subscription $105; 90-day one-time $135 plus the $20 first-order consultation fee. Checkout SKUs: 30 tablets $55 subscription, $55 one-time refill, $75 one-time new; 90 tablets $105 subscription, $135 refill, $155 new.",
+   "url": "https://xyonhealth.com/products/oral-finasteride",
+   "recommendedWhen": "Men only (tag MALE_ELIGIBLE only). Probably offered when the patient prefers the \"Oral\" application method (inferred). Doctor decides; exact rule unknown.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p6",
+   "name": "Oral Minoxidil",
+   "category": "rx-oral",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "2.5 mg or 5 mg (a 1.25 mg variant is named in the consultation code)"
+    }
+   ],
+   "form": "tablet (30 or 90 tablets)",
+   "audience": "both",
+   "legalStatus": "US prescription medicine: FDA-approved tablets for high blood pressure, prescribed off-label for hair loss.",
+   "price": "$87 every 90 days on subscription ($29 a month, US)",
+   "priceDetail": "Checkout SKUs only (no marketing page found): 30 tablets $49 subscription, $49 one-time refill, $69 one-time new; 90 tablets $87 subscription, $105 refill, $125 new. Doses in the feed: 2.5 mg and 5 mg; the code also names oralMinoxidil_1p25mg.",
+   "url": "https://xyonhealth.com/products/xyon-premium-subscription-omin-90-day",
+   "recommendedWhen": "Tagged for both sexes. Dose is picked by the doctor (the code has a separate \"change dosage\" request flow). Exact rule unknown.",
+   "evidence": "code"
+  },
+  {
+   "id": "p7",
+   "name": "Oral Minoxidil with Vitamin D",
+   "category": "rx-oral-compounded",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "0.5 mg or 1 mg (a 2 mg variant is named in the consultation code)"
+    },
+    {
+     "name": "vitamin D",
+     "strength": "not stated"
+    }
+   ],
+   "form": "compounded tablet (30 or 90 tablets)",
+   "audience": "both",
+   "legalStatus": "US compounded prescription medicine (not FDA-approved; off-label).",
+   "price": "$117 every 90 days on subscription ($39 a month, US)",
+   "priceDetail": "Product page: 90-day subscription $117; one-time $147 plus the $20 first-order consultation fee. Checkout SKUs: 30 tablets $59 subscription, $59 refill, $79 new; 90 tablets $117 subscription, $147 refill, $167 new. The code also names variants with vitamin D and biotin (0.5, 1 and 2 mg) that are not in the product feed.",
+   "url": "https://xyonhealth.com/products/minoxidil-tablets-with-vitamin-d",
+   "recommendedWhen": "Tagged for both sexes. Product page: not for people with liver disease or high blood calcium, or women who are pregnant or breastfeeding; tell the doctor about heart or vascular conditions. Exact rule unknown.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p8",
+   "name": "Oral Spironolactone",
+   "category": "rx-oral",
+   "actives": [
+    {
+     "name": "spironolactone",
+     "strength": "50 mg or 100 mg (a 25 mg variant is named in the consultation code)"
+    }
+   ],
+   "form": "tablet (30 or 90 tablets)",
+   "audience": "women",
+   "legalStatus": "US prescription medicine: FDA-approved for blood pressure, heart failure and oedema, prescribed off-label for female pattern hair loss (the page also carries XYON's standard compounded-medicine notice).",
+   "price": "$87 every 90 days on subscription ($29 a month, US)",
+   "priceDetail": "Product page: 90-day subscription $87; one-time $117 plus the $20 first-order consultation fee. Checkout SKUs: 30 tablets $59 subscription, $59 refill, $79 new; 90 tablets $87 subscription, $117 refill, $137 new.",
+   "url": "https://xyonhealth.com/products/spironolactone-for-hair-loss-in-females",
+   "recommendedWhen": "Women only (tag FEMALE_ELIGIBLE only). Product page: not for people with liver or kidney disease, or women who are pregnant, may be pregnant or breastfeeding. Exact rule unknown.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p9",
+   "name": "Performance DHT-Blocking Shampoo",
+   "category": "cosmetic",
+   "actives": [
+    {
+     "name": "saw palmetto extract"
+    },
+    {
+     "name": "clover flower extract"
+    }
+   ],
+   "form": "shampoo, 10 oz (33.8 oz listed, out of stock)",
+   "audience": "men",
+   "legalStatus": "US cosmetic, no prescription (store type \"OTC\")",
+   "price": "$45 (10 oz)",
+   "priceDetail": "33.8 oz listed at $149 but unavailable; 50 mL travel size $4.50.",
+   "url": "https://xyonhealth.com/products/dht-blocking-shampoo",
+   "recommendedWhen": "Not part of the consultation result. Tagged POST_PURCHASE_UPSELL: offered as an add-on after purchase.",
+   "evidence": "code"
+  },
+  {
+   "id": "p10",
+   "name": "Performance DHT-Blocking Conditioner",
+   "category": "cosmetic",
+   "actives": [
+    {
+     "name": "saw palmetto extract"
+    }
+   ],
+   "form": "conditioner",
+   "audience": "men",
+   "legalStatus": "US cosmetic, no prescription (store type \"OTC\")",
+   "price": "$45",
+   "priceDetail": "",
+   "url": "https://xyonhealth.com/products/dht-blocking-conditioner",
+   "recommendedWhen": "Not part of the consultation result. Tagged POST_PURCHASE_UPSELL.",
+   "evidence": "code"
+  },
+  {
+   "id": "p11",
+   "name": "Defend Hair & Scalp Serum",
+   "category": "cosmetic",
+   "actives": [],
+   "form": "leave-in scalp serum",
+   "audience": "men",
+   "legalStatus": "US cosmetic, no prescription (store type \"OTC\")",
+   "price": "$59",
+   "priceDetail": "Ingredients not captured.",
+   "url": "https://xyonhealth.com/products/defend-hair-scalp-serum",
+   "recommendedWhen": "Not part of the consultation result. Tagged MALE_ELIGIBLE and POST_PURCHASE_UPSELL.",
+   "evidence": "code"
+  },
+  {
+   "id": "p12",
+   "name": "Revitalize Peptide Serum",
+   "category": "cosmetic",
+   "actives": [
+    {
+     "name": "peptides including copies of human VEGF and FGF growth factors (as described by XYON)"
+    }
+   ],
+   "form": "scalp serum",
+   "audience": "men",
+   "legalStatus": "US cosmetic, no prescription (store type \"OTC\")",
+   "price": "$59",
+   "priceDetail": "",
+   "url": "https://xyonhealth.com/products/hair-boosting-serum",
+   "recommendedWhen": "Not part of the consultation result (tagged MALE_ELIGIBLE, HAIR_TREATMENT).",
+   "evidence": "code"
+  },
+  {
+   "id": "p13",
+   "name": "Hair Plus Supplement",
+   "category": "supplement",
+   "actives": [
+    {
+     "name": "pomegranate extract"
+    },
+    {
+     "name": "collagen peptides"
+    },
+    {
+     "name": "saw palmetto"
+    }
+   ],
+   "form": "powder to mix into a drink",
+   "audience": "both",
+   "legalStatus": "US dietary supplement (carries the standard FDA disclaimer)",
+   "price": "$79",
+   "priceDetail": "",
+   "url": "https://xyonhealth.com/products/hair-plus-supplement",
+   "recommendedWhen": "Not part of the consultation result; sold directly on the store.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p14",
+   "name": "Activate Performance Shampoo (women)",
+   "category": "cosmetic",
+   "actives": [],
+   "form": "shampoo, 10 oz or 33.8 oz",
+   "audience": "women",
+   "legalStatus": "US cosmetic, no prescription (store type \"OTC\")",
+   "price": "$45 (10 oz)",
+   "priceDetail": "$69 for 33.8 oz; 50 mL travel size $4.50.",
+   "url": "https://xyonhealth.com/products/womens-shampoo",
+   "recommendedWhen": "Not part of the consultation result. Tagged FEMALE_ELIGIBLE and POST_PURCHASE_UPSELL.",
+   "evidence": "code"
+  },
+  {
+   "id": "p15",
+   "name": "Fortify Performance Conditioner (women)",
+   "category": "cosmetic",
+   "actives": [],
+   "form": "conditioner, 10 oz or 33.8 oz",
+   "audience": "women",
+   "legalStatus": "US cosmetic, no prescription (store type \"OTC\")",
+   "price": "$45 (10 oz)",
+   "priceDetail": "$69 for 33.8 oz; 50 mL travel size $4.50.",
+   "url": "https://xyonhealth.com/products/womens-hair-thickening-conditioner",
+   "recommendedWhen": "Not part of the consultation result. Tagged FEMALE_ELIGIBLE and POST_PURCHASE_UPSELL.",
+   "evidence": "code"
+  },
+  {
+   "id": "p16",
+   "name": "Nourish Perfecting Hair Oil (women)",
+   "category": "cosmetic",
+   "actives": [],
+   "form": "hair oil",
+   "audience": "women",
+   "legalStatus": "US cosmetic, no prescription (store type \"OTC\")",
+   "price": "$55",
+   "priceDetail": "",
+   "url": "https://xyonhealth.com/products/nourish-perfecting-hair-oil",
+   "recommendedWhen": "Not part of the consultation result. Tagged FEMALE_ELIGIBLE and POST_PURCHASE_UPSELL.",
+   "evidence": "code"
+  },
+  {
+   "id": "p17",
+   "name": "Online doctor consultation (\"Hair Loss Assessment Questionnaire\")",
+   "category": "service",
+   "actives": [],
+   "form": "online questionnaire and photos reviewed by a doctor, with chat follow-up",
+   "audience": "both",
+   "legalStatus": "US and Canadian telehealth service (doctor visit run through a third-party medical group platform; the code links to message.mdintegrations.com)",
+   "price": "Free with a subscription; $20 with a one-time order",
+   "priceDetail": "$20 USD in the US or $20 CAD in Canada on one-time plans, charged only if a prescription is issued, non-refundable, credited if the patient later moves to a subscription. A $0 or $1 card authorisation is taken when the intake is submitted. Prescriptions are usually valid for 12 months; renewal is a short intake form.",
+   "url": "https://xyonhealth.com/pages/how-xyon-works",
+   "recommendedWhen": "Required before any prescription product.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p18",
+   "name": "ClinicConnect (partner-clinic channel for SiloxysSystem gel)",
+   "category": "service",
+   "actives": [],
+   "form": "clinic-prescribed gel fulfilled through a XYON account (bring-your-own-prescription sign-up)",
+   "audience": "both",
+   "legalStatus": "Business-to-business channel: partner hair clinics prescribe; XYON takes the order and a pharmacy fills it",
+   "price": "Not published",
+   "priceDetail": "The store has a B2B wholesale collection (leaflets, brochures, a demo gel base). Patient prices on this channel were not visible.",
+   "url": "https://consultation.xyonhealth.com/en-US/clinic-connect",
+   "recommendedWhen": "Only for patients sent by a partner clinic with an existing prescription. Not part of the public consultation.",
+   "evidence": "code"
+  }
+ ],
+ "flows": [
+  {
+   "id": "rx",
+   "name": "Hair Treatment Rx consultation (one flow for men and women)",
+   "audience": "both",
+   "entryUrl": "https://consultation.xyonhealth.com/en-US/hair-treatment-rx/welcome",
+   "stagesSummary": "Welcome screen → 4 anonymous eligibility questions for men (country, state or province, date of birth, biological sex), 5 for women (plus pregnancy / conception / breastfeeding / fertility) → \"Congrats! You are eligible.\" → ACCOUNT WALL (legal name, email, password, consents) → medical history (signed in, wording not public; field keys known from code) → treatment preference and plan → billing → scalp photos and photo ID → doctor review in 24–48 hours (product pages) or 3–5 business days (how-it-works page). No product or recommendation is shown before the wall.",
+   "questions": [
+    {
+     "order": 1,
+     "evidence": "observed",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "stage": "anonymous",
+     "options": [],
+     "id": "rx-q0",
+     "text": "The only hair health company founded by doctors — renowned specialists in hair restoration — with a focus on performance and side effect reduction. 01 Start by determining eligibility. 02 Create a secure account. 03 Provide your medical history. 04 Treatment and billing information. 05 Confirm your identity with a photo ID. [Button: Start Questionnaire] [Link: Sign In]",
+     "type": "info",
+     "purpose": "Welcome screen that sets out the five stages before any question is asked.",
+     "engineRole": "expectation-setting"
+    },
+    {
+     "order": 2,
+     "evidence": "observed",
+     "branches": true,
+     "branchDetail": "Picks which region list comes next (state, province or country) and sets the locale (en-US or en-CA) for the signed-in part.",
+     "shownWhen": "always",
+     "stage": "anonymous",
+     "options": [
+      {
+       "label": "United States",
+       "effect": "Goes to \"Which state do you live in?\". All 50 states and DC are marked supported in the code.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Canada",
+       "effect": "Goes to \"Which province do you live in?\". Five provinces are marked unsupported and lead to the not-eligible screen.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Other",
+       "effect": "Goes to \"Which country do you live in?\". 28 European countries lead to a partner hand-off screen; every other country leads to the not-eligible screen.",
+       "effectType": "extra-questions",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "id": "rx-q1",
+     "text": "Where do you live?",
+     "type": "single",
+     "purpose": "Checks that XYON can legally prescribe and ship to the patient.",
+     "engineRole": "eligibility-gate"
+    },
+    {
+     "order": 3,
+     "evidence": "observed",
+     "branches": false,
+     "branchDetail": "Choosing a state moves straight on to the date of birth. No state is blocked in the code (the not-eligible text mentions \"continental US (including Hawaii)\", but Alaska is also marked supported).",
+     "shownWhen": "rx-q1 = United States",
+     "stage": "anonymous",
+     "options": [
+      {
+       "label": "Alabama",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Alaska",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Arizona",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Arkansas",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "California",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Colorado",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Connecticut",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Delaware",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "District of Columbia",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Florida",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Georgia",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Hawaii",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Idaho",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Illinois",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Indiana",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Iowa",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Kansas",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Kentucky",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Louisiana",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Maine",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Maryland",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Massachusetts",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Michigan",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Minnesota",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Mississippi",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Missouri",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Montana",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Nebraska",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Nevada",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "New Hampshire",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "New Jersey",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "New Mexico",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "New York",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "North Carolina",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "North Dakota",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Ohio",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Oklahoma",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Oregon",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Pennsylvania",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Rhode Island",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "South Carolina",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "South Dakota",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Tennessee",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Texas",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Utah",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Vermont",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Virginia",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Washington",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "West Virginia",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Wisconsin",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Wyoming",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "id": "rx-q2a",
+     "text": "Which state do you live in?",
+     "type": "single",
+     "purpose": "State check for prescribing and shipping.",
+     "engineRole": "eligibility-gate"
+    },
+    {
+     "order": 4,
+     "evidence": "code",
+     "branches": true,
+     "branchDetail": "Manitoba, New Brunswick, Prince Edward Island, Quebec and Saskatchewan are marked isSupported:false and end in the not-eligible screen (after the remaining eligibility questions).",
+     "shownWhen": "rx-q1 = Canada",
+     "stage": "anonymous",
+     "options": [
+      {
+       "label": "Alberta",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "British Columbia",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Manitoba",
+       "effect": "Not supported: ends at \"Sorry, you're not currently eligible.\" with the reason \"At this time we only deliver in the continental US (including Hawaii) and select Canadian provinces.\"",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "New Brunswick",
+       "effect": "Not supported: ends at \"Sorry, you're not currently eligible.\" with the reason \"At this time we only deliver in the continental US (including Hawaii) and select Canadian provinces.\"",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Newfoundland and Labrador",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Northwest Territories",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Nova Scotia",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Nunavut",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Ontario",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Prince Edward Island",
+       "effect": "Not supported: ends at \"Sorry, you're not currently eligible.\" with the reason \"At this time we only deliver in the continental US (including Hawaii) and select Canadian provinces.\"",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Quebec",
+       "effect": "Not supported: ends at \"Sorry, you're not currently eligible.\" with the reason \"At this time we only deliver in the continental US (including Hawaii) and select Canadian provinces.\"",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Saskatchewan",
+       "effect": "Not supported: ends at \"Sorry, you're not currently eligible.\" with the reason \"At this time we only deliver in the continental US (including Hawaii) and select Canadian provinces.\"",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Yukon",
+       "effect": "Supported: continues to date of birth.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "id": "rx-q2b",
+     "text": "Which province do you live in?",
+     "type": "single",
+     "purpose": "Province check for prescribing and shipping in Canada.",
+     "engineRole": "eligibility-gate"
+    },
+    {
+     "order": 5,
+     "evidence": "code",
+     "branches": true,
+     "branchDetail": "The list holds 241 countries. The 28 listed here trigger the partner hand-off (status CURAFLOW_SUPPORTED, link target dashboard.curoflow.ch/SiloxysSystem). All others are not eligible.",
+     "shownWhen": "rx-q1 = Other",
+     "stage": "anonymous",
+     "options": [
+      {
+       "label": "Austria",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Belgium",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Bulgaria",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Croatia",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Cyprus",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Czech Republic",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Denmark",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Estonia",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Finland",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "France",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Germany",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Greece",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Hungary",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Ireland",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Italy",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Latvia",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Lithuania",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Luxembourg",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Malta",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Netherlands",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Poland",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Portugal",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Romania",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Slovakia",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Slovenia",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Spain",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Sweden",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "United Kingdom",
+       "effect": "Partner hand-off screen \"Thicker and fuller hair is within reach!\" (EU specialist physicians using SiloxysSystem gel). No XYON consultation.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Any other country in the list (about 213 more)",
+       "effect": "Not-eligible screen with the country/region reason and an email box for updates.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "id": "rx-q2c",
+     "text": "Which country do you live in?",
+     "type": "single",
+     "purpose": "Routes people outside the US and Canada: to a European partner where one exists, otherwise to a waiting list.",
+     "engineRole": "eligibility-gate"
+    },
+    {
+     "order": 6,
+     "evidence": "observed",
+     "branches": true,
+     "branchDetail": "Three number boxes: Month (MM), Day (DD), Year (YYYY). Year must be 1900 or later. Under 18 on the day → not-eligible with \"XYON can only offer this service to those aged 18 and older.\" (code). No upper age limit in the anonymous code.",
+     "shownWhen": "always",
+     "stage": "anonymous",
+     "options": [
+      {
+       "label": "18 or over (baseline: 15 June 1994 and 15 June 1988)",
+       "effect": "Continues to biological sex.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Under 18",
+       "effect": "Not-eligible screen with the age reason.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "id": "rx-q3",
+     "text": "What is your date of birth?",
+     "type": "date",
+     "purpose": "Age check (18 or over) and identity data for the prescription.",
+     "engineRole": "eligibility-gate"
+    },
+    {
+     "order": 7,
+     "evidence": "observed",
+     "branches": true,
+     "branchDetail": "Female adds the pregnancy question. After sign-up the route is /hair-treatment-rx/mens/new or /hair-treatment-rx/womens/new (rxType MENS_HAIR_TREATMENT or WOMENS_HAIR_TREATMENT). Product tags: finasteride-only gel and oral finasteride are male-only; oral spironolactone is female-only.",
+     "shownWhen": "always",
+     "stage": "anonymous",
+     "options": [
+      {
+       "label": "Male",
+       "effect": "Goes straight to \"Congrats! You are eligible.\" Later uses the men's route. Oral spironolactone is not tagged for men.",
+       "effectType": "next-question",
+       "affects": [
+        "p8"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Female",
+       "effect": "Adds the pregnancy / conception / breastfeeding / fertility question. Later uses the women's route. Finasteride-only gel and oral finasteride are not tagged for women.",
+       "effectType": "extra-questions",
+       "affects": [
+        "p1",
+        "p5"
+       ],
+       "evidence": "observed"
+      }
+     ],
+     "id": "rx-q4",
+     "text": "What is your biological sex?",
+     "type": "single",
+     "purpose": "Splits the men's and women's pathways and product sets.",
+     "engineRole": "product-selector"
+    },
+    {
+     "order": 8,
+     "evidence": "observed",
+     "branches": true,
+     "branchDetail": "Yes ends the flow before an account can be made.",
+     "shownWhen": "rx-q4 = Female",
+     "stage": "anonymous",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Hard stop: \"Sorry, you're not currently eligible. XYON cannot offer this service to females who are pregnant or trying to conceive.\" An email box offers updates.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "No",
+       "effect": "Continues to \"Congrats! You are eligible.\"",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "id": "rx-q5",
+     "text": "Are you pregnant, trying to conceive, breastfeeding, undergoing or planning fertility treatments?",
+     "type": "single",
+     "purpose": "Stops women for whom finasteride, dutasteride, minoxidil and spironolactone are unsafe.",
+     "engineRole": "safety-screen"
+    },
+    {
+     "order": 9,
+     "evidence": "observed",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "supported region, 18 or over, and (if female) pregnancy question = No",
+     "stage": "anonymous",
+     "options": [],
+     "id": "rx-q6",
+     "text": "Congrats! You are eligible. The next step will be creating a secure account so you can share your medical history with our doctors. [Button: Create Account]",
+     "type": "info",
+     "purpose": "Confirms the eligibility gate is passed and leads to sign-up. No product or recommendation is shown.",
+     "engineRole": "expectation-setting"
+    },
+    {
+     "order": 10,
+     "evidence": "observed",
+     "branches": false,
+     "branchDetail": "Seen live for the pregnancy reason (runs/map-stop-pregnancy); the other reason lines are from the code. No email was entered.",
+     "shownWhen": "unsupported region, or under 18, or (female and pregnancy question = Yes)",
+     "stage": "anonymous",
+     "options": [],
+     "id": "rx-q7",
+     "text": "Sorry, you're not currently eligible. [one line per reason: \"At this time we only deliver in the continental US (including Hawaii) and select Canadian provinces.\" / \"XYON can only offer this service to those aged 18 and older.\" / \"XYON cannot offer this service to females who are pregnant or trying to conceive.\"] We are constantly updating our services. Please provide your e-mail address, and we will reach out if your eligibility changes. [Email] [I want to receive the latest news, offers, and promotions.] [Button: Register for updates]",
+     "type": "contact",
+     "purpose": "Stop screen that turns a rejected visitor into a marketing contact.",
+     "engineRole": "marketing"
+    },
+    {
+     "order": 11,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "The step also contains the email / marketing-consent component, and the code holds the partner link https://dashboard.curoflow.ch/SiloxysSystem. Not walked live.",
+     "shownWhen": "rx-q1 = Other and the country is one of the 28 partner countries",
+     "stage": "anonymous",
+     "options": [],
+     "id": "rx-q8",
+     "text": "Thicker and fuller hair is within reach! While XYON does not currently operate in your country, we have partnered with specialist physicians in the EU. They can assess your hair loss and prescribe treatments using the SiloxysSystem™ gel technology to eligible patients.",
+     "type": "info",
+     "purpose": "Hands European visitors to a partner service instead of losing them.",
+     "engineRole": "marketing"
+    },
+    {
+     "order": 12,
+     "evidence": "observed",
+     "branches": false,
+     "branchDetail": "On submit the app signs the user up and redirects to /en-US/hair-treatment-rx/mens/new or /womens/new. Anonymous requests to those routes are redirected (302) to /en-US/login. The email is checked by a validation service as it is typed (\"did you mean\" hints).",
+     "shownWhen": "always",
+     "stage": "anonymous",
+     "options": [],
+     "id": "rx-q9",
+     "text": "Create an account to fill out your medical history. Please use your legal name as it appears on your government-issued ID. [Legal First Name] [Legal Last Name] [Email Address] [Password] [I agree to the Terms of Use, Privacy Policy, and Telehealth Consent] [I want to receive the latest news, offers, and promotions] [Button: Continue]",
+     "type": "contact",
+     "purpose": "Account creation. THIS IS THE ACCOUNT WALL: nothing after it can be seen without a name, email and password.",
+     "engineRole": "identity"
+    },
+    {
+     "order": 13,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Unknown (signed-in step, not tested). Label inferred from the field name, which ends in YesNo/Boolean; the one public yes/no step uses the labels Yes and No.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "inferred"
+      },
+      {
+       "label": "No",
+       "effect": "Unknown (signed-in step, not tested). Label inferred from the field name.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "inferred"
+      }
+     ],
+     "id": "rx-a1",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: hasExistingSubscriptionOfRxType, areYouInTheRightPlaceBoolean.",
+     "type": "single",
+     "purpose": "Checks whether the person already has a subscription of this type and should be in the renew or change route instead.",
+     "engineRole": "eligibility-gate"
+    },
+    {
+     "order": 14,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [],
+     "id": "rx-a2",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: primaryConcerns.",
+     "type": "multi",
+     "purpose": "What bothers the patient about their hair (pattern or area of loss). Options not public.",
+     "engineRole": "diagnosis"
+    },
+    {
+     "order": 15,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [],
+     "id": "rx-a3",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: lengthOfSymptoms.",
+     "type": "single",
+     "purpose": "How long the hair loss has been going on. Options not public.",
+     "engineRole": "diagnosis"
+    },
+    {
+     "order": 16,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [],
+     "id": "rx-a4",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: levelOfConcern.",
+     "type": "single",
+     "purpose": "How worried the patient is. Options not public.",
+     "engineRole": "personalisation"
+    },
+    {
+     "order": 17,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [],
+     "id": "rx-a5",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: relatedSymptoms, relatedSymptomsDetails.",
+     "type": "multi",
+     "purpose": "Other scalp or hair symptoms, with a free-text detail box. Options not public.",
+     "engineRole": "diagnosis"
+    },
+    {
+     "order": 18,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [],
+     "id": "rx-a6",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: differentialSymptoms.",
+     "type": "multi",
+     "purpose": "Symptoms that point to causes other than pattern hair loss (the name suggests a differential-diagnosis screen). Options not public.",
+     "engineRole": "diagnosis"
+    },
+    {
+     "order": 19,
+     "evidence": "code",
+     "branches": true,
+     "branchDetail": "The diagnosis fields (rx-a8) are a separate group in the code, so they are probably shown only after Yes (inferred).",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Unknown (signed-in step, not tested). Label inferred from the field name, which ends in YesNo/Boolean; the one public yes/no step uses the labels Yes and No.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "inferred"
+      },
+      {
+       "label": "No",
+       "effect": "Unknown (signed-in step, not tested). Label inferred from the field name.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "inferred"
+      }
+     ],
+     "id": "rx-a7",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: previousPhysicianEvaluationBoolean.",
+     "type": "single",
+     "purpose": "Has a doctor looked at the hair loss before.",
+     "engineRole": "diagnosis"
+    },
+    {
+     "order": 20,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [],
+     "id": "rx-a8",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: previousPhysicianDiagnosis, previousPhysicianDiagnosisDetails.",
+     "type": "single",
+     "purpose": "What that doctor diagnosed, with free text. Options not public.",
+     "engineRole": "diagnosis"
+    },
+    {
+     "order": 21,
+     "evidence": "code",
+     "branches": true,
+     "branchDetail": "Per-medicine follow-ups exist (rx-a10).",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [],
+     "id": "rx-a9",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: relatedMedications, relatedMedicationsOther, relatedMedicationsDidItHelp, relatedMedicationsSideEffectsYesNo, relatedMedicationsSideEffectsDetails.",
+     "type": "multi",
+     "purpose": "Hair-loss treatments tried before, whether they helped, and any side effects.",
+     "engineRole": "safety-screen"
+    },
+    {
+     "order": 22,
+     "evidence": "code",
+     "branches": true,
+     "branchDetail": "A \"reason for stopping\" follow-up exists for every medicine, presumably shown when the status is \"stopped\" (inferred).",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [],
+     "id": "rx-a10",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: topicalFinasterideStatus / oralFinasterideStatus / topicalDutasterideStatus / oralDutasterideStatus / topicalMinoxidilStatus / oralMinoxidilStatus / topicalSpironolactoneStatus / oralSpironolactoneStatus, each with ...ReasonForStopping and ...ReasonForStoppingDetails.",
+     "type": "single",
+     "purpose": "For each of eight earlier treatments: current status (for example still using or stopped), why it was stopped, and details. Options not public.",
+     "engineRole": "safety-screen"
+    },
+    {
+     "order": 23,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Unknown (signed-in step, not tested). Label inferred from the field name, which ends in YesNo/Boolean; the one public yes/no step uses the labels Yes and No.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "inferred"
+      },
+      {
+       "label": "No",
+       "effect": "Unknown (signed-in step, not tested). Label inferred from the field name.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "inferred"
+      }
+     ],
+     "id": "rx-a11",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: mentalHealthYesNo, mentalHealthDetails.",
+     "type": "single",
+     "purpose": "Mental health history (finasteride and dutasteride carry mood warnings).",
+     "engineRole": "safety-screen"
+    },
+    {
+     "order": 24,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Unknown (signed-in step, not tested). Label inferred from the field name, which ends in YesNo/Boolean; the one public yes/no step uses the labels Yes and No.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "inferred"
+      },
+      {
+       "label": "No",
+       "effect": "Unknown (signed-in step, not tested). Label inferred from the field name.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "inferred"
+      }
+     ],
+     "id": "rx-a12",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: cancerHistoryYesNo, cancerHistoryDetails.",
+     "type": "single",
+     "purpose": "Cancer history (the product pages ask about prostate and breast cancer).",
+     "engineRole": "safety-screen"
+    },
+    {
+     "order": 25,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Unknown (signed-in step, not tested). Label inferred from the field name, which ends in YesNo/Boolean; the one public yes/no step uses the labels Yes and No.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "inferred"
+      },
+      {
+       "label": "No",
+       "effect": "Unknown (signed-in step, not tested). Label inferred from the field name.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "inferred"
+      }
+     ],
+     "id": "rx-a13",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: sexualUrinaryHistoryYesNo, sexualUrinaryHistoryDetails.",
+     "type": "single",
+     "purpose": "Sexual or urinary problems (prostate or urinary symptoms; sexual side-effect baseline).",
+     "engineRole": "safety-screen"
+    },
+    {
+     "order": 26,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [],
+     "id": "rx-a14",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: generalMedicalConditions, generalMedicalConditionsDetails.",
+     "type": "multi",
+     "purpose": "Checklist of other medical conditions with free text. Options not public.",
+     "engineRole": "safety-screen"
+    },
+    {
+     "order": 27,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [],
+     "id": "rx-a15",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: mostRecentCheckup.",
+     "type": "single",
+     "purpose": "When the patient last had a general check-up. Options not public.",
+     "engineRole": "safety-screen"
+    },
+    {
+     "order": 28,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [],
+     "id": "rx-a16",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: bloodPressure, pulmonaryHypertension.",
+     "type": "single",
+     "purpose": "Blood pressure and pulmonary hypertension (relevant to minoxidil). Options not public.",
+     "engineRole": "safety-screen"
+    },
+    {
+     "order": 29,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [],
+     "id": "rx-a17",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: kidneyProblemsDetails, kidneyProblemsLabsYesNo, kidneyProblemsLabs.",
+     "type": "text",
+     "purpose": "Kidney problems and recent kidney blood tests (relevant to spironolactone and oral minoxidil).",
+     "engineRole": "safety-screen"
+    },
+    {
+     "order": 30,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Unknown (signed-in step, not tested). Label inferred from the field name, which ends in YesNo/Boolean; the one public yes/no step uses the labels Yes and No.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "inferred"
+      },
+      {
+       "label": "No",
+       "effect": "Unknown (signed-in step, not tested). Label inferred from the field name.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "inferred"
+      }
+     ],
+     "id": "rx-a18",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: seriousCardiacEpisodeYesNo, seriousCardiacEpisodeDetails.",
+     "type": "single",
+     "purpose": "Serious heart events. May belong to the sexual-health flow as well as, or instead of, the hair flow: the enum is shared.",
+     "engineRole": "safety-screen"
+    },
+    {
+     "order": 31,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [],
+     "id": "rx-a19",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: prescriptionMedicationsDetails, medicationsOfConcern.",
+     "type": "text",
+     "purpose": "Current prescription medicines, and a checklist of medicines that clash.",
+     "engineRole": "safety-screen"
+    },
+    {
+     "order": 32,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Unknown (signed-in step, not tested). Label inferred from the field name, which ends in YesNo/Boolean; the one public yes/no step uses the labels Yes and No.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "inferred"
+      },
+      {
+       "label": "No",
+       "effect": "Unknown (signed-in step, not tested). Label inferred from the field name.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "inferred"
+      }
+     ],
+     "id": "rx-a20",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: nitroglycerinYesNo, nitroglycerinDetails, recreationalDrugUseYesNo.",
+     "type": "single",
+     "purpose": "Nitrate and recreational drug use. Most likely only in the men's sexual-health flow (shared enum); listed so stage 2 does not miss it.",
+     "engineRole": "safety-screen"
+    },
+    {
+     "order": 33,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [],
+     "id": "rx-a21",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: allergiesDetails.",
+     "type": "text",
+     "purpose": "Allergies.",
+     "engineRole": "safety-screen"
+    },
+    {
+     "order": 34,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [],
+     "id": "rx-a22",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: personalPregnancy, householdPregnancy.",
+     "type": "single",
+     "purpose": "Pregnancy in the patient or in the household (finasteride and dutasteride must not touch a pregnant partner). Options not public.",
+     "engineRole": "safety-screen"
+    },
+    {
+     "order": 35,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [],
+     "id": "rx-a23",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: summaryCertification, pregnancyCertification, underlyingConditionsCertification, incompatibleMedicationsCertification, compoundedMedicineAcknowledgment.",
+     "type": "consent",
+     "purpose": "Tick-box declarations: the answers are true, not pregnant, no undisclosed conditions or clashing medicines, and understands the medicine is compounded and not FDA-approved.",
+     "engineRole": "consent"
+    },
+    {
+     "order": 36,
+     "evidence": "code",
+     "branches": true,
+     "branchDetail": "Yes presumably opens the product picker (rx-a25); the code also has a \"noPreference\" product reference.",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Unknown (signed-in step, not tested). Label inferred from the field name, which ends in YesNo/Boolean; the one public yes/no step uses the labels Yes and No.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "inferred"
+      },
+      {
+       "label": "No",
+       "effect": "Unknown (signed-in step, not tested). Label inferred from the field name.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "inferred"
+      }
+     ],
+     "id": "rx-a24",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: treatmentPreferenceYesNo.",
+     "type": "single",
+     "purpose": "Does the patient have a treatment in mind.",
+     "engineRole": "product-selector"
+    },
+    {
+     "order": 37,
+     "evidence": "code",
+     "branches": true,
+     "branchDetail": "Option labels are not public. The product reference values in the code are listed as options below. The analytics names suggest one \"spotlight\" product shown first with secondary and tertiary choices.",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [
+      {
+       "label": "topicalFinasteride (code value; on-screen label not public)",
+       "effect": "Presumably sets the requested product for the doctor and the checkout SKU. Not tested.",
+       "effectType": "unknown",
+       "affects": [
+        "p1"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "topicalDutasteride90 (code value; on-screen label not public)",
+       "effect": "Presumably sets the requested product for the doctor and the checkout SKU. Not tested.",
+       "effectType": "unknown",
+       "affects": [
+        "p2"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "topicalFinasteridePlusMinoxidil (code value; on-screen label not public)",
+       "effect": "Presumably sets the requested product for the doctor and the checkout SKU. Not tested.",
+       "effectType": "unknown",
+       "affects": [
+        "p3"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "topicalFinasteridePlusMinoxidilLowDose (code value; on-screen label not public)",
+       "effect": "Presumably sets the requested product for the doctor and the checkout SKU. Not tested.",
+       "effectType": "unknown",
+       "affects": [
+        "p4"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "oralFinasteride (code value; on-screen label not public)",
+       "effect": "Presumably sets the requested product for the doctor and the checkout SKU. Not tested.",
+       "effectType": "unknown",
+       "affects": [
+        "p5"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "oralMinoxidil (code value; on-screen label not public)",
+       "effect": "Presumably sets the requested product for the doctor and the checkout SKU. Not tested.",
+       "effectType": "unknown",
+       "affects": [
+        "p6"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "compoundOralMinoxidilWithVitaminD (code value; on-screen label not public)",
+       "effect": "Presumably sets the requested product for the doctor and the checkout SKU. Not tested.",
+       "effectType": "unknown",
+       "affects": [
+        "p7"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "compoundOralMinoxidilWithVitaminDAndBiotin (code value; on-screen label not public)",
+       "effect": "Presumably sets the requested product for the doctor and the checkout SKU. Not tested.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "oralSpironolactone (code value; on-screen label not public)",
+       "effect": "Presumably sets the requested product for the doctor and the checkout SKU. Not tested.",
+       "effectType": "unknown",
+       "affects": [
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "noPreference (code value; on-screen label not public)",
+       "effect": "Presumably sets the requested product for the doctor and the checkout SKU. Not tested.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "id": "rx-a25",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: treatmentPreference (analytics events: spotlight_treatment_selected, secondary_treatment_selected, tertiary_treatment_selected).",
+     "type": "single",
+     "purpose": "The patient flags the medicine they would like; the doctor weighs it. Public pages: \"flag any medication you'd prefer — your doctor weighs it in evaluation\".",
+     "engineRole": "product-selector"
+    },
+    {
+     "order": 38,
+     "evidence": "code",
+     "branches": true,
+     "branchDetail": "Values in the code, in this order: Topical, Topical (LowDose), Oral, noPreference. The default in the code is Topical.",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [
+      {
+       "label": "Topical",
+       "effect": "Presumably narrows to the SiloxysSystem gels. Default value in the code. Not tested.",
+       "effectType": "unknown",
+       "affects": [
+        "p1",
+        "p2",
+        "p3"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Topical (LowDose)",
+       "effect": "Presumably selects the finasteride and minoxidil solution (product reference topicalFinasteridePlusMinoxidilLowDose). Not tested.",
+       "effectType": "unknown",
+       "affects": [
+        "p4"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Oral",
+       "effect": "Presumably narrows to the tablets. Not tested.",
+       "effectType": "unknown",
+       "affects": [
+        "p5",
+        "p6",
+        "p7",
+        "p8"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "noPreference (code value; on-screen label not public)",
+       "effect": "Presumably leaves the choice to the doctor. Not tested.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "id": "rx-a26",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: applicationMethodPreference (analytics: application_method_selected).",
+     "type": "single",
+     "purpose": "Topical or tablets: the main lever that narrows the product list.",
+     "engineRole": "product-selector"
+    },
+    {
+     "order": 39,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [],
+     "id": "rx-a27",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: additionalQuestions.",
+     "type": "text",
+     "purpose": "Free-text box for the doctor. Prompt text in the code: \"Share your questions or comments with the doctor now, so that they can review them before recommending a treatment plan\". Default answer in the code: \"No, I've provided all relevant information and have no questions. Thank you!\"",
+     "engineRole": "data-capture"
+    },
+    {
+     "order": 40,
+     "evidence": "code",
+     "branches": true,
+     "branchDetail": "Labels in the code: \"Subscription\" (\"Subscribe & Save\"), \"One time purchase\", \"3 Month Supply\" (3 oz. bottle, every 3 months), \"1 Month Supply\" (1 oz. bottle, every month). Default: one unit every three months, recurring. Note text: \"Prescriptions issued are typically valid for 12 months. Pricing may vary based on your location. Final pricing will be confirmed once a doctor has prescribed medication.\" A feature flag can merge the plan-type options into the cadence step (default off).",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "checkout",
+     "options": [
+      {
+       "label": "Subscription",
+       "effect": "Recurring order; no consultation fee.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "One time purchase",
+       "effect": "Single order; adds the $20 consultation fee on the first order (\"New\" SKU price is $20 above \"Refill\").",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "3 Month Supply",
+       "effect": "Picks the 90 mL / 90 tablet SKU (cheaper per month).",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "1 Month Supply",
+       "effect": "Picks the 30 mL / 30 tablet SKU.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "id": "rx-a28",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: subscriptionPlanType, treatmentSupplyAmount, subscriptionCadence.",
+     "type": "single",
+     "purpose": "Plan choice: subscription or one-time, and one month or three months.",
+     "engineRole": "product-selector"
+    },
+    {
+     "order": 41,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "checkout",
+     "options": [],
+     "id": "rx-a29",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: subscriptionDiscountCode (also preferredCode, discountEligible from the URL or local storage).",
+     "type": "text",
+     "purpose": "Discount code step.",
+     "engineRole": "marketing"
+    },
+    {
+     "order": 42,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [],
+     "id": "rx-a30",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: areasOfConcernPhoto (image type \"hairlinePhoto\").",
+     "type": "photo",
+     "purpose": "Scalp photos \"at the angles we request\" so the doctor can assess the pattern.",
+     "engineRole": "diagnosis"
+    },
+    {
+     "order": 43,
+     "evidence": "code",
+     "branches": true,
+     "branchDetail": "A live 50/50 feature test in the US (\"us_hair-treatment_regular-rx_remove-id-photo-step\") removes this step for half of visitors; the doctor may still ask for ID later through the portal.",
+     "shownWhen": "unknown (signed-in step; order within the medical history is not confirmed)",
+     "stage": "after-account",
+     "options": [],
+     "id": "rx-a31",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: idPhoto.",
+     "type": "photo",
+     "purpose": "Government photo ID to confirm identity.",
+     "engineRole": "identity"
+    },
+    {
+     "order": 44,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "existing patients only (renew, change treatment, change dosage)",
+     "stage": "after-account",
+     "options": [
+      {
+       "label": "I would like to renew my prescription",
+       "effect": "Renewal request (case type RENEW_RX).",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "I would like to change my prescription",
+       "effect": "Change request (case types CHANGE_RX or CHANGE_DOSAGE_RX); needs doctor approval.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "id": "rx-a32",
+     "text": "Wording not public (signed-in step). Field key(s) in the served code: Renewal and change routes (/renew, /change, /change-dosage): reasonForFollowup, preExistingConditionsYesNo, preExistingConditionsDetails, sideEffectsYesNo, sideEffectsDetails, progressPhoto, nextChargeDatePreference.",
+     "type": "single",
+     "purpose": "Follow-up intake for existing patients. Heading in the code: \"Please let us know why you are following up with your physician\".",
+     "engineRole": "safety-screen"
+    }
+   ]
+  },
+  {
+   "id": "landing-quiz",
+   "name": "\"Find what's right for you\" marketing quiz (Shopify landing page)",
+   "audience": "both",
+   "entryUrl": "https://xyonhealth.com/pages/hl-qlp",
+   "stagesSummary": "3 anonymous one-tap questions → fixed \"Recommended for you\" card (finasteride and minoxidil gel) → link to the real consultation. No email, no medical questions, no branching. The page does not say who it is for; the photo and quote are of a man.",
+   "questions": [
+    {
+     "order": 1,
+     "evidence": "observed",
+     "branches": false,
+     "branchDetail": "The answer is only added to the \"Get started\" link as ?concern=<slug> and pushed to the analytics data layer.",
+     "shownWhen": "always",
+     "stage": "anonymous",
+     "options": [
+      {
+       "label": "Receding hairline",
+       "effect": "No effect on the result. Adds concern=receding-hairline to the consultation link.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Crown thinning",
+       "effect": "No effect on the result (the result card is fixed in the page). Adds concern=crown-thinning to the link.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Overall thinning",
+       "effect": "No effect on the result (fixed). Adds concern=overall-thinning to the link.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "id": "lq-q1",
+     "text": "What's your main hair concern?",
+     "type": "single",
+     "purpose": "Engagement question on a paid-traffic landing page. Small print: \"Private. No email required to continue.\"",
+     "engineRole": "marketing"
+    },
+    {
+     "order": 2,
+     "evidence": "observed",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "stage": "anonymous",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "No effect on the result. Adds side_effects=yes to the link.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "No",
+       "effect": "No effect on the result (fixed). Adds side_effects=no.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "id": "lq-q2",
+     "text": "Want to regrow hair without the stress of side effects?",
+     "type": "single",
+     "purpose": "Primes the side-effect message that sells the gel.",
+     "engineRole": "marketing"
+    },
+    {
+     "order": 3,
+     "evidence": "observed",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "stage": "anonymous",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Shows the fixed result card. Adds rx_interest=yes to the link.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Not sure yet",
+       "effect": "Shows the same fixed result card (code). Adds rx_interest=not-sure-yet.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "id": "lq-q3",
+     "text": "Are you interested in doctor-trusted Rx solutions?",
+     "type": "single",
+     "purpose": "Checks intent before sending the visitor to the consultation.",
+     "engineRole": "marketing"
+    },
+    {
+     "order": 4,
+     "evidence": "observed",
+     "branches": false,
+     "branchDetail": "Both buttons go to the consultation welcome page with the three answers as query parameters. The consultation code searched so far does not read those parameters.",
+     "shownWhen": "always",
+     "stage": "anonymous",
+     "options": [],
+     "id": "lq-q4",
+     "text": "Recommended for you: Topical Finasteride & Minoxidil with SiloxysSystem™ Gel. Stops hair loss and regrows hair in 3–6 months. 92% less body absorption vs. oral finasteride. Once-daily gel — targets the scalp, not your whole body. [Get started] [See other options] No commitment required to get started.",
+     "type": "info",
+     "purpose": "Result card. It is static HTML: the script only reveals it, it never changes the product.",
+     "engineRole": "marketing"
+    }
+   ]
+  },
+  {
+   "id": "clinic-connect",
+   "name": "ClinicConnect sign-up (patients of partner clinics, prescription already written)",
+   "audience": "both",
+   "entryUrl": "https://consultation.xyonhealth.com/en-US/clinic-connect",
+   "stagesSummary": "Landing screen → name (wall) → date of birth, sex, region, email, password, SMS opt-in → ID upload → shipping and billing. Not walked beyond the landing screen; steps read from the page's JS chunk.",
+   "questions": [
+    {
+     "order": 1,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "stage": "anonymous",
+     "options": [],
+     "id": "cc-q0",
+     "text": "XYON is proud to partner with world-class medical clinics to deliver science-based health and wellness solutions and help you live your best life. In three quick steps, we'll get you on your way to more hair, without compromise. 01 Create your secure XYON account. 02 Provide shipping and billing information. 03 Enjoy free shipping on your prescribed solution. [Get Started]",
+     "type": "info",
+     "purpose": "Landing screen for patients sent by a partner clinic who already hold a prescription.",
+     "engineRole": "expectation-setting"
+    },
+    {
+     "order": 2,
+     "evidence": "code",
+     "branches": false,
+     "branchDetail": "Later step keys in the code: date-of-birth, biological-sex, region, email, set-password, sms-opt-in, signup-success, id-upload, subscription-discount, user-details-summary. No medical questions: the clinic has already prescribed. Legacy route allows US and Canada; the Photon and Pharmalink routes allow US only. The public Photon page currently shows \"This prescription is no longer available here\".",
+     "shownWhen": "always",
+     "stage": "anonymous",
+     "options": [],
+     "id": "cc-q1",
+     "text": "What's your name? Please use your legal name as it appears on your government-issued ID, so your pharmacy can ship your order. [Legal First Name] [Legal Last Name]",
+     "type": "contact",
+     "purpose": "Identity for the pharmacy. This is the wall for this route: the first real step asks for a name.",
+     "engineRole": "identity"
+    }
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "id": "R1",
+   "flow": "rx",
+   "when": "rx-q4 = Female and rx-q5 = Yes (pregnant, trying to conceive, breastfeeding, or having or planning fertility treatment)",
+   "then": "Hard stop before account creation: \"XYON cannot offer this service to females who are pregnant or trying to conceive.\" Only an email box for updates is offered.",
+   "effectType": "hard-stop",
+   "affects": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p8"
+   ],
+   "evidence": "observed",
+   "proof": "runs/map-stop-pregnancy vs runs/baseline-women; code: quiz-definition-eligibility-logic.js (function sj, reason PREGNANCY)",
+   "confidence": "high"
+  },
+  {
+   "id": "R2",
+   "flow": "rx",
+   "when": "Age under 18 on the day (from rx-q3)",
+   "then": "Hard stop: \"XYON can only offer this service to those aged 18 and older.\" No upper age limit exists in the anonymous code.",
+   "effectType": "hard-stop",
+   "affects": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p8"
+   ],
+   "evidence": "code",
+   "proof": "quiz-definition-eligibility-logic.js (function sj, reason AGE); wording in quiz-definition.js",
+   "confidence": "high"
+  },
+  {
+   "id": "R3",
+   "flow": "rx",
+   "when": "rx-q1 = Canada and province is Manitoba, New Brunswick, Prince Edward Island, Quebec or Saskatchewan",
+   "then": "Hard stop with the country/region reason. All US states and DC, and the other eight provinces and territories, pass.",
+   "effectType": "hard-stop",
+   "affects": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p8"
+   ],
+   "evidence": "code",
+   "proof": "quiz-definition-regions.js (isSupported flags) and quiz-definition-eligibility-logic.js (reason COUNTRY_OR_REGION)",
+   "confidence": "high"
+  },
+  {
+   "id": "R4",
+   "flow": "rx",
+   "when": "rx-q1 = Other and country is one of 28 listed European countries (EU members plus the United Kingdom)",
+   "then": "No XYON consultation. A partner hand-off screen points to EU specialist physicians (status CURAFLOW_SUPPORTED; link dashboard.curoflow.ch/SiloxysSystem). Any other country gets the not-eligible screen.",
+   "effectType": "hard-stop",
+   "affects": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p8"
+   ],
+   "evidence": "code",
+   "proof": "quiz-definition-eligibility-logic.js (CURAFLOW_SUPPORTED), quiz-definition-regions.js (list d), quiz-definition.js (screen text)",
+   "confidence": "high"
+  },
+  {
+   "id": "R5",
+   "flow": "rx",
+   "when": "rx-q4 = Female",
+   "then": "One extra question (rx-q5) is added. The signed-in route becomes /womens/new. In the product feed the finasteride-only gel and oral finasteride carry only MALE_ELIGIBLE, so they are not available to women; oral spironolactone carries only FEMALE_ELIGIBLE, so it is not available to men. Dutasteride gel, finasteride-plus-minoxidil gel and solution, oral minoxidil and oral minoxidil with vitamin D carry both tags.",
+   "effectType": "product-removed",
+   "affects": [
+    "p1",
+    "p5",
+    "p8"
+   ],
+   "evidence": "code",
+   "proof": "runs/baseline-women (extra question observed); raw/products.json tags; quiz-definition.js route builder (module 31766)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R6",
+   "flow": "landing-quiz",
+   "when": "Any combination of the three answers",
+   "then": "The same product is always shown as \"Recommended for you\": Topical Finasteride & Minoxidil with SiloxysSystem Gel. Answers only become link parameters and analytics events.",
+   "effectType": "marketing-only",
+   "affects": [
+    "p3"
+   ],
+   "evidence": "code",
+   "proof": "quiz-definition-landing-quiz.js and quiz-definition-landing-quiz.html (static result card); one path seen live in runs/baseline-landing-quiz",
+   "confidence": "high"
+  },
+  {
+   "id": "R7",
+   "flow": "rx",
+   "when": "Plan type = one-time purchase (first order)",
+   "then": "A $20 consultation fee is added (\"New\" checkout SKUs cost $20 more than \"Refill\" SKUs). Subscriptions include the consultation.",
+   "effectType": "none",
+   "affects": [
+    "p17"
+   ],
+   "evidence": "docs",
+   "proof": "https://help.xyonhealth.com/faq/how-much-does-the-consultation-cost and raw/products.json (New vs Refill prices)",
+   "confidence": "high"
+  }
+ ],
+ "experiments": [
+  {
+   "id": "map-stop-pregnancy",
+   "flow": "rx",
+   "changed": "rx-q5: No → Yes (baseline woman)",
+   "result": "Instead of \"Congrats! You are eligible.\" the flow ends at \"Sorry, you're not currently eligible. XYON cannot offer this service to females who are pregnant or trying to conceive.\" with an email box. Run for the map only, to capture the stop-screen wording.",
+   "run": "runs/map-stop-pregnancy"
+  }
+ ],
+ "recommendations": [
+  {
+   "profile": "Marketing quiz, any answers (seen with: receding hairline / yes / yes)",
+   "offered": [
+    "p3"
+   ],
+   "default": "p3",
+   "note": "Fixed card; not a real recommendation engine.",
+   "evidence": "observed"
+  },
+  {
+   "profile": "Man, 32, California: real consultation",
+   "offered": [],
+   "default": "",
+   "note": "Nothing is offered before the account wall. After it the patient flags a preference and a doctor decides. Not observable under the rules.",
+   "evidence": "observed"
+  },
+  {
+   "profile": "Woman, 38, California, not pregnant: real consultation",
+   "offered": [],
+   "default": "",
+   "note": "Same: eligible, then account wall, no product shown.",
+   "evidence": "observed"
+  }
+ ],
+ "engineSummary": "XYON's public engine is only a gate, not a recommender. Four or five anonymous questions check where you live, that you are 18 or over, your biological sex and, for women, pregnancy, conception, breastfeeding or fertility treatment. Pass and you must create an account; fail and you are asked for an email for updates (or, in 28 European countries, sent to a partner). The real decision happens after sign-in: a medical history (hair-loss history, earlier treatments and why they were stopped, mental health, cancer, sexual and urinary history, general conditions, blood pressure, kidney, medicines, allergies, pregnancy in the household), then the patient states a treatment preference and an application method (Topical, Topical low dose, Oral, or no preference), picks a plan, uploads scalp photos and photo ID, and a doctor chooses the medicine. Sex limits the product set through tags on the checkout products: finasteride-only gel and finasteride tablets are for men, spironolactone is for women, the rest are for both. The \"personalised\" quiz on the marketing site always recommends the same gel.",
+ "strengths": [
+  "A clear technical story: one patented gel base (SiloxysSystem, US patent 11,786,466) with published absorption claims (\"92% less absorbed into the blood than pills\") and doctor founders.",
+  "Honest, prominent compounded-medicine and safety notices on every prescription page.",
+  "Very short eligibility gate (4 to 5 taps) before the account wall.",
+  "Serves women with the same flow, with a hard pregnancy and fertility stop before any data is collected.",
+  "A second route to market through 100+ partner hair-restoration clinics (ClinicConnect).",
+  "Simple plan logic: subscription includes the consultation; one-time orders pay $20."
+ ],
+ "weaknesses": [
+  "No recommendation or price is shown before sign-up: the visitor must give a legal name, email and password to learn anything personal.",
+  "The marketing quiz is not real: every answer leads to the same product.",
+  "Premium prices ($109 to $139 a month for the gels) against cheaper compounded sprays elsewhere.",
+  "The finasteride and minoxidil solution's strengths are not published on its page.",
+  "Help centre has dead links for the articles on who is ineligible and which treatment suits whom.",
+  "Review time is stated inconsistently (24–48 hours on product pages, 3–5 business days on the how-it-works page).",
+  "Photo ID step adds friction (they are testing its removal on half of US visitors)."
+ ],
+ "opportunities": [
+  "Show a genuine, answer-driven recommendation with price before asking for an account.",
+  "Publish plain eligibility rules (conditions and medicines that rule each treatment out) instead of leaving them to the doctor review.",
+  "Offer a lower-priced controlled-release topical, or publish strengths and absorption data for every formula.",
+  "Give women a tailored path (menopause, contraception, PCOS questions) rather than one shared flow with a single pregnancy gate."
+ ],
+ "sources": [
+  {
+   "title": "XYON Health home page",
+   "url": "https://xyonhealth.com/"
+  },
+  {
+   "title": "Consultation welcome (entry point of the real flow)",
+   "url": "https://consultation.xyonhealth.com/en-US/hair-treatment-rx/welcome"
+  },
+  {
+   "title": "Welcome page JS chunk with the eligibility schema (saved as quiz-definition.js)",
+   "url": "https://consultation.xyonhealth.com/_next/static/chunks/app/%5Blang%5D/hair-treatment-rx/welcome/page-e63947ba0769336e.js"
+  },
+  {
+   "title": "Shopify product feed (saved as raw/products.json)",
+   "url": "https://xyonhealth.com/products.json?limit=250"
+  },
+  {
+   "title": "Marketing quiz landing page",
+   "url": "https://xyonhealth.com/pages/hl-qlp"
+  },
+  {
+   "title": "Topical Finasteride with SiloxysSystem Gel",
+   "url": "https://xyonhealth.com/products/topical-finasteride"
+  },
+  {
+   "title": "Topical Dutasteride with SiloxysSystem Gel",
+   "url": "https://xyonhealth.com/products/topical-dutasteride"
+  },
+  {
+   "title": "Topical Finasteride & Minoxidil with SiloxysSystem Gel",
+   "url": "https://xyonhealth.com/products/topical-finasteride-and-minoxidil"
+  },
+  {
+   "title": "Topical Finasteride & Minoxidil Solution",
+   "url": "https://xyonhealth.com/products/topical-finasteride-and-minoxidil-solution"
+  },
+  {
+   "title": "Oral Finasteride",
+   "url": "https://xyonhealth.com/products/oral-finasteride"
+  },
+  {
+   "title": "Oral Minoxidil with Vitamin D",
+   "url": "https://xyonhealth.com/products/minoxidil-tablets-with-vitamin-d"
+  },
+  {
+   "title": "Oral Spironolactone",
+   "url": "https://xyonhealth.com/products/spironolactone-for-hair-loss-in-females"
+  },
+  {
+   "title": "Women's hair-loss treatments collection",
+   "url": "https://xyonhealth.com/collections/hair-loss-treatments-for-women"
+  },
+  {
+   "title": "How XYON works",
+   "url": "https://xyonhealth.com/pages/how-xyon-works"
+  },
+  {
+   "title": "Help centre index",
+   "url": "https://help.xyonhealth.com/faq"
+  },
+  {
+   "title": "Help: How much does the consultation cost?",
+   "url": "https://help.xyonhealth.com/faq/how-much-does-the-consultation-cost"
+  },
+  {
+   "title": "Help: Do you charge my card during the consultation?",
+   "url": "https://help.xyonhealth.com/faq/do-you-charge-my-card-during-the-consultation"
+  },
+  {
+   "title": "Help: Is it safe to use topical finasteride, minoxidil or dutasteride during pregnancy or while breastfeeding?",
+   "url": "https://help.xyonhealth.com/faq/can-i-use-topical-treatments-with-finasteride-minoxidil-and-dutasteride-while-pregnant-or-breastfeeding"
+  },
+  {
+   "title": "Help: How will the prescribing physician review my information?",
+   "url": "https://help.xyonhealth.com/faq/how-will-the-prescribing-physician"
+  },
+  {
+   "title": "Help: How do I know if I'm eligible",
+   "url": "https://help.xyonhealth.com/faq/how-do-i-know-if-im-eligible"
+  },
+  {
+   "title": "Cancellation (subscription) policy",
+   "url": "https://xyonhealth.com/policies/subscription-policy"
+  },
+  {
+   "title": "Refund policy",
+   "url": "https://xyonhealth.com/policies/refund-policy"
+  },
+  {
+   "title": "Telehealth consent",
+   "url": "https://xyonhealth.com/pages/telehealth-consent"
+  },
+  {
+   "title": "ClinicConnect sign-up page",
+   "url": "https://consultation.xyonhealth.com/en-US/clinic-connect"
+  },
+  {
+   "title": "Feature flags fetched by the consultation page (saved in runs/w02/net/)",
+   "url": "https://cdn.growthbook.io/api/features/sdk-YjJNaCIPI8lov"
+  }
+ ],
+ "limitations": [
+  "The medical-history questions are known only as field keys from public code. Their wording, options, order and branch conditions were not seen, because they are served only after an account is created.",
+  "Some field keys in the shared enum (nitroglycerin, recreational drugs, serious cardiac episode) may belong to the sexual-health flow, not the hair flow.",
+  "What the doctor prescribes for a given patient cannot be observed. Sex-based product limits are read from Shopify product tags, not from a live result.",
+  "US prices only (en-US). Canadian prices and the en-CA flow were not checked.",
+  "The strengths of the finasteride and minoxidil solution, and the vitamin D dose in the compounded minoxidil tablet, are not published on the pages read.",
+  "No web search was possible in this session, so no third-party reviews, press or regulator records were used.",
+  "Only the pregnancy stop screen was seen live; the age, region and European-partner screens are from the code."
+ ]
+}

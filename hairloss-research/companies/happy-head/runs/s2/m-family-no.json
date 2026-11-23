@@ -1,0 +1,67 @@
+{
+ "start": "https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1",
+ "locale": "en-US",
+ "timezone": "America/New_York",
+ "exp": {
+  "id": "m-family-no",
+  "flow": "main",
+  "changed": "m-family: Yes → No"
+ },
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "click",
+   "text": "GET MY CUSTOM PLAN"
+  },
+  {
+   "do": "click",
+   "text": "I want to regrow a receding hairline"
+  },
+  {
+   "do": "click",
+   "text": "NEXT"
+  },
+  {
+   "do": "click",
+   "text": "1-3 years"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "Male"
+  },
+  {
+   "do": "click",
+   "text": "Thinning at the hairline"
+  },
+  {
+   "do": "click",
+   "text": "Thinning all over"
+  },
+  {
+   "do": "click",
+   "text": "NEXT"
+  },
+  {
+   "do": "click",
+   "text": "I’m not sure / I don’t have a preference"
+  },
+  {
+   "do": "click",
+   "text": "Take Me to My Plan"
+  },
+  {
+   "do": "wait",
+   "ms": 14000
+  },
+  {
+   "do": "scroll"
+  }
+ ]
+}

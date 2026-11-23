@@ -1,0 +1,173 @@
+{
+ "_about": "Stage 3 (verify) GROUP TEST verify-m-group-medical (men baseline): several medical tick-boxes changed at once. GROUP TEST (men, 5 medical screens changed together): five previous products; five scalp symptoms; scalp steroids; hypertrichosis + PoTS; allergic to dutasteride, melatonin, urea, niacinamide, tretinoin and vitamin B6",
+ "start": "https://www.hairandme.com/c/suh/new",
+ "answers": {
+  "tp": [
+   "Treatment for men"
+  ],
+  "yhg": [
+   "Prevent, stop or reverse hair loss",
+   "Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us."
+  ],
+  "js": [
+   "Ready to start treatment"
+  ],
+  "pds": [
+   {
+    "select": "select[name='3039']",
+    "value": {
+     "label": "Male"
+    }
+   }
+  ],
+  "pdsc": [
+   "I confirm the above selection is accurate and true."
+  ],
+  "mi": [],
+  "ht": [
+   "Straight"
+  ],
+  "hs": [
+   "None of the above"
+  ],
+  "ls": [
+   "None of these apply to me"
+  ],
+  "htp": [
+   "Minoxidil tablets",
+   "Spironolactone tablets",
+   "Minoxidil spray",
+   "Finasteride spray",
+   "Dutasteride capsules",
+   "Yes, I understand this."
+  ],
+  "htam": [
+   "Across the hairline"
+  ],
+  "htc": [
+   "Over a year ago"
+  ],
+  "ar": [],
+  "st": {
+   "byQuestion": {
+    "9346": [
+     "Fair. It often burns, but tans a little"
+    ],
+    "9348": [
+     {
+      "range": "input[type=range]",
+      "value": 25
+     }
+    ]
+   }
+  },
+  "sc": [
+   "Normal"
+  ],
+  "scc": [
+   "Flaking or dandruff",
+   "Redness and crusting around the base of your hair",
+   "Highly sensitive and irritable areas",
+   "Pustules/lumps/cysts",
+   "Pain and/or burning sensation"
+  ],
+  "smt": [
+   "Fuller, denser-looking hair that I feel confident about"
+  ],
+  "pt": [
+   "No"
+  ],
+  "tt": [
+   "The Capsules"
+  ],
+  "pp": [
+   "I agree to the information above and wish to be considered for dutasteride or finasteride. I agree to read the Patient Information Leaflet"
+  ],
+  "mdm": [
+   "Steroids or other medications for psoriasis or eczema on your scalp"
+  ],
+  "mcm": [
+   "Hypertrichosis (excessive hair growth anywhere on the body, unrelated to hormones)",
+   "PoTS syndrome (postural tachycardia syndrome)"
+  ],
+  "al": [
+   "Dutasteride",
+   "Melatonin",
+   "Urea",
+   "Niacinamide",
+   "Tretinoin",
+   "Vitamin B6 (Pyridoxine)"
+  ],
+  "rhf": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "yna": [],
+  "rha": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "di": [
+   "I'm looking for a long-term effective haircare treatment"
+  ],
+  "rj": [],
+  "el": {
+   "byType": {
+    "date_masked": [
+     {
+      "type": "input[name=\"3053\"]",
+      "value": "15061994"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ],
+    "date_split": [
+     {
+      "fill": "Day",
+      "value": "15"
+     },
+     {
+      "fill": "Month",
+      "value": "06"
+     },
+     {
+      "fill": "Year",
+      "value": "1994"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ]
+   }
+  },
+  "ct": [],
+  "hgp": [
+   "Prevent, stop or reverse hair loss"
+  ],
+  "bp": [
+   "Well-controlled"
+  ],
+  "pgc": [
+   "Yes, I've read and understood the information and would like to carry on."
+  ]
+ },
+ "_changed": {
+  "flow": "men",
+  "steps": [
+   "htp",
+   "scc",
+   "mdm",
+   "mcm",
+   "al"
+  ],
+  "sweep": true,
+  "desc": "GROUP TEST (men, 5 medical screens changed together): five previous products; five scalp symptoms; scalp steroids; hypertrichosis + PoTS; allergic to dutasteride, melatonin, urea, niacinamide, tretinoin and vitamin B6",
+  "stage": 3,
+  "kind": "group"
+ }
+}

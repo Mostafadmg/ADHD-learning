@@ -16,23 +16,36 @@ function screens(dir) {
   });
   return out;
 }
-// collapse steps that did not change the screen (ticking a box keeps the same question on screen)
+// collapse steps that did not change the screen (ticking a box keeps the same question on screen).
+// Two different questions can share a title ("Do any of the following apply to you?" is used twice), so the key also
+// takes the start of the second visible line (the first option or the first sentence).
 function sequence(dir) {
   const seq = []; let last = null;
-  screens(dir).forEach(s => { const key = s.url.replace(/[?#].*/, '') + ' :: ' + s.title; if (key !== last) { seq.push(s); last = key; } });
+  screens(dir).forEach(s => {
+    const second = (s.body.split(' | ')[1] || '').slice(0, 40);
+    s.key = s.title + ' || ' + second; s.label = s.title + (second && /apply to you|adverse effects\?$/.test(s.title) ? ' [first option: ' + second + ']' : '');
+    const key = s.url.replace(/[?#].*/, '') + ' :: ' + s.key; if (key !== last) { seq.push(s); last = key; }
+  });
   return seq;
 }
-module.exports = { screens, sequence };
+// multiset difference of screens between two runs
+function diff(dir, cmpDir) {
+  const a = sequence(dir), b = sequence(cmpDir); const left = b.map(s => s.key); const added = [];
+  a.forEach(s => { const i = left.indexOf(s.key); if (i >= 0) left.splice(i, 1); else added.push(s.label); });
+  const leftA = a.map(s => s.key); const removed = [];
+  b.forEach(s => { const i = leftA.indexOf(s.key); if (i >= 0) leftA.splice(i, 1); else removed.push(s.label); });
+  const reworded = []; a.forEach(s => { const o = b.find(x => x.key === s.key); if (o && o.body !== s.body) reworded.push({ title: s.title, thisRun: s.body, compare: o.body }); });
+  return { screens: a.length, compareScreens: b.length, added, removed, reworded, last: a[a.length - 1] };
+}
+module.exports = { screens, sequence, diff };
 if (require.main === module) {
   const args = process.argv.slice(2).filter(a => !a.startsWith('--')); const full = process.argv.includes('--full');
   const a = sequence(args[0]);
   if (!args[1]) { a.forEach((s, i) => console.log(String(i + 1).padStart(2) + '. [' + s.file + '] ' + (full ? s.body : s.title).slice(0, full ? 2000 : 150))); process.exit(0); }
-  const b = sequence(args[1]);
-  const ta = a.map(s => s.title), tb = b.map(s => s.title);
-  console.log('screens: ' + ta.length + ' vs ' + tb.length + ' (compare run)');
-  console.log('ADDED   (in this run, not in compare): ' + JSON.stringify(ta.filter(t => !tb.includes(t)).map(t => t.slice(0, 110))));
-  console.log('REMOVED (in compare, not in this run): ' + JSON.stringify(tb.filter(t => !ta.includes(t)).map(t => t.slice(0, 110))));
-  // reworded screens: same title, different body
-  a.forEach(s => { const o = b.find(x => x.title === s.title); if (o && o.body !== s.body) console.log('BODY DIFFERS on "' + s.title.slice(0, 80) + '"\n   this:    ' + s.body.slice(0, 600) + '\n   compare: ' + o.body.slice(0, 600)); });
-  console.log('LAST SCREEN: ' + a[a.length - 1].title.slice(0, 160) + '  @ ' + a[a.length - 1].url);
+  const r = diff(args[0], args[1]);
+  console.log('screens: ' + r.screens + ' vs ' + r.compareScreens + ' (compare run)');
+  console.log('ADDED   (in this run, not in compare): ' + JSON.stringify(r.added.map(t => t.slice(0, 130))));
+  console.log('REMOVED (in compare, not in this run): ' + JSON.stringify(r.removed.map(t => t.slice(0, 130))));
+  r.reworded.forEach(w => console.log('BODY DIFFERS on "' + w.title.slice(0, 80) + '"\n   this:    ' + w.thisRun.slice(0, 700) + '\n   compare: ' + w.compare.slice(0, 700)));
+  console.log('LAST SCREEN: ' + r.last.title.slice(0, 160) + '  @ ' + r.last.url);
 }

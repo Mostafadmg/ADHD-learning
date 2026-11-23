@@ -1,6 +1,89 @@
-# Hair + Me (UK): working notes, stage 1 (MAP)
+# Hair + Me (UK): working notes, stage 1 (MAP) and stage 2 (EXPERIMENT)
 
-Checked on 23 Nov 2026. Written for the next investigator (stage 2: one-change experiments). Site version seen: `v6.47.0`.
+Checked on 23 Nov 2026. Written for the next investigator (stage 3: verification). Site version seen: `v6.47.0`.
+Sections 1 to 11 are the stage 1 map, corrected where stage 2 proved them wrong (marked "stage 2"). Section 0 is new.
+
+## 0. Stage 2 in one page (read this first)
+
+**What was done.** 47 replays of the public consultation, one browser at a time: 2 baseline replays, 39 experiments that
+changed one answer, and 6 group tests that changed 5 to 11 non-medical answers at once. Every run was compared with a pool
+of baseline visits (`tools/s2_diff.py`), because the server varies screens at random. All runs ended at the account wall
+(`yd`) or at the under-18 stop; nothing was typed into the name screen.
+
+**What the questionnaire visibly does (everything found):**
+
+| answer | visible effect | proof |
+|---|---|---|
+| sex at birth Male / Female | swaps the men's and women's question blocks | baselines |
+| first tile | nothing (it does not route) | `s2-m-tile-women` |
+| age under 18 | the only stop screen (`utt`); 17 years 11 months stops, 18 years and 8 days passes | `s2-m-age-17`, `s2-m-age-18` |
+| age 85 | nothing: no upper limit met | `s2-m-age-85` |
+| two or more goals | extra screen `hgp` listing only the ticked goals | `s2-m-yhg-two` |
+| blood-pressure condition | extra screen `bp`; 'Often elevated' then does nothing | `s2-m-mcm-bp`, `s2-m-mcm-bp-elevated` |
+| pregnant / breastfeeding / likely to conceive = Yes | extra consent screen `pgc`; not turned away | `s2-w-pg-yes` |
+| no hair loss | timing question skipped; still reaches the bag | `scout-men-none` |
+| pets = Yes | warning on the same screen + 'Better for pet owners' badge on The Capsules (server adds the badge) | `s2-m-pt-yes` |
+| any previous product | must-tick 'stop using them' box | `s2-m-htp-fintabs` |
+| medicines = Other | required free-text box | `s2-m-mdm-other` |
+| **gender identity** not blank and not Man/Boy (sex Male) | **the men's 'You're not alone' screen (`yna`) is skipped** | `s2-m-gender-transwoman` |
+| everything else tested | nothing: same screens, same bag | see `company.json` |
+
+"Everything else" includes: patches of complete hair loss, eyebrow / sideburn loss, sudden recent loss, active scalp
+infection, scalp eczema, heart disease, phaeochromocytoma, liver disease, depression, sexual dysfunction, prostate and breast
+cancer history, BPH, antidepressants, minoxidil allergy, finasteride allergy, PCOS, postpartum, facial hair, choosing The
+Drops, and declining finasteride / dutasteride.
+
+**The bag never changes.** 56 walks reached it: always `hairTreatment`, 'Personalised treatment', '4 week supply · 12ml',
+'Prescription', £34.99, free shipping. The POST replies hold only the next step id, so nothing is hidden in the traffic.
+
+**New in stage 2: `yna` is a branch, not noise.** Stage 1 saw it missing once in seven men's walks and called it random.
+It was present in 37 of 41 men's walks; the four without it are exactly the four where gender identity was set to
+Transwoman/Transgirl, Non-Binary or Prefer not to say. A one-change run confirmed it. Lesson: before calling a missing
+screen "random", check every answer in the run, including optional ones.
+
+**Where the real engine is.** After the wall: a pharmacist prescriber picks one of 16 compounded formulas. The company says
+so in writing ("This isn't automated or AI", blog article 712525). Its published limits are the leaflet contraindications;
+its explainer articles call finasteride first-line and dutasteride second-line, and steer women with PCOS to drops. Those
+are `docs` rules in `company.json` (R28 to R42), never seen in a prescription.
+
+**Code-only findings** (`src/nxt/ConsultationStepRoute-*.js`, shared with the other +Me brands, never served to us): an
+add-on selector 'Support your treatment' with an item coded `hairSupplement` (the vitamins) and a 'First box offer'; a
+bundle selector; a second treatment selector with a featured 'Personalised Treatment' option and 'Alternatively, choose
+your preferred ingredients:' with Capsules / Drops chips; a subscription selector that pre-selects any option whose label
+contains 'prescription'.
+
+**How company.json is built now.** Do not edit `company.json` by hand and do not run `build_company.py` any more:
+
+```bash
+cd /home/user/ADHD-learning/hairloss-research/companies/hair-and-me
+python3 tools/build_quizdef.py && python3 tools/s2_apply.py \
+  && node ../../tools/validate.js hair-and-me --stage rules
+```
+
+`s2_apply.py` reads `company.stage1.json` (the frozen stage 1 map), `quiz-definition.json`, every `runs/*/api.jsonl`, and
+the hand-written tables in `tools/s2_text.py` (rules, product lines, summary, limitations). It works out, for every
+option, which runs chose it and how strong that evidence is: one-change replay, group test, stage 1 multi-change scout,
+other route only, or untested. It warns if a rule cites a run that does not exist or claims "no visible change" for a run
+that shows one. Edit the tables, then rebuild.
+
+| stage 2 tool | use |
+|---|---|
+| `tools/s2_make.py [id ...]` | writes `runs/<id>.json` (baseline + one changed answer, or a group test) from the lists in the file |
+| `tools/s2_run.sh <id> ...` | replays runs one at a time with a pause; `s2-base-men-N` / `s2-base-women-N` replay a baseline |
+| `tools/s2_diff.py <id> ...` | compares a run with the baseline pool; prints new / missing steps, changed definitions, the bag |
+| `tools/s2_apply.py` | rebuilds `company.json` |
+| `tools/s2_text.py` | every hand-written sentence of stage 2, with its evidence label |
+
+**Not tested (answer files ready in `runs/_not-run/`):** women's 'receding hairline' and 'I don't know what kind of hair
+loss I have' (the only two options still `unknown`), the women's under-18 stop as a single change, age 106, BPH medicine
+alone, the allergy free-text box alone, 'Complete hair loss' alone, spironolactone alone for women, the drops promo link.
+To run one: `mv runs/_not-run/<id>.json runs/ && bash tools/s2_run.sh <id> && python3 tools/s2_diff.py <id>`.
+
+**For stage 3 (verification), check first:** (1) the quotes in rules R38 to R42 against the saved articles in
+`src/support/`; (2) the `yna` rule with one more gender identity value; (3) that `shots/` still matches (a screenshot of the
+pet badge is at `runs/s2-m-pt-yes/16.jpg`, of the missing-`yna` run nothing to show); (4) the Trustpilot statements, which
+were read through web search summaries and are labelled third-party; (5) a Cosmopolitan UK review of Hair + Me exists
+(article a64428039) but could not be opened from this machine, so it is not used.
 
 ## 1. The short version
 
@@ -38,7 +121,7 @@ Checked on 23 Nov 2026. Written for the next investigator (stage 2: one-change e
   |---|---|
   | step `js` ("Where are you in your hair regrowth journey?") | present in 5 of 7 men's runs, 2 of 4 women's runs |
   | step `hs` ("How do you usually style or treat your hair?") | present in 4 of 7 men's runs, 4 of 4 women's runs |
-  | step `yna` ("You're not alone" screen) | present in 6 of 7 men's runs, never for women; title sometimes "Lots of people feel this way" |
+  | step `yna` ("You're not alone" screen) | **stage 2: not random.** Shown to men only when gender identity is blank or Man/Boy (see section 0). Only its title varies at random ("Lots of people feel this way") |
   | step `pds` title | "Your medical history" or "Understanding your hormones" |
   | step `st` (skin tone) | six buttons (question 9346, short or long labels) or a drag slider (questions 9348 + 9349); title "Which best matches your skin?" or "How would you describe your skin tone?" |
   | steps `rhf`, `rha` (0–10 scores) | optional slider (questions 254 / 255) or required 1–10 button row (244 / 245) |
@@ -58,7 +141,7 @@ Checked on 23 Nov 2026. Written for the next investigator (stage 2: one-change e
 | `add.py` | `python3 tools/add.py <answers.json> <stepId> '<json>'` adds or replaces one answer. |
 | `compare.py` | `python3 tools/compare.py <runA> <runB>`: steps only in A / B (random steps flagged), option / badge / text differences in shared steps, and the bag in each run. |
 | `build_quizdef.py` | Rebuilds `quiz-definition.json` from every `runs/*/api.jsonl`. |
-| `build_company.py` | Rebuilds `company.json` from `quiz-definition.json` + the annotation tables inside the script. If you edit `company.json` by hand instead, say so here and stop using the script. |
+| `build_company.py` | Stage 1 only: it built the map that is now frozen as `company.stage1.json`. **Stage 2: do not run it** (it would overwrite `company.json` with the stage 1 version). Use `s2_apply.py` (section 0). |
 | `links.js` | `node tools/links.js <url>` lists consultation links on a page with the section each sits in. |
 
 Answer-file format (see the header of `autowalk.js`):
@@ -117,7 +200,8 @@ type → [`hs` styling, random] → `ls` lifestyle statements → `htp` previous
 `htam` where (pictures, single choice) → [`htc` when; skipped after "None"] → `ar` "Here's what we know..." (info) → `st`
 skin tone → `sc` scalp condition → `scc` scalp symptoms → `smt` six-month goal → `pt` pets → `tt` Drops or Capsules → `pp`
 dutasteride / finasteride acknowledgement → `mdm` medicines (+ free text) → `mcm` conditions → [`bp` blood pressure, only if
-the BP condition is ticked] → `al` allergies (+ free text) → `rhf` feelings score → [`yna` info, random] → `rha` appearance
+the BP condition is ticked] → `al` allergies (+ free text) → `rhf` feelings score → [`yna` info, only when gender identity is
+blank or Man/Boy: stage 2] → `rha` appearance
 score → `di` what influenced you → `rj` "Consistency is key" (info) → `el` date of birth + UK tick → [`utt` stop if under 18]
 → `ct` shopping bag → `yd` **account wall**.
 
@@ -129,8 +213,8 @@ postpartum / facial hair → `mdf` medicines (+ free text) → `mcf` conditions 
 → `el` → [`utt`] → `ct` → `yd` **account wall**.
 
 Men-only: `mi`, `ls`, `htam`, `pp`, `mdm`, `mcm`, `yna`. Women-only: `hw`, `hht`, `hdw`, `htaf`, `dt`, `pg`, `pgc`, `mp`,
-`mdf`, `mcf`. (`ls` and `yna` were never served to women in 4 runs; with random steps in play, treat that as likely, not
-proven.)
+`mdf`, `mcf`. (Stage 2: `ls` and `yna` were never served to women in 17 walks, and `mi` and `ls` were served in all 41 men's
+walks, so these are route rules, not chance.)
 
 Client-side show/hide rules read from the step JSON (`renderConditions`):
 - `htp`: any product ticked → must-tick "Yes, I understand this." (stop using them when you start).
@@ -184,8 +268,12 @@ slugs and did not guess any.
 | `scout-men-1`, `-2`, `-3`, `scout-women-1`, `-2`, `scout-neither` | **multi-change scouts**: several answers changed at once, only to find new screens. Their `.json` files say what was changed. Do not read them as one-change experiments. |
 | `scout-men-none` | one change: `htam` = None (timing question skipped) |
 | `entry-promo-caps-men` | baseline men entered through the capsules promo link |
+| `s2-base-men-1`, `s2-base-women-1` | stage 2 baseline replays (same answers as the baselines; they show the random variation) |
+| `s2-m-*`, `s2-w-*` | stage 2 experiments on the men's / women's route; each `runs/<id>.json` states its one change in `_changed`. `*-sweep-*` are group tests (several non-medical answers at once) |
+| `s2-batch-*.log` | start / end time and last line of each replay |
+| `_not-run/` | prepared answer files that were not replayed (budget) |
 
-## 9. What stage 2 should test first
+## 9. What stage 1 asked stage 2 to test (done unless section 0 says otherwise)
 
 1. **Confirm the scout findings one change at a time** (rules R3, R5, R6, R7, R8 in `company.json` are marked preliminary):
    two goals → `hgp`; BP condition → `bp`; pregnant Yes → `pgc`; under 18 → `utt`; pets Yes → badge on `tt`.

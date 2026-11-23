@@ -1,0 +1,20 @@
+STEP 03 click "I want fuller, healthier-looking hair"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+What would you like to improve about your hair?
+Understanding your concerns helps us personalize the most effective formula for you. Select all that apply.
+I want to regrow a receding hairline
+I want fuller, healthier-looking hair
+I want to prevent future hair loss
+I'm just exploring my options
+NEXT
+Your Hair Story
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

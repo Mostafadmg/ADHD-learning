@@ -1,18 +1,11 @@
-URL: https://core.onlinedoctor.lloydspharmacy.com/pages/preconsultation
+URL: https://core.onlinedoctor.lloydspharmacy.com/consultation/current
 
 Exit consultation
-Before we begin
-
-We'll now ask you a few questions to assess your suitability for treatment. It's important to answer all questions honestly.
-
-If you have any problems understanding or answering any questions, please contact us
-
-Please confirm the following:
-
-I am 18 years old or above and using this service on my own behalf.
-I will give honest, accurate, up-to-date information for safe advice.
-I know this consultation will be part of my Online Doctor medical record and will be kept in line with the relevant retention period.
-I acknowledge that I may be prescribed a medicine outside of its licensed indication ("off-label" use).
-I confirm the above
+Your details
+What is your date of birth?
+For example: 31 3 1980
+Day
+Month
+Year
 Next
 Back

@@ -1,0 +1,21 @@
+STEP 22 pgc AFTER ANSWERS ["Yes, I've read and understood the information and would like to carry on."]
+URL: https://www.hairandme.com/c/suh/pgc
+
+--- VISIBLE TEXT ---
+Pregnancy safety information
+
+We can prescribe you a treatment that's considered safe during this time but before we do this, we need you to read the information in the link below about the treatment and make an informed decision on whether you want to continue.
+
+Information on treatment during pregnancy
+
+Yes, I've read and understood the information and would like to carry on.
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+a -> https://www.hairandme.com/support/en/articles/254008-can-i-use-hair-me-if-i-am-pregnant-breastfeeding-or-trying-to-conceive | Information on treatment during pregnancy
+input:checkbox[name=3049] | Yes, I've read and understood the information and would like to carry on. [checked]
+button:submit | NEXT QUESTION
+a -> /c/suh/pgc?action=previous | Back to previous page

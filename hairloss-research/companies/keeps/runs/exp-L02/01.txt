@@ -1,0 +1,24 @@
+STEP 01 click "Crown"
+URL: https://www.keeps.com/quiz?step=2
+TITLE: Take the Hair Loss Quiz | Keeps
+
+--- VISIBLE TEXT ---
+What results are you expecting from your treatment?
+
+Choose as many as you like.
+
+I want to prevent hair loss
+
+I want to regrow my hair
+
+I want thicker hair
+
+CONTINUE
+
+Take the Hair Loss Quiz | Keeps
+
+--- CONTROLS ---
+  button (4): I want to prevent hair loss  ·  I want to regrow my hair  ·  I want thicker hair  ·  CONTINUE
+
+--- LINKS ---
+

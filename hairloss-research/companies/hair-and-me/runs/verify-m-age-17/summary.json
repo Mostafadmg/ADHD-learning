@@ -1,0 +1,83 @@
+{
+ "run": "verify-m-age-17",
+ "flow": "men",
+ "changed": "men-el-dob: 15/06/1994 (32) → 15/12/2008 (17 years 11 months). Independent re-test of runs/s2-m-age-17",
+ "changedStep": "el",
+ "baselinesPooled": [
+  "baseline-men",
+  "s2-base-men-1",
+  "verify-base-men"
+ ],
+ "stepOrder": [
+  "tp",
+  "yhg",
+  "js",
+  "pds",
+  "pdsc",
+  "mi",
+  "ht",
+  "hs",
+  "ls",
+  "htp",
+  "htam",
+  "htc",
+  "ar",
+  "st",
+  "sc",
+  "scc",
+  "smt",
+  "pt",
+  "tt",
+  "pp",
+  "mdm",
+  "mcm",
+  "al",
+  "rhf",
+  "yna",
+  "rha",
+  "di",
+  "rj",
+  "el",
+  "utt"
+ ],
+ "nSteps": 30,
+ "end": "stop screen utt",
+ "newSteps": [
+  "utt"
+ ],
+ "missingSteps": [
+  "ct",
+  "yd"
+ ],
+ "candidateEffects": [],
+ "noise": [
+  {
+   "step": "pds",
+   "key": "title",
+   "where": "before-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-al-minoxidil",
+    "s2-m-htam-patches"
+   ]
+  }
+ ],
+ "bag": null,
+ "bagItemsSameAsBaseline": null,
+ "posted": {
+  "el": [
+   [
+    3053,
+    "2008-12-15"
+   ],
+   [
+    2007,
+    true
+   ]
+  ]
+ },
+ "nextAfterChange": {
+  "el": "utt"
+ },
+ "sweep": false
+}

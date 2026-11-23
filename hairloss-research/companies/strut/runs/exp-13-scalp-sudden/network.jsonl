@@ -9,3 +9,4 @@
 {"url":"https://m.stripe.com/6","method":"POST","status":200,"size":156}
 {"url":"https://checkout-api.struthealth.com/api/Visiting/ValidateVisitingId","method":"POST","status":200,"size":87}
 {"url":"https://sdk.iad-02.braze.com/api/v3/data/","method":"POST","status":201,"size":2}
+{"url":"https://m.stripe.com/6","method":"POST","status":200,"size":156}

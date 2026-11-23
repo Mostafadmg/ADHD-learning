@@ -16,13 +16,16 @@
    "site-code",
    "public-docs"
   ],
-  "accountWall": "Not located. The consultation at hims.com/c/hl could not be opened, so where sign-in is forced in the US flow is unknown. (The landing-page pre-quiz has no wall and ends by linking to /c/hl.)",
+  "accountWall": "Not located. The men's consultation at hims.com/c/hl would not load on two more tries in stage 2 (22:17 and 22:30 UTC, 23 Nov 2026), so where sign-in is forced in the US flow is still unknown. The landing-page pre-quiz has no wall: it ends on a product pitch whose buttons link to /c/hl. Weak hints only: the page state has a \"registration\" field and an \"initialQuestionnaire\" field (a first set of questions kept apart from the medical \"intakeFormUpfront\"), which fits the UK sister site where a marketing quiz comes first and the email wall comes before any medical question; that is an inference, not something seen on hims.com.",
   "blockers": [
    "hims.com/c/hl and /c/hl/goals: the page itself returns HTTP 200, but Cloudflare answers the site's own script files (/hims.us.modern.*.js) with HTTP 403 \"Just a moment...\" (header cf-mitigated: challenge). The quiz is drawn by those scripts, so it never leaves the loading spinner. Tried twice, 30+ seconds apart. Not bypassed.",
    "forhers.com (Hers US): every page shows Cloudflare's \"Performing security verification\" check. Not bypassed.",
-   "The fetch tool gets HTTP 403 from hims.com and forhers.com as well."
+   "The fetch tool gets HTTP 403 from hims.com and forhers.com as well.",
+   "Stage 2 re-test (23 Nov 2026, 22:17 and 22:30 UTC): still blocked. On the second try 37 of the page's own script files (/hims.us.modern.*.js, including the hair consultation chunk) were answered with HTTP 403. Proof: runs/s2-baseline-men, runs/s2-diag-hl-retry/requests.log. Not bypassed.",
+   "Cached copies: web.archive.org resets the connection from this machine and the fetch tool refuses the host. archive.org's availability service says copies of /c/hl (11 Nov 2026) and /c/hl/goals (28 Oct 2026) exist, but they could not be opened.",
+   "Web search stopped working after one query in stage 2 (shared search budget used up), so no new third-party walkthroughs could be searched for. Known pages were fetched directly instead."
   ],
-  "coverageNote": "What was done: every hair product page on hims.com was read (they are server-rendered and load normally), with ingredients, strengths and public prices; all entry links were mapped; one landing-page pre-quiz (3 questions) was walked live and its definition extracted from the page data; safety information pages and help-centre drug sheets were read for who can and cannot have each treatment. What was NOT done: the real consultation (questions, branching, recommendation screen, plan prices, account wall) for men, and anything at all on Hers for women. The men's question list is a skeleton of topics, not real screens."
+  "coverageNote": "Stage 1 (map): every hair product page on hims.com was read, entry links mapped, one landing-page pre-quiz walked, safety pages and help-centre drug sheets read. Stage 2 (experiment): the men's consultation was re-tested twice and is still blocked, so NO one-change experiment could be run on the real questionnaire. What was tested live: the three-question landing-page pre-quiz, with one baseline replay and four one-change replays that cover every non-baseline option (5 replays; every request the page made was logged). Result: no answer changes anything the visitor sees. Stage 2 also read two more hair landing pages (no pre-quiz on them), six more Hims blog posts and five more help-centre articles for published descriptions of the intake, review and plans, and re-read the page state served with /c/hl for feature-flag settings. Everything said about the real consultation is therefore \"docs\" (Hims says so in public), \"code\" (field and flag names in the page hims.com serves; names only, no question text) or \"inferred\". NOT done: any question, branch, stop screen, recommendation, plan price or account wall of the men's consultation; anything on Hers (women)."
  },
  "products": [
   {
@@ -65,7 +68,7 @@
    "price": "Starting at $35 per month (hair-loss landing page, 23 Nov 2026)",
    "priceDetail": "Product pages and the /lp landing page show \"Starting at $29 per month*\" with the footnote \"*With a 10-month plan, paid upfront in full. Pricing varies by subscription plan\". Prices for other plan lengths are only shown inside the consultation (not seen). Tagged \"New\".",
    "url": "https://www.hims.com/hair-loss/finasteride-minoxidil-supplement-pill",
-   "recommendedWhen": "unknown (the consultation that makes the recommendation could not be opened: see access.blockers)",
+   "recommendedWhen": "Not seen (consultation blocked). Docs: prescribed through the /c/hl consultation when the provider judges a once-daily pill with oral finasteride and oral minoxidil suitable. Published exclusions: under 18; not assigned male at birth, pregnant or able to become pregnant; certain heart disease; chronic kidney disease stage 3 to 5; liver disease; pheochromocytoma; blood thinners, antiplatelet drugs or antifungals; bleeding disorder; prostate or male breast cancer in the last 5 years; recent chemotherapy; high-dose zinc; grape or wine allergy; already using a finasteride or minoxidil product.",
    "evidence": "docs",
    "safetyUrl": "https://www.hims.com/important-safety/finasteride-minoxidil-supplement-blend-pill"
   },
@@ -101,7 +104,7 @@
    "price": "Starting at $35 per month (hair-loss landing page, 23 Nov 2026)",
    "priceDetail": "\"Starting at $29 per month*\" on product pages and the /lp page (*10-month plan paid upfront). Supplement amounts are not published (\"proprietary blend\"). Tagged \"Most popular\".",
    "url": "https://www.hims.com/hair-loss-finasteride-minox-chew",
-   "recommendedWhen": "unknown (the consultation that makes the recommendation could not be opened: see access.blockers)",
+   "recommendedWhen": "Not seen. Docs: the site tags it \"most popular\" among the oral options; prescribed through /c/hl for men who prefer a chew. Inferred: same exclusions as the pill, because it also contains oral finasteride and oral minoxidil.",
    "evidence": "docs",
    "safetyUrl": "https://www.hims.com/important-safety/hair-hybrids-chewables"
   },
@@ -125,7 +128,7 @@
    "price": "Starting at $35 per month (hair-loss landing page, 23 Nov 2026)",
    "priceDetail": "\"Starting at $29 per month*\" on product pages (*10-month plan paid upfront). Hims blog (hims-vs-keeps, 2025): \"start at $35 a month (when you opt for a five-month plan) or $50 for a three-month plan\" (the blog says this of two Hims products without naming them clearly). A Fortune reviewer paid $150 for a three-month supply. Inactive: alcohol, propylene glycol, citric acid. Tagged \"Quick-drying\"; the page calls it \"our best-selling treatment\".",
    "url": "https://www.hims.com/hair-loss/topical-finasteride",
-   "recommendedWhen": "unknown (the consultation that makes the recommendation could not be opened: see access.blockers)",
+   "recommendedWhen": "Observed: the only product the landing-page pre-quiz pitches, whatever the three answers (\"Get the spray\"). In the real consultation: not seen; probably the default recommendation for a man with no exclusions (inferred from the flag name himsHairTopFinRecco, on for all visitors; low confidence). Docs: not with oral finasteride or dutasteride, chronic liver disease, a history of breast or prostate cancer, under 18, or for women.",
    "evidence": "docs",
    "safetyUrl": "https://www.hims.com/important-safety/rx-hair-loss-spray"
   },
@@ -157,7 +160,7 @@
    "price": "Starting at $39 per month (hair-loss landing page, 23 Nov 2026)",
    "priceDetail": "\"Starting at $33 per month\" on product-page carousels. Hims blog (2025): \"our 4-in-1 spray ... retails for $39 a month\". Fortune (2026) calls it a \"select-market\" product, so it may not be offered in every state (not confirmed on the site).",
    "url": "https://www.hims.com/hair-loss/hair-loss-spray",
-   "recommendedWhen": "unknown (the consultation that makes the recommendation could not be opened: see access.blockers)",
+   "recommendedWhen": "Observed: named in the pre-quiz end pitch as the \"4-in-1 formula available with ketoconazole and biotin\". In the real consultation: not seen; inferred to be the step-up version of the spray (higher minoxidil, plus ketoconazole and biotin) offered next to it at a higher price. Same published exclusions as the spray.",
    "evidence": "docs",
    "safetyUrl": "https://www.hims.com/important-safety/rxspray-ketoconazole-biotin"
   },
@@ -184,7 +187,7 @@
    "price": "Starting at $35 per month (hair-loss landing page, 23 Nov 2026)",
    "priceDetail": "\"Starting at $29 per month*\" on product pages (*10-month plan paid upfront). Tagged \"Direct application\".",
    "url": "https://www.hims.com/hair-loss/serum",
-   "recommendedWhen": "unknown (the consultation that makes the recommendation could not be opened: see access.blockers)",
+   "recommendedWhen": "Not seen. Docs: the same two actives as the spray in a dropper serum (\"Direct application\"); Hims says formats exist \"to fit your routine\" and asks about styling habits, so it is probably offered to men who prefer a serum to a spray (inferred). Same published exclusions as the spray.",
    "evidence": "docs",
    "safetyUrl": "https://www.hims.com/important-safety/rx-hair-loss-serum"
   },
@@ -216,7 +219,7 @@
    "price": "$29 per month on a 10-month plan, paid upfront in full",
    "priceDetail": "Shown as \"Starting at $29 per month\" everywhere. The Google Shopping page states \"$29/mo, 10-mo plan*\". No finasteride: the oral option without a DHT blocker. Tagged \"Convenient routine\".",
    "url": "https://www.hims.com/hair-loss/minox-chew",
-   "recommendedWhen": "unknown (the consultation that makes the recommendation could not be opened: see access.blockers)",
+   "recommendedWhen": "Not seen. Inferred: the oral option without finasteride, for men who cannot or do not want to take finasteride (for example worried about sexual side effects, or already on a 5-alpha reductase inhibitor) but can take oral minoxidil. Oral minoxidil cautions (heart, kidney, blood pressure) would apply.",
    "evidence": "docs",
    "safetyUrl": "https://www.hims.com/important-safety/hair-hybrids-chewables",
    "otherUrls": [
@@ -239,7 +242,7 @@
    "price": "Starting at $22 per month",
    "priceDetail": "Shopping page: \"One time purchase price is for a 12-month supply of Finasteride. Subscription price is for a 3-month supply\" (the amounts are drawn by script and were not in the page text). Refund offer on that page: \"Full refund of price paid available for first 90 days' supply. Refund request must be made between 90 and 180 days after product shipment delivered.\"",
    "url": "https://www.hims.com/hair-loss/finasteride",
-   "recommendedWhen": "unknown (the consultation that makes the recommendation could not be opened: see access.blockers)",
+   "recommendedWhen": "Not seen. Docs: the FDA-approved generic tablet, \"starts at $22 a month\"; prescribed after the consultation \"if a provider decides you're a good match\" (Hims: with male pattern hair loss \"you most likely are\"). Not for women or anyone under 18; tell the provider about prostate or liver problems.",
    "evidence": "docs",
    "safetyUrl": "https://www.hims.com/important-safety/finasteride",
    "otherUrls": [
@@ -272,7 +275,7 @@
    "price": "Starting at $60 per month",
    "priceDetail": "The product page showed \"Out of stock\" on 23 Nov 2026. A separate shopping page sells a \"custom kit\": \"Subscribe at $26/mo Best Value. Get Finasteride pills and your choice of: Biotin Gummy Vitamins, Minoxidil Solution, Thick Fix Shampoo\".",
    "url": "https://www.hims.com/hair-loss/hair-power-pack",
-   "recommendedWhen": "unknown (the consultation that makes the recommendation could not be opened: see access.blockers)",
+   "recommendedWhen": "Not offered at present: the product page showed \"Out of stock\" on 23 Nov 2026. When sold, a four-product bundle (finasteride tablets, minoxidil solution, shampoo, gummies) for men who want everything together (docs).",
    "evidence": "docs",
    "safetyUrl": "https://www.hims.com/important-safety/finasteride",
    "otherUrls": [
@@ -299,7 +302,7 @@
    "price": "Starting at $32 per month* (*10-month plan paid upfront, per the /lp page footnote)",
    "priceDetail": "Seen only as a card on the landing page /lp/hair-start-top-fin-fa, with the finasteride safety link (so the finasteride part is the oral tablet: inferred). Card text: (\"When used together, men saw better results in clinical trials than using either alone\"); it has no product page of its own. Hims blog posts quote $32 and $39 a month for 3-month and 12-month commitments but two posts give them the opposite way round, so the plan-to-price match is not reliable.",
    "url": "https://www.hims.com/lp/hair-start-top-fin-fa",
-   "recommendedWhen": "unknown (the consultation that makes the recommendation could not be opened: see access.blockers)",
+   "recommendedWhen": "Not seen. Docs: Hims calls its finasteride tablet + minoxidil solution bundle the \"Hair Loss Duo\" (from $32 a month); bought through the same consultation. Inferred: for men who want the two licensed generics rather than a compounded product.",
    "evidence": "docs",
    "safetyUrl": "https://www.hims.com/important-safety/finasteride"
   },
@@ -319,7 +322,7 @@
    "price": "$20 one-time purchase; \"Starting at $19 per month\" on subscription",
    "priceDetail": "\"Subscribe and save: Save up to 5%\". The plan picker text also reads \"1-month supply $20 $30/ea\", which could not be interpreted without the page script. One-time purchase or subscription. Add to cart, no consultation. Not for use if pregnant or breastfeeding. Not shipped to APO/FPO/DPO addresses.",
    "url": "https://www.hims.com/hair-loss/minoxidil-foam",
-   "recommendedWhen": "Sold without a consultation (add to cart). Whether the consultation offers it as an add-on was not seen.",
+   "recommendedWhen": "No consultation: add to cart. Docs: Hims says minoxidil suits \"new hair loss or ... mild to moderate balding\". Inferred from flag names: may also be shown as an add-on at the consultation checkout.",
    "evidence": "docs"
   },
   {
@@ -338,7 +341,7 @@
    "price": "$15 each; \"Starting at $15 per month\"",
    "priceDetail": "Subscription \"Shipped every 3 months\" or one-time purchase at $15/ea. The page says it \"works best to regrow hair in the vertex or crown area. If you're experiencing a receding hairline, finasteride might work for you.\"",
    "url": "https://www.hims.com/hair-loss/minoxidil",
-   "recommendedWhen": "Sold without a consultation (add to cart).",
+   "recommendedWhen": "No consultation: add to cart. Docs: the page says it \"works best to regrow hair in the vertex or crown area\". Part of the Duo kit and the Power Pack. Inferred: may also be shown as an add-on at the consultation checkout.",
    "evidence": "docs",
    "otherUrls": [
     "https://www.hims.com/treatment/hair-loss-minoxidil"
@@ -366,7 +369,7 @@
    "price": "$37 a month on subscription",
    "priceDetail": "\"Shipped every 1 month (most popular)\". No consultation needed.",
    "url": "https://www.hims.com/hair-loss/non-prescription-hair-kit",
-   "recommendedWhen": "Sold without a consultation.",
+   "recommendedWhen": "No consultation: add to cart. For men who want to start without a prescription (docs: sold as a monthly kit).",
    "evidence": "docs"
   },
   {
@@ -384,7 +387,7 @@
    "price": "$19",
    "priceDetail": "Add to cart. Also part of the Hair Power Pack and the non-prescription kit.",
    "url": "https://www.hims.com/hair-care/hair-thickening-shampoo",
-   "recommendedWhen": "Sold without a consultation.",
+   "recommendedWhen": "No consultation: add to cart. Inferred from flag names (himsHairOTCAddOnV1, himsHairFreeShampoo): also pushed as an add-on at the consultation checkout.",
    "evidence": "docs"
   },
   {
@@ -405,7 +408,7 @@
    "price": "$22",
    "priceDetail": "Add to cart.",
    "url": "https://www.hims.com/hair-care/conditioner",
-   "recommendedWhen": "Sold without a consultation.",
+   "recommendedWhen": "No consultation: add to cart. Cosmetic add-on; no rule.",
    "evidence": "docs"
   },
   {
@@ -440,7 +443,7 @@
    "price": "$16",
    "priceDetail": "Subscription \"Shipped every 3 months\" or one-time at $16/ea. The page says: \"Biotin gummies are not a hair loss treatment\".",
    "url": "https://www.hims.com/hair-care/vitamins",
-   "recommendedWhen": "Sold without a consultation.",
+   "recommendedWhen": "No consultation: add to cart. The page itself says biotin gummies \"are not a hair loss treatment\". Cosmetic or supplement add-on; no rule.",
    "evidence": "docs"
   },
   {
@@ -462,7 +465,7 @@
    "price": "$18 one-time; about $17 on subscription",
    "priceDetail": "\"Subscribe and save: Save up to 17%\". The plan line reads \"1 bottle every month $18 $17/ea\" (taken as $17 on subscription).",
    "url": "https://www.hims.com/hair-loss/zinc-pyrithione-shampoo",
-   "recommendedWhen": "Sold without a consultation.",
+   "recommendedWhen": "No consultation: add to cart. For dandruff (pyrithione zinc 1%); not part of the hair-loss consultation as far as public pages show.",
    "evidence": "docs"
   },
   {
@@ -492,7 +495,7 @@
    "price": "$18 one-time; about $17 on subscription",
    "priceDetail": "Plan line reads \"1 bottle every month $18 $17/ea\".",
    "url": "https://www.hims.com/hair-care/volumizing-shampoo-men",
-   "recommendedWhen": "Sold without a consultation.",
+   "recommendedWhen": "No consultation: add to cart. Cosmetic; no rule.",
    "evidence": "docs"
   },
   {
@@ -519,7 +522,7 @@
    "price": "$18 one-time; about $17 on subscription",
    "priceDetail": "Plan line reads \"1 bottle every month $18 $17/ea\".",
    "url": "https://www.hims.com/hair-care/volumizing-conditioner",
-   "recommendedWhen": "Sold without a consultation.",
+   "recommendedWhen": "No consultation: add to cart. Cosmetic; no rule.",
    "evidence": "docs"
   },
   {
@@ -546,7 +549,7 @@
    "price": "$32 one-time; about $30 on subscription",
    "priceDetail": "\"Save up to 6%\". Plan line reads \"1 kit every month $32 $30/ea\".",
    "url": "https://www.hims.com/hair-care/volumizing-shampoo-conditioner",
-   "recommendedWhen": "Sold without a consultation.",
+   "recommendedWhen": "No consultation: add to cart. Cosmetic bundle; no rule.",
    "evidence": "docs"
   },
   {
@@ -579,7 +582,7 @@
    "price": "unknown (no public product page found in the hair section)",
    "priceDetail": "Known only from a help-centre patient drug-information sheet, which says \"Your compounded medication may not include all of the ingredients below\". Strengths not published. Probably sold through the sexual-health consultation; listed here because it treats hair loss too.",
    "url": "https://support.hims.com/hc/en-us/articles/38844902419995-Compounded-Oral-Combination-Tablet-ED-and-Hair-Loss",
-   "recommendedWhen": "unknown",
+   "recommendedWhen": "Unknown. Known only from a help-centre drug sheet. Inferred: offered to men treated for erectile dysfunction and hair loss together (Hims writes of \"2-in-1 and 3-in-1 compounded medications\" for men \"interested in treating multiple health conditions at once\" if \"a provider determines that you are eligible\"; the consultation state has a hair bundling flag). No hair product page sells it.",
    "evidence": "docs"
   },
   {
@@ -598,7 +601,7 @@
    "price": "unknown (no public product page on hims.com)",
    "priceDetail": "Known only from a help-centre drug-information sheet shared by Hims and Hers: \"Minoxidil tablets may be used to help stimulate hair growth in certain patients experiencing hair loss\". Likely a Hers product or a provider-only option; not confirmed.",
    "url": "https://support.hims.com/hc/en-us/articles/38944589097883-Minoxidil",
-   "recommendedWhen": "unknown",
+   "recommendedWhen": "Unknown. Known only from a help-centre drug sheet shared by Hims and Hers; no Hims hair page sells plain oral minoxidil tablets. Possibly prescribed at a provider's discretion (inferred).",
    "evidence": "docs"
   },
   {
@@ -617,7 +620,7 @@
    "price": "unknown directly; a third-party roundup (NCOA) quotes \"$29 per month on Hers\"",
    "priceDetail": "The Hers site could not be opened (security check). Details are from search-engine snippets of the page, not from the page itself.",
    "url": "https://www.forhers.com/hair-loss/oral-minoxidil",
-   "recommendedWhen": "unknown (Hers consultation not reachable)",
+   "recommendedWhen": "Unknown here (Hers site not reachable from this machine). See the separate hers-us report.",
    "evidence": "docs"
   },
   {
@@ -640,7 +643,7 @@
    "price": "unknown",
    "priceDetail": "Search result title \"Most popular Rx\". Page not opened (security check). Ingredients and strengths not verified.",
    "url": "https://www.forhers.com/hair-loss/minoxidil-hair-vitamin",
-   "recommendedWhen": "unknown (Hers consultation not reachable)",
+   "recommendedWhen": "Unknown here (Hers site not reachable from this machine). See the separate hers-us report.",
    "evidence": "docs"
   },
   {
@@ -663,7 +666,7 @@
    "price": "unknown",
    "priceDetail": "Search result title \"2-in-1 treatment Rx\". Page not opened (security check).",
    "url": "https://www.forhers.com/hair-loss/minoxidil-biotin-chew",
-   "recommendedWhen": "unknown (Hers consultation not reachable)",
+   "recommendedWhen": "Unknown here (Hers site not reachable from this machine). See the separate hers-us report.",
    "evidence": "docs"
   },
   {
@@ -682,7 +685,7 @@
    "price": "unknown",
    "priceDetail": "Search snippet: \"blocking androgen hormones which can lead to hair loss in women\". A Hims/Hers help-centre drug sheet for spironolactone exists. Page not opened (security check).",
    "url": "https://www.forhers.com/hair-loss/spironolactone",
-   "recommendedWhen": "unknown (Hers consultation not reachable)",
+   "recommendedWhen": "Unknown here (Hers site not reachable from this machine). See the separate hers-us report.",
    "evidence": "docs"
   }
  ],
@@ -692,7 +695,7 @@
    "name": "Landing-page pre-quiz (3 marketing questions)",
    "audience": "men",
    "entryUrl": "https://www.hims.com/lp/hair-start-top-fin-fa",
-   "stagesSummary": "3 anonymous marketing questions on the landing page itself, then a product pitch with buttons to the real consultation at /c/hl. No account, no medical question, no recommendation.",
+   "stagesSummary": "3 anonymous marketing questions on the landing page itself → the page scrolls to a pitch for the prescription spray with buttons to the real consultation at /c/hl. No account, no medical question, no eligibility check, no price, no plan. Stage 2 clicked every option: the end is the same for all of them. Found on /lp/hair-start-top-fin-fa (and /hair-start-top-fin-lp, which redirects to it); not on /lp/hair-start-preventmaint, /lp/hair-start-comparison-dlp or /hair-loss.",
    "questions": [
     {
      "id": "lp-q1",
@@ -703,33 +706,33 @@
      "options": [
       {
        "label": "Stop hair loss",
-       "effect": "Not clicked in a live run. The served page data gives this option no target of its own (plain text), so it should only move to the next question; stage 2 can confirm in one replay.",
-       "effectType": "unknown",
+       "effect": "Moves to question 2 and nothing else. Same visible text (identical checksum), same scroll position after each click (823, 1628, 2433 px) and same end links (all to /c/hl or /c/hl/goals) as every other answer. The click is logged as a tracking event (…hair-goals_stop-hair-loss…). Proof: runs/exp-lp-01-q1-stop.",
+       "effectType": "marketing-only",
        "affects": [],
-       "evidence": "unknown"
+       "evidence": "observed"
       },
       {
        "label": "Regrow hair",
-       "effect": "Not clicked in a live run. The served page data gives this option no target of its own (plain text), so it should only move to the next question; stage 2 can confirm in one replay.",
-       "effectType": "unknown",
+       "effect": "Moves to question 2 and nothing else. Same visible text (identical checksum), same scroll position after each click (823, 1628, 2433 px) and same end links (all to /c/hl or /c/hl/goals) as every other answer. The click is logged as a tracking event (…hair-goals_regrow-hair…). Proof: runs/exp-lp-02-q1-regrow.",
+       "effectType": "marketing-only",
        "affects": [],
-       "evidence": "unknown"
+       "evidence": "observed"
       },
       {
        "label": "Both",
-       "effect": "Moves to question 2. No page change, no network call, no product change.",
+       "effect": "Baseline answer. Moves to question 2. No page change, no product change; the click is logged as a tracking event (…hair-goals_both…). Proof: runs/s2-baseline-lp-prequiz.",
        "effectType": "marketing-only",
        "affects": [],
        "evidence": "observed"
       }
      ],
-     "purpose": "Engagement: gets the visitor clicking before the sales pitch. The page states the answers are not a medical assessment.",
+     "purpose": "Engagement: gets the visitor clicking before the sales pitch, and records a stated goal against the visitor's device id for marketing. The page itself says the answers are not a medical assessment and are not shared with a provider.",
      "engineRole": "marketing",
      "branches": false,
-     "branchDetail": "No branch in the served definition (options are plain text with no target).",
-     "shownWhen": "always (first of 3, shown in the hero of the landing page)",
+     "branchDetail": "None. All three options were clicked live (stage 2): same next question, same end pitch, same links. The served definition gives the options no target.",
+     "shownWhen": "always (first of 3, in the hero of the landing page /lp/hair-start-top-fin-fa)",
      "evidence": "observed",
-     "proof": "runs/baseline-lp-prequiz/02.txt; quiz-definition.lp-prequiz.json"
+     "proof": "runs/s2-baseline-lp-prequiz, runs/exp-lp-01-q1-stop, runs/exp-lp-02-q1-regrow, runs/exp-lp-03-q2-no, runs/exp-lp-04-q3-notsure; quiz-definition.lp-prequiz.json"
     },
     {
      "id": "lp-q2",
@@ -740,26 +743,26 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "Moves to question 3. Nothing else changes.",
+       "effect": "Baseline answer. Moves to question 3. Nothing else changes. Proof: runs/s2-baseline-lp-prequiz.",
        "effectType": "marketing-only",
        "affects": [],
        "evidence": "observed"
       },
       {
        "label": "No",
-       "effect": "Not clicked in a live run. The served page data gives this option no target of its own (plain text), so it should only move to the next question; stage 2 can confirm in one replay.",
-       "effectType": "unknown",
+       "effect": "Moves to question 3 exactly as \"Yes\" does: saying you are NOT looking for a simple solution changes nothing. Same visible text (identical checksum), same scroll position after each click (823, 1628, 2433 px) and same end links (all to /c/hl or /c/hl/goals) as every other answer. Proof: runs/exp-lp-03-q2-no.",
+       "effectType": "marketing-only",
        "affects": [],
-       "evidence": "unknown"
+       "evidence": "observed"
       }
      ],
-     "purpose": "Engagement and framing (\"simple solution\" leads into the once-a-day spray pitch).",
+     "purpose": "Engagement and framing: \"simple solution\" sets up the once-a-day spray pitch. Not used to choose anything.",
      "engineRole": "marketing",
      "branches": false,
-     "branchDetail": "No branch in the served definition.",
-     "shownWhen": "after lp-q1 is answered",
+     "branchDetail": "None. Both options clicked live: same next question and same end.",
+     "shownWhen": "after lp-q1 is answered (any answer)",
      "evidence": "observed",
-     "proof": "runs/baseline-lp-prequiz/03.txt"
+     "proof": "runs/s2-baseline-lp-prequiz, runs/exp-lp-03-q2-no"
     },
     {
      "id": "lp-q3",
@@ -770,7 +773,7 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "Scrolls the same page to the block \"Prescription-strength ingredients for real results\" with the buttons \"Get the spray\" and \"See if treatment is right for me\" (both go to /c/hl).",
+       "effect": "Baseline answer. The page scrolls to the block \"Prescription-strength ingredients for real results\" (once-daily spray; \"4-in-1 formula available with ketoconazole and biotin\") with the buttons \"Get the spray\" and \"See if treatment is right for me\", both linking to /c/hl. Proof: runs/s2-baseline-lp-prequiz.",
        "effectType": "marketing-only",
        "affects": [
         "p3",
@@ -780,22 +783,22 @@
       },
       {
        "label": "Not sure yet",
-       "effect": "Served data links this option to the same on-page block as \"Yes\" (same target entry id 7iFPgDm1VFwqfOML5ug6Pv). Not clicked live.",
+       "effect": "Exactly the same as \"Yes\": the same prescription spray pitch and the same two buttons to /c/hl. No non-prescription product (foam, solution, shampoo) is offered to someone who is unsure about prescription treatment. Same visible text (identical checksum), same scroll position after each click (823, 1628, 2433 px) and same end links (all to /c/hl or /c/hl/goals) as every other answer. Proof: runs/exp-lp-04-q3-notsure.",
        "effectType": "marketing-only",
        "affects": [
         "p3",
         "p4"
        ],
-       "evidence": "code"
+       "evidence": "observed"
       }
      ],
-     "purpose": "Leads into the spray pitch whatever the answer.",
+     "purpose": "A lead-in to the spray pitch whatever the answer. It looks like a prescription / non-prescription fork but is not one.",
      "engineRole": "marketing",
      "branches": false,
-     "branchDetail": "Both options have the same target in the served page data.",
-     "shownWhen": "after lp-q2 is answered",
+     "branchDetail": "None. Both options clicked live and both land on the same block (the served definition gives both the same target entry, 7iFPgDm1VFwqfOML5ug6Pv).",
+     "shownWhen": "after lp-q2 is answered (any answer)",
      "evidence": "observed",
-     "proof": "runs/baseline-lp-prequiz/05.txt and shots/05-lp-prequiz-end-product-pitch.jpg; quiz-definition.lp-prequiz.json"
+     "proof": "runs/s2-baseline-lp-prequiz, runs/exp-lp-04-q3-notsure; quiz-definition.lp-prequiz.json"
     }
    ],
    "definitionFile": "quiz-definition.lp-prequiz.json",
@@ -807,7 +810,7 @@
    "name": "Men's hair-loss consultation (hims.com/c/hl)",
    "audience": "men",
    "entryUrl": "https://www.hims.com/c/hl",
-   "stagesSummary": "NOT WALKED: the page stays on a loading spinner because Cloudflare refuses the site's own script files. The question list below is a skeleton of topics from Hims' own articles and from field names in the page, not the real screens. Order and account-wall position unknown.",
+   "stagesSummary": "NOT WALKED (blocked in stage 1 and twice more in stage 2). From public documents and field names only, the likely shape is: hair questions (goals, where, how long, family history, stress, styling) → account → state and date of birth → medical intake form with follow-up questions → photos (in most cases) → a recommended product that the customer may change, with strength, quantity and plan length → optional non-prescription add-ons → payment → provider review (allow at least 48 hours; video visit in some states) → shipment. The order of these steps and the position of the account wall were NOT seen. The entries below are topics, not real screens.",
    "questions": [
     {
      "id": "men-t1",
@@ -816,11 +819,11 @@
      "text": "[Exact wording not seen: the consultation would not load] Hair goals step (the \"Get started\" buttons open /c/hl/goals).",
      "type": "single",
      "options": [],
-     "purpose": "First step when entering by the main \"Get started\" button. Hims says its form asks about \"your hair goals\".",
+     "purpose": "Docs: Hims says its form asks about \"your hair goals\". Inferred: used for personalisation and sales copy, not for eligibility (on the UK sister site the same kind of question changes nothing; on the US landing-page pre-quiz the goals question changes nothing either).",
      "engineRole": "personalisation",
      "branches": false,
-     "branchDetail": "",
-     "shownWhen": "Entry at /c/hl/goals. Position in the flow and its place before or after the account wall are NOT known; the \"stage\" value here is a best guess and must be checked.",
+     "branchDetail": "Unknown for the real consultation. The only goals question that could be tested (the landing-page pre-quiz, lp-q1) has no branch.",
+     "shownWhen": "Entry at /c/hl/goals (the \"Get started\" buttons). Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
      "evidence": "docs",
      "source": "https://www.hims.com/blog/hims-vs-happy-head"
     },
@@ -828,16 +831,16 @@
      "id": "men-t2",
      "order": 2,
      "stage": "anonymous",
-     "text": "[Exact wording not seen: the consultation would not load] Hair-loss status or pattern (a third-party review mentions \"receding hairline, thinning hair\").",
+     "text": "[Exact wording not seen: the consultation would not load] Where you are experiencing hair loss (Hims: its intake form asks \"where you're experiencing hair loss\").",
      "type": "single",
      "options": [],
-     "purpose": "Likely feeds diagnosis and the product suggestion.",
+     "purpose": "Docs: named by Hims as an intake question. Inferred: tells male pattern loss (hairline, crown) from patterns that need an in-person check; Hims' own FAQ says men \"suddenly noticing bald patches with no apparent cause or pattern\" should \"seek medical attention\".",
      "engineRole": "diagnosis",
      "branches": false,
-     "branchDetail": "",
-     "shownWhen": "Position in the flow and its place before or after the account wall are NOT known; the \"stage\" value here is a best guess and must be checked.",
+     "branchDetail": "Unknown. No public document says an answer here stops the visit or changes the product.",
+     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
      "evidence": "docs",
-     "source": "https://www.healthline.com/health/hims-hair-review (seen through a search summary only)"
+     "source": "https://www.hims.com/blog/hims-vs-happy-head ; https://www.hims.com/lp/hair-start-comparison-dlp (FAQ)"
     },
     {
      "id": "men-t3",
@@ -846,11 +849,11 @@
      "text": "[Exact wording not seen: the consultation would not load] Other hair-loss products already tried.",
      "type": "multi",
      "options": [],
-     "purpose": "Treatment history.",
+     "purpose": "Docs (third-party review, seen through a search summary only): asks what other products you have tried. Inferred: matters because the safety pages rule out using two finasteride products, or the pill with another finasteride or minoxidil product, at the same time.",
      "engineRole": "product-selector",
      "branches": false,
-     "branchDetail": "",
-     "shownWhen": "Position in the flow and its place before or after the account wall are NOT known; the \"stage\" value here is a best guess and must be checked.",
+     "branchDetail": "Unknown. Published rule that this answer would feed: no topical finasteride together with oral finasteride or dutasteride (see rules R3, R5).",
+     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
      "evidence": "docs",
      "source": "https://www.healthline.com/health/hims-hair-review (seen through a search summary only)"
     },
@@ -861,13 +864,13 @@
      "text": "[Exact wording not seen: the consultation would not load] Family history of hair loss.",
      "type": "single",
      "options": [],
-     "purpose": "Hims: \"Hims asks questions about your hair, of course, but also about family history, lifestyle, mental health (like stress levels), and your styling routine.\"",
+     "purpose": "Docs: Hims lists family history among the things its form asks, with a short \"Why We Ask\" note. Inferred: supports the working diagnosis of hereditary (male pattern) hair loss; not a gate.",
      "engineRole": "diagnosis",
      "branches": false,
-     "branchDetail": "",
-     "shownWhen": "Position in the flow and its place before or after the account wall are NOT known; the \"stage\" value here is a best guess and must be checked.",
+     "branchDetail": "Unknown; no published effect on the offer.",
+     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
      "evidence": "docs",
-     "source": "https://www.hims.com/blog/hims-vs-keeps"
+     "source": "https://www.hims.com/blog/hims-vs-keeps ; https://www.hims.com/blog/hims-vs-rogaine"
     },
     {
      "id": "men-t5",
@@ -876,11 +879,11 @@
      "text": "[Exact wording not seen: the consultation would not load] Lifestyle.",
      "type": "single",
      "options": [],
-     "purpose": "Named by Hims as a topic of its form. Each question can carry a \"Why We Ask\" note.",
+     "purpose": "Docs: \"lifestyle\" is named by Hims as a topic of its form. No detail is published. Inferred: background for the provider and for marketing, not a gate.",
      "engineRole": "personalisation",
      "branches": false,
-     "branchDetail": "",
-     "shownWhen": "Position in the flow and its place before or after the account wall are NOT known; the \"stage\" value here is a best guess and must be checked.",
+     "branchDetail": "Unknown; no published effect on the offer.",
+     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
      "evidence": "docs",
      "source": "https://www.hims.com/blog/hims-vs-keeps"
     },
@@ -888,16 +891,16 @@
      "id": "men-t6",
      "order": 6,
      "stage": "anonymous",
-     "text": "[Exact wording not seen: the consultation would not load] Mental health, for example stress levels.",
+     "text": "[Exact wording not seen: the consultation would not load] Stress levels (\"mental health (like stress levels)\").",
      "type": "single",
      "options": [],
-     "purpose": "Named by Hims as a topic of its form. Finasteride safety pages warn about depression, so this may also be a safety screen.",
-     "engineRole": "safety-screen",
+     "purpose": "Docs: Hims names \"mental health (like stress levels)\" and \"stress levels\" as intake topics. Inferred: stress is asked as a cause of shedding; a separate mood question for finasteride safety (the finasteride safety page warns about depression) may sit in the medical form, but none was seen.",
+     "engineRole": "diagnosis",
      "branches": false,
-     "branchDetail": "",
-     "shownWhen": "Position in the flow and its place before or after the account wall are NOT known; the \"stage\" value here is a best guess and must be checked.",
+     "branchDetail": "Unknown; no published effect on the offer.",
+     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
      "evidence": "docs",
-     "source": "https://www.hims.com/blog/hims-vs-keeps"
+     "source": "https://www.hims.com/blog/hims-vs-keeps ; https://www.hims.com/blog/hims-vs-rogaine"
     },
     {
      "id": "men-t7",
@@ -906,11 +909,11 @@
      "text": "[Exact wording not seen: the consultation would not load] Styling routine, styling habits and \"how you prefer to wear your hair\".",
      "type": "single",
      "options": [],
-     "purpose": "Named by Hims as a topic of its form; probably steers format (spray, serum, pill, chew).",
+     "purpose": "Docs: Hims asks about \"styling habits, and how you prefer to wear your hair\" and says compounded products come in several forms \"so that a provider can choose the product that fits your unique needs\". Inferred: steers the format (spray or serum on the scalp against pill or chew).",
      "engineRole": "personalisation",
      "branches": false,
-     "branchDetail": "",
-     "shownWhen": "Position in the flow and its place before or after the account wall are NOT known; the \"stage\" value here is a best guess and must be checked.",
+     "branchDetail": "Unknown. Inferred only: may change which format is shown as the recommendation.",
+     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
      "evidence": "docs",
      "source": "https://www.hims.com/blog/hims-vs-happy-head"
     },
@@ -921,11 +924,11 @@
      "text": "[Exact wording not seen: the consultation would not load] Prescription preference (the site stores a value called \"prescriptionPreference\" for the consultation).",
      "type": "single",
      "options": [],
-     "purpose": "Unknown. The stored field name suggests the visitor is asked whether they want prescription treatment; the feature flag \"hairLossPrescriptionPreference\" is switched on for everyone.",
+     "purpose": "Code (names only): the consultation state stores \"prescriptionPreference\" and the flag \"hairLossPrescriptionPreference\" is on for all visitors. Inferred: the visitor is asked whether he wants prescription treatment or non-prescription products, and the answer chooses between the provider route and the add-to-cart products. Not seen.",
      "engineRole": "product-selector",
-     "branches": false,
-     "branchDetail": "",
-     "shownWhen": "Position in the flow and its place before or after the account wall are NOT known; the \"stage\" value here is a best guess and must be checked.",
+     "branches": true,
+     "branchDetail": "Inferred from the field name only: prescription route (provider review) against non-prescription products (minoxidil foam or solution, shampoo, gummies). The landing-page pre-quiz asks a similar question (lp-q3) and there it changes nothing.",
+     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
      "evidence": "code",
      "source": "raw/props-c-hl.json: consultation.prescriptionPreference; experiments.rules.hairLossPrescriptionPreference (treatment-1 = 100%)"
     },
@@ -936,11 +939,11 @@
      "text": "[Exact wording not seen: the consultation would not load] Account registration (email and password, or Google sign-in).",
      "type": "contact",
      "options": [],
-     "purpose": "The account wall. The /c/hl page loads Google sign-in and Auth0 settings, and the consultation state has a \"registration\" field. Where it sits in the flow was not seen.",
+     "purpose": "The account wall. Code: the /c/hl page loads Google sign-in and Auth0 settings, and the consultation state has a \"registration\" field. Where it sits was not seen. One third-party review (weak, seen through a search summary) says the profile comes before the questions; the UK sister site puts it after a marketing quiz and before any medical question.",
      "engineRole": "identity",
      "branches": false,
      "branchDetail": "",
-     "shownWhen": "Position in the flow and its place before or after the account wall are NOT known; the \"stage\" value here is a best guess and must be checked.",
+     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
      "evidence": "code",
      "source": "raw/props-c-hl.json: consultation.registration; runs/diag-hl/requests.log (accounts.google.com/gsi/client); page config $AUTH0_DOMAIN"
     },
@@ -951,11 +954,11 @@
      "text": "[Exact wording not seen: the consultation would not load] State you live in (shipping state and ZIP code).",
      "type": "text",
      "options": [],
-     "purpose": "Decides whether the visit can be by messages only or needs a video visit, and which products can ship. The state has an \"invalidInitialShippingState\" flag, so some states can be refused or re-asked.",
+     "purpose": "Docs: decides whether the visit is by secure message or needs a video visit (\"In some states, a video visit with a healthcare provider is required\"), and whether Hims serves the address at all (not Puerto Rico). Code: the state has an \"invalidInitialShippingState\" flag and two flags for compounded products in Massachusetts and Washington.",
      "engineRole": "eligibility-gate",
      "branches": true,
-     "branchDetail": "Help centre: \"Depending on the state where you live, your consultation may be conducted asynchronously... In some states, a video visit with a healthcare provider is required.\" Not available in Puerto Rico (help centre).",
-     "shownWhen": "Position in the flow and its place before or after the account wall are NOT known; the \"stage\" value here is a best guess and must be checked.",
+     "branchDetail": "Docs: some states → the customer is \"prompted to schedule a video visit after submitting your online intake form\"; elsewhere the provider replies by message. Inferred from flag names: compounded products may be handled differently in Massachusetts and Washington.",
+     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
      "evidence": "docs",
      "source": "https://support.hims.com/hc/en-us/articles/360032844051-How-does-this-work; raw/props-c-hl.json: consultation.shippingState, shippingZipCode, invalidInitialShippingState"
     },
@@ -966,11 +969,11 @@
      "text": "[Exact wording not seen: the consultation would not load] Date of birth.",
      "type": "date",
      "options": [],
-     "purpose": "Age gate: the safety pages say the treatments are not for anyone under 18.",
+     "purpose": "Docs: age gate. Every prescription hair product's safety page excludes anyone under 18.",
      "engineRole": "eligibility-gate",
      "branches": true,
-     "branchDetail": "Under 18: not eligible (published safety information). The exact screen was not seen.",
-     "shownWhen": "Position in the flow and its place before or after the account wall are NOT known; the \"stage\" value here is a best guess and must be checked.",
+     "branchDetail": "Docs: under 18 → no prescription product. The screen and its wording were not seen. No upper age limit is published.",
+     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
      "evidence": "docs",
      "source": "https://www.hims.com/important-safety/rx-hair-loss-spray; raw/props-c-hl.json: consultation.dob; experiment name hairLossDateOfBirthCopy"
     },
@@ -978,16 +981,16 @@
      "id": "men-t12",
      "order": 12,
      "stage": "after-account",
-     "text": "[Exact wording not seen: the consultation would not load] Medical intake form: medical conditions, medicines and supplements, allergies (a third-party review also mentions questions on erectile dysfunction).",
+     "text": "[Exact wording not seen: the consultation would not load] Medical intake form: medical conditions, medicines and supplements, allergies (Hims says its form covers \"allergies, medication use\" as competitors' forms do).",
      "type": "multi",
      "options": [],
-     "purpose": "The clinical screen read by the provider. The published \"who should not take\" lists (see rules) show which answers matter: heart, liver, kidney and prostate problems, breast or prostate cancer, blood thinners, antifungals, current finasteride, dutasteride or minoxidil use, allergies.",
+     "purpose": "The clinical screen the provider reads. Docs: Hims says its intake includes allergies and medication use. The published \"who should not use\" lists show which answers matter: heart, liver, kidney and prostate problems, breast or prostate cancer, blood thinners and antifungals, current finasteride, dutasteride or minoxidil use, allergies to finasteride or minoxidil.",
      "engineRole": "safety-screen",
      "branches": true,
-     "branchDetail": "The page state has \"questions\", \"rootQuestions\" and \"triggers\", which shows the form has follow-up questions triggered by answers. None of it is sent to the page before the consultation starts.",
-     "shownWhen": "Position in the flow and its place before or after the account wall are NOT known; the \"stage\" value here is a best guess and must be checked.",
+     "branchDetail": "Code (names only): the visit state has \"rootQuestions\" and \"triggers\", so some answers open follow-up questions. Which answers remove which product is not public; rules R3 to R5 give the published exclusions and are labelled docs.",
+     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
      "evidence": "code",
-     "source": "raw/props-c-hl.json: visit.questions, visit.rootQuestions, visit.triggers, visit.isIntakeFormCompleted; https://support.hims.com/hc/en-us/articles/360032844051-How-does-this-work"
+     "source": "raw/props-c-hl.json: visit.questions, visit.rootQuestions, visit.triggers, visit.isIntakeFormCompleted; https://www.hims.com/blog/hims-vs-happy-head ; https://support.hims.com/hc/en-us/articles/360032844051-How-does-this-work"
     },
     {
      "id": "men-t13",
@@ -996,11 +999,11 @@
      "text": "[Exact wording not seen: the consultation would not load] Photos of your hair or hairline.",
      "type": "photo",
      "options": [],
-     "purpose": "For the provider. Hims: \"In most cases, Hims will also have you submit photos of your hair.\" Experiments named himsHairSkipPhotos, hairLossDiagnosticPhotosReorder and hairLossSelfiePhotoReorder exist.",
+     "purpose": "Docs: for the provider's evaluation. Hims: \"In most cases, Hims will also have you submit photos of your hair\"; \"may ask you to upload photos of your hairline\". Help centre: an order can wait on an action item such as \"upload another photo\". Code (name only): a flag called himsHairSkipPhotos is on for all visitors, so photos may be optional or skipped for some.",
      "engineRole": "diagnosis",
      "branches": false,
-     "branchDetail": "",
-     "shownWhen": "Position in the flow and its place before or after the account wall are NOT known; the \"stage\" value here is a best guess and must be checked.",
+     "branchDetail": "Unknown. \"In most cases\" (docs) means some visitors are not asked; the condition is not published.",
+     "shownWhen": "In most cases (docs). Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
      "evidence": "docs",
      "source": "https://www.hims.com/blog/hims-vs-keeps; raw/props-c-hl.json: visit.requiredPhotos"
     },
@@ -1011,10 +1014,10 @@
      "text": "[Exact wording not seen: the consultation would not load] Photo ID, if more verification is needed.",
      "type": "photo",
      "options": [],
-     "purpose": "Hims: \"If further verification is required, they may ask for additional documentation, like your photo ID.\"",
+     "purpose": "Docs: identity check when the provider or pharmacy needs it: \"If further verification is required, they may ask for additional documentation, like your photo ID.\"",
      "engineRole": "identity",
      "branches": false,
-     "branchDetail": "",
+     "branchDetail": "Only asked when more verification is needed (docs); the trigger is not published.",
      "shownWhen": "Only when further verification is needed. Position in the flow and its place before or after the account wall are NOT known; the \"stage\" value here is a best guess and must be checked.",
      "evidence": "docs",
      "source": "https://www.hims.com/blog/hims-vs-happy-head"
@@ -1026,11 +1029,11 @@
      "text": "[Exact wording not seen: the consultation would not load] Treatment choice: product, strength, quantity, days of supply (plan length) and packaging, with a recommended product pre-selected.",
      "type": "single",
      "options": [],
-     "purpose": "The product and plan picker. The stored fields show the site marks a \"recommendedBrand\" and a recommended dosage that the visitor may override.",
+     "purpose": "Code (field names in the page hims.com serves): the product and plan picker. The site marks one product as recommended (\"recommendedBrand\": true by default) and a recommended dose the customer may override (\"overrideRecommendedDosage\": true), and stores product, strength, quantity, days of supply and packaging. Docs: plans of 3, 6 or 12 months, some products 5 months, and a 10-month plan paid upfront behind the headline price.",
      "engineRole": "product-selector",
      "branches": true,
-     "branchDetail": "Fields in the page state: brandId, strength, quantity, daysSupply, packagingSelection, recommendedBrand, overrideRecommendedDosage, originalRecommendedTreatment, showRecommendationModal. Two flags, maCompoundDeprecation and waCompoundDeprecation, point to different handling of compounded products in Massachusetts and Washington.",
-     "shownWhen": "Position in the flow and its place before or after the account wall are NOT known; the \"stage\" value here is a best guess and must be checked.",
+     "branchDetail": "Code: fields brandId, strength, quantity, daysSupply, packagingSelection, recommendedBrand, overrideRecommendedDosage, originalRecommendedTreatment, showRecommendationModal, hideDosageSelection. Which product is recommended for which answers was not seen. A flag named himsHairTopFinRecco is on for all visitors, which hints that the topical finasteride + minoxidil spray is the default recommendation (inferred from the name, low confidence).",
+     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
      "evidence": "code",
      "source": "raw/props-c-hl.json: consultation.treatmentPreferences"
     },
@@ -1041,13 +1044,58 @@
      "text": "[Exact wording not seen: the consultation would not load] Optional non-prescription add-ons (for example shampoo or gummies).",
      "type": "multi",
      "options": [],
-     "purpose": "Cross-sell before payment. Experiment names himsHairOTCAddOnV1, himsHairHideOtcStep, hairLossOtcCrossSellBlock and himsHairFreeShampoo exist; the state has \"additionalItems\" and \"otcChargedAmount\".",
+     "purpose": "Code (names only): a cross-sell step for non-prescription products before payment. The flag himsHairOTCAddOnV1 is on for all visitors and himsHairHideOtcStep is off; the state has \"additionalItems\" and \"otcChargedAmount\". Docs: prescription products ship free, non-prescription products carry a $5 shipping fee.",
      "engineRole": "marketing",
      "branches": false,
-     "branchDetail": "",
-     "shownWhen": "Position in the flow and its place before or after the account wall are NOT known; the \"stage\" value here is a best guess and must be checked.",
+     "branchDetail": "Add-ons only; no effect on eligibility (inferred).",
+     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
      "evidence": "code",
      "source": "raw/props-c-hl.json: experiments.rules, consultation.additionalItems"
+    },
+    {
+     "id": "men-t17",
+     "order": 17,
+     "stage": "anonymous",
+     "text": "[Exact wording not seen: the consultation would not load] How long you have been experiencing hair loss.",
+     "type": "single",
+     "options": [],
+     "purpose": "Docs: Hims says its intake form asks \"how long you've been experiencing hair loss\". Inferred: gradual loss over years fits male pattern hair loss; sudden loss points elsewhere (Hims' FAQ tells men with sudden bald patches to seek medical attention).",
+     "engineRole": "diagnosis",
+     "branches": false,
+     "branchDetail": "Unknown; no published effect on the offer.",
+     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
+     "evidence": "docs",
+     "source": "https://www.hims.com/blog/hims-vs-happy-head"
+    },
+    {
+     "id": "men-t18",
+     "order": 18,
+     "stage": "after-account",
+     "text": "[Exact wording not seen: the consultation would not load] Sex assigned at birth.",
+     "type": "single",
+     "options": [],
+     "purpose": "Docs: Hims says its intake form asks \"your sex assigned at birth\". The finasteride products are \"intended for use by individuals assigned male at birth ... who are not pregnant, breastfeeding, or able to become pregnant\".",
+     "engineRole": "eligibility-gate",
+     "branches": true,
+     "branchDetail": "Docs: finasteride products are not for anyone who is or may become pregnant; Hims sends women to Hers. What the software does with the answer (stop, redirect to Hers, or remove finasteride products) was not seen.",
+     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
+     "evidence": "docs",
+     "source": "https://www.hims.com/blog/hims-vs-happy-head ; https://www.hims.com/important-safety/rx-hair-loss-serum"
+    },
+    {
+     "id": "men-t19",
+     "order": 19,
+     "stage": "after-account",
+     "text": "[Exact wording not seen: the consultation would not load] Whether anyone in your household is pregnant.",
+     "type": "single",
+     "options": [],
+     "purpose": "Docs: Hims writes that a competitor's form covers \"allergies, medication use, and household members' pregnancy status (... pregnant individuals are advised against handling finasteride ...)\" and that \"Hims includes these questions\". The risk is contact with finasteride by someone pregnant.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "Unknown. Inferred: a handling warning or a note for the provider rather than a refusal; the serum's safety page says pregnant people should not handle it.",
+     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
+     "evidence": "docs",
+     "source": "https://www.hims.com/blog/hims-vs-happy-head"
     }
    ],
    "entryPoints": [
@@ -1176,13 +1224,226 @@
   {
    "id": "R7",
    "flow": "lp-prequiz",
-   "when": "Any answer to the three landing-page questions",
-   "then": "No effect on eligibility or products. The served definition has no branch, and the page says the answers are not a medical assessment and are not shared with a provider.",
+   "when": "any one of the three landing-page answers is changed (lp-q1 Both → Stop hair loss or Regrow hair; lp-q2 Yes → No; lp-q3 Yes → Not sure yet)",
+   "then": "Nothing the visitor can see changes: the same next question, the same end pitch for the prescription spray, the same buttons to /c/hl. No stop, no warning, no product, no price. The served definition has no branch either, and the page says the answers are not a medical assessment and are not shared with a provider.",
    "effectType": "marketing-only",
    "affects": [],
-   "evidence": "code",
-   "proof": "quiz-definition.lp-prequiz.json ; runs/baseline-lp-prequiz",
+   "evidence": "observed",
+   "proof": "runs/s2-baseline-lp-prequiz, runs/exp-lp-01-q1-stop, runs/exp-lp-02-q1-regrow, runs/exp-lp-03-q2-no, runs/exp-lp-04-q3-notsure; quiz-definition.lp-prequiz.json",
    "confidence": "high"
+  },
+  {
+   "id": "R8",
+   "flow": "lp-prequiz",
+   "when": "a landing-page answer is clicked",
+   "then": "The browser sends one click event that names the question and the answer (for example \"atf_q1-what-are-your-hair-goals_stop-hair-loss_secondary-cta\"), with a device id, to Hims' own event collector (api.forhims.com/dpe/producer/unauth) and to Amplitude. Nothing is saved in the browser for the consultation and the links to /c/hl carry no answer. So the answers are kept as marketing data only.",
+   "effectType": "marketing-only",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/s2-baseline-lp-prequiz/requests.jsonl and the same file in runs/exp-lp-01 to exp-lp-04",
+   "confidence": "high"
+  },
+  {
+   "id": "R9",
+   "flow": "lp-prequiz",
+   "when": "lp-q3 = \"Not sure yet\" (not sure about prescription treatment)",
+   "then": "The visitor is still shown the prescription spray pitch (\"Get the spray\"); no non-prescription product is offered as an alternative.",
+   "effectType": "marketing-only",
+   "affects": [
+    "p3",
+    "p4"
+   ],
+   "evidence": "observed",
+   "proof": "runs/exp-lp-04-q3-notsure vs runs/s2-baseline-lp-prequiz",
+   "confidence": "high"
+  },
+  {
+   "id": "R10",
+   "flow": "men",
+   "when": "the visitor starts from any hair page: /hair-loss, a product page, /lp/hair-start-top-fin-fa, /lp/hair-start-preventmaint, /lp/hair-start-comparison-dlp or a vanity link such as hims.com/baes",
+   "then": "Every prescription button leads to the same consultation (/c/hl or /c/hl/goals). There is no product-specific entry and no link carries a product code, so the page a man starts from does not pre-select a product as far as the links show. Only the top-fin landing page has the pre-quiz.",
+   "effectType": "none",
+   "affects": [],
+   "evidence": "code",
+   "proof": "raw/pages/www_hims_com_lp_hair_start_preventmaint.txt, raw/pages/www_hims_com_baes.txt, raw/pages/www_hims_com_hair_start_top_fin_lp.txt (link lists); runs/landing",
+   "confidence": "medium"
+  },
+  {
+   "id": "R11",
+   "flow": "men",
+   "when": "the consultation reaches the treatment step",
+   "then": "The site holds one product as \"recommended\" and a recommended dose, and lets the customer override both: product, strength, quantity, days of supply and packaging are stored as his selections. (Read from the empty state hims.com serves with /c/hl; the screen itself was not seen.)",
+   "effectType": "product-switched",
+   "affects": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p9"
+   ],
+   "evidence": "code",
+   "proof": "raw/props-c-hl.json: consultation.treatmentPreferences (recommendedBrand, overrideRecommendedDosage, originalRecommendedTreatment, selections)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R12",
+   "flow": "men",
+   "when": "a man with no exclusions reaches the recommendation (baseline man)",
+   "then": "The topical finasteride + minoxidil spray is probably the default recommendation. This rests only on a flag NAME: \"himsHairTopFinRecco\" is switched on for 100% of visitors in the page hims.com serves, and the landing-page pre-quiz pitches the same spray. The recommendation screen was not seen.",
+   "effectType": "product-added",
+   "affects": [
+    "p3"
+   ],
+   "evidence": "inferred",
+   "proof": "raw/props-c-hl.json: experiments.rules.himsHairTopFinRecco (treatment = 100%); runs/s2-baseline-lp-prequiz",
+   "confidence": "low"
+  },
+  {
+   "id": "R13",
+   "flow": "men",
+   "when": "the visitor states a prescription preference, and later reaches checkout",
+   "then": "Inferred from names only: the consultation stores a \"prescriptionPreference\" (flag on for all visitors), which most likely splits the provider route from the non-prescription products; and a non-prescription add-on step is shown before payment (flag \"himsHairOTCAddOnV1\" on, \"himsHairHideOtcStep\" off).",
+   "effectType": "product-added",
+   "affects": [
+    "p10",
+    "p11",
+    "p13",
+    "p15"
+   ],
+   "evidence": "inferred",
+   "proof": "raw/props-c-hl.json: consultation.prescriptionPreference, additionalItems, otcChargedAmount; experiments.rules.hairLossPrescriptionPreference, himsHairOTCAddOnV1, himsHairHideOtcStep",
+   "confidence": "low"
+  },
+  {
+   "id": "R14",
+   "flow": "men",
+   "when": "the intake form is submitted",
+   "then": "Nothing is prescribed by the software. A licensed provider reviews it: \"Please allow a minimum of 48 hours after you complete your assessment for this review\". The provider may message for more information, and the order waits on any \"action item\" (for example finishing the assessment or uploading another photo). \"If prescribed\" the treatment ships.",
+   "effectType": "flag-for-clinician",
+   "affects": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p9"
+   ],
+   "evidence": "docs",
+   "proof": "https://support.hims.com/hc/en-us/articles/360001339866-What-does-Outstanding-Medical-Visit-mean ; https://support.hims.com/hc/en-us/articles/13660161613083-What-is-the-Action-Item-in-my-account ; https://www.hims.com/lp/hair-start-comparison-dlp (\"Hims makes it simple\")",
+   "confidence": "high"
+  },
+  {
+   "id": "R15",
+   "flow": "men",
+   "when": "the provider needs to see the hair, or needs to confirm identity",
+   "then": "\"In most cases, Hims will also have you submit photos of your hair\"; \"If further verification is required, they may ask for additional documentation, like your photo ID.\" The condition that triggers either request is not published.",
+   "effectType": "extra-questions",
+   "affects": [],
+   "evidence": "docs",
+   "proof": "https://www.hims.com/blog/hims-vs-keeps ; https://www.hims.com/blog/hims-vs-happy-head",
+   "confidence": "medium"
+  },
+  {
+   "id": "R16",
+   "flow": "men",
+   "when": "the customer picks a longer plan",
+   "then": "The monthly price falls. Published examples: spray or serum \"$35 a month (when you opt for a five-month plan) or $50 for a three-month plan\"; headline \"$29 per month\" needs \"a 10-month plan, paid upfront in full\"; finasteride tablets $22 a month on a three-month supply; a reviewer paid $150 for three months of the spray. Plans named in public: 3, 5, 6, 10 and 12 months. The full plan table is shown only inside the consultation.",
+   "effectType": "none",
+   "affects": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p9"
+   ],
+   "evidence": "docs",
+   "proof": "https://www.hims.com/blog/hims-vs-keeps ; https://www.hims.com/blog/hims-vs-rogaine ; https://www.hims.com/blog/finasteride-costs-pricing-guide ; https://www.hims.com/lp/hair-start-preventmaint (footnote) ; https://fortune.com/article/hims-hair-loss-review/",
+   "confidence": "medium"
+  },
+  {
+   "id": "R17",
+   "flow": "men",
+   "when": "hair loss is sudden or in patches with no clear pattern",
+   "then": "Hims' own FAQ says such men should \"seek medical attention to determine the cause\". Whether the consultation stops, warns or simply leaves it to the provider was not seen (on the UK sister site the anonymous quiz does nothing with such answers).",
+   "effectType": "flag-for-clinician",
+   "affects": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p9"
+   ],
+   "evidence": "docs",
+   "proof": "https://www.hims.com/lp/hair-start-comparison-dlp (FAQ \"How do I know what type of hair loss I have?\"); raw/pages/www_hims_com_baes.txt",
+   "confidence": "low"
+  },
+  {
+   "id": "R18",
+   "flow": "men",
+   "when": "someone in the household is pregnant",
+   "then": "Hims says its intake asks about this because pregnant people \"are advised against handling finasteride\". Expected result: a handling warning or a note for the provider. The software's action was not seen.",
+   "effectType": "flag-for-clinician",
+   "affects": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p7",
+    "p9"
+   ],
+   "evidence": "docs",
+   "proof": "https://www.hims.com/blog/hims-vs-happy-head ; https://www.hims.com/important-safety/rx-hair-loss-serum",
+   "confidence": "low"
+  },
+  {
+   "id": "R19",
+   "flow": "men",
+   "when": "a hair customer wants a different dose or product after starting",
+   "then": "He has to message his provider: \"any potential adjustment to your prescription will be at the discretion of your medical provider\". The self-service \"Adjust Rx\" request in the account covers weight-loss and sexual-health subscriptions only, not hair.",
+   "effectType": "flag-for-clinician",
+   "affects": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p9"
+   ],
+   "evidence": "docs",
+   "proof": "https://support.hims.com/hc/en-us/articles/32102621754651-Can-I-adjust-my-medications ; help-centre search result for \"Can I change the dosage on my medication?\" (raw/help/support_hims_com_hc_en_us_search_query_not_approved_prescription.txt)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R20",
+   "flow": "men",
+   "when": "the shipping state is Massachusetts or Washington",
+   "then": "Compounded products are probably handled differently (restricted, replaced or flagged). This rests only on two field names in the page state, \"maCompoundDeprecation\" and \"waCompoundDeprecation\"; no public document explains them.",
+   "effectType": "product-removed",
+   "affects": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6"
+   ],
+   "evidence": "inferred",
+   "proof": "raw/props-c-hl.json: consultation.treatmentPreferences.maCompoundDeprecation, waCompoundDeprecation",
+   "confidence": "low"
   }
  ],
  "experiments": [
@@ -1227,25 +1488,165 @@
    "changed": "lp-q3: Yes → Not sure yet",
    "result": "No change against baseline: 'Not sure yet' about prescription treatment still lands on the same prescription spray pitch ('Get the spray', 'See if treatment is right for me' → /c/hl). No non-prescription alternative is shown. Only the tracking event name changed (…_not-sure-yet_…).",
    "run": "runs/exp-lp-04-q3-notsure"
+  },
+  {
+   "id": "s2-diag-hl-retry",
+   "flow": "men",
+   "changed": "Nothing (second and last re-test of https://www.hims.com/c/hl/goals, 23 Nov 2026 22:30 UTC, with every request logged)",
+   "result": "Still blocked: 37 of the site's own script files, including hims.us.modern.domains-consultation-hair-loss.*.js, were answered with HTTP 403; the page stayed blank. No question could be answered, so no one-change experiment exists for the real consultation.",
+   "run": "runs/s2-diag-hl-retry"
+  },
+  {
+   "id": "s2-entry-preventmaint",
+   "flow": "men",
+   "changed": "Entry page: /lp/hair-start-top-fin-fa → /lp/hair-start-preventmaint (page document read, no clicks)",
+   "result": "No pre-quiz on this page. Same four product cards (chew, pill, spray, serum: \"Less than $1 a day\" with the 10-month upfront footnote). Every button links to /c/hl or /c/hl/goals; no product code in any link.",
+   "run": "raw/pages/www_hims_com_lp_hair_start_preventmaint.txt"
+  },
+  {
+   "id": "s2-entry-vanity-baes",
+   "flow": "men",
+   "changed": "Entry page: /lp/hair-start-top-fin-fa → vanity link hims.com/baes (redirects to /lp/hair-start-comparison-dlp with podcast tracking tags; page document read, no clicks)",
+   "result": "No pre-quiz. \"Hims makes it simple\" steps: free consultation (\"Answer a few questions about your hair and health\"), a provider \"reviews your info and recommends the right treatment for you\", free delivery \"if prescribed\", ongoing support. Every button links to /c/hl or /c/hl/goals.",
+   "run": "raw/pages/www_hims_com_baes.txt"
+  },
+  {
+   "id": "s2-entry-top-fin-lp",
+   "flow": "lp-prequiz",
+   "changed": "Entry page: /lp/hair-start-top-fin-fa → /hair-start-top-fin-lp (page document read, no clicks)",
+   "result": "Redirects to /lp/hair-start-top-fin-fa with tracking tags. Same three pre-quiz questions in the page data (q1_what-are-your-hair-goals, q2_are-you-looking-for-a, q3_are-you-interested-in-prescription-strength).",
+   "run": "raw/pages/www_hims_com_hair_start_top_fin_lp.txt"
   }
  ],
- "recommendations": [],
- "engineSummary": "Not observed. From public documents only: every prescription route goes through one consultation (/c/hl). The visitor fills in an intake form (hair goals, hair-loss pattern, products tried, family history, lifestyle, stress, styling habits, medical history, medicines), usually adds photos, and a licensed provider \"reviews your info and recommends the right treatment\". The site code keeps a recommended product and recommended dose that the customer may override, and lets the customer choose product, strength, quantity and plan length. Published \"who should not use\" lists show the medical reasons that would rule products out. The three questions on advertising landing pages are marketing only.",
+ "recommendations": [
+  {
+   "profile": "Any visitor who finishes the landing-page pre-quiz (baseline: goals Both, simple solution Yes, prescription Yes; and each one-change variant)",
+   "offered": [
+    "p3",
+    "p4"
+   ],
+   "default": "p3",
+   "note": "A sales pitch, not a recommendation: \"Quick-drying, once-daily spray\", \"4-in-1 formula available with ketoconazole and biotin\", buttons \"Get the spray\" and \"See if treatment is right for me\" → /c/hl. Identical for all five answer sets tested. No strength, plan or price is shown at this point.",
+   "evidence": "observed"
+  },
+  {
+   "profile": "Visitor who answers \"Not sure yet\" to prescription treatment in the pre-quiz",
+   "offered": [
+    "p3",
+    "p4"
+   ],
+   "default": "p3",
+   "note": "Same prescription spray pitch as everyone else; no non-prescription option is put forward (runs/exp-lp-04-q3-notsure).",
+   "evidence": "observed"
+  },
+  {
+   "profile": "Baseline man in the real consultation: 32, hairline and crown, gradual, family history, no medical issues (NOT SEEN: consultation blocked)",
+   "offered": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p9"
+   ],
+   "default": "p3",
+   "note": "Not observed. Docs: a provider \"recommends the right treatment for you\" from the prescription range (pill, two chews, two sprays, serum, finasteride tablets, kit). Code: the site pre-selects one recommended product and dose that he may change. The default shown here (the spray) is inferred from a flag name only (himsHairTopFinRecco on for all visitors) and is low confidence. Strength: the spray exists in one published strength (finasteride 0.3% + minoxidil 6%). Plan and price: not seen; published anchors are $29 a month on a 10-month plan paid upfront, $35 on 5 months, $50 on 3 months.",
+   "evidence": "inferred"
+  },
+  {
+   "profile": "Man who wants no prescription, or only wants to buy a product",
+   "offered": [
+    "p10",
+    "p11",
+    "p12",
+    "p13",
+    "p14",
+    "p15",
+    "p16",
+    "p17",
+    "p18",
+    "p19"
+   ],
+   "default": "p10",
+   "note": "Docs: these are sold by add to cart with no consultation (minoxidil foam and solution, non-prescription kit, shampoos, conditioner, gummies). No default is stated by Hims; foam is listed first here only for convenience.",
+   "evidence": "docs"
+  },
+  {
+   "profile": "Man with a published exclusion for oral minoxidil + finasteride (for example certain heart disease, chronic kidney disease stage 3 to 5, blood thinners, liver disease)",
+   "offered": [
+    "p3",
+    "p4",
+    "p5",
+    "p7"
+   ],
+   "default": "p3",
+   "note": "Inferred from the published \"who should not take\" list for the combination pill: the pill (and probably the chews, which also contain oral minoxidil) would be ruled out, leaving topical products or plain finasteride at the provider's discretion. Chronic liver disease or a history of breast or prostate cancer rules out the topical finasteride + minoxidil products as well. How the software shows this was not seen.",
+   "evidence": "inferred"
+  },
+  {
+   "profile": "Man already taking oral finasteride or dutasteride",
+   "offered": [
+    "p6",
+    "p10",
+    "p11"
+   ],
+   "default": "p6",
+   "note": "Inferred from the safety pages: topical finasteride + minoxidil and the combination pill \"cannot be used at the same time\" as oral finasteride or another 5-alpha reductase inhibitor, which leaves minoxidil-only options. Not seen.",
+   "evidence": "inferred"
+  },
+  {
+   "profile": "Anyone under 18",
+   "offered": [],
+   "default": "",
+   "note": "Docs: every prescription hair product excludes people younger than 18. The stop screen was not seen.",
+   "evidence": "docs"
+  },
+  {
+   "profile": "Baseline woman: 38, widening parting, not pregnant, no conditions",
+   "offered": [
+    "w1",
+    "w2",
+    "w3",
+    "w4"
+   ],
+   "default": "",
+   "note": "Hims US treats men only and sends women to Hers (forhers.com), which showed a security check on every page, so nothing was served or tested. The four Hers products are stubs from search snippets; which one Hers recommends is unknown here (see the separate hers-us report).",
+   "evidence": "docs"
+  }
+ ],
+ "engineSummary": "What could be tested: only the three-question quiz on one advertising landing page. Stage 2 clicked every option, one change at a time, and logged every request. It is not an engine at all: every answer leads to the same next question and the same pitch for the prescription spray, and the only thing an answer does is send a tracking event (question, answer, device id) to Hims and to its analytics supplier. Even \"Not sure yet\" about prescription treatment ends on \"Get the spray\". What could not be tested: the real consultation at /c/hl, which stayed blocked. From Hims' own public pages and the page state it serves, the engine most likely works in three layers. First, a hair quiz (goals, where, how long, family history, stress, styling) that personalises and sells; nothing public says any of these answers changes eligibility. Second, a medical intake form built as a tree (root questions plus follow-ups triggered by answers) covering sex assigned at birth, age, state, conditions, medicines, allergies and pregnancy in the household, usually with photos. Third, a treatment step where the site pre-selects one recommended product and dose (probably the topical finasteride + minoxidil spray) and lets the customer change product, strength, quantity and plan length before paying; the monthly price falls as the plan gets longer. The software does not prescribe: a licensed provider reviews the form within about 48 hours, by message or by video where the state requires it, and can ask for more information, photos or ID. The medical rules are published only as \"who should not use\" lists on each product's safety page; how the software turns an answer into a removed product or a stop screen was not seen.",
  "strengths": [
-  "Very wide format range for the same two actives: pill, two chews, two sprays, serum, plain finasteride tablets, kits, foam and solution.",
-  "Low headline price (\"less than $1 a day\", from $29 a month) tied to a 10-month plan paid upfront.",
-  "Over-the-counter products can be bought without any consultation.",
-  "Published safety information for each prescription product, with clear exclusion lists."
+  "Very wide format range for the same two actives (pill, two chews, two sprays, serum, plain finasteride tablets, kits, foam, solution), so there is nearly always a format to offer.",
+  "Low headline price (\"less than $1 a day\", from $29 a month) tied to a 10-month plan paid upfront, which also locks the customer in.",
+  "A recommended product and dose are pre-selected, but the customer can change product, strength and plan (page state); choice without a blank page.",
+  "Free consultation, free shipping on prescriptions and unlimited provider messaging; providers in all 50 states with video visits where the law requires them.",
+  "Over-the-counter products can be bought with no consultation, and prescriptions can be sent to a local pharmacy on request.",
+  "Published safety information for each prescription product, with clear exclusion lists, and \"Why We Ask\" notes on intake questions.",
+  "Heavy measurement: about 1,000 named experiments in the page, around 200 of them for hair, and every landing-page click is logged."
  ],
  "weaknesses": [
-  "Headline prices differ between pages on the same day ($35 on the main landing page, $29 on product pages for the same products).",
-  "Plan-length prices are not published; the low price needs a 10-month upfront payment.",
-  "Most prescription products are compounded and not FDA-approved; strengths of the vitamin blends in the chews are not published.",
-  "The Hair Power Pack showed \"Out of stock\"."
+  "The landing-page quiz is theatre: no answer changes the outcome, and a visitor who is \"Not sure yet\" about prescriptions is still pushed to the prescription spray. Yet the answers are logged against a device id.",
+  "Headline prices differ between pages on the same day ($35 on /hair-loss, $29 on product and landing pages), and the low price needs a 10-month upfront payment. Plan prices are shown only inside the consultation.",
+  "Most prescription products are compounded and not FDA-approved; the vitamin amounts in the chews are not published.",
+  "Nothing public says which answers lead to which product: the customer cannot see why a product is recommended.",
+  "Sudden or patchy hair loss is handled by a line in an FAQ (\"seek medical attention\"), not by anything visible before sign-up.",
+  "After starting, hair customers cannot request a dose or product change through the self-service tool (weight-loss and sexual-health only); they must message the provider.",
+  "Provider review can take 48 hours or more, and an order can sit on an unseen \"action item\".",
+  "Women are sent to a separate site; the Hair Power Pack was out of stock.",
+  "The site is hard to open from some networks: the consultation's own script files were refused by the security layer on every try."
  ],
  "opportunities": [
-  "Publish a clear price table for every plan length before the quiz.",
-  "Show the questions and the reasons behind a recommendation openly; Hims shows neither before sign-up as far as public pages reveal."
+  "Make the quiz real and show it: tell the visitor which answer led to which product and strength, and what would change it.",
+  "Publish one plain price table for every plan length before the quiz, with no upfront-payment footnote.",
+  "Offer a true fork for people unsure about prescriptions: a non-prescription path (minoxidil 5%, ketoconazole shampoo) with a clear step-up later.",
+  "Screen warning signs in the open before sign-up (sudden, patchy, scarring, scalp symptoms) and route them to in-person care; Hims does this only in an FAQ.",
+  "Ask and act on things Hims does not appear to publish: finasteride side-effect worries and a low-dose or topical-only route, partner pregnancy plans, blood pressure for oral minoxidil.",
+  "Offer licensed products and strength choice (for example dutasteride, or lower and higher topical strengths) that Hims does not sell; Hims has one topical strength pair plus the 4-in-1.",
+  "Give short commitments (monthly, cancel any time) against Hims' 3 to 12 month plans.",
+  "Let existing customers change dose or product themselves with a quick safety check, which Hims does not allow for hair.",
+  "Take data only when needed: Hims logs marketing-quiz answers against a device id although it tells visitors the answers are not a medical assessment."
  ],
  "sources": [
   {
@@ -1341,19 +1742,60 @@
    "url": "https://fortune.com/article/hims-hair-loss-review/"
   },
   {
-   "title": "Healthline: Hims hair review (seen through a search summary only)",
+   "title": "Healthline: Hims review (fetched in stage 2: its step-by-step sign-up describes erectile dysfunction, not hair; updated 30 Oct 2026)",
    "url": "https://www.healthline.com/health/hims-hair-review"
   },
   {
    "title": "Hers oral minoxidil page (not opened: security check; search snippet only)",
    "url": "https://www.forhers.com/hair-loss/oral-minoxidil"
+  },
+  {
+   "title": "Landing page without a pre-quiz (\"prevent and maintain\")",
+   "url": "https://www.hims.com/lp/hair-start-preventmaint"
+  },
+  {
+   "title": "Hims blog: Hims vs. Rogaine (intake form topics, plans, prices)",
+   "url": "https://www.hims.com/blog/hims-vs-rogaine"
+  },
+  {
+   "title": "Hims blog: Finasteride cost guide ($22 a month on a three-month supply)",
+   "url": "https://www.hims.com/blog/finasteride-costs-pricing-guide"
+  },
+  {
+   "title": "Hims blog: How to get finasteride (questions a provider might ask)",
+   "url": "https://www.hims.com/blog/is-finasteride-over-the-counter"
+  },
+  {
+   "title": "Hims blog: Hims vs. Roman (plan lengths, multi-condition compounded products)",
+   "url": "https://www.hims.com/blog/hims-vs-roman"
+  },
+  {
+   "title": "Help centre: What does \"Outstanding Medical Visit\" mean? (48-hour review)",
+   "url": "https://support.hims.com/hc/en-us/articles/360001339866-What-does-Outstanding-Medical-Visit-mean"
+  },
+  {
+   "title": "Help centre: What is the \"Action Item\" in my account?",
+   "url": "https://support.hims.com/hc/en-us/articles/13660161613083-What-is-the-Action-Item-in-my-account"
+  },
+  {
+   "title": "Help centre: Can I adjust my medications? (self-service covers weight loss and sexual health only)",
+   "url": "https://support.hims.com/hc/en-us/articles/32102621754651-Can-I-adjust-my-medications"
+  },
+  {
+   "title": "Internet Archive availability check for the consultation page (copies exist; not openable from this machine)",
+   "url": "https://archive.org/wayback/available?url=hims.com/c/hl"
   }
  ],
  "limitations": [
-  "The men's consultation was not seen at all. No real question wording, option, branch, stop screen, recommendation or plan price from it is in this file.",
-  "The Hers (women) site was not seen at all. The four Hers products come from search-result snippets and are incomplete.",
-  "Plan-length prices are known only for the 10-month plan (from footnotes) and from two Hims blog posts and one press review.",
-  "The \"who should not use\" rules are from patient information pages. They show what the provider must rule out, not what the software does with an answer.",
-  "Prices shown differ between pages; Hims runs many price tests (hundreds of experiment names are embedded in its pages)."
+  "The men's consultation was not seen at all, in stage 1 or stage 2 (three attempts in stage 2 terms: one replay and one logged re-test, both blocked). No real question wording, option, branch, stop screen, recommendation or plan price from it is in this file.",
+  "No one-change experiment exists for the real questionnaire. The only live experiments are on the three-question landing-page pre-quiz (5 replays, every non-baseline option). Nothing from the protocol's priority list (sex, age, pregnancy, pattern, medical conditions, medicines, preference) could be tested.",
+  "The 19 men's entries are topics from Hims' own articles and from field names, not screens. Their order, wording, options and \"stage\" (before or after the account wall) are guesses and are marked as such.",
+  "Rules R1 to R6 and R14 to R19 are from published documents. They show what the provider must rule out and how review works, not what the software does with an answer. Rules R12, R13 and R20 rest on flag or field NAMES only and are low confidence.",
+  "The default recommendation (the spray) is inferred, not seen.",
+  "Plan-length prices are known only from footnotes, three Hims blog posts and one press review; two Hims blog posts contradict each other on the Duo kit. Hims runs price tests.",
+  "The Hers (women) site was not seen at all; the four Hers products are stubs. See the separate hers-us report.",
+  "Cached copies of the consultation script exist at the Internet Archive (per its availability service) but could not be opened from this machine; they would probably give the real hair-quiz questions.",
+  "Web search stopped after one query in stage 2 (shared budget used up), so third-party walkthroughs, forum posts and videos were not searched again. One review that was fetched directly (Healthline) turned out to describe the erectile-dysfunction sign-up, not hair.",
+  "The pre-quiz experiments used one landing page and a desktop browser; phone layout was not tested."
  ]
 }

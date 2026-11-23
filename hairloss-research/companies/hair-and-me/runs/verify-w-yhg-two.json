@@ -1,0 +1,166 @@
+{
+ "_about": "Stage 3 (verify) one-change replay verify-w-yhg-two (women baseline). Change: women-yhg: one goal → two goals (added 'Grow thicker and fuller hair'); the top-goal screen was answered with the baseline goal",
+ "start": "https://www.hairandme.com/c/suh/new",
+ "answers": {
+  "tp": [
+   "Treatment for women"
+  ],
+  "yhg": [
+   "Prevent, stop or reverse hair loss",
+   "Grow thicker and fuller hair",
+   "Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us."
+  ],
+  "js": [
+   "Ready to start treatment"
+  ],
+  "pds": [
+   {
+    "select": "select[name='3039']",
+    "value": {
+     "label": "Female"
+    }
+   }
+  ],
+  "pdsc": [
+   "I confirm the above selection is accurate and true."
+  ],
+  "mi": [],
+  "ht": [
+   "Straight"
+  ],
+  "hs": [
+   "None of the above"
+  ],
+  "hw": [
+   "3-4 times per week"
+  ],
+  "hht": [
+   "None of the above"
+  ],
+  "ls": [
+   "None of these apply to me"
+  ],
+  "htp": [
+   "None of the above"
+  ],
+  "hdw": [
+   "No"
+  ],
+  "htaf": [
+   "My middle parting is getting wider"
+  ],
+  "htc": [
+   "Over a year ago"
+  ],
+  "ar": [],
+  "st": {
+   "byQuestion": {
+    "9346": [
+     "Fair. It often burns, but tans a little"
+    ],
+    "9348": [
+     {
+      "range": "input[type=range]",
+      "value": 25
+     }
+    ]
+   }
+  },
+  "sc": [
+   "Normal"
+  ],
+  "scc": [
+   "None of the above"
+  ],
+  "smt": [
+   "Fuller, denser-looking hair that I feel confident about"
+  ],
+  "pt": [
+   "No"
+  ],
+  "tt": [
+   "The Capsules"
+  ],
+  "dt": [],
+  "pg": [
+   "No",
+   "Yes, I've read and understood the information and would like to carry on."
+  ],
+  "mp": [
+   "None of the above"
+  ],
+  "mdf": [
+   "No, I don't take any medications"
+  ],
+  "mcf": [
+   "None of the above"
+  ],
+  "al": [
+   "No known allergies"
+  ],
+  "rhf": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "yna": [],
+  "rha": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "di": [
+   "I'm looking for a long-term effective haircare treatment"
+  ],
+  "rj": [],
+  "el": {
+   "byType": {
+    "date_masked": [
+     {
+      "type": "input[name=\"3053\"]",
+      "value": "15061988"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ],
+    "date_split": [
+     {
+      "fill": "Day",
+      "value": "15"
+     },
+     {
+      "fill": "Month",
+      "value": "06"
+     },
+     {
+      "fill": "Year",
+      "value": "1988"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ]
+   }
+  },
+  "ct": [],
+  "hgp": [
+   "Prevent, stop or reverse hair loss"
+  ],
+  "bp": [
+   "Well-controlled"
+  ],
+  "pgc": [
+   "Yes, I've read and understood the information and would like to carry on."
+  ]
+ },
+ "_changed": {
+  "flow": "women",
+  "step": "yhg",
+  "desc": "women-yhg: one goal → two goals (added 'Grow thicker and fuller hair'); the top-goal screen was answered with the baseline goal",
+  "stage": 3,
+  "kind": "gap"
+ }
+}

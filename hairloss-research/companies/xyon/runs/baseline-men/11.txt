@@ -1,0 +1,26 @@
+STEP 11 wait 1500
+URL: https://consultation.xyonhealth.com/en-US/hair-treatment-rx/welcome
+TITLE: XYON | Hair Treatment Rx - Welcome
+
+--- VISIBLE TEXT ---
+Create an account to fill out your medical history
+Please use your legal name as it appears on your government-issued ID.
+Legal First Name
+Legal Last Name
+Email Address
+Password
+Show
+I agree to the Terms of Use, Privacy Policy, and Telehealth Consent
+I want to receive the latest news, offers, and promotions
+Continue
+Privacy Policy | Terms of Use | Telehealth Consent
+
+--- CONTROLS ---
+  button (3): Back [disabled]  ·  Show  ·  Continue [disabled]
+  input:text (2): Legal First Name  ·  Legal Last Name
+  input:email (1): Email Address
+  input:password (1): Password
+  checkbox (3): on [false]  ·  combinedMandatoryConsent  ·  marketingConsent
+
+--- LINKS ---
+  link (3): Privacy Policy -> https://xyonhealth.myshopify.com/pages/xyon-privacy-policy  ·  Terms of Use -> https://xyonhealth.myshopify.com/pages/xyon-terms-of-use  ·  Telehealth Consent -> https://xyonhealth.myshopify.com/pages/telehealth-consent

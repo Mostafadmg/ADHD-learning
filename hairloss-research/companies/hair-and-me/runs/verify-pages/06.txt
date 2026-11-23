@@ -1,0 +1,14 @@
+STEP 06 goto "https://www.hairandme.com/products/the-vitamins"
+URL: https://www.hairandme.com/products/the-vitamins
+TITLE: 
+
+--- VISIBLE TEXT ---
+Something went wrong
+
+Sorry, something went wrong. Please try again later.
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

@@ -1,0 +1,40 @@
+STEP 04 wait 4000
+URL: https://www.musely.com/cart
+TITLE: Cart
+
+--- VISIBLE TEXT ---
+Cart updated. Cart Total $99.00
+
+20% Off New Patient Offer · Expires in 11 : 56 : 47
+11 hours 56 minutes remaining
+Claim
+Back
+Your Cart (1)
+Rx
+
+The Hair Pill
+
+90-Day Supply
+
+Frequency
+Every 3 months
+$99
+Save 30%
+Order Summary
+The Hair Pill
+$99
++ Have a Promo Code?
+Cart Total
+$99.00*
+
+*Free shipping, tax free. A $20 Doctor Visit Fee is required one-time per transaction and will be shown in your order summary. This covers Online Doctor Visit, custom prescription & 60-day unlimited online consultation.
+
+Continue
+
+--- CONTROLS ---
+  button (19): Shop  ·  Community  ·  Support  ·  About  ·  1  ·  20% Off New Patient Offer · Expires in 11 : 56 : 47 11 hours 56 minutes remaining  ·  Claim  ·  Back  ·  Remove The Hair Pill from cart  ·  Frequency Every 3 months $99 Save 30%  ·  + Have a Promo Code?  ·  Continue  ·  Longevity  ·  Skin  ·  Menopause  ·  Hair  ·  Non-Prescription Essentials  ·  Subscribe with email [disabled]  ·  Subscribe with SMS [disabled]
+  input:email (1): Email address
+  input:tel (1): Mobile number
+
+--- LINKS ---
+  link (28): Skip to main content -> #main  ·  Musely Home -> /  ·  Search -> /search?focus=1  ·  Log In / Sign Up -> /login  ·  Shop Treatments -> /alltreatments  ·  Get Help -> /gethelp  ·  Help Center -> https://support.musely.com  ·  Refund/Return Policy -> https://support.musely.com/hc/articles/18229725131415-How-can-I-request-a-refund  ·  Patient Forum -> /community  ·  Treatment Reviews -> /spotcream/review  ·  MuselyWorks -> /muselyworks  ·  About Musely -> /facerxstory  ·  Our Doctors -> /doctors  ·  Press -> /press  ·  Careers -> /careers  ·  eGift Card -> /facerx/giftcard  ·  60-Day Result Guarantee -> https://support.musely.com/hc/articles/360049083653-What-is-the-60-Day-Result-Guarantee  ·  Facebook -> https://www.facebook.com/muselyofficial  ·  Pinterest -> https://www.pinterest.com/musely/  ·  Instagram -> https://www.instagram.com/musely/  ·  Tiktok -> https://www.tiktok.com/@musely  ·  Twitter -> https://twitter.com/musely  ·  Get 10% off your first order -> /subscribe  ·  Terms -> http://attn.tv/musely/terms.html  ·  Privacy -> /terms/privacy  ·  Terms of Service -> /terms  ·  Privacy Policy -> /terms/privacy  ·  Accessibility -> /terms/accessibility

@@ -1,0 +1,16 @@
+STEP 10 click "No"
+URL: https://consultation.xyonhealth.com/en-US/hair-treatment-rx/welcome
+TITLE: XYON | Hair Treatment Rx - Welcome
+
+--- VISIBLE TEXT ---
+Congrats! You are eligible.
+
+The next step will be creating a secure account so you can share your medical history with our doctors.
+
+Create Account
+
+--- CONTROLS ---
+  button (2): Back  ·  Create Account
+
+--- LINKS ---
+

@@ -1,0 +1,5 @@
+[22:38:52] start verify-base-men
+[22:41:06] done  verify-base-men exit=0 :: ===== STOP: no answer for step 30 [yd] (question) Personalise your account =====
+[22:41:12] start verify-base-women
+[22:43:26] done  verify-base-women exit=0 :: ===== STOP: no answer for step 32 [yd] (question) Personalise your account =====
+ALL-DONE

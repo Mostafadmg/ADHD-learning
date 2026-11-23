@@ -1,0 +1,10 @@
+{"url":"https://script.crazyegg.com/pages/data-scripts/0133/7340/site/shop.sons.co.uk.json?t=1","method":"GET","status":200,"size":53320,"file":"net/01-script_crazyegg_com_pages_data_scripts_0133_7340_site_shop_sons_co_uk_json_t_1.json"}
+{"url":"https://connect.leafsignal.com/shopify/webhook/custom","method":"POST","status":200,"size":22}
+{"url":"https://script.crazyegg.com/pages/data-scripts/0133/7340/sampling/shop.sons.co.uk.json?t=1","method":"GET","status":200,"size":204}
+{"url":"https://pixel-config.reddit.com/pixels/a2_e6f5ouuc6gbo/config","method":"GET","status":200,"size":240}
+{"url":"https://bzrcdn.openai.com/pixel-config/v1/MiSpseWwE72oukFNug9VPK.json","method":"GET","status":200,"size":44}
+{"url":"https://shop.sons.co.uk/locales/en/translation.json","method":"GET","status":200,"size":53269,"file":"net/02-shop_sons_co_uk_locales_en_translation_json.json"}
+{"url":"https://api.sons.co.uk/cart/data?logged_in=false","method":"GET","status":200,"size":2717,"file":"net/03-api_sons_co_uk_cart_data_logged_in_false.json"}
+{"url":"https://shop.sons.co.uk/locales/en/translation.json","method":"GET","status":200,"size":53269,"file":"net/04-shop_sons_co_uk_locales_en_translation_json.json"}
+{"url":"https://careforsonsltd.pxf.io/xur/30850","method":"POST","status":200,"size":120}
+{"url":"https://api.sons.co.uk/cart/data?logged_in=false","method":"GET","status":200,"size":2717,"file":"net/05-api_sons_co_uk_cart_data_logged_in_false.json"}

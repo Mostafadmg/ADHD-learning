@@ -1,0 +1,22 @@
+STEP 03 click "Continue"
+URL: https://start.ro.co/fxdxbh/online-visit/22
+TITLE: Online Visit
+
+--- VISIBLE TEXT ---
+What are your top hair goals?
+Regrow my hair
+Get thicker, fuller hair
+Proactively prevent hair loss
+Continue
+What hair loss solutions have you tried, if any?
+Select all that apply.
+Non-prescription solutions (e.g. Rogaine, supplements)
+Prescription medications (e.g. Propecia, oral minoxidil)
+None of the above
+Continue
+
+--- CONTROLS ---
+  button (7): Regrow my hair [true]  ·  Get thicker, fuller hair [false]  ·  Proactively prevent hair loss [false]  ·  Continue [disabled]  ·  Non-prescription solutions (e.g. Rogaine, supplements) [false]  ·  Prescription medications (e.g. Propecia, oral minoxidil) [false]  ·  None of the above [false]
+
+--- LINKS ---
+

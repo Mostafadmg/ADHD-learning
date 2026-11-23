@@ -1,0 +1,52 @@
+STEP 04 click "I'm not sure / I don't have a preference"
+URL: https://www.keeps.com/quiz?step=4
+TITLE: Take the Hair Loss Quiz | Keeps
+
+--- VISIBLE TEXT ---
+Are you interested in any specific active ingredients?
+
+Learn about hair loss ingredients and select all that apply
+
+Products with finasteride (e.g., Propecia®)
+
+Products with minoxidil (e.g., Rogaine®)
+
+Products with tretinoin
+
+Products with saw palmetto
+
+Products with ketoconazole
+
+I'm not sure / I'm interested in any effective ingredients!
+
+CONTINUE
+
+WHY WE ASK THIS
+
+This helps us recommend the right treatment plan for you. Sometimes the most effective treatment may not match your preferences, but we’ll try our best! If you change your mind, you can easily edit your plan at the end of the quiz or retake the quiz.
+
+Know the difference
+
+Minoxidil
+
+Improves blood flow to hair follicles to boost regrowth by up to 35%
+
+Finasteride
+
+Up to 90% effective at treating hair loss, especially along the hairline
+
+Saw palmetto
+
+Naturally derived and proven to stabilize hair loss and promote healthy hair growth
+
+Ketoconazole
+
+Treats dandruff, itchiness, and flaking in 2-3 weeks, and can also reduce scalp inflammation to support healthy hair growth
+
+Take the Hair Loss Quiz | Keeps
+
+--- CONTROLS ---
+  button (7): Products with finasteride (e.g., Propecia®)  ·  Products with minoxidil (e.g., Rogaine®)  ·  Products with tretinoin  ·  Products with saw palmetto  ·  Products with ketoconazole  ·  I'm not sure / I'm interested in any effective ingredients!  ·  CONTINUE
+
+--- LINKS ---
+

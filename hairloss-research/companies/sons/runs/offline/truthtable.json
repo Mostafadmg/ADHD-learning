@@ -1,0 +1,299 @@
+{
+ "older": {
+  "11000": {
+   "count": 58,
+   "primary": [
+    "finasteride/topical-hair-loss-spray"
+   ],
+   "rest": [
+    "hair-growth-complex"
+   ]
+  },
+  "11010": {
+   "count": 1,
+   "primary": [
+    "the-duo-plan",
+    "ultimate-hair-loss-plan"
+   ],
+   "rest": [
+    "minoxidil",
+    "finasteride/topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ]
+  },
+  "11011": {
+   "count": 1,
+   "primary": [
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "rest": [
+    "ultimate-hair-loss-plan",
+    "minoxidil",
+    "finasteride/topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ]
+  },
+  "11100": {
+   "count": 2,
+   "primary": [
+    "oral-duo-plan"
+   ],
+   "rest": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride/topical-hair-loss-spray",
+    "hair-growth-complex"
+   ]
+  },
+  "11110": {
+   "count": 1,
+   "primary": [
+    "oral-duo-plan/the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule"
+   ],
+   "rest": [
+    "ultimate-hair-loss-plan-capsule/ultimate-hair-loss-plan",
+    "oral-minoxidil/minoxidil",
+    "finasteride/topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ]
+  },
+  "11111": {
+   "count": 1,
+   "primary": [
+    "oral-duo-plan/the-duo-plan",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "rest": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule/ultimate-hair-loss-plan",
+    "oral-minoxidil/minoxidil",
+    "finasteride/topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ]
+  },
+  "00110": {
+   "count": 126,
+   "primary": [
+    "oral-minoxidil/minoxidil"
+   ],
+   "rest": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ]
+  },
+  "00000": {
+   "count": 30474,
+   "primary": [
+    "hair-growth-complex"
+   ],
+   "rest": []
+  },
+  "00100": {
+   "count": 126,
+   "primary": [
+    "oral-minoxidil"
+   ],
+   "rest": [
+    "hair-growth-complex"
+   ]
+  },
+  "00010": {
+   "count": 1914,
+   "primary": [
+    "minoxidil"
+   ],
+   "rest": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ]
+  },
+  "01011": {
+   "count": 2,
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "rest": [
+    "minoxidil",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ]
+  },
+  "01000": {
+   "count": 60,
+   "primary": [
+    "topical-hair-loss-spray"
+   ],
+   "rest": [
+    "hair-growth-complex"
+   ]
+  },
+  "01010": {
+   "count": 2,
+   "primary": [
+    "minoxidil"
+   ],
+   "rest": [
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ]
+  }
+ },
+ "newer": {
+  "11000": {
+   "count": 58,
+   "primary": [
+    "finasteride/topical-hair-loss-spray"
+   ],
+   "rest": [
+    "hair-growth-complex"
+   ]
+  },
+  "11010": {
+   "count": 1,
+   "primary": [
+    "the-duo-plan"
+   ],
+   "rest": [
+    "ultimate-hair-loss-plan",
+    "minoxidil",
+    "finasteride/topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ]
+  },
+  "11011": {
+   "count": 1,
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "rest": [
+    "the-duo-plan",
+    "ultimate-hair-loss-plan",
+    "minoxidil",
+    "finasteride/topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ]
+  },
+  "11100": {
+   "count": 2,
+   "primary": [
+    "oral-duo-plan"
+   ],
+   "rest": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride/topical-hair-loss-spray",
+    "hair-growth-complex"
+   ]
+  },
+  "11110": {
+   "count": 1,
+   "primary": [
+    "oral-duo-plan/the-duo-plan"
+   ],
+   "rest": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule/ultimate-hair-loss-plan",
+    "oral-minoxidil/minoxidil",
+    "finasteride/topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ]
+  },
+  "11111": {
+   "count": 1,
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "rest": [
+    "oral-duo-plan/the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule/ultimate-hair-loss-plan",
+    "oral-minoxidil/minoxidil",
+    "finasteride/topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ]
+  },
+  "00110": {
+   "count": 126,
+   "primary": [
+    "oral-minoxidil/minoxidil"
+   ],
+   "rest": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ]
+  },
+  "00000": {
+   "count": 31498,
+   "primary": [
+    "hair-growth-complex"
+   ],
+   "rest": []
+  },
+  "00100": {
+   "count": 126,
+   "primary": [
+    "oral-minoxidil"
+   ],
+   "rest": [
+    "hair-growth-complex"
+   ]
+  },
+  "00010": {
+   "count": 890,
+   "primary": [
+    "minoxidil"
+   ],
+   "rest": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ]
+  },
+  "01011": {
+   "count": 2,
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "rest": [
+    "minoxidil",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ]
+  },
+  "01000": {
+   "count": 60,
+   "primary": [
+    "topical-hair-loss-spray"
+   ],
+   "rest": [
+    "hair-growth-complex"
+   ]
+  },
+  "01010": {
+   "count": 2,
+   "primary": [
+    "minoxidil"
+   ],
+   "rest": [
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ]
+  }
+ },
+ "patients": 32768
+}

@@ -1,0 +1,16 @@
+STEP 04 click "Proactively prevent hair loss"
+URL: https://start.ro.co/fxdxbh/online-visit/20
+TITLE: Online Visit
+
+--- VISIBLE TEXT ---
+What are your top hair goals?
+Regrow my hair
+Get thicker, fuller hair
+Proactively prevent hair loss
+Continue
+
+--- CONTROLS ---
+  button (4): Regrow my hair [true]  ·  Get thicker, fuller hair [true]  ·  Proactively prevent hair loss [true]  ·  Continue
+
+--- LINKS ---
+

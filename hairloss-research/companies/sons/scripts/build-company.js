@@ -443,3 +443,7 @@ const out = {
 };
 fs.writeFileSync(path.join(ROOT, 'company.json'), JSON.stringify(out, null, 1));
 console.log('products', products.length, '| men questions', mq.length, '| options', mq.reduce((a, q) => a + q.options.length, 0), '| om5', omq.length, '| beard', bq.length, '| clinic', cq.length, '| rules', rules.length);
+
+// ---------------------------------------------------------------- stage 2 (EXPERIMENT) overlay
+// Adds experiments, rules, recommendations and per-option effects from the one-change runs. See scripts/s2-overlay.js.
+if (fs.existsSync(path.join(__dirname, 's2-overlay.js')) && fs.existsSync(path.join(ROOT, 'runs', 'offline', 'results.json'))) require('./s2-overlay.js');

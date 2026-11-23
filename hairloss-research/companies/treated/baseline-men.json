@@ -82,8 +82,52 @@
    "text": "No"
   },
   {
+   "do": "click",
+   "text": "Okay"
+  },
+  {
+   "do": "fill",
+   "label": "Feet",
+   "value": "5"
+  },
+  {
+   "do": "fill",
+   "label": "Inches",
+   "value": "10"
+  },
+  {
+   "do": "fill",
+   "label": "Stone",
+   "value": "12"
+  },
+  {
+   "do": "fill",
+   "label": "Pounds",
+   "value": "0"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "Yes, correct"
+  },
+  {
    "do": "wait",
-   "ms": 5000
+   "ms": 8000
+  },
+  {
+   "do": "click",
+   "text": "Save"
+  },
+  {
+   "do": "wait",
+   "ms": 7000
   }
  ]
 }

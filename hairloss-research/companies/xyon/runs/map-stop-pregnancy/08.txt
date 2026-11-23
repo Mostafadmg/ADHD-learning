@@ -1,0 +1,14 @@
+STEP 08 click "Continue"
+URL: https://consultation.xyonhealth.com/en-US/hair-treatment-rx/welcome
+TITLE: XYON | Hair Treatment Rx - Welcome
+
+--- VISIBLE TEXT ---
+What is your biological sex?
+Male
+Female
+
+--- CONTROLS ---
+  button (3): Back  ·  Male [false]  ·  Female [false]
+
+--- LINKS ---
+

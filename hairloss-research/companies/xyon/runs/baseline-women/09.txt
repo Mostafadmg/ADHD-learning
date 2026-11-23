@@ -1,0 +1,14 @@
+STEP 09 click "Female"
+URL: https://consultation.xyonhealth.com/en-US/hair-treatment-rx/welcome
+TITLE: XYON | Hair Treatment Rx - Welcome
+
+--- VISIBLE TEXT ---
+Are you pregnant, trying to conceive, breastfeeding, undergoing or planning fertility treatments?
+Yes
+No
+
+--- CONTROLS ---
+  button (3): Back  ·  Yes [false]  ·  No [false]
+
+--- LINKS ---
+

@@ -1,0 +1,9 @@
+{
+ "actions": "exp-w19.json",
+ "changed": "women-q7 allergies: No -> Yes, women-q7a = Other medication only (details: 'Ibuprofen')",
+ "failedStep": "3: click #onetrust-reject-all-handler :: locator.click: Timeout 4000ms exceeded.",
+ "saveReply": [],
+ "productRulesReply": [],
+ "productRulesCalled": 0,
+ "apiCallsAfterLoad": []
+}

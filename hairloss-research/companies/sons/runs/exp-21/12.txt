@@ -1,0 +1,48 @@
+STEP 12 click "Oral capsule - (take once a day)"
+URL: https://shop.sons.co.uk/consultation
+TITLE: Sons
+
+--- VISIBLE TEXT ---
+Menu
+Do any of the following apply to you?
+High Blood Pressure
+Cardiovascular Disease (incl. Heart Attack, Rhythm, Valve Disorder or Stroke)
+Severe Kidney or Liver Disease
+Prostate Disease, Male Breast Cancer or Testicular Cancer
+Rheumatoid Arthritis, Systemic Lupus or on Methotrexate
+Scalp Disorders (including Scalp Psoriasis, Eczema, Dermatitis or Infection)
+Phaeochromocytoma
+Diagnosed Lactose Allergy
+Sexual Dysfunction
+None of these
+Sons
+About Us
+People & Planet
+Hair Loss Science
+Testimonials
+Our Blog
+Refer A Friend
+FAQs
+Legal Info
+Delivery & Info
+Terms & Conditions
+Privacy Policy
+Refund Policy
+Make A Complaint
+Indemnity Insurance
+Responsible Pharmacist
+Get In Touch
+
+hello@sons.co.uk
+
+0208 154 2524
+
+The Independent Pharmacy is our partner pharmacy and independent prescribing service. ABSM Healthcare Ltd, 14 - 16 Dixon Road, Brislington, Bristol, BS4 5QW.
+Our medical products have been licensed for sale in the UK and are regulated by the Medicines & Healthcare products Regulatory Agency (MHRA).
+©2026 CAREFORSONS LTD. ALL RIGHTS RESERVED.
+
+--- CONTROLS ---
+  input:button (2): (no label) = "<"  ·  5155 = "Continue"
+
+--- LINKS ---
+  link (15): About Us -> https://sons.co.uk/pages/about  ·  People & Planet -> https://sons.co.uk/pages/people-and-planet  ·  Hair Loss Science -> https://sons.co.uk/pages/hair-loss-science  ·  Testimonials -> https://sons.co.uk/blogs/testimonials  ·  Our Blog -> https://sons.co.uk/blogs/journal  ·  Refer A Friend -> https://sons.co.uk/pages/refer-a-friend  ·  FAQs -> https://sons.co.uk/pages/faqs  ·  Delivery & Info -> https://sons.co.uk/pages/delivery-returns  ·  Terms & Conditions -> https://sons.co.uk/pages/terms-conditions  ·  Privacy Policy -> https://sons.co.uk/pages/sons-privacy-policy  ·  Refund Policy -> https://sons.co.uk/pages/refund-policy  ·  Make A Complaint -> https://sons.co.uk/pages/complaints  ·  Indemnity Insurance -> https://cdn.shopify.com/s/files/1/0255/7725/9086/files/1657517955_PIPL_Policy_Certificate.pdf?v=1699374958  ·  Responsible Pharmacist -> https://www.chemist-4-u.com/responsible-pharmacist  ·  CAREFORSONS LTD -> https://sons.co.uk/

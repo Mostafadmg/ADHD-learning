@@ -1,0 +1,22 @@
+STEP 11 wait 1200
+URL: https://consultation.xyonhealth.com/en-US/hair-treatment-rx/welcome
+TITLE: XYON | Hair Treatment Rx - Welcome
+
+--- VISIBLE TEXT ---
+Sorry, you're not currently eligible.
+
+XYON cannot offer this service to females who are pregnant or trying to conceive.
+
+We are constantly updating our services. Please provide your e-mail address, and we will reach out if your eligibility changes.
+
+Email
+I want to receive the latest news, offers, and promotions.
+Register for updates
+
+--- CONTROLS ---
+  button (2): Back  ·  Register for updates [disabled]
+  input:email (1): Email
+  checkbox (2): on [false]  ·  marketingConsent
+
+--- LINKS ---
+

@@ -1,0 +1,24 @@
+STEP 10 click "Continue"
+URL: https://www.keeps.com/hair-assessment-quiz-gel?step=13
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+Matching your prescription treatment.
+
+7%
+
+Analyzing hair loss pattern
+
+Selecting prescription compounds
+
+Adjusting strength for your stage
+
+Finalizing clinician match
+
+Keeps | Hair Loss Treatment for Men
+
+--- CONTROLS ---
+  button (1): Go back
+
+--- LINKS ---
+

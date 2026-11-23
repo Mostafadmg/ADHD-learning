@@ -1,0 +1,27 @@
+STEP 02 click "18-30"
+URL: https://start.struthealth.com/flow/6aa3d578f415d1603a6e0c85
+TITLE: Minoxidil Prod
+
+--- VISIBLE TEXT ---
+11%
+Minoxidil Tablets
+Oral minoxidil for hair loss · compounded by a US licensed pharmacy
+DOSE
+2.5 mg
+90 Day Supply
+$65
+for 90 days
+1.25 mg
+90 Day Supply
+$55
+for 90 days
+TOTAL TODAY
+$65
+Add to cart
+→
+
+--- CONTROLS ---
+  button (4): Go back  ·  2.5 mg 90 Day Supply $65 for 90 days [true]  ·  1.25 mg 90 Day Supply $55 for 90 days [false]  ·  Add to cart →
+
+--- LINKS ---
+

@@ -1,0 +1,134 @@
+{
+ "base-men": {
+  "flow": "main",
+  "changed": "none (baseline man, pinned start URL)"
+ },
+ "base-women": {
+  "flow": "main",
+  "changed": "none (baseline woman, pinned start URL)"
+ },
+ "m-method-oral": {
+  "flow": "main",
+  "changed": "m-method: Not sure → Oral"
+ },
+ "m-method-topical": {
+  "flow": "main",
+  "changed": "m-method: Not sure → Topical"
+ },
+ "w-50plus": {
+  "flow": "main",
+  "changed": "m-sexage: Female under 50 → Female 50 or older"
+ },
+ "w-method-oral": {
+  "flow": "main",
+  "changed": "m-method (woman): Not sure → Oral"
+ },
+ "w-method-topical": {
+  "flow": "main",
+  "changed": "m-method (woman): Not sure → Topical"
+ },
+ "m-goal-exploring": {
+  "flow": "main",
+  "changed": "m-goals: regrow hairline → I'm just exploring my options"
+ },
+ "m-goal-prevent": {
+  "flow": "main",
+  "changed": "m-goals: regrow hairline → I want to prevent future hair loss"
+ },
+ "m-duration-lt6m": {
+  "flow": "main",
+  "changed": "m-duration: 1-3 years → Less than 6 months"
+ },
+ "m-family-no": {
+  "flow": "main",
+  "changed": "m-family: Yes → No"
+ },
+ "m-pattern-prevent": {
+  "flow": "main",
+  "changed": "m-pattern-male: hairline + all over → None, I'm trying to prevent hair loss"
+ },
+ "m-pattern-patches": {
+  "flow": "main",
+  "changed": "m-pattern-male: + Bald patches"
+ },
+ "m-pattern-other": {
+  "flow": "main",
+  "changed": "m-pattern-male: + Another pattern of hair loss (free text answered neutrally)"
+ },
+ "w-pattern-patches": {
+  "flow": "main",
+  "changed": "m-pattern-female: + Bald patches"
+ },
+ "m-choose-topical": {
+  "flow": "main",
+  "changed": "m-reco: Dual Treatment → Topical only"
+ },
+ "m-oral-choose-capsule": {
+  "flow": "main",
+  "changed": "m-method: Oral, then m-reco: SuperCapsule only"
+ },
+ "m-household-yes-accept": {
+  "flow": "main",
+  "changed": "m-household-preg: No → Yes, then 'Yes, I accept these risks'"
+ },
+ "m-household-yes-decline": {
+  "flow": "main",
+  "changed": "m-household-preg: No → Yes, then 'No, I do not accept these risks'"
+ },
+ "w-household-yes": {
+  "flow": "main",
+  "changed": "m-household-preg (woman under 50): No → Yes (stopped on the screen that follows)"
+ },
+ "m-dob-under18": {
+  "flow": "main",
+  "changed": "m-dob: 1994 → 2010 (age 16)"
+ },
+ "m-dob-70": {
+  "flow": "main",
+  "changed": "m-dob: 1994 → 1956 (age 70)"
+ },
+ "w-dob-mismatch": {
+  "flow": "main",
+  "changed": "m-dob (woman under 50): 1988 → 1970 (age 56, does not match band)"
+ },
+ "m-cond-heart": {
+  "flow": "main",
+  "changed": "m-conditions: None → Heart condition (free text answered)"
+ },
+ "m-bp-low": {
+  "flow": "main",
+  "changed": "m-bp: Normal → Low (Below 100 / 65)"
+ },
+ "m-prior-oralfin-reaction": {
+  "flow": "main",
+  "changed": "m-prior: None → Oral Finasteride, then m-reactions: Yes (free text)"
+ },
+ "m-symptoms-itch": {
+  "flow": "main",
+  "changed": "m-symptoms: None → Severe itching, burning, or rash on my scalp (free text answered)"
+ },
+ "m-meds-yes": {
+  "flow": "main",
+  "changed": "m-meds: No → Yes (free text)"
+ },
+ "m-allergy-minoxidil": {
+  "flow": "main",
+  "changed": "m-allergies: No → Yes, text 'Minoxidil'"
+ },
+ "w-preg-no-postmeno": {
+  "flow": "main",
+  "changed": "m-preg-ability: Yes → No, then 'I am post menopausal'"
+ },
+ "w-bc-none": {
+  "flow": "main",
+  "changed": "m-birth-control: Oral contraceptives → None of the above"
+ },
+ "m-custom-yes": {
+  "flow": "main",
+  "changed": "m-custom: No → Yes (asks for finasteride instead of dutasteride)"
+ },
+ "w-50plus-full": {
+  "flow": "main",
+  "changed": "m-sexage: Female under 50 → Female 50 or older (birth year moved to 1970 to match; other answers as baseline)"
+ }
+}

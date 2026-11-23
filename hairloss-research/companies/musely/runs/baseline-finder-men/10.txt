@@ -1,0 +1,63 @@
+STEP 10 wait 3000
+URL: https://www.musely.com/facerx/find/concerns/questionnaire/results?c=hair&i=0&a=q1:o1;q1a:o1.o2.o3
+TITLE: Your hair treatments | Musely
+
+--- VISIBLE TEXT ---
+Back
+
+BASED ON YOUR ANSWERS
+
+Here's what we'd prescribe for hair.
+
+Your Musely doctor reviews & approves before anything is compounded.
+
+The Hair Topical Solution - Classic
+
+$33
+/mo
+
+A topical hair growth treatment powered by minoxidil.
+
+Best for: Stop Hair Loss & Promote Hair Growth
+
+Known for: I prefer a classic topical minoxidil treatment
+
+View Details
+Add To Cart
+The Hair Topical Solution - Modern
+
+$38
+/mo
+
+A topical exosome treatment to boost hair growth & density.
+
+Best for: Stop Hair Loss & Promote Hair Growth
+
+Known for: I prefer an advanced topical exosome treatment
+
+View Details
+Add To Cart
+The Hair Pill
+
+$33
+/mo
+
+An oral treatment to regrow hair, reduce thinning & stop excess shedding.
+
+Best for: Stop Hair Loss & Promote Hair Growth
+
+Known for: I prefer a once-daily pill
+
+View Details
+Add To Cart
+
+No treatments added yet
+
+Continue To Cart
+Treat Another Concern
+
+--- CONTROLS ---
+  button (12): Shop  ·  Community  ·  Support  ·  About  ·  Cart (0 items)  ·  The Hair Topical Solution - Classic  ·  View Details  ·  Add To Cart  ·  The Hair Topical Solution - Modern  ·  The Hair Pill  ·  Continue To Cart [disabled]  ·  Treat Another Concern
+
+--- LINKS ---
+  link (5): Skip to main content -> #main  ·  Musely Home -> /  ·  Search -> /search?focus=1  ·  Log In / Sign Up -> /login  ·  Back -> /facerx/find/concerns/questionnaire?c=hair&i=0&a=q1:o1;q1a:o1.o2.o3

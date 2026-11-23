@@ -1,0 +1,11 @@
+{"t":1795473827971,"method":"GET","url":"https://api.hairandme.com/authenticate/check","status":401,"body":"{\"msg\":\"Missing cookie \\\"access_token_cookie_v2\\\"\"}\n"}
+{"t":1795473828640,"method":"POST","url":"https://api.hairandme.com/new-user/3","status":500,"post":"{\"template\":\"suhs\",\"is_platform\":true}","body":"Internal Server Error"}
+{"t":1795473830318,"method":"GET","url":"https://api.hairandme.com/consultation/suhs","status":401,"body":"{\"msg\":\"Missing cookie \\\"access_token_cookie_v2\\\"\"}\n"}
+{"t":1795473831025,"method":"POST","url":"https://api.hairandme.com/logout","status":204,"body":""}
+{"t":1795473831587,"method":"POST","url":"https://rest.hairandme.com/api/v1/logout","status":204,"body":""}
+{"t":1795473833515,"method":"GET","url":"https://api.hairandme.com/authenticate/check","status":401,"body":"{\"msg\":\"Missing cookie \\\"access_token_cookie_v2\\\"\"}\n"}
+{"t":1795473833958,"method":"GET","url":"https://rest.hairandme.com/api/v1/whoami","status":401,"body":"{\"error\":{\"code\":\"UNAUTHORIZED\",\"correlation_id\":\"32c69754-2e02-4319-9839-8096eaa94cf0\",\"message\":\"No permission -- see authorization schemes\"}}\n"}
+{"t":1795473836154,"method":"GET","url":"https://rest.hairandme.com/api/v1/whoami","status":401,"body":"{\"error\":{\"code\":\"UNAUTHORIZED\",\"correlation_id\":\"7c966cf9-30e6-4edb-a983-0ad894e7161e\",\"message\":\"No permission -- see authorization schemes\"}}\n"}
+{"t":1795473836605,"method":"GET","url":"https://api.hairandme.com/authenticate/check","status":401,"body":"{\"msg\":\"Missing cookie \\\"access_token_cookie_v2\\\"\"}\n"}
+{"t":1795473836606,"method":"GET","url":"https://rest.hairandme.com/api/v1/feature-tests","status":200,"body":"{\"experiment_id\":\"8a5dcccb-a06c-4f7a-ad86-5c4c35ce0a0c\",\"version\":\"control\"}\n"}
+{"t":1795473836701,"method":"GET","url":"https://rest.hairandme.com/api/v1/feature-tests","status":200,"body":"{\"experiment_id\":\"718c5979-5810-4946-bda0-b1917c4ab1b0\",\"version\":\"control\"}\n"}

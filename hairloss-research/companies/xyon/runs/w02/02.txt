@@ -1,0 +1,15 @@
+STEP 02 wait 1500
+URL: https://consultation.xyonhealth.com/en-US/hair-treatment-rx/welcome
+TITLE: XYON | Hair Treatment Rx - Welcome
+
+--- VISIBLE TEXT ---
+Where do you live?
+United States
+Canada
+Other
+
+--- CONTROLS ---
+  button (4): Back  ·  United States [false]  ·  Canada [false]  ·  Other [false]
+
+--- LINKS ---
+

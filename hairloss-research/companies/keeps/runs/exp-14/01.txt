@@ -1,0 +1,32 @@
+STEP 01 click "Keep my hair - Preserve"
+URL: https://www.keeps.com/hair-assessment-quiz?step=1
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+How would you describe your hair loss stage right now?
+
+Early signs of hair loss
+
+Starting to notice thinning
+
+Visible hair loss
+
+Noticeable thinning or shedding
+
+Receding hairline or crown thinning
+
+Patterned hair loss
+
+Advanced hair loss
+
+Extensive thinning or balding
+
+I'm not sure - help me choose
+
+Keeps | Hair Loss Treatment for Men
+
+--- CONTROLS ---
+  button (6): Go back  ·  Early signs of hair loss Starting to notice thinning  ·  Visible hair loss Noticeable thinning or shedding  ·  Receding hairline or crown thinning Patterned hair loss  ·  Advanced hair loss Extensive thinning or balding  ·  I'm not sure - help me choose
+
+--- LINKS ---
+

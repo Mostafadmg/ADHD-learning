@@ -1,0 +1,17 @@
+STEP 07 fill "Year (YYYY)" = "1994"
+URL: https://consultation.xyonhealth.com/en-US/hair-treatment-rx/welcome
+TITLE: XYON | Hair Treatment Rx - Welcome
+
+--- VISIBLE TEXT ---
+What is your date of birth?
+Month (MM)
+Day (DD)
+Year (YYYY)
+Continue
+
+--- CONTROLS ---
+  button (2): Back  ·  Continue
+  input:number (3): Month (MM) = "6"  ·  Day (DD) = "15"  ·  Year (YYYY) = "1994"
+
+--- LINKS ---
+

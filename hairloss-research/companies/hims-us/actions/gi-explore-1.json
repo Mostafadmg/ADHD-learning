@@ -1,0 +1,3 @@
+{ "start": "https://www.hims.com/g/i/hl", "maxSteps": 45,
+  "note": "First exploratory walk of the newer intake app. Baseline man where an obvious answer exists; unmapped screens take a neutral choice and are flagged.",
+  "answers": { "goals": ["Regrow a full head of hair"] } }

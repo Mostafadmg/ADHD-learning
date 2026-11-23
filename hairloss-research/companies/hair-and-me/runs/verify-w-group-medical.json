@@ -1,0 +1,182 @@
+{
+ "_about": "Stage 3 (verify) GROUP TEST verify-w-group-medical (women baseline): several medical tick-boxes changed at once. GROUP TEST (women, 4 medical screens changed together): scalp eczema / psoriasis + active infection + pain; scalp steroids; phaeochromocytoma + hypertrichosis + PoTS; allergic to all eight actives",
+ "start": "https://www.hairandme.com/c/suh/new",
+ "answers": {
+  "tp": [
+   "Treatment for women"
+  ],
+  "yhg": [
+   "Prevent, stop or reverse hair loss",
+   "Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us."
+  ],
+  "js": [
+   "Ready to start treatment"
+  ],
+  "pds": [
+   {
+    "select": "select[name='3039']",
+    "value": {
+     "label": "Female"
+    }
+   }
+  ],
+  "pdsc": [
+   "I confirm the above selection is accurate and true."
+  ],
+  "mi": [],
+  "ht": [
+   "Straight"
+  ],
+  "hs": [
+   "None of the above"
+  ],
+  "hw": [
+   "3-4 times per week"
+  ],
+  "hht": [
+   "None of the above"
+  ],
+  "ls": [
+   "None of these apply to me"
+  ],
+  "htp": [
+   "None of the above"
+  ],
+  "hdw": [
+   "No"
+  ],
+  "htaf": [
+   "My middle parting is getting wider"
+  ],
+  "htc": [
+   "Over a year ago"
+  ],
+  "ar": [],
+  "st": {
+   "byQuestion": {
+    "9346": [
+     "Fair. It often burns, but tans a little"
+    ],
+    "9348": [
+     {
+      "range": "input[type=range]",
+      "value": 25
+     }
+    ]
+   }
+  },
+  "sc": [
+   "Normal"
+  ],
+  "scc": [
+   "Diagnosed eczema, psoriasis or seborrheic dermatitis",
+   "A diagnosed active infection (e.g. folliculitis, candida, ringworm)",
+   "Pain and/or burning sensation"
+  ],
+  "smt": [
+   "Fuller, denser-looking hair that I feel confident about"
+  ],
+  "pt": [
+   "No"
+  ],
+  "tt": [
+   "The Capsules"
+  ],
+  "dt": [],
+  "pg": [
+   "No",
+   "Yes, I've read and understood the information and would like to carry on."
+  ],
+  "mp": [
+   "None of the above"
+  ],
+  "mdf": [
+   "Steroids or other medications for psoriasis or eczema on your scalp"
+  ],
+  "mcf": [
+   "Pheochromocytoma",
+   "Hypertrichosis (excessive hair growth anywhere on the body, unrelated to hormones)",
+   "PoTS syndrome (postural tachycardia syndrome)"
+  ],
+  "al": [
+   "Minoxidil",
+   "Finasteride",
+   "Dutasteride",
+   "Melatonin",
+   "Urea",
+   "Niacinamide",
+   "Tretinoin",
+   "Vitamin B6 (Pyridoxine)"
+  ],
+  "rhf": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "yna": [],
+  "rha": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "di": [
+   "I'm looking for a long-term effective haircare treatment"
+  ],
+  "rj": [],
+  "el": {
+   "byType": {
+    "date_masked": [
+     {
+      "type": "input[name=\"3053\"]",
+      "value": "15061988"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ],
+    "date_split": [
+     {
+      "fill": "Day",
+      "value": "15"
+     },
+     {
+      "fill": "Month",
+      "value": "06"
+     },
+     {
+      "fill": "Year",
+      "value": "1988"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ]
+   }
+  },
+  "ct": [],
+  "hgp": [
+   "Prevent, stop or reverse hair loss"
+  ],
+  "bp": [
+   "Well-controlled"
+  ],
+  "pgc": [
+   "Yes, I've read and understood the information and would like to carry on."
+  ]
+ },
+ "_changed": {
+  "flow": "women",
+  "steps": [
+   "scc",
+   "mdf",
+   "mcf",
+   "al"
+  ],
+  "sweep": true,
+  "desc": "GROUP TEST (women, 4 medical screens changed together): scalp eczema / psoriasis + active infection + pain; scalp steroids; phaeochromocytoma + hypertrichosis + PoTS; allergic to all eight actives",
+  "stage": 3,
+  "kind": "group"
+ }
+}

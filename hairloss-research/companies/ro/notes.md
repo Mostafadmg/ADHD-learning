@@ -137,3 +137,67 @@ serves the Ro Mane Spray page.
 `python3 -I scripts/build_company.py` rewrites `company.json` from the schema files plus the annotations in that script
 (question and option wording is copied from the schema, never retyped). Then
 `node ../../tools/validate.js ro --stage map` (passes: 0 errors, 1 warning for the supplement with no URL).
+
+## Stage 2 (EXPERIMENT) finished 2026-11-23
+
+**Result in one line:** the live walk confirms the pre-wall branches exactly as the served schema says, and an offline
+one-change sweep of the schema (291 simulated runs) confirms every stage 1 rule; nothing is offered or priced before the wall.
+
+### What was run
+
+| What | How | Where |
+|---|---|---|
+| 21 live replays, one browser at a time | `scripts/run_exp.sh <id> ...` (walk.js, then token redaction) | action files `experiments/*.json`, results `runs/s2-baseline-*`, `runs/exp-m01..m10`, `runs/exp-w01..w09` |
+| Offline sweep of both schemas | `python3 -I scripts/sweep.py` (uses `scripts/simulate.py`; never touches the site) | `runs/sim/men.json`, `runs/sim/women.json`, readable `runs/sim/summary.txt` |
+| company.json overlay | `python3 -I scripts/stage2.py` | rewrites experiments, rules, recommendations, recommendedWhen, summary lists |
+
+Rebuild order: `build_company.py` (stage 1) -> `sweep.py` -> `stage2.py` -> `node ../../tools/validate.js ro --stage rules`
+(passes: 0 errors, 1 warning for the supplement with no URL). `stage2.py` asserts that each live run's screen order and
+final wall text are what the experiment row claims, so it fails loudly if a run folder is replaced by a different result.
+`scripts/trace.py runs/<id>` prints the screen order of any run.
+
+### Live findings (evidence: observed)
+
+- Men, baseline: q20 -> q22 -> q26 -> wall (q55). Women, baseline: q4 -> q6 -> q8 -> q10 -> wall (q16). Both still work.
+- Men q22 'Non-prescription' or 'Prescription' -> q28 replaces q26 (exp-m03, exp-m04). Fork 25 confirmed.
+- Men q20 (goals), q26, q28: no change at all; the final wall text is byte-for-byte the baseline's (exp-m01, m02, m05 to m09).
+  The pop-up headline does NOT follow the goal.
+- Coupon link `fxdxbh/?c=dhg3wrpe3qn32yash32ng` (from the paid-search quiz page): same screens; the page posts to
+  `/api/coupons/match-trigger` and gets coupon 253 "You've got 35% off first order plus free shipping", valid for schema
+  codes hl-onb-consult-2rx, hl-onb-consult-gs, hl-onb-intent, hl-onb-kit, hl-onb-overhaul, hl-onb-se1, hl-ren-consult-2rx
+  (so other men's schemas exist: kit, overhaul, renewal). Nothing is shown on screen before the wall (exp-m10).
+- Women q8 'Temples' or 'Frontal scalp' alone -> q10 skipped (exp-w05, exp-w06); 'All over' -> q10 asked (exp-w07). Fork 9 confirmed.
+- Women q4, q6 ('Suddenly' included), q10 pictures 1 and 5: no change (exp-w01 to w04, w08, w09).
+- The add-answers responses echo each answer with its `highlight` mark (see `runs/exp-w07/net/`), so the marks are stored
+  server-side with the answers. Who sees them is still inferred (clinician).
+
+Seven code-read rules confirmed live: fork 25 (men), no branch on q20 / q26 / q28 (men), fork 9 both ways (women),
+no branch on q4 / q6 / q10 (women).
+
+### Code findings added in stage 2
+
+- **Multi-select routing (stage 1 open question 3): solved.** Main bundle, next-question selector (search
+  `getIn(["meta","type"])==="MasterQuestion"`): if the question has no `nextQid` of its own, the app takes the `nextQid`
+  of the FIRST selected answer in display order. So men's q132 'Hairline' + 'patches' goes to q150 (onset etc. still
+  asked) and the patch flags still apply; 'patches' alone skips to fork 229. The simulator already behaves this way.
+- Blood-pressure picture ranges (main bundle, array near `highlightedRangeKey`): Low <95/<55, Normal 95-130/55-80,
+  High 131-160/81-100, Very High 161+/101+.
+- Recommender chunk re-read: the saved answer text on the recommendation screen is the name of the RECOMMENDED group
+  (or 'No Recommendation'), and an analytics event records recommended vs selected product. With the V2 layout,
+  state-ineligible groups are simply left off the screen.
+- Sweep highlights: spray recommended for every unflagged man (any goal, severity, 'no hair loss yet', age 70);
+  heart and blood-pressure flags only hit the minoxidil tablet (spray stays); flags add up (depression + heart failure
+  -> no recommendation); women: only named diagnoses stop, self-reported patches / rash / sudden onset do not;
+  age 65 still gets the choice, 66+ gets topical only; women's 'oral minoxidil only' fork branch (4020 -> 4040) cannot
+  be reached by any answer, because the only answer that rules out the topical (lupus) also rules out the tablet.
+- Stage 1's option-level effects were checked against the sweep: 0 outcome mismatches in 222 options; two fixes
+  (women q8 'Temples' and 'Frontal scalp' are now 'skip-questions').
+
+### Not done / still open
+
+- Not replayed live: men q28 'easier or more convenient solution', women q10 pictures 2 and 4, multi-select combinations.
+- `isEligibleFor6And12MonthShipments` still not found in the saved bundles (0 hits in all five files in `raw/js/`).
+- The state list for the compounded spray, the female-redirect flag and drug-interaction checks are server-side.
+- Parent company confirmed in stage 2 from the terms of use (`raw/terms-of-use.html`): 'Roman Health Ventures Inc. and its affiliates including Roman Health Medical LLC, Roman Health Pharmacy LLC, ...'.
+- Web search was not used: the served code answered the questions; no public review was needed to describe post-wall steps.
+- Each live replay leaves one anonymous draft record on Ro's side (stage 2 added 21). Use the simulator for anything further.

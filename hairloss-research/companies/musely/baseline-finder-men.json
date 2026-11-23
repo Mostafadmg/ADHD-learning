@@ -1,0 +1,13 @@
+{ "start": "https://www.musely.com/facerx/find/concerns", "locale": "en-US", "timezone": "America/Chicago",
+  "steps": [
+    {"do": "wait", "ms": 3500},
+    {"do": "press", "key": "Escape"},
+    {"do": "click", "selector": "[role=checkbox]:has-text('Hair')"},
+    {"do": "click", "text": "Continue"},
+    {"do": "click", "selector": "[role=checkbox]:has-text('Stop Hair Loss & Promote Hair Growth')"},
+    {"do": "click", "selector": "[role=checkbox]:has-text('I prefer a classic topical minoxidil treatment')"},
+    {"do": "click", "selector": "[role=checkbox]:has-text('I prefer an advanced topical exosome treatment')"},
+    {"do": "click", "selector": "[role=checkbox]:has-text('I prefer a once-daily pill')"},
+    {"do": "click", "text": "Continue"},
+    {"do": "wait", "ms": 3000}
+  ] }

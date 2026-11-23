@@ -1,0 +1,40 @@
+STEP 03 click "[role=checkbox]:has-text('Hair')"
+URL: https://www.musely.com/facerx/find/concerns
+TITLE: What conditions would you like to treat? | Musely
+
+--- VISIBLE TEXT ---
+Back
+
+CONCERNS
+
+What conditions would you like to treat?
+
+Select all that apply. We'll narrow the formula and intake to match.
+
+Dark Spots
+Melasma · Sun Damage · Age Spots · Freckles
+Anti-Aging
+Lines · Texture Crepey · Skin · Dullness
+Redness
+Rosacea · Sensitivity · Flushing · Irritation
+Longevity
+Aches & Pains · Energy · Sleep · Systemic Health
+Menopause
+25+ Menopause Symptoms
+Hair
+Thinning · Receding · Balding · Facial Hair
+
+Why this matters
+
+Your selections scope the region picker, the photos we ask for, and the questions in the doctor's intake. Skipping = a less personalized recommendation.
+
+1 Selected
+
+Continue
+
+--- CONTROLS ---
+  button (6): Shop  ·  Community  ·  Support  ·  About  ·  Cart (0 items)  ·  Continue
+  checkbox (6): Dark Spots Melasma · Sun Damage · Age Spots · Freckles [false]  ·  Anti-Aging Lines · Texture Crepey · Skin · Dullness [false]  ·  Redness Rosacea · Sensitivity · Flushing · Irritation [false]  ·  Longevity Aches & Pains · Energy · Sleep · Systemic Health [false]  ·  Menopause 25+ Menopause Symptoms [false]  ·  Hair Thinning · Receding · Balding · Facial Hair [true]
+
+--- LINKS ---
+  link (5): Skip to main content -> #main  ·  Musely Home -> /  ·  Search -> /search?focus=1  ·  Log In / Sign Up -> /login  ·  Back -> /facerx/find

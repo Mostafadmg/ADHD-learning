@@ -1,0 +1,10 @@
+{ "start": "https://www.musely.com/hair/pill/men", "locale": "en-US", "timezone": "America/Chicago",
+  "steps": [
+    {"do": "wait", "ms": 3500},
+    {"do": "press", "key": "Escape"},
+    {"do": "click", "selector": "button:has-text('Add To Cart')", "nth": 0},
+    {"do": "wait", "ms": 4000},
+    {"do": "click", "text": "Continue"},
+    {"do": "click", "text": "Continue Without Savings"},
+    {"do": "wait", "ms": 5000}
+  ] }

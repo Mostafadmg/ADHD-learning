@@ -177,3 +177,22 @@ About 16 browser sessions were used.
   (`/widgets/ws-ecommerce-ui/prd/mf-clinical-data-capture/…`). The questionnaire renderer has no hard-stop feature of
   its own: only show/hide, required fields and validation.
 - The product-rules themselves are not in any served file; they sit behind `/consultation-triage/product-rules`.
+
+---
+
+# Stage 2 (EXPERIMENT), 23 Nov 2026: working log
+
+Tools added in `local-tools/`:
+- `exp.js <actions.json> <outDir> [--nosubmit]`: fast replay (about 30 s). Saves `pre.txt/jpg` (questionnaire as answered, every control),
+  `post.txt/jpg` (next screen), `api.jsonl`, `summary.json` (product ids on screen, product-rules reply, save reply).
+- `make-experiments.py`: writes every one-change answer file to `actions/exp-*.json` (+ `actions/experiments-index.json`).
+- `run-batch.sh exp-w01 exp-w02 …`: runs them one at a time in the foreground, retry once after 30 s.
+- Free-text boxes are `textarea[id='<linkId>']` (for example `textarea[id='719.1']`).
+- Wait about 1.5 s after the cookie-banner click, or the next forced click lands on the fading banner (exp.js does this).
+
+Interim results (women, Regaine entry; product-rules reply in each run's `api.jsonl`):
+- pregnant (exp-w01), breastfeeding (exp-w02): reply empty, all five products still shown.
+- high blood pressure (w03), heart condition (w04), shaved scalp (w05), sudden or patchy (w06), scalp skin problems (w07),
+  childbirth (w08), minoxidil allergy (w11): reply `suggestions:[9895328]` → Regaine for Women removed.
+- fish allergy (w12): `suggestions:[9895329]` → Nourkrin removed.
+- other health condition 'hay fever' (w09), medicine 'cetirizine' (w10): nothing removed.

@@ -1,0 +1,9 @@
+URL: https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+
+Exit consultation
+Medical history
+Do you have any medical conditions other than those we have already asked about?
+Yes
+No
+Next
+Back

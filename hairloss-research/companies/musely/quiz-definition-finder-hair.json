@@ -1,0 +1,72 @@
+{
+ "source": "https://www.musely.com/facerx/find/concerns/questionnaire?c=hair&i=0 (Next.js flight payload in the served HTML, fetched anonymously 2026-11-23)",
+ "payload": {
+  "concernId": "hair",
+  "eyebrow": "HAIR CONCERN",
+  "nav": {
+   "titleTemplate": "Questionnaire · {current} of {total}",
+   "titleSingle": "Questionnaire",
+   "showBack": true
+  },
+  "cta": {
+   "label": "Continue"
+  },
+  "questions": [
+   {
+    "id": "q1",
+    "isEntry": true,
+    "select": "multi",
+    "title": "What's the goals for your hair related concerns?",
+    "helper": "Select all that apply.",
+    "options": [
+     {
+      "id": "o1",
+      "label": "Stop Hair Loss & Promote Hair Growth",
+      "revealsQuestionId": "q1a"
+     },
+     {
+      "id": "o2",
+      "label": "Slow Growth of Unwanted Facial Hair"
+     },
+     {
+      "id": "o3",
+      "label": "Grow Fuller, Longer Eyelashes"
+     }
+    ]
+   },
+   {
+    "id": "q1a",
+    "select": "multi",
+    "title": "Which hair treatments would you prefer? (Combine all 3 for max result)",
+    "showWhen": {
+     "questionId": "q1",
+     "anyOf": [
+      "o1"
+     ]
+    },
+    "options": [
+     {
+      "id": "o1",
+      "label": "I prefer a classic topical minoxidil treatment"
+     },
+     {
+      "id": "o2",
+      "label": "I prefer an advanced topical exosome treatment"
+     },
+     {
+      "id": "o3",
+      "label": "I prefer a once-daily pill"
+     }
+    ]
+   }
+  ]
+ },
+ "chain": [
+  "hair"
+ ],
+ "index": 0,
+ "initialAnswers": {
+  "selected": {},
+  "addOns": {}
+ }
+}

@@ -1,0 +1,22 @@
+STEP 11 click "I’m not sure / I don’t have a preference"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=early_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Here's what we know about you so far
+YOUR HAIR
+I want fuller, healthier-looking hair
+1-3 years
+Thinning along my part, Thinning all over
+I need a treatment recommendation
+LIFESTYLE
+Female under 50
+Hair loss runs in my family
+TAKE ME TO MY PLAN
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

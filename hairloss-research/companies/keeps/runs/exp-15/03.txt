@@ -1,0 +1,24 @@
+STEP 03 click "Advanced"
+URL: https://www.keeps.com/hair-assessment-quiz?step=5
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+How long has this been happening?
+
+Less than 6 months
+
+6-12 months
+
+1-3 years
+
+3+ years
+
+I'm not sure
+
+Keeps | Hair Loss Treatment for Men
+
+--- CONTROLS ---
+  button (6): Go back  ·  Less than 6 months  ·  6-12 months  ·  1-3 years  ·  3+ years  ·  I'm not sure
+
+--- LINKS ---
+

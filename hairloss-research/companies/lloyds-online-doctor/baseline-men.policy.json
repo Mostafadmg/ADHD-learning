@@ -1,5 +1,32 @@
 {
-  "note": "Baseline man: 32, male, receding hairline + thinning crown, gradual ~2 years, family history, no conditions, no medicines, no allergies, no previous hair treatment. Answers keyed by the site's questionId.",
-  "answers": { "100013": "Male" },
-  "maxSteps": 60
+ "note": "Baseline man: 32, male, receding hairline + thinning crown, gradual ~2 years, family history, no conditions, no medicines, no allergies, no previous hair treatment. Answers keyed by the site's questionId. Date of birth is how the site asks age (a fictional date, not a contact detail). On the recommendation screen the walker presses Select on the Finasteride tablets card to find the account wall; it stops there.",
+ "answers": {
+  "100013": "Male",
+  "100014": {
+   "dob": [
+    15,
+    6,
+    1994
+   ]
+  },
+  "107977": "Tell me more",
+  "103257": "Temples and Crown",
+  "107954": "Gradually, over months or years",
+  "103261": "No",
+  "105935": "No",
+  "108014": "No",
+  "103270": "None of the above",
+  "101561": "No",
+  "107973": "No",
+  "107800": "No",
+  "102632": "No",
+  "102624": "No",
+  "108003": "None of the above",
+  "108001": "No",
+  "107988": {
+   "card": "Finasteride tablets"
+  }
+ },
+ "default": "stop",
+ "maxSteps": 60
 }

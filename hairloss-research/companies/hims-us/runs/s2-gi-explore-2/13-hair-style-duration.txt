@@ -1,0 +1,29 @@
+STEP 13
+URL: https://www.hims.com/g/i/hl/hair-style-duration
+SERVER NODE: hair-style-duration (nodeModularScreen), step value 17
+
+--- VISIBLE TEXT ---
+How much time do you spend on your hair every day?
+We offer treatments that are quick, simple, and work with your routine.
+Less than 5 minutes
+5-10 minutes
+10+ minutes
+Continue
+Already have an account? Sign In
+
+--- CHOICES ---
+[radio] Less than 5 minutes
+[radio] 5-10 minutes
+[radio] 10+ minutes
+
+--- BUTTONS ---
+Continue
+
+--- FIELDS ---
+
+
+--- LINKS ---
+Already have an account? Sign In -> /c/hl?skipToSignIn=true&goFlow=true&flowId=hl&sessionId=7dfec974-c0fa-4f0c-95be-dce1c7963e82
+
+--- OUTPUT SCHEMA (server) ---
+{"type":"object","required":["responses"],"properties":{"responses":{"type":"object","required":["i-hl-hims-hair-style-duration"],"properties":{"i-hl-hims-hair-style-duration":{"type":"object","required":["i-hl-hims-hair-style-duration"],"properties":{"i-hl-hims-hair-style-duration":{"enum":["i-hl-hims-hair-style-duration-less-5","i-hl-hims-hair-style-duration-5-to-10","i-hl-hims-hair-style-duration-10-plus"],"type":"string"}},"additionalProperties":false}},"additionalProperties":false}}}

@@ -1,5 +1,7 @@
 {
  "start": "https://www.form.happyhead.com/get-started/?l=false&ph=true",
+ "locale": "en-US",
+ "timezone": "America/New_York",
  "steps": [
   {
    "do": "wait",

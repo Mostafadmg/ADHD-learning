@@ -1,0 +1,69 @@
+STEP 03 click "[role=combobox]"
+URL: https://consultation.xyonhealth.com/en-US/hair-treatment-rx/welcome
+TITLE: XYON | Hair Treatment Rx - Welcome
+
+--- VISIBLE TEXT ---
+Which state do you live in?
+State
+Select your State
+Alabama
+Alaska
+Arizona
+Arkansas
+California
+Colorado
+Connecticut
+Delaware
+District of Columbia
+Florida
+Georgia
+Hawaii
+Idaho
+Illinois
+Indiana
+Iowa
+Kansas
+Kentucky
+Louisiana
+Maine
+Maryland
+Massachusetts
+Michigan
+Minnesota
+Mississippi
+Missouri
+Montana
+Nebraska
+Nevada
+New Hampshire
+New Jersey
+New Mexico
+New York
+North Carolina
+North Dakota
+Ohio
+Oklahoma
+Oregon
+Pennsylvania
+Rhode Island
+South Carolina
+South Dakota
+Tennessee
+Texas
+Utah
+Vermont
+Virginia
+Washington
+West Virginia
+Wisconsin
+Wyoming
+Continue
+
+--- CONTROLS ---
+  button (2): Back  ·  Continue [disabled]
+  combobox (1): Select your State
+  select (1): accountRegion {Alabama | Alaska | Arizona | Arkansas | California | Colorado | Connecticut | Delaware | District of Columbia | Florida | Georgia | Hawaii | Idaho | Illinois | Indiana | Iowa | Kansas | Kentucky | Louisiana | Maine | Maryland | Massachusetts | Michigan | Minnesota | Mississippi | Missouri | Montana | Nebraska | Nevada | New Hampshire | New Jersey | New Mexico | New York | North Carolina | North Dakota | Ohio | Oklahoma | Oregon | Pennsylvania | Rhode Island | South Carolina | South Dakota | Tennessee | Texas | Utah | Vermont | Virginia | Washington | West Virginia | Wisconsin | Wyoming}
+  option (51): Alabama [false]  ·  Alaska [false]  ·  Arizona [false]  ·  Arkansas [false]  ·  California [false]  ·  Colorado [false]  ·  Connecticut [false]  ·  Delaware [false]  ·  District of Columbia [false]  ·  Florida [false]  ·  Georgia [false]  ·  Hawaii [false]  ·  Idaho [false]  ·  Illinois [false]  ·  Indiana [false]  ·  Iowa [false]  ·  Kansas [false]  ·  Kentucky [false]  ·  Louisiana [false]  ·  Maine [false]  ·  Maryland [false]  ·  Massachusetts [false]  ·  Michigan [false]  ·  Minnesota [false]  ·  Mississippi [false]  ·  Missouri [false]  ·  Montana [false]  ·  Nebraska [false]  ·  Nevada [false]  ·  New Hampshire [false]  ·  New Jersey [false]  ·  New Mexico [false]  ·  New York [false]  ·  North Carolina [false]  ·  North Dakota [false]  ·  Ohio [false]  ·  Oklahoma [false]  ·  Oregon [false]  ·  Pennsylvania [false]  ·  Rhode Island [false]  ·  South Carolina [false]  ·  South Dakota [false]  ·  Tennessee [false]  ·  Texas [false]  ·  Utah [false]  ·  Vermont [false]  ·  Virginia [false]  ·  Washington [false]  ·  West Virginia [false]  ·  Wisconsin [false]  ·  Wyoming [false]
+
+--- LINKS ---
+

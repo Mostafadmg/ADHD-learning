@@ -1,0 +1,14 @@
+STEP 08 click "No"
+URL: https://www.keeps.com/quiz?step=5
+TITLE: Take the Hair Loss Quiz | Keeps
+
+--- VISIBLE TEXT ---
+You're just one step away from better hair
+
+Take the Hair Loss Quiz | Keeps
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

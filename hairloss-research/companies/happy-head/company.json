@@ -1,0 +1,2795 @@
+{
+ "slug": "happy-head",
+ "company": "Happy Head",
+ "market": "US",
+ "website": "https://www.happyhead.com/",
+ "parent": null,
+ "audiences": [
+  "men",
+  "women"
+ ],
+ "model": "US dermatologist-founded telehealth company selling custom-compounded prescription hair-loss medicines (topical, oral and combined) on subscription, plus non-prescription hair products.",
+ "checkedOn": "2026-11-23",
+ "access": {
+  "howTested": [
+   "live-walk",
+   "site-code",
+   "public-docs"
+  ],
+  "accountWall": "The email + US mobile number + consent tick page, reached after the product choice and after every medical question (about 26 screens in). Shown just before it: 'Do you have any customization requests?'. Submitting it posts the whole questionnaire to api.happyhead.com/middleware/embeddables and redirects to checkout at my.happyhead.com/hh-checkout. Nothing was entered.",
+  "blockers": [
+   "www.happyhead.com/robots.txt (last updated April 2026) says 'Disallow: /' for ClaudeBot, Claude-Web, Claude-User and anthropic-ai. This research was done by Claude, so the marketing site, its product pages, collection pages, FAQ, legal pages and sitemap were NOT fetched. One home-page request went out before robots.txt was read; that copy was deleted unread.",
+   "The help centre (happyhead.zendesk.com) is open to all agents in its robots.txt but shows a Cloudflare 'Just a moment' check to curl, to WebFetch and to a bare headless browser. It loads normally in the standard walk.js browser; 24 articles were read that way. No check was solved or worked around."
+  ],
+  "coverageNote": "Tested live: the standard assessment on www.form.happyhead.com (its own robots.txt allows all agents) for the baseline man and the baseline woman, both to the email page. Read from code: the full quiz definition (62 pages, all conditions, the recommendation call, the order payload with its clinician flags), served to the anonymous page by engine.embeddables.com. Read from documents: 24 help-centre articles and four independent reviews. Not tested: product pages and prices on www.happyhead.com (closed to this agent), the 'Female 50 or older' and 'Oral' recommendations live, anything after the email page, and what the dermatologist actually does with a flagged answer."
+ },
+ "products": [
+  {
+   "id": "p1",
+   "name": "Topical Dutasteride & Minoxidil (Max Strength) — 'TopicalRx Solution' (formula code TD9)",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "dutasteride",
+     "strength": "0.3%"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "8%"
+    },
+    {
+     "name": "retinoic acid (tretinoin)",
+     "strength": "0.001%"
+    },
+    {
+     "name": "hydrocortisone",
+     "strength": "1%"
+    }
+   ],
+   "form": "solution with dropper, 50 ml per 25-day supply, 1 ml twice daily",
+   "audience": "both",
+   "legalStatus": "US prescription, compounded by a pharmacy (Chemistry Rx named in the site's own data); compounded products are not FDA-approved as finished medicines",
+   "price": "$89 per 25-day supply (subscription or one-time)",
+   "priceDetail": "3 bottles $267 every 75 days; 5 bottles $445 every 125 days (no multi-bottle discount in the API data). Site advertises 'up to 60% off' the first order and a free dermaroller. Refills on the prescription record: 16 (1-bottle), 5 (3-bottle), 3 (5-bottle).",
+   "url": "https://www.happyhead.com/products/topical-solution-dutasteride-minoxidil",
+   "recommendedWhen": "Offered to men (observed) and, by the code, to women who pick 'Female 50 or older', when the method answer is 'Topical' or 'not sure'. Shown as the 'CHOOSE TOPICAL' card.",
+   "evidence": "observed"
+  },
+  {
+   "id": "p2",
+   "name": "SuperCapsule: Dutasteride, Minoxidil & Vitamin D3 (formula code SC2)",
+   "category": "rx-oral-compounded",
+   "actives": [
+    {
+     "name": "dutasteride",
+     "strength": "0.5 mg"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "1.25 mg"
+    },
+    {
+     "name": "vitamin D3",
+     "strength": "2,000 IU"
+    }
+   ],
+   "form": "capsule, one a day, 25 per supply",
+   "audience": "both",
+   "legalStatus": "US prescription, compounded by a pharmacy (Chemistry Rx named in the site's own data); compounded products are not FDA-approved as finished medicines",
+   "price": "$89 per 25-day supply (subscription or one-time)",
+   "priceDetail": "3 bottles $267 every 75 days; 5 bottles $445 every 125 days. NCOA (Sep 2026) quotes $71 a month on subscription or $89 one-time.",
+   "url": "https://www.happyhead.com/products/supercapsule-dutasteride-minoxidil-vitamin-d3",
+   "recommendedWhen": "Returned by the recommendation API for men (observed in the response; shown as its own card only when the method answer is 'Oral', by the code). Always part of the men's Dual Treatment bundle.",
+   "evidence": "observed"
+  },
+  {
+   "id": "p3",
+   "name": "Dual Treatment Plan (men / women 50+): TopicalRx Solution + SuperCapsule, dutasteride & minoxidil",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "dutasteride",
+     "strength": "0.3% topical + 0.5 mg oral"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "8% topical + 1.25 mg oral"
+    },
+    {
+     "name": "retinoic acid",
+     "strength": "0.001%"
+    },
+    {
+     "name": "hydrocortisone",
+     "strength": "1%"
+    },
+    {
+     "name": "vitamin D3",
+     "strength": "2,000 IU"
+    }
+   ],
+   "form": "topical solution + daily capsule",
+   "audience": "both",
+   "legalStatus": "US prescription, compounded by a pharmacy (Chemistry Rx named in the site's own data); compounded products are not FDA-approved as finished medicines",
+   "price": "$178 per 25-day supply at list price (two $89 items)",
+   "priceDetail": "The flow's hidden plan page (URL key s_p) lists $178/mo with 10% off 1-month ($160), 15–20% off 3-month ($151 or $142), 25–30% off 5-month ($134 or $125). NCOA (Sep 2026): $142 a month on subscription or $178 one-time.",
+   "url": "https://www.form.happyhead.com/get-started/?l=false&ph=true",
+   "recommendedWhen": "Default and first card ('FASTEST RESULTS', pre-selected) for every man whatever else he answers; the code puts the bundle first for all users.",
+   "evidence": "observed"
+  },
+  {
+   "id": "p4",
+   "name": "Custom Topical: Minoxidil & Retinoic Acid (formula code TM3)",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "6%"
+    },
+    {
+     "name": "retinoic acid (tretinoin)",
+     "strength": "0.01%"
+    },
+    {
+     "name": "hydrocortisone",
+     "strength": "1%"
+    }
+   ],
+   "form": "solution with dropper, 50 ml per 25-day supply, 1 ml twice daily",
+   "audience": "women",
+   "legalStatus": "US prescription, compounded by a pharmacy (Chemistry Rx named in the site's own data); compounded products are not FDA-approved as finished medicines",
+   "price": "$59 per 25-day supply (subscription or one-time)",
+   "priceDetail": "3 bottles $177 every 75 days; 5 bottles $295 every 125 days. Top10 (Aug 2025) lists 'Topical Solution: Minoxidil & Retinoic Acid' from $24.",
+   "url": "https://www.form.happyhead.com/get-started/?l=false&ph=true",
+   "recommendedWhen": "Offered to women who pick 'Female under 50' (no finasteride, dutasteride or spironolactone in the topical). Shown as the 'CHOOSE TOPICAL' card.",
+   "evidence": "observed"
+  },
+  {
+   "id": "p5",
+   "name": "SuperCapsule: Spironolactone, Minoxidil & Vitamin D3 (formula code SC3)",
+   "category": "rx-oral-compounded",
+   "actives": [
+    {
+     "name": "spironolactone",
+     "strength": "25 mg"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "1.25 mg"
+    },
+    {
+     "name": "vitamin D3",
+     "strength": "2,000 IU"
+    }
+   ],
+   "form": "capsule, one a day, 25 per supply",
+   "audience": "women",
+   "legalStatus": "US prescription, compounded by a pharmacy (Chemistry Rx named in the site's own data); compounded products are not FDA-approved as finished medicines",
+   "price": "$89 per 25-day supply (subscription or one-time)",
+   "priceDetail": "3 bottles $267 every 75 days; 5 bottles $445 every 125 days. Top10 (Aug 2025): from $36.",
+   "url": "https://www.form.happyhead.com/get-started/?l=false&ph=true",
+   "recommendedWhen": "Returned by the recommendation API for women under 50 (observed); its own card only when the method answer is 'Oral' (code). Part of the women-under-50 Dual Treatment bundle.",
+   "evidence": "observed"
+  },
+  {
+   "id": "p6",
+   "name": "Dual Treatment Plan (women under 50): Custom Topical minoxidil + SuperCapsule spironolactone & minoxidil",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "6% topical + 1.25 mg oral"
+    },
+    {
+     "name": "spironolactone",
+     "strength": "25 mg oral"
+    },
+    {
+     "name": "retinoic acid",
+     "strength": "0.01%"
+    },
+    {
+     "name": "hydrocortisone",
+     "strength": "1%"
+    },
+    {
+     "name": "vitamin D3",
+     "strength": "2,000 IU"
+    }
+   ],
+   "form": "topical solution + daily capsule",
+   "audience": "women",
+   "legalStatus": "US prescription, compounded by a pharmacy (Chemistry Rx named in the site's own data); compounded products are not FDA-approved as finished medicines",
+   "price": "$148 per 25-day supply at list price ($59 + $89)",
+   "priceDetail": "Hidden plan page: $148/mo list; 1-month $133, 3-month $126 or $118, 5-month $111 or $104. NCOA (Sep 2026): $118 a month on subscription or $148 one-time.",
+   "url": "https://www.form.happyhead.com/get-started/?l=false&ph=true",
+   "recommendedWhen": "Default and first card for every woman who picks 'Female under 50'.",
+   "evidence": "observed"
+  },
+  {
+   "id": "p7",
+   "name": "SuperCapsule: Finasteride, Minoxidil & Vitamin D3",
+   "category": "rx-oral-compounded",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "1 mg"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "1.25 mg"
+    },
+    {
+     "name": "vitamin D3",
+     "strength": "2,000 IU"
+    }
+   ],
+   "form": "capsule, one a day",
+   "audience": "both",
+   "legalStatus": "US prescription, compounded (not FDA-approved as a finished medicine)",
+   "price": "$29 first month then $59 a month (finvsfin.com, updated 2 Oct 2025)",
+   "priceDetail": "Top10 (Aug 2025): from $32. Strengths are from finvsfin.com, not from Happy Head's own pages.",
+   "url": "https://www.happyhead.com/products/supercapsule-finasteride-minoxidil-vitamin-d3",
+   "recommendedWhen": "Not offered by the standard assessment (which always leads with dutasteride for men). Reached from its product page (product-specific consult). Exact trigger unknown.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p8",
+   "name": "SuperCapsule + ED Performance",
+   "category": "rx-oral-compounded",
+   "actives": [
+    {
+     "name": "dutasteride",
+     "strength": "0.5 mg"
+    },
+    {
+     "name": "tadalafil",
+     "strength": "5 mg"
+    },
+    {
+     "name": "vitamin D3",
+     "strength": "2,000 IU"
+    }
+   ],
+   "form": "capsule, one a day",
+   "audience": "men",
+   "legalStatus": "US prescription, compounded (not FDA-approved as a finished medicine)",
+   "price": "unknown",
+   "priceDetail": "Top10 (Aug 2025) lists a 'SuperCapsule: Finasteride & Tadalafil (ED Performance)' from $36; the help centre (updated about Aug 2026) describes dutasteride + tadalafil. The two sources disagree on the 5-alpha-reductase drug.",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/21018342179863-How-do-I-know-if-the-SuperCapsule-ED-Performance-is-right-for-me",
+   "recommendedWhen": "Not offered by the standard assessment. Product-page entry only (unknown trigger).",
+   "evidence": "docs"
+  },
+  {
+   "id": "p9",
+   "name": "Topical Solution: Finasteride & Minoxidil (custom)",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "0.3% (third-party figure)"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "6% (third-party figure)"
+    },
+    {
+     "name": "hydrocortisone",
+     "strength": "1% (third-party figure)"
+    }
+   ],
+   "form": "solution with dropper",
+   "audience": "both",
+   "legalStatus": "US prescription, compounded (not FDA-approved as a finished medicine)",
+   "price": "from $35 a month (Top10.com review dated 6 Aug 2025 ('starting at' price, likely a first-order or multi-month price))",
+   "priceDetail": "Strengths come from Top10 and Perfect Hair Health, not from Happy Head's own pages; the formula is customisable.",
+   "url": "https://www.happyhead.com/products/topical-solution-finasteride-minoxidil",
+   "recommendedWhen": "Not offered by the standard assessment. Men of any age and women over 50 (company FAQ wording seen in search results). Product-page entry.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p10",
+   "name": "Topical Solution: Finasteride, Dutasteride & Minoxidil (Advanced Formula)",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "unknown"
+    },
+    {
+     "name": "dutasteride",
+     "strength": "unknown"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "unknown"
+    }
+   ],
+   "form": "solution",
+   "audience": "both",
+   "legalStatus": "US prescription, compounded (not FDA-approved as a finished medicine)",
+   "price": "from $48 a month (Top10.com review dated 6 Aug 2025 ('starting at' price, likely a first-order or multi-month price))",
+   "priceDetail": "",
+   "url": "https://www.happyhead.com/products",
+   "recommendedWhen": "unknown",
+   "evidence": "docs"
+  },
+  {
+   "id": "p11",
+   "name": "Topical Finasteride & Minoxidil (Aqueous Formula)",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "unknown"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "unknown"
+    }
+   ],
+   "form": "water-based solution (contains some alcohol)",
+   "audience": "both",
+   "legalStatus": "US prescription, compounded (not FDA-approved as a finished medicine)",
+   "price": "from $48 a month (Top10.com review dated 6 Aug 2025 ('starting at' price, likely a first-order or multi-month price))",
+   "priceDetail": "Not customisable (help centre).",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/17624946350743-Which-of-your-hair-growth-solutions-are-customizable",
+   "recommendedWhen": "unknown",
+   "evidence": "docs"
+  },
+  {
+   "id": "p12",
+   "name": "Topical Latanoprost, Finasteride & Minoxidil",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "latanoprost",
+     "strength": "unknown"
+    },
+    {
+     "name": "finasteride",
+     "strength": "unknown"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "unknown"
+    }
+   ],
+   "form": "solution",
+   "audience": "both",
+   "legalStatus": "US prescription, compounded (not FDA-approved as a finished medicine)",
+   "price": "from $60 a month (Top10.com review dated 6 Aug 2025 ('starting at' price, likely a first-order or multi-month price))",
+   "priceDetail": "Not customisable (help centre).",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/17624946350743-Which-of-your-hair-growth-solutions-are-customizable",
+   "recommendedWhen": "unknown",
+   "evidence": "docs"
+  },
+  {
+   "id": "p13",
+   "name": "Topical SuperSolution: Finasteride, Minoxidil (Liposomal Formula)",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "unknown"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "unknown"
+    }
+   ],
+   "form": "liposomal base, slow release",
+   "audience": "both",
+   "legalStatus": "US prescription, compounded (not FDA-approved as a finished medicine)",
+   "price": "from $39 a month (Top10.com review dated 6 Aug 2025 ('starting at' price, likely a first-order or multi-month price))",
+   "priceDetail": "Not customisable (help centre).",
+   "url": "https://www.happyhead.com/products/topical-supersolution-finasteride-minoxidil-and-liposomal",
+   "recommendedWhen": "unknown",
+   "evidence": "docs"
+  },
+  {
+   "id": "p14",
+   "name": "TopicalRx Solution: Spironolactone & Minoxidil (women under 50)",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "spironolactone",
+     "strength": "0.5%"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "6%"
+    },
+    {
+     "name": "retinoic acid",
+     "strength": "figure unclear (NCOA prints 1%)"
+    },
+    {
+     "name": "hydrocortisone",
+     "strength": "1%"
+    }
+   ],
+   "form": "solution",
+   "audience": "women",
+   "legalStatus": "US prescription, compounded (not FDA-approved as a finished medicine)",
+   "price": "$63 a month on subscription or $79 one-time (NCOA review published 23 Sep 2026)",
+   "priceDetail": "Top10 (Aug 2025): from $32. Strengths are NCOA's; its retinoic acid figure looks like a misprint.",
+   "url": "https://www.happyhead.com/products",
+   "recommendedWhen": "Not offered by the standard assessment, which gives women under 50 a minoxidil-only topical (p4). Company FAQ: 'We offer Topical Spironolactone for women of childbearing age.'",
+   "evidence": "docs"
+  },
+  {
+   "id": "p15",
+   "name": "Topical Solution: Dutasteride & Minoxidil (Bryan's Formula)",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "dutasteride",
+     "strength": "unknown"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "unknown"
+    }
+   ],
+   "form": "solution",
+   "audience": "both",
+   "legalStatus": "US prescription, compounded (not FDA-approved as a finished medicine)",
+   "price": "from $58 a month (Top10.com review dated 6 Aug 2025 ('starting at' price, likely a first-order or multi-month price))",
+   "priceDetail": "",
+   "url": "https://www.happyhead.com/products",
+   "recommendedWhen": "unknown",
+   "evidence": "docs"
+  },
+  {
+   "id": "p16",
+   "name": "TopicalRx Advanced ProBlend (10-in-1)",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "8%"
+    },
+    {
+     "name": "cetirizine HCl",
+     "strength": "1%"
+    },
+    {
+     "name": "dutasteride",
+     "strength": "0.25%"
+    },
+    {
+     "name": "finasteride",
+     "strength": "0.25%"
+    },
+    {
+     "name": "biotin",
+     "strength": "0.2%"
+    },
+    {
+     "name": "caffeine",
+     "strength": "0.2%"
+    },
+    {
+     "name": "latanoprost",
+     "strength": "0.005%"
+    },
+    {
+     "name": "tretinoin",
+     "strength": "0.001%"
+    },
+    {
+     "name": "vitamin D3",
+     "strength": "1,000 IU/mL"
+    },
+    {
+     "name": "melatonin",
+     "strength": "strength not stated"
+    }
+   ],
+   "form": "serum, once daily",
+   "audience": "both",
+   "legalStatus": "US prescription, compounded (not FDA-approved as a finished medicine)",
+   "price": "$79 a month on subscription or $99 one-time (NCOA review published 23 Sep 2026)",
+   "priceDetail": "For men 18+ and women 50+. Not customisable. Melatonin is named for the ProBlend family; the help article lists nine strengths.",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/32006248028439-What-is-Topical-Rx-Advanced-ProBlend",
+   "recommendedWhen": "Offered through the ProBlends version of the assessment (URL key rec=problends) or its product page; not in the standard assessment.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p17",
+   "name": "TopicalRx SuperSolution ProBlend (10-in-1, lipodermal)",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "8%"
+    },
+    {
+     "name": "dutasteride",
+     "strength": "0.25%"
+    },
+    {
+     "name": "finasteride",
+     "strength": "0.25%"
+    },
+    {
+     "name": "cetirizine HCl",
+     "strength": "unknown"
+    },
+    {
+     "name": "latanoprost",
+     "strength": "unknown"
+    },
+    {
+     "name": "melatonin",
+     "strength": "unknown"
+    },
+    {
+     "name": "caffeine",
+     "strength": "unknown"
+    },
+    {
+     "name": "tretinoin",
+     "strength": "unknown"
+    },
+    {
+     "name": "vitamin D3",
+     "strength": "unknown"
+    },
+    {
+     "name": "biotin",
+     "strength": "unknown"
+    }
+   ],
+   "form": "cream in a pump, 30 ml, five pumps once daily",
+   "audience": "both",
+   "legalStatus": "US prescription, compounded (not FDA-approved as a finished medicine)",
+   "price": "$79 a month on subscription or $99 one-time (NCOA review published 23 Sep 2026)",
+   "priceDetail": "Optional 2.5% ketoconazole add-in (help centre). SKU TOP-DUT-FIN-LIPOD-1 in the quiz code. Not customisable.",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/32104727861783-What-is-TopicalRx-SuperSolution-ProBlend",
+   "recommendedWhen": "In the ProBlends version of the assessment (rec=problends) this is the topical card for men and women 50+ (code); women under 50 still get p4.",
+   "evidence": "code"
+  },
+  {
+   "id": "p18",
+   "name": "Oral Medication: Finasteride",
+   "category": "rx-oral",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "unknown"
+    }
+   ],
+   "form": "tablet or capsule",
+   "audience": "both",
+   "legalStatus": "US prescription (whether a licensed generic or compounded is unknown)",
+   "price": "from $24 a month (Top10.com review dated 6 Aug 2025 ('starting at' price, likely a first-order or multi-month price))",
+   "priceDetail": "",
+   "url": "https://www.happyhead.com/collections/finasteride",
+   "recommendedWhen": "unknown",
+   "evidence": "docs"
+  },
+  {
+   "id": "p19",
+   "name": "Oral Medication: Minoxidil",
+   "category": "rx-oral",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "unknown"
+    }
+   ],
+   "form": "tablet or capsule",
+   "audience": "both",
+   "legalStatus": "US prescription, off-label for hair loss (licensed generic or compounded: unknown)",
+   "price": "from $22 a month (Top10.com review dated 6 Aug 2025 ('starting at' price, likely a first-order or multi-month price))",
+   "priceDetail": "",
+   "url": "https://www.happyhead.com/collections/minoxidil",
+   "recommendedWhen": "unknown",
+   "evidence": "docs"
+  },
+  {
+   "id": "p20",
+   "name": "Oral Medication: Dutasteride",
+   "category": "rx-oral",
+   "actives": [
+    {
+     "name": "dutasteride",
+     "strength": "unknown"
+    }
+   ],
+   "form": "capsule",
+   "audience": "both",
+   "legalStatus": "US prescription, off-label for hair loss (licensed generic or compounded: unknown)",
+   "price": "from $59 a month (Top10.com review dated 6 Aug 2025 ('starting at' price, likely a first-order or multi-month price))",
+   "priceDetail": "",
+   "url": "https://www.happyhead.com/collections/dutasteride",
+   "recommendedWhen": "unknown",
+   "evidence": "docs"
+  },
+  {
+   "id": "p21",
+   "name": "Oral Medication: Spironolactone",
+   "category": "rx-oral",
+   "actives": [
+    {
+     "name": "spironolactone",
+     "strength": "unknown"
+    }
+   ],
+   "form": "tablet or capsule",
+   "audience": "women",
+   "legalStatus": "US prescription, off-label for hair loss (licensed generic or compounded: unknown)",
+   "price": "from $49 a month (Top10.com review dated 6 Aug 2025 ('starting at' price, likely a first-order or multi-month price))",
+   "priceDetail": "",
+   "url": "https://www.happyhead.com/products",
+   "recommendedWhen": "unknown",
+   "evidence": "docs"
+  },
+  {
+   "id": "p22",
+   "name": "TopicalRx Copper Peptide Formula (GHK-Cu)",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "GHK-Cu (copper tripeptide-1)",
+     "strength": "0.5%"
+    },
+    {
+     "name": "rosemary leaf oil",
+     "strength": "not stated"
+    }
+   ],
+   "form": "scalp solution",
+   "audience": "both",
+   "legalStatus": "US prescription, compounded (not FDA-approved as a finished medicine)",
+   "price": "unknown",
+   "priceDetail": "Add-on product id 6127095 in the quiz code.",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/42614001770903-TopicalRx-Copper-Peptide-Formula-GHK-Cu",
+   "recommendedWhen": "Upsell inside the topical card when the assessment URL has upgrade=cp ('Complete Your Scalp Routine').",
+   "evidence": "code"
+  },
+  {
+   "id": "p23",
+   "name": "TopicalRx Dandruff Solution",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "clobetasol",
+     "strength": "0.05%"
+    },
+    {
+     "name": "ketoconazole",
+     "strength": "2.5%"
+    }
+   ],
+   "form": "topical solution",
+   "audience": "both",
+   "legalStatus": "US prescription, compounded (not FDA-approved as a finished medicine)",
+   "price": "unknown",
+   "priceDetail": "Scalp product, not a hair-loss product; listed because the same quiz has a dandruff wording set.",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/35813909022103-TopicalRx-Dandruff-Solution-Clobetasol-Ketoconazole-by-Happy-Head",
+   "recommendedWhen": "Product-specific consult only: the quiz switches to dandruff wording when the URL has consult=true and one of four dandruff product ids.",
+   "evidence": "code"
+  },
+  {
+   "id": "p24",
+   "name": "TopicalRx Beard Formula",
+   "category": "rx-topical-compounded",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "8%"
+    },
+    {
+     "name": "cetirizine HCl",
+     "strength": "1%"
+    },
+    {
+     "name": "other actives",
+     "strength": "not captured"
+    }
+   ],
+   "form": "once-daily topical",
+   "audience": "men",
+   "legalStatus": "US prescription, compounded (not FDA-approved as a finished medicine)",
+   "price": "unknown",
+   "priceDetail": "Beard product. Not customisable.",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/35817027675287-Topical-Rx-Beard-Formula-An-In-Depth-Guide",
+   "recommendedWhen": "Product-page entry only.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p25",
+   "name": "Scalp Dermaroller",
+   "category": "device",
+   "actives": [],
+   "form": "micro-needle roller",
+   "audience": "both",
+   "legalStatus": "non-prescription device",
+   "price": "unknown ('$30 off' when added to the topical card)",
+   "priceDetail": "Add-on product id 499008. 'FREE Dermaroller with any Rx subscription' in the Black Friday banner seen on 23 Nov 2026.",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/31044488677655-What-non-prescription-products-does-Happy-Head-offer",
+   "recommendedWhen": "Upsell inside the topical card when the assessment URL has upgrade=derm.",
+   "evidence": "code"
+  },
+  {
+   "id": "p26",
+   "name": "5% Minoxidil Topical Solution, USP (Men's Formula)",
+   "category": "otc-medicine",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "5%"
+    }
+   ],
+   "form": "solution",
+   "audience": "men",
+   "legalStatus": "US OTC",
+   "price": "unknown",
+   "priceDetail": "No returns on non-prescription items.",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/31044488677655-What-non-prescription-products-does-Happy-Head-offer",
+   "recommendedWhen": "Not part of the assessment; for people who do not want a prescription.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p27",
+   "name": "2% Minoxidil Topical Solution, USP (Women's Formula)",
+   "category": "otc-medicine",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "2%"
+    }
+   ],
+   "form": "solution, three 2 oz bottles in the 3-month bundle",
+   "audience": "women",
+   "legalStatus": "US OTC",
+   "price": "unknown",
+   "priceDetail": "",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/31044488677655-What-non-prescription-products-does-Happy-Head-offer",
+   "recommendedWhen": "Not part of the assessment.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p28",
+   "name": "Thickening Shampoo & Conditioner",
+   "category": "cosmetic",
+   "actives": [
+    {
+     "name": "argan oil, biotin, collagen, keratin, saw palmetto",
+     "strength": ""
+    }
+   ],
+   "form": "shampoo and conditioner",
+   "audience": "both",
+   "legalStatus": "cosmetic",
+   "price": "unknown",
+   "priceDetail": "",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/31044488677655-What-non-prescription-products-does-Happy-Head-offer",
+   "recommendedWhen": "Not part of the assessment.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p29",
+   "name": "Hair Serum (drug-free)",
+   "category": "cosmetic",
+   "actives": [],
+   "form": "topical serum",
+   "audience": "both",
+   "legalStatus": "cosmetic",
+   "price": "unknown",
+   "priceDetail": "",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/32542827356695-Happy-Head-Hair-Serum",
+   "recommendedWhen": "Not part of the assessment.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p30",
+   "name": "Anti-Gray Serum",
+   "category": "cosmetic",
+   "actives": [],
+   "form": "scalp serum",
+   "audience": "both",
+   "legalStatus": "cosmetic",
+   "price": "unknown",
+   "priceDetail": "",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/39893272487447-Happy-Head-Anti-Gray-Serum-Benefits-and-How-to-Use-It",
+   "recommendedWhen": "Not part of the assessment.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p31",
+   "name": "Hair Growth Supplements",
+   "category": "supplement",
+   "actives": [
+    {
+     "name": "biotin, collagen, keratin, saw palmetto, ashwagandha, probiotics, vitamins A and D",
+     "strength": ""
+    }
+   ],
+   "form": "capsules",
+   "audience": "both",
+   "legalStatus": "US dietary supplement",
+   "price": "$88 each (text in the quiz's hidden plan page)",
+   "priceDetail": "Given free on 3- and 5-month plans in one plan-page variant.",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/32651800976151-Unlock-Thicker-Healthier-Hair-with-Happy-Head-s-All-in-One-Hair-Growth-Supplement",
+   "recommendedWhen": "Free add-on on longer plans in one plan-page variant (URL key s_p=a1).",
+   "evidence": "code"
+  },
+  {
+   "id": "p32",
+   "name": "Advanced Laser Helmet Hair Growth System",
+   "category": "device",
+   "actives": [],
+   "form": "helmet with 204 laser diodes",
+   "audience": "both",
+   "legalStatus": "device, described by the company as FDA-cleared",
+   "price": "unknown",
+   "priceDetail": "",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/32625347016087-Everything-You-Need-to-Know-About-the-Advanced-Laser-Helmet-Hair-Growth-System",
+   "recommendedWhen": "Not part of the assessment.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p33",
+   "name": "StrandIQ System DNA Starter Kit",
+   "category": "service",
+   "actives": [],
+   "form": "at-home DNA test with reports, a dermatologist consultation and a first month of treatment",
+   "audience": "both",
+   "legalStatus": "consumer genetic test plus prescription service",
+   "price": "$349 one-time including the first month (NCOA review published 23 Sep 2026)",
+   "priceDetail": "Perfect Hair Health (Oct 2026) quotes $298.",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/34706991232151-StrandIQ-System-DNA-Starter-Kit-Unlock-Your-Hair-s-Genetic-Code-for-Personalized-Growth",
+   "recommendedWhen": "A separate way in: buy the kit instead of taking the assessment.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p34",
+   "name": "Ultimate Growth Bundle: Topical Solution + SuperCapsule, finasteride & minoxidil",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "unknown"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "unknown"
+    }
+   ],
+   "form": "topical solution + daily capsule",
+   "audience": "both",
+   "legalStatus": "US prescription, compounded (not FDA-approved as a finished medicine)",
+   "price": "unknown",
+   "priceDetail": "Name and link are in the help-centre footer; the page itself was not opened.",
+   "url": "https://www.happyhead.com/products/topical-solution-supercapsule-finasteride-minoxidil",
+   "recommendedWhen": "unknown",
+   "evidence": "docs"
+  }
+ ],
+ "flows": [
+  {
+   "id": "main",
+   "name": "Standard assessment ('Get my custom plan'), men and women, current short version",
+   "audience": "both",
+   "entryUrl": "https://www.form.happyhead.com/get-started/?l=false&ph=true",
+   "stagesSummary": "Welcome → 6 profile questions (goal, duration, family history, sex/age band, pattern, method) → summary → recommendation screen with product choice (no price shown) → 10 to 16 medical questions → email + mobile page (account wall, not passed) → checkout on my.happyhead.com → photos and ID after payment → dermatologist review.",
+   "questions": [
+    {
+     "id": "m-welcome",
+     "order": 1,
+     "stage": "anonymous",
+     "text": "A Custom Hair Growth Plan in 2-3 Minutes — You're a few questions away from a solution with real results, made just for you.",
+     "type": "info",
+     "options": [
+      {
+       "label": "GET MY CUSTOM PLAN",
+       "effect": "Starts the questions.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Need help? Talk to a Hair Specialist",
+       "effect": "Opens 'How can we contact you?' asking for a phone number for a callback ('Average Callback Time: 1-2 min'). Not used.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Welcome screen with a phone-sales alternative.",
+     "engineRole": "marketing",
+     "branches": true,
+     "branchDetail": "Phone callback path needs a phone number.",
+     "shownWhen": "URL has ph=true (the START NOW link does)",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-goals",
+     "order": 2,
+     "stage": "anonymous",
+     "text": "What would you like to improve about your hair? — Understanding your concerns helps us personalize the most effective formula for you. Select all that apply.",
+     "type": "multi",
+     "options": [
+      {
+       "label": "I want to regrow a receding hairline",
+       "effect": "Saved and sent to analytics only. The code does not send it to the recommendation service.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "I want fuller, healthier-looking hair",
+       "effect": "Saved and sent to analytics only. The code does not send it to the recommendation service.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "I want to prevent future hair loss",
+       "effect": "Saved and sent to analytics only. The code does not send it to the recommendation service.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "I'm just exploring my options",
+       "effect": "Saved and sent to analytics only. The code does not send it to the recommendation service.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Goal question. It feeds the summary screen and analytics; the old 'how committed' field is sent to the doctor as '-'.",
+     "engineRole": "marketing",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-duration",
+     "order": 3,
+     "stage": "anonymous",
+     "text": "How long have you noticed changes in your hair?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Less than 6 months",
+       "effect": "Mapped onto the older three-band answer and passed to the dermatologist. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "6-12 months",
+       "effect": "Mapped onto the older three-band answer and passed to the dermatologist. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "1-3 years",
+       "effect": "Mapped onto the older three-band answer and passed to the dermatologist. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "More than 3 years",
+       "effect": "Mapped onto the older three-band answer and passed to the dermatologist. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "I’m not sure",
+       "effect": "Mapped onto the older three-band answer and passed to the dermatologist. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "History for the clinician.",
+     "engineRole": "data-capture",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-family",
+     "order": 4,
+     "stage": "anonymous",
+     "text": "Does hair loss run in your family? — Hair loss is often genetic—and this helps us personalize your treatment.",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Saved and sent to analytics only. The code does not send it to the recommendation service.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "effect": "Saved and sent to analytics only. The code does not send it to the recommendation service.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Not sure",
+       "effect": "Saved and sent to analytics only. The code does not send it to the recommendation service.",
+       "effectType": "marketing-only",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Stated reason: 'understanding family history helps our dermatologists personalize your treatment plan'. In the code it appears only on the summary screen and in analytics, not in the order payload.",
+     "engineRole": "marketing",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-sexage",
+     "order": 5,
+     "stage": "anonymous",
+     "text": "Let’s tailor your treatment to your biology. Which option best describes you?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Male",
+       "effect": "Recommendation service is called with gender Male and a made-up birth date 51 years ago. Result: dutasteride + minoxidil topical (p1), dutasteride SuperCapsule (p2) and the two together (p3). Heading 'We Recommend Dutasteride + Minoxidil Rx'. No pregnancy-ability questions.",
+       "effectType": "product-switched",
+       "affects": [
+        "p1",
+        "p2",
+        "p3"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Female under 50",
+       "effect": "Service called with gender Female and a made-up birth date 19 years ago. Result: minoxidil-only topical (p4), spironolactone SuperCapsule (p5) and the two together (p6). Heading 'We Recommend Minoxidil & Retinoic Acid Rx'. Adds the pregnancy-ability questions. Later date of birth must give an age of 18 to 50 or the user is sent back.",
+       "effectType": "product-switched",
+       "affects": [
+        "p4",
+        "p5",
+        "p6"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Female 50 or older",
+       "effect": "Service called with gender Female and a made-up birth date 51 years ago. The page uses the same card set as for men ('male_and_female_over_50'); the heading text is 'Dutasteride + Minoxidil'. The products the service returns were not seen live. Adds the pregnancy-ability questions. Date of birth must give age 50 or more.",
+       "effectType": "product-switched",
+       "affects": [
+        "p1",
+        "p2",
+        "p3"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "The main product selector: sex and the under-50 / 50-plus split for women decide which drug family is offered.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Decides the product family; women also get pregnancy questions later.",
+     "shownWhen": "always",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-pattern-male",
+     "order": 6,
+     "stage": "anonymous",
+     "text": "Where are you experiencing hair loss? — Select all that apply.",
+     "type": "multi",
+     "options": [
+      {
+       "label": "Thinning at the hairline",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Bald patches",
+       "effect": "Passed to the dermatologist marked 'important' (isImportant: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "flag-for-clinician",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Thinning all over",
+       "effect": "Stored under the key 'crown' and shown to the dermatologist as 'Thinning at the top of the head'. Not flagged.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Another pattern of hair loss",
+       "effect": "Adds a free-text question and is passed to the dermatologist marked 'important'.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "None, I'm trying to prevent hair loss",
+       "effect": "Exclusive option. Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Pattern for the clinician; patchy and unusual patterns are flagged as possible non-pattern hair loss.",
+     "engineRole": "diagnosis",
+     "branches": true,
+     "branchDetail": "'Another pattern' adds a text box.",
+     "shownWhen": "sex = male",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-pattern-female",
+     "order": 7,
+     "stage": "anonymous",
+     "text": "Where on your head are you experiencing hair loss? — Select the options that apply to you best.",
+     "type": "multi",
+     "options": [
+      {
+       "label": "Thinning at the hairline",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Thinning all over",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Thinning along my part",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Bald patches",
+       "effect": "Passed to the dermatologist marked 'important' (isImportant: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "flag-for-clinician",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Another pattern of hair loss",
+       "effect": "Adds a free-text question and is passed to the dermatologist marked 'important'.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "None, I'm trying to prevent hair loss",
+       "effect": "Exclusive option. Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Pattern for the clinician.",
+     "engineRole": "diagnosis",
+     "branches": true,
+     "branchDetail": "'Another pattern' adds a text box.",
+     "shownWhen": "sex = female",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-pattern-other",
+     "order": 8,
+     "stage": "anonymous",
+     "text": "Please provide more details about your hair loss",
+     "type": "text",
+     "options": [],
+     "purpose": "Free text for the clinician (placeholder: 'Please describe where you are experiencing hair loss.').",
+     "engineRole": "diagnosis",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "'Another pattern of hair loss' ticked",
+     "evidence": "code"
+    },
+    {
+     "id": "m-method",
+     "order": 9,
+     "stage": "anonymous",
+     "text": "What’s your preferred method of taking medication?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Topical (applied directly to the scalp)",
+       "effect": "Service is sent ['Topical']. Cards kept: Dual Treatment and Topical. The capsule-only card is hidden.",
+       "effectType": "product-removed",
+       "affects": [
+        "p2",
+        "p5"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Oral (ingested by mouth)",
+       "effect": "Service is sent ['Oral']. Cards kept: Dual Treatment and SuperCapsule. The topical-only card is hidden.",
+       "effectType": "product-removed",
+       "affects": [
+        "p1",
+        "p4"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "I’m not sure / I don’t have a preference",
+       "effect": "Service is sent ['Oral','Topical']. Cards shown: Dual Treatment (first, pre-selected) and Topical. The capsule-only card is not shown.",
+       "effectType": "product-removed",
+       "affects": [
+        "p2",
+        "p5"
+       ],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Chooses which single-product card sits next to the bundle. The bundle is always shown first and pre-selected, even for people who say 'Topical' or 'Oral'.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Changes the cards on the recommendation screen.",
+     "shownWhen": "not a product-specific consult",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-summary",
+     "order": 10,
+     "stage": "anonymous",
+     "text": "Here’s what we know about you so far (YOUR HAIR: goal, duration, pattern, method · LIFESTYLE: sex/age, family history)",
+     "type": "info",
+     "options": [
+      {
+       "label": "TAKE ME TO MY PLAN",
+       "effect": "Goes to four 3-second 'Building Your Personalized Treatment Plan' loading screens, then the recommendation.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Plays the answers back before the recommendation.",
+     "engineRole": "expectation-setting",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-loading",
+     "order": 11,
+     "stage": "anonymous",
+     "text": "Building Your Personalized Treatment Plan — Our dermatologists use clinically backed ingredients to help target hair loss from multiple angles (then 'Reviewing Your Responses...', 'Matching Ingredients to Your Goals...')",
+     "type": "info",
+     "options": [],
+     "purpose": "Timed loading screens naming finasteride, minoxidil and dutasteride while the recommendation call runs.",
+     "engineRole": "marketing",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-reco",
+     "order": 12,
+     "stage": "anonymous",
+     "text": "We Recommend {Dutasteride + Minoxidil Rx | Minoxidil & Retinoic Acid Rx} — Dual Treatment delivers the best chance of regrowth.",
+     "type": "single",
+     "options": [
+      {
+       "label": "CHOOSE DUAL TREATMENT",
+       "effect": "Selects topical + SuperCapsule (two product ids). Adds three questions later: last doctor check-up, blood pressure, weight.",
+       "effectType": "extra-questions",
+       "affects": [
+        "p3",
+        "p6"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "CHOOSE TOPICAL",
+       "effect": "Selects the topical only. The three blood-pressure-related questions are skipped.",
+       "effectType": "skip-questions",
+       "affects": [
+        "p1",
+        "p4"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "CHOOSE SUPERCAPSULE",
+       "effect": "Card shown only after the 'Oral' method answer. Selects the capsule only and adds the three blood-pressure-related questions.",
+       "effectType": "extra-questions",
+       "affects": [
+        "p2",
+        "p5"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "The product choice. Made before any medical question is asked. No price is shown on this screen.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Any plan with a capsule adds: When did you last see a doctor, blood pressure, weight.",
+     "shownWhen": "always",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-medintro",
+     "order": 13,
+     "stage": "anonymous",
+     "text": "Medical Review — Next, we'll ask a few questions about your health history to ensure your treatment is safe and appropriate. Takes 2 min",
+     "type": "info",
+     "options": [],
+     "purpose": "Three-second intro to the medical questions.",
+     "engineRole": "expectation-setting",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "code"
+    },
+    {
+     "id": "m-prior",
+     "order": 14,
+     "stage": "anonymous",
+     "text": "Have you previously tried any of the following hair loss treatments?",
+     "type": "multi",
+     "options": [
+      {
+       "label": "Topical Minoxidil (Rogaine™)",
+       "effect": "Adds the 'reactions' question. Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Topical Finasteride",
+       "effect": "Adds the 'reactions' question. Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Oral Minoxidil",
+       "effect": "Adds the 'reactions' question. Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Oral Finasteride (Propecia/Proscar™)",
+       "effect": "Adds the 'reactions' question. Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Other",
+       "effect": "Adds a free-text question and the 'reactions' question; marked 'important' for the dermatologist.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "None of the above",
+       "effect": "Exclusive option; goes straight on and skips the 'reactions' question.",
+       "effectType": "skip-questions",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Treatment history. Stated reason: 'Previous treatments can provide important insight into your hair loss journey'.",
+     "engineRole": "personalisation",
+     "branches": true,
+     "branchDetail": "Anything except 'None' adds the reactions question; 'Other' adds a text box.",
+     "shownWhen": "always",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-prior-other",
+     "order": 15,
+     "stage": "anonymous",
+     "text": "Please specify what other hair loss treatments you’ve used",
+     "type": "text",
+     "options": [],
+     "purpose": "Free text for the clinician.",
+     "engineRole": "personalisation",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "'Other' ticked in previous treatments",
+     "evidence": "code"
+    },
+    {
+     "id": "m-reactions",
+     "order": 16,
+     "stage": "anonymous",
+     "text": "Did you have any reactions to these treatments?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Opens a required text box ('Please provide details of any reactions/concerns with prior treatments and let your doctor know if you would like any ingredients decreased or removed from your formula.'). Passed to the dermatologist marked 'critical' (isCritical: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "flag-for-clinician",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "effect": "Goes on.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Side-effect history; the main route by which a formula gets weakened or an ingredient removed.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "'Yes' needs a written explanation.",
+     "shownWhen": "any previous treatment ticked",
+     "evidence": "code"
+    },
+    {
+     "id": "m-symptoms",
+     "order": 17,
+     "stage": "anonymous",
+     "text": "Do you have any of these unusual symptoms that may disqualify you for treatment? — Your honest responses help our dermatologists safely determine the most suitable hair growth formulation for you.",
+     "type": "multi",
+     "options": [
+      {
+       "label": "Severe itching, burning, or rash on my scalp",
+       "effect": "Adds a required free-text question. Passed to the dermatologist marked 'important' (isImportant: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Severe pain, pimples, pus, bumps, or sores on my scalp",
+       "effect": "Adds a required free-text question. Passed to the dermatologist marked 'important' (isImportant: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Loss of brows, lashes, facial, or body hair",
+       "effect": "Adds a required free-text question. Passed to the dermatologist marked 'important' (isImportant: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "None of the above",
+       "effect": "Exclusive option; goes on.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Red-flag screen for scarring, inflammatory or autoimmune hair loss. Despite the word 'disqualify', the quiz itself never stops anyone here.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Any symptom adds a text box.",
+     "shownWhen": "always",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-symptoms-detail",
+     "order": 18,
+     "stage": "anonymous",
+     "text": "Please provide more details about your symptoms.",
+     "type": "text",
+     "options": [],
+     "purpose": "Placeholder: 'Your doctor will evaluate you symptoms and may disqualify you from treatment. Please describe your symptoms in more detail.'",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "any unusual symptom ticked",
+     "evidence": "code"
+    },
+    {
+     "id": "m-preg-ability",
+     "order": 19,
+     "stage": "anonymous",
+     "text": "Do you currently have the ability to become pregnant? — To keep you safe, we avoid ingredients that aren't pregnancy-safe. This helps us tailor your treatment responsibly.",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Adds the birth-control question. Passed to the dermatologist marked 'important' (isImportant: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "No",
+       "effect": "Adds 'Please specify why you cannot become pregnant'.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Pregnancy-risk screen for women (asked of women of any age band).",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Yes → birth control; No → reason.",
+     "shownWhen": "sex = female",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-birth-control",
+     "order": 20,
+     "stage": "anonymous",
+     "text": "Are you currently using any form of birth control?",
+     "type": "multi",
+     "options": [
+      {
+       "label": "Oral contraceptives",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "IUD",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Condoms",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Other birth control method",
+       "effect": "Opens a required text box. Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "None of the above",
+       "effect": "Exclusive option. Passed to the dermatologist marked 'important' (isImportant: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "flag-for-clinician",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Contraception check for women who can become pregnant.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "'Other' adds a text box.",
+     "shownWhen": "female and able to become pregnant",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-not-pregnant-why",
+     "order": 21,
+     "stage": "anonymous",
+     "text": "Please specify why you cannot become pregnant: — This helps our doctors safely determine if certain medications (e.g., Finasteride, Dutasteride, or Retinoic Acid) are appropriate and medically safe for your specific circumstances.",
+     "type": "single",
+     "options": [
+      {
+       "label": "I am post menopausal",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "I have had a surgical procedure",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "My partner has had a vasectomy",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Other reason",
+       "effect": "Opens a required text box. Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Lets the doctor decide whether finasteride, dutasteride or retinoic acid can be used in a woman.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "'Other reason' adds a text box.",
+     "shownWhen": "female and not able to become pregnant",
+     "evidence": "code"
+    },
+    {
+     "id": "m-household-preg",
+     "order": 22,
+     "stage": "anonymous",
+     "text": "Is anyone in your household currently pregnant, breastfeeding, or actively trying to get pregnant? — Some ingredients aren’t recommended during pregnancy to protect both you and your family’s health.",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Adds the 'Finasteride & Dutasteride: Partner Pregnancy Risk' safety screen. Passed to the dermatologist marked 'critical' (isCritical: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "effect": "Goes on.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Pregnancy exposure screen, asked of everyone (for a woman it also covers herself).",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "'Yes' adds a risk-acceptance screen.",
+     "shownWhen": "always",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-preg-disclosure",
+     "order": 23,
+     "stage": "anonymous",
+     "text": "IMPORTANT SAFETY INFORMATION — Finasteride & Dutasteride: Partner Pregnancy Risk",
+     "type": "consent",
+     "options": [
+      {
+       "label": "Yes, I accept these risks and would like to be prescribed Finasteride and/or Dutasteride if considered appropriate by my physician.",
+       "effect": "Passed to the dermatologist marked 'important' (isImportant: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "flag-for-clinician",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "No, I do not accept these risks and do not want to be prescribed Finasteride and/or Dutasteride.",
+       "effect": "Passed to the dermatologist marked 'important'. The product already chosen is not changed by the quiz; any switch would be made by the dermatologist (not observed).",
+       "effectType": "flag-for-clinician",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Risk acceptance. This matches the 'warning, do you want to continue?' screen described by NCOA's tester.",
+     "engineRole": "consent",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "household pregnancy = Yes",
+     "evidence": "code"
+    },
+    {
+     "id": "m-meds",
+     "order": 24,
+     "stage": "anonymous",
+     "text": "Are you taking any medications?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Opens a required text box ('It is important that you list the names/doses of all medications, so your doctor can evaluate if there are any concerning interactions with your requested hair loss treatment.'). Not flagged in the payload.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "effect": "Goes on.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Interaction check, free text only (no drug list).",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "'Yes' adds a text box.",
+     "shownWhen": "always",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-allergies",
+     "order": 25,
+     "stage": "anonymous",
+     "text": "Do you have any allergies? — Your allergy information ensures we create a formula that's safe and customized for you.",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Opens a required text box ('Please list your medication allergies here.'). Not flagged in the payload.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "No",
+       "effect": "Goes on.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Allergy check, free text only.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "'Yes' adds a text box.",
+     "shownWhen": "always",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-last-doctor",
+     "order": 26,
+     "stage": "anonymous",
+     "text": "When did you last see a doctor for a check-up?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Within the last year",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Within the last 2 years",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Within the last 3-5 years",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Over 5 years ago",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Asked only when the plan includes a capsule (oral minoxidil).",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "chosen plan includes a SuperCapsule (or a product-specific consult for a listed oral product id)",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-bp",
+     "order": 27,
+     "stage": "anonymous",
+     "text": "What is your most recent blood pressure reading?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Low (Below 100 / 65)",
+       "effect": "Passed to the dermatologist marked 'critical' (isCritical: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "flag-for-clinician",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Normal (Around 120 / 80)",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Mildly Elevated (Around 140 / 90)",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation. (Note: not flagged in the code.)",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "High (Around 150 / 100)",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation. (Note: not flagged in the code.)",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Oral minoxidil lowers blood pressure, so only low blood pressure is marked critical.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "chosen plan includes a SuperCapsule",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-weight",
+     "order": 28,
+     "stage": "anonymous",
+     "text": "What is your current weight?",
+     "type": "single",
+     "options": [
+      {
+       "label": "<100 pounds (<45kg)",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "100-200 pounds (45kg - 90kg)",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": ">200 pounds (>90kg)",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Dose context for oral treatment.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "chosen plan includes a SuperCapsule",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-conditions",
+     "order": 29,
+     "stage": "anonymous",
+     "text": "Have you ever been diagnosed with any of the following health conditions?",
+     "type": "multi",
+     "options": [
+      {
+       "label": "None",
+       "effect": "Exclusive option; goes on.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Heart condition (e.g., high/low blood pressure, heart failure, abnormal heart rate/EKG, pericarditis)",
+       "effect": "Adds a required free-text question about diagnoses and treatments. Passed to the dermatologist marked 'important' (isImportant: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Vascular disease (e.g., stroke, blood clots, uncontrolled lower leg swelling)",
+       "effect": "Adds a required free-text question about diagnoses and treatments. Passed to the dermatologist marked 'important' (isImportant: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Cancer (e.g. prostrate, breast cancer)",
+       "effect": "Adds a required free-text question about diagnoses and treatments. Passed to the dermatologist marked 'important' (isImportant: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Sexual Dysfunction (e.g. erectile dysfunction, low libido)",
+       "effect": "Adds a required free-text question about diagnoses and treatments. Passed to the dermatologist marked 'important' (isImportant: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Kidney disease",
+       "effect": "Adds a required free-text question about diagnoses and treatments. Passed to the dermatologist marked 'important' (isImportant: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Liver disease (e.g. cirrhosis)",
+       "effect": "Adds a required free-text question about diagnoses and treatments. Passed to the dermatologist marked 'important' (isImportant: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Eye disease (e.g. glaucoma, uveitis)",
+       "effect": "Adds a required free-text question about diagnoses and treatments. Passed to the dermatologist marked 'important' (isImportant: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Endocrine disease (e.g. thyroid disease, pheochromocytoma)",
+       "effect": "Adds a required free-text question about diagnoses and treatments. Passed to the dermatologist marked 'important' (isImportant: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Mental health conditions (e.g. depression, mood disorders)",
+       "effect": "Adds a required free-text question about diagnoses and treatments. Passed to the dermatologist marked 'important' (isImportant: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Other medical conditions",
+       "effect": "Adds a required free-text question about diagnoses and treatments. Passed to the dermatologist marked 'important' (isImportant: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Medical history. Every condition is treated the same way by the quiz: flagged for the dermatologist, never a stop.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Any condition adds a text box.",
+     "shownWhen": "always",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-conditions-detail",
+     "order": 30,
+     "stage": "anonymous",
+     "text": "Please provide additional details on your diagnoses and treatments — Include whether your condition is well controlled, date of last check-up, and if your PCP or other specialist has given you any restrictions based on your conditions.",
+     "type": "text",
+     "options": [],
+     "purpose": "Free text for the clinician.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "any health condition ticked",
+     "evidence": "code"
+    },
+    {
+     "id": "m-dob",
+     "order": 31,
+     "stage": "anonymous",
+     "text": "What is your date of birth? — We customize your hair growth formula based on your age to ensure the most effective and safe treatment. For example, certain ingredients are specifically tailored for customers over 50.",
+     "type": "date",
+     "options": [
+      {
+       "label": "Age 18 or over, matching the age band chosen earlier",
+       "effect": "NEXT appears; goes on.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Under 18",
+       "effect": "'You must be over 18' is shown and the NEXT button is hidden. The only hard stop in the quiz.",
+       "effectType": "hard-stop",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Woman whose age does not match the band she picked (under 50 vs 50 or older)",
+       "effect": "Sent back to the age question with 'There is a discrepancy between your date of birth and the selected age range. Please review it and try again.' Choosing the right band changes the product family.",
+       "effectType": "product-switched",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Real age check (year, month, day pickers). Men of any adult age pass: there is no upper age limit and no check for men aged 18 to 21 or over 65 in the code.",
+     "engineRole": "eligibility-gate",
+     "branches": true,
+     "branchDetail": "Under 18 is blocked; a woman's age must match her band.",
+     "shownWhen": "always",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-custom",
+     "order": 32,
+     "stage": "anonymous",
+     "text": "Do you have any customization requests?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes, I have a customization request",
+       "effect": "Opens a required text box ('Please let us know if you have any adjustments to your formula, such as decreasing or removing certain ingredients from your formula.') and adds the 'anything else' question. Passed to the dermatologist marked 'critical' (isCritical: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "No, let the doctor customize it for me (Recommended)",
+       "effect": "Goes to the email page.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Lets the patient ask for a different strength or for an ingredient to be removed or added. This free-text box is how the 'custom' formula is actually set.",
+     "engineRole": "personalisation",
+     "branches": true,
+     "branchDetail": "'Yes' adds a text box and one more question.",
+     "shownWhen": "always",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-anything-else",
+     "order": 33,
+     "stage": "anonymous",
+     "text": "Is there anything else you would like to share with your doctor about hair loss? — Feel free to ask about any medical problems not already discussed or include anything else you would like the doctor to know.",
+     "type": "text",
+     "options": [],
+     "purpose": "Free text (default value 'None'; placeholder: 'If nothing else, please write “none” to confirm.'). Always marked 'important' in the payload.",
+     "engineRole": "data-capture",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "customisation request = Yes",
+     "evidence": "code"
+    },
+    {
+     "id": "m-email",
+     "order": 34,
+     "stage": "anonymous",
+     "text": "Save Your Answers and Lock in Your Offer (on 23 Nov 2026: 'BLACK FRIDAY SALE — Up to 60% Off — Plus, FREE Dermaroller') — Email · Mobile Number · 'By checking this box you agree to our Terms, Privacy Policy, Drug Safety, Telehealth Consent, and MDI Telehealth Consent.'",
+     "type": "contact",
+     "options": [],
+     "purpose": "THE ACCOUNT WALL. Needs an email, a US mobile number and the consent tick. Submitting posts every answer to Happy Head's backend and redirects to checkout. Not filled in.",
+     "engineRole": "identity",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "always",
+     "evidence": "observed"
+    },
+    {
+     "id": "m-purchase-plan",
+     "order": 35,
+     "stage": "checkout",
+     "text": "Subscribe & save 20% or one time purchase?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Subscription & Save 20%",
+       "effect": "Uses the subscription product ids ('20% Off every order', 'Free Shipping', 'Plus additional discount on your first order', 'Automatic Refills. Cancel Anytime.').",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "One-Time Purchase",
+       "effect": "Switches to the one-time product ids ('Standard pricing. No automatic refills.').",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Subscription or single purchase. Only shown in a test variant.",
+     "engineRole": "product-selector",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "URL has ot=var1",
+     "evidence": "code"
+    },
+    {
+     "id": "m-plan-length",
+     "order": 36,
+     "stage": "checkout",
+     "text": "BLACK FRIDAY DEALS — Lock in lifetime discounts this Black Friday, including FREE gifts on select plans.",
+     "type": "single",
+     "options": [
+      {
+       "label": "1-Month Plan (10% off: $80/mo single product, $160/mo bundle; women under 50 $53 or $133)",
+       "effect": "Sets the billing period.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "3-Month Plan (15% off + free supplements, or 20% off: $76 or $71 single, $151 or $142 bundle; women under 50 $47, $126 or $118)",
+       "effect": "Sets the billing period.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "5-Month Plan (25% off + free supplements, or 30% off: $67 or $62 single, $134 or $125 bundle; women under 50 $41, $111 or $104)",
+       "effect": "Sets the billing period.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Plan-length page that exists in the code for two price tests. Not shown in the standard walk.",
+     "engineRole": "product-selector",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "URL has s_p=a1 or s_p=b1",
+     "evidence": "code"
+    },
+    {
+     "id": "m-thanks",
+     "order": 37,
+     "stage": "checkout",
+     "text": "you're all done — Proceeding to Secure Checkout — Our dermatologists will review your profile to ensure your treatment is right for you.",
+     "type": "info",
+     "options": [],
+     "purpose": "Redirects to my.happyhead.com/hh-checkout with the chosen product ids. Not reached.",
+     "engineRole": "expectation-setting",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "after the email page",
+     "evidence": "code"
+    },
+    {
+     "id": "m-photos",
+     "order": 38,
+     "stage": "after-account",
+     "text": "After checkout: upload photos of your hair; in some cases a photo ID and/or a 5-second video",
+     "type": "photo",
+     "options": [],
+     "purpose": "Identity and clinical evidence for the dermatologist (help centre). Sent through the account page, a web form or by text.",
+     "engineRole": "identity",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "after payment",
+     "evidence": "docs"
+    }
+   ]
+  },
+  {
+   "id": "legacy",
+   "name": "Older landing-page assessment (same flow file, URL without l=false)",
+   "audience": "both",
+   "entryUrl": "https://www.form.happyhead.com/get-started/",
+   "stagesSummary": "Landing page → sex → (women) age range → duration → pattern → commitment → method → recommendation → the same medical questions, date of birth, customisation and email page as the standard assessment. Read from code only; not walked.",
+   "questions": [
+    {
+     "id": "l-landing",
+     "order": 1,
+     "stage": "anonymous",
+     "text": "Landing page before the questions (three versions in the code: category page, 'bot' page, 'emotional survey' page). The survey version asks: 'How confident do you feel about the way your hair looks?' (Very confident / Kinda confident / I dislike it), 'How long have you been feeling this way?' (Over 6 months / The past few months / Recently), 'Have you tried a customized prescription hair growth treatment?' (Yes, I have / I’ve researched but haven’t tried / No, I'd like to learn more)",
+     "type": "info",
+     "options": [],
+     "purpose": "Marketing landing pages; the three survey answers only fire analytics events.",
+     "engineRole": "marketing",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "URL without l=false (survey version: lpvar=top3)",
+     "evidence": "code"
+    },
+    {
+     "id": "l-sex",
+     "order": 2,
+     "stage": "anonymous",
+     "text": "To start, what was your sex assigned at birth?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Male",
+       "effect": "Men's products (dutasteride family). Skips the age-band question.",
+       "effectType": "product-switched",
+       "affects": [
+        "p1",
+        "p2",
+        "p3"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Female",
+       "effect": "Adds the age-range question.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Sex, asked first in the older question set.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Female adds the age range.",
+     "shownWhen": "URL without l=false",
+     "evidence": "code"
+    },
+    {
+     "id": "l-age",
+     "order": 3,
+     "stage": "anonymous",
+     "text": "What’s your age range? — We customize your hair growth formula based on your age to ensure the most effective and safe treatment. (MORE INFO: 'Women under age 50 are not eligible for Finasteride or Dutasteride. We offer Spironolactone and Minoxidil instead.')",
+     "type": "single",
+     "options": [
+      {
+       "label": "18 - 29",
+       "effect": "Female under 50: minoxidil topical and spironolactone capsule.",
+       "effectType": "product-switched",
+       "affects": [
+        "p4",
+        "p5",
+        "p6"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "30 - 39",
+       "effect": "Female under 50: minoxidil topical and spironolactone capsule.",
+       "effectType": "product-switched",
+       "affects": [
+        "p4",
+        "p5",
+        "p6"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "40 - 49",
+       "effect": "Female under 50: minoxidil topical and spironolactone capsule.",
+       "effectType": "product-switched",
+       "affects": [
+        "p4",
+        "p5",
+        "p6"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "50+",
+       "effect": "Treated like a man for product choice (dutasteride family cards).",
+       "effectType": "product-switched",
+       "affects": [
+        "p1",
+        "p2",
+        "p3"
+       ],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Women's age band; the same under-50 / 50-plus rule as the current version, with four bands.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Under 50 vs 50+ switches the drug family.",
+     "shownWhen": "female, older question set",
+     "evidence": "code"
+    },
+    {
+     "id": "l-duration",
+     "order": 4,
+     "stage": "anonymous",
+     "text": "How long have you been experiencing hair loss?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Less than 6 months",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "6 months to 2 years",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Over 2 years",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "History for the clinician.",
+     "engineRole": "data-capture",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "older question set",
+     "evidence": "code"
+    },
+    {
+     "id": "l-pattern-male",
+     "order": 5,
+     "stage": "anonymous",
+     "text": "Where on your head are you experiencing hair loss? — Select the options that apply to you best.",
+     "type": "multi",
+     "options": [
+      {
+       "label": "Thinning at the hairline",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Bald patches",
+       "effect": "Passed to the dermatologist marked 'important' (isImportant: true in the order payload). The quiz carries on; no stop screen.",
+       "effectType": "flag-for-clinician",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Thinning at the top of the head",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Another pattern of hair loss",
+       "effect": "Adds a text box; marked 'important'.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "None, I'm trying to prevent hair loss",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Same as the current version; only the third label differs.",
+     "engineRole": "diagnosis",
+     "branches": true,
+     "branchDetail": "'Another pattern' adds a text box.",
+     "shownWhen": "male, older question set",
+     "evidence": "code"
+    },
+    {
+     "id": "l-commit",
+     "order": 6,
+     "stage": "anonymous",
+     "text": "How committed are you to hair growth?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Just exploring my options",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Committed but not in a rush",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "I want results as quickly as possible",
+       "effect": "Saved and passed to the dermatologist with the order. Not flagged. No effect on the recommendation.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Sales-intent question; sent to the doctor but not used by the recommendation call.",
+     "engineRole": "marketing",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "older question set",
+     "evidence": "code"
+    }
+   ]
+  },
+  {
+   "id": "consult",
+   "name": "Product-specific consult (from a product page's own button)",
+   "audience": "both",
+   "entryUrl": "https://www.form.happyhead.com/get-started/?consult=true&pid=<product id>",
+   "stagesSummary": "Intro → sex → (women) age range → duration → pattern → commitment → no method question and no recommendation screen → the same medical questions → date of birth → customisation → email page. Read from code only; the product pages on www.happyhead.com that link here were not opened, so the exact links are not confirmed.",
+   "questions": [
+    {
+     "id": "c-intro",
+     "order": 1,
+     "stage": "anonymous",
+     "text": "We'll be asking a few questions for your dermatologist consultation.",
+     "type": "info",
+     "options": [
+      {
+       "label": "NEXT",
+       "effect": "Starts the questions.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "Intro for a product-specific consult.",
+     "engineRole": "expectation-setting",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "URL has consult=true",
+     "evidence": "code"
+    },
+    {
+     "id": "c-product",
+     "order": 2,
+     "stage": "anonymous",
+     "text": "Product already chosen on a product page (passed as pid in the URL)",
+     "type": "info",
+     "options": [
+      {
+       "label": "Man arriving with a women-under-50 product id (e.g. the spironolactone SuperCapsule, id 287244)",
+       "effect": "The code swaps it for a men's product id (287244 → 230910; 260068 → 110425; 16268 → 14275) and the thank-you page says 'Based on your age and gender, we've tailored your selection to best suit your needs.'",
+       "effectType": "product-switched",
+       "affects": [
+        "p5"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Woman under 50 arriving with a men's product id",
+       "effect": "The code swaps it for a women-under-50 id (110425 → 68633, the minoxidil topical; 230910 → 287244, the spironolactone SuperCapsule; 15313 and 3131341 → 68633; 287362 → 383783; 14275, 138137, 107497, 14296, 96732 or 94152 → 1330569).",
+       "effectType": "product-switched",
+       "affects": [
+        "p4",
+        "p5"
+       ],
+       "evidence": "code"
+      },
+      {
+       "label": "Woman 50 or older arriving with product id 110425",
+       "effect": "Swapped to id 68611 (product name not identified).",
+       "effectType": "product-switched",
+       "affects": [],
+       "evidence": "code"
+      },
+      {
+       "label": "Any other case",
+       "effect": "The chosen product id is kept.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "code"
+      }
+     ],
+     "purpose": "In a product-specific consult the method question and the recommendation screen are skipped; the product is fixed by the page the person came from, then corrected for sex and age.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Sex and age can swap the product.",
+     "shownWhen": "URL has consult=true",
+     "evidence": "code"
+    },
+    {
+     "id": "c-bp-set",
+     "order": 3,
+     "stage": "anonymous",
+     "text": "When did you last see a doctor for a check-up? · What is your most recent blood pressure reading? · What is your current weight?",
+     "type": "info",
+     "options": [],
+     "purpose": "The three capsule questions are asked only if the product id is on a list of about 38 ids in the code (oral and dutasteride products).",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "consult=true and pid on the list",
+     "evidence": "code"
+    },
+    {
+     "id": "c-dandruff",
+     "order": 4,
+     "stage": "anonymous",
+     "text": "Dandruff wording set: 'How long have you been experiencing dandruff and/or scalp irritation?', 'Where on your head are you experiencing dandruff and/or scalp irritation?' (Scalp (top of head) / Hairline and temples / Back of head / All over / None of the above, I’m looking to maintain a healthier scalp), 'How committed are you to treating your dandruff and/or scalp irritation?'",
+     "type": "info",
+     "options": [],
+     "purpose": "Same quiz reused for the dandruff prescription.",
+     "engineRole": "diagnosis",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "consult=true and pid is one of 5016601, 5016643, 5016669, 5016675",
+     "evidence": "code"
+    }
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "id": "R1",
+   "flow": "main",
+   "when": "Sex/age answer = 'Male'",
+   "then": "The recommendation is dutasteride 0.3% + minoxidil 8% topical, the dutasteride 0.5 mg + minoxidil 1.25 mg SuperCapsule, and the two as a bundle (bundle first, pre-selected). Finasteride is never offered by the standard assessment.",
+   "effectType": "product-switched",
+   "affects": [
+    "p1",
+    "p2",
+    "p3"
+   ],
+   "evidence": "observed",
+   "proof": "runs/baseline-men (13.txt and net/18-*produ.json)",
+   "confidence": "high"
+  },
+  {
+   "id": "R2",
+   "flow": "main",
+   "when": "Sex/age answer = 'Female under 50'",
+   "then": "No finasteride or dutasteride. The recommendation is minoxidil 6% topical, the spironolactone 25 mg + minoxidil 1.25 mg SuperCapsule, and the two as a bundle.",
+   "effectType": "product-switched",
+   "affects": [
+    "p4",
+    "p5",
+    "p6"
+   ],
+   "evidence": "observed",
+   "proof": "runs/baseline-women (13.txt and net/17-*produ.json)",
+   "confidence": "high"
+  },
+  {
+   "id": "R3",
+   "flow": "main",
+   "when": "Sex/age answer = 'Female 50 or older'",
+   "then": "Treated like a man by the page code (same card set, heading 'Dutasteride + Minoxidil'). What the recommendation service returns was not seen live.",
+   "effectType": "product-switched",
+   "affects": [
+    "p1",
+    "p2",
+    "p3"
+   ],
+   "evidence": "code",
+   "proof": "quiz-definition.json: action _a18938682205317825 (getCardsForUser) and computed field recommended_formula_according_sex_and_age; raw/logic-actions.txt",
+   "confidence": "medium"
+  },
+  {
+   "id": "R4",
+   "flow": "main",
+   "when": "Method answer = Topical / Oral / Not sure",
+   "then": "Bundle card always first. Second card is Topical for 'Topical' and 'Not sure', SuperCapsule for 'Oral'.",
+   "effectType": "product-removed",
+   "affects": [
+    "p1",
+    "p2",
+    "p4",
+    "p5"
+   ],
+   "evidence": "code",
+   "proof": "quiz-definition.json: preferenceMethodKeys in action _a18938682205317825; 'Not sure' seen in runs/baseline-men",
+   "confidence": "high"
+  },
+  {
+   "id": "R5",
+   "flow": "main",
+   "when": "Only sex, the female age band, the method answer and any product id in the URL are sent to the recommendation service",
+   "then": "Goal, duration, family history and hair-loss pattern do not change the anonymous recommendation.",
+   "effectType": "none",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/baseline-men/network.jsonl and runs/baseline-women/network.jsonl (request body of middleware/product-recommendation) + code",
+   "confidence": "high"
+  },
+  {
+   "id": "R6",
+   "flow": "main",
+   "when": "Chosen plan includes a SuperCapsule (bundle or capsule)",
+   "then": "Three extra questions are asked: last doctor check-up, blood pressure, weight. Topical-only skips them.",
+   "effectType": "extra-questions",
+   "affects": [
+    "p2",
+    "p3",
+    "p5",
+    "p6"
+   ],
+   "evidence": "code",
+   "proof": "quiz-definition.json: computed field consult_and_valid_pid; asked in runs/baseline-men and runs/baseline-women after choosing Dual Treatment",
+   "confidence": "high"
+  },
+  {
+   "id": "R7",
+   "flow": "main",
+   "when": "Date of birth gives an age under 18",
+   "then": "'You must be over 18' and no NEXT button. The only hard stop in the quiz.",
+   "effectType": "hard-stop",
+   "affects": [],
+   "evidence": "code",
+   "proof": "quiz-definition.json: page date_of_birth, computed field less_than_18",
+   "confidence": "high"
+  },
+  {
+   "id": "R8",
+   "flow": "main",
+   "when": "Woman's date of birth does not match her age band",
+   "then": "She is sent back to choose the band again, which switches the product family.",
+   "effectType": "product-switched",
+   "affects": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6"
+   ],
+   "evidence": "code",
+   "proof": "quiz-definition.json: computed field valid_age_range, action a_2178968544",
+   "confidence": "medium"
+  },
+  {
+   "id": "R9",
+   "flow": "main",
+   "when": "Answers flagged in the order payload",
+   "then": "'Critical': reaction to a previous treatment, anyone pregnant/breastfeeding/trying in the household, low blood pressure, a customisation request. 'Important': bald patches, another pattern, other previous treatment, any unusual scalp or body-hair symptom, able to become pregnant, no birth control, either answer on the pregnancy-risk screen, every listed health condition, anything-else text. Nothing else is flagged (medicines, allergies, mildly raised or high blood pressure, weight are not).",
+   "effectType": "flag-for-clinician",
+   "affects": [],
+   "evidence": "code",
+   "proof": "quiz-definition.json: action _a7004594546312322 (isImportant / isCritical on each option); copy in raw/backend-payload-code.txt",
+   "confidence": "high"
+  },
+  {
+   "id": "R10",
+   "flow": "main",
+   "when": "Any medical answer",
+   "then": "The quiz never removes or changes the chosen product and never shows a stop screen for a medical answer. All medical decisions are left to the dermatologist after payment.",
+   "effectType": "flag-for-clinician",
+   "affects": [],
+   "evidence": "code",
+   "proof": "quiz-definition.json: no page condition or product logic reads a medical answer (see raw/flow-dump.txt page conditions and computed field product_ids)",
+   "confidence": "medium"
+  }
+ ],
+ "experiments": [],
+ "recommendations": [
+  {
+   "profile": "Man, 32, hairline + top, 1-3 years, family history yes, no method preference, no medical issues",
+   "offered": [
+    "p3",
+    "p1"
+   ],
+   "default": "p3",
+   "note": "Heading 'We Recommend Dutasteride + Minoxidil Rx'. Bundle card badged FASTEST RESULTS and '7/10 Customers Choose This Plan'. The service also returned the SuperCapsule alone (p2) but the page hides that card unless the method answer is Oral. No price on the screen.",
+   "evidence": "observed"
+  },
+  {
+   "profile": "Woman, 38, parting + all over, 1-3 years, able to become pregnant, on the pill, no medical issues",
+   "offered": [
+    "p6",
+    "p4"
+   ],
+   "default": "p6",
+   "note": "Heading 'We Recommend Minoxidil & Retinoic Acid Rx'. Active-ingredient panel lists spironolactone first. The service also returned the spironolactone SuperCapsule alone (p5), hidden unless the method answer is Oral.",
+   "evidence": "observed"
+  }
+ ],
+ "engineSummary": "The quiz itself decides very little. Three things choose the offer: sex, whether a woman is under 50, and topical-or-oral preference. Men (and, by the code, women 50+) are steered to dutasteride + minoxidil; women under 50 to minoxidil topical plus a spironolactone capsule. The topical + capsule bundle is always first and pre-selected. The product is chosen before any medical question. Medical answers never block or change the product on screen: they are tagged 'important' or 'critical' and handed, with a free-text customisation box, to a dermatologist who reviews after payment. The only hard stop is age under 18.",
+ "strengths": [
+  "Very wide compounded range with stated strengths, including dutasteride-first topicals and capsules that most rivals do not lead with.",
+  "Short, friendly front end: six profile questions before a recommendation, with 'why we ask' notes.",
+  "Clear sex and age rule for women (no finasteride or dutasteride under 50) built into the first screens.",
+  "A free-text customisation request is built into the consultation, so patients can ask for ingredients to be reduced or removed.",
+  "Phone callback offer on the first screen for people who do not want to do the quiz."
+ ],
+ "weaknesses": [
+  "The product is chosen before any safety question, and the most intensive option (oral + topical dutasteride and minoxidil) is pre-selected for every man, including someone only 'exploring options'.",
+  "No price is shown on the recommendation screen; price appears only after contact details are given.",
+  "Hair-loss pattern, duration, goals and family history do not affect the recommendation, although the screens say they 'personalize' it.",
+  "The quiz has no automatic stops for red flags (pregnancy in the household, scalp symptoms, heart disease); everything depends on review after payment.",
+  "High blood pressure and current medicines are not flagged in the order payload; only low blood pressure is.",
+  "The marketing site blocks AI agents in robots.txt, so AI assistants cannot read its product pages for shoppers."
+ ],
+ "opportunities": [
+  "Show a real price on the recommendation screen, before asking for an email or phone number.",
+  "Use pattern, duration and goals to choose strength and product, so a 'prevention only' or 'exploring' patient is offered a gentler start than the full bundle.",
+  "Ask the safety questions before recommending, and screen out or redirect red-flag answers at once rather than after payment.",
+  "Offer finasteride as a first-line choice alongside dutasteride, with a plain explanation of the trade-off."
+ ],
+ "sources": [
+  {
+   "title": "Quiz definition (Embeddables flow 'Happy Head - Primary Flow - Test', version 141), fetched by the assessment page",
+   "url": "https://engine.embeddables.com/init (flow_d02099468c5fg664dh31b7cg); saved as quiz-definition.json"
+  },
+  {
+   "title": "Standard assessment (walked live)",
+   "url": "https://www.form.happyhead.com/get-started/?l=false&ph=true"
+  },
+  {
+   "title": "robots.txt of the marketing site (blocks Claude agents)",
+   "url": "https://www.happyhead.com/robots.txt"
+  },
+  {
+   "title": "robots.txt of the assessment host (open to all)",
+   "url": "https://www.form.happyhead.com/robots.txt"
+  },
+  {
+   "title": "Help centre: What medications does Happy Head offer?",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/16254069704983-What-medications-does-Happy-Head-offer"
+  },
+  {
+   "title": "Help centre: Which of your hair growth solutions are customizable?",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/17624946350743-Which-of-your-hair-growth-solutions-are-customizable"
+  },
+  {
+   "title": "Help centre: About Happy Head's pricing ($59–$119 a month typical; $24–$119 range)",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/31042509646871-About-Happy-Head-s-pricing"
+  },
+  {
+   "title": "Help centre: What is the ordering process for Happy Head?",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/4402321888535-What-is-the-ordering-process-for-Happy-Head"
+  },
+  {
+   "title": "Help centre: Why do you need my photos? / photo ID",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/16253781819415-Why-do-you-need-my-photos"
+  },
+  {
+   "title": "Help centre: Why Happy Head Asks for Your Age and Gender",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/31569172936599-Why-Happy-Head-Asks-for-Your-Age-and-Gender"
+  },
+  {
+   "title": "Help centre: What non-prescription products does Happy Head offer?",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/31044488677655-What-non-prescription-products-does-Happy-Head-offer"
+  },
+  {
+   "title": "Help centre: What is your return policy?",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/4402314831383-What-is-your-return-policy"
+  },
+  {
+   "title": "Help centre: How can I cancel my subscription?",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/4402322014359-How-can-I-cancel-my-subscription"
+  },
+  {
+   "title": "Help centre: Subscription vs One-Time Orders",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/17571301347607-Subscription-vs-One-Time-Orders"
+  },
+  {
+   "title": "Help centre: Annual Health Check",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/19957315243159-How-can-I-update-my-health-information-for-my-Annual-Health-Check"
+  },
+  {
+   "title": "Help centre: Do you ship internationally? (US only)",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/17624465131415-Do-you-ship-internationally"
+  },
+  {
+   "title": "Help centre: insurance, FSA, HSA",
+   "url": "https://happyhead.zendesk.com/hc/en-us/articles/42296905667479-Does-Happy-Head-accept-outside-insurance-FSA-or-HSA"
+  },
+  {
+   "title": "NCOA: Happy Head review (23 Sep 2026)",
+   "url": "https://www.ncoa.org/product-resources/hair-loss/happy-head-review/"
+  },
+  {
+   "title": "Top10.com: Happy Head review (6 Aug 2025)",
+   "url": "https://www.top10.com/hair-loss/reviews/happy-head"
+  },
+  {
+   "title": "finvsfin.com: Happy Head SuperCapsule review (updated 2 Oct 2025)",
+   "url": "https://finvsfin.com/happy-head-super-capsule-reviews/"
+  },
+  {
+   "title": "Perfect Hair Health: Happy Head review, 5 concerns (Oct 2026; written by a competitor's affiliate)",
+   "url": "https://perfecthairhealth.com/happy-head-review/"
+  },
+  {
+   "title": "Company FAQ wording on women and topical finasteride, seen only as a search-engine snippet (page not opened)",
+   "url": "https://happyhead.com/faq"
+  }
+ ],
+ "limitations": [
+  "Product pages on www.happyhead.com were not read (robots.txt closes them to this agent). Prices and strengths for products outside the two baseline recommendations come from the help centre and from third-party reviews of different dates, and may be out of date.",
+  "Only two patient profiles were walked live. The effect of every other answer is read from code, not seen.",
+  "The recommendation service's own rules are on the server. Only its inputs (sex, a made-up birth date from the age band, method, product ids) and two outputs were seen.",
+  "Nothing after the email page was seen: checkout prices, discounts, photo upload, identity check, and what the dermatologist changes or refuses.",
+  "The flow title contains the word 'Test' and the code holds several price and layout experiments, so screens can differ between visitors and over time.",
+  "State-by-state availability in the US was not found."
+ ]
+}

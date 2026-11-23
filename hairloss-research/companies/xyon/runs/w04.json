@@ -1,0 +1,1 @@
+{ "start": "https://consultation.xyonhealth.com/en-US/hair-treatment-rx/welcome", "steps": [ {"do":"click","text":"Start Questionnaire"}, {"do":"click","text":"United States"}, {"do":"click","selector":"[role=combobox]"}, {"do":"click","selector":"[role=option]:has-text(\"California\")"}, {"do":"wait","ms":1500} ] }

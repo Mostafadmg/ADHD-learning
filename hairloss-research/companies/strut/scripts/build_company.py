@@ -137,8 +137,8 @@ products = [
 ]
 
 # ---------------------------------------------------------------- flows from the served definitions
-NOBRANCH = 'No branch in the form: every option goes to the same next screen. The answer is stored for the reviewing provider; what the provider does with it is not visible.'
-def opt(label, effect=NOBRANCH, et='next-question', affects=None, ev='code'):
+NOBRANCH = 'No effect inside the form (read from the served definition): every option of this question goes to the same next screen, with no warning and no change to the product, strength or price. The answer is stored for the reviewing provider; what the provider does with it is not visible.'
+def opt(label, effect=NOBRANCH, et='none', affects=None, ev='code'):
     return {'label': label, 'effect': effect, 'effectType': et, 'affects': affects or [], 'evidence': ev}
 
 # label text -> (purpose, engineRole)
@@ -413,21 +413,177 @@ flows.append({'id': 'old-checkout', 'name': 'Old checkout app (women\'s Strut Ha
      'type': 'contact', 'options': [], 'purpose': 'Account wall on the first screen. Nothing else is shown to an anonymous visitor.', 'engineRole': 'identity',
      'branches': False, 'branchDetail': '', 'shownWhen': 'always', 'evidence': 'observed'}]})
 
-# ---------------------------------------------------------------- rules (read from the definition; stage 2 should confirm what it can)
-rules = [
- dict(id='R1', flow='oral-minoxidil', when='oral-minoxidil age = "Under 18"', then='Stop screen "Age Verification": only for patients 18 and older. Go back or end. Same node in all four forms.', effectType='hard-stop', affects=['p8'], evidence='code', proof='quiz-definition-oral_min.json node-1 path "Under 18" -> node-20 (not yet replayed; first thing for stage 2 in runs/)', confidence='high'),
- dict(id='R2', flow='men-finasteride-oral', when='sex at birth = "Female"', then='Stop screen "Available for Male Patients Only". Go back or end.', effectType='hard-stop', affects=['p1'], evidence='code', proof='quiz-definition-fin_oral.json node-2 path "Female" -> node-1789033271452 (behind the account wall, cannot be replayed)', confidence='high'),
- dict(id='R3', flow='finasteride-topical', when='sex at birth = "Female"', then='The women\'s topical finasteride card replaces the men\'s card (price IDs 612/598 instead of 311/384); all later questions are the same and none asks about pregnancy.', effectType='product-switched', affects=['p2', 'p3'], evidence='code', proof='quiz-definition-fin_topical.json node-2 path "Female" -> node-1789033271452 (finasteride women : Dose selection) -> node-3 (behind the account wall)', confidence='high'),
- dict(id='R4', flow='dutasteride', when='"Which form of dutasteride are you looking to use?" = "Oral Custom Capsule"', then='Oral capsule card ($39) instead of the topical card; solution/gel and formula preference questions are skipped.', effectType='product-switched', affects=['p4', 'p5'], evidence='code', proof='quiz-definition-dut.json node-1790242142312 paths (behind the account wall)', confidence='high'),
- dict(id='R5', flow='oral-minoxidil', when='"In the last 2 weeks, have you had any thoughts of hurting yourself?" = "Yes"', then='"Safety Alert" screen with 988 and 911; the only ways on are to change the answer or end. Same node in all four forms.', effectType='hard-stop', affects=[], evidence='code', proof='quiz-definition-oral_min.json node-16 path "Yes - Self-harm risk" -> node-21 (not yet replayed)', confidence='high'),
- dict(id='R6', flow='oral-minoxidil', when='surgeries = "Yes"; medications = "Yes"; anything else = "Yes"', then='Each adds one free-text screen. Nothing else changes.', effectType='extra-questions', affects=[], evidence='code', proof='quiz-definition-oral_min.json node-10, node-12, node-18 paths', confidence='high'),
- dict(id='R7', flow='oral-minoxidil', when='any other answer (hair-loss pattern, scalp symptoms, sexual dysfunction, allergies including "Minoxidil", medical conditions including heart failure, low blood pressure or pheochromocytoma, mood questions)', then='No branch, no warning and no change to the cart inside the form. The decision is left to the provider who reviews the answers after checkout.', effectType='flag-for-clinician', affects=['p8'], evidence='code', proof='quiz-definition-oral_min.json: nodes 3 to 9, 14 and 15 have a single outgoing edge and no path conditions (worth confirming live in runs/)', confidence='medium'),
+# docs-only entries for the hidden old-checkout questionnaires (wording NOT public; these record what Strut's own pages say the provider needs)
+def docs_q(n, text, purpose, role='safety-screen'):
+    return {'id': 'old-checkout-q%02d' % n, 'order': n, 'stage': 'after-account', 'text': text, 'type': 'info', 'options': [], 'purpose': purpose, 'engineRole': role,
+            'branches': False, 'branchDetail': 'Not visible. The questions load only for a signed-in visit, so whether any answer branches or stops is unknown.', 'shownWhen': 'unknown (behind the account wall)', 'evidence': 'docs'}
+flows[-1]['questions'] += [
+ docs_q(2, '[Question wording not public] Women\'s Hair Growth Formula: the product page tells patients to "Share any history of scalp conditions, sensitivities to topical medications, current prescriptions, pregnancy or breastfeeding status, and any history of low blood pressure or fainting." It also says: "Do not use if you are pregnant, planning to become pregnant, or breastfeeding." (' + SITE + '/hair-loss/strut-hair-formula)',
+        'Shows what the hidden women\'s questionnaire has to cover for the provider: scalp disease, topical sensitivities, current medicines, pregnancy or breastfeeding, low blood pressure or fainting. Whether each is a question, and whether "pregnant" stops the form, is not visible.'),
+ docs_q(3, '[Question wording not public] HairfectRx capsules (finasteride or dutasteride + oral minoxidil 5 mg): the product page tells patients to "Share any history of liver disease, prostate conditions, low blood pressure, heart conditions, current prescriptions, and any plans for blood donation while on finasteride." (' + SITE + '/hair-loss/hairfectrx-finasteride)',
+        'Shows the topics the provider needs for the combination capsule: liver, prostate, blood pressure, heart, medicines, blood donation. The questionnaire itself was not seen.'),
+ docs_q(4, '[Question wording not public] Strut Hair Booster (latanoprost): "Strut Hair Booster should not be used if you are pregnant or breastfeeding unless your healthcare provider decides the benefit outweighs the risk." and "Your provider will decide which strength is appropriate for you." (' + SITE + '/hair-loss/hair-booster)',
+        'Pregnancy and breastfeeding matter for this product, and the strength (0.03% or 0.1%) is the provider\'s choice, not the patient\'s. The questionnaire itself was not seen.', 'product-selector'),
+ docs_q(5, '[Question wording not public] All old-checkout products: "If after checking out, the healthcare provider identifies that you are not a good candidate for treatment, you will not be charged." (product page FAQs)',
+        'Confirms the model: the decision is made by a provider after checkout, not by the form.', 'expectation-setting'),
+]
+flows[-1]['stagesSummary'] += ' Entries q02 to q05 are not questions seen on screen: they quote what Strut\'s public pages say the provider needs to know (evidence "docs").'
+
+# ================================================================= STAGE 2 (EXPERIMENT), 23 Nov 2026 =================================================================
+# Live one-change replays were possible only on the oral minoxidil form. Results are written onto its options here.
+B = 'runs/baseline-us'
+MIN = next(f for f in flows if f['id'] == 'oral-minoxidil')
+def Q(prefix): return next(q for q in MIN['questions'] if q['text'].startswith(prefix))
+def O(q, label): return next(o for o in q['options'] if o['label'].startswith(label))
+SAME = 'No change when replayed: the same later screens with the same wording, the same cart line (2.5 mg, 90 days, $65.00), no warning, and the walk ends at "Create account" as in the baseline'
+def one(q, label, run, extra=''):
+    O(q, label).update(effect='%s (runs/%s against %s). %sThe answer is only stored for the reviewing provider.' % (SAME, run, B, extra), effectType='none', evidence='observed')
+def base(q, label, extra=''):
+    O(q, label).update(effect=('Baseline answer: the form simply moves to the next screen (%s). %s' % (B, extra)).strip(), evidence='observed')
+def combo(q, label):
+    O(q, label).update(effect='No change seen, but it was only ticked together with other high-risk answers in runs/exp-26-worst-case (not a one-change test). That run had the same screens, wording and cart as the baseline, and the served definition has no branch on this option.', effectType='none', evidence='observed')
+def rest(q, note='Not replayed on its own.'):
+    for o in q['options']:
+        if o['evidence'] == 'code' and o['effectType'] in ('none', 'next-question'):
+            o['effect'] = note + ' ' + o['effect']; o['effectType'] = 'none'
+
+q = Q('What is your age?')
+O(q, 'Under 18').update(effect='Stop screen "Age Verification": "These medications are only available for patients 18 and older. If you selected the wrong answer, you can go back and update it." The dose picker is never shown and nothing is put in the cart. The only choices are "Go back and update my answer" or "End questionnaire" (runs/exp-01-age-under18).', effectType='hard-stop', affects=['p8'], evidence='observed')
+one(q, '18-30', 'exp-02-age-18-30'); base(q, '31-45'); one(q, '61+', 'exp-03-age-61plus')
+O(q, '46-60').update(effect='Not replayed. The served definition sends every answer other than "Under 18" down the same path, and the bands either side of it (31-45 and 61+) were replayed with no change.', effectType='none')
+q.update(branchDetail='"Under 18" goes to the Age Verification stop screen (observed, runs/exp-01-age-under18). 18-30, 31-45 and 61+ all continue with identical screens and cart (observed). There is no upper age limit and no extra question for older patients.', purpose='Screens out under-18s. Nothing else is done with the age band inside the form; the exact date of birth is only asked later on the account card.')
+q = Q('Age Verification')
+q.update(evidence='observed', branchDetail='Seen live in runs/exp-01-age-under18 and runs/exp-25-age-under18-end.')
+O(q, 'Go back').update(effect='Returns to the age question so the answer can be changed (read from the definition; the identical control on the Safety Alert screen was seen working in runs/exp-05-selfharm-yes).')
+O(q, 'End questionnaire').update(effect='Ends the visit. The redirect is broken: the browser lands on https://start.struthealth.com/flow/www.struthealth.co, a form-builder error page that says "Oops, you seem lost. The flow you\'re looking for doesn\'t exist or is not published." (runs/exp-25-age-under18-end). The definition\'s redirect address is "www.struthealth.co" with no "https://" and no "m".', evidence='observed')
+q = Q('Minoxidil Tablets.')
+base(q, '2.5 mg', 'Pre-selected. Cart line: "90 Day Supply - 2.5 mg", total $65.00 (price ID 797 in code).')
+O(q, '1.25 mg').update(effect='Cart line becomes "90 Day Supply - 2.5 mg (1.25mg)" and the total drops from $65.00 to $55.00 (price ID 798 in code). Every later screen is identical and the walk ends at "Create account" (runs/exp-04-dose-1-25 against %s). The patient, not the form, picks the dose.' % B, effectType='strength-changed', affects=['p8'], evidence='observed')
+q.update(branches=False, branchDetail='The choice only sets the cart line and price (observed). It does not change any question. The dose is chosen before a single medical question has been asked.')
+q = Q('How long ago'); base(q, 'Over 1 year'); combo(q, '1 month or less'); rest(q)
+q = Q('What symptoms of hair loss'); base(q, 'Receding hairline'); base(q, 'Thinning on the top of the head')
+one(q, 'Patchy bald spots', 'exp-14-symptom-patchy', 'Ticked on its own in place of the two baseline answers. Patchy loss usually points away from pattern hair loss, yet the form shows no warning. '); rest(q)
+q = Q('Have you noticed any scalp symptoms'); base(q, 'None of the above'); one(q, 'Sudden hair loss', 'exp-13-scalp-sudden', 'Sudden loss is a classic reason to look for another cause, yet the form shows no warning. '); combo(q, 'Bleeding'); rest(q)
+q = Q('What treatments have you tried'); base(q, 'None of the above'); rest(q)
+q = Q('Do you have any issues with sexual dysfunction'); base(q, 'No'); combo(q, 'Yes')
+q.update(purpose='Baseline sexual function before a 5-alpha-reductase inhibitor. The question is shared by all four forms; it is not relevant to oral minoxidil but is asked anyway.')
+q = Q('Are you allergic'); base(q, 'None of the above'); one(q, 'Minoxidil', 'exp-12-allergy-minoxidil', 'An allergy to the very medicine in the cart does not stop the form or show a warning. '); rest(q)
+q = Q('Do you have any of the following medical conditions'); base(q, 'None of the above')
+one(q, 'Heart failure or heart disease', 'exp-09-cond-heart-failure', 'Strut\'s own product page carries the boxed warning about heart risks, but the form does not react. ')
+one(q, 'Low blood pressure', 'exp-10-cond-low-bp'); one(q, 'Pheochromocytoma', 'exp-11-cond-pheo', 'This is a labelled contraindication for minoxidil tablets, but the form does not react. ')
+one(q, 'Other', 'exp-24-cond-other', 'The "Other" tile turns into a one-line text box; it was left empty and "Continue" still worked. ')
+for l in ('Heart attack or coronary artery disease', 'Stroke', 'Kidney disease'): combo(q, l)
+rest(q)
+q.update(branchDetail='None. Heart failure, low blood pressure and pheochromocytoma were each replayed on their own, and six heart, blood pressure and kidney conditions together: no stop, no warning, no extra question, same cart (observed).')
+q = Q('Have you had any surgeries?'); base(q, 'No', 'Skips the surgical history screen.')
+O(q, 'Yes').update(effect='Adds one free-text screen, "Please describe your surgical history:". Nothing else changes: same later screens, same cart, ends at "Create account" (runs/exp-06-surgery-yes).', evidence='observed')
+q = Q('Are you currently taking any medications'); base(q, 'No', 'Skips the medicines list screen.')
+O(q, 'Yes').update(effect='Adds one free-text screen, "Please list all current medications, vitamins, and supplements with dosages:". Nothing else changes (runs/exp-07-meds-yes). There is no tick list of interacting medicines (for example blood pressure tablets).', evidence='observed')
+q = Q('Do you have concerns about your mood'); base(q, 'No'); one(q, 'Yes', 'exp-16-mood-yes', 'The mental health warning screen that follows is shown to everyone, whatever the answer. ')
+q = Q('In the last 2 weeks, have you lost interest'); base(q, 'No'); combo(q, 'Yes')
+q = Q('In the last 2 weeks, have you had any thoughts of hurting yourself?'); base(q, 'No', 'Goes on to the mental health warning screen.')
+O(q, 'Yes').update(effect='"Safety Alert" screen: "Your safety is our top priority. If you are having thoughts of hurting yourself, please contact the 988 Suicide and Crisis Lifeline by calling or texting 988, or call 911. A physician will still review your questionnaire. You may go back and update your answer, or end the questionnaire." The only ways on are to change the answer or end, so the visit cannot reach the account card with "Yes" (runs/exp-05-selfharm-yes).', evidence='observed')
+q = Q('Safety Alert'); q.update(evidence='observed', branchDetail='Seen live in runs/exp-05-selfharm-yes.')
+O(q, 'Go back').update(effect='Returns to the self-harm question with "Yes" still ticked, so the patient can change it to "No" and carry on (runs/exp-05-selfharm-yes).', evidence='observed')
+O(q, 'End questionnaire').update(effect='Not replayed here. It leads to the same ending as "End questionnaire" on the Age Verification screen, which was seen to land on a broken "Oops, you seem lost" page (runs/exp-25-age-under18-end).')
+q = Q('Important Mental Health Warning'); q.update(purpose='Warns that finasteride and dutasteride may worsen depression or anxiety. Shown to every patient whatever they answered, and shown unchanged in the oral minoxidil form although that form sells neither medicine (observed in the baseline and in runs/exp-16-mood-yes).')
+q = Q('Is there anything else'); base(q, 'No', 'Goes straight to the account card.')
+O(q, 'Yes').update(effect='Adds one free-text screen, "Please share any additional information for your doctor." Nothing else changes (runs/exp-08-else-yes).', evidence='observed')
+for prefix, run in (('Please describe your surgical history', 'exp-06-surgery-yes'), ('Please list all current medications', 'exp-07-meds-yes'), ('Please share any additional information', 'exp-08-else-yes')):
+    Q(prefix).update(evidence='observed', branchDetail='Seen live in runs/%s (a short fictional medical note was typed; no contact details).' % run)
+q = Q('End of questionnaire'); q.update(evidence='observed', text='End of questionnaire: the definition redirects to "www.struthealth.co"; live, the browser lands on https://start.struthealth.com/flow/www.struthealth.co, which shows "Oops, you seem lost. The flow you\'re looking for doesn\'t exist or is not published."',
+    purpose='Exit after a stop screen. The redirect address is mistyped, so the patient ends on an error page with no help or link (runs/exp-25-age-under18-end).')
+for f in flows:
+    if f['id'] == 'oral-minoxidil': continue
+    for qq in f['questions']:
+        for o in qq['options']:
+            if o['effect'].startswith('No effect inside the form'):
+                o['effect'] += ' Behind the account wall, so not replayed; the same shared question was replayed in the oral minoxidil form, where no option changed anything.'
+MIN['stagesSummary'] += ' Stage 2: 18 one-change replays confirmed three kinds of branch only (under-18 stop, self-harm stop, three free-text follow-ups) plus the dose picker changing the price; no medical answer changed anything.'
+
+# ---------------------------------------------------------------- experiments
+def X(i, changed, result, flow='oral-minoxidil'): return {'id': i, 'flow': flow, 'changed': changed, 'result': result, 'run': 'runs/' + i}
+NOCH = 'No change: same 18 screens and wording, cart "90 Day Supply - 2.5 mg, $65.00", ends at "Create account" (75%).'
+experiments = [
+ X('baseline-us', 'none (baseline man replayed with locale en-US, time zone America/Chicago)', 'Identical to the stage 1 baseline: welcome, age, dose picker, 13 questions, warning screen, then "Create account" at 75%. Cart: 2.5 mg, 90 days, $65.00.'),
+ X('exp-01-age-under18', 'age: 31-45 -> Under 18', 'Stop screen "Age Verification" straight after the age question. No dose picker, no cart. Choices: go back or end.'),
+ X('exp-25-age-under18-end', 'age: Under 18, then "End questionnaire" on the stop screen', 'Browser sent to https://start.struthealth.com/flow/www.struthealth.co: an error page "Oops, you seem lost. The flow you\'re looking for doesn\'t exist or is not published." The exit redirect is broken.'),
+ X('exp-02-age-18-30', 'age: 31-45 -> 18-30', NOCH),
+ X('exp-03-age-61plus', 'age: 31-45 -> 61+', NOCH),
+ X('exp-04-dose-1-25', 'dose: 2.5 mg (pre-selected) -> 1.25 mg', 'Cart line changes to "90 Day Supply - 2.5 mg (1.25mg)", total $55.00 instead of $65.00. Questions, wording and end screen identical.'),
+ X('exp-05-selfharm-yes', 'thoughts of hurting yourself: No -> Yes', '"Safety Alert" screen (988 and 911) replaces the rest of the form. "Go back and update my answer" returns to the question with "Yes" still ticked. The warning screen, the catch-all question and the account card are not reached.'),
+ X('exp-06-surgery-yes', 'surgeries: No -> Yes (new free-text screen answered with a short fictional note)', 'One extra screen, "Please describe your surgical history:". Everything else the same; progress bar shows 76% instead of 75% at the account card.'),
+ X('exp-07-meds-yes', 'medicines, vitamins or supplements: No -> Yes (new free-text screen answered with "Vitamin D")', 'One extra screen, "Please list all current medications, vitamins, and supplements with dosages:". Everything else the same.'),
+ X('exp-08-else-yes', 'anything else for the doctor: No -> Yes (new free-text screen answered neutrally)', 'One extra screen, "Please share any additional information for your doctor." Then the account card as usual.'),
+ X('exp-09-cond-heart-failure', 'medical conditions: None of the above -> Heart failure or heart disease', NOCH + ' No warning about oral minoxidil and the heart.'),
+ X('exp-10-cond-low-bp', 'medical conditions: None of the above -> Low blood pressure', NOCH),
+ X('exp-11-cond-pheo', 'medical conditions: None of the above -> Pheochromocytoma', NOCH),
+ X('exp-24-cond-other', 'medical conditions: None of the above -> Other (text box left empty)', 'The "Other" tile becomes a one-line text box. Left empty, "Continue" still works. ' + NOCH),
+ X('exp-12-allergy-minoxidil', 'allergies: None of the above -> Minoxidil', NOCH + ' The form keeps selling minoxidil tablets to a patient who says they are allergic to minoxidil.'),
+ X('exp-13-scalp-sudden', 'scalp symptoms: None of the above -> Sudden hair loss', NOCH),
+ X('exp-14-symptom-patchy', 'hair-loss symptoms: Receding hairline + Thinning on the top of the head -> Patchy bald spots only', NOCH),
+ X('exp-16-mood-yes', 'concerns about mood, depression, anxiety: No -> Yes', NOCH + ' The mental health warning screen is the same one everybody sees.'),
+ X('exp-26-worst-case', 'NOT a one-change run. All at once: age 61+, noticed 1 month or less, patchy bald spots, scalp sudden hair loss + bleeding, sexual dysfunction Yes, allergy Minoxidil, conditions heart failure + heart attack + stroke + low blood pressure + pheochromocytoma + kidney disease, mood Yes, lost interest Yes', NOCH + ' So there is no hidden score or cumulative rule: the highest-risk patient the form can describe reaches the account card with oral minoxidil 2.5 mg in the cart.'),
 ]
 
-recommendations = [
- dict(profile='Man, 31-45, hair loss over 1 year, receding hairline and thinning on top, no scalp symptoms, no treatments, no conditions, no medicines (oral minoxidil form)',
-      offered=['p8'], default='p8', note='Dose picker shows 2.5 mg ($65 for 90 days, pre-selected) and 1.25 mg ($55 for 90 days) before any medical question. The form never shows a recommendation screen; it reaches "Create account" at 75%.', evidence='observed'),
+# ---------------------------------------------------------------- rules
+def R(i, flow, when, then, et, affects, ev, proof, conf): return dict(id=i, flow=flow, when=when, then=then, effectType=et, affects=affects, evidence=ev, proof=proof, confidence=conf)
+DEF = 'quiz-definition-%s.json'
+rules = [
+ R('R1', 'oral-minoxidil', 'age = "Under 18"', 'Stop screen "Age Verification" (18 and older only). No product is shown. The same node sits in all four forms.', 'hard-stop', ['p8', 'p1', 'p2', 'p3', 'p4', 'p5'], 'observed', 'runs/exp-01-age-under18 against runs/baseline-us; ' + DEF % 'oral_min' + ' node-1 path "Under 18" -> node-20', 'high'),
+ R('R2', 'oral-minoxidil', 'age = 18-30, 31-45, 46-60 or 61+', 'Continues with identical screens and cart. No upper age limit, no extra question for older patients.', 'none', ['p8'], 'observed', 'runs/exp-02-age-18-30 and runs/exp-03-age-61plus against runs/baseline-us (46-60 from code only)', 'high'),
+ R('R3', 'oral-minoxidil', 'dose picker = "1.25 mg" instead of the pre-selected "2.5 mg"', 'Price changes from $65 to $55 for 90 days and the cart line reads "2.5 mg (1.25mg)". No question changes. The patient picks the dose before any medical question.', 'strength-changed', ['p8'], 'observed', 'runs/exp-04-dose-1-25 against runs/baseline-us', 'high'),
+ R('R4', 'oral-minoxidil', '"In the last 2 weeks, have you had any thoughts of hurting yourself?" = "Yes"', '"Safety Alert" screen with the 988 lifeline and 911. The only ways on are to change the answer or end, so the form cannot be completed with "Yes". The same node sits in all four forms.', 'hard-stop', ['p8', 'p1', 'p2', 'p3', 'p4', 'p5'], 'observed', 'runs/exp-05-selfharm-yes against runs/baseline-us; ' + DEF % 'oral_min' + ' node-16 -> node-21', 'high'),
+ R('R5', 'oral-minoxidil', 'surgeries = "Yes"', 'One extra free-text screen ("Please describe your surgical history:"). Nothing else changes.', 'extra-questions', [], 'observed', 'runs/exp-06-surgery-yes against runs/baseline-us', 'high'),
+ R('R6', 'oral-minoxidil', 'medications, vitamins or supplements = "Yes"', 'One extra free-text screen (list them with dosages). Nothing else changes.', 'extra-questions', [], 'observed', 'runs/exp-07-meds-yes against runs/baseline-us', 'high'),
+ R('R7', 'oral-minoxidil', '"Is there anything else you want your doctor to know" = "Yes"', 'One extra free-text screen. Nothing else changes.', 'extra-questions', [], 'observed', 'runs/exp-08-else-yes against runs/baseline-us', 'high'),
+ R('R8', 'oral-minoxidil', 'medical conditions = heart failure or heart disease, low blood pressure, pheochromocytoma or "Other" (each on its own)', 'Nothing: no stop, no warning, no extra question, oral minoxidil 2.5 mg stays in the cart. The answer is left for the provider.', 'none', ['p8'], 'observed', 'runs/exp-09-cond-heart-failure, runs/exp-10-cond-low-bp, runs/exp-11-cond-pheo, runs/exp-24-cond-other against runs/baseline-us', 'high'),
+ R('R9', 'oral-minoxidil', 'allergy = "Minoxidil"', 'Nothing: the form keeps oral minoxidil in the cart and shows no warning.', 'none', ['p8'], 'observed', 'runs/exp-12-allergy-minoxidil against runs/baseline-us', 'high'),
+ R('R10', 'oral-minoxidil', 'hair-loss symptoms = "Patchy bald spots" only, or scalp symptoms = "Sudden hair loss"', 'Nothing: no warning that this may not be pattern hair loss, no referral, no extra question, no photo request.', 'none', ['p8'], 'observed', 'runs/exp-14-symptom-patchy and runs/exp-13-scalp-sudden against runs/baseline-us', 'high'),
+ R('R11', 'oral-minoxidil', 'mood concerns = "Yes"', 'Nothing. The "Important Mental Health Warning" (about finasteride and dutasteride) is shown to every patient whatever they answer.', 'none', [], 'observed', 'runs/exp-16-mood-yes against runs/baseline-us', 'high'),
+ R('R12', 'oral-minoxidil', 'every high-risk answer at once (age 61+, 1 month, patchy, sudden loss, bleeding scalp, minoxidil allergy, six heart, blood pressure and kidney conditions, sexual dysfunction, mood Yes twice)', 'Still nothing: same screens, same cart, account card reached. There is no scoring and no cumulative rule (the definition\'s "scoring" field is empty).', 'none', ['p8'], 'observed', 'runs/exp-26-worst-case against runs/baseline-us; ' + DEF % 'oral_min' + ' scoring = null', 'high'),
+ R('R13', 'oral-minoxidil', '"End questionnaire" on a stop screen', 'The exit redirect is broken: the patient lands on an error page ("Oops, you seem lost").', 'hard-stop', [], 'observed', 'runs/exp-25-age-under18-end; ' + DEF % 'oral_min' + ' node-23 redirect url "www.struthealth.co"', 'high'),
+ R('R14', 'oral-minoxidil', 'any option not replayed on its own (duration, other hair-loss symptoms, other scalp symptoms, treatments tried, other allergies, other conditions, sexual dysfunction, lost interest)', 'No effect inside the form: each of these screens has one way out and no condition on it.', 'none', ['p8'], 'code', DEF % 'oral_min' + ': nodes 3 to 9, 14 and 15 have a single outgoing edge and no path conditions; consistent with every live replay', 'high'),
+ R('R15', 'men-finasteride-oral', 'sex at birth = "Female"', 'Stop screen "Available for Male Patients Only". Go back or end. Oral finasteride is never offered to women.', 'hard-stop', ['p1'], 'code', DEF % 'fin_oral' + ' node-2 path "Female" -> node-1789033271452 (behind the account wall, cannot be replayed)', 'high'),
+ R('R16', 'finasteride-topical', 'sex at birth = "Female"', 'The women\'s topical finasteride card replaces the men\'s card (price IDs 612/598 instead of 311/384, same $59 / $79). All later questions are the same as for men: there is no pregnancy, breastfeeding or contraception question anywhere in the form.', 'product-switched', ['p2', 'p3'], 'code', DEF % 'fin_topical' + ' node-2 path "Female" -> "finasteride women : Dose selection" -> node-3 (behind the account wall)', 'high'),
+ R('R17', 'dutasteride', '"Which form of dutasteride are you looking to use?" = "Oral Custom Capsule"', 'Oral capsule card (0.1 mg, $39) instead of the topical card ($69 / $99); the solution-or-gel and formula preference questions are skipped.', 'product-switched', ['p4', 'p5'], 'code', DEF % 'dut' + ' node-1790242142312 paths (behind the account wall)', 'high'),
+ R('R18', 'finasteride-topical', 'formula preference chosen (finasteride 0.25% with or without tretinoin 0.0125% and minoxidil 7.5%, or "no preference"); solution or gel chosen', 'Recorded as a preference only. No branch and no price change; "so your physician can review the selection with your medical history". The dutasteride form does the same with its own list.', 'flag-for-clinician', ['p2', 'p3', 'p5'], 'code', DEF % 'fin_topical' + ' and ' + DEF % 'dut' + ': the preference nodes have one outgoing edge (behind the account wall)', 'medium'),
+ R('R19', 'finasteride-topical', 'fewer than two hairline photos added', 'The continue button stays disabled: front and back hairline photos are required in the topical finasteride and dutasteride forms. The oral finasteride and oral minoxidil forms ask for no photos.', 'hard-stop', ['p2', 'p3', 'p4', 'p5'], 'code', 'components/ "Hairloss photo input" (disabled={!allComplete}); present in ' + DEF % 'fin_topical' + ' and ' + DEF % 'dut' + ' only', 'medium'),
+ R('R20', 'men-finasteride-oral', 'any medical answer in the oral finasteride, topical finasteride or dutasteride forms (conditions, allergies, scalp symptoms, sexual dysfunction, mood)', 'No branch in the definition: nothing is removed, switched or warned about inside the form. The shared questions behaved exactly this way when replayed in the oral minoxidil form.', 'none', ['p1', 'p2', 'p3', 'p4', 'p5'], 'code', DEF % 'fin_oral' + ', ' + DEF % 'fin_topical' + ', ' + DEF % 'dut' + ' (single outgoing edges); live behaviour of the same questions in runs/exp-09 to runs/exp-16', 'medium'),
+ R('R21', 'oral-minoxidil', 'identity check (Persona) fails; card is declined', 'Failed ID check -> photo ID and selfie upload instead; declined card -> back to the payment screen. Neither changes the product.', 'extra-questions', [], 'code', DEF % 'oral_min' + ' and sister definitions: "Strut ID Verification" route = "selfie"; node "Strut Finalize" path "Card declined" (after the account wall, not tested)', 'medium'),
+ R('R22', 'old-checkout', 'after checkout, the provider judges the patient "not a good candidate"', 'The order is declined and the card is not charged. The provider can also change strengths and ingredients of compounded formulas, and picks the Hair Booster strength.', 'flag-for-clinician', ['p2', 'p5', 'p9', 'p10'], 'docs', SITE + '/hair-loss/hair-booster and ' + SITE + '/hair-loss/strut-hair-formula (FAQ text saved in text/)', 'medium'),
+ R('R23', 'old-checkout', 'woman who is pregnant, planning pregnancy or breastfeeding (women\'s formula, Hair Booster)', 'Strut\'s pages say do not use. How the hidden questionnaire handles it (stop screen or provider decision) could not be seen.', 'unknown', ['p9', 'p10'], 'docs', SITE + '/hair-loss/strut-hair-formula ("Do not use if you are pregnant, planning to become pregnant, or breastfeeding")', 'low'),
 ]
+
+# ---------------------------------------------------------------- recommendations
+recommendations = [
+ dict(profile='Baseline man: 31-45, hair loss over 1 year, receding hairline and thinning on top, no scalp symptoms, no treatments, no conditions, no medicines (oral minoxidil form)',
+      offered=['p8'], default='p8', note='There is no recommendation screen. The dose picker comes straight after the age question: 2.5 mg ($65 for 90 days) is pre-selected, 1.25 mg ($55) is the other choice. The walk ends at "Create account" (75%) with 2.5 mg in the cart. Proof: runs/baseline-us.', evidence='observed'),
+ dict(profile='Same man who taps "1.25 mg" on the dose picker', offered=['p8'], default='p8', note='Cart: "90 Day Supply - 2.5 mg (1.25mg)", $55.00. Questions identical. Proof: runs/exp-04-dose-1-25.', evidence='observed'),
+ dict(profile='Anyone answering "Under 18"', offered=[], default=None, note='Stop screen "Age Verification"; no product is shown. Proof: runs/exp-01-age-under18.', evidence='observed'),
+ dict(profile='Baseline man who answers "Yes" to thoughts of hurting himself', offered=[], default=None, note='"Safety Alert" screen (988, 911). He can only change the answer or end; the item stays in the cart but the account card cannot be reached with "Yes". Proof: runs/exp-05-selfharm-yes.', evidence='observed'),
+ dict(profile='High-risk man: heart failure, heart attack, stroke, low blood pressure, pheochromocytoma, kidney disease, minoxidil allergy, sudden patchy loss, 61+', offered=['p8'], default='p8',
+      note='Exactly the same offer as the baseline man: oral minoxidil 2.5 mg, $65, up to the account card. Any refusal can only come from the provider after sign-up, ID check and card. Proof: runs/exp-26-worst-case, plus one-change runs exp-09 to exp-14.', evidence='observed'),
+ dict(profile='Man who starts from the oral finasteride page', offered=['p1'], default='p1', note='Finasteride 1 mg: 30 days $25 (default) or 90 days $49. Behind the account wall; read from the served definition.', evidence='code'),
+ dict(profile='Man who starts from the topical finasteride page', offered=['p2'], default='p2', note='Hairfect Rx topical finasteride: 30 ml once daily $59 (default) or 60 ml twice daily $79; he states gel or solution and a formula preference (with or without minoxidil 7.5% and tretinoin). Behind the account wall; from the definition.', evidence='code'),
+ dict(profile='Man who starts from the dutasteride page', offered=['p5', 'p4'], default='p5', note='He chooses topical (default path: 30 ml $69 or 60 ml $99, then gel or solution and formula preference) or oral 0.1 mg capsules ($39). Behind the account wall; from the definition.', evidence='code'),
+ dict(profile='Woman who answers "Female" in the topical finasteride form', offered=['p3'], default='p3', note='Women\'s topical finasteride card, $59 or $79. No pregnancy question follows. Behind the account wall; from the definition. The baseline woman could not be walked on any route.', evidence='code'),
+ dict(profile='Woman who answers "Female" in the oral finasteride form', offered=[], default=None, note='Stop screen "Available for Male Patients Only". From the definition.', evidence='code'),
+ dict(profile='Baseline woman, 38, who starts from the women\'s product page', offered=['p9'], default='p9', note='The page sells one product, the Strut Women\'s Hair Growth Formula ($59 a month); the provider sets the actives. The questionnaire is behind the old checkout\'s first-screen account wall and was not seen.', evidence='docs'),
+]
+
+# ---------------------------------------------------------------- product recommendedWhen (stage 2 wording)
+P = {p['id']: p for p in products}
+P['p8']['recommendedWhen'] = ('Offered to every adult who opens the oral minoxidil form: the dose picker (2.5 mg pre-selected, or 1.25 mg) is the second screen, before any medical question. '
+    'In 18 replays nothing removed it or changed its dose: not heart failure, low blood pressure, pheochromocytoma, a minoxidil allergy, patchy or sudden hair loss, or age 61+ (observed). Only "Under 18" and self-harm "Yes" stop the form. The provider decides after checkout.')
+P['p1']['recommendedWhen'] = 'Offered to every adult who opens the oral finasteride form and answers "Male" (30-day supply pre-selected). "Female" and "Under 18" are stopped. No medical answer changes it inside the form (code; behind the account wall). The provider decides after checkout.'
+P['p2']['recommendedWhen'] = 'Offered to every adult who opens the topical finasteride form and answers "Male" (30 ml pre-selected). The patient states gel or solution and which actives they would like; the provider makes the final formula (code; behind the account wall).'
+P['p4']['recommendedWhen'] = 'Shown in the dutasteride form when the patient picks "Oral Custom Capsule" (one option, 0.1 mg, $39). No sex question and no medical branch in that form (code; behind the account wall).'
+P['p5']['recommendedWhen'] = 'Default path of the dutasteride form ("Custom Topical Formula"): 30 ml pre-selected; the patient states gel or solution and a formula preference; the provider makes the final formula (code; behind the account wall).'
+for i in ('p6', 'p7', 'p11', 'p12', 'p13', 'p14'):
+    P[i]['recommendedWhen'] = 'Never recommended by a form: the patient picks it on its own product page. Its questionnaire is behind the old checkout\'s account wall and was not seen; Strut says a provider reviews the answers and declines without charge if the patient is "not a good candidate" (docs).'
+P['p9']['recommendedWhen'] = 'Never recommended by a form: a woman picks it on its product page. Strut says a provider sets the actives and strengths and that it must not be used in pregnancy, when planning pregnancy or when breastfeeding (docs). Its questionnaire is behind the account wall and was not seen.'
+P['p10']['recommendedWhen'] = 'Never recommended by a form: picked on its product page, sold as an add-on for men and women. "Your provider will decide which strength is appropriate" (0.03% or 0.1%). Not in pregnancy or breastfeeding unless the provider agrees (docs). Questionnaire not seen.'
 
 company = {
  'slug': 'strut', 'company': 'Strut Health', 'market': 'US', 'website': SITE + '/', 'parent': 'Partex.AI (the site logo reads "Strut, a Partex.AI Consumer Health Company")',
@@ -438,22 +594,33 @@ company = {
    'howTested': ['live-walk', 'site-code', 'public-docs'],
    'accountWall': 'Oral finasteride, topical finasteride and dutasteride forms: the first screen (e-mail + phone). Old checkout (women\'s formula, Hair Booster, ketoconazole, HairfectRx capsules, combos): the first screen. Oral minoxidil form: after 17 anonymous screens, at "Create account" (75% progress), before address, ID check and payment.',
    'blockers': ['The help centre (support.struthealth.com) returned HTTP 403 with a "Just a moment..." security checkpoint to curl and to the fetch tool; it was not read.',
-                'Three of the four new forms and every old-checkout product ask for an e-mail and phone number on the first screen, so they could not be walked.'],
-   'coverageNote': 'The full definition of the four new intake forms (every screen, option and branch condition, including everything behind the account wall, plus the product cards with prices) was read from the HTML the site serves to an anonymous browser; those items are labelled "code". Only the oral minoxidil form could be walked live (baseline man, 25 steps, to the account card); those items are labelled "observed". The questionnaires for the women\'s Strut Hair Formula, Hair Booster, ketoconazole shampoo, HairfectRx capsules and the combos are served only to signed-in users and were not seen. No one-change experiments were run in this stage.'},
- 'products': products, 'flows': flows, 'rules': rules, 'experiments': [], 'recommendations': recommendations,
- 'engineSummary': 'Strut does not run a recommendation engine. The patient chooses a product on the marketing site; each product has its own form that sells only that product (the dutasteride form lets you pick topical or oral, the topical finasteride form swaps to a women\'s product if you answer "Female"). The form is a fixed list of questions with three kinds of branch only: stop screens (under 18; female in the oral finasteride form; thoughts of self-harm), three optional free-text follow-ups, and product-card swaps. No medical answer changes the product, strength or price inside the form. All clinical decisions, including strength and which actives go into a compounded formula, are left to a provider who reviews the answers and photos after the patient has created an account, passed an ID check and saved a card.',
- 'strengths': ['Very wide compounded range: topical finasteride or dutasteride with minoxidil 7.5%, tretinoin and fluocinolone; oral combination capsules; a latanoprost booster; a women\'s spironolactone and finasteride topical.',
-               'The patient can state a formula preference (which actives to include) and gel or solution.',
-               'Low entry price ($25 a month oral finasteride; $49 for 90 days) with visit and shipping included; card is saved, not charged, until a provider approves.',
-               'Identity check (Persona) and hairline photos are built into the topical flows.'],
- 'weaknesses': ['The account wall is the first screen for most products, so a visitor sees no questions and no personalised offer before giving an e-mail and phone number.',
-                'The forms do almost no automatic screening: heart disease, low blood pressure or a minoxidil allergy do not change or stop the oral minoxidil form.',
-                'The oral minoxidil form reuses the finasteride/dutasteride mental health warning and asks nothing about blood pressure, heart rate, pregnancy or sex.',
+                'Three of the four new forms and every old-checkout product ask for an e-mail and phone number on the first screen, so they could not be walked or tested.',
+                'Web search was not available in stage 2 (the shared search allowance was used up), so no third-party accounts of the hidden questionnaires or of provider decisions could be looked for.'],
+   'coverageNote': 'Stage 1 read the full definition of the four new intake forms (every screen, option and branch condition, including everything behind the account wall, and the product cards with prices) from the HTML served to an anonymous browser: those items are labelled "code". Stage 2 replayed the one walkable form, oral minoxidil, 19 times (1 baseline, 17 one-change runs, 1 combined worst-case run): those items are labelled "observed" and name their run folder. Six rules read from code were confirmed live exactly as coded (under-18 stop, self-harm stop, three free-text follow-ups, dose picker price). 37 options of that form were not replayed on their own because the definition shows no branch on them; they keep the label "code". The oral finasteride, topical finasteride and dutasteride forms cannot be tested without an account. The questionnaires for the women\'s Strut Hair Formula, Hair Booster, ketoconazole shampoo, HairfectRx capsules and the combos are served only to signed-in users and were not seen; a few entries quote what Strut\'s public pages say the provider needs ("docs").'},
+ 'products': products, 'flows': flows, 'rules': rules, 'experiments': experiments, 'recommendations': recommendations,
+ 'engineSummary': 'Strut has no recommendation engine. The patient chooses a product on the marketing site, and each product has its own form that sells only that product. The form is an order form with a medical questionnaire attached: in the one form that can be walked without an account (oral minoxidil) the dose and price are chosen on the second screen, before any medical question. Live testing found only three kinds of reaction: "Under 18" stops the form, "Yes" to thoughts of self-harm shows a crisis screen that cannot be passed, and "Yes" to surgeries, medicines or "anything else" adds one free-text box each. Nothing else does anything. Heart failure, low blood pressure, pheochromocytoma, an allergy to minoxidil, patchy or sudden hair loss and age 61+ were each tried, then all together: same screens, same wording, same $65 cart, no warning. The served code shows the same design in the three forms behind the account wall, with two extra switches: "Female" is stopped in the oral finasteride form and swapped to a women\'s product in the topical finasteride form, and the dutasteride form lets the patient pick topical or oral. There is no scoring. Every clinical decision (approve, decline, strength, which actives go into a compounded formula) is made by a provider after the patient has created an account, passed an ID check and saved a card; Strut says patients who are "not a good candidate" are not charged.',
+ 'strengths': ['Very wide compounded range: topical finasteride or dutasteride with minoxidil 7.5%, tretinoin and fluocinolone; oral combination capsules (finasteride or dutasteride with oral minoxidil 5 mg); a latanoprost booster; a women\'s spironolactone and finasteride topical.',
+               'The patient can ask for a formula (which actives to include) and for gel or solution, so the product feels made to order.',
+               'Low entry prices with the visit and shipping included: oral finasteride $25 a month or $49 for 90 days; oral minoxidil $55 or $65 for 90 days. The card is saved, not charged, until a provider approves.',
+               'Short, fast form: about 17 taps from welcome to the account card for oral minoxidil, one question a screen, cart always visible, single answers move on by themselves.',
+               'A real self-harm safety net: "Yes" shows the 988 lifeline and 911 and cannot be clicked past.',
+               'Identity check (Persona) on every order and two hairline photos on the topical forms give the provider something to review.'],
+ 'weaknesses': ['No guidance at all: the visitor must already know which of 13 hair products they want. Nothing explains why one fits, and nothing is recommended.',
+                'The account wall is the first screen for most products, so a visitor sees no question and no price confirmation before giving an e-mail and phone number.',
+                'The form does no automatic safety screening. Heart failure, low blood pressure, pheochromocytoma and a minoxidil allergy were all accepted without a warning while oral minoxidil stayed in the cart (observed). The patient learns of a refusal only after sign-up, ID check and card.',
+                'The oral minoxidil form asks nothing about blood pressure readings, heart rate, swelling, pregnancy or sex, and takes no photos. It shows a warning about finasteride and dutasteride, which it does not sell, and none about minoxidil.',
+                'Red flags for other diagnoses (patchy bald spots, sudden loss, bleeding or painful scalp) get no warning, no extra question and no referral advice.',
                 'The women\'s branch of the topical finasteride form has no pregnancy, breastfeeding or contraception question in the served definition.',
-                'Product facts are inconsistent across pages (tretinoin 0.0125% or 0.025%; oral minoxidil headline dose and price; dutasteride "0.1 mg to 0.6 mg" against a single 0.1 mg option in the form).'],
- 'opportunities': ['Show a real recommendation before asking for contact details: Strut makes the patient choose the product first and never explains why one fits.',
-                   'Automated safety screening with clear stop or warning screens (heart and blood pressure for oral minoxidil; pregnancy for women) would be a visible safety advantage.',
-                   'A single guided consultation for women: Strut splits women across an old checkout product and a hidden branch of the men\'s topical form.'],
+                'The dose is picked by the patient before any medical question, with the higher dose pre-selected.',
+                'Rough edges: "End questionnaire" lands on a broken "Oops, you seem lost" page; the 1.25 mg dose shows in the cart as "2.5 mg (1.25mg)"; product facts differ between pages (tretinoin 0.0125% or 0.025%; oral minoxidil headline dose and price; dutasteride "0.1 mg to 0.6 mg" against one 0.1 mg option).',
+                'The same generic question list is reused across products, so patients are asked things that do not apply (sexual dysfunction and a finasteride warning in the minoxidil form) and not asked things that do.'],
+ 'opportunities': ['Recommend before asking for contact details: a short guided consultation that ends in "this is the treatment for you, and why" is something Strut does not offer at all.',
+                   'Make safety visible in the form: clear stop or warning screens for heart disease, low blood pressure and pregnancy, and "this may not be pattern hair loss, see a clinician" for patchy or sudden loss. Strut leaves all of this to an unseen review.',
+                   'Tell unsuitable patients early. Strut lets them create an account, verify ID and save a card before anyone says no.',
+                   'One joined-up route for women, with pregnancy, contraception, menopause and cycle questions. Strut splits women across an old checkout product and a hidden branch of a men\'s form.',
+                   'Ask what Strut never asks: family history, goals, how fast the loss is progressing, treatment preference (tablet or topical), blood pressure, lifestyle. These make a recommendation feel personal.',
+                   'Let the consultation choose the dose and step it up, rather than asking the patient to pick 1.25 mg or 2.5 mg.',
+                   'Range gaps in Strut\'s hair-loss collection as listed on 23 Nov 2026: no stand-alone topical minoxidil, no oral spironolactone for women, no devices (laser caps), no cosmetic shampoo or conditioner line beyond prescription ketoconazole, and only one supplement.'],
  'sources': [
    {'title': 'Hair loss collection (13 product cards)', 'url': SITE + '/hair-loss'},
    {'title': 'Oral finasteride', 'url': SITE + '/hair-loss/finasteride/oral'}, {'title': 'Topical finasteride (Hairfect Rx)', 'url': SITE + '/hair-loss/finasteride/topical'},
@@ -467,16 +634,19 @@ company = {
    {'title': 'FAQ (shipping, visits, subscriptions)', 'url': SITE + '/faq'}, {'title': 'How it works', 'url': SITE + '/how-it-works'},
    {'title': 'Refund policy', 'url': SITE + '/refund-policy'}, {'title': 'Terms and conditions', 'url': SITE + '/terms-and-conditions'}, {'title': 'Telemedicine consent', 'url': SITE + '/telemedicine-consent'},
    {'title': 'Intake form: oral finasteride (definition in page HTML)', 'url': START + '6adb53275c3d5e719ab02595'}, {'title': 'Intake form: topical finasteride', 'url': START + '6adb546a5d885b6c0877d8e4'},
-   {'title': 'Intake form: dutasteride', 'url': START + '6ad9e1d39fba7abfd231a5b3'}, {'title': 'Intake form: oral minoxidil', 'url': START + '6aa3d578f415d1603a6e0c85'},
+   {'title': 'Intake form: dutasteride', 'url': START + '6ad9e1d39fba7abfd231a5b3'}, {'title': 'Intake form: oral minoxidil (replayed 19 times in stage 2)', 'url': START + '6aa3d578f415d1603a6e0c85'},
    {'title': 'Old checkout (redirects to sign-up)', 'url': OLD + 'womens-hair-growth-rx-formula?priceId=226'},
    {'title': 'Help centre (blocked by a security checkpoint, not read)', 'url': 'https://support.struthealth.com/hc/en-us'},
    {'title': 'Third-party review used only as a cross-check of topical strengths (not relied on)', 'url': 'https://perfecthairhealth.com/strut-health-review/'}],
- 'limitations': ['Only one of the forms (oral minoxidil) could be walked. Everything behind an account wall is from the served definition, which shows what the form does but not how it looks live or whether the server adds checks.',
-                 'What the reviewing provider does with any answer (declines, changes strength, removes an active) is not visible anywhere public.',
-                 'The questionnaires of the old-checkout products, including the main women\'s product, were not seen at all.',
-                 'No one-change experiments were run in this stage; branch effects in the oral minoxidil form are from code and still need a live replay.',
+ 'limitations': ['Only the oral minoxidil form could be tested live. The oral finasteride, topical finasteride and dutasteride forms start with an account card, so their rules come from the served definition ("code"), not from replays.',
+                 'What the reviewing provider does with any answer (declines, lowers the dose, removes an active) is not visible anywhere public. "No effect" in this report always means no effect inside the form, not no effect on the final prescription.',
+                 'The questionnaires of the old-checkout products, including the main women\'s product, were not seen at all. No baseline woman could be walked on any route.',
+                 'Not replayed on their own in the oral minoxidil form (the definition shows no branch on any of them): age 46-60; durations "Less than 6 months", "6-12 months", "Over 2 years"; symptoms "Thinning at the front hairline", "Thinning at the temples", "Diffuse thinning (all over)", "Increased shedding"; scalp "Itching, pain, burning, or lesions", "Dry skin or dandruff", "Rash"; every "treatments tried" option; every allergy except "Minoxidil"; conditions liver, thyroid, breast or prostate cancer, BPH, HIV, autoimmune, glaucoma; "Other" on treatments and allergies. Tested only in the combined worst-case run: "1 month or less", "Bleeding", sexual dysfunction "Yes", lost interest "Yes", heart attack, stroke, kidney disease.',
+                 'Free-text answers (surgeries, medicines, anything else) were given one short neutral note each; whether particular words trigger anything is unknown, though the definition has no rule on text.',
+                 'Nothing after the account card was tested: address (state availability), identity check, cart, promo codes, payment and the order confirmation are from code only.',
+                 'No third-party sources (reviews, forums, videos) were searched in stage 2 because web search was unavailable; the help centre could not be read.',
                  'State availability by product is not published beyond "all states except Arkansas" and "certain medications may not be available in all states".',
-                 'The help centre could not be read.'],
+                 'Replays used a copy of the shared walk tool with a shorter wait (scripts/walk_fast.js); the baseline was also run with the standard tool and matched. Each replay created an anonymous, unsubmitted form record and a cart session on Strut\'s side; no account, contact detail, photo, payment or order was ever entered.'],
  'publicDocs': {
    'whoCanHaveIt': ['Finasteride and dutasteride pages: "Do not use if: You are a woman or a child. ... a medication for men only. Women who are or may become pregnant should never handle" it. (product pages, Safety Info tab)',
                     'Women\'s formula: "Do not use if you are pregnant, planning to become pregnant, or breastfeeding." (' + SITE + '/hair-loss/strut-hair-formula)',
@@ -491,4 +661,5 @@ company = {
                     'Ships to all states except Arkansas (as of September 2024); no international shipping; HSA/FSA cards may be rejected; no insurance billing. (' + SITE + '/faq)']},
 }
 json.dump(company, open(os.path.join(HERE, 'company.json'), 'w'), indent=1, ensure_ascii=False)
-print('written', sum(len(f['questions']) for f in flows), 'questions in', len(flows), 'flows;', len(products), 'products')
+no = sum(1 for f in flows for q in f['questions'] for o in q['options'])
+print('written', sum(len(f['questions']) for f in flows), 'questions,', no, 'options in', len(flows), 'flows;', len(products), 'products;', len(rules), 'rules;', len(experiments), 'experiments;', len(recommendations), 'recommendation profiles')

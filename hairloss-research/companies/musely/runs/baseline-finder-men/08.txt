@@ -1,0 +1,30 @@
+STEP 08 click "[role=checkbox]:has-text('I prefer a once-daily pill')"
+URL: https://www.musely.com/facerx/find/concerns/questionnaire?c=hair&i=0
+TITLE: Hair questionnaire | Musely
+
+--- VISIBLE TEXT ---
+Back
+
+HAIR CONCERN
+
+What's the goals for your hair related concerns?
+
+Select all that apply.
+
+Stop Hair Loss & Promote Hair Growth
+
+Which hair treatments would you prefer? (Combine all 3 for max result) *
+
+I prefer a classic topical minoxidil treatment
+I prefer an advanced topical exosome treatment
+I prefer a once-daily pill
+Slow Growth of Unwanted Facial Hair
+Grow Fuller, Longer Eyelashes
+Continue
+
+--- CONTROLS ---
+  button (6): Shop  ·  Community  ·  Support  ·  About  ·  Cart (0 items)  ·  Continue
+  checkbox (6): Stop Hair Loss & Promote Hair Growth [true]  ·  I prefer a classic topical minoxidil treatment [true]  ·  I prefer an advanced topical exosome treatment [true]  ·  I prefer a once-daily pill [true]  ·  Slow Growth of Unwanted Facial Hair [false]  ·  Grow Fuller, Longer Eyelashes [false]
+
+--- LINKS ---
+  link (5): Skip to main content -> #main  ·  Musely Home -> /  ·  Search -> /search?focus=1  ·  Log In / Sign Up -> /login  ·  Back -> /facerx/find/concerns?c=hair

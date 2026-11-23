@@ -1,0 +1,3 @@
+{ "start": "https://www.hims.com/g/i/hl", "locale": "en-US", "timezone": "America/New_York",
+  "note": "Probe: does the newer intake app (/g/i/<code>, the route family the site links for sexual health and weight) serve a hair flow under the site's own hair code 'hl'? No link to this address was found on a public page. Opens the page and waits; no clicks.",
+  "steps": [ {"do":"wait","ms":9000} ] }

@@ -1,0 +1,9 @@
+URL: https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+
+Exit consultation
+Hair loss medication
+Have you ever taken any medication for hair loss?
+Yes
+No
+Next
+Back

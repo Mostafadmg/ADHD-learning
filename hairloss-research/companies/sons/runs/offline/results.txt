@@ -1,0 +1,373 @@
+Switch string = oral finasteride, topical finasteride, oral minoxidil, topical minoxidil, combination spray (1 = allowed, 0 = blocked).
+
+off-00  baseline man (no change)
+   older 11111  primary: oral-duo-plan (toggle: the-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: topical-finasteride-minoxidil-spray  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-01  picture → Temples only
+   older 11111  primary: oral-duo-plan (toggle: the-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: topical-finasteride-minoxidil-spray  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-02  picture → Random patches
+   older 11111  primary: oral-duo-plan (toggle: the-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: topical-finasteride-minoxidil-spray  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-03  picture → Completely bald
+   older 11111  primary: oral-duo-plan (toggle: the-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: topical-finasteride-minoxidil-spray  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-04  onset → Suddenly (follow-ups No)
+   older 00010  primary: minoxidil  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, finasteride, topical-hair-loss-spray  | hidden reasons: Sudden Hair Loss
+   newer 00010  primary: minoxidil  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, finasteride, topical-hair-loss-spray
+   older rest: the-non-prescription-plan · hair-growth-complex
+   newer rest: the-non-prescription-plan · hair-growth-complex
+
+off-05  Suddenly + body hair loss Yes   [compared with off-04]
+   older 00010  primary: minoxidil  | same set  | hidden reasons: Sudden Hair Loss
+   newer 00010  primary: minoxidil  | same set
+   older rest: the-non-prescription-plan · hair-growth-complex
+   newer rest: the-non-prescription-plan · hair-growth-complex
+
+off-06  Suddenly + new medicines Yes   [compared with off-04]
+   older 00010  primary: minoxidil  | same set  | hidden reasons: Sudden Hair Loss
+   newer 00010  primary: minoxidil  | same set
+   older rest: the-non-prescription-plan · hair-growth-complex
+   newer rest: the-non-prescription-plan · hair-growth-complex
+
+off-07  Suddenly + other symptoms Yes   [compared with off-04]
+   older 00010  primary: minoxidil  | same set  | hidden reasons: Sudden Hair Loss
+   newer 00010  primary: minoxidil  | same set
+   older rest: the-non-prescription-plan · hair-growth-complex
+   newer rest: the-non-prescription-plan · hair-growth-complex
+
+off-08  mood → Yes (both two-week answers Not at all)
+   older 11111  primary: oral-duo-plan (toggle: the-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: topical-finasteride-minoxidil-spray  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-09  mood Yes + little interest = Several days   [compared with off-08]
+   older 11111  primary: oral-duo-plan (toggle: the-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: topical-finasteride-minoxidil-spray  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-10  mood Yes + little interest = More than half the days   [compared with off-08]
+   older 00110  primary: oral-minoxidil (toggle: minoxidil)  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, finasteride, topical-hair-loss-spray  | hidden reasons: PHQ Score
+   newer 00110  primary: oral-minoxidil (toggle: minoxidil)  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, finasteride, topical-hair-loss-spray
+   older rest: the-non-prescription-plan · hair-growth-complex
+   newer rest: the-non-prescription-plan · hair-growth-complex
+
+off-11  mood Yes + little interest = Nearly every day   [compared with off-08]
+   older 00110  primary: oral-minoxidil (toggle: minoxidil)  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, finasteride, topical-hair-loss-spray  | hidden reasons: PHQ Score
+   newer 00110  primary: oral-minoxidil (toggle: minoxidil)  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, finasteride, topical-hair-loss-spray
+   older rest: the-non-prescription-plan · hair-growth-complex
+   newer rest: the-non-prescription-plan · hair-growth-complex
+
+off-12  mood Yes + down/hopeless = Several days   [compared with off-08]
+   older 11111  primary: oral-duo-plan (toggle: the-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: topical-finasteride-minoxidil-spray  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-13  mood Yes + down/hopeless = More than half the days   [compared with off-08]
+   older 00110  primary: oral-minoxidil (toggle: minoxidil)  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, finasteride, topical-hair-loss-spray  | hidden reasons: PHQ Score
+   newer 00110  primary: oral-minoxidil (toggle: minoxidil)  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, finasteride, topical-hair-loss-spray
+   older rest: the-non-prescription-plan · hair-growth-complex
+   newer rest: the-non-prescription-plan · hair-growth-complex
+
+off-14  mood Yes + down/hopeless = Nearly every day   [compared with off-08]
+   older 00110  primary: oral-minoxidil (toggle: minoxidil)  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, finasteride, topical-hair-loss-spray  | hidden reasons: PHQ Score
+   newer 00110  primary: oral-minoxidil (toggle: minoxidil)  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, finasteride, topical-hair-loss-spray
+   older rest: the-non-prescription-plan · hair-growth-complex
+   newer rest: the-non-prescription-plan · hair-growth-complex
+
+off-15  past medicines → Finasteride or Propecia (no side effects)
+   older 11111  primary: oral-duo-plan (toggle: the-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: topical-finasteride-minoxidil-spray  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-16  finasteride side effects → Yes   [compared with off-15]
+   older 00110  primary: oral-minoxidil (toggle: minoxidil)  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, finasteride, topical-hair-loss-spray  | hidden reasons: Finasteride Side Effects
+   newer 00110  primary: oral-minoxidil (toggle: minoxidil)  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, finasteride, topical-hair-loss-spray
+   older rest: the-non-prescription-plan · hair-growth-complex
+   newer rest: the-non-prescription-plan · hair-growth-complex
+
+off-17  past medicines → Minoxidil or Regaine (no side effects)
+   older 11111  primary: oral-duo-plan (toggle: the-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: topical-finasteride-minoxidil-spray  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-18  minoxidil side effects → Yes   [compared with off-17]
+   older 11000  primary: finasteride (toggle: topical-hair-loss-spray)  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, the-non-prescription-plan  | hidden reasons: Minoxidil Side Effects
+   newer 11000  primary: finasteride (toggle: topical-hair-loss-spray)  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, the-non-prescription-plan
+   older rest: hair-growth-complex
+   newer rest: hair-growth-complex
+
+off-19  past medicines → Topical Finasteride Minoxidil Combination (no side effects)
+   older 11111  primary: oral-duo-plan (toggle: the-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: topical-finasteride-minoxidil-spray  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-20  combination side effects → Yes   [compared with off-19]
+   older 11110  primary: oral-duo-plan (toggle: the-duo-plan) + hair-loss-spray-hair-loss-capsule  | removed: topical-finasteride-minoxidil-spray  | hidden reasons: Combo Side Effects
+   newer 11110  primary: oral-duo-plan (toggle: the-duo-plan)  | removed: topical-finasteride-minoxidil-spray
+   older rest: ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-21  preference → Topical sprays
+   older 11111  primary: the-duo-plan (toggle: oral-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: topical-finasteride-minoxidil-spray  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan (toggle: ultimate-hair-loss-plan-capsule) · minoxidil (toggle: oral-minoxidil) · topical-hair-loss-spray (toggle: finasteride) · the-non-prescription-plan · hair-growth-complex
+   newer rest: the-duo-plan (toggle: oral-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan (toggle: ultimate-hair-loss-plan-capsule) · minoxidil (toggle: oral-minoxidil) · topical-hair-loss-spray (toggle: finasteride) · the-non-prescription-plan · hair-growth-complex
+
+off-22  preference → Oral capsule
+   older 11111  primary: oral-duo-plan (toggle: the-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: topical-finasteride-minoxidil-spray  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-23  conditions → High Blood Pressure
+   older 11000  primary: finasteride (toggle: topical-hair-loss-spray)  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, the-non-prescription-plan  | hidden reasons: High Blood Pressure
+   newer 11000  primary: finasteride (toggle: topical-hair-loss-spray)  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, the-non-prescription-plan
+   older rest: hair-growth-complex
+   newer rest: hair-growth-complex
+
+off-24  conditions → Cardiovascular Disease
+   older 11000  primary: finasteride (toggle: topical-hair-loss-spray)  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, the-non-prescription-plan  | hidden reasons: Cardiovascular
+   newer 11000  primary: finasteride (toggle: topical-hair-loss-spray)  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, the-non-prescription-plan
+   older rest: hair-growth-complex
+   newer rest: hair-growth-complex
+
+off-25  conditions → Severe Kidney or Liver Disease
+   older 00110  primary: oral-minoxidil (toggle: minoxidil)  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, finasteride, topical-hair-loss-spray  | hidden reasons: Severe Kidney/Liver Disease
+   newer 00110  primary: oral-minoxidil (toggle: minoxidil)  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, finasteride, topical-hair-loss-spray
+   older rest: the-non-prescription-plan · hair-growth-complex
+   newer rest: the-non-prescription-plan · hair-growth-complex
+
+off-26  conditions → Prostate Disease, Male Breast Cancer or Testicular Cancer
+   older 00110  primary: oral-minoxidil (toggle: minoxidil)  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, finasteride, topical-hair-loss-spray  | hidden reasons: Prostate or Cancer
+   newer 00110  primary: oral-minoxidil (toggle: minoxidil)  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, finasteride, topical-hair-loss-spray
+   older rest: the-non-prescription-plan · hair-growth-complex
+   newer rest: the-non-prescription-plan · hair-growth-complex
+
+off-27  conditions → Rheumatoid Arthritis, Systemic Lupus or on Methotrexate
+   older 00110  primary: oral-minoxidil (toggle: minoxidil)  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, finasteride, topical-hair-loss-spray  | hidden reasons: Rheumatoid/Lupus/Methotrexate
+   newer 00110  primary: oral-minoxidil (toggle: minoxidil)  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, finasteride, topical-hair-loss-spray
+   older rest: the-non-prescription-plan · hair-growth-complex
+   newer rest: the-non-prescription-plan · hair-growth-complex
+
+off-28  conditions → Scalp Disorders
+   older 11100  primary: oral-duo-plan  | removed: the-duo-plan, topical-finasteride-minoxidil-spray, ultimate-hair-loss-plan, minoxidil, the-non-prescription-plan  | hidden reasons: Scalp Disorders
+   newer 11100  primary: oral-duo-plan  | removed: topical-finasteride-minoxidil-spray, the-duo-plan, ultimate-hair-loss-plan, minoxidil, the-non-prescription-plan
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule · oral-minoxidil · finasteride (toggle: topical-hair-loss-spray) · hair-growth-complex
+   newer rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule · oral-minoxidil · finasteride (toggle: topical-hair-loss-spray) · hair-growth-complex
+
+off-29  conditions → Phaeochromocytoma
+   older 11011  primary: the-duo-plan + topical-finasteride-minoxidil-spray  | removed: oral-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, oral-minoxidil  | hidden reasons: Phaeochromocytoma
+   newer 11011  primary: topical-finasteride-minoxidil-spray  | removed: oral-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, oral-minoxidil
+   older rest: ultimate-hair-loss-plan · minoxidil · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: the-duo-plan · ultimate-hair-loss-plan · minoxidil · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-30  conditions → Diagnosed Lactose Allergy
+   older 01011  primary: topical-finasteride-minoxidil-spray  | removed: oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, finasteride  | hidden reasons: Lactose Allergy
+   newer 01011  primary: topical-finasteride-minoxidil-spray  | removed: oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, finasteride
+   older rest: minoxidil · topical-hair-loss-spray · the-non-prescription-plan · hair-growth-complex
+   newer rest: minoxidil · topical-hair-loss-spray · the-non-prescription-plan · hair-growth-complex
+
+off-31  conditions → Sexual Dysfunction
+   older 00110  primary: oral-minoxidil (toggle: minoxidil)  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, finasteride, topical-hair-loss-spray  | hidden reasons: Sexual Dysfunction
+   newer 00110  primary: oral-minoxidil (toggle: minoxidil)  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, finasteride, topical-hair-loss-spray
+   older rest: the-non-prescription-plan · hair-growth-complex
+   newer rest: the-non-prescription-plan · hair-growth-complex
+
+off-32  Scalp Disorders + red flag: open sores, broken skin or infection   [compared with off-28]
+   older 11100  primary: oral-duo-plan  | same set  | hidden reasons: Scalp Disorders
+   newer 11100  primary: oral-duo-plan  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule · oral-minoxidil · finasteride (toggle: topical-hair-loss-spray) · hair-growth-complex
+   newer rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule · oral-minoxidil · finasteride (toggle: topical-hair-loss-spray) · hair-growth-complex
+
+off-33  Scalp Disorders + red flag: severe pain, oozing or signs of infection   [compared with off-28]
+   older 11100  primary: oral-duo-plan  | same set  | hidden reasons: Scalp Disorders
+   newer 11100  primary: oral-duo-plan  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule · oral-minoxidil · finasteride (toggle: topical-hair-loss-spray) · hair-growth-complex
+   newer rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule · oral-minoxidil · finasteride (toggle: topical-hair-loss-spray) · hair-growth-complex
+
+off-34  Scalp Disorders + all five scalp symptoms ticked   [compared with off-28]
+   older 11100  primary: oral-duo-plan  | same set  | hidden reasons: Scalp Disorders
+   newer 11100  primary: oral-duo-plan  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule · oral-minoxidil · finasteride (toggle: topical-hair-loss-spray) · hair-growth-complex
+   newer rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule · oral-minoxidil · finasteride (toggle: topical-hair-loss-spray) · hair-growth-complex
+
+off-35  Scalp Disorders + all three past scalp treatments ticked   [compared with off-28]
+   older 11100  primary: oral-duo-plan  | same set  | hidden reasons: Scalp Disorders
+   newer 11100  primary: oral-duo-plan  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule · oral-minoxidil · finasteride (toggle: topical-hair-loss-spray) · hair-growth-complex
+   newer rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule · oral-minoxidil · finasteride (toggle: topical-hair-loss-spray) · hair-growth-complex
+
+off-36  age → 17 (date of birth changed; asked only on the account form)
+   older 11111  primary: oral-duo-plan (toggle: the-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: topical-finasteride-minoxidil-spray  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-37  age → 18 (date of birth changed; asked only on the account form)
+   older 11111  primary: oral-duo-plan (toggle: the-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: topical-finasteride-minoxidil-spray  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-38  age → 21 (date of birth changed; asked only on the account form)
+   older 11111  primary: oral-duo-plan (toggle: the-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: topical-finasteride-minoxidil-spray  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-39  age → 65 (date of birth changed; asked only on the account form)
+   older 11111  primary: oral-duo-plan (toggle: the-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: topical-finasteride-minoxidil-spray  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-40  age → 66 (date of birth changed; asked only on the account form)
+   older 00010  primary: minoxidil  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, finasteride, topical-hair-loss-spray  | hidden reasons: Age Over 65
+   newer 00000  primary: hair-growth-complex  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, finasteride, topical-hair-loss-spray, the-non-prescription-plan
+   older rest: the-non-prescription-plan · hair-growth-complex
+   newer rest: 
+
+off-41  age → 76 (date of birth changed; asked only on the account form)
+   older 00010  primary: minoxidil  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, finasteride, topical-hair-loss-spray  | hidden reasons: Age Over 65
+   newer 00000  primary: hair-growth-complex  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, finasteride, topical-hair-loss-spray, the-non-prescription-plan
+   older rest: the-non-prescription-plan · hair-growth-complex
+   newer rest: 
+
+off-42  account tag finasteride_disallowed
+   older 00110  primary: oral-minoxidil (toggle: minoxidil)  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, finasteride, topical-hair-loss-spray  | hidden reasons: Tag: finasteride_disallowed
+   newer 00110  primary: oral-minoxidil (toggle: minoxidil)  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, finasteride, topical-hair-loss-spray
+   older rest: the-non-prescription-plan · hair-growth-complex
+   newer rest: the-non-prescription-plan · hair-growth-complex
+
+off-43  account tag minoxidil_disallowed
+   older 11000  primary: finasteride (toggle: topical-hair-loss-spray)  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, the-non-prescription-plan  | hidden reasons: Tag: minoxidil_disallowed
+   newer 11000  primary: finasteride (toggle: topical-hair-loss-spray)  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, the-non-prescription-plan
+   older rest: hair-growth-complex
+   newer rest: hair-growth-complex
+
+off-44  account tag dutasteride_eligible
+   older 11111  primary: oral-duo-plan (toggle: the-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: dutasteride-combination-spray  | added: dutasteride-combination-spray
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: topical-finasteride-minoxidil-spray · oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-45  account tag combo_pill_eligible + combo route
+   older 11111  primary: oral-duo-plan (toggle: the-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: combination-capsule  | added: combination-capsule
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: topical-finasteride-minoxidil-spray · oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-46  account tag combo_pill_eligible, normal route
+   older 11111  primary: oral-duo-plan (toggle: the-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: topical-finasteride-minoxidil-spray  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-47  chosen product stored = finasteride tablets ("oral-tablet")
+   older 11111  primary: finasteride (toggle: topical-hair-loss-spray) + oral-duo-plan (toggle: the-duo-plan)  | same set
+   newer 11111  primary: finasteride (toggle: topical-hair-loss-spray)  | same set
+   older rest: topical-finasteride-minoxidil-spray · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · the-non-prescription-plan · hair-growth-complex
+   newer rest: topical-finasteride-minoxidil-spray · oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · the-non-prescription-plan · hair-growth-complex
+
+off-48  chosen product stored = Ultimate Plan
+   older 11111  primary: ultimate-hair-loss-plan + oral-duo-plan (toggle: the-duo-plan)  | same set
+   newer 11111  primary: ultimate-hair-loss-plan  | same set
+   older rest: topical-finasteride-minoxidil-spray · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: topical-finasteride-minoxidil-spray · oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-49  PAIR High Blood Pressure + Sexual Dysfunction
+   older 00000  primary: hair-growth-complex  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, finasteride, topical-hair-loss-spray, the-non-prescription-plan  | hidden reasons: Sexual Dysfunction; High Blood Pressure
+   newer 00000  primary: hair-growth-complex  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, finasteride, topical-hair-loss-spray, the-non-prescription-plan
+   older rest: 
+   newer rest: 
+
+off-50  PAIR Diagnosed Lactose Allergy + Scalp Disorders
+   older 01000  primary: topical-hair-loss-spray  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, finasteride, the-non-prescription-plan  | hidden reasons: Scalp Disorders; Lactose Allergy
+   newer 01000  primary: topical-hair-loss-spray  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, finasteride, the-non-prescription-plan
+   older rest: hair-growth-complex
+   newer rest: hair-growth-complex
+
+off-51  PAIR Suddenly + High Blood Pressure
+   older 00000  primary: hair-growth-complex  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, finasteride, topical-hair-loss-spray, the-non-prescription-plan  | hidden reasons: Sudden Hair Loss; High Blood Pressure
+   newer 00000  primary: hair-growth-complex  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, finasteride, topical-hair-loss-spray, the-non-prescription-plan
+   older rest: 
+   newer rest: 
+
+off-52  PAIR Suddenly + Scalp Disorders
+   older 00000  primary: hair-growth-complex  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, finasteride, topical-hair-loss-spray, the-non-prescription-plan  | hidden reasons: Sudden Hair Loss; Scalp Disorders
+   newer 00000  primary: hair-growth-complex  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, finasteride, topical-hair-loss-spray, the-non-prescription-plan
+   older rest: 
+   newer rest: 
+
+off-53  PAIR Topical preference + Diagnosed Lactose Allergy
+   older 01011  primary: topical-finasteride-minoxidil-spray  | removed: oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, finasteride  | hidden reasons: Lactose Allergy
+   newer 01011  primary: topical-finasteride-minoxidil-spray  | removed: oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, finasteride
+   older rest: minoxidil · topical-hair-loss-spray · the-non-prescription-plan · hair-growth-complex
+   newer rest: minoxidil · topical-hair-loss-spray · the-non-prescription-plan · hair-growth-complex
+
+off-54  ALL nine conditions + Suddenly + all side effects
+   older 00000  primary: hair-growth-complex  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, finasteride, topical-hair-loss-spray, the-non-prescription-plan  | hidden reasons: Sudden Hair Loss; Finasteride Side Effects; Minoxidil Side Effects; Combo Side Effects; Sexual Dysfunction; High Blood Pressure; Cardiovascular; Severe Kidney/Liver Disease; Prostate or Cancer; Rheumatoid/Lupus/Methotrexate; Scalp Disorders; Phaeochromocytoma; Lactose Allergy
+   newer 00000  primary: hair-growth-complex  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, finasteride, topical-hair-loss-spray, the-non-prescription-plan
+   older rest: 
+   newer rest: 
+
+off-55  Scalp Disorders + scalp symptom: previously diagnosed with seborrheic dermatitis   [compared with off-28]
+   older 11100  primary: oral-duo-plan  | same set  | hidden reasons: Scalp Disorders
+   newer 11100  primary: oral-duo-plan  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule · oral-minoxidil · finasteride (toggle: topical-hair-loss-spray) · hair-growth-complex
+   newer rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule · oral-minoxidil · finasteride (toggle: topical-hair-loss-spray) · hair-growth-complex
+
+off-56  Scalp Disorders + tried before: prescription scalp treatments   [compared with off-28]
+   older 11100  primary: oral-duo-plan  | same set  | hidden reasons: Scalp Disorders
+   newer 11100  primary: oral-duo-plan  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule · oral-minoxidil · finasteride (toggle: topical-hair-loss-spray) · hair-growth-complex
+   newer rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule · oral-minoxidil · finasteride (toggle: topical-hair-loss-spray) · hair-growth-complex
+
+off-57  NHS Summary Care Record consent given
+   older 11111  primary: oral-duo-plan (toggle: the-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: topical-finasteride-minoxidil-spray  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-58  GP sharing consent given
+   older 11111  primary: oral-duo-plan (toggle: the-duo-plan) + topical-finasteride-minoxidil-spray  | same set
+   newer 11111  primary: topical-finasteride-minoxidil-spray  | same set
+   older rest: hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+   newer rest: oral-duo-plan (toggle: the-duo-plan) · hair-loss-spray-hair-loss-capsule · ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan) · oral-minoxidil (toggle: minoxidil) · finasteride (toggle: topical-hair-loss-spray) · the-non-prescription-plan · hair-growth-complex
+
+off-59  PAIR Scalp Disorders + Sexual Dysfunction
+   older 00100  primary: oral-minoxidil  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, minoxidil, finasteride, topical-hair-loss-spray, the-non-prescription-plan  | hidden reasons: Sexual Dysfunction; Scalp Disorders
+   newer 00100  primary: oral-minoxidil  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, minoxidil, finasteride, topical-hair-loss-spray, the-non-prescription-plan
+   older rest: hair-growth-complex
+   newer rest: hair-growth-complex
+
+off-60  PAIR Phaeochromocytoma + Scalp Disorders
+   older 11000  primary: finasteride (toggle: topical-hair-loss-spray)  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, the-non-prescription-plan  | hidden reasons: Scalp Disorders; Phaeochromocytoma
+   newer 11000  primary: finasteride (toggle: topical-hair-loss-spray)  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, the-non-prescription-plan
+   older rest: hair-growth-complex
+   newer rest: hair-growth-complex
+
+off-61  PAIR Diagnosed Lactose Allergy + High Blood Pressure
+   older 01000  primary: topical-hair-loss-spray  | removed: oral-duo-plan, the-duo-plan, topical-finasteride-minoxidil-spray, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, finasteride, the-non-prescription-plan  | hidden reasons: High Blood Pressure; Lactose Allergy
+   newer 01000  primary: topical-hair-loss-spray  | removed: topical-finasteride-minoxidil-spray, oral-duo-plan, the-duo-plan, hair-loss-spray-hair-loss-capsule, ultimate-hair-loss-plan-capsule, ultimate-hair-loss-plan, oral-minoxidil, minoxidil, finasteride, the-non-prescription-plan
+   older rest: hair-growth-complex
+   newer rest: hair-growth-complex

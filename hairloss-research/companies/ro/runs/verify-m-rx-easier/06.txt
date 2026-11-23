@@ -1,0 +1,109 @@
+STEP 06 click "I want an easier or more convenient solution (like a pill or a spray)"
+URL: https://start.ro.co/fxdxbh/online-visit/55
+TITLE: Online Visit
+
+--- VISIBLE TEXT ---
+Ro members start seeing results in as little as three months
+
+After 3 months
+
+Ro helped me to regrow my hair and regain my confidence.
+
+Josiah
+
+Ro Member
+
+After 12 months
+
+I can still feel young and have a full head of hair.
+
+Cole
+
+Ro Member
+
+After 12 months
+
+Ro has helped me regrow and thicken my hair.
+
+Jacob
+
+Ro Member
+
+After 12 months
+
+Very happy with my experience with this company...
+
+Yun
+
+Ro Member
+
+After 24 months
+
+My hair is thicker than it's been in over a decade...
+
+Julian
+
+Ro Member
+
+After 3 months
+
+Ro helped me to regrow my hair and regain my confidence.
+
+Josiah
+
+Ro Member
+
+After 12 months
+
+I can still feel young and have a full head of hair.
+
+Cole
+
+Ro Member
+
+After 12 months
+
+Ro has helped me regrow and thicken my hair.
+
+Jacob
+
+Ro Member
+
+After 12 months
+
+Very happy with my experience with this company...
+
+Yun
+
+Ro Member
+
+After 24 months
+
+My hair is thicker than it's been in over a decade...
+
+Julian
+
+Ro Member
+
+Your treatment options
+
+We offer clinically proven ingredients like finasteride, minoxidil, or both in a convenient topical spray.
+
+Continue
+See how much fuller your hair could be in just 3 months
+Email address
+I agree to privacy policy
+I agree to terms and consent to telehealth
+Continue
+
+Or other log-in options
+
+Continue with Google
+
+--- CONTROLS ---
+  button (4): Continue  ·  Dismiss  ·  telehealth  ·  Continue with Google
+  input:email (1): Email address
+  checkbox (2): I agree to privacy policy  ·  I agree to terms and consent to telehealth
+
+--- LINKS ---
+  link (2): privacy policy -> https://ro.co/privacy-policy  ·  terms -> https://ro.co/terms-of-use

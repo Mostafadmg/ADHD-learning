@@ -1,0 +1,25 @@
+STEP 13 st AFTER ANSWERS [{"range":"input[type=range]","value":25}]
+URL: https://www.hairandme.com/c/suh/st
+
+--- VISIBLE TEXT ---
+Which best matches your skin?
+
+These answers are based on the Fitzpatrick scale, a widely recognised medical classification scheme for skin colour.
+
+Why are we asking?
+
+To help our Dermatology Clinicians prescribe your treatment accurately and safely.
+
+Drag the slider to the shade closest to your skin
+
+Fair
+It often burns, but tans a little
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:range | Drag the slider to the shade closest to your skin
+button:submit | NEXT QUESTION
+a -> /c/suh/st?action=previous | Back to previous page

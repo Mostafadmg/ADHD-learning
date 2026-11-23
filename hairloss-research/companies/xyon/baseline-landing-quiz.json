@@ -1,0 +1,8 @@
+{ "start": "https://xyonhealth.com/pages/hl-qlp",
+  "note": "Marketing quiz on the Shopify site (3 questions, no email). Baseline man: receding hairline; wants regrowth without side-effect stress; interested in Rx. Ends on the fixed recommendation card; does not click through.",
+  "steps": [
+    {"do":"click","selector":"[data-xyon-lp-quiz-step='1'] [data-answer='Receding hairline']"},
+    {"do":"click","selector":"[data-xyon-lp-quiz-step='2'] [data-answer='Yes']"},
+    {"do":"click","selector":"[data-xyon-lp-quiz-step='3'] [data-answer='Yes']"},
+    {"do":"wait","ms":1200}
+  ] }

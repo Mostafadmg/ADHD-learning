@@ -1,0 +1,24 @@
+STEP 04 click "Continue"
+URL: https://www.musely.com/facerx/find/concerns/questionnaire?c=hair&i=0
+TITLE: Hair questionnaire | Musely
+
+--- VISIBLE TEXT ---
+Back
+
+HAIR CONCERN
+
+What's the goals for your hair related concerns?
+
+Select all that apply.
+
+Stop Hair Loss & Promote Hair Growth
+Slow Growth of Unwanted Facial Hair
+Grow Fuller, Longer Eyelashes
+Continue
+
+--- CONTROLS ---
+  button (6): Shop  ·  Community  ·  Support  ·  About  ·  Cart (0 items)  ·  Continue [disabled]
+  checkbox (3): Stop Hair Loss & Promote Hair Growth [false]  ·  Slow Growth of Unwanted Facial Hair [false]  ·  Grow Fuller, Longer Eyelashes [false]
+
+--- LINKS ---
+  link (5): Skip to main content -> #main  ·  Musely Home -> /  ·  Search -> /search?focus=1  ·  Log In / Sign Up -> /login  ·  Back -> /facerx/find/concerns?c=hair

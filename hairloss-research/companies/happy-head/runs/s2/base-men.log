@@ -1,0 +1,12 @@
+
+!!!!! STEP 03 FAILED: click "I want to regrow a receding hairline"
+page.waitForTimeout: Target page, context or browser has been closed
+
+===== STEP 03 FAILED click "I want to regrow a receding hairline" =====
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TEXT: (could not read page: Error: page.evaluate: Target page, context or browser has been closed)
+CONTROLS:
+
+  links (0, full list in 03.txt): 
+
+[walk] 3 step(s), exit 2, 7 JSON bodies saved -> runs/s2/base-men

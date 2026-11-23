@@ -124,3 +124,28 @@ medical information, and is not prescribed until approved. Your fees are refunda
 
 Not possible without breaking the rules: anything in the medical intake, the provider's decisions, and whether the provider
 ever changes the quiz's product.
+
+## 9. Stage 2 (EXPERIMENT) — progress log, 2026-11-23
+
+Answer files for every experiment are written by `experiments/gen.js` (one file per experiment, plus `experiments/index.json`).
+Run them one at a time with `bash experiments/run.sh exp-01 exp-02 …` (it retries once after 30 s). Compare plan pages with
+`python3 -I experiments/compare.py baseline-men-r2 exp-01 …`. Each run is in `runs/<exp-id>/` (walker log in `walk.log`).
+
+Main quiz results so far (baseline replay `runs/baseline-men-r2` = Chew+ 19277, checkout $100.00 then $204.99 per 3 months):
+
+| run | one change | result |
+|---|---|---|
+| exp-01 | form → Topical Drop | Drop+ 18636; checkout $149.93 first 3 months, then $214.99 |
+| exp-02 | priority → simple & affordable | Chew 18640; checkout $94.96, then $159.99 |
+| exp-03 | exp-01 + priority → affordable | Drop 18635; checkout $140.02, then $194.99 |
+| exp-04 | form → Daily Chew | no change (19277) |
+| exp-05 | priority → results ASAP | no change |
+| exp-06 | priority → skip link | no change |
+| exp-07 | picture → more options → Mostly Scalp | STOP screen at ?step=4 |
+| exp-08 | picture → more options → Patchy Loss | no stop; 19277; only the 'Today' label changes |
+| exp-09 | state → Idaho | 'We currently don't serve in your state. Please check back soon.' after clicking Show my plan |
+| exp-09a | typed 'Kansas' → box picked Arkansas | Arkansas accepted at the gate (not carried on) |
+| exp-10 | state → California | no change |
+| exp-11 | treated before → Yes → 'Had side effects' | extra question shown; no warning; 19277; plan text identical |
+| exp-12..16 | duration <6 months, stage Advanced, goal Preserve, picture Advanced, comments Yes | no change to product, price or wording except the echoed label |
+| exp-17 | plan page: 'Want to switch to topical solutions?' | Drop and Drop+ cards shown, Drop (cheaper) pre-selected; banner still says 'Recommended for you: Chew+' |

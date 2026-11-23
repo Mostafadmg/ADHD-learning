@@ -1,0 +1,20 @@
+STEP 05 click "Yes"
+URL: https://www.keeps.com/hair-assessment-quiz?step=7
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+Have you treated hair loss before?
+
+This helps us avoid what didn't work.
+
+Yes
+
+No
+
+Keeps | Hair Loss Treatment for Men
+
+--- CONTROLS ---
+  button (3): Go back  ·  Yes  ·  No
+
+--- LINKS ---
+

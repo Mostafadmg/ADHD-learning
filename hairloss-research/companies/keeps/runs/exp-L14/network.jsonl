@@ -1,0 +1,36 @@
+{"url":"https://cmp.osano.com/16A3avTedbMIi2JlW/4a726510-9e55-4ebc-865c-8d9e0280140a/en.json","method":"GET","status":200,"size":6425,"file":"net/01-cmp_osano_com_16A3avTedbMIi2JlW_4a726510_9e55_4ebc_865c_8d9e0280140a_en_json.json"}
+{"url":"https://consent.api.osano.com/record","method":"POST","status":204,"size":0}
+{"url":"https://us.i.posthog.com/flags/?v=2&config=true&ip=0&_=1795473960097&ver=1.299.0&compression=base64","method":"POST","status":200,"size":13173,"file":"net/02-us_i_posthog_com_flags_v_2_config_true_ip_0_1795473960097_ver_1_299_0_compressio.json","post":"data=eyJ0b2tlbiI6InBoY185VnJSUmFNREFlUGJzbjRFQXIxUVVEb1I3bEVmRFM5Nld4QXNDeHlCenRtIiwiZGlzdGluY3RfaWQiOiI1Yjk5MTZkOC1lZWU1LTQ2NDUtOWEzNC0xNjgyZDJhMGVjZjgiLCJncm91cHMiOnt9LCJwZXJzb25fcHJvcGVydGllcyI6e319"}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":353,"file":"net/03-www_keeps_com_graphql_step_1.json","post":"{\"operationName\":\"GetOffer\",\"variables\":{},\"query\":\"query GetOffer {\\n  currentOffer {\\n    ...OfferFragment\\n    __typename\\n  }\\n  uniqueLeadId\\n}\\n\\nfragment OfferFragment on Offer {\\n  id\\n  topBannerText\\n  checkoutSentence\\n  promoSentence\\n  quizSkipUrl\\n  interstitial1\\n  interstitial2\\n  resultsPageText\\n  oneMonthBadgeText\\n  threeMonthBadgeText\\n  __typename\\n}\\n\"}"}
+{"url":"https://quiz-schemas-production.s3.us-east-2.amazonaws.com/outages.json","method":"GET","status":200,"size":2}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":115}
+{"url":"https://d3ufb5q76krgse.cloudfront.net/event-definitions/e2d2c644-e99c-44ca-9b12-9f3abd48f814","method":"GET","status":200,"size":24388,"file":"net/04-d3ufb5q76krgse_cloudfront_net_event_definitions_e2d2c644_e99c_44ca_9b12_9f3abd48.json"}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":102}
+{"url":"https://api.perfalytics.com/consent","method":"POST","status":200,"size":133}
+{"url":"https://api.perfalytics.com/consent","method":"POST","status":200,"size":133}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":433821,"file":"net/05-www_keeps_com_graphql_step_1.json","post":"{\"operationName\":\"GetAllPricing\",\"variables\":{},\"query\":\"query GetAllPricing($productIds: [Int!], $journeyKind: JourneyKindEnum) {\\n  pricing(productIds: $productIds, journeyKind: $journeyKind) {\\n    ...PricingFragment\\n    renewalTotal\\n    __typename\\n  }\\n}\\n\\nfragment PricingFragment on Pricing {\\n  total\\n  totalWithDiscount\\n  shipping\\n  salesTax\\n  subtotal\\n  discount\\n  lineItems {\\n    description\\n    amount\\n    amountWithDiscount\\n    isDiscount\\n    group\\n    kind\\n    product {\\n      id\\n      buyNow\\n      amountType\\n      amountValue\\n      dosageValue\\n      drugType\\n      drugClass\\n      supplyInDays\\n      daysUntilFirstRefill\\n      supplyInformation\\n      description\\n      instructions\\n      displayedName\\n      publicDisplayedName\\n      needsPrescription\\n      price\\n      ndc\\n      serviceLine\\n      specialtyProductCollection\\n      conflictProductCollections {\\n        id\\n        name\\n        productIds\\n        __typename\\n      }\\n      __typename\\n    }\\n    __typename\\n  }\\n  __typename\\n}\\n\"}"}
+{"url":"https://3re29w18fe.execute-api.us-west-2.amazonaws.com/prod/track","method":"POST","status":200,"size":133}
+{"url":"https://3re29w18fe.execute-api.us-west-2.amazonaws.com/prod/track","method":"POST","status":200,"size":133}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":105}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":115}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":102}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":115}
+{"url":"https://3re29w18fe.execute-api.us-west-2.amazonaws.com/prod/track","method":"POST","status":200,"size":133}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":105}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":115}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":102}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":105}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":102}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":115}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":115}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":102}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":105}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":115}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":105}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":115}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":102}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":105}
+{"url":"https://www.keeps.com/_next/data/P4aieEbp7XXsoIDdfc_hQ/quiz/lead.json?products=211%2C239%2C499%2C500","method":"GET","status":200,"size":2681,"file":"net/06-www_keeps_com_next_data_P4aieEbp7XXsoIDdfc_hQ_quiz_lead_json_products_211_2C239_.json"}
+{"url":"https://www.keeps.com/graphql?step=1","method":"POST","status":200,"size":144}
+{"url":"https://3re29w18fe.execute-api.us-west-2.amazonaws.com/prod/track","method":"POST","status":200,"size":133}
+{"url":"https://3re29w18fe.execute-api.us-west-2.amazonaws.com/prod/track","method":"POST","status":200,"size":133}

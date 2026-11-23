@@ -1,0 +1,22 @@
+STEP 07 click "Female under 50"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=early_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Where on your head are you experiencing hair loss?
+Select the options that apply to you best.
+Thinning at the hairline
+Thinning all over
+Thinning along my part
+Bald patches
+Another pattern of hair loss
+None, I'm trying to prevent hair loss
+NEXT
+Your Preferred Method
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

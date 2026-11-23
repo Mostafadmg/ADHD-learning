@@ -1,0 +1,12 @@
+STEP 20 FAILED click "Continue"
+URL: https://shop.sons.co.uk/consultation
+TITLE: 
+
+--- VISIBLE TEXT ---
+(could not read page: Error: page.evaluate: Target page, context or browser has been closed)
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

@@ -1,0 +1,33 @@
+STEP 11 htaf
+URL: https://www.hairandme.com/c/suh/htaf
+
+--- VISIBLE TEXT ---
+Where have you noticed hair thinning or loss?
+My middle parting is getting wider
+The front of my parting is getting wider
+One or more patches of complete hair loss
+I'm losing hair or thinning at my temples
+I'm losing hair or thinning at my crown
+I've noticed my hairline is going further back / receding
+I've lost hair from my eyebrows, sideburns and hairline
+I've noticed thinning and volume loss all over
+I don't know what kind of hair loss I have
+I have no hair loss or thinning
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=9322] | My middle parting is getting wider
+input:radio[name=9322] | The front of my parting is getting wider
+input:radio[name=9322] | One or more patches of complete hair loss
+input:radio[name=9322] | I'm losing hair or thinning at my temples
+input:radio[name=9322] | I'm losing hair or thinning at my crown
+input:radio[name=9322] | I've noticed my hairline is going further back / receding
+input:radio[name=9322] | I've lost hair from my eyebrows, sideburns and hairline
+input:radio[name=9322] | I've noticed thinning and volume loss all over
+input:radio[name=9322] | I don't know what kind of hair loss I have
+input:radio[name=9322] | I have no hair loss or thinning
+button:submit | NEXT QUESTION [disabled]
+a -> /c/suh/htaf?action=previous | Back to previous page

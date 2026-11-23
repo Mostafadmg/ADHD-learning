@@ -1,0 +1,31 @@
+STEP 01 click "[data-xyon-lp-quiz-step='1'] [data-answer='Receding hairline']"
+URL: https://xyonhealth.com/pages/hl-qlp
+TITLE: Hair Loss Gel That Stays Right Where It's Needed | XYON
+
+--- VISIBLE TEXT ---
+PERSONALIZED RECOMMENDATION
+
+Find what's right for you
+
+Answer a few quick questions to get a personalized recommendation.1
+
+Before
+After
+"I've been using XYON's topical finasteride and minoxidil gel for a few months. It's easy to use, with no side effects, and I've noticed my hair is thicker and growing back. My wife even commented on how much fuller it looks. We're really happy with the results and appreciate the care from XYON. Thank you!"
+— JV, real XYON customer
+1
+2
+3
+Want to regrow hair without the stress of side effects?
+Yes
+No
+
+This is a compounded prescription medication. It is not FDA-approved.The FDA does not verify the safety or effectiveness of compounded medications. Compounded medications may be prescribed off-label by a licensed physician for patients for whom the potential benefits outweigh the risks. Your prescribing physician will review your full medical history and determine if this medicine is appropriate for you.
+
+--- CONTROLS ---
+  button (4): Open menu  ·  Yes [false]  ·  No [false]  ·  Subscribe
+  input:email (1): Enter your email
+  checkbox (1): By providing your email you consent to receiving marketing and update emails. You can unsubscribe at any time. Please see our Privacy Policy
+
+--- LINKS ---
+  link (21): Skip to content -> #MainContent  ·  Get started -> https://consultation.xyonhealth.com/en-US/hair-treatment-rx/welcome  ·  XYON -> /  ·  Privacy Policy -> /policies/privacy-policy  ·  Privacy Policy -> /pages/xyon-privacy-policy  ·  Terms of Use -> /pages/xyon-terms-of-use  ·  Refund & Cancellation Policy -> /pages/xyon-refund-cancellation-policy  ·  Telehealth Consent -> /pages/telehealth-consent  ·  Sitemap -> https://xyonhealth.com/sitemap.xml  ·  Find your treatment -> https://consultation.xyonhealth.com/welcome/  ·  Customer reviews -> /pages/reviews  ·  Before and after -> /pages/xyon-before-and-after  ·  Blog -> /blogs/library  ·  Contact us -> https://help.xyonhealth.com/faq/contact-us  ·  My account -> https://consultation.xyonhealth.com/account  ·  FAQ -> https://help.xyonhealth.com/faq  ·  Refund policy -> /policies/refund-policy  ·  Privacy policy -> /policies/privacy-policy  ·  Terms of service -> /policies/terms-of-service  ·  Fulfillment Policy -> /policies/shipping-policy  ·  Cancellation policy -> /policies/subscription-policy

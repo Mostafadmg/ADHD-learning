@@ -1,0 +1,170 @@
+{
+ "start": "https://www.hims.com/g/i/hl",
+ "steps": [
+  {
+   "n": 0,
+   "slug": "goals",
+   "url": "https://www.hims.com/g/i/hl/goals",
+   "text": "What are your hair goals?\nFix my receding hairline\nRegrow a full head of hair\nGet ahead of hair loss\nThe quiz is not a medical assessment and your responses will not be shared with a medical provider. Hims uses your responses to personalize your experience and for other uses as described in our Privacy Policy.\n\nContinue\nAlready have an account? Sign In",
+   "choices": [
+    {
+     "kind": "radio",
+     "label": "Fix my receding hairline"
+    },
+    {
+     "kind": "radio",
+     "label": "Regrow a full head of hair"
+    },
+    {
+     "kind": "radio",
+     "label": "Get ahead of hair loss"
+    }
+   ],
+   "buttons": [
+    {
+     "label": "Continue",
+     "disabled": false
+    }
+   ],
+   "fields": [],
+   "serverSlug": "goals",
+   "serverType": "nodeModularScreen",
+   "serverStep": "2",
+   "outputSchema": {
+    "type": "object",
+    "required": [
+     "responses"
+    ],
+    "properties": {
+     "responses": {
+      "type": "object",
+      "required": [
+       "i-hl-hims-hair-goals"
+      ],
+      "properties": {
+       "i-hl-hims-hair-goals": {
+        "type": "object",
+        "required": [
+         "i-hl-hims-goals"
+        ],
+        "properties": {
+         "i-hl-hims-goals": {
+          "enum": [
+           "i-hl-hims-goals-receding",
+           "i-hl-hims-goals-regrow",
+           "i-hl-hims-goals-get-ahead"
+          ],
+          "type": "string"
+         }
+        },
+        "additionalProperties": false
+       }
+      },
+      "additionalProperties": false
+     }
+    }
+   },
+   "storedResponses": {},
+   "chosen": [
+    "Regrow a full head of hair"
+   ],
+   "moved": true
+  },
+  {
+   "n": 1,
+   "slug": "changes",
+   "url": "https://www.hims.com/g/i/hl/changes",
+   "text": "Where are you noticing changes to your hair?\nAlong the hairline\nAt the top\nAll over\nContinue\nAlready have an account? Sign In",
+   "choices": [
+    {
+     "kind": "radio",
+     "label": "Along the hairline"
+    },
+    {
+     "kind": "radio",
+     "label": "At the top"
+    },
+    {
+     "kind": "radio",
+     "label": "All over"
+    }
+   ],
+   "buttons": [
+    {
+     "label": "Continue",
+     "disabled": false
+    }
+   ],
+   "fields": [],
+   "serverSlug": "changes",
+   "serverType": "nodeModularScreen",
+   "serverStep": "4",
+   "outputSchema": {
+    "type": "object",
+    "required": [
+     "responses"
+    ],
+    "properties": {
+     "responses": {
+      "type": "object",
+      "required": [
+       "i-hl-hims-hair-changes"
+      ],
+      "properties": {
+       "i-hl-hims-hair-changes": {
+        "type": "object",
+        "required": [
+         "i-hl-hims-hair-changes"
+        ],
+        "properties": {
+         "i-hl-hims-hair-changes": {
+          "enum": [
+           "i-hl-hims-changes-hairline",
+           "i-hl-hims-changes-top",
+           "i-hl-hims-changes-all-over"
+          ],
+          "type": "string"
+         }
+        },
+        "additionalProperties": false
+       }
+      },
+      "additionalProperties": false
+     }
+    }
+   },
+   "storedResponses": {
+    "i-hl-hims-hair-goals": {
+     "i-hl-hims-goals": "i-hl-hims-goals-regrow"
+    }
+   },
+   "unmapped": true,
+   "chosen": [
+    "Along the hairline"
+   ]
+  }
+ ],
+ "end": {
+  "reason": "error",
+  "error": "TimeoutError: locator.click: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Continue', { exact: true }).first()\u001b[22m\n\u001b[2m    - locator resolved to <span>Continue</span>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"_5szXLq_footerContainer\">…</div> interce"
+ },
+ "postsSent": 3,
+ "storage": {
+  "local": [
+   "treatmentType",
+   "amplitude_unsent_73e87329fc87b9ed767fc1a55872fdc3",
+   "visitReason",
+   "amplitude_unsent_identify_73e87329fc87b9ed767fc1a55872fdc3",
+   "tcmu",
+   "_huetid",
+   "_gcl_ls",
+   "gbFeaturesCache"
+  ],
+  "session": [
+   "hl:dfac7d84-aabb-440f-b342-c39b55f52cfe:start-flow-fired",
+   "hl-node-history",
+   "sessionId",
+   "tcms"
+  ]
+ }
+}

@@ -1,0 +1,20 @@
+STEP 00 start (HTTP 200)
+URL: https://www.hims.com/g/i/hl/goals
+TITLE: Hims
+
+--- VISIBLE TEXT ---
+What are your hair goals?
+Fix my receding hairline
+Regrow a full head of hair
+Get ahead of hair loss
+The quiz is not a medical assessment and your responses will not be shared with a medical provider. Hims uses your responses to personalize your experience and for other uses as described in our Privacy Policy.
+
+Continue
+Already have an account? Sign In
+
+--- CONTROLS ---
+  radio (3): Fix my receding hairline  ·  Regrow a full head of hair  ·  Get ahead of hair loss
+  button (1): Continue
+
+--- LINKS ---
+  link (2): Privacy Policy. -> https://www.hims.com/privacy-policy  ·  Already have an account? Sign In -> /c/hl?skipToSignIn=true&goFlow=true&flowId=hl&sessionId=c2a199d1-bab0-4f25-9d72-4c79a2f7c60c

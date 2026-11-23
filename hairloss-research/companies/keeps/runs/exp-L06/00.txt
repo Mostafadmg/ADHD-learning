@@ -1,0 +1,25 @@
+STEP 00 start (HTTP 200)
+URL: https://www.keeps.com/quiz?step=1
+TITLE: Take the Hair Loss Quiz | Keeps
+
+--- VISIBLE TEXT ---
+We use cookies and similar technologies as described in our Privacy Policy
+Manage Preferences
+
+Where on your head are you losing your hair or experiencing thinning?
+
+Hairline
+
+Crown
+
+A bit of both
+
+Patchy (coin-sized bald spots)
+
+Nowhere yet, but I'd like to prevent future hair loss
+
+--- CONTROLS ---
+  button (7): Close this consent banner  ·  Manage Preferences  ·  Hairline  ·  Crown  ·  A bit of both  ·  Patchy (coin-sized bald spots)  ·  Nowhere yet, but I'd like to prevent future hair loss
+
+--- LINKS ---
+  link (1): Privacy Policy -> https://patient.thirtymadison.com/dashboard/legals/privacy

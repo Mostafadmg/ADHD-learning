@@ -1,0 +1,84 @@
+STEP 15
+URL: https://www.hims.com/g/i/hl/select-state
+SERVER NODE: select-state (nodeStateSelectionScreen), step value 10
+
+--- VISIBLE TEXT ---
+Which state do you currently live in?
+AA
+AE
+Alabama
+Alaska
+AP
+Arizona
+Arkansas
+California
+Colorado
+Connecticut
+Delaware
+District of Columbia
+Florida
+Georgia
+Hawaii
+Idaho
+Illinois
+Indiana
+Iowa
+Kansas
+Kentucky
+Louisiana
+Maine
+Maryland
+Massachusetts
+Michigan
+Minnesota
+Mississippi
+Missouri
+Montana
+Nebraska
+Nevada
+New Hampshire
+New Jersey
+New Mexico
+New York
+North Carolina
+North Dakota
+Ohio
+Oklahoma
+Oregon
+Pennsylvania
+Rhode Island
+South Carolina
+South Dakota
+Tennessee
+Texas
+Utah
+Vermont
+Virginia
+Washington
+West Virginia
+Wisconsin
+Wyoming
+State
+
+By clicking "Continue", I agree to the Terms and Conditions and Telehealth Consent and acknowledge the Privacy Policy.
+
+Continue
+Already have an account? Sign In
+
+--- CHOICES ---
+[checkbox] By clicking "Continue", I agree to the Terms and Conditions and Telehealth Consent and acknowledge the Privacy Policy.
+
+--- BUTTONS ---
+Continue [disabled]
+
+--- FIELDS ---
+{"tag":"select","type":"select-one","name":"_r_3b_","id":"_r_3b_","label":"State","placeholder":"","autocomplete":"","options":["","AA","AE","Alabama","Alaska","AP","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","District of Columbia","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]}
+
+--- LINKS ---
+Terms and Conditions -> /terms-and-conditions
+Telehealth Consent -> /telehealth-consent
+Privacy Policy -> /privacy-policy
+Already have an account? Sign In -> /c/hl?skipToSignIn=true&goFlow=true&flowId=hl&sessionId=7dfec974-c0fa-4f0c-95be-dce1c7963e82
+
+--- OUTPUT SCHEMA (server) ---
+{"type":"object","required":["responses"],"properties":{"responses":{"type":"object","required":["i-hl-hims-state-selection"],"properties":{"i-hl-hims-state-selection":{"type":"object","required":["shippingState"],"properties":{"shippingState":{"type":"string"}},"additionalProperties":false}},"additionalProperties":false}}}

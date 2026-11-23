@@ -1,0 +1,37 @@
+STEP 13 click "Yes"
+URL: https://start.struthealth.com/flow/6aa3d578f415d1603a6e0c85
+TITLE: Minoxidil Prod
+
+--- VISIBLE TEXT ---
+33%
+
+Are you allergic to any of the following? Select all that apply.
+
+Finasteride
+Dutasteride
+Minoxidil
+Tretinoin
+Ketoconazole
+Latanoprost or Bimatoprost
+Azelaic Acid
+Caffeine
+Melatonin
+Fluocinolone or Hydrocortisone
+Other
+None of the above
+Continue
+1
+2.5 mg · 90 Day Supply
+$65.00
+2.5 mg · 90 Day Supply
+$65.00
+Dose: 90 Day Supply - 2.5 mg
+Supply: 90 Day Supply
+Total
+$65.00
+
+--- CONTROLS ---
+  button (15): Go back  ·  Finasteride [false]  ·  Dutasteride [false]  ·  Minoxidil [false]  ·  Tretinoin [false]  ·  Ketoconazole [false]  ·  Latanoprost or Bimatoprost [false]  ·  Azelaic Acid [false]  ·  Caffeine [false]  ·  Melatonin [false]  ·  Fluocinolone or Hydrocortisone [false]  ·  Other [false]  ·  None of the above [false]  ·  Continue  ·  1 2.5 mg · 90 Day Supply $65.00
+
+--- LINKS ---
+

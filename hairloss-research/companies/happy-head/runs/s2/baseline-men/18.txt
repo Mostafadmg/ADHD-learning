@@ -1,0 +1,16 @@
+STEP 18 click "None of the above"
+URL: https://www.form.happyhead.com/get-started/?l=false&ph=true
+TITLE: Get Started | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Is anyone in your household currently pregnant, breastfeeding, or actively trying to get pregnant?
+Some ingredients aren’t recommended during pregnancy to protect both you and your family’s health.
+Yes
+No
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

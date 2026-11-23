@@ -1,0 +1,48 @@
+{
+ "start": "https://www.hims.com/g/i/hl",
+ "maxSteps": 40,
+ "note": "NOT a one-change run: every question answered differently from baseline at once (extra check for hidden branches).",
+ "answers": {
+  "goals": [
+   "Fix my receding hairline"
+  ],
+  "changes": [
+   "At the top"
+  ],
+  "loss": [
+   "A little Only I notice"
+  ],
+  "start": [
+   "Not sure"
+  ],
+  "expectations": [
+   "All of the above"
+  ],
+  "type": [
+   "Curly or coily"
+  ],
+  "length": [
+   "Long"
+  ],
+  "hair-loss-heredity": [
+   "Not sure"
+  ],
+  "stress": [
+   "Rarely"
+  ],
+  "hair-style": [
+   "Products Gel, mousse, etc."
+  ],
+  "hair-style-duration": [
+   "5-10 minutes"
+  ],
+  "select-state": {
+   "select": [
+    {
+     "selector": "select",
+     "label": "California"
+    }
+   ]
+  }
+ }
+}

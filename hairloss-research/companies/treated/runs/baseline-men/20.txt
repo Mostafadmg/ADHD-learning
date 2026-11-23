@@ -1,4 +1,4 @@
-STEP 20 wait 2500
+STEP 20 click "No"
 URL: https://start.treated.com/GBR/en/#/questionnaire
 TITLE: Treated UK - Choose Better - Medical Experts & Treatments Online
 
@@ -8,9 +8,15 @@ Question 11 of 11
 Would you like us to tell your GP about any treatment we give you?
 Yes
 No
+Just so you know:
+
+Telling your GP about the treatment you get from us will help them stay informed and give you better care. If you don’t want us to notify them, we recommend letting them know yourself.
+
+Okay
 
 --- CONTROLS ---
-  radio (2): Yes  ·  No
+  radio (2): Yes  ·  No [checked]
+  button (1): Okay
 
 --- LINKS ---
 

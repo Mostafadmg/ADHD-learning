@@ -1,0 +1,87 @@
+=========== STEP 22 title HL - Recommendations {'title': 'HL - Recommendations', 'questionAnswerErrors': {}, 'summaryRequiredBeforeStep': False, 'registrationRequiredBeforeStep': False, 'fastSummaryRequiredBeforeStep': False}
+Q 108360 MESSAGE Clinically proven results
+  keys ['questionId', 'explanationAvailable', 'displayText', 'type', 'answerRequired', 'smoothTransition', 'answerChoices', 'titleOverride']
+  TEXT: [IMG] 
+ 1 Hu et al., Dermatol Ther 2015, 2 Kaufman et al., JAAD 1998, 3 Olsen et al., JAAD 2007
+=========== STEP 23 title None {'stepState': 'SUMMARY', 'summaryHref': '/api/questionnaire/traversals/4288573/summary', 'summaryRequiredBeforeStep': False, 'registrationRequiredBeforeStep': False, 'fastSummaryRequiredBeforeStep': False}
+=========== STEP 24 title HL - Recommendations {'title': 'HL - Recommendations', 'questionAnswerErrors': {}, 'summaryRequiredBeforeStep': True, 'registrationRequiredBeforeStep': False, 'fastSummaryRequiredBeforeStep': False}
+Q 107988 PRODUCT_CARD Your Recommendations
+  keys ['questionId', 'explanationAvailable', 'displayText', 'type', 'answerRequired', 'smoothTransition', 'answerChoices', 'groupMetadata', 'properties', 'titleOverride']
+  TEXT: [IMG] 
+ Dr. Sameer Sanghvi 
+ General Practitioner (GP)
+ GMC no. 7085078 
+ Consultation overview: 
+Your hair loss is consistent with male pattern hair loss 
+You're new to hair loss treatment 
+ Our recommendation: 
+You're suitable for Finasteride tablets , Minoxidil tablets and Minoxidil spray 
+As you're new to hair loss treatment, we'd recommend starting with a licensed treatment, such as Finasteride tablets and Minoxidil spray 
+Combining Finasteride with Minoxidil may provide greater benefits than using either treatment alone, as they work in different ways.
+  ---- CHOICE keys ['answerId', 'maxValue', 'explanationAvailable', 'questionId', 'displayText', 'type', 'selected', 'metadata']
+        answerId : 107988$105175
+        maxValue : 0
+        explanationAvailable : false
+        questionId : 107988
+        displayText : Details:  / Daily tablet & twice daily spray  / Helps prevent further hair loss and encourages thicker, fuller looking hair  / Includes targeted treatment  / Important:  / Ensure pets do not come into contact with topical minoxidil  / Finasteride tablets must not be handled by pregnant women.
+        type : CARD_SELECTION
+        selected : false
+        metadata : {"title": "Dual Action - Tablet + Spray", "label": "6 months", "subtitle": "Finasteride 1mg tablet + Minoxidil 5% spray", "banner": "94%\u00a0experience an improvement in hair loss\u00b9", "sku": 4498, "imageURL": "https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Dual_Action_-_Tablet_Spray_LPOD_ef74255d-a169-43ce-b0e2-d0e9951e8cc8.png?v=1792400232", "pricingInformation": {"pricePerPen": "N/A", "pricePerWeek": "7.35 a week", "currency": "\u00a3", "price": "189.00", "totalPriceLabel": "\u00a3189.00 total"}, "inStock": false, "recommended": false, "preference": false, "mainOption": true, "moreInformation": [{"title": "Description", "content": "<p>This combination pairs two licensed treatm
+  ---- CHOICE keys ['answerId', 'maxValue', 'explanationAvailable', 'questionId', 'displayText', 'type', 'selected', 'metadata']
+        answerId : 107988$105176
+        maxValue : 0
+        explanationAvailable : false
+        questionId : 107988
+        displayText : Details:  / Convenient daily tablets  / Helps prevent further hair loss and encourages thicker, fuller looking hair  / Important:  / Finasteride tablets must not be handled by pregnant women.
+        type : CARD_SELECTION
+        selected : false
+        metadata : {"title": "Dual Action - Tablets", "label": "6 months", "subtitle": "Finasteride 1mg tablet + Minoxidil 2.5mg tablet", "banner": "We recommend as an oral alternative to the classic combo", "sku": 4500, "imageURL": "https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Dual_Action_-_Tablets_LPOD_52c4317a-0a3e-450d-8450-238470291fa9.png?v=1792400225", "pricingInformation": {"pricePerPen": "N/A", "pricePerWeek": "7.35 a week", "currency": "\u00a3", "price": "189.00", "totalPriceLabel": "\u00a3189.00 total"}, "inStock": false, "recommended": false, "preference": false, "mainOption": true, "moreInformation": [{"title": "Description", "content": "<p>This combination pairs a licensed treatment for
+  ---- CHOICE keys ['answerId', 'maxValue', 'explanationAvailable', 'questionId', 'displayText', 'type', 'selected', 'metadata']
+        answerId : 107988$105190
+        maxValue : 0
+        explanationAvailable : false
+        questionId : 107988
+        displayText : Details:  / Convenient daily tablet  / Helps prevent further hair loss  / Important:  / Finasteride tablets must not be handled by pregnant women.
+        type : CARD_SELECTION
+        selected : false
+        metadata : {"title": "Finasteride tablets", "label": "1 month", "subtitle": "Finasteride 1mg tablet", "banner": "83%\u00a0experience an improvement in hair loss\u00b2", "sku": 3743, "imageURL": "https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Finasteride_tablets_LPOD_0399a893-8f75-4ea2-b983-d82e1d4ebea5.png?v=1792400196", "pricingInformation": {"pricePerPen": "N/A", "pricePerWeek": "6.79 a week", "currency": "\u00a3", "price": "163.00", "totalPriceLabel": "\u00a3163.00 total"}, "inStock": true, "recommended": false, "preference": false, "mainOption": false, "moreInformation": [{"title": "Description", "content": "<p><b>Finasteride 1 mg tablets</b> contain the active substance finasteride, a pres
+  ---- CHOICE keys ['answerId', 'maxValue', 'explanationAvailable', 'questionId', 'displayText', 'type', 'selected', 'metadata']
+        answerId : 107988$105177
+        maxValue : 0
+        explanationAvailable : false
+        questionId : 107988
+        displayText : Details:  / Convenient daily tablet  / Encourages thicker, fuller looking hair
+        type : CARD_SELECTION
+        selected : false
+        metadata : {"title": "Minoxidil tablets", "label": "6 months", "subtitle": "Minoxidil 2.5mg tablet", "banner": "we recommend as an oral alternative to topical minoxidil", "sku": 4494, "imageURL": "https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Minoxidil_tablets_LPOD_76c53d69-8482-4669-9c02-985345c6b728.png?v=1792400211", "pricingInformation": {"pricePerPen": "N/A", "pricePerWeek": "5.52 a week", "currency": "\u00a3", "price": "142.00", "totalPriceLabel": "\u00a3142.00 total"}, "inStock": true, "recommended": false, "preference": false, "mainOption": false, "moreInformation": [{"title": "Description", "content": "<p><b>Minoxidil 2.5mg tablets</b> contain minoxidil, a medicine originally licensed
+  ---- CHOICE keys ['answerId', 'maxValue', 'explanationAvailable', 'questionId', 'displayText', 'type', 'selected', 'metadata']
+        answerId : 107988$105217
+        maxValue : 0
+        explanationAvailable : false
+        questionId : 107988
+        displayText : Details:  / Twice daily spray  / Encourages thicker, fuller looking hair  / Targeted effects  / Important:  / Ensure pets do not come into contact with topical minoxidil
+        type : CARD_SELECTION
+        selected : false
+        metadata : {"title": "Sons Minoxidil spray", "label": "6 months", "subtitle": "Minoxidil 5% spray", "banner": "71% showed improved hair density\u00b3", "sku": 4490, "imageURL": "https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Minoxidil_spray_LPOD_62be221c-3690-4bdb-b399-047f640a8de8.png?v=1792400225", "pricingInformation": {"pricePerPen": "N/A", "pricePerWeek": "3.85 a week", "currency": "\u00a3", "price": "99.00", "totalPriceLabel": "\u00a399.00 total"}, "inStock": true, "recommended": false, "preference": false, "mainOption": false, "moreInformation": [{"title": "Description", "content": "<p><b>Sons Minoxidil 5% Solution, Spray</b> contains minoxidil, one of the few clinically established medi
+  ---- CHOICE keys ['answerId', 'maxValue', 'explanationAvailable', 'questionId', 'displayText', 'type', 'selected', 'metadata']
+        answerId : 107988$102166
+        maxValue : 0
+        explanationAvailable : false
+        questionId : 107988
+        displayText : Details:  / Convenient daily tablet  / Helps prevent further hair loss  / This a branded finasteride  / Important:  / Propecia tablets must not be handled by pregnant women.
+        type : CARD_SELECTION
+        selected : false
+        metadata : {"title": "Propecia", "label": "1 month", "subtitle": "Finasteride 1mg tablet", "banner": "83%\u00a0experience an improvement in hair loss\u00b2", "sku": 3751, "imageURL": "https://cdn.shopify.com/s/files/1/0611/1284/4476/products/Propecia_Hair_loss_treatment.jpg?v=1743590760", "pricingInformation": {"pricePerPen": "N/A", "pricePerWeek": "8.75 a week", "currency": "\u00a3", "price": "210.00", "totalPriceLabel": "\u00a3210.00 total"}, "inStock": true, "recommended": false, "preference": false, "mainOption": false, "moreInformation": [{"title": "Description", "content": "<p><b>Propecia 1mg tablets</b> contain finasteride, a prescription medicine used to treat male pattern hair loss (androgenet
+  ---- GROUP
+        groupId : 1
+        groupTitle : Combination Treatments
+        groupSubtitle : Our most effective hair loss treament. Combine the benefits of two proven hair loss treatments.
+        treatmentInfo : [IMG]  /  [IMG]  /  Finasteride forms the foundation of treatment by helping to protect hair follicles from DHT, the hormone responsible for male pattern hair loss. Minoxidil complements this by stimulating growth and increasing hair density. Together, they tackle both hair loss and regrowth for a more complete approach to treatment.
+  ---- GROUP
+        groupId : 2
+        groupTitle : Finasteride
+        treatmentInfo : [IMG]  /  Clinically proven to preserve your hair by blocking the conversion of testosterone to DHT, a chemical that shrinks hair follicles, giving hair a chance to regrow and working to prevent further hair loss.
+  ---- GROUP
+        groupId : 3
+        groupTitle : Minoxidil
+        treatmentInfo : [IMG]  /  Increases blood flow to the scalp to stimulate growth and boost hair density.

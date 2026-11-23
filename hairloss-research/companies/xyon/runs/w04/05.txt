@@ -1,0 +1,17 @@
+STEP 05 wait 1500
+URL: https://consultation.xyonhealth.com/en-US/hair-treatment-rx/welcome
+TITLE: XYON | Hair Treatment Rx - Welcome
+
+--- VISIBLE TEXT ---
+What is your date of birth?
+Month (MM)
+Day (DD)
+Year (YYYY)
+Continue
+
+--- CONTROLS ---
+  button (2): Back  ·  Continue [disabled]
+  input:number (3): Month (MM)  ·  Day (DD)  ·  Year (YYYY)
+
+--- LINKS ---
+

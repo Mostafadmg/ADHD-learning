@@ -1,0 +1,95 @@
+{
+  "_about": "ONE-CHANGE EXPERIMENT from baseline-men.json: PROBE (no submit): every branch opened",
+  "start": "https://onlinedoctor.superdrug.com/hair-loss-consultation.html",
+  "steps": [
+    {
+      "do": "goto",
+      "url": "https://onlinedoctor.superdrug.com/assessment/147929"
+    },
+    {
+      "do": "wait",
+      "ms": 4000
+    },
+    {
+      "do": "click",
+      "selector": "#onetrust-reject-all-handler"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='SingleChoice-option439401001'][value='441308009']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='SingleChoice-option298000004'][value='5']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='2304202'][value='true']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='SingleChoice-option276131009'][value='2']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='SingleChoice-option602'][value='162463006']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='716'][value='true']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='021106'][value='false']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='MultiChoice-option723'][value='235856003']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='724'][value='true']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='47'][value='true']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='49'][value='true']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='MultiChoice-option49.1'][value='112']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='MultiChoice-option49.1'][value='47703008']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='MultiChoice-option49.1'][value='115']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='Disclaimer-option22042020']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='Disclaimer-option20102724']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='Disclaimer-option56']"
+    },
+    {
+      "do": "click",
+      "selector": "button[data-qa='cdc-questionnaire-submit']"
+    },
+    {
+      "do": "wait",
+      "ms": 5000
+    }
+  ],
+  "_changed": "PROBE (no submit): every branch opened"
+}

@@ -1,0 +1,159 @@
+{
+ "start": "https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1",
+ "locale": "en-US",
+ "timezone": "America/New_York",
+ "exp": {
+  "id": "w-bc-none",
+  "flow": "main",
+  "changed": "m-birth-control: Oral contraceptives → None of the above"
+ },
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "click",
+   "text": "GET MY CUSTOM PLAN"
+  },
+  {
+   "do": "click",
+   "text": "I want fuller, healthier-looking hair"
+  },
+  {
+   "do": "click",
+   "text": "NEXT"
+  },
+  {
+   "do": "click",
+   "text": "1-3 years"
+  },
+  {
+   "do": "click",
+   "text": "Yes"
+  },
+  {
+   "do": "click",
+   "text": "Female under 50"
+  },
+  {
+   "do": "click",
+   "text": "Thinning along my part"
+  },
+  {
+   "do": "click",
+   "text": "Thinning all over"
+  },
+  {
+   "do": "click",
+   "text": "NEXT"
+  },
+  {
+   "do": "click",
+   "text": "I’m not sure / I don’t have a preference"
+  },
+  {
+   "do": "click",
+   "text": "Take Me to My Plan"
+  },
+  {
+   "do": "wait",
+   "ms": 14000
+  },
+  {
+   "do": "scroll"
+  },
+  {
+   "do": "click",
+   "text": "CHOOSE DUAL TREATMENT"
+  },
+  {
+   "do": "wait",
+   "ms": 3500
+  },
+  {
+   "do": "click",
+   "text": "None of the above"
+  },
+  {
+   "do": "click",
+   "text": "None of the above"
+  },
+  {
+   "do": "click",
+   "text": "Yes"
+  },
+  {
+   "do": "click",
+   "text": "None of the above"
+  },
+  {
+   "do": "click",
+   "text": "NEXT"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "Within the last year"
+  },
+  {
+   "do": "click",
+   "text": "Normal (Around 120 / 80)"
+  },
+  {
+   "do": "click",
+   "text": "100-200 pounds"
+  },
+  {
+   "do": "click",
+   "text": "None"
+  },
+  {
+   "do": "click",
+   "selector": "input[placeholder=\"Year\"]"
+  },
+  {
+   "do": "click",
+   "text": "1988"
+  },
+  {
+   "do": "click",
+   "selector": "input[placeholder=\"Month\"]"
+  },
+  {
+   "do": "click",
+   "text": "Jun"
+  },
+  {
+   "do": "click",
+   "selector": "input[placeholder=\"Day\"]"
+  },
+  {
+   "do": "click",
+   "text": "15"
+  },
+  {
+   "do": "click",
+   "text": "NEXT"
+  },
+  {
+   "do": "click",
+   "text": "No, let the doctor customize it for me"
+  },
+  {
+   "do": "wait",
+   "ms": 3000
+  }
+ ]
+}

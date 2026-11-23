@@ -468,7 +468,7 @@
    "price": "unknown (only shown inside a member account)",
    "priceDetail": "Add-on subscription managed at /account/manage-subscription/the-vitamins with a 'First box offer' and its own promo-code box (site code).",
    "url": "https://www.hairandme.com/support/en/articles/619143-what-ingredients-are-in-the-hair-me-multivitamins",
-   "recommendedWhen": "Not part of the public consultation. Offered to members as an optional add-on ('Support your treatment'); no answer was seen to trigger it.",
+   "recommendedWhen": "Not part of the public consultation: no answer was seen to trigger it and it never appeared in the bag. Code only: the consultation renderer has an add-on step headed 'Support your treatment' in which an item with code 'hairSupplement' can be added to the treatment, with a 'First box offer' and a price per 4 weeks; members can also manage it from their account. Where that step appears, and its price, are unknown (not served before the account wall).",
    "evidence": "code"
   }
  ],
@@ -800,7 +800,7 @@
       }
      ],
      "purpose": "Optional gender identity, kept apart from sex at birth so the service can address people correctly. On the men's route it also decides whether one marketing screen aimed at men is shown.",
-     "engineRole": "data-capture",
+     "engineRole": "personalisation",
      "branches": true,
      "branchDetail": "One small branch. The men's 'You're not alone' screen ('We spoke to men in our community about their experiences of hair loss...') is shown only when gender identity is left blank or set to Man/Boy. It was skipped with Transwoman/Transgirl as the only change (runs/s2-m-gender-transwoman; also runs/s2-m-sweep-2), with Prefer not to say (runs/s2-m-sweep-3) and with Non-Binary (runs/scout-neither), and it was shown in every other men's walk that got that far. Nothing else follows gender identity: the medical questions, the dutasteride / finasteride acknowledgement and the bag follow sex at birth.",
      "shownWhen": "always (optional drop-down on the same screen as sex assigned at birth)",
@@ -2358,7 +2358,7 @@
      "purpose": "Age gate, asked at the very end of the questions. Served either as one masked field or as separate Day / Month / Year boxes.",
      "engineRole": "eligibility-gate",
      "branches": true,
-     "branchDetail": "Under 18 leads to the stop screen. The line is exactly 18: 17 years 11 months stops (runs/s2-m-age-17), 18 years and 8 days passes (runs/s2-m-age-18). No upper limit: 85 passes with no extra question or warning (runs/s2-m-age-85).",
+     "branchDetail": "Under 18 leads to the stop screen. The line sits at the 18th birthday: 17 years 11 months stops (runs/s2-m-age-17), 18 years and 8 days passes (runs/s2-m-age-18). No upper limit: 85 passes with no extra question or warning (runs/s2-m-age-85).",
      "shownWhen": "always",
      "evidence": "observed",
      "siteQuestionId": 3053
@@ -3348,7 +3348,7 @@
       },
       {
        "label": "I have no hair loss or thinning",
-       "effect": "Stage 1 multi-change scout (runs/scout-women-2): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test.",
+       "effect": "Stage 1 multi-change scout (runs/scout-women-2): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. The timing question 'When did you notice changes to your hair?' was skipped, as it is on the men's route after 'None' (one-change run runs/scout-men-none). Someone with no hair loss is not turned away.",
        "effectType": "skip-questions",
        "affects": [],
        "evidence": "observed",
@@ -3949,7 +3949,7 @@
      "options": [
       {
        "label": "I'm postpartum (given birth in the last 6 months)",
-       "effect": "One-change replay (runs/s2-w-mp-postpartum): nothing a visitor can see changed: same screens, no warning, no stop, same bag (Personalised treatment, 4 week supply, £34.99).",
+       "effect": "One-change replay (runs/s2-w-mp-postpartum): nothing a visitor can see changed: same screens, no warning, no stop, same bag (Personalised treatment, 4 week supply, £34.99). No follow-up question (breastfeeding is covered by the previous screen). Postpartum shedding usually settles without treatment; the questionnaire does not say so.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -4077,15 +4077,14 @@
       },
       {
        "label": "High blood pressure (hypertension) or low blood pressure (hypotension)",
-       "effect": "Stage 1 multi-change scout (runs/scout-women-1): no stop and no extra screen from this answer up to the eligibility screen (that run ended at the under-18 stop). Not replayed as a one-change test. Docs (oral leaflet): no minoxidil capsules with uncontrolled high blood pressure; that is why the follow-up asks how well controlled it is.",
+       "effect": "Stage 1 multi-change scout (runs/scout-women-1): the follow-up screen 'How would you describe your blood pressure over the past 12 months?' appeared, as on the men's route, where it was shown with this as the only change (runs/s2-m-mcm-bp). Not replayed alone on the women's route. Docs (oral leaflet): no minoxidil capsules with uncontrolled high blood pressure; that is why the follow-up asks how well controlled it is.",
        "effectType": "extra-questions",
        "affects": [
         "cap-min05",
         "cap-min125",
         "cap-min25-b6"
        ],
-       "evidence": "observed",
-       "testedBy": "scout"
+       "evidence": "observed"
       },
       {
        "label": "Any heart or cardiovascular condition (e.g. stroke, heart attack, heart failure, angina, atrial fibrillation, valve disorder, irregular or fast heartbeat)",
@@ -4125,7 +4124,7 @@
       },
       {
        "label": "Polyendocrine Metabolic Ovarian Syndrome (PMOS, formerly PCOS)",
-       "effect": "One-change replay (runs/s2-w-mcf-pcos): nothing a visitor can see changed: same screens, no warning, no stop, same bag (Personalised treatment, 4 week supply, £34.99).",
+       "effect": "One-change replay (runs/s2-w-mcf-pcos): nothing a visitor can see changed: same screens, no warning, no stop, same bag (Personalised treatment, 4 week supply, £34.99). No follow-up question. Docs (PCOS blog): 'We use the clinically proven ingredient minoxidil in a topical format (The Drops)' so growth stays 'only on the scalp'. The formulary has no anti-androgen for women (spironolactone is not supplied), so PCOS can only tilt the choice towards drops (inferred).",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -4473,7 +4472,7 @@
      "purpose": "Age gate, asked at the very end of the questions. Served either as one masked field or as separate Day / Month / Year boxes.",
      "engineRole": "eligibility-gate",
      "branches": true,
-     "branchDetail": "Under 18 leads to the stop screen. The line is exactly 18: 17 years 11 months stops (runs/s2-m-age-17), 18 years and 8 days passes (runs/s2-m-age-18). No upper limit: 85 passes with no extra question or warning (runs/s2-m-age-85).",
+     "branchDetail": "Under 18 leads to the stop screen. The line sits at the 18th birthday: 17 years 11 months stops (runs/s2-m-age-17), 18 years and 8 days passes (runs/s2-m-age-18). No upper limit: 85 passes with no extra question or warning (runs/s2-m-age-85).",
      "shownWhen": "always",
      "evidence": "observed",
      "siteQuestionId": 3053
@@ -5920,7 +5919,7 @@
    "offered": [],
    "default": null,
    "evidence": "observed",
-   "note": "Nothing: stop screen 'We're unable to treat you at this time... we're unable to treat your age group.' No bag (runs/s2-m-age-17, runs/scout-women-1). The line is exactly 18 (runs/s2-m-age-18 passed at 18 years and 8 days)."
+   "note": "Nothing: stop screen 'We're unable to treat you at this time... we're unable to treat your age group.' No bag (runs/s2-m-age-17, runs/scout-women-1). The line sits at the 18th birthday (runs/s2-m-age-18 passed at 18 years and 8 days)."
   },
   {
    "profile": "Woman who answers Yes to 'pregnant, breastfeeding or likely to conceive' (otherwise baseline, capsules preferred)",
@@ -6229,5 +6228,64 @@
   ],
   "howHandled": "tools/s2_diff.py compares each experiment with every baseline visit of the same route and with every run that did not change the same step; only differences never seen in those are reported as effects.",
   "featureTestApi": "GET rest.hairandme.com/api/v1/feature-tests returned version 'control' in every visit, so the variation is not explained by that record."
+ },
+ "codeReadRules": {
+  "note": "The site serves no whole quiz definition, so no server-side branch can be read from code: every POST reply is only the id of the next step. What can be read are the show / hide rules ('renderConditions') and flags inside each step's JSON. All of them are listed here with the replay that confirmed each one live.",
+  "rules": [
+   {
+    "rule": "Previous products (htp): the tick-box 'Yes, I understand this.' (question 4443) is shown when question 250 is not empty and does not contain 'None of the above'.",
+    "readIn": "runs/baseline-men/steps/09-htp.json",
+    "confirmedLive": "runs/s2-m-htp-fintabs (one change): the box appeared after ticking 'Finasteride tablets'",
+    "status": "confirmed"
+   },
+   {
+    "rule": "Pets (pt): the pet-toxicity panel and the capsules note (questions 180004, 180005) are shown when question 8007 equals 'Yes'.",
+    "readIn": "runs/baseline-men/steps/17-pt.json",
+    "confirmedLive": "runs/s2-m-pt-yes (one change)",
+    "status": "confirmed"
+   },
+   {
+    "rule": "Pregnancy (pg): the must-tick acknowledgement (question 3047) is shown when question 3046 equals 'false' (No).",
+    "readIn": "runs/baseline-women/steps/21-pg.json",
+    "confirmedLive": "runs/baseline-women, runs/s2-base-women-1 (shown after No); runs/s2-w-pg-yes (not shown after Yes)",
+    "status": "confirmed"
+   },
+   {
+    "rule": "Men's medicines (mdm): the free-text box (question 4456, 1,000 characters) is shown when question 4454 contains 'Other'.",
+    "readIn": "runs/baseline-men/steps/20-mdm.json",
+    "confirmedLive": "runs/s2-m-mdm-other (one change)",
+    "status": "confirmed"
+   },
+   {
+    "rule": "Women's medicines (mdf): the free-text box (question 4457) is shown when question 4455 contains 'Other'.",
+    "readIn": "runs/baseline-women/steps/23-mdf.json",
+    "confirmedLive": "runs/scout-women-2 (stage 1 multi-change scout: 'Levothyroxine' typed)",
+    "status": "confirmed in a multi-change run"
+   },
+   {
+    "rule": "Allergies (al): the free-text box (question 4448) is shown when question 4447 contains value 998 ('Other').",
+    "readIn": "runs/baseline-men/steps/22-al.json",
+    "confirmedLive": "runs/scout-men-3 (stage 1 multi-change scout: 'Penicillin' typed)",
+    "status": "confirmed in a multi-change run"
+   },
+   {
+    "rule": "Exclusive options: 'None of the above', 'None of these apply to me', 'No known allergies' and 'No, I don't take any medications' carry exclusive: true, so they cannot be combined with another tick.",
+    "readIn": "step JSON for hs, ls, htp, scc, mdm, mcm, al, hht, mp, mdf, mcf",
+    "confirmedLive": "runs/s2-m-htp-fintabs/07-after.txt: 'None of the above' is disabled once 'Finasteride tablets' is ticked",
+    "status": "confirmed"
+   },
+   {
+    "rule": "Optional answers (isOptional: true): buying stage (js), gender identity, lifestyle statements (ls), hard water (hdw), 'what influenced you' (di), the two 0 to 10 sliders, the blood-pressure reading and the preferred name can be left empty.",
+    "readIn": "step JSON for js, pds, ls, hdw, di, rhf, rha, bp, yd",
+    "confirmedLive": "every baseline leaves gender identity blank and the sliders untouched and still moves on; runs/s2-m-mcm-bp posted the blood-pressure follow-up with no reading",
+    "status": "confirmed"
+   },
+   {
+    "rule": "Eligibility (el): the date field carries the note 'You need to be over 18 to use our service.' The check itself runs on the server.",
+    "readIn": "runs/baseline-men/steps/28-el.json",
+    "confirmedLive": "runs/s2-m-age-17 (stop at 17 years 11 months) against runs/s2-m-age-18 (passes at 18 years and 8 days)",
+    "status": "confirmed"
+   }
+  ]
  }
 }

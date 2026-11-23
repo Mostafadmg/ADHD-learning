@@ -1,0 +1,19 @@
+STEP 10 click "NEXT"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=early_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+What’s your preferred method of taking medication?
+Topical (applied directly to the scalp)
+Oral (ingested by mouth)
+I’m not sure / I don’t have a preference
+Why we ask
+Treatment consistency matters. Understanding your preference helps us personalize a plan that fits your lifestyle and routine.
+Your information is secure and always kept private.
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

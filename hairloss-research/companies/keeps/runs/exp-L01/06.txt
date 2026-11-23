@@ -1,0 +1,30 @@
+STEP 06 click "CONTINUE"
+URL: https://www.keeps.com/quiz?step=5
+TITLE: Take the Hair Loss Quiz | Keeps
+
+--- VISIBLE TEXT ---
+Are you interested in any specific types of over-the-counter products?
+
+Select all that apply
+
+Vitamins and supplements
+
+Hair care products (shampoo and conditioner)
+
+Hair styling products (pomade)
+
+I'm not interested in any specific over-the-counter products
+
+CONTINUE
+
+WHY WE ASK THIS
+
+This helps us recommend the right treatment plan for you. Sometimes the most effective treatment may not match your preferences, but we’ll try our best! If you change your mind, you can easily edit your plan at the end of the quiz or retake the quiz.
+
+Take the Hair Loss Quiz | Keeps
+
+--- CONTROLS ---
+  button (5): Vitamins and supplements  ·  Hair care products (shampoo and conditioner)  ·  Hair styling products (pomade)  ·  I'm not interested in any specific over-the-counter products  ·  CONTINUE
+
+--- LINKS ---
+

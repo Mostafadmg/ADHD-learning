@@ -1,0 +1,12 @@
+
+!!!!! STEP 20 FAILED: click "Continue"
+page.waitForTimeout: Target page, context or browser has been closed
+
+===== STEP 20 FAILED click "Continue" =====
+URL: https://shop.sons.co.uk/consultation
+TEXT: (could not read page: Error: page.evaluate: Target page, context or browser has been closed)
+CONTROLS:
+
+  links (0, full list in 20.txt): 
+
+[walk] 20 step(s), exit 2, 5 JSON bodies saved -> companies/sons/runs/exp-27

@@ -1,0 +1,287 @@
+[
+ {
+  "n": 3,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "100013",
+    "type": "SINGLE_CHOICE",
+    "text": "What was your sex at birth?",
+    "options": [
+     "Male",
+     "Female"
+    ],
+    "required": true,
+    "answered": "Male"
+   }
+  ]
+ },
+ {
+  "n": 4,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "100014",
+    "type": "DATE_OF_BIRTH",
+    "text": "What is your date of birth?",
+    "options": [
+     "For example: 31 3 1980"
+    ],
+    "required": true,
+    "answered": {
+     "dob": [
+      15,
+      6,
+      1994
+     ]
+    }
+   }
+  ]
+ },
+ {
+  "n": 5,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "107977",
+    "type": "SINGLE_CHOICE",
+    "text": "Find out what causes it, and which treatments may help slow it down or help hair grow back.",
+    "options": [
+     "Tell me more",
+     "Skip, I already know"
+    ],
+    "required": true,
+    "answered": "Tell me more"
+   }
+  ]
+ },
+ {
+  "n": 6,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "107978",
+    "type": "MESSAGE",
+    "text": "Male pattern hair loss is caused by a combination of genetics and sensitivity to DHT (dihydrotestosterone) , a hormone made from testosterone. In people who are susceptible, DHT gradually causes affected hair follicles to shrink and shortens the hair growth phase. New hairs become finer and shorter and may eventually stop growing in some areas of the scalp. Treatments can help slow further hair loss and may support regrowth. Options include finasteride and minoxidil , which work in different ways.",
+    "options": [],
+    "required": true
+   }
+  ]
+ },
+ {
+  "n": 7,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "107979",
+    "type": "MESSAGE",
+    "text": "Finasteride reduces DHT by blocking an enzyme that converts testosterone into DHT. Lowering DHT can slow the shrinking of affected hair follicles. When taken consistently, finasteride can slow hair loss and may support regrowth in some men.",
+    "options": [],
+    "required": true
+   }
+  ]
+ },
+ {
+  "n": 8,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "107980",
+    "type": "MESSAGE",
+    "text": "Minoxidil increases blood flow and nutrients to hair roots. Used regularly, it can help hair grow back thicker over time. It usually takes a few months to notice a difference. Some men use finasteride and minoxidil together. Complete your assessment to find out what's right for you.",
+    "options": [],
+    "required": true
+   }
+  ]
+ },
+ {
+  "n": 9,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "103257",
+    "type": "IMAGE_SINGLE_CHOICE",
+    "text": "Please select which of the images below best represents your hair loss",
+    "options": [
+     "Temples only",
+     "Temples and Crown",
+     "Moderate",
+     "Extensive",
+     "Complete",
+     "Random patches"
+    ],
+    "required": true,
+    "answered": "Temples and Crown"
+   }
+  ]
+ },
+ {
+  "n": 10,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "107954",
+    "type": "SINGLE_CHOICE",
+    "text": "How did your hair loss start?",
+    "options": [
+     "Gradually, over months or years",
+     "Suddenly, over days or weeks"
+    ],
+    "required": true,
+    "answered": "Gradually, over months or years"
+   }
+  ]
+ },
+ {
+  "n": 11,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "103261",
+    "type": "SINGLE_CHOICE",
+    "text": "Have you lost any hair in other areas of your body such as eyebrows or beard?",
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "required": true,
+    "auto": "No",
+    "answered": "No"
+   }
+  ]
+ },
+ {
+  "n": 12,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "105935",
+    "type": "SINGLE_CHOICE",
+    "text": "Are you currently experiencing any changes to your scalp?",
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "required": true,
+    "auto": "No",
+    "answered": "No"
+   }
+  ]
+ },
+ {
+  "n": 13,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "title": "HL - Previous HL treatment and Side effects",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "108014",
+    "type": "SINGLE_CHOICE",
+    "text": "Have you ever taken any medication for hair loss?",
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "required": true,
+    "auto": "No",
+    "answered": "No"
+   }
+  ]
+ },
+ {
+  "n": 14,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "103270",
+    "type": "MULTIPLE_CHOICE",
+    "text": "Have you ever had any of the following conditions?",
+    "options": [
+     "Alopecia",
+     "Breast cancer",
+     "Breast tissue enlargement",
+     "Depression",
+     "Current or history of suicidal thoughts, self-harm, or attempts",
+     "Obstructive uropathy",
+     "Prostate cancer",
+     "Liver condition",
+     "Phaeochromocytoma",
+     "Porphyria",
+     "Problems with my sex life",
+     "Systemic Lupus Erythematosus (SLE)"
+    ],
+    "required": false
+   }
+  ]
+ }
+]

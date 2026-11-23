@@ -1,0 +1,37 @@
+STEP 06 click "Continue Without Savings"
+URL: https://www.musely.com/facerx/loginstatus?context=purchase&redirect=%2Ffacerx%2Fwelcomeback%3Fresume%3Dpurchase
+TITLE: Prescription Skincare That Works | Musely FaceRx
+
+--- VISIBLE TEXT ---
+Secure · HIPAA
+1
+Profile
+2
+Eligibility
+3
+Questionnaire
+4
+Review
+5
+Photos
+6
+Checkout
+Back
+
+WELCOME TO MUSELY
+
+Your results start here!
+
+Enter your email to log in or sign up.
+
+Email
+Continue
+
+Protected by HIPAA-Compliant Medical System Secured by LegitScript.
+
+--- CONTROLS ---
+  button (2): Back  ·  Continue [disabled]
+  input:email (1): Email
+
+--- LINKS ---
+  link (2): Skip to main content -> #main  ·  Musely Home -> /

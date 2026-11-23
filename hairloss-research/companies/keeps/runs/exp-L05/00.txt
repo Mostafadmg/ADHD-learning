@@ -1,0 +1,22 @@
+STEP 00 start (HTTP 200)
+URL: https://www.keeps.com/quiz?step=1
+TITLE: Take the Hair Loss Quiz | Keeps
+
+--- VISIBLE TEXT ---
+Where on your head are you losing your hair or experiencing thinning?
+
+Hairline
+
+Crown
+
+A bit of both
+
+Patchy (coin-sized bald spots)
+
+Nowhere yet, but I'd like to prevent future hair loss
+
+--- CONTROLS ---
+  button (5): Hairline  ·  Crown  ·  A bit of both  ·  Patchy (coin-sized bald spots)  ·  Nowhere yet, but I'd like to prevent future hair loss
+
+--- LINKS ---
+

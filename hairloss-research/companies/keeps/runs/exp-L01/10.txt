@@ -1,0 +1,35 @@
+STEP 10 wait 5000
+URL: https://www.keeps.com/quiz/lead?products=211%2C989
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+Better hair is one step away
+
+Create your account to unlock your personalized plan
+
+FIRST NAME*
+
+LAST NAME*
+
+EMAIL*
+
+PHONE NUMBER
+KEEP ME UPDATED
+
+By checking this box, you agree to receive recurring automated promotional and personalized marketing text messages from Keeps at 30750 at the mobile number provided. Consent is not a condition to purchasing any of our goods and services. Message and data rates may apply. Message frequency varies. Text STOP to 30750 to opt out. Text HELP to 30750 for help. See our Privacy Policy and Terms & Conditions for more information.
+
+CONTINUE
+SIGN IN WITH GOOGLE
+
+By continuing, you agree to accept our Terms & Conditions and Privacy Policy.
+
+Keeps | Hair Loss Treatment for Men
+
+--- CONTROLS ---
+  input:text (2): FIRST NAME*  ·  LAST NAME*
+  input:email (1): EMAIL*
+  input:tel (1): PHONE NUMBER
+  button (2): CONTINUE  ·  SIGN IN WITH GOOGLE
+
+--- LINKS ---
+  link (2): Privacy Policy -> https://patient.thirtymadison.com/dashboard/legals/privacy  ·  Terms & Conditions -> https://patient.thirtymadison.com/dashboard/legals/terms-and-conditions

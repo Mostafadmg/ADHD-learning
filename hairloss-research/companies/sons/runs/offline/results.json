@@ -1,0 +1,4973 @@
+{
+ "off-00": {
+  "id": "off-00",
+  "changed": "baseline man (no change)",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-01": {
+  "id": "off-01",
+  "changed": "picture → Temples only",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 0,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-02": {
+  "id": "off-02",
+  "changed": "picture → Random patches",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 2,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-03": {
+  "id": "off-03",
+  "changed": "picture → Completely bald",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 3,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-04": {
+  "id": "off-04",
+  "changed": "onset → Suddenly (follow-ups No)",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 1,
+   "5144": 0,
+   "5145": 0,
+   "5146": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00010",
+   "primary": [
+    "minoxidil"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Sudden Hair Loss": "Medication not recommended due to sudden hair loss onset."
+   }
+  },
+  "newer": {
+   "switches": "00010",
+   "primary": [
+    "minoxidil"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray"
+   ]
+  }
+ },
+ "off-05": {
+  "id": "off-05",
+  "changed": "Suddenly + body hair loss Yes",
+  "compare": "off-04",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 1,
+   "5144": 1,
+   "5145": 0,
+   "5146": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00010",
+   "primary": [
+    "minoxidil"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Sudden Hair Loss": "Medication not recommended due to sudden hair loss onset."
+   }
+  },
+  "newer": {
+   "switches": "00010",
+   "primary": [
+    "minoxidil"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray"
+   ]
+  }
+ },
+ "off-06": {
+  "id": "off-06",
+  "changed": "Suddenly + new medicines Yes",
+  "compare": "off-04",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 1,
+   "5144": 0,
+   "5145": 1,
+   "5146": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00010",
+   "primary": [
+    "minoxidil"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Sudden Hair Loss": "Medication not recommended due to sudden hair loss onset."
+   }
+  },
+  "newer": {
+   "switches": "00010",
+   "primary": [
+    "minoxidil"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray"
+   ]
+  }
+ },
+ "off-07": {
+  "id": "off-07",
+  "changed": "Suddenly + other symptoms Yes",
+  "compare": "off-04",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 1,
+   "5144": 0,
+   "5145": 0,
+   "5146": 1,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00010",
+   "primary": [
+    "minoxidil"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Sudden Hair Loss": "Medication not recommended due to sudden hair loss onset."
+   }
+  },
+  "newer": {
+   "switches": "00010",
+   "primary": [
+    "minoxidil"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray"
+   ]
+  }
+ },
+ "off-08": {
+  "id": "off-08",
+  "changed": "mood → Yes (both two-week answers Not at all)",
+  "compare": "off-00",
+  "answers": {
+   "3216": 1,
+   "3217": "test",
+   "3275": 0,
+   "3276": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-09": {
+  "id": "off-09",
+  "changed": "mood Yes + little interest = Several days",
+  "compare": "off-08",
+  "answers": {
+   "3216": 1,
+   "3217": "test",
+   "3275": 1,
+   "3276": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-10": {
+  "id": "off-10",
+  "changed": "mood Yes + little interest = More than half the days",
+  "compare": "off-08",
+  "answers": {
+   "3216": 1,
+   "3217": "test",
+   "3275": 2,
+   "3276": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00110",
+   "primary": [
+    "oral-minoxidil (toggle: minoxidil)"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "PHQ Score": "Finasteride not recommended due to depressive symptoms."
+   }
+  },
+  "newer": {
+   "switches": "00110",
+   "primary": [
+    "oral-minoxidil (toggle: minoxidil)"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "finasteride",
+    "topical-hair-loss-spray"
+   ]
+  }
+ },
+ "off-11": {
+  "id": "off-11",
+  "changed": "mood Yes + little interest = Nearly every day",
+  "compare": "off-08",
+  "answers": {
+   "3216": 1,
+   "3217": "test",
+   "3275": 3,
+   "3276": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00110",
+   "primary": [
+    "oral-minoxidil (toggle: minoxidil)"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "PHQ Score": "Finasteride not recommended due to depressive symptoms."
+   }
+  },
+  "newer": {
+   "switches": "00110",
+   "primary": [
+    "oral-minoxidil (toggle: minoxidil)"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "finasteride",
+    "topical-hair-loss-spray"
+   ]
+  }
+ },
+ "off-12": {
+  "id": "off-12",
+  "changed": "mood Yes + down/hopeless = Several days",
+  "compare": "off-08",
+  "answers": {
+   "3216": 1,
+   "3217": "test",
+   "3275": 0,
+   "3276": 1,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-13": {
+  "id": "off-13",
+  "changed": "mood Yes + down/hopeless = More than half the days",
+  "compare": "off-08",
+  "answers": {
+   "3216": 1,
+   "3217": "test",
+   "3275": 0,
+   "3276": 2,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00110",
+   "primary": [
+    "oral-minoxidil (toggle: minoxidil)"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "PHQ Score": "Finasteride not recommended due to depressive symptoms."
+   }
+  },
+  "newer": {
+   "switches": "00110",
+   "primary": [
+    "oral-minoxidil (toggle: minoxidil)"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "finasteride",
+    "topical-hair-loss-spray"
+   ]
+  }
+ },
+ "off-14": {
+  "id": "off-14",
+  "changed": "mood Yes + down/hopeless = Nearly every day",
+  "compare": "off-08",
+  "answers": {
+   "3216": 1,
+   "3217": "test",
+   "3275": 0,
+   "3276": 3,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00110",
+   "primary": [
+    "oral-minoxidil (toggle: minoxidil)"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "PHQ Score": "Finasteride not recommended due to depressive symptoms."
+   }
+  },
+  "newer": {
+   "switches": "00110",
+   "primary": [
+    "oral-minoxidil (toggle: minoxidil)"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "finasteride",
+    "topical-hair-loss-spray"
+   ]
+  }
+ },
+ "off-15": {
+  "id": "off-15",
+  "changed": "past medicines → Finasteride or Propecia (no side effects)",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    0
+   ],
+   "5149": 0,
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-16": {
+  "id": "off-16",
+  "changed": "finasteride side effects → Yes",
+  "compare": "off-15",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    0
+   ],
+   "5149": 1,
+   "5150": "test",
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00110",
+   "primary": [
+    "oral-minoxidil (toggle: minoxidil)"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Finasteride Side Effects": "Finasteride is not recommended due to reported side effects."
+   }
+  },
+  "newer": {
+   "switches": "00110",
+   "primary": [
+    "oral-minoxidil (toggle: minoxidil)"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "finasteride",
+    "topical-hair-loss-spray"
+   ]
+  }
+ },
+ "off-17": {
+  "id": "off-17",
+  "changed": "past medicines → Minoxidil or Regaine (no side effects)",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    1
+   ],
+   "5151": 0,
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-18": {
+  "id": "off-18",
+  "changed": "minoxidil side effects → Yes",
+  "compare": "off-17",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    1
+   ],
+   "5151": 1,
+   "5152": "test",
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11000",
+   "primary": [
+    "finasteride (toggle: topical-hair-loss-spray)"
+   ],
+   "secondary": [
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Minoxidil Side Effects": "Minoxidil is not recommended due to reported side effects."
+   }
+  },
+  "newer": {
+   "switches": "11000",
+   "primary": [
+    "finasteride (toggle: topical-hair-loss-spray)"
+   ],
+   "secondary": [
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan"
+   ]
+  }
+ },
+ "off-19": {
+  "id": "off-19",
+  "changed": "past medicines → Topical Finasteride Minoxidil Combination (no side effects)",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    2
+   ],
+   "5153": 0,
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-20": {
+  "id": "off-20",
+  "changed": "combination side effects → Yes",
+  "compare": "off-19",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    2
+   ],
+   "5153": 1,
+   "5154": "test",
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11110",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule"
+   ],
+   "secondary": [
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Combo Side Effects": "Topical combination not recommended due to reported side effects."
+   }
+  },
+  "newer": {
+   "switches": "11110",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray"
+   ]
+  }
+ },
+ "off-21": {
+  "id": "off-21",
+  "changed": "preference → Topical sprays",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 0,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "the-duo-plan (toggle: oral-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan (toggle: ultimate-hair-loss-plan-capsule)",
+    "minoxidil (toggle: oral-minoxidil)",
+    "topical-hair-loss-spray (toggle: finasteride)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "the-duo-plan",
+    "oral-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan",
+    "ultimate-hair-loss-plan-capsule",
+    "minoxidil",
+    "oral-minoxidil",
+    "topical-hair-loss-spray",
+    "finasteride",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "the-duo-plan (toggle: oral-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan (toggle: ultimate-hair-loss-plan-capsule)",
+    "minoxidil (toggle: oral-minoxidil)",
+    "topical-hair-loss-spray (toggle: finasteride)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "the-duo-plan",
+    "oral-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan",
+    "ultimate-hair-loss-plan-capsule",
+    "minoxidil",
+    "oral-minoxidil",
+    "topical-hair-loss-spray",
+    "finasteride",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-22": {
+  "id": "off-22",
+  "changed": "preference → Oral capsule",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 1,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-23": {
+  "id": "off-23",
+  "changed": "conditions → High Blood Pressure",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    0
+   ],
+   "5158": "test",
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11000",
+   "primary": [
+    "finasteride (toggle: topical-hair-loss-spray)"
+   ],
+   "secondary": [
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "High Blood Pressure": "Minoxidil is not recommended due to hypertension."
+   }
+  },
+  "newer": {
+   "switches": "11000",
+   "primary": [
+    "finasteride (toggle: topical-hair-loss-spray)"
+   ],
+   "secondary": [
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan"
+   ]
+  }
+ },
+ "off-24": {
+  "id": "off-24",
+  "changed": "conditions → Cardiovascular Disease",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    1
+   ],
+   "5159": "test",
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11000",
+   "primary": [
+    "finasteride (toggle: topical-hair-loss-spray)"
+   ],
+   "secondary": [
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Cardiovascular": "Minoxidil not recommended due to cardiovascular disease."
+   }
+  },
+  "newer": {
+   "switches": "11000",
+   "primary": [
+    "finasteride (toggle: topical-hair-loss-spray)"
+   ],
+   "secondary": [
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan"
+   ]
+  }
+ },
+ "off-25": {
+  "id": "off-25",
+  "changed": "conditions → Severe Kidney or Liver Disease",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    2
+   ],
+   "5160": "test",
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00110",
+   "primary": [
+    "oral-minoxidil (toggle: minoxidil)"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Severe Kidney/Liver Disease": "Finasteride not recommended due to severe kidney or liver disease."
+   }
+  },
+  "newer": {
+   "switches": "00110",
+   "primary": [
+    "oral-minoxidil (toggle: minoxidil)"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "finasteride",
+    "topical-hair-loss-spray"
+   ]
+  }
+ },
+ "off-26": {
+  "id": "off-26",
+  "changed": "conditions → Prostate Disease, Male Breast Cancer or Testicular Cancer",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    3
+   ],
+   "5161": "test",
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00110",
+   "primary": [
+    "oral-minoxidil (toggle: minoxidil)"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Prostate or Cancer": "Finasteride not recommended due to prostate/breast/testicular disease."
+   }
+  },
+  "newer": {
+   "switches": "00110",
+   "primary": [
+    "oral-minoxidil (toggle: minoxidil)"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "finasteride",
+    "topical-hair-loss-spray"
+   ]
+  }
+ },
+ "off-27": {
+  "id": "off-27",
+  "changed": "conditions → Rheumatoid Arthritis, Systemic Lupus or on Methotrexate",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    4
+   ],
+   "5162": "test",
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00110",
+   "primary": [
+    "oral-minoxidil (toggle: minoxidil)"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Rheumatoid/Lupus/Methotrexate": "Finasteride not recommended due to autoimmune / immunosuppressant conditions."
+   }
+  },
+  "newer": {
+   "switches": "00110",
+   "primary": [
+    "oral-minoxidil (toggle: minoxidil)"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "finasteride",
+    "topical-hair-loss-spray"
+   ]
+  }
+ },
+ "off-28": {
+  "id": "off-28",
+  "changed": "conditions → Scalp Disorders",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    5
+   ],
+   "5163": "test",
+   "5613": [
+    5
+   ],
+   "5614": [
+    3
+   ],
+   "5615": [
+    2
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11100",
+   "primary": [
+    "oral-duo-plan"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Scalp Disorders": "Topical Minoxidil is not recommended due to scalp condition."
+   }
+  },
+  "newer": {
+   "switches": "11100",
+   "primary": [
+    "oral-duo-plan"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "the-duo-plan",
+    "ultimate-hair-loss-plan",
+    "minoxidil",
+    "the-non-prescription-plan"
+   ]
+  }
+ },
+ "off-29": {
+  "id": "off-29",
+  "changed": "conditions → Phaeochromocytoma",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    6
+   ],
+   "5164": "test",
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11011",
+   "primary": [
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "ultimate-hair-loss-plan",
+    "minoxidil",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "ultimate-hair-loss-plan",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Phaeochromocytoma": "Oral-Minoxidil is not recommended due to potential cardiovascular complications."
+   }
+  },
+  "newer": {
+   "switches": "11011",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "the-duo-plan",
+    "ultimate-hair-loss-plan",
+    "minoxidil",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "the-duo-plan",
+    "ultimate-hair-loss-plan",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "oral-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil"
+   ]
+  }
+ },
+ "off-30": {
+  "id": "off-30",
+  "changed": "conditions → Diagnosed Lactose Allergy",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    7
+   ],
+   "5165": "test",
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "01011",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "minoxidil",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "minoxidil",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Lactose Allergy": "Oral Finasteride and Oral Minoxidil are not recommended due to lactose content."
+   }
+  },
+  "newer": {
+   "switches": "01011",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "minoxidil",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "minoxidil",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "finasteride"
+   ]
+  }
+ },
+ "off-31": {
+  "id": "off-31",
+  "changed": "conditions → Sexual Dysfunction",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    8
+   ],
+   "5166": "test",
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00110",
+   "primary": [
+    "oral-minoxidil (toggle: minoxidil)"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Sexual Dysfunction": "Finasteride is not recommended due to potential impact on sexual dysfunction."
+   }
+  },
+  "newer": {
+   "switches": "00110",
+   "primary": [
+    "oral-minoxidil (toggle: minoxidil)"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "finasteride",
+    "topical-hair-loss-spray"
+   ]
+  }
+ },
+ "off-32": {
+  "id": "off-32",
+  "changed": "Scalp Disorders + red flag: open sores, broken skin or infection",
+  "compare": "off-28",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    5
+   ],
+   "5163": "test",
+   "5613": [
+    5
+   ],
+   "5614": [
+    3
+   ],
+   "5615": [
+    0
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11100",
+   "primary": [
+    "oral-duo-plan"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Scalp Disorders": "Topical Minoxidil is not recommended due to scalp condition."
+   }
+  },
+  "newer": {
+   "switches": "11100",
+   "primary": [
+    "oral-duo-plan"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "the-duo-plan",
+    "ultimate-hair-loss-plan",
+    "minoxidil",
+    "the-non-prescription-plan"
+   ]
+  }
+ },
+ "off-33": {
+  "id": "off-33",
+  "changed": "Scalp Disorders + red flag: severe pain, oozing or signs of infection",
+  "compare": "off-28",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    5
+   ],
+   "5163": "test",
+   "5613": [
+    5
+   ],
+   "5614": [
+    3
+   ],
+   "5615": [
+    1
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11100",
+   "primary": [
+    "oral-duo-plan"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Scalp Disorders": "Topical Minoxidil is not recommended due to scalp condition."
+   }
+  },
+  "newer": {
+   "switches": "11100",
+   "primary": [
+    "oral-duo-plan"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "the-duo-plan",
+    "ultimate-hair-loss-plan",
+    "minoxidil",
+    "the-non-prescription-plan"
+   ]
+  }
+ },
+ "off-34": {
+  "id": "off-34",
+  "changed": "Scalp Disorders + all five scalp symptoms ticked",
+  "compare": "off-28",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    5
+   ],
+   "5163": "test",
+   "5613": [
+    0,
+    1,
+    2,
+    3,
+    4
+   ],
+   "5614": [
+    3
+   ],
+   "5615": [
+    2
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11100",
+   "primary": [
+    "oral-duo-plan"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Scalp Disorders": "Topical Minoxidil is not recommended due to scalp condition."
+   }
+  },
+  "newer": {
+   "switches": "11100",
+   "primary": [
+    "oral-duo-plan"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "the-duo-plan",
+    "ultimate-hair-loss-plan",
+    "minoxidil",
+    "the-non-prescription-plan"
+   ]
+  }
+ },
+ "off-35": {
+  "id": "off-35",
+  "changed": "Scalp Disorders + all three past scalp treatments ticked",
+  "compare": "off-28",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    5
+   ],
+   "5163": "test",
+   "5613": [
+    5
+   ],
+   "5614": [
+    0,
+    1,
+    2
+   ],
+   "5615": [
+    2
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11100",
+   "primary": [
+    "oral-duo-plan"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Scalp Disorders": "Topical Minoxidil is not recommended due to scalp condition."
+   }
+  },
+  "newer": {
+   "switches": "11100",
+   "primary": [
+    "oral-duo-plan"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "the-duo-plan",
+    "ultimate-hair-loss-plan",
+    "minoxidil",
+    "the-non-prescription-plan"
+   ]
+  }
+ },
+ "off-36": {
+  "id": "off-36",
+  "changed": "age → 17 (date of birth changed; asked only on the account form)",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "2009-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-37": {
+  "id": "off-37",
+  "changed": "age → 18 (date of birth changed; asked only on the account form)",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "2008-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-38": {
+  "id": "off-38",
+  "changed": "age → 21 (date of birth changed; asked only on the account form)",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "2005-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-39": {
+  "id": "off-39",
+  "changed": "age → 65 (date of birth changed; asked only on the account form)",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1961-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-40": {
+  "id": "off-40",
+  "changed": "age → 66 (date of birth changed; asked only on the account form)",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1960-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00010",
+   "primary": [
+    "minoxidil"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Age Over 65": "Finasteride and Oral Minoxidil are not recommended for customers over 65."
+   }
+  },
+  "newer": {
+   "switches": "00000",
+   "primary": [
+    "hair-growth-complex"
+   ],
+   "secondary": [],
+   "offered": [
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan"
+   ]
+  }
+ },
+ "off-41": {
+  "id": "off-41",
+  "changed": "age → 76 (date of birth changed; asked only on the account form)",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1950-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00010",
+   "primary": [
+    "minoxidil"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Age Over 65": "Finasteride and Oral Minoxidil are not recommended for customers over 65."
+   }
+  },
+  "newer": {
+   "switches": "00000",
+   "primary": [
+    "hair-growth-complex"
+   ],
+   "secondary": [],
+   "offered": [
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan"
+   ]
+  }
+ },
+ "off-42": {
+  "id": "off-42",
+  "changed": "account tag finasteride_disallowed",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [
+   "finasteride_disallowed"
+  ],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00110",
+   "primary": [
+    "oral-minoxidil (toggle: minoxidil)"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Tag: finasteride_disallowed": "Finasteride is not recommended due to account restriction."
+   }
+  },
+  "newer": {
+   "switches": "00110",
+   "primary": [
+    "oral-minoxidil (toggle: minoxidil)"
+   ],
+   "secondary": [
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "finasteride",
+    "topical-hair-loss-spray"
+   ]
+  }
+ },
+ "off-43": {
+  "id": "off-43",
+  "changed": "account tag minoxidil_disallowed",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [
+   "minoxidil_disallowed"
+  ],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11000",
+   "primary": [
+    "finasteride (toggle: topical-hair-loss-spray)"
+   ],
+   "secondary": [
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Tag: minoxidil_disallowed": "Minoxidil is not recommended due to account restriction."
+   }
+  },
+  "newer": {
+   "switches": "11000",
+   "primary": [
+    "finasteride (toggle: topical-hair-loss-spray)"
+   ],
+   "secondary": [
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan"
+   ]
+  }
+ },
+ "off-44": {
+  "id": "off-44",
+  "changed": "account tag dutasteride_eligible",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [
+   "dutasteride_eligible"
+  ],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "dutasteride-combination-spray"
+   ],
+   "secondary": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "dutasteride-combination-spray",
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-45": {
+  "id": "off-45",
+  "changed": "account tag combo_pill_eligible + combo route",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [
+   "combo_pill_eligible"
+  ],
+  "special": "combo",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "combination-capsule"
+   ],
+   "secondary": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "combination-capsule",
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-46": {
+  "id": "off-46",
+  "changed": "account tag combo_pill_eligible, normal route",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [
+   "combo_pill_eligible"
+  ],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-47": {
+  "id": "off-47",
+  "changed": "chosen product stored = finasteride tablets (\"oral-tablet\")",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "oral-tablet",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "oral-duo-plan (toggle: the-duo-plan)"
+   ],
+   "secondary": [
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "finasteride",
+    "topical-hair-loss-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "finasteride (toggle: topical-hair-loss-spray)"
+   ],
+   "secondary": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "finasteride",
+    "topical-hair-loss-spray",
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-48": {
+  "id": "off-48",
+  "changed": "chosen product stored = Ultimate Plan",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "ultimate-hair-loss-plan",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "ultimate-hair-loss-plan",
+    "oral-duo-plan (toggle: the-duo-plan)"
+   ],
+   "secondary": [
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "ultimate-hair-loss-plan",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "ultimate-hair-loss-plan"
+   ],
+   "secondary": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "ultimate-hair-loss-plan",
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-49": {
+  "id": "off-49",
+  "changed": "PAIR High Blood Pressure + Sexual Dysfunction",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    0,
+    8
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00000",
+   "primary": [
+    "hair-growth-complex"
+   ],
+   "secondary": [],
+   "offered": [
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Sexual Dysfunction": "Finasteride is not recommended due to potential impact on sexual dysfunction.",
+    "High Blood Pressure": "Minoxidil is not recommended due to hypertension."
+   }
+  },
+  "newer": {
+   "switches": "00000",
+   "primary": [
+    "hair-growth-complex"
+   ],
+   "secondary": [],
+   "offered": [
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan"
+   ]
+  }
+ },
+ "off-50": {
+  "id": "off-50",
+  "changed": "PAIR Diagnosed Lactose Allergy + Scalp Disorders",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    5,
+    7
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "01000",
+   "primary": [
+    "topical-hair-loss-spray"
+   ],
+   "secondary": [
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Scalp Disorders": "Topical Minoxidil is not recommended due to scalp condition.",
+    "Lactose Allergy": "Oral Finasteride and Oral Minoxidil are not recommended due to lactose content."
+   }
+  },
+  "newer": {
+   "switches": "01000",
+   "primary": [
+    "topical-hair-loss-spray"
+   ],
+   "secondary": [
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "the-non-prescription-plan"
+   ]
+  }
+ },
+ "off-51": {
+  "id": "off-51",
+  "changed": "PAIR Suddenly + High Blood Pressure",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 1,
+   "5144": 0,
+   "5145": 0,
+   "5146": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    0
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00000",
+   "primary": [
+    "hair-growth-complex"
+   ],
+   "secondary": [],
+   "offered": [
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Sudden Hair Loss": "Medication not recommended due to sudden hair loss onset.",
+    "High Blood Pressure": "Minoxidil is not recommended due to hypertension."
+   }
+  },
+  "newer": {
+   "switches": "00000",
+   "primary": [
+    "hair-growth-complex"
+   ],
+   "secondary": [],
+   "offered": [
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan"
+   ]
+  }
+ },
+ "off-52": {
+  "id": "off-52",
+  "changed": "PAIR Suddenly + Scalp Disorders",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 1,
+   "5144": 0,
+   "5145": 0,
+   "5146": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    5
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00000",
+   "primary": [
+    "hair-growth-complex"
+   ],
+   "secondary": [],
+   "offered": [
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Sudden Hair Loss": "Medication not recommended due to sudden hair loss onset.",
+    "Scalp Disorders": "Topical Minoxidil is not recommended due to scalp condition."
+   }
+  },
+  "newer": {
+   "switches": "00000",
+   "primary": [
+    "hair-growth-complex"
+   ],
+   "secondary": [],
+   "offered": [
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan"
+   ]
+  }
+ },
+ "off-53": {
+  "id": "off-53",
+  "changed": "PAIR Topical preference + Diagnosed Lactose Allergy",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    7
+   ],
+   "What treatment type do you prefer?": 0,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "01011",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "minoxidil",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "minoxidil",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Lactose Allergy": "Oral Finasteride and Oral Minoxidil are not recommended due to lactose content."
+   }
+  },
+  "newer": {
+   "switches": "01011",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "minoxidil",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "minoxidil",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "the-duo-plan",
+    "oral-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride"
+   ]
+  }
+ },
+ "off-54": {
+  "id": "off-54",
+  "changed": "ALL nine conditions + Suddenly + all side effects",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 1,
+   "5147": 1,
+   "5148": [
+    0,
+    1,
+    2
+   ],
+   "5149": 1,
+   "5151": 1,
+   "5153": 1,
+   "5155": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00000",
+   "primary": [
+    "hair-growth-complex"
+   ],
+   "secondary": [],
+   "offered": [
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Sudden Hair Loss": "Medication not recommended due to sudden hair loss onset.",
+    "Finasteride Side Effects": "Finasteride is not recommended due to reported side effects.",
+    "Minoxidil Side Effects": "Minoxidil is not recommended due to reported side effects.",
+    "Combo Side Effects": "Topical combination not recommended due to reported side effects.",
+    "Sexual Dysfunction": "Finasteride is not recommended due to potential impact on sexual dysfunction.",
+    "High Blood Pressure": "Minoxidil is not recommended due to hypertension.",
+    "Cardiovascular": "Minoxidil not recommended due to cardiovascular disease.",
+    "Severe Kidney/Liver Disease": "Finasteride not recommended due to severe kidney or liver disease.",
+    "Prostate or Cancer": "Finasteride not recommended due to prostate/breast/testicular disease.",
+    "Rheumatoid/Lupus/Methotrexate": "Finasteride not recommended due to autoimmune / immunosuppressant conditions.",
+    "Scalp Disorders": "Topical Minoxidil is not recommended due to scalp condition.",
+    "Phaeochromocytoma": "Oral-Minoxidil is not recommended due to potential cardiovascular complications.",
+    "Lactose Allergy": "Oral Finasteride and Oral Minoxidil are not recommended due to lactose content."
+   }
+  },
+  "newer": {
+   "switches": "00000",
+   "primary": [
+    "hair-growth-complex"
+   ],
+   "secondary": [],
+   "offered": [
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan"
+   ]
+  }
+ },
+ "off-55": {
+  "id": "off-55",
+  "changed": "Scalp Disorders + scalp symptom: previously diagnosed with seborrheic dermatitis",
+  "compare": "off-28",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    5
+   ],
+   "5163": "test",
+   "5613": [
+    4
+   ],
+   "5614": [
+    3
+   ],
+   "5615": [
+    2
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11100",
+   "primary": [
+    "oral-duo-plan"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Scalp Disorders": "Topical Minoxidil is not recommended due to scalp condition."
+   }
+  },
+  "newer": {
+   "switches": "11100",
+   "primary": [
+    "oral-duo-plan"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "the-duo-plan",
+    "ultimate-hair-loss-plan",
+    "minoxidil",
+    "the-non-prescription-plan"
+   ]
+  }
+ },
+ "off-56": {
+  "id": "off-56",
+  "changed": "Scalp Disorders + tried before: prescription scalp treatments",
+  "compare": "off-28",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    5
+   ],
+   "5163": "test",
+   "5613": [
+    5
+   ],
+   "5614": [
+    1
+   ],
+   "5615": [
+    2
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11100",
+   "primary": [
+    "oral-duo-plan"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Scalp Disorders": "Topical Minoxidil is not recommended due to scalp condition."
+   }
+  },
+  "newer": {
+   "switches": "11100",
+   "primary": [
+    "oral-duo-plan"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "oral-minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "the-duo-plan",
+    "ultimate-hair-loss-plan",
+    "minoxidil",
+    "the-non-prescription-plan"
+   ]
+  }
+ },
+ "off-57": {
+  "id": "off-57",
+  "changed": "NHS Summary Care Record consent given",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23",
+   "nhs-summary-of-care": [
+    "NHS Summary Of Care"
+   ],
+   "summary-of-care-agreement-dropdown": [
+    "I agree"
+   ]
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-58": {
+  "id": "off-58",
+  "changed": "GP sharing consent given",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    "none"
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23",
+   "gp-share": [
+    "GP Consent"
+   ],
+   "gp-share-consultation-agreement-dropdown": [
+    "I agree"
+   ]
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11111",
+   "primary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-duo-plan",
+    "the-duo-plan",
+    "topical-finasteride-minoxidil-spray",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "reasons": {}
+  },
+  "newer": {
+   "switches": "11111",
+   "primary": [
+    "topical-finasteride-minoxidil-spray"
+   ],
+   "secondary": [
+    "oral-duo-plan (toggle: the-duo-plan)",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule (toggle: ultimate-hair-loss-plan)",
+    "oral-minoxidil (toggle: minoxidil)",
+    "finasteride (toggle: topical-hair-loss-spray)",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan",
+    "hair-growth-complex"
+   ],
+   "blocked": []
+  }
+ },
+ "off-59": {
+  "id": "off-59",
+  "changed": "PAIR Scalp Disorders + Sexual Dysfunction",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    5,
+    8
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "00100",
+   "primary": [
+    "oral-minoxidil"
+   ],
+   "secondary": [
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Sexual Dysfunction": "Finasteride is not recommended due to potential impact on sexual dysfunction.",
+    "Scalp Disorders": "Topical Minoxidil is not recommended due to scalp condition."
+   }
+  },
+  "newer": {
+   "switches": "00100",
+   "primary": [
+    "oral-minoxidil"
+   ],
+   "secondary": [
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "oral-minoxidil",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "minoxidil",
+    "finasteride",
+    "topical-hair-loss-spray",
+    "the-non-prescription-plan"
+   ]
+  }
+ },
+ "off-60": {
+  "id": "off-60",
+  "changed": "PAIR Phaeochromocytoma + Scalp Disorders",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    5,
+    6
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "11000",
+   "primary": [
+    "finasteride (toggle: topical-hair-loss-spray)"
+   ],
+   "secondary": [
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "Scalp Disorders": "Topical Minoxidil is not recommended due to scalp condition.",
+    "Phaeochromocytoma": "Oral-Minoxidil is not recommended due to potential cardiovascular complications."
+   }
+  },
+  "newer": {
+   "switches": "11000",
+   "primary": [
+    "finasteride (toggle: topical-hair-loss-spray)"
+   ],
+   "secondary": [
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "finasteride",
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "the-non-prescription-plan"
+   ]
+  }
+ },
+ "off-61": {
+  "id": "off-61",
+  "changed": "PAIR Diagnosed Lactose Allergy + High Blood Pressure",
+  "compare": "off-00",
+  "answers": {
+   "3216": 0,
+   "5140": 0,
+   "5141": 0,
+   "5142": [
+    0
+   ],
+   "5143": 0,
+   "5147": 1,
+   "5148": [
+    "none"
+   ],
+   "5155": [
+    0,
+    7
+   ],
+   "What treatment type do you prefer?": 2,
+   "date_of_birth": "1994-05-23"
+  },
+  "tags": [],
+  "special": "",
+  "chosen": "",
+  "older": {
+   "switches": "01000",
+   "primary": [
+    "topical-hair-loss-spray"
+   ],
+   "secondary": [
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "reasons": {
+    "High Blood Pressure": "Minoxidil is not recommended due to hypertension.",
+    "Lactose Allergy": "Oral Finasteride and Oral Minoxidil are not recommended due to lactose content."
+   }
+  },
+  "newer": {
+   "switches": "01000",
+   "primary": [
+    "topical-hair-loss-spray"
+   ],
+   "secondary": [
+    "hair-growth-complex"
+   ],
+   "offered": [
+    "topical-hair-loss-spray",
+    "hair-growth-complex"
+   ],
+   "blocked": [
+    "topical-finasteride-minoxidil-spray",
+    "oral-duo-plan",
+    "the-duo-plan",
+    "hair-loss-spray-hair-loss-capsule",
+    "ultimate-hair-loss-plan-capsule",
+    "ultimate-hair-loss-plan",
+    "oral-minoxidil",
+    "minoxidil",
+    "finasteride",
+    "the-non-prescription-plan"
+   ]
+  }
+ }
+}

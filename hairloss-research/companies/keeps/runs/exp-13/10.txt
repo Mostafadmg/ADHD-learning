@@ -1,0 +1,46 @@
+STEP 10 click "Continue"
+URL: https://www.keeps.com/hair-assessment-quiz?step=13
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+Your analysis is complete.
+
+Your custom prescription treatment plan is being tailored to your profile now...
+
+Your Profile
+
+Goal
+
+Regrow
+
+Hair Loss Stage
+
+Advanced
+
+Duration
+
+1-3 years
+
+Treatment Type
+
+Not Sure
+
+Expected Results
+
+3 months
+
+You're a strong candidate
+
+86% of similar profiles see results
+
+Multi-pathway approach recommended
+
+Continue
+
+Keeps | Hair Loss Treatment for Men
+
+--- CONTROLS ---
+  button (2): Go back  ·  Continue
+
+--- LINKS ---
+

@@ -1,0 +1,13 @@
+{
+ "actions": "probe-women.json",
+ "about": "ONE-CHANGE EXPERIMENT from baseline-women-regaine.json: PROBE (no submit): heart Yes, other conditions Yes, medicines Yes, allergy Yes + Other medication",
+ "changed": "PROBE (no submit): heart Yes, other conditions Yes, medicines Yes, allergy Yes + Other medication",
+ "failedStep": null,
+ "submitDisabled": false,
+ "preTextLength": 2347,
+ "stoppedBeforeSubmit": true,
+ "saveReply": [],
+ "productRulesReply": [],
+ "productRulesCalled": 0,
+ "apiCallsAfterLoad": []
+}

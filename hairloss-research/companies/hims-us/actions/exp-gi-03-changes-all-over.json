@@ -1,0 +1,48 @@
+{
+ "start": "https://www.hims.com/g/i/hl",
+ "maxSteps": 40,
+ "note": "One change from baseline-men-gi.json: changes -> ['All over']",
+ "answers": {
+  "goals": [
+   "Regrow a full head of hair"
+  ],
+  "changes": [
+   "All over"
+  ],
+  "loss": [
+   "Some Those close to me notice"
+  ],
+  "start": [
+   "Over a year ago"
+  ],
+  "expectations": [
+   "Visibly thicker, fuller hair"
+  ],
+  "type": [
+   "Straight or wavy"
+  ],
+  "length": [
+   "Short"
+  ],
+  "hair-loss-heredity": [
+   "Yes"
+  ],
+  "stress": [
+   "Sometimes"
+  ],
+  "hair-style": [
+   "No styling I let my hair do its thing"
+  ],
+  "hair-style-duration": [
+   "Less than 5 minutes"
+  ],
+  "select-state": {
+   "select": [
+    {
+     "selector": "select",
+     "label": "Texas"
+    }
+   ]
+  }
+ }
+}

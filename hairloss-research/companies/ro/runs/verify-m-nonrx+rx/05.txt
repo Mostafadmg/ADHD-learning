@@ -1,0 +1,17 @@
+STEP 05 click "Prescription medications (e.g. Propecia, oral minoxidil)"
+URL: https://start.ro.co/fxdxbh/online-visit/22
+TITLE: Online Visit
+
+--- VISIBLE TEXT ---
+What hair loss solutions have you tried, if any?
+Select all that apply.
+Non-prescription solutions (e.g. Rogaine, supplements)
+Prescription medications (e.g. Propecia, oral minoxidil)
+None of the above
+Continue
+
+--- CONTROLS ---
+  button (4): Non-prescription solutions (e.g. Rogaine, supplements) [true]  ·  Prescription medications (e.g. Propecia, oral minoxidil) [true]  ·  None of the above [false]  ·  Continue
+
+--- LINKS ---
+

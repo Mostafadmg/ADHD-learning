@@ -1,0 +1,118 @@
+STEP 08 goto "https://www.hairandme.com/ingredients"
+URL: https://www.hairandme.com/ingredients
+TITLE: Our scientifically proven ingredients | Hair + Me
+
+--- VISIBLE TEXT ---
+Our scientifically proven ingredients
+
+Your Hair + Me treatment uses a combination of prescription active ingredients to maximise hair regrowth, bolster hair health and minimise loss and thinning.
+
+Personalised to your unique hair needs, these gentle yet effective actives are scientifically proven to regrow hair in three to six months.
+
+GET STARTED
+Treatment subject to dermatological assessment.
+Active prescription ingredients
+
+Chosen by our expert Dermatology Team for their efficacy, our prescription actives target pattern hair loss and thinning directly. Your personalised treatment supports the hair growth cycle and creates the right environment for healthy hair regrowth.
+
+Minoxidil
+Finasteride
+Dutasteride
+Niacinamide
+Urea
+Melatonin
+Minoxidil
+Prescription
+The Capsules
+The Drops
+
+Minoxidil, a vasodilator, increases blood flow to hair follicles to encourage regrowth. It extends the active growth phase while shortening the resting phase of the hair growth cycle. With consistent daily use, most start to see results in three to six months.
+
+“Minoxidil has been a trusted solution for hair loss and thinning for decades, with extensive evidence supporting its efficacy. We're proud to make this scientifically proven treatment accessible to those experiencing hair loss.”
+
+Dr Margo Gkini
+
+Further reading
+GET STARTED
+Treatment subject to dermatological assessment.
+Supporting ingredients
+
+Our base ingredients deliver on their promise, working to ease irritation and create the ideal conditions for hair regrowth. In The Drops, you’ll find soothing essential oils and dermatologist-approved actives that help regrow hair and maintain scalp health. In The Capsules, you’ll find everything you need to regrow stronger, healthier hair – in one daily pill.
+
+Lactic Acid
+Rosemary Oil
+Sandalwood Oil
+Lavender Oil
+Eucalyptus Oil
+Lactic Acid
+Supporting
+The Drops
+
+Loved by dermatologists, this alpha-hydroxy acid (AHA) and gentle scalp exfoliant helps to maintain a healthy scalp and optimal conditions for strong, healthy hair growth.
+
+GET STARTED
+Treatment subject to dermatological assessment.
+Real results in 3-6 months
+
+Your treatment is personalised to target your goals. That’s why it works. But don’t just take our word for it. The proof is in the progress.
+
+Before
+After
+Karen’s journey
+Hair goal:
+Prevent, stop or reverse hair loss
+Duration:
+4 months
+Before
+After
+Joe’s journey
+Hair goal:
+Prevent, stop or reverse hair loss
+Duration:
+4 months
+Before
+After
+Hannah’s journey
+Hair goal:
+Thicker, denser, more voluminous hair
+Duration:
+4 months
+Before
+After
+Michael’s journey
+Hair goal:
+Prevent, stop or reverse hair loss
+Duration:
+4 months
+Before
+After
+Lorenzo’s journey
+Hair goal:
+Improve my hairline, parting or crown
+Duration:
+6 months
+How Hair + Me works
+Why hair loss happens
+
+Genetic predisposition causes follicle shrinkage. Vitamin and mineral deficiencies, lifestyle and hormonal changes affect the hair growth cycle.
+
+How we prevent hair loss
+
+Through drops and capsules, our scientifically proven ingredients stimulate blood flow and block dihydrotestosterone (DHT), the hair loss hormone.
+
+How hair regrows
+
+Our powerful formulations work to rebalance nutrient levels, nourish the scalp and restore follicle function – accelerating the hair regrowth cycle.
+
+How we help you
+
+Our Dermatology Clinicians personally review your consultation to build a treatment plan that's personalised to you. We'll check in regularly to make sure you're on track.
+
+GET STARTED
+Treatment subject to dermatological assessment.
+
+--- CONTROLS ---
+  tab (11): Minoxidil [true]  ·  Finasteride [false]  ·  Dutasteride [false]  ·  Niacinamide [false]  ·  Urea [false]  ·  Melatonin [false]  ·  Lactic Acid [true]  ·  Rosemary Oil [false]  ·  Sandalwood Oil [false]  ·  Lavender Oil [false]  ·  Eucalyptus Oil [false]
+
+--- LINKS ---
+  link (14): Navigate home -> /  ·  Ingredients -> /ingredients  ·  Experts -> /meet-the-team  ·  Learn -> https://www.hairandme.com/blog  ·  Support -> https://www.hairandme.com/support  ·  Log In -> /account/login  ·  GET STARTED -> /c/suh/new  ·  Visit our Support Centre -> https://www.hairandme.com/support  ·  Our Policies -> https://www.hairandme.com/support/collections/620350-policies  ·  Learn about hair loss -> https://www.hairandme.com/blog  ·  facebook -> https://www.facebook.com/hqhairandme  ·  instagram -> https://www.instagram.com/hairandmehq/  ·  tiktok -> https://www.tiktok.com/@hairandmehq?lang=en  ·  @hairandmeHQ -> https://www.instagram.com/hairandmehq/

@@ -15,6 +15,8 @@ import json, os, sys, re, glob, copy, collections
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import s2_diff, s2_make, s2_text as T
+import s3_text as S3   # stage 3 (VERIFY): extra texts for the runs/verify-* replays, corrections and the verification block
+for _n in ('VISTEXT', 'RESULT', 'NOTE', 'DOC', 'OPT_FIXED', 'Q', 'S1_NOTE'): getattr(T, _n).update(getattr(S3, _n, {}))
 base = os.path.join(HERE, '..')
 D = json.load(open(os.path.join(base, 'company.stage1.json')))
 QD = json.load(open(os.path.join(base, 'quiz-definition.json')))['steps']
@@ -31,11 +33,11 @@ for run, o in A.items():
     posted = o['r']['posted']
     sexv = [v for q, v in posted.get('pds', []) if q == 3039]
     flow = 'men' if sexv and str(sexv[0]) == '1' else ('women' if sexv else None)
-    if run in s2_diff.ALLBASE or run.startswith('s2-base-'): kind = 'baseline'
+    if run in s2_diff.ALLBASE or run.startswith(('s2-base-', 'verify-base-')): kind = 'baseline'
     elif ch.get('sweep'): kind = 'sweep'
     elif ch.get('step'): kind = 'one-change'
-    elif run in ('home', 'pages', 'entry-points'): kind = 'pages'
-    elif run == 'entry-promo-caps-men': kind = 'entry'
+    elif run in ('home', 'pages', 'entry-points', 'verify-pages'): kind = 'pages'
+    elif run in ('entry-promo-caps-men', 'verify-w-entry-promo-drops'): kind = 'entry'
     elif run == 'scout-men-none': kind = 'one-change'
     else: kind = 'scout'
     summ = s2_diff.analyse(run) if flow else {}
@@ -43,8 +45,15 @@ for run, o in A.items():
                 'reachedBag': 'ct' in o['r']['order'], 'nChanged': len(o['changedSet'])}
 RUN.get('s2-m-mcm-bp-elevated', {}).update({'changedSet': {'bp'}, 'kind': 'one-change'}) if 's2-m-mcm-bp-elevated' in RUN else None
 if 's2-m-mcm-bp' in RUN: RUN['s2-m-mcm-bp']['changedSet'] = {'mcm', 'bp'}
+if 'verify-m-bp-elevated-reading' in RUN: RUN['verify-m-bp-elevated-reading']['changedSet'] = {'mcm', 'bp'}
+if 'verify-w-mcf-bp' in RUN: RUN['verify-w-mcf-bp']['changedSet'] = {'mcf', 'bp'}
+def is_s3(r): return r.startswith('verify-')
+def gt_words(r):
+    n = RUN[r]['nChanged']
+    return f'{n} medical screens changed together' if 'group-medical' in r else f'{n} non-medical answers changed together'
 CONS = {r: v for r, v in RUN.items() if v['flow']}
 N_S2 = sum(1 for r in CONS if r.startswith('s2-'))
+N_S3 = sum(1 for r in CONS if is_s3(r))
 N_ALL = len(CONS)
 
 BASESTEPS = {fl: set().union(*[set(RUN[b]['order']) for b in s2_diff.BASES[fl] if b in RUN]) for fl in ('men', 'women')}
@@ -121,9 +130,9 @@ def evidence_for(flow, sid, qid, label):
     if bl and len(bl) >= 1 and not sw and not sc:
         return f"Baseline answer ({cite(bl)}): this is the reference route to the £34.99 'Personalised treatment' bag.", 'baseline', bl
     if sw:
-        v = [visible(r) for r in sw]; n = RUN[sw[0]]['nChanged']
-        if not any(v): return f"Group test ({cite(sw)}: {n} non-medical answers changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall.", 'sweep', sw
-        return f"Group test ({cite(sw)}: {n} non-medical answers changed together, this one among them): {v[0]}. " + T.SWEEP_NOTE.get((sid, label), 'So this answer by itself changes nothing a visitor can see before the account wall.'), 'sweep', sw
+        v = [visible(r) for r in sw]; g = gt_words(sw[0])
+        if not any(v): return f"Group test ({cite(sw)}: {g}, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall.", 'sweep', sw
+        return f"Group test ({cite(sw)}: {g}, this one among them): {v[0]}. " + T.SWEEP_NOTE.get((sid, label), 'So this answer by itself changes nothing a visitor can see before the account wall.'), 'sweep', sw
     if sc:
         bag = [r for r in sc if RUN[r]['reachedBag']]
         if bag: return f"Stage 1 multi-change scout ({cite(bag)}): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test.", 'scout', sc
@@ -135,7 +144,7 @@ def evidence_for(flow, sid, qid, label):
         v = visible(best[0]) if (oc2 or sw2) else ''
         oth = "men's" if flow == 'women' else "women's"
         return f"Not replayed on this route. The same screen is served on the {oth} route, where a {kind} ({cite(best)}) showed " + (v if v else "nothing visible changing") + ".", 'other-route', best
-    return f"Not chosen in any replay (the {N_S2} stage 2 replays had to be prioritised): effect untested.", 'untested', []
+    return "Not chosen in any replay: effect untested.", 'untested', []
 
 VIS_TYPE = T.VIS_TYPE  # (step, label prefix) -> effectType when the replay showed something visible
 
@@ -168,7 +177,7 @@ for f in D['flows']:
             elif tier == 'untested':
                 o['effect'] = obs; o['effectType'] = 'unknown'; o['affects'] = []; o['evidence'] = 'unknown'
             else:
-                extra = T.NOTE.get((sid, o['label']), '')
+                extra = next((v for (s_, pre), v in T.NOTE.items() if s_ == sid and o['label'].startswith(pre)), '')
                 o['effect'] = obs + (' ' + extra if extra else ''); o['effectType'] = vt or 'none'; o['affects'] = T.AFFECTS.get((sid, o['label']), [])
                 o['evidence'] = 'inferred' if tier == 'other-route' else 'observed'
             o['testedBy'] = tier
@@ -208,12 +217,17 @@ def result_text(run):
     return "No visible change: same screens as the baseline pool, no warning, no stop. " + tail
 order_ids = [e[0] for e in s2_make.EXPS] + [s[0] for s in s2_make.SWEEPS]
 s2runs = sorted([r for r in CONS if r.startswith('s2-')], key=lambda r: (0 if 'base' in r else 1, order_ids.index(r) if r in order_ids else 999, r))
-for run in s2runs:
+import s3_make
+order3 = [e[0] for e in s3_make.EXPS] + [g[0] for g in s3_make.GROUPS]
+s3runs = sorted([r for r in CONS if is_s3(r)], key=lambda r: (0 if 'base' in r else 1, order3.index(r) if r in order3 else 999, r))
+for run in s2runs + s3runs:
     R = RUN[run]
     if R['kind'] == 'baseline': changed = f"none: replay of baseline-{R['flow']}.json to confirm it still works and to measure the server's random variation"
     else: changed = R['desc'] or ''
-    EXP.append({'id': run, 'flow': R['flow'], 'changed': changed, 'result': result_text(run), 'run': 'runs/' + run, 'stage': 2,
-                'type': {'baseline': 'baseline replay', 'one-change': 'one-change', 'sweep': 'group test (several non-medical answers at once)'}[R['kind']],
+    typ = {'baseline': 'baseline replay', 'one-change': 'one-change', 'entry': 'one-change (entry URL)', 'sweep': 'group test (several non-medical answers at once)'}[R['kind']]
+    if 'group-medical' in run: typ = 'group test (several medical tick-boxes at once)'
+    EXP.append({'id': run, 'flow': R['flow'], 'changed': changed, 'result': result_text(run), 'run': 'runs/' + run, 'stage': 3 if is_s3(run) else 2,
+                'type': typ,
                 'screens': R['summary'].get('nSteps'), 'endedAt': R['summary'].get('end')})
 D['experiments'] = EXP
 
@@ -222,7 +236,9 @@ def kindn(k): return sum(1 for r, v in CONS.items() if r.startswith('s2-') and v
 ctx = {'N_S2': N_S2, 'N_ALL': N_ALL, 'runs': RUN, 'PRES': PRES, 'warn': warn, 'clean': clean, 'visible': visible,
        'N_BAG': sum(1 for v in CONS.values() if v['reachedBag']), 'N_BAG_S2': sum(1 for r, v in CONS.items() if v['reachedBag'] and r.startswith('s2-')),
        'N_BASE_M': len([b for b in s2_diff.BASES['men'] if b in RUN]), 'N_BASE_W': len([b for b in s2_diff.BASES['women'] if b in RUN]),
-       'N_S2_BASE': kindn('baseline'), 'N_S2_OC': kindn('one-change'), 'N_S2_SW': kindn('sweep')}
+       'N_S2_BASE': kindn('baseline'), 'N_S2_OC': kindn('one-change'), 'N_S2_SW': kindn('sweep'),
+       'N_S3': N_S3, 'N_S3_BASE': sum(1 for r, v in CONS.items() if is_s3(r) and v['kind'] == 'baseline'), 'N_S3_OC': sum(1 for r, v in CONS.items() if is_s3(r) and v['kind'] in ('one-change', 'entry')),
+       'N_S3_SW': sum(1 for r, v in CONS.items() if is_s3(r) and v['kind'] == 'sweep'), 'N_BAG_S3': sum(1 for r, v in CONS.items() if v['reachedBag'] and is_s3(r)), 'CONS': CONS}
 D['rules'] = T.rules(ctx)
 D['recommendations'] = T.RECS
 for p in D['products']:
@@ -233,6 +249,8 @@ D['sources'] = D['sources'] + [s for s in T.SOURCES if s['url'] not in {x['url']
 D['checkedOn'] = '2026-11-23'
 D['stage'] = 'rules (stage 2 of 3: one-change experiments)'
 D['serverRandomness'] = T.RANDOMNESS(ctx)
+D['codeReadRules'] = T.CODE_RULES
+S3.apply(D, ctx)   # stage 3: corrections, relabelled evidence, new products / flow / rules, and the verification block
 
 # resolve rule cross-references (§key -> rule id)
 txt = json.dumps(D, indent=1, ensure_ascii=False)
@@ -246,6 +264,6 @@ print(f"company.json written: {len(D['products'])} products, {sum(len(f['questio
 print('option evidence tiers:', dict(stats))
 
 for r, v in sorted(CONS.items()):
-    if r.startswith('s2-') and v['kind'] != 'baseline' and not clean(r) and r not in T.VISTEXT:
+    if r.startswith(('s2-', 'verify-')) and v['kind'] != 'baseline' and not clean(r) and r not in T.VISTEXT:
         print('  note: visible change without hand-written text:', r, raw_changes(r)[:4])
 print(len(WARN), 'warning(s)')

@@ -1,0 +1,71 @@
+{
+  "_about": "ONE-CHANGE EXPERIMENT exp-w12 from baseline-women-regaine.json: women-q7 allergies: No -> Yes, women-q7a = Fish only",
+  "start": "https://onlinedoctor.superdrug.com/hair-loss-in-women.html",
+  "steps": [
+    {
+      "do": "goto",
+      "url": "https://onlinedoctor.superdrug.com/assessment/147757"
+    },
+    {
+      "do": "wait",
+      "ms": 4000
+    },
+    {
+      "do": "click",
+      "selector": "#onetrust-reject-all-handler"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='MultiChoice-option717'][value='7729']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='38341003'][value='false']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='719'][value='false']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='SingleChoice-option718'][value='7181']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='1153'][value='false']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='47'][value='false']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='49'][value='true']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='MultiChoice-option49.1'][value='117']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='Disclaimer-option20102724']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='Disclaimer-option55']"
+    },
+    {
+      "do": "click",
+      "selector": "input[name='Disclaimer-option56']"
+    },
+    {
+      "do": "click",
+      "selector": "button[data-qa='cdc-questionnaire-submit']"
+    },
+    {
+      "do": "wait",
+      "ms": 5000
+    }
+  ],
+  "_changed": "women-q7 allergies: No -> Yes, women-q7a = Fish only"
+}

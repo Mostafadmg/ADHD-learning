@@ -1,0 +1,13 @@
+{
+ "actions": "probe-men.json",
+ "about": "ONE-CHANGE EXPERIMENT from baseline-men.json: PROBE (no submit): every branch opened",
+ "changed": "PROBE (no submit): every branch opened",
+ "failedStep": null,
+ "submitDisabled": false,
+ "preTextLength": 6317,
+ "stoppedBeforeSubmit": true,
+ "saveReply": [],
+ "productRulesReply": [],
+ "productRulesCalled": 0,
+ "apiCallsAfterLoad": []
+}
