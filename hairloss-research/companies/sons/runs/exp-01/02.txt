@@ -1,0 +1,44 @@
+STEP 02 click "Yes"
+URL: https://sons.co.uk/account/login?return_url=%2Fpages%2Fconsultation-hair
+TITLE: Account – Sons UK
+
+--- VISIBLE TEXT ---
+This website uses cookies to ensure you get the best experience. Learn more | Google's Privacy Terms
+Preferences
+Accept
+Menu
+Account
+Welcome back
+Email address
+Password
+Sign In
+Forgotten your password?
+Help
+Contact Us
+FAQs
+Delivery & Returns
+Refund Policy
+Sons
+About Us
+Testimonials
+Our Blog
+Sons Promise
+Refer a Friend
+Legal Info
+Delivery & Returns
+Terms & Conditions
+Privacy Policy
+Refund Policy
+Make A Complaint
+Legal Guarantee Notice
+Responsible Pharmacist
+
+The Independent Pharmacy is our partner pharmacy and independent prescribing service. ABSM Healthcare Ltd, 14 - 16 Dixon Road, Brislington, Bristol, BS4 5QW. Our medical products have been licensed for sale in the UK and are regulated by the Medicines & Healthcare products Regulatory Agency (MHRA).
+
+--- CONTROLS ---
+  button (3): Preferences  ·  Accept  ·  Sign In
+  input:email (1): Email address
+  input:password (1): Password
+
+--- LINKS ---
+  link (18): Learn more -> /policies/privacy-policy  ·  Google's Privacy Terms -> https://business.safety.google/privacy/  ·  Account -> /pages/account  ·  Forgotten your password? -> #  ·  Contact Us -> /pages/contact-us  ·  FAQs -> /pages/faqs  ·  Delivery & Returns -> /pages/delivery-returns  ·  Refund Policy -> /pages/refund-policy  ·  About Us -> /pages/about  ·  Testimonials -> /pages/testimonials  ·  Our Blog -> /blogs/journal  ·  Sons Promise -> /pages/sons-promise  ·  Refer a Friend -> /pages/refer-a-friend  ·  Terms & Conditions -> /pages/terms-conditions  ·  Privacy Policy -> /pages/sons-privacy-policy  ·  Make A Complaint -> /pages/complaints  ·  Legal Guarantee Notice -> https://cdn.shopify.com/s/files/1/0926/9651/0807/files/EU_warranty_IE.jpg?v=1790872018  ·  Responsible Pharmacist -> https://www.theindependentpharmacy.co.uk/about/meet-the-team

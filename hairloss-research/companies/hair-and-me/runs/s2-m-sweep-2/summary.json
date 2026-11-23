@@ -1,7 +1,7 @@
 {
  "run": "s2-m-sweep-2",
  "flow": "men",
- "changed": "SWEEP (men, 7 non-medical answers changed together): goals 'Improve my hairline, parting or crown' + 'Boost overall hair health' (top goal: Improve my hairline...); gender identity Transwoman/Transgirl; Curly; three styling habits; All over – moderate; timing Unsure; skin Darker shade of pale",
+ "changed": "SWEEP (men, 8 non-medical answers changed together): goals 'Improve my hairline, parting or crown' + 'Boost overall hair health' (top goal: Improve my hairline...); gender identity Transwoman/Transgirl; Curly; three styling habits; All over – moderate; timing Unsure; skin Darker shade of pale",
  "changedStep": null,
  "baselinesPooled": [
   "baseline-men",

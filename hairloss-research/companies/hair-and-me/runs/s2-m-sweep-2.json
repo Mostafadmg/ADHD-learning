@@ -1,5 +1,5 @@
 {
- "_about": "Stage 2 SWEEP s2-m-sweep-2 (men baseline): several low-priority answers changed at once as a group test. SWEEP (men, 7 non-medical answers changed together): goals 'Improve my hairline, parting or crown' + 'Boost overall hair health' (top goal: Improve my hairline...); gender identity Transwoman/Transgirl; Curly; three styling habits; All over – moderate; timing Unsure; skin Darker shade of pale",
+ "_about": "Stage 2 SWEEP s2-m-sweep-2 (men baseline): several low-priority answers changed at once as a group test. SWEEP (men, 8 non-medical answers changed together): goals 'Improve my hairline, parting or crown' + 'Boost overall hair health' (top goal: Improve my hairline...); gender identity Transwoman/Transgirl; Curly; three styling habits; All over – moderate; timing Unsure; skin Darker shade of pale",
  "start": "https://www.hairandme.com/c/suh/new",
  "answers": {
   "tp": [
@@ -163,6 +163,6 @@
    "st"
   ],
   "sweep": true,
-  "desc": "SWEEP (men, 7 non-medical answers changed together): goals 'Improve my hairline, parting or crown' + 'Boost overall hair health' (top goal: Improve my hairline...); gender identity Transwoman/Transgirl; Curly; three styling habits; All over – moderate; timing Unsure; skin Darker shade of pale"
+  "desc": "SWEEP (men, 8 non-medical answers changed together): goals 'Improve my hairline, parting or crown' + 'Boost overall hair health' (top goal: Improve my hairline...); gender identity Transwoman/Transgirl; Curly; three styling habits; All over – moderate; timing Unsure; skin Darker shade of pale"
  }
 }

@@ -116,7 +116,7 @@ SWEEPS = [
    'pds': sex('Male', 'Transwoman/Transgirl'), 'ht': ["Curly"],
    'hs': ["Heatless styling", "Protective styles", "Chemical processing"],
    'htam': ["All over – moderate"], 'htc': ["Unsure"], 'st': tone("Darker shade of pale. It sometimes burns, tans evenly", 41)},
-  "SWEEP (men, 7 non-medical answers changed together): goals 'Improve my hairline, parting or crown' + 'Boost overall hair health' (top goal: Improve my hairline...); gender identity Transwoman/Transgirl; Curly; three styling habits; All over – moderate; timing Unsure; skin Darker shade of pale"),
+  "SWEEP (men, 8 non-medical answers changed together): goals 'Improve my hairline, parting or crown' + 'Boost overall hair health' (top goal: Improve my hairline...); gender identity Transwoman/Transgirl; Curly; three styling habits; All over – moderate; timing Unsure; skin Darker shade of pale"),
  ('s2-m-sweep-3', 'men', {
    'pds': sex('Male', 'Prefer not to say'), 'htam': ["Other/unsure"], 'st': tone("Light brown. It burns minimally, tans easily", 58),
    'sc': ["Oily"], 'di': ["I want the discounted trial"]},

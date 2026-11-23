@@ -195,7 +195,9 @@ for f in D['flows']:
 # ---------------------------------------------------------------- experiments
 EXP = []
 for x in D['experiments']:
-    y = dict(x); y['stage'] = 1; y['type'] = 'one-change' if x['id'] in ('scout-men-none', 'entry-promo-caps-men') else 'multi-change scout'; EXP.append(y)
+    y = dict(x); y['stage'] = 1; y['type'] = 'one-change' if x['id'] in ('scout-men-none', 'entry-promo-caps-men') else 'multi-change scout'
+    if x['id'] in T.S1_NOTE: y['result'] = x['result'] + ' ' + T.S1_NOTE[x['id']]
+    EXP.append(y)
 def result_text(run):
     S = RUN[run]['summary']; v = visible(run); n = S.get('nSteps')
     if run in T.RESULT: return T.RESULT[run]

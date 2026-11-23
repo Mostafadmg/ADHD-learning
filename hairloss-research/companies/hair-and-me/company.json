@@ -973,7 +973,7 @@
      "engineRole": "diagnosis",
      "branches": false,
      "branchDetail": "No change for any option: all seven styling habits were ticked across group tests on both routes (runs/s2-m-sweep-1, runs/s2-m-sweep-2, runs/s2-w-sweep-2, runs/s2-w-sweep-3). Heat, bleach, relaxers or tight protective styles (causes of breakage and traction hair loss) add no question and no advice.",
-     "shownWhen": "not always: seen in 17 of 41 men's and 17 of 17 women's completed walks. The server adds or drops it at random between visits with identical answers.",
+     "shownWhen": "not always: seen in 17 of 41 men's and 17 of 17 women's completed walks. On the men's route the server adds or drops it at random between visits with identical answers; every women's walk had it.",
      "evidence": "observed",
      "siteQuestionId": 253
     },
@@ -3008,7 +3008,7 @@
      "engineRole": "diagnosis",
      "branches": false,
      "branchDetail": "No change for any option: all seven styling habits were ticked across group tests on both routes (runs/s2-m-sweep-1, runs/s2-m-sweep-2, runs/s2-w-sweep-2, runs/s2-w-sweep-3). Heat, bleach, relaxers or tight protective styles (causes of breakage and traction hair loss) add no question and no advice.",
-     "shownWhen": "not always: seen in 17 of 41 men's and 17 of 17 women's completed walks. The server adds or drops it at random between visits with identical answers.",
+     "shownWhen": "not always: seen in 17 of 41 men's and 17 of 17 women's completed walks. On the men's route the server adds or drops it at random between visits with identical answers; every women's walk had it.",
      "evidence": "observed",
      "siteQuestionId": 253
     },
@@ -5346,7 +5346,7 @@
    "id": "scout-neither",
    "flow": "men",
    "changed": "MULTI-CHANGE SCOUT: first tile 'Neither of these are right for me'; gender identity Non-Binary (sex at birth Male)",
-   "result": "No stop; the men's route and the same £34.99 bag.",
+   "result": "No stop; the men's route and the same £34.99 bag. Stage 2 note: this walk also lacked the men's 'You're not alone' screen. Stage 1 put that down to chance; one-change replay runs/s2-m-gender-transwoman showed it is caused by the gender identity answer.",
    "run": "runs/scout-neither",
    "stage": 1,
    "type": "multi-change scout"
@@ -5355,7 +5355,7 @@
    "id": "scout-women-1",
    "flow": "women",
    "changed": "MULTI-CHANGE SCOUT: first tile 'Treatment for men' with sex Female; washes daily; hat + fibres; hard water Yes; eyebrow / sideburn loss; pregnant/breastfeeding/likely to conceive Yes; postpartum + facial hair; PCOS + blood pressure (Often elevated); date of birth 15/06/2010",
-   "result": "Women's route despite the men's tile. New screens: 'Pregnancy safety information', blood-pressure follow-up, and the stop screen 'We're unable to treat you at this time' (age group) after the eligibility screen.",
+   "result": "Women's route despite the men's tile. New screens: 'Pregnancy safety information', blood-pressure follow-up, and the stop screen 'We're unable to treat you at this time' (age group) after the eligibility screen. Stage 2 note: pregnancy alone does not stop the flow (runs/s2-w-pg-yes), so the stop here is the age of 16.",
    "run": "runs/scout-women-1",
    "stage": 1,
    "type": "multi-change scout"
@@ -5843,7 +5843,7 @@
   {
    "id": "s2-m-sweep-2",
    "flow": "men",
-   "changed": "SWEEP (men, 7 non-medical answers changed together): goals 'Improve my hairline, parting or crown' + 'Boost overall hair health' (top goal: Improve my hairline...); gender identity Transwoman/Transgirl; Curly; three styling habits; All over – moderate; timing Unsure; skin Darker shade of pale",
+   "changed": "SWEEP (men, 8 non-medical answers changed together): goals 'Improve my hairline, parting or crown' + 'Boost overall hair health' (top goal: Improve my hairline...); gender identity Transwoman/Transgirl; Curly; three styling habits; All over – moderate; timing Unsure; skin Darker shade of pale",
    "result": "Two differences, each explained by one answer: the extra screen 'Which hair goal do you want to tackle most?' (two goals ticked; shown alone in runs/s2-m-yhg-two) and the men's 'You're not alone' screen skipped (gender identity Transwoman/Transgirl; shown alone in runs/s2-m-gender-transwoman). Nothing else changed and the bag was the same. Walk ended at the account wall after 30 screens; bag unchanged: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping.",
    "run": "runs/s2-m-sweep-2",
    "stage": 2,
@@ -5904,7 +5904,7 @@
    ],
    "default": "svc",
    "evidence": "observed",
-   "note": "Bag: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99 every four weeks, free shipping, promo-code box. No drug, strength or format named. Seen in runs/baseline-men and runs/s2-base-men-1. Behind the wall (inferred from the leaflets and the site's own 'minoxidil + finasteride capsules' messaging): most likely a finasteride 1 mg + minoxidil capsule, or the dutasteride 0.5 mg + minoxidil 1.25 mg capsule; not seen."
+   "note": "Bag: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99 every four weeks, free shipping, promo-code box. No drug, strength or format named. Seen in runs/baseline-men and runs/s2-base-men-1. Behind the wall (inferred from the leaflets, the site's 'minoxidil + finasteride capsules' messaging and its article calling finasteride 'first-line'): most likely a finasteride 1 mg + minoxidil capsule; the dutasteride 0.5 mg + minoxidil 1.25 mg capsule is described as second-line. Not seen."
   },
   {
    "profile": "Baseline woman: 38, widening middle parting for over a year, not pregnant or breastfeeding, no medical issues, prefers The Capsules",
@@ -6002,7 +6002,7 @@
  "weaknesses": [
   "No recommendation before paying: the bag never says which drug, strength or even format the patient will get. Every adult sees the same 'Personalised treatment' line, so 'personalised' is invisible at the moment of purchase.",
   "No safety feedback in the questionnaire: heart disease, phaeochromocytoma, 'often elevated' blood pressure, an active scalp infection, a minoxidil allergy and depression were each ticked alone and none produced a warning, a stop or a changed offer. The person is walked to checkout and the problem is left to the prescriber after payment.",
-  "No triage: patches of complete hair loss, eyebrow and hairline loss (a scarring pattern), sudden recent shedding and 'I don't know what kind of hair loss I have' get no advice, no photo request and no GP signposting, although the company's own blog tells people with patchy or sudden loss to see a medical professional. Even 'no hair loss' reaches a 'Prescription' bag.",
+  "No triage: patches of complete hair loss, eyebrow and hairline loss (a scarring pattern), sudden recent shedding and 'Other/unsure' get no advice, no photo request and no GP signposting, although the company's own blog tells people with patchy or sudden loss to 'speak with a medical professional'. Even 'no hair loss' reaches a 'Prescription' bag.",
   "Question order works against safety: the drops-or-capsules preference is asked before pregnancy, heart, blood-pressure and scalp answers that decide which format is allowed, and is never revisited. A pregnant woman can pick capsules and is not told they are ruled out.",
   "Thin medical history: no question on thyroid disease, anaemia or iron, kidney disease, family history of hair loss, smoking, alcohol or weight; the men's list has no question on fertility plans beyond the consent text; medicines are three tick-boxes plus free text.",
   "Thin women's pathway: one combined pregnancy / breastfeeding / 'likely to conceive' question, nothing on contraception (needed for tretinoin), periods, menopause or HRT, and PCOS gets no follow-up. There is no anti-androgen (spironolactone is listed only as a past treatment).",
@@ -6214,8 +6214,9 @@
   "what": "With identical answers the server serves different screens on different visits. These are site-side experiments, not branches.",
   "stepsThatComeAndGo": {
    "js": "'Where are you in your hair regrowth journey?': seen in 24 of 41 men's and 12 of 17 women's completed walks",
-   "hs": "'How do you usually style or treat your hair?': seen in 17 of 41 men's and 17 of 17 women's completed walks"
+   "hs": "'How do you usually style or treat your hair?': seen in 17 of 41 men's and 17 of 17 women's completed walks (random for men; always shown to women so far)"
   },
+  "notRandom": "The men's 'You're not alone' screen (yna) looked random in stage 1 (missing from one of seven men's walks). Stage 2 showed it follows the optional gender identity answer: shown when that is blank or Man/Boy, skipped otherwise (runs/s2-m-gender-transwoman).",
   "wordingOrControlThatVaries": [
    "pds title ('Your medical history' / 'Understanding your hormones')",
    "st skin tone (six buttons with short or long labels, or a drag slider; two titles)",

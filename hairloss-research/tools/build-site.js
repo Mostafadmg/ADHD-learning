@@ -142,7 +142,9 @@ function report(d, s) {
 }
 
 // ---- main ---------------------------------------------------------------------
-const slugs = fs.readdirSync(CO).filter(s => fs.existsSync(path.join(CO, s, 'company.json')));
+const onlyArg = process.argv.includes('--only') ? process.argv[process.argv.indexOf('--only') + 1].split(',') : null;   // --only a,b,c  limits the site to these companies
+for (const f of fs.readdirSync(OUT)) if (f.endsWith('.json')) fs.unlinkSync(path.join(OUT, f));
+const slugs = fs.readdirSync(CO).filter(s => fs.existsSync(path.join(CO, s, 'company.json')) && (!onlyArg || onlyArg.includes(s)));
 slugs.sort((a, b) => (ORDER.indexOf(a) + 1 || 99) - (ORDER.indexOf(b) + 1 || 99) || a.localeCompare(b));
 const index = [];
 for (const slug of slugs) {
@@ -173,7 +175,8 @@ const DOCS = [
   ['evidence', 'market-economics', 'Market and money', 'foundations/market-economics.md'], ['evidence', 'uk-sweep', 'Other UK sellers', 'market/uk-sweep.md'], ['evidence', 'us-intl-sweep', 'Other sellers worldwide', 'market/us-intl-sweep.md'],
 ];
 const docs = [];
-for (const [kind, id, title, rel] of DOCS) {
+// documents are only included with --docs (use it once they have been fact-checked)
+for (const [kind, id, title, rel] of (process.argv.includes('--docs') ? DOCS : [])) {
   const f = path.join(ROOT, rel); if (!fs.existsSync(f)) continue;
   const markdown = fs.readFileSync(f, 'utf8'); if (markdown.trim().length < 200) continue;
   fs.writeFileSync(path.join(OUT, `doc-${id}.json`), JSON.stringify({ id, title, markdown }));

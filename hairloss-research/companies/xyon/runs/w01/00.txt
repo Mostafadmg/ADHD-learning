@@ -1,0 +1,23 @@
+STEP 00 start (HTTP 200)
+URL: https://consultation.xyonhealth.com/en-US/hair-treatment-rx/welcome
+TITLE: XYON | Hair Treatment Rx - Welcome
+
+--- VISIBLE TEXT ---
+The only hair health company founded by doctors — renowned specialists in hair restoration — with a focus on performance and side effect reduction
+01
+Start by determining eligibility
+02
+Create a secure account
+03
+Provide your medical history
+04
+Treatment and billing information
+05
+Confirm your identity with a photo ID
+Start Questionnaire
+
+--- CONTROLS ---
+  button (1): Start Questionnaire
+
+--- LINKS ---
+  link (1): Sign In -> /en-US/login
