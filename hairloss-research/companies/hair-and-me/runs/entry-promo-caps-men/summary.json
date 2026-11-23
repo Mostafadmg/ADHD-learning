@@ -1,0 +1,171 @@
+{
+ "run": "entry-promo-caps-men",
+ "flow": "men",
+ "changed": null,
+ "changedStep": null,
+ "baselinesPooled": [
+  "baseline-men",
+  "s2-base-men-1"
+ ],
+ "stepOrder": [
+  "tp",
+  "yhg",
+  "js",
+  "pds",
+  "pdsc",
+  "mi",
+  "ht",
+  "ls",
+  "htp",
+  "htam",
+  "htc",
+  "ar",
+  "st",
+  "sc",
+  "scc",
+  "smt",
+  "pt",
+  "tt",
+  "pp",
+  "mdm",
+  "mcm",
+  "al",
+  "rhf",
+  "yna",
+  "rha",
+  "di",
+  "rj",
+  "el",
+  "ct",
+  "yd"
+ ],
+ "nSteps": 30,
+ "end": "account wall (yd)",
+ "newSteps": [],
+ "missingSteps": [],
+ "candidateEffects": [
+  {
+   "step": "ct",
+   "key": "q180025.config",
+   "exp": "{\"clearSuccessMessageOnError\": true, , \"dividerAbove\": true, \"hidePromoMessage\": true, \"icon\": \"check-circle\", \"placeholder\": \"Promo code\", \"promotionCode\": {\"code\": \"HGSHOPCAPS\", \"cta\": \"First three months £14.99 each, then £34.99 ongoing. Cancel anytime. Treatment subject to dermatological assessment.\", \"id\": \"1b511918-39c7-428e-92c4-aaee62af7b62\", \"message\": \"Your first three months of treatment for £14.99 each.\"}, \"renderConditions\": []}",
+   "baseline": "{\"clearSuccessMessageOnError\": true, , \"dividerAbove\": true, \"hidePromoMessage\": true, \"icon\": \"check-circle\", \"placeholder\": \"Promo code\", \"promotionCode\": {\"code\": \"\", \"cta\": \"\", \"id\": \"\", \"message\": \"\"}, \"renderConditions\": []}",
+   "alsoIn": [],
+   "alsoInRelated": [],
+   "where": "changed-step"
+  },
+  {
+   "step": "ct",
+   "key": "q180026.config",
+   "exp": "{\"shipping\": {\"amount\": 0, \"currency\": \"GBP\", \"label\": \"Shipping\"}, \"subtotal\": {\"amount\": 1499, \"currency\": \"GBP\", \"label\": \"Subtotal\", \"originalAmount\": 3499}, \"total\": {\"amount\": 1499, \"currency\": \"GBP\", \"label\": \"Total to pay\"}}",
+   "baseline": "{\"shipping\": {\"amount\": 0, \"currency\": \"GBP\", \"label\": \"Shipping\"}, \"subtotal\": {\"amount\": 3499, \"currency\": \"GBP\", \"label\": \"Subtotal\", \"originalAmount\": null}, \"total\": {\"amount\": 3499, \"currency\": \"GBP\", \"label\": \"Total to pay\"}}",
+   "alsoIn": [],
+   "alsoInRelated": [],
+   "where": "changed-step"
+  },
+  {
+   "step": "ct",
+   "key": "q180037.config",
+   "exp": "{\"items\": [{\"code\": \"hairTreatment\", \"subtotal\": {\"amount\": 1499, \"currency\": \"GBP\", \"label\": \"Subtotal\", \"originalAmount\": 3499}, \"treatment\": {\"description\": \"4 week supply · 12ml\", \"name\": \"Personalised treatment\", \"pill\": \"Prescription\"}}], \"shippingEligibilityMessage\": \"Your order qualifies for complimentary standard shipping.\", \"subtotal\": {\"amount\": 1499, \"currency\": \"GBP\", \"label\": \"Subtotal\", \"originalAmount\": 3499}, \"treatment\": {\"description\": \"4 week supply · 12ml\", \"name\": \"Personalised treatment\", \"pill\": \"Prescription\"}}",
+   "baseline": "{\"items\": [{\"code\": \"hairTreatment\", \"subtotal\": {\"amount\": 3499, \"currency\": \"GBP\", \"label\": \"Subtotal\", \"originalAmount\": null}, \"treatment\": {\"description\": \"4 week supply · 12ml\", \"name\": \"Personalised treatment\", \"pill\": \"Prescription\"}}], \"shippingEligibilityMessage\": \"Your order qualifies for complimentary standard shipping.\", \"subtotal\": {\"amount\": 3499, \"currency\": \"GBP\", \"label\": \"Subtotal\", \"originalAmount\": null}, \"treatment\": {\"description\": \"4 week supply · 12ml\", \"name\": \"Personalised treatment\", \"pill\": \"Prescription\"}}",
+   "alsoIn": [],
+   "alsoInRelated": [],
+   "where": "changed-step"
+  }
+ ],
+ "noise": [
+  {
+   "step": "st",
+   "key": "q9346.options",
+   "where": "before-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-17",
+    "s2-m-age-18"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9346.type",
+   "where": "before-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-17",
+    "s2-m-age-18"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9348.options",
+   "where": "before-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-17",
+    "s2-m-age-18"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9348.type",
+   "where": "before-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-17",
+    "s2-m-age-18"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9349.config",
+   "where": "before-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-17",
+    "s2-m-age-18"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9349.type",
+   "where": "before-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-17",
+    "s2-m-age-18"
+   ]
+  },
+  {
+   "step": "ct",
+   "key": "title",
+   "where": "changed-step",
+   "alsoIn": [
+    "baseline-women",
+    "s2-m-age-18",
+    "s2-m-age-85"
+   ]
+  }
+ ],
+ "bag": {
+  "items": [
+   [
+    "hairTreatment",
+    "Personalised treatment",
+    "4 week supply · 12ml",
+    "Prescription",
+    1499,
+    3499
+   ]
+  ],
+  "shipping": 0,
+  "total": 1499,
+  "promo": "HGSHOPCAPS",
+  "shippingMsg": "Your order qualifies for complimentary standard shipping."
+ },
+ "bagItemsSameAsBaseline": false,
+ "posted": {
+  "ct": []
+ },
+ "nextAfterChange": {
+  "ct": "yd"
+ },
+ "sweep": false
+}

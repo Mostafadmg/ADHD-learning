@@ -1,0 +1,4 @@
+{ "start": "https://www.hairandme.com/consultations/sign-up-hair/new", "steps": [
+ {"do":"wait","ms":2500},
+ {"do":"goto","url":"https://www.hairandme.com/HAIR_SIGNUP_URL"}, {"do":"wait","ms":2500}
+] }

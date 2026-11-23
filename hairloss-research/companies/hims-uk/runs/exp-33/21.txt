@@ -1,0 +1,58 @@
+STEP 21 click "How do I get them? →"
+URL: https://app.forhims.co.uk/flow/a9a88e4a-89b9-47ae-8138-3a1acaa41594?t=hair&anon_flow_key=hair
+TITLE: Hims
+
+--- VISIBLE TEXT ---
+See what others are saying about their treatments.
+Month 0
+Month 9
+
+“I began to see progress in less than 3 months. My brother saw my progress and has begun using it!”
+
+Andrew N.
+
+Verified review
+Month 0
+Month 5
+
+“I noticed my hair getting thicker in places that was thin and it had more body. I have my confidence back.”
+
+Kenton G.
+
+Verified review
+Month 0
+Month 5
+
+“It has made me more confident and I am proud to show other people about it.”
+
+David D.
+
+Verified review
+Month 0
+Month 5
+
+“I’ve had thinning at the crown for many years. Now it’s definitely filling in. I love that!”
+
+Steve R.
+
+Verified review
+Month 0
+Month 5
+
+“Between month 4-5 the progress blew me away! I went back to my barber and he couldn’t believe it.”
+
+Kevin C.
+
+Verified review
+
+Before/after images shared by customers who have purchased varying products. These customers’ results have not been independently verified. Individual results will vary.
+
+Next →
+←
+
+--- CONTROLS ---
+  tab (3): Slide 1 [true]  ·  Slide 2 [false]  ·  Slide 3 [false]
+  button (3): Next →  ·  ←  ·  Your answers
+
+--- LINKS ---
+  link (1): Navigate home -> /profile

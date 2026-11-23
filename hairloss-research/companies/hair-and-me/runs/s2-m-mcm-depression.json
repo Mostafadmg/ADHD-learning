@@ -1,0 +1,149 @@
+{
+ "_about": "Stage 2 one-change experiment s2-m-mcm-depression (men baseline). Change: men-mcm: None of the above → Current or history of depression, anxiety or mental health concerns",
+ "start": "https://www.hairandme.com/c/suh/new",
+ "answers": {
+  "tp": [
+   "Treatment for men"
+  ],
+  "yhg": [
+   "Prevent, stop or reverse hair loss",
+   "Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us."
+  ],
+  "js": [
+   "Ready to start treatment"
+  ],
+  "pds": [
+   {
+    "select": "select[name='3039']",
+    "value": {
+     "label": "Male"
+    }
+   }
+  ],
+  "pdsc": [
+   "I confirm the above selection is accurate and true."
+  ],
+  "mi": [],
+  "ht": [
+   "Straight"
+  ],
+  "hs": [
+   "None of the above"
+  ],
+  "ls": [
+   "None of these apply to me"
+  ],
+  "htp": [
+   "None of the above"
+  ],
+  "htam": [
+   "Across the hairline"
+  ],
+  "htc": [
+   "Over a year ago"
+  ],
+  "ar": [],
+  "st": {
+   "byQuestion": {
+    "9346": [
+     "Fair. It often burns, but tans a little"
+    ],
+    "9348": [
+     {
+      "range": "input[type=range]",
+      "value": 25
+     }
+    ]
+   }
+  },
+  "sc": [
+   "Normal"
+  ],
+  "scc": [
+   "None of the above"
+  ],
+  "smt": [
+   "Fuller, denser-looking hair that I feel confident about"
+  ],
+  "pt": [
+   "No"
+  ],
+  "tt": [
+   "The Capsules"
+  ],
+  "pp": [
+   "I agree to the information above and wish to be considered for dutasteride or finasteride. I agree to read the Patient Information Leaflet"
+  ],
+  "mdm": [
+   "No, I don't take any medications"
+  ],
+  "mcm": [
+   "Current or history of depression, anxiety or mental health concerns"
+  ],
+  "al": [
+   "No known allergies"
+  ],
+  "rhf": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "yna": [],
+  "rha": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "di": [
+   "I'm looking for a long-term effective haircare treatment"
+  ],
+  "rj": [],
+  "el": {
+   "byType": {
+    "date_masked": [
+     {
+      "type": "input[name=\"3053\"]",
+      "value": "15061994"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ],
+    "date_split": [
+     {
+      "fill": "Day",
+      "value": "15"
+     },
+     {
+      "fill": "Month",
+      "value": "06"
+     },
+     {
+      "fill": "Year",
+      "value": "1994"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ]
+   }
+  },
+  "ct": [],
+  "hgp": [
+   "Prevent, stop or reverse hair loss"
+  ],
+  "bp": [
+   "Well-controlled"
+  ],
+  "pgc": [
+   "Yes, I've read and understood the information and would like to carry on."
+  ]
+ },
+ "_changed": {
+  "flow": "men",
+  "step": "mcm",
+  "desc": "men-mcm: None of the above → Current or history of depression, anxiety or mental health concerns"
+ }
+}

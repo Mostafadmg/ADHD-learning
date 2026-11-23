@@ -1,0 +1,24 @@
+STEP 13 ar
+URL: https://www.hairandme.com/c/suh/ar
+
+--- VISIBLE TEXT ---
+Here’s what we know...
+
+Your hair goal
+
+I want to prevent, stop or reverse hair loss
+
+Your hair type
+
+Straight
+
+Your hair thinning
+
+I've lost hair from my eyebrows, sideburns and hairline
+
+Reviewing answers...
+11%
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre

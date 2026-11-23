@@ -1,0 +1,483 @@
+# -*- coding: utf-8 -*-
+"""s2_text.py — hand-written annotations for stage 2 (EXPERIMENT) of the Hair + Me report.
+Imported by s2_apply.py. Every claim here carries its evidence label:
+  observed = seen in a replay (run folder named) · code = read in the step JSON the site served
+  docs = the company's own public leaflet / FAQ / terms / blog · inferred = reasoning, never a fact.
+"""
+SUP = 'https://www.hairandme.com/support/en/articles/'
+PIL_ORAL = SUP + '254164-hair-me-patient-information-leaflet-oral-treatments'
+PIL_TOP = SUP + '254578-hair-me-patient-information-leaflet-topical-treatments'
+PIL_PREG = SUP + '258568-hair-me-patient-information-leaflet-topical-treatments-healthy-hair-pregnancy-safe-formulations'
+FAQ_PREG = SUP + '254008-can-i-use-hair-me-if-i-am-pregnant-breastfeeding-or-trying-to-conceive'
+FAQ_PHOTOS = SUP + '273174-do-i-need-to-submit-photos-when-signing-up-to-hair-me'
+FAQ_TOGETHER = SUP + '681735-can-i-use-capsules-and-drops-together'
+FAQ_SIDE = SUP + '669809-finasteride-and-dutasteride-what-are-the-side-effects'
+TERMS_SERVICES = SUP + '254530-the-hair-me-services'
+TERMS_SUPPLY = SUP + '254504-supply-of-medical-products'
+TERMS_PAY = SUP + '254543-payments'
+BLOG_AA = SUP + '474468-alopecia-areata-symptoms-triggers-treatment-options'
+BLOG_PCOS = SUP + '474664-pcos-and-hair-loss-why-it-happens-and-what-you-can-do'
+BLOG_ORALTOP = SUP + '742686-oral-versus-topical-minoxidil-what-you-need-to-know'
+BLOG_INGR = SUP + '711950-what-actually-treats-hair-loss-the-evidence-based-ingredients-explained'
+TRUSTPILOT = 'https://uk.trustpilot.com/review/hairandme.com'
+
+CAPS = ['cap-min05', 'cap-min125', 'cap-min25-b6', 'cap-fin1-min25', 'cap-fin1-min5', 'cap-dut05-min125']
+MIN_CAPS = ['cap-min05', 'cap-min125', 'cap-min25-b6']
+MED_DROPS = ['drp-min5-od', 'drp-min5-bd', 'drp-min5-fin01', 'drp-min5-tret', 'drp-min5-tret-fin01', 'drp-fin02']
+NIA = ['drp-nia5-urea2', 'drp-nia5-urea2-mel01', 'drp-nia5', 'drp-nia5-mel01']
+DROPS = MED_DROPS + NIA
+FIN_DUT = ['cap-fin1-min25', 'cap-fin1-min5', 'cap-dut05-min125', 'drp-min5-fin01', 'drp-min5-tret-fin01', 'drp-fin02']
+FIN_DUT_CAPS = ['cap-fin1-min25', 'cap-fin1-min5', 'cap-dut05-min125']
+MINOX = CAPS + ['drp-min5-od', 'drp-min5-bd', 'drp-min5-fin01', 'drp-min5-tret', 'drp-min5-tret-fin01']
+TRET = ['drp-min5-tret', 'drp-min5-tret-fin01']
+MEL = ['drp-nia5-urea2-mel01', 'drp-nia5-mel01']
+UREA = ['drp-nia5-urea2', 'drp-nia5-urea2-mel01']
+PREG_SAFE = ['drp-nia5-urea2', 'drp-nia5']
+NOT_PREG = [p for p in CAPS + DROPS if p not in PREG_SAFE]
+
+STEPNAME = {
+ 'tp': 'the first tile screen', 'yhg': "'What are your hair goals?'", 'hgp': "'Which hair goal do you want to tackle most?'", 'js': "'Where are you in your hair regrowth journey?'",
+ 'pds': 'the sex-at-birth screen', 'pdsc': 'the sex confirmation', 'mi': "'Ingredients that see results'", 'ht': 'hair type', 'hs': 'styling habits', 'ls': 'lifestyle statements',
+ 'htp': 'previous products', 'htam': "the men's hair-loss pictures", 'htaf': "the women's hair-loss pictures", 'htc': "'When did you notice changes to your hair?'", 'ar': "'Here's what we know...'",
+ 'st': 'skin tone', 'sc': 'scalp condition', 'scc': 'scalp symptoms', 'smt': 'the six-month wish', 'pt': 'pets', 'tt': "'Which treatment would suit you best?'", 'pp': 'the dutasteride / finasteride acknowledgement',
+ 'mdm': "the men's medicines list", 'mcm': "the men's conditions list", 'mdf': "the women's medicines list", 'mcf': "the women's conditions list",
+ 'bp': "'How would you describe your blood pressure over the past 12 months?'", 'al': 'allergies', 'rhf': 'the feelings score', 'yna': "the men's 'You're not alone' screen", 'rha': 'the appearance score',
+ 'di': "'What most influenced your decision to sign-up today?'", 'rj': "'Your hair journey starts here'", 'el': 'the eligibility screen (date of birth + UK tick)', 'utt': "the stop screen 'We're unable to treat you at this time'",
+ 'ct': 'the shopping bag', 'yd': 'the account wall (legal name)', 'pg': 'the pregnancy question', 'pgc': "'Pregnancy safety information'", 'mp': 'postpartum / facial hair', 'dt': "'Our Dermatology Team have a few more questions'",
+ 'hw': 'wash frequency', 'hht': 'hiding hair loss', 'hdw': 'hard water'}
+
+# what a visitor could SEE change, in plain words, for runs where the automatic comparison cannot say it well
+VISTEXT = {
+ 's2-m-age-17': "hard stop after the eligibility screen: 'We're unable to treat you at this time... we're unable to treat your age group.' No bag is shown",
+ 's2-w-pg-yes': "one extra screen, 'Pregnancy safety information' (\"We can prescribe you a treatment that's considered safe during this time...\" with a link to the pregnancy FAQ and a must-tick box). Nothing else changed: same later questions and the same £34.99 bag marked 'Prescription'",
+ 's2-m-mcm-bp': "one extra screen, 'How would you describe your blood pressure over the past 12 months?' (Well-controlled / Often elevated / Often low, plus an optional last reading). Answered 'Well-controlled': same later questions and the same £34.99 bag",
+ 's2-m-mcm-bp-elevated': "nothing beyond the follow-up screen itself: 'Often elevated' gave no warning and no stop; same later questions and the same £34.99 bag",
+ 's2-m-pt-yes': "a minoxidil pet-toxicity warning appears on the same screen, and on the next screen The Capsules carries a second badge, 'Better for pet owners'. Same later questions and the same £34.99 bag",
+ 's2-m-htp-fintabs': "a must-tick box appears on the same screen (\"...you need to stop using them when you start your Hair + Me treatment.\" / 'Yes, I understand this.'). Same later questions and the same £34.99 bag",
+ 's2-m-mdm-other': "a required free-text box ('Tell us about your other medications') opens on the same screen. Same later questions and the same £34.99 bag",
+ 's2-m-al-other': "a required free-text box ('Tell us about your other allergies') opens on the same screen. Same later questions and the same £34.99 bag",
+ 's2-m-yhg-two': "one extra screen, 'Which hair goal do you want to tackle most?', listing only the two goals ticked. Same later questions and the same £34.99 bag",
+ 'scout-men-none': "'When did you notice changes to your hair?' is skipped. Same later questions and the same £34.99 bag",
+}
+SWEEP_NOTE = {}
+VIS_TYPE = {
+ ('pt', 'Yes'): 'soft-warning', ('pg', 'No'): 'soft-warning',
+ ('htam', 'None'): 'skip-questions', ('htaf', 'I have no hair loss or thinning'): 'skip-questions',
+}
+AFFECTS = {}
+
+GENERIC_STORED = "The answer is stored for the prescriber; what it does to the final formula cannot be seen without an account."
+SCALP = ("Docs (both topical leaflets): do not use the drops on inflamed, infected, irritated or painful scalp skin; minoxidil, finasteride and tretinoin drops are also ruled out with scalp psoriasis or eczema. "
+         "So the prescriber is expected to avoid drops (capsules instead, or a delay) after sign-up; the questionnaire itself says nothing.")
+RULEOUT = ' So the prescriber is expected to rule those formulas out after sign-up; the questionnaire itself gives no warning.'
+def allergy(name, extra=''): return (f"Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing {name} should be ruled out by the prescriber.{extra} The questionnaire itself gives no warning.", 'flag-for-clinician')
+PREV = ("The screen's own words: \"It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.\" "
+        "So the answer tells the prescriber what the patient already tolerates and makes the patient agree to stop it. It is not a filter: nothing is removed or added before the wall.")
+
+# (step, label prefix) -> (docs / inferred sentence, effectType, affected products, evidence for the classification)
+DOC = {
+ ('htam', 'One or more patches'): ("Patchy loss is not one of the leaflet indications (pattern hair loss, generalised thinning), and Hair + Me's own blog says \"If you're experiencing patchy or sudden hair loss, speak with a medical professional\". The questionnaire shows no such advice. A prescriber would be expected to query it after sign-up, perhaps by asking for photos (inferred).", 'flag-for-clinician', [], 'inferred'),
+ ('htaf', 'One or more patches'): ("Patchy loss is not one of the leaflet indications (pattern hair loss, generalised thinning), and Hair + Me's own blog says \"If you're experiencing patchy or sudden hair loss, speak with a medical professional\". The questionnaire shows no such advice. A prescriber would be expected to query it after sign-up, perhaps by asking for photos (inferred).", 'flag-for-clinician', [], 'inferred'),
+ ('htam', 'Complete hair loss'): ("The oral leaflet says finasteride helps men with 'mild to moderate, but not complete hair loss', so a prescriber would be expected to query it (inferred).", 'flag-for-clinician', [], 'inferred'),
+ ('htaf', "I've lost hair from my eyebrows"): ("Losing eyebrows, sideburns and hairline together fits a scarring pattern (frontal fibrosing alopecia) rather than pattern hair loss. The questionnaire shows no advice; a prescriber would be expected to query it (inferred).", 'flag-for-clinician', [], 'inferred'),
+ ('scc', 'Redness and crusting'): (SCALP, 'flag-for-clinician', DROPS, 'docs'),
+ ('scc', 'Highly sensitive'): (SCALP, 'flag-for-clinician', DROPS, 'docs'),
+ ('scc', 'Diagnosed eczema'): (SCALP, 'flag-for-clinician', DROPS, 'docs'),
+ ('scc', 'Pustules'): (SCALP, 'flag-for-clinician', DROPS, 'docs'),
+ ('scc', 'A diagnosed active infection'): (SCALP, 'flag-for-clinician', DROPS, 'docs'),
+ ('scc', 'Pain and/or burning'): (SCALP, 'flag-for-clinician', DROPS, 'docs'),
+ ('pt', 'Yes'): ("The warning reads: \"Some of our treatments contain minoxidil, which is toxic to cats and dogs. The main risk is them licking it off fingers/hair after use.\" and \"Capsules are less likely to have a risk...\". It nudges pet owners towards capsules; nothing is removed.", 'soft-warning', CAPS, 'observed'),
+ ('tt', 'The Drops'): ("A preference, not a choice. The screen says: \"We'll do our best to accommodate your preference, but ultimately, this will be determined by our Dermatology Team.\" The bag does not react: it reads '4 week supply · 12ml' for drops and capsule choosers alike.", 'product-switched', DROPS, 'docs'),
+ ('tt', 'The Capsules'): ("A preference, not a choice (badged 'Most popular'). The screen says: \"We'll do our best to accommodate your preference, but ultimately, this will be determined by our Dermatology Team.\" The bag reads '4 week supply · 12ml' even for capsule choosers.", 'product-switched', CAPS, 'docs'),
+ ('pp', 'I agree'): ("Keeps the finasteride and dutasteride formulas in play and records informed consent to their risks (fertility, semen exposure, mood, sexual function, breast changes, persistent effects).", 'none', FIN_DUT, 'observed'),
+ ('pp', 'I do not wish'): ("By its own wording this takes finasteride and dutasteride out of consideration, leaving minoxidil-only capsules or drops (or the niacinamide drops). The later prostate, sexual-function and mental-health options are still shown. Which formula is then chosen cannot be seen without an account.", 'product-removed', FIN_DUT, 'docs'),
+ ('pg', 'Yes'): ("Not turned away. The extra screen says \"We can prescribe you a treatment that's considered safe during this time\". Docs (pregnancy FAQ): no oral treatment, and never minoxidil, melatonin, tretinoin, finasteride or dutasteride, so only the niacinamide drops (with or without urea) remain. The format question comes before this one, so someone who picked The Capsules is not told capsules are now off the table.", 'product-removed', NOT_PREG, 'docs'),
+ ('mp', 'I have unwanted hair on my face'): ("Docs: the oral leaflet lists unwanted facial hair as a very common effect of oral minoxidil, and the PCOS blog says the drops keep growth 'only on the scalp'. So this may steer the prescriber towards drops or a lower capsule dose (inferred).", 'flag-for-clinician', MIN_CAPS, 'inferred'),
+ ('mcm', 'Pheochromocytoma'): ("Docs (oral leaflet): minoxidil capsules are contraindicated with phaeochromocytoma (the topical leaflet does not mention it)." + RULEOUT, 'flag-for-clinician', CAPS, 'docs'),
+ ('mcf', 'Pheochromocytoma'): ("Docs (oral leaflet): minoxidil capsules are contraindicated with phaeochromocytoma (the topical leaflet does not mention it)." + RULEOUT, 'flag-for-clinician', MIN_CAPS, 'docs'),
+ ('mcm', 'High blood pressure'): ("Docs (oral leaflet): no minoxidil capsules with uncontrolled high blood pressure; that is why the follow-up asks how well controlled it is.", 'extra-questions', CAPS, 'observed'),
+ ('mcf', 'High blood pressure'): ("Docs (oral leaflet): no minoxidil capsules with uncontrolled high blood pressure; that is why the follow-up asks how well controlled it is.", 'extra-questions', MIN_CAPS, 'observed'),
+ ('mcm', 'Any heart or cardiovascular'): ("Docs (oral leaflet): avoid minoxidil capsules with angina, a recent heart attack, heart failure or a history of significant heart disease." + RULEOUT, 'flag-for-clinician', CAPS, 'docs'),
+ ('mcf', 'Any heart or cardiovascular'): ("Docs (oral leaflet): avoid minoxidil capsules with angina, a recent heart attack, heart failure or a history of significant heart disease." + RULEOUT, 'flag-for-clinician', MIN_CAPS, 'docs'),
+ ('mcm', 'Undergoing prostate-specific antigen'): ("Docs: the oral leaflet says do not take finasteride or dutasteride; the topical leaflet says no finasteride drops with a personal history of prostate disease or testicular cancer." + RULEOUT, 'flag-for-clinician', FIN_DUT, 'docs'),
+ ('mcm', 'Benign prostatic hyperplasia'): ("Docs: the oral leaflet says do not take finasteride or dutasteride; the topical leaflet says no finasteride drops with a personal history of prostate disease." + RULEOUT, 'flag-for-clinician', FIN_DUT, 'docs'),
+ ('mcm', 'Sexual dysfunction'): ("Docs (oral leaflet): do not take finasteride or dutasteride capsules. The topical leaflet only warns about it, and the side-effects FAQ says topical finasteride 'may be considered... if suitable' for lower absorption." + RULEOUT, 'flag-for-clinician', FIN_DUT_CAPS, 'docs'),
+ ('mcm', 'Current or history of depression'): ("Docs (oral leaflet): do not take finasteride or dutasteride capsules with current or past depression, anxiety or mental health concerns. The topical leaflet only warns about mood changes." + RULEOUT, 'flag-for-clinician', FIN_DUT_CAPS, 'docs'),
+ ('mcm', 'Personal or family history of male breast cancer'): ("Docs: the oral leaflet says do not take finasteride or dutasteride; the topical leaflet rules out finasteride drops too." + RULEOUT, 'flag-for-clinician', FIN_DUT, 'docs'),
+ ('mcm', 'Hypertrichosis'): ("Docs (oral leaflet): extra body and facial hair is a very common effect of oral minoxidil, so capsules look a poor fit (inferred).", 'flag-for-clinician', CAPS, 'inferred'),
+ ('mcf', 'Hypertrichosis'): ("Docs (oral leaflet): extra body and facial hair is a very common effect of oral minoxidil, so capsules look a poor fit (inferred).", 'flag-for-clinician', MIN_CAPS, 'inferred'),
+ ('mcm', 'PoTS'): ("Docs (oral leaflet): oral minoxidil very commonly raises heart rate, so capsules look a poor fit (inferred).", 'flag-for-clinician', CAPS, 'inferred'),
+ ('mcf', 'PoTS'): ("Docs (oral leaflet): oral minoxidil very commonly raises heart rate, so capsules look a poor fit (inferred).", 'flag-for-clinician', MIN_CAPS, 'inferred'),
+ ('mcm', 'Liver disease'): ("Docs (oral leaflet): no dutasteride with liver disease, and no minoxidil capsules with severe liver disease." + RULEOUT, 'flag-for-clinician', ['cap-dut05-min125'] + [c for c in CAPS if c != 'cap-dut05-min125'], 'docs'),
+ ('bp', 'Often elevated'): ("Docs (oral leaflet): do not take minoxidil capsules with uncontrolled hypertension, so the prescriber is expected to avoid capsules. The questionnaire gives no warning and does not require the reading.", 'flag-for-clinician', CAPS, 'docs'),
+ ('bp', 'Often low'): ("Docs (oral leaflet): minoxidil may cause dizziness or low blood pressure, so this should steer the prescriber away from capsules (inferred).", 'flag-for-clinician', CAPS, 'inferred'),
+ ('mdm', 'Antidepressants'): ("Docs (oral leaflet): do not take finasteride or dutasteride with current or past depression, anxiety or mental health concerns, and nefazodone interacts with dutasteride. Taking these medicines implies such a history, so the prescriber is expected to avoid those capsules (inferred). The questionnaire gives no warning.", 'flag-for-clinician', FIN_DUT_CAPS, 'inferred'),
+ ('mdm', 'Medication to treat benign prostate'): ("Docs (leaflets): finasteride and dutasteride must not be used with finasteride 5 mg or any other 5-alpha-reductase inhibitor, or by men with BPH; alpha-blockers also interact with dutasteride." + RULEOUT, 'flag-for-clinician', FIN_DUT, 'docs'),
+ ('mdm', 'Steroids or other medications'): ("Docs (topical leaflets): the drops should not be applied with an inflammatory scalp condition such as psoriasis or eczema, so this points towards capsules or a delay (inferred).", 'flag-for-clinician', DROPS, 'inferred'),
+ ('mdf', 'Steroids or other medications'): ("Docs (topical leaflets): the drops should not be applied with an inflammatory scalp condition such as psoriasis or eczema, so this points towards capsules or a delay (inferred).", 'flag-for-clinician', DROPS, 'inferred'),
+ ('al', 'Minoxidil'): allergy('minoxidil', ' That leaves finasteride 0.2% drops (men) or the niacinamide drops.') + (MINOX, 'docs'),
+ ('al', 'Finasteride'): allergy('finasteride') + ([p for p in FIN_DUT if 'fin' in p], 'docs'),
+ ('al', 'Dutasteride'): allergy('dutasteride') + (['cap-dut05-min125'], 'docs'),
+ ('al', 'Melatonin'): allergy('melatonin') + (MEL, 'docs'),
+ ('al', 'Urea'): allergy('urea') + (UREA, 'docs'),
+ ('al', 'Niacinamide'): allergy('niacinamide') + (NIA, 'docs'),
+ ('al', 'Tretinoin'): allergy('tretinoin') + (TRET, 'docs'),
+ ('al', 'Vitamin B6'): allergy('vitamin B6') + (['cap-min25-b6'], 'docs'),
+ ('htp', 'Minoxidil tablets'): (PREV, 'soft-warning', [], 'observed'), ('htp', 'Finasteride tablets'): (PREV, 'soft-warning', [], 'observed'),
+ ('htp', 'Spironolactone tablets'): (PREV + " Spironolactone is only ever a 'previously used' option: Hair + Me does not supply it.", 'soft-warning', [], 'observed'),
+ ('htp', 'Minoxidil spray'): (PREV, 'soft-warning', [], 'observed'), ('htp', 'Finasteride spray'): (PREV, 'soft-warning', [], 'observed'), ('htp', 'Dutasteride capsules'): (PREV, 'soft-warning', [], 'observed'),
+ ('mdm', 'Other'): ("Code + replay: 'Other' reveals a required free-text box on the same screen, 'Tell us about your other medications' (1,000 characters). Free text is read by the prescriber, not by the questionnaire.", 'extra-questions', [], 'observed'),
+ ('mdf', 'Other'): ("Code + replay: 'Other' reveals a required free-text box on the same screen, 'Tell us about your other medications' (1,000 characters). Free text is read by the prescriber, not by the questionnaire.", 'extra-questions', [], 'observed'),
+ ('al', 'Other'): ("Code + replay: 'Other' reveals a required free-text box on the same screen, 'Tell us about your other allergies' (1,000 characters).", 'extra-questions', [], 'observed'),
+}
+# extra sentence for options with no leaflet rule
+NOTE = {
+ ('tp', 'Treatment for men'): "The tile does not pick the route: sex assigned at birth does.",
+ ('tp', 'Treatment for women'): "The tile does not pick the route: with sex at birth Male the men's questions follow (runs/s2-m-tile-women), with Female the women's.",
+ ('tp', 'Neither of these are right for me'): "No stop screen: the consultation carries on, and sex at birth then sets the route.",
+ ('htam', 'At the crown'): GENERIC_STORED, ('htam', 'At the temples'): GENERIC_STORED, ('htam', 'Across the hairline'): GENERIC_STORED, ('htam', 'All over – moderate'): GENERIC_STORED,
+ ('htam', 'All over – extensive'): "No advice or extra question for extensive loss. The site says dutasteride 'may be considered... for resistant or more advanced cases' (ingredients blog), so severity may push the prescriber towards it (inferred).",
+ ('htam', 'Other/unsure'): "No extra question and no request for photos before the wall, although the pattern is unknown.",
+ ('htaf', "I've noticed thinning and volume loss all over"): "Diffuse thinning is a leaflet indication ('generalised hair thinning'). No question about iron, thyroid, diet or recent illness follows.",
+ ('htaf', "I don't know what kind of hair loss I have"): "No extra question and no request for photos before the wall, although the pattern is unknown.",
+ ('htc', 'Recently, in the past few weeks'): "Sudden recent shedding points away from pattern hair loss, and the company blog tells people with sudden loss to 'speak with a medical professional'. The questionnaire shows no advice and asks nothing more.",
+ ('mcf', 'Polyendocrine Metabolic Ovarian Syndrome'): "No follow-up question. Docs (PCOS blog): 'We use the clinically proven ingredient minoxidil in a topical format (The Drops)' so growth stays 'only on the scalp'. The formulary has no anti-androgen for women (spironolactone is not supplied), so PCOS can only tilt the choice towards drops (inferred).",
+ ('mp', "I'm postpartum"): "No follow-up question (breastfeeding is covered by the previous screen). Postpartum shedding usually settles without treatment; the questionnaire does not say so.",
+ ('bp', 'Well-controlled'): "Controlled blood pressure is not a leaflet contraindication, so capsules stay possible (inferred).",
+ ('di', 'I want the discounted trial'): "Marketing attribution only: the bag, price and promo text do not change.",
+ ('js', 'Still exploring my options'): "Buying-intent signal only.",
+}
+
+# options whose whole entry is written by hand: (question id suffix, label) -> (effect, effectType, affects, evidence)
+_GOAL = ("Recorded as a goal and echoed on the 'Here's what we know...' screen. Ticking one goal changes nothing else. Ticking any two or more adds the screen 'Which hair goal do you want to tackle most?' "
+         "(one-change replay runs/s2-m-yhg-two; also runs/s2-m-sweep-1, runs/s2-m-sweep-2, runs/scout-men-1, runs/scout-women-2). Every goal has been ticked in at least one replay with no other visible change and the same £34.99 bag. "
+         "What a goal does to the final formula cannot be seen without an account.")
+_TOP = "Chosen as the top goal in {}: echoed on the 'Here's what we know...' screen; no other visible change and the same £34.99 bag."
+OPT_FIXED = {
+ ('yhg', 'Prevent, stop or reverse hair loss'): (_GOAL, 'none', [], 'observed'), ('yhg', 'Reverse hair thinning'): (_GOAL, 'none', [], 'observed'),
+ ('yhg', 'Improve my hairline, parting or crown'): (_GOAL, 'none', [], 'observed'), ('yhg', 'Grow thicker and fuller hair'): (_GOAL, 'none', [], 'observed'), ('yhg', 'Boost overall hair health'): (_GOAL, 'none', [], 'observed'),
+ ('hgp', 'Prevent, stop or reverse hair loss'): (_TOP.format('runs/s2-m-yhg-two (one-change replay; men)'), 'none', [], 'observed'),
+ ('hgp', 'Reverse hair thinning'): (_TOP.format('runs/s2-m-sweep-1 (group test; men)'), 'none', [], 'observed'),
+ ('hgp', 'Improve my hairline, parting or crown'): (_TOP.format('runs/s2-m-sweep-2 (group test; men)'), 'none', [], 'observed'),
+ ('hgp', 'Grow thicker and fuller hair'): (_TOP.format('runs/scout-women-2 (stage 1 multi-change scout; women)'), 'none', [], 'observed'),
+ ('hgp', 'Boost overall hair health'): (_TOP.format('runs/scout-men-1 (stage 1 multi-change scout; men)'), 'none', [], 'observed'),
+ ('pds-sex', 'Male'): ("Sets the men's route (runs/baseline-men, runs/s2-base-men-1, and runs/s2-m-tile-women where the first tile said 'Treatment for women'). Adds: 'Ingredients that see results' (minoxidil + finasteride capsules, finasteride, minoxidil, dutasteride), the lifestyle statements, the men's hair-loss pictures, the dutasteride / finasteride acknowledgement, the men's medicines and conditions lists and the 'You're not alone' screen. Finasteride and dutasteride formulas are only in play on this route.", 'extra-questions', FIN_DUT, 'observed'),
+ ('pds-sex', 'Female'): ("Sets the women's route (runs/baseline-women, runs/s2-base-women-1, and runs/scout-women-1 where the first tile said 'Treatment for men'). Adds: wash frequency, hiding hair loss, hard water, the women's hair-loss pictures, 'Our Dermatology Team have a few more questions', pregnancy / breastfeeding, postpartum / facial hair, and shorter women's medicines and conditions lists. The dutasteride / finasteride acknowledgement is never shown. Docs: the oral leaflet says finasteride and dutasteride 'should not be taken by women', and the FAQ says they are never prescribed to women of childbearing potential.", 'product-removed', FIN_DUT, 'observed'),
+ ('pg', 'No'): ("Baseline answer (runs/baseline-women, runs/s2-base-women-1). Code + replay: 'No' reveals a must-tick box on the same screen: \"You can't use some of our prescription treatments if you're pregnant or breastfeeding. Get in touch with our Dermatology Support Team if you become pregnant while using Hair + Me.\" / \"Yes, I've read and understood the information and would like to carry on.\" Then the normal route continues. No question about contraception follows, although tretinoin drops need it (topical leaflet).", 'soft-warning', [], 'observed'),
+ ('bp', 'Well-controlled'): ("One-change replay (runs/s2-m-mcm-bp, men): no warning, no stop; same later questions and the same £34.99 bag. Controlled blood pressure is not a leaflet contraindication, so capsules stay possible (inferred). Not replayed on the women's route (same screen, reached in runs/scout-women-1).", 'none', [], 'observed'),
+ ('bp', 'Often elevated'): ("One-change replay (runs/s2-m-mcm-bp-elevated against runs/s2-m-mcm-bp, men; also the women's scout runs/scout-women-1): no warning, no stop, the optional reading is not demanded; same £34.99 bag. Docs (oral leaflet): do not take minoxidil capsules with uncontrolled hypertension, so the prescriber is expected to avoid capsules after sign-up.", 'flag-for-clinician', CAPS, 'docs'),
+ ('bp', 'Often low'): ("Stage 1 multi-change scout (runs/scout-men-3, typed reading 95/60): no warning, no stop, same £34.99 bag. Docs (oral leaflet): minoxidil may cause dizziness or low blood pressure, so this should steer the prescriber away from capsules (inferred). Not replayed as a one-change test.", 'flag-for-clinician', CAPS, 'inferred'),
+}
+
+# ---------------------------------------------------------------- question-level updates (by id suffix, both routes)
+Q = {
+ 'tp': {'branches': False, 'branchDetail': "None. Confirmed one change at a time: 'Treatment for women' with sex at birth Male still gives the men's route and the same bag (runs/s2-m-tile-women); 'Treatment for men' with Female gave the women's route (runs/scout-women-1); 'Neither of these are right for me' is not a stop (runs/scout-neither).",
+        'purpose': "Entry tile: a welcome and self-identification screen. It does not route anyone; the route is set two screens later by sex assigned at birth."},
+ 'yhg': {'branchDetail': "Two or more goals add the screen 'Which hair goal do you want to tackle most?' listing only the goals ticked (one-change replay runs/s2-m-yhg-two; also both men's sweeps and two stage 1 scouts). One goal: no extra screen. No goal changes the bag."},
+ 'hgp': {'branchDetail': "No branch: whichever top goal is picked, the route and the bag are the same (all five options chosen across runs/s2-m-yhg-two, the men's sweeps and two scouts)."},
+ 'js': {'shownWhen': "not always: seen in {js}. The server adds or drops it at random (identical baseline answers gave visits with and without it), so it is an experiment on the site's side, not a branch.", 'branchDetail': "No change for either answer (runs/s2-m-sweep-1, runs/scout-men-1 for 'Still exploring my options')."},
+ 'pds-sex': {'branchDetail': "The one real fork. Male: men's route (ingredient-results screen, lifestyle statements, men's pictures, dutasteride / finasteride acknowledgement, men's medicines and conditions, 'You're not alone'). Female: women's route (washing, hiding hair loss, hard water, women's pictures, pregnancy, postpartum / facial hair, women's medicines and conditions). The first-screen tile does not override it (runs/s2-m-tile-women, runs/scout-women-1)."},
+ 'pds-gender': {'branchDetail': "GENDER_BRANCH"},
+ 'ht': {'branchDetail': "No change for any of the four hair types (Straight in the baselines; Wavy and Curly in the group tests runs/s2-m-sweep-1, -2 and runs/s2-w-sweep-1, -2; Coily in runs/scout-men-1)."},
+ 'hs': {'shownWhen': "not always: seen in {hs}. The server adds or drops it at random between visits with identical answers.", 'branchDetail': "No change seen for any option when the screen was served (group tests and scouts)."},
+ 'ls': {'branchDetail': "No change with any statement ticked (sleep + major life event in runs/s2-m-sweep-1; stress + weight loss in runs/scout-men-1). Recent weight loss, stress or a major life event (classic triggers of temporary shedding) do not add a question or advice."},
+ 'htp': {'branchDetail': "Any product ticked reveals a must-tick box about stopping it (one-change replay runs/s2-m-htp-fintabs; all six ticked in runs/scout-men-3). Nothing else changes before the wall: no question about how long it was used, whether it worked or whether it caused side effects."},
+ 'htam': {'branchDetail': "'None' skips the timing question (runs/scout-men-none). No other option changes anything a visitor can see: crown, all over – extensive and patches of complete hair loss were each replayed as the only change (runs/s2-m-htam-crown, runs/s2-m-htam-allover-ext, runs/s2-m-htam-patches); temples, all over – moderate and other/unsure in group tests; complete hair loss in a scout. No stop, no advice to see a GP, no photo request, same £34.99 bag.",
+          'purpose': "Where the hair is being lost, with drawings (a simple Norwood-style picker). Single choice only, so hairline + crown cannot both be recorded. It is the only diagnostic input on pattern, yet the questionnaire does nothing with it on screen: it is stored for the prescriber."},
+ 'htaf': {'branchDetail': "'I have no hair loss or thinning' skips the timing question (runs/scout-women-2). No other option changes anything a visitor can see: patches, eyebrows / sideburns / hairline, all over, receding hairline and 'I don't know' were each replayed as the only change (runs/s2-w-htaf-patches, -eyebrows, -allover, -receding, -dontknow); front of parting, temples and crown in group tests. No stop, no advice, no photo request, same £34.99 bag."},
+ 'htc': {'branchDetail': "No change for any timing: 'Recently, in the past few weeks' as the only change (runs/s2-m-htc-recent), the other two in group tests. Sudden recent loss gets no advice and no extra question."},
+ 'st': {'branchDetail': "No change for any of the six skin tones (Fair in the baselines; the other five across the six group tests). Served at random as six buttons or a drag slider."},
+ 'sc': {'branchDetail': "No change seen (Normal in the baselines; Oily and Dry in stage 1 scouts)."},
+ 'scc': {'branchDetail': "No stop, no warning and no extra screen for any symptom: an active scalp infection and diagnosed eczema / psoriasis were each replayed as the only change (runs/s2-m-scc-infection, runs/s2-m-scc-eczema); the rest in stage 1 scouts. The leaflets forbid the drops on such a scalp, but the person can still pick The Drops on the next-but-one screen and reach the same bag."},
+ 'smt': {'branchDetail': "No change for any of the four wishes (group tests runs/s2-m-sweep-1, runs/s2-w-sweep-1)."},
+ 'pt': {'branchDetail': "Yes shows a minoxidil pet-toxicity warning on the same screen (client-side rule in the step JSON) and makes the server add a 'Better for pet owners' badge to The Capsules on the next screen. Confirmed as the only change in runs/s2-m-pt-yes. The bag does not change."},
+ 'tt': {'branchDetail': "No branch. The Drops as the only change gave the same later questions and the same bag on both routes (runs/s2-m-tt-drops, runs/s2-w-tt-drops); the bag reads '4 week supply · 12ml' either way. The only thing that changes this screen is the pets answer (extra badge on The Capsules).",
+        'purpose': "Format preference: drops (pipette, once or twice a day) or capsules (once a day before bed, badged 'Most popular'). The site says the Dermatology Team makes the final call, so it is a nudge-and-preference screen, not a product picker. It is asked BEFORE pregnancy, heart and scalp-safety answers that decide which format is actually allowed."},
+ 'pp': {'branchDetail': "No visible branch. Declining as the only change gave the same later questions (prostate, sexual-function and mental-health options still listed) and the same bag (runs/s2-m-pp-decline)."},
+ 'mdm': {'branchDetail': "'Other' opens a required free-text box (runs/s2-m-mdm-other). No option stops the flow or changes the bag: antidepressants and BPH medicine were each replayed as the only change (runs/s2-m-mdm-antidep, runs/s2-m-mdm-bph)."},
+ 'mdf': {'branchDetail': "'Other' opens a required free-text box (runs/scout-women-2). No stop for any option. The women's list has only two named options: scalp steroids and Other."},
+ 'mcm': {'branchDetail': "Only the blood-pressure option adds a screen (runs/s2-m-mcm-bp). Every other condition was replayed as the only change with no visible effect: heart, phaeochromocytoma, liver, depression / anxiety, sexual dysfunction, PSA / prostate or testicular cancer history, BPH, male breast cancer (runs/s2-m-mcm-heart, -pheo, -liver, -depression, -sexdys, -psa, -bph, -breast). Hypertrichosis and PoTS only in a stage 1 scout. Nothing stops the flow or changes the bag."},
+ 'mcf': {'branchDetail': "Only the blood-pressure option adds a screen (runs/scout-women-1). PCOS and heart disease were each replayed as the only change with no visible effect (runs/s2-w-mcf-pcos, runs/s2-w-mcf-heart); the rest in a stage 1 scout. Nothing stops the flow or changes the bag."},
+ 'bp': {'branchDetail': "No branch inside the follow-up: 'Well-controlled' and 'Often elevated' were compared one change apart (runs/s2-m-mcm-bp, runs/s2-m-mcm-bp-elevated); 'Often low' in a scout. No stop, no warning, the reading stays optional.",
+        'shownWhen': "only when 'High blood pressure (hypertension) or low blood pressure (hypotension)' is ticked in the conditions list (confirmed as the only change in runs/s2-m-mcm-bp)"},
+ 'al': {'branchDetail': "'Other' opens a required free-text box. No stop and no change to the bag even with a minoxidil allergy as the only change (runs/s2-m-al-minoxidil) or with every active ticked (runs/scout-men-3)."},
+ 'mp': {'branchDetail': "No extra screen for either option as the only change (runs/s2-w-mp-postpartum, runs/s2-w-mp-facial)."},
+ 'pg': {'branchDetail': "Yes adds the screen 'Pregnancy safety information' and nothing else (one-change replay runs/s2-w-pg-yes): not turned away, same £34.99 bag. No shows a must-tick warning on the same screen. One combined question: pregnant, breastfeeding and 'likely to conceive' are not told apart, and contraception is never asked."},
+ 'pgc': {'shownWhen': "only after 'Yes' to pregnant, breastfeeding or likely to conceive (confirmed as the only change in runs/s2-w-pg-yes)"},
+ 'hw': {'branchDetail': "No change for any option (group tests runs/s2-w-sweep-1, runs/s2-w-sweep-2; 'Daily' in a scout)."},
+ 'hht': {'branchDetail': "No change for any option (group test runs/s2-w-sweep-1; hat + fibres in a scout)."},
+ 'hdw': {'branchDetail': "No change for Yes, No or Unsure (runs/scout-women-1, baselines, runs/s2-w-sweep-1)."},
+ 'di': {'branchDetail': "No change for either answer: 'I want the discounted trial' does not alter the bag, the price or the promo text (runs/s2-m-sweep-3, runs/scout-men-2)."},
+ 'yna': {'shownWhen': "YNA_SHOWN"},
+ 'el-dob': {'branchDetail': "Under 18 leads to the stop screen. The line is exactly 18: 17 years 11 months stops (runs/s2-m-age-17), 18 years and 8 days passes (runs/s2-m-age-18). No upper limit: 85 passes with no extra question or warning (runs/s2-m-age-85).",
+            'options': [
+              {'label': '(date field) an age under 18: tested with 17 years 11 months (men) and 16 (women)', 'effect': "Hard stop: 'We're unable to treat you at this time... we're unable to treat your age group.' The bag is never shown. One-change replay runs/s2-m-age-17 (15/12/2008); also the women's stage 1 scout runs/scout-women-1 (age 16).", 'effectType': 'hard-stop', 'affects': [], 'evidence': 'observed'},
+              {'label': '(date field) an age of 18 or over: tested with 18 years and 8 days, 32, 38, 70 and 85', 'effect': "Continues to the shopping bag with no extra question. One-change replays runs/s2-m-age-18 (15/11/2008) and runs/s2-m-age-85 (15/06/1941); baselines at 32 and 38; runs/scout-women-2 at 70. No upper age limit and no age-related warning was met; ages above 85 were not tested. Age may still matter to the prescriber (for example the lowest oral minoxidil dose for older patients) but that cannot be seen.", 'effectType': 'next-question', 'affects': [], 'evidence': 'observed'}]},
+ 'ct': {'purpose': "The 'recommendation' screen. It never names a drug, a strength or even a format: one generic line at one price for every patient who is 18 or over, plus a promo-code box.",
+        'branchDetail': "No answer changed the bag in any of the stage 2 replays that reached it: always one item, code 'hairTreatment', 'Personalised treatment', '4 week supply · 12ml', pill 'Prescription', £34.99, shipping free. Only a promo code in the entry URL changes the price (stage 1, runs/entry-promo-caps-men). The title ('Your order' / 'Your shopping bag') and small layout flags vary at random."},
+}
+
+# ---------------------------------------------------------------- questions behind the account wall (never walked)
+def _aw(id_, text, type_, purpose, role, shown, ev, opts=None, branch=False, bd=''):
+    return {'id': id_, 'stage': 'checkout' if id_ == 'after-payment' else 'after-account', 'text': text, 'type': type_, 'options': opts or [], 'purpose': purpose, 'engineRole': role,
+            'branches': branch, 'branchDetail': bd, 'shownWhen': shown, 'evidence': ev, 'notTested': True}
+AFTER_WALL = [
+ _aw('after-account', "Account details after the legal-name screen (not walked: the replay stops at the account wall). The served code includes input types for email / password sign-up, telephone number, delivery address and card billing.", 'contact',
+     "Creates the account and collects contact, delivery and payment details.", 'identity', "always, after the legal-name screen (code: input types in the consultation renderer; not walked)", 'code'),
+ _aw('after-photos', "Photo upload: 'At the end of the consultation, you will be asked if you would like to upload photos to accompany your answers, however, this step is entirely optional.' A prescriber may later request photos; if they are not sent within 7 days 'you will be shipped a non-prescription treatment'.", 'photo',
+     "Lets the prescriber check the diagnosis remotely. Optional by default; compulsory only when the prescriber asks.", 'diagnosis', "after account creation (docs: support article 273174); not walked", 'docs', branch=True,
+     bd="Docs: requested photos not supplied within 7 days lead to a 'non-prescription treatment' being shipped instead of a prescription one."),
+ _aw('after-payment', "Payment: 'You have to enter your chosen payment method and details when you open your Hair + Me account.' The prescription is only passed to the pharmacy once the card has been charged. Members are offered pre-paid bundles ('Save up to 30%'; 'You won't be able to cancel mid-bundle... Bundle purchases are non-refundable').", 'info',
+     "Takes payment before the prescriber's review; refunds are promised if no treatment can be recommended.", 'data-capture', "at account opening (docs: terms 'Payments' and 'Supply of medical products'; bundle wording from the served checkout code); not walked", 'docs'),
+ _aw('after-review', "Prescriber review (no patient-facing question): 'Thank you for completing your Hair + Me consultation. Our Dermatology Team is now reviewing your answers. If you're eligible, we'll create your personalised treatment plan and update you when your order has shipped.'", 'info',
+     "This is where the real engine sits: a pharmacist independent prescriber reads the stored answers (and any photos) and picks one of the 16 compounded formulas, or declines and refunds. The patient learns the formula from the label and the shipping email, not from the consultation.", 'product-selector',
+     "after payment (docs: dashboard wording in the served code; terms 'The Hair + Me Services'); not walked", 'docs', branch=True,
+     bd="Docs: the prescriber may ask for photos, photo ID or an online consultation, may change the patient's goals, may override the drops / capsules preference, and may decline (refund). The leaflet contraindications listed in rules §female to §override are the published limits on what can be chosen."),
+ _aw('after-checkins', "Regular check-ins and re-consultations: 'Completing your regular check-ins on time' (side-effects FAQ); 'You have an outstanding consultation that we need you to complete'; 'Remember to keep your information up to date, otherwise we may not be able to send your next treatment' (dashboard wording in the served code). Monthly progress photos can be uploaded.", 'info',
+     "Keeps the medical record current and is the route for changing dose or formula. A Trustpilot reviewer describes doing 'a new consultation to up my dose' (third-party report, not verified).", 'safety-screen',
+     "during the subscription (docs: FAQ 669809 and dashboard wording in the served code); not walked", 'docs'),
+]
+STAGES = {
+ 'men': "One shared consultation ('sign-up-hair', /c/suh). About 28 to 32 anonymous screens (tile, goals + data consent, sex at birth, hair and scalp, pets, format preference, finasteride / dutasteride acknowledgement, medicines, conditions, allergies, two wellbeing scores, date of birth + UK tick) → shopping bag (£34.99, no drug named) → account wall at 'Personalise your account' (legal name) → account, optional photos, payment → pharmacist prescriber picks the formula → regular check-ins (everything after the wall: not tested, described from public documents).",
+ 'women': "Same consultation and entry URL as men. About 32 to 33 anonymous screens (tile, goals + data consent, sex at birth, hair and scalp incl. washing, hiding hair loss and hard water, pets, format preference, pregnancy / breastfeeding, postpartum / facial hair, medicines, conditions, allergies, two wellbeing scores, date of birth + UK tick) → shopping bag (£34.99, no drug named) → account wall at 'Personalise your account' (legal name) → account, optional photos, payment → pharmacist prescriber picks the formula → regular check-ins (everything after the wall: not tested, described from public documents).",
+}
+RESULT = {}
+
+# ---------------------------------------------------------------- rules
+GENDER_RULES = []   # filled in once the gender-identity group tests are in
+def rules(ctx):
+    R = ctx['runs']; warn = ctx['warn']
+    def P(*runs):
+        for r in runs:
+            if r not in R: warn(f'rule proof names a run that does not exist: {r}')
+        return ', '.join('runs/' + r for r in runs)
+    def NC(*runs):
+        for r in runs:
+            if r not in R: warn(f'rule proof names a run that does not exist: {r}')
+            elif not ctx['clean'](r): warn(f'rule says "no visible change" but the run shows one: {r}')
+        return ', '.join('runs/' + r for r in runs)
+    BAG = "the same bag ('Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping)"
+    out = []
+    keys = {}
+    def add(flow, when, then, et, aff, ev, proof, conf, key=None):
+        out.append({'id': 'R%d' % (len(out) + 1), 'flow': flow, 'when': when, 'then': then, 'effectType': et, 'affects': aff, 'evidence': ev, 'proof': proof, 'confidence': conf})
+        if key: keys[key] = out[-1]['id']
+    # --- what the public questionnaire visibly does (observed)
+    add('men', "pds-sex = 'Male' (sex assigned at birth)", "The men's route is served: 'Ingredients that see results', lifestyle statements, men's hair-loss pictures, the dutasteride / finasteride acknowledgement, men's medicines and conditions lists, and the 'You're not alone' screen. Finasteride and dutasteride formulas are only in play on this route.",
+        'extra-questions', FIN_DUT, 'observed', P('baseline-men', 's2-base-men-1', 's2-m-tile-women') + ' against ' + P('baseline-women', 's2-base-women-1'), 'high')
+    add('women', "pds-sex = 'Female' (sex assigned at birth)", "The women's route is served: wash frequency, hiding hair loss, hard water, women's hair-loss pictures, pregnancy / breastfeeding, postpartum / facial hair, women's (shorter) medicines and conditions lists. The dutasteride / finasteride acknowledgement is never shown.",
+        'extra-questions', FIN_DUT, 'observed', P('baseline-women', 's2-base-women-1', 'scout-women-1') + ' against ' + P('baseline-men', 's2-base-men-1'), 'high')
+    add('men', "tp (first tile) = 'Treatment for women' or 'Neither of these are right for me', with sex at birth unchanged", "Nothing. The tile does not route anyone: with sex Male the men's questions and " + BAG + " follow; with 'Treatment for men' + Female the women's questions follow.",
+        'none', [], 'observed', NC('s2-m-tile-women') + ' (one change) ; ' + P('scout-neither', 'scout-women-1') + ' (stage 1 scouts)', 'high')
+    add('men', "el-dob gives an age under 18 (tested: 17 years 11 months; men and women)", "Hard stop after the eligibility screen: 'We're unable to treat you at this time... we're unable to treat your age group.' No bag, no account screen. This is the only stop screen found in the whole public flow.",
+        'hard-stop', [], 'observed', P('s2-m-age-17') + ' (stop) against ' + P('s2-m-age-18') + ' (18 years and 8 days: passes); women: ' + P('scout-women-1') + ' (age 16, multi-change scout)', 'high')
+    add('men', "el-dob gives an age of 18 or over (tested: 18, 32, 38, 70, 85)", "Continues to the bag. No upper age limit, no extra question and no warning at 85, even with The Capsules (oral minoxidil) chosen.",
+        'next-question', [], 'observed', NC('s2-m-age-18', 's2-m-age-85') + ' ; ' + P('scout-women-2') + ' (age 70)', 'high')
+    add('men', "yhg: two or more goals ticked (men and women)", "One extra screen, 'Which hair goal do you want to tackle most?', listing only the ticked goals. One goal: no extra screen. Neither the goals nor the top goal change the bag.",
+        'extra-questions', [], 'observed', P('s2-m-yhg-two') + ' (one change) ; ' + P('s2-m-sweep-1', 's2-m-sweep-2', 'scout-men-1', 'scout-women-2'), 'high')
+    add('men', "htam = 'None' (women: htaf = 'I have no hair loss or thinning')", "'When did you notice changes to your hair?' is skipped. The person is not turned away and reaches " + BAG + ": someone with no hair loss is still sold a 'Prescription' line.",
+        'skip-questions', [], 'observed', P('scout-men-none') + ' (one change, stage 1) ; women: ' + P('scout-women-2') + ' (multi-change scout)', 'high')
+    add('men', "mcm / mcf: 'High blood pressure (hypertension) or low blood pressure (hypotension)' ticked", "One extra screen, 'How would you describe your blood pressure over the past 12 months?' (Well-controlled / Often elevated / Often low + optional reading). No other condition adds a screen.",
+        'extra-questions', CAPS, 'observed', P('s2-m-mcm-bp') + ' (one change) ; women: ' + P('scout-women-1') + ' (multi-change scout)', 'high')
+    add('men', "bp = 'Often elevated' (or 'Often low')", "Nothing visible: no warning, no stop, the reading stays optional, and " + BAG + " follows. Docs: the oral leaflet rules out minoxidil capsules with uncontrolled hypertension, so the decision is left to the prescriber.",
+        'flag-for-clinician', CAPS, 'observed', P('s2-m-mcm-bp-elevated') + ' against ' + P('s2-m-mcm-bp') + ' ; ' + P('scout-men-3') + " ('Often low', scout)", 'high')
+    add('women', "pg = 'Yes' (pregnant, breastfeeding or likely to conceive)", "One extra screen, 'Pregnancy safety information' (\"We can prescribe you a treatment that's considered safe during this time\", link to the FAQ, must-tick box). Not turned away; same later questions and " + BAG + ". Docs: only the niacinamide drops (with or without urea) can then be prescribed (rule §preg).",
+        'extra-questions', NOT_PREG, 'observed', P('s2-w-pg-yes') + ' against ' + P('baseline-women', 's2-base-women-1'), 'high')
+    add('women', "pg = 'No'", "A must-tick box appears on the same screen (\"You can't use some of our prescription treatments if you're pregnant or breastfeeding...\"); then the normal route.",
+        'soft-warning', [], 'code', "renderConditions on question 3047 in the served step JSON (runs/baseline-women/steps/*-pg.json); seen live in " + P('baseline-women', 's2-base-women-1') + "; absent after 'Yes' in " + P('s2-w-pg-yes'), 'high')
+    add('men', "pt = 'Yes' (lives with pets; men and women)", "A minoxidil pet-toxicity warning appears on the same screen, and on the next screen The Capsules gains a second badge, 'Better for pet owners'. A nudge towards capsules: nothing is removed and the bag is unchanged.",
+        'soft-warning', CAPS, 'observed', P('s2-m-pt-yes') + ' (one change) ; ' + P('scout-men-2', 'scout-women-2') + ' (scouts); warning text is a client-side rule in the step JSON (code)', 'high')
+    add('men', "htp: any previous product ticked (minoxidil tablets or spray, finasteride tablets or spray, spironolactone tablets, dutasteride capsules)", "A must-tick box appears on the same screen: the person must agree to stop it when Hair + Me starts. Nothing else changes: no follow-up on dose, duration, response or side effects.",
+        'soft-warning', [], 'observed', P('s2-m-htp-fintabs') + ' (one change) ; ' + P('scout-men-3', 'scout-women-2') + ' ; client-side rule in the step JSON (code)', 'high')
+    add('men', "mdm / mdf = 'Other', or al = 'Other'", "A required free-text box opens on the same screen (1,000 characters). Free text is for the prescriber; the questionnaire does not react to what is typed.",
+        'extra-questions', [], 'observed', P('s2-m-mdm-other') + ' (one change) ; ' + P('scout-men-3', 'scout-women-2') + ' ; client-side rule in the step JSON (code)', 'high')
+    add('men', "htam / htaf = any pattern, including patches of complete hair loss, eyebrow / sideburn / hairline loss, extensive loss all over, or 'I don't know'; htc = 'Recently, in the past few weeks'", "Nothing visible: no stop, no advice to see a GP, no photo request, no extra question, and " + BAG + ". (The company blog tells people with patchy or sudden loss to 'speak with a medical professional'.)",
+        'none', [], 'observed', NC('s2-m-htam-patches', 's2-m-htam-crown', 's2-m-htam-allover-ext', 's2-m-htc-recent', 's2-w-htaf-patches', 's2-w-htaf-eyebrows', 's2-w-htaf-allover', 's2-w-htaf-receding', 's2-w-htaf-dontknow') + ' (each one change)', 'high')
+    add('men', "scc = 'A diagnosed active infection' or 'Diagnosed eczema, psoriasis or seborrheic dermatitis' (any scalp symptom)", "Nothing visible: no stop, no warning, and The Drops can still be chosen two screens later. Same bag. Docs: both topical leaflets forbid the drops on such a scalp (rule §scalp).",
+        'flag-for-clinician', DROPS, 'observed', NC('s2-m-scc-infection', 's2-m-scc-eczema') + ' (each one change) ; ' + P('scout-men-2', 'scout-women-2') + ' (other symptoms, scouts)', 'high')
+    add('men', "mcm = heart or cardiovascular condition, phaeochromocytoma, liver disease, depression / anxiety, sexual dysfunction, PSA monitoring or prostate / testicular cancer history, BPH, or male breast cancer history (each alone)", "Nothing visible for any of them: no stop, no warning, no extra question, and " + BAG + ", even with The Capsules and finasteride / dutasteride consent in place. The leaflet contraindications (rules §cardio, §findut) are applied, if at all, by the prescriber after payment.",
+        'flag-for-clinician', CAPS + ['drp-min5-fin01', 'drp-min5-tret-fin01', 'drp-fin02'], 'observed', NC('s2-m-mcm-heart', 's2-m-mcm-pheo', 's2-m-mcm-liver', 's2-m-mcm-depression', 's2-m-mcm-sexdys', 's2-m-mcm-psa', 's2-m-mcm-bph', 's2-m-mcm-breast') + ' (each one change)', 'high')
+    add('women', "mcf = PCOS or heart / cardiovascular condition; mp = postpartum or unwanted facial hair (each alone)", "Nothing visible: no stop, no extra question, and " + BAG + ". PCOS and postpartum loss get no follow-up (no cycle, contraception, breastfeeding detail or blood-test question).",
+        'none', [], 'observed', NC('s2-w-mcf-pcos', 's2-w-mcf-heart', 's2-w-mp-postpartum', 's2-w-mp-facial') + ' (each one change)', 'high')
+    add('men', "mdm = antidepressants / anti-anxiety medicine, or BPH medicine; al = minoxidil allergy (each alone)", "Nothing visible: no stop, no warning, and " + BAG + ". A man allergic to minoxidil who chose The Capsules is still offered the same 'Personalised treatment'.",
+        'flag-for-clinician', MINOX + ['drp-fin02'], 'observed', NC('s2-m-mdm-antidep', 's2-m-mdm-bph', 's2-m-al-minoxidil') + ' (each one change) ; ' + P('scout-men-3') + ' (every allergy ticked, scout)', 'high')
+    add('men', "tt = 'The Drops' instead of 'The Capsules' (men and women)", "Nothing visible: the same later questions and the same bag line, which reads '4 week supply · 12ml' for both formats. The answer is a stored preference; the screen says the Dermatology Team decides.",
+        'product-switched', DROPS, 'observed', NC('s2-m-tt-drops', 's2-w-tt-drops') + ' (each one change); preference wording is on the screen itself', 'high')
+    add('men', "pp = 'I do not wish to be considered for dutasteride or finasteride'", "Nothing visible: the prostate, sexual-function and mental-health options are still shown and the bag is the same. By its wording the answer removes finasteride and dutasteride formulas from the prescriber's choice, leaving minoxidil-only (or niacinamide) formulas.",
+        'product-removed', FIN_DUT, 'observed', NC('s2-m-pp-decline') + ' (one change) for the visible part; the removal itself is the option wording (docs), not seen in a prescription', 'medium')
+    add('men', "any non-medical answer: goals, buying stage, hair type, styling, lifestyle statements, skin tone, scalp condition, six-month wish, wash frequency, hiding hair loss, hard water, wellbeing scores, 'what influenced you'", "Nothing visible beyond the rules above: no screen is added or removed and the bag is the same. These answers are personalisation, marketing or outcome-tracking data.",
+        'marketing-only', [], 'observed', P('s2-m-sweep-1', 's2-m-sweep-2', 's2-m-sweep-3', 's2-w-sweep-1', 's2-w-sweep-2', 's2-w-sweep-3') + ' (group tests: several non-medical answers changed together) and the stage 1 scouts', 'medium')
+    for g in GENDER_RULES: add(*g)
+    add('men', "any answers at all, age 18 or over", "The 'recommendation' before the account wall is always one line: code 'hairTreatment', 'Personalised treatment', '4 week supply · 12ml', pill 'Prescription', £34.99, shipping free, plus a promo-code box. No drug, strength, format or plan length is ever shown, and no answer changes it.",
+        'none', ['svc'], 'observed', "the bag step JSON in every replay that reached it (%d consultation walks in runs/, of which %d in stage 2)" % (ctx['N_BAG'], ctx['N_BAG_S2']), 'high')
+    add('men', "entry through a product page (promo code HGSHOPCAPS or HGSHOPDROPS in the URL)", "Same questions; the bag shows £14.99 (was £34.99): 'Your first three months of treatment for £14.99 each', then £34.99. Price depends on how you arrive, not on what you answer.",
+        'marketing-only', ['svc'], 'observed', P('entry-promo-caps-men') + ' against ' + P('baseline-men') + ' (stage 1; the drops code was read on the product page, not replayed)', 'high')
+    add('men', "nothing (identical answers, different visits)", "The server itself varies the flow: 'Where are you in your hair regrowth journey?' and 'How do you usually style or treat your hair?' come and go; skin tone, the two 0 to 10 scores and date of birth change control type; several titles change. These are site-side experiments, not branches, and every comparison in this report was made against a pool of baseline visits to rule them out.",
+        'none', [], 'observed', P('baseline-men', 's2-base-men-1', 'baseline-women', 'women-a', 's2-base-women-1') + ' (same answers, different screens)', 'high')
+    # --- what the prescriber must do with the answers (docs: the company's own leaflets, FAQ and terms; never seen in a prescription)
+    add('women', "sex at birth = Female", "No finasteride and no dutasteride in any form. That leaves the minoxidil-only capsules (0.5 mg, 1.25 mg, 2.5 mg + vitamin B6), the minoxidil 5% drops (with or without tretinoin) and the niacinamide drops.",
+        'product-removed', FIN_DUT, 'docs', "Oral leaflet: 'Finasteride and Dutasteride should not be taken by women'; pregnancy FAQ: 'never prescribed to women of childbearing potential'. Consistent with the women's route never showing the acknowledgement screen (runs/baseline-women). Whether a post-menopausal woman can get topical finasteride is not stated.", 'medium', key='female')
+    add('women', "pg = 'Yes'", "No capsules at all, and no minoxidil, melatonin, tretinoin, finasteride or dutasteride: only niacinamide 5% drops, with or without urea 2%.",
+        'product-removed', NOT_PREG, 'docs', FAQ_PREG + " ; leaflet " + PIL_PREG + " (melatonin formulas must not be used when pregnant, breastfeeding or trying to conceive)", 'high', key='preg')
+    add('men', "heart or cardiovascular disease, phaeochromocytoma, uncontrolled high blood pressure, severe liver disease (men and women)", "No minoxidil capsules. Drops (or, for men, finasteride 0.2% drops) remain possible.",
+        'product-removed', CAPS, 'docs', PIL_ORAL + " (contraindications and 'Do not take Minoxidil if...')", 'medium', key='cardio')
+    add('men', "BPH or other prostate disease, PSA monitoring, prostate or testicular cancer history, personal or family history of breast cancer, sexual dysfunction, current or past depression / anxiety, trying to conceive, already on a 5-alpha-reductase inhibitor; liver disease (dutasteride)", "No finasteride or dutasteride capsules. Finasteride drops are also ruled out for prostate disease, testicular cancer, male breast cancer history and other 5-alpha-reductase inhibitors; for sexual dysfunction or low mood the topical leaflet only warns, and the FAQ says topical finasteride 'may be considered'. What remains is minoxidil-only capsules or drops.",
+        'product-removed', FIN_DUT, 'docs', PIL_ORAL + " ; " + PIL_TOP + " ; " + FAQ_SIDE, 'medium', key='findut')
+    add('men', "inflamed, infected, irritated or painful scalp; scalp psoriasis or eczema; sunburnt scalp (men and women)", "No drops of any kind (medicated or niacinamide). Capsules or a delay are what is left.",
+        'product-removed', DROPS, 'docs', PIL_TOP + " ; " + PIL_PREG + " (contraindications)", 'medium', key='scalp')
+    add('men', "allergy to an active (minoxidil, finasteride, dutasteride, melatonin, urea, niacinamide, tretinoin, vitamin B6)", "Formulas containing that active are excluded. The allergy list on the questionnaire is exactly the list of actives the pharmacy compounds.",
+        'product-removed', [], 'docs', "All three leaflets: 'Do not use your treatment if you are allergic to any of the ingredients'; allergy options in the served step JSON (code)", 'medium')
+    add('men', "any patient", "One product per subscription: capsules and drops 'shouldn't be used alongside each other'. There is no oral + topical combination plan.",
+        'none', [], 'docs', FAQ_TOGETHER, 'high')
+    add('men', "the prescriber asks for photos and they are not sent within 7 days", "A 'non-prescription treatment' is shipped instead of a prescription one. Photos are otherwise optional.",
+        'product-switched', NIA, 'docs', FAQ_PHOTOS + " (which formula counts as 'non-prescription' is not stated; the niacinamide drops are the likely candidates: inferred)", 'low')
+    add('men', "the prescriber decides the patient is not eligible after payment", "No treatment is sent and the payment for that consultation is refunded. 'If you're eligible, we'll create your personalised treatment plan.'",
+        'hard-stop', [], 'docs', TERMS_SERVICES + " ; dashboard wording in the served code (src/nxt/dashboard-*.js)", 'medium')
+    add('men', "format preference (drops or capsules) conflicts with the prescriber's view", "The prescriber's choice wins: 'ultimately, this will be determined by our Dermatology Team'. Trustpilot reviewers report asking for a liquid and being sent pills (third-party reports, not verified).",
+        'product-switched', CAPS + DROPS, 'docs', "wording on the format screen (runs/baseline-men/steps/*-tt.json) ; " + TRUSTPILOT + " (reviews of 9 Nov 2026)", 'medium', key='override')
+    ctx['rulekeys'] = keys
+    return out
+
+# ---------------------------------------------------------------- recommendations (what is offered at the end)
+_BAGLINE = "Bag: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99 every four weeks, free shipping, promo-code box. No drug, strength or format named."
+RECS = [
+ {'profile': "Baseline man: 32, hairline loss for over a year, no medical issues, prefers The Capsules, accepts finasteride / dutasteride",
+  'offered': ['svc'], 'default': 'svc', 'evidence': 'observed',
+  'note': _BAGLINE + " Seen in runs/baseline-men and runs/s2-base-men-1. Behind the wall (inferred from the leaflets and the site's own 'minoxidil + finasteride capsules' messaging): most likely a finasteride 1 mg + minoxidil capsule, or the dutasteride 0.5 mg + minoxidil 1.25 mg capsule; not seen."},
+ {'profile': "Baseline woman: 38, widening middle parting for over a year, not pregnant or breastfeeding, no medical issues, prefers The Capsules",
+  'offered': ['svc'], 'default': 'svc', 'evidence': 'observed',
+  'note': _BAGLINE + " Identical to the man's bag (runs/baseline-women, runs/s2-base-women-1). Behind the wall (inferred from the leaflets): a minoxidil-only capsule (0.5 mg, 1.25 mg or 2.5 mg + vitamin B6); never finasteride or dutasteride (docs); not seen."},
+ {'profile': "Anyone under 18 (tested: man aged 17 years 11 months; woman aged 16)",
+  'offered': [], 'default': None, 'evidence': 'observed',
+  'note': "Nothing: stop screen 'We're unable to treat you at this time... we're unable to treat your age group.' No bag (runs/s2-m-age-17, runs/scout-women-1). The line is exactly 18 (runs/s2-m-age-18 passed at 18 years and 8 days)."},
+ {'profile': "Woman who answers Yes to 'pregnant, breastfeeding or likely to conceive' (otherwise baseline, capsules preferred)",
+  'offered': ['svc'], 'default': 'svc', 'evidence': 'observed',
+  'note': _BAGLINE + " One extra consent screen first: \"We can prescribe you a treatment that's considered safe during this time\" (runs/s2-w-pg-yes). Docs (pregnancy FAQ): the prescriber can then only choose niacinamide 5% drops, with or without urea 2% (products drp-nia5-urea2, drp-nia5); no capsules. The bag still says 'Prescription' and still costs £34.99."},
+ {'profile': "Man who declines finasteride / dutasteride on the acknowledgement screen (otherwise baseline)",
+  'offered': ['svc'], 'default': 'svc', 'evidence': 'observed',
+  'note': _BAGLINE + " No visible difference from the baseline (runs/s2-m-pp-decline). By the option's own wording (docs) the prescriber is limited to minoxidil-only formulas: for a capsule preference that means 0.5 mg, 1.25 mg or 2.5 mg + vitamin B6 (inferred which)."},
+ {'profile': "Man or woman who prefers The Drops (otherwise baseline)",
+  'offered': ['svc'], 'default': 'svc', 'evidence': 'observed',
+  'note': _BAGLINE + " Same line as for capsules, including '12ml', although the leaflet says the drops come as 28 ml or 56 ml (runs/s2-m-tt-drops, runs/s2-w-tt-drops). Behind the wall (inferred): for men a minoxidil 5% drops formula with or without finasteride 0.1% and tretinoin 0.01%; for women minoxidil 5% with or without tretinoin."},
+ {'profile': "Man with a leaflet contraindication ticked alone: heart disease, phaeochromocytoma, 'often elevated' blood pressure, liver disease, depression / anxiety, sexual dysfunction, prostate or breast cancer history, BPH, BPH medicine, antidepressants, minoxidil allergy, active scalp infection or scalp eczema / psoriasis",
+  'offered': ['svc'], 'default': 'svc', 'evidence': 'observed',
+  'note': _BAGLINE + " No warning, no stop and no change for any of these (17 one-change replays, for example runs/s2-m-mcm-heart, runs/s2-m-mcm-pheo, runs/s2-m-al-minoxidil, runs/s2-m-scc-infection). Docs: the leaflets rule out specific formulas for each (see the rules), so the offer shown is not the offer that can safely be supplied; the prescriber sorts it out after payment, or refunds."},
+ {'profile': "Man or woman with a hair-loss picture that is not pattern hair loss: patches of complete loss, eyebrow / sideburn / hairline loss, sudden recent loss, 'I don't know', or no hair loss at all",
+  'offered': ['svc'], 'default': 'svc', 'evidence': 'observed',
+  'note': _BAGLINE + " No advice, no photo request and no stop (runs/s2-m-htam-patches, runs/s2-w-htaf-patches, runs/s2-w-htaf-eyebrows, runs/s2-m-htc-recent, runs/s2-w-htaf-dontknow, runs/scout-men-none). What the prescriber then does is not public (the FAQ says photos may be requested, and a 'non-prescription treatment' is sent if they are not supplied)."},
+ {'profile': "Man aged 85 (otherwise baseline, capsules preferred)",
+  'offered': ['svc'], 'default': 'svc', 'evidence': 'observed', 'note': _BAGLINE + " No upper age limit, extra question or warning (runs/s2-m-age-85)."},
+ {'profile': "Any visitor arriving from a product page (promo code HGSHOPCAPS or HGSHOPDROPS in the URL)",
+  'offered': ['svc'], 'default': 'svc', 'evidence': 'observed',
+  'note': "Same bag line at £14.99 for each of the first three months, then £34.99 (runs/entry-promo-caps-men, stage 1). The questions, including the format preference, are unchanged."},
+]
+
+# ---------------------------------------------------------------- products: when each is recommended
+_WHO = "Never named in the public consultation: no replay showed a drug, strength or format. A pharmacist prescriber picks the formula after sign-up and payment (docs). "
+_MINCAP = "Leaflet limits for any minoxidil capsule: not with heart disease (angina, heart attack, heart failure), phaeochromocytoma, uncontrolled high blood pressure or severe liver disease, and not for anyone assigned female at birth who is pregnant, breastfeeding or trying to conceive. "
+_FIN = ("Men only (sex at birth Male) who tick 'I agree... wish to be considered for dutasteride or finasteride'. Leaflet exclusions: BPH or other prostate disease, PSA monitoring, prostate / testicular cancer history, personal or family history of breast cancer, sexual dysfunction, "
+        "current or past depression or anxiety, trying to conceive, another 5-alpha-reductase inhibitor. ")
+_DROPLIM = "Leaflet limits for any drops: not on an inflamed, infected, irritated or painful scalp, nor with scalp psoriasis, eczema or sunburn. "
+PROD = {
+ 'svc': {'recommendedWhen': "Always, to every visitor aged 18 or over who finishes the questionnaire, whatever they answer: every replay that reached the bag showed this one line at £34.99 (£14.99 for the first three months with a product-page promo code). Under-18s get a stop screen instead. It is the only 'recommendation' shown before the account wall.", 'evidence': 'observed'},
+ 'cap-min05': {'recommendedWhen': _WHO + "For someone who prefers The Capsules (or is moved to them) and can take oral minoxidil. " + _MINCAP + "0.5 mg is the lowest strength: most likely the starting dose for women and for people at higher risk of side effects (inferred; no dose rule is published)."},
+ 'cap-min125': {'recommendedWhen': _WHO + "As the 0.5 mg capsule, one step up. " + _MINCAP + "Likely a step-up for women or a starting dose for men who are not having finasteride or dutasteride (inferred; no dose rule is published)."},
+ 'cap-min25-b6': {'recommendedWhen': _WHO + "The strongest minoxidil-only capsule, with vitamin B6. " + _MINCAP + "Likely the capsule for men who decline finasteride / dutasteride on the acknowledgement screen or cannot have them (prostate, breast cancer, sexual-function or mental-health history), and a step-up for women (inferred). Not with a vitamin B6 allergy (docs)."},
+ 'cap-fin1-min25': {'recommendedWhen': _WHO + _FIN + _MINCAP + "The site's men's screens lead with 'minoxidil + finasteride capsules' ('94% saw an improvement'), so this looks like the default for a healthy man who prefers capsules (inferred)."},
+ 'cap-fin1-min5': {'recommendedWhen': _WHO + _FIN + _MINCAP + "The 5 mg minoxidil step exists only in this formula: probably a step-up after 2.5 mg or for more advanced loss (inferred; a Trustpilot reviewer describes 'a new consultation to up my dose')."},
+ 'cap-dut05-min125': {'recommendedWhen': _WHO + _FIN + _MINCAP + "Also not with any liver disease (leaflet). The site calls dutasteride more effective than finasteride, says it 'may be considered in all cases of pattern hair loss, but also for resistant or more advanced cases' and is 'often considered when finasteride response is insufficient' (docs: ingredients blog)."},
+ 'drp-min5-od': {'recommendedWhen': _WHO + "For people who prefer The Drops, or whom the prescriber moves off capsules (for example heart disease or phaeochromocytoma), with a healthy scalp. " + _DROPLIM + "Minoxidil drops are not for women who are pregnant, breastfeeding or trying to conceive. The PCOS blog presents topical minoxidil as the women's option that keeps growth 'only on the scalp'. When once a day is chosen over twice a day is not published."},
+ 'drp-min5-bd': {'recommendedWhen': _WHO + "As the once-a-day minoxidil drops (same limits); the rule for twice a day is not published (a 56 ml bottle is implied)."},
+ 'drp-min5-fin01': {'recommendedWhen': _WHO + "Men who prefer The Drops and accept finasteride. " + _DROPLIM + "Leaflet: no finasteride drops with prostate disease, testicular cancer, male breast cancer history or another 5-alpha-reductase inhibitor; stop 12 weeks before trying for a baby. For sexual dysfunction or low mood the leaflet only warns, and the FAQ says topical finasteride 'may be considered' for lower absorption."},
+ 'drp-min5-tret': {'recommendedWhen': _WHO + "People who prefer The Drops; tretinoin is added to help minoxidil absorb. " + _DROPLIM + "Never in pregnancy, breastfeeding or when trying to conceive; the leaflet demands effective contraception during use and for one month after, which the questionnaire never asks about."},
+ 'drp-min5-tret-fin01': {'recommendedWhen': _WHO + "Men who prefer The Drops and accept finasteride: the fullest topical formula (once a day). Same finasteride, tretinoin and scalp limits as the formulas above."},
+ 'drp-fin02': {'recommendedWhen': _WHO + "Men who accept finasteride but cannot have minoxidil (inferred: minoxidil allergy, or heart disease with a scalp that tolerates drops). Same finasteride and scalp limits as above."},
+ 'drp-nia5-urea2': {'recommendedWhen': _WHO + "Docs: the route for anyone who answers Yes to 'pregnant, breastfeeding or likely to conceive' (no oral treatment; never minoxidil, melatonin, tretinoin, finasteride or dutasteride). Probably also the fallback when nothing stronger is suitable: the FAQ says people who do not send requested photos within 7 days are shipped 'a non-prescription treatment' (inferred that it is this). " + _DROPLIM},
+ 'drp-nia5-urea2-mel01': {'recommendedWhen': _WHO + "A non-minoxidil, non-hormonal option for 'healthy hair' (leaflet indication: 'to promote and support healthy hair growth'); who gets it is not published. Leaflet: melatonin formulas must NOT be used when pregnant, breastfeeding or trying to conceive. " + _DROPLIM},
+ 'drp-nia5': {'recommendedWhen': _WHO + "As niacinamide + urea, for people who cannot have urea (inferred from the urea allergy option). Pregnancy-safe per the FAQ. " + _DROPLIM},
+ 'drp-nia5-mel01': {'recommendedWhen': _WHO + "As the melatonin formula above without urea. Not in pregnancy, breastfeeding or when trying to conceive. " + _DROPLIM},
+}
+
+# ---------------------------------------------------------------- top-level text
+def _summary(ctx):
+    return ("Hair + Me's public consultation collects answers; it does not decide anything a visitor can see. Stage 2 replayed it %d times, changing one answer at a time (plus six group tests of non-medical answers), and compared every screen and the bag with a pool of baseline visits. "
+            "Only a handful of answers do anything visible: sex at birth swaps the men's and women's question blocks; an age under 18 is the single hard stop; two or more goals, a blood-pressure diagnosis and 'pregnant, breastfeeding or likely to conceive' each add one screen; 'no hair loss' skips one; pets add a warning and a 'Better for pet owners' badge on The Capsules; previous treatments and 'Other' reveal a tick-box or a text box. "
+            "Everything else, including patchy or sudden loss, an active scalp infection, heart disease, phaeochromocytoma, depression, prostate or breast cancer history, a minoxidil allergy, choosing drops over capsules and declining finasteride, leads to exactly the same screens and the same bag: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99. "
+            "The real engine is a pharmacist prescriber who, after account creation and payment, picks one of 16 compounded formulas (6 capsules, 10 drops). Its published limits are the leaflet contraindications: no finasteride or dutasteride for women; no oral minoxidil with heart disease, phaeochromocytoma or uncontrolled blood pressure; no finasteride or dutasteride with prostate, breast, sexual-function or mental-health history; no drops on an inflamed or infected scalp; only niacinamide drops in pregnancy or breastfeeding. Which strength a patient starts on is not published.") % ctx['N_S2']
+TOP = {
+ 'engineSummary': _summary,
+ 'strengths': [
+  "Very low friction: about 3 minutes, around 30 short screens, no sign-in until after the bag, one flat price (£34.99 per four weeks) whatever the formula, free delivery.",
+  "Never says no before the wall: apart from under-18s, nobody meets a stop screen, so almost every visitor reaches checkout (commercially strong, clinically thin).",
+  "Broad compounded formulary at one price: oral minoxidil in four strengths, finasteride or dutasteride combined with minoxidil in one capsule, topical finasteride, minoxidil + tretinoin, and non-hormonal niacinamide / urea / melatonin drops.",
+  "A route for women who are pregnant, breastfeeding or trying to conceive (niacinamide-based drops) instead of a refusal, with an informed-consent screen and a dedicated leaflet.",
+  "Alcohol-free, water-based minoxidil drops with essential oils (the leaflet labels them 'PGF', usually meaning propylene-glycol-free): an answer to the commonest complaint about high-street minoxidil.",
+  "Clear, well-written informed-consent screen for finasteride / dutasteride (fertility, mood, sexual effects, persistent symptoms) with an explicit opt-out, shown before the medical history.",
+  "Credible clinical front: two consultant dermatologists, named GPhC-registered pharmacist prescribers, published patient leaflets, own pharmacy, one patient record across the +Me brands.",
+  "Pet-safety question, warning and 'Better for pet owners' badge (minoxidil is toxic to cats and dogs): rare in this market and a neat nudge towards the capsule.",
+  "Built-in outcome tracking: two 0 to 10 wellbeing scores at sign-up and monthly progress photos in the account.",
+  "Constant experimentation: the server varies screens, wording and control types between visits, so the funnel is being optimised all the time.",
+ ],
+ 'weaknesses': [
+  "No recommendation before paying: the bag never says which drug, strength or even format the patient will get. Every adult sees the same 'Personalised treatment' line, so 'personalised' is invisible at the moment of purchase.",
+  "No safety feedback in the questionnaire: heart disease, phaeochromocytoma, 'often elevated' blood pressure, an active scalp infection, a minoxidil allergy and depression were each ticked alone and none produced a warning, a stop or a changed offer. The person is walked to checkout and the problem is left to the prescriber after payment.",
+  "No triage: patches of complete hair loss, eyebrow and hairline loss (a scarring pattern), sudden recent shedding and 'I don't know what kind of hair loss I have' get no advice, no photo request and no GP signposting, although the company's own blog tells people with patchy or sudden loss to see a medical professional. Even 'no hair loss' reaches a 'Prescription' bag.",
+  "Question order works against safety: the drops-or-capsules preference is asked before pregnancy, heart, blood-pressure and scalp answers that decide which format is allowed, and is never revisited. A pregnant woman can pick capsules and is not told they are ruled out.",
+  "Thin medical history: no question on thyroid disease, anaemia or iron, kidney disease, family history of hair loss, smoking, alcohol or weight; the men's list has no question on fertility plans beyond the consent text; medicines are three tick-boxes plus free text.",
+  "Thin women's pathway: one combined pregnancy / breastfeeding / 'likely to conceive' question, nothing on contraception (needed for tretinoin), periods, menopause or HRT, and PCOS gets no follow-up. There is no anti-androgen (spironolactone is listed only as a past treatment).",
+  "Single-choice hair-loss picture: a man cannot record hairline and crown together, and there is no severity scale beyond 'moderate / extensive' for diffuse loss.",
+  "Previous treatment is only a tick-list: no question on how long it was used, whether it worked or what side effects it caused, so past finasteride side effects are not captured unless typed elsewhere.",
+  "Photos are optional and asked for after payment, so most diagnoses are made from tick-boxes ('diagnoses at a distance', in the company's words).",
+  "Format preference is not binding and reviewers report being sent pills after asking for a liquid; with no drug named in the bag, the first time a patient learns the formula is on the label.",
+  "No licensed products, shampoo, device or blood test, and capsules and drops cannot be combined (FAQ), so the only step-up is a different compounded formula.",
+  "Pricing surprises: £34.99 headline, £14.99 or £12.99 introductory offers depending on how you arrive, bundles that cannot be cancelled mid-term; reviewers complain about the jump to full price and about losing an older price after a new consultation.",
+  "Loose ends on the site: the bag says '4 week supply · 12ml' even for capsule choosers while the leaflet says 28 ml or 56 ml; one home-page button links to an unfilled placeholder (/HAIR_SIGNUP_URL).",
+ ],
+ 'opportunities': [
+  "Show the plan before the account wall: the likely medicine, strength and format, why it was chosen from the answers, and what was ruled out. Hair + Me shows one generic line to everyone, so a visible, explained recommendation is an immediate point of difference.",
+  "React to answers on screen. When someone ticks heart disease, uncontrolled blood pressure, a scalp infection or a minoxidil allergy, say at once what that means ('tablets are not suitable for you; here is what is') instead of staying silent until after payment.",
+  "Do real triage and be proud of it: route patchy, scarring-type or sudden loss to photos, a clinician call or a GP letter before any payment, and tell people with no hair loss that they do not need a prescription.",
+  "Ask the format question last, after the safety answers, and only offer formats the person can actually have.",
+  "Build a proper women's pathway: separate pregnancy, breastfeeding and trying-to-conceive questions, contraception, cycle, menopause and HRT, PCOS detail, iron and thyroid history, with treatments Hair + Me lacks for women (for example spironolactone where appropriate, or blood-test-guided plans).",
+  "Take a real history of past treatment (what, how long, response, side effects) and use it: past finasteride side effects should change the plan automatically.",
+  "Let people record more than one area of loss, severity and family history, and make photos part of the standard assessment with visible progress tracking.",
+  "Offer combination and step-up care (oral plus topical, medicated shampoo, supplements matched to blood results, licensed options alongside compounded ones) where Hair + Me allows one product only.",
+  "Transparent pricing for every plan length before sign-up, the same price however you arrive, and no trial-to-full-price shock.",
+  "Publish the dose ladder (for example starting and maximum oral minoxidil doses for men and women, and when dutasteride is used): Hair + Me lists its formulas but never says who starts on what.",
+ ],
+ 'limitations': lambda ctx: [
+  "The prescriber's decision rules (which answers lead to which of the 16 formulas, which strength, when someone is refused) sit behind the account wall and were not tested. Rules labelled 'docs' quote the company's leaflets, FAQ and terms; they show what must not be prescribed, not what is. No prescription was ever seen.",
+  "'No visible change' means: same screens, same wording and options, same bag JSON as a pool of baseline visits. An answer can still change the prescriber's choice later.",
+  "The server varies the flow at random between visits (see serverRandomness). Each comparison was made against all baseline visits of that route (%d for men, %d for women) and against every unrelated run, but the pools are small, so a rare random variant could still be mistaken for an effect or the reverse." % (ctx['N_BASE_M'], ctx['N_BASE_W']),
+  "Budget: %d stage 2 replays. Not tested as a one-change replay: most women's conditions and medicines (PCOS and heart only), most allergies (minoxidil only), most scalp symptoms (infection and eczema only), most previous products (finasteride tablets only), hypertrichosis, PoTS, scalp steroids, 'Often low' blood pressure with a typed reading, 'Complete hair loss', the women's under-18 stop, ages above 85, a non-UK address (the UK box is a required tick), and the drops promo link. These rely on stage 1 multi-change scouts or on the other route, and are labelled so option by option." % ctx['N_S2'],
+  "Non-medical answers (hair type, styling, skin tone, wishes, washing, gender identity and so on) were tested in six group tests, several answers at a time. A group test with no visible change shows that none of its answers has a visible effect by itself; it is weaker evidence than a one-change replay.",
+  "Free-text boxes were given one harmless value each ('Vitamin D', 'Penicillin'). Whether particular typed words trigger anything was not explored.",
+  "Prices: only the £34.99 headline, the £14.99 product-page offer and the £12.99 referral offer were seen. Bundle prices, the vitamin add-on price and what a patient pays after a dose change are not public; review quotes about prices are third-party reports.",
+  "Customer numbers, awards, review scores and review quotes are the company's or third parties' claims and were not verified.",
+  "Each replay created an anonymous visitor record with fictional answers on Hair + Me's servers (that is how the site works for every visitor). No name, email, phone number, address, photo or payment detail was ever entered and no consultation was submitted for review.",
+ ],
+}
+def ACCESS(ctx):
+    return {'howTested': ['live-walk', 'site-code', 'public-docs'],
+            'coverageNote': ("Stage 1 mapped both routes to the account wall. Stage 2 ran %d replays: %d baseline replays, %d one-change experiments and %d group tests of non-medical answers, each compared with a pool of baseline visits because the server varies screens at random. "
+                             "Covered one change at a time: first tile, age (17 years 11 months, 18, 85), pregnancy, five men's and six women's hair-loss pictures, recent onset, scalp infection and eczema, blood pressure (and its follow-up), eight further men's conditions, PCOS and heart disease for women, postpartum, facial hair, three medicine options, minoxidil allergy, previous finasteride, drops versus capsules on both routes, declining finasteride / dutasteride, pets, and a second goal. "
+                             "Everything after the legal-name screen (account, photos, payment, the prescriber's choice of formula, check-ins) was not tested and is described from public documents only.") % (ctx['N_S2'], ctx['N_S2_BASE'], ctx['N_S2_OC'], ctx['N_S2_SW'])}
+SOURCES = [
+ {'title': "Terms: The Hair + Me Services (prescribers may ask for photos, ID or an online consultation; refund if no recommendation)", 'url': TERMS_SERVICES},
+ {'title': "Terms: Supply of medical products (payment before the prescription goes to the pharmacy)", 'url': TERMS_SUPPLY},
+ {'title': "Terms: Payments (subscription, advance-payment bundles, loyalty price)", 'url': TERMS_PAY},
+ {'title': "Blog: Alopecia areata ('If you're experiencing patchy or sudden hair loss, speak with a medical professional')", 'url': BLOG_AA},
+ {'title': "Blog: PCOS and hair loss (topical minoxidil, The Drops, presented as the option for women with PCOS)", 'url': BLOG_PCOS},
+ {'title': "Blog: Oral versus topical minoxidil (who suits which)", 'url': BLOG_ORALTOP},
+ {'title': "Blog: What actually treats hair loss (dutasteride 'for resistant or more advanced cases')", 'url': BLOG_INGR},
+ {'title': "Trustpilot: Hair + Me reviews (TrustScore 4.3 from 4,540 reviews on 23 Nov 2026; third-party claims, not verified)", 'url': TRUSTPILOT},
+]
+def RANDOMNESS(ctx):
+    P = ctx['PRES']
+    return {'what': "With identical answers the server serves different screens on different visits. These are site-side experiments, not branches.",
+            'stepsThatComeAndGo': {'js': "'Where are you in your hair regrowth journey?': seen in %d of %d men's and %d of %d women's completed walks" % P['js'],
+                                   'hs': "'How do you usually style or treat your hair?': seen in %d of %d men's and %d of %d women's completed walks" % P['hs']},
+            'wordingOrControlThatVaries': ["pds title ('Your medical history' / 'Understanding your hormones')", "st skin tone (six buttons with short or long labels, or a drag slider; two titles)", "rhf and rha scores (optional 0 to 10 slider, or required 1 to 10 buttons)",
+                                           "el date of birth (one masked field, or day / month / year boxes)", "ct title ('Your order' / 'Your shopping bag'), the free-shipping message and a shipping pill flag", "di option order", "yna title ('You're not alone' / 'Lots of people feel this way')", "hdw description"],
+            'howHandled': "tools/s2_diff.py compares each experiment with every baseline visit of the same route and with every run that did not change the same step; only differences never seen in those are reported as effects.",
+            'featureTestApi': "GET rest.hairandme.com/api/v1/feature-tests returned version 'control' in every visit, so the variation is not explained by that record."}

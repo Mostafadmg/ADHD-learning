@@ -1,0 +1,72 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 2,
+   "sectionTitle": "YOUR HAIR"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 9328,
+    "inputConfig": {
+     "options": [
+      {
+       "label": "Flaking or dandruff",
+       "value": "Flaking or dandruff"
+      },
+      {
+       "label": "Redness and crusting around the base of your hair",
+       "value": "Redness and crusting around the base of your hair"
+      },
+      {
+       "label": "Highly sensitive and irritable areas",
+       "value": "Highly sensitive and irritable areas"
+      },
+      {
+       "label": "Diagnosed eczema, psoriasis or seborrheic dermatitis",
+       "value": "Diagnosed eczema, psoriasis or seborrheic dermatitis"
+      },
+      {
+       "label": "Pustules/lumps/cysts",
+       "value": "Pustules/lumps/cysts"
+      },
+      {
+       "label": "A diagnosed active infection (e.g. folliculitis, candida, ringworm)",
+       "value": "A diagnosed active infection (e.g. folliculitis, candida, ringworm)"
+      },
+      {
+       "label": "Pain and/or burning sensation",
+       "value": "Pain and/or burning sensation"
+      },
+      {
+       "exclusive": true,
+       "label": "None of the above",
+       "value": "None of the above"
+      }
+     ]
+    },
+    "inputType": "multi_select_checkbox",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Are you experiencing any of the following on your scalp?",
+  "type": "question"
+ }
+}

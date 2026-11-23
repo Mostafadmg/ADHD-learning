@@ -1,0 +1,28 @@
+STEP 04 click "In the past few months"
+URL: https://app.forhims.co.uk/flow/a9a88e4a-89b9-47ae-8138-3a1acaa41594?t=hair&anon_flow_key=hair
+TITLE: Hims
+
+--- VISIBLE TEXT ---
+With treatment, what results are you hoping for?
+
+Choose as many as you’d like.
+
+A stronger, defined hairline
+
+Visibly thicker, fuller hair
+
+More scalp coverage
+
+Keep the hair I have
+
+All of the above
+
+Continue
+←
+
+--- CONTROLS ---
+  checkbox (5): A stronger, defined hairline  ·  Visibly thicker, fuller hair  ·  More scalp coverage  ·  Keep the hair I have  ·  All of the above
+  button (3): Continue [disabled]  ·  ←  ·  Your answers
+
+--- LINKS ---
+  link (1): Navigate home -> /profile

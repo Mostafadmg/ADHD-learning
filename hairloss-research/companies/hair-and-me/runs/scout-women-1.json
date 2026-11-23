@@ -1,0 +1,157 @@
+{
+ "_about": "SCOUT women 1: 'Treatment for men' chosen but sex at birth Female; pregnant/breastfeeding/likely to conceive = Yes; postpartum + facial hair; PCOS + blood pressure; eyebrow/sideburn loss; date of birth 15/06/2010 (age 16). Multi-change scout to discover screens, not a one-change experiment.",
+ "start": "https://www.hairandme.com/c/suh/new",
+ "answers": {
+  "tp": [
+   "Treatment for men"
+  ],
+  "yhg": [
+   "Prevent, stop or reverse hair loss",
+   "Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us."
+  ],
+  "js": [
+   "Ready to start treatment"
+  ],
+  "pds": [
+   {
+    "select": "select[name='3039']",
+    "value": {
+     "label": "Female"
+    }
+   }
+  ],
+  "pdsc": [
+   "I confirm the above selection is accurate and true."
+  ],
+  "mi": [],
+  "ht": [
+   "Straight"
+  ],
+  "hs": [
+   "None of the above"
+  ],
+  "hw": [
+   "Daily"
+  ],
+  "hht": [
+   "Wearing a hat or head covering",
+   "Applying hair fibres"
+  ],
+  "ls": [
+   "None of these apply to me"
+  ],
+  "htp": [
+   "None of the above"
+  ],
+  "hdw": [
+   "Yes"
+  ],
+  "htaf": [
+   "I've lost hair from my eyebrows, sideburns and hairline"
+  ],
+  "htc": [
+   "Over a year ago"
+  ],
+  "ar": [],
+  "st": {
+   "byQuestion": {
+    "9346": [
+     "Fair. It often burns, but tans a little"
+    ],
+    "9348": [
+     {
+      "range": "input[type=range]",
+      "value": 25
+     }
+    ]
+   }
+  },
+  "sc": [
+   "Normal"
+  ],
+  "scc": [
+   "None of the above"
+  ],
+  "smt": [
+   "Fuller, denser-looking hair that I feel confident about"
+  ],
+  "pt": [
+   "No"
+  ],
+  "tt": [
+   "The Capsules"
+  ],
+  "dt": [],
+  "pg": [
+   "Yes"
+  ],
+  "mp": [
+   "I'm postpartum (given birth in the last 6 months)",
+   "I have unwanted hair on my face (e.g. upper lip, chin, jawline)"
+  ],
+  "mdf": [
+   "No, I don't take any medications"
+  ],
+  "mcf": [
+   "Polyendocrine Metabolic Ovarian Syndrome (PMOS, formerly PCOS)",
+   "High blood pressure (hypertension) or low blood pressure (hypotension)"
+  ],
+  "al": [
+   "No known allergies"
+  ],
+  "rhf": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "yna": [],
+  "rha": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "di": [
+   "I'm looking for a long-term effective haircare treatment"
+  ],
+  "rj": [],
+  "el": {
+   "byType": {
+    "date_masked": [
+     {
+      "type": "input[name=\"3053\"]",
+      "value": "15062010"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ],
+    "date_split": [
+     {
+      "fill": "Day",
+      "value": "15"
+     },
+     {
+      "fill": "Month",
+      "value": "06"
+     },
+     {
+      "fill": "Year",
+      "value": "2010"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ]
+   }
+  },
+  "ct": [],
+  "pgc": [
+   "Yes, I've read and understood the information and would like to carry on."
+  ],
+  "bp": [
+   "Often elevated"
+  ]
+ }
+}

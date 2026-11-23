@@ -1,0 +1,51 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 3,
+   "sectionTitle": "MEDICAL HISTORY"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 3048,
+    "inputConfig": {
+     "content": "We can prescribe you a treatment that's considered safe during this time but before we do this, we need you to read the information in the link below about the treatment and make an informed decision on whether you want to continue.\n\n[class=\"pb-200\"][Information on treatment during pregnancy](https://www.hairandme.com/support/en/articles/254008-can-i-use-hair-me-if-i-am-pregnant-breastfeeding-or-trying-to-conceive)\n            "
+    },
+    "inputType": "markdown",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 3049,
+    "inputConfig": {
+     "option": {
+      "label": "Yes, I've read and understood the information and would like to carry on."
+     }
+    },
+    "inputType": "boolean_checkbox",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Pregnancy safety information",
+  "type": "question"
+ }
+}

@@ -1,0 +1,14 @@
+STEP 10 goto "https://www.hairandme.com/how-we-compare"
+URL: https://www.hairandme.com/how-we-compare
+TITLE: 
+
+--- VISIBLE TEXT ---
+Something went wrong
+
+Sorry, something went wrong. Please try again later.
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

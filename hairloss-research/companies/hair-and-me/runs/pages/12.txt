@@ -1,0 +1,46 @@
+STEP 12 goto "https://www.hairandme.com/meet-the-team"
+URL: https://www.hairandme.com/meet-the-team
+TITLE: Experts in hair health | Hair + Me
+
+--- VISIBLE TEXT ---
+Experts in hair health
+
+Led by two Consultant Dermatologists, our UK-licensed Dermatology Team are the specialists behind your personalised treatment. With unlimited online support, and on-demand reformulations, they’re here to support you at every stage of your journey.
+
+GET STARTED
+Treatment subject to dermatological assessment.
+Meet our experts
+
+Our experts have decades of combined experience in treating hair loss. All treatments – from initial consultation to ongoing check-ins – have been designed by Consultant Dermatologists Dr Jason Thomson and Dr Maria-Angeliki “Margo” Gkini.
+
+Dr Maria-Angeliki "Margo" Gkini
+Dr Jason Thomson
+Nafeesa Ullah
+Whitney Yeboah
+Dr Maria-Angeliki "Margo" Gkini
+
+MD, MSc, PhD, FRCP
+
+Consultant Dermatologist
+
+GPhC Number: 7518131
+
+Consultant Dermatologist Dr Margo Gkini specialises in hair disorders and skin conditions. Her clinical expertise is crucial to the advancement of dermatological care and new product development at Hair + Me.
+
+"Hair loss has a significant impact on our self-confidence. We’re here to support you – with a personalised evidence-based treatment plan that’s scientifically proven to give optimal results."
+
+Dr Maria-Angeliki "Margo" Gkini
+
+GET STARTED
+Treatment subject to dermatological assessment.
+Meet our Dermatology Team
+
+Our expert team of Dermatology Clinicians personally review your consultation to build a treatment plan that's personalised to you. They’ll check in regularly to make sure you're on track, and provide safe, evidence-based treatment and care.
+
+MEET THE TEAM
+
+--- CONTROLS ---
+  tab (4): Dr Maria-Angeliki "Margo" Gkini [true]  ·  Dr Jason Thomson [false]  ·  Nafeesa Ullah [false]  ·  Whitney Yeboah [false]
+
+--- LINKS ---
+  link (14): Navigate home -> /  ·  Ingredients -> /ingredients  ·  Experts -> /meet-the-team  ·  Support -> https://www.hairandme.com/support  ·  Log In -> /account/login  ·  GET STARTED -> /c/suh/new  ·  MEET THE TEAM -> https://www.hairandme.com/support/en/articles/279693-get-to-know-your-pharmacist-prescribers  ·  Visit our Support Centre -> https://www.hairandme.com/support  ·  Our Policies -> https://www.hairandme.com/support/collections/620350-policies  ·  Learn about hair loss -> https://www.hairandme.com/blog  ·  facebook -> https://www.facebook.com/hqhairandme  ·  instagram -> https://www.instagram.com/hairandmehq/  ·  tiktok -> https://www.tiktok.com/@hairandmehq?lang=en  ·  @hairandmeHQ -> https://www.instagram.com/hairandmehq/

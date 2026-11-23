@@ -1,0 +1,29 @@
+STEP 27 ct
+URL: https://www.hairandme.com/c/suh/ct
+
+--- VISIBLE TEXT ---
+Your shopping bag
+Prescription
+
+Personalised treatment
+
+4 week supply · 12ml
+
+Subtotal
+£34.99
+Shipping
+FREE
+Total to pay
+£34.99
+Redeem offer
+APPLY
+CONTINUE TO CHECKOUT
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:text[name=180025] | Redeem offer
+button:button | APPLY [disabled]
+button:submit | CONTINUE TO CHECKOUT
+a -> /c/suh/ct?action=previous | Back to previous page

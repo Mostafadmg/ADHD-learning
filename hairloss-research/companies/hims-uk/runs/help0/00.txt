@@ -1,0 +1,23 @@
+STEP 00 start (HTTP 200)
+URL: https://ukhims.zendesk.com/hc/en-gb
+TITLE: Hims - UK
+
+--- VISIBLE TEXT ---
+Help Centre
+
+Everything you need to know, all in one place.
+
+ 
+The Basics
+My account
+Our Treatments
+Shipping
+Privacy and Security
+Contact Us
+
+--- CONTROLS ---
+  input:search (1): How can we help you?
+  input:submit (1): commit = "Search"
+
+--- LINKS ---
+  link (11): Skip to main content -> #main-content  ·  The Basics -> /hc/en-gb/categories/63224443943833-The-Basics  ·  My account -> /hc/en-gb/categories/63224405110041-My-account  ·  Our Treatments -> /hc/en-gb/categories/63224405903257-Our-Treatments  ·  Shipping -> /hc/en-gb/categories/63224406867609-Shipping  ·  Privacy and Security -> /hc/en-gb/categories/63224392867737-Privacy-and-Security  ·  Contact Us -> /hc/en-gb/categories/63224451817753-Contact-Us  ·  Collection Notice -> https://www.eucalyptus.health/collection-notice  ·  Privacy Policy -> https://www.eucalyptus.health/privacy-policy  ·  YouTube -> https://www.youtube.com/@HimsAustralia  ·  Powered by Zendesk -> https://www.zendesk.co.uk/service/help-center/?utm_source=helpcenter&utm_medium=poweredbyzendesk&utm_campaign=text&utm_c

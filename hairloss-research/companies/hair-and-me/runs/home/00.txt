@@ -1,0 +1,151 @@
+STEP 00 start (HTTP 200)
+URL: https://www.hairandme.com/
+TITLE: Personalised haircare starts here | Hair + Me
+
+--- VISIBLE TEXT ---
+Hair regrowth starts here
+
+Reverse loss. Stop thinning. Restore density.
+
+Thicker, fuller hair begins with a scientifically proven treatment, personalised for your hair by our experts.
+
+No guesswork, just results.
+
+START 3 MINUTE CONSULTATION
+Treatment subject to dermatological assessment.
+For women
+
+Restore your hair density with a personalised formulation of active ingredients. Tailor-made and scientifically proven to deliver your goals within six months.
+
+GET STARTED
+Treatment subject to dermatological assessment.
+For men
+
+Your medical history, lifestyle and goals determine your treatment. Gentle yet effective ingredients stimulate your hair follicles, with regrowth in three to six months.
+
+GET STARTED
+Treatment subject to dermatological assessment.
+AS FEATURED IN
+Why choose Hair + Me
+VS
+Generic high street alternatives
+100% online, accounting for your medical history, lifestyle and hair goals
+No evaluation of underlying causes from genetic or lifestyle-related factors
+Clinically tested active ingredients
+Low-strength, ineffective ingredients
+Effective formulations personalised to your needs
+Generic, off-the-shelf products
+Treatment plans designed by experts in hair health
+Self-diagnosis and guesswork
+Unlimited support from our UK-licensed Dermatology Clinicians
+No aftercare or ongoing support
+GET STARTED
+Treatment subject to dermatological assessment.
+How Hair + Me works
+Why hair loss happens
+
+Genetic predisposition causes follicle shrinkage. Vitamin and mineral deficiencies, lifestyle and hormonal changes affect the hair growth cycle.
+
+How we prevent hair loss
+
+Through drops and capsules, our scientifically proven ingredients stimulate blood flow and block dihydrotestosterone (DHT), the hair loss hormone.
+
+How hair regrows
+
+Our powerful formulations work to rebalance nutrient levels, nourish the scalp and restore follicle function – accelerating the hair regrowth cycle.
+
+How we help you
+
+Our Dermatology Clinicians personally review your consultation to build a treatment plan that's personalised to you. We'll check in regularly to make sure you're on track.
+
+GET STARTED
+Treatment subject to dermatological assessment.
+Real results in 3-6 months
+
+Your treatment is personalised to target your goals. That’s why it works. But don’t just take our word for it. The proof is in the progress.
+
+Before
+After
+Karen’s journey
+Hair goal:
+Prevent, stop or reverse hair loss
+Duration:
+4 months
+Before
+After
+Joe’s journey
+Hair goal:
+Prevent, stop or reverse hair loss
+Duration:
+4 months
+Before
+After
+Hannah’s journey
+Hair goal:
+Thicker, denser, more voluminous hair
+Duration:
+4 months
+Before
+After
+Michael’s journey
+Hair goal:
+Prevent, stop or reverse hair loss
+Duration:
+4 months
+Before
+After
+Lorenzo’s journey
+Hair goal:
+Improve my hairline, parting or crown
+Duration:
+6 months
+Confidence, bottled
+
+Our customers love their personalised regrowth formulations.
+
+After using the treatment, I've noticed a significant reduction in shedding and my hair looks much fuller. It's such an easy way to address hair loss.
+
+JORDAN
+
+Hair + Me helped me get the right treatment. Now my hairline is growing back, my parting is fuller, and my hair is healthier.
+
+MICHAEL
+
+Hair + Me has made my hair thicker and fuller. I'm no longer self-conscious if I wear my hair in a ponytail. It's had such a positive impact on my life.
+
+CAROLINE
+
+Since using Hair + Me, my hair is thicker, and it’s growing faster and stronger all over. Even my eyelashes and eyebrows are longer and healthier!
+
+SIOBHAN
+
+I've seen a significant transformation, my hair is thicker and more dense. I've noticed LOTS of new baby hairs and my hair feels silkier and healthier.
+
+SAM
+
+Our expertise
+
+Our UK-licensed Dermatology Team are the experts behind your personalised treatment. With unlimited online support, they’re here to support you at every stage of your journey.
+
+Dr Jason Thomson
+
+MBBS, MA (Cantab), MRCP, MSc (Genomics)
+
+Head of Medical, Consultant Dermatologist
+
+Hair loss is a very personal journey. The one-size-fits-all approach offered by generic treatments often leads to disappointing results. Personalisation is key. Tailoring clinically proven ingredients to your unique needs delivers effective hair regrowth – no more guesswork.
+Dr Maria-Angeliki “Margo” Gkini
+
+MD, MSc, PhD, FRCP
+
+Consultant Dermatologist
+
+Hair loss has a significant impact on our self-confidence. At Hair + Me we’re here to support you from day one – with an evidence-based treatment plan that's tailored to your personal needs and scientifically proven to give optimal results.
+GET STARTED
+Treatment subject to dermatological assessment.
+
+--- CONTROLS ---
+  button (1): GET STARTED
+
+--- LINKS ---
+  link (17): Navigate home -> /  ·  Ingredients -> /ingredients  ·  Experts -> /meet-the-team  ·  Learn -> https://www.hairandme.com/blog  ·  Support -> https://www.hairandme.com/support  ·  Log In -> /account/login  ·  GET STARTED -> /c/suh/new  ·  START 3 MINUTE CONSULTATION -> /c/suh/new  ·  GET STARTED -> /HAIR_SIGNUP_URL  ·  GET STARTED -> /consultations/sign-up-hair/new  ·  Visit our Support Centre -> https://www.hairandme.com/support  ·  Our Policies -> https://www.hairandme.com/support/collections/620350-policies  ·  Learn about hair loss -> https://www.hairandme.com/blog  ·  facebook -> https://www.facebook.com/hqhairandme  ·  instagram -> https://www.instagram.com/hairandmehq/  ·  tiktok -> https://www.tiktok.com/@hairandmehq?lang=en  ·  @hairandmeHQ -> https://www.instagram.com/hairandmehq/

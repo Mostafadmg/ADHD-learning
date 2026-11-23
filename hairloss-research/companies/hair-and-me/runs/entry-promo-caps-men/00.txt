@@ -1,0 +1,17 @@
+STEP 00 tp
+URL: https://www.hairandme.com/c/suh/tp?promocode=HGSHOPCAPS
+
+--- VISIBLE TEXT ---
+Which treatment is right for you?
+Treatment for men
+Treatment for women
+Neither of these are right for me
+NEXT QUESTION
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=8008] | Treatment for men
+input:radio[name=8008] | Treatment for women
+input:radio[name=8008] | Neither of these are right for me
+button:submit | NEXT QUESTION [disabled]

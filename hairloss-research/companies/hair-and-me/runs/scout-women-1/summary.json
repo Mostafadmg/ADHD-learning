@@ -1,0 +1,173 @@
+{
+ "run": "scout-women-1",
+ "flow": "women",
+ "changed": null,
+ "changedStep": null,
+ "baselinesPooled": [
+  "baseline-women",
+  "women-a",
+  "s2-base-women-1"
+ ],
+ "stepOrder": [
+  "tp",
+  "yhg",
+  "pds",
+  "pdsc",
+  "ht",
+  "hs",
+  "hw",
+  "hht",
+  "htp",
+  "hdw",
+  "htaf",
+  "htc",
+  "ar",
+  "st",
+  "sc",
+  "scc",
+  "smt",
+  "pt",
+  "tt",
+  "dt",
+  "pg",
+  "pgc",
+  "mp",
+  "mdf",
+  "mcf",
+  "bp",
+  "al",
+  "rhf",
+  "rha",
+  "di",
+  "rj",
+  "el",
+  "utt"
+ ],
+ "nSteps": 33,
+ "end": "stop screen utt",
+ "newSteps": [
+  "pgc",
+  "bp",
+  "utt"
+ ],
+ "missingSteps": [
+  "ct",
+  "yd"
+ ],
+ "candidateEffects": [],
+ "noise": [
+  {
+   "step": "ar",
+   "key": "q429.config",
+   "where": "after-change",
+   "alsoIn": []
+  },
+  {
+   "step": "st",
+   "key": "q9346.options",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-m-htam-allover-ext",
+    "s2-m-htam-crown",
+    "scout-men-2"
+   ]
+  }
+ ],
+ "bag": null,
+ "bagItemsSameAsBaseline": null,
+ "posted": {
+  "bp": [
+   [
+    4420,
+    "Often elevated"
+   ]
+  ],
+  "el": [
+   [
+    3053,
+    "2010-06-15"
+   ],
+   [
+    2007,
+    true
+   ]
+  ],
+  "hdw": [
+   [
+    8003,
+    "Yes"
+   ]
+  ],
+  "hht": [
+   [
+    8009,
+    [
+     "Wearing a hat or head covering",
+     "Applying hair fibres"
+    ]
+   ]
+  ],
+  "htaf": [
+   [
+    9322,
+    "I've lost hair from my eyebrows, sideburns and hairline"
+   ]
+  ],
+  "hw": [
+   [
+    8010,
+    "Daily"
+   ]
+  ],
+  "mcf": [
+   [
+    4504,
+    [
+     "15",
+     "25"
+    ]
+   ]
+  ],
+  "mp": [
+   [
+    4503,
+    [
+     "I'm postpartum (given birth in the last 6 months)",
+     "I have unwanted hair on my face (e.g. upper lip, chin, jawline)"
+    ]
+   ]
+  ],
+  "pg": [
+   [
+    3046,
+    "true"
+   ]
+  ],
+  "pgc": [
+   [
+    3049,
+    true
+   ]
+  ],
+  "tp": [
+   [
+    8008,
+    "Treatment for men"
+   ]
+  ]
+ },
+ "nextAfterChange": {
+  "bp": "al",
+  "el": "utt",
+  "hdw": "htaf",
+  "hht": "htp",
+  "htaf": "htc",
+  "hw": "hht",
+  "mcf": "bp",
+  "mp": "mdf",
+  "pg": "pgc",
+  "pgc": "mp",
+  "tp": "yhg"
+ },
+ "sweep": false
+}

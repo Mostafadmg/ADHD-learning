@@ -1,0 +1,27 @@
+STEP 18 pp
+URL: https://www.hairandme.com/c/suh/pp
+
+--- VISIBLE TEXT ---
+Understanding Dutasteride and Finasteride
+
+I acknowledge that:
+
+These medications are not suitable if planning to start a family soon. I confirm that I am not planning to start a family in the next six months and agree to inform Hair + Me if my plans change.
+These medications may be present in semen, so if my partner is pregnant or breastfeeding, I’ll use protection (like a condom) as a precaution.
+Taking these medications may cause mood changes. It is uncommon, but this may include depression or suicidal thoughts. If this happens, I should stop my treatment, contact my GP immediately, and inform Hair + Me.
+A temporary decrease in libido or changes in erectile function may occur. If this happens, I will pause my treatment and contact Hair + Me for guidance.
+Mild breast tenderness or enlargement are possible side effects. If I notice any changes, I will stop treatment, contact my GP immediately, and inform Hair + Me.
+In rare cases, some side effects may continue after stopping treatment. I will read the Patient Information Leaflet and contact Hair + Me if I have any concerns.
+
+I agree to the information above and wish to be considered for dutasteride or finasteride. I agree to read the Patient Information Leaflet
+I do not wish to be considered for dutasteride or finasteride
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=4433] | I agree to the information above and wish to be considered for dutasteride or finasteride. I agree to read the Patient Information Leaflet
+input:radio[name=4433] | I do not wish to be considered for dutasteride or finasteride
+button:submit | NEXT QUESTION [disabled]
+a -> /c/suh/pp?action=previous | Back to previous page

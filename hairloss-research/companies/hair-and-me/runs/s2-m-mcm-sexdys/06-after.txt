@@ -1,0 +1,23 @@
+STEP 06 ls AFTER ANSWERS ["None of these apply to me"]
+URL: https://www.hairandme.com/c/suh/ls
+
+--- VISIBLE TEXT ---
+Which of these statements apply to you?
+I rarely get more than 7 hours' sleep
+I'm dealing with quite a lot of stress
+I've recently lost a significant amount of weight
+I've recently been through a major life event
+None of these apply to me
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:checkbox[name=8014] | I rarely get more than 7 hours' sleep [disabled]
+input:checkbox[name=8014] | I'm dealing with quite a lot of stress [disabled]
+input:checkbox[name=8014] | I've recently lost a significant amount of weight [disabled]
+input:checkbox[name=8014] | I've recently been through a major life event [disabled]
+input:checkbox[name=8014] | None of these apply to me [checked]
+button:submit | NEXT QUESTION
+a -> /c/suh/ls?action=previous | Back to previous page

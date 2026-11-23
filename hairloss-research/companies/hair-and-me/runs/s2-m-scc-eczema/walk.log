@@ -1,0 +1,60 @@
+   [feature-test] {"experiment_id":"c77efccc-deab-436e-b750-ca5ded2a23ed","version":"control"}
+
+00 [tp] (question) Which treatment is right for you?  ->  ["Treatment for men"]
+01 [yhg] (question) What are your hair goals?  ->  ["Prevent, stop or reverse hair loss","Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us."]
+02 [pds] (question) Understanding your hormones  ->  [{"select":"select[name='3039']","value":{"label":"Male"}}]
+03 [pdsc] (question) Please confirm your sex assigned at birth  ->  ["I confirm the above selection is accurate and true."]
+04 [mi] (question)   ->  []
+05 [ht] (question) Which option best describes your natural hair type?  ->  ["Straight"]
+06 [ls] (question) Which of these statements apply to you?  ->  ["None of these apply to me"]
+07 [htp] (question) Have you used any of the following products to help you achieve your hair goals in the last three months?  ->  ["None of the above"]
+08 [htam] (question) Where have you noticed hair thinning or loss?  ->  ["Across the hairline"]
+09 [htc] (question) When did you notice changes to your hair?  ->  ["Over a year ago"]
+10 [ar] (question)   ->  []
+   (variant: question 9348)
+11 [st] (question) How would you describe your skin tone?  ->  [{"range":"input[type=range]","value":25}]
+12 [sc] (question) How would you describe the condition of your scalp?  ->  ["Normal"]
+13 [scc] (question) Are you experiencing any of the following on your scalp?  ->  ["Diagnosed eczema, psoriasis or seborrheic dermatitis"]
+14 [smt] (question) In 6 months' time, what do you want to see?  ->  ["Fuller, denser-looking hair that I feel confident about"]
+15 [pt] (question) Do you live with pets?  ->  ["No"]
+16 [tt] (question) Which treatment would suit you best?  ->  ["The Capsules"]
+17 [pp] (question) Understanding Dutasteride and Finasteride  ->  ["I agree to the information above and wish to be considered for dutasteride or finasteride. I agree to read the Patient Information Leaflet"]
+18 [mdm] (question) Are you taking any of the following prescription medications?  ->  ["No, I don't take any medications"]
+19 [mcm] (question) Have you been diagnosed with any of the following conditions?  ->  ["None of the above"]
+20 [al] (question) Do you have any known allergies to the following?  ->  ["No known allergies"]
+   (variant: input type number_slider)
+21 [rhf] (question) How have you felt about your hair in the last week?  ->  []
+22 [yna] (question) Lots of people feel this way  ->  []
+   (variant: input type number_slider)
+23 [rha] (question) How would you rate the appearance of your hair in the last week?  ->  []
+24 [di] (question) What most influenced your decision to sign-up today?  ->  ["I'm looking for a long-term effective haircare treatment"]
+25 [rj] (question)   ->  []
+   (variant: input type date_masked)
+26 [el] (question) Your eligibility  ->  [{"type":"input[name=\"3053\"]","value":"15061994"},"Yes, I live in the UK (excluding Channel Islands)."]
+27 [ct] (question) Your order  ->  []
+
+===== STOP: no answer for step 28 [yd] (question) Personalise your account =====
+URL: https://www.hairandme.com/c/suh/yd
+JSON: {"step":{"actionsList":[{"next":{"label":"Next question"}},{"previous":{"label":"Back to previous page"}}],"breadcrumb":{"sectionNumber":4,"sectionTitle":"YOUR DETAILS"},"description":null,"headerElement":null,"questions":[{"id":3044,"inputConfig":{"placeholder":"John/Jane"},"inputType":"text","is_custom":false,"label":"Your legal first name","text":null,"value":null},{"id":3045,"inputConfig":{"placeholder":"Doe"},"inputType":"text","is_custom":false,"label":"Your legal last name","text":null,"value":null},{"id":3043,"inputConfig":{"info":{"text":"This will appear on your personalised products, and in your account. If left empty, we’ll use your legal first name."},"isOptional":true,"placeholder":"Your nickname or chosen name"},"inputType":"text","is_custom":false,"label":"Your preferred name","text":null,"value":null},{"id":3055,"inputConfig":{"defaultEngravedName":"you","description":"Our service is fully personalised – right down to the name on the treatment:","firstNameQuestionId":3044,"imageKey":"unengraved-hair-doser","preferredNameQuestionId":3043,"title":"Engraved just for you"},"inputType":"engraved_doser","is_custom":false,"label":null,"text":null,"value":null}],"section":null,"title":"Personalise your account","type":"question"}}
+TEXT: Personalise your account
+Your legal first name
+Your legal last name
+Your preferred name
+
+This will appear on your personalised products, and in your account. If left empty, we’ll use your legal first name.
+
+Engraved just for you
+Our service is fully personalised – right down to the name on the treatment:
+FOR YOU
+NEXT QUESTION
+Back to previous page
+CONTROLS:
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:text[name=3044] | Your legal first name
+input:text[name=3045] | Your legal last name
+input:text[name=3043] | Your preferred name
+button:submit | NEXT QUESTION [disabled]
+a -> /c/suh/yd?action=previous | Back to previous page
+
+[autowalk] exit 0 -> runs/s2-m-scc-eczema

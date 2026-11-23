@@ -1,0 +1,174 @@
+{
+ "_about": "SCOUT men 3: every previous product, every medicine option (with 'Other' free text), every remaining condition, every allergy, 'Complete hair loss'. Multi-change scout to discover follow-up screens, not a one-change experiment.",
+ "start": "https://www.hairandme.com/c/suh/new",
+ "answers": {
+  "tp": [
+   "Treatment for men"
+  ],
+  "yhg": [
+   "Prevent, stop or reverse hair loss",
+   "Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us."
+  ],
+  "js": [
+   "Ready to start treatment"
+  ],
+  "pds": [
+   {
+    "select": "select[name='3039']",
+    "value": {
+     "label": "Male"
+    }
+   }
+  ],
+  "pdsc": [
+   "I confirm the above selection is accurate and true."
+  ],
+  "mi": [],
+  "ht": [
+   "Straight"
+  ],
+  "hs": [
+   "None of the above"
+  ],
+  "ls": [
+   "None of these apply to me"
+  ],
+  "htp": [
+   "Minoxidil tablets",
+   "Finasteride tablets",
+   "Spironolactone tablets",
+   "Minoxidil spray",
+   "Finasteride spray",
+   "Dutasteride capsules",
+   "Yes, I understand this."
+  ],
+  "htam": [
+   "Complete hair loss"
+  ],
+  "htc": [
+   "Over a year ago"
+  ],
+  "ar": [],
+  "st": {
+   "byQuestion": {
+    "9346": [
+     "Fair. It often burns, but tans a little"
+    ],
+    "9348": [
+     {
+      "range": "input[type=range]",
+      "value": 25
+     }
+    ]
+   }
+  },
+  "sc": [
+   "Normal"
+  ],
+  "scc": [
+   "None of the above"
+  ],
+  "smt": [
+   "Fuller, denser-looking hair that I feel confident about"
+  ],
+  "pt": [
+   "No"
+  ],
+  "tt": [
+   "The Capsules"
+  ],
+  "pp": [
+   "I agree to the information above and wish to be considered for dutasteride or finasteride. I agree to read the Patient Information Leaflet"
+  ],
+  "mdm": [
+   "Antidepressants, anti-anxiety or medication for mental health reasons",
+   "Medication to treat benign prostate hyperplasia (BPH)",
+   "Steroids or other medications for psoriasis or eczema on your scalp",
+   "Other",
+   {
+    "fill": "textarea",
+    "value": "Vitamin D"
+   }
+  ],
+  "mcm": [
+   "High blood pressure (hypertension) or low blood pressure (hypotension)",
+   "Undergoing prostate-specific antigen (PSA) monitoring or have a personal or family history of prostate or testicular cancer",
+   "Benign prostatic hyperplasia (BPH) or any other disease of the prostate",
+   "Sexual dysfunction (e.g. erectile dysfunction)",
+   "Current or history of depression, anxiety or mental health concerns",
+   "Personal or family history of male breast cancer",
+   "Hypertrichosis (excessive hair growth anywhere on the body, unrelated to hormones)",
+   "PoTS syndrome (postural tachycardia syndrome)"
+  ],
+  "al": [
+   "Minoxidil",
+   "Finasteride",
+   "Dutasteride",
+   "Melatonin",
+   "Urea",
+   "Niacinamide",
+   "Tretinoin",
+   "Vitamin B6 (Pyridoxine)",
+   "Other",
+   {
+    "fill": "textarea",
+    "value": "Penicillin"
+   }
+  ],
+  "rhf": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "yna": [],
+  "rha": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "di": [
+   "I'm looking for a long-term effective haircare treatment"
+  ],
+  "rj": [],
+  "el": {
+   "byType": {
+    "date_masked": [
+     {
+      "type": "input[name=\"3053\"]",
+      "value": "15061994"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ],
+    "date_split": [
+     {
+      "fill": "Day",
+      "value": "15"
+     },
+     {
+      "fill": "Month",
+      "value": "06"
+     },
+     {
+      "fill": "Year",
+      "value": "1994"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ]
+   }
+  },
+  "ct": [],
+  "bp": [
+   "Often low",
+   {
+    "fill": "input[name=\"4421\"]",
+    "value": "95/60"
+   }
+  ]
+ }
+}

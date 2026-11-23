@@ -1,0 +1,15 @@
+STEP 01 scroll ""
+URL: https://hair-transplant.manual.co/ht/landing-page
+TITLE: 404 - Page not found
+
+--- VISIBLE TEXT ---
+404
+Page not found
+
+The page you are looking for doesn't exist or has been moved.
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

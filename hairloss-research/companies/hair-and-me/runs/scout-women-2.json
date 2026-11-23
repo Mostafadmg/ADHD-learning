@@ -1,0 +1,166 @@
+{
+ "_about": "SCOUT women 2: two goals (thicker hair, hair health), 'I have no hair loss or thinning', oily scalp with four scalp symptoms, pets Yes, The Drops, previous spironolactone + minoxidil spray, scalp steroids + 'Other' medicine, four conditions (phaeochromocytoma, heart, hypertrichosis, PoTS), date of birth 15/06/1956 (age 70). Multi-change scout to discover screens, not a one-change experiment.",
+ "start": "https://www.hairandme.com/c/suh/new",
+ "answers": {
+  "tp": [
+   "Treatment for women"
+  ],
+  "yhg": [
+   "Grow thicker and fuller hair",
+   "Boost overall hair health",
+   "Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us."
+  ],
+  "js": [
+   "Ready to start treatment"
+  ],
+  "pds": [
+   {
+    "select": "select[name='3039']",
+    "value": {
+     "label": "Female"
+    }
+   }
+  ],
+  "pdsc": [
+   "I confirm the above selection is accurate and true."
+  ],
+  "mi": [],
+  "ht": [
+   "Straight"
+  ],
+  "hs": [
+   "None of the above"
+  ],
+  "hw": [
+   "3-4 times per week"
+  ],
+  "hht": [
+   "None of the above"
+  ],
+  "ls": [
+   "None of these apply to me"
+  ],
+  "htp": [
+   "Spironolactone tablets",
+   "Minoxidil spray",
+   "Yes, I understand this."
+  ],
+  "hdw": [
+   "No"
+  ],
+  "htaf": [
+   "I have no hair loss or thinning"
+  ],
+  "htc": [
+   "Over a year ago"
+  ],
+  "ar": [],
+  "st": {
+   "byQuestion": {
+    "9346": [
+     "Fair. It often burns, but tans a little"
+    ],
+    "9348": [
+     {
+      "range": "input[type=range]",
+      "value": 25
+     }
+    ]
+   }
+  },
+  "sc": [
+   "Oily"
+  ],
+  "scc": [
+   "Flaking or dandruff",
+   "Redness and crusting around the base of your hair",
+   "Highly sensitive and irritable areas",
+   "Pustules/lumps/cysts"
+  ],
+  "smt": [
+   "Fuller, denser-looking hair that I feel confident about"
+  ],
+  "pt": [
+   "Yes"
+  ],
+  "tt": [
+   "The Drops"
+  ],
+  "dt": [],
+  "pg": [
+   "No",
+   "Yes, I've read and understood the information and would like to carry on."
+  ],
+  "mp": [
+   "None of the above"
+  ],
+  "mdf": [
+   "Steroids or other medications for psoriasis or eczema on your scalp",
+   "Other",
+   {
+    "fill": "textarea",
+    "value": "Levothyroxine"
+   }
+  ],
+  "mcf": [
+   "Pheochromocytoma",
+   "Any heart or cardiovascular condition (e.g. stroke, heart attack, heart failure, angina, atrial fibrillation, valve disorder, irregular or fast heartbeat)",
+   "Hypertrichosis (excessive hair growth anywhere on the body, unrelated to hormones)",
+   "PoTS syndrome (postural tachycardia syndrome)"
+  ],
+  "al": [
+   "No known allergies"
+  ],
+  "rhf": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "yna": [],
+  "rha": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "di": [
+   "I'm looking for a long-term effective haircare treatment"
+  ],
+  "rj": [],
+  "el": {
+   "byType": {
+    "date_masked": [
+     {
+      "type": "input[name=\"3053\"]",
+      "value": "15061956"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ],
+    "date_split": [
+     {
+      "fill": "Day",
+      "value": "15"
+     },
+     {
+      "fill": "Month",
+      "value": "06"
+     },
+     {
+      "fill": "Year",
+      "value": "1956"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ]
+   }
+  },
+  "ct": [],
+  "hgp": [
+   "Grow thicker and fuller hair"
+  ]
+ }
+}

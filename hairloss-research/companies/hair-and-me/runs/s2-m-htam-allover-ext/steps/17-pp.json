@@ -1,0 +1,58 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 3,
+   "sectionTitle": "MEDICAL HISTORY"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 4432,
+    "inputConfig": {
+     "content": "\n**I acknowledge that:**\n- These medications are not suitable if planning to start a family soon. I confirm that I am not planning to start a family in the next six months and agree to inform Hair + Me if my plans change.\n- These medications may be present in semen, so if my partner is pregnant or breastfeeding, I’ll use protection (like a condom) as a precaution.\n- Taking these medications may cause mood changes. It is uncommon, but this may include depression or suicidal thoughts. If this happens, I should stop my treatment, contact my GP immediately, and inform Hair + Me.\n- A temporary decrease in libido or changes in erectile function may occur. If this happens, I will pause my treatment and contact Hair + Me for guidance.\n- Mild breast tenderness or enlargement are possible side effects. If I notice any changes, I will stop treatment, contact my GP immediately, and inform Hair + Me.\n- In rare cases, some side effects may continue after stopping treatment. I will read the Patient Information Leaflet and contact Hair + Me if I have any concerns.\n\n[class=\"mb-300\"]\n"
+    },
+    "inputType": "markdown",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 4433,
+    "inputConfig": {
+     "options": [
+      {
+       "label": "I agree to the information above and wish to be considered for dutasteride or finasteride. I agree to read the Patient Information Leaflet",
+       "value": "true"
+      },
+      {
+       "label": "I do not wish to be considered for dutasteride or finasteride",
+       "value": "false"
+      }
+     ]
+    },
+    "inputType": "single_select_button",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Understanding Dutasteride and Finasteride",
+  "type": "question"
+ }
+}

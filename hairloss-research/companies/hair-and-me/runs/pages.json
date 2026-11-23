@@ -1,0 +1,9 @@
+{ "start": "https://www.hairandme.com/products/the-drops", "steps": [
+ {"do":"scroll"},
+ {"do":"goto","url":"https://www.hairandme.com/products/the-capsules"}, {"do":"scroll"},
+ {"do":"goto","url":"https://www.hairandme.com/products/the-drops-mx"}, {"do":"scroll"},
+ {"do":"goto","url":"https://www.hairandme.com/ingredients"}, {"do":"scroll"},
+ {"do":"goto","url":"https://www.hairandme.com/products"}, {"do":"scroll"},
+ {"do":"goto","url":"https://www.hairandme.com/how-we-compare"}, {"do":"scroll"},
+ {"do":"goto","url":"https://www.hairandme.com/meet-the-team"}, {"do":"scroll"}
+] }

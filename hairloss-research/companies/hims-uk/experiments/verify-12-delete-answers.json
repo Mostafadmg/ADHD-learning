@@ -1,0 +1,53 @@
+{
+ "start": "https://www.forhims.co.uk/c/hl",
+ "steps": [
+  {
+   "do": "click",
+   "text": "Experiencing hair loss, ready to start treatment",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Along the hairline",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Some",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Over a year ago",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Your answers",
+   "settle": 2000
+  },
+  {
+   "do": "click",
+   "text": "Delete my answers",
+   "settle": 4000
+  },
+  {
+   "do": "wait",
+   "ms": 4000
+  },
+  {
+   "do": "goto",
+   "url": "https://www.forhims.co.uk/c/hl"
+  },
+  {
+   "do": "wait",
+   "ms": 6000
+  }
+ ],
+ "_about": {
+  "experiment": "verify-12-delete-answers",
+  "stage": "verify",
+  "changed": "four answers given, then 'Your answers' → 'Delete my answers', then /c/hl opened again",
+  "why": "New (listed as untested by stage 2): what the delete button does. It removes the anonymous answers only; nothing is typed."
+ }
+}

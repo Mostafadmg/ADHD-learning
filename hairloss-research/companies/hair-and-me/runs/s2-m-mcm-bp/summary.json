@@ -1,0 +1,193 @@
+{
+ "run": "s2-m-mcm-bp",
+ "flow": "men",
+ "changed": "men-mcm: None of the above → High blood pressure or low blood pressure; the new follow-up screen was answered 'Well-controlled', no reading typed",
+ "changedStep": "mcm",
+ "baselinesPooled": [
+  "baseline-men",
+  "s2-base-men-1"
+ ],
+ "stepOrder": [
+  "tp",
+  "yhg",
+  "js",
+  "pds",
+  "pdsc",
+  "mi",
+  "ht",
+  "ls",
+  "htp",
+  "htam",
+  "htc",
+  "ar",
+  "st",
+  "sc",
+  "scc",
+  "smt",
+  "pt",
+  "tt",
+  "pp",
+  "mdm",
+  "mcm",
+  "bp",
+  "al",
+  "rhf",
+  "yna",
+  "rha",
+  "di",
+  "rj",
+  "el",
+  "ct",
+  "yd"
+ ],
+ "nSteps": 31,
+ "end": "account wall (yd)",
+ "newSteps": [
+  "bp"
+ ],
+ "missingSteps": [],
+ "candidateEffects": [],
+ "noise": [
+  {
+   "step": "pds",
+   "key": "title",
+   "where": "before-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-17",
+    "s2-m-age-18"
+   ]
+  },
+  {
+   "step": "ar",
+   "key": "q429.config",
+   "where": "before-change",
+   "alsoIn": [
+    "s2-m-age-17",
+    "s2-m-age-85",
+    "s2-m-htc-recent"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9346.options",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9346.type",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9348.options",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9348.type",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9349.config",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9349.type",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "di",
+   "key": "q8015.options",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-85",
+    "s2-m-htam-allover-ext"
+   ]
+  },
+  {
+   "step": "ct",
+   "key": "q180037.config",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-m-age-18",
+    "s2-m-htam-allover-ext",
+    "s2-m-htam-crown"
+   ]
+  },
+  {
+   "step": "ct",
+   "key": "title",
+   "where": "after-change",
+   "alsoIn": [
+    "baseline-women",
+    "entry-promo-caps-men",
+    "s2-m-age-18"
+   ]
+  }
+ ],
+ "bag": {
+  "items": [
+   [
+    "hairTreatment",
+    "Personalised treatment",
+    "4 week supply · 12ml",
+    "Prescription",
+    3499,
+    null
+   ]
+  ],
+  "shipping": 0,
+  "total": 3499,
+  "promo": "",
+  "shippingMsg": null
+ },
+ "bagItemsSameAsBaseline": true,
+ "posted": {
+  "mcm": [
+   [
+    4453,
+    [
+     "15"
+    ]
+   ]
+  ]
+ },
+ "nextAfterChange": {
+  "mcm": "bp"
+ },
+ "sweep": false
+}

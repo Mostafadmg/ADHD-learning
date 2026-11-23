@@ -1,0 +1,26 @@
+STEP 11 hdw
+URL: https://www.hairandme.com/c/suh/hdw
+
+--- VISIBLE TEXT ---
+Do you know if you're in a hard water area?
+
+How to check for signs of hard water:
+
+White spots on dishes and glassware (from calcium and magnesium deposits).
+Soap doesn’t lather well when washing hands or showering.
+Dry skin and dull hair after bathing.
+Scale buildup in kettles, coffee makers, or water heaters.
+Yes
+No
+Unsure
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=8003] | Yes
+input:radio[name=8003] | No
+input:radio[name=8003] | Unsure
+button:submit | NEXT QUESTION
+a -> /c/suh/hdw?action=previous | Back to previous page

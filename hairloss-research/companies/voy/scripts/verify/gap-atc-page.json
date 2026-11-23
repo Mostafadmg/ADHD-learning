@@ -1,0 +1,10 @@
+{
+ "_note": "Stage 3 gap replay. The minoxidil social landing page whose buttons open the product-first route (?flowType=atc). Page load only: reads the button links and the plan cards.",
+ "_answer": "page load",
+ "start": "https://hairloss1.joinvoy.com/a/social/hair-loss-minoxidil",
+ "steps": [
+  {
+   "do": "scroll"
+  }
+ ]
+}

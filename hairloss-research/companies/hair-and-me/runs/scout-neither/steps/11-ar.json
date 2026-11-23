@@ -1,0 +1,49 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "autoNext": {
+     "duration": 7000,
+     "label": "Next"
+    }
+   }
+  ],
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 429,
+    "inputConfig": {
+     "content": [
+      {
+       "answer": "I want to prevent, stop or reverse hair loss",
+       "image": "hair-goal",
+       "question_title": "Your hair goal"
+      },
+      {
+       "answer": "Straight",
+       "image": "hair-type-straight",
+       "question_title": "Your hair type"
+      },
+      {
+       "answer": "Across the hairline",
+       "image": "hair-thinning",
+       "question_title": "Your hair thinning"
+      }
+     ],
+     "interstitialType": "answers-review",
+     "message": "Thanks for sharing this with us.",
+     "title": "Here’s what we know..."
+    },
+    "inputType": "interstitial",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": null,
+  "type": "question"
+ }
+}

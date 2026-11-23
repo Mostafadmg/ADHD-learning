@@ -1,0 +1,47 @@
+STEP 12 click "Rarely"
+URL: https://app.forhims.co.uk/flow/a9a88e4a-89b9-47ae-8138-3a1acaa41594?t=hair&anon_flow_key=hair
+TITLE: Hims
+
+--- VISIBLE TEXT ---
+Factors
+like
+aging,
+family history,
+and
+stress
+can
+cause
+hair
+shedding
+and
+thinning.
+
+The
+good
+news?
+Prescription
+treatments
+can
+help
+you
+fight
+these
+root
+causes,
+so
+you
+can
+grow
+visibly thicker, fuller hair
+in
+just
+3 to 6 months.
+
+Continue
+←
+
+--- CONTROLS ---
+  button (3): Continue  ·  ←  ·  Your answers
+
+--- LINKS ---
+  link (1): Navigate home -> /profile

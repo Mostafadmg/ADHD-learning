@@ -1,0 +1,83 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 2,
+   "sectionTitle": "YOUR HAIR"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 9318,
+    "inputConfig": {
+     "options": [
+      {
+       "image": "across-the-hairline-male",
+       "label": "Across the hairline",
+       "value": "Across the hairline"
+      },
+      {
+       "image": "at-the-temples-male",
+       "label": "At the temples",
+       "value": "At the temples"
+      },
+      {
+       "image": "at-the-crown-male",
+       "label": "At the crown",
+       "value": "At the crown"
+      },
+      {
+       "image": "all-over-moderate-male",
+       "label": "All over – moderate",
+       "value": "All over – moderate"
+      },
+      {
+       "image": "all-over-extensive-male",
+       "label": "All over – extensive",
+       "value": "All over – extensive"
+      },
+      {
+       "image": "one-or-more-patches-of-complete-hair-loss-male",
+       "label": "One or more patches of complete hair loss",
+       "value": "One or more patches of complete hair loss"
+      },
+      {
+       "image": "complete-hair-loss-male",
+       "label": "Complete hair loss",
+       "value": "Complete hair loss"
+      },
+      {
+       "image": "other-unsure-male",
+       "label": "Other/unsure",
+       "value": "Other/unsure"
+      },
+      {
+       "label": "None",
+       "value": "None"
+      }
+     ]
+    },
+    "inputType": "single_select_button_with_image",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Where have you noticed hair thinning or loss?",
+  "type": "question"
+ }
+}

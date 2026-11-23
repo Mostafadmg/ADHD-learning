@@ -1,0 +1,18 @@
+STEP 28 utt
+URL: https://www.hairandme.com/c/suh/utt
+
+--- VISIBLE TEXT ---
+We’re unable to treat you at this time.
+
+Thanks for your interest. At the moment, we're unable to treat your age group.
+
+We're working really hard to find ways to treat as many people as possible, and we hope to see you again in the future.
+
+GOODBYE FOR NOW
+Back to consultation
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+a -> / | GOODBYE FOR NOW
+a -> /c/suh/utt?action=previous | Back to consultation

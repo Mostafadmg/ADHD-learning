@@ -1,0 +1,65 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "link": {
+     "label": "* Read about our citations here",
+     "url": "https://www.hairandme.com/support/en/articles/284617-medical-citations"
+    }
+   },
+   {
+    "autoNext": {
+     "duration": 6500,
+     "label": "Go to next page"
+    }
+   },
+   {
+    "loader": {
+     "label": ""
+    }
+   },
+   {
+    "skipAsNext": {
+     "label": "Skip"
+    }
+   }
+  ],
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 410,
+    "inputConfig": {
+     "content": [
+      {
+       "description": "Saw an improvement in hair growth with **minoxidil + finasteride capsules***",
+       "title": "94%"
+      },
+      {
+       "description": "Saw an increase in hair growth with **finasteride***",
+       "title": "87%"
+      },
+      {
+       "description": "Saw an improvement in hair density with **minoxidil***",
+       "title": "71%"
+      },
+      {
+       "description": "**Dutasteride** is more effective than finasteride in treating hair loss over 24 weeks*.",
+       "title": "up-img"
+      }
+     ],
+     "interstitialType": "male-ingredients",
+     "title": "Ingredients that see results"
+    },
+    "inputType": "interstitial",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": null,
+  "type": "question"
+ }
+}

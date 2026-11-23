@@ -1,0 +1,79 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 3,
+   "sectionTitle": "MEDICAL HISTORY"
+  },
+  "description": "Choose the number from 1-10 that best reflects your answer.",
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 244,
+    "inputConfig": {
+     "options": [
+      {
+       "label": "1 - The worst I've ever felt",
+       "value": 1
+      },
+      {
+       "label": "2",
+       "value": 2
+      },
+      {
+       "label": "3",
+       "value": 3
+      },
+      {
+       "label": "4",
+       "value": 4
+      },
+      {
+       "label": "5",
+       "value": 5
+      },
+      {
+       "label": "6",
+       "value": 6
+      },
+      {
+       "label": "7",
+       "value": 7
+      },
+      {
+       "label": "8",
+       "value": 8
+      },
+      {
+       "label": "9",
+       "value": 9
+      },
+      {
+       "label": "10 - The best I've ever felt",
+       "value": 10
+      }
+     ]
+    },
+    "inputType": "single_select_button",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "How have you felt about your hair in the last week?",
+  "type": "question"
+ }
+}

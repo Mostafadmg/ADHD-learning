@@ -1,0 +1,19 @@
+{
+  "_note": "Baseline replay file for Voy's men's hair-loss quiz. On 2026-11-23 (stage 1, and again in stage 2: runs/s2-retest-men) this stops at step 00: www.joinvoy.com answers HTTP 429 with a Vercel security checkpoint ('Failed to verify your browser, Code 21'), so no question could be walked. The steps list is therefore empty on purpose. When the checkpoint no longer blocks the browser, add one step per screen using the baseline man below. Do not enter an email, phone, name or address: that is the account wall. The baselines that DO run today are the public mini-flows: scripts/s2/popup-men-base.json (landing pop-up, 'Temples & Crown') and scripts/s2/widget-base.json (pattern picker, 'Hairline & crown'). Stage 3 (verification) re-tested this file once more on 2026-11-23: same checkpoint (runs/verify-base-men, runs/verify-base-women).",
+  "_baselinePatient": {
+    "sex": "male",
+    "age": 32,
+    "pattern": "receding hairline and thinning crown (Norwood 3) — on Voy's own picture scale the nearest label is 'Temples & Crown'",
+    "onset": "gradual over about 2 years",
+    "familyHistory": "yes",
+    "medicalConditions": "none",
+    "medicines": "none",
+    "allergies": "none",
+    "previousHairTreatment": "none",
+    "sideEffectHistory": "none",
+    "goal": "regrowth",
+    "formatPreference": "no preference (site default)"
+  },
+  "start": "https://www.joinvoy.com/n/hair-loss/quiz",
+  "steps": []
+}

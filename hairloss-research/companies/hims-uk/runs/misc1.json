@@ -1,0 +1,7 @@
+{ "start": "https://hair.forhims.co.uk/", "steps": [
+ {"do":"wait","ms":2500},
+ {"do":"goto","url":"https://www.forhims.co.uk/c"},
+ {"do":"wait","ms":2500},
+ {"do":"goto","url":"https://www.forhims.co.uk/c/hl"},
+ {"do":"click","text":"Your answers","settle":2000}
+] }

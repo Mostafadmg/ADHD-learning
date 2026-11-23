@@ -1,0 +1,147 @@
+{
+ "_about": "SCOUT run (several answers changed at once, only to discover extra screens; not a one-change experiment).",
+ "_patient": "scout",
+ "start": "https://www.hairandme.com/c/suh/new",
+ "answers": {
+  "tp": [
+   "Treatment for men"
+  ],
+  "yhg": [
+   "Prevent, stop or reverse hair loss",
+   "Reverse hair thinning",
+   "Improve my hairline, parting or crown",
+   "Grow thicker and fuller hair",
+   "Boost overall hair health",
+   "Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us."
+  ],
+  "js": [
+   "Still exploring my options"
+  ],
+  "pds": [
+   {
+    "select": "select[name='3039']",
+    "value": {
+     "label": "Male"
+    }
+   }
+  ],
+  "pdsc": [
+   "I confirm the above selection is accurate and true."
+  ],
+  "mi": [],
+  "ht": [
+   "Coily"
+  ],
+  "hs": [
+   "Colour treatments, bleaching and dyes",
+   "Protective styles (e.g. braids, twists, faux locs)"
+  ],
+  "ls": [
+   "I'm dealing with quite a lot of stress",
+   "I've recently lost a significant amount of weight"
+  ],
+  "htp": [
+   "Minoxidil tablets",
+   "Finasteride tablets",
+   "Yes, I understand this."
+  ],
+  "htam": [
+   "One or more patches of complete hair loss"
+  ],
+  "htc": [
+   "Recently, in the past few weeks"
+  ],
+  "ar": [],
+  "st": {
+   "byQuestion": {
+    "9346": [
+     "Fair. It often burns, but tans a little"
+    ],
+    "9348": [
+     {
+      "range": "input[type=range]",
+      "value": 25
+     }
+    ]
+   }
+  },
+  "sc": [
+   "Normal"
+  ],
+  "scc": [
+   "None of the above"
+  ],
+  "smt": [
+   "Fuller, denser-looking hair that I feel confident about"
+  ],
+  "pt": [
+   "No"
+  ],
+  "tt": [
+   "The Capsules"
+  ],
+  "pp": [
+   "I agree to the information above and wish to be considered for dutasteride or finasteride. I agree to read the Patient Information Leaflet"
+  ],
+  "mdm": [
+   "No, I don't take any medications"
+  ],
+  "mcm": [
+   "None of the above"
+  ],
+  "al": [
+   "No known allergies"
+  ],
+  "rhf": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "yna": [],
+  "rha": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "di": [
+   "I'm looking for a long-term effective haircare treatment"
+  ],
+  "rj": [],
+  "el": {
+   "byType": {
+    "date_masked": [
+     {
+      "type": "input[name=\"3053\"]",
+      "value": "15061994"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ],
+    "date_split": [
+     {
+      "fill": "Day",
+      "value": "15"
+     },
+     {
+      "fill": "Month",
+      "value": "06"
+     },
+     {
+      "fill": "Year",
+      "value": "1994"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ]
+   }
+  },
+  "ct": [],
+  "hgp": [
+   "Boost overall hair health"
+  ]
+ }
+}

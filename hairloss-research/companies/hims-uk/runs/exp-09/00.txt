@@ -1,0 +1,26 @@
+STEP 00 start (HTTP 404)
+URL: https://app.forhims.co.uk/flow/a9a88e4a-89b9-47ae-8138-3a1acaa41594?t=hair&anon_flow_key=hair
+TITLE: Hims
+
+--- VISIBLE TEXT ---
+Which best represents your hair loss and goals?
+
+Receding hairline, want to slow its progress
+
+Experiencing hair loss, exploring options
+
+Experiencing hair loss, ready to start treatment
+
+No hair loss yet, want to get ahead of it
+
+None of the above
+
+By starting the assessment, you agree we can save your answers for 7 days, including health information. Privacy notice
+
+←
+
+--- CONTROLS ---
+  button (7): Receding hairline, want to slow its progress [false]  ·  Experiencing hair loss, exploring options [false]  ·  Experiencing hair loss, ready to start treatment [false]  ·  No hair loss yet, want to get ahead of it [false]  ·  None of the above [false]  ·  ←  ·  Your answers
+
+--- LINKS ---
+  link (2): Privacy notice -> https://www.forhims.co.uk/privacy-policy  ·  Navigate home -> /profile

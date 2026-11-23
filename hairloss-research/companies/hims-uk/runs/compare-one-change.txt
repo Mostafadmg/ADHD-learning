@@ -1,0 +1,186 @@
+BASELINE runs/exp-00-baseline-full: 24 screens, 22 submissions, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+
+== runs/exp-01: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 0: answer {"value": "RECEDING_HAIRLINE"} (baseline {"value": "HAIRLOSS_READY_FOR_TREATMENT"}) next d9a57f80 (baseline d9a57f80)
+   screens: identical text on every step
+
+== runs/exp-02: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 0: answer {"value": "HAIRLOSS_EXPLORING_TREATMENTS"} (baseline {"value": "HAIRLOSS_READY_FOR_TREATMENT"}) next d9a57f80 (baseline d9a57f80)
+   screens: identical text on every step
+
+== runs/exp-03: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 0: answer {"value": "HAIRLOSS_NONE_BUT_LOOKING"} (baseline {"value": "HAIRLOSS_READY_FOR_TREATMENT"}) next d9a57f80 (baseline d9a57f80)
+   screens: identical text on every step
+
+== runs/exp-04: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 0: answer {"value": "NONE_OF_THE_ABOVE"} (baseline {"value": "HAIRLOSS_READY_FOR_TREATMENT"}) next d9a57f80 (baseline d9a57f80)
+   screens: identical text on every step
+
+== runs/exp-05: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 1: answer {"value": "TOP_LOSS"} (baseline {"value": "HAIRLINE_LOSS"}) next 77d8dafa (baseline 77d8dafa)
+   step 17 differs (STEP 17 click "Next")
+      baseline: …ur hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routin
+      run     : …ur hair so far: Your Hair Hair changes At the top Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No sty
+
+== runs/exp-06: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 1: answer {"value": "OVERALL_LOSS"} (baseline {"value": "HAIRLINE_LOSS"}) next 77d8dafa (baseline 77d8dafa)
+   step 17 differs (STEP 17 click "Next")
+      baseline: …r hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine
+      run     : …r hair so far: Your Hair Hair changes All over Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No stylin
+
+== runs/exp-07: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 2: answer {"value": "SIGNIFICANT_HAIRLOSS"} (baseline {"value": "SOME_HAIRLOSS"}) next dd20f561 (baseline dd20f561)
+   screens: identical text on every step
+
+== runs/exp-08: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 2: answer {"value": "LITTLE_HAIRLOSS"} (baseline {"value": "SOME_HAIRLOSS"}) next dd20f561 (baseline dd20f561)
+   screens: identical text on every step
+
+== runs/exp-09: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 3: answer {"value": "HAIRLOSS_WITHIN_A_YEAR"} (baseline {"value": "HAIRLOSS_MORE_THAN_A_YEAR"}) next 025b8458 (baseline 025b8458)
+   step 17 differs (STEP 17 click "Next")
+      baseline: …air changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair 
+      run     : …air changes Along the hairline Noticed: In the past year Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair
+
+== runs/exp-10: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 3: answer {"value": "HAIRLOSS_LAST_MONTHS"} (baseline {"value": "HAIRLOSS_MORE_THAN_A_YEAR"}) next 025b8458 (baseline 025b8458)
+   step 17 differs (STEP 17 click "Next")
+      baseline: …air changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair 
+      run     : …air changes Along the hairline Noticed: In the past few months Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let m
+
+== runs/exp-11: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 3: answer {"value": "HAIRLOSS_NOT_SURE"} (baseline {"value": "HAIRLOSS_MORE_THAN_A_YEAR"}) next 025b8458 (baseline 025b8458)
+   step 17 differs (STEP 17 click "Next")
+      baseline: …air changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair 
+      run     : …air changes Along the hairline Noticed: Not sure Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its 
+
+== runs/exp-12: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 4: answer {"listValue": ["DEFINED_HAIRLINE"]} (baseline {"listValue": ["THICKER_HAIR"]}) next 17f360a2 (baseline 17f360a2)
+   screens: identical text on every step
+
+== runs/exp-13: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 4: answer {"listValue": ["SCALP_COVERAGE"]} (baseline {"listValue": ["THICKER_HAIR"]}) next 17f360a2 (baseline 17f360a2)
+   screens: identical text on every step
+
+== runs/exp-14: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 4: answer {"listValue": ["STOP_LOSS"]} (baseline {"listValue": ["THICKER_HAIR"]}) next 17f360a2 (baseline 17f360a2)
+   screens: identical text on every step
+
+== runs/exp-15: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 4: answer {"listValue": ["ALL"]} (baseline {"listValue": ["THICKER_HAIR"]}) next 17f360a2 (baseline 17f360a2)
+   screens: identical text on every step
+
+== runs/exp-16: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 5: answer {"value": "CURLY"} (baseline {"value": "STRAIGHT_WAVY"}) next 4b5857d4 (baseline 4b5857d4)
+   screens: identical text on every step
+
+== runs/exp-17: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 5: answer {"value": "TEXTURED"} (baseline {"value": "STRAIGHT_WAVY"}) next 4b5857d4 (baseline 4b5857d4)
+   screens: identical text on every step
+
+== runs/exp-18: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 5: answer {"value": "NO_HAIR"} (baseline {"value": "STRAIGHT_WAVY"}) next 4b5857d4 (baseline 4b5857d4)
+   screens: identical text on every step
+
+== runs/exp-19: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 6: answer {"value": "SHAVED_BALD"} (baseline {"value": "SHORT"}) next 024b75df (baseline 024b75df)
+   screens: identical text on every step
+
+== runs/exp-20: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 6: answer {"value": "MEDIUM"} (baseline {"value": "SHORT"}) next 024b75df (baseline 024b75df)
+   screens: identical text on every step
+
+== runs/exp-21: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 6: answer {"value": "LONG"} (baseline {"value": "SHORT"}) next 024b75df (baseline 024b75df)
+   screens: identical text on every step
+
+== runs/exp-22: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 9: answer {"value": "NO"} (baseline {"value": "YES"}) next 7fab31df (baseline 7fab31df)
+   step 17 differs (STEP 17 click "Next")
+      baseline: …r ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’
+      run     : …r ago Lifestyle factors Family history: No Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s
+
+== runs/exp-23: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 9: answer {"value": "NOT_SURE"} (baseline {"value": "YES"}) next 7fab31df (baseline 7fab31df)
+   step 17 differs (STEP 17 click "Next")
+      baseline: …r ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’
+      run     : …r ago Lifestyle factors Family history: Not sure Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now,
+
+== runs/exp-24: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 10: answer {"value": "RARELY_STRESSED"} (baseline {"value": "SOMETIMES_STRESSED"}) next 81e85124 (baseline 81e85124)
+   step 17 differs (STEP 17 click "Next")
+      baseline: …yle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over wh
+      run     : …yle factors Family history: Yes Stress: Rarely Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what 
+
+== runs/exp-25: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 10: answer {"value": "ALWAYS_STRESSED"} (baseline {"value": "SOMETIMES_STRESSED"}) next 81e85124 (baseline 81e85124)
+   step 17 differs (STEP 17 click "Next")
+      baseline: …yle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over wh
+      run     : …yle factors Family history: Yes Stress: All the time Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over
+
+== runs/exp-26: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 10: answer {"value": "NOT_SURE_STRESSED"} (baseline {"value": "SOMETIMES_STRESSED"}) next 81e85124 (baseline 81e85124)
+   step 17 differs (STEP 17 click "Next")
+      baseline: …yle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over wh
+      run     : …yle factors Family history: Yes Stress: Not sure Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over wha
+
+== runs/exp-27: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 13: answer {"value": "PRODUCTS"} (baseline {"value": "NONE"}) next ea93db21 (baseline ea93db21)
+   step 17 differs (STEP 17 click "Next")
+      baseline: …ory: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with 
+      run     : …ory: Yes Stress: Sometimes Hair routine I use products, gel, mousse, etc. Less than 5 minutes routine Now, let’s go over what you can expect with trea
+
+== runs/exp-28: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 13: answer {"value": "HAT"} (baseline {"value": "NONE"}) next ea93db21 (baseline ea93db21)
+   step 17 differs (STEP 17 click "Next")
+      baseline: …ory: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with 
+      run     : …ory: Yes Stress: Sometimes Hair routine I usually wear a hat Less than 5 minutes routine Now, let’s go over what you can expect with treatment through
+
+== runs/exp-29: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 13: answer {"value": "PROTECTIVE_STYLES"} (baseline {"value": "NONE"}) next ea93db21 (baseline ea93db21)
+   step 17 differs (STEP 17 click "Next")
+      baseline: …ory: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with 
+      run     : …ory: Yes Stress: Sometimes Hair routine Protective styles, braids, locs, etc. Less than 5 minutes routine Now, let’s go over what you can expect with 
+
+== runs/exp-30: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 14: answer {"value": "5_TO_10_MINUTES"} (baseline {"value": "LESS_THAN_5_MINUTES"}) next 408f9fb8 (baseline 408f9fb8)
+   step 17 differs (STEP 17 click "Next")
+      baseline: …e No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←
+      run     : …e No styling I let my hair do its thing 5-10 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←
+
+== runs/exp-31: 24 screens, final https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+   server next-step path same as baseline: True (22 submissions)
+   submission 14: answer {"value": "MORE_THAN_10"} (baseline {"value": "LESS_THAN_5_MINUTES"}) next 408f9fb8 (baseline 408f9fb8)
+   step 17 differs (STEP 17 click "Next")
+      baseline: …e No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←
+      run     : …e No styling I let my hair do its thing 10+ minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←

@@ -1,0 +1,184 @@
+{
+ "_about": "Stage 2 SWEEP s2-w-sweep-1 (women baseline): several low-priority answers changed at once as a group test. SWEEP (women, 9 non-medical answers changed together): gender identity Woman/Girl; Wavy; washes twice a week; three ways of hiding hair loss; hard water Unsure; front of parting wider; three to six months ago; skin Brown; three other six-month wishes",
+ "start": "https://www.hairandme.com/c/suh/new",
+ "answers": {
+  "tp": [
+   "Treatment for women"
+  ],
+  "yhg": [
+   "Prevent, stop or reverse hair loss",
+   "Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us."
+  ],
+  "js": [
+   "Ready to start treatment"
+  ],
+  "pds": [
+   {
+    "select": "select[name='3039']",
+    "value": {
+     "label": "Female"
+    }
+   },
+   {
+    "select": "select[name='3054']",
+    "value": {
+     "label": "Woman/Girl"
+    }
+   }
+  ],
+  "pdsc": [
+   "I confirm the above selection is accurate and true."
+  ],
+  "mi": [],
+  "ht": [
+   "Wavy"
+  ],
+  "hs": [
+   "None of the above"
+  ],
+  "hw": [
+   "Twice a week"
+  ],
+  "hht": [
+   "Using hairstyles to hide thin areas",
+   "Shaving my head",
+   "Wearing a wig, hairpiece or extensions"
+  ],
+  "ls": [
+   "None of these apply to me"
+  ],
+  "htp": [
+   "None of the above"
+  ],
+  "hdw": [
+   "Unsure"
+  ],
+  "htaf": [
+   "The front of my parting is getting wider"
+  ],
+  "htc": [
+   "Around three to six months ago"
+  ],
+  "ar": [],
+  "st": {
+   "byQuestion": {
+    "9346": [
+     "Brown. It very rarely burns, tans darkly easily"
+    ],
+    "9348": [
+     {
+      "range": "input[type=range]",
+      "value": 75
+     }
+    ]
+   }
+  },
+  "sc": [
+   "Normal"
+  ],
+  "scc": [
+   "None of the above"
+  ],
+  "smt": [
+   "Hair that feels healthy from root to tip",
+   "Hair that feels stronger and has less breakage",
+   "Noticeably less hair falling out"
+  ],
+  "pt": [
+   "No"
+  ],
+  "tt": [
+   "The Capsules"
+  ],
+  "dt": [],
+  "pg": [
+   "No",
+   "Yes, I've read and understood the information and would like to carry on."
+  ],
+  "mp": [
+   "None of the above"
+  ],
+  "mdf": [
+   "No, I don't take any medications"
+  ],
+  "mcf": [
+   "None of the above"
+  ],
+  "al": [
+   "No known allergies"
+  ],
+  "rhf": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "yna": [],
+  "rha": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "di": [
+   "I'm looking for a long-term effective haircare treatment"
+  ],
+  "rj": [],
+  "el": {
+   "byType": {
+    "date_masked": [
+     {
+      "type": "input[name=\"3053\"]",
+      "value": "15061988"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ],
+    "date_split": [
+     {
+      "fill": "Day",
+      "value": "15"
+     },
+     {
+      "fill": "Month",
+      "value": "06"
+     },
+     {
+      "fill": "Year",
+      "value": "1988"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ]
+   }
+  },
+  "ct": [],
+  "hgp": [
+   "Prevent, stop or reverse hair loss"
+  ],
+  "bp": [
+   "Well-controlled"
+  ],
+  "pgc": [
+   "Yes, I've read and understood the information and would like to carry on."
+  ]
+ },
+ "_changed": {
+  "flow": "women",
+  "steps": [
+   "pds",
+   "ht",
+   "hw",
+   "hht",
+   "hdw",
+   "htaf",
+   "htc",
+   "st",
+   "smt"
+  ],
+  "sweep": true,
+  "desc": "SWEEP (women, 9 non-medical answers changed together): gender identity Woman/Girl; Wavy; washes twice a week; three ways of hiding hair loss; hard water Unsure; front of parting wider; three to six months ago; skin Brown; three other six-month wishes"
+ }
+}

@@ -1,0 +1,21 @@
+STEP 25 yna
+URL: https://www.hairandme.com/c/suh/yna
+
+--- VISIBLE TEXT ---
+Lots of people feel this way
+
+We spoke to men in our community about their experiences of hair loss, and found that:
+
+100%
+felt a negative emotional or psychological impact
+90%
+mentioned a loss of confidence or self-esteem
+58%
+described feeling embarrassed or insecure
+*Based on responses from 89 participants
+Skip
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+a -> /c/suh/yna | Skip

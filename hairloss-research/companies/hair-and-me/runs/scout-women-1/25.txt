@@ -1,0 +1,21 @@
+STEP 25 bp
+URL: https://www.hairandme.com/c/suh/bp
+
+--- VISIBLE TEXT ---
+How would you describe your blood pressure over the past 12 months?
+Well-controlled
+Often elevated
+Often low
+Please enter your last blood pressure reading if available (mmHg)
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=4420] | Well-controlled
+input:radio[name=4420] | Often elevated
+input:radio[name=4420] | Often low
+input:text[name=4421] | Please enter your last blood pressure reading if available (mmHg)
+button:submit | NEXT QUESTION [disabled]
+a -> /c/suh/bp?action=previous | Back to previous page

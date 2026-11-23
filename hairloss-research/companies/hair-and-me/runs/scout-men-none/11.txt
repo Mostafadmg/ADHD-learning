@@ -1,0 +1,22 @@
+STEP 11 sc
+URL: https://www.hairandme.com/c/suh/sc
+
+--- VISIBLE TEXT ---
+How would you describe the condition of your scalp?
+Normal
+No recurring or chronic scalp issues
+Oily
+Hair looks and feels greasy from excess oil, possibly with dandruff
+Dry
+Flaky and/or tight from lack of moisture, possibly with dandruff
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=9320] | Normal No recurring or chronic scalp issues
+input:radio[name=9320] | Oily Hair looks and feels greasy from excess oil, possibly with dandruff
+input:radio[name=9320] | Dry Flaky and/or tight from lack of moisture, possibly with dandruff
+button:submit | NEXT QUESTION [disabled]
+a -> /c/suh/sc?action=previous | Back to previous page

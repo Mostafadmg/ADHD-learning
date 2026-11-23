@@ -1,0 +1,11 @@
+{
+ "_note": "Stage 3 gap replay. Voy's landing page aimed at both men and women (public host). Baseline: the 'science' section with its default tab (Men). No data entry.",
+ "_answer": "default (Men tab)",
+ "start": "https://hairloss1.joinvoy.com/sem-mf",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 1500
+  }
+ ]
+}

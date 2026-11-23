@@ -1,0 +1,17 @@
+STEP 24 di AFTER ANSWERS ["I'm looking for a long-term effective haircare treatment"]
+URL: https://www.hairandme.com/c/suh/di
+
+--- VISIBLE TEXT ---
+What most influenced your decision to sign-up today?
+I'm looking for a long-term effective haircare treatment
+I want the discounted trial
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=8015] | I'm looking for a long-term effective haircare treatment [checked]
+input:radio[name=8015] | I want the discounted trial
+button:submit | NEXT QUESTION
+a -> /c/suh/di?action=previous | Back to previous page

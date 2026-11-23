@@ -1,0 +1,19 @@
+{
+ "_note": "Stage 3 gap replay. Older Manual landing page (still live on hello.manual.co) with a plan picker. Reads the price and the 'Continue' link only; never presses Continue.",
+ "_answer": "format Spray AND length 3 Months (fills the 2 x 2 grid; two changes)",
+ "start": "https://hello.manual.co/a/hl-hair-loss-minox-plans",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "click",
+   "selector": ".hero-choose-plan [data-product=\"spray\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".hero-choose-plan [data-frequency=\"3\"]"
+  }
+ ]
+}

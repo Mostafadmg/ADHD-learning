@@ -1,0 +1,21 @@
+STEP 00 start (HTTP 200)
+URL: https://joinvoy.zendesk.com/hc/en-gb
+TITLE: Voy UK
+
+--- VISIBLE TEXT ---
+Voy UK
+Search
+Categories
+Have a question?
+Recent activity
+Have a question?
+How can I get in touch with Voy?
+Article created 1 month ago
+ Number of comments: 0
+
+--- CONTROLS ---
+  button (2): Toggle navigation menu  ·  English (United Kingdom)
+  input:search (1): Search
+
+--- LINKS ---
+  link (9): Skip to main content -> #main-content  ·  Sign in -> /hc/en-gb/signin?return_to=https%3A%2F%2Fjoinvoy.zendesk.com%2Fhc%2Fen-gb  ·  Have a question? -> /hc/en-gb/sections/20198488248468-Have-a-question  ·  How can I get in touch with Voy? -> /hc/en-gb/articles/54632952934804-How-can-I-get-in-touch-with-Voy  ·  Voy UK -> /hc/en-gb  ·  Nederlands (Nederland) -> /hc/change_language/nl-nl?return_to=%2Fhc%2Fnl-nl  ·  Português do Brasil -> /hc/change_language/pt-br?return_to=%2Fhc%2Fpt-br  ·  Svenska (Sverige) -> /hc/change_language/sv-se?return_to=%2Fhc%2Fsv-se  ·  Do Health Homepage -> https://dohealth.co

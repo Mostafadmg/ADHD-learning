@@ -1,0 +1,17 @@
+STEP 01 wait 2500
+URL: https://www.hairandme.com/c/suh/tp
+TITLE: Personalised haircare starts here | Hair + Me
+
+--- VISIBLE TEXT ---
+Which treatment is right for you?
+Treatment for men
+Treatment for women
+Neither of these are right for me
+NEXT QUESTION
+
+--- CONTROLS ---
+  radio (3): Treatment for men  ·  Treatment for women  ·  Neither of these are right for me
+  button (1): NEXT QUESTION [disabled]
+
+--- LINKS ---
+  link (2): Navigate home -> /  ·  Support Centre -> https://www.hairandme.com/support

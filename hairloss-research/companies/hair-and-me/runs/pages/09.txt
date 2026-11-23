@@ -1,0 +1,12 @@
+STEP 09 scroll ""
+URL: https://www.hairandme.com/products
+TITLE: Personalised haircare starts here | Hair + Me
+
+--- VISIBLE TEXT ---
+
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+  link (7): Visit our Support Centre -> https://www.hairandme.com/support  ·  Our Policies -> https://www.hairandme.com/support/collections/620350-policies  ·  Learn about hair loss -> https://www.hairandme.com/blog  ·  facebook -> https://www.facebook.com/hqhairandme  ·  instagram -> https://www.instagram.com/hairandmehq/  ·  tiktok -> https://www.tiktok.com/@hairandmehq?lang=en  ·  @hairandmeHQ -> https://www.instagram.com/hairandmehq/

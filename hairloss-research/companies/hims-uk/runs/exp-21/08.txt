@@ -1,0 +1,15 @@
+STEP 08 click "Long"
+URL: https://app.forhims.co.uk/flow/a9a88e4a-89b9-47ae-8138-3a1acaa41594?t=hair&anon_flow_key=hair
+TITLE: Hims
+
+--- VISIBLE TEXT ---
+Meet Hair Hybrids - a custom blend of Finasteride + Minoxidil for regrowing hair, combined with vitamins to support hair health.
+
+Continue
+←
+
+--- CONTROLS ---
+  button (3): Continue  ·  ←  ·  Your answers
+
+--- LINKS ---
+  link (1): Navigate home -> /profile

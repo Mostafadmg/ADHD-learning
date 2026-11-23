@@ -1,0 +1,20 @@
+{
+ "start": "https://www.forhims.co.uk/c/hl",
+ "steps": [
+  {
+   "do": "click",
+   "text": "←",
+   "settle": 3000
+  },
+  {
+   "do": "wait",
+   "ms": 3000
+  }
+ ],
+ "_about": {
+  "experiment": "verify-15-back-from-first",
+  "stage": "verify",
+  "changed": "the back arrow on the first question, before any answer",
+  "why": "New: where does the back arrow on question 1 lead?"
+ }
+}

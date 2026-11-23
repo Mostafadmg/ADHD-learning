@@ -1,0 +1,21 @@
+{
+ "start": "https://try.forhims.co.uk/hl/pmax/gen",
+ "steps": [
+  {
+   "do": "scroll"
+  },
+  {
+   "do": "goto",
+   "url": "https://www.forhims.co.uk/hair-loss/combo-kit-shopping"
+  },
+  {
+   "do": "scroll"
+  }
+ ],
+ "_about": {
+  "experiment": "exp-37-entries",
+  "flow": "men-product-link",
+  "changed": "entry page: two other public landing pages (paid-search page try.forhims.co.uk/hl/pmax/gen and the combo-kit shopping page); only the links are read",
+  "note": "Page loads only, no quiz answers."
+ }
+}

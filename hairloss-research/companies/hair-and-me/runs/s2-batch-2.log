@@ -1,0 +1,42 @@
+[21:09:09] start s2-m-htam-allover-ext
+[21:11:00] done  s2-m-htam-allover-ext exit=0 :: ===== STOP: no answer for step 28 [yd] (question) Personalise your account =====
+[21:11:06] start s2-w-htaf-patches
+[21:13:07] done  s2-w-htaf-patches exit=0 :: ===== STOP: no answer for step 31 [yd] (question) Personalise your account =====
+[21:13:13] start s2-w-htaf-eyebrows
+[21:15:18] done  s2-w-htaf-eyebrows exit=0 :: ===== STOP: no answer for step 32 [yd] (question) Personalise your account =====
+[21:15:24] start s2-w-htaf-allover
+[21:17:28] done  s2-w-htaf-allover exit=0 :: ===== STOP: no answer for step 32 [yd] (question) Personalise your account =====
+[21:17:34] start s2-m-htc-recent
+[21:19:26] done  s2-m-htc-recent exit=0 :: ===== STOP: no answer for step 29 [yd] (question) Personalise your account =====
+[21:19:32] start s2-m-scc-infection
+[21:21:26] done  s2-m-scc-infection exit=0 :: ===== STOP: no answer for step 29 [yd] (question) Personalise your account =====
+[21:21:32] start s2-m-scc-eczema
+[21:23:16] done  s2-m-scc-eczema exit=0 :: ===== STOP: no answer for step 28 [yd] (question) Personalise your account =====
+[21:23:22] start s2-m-mcm-bp
+[21:25:15] done  s2-m-mcm-bp exit=0 :: ===== STOP: no answer for step 30 [yd] (question) Personalise your account =====
+[21:25:21] start s2-m-mcm-bp-elevated
+[21:27:17] done  s2-m-mcm-bp-elevated exit=0 :: ===== STOP: no answer for step 30 [yd] (question) Personalise your account =====
+[21:27:23] start s2-m-mcm-heart
+[21:29:18] done  s2-m-mcm-heart exit=0 :: ===== STOP: no answer for step 30 [yd] (question) Personalise your account =====
+[21:29:24] start s2-m-mcm-pheo
+[21:31:19] done  s2-m-mcm-pheo exit=0 :: ===== STOP: no answer for step 30 [yd] (question) Personalise your account =====
+[21:31:25] start s2-m-mcm-liver
+[21:33:14] done  s2-m-mcm-liver exit=0 :: ===== STOP: no answer for step 28 [yd] (question) Personalise your account =====
+[21:33:20] start s2-m-mcm-depression
+[21:35:08] done  s2-m-mcm-depression exit=0 :: ===== STOP: no answer for step 28 [yd] (question) Personalise your account =====
+[21:35:14] start s2-m-mcm-sexdys
+[21:37:03] done  s2-m-mcm-sexdys exit=0 :: ===== STOP: no answer for step 28 [yd] (question) Personalise your account =====
+[21:37:09] start s2-m-mcm-psa
+[21:39:00] done  s2-m-mcm-psa exit=0 :: ===== STOP: no answer for step 29 [yd] (question) Personalise your account =====
+[21:39:06] start s2-m-mcm-bph
+[21:40:59] done  s2-m-mcm-bph exit=0 :: ===== STOP: no answer for step 29 [yd] (question) Personalise your account =====
+[21:41:05] start s2-m-mcm-breast
+[21:42:55] done  s2-m-mcm-breast exit=0 :: ===== STOP: no answer for step 29 [yd] (question) Personalise your account =====
+[21:43:01] start s2-w-mcf-pcos
+[21:45:02] done  s2-w-mcf-pcos exit=0 :: ===== STOP: no answer for step 32 [yd] (question) Personalise your account =====
+[21:45:08] start s2-w-mcf-heart
+[21:47:15] done  s2-w-mcf-heart exit=0 :: ===== STOP: no answer for step 32 [yd] (question) Personalise your account =====
+[21:47:21] start s2-w-mp-postpartum
+[21:49:22] done  s2-w-mp-postpartum exit=0 :: ===== STOP: no answer for step 31 [yd] (question) Personalise your account =====
+[21:49:28] start s2-w-mp-facial
+[21:51:28] done  s2-w-mp-facial exit=0 :: ===== STOP: no answer for step 32 [yd] (question) Personalise your account =====

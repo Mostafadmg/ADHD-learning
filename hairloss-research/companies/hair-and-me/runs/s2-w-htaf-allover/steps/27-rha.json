@@ -1,0 +1,79 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 3,
+   "sectionTitle": "MEDICAL HISTORY"
+  },
+  "description": "1 is really not happy with it, 10 is couldn't be happier.",
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 245,
+    "inputConfig": {
+     "options": [
+      {
+       "label": "1 - The worst it's ever been",
+       "value": 1
+      },
+      {
+       "label": "2",
+       "value": 2
+      },
+      {
+       "label": "3",
+       "value": 3
+      },
+      {
+       "label": "4",
+       "value": 4
+      },
+      {
+       "label": "5",
+       "value": 5
+      },
+      {
+       "label": "6",
+       "value": 6
+      },
+      {
+       "label": "7",
+       "value": 7
+      },
+      {
+       "label": "8",
+       "value": 8
+      },
+      {
+       "label": "9",
+       "value": 9
+      },
+      {
+       "label": "10 - The best it's ever been",
+       "value": 10
+      }
+     ]
+    },
+    "inputType": "single_select_button",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "How would you rate the appearance of your hair in the last week?",
+  "type": "question"
+ }
+}

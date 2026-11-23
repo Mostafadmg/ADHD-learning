@@ -1,0 +1,17 @@
+STEP 21 pg
+URL: https://www.hairandme.com/c/suh/pg
+
+--- VISIBLE TEXT ---
+Are you pregnant, breastfeeding or likely to conceive?
+Yes
+No
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:radio[name=3046] | Yes
+input:radio[name=3046] | No
+button:submit | NEXT QUESTION [disabled]
+a -> /c/suh/pg?action=previous | Back to previous page

@@ -1,0 +1,25 @@
+{
+ "pageUrl": "https://hairloss1.joinvoy.com/?coupon=SPOOKY50",
+ "popupFound": true,
+ "eligibleButtonText": "Take the next step to treatmentAnswer a few more questions to get your personalised plan and your discount will apply at checkout",
+ "eligibleButtonHref": "https://joinvoy.com/n/hair-loss/quiz/gateway?coupon=SPOOKY50&manualSid=S-7v5jQjVRiw",
+ "eligibleBlockShown": true,
+ "notEligibleText": "You aren't eligibleBased on your answers there is no treatment suitable for youReturn to homepage",
+ "notEligibleBlockShown": false,
+ "hiddenCouponField": "SPOOKY50",
+ "options": [
+  "Temples",
+  "Temples & Crown",
+  "Moderate",
+  "Extensive",
+  "Patchy",
+  "Complete"
+ ],
+ "pageQuizLinks": [
+  "https://www.joinvoy.com/n/hair-loss/quiz",
+  "https://www.joinvoy.com/n/sexual-health/quiz",
+  "https://hairloss1.joinvoy.com/n/hair-loss/quiz?coupon=SPOOKY50",
+  "https://joinvoy.com/n/hair-loss/quiz/gateway?coupon=SPOOKY50"
+ ],
+ "httpStatus": 200
+}

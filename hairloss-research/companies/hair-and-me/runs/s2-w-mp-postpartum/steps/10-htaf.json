@@ -1,0 +1,87 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 2,
+   "sectionTitle": "YOUR HAIR"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 9322,
+    "inputConfig": {
+     "options": [
+      {
+       "image": "wider-middle-parting-minimal-female-experiment",
+       "label": "My middle parting is getting wider",
+       "value": "My middle parting is getting wider"
+      },
+      {
+       "image": "front-parting-wider-female-experiment",
+       "label": "The front of my parting is getting wider",
+       "value": "The front of my parting is getting wider"
+      },
+      {
+       "image": "patches-of-complete-hair-loss-female-experiment",
+       "label": "One or more patches of complete hair loss",
+       "value": "One or more patches of complete hair loss"
+      },
+      {
+       "image": "thinning-at-temples-female-experiment",
+       "label": "I'm losing hair or thinning at my temples",
+       "value": "I'm losing hair or thinning at my temples"
+      },
+      {
+       "image": "crown-thinning-female-experiment",
+       "label": "I'm losing hair or thinning at my crown",
+       "value": "I'm losing hair or thinning at my crown"
+      },
+      {
+       "image": "receding-hairline-female-experiment",
+       "label": "I've noticed my hairline is going further back / receding",
+       "value": "I've noticed my hairline is going further back / receding"
+      },
+      {
+       "image": "eyebrows-sideburns-hairline-female-experiment",
+       "label": "I've lost hair from my eyebrows, sideburns and hairline",
+       "value": "I've lost hair from my eyebrows, sideburns and hairline"
+      },
+      {
+       "image": "thinning-and-volume-loss-female-experiment",
+       "label": "I've noticed thinning and volume loss all over",
+       "value": "I've noticed thinning and volume loss all over"
+      },
+      {
+       "label": "I don't know what kind of hair loss I have",
+       "value": "I don't know what kind of hair loss I have"
+      },
+      {
+       "label": "I have no hair loss or thinning",
+       "value": "I have no hair loss or thinning"
+      }
+     ]
+    },
+    "inputType": "single_select_button_with_image",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Where have you noticed hair thinning or loss?",
+  "type": "question"
+ }
+}

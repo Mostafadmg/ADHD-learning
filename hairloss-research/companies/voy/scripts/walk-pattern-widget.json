@@ -1,0 +1,9 @@
+{
+  "_note": "Public social landing page. Clicks the 'Select the pattern closest to yours' marketing widget (no data entry) to record what each hair pattern is told to expect.",
+  "start": "https://hairloss1.joinvoy.com/a/hair-loss-tt-v3",
+  "steps": [
+    {"do": "click", "selector": "[data-pattern-tab=\"Hairline & crown\"]"},
+    {"do": "click", "selector": "[data-pattern-tab-small=\"Top and sides\"]"},
+    {"do": "click", "selector": "[data-pattern-tab-small=\"At the temples\"]"}
+  ]
+}

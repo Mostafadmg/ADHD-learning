@@ -1,0 +1,123 @@
+{
+ "run": "s2-m-htam-allover-ext",
+ "flow": "men",
+ "changed": "men-htam: Across the hairline → All over – extensive",
+ "changedStep": "htam",
+ "baselinesPooled": [
+  "baseline-men",
+  "s2-base-men-1"
+ ],
+ "stepOrder": [
+  "tp",
+  "yhg",
+  "pds",
+  "pdsc",
+  "mi",
+  "ht",
+  "ls",
+  "htp",
+  "htam",
+  "htc",
+  "ar",
+  "st",
+  "sc",
+  "scc",
+  "smt",
+  "pt",
+  "tt",
+  "pp",
+  "mdm",
+  "mcm",
+  "al",
+  "rhf",
+  "yna",
+  "rha",
+  "di",
+  "rj",
+  "el",
+  "ct",
+  "yd"
+ ],
+ "nSteps": 29,
+ "end": "account wall (yd)",
+ "newSteps": [],
+ "missingSteps": [],
+ "candidateEffects": [],
+ "noise": [
+  {
+   "step": "ar",
+   "key": "q429.config",
+   "where": "after-change",
+   "alsoIn": []
+  },
+  {
+   "step": "st",
+   "key": "q9346.options",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-w-htaf-patches",
+    "s2-w-pg-yes",
+    "scout-men-2"
+   ]
+  },
+  {
+   "step": "di",
+   "key": "q8015.options",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-85",
+    "s2-w-htaf-allover"
+   ]
+  },
+  {
+   "step": "ct",
+   "key": "q180037.config",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-m-age-18",
+    "s2-w-htaf-allover",
+    "s2-w-pg-yes"
+   ]
+  },
+  {
+   "step": "ct",
+   "key": "title",
+   "where": "after-change",
+   "alsoIn": [
+    "baseline-women",
+    "entry-promo-caps-men",
+    "s2-m-age-18"
+   ]
+  }
+ ],
+ "bag": {
+  "items": [
+   [
+    "hairTreatment",
+    "Personalised treatment",
+    "4 week supply · 12ml",
+    "Prescription",
+    3499,
+    null
+   ]
+  ],
+  "shipping": 0,
+  "total": 3499,
+  "promo": "",
+  "shippingMsg": null
+ },
+ "bagItemsSameAsBaseline": true,
+ "posted": {
+  "htam": [
+   [
+    9318,
+    "All over – extensive"
+   ]
+  ]
+ },
+ "nextAfterChange": {
+  "htam": "htc"
+ },
+ "sweep": false
+}

@@ -1,0 +1,1112 @@
+{
+ "_what": "Everything Voy served publicly (without the blocked Next.js quiz) that asks a question and branches on the answer. Extracted 2026-11-23 from the official public landing host hairloss1.joinvoy.com (same Webflow pages as www.joinvoy.com/hair-loss and /hair-loss/a/...). The real consultation at /n/hair-loss/quiz could NOT be read: www.joinvoy.com returned a Vercel security checkpoint (HTTP 429).",
+ "preQuizPopup": {
+  "sourcePages": [
+   "https://hairloss1.joinvoy.com/ (= www.joinvoy.com/hair-loss)",
+   "…/a/all-in-one-treatment",
+   "…/a/hair-loss-oral-treatment",
+   "…/a/hair-loss-tablets",
+   "…/a/hair-loss-tt-v3",
+   "…/a/hair-treatment-spray",
+   "…/a/social/hair-loss-dht",
+   "…/a/social/hair-loss-minoxidil",
+   "…/a/social/ross-edgley",
+   "…/sem-mf"
+  ],
+  "opens": "by itself 20 seconds after page load (setTimeout 20000)",
+  "intro": "Let us know which image best matches your hair loss and check if you’re eligible for treatment",
+  "question": "Which image best matches your hair loss?",
+  "type": "single (radio, name=\"Image-choice\")",
+  "options": [
+   "Temples",
+   "Temples & Crown",
+   "Moderate",
+   "Extensive",
+   "Patchy",
+   "Complete"
+  ],
+  "thenAsks": {
+   "field": "email",
+   "placeholder": "*Email address",
+   "lockedUntil": "an option is chosen (placeholder then reads \"Please select an option above first\")",
+   "submit": "Check if I qualify"
+  },
+  "hiddenFields": {
+   "campaign": "webflow_pop_entry_manual_hl",
+   "channel": "WEBFLOW_UK",
+   "promotion": "hairlosstype",
+   "taxon": "/hair-loss",
+   "coupon": "taken from ?coupon= in the URL if present"
+  },
+  "branch": {
+   "if": "Patchy OR Complete is ticked when the form is submitted",
+   "then": {
+    "screen": "You aren't eligible",
+    "text": "Based on your answers there is no treatment suitable for you",
+    "button": "Return to homepage -> /hair-loss"
+   },
+   "else": {
+    "screen": "We’ve helped thousands of men regrow thicker, healthier hair",
+    "button": "Take the next step to treatment — Answer a few more questions to get your personalised plan and your discount will apply at checkout",
+    "goesTo": "https://joinvoy.com/n/hair-loss/quiz/gateway (+ ?coupon= if any)"
+   }
+  },
+  "eligibilityScriptVerbatim": "document.addEventListener(\"DOMContentLoaded\", () => {\n  const popupB = document.getElementById('popup-multi-b');\n  if (!popupB) return;\n\n  const form       = document.getElementById('wf-form-Multi-step-form-b');\n  const ineligible = popupB.querySelector('.default-inelegible');\n  const eligible   = popupB.querySelector('.default-elegible');\n  const radios     = popupB.querySelectorAll('input[name=\"Image-choice\"]');\n  const emailInput = popupB.querySelector('#multi-email-b');\n  const submitBtn  = popupB.querySelector('#popup-multi-submit');\n\n  // --- Блокування email та сабміту до вибору варіанту ---\n  const setLocked = (locked) => {\n    if (locked) {\n      emailInput.setAttribute('disabled', 'disabled');\n      emailInput.setAttribute('placeholder', 'Please select an option above first');\n      emailInput.style.opacity = '0.5';\n      emailInput.style.cursor  = 'not-allowed';\n      if (submitBtn) {\n        submitBtn.setAttribute('disabled', 'disabled');\n        submitBtn.style.opacity = '0.5';\n        submitBtn.style.cursor  = 'not-allowed';\n      }\n    } else {\n      emailInput.removeAttribute('disabled');\n      emailInput.setAttribute('placeholder', '*Email address');\n      emailInput.style.opacity = '';\n      emailInput.style.cursor  = '';\n      if (submitBtn) {\n        submitBtn.removeAttribute('disabled');\n        submitBtn.style.opacity = '';\n        submitBtn.style.cursor  = '';\n      }\n    }\n  };\n\n  // Стартовий стан — заблоковано\n  setLocked(true);\n\n  // Розблокування при виборі будь-якого радіо\n  radios.forEach(radio => {\n    radio.addEventListener('change', () => {\n      const anyChecked = Array.from(radios).some(r => r.checked);\n      setLocked(!anyChecked);\n    });\n  });\n\n  // Захист на сабміті — якщо нічого не обрано, блокуємо відправку\n  form.addEventListener('submit', (e) => {\n    const anyChecked = Array.from(radios).some(r => r.checked);\n    if (!anyChecked) {\n      e.preventDefault();\n      e.stopPropagation();\n      return false;\n    }\n  }, true);\n\n  // --- Існуюча логіка eligible/ineligible ---\n  form.addEventListener('submit', () => {\n    const patchyChecked   = popupB.querySelector('#Patchy').checked;\n    const completeChecked = popupB.querySelector('#Complete').checked;\n\n    if (patchyChecked || completeChecked) {\n      ineligible.style.display = 'block';\n      eligible.style.display   = 'none';\n    } else {\n      ineligible.style.display = 'none';\n      eligible.style.display   = 'block';\n    }\n  });\n\n  // --- Існуюча логіка active state ---\n  const checkboxes = popupB.querySelectorAll('.fs-checkbox_button-5');\n  checkboxes.forEach(checkbox => {\n    checkbox.addEventListener('change', () => {\n      checkboxes.forEach(cb => cb.closest('.fs-checkbox_field-5').classList.remove('is-active'));\n      checkbox.closest('.fs-checkbox_field-5').classList.add('is-active');\n    });\n  });\n});",
+  "popupScriptVerbatim": "document.addEventListener(\"DOMContentLoaded\", () => {\n  // initPopup({\n  //   popupId:   'popup-multi',\n  //   formId:    'wf-form-Multi-step-form',\n  //   emailId:   'multi-email',\n  //   modalName: 'Multi step popup form',\n  // });\n  initPopup({\n    popupId:   'popup-multi-b',\n    formId:    'wf-form-Multi-step-form-b',\n    emailId:   'multi-email-b',\n    modalName: 'Multi step popup form',\n  });\n});\n\nfunction initPopup({ popupId, formId, emailId, modalName }) {\n  const popup = document.getElementById(popupId);\n  if (!popup) return;\n\n  const form        = document.getElementById(formId);\n  const emailEl      = popup.querySelector(`#${emailId}`);\n  const mPrev        = popup.querySelector('[id$=\"-prev\"]');\n  const mClose       = popup.querySelector('[id*=\"-close\"]');\n  const mContinue    = popup.querySelector('[id$=\"-continue\"]');\n  const mNext        = popup.querySelector('[id$=\"-next\"]');\n  const mLeadClose   = popup.querySelectorAll('[data-modal-lead-close]');\n  const mStep1       = popup.querySelector('.popup-multi-step.step-1');\n  const mStep2       = popup.querySelector('.popup-multi-step.step-2');\n  const copyBtn      = popup.querySelector('[id$=\"-copy-btn\"]');\n  const couponEl     = popup.querySelector('[id$=\"-coupon\"]');\n  const couponField  = popup.querySelector('input[name=\"coupon\"]');\n  const nextStepBtn  = popup.querySelector('#next-step-button');\n\n  // --- Helper: get coupon (URL takes priority, else fall back to hidden field default) ---\n  const getActiveCoupon = () => {\n    const urlCoupon = new URLSearchParams(window.location.search).get('coupon');\n    if (urlCoupon) return urlCoupon;\n    if (couponField && couponField.value) return couponField.value;\n    return '';\n  };\n\n  // --- Helper: append/replace coupon param in a URL ---\n  const setCouponInUrl = (urlStr, coupon) => {\n    if (!coupon) return urlStr;\n    try {\n      // Handle relative URLs by using a dummy base\n      const isRelative = urlStr.startsWith('/');\n      const base = isRelative ? window.location.origin : undefined;\n      const u = new URL(urlStr, base);\n      u.searchParams.set('coupon', coupon);\n      return isRelative ? u.pathname + u.search + u.hash : u.toString();\n    } catch (e) {\n      // Fallback for any weird URLs\n      const sep = urlStr.includes('?') ? '&' : '?';\n      return urlStr + sep + 'coupon=' + encodeURIComponent(coupon);\n    }\n  };\n\n  // --- FIX 1: Override hardcoded coupon in hidden field with URL param ---\n  const urlCoupon = new URLSearchParams(window.location.search).get('coupon');\n  if (urlCoupon && couponField) {\n    couponField.value = urlCoupon;\n  }\n\n  // --- FIX 2: Set coupon on the \"Next step\" CTA href (so /n/hair-loss/quiz keeps the coupon) ---\n  const updateNextStepHref = () => {\n    if (!nextStepBtn) return;\n    const baseHref = nextStepBtn.getAttribute('data-base-href') || nextStepBtn.getAttribute('href');\n    // Cache original href once so we don't keep appending\n    if (!nextStepBtn.getAttribute('data-base-href')) {\n      nextStepBtn.setAttribute('data-base-href', baseHref);\n    }\n    const coupon = getActiveCoupon();\n    nextStepBtn.setAttribute('href', setCouponInUrl(baseHref, coupon));\n  };\n  updateNextStepHref();\n\n  // Populate hidden fields on email change\n  emailEl.addEventListener('change', () => {\n    popup.querySelector('.SID').value       = getCookieValue('manual-sid');\n    popup.querySelector('.page_path').value = window.location.href;\n\n    // Re-check URL coupon (safety net for SPA navigation)\n    const freshUrlCoupon = new URLSearchParams(window.location.search).get('coupon');\n    if (freshUrlCoupon && couponField) {\n      couponField.value = freshUrlCoupon;\n    }\n    updateNextStepHref();\n  });\n\n  // Init step visibility\n  mStep1.style.display = 'block';\n  if (mStep2) mStep2.style.display = 'none';\n  if (mPrev)  mPrev.style.display  = 'none';\n\n  // Auto-open after delay\n  setTimeout(() => {\n    popup.classList.add('visible');\n    document.body.classList.add('no-scroll');\n    window.dataLayer.push({\n      event: 'Modal Opened',\n      is_custom_track: true,\n      event_params: { modal_name: modalName },\n    });\n  }, 20000);\n\n  // Navigation\n  if (mNext) mNext.addEventListener('click', () => {\n    mStep1.style.display = 'none';\n    mStep2.style.display = 'block';\n    if (mPrev) mPrev.style.display = 'flex';\n  });\n  if (mPrev) mPrev.addEventListener('click', () => {\n    mStep1.style.display = 'block';\n    mStep2.style.display = 'none';\n    mPrev.style.display  = 'none';\n  });\n\n  const closePopup = () => {\n    popup.classList.remove('visible');\n    document.body.classList.remove('no-scroll');\n  };\n  if (mClose)    mClose.addEventListener('click', closePopup);\n  if (mContinue) mContinue.addEventListener('click', closePopup);\n  mLeadClose.forEach(el => el.addEventListener('click', closePopup));\n\n  // Form submit\n  form.addEventListener('submit', (e) => {\n    e.preventDefault();\n\n    // --- FIX 3: Final guard — refresh next-step href right before showing success screen ---\n    const submitUrlCoupon = new URLSearchParams(window.location.search).get('coupon');\n    if (couponField && submitUrlCoupon) {\n      couponField.value = submitUrlCoupon;\n    }\n    updateNextStepHref();\n\n    const finalCoupon = getActiveCoupon();\n\n    if (mPrev) mPrev.style.display = 'none';\n\n    window.dataLayer.push({\n      event: 'email_captured',\n      is_custom_track: true,\n      event_params: {\n        type: 'email',\n        capture_type: 'pop-up',\n        coupon: finalCoupon,\n      },\n      user_params:  { email: emailEl.value },\n    });\n    window.dataLayer.push({\n      event: 'Modal Submitted',\n      is_custom_track: true,\n      event_params: {\n        email:      emailEl.value,\n        modal_name: modalName,\n        page_path:  window.location.href,\n        coupon:     finalCoupon,\n      },\n    });\n  });\n\n  // Copy coupon button\n  if (copyBtn && couponEl) {\n    copyBtn.addEventListener('click', () => {\n      navigator.clipboard.writeText(couponEl.textContent.trim())\n        .then(() => {\n          copyBtn.classList.add('show');\n          setTimeout(() => copyBtn.classList.remove('show'), 3000);\n        })\n        .catch(err => console.error('Failed to copy:', err));\n    });\n  }\n}",
+  "formMarkupVerbatim": "<div id=\"popup-multi-b\" class=\"popup-multi is-ab\"><div class=\"popup-multi-card is-single is-ab\"><div class=\"popup-multi-right is-single is-ab\"><div class=\"popup-multi-nav is-float\"><div id=\"popup-multi-close-b\" class=\"popup-multi-close is-light w-node-_0e052f2d-a52e-de8a-99df-7ab8941f1b21-941f1ac1\"><img loading=\"lazy\" src=\"https://cdn.prod.website-files.com/691daa161823bbc4e320b5f1/691daa161823bbc4e320b66e_ico-close-2.svg\" alt=\"close\" class=\"popup-close-ico\"/></div></div><div class=\"popup-multi-form-content is-single w-form\"><form id=\"wf-form-Multi-step-form-b\" name=\"wf-form-Multi-step-form\" data-name=\"Multi step form\" method=\"get\" class=\"popup-multi-form\" data-wf-page-id=\"691daa161823bbc4e320b5ef\" data-wf-element-id=\"0e052f2d-a52e-de8a-99df-7ab8941f1b24\"><div class=\"popup-multi-step step-1\"><div class=\"pop-up-padding\"><div class=\"popup-multi-title text-style-season-mix is-ab\">Save 50% on<br/> hair loss plans</div><div class=\"popup-multi-para is-small\">Let us know which image best matches your hair loss and check if you’re eligible for treatment</div></div><div class=\"popup-content\"><div class=\"margin-top margin-1-5 is-ab\"><div class=\"text-style-season-mix text-size-medium is-center\">Which image best matches your hair loss?</div></div><div class=\"popup-multi-input-group is-grid\"><label id=\"w-node-_0e052f2d-a52e-de8a-99df-7ab8941f1b32-941f1ac1\" class=\"fs-checkbox_field-5 w-radio\"><img loading=\"lazy\" src=\"https://cdn.prod.website-files.com/691daa161823bbc4e320b5f1/69aaa4595a6a90f995a0c064_Icon%20(16).svg\" alt=\"\" class=\"fs-checkbox_icon-5\"/><div class=\"w-form-formradioinput w-form-formradioinput--inputType-custom fs-radio_button-5 w-radio-input\"></div><input type=\"radio\" name=\"Image-choice\" id=\"Temples\" data-name=\"Image choice\" style=\"opacity:0;position:absolute;z-index:-1\" value=\"Temples\"/><span fs-cmsfilter-field=\"category\" class=\"fs-checkbox_label-5 w-form-label\" for=\"Temples\">Temples</span><div class=\"fs-radio_check-mask-5\"></div></label><label id=\"w-node-_0e052f2d-a52e-de8a-99df-7ab8941f1b38-941f1ac1\" class=\"fs-checkbox_field-5 w-radio\"><img loading=\"lazy\" src=\"https://cdn.prod.website-files.com/691daa161823bbc4e320b5f1/69aaa5683852593ff3a4e95b_Icon.svg\" alt=\"\" class=\"fs-checkbox_icon-5\"/><div class=\"w-form-formradioinput w-form-formradioinput--inputType-custom fs-radio_button-5 w-radio-input\"></div><input type=\"radio\" name=\"Image-choice\" id=\"Temples-Crown\" data-name=\"Image choice\" style=\"opacity:0;position:absolute;z-index:-1\" value=\"Temples &amp; Crown\"/><span fs-cmsfilter-field=\"category\" class=\"fs-checkbox_label-5 w-form-label\" for=\"Temples-Crown\">Temples &amp; Crown</span><div class=\"fs-radio_check-mask-5\"></div></label><label id=\"w-node-_0e052f2d-a52e-de8a-99df-7ab8941f1b3e-941f1ac1\" class=\"fs-checkbox_field-5 w-radio\"><img loading=\"lazy\" src=\"https://cdn.prod.website-files.com/691daa161823bbc4e320b5f1/69aaa5682564250ca949d300_Icon-1.svg\" alt=\"\" class=\"fs-checkbox_icon-5\"/><div class=\"w-form-formradioinput w-form-formradioinput--inputType-custom fs-radio_button-5 w-radio-input\"></div><input type=\"radio\" name=\"Image-choice\" id=\"Moderate\" data-name=\"Image choice\" style=\"opacity:0;position:absolute;z-index:-1\" value=\"Moderate\"/><span fs-cmsfilter-field=\"category\" class=\"fs-checkbox_label-5 w-form-label\" for=\"Moderate\">Moderate</span><div class=\"fs-radio_check-mask-5\"></div></label><label id=\"w-node-_0e052f2d-a52e-de8a-99df-7ab8941f1b44-941f1ac1\" class=\"fs-checkbox_field-5 w-radio\"><img loading=\"lazy\" src=\"https://cdn.prod.website-files.com/691daa161823bbc4e320b5f1/69aaa5682e4fc03af206eee7_Icon-2.svg\" alt=\"\" class=\"fs-checkbox_icon-5\"/><div class=\"w-form-formradioinput w-form-formradioinput--inputType-custom fs-radio_button-5 w-radio-input\"></div><input type=\"radio\" name=\"Image-choice\" id=\"Extensive\" data-name=\"Image choice\" style=\"opacity:0;position:absolute;z-index:-1\" value=\"Extensive\"/><span fs-cmsfilter-field=\"category\" class=\"fs-checkbox_label-5 w-form-label\" for=\"Extensive\">Extensive</span><div class=\"fs-radio_check-mask-5\"></div></label><label id=\"w-node-_0e052f2d-a52e-de8a-99df-7ab8941f1b4a-941f1ac1\" class=\"fs-checkbox_field-5 w-radio\"><img loading=\"lazy\" src=\"https://cdn.prod.website-files.com/691daa161823bbc4e320b5f1/69aaa56960c06b1ae51bc99c_Icon-3.svg\" alt=\"\" class=\"fs-checkbox_icon-5\"/><div class=\"w-form-formradioinput w-form-formradioinput--inputType-custom fs-radio_button-5 w-radio-input\"></div><input type=\"radio\" name=\"Image-choice\" id=\"Patchy\" data-name=\"Image choice\" style=\"opacity:0;position:absolute;z-index:-1\" value=\"Patchy\"/><span fs-cmsfilter-field=\"category\" class=\"fs-checkbox_label-5 w-form-label\" for=\"Patchy\">Patchy</span><div class=\"fs-radio_check-mask-5\"></div></label><label id=\"w-node-_0e052f2d-a52e-de8a-99df-7ab8941f1b50-941f1ac1\" class=\"fs-checkbox_field-5 w-radio\"><img loading=\"lazy\" src=\"https://cdn.prod.website-files.com/691daa161823bbc4e320b5f1/69aaa56891ae4966a537137d_Icon-4.svg\" alt=\"\" class=\"fs-checkbox_icon-5\"/><div class=\"w-form-formradioinput w-form-formradioinput--inputType-custom fs-radio_button-5 w-radio-input\"></div><input type=\"radio\" name=\"Image-choice\" id=\"Complete\" data-name=\"Image choice\" style=\"opacity:0;position:absolute;z-index:-1\" value=\"Complete\"/><span fs-cmsfilter-field=\"category\" class=\"fs-checkbox_label-5 w-form-label\" for=\"Complete\">Complete</span><div class=\"fs-radio_check-mask-5\"></div></label></div><div class=\"popup-multi-input-group\"><input class=\"input w-input\" maxlength=\"256\" name=\"email\" data-name=\"Email\" placeholder=\"*Email address\" type=\"email\" id=\"multi-email-b\" required=\"\"/><div class=\"hidden-inputs\"><input type=\"hidden\" name=\"campaign\" class=\"campaign\" value=\"webflow_pop_entry_manual_hl\"/><input type=\"hidden\" name=\"channel\" class=\"channel\" value=\"WEBFLOW_UK\"/><input type=\"hidden\" name=\"coupon\" Coupon=\"\" class=\"coupon\"/><input type=\"hidden\" name=\"promotion\" class=\"promotion\" value=\"hairlosstype\"/><input type=\"hidden\" name=\"taxon\" class=\"taxon\" value=\"/hair-loss\"/><input type=\"hidden\" name=\"SID\" class=\"SID\"/><input type=\"hidden\" name=\"page_path\" class=\"page_path\"/></div></div></div><div class=\"popup-multi-cta\"><div class=\"button-container\"><input type=\"submit\" data-wait=\"Please wait...\" id=\"popup-multi-submit\" class=\"btn-primary is-large w-button\" value=\"Check if I qualify\"/></div><div data-modal-lead-close=\"\" class=\"continium-exploring\"><div class=\"continium-exploring_text\">Continue exploring</div></div><div class=\"text-size-tiny is-ab\">Your details help us recommend the right treatment for you — based on how your body works. By entering I agree to the <a href=\"https://www.joinvoy.com/pages/terms\" class=\"link-underline\">Terms and Conditions</a></div></div></div></form>"
+ },
+ "patternResultsWidget": {
+  "sourcePage": "https://hairloss1.joinvoy.com/a/hair-loss-tt-v3 (= www.joinvoy.com/hair-loss/a/hair-loss-tt-v3)",
+  "prompt": "Select the pattern closest to yours",
+  "effect": "marketing only: swaps the headline statistic; every result links to /n/hair-loss/quiz/gateway",
+  "patterns": [
+   {
+    "pattern": "At the temples",
+    "shown": "87% of men stopped losing hair & saw regrowth Strongest long-term response Research shows that men who begin treatment at this stage show sustained improvements over 10 years of treatment, whereas results in more advanced stages tend to plateau sooner."
+   },
+   {
+    "pattern": "Across the hairline",
+    "shown": "90% of men saw results Studies show 9/10 men respond to treatment. Starting treatment at this stage delivers strong and sustained results, with research demonstrating continued improvement beyond the first year."
+   },
+   {
+    "pattern": "Hairline & crown",
+    "shown": "94% saw their hair loss halt or improve Studies show men at this stage consistently see hair regrowth across the crown - with the largest improvements building over the first 6-12 months."
+   },
+   {
+    "pattern": "Most of the top",
+    "shown": "95% responded to treatment Despite more advanced hair loss at the outset, men at this stage are among the fastest responders to treatment - when there's more hair loss to recover, the visible difference after treatment is often greater."
+   },
+   {
+    "pattern": "Thinning",
+    "shown": "63% Men saw regrowth Although hair loss is advanced at this stage, there is still a strong likelihood of success - with our own research showing that men with extensive hair loss often see visible results faster than those with milder thinning."
+   },
+   {
+    "pattern": "Top and sides",
+    "shown": "50% men saw regrowth Although hair loss is most advanced at this stage, treatment can still make a meaningful difference - studies show that when results are achieved, they are maintained for at least 10 years."
+   }
+  ]
+ },
+ "entryLinksSeenInCode": [
+  "https://www.joinvoy.com/n/hair-loss/quiz",
+  "https://www.joinvoy.com/n/hair-loss/quiz/gateway",
+  "https://www.joinvoy.com/n/hair-loss/quiz?flowType=atc",
+  "https://www.joinvoy.com/n/hair-loss/quiz/gateway?coupon=SPOOKY50",
+  "legacy: https://www.manual.co/n/hair-loss/quiz/",
+  "legacy product-first: https://www.manual.co/add-to-cart?productCode=…&variantCode=…",
+  "https://www.joinvoy.com/n/female-hair-loss/quiz (women; every button on femalehairloss1.joinvoy.com)",
+  "https://www.joinvoy.com/n/female-hair-loss/quiz?coupon=50OFFBF",
+  "https://www.joinvoy.com/n/hair-loss/quiz?manualSid=… (influencer landing pages)"
+ ],
+ "experimentFlagsNamedInCode": {
+  "hluk_1216570870266915_exp_SEM-Questionnaire-Generic-vs-Male": "swaps a landing-page button between two blocks; read as: /quiz/gateway = generic questionnaire, /quiz = male questionnaire (inferred from the flag name)",
+  "hluk-1217468441273254-exp-sem-aiospray-quiz-test": "on the spray landing page: control block links to /n/hair-loss/quiz/gateway, test block to /n/hair-loss/quiz",
+  "json-logic-draft-evaluation": "flag served by the site's feature-flag call; suggests rules are written as JSON Logic",
+  "acq-1464-exp-shared-uk-assessment": "name only",
+  "exp-628-exp-hair-loss-assessment-page": "name only",
+  "exp-665-hl-topical-education": "name only",
+  "exp-950-exp-add-animation-to-recommendation": "name only: there is a recommendation screen",
+  "acq-1366-exp-otp-login-quiz": "name only: sign-in inside the quiz uses a one-time passcode",
+  "acq-1612-ff-onfido-check": "name only, was off: ID check by Onfido"
+ },
+ "legacyManualProductCodes": [
+  "finasteride_oral / finasteride_oral_90tabs_3M_SUB",
+  "minoxidil_oral / minoxidil_oral_90caps_3M_SUB, oral_minoxidil_180caps_6M_LPT_SUB",
+  "minoxidil_topical_10 / minoxidil_topical_10_1x90ml_3M_SUB, minoxidil_topical_10_2x90ml_6M_LPT_SUB",
+  "finasteride_oral_minoxidil_oral_biotin / …_90caps_3M_SUB, …_180caps_test2_6M_SUB",
+  "hair-vitamins / hair-vitamins-one-off"
+ ],
+ "legacyManualPriceTables": {
+  "source": "inline scripts on hello.manual.co/a/complete-hair-loss-plan and /a/hl-hair-loss-minox-plans (pages still live, footer dated 2025)",
+  "allInOneCapsule": {
+   "3-month plan": {
+    "full per month": 39.67,
+    "first-order promo per month (control/test)": [
+     21,
+     24
+    ]
+   },
+   "6-month plan": {
+    "full per month": 33.17,
+    "first-order promo per month (control/test)": [
+     18,
+     19
+    ]
+   }
+  },
+  "minoxidilTabletsOrSpray": {
+   "3-month plan": {
+    "full per month": 29.67,
+    "promo": [
+     14,
+     16
+    ]
+   },
+   "6-month plan": {
+    "full per month": 25,
+    "promo": [
+     13,
+     14
+    ]
+   }
+  }
+ },
+ "_stage2Note": "Stage 2 (23 Nov 2026) added the four blocks below. The real quiz definition is still NOT here: the questions are downloaded by the app at run time and the app is behind the security checkpoint.",
+ "womenPreQuizPopup": {
+  "sourcePage": "https://femalehairloss1.joinvoy.com/ (public host, same page as www.joinvoy.com/female-hair-loss); also on /sem, /meta, /meta-hcp, /shopping-oral-tablets, /shopping-serum",
+  "opensAfterSeconds": 7,
+  "prompt": "Tell us what you're noticing and check if you could qualify.",
+  "options": [
+   "Widening part",
+   "Thinning temples",
+   "Patchy hair loss",
+   "General thinning"
+  ],
+  "otherControls": [
+   "*Email address (locked with 'Please select an option above first' until an option is ticked)",
+   "Check if I qualify",
+   "Skip (closes the pop-up)"
+  ],
+  "hiddenFields": {
+   "campaign": "webflow_pop_entry_manual_hl",
+   "channel": "WEBFLOW_UK",
+   "coupon": "STARTHAIR38",
+   "promotion": "Female hair",
+   "taxon": "/female-hair-loss"
+  },
+  "ineligibleScreen": "You aren't eligible — Based on your answers there is no treatment suitable for you — [Return to homepage]",
+  "eligibleScreen": "We’ve helped thousands of women regrow thicker, healthier hair — [Take the next step to treatment -> https://www.joinvoy.com/n/female-hair-loss/quiz] — [Continue exploring] — Answer a few more questions to get your personalised plan and your discount will apply at checkout",
+  "rule": "isIneligible = the 'Patchy hair loss' radio is checked; every other option is eligible. Shown only after the form (with an email) is submitted.",
+  "popupScriptVerbatim": "document.addEventListener('DOMContentLoaded', () => {\n    // URL params — coupon/channel override\n    const params = new URLSearchParams(window.location.search);\n    const urlCoupon = params.get('coupon');\n    if (urlCoupon) {\n      document.querySelectorAll('input.coupon').forEach(el => el.value = urlCoupon);\n    }\n    const urlChannel = params.get('channel');\n    if (urlChannel) {\n      document.querySelectorAll('input.channel').forEach(el => el.value = urlChannel);\n    }\n\n    // ============================================================\n    // POPUP (female hair loss type selector)\n    // ============================================================\n    const popup = document.getElementById('popup-multi-b');\n    if (!popup) return;\n\n    const form = document.getElementById('wf-form-Multi-step-form-b');\n    const ineligible = popup.querySelector('.default-inelegible');\n    const eligible = popup.querySelector('.default-elegible');\n    const radios = popup.querySelectorAll('input[name=\"Image-choice\"]');\n    const patchyRadio = popup.querySelector('#Patchy-hair-loss');\n    const emailInput = popup.querySelector('#multi-email-b');\n    const submitBtn = popup.querySelector('#popup-multi-submit');\n    const closeBtn = popup.querySelector('#popup-multi-close-b');\n    const modalName = 'Multi step popup form';\n\n    const anyRadioChecked = () => Array.from(radios).some(r => r.checked);\n\n    // Lock email + submit until a hair loss type is selected\n    const setLocked = (locked) => {\n      if (locked) {\n        emailInput.setAttribute('disabled', 'disabled');\n        emailInput.setAttribute('placeholder', 'Please select an option above first');\n      } else {\n        emailInput.removeAttribute('disabled');\n        emailInput.setAttribute('placeholder', '*Email address');\n      }\n      emailInput.style.opacity = locked ? '0.5' : '';\n      emailInput.style.cursor = locked ? 'not-allowed' : '';\n      if (submitBtn) {\n        submitBtn.toggleAttribute('disabled', locked);\n        submitBtn.style.opacity = locked ? '0.5' : '';\n        submitBtn.style.cursor = locked ? 'not-allowed' : '';\n      }\n    };\n    setLocked(true);\n\n    // Unlock on selection + active state on the selected option\n    radios.forEach(radio => {\n      radio.addEventListener('change', () => {\n        setLocked(!anyRadioChecked());\n        radios.forEach(r => {\n          const field = r.closest('.fs-checkbox_field-5');\n          if (field) field.classList.toggle('is-active', r.checked);\n        });\n      });\n    });\n\n    // Close\n    const closePopup = () => {\n      popup.classList.remove('visible');\n      document.body.classList.remove('no-scroll');\n    };\n    if (closeBtn) closeBtn.addEventListener('click', closePopup);\n    popup.querySelectorAll('[close-popup]').forEach(el => {\n      el.addEventListener('click', (e) => {\n        e.preventDefault();\n        closePopup();\n      });\n    });\n\n    // Submit — capture phase so it runs before Webflow's form handler\n    form.addEventListener('submit', (e) => {\n      if (!anyRadioChecked()) {\n        e.preventDefault();\n        e.stopPropagation();\n        return;\n      }\n\n      const isIneligible = patchyRadio && patchyRadio.checked;\n      ineligible.style.display = isIneligible ? 'block' : 'none';\n      eligible.style.display = isIneligible ? 'none' : 'block';\n\n      popup.querySelector('.SID').value = getCookieValue('manual-sid');\n      popup.querySelector('.page_path').value = window.location.href;\n\n      window.dataLayer.push({\n        event: 'email_captured',\n        is_custom_track: true,\n        event_params: { type: 'email', capture_type: 'pop-up' },\n        user_params: { email: emailInput.value },\n      });\n      window.dataLayer.push({\n        event: 'Modal Submitted',\n        is_custom_track: true,\n        event_params: {\n          email: emailInput.value,\n          modal_name: modalName,\n          page_path: window.location.href,\n        },\n      });\n    }, true);\n\n    // Auto-open after 7s\n    setTimeout(() => {\n      popup.classList.add('visible');\n     // document.body.classList.add('no-scroll');\n      window.dataLayer.push({\n        event: 'Modal Opened',\n        is_custom_track: true,\n        event_params: { modal_name: modalName },\n      });\n    }, 7000);\n  });",
+  "liveRuns": "runs/s2-popup-women-base, runs/s2-exp-w01 … w04 (option ticked or Skip pressed; email never entered)"
+ },
+ "legacyAppEngine": {
+  "_what": "How the web app turns answers into eligible products. Read from the shared bundle of the Manual app (same owner and code base as Voy), copy of 29 Dec 2025 in the Portuguese Web Archive. See src/arquivo/engine-excerpts.txt for the code itself. Not confirmed on today's Voy app, which could not be opened.",
+  "source": "https://arquivo.pt/noFrame/replay/20251229132709id_/https://www.manual.co/_next/static/chunks/pages/_app-3d7f064791016865.js",
+  "questionnaireShape": "questionnaire = { products: [product codes], steps: [ { questions: [ { id, question, type, answers:[{value,text,nullifying}], defaultAnswer (the current answer), required, rejectCondition, productExcludeCondition, parentQuestion, parentQuestionCondition, attributes, conditionals } ] } ] }",
+  "questionTypes": [
+   "textarea",
+   "choice",
+   "multichoice",
+   "checkbox",
+   "imagechoice",
+   "imageselect",
+   "BmiType",
+   "WeightType",
+   "datetime",
+   "productchoicetype"
+  ],
+  "questionAttributes": [
+   "question_info_details",
+   "question_interstitial",
+   "question_type_variant",
+   "context_screen_image",
+   "context_screen_chart",
+   "progress_screen",
+   "answer_mapping",
+   "question_behavior",
+   "questionShowCondition",
+   "questionHideCondition",
+   "questionnaire_chain / questionnaireSorting"
+  ],
+  "rules": [
+   "Start with every product code listed on the questionnaire(s).",
+   "For each question: if it has a rejectCondition (answer values joined by '|||') and the chosen answer is one of them, the eligible list becomes EMPTY (the 'You aren't eligible' screen).",
+   "Otherwise remove the product codes that productExcludeCondition lists for the chosen answer.",
+   "At the end remove the placeholder product 'hair-consultation'.",
+   "A question with parentQuestion is shown only when the parent's answer equals (or includes) parentQuestionCondition.",
+   "questionShowCondition / questionHideCondition and 'conditionals' are JSON Logic rules run against all answers; conditionals swap in a different question definition when true.",
+   "The quiz state (answers, changedAnswers, eligibleProducts, inEligibleProducts, userPreferredProduct, aliasMapping) is kept in the browser's local storage under 'quiz'.",
+   "Adding a product to the cart sends productCode, variantCode, consultationAnswers and changedAnswers.",
+   "Product-first route: /n/hair-loss/quiz?atc=true; if userPreferredProduct.shouldSwap is true the app adds &swap=true (the chosen product is swapped for an eligible one)."
+  ],
+  "flowTypes": [
+   "quiz",
+   "atc",
+   "categoryPage"
+  ],
+  "rejectionScreen": {
+   "title": "You aren't eligible",
+   "description": "Based on your answers there is no treatment suitable for you. If you think you have made an error in your responses, please click below to review your answers.",
+   "consent": "I agree only to provide accurate responses",
+   "warning": "Giving inaccurate information in a clinical consultation, could put your health at risk.",
+   "buttonLabel": "Review your answers",
+   "returnCTA": "Back to homepage"
+  },
+  "signupFields": [
+   "First name",
+   "Last name",
+   "Email",
+   "Phone number",
+   "Date of birth",
+   "Create password",
+   "Keep me informed of new products & promotions",
+   "I agree to the terms and conditions, terms of sale and privacy policy"
+  ],
+  "endpointsNamedInCodeNotCalled": [
+   "/shop-api/frontend-product-flow/{taxon}",
+   "/shop-api/checkout/{cartToken}/medical_history_questionnaire",
+   "/shop-api/taxons/{taxon}?channel=WEB_UK&locale=en_GB",
+   "/shop-api/products-by-codes?productCodes=…"
+  ],
+  "experimentNames": [
+   "dutasterideProductChoiceLogic",
+   "hlDutasterideSoloTest",
+   "sixMonthRecommendationExpA",
+   "sixMonthRecommendationExpB",
+   "threeSixNineMonthsHL",
+   "upsellBundlePostQuestionnaireExperiment",
+   "sideEffectsNoticeCheckout",
+   "removeMonthlyDiscount",
+   "addHLCatSelectorBack",
+   "basePriceExperimentVariant"
+  ],
+  "hairLossProductSlugs": [
+   "finasteride",
+   "minoxidil",
+   "manual-minoxidil",
+   "regaine",
+   "complete-hair-loss-plan",
+   "power-shampoo",
+   "hair-transplant-consultation",
+   "all-in-one-spray",
+   "all-in-one-capsule",
+   "oral-minoxidil",
+   "oral-finasteride-1mg-topical-minoxidil-10-combo",
+   "oral-finasteride-1mg-topical-minoxidil-5-combo",
+   "oral-finasteride-1mg",
+   "oral-finasteride-1mg-minoxidil-2-5mg",
+   "topical-minoxidil-10-finasteride-01",
+   "oral-minoxidil-2-5mg",
+   "topical-minoxidil-10",
+   "topical-minoxidil-5",
+   "dutasteride-minoxidil-all-in-one-capsule"
+  ],
+  "sixMonthVariantCodes": [
+   "bundle_finasteride_oral_180tabs_minoxidil_topical_10_2x90ml_test_6M_SUB_199GBP",
+   "finasteride_topical_minoxidil_topical_10_2x90ml_6M_SUB",
+   "finasteride_oral_minoxidil_oral_biotin_180caps_test2_6M_SUB",
+   "oral_minoxidil_180caps_test2_6M_SUB",
+   "minoxidil_topical_10_2x90ml_test2_6M_SUB",
+   "finasteride_oral_180tabs_test2_6M_SUB"
+  ]
+ },
+ "legacyFunnelRoutes": {
+  "source": "src/arquivo/manual-buildManifest-20251229.js (route list of the Manual web app, 29 Dec 2025, Portuguese Web Archive)",
+  "routes": [
+   "/account/hair-loss-tracking",
+   "/account/health-actions/doctor-note",
+   "/account/health-actions/gp-info",
+   "/account/health-actions/photo/hair-tracking",
+   "/account/health-actions/photo/id",
+   "/add-to-cart",
+   "/cart/[cartToken]",
+   "/checkout/book-call/[taxon]",
+   "/checkout/email",
+   "/checkout/order-thankyou/hl-raf",
+   "/checkout/order-thankyou/[[...params]]",
+   "/checkout/photos/intro",
+   "/checkout/photos/take",
+   "/checkout/quiz/questions",
+   "/checkout/review",
+   "/checkout/thankyou",
+   "/hair-loss/topical-finasteride-minoxidil-spray",
+   "/n/hair-loss/your-recommendations",
+   "/n/testosterone-replacement-therapy/account",
+   "/n/[taxon]/animation",
+   "/n/[taxon]/assessment",
+   "/n/[taxon]/choose-format",
+   "/n/[taxon]/choose-frequency",
+   "/n/[taxon]/extra",
+   "/n/[taxon]/frequency",
+   "/n/[taxon]/patient-agreement-form",
+   "/n/[taxon]/questionnaire-confirm",
+   "/n/[taxon]/quiz",
+   "/n/[taxon]/quiz/xp",
+   "/n/[taxon]/quiz/[question]",
+   "/n/[taxon]/recommendations",
+   "/quiz"
+  ],
+  "readAs": "/n/hair-loss/quiz (+ /quiz/[question]) → /n/hair-loss/animation → /n/hair-loss/recommendations or /n/hair-loss/your-recommendations → /n/hair-loss/choose-format → /n/hair-loss/choose-frequency → /n/hair-loss/extra (add-ons) → /checkout/email (account) → /checkout/quiz/questions (medical history) → /checkout/photos/intro and /take → /checkout/review → /checkout/thankyou; /checkout/rejected for a refusal. The order is read from the routing code, not walked."
+ },
+ "legacyManualProductData2024": {
+  "source": "page data of www.manual.co/hair-loss, 12 Aug 2024 (src/arquivo/manual-hair-loss-20240812.nextdata.json)",
+  "products": {
+   "finasteride_oral_minoxidil_oral_biotin": [
+    {
+     "variant": "finasteride_oral_minoxidil_oral_biotin_90caps_3M_SUB",
+     "plan": "Quarterly",
+     "fullPriceGBP": 114.0,
+     "dosage": "Finasteride 1mg + Minoxidil 2.5mg + Biotin 10mg",
+     "firstOrderText": "£60 for the first 3 months",
+     "thenText": "£114 per delivery thereafter",
+     "everyDays": 90,
+     "hiddenOnProductPage": false,
+     "upsells": [
+      {
+       "product": "POWER-SHAMPOO",
+       "variant": "POWERSHAMPOO_200_Q_UPSELL",
+       "priceGBP": 20.0,
+       "wasGBP": 24.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "hair-vitamins",
+       "variant": "hair-vitamins-upsell-quarterly",
+       "priceGBP": 15.0,
+       "wasGBP": 36.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "MR-MOISTURISER",
+       "variant": "MR_MOISTURISER_QUARTERLY_UPSELL",
+       "priceGBP": 20.0,
+       "wasGBP": 28.0,
+       "appliesTo": []
+      }
+     ]
+    },
+    {
+     "variant": "finasteride_oral_minoxidil_oral_biotin_30caps_1M_SUB",
+     "plan": "Monthly",
+     "fullPriceGBP": 44.0,
+     "dosage": "Finasteride 1mg + Minoxidil 2.5mg + Biotin 10mg",
+     "firstOrderText": "£28 for the first delivery",
+     "thenText": "£44 per delivery thereafter",
+     "everyDays": 30,
+     "hiddenOnProductPage": false,
+     "upsells": [
+      {
+       "product": "POWER-SHAMPOO",
+       "variant": "POWERSHAMPOO_200_UPSELL",
+       "priceGBP": 10.0,
+       "wasGBP": 14.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "hair-vitamins",
+       "variant": "hair-vitamins-upsell-monthly",
+       "priceGBP": 5.0,
+       "wasGBP": 12.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "MR-MOISTURISER",
+       "variant": "MR_MOISTURISER_MONTHLY_UPSELL",
+       "priceGBP": 12.0,
+       "wasGBP": 14.0,
+       "appliesTo": []
+      }
+     ]
+    },
+    {
+     "variant": "grandfathered_finasteride_oral_minoxidil_oral_biotin_180caps_6M_SUB",
+     "plan": "Biannual",
+     "fullPriceGBP": 143.0,
+     "dosage": "Finasteride 1mg + Minoxidil 2.5mg + Biotin 10mg",
+     "firstOrderText": "£114.00 for the first 3 months",
+     "thenText": "£143.00 for the first 3 months",
+     "everyDays": 180,
+     "hiddenOnProductPage": true,
+     "upsells": []
+    },
+    {
+     "variant": "finasteride_oral_minoxidil_oral_biotin_180caps_6M_SUB",
+     "plan": "Biannual",
+     "fullPriceGBP": 194.0,
+     "dosage": "Finasteride 1mg + Minoxidil 2.5mg + Biotin 10mg",
+     "firstOrderText": "£138.00 for the first 6 months",
+     "thenText": "£194.00 per delivery thereafter",
+     "everyDays": 180,
+     "hiddenOnProductPage": true,
+     "upsells": [
+      {
+       "product": "POWER-SHAMPOO",
+       "variant": "POWERSHAMPOO_200_6M_UPSELL",
+       "priceGBP": 30.0,
+       "wasGBP": 60.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "hair-vitamins",
+       "variant": "hair-vitamins-upsell-6M",
+       "priceGBP": 30.0,
+       "wasGBP": 60.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      }
+     ]
+    },
+    {
+     "variant": "finasteride_oral_minoxidil_oral_biotin_90caps_LDP_3M_SUB",
+     "plan": "Quarterly",
+     "fullPriceGBP": 99.0,
+     "dosage": "Finasteride 1mg + Minoxidil 2.5mg + Biotin 10mg",
+     "firstOrderText": "£48 for the first 3 months",
+     "thenText": "£99 per delivery thereafter",
+     "everyDays": 90,
+     "hiddenOnProductPage": true,
+     "upsells": [
+      {
+       "product": "POWER-SHAMPOO",
+       "variant": "POWERSHAMPOO_200_Q_UPSELL",
+       "priceGBP": 20.0,
+       "wasGBP": 24.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "hair-vitamins",
+       "variant": "hair-vitamins-upsell-quarterly",
+       "priceGBP": 15.0,
+       "wasGBP": 36.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "MR-MOISTURISER",
+       "variant": "MR_MOISTURISER_QUARTERLY_UPSELL",
+       "priceGBP": 20.0,
+       "wasGBP": 28.0,
+       "appliesTo": []
+      }
+     ]
+    },
+    {
+     "variant": "finasteride_oral_minoxidil_oral_biotin_180caps_test_6M_SUB",
+     "plan": "Biannual",
+     "fullPriceGBP": 199.0,
+     "dosage": "Finasteride 1mg + Minoxidil 2.5mg + Biotin 10mg",
+     "firstOrderText": "£149.00 for the first 6 months",
+     "thenText": "£199.00 per delivery thereafter",
+     "everyDays": 180,
+     "hiddenOnProductPage": true,
+     "upsells": [
+      {
+       "product": "POWER-SHAMPOO",
+       "variant": "POWERSHAMPOO_200_6M_UPSELL",
+       "priceGBP": 30.0,
+       "wasGBP": 60.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "hair-vitamins",
+       "variant": "hair-vitamins-upsell-6M",
+       "priceGBP": 30.0,
+       "wasGBP": 60.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      }
+     ]
+    },
+    {
+     "variant": "finasteride_oral_minoxidil_oral_biotin_180caps_test2_6M_SUB",
+     "plan": "Biannual",
+     "fullPriceGBP": 199.0,
+     "dosage": "Finasteride 1mg + Minoxidil 2.5mg + Biotin 10mg",
+     "firstOrderText": "£149.00 for the first 6 months",
+     "thenText": "£199.00 per delivery thereafter",
+     "everyDays": 180,
+     "hiddenOnProductPage": true,
+     "upsells": [
+      {
+       "product": "POWER-SHAMPOO",
+       "variant": "POWERSHAMPOO_200_6M_UPSELL",
+       "priceGBP": 30.0,
+       "wasGBP": 60.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "hair-vitamins",
+       "variant": "hair-vitamins-upsell-6M",
+       "priceGBP": 30.0,
+       "wasGBP": 60.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      }
+     ]
+    }
+   ],
+   "finasteride_oral": [
+    {
+     "variant": "finasteride_oral_30tabs_1M_SUB",
+     "plan": "Monthly",
+     "fullPriceGBP": 34.0,
+     "dosage": "1mg",
+     "firstOrderText": "£18  for the first month",
+     "thenText": "£34 per month thereafter",
+     "everyDays": 30,
+     "hiddenOnProductPage": false,
+     "upsells": [
+      {
+       "product": "POWER-SHAMPOO",
+       "variant": "POWERSHAMPOO_200_UPSELL",
+       "priceGBP": 10.0,
+       "wasGBP": 14.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "hair-vitamins",
+       "variant": "hair-vitamins-upsell-monthly",
+       "priceGBP": 5.0,
+       "wasGBP": 12.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "MR-MOISTURISER",
+       "variant": "MR_MOISTURISER_MONTHLY_UPSELL",
+       "priceGBP": 12.0,
+       "wasGBP": 14.0,
+       "appliesTo": []
+      }
+     ]
+    },
+    {
+     "variant": "finasteride_oral_90tabs_3M_SUB",
+     "plan": "Quarterly",
+     "fullPriceGBP": 84.0,
+     "dosage": "1mg",
+     "firstOrderText": "£45 for the first 3 months",
+     "thenText": "£84 per delivery thereafter",
+     "everyDays": 90,
+     "hiddenOnProductPage": false,
+     "upsells": [
+      {
+       "product": "POWER-SHAMPOO",
+       "variant": "POWERSHAMPOO_200_Q_UPSELL",
+       "priceGBP": 20.0,
+       "wasGBP": 24.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "hair-vitamins",
+       "variant": "hair-vitamins-upsell-quarterly",
+       "priceGBP": 15.0,
+       "wasGBP": 36.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "MR-MOISTURISER",
+       "variant": "MR_MOISTURISER_QUARTERLY_UPSELL",
+       "priceGBP": 20.0,
+       "wasGBP": 28.0,
+       "appliesTo": []
+      }
+     ]
+    },
+    {
+     "variant": "finasteride_oral_180tabs_6M_SUB",
+     "plan": "Biannual",
+     "fullPriceGBP": 143.0,
+     "dosage": "Finasteride 1mg",
+     "firstOrderText": "£96 for the first 6 months",
+     "thenText": "£143 per delivery thereafter",
+     "everyDays": 180,
+     "hiddenOnProductPage": true,
+     "upsells": [
+      {
+       "product": "POWER-SHAMPOO",
+       "variant": "POWERSHAMPOO_200_6M_UPSELL",
+       "priceGBP": 30.0,
+       "wasGBP": 60.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "hair-vitamins",
+       "variant": "hair-vitamins-upsell-6M",
+       "priceGBP": 30.0,
+       "wasGBP": 60.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      }
+     ]
+    },
+    {
+     "variant": "finasteride_oral_180tabs_test_6M_SUB",
+     "plan": "Biannual",
+     "fullPriceGBP": 149.0,
+     "dosage": "Finasteride 1mg",
+     "firstOrderText": "£99 for the first 6 months",
+     "thenText": "£149 per delivery thereafter",
+     "everyDays": 180,
+     "hiddenOnProductPage": true,
+     "upsells": [
+      {
+       "product": "POWER-SHAMPOO",
+       "variant": "POWERSHAMPOO_200_6M_UPSELL",
+       "priceGBP": 30.0,
+       "wasGBP": 60.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "hair-vitamins",
+       "variant": "hair-vitamins-upsell-6M",
+       "priceGBP": 30.0,
+       "wasGBP": 60.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      }
+     ]
+    },
+    {
+     "variant": "finasteride_oral_180tabs_test2_6M_SUB",
+     "plan": "Biannual",
+     "fullPriceGBP": 149.0,
+     "dosage": "Finasteride 1mg",
+     "firstOrderText": "£99 for the first 6 months",
+     "thenText": "£149 per delivery thereafter",
+     "everyDays": 180,
+     "hiddenOnProductPage": true,
+     "upsells": [
+      {
+       "product": "POWER-SHAMPOO",
+       "variant": "POWERSHAMPOO_200_6M_UPSELL",
+       "priceGBP": 30.0,
+       "wasGBP": 60.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "hair-vitamins",
+       "variant": "hair-vitamins-upsell-6M",
+       "priceGBP": 30.0,
+       "wasGBP": 60.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      }
+     ]
+    }
+   ],
+   "minoxidil_oral": [
+    {
+     "variant": "grandfathered_minoxidil_oral_90caps_3M_SUB",
+     "plan": "Quarterly",
+     "fullPriceGBP": 79.0,
+     "dosage": "2.5mg",
+     "firstOrderText": "£52 for the first 3 months",
+     "thenText": "£79 every 3 months thereafter",
+     "everyDays": 90,
+     "hiddenOnProductPage": false,
+     "upsells": [
+      {
+       "product": "POWER-SHAMPOO",
+       "variant": "POWERSHAMPOO_200_Q_UPSELL",
+       "priceGBP": 20.0,
+       "wasGBP": 24.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "hair-vitamins",
+       "variant": "hair-vitamins-upsell-quarterly",
+       "priceGBP": 15.0,
+       "wasGBP": 36.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "MR-MOISTURISER",
+       "variant": "MR_MOISTURISER_QUARTERLY_UPSELL",
+       "priceGBP": 20.0,
+       "wasGBP": 28.0,
+       "appliesTo": []
+      }
+     ]
+    },
+    {
+     "variant": "minoxidil_oral_30caps_1M_SUB",
+     "plan": "Monthly",
+     "fullPriceGBP": 42.0,
+     "dosage": "2.5mg",
+     "firstOrderText": "£29 for the first month",
+     "thenText": "£42 every 3 months thereafter",
+     "everyDays": 30,
+     "hiddenOnProductPage": false,
+     "upsells": [
+      {
+       "product": "POWER-SHAMPOO",
+       "variant": "POWERSHAMPOO_200_UPSELL",
+       "priceGBP": 10.0,
+       "wasGBP": 14.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "hair-vitamins",
+       "variant": "hair-vitamins-upsell-monthly",
+       "priceGBP": 5.0,
+       "wasGBP": 12.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      }
+     ]
+    },
+    {
+     "variant": "minoxidil_oral_90caps_3M_SUB",
+     "plan": "Quarterly",
+     "fullPriceGBP": 84.0,
+     "dosage": "2.5mg",
+     "firstOrderText": "£57 for the first 3 months",
+     "thenText": "£84 every 3 months thereafter",
+     "everyDays": 90,
+     "hiddenOnProductPage": false,
+     "upsells": [
+      {
+       "product": "POWER-SHAMPOO",
+       "variant": "POWERSHAMPOO_200_Q_UPSELL",
+       "priceGBP": 20.0,
+       "wasGBP": 24.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "hair-vitamins",
+       "variant": "hair-vitamins-upsell-quarterly",
+       "priceGBP": 15.0,
+       "wasGBP": 36.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      }
+     ]
+    },
+    {
+     "variant": "oral_minoxidil_180caps_6M_SUB",
+     "plan": "Biannual",
+     "fullPriceGBP": 143.0,
+     "dosage": "2.5mg",
+     "firstOrderText": "£96 for the first 6 months",
+     "thenText": "£143 every 6 months thereafter",
+     "everyDays": 180,
+     "hiddenOnProductPage": true,
+     "upsells": []
+    },
+    {
+     "variant": "minoxidil_oral_90caps_LDP_3M_SUB",
+     "plan": "Quarterly",
+     "fullPriceGBP": 60.0,
+     "dosage": "2.5mg",
+     "firstOrderText": "£30 for the first 3 months",
+     "thenText": "£60 every 3 months thereafter",
+     "everyDays": 90,
+     "hiddenOnProductPage": false,
+     "upsells": [
+      {
+       "product": "POWER-SHAMPOO",
+       "variant": "POWERSHAMPOO_200_Q_UPSELL",
+       "priceGBP": 20.0,
+       "wasGBP": 24.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "hair-vitamins",
+       "variant": "hair-vitamins-upsell-quarterly",
+       "priceGBP": 15.0,
+       "wasGBP": 36.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      }
+     ]
+    },
+    {
+     "variant": "oral_minoxidil_180caps_test_6M_SUB",
+     "plan": "Biannual",
+     "fullPriceGBP": 149.0,
+     "dosage": "2.5mg",
+     "firstOrderText": "£99 for the first 6 months",
+     "thenText": "£149 every 6 months thereafter",
+     "everyDays": 180,
+     "hiddenOnProductPage": true,
+     "upsells": [
+      {
+       "product": "POWER-SHAMPOO",
+       "variant": "POWERSHAMPOO_200_6M_UPSELL",
+       "priceGBP": 30.0,
+       "wasGBP": 60.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "hair-vitamins",
+       "variant": "hair-vitamins-upsell-6M",
+       "priceGBP": 30.0,
+       "wasGBP": 60.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      }
+     ]
+    },
+    {
+     "variant": "oral_minoxidil_180caps_test2_6M_SUB",
+     "plan": "Biannual",
+     "fullPriceGBP": 149.0,
+     "dosage": "2.5mg",
+     "firstOrderText": "£99 for the first 6 months",
+     "thenText": "£149 every 6 months thereafter",
+     "everyDays": 180,
+     "hiddenOnProductPage": true,
+     "upsells": [
+      {
+       "product": "POWER-SHAMPOO",
+       "variant": "POWERSHAMPOO_200_6M_UPSELL",
+       "priceGBP": 30.0,
+       "wasGBP": 60.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      },
+      {
+       "product": "hair-vitamins",
+       "variant": "hair-vitamins-upsell-6M",
+       "priceGBP": 30.0,
+       "wasGBP": 60.0,
+       "appliesTo": [
+        "cart_upsell",
+        "pre_checkout_upsell",
+        "precheckout_upsell_unsure",
+        "cart_upsell_external_link"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "recommendationPageSurvey": {
+  "source": "survey list the landing page downloads by itself (runs/landing-popup/net/05-…surveys…json)",
+  "name": "HL Recommendation Survey",
+  "shownOn": "addresses containing /hair-loss/recommendations",
+  "questions": [
+   "What’s the main thing holding you back from moving to the next step?",
+   "Leave your email if you are happy for us to contact you to discuss your feedback and get money off your next order"
+  ]
+ },
+ "_stage3Note": "Stage 3 (verification, 23 Nov 2026) added the two blocks below and one correction. The real quiz definition is still NOT here. Correction: the question 'What was your sex at birth?' in the older app code belongs to the app's general 'Personal Questions' wellness and blood-test quiz, not to the hair gateway. The pop-up scripts in preQuizPopup and womenPreQuizPopup were re-read on the live pages (src/verify/) and still match.",
+ "legacyPlanPickerObserved": {
+  "_what": "The only product chooser that works without the blocked app: 'Choose your plan' on two older Manual pages that are still online. Each line was seen in a replay (runs/verify-gap-legacy-*). The Continue button was never pressed.",
+  "minoxidilPage": {
+   "url": "https://hello.manual.co/a/hl-hair-loss-minox-plans",
+   "controls": {
+    "format": [
+     "Tablets (pre-selected, tagged 'Most effective')",
+     "Spray"
+    ],
+    "length": [
+     "3 Months",
+     "6 Months (pre-selected, tagged 'Save 48%')"
+    ]
+   },
+   "outcomes": [
+    {
+     "format": "Tablets",
+     "length": "6 Months",
+     "priceShown": "£25 struck through, £13 per month",
+     "continueLink": "/add-to-cart?productCode=minoxidil_oral&variantCode=oral_minoxidil_180caps_6M_LPT_SUB&persist=true",
+     "run": "runs/verify-gap-legacy-minox-base"
+    },
+    {
+     "format": "Spray",
+     "length": "6 Months",
+     "priceShown": "£25 struck through, £13 per month",
+     "continueLink": "/add-to-cart?productCode=minoxidil_topical_10&variantCode=minoxidil_topical_10_2x90ml_6M_LPT_SUB&persist=true",
+     "run": "runs/verify-gap-legacy-minox-spray"
+    },
+    {
+     "format": "Tablets",
+     "length": "3 Months",
+     "priceShown": "£29.67 struck through, £14 per month",
+     "continueLink": "/add-to-cart?persist=true&productCode=minoxidil_oral&variantCode=minoxidil_oral_90caps_3M_LPT_5inc_SUB (the link also carries a flowStep value)",
+     "run": "runs/verify-gap-legacy-minox-3m"
+    },
+    {
+     "format": "Spray",
+     "length": "3 Months",
+     "priceShown": "£29.67 struck through, £14 per month",
+     "continueLink": "/add-to-cart?persist=true&productCode=minoxidil_topical_10&variantCode=minoxidil_topical_10_1x90ml_3M_5inc_SUB (the link also carries a flowStep value)",
+     "run": "runs/verify-gap-legacy-minox-spray-3m"
+    }
+   ],
+   "rule": "format picks the product code; length picks the pack (variant) and the price; neither changes the other."
+  },
+  "completePlanPage": {
+   "url": "https://hello.manual.co/a/complete-hair-loss-plan",
+   "controls": {
+    "length": [
+     "3 Months",
+     "6 Months (pre-selected, tagged 'Save 46%')"
+    ]
+   },
+   "outcomes": [
+    {
+     "length": "6 Months",
+     "priceShown": "£33.17 struck through, £18 per month",
+     "line": "Minimum 6 month treatment, as results take time",
+     "continueLink": "https://www.manual.co/n/hair-loss/quiz",
+     "run": "runs/verify-gap-legacy-complete-base"
+    },
+    {
+     "length": "3 Months",
+     "priceShown": "£39.67 struck through, £21 per month",
+     "line": "Minimum 3 month treatment, as results take time",
+     "continueLink": "https://www.manual.co/n/hair-loss/quiz",
+     "run": "runs/verify-gap-legacy-complete-3m"
+    }
+   ],
+   "note": "In the page's stored code the Continue button is an add-to-basket link for the all-in-one capsule (finasteride_oral_minoxidil_oral_biotin, 180 capsules, coupon CHLPT); the running page replaces it with the quiz link."
+  }
+ },
+ "couponHandOverObserved": {
+  "_what": "Read from the men's landing page's own code in the browser, nothing typed or submitted (runs/verify-gap-coupon-men-none, runs/verify-gap-coupon-men-code).",
+  "withoutCode": {
+   "hiddenNextStepLink": "https://joinvoy.com/n/hair-loss/quiz/gateway",
+   "hiddenCouponField": ""
+  },
+  "with ?coupon=SPOOKY50": {
+   "hiddenNextStepLink": "https://joinvoy.com/n/hair-loss/quiz/gateway?coupon=SPOOKY50",
+   "hiddenCouponField": "SPOOKY50"
+  }
+ }
+}

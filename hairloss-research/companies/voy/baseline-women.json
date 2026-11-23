@@ -1,0 +1,19 @@
+{
+  "_note": "Baseline replay file for Voy's women's hair-loss quiz. Stage 2 found the women's entry link on Voy's public women's host (femalehairloss1.joinvoy.com): every button opens https://www.joinvoy.com/n/female-hair-loss/quiz, so that is now the start address (stage 1 used /n/hair-loss/quiz/gateway; that one is kept in scripts/s2 as a note only). On 2026-11-23 this stops at step 00: HTTP 429 Vercel security checkpoint ('Failed to verify your browser, Code 21'), see runs/s2-probe-female-quiz and runs/s2-retest-gateway. Steps are empty on purpose. Do not enter an email, phone, name or address. The baseline that DOES run today is scripts/s2/popup-women-base.json (landing pop-up, 'Widening part'). Stage 3 (verification) re-tested this file once more on 2026-11-23: same checkpoint (runs/verify-base-men, runs/verify-base-women).",
+  "_baselinePatient": {
+    "sex": "female",
+    "age": 38,
+    "pattern": "widening parting / diffuse thinning on top (Ludwig I–II)",
+    "onset": "gradual over about 2 years",
+    "pregnant": "no",
+    "breastfeeding": "no",
+    "tryingToConceive": "no",
+    "contraception": "reliable",
+    "periods": "regular",
+    "medicalConditions": "none",
+    "medicines": "none"
+  },
+  "start": "https://www.joinvoy.com/n/female-hair-loss/quiz",
+  "steps": [],
+  "_alsoTry": "https://www.joinvoy.com/n/hair-loss/quiz/gateway (generic men-and-women gateway)"
+}

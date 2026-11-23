@@ -1,0 +1,139 @@
+{
+ "start": "https://www.forhims.co.uk/c/hl",
+ "steps": [
+  {
+   "do": "click",
+   "text": "Experiencing hair loss, ready to start treatment",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Along the hairline",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Some",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Over a year ago",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Visibly thicker, fuller hair",
+   "settle": 1200
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Straight or wavy",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Short",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Yes",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Sometimes",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "No styling",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Less than 5 minutes",
+   "settle": 4500
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 3000
+  },
+  {
+   "do": "click",
+   "text": "Next →",
+   "settle": 3000
+  },
+  {
+   "do": "click",
+   "text": "Why these two? →",
+   "settle": 3000
+  },
+  {
+   "do": "click",
+   "text": "How do I get them? →",
+   "settle": 3000
+  },
+  {
+   "do": "click",
+   "text": "Next →",
+   "settle": 3000
+  },
+  {
+   "do": "wait",
+   "ms": 8000
+  },
+  {
+   "do": "wait",
+   "ms": 4000
+  }
+ ],
+ "_about": {
+  "flow": "men",
+  "patient": "Baseline man from PROTOCOL.md section 5: 32, receding hairline (Norwood 3), gradual over about 2 years, family history yes, wants regrowth. The anonymous quiz never asks age, sex or medical history; those sit behind the account wall.",
+  "answers": {
+   "Which best represents your hair loss and goals?": "Experiencing hair loss, ready to start treatment",
+   "Where are you noticing hair loss?": "Along the hairline",
+   "How much hair have you lost?": "Some",
+   "When did you start noticing changes to your hair?": "Over a year ago",
+   "With treatment, what results are you hoping for?": [
+    "Visibly thicker, fuller hair"
+   ],
+   "What’s your hair type?": "Straight or wavy",
+   "How long is your hair?": "Short",
+   "Does hair loss run in your family?": "Yes",
+   "How often do you tend to experience stress?": "Sometimes",
+   "How do you style your hair?": "No styling",
+   "How much time do you spend on your hair every day?": "Less than 5 minutes"
+  },
+  "endsAt": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair (email field = account wall). Do not type anything there.",
+  "replay": "node ../../tools/walk.js baseline-men.json runs/<run-id> --last"
+ }
+}

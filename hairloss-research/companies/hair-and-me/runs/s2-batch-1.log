@@ -1,0 +1,17 @@
+[20:52:51] start s2-base-women-1
+[20:54:53] done  s2-base-women-1 exit=0 :: ===== STOP: no answer for step 32 [yd] (question) Personalise your account =====
+[20:54:59] start s2-m-tile-women
+[20:56:55] done  s2-m-tile-women exit=0 :: ===== STOP: no answer for step 30 [yd] (question) Personalise your account =====
+[20:57:01] start s2-m-age-17
+[20:58:51] done  s2-m-age-17 exit=0 :: ===== STOP: no answer for step 28 [utt] (question) We’re unable to treat you at this time. =====
+[20:58:57] start s2-m-age-18
+[21:00:51] done  s2-m-age-18 exit=0 :: ===== STOP: no answer for step 29 [yd] (question) Personalise your account =====
+[21:00:57] start s2-m-age-85
+[21:02:51] done  s2-m-age-85 exit=0 :: ===== STOP: no answer for step 29 [yd] (question) Personalise your account =====
+[21:02:57] start s2-w-pg-yes
+[21:05:00] done  s2-w-pg-yes exit=0 :: ===== STOP: no answer for step 32 [yd] (question) Personalise your account =====
+[21:05:06] start s2-m-htam-patches
+[21:07:03] done  s2-m-htam-patches exit=0 :: ===== STOP: no answer for step 30 [yd] (question) Personalise your account =====
+[21:07:09] start s2-m-htam-crown
+[21:09:00] done  s2-m-htam-crown exit=0 :: ===== STOP: no answer for step 28 [yd] (question) Personalise your account =====
+ALL-DONE

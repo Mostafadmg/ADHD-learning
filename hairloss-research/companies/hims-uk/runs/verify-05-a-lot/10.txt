@@ -1,0 +1,25 @@
+STEP 10 click "Continue"
+URL: https://app.forhims.co.uk/flow/a9a88e4a-89b9-47ae-8138-3a1acaa41594?t=hair&anon_flow_key=hair
+TITLE: Hims
+
+--- VISIBLE TEXT ---
+Does hair loss run in your family?
+
+Yes
+
+No
+
+Not sure
+
+Why we ask
+
+The most common cause of hair loss is hereditary hair loss. So if an immediate family member has a history of hair loss, there’s a good chance it’ll affect you too.
+Source
+
+←
+
+--- CONTROLS ---
+  button (5): Yes [false]  ·  No [false]  ·  Not sure [false]  ·  ←  ·  Your answers
+
+--- LINKS ---
+  link (2): Source -> https://www.forhims.co.uk/blog/reasons-for-hair-loss-in-men-under-25  ·  Navigate home -> /profile

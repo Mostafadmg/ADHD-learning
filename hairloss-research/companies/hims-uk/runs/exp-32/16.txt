@@ -1,0 +1,22 @@
+STEP 16 click "No styling"
+URL: https://app.forhims.co.uk/flow/a9a88e4a-89b9-47ae-8138-3a1acaa41594?t=hair&anon_flow_key=hair
+TITLE: Hims
+
+--- VISIBLE TEXT ---
+How much time do you spend on your hair every day?
+
+We offer treatments that are quick, simple, and work with your routine.
+
+Less than 5 minutes
+
+5-10 minutes
+
+10+ minutes
+
+←
+
+--- CONTROLS ---
+  button (5): Less than 5 minutes [false]  ·  5-10 minutes [false]  ·  10+ minutes [false]  ·  ←  ·  Your answers
+
+--- LINKS ---
+  link (1): Navigate home -> /profile

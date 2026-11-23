@@ -1,0 +1,15 @@
+{
+ "start": "https://app.forhims.co.uk/start/signup?t=hair",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 4000
+  }
+ ],
+ "_about": {
+  "experiment": "exp-36-skip-quiz",
+  "flow": "men",
+  "changed": "entry: /c/hl quiz (21 screens) -> the sign-up address opened directly with no quiz answers",
+  "note": "Tests whether the anonymous quiz is needed at all to reach the account wall. Nothing is typed."
+ }
+}

@@ -1,0 +1,49 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "autoNext": {
+     "duration": 3000,
+     "label": "Next"
+    }
+   },
+   {
+    "skipAsNext": {
+     "label": "Skip"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 2,
+   "sectionTitle": "YOUR HAIR"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 420,
+    "inputConfig": {
+     "content": {
+      "image": "collage",
+      "imageAlt": "Collage of prescribers"
+     },
+     "interstitialType": "image",
+     "title": "Our Dermatology Team have a few more questions"
+    },
+    "inputType": "interstitial",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": null,
+  "type": "question"
+ }
+}

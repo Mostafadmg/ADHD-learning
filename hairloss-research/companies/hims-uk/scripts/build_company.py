@@ -1,0 +1,575 @@
+import json, re
+BASE = '/home/user/ADHD-learning/hairloss-research/companies/hims-uk/'
+qd = json.load(open(BASE + 'quiz-definition.json'))
+steps = qd['anonymousFlow']['steps']
+
+STORE = "the store price table the site embeds in its own pages (api.forhims.co.uk/store/v2/products/product_details, copy in raw/store-product-details.json)"
+HL = 'https://www.forhims.co.uk/hair-loss'
+
+# ---------------------------------------------------------------- products
+products = [
+ {"id": "p1", "name": "Topical Finasteride & Minoxidil Spray (sold as 'The Combination Hair Loss Spray' / 'Personalised Hair Loss Sprays'; Hair Hybrids range)",
+  "category": "rx-topical-compounded",
+  "actives": [{"name": "finasteride", "strength": "0.3%"}, {"name": "minoxidil", "strength": "6%"}],
+  "form": "quick-drying scalp spray, 90 ml bottle = 3 months, once daily", "audience": "men",
+  "legalStatus": "POM, unlicensed special (compounded). Hims: 'a compounded and unlicensed product'; made by The London Specialist Pharmacy (GPhC 9010630)",
+  "price": "£16.50 a month on a 6-month plan (£99 for 2 bottles)",
+  "priceDetail": "3-month plan £75 (£25 a month); one-off 3-month supply £120; reactivation offer prices £45 (3 months) and £89.10 (6 months). Source: " + STORE + ". The price shown at the new checkout is loaded after sign-in and was not seen.",
+  "url": HL, "internalId": "P61DhG9W", "contentKey": "topical-fin-min-spray",
+  "recommendedWhen": "unknown. Shown in the 'Topical Treatments' group of the treatment options screen; chips on its recommendation page: 'Stop hair loss', 'Regrow hair'. The server picks the recommended product and marks each product eligible or not (not seen).",
+  "evidence": "code"},
+ {"id": "p2", "name": "Topical Finasteride & Minoxidil Spray + Ketoconazole + Biotin (the '4-in-1' or 'premium' spray; Hair Hybrids range)",
+  "category": "rx-topical-compounded",
+  "actives": [{"name": "finasteride", "strength": "0.3%"}, {"name": "minoxidil", "strength": "7%"}, {"name": "ketoconazole", "strength": "2.2%"}, {"name": "biotin", "strength": "0.2%"}],
+  "form": "scalp spray with eucalyptus scent, 90 ml bottle = 3 months, 4 sprays once daily", "audience": "men",
+  "legalStatus": "POM, unlicensed special (compounded)",
+  "price": "£22 a month on a 6-month plan (£132 for 2 bottles)",
+  "priceDetail": "3-month plan £99 (£33 a month); one-off 3-month supply £140; reactivation offer prices £59.40 and £79.20. Source: " + STORE + ". Other ingredients: ethanol, propylene glycol, citric acid, eucalyptus oil.",
+  "url": HL, "internalId": "ZggiM0GFpM", "contentKey": "topical-fin-min-spray-keto-biotin",
+  "recommendedWhen": "unknown. The old consultation code promoted it on its own screen before the recommendation ('Our best-selling spray, now better than ever.'); a site flag 'show-premium-spray-in-hl' is switched on. Chips: 'Stop hair loss', 'Regrow hair', 'Support a healthy scalp', 'Support healthy hair'.",
+  "evidence": "code"},
+ {"id": "p3", "name": "Topical Finasteride & Minoxidil Serum (sold as 'The Combination Hair Loss Serum' / 'Personalised Hair Loss Serums'; Hair Hybrids range)",
+  "category": "rx-topical-compounded",
+  "actives": [{"name": "finasteride", "strength": "0.3%"}, {"name": "minoxidil", "strength": "6%"}, {"name": "essential oil blend (lavender, rosemary, juniper, tea tree, eucalyptus and others)", "strength": "not stated"}],
+  "form": "scalp serum with dropper, 90 ml bottle = 3 months, 1 ml once daily", "audience": "men",
+  "legalStatus": "POM, unlicensed special (compounded)",
+  "price": "£16.50 a month on a 6-month plan (£99 for 2 bottles)",
+  "priceDetail": "3-month plan £75 (£25 a month); one-off 3-month supply £120. Landing page says 'Get started from £16.50/mo' and 'Minimum 3 months treatment'. An older twice-daily formulation still exists in the price table but is not on sale.",
+  "url": "https://www.forhims.co.uk/hair-loss/all-in-one-topical-hair-loss-solution-shopping", "internalId": "KgktFDR2", "contentKey": "topical-fin-min-serum",
+  "recommendedWhen": "unknown. Chips on its recommendation page: 'Stop hair loss', 'Regrow hair', 'Soothe scalp'.",
+  "evidence": "docs"},
+ {"id": "p4", "name": "Finasteride & Minoxidil + Supplement Blend Tablet (the 'chew'; sold as 'The Combination Treatment + Supplement Blend'; Hair Hybrids range)",
+  "category": "rx-oral-compounded",
+  "actives": [{"name": "finasteride", "strength": "1.1 mg"}, {"name": "minoxidil (oral)", "strength": "3 mg"}, {"name": "biotin", "strength": "not stated"}, {"name": "vitamin C", "strength": "not stated"}, {"name": "vitamin B5", "strength": "not stated"}, {"name": "vitamin B6", "strength": "not stated"}],
+  "form": "citrus-flavoured chewable tablet, one a day", "audience": "men",
+  "legalStatus": "POM, unlicensed special (compounded). Leaflet: 'a compounded prescription product and has not been approved by the MHRA'. Oral minoxidil for hair loss is an off-label use.",
+  "price": "£16.50 a month on a 6-month plan (£99 for 180 tablets)",
+  "priceDetail": "3-month plan £75 (£25 a month); monthly plan £60. Source: " + STORE + ". The plan data carries strength tags ('…mg'), so other strengths may be prescribable (not seen).",
+  "url": HL, "internalId": "6BFr0YdOjT", "contentKey": "fin-min-chew",
+  "recommendedWhen": "unknown. First card in the 'Oral Treatments' group. The old consultation promoted it on its own screen ('Fuel regrowth with a nutrient boost'). Chips: 'Thicker hair', 'Keep your hair'.",
+  "evidence": "code"},
+ {"id": "p5", "name": "Minoxidil + Supplement Blend Chew (sold as 'The Hair Regrowth Treatment + Supplement Blend'; Hair Hybrids range)",
+  "category": "rx-oral-compounded",
+  "actives": [{"name": "minoxidil (oral)", "strength": "3 mg"}, {"name": "biotin", "strength": "not stated"}, {"name": "vitamin C", "strength": "not stated"}, {"name": "vitamin B5", "strength": "not stated"}, {"name": "vitamin B6", "strength": "not stated"}],
+  "form": "citrus-flavoured chewable tablet, one a day", "audience": "men",
+  "legalStatus": "POM, unlicensed special (compounded); oral minoxidil for hair loss is off-label",
+  "price": "£16.50 a month on a 6-month plan (£99 for 180 chews)",
+  "priceDetail": "3-month plan £75 (£25 a month); monthly plan £60. Landing page: 'From £16.50/month'.",
+  "url": "https://www.forhims.co.uk/hair-loss/all-in-one-topical-hair-loss-solution-shopping", "internalId": "hc8KoyPfdg", "contentKey": "min-chew",
+  "recommendedWhen": "unknown. The finasteride-free oral option, so a likely fallback when finasteride is ruled out (inferred, not seen). Chips: 'Thicker hair', 'Keep your hair'.",
+  "evidence": "docs"},
+ {"id": "p6", "name": "Supplement Blend chew (sold as 'Hair Loss Vitamin Supplement' / 'Personalised Hair Loss Supplements'; 'Vitamin Chewables' in the price table)",
+  "category": "supplement",
+  "actives": [{"name": "biotin", "strength": "not stated"}, {"name": "vitamin C", "strength": "not stated"}, {"name": "vitamin B5", "strength": "not stated"}, {"name": "vitamin B6", "strength": "not stated"}],
+  "form": "citrus-flavoured chewable tablet, one a day", "audience": "men",
+  "legalStatus": "No medicine in it. Hims lists it as 'Compounded' and shows its unlicensed-preparation disclaimer; sold only through the consultation. Exact legal class not stated.",
+  "price": "£16.50 a month on a 6-month plan (£99 for 180 chews)",
+  "priceDetail": "3-month plan £75 (£25 a month); monthly plan £60.",
+  "url": HL, "internalId": "UjPlhXiL", "contentKey": "supplement-blend",
+  "recommendedWhen": "unknown. Drug-free, so plausibly what is left when both finasteride and minoxidil are ruled out (inferred, not seen).",
+  "evidence": "code"},
+ {"id": "p7", "name": "Finasteride tablets (sold as 'The Hair Saving Tablets')",
+  "category": "rx-oral",
+  "actives": [{"name": "finasteride", "strength": "1 mg"}],
+  "form": "tablet, one a day (contains lactose)", "audience": "men",
+  "legalStatus": "POM, licensed generic",
+  "price": "£23 a month on a 12-month plan (£276 for 360 tablets)",
+  "priceDetail": "6-month plan £156 (£26 a month); 3-month plan £99 (£33 a month); one-off 3-month supply £114. Landing page: 'From £23/month'.",
+  "url": "https://www.forhims.co.uk/hair-loss/finasteride", "internalId": "6wTK2oBx", "contentKey": "finasteride",
+  "recommendedWhen": "unknown. Card badge 'Generic Treatment'; chip 'Stop hair loss'.",
+  "evidence": "docs"},
+ {"id": "p8", "name": "Alcohol-free Minoxidil Serum",
+  "category": "rx-topical-compounded",
+  "actives": [{"name": "minoxidil", "strength": "5% (one site field says 6%)"}, {"name": "essential oil blend", "strength": "not stated"}],
+  "form": "scalp serum with dropper, 60 ml bottle a month, 1 ml twice daily", "audience": "men",
+  "legalStatus": "Unlicensed special (compounded). Hims: 'a proprietary extra strength formula, which does not contain alcohol or propylene glycol. This is a compounded, unlicensed product.' Supplied only after the online consultation.",
+  "price": "£21 a month on a 12-month plan (£252 for 12 bottles)",
+  "priceDetail": "6-month plan £144 (£24 a month); 3-month plan £93 (£31 a month); one-off 3-month supply £108.",
+  "url": "https://www.forhims.co.uk/hair-loss/minoxidil", "internalId": "cP3drAvl", "contentKey": "minoxidil-serum",
+  "recommendedWhen": "unknown. Card badge 'Generic Treatment'; chips 'Regrow hair', 'Soothe scalp'. The finasteride-free topical option.",
+  "evidence": "docs"},
+ {"id": "p9", "name": "Finasteride + Minoxidil Combo Kit (sold as 'The Hair Saving Tablets & Minoxidil Combo Kit')",
+  "category": "bundle",
+  "actives": [{"name": "finasteride (tablet)", "strength": "1 mg"}, {"name": "minoxidil (alcohol-free serum)", "strength": "5%"}],
+  "form": "kit: one tablet a day plus serum twice daily (90 tablets and 3 x 60 ml bottles per 3 months)", "audience": "men",
+  "legalStatus": "Licensed POM tablet plus unlicensed compounded minoxidil serum",
+  "price": "£30 a month on a 12-month plan (£360)",
+  "priceDetail": "6-month plan £210 (£35 a month); 3-month plan £129 (£43 a month); one-off 3-month supply £147. Landing page: 'From £30/month'.",
+  "url": "https://www.forhims.co.uk/hair-loss/finasteride-and-minoxidil", "internalId": "s2hF6Mdn", "contentKey": "combo-kit",
+  "recommendedWhen": "unknown. Only card in the 'Combo Treatments' group; chips 'Stop hair loss', 'Regrow hair'.",
+  "evidence": "docs"},
+ {"id": "p10", "name": "Regaine® Liquid Solution (Regaine for Men Extra Strength Scalp Solution 5% w/v)",
+  "category": "otc-medicine",
+  "actives": [{"name": "minoxidil", "strength": "5% w/v"}],
+  "form": "branded scalp solution, 60 ml bottle a month, 1 ml twice daily", "audience": "men",
+  "legalStatus": "Licensed non-prescription minoxidil (brand-name). Hims does not state the legal class; still sold through the consultation.",
+  "price": "£44 a month on a 12-month plan (£528 for 12 bottles)",
+  "priceDetail": "6-month plan £300 (£50 a month); 3-month plan £153 (£51 a month). No product page of its own (its link points at the minoxidil page).",
+  "url": "https://www.forhims.co.uk/hair-loss/minoxidil", "internalId": "PGeVqBFR", "contentKey": "regaine",
+  "recommendedWhen": "unknown. Card badge 'Generic Treatment' (sic); chip 'Regrow hair'.",
+  "evidence": "code"},
+ {"id": "p11", "name": "Hims Shampoo 190 ml, Regaine for Men foam (73 ml/60 g), Hair Power Pack (Regaine + shampoo) and Complete Hair Kit: withdrawn lines",
+  "category": "cosmetic", "actives": [],
+  "form": "shampoo / foam / kits", "audience": "men",
+  "legalStatus": "Shampoo: cosmetic. Regaine foam: licensed non-prescription medicine. All marked out of stock or archived in the price table.",
+  "price": "Not on sale (out of stock or archived)",
+  "priceDetail": "Still listed in the store price table with no active plan. Old product pages are gone from the sitemap. The current help centre tells men to use any gentle shampoo.",
+  "url": HL,
+  "recommendedWhen": "Never: not offered in the current consultation.",
+  "evidence": "code"},
+ {"id": "p12", "name": "Hims consultation and aftercare (clinician review, unlimited messaging, check-ins, free delivery)",
+  "category": "service", "actives": [],
+  "form": "online questionnaire reviewed by a UK clinician (no call required for hair)", "audience": "men",
+  "legalStatus": "CQC-regulated online clinical service (Fill Function UK Limited, provider 1-22947623675)",
+  "price": "Free; bundled with every plan",
+  "priceDetail": "You pay for the treatment up front when you submit. If the clinician does not approve it you are refunded in full. Free Royal Mail Tracked 24 delivery.",
+  "url": "https://www.forhims.co.uk/how-it-works",
+  "recommendedWhen": "Always part of the offer.",
+  "evidence": "docs"},
+ # ---- Hers UK
+ {"id": "h1", "name": "Hers Hair Vitamins + Minoxidil Pill (landing page: 'Hair treatment with vitamins'; Hair Blends range)",
+  "category": "rx-oral-compounded",
+  "actives": [{"name": "minoxidil (oral)", "strength": "1.5 mg"}, {"name": "biotin", "strength": "2.5 mg"}, {"name": "vitamin C", "strength": "100 mg"}, {"name": "vitamin B5", "strength": "11 mg"}, {"name": "vitamin B6", "strength": "2.5 mg"}, {"name": "zinc sulfate", "strength": "50 mg"}],
+  "form": "oral tablet, one a day", "audience": "women",
+  "legalStatus": "POM, unlicensed special (compounded by The London Specialist Pharmacy); oral minoxidil for hair loss is off-label",
+  "price": "From £13 a month ('Starting at £13/month' on forhers.co.uk/hair)",
+  "priceDetail": "Plan lengths: monthly, or 3- or 5-month 'Commit & Save' (help centre). Exact plan prices are loaded after sign-in and were not seen. Black Friday banner on 23 Nov 2026: 'Save up to 50% on plans'. Strengths come from the app code's product card data.",
+  "url": "https://forhers.co.uk/hair-blends", "contentKey": "hair-vitamins-minoxidil-pill",
+  "recommendedWhen": "unknown. Badge 'Most popular'; the clinical director's quote calls oral treatment 'our most popular option'. Server picks the recommended treatment after the quiz.",
+  "evidence": "code"},
+ {"id": "h2", "name": "Hers Biotin + Minoxidil Chew (landing page: 'Biotin hair treatment chews')",
+  "category": "rx-oral-compounded",
+  "actives": [{"name": "minoxidil (oral)", "strength": "1.5 mg"}, {"name": "biotin", "strength": "2.5 mg"}],
+  "form": "lemon-flavoured chewable tablet, one a day", "audience": "women",
+  "legalStatus": "POM, unlicensed special (compounded); off-label oral minoxidil",
+  "price": "From £13 a month",
+  "priceDetail": "'2-in-1 citrus flavoured chew'. Exact plan prices not seen.",
+  "url": "https://forhers.co.uk/hair-blends", "contentKey": "biotin-minoxidil-chew",
+  "recommendedWhen": "unknown. Positioned for women who would rather not swallow a pill (quote in app code).",
+  "evidence": "code"},
+ {"id": "h3", "name": "Hers Hair Blends Serum (app name: 'Minoxidil Serum')",
+  "category": "rx-topical-compounded",
+  "actives": [{"name": "minoxidil", "strength": "7%"}, {"name": "ketoconazole", "strength": "2.2%"}, {"name": "dexpanthenol (vitamin B5)", "strength": "5%"}, {"name": "biotin", "strength": "not confirmed"}],
+  "form": "scalp serum with dropper, about 1 ml (20 drops) once daily", "audience": "women",
+  "legalStatus": "POM, unlicensed special (compounded)",
+  "price": "From £13 a month",
+  "priceDetail": "'Formulated for a healthy scalp with biotin, ketoconazole, and vitamin B'. App shows a pet-safety warning for this product. Exact plan prices not seen.",
+  "url": "https://forhers.co.uk/hair-blends", "contentKey": "hair-blends-serum",
+  "recommendedWhen": "unknown. Positioned for women who prefer to treat only the affected area.",
+  "evidence": "code"},
+ {"id": "h4", "name": "Hers Hair Vitamins + Minoxidil + Spironolactone Capsule (landing page: 'Hormonal hair loss capsule')",
+  "category": "rx-oral-compounded",
+  "actives": [{"name": "minoxidil (oral)", "strength": "1.5 mg"}, {"name": "spironolactone", "strength": "44 mg"}, {"name": "biotin", "strength": "2.5 mg"}, {"name": "vitamin B5", "strength": "11 mg"}, {"name": "vitamin B6", "strength": "2.44 mg"}, {"name": "vitamin C", "strength": "100 mg"}, {"name": "zinc sulfate", "strength": "50 mg"}],
+  "form": "oral capsule, one a day", "audience": "women",
+  "legalStatus": "POM, unlicensed special (compounded); spironolactone and oral minoxidil for hair loss are off-label",
+  "price": "From £20 a month",
+  "priceDetail": "'Formulated for dual-action support for hormonal hair loss'. Exact plan prices not seen.",
+  "url": "https://forhers.co.uk/hair-blends", "contentKey": "hair-vitamins-minoxidil-spironolactone-capsule",
+  "recommendedWhen": "unknown. Positioned for hormonally driven loss ('female pattern hair loss, menopause, PCOS, and postpartum shedding' in the app quote).",
+  "evidence": "code"},
+ {"id": "h5", "name": "Hers Hair Vitamins (supplement only)",
+  "category": "supplement",
+  "actives": [{"name": "biotin", "strength": "2.5 mg"}, {"name": "vitamin C", "strength": "100 mg"}, {"name": "vitamin B5", "strength": "11 mg"}, {"name": "vitamin B6", "strength": "2.5 mg"}, {"name": "zinc sulfate", "strength": "50 mg"}],
+  "form": "oral tablet, one a day", "audience": "women",
+  "legalStatus": "No medicine in it; sold only through the consultation. Exact legal class not stated.",
+  "price": "unknown (not shown on the public pages)",
+  "priceDetail": "Listed only in the app code's treatment list. The 180-day guarantee 'does not apply to non-medicated products'.",
+  "url": "https://forhers.co.uk/hair", "contentKey": "hair-vitamins",
+  "recommendedWhen": "unknown. Plausibly the fallback when minoxidil is not suitable (inferred).",
+  "evidence": "code"},
+ {"id": "h6", "name": "Regaine® for Women Once A Day Scalp Foam",
+  "category": "otc-medicine",
+  "actives": [{"name": "minoxidil", "strength": "5% (standard strength of this brand product; Hers does not state it)"}],
+  "form": "branded scalp foam, once a day", "audience": "women",
+  "legalStatus": "Licensed non-prescription minoxidil (brand-name)",
+  "price": "unknown (no price on the public pages)",
+  "priceDetail": "Shown on forhers.co.uk/hair and /hair-blends as 'Topical foam: Regaine'. Not in the app's list of five Hers treatments that was found in code.",
+  "url": "https://forhers.co.uk/hair",
+  "recommendedWhen": "unknown.",
+  "evidence": "docs"},
+]
+MEN = ["p1", "p2", "p3", "p4", "p5", "p6", "p7", "p8", "p9", "p10"]
+
+# ---------------------------------------------------------------- helpers
+def opt(label, effect, etype="unknown", affects=None, ev="unknown"):
+    return {"label": label, "effect": effect, "effectType": etype, "affects": affects or [], "evidence": ev}
+
+NOBR = "No branch: the served flow has one path, so every option leads to the same next screen. The answer is stored on Hims's server (guest token, kept 7 days). Whether it changes the product recommended after sign-up is not known."
+
+BASELINE = {"HAIRLOSS_READY_FOR_TREATMENT", "HAIRLINE_LOSS", "SOME_HAIRLOSS", "HAIRLOSS_MORE_THAN_A_YEAR", "THICKER_HAIR", "STRAIGHT_WAVY", "SHORT", "YES", "SOMETIMES_STRESSED", "NONE", "LESS_THAN_5_MINUTES",
+            # second live walk (runs/map-opposite-path)
+            "NONE_OF_THE_ABOVE", "OVERALL_LOSS", "SIGNIFICANT_HAIRLOSS", "HAIRLOSS_LAST_MONTHS", "STOP_LOSS", "NO_HAIR", "SHAVED_BALD", "NO", "ALWAYS_STRESSED", "HAT", "MORE_THAN_10"}
+
+extra_effect = {
+ # value -> extra note
+ "NONE_OF_THE_ABOVE": " Not a stop: seen live in runs/map-opposite-path, the quiz carried on to the same end.",
+ "HAIRLOSS_NONE_BUT_LOOKING": " Not a stop in the served definition, although the leaflets say treatment is for existing male pattern hair loss.",
+ "OVERALL_LOSS": " The old consultation had a card badge 'For overall thinning hair'.",
+ "HAIRLINE_LOSS": " Shown back on the summary screen. The old consultation had a card badge 'For receding hairlines'.",
+ "TOP_LOSS": " The old consultation had a card badge 'For thinning at the crown'.",
+ "HAIRLOSS_LAST_MONTHS": " Recent onset is a warning sign in Hims's own leaflets ('hair loss that is sudden and unexpected') but nothing changed on screen (seen live in runs/map-opposite-path).",
+ "NO_HAIR": " Leaflets exclude 'total baldness' and, for the sprays and serum, 'a shaved scalp'; nothing changed on screen (seen live in runs/map-opposite-path).",
+ "SHAVED_BALD": " Leaflets for the sprays and serum exclude 'a shaved scalp'; nothing changed on screen (seen live in runs/map-opposite-path).",
+ "ALWAYS_STRESSED": " The 'Why we ask' note links stress to temporary shedding (telogen effluvium); nothing changes on screen here.",
+}
+
+meta = {
+ 1: ("men-q1", "single", "Sorts the visitor by intent: how far the loss has gone and how ready he is to buy. Stored as 'intentHairlossGoals'. The screen also carries the consent line: 'By starting the assessment, you agree we can save your answers for 7 days, including health information.'", "personalisation"),
+ 2: ("men-q2", "single", "Rough pattern check (hairline, crown, all over) with a picture for each. Stored as 'intentHairlossNoticing'. It is the first line of the summary screen.", "diagnosis"),
+ 3: ("men-q3", "single", "Rough severity. Stored as 'intentHairlossAmount'.", "diagnosis"),
+ 4: ("men-q4", "single", "How long ago it started, a clue to gradual pattern loss versus recent shedding. Stored as 'intentHairlossNoticedChanges'. Played back as 'Noticed: …' on the summary.", "diagnosis"),
+ 5: ("men-q5", "multi", "The results he wants. Stored as 'intentHairlossDesiredResults'. The recommendation page behind the wall has a line 'Selected based on your goals:' with goal chips, so this answer probably feeds that display.", "personalisation"),
+ 6: ("men-q6", "single", "Hair type. Stored as 'intentHairlossHairType'. Looks like routine and marketing data; 'I don’t have hair' is the only option with a possible clinical meaning.", "data-capture"),
+ 7: ("men-q7", "single", "Hair length. Stored as 'intentHairlossLength'. May steer between spray, serum and oral forms (not confirmed).", "personalisation"),
+ 8: ("men-i1", "info", "Sells the compounded 'Hair Hybrids' range (chew, drops, mist) part-way through the quiz, before any medical question.", "marketing"),
+ 9: ("men-i2", "info", "Section break before the two 'root cause' questions.", "expectation-setting"),
+ 10: ("men-q8", "single", "Family history supports a diagnosis of hereditary (pattern) hair loss. Stored as 'hairLossFamilyHistory' (the only key without the 'intent' prefix, so it may be reused by the medical record).", "diagnosis"),
+ 11: ("men-q9", "single", "Stress as a cause of temporary shedding. Stored as 'intentHairlossStress'.", "diagnosis"),
+ 12: ("men-i3", "info", "Reassures and promises a result ('3 to 6 months') whatever was answered.", "expectation-setting"),
+ 13: ("men-i4", "info", "Section break before the routine questions.", "expectation-setting"),
+ 14: ("men-q10", "single", "Styling habits, said to help choose a treatment type that fits the day. Stored as 'intentHairlossStyling'.", "personalisation"),
+ 15: ("men-q11", "single", "Time spent on hair each day; sets up the 'quick, simple' pitch. Stored as 'intentHairlossTimeCaring'.", "personalisation"),
+ 16: ("men-i5", "info", "A staged 'reviewing' pause (2.5 seconds) and then 'Great news'. Both are fixed in the flow definition: the text does not depend on the answers.", "marketing"),
+ 17: ("men-i6", "info", "Plays six answers back (where, when noticed, family history, stress, styling, time) so the quiz feels personal.", "expectation-setting"),
+ 18: ("men-i7", "info", "Introduces the two medicines with a follicle picture.", "marketing"),
+ 19: ("men-i8", "info", "Headline effectiveness figures with sources.", "marketing"),
+ 20: ("men-i9", "info", "Before and after testimonials.", "marketing"),
+ 21: ("men-i10", "info", "Support promise. Moves on by itself after 5 seconds to the sign-up screen.", "marketing"),
+}
+
+info_text = {
+ 8: "Meet Hair Hybrids - a custom blend of Finasteride + Minoxidil for regrowing hair, combined with vitamins to support hair health. [Button: Continue]",
+ 9: "Next, let's talk about lifestyle factors. Uncovering which root causes may be affecting you can help us better understand your hair needs. [Button: Continue]",
+ 12: "Factors like aging, family history, and stress can cause hair shedding and thinning. The good news? Prescription treatments can help you fight these root causes, so you can grow visibly thicker, fuller hair in just 3 to 6 months. [Button: Continue]",
+ 13: "Now let’s get to know your hair routine. Your answers help determine which treatment types best fit into your day-to-day. [Button: Continue]",
+ 16: "Reviewing your responses now... then: Great news—we have options that may work for you. [Button: Next]",
+ 17: "Here’s what we know about your hair so far: Your Hair. Hair changes: {where}; Noticed: {when}. Lifestyle factors: Family history: {answer}; Stress: {answer}. Hair routine: {styling}; {time} routine. Now, let’s go over what you can expect with treatment through Hims. [Button: Next →]",
+ 18: "At Hims, we offer treatments with ingredients that have been shown to stop hair loss and promote regrowth. [Picture: 'Minoxidil stimulates hair follicles. Finasteride blocks DHT, a hormone that causes hair loss.'] [Button: Why these two? →]",
+ 19: "Finasteride and minoxidil are popular treatments often prescribed by dermatologists to treat hair loss. 90% saw reduced shedding with finasteride.1 80% experienced significant hair regrowth with minoxidil.2 Sources [Button: How do I get them? →]",
+ 20: "See what others are saying about their treatments. [Five before/after cards: Andrew N. (Month 0 to Month 9), Kenton G., David D., Steve R., Kevin C. (Month 0 to Month 5), each 'Verified review'] Before/after images shared by customers who have purchased varying products. These customers’ results have not been independently verified. Individual results will vary. [Button: Next →]",
+ 21: "You won’t have to do it alone. We’re here to help. Unlimited messaging with a medical provider. Regular check-ins. Adjustments as needed. [No button: moves on after 5 seconds]",
+}
+
+men_q = []
+for s in steps:
+    n = s['order']; qid, qtype, purpose, role = meta[n]
+    text = s['questionText'].replace('\n', ' ')
+    if s.get('description') and qtype != 'info':
+        text += ' — ' + s['description'].replace('\n', ' ')
+    if qtype == 'info':
+        text = info_text[n]
+    options = []
+    for o in s.get('options', []):
+        label = o['label'] + (' — ' + o['sublabel'] if o.get('sublabel') else '')
+        eff = NOBR + extra_effect.get(o['value'], '') + ' (stored value: ' + o['value'] + ')'
+        options.append(opt(label, eff, "next-question", [], "observed" if o['value'] in BASELINE else "code"))
+    men_q.append({"id": qid, "order": n, "stage": "anonymous", "text": text, "type": qtype, "options": options,
+                  "purpose": purpose, "engineRole": role, "branches": False,
+                  "branchDetail": "" if qtype == 'info' else "None on screen. One path in the served flow definition (quiz-definition.json).",
+                  "shownWhen": "always", "evidence": "observed"})
+
+def Q(id, order, stage, text, type_, options, purpose, role, branches, detail, shown, ev):
+    return {"id": id, "order": order, "stage": stage, "text": text, "type": type_, "options": options, "purpose": purpose,
+            "engineRole": role, "branches": branches, "branchDetail": detail, "shownWhen": shown, "evidence": ev}
+
+card = {  # product option labels on the treatment options screen (app chunk hims-uk-treatment-card-content)
+ "p4": "Oral Treatments · Hair Hybrid · Finasteride & Minoxidil + Supplement Blend · button 'Continue with Chewable'",
+ "p5": "Oral Treatments · Hair Hybrid · Minoxidil + Supplement Blend · button 'Continue with Chewable'",
+ "p6": "Oral Treatments · Hair Hybrid · Supplement Blend (Biotin, Vitamin C, Vitamin B5, Vitamin B6) · button 'Continue with Chewable'",
+ "p7": "Oral Treatments · Generic Treatment · Finasteride · button 'Continue with Tablet'",
+ "p2": "Topical Treatments · Hair Hybrid · Topical Finasteride & Minoxidil Spray + Ketoconazole + Biotin · button 'Continue with Spray'",
+ "p1": "Topical Treatments · Hair Hybrid · Topical Finasteride & Minoxidil Spray · button 'Continue with Spray'",
+ "p3": "Topical Treatments · Hair Hybrid · Topical Finasteride & Minoxidil Serum · button 'Continue with Serum'",
+ "p8": "Topical Treatments · Generic Treatment · Alcohol-free Minoxidil Serum · button 'Continue with Serum'",
+ "p10": "Topical Treatments · Generic Treatment · Regaine® Liquid Solution · button 'Continue with Solution'",
+ "p9": "Combo Treatments · Generic Treatment · Finasteride + Minoxidil Combo Kit · button 'Continue with Combo'",
+}
+
+men_q += [
+ Q("men-a1", 22, "anonymous", "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. [Field: Email address] [Button: Continue]", "contact", [],
+   "THE ACCOUNT WALL. An email address is required before any medical question, eligibility result, product or price is shown. It also gives Hims a lead to follow up (the platform's shared quiz-start text speaks of 'sending quiz complete reminders').", "identity", False, "", "always, straight after the last anonymous screen", "observed"),
+ Q("men-a2", 23, "after-account", "What's your name? [First name] [Last name] — 'To avoid delays to your order, please ensure this matches the name on your ID'", "contact", [],
+   "Legal name for the prescription and the identity check.", "identity", False, "", "after the email step (wording read in app code, not seen live)", "code"),
+ Q("men-a3", 24, "after-account", "Create password — 'I agree to the terms and conditions and privacy policy'", "consent", [],
+   "Creates the account and records agreement to the terms.", "consent", False, "", "after the name step (wording read in app code, not seen live)", "code"),
+ Q("men-m1", 25, "after-account", "[Wording not seen] Date of birth", "date", [],
+   "Age check. The app code has a date-of-birth rule for this brand with the message 'Sorry, our service is only available to those 18 and over'. The help centre says prescriptions are for men aged 18 to 80, and up to 75 for new customers.", "eligibility-gate", True,
+   "Under 18: blocked with the message above (code). Over 75 as a new customer: not prescribed (help centre). Most compounded product leaflets say 18 to 65, so older men may lose those options (inferred).", "after sign-up; exact position not seen", "code"),
+ Q("men-m2", 26, "after-account", "[Wording not seen] Health and medical history questionnaire (medical conditions, medicines, allergies, side-effect history and similar)", "info", [],
+   "The safety screen that decides which products a man may have. Its questions are sent to the browser only after sign-in ('triage' flows), so the wording could not be read. Hims's leaflets show what it must cover: sex and age; already taking finasteride, dutasteride or minoxidil; sudden, patchy, total or medicine-caused hair loss; scalp disease or shaved scalp; heart disease and blood-pressure medicines; liver disease; breast or prostate cancer history; allergy to an ingredient; a partner who is or may become pregnant; planned PSA test; low mood.", "safety-screen", True,
+   "The server scores the answers ('triage evaluation') and marks every product eligible or not; a matched rule produces a 'denial'. A full rejection shows the screen 'This treatment may not be suitable'. The old platform did the same thing with tags: each answer option carried 'excludesTags', and any product with a matching tag (finasteride, minoxidil, topical, minoxidil-topical, minoxidil-oral, finasteride-oral, lactose-tablet) was removed; the tag 'all' removed everything.", "after sign-up", "code"),
+ Q("men-m3", 27, "after-account", "Which type of daily treatment do you prefer? (eyebrow: 'Customising your treatment'; link 'Oral vs. topical treatments')", "single", [
+     opt("Pills or chews — Take one a day (tag: Most popular)", "Old platform: stored as the 'oral' preference and used to pick which product is shown first. Not confirmed on the new platform.", "unknown", ["p4", "p5", "p6", "p7"], "code"),
+     opt("Sprays or serums — Apply right on scalp", "Old platform: stored as the 'topical' preference and used to pick which product is shown first. Not confirmed on the new platform.", "unknown", ["p1", "p2", "p3", "p8", "p10"], "code"),
+     opt("No Preference — Choose what's most effective for me", "Old platform: lets the engine choose. Not confirmed on the new platform.", "unknown", [], "code"),
+   ], "Form preference: the main lever a patient has over which product is recommended. The current help centre still says 'you are welcome to choose the format that best suits your needs'.", "product-selector", True,
+   "Old platform rule read in code: this step is skipped when, after contraindications, the remaining products all use one application method. Whether the new platform still asks it is not known.", "Old platform: before the recommendation, unless only one application method is left. New platform: not confirmed.", "code"),
+ Q("men-m4", 28, "after-account", "Recommendation screen: one treatment with 'Selected based on your goals:' chips, 'Plans starting at {price}/month', accordions (Active ingredients, What to expect, Side effects, Important safety information) and the note 'A clinician will review all your responses to determine if this treatment option is a good fit. If prescribed, please inform your regular GP of your treatment.'", "single", [
+     opt("Continue with this plan", "Keeps the recommended product and goes on to plan length and checkout.", "next-question", [], "code"),
+     opt("Explore other treatment options", "Opens the treatment options screen with every product grouped as Oral, Topical and Combo.", "extra-questions", MEN, "code"),
+   ], "Shows the single 'hero' product the server chose (field 'recommendedPreset', falling back to 'defaultPreset').", "product-selector", True,
+   "Which product is the hero is decided on the server and was not seen. A product chosen earlier (web-address parameter 'offeringSelections', or a value saved in the browser) is honoured; if that product is not eligible the patient is sent to 'Other treatment options'.", "after the questionnaire has been scored", "code"),
+ Q("men-m5", 29, "after-account", "Treatment options screen. Groups: 'Oral Treatments — Intended for daily intake by mouth.' / 'Topical Treatments — Designed for application directly to the scalp.' / 'Combo Treatments — Contain both oral and topical treatments.' When the first choice was refused the heading is 'Other treatment options — Based on the medical information you provided, you may not be suitable for some treatments. If you believe this assessment is inaccurate, kindly review your responses to the medical questionnaire.'", "single",
+   [opt(card[p], "Selects this product and returns to its recommendation page. If the server marked it ineligible the card is greyed out and reads 'Not available based on your medical history'.", "product-switched", [p], "code") for p in ["p4", "p5", "p6", "p7", "p2", "p1", "p3", "p8", "p10", "p9"]],
+   "Lets the patient swap product, and shows him which ones his answers ruled out.", "product-selector", True,
+   "Card order is fixed in code: oral (chew, minoxidil chew, supplement, finasteride), topical (4-in-1 spray, spray, serum, minoxidil serum, Regaine), combo kit.", "when the patient asks for other options, or when the pre-selected product is ineligible", "code"),
+ Q("men-m6", 30, "checkout", "Select your treatment plan", "single", [
+     opt("Monthly plan — 'Bills and ships every month'", "Shortest term, highest monthly price. In the price table only the three chews have a monthly plan (£60).", "none", ["p4", "p5", "p6"], "code"),
+     opt("3 month plan — 'Bills and ships every 3 months'", "Charged for 3 months up front.", "none", MEN, "code"),
+     opt("6 month plan — 'Bills and ships every 6 months'", "Charged for 6 months up front; the cheapest plan for the sprays, serum and chews (tag 'Max savings', badge 'Save £…/mo').", "none", MEN, "code"),
+     opt("12 month plan — 'Bills and ships every 12 months'", "Charged for 12 months up front. In the price table only finasteride tablets, minoxidil serum, the combo kit and Regaine have it.", "none", ["p7", "p8", "p9", "p10"], "code"),
+   ], "Plan length sets the price per month and the cash taken up front. The old checkout text: 'Hair regrowth typically takes 3-6 months. Save on a longer plan for better regrowth.'", "data-capture", False, "", "after the product is chosen; the lengths offered depend on the product", "code"),
+ Q("men-m7", 31, "checkout", "What is your GP practice? — 'Due to regulatory requirements, we need to let your GP know if you are prescribed this medication. This is to ensure you receive the best care.'", "text", [],
+   "GP details so the prescriber can inform the GP. The platform setting for hair has 'requiresGpAddress: true'. The wording is the platform's shared screen and was not seen in the hair flow itself.", "data-capture", False, "", "new platform, hair consultations (setting read in the site's feature flags)", "code"),
+ Q("men-m8", 32, "checkout", "Checkout: delivery address, card details and 'I have read and agree to the Terms & Conditions, and I have read and acknowledge the Privacy Notice'", "consent", [],
+   "Payment is taken up front for the whole plan when the consultation is submitted (platform setting 'isUpfrontPayment: true'). No clinician call is needed for hair ('requiresPrescriberCall: false').", "consent", False, "", "end of the flow (not tested: payment is outside the research rules)", "code"),
+ Q("men-m9", 33, "checkout", "Success! Your order is now in review. 'Consultation sent for review. A Hims medical professional will review your consultation to determine if your chosen treatment would be appropriate.' 'If you're not approved for your medication, don't worry. You'll be notified by email and your order will be refunded immediately.'", "info", [],
+   "Sets the expectation that a clinician has the last word and that a refusal means a refund.", "expectation-setting", False, "", "after payment", "code"),
+ Q("men-m10", 34, "after-account", "This treatment may not be suitable. '{firstName}, thank you for your answers. Your health is our top priority. Based on your responses to our questionnaire, we’re unable to offer a Hims treatment that’s clinically appropriate under our prescribing guidelines. These guidelines are in place to ensure we provide safe and effective care for everyone.' [Button: Back home]", "info", [],
+   "The stop screen for a patient the rules reject outright. It is the platform's shared rejection screen; which hair answers lead to it is not known.", "eligibility-gate", True, "Ends the flow.", "when the server rejects the questionnaire", "code"),
+]
+
+generic_q = [
+ Q("gen-q1", 1, "anonymous", "What are you looking to do?", "single", [
+     opt("Grow thicker, fuller hair", "Link to /c/hl: starts the men's hair quiz.", "next-question", [], "observed"),
+     opt("Perform your best in bed", "Link to /c/edpej-treatment-guidance (sexual health, outside this research).", "none", [], "observed"),
+     opt("Reach your healthy weight goal", "Link to /c/wl (weight loss, outside this research).", "none", [], "observed"),
+   ], "Routes a visitor from the 'How it works' page to the right quiz.", "marketing", True, "Picks which consultation opens.", "always", "observed"),
+]
+
+react_q = [
+ Q("react-q1", 1, "after-account", "Let's get you back on track. Please confirm you understand and agree with the following. Since your last Hims consultation: 'I have not experienced low blood pressure, frequent dizzy spells, palpitations, or been diagnosed with heart failure' · 'My partner is not pregnant, and I am not currently trying for a baby' · 'I have not started any other new medications or been diagnosed with any new medical conditions'", "consent", [
+     opt("Yes, I agree with the above", "Carries on to confirm the restart of treatment.", "next-question", [], "code"),
+     opt("No, something has changed", "Does not confirm; what happens next was not seen (most likely a fresh review by a clinician).", "flag-for-clinician", [], "code"),
+   ], "A three-line safety re-check for returning customers. It is the only medical wording for hair found in public code, and it shows what the engine cares most about: blood pressure and heart symptoms (minoxidil), pregnancy and conception (finasteride), and any new medicine or condition.", "safety-screen", True,
+   "Two outcomes only: restart, or something has changed.", "returning customers who restart a cancelled hair plan (route /reactivate/hair/…)", "code"),
+]
+
+women_q = [
+ Q("women-a1", 1, "anonymous", "Good hair starts with great hair loss care. Welcome to Hers. To get started, tell us your name. By entering your details, you agree to our Terms & Conditions and acknowledge our Privacy Notice. [First Name] [Last Name] [Button: Continue] Already have an account? Sign in", "contact", [],
+   "THE ACCOUNT WALL, on the very first screen. Hers UK has no anonymous hair quiz: the site's flag map of anonymous flows has no hair entry for the Hers brand.", "identity", False, "", "always", "observed"),
+ Q("women-a2", 2, "after-account", "Where should we send your updates? — 'We'll send updates from your clinician and pharmacist straight to your inbox.' [Email]", "contact", [],
+   "Email for the account.", "identity", False, "", "after the name step (wording read in app code)", "code"),
+ Q("women-q1", 3, "after-account", "[Question wording not seen] Hair concerns: where the loss shows (stored as 'hairLossLocation'). The option labels below are the wording Hers plays back on its summary page.", "multi", [
+     opt("A wider hair part", "Listed under 'Hair concerns' on the summary page. Effect on the recommendation not known. (stored value: PART_WIDENING)", "unknown", [], "code"),
+     opt("More visible scalp at the crown", "As above. (stored value: CROWN_VISIBLE)", "unknown", [], "code"),
+     opt("Thinning around the temples", "As above. (stored value: THIN_TEMPLES)", "unknown", [], "code"),
+     opt("Thinning & shedding across the scalp", "As above. (stored value: DIFFUSE_THIN)", "unknown", [], "code"),
+     opt("Bald spots or round patches", "As above. Patchy loss suggests alopecia areata, which these treatments do not treat, so this is a likely flag or stop (inferred). (stored value: PATCHY_HAIR_LOSS)", "unknown", [], "code"),
+     opt("A receding hairline", "As above. (stored value: RECEDING_HAIRLINE)", "unknown", [], "code"),
+   ], "Pattern of loss: separates female pattern loss (parting, crown) from diffuse shedding and patchy loss.", "diagnosis", False, "Not known.", "after sign-up", "code"),
+ Q("women-q2", 4, "after-account", "[Question wording not seen] Hair goals (stored as 'hairGoals')", "multi", [
+     opt("Reduce hair shedding", "Shown as the chip 'Reduce shedding' under 'Matched for you based on your goals:' on the recommendation page. (stored value: STOP_HAIR_SHED)", "marketing-only", [], "code"),
+     opt("Regrow lost hair", "Chip 'Regrow hair'. (stored value: REGROW_LOST_HAIR)", "marketing-only", [], "code"),
+     opt("Improve coverage in thinning areas", "Chip 'More scalp coverage'. (stored value: IMPROVE_THIN_AREAS)", "marketing-only", [], "code"),
+     opt("Increase overall thickness and volume", "Chip 'More volume'. (stored value: INCREASE_THICKNESS)", "marketing-only", [], "code"),
+     opt("Have stronger, healthier looking hair", "Chip 'Stronger hair'. (stored value: STRONGER_HEALTHIER_HAIR)", "marketing-only", [], "code"),
+   ], "Goals. The code only uses them to print chips beside the recommended product; whether they also steer the product is not known.", "personalisation", False, "", "after sign-up", "code"),
+ Q("women-q3", 5, "after-account", "[Question wording not seen] How the hair loss started (stored as 'hairLossOnset')", "single", [
+     opt("Gradually, more than 6 months ago", "The only onset answer the summary page plays back. Other options exist but their wording is not in public code. (stored value: GRADUALLY)", "unknown", [], "code"),
+   ], "Gradual, long-standing loss fits female pattern hair loss; sudden loss points to shedding with a trigger (illness, weight loss, childbirth).", "diagnosis", False, "Not known.", "after sign-up", "code"),
+ Q("women-q4", 6, "after-account", "[Question wording not seen] Family history of hair loss (stored as 'hairLossFamilyHistory')", "single", [
+     opt("Yes", "Played back as 'Family history: Yes'.", "unknown", [], "code"),
+     opt("No", "Played back as 'Family history: No'.", "unknown", [], "code"),
+   ], "Supports a diagnosis of hereditary pattern loss.", "diagnosis", False, "", "after sign-up", "code"),
+ Q("women-q5", 7, "after-account", "[Question wording not seen] How often she feels stressed (stored as 'stressFrequency')", "single", [
+     opt("Often", "Played back as 'Stress: Often'. (stored value: OFTEN)", "unknown", [], "code"),
+     opt("Occasionally", "Played back as 'Stress: Occasionally'. (stored value: OCCASIONAL)", "unknown", [], "code"),
+     opt("Rarely", "Played back as 'Stress: Rarely'. (stored value: RARE)", "unknown", [], "code"),
+   ], "Stress as a trigger for temporary shedding.", "diagnosis", False, "", "after sign-up", "code"),
+ Q("women-q6", 8, "after-account", "[Wording not seen] Date of birth (stored as 'dateOfBirth'; shown back as 'Age: {age}')", "date", [],
+   "Age check (18 or over) and a factor in the pattern of loss (menopause).", "eligibility-gate", False, "Under 18 is blocked by the same platform rule as Hims.", "after sign-up", "code"),
+ Q("women-q7", 9, "after-account", "[Wording not seen] Medical questions (pregnancy, breastfeeding, trying to conceive, medical conditions, medicines including GLP-1 weight-loss injections)", "info", [],
+   "Safety screen. Hers says: 'hair treatments should not be used during pregnancy or breastfeeding', to stop if 'planning on trying for a baby in the next month', and 'Your clinician will assess your medical history and any medications you’re taking before approving treatment.'", "safety-screen", True,
+   "The server marks each of the five treatments eligible or not. An ineligible card reads 'Treatment is not suitable based on your answers'.", "after sign-up", "docs"),
+ Q("women-q8", 10, "after-account", "Here's what we know about your hair so far: [Dr. Alice Pan, Clinical Director] Hair concerns · Lifestyle factors (Age, Family history, Stress) · Hair goals [Button: See my recommended treatment]", "info", [],
+   "Plays the answers back under a named doctor before showing the product.", "expectation-setting", False, "", "after the quiz", "code"),
+ Q("women-q9", 11, "after-account", "Recommendation page: 'Your clinician may consider this as the most suitable treatment for your hair loss' · 'Matched for you based on your goals:' · 'Plan starting at £…/month for a {months} month supply'", "single", [
+     opt("Continue with this treatment", "Keeps the recommended treatment and goes to the plans page.", "next-question", [], "code"),
+     opt("See all treatment options", "Opens 'Select other treatment — Explore other treatment options that may be available to you, subject to clinician review.'", "extra-questions", ["h1", "h2", "h3", "h4", "h5"], "code"),
+   ], "Shows the one treatment the server recommends (same 'recommendedPreset' mechanism as Hims).", "product-selector", True, "Which treatment is recommended for which answers was not seen.", "after the summary page", "code"),
+ Q("women-q10", 12, "after-account", "Select other treatment (also shown inline as 'Prefer a different approach?')", "single", [
+     opt("Hair Vitamins + Minoxidil — badge 'Most popular' — Oral tablet · Take once daily · Targets regrowth and hair health", "Switches the page to this treatment.", "product-switched", ["h1"], "code"),
+     opt("Biotin + Minoxidil Chew — Chewable tablet, lemon flavour · Take once daily · Targets regrowth and hair health", "Switches the page to this treatment.", "product-switched", ["h2"], "code"),
+     opt("Hair Vitamins + Minoxidil + Spironolactone Capsule — Oral capsule · Take once daily · Targets regrowth and root cause", "Switches the page to this treatment.", "product-switched", ["h4"], "code"),
+     opt("Minoxidil Serum — Topical serum · Apply to scalp daily · Targets regrowth and hair health", "Switches the page to this treatment.", "product-switched", ["h3"], "code"),
+     opt("Hair Vitamins — Oral tablet · Take once daily · Support overall hair health", "Switches the page to this treatment.", "product-switched", ["h5"], "code"),
+   ], "Lets her change treatment; ineligible ones are greyed out with 'Treatment is not suitable based on your answers'.", "product-selector", True, "Eligible treatments are listed first, then ineligible ones.", "on request", "code"),
+ Q("women-q11", 13, "checkout", "[Wording not seen] Plan length", "single", [
+     opt("Monthly plan", "'no minimum commitment or cancellation fee' (help centre).", "none", [], "docs"),
+     opt("3-month Commit & Save plan", "Discounted price for committing to 3 orders; an 'Early Cancellation Adjustment fee' applies if she leaves early.", "none", [], "docs"),
+     opt("5-month Commit & Save plan", "Discounted price for committing to 5 orders; same early-leaving fee.", "none", [], "docs"),
+   ], "Sets price and commitment. Payment is taken up front and refunded in full if the clinician finds her ineligible.", "data-capture", False, "", "after the treatment is chosen", "docs"),
+]
+
+flows = [
+ {"id": "men", "name": "Hims UK men's hair-loss consultation ('free hair quiz')", "audience": "men", "entryUrl": "https://www.forhims.co.uk/c/hl",
+  "stagesSummary": "21 anonymous screens (11 questions + 10 information screens, one fixed path) → account wall (email, then name and password) → medical questionnaire and date of birth (not seen) → server scores the answers → one recommended product, with the other nine on request and ineligible ones greyed out → plan length → GP details, address, payment up front → clinician review → dispatch or refund",
+  "entryPoints": [
+    "https://www.forhims.co.uk/c/hl — every 'Take the free hair quiz' and 'Get started' button on /hair-loss, /hair-loss/finasteride, /hair-loss/minoxidil and /hair-loss/finasteride-and-minoxidil (redirects to app.forhims.co.uk/anon-flow/hair, then /flow/a9a88e4a-…)",
+    "https://www.forhims.co.uk/c/hl?gst=KgktFDR2 — the 'Get started from £16.50/mo' button on the serum shopping page (same quiz; see flow men-product-link)",
+    "https://www.forhims.co.uk/c — 'What are you looking to do?' chooser (see flow generic-entry)",
+    "https://hair.forhims.co.uk/ — appears in search results but now returns an empty page"
+  ],
+  "questions": men_q},
+ {"id": "men-product-link", "name": "Hims UK product-specific entry (serum shopping page)", "audience": "men", "entryUrl": "https://www.forhims.co.uk/c/hl?gst=KgktFDR2",
+  "stagesSummary": "Same 21 anonymous screens as the men's flow (same flow version a9a88e4a-…, checked in runs/gst0) → same account wall. The 'gst' product code stays in the web address but no reference to it was found in the part of the new app's code that was read (the main file and 116 chunks), so it may no longer pre-select the serum.",
+  "questions": []},
+ {"id": "generic-entry", "name": "Hims UK 'What are you looking to do?' chooser", "audience": "men", "entryUrl": "https://www.forhims.co.uk/c",
+  "stagesSummary": "One screen with three links; 'Grow thicker, fuller hair' opens the men's hair quiz", "questions": generic_q},
+ {"id": "men-reactivation", "name": "Hims UK returning-customer health re-check (hair)", "audience": "men", "entryUrl": "https://app.forhims.co.uk/reactivate/hair",
+  "stagesSummary": "Signed-in customers only (not tested). One screen of three statements to confirm, then restart of the plan. Wording read in the app code.", "questions": react_q},
+ {"id": "women", "name": "Hers UK women's hair-loss consultation", "audience": "women", "entryUrl": "https://app.forhers.co.uk/start/signup?t=hair",
+  "stagesSummary": "Account wall on the first screen (name, then email) → hair quiz and medical questions (not seen; six stored answers known from code) → summary page under a named doctor → one recommended treatment of five, others on request → plan (monthly, 3 or 5 months) → payment up front → clinician review → dispatch or full refund",
+  "entryPoints": ["https://app.forhers.co.uk/start/signup?t=hair — every 'Get started' / 'Get my treatment plan' button on forhers.co.uk/hair and /hair-blends"],
+  "questions": women_q},
+]
+
+rules = [
+ {"id": "R1", "flow": "men", "when": "any anonymous answer (men-q1 to men-q11)", "then": "Nothing changes before the wall: same next screen, same 'Great news—we have options that may work for you', same sign-up screen. No anonymous answer can stop the visitor or change what he sees.",
+  "effectType": "none", "affects": [], "evidence": "observed", "proof": "runs/baseline-men vs runs/map-opposite-path (opposite answer on all 11 questions, including 'None of the above', 'I don’t have hair', 'In the past few months' and 'All over': same 21 screens, same end). Backed by quiz-definition.json: 21 steps, 20 unconditional branches. 20 of the 42 options were not clicked live.", "confidence": "high"},
+ {"id": "R2", "flow": "men", "when": "date of birth gives an age under 18", "then": "Blocked: 'Sorry, our service is only available to those 18 and over'.",
+  "effectType": "hard-stop", "affects": MEN, "evidence": "code", "proof": "raw/app/index.js (date validation for brand hims-uk); terms clause 4.2 https://www.forhims.co.uk/terms-and-conditions", "confidence": "medium"},
+ {"id": "R3", "flow": "men", "when": "new customer aged over 75 (existing customers: over 80)", "then": "No prescription: 'our prescriber clinicians are unable to issue prescriptions to individuals … above or below this age limit'.",
+  "effectType": "hard-stop", "affects": MEN, "evidence": "docs", "proof": "https://ukhims.zendesk.com/hc/en-gb/articles/64130217043225-Who-can-use-Hims-products", "confidence": "medium"},
+ {"id": "R4", "flow": "men", "when": "age 66 to 75", "then": "The compounded sprays, serum and chews, the minoxidil serum and Regaine are labelled for ages 18 to 65, so they are probably refused and finasteride tablets are what is left. Not seen.",
+  "effectType": "product-removed", "affects": ["p1", "p2", "p3", "p4", "p5", "p8", "p10"], "evidence": "inferred", "proof": "Leaflet wording 'Do not use … if you are younger than 18 years or older than 65 years' in raw/hair-products-contentful.txt; the finasteride tablet leaflet has no upper age", "confidence": "low"},
+ {"id": "R5", "flow": "men", "when": "the patient is a woman", "then": "Not treated by Hims UK: hair treatments 'are only available for male patients'. (Women are served by Hers UK.)",
+  "effectType": "hard-stop", "affects": MEN, "evidence": "docs", "proof": "https://ukhims.zendesk.com/hc/en-gb/articles/64157763017497-Can-women-use-these-treatments", "confidence": "high"},
+ {"id": "R6", "flow": "men", "when": "the medical answers match a prescribing rule for a product", "then": "The server marks that product 'eligible: false' with a 'rule matched' denial. Its card is greyed out with 'Not available based on your medical history', and if it was the patient's first choice he is shown 'Other treatment options'. The other products stay available.",
+  "effectType": "product-removed", "affects": MEN, "evidence": "code", "proof": "raw/app/chunks/use-hims-uk-hair-purchase-options-RTx4GHla.js, hims-uk-treatment-options-CgqlFS7X.js, router-BhZtaX-r.js", "confidence": "high"},
+ {"id": "R7", "flow": "men", "when": "the medical answers rule out every product", "then": "Rejection screen 'This treatment may not be suitable … we’re unable to offer a Hims treatment that’s clinically appropriate under our prescribing guidelines'.",
+  "effectType": "hard-stop", "affects": MEN, "evidence": "code", "proof": "raw/app/chunks/rejected-screen-COWSDWyl.js (shared platform screen; not confirmed for which hair answers)", "confidence": "low"},
+ {"id": "R8", "flow": "men", "when": "OLD PLATFORM: an answer option carried 'excludesTags'", "then": "Every product whose tag list contained one of those tags was removed from the options; the tag 'all' removed everything and led to the disqualification screen. Product tags: sprays and serum = minoxidil, finasteride, topical, minoxidil-topical; finasteride tablets = finasteride, lactose-tablet, finasteride-oral; chew = finasteride, minoxidil, minoxidil-oral, finasteride-oral; minoxidil chew = minoxidil, minoxidil-oral; minoxidil serum and Regaine = minoxidil, topical, minoxidil-topical; combo kit = finasteride, minoxidil, topical, lactose-tablet, finasteride-oral.",
+  "effectType": "product-removed", "affects": MEN, "evidence": "code", "proof": "raw/www-js/hims.modern.818.*.js (module 14157), hims.modern.2392.*.js (module 78329), raw/contentful-products.slim.json (tags). The old question set itself (Contentful 'intakes') is no longer served.", "confidence": "medium"},
+ {"id": "R9", "flow": "men", "when": "already taking finasteride, dutasteride or another 5-alpha reductase inhibitor", "then": "Finasteride-containing compounded products must not be used ('Do not use this medicine if you are already taking Finasteride, Dutasteride…').",
+  "effectType": "product-removed", "affects": ["p1", "p2", "p3", "p4"], "evidence": "docs", "proof": "Product safety information in raw/hair-products-contentful.txt (spray, 4-in-1 spray, serum, chew)", "confidence": "medium"},
+ {"id": "R10", "flow": "men", "when": "already taking minoxidil for blood pressure, or has an adrenal gland tumour", "then": "The oral minoxidil chews must not be used.",
+  "effectType": "product-removed", "affects": ["p4", "p5"], "evidence": "docs", "proof": "Safety information /safety-information/minoxidil-hair-hybrid and /finasteride-and-minoxidil-hair-hybrid (text in raw/hair-products-contentful.txt)", "confidence": "medium"},
+ {"id": "R11", "flow": "men", "when": "heart disease (abnormal rhythm, angina, circulation problems), or taking blood-pressure medicines that widen blood vessels such as hydralazine", "then": "Leaflets say 'Talk to your doctor or pharmacist' for every minoxidil product; the returning-customer check asks about 'low blood pressure, frequent dizzy spells, palpitations … heart failure'. Expect a clinician flag or loss of minoxidil products, oral first. Exact engine action not seen.",
+  "effectType": "flag-for-clinician", "affects": ["p1", "p2", "p3", "p4", "p5", "p8", "p9", "p10"], "evidence": "docs", "proof": "raw/hair-products-contentful.txt; raw/app/chunks/health-details-BKmT7dFL.js", "confidence": "low"},
+ {"id": "R12", "flow": "men", "when": "hair loss that is sudden, patchy, total, or caused by a medicine; or scalp pain, redness or itching", "then": "Not treated: 'please see your GP'. Leaflets exclude 'hair loss caused by drug treatment, or hair loss that is sudden and unexpected' and 'total baldness'.",
+  "effectType": "hard-stop", "affects": MEN, "evidence": "docs", "proof": "https://ukhims.zendesk.com/hc/en-gb/articles/64157769181977-Can-I-use-these-treatments-for-other-types-of-hair-loss; raw/hair-products-contentful.txt", "confidence": "medium"},
+ {"id": "R13", "flow": "men", "when": "shaved scalp, or a scalp condition such as psoriasis or sunburn", "then": "Topical products must not be used (leaflets for the 4-in-1 spray, the serum and Regaine).",
+  "effectType": "product-removed", "affects": ["p2", "p3", "p10"], "evidence": "docs", "proof": "raw/hair-products-contentful.txt", "confidence": "low"},
+ {"id": "R14", "flow": "men", "when": "chronic liver disease, or a history of breast cancer or prostate cancer", "then": "The topical finasteride + minoxidil spray must not be used (its own patient information).",
+  "effectType": "product-removed", "affects": ["p1"], "evidence": "docs", "proof": "Safety information 'topical-finasteride-and-minoxidil-spray' in raw/hair-products-contentful.txt", "confidence": "medium"},
+ {"id": "R15", "flow": "men", "when": "partner is pregnant or trying to conceive, or the man is trying for a baby", "then": "Finasteride is a concern ('the patient should discontinue treatment'); the returning-customer check asks him to confirm 'My partner is not pregnant, and I am not currently trying for a baby'. Expect finasteride products to be removed or flagged. Exact engine action not seen.",
+  "effectType": "flag-for-clinician", "affects": ["p1", "p2", "p3", "p4", "p7", "p9"], "evidence": "docs", "proof": "raw/hair-products-contentful.txt; raw/app/chunks/health-details-BKmT7dFL.js", "confidence": "low"},
+ {"id": "R16", "flow": "men", "when": "the clinician does not approve the order after payment", "then": "Email and a full refund ('your order will be refunded immediately').",
+  "effectType": "hard-stop", "affects": MEN, "evidence": "code", "proof": "raw/app/chunks/async-consult-confirmed-L1iBZB3Q.js; terms clause 7.2", "confidence": "high"},
+ {"id": "R17", "flow": "women", "when": "pregnant, breastfeeding, or planning to try for a baby in the next month", "then": "No treatment: 'hair treatments should not be used during pregnancy or breastfeeding'.",
+  "effectType": "hard-stop", "affects": ["h1", "h2", "h3", "h4"], "evidence": "docs", "proof": "https://hersuk.zendesk.com/hc/en-gb/articles/63197688147097-Can-I-continue-treatment-if-I-m-pregnant-breastfeeding-or-trying-to-conceive; FAQ on https://forhers.co.uk/hair", "confidence": "medium"},
+ {"id": "R18", "flow": "women", "when": "the answers make one of the five treatments unsuitable", "then": "Its card is greyed out with 'Treatment is not suitable based on your answers'; eligible treatments are listed first and one of them is recommended.",
+  "effectType": "product-removed", "affects": ["h1", "h2", "h3", "h4", "h5"], "evidence": "code", "proof": "raw/app/chunks/hair-treatments-from-options-Bb9ASKmz.js; raw/app/chunks/router-CSFr2DF0.js", "confidence": "high"},
+ {"id": "R19", "flow": "women", "when": "the clinician finds her ineligible after payment", "then": "Full refund.",
+  "effectType": "hard-stop", "affects": ["h1", "h2", "h3", "h4", "h5"], "evidence": "docs", "proof": "https://hersuk.zendesk.com/hc/en-gb/articles/62304973403801-What-if-I-am-not-eligible", "confidence": "high"},
+]
+
+experiments = [
+ {"id": "map-opposite-path", "flow": "men", "changed": "all 11 anonymous answers at once (not a one-change test): None of the above / All over / A lot / In the past few months / Keep the hair I have / I don’t have hair / Buzzed, shaved, or bald / No / All the time / Hat / 10+ minutes",
+  "result": "Same 21 screens in the same order, same 'Great news—we have options that may work for you', same sign-up wall. Only the answer summary text changed (it echoes six of the answers). So the anonymous quiz has no stop and no branch.", "run": "runs/map-opposite-path"},
+ {"id": "obs-entry-gst", "flow": "men-product-link", "changed": "entry address: /c/hl → /c/hl?gst=KgktFDR2 (the serum's 'Get started from £16.50/mo' button)",
+  "result": "No change: same flow version (a9a88e4a-…), same first question, identical step list. The gst code is kept in the address only.", "run": "runs/gst0"},
+]
+
+recommendations = [
+ {"profile": "Man who passes the medical checks (any pattern) — what the code can show, not a live result", "offered": MEN, "default": None,
+  "note": "One 'hero' product is chosen by the server and shown first; the other nine are one tap away, grouped Oral / Topical / Combo. Which product is the hero for which answers was not seen (account wall).", "evidence": "code"},
+ {"profile": "Woman who passes the medical checks — what the code can show, not a live result", "offered": ["h1", "h2", "h3", "h4", "h5"], "default": None,
+  "note": "One treatment is recommended by the server; the pill carries the 'Most popular' badge. Not seen live (account wall on the first screen).", "evidence": "code"},
+]
+
+company = {
+ "slug": "hims-uk", "company": "Hims UK (with Hers UK for women)", "market": "UK", "website": "https://www.forhims.co.uk/hair-loss",
+ "parent": "Hims & Hers Health, Inc. (US). UK contracting company: Hims & Hers UK Limited. The site, clinicians and pharmacy are now run by Fill Function UK Limited, the UK arm of Eucalyptus (the Juniper and Pilot platform), described by Hims as 'part of the same group of companies'.",
+ "audiences": ["men", "women"],
+ "model": "Subscription telehealth: a long marketing quiz, a medical questionnaire reviewed by a UK clinician without a call, then compounded finasteride and minoxidil products (sprays, serum, chews) or generics posted every 1 to 12 months, paid up front.",
+ "checkedOn": "2026-11-23",
+ "access": {
+  "howTested": ["live-walk", "site-code", "public-docs"],
+  "accountWall": "Men (Hims): after 21 anonymous screens, at https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair — 'Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options.' asks for an email address. Nothing medical, no product and no price has been shown by then; the last thing before the wall is a fixed 'Great news—we have options that may work for you', an answer summary and marketing screens. Women (Hers): at the first screen (first and last name).",
+  "blockers": [
+    "Every medical question, the eligibility result, the recommendation and the checkout prices are sent to the browser only after sign-in",
+    "web.archive.org could not be reached from this environment (connection reset), so the archived copy of the old consultation (snapshot 10 June 2026 of forhims.co.uk/c/hl) could not be read",
+    "ukhims.zendesk.com and hersuk.zendesk.com show a bot check to plain downloads; they open normally in the browser, which is how they were read",
+    "hair.forhims.co.uk returns an empty page"
+  ],
+  "coverageNote": "Walked live: the whole anonymous men's quiz with the baseline man (runs/baseline-men), the product-link entry, the generic chooser and the Hers first screen. Read in served code: the complete definition of the anonymous quiz (every question, option and the branch table), the product and price tables, the new app's treatment-option, recommendation, plan and rejection screens for Hims and Hers, the old platform's consultation structure and its tag-based eligibility engine. Read in public documents: product safety information for all ten products, terms, help-centre articles for Hims and Hers. Not obtained: the wording of the medical questions and the rules that map answers to products, which exist only on the server."
+ },
+ "products": products,
+ "flows": flows,
+ "rules": rules,
+ "experiments": experiments,
+ "recommendations": recommendations,
+ "engineSummary": "Hims UK runs a two-part engine. Part one is a marketing quiz anyone can take: 11 questions about pattern, severity, timing, goals, family history, stress and routine, with 10 selling screens in between. It has one fixed path. No answer branches, stops or changes anything on screen, and everyone is told 'Great news—we have options that may work for you' before being asked for an email. The answers are saved for later. Part two sits behind the account: a date of birth, a medical questionnaire, and a server-side rules step that marks each of ten products eligible or not for this patient. The patient is then shown one recommended product, with the rest a tap away and the ruled-out ones greyed out as 'Not available based on your medical history'. He picks a plan length, gives GP details, and pays up front; a clinician reviews the answers without a call and either approves or refunds. The old platform, whose code is still served, worked the same way using tags: an answer could exclude 'finasteride', 'minoxidil-oral', 'topical' and so on, and every product carrying that tag vanished. The wording of the medical questions and the exact answer-to-product rules could not be read from outside. Hers UK uses the same platform for women, with five minoxidil-based treatments, but puts the account wall on the very first screen.",
+ "strengths": [
+  "A wide compounded range: two finasteride + minoxidil sprays (one with ketoconazole and biotin), a serum, and once-daily chews that combine oral finasteride 1.1 mg, oral minoxidil 3 mg and vitamins",
+  "A fallback for almost every exclusion: finasteride-free (minoxidil chew, minoxidil serum, Regaine), minoxidil-free (finasteride tablets), drug-free (supplement chew), so few paying customers leave with nothing",
+  "Low headline price on long plans (£16.50 a month for spray, serum or chew on a 6-month plan), free delivery, full refund if not approved",
+  "No clinician call needed for hair; the whole thing is a form",
+  "Smooth, well-produced quiz with pictures, 'Why we ask' notes and an answer summary",
+  "Regulated set-up is clearly stated: CQC-registered provider, named GPhC pharmacies, a specialist compounding pharmacy"
+ ],
+ "weaknesses": [
+  "The 'free hair quiz' gives nothing back: 21 screens and then an email wall, with no result, product or price shown first. Hims itself says 'The quiz is not a medical assessment'",
+  "The quiz never asks age, sex, medical history or scalp symptoms before the wall, and nothing a visitor answers (even 'No hair loss yet' or 'None of the above') changes the message",
+  "Prices are hidden until late and the cheap figure needs 6 or 12 months paid up front (for example £99 or £276); the monthly chew plan is £60",
+  "The public pages do not say a photo is needed for hair (the terms only say 'You may be asked to upload photographs for assessment'), so the diagnosis seems to rest mainly on tick-boxes",
+  "Its flagship products are unlicensed compounded medicines, including oral minoxidil with oral finasteride in one fixed chew, which cannot be adjusted separately",
+  "Cancelling is by message to support with a cut-off before the next order (the help centre says 48 hours, the terms say three days); no self-service cancel is described",
+  "Men only on Hims; women are sent to a separate brand with a separate account. Men over 65 are outside the labelled age range of most of the range",
+  "Recent reviews on the hair page complain of broken spray pumps",
+  "The platform move (to Fill Function / Eucalyptus) leaves loose ends: a product link that seems to do nothing, a dead hair subdomain, card badges such as 'Generic Treatment' on Regaine"
+ ],
+ "opportunities": [
+  "Give a real answer before asking for contact details: likely pattern, which treatments fit, and the price, in under 10 questions",
+  "Ask the safety questions early and tell people straight away when something rules a product out and why, instead of a greyed-out card after sign-up",
+  "Use photos (and a clinician's eye) to tell pattern loss from shedding, patchy or scarring loss, which a tick-box quiz cannot do",
+  "Offer adjustable strengths and separate ingredients, so a side effect means changing one thing rather than the whole product",
+  "Show monthly prices honestly, with a true monthly plan and self-service pause and cancel",
+  "Treat men and women in one service, and offer something clear for men over 65",
+  "Build the plan around measured progress (standard photos at 0, 3 and 6 months) with a guarantee, as Hers does with its 180-day money-back offer but Hims does not for hair"
+ ],
+ "sources": [
+  {"title": "Hims UK hair-loss landing page", "url": "https://www.forhims.co.uk/hair-loss"},
+  {"title": "Hims UK hair quiz entry (redirects to app.forhims.co.uk)", "url": "https://www.forhims.co.uk/c/hl"},
+  {"title": "Hims UK finasteride page", "url": "https://www.forhims.co.uk/hair-loss/finasteride"},
+  {"title": "Hims UK minoxidil serum page", "url": "https://www.forhims.co.uk/hair-loss/minoxidil"},
+  {"title": "Hims UK combo kit page", "url": "https://www.forhims.co.uk/hair-loss/finasteride-and-minoxidil"},
+  {"title": "Hims UK combination serum shopping page (prices 'from')", "url": "https://www.forhims.co.uk/hair-loss/all-in-one-topical-hair-loss-solution-shopping"},
+  {"title": "Hims UK safety information: finasteride", "url": "https://www.forhims.co.uk/safety-information/finasteride"},
+  {"title": "Hims UK safety information: finasteride and minoxidil", "url": "https://www.forhims.co.uk/safety-information/finasteride-and-minoxidil"},
+  {"title": "Hims UK terms and conditions (Hair and Sexual Health Schedule, payments, refunds)", "url": "https://www.forhims.co.uk/terms-and-conditions"},
+  {"title": "Hims UK pharmacy terms", "url": "https://www.forhims.co.uk/pharmacy-terms"},
+  {"title": "Hims UK platform migration notice (Fill Function UK Limited)", "url": "https://www.forhims.co.uk/migration-privacy"},
+  {"title": "Hims UK help: Who can use Hims products?", "url": "https://ukhims.zendesk.com/hc/en-gb/articles/64130217043225-Who-can-use-Hims-products"},
+  {"title": "Hims UK help: Which treatments do you offer for Hair Loss?", "url": "https://ukhims.zendesk.com/hc/en-gb/articles/63706820045593-Which-treatments-do-you-offer-for-Hair-Loss"},
+  {"title": "Hims UK help: Can I use these treatments for other types of hair loss?", "url": "https://ukhims.zendesk.com/hc/en-gb/articles/64157769181977-Can-I-use-these-treatments-for-other-types-of-hair-loss"},
+  {"title": "Hims UK help: Can women use these treatments?", "url": "https://ukhims.zendesk.com/hc/en-gb/articles/64157763017497-Can-women-use-these-treatments"},
+  {"title": "Hims UK help: How do I get started?", "url": "https://ukhims.zendesk.com/hc/en-gb/articles/64130184630937-How-do-I-get-started"},
+  {"title": "Hims UK help: Can I cancel my Hims subscription?", "url": "https://ukhims.zendesk.com/hc/en-gb/articles/64137502057113-Can-I-cancel-my-Hims-subscription"},
+  {"title": "Hims UK app (served code read: index and route chunks)", "url": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair"},
+  {"title": "Hers UK hair page", "url": "https://forhers.co.uk/hair"},
+  {"title": "Hers UK Hair Blends page", "url": "https://forhers.co.uk/hair-blends"},
+  {"title": "Hers UK regulation page (compounding pharmacy named)", "url": "https://forhers.co.uk/regulations"},
+  {"title": "Hers UK hair entry (account wall)", "url": "https://app.forhers.co.uk/start/signup?t=hair"},
+  {"title": "Hers UK help: pregnancy, breastfeeding, trying to conceive", "url": "https://hersuk.zendesk.com/hc/en-gb/articles/63197688147097-Can-I-continue-treatment-if-I-m-pregnant-breastfeeding-or-trying-to-conceive"},
+  {"title": "Hers UK help: 180-day money-back guarantee", "url": "https://hersuk.zendesk.com/hc/en-gb/articles/63196966596889-How-does-the-180-day-money-back-guarantee-work-for-hair-treatment"},
+  {"title": "Hers UK help: Can I cancel my Hers Hair treatment at any time?", "url": "https://hersuk.zendesk.com/hc/en-gb/articles/63196865449241-Can-I-cancel-my-Hers-Hair-treatment-at-any-time"},
+  {"title": "Hers UK help: What if I am not eligible?", "url": "https://hersuk.zendesk.com/hc/en-gb/articles/62304973403801-What-if-I-am-not-eligible"}
+ ],
+ "limitations": [
+  "The medical questions were not seen. Their wording and the answer-to-product rules live on the server and are sent only after sign-in, which the research rules forbid. Rules R2 to R19 come from code and documents, not from watching the engine.",
+  "No recommendation was observed for any patient. It is not known which product Hims shows first for which answers, or whether the anonymous answers influence it.",
+  "Prices for Hims come from the price table the site embeds in its public pages and from 'from £…' marketing lines. That table belongs to the old shop system; the new checkout price is fetched after sign-in and could differ. Hers plan prices beyond 'from £13' and 'from £20' a month were not seen.",
+  "Hims UK was part-way through moving platform on the day of the check (banner: 'We're moving to a new platform'). Some of what was read in code describes the old system and is labelled as such.",
+  "Screens described from code (name, password, recommendation, options, plans, GP details, rejection) were read as text in the app's files, not seen on a live page. Order and exact layout may differ.",
+  "The Hers quiz options come from the wording Hers uses to play answers back, not from the questions themselves, and the list of options is incomplete (for example only one 'onset' answer is known).",
+  "Supplement strengths in the Hims chews are not published. The strength of the minoxidil serum is given as 5% in most places and 6% in one."
+ ]
+}
+
+json.dump(company, open(BASE + 'company.json', 'w'), indent=1, ensure_ascii=False)
+nq = sum(len(f['questions']) for f in flows); no = sum(len(q['options']) for f in flows for q in f['questions'])
+print('products', len(products), 'flows', len(flows), 'questions', nq, 'options', no, 'rules', len(rules))

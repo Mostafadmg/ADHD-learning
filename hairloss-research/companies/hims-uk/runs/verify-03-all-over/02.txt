@@ -1,0 +1,26 @@
+STEP 02 click "All over"
+URL: https://app.forhims.co.uk/flow/a9a88e4a-89b9-47ae-8138-3a1acaa41594?t=hair&anon_flow_key=hair
+TITLE: Hims
+
+--- VISIBLE TEXT ---
+How much hair have you lost?
+
+A lot
+
+It's obvious to everyone
+
+Some
+
+Those close to me notice it
+
+A little
+
+Only I notice it
+
+←
+
+--- CONTROLS ---
+  button (5): A lot It's obvious to everyone [false]  ·  Some Those close to me notice it [false]  ·  A little Only I notice it [false]  ·  ←  ·  Your answers
+
+--- LINKS ---
+  link (1): Navigate home -> /profile

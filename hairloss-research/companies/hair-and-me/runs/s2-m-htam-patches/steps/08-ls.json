@@ -1,0 +1,61 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 2,
+   "sectionTitle": "YOUR HAIR"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 8014,
+    "inputConfig": {
+     "isOptional": true,
+     "options": [
+      {
+       "label": "I rarely get more than 7 hours' sleep",
+       "value": "I rarely get more than 7 hours' sleep"
+      },
+      {
+       "label": "I'm dealing with quite a lot of stress",
+       "value": "I'm dealing with quite a lot of stress"
+      },
+      {
+       "label": "I've recently lost a significant amount of weight",
+       "value": "I've recently lost a significant amount of weight"
+      },
+      {
+       "label": "I've recently been through a major life event",
+       "value": "I've recently been through a major life event"
+      },
+      {
+       "exclusive": true,
+       "label": "None of these apply to me",
+       "value": "None of these apply to me"
+      }
+     ]
+    },
+    "inputType": "multi_select_checkbox",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Which of these statements apply to you?",
+  "type": "question"
+ }
+}

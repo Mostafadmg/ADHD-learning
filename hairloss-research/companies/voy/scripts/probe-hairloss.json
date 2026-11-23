@@ -1,0 +1,1 @@
+{ "start": "https://www.joinvoy.com/hair-loss", "steps": [ {"do":"wait","ms":4000}, {"do":"scroll"} ] }

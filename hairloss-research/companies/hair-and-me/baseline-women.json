@@ -1,0 +1,150 @@
+{
+ "_about": "Baseline woman for Hair + Me (stage 1 map). Replay: node tools/autowalk.js baseline-women.json runs/<new-id>. Answers are keyed by step id (the last part of the /c/suh/<id> URL) because the server varies step order, wording and which optional steps appear between visits. Steps that did not appear in a given visit are simply not used. There is no entry for step 'yd' (legal first and last name) on purpose: that is the account wall, so the walk stops there.",
+ "_patient": "Woman, born 15/06/1988 (38), sex at birth Female, goal 'Prevent, stop or reverse hair loss', hair loss 'My middle parting is getting wider', noticed 'Over a year ago', straight hair, washes 3-4 times a week, no styling, not hiding hair loss, hard water 'No', normal scalp, no scalp symptoms, no lifestyle triggers, no previous treatments, no pets, prefers 'The Capsules' (badged Most popular), not pregnant / breastfeeding / likely to conceive, not postpartum, no facial hair, no medicines, no conditions, no allergies, lives in the UK. The site does not ask about contraception or periods.",
+ "start": "https://www.hairandme.com/c/suh/new",
+ "answers": {
+  "tp": [
+   "Treatment for women"
+  ],
+  "yhg": [
+   "Prevent, stop or reverse hair loss",
+   "Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us."
+  ],
+  "js": [
+   "Ready to start treatment"
+  ],
+  "pds": [
+   {
+    "select": "select[name='3039']",
+    "value": {
+     "label": "Female"
+    }
+   }
+  ],
+  "pdsc": [
+   "I confirm the above selection is accurate and true."
+  ],
+  "mi": [],
+  "ht": [
+   "Straight"
+  ],
+  "hs": [
+   "None of the above"
+  ],
+  "hw": [
+   "3-4 times per week"
+  ],
+  "hht": [
+   "None of the above"
+  ],
+  "ls": [
+   "None of these apply to me"
+  ],
+  "htp": [
+   "None of the above"
+  ],
+  "hdw": [
+   "No"
+  ],
+  "htaf": [
+   "My middle parting is getting wider"
+  ],
+  "htc": [
+   "Over a year ago"
+  ],
+  "ar": [],
+  "st": {
+   "byQuestion": {
+    "9346": [
+     "Fair. It often burns, but tans a little"
+    ],
+    "9348": [
+     {
+      "range": "input[type=range]",
+      "value": 25
+     }
+    ]
+   }
+  },
+  "sc": [
+   "Normal"
+  ],
+  "scc": [
+   "None of the above"
+  ],
+  "smt": [
+   "Fuller, denser-looking hair that I feel confident about"
+  ],
+  "pt": [
+   "No"
+  ],
+  "tt": [
+   "The Capsules"
+  ],
+  "dt": [],
+  "pg": [
+   "No",
+   "Yes, I've read and understood the information and would like to carry on."
+  ],
+  "mp": [
+   "None of the above"
+  ],
+  "mdf": [
+   "No, I don't take any medications"
+  ],
+  "mcf": [
+   "None of the above"
+  ],
+  "al": [
+   "No known allergies"
+  ],
+  "rhf": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "yna": [],
+  "rha": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "di": [
+   "I'm looking for a long-term effective haircare treatment"
+  ],
+  "rj": [],
+  "el": {
+   "byType": {
+    "date_masked": [
+     {
+      "type": "input[name=\"3053\"]",
+      "value": "15061988"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ],
+    "date_split": [
+     {
+      "fill": "Day",
+      "value": "15"
+     },
+     {
+      "fill": "Month",
+      "value": "06"
+     },
+     {
+      "fill": "Year",
+      "value": "1988"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ]
+   }
+  },
+  "ct": []
+ }
+}

@@ -1,0 +1,11 @@
+{
+ "_note": "Stage 2 one-change replay on the 'Select the pattern closest to yours' marketing widget (public host hairloss1.joinvoy.com/a/hair-loss-tt-v3). One click, no data entry.",
+ "_answer": "At the temples",
+ "start": "https://hairloss1.joinvoy.com/a/hair-loss-tt-v3",
+ "steps": [
+  {
+   "do": "click",
+   "selector": "[data-pattern-tab=\"At the temples\"]"
+  }
+ ]
+}

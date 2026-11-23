@@ -1,0 +1,25 @@
+STEP 30 yd
+URL: https://www.hairandme.com/c/suh/yd
+
+--- VISIBLE TEXT ---
+Personalise your account
+Your legal first name
+Your legal last name
+Your preferred name
+
+This will appear on your personalised products, and in your account. If left empty, we’ll use your legal first name.
+
+Engraved just for you
+Our service is fully personalised – right down to the name on the treatment:
+FOR YOU
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:text[name=3044] | Your legal first name
+input:text[name=3045] | Your legal last name
+input:text[name=3043] | Your preferred name
+button:submit | NEXT QUESTION [disabled]
+a -> /c/suh/yd?action=previous | Back to previous page

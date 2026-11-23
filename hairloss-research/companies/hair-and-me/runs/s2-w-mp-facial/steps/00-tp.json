@@ -1,0 +1,44 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   }
+  ],
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 8008,
+    "inputConfig": {
+     "options": [
+      {
+       "image": "treatment-for-men",
+       "label": "Treatment for men",
+       "value": "Treatment for men"
+      },
+      {
+       "image": "treatment-for-women",
+       "label": "Treatment for women",
+       "value": "Treatment for women"
+      },
+      {
+       "label": "Neither of these are right for me",
+       "value": "Neither of these are right for me"
+      }
+     ]
+    },
+    "inputType": "single_select_image_vertical_with_title",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Which treatment is right for you?",
+  "type": "question"
+ }
+}

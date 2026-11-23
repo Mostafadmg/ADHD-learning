@@ -1,0 +1,15 @@
+{
+ "_note": "Stage 3 gap replay. Same page, one change: the Men / Women switch in the 'science' section set to Women. No data entry.",
+ "_answer": "tab: Men -> Women",
+ "start": "https://hairloss1.joinvoy.com/sem-mf",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 1500
+  },
+  {
+   "do": "click",
+   "selector": "[data-tab-toggle=\"science-steps\"] .toggle-tab.for-women"
+  }
+ ]
+}

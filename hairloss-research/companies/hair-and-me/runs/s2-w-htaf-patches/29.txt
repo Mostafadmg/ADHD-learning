@@ -1,0 +1,29 @@
+STEP 29 el
+URL: https://www.hairandme.com/c/suh/el
+
+--- VISIBLE TEXT ---
+Your eligibility
+Your date of birth
+
+Our treatments are powerful, and at the moment, not suitable for anyone under the age of 18.
+
+Day
+Month
+Year
+Where you live
+
+Please confirm that you live in the UK (excluding Channel Islands).
+
+Yes, I live in the UK (excluding Channel Islands).
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:text | Day
+input:text | Month
+input:text | Year
+input:checkbox[name=2007] | Yes, I live in the UK (excluding Channel Islands).
+button:submit | NEXT QUESTION [disabled]
+a -> /c/suh/el?action=previous | Back to previous page

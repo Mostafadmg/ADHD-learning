@@ -1,0 +1,318 @@
+{
+ "start": "https://www.hairandme.com/c/suh/new",
+ "steps": [
+  {
+   "do": "click",
+   "text": "Treatment for women"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "tp"
+  },
+  {
+   "do": "click",
+   "text": "Prevent, stop or reverse hair loss"
+  },
+  {
+   "do": "click",
+   "text": "Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us."
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "yhg"
+  },
+  {
+   "do": "select",
+   "selector": "select[name='3039']",
+   "value": {
+    "label": "Female"
+   }
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "pds"
+  },
+  {
+   "do": "click",
+   "text": "I confirm the above selection is accurate and true."
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "pdsc"
+  },
+  {
+   "do": "click",
+   "text": "Straight"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "ht"
+  },
+  {
+   "do": "click",
+   "text": "None of the above"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "hs"
+  },
+  {
+   "do": "click",
+   "text": "3-4 times per week"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "hw"
+  },
+  {
+   "do": "click",
+   "text": "None of the above"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "hht"
+  },
+  {
+   "do": "click",
+   "text": "None of the above"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "htp"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "hdw"
+  },
+  {
+   "do": "click",
+   "text": "My middle parting is getting wider"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "htaf"
+  },
+  {
+   "do": "click",
+   "text": "Over a year ago"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "htc"
+  },
+  {
+   "do": "wait",
+   "ms": 8500,
+   "_step": "ar"
+  },
+  {
+   "do": "fill",
+   "selector": "input[type=range]",
+   "value": "25"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "st"
+  },
+  {
+   "do": "click",
+   "text": "Normal"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "sc"
+  },
+  {
+   "do": "click",
+   "text": "None of the above"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "scc"
+  },
+  {
+   "do": "click",
+   "text": "Fuller, denser-looking hair that I feel confident about"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "smt"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "pt"
+  },
+  {
+   "do": "click",
+   "text": "The Capsules"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "tt"
+  },
+  {
+   "do": "click",
+   "text": "Skip",
+   "exact": false,
+   "_step": "dt"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "Yes, I've read and understood the information and would like to carry on."
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "pg"
+  },
+  {
+   "do": "click",
+   "text": "I'm postpartum (given birth in the last 6 months)"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "mp"
+  },
+  {
+   "do": "click",
+   "text": "No, I don't take any medications"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "mdf"
+  },
+  {
+   "do": "click",
+   "text": "None of the above"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "mcf"
+  },
+  {
+   "do": "click",
+   "text": "No known allergies"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "al"
+  },
+  {
+   "do": "click",
+   "text": "5"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "rhf"
+  },
+  {
+   "do": "click",
+   "text": "5"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "rha"
+  },
+  {
+   "do": "click",
+   "text": "I'm looking for a long-term effective haircare treatment"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "di"
+  },
+  {
+   "do": "click",
+   "text": "Skip",
+   "exact": false,
+   "_step": "rj"
+  },
+  {
+   "do": "click",
+   "selector": "input[name=\"3053\"]"
+  },
+  {
+   "do": "type",
+   "value": "15061988"
+  },
+  {
+   "do": "click",
+   "text": "Yes, I live in the UK (excluding Channel Islands)."
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "el"
+  },
+  {
+   "do": "click",
+   "text": "Continue to checkout",
+   "exact": false,
+   "_step": "ct"
+  }
+ ]
+}

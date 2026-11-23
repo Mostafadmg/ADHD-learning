@@ -1,0 +1,141 @@
+{
+ "_about": "SCOUT run 2 (several medical answers changed at once, only to discover extra screens; not a one-change experiment).",
+ "_patient": "scout",
+ "start": "https://www.hairandme.com/c/suh/new",
+ "answers": {
+  "tp": [
+   "Treatment for men"
+  ],
+  "yhg": [
+   "Prevent, stop or reverse hair loss",
+   "Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us."
+  ],
+  "js": [
+   "Ready to start treatment"
+  ],
+  "pds": [
+   {
+    "select": "select[name='3039']",
+    "value": {
+     "label": "Male"
+    }
+   }
+  ],
+  "pdsc": [
+   "I confirm the above selection is accurate and true."
+  ],
+  "mi": [],
+  "ht": [
+   "Straight"
+  ],
+  "hs": [
+   "None of the above"
+  ],
+  "ls": [
+   "None of these apply to me"
+  ],
+  "htp": [
+   "None of the above"
+  ],
+  "htam": [
+   "Across the hairline"
+  ],
+  "htc": [
+   "Over a year ago"
+  ],
+  "ar": [],
+  "st": {
+   "byQuestion": {
+    "9346": [
+     "Fair. It often burns, but tans a little"
+    ],
+    "9348": [
+     {
+      "range": "input[type=range]",
+      "value": 25
+     }
+    ]
+   }
+  },
+  "sc": [
+   "Dry"
+  ],
+  "scc": [
+   "Diagnosed eczema, psoriasis or seborrheic dermatitis",
+   "A diagnosed active infection (e.g. folliculitis, candida, ringworm)",
+   "Pain and/or burning sensation"
+  ],
+  "smt": [
+   "Fuller, denser-looking hair that I feel confident about"
+  ],
+  "pt": [
+   "Yes"
+  ],
+  "tt": [
+   "The Drops"
+  ],
+  "pp": [
+   "I do not wish to be considered for dutasteride or finasteride"
+  ],
+  "mdm": [
+   "Medication to treat benign prostate hyperplasia (BPH)",
+   "Antidepressants, anti-anxiety or medication for mental health reasons"
+  ],
+  "mcm": [
+   "Any heart or cardiovascular condition (e.g. stroke, heart attack, heart failure, angina, atrial fibrillation, valve disorder, irregular or fast heartbeat)",
+   "Pheochromocytoma",
+   "Liver disease (e.g. hepatitis, cirrhosis, non-alcoholic fatty liver disease)"
+  ],
+  "al": [
+   "Minoxidil"
+  ],
+  "rhf": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "yna": [],
+  "rha": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "di": [
+   "I want the discounted trial"
+  ],
+  "rj": [],
+  "el": {
+   "byType": {
+    "date_masked": [
+     {
+      "type": "input[name=\"3053\"]",
+      "value": "15061994"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ],
+    "date_split": [
+     {
+      "fill": "Day",
+      "value": "15"
+     },
+     {
+      "fill": "Month",
+      "value": "06"
+     },
+     {
+      "fill": "Year",
+      "value": "1994"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ]
+   }
+  },
+  "ct": []
+ }
+}

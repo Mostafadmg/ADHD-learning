@@ -1,0 +1,15 @@
+{
+ "start": "https://app.forhims.co.uk/start/signup?t=hair",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 4000
+  }
+ ],
+ "_about": {
+  "experiment": "verify-08-skip-quiz",
+  "stage": "verify",
+  "changed": "entry: sign-up address opened directly, no quiz",
+  "why": "Re-test of R25."
+ }
+}

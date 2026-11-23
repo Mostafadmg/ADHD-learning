@@ -1,0 +1,114 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Continue to checkout"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 4,
+   "sectionTitle": "YOUR DETAILS"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 180037,
+    "inputConfig": {
+     "items": [
+      {
+       "code": "hairTreatment",
+       "subtotal": {
+        "amount": 1499,
+        "currency": "GBP",
+        "label": "Subtotal",
+        "originalAmount": 3499
+       },
+       "treatment": {
+        "description": "4 week supply · 12ml",
+        "name": "Personalised treatment",
+        "pill": "Prescription"
+       }
+      }
+     ],
+     "shippingEligibilityMessage": "Your order qualifies for complimentary standard shipping.",
+     "subtotal": {
+      "amount": 1499,
+      "currency": "GBP",
+      "label": "Subtotal",
+      "originalAmount": 3499
+     },
+     "treatment": {
+      "description": "4 week supply · 12ml",
+      "name": "Personalised treatment",
+      "pill": "Prescription"
+     }
+    },
+    "inputType": "cart_summary",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 180026,
+    "inputConfig": {
+     "shipping": {
+      "amount": 0,
+      "currency": "GBP",
+      "label": "Shipping"
+     },
+     "subtotal": {
+      "amount": 1499,
+      "currency": "GBP",
+      "label": "Subtotal",
+      "originalAmount": 3499
+     },
+     "total": {
+      "amount": 1499,
+      "currency": "GBP",
+      "label": "Total to pay"
+     }
+    },
+    "inputType": "cart_totals",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 180025,
+    "inputConfig": {
+     "clearSuccessMessageOnError": true,
+     "consultationExternalId": "b778490b-a5ed-41b0-9604-119dd6361a6d",
+     "dividerAbove": true,
+     "hidePromoMessage": true,
+     "icon": "check-circle",
+     "placeholder": "Promo code",
+     "promotionCode": {
+      "code": "HGSHOPCAPS",
+      "cta": "First three months £14.99 each, then £34.99 ongoing. Cancel anytime. Treatment subject to dermatological assessment.",
+      "id": "1b511918-39c7-428e-92c4-aaee62af7b62",
+      "message": "Your first three months of treatment for £14.99 each."
+     },
+     "renderConditions": []
+    },
+    "inputType": "promo_code",
+    "is_custom": false,
+    "label": "Redeem offer",
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Your shopping bag",
+  "type": "question"
+ }
+}

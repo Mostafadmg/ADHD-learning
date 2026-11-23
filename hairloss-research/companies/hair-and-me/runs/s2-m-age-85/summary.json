@@ -1,0 +1,261 @@
+{
+ "run": "s2-m-age-85",
+ "flow": "men",
+ "changed": "men-el-dob: 15/06/1994 (32) → 15/06/1941 (85)",
+ "changedStep": "el",
+ "baselinesPooled": [
+  "baseline-men",
+  "s2-base-men-1"
+ ],
+ "stepOrder": [
+  "tp",
+  "yhg",
+  "js",
+  "pds",
+  "pdsc",
+  "mi",
+  "ht",
+  "ls",
+  "htp",
+  "htam",
+  "htc",
+  "ar",
+  "st",
+  "sc",
+  "scc",
+  "smt",
+  "pt",
+  "tt",
+  "pp",
+  "mdm",
+  "mcm",
+  "al",
+  "rhf",
+  "yna",
+  "rha",
+  "di",
+  "rj",
+  "el",
+  "ct",
+  "yd"
+ ],
+ "nSteps": 30,
+ "end": "account wall (yd)",
+ "newSteps": [],
+ "missingSteps": [],
+ "candidateEffects": [],
+ "noise": [
+  {
+   "step": "ar",
+   "key": "q429.config",
+   "where": "before-change",
+   "alsoIn": [
+    "s2-m-htc-recent",
+    "scout-neither"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9346.options",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-htam-patches"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9346.type",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-htam-patches"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9348.options",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-htam-patches"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9348.type",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-htam-patches"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9349.config",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-htam-patches"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9349.type",
+   "where": "before-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-htam-patches"
+   ]
+  },
+  {
+   "step": "di",
+   "key": "q8015.options",
+   "where": "before-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-htam-allover-ext",
+    "s2-w-htaf-allover"
+   ]
+  },
+  {
+   "step": "el",
+   "key": "q3053.config",
+   "where": "changed-step",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-htam-crown",
+    "s2-w-htaf-allover"
+   ]
+  },
+  {
+   "step": "el",
+   "key": "q3053.label",
+   "where": "changed-step",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-htam-crown",
+    "s2-w-htaf-allover"
+   ]
+  },
+  {
+   "step": "el",
+   "key": "q3053.text",
+   "where": "changed-step",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-htam-crown",
+    "s2-w-htaf-allover"
+   ]
+  },
+  {
+   "step": "el",
+   "key": "q3053.type",
+   "where": "changed-step",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-htam-crown",
+    "s2-w-htaf-allover"
+   ]
+  },
+  {
+   "step": "el",
+   "key": "q3079.config",
+   "where": "changed-step",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-htam-crown",
+    "s2-w-htaf-allover"
+   ]
+  },
+  {
+   "step": "el",
+   "key": "q3079.label",
+   "where": "changed-step",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-htam-crown",
+    "s2-w-htaf-allover"
+   ]
+  },
+  {
+   "step": "el",
+   "key": "q3079.text",
+   "where": "changed-step",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-htam-crown",
+    "s2-w-htaf-allover"
+   ]
+  },
+  {
+   "step": "el",
+   "key": "q3079.type",
+   "where": "changed-step",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-htam-crown",
+    "s2-w-htaf-allover"
+   ]
+  },
+  {
+   "step": "ct",
+   "key": "q180026.config",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-htam-crown",
+    "s2-m-htam-patches"
+   ]
+  },
+  {
+   "step": "ct",
+   "key": "title",
+   "where": "after-change",
+   "alsoIn": [
+    "baseline-women",
+    "entry-promo-caps-men",
+    "s2-m-htam-allover-ext"
+   ]
+  }
+ ],
+ "bag": {
+  "items": [
+   [
+    "hairTreatment",
+    "Personalised treatment",
+    "4 week supply · 12ml",
+    "Prescription",
+    3499,
+    null
+   ]
+  ],
+  "shipping": 0,
+  "total": 3499,
+  "promo": "",
+  "shippingMsg": "Your order qualifies for complimentary standard shipping."
+ },
+ "bagItemsSameAsBaseline": true,
+ "posted": {
+  "el": [
+   [
+    3079,
+    "1941-06-15"
+   ],
+   [
+    2007,
+    true
+   ]
+  ]
+ },
+ "nextAfterChange": {
+  "el": "ct"
+ },
+ "sweep": false
+}

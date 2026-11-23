@@ -1,0 +1,23 @@
+STEP 03 pdsc AFTER ANSWERS ["I confirm the above selection is accurate and true."]
+URL: https://www.hairandme.com/c/suh/pdsc
+
+--- VISIBLE TEXT ---
+Please confirm your sex assigned at birth
+
+Why are we asking?
+
+Hormones play a significant role in hair loss and regrowth, and our Dermatology Team needs to know if there’s any possibility you could become pregnant.
+
+You've selected the following as your sex assigned at birth:
+
+Male
+I confirm the above selection is accurate and true.
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:checkbox[name=3050] | I confirm the above selection is accurate and true. [checked]
+button:submit | NEXT QUESTION
+a -> /c/suh/pdsc?action=previous | Back to previous page

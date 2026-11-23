@@ -1,0 +1,39 @@
+STEP 22 al
+URL: https://www.hairandme.com/c/suh/al
+
+--- VISIBLE TEXT ---
+Do you have any known allergies to the following?
+Minoxidil
+Finasteride
+Dutasteride
+Melatonin
+Urea
+Niacinamide
+Tretinoin
+Vitamin B6 (Pyridoxine)
+Other
+No known allergies
+
+You'll find the list of the ingredients of our prescription products in our Patient Information Leaflet, and in our FAQs too. Please check this information – as they're subject to change.
+
+Find our full ingredients list here.
+
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:checkbox[name=4447] | Minoxidil
+input:checkbox[name=4447] | Finasteride
+input:checkbox[name=4447] | Dutasteride
+input:checkbox[name=4447] | Melatonin
+input:checkbox[name=4447] | Urea
+input:checkbox[name=4447] | Niacinamide
+input:checkbox[name=4447] | Tretinoin
+input:checkbox[name=4447] | Vitamin B6 (Pyridoxine)
+input:checkbox[name=4447] | Other
+input:checkbox[name=4447] | No known allergies
+a -> https://www.hairandme.com/support/en/collections/620334-ingredients | Find our full ingredients list here.
+button:submit | NEXT QUESTION [disabled]
+a -> /c/suh/al?action=previous | Back to previous page

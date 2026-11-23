@@ -1,0 +1,930 @@
+{
+ "_about": "Hims UK hair-loss quiz definition, rebuilt from what the site serves to an anonymous browser. Part 1 is the complete anonymous flow (exact wording, every option, the one-path branch table). Part 2 lists what public code and documents show about the steps behind the account wall. Checked 2026-11-23.",
+ "anonymousFlow": {
+  "source": "GraphQL query \"Flow\" (flowVersion) that app.forhims.co.uk itself sends to https://api.external.eu.eucalyptus.vc/graphql when the quiz opens. Raw copy: raw/flow-anon-hair.a9a88e4a.graphql.json (also runs/baseline-men/net/04-*.json).",
+  "entry": "https://www.forhims.co.uk/c/hl -> 302 https://app.forhims.co.uk/anon-flow/hair?t=hair -> /flow/a9a88e4a-89b9-47ae-8138-3a1acaa41594?t=hair&anon_flow_key=hair",
+  "flowId": "09f03478-388f-4bf7-882f-ca4ea79f6258 (from feature flag cfg_anon_flow_version_map.hair)",
+  "flowVersionId": "a9a88e4a-89b9-47ae-8138-3a1acaa41594",
+  "firstStepId": "633057d9-955c-479d-838e-8e70cb68465a",
+  "branchModel": "The served definition has 21 steps and 20 branches. Every step has exactly one outgoing branch and the branch objects carry no condition (the client only asks for id, sourceStepId, targetStepId). So the anonymous quiz is one straight path: no answer can skip, add or stop a step. After each answer the browser posts it (mutation SubmitStepResponseAnonymously, under a guest token, kept 7 days) and the server replies with nextStep; in the baseline run the reply always matched this table.",
+  "steps": [
+   {
+    "order": 1,
+    "stepId": "633057d9-955c-479d-838e-8e70cb68465a",
+    "stepType": "SINGLE_SELECT",
+    "questionText": "Which best represents your hair loss and goals?",
+    "cta": "Continue",
+    "required": true,
+    "datapointKey": "intentHairlossGoals",
+    "datapointType": "SINGLE_SELECT",
+    "options": [
+     {
+      "value": "RECEDING_HAIRLINE",
+      "label": "Receding hairline, want to slow its progress"
+     },
+     {
+      "value": "HAIRLOSS_EXPLORING_TREATMENTS",
+      "label": "Experiencing hair loss, exploring options"
+     },
+     {
+      "value": "HAIRLOSS_READY_FOR_TREATMENT",
+      "label": "Experiencing hair loss, ready to start treatment"
+     },
+     {
+      "value": "HAIRLOSS_NONE_BUT_LOOKING",
+      "label": "No hair loss yet, want to get ahead of it"
+     },
+     {
+      "value": "NONE_OF_THE_ABOVE",
+      "label": "None of the above"
+     }
+    ],
+    "nextStepId": "d9a57f80-9776-46b4-8855-5dbb39e6ae37"
+   },
+   {
+    "order": 2,
+    "stepId": "d9a57f80-9776-46b4-8855-5dbb39e6ae37",
+    "stepType": "SINGLE_SELECT",
+    "questionText": "Where are you noticing hair loss?",
+    "cta": "Continue",
+    "required": true,
+    "datapointKey": "intentHairlossNoticing",
+    "datapointType": "SINGLE_SELECT",
+    "options": [
+     {
+      "value": "HAIRLINE_LOSS",
+      "label": "Along the hairline",
+      "hasImage": true
+     },
+     {
+      "value": "TOP_LOSS",
+      "label": "At the top",
+      "hasImage": true
+     },
+     {
+      "value": "OVERALL_LOSS",
+      "label": "All over",
+      "hasImage": true
+     }
+    ],
+    "bodyText": "Where are you noticing hair loss?",
+    "nextStepId": "77d8dafa-4b10-48d9-b83c-da45fcaddb90"
+   },
+   {
+    "order": 3,
+    "stepId": "77d8dafa-4b10-48d9-b83c-da45fcaddb90",
+    "stepType": "SINGLE_SELECT",
+    "questionText": "How much hair have you lost?",
+    "cta": "Continue",
+    "required": true,
+    "datapointKey": "intentHairlossAmount",
+    "datapointType": "SINGLE_SELECT",
+    "options": [
+     {
+      "value": "SIGNIFICANT_HAIRLOSS",
+      "label": "A lot",
+      "sublabel": "It's obvious to everyone"
+     },
+     {
+      "value": "SOME_HAIRLOSS",
+      "label": "Some",
+      "sublabel": "Those close to me notice it"
+     },
+     {
+      "value": "LITTLE_HAIRLOSS",
+      "label": "A little",
+      "sublabel": "Only I notice it"
+     }
+    ],
+    "bodyText": "How much hair have you lost?",
+    "nextStepId": "dd20f561-c9b4-4262-9ae0-e1959204d3ab"
+   },
+   {
+    "order": 4,
+    "stepId": "dd20f561-c9b4-4262-9ae0-e1959204d3ab",
+    "stepType": "SINGLE_SELECT",
+    "questionText": "When did you start noticing changes to your hair?",
+    "cta": "Continue",
+    "required": true,
+    "datapointKey": "intentHairlossNoticedChanges",
+    "datapointType": "SINGLE_SELECT",
+    "options": [
+     {
+      "value": "HAIRLOSS_MORE_THAN_A_YEAR",
+      "label": "Over a year ago"
+     },
+     {
+      "value": "HAIRLOSS_WITHIN_A_YEAR",
+      "label": "In the past year"
+     },
+     {
+      "value": "HAIRLOSS_LAST_MONTHS",
+      "label": "In the past few months"
+     },
+     {
+      "value": "HAIRLOSS_NOT_SURE",
+      "label": "Not sure"
+     }
+    ],
+    "nextStepId": "025b8458-c231-4b7a-945e-3e26e0792eac"
+   },
+   {
+    "order": 5,
+    "stepId": "025b8458-c231-4b7a-945e-3e26e0792eac",
+    "stepType": "MULTI_SELECT",
+    "questionText": "With treatment, what results are you hoping for?",
+    "description": "Choose as many as you’d like.",
+    "cta": "Continue",
+    "required": true,
+    "datapointKey": "intentHairlossDesiredResults",
+    "datapointType": "MULTI_SELECT",
+    "options": [
+     {
+      "value": "DEFINED_HAIRLINE",
+      "label": "A stronger, defined hairline"
+     },
+     {
+      "value": "THICKER_HAIR",
+      "label": "Visibly thicker, fuller hair"
+     },
+     {
+      "value": "SCALP_COVERAGE",
+      "label": "More scalp coverage"
+     },
+     {
+      "value": "STOP_LOSS",
+      "label": "Keep the hair I have"
+     },
+     {
+      "value": "ALL",
+      "label": "All of the above"
+     }
+    ],
+    "nextStepId": "17f360a2-ea25-43c1-801b-10bff2ce38ae"
+   },
+   {
+    "order": 6,
+    "stepId": "17f360a2-ea25-43c1-801b-10bff2ce38ae",
+    "stepType": "SINGLE_SELECT",
+    "questionText": "What’s your hair type?",
+    "cta": "Continue",
+    "required": true,
+    "datapointKey": "intentHairlossHairType",
+    "datapointType": "SINGLE_SELECT",
+    "options": [
+     {
+      "value": "STRAIGHT_WAVY",
+      "label": "Straight or wavy"
+     },
+     {
+      "value": "CURLY",
+      "label": "Curly or coily"
+     },
+     {
+      "value": "TEXTURED",
+      "label": "Textured or processed"
+     },
+     {
+      "value": "NO_HAIR",
+      "label": "I don’t have hair"
+     }
+    ],
+    "nextStepId": "4b5857d4-75bd-4c53-a098-0ad800e6bf03"
+   },
+   {
+    "order": 7,
+    "stepId": "4b5857d4-75bd-4c53-a098-0ad800e6bf03",
+    "stepType": "SINGLE_SELECT",
+    "questionText": "How long is your hair?",
+    "cta": "Continue",
+    "required": true,
+    "datapointKey": "intentHairlossLength",
+    "datapointType": "SINGLE_SELECT",
+    "options": [
+     {
+      "value": "SHAVED_BALD",
+      "label": "Buzzed, shaved, or bald"
+     },
+     {
+      "value": "SHORT",
+      "label": "Short"
+     },
+     {
+      "value": "MEDIUM",
+      "label": "Medium"
+     },
+     {
+      "value": "LONG",
+      "label": "Long"
+     }
+    ],
+    "nextStepId": "024b75df-897c-420a-b0df-ca38321fb4ad"
+   },
+   {
+    "order": 8,
+    "stepId": "024b75df-897c-420a-b0df-ca38321fb4ad",
+    "stepType": "INFO",
+    "questionText": "Meet Hair Hybrids - a custom blend of Finasteride + Minoxidil for regrowing hair, combined with vitamins to support hair health.",
+    "cta": "Continue",
+    "bodyText": "Meet Hair Hybrids - a custom blend of Finasteride + Minoxidil for regrowing hair, combined with vitamins to support hair health.",
+    "nextStepId": "37c0996b-3733-459c-b70d-cccc38e371db"
+   },
+   {
+    "order": 9,
+    "stepId": "37c0996b-3733-459c-b70d-cccc38e371db",
+    "stepType": "INFO",
+    "questionText": "Next, let’s talk about lifestyle factors.\nUncovering which root causes may be affecting you can help us better understand your hair needs.",
+    "cta": "Continue",
+    "bodyText": "Next, let's talk about lifestyle factors\nUncovering which root causes may be affecting you can help us better understand your hair needs.",
+    "nextStepId": "47e88e74-3c7b-4adf-8b81-f9eddcd7a91d"
+   },
+   {
+    "order": 10,
+    "stepId": "47e88e74-3c7b-4adf-8b81-f9eddcd7a91d",
+    "stepType": "SINGLE_SELECT",
+    "questionText": "Does hair loss run in your family?",
+    "description": "Why we ask\nThe most common cause of hair loss is hereditary hair loss. So if an immediate family member has a history of hair loss, there’s a good chance it’ll affect you too.\nSource",
+    "cta": "Continue",
+    "required": true,
+    "datapointKey": "hairLossFamilyHistory",
+    "datapointType": "SINGLE_SELECT",
+    "options": [
+     {
+      "value": "YES",
+      "label": "Yes"
+     },
+     {
+      "value": "NO",
+      "label": "No"
+     },
+     {
+      "value": "NOT_SURE",
+      "label": "Not sure"
+     }
+    ],
+    "bodyText": "Does hair loss run in your family?",
+    "callouts": [
+     {
+      "title": "Why we ask",
+      "body": "The most common cause of hair loss is hereditary hair loss. So if an immediate family member has a history of hair loss, there’s a good chance it’ll affect you too.\nSource"
+     }
+    ],
+    "nextStepId": "7fab31df-73d7-495b-8bad-d5f330f60e0f"
+   },
+   {
+    "order": 11,
+    "stepId": "7fab31df-73d7-495b-8bad-d5f330f60e0f",
+    "stepType": "SINGLE_SELECT",
+    "questionText": "How often do you tend to experience stress?",
+    "description": "Why we ask\nIf you experience stress, it could affect your hair. Stress can trigger and worsen a form of temporary hair loss called telogen effluvium, which interrupts your hair’s natural growth cycle.",
+    "cta": "Continue",
+    "required": true,
+    "datapointKey": "intentHairlossStress",
+    "datapointType": "SINGLE_SELECT",
+    "options": [
+     {
+      "value": "RARELY_STRESSED",
+      "label": "Rarely"
+     },
+     {
+      "value": "SOMETIMES_STRESSED",
+      "label": "Sometimes"
+     },
+     {
+      "value": "ALWAYS_STRESSED",
+      "label": "All the time"
+     },
+     {
+      "value": "NOT_SURE_STRESSED",
+      "label": "Not sure"
+     }
+    ],
+    "bodyText": "How often do you tend to experience stress?",
+    "callouts": [
+     {
+      "title": "Why we ask",
+      "body": "If you experience stress, it could affect your hair. Stress can trigger and worsen a form of temporary hair loss called telogen effluvium, which interrupts your hair’s natural growth cycle."
+     }
+    ],
+    "nextStepId": "81e85124-30e9-4de3-a972-42d41b7e2156"
+   },
+   {
+    "order": 12,
+    "stepId": "81e85124-30e9-4de3-a972-42d41b7e2156",
+    "stepType": "INFO",
+    "questionText": "Factors like *aging,* *family history,* and *stress* can cause hair shedding and thinning.\nThe good news? Prescription treatments can help you fight these root causes, so you can grow *visibly thicker, fuller hair* in just *3 to 6 months.*",
+    "cta": "Continue ",
+    "bodyText": "Factors like *aging,* *family history,* and *stress* can cause hair shedding and thinning.\nThe good news? Prescription treatments can help you fight these root causes, so you can grow *visibly thicker, fuller hair* in just *3 to 6 months.*",
+    "nextStepId": "97403867-cbfd-4ea7-bcab-773c986762a0"
+   },
+   {
+    "order": 13,
+    "stepId": "97403867-cbfd-4ea7-bcab-773c986762a0",
+    "stepType": "INFO",
+    "questionText": "Now let’s get to know your hair routine.\nYour answers help determine which treatment types best fit into your day-to-day.",
+    "cta": "Continue",
+    "bodyText": "Now let’s get to know your hair routine.\nYour answers help determine which treatment types best fit into your day-to-day.",
+    "nextStepId": "83336b0e-d68e-4296-9cc8-25f5cacc601e"
+   },
+   {
+    "order": 14,
+    "stepId": "83336b0e-d68e-4296-9cc8-25f5cacc601e",
+    "stepType": "SINGLE_SELECT",
+    "questionText": "How do you style your hair?",
+    "cta": "Continue",
+    "required": true,
+    "datapointKey": "intentHairlossStyling",
+    "datapointType": "SINGLE_SELECT",
+    "options": [
+     {
+      "value": "NONE",
+      "label": "No styling",
+      "sublabel": "I let my hair do its thing"
+     },
+     {
+      "value": "PRODUCTS",
+      "label": "Products",
+      "sublabel": "Gel, mousse, etc."
+     },
+     {
+      "value": "HAT",
+      "label": "Hat",
+      "sublabel": "I usually wear a hat"
+     },
+     {
+      "value": "PROTECTIVE_STYLES",
+      "label": "Protective styles",
+      "sublabel": "Braids, locs, etc."
+     }
+    ],
+    "bodyText": "How do you style your hair?",
+    "nextStepId": "ea93db21-2347-4f54-be1f-31e9855b4ef1"
+   },
+   {
+    "order": 15,
+    "stepId": "ea93db21-2347-4f54-be1f-31e9855b4ef1",
+    "stepType": "SINGLE_SELECT",
+    "questionText": "How much time do you spend on your hair every day?",
+    "description": "We offer treatments that are quick, simple, and work with your routine.",
+    "cta": "Continue",
+    "required": true,
+    "datapointKey": "intentHairlossTimeCaring",
+    "datapointType": "SINGLE_SELECT",
+    "options": [
+     {
+      "value": "LESS_THAN_5_MINUTES",
+      "label": "Less than 5 minutes"
+     },
+     {
+      "value": "5_TO_10_MINUTES",
+      "label": "5-10 minutes"
+     },
+     {
+      "value": "MORE_THAN_10",
+      "label": "10+ minutes"
+     }
+    ],
+    "nextStepId": "408f9fb8-a5f8-4ce3-bdee-37f7863fcbef"
+   },
+   {
+    "order": 16,
+    "stepId": "408f9fb8-a5f8-4ce3-bdee-37f7863fcbef",
+    "stepType": "STORYTELLING",
+    "questionText": "Reviewing responses",
+    "cta": "Continue",
+    "bodyText": "Great news—we have options that may work for you.",
+    "nextStepId": "45cd4007-7de4-4ca0-8721-b982da5b32d9"
+   },
+   {
+    "order": 17,
+    "stepId": "45cd4007-7de4-4ca0-8721-b982da5b32d9",
+    "stepType": "INFO",
+    "questionText": "Here's what we know about your hair so far",
+    "cta": "Next →",
+    "bodyText": "Here’s what we know about your hair so far:\nNow, let’s go over what you can expect with treatment through Hims.",
+    "answerSummaryBlocks": [
+     {
+      "type": "flowStepAnswerSummarySection",
+      "heading": "Hair routine",
+      "internalName": "Hair routine"
+     },
+     {
+      "type": "flowStepAnswerSummaryLine",
+      "internalName": "Family history",
+      "label": "Family history"
+     },
+     {
+      "type": "flowStepAnswerSummaryLine",
+      "internalName": "Hair styling"
+     },
+     {
+      "type": "flowStepAnswerSummarySection",
+      "internalName": "Hair changes",
+      "heading": "Hair changes"
+     },
+     {
+      "type": "flowStepAnswerSummarySection",
+      "heading": "Lifestyle factors",
+      "internalName": "Lifestyle factors"
+     },
+     {
+      "type": "flowStepAnswerSummaryLine",
+      "internalName": "Routine duration",
+      "suffix": "routine"
+     },
+     {
+      "type": "flowStepAnswerSummaryLine",
+      "internalName": "Stress",
+      "label": "Stress"
+     },
+     {
+      "type": "flowStepAnswerSummary",
+      "internalName": "Your Hair Summary",
+      "title": "Your Hair"
+     },
+     {
+      "type": "flowStepAnswerSummaryLine",
+      "internalName": "Hair loss onset",
+      "label": "Noticed"
+     },
+     {
+      "type": "flowStepAnswerSummaryLine",
+      "internalName": "Hair loss location"
+     }
+    ],
+    "nextStepId": "b038d1f3-3d7d-41cc-9ba5-399d99d738ff"
+   },
+   {
+    "order": 18,
+    "stepId": "b038d1f3-3d7d-41cc-9ba5-399d99d738ff",
+    "stepType": "INFO",
+    "questionText": "At Hims, we offer treatments with ingredients that have been shown to stop hair loss and promote regrowth.",
+    "cta": "Why these two? →",
+    "bodyText": "At Hims, we offer treatments with ingredients that have been shown to stop hair loss and promote regrowth.",
+    "nextStepId": "c5aec3bc-ea9b-4598-910d-89f3f9da129f"
+   },
+   {
+    "order": 19,
+    "stepId": "c5aec3bc-ea9b-4598-910d-89f3f9da129f",
+    "stepType": "INFO",
+    "questionText": "",
+    "cta": "How do I get them? →",
+    "bodyText": "Finasteride and minoxidil are popular treatments often prescribed by dermatologists to treat hair loss.",
+    "panels": [
+     {
+      "body": "90% \nsaw reduced shedding with finasteride.1"
+     },
+     {
+      "body": "80%\nexperienced significant hair regrowth with minoxidil.2"
+     }
+    ],
+    "disclaimers": [
+     {
+      "title": "Sources",
+      "body": "1. Based on two 1-year clinical trials, where 1553 men (18 to 41 years of age) with male pattern hair loss received oral finasteride 1 mg/d or placebo, and 1215 men continued in blinded extension studies for a second year.\n2. Beach, Renée A. et al. \"Low-dose oral minoxidil for treating alopecia: A 3-year North American retrospective case series\" J. of the American Academy of Dermatology."
+     }
+    ],
+    "nextStepId": "62ce88d0-57c4-4028-bcb6-a891eb501ef3"
+   },
+   {
+    "order": 20,
+    "stepId": "62ce88d0-57c4-4028-bcb6-a891eb501ef3",
+    "stepType": "INFO",
+    "questionText": "See what others are saying about their treatments.",
+    "cta": "Next →",
+    "bodyText": "See what others are saying about their treatments.",
+    "panels": [
+     {
+      "startLabel": "Month 0",
+      "attributionName": "David D.",
+      "badge": "verified",
+      "body": "“It has made me more confident and I am proud to show other people about it.”",
+      "endLabel": "Month 5"
+     },
+     {
+      "endLabel": "Month 9",
+      "startLabel": "Month 0",
+      "attributionName": "Andrew N.",
+      "badge": "verified",
+      "body": "“I began to see progress in less than 3 months. My brother saw my progress and has begun using it!”"
+     },
+     {
+      "endLabel": "Month 5",
+      "startLabel": "Month 0",
+      "attributionName": "Steve R.",
+      "badge": "verified",
+      "body": "“I’ve had thinning at the crown for many years. Now it’s definitely filling in. I love that!”"
+     },
+     {
+      "startLabel": "Month 0",
+      "attributionName": "Kevin C.",
+      "badge": "verified",
+      "body": "“Between month 4-5 the progress blew me away! I went back to my barber and he couldn’t believe it.”",
+      "endLabel": "Month 5"
+     },
+     {
+      "body": "“I noticed my hair getting thicker in places that was thin and it had more body. I have my confidence back.”",
+      "endLabel": "Month 5",
+      "startLabel": "Month 0",
+      "attributionName": "Kenton G.",
+      "badge": "verified"
+     }
+    ],
+    "disclaimers": [
+     {
+      "title": null,
+      "body": "Before/after images shared by customers who have purchased varying products. These customers’ results have not been independently verified. Individual results will vary."
+     }
+    ],
+    "nextStepId": "e3089684-9ef5-4bf5-84ca-3b35513f06ad"
+   },
+   {
+    "order": 21,
+    "stepId": "e3089684-9ef5-4bf5-84ca-3b35513f06ad",
+    "stepType": "STORYTELLING",
+    "questionText": "You won’t have to do it alone. We’re here to help.\nUnlimited messaging with a medical provider\nRegular check-ins\nAdjustments as needed",
+    "description": "DEV NOTE: Hardcoded component",
+    "bodyText": "You won’t have to do it alone. We’re here to help.",
+    "panels": [
+     {
+      "heading": "Adjustments as needed"
+     },
+     {
+      "heading": "Regular check-ins"
+     },
+     {
+      "heading": "Unlimited messaging with a medical provider"
+     }
+    ],
+    "autoAdvanceMs": 5000
+   }
+  ],
+  "branches": [
+   {
+    "from": "77d8dafa-4b10-48d9-b83c-da45fcaddb90",
+    "to": "dd20f561-c9b4-4262-9ae0-e1959204d3ab"
+   },
+   {
+    "from": "37c0996b-3733-459c-b70d-cccc38e371db",
+    "to": "47e88e74-3c7b-4adf-8b81-f9eddcd7a91d"
+   },
+   {
+    "from": "ea93db21-2347-4f54-be1f-31e9855b4ef1",
+    "to": "408f9fb8-a5f8-4ce3-bdee-37f7863fcbef"
+   },
+   {
+    "from": "dd20f561-c9b4-4262-9ae0-e1959204d3ab",
+    "to": "025b8458-c231-4b7a-945e-3e26e0792eac"
+   },
+   {
+    "from": "62ce88d0-57c4-4028-bcb6-a891eb501ef3",
+    "to": "e3089684-9ef5-4bf5-84ca-3b35513f06ad"
+   },
+   {
+    "from": "97403867-cbfd-4ea7-bcab-773c986762a0",
+    "to": "83336b0e-d68e-4296-9cc8-25f5cacc601e"
+   },
+   {
+    "from": "025b8458-c231-4b7a-945e-3e26e0792eac",
+    "to": "17f360a2-ea25-43c1-801b-10bff2ce38ae"
+   },
+   {
+    "from": "81e85124-30e9-4de3-a972-42d41b7e2156",
+    "to": "97403867-cbfd-4ea7-bcab-773c986762a0"
+   },
+   {
+    "from": "4b5857d4-75bd-4c53-a098-0ad800e6bf03",
+    "to": "024b75df-897c-420a-b0df-ca38321fb4ad"
+   },
+   {
+    "from": "c5aec3bc-ea9b-4598-910d-89f3f9da129f",
+    "to": "62ce88d0-57c4-4028-bcb6-a891eb501ef3"
+   },
+   {
+    "from": "17f360a2-ea25-43c1-801b-10bff2ce38ae",
+    "to": "4b5857d4-75bd-4c53-a098-0ad800e6bf03"
+   },
+   {
+    "from": "633057d9-955c-479d-838e-8e70cb68465a",
+    "to": "d9a57f80-9776-46b4-8855-5dbb39e6ae37"
+   },
+   {
+    "from": "b038d1f3-3d7d-41cc-9ba5-399d99d738ff",
+    "to": "c5aec3bc-ea9b-4598-910d-89f3f9da129f"
+   },
+   {
+    "from": "45cd4007-7de4-4ca0-8721-b982da5b32d9",
+    "to": "b038d1f3-3d7d-41cc-9ba5-399d99d738ff"
+   },
+   {
+    "from": "024b75df-897c-420a-b0df-ca38321fb4ad",
+    "to": "37c0996b-3733-459c-b70d-cccc38e371db"
+   },
+   {
+    "from": "47e88e74-3c7b-4adf-8b81-f9eddcd7a91d",
+    "to": "7fab31df-73d7-495b-8bad-d5f330f60e0f"
+   },
+   {
+    "from": "d9a57f80-9776-46b4-8855-5dbb39e6ae37",
+    "to": "77d8dafa-4b10-48d9-b83c-da45fcaddb90"
+   },
+   {
+    "from": "408f9fb8-a5f8-4ce3-bdee-37f7863fcbef",
+    "to": "45cd4007-7de4-4ca0-8721-b982da5b32d9"
+   },
+   {
+    "from": "7fab31df-73d7-495b-8bad-d5f330f60e0f",
+    "to": "81e85124-30e9-4de3-a972-42d41b7e2156"
+   },
+   {
+    "from": "83336b0e-d68e-4296-9cc8-25f5cacc601e",
+    "to": "ea93db21-2347-4f54-be1f-31e9855b4ef1"
+   }
+  ],
+  "endsAt": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair (email field: the account wall)"
+ },
+ "behindTheAccountWall": {
+  "note": "Nothing in this block was seen on a live page. It is what publicly served code and feature flags show about the steps after sign-up. The medical questions themselves are NOT here: they are fetched only for signed-in users (route /triage/:triageSessionId/flows/:flowVersionId).",
+  "signUpSteps_code": [
+   {
+    "screen": "email",
+    "heading": "Ready to see if you’re eligible?",
+    "sub": "Next, we’ll cover your health and medical history, as well as treatment options.",
+    "field": "Email address",
+    "seenLive": true
+   },
+   {
+    "screen": "name",
+    "heading": "What's your name?",
+    "fields": [
+     "First name",
+     "Last name"
+    ],
+    "hint": "To avoid delays to your order, please ensure this matches the name on your ID"
+   },
+   {
+    "screen": "password",
+    "label": "Create password",
+    "checkbox": "I agree to the terms and conditions and privacy policy"
+   }
+  ],
+  "sourceSignUp": "raw/app/chunks/start-signup-ub7udp1x.js (message ids startSignupHims.*)",
+  "platformSettingsForHair_flags": {
+   "requiresScreeningQuiz": true,
+   "isUpfrontPayment": true,
+   "requiresGpAddress": true,
+   "requiresPrescriberCall": false,
+   "requiresPrescriberBooking": false,
+   "decoupleInitialQuiz": true,
+   "isMultipleMedication": false,
+   "escalateSeniorConsults": true,
+   "fulfillOnPrescribe": false,
+   "source": "feature flag consultation_flow_config.HAIR evaluated for brand hims-uk (raw/app/launchdarkly-flags-hims-uk-anon.json)"
+  },
+  "flowStepTypesThePlatformSupports": [
+   "SINGLE_SELECT",
+   "MULTI_SELECT",
+   "BOOLEAN",
+   "DATE",
+   "NUMBER",
+   "TEXT",
+   "LONG_TEXT",
+   "PHOTO_UPLOAD",
+   "LIVE_PHOTO",
+   "FILE_UPLOAD",
+   "VIDEO",
+   "INFO",
+   "STORYTELLING",
+   "REDIRECT"
+  ],
+  "eligibilityEngine_code": {
+   "query": "HimsUkHairPurchaseOptions(consultationId) -> consultation.purchasePrompt.options { recommendedPreset, defaultPreset, entries[ PurchasePreset { contentKey, eligible, denials, paymentPlan, offeringSelection.sequenceSelections.sequence { deliveryIntervalCode, tags } } ] }",
+   "meaning": "The server returns every product/plan combination (\"preset\") with eligible true/false and a list of denials (types seen in code: PurchasePresetRuleMatchedDenial, PurchasePresetMissingDenial). The hero product is the one holding recommendedPreset, else defaultPreset, else the first. A product whose default preset has eligible === false is listed as unavailable and greyed out. Strength comes from sequence tags that look like \"1.1mg\"; plan length from the delivery interval code.",
+   "contentKeyToProductId": {
+    "fin-min-chew": "6BFr0YdOjT",
+    "min-chew": "hc8KoyPfdg",
+    "supplement-blend": "UjPlhXiL",
+    "finasteride": "6wTK2oBx",
+    "topical-fin-min-spray-keto-biotin": "ZggiM0GFpM",
+    "topical-fin-min-spray": "P61DhG9W",
+    "topical-fin-min-serum": "KgktFDR2",
+    "minoxidil-serum": "cP3drAvl",
+    "regaine": "PGeVqBFR",
+    "combo-kit": "s2hF6Mdn"
+   },
+   "cardOrderOnTreatmentOptionsScreen": {
+    "oral": [
+     "6BFr0YdOjT",
+     "hc8KoyPfdg",
+     "UjPlhXiL",
+     "6wTK2oBx"
+    ],
+    "topical": [
+     "ZggiM0GFpM",
+     "P61DhG9W",
+     "KgktFDR2",
+     "cP3drAvl",
+     "PGeVqBFR"
+    ],
+    "combo": [
+     "s2hF6Mdn"
+    ]
+   },
+   "ineligibleCardText": "Not available based on your medical history",
+   "otherOptionsIntro": "Based on the medical information you provided, you may not be suitable for some treatments. If you believe this assessment is inaccurate, kindly review your responses to the medical questionnaire.",
+   "rejectionScreen": "This treatment may not be suitable / {firstName}, thank you for your answers / … we’re unable to offer a {brand} treatment that’s clinically appropriate under our prescribing guidelines.",
+   "sources": [
+    "raw/app/chunks/use-hims-uk-hair-purchase-options-RTx4GHla.js",
+    "raw/app/chunks/hims-uk-treatment-options-CgqlFS7X.js",
+    "raw/app/chunks/hims-uk-treatment-card-content-C0UjamKD.js",
+    "raw/app/chunks/router-BhZtaX-r.js",
+    "raw/app/chunks/rejected-screen-COWSDWyl.js",
+    "raw/app/hims-uk-hair-recommendation-code.js",
+    "raw/app/chunks/fixture-*.js"
+   ]
+  },
+  "returningCustomerHealthCheck_code": {
+   "title": "Let's get you back on track",
+   "intro": "Please confirm you understand and agree with the following. Since your last {brandName} consultation:",
+   "statements": [
+    "I have not experienced low blood pressure, frequent dizzy spells, palpitations, or been diagnosed with heart failure",
+    "My partner is not pregnant, and I am not currently trying for a baby",
+    "I have not started any other new medications or been diagnosed with any new medical conditions"
+   ],
+   "options": [
+    "Yes, I agree with the above",
+    "No, something has changed"
+   ],
+   "source": "raw/app/chunks/health-details-BKmT7dFL.js"
+  },
+  "oldPlatform_code": {
+   "status": "Old Hims UK consultation code is still served from www.forhims.co.uk but /c/hl now redirects to the new app, so it is no longer the live flow. Its question sets (Contentful \"intakes\" for Intent and Medical) are not served any more.",
+   "stages": [
+    "ASSESSMENT_INTENT_STAGE (the same intent quiz, recap and marketing screens as today)",
+    "LOGIN (enrolment: \"You’re eligible for treatment!\" + START_VISIT with date of birth)",
+    "TREATMENT_PREFERENCES (TREATMENT_APPLICATION_SELECT oral/topical/no preference; HAIR_PREMIUM_TOPFIN_SPRAY_HIGHLIGHT; HAIR_HYBRID_CHEW_HIGHLIGHT; TREATMENT_DRUG_SELECT_RECOMMENDATION; TREATMENT_DRUG_SELECT)",
+    "ASSESSMENT_MEDICAL_STAGE (dynamic medical questions; INTAKE_DISQUALIFICATION)",
+    "POST_INTAKE_TREATMENT_PREFERENCES (TREATMENT_DRUG_RESELECT when the chosen drug is contraindicated; TREATMENT_DRUG_DISCLAIMER_HAIR)",
+    "SHIPPING_ADDRESS (with INTERSTITIAL_REGROWTH_TIMELINE)",
+    "PAYMENT (PAYMENT_WITH_SCHEDULE; POST_PAYMENT)"
+   ],
+   "intentQuestionIds": [
+    "HL-INT-HAIR-CHANGES",
+    "HL-INT-NOTICE-SPOTS",
+    "HL-INT-RUN-IN-FAMILY",
+    "HL-INT-EXPERIENCE-STRESS",
+    "HL-INT-HAIR-TIME",
+    "HL-INT-STYLE-HAIR"
+   ],
+   "preferenceQuestion": {
+    "eyebrow": "Customising your treatment",
+    "title": "Which type of daily treatment do you prefer?",
+    "options": [
+     {
+      "key": "oral",
+      "label": "Pills or chews",
+      "deck": "Take one a day",
+      "tag": "Most popular"
+     },
+     {
+      "key": "topical",
+      "label": "Sprays or serums",
+      "deck": "Apply right on scalp"
+     },
+     {
+      "key": "noPreference",
+      "label": "No Preference",
+      "deck": "Choose what's most effective for me"
+     }
+    ]
+   },
+   "recommendationCopy": {
+    "title": "Your treatment options",
+    "description": "Based on your hair loss type and goals, you'd be a great candidate for:",
+    "reselection": "Based on your hair loss type and health history, you're a better candidate for the following treatment.",
+    "ineligible": "Based on your hair loss type and health history, you are not eligible for treatments that contain {ingredient}.",
+    "badges": [
+     "No-pill option",
+     "For receding hairlines",
+     "For overall thinning hair",
+     "For thinning at the crown"
+    ],
+    "heroCallout": "Purchased by 1000+ men in the last week"
+   },
+   "tagEngine": "Server returns \"assessment.contraindications\" (a list of tags). Every active product whose Contentful tags include one of them is removed; the tag \"all\" removes everything. Each answer option in the Contentful intake could carry \"excludesTags\"; questions could be shown only for certain products (\"includedBy\") or only after a trigger answer (\"trigger\").",
+   "productTags": {
+    "P61DhG9W": [
+     "minoxidil",
+     "finasteride",
+     "topical",
+     "minoxidil-topical"
+    ],
+    "ZggiM0GFpM": [
+     "minoxidil",
+     "finasteride",
+     "topical",
+     "minoxidil-topical"
+    ],
+    "KgktFDR2": [
+     "finasteride",
+     "minoxidil",
+     "topical",
+     "minoxidil-topical"
+    ],
+    "6BFr0YdOjT": [
+     "finasteride",
+     "minoxidil",
+     "minoxidil-oral",
+     "finasteride-oral"
+    ],
+    "hc8KoyPfdg": [
+     "minoxidil",
+     "minoxidil-oral"
+    ],
+    "6wTK2oBx": [
+     "finasteride",
+     "lactose-tablet",
+     "finasteride-oral"
+    ],
+    "cP3drAvl": [
+     "minoxidil",
+     "topical",
+     "minoxidil-topical"
+    ],
+    "PGeVqBFR": [
+     "minoxidil",
+     "topical",
+     "minoxidil-topical"
+    ],
+    "s2hF6Mdn": [
+     "finasteride",
+     "minoxidil",
+     "topical",
+     "lactose-tablet",
+     "finasteride-oral"
+    ],
+    "UjPlhXiL": []
+   },
+   "sources": [
+    "raw/www-js/legacy-json-blobs.json (copy block \"151\")",
+    "raw/www-js/hims.modern.client-domains-consultation-acquisition-hair-loss.*.js",
+    "raw/www-js/hims.modern.818.*.js",
+    "raw/www-js/hims.modern.1742.*.js",
+    "raw/www-js/hims.modern.2392.*.js",
+    "raw/contentful-products.slim.json"
+   ]
+  },
+  "experimentsRunningOnTheSite_flags": {
+   "exp-2026-previous-hl-treatment": "5% of visitors (this browser was in the control bucket). Name suggests a test of a \"previous hair-loss treatment\" question.",
+   "source": "raw/hair-loss.HIMS_EXPERIMENT_CONTEXT.json, raw/contentful-experiments.json"
+  },
+  "hersUK_code": {
+   "entry": "https://app.forhers.co.uk/start/signup?t=hair (name first; no anonymous flow: cfg_anon_flow_version_map for brand hers-uk has no \"hair\" key)",
+   "storedAnswersReadBySummaryPage": {
+    "hairLossLocation (also _hairLossLocation)": {
+     "PART_WIDENING": "A wider hair part",
+     "CROWN_VISIBLE": "More visible scalp at the crown",
+     "THIN_TEMPLES": "Thinning around the temples",
+     "DIFFUSE_THIN": "Thinning & shedding across the scalp",
+     "PATCHY_HAIR_LOSS": "Bald spots or round patches",
+     "RECEDING_HAIRLINE": "A receding hairline"
+    },
+    "hairGoals": {
+     "STOP_HAIR_SHED": "Reduce hair shedding",
+     "REGROW_LOST_HAIR": "Regrow lost hair",
+     "IMPROVE_THIN_AREAS": "Improve coverage in thinning areas",
+     "INCREASE_THICKNESS": "Increase overall thickness and volume",
+     "STRONGER_HEALTHIER_HAIR": "Have stronger, healthier looking hair"
+    },
+    "hairLossOnset": {
+     "GRADUALLY": "Gradually, more than 6 months ago"
+    },
+    "hairLossFamilyHistory": {
+     "YES": "Family history: Yes",
+     "NO": "Family history: No"
+    },
+    "stressFrequency": {
+     "OFTEN": "Stress: Often",
+     "OCCASIONAL": "Stress: Occasionally",
+     "RARE": "Stress: Rarely"
+    },
+    "dateOfBirth": "Age: {age}"
+   },
+   "treatments": {
+    "hair-vitamins-minoxidil-pill": "Hair Vitamins + Minoxidil Pill: minoxidil 1.5mg, biotin 2.5mg, vitamin C 100mg, vitamin B5 11mg, vitamin B6 2.5mg, zinc sulfate 50mg (badge Most popular)",
+    "biotin-minoxidil-chew": "Biotin + Minoxidil Chew: minoxidil 1.5mg, biotin 2.5mg",
+    "hair-vitamins-minoxidil-spironolactone-capsule": "minoxidil 1.5mg, spironolactone 44mg, biotin 2.5mg, vitamin B5 11mg, vitamin B6 2.44mg, vitamin C 100mg, zinc sulfate 50mg",
+    "hair-blends-serum": "Minoxidil Serum: minoxidil 7%, ketoconazole 2.2%, biotin, dexpanthenol 5% (pet caution)",
+    "hair-vitamins": "Hair Vitamins: biotin 2.5mg, vitamin C 100mg, vitamin B5 11mg, vitamin B6 2.5mg, zinc sulfate 50mg"
+   },
+   "ineligibleCardText": "Treatment is not suitable based on your answers",
+   "sources": [
+    "raw/app/chunks/router-Ch9efIO3.js",
+    "raw/app/chunks/router-CSFr2DF0.js",
+    "raw/app/chunks/hair-treatments-from-options-Bb9ASKmz.js",
+    "raw/app/hair-recommendation-messages.txt",
+    "raw/app/launchdarkly-flags-hers-uk-anon.json"
+   ]
+  }
+ }
+}

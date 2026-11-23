@@ -1,0 +1,78 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "link": {
+     "label": "Already a Hair + Me member?",
+     "url": "/account/login"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 1,
+   "sectionTitle": "ABOUT YOU"
+  },
+  "description": "Tell us what you’d like to achieve with Hair + Me – we can help with all of the below.",
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 9307,
+    "inputConfig": {
+     "options": [
+      {
+       "image": null,
+       "label": "Prevent, stop or reverse hair loss",
+       "value": 7
+      },
+      {
+       "image": null,
+       "label": "Reverse hair thinning",
+       "value": 8
+      },
+      {
+       "image": null,
+       "label": "Improve my hairline, parting or crown",
+       "value": 9
+      },
+      {
+       "image": null,
+       "label": "Grow thicker and fuller hair",
+       "value": 10
+      },
+      {
+       "image": null,
+       "label": "Boost overall hair health",
+       "value": 11
+      }
+     ]
+    },
+    "inputType": "multi_select_checkbox",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": []
+   },
+   {
+    "id": 3042,
+    "inputConfig": {
+     "option": {
+      "label": "Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us."
+     }
+    },
+    "inputType": "boolean_checkbox",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "What are your hair goals?",
+  "type": "question"
+ }
+}

@@ -1,0 +1,372 @@
+{
+ "start": "https://www.hairandme.com/c/suh/new",
+ "steps": [
+  {
+   "do": "click",
+   "text": "Treatment for women"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "tp"
+  },
+  {
+   "do": "click",
+   "text": "Grow thicker and fuller hair"
+  },
+  {
+   "do": "click",
+   "text": "Boost overall hair health"
+  },
+  {
+   "do": "click",
+   "text": "Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us."
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "yhg"
+  },
+  {
+   "do": "click",
+   "text": "Grow thicker and fuller hair"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "hgp"
+  },
+  {
+   "do": "click",
+   "text": "Ready to start treatment"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "js"
+  },
+  {
+   "do": "select",
+   "selector": "select[name='3039']",
+   "value": {
+    "label": "Female"
+   }
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "pds"
+  },
+  {
+   "do": "click",
+   "text": "I confirm the above selection is accurate and true."
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "pdsc"
+  },
+  {
+   "do": "click",
+   "text": "Straight"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "ht"
+  },
+  {
+   "do": "click",
+   "text": "None of the above"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "hs"
+  },
+  {
+   "do": "click",
+   "text": "3-4 times per week"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "hw"
+  },
+  {
+   "do": "click",
+   "text": "None of the above"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "hht"
+  },
+  {
+   "do": "click",
+   "text": "Spironolactone tablets"
+  },
+  {
+   "do": "click",
+   "text": "Minoxidil spray"
+  },
+  {
+   "do": "click",
+   "text": "Yes, I understand this."
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "htp"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "hdw"
+  },
+  {
+   "do": "click",
+   "text": "I have no hair loss or thinning"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "htaf"
+  },
+  {
+   "do": "wait",
+   "ms": 8500,
+   "_step": "ar"
+  },
+  {
+   "do": "click",
+   "text": "Fair. It often burns, but tans a little"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "st"
+  },
+  {
+   "do": "click",
+   "text": "Oily"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "sc"
+  },
+  {
+   "do": "click",
+   "text": "Flaking or dandruff"
+  },
+  {
+   "do": "click",
+   "text": "Redness and crusting around the base of your hair"
+  },
+  {
+   "do": "click",
+   "text": "Highly sensitive and irritable areas"
+  },
+  {
+   "do": "click",
+   "text": "Pustules/lumps/cysts"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "scc"
+  },
+  {
+   "do": "click",
+   "text": "Fuller, denser-looking hair that I feel confident about"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "smt"
+  },
+  {
+   "do": "click",
+   "text": "Yes"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "pt"
+  },
+  {
+   "do": "click",
+   "text": "The Drops"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "tt"
+  },
+  {
+   "do": "click",
+   "text": "Skip",
+   "exact": false,
+   "_step": "dt"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "Yes, I've read and understood the information and would like to carry on."
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "pg"
+  },
+  {
+   "do": "click",
+   "text": "None of the above"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "mp"
+  },
+  {
+   "do": "click",
+   "text": "Steroids or other medications for psoriasis or eczema on your scalp"
+  },
+  {
+   "do": "click",
+   "text": "Other"
+  },
+  {
+   "do": "fill",
+   "selector": "textarea",
+   "value": "Levothyroxine"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "mdf"
+  },
+  {
+   "do": "click",
+   "text": "Pheochromocytoma"
+  },
+  {
+   "do": "click",
+   "text": "Any heart or cardiovascular condition (e.g. stroke, heart attack, heart failure, angina, atrial fibrillation, valve disorder, irregular or fast heartbeat)"
+  },
+  {
+   "do": "click",
+   "text": "Hypertrichosis (excessive hair growth anywhere on the body, unrelated to hormones)"
+  },
+  {
+   "do": "click",
+   "text": "PoTS syndrome (postural tachycardia syndrome)"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "mcf"
+  },
+  {
+   "do": "click",
+   "text": "No known allergies"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "al"
+  },
+  {
+   "do": "click",
+   "text": "5"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "rhf"
+  },
+  {
+   "do": "click",
+   "text": "5"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "rha"
+  },
+  {
+   "do": "click",
+   "text": "I'm looking for a long-term effective haircare treatment"
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "di"
+  },
+  {
+   "do": "click",
+   "text": "Skip",
+   "exact": false,
+   "_step": "rj"
+  },
+  {
+   "do": "click",
+   "selector": "input[name=\"3053\"]"
+  },
+  {
+   "do": "type",
+   "value": "15061956"
+  },
+  {
+   "do": "click",
+   "text": "Yes, I live in the UK (excluding Channel Islands)."
+  },
+  {
+   "do": "click",
+   "text": "Next question",
+   "exact": false,
+   "_step": "el"
+  },
+  {
+   "do": "click",
+   "text": "Continue to checkout",
+   "exact": false,
+   "_step": "ct"
+  }
+ ]
+}

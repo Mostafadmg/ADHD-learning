@@ -1,0 +1,14 @@
+STEP 02 goto "https://www.hairandme.com/HAIR_SIGNUP_URL"
+URL: https://www.hairandme.com/HAIR_SIGNUP_URL
+TITLE: 
+
+--- VISIBLE TEXT ---
+Something went wrong
+
+Sorry, something went wrong. Please try again later.
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

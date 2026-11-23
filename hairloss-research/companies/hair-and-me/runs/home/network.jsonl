@@ -1,0 +1,10 @@
+{"url":"https://rest.hairandme.com/api/v1/whoami","method":"GET","status":401,"size":145}
+{"url":"https://rest.hairandme.com/api/v1/feature-tests?experiment_id=c740bb65-dfb2-4f7b-b938-0327bdfe201c&session_id=fca45e73-c607-4284-9dae-7226033a5f4b","method":"GET","status":200,"size":74}
+{"url":"https://rest.hairandme.com/api/v1/feature-tests?experiment_id=718c5979-5810-4946-bda0-b1917c4ab1b0&session_id=fca45e73-c607-4284-9dae-7226033a5f4b","method":"GET","status":200,"size":74}
+{"url":"https://rest.hairandme.com/api/v1/feature-tests?experiment_id=856180da-6614-4191-9d3d-10a92e824968&session_id=fca45e73-c607-4284-9dae-7226033a5f4b","method":"GET","status":200,"size":77}
+{"url":"https://rest.hairandme.com/api/v1/feature-tests?experiment_id=497b626e-aa33-46c8-9829-a593deda76cc&session_id=fca45e73-c607-4284-9dae-7226033a5f4b","method":"GET","status":200,"size":74}
+{"url":"https://rest.hairandme.com/api/v1/feature-tests?experiment_id=8a5dcccb-a06c-4f7a-ad86-5c4c35ce0a0c&session_id=fca45e73-c607-4284-9dae-7226033a5f4b","method":"GET","status":200,"size":74}
+{"url":"https://api.hairandme.com/authenticate/check?_v=v6.47.0&_s=fca45e73-c607-4284-9dae-7226033a5f4b&_rid=0f994581-f823-4bb7-a14c-876b71b10695&_duid=3","method":"GET","status":401,"size":52}
+{"url":"https://bzrcdn.openai.com/pixel-config/v1/LppQs5WKQNY5HiaXHHesmM.json","method":"GET","status":200,"size":44}
+{"url":"https://pixel-config.reddit.com/pixels/a2_gp7zkqpf1cle/config","method":"GET","status":200,"size":52}
+{"url":"https://apps.rokt-api.com/identity/v1/identify","method":"POST","status":200,"size":175}

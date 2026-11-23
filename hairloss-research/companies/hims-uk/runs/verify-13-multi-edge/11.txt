@@ -1,0 +1,12 @@
+STEP 11 FAILED click "Straight or wavy"
+URL: https://app.forhims.co.uk/flow/a9a88e4a-89b9-47ae-8138-3a1acaa41594?t=hair&anon_flow_key=hair
+TITLE: 
+
+--- VISIBLE TEXT ---
+(could not read page: Error: page.evaluate: Target page, context or browser has been closed)
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

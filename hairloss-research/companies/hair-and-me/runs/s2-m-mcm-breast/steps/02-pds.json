@@ -1,0 +1,114 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 1,
+   "sectionTitle": "ABOUT YOU"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 166,
+    "inputConfig": {
+     "displayTextV2": [
+      {
+       "header": "Why are we asking?",
+       "text": [
+        {
+         "part": "Hormones play a significant role in hair loss and regrowth, and our Dermatology Team needs to know if there’s any possibility you could become pregnant. We understand your assigned sex at birth and gender identity may be different."
+        }
+       ]
+      }
+     ]
+    },
+    "inputType": "display_text",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 3039,
+    "inputConfig": {
+     "options": [
+      {
+       "label": "Male",
+       "value": 1
+      },
+      {
+       "label": "Female",
+       "value": 2
+      }
+     ],
+     "placeholderText": "Please select"
+    },
+    "inputType": "single_select",
+    "is_custom": false,
+    "label": "Tell us the sex you were assigned at birth",
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 3054,
+    "inputConfig": {
+     "isOptional": true,
+     "options": [
+      {
+       "label": "Woman/Girl",
+       "value": 1
+      },
+      {
+       "label": "Man/Boy",
+       "value": 2
+      },
+      {
+       "label": "Transwoman/Transgirl",
+       "value": 3
+      },
+      {
+       "label": "Transman/Transboy",
+       "value": 4
+      },
+      {
+       "label": "Non-Binary/Genderqueer/Agender/Gender Fluid",
+       "value": 5
+      },
+      {
+       "label": "Don’t know",
+       "value": 6
+      },
+      {
+       "label": "Prefer not to say",
+       "value": 7
+      },
+      {
+       "label": "Other",
+       "value": 8
+      }
+     ],
+     "placeholderText": "Please select"
+    },
+    "inputType": "single_select",
+    "is_custom": false,
+    "label": "Tell us your gender identity",
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Your medical history",
+  "type": "question"
+ }
+}

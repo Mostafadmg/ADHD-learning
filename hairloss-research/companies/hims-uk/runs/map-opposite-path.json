@@ -1,0 +1,134 @@
+{
+ "start": "https://www.forhims.co.uk/c/hl",
+ "steps": [
+  {
+   "do": "click",
+   "text": "None of the above",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "All over",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "A lot",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "In the past few months",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Keep the hair I have",
+   "settle": 1200
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "I don’t have hair",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Buzzed, shaved, or bald",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "No",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "All the time",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Hat",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "10+ minutes",
+   "settle": 4500
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 3000
+  },
+  {
+   "do": "click",
+   "text": "Next →",
+   "settle": 3000
+  },
+  {
+   "do": "click",
+   "text": "Why these two? →",
+   "settle": 3000
+  },
+  {
+   "do": "click",
+   "text": "How do I get them? →",
+   "settle": 3000
+  },
+  {
+   "do": "click",
+   "text": "Next →",
+   "settle": 3000
+  },
+  {
+   "do": "wait",
+   "ms": 8000
+  },
+  {
+   "do": "wait",
+   "ms": 4000
+  }
+ ],
+ "_about": {
+  "purpose": "Map check, not a one-change experiment: the opposite answer to the baseline on every question at once, to see whether any hidden stop or different end screen exists in the anonymous quiz.",
+  "answers": [
+   "None of the above",
+   "All over",
+   "A lot",
+   "In the past few months",
+   "Keep the hair I have",
+   "I don’t have hair",
+   "Buzzed, shaved, or bald",
+   "No",
+   "All the time",
+   "Hat",
+   "10+ minutes"
+  ]
+ }
+}

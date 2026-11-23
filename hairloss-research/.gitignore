@@ -1,0 +1,8 @@
+# raw run dumps: keep the text, skip screenshots and saved network bodies
+companies/*/runs/**/*.jpg
+companies/*/runs/**/net/
+companies/*/runs/**/storage.json
+# downloaded copies of site code (kept locally only)
+companies/*/raw/
+companies/*/src/
+node_modules/

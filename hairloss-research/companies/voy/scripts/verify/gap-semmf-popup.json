@@ -1,0 +1,11 @@
+{
+ "_note": "Stage 3 gap replay. Same page: wait for the pop-up to open by itself and record which pop-up a men-and-women page shows. Nothing ticked, no email.",
+ "_answer": "pop-up only",
+ "start": "https://hairloss1.joinvoy.com/sem-mf",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 24000
+  }
+ ]
+}

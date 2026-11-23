@@ -1,0 +1,72 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 2,
+   "sectionTitle": "YOUR HAIR"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 253,
+    "inputConfig": {
+     "options": [
+      {
+       "label": "Air dry",
+       "value": "Air dry"
+      },
+      {
+       "label": "Colour treatments, bleaching and dyes",
+       "value": "Colour treatments, bleaching and dyes"
+      },
+      {
+       "label": "Product-based styling (e.g. wax, clay, pomade, hairspray)",
+       "value": "Product-based styling (e.g. wax, clay, pomade, hairspray)"
+      },
+      {
+       "label": "Heat-based styling tools (e.g. straightening, curling, blow-drying)",
+       "value": "Heat-based styling tools (e.g. straightening, curling, blow-drying)"
+      },
+      {
+       "label": "Heatless styling (e.g. rollers, curling rods)",
+       "value": "Heatless styling (e.g. rollers, curling rods)"
+      },
+      {
+       "label": "Protective styles (e.g. braids, twists, faux locs)",
+       "value": "Protective styles (e.g. braids, twists, faux locs)"
+      },
+      {
+       "label": "Chemical processing (e.g. perms, relaxers, keratin treatments)",
+       "value": "Chemical processing (e.g. perms, relaxers, keratin treatments)"
+      },
+      {
+       "exclusive": true,
+       "label": "None of the above",
+       "value": "None of the above"
+      }
+     ]
+    },
+    "inputType": "multi_select_checkbox",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "How do you usually style or treat your hair?",
+  "type": "question"
+ }
+}

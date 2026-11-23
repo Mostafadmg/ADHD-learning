@@ -1,0 +1,15 @@
+{
+ "start": "https://app.forhers.co.uk/anon-flow/hair?t=hair",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 5000
+  }
+ ],
+ "_about": {
+  "experiment": "verify-17-hers-anon-route",
+  "stage": "verify",
+  "changed": "entry: the app's anonymous-quiz route (the one Hims's /c/hl redirects to) opened on the Hers app",
+  "why": "Checks the code reading that Hers has no anonymous hair quiz: the route should fall through to the name screen. Page load only; nothing typed."
+ }
+}

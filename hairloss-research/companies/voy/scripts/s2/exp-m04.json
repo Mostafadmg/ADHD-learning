@@ -1,0 +1,15 @@
+{
+ "_note": "Stage 2 one-change replay on the men's landing-page pop-up (public host hairloss1.joinvoy.com = www.joinvoy.com/hair-loss). Waits for the pop-up (opens by itself after 20 s), ticks ONE picture. Never fills the email box and never presses 'Check if I qualify'.",
+ "_answer": "Patchy",
+ "start": "https://hairloss1.joinvoy.com/",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 23000
+  },
+  {
+   "do": "click",
+   "selector": "label:has(#Patchy)"
+  }
+ ]
+}

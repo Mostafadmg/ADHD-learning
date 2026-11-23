@@ -1,0 +1,15 @@
+{
+ "_note": "Stage 3 gap replay. Women's social landing page: wait for the pop-up, tick 'Patchy hair loss'. Never fills the email box and never presses 'Check if I qualify'.",
+ "_answer": "Patchy hair loss (on /meta)",
+ "start": "https://femalehairloss1.joinvoy.com/meta",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 10000
+  },
+  {
+   "do": "click",
+   "selector": "label:has(#Patchy-hair-loss)"
+  }
+ ]
+}

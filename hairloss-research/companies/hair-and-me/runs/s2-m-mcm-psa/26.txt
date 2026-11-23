@@ -1,0 +1,16 @@
+STEP 26 rj
+URL: https://www.hairandme.com/c/suh/rj
+
+--- VISIBLE TEXT ---
+Your hair journey starts here
+
+Consistency is key for continuous hair improvement
+
+Back to previous page
+Skip
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+a -> /c/suh/rj?action=previous | Back to previous page
+a -> /c/suh/rj | Skip

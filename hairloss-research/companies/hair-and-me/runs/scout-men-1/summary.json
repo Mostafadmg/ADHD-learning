@@ -1,0 +1,226 @@
+{
+ "run": "scout-men-1",
+ "flow": "men",
+ "changed": null,
+ "changedStep": null,
+ "baselinesPooled": [
+  "baseline-men",
+  "s2-base-men-1"
+ ],
+ "stepOrder": [
+  "tp",
+  "yhg",
+  "hgp",
+  "js",
+  "pds",
+  "pdsc",
+  "mi",
+  "ht",
+  "ls",
+  "htp",
+  "htam",
+  "htc",
+  "ar",
+  "st",
+  "sc",
+  "scc",
+  "smt",
+  "pt",
+  "tt",
+  "pp",
+  "mdm",
+  "mcm",
+  "al",
+  "rhf",
+  "yna",
+  "rha",
+  "di",
+  "rj",
+  "el",
+  "ct",
+  "yd"
+ ],
+ "nSteps": 31,
+ "end": "account wall (yd)",
+ "newSteps": [
+  "hgp"
+ ],
+ "missingSteps": [],
+ "candidateEffects": [],
+ "noise": [
+  {
+   "step": "pds",
+   "key": "title",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-17",
+    "s2-m-age-18"
+   ]
+  },
+  {
+   "step": "ar",
+   "key": "q429.config",
+   "where": "after-change",
+   "alsoIn": []
+  },
+  {
+   "step": "st",
+   "key": "q9346.options",
+   "where": "after-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9346.type",
+   "where": "after-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9348.options",
+   "where": "after-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9348.type",
+   "where": "after-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9349.config",
+   "where": "after-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  },
+  {
+   "step": "st",
+   "key": "q9349.type",
+   "where": "after-change",
+   "alsoIn": [
+    "entry-promo-caps-men",
+    "s2-base-women-1",
+    "s2-m-age-17"
+   ]
+  }
+ ],
+ "bag": {
+  "items": [
+   [
+    "hairTreatment",
+    "Personalised treatment",
+    "4 week supply · 12ml",
+    "Prescription",
+    3499,
+    null
+   ]
+  ],
+  "shipping": 0,
+  "total": 3499,
+  "promo": "",
+  "shippingMsg": "Your order qualifies for complimentary standard shipping."
+ },
+ "bagItemsSameAsBaseline": true,
+ "posted": {
+  "hgp": [
+   [
+    9308,
+    11
+   ]
+  ],
+  "ht": [
+   [
+    4446,
+    "Coily"
+   ]
+  ],
+  "htam": [
+   [
+    9318,
+    "One or more patches of complete hair loss"
+   ]
+  ],
+  "htc": [
+   [
+    9310,
+    "Recently, in the past few weeks"
+   ]
+  ],
+  "htp": [
+   [
+    250,
+    [
+     "Minoxidil tablets",
+     "Finasteride tablets"
+    ]
+   ],
+   [
+    4443,
+    true
+   ]
+  ],
+  "js": [
+   [
+    8038,
+    "Still exploring my options"
+   ]
+  ],
+  "ls": [
+   [
+    8014,
+    [
+     "I'm dealing with quite a lot of stress",
+     "I've recently lost a significant amount of weight"
+    ]
+   ]
+  ],
+  "yhg": [
+   [
+    9307,
+    [
+     "7",
+     "8",
+     "9",
+     "10",
+     "11"
+    ]
+   ],
+   [
+    3042,
+    true
+   ]
+  ]
+ },
+ "nextAfterChange": {
+  "hgp": "js",
+  "ht": "ls",
+  "htam": "htc",
+  "htc": "ar",
+  "htp": "htam",
+  "js": "pds",
+  "ls": "htp",
+  "yhg": "hgp"
+ },
+ "sweep": false
+}

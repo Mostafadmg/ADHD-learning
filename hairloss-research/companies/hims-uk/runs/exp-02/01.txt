@@ -1,0 +1,20 @@
+STEP 01 click "Experiencing hair loss, exploring options"
+URL: https://app.forhims.co.uk/flow/a9a88e4a-89b9-47ae-8138-3a1acaa41594?t=hair&anon_flow_key=hair
+TITLE: Hims
+
+--- VISIBLE TEXT ---
+Where are you noticing hair loss?
+
+Along the hairline
+
+At the top
+
+All over
+
+←
+
+--- CONTROLS ---
+  button (5): Along the hairline [false]  ·  At the top [false]  ·  All over [false]  ·  ←  ·  Your answers
+
+--- LINKS ---
+  link (1): Navigate home -> /profile

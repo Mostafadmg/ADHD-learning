@@ -1,0 +1,12 @@
+STEP 00 start (HTTP 200)
+URL: https://hair.forhims.co.uk/
+TITLE: 
+
+--- VISIBLE TEXT ---
+
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

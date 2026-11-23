@@ -1,0 +1,22 @@
+STEP 10 click "Continue"
+URL: https://app.forhims.co.uk/flow/a9a88e4a-89b9-47ae-8138-3a1acaa41594?t=hair&anon_flow_key=hair
+TITLE: Hims
+
+--- VISIBLE TEXT ---
+What’s your hair type?
+
+Straight or wavy
+
+Curly or coily
+
+Textured or processed
+
+I don’t have hair
+
+←
+
+--- CONTROLS ---
+  button (6): Straight or wavy [false]  ·  Curly or coily [false]  ·  Textured or processed [false]  ·  I don’t have hair [false]  ·  ←  ·  Your answers
+
+--- LINKS ---
+  link (1): Navigate home -> /profile

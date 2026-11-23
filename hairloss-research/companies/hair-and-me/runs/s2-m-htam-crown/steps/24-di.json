@@ -1,0 +1,48 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 3,
+   "sectionTitle": "MEDICAL HISTORY"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 8015,
+    "inputConfig": {
+     "isOptional": true,
+     "options": [
+      {
+       "label": "I want the discounted trial",
+       "value": "I want the discounted trial"
+      },
+      {
+       "label": "I'm looking for a long-term effective haircare treatment",
+       "value": "I'm looking for a long-term effective haircare treatment"
+      }
+     ]
+    },
+    "inputType": "single_select_button",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "What most influenced your decision to sign-up today?",
+  "type": "question"
+ }
+}

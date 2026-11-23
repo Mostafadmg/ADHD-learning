@@ -1,0 +1,11 @@
+
+===== FINAL (after 25 steps) =====
+URL: https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair
+TEXT: Ready to see if you’re eligible? ⏎ Next we'll cover your health and medical history as well as treatment options. ⏎ Continue ⏎ ←
+CONTROLS:
+  input:email (1): Email address
+  button (2): Continue [disabled]  ·  ←
+  links: Navigate home
+
+[walk] 25 step(s), exit 0, 42 JSON bodies saved -> runs/exp-38-return
+runs/exp-38-return redacted 25

@@ -1,0 +1,25 @@
+[verify] 21:32:28 start verify-01-no-hair
+[verify] 21:33:55 end verify-01-no-hair exit 0
+[verify] 21:34:01 start verify-02-past-few-months
+[verify] 21:36:26 end verify-02-past-few-months exit 0
+[verify] 21:36:32 start verify-03-all-over
+[verify] 21:38:00 end verify-03-all-over exit 0
+[verify] 21:38:06 start verify-04-none-of-above
+[verify] 21:39:33 end verify-04-none-of-above exit 0
+[verify] 21:39:39 start verify-05-a-lot
+[verify] 21:41:06 end verify-05-a-lot exit 0
+[verify] 21:41:12 start verify-06-protective-styles
+[verify] 21:42:39 end verify-06-protective-styles exit 0
+[verify] 21:42:45 start verify-07-all-above-clears
+[verify] 21:44:19 end verify-07-all-above-clears exit 0
+[verify] 21:44:25 start verify-08-skip-quiz
+[verify] 21:44:36 end verify-08-skip-quiz exit 0
+[verify] 21:44:42 start verify-09-return
+[verify] 21:46:22 end verify-09-return exit 0
+[verify] 21:46:28 start verify-10-contradictory
+[verify] 21:47:55 end verify-10-contradictory exit 0
+[verify] 21:48:01 start verify-11-back-change
+[verify] 21:49:34 end verify-11-back-change exit 0
+[verify] 21:49:40 start verify-12-delete-answers
+[verify] 21:50:25 end verify-12-delete-answers exit 0
+[verify] 21:50:31 start verify-13-multi-edge

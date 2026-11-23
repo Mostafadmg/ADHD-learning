@@ -1,0 +1,897 @@
+[
+ {
+  "run": "runs/exp-01",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 0,
+    "stepId": "633057d9-955c-479d-838e-8e70cb68465a",
+    "answer": {
+     "value": "RECEDING_HAIRLINE"
+    },
+    "baselineAnswer": {
+     "value": "HAIRLOSS_READY_FOR_TREATMENT"
+    },
+    "next": "d9a57f80-9776-46b4-8855-5dbb39e6ae37",
+    "baselineNext": "d9a57f80-9776-46b4-8855-5dbb39e6ae37"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-02",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 0,
+    "stepId": "633057d9-955c-479d-838e-8e70cb68465a",
+    "answer": {
+     "value": "HAIRLOSS_EXPLORING_TREATMENTS"
+    },
+    "baselineAnswer": {
+     "value": "HAIRLOSS_READY_FOR_TREATMENT"
+    },
+    "next": "d9a57f80-9776-46b4-8855-5dbb39e6ae37",
+    "baselineNext": "d9a57f80-9776-46b4-8855-5dbb39e6ae37"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-03",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 0,
+    "stepId": "633057d9-955c-479d-838e-8e70cb68465a",
+    "answer": {
+     "value": "HAIRLOSS_NONE_BUT_LOOKING"
+    },
+    "baselineAnswer": {
+     "value": "HAIRLOSS_READY_FOR_TREATMENT"
+    },
+    "next": "d9a57f80-9776-46b4-8855-5dbb39e6ae37",
+    "baselineNext": "d9a57f80-9776-46b4-8855-5dbb39e6ae37"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-04",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 0,
+    "stepId": "633057d9-955c-479d-838e-8e70cb68465a",
+    "answer": {
+     "value": "NONE_OF_THE_ABOVE"
+    },
+    "baselineAnswer": {
+     "value": "HAIRLOSS_READY_FOR_TREATMENT"
+    },
+    "next": "d9a57f80-9776-46b4-8855-5dbb39e6ae37",
+    "baselineNext": "d9a57f80-9776-46b4-8855-5dbb39e6ae37"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-05",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [
+   {
+    "text": {
+     "baseline": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←",
+     "run": "Here’s what we know about your hair so far: Your Hair Hair changes At the top Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←"
+    },
+    "step": 17,
+    "label": "STEP 17 click \"Next\""
+   }
+  ],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 1,
+    "stepId": "d9a57f80-9776-46b4-8855-5dbb39e6ae37",
+    "answer": {
+     "value": "TOP_LOSS"
+    },
+    "baselineAnswer": {
+     "value": "HAIRLINE_LOSS"
+    },
+    "next": "77d8dafa-4b10-48d9-b83c-da45fcaddb90",
+    "baselineNext": "77d8dafa-4b10-48d9-b83c-da45fcaddb90"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-06",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [
+   {
+    "text": {
+     "baseline": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←",
+     "run": "Here’s what we know about your hair so far: Your Hair Hair changes All over Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←"
+    },
+    "step": 17,
+    "label": "STEP 17 click \"Next\""
+   }
+  ],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 1,
+    "stepId": "d9a57f80-9776-46b4-8855-5dbb39e6ae37",
+    "answer": {
+     "value": "OVERALL_LOSS"
+    },
+    "baselineAnswer": {
+     "value": "HAIRLINE_LOSS"
+    },
+    "next": "77d8dafa-4b10-48d9-b83c-da45fcaddb90",
+    "baselineNext": "77d8dafa-4b10-48d9-b83c-da45fcaddb90"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-07",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 2,
+    "stepId": "77d8dafa-4b10-48d9-b83c-da45fcaddb90",
+    "answer": {
+     "value": "SIGNIFICANT_HAIRLOSS"
+    },
+    "baselineAnswer": {
+     "value": "SOME_HAIRLOSS"
+    },
+    "next": "dd20f561-c9b4-4262-9ae0-e1959204d3ab",
+    "baselineNext": "dd20f561-c9b4-4262-9ae0-e1959204d3ab"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-08",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 2,
+    "stepId": "77d8dafa-4b10-48d9-b83c-da45fcaddb90",
+    "answer": {
+     "value": "LITTLE_HAIRLOSS"
+    },
+    "baselineAnswer": {
+     "value": "SOME_HAIRLOSS"
+    },
+    "next": "dd20f561-c9b4-4262-9ae0-e1959204d3ab",
+    "baselineNext": "dd20f561-c9b4-4262-9ae0-e1959204d3ab"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-09",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [
+   {
+    "text": {
+     "baseline": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←",
+     "run": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: In the past year Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←"
+    },
+    "step": 17,
+    "label": "STEP 17 click \"Next\""
+   }
+  ],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 3,
+    "stepId": "dd20f561-c9b4-4262-9ae0-e1959204d3ab",
+    "answer": {
+     "value": "HAIRLOSS_WITHIN_A_YEAR"
+    },
+    "baselineAnswer": {
+     "value": "HAIRLOSS_MORE_THAN_A_YEAR"
+    },
+    "next": "025b8458-c231-4b7a-945e-3e26e0792eac",
+    "baselineNext": "025b8458-c231-4b7a-945e-3e26e0792eac"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-10",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [
+   {
+    "text": {
+     "baseline": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←",
+     "run": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: In the past few months Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←"
+    },
+    "step": 17,
+    "label": "STEP 17 click \"Next\""
+   }
+  ],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 3,
+    "stepId": "dd20f561-c9b4-4262-9ae0-e1959204d3ab",
+    "answer": {
+     "value": "HAIRLOSS_LAST_MONTHS"
+    },
+    "baselineAnswer": {
+     "value": "HAIRLOSS_MORE_THAN_A_YEAR"
+    },
+    "next": "025b8458-c231-4b7a-945e-3e26e0792eac",
+    "baselineNext": "025b8458-c231-4b7a-945e-3e26e0792eac"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-11",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [
+   {
+    "text": {
+     "baseline": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←",
+     "run": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Not sure Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←"
+    },
+    "step": 17,
+    "label": "STEP 17 click \"Next\""
+   }
+  ],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 3,
+    "stepId": "dd20f561-c9b4-4262-9ae0-e1959204d3ab",
+    "answer": {
+     "value": "HAIRLOSS_NOT_SURE"
+    },
+    "baselineAnswer": {
+     "value": "HAIRLOSS_MORE_THAN_A_YEAR"
+    },
+    "next": "025b8458-c231-4b7a-945e-3e26e0792eac",
+    "baselineNext": "025b8458-c231-4b7a-945e-3e26e0792eac"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-12",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 4,
+    "stepId": "025b8458-c231-4b7a-945e-3e26e0792eac",
+    "answer": {
+     "listValue": [
+      "DEFINED_HAIRLINE"
+     ]
+    },
+    "baselineAnswer": {
+     "listValue": [
+      "THICKER_HAIR"
+     ]
+    },
+    "next": "17f360a2-ea25-43c1-801b-10bff2ce38ae",
+    "baselineNext": "17f360a2-ea25-43c1-801b-10bff2ce38ae"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-13",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 4,
+    "stepId": "025b8458-c231-4b7a-945e-3e26e0792eac",
+    "answer": {
+     "listValue": [
+      "SCALP_COVERAGE"
+     ]
+    },
+    "baselineAnswer": {
+     "listValue": [
+      "THICKER_HAIR"
+     ]
+    },
+    "next": "17f360a2-ea25-43c1-801b-10bff2ce38ae",
+    "baselineNext": "17f360a2-ea25-43c1-801b-10bff2ce38ae"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-14",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 4,
+    "stepId": "025b8458-c231-4b7a-945e-3e26e0792eac",
+    "answer": {
+     "listValue": [
+      "STOP_LOSS"
+     ]
+    },
+    "baselineAnswer": {
+     "listValue": [
+      "THICKER_HAIR"
+     ]
+    },
+    "next": "17f360a2-ea25-43c1-801b-10bff2ce38ae",
+    "baselineNext": "17f360a2-ea25-43c1-801b-10bff2ce38ae"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-15",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 4,
+    "stepId": "025b8458-c231-4b7a-945e-3e26e0792eac",
+    "answer": {
+     "listValue": [
+      "ALL"
+     ]
+    },
+    "baselineAnswer": {
+     "listValue": [
+      "THICKER_HAIR"
+     ]
+    },
+    "next": "17f360a2-ea25-43c1-801b-10bff2ce38ae",
+    "baselineNext": "17f360a2-ea25-43c1-801b-10bff2ce38ae"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-16",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 5,
+    "stepId": "17f360a2-ea25-43c1-801b-10bff2ce38ae",
+    "answer": {
+     "value": "CURLY"
+    },
+    "baselineAnswer": {
+     "value": "STRAIGHT_WAVY"
+    },
+    "next": "4b5857d4-75bd-4c53-a098-0ad800e6bf03",
+    "baselineNext": "4b5857d4-75bd-4c53-a098-0ad800e6bf03"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-17",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 5,
+    "stepId": "17f360a2-ea25-43c1-801b-10bff2ce38ae",
+    "answer": {
+     "value": "TEXTURED"
+    },
+    "baselineAnswer": {
+     "value": "STRAIGHT_WAVY"
+    },
+    "next": "4b5857d4-75bd-4c53-a098-0ad800e6bf03",
+    "baselineNext": "4b5857d4-75bd-4c53-a098-0ad800e6bf03"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-18",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 5,
+    "stepId": "17f360a2-ea25-43c1-801b-10bff2ce38ae",
+    "answer": {
+     "value": "NO_HAIR"
+    },
+    "baselineAnswer": {
+     "value": "STRAIGHT_WAVY"
+    },
+    "next": "4b5857d4-75bd-4c53-a098-0ad800e6bf03",
+    "baselineNext": "4b5857d4-75bd-4c53-a098-0ad800e6bf03"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-19",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 6,
+    "stepId": "4b5857d4-75bd-4c53-a098-0ad800e6bf03",
+    "answer": {
+     "value": "SHAVED_BALD"
+    },
+    "baselineAnswer": {
+     "value": "SHORT"
+    },
+    "next": "024b75df-897c-420a-b0df-ca38321fb4ad",
+    "baselineNext": "024b75df-897c-420a-b0df-ca38321fb4ad"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-20",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 6,
+    "stepId": "4b5857d4-75bd-4c53-a098-0ad800e6bf03",
+    "answer": {
+     "value": "MEDIUM"
+    },
+    "baselineAnswer": {
+     "value": "SHORT"
+    },
+    "next": "024b75df-897c-420a-b0df-ca38321fb4ad",
+    "baselineNext": "024b75df-897c-420a-b0df-ca38321fb4ad"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-21",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 6,
+    "stepId": "4b5857d4-75bd-4c53-a098-0ad800e6bf03",
+    "answer": {
+     "value": "LONG"
+    },
+    "baselineAnswer": {
+     "value": "SHORT"
+    },
+    "next": "024b75df-897c-420a-b0df-ca38321fb4ad",
+    "baselineNext": "024b75df-897c-420a-b0df-ca38321fb4ad"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-22",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [
+   {
+    "text": {
+     "baseline": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←",
+     "run": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: No Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←"
+    },
+    "step": 17,
+    "label": "STEP 17 click \"Next\""
+   }
+  ],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 9,
+    "stepId": "47e88e74-3c7b-4adf-8b81-f9eddcd7a91d",
+    "answer": {
+     "value": "NO"
+    },
+    "baselineAnswer": {
+     "value": "YES"
+    },
+    "next": "7fab31df-73d7-495b-8bad-d5f330f60e0f",
+    "baselineNext": "7fab31df-73d7-495b-8bad-d5f330f60e0f"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-23",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [
+   {
+    "text": {
+     "baseline": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←",
+     "run": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Not sure Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←"
+    },
+    "step": 17,
+    "label": "STEP 17 click \"Next\""
+   }
+  ],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 9,
+    "stepId": "47e88e74-3c7b-4adf-8b81-f9eddcd7a91d",
+    "answer": {
+     "value": "NOT_SURE"
+    },
+    "baselineAnswer": {
+     "value": "YES"
+    },
+    "next": "7fab31df-73d7-495b-8bad-d5f330f60e0f",
+    "baselineNext": "7fab31df-73d7-495b-8bad-d5f330f60e0f"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-24",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [
+   {
+    "text": {
+     "baseline": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←",
+     "run": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Rarely Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←"
+    },
+    "step": 17,
+    "label": "STEP 17 click \"Next\""
+   }
+  ],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 10,
+    "stepId": "7fab31df-73d7-495b-8bad-d5f330f60e0f",
+    "answer": {
+     "value": "RARELY_STRESSED"
+    },
+    "baselineAnswer": {
+     "value": "SOMETIMES_STRESSED"
+    },
+    "next": "81e85124-30e9-4de3-a972-42d41b7e2156",
+    "baselineNext": "81e85124-30e9-4de3-a972-42d41b7e2156"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-25",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [
+   {
+    "text": {
+     "baseline": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←",
+     "run": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: All the time Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←"
+    },
+    "step": 17,
+    "label": "STEP 17 click \"Next\""
+   }
+  ],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 10,
+    "stepId": "7fab31df-73d7-495b-8bad-d5f330f60e0f",
+    "answer": {
+     "value": "ALWAYS_STRESSED"
+    },
+    "baselineAnswer": {
+     "value": "SOMETIMES_STRESSED"
+    },
+    "next": "81e85124-30e9-4de3-a972-42d41b7e2156",
+    "baselineNext": "81e85124-30e9-4de3-a972-42d41b7e2156"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-26",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [
+   {
+    "text": {
+     "baseline": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←",
+     "run": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Not sure Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←"
+    },
+    "step": 17,
+    "label": "STEP 17 click \"Next\""
+   }
+  ],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 10,
+    "stepId": "7fab31df-73d7-495b-8bad-d5f330f60e0f",
+    "answer": {
+     "value": "NOT_SURE_STRESSED"
+    },
+    "baselineAnswer": {
+     "value": "SOMETIMES_STRESSED"
+    },
+    "next": "81e85124-30e9-4de3-a972-42d41b7e2156",
+    "baselineNext": "81e85124-30e9-4de3-a972-42d41b7e2156"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-27",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [
+   {
+    "text": {
+     "baseline": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←",
+     "run": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine I use products, gel, mousse, etc. Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←"
+    },
+    "step": 17,
+    "label": "STEP 17 click \"Next\""
+   }
+  ],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 13,
+    "stepId": "83336b0e-d68e-4296-9cc8-25f5cacc601e",
+    "answer": {
+     "value": "PRODUCTS"
+    },
+    "baselineAnswer": {
+     "value": "NONE"
+    },
+    "next": "ea93db21-2347-4f54-be1f-31e9855b4ef1",
+    "baselineNext": "ea93db21-2347-4f54-be1f-31e9855b4ef1"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-28",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [
+   {
+    "text": {
+     "baseline": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←",
+     "run": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine I usually wear a hat Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←"
+    },
+    "step": 17,
+    "label": "STEP 17 click \"Next\""
+   }
+  ],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 13,
+    "stepId": "83336b0e-d68e-4296-9cc8-25f5cacc601e",
+    "answer": {
+     "value": "HAT"
+    },
+    "baselineAnswer": {
+     "value": "NONE"
+    },
+    "next": "ea93db21-2347-4f54-be1f-31e9855b4ef1",
+    "baselineNext": "ea93db21-2347-4f54-be1f-31e9855b4ef1"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-29",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [
+   {
+    "text": {
+     "baseline": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←",
+     "run": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine Protective styles, braids, locs, etc. Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←"
+    },
+    "step": 17,
+    "label": "STEP 17 click \"Next\""
+   }
+  ],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 13,
+    "stepId": "83336b0e-d68e-4296-9cc8-25f5cacc601e",
+    "answer": {
+     "value": "PROTECTIVE_STYLES"
+    },
+    "baselineAnswer": {
+     "value": "NONE"
+    },
+    "next": "ea93db21-2347-4f54-be1f-31e9855b4ef1",
+    "baselineNext": "ea93db21-2347-4f54-be1f-31e9855b4ef1"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-30",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [
+   {
+    "text": {
+     "baseline": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←",
+     "run": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing 5-10 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←"
+    },
+    "step": 17,
+    "label": "STEP 17 click \"Next\""
+   }
+  ],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 14,
+    "stepId": "ea93db21-2347-4f54-be1f-31e9855b4ef1",
+    "answer": {
+     "value": "5_TO_10_MINUTES"
+    },
+    "baselineAnswer": {
+     "value": "LESS_THAN_5_MINUTES"
+    },
+    "next": "408f9fb8-a5f8-4ce3-bdee-37f7863fcbef",
+    "baselineNext": "408f9fb8-a5f8-4ce3-bdee-37f7863fcbef"
+   }
+  ],
+  "errors": []
+ },
+ {
+  "run": "runs/exp-31",
+  "screens": 24,
+  "finalUrl": "https://app.forhims.co.uk/start/signup?t=hair&anon_flow_key=hair",
+  "finalText": "Ready to see if you’re eligible? Next we'll cover your health and medical history as well as treatment options. Continue ←",
+  "screenDiffs": [
+   {
+    "text": {
+     "baseline": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing Less than 5 minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←",
+     "run": "Here’s what we know about your hair so far: Your Hair Hair changes Along the hairline Noticed: Over a year ago Lifestyle factors Family history: Yes Stress: Sometimes Hair routine No styling I let my hair do its thing 10+ minutes routine Now, let’s go over what you can expect with treatment through Hims. Next → ←"
+    },
+    "step": 17,
+    "label": "STEP 17 click \"Next\""
+   }
+  ],
+  "serverPathSame": true,
+  "submissions": 22,
+  "submissionDiffs": [
+   {
+    "n": 14,
+    "stepId": "ea93db21-2347-4f54-be1f-31e9855b4ef1",
+    "answer": {
+     "value": "MORE_THAN_10"
+    },
+    "baselineAnswer": {
+     "value": "LESS_THAN_5_MINUTES"
+    },
+    "next": "408f9fb8-a5f8-4ce3-bdee-37f7863fcbef",
+    "baselineNext": "408f9fb8-a5f8-4ce3-bdee-37f7863fcbef"
+   }
+  ],
+  "errors": []
+ }
+]

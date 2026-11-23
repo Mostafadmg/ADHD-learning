@@ -1,0 +1,190 @@
+{
+ "run": "scout-men-3",
+ "flow": "men",
+ "changed": null,
+ "changedStep": null,
+ "baselinesPooled": [
+  "baseline-men",
+  "s2-base-men-1"
+ ],
+ "stepOrder": [
+  "tp",
+  "yhg",
+  "js",
+  "pds",
+  "pdsc",
+  "mi",
+  "ht",
+  "hs",
+  "ls",
+  "htp",
+  "htam",
+  "htc",
+  "ar",
+  "st",
+  "sc",
+  "scc",
+  "smt",
+  "pt",
+  "tt",
+  "pp",
+  "mdm",
+  "mcm",
+  "bp",
+  "al",
+  "rhf",
+  "yna",
+  "rha",
+  "di",
+  "rj",
+  "el",
+  "ct",
+  "yd"
+ ],
+ "nSteps": 32,
+ "end": "account wall (yd)",
+ "newSteps": [
+  "bp"
+ ],
+ "missingSteps": [],
+ "candidateEffects": [],
+ "noise": [
+  {
+   "step": "pds",
+   "key": "title",
+   "where": "before-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-17",
+    "s2-m-age-18"
+   ]
+  },
+  {
+   "step": "ar",
+   "key": "q429.config",
+   "where": "after-change",
+   "alsoIn": []
+  },
+  {
+   "step": "di",
+   "key": "q8015.options",
+   "where": "after-change",
+   "alsoIn": [
+    "s2-base-women-1",
+    "s2-m-age-85",
+    "s2-w-htaf-allover"
+   ]
+  }
+ ],
+ "bag": {
+  "items": [
+   [
+    "hairTreatment",
+    "Personalised treatment",
+    "4 week supply · 12ml",
+    "Prescription",
+    3499,
+    null
+   ]
+  ],
+  "shipping": 0,
+  "total": 3499,
+  "promo": "",
+  "shippingMsg": "Your order qualifies for complimentary standard shipping."
+ },
+ "bagItemsSameAsBaseline": true,
+ "posted": {
+  "al": [
+   [
+    4447,
+    [
+     "10",
+     "11",
+     "12",
+     "13",
+     "14",
+     "15",
+     "16",
+     "17",
+     "998"
+    ]
+   ],
+   [
+    4448,
+    "Penicillin"
+   ]
+  ],
+  "bp": [
+   [
+    4420,
+    "Often low"
+   ],
+   [
+    4421,
+    "95/60"
+   ]
+  ],
+  "htam": [
+   [
+    9318,
+    "Complete hair loss"
+   ]
+  ],
+  "htp": [
+   [
+    250,
+    [
+     "Minoxidil tablets",
+     "Finasteride tablets",
+     "Spironolactone tablets",
+     "Minoxidil spray",
+     "Finasteride spray",
+     "Dutasteride capsules"
+    ]
+   ],
+   [
+    4443,
+    true
+   ]
+  ],
+  "mcm": [
+   [
+    4453,
+    [
+     "15",
+     "6",
+     "14",
+     "7",
+     "8",
+     "9",
+     "10",
+     "11"
+    ]
+   ]
+  ],
+  "mdm": [
+   [
+    4454,
+    [
+     "Antidepressants, anti-anxiety or medication for mental health reasons",
+     "Medication to treat benign prostate hyperplasia (BPH)",
+     "Steroids or other medications for psoriasis or eczema on your scalp",
+     "Other"
+    ]
+   ],
+   [
+    4456,
+    "Vitamin D"
+   ]
+  ]
+ },
+ "nextAfterChange": {
+  "al": "rhf",
+  "bp": "al",
+  "htam": "htc",
+  "htp": "htam",
+  "mcm": "bp",
+  "mdm": "mcm"
+ },
+ "sweep": false
+}

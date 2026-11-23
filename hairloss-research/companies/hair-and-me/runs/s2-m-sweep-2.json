@@ -1,0 +1,168 @@
+{
+ "_about": "Stage 2 SWEEP s2-m-sweep-2 (men baseline): several low-priority answers changed at once as a group test. SWEEP (men, 7 non-medical answers changed together): goals 'Improve my hairline, parting or crown' + 'Boost overall hair health' (top goal: Improve my hairline...); gender identity Transwoman/Transgirl; Curly; three styling habits; All over – moderate; timing Unsure; skin Darker shade of pale",
+ "start": "https://www.hairandme.com/c/suh/new",
+ "answers": {
+  "tp": [
+   "Treatment for men"
+  ],
+  "yhg": [
+   "Improve my hairline, parting or crown",
+   "Boost overall hair health",
+   "Please tick here to confirm that you agree to us holding (and looking after) the health data you share with us."
+  ],
+  "js": [
+   "Ready to start treatment"
+  ],
+  "pds": [
+   {
+    "select": "select[name='3039']",
+    "value": {
+     "label": "Male"
+    }
+   },
+   {
+    "select": "select[name='3054']",
+    "value": {
+     "label": "Transwoman/Transgirl"
+    }
+   }
+  ],
+  "pdsc": [
+   "I confirm the above selection is accurate and true."
+  ],
+  "mi": [],
+  "ht": [
+   "Curly"
+  ],
+  "hs": [
+   "Heatless styling (e.g. rollers, curling rods)",
+   "Protective styles (e.g. braids, twists, faux locs)",
+   "Chemical processing (e.g. perms, relaxers, keratin treatments)"
+  ],
+  "ls": [
+   "None of these apply to me"
+  ],
+  "htp": [
+   "None of the above"
+  ],
+  "htam": [
+   "All over – moderate"
+  ],
+  "htc": [
+   "Unsure"
+  ],
+  "ar": [],
+  "st": {
+   "byQuestion": {
+    "9346": [
+     "Darker shade of pale. It sometimes burns, tans evenly"
+    ],
+    "9348": [
+     {
+      "range": "input[type=range]",
+      "value": 41
+     }
+    ]
+   }
+  },
+  "sc": [
+   "Normal"
+  ],
+  "scc": [
+   "None of the above"
+  ],
+  "smt": [
+   "Fuller, denser-looking hair that I feel confident about"
+  ],
+  "pt": [
+   "No"
+  ],
+  "tt": [
+   "The Capsules"
+  ],
+  "pp": [
+   "I agree to the information above and wish to be considered for dutasteride or finasteride. I agree to read the Patient Information Leaflet"
+  ],
+  "mdm": [
+   "No, I don't take any medications"
+  ],
+  "mcm": [
+   "None of the above"
+  ],
+  "al": [
+   "No known allergies"
+  ],
+  "rhf": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "yna": [],
+  "rha": {
+   "byType": {
+    "number_slider": [],
+    "single_select_button": [
+     "5"
+    ]
+   }
+  },
+  "di": [
+   "I'm looking for a long-term effective haircare treatment"
+  ],
+  "rj": [],
+  "el": {
+   "byType": {
+    "date_masked": [
+     {
+      "type": "input[name=\"3053\"]",
+      "value": "15061994"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ],
+    "date_split": [
+     {
+      "fill": "Day",
+      "value": "15"
+     },
+     {
+      "fill": "Month",
+      "value": "06"
+     },
+     {
+      "fill": "Year",
+      "value": "1994"
+     },
+     "Yes, I live in the UK (excluding Channel Islands)."
+    ]
+   }
+  },
+  "ct": [],
+  "hgp": [
+   "Improve my hairline, parting or crown"
+  ],
+  "bp": [
+   "Well-controlled"
+  ],
+  "pgc": [
+   "Yes, I've read and understood the information and would like to carry on."
+  ]
+ },
+ "_changed": {
+  "flow": "men",
+  "steps": [
+   "yhg",
+   "hgp",
+   "pds",
+   "ht",
+   "hs",
+   "htam",
+   "htc",
+   "st"
+  ],
+  "sweep": true,
+  "desc": "SWEEP (men, 7 non-medical answers changed together): goals 'Improve my hairline, parting or crown' + 'Boost overall hair health' (top goal: Improve my hairline...); gender identity Transwoman/Transgirl; Curly; three styling habits; All over – moderate; timing Unsure; skin Darker shade of pale"
+ }
+}

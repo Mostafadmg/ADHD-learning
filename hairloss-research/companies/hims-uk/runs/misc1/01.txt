@@ -1,0 +1,12 @@
+STEP 01 wait 2500
+URL: https://hair.forhims.co.uk/
+TITLE: 
+
+--- VISIBLE TEXT ---
+
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

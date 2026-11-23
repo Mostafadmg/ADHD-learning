@@ -1,0 +1,124 @@
+{
+ "start": "https://www.forhims.co.uk/c/hl",
+ "steps": [
+  {
+   "do": "click",
+   "text": "Experiencing hair loss, ready to start treatment",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Along the hairline",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "A lot",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Over a year ago",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Visibly thicker, fuller hair",
+   "settle": 1200
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Straight or wavy",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Short",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Yes",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Sometimes",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "No styling",
+   "settle": 2500
+  },
+  {
+   "do": "click",
+   "text": "Less than 5 minutes",
+   "settle": 4500
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 3000
+  },
+  {
+   "do": "click",
+   "text": "Next →",
+   "settle": 3000
+  },
+  {
+   "do": "click",
+   "text": "Why these two? →",
+   "settle": 3000
+  },
+  {
+   "do": "click",
+   "text": "How do I get them? →",
+   "settle": 3000
+  },
+  {
+   "do": "click",
+   "text": "Next →",
+   "settle": 3000
+  },
+  {
+   "do": "wait",
+   "ms": 8000
+  },
+  {
+   "do": "wait",
+   "ms": 4000
+  }
+ ],
+ "_about": {
+  "experiment": "verify-05-a-lot",
+  "stage": "verify",
+  "changed": "men-q3: 'Some' → 'A lot'",
+  "why": "Random re-test of R1/R21."
+ }
+}

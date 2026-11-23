@@ -1,0 +1,14 @@
+STEP 01 wait 4000
+URL: https://www.joinvoy.com/hair-loss
+TITLE: Vercel Security Checkpoint
+
+--- VISIBLE TEXT ---
+Failed to verify your browser
+
+Code 21
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

@@ -1,0 +1,48 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "autoNext": {
+     "duration": 7000,
+     "label": "Next"
+    }
+   }
+  ],
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 429,
+    "inputConfig": {
+     "content": [
+      {
+       "answer": "I want to prevent, stop or reverse hair loss",
+       "image": "hair-goal",
+       "question_title": "Your hair goal"
+      },
+      {
+       "answer": "Straight",
+       "image": "hair-type-straight",
+       "question_title": "Your hair type"
+      },
+      {
+       "answer": "My middle parting is getting wider",
+       "image": "hair-thinning",
+       "question_title": "Your hair thinning"
+      }
+     ],
+     "interstitialType": "answers-review",
+     "title": "Here’s what we know..."
+    },
+    "inputType": "interstitial",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": null,
+  "type": "question"
+ }
+}

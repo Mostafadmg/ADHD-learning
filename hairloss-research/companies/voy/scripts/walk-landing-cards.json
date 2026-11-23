@@ -1,0 +1,5 @@
+{
+  "_note": "Public men's landing page: scrolls to the three plan cards with 'from' prices (clicking a heading only scrolls it into view).",
+  "start": "https://hairloss1.joinvoy.com/",
+  "steps": [ {"do": "click", "text": "Complete hair loss plan"} ]
+}

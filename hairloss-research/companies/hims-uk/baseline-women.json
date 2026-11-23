@@ -1,0 +1,12 @@
+{
+ "start": "https://app.forhers.co.uk/start/signup?t=hair",
+ "steps": [
+  {"do": "wait", "ms": 3000}
+ ],
+ "_about": {
+  "flow": "women",
+  "patient": "Baseline woman from PROTOCOL.md section 5 (38, widening parting, gradual over about 2 years, not pregnant, no conditions, no medicines). None of it can be entered: the first Hers UK screen asks for first and last name, which is the account wall.",
+  "endsAt": "https://app.forhers.co.uk/start/signup?t=hair ('Good hair starts with great hair loss care. Welcome to Hers. To get started, tell us your name.'). Do not type anything there.",
+  "replay": "node ../../tools/walk.js baseline-women.json runs/<run-id> --last"
+ }
+}

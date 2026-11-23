@@ -1,0 +1,10 @@
+
+===== FINAL (after 1 steps) =====
+URL: https://app.forhers.co.uk/start/signup?t=hair
+TEXT: Good hair starts with great hair loss care. ⏎ Welcome to Hers. To get started, tell us your name. By entering your details, you agree to our Terms & Conditions and acknowledge our Privacy Notice. ⏎ Continue ⏎ Already have an account? Sign in ⏎ ←
+CONTROLS:
+  input:text (2): First Name  ·  Last Name
+  button (2): Continue [disabled]  ·  ←
+  links: Terms & Conditions  ·  Privacy Notice  ·  Sign in  ·  Navigate home
+
+[walk] 1 step(s), exit 0, 8 JSON bodies saved -> runs/exp-35-hers-replay
