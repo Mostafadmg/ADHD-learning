@@ -136,3 +136,33 @@ machine: the block is on every URL, including robots.txt. In order of value:
 - same address with `?search=` hair (pages 1–4 of 5), finasteride (1 of 4), dutasteride (1), minoxidil (1 of 2),
   questionnaire (1 of 4), subscription, spray, topical, solution, compounded, scalp, Regaine, spironolactone
 - https://find-and-update.company-information.service.gov.uk/search/companies?q=frosts+%28online%29
+
+---
+
+# Stage 2 (EXPERIMENT), 23 Nov 2026
+
+## Access, again
+- walk.js on `/hair-loss`: same Cloudflare check (`runs/probe-hairloss-s2`, answer file `probe-hairloss.json`). Not retried.
+- WebFetch on `/consultation/23` (the hair-loss consultation form, found by search): HTTP 403.
+- **Web search with `allowed_domains: ["oxfordonlinepharmacy.co.uk"]` works** and returns summaries of the company's own
+  indexed pages. That is the source of everything new below (label `docs`). Snippets are summaries, not quotes, and some
+  indexed copies are years old.
+- So **no one-change experiments were run**; there are 0 questions in company.json because no exact wording is known.
+
+## New facts (search snippets of company pages)
+- Consultation form: `/consultation/23` ("Hair Loss Treatment consultation"), about 3 minutes, no photos.
+  Topics: sex (men / assigned male at birth only for finasteride, dutasteride, oral minoxidil), partner pregnant or trying
+  within 12 weeks (told not to use finasteride/dutasteride), heart rhythm, chest pain, breathlessness, low BP with
+  dizziness/fainting, angina, recent heart attack, heart failure, LVH, oral minoxidil BP-check agreement, mood/depression,
+  current and past hair treatments, liver/kidney, allergies, permission to tell NHS GP. Over 18 (finasteride page).
+- Products added (p6–p16): Loniten 2.5 mg, Avodart, **compounded finasteride + minoxidil + tretinoin spray 60 ml (2 months,
+  strengths and price unknown)**, Sons minoxidil 5%, generic minoxidil 5%, Regaine Men Extra Strength, Regaine for Women 2%
+  (£27.77), three bundles, Oxford Female Hair Loss Programme (consultation + blood test + unnamed oral drug).
+- Prices: finasteride 28/84/168 £13.99/£32.99/£54.99; dutasteride 30–180 £39.99–£159.99; oral minoxidil 2.5 mg 30–180
+  £22.49–£114.99 (only 2.5 mg sold; half tablet for 14 days then one).
+- Dutasteride only after at least 6 months of finasteride with a clear reason (switching blog).
+
+## Next step if the site ever opens
+Walk `/consultation/23` anonymously, record wording, find the account wall, then test in this order: sex, age,
+partner pregnancy, each heart/BP item, mood, previous finasteride when ordering dutasteride. Check the spray product page
+for strengths.

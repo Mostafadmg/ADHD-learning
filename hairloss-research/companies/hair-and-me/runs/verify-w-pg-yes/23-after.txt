@@ -1,19 +1,22 @@
-STEP 23 mp AFTER ANSWERS ["None of the above"]
-URL: https://www.hairandme.com/c/suh/mp
+STEP 23 mdf AFTER ANSWERS ["No, I don't take any medications"]
+URL: https://www.hairandme.com/c/suh/mdf
 
 --- VISIBLE TEXT ---
-Do any of the following apply to you?
-I'm postpartum (given birth in the last 6 months)
-I have unwanted hair on my face (e.g. upper lip, chin, jawline)
-None of the above
+Are you taking any of the following prescription medications?
+Steroids or other medications for psoriasis or eczema on your scalp
+
+(e.g. Hydrocortisone or betamethasone)
+
+Other
+No, I don't take any medications
 NEXT QUESTION
 Back to previous page
 
 --- CONTROLS ---
 a -> / | Navigate home
 a -> https://www.hairandme.com/support | Support Centre
-input:checkbox[name=4503] | I'm postpartum (given birth in the last 6 months) [disabled]
-input:checkbox[name=4503] | I have unwanted hair on my face (e.g. upper lip, chin, jawline) [disabled]
-input:checkbox[name=4503] | None of the above [checked]
+input:checkbox[name=4455] | Steroids or other medications for psoriasis or eczema on your scalp (e.g. Hydrocortisone or betamethasone) [disabled]
+input:checkbox[name=4455] | Other [disabled]
+input:checkbox[name=4455] | No, I don't take any medications [checked]
 button:submit | NEXT QUESTION
-a -> /c/suh/mp?action=previous | Back to previous page
+a -> /c/suh/mdf?action=previous | Back to previous page

@@ -1,0 +1,42 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "autoNext": {
+     "duration": 7000,
+     "label": "Go to next page"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   },
+   {
+    "skipAsNext": {
+     "label": "Skip"
+    }
+   }
+  ],
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 409,
+    "inputConfig": {
+     "content": "Consistency is key for continuous hair improvement",
+     "interstitialType": "results-journey",
+     "title": "Your hair journey starts here"
+    },
+    "inputType": "interstitial",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "",
+  "type": "question"
+ }
+}

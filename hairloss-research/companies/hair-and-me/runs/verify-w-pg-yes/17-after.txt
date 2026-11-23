@@ -1,21 +1,17 @@
-STEP 17 smt AFTER ANSWERS ["Fuller, denser-looking hair that I feel confident about"]
-URL: https://www.hairandme.com/c/suh/smt
+STEP 17 pt AFTER ANSWERS ["No"]
+URL: https://www.hairandme.com/c/suh/pt
 
 --- VISIBLE TEXT ---
-In 6 months' time, what do you want to see?
-Hair that feels healthy from root to tip
-Hair that feels stronger and has less breakage
-Noticeably less hair falling out
-Fuller, denser-looking hair that I feel confident about
+Do you live with pets?
+Yes
+No
 NEXT QUESTION
 Back to previous page
 
 --- CONTROLS ---
 a -> / | Navigate home
 a -> https://www.hairandme.com/support | Support Centre
-input:checkbox[name=8021] | Hair that feels healthy from root to tip
-input:checkbox[name=8021] | Hair that feels stronger and has less breakage
-input:checkbox[name=8021] | Noticeably less hair falling out
-input:checkbox[name=8021] | Fuller, denser-looking hair that I feel confident about [checked]
+input:radio[name=8007] | Yes
+input:radio[name=8007] | No [checked]
 button:submit | NEXT QUESTION
-a -> /c/suh/smt?action=previous | Back to previous page
+a -> /c/suh/pt?action=previous | Back to previous page

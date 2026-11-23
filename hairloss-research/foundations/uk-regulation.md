@@ -1,6 +1,7 @@
 # The rules for an online hair-loss prescribing and compounding business in the UK
 
-**Status:** DRAFT IN PROGRESS (research started 23 November 2026). Sections are filled in as sources are read.
+**Status:** COMPLETE (research 23 November 2026). Sections 1 to 4 were written first; sections 5 to 8, the three
+lists, the key facts and the summary were added in a second pass the same day, with a working web search.
 
 **Reader:** a UK pharmacist independent prescriber planning an online hair-loss service with personalised compounded
 topicals, competing with Hims UK, Voy, Hair + Me, Sons and Numan.

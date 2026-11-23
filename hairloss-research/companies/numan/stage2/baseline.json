@@ -1,0 +1,96 @@
+{
+ "_about": "Stage 2 experiment baseline: baseline man with one answer changed (see scripts/gen-exp.js). Stops at the product screen.",
+ "start": "https://www.numan.com/subscribe/hair-loss?pc=hl-organic-50off",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 4000
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 3500
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"18 - 65\")",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"Temples and Crown\")",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"My hair loss started gradually over the last few months or years\")",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"I am not allergic to any of the above\")",
+   "settle": 600
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"No\")",
+   "settle": 600
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"No - none\")",
+   "settle": 600
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"Effectiveness of the product\")",
+   "settle": 600
+  },
+  {
+   "do": "click",
+   "text": "Next",
+   "settle": 2800
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"I do not have a major illness, ongoing medical condition, operation, allergy to medication or take prescribed or over the counter medication to tell you about.\")",
+   "settle": 3500
+  },
+  {
+   "do": "click",
+   "selector": "label:text-is(\"No\")",
+   "settle": 3500
+  },
+  {
+   "do": "click",
+   "text": "Skip",
+   "settle": 4500
+  },
+  {
+   "do": "scroll"
+  },
+  {
+   "do": "click",
+   "text": "See all treatments",
+   "settle": 2500
+  },
+  {
+   "do": "scroll"
+  }
+ ]
+}

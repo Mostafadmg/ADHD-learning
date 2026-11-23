@@ -196,3 +196,7 @@ Interim results (women, Regaine entry; product-rules reply in each run's `api.js
   childbirth (w08), minoxidil allergy (w11): reply `suggestions:[9895328]` → Regaine for Women removed.
 - fish allergy (w12): `suggestions:[9895329]` → Nourkrin removed.
 - other health condition 'hay fever' (w09), medicine 'cetirizine' (w10): nothing removed.
+- (stage 2, second attempt) w13 caffeine allergy: `suggestions:[9895330,9895331]` → both Alpecin shampoos removed.
+  w14 ethanol, w15 propylene glycol: Regaine removed. w16 peanuts/soya, w17 lactose, w18 penicillin, w19 other medicine
+  'Ibuprofen', w20 other substance 'Latex': nothing removed. w21 pregnant via Nourkrin entry: nothing removed (same as w01).
+  w22 fish allergy via Nourkrin entry: Nourkrin removed (same rule as w12; entry does not matter, only list order).

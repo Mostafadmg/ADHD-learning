@@ -13,24 +13,31 @@
    }
   ],
   "breadcrumb": {
-   "sectionNumber": 1,
-   "sectionTitle": "ABOUT YOU"
+   "sectionNumber": 2,
+   "sectionTitle": "YOUR HAIR"
   },
   "description": null,
   "headerElement": null,
   "questions": [
    {
-    "id": 8038,
+    "id": 9310,
     "inputConfig": {
-     "isOptional": true,
      "options": [
       {
-       "label": "Still exploring my options",
-       "value": "Still exploring my options"
+       "label": "Recently, in the past few weeks",
+       "value": "Recently, in the past few weeks"
       },
       {
-       "label": "Ready to start treatment",
-       "value": "Ready to start treatment"
+       "label": "Around three to six months ago",
+       "value": "Around three to six months ago"
+      },
+      {
+       "label": "Over a year ago",
+       "value": "Over a year ago"
+      },
+      {
+       "label": "Unsure",
+       "value": "Unsure"
       }
      ]
     },
@@ -42,7 +49,7 @@
    }
   ],
   "section": null,
-  "title": "Where are you in your hair regrowth journey?",
+  "title": "When did you notice changes to your hair?",
   "type": "question"
  }
 }

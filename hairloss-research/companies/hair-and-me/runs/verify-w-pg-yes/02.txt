@@ -1,17 +1,36 @@
-STEP 02 js
-URL: https://www.hairandme.com/c/suh/js
+STEP 02 pds
+URL: https://www.hairandme.com/c/suh/pds
 
 --- VISIBLE TEXT ---
-Where are you in your hair regrowth journey?
-Still exploring my options
-Ready to start treatment
+Understanding your hormones
+
+Why are we asking?
+
+Hormones play a significant role in hair loss and regrowth, and our Dermatology Team needs to know if there’s any possibility you could become pregnant. We understand your assigned sex at birth and gender identity may be different.
+
+Tell us the sex you were assigned at birth
+Please select
+Male
+Female
+Tell us your gender identity
+Please select
+Woman/Girl
+Man/Boy
+Transwoman/Transgirl
+Transman/Transboy
+Non-Binary/Genderqueer/Agender/Gender Fluid
+Don’t know
+Prefer not to say
+Other
 NEXT QUESTION
 Back to previous page
 
 --- CONTROLS ---
 a -> / | Navigate home
 a -> https://www.hairandme.com/support | Support Centre
-input:radio[name=8038] | Still exploring my options
-input:radio[name=8038] | Ready to start treatment
-button:submit | NEXT QUESTION
-a -> /c/suh/js?action=previous | Back to previous page
+button:button | Please select
+select:select-one[name=3039] | Male Female
+button:button | Please select
+select:select-one[name=3054] | Woman/Girl Man/Boy Transwoman/Transgirl Transman/Transboy Non-Binary/Genderqueer/Agender/Gender Fluid Don’t know Prefer not to say Other
+button:submit | NEXT QUESTION [disabled]
+a -> /c/suh/pds?action=previous | Back to previous page

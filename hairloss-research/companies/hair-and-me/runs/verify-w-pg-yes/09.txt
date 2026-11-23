@@ -1,27 +1,26 @@
-STEP 09 htp
-URL: https://www.hairandme.com/c/suh/htp
+STEP 09 hdw
+URL: https://www.hairandme.com/c/suh/hdw
 
 --- VISIBLE TEXT ---
-Have you used any of the following products to help you achieve your hair goals in the last three months?
-Minoxidil tablets
-Finasteride tablets
-Spironolactone tablets
-Minoxidil spray
-Finasteride spray
-Dutasteride capsules
-None of the above
+Do you know if you're in a hard water area?
+
+How to check for signs of hard water:
+
+White spots on dishes and glassware (from calcium and magnesium deposits).
+Soap doesn’t lather well when washing hands or showering.
+Dry skin and dull hair after bathing.
+Scale buildup in kettles, coffee makers, or water heaters.
+Yes
+No
+Unsure
 NEXT QUESTION
 Back to previous page
 
 --- CONTROLS ---
 a -> / | Navigate home
 a -> https://www.hairandme.com/support | Support Centre
-input:checkbox[name=250] | Minoxidil tablets
-input:checkbox[name=250] | Finasteride tablets
-input:checkbox[name=250] | Spironolactone tablets
-input:checkbox[name=250] | Minoxidil spray
-input:checkbox[name=250] | Finasteride spray
-input:checkbox[name=250] | Dutasteride capsules
-input:checkbox[name=250] | None of the above
-button:submit | NEXT QUESTION [disabled]
-a -> /c/suh/htp?action=previous | Back to previous page
+input:radio[name=8003] | Yes
+input:radio[name=8003] | No
+input:radio[name=8003] | Unsure
+button:submit | NEXT QUESTION
+a -> /c/suh/hdw?action=previous | Back to previous page

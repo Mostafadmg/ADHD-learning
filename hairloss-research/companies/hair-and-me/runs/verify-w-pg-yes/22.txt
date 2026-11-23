@@ -1,21 +1,19 @@
-STEP 22 pgc
-URL: https://www.hairandme.com/c/suh/pgc
+STEP 22 mp
+URL: https://www.hairandme.com/c/suh/mp
 
 --- VISIBLE TEXT ---
-Pregnancy safety information
-
-We can prescribe you a treatment that's considered safe during this time but before we do this, we need you to read the information in the link below about the treatment and make an informed decision on whether you want to continue.
-
-Information on treatment during pregnancy
-
-Yes, I've read and understood the information and would like to carry on.
+Do any of the following apply to you?
+I'm postpartum (given birth in the last 6 months)
+I have unwanted hair on my face (e.g. upper lip, chin, jawline)
+None of the above
 NEXT QUESTION
 Back to previous page
 
 --- CONTROLS ---
 a -> / | Navigate home
 a -> https://www.hairandme.com/support | Support Centre
-a -> https://www.hairandme.com/support/en/articles/254008-can-i-use-hair-me-if-i-am-pregnant-breastfeeding-or-trying-to-conceive | Information on treatment during pregnancy
-input:checkbox[name=3049] | Yes, I've read and understood the information and would like to carry on.
+input:checkbox[name=4503] | I'm postpartum (given birth in the last 6 months)
+input:checkbox[name=4503] | I have unwanted hair on my face (e.g. upper lip, chin, jawline)
+input:checkbox[name=4503] | None of the above
 button:submit | NEXT QUESTION [disabled]
-a -> /c/suh/pgc?action=previous | Back to previous page
+a -> /c/suh/mp?action=previous | Back to previous page

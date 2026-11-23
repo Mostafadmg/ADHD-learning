@@ -1,21 +1,25 @@
-STEP 07 hw AFTER ANSWERS ["3-4 times per week"]
-URL: https://www.hairandme.com/c/suh/hw
+STEP 07 hht AFTER ANSWERS ["None of the above"]
+URL: https://www.hairandme.com/c/suh/hht
 
 --- VISIBLE TEXT ---
-How often do you wash your hair?
-Daily
-3-4 times per week
-Twice a week
-Once a week or less
+Are you hiding your hair loss in any of the following ways?
+Wearing a hat or head covering
+Using hairstyles to hide thin areas
+Shaving my head
+Wearing a wig, hairpiece or extensions
+Applying hair fibres
+None of the above
 NEXT QUESTION
 Back to previous page
 
 --- CONTROLS ---
 a -> / | Navigate home
 a -> https://www.hairandme.com/support | Support Centre
-input:radio[name=8010] | Daily
-input:radio[name=8010] | 3-4 times per week [checked]
-input:radio[name=8010] | Twice a week
-input:radio[name=8010] | Once a week or less
+input:checkbox[name=8009] | Wearing a hat or head covering [disabled]
+input:checkbox[name=8009] | Using hairstyles to hide thin areas [disabled]
+input:checkbox[name=8009] | Shaving my head [disabled]
+input:checkbox[name=8009] | Wearing a wig, hairpiece or extensions [disabled]
+input:checkbox[name=8009] | Applying hair fibres [disabled]
+input:checkbox[name=8009] | None of the above [checked]
 button:submit | NEXT QUESTION
-a -> /c/suh/hw?action=previous | Back to previous page
+a -> /c/suh/hht?action=previous | Back to previous page

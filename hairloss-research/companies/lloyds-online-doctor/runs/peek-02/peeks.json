@@ -1,0 +1,20 @@
+[
+ {
+  "from": "103257",
+  "option": "Random patches",
+  "trail": [],
+  "result": {
+   "sig": "SUMMARY",
+   "stepState": "SUMMARY",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": []
+  },
+  "onBaseline": true,
+  "shot": "peek-01-103257",
+  "stuck": true
+ }
+]

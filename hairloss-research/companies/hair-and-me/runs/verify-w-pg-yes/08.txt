@@ -1,13 +1,14 @@
-STEP 08 hht
-URL: https://www.hairandme.com/c/suh/hht
+STEP 08 htp
+URL: https://www.hairandme.com/c/suh/htp
 
 --- VISIBLE TEXT ---
-Are you hiding your hair loss in any of the following ways?
-Wearing a hat or head covering
-Using hairstyles to hide thin areas
-Shaving my head
-Wearing a wig, hairpiece or extensions
-Applying hair fibres
+Have you used any of the following products to help you achieve your hair goals in the last three months?
+Minoxidil tablets
+Finasteride tablets
+Spironolactone tablets
+Minoxidil spray
+Finasteride spray
+Dutasteride capsules
 None of the above
 NEXT QUESTION
 Back to previous page
@@ -15,11 +16,12 @@ Back to previous page
 --- CONTROLS ---
 a -> / | Navigate home
 a -> https://www.hairandme.com/support | Support Centre
-input:checkbox[name=8009] | Wearing a hat or head covering
-input:checkbox[name=8009] | Using hairstyles to hide thin areas
-input:checkbox[name=8009] | Shaving my head
-input:checkbox[name=8009] | Wearing a wig, hairpiece or extensions
-input:checkbox[name=8009] | Applying hair fibres
-input:checkbox[name=8009] | None of the above
+input:checkbox[name=250] | Minoxidil tablets
+input:checkbox[name=250] | Finasteride tablets
+input:checkbox[name=250] | Spironolactone tablets
+input:checkbox[name=250] | Minoxidil spray
+input:checkbox[name=250] | Finasteride spray
+input:checkbox[name=250] | Dutasteride capsules
+input:checkbox[name=250] | None of the above
 button:submit | NEXT QUESTION [disabled]
-a -> /c/suh/hht?action=previous | Back to previous page
+a -> /c/suh/htp?action=previous | Back to previous page

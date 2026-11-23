@@ -1,0 +1,30 @@
+STEP 10 click "Balanced results & long-term care"
+URL: https://www.keeps.com/hair-assessment-quiz?step=12
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+You're in good hands.
+
+Matched using clinician-guided treatment protocols & targeting combination meds.
+
+98%
+
+experience hair stabilization within the first 3 months
+
+86%
+
+experience visible regrowth by month 3
+
+94%
+
+overall member satisfaction
+
+Continue
+
+Keeps | Hair Loss Treatment for Men
+
+--- CONTROLS ---
+  button (2): Go back  ·  Continue
+
+--- LINKS ---
+  link (2): 3 months -> https://pubmed.ncbi.nlm.nih.gov/15319158/  ·  month 3 -> https://pmc.ncbi.nlm.nih.gov/articles/PMC10239632/

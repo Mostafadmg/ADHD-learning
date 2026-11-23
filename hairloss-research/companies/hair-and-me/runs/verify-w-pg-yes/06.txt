@@ -1,29 +1,21 @@
-STEP 06 hs
-URL: https://www.hairandme.com/c/suh/hs
+STEP 06 hw
+URL: https://www.hairandme.com/c/suh/hw
 
 --- VISIBLE TEXT ---
-How do you usually style or treat your hair?
-Air dry
-Colour treatments, bleaching and dyes
-Product-based styling (e.g. wax, clay, pomade, hairspray)
-Heat-based styling tools (e.g. straightening, curling, blow-drying)
-Heatless styling (e.g. rollers, curling rods)
-Protective styles (e.g. braids, twists, faux locs)
-Chemical processing (e.g. perms, relaxers, keratin treatments)
-None of the above
+How often do you wash your hair?
+Daily
+3-4 times per week
+Twice a week
+Once a week or less
 NEXT QUESTION
 Back to previous page
 
 --- CONTROLS ---
 a -> / | Navigate home
 a -> https://www.hairandme.com/support | Support Centre
-input:checkbox[name=253] | Air dry
-input:checkbox[name=253] | Colour treatments, bleaching and dyes
-input:checkbox[name=253] | Product-based styling (e.g. wax, clay, pomade, hairspray)
-input:checkbox[name=253] | Heat-based styling tools (e.g. straightening, curling, blow-drying)
-input:checkbox[name=253] | Heatless styling (e.g. rollers, curling rods)
-input:checkbox[name=253] | Protective styles (e.g. braids, twists, faux locs)
-input:checkbox[name=253] | Chemical processing (e.g. perms, relaxers, keratin treatments)
-input:checkbox[name=253] | None of the above
+input:radio[name=8010] | Daily
+input:radio[name=8010] | 3-4 times per week
+input:radio[name=8010] | Twice a week
+input:radio[name=8010] | Once a week or less
 button:submit | NEXT QUESTION [disabled]
-a -> /c/suh/hs?action=previous | Back to previous page
+a -> /c/suh/hw?action=previous | Back to previous page

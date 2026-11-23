@@ -1,9 +1,40 @@
 {
- "actions": "exp-w19.json",
- "changed": "women-q7 allergies: No -> Yes, women-q7a = Other medication only (details: 'Ibuprofen')",
- "failedStep": "3: click #onetrust-reject-all-handler :: locator.click: Timeout 4000ms exceeded.",
- "saveReply": [],
+ "actions": "exp-m03.json",
+ "changed": "men-q8 conditions: None of the above -> Prostate cancer",
+ "failedStep": null,
+ "submitDisabled": false,
+ "preTextLength": 4300,
+ "urlAfter": "https://onlinedoctor.superdrug.com/assessment/147929#/product?step=product",
+ "reachedProductScreen": true,
+ "offerLines": [
+  "Finasteride1mg - (1 month - Generic Treatment) (28 tablets) £27.00",
+  "Finasteride1mg - (2 months - Generic Treatment) (56 tablets) £54.00",
+  "Finasteride1mg - (3 months - Generic Treatment) (84 tablets) £79.00",
+  "Finasteride1mg - (6 months - Generic Treatment) (168 tablets) £137.00",
+  "Propecia1mg - (1 month) (28 tablets) £60.00",
+  "£110.00",
+  "Propecia1mg - (3 months) (84 tablets) £140.00",
+  "Propecia1mg - (6 months) (168 tablets) £265.00",
+  "Telephone Consultation with a Doctor (does not include prescription medication): Available 2-3pm Friday(Only Phone consultation) £25.00"
+ ],
+ "products": [
+  "9895411 Finasteride1mg - (1 month - Generic Treatment) (28 tablets)",
+  "9895567 Finasteride1mg - (2 months - Generic Treatment) (56 tablets)",
+  "9895412 Finasteride1mg - (3 months - Generic Treatment) (84 tablets)",
+  "9895413 Finasteride1mg - (6 months - Generic Treatment) (168 tablets)",
+  "10649 Propecia1mg - (1 month) (28 tablets)",
+  "9895566 Propecia1mg - (2 months) (56 tablets)",
+  "10650 Propecia1mg - (3 months) (84 tablets)",
+  "9870126 Propecia1mg - (6 months) (168 tablets)",
+  "9894989 Telephone Consultation with a Doctor (does not include prescription medication): Available"
+ ],
+ "saveReply": [
+  "200 {\"status\":{\"code\":200,\"message\":\"Questionnaire Response added successfully to service 201037\"},\"data\":[],\"meta\":[],\"errors\":[]}"
+ ],
  "productRulesReply": [],
  "productRulesCalled": 0,
- "apiCallsAfterLoad": []
+ "apiCallsAfterLoad": [
+  "/uk/api/v2/assessment/saveQuestionnaireResponse?serviceId=201037 200",
+  "/ecommerce/api/v2/section/1039315014 200"
+ ]
 }

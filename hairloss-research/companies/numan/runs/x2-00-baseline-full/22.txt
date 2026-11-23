@@ -1,0 +1,78 @@
+STEP 22 click "Continue"
+URL: https://www.numan.com/subscribe/hair-loss/d07bf090-baff-4bc1-9200-16190cb4c312/profile
+TITLE: Numan | A few details about you
+
+--- VISIBLE TEXT ---
+Order summary
+Your order
+Hair Kit - Medicated Spray, Finasteride & Supplement
+(Delivered as 3 kits every 3 months)
+£216.00
+
+See results in 180 days
+
+or your money back¹
+
+¹ Claim a full refund between 180-210 days from order approval if treatment is not effective at stabilising or reversing hair loss. First time users only. Full Ts&Cs.
+
+Subtotal
+£216.00
+Discounts
+Promo
+Remove
+-£40.00
+Save 50% on your first order (max. £40)
+Delivery
+Free
+Total
+£176.00
+1
+Create an account
+
+Have an account? Log in
+
+​
+Email address
+We will let you know via email once your prescription has been issued.
+​
+Password
+
+Password must be at least 12 characters, including a mix of letters, numbers, and special characters.
+
+We are required to confirm the identity of our members. Any incorrect details will cause delays to your order.
+​
+Legal first name
+Please write your name as it appears on your passport or ID. We need your full legal name to confirm your identity.
+​
+Legal surname
+​
+Date of birth
+​
+Phone number
+In very rare cases our clinicians may need to call you. They will always be discreet.
+​
+Sex
+What sex were you assigned at birth, as shown on your original birth certificate. This is important for us to know because it allows us to provide you with treatments as safely as possible.
+2
+Delivery address
+Please make sure your address is accurate. Try using our auto-complete option. This will help us confirm your identity.
+​
+Address
+​
+City
+​
+Postcode
+Yes, I agree to Numan's Terms & Conditions and Privacy Policy.
+I do not wish to receive marketing communications that include special offers, promotions, or educational content.
+Continue
+
+--- CONTROLS ---
+  button (3): Remove  ·  ​ Sex  ·  Continue
+  input:text (7): Email address  ·  Legal first name  ·  Legal surname  ·  Date of birth  ·  Sex  ·  City  ·  Postcode
+  input:password (1): Password
+  input:tel (1): Phone number
+  textarea (1): Address
+  checkbox (2): Yes, I agree to Numan's Terms & Conditions and Privacy Policy.  ·  I do not wish to receive marketing communications that include special offers, promotions, or educational content.
+
+--- LINKS ---
+  link (5): Back -> #  ·  Visit the main page -> /  ·  Full Ts&Cs. -> /legal/terms-of-sale#termsMoneyBackGuarantee  ·  Terms & Conditions -> /legal/terms-and-conditions  ·  Privacy Policy. -> /legal/privacy-policy

@@ -1,0 +1,24 @@
+STEP 17 click "Show my plan"
+URL: https://www.keeps.com/hair-assessment-quiz?step=16
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+Finalizing your approval.
+
+61%
+
+Confirming clinical eligibility
+
+Locking in recommended plan
+
+Preparing results summary
+
+Completing approval
+
+Keeps | Hair Loss Treatment for Men
+
+--- CONTROLS ---
+  button (1): Go back
+
+--- LINKS ---
+

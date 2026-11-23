@@ -1,0 +1,30 @@
+STEP 05
+URL: https://www.hims.com/g/i/hl/type
+SERVER NODE: type (nodeModularScreen), step value 12
+
+--- VISIBLE TEXT ---
+What’s your hair type?
+Straight or wavy
+Curly or coily
+Textured or processed
+I don’t have hair
+Continue
+Already have an account? Sign In
+
+--- CHOICES ---
+[radio] Straight or wavy
+[radio] Curly or coily
+[radio] Textured or processed
+[radio] I don’t have hair
+
+--- BUTTONS ---
+Continue
+
+--- FIELDS ---
+
+
+--- LINKS ---
+Already have an account? Sign In -> /c/hl?skipToSignIn=true&goFlow=true&flowId=hl&sessionId=99132d5a-2d4d-47b0-954e-a8447e1115a7
+
+--- OUTPUT SCHEMA (server) ---
+{"type":"object","required":["responses"],"properties":{"responses":{"type":"object","required":["i-hl-hims-hair-type"],"properties":{"i-hl-hims-hair-type":{"type":"object","required":["i-hl-hims-hair-type"],"properties":{"i-hl-hims-hair-type":{"enum":["i-hl-hims-hair-type-straight","i-hl-hims-hair-type-curly","i-hl-hims-hair-type-textured","i-hl-hims-hair-type-none"],"type":"string"}},"additionalProperties":false}},"additionalProperties":false}}}

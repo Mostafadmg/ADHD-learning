@@ -1,0 +1,26 @@
+STEP 03 click "Not seeing a match?"
+URL: https://www.keeps.com/hair-assessment-quiz?step=3
+TITLE: Keeps | Hair Loss Treatment for Men
+
+--- VISIBLE TEXT ---
+Which best matches you?
+
+Choose the option that looks closest today.
+
+Receding Hairline
+
+Diffuse Thinning
+
+Patchy Loss
+
+Mostly Scalp
+
+← Back to main options
+
+Keeps | Hair Loss Treatment for Men
+
+--- CONTROLS ---
+  button (6): Go back  ·  Receding Hairline  ·  Diffuse Thinning  ·  Patchy Loss  ·  Mostly Scalp  ·  ← Back to main options
+
+--- LINKS ---
+

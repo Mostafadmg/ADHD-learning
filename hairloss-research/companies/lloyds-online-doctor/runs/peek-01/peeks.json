@@ -1,0 +1,197 @@
+[
+ {
+  "from": "103257",
+  "option": "Temples only",
+  "trail": [],
+  "result": {
+   "sig": "108138",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108138",
+     "type": "SINGLE_CHOICE",
+     "title": "Hair loss around your temples",
+     "text": "Finasteride and minoxidil are generally most effective for early to moderate male pattern hair loss at the crown and top of the scalp. They may still slow hair loss and support regrowth around the temples or hairline, but results in these areas are less predictable and vary between individuals.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "I understand that results can be less predictable in these areas"
+     ],
+     "optionIds": [
+      "108138$105576"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-01-103257",
+  "text": "Exit consultation\nHair loss around your temples\n\nFinasteride and minoxidil are generally most effective for early to moderate male pattern hair loss at the crown and top of the scalp.\n\nThey may still slow hair loss and support regrowth around the temples or hairline, but results in these areas are less predictable and vary between individuals.\n\nI understand that results can be less predictable in these areas\nNext\nBack"
+ },
+ {
+  "from": "108138",
+  "option": "I understand that results can be less predictable in these areas",
+  "trail": [
+   "103257=Temples only"
+  ],
+  "result": {
+   "sig": "107954",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "107954",
+     "type": "SINGLE_CHOICE",
+     "title": "Your hair loss",
+     "text": "How did your hair loss start?",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Gradually, over months or years",
+      "Suddenly, over days or weeks"
+     ],
+     "optionIds": [
+      "107954$105143",
+      "107954$105144"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-02-108138"
+ },
+ {
+  "from": "103257",
+  "option": "Moderate",
+  "trail": [],
+  "result": {
+   "sig": "107954",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "107954",
+     "type": "SINGLE_CHOICE",
+     "title": "Your hair loss",
+     "text": "How did your hair loss start?",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Gradually, over months or years",
+      "Suddenly, over days or weeks"
+     ],
+     "optionIds": [
+      "107954$105143",
+      "107954$105144"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-03-103257"
+ },
+ {
+  "from": "103257",
+  "option": "Extensive",
+  "trail": [],
+  "result": {
+   "sig": "108376",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108376",
+     "type": "SINGLE_CHOICE",
+     "title": "Treating extensive hair loss",
+     "text": "Finasteride and minoxidil are generally most effective for early to moderate male pattern hair loss at the crown and top of the scalp. If your hair loss is extensive, treatment may still help slow further hair loss, but significant regrowth is less likely. Results vary between individuals.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "I understand that significant regrowth may be less likely"
+     ],
+     "optionIds": [
+      "108376$105576"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-04-103257",
+  "text": "Exit consultation\nTreating extensive hair loss\n\nFinasteride and minoxidil are generally most effective for early to moderate male pattern hair loss at the crown and top of the scalp.\n\nIf your hair loss is extensive, treatment may still help slow further hair loss, but significant regrowth is less likely. Results vary between individuals.\n\nI understand that significant regrowth may be less likely\nNext\nBack"
+ },
+ {
+  "from": "108376",
+  "option": "I understand that significant regrowth may be less likely",
+  "trail": [
+   "103257=Extensive"
+  ],
+  "result": {
+   "sig": "107954",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "107954",
+     "type": "SINGLE_CHOICE",
+     "title": "Your hair loss",
+     "text": "How did your hair loss start?",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Gradually, over months or years",
+      "Suddenly, over days or weeks"
+     ],
+     "optionIds": [
+      "107954$105143",
+      "107954$105144"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-05-108376"
+ },
+ {
+  "from": "103257",
+  "option": "Complete",
+  "trail": [],
+  "result": {
+   "sig": "SUMMARY",
+   "stepState": "SUMMARY",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": []
+  },
+  "onBaseline": true,
+  "shot": "peek-06-103257",
+  "stuck": true
+ }
+]

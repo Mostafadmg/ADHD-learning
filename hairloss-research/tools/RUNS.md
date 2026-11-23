@@ -18,3 +18,23 @@ Still to launch (wave 2): musely, xyon, oana, nutrafol, pilot.
 | US compounders 2 | musely, xyon, oana | v2 | (launched 22:05; see newest folder in subagents/workflows) |
 
 Still to launch: nutrafol, pilot. Then phase 2: cross-company synthesis and the new-company design.
+
+## 23 Nov 22:55 UTC — relaunched on Opus (script hairloss-consultation-research-v3.js; args carry "start" per company and "model")
+The Fable usage limit was reached at about 22:45; every earlier run stopped. Stage reached per company is in each journal.
+
+| group | companies (start stage) | run id |
+|---|---|---|
+| UK A1 | hair-and-me (verify), treated (map) | wf_825dcb84-083 |
+| UK A2 | sons (experiment), numan (experiment) | wf_baba9f0b-642 |
+| UK A3 | superdrug (experiment), boots (experiment) | wf_198918fa-3a2 |
+| UK A4 | oxford (experiment), lloyds (map) | wf_74d0f9f6-144 |
+| Research A5 | uk-regulation (finish + check), customer-voice (finish + check), clinical-men (check), market-economics (check) | wf_8c98fa00-cab |
+| US B1 | hims-us (experiment), keeps (experiment) | wf_c584a855-4c2 |
+| US B2 | happy-head (experiment), strut (experiment) | wf_ca3b4af9-bbc |
+
+Finished already: hims-uk, voy, hers-us (all three stages); ro (verify still to do); clinical-women (checked); both market sweeps.
+Still to launch: ro (verify), xyon / musely / oana (map), nutrafol, pilot. Then phase 2 (synthesis + the new-company design).
+| UK big extras | dr-fox (map), philip-kingsley (map) | wf_70eaed0f-f6d |
+
+Priority change (23 Nov, user asked about "other big ones"): the UK sweep flagged Dr Fox and Philip Kingsley as the biggest UK players outside the original ten, so they jumped the queue. The five queued US/AU companies (xyon, musely, oana, nutrafol, pilot) only run if the weekly budget allows after the synthesis and company plan.
+Voy: blocked by a bot check we do not bypass; offered the user a manual walk on their own phone (screenshots) to fill the gap.

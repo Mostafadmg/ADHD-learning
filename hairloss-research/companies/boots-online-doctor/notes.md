@@ -152,3 +152,8 @@ Do **not** choose "Yes" on the GP question (it opens a GP practice search = thir
 - Content oddities: "Tick all that apply" on a single-choice question (tablets route); age bands "Between 18 and 50"
   and "50 years or older" overlap; the content JSON still holds asthma-inhaler and "Lorem ipsum" placeholder text and a
   hidden `HAI-F-No-Choice` product entry; bundles ask an age band although the date of birth is known.
+
+## 10. Stage 2 (EXPERIMENT) log, started 2026-11-23
+
+Run ids: `x00-baseline-replay`, `x01…` one change each. Each run's end state is read from the final screen, the final URL
+and the last `net/*orders_*.json` (status, admin_status, task statuses, product/sku).

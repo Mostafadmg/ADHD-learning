@@ -1,21 +1,29 @@
-STEP 05 ht
-URL: https://www.hairandme.com/c/suh/ht
+STEP 05 hs
+URL: https://www.hairandme.com/c/suh/hs
 
 --- VISIBLE TEXT ---
-Which option best describes your natural hair type?
-Straight
-Wavy
-Curly
-Coily
+How do you usually style or treat your hair?
+Air dry
+Colour treatments, bleaching and dyes
+Product-based styling (e.g. wax, clay, pomade, hairspray)
+Heat-based styling tools (e.g. straightening, curling, blow-drying)
+Heatless styling (e.g. rollers, curling rods)
+Protective styles (e.g. braids, twists, faux locs)
+Chemical processing (e.g. perms, relaxers, keratin treatments)
+None of the above
 NEXT QUESTION
 Back to previous page
 
 --- CONTROLS ---
 a -> / | Navigate home
 a -> https://www.hairandme.com/support | Support Centre
-input:radio[name=4446] | Straight
-input:radio[name=4446] | Wavy
-input:radio[name=4446] | Curly
-input:radio[name=4446] | Coily
+input:checkbox[name=253] | Air dry
+input:checkbox[name=253] | Colour treatments, bleaching and dyes
+input:checkbox[name=253] | Product-based styling (e.g. wax, clay, pomade, hairspray)
+input:checkbox[name=253] | Heat-based styling tools (e.g. straightening, curling, blow-drying)
+input:checkbox[name=253] | Heatless styling (e.g. rollers, curling rods)
+input:checkbox[name=253] | Protective styles (e.g. braids, twists, faux locs)
+input:checkbox[name=253] | Chemical processing (e.g. perms, relaxers, keratin treatments)
+input:checkbox[name=253] | None of the above
 button:submit | NEXT QUESTION [disabled]
-a -> /c/suh/ht?action=previous | Back to previous page
+a -> /c/suh/hs?action=previous | Back to previous page
