@@ -10,7 +10,7 @@ The blueprint is five files:
 | File | What it holds |
 |---|---|
 | `plan.md` (this file) | The company on one page, why now, how we beat each rival, the business model, the first year in brief |
-| `products.md` | Every product, its price and estimated cost, and the 6 products nobody in the UK offers today |
+| `products.md` | Every product, its price and estimated cost, and the 6 products none of the UK companies studied is seen to offer |
 | `engine.md` | The consultation question by question, the rules, the treatment ladder and the follow-up schedule |
 | `launch.md` | Phases, team, suppliers, prices and unit economics, marketing within the law, the numbers to watch |
 | `risks.md` | The risk register and the compliance checklist before launch |
@@ -340,7 +340,8 @@ Details: `launch.md` 1.
 3. **Edge:** diagnosis first (photos, trigger timing, weight-loss injections, targeted bloods), real stops before
    contact details, licensed first with a written ladder, separate medicines at evidence doses.
 4. **Women:** stepped spironolactone (online ceiling 100 mg) and minoxidil tablets from a licensed tablet (ceiling
-   2.5 mg), which no UK rival sells; free pregnancy, shedding and traction routes.
+   2.5 mg), which none of the 12 UK companies studied is seen to sell (Oxford\* may do it privately; see 1.4); free
+   pregnancy, shedding and traction routes.
 5. **Fair Deal:** pay only if approved, one price a month, reminders, two-tap cancel, refunds tied to care, never
    results.
 6. **Prices [proposal]:** finasteride £18 to £20; scalp minoxidil £22 (men) or £26 (women); two medicines £32 to £38.

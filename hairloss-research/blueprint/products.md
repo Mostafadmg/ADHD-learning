@@ -442,7 +442,7 @@ comb was not rated better than sham [clinical-men 5.2; clinical-women 3.11].
 
 ---
 
-## 8. Standout products: six things nobody in the UK offers today
+## 8. Standout products: six things none of the UK companies studied is seen to offer
 
 "Nobody" means none of the 12 UK companies studied, as far as their public pages, code and documents show. What
 happens after each sign-in wall was not watched, Voy\* and Oxford\* are desk research only, and the UK sweep of 58
