@@ -42,11 +42,16 @@ function runsShowing(text) {
   return hits.sort((a, b) => (PREF.indexOf(a) + 1 || 99) - (PREF.indexOf(b) + 1 || 99) || a.localeCompare(b));
 }
 (function addProof() {
-  let added = 0, down = [];
+  let added = 0, down = [], upgraded = [];
   for (const f of d.flows) for (const qq of f.questions) {
     const has = /runs\//.test(JSON.stringify(qq.proof || '') + (qq.branchDetail || '') + (qq.shownWhen || ''));
     let hits = runsShowing(qq.text);
     if (!hits.length && qq.detail) hits = runsShowing(qq.detail);
+    if (qq.evidence === 'code' && qq.stage === 'anonymous' && hits.length && !has) {
+      // seen on a saved live screen: the question itself (wording, when shown) is observed, not only read in code
+      qq.evidence = 'observed'; qq.proof = 'Seen live in ' + hits.slice(0, 3).map(r => 'runs/' + r).join(', ') + (hits.length > 3 ? ` and ${hits.length - 3} more run folders` : '');
+      upgraded.push(qq.id); continue;
+    }
     if (qq.evidence === 'observed' && !has) {
       if (hits.length) { qq.proof = 'Seen live in ' + hits.slice(0, 3).map(r => 'runs/' + r).join(', ') + (hits.length > 3 ? ` and ${hits.length - 3} more run folders` : ''); added++; }
       else { qq.evidence = 'code'; down.push(qq.id); }
@@ -58,6 +63,7 @@ function runsShowing(text) {
       else { o.evidence = 'code'; down.push(qq.id + ' "' + o.label + '"'); }
     }
   }
+  if (upgraded.length) corrected.push(`${upgraded.length} questions were labelled "code" although their wording appears on saved live screens; upgraded to "observed" with the run folders named: ${upgraded.join(', ')}.`);
   corrected.push(`${added} questions and options were labelled "observed" without naming a run folder. Each now names the run folders whose saved screens show it (found by searching every runs/*/NN.txt for the question wording).` + (down.length ? ` Not found on any saved screen, so downgraded to "code": ${down.join('; ')}.` : ' All were found on saved screens; none had to be downgraded.'));
 })();
 

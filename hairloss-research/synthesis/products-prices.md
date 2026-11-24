@@ -243,4 +243,202 @@ the product flammable.
 - **Unusual strengths with no licensed equivalent:** finasteride 1.1 mg and minoxidil 3 mg (Hims UK chew), finasteride
   1.2 mg (Hims US), spironolactone 44 mg (Hers UK). None of these matches a licensed tablet strength.
 
+---
+
+## 3. Price benchmark
+
+**How the numbers were normalised.** Each price is turned into a cost per month of treatment on that plan length:
+plan price ÷ months (or ÷ number of 28- or 30-tablet packs). "6 months" means the 6-month plan, or the nearest pack
+(for example 168 tablets). Delivery and fees are left out of the main figures and noted where they apply. Plan prices
+are **list** prices unless the column says "first order".
+
+**Delivery and fees that change the real price.** Dr Fox adds a prescription fee of £1 to £4 per order (£2 was charged
+on a £10 order in the live walk) and £2.90 delivery [obs/code]. Sons charges £2.99 delivery under £40 [code]. Hims UK,
+Hair + Me, Boots, Superdrug (standard) and Treated deliver free [docs/obs]. Delivery for Numan, Lloyds, Voy, Oxford and
+Philip Kingsley was not recorded.
+
+### 3.1 First-order offers and what happens after
+
+| Company | First-order offer seen (23 to 24 Nov 2026) | Price after the offer | Label |
+|---|---|---|---|
+| Hims UK / Hers UK | No new-customer offer recorded for Hims hair. Lower "reactivation" prices exist for returning customers (spray: £45 for 3 months instead of £75; £89.10 for 6 months instead of £99). Hers UK banner: "Save up to 50% on plans" | List plan prices (3.3) | code / docs |
+| Voy | "From £13" (finasteride), "from £14" (spray, tablets), "from £19" (combined plans), all on 6-month plans; Black Friday "50% off hair loss plans. Free shampoo with every plan" (16 to 30 Nov). Women: "From £39 £14.99, save 60%" (serum ads), "£25 £15, save 40%" (tablets) | Complete plan £33.17 a month on 6-month billing, £44 on monthly billing (search summary of the plan page) | docs |
+| Numan | Banner: "Save 50% off your first order (max. £40)". The pricing call returned **40%** off, capped at £40, and the screens matched 40% (for example finasteride £16.80 instead of £28) — **CONFLICT** between banner and price | List quarterly price | obs / code |
+| Sons | Black Friday: about 40% off the first order of selected 6-month plans and 35% off 3-month plans, new customers only ("from £13.60 a month" finasteride, "from £14.20" oral minoxidil, "from £18.90" combination spray and Core Plan, "from £29.90" Ultimate Plan). Partner-clinic codes worth 50 to 55% off sit in the site code | Renews at list price | code |
+| Hair + Me | £14.99 for each of the first three 4-week deliveries (product-page codes); £12.99 each with refer-a-friend (the referrer gets £30 credit). Members are offered prepaid bundles, "save up to 30%" | £34.99 every 4 weeks | obs / code |
+| Philip Kingsley | Hair-loss store: 50% off the first delivery, then full price. Main store: 30% off the first delivery, then 15% off | List | code |
+| Superdrug | Code HL40 (40% off the hair-loss service) on the men's page; product pages show HL30 instead. Whether it is first-order only is not stated | List | docs |
+| Lloyds | Subscription "Save 15% & cancel anytime" against one-off prices | — | obs |
+| Dr Fox, Boots, Treated, Oxford | None seen | — | obs / docs |
+
+US for contrast: Keeps 30 to 50% off the first 3 months [obs]; Ro 35% or 50% off the first order if prescribed
+(landing-page coupons) [code]; Happy Head "up to 60% off" the first order plus a free dermaroller [docs/obs]; Hims
+"starting at" prices need a 10-month plan paid up front [docs].
+
+### 3.2 Finasteride 1 mg tablets (generic), per month
+
+| Company | 1 month (28 to 30 tablets) | 3 months | 6 months | 12 months | First order | Label |
+|---|---|---|---|---|---|---|
+| Dr Fox | £10.00 (£14.90 with fee and delivery) | £8.83 (84 for £26.50) | £7.25 (168 for £43.50) | — | none | obs / code |
+| Oxford Online Pharmacy | £13.99 | £11.00 (84 for £32.99) | £9.17 (168 for £54.99) | — | none | docs (search snippets of different ages) |
+| Superdrug | £27.00 | £26.33 (84 for £79) | £22.83 (168 for £137) | — | HL40: £16.20, £15.80, £13.70 a month | obs / docs |
+| Boots | £28.00 | £26.67 (84 for £80) | £23.00 (168 for £138) | £20.42 (364 for £245) | none. First-time buyers could pick only the 28-pack (larger packs "out of stock") | obs |
+| Sons | £29.00 | £27.67 (£83) | £22.67 (£136) | £22.67 (£272) | from £13.60 | code |
+| Lloyds | £34.00 one-off; £28.00 subscription | £31.67 one-off (£95); £26.67 subscription (£80) | £27.17 one-off (£163); £23.00 subscription (£138) | — | none | obs |
+| Treated (subscription) | £34.95 | £24.65 (84 for £73.95) | £21.83 (168 for £130.95) | — | none | obs |
+| Numan (delivered quarterly) | £34.00 (monthly variant in its data) | £28.00 (£84) | £24.00 | £20.00 | £16.80 (40% off) | obs / code |
+| Hims UK | — (one-off 3-month supply £114 = £38) | £33.00 (£99) | £26.00 (£156) | £23.00 (£276) | none | docs / code |
+| Voy | Unclear: "£44.00 for month 1" on monthly billing (search summary) | **OLD** (Aug 2024): £28.00 | **OLD**: £23.83 to £24.83 | — | from £13 (6-month plan) | docs |
+| Philip Kingsley (compounded capsule with biotin and vitamin D) | £40 (hair-loss store) or £42 (main store) per pack; supply length not stated — **CONFLICT** | — | — | — | £20 (50% off) | code |
+
+Branded Propecia costs £41.59 (Oxford), £42.40 (Dr Fox), £55 (Boots), £60 (Superdrug), £60.50 (Lloyds) and £66.95
+(Treated) for 28 tablets [obs/docs].
+
+**One year of finasteride:** about £100 to £116 at Dr Fox, buying two 168-packs and one 28-pack with fees and delivery
+[inf from obs/code prices]; £240 at Numan (annual billing) [obs]; £245 at Boots (364 tablets) [obs]; £272 at Sons
+[code]; £276 at Hims UK [docs].
+
+### 3.3 Topical minoxidil, per month
+
+**Licensed 5% minoxidil for men** (Regaine or Sons' own licensed spray; one 60 ml bottle or 73 ml can is one month
+at the licensed dose):
+
+| Company | Product | 1 month | 3 months | 6 months | 12 months | Label |
+|---|---|---|---|---|---|---|
+| Dr Fox | Sons 5% | £19.95 | £16.25 | £14.98 | — | obs / code |
+| Dr Fox | Regaine solution / foam | £29.00 / £29.50 | £21.33 / £22.00 | £19.67 / £20.33 | — | obs / code |
+| Sons | Own 5% spray | £33.00 | £18.00 | £16.50 | £15.00 | code |
+| Lloyds | Sons 5% | £33.00 | £18.00 | £16.50 | — | obs |
+| Oxford | Sons 5% | £28.98 | £17.99 | — | — | docs (copies of different ages) |
+| Oxford | Regaine solution | £33.60 (**CONFLICT**: page data says £28.00) | £23.33 | — | £20.00 (12 bottles £239.95) | docs |
+| Superdrug | Regaine foam / solution (3-packs only) | — | £22.00 / £23.33 (HL40: £13.20 / £14.00) | — | — | docs |
+| Treated | Regaine solution / foam (3-packs only) | — | £33.32 / £34.98 | — | — | obs |
+| Hims UK | Regaine solution | — | £51.00 | £50.00 | £44.00 | code |
+| Numan | Regaine solution | £80.00 | £65.00 | £57.00 | £48.00 | obs |
+
+The same licensed Regaine solution costs £29 for a month at Dr Fox and £80 for a month at Numan. At a supermarket it
+is about £37 a bottle [sweep].
+
+**Compounded minoxidil alone** (made-up strengths; not like for like):
+
+| Company | Product | 1 month | 3 months | 6 months | 12 months | First order | Label |
+|---|---|---|---|---|---|---|---|
+| Hims UK | 5% alcohol-free serum | — (one-off 3 months £108 = £36) | £31.00 | £24.00 | £21.00 | none | code / docs |
+| Numan | 6% spray | £38.00 | £30.00 | £26.00 | £22.00 | £18.00 | obs / code |
+| Voy | 10% spray | — | £29.67 (older page code still online) | £25.00 (same) | — | from £14 | code / docs |
+| Hair + Me | 5% drops | £37.91 a calendar month (£34.99 every 4 weeks) | — | — | — | £14.99 × 3 | obs |
+| Philip Kingsley | 5% drops (100 ml, about 40 doses) / 3% drops | £40 / £36 per bottle; billing interval unclear (the product page says the plan rolls every 3 months, the women's page says one bottle a month) — **CONFLICT** | — | — | — | £20 / £18 | code / docs |
+
+### 3.4 Compounded finasteride + minoxidil on the scalp, per month
+
+| Company | Formula | 1 month | 3 months | 6 months | 12 months | First order | Label |
+|---|---|---|---|---|---|---|---|
+| Dr Fox | Finasteride 0.3% + minoxidil 5% + tretinoin 0.01% spray | £13.00 (60 ml lasts two months, £26) | — | £12.00 (3 × 60 ml for £72) | — | none | obs / code. 2 × 60 ml is £48.00 on the product page but £48.50 at checkout (**CONFLICT**) |
+| Hims UK | Finasteride 0.3% + minoxidil 6% spray or serum | — (one-off 3 months £120 = £40) | £25.00 | £16.50 | — | none (reactivation £15 and £14.85) | code |
+| Hims UK | 4-in-1: + minoxidil 7%, ketoconazole 2.2%, biotin 0.2% | — (one-off 3 months £140) | £33.00 | £22.00 | — | none | code |
+| Sons | Finasteride 0.15% alone | — | £27.67 | £22.67 | — | — | code |
+| Sons | Finasteride 0.15% + minoxidil 5% + tretinoin 0.015% | — | £35.33 | £31.50 | — | from £18.90 | code |
+| Sons | Dutasteride 0.1% + minoxidil 5% + tretinoin 0.01% | — | £37.00 | £33.17 | — | — | code |
+| Numan | Minoxidil 10% + azelaic acid 5% + finasteride 0.1% | £44.00 | £36.00 | £32.00 | £28.00 | £22.67 (40% off) | obs / code |
+| Hair + Me | Minoxidil 5% + finasteride 0.1% (± tretinoin), or finasteride 0.2% | £37.91 a calendar month | — | — | — | £14.99 × 3 | obs (price) / docs (formula) |
+| Philip Kingsley | Minoxidil 5% + finasteride 0.1% drops (85 ml, about 30 doses) | £58 per bottle | — | — | — | £29 | code |
+| Voy | Finasteride 0.1% + minoxidil 10% + azelaic acid 5% | unknown | — | — | — | — | docs |
+
+Outside the set, the UK sweep lists similar sprays from £17 (e-Surgery) to £40 a month (City Skin Clinic) [sweep].
+
+### 3.5 Oral minoxidil, combined pills, dutasteride and bundles, per month
+
+**Oral minoxidil (men).** "Licensed tablet" means a licensed blood-pressure tablet used off-label; "capsule" means an
+unlicensed compounded capsule.
+
+| Company | Product | 1 month | 3 months | 6 months | First order | Label |
+|---|---|---|---|---|---|---|
+| Oxford | 2.5 mg licensed tablet (generic) | £22.49 (30) | £18.75 (120 for £74.99) | £19.17 (180 for £114.99) | none | docs |
+| Lloyds | 2.5 mg licensed tablet | £29.00 | £25.67 | £23.67 | none | obs |
+| Sons | 2.5 mg capsule + biotin | — | £25.67 | £23.67 | from £14.20 | code |
+| Sons | 5 mg (two capsules) | — | £35.10 | £31.20 | — | code |
+| Voy | 2.5 mg capsule | **OLD** (Aug 2024): £42 | £29.67 (older page code) | £25.00 (same) | from £14 | code / docs |
+| Hims UK | 3 mg chew with biotin and vitamins | £60.00 | £25.00 | £16.50 | none | code |
+| Hair + Me | 0.5 to 2.5 mg capsules | £37.91 a calendar month | — | — | £14.99 × 3 | obs / docs |
+
+**Finasteride and minoxidil together by mouth.**
+
+| Company | Product | 1 month | 3 months | 6 months | First order | Label |
+|---|---|---|---|---|---|---|
+| Hims UK | Chew: finasteride 1.1 mg + minoxidil 3 mg + vitamins | £60.00 | £25.00 | £16.50 | none | code |
+| Oxford | Two licensed tablets as a bundle (168 finasteride + 180 minoxidil) | — | — | about £28.33 (from £169.98) | none | docs; monthly figure inf |
+| Sons | Capsule: finasteride 1 mg + minoxidil 2.5 mg + biotin | £32.00 | £35.33 | £31.50 | — | code |
+| Lloyds | Two licensed tablets ("Dual Action - Tablets"), out of stock on 23 Nov | — | £35.33 | £31.50 | none | obs |
+| Voy | Capsule: finasteride 1 mg + minoxidil 2.5 mg + biotin 10 mg | **OLD** (Aug 2024): £44 | £39.67 (older page code) | £33.17 (same) | from £19 | code / docs |
+| Hair + Me | Capsule: finasteride 1 mg + minoxidil 2.5 or 5 mg | £37.91 a calendar month | — | — | £14.99 × 3 | obs / docs |
+
+**Oral dutasteride 0.5 mg (off-label).**
+
+| Company | Product | 1 month | 3 months | 6 months | Label |
+|---|---|---|---|---|---|
+| Oxford | Generic | £18.99 | £16.66 (90 for £49.99) | £14.00 (180 for £83.99) | docs |
+| Oxford | Avodart | £39.99 | £38.00 (90 for £113.99) | £26.67 (180 for £159.99) | docs |
+| Treated | Generic (subscription) | £34.95 | £29.98 (90 for £89.95) | — | obs |
+| Treated | Avodart (subscription) | £47.95 | £37.98 (90 for £113.95) | — | obs |
+| Hair + Me | Capsule with minoxidil 1.25 mg | £37.91 a calendar month | — | — | obs / docs |
+| Voy | Capsule with minoxidil | unknown | — | — | docs |
+
+**Bundles: finasteride tablets + topical minoxidil.**
+
+| Company | Bundle | 1 month | 3 months | 6 months | 12 months | First order | Label |
+|---|---|---|---|---|---|---|---|
+| Dr Fox (built from two items) | Finasteride + Sons 5% | £34.85 with fee and delivery | — | £23.38 with fees and delivery | — | none | inf from obs / code prices |
+| Oxford | Finasteride 28 + Sons 5% 60 ml | from £34.99 | — | — | — | none | docs |
+| Boots | Finasteride + Regaine foam | £50.36 | £36.00 (£108) | £30.27 (£181.59) | £27.87 (£334.39) | none; first-timers limited to 1 month | obs |
+| Sons | Core Plan (finasteride + 5% spray) | £43.00 | £35.33 | £31.50 | £31.50 | from £18.90 | code |
+| Lloyds | Finasteride + Sons spray (out of stock 23 Nov) | — | £35.33 | £31.50 | — | none | obs |
+| Numan | Finasteride + 6% spray kit | £44.00 | £36.00 | £32.00 | £28.00 | £22.67 | code / obs |
+| Voy | Finasteride + 10% spray | £44.00 | £39.67 | £33.17 | — | from £19 | docs |
+| Hims UK | Finasteride + 5% alcohol-free serum | — (one-off 3 months £147 = £49) | £43.00 | £35.00 | £30.00 | none | docs |
+| Sons | Ultimate Plan (+ supplement + shampoo) | £59.00 | £56.00 | £49.83 | £47.20 | from £29.90 | code |
+
+**Supplements.** Numan Hair Growth Support £28 a month (£12.67 on a 12-month plan; first order £14) [obs]; Sons Hair
+Growth Complex £35 for 1 month, £28 a month on 6 months [code]; Sons biotin £12.99 for 1 month [code]; Voy women's
+vitamins £18 a month [docs] (men's: £18 one-off or £150 for 6 months on different pages, **CONFLICT**); Hims UK vitamin
+chew £60 monthly, £16.50 a month on 6 months [code]; Superdrug Nourkrin Woman £51 a month [obs].
+
+### 3.6 Cheapest, median and most expensive in the UK
+
+One figure per company per product type (its cheapest variant on that plan length). The median is the middle value.
+
+| Product type | Plan length | Companies counted | Cheapest | Median | Most expensive |
+|---|---|---|---|---|---|
+| Finasteride 1 mg tablets | Single month | 8 (Voy left out: unclear) | £10.00 Dr Fox | £28.50 | £34.95 Treated |
+| Finasteride 1 mg tablets | 6 months | 9 (Lloyds subscription price used) | £7.25 Dr Fox | £22.83 | £26.00 Hims UK |
+| Licensed minoxidil 5% (men) | 3 months | 8 | £16.25 Dr Fox (Sons brand) | £20.00 | £65.00 Numan (Regaine) |
+| Compounded finasteride + minoxidil topical | 6 months or nearest | 6 (Voy price unknown) | £12.00 Dr Fox | £31.75 | £58 Philip Kingsley (per bottle) |
+| Oral minoxidil (men) | 6 months or nearest | 6 | £16.50 Hims UK (compounded chew); £19.17 Oxford for a licensed tablet | £23.67 | £37.91 Hair + Me |
+| Finasteride + minoxidil by mouth | 6 months or nearest | 6 | £16.50 Hims UK | £31.50 | £37.91 Hair + Me |
+| Finasteride tablets + topical minoxidil bundle | 6 months or nearest | 7 | £23.38 Dr Fox (built, inf) | £31.50 | £35.00 Hims UK |
+| Finasteride tablets + topical minoxidil bundle | Single month | 6 | £34.85 Dr Fox (built, inf) | £43.50 | £50.36 Boots |
+
+Plain reading: **a UK "normal" price for a combined treatment is about £31 to £32 a month at list price on a
+6-month plan.** The floor is Dr Fox at roughly a third of that. Hims UK is the only subscription brand that prices
+near the floor, and only for 6-month prepaid plans.
+
+### 3.7 US prices (US dollars, per month)
+
+| Product type | Hims | Ro | Keeps (list; first 3 months) | Happy Head | Strut | XYON (unverified) |
+|---|---|---|---|---|---|---|
+| Finasteride 1 mg | from $22 [docs] | $20 quarterly, $18 on 6 months, $16 on 12 months [code] | $26.67; $18.67 [obs] | from $24 (**OLD**, 2025 review) [docs] | $25 for 30 days; $16.33 on 90 days [code] | $35 ($105 per 90 days) [docs] |
+| Non-prescription minoxidil 5% | solution $15; foam $19 to $20 [docs] | $16 (3 months), $14 (6), $13 (12) [obs/code] | solution $11; $7.70. Foam $16.67; $11.67 [obs] | not priced | – | – |
+| Compounded finasteride + minoxidil topical | from $29 (10-month plan paid up front); 4-in-1 from $33. **CONFLICT:** $35 and $39 were shown earlier the same day; the market file quotes $35 and $39 [docs] | Ro Mane $50 quarterly, $43 on 6 months [code] | gel $60; $42. 4-in-1 drops $63.33; $46.67 [obs] | dutasteride 0.3% + minoxidil 8% mix $106.80 per 30 days ($89 per 25 days) [obs] | $59 (30 ml once a day); $79 (twice a day) [code] | gel $129; solution $68 [docs/obs] |
+| Oral minoxidil | chew $29 on a 10-month plan [docs] | $30 quarterly, $27 on 6 months, $24 on 12 months [code] | $30; $21 [obs] | from $22 (**OLD**, 2025) [docs] | $18.33 ($55 per 90 days, page) — **CONFLICT:** $21.67 ($65 per 90 days for 2.5 mg) in the form [obs/code] | $29 [code] |
+| Finasteride + minoxidil by mouth | from $29 (10-month plan); $35 earlier the same day — **CONFLICT** [docs] | – | Chew 3-in-1 $51.66; $31.65 [obs] | finasteride capsule $79 list, $63.20 subscription [docs] | $69 [docs] | – |
+| Dutasteride + minoxidil by mouth | – | – | Chew+ $66.66; $33.33 [obs] | SuperCapsule $106.80 per 30 days [obs] | $69 (dutasteride 0.4 mg + minoxidil 5 mg) [docs] | – |
+| Women's main product | Hers: oral minoxidil from $29; blends from $35 [docs] | oral minoxidil $30; topical $40 [code] | none (sent to another brand) | spironolactone + minoxidil capsule $106.80 per 30 days; topical $70.80 per 30 days [obs] | women's formula with spironolactone 1% $59 [docs] | spironolactone $29; minoxidil + vitamin D $39 [docs] |
+
+Happy Head prices are per 25-day bottle ($89 or $59); the per-30-day figures above are worked out [inf]. Its dual
+plans fall to $104 to $134 a month on 5-month plans [docs]. The US sweep adds that plain generics are now almost free
+in the US (GoodRx from $16 a month including the visit; Costco minoxidil under $3 a month) [sweep].
+
+**What the US comparison shows.** US list prices for compounded mixes ($43 to $107) are higher than UK list prices
+(£16.50 to £37.91), but US brands lean harder on first-order discounts. Finasteride is about $16 to $35 in the US and
+£7 to £35 in the UK, so the UK mass-market finasteride price is not cheaper than the US one.
+
 <!-- next -->

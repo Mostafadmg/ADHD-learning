@@ -918,7 +918,7 @@
      "branchDetail": "Yes leaves the questionnaire for the sign-in page.",
      "shownWhen": "always (first screen)",
      "evidence": "observed",
-     "proof": "Seen live in runs/s2-baseline-men, runs/verify-baseline-men, runs/exp-38 and 55 more run folders"
+     "proof": "Seen live in runs/s2-baseline-men, runs/verify-baseline-men, runs/exp-38 and 58 more run folders"
     },
     {
      "id": "men-q02",
@@ -952,7 +952,7 @@
      "branchDetail": "Female hides every other page and shows the female notice.",
      "shownWhen": "always (second screen)",
      "evidence": "observed",
-     "proof": "Seen live in runs/s2-baseline-men, runs/verify-baseline-men, runs/exp-38 and 51 more run folders"
+     "proof": "Seen live in runs/s2-baseline-men, runs/verify-baseline-men, runs/exp-38 and 54 more run folders"
     },
     {
      "id": "men-q03",
@@ -980,7 +980,7 @@
      "shownWhen": "always (for anyone who answered Male)",
      "visibleIfInCode": "{5141} anyof ['0']",
      "evidence": "observed",
-     "proof": "Seen live in runs/s2-baseline-men, runs/verify-baseline-men, runs/exp-38 and 44 more run folders"
+     "proof": "Seen live in runs/s2-baseline-men, runs/verify-baseline-men, runs/exp-38 and 47 more run folders"
     },
     {
      "id": "men-q04",
@@ -2336,7 +2336,7 @@
      "branchDetail": "",
      "shownWhen": "always, after the finasteride statement",
      "evidence": "observed",
-     "proof": "Seen live in runs/s2-baseline-men, runs/verify-baseline-men, runs/exp-38 and 39 more run folders"
+     "proof": "Seen live in runs/s2-baseline-men, runs/verify-baseline-men, runs/exp-38 and 42 more run folders"
     },
     {
      "id": "men-q41",
@@ -2869,7 +2869,8 @@
      "branches": false,
      "branchDetail": "",
      "shownWhen": "always",
-     "evidence": "code"
+     "evidence": "observed",
+     "proof": "Seen live in runs/s2-baseline-men, runs/verify-baseline-men, runs/exp-38 and 58 more run folders"
     },
     {
      "id": "beard-q2",
@@ -2904,7 +2905,8 @@
      "branches": false,
      "branchDetail": "",
      "shownWhen": "always",
-     "evidence": "code"
+     "evidence": "observed",
+     "proof": "Seen live in runs/s2-baseline-men, runs/verify-baseline-men, runs/exp-38 and 54 more run folders"
     },
     {
      "id": "beard-q3",
@@ -2918,7 +2920,7 @@
      "options": [
       {
        "label": "I accept",
-       "effect": "Required tick (seen live, runs/s2-baseline-men).",
+       "effect": "Required tick.",
        "effectType": "next-question",
        "affects": [
         "p-beard"
@@ -2931,7 +2933,8 @@
      "branches": false,
      "branchDetail": "",
      "shownWhen": "code condition: {5141} anyof ['0']",
-     "evidence": "code"
+     "evidence": "observed",
+     "proof": "Seen live in runs/s2-baseline-men, runs/verify-baseline-men, runs/exp-38 and 47 more run folders"
     },
     {
      "id": "beard-q4",
@@ -2984,7 +2987,8 @@
      "branches": false,
      "branchDetail": "",
      "shownWhen": "code condition: {5141} anyof ['0']",
-     "evidence": "code"
+     "evidence": "observed",
+     "proof": "Seen live in runs/exp-38, runs/exp-39, runs/exp-40 and 7 more run folders"
     },
     {
      "id": "beard-q5",
@@ -3006,7 +3010,7 @@
       },
       {
        "label": "No",
-       "effect": "Moves on (seen live, runs/exp-38).",
+       "effect": "Moves on.",
        "effectType": "next-question",
        "affects": [
         "p-beard"
@@ -3019,7 +3023,8 @@
      "branches": true,
      "branchDetail": "",
      "shownWhen": "code condition: {5141} anyof ['0']",
-     "evidence": "code"
+     "evidence": "observed",
+     "proof": "Seen live in runs/exp-38, runs/exp-39, runs/exp-40 and 7 more run folders"
     },
     {
      "id": "beard-q6",
@@ -3035,7 +3040,8 @@
      "branches": false,
      "branchDetail": "",
      "shownWhen": "code condition: {5173} anyof ['1']",
-     "evidence": "code"
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-beard-bodyloss-yes, runs/verify-beard-bodyloss-yes-2"
     },
     {
      "id": "beard-q7",
@@ -3057,7 +3063,7 @@
       },
       {
        "label": "No",
-       "effect": "Moves on (seen live, runs/exp-38).",
+       "effect": "Moves on.",
        "effectType": "next-question",
        "affects": [
         "p-beard"
@@ -3070,7 +3076,8 @@
      "branches": true,
      "branchDetail": "",
      "shownWhen": "code condition: {5141} anyof ['0']",
-     "evidence": "code"
+     "evidence": "observed",
+     "proof": "Seen live in runs/exp-38, runs/exp-39, runs/exp-40 and 7 more run folders"
     },
     {
      "id": "beard-q8",
@@ -3145,7 +3152,7 @@
       },
       {
        "label": "No",
-       "effect": "Moves on (seen live, runs/exp-38).",
+       "effect": "Moves on.",
        "effectType": "next-question",
        "affects": [
         "p-beard"
@@ -3158,7 +3165,8 @@
      "branches": false,
      "branchDetail": "",
      "shownWhen": "code condition: {5141} anyof ['0']",
-     "evidence": "code"
+     "evidence": "observed",
+     "proof": "Seen live in runs/exp-38, runs/exp-39, runs/exp-40 and 7 more run folders"
     },
     {
      "id": "beard-q11",
@@ -3220,7 +3228,8 @@
      "branches": true,
      "branchDetail": "",
      "shownWhen": "code condition: {5141} anyof ['0']",
-     "evidence": "code"
+     "evidence": "observed",
+     "proof": "Seen live in runs/exp-38, runs/exp-39, runs/exp-40 and 6 more run folders"
     },
     {
      "id": "beard-q12",
@@ -3255,7 +3264,8 @@
      "branches": false,
      "branchDetail": "",
      "shownWhen": "code condition: {5179} anyof ['0']",
-     "evidence": "code"
+     "evidence": "observed",
+     "proof": "Seen live in runs/exp-41, runs/verify-beard-psoriasis-no"
     },
     {
      "id": "beard-q13",
@@ -3271,7 +3281,8 @@
      "branches": false,
      "branchDetail": "",
      "shownWhen": "code condition: {5179} anyof ['3']",
-     "evidence": "code"
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-beard-other-face"
     },
     {
      "id": "beard-q14",
@@ -3287,7 +3298,8 @@
      "branches": false,
      "branchDetail": "",
      "shownWhen": "always, last screen",
-     "evidence": "code"
+     "evidence": "observed",
+     "proof": "Seen live in runs/s2-baseline-men, runs/verify-baseline-men, runs/exp-38 and 42 more run folders"
     }
    ]
   },
@@ -3323,7 +3335,7 @@
      "branchDetail": "Leads to a procedure date question, then the standard consultation with clinic_id attached.",
      "shownWhen": "on shop.sons.co.uk/clinics/<clinic>",
      "evidence": "observed",
-     "proof": "Seen live in runs/page-clinic"
+     "proof": "Seen live in runs/page-clinic, runs/verify-clinic-1, runs/verify-clinic-2 and 3 more run folders"
     },
     {
      "id": "clinic-q2",
@@ -3339,7 +3351,8 @@
      "branches": false,
      "branchDetail": "",
      "shownWhen": "after treatment type",
-     "evidence": "code"
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-clinic-2, runs/verify-clinic-future, runs/verify-clinic-future-continue and 1 more run folders"
     }
    ]
   }
@@ -5049,7 +5062,8 @@
   ],
   "corrected": [
    "3 claims named runs/s2-baseline-women as proof, a folder that does not exist (stage 2 replayed the woman as runs/exp-02). They now name runs/baseline-women and the stage 3 replay runs/verify-baseline-women, which both end on the same female notice.",
-   "48 questions and options were labelled \"observed\" without naming a run folder. Each now names the run folders whose saved screens show it (found by searching every runs/*/NN.txt for the question wording). All were found on saved screens; none had to be downgraded.",
+   "17 questions were labelled \"code\" although their wording appears on saved live screens; upgraded to \"observed\" with the run folders named: om5-q3, om5-q5, beard-q1, beard-q2, beard-q3, beard-q4, beard-q5, beard-q6, beard-q7, beard-q8, beard-q9, beard-q10, beard-q11, beard-q12, beard-q13, beard-q14, clinic-q2.",
+   "44 questions and options were labelled \"observed\" without naming a run folder. Each now names the run folders whose saved screens show it (found by searching every runs/*/NN.txt for the question wording). All were found on saved screens; none had to be downgraded.",
    "beard-q12 \"No\" (not willing to proceed despite the psoriasis warning) was labelled code and typed flag-for-clinician. A live replay (runs/verify-beard-psoriasis-no) shows it goes straight to the account form like Yes; now observed, effect none on the flow.",
    "beard-q2 \"Female\" was described as a silent dead end with no message. Pressing the Continue button still on screen shows an unrelated email-domain error (runs/verify-beard-female-continue screen 05). Wording corrected in the option and in R41.",
    "R39: R39 now says that answering No to 'willing to proceed' does not stop the man (runs/verify-beard-psoriasis-no).",
