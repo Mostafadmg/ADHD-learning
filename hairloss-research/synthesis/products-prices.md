@@ -567,4 +567,76 @@ this privately.
 | **Four-weekly billing** | Hair + Me charges 13 times a year: £34.99 looks like a monthly price but is £37.91 a calendar month | Section 3.3 |
 | **First-order discounts paid for by renewals** | Headline prices of £13 to £19 renew at £31.50 to £44. Sons customers report being offered 40% and then 50% off when they try to cancel, which made them feel overcharged | Section 3.1; `customer-voice.md` |
 
-<!-- next -->
+---
+
+## 6. Services around the product
+
+Everything in this section that happens after sign-in comes from public documents, not observation.
+
+### 6.1 UK companies
+
+| Company | Clinician contact | Scalp photos | Blood tests | Tracking | Guarantee | Billing | Cancelling |
+|---|---|---|---|---|---|---|---|
+| **Hims UK** | Form reviewed by a UK clinician after payment; no call for hair; "unlimited messaging" [docs] | No photo step in the quiz; terms say only "you may be asked" [obs/docs] | None for hair [docs] | "Regular check-ins" [docs] | None for Hims hair. Hers UK: 180 days, not for non-medicated products [docs]. Full refund if the clinician declines [docs] | 3-, 6- and 12-month plans paid up front; one-off 3-month supply; chew also monthly (£60) [code] | By message to support, 48 hours (help centre) or 3 days (terms) before the next order; self-service cancelling is switched off in the app [code/docs]. Hers "commit" plans carry an "Early Cancellation Adjustment fee" [docs] |
+| **Voy** | In-house prescribers; "unlimited clinician support" by phone, email, WhatsApp or video [docs] | Hair photos requested after the account is made, before the order review [docs] | None on the hair pages (sold for other services) [docs] | Monthly photo tracker [docs] | 180-day Money Back Promise: two online consultations, monthly photos (said to need at least 5 sets), claim between day 180 and 210, treatment only [docs] | Monthly, 3- or 6-month [docs] | Pause, switch or cancel in the account [docs]. Older terms: pay only after approval [docs] |
+| **Numan** | Questionnaire; written clinician instructions sit behind risky answers [code] | "Take a photo to track your progress" [docs] | Sold for other services, not offered in the hair flow [code] | Photo tracking [docs] | "See results in 180 days or your money back" [obs] | Billed quarterly, six-monthly or annually; always delivered quarterly [obs] | "Pause or cancel anytime" [docs] |
+| **Sons** | Prescriber review after the order; optional consent to read the NHS Summary Care Record and to tell the GP; repeat health check before renewals [code] | Only for tracking and the refund promise [docs] | None | Photos [docs] | Money-back promise after six months (terms not read) [docs] | 1, 3, 6 or 12 months [code] | Terms not read; a reviewer reports retention offers of 40% then 50% off [customer voice] |
+| **Hair + Me** | Pharmacist independent prescribers choose the formula after payment [docs] | Optional, after payment; people who do not send requested photos within 7 days are sent a non-prescription product [docs] | None | Monthly photos and two 0 to 10 wellbeing scores [obs/docs] | None found; refund if declined [docs] | Every 4 weeks [obs] | "Cancel anytime" on the plain plan; prepaid bundles cannot be cancelled mid-bundle [code/docs] |
+| **Philip Kingsley** | Assessment routes to a subscription, a trichologist video call (from £200; another page says from £150, **CONFLICT**) or a London clinic visit (from £345) [docs] | Sent 48 hours before a video call [docs] | May be advised at the clinic, for extra fees [docs] | — | None found | Drops are subscription-only [code] | Not recorded |
+| **Dr Fox** | One-page form; a doctor approves before dispatch [obs/docs] | None | None | None | None found | Pay per order, no subscription [obs] | Nothing to cancel |
+| **Boots** | Questionnaire, clinician review afterwards; photo ID and selfie required [obs] | None [obs] | None | None | Pay only if approved [docs] | One-off packs; free delivery or store collection [obs] | Nothing to cancel |
+| **Superdrug** | Questionnaire; £25 phone call with a doctor (no medicine) [obs] | Asked for when the chosen pattern is not typical male pattern [obs] | Hair blood test sold separately (£99) [sweep] | None: every supply is a new order [obs] | None found | One-off orders [obs] | Nothing to cancel |
+| **Lloyds** | Questionnaire [obs] | None before the recommendation [obs] | None | None | None found | One-off, or subscription "Save 15% & cancel anytime" [obs] | "Cancel anytime" [obs] |
+| **Treated** | Questionnaire; most first-time buyers are flagged for clinician review without being told [obs] | None [obs] | None | None | None found | Auto-renewing subscription, free delivery [obs] | Cancellable [docs] |
+| **Oxford** | Payment taken before the prescriber decides; GP informed; blood-pressure checks before oral minoxidil [docs] | Asked for in the women's consultation [docs] | Women's programme only [docs] | — | None found | One-off packs [docs] | Nothing to cancel |
+
+### 6.2 US companies
+
+| Company | Contact and checks | Guarantee and billing | Label |
+|---|---|---|---|
+| **Hims (US)** | Secure message, or video where the state requires it; photos "in most cases"; a month-3 check-in page | Finasteride: refund of the first 90 days' supply if asked for between day 90 and 180. "Starting at" prices need a 10-month plan paid up front | docs |
+| **Hers (US)** | Message, video in some states; photos for some treatments; no blood tests or blood-pressure reading described | Renews unless cancelled 2 days before the renewal date | docs |
+| **Keeps** | Asynchronous review by KMG Medical Group; photos and ID required | 180-day money-back on the new compounded range; card charged and refunded if declined (a product page says no charge until approved, **CONFLICT**); first refill billed 75 days after purchase | obs / docs |
+| **Ro** | Free-text message to the doctor; ID photo; phone or video by state | "Modify or cancel your plan at any time"; quarterly, 6- and 12-month plans | obs / code |
+| **Happy Head** | Photos and ID after payment (sometimes a 5-second video); dermatologist review | "Cancel anytime"; 1-, 3- and 5-bottle plans; free dermaroller on Black Friday | obs / docs |
+| **Strut** | Messaging, phone or video; photo ID and selfie | Auto-refill; cancel, pause or reschedule at least 48 hours before processing; prescriptions cannot be returned | code / docs |
+| **XYON** (unverified) | Questionnaire, scalp photos and ID; doctor review in 24 to 48 hours (product pages) or 3 to 5 working days (how-it-works page), **CONFLICT**; chat follow-up | Visit free with a subscription; $20 on one-time orders, credited if the patient later subscribes | docs |
+
+### 6.3 What this shows
+
+- **Diagnosis rests on tick-boxes at almost every company.** Where photos are taken, they mostly serve tracking or a
+  guarantee, not diagnosis. The clinical files say a photo set is what separates pattern loss from shedding, patchy or
+  scarring loss (`clinical-women.md`, 1.1).
+- **Blood tests are missing.** Only Oxford's women's programme builds them into a hair plan in the UK; Superdrug sells
+  them separately; Voy and Numan sell blood tests for other services but not for hair.
+- **Guarantees are 180 days with conditions** (Voy, Numan, Hers UK, Keeps; Sons after 6 months). Overseas, the sweep
+  found 12-month guarantees (Ulo, iRestore) and promises framed around side effects (The Hairy Pill's "Side Effect
+  Protect", Mosh's reformulation guarantee) [sweep]. None of the 19 offers either.
+- **Cancelling is hardest where plans are prepaid:** Hims UK (message to support only, cut-off 48 hours or 3 days),
+  Hair + Me prepaid bundles (no mid-bundle exit), Hers commit plans (early-cancellation fee). It is easiest at the
+  one-off pharmacies, which have nothing to cancel.
+- **The law is about to change.** UK subscription rules under the Digital Markets, Competition and Consumers Act
+  (clear information before sign-up, renewal reminders, easy online exit, cooling-off periods) are expected for new
+  contracts from 1 January 2027; the regulations were still in draft on 23 November 2026
+  (`foundations/uk-regulation.md`, key fact 24; `foundations/customer-voice.md`).
+
+---
+
+## 7. Sources and limits
+
+- **Company data:** `synthesis/digest/sec-products.md` and the 19 `companies/<slug>/company.json` files (fields
+  `products[].price`, `priceDetail`, `priceEvidence`, `actives`, `legalStatus`). Each label in this file is the
+  company file's own evidence label.
+- **Benchmarks and trends:** `foundations/market-economics.md`, section 4 (which this file updates: it quoted Hims US
+  combined products at $35 and $39 and Numan's offer as 50% off; the company files show $29 and $33 later the same day,
+  and a 40% discount actually applied).
+- **Evidence grades:** `foundations/clinical-men.md` (sections 8, 9, 11) and `foundations/clinical-women.md`
+  (sections 3, 4, key facts).
+- **Rules on licensed and unlicensed medicines:** `foundations/uk-regulation.md`, sections 1.5 and 1.6 (MHRA
+  Guidance Note 14).
+- **Other sellers:** `market/uk-sweep.md` and `market/us-intl-sweep.md` (not independently fact-checked).
+- **Limits.** Prices were read during Black Friday 2026 and move often (Hims US changed its "starting at" price within
+  one day). No company's checkout price after sign-in was seen. Hair + Me, Voy and Hers do not name strengths before
+  payment, so their rows describe the menu, not what a given patient receives. Philip Kingsley's billing interval and
+  Voy's full (non-promotional) current prices are unknown. Monthly figures for 28-tablet packs treat 28 tablets as one
+  month, which flatters tablet prices by about 8% against calendar-month subscriptions.
