@@ -1,9 +1,10 @@
 #!/usr/bin/env node
 /* validate.js — check companies/<slug>/company.json against the shape in PROTOCOL.md.
- * Usage: node validate.js <slug> [--stage map|rules|final]
+ * Usage: node validate.js <slug> [--stage map|rules|final|explained]
  *   map   : products + flows/questions must exist (rules may be empty)
  *   rules : also rules, experiments, recommendations, engineSummary
  *   final : also a "verification" block
+ *   explained : final + plainEnglish, flow steps, and next/outcome/why on every answer (PROTOCOL.md section 7)
  * Exit 0 = pass (warnings allowed), 1 = errors.
  */
 const fs = require('fs');
@@ -18,7 +19,7 @@ try { d = JSON.parse(fs.readFileSync(file, 'utf8')); } catch (e) { console.error
 const errs = [], warns = [];
 const E = m => errs.push(m), W = m => warns.push(m);
 const CAT = ['rx-topical-compounded', 'rx-topical-licensed', 'rx-oral', 'rx-oral-compounded', 'otc-medicine', 'cosmetic', 'supplement', 'device', 'bundle', 'service'];
-const EV = ['observed', 'code', 'docs', 'inferred'];
+const EV = ['observed', 'code', 'docs', 'inferred', 'owner-run'];
 const EVU = EV.concat(['unknown']);
 const QT = ['single', 'multi', 'text', 'number', 'date', 'photo', 'info', 'consent', 'contact'];
 const ET = ['none', 'next-question', 'extra-questions', 'skip-questions', 'hard-stop', 'soft-warning', 'product-removed', 'product-added', 'product-switched', 'strength-changed', 'flag-for-clinician', 'marketing-only', 'unknown'];
@@ -88,7 +89,34 @@ if (stage !== 'map') {
   if (!d.recommendations.length) W('no recommendations recorded');
   if (optCount && unknownOpts / optCount > 0.4) W(`${unknownOpts} of ${optCount} options still have effectType "unknown"`);
 }
-if (stage === 'final') {
+if (stage === 'explained') {
+  if (typeof d.plainEnglish !== 'string' || d.plainEnglish.trim().length < 600) E('root.plainEnglish must be at least 600 characters (PROTOCOL 7)');
+  const CODE = /runs\/|\bexp-\d|\bx2-\d|\.json\b|isMinoxidil|[a-z]+[A-Z][a-zA-Z]+=/;
+  let missing = 0, coded = 0, shortWhy = 0, noStep = 0;
+  (d.flows || []).forEach((f, i) => {
+    const w = `flows[${i}]`; const steps = Array.isArray(f.steps) ? f.steps : [];
+    if (!steps.length) E(`${w}.steps missing (PROTOCOL 7)`);
+    const sids = new Set();
+    steps.forEach((st, j) => { ['id', 'title', 'summary', 'explained'].forEach(k => str(st, k, `${w}.steps[${j}]`)); if (sids.has(st.id)) E(`${w}.steps[${j}].id "${st.id}" duplicated`); sids.add(st.id);
+      if (typeof st.explained === 'string' && st.explained.trim().length < 200) W(`${w}.steps[${j}] (${st.id}) explained is under 200 characters`); });
+    (f.questions || []).forEach((q, j) => {
+      const wq = `${w}.questions[${j}] (${q.id})`;
+      if (!q.step || !sids.has(q.step)) { noStep++; if (noStep <= 8) E(`${wq}.step "${q.step}" is not a step id in this flow`); }
+      const needs = ['single', 'multi', 'consent'].includes(q.type);
+      (q.options || []).forEach((o, k) => {
+        const wo = `${wq}.options[${k}] "${String(o.label).slice(0, 40)}"`;
+        const have = ['next', 'outcome', 'why'].filter(x => typeof o[x] === 'string' && o[x].trim());
+        if (needs && have.length < 3) { missing++; if (missing <= 12) E(`${wo} needs next, outcome and why (has: ${have.join(', ') || 'none'})`); }
+        if (['next', 'outcome', 'why'].some(x => CODE.test(o[x] || ''))) { coded++; if (coded <= 6) W(`${wo}: move proof codes (runs/, file names, variables) into "proof"`); }
+        if (needs && typeof o.why === 'string' && o.why.trim() && o.why.trim().length < 40) { shortWhy++; if (shortWhy <= 6) W(`${wo}: "why" is very short`); }
+      });
+    });
+  });
+  if (missing > 12) E(`...and ${missing - 12} more options without next/outcome/why`);
+  if (noStep > 8) E(`...and ${noStep - 8} more questions without a valid step`);
+  if (coded > 6) W(`...and ${coded - 6} more options with proof codes in the text`);
+}
+if (stage === 'final' || stage === 'explained') {
   const v = d.verification;
   if (!v || typeof v !== 'object') E('root.verification block missing (checked, corrected, stillUnverified, verdict)');
   else { ['checked', 'corrected', 'stillUnverified'].forEach(k => arr(v, k, 'verification')); str(v, 'verdict', 'verification'); }

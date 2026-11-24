@@ -13,7 +13,7 @@
 
 Tested live: the standard assessment on www.form.happyhead.com (its own robots.txt allows all agents) for the baseline man and the baseline woman, both to the email page. Read from code: the full quiz definition (62 pages, all conditions, the recommendation call, the order payload with its clinician flags), served to the anonymous page by engine.embeddables.com. Read from documents: 24 help-centre articles and four independent reviews. Not tested: product pages and prices on www.happyhead.com (closed to this agent; a few facts were checked through web-search summaries only), anything after the email page, and what the dermatologist actually does with a flagged answer. Stage 2: 21 one-change experiments and both baselines replayed live on 23 Nov 2026, all stopping at the email page with no consultation posted. Stage 3 (independent check, 23 Nov 2026): both baselines and 12 high-impact rules replayed live in runs/verify-*, plus 4 new one-change tests (woman 50+ choosing Oral, woman with no birth control, woman with household pregnancy, man with low blood pressure). All runs: 0 consultation posts.
 
-Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen).
+Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen), **owner-run** (seen in the owner's own browser research, not replayed by us).
 
 ## 2. How the engine decides (short version)
 
@@ -104,7 +104,7 @@ A three-input engine. Only sex, the woman's age band (under 50 or 50+) and the t
 - **Man with red flags (bald patches, scalp symptoms, heart condition, reaction to finasteride, pregnant partner who declines the risk, age 70, low blood pressure)** → Dual Treatment Plan (men / women 50+): TopicalRx Solution + SuperCapsule, dutasteride & minoxidil, Topical Dutasteride & Minoxidil (Max Strength) — 'TopicalRx Solution' (formula code TD9) (default: Dual Treatment Plan (men / women 50+): TopicalRx Solution + SuperCapsule, dutasteride & minoxidil). Identical to the baseline man in every case tested; flags go only to the dermatologist after checkout. _[observed]_
 - **Woman 50 or older, method = Oral** → Dual Treatment Plan (men / women 50+): TopicalRx Solution + SuperCapsule, dutasteride & minoxidil, SuperCapsule: Dutasteride, Minoxidil & Vitamin D3 (formula code SC2) (default: Dual Treatment Plan (men / women 50+): TopicalRx Solution + SuperCapsule, dutasteride & minoxidil). Dutasteride set; capsule card second. runs/verify-w-50plus-oral _[observed]_
 
-## 6. The consultation, question by question
+## 6. The consultation, step by step
 
 ### Standard assessment ('Get my custom plan'), men and women, current short version
 

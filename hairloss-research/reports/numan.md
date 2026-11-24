@@ -11,7 +11,7 @@
 
 Stage 1 mapped all 29 questions and every option's served result. Stage 2 (23 Nov 2026) replayed the baseline to the account wall and ran 32 one-change replays to the product screen (runs/x2-*), covering every option that the served data or stage 1 suggested could change the offer: both allergies, lactose, each scalp symptom alone, every caution and its opt-out, the whole mental-health branch, three stops, a stop-bypass, age 65+, three patterns, two preference answers, medical history and two entry links with an allergy. Nothing after the account wall was tried. No contact details were entered anywhere. Stage 3 (24 Nov 2026) replayed the baseline twice (to the product screen and to the account wall), re-tested ten stage-2 rules and ran the main untested options (Complete, 65+ No, Temples, Moderate, asthma and baby opt-ins, lactose small, All of the above, the minoxidil entry link, a two-rule pair with and without an entry link, and the Finasteride billing screen): 22 replays in runs/verify-*.
 
-Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen).
+Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen), **owner-run** (seen in the owner's own browser research, not replayed by us).
 
 ## 2. How the engine decides (short version)
 
@@ -75,7 +75,7 @@ Numan's engine is simple. The server serves one question at a time and a few ans
 - **Man entering through /subscribe/hair-loss/minoxidil, baseline answers** → Extra Strength Spray, called 'Medicated Spray' inside kits (code: minoxidil), Hair Kit - Medicated Spray, Finasteride & Supplement (code: complete-hair-kit-pro), Hair Kit - Medicated Spray & Finasteride (code: complete-hair-kit), Hair Kit - Combination Spray & Supplement (code: hassle-free-hair-kit), Finasteride 1 mg tablets (code: finasteride), Triple-Action Spray, also called Combination Spray (code: triple-action-spray), Regaine for Men Extra Strength 5% (code: regaine), Rosemary Oil (code: rosemary-oil) (default: Extra Strength Spray, called 'Medicated Spray' inside kits (code: minoxidil)). Extra Strength Spray featured 'Recommended for you' at £30.00 (no first-order code on product links). Run verify-13-min-entry. _[observed]_
 - **Man entering through /subscribe/hair-loss/regaine with both drugs ruled out (finasteride allergy + scalp pain)** → Regaine for Men Extra Strength 5% (code: regaine), Rosemary Oil (code: rosemary-oil) (default: Regaine for Men Extra Strength 5% (code: regaine)). Regaine (minoxidil) still featured, £65.00, although minoxidil is ruled out by the scalp answer. Run verify-21-pair-alfin-scpain-regaine. _[observed]_
 
-## 6. The consultation, question by question
+## 6. The consultation, step by step
 
 ### Men's hair-loss consultation (questionnaire 'hair_loss', version 14, revision 'smart')
 

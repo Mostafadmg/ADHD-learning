@@ -13,7 +13,7 @@
 
 Walked live with the baseline man from the entry page to the ID photo screen for the first-time, tablets-only route (all 19 question screens). The three other routes (first-time bundle, returning tablets, returning bundle) were walked to their first health question, which made the site serve their full question sets; those questions are recorded from the served definitions, not clicked through. All four definitions are saved. No account, email, name, phone, address, password, photo or payment was entered. A postcode had to be typed to start: the placeholder postcode found in the site's own code (N1 0QH) was used; it is a location check, not a contact detail. There is no women's hair-loss consultation to walk. Stage 2: 14 live one-change runs (x00 to x13, runs/x*) confirmed the gates, the product list limits and that no answer changes the product, price or flow on screen. Stage 3 (independent check): 14 more live runs (runs/verify-*) replayed all four baselines, the gates (plus age 18 and Guernsey), the out-of-stock tile, completed the bundle age-50 run, walked the returning bundle route end to end for the first time, tested one amber and one red answer on their own and the Propecia bundle. It found that the order JSON does record a triage label (answer_status), which stage 2 had missed.
 
-Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen).
+Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen), **owner-run** (seen in the owner's own browser research, not replayed by us).
 
 ## 2. How the engine decides (short version)
 
@@ -65,7 +65,7 @@ There is no recommending engine on screen; the website is a gate, a price list a
 - **Jersey or Guernsey postcode** → nothing offered. Refused at the postcode screen. (runs/x05-jersey, runs/verify-r-x05, runs/verify-r-guernsey) _[observed]_
 - **Same man choosing the Propecia + Regaine bundle** → Propecia 1mg tablets + Regaine foam extra strength (bundle) (default: Propecia 1mg tablets + Regaine foam extra strength (bundle)). Same bundle questionnaire (2050) as the generic bundle; £72 for one month (runs/verify-r-propecia-bundle). _[observed]_
 
-## 6. The consultation, question by question
+## 6. The consultation, step by step
 
 ### Men, first time, tablets only (Finasteride or Propecia)
 

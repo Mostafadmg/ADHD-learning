@@ -13,7 +13,7 @@
 
 Stage 1 walked the baseline man to the account form and saw every conditional screen. Stage 2 replayed both baselines and then 45 one-change experiments live, each ending on the account form, the female stop notice or the sign-in page. Because no plan is shown before the account form, product effects could not be seen live: instead both copies of the recommendation code that the site serves to every visitor were run offline on the same one-change answers (28 further offline-only cases, plus all 32,768 combinations of the answers the code reads). Stage 3 (24 Nov 2026) replayed the baselines and the stop rules again (20 live replays in all), walked the partner-clinic route to its account form, confirmed that the survey definition and both copies of the recommendation code are unchanged, re-ran the newer code offline, and checked 14 live product pages and the product sitemap. Nothing behind an account form was tested: no account, email, phone number, date of birth, photo, payment or order was entered or created.
 
-Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen).
+Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen), **owner-run** (seen in the owner's own browser research, not replayed by us).
 
 ## 2. How the engine decides (short version)
 
@@ -124,7 +124,7 @@ Sons runs one short questionnaire for men only. Sex at birth is the only gate: a
 - **Existing customer whose account carries the tag dutasteride_eligible** → Core Plan - Capsule, Core Plan (spray version), Combination Spray ("Finasteride and Minoxidil", with tretinoin), Topical Finasteride & Oral Minoxidil, Ultimate Plan - Capsule, Ultimate Plan (spray version), Oral Minoxidil ("Oral Capsule"), Minoxidil Spray, Finasteride ("Hair Loss Tablet" / "Oral Tablet"), Topical Finasteride ("Hair Loss Spray"), Non-Prescription plan, Hair Growth Complex, Dutasteride Combination Spray (default: Core Plan - Capsule). READ FROM THE SITE'S CODE, RUN OFFLINE; NOT SEEN LIVE (the page needs an account). Older copy main card(s): Core Plan - Capsule (tablet + minoxidil capsule) / Core Plan (tablet + minoxidil spray) and Combination Spray. Newer copy main card: Dutasteride Combination Spray. Newer copy only. How the tag is earned is unknown. (off-44) _[code]_
 - **Customer tagged combo_pill_eligible who arrives by a combination-capsule route** → Core Plan - Capsule, Core Plan (spray version), Combination Spray ("Finasteride and Minoxidil", with tretinoin), Topical Finasteride & Oral Minoxidil, Ultimate Plan - Capsule, Ultimate Plan (spray version), Oral Minoxidil ("Oral Capsule"), Minoxidil Spray, Finasteride ("Hair Loss Tablet" / "Oral Tablet"), Topical Finasteride ("Hair Loss Spray"), Non-Prescription plan, Hair Growth Complex, Combination Capsule (default: Core Plan - Capsule). READ FROM THE SITE'S CODE, RUN OFFLINE; NOT SEEN LIVE (the page needs an account). Older copy main card(s): Core Plan - Capsule (tablet + minoxidil capsule) / Core Plan (tablet + minoxidil spray) and Combination Spray. Newer copy main card: Combination Capsule. Newer copy; the older copy does the same only on its "/combo" address. (off-45) _[code]_
 
-## 6. The consultation, question by question
+## 6. The consultation, step by step
 
 ### Hair-loss consultation (the only route in for scalp hair loss; survey code uk_consultation)
 

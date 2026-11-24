@@ -13,7 +13,7 @@
 
 Stage 1 mapped all three entry points and both full questionnaire definitions. Stage 2 replayed the three baselines and ran 40 one-change experiments (22 women, 18 men). Stage 3 (independent check) replayed the baselines again, re-tested 11 key rules live, added the last untested men's options (specialist diagnosis, pattern B, skin condition, peanut and other-substance allergy) and two women's combinations. Every question option except delivery choices and the men's 'Other medications' allergy has now been replayed. Age, sex and the doctor's decision sit behind the account wall and were not tested.
 
-Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen).
+Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen), **owner-run** (seen in the owner's own browser research, not replayed by us).
 
 ## 2. How the engine decides (short version)
 
@@ -73,7 +73,7 @@ Superdrug Online Doctor (Zava platform) runs no recommendation engine. Each serv
 - **Woman with high blood pressure and a fish allergy** → Alpecin Caffeine Shampoo 250ml, Alpecin Double Effect Shampoo 200ml, Telephone Consultation with a Doctor (no medicine included). Regaine for Women and Nourkrin both removed; only the two Alpecin shampoos and the phone consultation. (runs/verify-w-combo-heart-fish) _[observed]_
 - **Woman allergic to minoxidil, fish and caffeine** → Telephone Consultation with a Doctor (no medicine included). Every product removed; only the £25 phone consultation is left, with no explanation. (runs/verify-w-combo3) _[observed]_
 
-## 6. The consultation, question by question
+## 6. The consultation, step by step
 
 ### Men's hair-loss consultation (service 147929 'HAIR LOSS SD 2', questionnaire 201037 version 7)
 

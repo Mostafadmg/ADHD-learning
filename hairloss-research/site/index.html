@@ -57,7 +57,7 @@ main { padding-block: 22px 60px; display: flex; flex-direction: column; gap: 20p
 .e-extra-questions, .e-skip-questions { background: var(--more-soft); color: var(--more) } .e-soft-warning, .e-flag-for-clinician { background: var(--warn-soft); color: var(--warn) }
 .ev { font-size: .74rem; padding: 1px 8px; border-radius: 6px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap }
 .ev-observed { border-color: var(--accent); color: var(--accent-ink) } .ev-code { border-color: var(--more); color: var(--more) }
-.ev-inferred, .ev-unknown { border-style: dashed }
+.ev-inferred, .ev-unknown { border-style: dashed } .ev-owner-run { border-color: var(--warn); color: var(--warn) }
 
 /* method strip + stats */
 .method { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px }
@@ -109,6 +109,26 @@ th { font-weight: 600; background: var(--soft); white-space: nowrap } tbody th {
 td.yes { color: var(--ink) } td.no { color: var(--line) } .cmp { font-size: .7rem; color: var(--accent-ink); font-weight: 600; letter-spacing: .04em }
 .md h1 { font-size: 1.4rem; margin: 1.2em 0 .5em } .md h2 { margin: 1.4em 0 .5em } .md h3 { margin: 1.1em 0 .4em } .md p, .md ul, .md ol { margin: 0 0 .8em; max-width: 72ch } .md li { margin-bottom: .3em }
 .md table { margin-bottom: 1em } .md .tw { overflow-x: auto } .md blockquote { margin: 0 0 .8em; padding-left: 12px; border-left: 3px solid var(--line); color: var(--muted) } .md a { overflow-wrap: anywhere } .md pre { overflow-x: auto; max-width: 100%; padding: 12px; background: var(--soft); border-radius: 8px; font-size: .82rem; line-height: 1.45 } .md code { font-size: .88em }
+/* step-by-step consultation */
+details.step { border: 1px solid var(--line); border-radius: var(--r); background: var(--surface); margin: 0 0 12px }
+details.step > summary { list-style: none; cursor: pointer; padding: 14px 16px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; align-items: start }
+details.step > summary::-webkit-details-marker { display: none }
+details.step > summary::after { content: '+'; font: 600 1.2rem var(--display); color: var(--accent-ink); grid-row: 1 / span 2; grid-column: 2 }
+details.step[open] > summary::after { content: '–' }
+.stn { font: 600 .74rem var(--body); letter-spacing: .07em; text-transform: uppercase; color: var(--accent-ink) }
+.stt { font: 600 1.05rem var(--display); grid-column: 1 } .sts { grid-column: 1; color: var(--muted); font-size: .94rem }
+.stbody { padding: 0 16px 16px; display: flex; flex-direction: column; gap: 14px; min-width: 0 }
+.why-step { border-left: 3px solid var(--accent); padding: 2px 0 2px 14px } .why-step p:last-child { margin-bottom: 0 }
+.qx { border-top: 1px solid var(--line); padding-top: 14px; display: flex; flex-direction: column; gap: 8px; min-width: 0 }
+.qx h4 { margin: 0; font: 600 1rem var(--body); line-height: 1.45 } .qx .ref { color: var(--accent-ink); margin-right: 6px; font-variant-numeric: tabular-nums }
+.qx .exp { font-size: .92rem; color: var(--muted) } .qx .exp b { color: var(--ink) }
+.ans { display: grid; grid-template-columns: minmax(0, 1fr); gap: 6px; padding: 10px 0 10px 12px; border-left: 3px solid var(--line); margin-left: 2px }
+.ans.k-stop { border-left-color: var(--stop) } .ans.k-change { border-left-color: var(--warn) } .ans.k-branch { border-left-color: var(--accent) }
+.ans .al { font-weight: 600 } .ans .cells { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px }
+.ans .c { font-size: .93rem } .ans .c > span { display: block; font: 600 .7rem var(--body); letter-spacing: .06em; text-transform: uppercase; color: var(--muted) }
+.ans .pf { font-size: .8rem; color: var(--muted) }
+@media (min-width: 820px) { .ans .cells { grid-template-columns: minmax(0, .9fr) minmax(0, 1.2fr) minmax(0, 1.9fr); gap: 14px } }
+.ov p { max-width: 72ch } .ov h3 { margin: 1.1em 0 .4em }
 .back { border: 0; background: none; color: var(--accent-ink); font-weight: 500; padding: 6px 0; min-height: 40px; text-align: left }
 .note { background: var(--warn-soft); color: var(--ink); border-radius: var(--r); padding: 14px 16px } .note b { color: var(--warn) }
 .empty { color: var(--muted); padding: 30px 0; text-align: center }
@@ -127,7 +147,7 @@ select { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px soli
 <script>
 (() => {
   const app = document.getElementById('app');
-  const S = { index: null, cache: {}, tab: 'engine', eff: 'all', flow: null, onlyDeciding: true, doc: null, extra: {} };
+  const S = { index: null, cache: {}, tab: 'overview', eff: 'all', flow: null, onlyDeciding: false, doc: null, extra: {} };
   const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const CAT = { 'rx-topical-compounded': 'Prescription topical, compounded', 'rx-topical-licensed': 'Prescription topical, licensed', 'rx-oral': 'Prescription tablets and capsules', 'rx-oral-compounded': 'Prescription oral, compounded', 'otc-medicine': 'Pharmacy medicine (no prescription)', 'cosmetic': 'Cosmetic', 'supplement': 'Supplement', 'device': 'Device', 'bundle': 'Bundle', 'service': 'Plan or service' };
   const ROLE = { 'eligibility-gate': 'Eligibility gate', 'safety-screen': 'Safety screen', 'diagnosis': 'Diagnosis', 'product-selector': 'Product selector', 'personalisation': 'Personalisation', 'expectation-setting': 'Sets expectations', 'marketing': 'Marketing', 'data-capture': 'Data capture', 'consent': 'Consent', 'identity': 'Identity' };
@@ -157,7 +177,7 @@ select { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px soli
         <div><span class="n">STEP 2</span><b>Change one answer</b><span class="muted small">Replay the consultation with one answer different. Compare what comes next and what is offered.</span></div>
         <div><span class="n">STEP 3</span><b>Verify</b><span class="muted small">A second reviewer re-runs the key tests and corrects the report.</span></div>
       </div>
-      <div class="legend"><span>${ev('observed')} seen in a live replay</span><span>${ev('code')} read in the site's own code</span><span>${ev('docs')} the company says so</span><span>${ev('inferred')} reasoned, not seen</span></div>
+      <div class="legend"><span>${ev('observed')} seen in a live replay</span><span>${ev('code')} read in the site's own code</span><span>${ev('docs')} the company says so</span><span>${ev('inferred')} reasoned, not seen</span><span>${ev('owner-run')} seen in the owner's own browser research</span></div>
       <p class="small muted">Only public pages and steps that work without an account were used. No accounts were made, nothing was submitted to a clinician and nothing was ordered, so anything behind a sign-in is described from public documents and labelled.</p>
     </section>
     ${f ? `<section class="card stack"><h2>The big findings</h2>${f.map(x => `<div class="rule"><p class="then">${esc(x.title)}</p><p class="muted">${esc(x.text)}</p></div>`).join('')}</section>` : ''}
@@ -183,7 +203,7 @@ select { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px soli
   }
 
   // ---------- one company ----------
-  const TABS = [['engine', 'Engine rules'], ['questions', 'Questions'], ['products', 'Products'], ['who', 'Who gets what'], ['verdict', 'Verdict'], ['proof', 'Proof and limits']];
+  const TABS = [['overview', 'In plain English'], ['questions', 'Step by step'], ['engine', 'Engine rules'], ['products', 'Products'], ['who', 'Who gets what'], ['verdict', 'Verdict'], ['proof', 'Proof and limits']];
   function company(d) {
     const s = S.index.companies.find(c => c.slug === d.slug) || { counts: {} };
     return `<button class="back" data-go="home">‹ All companies</button>
@@ -196,6 +216,12 @@ select { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px soli
   }
   function pane(d) {
     const P = Object.fromEntries((d.products || []).map(p => [p.id, p.name])); const names = ids => (ids || []).map(i => P[i] || i);
+    if (S.tab === 'overview') {
+      const v = d.verification;
+      return `<div class="ov md">${d.plainEnglish ? mdHtml(d.plainEnglish) : `<h2>How the engine decides</h2><p>${esc(d.engineSummary || 'No summary yet.')}</p>`}</div>
+        ${d.plainEnglish && d.engineSummary ? `<details class="more"><summary>The engine in one paragraph</summary><p>${esc(d.engineSummary)}</p></details>` : ''}
+        ${v ? `<details class="more"><summary>The independent reviewer's verdict</summary><p>${esc(v.verdict)}</p></details>` : ''}`;
+    }
     if (S.tab === 'engine') {
       const rules = d.rules || []; const counts = rules.reduce((m, r) => (m[r.effectType] = (m[r.effectType] || 0) + 1, m), {});
       const shown = rules.filter(r => S.eff === 'all' || r.effectType === S.eff);
@@ -208,16 +234,27 @@ select { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px soli
     if (S.tab === 'questions') {
       const flows = d.flows || []; if (!flows.length) return '<p class="empty">No consultation could be mapped for this company.</p>';
       const f = flows.find(x => x.id === S.flow) || flows[0];
+      const kind = o => o.effectType === 'hard-stop' || /^STOP/i.test(o.outcome || '') ? 'k-stop' : (['product-removed', 'product-added', 'product-switched', 'strength-changed'].includes(o.effectType) ? 'k-change' : (['extra-questions', 'skip-questions', 'soft-warning', 'flag-for-clinician'].includes(o.effectType) ? 'k-branch' : ''));
       const deciding = q => q.branches || (q.options || []).some(o => !QUIET.includes(o.effectType));
-      const qs = (f.questions || []).slice().sort((a, b) => a.order - b.order); const shown = S.onlyDeciding ? qs.filter(deciding) : qs;
-      return `<h2>The consultation, question by question</h2>
+      const qs = (f.questions || []).slice().sort((a, b) => a.order - b.order);
+      const steps = (f.steps && f.steps.length) ? f.steps : [{ id: '_all', title: 'All questions', summary: f.stagesSummary || '', explained: '' }];
+      const inStep = st => qs.filter(q => (f.steps && f.steps.length) ? q.step === st.id : true).filter(q => !S.onlyDeciding || deciding(q));
+      const ans = o => `<div class="ans ${kind(o)}"><div class="row"><span class="al">${esc(o.label)}</span>${effChip(o.effectType)}${ev(o.evidence)}</div>
+          <div class="cells"><div class="c"><span>What happens next</span>${esc(o.next || EFF[o.effectType] || '')}</div><div class="c"><span>What is offered</span>${esc(o.outcome || o.effect)}</div><div class="c"><span>Why</span>${esc(o.why || (o.next ? '' : o.effect && o.outcome ? o.effect : ''))}</div></div>
+          ${o.proof ? `<p class="pf">Proof: ${esc(o.proof)}</p>` : ''}</div>`;
+      const qx = q => `<div class="qx"><h4>${q.ref ? `<span class="ref">${esc(q.ref)}</span>` : ''}${esc(clip(q.text, 220))}</h4>${String(q.text || '').length > 220 ? `<details class="more"><summary>Full wording</summary><p>${esc(q.text)}</p></details>` : ''}
+          <div class="row"><span class="chip">${esc(ROLE[q.engineRole] || q.engineRole)}</span>${q.branches ? '<span class="chip e-extra-questions">branches</span>' : ''}${q.stage !== 'anonymous' ? `<span class="chip e-soft-warning">${esc(q.stage === 'after-account' ? 'behind sign-in' : q.stage)}</span>` : ''}${ev(q.evidence)}<span class="small muted">Shown: ${esc(q.shownWhen)}</span></div>
+          <p class="exp"><b>Why they ask:</b> ${esc(q.purpose)}${q.expected ? `<br><b>What good practice expects:</b> ${esc(q.expected)}` : ''}${q.branchDetail ? `<br><b>Downstream:</b> ${esc(q.branchDetail)}` : ''}</p>
+          ${(q.options || []).map(ans).join('')}</div>`;
+      const nQ = steps.reduce((n, st) => n + inStep(st).length, 0);
+      return `<h2>The consultation, step by step</h2>
         ${flows.length > 1 ? `<label class="small muted" for="flowsel">Route</label><select id="flowsel">${flows.map(x => `<option value="${esc(x.id)}" ${x.id === f.id ? 'selected' : ''}>${esc(x.name)} (${(x.questions || []).length})</option>`).join('')}</select>` : `<p class="muted">${esc(f.name)}</p>`}
         <p class="small muted">${esc(f.stagesSummary)}</p>
-        <div class="filters"><button aria-pressed="${S.onlyDeciding}" data-deciding="1">Only questions that change something (${qs.filter(deciding).length})</button><button aria-pressed="${!S.onlyDeciding}" data-deciding="0">All ${qs.length} questions</button></div>
-        <div>${shown.map(q => `<details class="q"><summary><span class="qn">${esc(q.order)}</span><span>${esc(q.text)}</span>
-            <span class="qmeta"><span class="chip">${esc(ROLE[q.engineRole] || q.engineRole)}</span>${q.branches ? '<span class="chip e-extra-questions">branches</span>' : ''}${q.stage !== 'anonymous' ? `<span class="chip e-soft-warning">${esc(q.stage === 'after-account' ? 'behind sign-in' : q.stage)}</span>` : ''}${ev(q.evidence)}</span></summary>
-          <div class="qbody"><dl class="kv"><dt>Why they ask</dt><dd>${esc(q.purpose)}</dd><dt>Shown</dt><dd>${esc(q.shownWhen)}</dd>${q.branchDetail ? `<dt>Downstream</dt><dd>${esc(q.branchDetail)}</dd>` : ''}<dt>Answer type</dt><dd>${esc(q.type)}</dd></dl>
-            ${(q.options || []).map(o => `<div class="opt"><div class="row"><span class="lab">${esc(o.label)}</span>${effChip(o.effectType)}${ev(o.evidence)}</div><p class="fx">${esc(o.effect)}${(o.affects || []).length ? ` <em>Affects: ${esc(names(o.affects).join(' · '))}</em>` : ''}</p></div>`).join('')}</div></details>`).join('') || '<p class="empty">No question on this route changes anything a visitor can see. Switch to all questions to read them.</p>'}</div>`;
+        <p class="small muted">Each answer shows what happens next, what the patient is offered with everything else unchanged, and why. Colour bar: <b style="color:var(--stop)">red</b> stops the patient, <b style="color:var(--warn)">amber</b> changes the product, <b style="color:var(--accent-ink)">teal</b> adds questions or a warning.</p>
+        <div class="filters"><button aria-pressed="${!S.onlyDeciding}" data-deciding="0">Every question (${qs.length})</button><button aria-pressed="${S.onlyDeciding}" data-deciding="1">Only questions that change something (${qs.filter(deciding).length})</button></div>
+        <div>${steps.map((st, i) => { const list = inStep(st); if (!list.length && S.onlyDeciding) return ''; return `<details class="step"${i === 0 ? ' open' : ''}><summary><span class="stn">Step ${i + 1} · ${list.length} question${list.length === 1 ? '' : 's'}</span><span class="stt">${esc(st.title)}</span><span class="sts">${esc(st.summary)}</span></summary>
+          <div class="stbody">${st.explained ? `<div class="why-step md">${mdHtml(st.explained)}</div>` : ''}${list.map(qx).join('') || '<p class="muted small">No question in this step changes anything. Switch to every question to read them.</p>'}</div></details>`; }).join('') || '<p class="empty">No question on this route changes anything a visitor can see.</p>'}</div>
+        ${nQ ? '' : ''}`;
     }
     if (S.tab === 'products') {
       const cats = [...new Set((d.products || []).map(p => p.category))];
@@ -236,6 +273,7 @@ select { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px soli
     const v = d.verification;
     return `<h2>Proof and limits</h2>${v ? `<div class="stack"><p class="eyebrow">Independent reviewer's verdict</p><p>${esc(v.verdict)}</p>
         <details class="more"><summary>Re-checked (${(v.checked || []).length})</summary>${list(v.checked)}</details><details class="more"><summary>Corrected (${(v.corrected || []).length})</summary>${list(v.corrected)}</details><details class="more"><summary>Still unverified (${(v.stillUnverified || []).length})</summary>${list(v.stillUnverified)}</details></div>` : '<p class="muted">The independent review of this company has not finished yet.</p>'}
+      ${(d.crossCheck || []).length ? `<div class="stack"><p class="eyebrow">Checked against the owner's own research (${d.crossCheck.length})</p><div class="scroll"><table><thead><tr><th>Topic</th><th>Our finding</th><th>Owner's research</th><th>How it was settled</th></tr></thead><tbody>${d.crossCheck.map(x => `<tr><td>${esc(x.topic)}</td><td>${esc(x.ours)}</td><td>${esc(x.owner)}</td><td>${esc(x.resolution)}</td></tr>`).join('')}</tbody></table></div></div>` : ''}
       <div class="stack"><p class="eyebrow">What this report cannot tell you</p>${list(d.limitations)}</div>
       <details class="more"><summary>One-change tests run (${(d.experiments || []).length})</summary><div class="scroll"><table><thead><tr><th>Test</th><th>What was changed</th><th>What happened</th></tr></thead><tbody>${(d.experiments || []).map(x => `<tr><td>${esc(x.id)}</td><td>${esc(x.changed)}</td><td>${esc(x.result)}</td></tr>`).join('')}</tbody></table></div></details>
       <details class="more"><summary>Sources (${(d.sources || []).length})</summary><ul class="plain">${(d.sources || []).map(x => `<li><a href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.title || x.url)}</a></li>`).join('')}</ul></details>`;
@@ -261,7 +299,7 @@ select { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px soli
       if (h === 'home') app.innerHTML = home();
       else if (h === 'compare') app.innerHTML = compare();
       else if (h === 'blueprint' || h === 'evidence') app.innerHTML = await docs(h);
-      else if (S.index.companies.some(c => c.slug === h)) { const d = await get(h + '.json'); if (S.cur !== h) { S.cur = h; S.tab = 'engine'; S.eff = 'all'; S.flow = null; S.onlyDeciding = true; } app.innerHTML = company(d); }
+      else if (S.index.companies.some(c => c.slug === h)) { const d = await get(h + '.json'); if (S.cur !== h) { S.cur = h; S.tab = 'overview'; S.eff = 'all'; S.flow = null; S.onlyDeciding = false; } app.innerHTML = company(d); }
       else app.innerHTML = home();
     } catch (e) { app.innerHTML = '<p class="empty">That part of the research could not be loaded. Go back to Companies and try again.</p>'; }
   }

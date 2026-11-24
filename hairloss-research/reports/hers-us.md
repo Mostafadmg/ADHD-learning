@@ -21,7 +21,7 @@
 
 No live walk of the Hers consultation was possible at any of the three stages: the site stays behind a security checkpoint, which was not defeated. No answer was changed and replayed, so nothing in this file is 'observed'. What the file holds is (1) Hers's stated safety and eligibility policy, from patient leaflets in the shared Hims & Hers help centre (opened directly and re-read word for word at stage 3) and from Hers pages read only through a search index; (2) descriptions of the quiz by reviewers and one partner article (2023 to Nov 2026), now labelled 'inferred' because they are not Hers's own statements; (3) one code hint: names of old Hers hair experiments in the page state served by the sister site. These say who Hers says can have each product. Whether the quiz enforces a rule itself (stop screen, product hidden) or leaves it to the provider is not known. Question wording is not verbatim. Hers is women only; men are served by the sister brand Hims.
 
-Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen).
+Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen), **owner-run** (seen in the owner's own browser research, not replayed by us).
 
 ## 2. How the engine decides (short version)
 
@@ -82,7 +82,7 @@ Untested: the site was blocked at all three stages, so this is how the engine sh
 - **Woman who does not want a prescription** → Minoxidil 5% Foam, Minoxidil 2% Solution (drops), Biotin Gummies (Biotin Builder), Triple Threat Shampoo and Conditioner, Full Volume (Volumizing) Shampoo and Conditioner (default: unknown). Bought directly from product pages with no quiz (help centre: non-prescription products 'do not necessitate a medical consultation'; Healthline: guest checkout). Hers does not state a default; the 5% foam once a day is the usual first choice for women (our reading). _[docs]_
 - **Baseline man: 32, receding hairline and thinning crown** → nothing offered (default: none). Not served. Hers is the women's brand; men are served by the sister site Hims. No Hers men's flow exists to test. _[inferred]_
 
-## 6. The consultation, question by question
+## 6. The consultation, step by step
 
 ### Hers women's hair quiz and intake
 

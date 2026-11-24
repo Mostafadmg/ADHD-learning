@@ -19,7 +19,7 @@
 
 Stage 1 mapped the catalogue and walked a landing-page pre-quiz. Stage 2 (experiment) found the newer anonymous intake at /g/i/hl, replayed its baseline, and ran 12 one-change replays plus 2 multi-change sweeps over the 11 hair questions (34 of 40 options seen live; stage 3 replayed the other 6, so all 40 are now seen) and 5 state replays (Texas, California, Massachusetts, Washington, AA, AP). Result: no hair answer changes anything; military mail states are refused; everything stops at the Terms and Telehealth Consent tick-box, which was not ticked. The pre-quiz was also tested (every option, no effect). NOT seen: the account step, date of birth, the medical form, photos, the recommendation, strengths, plan prices and any medical stop screen; the old /c/hl app stays blocked; Hers (women) stays blocked. The served flow data holds one screen at a time, not a full quiz definition, so no branch conditions could be read from code. Stage 3 (verify) replayed every baseline (all matched), re-tested the state rules (AA stop, Massachusetts valid), tested AE (stopped) and the 6 untested hair options (no change), and re-read 14 product pages and 2 safety pages.
 
-Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen).
+Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen), **owner-run** (seen in the owner's own browser research, not replayed by us).
 
 ## 2. How the engine decides (short version)
 
@@ -102,7 +102,7 @@ Hims US runs its hair consultation on a server-driven flow engine (flow-server.h
 - **Anyone under 18** → nothing offered. Docs: every prescription hair product excludes people younger than 18. The stop screen was not seen. _[docs]_
 - **Baseline woman: 38, widening parting, not pregnant, no conditions** → Hers Oral Minoxidil, Hers Minoxidil + hair vitamin ("Hair Blends", compounded), Hers Minoxidil + Biotin Chew, Hers Spironolactone (for hair loss). Hims US treats men only and sends women to Hers (forhers.com), which showed a security check on every page, so nothing was served or tested. The four Hers products are stubs from search snippets; which one Hers recommends is unknown here (see the separate hers-us report). _[docs]_
 
-## 6. The consultation, question by question
+## 6. The consultation, step by step
 
 ### Landing-page pre-quiz (3 marketing questions)
 

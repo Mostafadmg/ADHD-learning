@@ -13,7 +13,7 @@
 
 Stages 1 to 3. LIVE: every question that can be reached without an account was replayed with one answer changed at a time (21 replays in stage 2: men 3 questions, women 4), and three direct-purchase entries were opened in stage 1. Every replay ended at the account wall with no product or price shown. CODE: the consultation app itself downloads the complete question schema for each flow (every question, option, fork rule and variable change behind the wall) and the men's recommendation function is in a public JS chunk. Stage 2 ran those definitions through an offline simulator, one change at a time (291 simulated runs: 161 men, 130 women, saved in runs/sim/), which is where every post-wall rule and recommendation comes from. These are labelled 'code', not 'observed'. No email, phone, name or other contact detail was entered, nothing was submitted, no photo or payment was given. Honest note: on the first answer the page itself creates an anonymous draft visitor record and posts each answer to it; that is the site's normal anonymous behaviour, and each live replay leaves one such draft. Stage 3 (independent check, 23-24 Nov 2026): 18 more live replays (both baselines, every remaining pre-wall option, three combinations, the coupon link, two alternative entry links and the three direct-purchase links); all matched the recorded results. The served schemas (men v77, women v32) were unchanged; the recommender chunk was byte-identical; the new main bundle was re-read.
 
-Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen).
+Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen), **owner-run** (seen in the owner's own browser research, not replayed by us).
 
 ## 2. How the engine decides (short version)
 
@@ -89,7 +89,7 @@ Ro runs two different engines, and both can be read in full from code the site s
 - **Woman under 18, or zip code not served** → nothing offered. Stopped at the basics screen. A male answer is offered the men's visit. _[code]_
 - **Anyone using a 'Buy now' link for topical minoxidil 5%, shampoo or conditioner** → Minoxidil Topical Solution 5%, 60 mL (generic Rogaine), Ro Revive Shampoo (8 oz), Ro Restore Conditioner (8 oz). Sold directly with no questions: minoxidil 5% solution $16 a month on a 3-month plan ($48); shampoo and conditioner $24 per 3 months each. Re-checked live in stage 3 (runs/verify-otc-minoxidil, -shampoo, -conditioner). _[observed]_
 
-## 6. The consultation, question by question
+## 6. The consultation, step by step
 
 ### Men's hair-loss online visit (schema 'Hair loss onboarding', code hl-onb-consult-2rx, version 77)
 

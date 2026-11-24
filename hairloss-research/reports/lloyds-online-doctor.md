@@ -14,7 +14,7 @@
 
 Stage 1 walked every question on the baseline path and every option one level deep. Stage 2 (24 Nov 2026) replayed the baseline and ran 33 one-change experiments to the recommendation screen, comparing cards and wording (runs/e01 to runs/e33). Options not replayed are marked unknown or inferred. Stage 3 (24 Nov 2026) replayed the baseline and 8 key rules (all confirmed) and filled 7 gaps (phaeochromocytoma, porphyria, SLE, scalp creams, eGFR not tested, testosterone, and one two-change combination); see verification.
 
-Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen).
+Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen), **owner-run** (seen in the owner's own browser research, not replayed by us).
 
 ## 2. How the engine decides (short version)
 
@@ -81,7 +81,7 @@ A server-side rules engine (one screen per answer) works as a subtraction filter
 - **Man with both a minoxidil exclusion (e.g. heart/BP) and a finasteride exclusion (e.g. prostate cancer)** → nothing offered. Questions end early; summary and final consent with no product. _[observed]_
 - **Man using medicated scalp creams** → Dual Action - Tablets, Finasteride tablets (generic), Hair loss tablets (oral minoxidil), Propecia (branded finasteride) (default: Dual Action - Tablets). Topicals removed, as for scalp changes (runs/verify-gap-scalp-creams). _[observed]_
 
-## 6. The consultation, question by question
+## 6. The consultation, step by step
 
 ### Hair loss consultation (men only; one flow for every entry point)
 

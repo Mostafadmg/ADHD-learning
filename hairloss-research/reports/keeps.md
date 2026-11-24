@@ -12,7 +12,7 @@
 
 Stage 1 read all three quizzes in served JavaScript. Stage 2 replayed all three baselines and ran 41 one-change experiments (19 main quiz, 3 gel, 19 legacy) to the plan page or account wall. Every product-changing rule read in the code was confirmed live. Not tested: the remaining 'no effect' options of the main quiz one by one (code shows no branch condition, 13 replays agreed), most of the 51 accepted states, the medical intake after payment and sign-in, and the clinician's decision. Keeps does not treat women (FAQ; tick-box gate). Stage 3 (independent verify) replayed all three baselines fresh, re-tested 9 high-impact rules live (all confirmed), ran 5 new gap replays and re-read 10 product pages plus the live price data.
 
-Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen).
+Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen), **owner-run** (seen in the owner's own browser research, not replayed by us).
 
 ## 2. How the engine decides (short version)
 
@@ -95,7 +95,7 @@ Before payment the main Keeps quiz is a two-answer lookup, now proved live. 'How
 - **Legacy quiz: baseline plus vitamins/supplements interest** → Finasteride 1 mg tablets, Minoxidil+ Spray, Daily Hair Defense Supplement (default: Finasteride 1 mg tablets). Finasteride + Minoxidil+ Spray + supplement. runs/exp-L13. _[observed]_
 - **Legacy quiz: baseline plus dandruff, ketoconazole, saw palmetto, hair care or pomade** → Finasteride 1 mg tablets, Minoxidil Foam, 5%, Ketoconazole Shampoo, 2%, Daily Hair Defense Supplement, Keeps Thickening Shampoo, Keeps Thickening Conditioner, Thickening Pomade (default: Finasteride 1 mg tablets). Baseline pair plus the one add-on each answer triggers: dandruff or ketoconazole -> p13; saw palmetto -> p17; hair care -> p14 + p15; pomade -> p16. runs/exp-L11, L12, L14, L15, L16. _[observed]_
 
-## 6. The consultation, question by question
+## 6. The consultation, step by step
 
 ### Keeps 2.0 hair assessment quiz (main funnel)
 

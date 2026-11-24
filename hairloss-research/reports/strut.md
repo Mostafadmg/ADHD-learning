@@ -14,7 +14,7 @@
 
 Stage 1 read the full definition of the four new intake forms (every screen, option and branch condition, including everything behind the account wall, and the product cards with prices) from the HTML served to an anonymous browser: those items are labelled "code". Stage 2 replayed the one walkable form, oral minoxidil, 27 times (1 baseline, 25 one-change runs, 1 combined worst-case run), and re-loaded the four walled baselines to confirm the walls: those items are labelled "observed" and name their run folder. Six rules read from code were confirmed live exactly as coded (under-18 stop, self-harm stop, three free-text follow-ups, dose picker price), and so was the code reading that the other screens have no branch (16 single options replayed). About 30 options of that form were not replayed on their own because the definition shows no branch on them; they keep the label "code". The oral finasteride, topical finasteride and dutasteride forms cannot be tested without an account. The questionnaires for the women's Strut Hair Formula, Hair Booster, ketoconazole shampoo, HairfectRx capsules and the combos are served only to signed-in users and were not seen; a few entries quote what Strut's public pages say the provider needs ("docs"). Stage 3 (independent verification, 23 Nov 2026) replayed the baseline fresh (identical), re-loaded the four walls (unchanged), re-tested 8 rules live (all confirmed), ran 6 gap tests (no effect, including a baseline woman on the oral minoxidil form), re-fetched the four live form definitions (same version IDs as the saved files) and re-read 15 product pages.
 
-Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen).
+Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen), **owner-run** (seen in the owner's own browser research, not replayed by us).
 
 ## 2. How the engine decides (short version)
 
@@ -86,7 +86,7 @@ Strut has no recommendation engine. The patient chooses a product on the marketi
 - **Baseline woman, 38, who starts from the women's product page** → Strut Women's Hair Growth Formula (Compound) (default: Strut Women's Hair Growth Formula (Compound)). The page sells one product, the Strut Women's Hair Growth Formula ($59 a month); the provider sets the actives. The questionnaire is behind the old checkout's first-screen account wall and was not seen. _[docs]_
 - **Baseline woman, 38, diffuse thinning on top, no conditions, who starts from the oral minoxidil page** → Oral Minoxidil tablets (Retail) (default: Oral Minoxidil tablets (Retail)). Same as the man: no sex or pregnancy question, oral minoxidil 2.5 mg ($65 for 90 days) pre-selected, account card at 75%. Proof: runs/verify-v-woman-baseline-min. _[observed]_
 
-## 6. The consultation, question by question
+## 6. The consultation, step by step
 
 ### Oral finasteride intake form (new PathwAI form)
 

@@ -15,7 +15,7 @@
 
 Stage 1 mapped both routes to the account wall. Stage 2 ran 47 replays: 2 baseline replays, 39 one-change experiments and 6 group tests of non-medical answers, each compared with a pool of baseline visits because the server varies screens at random. Covered one change at a time: first tile, age (17 years 11 months, 18, 85), pregnancy, three men's and three women's hair-loss pictures, recent onset, scalp infection and eczema, blood pressure (and its follow-up), eight further men's conditions, PCOS and heart disease for women, postpartum, facial hair, two medicine options (antidepressants; Other + free text), minoxidil allergy, finasteride allergy, previous finasteride, drops versus capsules on both routes, declining finasteride / dutasteride, pets, and a second goal. Covered in group tests: gender identity (six options), hair type, styling, lifestyle statements, the other hair-loss pictures and timings, skin tone, scalp condition, six-month wishes, washing, hiding hair loss, hard water, buying stage and 'what influenced you'. Everything after the legal-name screen (account, photos, payment, the prescriber's choice of formula, check-ins) was not tested and is described from public documents only. Stage 3 (verify): 21 more replays (2 baselines, 17 one-change, 2 medical group tests), all one at a time; the stop, blood-pressure, pregnancy, gender-identity, pets, previous-product and promo rules were re-tested live (two goals, no hair loss and the 'Other' free-text boxes were not), and the 16 formulas and the price were re-checked against the live leaflets.
 
-Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen).
+Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen), **owner-run** (seen in the owner's own browser research, not replayed by us).
 
 ## 2. How the engine decides (short version)
 
@@ -104,7 +104,7 @@ Hair + Me's public consultation collects answers; it does not decide anything a 
 - **Man aged 85 (otherwise baseline, capsules preferred)** → Personalised treatment (the subscription as it appears in the shopping bag) (default: Personalised treatment (the subscription as it appears in the shopping bag)). Bag: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99 every four weeks, free shipping, promo-code box. No drug, strength or format named. No upper age limit, extra question or warning (runs/s2-m-age-85). _[observed]_
 - **Any visitor arriving from a product page (promo code HGSHOPCAPS or HGSHOPDROPS in the URL)** → Personalised treatment (the subscription as it appears in the shopping bag) (default: Personalised treatment (the subscription as it appears in the shopping bag)). Same bag line at £14.99 for each of the first three months, then £34.99 (runs/entry-promo-caps-men, stage 1). The questions, including the format preference, are unchanged. _[observed]_
 
-## 6. The consultation, question by question
+## 6. The consultation, step by step
 
 ### Hair consultation, men's route (sex assigned at birth = Male)
 

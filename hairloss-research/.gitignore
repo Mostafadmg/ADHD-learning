@@ -6,3 +6,4 @@ companies/*/runs/**/storage.json
 companies/*/raw/
 companies/*/src/
 node_modules/
+owner-sources/

@@ -98,7 +98,8 @@ function report(d, s) {
   L.push(`- **Account wall:** ${d.access.accountWall || 'none found'}`);
   (d.access.blockers || []).forEach(b => L.push(`- **Blocker:** ${b}`));
   L.push('', d.access.coverageNote || '', '');
-  L.push('Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site\'s own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen).', '');
+  L.push('Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site\'s own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen), **owner-run** (seen in the owner\'s own browser research, not replayed by us).', '');
+  if (d.plainEnglish) L.push('## The service in plain English', '', d.plainEnglish, '');
   if (d.engineSummary) L.push('## 2. How the engine decides (short version)', '', d.engineSummary, '');
   L.push(`## 3. Engine rules (${(d.rules || []).length})`, '');
   if ((d.rules || []).length) {
@@ -110,8 +111,20 @@ function report(d, s) {
   (d.products || []).forEach(p => L.push(`| ${p.url ? `[${mdEsc(p.name)}](${p.url})` : mdEsc(p.name)} | ${p.category} | ${mdEsc((p.actives || []).map(a => a.name + (a.strength ? ' ' + a.strength : '')).join('; ') || 'n/a')} | ${mdEsc(p.form)} | ${p.audience} | ${mdEsc(p.legalStatus)} | ${mdEsc(p.price)}${p.priceDetail ? ` (${mdEsc(clip(p.priceDetail, 220))})` : ''} | ${mdEsc(p.recommendedWhen)} | ${p.evidence} |`));
   L.push('', `## 5. Who gets what (${(d.recommendations || []).length} patient profiles)`, '');
   (d.recommendations || []).forEach(r => L.push(`- **${r.profile}** → ${names(r.offered) || 'nothing offered'}${r.default ? ` (default: ${P[r.default] || r.default})` : ''}. ${r.note || ''} _[${r.evidence}]_`));
-  L.push('', '## 6. The consultation, question by question', '');
-  (d.flows || []).forEach(f => {
+  L.push('', '## 6. The consultation, step by step', '');
+  const qLine = q => { L.push(`**${q.ref ? q.ref + ' · ' : q.order + '. '}${mdEsc(q.text)}**  `);
+    L.push(`_${q.type} · ${q.stage} · role: ${q.engineRole} · shown: ${mdEsc(q.shownWhen)} · ${q.branches ? 'BRANCHES' : 'no branch'} · ${q.evidence}_  `);
+    L.push(`Why they ask: ${mdEsc(q.purpose)}${q.expected ? `  \nWhat good practice expects: ${mdEsc(q.expected)}` : ''}${q.branchDetail ? `  \nDownstream: ${mdEsc(q.branchDetail)}` : ''}`, '');
+    if ((q.options || []).length) { L.push('| Answer | What happens next | What is offered | Why | Evidence |', '|---|---|---|---|---|');
+      q.options.forEach(o => L.push(`| ${mdEsc(o.label)} | ${mdEsc(o.next || EFFECT_LABEL[o.effectType] || o.effectType)} | ${mdEsc(o.outcome || o.effect)} | ${mdEsc(o.why || '')}${o.proof ? ` _Proof: ${mdEsc(o.proof)}_` : ''} | ${o.evidence} |`)); }
+    L.push(''); };
+  (d.flows || []).filter(f => (f.steps || []).length).forEach(f => {
+    L.push(`### ${f.name}`, '', `Entry: ${f.entryUrl}`, '', f.stagesSummary, '');
+    const qs = (f.questions || []).slice().sort((a, b) => a.order - b.order);
+    f.steps.forEach((st, i) => { L.push(`#### Step ${i + 1}: ${st.title}`, '', `_${st.summary}_`, '', st.explained || '', ''); qs.filter(q => q.step === st.id).forEach(qLine); });
+    const loose = qs.filter(q => !f.steps.some(st => st.id === q.step)); if (loose.length) { L.push('#### Other screens', ''); loose.forEach(qLine); }
+  });
+  (d.flows || []).filter(f => !(f.steps || []).length).forEach(f => {
     L.push(`### ${f.name}`, '', `Entry: ${f.entryUrl}`, '', f.stagesSummary, '');
     (f.questions || []).slice().sort((a, b) => a.order - b.order).forEach(q => {
       L.push(`**${q.order}. ${mdEsc(q.text)}**  `);
@@ -136,6 +149,7 @@ function report(d, s) {
     L.push('**Corrected**', '', ...(d.verification.corrected || []).map(x => `- ${x}`), '');
     L.push('**Still unverified**', '', ...(d.verification.stillUnverified || []).map(x => `- ${x}`), '');
   }
+  if ((d.crossCheck || []).length) { L.push(`## Checked against the owner's own research (${d.crossCheck.length})`, '', '| Topic | Our finding | Owner\'s research | How it was settled |', '|---|---|---|---|', ...d.crossCheck.map(x => `| ${mdEsc(x.topic)} | ${mdEsc(x.ours)} | ${mdEsc(x.owner)} | ${mdEsc(x.resolution)} |`), ''); }
   L.push('## 10. Limits of this report', '', ...(d.limitations || []).map(x => `- ${x}`), '');
   L.push('## 11. Sources', '', ...(d.sources || []).map(x => `- [${mdEsc(x.title || x.url)}](${x.url})`), '');
   return L.join('\n');

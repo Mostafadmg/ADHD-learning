@@ -13,7 +13,7 @@
 
 Stage 1 walked all three quizzes to the account wall and saved the full served quiz definition. Stage 2 replayed the three baselines and 44 variants (42 one-change, 2 deliberate two-change contrasts) (47 replays, runs/b-* , m*, w*, s01), each to the wall. At the wall the site's own client function window.quiz.checkProductAvailability() was run read-only in the live page (scratch/walk-eval.js), which returns the SKUs the results page would list; it matched the Python port of the rules in all 47 runs, so the served rules have not changed. Follow-up questions (show-ifs) were seen live; no answer produced a warning screen, stop screen or different wall before registration. Results screens themselves were not seen (account wall). Stage 3 (independent verify, 24 Nov 2026): 3 fresh baselines and 19 variants (runs/verify-*), 12 of them on options never replayed before, 3 deliberate two-change contrasts; all 22 matched an independent port of the rule check (scratch/verify/engine.js) and the served rules were byte-identical to the saved definitions. 12 product pages, both leaflets and the clinic price list were re-read live.
 
-Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen).
+Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen), **owner-run** (seen in the owner's own browser research, not replayed by us).
 
 ## 2. How the engine decides (short version)
 
@@ -101,7 +101,7 @@ A rules engine that runs in the browser and is fully visible. Each product SKU h
 - **Man, Temples and Crown with reduced density, scalp slightly or very visible** → The 5% Combination Plan (oral finasteride + minoxidil 5% drops) [SKU PHI1305], Men's SKU PHI1220 (name not found; behaves like a minoxidil-only product), Men's SKU PHI1221 (name not found; behaves like a finasteride-containing product) (default: The 5% Combination Plan (oral finasteride + minoxidil 5% drops) [SKU PHI1305]). Only named plan is the 5% Combination Plan; the 3% plan meant for this case never appears (runs/verify-m-tcr-slight). _[code]_
 - **Woman with thinning at temples, gradual (otherwise baseline)** → Women's main hair-loss product, SKU PHI1749 (name not found; behaves like a minoxidil product), Women's "Complete Your Routine" haircare add-ons (names not mapped) [SKU PHI1651-PHI1694, PHI1827 (34 SKUs)] (default: Women's main hair-loss product, SKU PHI1749 (name not found; behaves like a minoxidil product)). Same as the baseline woman (runs/verify-w-temples). If the loss was sudden, no SKU passes (runs/verify-w-temples-sudden). _[code]_
 
-## 6. The consultation, question by question
+## 6. The consultation, step by step
 
 ### Men's hair loss assessment (men_quiz)
 

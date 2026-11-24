@@ -18,7 +18,7 @@
 
 No page of the company's site could be opened, so no live replay and no one-change experiments were possible. Stage 2 added the product catalogue (16 items with pack prices) and the consultation's topics from web-search snippets of the company's own pages, including the hair-loss consultation page (/consultation/23). Search snippets are summaries of indexed copies, some years old; no exact question wording or option list is known. Stage 3 re-checked prices and rules against fresh domain-filtered search summaries; several prices were corrected and three products added. Still no live replay.
 
-Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen).
+Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen), **owner-run** (seen in the owner's own browser research, not replayed by us).
 
 ## 2. How the engine decides (short version)
 
@@ -77,7 +77,7 @@ Oxford Online Pharmacy is a catalogue pharmacy, not a recommender. The customer 
 - **Man with heart disease or low blood pressure** → Finasteride 1 mg tablets (generic; Accord pack also listed), Regaine for Men Extra Strength solution (minoxidil 5%), 60 ml, Minoxidil 5% solution 60 ml (listing titled "generic Regaine"): probably the same Sons product as p9 (default: Finasteride 1 mg tablets (generic; Accord pack also listed)). Inferred: oral minoxidil removed. _[inferred]_
 - **Under 18** → nothing offered. Prescription products are for over-18s only. _[docs]_
 
-## 6. The consultation, question by question
+## 6. The consultation, step by step
 
 ### Hair-loss online consultation (not walked; outline from customer reviews only)
 

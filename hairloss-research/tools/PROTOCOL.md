@@ -155,3 +155,56 @@ dead ends). The next investigator starts from it, so write it for a stranger.
 
 Copy up to 8 key screenshots (first question, a branch, a stop screen, the recommendation screen) into
 `companies/<slug>/shots/` with meaningful names.
+
+## 7. The "explained" format (stage `explained`), added 24 Nov 2026
+
+The owner found the first reports too vague. Every company is now written to the standard of the owner's own Voy
+walkthrough (`owner-sources/voy-walkthrough.txt`, section "Step-by-step consultation"): for **every answer** say what
+happens next, what the patient is offered (product, strength, price), and **why**, with the source. Plain UK English,
+short sentences, every term defined the first time. Proof codes (run folders, file names, variable names) go in
+`proof`, never in the explanation text.
+
+New fields (all plain text; `plainEnglish` and `explained` may use simple Markdown: paragraphs, **bold**, lists):
+
+```jsonc
+{
+  "plainEnglish": "The service in plain English (300–700 words): how the service works end to end; what the questionnaire really is (a rules engine? a marketing quiz? a form for a clinician?); the headline findings with specifics (which answers stop, which switch the product, which change nothing; product names and prices); what happens after the sign-in wall according to the company; what we could and could not see.",
+  "flows": [{
+    "steps": [{
+      "id": "s5", "title": "Medical history",
+      "summary": "One sentence verdict, e.g. 'The main safety screen. It changes the product but never stops or refers.'",
+      "explained": "80–350 words: why a careful prescriber asks these questions; which answers UK guidance says should change the plan (name the source: SmPC section, NICE CKS, BAD leaflet, MHRA); what this company actually did (named product and price); the verdict (right, over-cautious, missing a stop, or no effect)."
+    }],
+    "questions": [{
+      "step": "s5",                 // must match a step id in this flow
+      "ref": "M14",                 // optional short code shown to the reader
+      "expected": "Optional: what a careful UK prescriber or the guidance would expect this question to do, with source.",
+      "options": [{
+        "next": "What happens next, concretely: 'Next question', 'Opens a follow-up: \"…\"', 'Consultation ends: stop screen \"You aren't eligible…\"', 'Goes to the email wall'.",
+        "outcome": "The offer with everything else at the baseline. Start with 'No change:', 'Changes to:', 'Removes:', 'STOP:' or 'Not tested:'. Name the product, strength and price shown, e.g. 'Changes to: Finasteride Tablets 1 mg, £12.42 a month (6-month plan); oral minoxidil removed.'",
+        "why": "The reason, in labelled parts: 'Company says: …' (their rule, served code or help text), 'Evidence: …' (SmPC, NICE, BAD, MHRA, trial; name it), 'Likely reason: …' (our inference, labelled). Add 'A careful prescriber would …' when the company's behaviour falls short or overreaches.",
+        "proof": "Run folders, files, rule ids or source sections that prove it (may be empty for docs-only claims)."
+      }]
+    }]
+  }]
+}
+```
+
+Rules:
+- Every single, multi and consent question gets `next`, `outcome` and `why` on every option. Info screens get them on
+  their Continue option if they list one. If something was not tested, say so in `outcome` ("Not tested: the served
+  rules suggest …") rather than guessing.
+- The same rationale may repeat across sibling options when it is genuinely the same (e.g. four hair-pattern pictures
+  with no rule), but every option's `outcome` must be specific to that option.
+- Keep `effect` as a one-line plain summary (it feeds the compare tables).
+- New evidence label **`owner-run`**: seen in the owner's own browser research (the master report in
+  `owner-sources/master-*.md` or the Voy walkthrough, 12–15 Nov 2026), not replayed by us. Use it for anything only
+  those sources show. When they disagree with our own runs, keep both, say which is newer, and explain.
+- Never copy personal details from the owner's sources (names, emails) into a report; cite them as "owner's master
+  report, Voy §4.2" or "owner's Voy walkthrough, step M14".
+
+`node tools/validate.js <slug> --stage explained` checks all of this.
+
+Cross-checks: when the owner's master report covers the company (Voy, Hims UK, Numan, Sons, Hair + Me), add
+`"crossCheck": [{ "topic": "…", "ours": "…", "owner": "…", "resolution": "…" }]` for every point where the two
+disagree or where the owner's research adds something we did not have. Say which is newer and which you trust, and why.

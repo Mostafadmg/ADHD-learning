@@ -11,7 +11,7 @@
 
 The whole medical form (17 questions on one page) is public HTML and was saved and parsed. Stage 2 replayed every question that can change the offer, on both product routes: all 11 stop answers one at a time, the three product-removing answers (Q742, Q743, Q746) on both routes, Q747, Q753 with and without text, one combination, and four baskets to the confirm page to read prices and fees. All three baselines still work (23 Nov 2026). Nothing behind the login page was tested. There is no women’s flow. Stage 3 (independent check, 23 Nov 2026) replayed the three baselines and nine rule tests (all confirmed), re-read the form, order and site code, re-checked all 20 pack prices and the emc licences, and added three new tests: Q743 + Q746, and two runs showing that a second consultation can add finasteride to a basket that already holds the spray.
 
-Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen).
+Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen), **owner-run** (seen in the owner's own browser research, not replayed by us).
 
 ## 2. How the engine decides (short version)
 
@@ -72,7 +72,7 @@ Dr Fox has no recommendation engine: it is a one-page safety filter in front of 
 - **Woman (or anyone assigned female at birth, including trans men)** → nothing offered (default: none). Not served for hair loss at all; pointed to their GP and high-street Regaine for Women. _[docs]_
 - **Man who fills in the form twice: spray route first, then tablets route** → Dr Fox Dual Action Hair Growth Spray, Finasteride 1mg tablets (generic), Propecia 1mg tablets (branded finasteride), Regaine for Men Extra Strength Scalp Solution 5%, Regaine for Men Extra Strength Scalp Foam 5%, Sons Minoxidil 5% solution (default: none). Both consultations go into one basket (spray + finasteride 28 = £43.80 with two delivery charges) with no warning, even when the second form reports low blood pressure symptoms (minoxidil then drops from the second list only). Seen to the confirm page only (runs/verify-gap-two-consults, verify-gap-two-consults-conflict). _[observed]_
 
-## 6. The consultation, question by question
+## 6. The consultation, step by step
 
 ### Male pattern hair loss consultation (consultation id 65)
 

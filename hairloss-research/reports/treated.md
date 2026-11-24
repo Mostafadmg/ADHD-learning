@@ -13,7 +13,7 @@
 
 Men's flow walked to the treatment options screen in 21 one-change replays (runs/e00–e20) plus stage 1 walks to the account wall from the general entry and the Dutasteride, Avodart, Regaine and Propecia entries. Question set and per-option actions from the served definition (quiz-definition-male.json); product list, prices and automatic-offer limits from gettreatmentoptions, compared run by run (scripts/summ.js, scripts/odiff.js). Women: hard stop. Nothing after the account wall. Stage 3 (verify) replayed both baselines and 11 more cases fresh (runs/verify-*), re-read the live product pages and found the review/auto messages are only in the server response, not on screen.
 
-Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen).
+Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen), **owner-run** (seen in the owner's own browser research, not replayed by us).
 
 ## 2. How the engine decides (short version)
 
@@ -72,7 +72,7 @@ Treated runs one short men-only questionnaire (11 questions, height and weight, 
 - **Man with a history of mental illness (including depression or anxiety)** → nothing offered. Hard stop on the conditions question; no product, not even minoxidil (runs/e04-mental). _[observed]_
 - **Man entering from a product page (Propecia, Dutasteride, Avodart or Regaine)** → Finasteride 1mg tablets (generic), Regaine for Men Extra Strength 5% (scalp solution 3x60ml or foam 3x73ml), Propecia 1mg tablets (branded finasteride), Avodart 0.5mg capsules (branded dutasteride), Dutasteride 0.5mg capsules (generic) (default: that product). The product of the link is pre-selected if it passes the limits (runs/e15-propecia-save, p1-dutasteride, p2-regaine-save). _[observed]_
 
-## 6. The consultation, question by question
+## 6. The consultation, step by step
 
 ### Hair loss consultation (men only)
 

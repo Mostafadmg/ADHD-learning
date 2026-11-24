@@ -15,7 +15,7 @@
 
 No real quiz screen was seen, in stage 1 or stage 2. Live replays (20 in stage 2, 3 of them blocked access checks) cover only what Voy serves without the checkpoint: the men's landing-page pop-up (6 options), the women's landing-page pop-up (4 options and Skip) and the men's pattern picker (6 options), each option on its own. Site code covers (a) the scripts of those landing pages, which hold the pop-ups' eligibility rule, and (b) a copy of the older Manual web app's shared script (29 Dec 2025, from a public web archive), which holds the quiz ENGINE (how answers remove products or reject the patient, how follow-up questions are shown, the order of the funnel pages) but not the questions. Public documents cover Voy's own landing pages for men and women (read live on Voy's public hosts hairloss1.joinvoy.com and femalehairloss1.joinvoy.com), older Manual treatment-plan pages with full 'who should not take it' lists (archive copies), terms of sale, GPhC reports and Manual's published service evaluation. Help-centre and www.joinvoy.com product pages were read only through search-engine summaries. Every quiz-related entry says which of these it rests on. Stage 3 (verification) replayed every baseline and six stage 2 experiments again with the same results, re-read the page scripts and the archived app code, and added 13 gap replays: the older Manual plan picker that is still online (format and plan length, the only product chooser that works without the blocked app), the page aimed at both sexes, the women's /meta pop-up, the product-first landing page and the coupon hand-over. None of these is the consultation itself.
 
-Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen).
+Evidence labels used below: **observed** (seen in a live replay), **code** (read in the site's own served code), **docs** (the company says so publicly), **inferred** (reasoned, not seen), **owner-run** (seen in the owner's own browser research, not replayed by us).
 
 ## 2. How the engine decides (short version)
 
@@ -101,7 +101,7 @@ Voy's real quiz could not be opened in any of the three stages, so this is the e
 - **Visitor on the product-first route whose chosen product is ruled out by an answer (older engine)** → nothing offered. Older code shows only a 'shouldSwap' flag and a swap=true address; that the product is then exchanged for an eligible one is inferred from the names (label changed from 'code' in stage 3). _[inferred]_
 - **Visitor on the older Manual minoxidil plan picker, before any medical question (older brand, page still online)** → Oral minoxidil for men (label: 'Hair Oral Treatment' / 'Oral Hair Treatments'), Minoxidil Spray, extra strength 10% (label: 'Hair Treatment Spray') (default: Oral minoxidil for men (label: 'Hair Oral Treatment' / 'Oral Hair Treatments')). Seen in stage 3 replays: 'Tablets' is pre-selected and tagged 'Most effective', '6 Months' is pre-selected and tagged 'Save 48%'. This is a shop-window default, not a consultation result. _[observed]_
 
-## 6. The consultation, question by question
+## 6. The consultation, step by step
 
 ### Landing-page eligibility pop-up (a one-question pre-quiz)
 
