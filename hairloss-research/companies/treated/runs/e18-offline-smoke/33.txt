@@ -1,0 +1,35 @@
+STEP 33 click "I smoke every day"
+URL: https://start.treated.com/GBR/en/#/medical-profile
+TITLE: Treated UK - Choose Better - Medical Experts & Treatments Online
+
+--- VISIBLE TEXT ---
+Here's your medical profile.
+
+Let us know if any of the below apply to you.
+
+I have one or more medical conditions
+I've had surgery before
+I'm taking medication(s)
+I have one or more allergies
+I smoke or used to smoke
+I smoke every day
+Edit
+I drink alcohol
+I have one or more disabilities
+I have one or more close relatives with a medical condition
+I use recreational drugs
+Continue
+How often do you smoke?
+I used to smoke but I quit
+I smoke occasionally
+I smoke every day
+I smoke and I want to quit
+Confirm
+
+--- CONTROLS ---
+  checkbox (9): I have one or more medical conditions  ·  I've had surgery before  ·  I'm taking medication(s)  ·  I have one or more allergies  ·  I smoke or used to smoke [checked]  ·  I drink alcohol  ·  I have one or more disabilities  ·  I have one or more close relatives with a medical condition  ·  I use recreational drugs
+  button (3): Edit  ·  Continue  ·  Confirm
+  radio (2): _1_smoke  ·  _1_smoke [checked]
+
+--- LINKS ---
+

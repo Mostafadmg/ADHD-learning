@@ -1,0 +1,17 @@
+STEP 07 click "Next"
+URL: https://www.numan.com/subscribe/hair-loss/0defb14c-b645-40b8-9642-b81588738777/sq/lactose_tolerance
+TITLE: Finasteride tablets contain very small amounts of lactose. If you have taken a tablet formulation before without experiencing symptoms, it is unlikely that you will get undesirable effects from the lactose within our tablets. | Numan
+
+--- VISIBLE TEXT ---
+24%
+Finasteride tablets contain very small amounts of lactose. If you have taken a tablet formulation before without experiencing symptoms, it is unlikely that you will get undesirable effects from the lactose within our tablets.
+I can’t tolerate any amount of lactose and I would like to be considered for non-lactose containing preparations only
+I can tolerate very small amounts of lactose
+Back
+
+--- CONTROLS ---
+  radio (2): I can’t tolerate any amount of lactose and I would like to be considered for non-lactose containing preparations only  ·  I can tolerate very small amounts of lactose
+  button (1): Back
+
+--- LINKS ---
+  link (1): Visit the main page -> /

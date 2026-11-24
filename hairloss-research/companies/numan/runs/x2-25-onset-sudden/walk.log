@@ -1,0 +1,12 @@
+
+!!!!! STEP 06 FAILED: click "label:text-is(\"I am not allergic to any of the above\")"
+locator.click: Timeout 4000ms exceeded.
+
+===== STEP 06 FAILED click "label:text-is(\"I am not allergic to any of the above\")" =====
+URL: https://www.numan.com/subscribe/hair-loss/6f642d07-3dab-4e1f-946c-5055d7356694/sq/when_did_you_notice/reject/sudden
+TEXT: No suitable treatment ⏎ The safety of our patients is our top priority. Unfortunately, our treatments are not suitable for you because they are not designed for sudden hair loss. Sudden hair loss can have a number of causes and we recommend you seek advice from your usual GP to investigate causes for your sudden hair loss. ⏎ If you’d like to talk to our clinicians about this, please email clinic@numan.com and we’ll do our best to find a solution or recommend next steps. ⏎ Did you make a mistake in your consultation? Providing false information can lead to serious harm to your health. ⏎ Review your answers ⏎ Back to homepage
+CONTROLS:
+  button (1): Review your answers
+  links (3, full list in 06.txt): Visit the main page  ·  clinic@numan.com  ·  Back to homepage
+
+[walk] 6 step(s), exit 2, 22 JSON bodies saved -> runs/x2-25-onset-sudden

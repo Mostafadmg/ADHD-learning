@@ -1,0 +1,43 @@
+{
+ "step": {
+  "title": "HL",
+  "questions": [
+   {
+    "questionId": "107954",
+    "explanationAvailable": false,
+    "displayText": "How did your hair loss start?",
+    "type": "SINGLE_CHOICE",
+    "answerRequired": true,
+    "smoothTransition": false,
+    "answerChoices": [
+     {
+      "answerId": "107954$105143",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "107954",
+      "displayText": "Gradually, over months or years",
+      "type": "SINGLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "107954$105144",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "107954",
+      "displayText": "Suddenly, over days or weeks",
+      "type": "SINGLE_CHOICE",
+      "selected": false
+     }
+    ],
+    "titleOverride": "Your hair loss"
+   }
+  ],
+  "questionAnswerErrors": {},
+  "summaryRequiredBeforeStep": false,
+  "registrationRequiredBeforeStep": false,
+  "fastSummaryRequiredBeforeStep": false
+ },
+ "explanation": "/api/questionnaire/traversals/14042585/explanations",
+ "previous": "/api/questionnaire/traversals/14042585/steps/previous",
+ "current": "/api/questionnaire/traversals/14042585/steps/current"
+}

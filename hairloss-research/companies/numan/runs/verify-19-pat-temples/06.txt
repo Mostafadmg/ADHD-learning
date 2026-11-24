@@ -1,0 +1,20 @@
+STEP 06 click "label:text-is(\"I am not allergic to any of the above\")"
+URL: https://www.numan.com/subscribe/hair-loss/2d18fb73-9542-42b4-bec3-159bc5a3c640/sq/do_you_have_an_allergy_or_intolerance_to_any
+TITLE: Do you have an allergy or intolerance to any of the following? | Numan
+
+--- VISIBLE TEXT ---
+17%
+Do you have an allergy or intolerance to any of the following?
+I am allergic to minoxidil
+I am allergic to finasteride
+I have a lactose intolerance or allergy
+I am not allergic to any of the above
+Back
+Next
+
+--- CONTROLS ---
+  checkbox (4): I am allergic to minoxidil  ·  I am allergic to finasteride  ·  I have a lactose intolerance or allergy  ·  I am not allergic to any of the above [checked]
+  button (2): Back  ·  Next
+
+--- LINKS ---
+  link (1): Visit the main page -> /

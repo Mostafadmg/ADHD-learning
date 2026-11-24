@@ -17,7 +17,7 @@
   ],
   "accountWall": "At …/subscribe/hair-loss/<draft id>/profile, after the questionnaire, GP choice, optional email (skippable), product selection, 'what to expect', billing frequency and add-ons. The screen shows the order summary and asks for email, password, legal name, date of birth, phone, sex and delivery address. The full recommendation and all plan prices are visible before it. Direct purchase of Rosemary Oil hits the same form on its first screen.",
   "blockers": [],
-  "coverageNote": "Stage 1 (map). The browser was not blocked. All 29 questions of the live men's questionnaire were reached and saved with every option; the served data also gives the engine result of every option (proceed, reject with message, clinician query with internal note). The baseline man was walked to the account wall twice (main link and Regaine link). One stop screen (under 18) was opened. The product filter was read in the served JavaScript and seen once in an all-flags walk. Not done: one-change tests of most options (stage 2), anything after the account wall, and any women's flow (none exists). robots.txt disallows /subscribe for crawlers; the walks were single, slow, human-style sessions and each consultation start created one anonymous draft on Numan's side (eight confirmed in the network logs, possibly nine)."
+  "coverageNote": "Stage 1 mapped all 29 questions and every option's served result. Stage 2 (23 Nov 2026) replayed the baseline to the account wall and ran 32 one-change replays to the product screen (runs/x2-*), covering every option that the served data or stage 1 suggested could change the offer: both allergies, lactose, each scalp symptom alone, every caution and its opt-out, the whole mental-health branch, three stops, a stop-bypass, age 65+, three patterns, two preference answers, medical history and two entry links with an allergy. Nothing after the account wall was tried. No contact details were entered anywhere. Stage 3 (24 Nov 2026) replayed the baseline twice (to the product screen and to the account wall), re-tested ten stage-2 rules and ran the main untested options (Complete, 65+ No, Temples, Moderate, asthma and baby opt-ins, lactose small, All of the above, the minoxidil entry link, a two-rule pair with and without an entry link, and the Finasteride billing screen): 22 replays in runs/verify-*."
  },
  "products": [
   {
@@ -44,7 +44,7 @@
    "price": "£40 a month, billed and delivered quarterly (£120 for 3 kits)",
    "priceDetail": "Billed six-monthly £36 a month (£216 per 6 months), billed annually £32 a month; all still delivered every 3 months (observed on the billing screen). A monthly-delivery variant exists in the API at £48 a kit. First-order code HL-ORGANIC-50OFF (in the site's own 'Get started' links): the banner says 'Save 50% off your first order (max. £40)'; the pricing call (www.numan.com/bff/pricing) returned discount 40 (percentage), maxDiscountAmount 4000 pence, and the amounts shown match 40% off capped at £40. With it the selection screen showed £26.67 a month, 'Save 33%'.",
    "url": "https://www.numan.com/subscribe/hair-loss",
-   "recommendedWhen": "Featured as 'Most effective' whenever neither finasteride nor minoxidil has been ruled out and the patient did not arrive through a product-specific link (observed for the baseline man; rule read in the product-selection JS). Hidden if either drug is ruled out.",
+   "recommendedWhen": "Featured 'Most effective' whenever neither drug is ruled out and the patient came in through the main link (x2-01 and every flag-only run). Hidden if either drug is ruled out (x2-02, x2-03).",
    "evidence": "observed"
   },
   {
@@ -67,7 +67,7 @@
    "price": "£36 a month, billed and delivered quarterly (£108 for 3 kits)",
    "priceDetail": "From the variant data in the API (not seen on a billing screen): six-monthly billing £32 a month, annual £28 a month; monthly-delivery variant £44 a kit. First-order code HL-ORGANIC-50OFF (in the site's own 'Get started' links): the banner says 'Save 50% off your first order (max. £40)'; the pricing call (www.numan.com/bff/pricing) returned discount 40 (percentage), maxDiscountAmount 4000 pence, and the amounts shown match 40% off capped at £40. With it the selection screen showed £22.67 (was £36.00), 'Save 37%'. The API marks this product as the category's default product.",
    "url": "https://www.numan.com/subscribe/hair-loss",
-   "recommendedWhen": "Listed under 'See all treatments' for the baseline man. The JS features it only if the three-part kit is not on offer but this one is; hidden if either drug is ruled out.",
+   "recommendedWhen": "Listed under 'See all treatments' when neither drug is ruled out; hidden if either is (x2-02, x2-03). Never seen featured.",
    "evidence": "observed"
   },
   {
@@ -98,7 +98,7 @@
    "price": "£40 a month, billed and delivered quarterly (£120 for 3 kits)",
    "priceDetail": "From the API variant data: six-monthly £36 a month, annual £32 a month; monthly-delivery variant £48. First-order code HL-ORGANIC-50OFF (in the site's own 'Get started' links): the banner says 'Save 50% off your first order (max. £40)'; the pricing call (www.numan.com/bff/pricing) returned discount 40 (percentage), maxDiscountAmount 4000 pence, and the amounts shown match 40% off capped at £40. Selection screen showed £26.67 (was £40.00), 'Save 33%'.",
    "url": "https://www.numan.com/subscribe/hair-loss",
-   "recommendedWhen": "Listed under 'See all treatments' for the baseline man; hidden if either finasteride or minoxidil is ruled out (JS).",
+   "recommendedWhen": "Listed under 'See all treatments' when neither drug is ruled out; hidden if either is (x2-02, x2-03).",
    "evidence": "observed"
   },
   {
@@ -115,9 +115,9 @@
    "audience": "men",
    "legalStatus": "POM, licensed generic (Numan describes it as the generic of Propecia). Tablets contain lactose.",
    "price": "£28 a month, billed and delivered quarterly (84 tablets for £84 = £1.00 a tablet)",
-   "priceDetail": "From the API variant data: six-monthly £24 a month, annual £20 a month; monthly variant 28 tablets £34 (£1.21 a tablet). First-order code HL-ORGANIC-50OFF (in the site's own 'Get started' links): the banner says 'Save 50% off your first order (max. £40)'; the pricing call (www.numan.com/bff/pricing) returned discount 40 (percentage), maxDiscountAmount 4000 pence, and the amounts shown match 40% off capped at £40. Selection screen showed £16.80 (was £28.00), 'Save 40%'. Marketing pages say 'From £1.00 / tablet'.",
+   "priceDetail": "Six-monthly £24 a month and annual £20 a month (from the API discounts and seen on the billing screen in runs/verify-22-fin-billing, struck-through £34.00); monthly variant 28 tablets £34 (£1.21 a tablet). First-order code HL-ORGANIC-50OFF (in the site's own 'Get started' links): the banner says 'Save 50% off your first order (max. £40)'; the pricing call (www.numan.com/bff/pricing) returned discount 40 (percentage), maxDiscountAmount 4000 pence, and the amounts shown match 40% off capped at £40. Selection screen showed £16.80 (was £28.00), 'Save 40%'. Marketing pages say 'From £1.00 / tablet'.",
    "url": "https://www.numan.com/hair-loss/finasteride",
-   "recommendedWhen": "Listed under 'See all treatments' for the baseline man. By the JS it becomes the featured product when minoxidil is ruled out but finasteride is not (first remaining product by position); hidden when finasteride is ruled out. Not yet observed alone.",
+   "recommendedWhen": "Listed when finasteride is not ruled out. Featured 'Recommended for you' (£16.80) when minoxidil is ruled out: minoxidil allergy, scalp pain/itching, red rinds/rashes or a blood-pressure diagnosis (x2-03, x2-04, x2-05, x2-10). Stays featured on the finasteride entry link even with a finasteride allergy (x2-21).",
    "evidence": "observed"
   },
   {
@@ -144,7 +144,7 @@
    "price": "£36 a month, billed and delivered quarterly (£108 for 3 bottles)",
    "priceDetail": "From the API variant data: six-monthly £32 a month, annual £28 a month; monthly variant £44 a bottle. First-order code HL-ORGANIC-50OFF (in the site's own 'Get started' links): the banner says 'Save 50% off your first order (max. £40)'; the pricing call (www.numan.com/bff/pricing) returned discount 40 (percentage), maxDiscountAmount 4000 pence, and the amounts shown match 40% off capped at £40. Selection screen showed £22.67 (was £36.00), 'Save 37%'.",
    "url": "https://help.numan.com/en/articles/9929731-combination-spray",
-   "recommendedWhen": "Listed under 'See all treatments' for the baseline man; hidden if either finasteride or minoxidil is ruled out (JS).",
+   "recommendedWhen": "Listed when neither drug is ruled out; hidden if either is (x2-02, x2-03).",
    "evidence": "observed"
   },
   {
@@ -161,9 +161,9 @@
    "audience": "men",
    "legalStatus": "POM, unlicensed medicine (help centre: 'Minoxidil (6%) is an unlicensed medication'). The marketing page /hair-loss/minoxidil says licensed minoxidil is 2% and 5% and that 6% needs a clinician.",
    "price": "£30 a month, billed and delivered quarterly (£90 for 3 bottles)",
-   "priceDetail": "From the API variant data: six-monthly £26 a month, annual £22 a month; monthly variant £38 a bottle. First-order code HL-ORGANIC-50OFF (in the site's own 'Get started' links): the banner says 'Save 50% off your first order (max. £40)'; the pricing call (www.numan.com/bff/pricing) returned discount 40 (percentage), maxDiscountAmount 4000 pence, and the amounts shown match 40% off capped at £40. Selection screen showed £18.00 (was £30.00), 'Save 40%'. Marketing: 'Hair loss plan with minoxidil, from £30.00 / bottle'.",
+   "priceDetail": "From the API variant data: six-monthly £26 a month, annual £22 a month; monthly variant £38 a bottle. First-order code HL-ORGANIC-50OFF (in the site's own 'Get started' links): the banner says 'Save 50% off your first order (max. £40)'; the pricing call (www.numan.com/bff/pricing) returned discount 40 (percentage), maxDiscountAmount 4000 pence, and the amounts shown match 40% off capped at £40. Selection screen showed £18.00 (was £30.00), 'Save 40%'. Marketing: 'Hair loss plan with minoxidil, from £30.00 / bottle'. The /hair-loss/minoxidil page banner (read 24 Nov 2026) says '60% off your first month', which matches no offer seen in the flow.",
    "url": "https://www.numan.com/hair-loss/minoxidil",
-   "recommendedWhen": "Listed under 'See all treatments' for the baseline man. By the JS it becomes the featured product when finasteride is ruled out but minoxidil is not; hidden when minoxidil is ruled out. Not yet observed alone.",
+   "recommendedWhen": "Listed when minoxidil is not ruled out. Featured 'Recommended for you' (£18.00) when finasteride is ruled out: finasteride allergy, 'minoxidil only', specialist mental-health care, or suicidal thoughts (x2-02, x2-13, x2-15, x2-16).",
    "evidence": "observed"
   },
   {
@@ -182,7 +182,7 @@
    "price": "£65 a month, billed and delivered quarterly (£195 for 3 bottles)",
    "priceDetail": "Six-monthly £57 a month (£342 per 6 months), annual £48 a month (observed on the billing screen in the Regaine run); monthly variant £80 a bottle. First-order code HL-ORGANIC-50OFF (in the site's own 'Get started' links): the banner says 'Save 50% off your first order (max. £40)'; the pricing call (www.numan.com/bff/pricing) returned discount 40 (percentage), maxDiscountAmount 4000 pence, and the amounts shown match 40% off capped at £40. Selection screen showed £51.67 (was £65.00), 'Save 21%'.",
    "url": "https://www.numan.com/hair-loss/regaine",
-   "recommendedWhen": "Featured as 'Recommended for you' when the patient arrives through /subscribe/hair-loss/regaine (observed); otherwise under 'See all treatments'. Hidden when minoxidil is ruled out, unless it was the entry product (JS).",
+   "recommendedWhen": "Listed when minoxidil is not ruled out; featured when the patient enters through the Regaine link, and still featured there even with a minoxidil allergy (x2-20).",
    "evidence": "observed"
   },
   {
@@ -201,7 +201,7 @@
    "price": "£28 a bottle a month; or 3 bottles every 3 months for £70 (£23.33 a month)",
    "priceDetail": "Direct 'Buy now' link uses code HL-ROSEMARY-50OFF: first bottle £14 (observed order summary). Inside the consultation it showed £14.00 (was £23.33), 'Save 40%'. Also offered as an add-on at £21.00 (was £28.00).",
    "url": "https://www.numan.com/hair-loss/rosemary-oil",
-   "recommendedWhen": "Always offered. It is in neither hide-list in the JS, so it is the only product left (and is then badged 'Most effective') when both finasteride and minoxidil are ruled out (observed in runs/s2-men-explore). Can be bought directly with no questions.",
+   "recommendedWhen": "Always listed, whatever the answers; the only product left when both drugs are ruled out (runs/s2-men-explore). Also sold directly with no questions.",
    "evidence": "observed"
   },
   {
@@ -240,7 +240,7 @@
    "price": "£28 a bottle a month",
    "priceDetail": "Every 3 months £59 (£19.67 a month), every 6 months £100 (£16.67 a month), every 12 months £152 (£12.67 a month) (observed shipping-frequency screen; matches API). Code SUPP-ORGANIC-50OFF halves the first order (£14). As an add-on in the hair-loss flow: £18.76 first order (was £28.00). The hair-loss landing page shows 'From £12.66 £9.34 / bottle' on its card.",
    "url": "https://www.numan.com/supplements/hair-support",
-   "recommendedWhen": "Not chosen by the consultation. Sold on its own (straight to checkout), inside two of the kits, and as the first 'Most popular' add-on after billing.",
+   "recommendedWhen": "Never chosen by the consultation: inside two kits, offered as an add-on after billing, or bought directly with no questions.",
    "evidence": "observed"
   }
  ],
@@ -283,7 +283,7 @@
      "options": [
       {
        "label": "65 or over",
-       "effect": "Adds one extra question asking whether he still wants to be considered (see next question). No stop on its own.",
+       "effect": "Adds one confirmation question. If he says Yes, the offer is the same as the baseline (nothing hidden although the API variants say up to 65). Run x2-22.",
        "effectType": "extra-questions",
        "affects": [],
        "evidence": "observed"
@@ -297,18 +297,9 @@
       },
       {
        "label": "Under 18",
-       "effect": "Stops the consultation. Screen 'No suitable treatment': \"The safety of our patients is our top priority. Unfortunately, as hair loss under the age of 18 could be a sign of an underlying condition, we’re unable to recommend a hair loss treatment for you. Please contact your doctor for advice.\" plus an invitation to email clinic@numan.com, a 'Review your answers' button and 'Back to homepage'.",
+       "effect": "Hard stop: 'No suitable treatment', see your doctor or email the clinic. Soft in practice: 'Review your answers' lets him change it.",
        "effectType": "hard-stop",
-       "affects": [
-        "p-kit-pro",
-        "p-kit",
-        "p-combo-kit",
-        "p-finasteride",
-        "p-triple-spray",
-        "p-minoxidil-spray",
-        "p-regaine",
-        "p-rosemary-oil"
-       ],
+       "affects": [],
        "evidence": "observed"
       }
      ],
@@ -334,14 +325,14 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "Carries on with the normal questions. No clinician flag in the definition and no change in the engine flags.",
-       "effectType": "next-question",
+       "effect": "Continues. No change to the offer (all eight products, three-part kit featured). Run x2-22.",
+       "effectType": "none",
        "affects": [],
        "evidence": "observed"
       },
       {
        "label": "No",
-       "effect": "Stops: \"Unfortunately, we’re unable to recommend a hair loss treatment for you. Please contact your doctor for advice.\" (reject result in the served definition; not clicked).",
+       "effect": "Stops: 'No suitable treatment. Unfortunately, we’re unable to recommend a hair loss treatment for you. Please contact your doctor for advice.' with the clinic email and 'Review your answers'. Run verify-12-age-65-no.",
        "effectType": "hard-stop",
        "affects": [
         "p-kit-pro",
@@ -353,7 +344,7 @@
         "p-regaine",
         "p-rosemary-oil"
        ],
-       "evidence": "code"
+       "evidence": "observed"
       }
      ],
      "purpose": "Sets expectations for older men and lets them opt out.",
@@ -377,10 +368,10 @@
      "options": [
       {
        "label": "Temples",
-       "effect": "Proceeds. No clinician flag. The served product-selection code does not read this answer, so it should not change which products are shown (not yet tested).",
-       "effectType": "next-question",
+       "effect": "Continues; no extra question and no change to the offer (three-part kit featured, all eight products). Run verify-19-pat-temples.",
+       "effectType": "none",
        "affects": [],
-       "evidence": "code"
+       "evidence": "observed"
       },
       {
        "label": "Temples and Crown",
@@ -391,37 +382,28 @@
       },
       {
        "label": "Moderate",
-       "effect": "Proceeds. No clinician flag in the definition (not yet tested).",
-       "effectType": "next-question",
+       "effect": "Continues; no extra question and no change to the offer (three-part kit featured, all eight products). Run verify-20-pat-moderate.",
+       "effectType": "none",
        "affects": [],
-       "evidence": "code"
+       "evidence": "observed"
       },
       {
        "label": "Extensive",
-       "effect": "Proceeds. No clinician flag in the definition (not yet tested).",
-       "effectType": "next-question",
+       "effect": "Continues; no extra question. No change to the offer (all eight products, three-part kit featured). Run x2-29.",
+       "effectType": "none",
        "affects": [],
-       "evidence": "code"
+       "evidence": "observed"
       },
       {
        "label": "Patchy",
-       "effect": "Stops: \"Defined circular areas of hair loss on the head may suggest a form of alopecia, therefore it is best to consult your GP so they can investigate.\" (reject result in the definition).",
+       "effect": "Stop screen: circular patches may be alopecia areata, see your GP (x2-26). 'Review your answers' goes back and a different answer continues in the same draft (x2-32).",
        "effectType": "hard-stop",
-       "affects": [
-        "p-kit-pro",
-        "p-kit",
-        "p-combo-kit",
-        "p-finasteride",
-        "p-triple-spray",
-        "p-minoxidil-spray",
-        "p-regaine",
-        "p-rosemary-oil"
-       ],
-       "evidence": "code"
+       "affects": [],
+       "evidence": "observed"
       },
       {
        "label": "Complete",
-       "effect": "Stops: \"Our treatments are not effective in individuals who have experienced complete hair loss.\" (reject result in the definition).",
+       "effect": "Stops at once: 'No suitable treatment. Our treatments are not effective in individuals who have experienced complete hair loss.' with the clinic email and a 'Review your answers' button. Run verify-11-pat-complete.",
        "effectType": "hard-stop",
        "affects": [
         "p-kit-pro",
@@ -433,20 +415,20 @@
         "p-regaine",
         "p-rosemary-oil"
        ],
-       "evidence": "code"
+       "evidence": "observed"
       },
       {
        "label": "Other hair loss pattern",
-       "effect": "Adds a free-text question about the hair loss and flags the case for a clinician. Internal note served with the option: finasteride is unlikely to work outside male pattern loss, minoxidil may; prescribing is case by case; the team may send a 'further information needed' message.",
+       "effect": "Adds a free-text description and a clinician note. No change to the offer (all eight products, three-part kit featured). Run x2-24.",
        "effectType": "flag-for-clinician",
        "affects": [],
        "evidence": "observed"
       }
      ],
      "purpose": "Picture-based pattern check (seven drawings) to confirm male pattern hair loss and screen out patchy or complete loss.",
-     "engineRole": "diagnosis",
+     "engineRole": "eligibility-gate",
      "branches": true,
-     "branchDetail": "Patchy and Complete stop; Other adds a free-text question and a clinician flag.",
+     "branchDetail": "Patchy and Complete stop; Other adds a text box; the other four change nothing (x2-24, x2-26, x2-29).",
      "shownWhen": "always",
      "evidence": "observed",
      "siteQuestionId": "which_image_best_matches_your_hair_loss",
@@ -485,19 +467,10 @@
      "options": [
       {
        "label": "Over the last few days or weeks",
-       "effect": "Stops: \"…our treatments are not suitable for you because they are not designed for sudden hair loss. Sudden hair loss can have a number of causes and we recommend you seek advice from your usual GP…\" (reject result in the definition).",
+       "effect": "Stop screen: not designed for sudden hair loss, see your GP (x2-25).",
        "effectType": "hard-stop",
-       "affects": [
-        "p-kit-pro",
-        "p-kit",
-        "p-combo-kit",
-        "p-finasteride",
-        "p-triple-spray",
-        "p-minoxidil-spray",
-        "p-regaine",
-        "p-rosemary-oil"
-       ],
-       "evidence": "code"
+       "affects": [],
+       "evidence": "observed"
       },
       {
        "label": "My hair loss started gradually over the last few months or years",
@@ -528,7 +501,7 @@
      "options": [
       {
        "label": "I am allergic to minoxidil",
-       "effect": "Sets the engine flag hasAllergyToMinoxidil (seen in the flags call). The product-selection JS then hides every minoxidil-containing product. Also adds a free-text 'how do you react' question and marks the case for clinician query. Seen only together with other answers so far.",
+       "effect": "Adds a reaction text box; sets hasAllergyToMinoxidil. Removes the minoxidil group hidden (all kits, both sprays, Regaine); Finasteride featured 'Recommended for you' £16.80, Rosemary Oil also listed. Run x2-03. Exception: the product named in the entry link stays (x2-20).",
        "effectType": "product-removed",
        "affects": [
         "p-kit-pro",
@@ -538,11 +511,11 @@
         "p-minoxidil-spray",
         "p-regaine"
        ],
-       "evidence": "code"
+       "evidence": "observed"
       },
       {
        "label": "I am allergic to finasteride",
-       "effect": "Sets hasAllergyToFinasteride. The product-selection JS then hides every finasteride-containing product (tablets, both kits with tablets, and the sprays that contain finasteride). Also adds the free-text reaction question and a clinician query. Seen only together with other answers so far.",
+       "effect": "Adds a reaction text box; sets hasAllergyToFinasteride. Removes the finasteride group hidden (all kits, Triple-Action Spray, Finasteride); Extra Strength Spray featured 'Recommended for you' £18.00, Regaine and Rosemary Oil also listed. Run x2-02. Exception: the entry product stays (x2-21).",
        "effectType": "product-removed",
        "affects": [
         "p-kit-pro",
@@ -551,17 +524,13 @@
         "p-triple-spray",
         "p-finasteride"
        ],
-       "evidence": "code"
+       "evidence": "observed"
       },
       {
        "label": "I have a lactose intolerance or allergy",
-       "effect": "Adds the lactose tolerance question (finasteride tablets contain lactose). No flag by itself.",
+       "effect": "Adds the lactose tolerance question. Nothing is hidden, even with 'can't tolerate any'. Run x2-18.",
        "effectType": "extra-questions",
-       "affects": [
-        "p-finasteride",
-        "p-kit-pro",
-        "p-kit"
-       ],
+       "affects": [],
        "evidence": "observed"
       },
       {
@@ -573,9 +542,9 @@
       }
      ],
      "purpose": "Drug allergy and lactose screen. This is the main automatic product filter.",
-     "engineRole": "safety-screen",
+     "engineRole": "product-selector",
      "branches": true,
-     "branchDetail": "Minoxidil or finasteride allergy adds a reaction question and removes that drug's products; lactose adds a tolerance question.",
+     "branchDetail": "Each drug allergy removes that drug's whole product group (x2-02, x2-03) except an entry-link product (x2-20, x2-21). Lactose adds a question but removes nothing (x2-18).",
      "shownWhen": "always",
      "evidence": "observed",
      "siteQuestionId": "do_you_have_an_allergy_or_intolerance_to_any",
@@ -597,7 +566,7 @@
      "engineRole": "safety-screen",
      "branches": false,
      "branchDetail": "",
-     "shownWhen": "minoxidil and/or finasteride allergy ticked (seen with both ticked; not yet separated)",
+     "shownWhen": "minoxidil and/or finasteride allergy ticked (seen with each alone: x2-02, x2-03)",
      "evidence": "observed",
      "siteQuestionId": "tell_us_which_reactions_from_this_medicine",
      "siteOptionIds": []
@@ -611,21 +580,17 @@
      "options": [
       {
        "label": "I can’t tolerate any amount of lactose and I would like to be considered for non-lactose containing preparations only",
-       "effect": "Flags the case for a clinician. Internal note: confirm the request is for a treatment without lactose; if tablets were requested, contact the patient and offer alternatives. The engine flags did not change, so tablets are not hidden automatically.",
+       "effect": "Clinician note only ('confirm the request is for a lactose-free treatment'); finasteride tablets stay on offer. Run x2-18.",
        "effectType": "flag-for-clinician",
-       "affects": [
-        "p-finasteride",
-        "p-kit-pro",
-        "p-kit"
-       ],
+       "affects": [],
        "evidence": "observed"
       },
       {
        "label": "I can tolerate very small amounts of lactose",
-       "effect": "Proceeds, no flag in the definition (not clicked).",
-       "effectType": "next-question",
+       "effect": "Continues. Flags unchanged apart from the allergy list (lactose_intolerance_or_allergy); offer identical to baseline. Run verify-17-al-lac-small.",
+       "effectType": "none",
        "affects": [],
-       "evidence": "code"
+       "evidence": "observed"
       }
      ],
      "purpose": "Checks whether trace lactose in finasteride tablets is acceptable.",
@@ -649,8 +614,8 @@
      "options": [
       {
        "label": "Pain, itching, burning or bumps",
-       "effect": "Adds a free-text follow-up and flags the case. Internal note: may be psoriasis, dermatitis or another scalp condition; minoxidil is not suitable unless the patient confirms there is no active condition. When all four scalp options were ticked together the engine set isMinoxidilEligible to false; which option does that is not yet separated.",
-       "effectType": "flag-for-clinician",
+       "effect": "Adds a text box and sets isMinoxidilEligible=false: minoxidil group hidden (all kits, both sprays, Regaine); Finasteride featured 'Recommended for you' £16.80, Rosemary Oil also listed. Run x2-04.",
+       "effectType": "product-removed",
        "affects": [
         "p-kit-pro",
         "p-kit",
@@ -659,12 +624,12 @@
         "p-minoxidil-spray",
         "p-regaine"
        ],
-       "evidence": "code"
+       "evidence": "observed"
       },
       {
        "label": "Red rinds or rashes",
-       "effect": "Adds a free-text follow-up and flags the case, with the same internal note about minoxidil and active scalp conditions. Part of the combined answer that set isMinoxidilEligible to false.",
-       "effectType": "flag-for-clinician",
+       "effect": "Adds a text box and sets isMinoxidilEligible=false: minoxidil group hidden (all kits, both sprays, Regaine); Finasteride featured 'Recommended for you' £16.80, Rosemary Oil also listed. Run x2-05.",
+       "effectType": "product-removed",
        "affects": [
         "p-kit-pro",
         "p-kit",
@@ -673,28 +638,21 @@
         "p-minoxidil-spray",
         "p-regaine"
        ],
-       "evidence": "code"
+       "evidence": "observed"
       },
       {
        "label": "Dandruff",
-       "effect": "Adds a follow-up asking whether he still wants topical treatments. No flag by itself in the definition.",
+       "effect": "Adds the 'still consider topical?' question. Nothing hidden whatever the answer (x2-06, x2-07).",
        "effectType": "extra-questions",
        "affects": [],
        "evidence": "observed"
       },
       {
        "label": "Psoriasis or eczema",
-       "effect": "Adds a free-text follow-up and flags the case. Internal note: minoxidil is not suitable with an active scalp condition such as eczema or psoriasis. Part of the combined answer that set isMinoxidilEligible to false.",
+       "effect": "Adds a text box and a clinician note saying minoxidil is not suitable. Minoxidil is NOT hidden: No change to the offer (all eight products, three-part kit featured). Run x2-08.",
        "effectType": "flag-for-clinician",
-       "affects": [
-        "p-kit-pro",
-        "p-kit",
-        "p-combo-kit",
-        "p-triple-spray",
-        "p-minoxidil-spray",
-        "p-regaine"
-       ],
-       "evidence": "code"
+       "affects": [],
+       "evidence": "observed"
       },
       {
        "label": "No",
@@ -705,9 +663,9 @@
       }
      ],
      "purpose": "Scalp-condition screen; active scalp disease is a reason not to use minoxidil.",
-     "engineRole": "safety-screen",
+     "engineRole": "product-selector",
      "branches": true,
-     "branchDetail": "Each ticked symptom adds its own follow-up; the combined answer switched minoxidil off.",
+     "branchDetail": "Pain/itching and red rinds/rashes each remove all minoxidil products (x2-04, x2-05). Dandruff and psoriasis/eczema add a follow-up but remove nothing (x2-06..08). Each symptom adds its own follow-up.",
      "shownWhen": "always",
      "evidence": "observed",
      "siteQuestionId": "have_any_scalp_issues",
@@ -760,23 +718,23 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "Proceeds, no flag.",
-       "effectType": "next-question",
+       "effect": "No change to the offer (all eight products, three-part kit featured). Run x2-06.",
+       "effectType": "none",
        "affects": [],
        "evidence": "observed"
       },
       {
        "label": "No",
-       "effect": "Flags the case. Internal note: confirm the request is not for a topical treatment; if it is, contact the patient. Whether topical products are also hidden is not yet tested.",
+       "effect": "Clinician note only ('confirm request is not topical'). Sprays stay on offer. Run x2-07.",
        "effectType": "flag-for-clinician",
        "affects": [],
-       "evidence": "code"
+       "evidence": "observed"
       }
      ],
      "purpose": "Warns that sprays may worsen dandruff and asks whether topical treatment is still wanted.",
-     "engineRole": "product-selector",
+     "engineRole": "data-capture",
      "branches": false,
-     "branchDetail": "",
+     "branchDetail": "Neither answer changes the offer (x2-06, x2-07); 'No' adds a clinician note.",
      "shownWhen": "scalp: 'Dandruff' ticked",
      "evidence": "observed",
      "siteQuestionId": "clarify_dandruff",
@@ -810,28 +768,22 @@
      "options": [
       {
        "label": "I have noticed hair loss on other areas of my body other than my head.",
-       "effect": "Adds a free-text follow-up and flags the case. Internal note: finasteride is unlikely to work in conditions other than male pattern baldness; minoxidil may; decide case by case.",
+       "effect": "Adds a text box and a clinician note. No change to the offer (all eight products, three-part kit featured). Run x2-19.",
        "effectType": "flag-for-clinician",
        "affects": [],
        "evidence": "observed"
       },
       {
        "label": "I am undergoing PSA (prostate) monitoring or I have previously been diagnosed with prostate cancer.",
-       "effect": "Adds the PSA follow-up (must tell his GP he takes finasteride; may opt out of finasteride).",
+       "effect": "Adds the PSA follow-up. Neither follow-up answer hides anything (x2-09, x2-31).",
        "effectType": "extra-questions",
-       "affects": [
-        "p-kit-pro",
-        "p-kit",
-        "p-combo-kit",
-        "p-triple-spray",
-        "p-finasteride"
-       ],
+       "affects": [],
        "evidence": "observed"
       },
       {
        "label": "I have been diagnosed with high or low blood pressure.",
-       "effect": "Adds the blood-pressure follow-up (minoxidil may lower blood pressure further; may opt out of minoxidil).",
-       "effectType": "extra-questions",
+       "effect": "Adds the blood-pressure follow-up and sets isMinoxidilEligible=false whatever the follow-up answer: minoxidil group hidden (all kits, both sprays, Regaine); Finasteride featured 'Recommended for you' £16.80, Rosemary Oil also listed. Runs x2-10, x2-30.",
+       "effectType": "product-removed",
        "affects": [
         "p-kit-pro",
         "p-kit",
@@ -844,35 +796,23 @@
       },
       {
        "label": "I have been diagnosed with asthma.",
-       "effect": "Adds the asthma follow-up (alcohol-based sprays may worsen asthma; may opt out of topical products).",
+       "effect": "Adds the asthma follow-up. Neither answer hides the sprays (x2-11).",
        "effectType": "extra-questions",
        "affects": [],
        "evidence": "observed"
       },
       {
        "label": "I plan on trying for a baby in the next 12 weeks.",
-       "effect": "Adds the fertility follow-up (stop finasteride 12 weeks before trying; may opt out of finasteride).",
+       "effect": "Adds the fertility follow-up. Neither answer hides finasteride (x2-12).",
        "effectType": "extra-questions",
-       "affects": [
-        "p-kit-pro",
-        "p-kit",
-        "p-combo-kit",
-        "p-triple-spray",
-        "p-finasteride"
-       ],
+       "affects": [],
        "evidence": "observed"
       },
       {
        "label": "I have previously experienced, or am currently experiencing, depression, anxiety or panic disorders",
-       "effect": "Starts the mental-health branch: mood-risk question, then who manages the condition, medicines, recent dose changes and suicidal thoughts.",
+       "effect": "Starts the mental-health branch (mood risk, then who manages it, medicines, dose change, suicidal thoughts). With all neutral answers the offer is unchanged (x2-14).",
        "effectType": "extra-questions",
-       "affects": [
-        "p-kit-pro",
-        "p-kit",
-        "p-combo-kit",
-        "p-triple-spray",
-        "p-finasteride"
-       ],
+       "affects": [],
        "evidence": "observed"
       },
       {
@@ -884,9 +824,9 @@
       }
      ],
      "purpose": "One screen for six cautions: body hair loss, prostate monitoring or cancer, blood pressure, asthma, trying for a baby, mental health.",
-     "engineRole": "safety-screen",
+     "engineRole": "product-selector",
      "branches": true,
-     "branchDetail": "Each ticked item opens its own follow-up; 'No - none' skips eleven questions.",
+     "branchDetail": "Blood pressure removes all minoxidil products whatever the follow-up (x2-10, x2-30). Depression opens the mental-health branch, which can remove finasteride. PSA, asthma, baby and body hair add a follow-up but remove nothing (x2-09, x2-11, x2-12, x2-19).",
      "shownWhen": "always",
      "evidence": "observed",
      "siteQuestionId": "are_any_of_the_following_true",
@@ -925,23 +865,23 @@
      "options": [
       {
        "label": "I understand and would like to be considered for finasteride containing preparations.",
-       "effect": "Proceeds; engine flags unchanged.",
-       "effectType": "next-question",
+       "effect": "No change to the offer (all eight products, three-part kit featured). Run x2-31.",
+       "effectType": "none",
        "affects": [],
        "evidence": "observed"
       },
       {
        "label": "I do not wish to be considered for finasteride containing preparations.",
-       "effect": "Not yet tested. The definition only says 'proceed' with no clinician flag; by its wording it should rule finasteride products out.",
-       "effectType": "unknown",
+       "effect": "Recorded only. Finasteride products are NOT hidden: No change to the offer (all eight products, three-part kit featured). Run x2-09.",
+       "effectType": "none",
        "affects": [],
-       "evidence": "unknown"
+       "evidence": "observed"
       }
      ],
      "purpose": "Tells men under prostate monitoring that finasteride changes PSA results; lets them opt out of finasteride.",
-     "engineRole": "product-selector",
+     "engineRole": "data-capture",
      "branches": false,
-     "branchDetail": "",
+     "branchDetail": "Neither answer changes the offer (x2-09, x2-31); the opt-out is not enforced on screen.",
      "shownWhen": "'PSA (prostate) monitoring or … prostate cancer' ticked",
      "evidence": "observed",
      "siteQuestionId": "clarify_psa",
@@ -959,23 +899,37 @@
      "options": [
       {
        "label": "I understand that minoxidil may lower my blood pressure and would like to be considered for minoxidil.",
-       "effect": "Proceeds; engine flags unchanged.",
-       "effectType": "next-question",
-       "affects": [],
+       "effect": "Minoxidil is still removed (the removal comes from ticking blood pressure): minoxidil group hidden (all kits, both sprays, Regaine); Finasteride featured 'Recommended for you' £16.80, Rosemary Oil also listed. Run x2-30.",
+       "effectType": "product-removed",
+       "affects": [
+        "p-kit-pro",
+        "p-kit",
+        "p-combo-kit",
+        "p-triple-spray",
+        "p-minoxidil-spray",
+        "p-regaine"
+       ],
        "evidence": "observed"
       },
       {
        "label": "I do not wish to be considered for minoxidil.",
-       "effect": "Not yet tested. The definition only says 'proceed'; by its wording it should rule minoxidil products out.",
-       "effectType": "unknown",
-       "affects": [],
-       "evidence": "unknown"
+       "effect": "Minoxidil removed: minoxidil group hidden (all kits, both sprays, Regaine); Finasteride featured 'Recommended for you' £16.80, Rosemary Oil also listed. Run x2-10. Same as the other answer.",
+       "effectType": "product-removed",
+       "affects": [
+        "p-kit-pro",
+        "p-kit",
+        "p-combo-kit",
+        "p-triple-spray",
+        "p-minoxidil-spray",
+        "p-regaine"
+       ],
+       "evidence": "observed"
       }
      ],
      "purpose": "Warns that minoxidil can lower blood pressure further; lets him opt out of minoxidil.",
-     "engineRole": "product-selector",
+     "engineRole": "data-capture",
      "branches": false,
-     "branchDetail": "",
+     "branchDetail": "Both answers lead to the same result: minoxidil already removed by the blood-pressure tick (x2-10, x2-30).",
      "shownWhen": "'diagnosed with high or low blood pressure' ticked",
      "evidence": "observed",
      "siteQuestionId": "clarify_uncontrolled_bp",
@@ -993,23 +947,23 @@
      "options": [
       {
        "label": "I understand that topical formulations (such as spray) may worsen my asthma and would like to be considered topical formulations.",
-       "effect": "Proceeds; engine flags unchanged.",
-       "effectType": "next-question",
+       "effect": "Continues. Offer identical to baseline (topical sprays and kits still shown). Run verify-15-c-ast-yes.",
+       "effectType": "none",
        "affects": [],
        "evidence": "observed"
       },
       {
        "label": "I do not wish to be considered for topical formulations (such as spray).",
-       "effect": "Not yet tested. The definition only says 'proceed'; by its wording it should rule the sprays out.",
-       "effectType": "unknown",
+       "effect": "Recorded only. Sprays and Regaine stay on offer: No change to the offer (all eight products, three-part kit featured). Run x2-11.",
+       "effectType": "none",
        "affects": [],
-       "evidence": "unknown"
+       "evidence": "observed"
       }
      ],
      "purpose": "Warns that alcohol-based sprays can worsen asthma; lets him opt out of topical products.",
-     "engineRole": "product-selector",
+     "engineRole": "data-capture",
      "branches": false,
-     "branchDetail": "",
+     "branchDetail": "The opt-out does not hide sprays (x2-11).",
      "shownWhen": "'diagnosed with asthma' ticked",
      "evidence": "observed",
      "siteQuestionId": "clarify_asthma",
@@ -1027,23 +981,23 @@
      "options": [
       {
        "label": "I would like to be considered for finasteride and will stop taking finasteride 12 weeks prior to trying for a baby.",
-       "effect": "Proceeds; engine flags unchanged.",
-       "effectType": "next-question",
+       "effect": "Continues. Offer identical to baseline (finasteride kits still featured). Run verify-16-c-baby-yes.",
+       "effectType": "none",
        "affects": [],
        "evidence": "observed"
       },
       {
        "label": "I do not wish to be considered for preparations containing finasteride.",
-       "effect": "Not yet tested. The definition only says 'proceed'; by its wording it should rule finasteride products out.",
-       "effectType": "unknown",
+       "effect": "Recorded only. Finasteride products stay on offer: No change to the offer (all eight products, three-part kit featured). Run x2-12.",
+       "effectType": "none",
        "affects": [],
-       "evidence": "unknown"
+       "evidence": "observed"
       }
      ],
      "purpose": "Fertility warning for finasteride; lets him opt out of finasteride.",
-     "engineRole": "product-selector",
+     "engineRole": "data-capture",
      "branches": false,
-     "branchDetail": "",
+     "branchDetail": "The opt-out does not hide finasteride (x2-12).",
      "shownWhen": "'plan on trying for a baby in the next 12 weeks' ticked",
      "evidence": "observed",
      "siteQuestionId": "clarify_plan_on_trying_for_baby",
@@ -1061,23 +1015,29 @@
      "options": [
       {
        "label": "I accept the risk that finasteride can lead to detrimental effects on my mood and would like to be considered for finasteride and/or minoxidil.",
-       "effect": "Continues the mental-health branch (who manages the condition).",
-       "effectType": "extra-questions",
+       "effect": "Continues to 'who manages your mental health'. Offer unchanged if the rest is neutral (x2-14).",
+       "effectType": "next-question",
        "affects": [],
        "evidence": "observed"
       },
       {
        "label": "I would like to proceed with a minoxidil only treatment plan.",
-       "effect": "Not yet tested. The definition only says 'proceed'; by its wording it should rule finasteride products out and may skip the rest of the mental-health branch.",
-       "effectType": "unknown",
-       "affects": [],
-       "evidence": "unknown"
+       "effect": "Skips the rest of the branch and sets isFinasterideEligible=false: finasteride group hidden (all kits, Triple-Action Spray, Finasteride); Extra Strength Spray featured 'Recommended for you' £18.00, Regaine and Rosemary Oil also listed. Run x2-13.",
+       "effectType": "product-removed",
+       "affects": [
+        "p-kit-pro",
+        "p-kit",
+        "p-combo-kit",
+        "p-triple-spray",
+        "p-finasteride"
+       ],
+       "evidence": "observed"
       }
      ],
      "purpose": "Finasteride mood-risk warning; he accepts the risk or asks for minoxidil only.",
      "engineRole": "product-selector",
      "branches": true,
-     "branchDetail": "Accepting the risk opens the rest of the mental-health branch.",
+     "branchDetail": "'Minoxidil only' removes finasteride and skips the rest of the branch (x2-13).",
      "shownWhen": "'depression, anxiety or panic disorders' ticked",
      "evidence": "observed",
      "siteQuestionId": "mood_alterations",
@@ -1095,7 +1055,7 @@
      "options": [
       {
        "label": "Psychiatrist/Specialist/Consultant",
-       "effect": "The engine flag isFinasterideEligible turned false straight after this answer and turned true again when the answer was changed to GP (runs/s2-men-explore). By the product-selection JS that hides all finasteride-containing products. It also skips the remaining mental-health questions and flags the case. Internal note: the specialist should be informed and confirmation given to Numan before finasteride is started.",
+       "effect": "Skips medicines, dose change and suicidal-thoughts questions; sets isFinasterideEligible=false: finasteride group hidden (all kits, Triple-Action Spray, Finasteride); Extra Strength Spray featured 'Recommended for you' £18.00, Regaine and Rosemary Oil also listed; clinician note asks for specialist approval. Run x2-15.",
        "effectType": "product-removed",
        "affects": [
         "p-kit-pro",
@@ -1104,21 +1064,21 @@
         "p-triple-spray",
         "p-finasteride"
        ],
-       "evidence": "code"
+       "evidence": "observed"
       },
       {
        "label": "GP",
-       "effect": "Continues: asks which mental-health medicines he takes. Finasteride stays eligible.",
+       "effect": "Continues to medicines, dose change and suicidal thoughts. Offer unchanged if neutral (x2-14).",
        "effectType": "extra-questions",
        "affects": [],
        "evidence": "observed"
       }
      ],
      "purpose": "Finds out whether a specialist or the GP manages the condition.",
-     "engineRole": "safety-screen",
+     "engineRole": "product-selector",
      "branches": true,
-     "branchDetail": "Specialist switches finasteride off and skips the rest of the branch; GP continues.",
-     "shownWhen": "mood question = accept the finasteride risk",
+     "branchDetail": "Specialist removes finasteride and skips three questions (x2-15); GP continues (x2-14).",
+     "shownWhen": "mood question = accept the finasteride risk (skipped by 'minoxidil only': x2-13)",
      "evidence": "observed",
      "siteQuestionId": "who_manages_your_mental_health",
      "siteOptionIds": [
@@ -1151,20 +1111,14 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "Adds a free-text list of the changes, flags the case and skips the suicidal-thoughts question. Internal note: a recent dose change suggests the condition may not be stable; the patient should provide a GP letter approving finasteride. Engine flags unchanged.",
+       "effect": "Adds a dose-change text box and then SKIPS the suicidal-thoughts question. Clinician note only: No change to the offer (all eight products, three-part kit featured). Run x2-17.",
        "effectType": "flag-for-clinician",
-       "affects": [
-        "p-kit-pro",
-        "p-kit",
-        "p-combo-kit",
-        "p-triple-spray",
-        "p-finasteride"
-       ],
+       "affects": [],
        "evidence": "observed"
       },
       {
        "label": "No",
-       "effect": "Goes to the suicidal-thoughts question.",
+       "effect": "Continues to the suicidal-thoughts question (x2-14).",
        "effectType": "next-question",
        "affects": [],
        "evidence": "observed"
@@ -1173,8 +1127,8 @@
      "purpose": "Checks whether the condition is stable.",
      "engineRole": "safety-screen",
      "branches": true,
-     "branchDetail": "Yes adds a free-text list and skips the suicidal-thoughts question; No goes to it.",
-     "shownWhen": "who manages = GP (after the medicines question)",
+     "branchDetail": "Yes adds a text box and skips the suicidal-thoughts question (x2-17).",
+     "shownWhen": "who manages = GP (after the medicines text)",
      "evidence": "observed",
      "siteQuestionId": "mental_health_medications_changed_yes_no",
      "siteOptionIds": [
@@ -1207,8 +1161,8 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "Proceeds but flags the case. Internal note: 'Finasteride should not be prescribed for patients with suicidal ideation within the past year… consider them for non-finasteride containing preparations only.' Whether the selection screen also hides finasteride is not yet tested.",
-       "effectType": "flag-for-clinician",
+       "effect": "No stop and no signposting screen. Sets isFinasterideEligible=false: finasteride group hidden (all kits, Triple-Action Spray, Finasteride); Extra Strength Spray featured 'Recommended for you' £18.00, Regaine and Rosemary Oil also listed. Run x2-16.",
+       "effectType": "product-removed",
        "affects": [
         "p-kit-pro",
         "p-kit",
@@ -1216,21 +1170,21 @@
         "p-triple-spray",
         "p-finasteride"
        ],
-       "evidence": "code"
+       "evidence": "observed"
       },
       {
        "label": "No",
-       "effect": "Proceeds. Internal note: if finasteride is prescribed to anyone with a mental-health history, send the post-approval safety-net message. Engine flags unchanged (runs/s4-men-mentalhealth).",
+       "effect": "Continues; clinician note to send the mental-health safety-net message if finasteride is approved. Offer unchanged (x2-14).",
        "effectType": "flag-for-clinician",
        "affects": [],
        "evidence": "observed"
       }
      ],
      "purpose": "Suicidal-thoughts screen before finasteride.",
-     "engineRole": "safety-screen",
+     "engineRole": "product-selector",
      "branches": false,
-     "branchDetail": "",
-     "shownWhen": "dose changed in the last 3 months = No",
+     "branchDetail": "Yes removes finasteride, no stop (x2-16).",
+     "shownWhen": "who manages = GP and dose changed = No (skipped if the dose changed: observed in x2-17)",
      "evidence": "observed",
      "siteQuestionId": "mental_health_suicidal",
      "siteOptionIds": [
@@ -1247,37 +1201,37 @@
      "options": [
       {
        "label": "Effectiveness of the product",
-       "effect": "No change seen in the engine flags; the featured product was the three-part kit. The product-selection JS sets a 'checkMostImportantAnswers' switch but never reads it, so this looks like data capture. Baseline answer.",
+       "effect": "Baseline answer. No effect on the offer.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed"
       },
       {
        "label": "Minimal side effects",
-       "effect": "Not yet tested. Nothing in the definition or the served JS uses it.",
-       "effectType": "unknown",
+       "effect": "No change to the offer (all eight products, three-part kit featured). Run x2-27.",
+       "effectType": "marketing-only",
        "affects": [],
-       "evidence": "unknown"
+       "evidence": "observed"
       },
       {
        "label": "Scalp-friendly options",
-       "effect": "Not yet tested. Nothing in the definition or the served JS uses it.",
-       "effectType": "unknown",
+       "effect": "No change to the offer (all eight products, three-part kit featured). Run x2-28.",
+       "effectType": "marketing-only",
        "affects": [],
-       "evidence": "unknown"
+       "evidence": "observed"
       },
       {
        "label": "All of the above",
-       "effect": "Exclusive option. No change seen in the engine flags (chosen in runs/s2-men-explore, alongside many other answers).",
-       "effectType": "none",
+       "effect": "Continues; offer identical to baseline. The switch it sets in the browser is never read. Run verify-18-imp-all.",
+       "effectType": "marketing-only",
        "affects": [],
        "evidence": "observed"
       }
      ],
      "purpose": "Preference question. Nothing served to the browser uses the answer, so it appears to be for data capture or marketing.",
-     "engineRole": "data-capture",
+     "engineRole": "marketing",
      "branches": false,
-     "branchDetail": "",
+     "branchDetail": "No effect on the offer (x2-27, x2-28).",
      "shownWhen": "always",
      "evidence": "observed",
      "siteQuestionId": "what_is_most_important_when_choosing_product",
@@ -1297,7 +1251,7 @@
      "options": [
       {
        "label": "I have a major illness, ongoing medical condition, operation, allergy to medication or take prescribed or over the counter medication to tell you about.",
-       "effect": "Adds two free-text questions (conditions, then all medicines) and marks the case for clinician query.",
+       "effect": "Adds two free-text boxes (conditions, medicines) and a clinician query. No change to the offer (all eight products, three-part kit featured). Run x2-23.",
        "effectType": "flag-for-clinician",
        "affects": [],
        "evidence": "observed"
@@ -1797,28 +1751,267 @@
    "id": "R1",
    "flow": "men",
    "when": "men-what_is_your_age = 'Under 18'",
-   "then": "Consultation stops on a 'No suitable treatment' screen that tells him to contact his doctor and offers clinic@numan.com.",
+   "then": "Stop screen 'No suitable treatment' (see your doctor; clinic email). 'Review your answers' lets him go back and change it.",
    "effectType": "hard-stop",
-   "affects": [
-    "p-kit-pro",
-    "p-kit",
-    "p-combo-kit",
-    "p-finasteride",
-    "p-triple-spray",
-    "p-minoxidil-spray",
-    "p-regaine",
-    "p-rosemary-oil"
-   ],
+   "affects": [],
    "evidence": "observed",
-   "proof": "runs/stop-under18 (04.txt, 04.jpg)",
+   "proof": "runs/stop-under18",
    "confidence": "high"
   },
   {
    "id": "R2",
    "flow": "men",
-   "when": "men-which_image_best_matches_your_hair_loss = 'Patchy' or 'Complete'; or men-when_did_you_notice = 'Over the last few days or weeks'; or men-sixty_five_and_over_confirmation = 'No'",
-   "then": "Each of these four options carries a 'reject' result with its own patient message in the served definition, so each stops the consultation.",
+   "when": "pattern = 'Patchy', or onset = 'Over the last few days or weeks'",
+   "then": "Stop screen 'No suitable treatment' with its own GP message.",
    "effectType": "hard-stop",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/x2-26-pat-patchy, runs/x2-25-onset-sudden vs runs/x2-01-baseline; re-tested in stage 3: runs/verify-09-onset-sudden",
+   "confidence": "high"
+  },
+  {
+   "id": "R3",
+   "flow": "men",
+   "when": "pattern = 'Complete', or 65+ confirmation = 'No'",
+   "then": "Stop screen 'No suitable treatment' with its own message, the clinic email and 'Review your answers'.",
+   "effectType": "hard-stop",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/verify-11-pat-complete, runs/verify-12-age-65-no (served results in quiz-definition.json agree)",
+   "confidence": "high"
+  },
+  {
+   "id": "R4",
+   "flow": "men",
+   "when": "any stop screen, then 'Review your answers' and a different answer",
+   "then": "The consultation carries on in the same draft and reaches the full offer. Stops are not locked.",
+   "effectType": "none",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/x2-32-patchy-review",
+   "confidence": "high"
+  },
+  {
+   "id": "R5",
+   "flow": "men",
+   "when": "allergy = 'I am allergic to finasteride'",
+   "then": "All finasteride products are hidden (three kits, Triple-Action Spray, Finasteride). Extra Strength Spray is featured as 'Recommended for you' (£18.00); Regaine and Rosemary Oil remain.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-kit-pro",
+    "p-kit",
+    "p-combo-kit",
+    "p-triple-spray",
+    "p-finasteride"
+   ],
+   "evidence": "observed",
+   "proof": "runs/x2-02-al-fin vs runs/x2-01-baseline; re-tested in stage 3: runs/verify-03-al-fin",
+   "confidence": "high"
+  },
+  {
+   "id": "R6",
+   "flow": "men",
+   "when": "allergy = 'I am allergic to minoxidil'",
+   "then": "All minoxidil products are hidden (three kits, both sprays, Regaine). Finasteride is featured as 'Recommended for you' (£16.80); Rosemary Oil remains.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-kit-pro",
+    "p-kit",
+    "p-combo-kit",
+    "p-triple-spray",
+    "p-minoxidil-spray",
+    "p-regaine"
+   ],
+   "evidence": "observed",
+   "proof": "runs/x2-03-al-min vs runs/x2-01-baseline; re-tested in stage 3: runs/verify-04-al-min",
+   "confidence": "high"
+  },
+  {
+   "id": "R7",
+   "flow": "men",
+   "when": "scalp = 'Pain, itching, burning or bumps' or 'Red rinds or rashes' (either alone)",
+   "then": "isMinoxidilEligible becomes false: all minoxidil products hidden, Finasteride featured, Rosemary Oil remains.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-kit-pro",
+    "p-kit",
+    "p-combo-kit",
+    "p-triple-spray",
+    "p-minoxidil-spray",
+    "p-regaine"
+   ],
+   "evidence": "observed",
+   "proof": "runs/x2-04-sc-pain, runs/x2-05-sc-red; re-tested in stage 3: runs/verify-05-sc-red",
+   "confidence": "high"
+  },
+  {
+   "id": "R8",
+   "flow": "men",
+   "when": "scalp = 'Psoriasis or eczema' (alone)",
+   "then": "Nothing is hidden. Only a clinician note says minoxidil is unsuitable. The full offer, including minoxidil kits, is shown.",
+   "effectType": "flag-for-clinician",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/x2-08-sc-pso",
+   "confidence": "high"
+  },
+  {
+   "id": "R9",
+   "flow": "men",
+   "when": "scalp = 'Dandruff' (either follow-up answer)",
+   "then": "Nothing is hidden, even when he says he does not want a topical treatment; 'No' adds a clinician note.",
+   "effectType": "flag-for-clinician",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/x2-06-sc-dan-yes, runs/x2-07-sc-dan-no",
+   "confidence": "high"
+  },
+  {
+   "id": "R10",
+   "flow": "men",
+   "when": "cautions = high or low blood pressure (either follow-up answer)",
+   "then": "isMinoxidilEligible becomes false: all minoxidil products hidden, Finasteride featured. Saying he wants to be considered for minoxidil does not bring it back.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-kit-pro",
+    "p-kit",
+    "p-combo-kit",
+    "p-triple-spray",
+    "p-minoxidil-spray",
+    "p-regaine"
+   ],
+   "evidence": "observed",
+   "proof": "runs/x2-10-c-bp-no, runs/x2-30-c-bp-yes; re-tested in stage 3: runs/verify-06-c-bp-yes",
+   "confidence": "high"
+  },
+  {
+   "id": "R11",
+   "flow": "men",
+   "when": "either answer (opt-in or 'I do not wish to be considered') on the PSA, asthma or trying-for-a-baby follow-up",
+   "then": "Nothing is hidden. The opted-out drug or form stays on the screen and the kits stay featured. Only the blood-pressure opt-out is enforced (and that one by the tick itself).",
+   "effectType": "none",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/x2-09-c-psa-no, runs/x2-31-c-psa-yes, runs/x2-11-c-ast-no, runs/verify-15-c-ast-yes, runs/x2-12-c-baby-no, runs/verify-16-c-baby-yes; re-tested runs/verify-10-c-psa-no",
+   "confidence": "high"
+  },
+  {
+   "id": "R12",
+   "flow": "men",
+   "when": "depression/anxiety, then mood answer = 'minoxidil only'",
+   "then": "The rest of the mental-health branch is skipped and all finasteride products are hidden; Extra Strength Spray featured.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-kit-pro",
+    "p-kit",
+    "p-combo-kit",
+    "p-triple-spray",
+    "p-finasteride"
+   ],
+   "evidence": "observed",
+   "proof": "runs/x2-13-dep-minonly",
+   "confidence": "high"
+  },
+  {
+   "id": "R13",
+   "flow": "men",
+   "when": "who manages mental health = 'Psychiatrist/Specialist/Consultant'",
+   "then": "All finasteride products hidden; medicines, dose change and suicidal-thoughts questions skipped; clinician note asks for specialist approval.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-kit-pro",
+    "p-kit",
+    "p-combo-kit",
+    "p-triple-spray",
+    "p-finasteride"
+   ],
+   "evidence": "observed",
+   "proof": "runs/x2-15-dep-spec",
+   "confidence": "high"
+  },
+  {
+   "id": "R14",
+   "flow": "men",
+   "when": "suicidal thoughts or self-harm in the past year = 'Yes'",
+   "then": "No stop and no crisis signposting screen. All finasteride products hidden; minoxidil products still offered.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-kit-pro",
+    "p-kit",
+    "p-combo-kit",
+    "p-triple-spray",
+    "p-finasteride"
+   ],
+   "evidence": "observed",
+   "proof": "runs/x2-16-dep-suic; re-tested in stage 3: runs/verify-07-dep-suic",
+   "confidence": "high"
+  },
+  {
+   "id": "R15",
+   "flow": "men",
+   "when": "mental-health medicine dose changed in the last 3 months = 'Yes'",
+   "then": "A text box is added and the suicidal-thoughts question is skipped. Nothing is hidden (clinician note only).",
+   "effectType": "skip-questions",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/x2-17-dep-dose vs runs/x2-14-dep-gp",
+   "confidence": "high"
+  },
+  {
+   "id": "R16",
+   "flow": "men",
+   "when": "depression/anxiety with GP management, stable doses and no suicidal thoughts",
+   "then": "Five extra questions, offer unchanged; clinician note to send a mental-health safety-net message if finasteride is approved.",
+   "effectType": "extra-questions",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/x2-14-dep-gp",
+   "confidence": "high"
+  },
+  {
+   "id": "R17",
+   "flow": "men",
+   "when": "lactose intolerance, with either follow-up ('can't tolerate any amount' or 'very small amounts')",
+   "then": "Nothing is hidden; finasteride tablets (which contain lactose) stay on offer. Clinician note only.",
+   "effectType": "flag-for-clinician",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/x2-18-al-lac-none, runs/verify-17-al-lac-small",
+   "confidence": "high"
+  },
+  {
+   "id": "R18",
+   "flow": "men-product-entry",
+   "when": "entry link names a product (/subscribe/hair-loss/<product>) and the patient is allergic to its drug",
+   "then": "That product is still featured (badge drops to 'Most effective'); the rest of the drug's group is hidden. The entry product escapes the safety filter.",
+   "effectType": "none",
+   "affects": [
+    "p-regaine",
+    "p-finasteride"
+   ],
+   "evidence": "observed",
+   "proof": "runs/x2-20-regaine-almin, runs/x2-21-fin-entry-alfin; re-tested in stage 3: runs/verify-08-regaine-almin",
+   "confidence": "high"
+  },
+  {
+   "id": "R19",
+   "flow": "men-product-entry",
+   "when": "entry link names a product, nothing ruled out",
+   "then": "That product is featured 'Recommended for you'; the kits move under 'See all treatments'. Product links carry no first-order code, so prices are full price (Regaine £65.00, Finasteride £28.00).",
+   "effectType": "product-switched",
+   "affects": [
+    "p-regaine"
+   ],
+   "evidence": "observed",
+   "proof": "runs/entry-regaine-baseline, runs/x2-20-regaine-almin",
+   "confidence": "high"
+  },
+  {
+   "id": "R20",
+   "flow": "men",
+   "when": "nothing ruled out (baseline)",
+   "then": "Three-part kit featured 'Most effective' £26.67/month (quarterly variant, first-order code); seven others under 'See all treatments'; six-monthly plan pre-selected; £176.00 at the wall.",
+   "effectType": "none",
    "affects": [
     "p-kit-pro",
     "p-kit",
@@ -1829,148 +2022,75 @@
     "p-regaine",
     "p-rosemary-oil"
    ],
-   "evidence": "code",
-   "proof": "quiz-definition.json (from api.numan.com /v1/subscriptions/<id>, questionnaire_with_responses); not clicked yet",
+   "evidence": "observed",
+   "proof": "runs/x2-00-baseline-full, runs/x2-01-baseline; re-tested in stage 3: runs/verify-01-baseline, runs/verify-02-baseline-full",
    "confidence": "high"
   },
   {
-   "id": "R3",
+   "id": "R21",
    "flow": "men",
-   "when": "engine flag isFinasterideEligible is false, or hasAllergyToFinasteride is true",
-   "then": "The selection screen hides every product on the JS finasteride list: both kits with tablets, the combination kit, Triple-Action Spray and Finasteride (the list also names retired codes). Exception: the product named in the entry link is never hidden.",
+   "when": "both drugs ruled out (any finasteride rule plus any minoxidil rule)",
+   "then": "Only Rosemary Oil (a cosmetic) is offered, badged 'Most effective', with the 'See results in 180 days or your money back' strip and 'Save 40%' (£14.00). No stop and no 'unable to treat' message.",
    "effectType": "product-removed",
    "affects": [
     "p-kit-pro",
     "p-kit",
     "p-combo-kit",
     "p-triple-spray",
-    "p-finasteride"
-   ],
-   "evidence": "code",
-   "proof": "raw/nuxt/29-…product-selection…8c8a04d9.45240ec.modern.js, function hairLossProductsToHide (arrays I and B); flags come from POST www.numan.com/bff/assessment/subscribe/calculate-web-directives",
-   "confidence": "high"
-  },
-  {
-   "id": "R4",
-   "flow": "men",
-   "when": "engine flag isMinoxidilEligible is false, or hasAllergyToMinoxidil is true",
-   "then": "The selection screen hides every product on the JS minoxidil list: all three kits, Triple-Action Spray, Extra Strength Spray and Regaine. Same exception for the entry product.",
-   "effectType": "product-removed",
-   "affects": [
-    "p-kit-pro",
-    "p-kit",
-    "p-combo-kit",
-    "p-triple-spray",
-    "p-minoxidil-spray",
-    "p-regaine"
-   ],
-   "evidence": "code",
-   "proof": "same JS function as R3",
-   "confidence": "high"
-  },
-  {
-   "id": "R5",
-   "flow": "men",
-   "when": "both finasteride and minoxidil are ruled out (in the run: both allergies ticked, all four scalp symptoms, all six cautions)",
-   "then": "Only Rosemary Oil is offered, as the featured card with the badge 'Most effective' at £14.00. The built-in 'unable to offer treatment' message did not appear because the oil is on neither hide-list.",
-   "effectType": "product-removed",
-   "affects": [
-    "p-kit-pro",
-    "p-kit",
-    "p-combo-kit",
     "p-finasteride",
-    "p-triple-spray",
     "p-minoxidil-spray",
     "p-regaine"
    ],
    "evidence": "observed",
-   "proof": "runs/s2-men-explore (out/040.txt, out/040.jpg); many answers changed at once, so this is not a one-change test",
-   "confidence": "medium"
+   "proof": "runs/verify-14-pair-alfin-scpain (finasteride allergy + scalp pain, one change each from baseline); runs/s2-men-explore",
+   "confidence": "high"
   },
   {
-   "id": "R6",
+   "id": "R22",
    "flow": "men",
-   "when": "men-who_manages_your_mental_health = 'Psychiatrist/Specialist/Consultant'",
-   "then": "isFinasterideEligible becomes false (and returns to true if the answer is changed to GP); the rest of the mental-health branch is skipped and the case carries a clinician note asking for specialist pre-approval.",
-   "effectType": "product-removed",
-   "affects": [
-    "p-kit-pro",
-    "p-kit",
-    "p-combo-kit",
-    "p-triple-spray",
-    "p-finasteride"
-   ],
-   "evidence": "observed",
-   "proof": "runs/s2-men-explore: flags after net/087 (false) and net/094 (true again); product list with only this change not yet seen",
-   "confidence": "medium"
-  },
-  {
-   "id": "R7",
-   "flow": "men",
-   "when": "men-have_any_scalp_issues has all four symptoms ticked",
-   "then": "isMinoxidilEligible becomes false. Which single symptom is enough is not yet known (three of the four carry a clinician note saying minoxidil is unsuitable with an active scalp condition).",
-   "effectType": "product-removed",
-   "affects": [
-    "p-kit-pro",
-    "p-kit",
-    "p-combo-kit",
-    "p-triple-spray",
-    "p-minoxidil-spray",
-    "p-regaine"
-   ],
-   "evidence": "observed",
-   "proof": "runs/s2-men-explore: flags after the scalp answer (net/039 onwards)",
-   "confidence": "medium"
-  },
-  {
-   "id": "R8",
-   "flow": "men",
-   "when": "nothing is hidden and the entry link names no product",
-   "then": "The featured card is the three-part kit (Medicated Spray, Finasteride & Supplement) with the badge 'Most effective'; the other seven products sit behind 'See all treatments' in position order.",
+   "when": "age 65 or over (confirmed Yes), any pattern other than Patchy or Complete (Temples, Moderate, Extensive, Other), body hair loss, any 'most important' answer, or 'I have' a medical history",
+   "then": "No product change. Extra text boxes where relevant, read by a clinician after checkout.",
    "effectType": "none",
-   "affects": [
-    "p-kit-pro"
-   ],
+   "affects": [],
    "evidence": "observed",
-   "proof": "runs/s1-men-baseline (out/014.txt, out/015.txt); logic in the JS function featuredProductCode",
+   "proof": "runs/x2-22-age-65, runs/x2-24-pat-other, runs/x2-29-pat-extensive, runs/x2-19-c-body, runs/x2-27-imp-se, runs/x2-28-imp-scalp, runs/x2-23-hist-yes, runs/verify-19-pat-temples, runs/verify-20-pat-moderate, runs/verify-18-imp-all",
    "confidence": "high"
   },
   {
-   "id": "R9",
-   "flow": "men-product-entry",
-   "when": "the consultation is entered through /subscribe/hair-loss/<product> (seen with regaine)",
-   "then": "That product is the featured card with the badge 'Recommended for you'; everything else, including the kits, moves under 'See all treatments'. The choice is remembered in the browser (localStorage vuex_production → subscribe.selectedProductSlug), so tests must start from a clean browser.",
-   "effectType": "product-switched",
-   "affects": [
-    "p-regaine"
-   ],
-   "evidence": "observed",
-   "proof": "runs/entry-regaine-baseline (16.txt) against runs/s1-men-baseline; stored value seen in runs/s3-entries/storage-008.json",
-   "confidence": "high"
-  },
-  {
-   "id": "R10",
+   "id": "R23",
    "flow": "men",
-   "when": "a group is hidden and the three-part kit is therefore gone",
-   "then": "By the JS the featured card becomes the first remaining product by position: Finasteride when only minoxidil is ruled out, Extra Strength Spray when only finasteride is ruled out. The badge reads 'Recommended for you' for Finasteride, Extra Strength Spray or Regaine when that drug is eligible and not an allergy; otherwise 'Most effective'.",
-   "effectType": "product-switched",
-   "affects": [
-    "p-finasteride",
-    "p-minoxidil-spray"
-   ],
-   "evidence": "code",
-   "proof": "JS functions featuredProductCode and promoLabel in the same chunk as R3; not yet observed",
-   "confidence": "medium"
-  },
-  {
-   "id": "R11",
-   "flow": "men",
-   "when": "any option whose served result has query_clinically (other pattern; either drug allergy; no lactose at all; scalp pain/itching, red rinds, psoriasis/eczema; 'No' to topical with dandruff; body hair loss; specialist-managed mental health; dose change; either answer on suicidal thoughts; 'I have' a medical history)",
-   "then": "The patient still proceeds and can still pick a product, but the questionnaire is marked for clinician query, often with a written instruction for the reviewing clinician. The decision is therefore made by a person after checkout, not by the quiz.",
+   "when": "a free-text answer or any option with a 'query_clinically' result",
+   "then": "The order is flagged for the reviewing clinician (written instruction in the served data). The final decision is made after checkout, not by the quiz.",
    "effectType": "flag-for-clinician",
    "affects": [],
    "evidence": "code",
-   "proof": "quiz-definition.json (from api.numan.com /v1/subscriptions/<id>, questionnaire_with_responses)",
+   "proof": "quiz-definition.json; runs/s2-men-explore net replies",
+   "confidence": "medium"
+  },
+  {
+   "id": "R24",
+   "flow": "men",
+   "when": "entry link names a product AND the man is ruled out of its drug by an eligibility flag, not only an allergy (here Regaine link + scalp pain, plus a finasteride allergy)",
+   "then": "The entry product is still featured (Regaine, 'Most effective', £65.00 full price) next to Rosemary Oil. So the entry-link bypass beats the eligibility flags too, not just the allergy flags; with both drugs ruled out the man is still offered minoxidil.",
+   "effectType": "product-added",
+   "affects": [
+    "p-regaine"
+   ],
+   "evidence": "observed",
+   "proof": "runs/verify-21-pair-alfin-scpain-regaine vs runs/verify-14-pair-alfin-scpain",
+   "confidence": "high"
+  },
+  {
+   "id": "R25",
+   "flow": "men",
+   "when": "entry link /subscribe/hair-loss/minoxidil, baseline answers",
+   "then": "Extra Strength Spray is featured 'Recommended for you' at full price (£30.00 a month, no first-order code); the other seven products sit under 'See all treatments' at full price (three-part kit £40.00, Finasteride £28.00, Regaine £65.00).",
+   "effectType": "product-switched",
+   "affects": [
+    "p-minoxidil-spray"
+   ],
+   "evidence": "observed",
+   "proof": "runs/verify-13-min-entry vs runs/verify-01-baseline",
    "confidence": "high"
   }
  ],
@@ -2170,11 +2290,228 @@
    "changed": "pattern: 'Temples and Crown' → 'Other hair loss pattern' (text answered neutrally)",
    "result": "Adds clarify_other_hair_loss_pattern. Offer identical to baseline: three-part kit featured ('Most effective', £26.67), all eight products listed. Flags unchanged (both drugs eligible).",
    "run": "runs/x2-24-pat-other"
+  },
+  {
+   "id": "x2-23-hist-yes",
+   "flow": "men",
+   "changed": "medical history: 'I do not have…' → 'I have a major illness…' (two text boxes answered with mild hay fever and an antihistamine)",
+   "result": "Adds tell_us_about_medical_history and tell_us_about_medication_history (10 questions). Offer identical to baseline: three-part kit featured ('Most effective', £26.67), all eight products listed. Flags unchanged (both drugs eligible). Free text is read by a clinician later, not by the quiz.",
+   "run": "runs/x2-23-hist-yes"
+  },
+  {
+   "id": "x2-25-onset-sudden",
+   "flow": "men",
+   "changed": "onset: gradual → 'Over the last few days or weeks'",
+   "result": "Stop screen 'No suitable treatment' (…/sq/when_did_you_notice/reject/sudden): not designed for sudden hair loss, see your GP, or email clinic@numan.com; buttons 'Review your answers' and 'Back to homepage'.",
+   "run": "runs/x2-25-onset-sudden"
+  },
+  {
+   "id": "x2-26-pat-patchy",
+   "flow": "men",
+   "changed": "pattern: 'Temples and Crown' → 'Patchy'",
+   "result": "Stop screen 'No suitable treatment' (…/reject/patchy): circular patches may suggest a form of alopecia, see your GP.",
+   "run": "runs/x2-26-pat-patchy"
+  },
+  {
+   "id": "x2-27-imp-se",
+   "flow": "men",
+   "changed": "most important: 'Effectiveness' → 'Minimal side effects'",
+   "result": "Offer identical to baseline: three-part kit featured ('Most effective', £26.67), all eight products listed. Flags unchanged (both drugs eligible).",
+   "run": "runs/x2-27-imp-se"
+  },
+  {
+   "id": "x2-28-imp-scalp",
+   "flow": "men",
+   "changed": "most important: 'Effectiveness' → 'Scalp-friendly options'",
+   "result": "Offer identical to baseline: three-part kit featured ('Most effective', £26.67), all eight products listed. Flags unchanged (both drugs eligible).",
+   "run": "runs/x2-28-imp-scalp"
+  },
+  {
+   "id": "x2-29-pat-extensive",
+   "flow": "men",
+   "changed": "pattern: 'Temples and Crown' → 'Extensive'",
+   "result": "Offer identical to baseline: three-part kit featured ('Most effective', £26.67), all eight products listed. Flags unchanged (both drugs eligible). No extra question.",
+   "run": "runs/x2-29-pat-extensive"
+  },
+  {
+   "id": "x2-30-c-bp-yes",
+   "flow": "men",
+   "changed": "cautions: → high or low blood pressure; follow-up = 'I understand… and would like to be considered for minoxidil.'",
+   "result": "isMinoxidilEligible=false even though he asked to be considered. Minoxidil group hidden. Featured: Finasteride, 'Recommended for you', £16.80; also Rosemary Oil £14.00. All kits, both sprays and Regaine gone. So ticking blood pressure removes minoxidil whatever the follow-up answer.",
+   "run": "runs/x2-30-c-bp-yes"
+  },
+  {
+   "id": "x2-31-c-psa-yes",
+   "flow": "men",
+   "changed": "cautions: → PSA/prostate cancer; follow-up = 'I understand and would like to be considered for finasteride…'",
+   "result": "Adds clarify_psa. Offer identical to baseline: three-part kit featured ('Most effective', £26.67), all eight products listed. Flags unchanged (both drugs eligible).",
+   "run": "runs/x2-31-c-psa-yes"
+  },
+  {
+   "id": "x2-32-patchy-review",
+   "flow": "men",
+   "changed": "pattern: 'Patchy' (stop screen), then 'Review your answers' and change to 'Temples and Crown' in the same draft",
+   "result": "The stop is soft: 'Review your answers' returns to the pattern question; after changing the answer the walk continues normally to the full baseline offer (three-part kit featured, all eight products). The draft id did not change.",
+   "run": "runs/x2-32-patchy-review"
+  },
+  {
+   "id": "verify-01-baseline",
+   "flow": "men",
+   "changed": "none (baseline replayed fresh)",
+   "result": "Same as recorded: 8 questions, both flags true, three-part kit featured Most effective £26.67, seven others at the recorded prices.",
+   "run": "runs/verify-01-baseline"
+  },
+  {
+   "id": "verify-02-baseline-full",
+   "flow": "men",
+   "changed": "none (baseline-men.json replayed to the account wall)",
+   "result": "Same as recorded: order summary three-part kit, 3 kits every 3 months £216.00, promo −£40.00, total £176.00; account form at …/profile.",
+   "run": "runs/verify-02-baseline-full"
+  },
+  {
+   "id": "verify-03-al-fin",
+   "flow": "men",
+   "changed": "allergy: none → finasteride (re-test of R5)",
+   "result": "Confirmed: hasAllergyToFinasteride true; Extra Strength Spray featured Recommended for you £18.00; only Regaine and Rosemary Oil besides.",
+   "run": "runs/verify-03-al-fin"
+  },
+  {
+   "id": "verify-04-al-min",
+   "flow": "men",
+   "changed": "allergy: none → minoxidil (re-test of R6)",
+   "result": "Confirmed: Finasteride featured Recommended for you £16.80; only Rosemary Oil besides.",
+   "run": "runs/verify-04-al-min"
+  },
+  {
+   "id": "verify-05-sc-red",
+   "flow": "men",
+   "changed": "scalp: No → 'Red rinds or rashes' (re-test of R7)",
+   "result": "Confirmed: isMinoxidilEligible false; Finasteride featured £16.80 + Rosemary Oil.",
+   "run": "runs/verify-05-sc-red"
+  },
+  {
+   "id": "verify-06-c-bp-yes",
+   "flow": "men",
+   "changed": "cautions: blood pressure, follow-up asks to be considered for minoxidil (re-test of R10)",
+   "result": "Confirmed: minoxidil still removed; Finasteride featured £16.80 + Rosemary Oil.",
+   "run": "runs/verify-06-c-bp-yes"
+  },
+  {
+   "id": "verify-07-dep-suic",
+   "flow": "men",
+   "changed": "mental-health branch, GP, stable dose, suicidal thoughts Yes (re-test of R14)",
+   "result": "Confirmed: no stop, no signposting screen; isFinasterideEligible false; Extra Strength Spray featured £18.00, Regaine, Rosemary Oil.",
+   "run": "runs/verify-07-dep-suic"
+  },
+  {
+   "id": "verify-08-regaine-almin",
+   "flow": "men",
+   "changed": "Regaine entry link + minoxidil allergy (re-test of R18)",
+   "result": "Confirmed: Regaine still featured (Most effective, £65.00) with Finasteride £28.00 and Rosemary Oil £23.33.",
+   "run": "runs/verify-08-regaine-almin"
+  },
+  {
+   "id": "verify-09-onset-sudden",
+   "flow": "men",
+   "changed": "onset: gradual → 'Over the last few days or weeks' (re-test of R2)",
+   "result": "Confirmed: reject URL …/when_did_you_notice/reject/sudden, 'No suitable treatment… not designed for sudden hair loss… seek advice from your usual GP'.",
+   "run": "runs/verify-09-onset-sudden"
+  },
+  {
+   "id": "verify-10-c-psa-no",
+   "flow": "men",
+   "changed": "cautions: PSA, follow-up 'I do not wish to be considered for finasteride…' (re-test of R11)",
+   "result": "Confirmed: offer identical to baseline; finasteride kits still featured.",
+   "run": "runs/verify-10-c-psa-no"
+  },
+  {
+   "id": "verify-11-pat-complete",
+   "flow": "men",
+   "changed": "pattern: 'Complete' (new; R3 was code only)",
+   "result": "Stop: …/reject/complete, 'Our treatments are not effective in individuals who have experienced complete hair loss.'",
+   "run": "runs/verify-11-pat-complete"
+  },
+  {
+   "id": "verify-12-age-65-no",
+   "flow": "men",
+   "changed": "age: 65 or over, confirmation 'No' (new; R3 was code only)",
+   "result": "Stop: …/sixty_five_and_over_confirmation/reject/no, 'unable to recommend a hair loss treatment… contact your doctor'.",
+   "run": "runs/verify-12-age-65-no"
+  },
+  {
+   "id": "verify-13-min-entry",
+   "flow": "men",
+   "changed": "entry link /subscribe/hair-loss/minoxidil (new)",
+   "result": "Extra Strength Spray featured Recommended for you £30.00 (full price); all eight products listed at full price.",
+   "run": "runs/verify-13-min-entry"
+  },
+  {
+   "id": "verify-14-pair-alfin-scpain",
+   "flow": "men",
+   "changed": "pair: finasteride allergy + scalp pain/itching (new; R21 was from a mixed mapping walk)",
+   "result": "Both drugs ruled out: only Rosemary Oil, 'Most effective', £14.00, with the money-back strip; no stop or 'unable to treat' message.",
+   "run": "runs/verify-14-pair-alfin-scpain"
+  },
+  {
+   "id": "verify-15-c-ast-yes",
+   "flow": "men",
+   "changed": "cautions: asthma, follow-up opts in to topical (new)",
+   "result": "No change from baseline.",
+   "run": "runs/verify-15-c-ast-yes"
+  },
+  {
+   "id": "verify-16-c-baby-yes",
+   "flow": "men",
+   "changed": "cautions: trying for a baby, follow-up opts in to finasteride (new)",
+   "result": "No change from baseline.",
+   "run": "runs/verify-16-c-baby-yes"
+  },
+  {
+   "id": "verify-17-al-lac-small",
+   "flow": "men",
+   "changed": "allergy: lactose, follow-up 'very small amounts' (new)",
+   "result": "Allergy list gains lactose_intolerance_or_allergy; no change in the offer.",
+   "run": "runs/verify-17-al-lac-small"
+  },
+  {
+   "id": "verify-18-imp-all",
+   "flow": "men",
+   "changed": "most important: 'All of the above' (new)",
+   "result": "No change from baseline.",
+   "run": "runs/verify-18-imp-all"
+  },
+  {
+   "id": "verify-19-pat-temples",
+   "flow": "men",
+   "changed": "pattern: 'Temples' (new)",
+   "result": "No change from baseline.",
+   "run": "runs/verify-19-pat-temples"
+  },
+  {
+   "id": "verify-20-pat-moderate",
+   "flow": "men",
+   "changed": "pattern: 'Moderate' (new)",
+   "result": "No change from baseline.",
+   "run": "runs/verify-20-pat-moderate"
+  },
+  {
+   "id": "verify-21-pair-alfin-scpain-regaine",
+   "flow": "men",
+   "changed": "Regaine entry link + finasteride allergy + scalp pain (new)",
+   "result": "Regaine still featured (Most effective, £65.00) with Rosemary Oil £23.33, although isMinoxidilEligible is false: the entry bypass also beats the eligibility flag.",
+   "run": "runs/verify-21-pair-alfin-scpain-regaine"
+  },
+  {
+   "id": "verify-22-fin-billing",
+   "flow": "men",
+   "changed": "baseline, then choose Finasteride and go to the billing screen (new)",
+   "result": "Billing screen: quarterly £28.00 a month; six-monthly £24.00 (pre-selected, struck-through £34.00, \"Save £120.00 per year\"); annually £20.00. Matches the API-derived prices.",
+   "run": "runs/verify-22-fin-billing"
   }
  ],
  "recommendations": [
   {
-   "profile": "Baseline man: 18-65, temples and crown, gradual, no allergies, no scalp symptoms, none of the cautions, 'Effectiveness of the product', no medical history, GP not informed, entered through /subscribe/hair-loss",
+   "profile": "Baseline man: 18-65, temples and crown, gradual, no allergies, no scalp symptoms, no cautions, no medical history, main link",
    "offered": [
     "p-kit-pro",
     "p-kit",
@@ -2186,11 +2523,57 @@
     "p-rosemary-oil"
    ],
    "default": "p-kit-pro",
-   "note": "Featured card 'Most effective': Hair Kit - Medicated Spray, Finasteride & Supplement at £26.67 a month after the first-order code ('Save 33%'). The other seven appear after 'See all treatments'. Six-monthly billing is pre-selected on the next screen.",
+   "note": "Featured 'Most effective': Hair Kit - Medicated Spray, Finasteride & Supplement £26.67 a month (quarterly variant, first-order code). Others: two-part kit £22.67, combination kit £26.67, Finasteride £16.80, Triple-Action £22.67, Extra Strength Spray £18.00, Regaine £51.67, Rosemary Oil £14.00. Billing: six-monthly pre-selected (£36.00 a month), quarterly £40.00, annual £32.00. Wall: £216.00 − £40.00 = £176.00. Runs x2-00, x2-01.",
    "evidence": "observed"
   },
   {
-   "profile": "Same man, entered through /subscribe/hair-loss/regaine",
+   "profile": "Man with minoxidil ruled out: minoxidil allergy, scalp pain/itching, red rinds/rashes, or any blood-pressure diagnosis",
+   "offered": [
+    "p-finasteride",
+    "p-rosemary-oil"
+   ],
+   "default": "p-finasteride",
+   "note": "Finasteride featured 'Recommended for you' £16.80; Rosemary Oil £14.00. No kit, spray or Regaine. Runs x2-03, x2-04, x2-05, x2-10, x2-30.",
+   "evidence": "observed"
+  },
+  {
+   "profile": "Man with finasteride ruled out: finasteride allergy, 'minoxidil only' mood answer, specialist-managed mental health, or suicidal thoughts in the past year",
+   "offered": [
+    "p-minoxidil-spray",
+    "p-regaine",
+    "p-rosemary-oil"
+   ],
+   "default": "p-minoxidil-spray",
+   "note": "Extra Strength Spray featured 'Recommended for you' £18.00; Regaine £51.67; Rosemary Oil £14.00. Runs x2-02, x2-13, x2-15, x2-16.",
+   "evidence": "observed"
+  },
+  {
+   "profile": "Man with both drugs ruled out (for example a finasteride allergy plus a blood-pressure diagnosis)",
+   "offered": [
+    "p-rosemary-oil"
+   ],
+   "default": "p-rosemary-oil",
+   "note": "Rosemary Oil only, badged 'Most effective', £14.00, with the money-back strip. No stop screen. Replayed as a clean pair in runs/verify-14-pair-alfin-scpain (finasteride allergy + scalp pain); first seen in runs/s2-men-explore.",
+   "evidence": "observed"
+  },
+  {
+   "profile": "Man with flag-only answers: psoriasis/eczema, dandruff (either answer), PSA, asthma or baby opt-outs, lactose 'none', body hair loss, depression managed by the GP, dose change, other pattern, 65+, any 'most important' answer, 'I have' a medical history",
+   "offered": [
+    "p-kit-pro",
+    "p-kit",
+    "p-combo-kit",
+    "p-finasteride",
+    "p-triple-spray",
+    "p-minoxidil-spray",
+    "p-regaine",
+    "p-rosemary-oil"
+   ],
+   "default": "p-kit-pro",
+   "note": "Exactly the baseline offer; the answers only reach the clinician after checkout.",
+   "evidence": "observed"
+  },
+  {
+   "profile": "Man entering through /subscribe/hair-loss/regaine",
    "offered": [
     "p-kit-pro",
     "p-kit",
@@ -2202,16 +2585,26 @@
     "p-rosemary-oil"
    ],
    "default": "p-regaine",
-   "note": "Regaine featured as 'Recommended for you' at £51.67.",
+   "note": "Regaine featured 'Recommended for you'. With a minoxidil allergy it is STILL featured (badge 'Most effective', £65.00 with no code), with Finasteride £28.00 and Rosemary Oil £23.33. Runs entry-regaine-baseline, x2-20.",
    "evidence": "observed"
   },
   {
-   "profile": "Man with both drug allergies, every scalp symptom and every caution ticked (mapping walk)",
+   "profile": "Man entering through /subscribe/hair-loss/finasteride with a finasteride allergy",
    "offered": [
+    "p-finasteride",
+    "p-minoxidil-spray",
+    "p-regaine",
     "p-rosemary-oil"
    ],
-   "default": "p-rosemary-oil",
-   "note": "Rosemary Oil only, badged 'Most effective'. No medicine offered and no stop screen.",
+   "default": "p-finasteride",
+   "note": "Finasteride STILL featured ('Most effective', £28.00); Extra Strength Spray £30.00, Regaine £65.00, Rosemary Oil £23.33. Run x2-21.",
+   "evidence": "observed"
+  },
+  {
+   "profile": "Man under 18, patchy or complete loss, sudden onset, or 65+ who answers No",
+   "offered": [],
+   "default": null,
+   "note": "Stop screen 'No suitable treatment' with its own message and the clinic email; 'Review your answers' lets him change the answer and carry on (x2-32). Runs stop-under18, x2-25, x2-26, verify-11-pat-complete, verify-12-age-65-no.",
    "evidence": "observed"
   },
   {
@@ -2221,29 +2614,61 @@
     "p-hair-support"
    ],
    "default": "p-rosemary-oil",
-   "note": "There is no women's hair-loss consultation. The only consultation asks the patient to confirm male sex at birth, every medicine variant is marked male-only in the API, and the public pages say finasteride, Regaine for Men and the sprays are not for women. A woman can buy the cosmetic oil and the supplement (not if pregnant, likely to become pregnant or breastfeeding) directly. Not walked past the account form.",
-   "evidence": "code"
+   "note": "No women's consultation. The only hair-loss consultation requires 'assigned male at birth'. A woman can only buy the cosmetic oil or the supplement directly (stage 1).",
+   "evidence": "docs"
+  },
+  {
+   "profile": "Man entering through /subscribe/hair-loss/minoxidil, baseline answers",
+   "offered": [
+    "p-minoxidil-spray",
+    "p-kit-pro",
+    "p-kit",
+    "p-combo-kit",
+    "p-finasteride",
+    "p-triple-spray",
+    "p-regaine",
+    "p-rosemary-oil"
+   ],
+   "default": "p-minoxidil-spray",
+   "note": "Extra Strength Spray featured 'Recommended for you' at £30.00 (no first-order code on product links). Run verify-13-min-entry.",
+   "evidence": "observed"
+  },
+  {
+   "profile": "Man entering through /subscribe/hair-loss/regaine with both drugs ruled out (finasteride allergy + scalp pain)",
+   "offered": [
+    "p-regaine",
+    "p-rosemary-oil"
+   ],
+   "default": "p-regaine",
+   "note": "Regaine (minoxidil) still featured, £65.00, although minoxidil is ruled out by the scalp answer. Run verify-21-pair-alfin-scpain-regaine.",
+   "evidence": "observed"
   }
  ],
- "engineSummary": "Numan's engine has three layers. (1) A server-driven question tree: the browser asks api.numan.com for one question at a time and each answer returns the next question id. Five answers end the consultation at once (under 18; patchy loss; complete loss; sudden onset; and 'No' from a man of 65 or over). (2) A small set of engine flags computed on the server after every answer (finasteride eligible, minoxidil eligible, allergy to each). The selection screen hides every product containing a drug that is ruled out and then features one product: the three-part kit by default, the product named in the entry link if there was one, otherwise the first product left. The patient can always open the full list and choose something else, and a cosmetic oil is always left even when both drugs are ruled out. (3) Many answers do not change the screen at all: they attach a 'query clinically' note, with written instructions, for the clinician who reviews the order after checkout. Pattern severity, the preference question and age over 65 do not appear to change the offer.",
+ "engineSummary": "Numan's engine is simple. The server serves one question at a time and a few answers stop the consultation (under 18, patchy or complete loss, sudden onset, 65+ saying No), but every stop has a 'Review your answers' button that lets the patient change the answer and carry on. After each answer the server works out two yes/no flags, finasteride allowed and minoxidil allowed, plus an allergy list. The product screen hides every product containing a drug that is not allowed and features one product: the three-part kit by default, the product in the entry link if there was one (even when its drug is ruled out), or the first product left (Finasteride or Extra Strength Spray). Live tests show only seven answers move a flag: either drug allergy, scalp pain/itching, red rinds/rashes, any blood-pressure diagnosis (minoxidil off), and 'minoxidil only', specialist-managed mental health or recent suicidal thoughts (finasteride off). Everything else, including psoriasis/eczema and the patient's own 'I do not wish to be considered' answers for prostate monitoring, asthma and trying for a baby, changes nothing on screen: it only becomes a note for the clinician who reviews the order after payment details are taken. Pattern, age over 65 and preferences never change the offer. There is no dose or strength choice in the quiz: each product has one strength.",
  "strengths": [
-  "Short for a healthy man: 8 questions and no account needed to see the recommendation and every plan price.",
-  "Safety logic is concentrated in a few clear gates plus clinician notes, including a detailed mental-health branch before finasteride.",
-  "Wide range in one flow: licensed tablets, a licensed brand, two unlicensed sprays, three kits, plus a cosmetic and a supplement as fallbacks and add-ons.",
-  "180-day money-back guarantee shown on the recommendation and billing screens."
+  "Fast and low friction: 8 questions for a straightforward man, the full offer and every price before any sign-in.",
+  "A clear, tested safety filter for the two drugs: allergies, scalp inflammation and blood pressure remove minoxidil, and mood risk removes finasteride, on screen and before checkout (x2 runs).",
+  "Targeted follow-ups: each caution opens its own short explanation and choice instead of a long form; specialist-managed patients skip irrelevant questions.",
+  "Detailed written clinician instructions sit behind every risky answer (in the served data), so the human review has a playbook.",
+  "Always leaves something to buy (Rosemary Oil), and the money-back guarantee and kit discounts are visible throughout."
  ],
  "weaknesses": [
-  "No service for women's hair loss: sex is asserted on a consent screen rather than asked, and every medicine is male-only.",
-  "No question about previous hair-loss treatment, sexual side-effect history, heart disease by name, or family history in the current questionnaire (older versions in the app bundle did ask about previous treatment).",
-  "The patient, not the engine, chooses the product; the default is always the most expensive kit, and six-monthly prepayment is pre-selected.",
-  "Public pages disagree with each other: the prescribing-process page says 'We do not supply unlicensed or unproven treatments' while the consent screen and help centre say the 6% and combination sprays are unlicensed. The first-order banner says 50% off but the pricing call applied 40% (capped at £40) to hair-loss medicines.",
-  "When both drugs are ruled out the screen still sells Rosemary Oil with the badge 'Most effective' instead of explaining that no medicine is suitable."
+  "Patient opt-outs are ignored on screen: 'I do not wish to be considered for finasteride' (prostate monitoring, trying for a baby) and 'not topical' (asthma, dandruff) leave those products on offer and the finasteride kit featured (x2-09, x2-11, x2-12, x2-07).",
+  "Psoriasis/eczema on the scalp does not remove minoxidil, although Numan's own clinician note says minoxidil is not suitable with an active scalp condition (x2-08); pain/itching and red rinds do remove it.",
+  "Product links bypass the safety filter: the entry product stays featured even with an allergy to its drug (x2-20, x2-21, verify-08) or when its drug is ruled out by a scalp answer (verify-21: Regaine offered with scalp pain and a finasteride allergy).",
+  "Stops are soft: 'Review your answers' lets anyone change a stopping answer and continue in the same draft (x2-32).",
+  "Suicidal thoughts in the past year give no stop or signposting screen; the man is simply moved to minoxidil products (x2-16). A recent mental-health dose change skips the suicidal-thoughts question altogether (x2-17).",
+  "Ticking blood pressure removes minoxidil even when the man says he understands and wants it (x2-30): blunt for well-controlled hypertension on topical minoxidil (our clinical view, inferred).",
+  "Thin history: no exact age, duration, family history, previous treatments or side effects, sexual side-effect history, or treatment preference (tablet vs topical); lactose 'none' does not remove the tablets (x2-18).",
+  "Men only: no women's consultation at all; the only consultation requires 'assigned male at birth'."
  ],
  "opportunities": [
-  "A proper women's pathway (the site has women's health but no female hair-loss consultation).",
-  "A recommendation that actually uses pattern, severity and stated preferences instead of one default kit.",
-  "Clear, consistent wording on licensed versus unlicensed products and on what the first-order discount really is.",
-  "Monthly or low-commitment plans made visible: the flow only shows quarterly, six-monthly and annual billing."
+  "Serve women: a female pattern hair-loss consultation (topical and oral minoxidil, spironolactone pathways) is entirely missing at Numan.",
+  "Honour patient choices at once: if someone opts out of a drug or a form, show only what they asked for, and explain why.",
+  "Offer strength and form choices (oral minoxidil, several minoxidil strengths, topical finasteride on its own). Numan has topical finasteride only inside its combination spray, and its quiz never asks about strength or form.",
+  "Collect a fuller history (duration, family history, previous treatment and side effects, sexual function, photos) and use it to personalise and to set expectations.",
+  "Stronger mental-health safety: a crisis signposting screen for recent suicidal thoughts and asking it regardless of dose changes.",
+  "Close the entry-link gap and lock stop screens for the session, then advertise the stricter safety as a trust point."
  ],
  "engineFlagsSeen": {
   "where": "POST https://www.numan.com/bff/assessment/subscribe/calculate-web-directives {subscriptionId}, called by the page after every answer; saved in runs/*/net/",
@@ -2377,11 +2802,54 @@
   }
  ],
  "limitations": [
-  "Nothing after the account wall was tested: payment, identity check, any follow-up questions from clinicians, and what is finally prescribed are known only from public pages and app text.",
-  "Most option effects come from the definition the site served (code), not from separate replays; options marked 'unknown' have not been tested at all.",
-  "The engine flags are calculated on Numan's server. Only their values were seen, not the rules that set them.",
-  "Prices were read on 23 Nov 2026 with the first-order code that the site's own links carry; several pricing experiments are named in the app bundle (hl_6_months_promo, hl_price_per_day, HL_ps_science), so another visitor may see different presentation.",
-  "Six-monthly and annual prices for products other than the three-part kit and Regaine are worked out from the variant data in the API, not seen on a billing screen.",
-  "Who compounds the unlicensed sprays is not stated in any public source found."
- ]
+  "Nothing after the account wall was tested: payment, identity check, clinician follow-up and what is finally prescribed are known only from public pages and the served clinician notes.",
+  "The flags are computed on Numan's server. Rules were found by one-change replays (33 in stage 2), not read from code; untested options are marked 'inferred'.",
+  "Experiments stopped at the product screen; plan and price after it were checked only for the baseline (x2-00). Prices on product links are without the first-order code.",
+  "Prices were read on 23 Nov 2026 with the code the site's own links carry; pricing experiments named in the app (hl_6_months_promo, hl_price_per_day, HL_ps_science) may change what others see.",
+  "Six-monthly and annual prices for products other than the three-part kit, Regaine and Finasteride are worked out from the API discount data, not seen on a billing screen.",
+  "Each replay created one anonymous draft on Numan's side (about 33 in stage 2); none was submitted.",
+  "Who compounds the unlicensed sprays is not stated in any public source found.",
+  "Still not replayed: GP 'Yes' (it opens a GP email screen; no contact details may be entered), most pairs of rules (one pair was tested), and every 'Select' on the product screen except Regaine, the three-part kit and Finasteride.",
+  "About 22 more anonymous drafts were created on Numan's side in stage 3; none was submitted."
+ ],
+ "verification": {
+  "checked": [
+   "Baseline replayed fresh twice: product screen identical (verify-01) and account wall total £176.00 identical (verify-02).",
+   "R5 finasteride allergy: confirmed (verify-03).",
+   "R6 minoxidil allergy: confirmed (verify-04).",
+   "R7 scalp 'red rinds or rashes' removes minoxidil: confirmed (verify-05).",
+   "R10 blood pressure removes minoxidil even with the opt-in answer: confirmed (verify-06).",
+   "R14 suicidal thoughts Yes: no stop or signposting; finasteride removed: confirmed (verify-07).",
+   "R18 Regaine entry link survives a minoxidil allergy: confirmed (verify-08).",
+   "R2 sudden onset stop: confirmed (verify-09).",
+   "R11 PSA opt-out ignored on screen: confirmed (verify-10).",
+   "R3 'Complete' and 65+ 'No' stops: were code only, now observed (verify-11, verify-12).",
+   "R21 both drugs ruled out leaves only Rosemary Oil: was from a mixed walk, now a clean pair (verify-14).",
+   "Product facts against the live API (api.numan.com product_categories/hair-loss, read 24 Nov 2026): all 16 active variants, strengths and prices identical to the saved stage-1 copy (three-part kit £120/quarter with 6% spray + finasteride 1 mg; two-part kit £108; combination kit £120; Finasteride 84 tablets £84; Triple-Action 10% minoxidil / 5% azelaic acid / 0.1% finasteride £108; Extra Strength Spray 6% £90; Regaine 5% £195; Rosemary Oil £28 or £70).",
+   "Product pages read live: Finasteride 'From £1.00 / tablet'; Minoxidil plan 'From £30.00 / bottle' and licensed strengths 2% and 5%; Regaine £65.00 → £51.67 and 1 ml dose; Rosemary Oil £28.00 → £14.00, 10-12 drops a day; Hair Support £28.00 a bottle with vitamin A 1000 µg, vitamin C 80 mg, vitamin E 10.2 mg, biotin 200 µg, selenium 55 µg, grape seed extract 50 mg. All match company.json.",
+   "Finasteride six-monthly £24 and annual £20 a month: seen on the billing screen (verify-22).",
+   "Catalogue completeness: the hair-loss landing page and the live API list no product missing from company.json (no oral minoxidil, dutasteride, shampoo or device).",
+   "Women: still no women's consultation; nothing new found on the live pages.",
+   "Every run folder cited as proof exists (one shorthand proof in R22 was expanded to full folder names)."
+  ],
+  "corrected": [
+   "R3 evidence code → observed (stops replayed).",
+   "R21 confidence medium → high, with a clean one-change pair as proof; the Rosemary-only screen also carries the money-back strip.",
+   "New rule R24: the entry-link bypass also beats the eligibility flags (Regaine offered when minoxidil is ruled out by scalp pain). Weakness and engine summary updated.",
+   "New rule R25 and recommendation: the minoxidil entry link features Extra Strength Spray at full price.",
+   "Eight options moved from inferred/code to observed (Temples, Moderate, Complete, 65+ No, lactose small, asthma opt-in, baby opt-in, All of the above); R11, R17 and R22 widened to cover them.",
+   "Opportunity text corrected: it said Numan has no topical finasteride, but the Triple-Action Spray contains 0.1% finasteride.",
+   "A clinical opinion in the weaknesses (blood pressure and topical minoxidil) is now labelled as our inferred view.",
+   "Finasteride price detail: six-monthly and annual prices now cite the observed billing screen; Minoxidil page's '60% off your first month' banner noted.",
+   "Limitations and coverage note updated; the old 'not replayed' list replaced by what is still untested."
+  ],
+  "stillUnverified": [
+   "Everything after the account wall: what the clinician finally prescribes, and whether the clinician notes (psoriasis, PSA, asthma, baby, lactose opt-outs) are acted on.",
+   "The server rules that set the flags were never seen as code; they are known only from replays, so untested combinations could behave differently.",
+   "GP 'Yes' path and the GP email screen.",
+   "Who compounds the unlicensed sprays.",
+   "Whether the pricing experiments named in the app bundle show other visitors different prices or offers."
+  ],
+  "verdict": "Trustworthy as labelled. Every high-consequence rule I re-tested (ten of them, plus both baselines) gave exactly the recorded result, and the live catalogue and product pages match the recorded names, strengths and prices. I found no contradicted rule. The errors I found were small: two stops and one pair rule rested on code or a mixed walk (now observed), one opportunity wrongly said Numan has no topical finasteride, and one clinical opinion was not labelled. The new finding is that product entry links beat the eligibility flags as well as the allergy flags. The main limit is structural: the engine's flags are computed on Numan's server and everything after the account wall, including the clinician's final decision, is unseen, so the report describes what the anonymous quiz offers, not what is finally prescribed."
+ }
 }

@@ -1,0 +1,21 @@
+STEP 07 click "Male"
+URL: https://www.form.happyhead.com/get-started/?l=false&ph=true
+TITLE: Get Started | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Where are you experiencing hair loss?
+Select all that apply.
+Thinning at the hairline
+Bald patches
+Thinning all over
+Another pattern of hair loss
+None, I'm trying to prevent hair loss
+NEXT
+Your Preferred Method
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

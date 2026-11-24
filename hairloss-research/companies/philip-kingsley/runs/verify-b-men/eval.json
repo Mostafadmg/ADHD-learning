@@ -1,0 +1,3451 @@
+{
+ "quizId": "men_quiz",
+ "step": "men_quiz_step_user",
+ "url": "/quiz/step/view/stepId/men_quiz_step_user",
+ "skus": [
+  "PHI1220",
+  "PHI1221",
+  "PHI1301",
+  "PHI1302",
+  "PHI1303",
+  "PHI1305"
+ ],
+ "ruleCount": 16,
+ "rulesLen": 57128,
+ "answers": {
+  "q1": "Temples and Crown",
+  "q2a": "My hair has thinned/receded noticeably in some areas, but other areas are still dense",
+  "q3": "More than a month ago",
+  "q4": "Gradually over months/years",
+  "q5": "Yes",
+  "q6": "30 to 39",
+  "q7a": "No conditions",
+  "q8": "None of the above",
+  "q9": "None of the above",
+  "q9a": "No",
+  "q9b": "No",
+  "q9c": "No",
+  "q9d": "No",
+  "q10a": "No",
+  "q11a": "None",
+  "q12a": "No"
+ },
+ "heading": "YOUR DETAILS",
+ "rules": [
+  {
+   "sku": "PHI1220",
+   "group": "Recommended",
+   "blockers": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pain",
+         "Burning",
+         "Crusting",
+         "Bleeding"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are any of the following true?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring",
+         " I have uncontrolled low or high blood pressure",
+         "I am experiencing, or have previously experienced, depression, anxiety or panic disorders",
+         "I am currently trying for a baby"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How long did it take for your hair loss to get to this stage?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "It started to fall out quite suddenly",
+         "It's not started yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "When did you first notice any hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I haven't noticed any yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "and",
+        "values": [
+         "Finasteride",
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How long did it take for your hair loss to get to this stage?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "It started to fall out quite suddenly"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pain",
+         "Burning",
+         "Crusting",
+         "Bleeding"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Minoxidil"
+        ]
+       },
+       {
+        "code": "",
+        "type": "GenericCondition",
+        "operator": "or",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "values": [
+         "Itching"
+        ]
+       },
+       {
+        "code": "",
+        "type": "GenericCondition",
+        "operator": "or",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "values": [
+         "Dandruff"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1221",
+   "group": "Recommended",
+   "blockers": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pain",
+         "Burning",
+         "Crusting",
+         "Bleeding"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are any of the following true?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring",
+         " I have uncontrolled low or high blood pressure",
+         "I am experiencing, or have previously experienced, depression, anxiety or panic disorders",
+         "I am currently trying for a baby"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How long did it take for your hair loss to get to this stage?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "It started to fall out quite suddenly",
+         "It's not started yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "When did you first notice any hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I haven't noticed any yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "and",
+        "values": [
+         "Finasteride",
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How long did it take for your hair loss to get to this stage?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "It started to fall out quite suddenly",
+         "It's not started yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pain",
+         "Burning",
+         "Crusting",
+         "Bleeding"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are any of the following true?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I have previously been diagnosed with breast cancer, prostate cancer, or I am curerrently undergoing PSA (prostate monitoring)",
+         "I have uncontrolled low or high blood pressure",
+         "I am currently trying for a baby"
+        ]
+       },
+       {
+        "code": "",
+        "question": "There are occasional reports of depression and even suicidal thoughts with Finasteride (Propecia). If you are currently stable, and happy to stop this treatment and consult a doctor if this occurs, then click to accept you have understood the above.",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I would not like to be recommended Finasteride"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Finasteride"
+        ]
+       },
+       {
+        "code": "",
+        "type": "GenericCondition",
+        "operator": "or",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "values": [
+         "Itching"
+        ]
+       },
+       {
+        "code": "",
+        "type": "GenericCondition",
+        "operator": "or",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "values": [
+         "Dandruff"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1230",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Early signs"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I have less hair than before, but it is not very noticeable"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are any of the following true?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring",
+       " I have uncontrolled low or high blood pressure",
+       "I am experiencing, or have previously experienced, depression, anxiety or panic disorders",
+       "I am currently trying for a baby"
+      ]
+     },
+     {
+      "code": "",
+      "question": "How long did it take for your hair loss to get to this stage?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "It started to fall out quite suddenly",
+       "It's not started yet"
+      ]
+     },
+     {
+      "code": "",
+      "question": "When did you first notice any hair loss?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "I haven't noticed any yet"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you allergic to minoxidil or finasteride?",
+      "type": "GenericCondition",
+      "operator": "and",
+      "values": [
+       "Finasteride",
+       "Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1301",
+   "group": "Other",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Early signs"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "My hair has thinned/receded noticeably in some areas, but other areas are still dense"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "18 to 29",
+         "30 to 39",
+         "40 to 49"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "No conditions"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Early signs"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "My hair has thinned/receded noticeably in some areas, but other areas are still dense"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "50 to 64",
+         "Over 65"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "No conditions"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "18 to 29",
+         "30 to 39",
+         "40 to 49"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "No conditions"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "50 to 64",
+         "Over 65"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "No conditions"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples and Crown"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "No conditions"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pain",
+         "Burning",
+         "Crusting",
+         "Bleeding"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are any of the following true?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring",
+         " I have uncontrolled low or high blood pressure",
+         "I am experiencing, or have previously experienced, depression, anxiety or panic disorders",
+         "I am currently trying for a baby"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How long did it take for your hair loss to get to this stage?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "It started to fall out quite suddenly",
+         "It's not started yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "When did you first notice any hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I haven't noticed any yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "and",
+        "values": [
+         "Finasteride",
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1302",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Early signs"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "My hair has thinned/receded noticeably in some areas, but other areas are still dense"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "18 to 29",
+         "30 to 39",
+         "40 to 49"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "No conditions"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Early signs"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "My hair has thinned/receded noticeably in some areas, but other areas are still dense"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "50 to 64",
+         "Over 65"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "No conditions"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "18 to 29",
+         "30 to 39",
+         "40 to 49"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "No conditions"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "50 to 64",
+         "Over 65"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "No conditions"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples and Crown"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "No conditions"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pain",
+         "Burning",
+         "Crusting",
+         "Bleeding"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are any of the following true?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring",
+         " I have uncontrolled low or high blood pressure",
+         "I am experiencing, or have previously experienced, depression, anxiety or panic disorders",
+         "I am currently trying for a baby"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How long did it take for your hair loss to get to this stage?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "It started to fall out quite suddenly",
+         "It's not started yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "When did you first notice any hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I haven't noticed any yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "and",
+        "values": [
+         "Finasteride",
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Finasteride"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1303",
+   "group": "Other",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Early signs"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "My hair has thinned/receded noticeably in some areas, but other areas are still dense"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "18 to 29",
+         "30 to 39",
+         "40 to 49"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "No conditions"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "18 to 29",
+         "30 to 39",
+         "40 to 49"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "No conditions"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples and Crown"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "No conditions"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pain",
+         "Burning",
+         "Crusting",
+         "Bleeding"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are any of the following true?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring",
+         " I have uncontrolled low or high blood pressure",
+         "I am experiencing, or have previously experienced, depression, anxiety or panic disorders",
+         "I am currently trying for a baby"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How long did it take for your hair loss to get to this stage?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "It started to fall out quite suddenly",
+         "It's not started yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "When did you first notice any hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I haven't noticed any yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "and",
+        "values": [
+         "Finasteride",
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Finasteride"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1304",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples & Crown with Reduced Density"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "My scalp is becoming slightly visible and my hair feels less dense",
+         "My scalp is very visible and my hair feels much less dense"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "No conditions"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pain",
+         "Burning",
+         "Crusting",
+         "Bleeding"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are any of the following true?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring",
+         " I have uncontrolled low or high blood pressure",
+         "I am experiencing, or have previously experienced, depression, anxiety or panic disorders",
+         "I am currently trying for a baby"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How long did it take for your hair loss to get to this stage?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "It started to fall out quite suddenly",
+         "It's not started yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "When did you first notice any hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I haven't noticed any yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "and",
+        "values": [
+         "Finasteride",
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Finasteride"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1305",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Early signs"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "My hair has thinned/receded noticeably in some areas, but other areas are still dense"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "18 to 29",
+         "30 to 39",
+         "40 to 49"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "No conditions"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "18 to 29",
+         "30 to 39",
+         "40 to 49"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "No conditions"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples and Crown"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "No conditions"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples and Crown with reduced density"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "My scalp is becoming slightly visible and my hair feels less dense",
+         "My scalp is very visible and my hair feels much less dense"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "No conditions"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pain",
+         "Burning",
+         "Crusting",
+         "Bleeding"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are any of the following true?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring",
+         " I have uncontrolled low or high blood pressure",
+         "I am experiencing, or have previously experienced, depression, anxiety or panic disorders",
+         "I am currently trying for a baby"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How long did it take for your hair loss to get to this stage?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "It started to fall out quite suddenly",
+         "It's not started yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "When did you first notice any hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I haven't noticed any yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "and",
+        "values": [
+         "Finasteride",
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Finasteride"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1306",
+   "group": "Other",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Early signs"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "My hair has thinned/receded noticeably in some areas, but other areas are still dense"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "18 to 29",
+         "30 to 39",
+         "40 to 49"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Early signs"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "My hair has thinned/receded noticeably in some areas, but other areas are still dense"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "50 to 64",
+         "Over 65"
+        ]
+       },
+       {
+        "conditions": [
+         {
+          "conditions": [
+           {
+            "code": "",
+            "question": "How severe is the eczema?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           },
+           {
+            "code": "",
+            "question": "How severe is the itching?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           },
+           {
+            "code": "",
+            "question": "How severe is your dandruff?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           }
+          ],
+          "type": "CompositeCondition",
+          "operator": "or"
+         }
+        ],
+        "type": "CompositeCondition",
+        "operator": "or"
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "18 to 29",
+         "30 to 39",
+         "40 to 49"
+        ]
+       },
+       {
+        "conditions": [
+         {
+          "conditions": [
+           {
+            "code": "",
+            "question": "How severe is the eczema?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           },
+           {
+            "code": "",
+            "question": "How severe is the itching?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           },
+           {
+            "code": "",
+            "question": "How severe is your dandruff?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           }
+          ],
+          "type": "CompositeCondition",
+          "operator": "or"
+         }
+        ],
+        "type": "CompositeCondition",
+        "operator": "or"
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "50 to 64",
+         "Over 65"
+        ]
+       },
+       {
+        "conditions": [
+         {
+          "conditions": [
+           {
+            "code": "",
+            "question": "How severe is the eczema?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           },
+           {
+            "code": "",
+            "question": "How severe is the itching?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           },
+           {
+            "code": "",
+            "question": "How severe is your dandruff?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           }
+          ],
+          "type": "CompositeCondition",
+          "operator": "or"
+         }
+        ],
+        "type": "CompositeCondition",
+        "operator": "or"
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples and Crown"
+        ]
+       },
+       {
+        "conditions": [
+         {
+          "conditions": [
+           {
+            "code": "",
+            "question": "How severe is the eczema?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           },
+           {
+            "code": "",
+            "question": "How severe is the itching?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           },
+           {
+            "code": "",
+            "question": "How severe is your dandruff?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           }
+          ],
+          "type": "CompositeCondition",
+          "operator": "or"
+         }
+        ],
+        "type": "CompositeCondition",
+        "operator": "or"
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pain",
+         "Burning",
+         "Crusting",
+         "Bleeding"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are any of the following true?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring",
+         " I have uncontrolled low or high blood pressure",
+         "I am experiencing, or have previously experienced, depression, anxiety or panic disorders",
+         "I am currently trying for a baby"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How long did it take for your hair loss to get to this stage?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "It started to fall out quite suddenly",
+         "It's not started yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "When did you first notice any hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I haven't noticed any yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "and",
+        "values": [
+         "Finasteride",
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1307",
+   "group": "Other",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Early signs"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "My hair has thinned/receded noticeably in some areas, but other areas are still dense"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "18 to 29",
+         "30 to 39",
+         "40 to 49"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How severe is your dandruff?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "18 to 29",
+         "30 to 39",
+         "40 to 49"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How severe is your dandruff?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples and Crown"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How severe is your dandruff?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pain",
+         "Burning",
+         "Crusting",
+         "Bleeding"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are any of the following true?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring",
+         " I have uncontrolled low or high blood pressure",
+         "I am experiencing, or have previously experienced, depression, anxiety or panic disorders",
+         "I am currently trying for a baby"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How long did it take for your hair loss to get to this stage?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "It started to fall out quite suddenly",
+         "It's not started yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "When did you first notice any hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I haven't noticed any yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "and",
+        "values": [
+         "Finasteride",
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1308",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Early signs"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "My hair has thinned/receded noticeably in some areas, but other areas are still dense"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "18 to 29",
+         "30 to 39",
+         "40 to 49"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How severe is your dandruff?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "18 to 29",
+         "30 to 39",
+         "40 to 49"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How severe is your dandruff?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples and Crown"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How severe is your dandruff?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pain",
+         "Burning",
+         "Crusting",
+         "Bleeding"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are any of the following true?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring",
+         " I have uncontrolled low or high blood pressure",
+         "I am experiencing, or have previously experienced, depression, anxiety or panic disorders",
+         "I am currently trying for a baby"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How long did it take for your hair loss to get to this stage?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "It started to fall out quite suddenly",
+         "It's not started yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "When did you first notice any hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I haven't noticed any yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "and",
+        "values": [
+         "Finasteride",
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Finasteride"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1309",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Early signs"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "My hair has thinned/receded noticeably in some areas, but other areas are still dense"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "18 to 29",
+         "30 to 39",
+         "40 to 49"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How severe is your dandruff?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild",
+         "Moderate"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Early signs"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "My hair has thinned/receded noticeably in some areas, but other areas are still dense"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "18 to 29",
+         "30 to 39",
+         "40 to 49"
+        ]
+       },
+       {
+        "conditions": [
+         {
+          "conditions": [
+           {
+            "code": "",
+            "question": "How severe is the eczema?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           },
+           {
+            "code": "",
+            "question": "How severe is the itching?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           },
+           {
+            "code": "",
+            "question": "How severe is your dandruff?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           }
+          ],
+          "type": "CompositeCondition",
+          "operator": "or"
+         }
+        ],
+        "type": "CompositeCondition",
+        "operator": "or"
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "18 to 29",
+         "30 to 39",
+         "40 to 49"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How severe is your dandruff?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild",
+         "Moderate"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "18 to 29",
+         "30 to 39",
+         "40 to 49"
+        ]
+       },
+       {
+        "conditions": [
+         {
+          "conditions": [
+           {
+            "code": "",
+            "question": "How severe is the eczema?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           },
+           {
+            "code": "",
+            "question": "How severe is the itching?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           },
+           {
+            "code": "",
+            "question": "How severe is your dandruff?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           }
+          ],
+          "type": "CompositeCondition",
+          "operator": "or"
+         }
+        ],
+        "type": "CompositeCondition",
+        "operator": "or"
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples and Crown"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How severe is your dandruff?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild",
+         "Moderate"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples and Crown"
+        ]
+       },
+       {
+        "conditions": [
+         {
+          "conditions": [
+           {
+            "code": "",
+            "question": "How severe is the eczema?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           },
+           {
+            "code": "",
+            "question": "How severe is the itching?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           },
+           {
+            "code": "",
+            "question": "How severe is your dandruff?",
+            "type": "GenericCondition",
+            "operator": "or",
+            "values": [
+             "Mild",
+             "Moderate"
+            ]
+           }
+          ],
+          "type": "CompositeCondition",
+          "operator": "or"
+         }
+        ],
+        "type": "CompositeCondition",
+        "operator": "or"
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pain",
+         "Burning",
+         "Crusting",
+         "Bleeding"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are any of the following true?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring",
+         " I have uncontrolled low or high blood pressure",
+         "I am experiencing, or have previously experienced, depression, anxiety or panic disorders",
+         "I am currently trying for a baby"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How long did it take for your hair loss to get to this stage?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "It started to fall out quite suddenly",
+         "It's not started yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "When did you first notice any hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I haven't noticed any yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "and",
+        "values": [
+         "Finasteride",
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Finasteride"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1311",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Early signs"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Now tell us about your hair density. In the areas of your scalp where are you currently experiencing hair loss, how would you describe the change in the appearance of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "My hair has thinned/receded noticeably in some areas, but other areas are still dense"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "18 to 29",
+         "30 to 39",
+         "40 to 49"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How severe is your dandruff?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild",
+         "Moderate"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How old are you?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "18 to 29",
+         "30 to 39",
+         "40 to 49"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How severe is your dandruff?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild",
+         "Moderate"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Which image best represents your hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Temples and Crown"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How severe is your dandruff?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild",
+         "Moderate"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pain",
+         "Burning",
+         "Crusting",
+         "Bleeding"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are any of the following true?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring",
+         " I have uncontrolled low or high blood pressure",
+         "I am experiencing, or have previously experienced, depression, anxiety or panic disorders",
+         "I am currently trying for a baby"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How long did it take for your hair loss to get to this stage?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "It started to fall out quite suddenly",
+         "It's not started yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "When did you first notice any hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I haven't noticed any yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "and",
+        "values": [
+         "Finasteride",
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Finasteride"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1770",
+   "blockers": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pain",
+         "Burning",
+         "Crusting",
+         "Bleeding"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are any of the following true?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring",
+         " I have uncontrolled low or high blood pressure",
+         "I am experiencing, or have previously experienced, depression, anxiety or panic disorders",
+         "I am currently trying for a baby"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How long did it take for your hair loss to get to this stage?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "It started to fall out quite suddenly",
+         "It's not started yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "When did you first notice any hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I haven't noticed any yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "and",
+        "values": [
+         "Finasteride",
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How long did it take for your hair loss to get to this stage?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "It started to fall out quite suddenly"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pain",
+         "Burning",
+         "Crusting",
+         "Bleeding"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Minoxidil"
+        ]
+       },
+       {
+        "code": "",
+        "type": "GenericCondition",
+        "operator": "or",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "values": [
+         "Itching"
+        ]
+       },
+       {
+        "code": "",
+        "type": "GenericCondition",
+        "operator": "or",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "values": [
+         "Dandruff"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "conditions": {
+    "conditions": [
+     {
+      "code": "",
+      "type": "GenericCondition",
+      "operator": "or",
+      "question": "Are you currently experiencing any of the following conditions on your scalp?",
+      "values": [
+       "Itching"
+      ]
+     },
+     {
+      "code": "",
+      "type": "GenericCondition",
+      "operator": "or",
+      "question": "Are you currently experiencing any of the following conditions on your scalp?",
+      "values": [
+       "Dandruff"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1771",
+   "blockers": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pain",
+         "Burning",
+         "Crusting",
+         "Bleeding"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are any of the following true?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring",
+         " I have uncontrolled low or high blood pressure",
+         "I am experiencing, or have previously experienced, depression, anxiety or panic disorders",
+         "I am currently trying for a baby"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How long did it take for your hair loss to get to this stage?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "It started to fall out quite suddenly",
+         "It's not started yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "When did you first notice any hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I haven't noticed any yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "and",
+        "values": [
+         "Finasteride",
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     },
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How long did it take for your hair loss to get to this stage?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "It started to fall out quite suddenly",
+         "It's not started yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pain",
+         "Burning",
+         "Crusting",
+         "Bleeding"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are any of the following true?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I have previously been diagnosed with breast cancer, prostate cancer, or I am curerrently undergoing PSA (prostate monitoring)",
+         "I have uncontrolled low or high blood pressure",
+         "I am currently trying for a baby"
+        ]
+       },
+       {
+        "code": "",
+        "question": "There are occasional reports of depression and even suicidal thoughts with Finasteride (Propecia). If you are currently stable, and happy to stop this treatment and consult a doctor if this occurs, then click to accept you have understood the above.",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I would not like to be recommended Finasteride"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Finasteride"
+        ]
+       },
+       {
+        "code": "",
+        "type": "GenericCondition",
+        "operator": "or",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "values": [
+         "Itching"
+        ]
+       },
+       {
+        "code": "",
+        "type": "GenericCondition",
+        "operator": "or",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "values": [
+         "Dandruff"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "conditions": {
+    "conditions": [
+     {
+      "code": "",
+      "type": "GenericCondition",
+      "operator": "or",
+      "question": "Are you currently experiencing any of the following conditions on your scalp?",
+      "values": [
+       "Itching"
+      ]
+     },
+     {
+      "code": "",
+      "type": "GenericCondition",
+      "operator": "or",
+      "question": "Are you currently experiencing any of the following conditions on your scalp?",
+      "values": [
+       "Dandruff"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1772",
+   "blockers": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pain",
+         "Burning",
+         "Crusting",
+         "Bleeding"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are any of the following true?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring",
+         " I have uncontrolled low or high blood pressure",
+         "I am experiencing, or have previously experienced, depression, anxiety or panic disorders",
+         "I am currently trying for a baby"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How long did it take for your hair loss to get to this stage?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "It started to fall out quite suddenly",
+         "It's not started yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "When did you first notice any hair loss?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "I haven't noticed any yet"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you allergic to minoxidil or finasteride?",
+        "type": "GenericCondition",
+        "operator": "and",
+        "values": [
+         "Finasteride",
+         "Minoxidil"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     },
+     {
+      "conditions": [
+       {
+        "conditions": [
+         {
+          "code": "",
+          "question": "How long did it take for your hair loss to get to this stage?",
+          "type": "GenericCondition",
+          "operator": "or",
+          "values": [
+           "It started to fall out quite suddenly",
+           "It's not started yet"
+          ]
+         },
+         {
+          "code": "",
+          "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+          "type": "GenericCondition",
+          "operator": "or",
+          "values": [
+           "Pain",
+           "Burning",
+           "Crusting",
+           "Bleeding"
+          ]
+         },
+         {
+          "code": "",
+          "question": "Are any of the following true?",
+          "type": "GenericCondition",
+          "operator": "or",
+          "values": [
+           "I have previously been diagnosed with breast cancer, prostate cancer, or I am curerrently undergoing PSA (prostate monitoring)",
+           "I have uncontrolled low or high blood pressure",
+           "I am currently trying for a baby"
+          ]
+         },
+         {
+          "code": "",
+          "question": "There are occasional reports of depression and even suicidal thoughts with Finasteride (Propecia). If you are currently stable, and happy to stop this treatment and consult a doctor if this occurs, then click to accept you have understood the above.",
+          "type": "GenericCondition",
+          "operator": "or",
+          "values": [
+           "I would not like to be recommended Finasteride"
+          ]
+         },
+         {
+          "code": "",
+          "question": "Are you allergic to minoxidil or finasteride?",
+          "type": "GenericCondition",
+          "operator": "or",
+          "values": [
+           "Finasteride"
+          ]
+         },
+         {
+          "code": "",
+          "type": "GenericCondition",
+          "operator": "or",
+          "question": "Are you currently experiencing any of the following conditions on your scalp?",
+          "values": [
+           "Itching"
+          ]
+         },
+         {
+          "code": "",
+          "type": "GenericCondition",
+          "operator": "or",
+          "question": "Are you currently experiencing any of the following conditions on your scalp?",
+          "values": [
+           "Dandruff"
+          ]
+         },
+         {
+          "code": "",
+          "question": "How long did it take for your hair loss to get to this stage?",
+          "type": "GenericCondition",
+          "operator": "or",
+          "values": [
+           "It started to fall out quite suddenly"
+          ]
+         },
+         {
+          "code": "",
+          "question": "Do you ever suffer from pain, burning or crusting on the scalp?",
+          "type": "GenericCondition",
+          "operator": "or",
+          "values": [
+           "Pain",
+           "Burning",
+           "Crusting",
+           "Bleeding"
+          ]
+         },
+         {
+          "code": "",
+          "question": "Are you allergic to minoxidil or finasteride?",
+          "type": "GenericCondition",
+          "operator": "or",
+          "values": [
+           "Minoxidil"
+          ]
+         },
+         {
+          "code": "",
+          "type": "GenericCondition",
+          "operator": "or",
+          "question": "Are you currently experiencing any of the following conditions on your scalp?",
+          "values": [
+           "Itching"
+          ]
+         },
+         {
+          "code": "",
+          "type": "GenericCondition",
+          "operator": "or",
+          "question": "Are you currently experiencing any of the following conditions on your scalp?",
+          "values": [
+           "Dandruff"
+          ]
+         }
+        ],
+        "type": "CompositeCondition",
+        "operator": "or"
+       },
+       {
+        "code": "",
+        "type": "GenericCondition",
+        "operator": "or",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "values": [
+         "Itching"
+        ]
+       },
+       {
+        "code": "",
+        "type": "GenericCondition",
+        "operator": "or",
+        "question": "Are you currently experiencing any of the following conditions on your scalp?",
+        "values": [
+         "Dandruff"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "or"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "conditions": {
+    "conditions": [
+     {
+      "code": "",
+      "type": "GenericCondition",
+      "operator": "or",
+      "question": "Are you currently experiencing any of the following conditions on your scalp?",
+      "values": [
+       "Itching"
+      ]
+     },
+     {
+      "code": "",
+      "type": "GenericCondition",
+      "operator": "or",
+      "question": "Are you currently experiencing any of the following conditions on your scalp?",
+      "values": [
+       "Dandruff"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  }
+ ],
+ "noResultsTpl": 25495
+}

@@ -80,6 +80,7 @@ const timeUp = () => (Date.now() - T0) / 1000 > (pol.maxSeconds || 540);
     }
     if (!d.questions.length) console.log(`${I}  (no questions; stepState=${d.stepState})`);
   };
+  const closePop = async () => { try { const c = page.getByText('Close', { exact: true }).first(); if (await c.isVisible({ timeout: 300 })) { await c.click({ timeout: 2000 }); await page.waitForTimeout(300); return true; } } catch (e) {} return false; };
   const selectOption = async (q, one) => {
     if (one && typeof one === 'object' && 'dob' in one) {
       await page.locator('#day').fill(String(one.dob[0]), { timeout: 6000 });
@@ -90,7 +91,11 @@ const timeUp = () => (Date.now() - T0) / 1000 > (pol.maxSeconds || 540);
       return true;
     }
     if (one && typeof one === 'object' && 'text' in one) {
-      await page.locator('textarea:visible, input[type=text]:visible, input[type=number]:visible, input:not([type]):visible').first().fill(String(one.text), { timeout: 6000 });
+      { const own = page.locator(`textarea[id^="${q.questionId}$"], input[id^="${q.questionId}$"]`); if (await own.count()) await own.first().fill(String(one.text), { timeout: 6000 }); else await page.locator('textarea:visible, input[type=text]:visible, input[type=number]:visible, input:not([type]):visible').first().fill(String(one.text), { timeout: 6000 }); }
+      return true;
+    }
+    if (one && typeof one === 'object' && 'button' in one) {
+      await page.getByText(one.button, { exact: true }).first().click({ timeout: 6000 });
       return true;
     }
     if (one && typeof one === 'object' && 'card' in one) {
@@ -101,11 +106,13 @@ const timeUp = () => (Date.now() - T0) / 1000 > (pol.maxSeconds || 540);
       return true;
     }
     let err = '';
+    { const ac = (q.answerChoices || []).find(x => strip(x.displayText) === one);
+      if (ac && /^(MULTIPLE|SINGLE)/.test(q.type)) { try { const lb = page.locator(`label[for="${ac.answerId}"]`); if (await lb.count()) { await closePop(); await lb.first().click({ timeout: 4000, position: { x: 12, y: 12 } }); await page.waitForTimeout(400); await closePop(); return true; } } catch (e) { err = e.message.split('\n')[0]; } } }
     for (const c of [page.locator(`label:has-text(${JSON.stringify(one)})`), page.getByText(one, { exact: true })]) {
       const cnt = await c.count();
       for (let i = 0; i < cnt; i++) {
         const el = c.nth(i);
-        try { const it = ((await el.innerText()) || '').replace(/\s+/g, ' ').trim(); if (it !== one) continue; await el.click({ timeout: 4000 }); return true; } catch (e) { err = e.message.split('\n')[0]; }
+        try { const it = ((await el.innerText()) || '').replace(/\s+/g, ' ').trim(); if (it !== one) continue; await closePop(); await el.click({ timeout: 4000 }); await page.waitForTimeout(400); if (await closePop()) { const bb = await el.boundingBox(); await el.click({ timeout: 4000, position: { x: 12, y: Math.max(4, Math.min(16, (bb ? bb.height : 30) / 2)) } }); await page.waitForTimeout(300); await closePop(); } return true; } catch (e) { err = e.message.split('\n')[0]; }
       }
     }
     console.log(`    (could not click option ${JSON.stringify(one)}: ${err})`);
@@ -242,7 +249,8 @@ const timeUp = () => (Date.now() - T0) / 1000 > (pol.maxSeconds || 540);
       if (st.stepState === 'SUMMARY') {
         if (pol.stopBeforeSummary) { console.log('\n(stopBeforeSummary set: ending here)'); break; }
         console.log('  (answers summary page: confirming it to reach the recommendations)');
-        if (!await clickNext()) { console.log('##### could not confirm the summary'); code = 2; break; }
+        await page.waitForTimeout(2500);
+        if (!await clickNext()) { await page.waitForTimeout(3000); try { await page.getByText('Continue', { exact: true }).last().click({ timeout: 5000 }); await page.waitForTimeout(2000); } catch (e) {} if (lastStep.seq <= handled + 1 && !await clickNext()) { console.log('  (no Continue on screen: waiting for the next step)'); } }
         continue;
       }
       await explain(st, pad(n));
@@ -253,7 +261,8 @@ const timeUp = () => (Date.now() - T0) / 1000 > (pol.maxSeconds || 540);
         if (q.type === 'MESSAGE' || q.type === 'INFO') continue;
         if (a === undefined && pol.default === 'auto') {
           const o = (q.answerChoices || []).map(x => strip(x.displayText));
-          if (q.type === 'SINGLE_CHOICE' && o.length === 2 && o.includes('Yes') && o.includes('No')) a = 'No';
+          const pf = (pol.prefer || []).find(x => o.includes(x));
+          if (pf) a = pf; else if (q.type === 'SINGLE_CHOICE' && o.length === 2 && o.includes('Yes') && o.includes('No')) a = 'No';
           else { const none = o.find(x => /^none( of (the above|these))?$/i.test(x)); if (none) a = none; else if (q.type === 'MULTIPLE_CHOICE') a = 'None of the above'; }
           if (a !== undefined) console.log(`    (auto-answer: ${JSON.stringify(a)})`);
         }

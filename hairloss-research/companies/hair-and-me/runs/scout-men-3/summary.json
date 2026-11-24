@@ -5,7 +5,8 @@
  "changedStep": null,
  "baselinesPooled": [
   "baseline-men",
-  "s2-base-men-1"
+  "s2-base-men-1",
+  "verify-base-men"
  ],
  "stepOrder": [
   "tp",

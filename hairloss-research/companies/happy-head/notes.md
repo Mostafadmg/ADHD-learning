@@ -157,3 +157,35 @@ everything else, born 15 Jun 1988.
   m-method-oral, m-method-topical, w-method-oral, w-method-topical, w-50plus, m-household-yes-decline
   (no change at all: dutasteride stays in the plan), m-choose-topical (check-up, blood pressure and weight pages vanish;
   product_ids = 116443 only).
+- Later the same session: m-dob-under18, w-dob-mismatch, m-pattern-other, m-symptoms-itch, m-cond-heart,
+  w-preg-no-postmeno, m-custom-yes, m-prior-oralfin-reaction, m-oral-choose-capsule, m-pattern-patches, m-goal-prevent,
+  w-50plus-full, m-dob-70, m-family-no. All 0 consultation posts.
+- Results: only sex/age band and method change the offer; every medical answer only adds a follow-up page or nothing.
+  Hard stop only for age under 18. Woman's birth date outside her band sends her back to the sex/age page.
+- company.json: after `python3 -I tools/build-company.py`, run `python3 -I tools/stage2-patch.py` ONCE (adds experiments,
+  observed evidence, rules R11-R21, recommendations, summary). Stage 1 copy kept in raw/company-stage1-backup.json.
+- Not run (written but skipped for time): m-goal-exploring, m-duration-lt6m, w-pattern-patches, m-household-yes-accept,
+  w-household-yes, m-bp-low, m-meds-yes, m-allergy-minoxidil, w-bc-none. Code says none changes the product.
+- New shots: shots/s2-*.jpg (under-18 stop, woman DOB mismatch, partner-pregnancy screen, woman 50+ recommendation).
+
+# Stage 3 (VERIFY) log, 23 Nov 2026 (in progress)
+
+- Runner: `bash tools/run-verify.sh <id>` (answers `runs/verify/<id>.json`, output `runs/<id>/`, one at a time).
+- verify-base-men (plain start URL, no redirect this time): same recommendation as recorded; ended on an EMAIL-ONLY wall
+  (no mobile field). verify-base-women on the plain URL was redirected to `email_capture=early_capture`: the email wall came
+  straight after "Take Me to My Plan", BEFORE the recommendation screen and before every medical question (the
+  recommendation call had already been made). So the wall's place and fields depend on a split test. Stage 2 runs/s2/baseline-men
+  already showed the email-only wall; company.json had said "email + US mobile" only. Corrected.
+- verify-base-women-pinned (sms_capture URL): same as recorded (minoxidil 6% topical TM3 $59 + spironolactone SuperCapsule SC3 $89).
+- Confirmed live: R3 (woman 50+ gets dutasteride set), R7 (under 18 stop, no NEXT), R8 (woman DOB mismatch sent back),
+  R11 (household pregnancy decline: plan unchanged), R15 (heart condition: one free-text page, plan unchanged),
+  R12 (choose topical: check-up/BP/weight skipped, product_ids 116443).
+- More confirmed: R4 (runs/verify-m-method-oral). New one-change tests: verify-w-50plus-oral (dutasteride capsule card), verify-w-bc-none
+  (no birth control: no warning, spironolactone stays), verify-w-household-yes (woman on a spironolactone plan is shown the
+  finasteride/dutasteride partner-risk screen), verify-m-bp-low (no change). 14 replays in stage 3, all 0 consultation posts.
+- company.json patched ONCE with `python3 -I tools/stage3-patch.py` (stage 2 copy in raw/company-stage2-backup.json). Adds the
+  verification block, rules R22-R26, 14 experiments; fixes R4/R8 effect types, the account wall text, p7/p8/p14/p16 product facts.
+- Product facts outside the quiz were checked only through WebSearch summaries (www.happyhead.com still not opened: robots.txt).
+- Validate: `node ../../tools/validate.js happy-head --stage final` passes.
+- Tip for the next person: pin the sms_capture start URL; the plain URL can land in the early_capture arm, where the email wall
+  comes before the recommendation screen and replays stop there.

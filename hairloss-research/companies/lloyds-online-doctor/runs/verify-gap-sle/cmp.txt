@@ -1,0 +1,9 @@
+PATH: 100013 > 100014 > 107977 > 107978 > 107979 > 107980 > 103257 > 107954 > 103261 > 105935 > 108014 > 103270 > 101561 > 107973 > 107800 > 102632 > 102624 > 108003 > 108001 > 108360 > SUMMARY > SUMMARY > 107988
+ADDED vs base: - | REMOVED vs base: -
+REC TEXT: Consultation overview: Your hair loss is consistent with male pattern hair loss You're new to hair loss treatment Our recommendation: You're suitable for Finasteride tablets and Minoxidil spray Combining Finasteride with Minoxidil may provide greater benefits than using either treatment alone, as they work in different ways.
+  (same text as base: false)
+  CARD Dual Action - Tablet + Spray | 6 months | £189.00 | 7.35 a week | inStock=false | rec=false | pref=false | main=true
+  CARD Finasteride tablets | 1 month | £163.00 | 6.79 a week | inStock=true | rec=false | pref=false | main=false
+  CARD Sons Minoxidil spray | 6 months | £99.00 | 3.85 a week | inStock=true | rec=false | pref=false | main=false
+  CARD Propecia | 1 month | £210.00 | 8.75 a week | inStock=true | rec=false | pref=false | main=false
+  CARDS vs base: removed [Dual Action - Tablets, Minoxidil tablets] added [] order same: true

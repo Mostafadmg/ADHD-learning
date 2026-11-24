@@ -1,0 +1,63 @@
+URL: https://core.onlinedoctor.lloydspharmacy.com/consultation/summary
+
+Exit consultation
+Your Consultation
+
+Below is a summary of your online consultation.
+Please review your responses and make any changes if needed.
+
+What was your sex at birth?
+Male
+Change answer
+What is your date of birth?
+15/06/1994
+Change answer
+Please select which of the images below best represents your hair loss
+Temples and Crown
+Change answer
+How did your hair loss start?
+Gradually, over months or years
+Change answer
+Have you lost any hair in other areas of your body such as eyebrows or beard?
+No
+Change answer
+Are you currently experiencing any changes to your scalp?
+No
+Change answer
+Have you ever taken any medication for hair loss?
+No
+Change answer
+Have you ever had any of the following conditions?
+None of the above
+Change answer
+Do you have Chronic Kidney Disease (CKD) or a reduced kidney function?
+No
+Change answer
+
+Have you ever had a condition that affects your heart or blood pressure? Examples include:
+
+High or low blood pressure
+Dizziness or faintness when standing up
+Heart failure
+An irregular heartbeat (arrythmias)
+Fluid or inflammation around the heart
+Heart valve or structural heart problems
+A heart attack, angina, stroke or mini-stroke (TIA)
+Another heart or blood vessel condition
+No
+Change answer
+Do you have any medical conditions other than those we have already asked about?
+No
+Change answer
+Are you currently taking any prescription medications?
+No
+Change answer
+Do you have any allergies?
+Yes
+Change answer
+Are you allergic to any of the following?
+Minoxidil or Regaine
+Change answer
+Is your partner pregnant, or are you planning or trying for a baby?
+None of the above
+Change answer

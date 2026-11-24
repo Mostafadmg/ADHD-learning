@@ -1,4 +1,4 @@
-STEP 03 wait 5000
+STEP 03 wait 6000
 URL: https://start.treated.com/GBR/en/#/choose-gender/024/024-322
 TITLE: Treated UK - Choose Better - Medical Experts & Treatments Online
 

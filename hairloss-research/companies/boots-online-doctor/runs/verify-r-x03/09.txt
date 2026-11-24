@@ -1,0 +1,26 @@
+STEP 09 wait 2000
+URL: https://onlinedoctor-clinic.boots.com/Hair-Loss
+TITLE: Consultation | Boots Online Doctor
+
+--- VISIBLE TEXT ---
+Call us: Mon-Fri 8:30AM-6PM, Sat-Sun 9:30AM-4:30PM
+ 0203 3183773
+Boots Advantage Card Shop Boots.com
+Services
+Meet the team
+FAQ
+LOG IN
+WHAT’S YOUR DATE OF BIRTH?
+Please make sure this is accurate to avoid delays to your treatment
+NEXT
+Already have a Boots Online Doctor Service account?
+Log in
+Powered by:
+©2026 Boots Digital Health Limited
+
+--- CONTROLS ---
+  button (3): Cookie Preferences  ·  LOG IN  ·  NEXT [disabled]
+  input:tel (1): Enter your date of birth
+
+--- LINKS ---
+  link (7): 0203 3183773 -> tel:0203 3183773  ·  Boots Advantage Card -> https://www.boots.com/advantage-card  ·  Shop Boots.com -> https://boots.com  ·  Services ->   ·  Meet the team -> https://onlinedoctor.boots.com/meet-the-team  ·  FAQ ->   ·  Log in -> /login

@@ -1,0 +1,69 @@
+{
+ "note": "exp verify-egfr-under30 overrides {\"101561\":\"Yes\",\"101564\":\"Less than 30\"}",
+ "answers": {
+  "100013": "Male",
+  "100014": {
+   "dob": [
+    15,
+    6,
+    1994
+   ]
+  },
+  "101561": "Yes",
+  "101564": "Less than 30",
+  "101599": {
+   "text": "No other medicines taken regularly"
+  },
+  "102624": "No",
+  "102632": "No",
+  "103257": "Temples and Crown",
+  "103261": "No",
+  "103268": "I understand and would like to continue",
+  "103270": "None of the above",
+  "103275": {
+   "text": "Not applicable, no further details to add"
+  },
+  "103277": "I understand",
+  "105935": "No",
+  "107160": {
+   "text": "Mild hay fever, no treatment needed"
+  },
+  "107800": "No",
+  "107954": "Gradually, over months or years",
+  "107959": "No",
+  "107973": "No",
+  "107977": "Tell me more",
+  "107981": {
+   "text": "Mild scalp itching that settled on its own"
+  },
+  "108001": "No",
+  "108002": "I confirm",
+  "108003": "None of the above",
+  "108004": "I understand",
+  "108014": "No",
+  "108016": "Yes, it's helped",
+  "108131": "I understand that if I am currently experiencing thoughts of self-harm or suicide I should seek medical advice immediately",
+  "108138": "I understand that results can be less predictable in these areas",
+  "108139": "I understand",
+  "108376": "I understand that significant regrowth may be less likely",
+  "108405": "I understand",
+  "108416": {
+   "text": "Low mood in 2019, fully resolved, stable since then"
+  },
+  "108417": {
+   "text": "My GP, not seen for it since 2019"
+  },
+  "108418": {
+   "text": "No medication was taken for it at any time"
+  },
+  "108419": "No"
+ },
+ "default": "auto",
+ "prefer": [
+  "Yes, it's helped",
+  "12 months or longer"
+ ],
+ "explain": false,
+ "maxSteps": 60,
+ "maxSeconds": 420
+}

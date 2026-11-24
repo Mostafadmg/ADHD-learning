@@ -1,0 +1,80 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 3,
+   "sectionTitle": "MEDICAL HISTORY"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 4455,
+    "inputConfig": {
+     "options": [
+      {
+       "description": "(e.g. Hydrocortisone or betamethasone)",
+       "internalId": 4,
+       "label": "Steroids or other medications for psoriasis or eczema on your scalp",
+       "value": "Steroids or other medications for psoriasis or eczema on your scalp"
+      },
+      {
+       "internalId": 998,
+       "label": "Other",
+       "value": "Other"
+      },
+      {
+       "exclusive": true,
+       "internalId": 997,
+       "label": "No, I don't take any medications",
+       "value": "No, I don't take any medications"
+      }
+     ]
+    },
+    "inputType": "multi_select_checkbox",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 4457,
+    "inputConfig": {
+     "maxLength": 1000,
+     "placeholder": "Type medications not listed above here",
+     "renderConditions": [
+      {
+       "operator": "notEmpty",
+       "questionId": 4455,
+       "value": null
+      },
+      {
+       "operator": "contains",
+       "questionId": 4455,
+       "value": "Other"
+      }
+     ]
+    },
+    "inputType": "text_area",
+    "is_custom": false,
+    "label": "Tell us about your other medications",
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Are you taking any of the following prescription medications?",
+  "type": "question"
+ }
+}

@@ -1,0 +1,138 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 2,
+   "sectionTitle": "YOUR HAIR"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 175,
+    "inputConfig": {
+     "displayTextV2": [
+      {
+       "text": [
+        {
+         "part": "These answers are based on the Fitzpatrick scale, a widely recognised medical classification scheme for skin colour."
+        }
+       ]
+      },
+      {
+       "header": "Why are we asking?",
+       "text": [
+        {
+         "part": "To help our Dermatology Clinicians prescribe your treatment accurately and safely."
+        }
+       ]
+      }
+     ]
+    },
+    "inputType": "display_text",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 9348,
+    "inputConfig": {
+     "instruction": "Drag the slider to the shade closest to your skin",
+     "options": [
+      {
+       "description": "It always burns, never tans",
+       "fromColor": "#FFF1E2",
+       "label": "Pale",
+       "max": 16,
+       "min": 0,
+       "toColor": "#F7DEC5",
+       "value": "Pale. It always burns, never tans"
+      },
+      {
+       "description": "It often burns, but tans a little",
+       "fromColor": "#F7DDC3",
+       "label": "Fair",
+       "max": 33,
+       "min": 17,
+       "toColor": "#EDCCAC",
+       "value": "Fair. It often burns, but tans a little"
+      },
+      {
+       "description": "It sometimes burns, tans evenly",
+       "fromColor": "#EDCBAB",
+       "label": "Darker shade of pale",
+       "max": 49,
+       "min": 34,
+       "toColor": "#D7AF8F",
+       "value": "Darker shade of pale. It sometimes burns, tans evenly"
+      },
+      {
+       "description": "It burns minimally, tans easily",
+       "fromColor": "#D5AC8D",
+       "label": "Light brown",
+       "max": 66,
+       "min": 50,
+       "toColor": "#B4876C",
+       "value": "Light brown. It burns minimally, tans easily"
+      },
+      {
+       "description": "It very rarely burns, tans darkly easily",
+       "fromColor": "#B2856B",
+       "label": "Brown",
+       "max": 83,
+       "min": 67,
+       "toColor": "#8C6653",
+       "value": "Brown. It very rarely burns, tans darkly easily"
+      },
+      {
+       "description": "It always tans darkly",
+       "fromColor": "#896452",
+       "label": "Dark brown or black",
+       "max": 100,
+       "min": 84,
+       "toColor": "#5A4843",
+       "value": "Dark brown or black. It always tans darkly"
+      }
+     ],
+     "positionQuestionId": 9349,
+     "savedPosition": null,
+     "start": 50
+    },
+    "inputType": "skin_tone_gradient",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 9349,
+    "inputConfig": {
+     "isOptional": true,
+     "max": 100,
+     "min": 0,
+     "step": 1
+    },
+    "inputType": "skin_tone_gradient_position",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Which best matches your skin?",
+  "type": "question"
+ }
+}

@@ -1,0 +1,20 @@
+STEP 20 wait 2000
+URL: https://www.numan.com/subscribe/hair-loss/fb569a8e-7e30-4dce-9824-75fa0375ecc0/gp-notification-choice
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+96%
+Would you like your GP to be informed of this consultation?
+
+To ensure we provide the best and safest service for you, we strongly encourage you to share your GP details so we can inform them about your treatment.
+
+Yes
+No
+Back
+
+--- CONTROLS ---
+  radio (2): Yes  ·  No
+  button (1): Back
+
+--- LINKS ---
+  link (1): Visit the main page -> /

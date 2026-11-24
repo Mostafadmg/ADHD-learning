@@ -10,6 +10,6 @@ const of=files.filter(f=>/orders_\d+\.json$/.test(f)).pop();
 let o=null;if(of){const j=JSON.parse(fs.readFileSync(path.join(net,of),'utf8'));o=j.body||j;}
 const out={url,questionnaires:[...new Set(qs)]};
 if(o){out.order={status:o.status,category:o.category&&o.category.code,total:o.fee&&o.fee.total,
- lines:(o.orderlines||[]).map(l=>({sku:l.product.sku,code:l.product.code,price:l.product.price,admin:l.status.admin_status,
+ lines:(o.orderlines||[]).map(l=>({sku:l.product.sku,code:l.product.code,price:l.product.price,admin:l.status.admin_status,answer:l.answer_status,scores:[l.answer_score_1,l.answer_score_2],
  tasks:(l.stages||[]).flatMap(s=>s.tasks.map(t=>`${t.name}:s${t.status.value}/f${t.flags}`))}))};}
 console.log(JSON.stringify(out));

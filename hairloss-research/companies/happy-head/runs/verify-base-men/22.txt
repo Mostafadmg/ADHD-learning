@@ -1,0 +1,20 @@
+STEP 22 click "Within the last year"
+URL: https://www.form.happyhead.com/get-started/?l=false&ph=true
+TITLE: Get Started | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+What is your most recent blood pressure reading?
+Low (Below 100 / 65)
+Normal (Around 120 / 80)
+Mildly Elevated (Around 140 / 90)
+High (Around 150 / 100)
+Why we ask
+Some hair loss medications may affect blood pressure or circulation. This helps our dermatologists recommend options that are appropriate and safe for you.
+Your information is secure and always kept private.
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

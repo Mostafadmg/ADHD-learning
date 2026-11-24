@@ -1,0 +1,25 @@
+STEP 11
+URL: https://www.hims.com/g/i/hl/routine
+SERVER NODE: routine (nodeModularScreen), step value 19
+
+--- VISIBLE TEXT ---
+Now let’s get to know your hair routine.
+
+Your answers help determine which treatment types best fit into your day-to-day.
+
+Continue
+
+--- CHOICES ---
+
+
+--- BUTTONS ---
+Continue
+
+--- FIELDS ---
+
+
+--- LINKS ---
+
+
+--- OUTPUT SCHEMA (server) ---
+{"type":"object","required":["responses"],"properties":{"responses":{"type":"object","required":[],"additionalProperties":false}}}

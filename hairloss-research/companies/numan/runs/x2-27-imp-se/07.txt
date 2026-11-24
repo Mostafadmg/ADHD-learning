@@ -1,0 +1,21 @@
+STEP 07 click "Next"
+URL: https://www.numan.com/subscribe/hair-loss/930c34ee-3dcc-4020-8147-58b746700cd9/sq/have_any_scalp_issues
+TITLE: Are you experiencing any of the following symptoms on your scalp? | Numan
+
+--- VISIBLE TEXT ---
+27%
+Are you experiencing any of the following symptoms on your scalp?
+Pain, itching, burning or bumps
+Red rinds or rashes
+Dandruff
+Psoriasis or eczema
+No
+Back
+Next
+
+--- CONTROLS ---
+  checkbox (5): Pain, itching, burning or bumps  ·  Red rinds or rashes  ·  Dandruff  ·  Psoriasis or eczema  ·  No
+  button (2): Back  ·  Next [disabled]
+
+--- LINKS ---
+  link (1): Visit the main page -> /

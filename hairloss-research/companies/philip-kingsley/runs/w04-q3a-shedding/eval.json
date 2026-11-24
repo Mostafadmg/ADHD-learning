@@ -1,0 +1,25 @@
+{
+ "quizId": "women_quiz",
+ "step": "women_quiz_step_user",
+ "url": "/quiz/step/view/stepId/women_quiz_step_user",
+ "skus": [
+  "PKC145",
+  "PHI1668"
+ ],
+ "noResultsTemplate": null,
+ "answers": {
+  "q1": "No",
+  "q2": "No",
+  "q3e": "People close to me can notice it",
+  "q3a": "More shedding than usual (in the shower/on my brush)",
+  "q4": "It's been happening gradually for over a year",
+  "q5a": "I don't have any of these symptoms",
+  "q6": "Healthy",
+  "q7": "Medium",
+  "q8": "Medium (shoulder length)",
+  "q9": "None of the above",
+  "q10a": "No",
+  "q11a": "I have no allergies",
+  "q12a": "No, I do not have a medical condition and am not taking any medication"
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "step": {
+  "title": "Gp and Consents",
+  "questions": [
+   {
+    "questionId": "100467",
+    "explanationAvailable": false,
+    "displayText": "<p>Please confirm the following to complete your consultation:</p>\n\n<ul>\n <p><li>I have responded honestly and provided complete and accurate information that reflects my up to date medical history and information, so that the LloydsPharmacy Online Doctor clinician can safely assess and advise me.</li></p>\n\n <p><li>I fully understand all the questions and information provided. If I am unsure about any aspect of the service I will contact the LloydsPharmacy Online Doctor before proceeding.</li></p>\n\n <p><li>I understand the side effects, effectiveness and alternatives to the treatment I am requesting.</li></p>\n\n <p><li>I understand the importance of notifying my GP about medicines and advice I may receive from this service so they can continue to provide safe medical care.</li></p>\n\n <p> <li>I understand this consultation will form part of my Online Doctor medical record and will be kept in line with the relevant retention period.</li></p>\n\n\n\n\n\n\n\n\n<p><li>I have read, understand and agree to the <a target=\"terms\" href=\"https://onlinedoctor.lloydspharmacy.com/info/about-us/terms-and-conditions\" style=\"text-decoration:underline; color: #166729\">terms and conditions</a> and <a href=\"https://onlinedoctor.lloydspharmacy.com/uk/privacy-notice\" target=\"privacy\" style=\"text-decoration:underline; color: #166729\">privacy notice</a>.</li></p>\n\n\n\n\n\n</ul>",
+    "type": "MULTIPLE_CHOICE",
+    "answerRequired": true,
+    "smoothTransition": false,
+    "answerChoices": [
+     {
+      "answerId": "100467$100114",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "100467",
+      "displayText": "I confirm the above",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false
+     }
+    ]
+   }
+  ],
+  "questionAnswerErrors": {},
+  "summaryRequiredBeforeStep": true,
+  "registrationRequiredBeforeStep": false,
+  "fastSummaryRequiredBeforeStep": false
+ },
+ "explanation": "/api/questionnaire/traversals/1407030/explanations",
+ "current": "/api/questionnaire/traversals/1407030/steps/current"
+}

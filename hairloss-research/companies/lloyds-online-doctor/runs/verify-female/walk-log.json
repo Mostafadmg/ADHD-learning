@@ -1,0 +1,119 @@
+[
+ {
+  "n": 3,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nYour details\nWhat was your sex at birth?\nMale\nFemale\nNext",
+  "sig": "100013",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "100013",
+    "type": "SINGLE_CHOICE",
+    "title": "Your details",
+    "text": "What was your sex at birth?",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "Male",
+     "Female"
+    ],
+    "optionIds": [
+     "100013$88",
+     "100013$89"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "100013": "Female"
+  }
+ },
+ {
+  "n": 4,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nYour details\nWhat is your date of birth?\nFor example: 31 3 1980\nDay\nMonth\nYear\nNext\nBack",
+  "sig": "100014",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "100014",
+    "type": "DATE_OF_BIRTH",
+    "title": "Your details",
+    "text": "What is your date of birth?",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "For example: 31 3 1980"
+    ],
+    "optionIds": [
+     "100014$100011"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "100014": {
+    "dob": [
+     15,
+     6,
+     1994
+    ]
+   }
+  }
+ },
+ {
+  "n": 5,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nYour details\nWhat is your date of birth?\nFor example: 31 3 1980\nDay\nMonth\nYear\nI confirm I am\n32\nyears old\nBack",
+  "sig": "SUMMARY",
+  "stepState": "SUMMARY",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": []
+ },
+ {
+  "n": 6,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nYour Consultation\n\nPlease confirm the following to complete your consultation:\n\nI have responded honestly and provided complete and accurate information that reflects my up to date medical history and information, so that the LloydsPharmacy Online Doctor clinician can safely assess and advise me.\n\nI fully understand all the questions and information provided. If I am unsure about any aspect of the service I will contact the LloydsPharmacy Online Doctor before proceeding.\n\nI understand the side effects, effectiveness and alternatives to the treatment I am requesting.\n\nI understand the importance of notifying my GP about medicines and advice I may receive from this service so they can continue to provide safe medical care.\n\nI understand this consultation will form part of my Online Doctor medical record and will be kept in line with the relevant retention period.\n\nI have read, understand and agree to the terms and conditions and privacy notice.\n\nI confirm the above\nNext",
+  "sig": "100467",
+  "title": "Gp and Consents",
+  "flags": {
+   "summaryRequiredBeforeStep": true,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "100467",
+    "type": "MULTIPLE_CHOICE",
+    "title": "",
+    "text": "Please confirm the following to complete your consultation: I have responded honestly and provided complete and accurate information that reflects my up to date medical history and information, so that the LloydsPharmacy Online Doctor clinician can safely assess and advise me. I fully understand all the questions and information provided. If I am unsure about any aspect of the service I will contact the LloydsPharmacy Online Doctor before proceeding. I understand the side effects, effectiveness and alternatives to the treatment I am requesting. I understand the importance of notifying my GP about medicines and advice I may receive from this service so they can continue to provide safe medical care. I understand this consultation will form part of my Online Doctor medical record and will be kept in line with the relevant retention period. I have read, understand and agree to the terms and conditions and privacy notice .",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "I confirm the above"
+    ],
+    "optionIds": [
+     "100467$100114"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "100467": "None of the above"
+  }
+ }
+]

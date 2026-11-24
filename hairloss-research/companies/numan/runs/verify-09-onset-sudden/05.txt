@@ -1,0 +1,21 @@
+STEP 05 click "label:text-is(\"Over the last few days or weeks\")"
+URL: https://www.numan.com/subscribe/hair-loss/abe5b46e-9073-4029-8873-8b6f82888b8e/sq/when_did_you_notice/reject/sudden
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+No suitable treatment
+
+The safety of our patients is our top priority. Unfortunately, our treatments are not suitable for you because they are not designed for sudden hair loss. Sudden hair loss can have a number of causes and we recommend you seek advice from your usual GP to investigate causes for your sudden hair loss.
+
+If you’d like to talk to our clinicians about this, please email clinic@numan.com and we’ll do our best to find a solution or recommend next steps.
+
+Did you make a mistake in your consultation? Providing false information can lead to serious harm to your health.
+
+Review your answers
+Back to homepage
+
+--- CONTROLS ---
+  button (1): Review your answers
+
+--- LINKS ---
+  link (3): Visit the main page -> /  ·  clinic@numan.com -> mailto:clinic@numan.com  ·  Back to homepage -> https://www.numan.com/

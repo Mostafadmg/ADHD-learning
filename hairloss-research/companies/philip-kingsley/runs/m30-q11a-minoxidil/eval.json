@@ -1,0 +1,28 @@
+{
+ "quizId": "men_quiz",
+ "step": "men_quiz_step_user",
+ "url": "/quiz/step/view/stepId/men_quiz_step_user",
+ "skus": [
+  "PHI1221",
+  "PHI1303"
+ ],
+ "noResultsTemplate": null,
+ "answers": {
+  "q1": "Temples and Crown",
+  "q2a": "My hair has thinned/receded noticeably in some areas, but other areas are still dense",
+  "q3": "More than a month ago",
+  "q4": "Gradually over months/years",
+  "q5": "Yes",
+  "q6": "30 to 39",
+  "q7a": "No conditions",
+  "q8": "None of the above",
+  "q9": "None of the above",
+  "q9a": "No",
+  "q9b": "No",
+  "q9c": "No",
+  "q9d": "No",
+  "q10a": "No",
+  "q11a": "Minoxidil",
+  "q12a": "No"
+ }
+}

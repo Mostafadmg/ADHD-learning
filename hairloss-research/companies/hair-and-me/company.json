@@ -23,7 +23,7 @@
    "The formula a patient actually gets is chosen by a prescriber after account creation and payment. That is behind the account wall and was not tested.",
    "shop.hairandme.com (a Shopify shop the product pages point to in a test variant: 'Buy now - £14.99') is password-locked ('Opening soon'); its product feed returns 401. It was left alone."
   ],
-  "coverageNote": "Stage 1 mapped both routes to the account wall. Stage 2 ran 47 replays: 2 baseline replays, 39 one-change experiments and 6 group tests of non-medical answers, each compared with a pool of baseline visits because the server varies screens at random. Covered one change at a time: first tile, age (17 years 11 months, 18, 85), pregnancy, three men's and three women's hair-loss pictures, recent onset, scalp infection and eczema, blood pressure (and its follow-up), eight further men's conditions, PCOS and heart disease for women, postpartum, facial hair, two medicine options (antidepressants; Other + free text), minoxidil allergy, finasteride allergy, previous finasteride, drops versus capsules on both routes, declining finasteride / dutasteride, pets, and a second goal. Covered in group tests: gender identity (six options), hair type, styling, lifestyle statements, the other hair-loss pictures and timings, skin tone, scalp condition, six-month wishes, washing, hiding hair loss, hard water, buying stage and 'what influenced you'. Everything after the legal-name screen (account, photos, payment, the prescriber's choice of formula, check-ins) was not tested and is described from public documents only."
+  "coverageNote": "Stage 1 mapped both routes to the account wall. Stage 2 ran 47 replays: 2 baseline replays, 39 one-change experiments and 6 group tests of non-medical answers, each compared with a pool of baseline visits because the server varies screens at random. Covered one change at a time: first tile, age (17 years 11 months, 18, 85), pregnancy, three men's and three women's hair-loss pictures, recent onset, scalp infection and eczema, blood pressure (and its follow-up), eight further men's conditions, PCOS and heart disease for women, postpartum, facial hair, two medicine options (antidepressants; Other + free text), minoxidil allergy, finasteride allergy, previous finasteride, drops versus capsules on both routes, declining finasteride / dutasteride, pets, and a second goal. Covered in group tests: gender identity (six options), hair type, styling, lifestyle statements, the other hair-loss pictures and timings, skin tone, scalp condition, six-month wishes, washing, hiding hair loss, hard water, buying stage and 'what influenced you'. Everything after the legal-name screen (account, photos, payment, the prescriber's choice of formula, check-ins) was not tested and is described from public documents only. Stage 3 (verify): 21 more replays (2 baselines, 17 one-change, 2 medical group tests), all one at a time; the stop, blood-pressure, pregnancy, gender-identity, pets, previous-product and promo rules were re-tested live (two goals, no hair loss and the 'Other' free-text boxes were not), and the 16 formulas and the price were re-checked against the live leaflets."
  },
  "products": [
   {
@@ -469,7 +469,8 @@
    "priceDetail": "Add-on subscription managed at /account/manage-subscription/the-vitamins with a 'First box offer' and its own promo-code box (site code).",
    "url": "https://www.hairandme.com/support/en/articles/619143-what-ingredients-are-in-the-hair-me-multivitamins",
    "recommendedWhen": "Not part of the public consultation: no answer was seen to trigger it and it never appeared in the bag. Code only: the consultation renderer has an add-on step headed 'Support your treatment' in which an item with code 'hairSupplement' can be added to the treatment, with a 'First box offer' and a price per 4 weeks; members can also manage it from their account. Where that step appears, and its price, are unknown (not served before the account wall).",
-   "evidence": "code"
+   "evidence": "code",
+   "note": "Stage 3: the support article 619143 (re-read 23 Nov 2026, src/verify/) lists only the raw ingredients, with no amounts, and also names vitamin B12. The amounts per dose come only from the site code (src/nxt/the-vitamins-*.js, 'Full ingredients'), which does not list B12. The two company sources disagree on B12."
   }
  ],
  "flows": [
@@ -497,7 +498,7 @@
      "options": [
       {
        "label": "Treatment for men",
-       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 36 more): this is the reference route to the £34.99 'Personalised treatment' bag. The tile does not pick the route: sex assigned at birth does.",
+       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 46 more): this is the reference route to the £34.99 'Personalised treatment' bag. The tile does not pick the route: sex assigned at birth does.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -674,7 +675,7 @@
       },
       {
        "label": "Ready to start treatment",
-       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-m-age-17 and 19 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-m-age-17 and 24 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -685,7 +686,7 @@
      "engineRole": "marketing",
      "branches": false,
      "branchDetail": "No change for either answer: 'Still exploring my options' was chosen inside group tests on both routes (runs/s2-m-sweep-1, runs/s2-w-sweep-3) and in the stage 1 scout runs/scout-men-1; same later screens and the same bag.",
-     "shownWhen": "not always: seen in 24 of 41 men's and 12 of 17 women's completed walks. The server adds or drops it at random (identical baseline answers gave visits with and without it), so it is an experiment on the site's side, not a branch.",
+     "shownWhen": "not always: seen in 29 of 51 men's and 17 of 28 women's completed walks. The server adds or drops it at random (identical baseline answers gave visits with and without it), so it is an experiment on the site's side, not a branch.",
      "evidence": "observed",
      "siteQuestionId": 8038
     },
@@ -713,8 +714,8 @@
       },
       {
        "label": "Female",
-       "effect": "Sets the women's route (runs/baseline-women, runs/s2-base-women-1, and runs/scout-women-1 where the first tile said 'Treatment for men'). Adds: wash frequency, hiding hair loss, hard water, the women's hair-loss pictures, 'Our Dermatology Team have a few more questions', pregnancy / breastfeeding, postpartum / facial hair, and shorter women's medicines and conditions lists. The dutasteride / finasteride acknowledgement is never shown. Docs: the oral leaflet says finasteride and dutasteride 'should not be taken by women', and the FAQ says they are never prescribed to women of childbearing potential.",
-       "effectType": "product-removed",
+       "effect": "Sets the women's route (runs/baseline-women, runs/s2-base-women-1, and runs/scout-women-1 where the first tile said 'Treatment for men'). Adds: wash frequency, hiding hair loss, hard water, the women's hair-loss pictures, 'Our Dermatology Team have a few more questions', pregnancy / breastfeeding, postpartum / facial hair, and shorter women's medicines and conditions lists. The dutasteride / finasteride acknowledgement is never shown. Docs: the oral leaflet says finasteride and dutasteride 'should not be taken by women', and the FAQ says they are never prescribed to women of childbearing potential. (Stage 3: the route swap is observed; the removal of finasteride and dutasteride for women is docs, from the oral leaflet.)",
+       "effectType": "extra-questions",
        "affects": [
         "cap-fin1-min25",
         "cap-fin1-min5",
@@ -744,10 +745,10 @@
      "options": [
       {
        "label": "Woman/Girl",
-       "effect": "Not chosen on the men's route in any replay. By the pattern seen (the men's 'You're not alone' screen is shown only for a blank answer or Man/Boy) it would probably skip that screen too and change nothing else (inferred).",
+       "effect": "One-change replay (runs/verify-m-gender-woman, stage 3): the men's 'You're not alone' screen is skipped. Same questions otherwise and the same £34.99 bag.",
        "effectType": "skip-questions",
        "affects": [],
-       "evidence": "inferred"
+       "evidence": "observed"
       },
       {
        "label": "Man/Boy",
@@ -772,7 +773,7 @@
       },
       {
        "label": "Non-Binary/Genderqueer/Agender/Gender Fluid",
-       "effect": "Stage 1 scout (runs/scout-neither, where the first tile was also changed to 'Neither of these are right for me'): the men's 'You're not alone' screen was skipped; otherwise the men's route and the same £34.99 bag.",
+       "effect": "One-change replay (runs/verify-m-gender-nonbinary, stage 3; first seen in the stage 1 scout runs/scout-neither): the men's 'You're not alone' screen is skipped. Same questions otherwise and the same £34.99 bag.",
        "effectType": "skip-questions",
        "affects": [],
        "evidence": "observed"
@@ -843,7 +844,7 @@
      "engineRole": "marketing",
      "branches": false,
      "branchDetail": "",
-     "shownWhen": "men's route only (sex assigned at birth = Male): seen in 41 of 41 men's and 0 of 17 women's completed walks",
+     "shownWhen": "men's route only (sex assigned at birth = Male): seen in 51 of 51 men's and 0 of 28 women's completed walks",
      "evidence": "observed"
     },
     {
@@ -856,7 +857,7 @@
      "options": [
       {
        "label": "Straight",
-       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 35 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 45 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -961,7 +962,7 @@
       },
       {
        "label": "None of the above",
-       "effect": "Baseline answer (runs/baseline-men, runs/s2-m-al-finasteride, runs/s2-m-al-minoxidil and 12 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-men, runs/s2-m-al-finasteride, runs/s2-m-al-minoxidil and 21 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -973,7 +974,7 @@
      "engineRole": "diagnosis",
      "branches": false,
      "branchDetail": "No change for any option: all seven styling habits were ticked across group tests on both routes (runs/s2-m-sweep-1, runs/s2-m-sweep-2, runs/s2-w-sweep-2, runs/s2-w-sweep-3). Heat, bleach, relaxers or tight protective styles (causes of breakage and traction hair loss) add no question and no advice.",
-     "shownWhen": "not always: seen in 17 of 41 men's and 17 of 17 women's completed walks. On the men's route the server adds or drops it at random between visits with identical answers; every women's walk had it.",
+     "shownWhen": "not always: seen in 26 of 51 men's and 28 of 28 women's completed walks. On the men's route the server adds or drops it at random between visits with identical answers; every women's walk had it.",
      "evidence": "observed",
      "siteQuestionId": 253
     },
@@ -1019,7 +1020,7 @@
       },
       {
        "label": "None of these apply to me",
-       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 36 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 46 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -1031,7 +1032,7 @@
      "engineRole": "diagnosis",
      "branches": false,
      "branchDetail": "No change with any statement ticked (little sleep + major life event in the group test runs/s2-m-sweep-1; stress + weight loss in the stage 1 scout runs/scout-men-1). Recent weight loss, stress or a major life event (classic triggers of temporary shedding) do not add a question or advice.",
-     "shownWhen": "men's route only: seen in 41 of 41 men's and 0 of 17 women's completed walks. Optional (Next works with nothing ticked).",
+     "shownWhen": "men's route only: seen in 51 of 51 men's and 0 of 28 women's completed walks. Optional (Next works with nothing ticked).",
      "evidence": "observed",
      "siteQuestionId": 8014
     },
@@ -1045,11 +1046,11 @@
      "options": [
       {
        "label": "Minoxidil tablets",
-       "effect": "Stage 1 multi-change scout (runs/scout-men-1, runs/scout-men-3): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. The screen's own words: \"It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.\" So the answer tells the prescriber what the patient already tolerates and makes the patient agree to stop it. It is not a filter: nothing is removed or added before the wall.",
+       "effect": "Group test (runs/verify-m-group-medical: 5 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. The screen's own words: \"It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.\" So the answer tells the prescriber what the patient already tolerates and makes the patient agree to stop it. It is not a filter: nothing is removed or added before the wall.",
        "effectType": "soft-warning",
        "affects": [],
        "evidence": "observed",
-       "testedBy": "scout"
+       "testedBy": "sweep"
       },
       {
        "label": "Finasteride tablets",
@@ -1061,39 +1062,39 @@
       },
       {
        "label": "Spironolactone tablets",
-       "effect": "Stage 1 multi-change scout (runs/scout-men-3): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. The screen's own words: \"It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.\" So the answer tells the prescriber what the patient already tolerates and makes the patient agree to stop it. It is not a filter: nothing is removed or added before the wall. Spironolactone is only ever a 'previously used' option: Hair + Me does not supply it.",
+       "effect": "Group test (runs/verify-m-group-medical: 5 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. The screen's own words: \"It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.\" So the answer tells the prescriber what the patient already tolerates and makes the patient agree to stop it. It is not a filter: nothing is removed or added before the wall. Spironolactone is only ever a 'previously used' option: Hair + Me does not supply it.",
        "effectType": "soft-warning",
        "affects": [],
        "evidence": "observed",
-       "testedBy": "scout"
+       "testedBy": "sweep"
       },
       {
        "label": "Minoxidil spray",
-       "effect": "Stage 1 multi-change scout (runs/scout-men-3): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. The screen's own words: \"It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.\" So the answer tells the prescriber what the patient already tolerates and makes the patient agree to stop it. It is not a filter: nothing is removed or added before the wall.",
+       "effect": "Group test (runs/verify-m-group-medical: 5 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. The screen's own words: \"It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.\" So the answer tells the prescriber what the patient already tolerates and makes the patient agree to stop it. It is not a filter: nothing is removed or added before the wall.",
        "effectType": "soft-warning",
        "affects": [],
        "evidence": "observed",
-       "testedBy": "scout"
+       "testedBy": "sweep"
       },
       {
        "label": "Finasteride spray",
-       "effect": "Stage 1 multi-change scout (runs/scout-men-3): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. The screen's own words: \"It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.\" So the answer tells the prescriber what the patient already tolerates and makes the patient agree to stop it. It is not a filter: nothing is removed or added before the wall.",
+       "effect": "Group test (runs/verify-m-group-medical: 5 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. The screen's own words: \"It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.\" So the answer tells the prescriber what the patient already tolerates and makes the patient agree to stop it. It is not a filter: nothing is removed or added before the wall.",
        "effectType": "soft-warning",
        "affects": [],
        "evidence": "observed",
-       "testedBy": "scout"
+       "testedBy": "sweep"
       },
       {
        "label": "Dutasteride capsules",
-       "effect": "Stage 1 multi-change scout (runs/scout-men-3): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. The screen's own words: \"It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.\" So the answer tells the prescriber what the patient already tolerates and makes the patient agree to stop it. It is not a filter: nothing is removed or added before the wall.",
+       "effect": "Group test (runs/verify-m-group-medical: 5 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. The screen's own words: \"It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.\" So the answer tells the prescriber what the patient already tolerates and makes the patient agree to stop it. It is not a filter: nothing is removed or added before the wall.",
        "effectType": "soft-warning",
        "affects": [],
        "evidence": "observed",
-       "testedBy": "scout"
+       "testedBy": "sweep"
       },
       {
        "label": "None of the above",
-       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 35 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 44 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -1143,7 +1144,7 @@
      "options": [
       {
        "label": "Across the hairline",
-       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 29 more): this is the reference route to the £34.99 'Personalised treatment' bag. The answer is stored for the prescriber; what it does to the final formula cannot be seen without an account.",
+       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 39 more): this is the reference route to the £34.99 'Personalised treatment' bag. The answer is stored for the prescriber; what it does to the final formula cannot be seen without an account.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -1248,7 +1249,7 @@
       },
       {
        "label": "Over a year ago",
-       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 33 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 43 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -1304,7 +1305,7 @@
       },
       {
        "label": "Fair. It often burns, but tans a little",
-       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 35 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 45 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -1361,7 +1362,7 @@
      "options": [
       {
        "label": "Normal",
-       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 36 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 46 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -1405,15 +1406,15 @@
      "options": [
       {
        "label": "Flaking or dandruff",
-       "effect": "Not replayed on this route. The same screen is served on the women's route, where a multi-change scout (runs/scout-women-2) showed nothing visible changing.",
+       "effect": "Group test (runs/verify-m-group-medical: 5 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall.",
        "effectType": "none",
        "affects": [],
-       "evidence": "inferred",
-       "testedBy": "other-route"
+       "evidence": "observed",
+       "testedBy": "sweep"
       },
       {
        "label": "Redness and crusting around the base of your hair",
-       "effect": "Not replayed on this route. The same screen is served on the women's route, where a multi-change scout (runs/scout-women-2) showed nothing visible changing. Docs (both topical leaflets): do not use the drops on inflamed, infected, irritated or painful scalp skin; minoxidil, finasteride and tretinoin drops are also ruled out with scalp psoriasis or eczema. So the prescriber is expected to avoid drops (capsules instead, or a delay) after sign-up; the questionnaire itself says nothing.",
+       "effect": "Group test (runs/verify-m-group-medical: 5 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (both topical leaflets): do not use the drops on inflamed, infected, irritated or painful scalp skin; minoxidil, finasteride and tretinoin drops are also ruled out with scalp psoriasis or eczema. So the prescriber is expected to avoid drops (capsules instead, or a delay) after sign-up; the questionnaire itself says nothing.",
        "effectType": "flag-for-clinician",
        "affects": [
         "drp-min5-od",
@@ -1428,11 +1429,11 @@
         "drp-nia5-mel01"
        ],
        "evidence": "docs",
-       "testedBy": "other-route"
+       "testedBy": "sweep"
       },
       {
        "label": "Highly sensitive and irritable areas",
-       "effect": "Not replayed on this route. The same screen is served on the women's route, where a multi-change scout (runs/scout-women-2) showed nothing visible changing. Docs (both topical leaflets): do not use the drops on inflamed, infected, irritated or painful scalp skin; minoxidil, finasteride and tretinoin drops are also ruled out with scalp psoriasis or eczema. So the prescriber is expected to avoid drops (capsules instead, or a delay) after sign-up; the questionnaire itself says nothing.",
+       "effect": "Group test (runs/verify-m-group-medical: 5 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (both topical leaflets): do not use the drops on inflamed, infected, irritated or painful scalp skin; minoxidil, finasteride and tretinoin drops are also ruled out with scalp psoriasis or eczema. So the prescriber is expected to avoid drops (capsules instead, or a delay) after sign-up; the questionnaire itself says nothing.",
        "effectType": "flag-for-clinician",
        "affects": [
         "drp-min5-od",
@@ -1447,7 +1448,7 @@
         "drp-nia5-mel01"
        ],
        "evidence": "docs",
-       "testedBy": "other-route"
+       "testedBy": "sweep"
       },
       {
        "label": "Diagnosed eczema, psoriasis or seborrheic dermatitis",
@@ -1470,7 +1471,7 @@
       },
       {
        "label": "Pustules/lumps/cysts",
-       "effect": "Not replayed on this route. The same screen is served on the women's route, where a multi-change scout (runs/scout-women-2) showed nothing visible changing. Docs (both topical leaflets): do not use the drops on inflamed, infected, irritated or painful scalp skin; minoxidil, finasteride and tretinoin drops are also ruled out with scalp psoriasis or eczema. So the prescriber is expected to avoid drops (capsules instead, or a delay) after sign-up; the questionnaire itself says nothing.",
+       "effect": "Group test (runs/verify-m-group-medical: 5 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (both topical leaflets): do not use the drops on inflamed, infected, irritated or painful scalp skin; minoxidil, finasteride and tretinoin drops are also ruled out with scalp psoriasis or eczema. So the prescriber is expected to avoid drops (capsules instead, or a delay) after sign-up; the questionnaire itself says nothing.",
        "effectType": "flag-for-clinician",
        "affects": [
         "drp-min5-od",
@@ -1485,7 +1486,7 @@
         "drp-nia5-mel01"
        ],
        "evidence": "docs",
-       "testedBy": "other-route"
+       "testedBy": "sweep"
       },
       {
        "label": "A diagnosed active infection (e.g. folliculitis, candida, ringworm)",
@@ -1508,7 +1509,7 @@
       },
       {
        "label": "Pain and/or burning sensation",
-       "effect": "Stage 1 multi-change scout (runs/scout-men-2): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. Docs (both topical leaflets): do not use the drops on inflamed, infected, irritated or painful scalp skin; minoxidil, finasteride and tretinoin drops are also ruled out with scalp psoriasis or eczema. So the prescriber is expected to avoid drops (capsules instead, or a delay) after sign-up; the questionnaire itself says nothing.",
+       "effect": "Group test (runs/verify-m-group-medical: 5 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (both topical leaflets): do not use the drops on inflamed, infected, irritated or painful scalp skin; minoxidil, finasteride and tretinoin drops are also ruled out with scalp psoriasis or eczema. So the prescriber is expected to avoid drops (capsules instead, or a delay) after sign-up; the questionnaire itself says nothing.",
        "effectType": "flag-for-clinician",
        "affects": [
         "drp-min5-od",
@@ -1523,11 +1524,11 @@
         "drp-nia5-mel01"
        ],
        "evidence": "docs",
-       "testedBy": "scout"
+       "testedBy": "sweep"
       },
       {
        "label": "None of the above",
-       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 35 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 44 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -1577,7 +1578,7 @@
       },
       {
        "label": "Fuller, denser-looking hair that I feel confident about",
-       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 37 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 47 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -1617,7 +1618,7 @@
       },
       {
        "label": "No",
-       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 36 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 46 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -1662,7 +1663,7 @@
       },
       {
        "label": "The Capsules",
-       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 36 more): this is the reference route to the £34.99 'Personalised treatment' bag. A preference, not a choice (badged 'Most popular'). The screen says: \"We'll do our best to accommodate your preference, but ultimately, this will be determined by our Dermatology Team.\" The bag reads '4 week supply · 12ml' even for capsule choosers.",
+       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 46 more): this is the reference route to the £34.99 'Personalised treatment' bag. A preference, not a choice (badged 'Most popular'). The screen says: \"We'll do our best to accommodate your preference, but ultimately, this will be determined by our Dermatology Team.\" The bag reads '4 week supply · 12ml' even for capsule choosers.",
        "effectType": "product-switched",
        "affects": [
         "cap-min05",
@@ -1698,7 +1699,7 @@
      "options": [
       {
        "label": "I agree to the information above and wish to be considered for dutasteride or finasteride. I agree to read the Patient Information Leaflet",
-       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 36 more): this is the reference route to the £34.99 'Personalised treatment' bag. Keeps the finasteride and dutasteride formulas in play and records informed consent to their risks (fertility, semen exposure, mood, sexual function, breast changes, persistent effects).",
+       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 45 more): this is the reference route to the £34.99 'Personalised treatment' bag. Keeps the finasteride and dutasteride formulas in play and records informed consent to their risks (fertility, semen exposure, mood, sexual function, breast changes, persistent effects).",
        "effectType": "none",
        "affects": [
         "cap-fin1-min25",
@@ -1713,7 +1714,7 @@
       },
       {
        "label": "I do not wish to be considered for dutasteride or finasteride",
-       "effect": "One-change replay (runs/s2-m-pp-decline): nothing a visitor can see changed: same screens, no warning, no stop, same bag (Personalised treatment, 4 week supply, £34.99). By its own wording this takes finasteride and dutasteride out of consideration, leaving minoxidil-only capsules or drops (or the niacinamide drops). The later prostate, sexual-function and mental-health options are still shown. Which formula is then chosen cannot be seen without an account.",
+       "effect": "One-change replay (runs/s2-m-pp-decline, runs/verify-m-pp-decline): nothing a visitor can see changed: same screens, no warning, no stop, same bag (Personalised treatment, 4 week supply, £34.99). By its own wording this takes finasteride and dutasteride out of consideration, leaving minoxidil-only capsules or drops (or the niacinamide drops). The later prostate, sexual-function and mental-health options are still shown. Which formula is then chosen cannot be seen without an account.",
        "effectType": "product-removed",
        "affects": [
         "cap-fin1-min25",
@@ -1758,7 +1759,7 @@
       },
       {
        "label": "Medication to treat benign prostate hyperplasia (BPH)",
-       "effect": "Stage 1 multi-change scout (runs/scout-men-2, runs/scout-men-3): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. Docs (leaflets): finasteride and dutasteride must not be used with finasteride 5 mg or any other 5-alpha-reductase inhibitor, or by men with BPH; alpha-blockers also interact with dutasteride. So the prescriber is expected to rule those formulas out after sign-up; the questionnaire itself gives no warning.",
+       "effect": "One-change replay (runs/verify-m-mdm-bph): nothing a visitor can see changed: same screens, no warning, no stop, same bag (Personalised treatment, 4 week supply, £34.99). Docs (leaflets): finasteride and dutasteride must not be used with finasteride 5 mg or any other 5-alpha-reductase inhibitor, or by men with BPH; alpha-blockers also interact with dutasteride. So the prescriber is expected to rule those formulas out after sign-up; the questionnaire itself gives no warning.",
        "effectType": "flag-for-clinician",
        "affects": [
         "cap-fin1-min25",
@@ -1770,11 +1771,11 @@
        ],
        "evidence": "docs",
        "subLabel": "(e.g. alpha blockers like doxazosin, tamsulosin, alfuzosin or finasteride 5mg)",
-       "testedBy": "scout"
+       "testedBy": "one-change"
       },
       {
        "label": "Steroids or other medications for psoriasis or eczema on your scalp",
-       "effect": "Stage 1 multi-change scout (runs/scout-men-3): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. Docs (topical leaflets): the drops should not be applied with an inflammatory scalp condition such as psoriasis or eczema, so this points towards capsules or a delay (inferred).",
+       "effect": "Group test (runs/verify-m-group-medical: 5 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (topical leaflets): the drops should not be applied with an inflammatory scalp condition such as psoriasis or eczema, so this points towards capsules or a delay (inferred).",
        "effectType": "flag-for-clinician",
        "affects": [
         "drp-min5-od",
@@ -1790,7 +1791,7 @@
        ],
        "evidence": "inferred",
        "subLabel": "(e.g. Hydrocortisone or betamethasone)",
-       "testedBy": "scout"
+       "testedBy": "sweep"
       },
       {
        "label": "Other",
@@ -1802,7 +1803,7 @@
       },
       {
        "label": "No, I don't take any medications",
-       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 34 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 42 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -1859,7 +1860,7 @@
       },
       {
        "label": "High blood pressure (hypertension) or low blood pressure (hypotension)",
-       "effect": "One-change replay (runs/s2-m-mcm-bp): one extra screen, 'How would you describe your blood pressure over the past 12 months?' (Well-controlled / Often elevated / Often low, plus an optional last reading). Answered 'Well-controlled': same later questions and the same £34.99 bag. Docs (oral leaflet): no minoxidil capsules with uncontrolled high blood pressure; that is why the follow-up asks how well controlled it is.",
+       "effect": "One-change replay (runs/s2-m-mcm-bp, runs/verify-m-bp-elevated-reading): one extra screen, 'How would you describe your blood pressure over the past 12 months?' (Well-controlled / Often elevated / Often low, plus an optional last reading). Answered 'Well-controlled': same later questions and the same £34.99 bag. Docs (oral leaflet): no minoxidil capsules with uncontrolled high blood pressure; that is why the follow-up asks how well controlled it is.",
        "effectType": "extra-questions",
        "affects": [
         "cap-min05",
@@ -1874,7 +1875,7 @@
       },
       {
        "label": "Any heart or cardiovascular condition (e.g. stroke, heart attack, heart failure, angina, atrial fibrillation, valve disorder, irregular or fast heartbeat)",
-       "effect": "One-change replay (runs/s2-m-mcm-heart): nothing a visitor can see changed: same screens, no warning, no stop, same bag (Personalised treatment, 4 week supply, £34.99). Docs (oral leaflet): avoid minoxidil capsules with angina, a recent heart attack, heart failure or a history of significant heart disease. So the prescriber is expected to rule those formulas out after sign-up; the questionnaire itself gives no warning.",
+       "effect": "One-change replay (runs/s2-m-mcm-heart, runs/verify-m-mcm-heart): nothing a visitor can see changed: same screens, no warning, no stop, same bag (Personalised treatment, 4 week supply, £34.99). Docs (oral leaflet): avoid minoxidil capsules with angina, a recent heart attack, heart failure or a history of significant heart disease. So the prescriber is expected to rule those formulas out after sign-up; the questionnaire itself gives no warning.",
        "effectType": "flag-for-clinician",
        "affects": [
         "cap-min05",
@@ -1958,7 +1959,7 @@
       },
       {
        "label": "Hypertrichosis (excessive hair growth anywhere on the body, unrelated to hormones)",
-       "effect": "Stage 1 multi-change scout (runs/scout-men-3): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. Docs (oral leaflet): extra body and facial hair is a very common effect of oral minoxidil, so capsules look a poor fit (inferred).",
+       "effect": "Group test (runs/verify-m-group-medical: 5 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (oral leaflet): extra body and facial hair is a very common effect of oral minoxidil, so capsules look a poor fit (inferred).",
        "effectType": "flag-for-clinician",
        "affects": [
         "cap-min05",
@@ -1969,11 +1970,11 @@
         "cap-dut05-min125"
        ],
        "evidence": "inferred",
-       "testedBy": "scout"
+       "testedBy": "sweep"
       },
       {
        "label": "PoTS syndrome (postural tachycardia syndrome)",
-       "effect": "Stage 1 multi-change scout (runs/scout-men-3): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. Docs (oral leaflet): oral minoxidil very commonly raises heart rate, so capsules look a poor fit (inferred).",
+       "effect": "Group test (runs/verify-m-group-medical: 5 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (oral leaflet): oral minoxidil very commonly raises heart rate, so capsules look a poor fit (inferred).",
        "effectType": "flag-for-clinician",
        "affects": [
         "cap-min05",
@@ -1984,7 +1985,7 @@
         "cap-dut05-min125"
        ],
        "evidence": "inferred",
-       "testedBy": "scout"
+       "testedBy": "sweep"
       },
       {
        "label": "Liver disease (e.g. hepatitis, cirrhosis, non-alcoholic fatty liver disease)",
@@ -2003,7 +2004,7 @@
       },
       {
        "label": "None of the above",
-       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 26 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 33 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -2097,7 +2098,7 @@
      "options": [
       {
        "label": "Minoxidil",
-       "effect": "One-change replay (runs/s2-m-al-minoxidil): nothing a visitor can see changed: same screens, no warning, no stop, same bag (Personalised treatment, 4 week supply, £34.99). Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing minoxidil should be ruled out by the prescriber. That leaves finasteride 0.2% drops (men) or the niacinamide drops. The questionnaire itself gives no warning.",
+       "effect": "One-change replay (runs/s2-m-al-minoxidil, runs/verify-m-al-minoxidil): nothing a visitor can see changed: same screens, no warning, no stop, same bag (Personalised treatment, 4 week supply, £34.99). Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing minoxidil should be ruled out by the prescriber. That leaves finasteride 0.2% drops (men) or the niacinamide drops. The questionnaire itself gives no warning.",
        "effectType": "flag-for-clinician",
        "affects": [
         "cap-min05",
@@ -2131,39 +2132,39 @@
       },
       {
        "label": "Dutasteride",
-       "effect": "Stage 1 multi-change scout (runs/scout-men-3): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing dutasteride should be ruled out by the prescriber. The questionnaire itself gives no warning.",
+       "effect": "Group test (runs/verify-m-group-medical: 5 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing dutasteride should be ruled out by the prescriber. The questionnaire itself gives no warning.",
        "effectType": "flag-for-clinician",
        "affects": [
         "cap-dut05-min125"
        ],
        "evidence": "docs",
-       "testedBy": "scout"
+       "testedBy": "sweep"
       },
       {
        "label": "Melatonin",
-       "effect": "Stage 1 multi-change scout (runs/scout-men-3): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing melatonin should be ruled out by the prescriber. The questionnaire itself gives no warning.",
+       "effect": "Group test (runs/verify-m-group-medical: 5 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing melatonin should be ruled out by the prescriber. The questionnaire itself gives no warning.",
        "effectType": "flag-for-clinician",
        "affects": [
         "drp-nia5-urea2-mel01",
         "drp-nia5-mel01"
        ],
        "evidence": "docs",
-       "testedBy": "scout"
+       "testedBy": "sweep"
       },
       {
        "label": "Urea",
-       "effect": "Stage 1 multi-change scout (runs/scout-men-3): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing urea should be ruled out by the prescriber. The questionnaire itself gives no warning.",
+       "effect": "Group test (runs/verify-m-group-medical: 5 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing urea should be ruled out by the prescriber. The questionnaire itself gives no warning.",
        "effectType": "flag-for-clinician",
        "affects": [
         "drp-nia5-urea2",
         "drp-nia5-urea2-mel01"
        ],
        "evidence": "docs",
-       "testedBy": "scout"
+       "testedBy": "sweep"
       },
       {
        "label": "Niacinamide",
-       "effect": "Stage 1 multi-change scout (runs/scout-men-3): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing niacinamide should be ruled out by the prescriber. The questionnaire itself gives no warning.",
+       "effect": "Group test (runs/verify-m-group-medical: 5 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing niacinamide should be ruled out by the prescriber. The questionnaire itself gives no warning.",
        "effectType": "flag-for-clinician",
        "affects": [
         "drp-nia5-urea2",
@@ -2172,28 +2173,28 @@
         "drp-nia5-mel01"
        ],
        "evidence": "docs",
-       "testedBy": "scout"
+       "testedBy": "sweep"
       },
       {
        "label": "Tretinoin",
-       "effect": "Stage 1 multi-change scout (runs/scout-men-3): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing tretinoin should be ruled out by the prescriber. The questionnaire itself gives no warning.",
+       "effect": "Group test (runs/verify-m-group-medical: 5 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing tretinoin should be ruled out by the prescriber. The questionnaire itself gives no warning.",
        "effectType": "flag-for-clinician",
        "affects": [
         "drp-min5-tret",
         "drp-min5-tret-fin01"
        ],
        "evidence": "docs",
-       "testedBy": "scout"
+       "testedBy": "sweep"
       },
       {
        "label": "Vitamin B6 (Pyridoxine)",
-       "effect": "Stage 1 multi-change scout (runs/scout-men-3): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing vitamin B6 should be ruled out by the prescriber. The questionnaire itself gives no warning.",
+       "effect": "Group test (runs/verify-m-group-medical: 5 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing vitamin B6 should be ruled out by the prescriber. The questionnaire itself gives no warning.",
        "effectType": "flag-for-clinician",
        "affects": [
         "cap-min25-b6"
        ],
        "evidence": "docs",
-       "testedBy": "scout"
+       "testedBy": "sweep"
       },
       {
        "label": "Other",
@@ -2205,7 +2206,7 @@
       },
       {
        "label": "No known allergies",
-       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 34 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 42 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -2265,7 +2266,7 @@
      "engineRole": "marketing",
      "branches": false,
      "branchDetail": "",
-     "shownWhen": "men's route (sex at birth Male) with gender identity left blank or set to Man/Boy: seen in 37 of 41 men's and 0 of 17 women's completed walks. Every men's walk without it had another gender identity selected (Transwoman/Transgirl, Non-Binary or Prefer not to say). Stage 1 took this for random variation; it is a branch. The title varies at random ('You're not alone' / 'Lots of people feel this way').",
+     "shownWhen": "men's route (sex at birth Male) with gender identity left blank or set to Man/Boy: seen in 45 of 51 men's and 0 of 28 women's completed walks. Every men's walk without it had another gender identity selected (Transwoman/Transgirl, Non-Binary or Prefer not to say). Stage 1 took this for random variation; it is a branch. The title varies at random ('You're not alone' / 'Lots of people feel this way').",
      "evidence": "observed"
     },
     {
@@ -2302,7 +2303,7 @@
       },
       {
        "label": "I'm looking for a long-term effective haircare treatment",
-       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 36 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-men, runs/entry-promo-caps-men, runs/s2-base-men-1 and 46 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -2552,7 +2553,7 @@
       },
       {
        "label": "Treatment for women",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 13 more): this is the reference route to the £34.99 'Personalised treatment' bag. The tile does not pick the route: with sex at birth Male the men's questions follow (runs/s2-m-tile-women), with Female the women's.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 24 more): this is the reference route to the £34.99 'Personalised treatment' bag. The tile does not pick the route: with sex at birth Male the men's questions follow (runs/s2-m-tile-women), with Female the women's.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -2721,7 +2722,7 @@
       },
       {
        "label": "Ready to start treatment",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 8 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 13 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -2732,7 +2733,7 @@
      "engineRole": "marketing",
      "branches": false,
      "branchDetail": "No change for either answer: 'Still exploring my options' was chosen inside group tests on both routes (runs/s2-m-sweep-1, runs/s2-w-sweep-3) and in the stage 1 scout runs/scout-men-1; same later screens and the same bag.",
-     "shownWhen": "not always: seen in 24 of 41 men's and 12 of 17 women's completed walks. The server adds or drops it at random (identical baseline answers gave visits with and without it), so it is an experiment on the site's side, not a branch.",
+     "shownWhen": "not always: seen in 29 of 51 men's and 17 of 28 women's completed walks. The server adds or drops it at random (identical baseline answers gave visits with and without it), so it is an experiment on the site's side, not a branch.",
      "evidence": "observed",
      "siteQuestionId": 8038
     },
@@ -2760,8 +2761,8 @@
       },
       {
        "label": "Female",
-       "effect": "Sets the women's route (runs/baseline-women, runs/s2-base-women-1, and runs/scout-women-1 where the first tile said 'Treatment for men'). Adds: wash frequency, hiding hair loss, hard water, the women's hair-loss pictures, 'Our Dermatology Team have a few more questions', pregnancy / breastfeeding, postpartum / facial hair, and shorter women's medicines and conditions lists. The dutasteride / finasteride acknowledgement is never shown. Docs: the oral leaflet says finasteride and dutasteride 'should not be taken by women', and the FAQ says they are never prescribed to women of childbearing potential.",
-       "effectType": "product-removed",
+       "effect": "Sets the women's route (runs/baseline-women, runs/s2-base-women-1, and runs/scout-women-1 where the first tile said 'Treatment for men'). Adds: wash frequency, hiding hair loss, hard water, the women's hair-loss pictures, 'Our Dermatology Team have a few more questions', pregnancy / breastfeeding, postpartum / facial hair, and shorter women's medicines and conditions lists. The dutasteride / finasteride acknowledgement is never shown. Docs: the oral leaflet says finasteride and dutasteride 'should not be taken by women', and the FAQ says they are never prescribed to women of childbearing potential. (Stage 3: the route swap is observed; the removal of finasteride and dutasteride for women is docs, from the oral leaflet.)",
+       "effectType": "extra-questions",
        "affects": [
         "cap-fin1-min25",
         "cap-fin1-min5",
@@ -2799,10 +2800,10 @@
       },
       {
        "label": "Man/Boy",
-       "effect": "Not chosen on the women's route in any replay. On the men's route gender identity only decides whether the men's 'You're not alone' screen is shown, a screen the women's route never has, so no visible effect is expected (inferred).",
+       "effect": "One-change replay (runs/verify-w-gender-man, stage 3): nothing a visitor can see changed. The women's route, the pregnancy question and the £34.99 bag are the same; the women's route has no 'You're not alone' screen to skip.",
        "effectType": "none",
        "affects": [],
-       "evidence": "inferred"
+       "evidence": "observed"
       },
       {
        "label": "Transwoman/Transgirl",
@@ -2891,7 +2892,7 @@
      "options": [
       {
        "label": "Straight",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 11 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 22 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -2996,7 +2997,7 @@
       },
       {
        "label": "None of the above",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 12 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 23 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -3008,7 +3009,7 @@
      "engineRole": "diagnosis",
      "branches": false,
      "branchDetail": "No change for any option: all seven styling habits were ticked across group tests on both routes (runs/s2-m-sweep-1, runs/s2-m-sweep-2, runs/s2-w-sweep-2, runs/s2-w-sweep-3). Heat, bleach, relaxers or tight protective styles (causes of breakage and traction hair loss) add no question and no advice.",
-     "shownWhen": "not always: seen in 17 of 41 men's and 17 of 17 women's completed walks. On the men's route the server adds or drops it at random between visits with identical answers; every women's walk had it.",
+     "shownWhen": "not always: seen in 26 of 51 men's and 28 of 28 women's completed walks. On the men's route the server adds or drops it at random between visits with identical answers; every women's walk had it.",
      "evidence": "observed",
      "siteQuestionId": 253
     },
@@ -3030,7 +3031,7 @@
       },
       {
        "label": "3-4 times per week",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 11 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 22 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -3111,7 +3112,7 @@
       },
       {
        "label": "None of the above",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 11 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 22 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -3137,7 +3138,7 @@
      "options": [
       {
        "label": "Minoxidil tablets",
-       "effect": "Not replayed on this route. The same screen is served on the men's route, where a multi-change scout (runs/scout-men-1, runs/scout-men-3) showed nothing visible changing. The screen's own words: \"It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.\" So the answer tells the prescriber what the patient already tolerates and makes the patient agree to stop it. It is not a filter: nothing is removed or added before the wall.",
+       "effect": "Not replayed on this route. The same screen is served on the men's route, where a group test (runs/verify-m-group-medical) showed nothing visible changing. The screen's own words: \"It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.\" So the answer tells the prescriber what the patient already tolerates and makes the patient agree to stop it. It is not a filter: nothing is removed or added before the wall.",
        "effectType": "soft-warning",
        "affects": [],
        "evidence": "observed",
@@ -3153,11 +3154,11 @@
       },
       {
        "label": "Spironolactone tablets",
-       "effect": "Stage 1 multi-change scout (runs/scout-women-2): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. The screen's own words: \"It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.\" So the answer tells the prescriber what the patient already tolerates and makes the patient agree to stop it. It is not a filter: nothing is removed or added before the wall. Spironolactone is only ever a 'previously used' option: Hair + Me does not supply it.",
+       "effect": "One-change replay (runs/verify-w-htp-spiro): nothing a visitor can see changed: same screens, no warning, no stop, same bag (Personalised treatment, 4 week supply, £34.99). The screen's own words: \"It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.\" So the answer tells the prescriber what the patient already tolerates and makes the patient agree to stop it. It is not a filter: nothing is removed or added before the wall. Spironolactone is only ever a 'previously used' option: Hair + Me does not supply it.",
        "effectType": "soft-warning",
        "affects": [],
        "evidence": "observed",
-       "testedBy": "scout"
+       "testedBy": "one-change"
       },
       {
        "label": "Minoxidil spray",
@@ -3169,7 +3170,7 @@
       },
       {
        "label": "Finasteride spray",
-       "effect": "Not replayed on this route. The same screen is served on the men's route, where a multi-change scout (runs/scout-men-3) showed nothing visible changing. The screen's own words: \"It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.\" So the answer tells the prescriber what the patient already tolerates and makes the patient agree to stop it. It is not a filter: nothing is removed or added before the wall.",
+       "effect": "Not replayed on this route. The same screen is served on the men's route, where a group test (runs/verify-m-group-medical) showed nothing visible changing. The screen's own words: \"It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.\" So the answer tells the prescriber what the patient already tolerates and makes the patient agree to stop it. It is not a filter: nothing is removed or added before the wall.",
        "effectType": "soft-warning",
        "affects": [],
        "evidence": "observed",
@@ -3177,7 +3178,7 @@
       },
       {
        "label": "Dutasteride capsules",
-       "effect": "Not replayed on this route. The same screen is served on the men's route, where a multi-change scout (runs/scout-men-3) showed nothing visible changing. The screen's own words: \"It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.\" So the answer tells the prescriber what the patient already tolerates and makes the patient agree to stop it. It is not a filter: nothing is removed or added before the wall.",
+       "effect": "Not replayed on this route. The same screen is served on the men's route, where a group test (runs/verify-m-group-medical) showed nothing visible changing. The screen's own words: \"It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.\" So the answer tells the prescriber what the patient already tolerates and makes the patient agree to stop it. It is not a filter: nothing is removed or added before the wall.",
        "effectType": "soft-warning",
        "affects": [],
        "evidence": "observed",
@@ -3185,7 +3186,7 @@
       },
       {
        "label": "None of the above",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 13 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 23 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -3243,7 +3244,7 @@
       },
       {
        "label": "No",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 12 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 23 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -3276,7 +3277,7 @@
      "options": [
       {
        "label": "My middle parting is getting wider",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-mcf-heart and 6 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-mcf-heart and 15 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -3316,11 +3317,11 @@
       },
       {
        "label": "I've noticed my hairline is going further back / receding",
-       "effect": "Not chosen in any replay (the 47 stage 2 replays had to be prioritised): effect untested.",
-       "effectType": "unknown",
+       "effect": "One-change replay (runs/verify-w-htaf-receding): nothing a visitor can see changed: same screens, no warning, no stop, same bag (Personalised treatment, 4 week supply, £34.99).",
+       "effectType": "none",
        "affects": [],
-       "evidence": "unknown",
-       "testedBy": "untested"
+       "evidence": "observed",
+       "testedBy": "one-change"
       },
       {
        "label": "I've lost hair from my eyebrows, sideburns and hairline",
@@ -3340,11 +3341,11 @@
       },
       {
        "label": "I don't know what kind of hair loss I have",
-       "effect": "Not chosen in any replay (the 47 stage 2 replays had to be prioritised): effect untested.",
-       "effectType": "unknown",
+       "effect": "One-change replay (runs/verify-w-htaf-dontknow): nothing a visitor can see changed: same screens, no warning, no stop, same bag (Personalised treatment, 4 week supply, £34.99). No extra question and no request for photos before the wall, although the pattern is unknown.",
+       "effectType": "none",
        "affects": [],
-       "evidence": "unknown",
-       "testedBy": "untested"
+       "evidence": "observed",
+       "testedBy": "one-change"
       },
       {
        "label": "I have no hair loss or thinning",
@@ -3389,7 +3390,7 @@
       },
       {
        "label": "Over a year ago",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 10 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 21 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -3445,7 +3446,7 @@
       },
       {
        "label": "Fair. It often burns, but tans a little",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 12 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 23 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -3502,7 +3503,7 @@
      "options": [
       {
        "label": "Normal",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 12 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 23 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -3592,7 +3593,7 @@
       },
       {
        "label": "Diagnosed eczema, psoriasis or seborrheic dermatitis",
-       "effect": "Not replayed on this route. The same screen is served on the men's route, where a one-change replay (runs/s2-m-scc-eczema) showed nothing visible changing. Docs (both topical leaflets): do not use the drops on inflamed, infected, irritated or painful scalp skin; minoxidil, finasteride and tretinoin drops are also ruled out with scalp psoriasis or eczema. So the prescriber is expected to avoid drops (capsules instead, or a delay) after sign-up; the questionnaire itself says nothing.",
+       "effect": "Group test (runs/verify-w-group-medical: 4 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (both topical leaflets): do not use the drops on inflamed, infected, irritated or painful scalp skin; minoxidil, finasteride and tretinoin drops are also ruled out with scalp psoriasis or eczema. So the prescriber is expected to avoid drops (capsules instead, or a delay) after sign-up; the questionnaire itself says nothing.",
        "effectType": "flag-for-clinician",
        "affects": [
         "drp-min5-od",
@@ -3607,7 +3608,7 @@
         "drp-nia5-mel01"
        ],
        "evidence": "docs",
-       "testedBy": "other-route"
+       "testedBy": "sweep"
       },
       {
        "label": "Pustules/lumps/cysts",
@@ -3630,7 +3631,7 @@
       },
       {
        "label": "A diagnosed active infection (e.g. folliculitis, candida, ringworm)",
-       "effect": "Not replayed on this route. The same screen is served on the men's route, where a one-change replay (runs/s2-m-scc-infection) showed nothing visible changing. Docs (both topical leaflets): do not use the drops on inflamed, infected, irritated or painful scalp skin; minoxidil, finasteride and tretinoin drops are also ruled out with scalp psoriasis or eczema. So the prescriber is expected to avoid drops (capsules instead, or a delay) after sign-up; the questionnaire itself says nothing.",
+       "effect": "Group test (runs/verify-w-group-medical: 4 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (both topical leaflets): do not use the drops on inflamed, infected, irritated or painful scalp skin; minoxidil, finasteride and tretinoin drops are also ruled out with scalp psoriasis or eczema. So the prescriber is expected to avoid drops (capsules instead, or a delay) after sign-up; the questionnaire itself says nothing.",
        "effectType": "flag-for-clinician",
        "affects": [
         "drp-min5-od",
@@ -3645,11 +3646,11 @@
         "drp-nia5-mel01"
        ],
        "evidence": "docs",
-       "testedBy": "other-route"
+       "testedBy": "sweep"
       },
       {
        "label": "Pain and/or burning sensation",
-       "effect": "Not replayed on this route. The same screen is served on the men's route, where a multi-change scout (runs/scout-men-2) showed nothing visible changing. Docs (both topical leaflets): do not use the drops on inflamed, infected, irritated or painful scalp skin; minoxidil, finasteride and tretinoin drops are also ruled out with scalp psoriasis or eczema. So the prescriber is expected to avoid drops (capsules instead, or a delay) after sign-up; the questionnaire itself says nothing.",
+       "effect": "Group test (runs/verify-w-group-medical: 4 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (both topical leaflets): do not use the drops on inflamed, infected, irritated or painful scalp skin; minoxidil, finasteride and tretinoin drops are also ruled out with scalp psoriasis or eczema. So the prescriber is expected to avoid drops (capsules instead, or a delay) after sign-up; the questionnaire itself says nothing.",
        "effectType": "flag-for-clinician",
        "affects": [
         "drp-min5-od",
@@ -3664,11 +3665,11 @@
         "drp-nia5-mel01"
        ],
        "evidence": "docs",
-       "testedBy": "other-route"
+       "testedBy": "sweep"
       },
       {
        "label": "None of the above",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 13 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 23 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -3718,7 +3719,7 @@
       },
       {
        "label": "Fuller, denser-looking hair that I feel confident about",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 13 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 24 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -3743,7 +3744,7 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "Stage 1 multi-change scout (runs/scout-women-2): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. The warning reads: \"Some of our treatments contain minoxidil, which is toxic to cats and dogs. The main risk is them licking it off fingers/hair after use.\" and \"Capsules are less likely to have a risk...\". It nudges pet owners towards capsules; nothing is removed.",
+       "effect": "One-change replay (runs/verify-w-pt-yes): on the treatment-type screen The Capsules carries a second badge, 'Better for pet owners'. Same later questions and the same £34.99 bag. The warning reads: \"Some of our treatments contain minoxidil, which is toxic to cats and dogs. The main risk is them licking it off fingers/hair after use.\" and \"Capsules are less likely to have a risk...\". It nudges pet owners towards capsules; nothing is removed.",
        "effectType": "soft-warning",
        "affects": [
         "cap-min05",
@@ -3754,11 +3755,11 @@
         "cap-dut05-min125"
        ],
        "evidence": "observed",
-       "testedBy": "scout"
+       "testedBy": "one-change"
       },
       {
        "label": "No",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 13 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 23 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -3803,7 +3804,7 @@
       },
       {
        "label": "The Capsules",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 12 more): this is the reference route to the £34.99 'Personalised treatment' bag. A preference, not a choice (badged 'Most popular'). The screen says: \"We'll do our best to accommodate your preference, but ultimately, this will be determined by our Dermatology Team.\" The bag reads '4 week supply · 12ml' even for capsule choosers.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 23 more): this is the reference route to the £34.99 'Personalised treatment' bag. A preference, not a choice (badged 'Most popular'). The screen says: \"We'll do our best to accommodate your preference, but ultimately, this will be determined by our Dermatology Team.\" The bag reads '4 week supply · 12ml' even for capsule choosers.",
        "effectType": "product-switched",
        "affects": [
         "cap-min05",
@@ -3841,7 +3842,7 @@
      "engineRole": "marketing",
      "branches": false,
      "branchDetail": "",
-     "shownWhen": "women's route only (sex assigned at birth = Female): seen in 0 of 41 men's and 17 of 17 women's completed walks",
+     "shownWhen": "women's route only (sex assigned at birth = Female): seen in 0 of 51 men's and 28 of 28 women's completed walks",
      "evidence": "observed"
     },
     {
@@ -3854,7 +3855,7 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "One-change replay (runs/s2-w-pg-yes): one extra screen, 'Pregnancy safety information' (\"We can prescribe you a treatment that's considered safe during this time...\" with a link to the pregnancy FAQ and a must-tick box). Nothing else changed: same later questions and the same £34.99 bag marked 'Prescription'. Not turned away. The extra screen says \"We can prescribe you a treatment that's considered safe during this time\". Docs (pregnancy FAQ): no oral treatment, and never minoxidil, melatonin, tretinoin, finasteride or dutasteride, so only the niacinamide drops (with or without urea) remain. The format question comes before this one, so someone who picked The Capsules is not told capsules are now off the table.",
+       "effect": "One-change replay (runs/s2-w-pg-yes, runs/verify-w-pg-yes): one extra screen, 'Pregnancy safety information' (\"We can prescribe you a treatment that's considered safe during this time...\" with a link to the pregnancy FAQ and a must-tick box). Nothing else changed: same later questions and the same £34.99 bag marked 'Prescription'. Not turned away. The extra screen says \"We can prescribe you a treatment that's considered safe during this time\". Docs (pregnancy FAQ): no oral treatment, and never minoxidil, melatonin, tretinoin, finasteride or dutasteride, so only the niacinamide drops (with or without urea) remain. The format question comes before this one, so someone who picked The Capsules is not told capsules are now off the table.",
        "effectType": "product-removed",
        "affects": [
         "cap-min05",
@@ -3969,7 +3970,7 @@
       },
       {
        "label": "None of the above",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 10 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 21 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -3995,7 +3996,7 @@
      "options": [
       {
        "label": "Steroids or other medications for psoriasis or eczema on your scalp",
-       "effect": "Stage 1 multi-change scout (runs/scout-women-2): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. Docs (topical leaflets): the drops should not be applied with an inflammatory scalp condition such as psoriasis or eczema, so this points towards capsules or a delay (inferred).",
+       "effect": "Group test (runs/verify-w-group-medical: 4 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (topical leaflets): the drops should not be applied with an inflammatory scalp condition such as psoriasis or eczema, so this points towards capsules or a delay (inferred).",
        "effectType": "flag-for-clinician",
        "affects": [
         "drp-min5-od",
@@ -4011,7 +4012,7 @@
        ],
        "evidence": "inferred",
        "subLabel": "(e.g. Hydrocortisone or betamethasone)",
-       "testedBy": "scout"
+       "testedBy": "sweep"
       },
       {
        "label": "Other",
@@ -4023,7 +4024,7 @@
       },
       {
        "label": "No, I don't take any medications",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 12 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 22 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -4065,7 +4066,7 @@
      "options": [
       {
        "label": "Pheochromocytoma",
-       "effect": "Stage 1 multi-change scout (runs/scout-women-2): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. Docs (oral leaflet): minoxidil capsules are contraindicated with phaeochromocytoma (the topical leaflet does not mention it). So the prescriber is expected to rule those formulas out after sign-up; the questionnaire itself gives no warning.",
+       "effect": "Group test (runs/verify-w-group-medical: 4 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (oral leaflet): minoxidil capsules are contraindicated with phaeochromocytoma (the topical leaflet does not mention it). So the prescriber is expected to rule those formulas out after sign-up; the questionnaire itself gives no warning.",
        "effectType": "flag-for-clinician",
        "affects": [
         "cap-min05",
@@ -4073,7 +4074,7 @@
         "cap-min25-b6"
        ],
        "evidence": "docs",
-       "testedBy": "scout"
+       "testedBy": "sweep"
       },
       {
        "label": "High blood pressure (hypertension) or low blood pressure (hypotension)",
@@ -4100,7 +4101,7 @@
       },
       {
        "label": "Hypertrichosis (excessive hair growth anywhere on the body, unrelated to hormones)",
-       "effect": "Stage 1 multi-change scout (runs/scout-women-2): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. Docs (oral leaflet): extra body and facial hair is a very common effect of oral minoxidil, so capsules look a poor fit (inferred).",
+       "effect": "Group test (runs/verify-w-group-medical: 4 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (oral leaflet): extra body and facial hair is a very common effect of oral minoxidil, so capsules look a poor fit (inferred).",
        "effectType": "flag-for-clinician",
        "affects": [
         "cap-min05",
@@ -4108,11 +4109,11 @@
         "cap-min25-b6"
        ],
        "evidence": "inferred",
-       "testedBy": "scout"
+       "testedBy": "sweep"
       },
       {
        "label": "PoTS syndrome (postural tachycardia syndrome)",
-       "effect": "Stage 1 multi-change scout (runs/scout-women-2): no stop and no extra screen from this answer; the walk reached the same £34.99 bag. Not replayed as a one-change test. Docs (oral leaflet): oral minoxidil very commonly raises heart rate, so capsules look a poor fit (inferred).",
+       "effect": "Group test (runs/verify-w-group-medical: 4 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (oral leaflet): oral minoxidil very commonly raises heart rate, so capsules look a poor fit (inferred).",
        "effectType": "flag-for-clinician",
        "affects": [
         "cap-min05",
@@ -4120,7 +4121,7 @@
         "cap-min25-b6"
        ],
        "evidence": "inferred",
-       "testedBy": "scout"
+       "testedBy": "sweep"
       },
       {
        "label": "Polyendocrine Metabolic Ovarian Syndrome (PMOS, formerly PCOS)",
@@ -4132,7 +4133,7 @@
       },
       {
        "label": "None of the above",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 9 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 18 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -4226,7 +4227,7 @@
      "options": [
       {
        "label": "Minoxidil",
-       "effect": "Not replayed on this route. The same screen is served on the men's route, where a one-change replay (runs/s2-m-al-minoxidil) showed nothing visible changing. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing minoxidil should be ruled out by the prescriber. That leaves finasteride 0.2% drops (men) or the niacinamide drops. The questionnaire itself gives no warning.",
+       "effect": "Group test (runs/verify-w-group-medical: 4 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing minoxidil should be ruled out by the prescriber. That leaves finasteride 0.2% drops (men) or the niacinamide drops. The questionnaire itself gives no warning.",
        "effectType": "flag-for-clinician",
        "affects": [
         "cap-min05",
@@ -4242,11 +4243,11 @@
         "drp-min5-tret-fin01"
        ],
        "evidence": "docs",
-       "testedBy": "other-route"
+       "testedBy": "sweep"
       },
       {
        "label": "Finasteride",
-       "effect": "Not replayed on this route. The same screen is served on the men's route, where a one-change replay (runs/s2-m-al-finasteride) showed nothing visible changing. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing finasteride should be ruled out by the prescriber. The questionnaire itself gives no warning.",
+       "effect": "Group test (runs/verify-w-group-medical: 4 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing finasteride should be ruled out by the prescriber. The questionnaire itself gives no warning.",
        "effectType": "flag-for-clinician",
        "affects": [
         "cap-fin1-min25",
@@ -4256,43 +4257,43 @@
         "drp-fin02"
        ],
        "evidence": "docs",
-       "testedBy": "other-route"
+       "testedBy": "sweep"
       },
       {
        "label": "Dutasteride",
-       "effect": "Not replayed on this route. The same screen is served on the men's route, where a multi-change scout (runs/scout-men-3) showed nothing visible changing. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing dutasteride should be ruled out by the prescriber. The questionnaire itself gives no warning.",
+       "effect": "Group test (runs/verify-w-group-medical: 4 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing dutasteride should be ruled out by the prescriber. The questionnaire itself gives no warning.",
        "effectType": "flag-for-clinician",
        "affects": [
         "cap-dut05-min125"
        ],
        "evidence": "docs",
-       "testedBy": "other-route"
+       "testedBy": "sweep"
       },
       {
        "label": "Melatonin",
-       "effect": "Not replayed on this route. The same screen is served on the men's route, where a multi-change scout (runs/scout-men-3) showed nothing visible changing. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing melatonin should be ruled out by the prescriber. The questionnaire itself gives no warning.",
+       "effect": "Group test (runs/verify-w-group-medical: 4 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing melatonin should be ruled out by the prescriber. The questionnaire itself gives no warning.",
        "effectType": "flag-for-clinician",
        "affects": [
         "drp-nia5-urea2-mel01",
         "drp-nia5-mel01"
        ],
        "evidence": "docs",
-       "testedBy": "other-route"
+       "testedBy": "sweep"
       },
       {
        "label": "Urea",
-       "effect": "Not replayed on this route. The same screen is served on the men's route, where a multi-change scout (runs/scout-men-3) showed nothing visible changing. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing urea should be ruled out by the prescriber. The questionnaire itself gives no warning.",
+       "effect": "Group test (runs/verify-w-group-medical: 4 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing urea should be ruled out by the prescriber. The questionnaire itself gives no warning.",
        "effectType": "flag-for-clinician",
        "affects": [
         "drp-nia5-urea2",
         "drp-nia5-urea2-mel01"
        ],
        "evidence": "docs",
-       "testedBy": "other-route"
+       "testedBy": "sweep"
       },
       {
        "label": "Niacinamide",
-       "effect": "Not replayed on this route. The same screen is served on the men's route, where a multi-change scout (runs/scout-men-3) showed nothing visible changing. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing niacinamide should be ruled out by the prescriber. The questionnaire itself gives no warning.",
+       "effect": "Group test (runs/verify-w-group-medical: 4 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing niacinamide should be ruled out by the prescriber. The questionnaire itself gives no warning.",
        "effectType": "flag-for-clinician",
        "affects": [
         "drp-nia5-urea2",
@@ -4301,28 +4302,28 @@
         "drp-nia5-mel01"
        ],
        "evidence": "docs",
-       "testedBy": "other-route"
+       "testedBy": "sweep"
       },
       {
        "label": "Tretinoin",
-       "effect": "Not replayed on this route. The same screen is served on the men's route, where a multi-change scout (runs/scout-men-3) showed nothing visible changing. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing tretinoin should be ruled out by the prescriber. The questionnaire itself gives no warning.",
+       "effect": "Group test (runs/verify-w-group-medical: 4 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing tretinoin should be ruled out by the prescriber. The questionnaire itself gives no warning.",
        "effectType": "flag-for-clinician",
        "affects": [
         "drp-min5-tret",
         "drp-min5-tret-fin01"
        ],
        "evidence": "docs",
-       "testedBy": "other-route"
+       "testedBy": "sweep"
       },
       {
        "label": "Vitamin B6 (Pyridoxine)",
-       "effect": "Not replayed on this route. The same screen is served on the men's route, where a multi-change scout (runs/scout-men-3) showed nothing visible changing. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing vitamin B6 should be ruled out by the prescriber. The questionnaire itself gives no warning.",
+       "effect": "Group test (runs/verify-w-group-medical: 4 medical screens changed together, this one among them): nothing a visitor can see changed, so this answer by itself changes nothing before the account wall. Docs (leaflets): do not use a treatment if you are allergic to any ingredient, so formulas containing vitamin B6 should be ruled out by the prescriber. The questionnaire itself gives no warning.",
        "effectType": "flag-for-clinician",
        "affects": [
         "cap-min25-b6"
        ],
        "evidence": "docs",
-       "testedBy": "other-route"
+       "testedBy": "sweep"
       },
       {
        "label": "Other",
@@ -4334,7 +4335,7 @@
       },
       {
        "label": "No known allergies",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 13 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 23 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -4416,7 +4417,7 @@
       },
       {
        "label": "I'm looking for a long-term effective haircare treatment",
-       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 13 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
+       "effect": "Baseline answer (runs/baseline-women, runs/s2-base-women-1, runs/s2-w-htaf-allover and 24 more): this is the reference route to the £34.99 'Personalised treatment' bag.",
        "effectType": "none",
        "affects": [],
        "evidence": "observed",
@@ -4691,11 +4692,11 @@
    "id": "R4",
    "flow": "both",
    "when": "el-dob gives an age under 18 (tested: 17 years 11 months; men and women)",
-   "then": "Hard stop after the eligibility screen: 'We're unable to treat you at this time... we're unable to treat your age group.' No bag, no account screen. This is the only stop screen found in the whole public flow.",
+   "then": "Hard stop after the eligibility screen: 'We're unable to treat you at this time... we're unable to treat your age group.' No bag, no account screen. This is the only stop screen found in the whole public flow. Stage 3 confirmed it on the women's route as a single change (runs/verify-w-age-17).",
    "effectType": "hard-stop",
    "affects": [],
    "evidence": "observed",
-   "proof": "runs/s2-m-age-17 (stop) against runs/s2-m-age-18 (18 years and 8 days: passes); women: runs/scout-women-1 (age 16, multi-change scout)",
+   "proof": "runs/s2-m-age-17 (stop) against runs/s2-m-age-18 (18 years and 8 days: passes); women: runs/scout-women-1 (age 16, multi-change scout) ; stage 3 re-test: runs/verify-m-age-17, runs/verify-w-age-17",
    "confidence": "high"
   },
   {
@@ -4746,15 +4747,15 @@
     "cap-dut05-min125"
    ],
    "evidence": "observed",
-   "proof": "runs/s2-m-mcm-bp (one change) ; women: runs/scout-women-1 (multi-change scout)",
+   "proof": "runs/s2-m-mcm-bp (one change) ; women: runs/scout-women-1 (multi-change scout) ; stage 3 re-test: runs/verify-m-bp-elevated-reading, runs/verify-w-mcf-bp",
    "confidence": "high"
   },
   {
    "id": "R9",
    "flow": "both",
    "when": "bp = 'Often elevated' (or 'Often low')",
-   "then": "Nothing visible: no warning, no stop, the reading stays optional, and the same bag ('Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping) follows. Docs: the oral leaflet rules out minoxidil capsules with uncontrolled hypertension, so the decision is left to the prescriber.",
-   "effectType": "flag-for-clinician",
+   "then": "Nothing visible: no warning, no stop, the reading stays optional, and the same bag ('Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping) follows. Docs: the oral leaflet rules out minoxidil capsules with uncontrolled hypertension, so the decision is left to the prescriber. (Stage 3: effect type changed from 'flag-for-clinician' to 'none'. What a replay can show is that nothing changes; that the prescriber acts on the answer is the company's own leaflet rule, kept as a separate docs rule, not something observed.)",
+   "effectType": "none",
    "affects": [
     "cap-min05",
     "cap-min125",
@@ -4764,7 +4765,7 @@
     "cap-dut05-min125"
    ],
    "evidence": "observed",
-   "proof": "runs/s2-m-mcm-bp-elevated against runs/s2-m-mcm-bp ; runs/scout-men-3 ('Often low', scout)",
+   "proof": "runs/s2-m-mcm-bp-elevated against runs/s2-m-mcm-bp ; runs/scout-men-3 ('Often low', scout) ; stage 3 re-test: runs/verify-m-bp-elevated-reading",
    "confidence": "high"
   },
   {
@@ -4790,7 +4791,7 @@
     "drp-nia5-mel01"
    ],
    "evidence": "observed",
-   "proof": "runs/s2-w-pg-yes against runs/baseline-women, runs/s2-base-women-1",
+   "proof": "runs/s2-w-pg-yes against runs/baseline-women, runs/s2-base-women-1 ; stage 3 re-test: runs/verify-w-pg-yes",
    "confidence": "high"
   },
   {
@@ -4819,7 +4820,7 @@
     "cap-dut05-min125"
    ],
    "evidence": "observed",
-   "proof": "runs/s2-m-pt-yes (one change) against the men's baseline pool ; runs/scout-men-2, runs/scout-women-2 (scouts, men and women); the warning text is a client-side rule in the step JSON (code), the badge is added by the server",
+   "proof": "runs/s2-m-pt-yes (one change) against the men's baseline pool ; runs/scout-men-2, runs/scout-women-2 (scouts, men and women); the warning text is a client-side rule in the step JSON (code), the badge is added by the server ; stage 3 re-test: runs/verify-w-pt-yes",
    "confidence": "high"
   },
   {
@@ -4830,7 +4831,7 @@
    "effectType": "soft-warning",
    "affects": [],
    "evidence": "observed",
-   "proof": "runs/s2-m-htp-fintabs (one change) ; runs/scout-men-3, runs/scout-women-2 ; client-side rule in the step JSON (code)",
+   "proof": "runs/s2-m-htp-fintabs (one change) ; runs/scout-men-3, runs/scout-women-2 ; client-side rule in the step JSON (code) ; stage 3 re-test: runs/verify-w-htp-spiro, runs/verify-m-group-medical",
    "confidence": "high"
   },
   {
@@ -4852,15 +4853,15 @@
    "effectType": "none",
    "affects": [],
    "evidence": "observed",
-   "proof": "runs/s2-m-htam-patches, runs/s2-m-htam-crown, runs/s2-m-htam-allover-ext, runs/s2-m-htc-recent, runs/s2-w-htaf-patches, runs/s2-w-htaf-eyebrows, runs/s2-w-htaf-allover (each one change); other pictures in group tests runs/s2-m-sweep-1, runs/s2-m-sweep-2, runs/s2-m-sweep-3, runs/s2-w-sweep-1, runs/s2-w-sweep-2, runs/s2-w-sweep-3; women's 'receding hairline' and 'I don't know' not tested",
+   "proof": "runs/s2-m-htam-patches, runs/s2-m-htam-crown, runs/s2-m-htam-allover-ext, runs/s2-m-htc-recent, runs/s2-w-htaf-patches, runs/s2-w-htaf-eyebrows, runs/s2-w-htaf-allover (each one change); other pictures in group tests runs/s2-m-sweep-1, runs/s2-m-sweep-2, runs/s2-m-sweep-3, runs/s2-w-sweep-1, runs/s2-w-sweep-2, runs/s2-w-sweep-3; women's 'receding hairline' and 'I don't know' not tested ; stage 3 re-test: runs/verify-w-htaf-receding, runs/verify-w-htaf-dontknow",
    "confidence": "high"
   },
   {
    "id": "R16",
    "flow": "both",
    "when": "scc = 'A diagnosed active infection' or 'Diagnosed eczema, psoriasis or seborrheic dermatitis' (any scalp symptom)",
-   "then": "Nothing visible: no stop, no warning, and The Drops can still be chosen two screens later. Same bag. Docs: both topical leaflets forbid the drops on such a scalp (rule R32).",
-   "effectType": "flag-for-clinician",
+   "then": "Nothing visible: no stop, no warning, and The Drops can still be chosen two screens later. Same bag. Docs: both topical leaflets forbid the drops on such a scalp (rule R32). (Stage 3: effect type changed from 'flag-for-clinician' to 'none'. What a replay can show is that nothing changes; that the prescriber acts on the answer is the company's own leaflet rule, kept as a separate docs rule, not something observed.)",
+   "effectType": "none",
    "affects": [
     "drp-min5-od",
     "drp-min5-bd",
@@ -4874,15 +4875,15 @@
     "drp-nia5-mel01"
    ],
    "evidence": "observed",
-   "proof": "runs/s2-m-scc-infection, runs/s2-m-scc-eczema (each one change) ; runs/scout-men-2, runs/scout-women-2 (other symptoms, scouts)",
+   "proof": "runs/s2-m-scc-infection, runs/s2-m-scc-eczema (each one change) ; runs/scout-men-2, runs/scout-women-2 (other symptoms, scouts) ; stage 3 re-test: runs/verify-m-group-medical, runs/verify-w-group-medical",
    "confidence": "high"
   },
   {
    "id": "R17",
    "flow": "men",
    "when": "mcm = heart or cardiovascular condition, phaeochromocytoma, liver disease, depression / anxiety, sexual dysfunction, PSA monitoring or prostate / testicular cancer history, BPH, or male breast cancer history (each alone)",
-   "then": "Nothing visible for any of them: no stop, no warning, no extra question, and the same bag ('Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping), even with The Capsules and finasteride / dutasteride consent in place. The leaflet contraindications (rules R30, R31) are applied, if at all, by the prescriber after payment.",
-   "effectType": "flag-for-clinician",
+   "then": "Nothing visible for any of them: no stop, no warning, no extra question, and the same bag ('Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping), even with The Capsules and finasteride / dutasteride consent in place. The leaflet contraindications (rules R30, R31) are applied, if at all, by the prescriber after payment. (Stage 3: effect type changed from 'flag-for-clinician' to 'none'. What a replay can show is that nothing changes; that the prescriber acts on the answer is the company's own leaflet rule, kept as a separate docs rule, not something observed.)",
+   "effectType": "none",
    "affects": [
     "cap-min05",
     "cap-min125",
@@ -4895,7 +4896,7 @@
     "drp-fin02"
    ],
    "evidence": "observed",
-   "proof": "runs/s2-m-mcm-heart, runs/s2-m-mcm-pheo, runs/s2-m-mcm-liver, runs/s2-m-mcm-depression, runs/s2-m-mcm-sexdys, runs/s2-m-mcm-psa, runs/s2-m-mcm-bph, runs/s2-m-mcm-breast (each one change)",
+   "proof": "runs/s2-m-mcm-heart, runs/s2-m-mcm-pheo, runs/s2-m-mcm-liver, runs/s2-m-mcm-depression, runs/s2-m-mcm-sexdys, runs/s2-m-mcm-psa, runs/s2-m-mcm-bph, runs/s2-m-mcm-breast (each one change) ; stage 3 re-test: runs/verify-m-mcm-heart, runs/verify-m-group-medical",
    "confidence": "high"
   },
   {
@@ -4906,15 +4907,15 @@
    "effectType": "none",
    "affects": [],
    "evidence": "observed",
-   "proof": "runs/s2-w-mcf-pcos, runs/s2-w-mcf-heart, runs/s2-w-mp-postpartum, runs/s2-w-mp-facial (each one change)",
+   "proof": "runs/s2-w-mcf-pcos, runs/s2-w-mcf-heart, runs/s2-w-mp-postpartum, runs/s2-w-mp-facial (each one change) ; stage 3 re-test: runs/verify-w-group-medical",
    "confidence": "high"
   },
   {
    "id": "R19",
    "flow": "men",
    "when": "mdm = antidepressants / anti-anxiety medicine; al = minoxidil allergy; al = finasteride allergy (each alone)",
-   "then": "Nothing visible: no stop, no warning, and the same bag ('Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping). A man allergic to minoxidil who chose The Capsules (every capsule contains minoxidil) is still walked to the same 'Personalised treatment'.",
-   "effectType": "flag-for-clinician",
+   "then": "Nothing visible: no stop, no warning, and the same bag ('Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping). A man allergic to minoxidil who chose The Capsules (every capsule contains minoxidil) is still walked to the same 'Personalised treatment'. (Stage 3: effect type changed from 'flag-for-clinician' to 'none'. What a replay can show is that nothing changes; that the prescriber acts on the answer is the company's own leaflet rule, kept as a separate docs rule, not something observed.)",
+   "effectType": "none",
    "affects": [
     "cap-min05",
     "cap-min125",
@@ -4930,15 +4931,15 @@
     "drp-fin02"
    ],
    "evidence": "observed",
-   "proof": "runs/s2-m-mdm-antidep, runs/s2-m-al-minoxidil, runs/s2-m-al-finasteride (each one change) ; runs/scout-men-2, runs/scout-men-3 (BPH medicine, scalp steroids and every allergy ticked together: stage 1 scouts)",
+   "proof": "runs/s2-m-mdm-antidep, runs/s2-m-al-minoxidil, runs/s2-m-al-finasteride (each one change) ; runs/scout-men-2, runs/scout-men-3 (BPH medicine, scalp steroids and every allergy ticked together: stage 1 scouts) ; stage 3 re-test: runs/verify-m-al-minoxidil, runs/verify-m-mdm-bph, runs/verify-m-group-medical",
    "confidence": "high"
   },
   {
    "id": "R20",
    "flow": "both",
    "when": "tt = 'The Drops' instead of 'The Capsules' (men and women)",
-   "then": "Nothing visible: the same later questions and the same bag line, which reads '4 week supply · 12ml' for both formats. The answer is a stored preference; the screen says the Dermatology Team decides.",
-   "effectType": "product-switched",
+   "then": "Nothing visible: the same later questions and the same bag line, which reads '4 week supply · 12ml' for both formats. The answer is a stored preference; the screen says the Dermatology Team decides. (Stage 3: effect type changed from 'product-switched' to 'none'. No switch was seen; the company says the Dermatology Team makes the final choice, rule R37.)",
+   "effectType": "none",
    "affects": [
     "drp-min5-od",
     "drp-min5-bd",
@@ -4959,7 +4960,7 @@
    "id": "R21",
    "flow": "men",
    "when": "pp = 'I do not wish to be considered for dutasteride or finasteride'",
-   "then": "Nothing visible: the prostate, sexual-function and mental-health options are still shown and the bag is the same. By its wording the answer removes finasteride and dutasteride formulas from the prescriber's choice, leaving minoxidil-only (or niacinamide) formulas.",
+   "then": "Nothing visible: the prostate, sexual-function and mental-health options are still shown and the bag is the same. By its wording the answer removes finasteride and dutasteride formulas from the prescriber's choice, leaving minoxidil-only (or niacinamide) formulas. (Stage 3: evidence changed from 'observed' to 'inferred'. Only 'nothing visible' was observed, again in runs/verify-m-pp-decline; the removal comes from the option's own wording.)",
    "effectType": "product-removed",
    "affects": [
     "cap-fin1-min25",
@@ -4969,8 +4970,8 @@
     "drp-min5-tret-fin01",
     "drp-fin02"
    ],
-   "evidence": "observed",
-   "proof": "runs/s2-m-pp-decline (one change) for the visible part; the removal itself is the option wording (docs), not seen in a prescription",
+   "evidence": "inferred",
+   "proof": "runs/s2-m-pp-decline (one change) for the visible part; the removal itself is the option wording (docs), not seen in a prescription ; stage 3 re-test: runs/verify-m-pp-decline",
    "confidence": "medium"
   },
   {
@@ -4987,12 +4988,12 @@
   {
    "id": "R23",
    "flow": "men",
-   "when": "pds-gender (optional gender identity) = Transwoman/Transgirl, Non-Binary or Prefer not to say, with sex at birth Male",
+   "when": "pds-gender (optional gender identity) = Transwoman/Transgirl, Woman/Girl, Non-Binary or Prefer not to say, with sex at birth Male",
    "then": "The men's 'You're not alone' screen ('We spoke to men in our community about their experiences of hair loss...') is skipped. With the box left blank or set to Man/Boy it is shown. Nothing else follows gender identity: the questions, the dutasteride / finasteride acknowledgement and the bag follow sex at birth.",
    "effectType": "skip-questions",
    "affects": [],
    "evidence": "observed",
-   "proof": "runs/s2-m-gender-transwoman (one change) against runs/baseline-men, runs/s2-base-men-1 ; runs/s2-m-sweep-2, runs/s2-m-sweep-3, runs/scout-neither (skipped) ; runs/s2-m-sweep-1 (Man/Boy: shown). The screen was present in every other men's walk that reached the wellbeing scores.",
+   "proof": "runs/s2-m-gender-transwoman (one change) against runs/baseline-men, runs/s2-base-men-1 ; runs/s2-m-sweep-2, runs/s2-m-sweep-3, runs/scout-neither (skipped) ; runs/s2-m-sweep-1 (Man/Boy: shown). The screen was present in every other men's walk that reached the wellbeing scores. ; stage 3 re-test: runs/verify-m-gender-nonbinary, runs/verify-m-gender-woman",
    "confidence": "high"
   },
   {
@@ -5003,7 +5004,7 @@
    "effectType": "none",
    "affects": [],
    "evidence": "observed",
-   "proof": "runs/s2-w-sweep-1, runs/s2-w-sweep-2, runs/s2-w-sweep-3 (group tests) against runs/baseline-women, runs/women-a, runs/s2-base-women-1",
+   "proof": "runs/s2-w-sweep-1, runs/s2-w-sweep-2, runs/s2-w-sweep-3 (group tests) against runs/baseline-women, runs/women-a, runs/s2-base-women-1 ; stage 3 re-test: runs/verify-w-gender-man",
    "confidence": "medium"
   },
   {
@@ -5016,20 +5017,20 @@
     "svc"
    ],
    "evidence": "observed",
-   "proof": "the bag step JSON in every replay that reached it (56 consultation walks in runs/, of which 46 in stage 2)",
+   "proof": "the bag step JSON in every replay that reached it (75 consultation walks in runs/, of which 46 in stage 2) ; stage 3 re-test: runs/verify-base-men, runs/verify-base-women",
    "confidence": "high"
   },
   {
    "id": "R26",
-   "flow": "men",
-   "when": "entry through a product page (promo code HGSHOPCAPS or HGSHOPDROPS in the URL)",
-   "then": "Same questions; the bag shows £14.99 (was £34.99): 'Your first three months of treatment for £14.99 each', then £34.99. Price depends on how you arrive, not on what you answer.",
+   "flow": "both",
+   "when": "entry through a product page (promo code HGSHOPCAPS from The Capsules page or HGSHOPDROPS from The Drops page)",
+   "then": "Same questions; the bag shows £14.99 instead of £34.99: 'Your first three months of treatment for £14.99 each', then £34.99 ongoing. Same offer for both codes, on the men's (capsules code) and women's (drops code) routes. Price depends on how you arrive, not on what you answer.",
    "effectType": "marketing-only",
    "affects": [
     "svc"
    ],
    "evidence": "observed",
-   "proof": "runs/entry-promo-caps-men against runs/baseline-men (stage 1; the drops code was read on the product page, not replayed)",
+   "proof": "runs/entry-promo-caps-men against runs/baseline-men ; runs/verify-w-entry-promo-drops against the women's baseline pool (stage 3)",
    "confidence": "high"
   },
   {
@@ -5261,7 +5262,7 @@
     "cap-fin1-min5",
     "cap-dut05-min125"
    ],
-   "evidence": "docs",
+   "evidence": "inferred",
    "proof": "https://www.hairandme.com/support/en/articles/711986-what-is-dutasteride-a-simple-explanation ; https://www.hairandme.com/support/en/articles/711964-what-is-finasteride-a-simple-explanation ; https://www.hairandme.com/support/en/articles/711950-what-actually-treats-hair-loss-the-evidence-based-ingredients-explained",
    "confidence": "low"
   },
@@ -5277,7 +5278,7 @@
     "cap-min125",
     "cap-min25-b6"
    ],
-   "evidence": "docs",
+   "evidence": "inferred",
    "proof": "https://www.hairandme.com/support/en/articles/474664-pcos-and-hair-loss-why-it-happens-and-what-you-can-do ; oral leaflet (hypertrichosis 'very commonly')",
    "confidence": "low"
   },
@@ -5893,6 +5894,237 @@
    "type": "group test (several non-medical answers at once)",
    "screens": 33,
    "endedAt": "account wall (yd)"
+  },
+  {
+   "id": "verify-base-men",
+   "flow": "men",
+   "changed": "none: replay of baseline-men.json to confirm it still works and to measure the server's random variation",
+   "result": "No visible change: same screens as the baseline pool, no warning, no stop. Walk ended at the account wall after 31 screens; bag unchanged: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping.",
+   "run": "runs/verify-base-men",
+   "stage": 3,
+   "type": "baseline replay",
+   "screens": 31,
+   "endedAt": "account wall (yd)"
+  },
+  {
+   "id": "verify-base-women",
+   "flow": "women",
+   "changed": "none: replay of baseline-women.json to confirm it still works and to measure the server's random variation",
+   "result": "No visible change: same screens as the baseline pool, no warning, no stop. Walk ended at the account wall after 33 screens; bag unchanged: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping.",
+   "run": "runs/verify-base-women",
+   "stage": 3,
+   "type": "baseline replay",
+   "screens": 33,
+   "endedAt": "account wall (yd)"
+  },
+  {
+   "id": "verify-m-age-17",
+   "flow": "men",
+   "changed": "men-el-dob: 15/06/1994 (32) → 15/12/2008 (17 years 11 months). Independent re-test of runs/s2-m-age-17",
+   "result": "Hard stop after the eligibility screen: 'We're unable to treat you at this time... we're unable to treat your age group.' No bag, no account screen.",
+   "run": "runs/verify-m-age-17",
+   "stage": 3,
+   "type": "one-change",
+   "screens": 30,
+   "endedAt": "stop screen utt"
+  },
+  {
+   "id": "verify-w-pg-yes",
+   "flow": "women",
+   "changed": "women-pg: No → Yes (pregnant, breastfeeding or likely to conceive); the 'Pregnancy safety information' screen was ticked to carry on. Independent re-test of runs/s2-w-pg-yes",
+   "result": "One extra screen, 'Pregnancy safety information' (must-tick to carry on). Nothing else changed: same later questions and the same £34.99 bag. Walk ended at the account wall after 33 screens; bag unchanged: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping.",
+   "run": "runs/verify-w-pg-yes",
+   "stage": 3,
+   "type": "one-change",
+   "screens": 33,
+   "endedAt": "account wall (yd)"
+  },
+  {
+   "id": "verify-m-mcm-heart",
+   "flow": "men",
+   "changed": "men-mcm: None of the above → Any heart or cardiovascular condition. Independent re-test of runs/s2-m-mcm-heart",
+   "result": "No visible change: same screens as the baseline pool, no warning, no stop. Walk ended at the account wall after 30 screens; bag unchanged: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping.",
+   "run": "runs/verify-m-mcm-heart",
+   "stage": 3,
+   "type": "one-change",
+   "screens": 30,
+   "endedAt": "account wall (yd)"
+  },
+  {
+   "id": "verify-m-pp-decline",
+   "flow": "men",
+   "changed": "men-pp: agree → I do not wish to be considered for dutasteride or finasteride. Independent re-test of runs/s2-m-pp-decline",
+   "result": "No visible change: same screens as the baseline pool, no warning, no stop. Walk ended at the account wall after 30 screens; bag unchanged: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping.",
+   "run": "runs/verify-m-pp-decline",
+   "stage": 3,
+   "type": "one-change",
+   "screens": 30,
+   "endedAt": "account wall (yd)"
+  },
+  {
+   "id": "verify-m-al-minoxidil",
+   "flow": "men",
+   "changed": "men-al: No known allergies → Minoxidil (capsules still preferred). Independent re-test of runs/s2-m-al-minoxidil",
+   "result": "No visible change: same screens as the baseline pool, no warning, no stop. Walk ended at the account wall after 31 screens; bag unchanged: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping.",
+   "run": "runs/verify-m-al-minoxidil",
+   "stage": 3,
+   "type": "one-change",
+   "screens": 31,
+   "endedAt": "account wall (yd)"
+  },
+  {
+   "id": "verify-m-gender-nonbinary",
+   "flow": "men",
+   "changed": "men-pds-gender: gender identity left blank → Non-Binary/Genderqueer/Agender/Gender Fluid (sex at birth still Male). Re-test of the 'You're not alone' rule with a second value as a single change",
+   "result": "The men's 'You're not alone' screen is skipped. Same questions otherwise and the same £34.99 bag. Walk ended at the account wall after 29 screens; bag unchanged: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping.",
+   "run": "runs/verify-m-gender-nonbinary",
+   "stage": 3,
+   "type": "one-change",
+   "screens": 29,
+   "endedAt": "account wall (yd)"
+  },
+  {
+   "id": "verify-m-bp-elevated-reading",
+   "flow": "men",
+   "changed": "men-mcm: None of the above → High blood pressure or low blood pressure; follow-up answered 'Often elevated' with a typed reading of 180/110. Re-test of runs/s2-m-mcm-bp-elevated, plus the reading box",
+   "result": "One extra screen, the blood-pressure follow-up. 'Often elevated' with a typed reading of 180/110 gave no warning and no stop; the next screen was the allergy question and the bag was the same £34.99. Walk ended at the account wall after 32 screens; bag unchanged: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping.",
+   "run": "runs/verify-m-bp-elevated-reading",
+   "stage": 3,
+   "type": "one-change",
+   "screens": 32,
+   "endedAt": "account wall (yd)"
+  },
+  {
+   "id": "verify-w-age-17",
+   "flow": "women",
+   "changed": "women-el-dob: 15/06/1988 (38) → 15/12/2008 (17 years 11 months)",
+   "result": "Hard stop after the eligibility screen: 'We're unable to treat you at this time... we're unable to treat your age group.' No bag, no account screen.",
+   "run": "runs/verify-w-age-17",
+   "stage": 3,
+   "type": "one-change",
+   "screens": 31,
+   "endedAt": "stop screen utt"
+  },
+  {
+   "id": "verify-w-mcf-bp",
+   "flow": "women",
+   "changed": "women-mcf: None of the above → High blood pressure or low blood pressure; the follow-up screen was answered 'Well-controlled', no reading typed",
+   "result": "One extra screen, the blood-pressure follow-up ('Well-controlled' chosen). Same later questions and the same £34.99 bag. Walk ended at the account wall after 33 screens; bag unchanged: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping.",
+   "run": "runs/verify-w-mcf-bp",
+   "stage": 3,
+   "type": "one-change",
+   "screens": 33,
+   "endedAt": "account wall (yd)"
+  },
+  {
+   "id": "verify-w-pt-yes",
+   "flow": "women",
+   "changed": "women-pt: No → Yes (lives with pets)",
+   "result": "On the treatment-type screen The Capsules carries a second badge, 'Better for pet owners'. Same later questions and the same £34.99 bag. Walk ended at the account wall after 32 screens; bag unchanged: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping.",
+   "run": "runs/verify-w-pt-yes",
+   "stage": 3,
+   "type": "one-change",
+   "screens": 32,
+   "endedAt": "account wall (yd)"
+  },
+  {
+   "id": "verify-w-entry-promo-drops",
+   "flow": "women",
+   "changed": "entry URL: /c/suh/new → /c/suh/new?promocode=HGSHOPDROPS (the button on The Drops product page), women's baseline answers",
+   "result": "Same questions; the bag shows £14.99 instead of £34.99 with promo code HGSHOPDROPS and the text 'Your first three months of treatment for £14.99 each' / 'First three months £14.99 each, then £34.99 ongoing. Cancel anytime. Treatment subject to dermatological assessment.'. Walk ended at the account wall after 33 screens; bag unchanged: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping.",
+   "run": "runs/verify-w-entry-promo-drops",
+   "stage": 3,
+   "type": "one-change",
+   "screens": 33,
+   "endedAt": "account wall (yd)"
+  },
+  {
+   "id": "verify-w-htaf-receding",
+   "flow": "women",
+   "changed": "women-htaf: My middle parting is getting wider → I've noticed my hairline is going further back / receding",
+   "result": "No visible change: same screens as the baseline pool, no warning, no stop. Walk ended at the account wall after 33 screens; bag unchanged: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping.",
+   "run": "runs/verify-w-htaf-receding",
+   "stage": 3,
+   "type": "one-change",
+   "screens": 33,
+   "endedAt": "account wall (yd)"
+  },
+  {
+   "id": "verify-w-htaf-dontknow",
+   "flow": "women",
+   "changed": "women-htaf: My middle parting is getting wider → I don't know what kind of hair loss I have",
+   "result": "No visible change: same screens as the baseline pool, no warning, no stop. Walk ended at the account wall after 33 screens; bag unchanged: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping.",
+   "run": "runs/verify-w-htaf-dontknow",
+   "stage": 3,
+   "type": "one-change",
+   "screens": 33,
+   "endedAt": "account wall (yd)"
+  },
+  {
+   "id": "verify-m-gender-woman",
+   "flow": "men",
+   "changed": "men-pds-gender: gender identity left blank → Woman/Girl (sex at birth still Male)",
+   "result": "The men's 'You're not alone' screen is skipped. Same questions otherwise and the same £34.99 bag. Walk ended at the account wall after 29 screens; bag unchanged: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping.",
+   "run": "runs/verify-m-gender-woman",
+   "stage": 3,
+   "type": "one-change",
+   "screens": 29,
+   "endedAt": "account wall (yd)"
+  },
+  {
+   "id": "verify-w-gender-man",
+   "flow": "women",
+   "changed": "women-pds-gender: gender identity left blank → Man/Boy (sex at birth still Female)",
+   "result": "No visible change: same screens as the baseline pool, no warning, no stop. Walk ended at the account wall after 32 screens; bag unchanged: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping.",
+   "run": "runs/verify-w-gender-man",
+   "stage": 3,
+   "type": "one-change",
+   "screens": 32,
+   "endedAt": "account wall (yd)"
+  },
+  {
+   "id": "verify-m-mdm-bph",
+   "flow": "men",
+   "changed": "men-mdm: No medicines → Medication to treat benign prostate hyperplasia (BPH)",
+   "result": "No visible change: same screens as the baseline pool, no warning, no stop. Walk ended at the account wall after 30 screens; bag unchanged: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping.",
+   "run": "runs/verify-m-mdm-bph",
+   "stage": 3,
+   "type": "one-change",
+   "screens": 30,
+   "endedAt": "account wall (yd)"
+  },
+  {
+   "id": "verify-w-htp-spiro",
+   "flow": "women",
+   "changed": "women-htp: None of the above → Spironolactone tablets (+ the must-tick that appears)",
+   "result": "No visible change: same screens as the baseline pool, no warning, no stop. Walk ended at the account wall after 32 screens; bag unchanged: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping.",
+   "run": "runs/verify-w-htp-spiro",
+   "stage": 3,
+   "type": "one-change",
+   "screens": 32,
+   "endedAt": "account wall (yd)"
+  },
+  {
+   "id": "verify-w-group-medical",
+   "flow": "women",
+   "changed": "GROUP TEST (women, 4 medical screens changed together): scalp eczema / psoriasis + active infection + pain; scalp steroids; phaeochromocytoma + hypertrichosis + PoTS; allergic to all eight actives",
+   "result": "No visible change: same screens as the baseline pool, no warning, no stop. Walk ended at the account wall after 33 screens; bag unchanged: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping.",
+   "run": "runs/verify-w-group-medical",
+   "stage": 3,
+   "type": "group test (several medical tick-boxes at once)",
+   "screens": 33,
+   "endedAt": "account wall (yd)"
+  },
+  {
+   "id": "verify-m-group-medical",
+   "flow": "men",
+   "changed": "GROUP TEST (men, 5 medical screens changed together): five previous products; five scalp symptoms; scalp steroids; hypertrichosis + PoTS; allergic to dutasteride, melatonin, urea, niacinamide, tretinoin and vitamin B6",
+   "result": "No visible change: same screens as the baseline pool, no warning, no stop. Walk ended at the account wall after 30 screens; bag unchanged: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping.",
+   "run": "runs/verify-m-group-medical",
+   "stage": 3,
+   "type": "group test (several medical tick-boxes at once)",
+   "screens": 30,
+   "endedAt": "account wall (yd)"
   }
  ],
  "recommendations": [
@@ -6198,7 +6430,7 @@
  "limitations": [
   "The prescriber's decision rules (which answers lead to which of the 16 formulas, which strength, when someone is refused) sit behind the account wall and were not tested. Rules labelled 'docs' quote the company's leaflets, FAQ and terms; they show what must not be prescribed, not what is. No prescription was ever seen.",
   "'No visible change' means: same screens, same wording and options, same bag JSON as a pool of baseline visits. An answer can still change the prescriber's choice later.",
-  "The server varies the flow at random between visits (see serverRandomness). Each comparison was made against all baseline visits of that route (2 for men, 3 for women) and against every unrelated run, but the pools are small, so a rare random variant could still be mistaken for an effect or the reverse.",
+  "The server varies the flow at random between visits (see serverRandomness). Each comparison was made against all baseline visits of that route (3 for men, 4 for women) and against every unrelated run, but the pools are small, so a rare random variant could still be mistaken for an effect or the reverse.",
   "Budget: 47 stage 2 replays (about 45 were allowed). Not tested as a one-change replay: most women's conditions and medicines (PCOS and heart only), women's allergies, most allergies for men (minoxidil and finasteride only), most scalp symptoms (infection and eczema only), most previous products (finasteride tablets only), BPH medicine, scalp steroids, hypertrichosis, PoTS, 'Often low' blood pressure, 'Complete hair loss' for men, 'receding hairline' and 'I don't know what kind of hair loss I have' for women (never chosen), the women's under-18 stop (seen at 16 in a multi-change scout), ages above 85, a non-UK address (the UK box is a required tick), the allergy free-text box, and the drops promo link. Those that were covered rely on stage 1 multi-change scouts or on the other route, and are labelled so option by option. The answer files prepared for the untested ones are in runs/_not-run/.",
   "Non-medical answers (hair type, styling, skin tone, wishes, washing, gender identity and so on) were tested in six group tests, 5 to 11 answers at a time. A group test with no visible change shows that none of its answers has a visible effect by itself, unless two effects cancel out, which is unlikely here; it is weaker evidence than a one-change replay. The gender-identity options 'Other', 'Woman/Girl' with sex Male and 'Man/Boy' with sex Female were never chosen.",
   "Free-text boxes were given one harmless value each ('Vitamin D' for medicines in stage 2; 'Penicillin' for allergies and 'Levothyroxine' for the women's medicines in stage 1 scouts). Whether particular typed words trigger anything was not explored.",
@@ -6208,12 +6440,12 @@
   "Customer numbers, awards, review scores and review quotes are the company's or third parties' claims and were not verified.",
   "Each replay created an anonymous visitor record with fictional answers on Hair + Me's servers (that is how the site works for every visitor). No name, email, phone number, address, photo or payment detail was ever entered and no consultation was submitted for review."
  ],
- "stage": "rules (stage 2 of 3: one-change experiments)",
+ "stage": "final (stage 3 of 3: verified)",
  "serverRandomness": {
   "what": "With identical answers the server serves different screens on different visits. These are site-side experiments, not branches.",
   "stepsThatComeAndGo": {
-   "js": "'Where are you in your hair regrowth journey?': seen in 24 of 41 men's and 12 of 17 women's completed walks",
-   "hs": "'How do you usually style or treat your hair?': seen in 17 of 41 men's and 17 of 17 women's completed walks (random for men; always shown to women so far)"
+   "js": "'Where are you in your hair regrowth journey?': seen in 29 of 51 men's and 17 of 28 women's completed walks",
+   "hs": "'How do you usually style or treat your hair?': seen in 26 of 51 men's and 28 of 28 women's completed walks (random for men; always shown to women so far)"
   },
   "notRandom": "The men's 'You're not alone' screen (yna) looked random in stage 1 (missing from one of seven men's walks). Stage 2 showed it follows the optional gender identity answer: shown when that is blank or Man/Boy, skipped otherwise (runs/s2-m-gender-transwoman).",
   "wordingOrControlThatVaries": [
@@ -6287,5 +6519,43 @@
     "status": "confirmed"
    }
   ]
+ },
+ "verification": {
+  "checked": [
+   "Baselines replayed fresh (runs/verify-base-men, runs/verify-base-women): both end at the account wall 'Personalise your account' with the same one-line bag: 'Prescription · Personalised treatment · 4 week supply · 12ml', £34.99, free shipping. No new or missing screens against the baseline pool. Matches the record.",
+   "Under-18 hard stop (R4): confirmed on the men's route (runs/verify-m-age-17) and, for the first time as a single change, on the women's route (runs/verify-w-age-17). 17 years 11 months gives 'We're unable to treat you at this time'.",
+   "Pregnancy Yes (R10): confirmed (runs/verify-w-pg-yes): only the extra 'Pregnancy safety information' screen; not turned away; same bag.",
+   "Heart condition does not stop or change anything (R17): confirmed (runs/verify-m-mcm-heart).",
+   "Declining finasteride / dutasteride changes nothing visible (R21): confirmed (runs/verify-m-pp-decline).",
+   "Minoxidil allergy with The Capsules chosen changes nothing visible (R19): confirmed (runs/verify-m-al-minoxidil). BPH medicine alone: also nothing (runs/verify-m-mdm-bph, new).",
+   "Blood-pressure follow-up (R8, R9): confirmed on both routes. 'Often elevated' with a typed 180/110 gives no warning or stop (runs/verify-m-bp-elevated-reading); 'Well-controlled' tested for the first time on the women's route (runs/verify-w-mcf-bp).",
+   "Gender identity skips the men's 'You're not alone' screen (R23): confirmed with two more values, Non-Binary and Woman/Girl (runs/verify-m-gender-nonbinary, runs/verify-m-gender-woman). On the women's route Man/Boy changes nothing (runs/verify-w-gender-man, new; R24).",
+   "Pets Yes adds the 'Better for pet owners' badge (R12): confirmed on the women's route (runs/verify-w-pt-yes).",
+   "Promo entry (R26): the drops code HGSHOPDROPS replayed for the first time (runs/verify-w-entry-promo-drops): £14.99 for the first three months, then £34.99; same questions.",
+   "Women's options never tested before: 'receding hairline' and 'I don't know what kind of hair loss I have' change nothing (runs/verify-w-htaf-receding, runs/verify-w-htaf-dontknow). Spironolactone as a previous product only adds the must-tick box (runs/verify-w-htp-spiro).",
+   "Medical tick-boxes only seen in stage 1 scouts, now in two group tests (runs/verify-m-group-medical, runs/verify-w-group-medical): five previous products, every scalp symptom, scalp steroids, phaeochromocytoma, hypertrichosis, PoTS and allergy to all eight actives. No new or missing screen, no stop, same bag.",
+   "Products: the price (£34.99 every four weeks, article 254006) and all 16 formulas with their strengths and dosing (6 capsules in 254164; 6 medicated drops in 254578; 4 niacinamide drops in 258568) match the live support articles re-read on 23 Nov 2026 (saved in src/verify/).",
+   "Live product pages (runs/verify-pages): The Capsules, The Drops and The Drops alcohol-free minoxidil page all show '£14.99' against '£34.99'. /products/the-vitamins loads with no title or price (no public product page), so the vitamins price stays unknown.",
+   "Second consultation named in the code ('sign-up-hair-supplements', short name suhs): opening /c/suhs/new as a visitor redirects to the login page (runs/verify-suhs-explore-0; the API answered 401 'Missing cookie'). So the supplements consultation sits behind the account wall. Nothing was typed.",
+   "Every run folder cited in this file exists."
+  ],
+  "corrected": [
+   "R9, R16, R17, R19: effect type 'flag-for-clinician' with evidence 'observed' changed to 'none' (observed). A replay can only show that nothing visible happens; the prescriber's use of the answer is docs (R30 to R33), not observed.",
+   "R20 (Drops instead of Capsules): 'product-switched' with evidence 'observed' changed to 'none'. The replays show no switch; that the preference steers the formula is docs (R37), not observed.",
+   "R21 (declines finasteride / dutasteride): evidence 'observed' changed to 'inferred'. The replays (s2 and runs/verify-m-pp-decline) show nothing visible; the removal of finasteride and dutasteride formulas is read from the option wording, never seen in a prescription.",
+   "R39 and R40: evidence 'docs' changed to 'inferred'. The company's articles say finasteride is first-line and topical minoxidil suits PCOS, but linking those statements to particular questionnaire answers and formulas is the investigator's reasoning (both rules already said 'inferred' in their text).",
+   "R26 (promo entry): the drops code was only read on the product page in stage 2; runs/verify-w-entry-promo-drops replayed it (women's answers) and it gives the same £14.99 offer. Flow widened from 'men' to 'both'.",
+   "R23 ('You're not alone' skipped): Woman/Girl added to the gender identity values that skip the screen (runs/verify-m-gender-woman); Non-Binary re-confirmed as a single change (runs/verify-m-gender-nonbinary).",
+   "2 option(s) on the sex-at-birth question ('Female') were typed 'product-removed' with evidence 'observed'. The route swap is observed but the product removal is only in the leaflet, so the type is now 'extra-questions' (as for 'Male') and the removal is noted as docs.",
+   "The Vitamins: the per-dose amounts are from site code only (src/nxt/the-vitamins-*.js); the live ingredients article gives no amounts and also lists vitamin B12, which the code list lacks. Noted on the product; label stays 'code'."
+  ],
+  "stillUnverified": [
+   "Everything after the account wall: which of the 16 formulas, which strength and which plan any patient gets. All 'recommendedWhen' text and rules R28 to R42 are docs or inferred, never seen.",
+   "Whether the prescriber really applies the leaflet contraindications to questionnaire answers (heart disease, prostate disease, scalp disease, allergies, pregnancy). The questionnaire itself never acts on them.",
+   "The stage 2 rules not re-run in stage 3 (for example R6 two goals, R7 no hair loss, R14 'Other' free-text box, R22 the non-medical group tests, R27 server randomness) rest on stage 2 runs only. Their run folders exist and their diffs were not re-read line by line.",
+   "The Vitamins price and the exact vitamin list (B12 in the article, not in the code).",
+   "Third-party statements (Trustpilot, press) were read through web search summaries and were not re-checked."
+  ],
+  "verdict": "For the part anyone can see, this report is trustworthy. Two fresh baselines and 19 more replays in stage 3 reproduced every visible rule that was re-tested: the only stop is age under 18, a few answers add or skip one screen or add a badge, the promo links lower the first price, and the bag is always the same unnamed £34.99 'Personalised treatment'. No claim was contradicted. The corrections were about labels: a few rules and one option said 'observed' for something no replay can see (a prescriber's decision, a product removal or switch), and these now say 'none', 'docs' or 'inferred'. The product catalogue matches the live leaflets. The weak part is the real decision, which a pharmacist prescriber makes after sign-up and payment: what is said about who gets which formula comes from the company's leaflets and articles and from reasoning, so treat it as likely, not proven."
  }
 }

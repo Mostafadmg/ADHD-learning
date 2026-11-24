@@ -1,0 +1,21 @@
+STEP 05 FAILED click "label:text-is(\"My hair loss started gradually over the last few months or years\")"
+URL: https://www.numan.com/subscribe/hair-loss/f6f55e49-5d25-4967-a899-3164223ea727/sq/which_image_best_matches_your_hair_loss/reject/patchy
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+No suitable treatment
+
+Defined circular areas of hair loss on the head may suggest a form of alopecia, therefore it is best to consult your GP so they can investigate.
+
+If you’d like to talk to our clinicians about this, please email clinic@numan.com and we’ll do our best to find a solution or recommend next steps.
+
+Did you make a mistake in your consultation? Providing false information can lead to serious harm to your health.
+
+Review your answers
+Back to homepage
+
+--- CONTROLS ---
+  button (1): Review your answers
+
+--- LINKS ---
+  link (3): Visit the main page -> /  ·  clinic@numan.com -> mailto:clinic@numan.com  ·  Back to homepage -> https://www.numan.com/

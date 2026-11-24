@@ -1,0 +1,17 @@
+STEP 11 click "Next"
+URL: https://www.numan.com/subscribe/hair-loss/ec8187b6-5c9e-4eb0-9524-f8ed12ee0c4a/sq/clarify_plan_on_trying_for_baby
+TITLE: Traces of finasteride have been found in the semen (which could affect the feotus), it is advised to stop taking finasteride 12 weeks prior to trying for a baby. | Numan
+
+--- VISIBLE TEXT ---
+62%
+Traces of finasteride have been found in the semen (which could affect the feotus), it is advised to stop taking finasteride 12 weeks prior to trying for a baby.
+I would like to be considered for finasteride and will stop taking finasteride 12 weeks prior to trying for a baby.
+I do not wish to be considered for preparations containing finasteride.
+Back
+
+--- CONTROLS ---
+  radio (2): I would like to be considered for finasteride and will stop taking finasteride 12 weeks prior to trying for a baby.  ·  I do not wish to be considered for preparations containing finasteride.
+  button (1): Back
+
+--- LINKS ---
+  link (1): Visit the main page -> /

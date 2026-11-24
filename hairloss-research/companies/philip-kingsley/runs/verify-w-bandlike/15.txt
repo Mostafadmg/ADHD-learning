@@ -1,0 +1,18 @@
+STEP 15 click "button.pk-quiz-action.Next"
+URL: https://hairloss.philipkingsley.co.uk/quiz/step/view/stepId/women_quiz_step6
+TITLE: 
+
+--- VISIBLE TEXT ---
+QUESTION #6
+HOW WOULD YOU DESCRIBE YOUR SCALP BEFORE THESE SYMPTOMS STARTED?
+SELECT ONE
+HEALTHY
+SENSITIVE TO FRAGRANCE
+OILY
+BACK
+
+--- CONTROLS ---
+  button (1): BACK
+
+--- LINKS ---
+  link (4): SIGN IN -> https://hairloss.philipkingsley.co.uk/customer/account/  ·  TERMS OF SALE -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-of-sale  ·  TERMS & CONDITIONS -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-conditions  ·  PRIVACY POLICY -> https://hairloss.philipkingsley.co.uk/hair-loss-privacy-policy

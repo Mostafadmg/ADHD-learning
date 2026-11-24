@@ -5,7 +5,8 @@
  "changedStep": "el",
  "baselinesPooled": [
   "baseline-men",
-  "s2-base-men-1"
+  "s2-base-men-1",
+  "verify-base-men"
  ],
  "stepOrder": [
   "tp",
@@ -45,76 +46,6 @@
  "missingSteps": [],
  "candidateEffects": [],
  "noise": [
-  {
-   "step": "ar",
-   "key": "q429.config",
-   "where": "before-change",
-   "alsoIn": [
-    "s2-m-gender-transwoman",
-    "s2-m-htc-recent",
-    "s2-m-mcm-bp"
-   ]
-  },
-  {
-   "step": "st",
-   "key": "q9346.options",
-   "where": "before-change",
-   "alsoIn": [
-    "entry-promo-caps-men",
-    "s2-base-women-1",
-    "s2-m-htam-patches"
-   ]
-  },
-  {
-   "step": "st",
-   "key": "q9346.type",
-   "where": "before-change",
-   "alsoIn": [
-    "entry-promo-caps-men",
-    "s2-base-women-1",
-    "s2-m-htam-patches"
-   ]
-  },
-  {
-   "step": "st",
-   "key": "q9348.options",
-   "where": "before-change",
-   "alsoIn": [
-    "entry-promo-caps-men",
-    "s2-base-women-1",
-    "s2-m-htam-patches"
-   ]
-  },
-  {
-   "step": "st",
-   "key": "q9348.type",
-   "where": "before-change",
-   "alsoIn": [
-    "entry-promo-caps-men",
-    "s2-base-women-1",
-    "s2-m-htam-patches"
-   ]
-  },
-  {
-   "step": "st",
-   "key": "q9349.config",
-   "where": "before-change",
-   "alsoIn": [
-    "entry-promo-caps-men",
-    "s2-base-women-1",
-    "s2-m-htam-patches"
-   ]
-  },
-  {
-   "step": "st",
-   "key": "q9349.type",
-   "where": "before-change",
-   "alsoIn": [
-    "entry-promo-caps-men",
-    "s2-base-women-1",
-    "s2-m-htam-patches"
-   ]
-  },
   {
    "step": "di",
    "key": "q8015.options",
@@ -213,16 +144,6 @@
     "s2-base-women-1",
     "s2-m-al-finasteride",
     "s2-m-al-minoxidil"
-   ]
-  },
-  {
-   "step": "ct",
-   "key": "title",
-   "where": "after-change",
-   "alsoIn": [
-    "baseline-women",
-    "entry-promo-caps-men",
-    "s2-m-al-finasteride"
    ]
   }
  ],

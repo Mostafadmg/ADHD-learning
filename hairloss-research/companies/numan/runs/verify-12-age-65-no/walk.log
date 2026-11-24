@@ -1,0 +1,12 @@
+
+!!!!! STEP 05 FAILED: click "label:text-is(\"Temples and Crown\")"
+locator.click: Timeout 4000ms exceeded.
+
+===== STEP 05 FAILED click "label:text-is(\"Temples and Crown\")" =====
+URL: https://www.numan.com/subscribe/hair-loss/b89d78f0-fd36-4205-a3d0-d48f80ce5707/sq/sixty_five_and_over_confirmation/reject/no
+TEXT: No suitable treatment ⏎ Unfortunately, we’re unable to recommend a hair loss treatment for you. Please contact your doctor for advice. ⏎ If you’d like to talk to our clinicians about this, please email clinic@numan.com and we’ll do our best to find a solution or recommend next steps. ⏎ Did you make a mistake in your consultation? Providing false information can lead to serious harm to your health. ⏎ Review your answers ⏎ Back to homepage
+CONTROLS:
+  button (1): Review your answers
+  links (3, full list in 05.txt): Visit the main page  ·  clinic@numan.com  ·  Back to homepage
+
+[walk] 5 step(s), exit 2, 19 JSON bodies saved -> runs/verify-12-age-65-no

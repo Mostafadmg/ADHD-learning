@@ -1,0 +1,13 @@
+URL: https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+
+Exit consultation
+Your details
+What is your date of birth?
+For example: 31 3 1980
+Day
+Month
+Year
+I confirm I am
+17
+years old
+Back

@@ -1,0 +1,24 @@
+STEP 24 fill "Feet" = "5"
+URL: https://start.treated.com/GBR/en/#/height-weight
+TITLE: Treated UK - Choose Better - Medical Experts & Treatments Online
+
+--- VISIBLE TEXT ---
+What's your height and weight?
+ Height
+ft/in
+cm
+Feet
+Inches
+ Weight
+lbs
+kg
+Stone
+Pounds
+Continue
+
+--- CONTROLS ---
+  input:tel (4): Feet = "5"  ·  Inches  ·  Stone  ·  Pounds
+  button (1): Continue
+
+--- LINKS ---
+

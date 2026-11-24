@@ -1,0 +1,22 @@
+STEP 09 click "No"
+URL: https://start.treated.com/GBR/en/#/questionnaire
+TITLE: Treated UK - Choose Better - Medical Experts & Treatments Online
+
+--- VISIBLE TEXT ---
+Question 4 of 11
+
+Which hair loss treatment(s) have you used before?
+(Select all that apply.)
+Propecia or Finasteride
+Regaine or Rogaine or Minoxidil
+Avodart or Dutasteride
+Other
+I've never used any
+Continue
+
+--- CONTROLS ---
+  checkbox (5): Propecia or Finasteride  ·  Regaine or Rogaine or Minoxidil  ·  Avodart or Dutasteride  ·  Other  ·  I've never used any
+  button (1): Continue [disabled]
+
+--- LINKS ---
+

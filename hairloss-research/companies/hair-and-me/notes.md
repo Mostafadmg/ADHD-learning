@@ -340,3 +340,21 @@ Product check (live support articles re-fetched to `src/verify/` today): price �
 and 10 drops formulas and strengths match the leaflets 254164, 254578, 258568. Vitamins: the article 619143 gives raw
 ingredient names only (it also names vitamin B12); the per-dose amounts come only from the site code
 `src/nxt/the-vitamins-*.js`, which does not list B12. Label stays `code`.
+| verify-w-group-medical | GROUP (women): scalp eczema + active infection + pain, scalp steroids, phaeochromocytoma + hypertrichosis + PoTS, all eight allergies: no new or missing step, same bag |
+| verify-w-pt-yes | women pets Yes: 'Better for pet owners' badge on The Capsules, same bag: confirms the pets rule on the women's route |
+| verify-m-gender-woman | `yna` missing: third value confirms the gender-identity rule |
+| verify-w-gender-man | women, gender Man/Boy: no change |
+| verify-m-mdm-bph | BPH medicine alone: no change, same bag |
+| verify-w-htp-spiro | women, spironolactone before: only the must-tick box, same bag |
+| verify-pages | product pages show £14.99 against £34.99; /products/the-vitamins has no public page |
+| verify-suhs-explore-0 | /c/suhs/new (supplements consultation named in the code) redirects to login: behind the account wall; nothing typed |
+
+**Result:** 21 consultation replays in stage 3, no claim contradicted. Corrections were labels only (see
+`verification.corrected` in company.json): R9/R16/R17/R19/R20 now 'none' (a prescriber decision cannot be observed), R21,
+R39, R40 now 'inferred', R26 widened to both routes, R23 gains Woman/Girl, 'Female' option type fixed, vitamins B12 note.
+
+**How company.json is built now (stage 3):** the stage 3 layer is `tools/s3_text.py` (VISTEXT, OPT_FIXED, RETESTED and
+`apply()`, which writes the `verification` block). Rebuild with
+`python3 tools/build_quizdef.py && python3 tools/s2_apply.py && node ../../tools/validate.js hair-and-me --stage final`.
+Not re-run in stage 3: `verify-m-htam-complete`, `verify-w-yhg-two`, `verify-w-htaf-none`, `verify-m-al-other`,
+`verify-m-age-106` (answer files are in `runs/`; budget).

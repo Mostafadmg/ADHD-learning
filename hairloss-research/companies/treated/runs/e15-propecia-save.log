@@ -1,0 +1,9 @@
+
+===== FINAL (after 35 steps) =====
+URL: https://start.treated.com/GBR/en/#/secondary-questions
+TEXT: Question 1 of 1 ⏎ There are some things you need to watch out for when using Finasteride (Propecia), and not everyone can use it. ⏎ In rare cases, some men have reported side effects including depression, suicidal thoughts and sexual dysfunction when using this treatment. For the very few men who experience them, these symptoms usually subside after stopping treatment, but they may persist in some. If you notice these side effects, you should stop using the treatment and seek medical advice right away. ⏎ I understand
+CONTROLS:
+  radio (1): I understand
+  links: 
+
+[walk] 35 step(s), exit 0, 9 JSON bodies saved -> runs/e15-propecia-save

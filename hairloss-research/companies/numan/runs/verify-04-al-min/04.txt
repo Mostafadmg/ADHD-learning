@@ -1,0 +1,17 @@
+STEP 04 click "label:text-is(\"Temples and Crown\")"
+URL: https://www.numan.com/subscribe/hair-loss/05cbd535-b345-45ed-98d9-9804687d80cd/sq/when_did_you_notice
+TITLE: When did you start to notice your hair loss? | Numan
+
+--- VISIBLE TEXT ---
+13%
+When did you start to notice your hair loss?
+Over the last few days or weeks
+My hair loss started gradually over the last few months or years
+Back
+
+--- CONTROLS ---
+  radio (2): Over the last few days or weeks  ·  My hair loss started gradually over the last few months or years
+  button (1): Back
+
+--- LINKS ---
+  link (1): Visit the main page -> /

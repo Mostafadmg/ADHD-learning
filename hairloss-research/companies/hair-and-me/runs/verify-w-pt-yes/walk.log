@@ -28,3 +28,36 @@
 24 [al] (question) Do you have any known allergies to the following?  ->  ["No known allergies"]
    (variant: input type single_select_button)
 25 [rhf] (question) How have you felt about your hair in the last week?  ->  ["5"]
+   (variant: input type single_select_button)
+26 [rha] (question) How would you rate the appearance of your hair in the last week?  ->  ["5"]
+27 [di] (question) What most influenced your decision to sign-up today?  ->  ["I'm looking for a long-term effective haircare treatment"]
+28 [rj] (question)   ->  []
+   (variant: input type date_masked)
+29 [el] (question) Your eligibility  ->  [{"type":"input[name=\"3053\"]","value":"15061988"},"Yes, I live in the UK (excluding Channel Islands)."]
+30 [ct] (question) Your order  ->  []
+
+===== STOP: no answer for step 31 [yd] (question) Personalise your account =====
+URL: https://www.hairandme.com/c/suh/yd
+JSON: {"step":{"actionsList":[{"next":{"label":"Next question"}},{"previous":{"label":"Back to previous page"}}],"breadcrumb":{"sectionNumber":4,"sectionTitle":"YOUR DETAILS"},"description":null,"headerElement":null,"questions":[{"id":3044,"inputConfig":{"placeholder":"John/Jane"},"inputType":"text","is_custom":false,"label":"Your legal first name","text":null,"value":null},{"id":3045,"inputConfig":{"placeholder":"Doe"},"inputType":"text","is_custom":false,"label":"Your legal last name","text":null,"value":null},{"id":3043,"inputConfig":{"info":{"text":"This will appear on your personalised products, and in your account. If left empty, we’ll use your legal first name."},"isOptional":true,"placeholder":"Your nickname or chosen name"},"inputType":"text","is_custom":false,"label":"Your preferred name","text":null,"value":null},{"id":3055,"inputConfig":{"defaultEngravedName":"you","description":"Our service is fully personalised – right down to the name on the treatment:","firstNameQuestionId":3044,"imageKey":"unengraved-hair-doser","preferredNameQuestionId":3043,"title":"Engraved just for you"},"inputType":"engraved_doser","is_custom":false,"label":null,"text":null,"value":null}],"section":null,"title":"Personalise your account","type":"question"}}
+TEXT: Personalise your account
+Your legal first name
+Your legal last name
+Your preferred name
+
+This will appear on your personalised products, and in your account. If left empty, we’ll use your legal first name.
+
+Engraved just for you
+Our service is fully personalised – right down to the name on the treatment:
+FOR YOU
+NEXT QUESTION
+Back to previous page
+CONTROLS:
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:text[name=3044] | Your legal first name
+input:text[name=3045] | Your legal last name
+input:text[name=3043] | Your preferred name
+button:submit | NEXT QUESTION [disabled]
+a -> /c/suh/yd?action=previous | Back to previous page
+
+[autowalk] exit 0 -> runs/verify-w-pt-yes

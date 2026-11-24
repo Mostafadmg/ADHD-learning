@@ -1,0 +1,9 @@
+URL: https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+
+Exit consultation
+Pets
+Do you live with pets?
+Yes
+No
+Next
+Back

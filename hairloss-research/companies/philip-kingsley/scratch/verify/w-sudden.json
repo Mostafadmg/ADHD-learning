@@ -1,0 +1,169 @@
+{
+ "start": "https://hairloss.philipkingsley.co.uk/welcome",
+ "note": "Stage 3 verify run built from baseline-women.json; changes: q4 -> It's happened very suddenly",
+ "steps": [
+  {
+   "do": "click",
+   "selector": "[data-quiz-step=women_quiz_step0]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "text": "GET STARTED"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q1\"][data-quiz-selection=\"No\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q2\"][data-quiz-selection=\"No\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q3a\"][data-quiz-selection=\"Seeing more of my scalp or wider parting\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q3c\"][data-quiz-selection=\"People close to me can notice it\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q4\"][data-quiz-selection=\"It's happened very suddenly\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q5a\"][data-quiz-selection=\"I don't have any of these symptoms\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q6\"][data-quiz-selection=\"Healthy\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q7\"][data-quiz-selection=\"Medium\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q8\"][data-quiz-selection=\"Medium (shoulder length)\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q9\"][data-quiz-selection=\"None of the above\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q10a\"][data-quiz-selection=\"No\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q11a\"][data-quiz-selection=\"I have no allergies\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q12a\"][data-quiz-selection=\"No, I do not have a medical condition and am not taking any medication\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "scroll"
+  },
+  {
+   "do": "wait",
+   "ms": 1200
+  },
+  {
+   "do": "eval",
+   "js": "(()=>{const q=window.quiz;const d=(q.data&&q.data[q.quizId])||{};const ans={};for(const k in d){if(d[k]&&d[k].value!=='')ans[k]=d[k].value;}const skus=q.checkProductAvailability();const rules=q.state.rules[q.quizId]||{};const out={quizId:q.quizId,step:q.state.current,url:location.pathname,skus:skus,ruleCount:Object.keys(rules).length,rulesLen:JSON.stringify(rules).length,answers:ans,heading:(document.querySelector('h1,h2')||{}).innerText||''};return out;})()"
+  }
+ ]
+}

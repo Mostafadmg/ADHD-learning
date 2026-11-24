@@ -62,8 +62,8 @@
   },
   {
    "do": "click",
-   "text": "None of these",
-   "_q": "5179"
+   "text": "Continue",
+   "_q": "5179 continue"
   },
   {
    "do": "wait",

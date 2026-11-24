@@ -1,0 +1,11 @@
+
+===== FINAL (after 43 steps) =====
+URL: https://start.treated.com/GBR/en/#/auto-offer
+TEXT: 1. Choose treatment ⏎ 2. Checkout ⏎ 3. Complete ⏎ Here's what we've got for you. ⏎ You can edit it to something else if you prefer. ⏎ Finasteride ⏎ Finasteride ⏎ Read more  ⏎ Choose a treatment: ⏎ Finasteride ⏎ Finasteride ⏎ Starting from ⏎ £34.95 ⏎ Regaine ⏎ Starting from ⏎ £99.95 ⏎ Propecia ⏎ Starting from ⏎ £66.95 ⏎ Choose a strength: ⏎ 1mg ⏎ Choose a quantity: ⏎ 28 tablets ⏎ £34.95 ⏎ Choose a frequency: ⏎ every month ⏎ £34.95 ⏎ Most first-time users select: 1mg x 28 tablets ⏎ Save ⏎ Your package will arrive by ⏎ Wednesday, November 25 ⏎ Included: ⏎ Free next-day delivery ⏎ Free anytime access to our clinicians ⏎ Stop or change your plan any time ⏎ OR ⏎ Not sure? ⏎ We'll pick a treatment for you based on your medical profile, and you can choose whether to accept it. ⏎ Choose for me ⏎ What's included: ⏎ Ask our doctors anything. ⏎ Get unlimited access to our clinicians and ask them anything you want, any time you like. ⏎ Personalised aftercare. ⏎ We’ll check in regularly to make sure your treatment is working out for you. ⏎ Freedom to stop anytime. ⏎ Stop or change your plan any time, with the press of a button. (No phone calls required.) ⏎ Privacy and discretion. ⏎ Any confidential info you share with us is kept private and secure. ⏎ Need help?
+CONTROLS:
+  input:search (1): (no label)
+  option (3): Finasteride Starting from £34.95 [true]  ·  Regaine Starting from £99.95  ·  Propecia Starting from £66.95
+  button (3): Save  ·  Choose for me  ·  Need help?
+  links: 
+
+[walk] 43 step(s), exit 0, 9 JSON bodies saved -> runs/verify-smoke

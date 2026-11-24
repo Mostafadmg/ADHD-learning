@@ -1,0 +1,152 @@
+{
+ "step": {
+  "title": "HL - Recommendations",
+  "questions": [
+   {
+    "questionId": "107988",
+    "explanationAvailable": false,
+    "displayText": "\n\n\n<p><img class=\"center-rounded-clinician-image\" src=\"https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Sameer-Sanghyi-2.jpg?v=1782228882\"/></p>\n<p class=\"center-clinician-name\"><b>Dr. Sameer Sanghvi</b></p>\n<p class=\"clinician-subtitle\"> General Practitioner (GP)<br/> GMC no. 7085078</p>\n\n<p><b>Consultation overview:</b></p>\n<ul>\n  <li>Your hair loss is consistent with <b>male pattern hair loss</b></li>\n  <li>You're new to hair loss treatment</li>\n  \n  \n  \n  \n  \n  \n  \n  \n</ul>\n\n<p><b>Our recommendation:</b></p>\n<ul>\n  \n      \n  <li>You're suitable for <b>Finasteride tablets</b></li>\n  \n  \n    \n  \n  \n</ul>\n\n\n\n\n\n\n\n\n\n\n\n\n",
+    "type": "PRODUCT_CARD",
+    "answerRequired": true,
+    "smoothTransition": false,
+    "answerChoices": [
+     {
+      "answerId": "107988$105190",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "107988",
+      "displayText": "<div class=\"description-header\">Details:</div>\n<ul class=\"description-text\">\n<li>Convenient daily tablet</li>\n<li>Helps prevent further hair loss</li>\n</ul>\n<div class=\"description-header\">Important:</div>\n<ul class=\"description-text\">\n<li>Finasteride tablets must not be handled by pregnant women.</li>\n</ul>",
+      "type": "CARD_SELECTION",
+      "selected": false,
+      "metadata": {
+       "title": "Finasteride tablets",
+       "label": "1 month",
+       "subtitle": "Finasteride 1mg tablet",
+       "banner": "83% experience an improvement in hair loss²",
+       "sku": 3743,
+       "imageURL": "https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Finasteride_tablets_LPOD_0399a893-8f75-4ea2-b983-d82e1d4ebea5.png?v=1792400196",
+       "pricingInformation": {
+        "pricePerPen": "N/A",
+        "pricePerWeek": "6.79 a week",
+        "currency": "£",
+        "price": "163.00",
+        "totalPriceLabel": "£163.00 total"
+       },
+       "inStock": true,
+       "recommended": false,
+       "preference": false,
+       "mainOption": true,
+       "moreInformation": [
+        {
+         "title": "Description",
+         "content": "<p><b>Finasteride 1 mg tablets</b> contain the active substance finasteride, a prescription medicine used to treat male pattern hair loss (androgenetic alopecia) in adult men.</p><p>Finasteride works by reducing levels of a hormone called dihydrotestosterone (DHT), which is associated with male pattern hair loss. This can help increase hair growth on the scalp and prevent further hair loss in men.</p><p>Men with mild to moderate, but not complete, hair loss may benefit from treatment with finasteride.</p><p>Finasteride should only be used by adult men and should be taken exactly as prescribed.</p><p>The finasteride patient information leaflet can be found <a target=\"_blank\" href=\"https://www.medicines.org.uk/emc/files/pil.7068.pdf\">here</a>.</p>"
+        },
+        {
+         "title": "Ingredients",
+         "content": "<p><b>Excipients (inactive ingredients):</b> The inactive ingredients in finasteride tablets may vary depending on the manufacturer. Patients should refer to the patient information leaflet supplied with their medicine for the full list of ingredients.</p><p>Examples of inactive ingredients that may be included are:</p><p><b>Tablet core:</b> Lactose monohydrate, microcrystalline cellulose, sodium starch glycolate, pregelatinised maize starch, docusate sodium, and magnesium stearate.</p><p><b>Tablet coat:</b> Hypromellose, hydroxypropyl cellulose, talc, titanium dioxide (E171), red iron oxide (E172), and yellow iron oxide (E172).</p><p>If you have an allergy or intolerance to any ingredient, including lactose, speak to your healthcare professional before taking this medicine.</p>"
+        },
+        {
+         "title": "Directions",
+         "content": "<p>Take 1 tablet once daily, with or without food. Swallow the tablet whole with water. Do not crush, chew, or break the tablet.</p><p>If you forget to take a dose, take your next dose at the usual time. Do not take a double dose to make up for a missed dose.</p><p>It is important to continue taking finasteride as prescribed for the treatment to be effective. Hair growth may take several months to become noticeable, and continued treatment is usually required to maintain any benefits.</p><p>If you have any questions about how to take this medicine, speak to your healthcare professional.</p>"
+        },
+        {
+         "title": "FAQS",
+         "content": "<p><b>How does this treatment work?</b></p><p>Finasteride works by blocking the conversion of testosterone to dihydrotestosterone (DHT), a hormone that contributes to male pattern hair loss. By reducing DHT levels in the scalp, finasteride may help slow further hair loss and support hair regrowth in some men.</p><p><b>How long does it take to work?</b></p><p>You will usually need to take finasteride continuously for at least 6 to 12 months before assessing whether it is working for you. Some men may notice improvements sooner, but individual results can vary.</p><p>Continued treatment is required to maintain any benefits. If treatment is stopped, hair loss will generally begin to return over time.</p><p><b>Will the effects last if I stop treatment?</b></p><p>No. If treatment is stopped, the beneficial effects of finasteride generally begin to reverse within several months, and hair loss may gradually return to pre-treatment levels.</p><p><b>Who can take finasteride?</b></p><p>Finasteride is used for the treatment of male pattern hair loss in adult men. It is not suitable for everyone, and some people may need to avoid this medicine or discuss its use with a healthcare professional before starting treatment.</p><p><b>Do not take finasteride:</b></p>"
+        },
+        {
+         "title": "Warnings",
+         "content": "<p><b>Important MHRA safety information</b></p><p>The Medicines and Healthcare products Regulatory Agency (MHRA) has highlighted reports of psychiatric side effects and sexual dysfunction in patients taking finasteride.</p><ul><li>Finasteride has been associated with depressed mood, depression, suicidal thoughts, and sexual dysfunction.</li><li>Sexual side effects may include reduced sex drive (libido), erectile dysfunction, and ejaculation disorders.</li><li>Some patients have reported sexual side effects that continued after stopping treatment.</li><li>The MHRA advises patients to read the Patient Information Leaflet and any patient safety information supplied with the medicine.</li><li>Tell your healthcare professional before starting treatment if you have a personal history of depression, low mood, or suicidal thoughts.</li><li>If you experience sexual dysfunction while taking finasteride, contact your healthcare professional for advice.</li><li>If you develop depressed mood, depression, or suicidal thoughts while taking finasteride, stop treatment and contact a healthcare professional as soon as possible.</li><li>If you feel at risk of harming yourself or have seriously harmed yourself, call 999 or seek emergency medical assistance immediately</li></ul> <p><b>Talk to your doctor or pharmacist before taking finasteride if:</b></p><ul><li>You are due to have a blood test for prostate-specific antigen (PSA). Finasteride can affect PSA test results, so your healthcare professional should be aware that you are taking this medicine.</li>\n</ul><p><b>Other important warnings</b></p><ul>\n<li>Infertility has been reported in some men taking finasteride, particularly in those with other risk factors that may affect fertility.</li><li>Improvement or normalisation of semen quality has been reported after stopping finasteride.</li><li>Long-term clinical studies investigating the effects of finasteride on male fertility have not been conducted.</li><li>Finasteride should not be taken by women.</li><li>Women who are pregnant, may be pregnant, or are planning a pregnancy should not handle crushed or broken finasteride tablets. Whole tablets are coated to prevent contact with the active ingredient during normal use.</li><li>Exposure during pregnancy may affect the development of a male baby’s sex organs.</li><li>If a pregnant woman comes into contact with crushed or broken finasteride tablets, medical advice should be sought.</li></ul><p><b>Stop taking finasteride and seek medical advice immediately if you experience:</b></p><ul><li>Symptoms of an allergic reaction, including swelling of the lips, face, tongue, or throat, difficulty swallowing, hives (raised itchy rash), or difficulty breathing.</li>\n<li>Depression, severe low mood, or thoughts of self-harm or suicide.</li></ul><p>You should promptly report any changes in breast tissue to your healthcare professional, including breast lumps, pain, enlargement, tenderness, or nipple discharge, as these may be signs of a serious condition such as breast cancer.</p><p><b>Possible side effects</b></p><p><b>Uncommon side effects (may affect up to 1 in 100 people)</b></p><ul><li>Reduced sex drive (libido).</li><li>Difficulty achieving or maintaining an erection (erectile dysfunction).</li><li>Problems with ejaculation, including a decrease in the amount of semen released during sex.</li></ul><p>The reduction in semen volume does not appear to affect normal sexual function.</p><p><b>Frequency not known (cannot be estimated from available data)</b></p><ul><li>Breast swelling or breast tenderness.</li><li>Pain in the testicles.</li><li>Blood in the semen.</li><li>Palpitations (awareness of your heartbeat).</li><li>Persistent difficulty achieving or maintaining an erection after stopping treatment.</li><li>Persistent reduction in sex drive after stopping treatment.</li><li>Persistent ejaculation problems after stopping treatment.</li><li>Male infertility and/or poor semen quality.</li><li>Changes in liver function, which may be detected through blood tests.</li><li>Anxiety.</li><li>Suicidal thoughts.</li></ul><p>If any side effect becomes serious, or if you notice any side effects not listed in the patient information leaflet, tell your doctor, pharmacist, or other healthcare professional. It may be helpful to make a note of what happened, when it started, and how long it lasted.</p><p>Please read the patient information leaflet supplied with your medicine for the complete list of warnings, precautions, and side effects.</p>"
+        }
+       ],
+       "usps": [
+        "One tablet a day",
+        "Lowers DHT, the hormone behind hair loss",
+        "Helps prevent further hair loss"
+       ],
+       "isProduct": false,
+       "groupId": 1,
+       "promoLabel": "Subscription available. Save 15% & cancel anytime.",
+       "hideTotalPrice": true
+      }
+     },
+     {
+      "answerId": "107988$102166",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "107988",
+      "displayText": "<div class=\"description-header\">Details:</div>\n<ul class=\"description-text\">\n<li>Convenient daily tablet</li>\n<li>Helps prevent further hair loss</li>\n<li>This a branded finasteride</li>\n</ul>\n<div class=\"description-header\">Important:</div>\n<ul class=\"description-text\">\n<li>Propecia tablets must not be handled by pregnant women.</li>\n</ul>",
+      "type": "CARD_SELECTION",
+      "selected": false,
+      "metadata": {
+       "title": "Propecia",
+       "label": "1 month",
+       "subtitle": "Finasteride 1mg tablet",
+       "banner": "83% experience an improvement in hair loss²",
+       "sku": 3751,
+       "imageURL": "https://cdn.shopify.com/s/files/1/0611/1284/4476/products/Propecia_Hair_loss_treatment.jpg?v=1743590760",
+       "pricingInformation": {
+        "pricePerPen": "N/A",
+        "pricePerWeek": "8.75 a week",
+        "currency": "£",
+        "price": "210.00",
+        "totalPriceLabel": "£210.00 total"
+       },
+       "inStock": true,
+       "recommended": false,
+       "preference": false,
+       "mainOption": true,
+       "moreInformation": [
+        {
+         "title": "Description",
+         "content": "<p><b>Propecia 1mg tablets</b> contain finasteride, a prescription medicine used to treat male pattern hair loss (androgenetic alopecia) in adult men.</p><p>Propecia increases hair growth on the scalp and prevents further hair loss in men. Men with mild to moderate, but not complete hair loss, can benefit from using Propecia.</p><p>The patient information leaflet can be found <a href=\"https://www.medicines.org.uk/emc/files/pil.2194.pdf\" target=\"_blank\">here</a>.</p>"
+        },
+        {
+         "title": "Ingredients",
+         "content": "<p><b>Active ingredient:</b> Finasteride 1mg.</p><p><b>Excipients (inactive ingredients):</b> lactose, microcrystalline cellulose E460, pregelatinized maize starch, sodium starch glycollate, docusate sodium, magnesium stearate E572, hypromellose E464, hydroxypropyl cellulose E463, titanium dioxide, talc, yellow iron oxide E172, red iron oxide E172.</p>"
+        },
+        {
+         "title": "Directions",
+         "content": "<p>Take 1 tablet once daily, with or without food. Swallow the tablet whole. Do not crush or break the tablet.</p><p>If you miss a dose, take the next dose at the usual time. Do not take a double dose.</p><p>You must continue to take Propecia for the treatment to work.</p>"
+        },
+        {
+         "title": "FAQS",
+         "content": "<p><b>How does this treatment work?</b></p><p>Propecia works by blocking the conversion of testosterone to dihydrotestosterone (DHT), a hormone that contributes to male pattern hair loss. By lowering DHT levels in the scalp, Propecia may help reduce further hair loss and support hair regrowth in some men.</p><p><b>How long does it take to work?</b></p><p>You will usually need to take Propecia continuously for at least 6 to 12 months before assessing whether it is working for you. Continued treatment is required to maintain any benefits. If treatment is stopped, hair loss will generally begin to return over time.</p><p><b>Will the effects last if I stop treatment?</b></p><p>No. If treatment is stopped, the beneficial effects generally begin to reverse within several months and hair loss may gradually return to pre-treatment levels.</p><p><b>Who can take Propecia?</b></p><p>Propecia is for the treatment of male pattern hair loss in men only. Exceptions include those whose partner is trying to get pregnant, and those with certain health conditions or taking specific medications.</p><p>Do not take Propecia:</p><ul><li>if you are allergic (hypersensitive) to finasteride (Propecia) or any of the other ingredients of this medicine.</li><li>if you are a woman (because this medicine is for men). It has been shown in clinical trials that Propecia does not work in women with hair loss.</li><li>if you are already taking finasteride or dutasteride used for a prostate problem called benign prostatic hyperplasia (BPH).</li></ul><p><b>Can Propecia affect fertility or sexual function?</b></p><p>Yes. Propecia can cause sexual side effects in some men, including reduced sex drive (libido), erectile dysfunction and problems with ejaculation.</p"
+        },
+        {
+         "title": "Warnings",
+         "content": "<p><b>Important MHRA safety information about finasteride (Propecia)</b></p><ul><li>The MHRA has highlighted reports of psychiatric side effects and sexual dysfunction in patients taking finasteride.</li><li>Finasteride has been associated with depressed mood, depression, suicidal thoughts and sexual dysfunction.</li><li>Sexual side effects may include reduced sex drive, erectile dysfunction and ejaculation disorders.</li><li>Some patients have reported sexual side effects that continued after stopping treatment.</li><li>The MHRA advises patients to read the Patient Information Leaflet and Finasteride Patient Card supplied with the medicine.</li><li>Tell your clinician before starting treatment if you have a personal history of depression, low mood or suicidal thoughts.</li><li>If you experience sexual dysfunction while taking finasteride, contact your healthcare professional for advice.</li><li>If you develop depressed mood, depression or suicidal thoughts while taking finasteride 1mg for male pattern hair loss, stop treatment and contact a healthcare professional as soon as possible.</li><li>If you feel at risk of harming yourself or have seriously harmed yourself, call 999 or seek emergency medical assistance immediately.</li></ul><p><b>Talk to your doctor or pharmacist before taking Propecia if:</b></p><ul><li>You are going to have a blood test for prostate cancer called PSA (prostate-specific antigen). This is because Propecia can affect the result of this test.</li></ul><p>Other warnings:</p><ul><li>Infertility has been reported in men who took Propecia for a long time and had other risk factors that may affect fertility. Normalisation or improvement of seminal quality has been reported after discontinuation of Propecia. Long-term clinical studies about the effect of Propecia on fertility in men have not been conducted.</li><li>Propecia should not be taken by women.</li><li>Do not touch crushed or broken tablets of Propecia if you are a woman who is pregnant or planning to become pregnant (whole tablets are coated to stop contact with the medicine during normal use). This is because this medicine may affect the baby’s sex organs.</li><li>If a woman who is pregnant comes into contact with crushed or broken Propecia tablets, speak to your doctor.</li></ul><p><b>Stop taking Propecia and talk to your doctor if you experience:</b></p><ul><li>Symptoms of an allergic reaction: swelling of your lips, face, tongue and throat; difficulty swallowing; lumps under your skin (hives) and breathing difficulties. Stop taking Propecia and talk to your doctor immediately.</li><li>Depression (feeling of severe sadness and unworthiness).</li></ul><p>You should promptly report to your doctor any changes in the breast tissue such as lumps, pain, enlargement or nipple discharge as these may be signs of a serious condition, such as breast cancer.</p><p><b>Uncommon (may affect up to 1 in 100 people):</b></p><ul><li>you may be unable to have an erection (impotence)</li><li>you may have less desire to have sex</li><li>difficulty having an erection</li><li>you may have problems with ejaculation, for example a decrease in the amount of semen released during sex. This decrease in the amount of semen does not appear to affect normal sexual function.</li></ul><p><b>Not known: frequency cannot be estimated from the available data</b></p><ul><li>breast swelling or tenderness</li><li>pain in the testicles</li><li>blood in semen</li><li>palpitations (feeling your heartbeat)</li><li>persistent difficulty having an erection after discontinuation of treatment</li><li>persistent decrease in sex drive after discontinuation of treatment</li><li>persistent problems with ejaculation after discontinuation of treatment</li><li>male infertility and/or poor quality of semen</li><li>changes in the way your liver is working, which can be shown by a blood test</li><li>anxiety</li><li>suicidal thoughts</li></ul><p>If any of these side effects gets serious, or if you notice any side effects not listed in the patient information leaflet, tell your doctor or pharmacist. It may help to make a note of what happened, when it started and how long it lasted.</p>"
+        }
+       ],
+       "usps": [
+        "Branded finasteride, one tablet a day",
+        "Lowers DHT, the hormone behind hair loss",
+        "Helps prevent further hair loss"
+       ],
+       "isProduct": false,
+       "groupId": 1,
+       "hideTotalPrice": true
+      }
+     }
+    ],
+    "groupMetadata": [
+     {
+      "groupId": 1,
+      "groupTitle": "Finasteride",
+      "treatmentInfo": "<div class=\"treatment-info-container\">\n<div class=\"left-img-slot\">\n<img src=\"https://cdn.shopify.com/s/files/1/0611/1284/4476/files/DHT_diagram_-_LPODv2.png?v=1794475775\" />\n</div>\n<span class=\"right-text-slot\">Clinically proven to preserve your hair by blocking the conversion of testosterone to DHT, a chemical that shrinks hair follicles, giving hair a chance to regrow and working to prevent further hair loss.</span>\n</div>"
+     }
+    ],
+    "properties": {
+     "excludecard": "true",
+     "disclaimer": "<p><b><sup>1</sup></b> 94% showed improvement after 12 months (Hu et al., Dermatol Ther 2015)</p>\n<p><b><sup>2</sup></b> 83% study participants maintained or improved their hair growth over 2 years (Kaufman et al., JAAD 1998)</p>\n<p><b><sup>3</sup></b> 71% of study participants showed improved hair density after 16 weeks (Olsen et al., JAAD 2007)</p>"
+    },
+    "titleOverride": "Your Recommendations"
+   }
+  ],
+  "questionAnswerErrors": {},
+  "summaryRequiredBeforeStep": true,
+  "registrationRequiredBeforeStep": false,
+  "fastSummaryRequiredBeforeStep": false
+ },
+ "explanation": "/api/questionnaire/traversals/6278969/explanations",
+ "current": "/api/questionnaire/traversals/6278969/steps/current"
+}

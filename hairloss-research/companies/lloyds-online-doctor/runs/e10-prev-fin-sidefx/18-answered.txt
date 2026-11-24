@@ -1,0 +1,9 @@
+URL: https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+
+Exit consultation
+Side effects
+Would you like the option to choose a treatment containing Finasteride 1mg tablets again, despite your previous side effects?
+Yes
+No
+Next
+Back

@@ -78,9 +78,12 @@ const E = {
   'pat-patchy': b => { b.pattern = single('Patchy'); },
   'pat-complete': b => { b.pattern = single('Complete'); },
   'onset-sudden': b => { b.onset = single(O.sudden); },
+  'patchy-review': b => { b.pattern = [...single('Patchy'), { do: 'click', text: 'Review your answers', settle: 3500 }, ...single(O.tc)]; },
   'regaine-almin': b => { b.start = 'https://www.numan.com/subscribe/hair-loss/regaine'; b.allergy = [...multi(O.alMin), ...TXT('Itchy skin rash')]; },
   'fin-entry-alfin': b => { b.start = 'https://www.numan.com/subscribe/hair-loss/finasteride'; b.allergy = [...multi(O.alFin), ...TXT('Itchy skin rash')]; },
   'fin-entry': b => { b.start = 'https://www.numan.com/subscribe/hair-loss/finasteride'; },
+  'pair-alfin-scpain': b => { b.allergy = [...multi(O.alFin), ...TXT('Itchy skin rash')]; b.scalp = [...multi(O.scPain), ...TXT('Mild itching for 6 months. Not seen by a doctor. No treatment.')]; },
+  'pair-alfin-scpain-regaine': b => { b.start = 'https://www.numan.com/subscribe/hair-loss/regaine'; b.allergy = [...multi(O.alFin), ...TXT('Itchy skin rash')]; b.scalp = [...multi(O.scPain), ...TXT('Mild itching for 6 months. Not seen by a doctor. No treatment.')]; },
   'min-entry': b => { b.start = 'https://www.numan.com/subscribe/hair-loss/minoxidil'; },
 };
 const id = process.argv[2]; if (!E[id]) { console.error('unknown: ' + id + '\n' + Object.keys(E).join(' ')); process.exit(1); }

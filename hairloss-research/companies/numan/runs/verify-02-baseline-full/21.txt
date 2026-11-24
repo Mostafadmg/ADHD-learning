@@ -1,0 +1,88 @@
+STEP 21 click "Continue"
+URL: https://www.numan.com/subscribe/hair-loss/946f5e43-7ba4-498c-80d0-931284226e9c/recommended-addons
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+Popular add-ons
+Power your Hair Loss treatment with our additional services and supplements.
+Most popular
+Hair Growth Support
+
+Our Hair Growth Support supplements contain a blend of minerals and vitamins. Vitamins A, C, and E combined with grape seed extract, biotin, and selenium to improve your hair health inside and out.
+
+£18.76
+
+ 
+
+£28.00
+
+Save 33%
+Add
+Beard Growth Accessories Kit
+
+Keep your beard looking fresh and boost growth with the Beard Growth Accessories Kit. The Kit contains our Beard Roller and Activator Gel, which stimulate dormant follicles to encourage beard growth, as well as a Beard Comb for on-the-go styling. Each kit also includes a Sanitiser to keep your Beard Roller sparkling clean.
+
+£18.76
+
+ 
+
+£28.00
+
+Save 33%
+Add
+Testosterone Blood Test
+
+Test the total level of testosterone in your blood, a hormone essential for sex drive, muscle mass, fertility, and mood. This test can establish whether you have low testosterone levels. A clinician will review your blood test and give personalised advice
+
+£46.40
+
+ 
+
+£58.00
+
+Save 20%
+Add
+Men's Multivitamin
+
+Our multivitamin supplement helps enhance mental clarity, promote healthy heart function, and restore your energy.
+
+£18.76
+
+ 
+
+£28.00
+
+Save 33%
+Add
+Core Blood Test
+
+Get deeper health insights with our core blood test, screening 16 biomarkers across; metabolic, hormone, heart, nutrition and organ health systems. Take action and repeat tests to track your health data and identify areas for further improvement. Please note: This test does not include reproductive female hormone biomarkers.
+
+£70.40
+
+ 
+
+£88.00
+
+Save 20%
+Add
+Rosemary Oil
+
+Rosemary Oil is a natural remedy for stronger, healthier-looking hair. Infused with nutrients and oils, it’s formulated to nourish the scalp and fortify hair from root to tip.
+
+£21.00
+
+ 
+
+£28.00
+
+Save 25%
+Add
+*Discount may not be applied to subsequent purchases
+Continue
+
+--- CONTROLS ---
+  button (2): Add  ·  Continue
+
+--- LINKS ---
+  link (2): Back -> #  ·  Visit the main page -> /

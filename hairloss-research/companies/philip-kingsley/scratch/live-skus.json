@@ -1,0 +1,200 @@
+{
+ "b-men": [
+  "PHI1220",
+  "PHI1221",
+  "PHI1301",
+  "PHI1302",
+  "PHI1303",
+  "PHI1305"
+ ],
+ "b-women": [
+  "PHI1749",
+  "PHI1670"
+ ],
+ "b-scalp": [
+  "PHI1619",
+  "PHI1635"
+ ],
+ "m01-q1-patchy": [
+  "PHI1220",
+  "PHI1221"
+ ],
+ "m02-q1-extensive": [
+  "PHI1220",
+  "PHI1221"
+ ],
+ "m03-q1-early": [
+  "PHI1220",
+  "PHI1221",
+  "PHI1301",
+  "PHI1302",
+  "PHI1303",
+  "PHI1305",
+  "PHI1306"
+ ],
+ "m04-q1-temples": [
+  "PHI1220",
+  "PHI1221",
+  "PHI1301",
+  "PHI1302",
+  "PHI1303",
+  "PHI1305"
+ ],
+ "m05-q1-tc-reduced": [
+  "PHI1220",
+  "PHI1221"
+ ],
+ "m06-q2a-very-visible": [
+  "PHI1220",
+  "PHI1221",
+  "PHI1301",
+  "PHI1302",
+  "PHI1303",
+  "PHI1305"
+ ],
+ "m07-q2a-not-noticeable": [
+  "PHI1220",
+  "PHI1221",
+  "PHI1301",
+  "PHI1302",
+  "PHI1303",
+  "PHI1305"
+ ],
+ "m08-q3-not-yet": [],
+ "m09-q3-last-month": [
+  "PHI1220",
+  "PHI1221",
+  "PHI1301",
+  "PHI1302",
+  "PHI1303",
+  "PHI1305"
+ ],
+ "m10-q4-sudden": [],
+ "m11-q5-no": [
+  "PHI1220",
+  "PHI1221",
+  "PHI1301",
+  "PHI1302",
+  "PHI1303",
+  "PHI1305"
+ ],
+ "m12-q6-50-64": [
+  "PHI1220",
+  "PHI1221",
+  "PHI1301",
+  "PHI1302",
+  "PHI1303",
+  "PHI1305"
+ ],
+ "m13-q6-over65": [
+  "PHI1220",
+  "PHI1221",
+  "PHI1301",
+  "PHI1302",
+  "PHI1303",
+  "PHI1305"
+ ],
+ "m15-q7a-itching-mild": [
+  "PHI1306",
+  "PHI1309"
+ ],
+ "m16-q7a-itching-severe": [],
+ "m17-q7a-dandruff-mild": [
+  "PHI1306",
+  "PHI1307",
+  "PHI1308",
+  "PHI1309",
+  "PHI1311"
+ ],
+ "m18-q7a-eczema-moderate": [
+  "PHI1220",
+  "PHI1221",
+  "PHI1306",
+  "PHI1309"
+ ],
+ "m19-q7a-redness-mild": [
+  "PHI1220",
+  "PHI1221"
+ ],
+ "m20-q7a-psoriasis": [
+  "PHI1220",
+  "PHI1221"
+ ],
+ "m21-q7a-other": [
+  "PHI1220",
+  "PHI1221"
+ ],
+ "m23-q8-burning": [],
+ "m24-q9-cancer-psa": [],
+ "m25-q9-bp": [
+  "PHI1220",
+  "PHI1301",
+  "PHI1302",
+  "PHI1303",
+  "PHI1305"
+ ],
+ "m26-q9-depression-accept": [],
+ "m27-q9-depression-decline": [],
+ "m28-q9-baby": [],
+ "m29-q10a-yes": [
+  "PHI1220",
+  "PHI1221",
+  "PHI1301",
+  "PHI1302",
+  "PHI1303",
+  "PHI1305"
+ ],
+ "m30-q11a-minoxidil": [
+  "PHI1221",
+  "PHI1303"
+ ],
+ "m31-q11a-finasteride": [
+  "PHI1220",
+  "PHI1301"
+ ],
+ "m32-q12a-yes": [
+  "PHI1220",
+  "PHI1221",
+  "PHI1301",
+  "PHI1302",
+  "PHI1303",
+  "PHI1305"
+ ],
+ "m33-q1-temples-q6-50-64": [
+  "PHI1220",
+  "PHI1221",
+  "PHI1301",
+  "PHI1302"
+ ],
+ "w01-q1-pregnant": [],
+ "w02-q2-chemo": [],
+ "w03-q3a-overall": [
+  "PHI1749",
+  "PHI1670"
+ ],
+ "w04-q3a-shedding": [
+  "PKC145",
+  "PHI1668"
+ ],
+ "w06-q3a-patches": [],
+ "w09-q4-sudden": [
+  "PHI1749",
+  "PHI1670"
+ ],
+ "w10-q3a-overall-q4-sudden": [],
+ "w11-q5a-itching-mild": [
+  "PHI1749",
+  "PHI1688"
+ ],
+ "w14-q5a-psoriasis": [],
+ "w17-q10a-menopause-hrt": [
+  "PHI1749",
+  "PHI1670"
+ ],
+ "w18-q11a-minoxidil": [],
+ "w19-q12a-oral-minoxidil": [],
+ "s01-q1-diagnosed-sebderm": [
+  "PHI1619",
+  "PHI1635"
+ ]
+}

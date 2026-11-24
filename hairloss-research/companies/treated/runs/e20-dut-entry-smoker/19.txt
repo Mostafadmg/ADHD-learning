@@ -1,0 +1,16 @@
+STEP 19 click "Continue"
+URL: https://start.treated.com/GBR/en/#/questionnaire
+TITLE: Treated UK - Choose Better - Medical Experts & Treatments Online
+
+--- VISIBLE TEXT ---
+Question 10 of 11
+
+Is there anything else you want to add?
+Yes
+No
+
+--- CONTROLS ---
+  radio (2): Yes  ·  No
+
+--- LINKS ---
+

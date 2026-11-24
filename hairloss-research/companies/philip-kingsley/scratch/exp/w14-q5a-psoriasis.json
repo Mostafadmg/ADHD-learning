@@ -1,0 +1,90 @@
+{
+ "start": "https://hairloss.philipkingsley.co.uk/welcome",
+ "note": "Baseline woman (PROTOCOL 5): 38, widening parting noticed by people close to her (Ludwig I-II), gradual over a year, no scalp symptoms, healthy scalp, medium texture and length (not in protocol: site requires an answer), no styling, not menopausal, no allergies, no conditions. Stops at the account wall. Never fill the wall.",
+ "steps": [
+  {
+   "do": "click",
+   "selector": "[data-quiz-step=women_quiz_step0]"
+  },
+  {
+   "do": "click",
+   "text": "GET STARTED"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q1\"][data-quiz-selection=\"No\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q2\"][data-quiz-selection=\"No\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q3a\"][data-quiz-selection=\"Seeing more of my scalp or wider parting\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q3c\"][data-quiz-selection=\"People close to me can notice it\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q4\"][data-quiz-selection=\"It's been happening gradually for over a year\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q5a\"][data-quiz-selection=\"Psoriasis\"]"
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q6\"][data-quiz-selection=\"Healthy\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q7\"][data-quiz-selection=\"Medium\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q8\"][data-quiz-selection=\"Medium (shoulder length)\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q9\"][data-quiz-selection=\"None of the above\"]"
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q10a\"][data-quiz-selection=\"No\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q11a\"][data-quiz-selection=\"I have no allergies\"]"
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q12a\"][data-quiz-selection=\"No, I do not have a medical condition and am not taking any medication\"]"
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "eval",
+   "js": "(()=>{const q=window.quiz;const d=(q.data&&q.data[q.quizId])||{};const ans={};for(const k in d){if(d[k]&&d[k].value!=='')ans[k]=d[k].value;}const skus=q.checkProductAvailability();return {quizId:q.quizId,step:q.state.current,url:location.pathname,skus:skus,noResultsTemplate:skus.length?null:q.resolveNoResultsTemplate(),answers:ans};})()"
+  }
+ ]
+}

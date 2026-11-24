@@ -1,0 +1,114 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Continue to checkout"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 4,
+   "sectionTitle": "YOUR DETAILS"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 180037,
+    "inputConfig": {
+     "items": [
+      {
+       "code": "hairTreatment",
+       "subtotal": {
+        "amount": 3499,
+        "currency": "GBP",
+        "label": "Subtotal",
+        "originalAmount": null
+       },
+       "treatment": {
+        "description": "4 week supply · 12ml",
+        "name": "Personalised treatment",
+        "pill": "Prescription"
+       }
+      }
+     ],
+     "shippingEligibilityMessage": "Your order qualifies for complimentary standard shipping.",
+     "subtotal": {
+      "amount": 3499,
+      "currency": "GBP",
+      "label": "Subtotal",
+      "originalAmount": null
+     },
+     "treatment": {
+      "description": "4 week supply · 12ml",
+      "name": "Personalised treatment",
+      "pill": "Prescription"
+     }
+    },
+    "inputType": "cart_summary",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 180026,
+    "inputConfig": {
+     "shipping": {
+      "amount": 0,
+      "currency": "GBP",
+      "label": "Shipping"
+     },
+     "subtotal": {
+      "amount": 3499,
+      "currency": "GBP",
+      "label": "Subtotal",
+      "originalAmount": null
+     },
+     "total": {
+      "amount": 3499,
+      "currency": "GBP",
+      "label": "Total to pay"
+     }
+    },
+    "inputType": "cart_totals",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   },
+   {
+    "id": 180025,
+    "inputConfig": {
+     "clearSuccessMessageOnError": true,
+     "consultationExternalId": "b8787172-24e9-4918-9a70-79cfa8522e4e",
+     "dividerAbove": true,
+     "hidePromoMessage": true,
+     "icon": "check-circle",
+     "placeholder": "Promo code",
+     "promotionCode": {
+      "code": "",
+      "cta": "",
+      "id": "",
+      "message": ""
+     },
+     "renderConditions": []
+    },
+    "inputType": "promo_code",
+    "is_custom": false,
+    "label": "Redeem offer",
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Your order",
+  "type": "question"
+ }
+}

@@ -1,0 +1,28 @@
+STEP 14 click "None of the above"
+URL: https://start.treated.com/GBR/en/#/questionnaire
+TITLE: Treated UK - Choose Better - Medical Experts & Treatments Online
+
+--- VISIBLE TEXT ---
+Question 8 of 11
+
+Do you have or have you ever had any of the following?
+(Select all that apply.)
+Diabetes
+Heart problems or angina
+High blood pressure
+Stroke
+Liver or kidney problems
+A tumour of the adrenal gland
+Enlarged prostate
+Prostate cancer
+Mental illness (including depression, anxiety, suicidal thoughts)
+Lump in the breast or breast cancer
+None of the above
+Continue
+
+--- CONTROLS ---
+  checkbox (11): Diabetes  ·  Heart problems or angina  ·  High blood pressure  ·  Stroke  ·  Liver or kidney problems  ·  A tumour of the adrenal gland  ·  Enlarged prostate  ·  Prostate cancer  ·  Mental illness (including depression, anxiety, suicidal thoughts)  ·  Lump in the breast or breast cancer  ·  None of the above [checked]
+  button (1): Continue
+
+--- LINKS ---
+

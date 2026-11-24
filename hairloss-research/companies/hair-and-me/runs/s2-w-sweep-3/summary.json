@@ -6,7 +6,8 @@
  "baselinesPooled": [
   "baseline-women",
   "women-a",
-  "s2-base-women-1"
+  "s2-base-women-1",
+  "verify-base-women"
  ],
  "stepOrder": [
   "tp",
@@ -63,16 +64,6 @@
     "s2-m-htam-allover-ext",
     "s2-m-htam-crown",
     "s2-m-mcm-bp-elevated"
-   ]
-  },
-  {
-   "step": "ct",
-   "key": "q180037.config",
-   "where": "after-change",
-   "alsoIn": [
-    "s2-m-age-18",
-    "s2-m-htam-allover-ext",
-    "s2-m-htam-crown"
    ]
   }
  ],

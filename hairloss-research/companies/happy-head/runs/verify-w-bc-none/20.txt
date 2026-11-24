@@ -1,0 +1,19 @@
+STEP 20 click "None of the above"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Are you currently using any form of birth control?
+Oral contraceptives
+IUD
+Condoms
+Other birth control method
+None of the above
+NEXT
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

@@ -1,0 +1,177 @@
+{
+ "start": "https://hairloss.philipkingsley.co.uk/welcome",
+ "note": "Stage 3 verify run built from baseline-men.json; changes: none",
+ "steps": [
+  {
+   "do": "click",
+   "selector": "[data-quiz-step=men_quiz_step0]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "text": "GET STARTED"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q1\"][data-quiz-selection=\"Temples and Crown\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q2a\"][data-quiz-selection=\"My hair has thinned/receded noticeably in some areas, but other areas are still dense\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q3\"][data-quiz-selection=\"More than a month ago\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q4\"][data-quiz-selection=\"Gradually over months/years\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q5\"][data-quiz-selection=\"Yes\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q6\"][data-quiz-selection=\"30 to 39\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q7a\"][data-quiz-selection=\"No conditions\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q8\"][data-quiz-selection=\"None of the above\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q9\"][data-quiz-selection=\"None of the above\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q10a\"][data-quiz-selection=\"No\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q11a\"][data-quiz-selection=\"None\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q12a\"][data-quiz-selection=\"No\"]"
+  },
+  {
+   "do": "wait",
+   "ms": 1300
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "scroll"
+  },
+  {
+   "do": "wait",
+   "ms": 1200
+  },
+  {
+   "do": "eval",
+   "js": "(()=>{const q=window.quiz;const d=(q.data&&q.data[q.quizId])||{};const ans={};for(const k in d){if(d[k]&&d[k].value!=='')ans[k]=d[k].value;}const skus=q.checkProductAvailability();const rules=q.state.rules[q.quizId]||{};const out={quizId:q.quizId,step:q.state.current,url:location.pathname,skus:skus,ruleCount:Object.keys(rules).length,rulesLen:JSON.stringify(rules).length,answers:ans,heading:(document.querySelector('h1,h2')||{}).innerText||''};out.rules=rules;out.noResultsTpl=(q.state.templates.no_results||\"\").length;return out;})()"
+  }
+ ]
+}

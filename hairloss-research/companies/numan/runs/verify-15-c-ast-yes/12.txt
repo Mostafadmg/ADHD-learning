@@ -1,0 +1,20 @@
+STEP 12 click "label:text-is(\"I understand that topical formulations (such as spray) may worsen my asthma and would like to be considered topical formulations.\")"
+URL: https://www.numan.com/subscribe/hair-loss/cde3e627-0be6-4cb2-8431-35b09ecd7162/sq/what_is_most_important_when_choosing_product
+TITLE: What’s most important to you when choosing a hair loss product? (Select all that apply) | Numan
+
+--- VISIBLE TEXT ---
+86%
+What’s most important to you when choosing a hair loss product? (Select all that apply)
+Effectiveness of the product
+Minimal side effects
+Scalp-friendly options
+All of the above
+Back
+Next
+
+--- CONTROLS ---
+  checkbox (4): Effectiveness of the product  ·  Minimal side effects  ·  Scalp-friendly options  ·  All of the above
+  button (2): Back  ·  Next [disabled]
+
+--- LINKS ---
+  link (1): Visit the main page -> /

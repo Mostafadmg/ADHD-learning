@@ -1,0 +1,3014 @@
+{
+ "slug": "lloyds-online-doctor",
+ "company": "LloydsPharmacy Online Doctor",
+ "market": "UK",
+ "website": "https://onlinedoctor.lloydspharmacy.com/",
+ "parent": "LloydsPharmacy (online doctor business; ownership not checked in this stage)",
+ "audiences": [
+  "men"
+ ],
+ "model": "UK online pharmacy and doctor service (Shopify shop front plus a server-driven questionnaire engine) selling licensed and off-label prescription hair-loss medicines to men.",
+ "checkedOn": "2026-11-24",
+ "access": {
+  "howTested": [
+   "live-walk",
+   "site-code",
+   "public-docs"
+  ],
+  "accountWall": "No sign-in is needed for the questions or the recommendation. \"Continue as a new patient\" (…/clinic/hair-loss?guest) starts as a guest. After the recommendation, choosing a product, the pack size (Add to basket) and a finasteride safety screen, the last screen is \"Please confirm the following to complete your consultation\" (question 100467, \"I confirm the above\"). The walk stopped there and did not press it, so the exact sign-in point (expected straight after it) was not seen.",
+  "blockers": [
+   "A \"This service operates in the United Kingdom only\" pop-up (closed with \"Continue with UK service\"); not bot protection.",
+   "The engine is server-driven: the full question set is not in the browser code, so branches were mapped by walking.",
+   "Some checklist options open explanation pop-ups or could not be clicked by the walker (Phaeochromocytoma onwards in the conditions list, two medicines options, the previous-treatment list)."
+  ],
+  "coverageNote": "Stage 1 walked every question on the baseline path and every option one level deep. Stage 2 (24 Nov 2026) replayed the baseline and ran 33 one-change experiments to the recommendation screen, comparing cards and wording (runs/e01 to runs/e33). Options not replayed are marked unknown or inferred. Stage 3 (24 Nov 2026) replayed the baseline and 8 key rules (all confirmed) and filled 7 gaps (phaeochromocytoma, porphyria, SLE, scalp creams, eGFR not tested, testosterone, and one two-change combination); see verification."
+ },
+ "products": [
+  {
+   "id": "p-fin",
+   "name": "Finasteride tablets (generic)",
+   "category": "rx-oral",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "1 mg"
+    }
+   ],
+   "form": "tablet",
+   "audience": "men",
+   "legalStatus": "POM, licensed for male pattern hair loss",
+   "price": "£34 (1 month), £95 (3 months), £163 (6 months) one-off",
+   "priceDetail": "Subscription (pack-size screen in the consultation): £28.00 a month, £80.00 every 3 months, £138.00 every 6 months (\"Save 15% & cancel anytime\"). Recommendation card shows \"From £6.79 a week\".",
+   "url": "https://onlinedoctor.lloydspharmacy.com/products/finasteride-hair-loss",
+   "recommendedWhen": "Offered unless any finasteride exclusion is given: trying for a baby, breast cancer, breast tissue enlargement, prostate cancer, problems with sex life, 5-ARI for prostate, ED tablets, finasteride allergy, depression opt-out, or past finasteride side effects with \"No\" to trying again. The only drug left for heart/BP, BP medicines or minoxidil allergy. Named in the \"licensed first\" advice for new patients (observed).",
+   "evidence": "observed"
+  },
+  {
+   "id": "p-propecia",
+   "name": "Propecia (branded finasteride)",
+   "category": "rx-oral",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "1 mg"
+    }
+   ],
+   "form": "tablet",
+   "audience": "men",
+   "legalStatus": "POM, licensed",
+   "price": "£60.50 (1 month), £148.50 (3 months), £210 (6 months) one-off",
+   "priceDetail": "Card shows \"From £8.75 a week\". Subscription prices not captured.",
+   "url": "https://onlinedoctor.lloydspharmacy.com/products/propecia-hair-loss",
+   "recommendedWhen": "Same rules as generic finasteride; always listed under \"Other suitable treatments\" next to it (observed).",
+   "evidence": "observed"
+  },
+  {
+   "id": "p-minox-spray",
+   "name": "Sons Minoxidil spray",
+   "category": "otc-medicine",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "5%"
+    }
+   ],
+   "form": "topical spray (solution)",
+   "audience": "men",
+   "legalStatus": "P medicine (minoxidil 5% topical; inferred from UK status of 5% minoxidil solutions)",
+   "price": "£33 (1 month), £54 (3 months), £99 (6 months)",
+   "priceDetail": "Card shows \"From £3.85 a week\".",
+   "url": "https://onlinedoctor.lloydspharmacy.com/products/minoxidil-solution",
+   "recommendedWhen": "Offered unless scalp changes, medicated scalp creams, heart/BP condition, BP medicines or minoxidil allergy. The only product left for men on ED tablets. Named in the \"licensed first\" advice (observed).",
+   "evidence": "observed"
+  },
+  {
+   "id": "p-minox-tab",
+   "name": "Hair loss tablets (oral minoxidil)",
+   "category": "rx-oral",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "2.5 mg"
+    }
+   ],
+   "form": "tablet",
+   "audience": "men",
+   "legalStatus": "POM used off-label (minoxidil tablets are licensed for high blood pressure, not hair loss)",
+   "price": "£29 (1 month), £77 (3 months), £142 (6 months)",
+   "priceDetail": "Card shows \"From £5.52 a week\".",
+   "url": "https://onlinedoctor.lloydspharmacy.com/products/hair-loss-tablets",
+   "recommendedWhen": "Offered unless age 65 or over, kidney disease (eGFR over 30, unknown or not tested), phaeochromocytoma, porphyria, SLE, heart/BP condition, BP medicines, ED tablets or minoxidil allergy (observed).",
+   "evidence": "observed"
+  },
+  {
+   "id": "p-dual-tab-spray",
+   "name": "Dual Action - Tablet + Spray",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "1 mg tablet"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "5% spray"
+    }
+   ],
+   "form": "tablet + spray",
+   "audience": "men",
+   "legalStatus": "POM tablet + P spray; card says \"Licensed for hair loss\"",
+   "price": "£106 (3 months), £189 (6 months)",
+   "priceDetail": "Card: \"From £7.35 a week\", \"94% experience an improvement in hair loss\". On 23 Nov 2026 the card data said inStock false.",
+   "url": "https://onlinedoctor.lloydspharmacy.com/products/dual-action-tablets-spray",
+   "recommendedWhen": "Shown first whenever both finasteride and topical minoxidil are allowed (no exclusion for either); flagged out of stock on 24 Nov 2026 (observed).",
+   "evidence": "observed"
+  },
+  {
+   "id": "p-dual-tabs",
+   "name": "Dual Action - Tablets",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "finasteride",
+     "strength": "1 mg"
+    },
+    {
+     "name": "minoxidil",
+     "strength": "2.5 mg"
+    }
+   ],
+   "form": "two tablets",
+   "audience": "men",
+   "legalStatus": "POM; card says \"Contains off-label medicine\" (oral minoxidil)",
+   "price": "£106 (3 months), £189 (6 months)",
+   "priceDetail": "Card: \"From £7.35 a week\"; \"We recommend as an oral alternative to the classic combo\". inStock false on 23 Nov 2026.",
+   "url": "https://onlinedoctor.lloydspharmacy.com/products/dual-action-tablets",
+   "recommendedWhen": "Shown whenever both finasteride and oral minoxidil are allowed; first card when topicals are excluded (scalp changes); out of stock on 24 Nov 2026 (observed).",
+   "evidence": "observed"
+  },
+  {
+   "id": "p-minox-solution",
+   "name": "Minoxidil 5% solution",
+   "category": "otc-medicine",
+   "actives": [
+    {
+     "name": "minoxidil",
+     "strength": "5%"
+    }
+   ],
+   "form": "topical solution",
+   "audience": "men",
+   "legalStatus": "P medicine (inferred)",
+   "price": "£51 (3 months)",
+   "priceDetail": "Shares SKU 4297 with the Sons spray 3-month pack; may be an older listing.",
+   "url": "https://onlinedoctor.lloydspharmacy.com/products/minoxidil-solution-hair-loss",
+   "recommendedWhen": "Never offered in any consultation route tested; sold on the shop pages only (observed: absent from every recommendation screen).",
+   "evidence": "docs"
+  }
+ ],
+ "flows": [
+  {
+   "id": "men",
+   "name": "Hair loss consultation (men only; one flow for every entry point)",
+   "audience": "men",
+   "entryUrl": "https://core.onlinedoctor.lloydspharmacy.com/api/questionnaire/clinic/hair-loss?guest",
+   "stagesSummary": "Login prompt (Continue as a new patient) → \"Before we begin\" + \"I confirm the above\" → sex at birth → date of birth → education (optional, 3 screens) → 4 hair-loss questions → previous treatment (per product: helped? duration, adherence, side effects, retry finasteride?) → conditions → kidney → heart/BP → other conditions → medicines → allergies → partner pregnancy → pets → results info → answers summary → recommendation cards → pack size → finasteride safety → final consent (walk stops here; account expected next).",
+   "entryPoints": [
+    "https://core.onlinedoctor.lloydspharmacy.com/api/questionnaire/clinic/hair-loss (every product page button; 302 to /loginprompt)",
+    "https://core.onlinedoctor.lloydspharmacy.com/api/questionnaire/products/3756 (collection page top button; 3756 is the clinic default SKU)",
+    "…/clinic/hair-loss?guest (the \"Continue as a new patient\" link)"
+   ],
+   "questions": [
+    {
+     "id": "men-100013",
+     "order": 1,
+     "stage": "anonymous",
+     "text": "What was your sex at birth?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Male",
+       "effect": "Continues the hair-loss questions.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Female",
+       "effect": "Date of birth is still asked, then the questions end: answers summary and final consent screen, no product (runs/verify-female).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-fin",
+        "p-propecia",
+        "p-minox-spray",
+        "p-minox-tab",
+        "p-dual-tab-spray",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Sex at birth; the service treats men only.",
+     "engineRole": "eligibility-gate",
+     "branches": true,
+     "branchDetail": "Female -> No hair-loss questions follow: straight to the answers summary and then the final consent screen. No product is shown. The service is for men only.",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "siteQuestionId": "100013",
+     "source": "runs/baseline-men-2/steps/api-012.json"
+    },
+    {
+     "id": "men-100014",
+     "order": 2,
+     "stage": "anonymous",
+     "text": "What is your date of birth?",
+     "type": "date",
+     "options": [
+      {
+       "label": "Age under 18 (e.g. born 2009)",
+       "effect": "Questions end at once; redirected to the page \"We do not treat under 18s. Please see a doctor in person\" (runs/e17-age-17).",
+       "effectType": "hard-stop",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Age 18 to 64 (tested 19, 32 and 64)",
+       "effect": "No change: full offer (runs/e20-age-19, runs/e21-age-64, runs/exp-base).",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Age 65 or over (tested 65 and 70)",
+       "effect": "No extra screen, but Minoxidil tablets and Dual Action Tablets are removed at the end; the \"start with a licensed treatment\" line is dropped (runs/e19-age-65, runs/e18-age-70).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-minox-tab",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Age check: adults only, and the age cut-off for oral minoxidil (65 and over).",
+     "engineRole": "eligibility-gate",
+     "branches": true,
+     "branchDetail": "Under 18: hard stop (under-18s page). 65 or over: oral minoxidil (and the Dual Action Tablets pack) silently removed from the offer.",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "siteQuestionId": "100014",
+     "source": "runs/baseline-men-2/steps/api-014.json"
+    },
+    {
+     "id": "men-107977",
+     "order": 3,
+     "stage": "anonymous",
+     "text": "Learn more about male pattern hair loss: Find out what causes it, and which treatments may help slow it down or help hair grow back.",
+     "type": "single",
+     "options": [
+      {
+       "label": "Tell me more",
+       "effect": "Shows three information screens (causes, how finasteride works, how minoxidil works).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Skip, I already know",
+       "effect": "Skips the three education screens (what causes hair loss, how finasteride works, how minoxidil works); offer unchanged (runs/e24-skip-learn).",
+       "effectType": "skip-questions",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Offers short education screens.",
+     "engineRole": "expectation-setting",
+     "branches": true,
+     "branchDetail": "Skip removes 3 education screens; no effect on the offer.",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "siteQuestionId": "107977",
+     "source": "runs/baseline-men-2/steps/api-016.json"
+    },
+    {
+     "id": "men-107978",
+     "order": 4,
+     "stage": "anonymous",
+     "text": "What causes hair loss?: Male pattern hair loss is caused by a combination of genetics and sensitivity to DHT (dihydrotestosterone) , a hormone made from testosterone. In people who are susceptible, DHT gradually causes affected hair follicles to shrink and shortens the hair growth phase. New hairs become finer and shorter and may eventually stop growing in some areas of the scalp. Treatments can help slow further hair loss and may support regrowth. Options include finasteride and minoxidil , which work in different ways.",
+     "type": "info",
+     "options": [],
+     "purpose": "Education: what causes male pattern hair loss.",
+     "engineRole": "expectation-setting",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "107977 = Tell me more",
+     "evidence": "observed",
+     "siteQuestionId": "107978",
+     "source": "runs/baseline-men-2/steps/api-018.json"
+    },
+    {
+     "id": "men-107979",
+     "order": 5,
+     "stage": "anonymous",
+     "text": "How does finasteride work?: Finasteride reduces DHT by blocking an enzyme that converts testosterone into DHT. Lowering DHT can slow the shrinking of affected hair follicles. When taken consistently, finasteride can slow hair loss and may support regrowth in some men.",
+     "type": "info",
+     "options": [],
+     "purpose": "Education: how finasteride works.",
+     "engineRole": "expectation-setting",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "107977 = Tell me more",
+     "evidence": "observed",
+     "siteQuestionId": "107979",
+     "source": "runs/baseline-men-2/steps/api-020.json"
+    },
+    {
+     "id": "men-107980",
+     "order": 6,
+     "stage": "anonymous",
+     "text": "How does minoxidil work?: Minoxidil increases blood flow and nutrients to hair roots. Used regularly, it can help hair grow back thicker over time. It usually takes a few months to notice a difference. Some men use finasteride and minoxidil together. Complete your assessment to find out what's right for you.",
+     "type": "info",
+     "options": [],
+     "purpose": "Education: how minoxidil works.",
+     "engineRole": "expectation-setting",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "107977 = Tell me more",
+     "evidence": "observed",
+     "siteQuestionId": "107980",
+     "source": "runs/baseline-men-2/steps/api-022.json"
+    },
+    {
+     "id": "men-103257",
+     "order": 7,
+     "stage": "anonymous",
+     "text": "Please select which of the images below best represents your hair loss",
+     "type": "single",
+     "options": [
+      {
+       "label": "Temples only",
+       "effect": "Adds an expectation screen (\"results can be less predictable in these areas\", must tick); offer and wording unchanged (runs/e22-pattern-temples).",
+       "effectType": "soft-warning",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Temples and Crown",
+       "effect": "Baseline: continues.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Moderate",
+       "effect": "Not replayed to the end in stage 2. The stage 1 peek showed no extra screen; no change to the offer is expected.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "inferred"
+      },
+      {
+       "label": "Extensive",
+       "effect": "Adds an expectation screen (\"significant regrowth may be less likely\", must tick); offer and wording unchanged (runs/e23-pattern-extensive).",
+       "effectType": "soft-warning",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Complete",
+       "effect": "Ends the questions at once and goes to the answers summary. No recommendation was seen (inferred to be the same final consent screen as the female route).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-fin",
+        "p-propecia",
+        "p-minox-spray",
+        "p-minox-tab",
+        "p-dual-tab-spray",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Random patches",
+       "effect": "Ends the questions at once (patchy loss suggests alopecia areata, not male pattern loss).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-fin",
+        "p-propecia",
+        "p-minox-spray",
+        "p-minox-tab",
+        "p-dual-tab-spray",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Pattern and extent of hair loss (6 pictures).",
+     "engineRole": "diagnosis",
+     "branches": true,
+     "branchDetail": "Complete or Random patches: hard stop. Temples only / Extensive: expectation screen, offer unchanged. Temples and Crown / Moderate: straight on.",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "siteQuestionId": "103257",
+     "source": "runs/baseline-men-2/steps/api-024.json"
+    },
+    {
+     "id": "men-108138",
+     "order": 8,
+     "stage": "anonymous",
+     "text": "Hair loss around your temples: Finasteride and minoxidil are generally most effective for early to moderate male pattern hair loss at the crown and top of the scalp. They may still slow hair loss and support regrowth around the temples or hairline, but results in these areas are less predictable and vary between individuals.",
+     "type": "consent",
+     "options": [
+      {
+       "label": "I understand that results can be less predictable in these areas",
+       "effect": "Acknowledgement; continues.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Sets expectations for temple-only loss.",
+     "engineRole": "expectation-setting",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "103257 = Temples only",
+     "evidence": "observed",
+     "siteQuestionId": "108138",
+     "source": "runs/peek-01/steps/api-026.json"
+    },
+    {
+     "id": "men-108376",
+     "order": 9,
+     "stage": "anonymous",
+     "text": "Treating extensive hair loss: Finasteride and minoxidil are generally most effective for early to moderate male pattern hair loss at the crown and top of the scalp. If your hair loss is extensive, treatment may still help slow further hair loss, but significant regrowth is less likely. Results vary between individuals.",
+     "type": "consent",
+     "options": [
+      {
+       "label": "I understand that significant regrowth may be less likely",
+       "effect": "Acknowledgement; continues.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Sets expectations for extensive loss.",
+     "engineRole": "expectation-setting",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "103257 = Extensive",
+     "evidence": "observed",
+     "siteQuestionId": "108376",
+     "source": "runs/peek-01/steps/api-038.json"
+    },
+    {
+     "id": "men-107954",
+     "order": 10,
+     "stage": "anonymous",
+     "text": "How did your hair loss start?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Gradually, over months or years",
+       "effect": "Baseline: continues.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Suddenly, over days or weeks",
+       "effect": "Ends the questions at once and goes to the answers summary.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-fin",
+        "p-propecia",
+        "p-minox-spray",
+        "p-minox-tab",
+        "p-dual-tab-spray",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Sudden loss suggests another cause.",
+     "engineRole": "diagnosis",
+     "branches": true,
+     "branchDetail": "Suddenly, over days or weeks -> Ends the questions at once and goes to the answers summary.",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "siteQuestionId": "107954",
+     "source": "runs/baseline-men-2/steps/api-026.json"
+    },
+    {
+     "id": "men-103261",
+     "order": 11,
+     "stage": "anonymous",
+     "text": "Have you lost any hair in other areas of your body such as eyebrows or beard?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Ends the questions at once and goes to the answers summary.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-fin",
+        "p-propecia",
+        "p-minox-spray",
+        "p-minox-tab",
+        "p-dual-tab-spray",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "No",
+       "effect": "Baseline: continues.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Body or facial hair loss suggests alopecia areata or another cause.",
+     "engineRole": "diagnosis",
+     "branches": true,
+     "branchDetail": "Yes -> Ends the questions at once and goes to the answers summary.",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "siteQuestionId": "103261",
+     "source": "runs/baseline-men-2/steps/api-028.json"
+    },
+    {
+     "id": "men-105935",
+     "order": 12,
+     "stage": "anonymous",
+     "text": "Are you currently experiencing any changes to your scalp?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Adds \"Your scalp symptoms need checking\" (see your GP; no topical treatments while symptoms are present). Sons Minoxidil spray and Dual Action Tablet + Spray are removed; the pets question is skipped (runs/e06-scalp-yes).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-minox-spray",
+        "p-dual-tab-spray"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "No",
+       "effect": "Baseline: continues.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Scalp disease screen (topicals may irritate).",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Yes: warning screen, topical minoxidil products removed, pets question skipped.",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "siteQuestionId": "105935",
+     "source": "runs/baseline-men-2/steps/api-030.json"
+    },
+    {
+     "id": "men-108139",
+     "order": 13,
+     "stage": "anonymous",
+     "text": "Your scalp symptoms need checking: The symptoms you've described could be caused by a scalp condition, such as eczema, psoriasis, or an infection . These conditions can also contribute to your hair loss. Please ask your GP or healthcare professional to assess your symptoms and advise you about treatment. We're unable to offer you topical hair loss treatments while these symptoms are present, as they may irritate your scalp or make the underlying condition worse.",
+     "type": "consent",
+     "options": [
+      {
+       "label": "I understand",
+       "effect": "Acknowledgement; continues.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Tells the patient to see a GP; topicals not offered.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "105935 = Yes",
+     "evidence": "observed",
+     "siteQuestionId": "108139",
+     "source": "runs/peek-08/steps/api-031.json"
+    },
+    {
+     "id": "men-108014",
+     "order": 14,
+     "stage": "anonymous",
+     "text": "Have you ever taken any medication for hair loss?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Adds \"Which hair loss treatments have you used before?\" and, for each product ticked, \"Has <product> helped?\" and a side-effects question. The result says \"You've previously used hair loss treatment\" and drops the \"start with a licensed treatment\" line; products unchanged unless side effects are reported (runs/e07-prev-topminox, runs/e08-prev-fin).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "No",
+       "effect": "Baseline: the result says \"You're new to hair loss treatment\" and adds \"we'd recommend starting with a licensed treatment, such as Finasteride tablets and Minoxidil spray\" (runs/exp-base).",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Treatment history; drives \"new to treatment\" wording.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Yes: previous-treatment list, then per product \"has it helped?\" (No benefit adds duration + adherence questions) and side effects (Yes adds describe + \"choose finasteride again?\"). Changes the result wording; finasteride removed if side effects and the patient declines it.",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "siteQuestionId": "108014",
+     "source": "runs/baseline-men-2/steps/api-033.json"
+    },
+    {
+     "id": "men-108015",
+     "order": 15,
+     "stage": "anonymous",
+     "text": "Which hair loss treatments have you used before?: Include any treatments you currently use. Some products contain more than one medication, so please select all that apply.",
+     "type": "multi",
+     "options": [
+      {
+       "label": "Topical minoxidil (e.g. Regaine foam, solution or spray, Sons Minoxidil Solution, etc.)",
+       "effect": "Adds 108016 \"Has Minoxidil spray helped?\" then 107959 side effects. If helped and no side effects: same 6 products (runs/e07-prev-topminox).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Oral Minoxidil (e.g. tablets, capsules, etc.)",
+       "effect": "Not tested. Expected (by the pattern of the two tested options) to add its own \"has it helped?\" and side-effects questions.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "inferred"
+      },
+      {
+       "label": "Finasteride tablets (e.g. Propecia or generic finasteride, etc.)",
+       "effect": "Adds 108022 \"Has Finasteride tablets helped?\" then 107959 side effects. If helped and no side effects: same 6 products (runs/e08-prev-fin).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Other hair loss medication (e.g. compounded sprays containing finasteride or dutasteride)",
+       "effect": "Not tested.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Which treatments were used before, to ask about benefit and side effects of each.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Each ticked product adds its own \"has it helped?\" question, then the shared side-effects question 107959.",
+     "shownWhen": "108014 = Yes",
+     "evidence": "observed",
+     "siteQuestionId": "108015",
+     "source": "runs/peek-08/steps/api-041.json"
+    },
+    {
+     "id": "men-108016",
+     "order": 15.1,
+     "stage": "anonymous",
+     "text": "Hair loss medication: Has Minoxidil spray helped with your hair loss? This could mean slowing or stopping further hair loss, or helping hair grow back.",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes, it's helped",
+       "effect": "Goes to the side-effects question; no change to the offer (runs/e07-prev-topminox).",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "It's helped a little",
+       "effect": "Goes to the side-effects question (stage 2 peek, runs/e07b-prev-topminox-peek); effect on the offer not replayed.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "No, I haven't noticed any benefit",
+       "effect": "Adds \"How long have you used it?\" and \"Have you used it regularly?\". After 12 months+ of regular use, the result adds \"Previously, treatment with Minoxidil spray didn't achieve the results you were hoping for\" but still offers it (runs/e09-prev-topminox-nobenefit).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "It's too early to tell",
+       "effect": "Not replayed.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Benefit from previous topical minoxidil.",
+     "engineRole": "personalisation",
+     "branches": true,
+     "branchDetail": "No benefit adds duration and adherence questions and changes the result wording.",
+     "shownWhen": "108015 includes Topical minoxidil",
+     "evidence": "observed",
+     "siteQuestionId": "108016"
+    },
+    {
+     "id": "men-108022",
+     "order": 15.2,
+     "stage": "anonymous",
+     "text": "Hair loss medication: Has Finasteride tablets helped with your hair loss? This could mean slowing or stopping further hair loss, or helping hair grow back.",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes, it's helped",
+       "effect": "Goes to the side-effects question; no change to the offer (runs/e08-prev-fin).",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "It's helped a little",
+       "effect": "Goes to the side-effects question (stage 2 peek, runs/e07b-prev-topminox-peek); effect on the offer not replayed.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "No, I haven't noticed any benefit",
+       "effect": "Inferred from the spray version: adds duration and adherence questions and a \"didn't achieve the results\" line.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "inferred"
+      },
+      {
+       "label": "It's too early to tell",
+       "effect": "Not replayed.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Benefit from previous finasteride.",
+     "engineRole": "personalisation",
+     "branches": true,
+     "branchDetail": "Expected to mirror 108016.",
+     "shownWhen": "108015 includes Finasteride tablets",
+     "evidence": "observed",
+     "siteQuestionId": "108022"
+    },
+    {
+     "id": "men-108017",
+     "order": 15.3,
+     "stage": "anonymous",
+     "text": "Hair loss medication: How long have you used Minoxidil spray?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Less than 12 months",
+       "effect": "Not replayed. Inferred: may change the \"didn't achieve results\" wording (too early to judge).",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "unknown"
+      },
+      {
+       "label": "12 months or longer",
+       "effect": "Used in runs/e09-prev-topminox-nobenefit: result says the spray didn't achieve the results hoped for; still offered.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Whether a fair trial of the product was done.",
+     "engineRole": "personalisation",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "108016 = No, I haven't noticed any benefit (shown on the same screen as 108018)",
+     "evidence": "observed",
+     "siteQuestionId": "108017"
+    },
+    {
+     "id": "men-108018",
+     "order": 15.4,
+     "stage": "anonymous",
+     "text": "Hair loss medication: Have you used Minoxidil spray regularly? This means using it as recommended, with only occasional missed applications and no long breaks.",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Used in runs/e09-prev-topminox-nobenefit (see 108017).",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "No",
+       "effect": "Not replayed.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Adherence check before calling the product a failure.",
+     "engineRole": "personalisation",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "108016 = No, I haven't noticed any benefit",
+     "evidence": "observed",
+     "siteQuestionId": "108018"
+    },
+    {
+     "id": "men-107959",
+     "order": 15.5,
+     "stage": "anonymous",
+     "text": "Side effects: Have you ever experienced side effects from <product> that: were persistent, were severe, required medical attention, made you stop using it",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Adds \"Please describe the side effects\" (107981); for finasteride it then asks 108051 whether to offer finasteride again (runs/e10-prev-fin-sidefx).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "No",
+       "effect": "No change to the offer (runs/e07-prev-topminox, runs/e08-prev-fin).",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Serious side effects with a product used before.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Yes adds a description and, for finasteride, a \"choose it again?\" question.",
+     "shownWhen": "after each \"has it helped?\" question (same question id for each product)",
+     "evidence": "observed",
+     "siteQuestionId": "107959"
+    },
+    {
+     "id": "men-107981",
+     "order": 15.6,
+     "stage": "anonymous",
+     "text": "Side effects: Please describe the side effects you experienced.",
+     "type": "text",
+     "options": [],
+     "purpose": "Free-text side-effect history for the clinician.",
+     "engineRole": "data-capture",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "107959 = Yes",
+     "evidence": "observed",
+     "siteQuestionId": "107981"
+    },
+    {
+     "id": "men-108051",
+     "order": 15.7,
+     "stage": "anonymous",
+     "text": "Side effects: Would you like the option to choose a treatment containing Finasteride 1mg tablets again, despite your previous side effects?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "All 6 products kept; result says \"You reported side effects ... but would like to be recommended options containing Finasteride tablets\" (runs/e13-prev-fin-sidefx-again).",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "No",
+       "effect": "All finasteride products removed; result says \"You reported side effects to hair loss treatments\"; partner-pregnancy question skipped (runs/e10-prev-fin-sidefx).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-propecia",
+        "p-dual-tab-spray",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Lets the patient decide whether finasteride stays on the menu after past side effects.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "No removes finasteride.",
+     "shownWhen": "107959 = Yes for finasteride",
+     "evidence": "observed",
+     "siteQuestionId": "108051"
+    },
+    {
+     "id": "men-103270",
+     "order": 16,
+     "stage": "anonymous",
+     "text": "Have you ever had any of the following conditions?",
+     "type": "multi",
+     "options": [
+      {
+       "label": "Alopecia",
+       "effect": "Ends the questions at once and goes to the answers summary.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-fin",
+        "p-propecia",
+        "p-minox-spray",
+        "p-minox-tab",
+        "p-dual-tab-spray",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Breast cancer",
+       "effect": "No extra screen. All finasteride products (Finasteride, Propecia, both Dual Action packs) are removed; the partner-pregnancy question is skipped (runs/e25-breast-cancer).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-propecia",
+        "p-dual-tab-spray",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Breast tissue enlargement",
+       "effect": "No extra screen. All finasteride products removed; partner-pregnancy question skipped (runs/e31-gynaecomastia).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-propecia",
+        "p-dual-tab-spray",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Depression",
+       "effect": "Adds a finasteride mood warning (103268) with an opt-out. Continue: 4 mental-health questions, then the same 6 products but without the \"licensed first\" line (runs/e05-dep-continue). Opt out: finasteride removed (runs/e04-dep-nofin).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Current or history of suicidal thoughts, self-harm, or attempts",
+       "effect": "Adds a crisis-support screen (NHS 111, Samaritans, 999) with an acknowledgement tick; then continues.",
+       "effectType": "extra-questions",
+       "affects": [
+        "p-fin",
+        "p-propecia"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Obstructive uropathy",
+       "effect": "Adds a free-text question about the cause and treatment.",
+       "effectType": "extra-questions",
+       "affects": [
+        "p-fin",
+        "p-propecia"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Prostate cancer",
+       "effect": "No extra screen. All finasteride products removed; partner-pregnancy question skipped (runs/e26-prostate-cancer).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-propecia",
+        "p-dual-tab-spray",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Liver condition",
+       "effect": "Adds \"Do any of these apply to your liver condition?\" (4 options). The first two options each end the questions at once; the other two were not tested.",
+       "effectType": "extra-questions",
+       "affects": [
+        "p-fin",
+        "p-propecia",
+        "p-minox-tab",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Phaeochromocytoma",
+       "effect": "No extra screen. Minoxidil tablets and Dual Action Tablets are removed; finasteride, Propecia, Sons spray and Dual Tablet + Spray stay (runs/verify-gap-phaeo).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-minox-tab",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Porphyria",
+       "effect": "No extra screen. Minoxidil tablets and Dual Action Tablets are removed; the rest stay (runs/verify-gap-porphyria).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-minox-tab",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Problems with my sex life",
+       "effect": "No extra screen. All finasteride products removed; partner-pregnancy question skipped (runs/e32-sex-problems).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-propecia",
+        "p-dual-tab-spray",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Systemic Lupus Erythematosus (SLE)",
+       "effect": "No extra screen. Minoxidil tablets and Dual Action Tablets are removed; the rest stay (runs/verify-gap-sle).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-minox-tab",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Medical history checklist for finasteride and minoxidil cautions.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Alopecia: hard stop. Depression: mood warning + opt-out. Suicidal thoughts: crisis advice. Obstructive uropathy: details text. Liver: sub-questions. Breast cancer, breast tissue enlargement, prostate cancer, problems with sex life: silently remove all finasteride.",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "siteQuestionId": "103270",
+     "source": "runs/baseline-men-2/steps/api-035.json"
+    },
+    {
+     "id": "men-103268",
+     "order": 17,
+     "stage": "anonymous",
+     "text": "Finasteride and Propecia tablets has been associated with causing low mood, depression, and suicidal thoughts. If your mood or mental wellbeing worsens while taking this medication, stop taking Finasteride or Propecia tablets and seek medical advice as soon as possible. If you ever feel at risk of harming yourself or have seriously harmed yourself, call emergency services on 999 immediately. Please confirm that you understand this and are happy to continue.",
+     "type": "single",
+     "options": [
+      {
+       "label": "I understand and would like to continue",
+       "effect": "Adds 4 mental-health questions (3 free text + crisis history). With neutral answers the offer keeps all 6 products, but the \"start with a licensed treatment\" line is dropped (runs/e05-dep-continue).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "I don't want to use finasteride tablets",
+       "effect": "All finasteride products removed; only Minoxidil tablets and Sons spray offered; the partner-pregnancy question is skipped (runs/e04-dep-nofin).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-propecia",
+        "p-dual-tab-spray",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Finasteride mood warning with an opt-out of finasteride.",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Opt-out removes finasteride; continue adds 4 mental-health questions.",
+     "shownWhen": "103270 includes Depression",
+     "evidence": "observed",
+     "siteQuestionId": "103268",
+     "source": "runs/peek-09/steps/api-044.json"
+    },
+    {
+     "id": "men-108416",
+     "order": 18,
+     "stage": "anonymous",
+     "text": "Some hair loss treatments can affect mood, so we need to understand a bit more about your mental health: Please list all the mental health conditions you have, or have had. For each condition, tell us when it started and whether it has resolved, is stable, or has come back or got worse recently.",
+     "type": "text",
+     "options": [],
+     "purpose": "Mental health history for the clinician.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "103268 = I understand and would like to continue",
+     "evidence": "observed",
+     "siteQuestionId": "108416",
+     "source": "runs/peek-09/steps/api-046.json"
+    },
+    {
+     "id": "men-108417",
+     "order": 19,
+     "stage": "anonymous",
+     "text": "Who manages your mental health condition(s)? (e.g your GP, a psychiatrist)",
+     "type": "text",
+     "options": [],
+     "purpose": "Who manages the mental health condition.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "103268 = I understand and would like to continue",
+     "evidence": "observed",
+     "siteQuestionId": "108417",
+     "source": "runs/peek-09/steps/api-046.json"
+    },
+    {
+     "id": "men-108418",
+     "order": 20,
+     "stage": "anonymous",
+     "text": "List all medication you have taken for your mental health condition(s). Tell us about any that didn't work, and any that were started, increased or changed in the last 12 months because you were feeling worse.",
+     "type": "text",
+     "options": [],
+     "purpose": "Mental health medicines and recent changes.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "103268 = I understand and would like to continue",
+     "evidence": "observed",
+     "siteQuestionId": "108418",
+     "source": "runs/peek-09/steps/api-046.json"
+    },
+    {
+     "id": "men-108419",
+     "order": 21,
+     "stage": "anonymous",
+     "text": "Have any of the following ever happened to you? - Symptoms so severe you couldn't work or manage day-to-day life - Being admitted to hospital for your mental health - Being seen by a crisis team or home treatment team",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Not tested.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "unknown"
+      },
+      {
+       "label": "No",
+       "effect": "Neutral answer used in runs/e05-dep-continue: full offer kept.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Severity of past mental illness.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "103268 = I understand and would like to continue",
+     "evidence": "observed",
+     "siteQuestionId": "108419",
+     "source": "runs/peek-09/steps/api-046.json"
+    },
+    {
+     "id": "men-108131",
+     "order": 22,
+     "stage": "anonymous",
+     "text": "If you are currently experiencing thoughts of harming yourself or suicide, it's important to seek help as soon as possible. - Contact NHS 111 or your GP for advice - You can call Samaritans free on 116 123 for confidential support (available 24 hours a day) - If you feel you are in immediate danger, call 999 or go to A&E",
+     "type": "consent",
+     "options": [
+      {
+       "label": "I understand that if I am currently experiencing thoughts of self-harm or suicide I should seek medical advice immediately",
+       "effect": "Acknowledgement; continues.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Crisis signposting.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "103270 includes suicidal thoughts / self-harm",
+     "evidence": "observed",
+     "siteQuestionId": "108131",
+     "source": "runs/peek-09/steps/api-056.json"
+    },
+    {
+     "id": "men-103275",
+     "order": 23,
+     "stage": "anonymous",
+     "text": "Please provide details for the cause of the obstructive uropathy and the treatment received.",
+     "type": "text",
+     "options": [],
+     "purpose": "Details of obstructive uropathy.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "103270 includes Obstructive uropathy",
+     "evidence": "observed",
+     "siteQuestionId": "103275",
+     "source": "runs/peek-09/steps/api-064.json"
+    },
+    {
+     "id": "men-102639",
+     "order": 24,
+     "stage": "anonymous",
+     "text": "Do any of these apply to your liver condition?",
+     "type": "multi",
+     "options": [
+      {
+       "label": "I have alcohol related liver disease, cirrhosis or liver cancer",
+       "effect": "Ends the questions at once and goes to the answers summary.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-fin",
+        "p-propecia",
+        "p-minox-spray",
+        "p-minox-tab",
+        "p-dual-tab-spray",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "I see a hospital specialist for my condition",
+       "effect": "Ends the questions at once and goes to the answers summary.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-fin",
+        "p-propecia",
+        "p-minox-spray",
+        "p-minox-tab",
+        "p-dual-tab-spray",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "I have been advised to avoid certain medications",
+       "effect": "Not tested.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "unknown"
+      },
+      {
+       "label": "I am prescribed treatment or have regular monitoring ( not Statins or routine yearly blood tests for fatty liver disease)",
+       "effect": "Not tested.",
+       "effectType": "unknown",
+       "affects": [],
+       "evidence": "unknown"
+      }
+     ],
+     "purpose": "Severity of liver disease.",
+     "engineRole": "eligibility-gate",
+     "branches": true,
+     "branchDetail": "I have alcohol related liver disease, cirrhosis or liver can -> Ends the questions at once and goes to the answers summary.; I see a hospital specialist for my condition -> Ends the questions at once and goes to the answers summary.; I have been advised to avoid certain medications -> Not tested.; I am prescribed treatment or have regular monitoring ( not S -> Not tested.",
+     "shownWhen": "103270 includes Liver condition",
+     "evidence": "observed",
+     "siteQuestionId": "102639",
+     "source": "runs/peek-09/steps/api-072.json"
+    },
+    {
+     "id": "men-101561",
+     "order": 25,
+     "stage": "anonymous",
+     "text": "Do you have Chronic Kidney Disease (CKD) or a reduced kidney function?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Adds the eGFR question. Under 30 ends the questions; any other answer removes oral minoxidil (runs/e15, runs/e16).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-minox-tab",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "No",
+       "effect": "Baseline.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Kidney disease screen.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Yes -> Adds the eGFR question.",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "siteQuestionId": "101561",
+     "source": "runs/baseline-men-2/steps/api-042.json"
+    },
+    {
+     "id": "men-101564",
+     "order": 26,
+     "stage": "anonymous",
+     "text": "What was your most recent eGFR result within the past 12 months ? This is a blood test that tells you how well your kidneys are working.",
+     "type": "single",
+     "options": [
+      {
+       "label": "Less than 30",
+       "effect": "Ends the questions at once and goes to the answers summary.",
+       "effectType": "hard-stop",
+       "affects": [
+        "p-fin",
+        "p-propecia",
+        "p-minox-spray",
+        "p-minox-tab",
+        "p-dual-tab-spray",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "More than 30",
+       "effect": "Minoxidil tablets and Dual Action Tablets removed; spray, finasteride, Propecia and Dual Tablet + Spray kept (runs/e15-ckd-egfr-over30).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-minox-tab",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "I haven't had an eGFR test in the past year",
+       "effect": "Minoxidil tablets and Dual Action Tablets are removed; topical and finasteride kept, same as \"I don't know\" (runs/verify-gap-egfr-notest).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-minox-tab",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "I don't know",
+       "effect": "Same as \"More than 30\": oral minoxidil removed (runs/e16-ckd-egfr-unknown).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-minox-tab",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Kidney function (eGFR).",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Less than 30: hard stop. Any other answer: oral minoxidil removed.",
+     "shownWhen": "101561 = Yes",
+     "evidence": "observed",
+     "siteQuestionId": "101564",
+     "source": "runs/peek-12/steps/api-052.json"
+    },
+    {
+     "id": "men-107973",
+     "order": 27,
+     "stage": "anonymous",
+     "text": "Have you ever had a condition that affects your heart or blood pressure? Examples include: - High or low blood pressure - Dizziness or faintness when standing up - Heart failure - An irregular heartbeat (arrythmias) - Fluid or inflammation around the heart - Heart valve or structural heart problems - A heart attack, angina, stroke or mini-stroke (TIA) - Another heart or blood vessel condition",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "No extra screen. ALL minoxidil removed (tablets, Sons spray and both Dual Action packs): only Finasteride and Propecia are offered. The pets question and \"Clinically proven results\" screen are skipped (runs/e01-heart-yes).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-minox-tab",
+        "p-minox-spray",
+        "p-dual-tabs",
+        "p-dual-tab-spray"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "No",
+       "effect": "Baseline.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Heart and blood pressure screen (oral minoxidil).",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Yes silently removes every minoxidil product (oral and topical) and skips the pets question.",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "siteQuestionId": "107973",
+     "source": "runs/baseline-men-2/steps/api-044.json"
+    },
+    {
+     "id": "men-107800",
+     "order": 28,
+     "stage": "anonymous",
+     "text": "Do you have any medical conditions other than those we have already asked about?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Adds a free-text \"more details\" question; with a minor condition the offer is unchanged (runs/e33-other-condition). Read by the clinician later.",
+       "effectType": "flag-for-clinician",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "No",
+       "effect": "Baseline.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Other conditions.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Yes -> Adds a free-text box for details (for the clinician).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "siteQuestionId": "107800",
+     "source": "runs/baseline-men-2/steps/api-046.json"
+    },
+    {
+     "id": "men-107160",
+     "order": 29,
+     "stage": "anonymous",
+     "text": "Please can you give us more details about your medical condition(s)?",
+     "type": "text",
+     "options": [],
+     "purpose": "Details of other conditions for the clinician.",
+     "engineRole": "data-capture",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "107800 = Yes",
+     "evidence": "observed",
+     "siteQuestionId": "107160",
+     "source": "runs/peek-13/steps/api-062.json"
+    },
+    {
+     "id": "men-102632",
+     "order": 30,
+     "stage": "anonymous",
+     "text": "Are you currently taking any prescription medications?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Adds a medicines checklist (6 options) and then \"And what about these?\" (6 more).",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "No",
+       "effect": "Baseline.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Prescription medicines screen.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Yes -> Adds a medicines checklist (6 options) and then \"And what about these?\" (6 more).",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "siteQuestionId": "102632",
+     "source": "runs/baseline-men-2/steps/api-048.json"
+    },
+    {
+     "id": "men-103769",
+     "order": 31,
+     "stage": "anonymous",
+     "text": "Are you taking any of the following medications:",
+     "type": "multi",
+     "options": [
+      {
+       "label": "Finasteride or Dutasteride for prostate problems",
+       "effect": "All finasteride products removed; only Minoxidil tablets and spray (runs/e29-5ari-prostate).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-propecia",
+        "p-dual-tab-spray",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Medicines for high blood pressure (e.g. amlodipine, ramipril, lisinopril, losartan etc.)",
+       "effect": "ALL minoxidil removed (tablets, spray, both Dual packs): only Finasteride and Propecia (runs/e27-bp-meds).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-minox-tab",
+        "p-minox-spray",
+        "p-dual-tabs",
+        "p-dual-tab-spray"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Antidepressants (e.g. escitalopram, citalopram, duloxetine, fluoxetine, mirtazapine, paroxetine, sertraline, venlafaxine etc.)",
+       "effect": "Adds \"Please can you list all your medications\" (free text); offer unchanged (runs/e28-antidepressants).",
+       "effectType": "flag-for-clinician",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Erectile dysfunction tablets (e.g. sildenafil (Viagra), tadalafil (Cialis), vardenafil (Levitra) etc.)",
+       "effect": "Finasteride products AND Minoxidil tablets removed: only Sons Minoxidil spray is offered (runs/e30-ed-tablets).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-propecia",
+        "p-dual-tab-spray",
+        "p-dual-tabs",
+        "p-minox-tab"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Medicated creams applied to your scalp (e.g. steroids (hydrocortisone, betamethasone, clobetasone) and calcipotriol (dovonex) to treat psoriasis and eczema etc.)",
+       "effect": "Then 108158 \"And what about these?\". Sons Minoxidil spray and Dual Action Tablet + Spray are removed (same as scalp changes); the pets question is skipped; finasteride, Propecia, Minoxidil tablets and Dual Action Tablets stay (runs/verify-gap-scalp-creams).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-minox-spray",
+        "p-dual-tab-spray"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Guanethidine",
+       "effect": "Not replayed to the end in stage 2 (stage 1 saw a follow-up). Inferred: likely removes minoxidil (guanethidine interaction in the minoxidil SmPC); not confirmed.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "inferred"
+      }
+     ],
+     "purpose": "Interacting or relevant medicines, list 1.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "BP medicines: all minoxidil removed. 5-ARI for prostate: finasteride removed. ED tablets: finasteride and oral minoxidil removed. Antidepressants: medication list text.",
+     "shownWhen": "102632 = Yes",
+     "evidence": "observed",
+     "siteQuestionId": "103769",
+     "source": "runs/peek-13/steps/api-068.json"
+    },
+    {
+     "id": "men-108158",
+     "order": 32,
+     "stage": "anonymous",
+     "text": "And what about these?",
+     "type": "multi",
+     "options": [
+      {
+       "label": "Testosterone or Anabolic steroids",
+       "effect": "Adds a screen: finasteride is unlikely to help while taking steroids; tick \"I understand\". Offer and wording unchanged: all 6 cards (runs/verify-gap-testosterone, with antidepressants also ticked, which e28 showed has no effect).",
+       "effectType": "soft-warning",
+       "affects": [
+        "p-fin",
+        "p-propecia"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Inhalers for asthma or COPD",
+       "effect": "Not tested. Inferred: no effect on the offer (no known interaction with finasteride or minoxidil).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "inferred"
+      },
+      {
+       "label": "Antihistamines",
+       "effect": "Not tested. Inferred: no effect on the offer (no known interaction with finasteride or minoxidil).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "inferred"
+      },
+      {
+       "label": "Painkillers",
+       "effect": "Not tested. Inferred: no effect on the offer (no known interaction with finasteride or minoxidil).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "inferred"
+      },
+      {
+       "label": "Acid reflux medication (e.g. omeprazole, lansoprazole, pantoprazole, etc.)",
+       "effect": "Not tested. Inferred: no effect on the offer (no known interaction with finasteride or minoxidil).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "inferred"
+      },
+      {
+       "label": "Other medication",
+       "effect": "Adds a free-text list of all medicines.",
+       "effectType": "flag-for-clinician",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Relevant medicines, list 2.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Testosterone or Anabolic steroids -> Adds a screen: finasteride is unlikely to help while taking steroids; tick \"I understand\".; Inhalers for asthma or COPD -> Not tested.; Antihistamines -> Not tested.; Painkillers -> Not tested.; Acid reflux medication (e.g. omeprazole, lansoprazole, panto -> Not tested.; Other medication -> Adds a free-text list of all medicines.",
+     "shownWhen": "after 103769",
+     "evidence": "observed",
+     "siteQuestionId": "108158",
+     "source": "runs/peek-13/steps/api-070.json"
+    },
+    {
+     "id": "men-103277",
+     "order": 33,
+     "stage": "anonymous",
+     "text": "Steroids are thought to create male pattern hair loss by causing your body to produce higher levels of dihydrotestosterone (DHT). DHT acts on the hair follicles on your scalp, causing them to weaken over time. They eventually die and stop growing back, which results in baldness. Taking Finasteride or Propecia is unlikely to be helpful if you are still taking steroids. Steroids can also cause lots of other problems such as erectile dysfunction, infertility, heart and kidney problems as well as mood disorders.",
+     "type": "consent",
+     "options": [
+      {
+       "label": "I understand",
+       "effect": "Acknowledgement; continues.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Steroids warning.",
+     "engineRole": "expectation-setting",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "108158 includes Testosterone or Anabolic steroids",
+     "evidence": "observed",
+     "siteQuestionId": "103277",
+     "source": "runs/peek-13/steps/api-072.json"
+    },
+    {
+     "id": "men-101599",
+     "order": 34,
+     "stage": "anonymous",
+     "text": "Please can you list all your medications below.",
+     "type": "text",
+     "options": [],
+     "purpose": "Full medicines list for the clinician.",
+     "engineRole": "data-capture",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "108158 includes Other medication",
+     "evidence": "observed",
+     "siteQuestionId": "101599",
+     "source": "runs/peek-13/steps/api-092.json"
+    },
+    {
+     "id": "men-102624",
+     "order": 35,
+     "stage": "anonymous",
+     "text": "Do you have any allergies?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Adds \"Are you allergic to any of the following?\" then an ingredients warning.",
+       "effectType": "extra-questions",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "No",
+       "effect": "Baseline.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Allergies.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Yes -> Adds \"Are you allergic to any of the following?\" then an ingredients warning.",
+     "shownWhen": "always",
+     "evidence": "observed",
+     "siteQuestionId": "102624",
+     "source": "runs/baseline-men-2/steps/api-050.json"
+    },
+    {
+     "id": "men-100038",
+     "order": 36,
+     "stage": "anonymous",
+     "text": "Are you allergic to any of the following?",
+     "type": "multi",
+     "options": [
+      {
+       "label": "Minoxidil or Regaine",
+       "effect": "Adds an ingredients warning (108405). ALL minoxidil removed; only Finasteride and Propecia; pets question skipped (runs/e11-allergy-minox).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-minox-tab",
+        "p-minox-spray",
+        "p-dual-tabs",
+        "p-dual-tab-spray"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Finasteride, Propecia or dutasteride",
+       "effect": "Adds an ingredients warning (108405). All finasteride removed; only Minoxidil tablets and spray; partner-pregnancy question skipped (runs/e12-allergy-fin).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-propecia",
+        "p-dual-tab-spray",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Allergy to the actives.",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Each ticked allergy removes every product containing that drug, after an ingredients warning.",
+     "shownWhen": "102624 = Yes",
+     "evidence": "observed",
+     "siteQuestionId": "100038",
+     "source": "runs/peek-13/steps/api-114.json"
+    },
+    {
+     "id": "men-108405",
+     "order": 37,
+     "stage": "anonymous",
+     "text": "As you have allergies, you must check the list of ingredients of any medication prescribed to you before taking it. It's important to be sure you're not allergic to any of the ingredients as these can be different depending on the manufacturer of the medicine. The leaflet that comes with your medicine will have a list of ingredients.",
+     "type": "consent",
+     "options": [
+      {
+       "label": "I understand",
+       "effect": "Acknowledgement; continues.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Check-the-ingredients warning.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "100038 any option",
+     "evidence": "observed",
+     "siteQuestionId": "108405",
+     "source": "runs/peek-13/steps/api-116.json"
+    },
+    {
+     "id": "men-108003",
+     "order": 38,
+     "stage": "anonymous",
+     "text": "Is your partner pregnant, or are you planning or trying for a baby?",
+     "type": "single",
+     "options": [
+      {
+       "label": "My partner is pregnant",
+       "effect": "No extra screen and no change to the offer or wording (runs/e03-partner-pregnant). Finasteride cards still say tablets must not be handled by pregnant women.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "We are currently planning or trying for a baby",
+       "effect": "Adds \"Finasteride and trying for a baby\" (we don't prescribe finasteride to men trying for a baby). All finasteride removed; only Minoxidil tablets and spray (runs/e02-trying-baby).",
+       "effectType": "product-removed",
+       "affects": [
+        "p-fin",
+        "p-propecia",
+        "p-dual-tab-spray",
+        "p-dual-tabs"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "None of the above",
+       "effect": "Baseline.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Partner pregnancy / trying for a baby (finasteride).",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "Trying for a baby: warning, finasteride removed. Partner pregnant: no change. Shown only when finasteride is still possible (skipped after any finasteride removal).",
+     "shownWhen": "only while a finasteride product is still on offer (skipped after depression opt-out, breast/prostate cancer, breast tissue enlargement, sex-life problems, 5-ARI use, ED tablets, finasteride allergy or finasteride side effects declined)",
+     "evidence": "observed",
+     "siteQuestionId": "108003",
+     "source": "runs/baseline-men-2/steps/api-053.json"
+    },
+    {
+     "id": "men-108004",
+     "order": 39,
+     "stage": "anonymous",
+     "text": "Finasteride and trying for a baby: Finasteride can affect sperm quality in some men, which may make it harder to conceive. This is uncommon and sperm quality usually improves after stopping treatment . Only small amounts of finasteride pass into semen. Harm to a baby through this exposure is considered very unlikely. As a precaution, we don't prescribe finasteride to men who are trying for a baby. If you are planning to try for a baby, we recommend stopping finasteride at least 3 months before trying to conceive.",
+     "type": "consent",
+     "options": [
+      {
+       "label": "I understand",
+       "effect": "Acknowledgement; continues.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "No finasteride when trying for a baby.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "108003 = trying for a baby",
+     "evidence": "observed",
+     "siteQuestionId": "108004",
+     "source": "runs/peek-13/steps/api-136.json"
+    },
+    {
+     "id": "men-108001",
+     "order": 40,
+     "stage": "anonymous",
+     "text": "Do you live with pets?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Adds a pets warning (topical minoxidil is toxic to pets; tick \"I confirm\"); offer unchanged (runs/e14-pets-yes).",
+       "effectType": "soft-warning",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "No",
+       "effect": "Baseline.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Pets (topical minoxidil is toxic to pets).",
+     "engineRole": "safety-screen",
+     "branches": true,
+     "branchDetail": "Yes: pets warning only; offer unchanged.",
+     "shownWhen": "only while a topical minoxidil product is still on offer (skipped after scalp changes Yes, heart/BP Yes, BP medicines or minoxidil allergy)",
+     "evidence": "observed",
+     "siteQuestionId": "108001",
+     "source": "runs/baseline-men-2/steps/api-055.json"
+    },
+    {
+     "id": "men-108002",
+     "order": 41,
+     "stage": "anonymous",
+     "text": "Living with Pets: You've told us that you live with pets. Some of our treatments contain topical minoxidil , which is toxic to all pets including cats and dogs . The main risk is accidental exposure, for example if a pet licks minoxidil from your fingers, hair, skin, clothing, or bedding after application. Oral tablets or capsules are less likely to pose a risk because the medication does not sit on your hair or skin in the same way. However, tablets or capsules are still harmful if a pet ingests them. By continuing, you confirm that you understand this risk and will take appropriate precautions to protect your pets.",
+     "type": "consent",
+     "options": [
+      {
+       "label": "I confirm",
+       "effect": "Acknowledgement; continues.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Pet safety confirmation.",
+     "engineRole": "safety-screen",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "108001 = Yes",
+     "evidence": "observed",
+     "siteQuestionId": "108002",
+     "source": "runs/peek-13/steps/api-146.json"
+    },
+    {
+     "id": "men-108360",
+     "order": 42,
+     "stage": "anonymous",
+     "text": "Clinically proven results: 1 Hu et al., Dermatol Ther 2015, 2 Kaufman et al., JAAD 1998, 3 Olsen et al., JAAD 2007",
+     "type": "info",
+     "options": [],
+     "purpose": "Marketing: clinically proven results with study citations.",
+     "engineRole": "marketing",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only when both finasteride and minoxidil are still on offer (skipped in every run where either drug was removed)",
+     "evidence": "observed",
+     "siteQuestionId": "108360",
+     "source": "runs/baseline-men-2/steps/api-057.json"
+    },
+    {
+     "id": "men-107988",
+     "order": 43,
+     "stage": "anonymous",
+     "text": "Your Recommendations: Dr. Sameer Sanghvi General Practitioner (GP) GMC no. 7085078 Consultation overview: - Your hair loss is consistent with male pattern hair loss - You're new to hair loss treatment Our recommendation: - You're suitable for Finasteride tablets , Minoxidil tablets and Minoxidil spray - As you're new to hair loss treatment, we'd recommend starting with a licensed treatment, such as Finasteride tablets and Minoxidil spray - Combining Finasteride with Minoxidil may provide greater benefits than using either treatment alone, as they work in different ways.",
+     "type": "single",
+     "options": [
+      {
+       "label": "Dual Action - Tablet + Spray",
+       "effect": "Choosing a card opens the pack-size step for that product.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Dual Action - Tablets",
+       "effect": "Choosing a card opens the pack-size step for that product.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Finasteride tablets",
+       "effect": "Choosing a card opens the pack-size step for that product.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Minoxidil tablets",
+       "effect": "Choosing a card opens the pack-size step for that product.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Sons Minoxidil spray",
+       "effect": "Choosing a card opens the pack-size step for that product.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Propecia",
+       "effect": "Choosing a card opens the pack-size step for that product.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Recommendation screen with product cards (shown before any account).",
+     "engineRole": "product-selector",
+     "branches": true,
+     "branchDetail": "",
+     "shownWhen": "after the answers summary",
+     "evidence": "observed",
+     "siteQuestionId": "107988",
+     "source": "runs/baseline-men-2/steps/api-062.json"
+    },
+    {
+     "id": "men-108082",
+     "order": 44,
+     "stage": "anonymous",
+     "text": "Choose your pack size: ",
+     "type": "single",
+     "options": [
+      {
+       "label": "1 month / 3 months / 6 months (tabs) x Subscription or One time purchase, then \"Add to basket\"",
+       "effect": "Picks the pack; the baseline pressed Add to basket on the default (6 months subscription, £138.00 billed every 6 months).",
+       "effectType": "next-question",
+       "affects": [
+        "p-fin"
+       ],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Pack size and subscription or one-off purchase.",
+     "engineRole": "product-selector",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "after choosing a product card",
+     "evidence": "observed",
+     "siteQuestionId": "108082",
+     "source": "runs/baseline-men-2/steps/api-064.json"
+    },
+    {
+     "id": "men-107986",
+     "order": 45,
+     "stage": "anonymous",
+     "text": "Your Safety: Important safety information for your treatment: Finasteride has been associated with causing: - Low mood, depression, and suicidal thoughts - Sexual side effects such as reduced sex drive, difficulty getting or maintaining an erection, and problems with ejaculation. - Changes in breast tissue , including lumps, pain, or nipple discharge. If you develop depression or suicidal thoughts, stop treatment and contact your doctor immediately. If you ever feel at risk of harming yourself or have seriously harmed yourself, call emergency services on 999 immediately.",
+     "type": "consent",
+     "options": [
+      {
+       "label": "I understand",
+       "effect": "Acknowledgement; continues.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Finasteride safety information to acknowledge.",
+     "engineRole": "consent",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "after choosing a finasteride product",
+     "evidence": "observed",
+     "siteQuestionId": "107986",
+     "source": "runs/baseline-men-3/steps/api-066.json"
+    },
+    {
+     "id": "men-100467",
+     "order": 46,
+     "stage": "anonymous",
+     "text": "Please confirm the following to complete your consultation: - I have responded honestly and provided complete and accurate information that reflects my up to date medical history and information, so that the LloydsPharmacy Online Doctor clinician can safely assess and advise me. - I fully understand all the questions and information provided. If I am unsure about any aspect of the service I will contact the LloydsPharmacy Online Doctor before proceeding. - I understand the side effects, effectiveness and alternatives to the treatment I am requesting. - I understand the importance of notifying my GP about medicines and advice I may receive from this service so they can continue to provide safe medical care. - I understand this consultation will form part of my Online Doctor medical record and will be kept in line with the relevant retention period. - I have read, understand and agree to the terms and conditions and privacy notice .",
+     "type": "consent",
+     "options": [
+      {
+       "label": "I confirm the above",
+       "effect": "Acknowledgement; continues.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Final declarations (honesty, GP, records, terms). Not pressed: the walk stops here.",
+     "engineRole": "consent",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "end of every route, including early stops",
+     "evidence": "observed",
+     "siteQuestionId": "100467",
+     "source": "runs/baseline-men-3/steps/api-068.json"
+    }
+   ]
+  }
+ ],
+ "rules": [
+  {
+   "id": "R1",
+   "flow": "men",
+   "when": "men-100013 = Female",
+   "then": "Date of birth is still asked, then the questions end: answers summary and final consent, no recommendation (men-only service).",
+   "effectType": "hard-stop",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/female-01 (stage 1), runs/verify-female (stage 3)",
+   "confidence": "high"
+  },
+  {
+   "id": "R2",
+   "flow": "men",
+   "when": "age (from men-100014) under 18",
+   "then": "Questions end at once; redirect to \"We do not treat under 18s\".",
+   "effectType": "hard-stop",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/e17-age-17",
+   "confidence": "high"
+  },
+  {
+   "id": "R3",
+   "flow": "men",
+   "when": "age 65 or over",
+   "then": "Minoxidil tablets and Dual Action Tablets removed (no screen tells the patient why).",
+   "effectType": "product-removed",
+   "affects": [
+    "p-minox-tab",
+    "p-dual-tabs"
+   ],
+   "evidence": "observed",
+   "proof": "runs/e19-age-65, runs/e18-age-70 vs runs/e21-age-64; re-tested runs/verify-age-65",
+   "confidence": "high"
+  },
+  {
+   "id": "R4",
+   "flow": "men",
+   "when": "men-103257 = Complete or Random patches; men-107954 = Suddenly; men-103261 = Yes; men-103270 includes Alopecia",
+   "then": "Questions end at once; no recommendation (not male pattern hair loss).",
+   "effectType": "hard-stop",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "stage 1 peeks runs/peek-02, runs/peek-07, runs/peek-08; Sudden re-tested runs/verify-sudden",
+   "confidence": "high"
+  },
+  {
+   "id": "R5",
+   "flow": "men",
+   "when": "men-103257 = Temples only or Extensive",
+   "then": "Expectation screen that must be ticked; offer unchanged.",
+   "effectType": "soft-warning",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/e22-pattern-temples, runs/e23-pattern-extensive",
+   "confidence": "high"
+  },
+  {
+   "id": "R6",
+   "flow": "men",
+   "when": "men-105935 = Yes (scalp changes)",
+   "then": "Topical minoxidil removed (Sons spray, Dual Tablet + Spray); \"see your GP\" screen; pets question skipped.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-minox-spray",
+    "p-dual-tab-spray"
+   ],
+   "evidence": "observed",
+   "proof": "runs/e06-scalp-yes",
+   "confidence": "high"
+  },
+  {
+   "id": "R7",
+   "flow": "men",
+   "when": "men-107973 = Yes (heart or blood pressure condition)",
+   "then": "Every minoxidil product removed, oral AND topical; only Finasteride and Propecia offered.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-minox-tab",
+    "p-minox-spray",
+    "p-dual-tabs",
+    "p-dual-tab-spray"
+   ],
+   "evidence": "observed",
+   "proof": "runs/e01-heart-yes; re-tested runs/verify-heart",
+   "confidence": "high"
+  },
+  {
+   "id": "R8",
+   "flow": "men",
+   "when": "men-103769 includes blood pressure medicines",
+   "then": "Every minoxidil product removed, oral and topical.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-minox-tab",
+    "p-minox-spray",
+    "p-dual-tabs",
+    "p-dual-tab-spray"
+   ],
+   "evidence": "observed",
+   "proof": "runs/e27-bp-meds",
+   "confidence": "high"
+  },
+  {
+   "id": "R9",
+   "flow": "men",
+   "when": "men-100038 includes Minoxidil (allergy)",
+   "then": "Every minoxidil product removed, after an ingredients warning.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-minox-tab",
+    "p-minox-spray",
+    "p-dual-tabs",
+    "p-dual-tab-spray"
+   ],
+   "evidence": "observed",
+   "proof": "runs/e11-allergy-minox",
+   "confidence": "high"
+  },
+  {
+   "id": "R10",
+   "flow": "men",
+   "when": "men-101561 = Yes and men-101564 = Less than 30",
+   "then": "Questions end at once; no recommendation.",
+   "effectType": "hard-stop",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "stage 1 runs/peek-12; re-tested runs/verify-egfr-under30",
+   "confidence": "high"
+  },
+  {
+   "id": "R11",
+   "flow": "men",
+   "when": "men-101561 = Yes and men-101564 = More than 30, I don't know, or I haven't had an eGFR test in the past year",
+   "then": "Minoxidil tablets and Dual Action Tablets removed; topical kept.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-minox-tab",
+    "p-dual-tabs"
+   ],
+   "evidence": "observed",
+   "proof": "runs/e15-ckd-egfr-over30, runs/e16-ckd-egfr-unknown, runs/verify-gap-egfr-notest",
+   "confidence": "high"
+  },
+  {
+   "id": "R12",
+   "flow": "men",
+   "when": "men-103769 includes erectile dysfunction tablets",
+   "then": "Finasteride products and Minoxidil tablets removed; only Sons Minoxidil spray offered.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-fin",
+    "p-propecia",
+    "p-dual-tab-spray",
+    "p-dual-tabs",
+    "p-minox-tab"
+   ],
+   "evidence": "observed",
+   "proof": "runs/e30-ed-tablets; re-tested runs/verify-ed-tablets",
+   "confidence": "high"
+  },
+  {
+   "id": "R13",
+   "flow": "men",
+   "when": "men-108003 = planning or trying for a baby",
+   "then": "Warning screen; every finasteride product removed.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-fin",
+    "p-propecia",
+    "p-dual-tab-spray",
+    "p-dual-tabs"
+   ],
+   "evidence": "observed",
+   "proof": "runs/e02-trying-baby; re-tested runs/verify-trying-baby-2",
+   "confidence": "high"
+  },
+  {
+   "id": "R14",
+   "flow": "men",
+   "when": "men-108003 = My partner is pregnant",
+   "then": "No change (only the standard card note that pregnant women must not handle finasteride).",
+   "effectType": "none",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/e03-partner-pregnant",
+   "confidence": "high"
+  },
+  {
+   "id": "R15",
+   "flow": "men",
+   "when": "men-103270 includes Breast cancer, Breast tissue enlargement, Prostate cancer or Problems with my sex life",
+   "then": "Every finasteride product removed silently (no screen).",
+   "effectType": "product-removed",
+   "affects": [
+    "p-fin",
+    "p-propecia",
+    "p-dual-tab-spray",
+    "p-dual-tabs"
+   ],
+   "evidence": "observed",
+   "proof": "runs/e25-breast-cancer, runs/e31-gynaecomastia, runs/e26-prostate-cancer, runs/e32-sex-problems; prostate cancer re-tested runs/verify-prostate-cancer-2",
+   "confidence": "high"
+  },
+  {
+   "id": "R16",
+   "flow": "men",
+   "when": "men-103769 includes finasteride or dutasteride for prostate problems",
+   "then": "Every finasteride product removed.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-fin",
+    "p-propecia",
+    "p-dual-tab-spray",
+    "p-dual-tabs"
+   ],
+   "evidence": "observed",
+   "proof": "runs/e29-5ari-prostate",
+   "confidence": "high"
+  },
+  {
+   "id": "R17",
+   "flow": "men",
+   "when": "men-100038 includes Finasteride (allergy)",
+   "then": "Every finasteride product removed.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-fin",
+    "p-propecia",
+    "p-dual-tab-spray",
+    "p-dual-tabs"
+   ],
+   "evidence": "observed",
+   "proof": "runs/e12-allergy-fin",
+   "confidence": "high"
+  },
+  {
+   "id": "R18",
+   "flow": "men",
+   "when": "men-103270 includes Depression and men-103268 = I don't want to use finasteride tablets",
+   "then": "Every finasteride product removed.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-fin",
+    "p-propecia",
+    "p-dual-tab-spray",
+    "p-dual-tabs"
+   ],
+   "evidence": "observed",
+   "proof": "runs/e04-dep-nofin",
+   "confidence": "high"
+  },
+  {
+   "id": "R19",
+   "flow": "men",
+   "when": "men-103270 includes Depression and men-103268 = continue",
+   "then": "Four mental-health questions; offer unchanged (with neutral answers); licensed-first line dropped.",
+   "effectType": "extra-questions",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/e05-dep-continue",
+   "confidence": "medium"
+  },
+  {
+   "id": "R20",
+   "flow": "men",
+   "when": "men-107959 = Yes for finasteride and men-108051 = No",
+   "then": "Every finasteride product removed; result notes reported side effects.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-fin",
+    "p-propecia",
+    "p-dual-tab-spray",
+    "p-dual-tabs"
+   ],
+   "evidence": "observed",
+   "proof": "runs/e10-prev-fin-sidefx vs runs/e13-prev-fin-sidefx-again",
+   "confidence": "high"
+  },
+  {
+   "id": "R21",
+   "flow": "men",
+   "when": "men-108014 = Yes (any previous treatment)",
+   "then": "Result says \"You've previously used hair loss treatment\" and drops \"start with a licensed treatment\"; products unchanged.",
+   "effectType": "none",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/e07-prev-topminox, runs/e08-prev-fin",
+   "confidence": "high"
+  },
+  {
+   "id": "R22",
+   "flow": "men",
+   "when": "previous product \"No benefit\" (12 months+, regular use)",
+   "then": "Result adds \"treatment with <product> didn't achieve the results you were hoping for\"; the product is still offered (no switch).",
+   "effectType": "none",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/e09-prev-topminox-nobenefit",
+   "confidence": "high"
+  },
+  {
+   "id": "R23",
+   "flow": "men",
+   "when": "any answer that removes finasteride",
+   "then": "The partner-pregnancy question (108003) is skipped, because it only matters for finasteride.",
+   "effectType": "skip-questions",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/e04-dep-nofin, e10-prev-fin-sidefx, e12-allergy-fin, e25-breast-cancer, e26-prostate-cancer, e29-5ari-prostate, e30-ed-tablets, e31-gynaecomastia, e32-sex-problems, verify-prostate-cancer-2 (all skip 108003)",
+   "confidence": "high"
+  },
+  {
+   "id": "R24",
+   "flow": "men",
+   "when": "any answer that removes topical minoxidil",
+   "then": "The pets question (108001) is skipped, because it only matters for topical minoxidil.",
+   "effectType": "skip-questions",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/e01-heart-yes, e06-scalp-yes, e11-allergy-minox, e27-bp-meds, verify-heart, verify-gap-scalp-creams (all skip 108001)",
+   "confidence": "high"
+  },
+  {
+   "id": "R25",
+   "flow": "men",
+   "when": "either drug removed",
+   "then": "The \"Clinically proven results\" screen (108360) and the combination packs are dropped; remaining single products become the main cards.",
+   "effectType": "skip-questions",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/e01-heart-yes, runs/e02-trying-baby, runs/e12-allergy-fin",
+   "confidence": "high"
+  },
+  {
+   "id": "R26",
+   "flow": "men",
+   "when": "new to treatment, no mental-health history, and finasteride, oral minoxidil and spray (or the scalp-limited set) all on offer",
+   "then": "The result adds \"As you're new to hair loss treatment, we'd recommend starting with a licensed treatment\" (naming finasteride and/or the spray). Dropped after previous treatment, depression, age 65+, CKD or any finasteride removal.",
+   "effectType": "none",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/exp-base vs runs/e05-dep-continue, e07-prev-topminox, e15-ckd-egfr-over30, e18-age-70, e06-scalp-yes, verify-age-65",
+   "confidence": "medium"
+  },
+  {
+   "id": "R27",
+   "flow": "men",
+   "when": "men-108001 = Yes, men-107800 = Yes, men-103769 includes antidepressants, men-107977 = Skip, men-108158 includes Testosterone or Anabolic steroids",
+   "then": "Warning or free-text screen only; offer unchanged.",
+   "effectType": "none",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/e14-pets-yes, runs/e33-other-condition, runs/e28-antidepressants, runs/e24-skip-learn, runs/verify-gap-testosterone",
+   "confidence": "high"
+  },
+  {
+   "id": "R28",
+   "flow": "men",
+   "when": "men-103270 includes Phaeochromocytoma, Porphyria or Systemic Lupus Erythematosus (SLE)",
+   "then": "Minoxidil tablets and Dual Action Tablets removed silently (no screen); finasteride, Propecia and the spray stay.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-minox-tab",
+    "p-dual-tabs"
+   ],
+   "evidence": "observed",
+   "proof": "runs/verify-gap-phaeo, runs/verify-gap-porphyria, runs/verify-gap-sle vs runs/exp-base",
+   "confidence": "high"
+  },
+  {
+   "id": "R29",
+   "flow": "men",
+   "when": "men-103769 includes medicated creams applied to the scalp",
+   "then": "Sons Minoxidil spray and Dual Action Tablet + Spray removed (same as scalp changes); pets question skipped.",
+   "effectType": "product-removed",
+   "affects": [
+    "p-minox-spray",
+    "p-dual-tab-spray"
+   ],
+   "evidence": "observed",
+   "proof": "runs/verify-gap-scalp-creams vs runs/exp-base",
+   "confidence": "high"
+  },
+  {
+   "id": "R30",
+   "flow": "men",
+   "when": "An answer set that removes both drug families, e.g. men-107973 = Yes (heart/BP) and men-103270 includes Prostate cancer",
+   "then": "No product is left, so the questions end early (straight after the next question) and go to the answers summary and final consent, with no recommendation screen.",
+   "effectType": "hard-stop",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/verify-combo-heart-prostate vs runs/exp-base",
+   "confidence": "high"
+  }
+ ],
+ "experiments": [
+  {
+   "id": "base-full",
+   "flow": "men",
+   "changed": "none (baseline replay, full)",
+   "result": "Same as stage 1: 6 cards (Dual Action Tablet + Spray and Dual Action Tablets first, both out of stock; then Finasteride, Minoxidil tablets, Sons spray, Propecia). \"You're new to hair loss treatment... we'd recommend starting with a licensed treatment, such as Finasteride tablets and Minoxidil spray.\" Pack size for finasteride: subscription £28 / £80 / £138, one-off £34 / £95 / £163. Finasteride safety screen, then final consent (not pressed). No sign-in asked up to there.",
+   "run": "runs/base-full"
+  },
+  {
+   "id": "e01-heart-yes",
+   "flow": "men",
+   "changed": "107973 heart/BP: No → Yes",
+   "result": "No extra screen. Only Finasteride and Propecia offered: oral AND topical minoxidil and both Dual packs removed. Pets and \"Clinically proven results\" screens skipped.",
+   "run": "runs/e01-heart-yes"
+  },
+  {
+   "id": "e02-trying-baby",
+   "flow": "men",
+   "changed": "108003: None → trying for a baby",
+   "result": "Warning 108004, then only Minoxidil tablets and Sons spray: all finasteride removed.",
+   "run": "runs/e02-trying-baby"
+  },
+  {
+   "id": "e03-partner-pregnant",
+   "flow": "men",
+   "changed": "108003: None → My partner is pregnant",
+   "result": "No change at all.",
+   "run": "runs/e03-partner-pregnant"
+  },
+  {
+   "id": "e04-dep-nofin",
+   "flow": "men",
+   "changed": "103270: None → Depression, then 103268 \"I don't want to use finasteride tablets\"",
+   "result": "Only Minoxidil tablets and spray; baby question skipped.",
+   "run": "runs/e04-dep-nofin"
+  },
+  {
+   "id": "e05-dep-continue",
+   "flow": "men",
+   "changed": "103270: None → Depression, then continue",
+   "result": "4 mental-health questions (answered: past low mood, resolved). Same 6 products; \"licensed first\" line dropped.",
+   "run": "runs/e05-dep-continue"
+  },
+  {
+   "id": "e06-scalp-yes",
+   "flow": "men",
+   "changed": "105935 scalp changes: No → Yes",
+   "result": "\"See your GP\" warning; Sons spray and Dual Tablet + Spray removed; pets question skipped. Licensed-first line now names Finasteride tablets only.",
+   "run": "runs/e06-scalp-yes"
+  },
+  {
+   "id": "e07-prev-topminox",
+   "flow": "men",
+   "changed": "108014: No → Yes; 108015 = Topical minoxidil (helped, no side effects)",
+   "result": "Adds 108016 and 107959. Same 6 products; text \"You've previously used hair loss treatment\"; licensed-first line dropped.",
+   "run": "runs/e07-prev-topminox"
+  },
+  {
+   "id": "e07b-prev-topminox-peek",
+   "flow": "men",
+   "changed": "108014 Yes, topical minoxidil, peek at 108016 options",
+   "result": "Every 108016 answer leads to side effects 107959; Yes adds a describe box 107981. (Peek run: not a full replay.)",
+   "run": "runs/e07b-prev-topminox-peek"
+  },
+  {
+   "id": "e08-prev-fin",
+   "flow": "men",
+   "changed": "108014: No → Yes; 108015 = Finasteride (helped, no side effects)",
+   "result": "Adds 108022 and 107959. Same 6 products; previously-used wording.",
+   "run": "runs/e08-prev-fin"
+  },
+  {
+   "id": "e09-prev-topminox-nobenefit",
+   "flow": "men",
+   "changed": "as e07 but 108016 = No benefit (12 months+, regular)",
+   "result": "Adds 108017 + 108018. Same 6 products; text adds \"Previously, treatment with Minoxidil spray didn't achieve the results you were hoping for.\" Spray still offered.",
+   "run": "runs/e09-prev-topminox-nobenefit"
+  },
+  {
+   "id": "e10-prev-fin-sidefx",
+   "flow": "men",
+   "changed": "as e08 but side effects Yes, 108051 = No",
+   "result": "Adds 107981 and 108051. All finasteride removed; \"You reported side effects to hair loss treatments\".",
+   "run": "runs/e10-prev-fin-sidefx"
+  },
+  {
+   "id": "e11-allergy-minox",
+   "flow": "men",
+   "changed": "102624: No → Yes; 100038 = Minoxidil",
+   "result": "Ingredients warning; all minoxidil removed (only Finasteride, Propecia); pets skipped.",
+   "run": "runs/e11-allergy-minox"
+  },
+  {
+   "id": "e12-allergy-fin",
+   "flow": "men",
+   "changed": "102624: No → Yes; 100038 = Finasteride",
+   "result": "Ingredients warning; all finasteride removed (only Minoxidil tablets and spray); baby question skipped.",
+   "run": "runs/e12-allergy-fin"
+  },
+  {
+   "id": "e13-prev-fin-sidefx-again",
+   "flow": "men",
+   "changed": "as e10 but 108051 = Yes",
+   "result": "All 6 products back; \"...but would like to be recommended options containing Finasteride tablets\".",
+   "run": "runs/e13-prev-fin-sidefx-again"
+  },
+  {
+   "id": "e14-pets-yes",
+   "flow": "men",
+   "changed": "108001 pets: No → Yes",
+   "result": "Pets warning 108002 (I confirm); no change to offer or text.",
+   "run": "runs/e14-pets-yes"
+  },
+  {
+   "id": "e15-ckd-egfr-over30",
+   "flow": "men",
+   "changed": "101561 CKD: No → Yes; eGFR more than 30",
+   "result": "Minoxidil tablets and Dual Action Tablets removed; licensed-first line dropped.",
+   "run": "runs/e15-ckd-egfr-over30"
+  },
+  {
+   "id": "e16-ckd-egfr-unknown",
+   "flow": "men",
+   "changed": "101561 CKD: Yes; eGFR I don't know",
+   "result": "Same as e15.",
+   "run": "runs/e16-ckd-egfr-unknown"
+  },
+  {
+   "id": "e17-age-17",
+   "flow": "men",
+   "changed": "100014 date of birth: 1994 → 2009 (age 17)",
+   "result": "Questions end at once; redirected to \"We do not treat under 18s\" page.",
+   "run": "runs/e17-age-17"
+  },
+  {
+   "id": "e18-age-70",
+   "flow": "men",
+   "changed": "100014: age 32 → 70",
+   "result": "Minoxidil tablets and Dual Action Tablets removed; licensed-first line dropped.",
+   "run": "runs/e18-age-70"
+  },
+  {
+   "id": "e19-age-65",
+   "flow": "men",
+   "changed": "100014: age 32 → 65",
+   "result": "Same as e18 (oral minoxidil removed).",
+   "run": "runs/e19-age-65"
+  },
+  {
+   "id": "e20-age-19",
+   "flow": "men",
+   "changed": "100014: age 32 → 19",
+   "result": "No change.",
+   "run": "runs/e20-age-19"
+  },
+  {
+   "id": "e21-age-64",
+   "flow": "men",
+   "changed": "100014: age 32 → 64",
+   "result": "No change (so the oral minoxidil cut-off is 65).",
+   "run": "runs/e21-age-64"
+  },
+  {
+   "id": "e22-pattern-temples",
+   "flow": "men",
+   "changed": "103257: Temples and Crown → Temples only",
+   "result": "Expectation screen 108138; no change to offer or text.",
+   "run": "runs/e22-pattern-temples"
+  },
+  {
+   "id": "e23-pattern-extensive",
+   "flow": "men",
+   "changed": "103257: Temples and Crown → Extensive",
+   "result": "Expectation screen 108376; no change to offer or text.",
+   "run": "runs/e23-pattern-extensive"
+  },
+  {
+   "id": "e24-skip-learn",
+   "flow": "men",
+   "changed": "107977: Tell me more → Skip, I already know",
+   "result": "3 education screens skipped; no change.",
+   "run": "runs/e24-skip-learn"
+  },
+  {
+   "id": "e25-breast-cancer",
+   "flow": "men",
+   "changed": "103270: None → Breast cancer",
+   "result": "No extra screen; all finasteride removed; baby question skipped.",
+   "run": "runs/e25-breast-cancer"
+  },
+  {
+   "id": "e26-prostate-cancer",
+   "flow": "men",
+   "changed": "103270: None → Prostate cancer",
+   "result": "No extra screen; all finasteride removed.",
+   "run": "runs/e26-prostate-cancer"
+  },
+  {
+   "id": "e27-bp-meds",
+   "flow": "men",
+   "changed": "102632: No → Yes; 103769 = blood pressure medicines",
+   "result": "All minoxidil removed (only Finasteride, Propecia); pets skipped.",
+   "run": "runs/e27-bp-meds"
+  },
+  {
+   "id": "e28-antidepressants",
+   "flow": "men",
+   "changed": "102632: No → Yes; 103769 = antidepressants",
+   "result": "Adds medication-list text 101599; no change to offer.",
+   "run": "runs/e28-antidepressants"
+  },
+  {
+   "id": "e29-5ari-prostate",
+   "flow": "men",
+   "changed": "102632: No → Yes; 103769 = finasteride/dutasteride for prostate",
+   "result": "All finasteride removed.",
+   "run": "runs/e29-5ari-prostate"
+  },
+  {
+   "id": "e30-ed-tablets",
+   "flow": "men",
+   "changed": "102632: No → Yes; 103769 = ED tablets",
+   "result": "Finasteride products and Minoxidil tablets removed: only Sons Minoxidil spray offered.",
+   "run": "runs/e30-ed-tablets"
+  },
+  {
+   "id": "e31-gynaecomastia",
+   "flow": "men",
+   "changed": "103270: None → Breast tissue enlargement",
+   "result": "No extra screen; all finasteride removed.",
+   "run": "runs/e31-gynaecomastia"
+  },
+  {
+   "id": "e32-sex-problems",
+   "flow": "men",
+   "changed": "103270: None → Problems with my sex life",
+   "result": "No extra screen; all finasteride removed.",
+   "run": "runs/e32-sex-problems"
+  },
+  {
+   "id": "e33-other-condition",
+   "flow": "men",
+   "changed": "107800: No → Yes",
+   "result": "Adds details text 107160; no change to offer.",
+   "run": "runs/e33-other-condition"
+  },
+  {
+   "id": "verify-base",
+   "flow": "men",
+   "changed": "none (stage 3 baseline replay)",
+   "result": "Same path, same 6 cards, prices and wording as runs/exp-base.",
+   "run": "runs/verify-base"
+  },
+  {
+   "id": "verify-heart",
+   "flow": "men",
+   "changed": "men-107973: No -> Yes",
+   "result": "Only Finasteride tablets and Propecia; all minoxidil removed, spray included; 108001 and 108360 skipped. Confirms R7.",
+   "run": "runs/verify-heart"
+  },
+  {
+   "id": "verify-age-65",
+   "flow": "men",
+   "changed": "date of birth 15/6/1994 -> 15/6/1961 (age 65)",
+   "result": "Minoxidil tablets and Dual Action Tablets removed; licensed-first line dropped. Confirms R3.",
+   "run": "runs/verify-age-65"
+  },
+  {
+   "id": "verify-ed-tablets",
+   "flow": "men",
+   "changed": "men-102632 Yes + men-103769 ED tablets",
+   "result": "Only Sons Minoxidil spray. Confirms R12.",
+   "run": "runs/verify-ed-tablets"
+  },
+  {
+   "id": "verify-trying-baby-2",
+   "flow": "men",
+   "changed": "men-108003 -> trying for a baby",
+   "result": "Warning 108004, then only Minoxidil tablets and spray. Confirms R13. (First try runs/verify-trying-baby stalled at the pets screen.)",
+   "run": "runs/verify-trying-baby-2"
+  },
+  {
+   "id": "verify-prostate-cancer-2",
+   "flow": "men",
+   "changed": "men-103270 -> Prostate cancer",
+   "result": "All finasteride removed, no screen, 108003 skipped. Confirms R15. (First try runs/verify-prostate-cancer stalled.)",
+   "run": "runs/verify-prostate-cancer-2"
+  },
+  {
+   "id": "verify-egfr-under30",
+   "flow": "men",
+   "changed": "men-101561 Yes + men-101564 Less than 30",
+   "result": "Questions end after the eGFR question; summary and final consent, no product. Confirms R10.",
+   "run": "runs/verify-egfr-under30"
+  },
+  {
+   "id": "verify-female",
+   "flow": "men",
+   "changed": "men-100013: Male -> Female",
+   "result": "Date of birth asked, then summary and final consent, no product. Confirms R1 (wording corrected).",
+   "run": "runs/verify-female"
+  },
+  {
+   "id": "verify-sudden",
+   "flow": "men",
+   "changed": "men-107954 -> Suddenly, over days or weeks",
+   "result": "Questions end; summary and final consent, no product. Confirms R4 for sudden onset.",
+   "run": "runs/verify-sudden"
+  },
+  {
+   "id": "verify-gap-phaeo",
+   "flow": "men",
+   "changed": "men-103270 -> Phaeochromocytoma",
+   "result": "Minoxidil tablets and Dual Action Tablets removed, nothing else. New R28.",
+   "run": "runs/verify-gap-phaeo"
+  },
+  {
+   "id": "verify-gap-porphyria",
+   "flow": "men",
+   "changed": "men-103270 -> Porphyria",
+   "result": "Same as phaeochromocytoma. New R28.",
+   "run": "runs/verify-gap-porphyria"
+  },
+  {
+   "id": "verify-gap-sle",
+   "flow": "men",
+   "changed": "men-103270 -> SLE",
+   "result": "Same as phaeochromocytoma. New R28.",
+   "run": "runs/verify-gap-sle"
+  },
+  {
+   "id": "verify-gap-scalp-creams",
+   "flow": "men",
+   "changed": "men-102632 Yes + men-103769 medicated scalp creams",
+   "result": "Spray and Dual Tablet + Spray removed, pets question skipped. New R29.",
+   "run": "runs/verify-gap-scalp-creams"
+  },
+  {
+   "id": "verify-gap-egfr-notest",
+   "flow": "men",
+   "changed": "men-101561 Yes + men-101564 I haven't had an eGFR test",
+   "result": "Minoxidil tablets and Dual Action Tablets removed (as inferred). Extends R11.",
+   "run": "runs/verify-gap-egfr-notest"
+  },
+  {
+   "id": "verify-combo-heart-prostate",
+   "flow": "men",
+   "changed": "men-107973 Yes AND men-103270 Prostate cancer (two changes)",
+   "result": "No product left: questions end after 107800, summary and final consent, no recommendation. New R30.",
+   "run": "runs/verify-combo-heart-prostate"
+  },
+  {
+   "id": "verify-gap-testosterone",
+   "flow": "men",
+   "changed": "men-102632 Yes + 103769 antidepressants + 108158 Testosterone or Anabolic steroids",
+   "result": "Steroid warning screen (103277) and medicines list (101599); all 6 cards and the same wording.",
+   "run": "runs/verify-gap-testosterone"
+  }
+ ],
+ "recommendations": [
+  {
+   "profile": "Baseline man: 32, temples and crown, gradual, no conditions, no medicines, no allergies, new to treatment",
+   "offered": [
+    "p-dual-tab-spray",
+    "p-dual-tabs",
+    "p-fin",
+    "p-minox-tab",
+    "p-minox-spray",
+    "p-propecia"
+   ],
+   "default": "p-dual-tab-spray",
+   "note": "Two combination packs first (both out of stock), then Finasteride, Minoxidil tablets, Sons spray, Propecia. Advises starting with a licensed treatment (finasteride and the spray). Finasteride 6-month pack £138 on subscription or £163 one-off.",
+   "evidence": "observed",
+   "proof": "runs/exp-base"
+  },
+  {
+   "profile": "Baseline woman",
+   "offered": [],
+   "default": "",
+   "note": "Not served: men only. Female at the first question: date of birth is asked, then the questions end with no product (runs/verify-female).",
+   "evidence": "observed",
+   "proof": "runs/female-01"
+  },
+  {
+   "profile": "Man under 18",
+   "offered": [],
+   "default": "",
+   "note": "Stopped after date of birth: \"We do not treat under 18s\".",
+   "evidence": "observed",
+   "proof": "runs/e17-age-17"
+  },
+  {
+   "profile": "Man 65 or over, with kidney disease (eGFR over 30, unknown or not tested), phaeochromocytoma, porphyria or SLE",
+   "offered": [
+    "p-dual-tab-spray",
+    "p-fin",
+    "p-minox-spray",
+    "p-propecia"
+   ],
+   "default": "p-dual-tab-spray",
+   "note": "Oral minoxidil (and Dual Action Tablets) removed; \"licensed first\" line dropped.",
+   "evidence": "observed",
+   "proof": "runs/e19-age-65, runs/e15-ckd-egfr-over30"
+  },
+  {
+   "profile": "Man with heart/BP condition, on BP medicines, or allergic to minoxidil",
+   "offered": [
+    "p-fin",
+    "p-propecia"
+   ],
+   "default": "p-fin",
+   "note": "Finasteride only (generic or Propecia).",
+   "evidence": "observed",
+   "proof": "runs/e01-heart-yes, runs/e27-bp-meds, runs/e11-allergy-minox"
+  },
+  {
+   "profile": "Man with a finasteride exclusion (trying for a baby, breast or prostate cancer, breast tissue enlargement, sex-life problems, 5-ARI for prostate, finasteride allergy, depression opt-out, past finasteride side effects and declines it)",
+   "offered": [
+    "p-minox-tab",
+    "p-minox-spray"
+   ],
+   "default": "p-minox-tab",
+   "note": "Minoxidil tablets and Sons spray as the two main cards.",
+   "evidence": "observed",
+   "proof": "runs/e02, e04, e10, e12, e25, e26, e29, e31, e32"
+  },
+  {
+   "profile": "Man with scalp changes",
+   "offered": [
+    "p-dual-tabs",
+    "p-fin",
+    "p-minox-tab",
+    "p-propecia"
+   ],
+   "default": "p-dual-tabs",
+   "note": "Topicals removed; Dual Action Tablets first; licensed-first advice names finasteride only.",
+   "evidence": "observed",
+   "proof": "runs/e06-scalp-yes"
+  },
+  {
+   "profile": "Man taking erectile dysfunction tablets",
+   "offered": [
+    "p-minox-spray"
+   ],
+   "default": "p-minox-spray",
+   "note": "Only Sons Minoxidil spray.",
+   "evidence": "observed",
+   "proof": "runs/e30-ed-tablets"
+  },
+  {
+   "profile": "Man who used treatment before (helped or not, no side effects)",
+   "offered": [
+    "p-dual-tab-spray",
+    "p-dual-tabs",
+    "p-fin",
+    "p-minox-tab",
+    "p-minox-spray",
+    "p-propecia"
+   ],
+   "default": "p-dual-tab-spray",
+   "note": "Same products; wording says previously treated, and (if no benefit) that the product did not achieve the hoped-for results. No switch or strength change.",
+   "evidence": "observed",
+   "proof": "runs/e07, e08, e09"
+  },
+  {
+   "profile": "Man with both a minoxidil exclusion (e.g. heart/BP) and a finasteride exclusion (e.g. prostate cancer)",
+   "offered": [],
+   "default": null,
+   "note": "Questions end early; summary and final consent with no product.",
+   "evidence": "observed"
+  },
+  {
+   "profile": "Man using medicated scalp creams",
+   "offered": [
+    "p-dual-tabs",
+    "p-fin",
+    "p-minox-tab",
+    "p-propecia"
+   ],
+   "default": "p-dual-tabs",
+   "note": "Topicals removed, as for scalp changes (runs/verify-gap-scalp-creams).",
+   "evidence": "observed"
+  }
+ ],
+ "engineSummary": "A server-side rules engine (one screen per answer) works as a subtraction filter. It starts from six cards for every eligible man (two combination packs, generic finasteride, oral minoxidil, Sons minoxidil spray, Propecia) and removes whole drug families: any finasteride exclusion (baby plans, breast or prostate cancer, breast tissue enlargement, sex-life problems, 5-ARI or ED medicines, allergy, mood opt-out, past side effects declined) drops every finasteride product; heart/BP disease, BP medicines or minoxidil allergy drop every minoxidil product, even the spray; age 65+, kidney disease, phaeochromocytoma, porphyria, SLE or ED tablets drop oral minoxidil; scalp changes or medicated scalp creams drop topicals. When both families are gone, the questions end early with no product. Hard stops end the questions for women, under-18s, non-pattern loss and severe kidney or liver disease. Answers never change strength, dose, plan or price, and never add a product: history and efficacy answers only change the result wording. Follow-up questions are skipped once the drug they protect is gone.",
+ "strengths": [
+  "Free, anonymous route to a named-clinician recommendation with prices before any account.",
+  "Clear, consistent safety logic: removes whole drug families for real contraindications (heart/BP, ED tablets with oral minoxidil, age 65+, kidney disease, 5-ARI use).",
+  "Smart skipping: pets and pregnancy questions disappear once the drug they relate to is off the table, so the patient is not asked irrelevant questions.",
+  "Takes a proper treatment history: benefit, duration, adherence and side effects for each previous product, and lets the patient choose to retry finasteride after side effects.",
+  "Mental-health screen with a finasteride opt-out and crisis signposting; expectation-setting for temple-only and extensive loss."
+ ],
+ "weaknesses": [
+  "Men only: women are stopped after one question.",
+  "Several removals are silent: breast or prostate cancer, sex-life problems, heart/BP, age 65+ and kidney disease change the offer with no screen explaining why.",
+  "Blunt rules: a heart or BP condition (even treated, mild hypertension) removes the minoxidil spray as well as tablets; \"problems with my sex life\" removes finasteride outright instead of discussing it.",
+  "No personalisation of strength, dose or plan: one 1 mg finasteride, one minoxidil tablet strength, one 5% spray. A failed product is still offered with only a wording change; no stronger or alternative option (e.g. compounded or dutasteride) exists.",
+  "Combination packs lead the result screen while flagged out of stock.",
+  "No questions on goals, how far the loss has progressed over time, family history, diet, stress, thyroid or iron, or photos before the recommendation."
+ ],
+ "opportunities": [
+  "A women's hair-loss service (none here).",
+  "Products for men excluded from both drugs (e.g. heart/BP plus finasteride exclusion) currently get nothing: offer non-drug or cosmetic routes and GP signposting.",
+  "Strength and format choice: low-dose oral minoxidil titration, foam for sensitive scalps, topical finasteride, or a step-up for non-responders.",
+  "Explain every removal on the result screen and give a next step, which Lloyds does not do for its silent exclusions.",
+  "In-stock combination packs: Lloyds leads with combinations it cannot supply."
+ ],
+ "sources": [
+  {
+   "title": "Hair loss collection",
+   "url": "https://onlinedoctor.lloydspharmacy.com/collections/hair-loss"
+  },
+  {
+   "title": "Hair loss subscription page",
+   "url": "https://onlinedoctor.lloydspharmacy.com/pages/hair-loss-subscription"
+  },
+  {
+   "title": "Finasteride tablets",
+   "url": "https://onlinedoctor.lloydspharmacy.com/products/finasteride-hair-loss"
+  },
+  {
+   "title": "Propecia",
+   "url": "https://onlinedoctor.lloydspharmacy.com/products/propecia-hair-loss"
+  },
+  {
+   "title": "Sons Minoxidil spray",
+   "url": "https://onlinedoctor.lloydspharmacy.com/products/minoxidil-solution"
+  },
+  {
+   "title": "Hair loss tablets (oral minoxidil)",
+   "url": "https://onlinedoctor.lloydspharmacy.com/products/hair-loss-tablets"
+  },
+  {
+   "title": "Dual Action tablet + spray",
+   "url": "https://onlinedoctor.lloydspharmacy.com/products/dual-action-tablets-spray"
+  },
+  {
+   "title": "Dual Action tablets",
+   "url": "https://onlinedoctor.lloydspharmacy.com/products/dual-action-tablets"
+  },
+  {
+   "title": "Terms and conditions",
+   "url": "https://onlinedoctor.lloydspharmacy.com/info/about-us/terms-and-conditions"
+  },
+  {
+   "title": "Privacy notice",
+   "url": "https://onlinedoctor.lloydspharmacy.com/uk/privacy-notice"
+  },
+  {
+   "title": "Consultation engine (guest start)",
+   "url": "https://core.onlinedoctor.lloydspharmacy.com/api/questionnaire/clinic/hair-loss?guest"
+  }
+ ],
+ "limitations": [
+  "Only the anonymous part of the flow was tested; the final consent (100467) was not pressed, so the exact sign-in point and the clinician review step are unseen.",
+  "Untested options are marked unknown or inferred: two liver sub-options, previous oral minoxidil / other medication, \"too early to tell\", \"less than 12 months\", irregular use, 108419 Yes, the minor medicines in 108158, Guanethidine and obstructive uropathy to the end.",
+  "Only one combination of answers was replayed (heart/BP plus prostate cancer). Other combinations are assumed to follow the same subtraction logic (inferred).",
+  "Pack size and safety screens were only walked for finasteride; plan prices for other products come from the product data, not a walk.",
+  "Free-text answers were neutral; a clinician may act on them after submission, which cannot be seen.",
+  "FAQ, help-centre and subscription-terms pages were not read. Legal status of the minoxidil sprays is inferred.",
+  "Stock flags (both Dual Action packs out of stock) and prices were checked on 24 Nov 2026 and can change."
+ ],
+ "verification": {
+  "checked": [
+   "Baseline man replayed fresh (runs/verify-base): same path, same 6 cards, prices and wording as runs/exp-base. Confirmed.",
+   "R7 heart/BP Yes (runs/verify-heart): only Finasteride and Propecia; every minoxidil product removed, spray included. Confirmed.",
+   "R3 age 65 (runs/verify-age-65): Minoxidil tablets and Dual Action Tablets removed. Confirmed.",
+   "R12 ED tablets (runs/verify-ed-tablets): only Sons Minoxidil spray offered. Confirmed.",
+   "R13 trying for a baby (runs/verify-trying-baby-2): warning, then all finasteride removed. Confirmed.",
+   "R15 prostate cancer (runs/verify-prostate-cancer-2): all finasteride removed with no screen. Confirmed.",
+   "R10 eGFR less than 30 (runs/verify-egfr-under30): questions end, no product. Confirmed.",
+   "R4 sudden onset (runs/verify-sudden): questions end, no product. Confirmed.",
+   "R1 female (runs/verify-female): no product. Confirmed, but date of birth is still asked first (wording corrected).",
+   "Product facts against live product pages (curl, 24 Nov 2026): names, strengths and one-off prices of all 7 catalogue products match: finasteride 1 mg £34/£95/£163; Propecia 1 mg £60.50/£148.50/£210; Sons minoxidil 5% £33/£54/£99; hair loss tablets (minoxidil 2.5 mg) £29/£77/£142; both Dual Action packs £106/£189; Minoxidil 5% solution £51 (3 months).",
+   "Hair-loss collection page still says \"These treatments can only be prescribed to men\"; no women's hair-loss product found.",
+   "Evidence labels: every rule marked observed now names existing run folders (shorthand folder names in R23, R24, R26 written out in full)."
+  ],
+  "corrected": [
+   "R1 and the Female option: the questions do not end 'at once'; date of birth is asked first, then summary and consent (runs/verify-female).",
+   "Phaeochromocytoma, Porphyria and SLE changed from unknown to observed: each removes oral minoxidil only (new R28). The earlier guess 'likely removes minoxidil' was partly right; the spray stays.",
+   "Medicated scalp creams changed from unknown to observed: removes topical minoxidil (new R29).",
+   "eGFR 'I haven't had a test' changed from inferred to observed (R11 widened).",
+   "Testosterone or anabolic steroids: confirmed warning only, offer unchanged (added to R27).",
+   "Combination gap closed: heart/BP plus prostate cancer leaves no product and the questions end early (new R30; the limitation saying combinations were not replayed is narrowed).",
+   "Recommendation profiles, recommendedWhen for minoxidil tablets and spray, engineSummary and limitations updated to match."
+  ],
+  "stillUnverified": [
+   "The exact sign-in point after the final consent (100467), which was never pressed.",
+   "Two liver sub-options, previous oral minoxidil / other medication, 'too early to tell', 'less than 12 months', irregular use, 108419 Yes, Guanethidine and obstructive uropathy to the end.",
+   "Pack-size and safety screens for products other than finasteride; subscription prices for products other than finasteride.",
+   "Other two-answer combinations (assumed to follow the same subtraction logic).",
+   "Rules not re-tested in stage 3 (R2, R5, R6, R8, R9, R14, R16-R22, R25-R27 except where noted) rest on stage 1 and 2 runs only.",
+   "A dead link on the Propecia page to a 'finasteride and Regaine bundle' (404): presumably a withdrawn product; not in the catalogue."
+  ],
+  "verdict": "High trust for what it covers. All 8 high-impact rules re-tested live in stage 3 gave exactly the recorded result: heart/BP removes every minoxidil product, age 65 removes oral minoxidil, ED tablets leave only the spray, trying for a baby and prostate cancer remove every finasteride product, and female, sudden onset and eGFR under 30 end the questions. The baseline replay matched card for card, and all 7 product prices and strengths match the live pages. No rule was contradicted; one wording error was fixed (a woman is still asked her date of birth), and seven gaps were filled, all fitting the same subtraction engine. The weak points are what was never seen: the account wall after the final consent, a few rare options, and answer combinations other than the one tested."
+ }
+}

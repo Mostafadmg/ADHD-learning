@@ -1,0 +1,100 @@
+[
+ {
+  "n": 3,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nYour details\nWhat was your sex at birth?\nMale\nFemale\nNext",
+  "sig": "100013",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "100013",
+    "type": "SINGLE_CHOICE",
+    "title": "Your details",
+    "text": "What was your sex at birth?",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "Male",
+     "Female"
+    ],
+    "optionIds": [
+     "100013$88",
+     "100013$89"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "100013": "Female"
+  }
+ },
+ {
+  "n": 4,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nYour details\nWhat is your date of birth?\nFor example: 31 3 1980\nDay\nMonth\nYear\nNext\nBack",
+  "sig": "100014",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "100014",
+    "type": "DATE_OF_BIRTH",
+    "title": "Your details",
+    "text": "What is your date of birth?",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "For example: 31 3 1980"
+    ],
+    "optionIds": [
+     "100014$100011"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "100014": {
+    "dob": [
+     15,
+     6,
+     1988
+    ]
+   }
+  }
+ },
+ {
+  "n": 5,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/summary",
+  "text": "Exit consultation\nYour Consultation\n\nBelow is a summary of your online consultation.\nPlease review your responses and make any changes if needed.\n\nWhat was your sex at birth?\nFemale\nChange answer\nWhat is your date of birth?\n15/06/1988\nChange answer\nContinue",
+  "sig": "SUMMARY",
+  "stepState": "SUMMARY",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": []
+ },
+ {
+  "n": 6,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/summary",
+  "text": "Exit consultation\nYour Consultation\n\nBelow is a summary of your online consultation.\nPlease review your responses and make any changes if needed.\n\nWhat was your sex at birth?\nFemale\nChange answer\nWhat is your date of birth?\n15/06/1988\nChange answer",
+  "sig": "SUMMARY",
+  "stepState": "SUMMARY",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": []
+ }
+]

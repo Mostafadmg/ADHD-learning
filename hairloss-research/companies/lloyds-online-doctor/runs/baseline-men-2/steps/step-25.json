@@ -1,0 +1,391 @@
+{
+ "step": {
+  "title": "HL - Product selection v2",
+  "questions": [
+   {
+    "questionId": "108082",
+    "explanationAvailable": false,
+    "displayText": "",
+    "type": "PRODUCT_CARD",
+    "answerRequired": true,
+    "smoothTransition": false,
+    "answerChoices": [
+     {
+      "answerId": "108082$105667",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "108082",
+      "displayText": "<div class=\"additional-info-container\">\n    <div class=\"additional-info-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Supply_LPOD.png?v=1793030700\" alt=\"icon\"/>\n        <span>1 months' supply of finasteride tablets, billed and delivered every month</span>\n    </div>\n    <div class=\"additional-info-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Support_LPOD.png?v=1793030705\" alt=\"icon\"/>\n        <span>Support from our experienced clinicians when you need it</span>\n    </div>\n    <div class=\"additional-info-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Cancel_LPOD.png?v=1793030700\" alt=\"icon\"/>\n        <span>Cancel your subscription anytime</span>\n    </div>\n</div>",
+      "type": "SINGLE_CHOICE",
+      "selected": false,
+      "metadata": {
+       "title": "Finasteride tablets",
+       "label": "1 month",
+       "subtitle": "Finasteride 1mg tablet",
+       "banner": "83% experience an improvement in hair loss²",
+       "sku": 3777,
+       "imageURL": "https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Finasteride_tablets_LPOD_0399a893-8f75-4ea2-b983-d82e1d4ebea5.png?v=1792400196",
+       "pricingInformation": {
+        "pricePerPen": "28 ",
+        "pricePerWeek": "7.00 a week",
+        "currency": "£",
+        "price": "28.00",
+        "totalPriceLabel": "£28.00 billed every 1 month"
+       },
+       "inStock": true,
+       "recommended": false,
+       "preference": false,
+       "mainOption": false,
+       "moreInformation": [
+        {
+         "title": "Description",
+         "content": "<p><b>Finasteride 1 mg tablets</b> contain the active substance finasteride, a prescription medicine used to treat male pattern hair loss (androgenetic alopecia) in adult men.</p><p>Finasteride works by reducing levels of a hormone called dihydrotestosterone (DHT), which is associated with male pattern hair loss. This can help increase hair growth on the scalp and prevent further hair loss in men.</p><p>Men with mild to moderate, but not complete, hair loss may benefit from treatment with finasteride.</p><p>Finasteride should only be used by adult men and should be taken exactly as prescribed.</p><p>The finasteride patient information leaflet can be found <a target=\"_blank\" href=\"https://www.medicines.org.uk/emc/files/pil.7068.pdf\">here</a>.</p>"
+        },
+        {
+         "title": "Ingredients",
+         "content": "<p><b>Excipients (inactive ingredients):</b> The inactive ingredients in finasteride tablets may vary depending on the manufacturer. Patients should refer to the patient information leaflet supplied with their medicine for the full list of ingredients.</p><p>Examples of inactive ingredients that may be included are:</p><p><b>Tablet core:</b> Lactose monohydrate, microcrystalline cellulose, sodium starch glycolate, pregelatinised maize starch, docusate sodium, and magnesium stearate.</p><p><b>Tablet coat:</b> Hypromellose, hydroxypropyl cellulose, talc, titanium dioxide (E171), red iron oxide (E172), and yellow iron oxide (E172).</p><p>If you have an allergy or intolerance to any ingredient, including lactose, speak to your healthcare professional before taking this medicine.</p>"
+        },
+        {
+         "title": "Directions",
+         "content": "<p>Take 1 tablet once daily, with or without food. Swallow the tablet whole with water. Do not crush, chew, or break the tablet.</p><p>If you forget to take a dose, take your next dose at the usual time. Do not take a double dose to make up for a missed dose.</p><p>It is important to continue taking finasteride as prescribed for the treatment to be effective. Hair growth may take several months to become noticeable, and continued treatment is usually required to maintain any benefits.</p><p>If you have any questions about how to take this medicine, speak to your healthcare professional.</p>"
+        },
+        {
+         "title": "FAQS",
+         "content": "<p><b>How does this treatment work?</b></p><p>Finasteride works by blocking the conversion of testosterone to dihydrotestosterone (DHT), a hormone that contributes to male pattern hair loss. By reducing DHT levels in the scalp, finasteride may help slow further hair loss and support hair regrowth in some men.</p><p><b>How long does it take to work?</b></p><p>You will usually need to take finasteride continuously for at least 6 to 12 months before assessing whether it is working for you. Some men may notice improvements sooner, but individual results can vary.</p><p>Continued treatment is required to maintain any benefits. If treatment is stopped, hair loss will generally begin to return over time.</p><p><b>Will the effects last if I stop treatment?</b></p><p>No. If treatment is stopped, the beneficial effects of finasteride generally begin to reverse within several months, and hair loss may gradually return to pre-treatment levels.</p><p><b>Who can take finasteride?</b></p><p>Finasteride is used for the treatment of male pattern hair loss in adult men. It is not suitable for everyone, and some people may need to avoid this medicine or discuss its use with a healthcare professional before starting treatment.</p><p><b>Do not take finasteride:</b></p>"
+        },
+        {
+         "title": "Warnings",
+         "content": "<p><b>Important MHRA safety information</b></p><p>The Medicines and Healthcare products Regulatory Agency (MHRA) has highlighted reports of psychiatric side effects and sexual dysfunction in patients taking finasteride.</p><ul><li>Finasteride has been associated with depressed mood, depression, suicidal thoughts, and sexual dysfunction.</li><li>Sexual side effects may include reduced sex drive (libido), erectile dysfunction, and ejaculation disorders.</li><li>Some patients have reported sexual side effects that continued after stopping treatment.</li><li>The MHRA advises patients to read the Patient Information Leaflet and any patient safety information supplied with the medicine.</li><li>Tell your healthcare professional before starting treatment if you have a personal history of depression, low mood, or suicidal thoughts.</li><li>If you experience sexual dysfunction while taking finasteride, contact your healthcare professional for advice.</li><li>If you develop depressed mood, depression, or suicidal thoughts while taking finasteride, stop treatment and contact a healthcare professional as soon as possible.</li><li>If you feel at risk of harming yourself or have seriously harmed yourself, call 999 or seek emergency medical assistance immediately</li></ul> <p><b>Talk to your doctor or pharmacist before taking finasteride if:</b></p><ul><li>You are due to have a blood test for prostate-specific antigen (PSA). Finasteride can affect PSA test results, so your healthcare professional should be aware that you are taking this medicine.</li>\n</ul><p><b>Other important warnings</b></p><ul>\n<li>Infertility has been reported in some men taking finasteride, particularly in those with other risk factors that may affect fertility.</li><li>Improvement or normalisation of semen quality has been reported after stopping finasteride.</li><li>Long-term clinical studies investigating the effects of finasteride on male fertility have not been conducted.</li><li>Finasteride should not be taken by women.</li><li>Women who are pregnant, may be pregnant, or are planning a pregnancy should not handle crushed or broken finasteride tablets. Whole tablets are coated to prevent contact with the active ingredient during normal use.</li><li>Exposure during pregnancy may affect the development of a male baby’s sex organs.</li><li>If a pregnant woman comes into contact with crushed or broken finasteride tablets, medical advice should be sought.</li></ul><p><b>Stop taking finasteride and seek medical advice immediately if you experience:</b></p><ul><li>Symptoms of an allergic reaction, including swelling of the lips, face, tongue, or throat, difficulty swallowing, hives (raised itchy rash), or difficulty breathing.</li>\n<li>Depression, severe low mood, or thoughts of self-harm or suicide.</li></ul><p>You should promptly report any changes in breast tissue to your healthcare professional, including breast lumps, pain, enlargement, tenderness, or nipple discharge, as these may be signs of a serious condition such as breast cancer.</p><p><b>Possible side effects</b></p><p><b>Uncommon side effects (may affect up to 1 in 100 people)</b></p><ul><li>Reduced sex drive (libido).</li><li>Difficulty achieving or maintaining an erection (erectile dysfunction).</li><li>Problems with ejaculation, including a decrease in the amount of semen released during sex.</li></ul><p>The reduction in semen volume does not appear to affect normal sexual function.</p><p><b>Frequency not known (cannot be estimated from available data)</b></p><ul><li>Breast swelling or breast tenderness.</li><li>Pain in the testicles.</li><li>Blood in the semen.</li><li>Palpitations (awareness of your heartbeat).</li><li>Persistent difficulty achieving or maintaining an erection after stopping treatment.</li><li>Persistent reduction in sex drive after stopping treatment.</li><li>Persistent ejaculation problems after stopping treatment.</li><li>Male infertility and/or poor semen quality.</li><li>Changes in liver function, which may be detected through blood tests.</li><li>Anxiety.</li><li>Suicidal thoughts.</li></ul><p>If any side effect becomes serious, or if you notice any side effects not listed in the patient information leaflet, tell your doctor, pharmacist, or other healthcare professional. It may be helpful to make a note of what happened, when it started, and how long it lasted.</p><p>Please read the patient information leaflet supplied with your medicine for the complete list of warnings, precautions, and side effects.</p>"
+        }
+       ],
+       "usps": [
+        "One tablet a day",
+        "Lowers DHT, the hormone behind hair loss",
+        "Helps prevent further hair loss"
+       ],
+       "isProduct": false,
+       "promoLabel": "Subscription available. Save 15% & cancel anytime.",
+       "durationLabel": "1 month",
+       "purchaseType": "SUBSCRIPTION",
+       "hideTotalPrice": false
+      }
+     },
+     {
+      "answerId": "108082$105666",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "108082",
+      "displayText": "<div class=\"additional-info-container\">\n    <div class=\"additional-info-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Supply_LPOD.png?v=1793030700\" alt=\"icon\"/>\n        <span>3 months' supply of finasteride tablets, billed and delivered every 3 months</span>\n    </div>\n    <div class=\"additional-info-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Support_LPOD.png?v=1793030705\" alt=\"icon\"/>\n        <span>Support from our experienced clinicians when you need it</span>\n    </div>\n    <div class=\"additional-info-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Cancel_LPOD.png?v=1793030700\" alt=\"icon\"/>\n        <span>Cancel your subscription anytime</span>\n    </div>\n</div>",
+      "type": "SINGLE_CHOICE",
+      "selected": false,
+      "metadata": {
+       "title": "Finasteride tablets",
+       "label": "1 month",
+       "subtitle": "Finasteride 1mg tablet",
+       "banner": "83% experience an improvement in hair loss²",
+       "sku": 4232,
+       "imageURL": "https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Finasteride_tablets_LPOD_0399a893-8f75-4ea2-b983-d82e1d4ebea5.png?v=1792400196",
+       "pricingInformation": {
+        "pricePerPen": "80 ",
+        "pricePerWeek": "6.67 a week",
+        "currency": "£",
+        "price": "80.00",
+        "totalPriceLabel": "£80.00 billed every 3 months"
+       },
+       "inStock": true,
+       "recommended": false,
+       "preference": false,
+       "mainOption": false,
+       "moreInformation": [
+        {
+         "title": "Description",
+         "content": "<p><b>Finasteride 1 mg tablets</b> contain the active substance finasteride, a prescription medicine used to treat male pattern hair loss (androgenetic alopecia) in adult men.</p><p>Finasteride works by reducing levels of a hormone called dihydrotestosterone (DHT), which is associated with male pattern hair loss. This can help increase hair growth on the scalp and prevent further hair loss in men.</p><p>Men with mild to moderate, but not complete, hair loss may benefit from treatment with finasteride.</p><p>Finasteride should only be used by adult men and should be taken exactly as prescribed.</p><p>The finasteride patient information leaflet can be found <a target=\"_blank\" href=\"https://www.medicines.org.uk/emc/files/pil.7068.pdf\">here</a>.</p>"
+        },
+        {
+         "title": "Ingredients",
+         "content": "<p><b>Excipients (inactive ingredients):</b> The inactive ingredients in finasteride tablets may vary depending on the manufacturer. Patients should refer to the patient information leaflet supplied with their medicine for the full list of ingredients.</p><p>Examples of inactive ingredients that may be included are:</p><p><b>Tablet core:</b> Lactose monohydrate, microcrystalline cellulose, sodium starch glycolate, pregelatinised maize starch, docusate sodium, and magnesium stearate.</p><p><b>Tablet coat:</b> Hypromellose, hydroxypropyl cellulose, talc, titanium dioxide (E171), red iron oxide (E172), and yellow iron oxide (E172).</p><p>If you have an allergy or intolerance to any ingredient, including lactose, speak to your healthcare professional before taking this medicine.</p>"
+        },
+        {
+         "title": "Directions",
+         "content": "<p>Take 1 tablet once daily, with or without food. Swallow the tablet whole with water. Do not crush, chew, or break the tablet.</p><p>If you forget to take a dose, take your next dose at the usual time. Do not take a double dose to make up for a missed dose.</p><p>It is important to continue taking finasteride as prescribed for the treatment to be effective. Hair growth may take several months to become noticeable, and continued treatment is usually required to maintain any benefits.</p><p>If you have any questions about how to take this medicine, speak to your healthcare professional.</p>"
+        },
+        {
+         "title": "FAQS",
+         "content": "<p><b>How does this treatment work?</b></p><p>Finasteride works by blocking the conversion of testosterone to dihydrotestosterone (DHT), a hormone that contributes to male pattern hair loss. By reducing DHT levels in the scalp, finasteride may help slow further hair loss and support hair regrowth in some men.</p><p><b>How long does it take to work?</b></p><p>You will usually need to take finasteride continuously for at least 6 to 12 months before assessing whether it is working for you. Some men may notice improvements sooner, but individual results can vary.</p><p>Continued treatment is required to maintain any benefits. If treatment is stopped, hair loss will generally begin to return over time.</p><p><b>Will the effects last if I stop treatment?</b></p><p>No. If treatment is stopped, the beneficial effects of finasteride generally begin to reverse within several months, and hair loss may gradually return to pre-treatment levels.</p><p><b>Who can take finasteride?</b></p><p>Finasteride is used for the treatment of male pattern hair loss in adult men. It is not suitable for everyone, and some people may need to avoid this medicine or discuss its use with a healthcare professional before starting treatment.</p><p><b>Do not take finasteride:</b></p>"
+        },
+        {
+         "title": "Warnings",
+         "content": "<p><b>Important MHRA safety information</b></p><p>The Medicines and Healthcare products Regulatory Agency (MHRA) has highlighted reports of psychiatric side effects and sexual dysfunction in patients taking finasteride.</p><ul><li>Finasteride has been associated with depressed mood, depression, suicidal thoughts, and sexual dysfunction.</li><li>Sexual side effects may include reduced sex drive (libido), erectile dysfunction, and ejaculation disorders.</li><li>Some patients have reported sexual side effects that continued after stopping treatment.</li><li>The MHRA advises patients to read the Patient Information Leaflet and any patient safety information supplied with the medicine.</li><li>Tell your healthcare professional before starting treatment if you have a personal history of depression, low mood, or suicidal thoughts.</li><li>If you experience sexual dysfunction while taking finasteride, contact your healthcare professional for advice.</li><li>If you develop depressed mood, depression, or suicidal thoughts while taking finasteride, stop treatment and contact a healthcare professional as soon as possible.</li><li>If you feel at risk of harming yourself or have seriously harmed yourself, call 999 or seek emergency medical assistance immediately</li></ul> <p><b>Talk to your doctor or pharmacist before taking finasteride if:</b></p><ul><li>You are due to have a blood test for prostate-specific antigen (PSA). Finasteride can affect PSA test results, so your healthcare professional should be aware that you are taking this medicine.</li>\n</ul><p><b>Other important warnings</b></p><ul>\n<li>Infertility has been reported in some men taking finasteride, particularly in those with other risk factors that may affect fertility.</li><li>Improvement or normalisation of semen quality has been reported after stopping finasteride.</li><li>Long-term clinical studies investigating the effects of finasteride on male fertility have not been conducted.</li><li>Finasteride should not be taken by women.</li><li>Women who are pregnant, may be pregnant, or are planning a pregnancy should not handle crushed or broken finasteride tablets. Whole tablets are coated to prevent contact with the active ingredient during normal use.</li><li>Exposure during pregnancy may affect the development of a male baby’s sex organs.</li><li>If a pregnant woman comes into contact with crushed or broken finasteride tablets, medical advice should be sought.</li></ul><p><b>Stop taking finasteride and seek medical advice immediately if you experience:</b></p><ul><li>Symptoms of an allergic reaction, including swelling of the lips, face, tongue, or throat, difficulty swallowing, hives (raised itchy rash), or difficulty breathing.</li>\n<li>Depression, severe low mood, or thoughts of self-harm or suicide.</li></ul><p>You should promptly report any changes in breast tissue to your healthcare professional, including breast lumps, pain, enlargement, tenderness, or nipple discharge, as these may be signs of a serious condition such as breast cancer.</p><p><b>Possible side effects</b></p><p><b>Uncommon side effects (may affect up to 1 in 100 people)</b></p><ul><li>Reduced sex drive (libido).</li><li>Difficulty achieving or maintaining an erection (erectile dysfunction).</li><li>Problems with ejaculation, including a decrease in the amount of semen released during sex.</li></ul><p>The reduction in semen volume does not appear to affect normal sexual function.</p><p><b>Frequency not known (cannot be estimated from available data)</b></p><ul><li>Breast swelling or breast tenderness.</li><li>Pain in the testicles.</li><li>Blood in the semen.</li><li>Palpitations (awareness of your heartbeat).</li><li>Persistent difficulty achieving or maintaining an erection after stopping treatment.</li><li>Persistent reduction in sex drive after stopping treatment.</li><li>Persistent ejaculation problems after stopping treatment.</li><li>Male infertility and/or poor semen quality.</li><li>Changes in liver function, which may be detected through blood tests.</li><li>Anxiety.</li><li>Suicidal thoughts.</li></ul><p>If any side effect becomes serious, or if you notice any side effects not listed in the patient information leaflet, tell your doctor, pharmacist, or other healthcare professional. It may be helpful to make a note of what happened, when it started, and how long it lasted.</p><p>Please read the patient information leaflet supplied with your medicine for the complete list of warnings, precautions, and side effects.</p>"
+        }
+       ],
+       "usps": [
+        "One tablet a day",
+        "Lowers DHT, the hormone behind hair loss",
+        "Helps prevent further hair loss"
+       ],
+       "isProduct": false,
+       "promoLabel": "Subscription available. Save 15% & cancel anytime.",
+       "durationLabel": "3 months",
+       "purchaseType": "SUBSCRIPTION",
+       "hideTotalPrice": false
+      }
+     },
+     {
+      "answerId": "108082$105665",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "108082",
+      "displayText": "<div class=\"additional-info-container\">\n    <div class=\"additional-info-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Supply_LPOD.png?v=1793030700\" alt=\"icon\"/>\n        <span>6 months' supply of finasteride tablets, billed and delivered every 6 months</span>\n    </div>\n    <div class=\"additional-info-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Support_LPOD.png?v=1793030705\" alt=\"icon\"/>\n        <span>Support from our experienced clinicians when you need it</span>\n    </div>\n    <div class=\"additional-info-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Cancel_LPOD.png?v=1793030700\" alt=\"icon\"/>\n        <span>Cancel your subscription anytime</span>\n    </div>\n</div>",
+      "type": "SINGLE_CHOICE",
+      "selected": false,
+      "metadata": {
+       "title": "Finasteride tablets",
+       "label": "1 month",
+       "subtitle": "Finasteride 1mg tablet",
+       "banner": "83% experience an improvement in hair loss²",
+       "sku": 3779,
+       "imageURL": "https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Finasteride_tablets_LPOD_0399a893-8f75-4ea2-b983-d82e1d4ebea5.png?v=1792400196",
+       "pricingInformation": {
+        "pricePerPen": "138 ",
+        "pricePerWeek": "5.75 a week",
+        "currency": "£",
+        "price": "138.00",
+        "totalPriceLabel": "£138.00 billed every 6 months"
+       },
+       "inStock": true,
+       "recommended": false,
+       "preference": false,
+       "mainOption": false,
+       "moreInformation": [
+        {
+         "title": "Description",
+         "content": "<p><b>Finasteride 1 mg tablets</b> contain the active substance finasteride, a prescription medicine used to treat male pattern hair loss (androgenetic alopecia) in adult men.</p><p>Finasteride works by reducing levels of a hormone called dihydrotestosterone (DHT), which is associated with male pattern hair loss. This can help increase hair growth on the scalp and prevent further hair loss in men.</p><p>Men with mild to moderate, but not complete, hair loss may benefit from treatment with finasteride.</p><p>Finasteride should only be used by adult men and should be taken exactly as prescribed.</p><p>The finasteride patient information leaflet can be found <a target=\"_blank\" href=\"https://www.medicines.org.uk/emc/files/pil.7068.pdf\">here</a>.</p>"
+        },
+        {
+         "title": "Ingredients",
+         "content": "<p><b>Excipients (inactive ingredients):</b> The inactive ingredients in finasteride tablets may vary depending on the manufacturer. Patients should refer to the patient information leaflet supplied with their medicine for the full list of ingredients.</p><p>Examples of inactive ingredients that may be included are:</p><p><b>Tablet core:</b> Lactose monohydrate, microcrystalline cellulose, sodium starch glycolate, pregelatinised maize starch, docusate sodium, and magnesium stearate.</p><p><b>Tablet coat:</b> Hypromellose, hydroxypropyl cellulose, talc, titanium dioxide (E171), red iron oxide (E172), and yellow iron oxide (E172).</p><p>If you have an allergy or intolerance to any ingredient, including lactose, speak to your healthcare professional before taking this medicine.</p>"
+        },
+        {
+         "title": "Directions",
+         "content": "<p>Take 1 tablet once daily, with or without food. Swallow the tablet whole with water. Do not crush, chew, or break the tablet.</p><p>If you forget to take a dose, take your next dose at the usual time. Do not take a double dose to make up for a missed dose.</p><p>It is important to continue taking finasteride as prescribed for the treatment to be effective. Hair growth may take several months to become noticeable, and continued treatment is usually required to maintain any benefits.</p><p>If you have any questions about how to take this medicine, speak to your healthcare professional.</p>"
+        },
+        {
+         "title": "FAQS",
+         "content": "<p><b>How does this treatment work?</b></p><p>Finasteride works by blocking the conversion of testosterone to dihydrotestosterone (DHT), a hormone that contributes to male pattern hair loss. By reducing DHT levels in the scalp, finasteride may help slow further hair loss and support hair regrowth in some men.</p><p><b>How long does it take to work?</b></p><p>You will usually need to take finasteride continuously for at least 6 to 12 months before assessing whether it is working for you. Some men may notice improvements sooner, but individual results can vary.</p><p>Continued treatment is required to maintain any benefits. If treatment is stopped, hair loss will generally begin to return over time.</p><p><b>Will the effects last if I stop treatment?</b></p><p>No. If treatment is stopped, the beneficial effects of finasteride generally begin to reverse within several months, and hair loss may gradually return to pre-treatment levels.</p><p><b>Who can take finasteride?</b></p><p>Finasteride is used for the treatment of male pattern hair loss in adult men. It is not suitable for everyone, and some people may need to avoid this medicine or discuss its use with a healthcare professional before starting treatment.</p><p><b>Do not take finasteride:</b></p>"
+        },
+        {
+         "title": "Warnings",
+         "content": "<p><b>Important MHRA safety information</b></p><p>The Medicines and Healthcare products Regulatory Agency (MHRA) has highlighted reports of psychiatric side effects and sexual dysfunction in patients taking finasteride.</p><ul><li>Finasteride has been associated with depressed mood, depression, suicidal thoughts, and sexual dysfunction.</li><li>Sexual side effects may include reduced sex drive (libido), erectile dysfunction, and ejaculation disorders.</li><li>Some patients have reported sexual side effects that continued after stopping treatment.</li><li>The MHRA advises patients to read the Patient Information Leaflet and any patient safety information supplied with the medicine.</li><li>Tell your healthcare professional before starting treatment if you have a personal history of depression, low mood, or suicidal thoughts.</li><li>If you experience sexual dysfunction while taking finasteride, contact your healthcare professional for advice.</li><li>If you develop depressed mood, depression, or suicidal thoughts while taking finasteride, stop treatment and contact a healthcare professional as soon as possible.</li><li>If you feel at risk of harming yourself or have seriously harmed yourself, call 999 or seek emergency medical assistance immediately</li></ul> <p><b>Talk to your doctor or pharmacist before taking finasteride if:</b></p><ul><li>You are due to have a blood test for prostate-specific antigen (PSA). Finasteride can affect PSA test results, so your healthcare professional should be aware that you are taking this medicine.</li>\n</ul><p><b>Other important warnings</b></p><ul>\n<li>Infertility has been reported in some men taking finasteride, particularly in those with other risk factors that may affect fertility.</li><li>Improvement or normalisation of semen quality has been reported after stopping finasteride.</li><li>Long-term clinical studies investigating the effects of finasteride on male fertility have not been conducted.</li><li>Finasteride should not be taken by women.</li><li>Women who are pregnant, may be pregnant, or are planning a pregnancy should not handle crushed or broken finasteride tablets. Whole tablets are coated to prevent contact with the active ingredient during normal use.</li><li>Exposure during pregnancy may affect the development of a male baby’s sex organs.</li><li>If a pregnant woman comes into contact with crushed or broken finasteride tablets, medical advice should be sought.</li></ul><p><b>Stop taking finasteride and seek medical advice immediately if you experience:</b></p><ul><li>Symptoms of an allergic reaction, including swelling of the lips, face, tongue, or throat, difficulty swallowing, hives (raised itchy rash), or difficulty breathing.</li>\n<li>Depression, severe low mood, or thoughts of self-harm or suicide.</li></ul><p>You should promptly report any changes in breast tissue to your healthcare professional, including breast lumps, pain, enlargement, tenderness, or nipple discharge, as these may be signs of a serious condition such as breast cancer.</p><p><b>Possible side effects</b></p><p><b>Uncommon side effects (may affect up to 1 in 100 people)</b></p><ul><li>Reduced sex drive (libido).</li><li>Difficulty achieving or maintaining an erection (erectile dysfunction).</li><li>Problems with ejaculation, including a decrease in the amount of semen released during sex.</li></ul><p>The reduction in semen volume does not appear to affect normal sexual function.</p><p><b>Frequency not known (cannot be estimated from available data)</b></p><ul><li>Breast swelling or breast tenderness.</li><li>Pain in the testicles.</li><li>Blood in the semen.</li><li>Palpitations (awareness of your heartbeat).</li><li>Persistent difficulty achieving or maintaining an erection after stopping treatment.</li><li>Persistent reduction in sex drive after stopping treatment.</li><li>Persistent ejaculation problems after stopping treatment.</li><li>Male infertility and/or poor semen quality.</li><li>Changes in liver function, which may be detected through blood tests.</li><li>Anxiety.</li><li>Suicidal thoughts.</li></ul><p>If any side effect becomes serious, or if you notice any side effects not listed in the patient information leaflet, tell your doctor, pharmacist, or other healthcare professional. It may be helpful to make a note of what happened, when it started, and how long it lasted.</p><p>Please read the patient information leaflet supplied with your medicine for the complete list of warnings, precautions, and side effects.</p>"
+        }
+       ],
+       "usps": [
+        "One tablet a day",
+        "Lowers DHT, the hormone behind hair loss",
+        "Helps prevent further hair loss"
+       ],
+       "isProduct": false,
+       "promoLabel": "Subscription available. Save 15% & cancel anytime.",
+       "durationLabel": "6 months",
+       "purchaseType": "SUBSCRIPTION",
+       "hideTotalPrice": false
+      }
+     },
+     {
+      "answerId": "108082$105662",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "108082",
+      "displayText": "<div class=\"additional-info-container\">\n    <div class=\"additional-info-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Supply_LPOD.png?v=1793030700\" alt=\"icon\"/>\n        <span>1 months' supply of finasteride tablets</span>\n    </div>\n    <div class=\"additional-info-item\">\n<img src=\"https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Support_LPOD.png?v=1793030705\" alt=\"icon\"/>\n        <span>Support from our experienced clinicians when you need it</span>\n    </div>\n</div>",
+      "type": "SINGLE_CHOICE",
+      "selected": false,
+      "metadata": {
+       "title": "Finasteride tablets",
+       "label": "1 month",
+       "subtitle": "Finasteride 1mg tablet",
+       "banner": "83% experience an improvement in hair loss²",
+       "sku": 3740,
+       "imageURL": "https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Finasteride_tablets_LPOD_0399a893-8f75-4ea2-b983-d82e1d4ebea5.png?v=1792400196",
+       "pricingInformation": {
+        "pricePerPen": "34 ",
+        "pricePerWeek": "8.50 a week",
+        "currency": "£",
+        "price": "34.00",
+        "totalPriceLabel": "£34.00 total"
+       },
+       "inStock": true,
+       "recommended": false,
+       "preference": false,
+       "mainOption": false,
+       "moreInformation": [
+        {
+         "title": "Description",
+         "content": "<p><b>Finasteride 1 mg tablets</b> contain the active substance finasteride, a prescription medicine used to treat male pattern hair loss (androgenetic alopecia) in adult men.</p><p>Finasteride works by reducing levels of a hormone called dihydrotestosterone (DHT), which is associated with male pattern hair loss. This can help increase hair growth on the scalp and prevent further hair loss in men.</p><p>Men with mild to moderate, but not complete, hair loss may benefit from treatment with finasteride.</p><p>Finasteride should only be used by adult men and should be taken exactly as prescribed.</p><p>The finasteride patient information leaflet can be found <a target=\"_blank\" href=\"https://www.medicines.org.uk/emc/files/pil.7068.pdf\">here</a>.</p>"
+        },
+        {
+         "title": "Ingredients",
+         "content": "<p><b>Excipients (inactive ingredients):</b> The inactive ingredients in finasteride tablets may vary depending on the manufacturer. Patients should refer to the patient information leaflet supplied with their medicine for the full list of ingredients.</p><p>Examples of inactive ingredients that may be included are:</p><p><b>Tablet core:</b> Lactose monohydrate, microcrystalline cellulose, sodium starch glycolate, pregelatinised maize starch, docusate sodium, and magnesium stearate.</p><p><b>Tablet coat:</b> Hypromellose, hydroxypropyl cellulose, talc, titanium dioxide (E171), red iron oxide (E172), and yellow iron oxide (E172).</p><p>If you have an allergy or intolerance to any ingredient, including lactose, speak to your healthcare professional before taking this medicine.</p>"
+        },
+        {
+         "title": "Directions",
+         "content": "<p>Take 1 tablet once daily, with or without food. Swallow the tablet whole with water. Do not crush, chew, or break the tablet.</p><p>If you forget to take a dose, take your next dose at the usual time. Do not take a double dose to make up for a missed dose.</p><p>It is important to continue taking finasteride as prescribed for the treatment to be effective. Hair growth may take several months to become noticeable, and continued treatment is usually required to maintain any benefits.</p><p>If you have any questions about how to take this medicine, speak to your healthcare professional.</p>"
+        },
+        {
+         "title": "FAQS",
+         "content": "<p><b>How does this treatment work?</b></p><p>Finasteride works by blocking the conversion of testosterone to dihydrotestosterone (DHT), a hormone that contributes to male pattern hair loss. By reducing DHT levels in the scalp, finasteride may help slow further hair loss and support hair regrowth in some men.</p><p><b>How long does it take to work?</b></p><p>You will usually need to take finasteride continuously for at least 6 to 12 months before assessing whether it is working for you. Some men may notice improvements sooner, but individual results can vary.</p><p>Continued treatment is required to maintain any benefits. If treatment is stopped, hair loss will generally begin to return over time.</p><p><b>Will the effects last if I stop treatment?</b></p><p>No. If treatment is stopped, the beneficial effects of finasteride generally begin to reverse within several months, and hair loss may gradually return to pre-treatment levels.</p><p><b>Who can take finasteride?</b></p><p>Finasteride is used for the treatment of male pattern hair loss in adult men. It is not suitable for everyone, and some people may need to avoid this medicine or discuss its use with a healthcare professional before starting treatment.</p><p><b>Do not take finasteride:</b></p>"
+        },
+        {
+         "title": "Warnings",
+         "content": "<p><b>Important MHRA safety information</b></p><p>The Medicines and Healthcare products Regulatory Agency (MHRA) has highlighted reports of psychiatric side effects and sexual dysfunction in patients taking finasteride.</p><ul><li>Finasteride has been associated with depressed mood, depression, suicidal thoughts, and sexual dysfunction.</li><li>Sexual side effects may include reduced sex drive (libido), erectile dysfunction, and ejaculation disorders.</li><li>Some patients have reported sexual side effects that continued after stopping treatment.</li><li>The MHRA advises patients to read the Patient Information Leaflet and any patient safety information supplied with the medicine.</li><li>Tell your healthcare professional before starting treatment if you have a personal history of depression, low mood, or suicidal thoughts.</li><li>If you experience sexual dysfunction while taking finasteride, contact your healthcare professional for advice.</li><li>If you develop depressed mood, depression, or suicidal thoughts while taking finasteride, stop treatment and contact a healthcare professional as soon as possible.</li><li>If you feel at risk of harming yourself or have seriously harmed yourself, call 999 or seek emergency medical assistance immediately</li></ul> <p><b>Talk to your doctor or pharmacist before taking finasteride if:</b></p><ul><li>You are due to have a blood test for prostate-specific antigen (PSA). Finasteride can affect PSA test results, so your healthcare professional should be aware that you are taking this medicine.</li>\n</ul><p><b>Other important warnings</b></p><ul>\n<li>Infertility has been reported in some men taking finasteride, particularly in those with other risk factors that may affect fertility.</li><li>Improvement or normalisation of semen quality has been reported after stopping finasteride.</li><li>Long-term clinical studies investigating the effects of finasteride on male fertility have not been conducted.</li><li>Finasteride should not be taken by women.</li><li>Women who are pregnant, may be pregnant, or are planning a pregnancy should not handle crushed or broken finasteride tablets. Whole tablets are coated to prevent contact with the active ingredient during normal use.</li><li>Exposure during pregnancy may affect the development of a male baby’s sex organs.</li><li>If a pregnant woman comes into contact with crushed or broken finasteride tablets, medical advice should be sought.</li></ul><p><b>Stop taking finasteride and seek medical advice immediately if you experience:</b></p><ul><li>Symptoms of an allergic reaction, including swelling of the lips, face, tongue, or throat, difficulty swallowing, hives (raised itchy rash), or difficulty breathing.</li>\n<li>Depression, severe low mood, or thoughts of self-harm or suicide.</li></ul><p>You should promptly report any changes in breast tissue to your healthcare professional, including breast lumps, pain, enlargement, tenderness, or nipple discharge, as these may be signs of a serious condition such as breast cancer.</p><p><b>Possible side effects</b></p><p><b>Uncommon side effects (may affect up to 1 in 100 people)</b></p><ul><li>Reduced sex drive (libido).</li><li>Difficulty achieving or maintaining an erection (erectile dysfunction).</li><li>Problems with ejaculation, including a decrease in the amount of semen released during sex.</li></ul><p>The reduction in semen volume does not appear to affect normal sexual function.</p><p><b>Frequency not known (cannot be estimated from available data)</b></p><ul><li>Breast swelling or breast tenderness.</li><li>Pain in the testicles.</li><li>Blood in the semen.</li><li>Palpitations (awareness of your heartbeat).</li><li>Persistent difficulty achieving or maintaining an erection after stopping treatment.</li><li>Persistent reduction in sex drive after stopping treatment.</li><li>Persistent ejaculation problems after stopping treatment.</li><li>Male infertility and/or poor semen quality.</li><li>Changes in liver function, which may be detected through blood tests.</li><li>Anxiety.</li><li>Suicidal thoughts.</li></ul><p>If any side effect becomes serious, or if you notice any side effects not listed in the patient information leaflet, tell your doctor, pharmacist, or other healthcare professional. It may be helpful to make a note of what happened, when it started, and how long it lasted.</p><p>Please read the patient information leaflet supplied with your medicine for the complete list of warnings, precautions, and side effects.</p>"
+        }
+       ],
+       "usps": [
+        "One tablet a day",
+        "Lowers DHT, the hormone behind hair loss",
+        "Helps prevent further hair loss"
+       ],
+       "isProduct": false,
+       "promoLabel": "Subscription available. Save 15% & cancel anytime.",
+       "durationLabel": "1 month",
+       "purchaseType": "ONE_TIME",
+       "hideTotalPrice": false
+      }
+     },
+     {
+      "answerId": "108082$105663",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "108082",
+      "displayText": "<div class=\"additional-info-container\">\n    <div class=\"additional-info-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Supply_LPOD.png?v=1793030700\" alt=\"icon\"/>\n        <span>3 months' supply of finasteride tablets </span>\n    </div>\n    <div class=\"additional-info-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Support_LPOD.png?v=1793030705\" alt=\"icon\"/>\n        <span>Support from our experienced clinicians when you need it</span>\n    </div>\n</div>",
+      "type": "SINGLE_CHOICE",
+      "selected": false,
+      "metadata": {
+       "title": "Finasteride tablets",
+       "label": "1 month",
+       "subtitle": "Finasteride 1mg tablet",
+       "banner": "83% experience an improvement in hair loss²",
+       "sku": 3742,
+       "imageURL": "https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Finasteride_tablets_LPOD_0399a893-8f75-4ea2-b983-d82e1d4ebea5.png?v=1792400196",
+       "pricingInformation": {
+        "pricePerPen": "95 ",
+        "pricePerWeek": "7.92 a week",
+        "currency": "£",
+        "price": "95.00",
+        "totalPriceLabel": "£95.00 total"
+       },
+       "inStock": true,
+       "recommended": false,
+       "preference": false,
+       "mainOption": false,
+       "moreInformation": [
+        {
+         "title": "Description",
+         "content": "<p><b>Finasteride 1 mg tablets</b> contain the active substance finasteride, a prescription medicine used to treat male pattern hair loss (androgenetic alopecia) in adult men.</p><p>Finasteride works by reducing levels of a hormone called dihydrotestosterone (DHT), which is associated with male pattern hair loss. This can help increase hair growth on the scalp and prevent further hair loss in men.</p><p>Men with mild to moderate, but not complete, hair loss may benefit from treatment with finasteride.</p><p>Finasteride should only be used by adult men and should be taken exactly as prescribed.</p><p>The finasteride patient information leaflet can be found <a target=\"_blank\" href=\"https://www.medicines.org.uk/emc/files/pil.7068.pdf\">here</a>.</p>"
+        },
+        {
+         "title": "Ingredients",
+         "content": "<p><b>Excipients (inactive ingredients):</b> The inactive ingredients in finasteride tablets may vary depending on the manufacturer. Patients should refer to the patient information leaflet supplied with their medicine for the full list of ingredients.</p><p>Examples of inactive ingredients that may be included are:</p><p><b>Tablet core:</b> Lactose monohydrate, microcrystalline cellulose, sodium starch glycolate, pregelatinised maize starch, docusate sodium, and magnesium stearate.</p><p><b>Tablet coat:</b> Hypromellose, hydroxypropyl cellulose, talc, titanium dioxide (E171), red iron oxide (E172), and yellow iron oxide (E172).</p><p>If you have an allergy or intolerance to any ingredient, including lactose, speak to your healthcare professional before taking this medicine.</p>"
+        },
+        {
+         "title": "Directions",
+         "content": "<p>Take 1 tablet once daily, with or without food. Swallow the tablet whole with water. Do not crush, chew, or break the tablet.</p><p>If you forget to take a dose, take your next dose at the usual time. Do not take a double dose to make up for a missed dose.</p><p>It is important to continue taking finasteride as prescribed for the treatment to be effective. Hair growth may take several months to become noticeable, and continued treatment is usually required to maintain any benefits.</p><p>If you have any questions about how to take this medicine, speak to your healthcare professional.</p>"
+        },
+        {
+         "title": "FAQS",
+         "content": "<p><b>How does this treatment work?</b></p><p>Finasteride works by blocking the conversion of testosterone to dihydrotestosterone (DHT), a hormone that contributes to male pattern hair loss. By reducing DHT levels in the scalp, finasteride may help slow further hair loss and support hair regrowth in some men.</p><p><b>How long does it take to work?</b></p><p>You will usually need to take finasteride continuously for at least 6 to 12 months before assessing whether it is working for you. Some men may notice improvements sooner, but individual results can vary.</p><p>Continued treatment is required to maintain any benefits. If treatment is stopped, hair loss will generally begin to return over time.</p><p><b>Will the effects last if I stop treatment?</b></p><p>No. If treatment is stopped, the beneficial effects of finasteride generally begin to reverse within several months, and hair loss may gradually return to pre-treatment levels.</p><p><b>Who can take finasteride?</b></p><p>Finasteride is used for the treatment of male pattern hair loss in adult men. It is not suitable for everyone, and some people may need to avoid this medicine or discuss its use with a healthcare professional before starting treatment.</p><p><b>Do not take finasteride:</b></p>"
+        },
+        {
+         "title": "Warnings",
+         "content": "<p><b>Important MHRA safety information</b></p><p>The Medicines and Healthcare products Regulatory Agency (MHRA) has highlighted reports of psychiatric side effects and sexual dysfunction in patients taking finasteride.</p><ul><li>Finasteride has been associated with depressed mood, depression, suicidal thoughts, and sexual dysfunction.</li><li>Sexual side effects may include reduced sex drive (libido), erectile dysfunction, and ejaculation disorders.</li><li>Some patients have reported sexual side effects that continued after stopping treatment.</li><li>The MHRA advises patients to read the Patient Information Leaflet and any patient safety information supplied with the medicine.</li><li>Tell your healthcare professional before starting treatment if you have a personal history of depression, low mood, or suicidal thoughts.</li><li>If you experience sexual dysfunction while taking finasteride, contact your healthcare professional for advice.</li><li>If you develop depressed mood, depression, or suicidal thoughts while taking finasteride, stop treatment and contact a healthcare professional as soon as possible.</li><li>If you feel at risk of harming yourself or have seriously harmed yourself, call 999 or seek emergency medical assistance immediately</li></ul> <p><b>Talk to your doctor or pharmacist before taking finasteride if:</b></p><ul><li>You are due to have a blood test for prostate-specific antigen (PSA). Finasteride can affect PSA test results, so your healthcare professional should be aware that you are taking this medicine.</li>\n</ul><p><b>Other important warnings</b></p><ul>\n<li>Infertility has been reported in some men taking finasteride, particularly in those with other risk factors that may affect fertility.</li><li>Improvement or normalisation of semen quality has been reported after stopping finasteride.</li><li>Long-term clinical studies investigating the effects of finasteride on male fertility have not been conducted.</li><li>Finasteride should not be taken by women.</li><li>Women who are pregnant, may be pregnant, or are planning a pregnancy should not handle crushed or broken finasteride tablets. Whole tablets are coated to prevent contact with the active ingredient during normal use.</li><li>Exposure during pregnancy may affect the development of a male baby’s sex organs.</li><li>If a pregnant woman comes into contact with crushed or broken finasteride tablets, medical advice should be sought.</li></ul><p><b>Stop taking finasteride and seek medical advice immediately if you experience:</b></p><ul><li>Symptoms of an allergic reaction, including swelling of the lips, face, tongue, or throat, difficulty swallowing, hives (raised itchy rash), or difficulty breathing.</li>\n<li>Depression, severe low mood, or thoughts of self-harm or suicide.</li></ul><p>You should promptly report any changes in breast tissue to your healthcare professional, including breast lumps, pain, enlargement, tenderness, or nipple discharge, as these may be signs of a serious condition such as breast cancer.</p><p><b>Possible side effects</b></p><p><b>Uncommon side effects (may affect up to 1 in 100 people)</b></p><ul><li>Reduced sex drive (libido).</li><li>Difficulty achieving or maintaining an erection (erectile dysfunction).</li><li>Problems with ejaculation, including a decrease in the amount of semen released during sex.</li></ul><p>The reduction in semen volume does not appear to affect normal sexual function.</p><p><b>Frequency not known (cannot be estimated from available data)</b></p><ul><li>Breast swelling or breast tenderness.</li><li>Pain in the testicles.</li><li>Blood in the semen.</li><li>Palpitations (awareness of your heartbeat).</li><li>Persistent difficulty achieving or maintaining an erection after stopping treatment.</li><li>Persistent reduction in sex drive after stopping treatment.</li><li>Persistent ejaculation problems after stopping treatment.</li><li>Male infertility and/or poor semen quality.</li><li>Changes in liver function, which may be detected through blood tests.</li><li>Anxiety.</li><li>Suicidal thoughts.</li></ul><p>If any side effect becomes serious, or if you notice any side effects not listed in the patient information leaflet, tell your doctor, pharmacist, or other healthcare professional. It may be helpful to make a note of what happened, when it started, and how long it lasted.</p><p>Please read the patient information leaflet supplied with your medicine for the complete list of warnings, precautions, and side effects.</p>"
+        }
+       ],
+       "usps": [
+        "One tablet a day",
+        "Lowers DHT, the hormone behind hair loss",
+        "Helps prevent further hair loss"
+       ],
+       "isProduct": false,
+       "promoLabel": "Subscription available. Save 15% & cancel anytime.",
+       "durationLabel": "3 months",
+       "purchaseType": "ONE_TIME",
+       "hideTotalPrice": false
+      }
+     },
+     {
+      "answerId": "108082$105664",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "108082",
+      "displayText": "<div class=\"additional-info-container\">\n    <div class=\"additional-info-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Supply_LPOD.png?v=1793030700\" alt=\"icon\"/>\n        <span>6 months' supply of finasteride tablets</span>\n    </div>\n    <div class=\"additional-info-item\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Support_LPOD.png?v=1793030705\" alt=\"icon\"/>\n        <span>Support from our experienced clinicians when you need it</span>\n    </div>\n</div>",
+      "type": "SINGLE_CHOICE",
+      "selected": false,
+      "metadata": {
+       "title": "Finasteride tablets",
+       "label": "1 month",
+       "subtitle": "Finasteride 1mg tablet",
+       "banner": "83% experience an improvement in hair loss²",
+       "sku": 3743,
+       "imageURL": "https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Finasteride_tablets_LPOD_0399a893-8f75-4ea2-b983-d82e1d4ebea5.png?v=1792400196",
+       "pricingInformation": {
+        "pricePerPen": "163 ",
+        "pricePerWeek": "6.79 a week",
+        "currency": "£",
+        "price": "163.00",
+        "totalPriceLabel": "£163.00 total"
+       },
+       "inStock": true,
+       "recommended": false,
+       "preference": false,
+       "mainOption": false,
+       "moreInformation": [
+        {
+         "title": "Description",
+         "content": "<p><b>Finasteride 1 mg tablets</b> contain the active substance finasteride, a prescription medicine used to treat male pattern hair loss (androgenetic alopecia) in adult men.</p><p>Finasteride works by reducing levels of a hormone called dihydrotestosterone (DHT), which is associated with male pattern hair loss. This can help increase hair growth on the scalp and prevent further hair loss in men.</p><p>Men with mild to moderate, but not complete, hair loss may benefit from treatment with finasteride.</p><p>Finasteride should only be used by adult men and should be taken exactly as prescribed.</p><p>The finasteride patient information leaflet can be found <a target=\"_blank\" href=\"https://www.medicines.org.uk/emc/files/pil.7068.pdf\">here</a>.</p>"
+        },
+        {
+         "title": "Ingredients",
+         "content": "<p><b>Excipients (inactive ingredients):</b> The inactive ingredients in finasteride tablets may vary depending on the manufacturer. Patients should refer to the patient information leaflet supplied with their medicine for the full list of ingredients.</p><p>Examples of inactive ingredients that may be included are:</p><p><b>Tablet core:</b> Lactose monohydrate, microcrystalline cellulose, sodium starch glycolate, pregelatinised maize starch, docusate sodium, and magnesium stearate.</p><p><b>Tablet coat:</b> Hypromellose, hydroxypropyl cellulose, talc, titanium dioxide (E171), red iron oxide (E172), and yellow iron oxide (E172).</p><p>If you have an allergy or intolerance to any ingredient, including lactose, speak to your healthcare professional before taking this medicine.</p>"
+        },
+        {
+         "title": "Directions",
+         "content": "<p>Take 1 tablet once daily, with or without food. Swallow the tablet whole with water. Do not crush, chew, or break the tablet.</p><p>If you forget to take a dose, take your next dose at the usual time. Do not take a double dose to make up for a missed dose.</p><p>It is important to continue taking finasteride as prescribed for the treatment to be effective. Hair growth may take several months to become noticeable, and continued treatment is usually required to maintain any benefits.</p><p>If you have any questions about how to take this medicine, speak to your healthcare professional.</p>"
+        },
+        {
+         "title": "FAQS",
+         "content": "<p><b>How does this treatment work?</b></p><p>Finasteride works by blocking the conversion of testosterone to dihydrotestosterone (DHT), a hormone that contributes to male pattern hair loss. By reducing DHT levels in the scalp, finasteride may help slow further hair loss and support hair regrowth in some men.</p><p><b>How long does it take to work?</b></p><p>You will usually need to take finasteride continuously for at least 6 to 12 months before assessing whether it is working for you. Some men may notice improvements sooner, but individual results can vary.</p><p>Continued treatment is required to maintain any benefits. If treatment is stopped, hair loss will generally begin to return over time.</p><p><b>Will the effects last if I stop treatment?</b></p><p>No. If treatment is stopped, the beneficial effects of finasteride generally begin to reverse within several months, and hair loss may gradually return to pre-treatment levels.</p><p><b>Who can take finasteride?</b></p><p>Finasteride is used for the treatment of male pattern hair loss in adult men. It is not suitable for everyone, and some people may need to avoid this medicine or discuss its use with a healthcare professional before starting treatment.</p><p><b>Do not take finasteride:</b></p>"
+        },
+        {
+         "title": "Warnings",
+         "content": "<p><b>Important MHRA safety information</b></p><p>The Medicines and Healthcare products Regulatory Agency (MHRA) has highlighted reports of psychiatric side effects and sexual dysfunction in patients taking finasteride.</p><ul><li>Finasteride has been associated with depressed mood, depression, suicidal thoughts, and sexual dysfunction.</li><li>Sexual side effects may include reduced sex drive (libido), erectile dysfunction, and ejaculation disorders.</li><li>Some patients have reported sexual side effects that continued after stopping treatment.</li><li>The MHRA advises patients to read the Patient Information Leaflet and any patient safety information supplied with the medicine.</li><li>Tell your healthcare professional before starting treatment if you have a personal history of depression, low mood, or suicidal thoughts.</li><li>If you experience sexual dysfunction while taking finasteride, contact your healthcare professional for advice.</li><li>If you develop depressed mood, depression, or suicidal thoughts while taking finasteride, stop treatment and contact a healthcare professional as soon as possible.</li><li>If you feel at risk of harming yourself or have seriously harmed yourself, call 999 or seek emergency medical assistance immediately</li></ul> <p><b>Talk to your doctor or pharmacist before taking finasteride if:</b></p><ul><li>You are due to have a blood test for prostate-specific antigen (PSA). Finasteride can affect PSA test results, so your healthcare professional should be aware that you are taking this medicine.</li>\n</ul><p><b>Other important warnings</b></p><ul>\n<li>Infertility has been reported in some men taking finasteride, particularly in those with other risk factors that may affect fertility.</li><li>Improvement or normalisation of semen quality has been reported after stopping finasteride.</li><li>Long-term clinical studies investigating the effects of finasteride on male fertility have not been conducted.</li><li>Finasteride should not be taken by women.</li><li>Women who are pregnant, may be pregnant, or are planning a pregnancy should not handle crushed or broken finasteride tablets. Whole tablets are coated to prevent contact with the active ingredient during normal use.</li><li>Exposure during pregnancy may affect the development of a male baby’s sex organs.</li><li>If a pregnant woman comes into contact with crushed or broken finasteride tablets, medical advice should be sought.</li></ul><p><b>Stop taking finasteride and seek medical advice immediately if you experience:</b></p><ul><li>Symptoms of an allergic reaction, including swelling of the lips, face, tongue, or throat, difficulty swallowing, hives (raised itchy rash), or difficulty breathing.</li>\n<li>Depression, severe low mood, or thoughts of self-harm or suicide.</li></ul><p>You should promptly report any changes in breast tissue to your healthcare professional, including breast lumps, pain, enlargement, tenderness, or nipple discharge, as these may be signs of a serious condition such as breast cancer.</p><p><b>Possible side effects</b></p><p><b>Uncommon side effects (may affect up to 1 in 100 people)</b></p><ul><li>Reduced sex drive (libido).</li><li>Difficulty achieving or maintaining an erection (erectile dysfunction).</li><li>Problems with ejaculation, including a decrease in the amount of semen released during sex.</li></ul><p>The reduction in semen volume does not appear to affect normal sexual function.</p><p><b>Frequency not known (cannot be estimated from available data)</b></p><ul><li>Breast swelling or breast tenderness.</li><li>Pain in the testicles.</li><li>Blood in the semen.</li><li>Palpitations (awareness of your heartbeat).</li><li>Persistent difficulty achieving or maintaining an erection after stopping treatment.</li><li>Persistent reduction in sex drive after stopping treatment.</li><li>Persistent ejaculation problems after stopping treatment.</li><li>Male infertility and/or poor semen quality.</li><li>Changes in liver function, which may be detected through blood tests.</li><li>Anxiety.</li><li>Suicidal thoughts.</li></ul><p>If any side effect becomes serious, or if you notice any side effects not listed in the patient information leaflet, tell your doctor, pharmacist, or other healthcare professional. It may be helpful to make a note of what happened, when it started, and how long it lasted.</p><p>Please read the patient information leaflet supplied with your medicine for the complete list of warnings, precautions, and side effects.</p>"
+        }
+       ],
+       "usps": [
+        "One tablet a day",
+        "Lowers DHT, the hormone behind hair loss",
+        "Helps prevent further hair loss"
+       ],
+       "isProduct": false,
+       "promoLabel": "Subscription available. Save 15% & cancel anytime.",
+       "durationLabel": "6 months",
+       "purchaseType": "ONE_TIME",
+       "hideTotalPrice": false
+      }
+     }
+    ],
+    "properties": {
+     "excludecard": "true",
+     "disclaimer": null,
+     "packSizeSelection": "true",
+     "subscriptionAvailable": "true"
+    },
+    "titleOverride": "Choose your pack size"
+   }
+  ],
+  "questionAnswerErrors": {},
+  "summaryRequiredBeforeStep": false,
+  "registrationRequiredBeforeStep": false,
+  "fastSummaryRequiredBeforeStep": false
+ },
+ "explanation": "/api/questionnaire/traversals/167423/explanations",
+ "previous": "/api/questionnaire/traversals/167423/steps/previous",
+ "current": "/api/questionnaire/traversals/167423/steps/current"
+}

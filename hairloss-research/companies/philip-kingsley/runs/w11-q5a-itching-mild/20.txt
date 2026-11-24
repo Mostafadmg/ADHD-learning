@@ -1,0 +1,34 @@
+STEP 20 click "button.pk-quiz-action.Next"
+URL: https://hairloss.philipkingsley.co.uk/quiz/step/view/stepId/women_quiz_step_user
+TITLE: 
+
+--- VISIBLE TEXT ---
+ALMOST DONE!
+YOUR DETAILS
+FIRST NAME
+LAST NAME
+DATE OF BIRTH
+EMAIL
+CREATE PASSWORD
+Password Strength: No Password
+CONFIRM PASSWORD
+STATEMENTS TO AGREE BEFORE PROCEEDING
+Please tick to acknowledge that it is best practice to inform your GP of any private treatment that you receive. All treatment and communication is completely confidential.
+I understand the questions asked and have answered them honestly and truthfully.
+I confirm I will read any material shared with me regarding side effects and effectiveness of treatment options I am provided with by my Trichologist.
+I confirm and agree that any treatment prescribed for me is for my personal use only.
+I agree to the website terms and conditions and privacy policy.
+I would like to receive the Philip Kingsley newsletter, which includes hair care tips, product information and exclusive offers. I understand that I can unsubscribe at any time.
+NEXT
+BACK
+YOUR DETAILS ARE SECURE AND PROTECTED
+
+--- CONTROLS ---
+  input:text (3): Enter a name here  ·  Enter a last name  ·  ie 13/01/1984
+  input:email (1): Enter your email address
+  input:password (2): CREATE PASSWORD  ·  CONFIRM PASSWORD
+  checkbox (3): gp_acknowledge  ·  consent_given  ·  I would like to receive the Philip Kingsley newsletter, which includes hair care tips, product information and exclusive offers. I understan
+  button (2): NEXT  ·  BACK
+
+--- LINKS ---
+  link (6): SIGN IN -> https://hairloss.philipkingsley.co.uk/customer/account/  ·  terms and conditions -> /hair-loss-terms-conditions  ·  privacy policy -> /hair-loss-privacy-policy  ·  TERMS OF SALE -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-of-sale  ·  TERMS & CONDITIONS -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-conditions  ·  PRIVACY POLICY -> https://hairloss.philipkingsley.co.uk/hair-loss-privacy-policy

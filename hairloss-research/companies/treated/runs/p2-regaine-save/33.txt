@@ -1,0 +1,48 @@
+STEP 33 click "Yes, correct"
+URL: https://start.treated.com/GBR/en/#/treatment-options
+TITLE: Treated UK - Choose Better - Medical Experts & Treatments Online
+
+--- VISIBLE TEXT ---
+We're checking what's safe for you...
+
+"Easy and fast service."
+
+"Reviewed by a doctor the same day and received the medication the following morning." 
+Emily L.
+1. Choose treatment
+2. Checkout
+3. Complete
+Here's what we've got for you.
+
+You can edit it to something else if you prefer.
+
+OR
+Not sure?
+
+We'll pick a treatment for you based on your medical profile, and you can choose whether to accept it.
+
+Choose for me
+What's included:
+Ask our doctors anything.
+
+Get unlimited access to our clinicians and ask them anything you want, any time you like.
+
+Personalised aftercare.
+
+We’ll check in regularly to make sure your treatment is working out for you.
+
+Freedom to stop anytime.
+
+Stop or change your plan any time, with the press of a button. (No phone calls required.)
+
+Privacy and discretion.
+
+Any confidential info you share with us is kept private and secure.
+
+Need help?
+
+--- CONTROLS ---
+  button (2): Choose for me  ·  Need help?
+
+--- LINKS ---
+

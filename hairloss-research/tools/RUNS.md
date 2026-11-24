@@ -38,3 +38,8 @@ Still to launch: ro (verify), xyon / musely / oana (map), nutrafol, pilot. Then 
 
 Priority change (23 Nov, user asked about "other big ones"): the UK sweep flagged Dr Fox and Philip Kingsley as the biggest UK players outside the original ten, so they jumped the queue. The five queued US/AU companies (xyon, musely, oana, nutrafol, pilot) only run if the weekly budget allows after the synthesis and company plan.
 Voy: blocked by a bot check we do not bypass; offered the user a manual walk on their own phone (screenshots) to fill the gap.
+
+## 24 Nov 08:00 UTC
+Finished and verified: hims-uk, voy, hair-and-me, numan, treated, dr-fox, philip-kingsley, boots, superdrug, lloyds, oxford (partial: blocked), hims-us, hers-us (partial: blocked), keeps, happy-head, strut. Background: all five foundations fact-checked.
+Running: sons verify retry (wf_2a22cb07-3c7; the first reviewer hung 8 h on an unanswered approval), ro verify (wf_2cca9ac4-1a1), phase 2 synthesis + company design (wf_36d51cf0-a2b, script hairloss-phase2-synthesis-design-wf_36d51cf0-a2b.js).
+Not started (budget): musely, oana, nutrafol, pilot. xyon has an unverified stage-1 map only.

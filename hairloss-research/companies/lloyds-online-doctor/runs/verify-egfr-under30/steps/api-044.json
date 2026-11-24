@@ -1,0 +1,1 @@
+{"timestamp":1795484381108,"status":422,"message":"Invalid answers submitted","code":"KM","path":"/consultation/uk/api/questionnaire/traversals/7242702/steps/current","errors":{"questionErrors":[{"message":"Please provide an answer to this question ","questionId":"100467"}]}}

@@ -1,0 +1,43 @@
+{
+ "step": {
+  "title": "HL",
+  "questions": [
+   {
+    "questionId": "103261",
+    "explanationAvailable": false,
+    "displayText": "Have you lost any hair in other areas of your body such as eyebrows or beard?",
+    "type": "SINGLE_CHOICE",
+    "answerRequired": true,
+    "smoothTransition": false,
+    "answerChoices": [
+     {
+      "answerId": "103261$1",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "103261",
+      "displayText": "Yes",
+      "type": "SINGLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "103261$2",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "103261",
+      "displayText": "No",
+      "type": "SINGLE_CHOICE",
+      "selected": false
+     }
+    ],
+    "titleOverride": "Your hair loss"
+   }
+  ],
+  "questionAnswerErrors": {},
+  "summaryRequiredBeforeStep": false,
+  "registrationRequiredBeforeStep": false,
+  "fastSummaryRequiredBeforeStep": false
+ },
+ "explanation": "/api/questionnaire/traversals/14042585/explanations",
+ "previous": "/api/questionnaire/traversals/14042585/steps/previous",
+ "current": "/api/questionnaire/traversals/14042585/steps/current"
+}

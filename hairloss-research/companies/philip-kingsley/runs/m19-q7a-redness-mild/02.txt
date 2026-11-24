@@ -1,0 +1,25 @@
+STEP 02 click "GET STARTED"
+URL: https://hairloss.philipkingsley.co.uk/quiz/step/start/?stepId=men_quiz_step0
+TITLE: 
+
+--- VISIBLE TEXT ---
+HAIR LOSS ASSESSMENT
+WELCOME, LET'S GET STARTED...
+We're going to ask you some questions regarding your hair loss and medical history, to determine your suitability for this service, and prescribe a suitable treatment plan.
+
+By clicking 'Get Started', you are confirming the below:
+
+I am male, over 18 years old and live in the UK
+I was assigned male at birth
+I confirm all answers are provided by me, and will be truthful
+I will disclose any prescription medication I currently take
+I understand that I should not follow this treatment plan alongside treatments from another provider
+I am aware that Philip Kingsley's Finasteride and Minoxidil are unlicensed products
+GET STARTED
+If you've previously started, SIGN IN to continue where you left off
+
+--- CONTROLS ---
+  button (1): GET STARTED [disabled]
+
+--- LINKS ---
+  link (4): SIGN IN -> https://hairloss.philipkingsley.co.uk/customer/account/  ·  TERMS OF SALE -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-of-sale  ·  TERMS & CONDITIONS -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-conditions  ·  PRIVACY POLICY -> https://hairloss.philipkingsley.co.uk/hair-loss-privacy-policy

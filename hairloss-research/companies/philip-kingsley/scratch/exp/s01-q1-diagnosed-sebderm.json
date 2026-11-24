@@ -1,0 +1,74 @@
+{
+ "start": "https://hairloss.philipkingsley.co.uk/",
+ "note": "Synthetic scalp baseline (no protocol baseline exists for the scalp quiz): not diagnosed, mild-moderate dandruff, healthy scalp before, no chemo, no pain etc., medium wavy hair, medium length, healthy hair, no allergies. Stops at the account wall.",
+ "steps": [
+  {
+   "do": "click",
+   "selector": ".pk-quiz-button[data-url*=\"scalp_quiz_step0\"]"
+  },
+  {
+   "do": "click",
+   "text": "GET STARTED"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q1\"][data-quiz-selection=\"Yes\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q2\"][data-quiz-selection=\"Seborrhoeic Dermatitis\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q3\"][data-quiz-selection=\"Mild to Moderate Dandruff\"]"
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q4\"][data-quiz-selection=\"Healthy\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q5\"][data-quiz-selection=\"No\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q6\"][data-quiz-selection=\"None of the above\"]"
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q7\"][data-quiz-selection=\"Medium, can be wavy\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q8\"][data-quiz-selection=\"Medium (shoulder length)\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q9\"][data-quiz-selection=\"Healthy\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q10a\"][data-quiz-selection=\"No, I don't have any allergies\"]"
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "eval",
+   "js": "(()=>{const q=window.quiz;const d=(q.data&&q.data[q.quizId])||{};const ans={};for(const k in d){if(d[k]&&d[k].value!=='')ans[k]=d[k].value;}const skus=q.checkProductAvailability();return {quizId:q.quizId,step:q.state.current,url:location.pathname,skus:skus,noResultsTemplate:skus.length?null:q.resolveNoResultsTemplate(),answers:ans};})()"
+  }
+ ]
+}

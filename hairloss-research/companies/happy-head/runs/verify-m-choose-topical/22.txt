@@ -1,0 +1,19 @@
+STEP 22 click "No"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Do you have any allergies?
+Your allergy information ensures we create a formula that's safe and customized for you.
+Yes
+No
+Why we ask
+Understanding allergies helps our dermatologists avoid ingredients or medications that may not be the best fit for you.
+Your information is secure and always kept private.
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

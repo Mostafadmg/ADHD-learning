@@ -1,0 +1,34 @@
+{
+ "step": {
+  "title": "HL",
+  "questions": [
+   {
+    "questionId": "107986",
+    "explanationAvailable": false,
+    "displayText": "<b><h>Important safety information for your treatment:</h></b>\n<p>Finasteride has been associated with causing:\n<ul>\n<li><b>Low mood, depression, and suicidal thoughts</b></li>\n<li><b>Sexual side effects</b> such as reduced sex drive, difficulty getting or maintaining an erection, and problems with ejaculation.</li>\n<li>Changes in <b>breast tissue</b>, including lumps, pain, or nipple discharge.</li>\n</ul></p>\n<p>If you develop <b>depression or suicidal thoughts,</b> stop treatment and contact your doctor immediately. If you ever feel at risk of harming yourself or have seriously harmed yourself, <b>call emergency services on 999 immediately.</b></p>",
+    "type": "MULTIPLE_CHOICE",
+    "answerRequired": true,
+    "smoothTransition": false,
+    "answerChoices": [
+     {
+      "answerId": "107986$100618",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "107986",
+      "displayText": "I understand",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false
+     }
+    ],
+    "titleOverride": "Your Safety"
+   }
+  ],
+  "questionAnswerErrors": {},
+  "summaryRequiredBeforeStep": false,
+  "registrationRequiredBeforeStep": false,
+  "fastSummaryRequiredBeforeStep": false
+ },
+ "explanation": "/api/questionnaire/traversals/15707240/explanations",
+ "previous": "/api/questionnaire/traversals/15707240/steps/previous",
+ "current": "/api/questionnaire/traversals/15707240/steps/current"
+}

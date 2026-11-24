@@ -1,0 +1,26 @@
+
+===== SCREEN 03 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 100013 [SINGLE_CHOICE] required=true title="Your details"
+    TEXT: What was your sex at birth?
+    OPTIONS: "Male" | "Female"
+
+===== SCREEN 04 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 100014 [DATE_OF_BIRTH] required=true title="Your details"
+    TEXT: What is your date of birth?
+    OPTIONS: "For example: 31 3 1980"
+
+===== SCREEN 05 | step "SUMMARY" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  (no questions; stepState=SUMMARY)
+  (answers summary page: confirming it to reach the recommendations)
+
+===== SCREEN 06 | step "Gp and Consents" | {"summaryRequiredBeforeStep":true,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 100467 [MULTIPLE_CHOICE] required=true title=""
+    TEXT: Please confirm the following to complete your consultation: I have responded honestly and provided complete and accurate information that reflects my up to date medical history and information, so that the LloydsPharmacy Online Doctor clinician can safely assess and advise me. I fully understand all the questions and information provided. If I am unsure about any aspect of the service I will contact the LloydsPharmacy Online Doctor before proceeding. I understand the side effects, effectiveness and alternatives to the treatment I am requesting. I understand the importance of notifying my GP about medicines and advice I may receive from this service so they can continue to provide safe medical care. I understand this consultation will form part of my Online Doctor medical record and will be kept in line with the relevant retention period. I have read, understand and agree to the terms and
+    OPTIONS: "I confirm the above"
+    (auto-answer: "None of the above")
+    (could not click option "None of the above": )
+
+FINAL URL: https://core.onlinedoctor.lloydspharmacy.com/consultation/current  (32 s)
+[explore] exit 2 -> /home/user/ADHD-learning/hairloss-research/companies/lloyds-online-doctor/runs/verify-female
+
+ERR Command failed: node /home/user/ADHD-learning/hairloss-research/companies/lloyds-online-doctor/tools/explore.js /home/user/ADHD-learning/hairloss-research/companies/lloyds-online-doctor/runs/verify-female/policy.json /home/user/ADHD-learning/hairloss-research/companies/lloyds-online-doctor/runs/verify-female

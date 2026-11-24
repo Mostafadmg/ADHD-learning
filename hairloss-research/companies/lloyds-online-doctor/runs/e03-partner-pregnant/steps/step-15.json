@@ -1,0 +1,43 @@
+{
+ "step": {
+  "title": "HL",
+  "questions": [
+   {
+    "questionId": "101561",
+    "explanationAvailable": false,
+    "displayText": "Do you have Chronic Kidney Disease (CKD) or a reduced kidney function?",
+    "type": "SINGLE_CHOICE",
+    "answerRequired": true,
+    "smoothTransition": false,
+    "answerChoices": [
+     {
+      "answerId": "101561$1",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "101561",
+      "displayText": "Yes",
+      "type": "SINGLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "101561$2",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "101561",
+      "displayText": "No",
+      "type": "SINGLE_CHOICE",
+      "selected": false
+     }
+    ],
+    "titleOverride": "Medical history"
+   }
+  ],
+  "questionAnswerErrors": {},
+  "summaryRequiredBeforeStep": false,
+  "registrationRequiredBeforeStep": false,
+  "fastSummaryRequiredBeforeStep": false
+ },
+ "explanation": "/api/questionnaire/traversals/5665870/explanations",
+ "previous": "/api/questionnaire/traversals/5665870/steps/previous",
+ "current": "/api/questionnaire/traversals/5665870/steps/current"
+}

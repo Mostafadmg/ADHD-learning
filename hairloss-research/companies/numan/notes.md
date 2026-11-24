@@ -225,3 +225,47 @@ One change from `baseline-men.json` each time. Read the product screen and the f
   and prints `scripts/summ.js`: questions served, last engine flags, featured card and the other products with prices.
   Experiments stop at the product screen (plan and price after it are the same per product as the baseline).
 - Results are appended to `stage2/results.txt` as they come in.
+- **Rebuilding company.json:** stage-1 content comes from `scripts/build-company.py`; stage-2 content is layered on by
+  `python3 -I scripts/stage2-patch.py` (data in `scripts/stage2_exps.py`, `stage2_rules.py`, `stage2_text.py`). If you ever
+  rerun build-company.py, rerun stage2-patch.py straight after it, or stage 2 is lost.
+
+## Stage 2 results (33 replays: x2-00 full baseline, x2-01 short baseline, 31 one-change runs)
+
+Only seven answers change the offer (all observed):
+- minoxidil OFF (all kits, both sprays, Regaine hidden; Finasteride featured £16.80): minoxidil allergy (x2-03), scalp
+  pain/itching (x2-04), red rinds/rashes (x2-05), any blood-pressure diagnosis whatever the follow-up answer (x2-10, x2-30).
+- finasteride OFF (kits, Triple-Action, Finasteride hidden; Extra Strength Spray featured £18.00): finasteride allergy (x2-02),
+  mood answer "minoxidil only" (x2-13, also skips the rest of the branch), specialist-managed mental health (x2-15, skips 3 Qs),
+  suicidal thoughts Yes (x2-16, no stop, no signposting).
+Change nothing on screen (clinician note at most): psoriasis/eczema (x2-08, despite their own note that minoxidil is unsuitable),
+dandruff Yes/No (x2-06/07), PSA opt-out (x2-09) and opt-in (x2-31), asthma opt-out (x2-11), baby opt-out (x2-12), lactose "none"
+(x2-18), body hair (x2-19), GP-managed depression (x2-14), dose change Yes (x2-17: it also SKIPS the suicidal-thoughts question),
+65+ Yes (x2-22), Other pattern (x2-24), Extensive (x2-29), "most important" side effects / scalp (x2-27/28), medical history Yes (x2-23).
+Stops seen: sudden (x2-25), patchy (x2-26). "Review your answers" undoes a stop in the same draft (x2-32).
+Entry links bypass the allergy filter: Regaine link + minoxidil allergy → Regaine still featured (x2-20); Finasteride link +
+finasteride allergy → Finasteride still featured (x2-21). Product links carry no first-order code (full prices).
+
+Not tested (see limitations in company.json): Temples, Moderate, Complete, 65+ No, asthma/baby opt-in, lactose small, All of
+the above, GP Yes, minoxidil entry link, pairs of rules.
+
+---
+
+# Stage 3 (VERIFY), 24 Nov 2026: working log
+
+- Re-runs use `scripts/verify-exp.sh <expId> <NN>` (same as run-exp.sh, output in `runs/verify-NN-<expId>/`). Two new
+  experiment ids were added to `scripts/gen-exp.js`: `pair-alfin-scpain` and `pair-alfin-scpain-regaine`. Raw summaries are in
+  `stage2/verify-results.txt`. `stage2/verify-fin-billing.json` walks the baseline, picks Finasteride (4th "Select" button,
+  `button:has-text("Select")` nth 3) and stops on the billing screen.
+- **Rebuild order is now:** `build-company.py` → `stage2-patch.py` → `verify-patch.py` (the last adds the stage-3 changes and the
+  `verification` block; safe to run twice).
+- 22 replays. Both baselines matched (product screen; £176.00 at the wall). Ten stage-2 rules re-tested live, all confirmed
+  (R2, R5, R6, R7, R10, R11, R14, R18, R20 plus R3 and R21 upgraded to observed). No rule was contradicted.
+- New: the entry-link bypass also beats the eligibility flags (verify-21: Regaine link + finasteride allergy + scalp pain →
+  Regaine still featured with Rosemary Oil). Minoxidil entry link features Extra Strength Spray at full price £30 (verify-13).
+- Gaps closed: Complete and 65+ No stops, Temples, Moderate, asthma and baby opt-ins, lactose small, All of the above: as
+  predicted (stops, or no change). Finasteride billing: £28 / £24 / £20 a month.
+- Product facts checked against the live API (identical to the saved copy) and the live product pages (`raw/verify/*.txt`).
+  The Minoxidil page banner says "60% off your first month" (not seen anywhere in the flow).
+- Corrections: an opportunity wrongly said Numan has no topical finasteride (Triple-Action has 0.1%); one clinical opinion
+  labelled as inferred; R22's shorthand proof expanded.
+- Still untested: GP Yes, most rule pairs, most product "Select" buttons, anything after the account wall.

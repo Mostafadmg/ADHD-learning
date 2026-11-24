@@ -1,0 +1,19 @@
+STEP 18 click "None of the above"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Do you currently have the ability to become pregnant?
+To keep you safe, we avoid ingredients that aren't pregnancy-safe. This helps us tailor your treatment responsibly.
+Yes
+No
+Why we ask
+Certain medications may not be suitable during pregnancy. Understanding this helps us personalize treatment recommendations with your safety in mind.
+Your information is secure and always kept private.
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

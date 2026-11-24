@@ -1,0 +1,18 @@
+STEP 11 click "No"
+URL: https://start.treated.com/GBR/en/#/questionnaire
+TITLE: Treated UK - Choose Better - Medical Experts & Treatments Online
+
+--- VISIBLE TEXT ---
+Question 6 of 11
+
+What's your blood pressure?
+Normal (Between 90/60 - 140/90)
+Low (Below 90/60)
+High (Above 140/90)
+I don't know
+
+--- CONTROLS ---
+  radio (4): Normal (Between 90/60 - 140/90)  ·  Low (Below 90/60)  ·  High (Above 140/90)  ·  I don't know
+
+--- LINKS ---
+

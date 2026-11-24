@@ -1,0 +1,8 @@
+PATH: 100013 > 100014 > 107977 > 107978 > 107979 > 107980 > 103257 > 107954 > 103261 > 105935 > 108014 > 103270 > 101561 > 107973 > 107800 > 102632 > 103769 > 108158 > 102624 > 108001 > SUMMARY > SUMMARY > 107988
+ADDED vs base: 103769, 108158 | REMOVED vs base: 108003, 108360
+  NEW 103769 [MULTIPLE_CHOICE] Medical history: Are you taking any of the following medications: || Finasteride or Dutasteride for prostate problems | Medicines for high blood pressure (e.g. amlodipine, ramipril, lisinopril, losartan etc.) | Antidepressants (e.g. escitalopram, citalopram, duloxetine, fluoxetine, mirtazapine, paroxetine, sertraline, venlafaxine etc.) | Erectile dysfunction tablets 
+  NEW 108158 [MULTIPLE_CHOICE] Medical history: And what about these? || Testosterone or Anabolic steroids | Inhalers for asthma or COPD | Antihistamines | Painkillers | Acid reflux medication (e.g. omeprazole, lansoprazole, pantoprazole, etc.) | Other medication
+REC TEXT: Consultation overview: Your hair loss is consistent with male pattern hair loss You're new to hair loss treatment Our recommendation: You're suitable for Minoxidil spray
+  (same text as base: false)
+  CARD Sons Minoxidil spray | 6 months | £99.00 | 3.85 a week | inStock=true | rec=false | pref=false | main=true
+  CARDS vs base: removed [Dual Action - Tablet + Spray, Dual Action - Tablets, Finasteride tablets, Minoxidil tablets, Propecia] added [] order same: true

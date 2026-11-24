@@ -1,0 +1,394 @@
+{
+ "v-baseline": {
+  "changed": {},
+  "primary": [
+   "topical-finasteride-minoxidil-spray"
+  ],
+  "secondary": [
+   "oral-duo-plan",
+   "hair-loss-spray-hair-loss-capsule",
+   "ultimate-hair-loss-plan-capsule",
+   "oral-minoxidil",
+   "finasteride",
+   "the-non-prescription-plan",
+   "hair-growth-complex"
+  ],
+  "switches": {
+   "allowedOralFinasteride": true,
+   "allowedTopicalFinasteride": true,
+   "allowedOralMinoxidil": true,
+   "allowedTopicalMinoxidil": true,
+   "allowedTopicalCombo": true
+  }
+ },
+ "v-sudden": {
+  "changed": {
+   "5143": 1
+  },
+  "primary": [
+   "minoxidil"
+  ],
+  "secondary": [
+   "the-non-prescription-plan",
+   "hair-growth-complex"
+  ],
+  "switches": {
+   "allowedOralFinasteride": false,
+   "allowedTopicalFinasteride": false,
+   "allowedOralMinoxidil": false,
+   "allowedTopicalMinoxidil": true,
+   "allowedTopicalCombo": false
+  }
+ },
+ "v-phq2": {
+  "changed": {
+   "3216": 1,
+   "3275": 2,
+   "3276": 0
+  },
+  "primary": [
+   "oral-minoxidil"
+  ],
+  "secondary": [
+   "the-non-prescription-plan",
+   "hair-growth-complex"
+  ],
+  "switches": {
+   "allowedOralFinasteride": false,
+   "allowedTopicalFinasteride": false,
+   "allowedOralMinoxidil": true,
+   "allowedTopicalMinoxidil": true,
+   "allowedTopicalCombo": false
+  }
+ },
+ "v-phq1": {
+  "changed": {
+   "3216": 1,
+   "3275": 1,
+   "3276": 1
+  },
+  "primary": [
+   "topical-finasteride-minoxidil-spray"
+  ],
+  "secondary": [
+   "oral-duo-plan",
+   "hair-loss-spray-hair-loss-capsule",
+   "ultimate-hair-loss-plan-capsule",
+   "oral-minoxidil",
+   "finasteride",
+   "the-non-prescription-plan",
+   "hair-growth-complex"
+  ],
+  "switches": {
+   "allowedOralFinasteride": true,
+   "allowedTopicalFinasteride": true,
+   "allowedOralMinoxidil": true,
+   "allowedTopicalMinoxidil": true,
+   "allowedTopicalCombo": true
+  }
+ },
+ "v-fin-se": {
+  "changed": {
+   "5148": [
+    0
+   ],
+   "5149": 1
+  },
+  "primary": [
+   "oral-minoxidil"
+  ],
+  "secondary": [
+   "the-non-prescription-plan",
+   "hair-growth-complex"
+  ],
+  "switches": {
+   "allowedOralFinasteride": false,
+   "allowedTopicalFinasteride": false,
+   "allowedOralMinoxidil": true,
+   "allowedTopicalMinoxidil": true,
+   "allowedTopicalCombo": false
+  }
+ },
+ "v-minox-se": {
+  "changed": {
+   "5148": [
+    1
+   ],
+   "5151": 1
+  },
+  "primary": [
+   "finasteride"
+  ],
+  "secondary": [
+   "hair-growth-complex"
+  ],
+  "switches": {
+   "allowedOralFinasteride": true,
+   "allowedTopicalFinasteride": true,
+   "allowedOralMinoxidil": false,
+   "allowedTopicalMinoxidil": false,
+   "allowedTopicalCombo": false
+  }
+ },
+ "v-hbp": {
+  "changed": {
+   "5155": [
+    0
+   ]
+  },
+  "primary": [
+   "finasteride"
+  ],
+  "secondary": [
+   "hair-growth-complex"
+  ],
+  "switches": {
+   "allowedOralFinasteride": true,
+   "allowedTopicalFinasteride": true,
+   "allowedOralMinoxidil": false,
+   "allowedTopicalMinoxidil": false,
+   "allowedTopicalCombo": false
+  }
+ },
+ "v-cardio": {
+  "changed": {
+   "5155": [
+    1
+   ]
+  },
+  "primary": [
+   "finasteride"
+  ],
+  "secondary": [
+   "hair-growth-complex"
+  ],
+  "switches": {
+   "allowedOralFinasteride": true,
+   "allowedTopicalFinasteride": true,
+   "allowedOralMinoxidil": false,
+   "allowedTopicalMinoxidil": false,
+   "allowedTopicalCombo": false
+  }
+ },
+ "v-kidney": {
+  "changed": {
+   "5155": [
+    2
+   ]
+  },
+  "primary": [
+   "oral-minoxidil"
+  ],
+  "secondary": [
+   "the-non-prescription-plan",
+   "hair-growth-complex"
+  ],
+  "switches": {
+   "allowedOralFinasteride": false,
+   "allowedTopicalFinasteride": false,
+   "allowedOralMinoxidil": true,
+   "allowedTopicalMinoxidil": true,
+   "allowedTopicalCombo": false
+  }
+ },
+ "v-sexdys": {
+  "changed": {
+   "5155": [
+    8
+   ]
+  },
+  "primary": [
+   "oral-minoxidil"
+  ],
+  "secondary": [
+   "the-non-prescription-plan",
+   "hair-growth-complex"
+  ],
+  "switches": {
+   "allowedOralFinasteride": false,
+   "allowedTopicalFinasteride": false,
+   "allowedOralMinoxidil": true,
+   "allowedTopicalMinoxidil": true,
+   "allowedTopicalCombo": false
+  }
+ },
+ "v-scalp": {
+  "changed": {
+   "5155": [
+    5
+   ]
+  },
+  "primary": [
+   "oral-duo-plan"
+  ],
+  "secondary": [
+   "hair-loss-spray-hair-loss-capsule",
+   "ultimate-hair-loss-plan-capsule",
+   "oral-minoxidil",
+   "finasteride",
+   "hair-growth-complex"
+  ],
+  "switches": {
+   "allowedOralFinasteride": true,
+   "allowedTopicalFinasteride": true,
+   "allowedOralMinoxidil": true,
+   "allowedTopicalMinoxidil": false,
+   "allowedTopicalCombo": false
+  }
+ },
+ "v-phaeo": {
+  "changed": {
+   "5155": [
+    6
+   ]
+  },
+  "primary": [
+   "topical-finasteride-minoxidil-spray"
+  ],
+  "secondary": [
+   "the-duo-plan",
+   "ultimate-hair-loss-plan",
+   "minoxidil",
+   "finasteride",
+   "the-non-prescription-plan",
+   "hair-growth-complex"
+  ],
+  "switches": {
+   "allowedOralFinasteride": true,
+   "allowedTopicalFinasteride": true,
+   "allowedOralMinoxidil": false,
+   "allowedTopicalMinoxidil": true,
+   "allowedTopicalCombo": true
+  }
+ },
+ "v-lactose": {
+  "changed": {
+   "5155": [
+    7
+   ]
+  },
+  "primary": [
+   "topical-finasteride-minoxidil-spray"
+  ],
+  "secondary": [
+   "minoxidil",
+   "topical-hair-loss-spray",
+   "the-non-prescription-plan",
+   "hair-growth-complex"
+  ],
+  "switches": {
+   "allowedOralFinasteride": false,
+   "allowedTopicalFinasteride": true,
+   "allowedOralMinoxidil": false,
+   "allowedTopicalMinoxidil": true,
+   "allowedTopicalCombo": true
+  }
+ },
+ "v-age65": {
+  "changed": {
+   "date_of_birth": "1961-10-24"
+  },
+  "primary": [
+   "topical-finasteride-minoxidil-spray"
+  ],
+  "secondary": [
+   "oral-duo-plan",
+   "hair-loss-spray-hair-loss-capsule",
+   "ultimate-hair-loss-plan-capsule",
+   "oral-minoxidil",
+   "finasteride",
+   "the-non-prescription-plan",
+   "hair-growth-complex"
+  ],
+  "switches": {
+   "allowedOralFinasteride": true,
+   "allowedTopicalFinasteride": true,
+   "allowedOralMinoxidil": true,
+   "allowedTopicalMinoxidil": true,
+   "allowedTopicalCombo": true
+  }
+ },
+ "v-age66": {
+  "changed": {
+   "date_of_birth": "1960-10-24"
+  },
+  "primary": [
+   "hair-growth-complex"
+  ],
+  "secondary": [],
+  "switches": {
+   "allowedOralFinasteride": false,
+   "allowedTopicalFinasteride": false,
+   "allowedOralMinoxidil": false,
+   "allowedTopicalMinoxidil": false,
+   "allowedTopicalCombo": false
+  }
+ },
+ "v-topical": {
+  "changed": {
+   "What treatment type do you prefer?": 0
+  },
+  "primary": [
+   "topical-finasteride-minoxidil-spray"
+  ],
+  "secondary": [
+   "the-duo-plan",
+   "hair-loss-spray-hair-loss-capsule",
+   "ultimate-hair-loss-plan",
+   "minoxidil",
+   "topical-hair-loss-spray",
+   "the-non-prescription-plan",
+   "hair-growth-complex"
+  ],
+  "switches": {
+   "allowedOralFinasteride": true,
+   "allowedTopicalFinasteride": true,
+   "allowedOralMinoxidil": true,
+   "allowedTopicalMinoxidil": true,
+   "allowedTopicalCombo": true
+  }
+ },
+ "v-hbp+sexdys": {
+  "changed": {
+   "5155": [
+    0,
+    8
+   ]
+  },
+  "primary": [
+   "hair-growth-complex"
+  ],
+  "secondary": [],
+  "switches": {
+   "allowedOralFinasteride": false,
+   "allowedTopicalFinasteride": false,
+   "allowedOralMinoxidil": false,
+   "allowedTopicalMinoxidil": false,
+   "allowedTopicalCombo": false
+  }
+ },
+ "v-picture-patches": {
+  "changed": {
+   "5147": 2
+  },
+  "primary": [
+   "topical-finasteride-minoxidil-spray"
+  ],
+  "secondary": [
+   "oral-duo-plan",
+   "hair-loss-spray-hair-loss-capsule",
+   "ultimate-hair-loss-plan-capsule",
+   "oral-minoxidil",
+   "finasteride",
+   "the-non-prescription-plan",
+   "hair-growth-complex"
+  ],
+  "switches": {
+   "allowedOralFinasteride": true,
+   "allowedTopicalFinasteride": true,
+   "allowedOralMinoxidil": true,
+   "allowedTopicalMinoxidil": true,
+   "allowedTopicalCombo": true
+  }
+ }
+}

@@ -1,0 +1,21 @@
+STEP 33 click "No, let the doctor customize it for me"
+URL: https://www.form.happyhead.com/get-started/?l=false&ph=true
+TITLE: Get Started | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+BLACK FRIDAY SALE
+Up to 60% Off
+Plus, FREE Dermaroller
+Enter your email to unlock up to 60% off your personalized hair-growth plan. Plus, Free Dermaroller with any Rx subscription.
+Up to 60% OFF your hair-growth plan
+FREE Premium Dermaroller – our gift to you
+Your personalized treatment plan, ready when you are
+Email Address*
+By checking this box you agree to our Terms, Privacy Policy, Drug Safety, Telehealth Consent, and MDI Telehealth Consent.
+
+--- CONTROLS ---
+  input:email (1): Enter your email
+
+--- LINKS ---
+  link (5): Terms -> https://www2.happyhead.com/legal/terms-of-use  ·  Privacy Policy -> https://www2.happyhead.com/legal/privacy-policy  ·  Drug Safety -> https://www2.happyhead.com/legal/drug-safety-information  ·  Telehealth Consent -> https://www2.happyhead.com/legal/telehealth-consent  ·  MDI Telehealth Consent -> https://mdintegrations.com/tos

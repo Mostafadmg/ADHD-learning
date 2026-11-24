@@ -1,0 +1,16 @@
+STEP 32 click "NEXT"
+URL: https://www.form.happyhead.com/get-started/?l=false&ph=true
+TITLE: Get Started | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Do you have any customization requests?
+Yes, I have a customization request
+No, let the doctor customize it for me
+(Recommended)
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

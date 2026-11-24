@@ -1,0 +1,17 @@
+STEP 11 click ".pk-quiz-control[data-quiz-question=\"q8\"][data-quiz-selection=\"Medium (shoulder length)\"]"
+URL: https://hairloss.philipkingsley.co.uk/quiz/step/view/stepId/scalp_quiz_step9
+TITLE: 
+
+--- VISIBLE TEXT ---
+QUESTION #9
+HOW WOULD YOU DESCRIBE THE CONDITION OF YOUR HAIR?
+SELECT ONE
+HEALTHY
+DRY OR DAMAGED
+BACK
+
+--- CONTROLS ---
+  button (1): BACK
+
+--- LINKS ---
+  link (4): SIGN IN -> https://hairloss.philipkingsley.co.uk/customer/account/  ·  TERMS OF SALE -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-of-sale  ·  TERMS & CONDITIONS -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-conditions  ·  PRIVACY POLICY -> https://hairloss.philipkingsley.co.uk/hair-loss-privacy-policy

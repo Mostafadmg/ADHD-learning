@@ -5,7 +5,8 @@
  "changedStep": null,
  "baselinesPooled": [
   "baseline-men",
-  "s2-base-men-1"
+  "s2-base-men-1",
+  "verify-base-men"
  ],
  "stepOrder": [
   "tp",
@@ -64,66 +65,6 @@
    "key": "q429.config",
    "where": "after-change",
    "alsoIn": []
-  },
-  {
-   "step": "st",
-   "key": "q9346.options",
-   "where": "changed-step",
-   "alsoIn": [
-    "entry-promo-caps-men",
-    "s2-base-women-1",
-    "s2-m-age-17"
-   ]
-  },
-  {
-   "step": "st",
-   "key": "q9346.type",
-   "where": "changed-step",
-   "alsoIn": [
-    "entry-promo-caps-men",
-    "s2-base-women-1",
-    "s2-m-age-17"
-   ]
-  },
-  {
-   "step": "st",
-   "key": "q9348.options",
-   "where": "changed-step",
-   "alsoIn": [
-    "entry-promo-caps-men",
-    "s2-base-women-1",
-    "s2-m-age-17"
-   ]
-  },
-  {
-   "step": "st",
-   "key": "q9348.type",
-   "where": "changed-step",
-   "alsoIn": [
-    "entry-promo-caps-men",
-    "s2-base-women-1",
-    "s2-m-age-17"
-   ]
-  },
-  {
-   "step": "st",
-   "key": "q9349.config",
-   "where": "changed-step",
-   "alsoIn": [
-    "entry-promo-caps-men",
-    "s2-base-women-1",
-    "s2-m-age-17"
-   ]
-  },
-  {
-   "step": "st",
-   "key": "q9349.type",
-   "where": "changed-step",
-   "alsoIn": [
-    "entry-promo-caps-men",
-    "s2-base-women-1",
-    "s2-m-age-17"
-   ]
   },
   {
    "step": "ct",

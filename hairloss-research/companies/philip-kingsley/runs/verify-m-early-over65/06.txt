@@ -1,0 +1,21 @@
+STEP 06 wait 1300
+URL: https://hairloss.philipkingsley.co.uk/quiz/step/view/stepId/men_quiz_step2
+TITLE: 
+
+--- VISIBLE TEXT ---
+QUESTION #2
+NOW TELL US ABOUT YOUR HAIR DENSITY.
+IN THE AREAS OF YOUR SCALP WHERE YOU ARE CURRENTLY EXPERIENCING HAIR LOSS, HOW WOULD YOU DESCRIBE THE CHANGE IN THE APPEARANCE OF YOUR HAIR?
+SELECT ONE
+I HAVE LESS HAIR THAN BEFORE, BUT IT IS NOT VERY NOTICEABLE
+MY HAIR HAS THINNED/RECEDED NOTICEABLY IN SOME AREAS, BUT OTHER AREAS ARE STILL DENSE
+MY SCALP IS BECOMING SLIGHTLY VISIBLE AND MY HAIR FEELS LESS DENSE
+MY SCALP IS VERY VISIBLE AND MY HAIR FEELS MUCH LESS DENSE
+MY HAIR HAS THINNED EXTENSIVELY, OR BEEN LOST ENTIRELY, THROUGHOUT THE TOP REGION
+BACK
+
+--- CONTROLS ---
+  button (1): BACK
+
+--- LINKS ---
+  link (4): SIGN IN -> https://hairloss.philipkingsley.co.uk/customer/account/  ·  TERMS OF SALE -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-of-sale  ·  TERMS & CONDITIONS -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-conditions  ·  PRIVACY POLICY -> https://hairloss.philipkingsley.co.uk/hair-loss-privacy-policy

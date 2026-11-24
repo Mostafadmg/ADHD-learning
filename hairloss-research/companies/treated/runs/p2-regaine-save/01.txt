@@ -1,4 +1,4 @@
-STEP 01 wait 3000
+STEP 01 wait 5000
 URL: https://uk.treated.com/consultation-startup?condition=024&product=024-322&uf=prod
 TITLE: Consultation startup - Treated UK - Choose Better - Medical Experts & Treatments Online
 

@@ -1,0 +1,99 @@
+{
+ "step": {
+  "title": "HL - Depression history",
+  "questions": [
+   {
+    "questionId": "108416",
+    "explanationAvailable": false,
+    "displayText": "<p><b>Some hair loss treatments can affect mood, so we need to understand a bit more about your mental health:</b> </p>\n<p>Please list all the mental health conditions you have, or have had. For each condition, tell us when it started and whether it has resolved, is stable, or has come back or got worse recently.</p>",
+    "type": "TEXT_AREA",
+    "answerRequired": true,
+    "smoothTransition": false,
+    "answerChoices": [
+     {
+      "answerId": "108416$100516",
+      "maxValue": "512",
+      "explanationAvailable": false,
+      "questionId": "108416",
+      "displayText": "",
+      "type": "TEXT_AREA",
+      "selected": false
+     }
+    ]
+   },
+   {
+    "questionId": "108417",
+    "explanationAvailable": false,
+    "displayText": "Who manages your mental health condition(s)? (e.g your GP, a psychiatrist)",
+    "type": "TEXT_AREA",
+    "answerRequired": true,
+    "smoothTransition": false,
+    "answerChoices": [
+     {
+      "answerId": "108417$104255",
+      "maxValue": "280",
+      "explanationAvailable": false,
+      "questionId": "108417",
+      "displayText": "",
+      "type": "TEXT_AREA",
+      "selected": false
+     }
+    ]
+   },
+   {
+    "questionId": "108418",
+    "explanationAvailable": false,
+    "displayText": "List all medication you have taken for your mental health condition(s). Tell us about any that didn't work, and any that were started, increased or changed in the last 12 months because you were feeling worse.",
+    "type": "TEXT_AREA",
+    "answerRequired": true,
+    "smoothTransition": false,
+    "answerChoices": [
+     {
+      "answerId": "108418$100516",
+      "maxValue": "512",
+      "explanationAvailable": false,
+      "questionId": "108418",
+      "displayText": "",
+      "type": "TEXT_AREA",
+      "selected": false
+     }
+    ]
+   },
+   {
+    "questionId": "108419",
+    "explanationAvailable": false,
+    "displayText": "Have any of the following ever happened to you?\n<ul>\n  <li>Symptoms so severe you couldn't work or manage day-to-day life</li>\n  <li>Being admitted to hospital for your mental health</li>\n  <li>Being seen by a crisis team or home treatment team</li>\n</ul>",
+    "type": "SINGLE_CHOICE",
+    "answerRequired": true,
+    "smoothTransition": false,
+    "answerChoices": [
+     {
+      "answerId": "108419$1",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "108419",
+      "displayText": "Yes",
+      "type": "SINGLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "108419$2",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "108419",
+      "displayText": "No",
+      "type": "SINGLE_CHOICE",
+      "selected": false
+     }
+    ]
+   }
+  ],
+  "questionAnswerErrors": {},
+  "summaryRequiredBeforeStep": false,
+  "registrationRequiredBeforeStep": false,
+  "fastSummaryRequiredBeforeStep": false
+ },
+ "explanation": "/api/questionnaire/traversals/10971540/explanations",
+ "previous": "/api/questionnaire/traversals/10971540/steps/previous",
+ "current": "/api/questionnaire/traversals/10971540/steps/current"
+}

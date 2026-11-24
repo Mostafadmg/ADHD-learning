@@ -1,0 +1,12 @@
+
+!!!!! STEP 15 FAILED: click "CHOOSE DUAL TREATMENT"
+nothing visible matches "CHOOSE DUAL TREATMENT"
+
+===== STEP 15 FAILED click "CHOOSE DUAL TREATMENT" =====
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=early_capture&ph=true&_stsgnoredir=1
+TEXT: BACK ⏎ BLACK FRIDAY SALE ⏎ Up to 60% Off ⏎ Plus, FREE Dermaroller ⏎ Enter your email to unlock up to 60% off your personalized hair-growth plan. Plus, Free Dermaroller with any Rx subscription. ⏎ Up to 60% OFF your hair-growth plan ⏎ FREE Premium Dermaroller – our gift to you ⏎ Your personalized treatment plan, ready when you are ⏎ Email Address* ⏎ By checking this box you agree to our Terms, Privacy Policy, Drug Safety, Telehealth Consent, and MDI Telehealth Consent.
+CONTROLS:
+  input:email (1): Enter your email
+  links (5, full list in 15.txt): Terms  ·  Privacy Policy  ·  Drug Safety  ·  Telehealth Consent  ·  MDI Telehealth Consent
+
+[walk] 15 step(s), exit 2, 18 JSON bodies saved -> runs/verify-base-women

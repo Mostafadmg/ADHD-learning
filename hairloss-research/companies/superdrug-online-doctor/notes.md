@@ -216,3 +216,19 @@ Interim results (women, Regaine entry; product-rules reply in each run's `api.js
   `build-company.py` again: it would wipe the stage-2 results. Re-run stage2-patch.py on a fresh stage-1 file if needed.
 - Validator: `node tools/validate.js superdrug-online-doctor --stage rules` passes (0 errors, 0 warnings).
 - Not tested: combinations (e.g. caffeine + fish allergy), men-q1 specialist, pattern B, men skin-condition option, men peanut/other allergies, delivery options.
+
+---
+
+# Stage 3 (VERIFY), 23 Nov 2026: independent check
+
+- Tools: `local-tools/make-verify.py` writes `actions/verify-*.json`; run them with `bash local-tools/run-batch.sh verify-…`
+  (one at a time, results in `runs/verify-*`). `local-tools/stage3-patch.py` applied the changes to company.json (it refuses to run twice).
+  Live product pages saved in `runs/verify-pages` (pages.js). Stage-2 company.json was backed up outside the repo before patching.
+- 21 replays: 3 baselines (all match), 11 rule re-tests (R1, R2, R9, R10, R11 x2, R12, R14, R15, R16, R17: all confirmed),
+  5 men's options never replayed before (specialist, pattern B, skin condition, peanut allergy, other substance: list unchanged; peanut
+  adds a required leaflet-check tick, new R22), 2 women's combinations (new R21: removals add up; minoxidil + fish + caffeine allergy
+  leaves only the phone consultation, no message, no stop).
+- Labelling fixes: 'flag-for-clinician' + 'observed' changed to 'none' (only "no change" was seen; doctor review is inferred). R9 now
+  excludes patterns A/E/none fits. HL40 Regaine/Alpecin prices are on `/hair-loss-treatment.html`, not the consultation page.
+- Validator: `node tools/validate.js superdrug-online-doctor --stage final` passes (0 errors, 0 warnings).
+- Still not tested: delivery options, women 'breastfeeding' (stage 2 only), men 'Other medications' allergy, anything after the wall.

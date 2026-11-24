@@ -59,6 +59,28 @@
   "scout-neither",
   "scout-women-1",
   "scout-women-2",
+  "verify-base-men",
+  "verify-base-women",
+  "verify-m-age-17",
+  "verify-m-al-minoxidil",
+  "verify-m-bp-elevated-reading",
+  "verify-m-gender-nonbinary",
+  "verify-m-gender-woman",
+  "verify-m-group-medical",
+  "verify-m-mcm-heart",
+  "verify-m-mdm-bph",
+  "verify-m-pp-decline",
+  "verify-suhs-explore-0",
+  "verify-w-age-17",
+  "verify-w-entry-promo-drops",
+  "verify-w-gender-man",
+  "verify-w-group-medical",
+  "verify-w-htaf-dontknow",
+  "verify-w-htaf-receding",
+  "verify-w-htp-spiro",
+  "verify-w-mcf-bp",
+  "verify-w-pg-yes",
+  "verify-w-pt-yes",
   "women-a"
  ],
  "runs": {
@@ -2332,6 +2354,863 @@
     "yd"
    ]
   },
+  "verify-base-men": {
+   "sexAtBirth": "Male",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "js",
+    "pds",
+    "pdsc",
+    "mi",
+    "ht",
+    "hs",
+    "ls",
+    "htp",
+    "htam",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "pp",
+    "mdm",
+    "mcm",
+    "al",
+    "rhf",
+    "yna",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "ct",
+    "yd"
+   ]
+  },
+  "verify-base-women": {
+   "sexAtBirth": "Female",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "js",
+    "pds",
+    "pdsc",
+    "ht",
+    "hs",
+    "hw",
+    "hht",
+    "htp",
+    "hdw",
+    "htaf",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "dt",
+    "pg",
+    "mp",
+    "mdf",
+    "mcf",
+    "al",
+    "rhf",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "ct",
+    "yd"
+   ]
+  },
+  "verify-m-age-17": {
+   "sexAtBirth": "Male",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "js",
+    "pds",
+    "pdsc",
+    "mi",
+    "ht",
+    "hs",
+    "ls",
+    "htp",
+    "htam",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "pp",
+    "mdm",
+    "mcm",
+    "al",
+    "rhf",
+    "yna",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "utt"
+   ]
+  },
+  "verify-m-al-minoxidil": {
+   "sexAtBirth": "Male",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "js",
+    "pds",
+    "pdsc",
+    "mi",
+    "ht",
+    "hs",
+    "ls",
+    "htp",
+    "htam",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "pp",
+    "mdm",
+    "mcm",
+    "al",
+    "rhf",
+    "yna",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "ct",
+    "yd"
+   ]
+  },
+  "verify-m-bp-elevated-reading": {
+   "sexAtBirth": "Male",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "js",
+    "pds",
+    "pdsc",
+    "mi",
+    "ht",
+    "hs",
+    "ls",
+    "htp",
+    "htam",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "pp",
+    "mdm",
+    "mcm",
+    "bp",
+    "al",
+    "rhf",
+    "yna",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "ct",
+    "yd"
+   ]
+  },
+  "verify-m-gender-nonbinary": {
+   "sexAtBirth": "Male",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "pds",
+    "pdsc",
+    "mi",
+    "ht",
+    "hs",
+    "ls",
+    "htp",
+    "htam",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "pp",
+    "mdm",
+    "mcm",
+    "al",
+    "rhf",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "ct",
+    "yd"
+   ]
+  },
+  "verify-m-gender-woman": {
+   "sexAtBirth": "Male",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "js",
+    "pds",
+    "pdsc",
+    "mi",
+    "ht",
+    "ls",
+    "htp",
+    "htam",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "pp",
+    "mdm",
+    "mcm",
+    "al",
+    "rhf",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "ct",
+    "yd"
+   ]
+  },
+  "verify-m-group-medical": {
+   "sexAtBirth": "Male",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "pds",
+    "pdsc",
+    "mi",
+    "ht",
+    "hs",
+    "ls",
+    "htp",
+    "htam",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "pp",
+    "mdm",
+    "mcm",
+    "al",
+    "rhf",
+    "yna",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "ct",
+    "yd"
+   ]
+  },
+  "verify-m-mcm-heart": {
+   "sexAtBirth": "Male",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "pds",
+    "pdsc",
+    "mi",
+    "ht",
+    "hs",
+    "ls",
+    "htp",
+    "htam",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "pp",
+    "mdm",
+    "mcm",
+    "al",
+    "rhf",
+    "yna",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "ct",
+    "yd"
+   ]
+  },
+  "verify-m-mdm-bph": {
+   "sexAtBirth": "Male",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "pds",
+    "pdsc",
+    "mi",
+    "ht",
+    "hs",
+    "ls",
+    "htp",
+    "htam",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "pp",
+    "mdm",
+    "mcm",
+    "al",
+    "rhf",
+    "yna",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "ct",
+    "yd"
+   ]
+  },
+  "verify-m-pp-decline": {
+   "sexAtBirth": "Male",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "pds",
+    "pdsc",
+    "mi",
+    "ht",
+    "hs",
+    "ls",
+    "htp",
+    "htam",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "pp",
+    "mdm",
+    "mcm",
+    "al",
+    "rhf",
+    "yna",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "ct",
+    "yd"
+   ]
+  },
+  "verify-suhs-explore-0": {
+   "sexAtBirth": null,
+   "featureTest": {
+    "experiment_id": "718c5979-5810-4946-bda0-b1917c4ab1b0",
+    "version": "control"
+   },
+   "stepOrder": []
+  },
+  "verify-w-age-17": {
+   "sexAtBirth": "Female",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "pds",
+    "pdsc",
+    "ht",
+    "hs",
+    "hw",
+    "hht",
+    "htp",
+    "hdw",
+    "htaf",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "dt",
+    "pg",
+    "mp",
+    "mdf",
+    "mcf",
+    "al",
+    "rhf",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "utt"
+   ]
+  },
+  "verify-w-entry-promo-drops": {
+   "sexAtBirth": "Female",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "js",
+    "pds",
+    "pdsc",
+    "ht",
+    "hs",
+    "hw",
+    "hht",
+    "htp",
+    "hdw",
+    "htaf",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "dt",
+    "pg",
+    "mp",
+    "mdf",
+    "mcf",
+    "al",
+    "rhf",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "ct",
+    "yd"
+   ]
+  },
+  "verify-w-gender-man": {
+   "sexAtBirth": "Female",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "pds",
+    "pdsc",
+    "ht",
+    "hs",
+    "hw",
+    "hht",
+    "htp",
+    "hdw",
+    "htaf",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "dt",
+    "pg",
+    "mp",
+    "mdf",
+    "mcf",
+    "al",
+    "rhf",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "ct",
+    "yd"
+   ]
+  },
+  "verify-w-group-medical": {
+   "sexAtBirth": "Female",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "js",
+    "pds",
+    "pdsc",
+    "ht",
+    "hs",
+    "hw",
+    "hht",
+    "htp",
+    "hdw",
+    "htaf",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "dt",
+    "pg",
+    "mp",
+    "mdf",
+    "mcf",
+    "al",
+    "rhf",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "ct",
+    "yd"
+   ]
+  },
+  "verify-w-htaf-dontknow": {
+   "sexAtBirth": "Female",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "js",
+    "pds",
+    "pdsc",
+    "ht",
+    "hs",
+    "hw",
+    "hht",
+    "htp",
+    "hdw",
+    "htaf",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "dt",
+    "pg",
+    "mp",
+    "mdf",
+    "mcf",
+    "al",
+    "rhf",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "ct",
+    "yd"
+   ]
+  },
+  "verify-w-htaf-receding": {
+   "sexAtBirth": "Female",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "js",
+    "pds",
+    "pdsc",
+    "ht",
+    "hs",
+    "hw",
+    "hht",
+    "htp",
+    "hdw",
+    "htaf",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "dt",
+    "pg",
+    "mp",
+    "mdf",
+    "mcf",
+    "al",
+    "rhf",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "ct",
+    "yd"
+   ]
+  },
+  "verify-w-htp-spiro": {
+   "sexAtBirth": "Female",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "pds",
+    "pdsc",
+    "ht",
+    "hs",
+    "hw",
+    "hht",
+    "htp",
+    "hdw",
+    "htaf",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "dt",
+    "pg",
+    "mp",
+    "mdf",
+    "mcf",
+    "al",
+    "rhf",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "ct",
+    "yd"
+   ]
+  },
+  "verify-w-mcf-bp": {
+   "sexAtBirth": "Female",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "pds",
+    "pdsc",
+    "ht",
+    "hs",
+    "hw",
+    "hht",
+    "htp",
+    "hdw",
+    "htaf",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "dt",
+    "pg",
+    "mp",
+    "mdf",
+    "mcf",
+    "bp",
+    "al",
+    "rhf",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "ct",
+    "yd"
+   ]
+  },
+  "verify-w-pg-yes": {
+   "sexAtBirth": "Female",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "pds",
+    "pdsc",
+    "ht",
+    "hs",
+    "hw",
+    "hht",
+    "htp",
+    "hdw",
+    "htaf",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "dt",
+    "pg",
+    "pgc",
+    "mp",
+    "mdf",
+    "mcf",
+    "al",
+    "rhf",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "ct",
+    "yd"
+   ]
+  },
+  "verify-w-pt-yes": {
+   "sexAtBirth": "Female",
+   "featureTest": {
+    "experiment_id": "c77efccc-deab-436e-b750-ca5ded2a23ed",
+    "version": "control"
+   },
+   "stepOrder": [
+    "tp",
+    "yhg",
+    "pds",
+    "pdsc",
+    "ht",
+    "hs",
+    "hw",
+    "hht",
+    "htp",
+    "hdw",
+    "htaf",
+    "htc",
+    "ar",
+    "st",
+    "sc",
+    "scc",
+    "smt",
+    "pt",
+    "tt",
+    "dt",
+    "pg",
+    "mp",
+    "mdf",
+    "mcf",
+    "al",
+    "rhf",
+    "rha",
+    "di",
+    "rj",
+    "el",
+    "ct",
+    "yd"
+   ]
+  },
   "women-a": {
    "sexAtBirth": "Female",
    "featureTest": {
@@ -2476,6 +3355,27 @@
       "scout-neither",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-men",
+      "verify-base-women",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -2707,6 +3607,90 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -2849,6 +3833,27 @@
       "scout-neither",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-men",
+      "verify-base-women",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -3083,6 +4088,90 @@
      "sexAtBirth": "Female"
     },
     {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
+     "sexAtBirth": "Female"
+    },
+    {
      "run": "women-a",
      "sexAtBirth": "Female"
     }
@@ -3170,7 +4259,17 @@
       "scout-men-1",
       "scout-men-2",
       "scout-men-3",
-      "scout-women-2"
+      "scout-women-2",
+      "verify-base-men",
+      "verify-base-women",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-woman",
+      "verify-w-entry-promo-drops",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding"
      ]
     }
    ],
@@ -3317,6 +4416,46 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
      "sexAtBirth": "Female"
     }
    ]
@@ -3462,6 +4601,19 @@
       "scout-men-2",
       "scout-men-none",
       "scout-women-1",
+      "verify-base-men",
+      "verify-base-women",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline",
+      "verify-w-age-17",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-mcf-bp",
       "women-a"
      ]
     },
@@ -3604,7 +4756,15 @@
       "scout-men-1",
       "scout-men-3",
       "scout-neither",
-      "scout-women-2"
+      "scout-women-2",
+      "verify-m-age-17",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-w-entry-promo-drops",
+      "verify-w-htp-spiro",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes"
      ]
     }
    ],
@@ -3835,6 +4995,90 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -3970,6 +5214,27 @@
       "scout-neither",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-men",
+      "verify-base-women",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -4204,6 +5469,90 @@
      "sexAtBirth": "Female"
     },
     {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
+     "sexAtBirth": "Female"
+    },
+    {
      "run": "women-a",
      "sexAtBirth": "Female"
     }
@@ -4314,7 +5663,17 @@
       "scout-men-2",
       "scout-men-3",
       "scout-men-none",
-      "scout-neither"
+      "scout-neither",
+      "verify-base-men",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline"
      ]
     }
    ],
@@ -4481,6 +5840,46 @@
     },
     {
      "run": "scout-neither",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
      "sexAtBirth": "Male"
     }
    ]
@@ -4600,6 +5999,27 @@
       "scout-neither",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-men",
+      "verify-base-women",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -4831,6 +6251,90 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -4943,6 +6447,26 @@
       "scout-neither",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-men",
+      "verify-base-women",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -5081,6 +6605,86 @@
      "sexAtBirth": "Female"
     },
     {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
+     "sexAtBirth": "Female"
+    },
+    {
      "run": "women-a",
      "sexAtBirth": "Female"
     }
@@ -5186,7 +6790,17 @@
       "scout-men-2",
       "scout-men-3",
       "scout-men-none",
-      "scout-neither"
+      "scout-neither",
+      "verify-base-men",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline"
      ]
     }
    ],
@@ -5353,6 +6967,46 @@
     },
     {
      "run": "scout-neither",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
      "sexAtBirth": "Male"
     }
    ]
@@ -5506,6 +7160,27 @@
       "scout-neither",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-men",
+      "verify-base-women",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -5737,6 +7412,90 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -5867,7 +7626,17 @@
       "scout-men-2",
       "scout-men-3",
       "scout-men-none",
-      "scout-neither"
+      "scout-neither",
+      "verify-base-men",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline"
      ]
     }
    ],
@@ -6034,6 +7803,46 @@
     },
     {
      "run": "scout-neither",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
      "sexAtBirth": "Male"
     }
    ]
@@ -6147,6 +7956,27 @@
       "scout-men-3",
       "scout-neither",
       "scout-women-1",
+      "verify-base-men",
+      "verify-base-women",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -6370,6 +8200,90 @@
     },
     {
      "run": "scout-women-1",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -6483,6 +8397,27 @@
       "scout-neither",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-men",
+      "verify-base-women",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -6717,6 +8652,90 @@
      "sexAtBirth": "Female"
     },
     {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
+     "sexAtBirth": "Female"
+    },
+    {
      "run": "women-a",
      "sexAtBirth": "Female"
     }
@@ -6822,7 +8841,8 @@
       "s2-m-htc-recent",
       "s2-m-mcm-sexdys",
       "s2-m-mdm-antidep",
-      "scout-women-2"
+      "scout-women-2",
+      "verify-m-pp-decline"
      ]
     },
     {
@@ -6978,7 +8998,10 @@
       "s2-w-mp-postpartum",
       "s2-w-sweep-1",
       "scout-men-none",
-      "scout-neither"
+      "scout-neither",
+      "verify-base-men",
+      "verify-m-al-minoxidil",
+      "verify-w-gender-man"
      ]
     },
     {
@@ -7081,6 +9104,7 @@
       "s2-m-yhg-two",
       "s2-w-tt-drops",
       "scout-men-3",
+      "verify-base-women",
       "women-a"
      ]
     },
@@ -7228,7 +9252,16 @@
       "s2-m-scc-infection",
       "s2-w-htaf-allover",
       "s2-w-htaf-eyebrows",
-      "scout-men-1"
+      "scout-men-1",
+      "verify-m-age-17",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-mdm-bph",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes"
      ]
     },
     {
@@ -7334,7 +9367,12 @@
       "s2-m-sweep-1",
       "s2-w-htaf-patches",
       "s2-w-pg-yes",
-      "scout-men-2"
+      "scout-men-2",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-htaf-receding"
      ]
     },
     {
@@ -7433,7 +9471,9 @@
       "s2-m-sweep-3",
       "s2-w-sweep-2",
       "s2-w-sweep-3",
-      "scout-women-1"
+      "scout-women-1",
+      "verify-m-bp-elevated-reading",
+      "verify-w-pt-yes"
      ]
     }
    ],
@@ -7664,6 +9704,90 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -7782,6 +9906,27 @@
       "scout-neither",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-men",
+      "verify-base-women",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -8013,6 +10158,90 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -8149,6 +10378,27 @@
       "scout-neither",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-men",
+      "verify-base-women",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -8380,6 +10630,90 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -8499,6 +10833,27 @@
       "scout-neither",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-men",
+      "verify-base-women",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -8730,6 +11085,90 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -8884,6 +11323,27 @@
       "scout-neither",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-men",
+      "verify-base-women",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -9115,6 +11575,90 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -9248,6 +11792,26 @@
       "scout-men-none",
       "scout-neither",
       "scout-women-1",
+      "verify-base-men",
+      "verify-base-women",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
       "women-a"
      ]
     },
@@ -9323,7 +11887,8 @@
      "runs": [
       "s2-m-pt-yes",
       "scout-men-2",
-      "scout-women-2"
+      "scout-women-2",
+      "verify-w-pt-yes"
      ]
     }
    ],
@@ -9557,6 +12122,90 @@
      "sexAtBirth": "Female"
     },
     {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
+     "sexAtBirth": "Female"
+    },
+    {
      "run": "women-a",
      "sexAtBirth": "Female"
     }
@@ -9659,7 +12308,17 @@
       "scout-men-2",
       "scout-men-3",
       "scout-men-none",
-      "scout-neither"
+      "scout-neither",
+      "verify-base-men",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline"
      ]
     }
    ],
@@ -9826,6 +12485,46 @@
     },
     {
      "run": "scout-neither",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
      "sexAtBirth": "Male"
     }
    ]
@@ -9961,7 +12660,17 @@
       "scout-men-2",
       "scout-men-3",
       "scout-men-none",
-      "scout-neither"
+      "scout-neither",
+      "verify-base-men",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline"
      ]
     }
    ],
@@ -10128,6 +12837,46 @@
     },
     {
      "run": "scout-neither",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
      "sexAtBirth": "Male"
     }
    ]
@@ -10259,7 +13008,17 @@
       "scout-men-2",
       "scout-men-3",
       "scout-men-none",
-      "scout-neither"
+      "scout-neither",
+      "verify-base-men",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline"
      ]
     }
    ],
@@ -10426,6 +13185,46 @@
     },
     {
      "run": "scout-neither",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
      "sexAtBirth": "Male"
     }
    ]
@@ -10596,6 +13395,27 @@
       "scout-neither",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-men",
+      "verify-base-women",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -10830,6 +13650,90 @@
      "sexAtBirth": "Female"
     },
     {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
+     "sexAtBirth": "Female"
+    },
+    {
      "run": "women-a",
      "sexAtBirth": "Female"
     }
@@ -10903,7 +13807,16 @@
       "scout-men-2",
       "scout-men-3",
       "scout-neither",
-      "scout-women-1"
+      "scout-women-1",
+      "verify-base-women",
+      "verify-m-al-minoxidil",
+      "verify-m-gender-woman",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-w-gender-man",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes"
      ]
     },
     {
@@ -11013,6 +13926,18 @@
       "scout-men-1",
       "scout-men-none",
       "scout-women-2",
+      "verify-base-men",
+      "verify-m-age-17",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-group-medical",
+      "verify-m-pp-decline",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -11247,6 +14172,90 @@
      "sexAtBirth": "Female"
     },
     {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
+     "sexAtBirth": "Female"
+    },
+    {
      "run": "women-a",
      "sexAtBirth": "Female"
     }
@@ -11323,7 +14332,14 @@
       "s2-m-tile-women",
       "s2-m-yhg-two",
       "scout-men-1",
-      "scout-men-none"
+      "scout-men-none",
+      "verify-base-men",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline"
      ]
     },
     {
@@ -11396,7 +14412,8 @@
       "s2-m-sweep-1",
       "s2-m-tt-drops",
       "scout-men-2",
-      "scout-men-3"
+      "scout-men-3",
+      "verify-m-age-17"
      ]
     }
    ],
@@ -11548,6 +14565,38 @@
     {
      "run": "scout-men-none",
      "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
     }
    ]
   },
@@ -11619,7 +14668,16 @@
       "scout-men-2",
       "scout-men-3",
       "scout-neither",
-      "scout-women-1"
+      "scout-women-1",
+      "verify-base-women",
+      "verify-m-al-minoxidil",
+      "verify-m-gender-woman",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-w-gender-man",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes"
      ]
     },
     {
@@ -11729,6 +14787,18 @@
       "scout-men-1",
       "scout-men-none",
       "scout-women-2",
+      "verify-base-men",
+      "verify-m-age-17",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-group-medical",
+      "verify-m-pp-decline",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -11960,6 +15030,90 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -12043,6 +15197,15 @@
       "scout-neither",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-men",
+      "verify-m-age-17",
+      "verify-m-bp-elevated-reading",
+      "verify-m-group-medical",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline",
+      "verify-w-gender-man",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
       "women-a"
      ]
     },
@@ -12119,7 +15282,19 @@
       "s2-w-sweep-3",
       "scout-men-2",
       "scout-men-3",
-      "scout-men-none"
+      "scout-men-none",
+      "verify-base-women",
+      "verify-m-al-minoxidil",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-mcm-heart",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-group-medical",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes"
      ]
     }
    ],
@@ -12350,6 +15525,90 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -12457,6 +15716,27 @@
       "scout-neither",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-men",
+      "verify-base-women",
+      "verify-m-age-17",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -12688,6 +15968,90 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -12784,6 +16148,19 @@
       "scout-neither",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-men",
+      "verify-m-age-17",
+      "verify-m-gender-nonbinary",
+      "verify-m-group-medical",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     },
@@ -12859,7 +16236,15 @@
       "s2-w-pg-yes",
       "s2-w-sweep-1",
       "s2-w-tt-drops",
-      "scout-men-2"
+      "scout-men-2",
+      "verify-base-women",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-woman",
+      "verify-m-mcm-heart",
+      "verify-w-group-medical",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp"
      ]
     }
    ],
@@ -13090,6 +16475,90 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -13234,6 +16703,16 @@
       "scout-men-2",
       "scout-men-3",
       "scout-women-2",
+      "verify-base-women",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-mcm-heart",
+      "verify-m-pp-decline",
+      "verify-w-entry-promo-drops",
+      "verify-w-group-medical",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     },
@@ -13379,7 +16858,16 @@
       "s2-w-sweep-2",
       "s2-w-sweep-3",
       "scout-men-none",
-      "scout-neither"
+      "scout-neither",
+      "verify-base-men",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-group-medical",
+      "verify-m-mdm-bph",
+      "verify-w-gender-man",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro"
      ]
     }
    ],
@@ -13602,6 +17090,82 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -13744,6 +17308,25 @@
       "scout-men-none",
       "scout-neither",
       "scout-women-2",
+      "verify-base-men",
+      "verify-base-women",
+      "verify-m-al-minoxidil",
+      "verify-m-bp-elevated-reading",
+      "verify-m-gender-nonbinary",
+      "verify-m-gender-woman",
+      "verify-m-group-medical",
+      "verify-m-mcm-heart",
+      "verify-m-mdm-bph",
+      "verify-m-pp-decline",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -13970,6 +17553,82 @@
      "sexAtBirth": "Female"
     },
     {
+     "run": "verify-base-men",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-al-minoxidil",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-nonbinary",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-gender-woman",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-group-medical",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mcm-heart",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-mdm-bph",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-m-pp-decline",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
+     "sexAtBirth": "Female"
+    },
+    {
      "run": "women-a",
      "sexAtBirth": "Female"
     }
@@ -14045,6 +17704,17 @@
       "s2-w-tt-drops",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-women",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -14112,6 +17782,50 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -14199,6 +17913,17 @@
       "s2-w-tt-drops",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-women",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -14266,6 +17991,50 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -14344,7 +18113,12 @@
       "s2-w-sweep-1",
       "s2-w-sweep-3",
       "s2-w-tt-drops",
-      "scout-women-2"
+      "scout-women-2",
+      "verify-w-group-medical",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes"
      ]
     },
     {
@@ -14414,6 +18188,12 @@
       "s2-w-mp-postpartum",
       "s2-w-sweep-2",
       "scout-women-1",
+      "verify-base-women",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
       "women-a"
      ]
     }
@@ -14481,6 +18261,50 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -14591,6 +18415,17 @@
       "s2-w-tt-drops",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-women",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -14658,6 +18493,50 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -14730,6 +18609,17 @@
       "s2-w-tt-drops",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-women",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -14797,6 +18687,50 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -14888,6 +18822,17 @@
       "s2-w-tt-drops",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-women",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -14955,6 +18900,50 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -15030,6 +19019,17 @@
       "s2-w-tt-drops",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-women",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -15097,6 +19097,50 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -15200,6 +19244,17 @@
       "s2-w-tt-drops",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-women",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -15267,6 +19322,50 @@
     },
     {
      "run": "scout-women-2",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
      "sexAtBirth": "Female"
     },
     {
@@ -15358,6 +19457,17 @@
       "s2-w-tt-drops",
       "scout-women-1",
       "scout-women-2",
+      "verify-base-women",
+      "verify-w-age-17",
+      "verify-w-entry-promo-drops",
+      "verify-w-gender-man",
+      "verify-w-group-medical",
+      "verify-w-htaf-dontknow",
+      "verify-w-htaf-receding",
+      "verify-w-htp-spiro",
+      "verify-w-mcf-bp",
+      "verify-w-pg-yes",
+      "verify-w-pt-yes",
       "women-a"
      ]
     }
@@ -15428,6 +19538,50 @@
      "sexAtBirth": "Female"
     },
     {
+     "run": "verify-base-women",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-age-17",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-entry-promo-drops",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-gender-man",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-group-medical",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-dontknow",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htaf-receding",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-htp-spiro",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pt-yes",
+     "sexAtBirth": "Female"
+    },
+    {
      "run": "women-a",
      "sexAtBirth": "Female"
     }
@@ -15479,7 +19633,9 @@
      },
      "runs": [
       "s2-m-age-17",
-      "scout-women-1"
+      "scout-women-1",
+      "verify-m-age-17",
+      "verify-w-age-17"
      ]
     }
    ],
@@ -15490,6 +19646,14 @@
     },
     {
      "run": "scout-women-1",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-age-17",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-age-17",
      "sexAtBirth": "Female"
     }
    ]
@@ -15559,7 +19723,9 @@
       "s2-m-mcm-bp-elevated",
       "s2-m-mcm-bp",
       "scout-men-3",
-      "scout-women-1"
+      "scout-women-1",
+      "verify-m-bp-elevated-reading",
+      "verify-w-mcf-bp"
      ]
     }
    ],
@@ -15578,6 +19744,14 @@
     },
     {
      "run": "scout-women-1",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "sexAtBirth": "Male"
+    },
+    {
+     "run": "verify-w-mcf-bp",
      "sexAtBirth": "Female"
     }
    ]
@@ -15919,7 +20093,8 @@
      },
      "runs": [
       "s2-w-pg-yes",
-      "scout-women-1"
+      "scout-women-1",
+      "verify-w-pg-yes"
      ]
     }
    ],
@@ -15930,6 +20105,10 @@
     },
     {
      "run": "scout-women-1",
+     "sexAtBirth": "Female"
+    },
+    {
+     "run": "verify-w-pg-yes",
      "sexAtBirth": "Female"
     }
    ]
@@ -18795,6 +22974,32 @@
        "value": true
       }
      ]
+    },
+    {
+     "run": "verify-m-age-17",
+     "posted": [
+      {
+       "questionId": 3053,
+       "value": "2008-12-15"
+      },
+      {
+       "questionId": 2007,
+       "value": true
+      }
+     ]
+    },
+    {
+     "run": "verify-w-age-17",
+     "posted": [
+      {
+       "questionId": 3053,
+       "value": "2008-12-15"
+      },
+      {
+       "questionId": 2007,
+       "value": true
+      }
+     ]
     }
    ]
   },
@@ -18838,6 +23043,17 @@
         "9",
         "10",
         "11"
+       ]
+      }
+     ]
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "posted": [
+      {
+       "questionId": 4453,
+       "value": [
+        "15"
        ]
       }
      ]
@@ -18885,6 +23101,28 @@
       {
        "questionId": 4420,
        "value": "Often elevated"
+      }
+     ]
+    },
+    {
+     "run": "verify-m-bp-elevated-reading",
+     "posted": [
+      {
+       "questionId": 4420,
+       "value": "Often elevated"
+      },
+      {
+       "questionId": 4421,
+       "value": "180/110"
+      }
+     ]
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "posted": [
+      {
+       "questionId": 4420,
+       "value": "Well-controlled"
       }
      ]
     }
@@ -19057,6 +23295,15 @@
        "value": "true"
       }
      ]
+    },
+    {
+     "run": "verify-w-pg-yes",
+     "posted": [
+      {
+       "questionId": 3046,
+       "value": "true"
+      }
+     ]
     }
    ]
   },
@@ -19075,6 +23322,15 @@
     },
     {
      "run": "scout-women-1",
+     "posted": [
+      {
+       "questionId": 3049,
+       "value": true
+      }
+     ]
+    },
+    {
+     "run": "verify-w-pg-yes",
      "posted": [
       {
        "questionId": 3049,
@@ -19111,6 +23367,17 @@
        "value": [
         "15",
         "25"
+       ]
+      }
+     ]
+    },
+    {
+     "run": "verify-w-mcf-bp",
+     "posted": [
+      {
+       "questionId": 4504,
+       "value": [
+        "15"
        ]
       }
      ]

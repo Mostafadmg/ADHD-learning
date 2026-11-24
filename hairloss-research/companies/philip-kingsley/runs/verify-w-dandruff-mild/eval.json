@@ -1,0 +1,28 @@
+{
+ "quizId": "women_quiz",
+ "step": "women_quiz_step_user",
+ "url": "/quiz/step/view/stepId/women_quiz_step_user",
+ "skus": [
+  "PHI1749",
+  "PHI1688"
+ ],
+ "ruleCount": 41,
+ "rulesLen": 196018,
+ "answers": {
+  "q1": "No",
+  "q2": "No",
+  "q3c": "People close to me can notice it",
+  "q3a": "Seeing more of my scalp or wider parting",
+  "q4": "It's been happening gradually for over a year",
+  "q5b": "Mild",
+  "q5a": "Dandruff",
+  "q6": "Healthy",
+  "q7": "Medium",
+  "q8": "Medium (shoulder length)",
+  "q9": "None of the above",
+  "q10a": "No",
+  "q11a": "I have no allergies",
+  "q12a": "No, I do not have a medical condition and am not taking any medication"
+ },
+ "heading": "YOUR DETAILS"
+}

@@ -1,0 +1,22 @@
+{
+ "quizId": "scalp_quiz",
+ "step": "scalp_quiz_step_user",
+ "url": "/quiz/step/view/stepId/scalp_quiz_step_user",
+ "skus": [
+  "PHI1619",
+  "PHI1635"
+ ],
+ "noResultsTemplate": null,
+ "answers": {
+  "q1": "Yes",
+  "q2": "Seborrhoeic Dermatitis",
+  "q3": "Mild to Moderate Dandruff",
+  "q4": "Healthy",
+  "q5": "No",
+  "q6": "None of the above",
+  "q7": "Medium, can be wavy",
+  "q8": "Medium (shoulder length)",
+  "q9": "Healthy",
+  "q10a": "No, I don't have any allergies"
+ }
+}

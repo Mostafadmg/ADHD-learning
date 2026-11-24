@@ -1,0 +1,10 @@
+
+===== FINAL (after 16 steps) =====
+URL: https://start.treated.com/GBR/en/#/questionnaire
+TEXT: Question 8 of 11 ⏎ Do you have or have you ever had any of the following? ⏎ (Select all that apply.) ⏎ Diabetes ⏎ Heart problems or angina ⏎ High blood pressure ⏎ Stroke ⏎ Liver or kidney problems ⏎ A tumour of the adrenal gland ⏎ Enlarged prostate ⏎ Prostate cancer ⏎ Mental illness (including depression, anxiety, suicidal thoughts) ⏎ Finasteride and mental illness ⏎ Finasteride may not be suitable for men with a history of depression or mood changes. We recommend that you speak to your usual doctor or dermatologist about the safest treatment for you. ⏎ Lump in the breast or breast cancer ⏎ None of the above ⏎ Continue
+CONTROLS:
+  checkbox (11): Diabetes  ·  Heart problems or angina  ·  High blood pressure  ·  Stroke  ·  Liver or kidney problems  ·  A tumour of the adrenal gland  ·  Enlarged prostate  ·  Prostate cancer  ·  Mental illness (including depression, anxiety, suicidal thoughts) [checked]  ·  Lump in the breast or breast cancer  ·  None of the above
+  button (1): Continue [disabled]
+  links: 
+
+[walk] 16 step(s), exit 0, 7 JSON bodies saved -> runs/verify-mental

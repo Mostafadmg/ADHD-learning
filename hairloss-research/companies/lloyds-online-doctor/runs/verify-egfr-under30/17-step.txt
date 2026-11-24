@@ -1,0 +1,14 @@
+URL: https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+
+Exit consultation
+Medical history
+
+What was your most recent eGFR result within the past 12 months?
+
+This is a blood test that tells you how well your kidneys are working.
+
+Less than 30
+More than 30
+I haven't had an eGFR test in the past year
+I don't know
+Back

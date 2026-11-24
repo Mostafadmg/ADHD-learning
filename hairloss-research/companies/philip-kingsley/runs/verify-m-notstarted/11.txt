@@ -1,0 +1,18 @@
+STEP 11 click ".pk-quiz-control[data-quiz-question=\"q4\"][data-quiz-selection=\"It's not started yet\"]"
+URL: https://hairloss.philipkingsley.co.uk/quiz/step/view/stepId/men_quiz_step5
+TITLE: 
+
+--- VISIBLE TEXT ---
+QUESTION #5
+DO YOU HAVE ANY FAMILY HISTORY OF EARLY (BEFORE THE AGE OF 30) MALE PATTERN HAIR LOSS OR THINNING?
+SELECT ONE
+YES
+NO
+DON'T KNOW
+BACK
+
+--- CONTROLS ---
+  button (1): BACK
+
+--- LINKS ---
+  link (4): SIGN IN -> https://hairloss.philipkingsley.co.uk/customer/account/  ·  TERMS OF SALE -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-of-sale  ·  TERMS & CONDITIONS -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-conditions  ·  PRIVACY POLICY -> https://hairloss.philipkingsley.co.uk/hair-loss-privacy-policy

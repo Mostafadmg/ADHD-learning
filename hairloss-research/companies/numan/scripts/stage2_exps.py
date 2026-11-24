@@ -28,4 +28,13 @@ E = [
  ('x2-21-fin-entry-alfin', 'men-product-entry', "entry link /subscribe/hair-loss/finasteride (no promo code) + finasteride allergy", "hasAllergyToFinasteride=true. Finasteride is STILL featured ('Most effective', £28.00); others: Extra Strength Spray £30.00, Regaine £65.00, Rosemary Oil £23.33. The entry product escapes the allergy filter."),
  ('x2-22-age-65', 'men', "age: '18 - 65' → '65 or over'; confirmation = Yes", "Adds sixty_five_and_over_confirmation. " + SAME + " (The API variants say ages 19-65, but nothing is hidden.)"),
  ('x2-24-pat-other', 'men', "pattern: 'Temples and Crown' → 'Other hair loss pattern' (text answered neutrally)", "Adds clarify_other_hair_loss_pattern. " + SAME),
+ ('x2-23-hist-yes', 'men', "medical history: 'I do not have…' → 'I have a major illness…' (two text boxes answered with mild hay fever and an antihistamine)", "Adds tell_us_about_medical_history and tell_us_about_medication_history (10 questions). " + SAME + " Free text is read by a clinician later, not by the quiz."),
+ ('x2-25-onset-sudden', 'men', "onset: gradual → 'Over the last few days or weeks'", "Stop screen 'No suitable treatment' (…/sq/when_did_you_notice/reject/sudden): not designed for sudden hair loss, see your GP, or email clinic@numan.com; buttons 'Review your answers' and 'Back to homepage'."),
+ ('x2-26-pat-patchy', 'men', "pattern: 'Temples and Crown' → 'Patchy'", "Stop screen 'No suitable treatment' (…/reject/patchy): circular patches may suggest a form of alopecia, see your GP."),
+ ('x2-27-imp-se', 'men', "most important: 'Effectiveness' → 'Minimal side effects'", SAME),
+ ('x2-28-imp-scalp', 'men', "most important: 'Effectiveness' → 'Scalp-friendly options'", SAME),
+ ('x2-29-pat-extensive', 'men', "pattern: 'Temples and Crown' → 'Extensive'", SAME + " No extra question."),
+ ('x2-30-c-bp-yes', 'men', "cautions: → high or low blood pressure; follow-up = 'I understand… and would like to be considered for minoxidil.'", "isMinoxidilEligible=false even though he asked to be considered. " + MIN_GONE + " So ticking blood pressure removes minoxidil whatever the follow-up answer."),
+ ('x2-31-c-psa-yes', 'men', "cautions: → PSA/prostate cancer; follow-up = 'I understand and would like to be considered for finasteride…'", "Adds clarify_psa. " + SAME),
+ ('x2-32-patchy-review', 'men', "pattern: 'Patchy' (stop screen), then 'Review your answers' and change to 'Temples and Crown' in the same draft", "The stop is soft: 'Review your answers' returns to the pattern question; after changing the answer the walk continues normally to the full baseline offer (three-part kit featured, all eight products). The draft id did not change."),
 ]

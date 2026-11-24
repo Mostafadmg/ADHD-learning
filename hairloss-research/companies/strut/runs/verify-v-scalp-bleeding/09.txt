@@ -1,0 +1,31 @@
+STEP 09 click "Bleeding"
+URL: https://start.struthealth.com/flow/6aa3d578f415d1603a6e0c85
+TITLE: Minoxidil Prod
+
+--- VISIBLE TEXT ---
+22%
+
+Have you noticed any scalp symptoms? Select all that apply.
+
+Itching, pain, burning, or lesions
+Dry skin or dandruff
+Rash
+Bleeding
+Sudden hair loss
+None of the above
+Continue
+1
+2.5 mg · 90 Day Supply
+$65.00
+2.5 mg · 90 Day Supply
+$65.00
+Dose: 90 Day Supply - 2.5 mg
+Supply: 90 Day Supply
+Total
+$65.00
+
+--- CONTROLS ---
+  button (9): Go back  ·  Itching, pain, burning, or lesions [false]  ·  Dry skin or dandruff [false]  ·  Rash [false]  ·  Bleeding [true]  ·  Sudden hair loss [false]  ·  None of the above [false]  ·  Continue  ·  1 2.5 mg · 90 Day Supply $65.00
+
+--- LINKS ---
+

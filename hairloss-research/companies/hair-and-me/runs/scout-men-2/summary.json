@@ -5,7 +5,8 @@
  "changedStep": null,
  "baselinesPooled": [
   "baseline-men",
-  "s2-base-men-1"
+  "s2-base-men-1",
+  "verify-base-men"
  ],
  "stepOrder": [
   "tp",
@@ -53,7 +54,8 @@
    "alsoIn": [],
    "alsoInRelated": [
     "s2-m-pt-yes",
-    "scout-women-2"
+    "scout-women-2",
+    "verify-w-pt-yes"
    ],
    "where": "changed-step"
   }

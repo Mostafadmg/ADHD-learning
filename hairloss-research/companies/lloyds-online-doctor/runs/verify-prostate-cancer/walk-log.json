@@ -1,0 +1,231 @@
+[
+ {
+  "n": 3,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nYour details\nWhat was your sex at birth?\nMale\nFemale\nNext",
+  "sig": "100013",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "100013",
+    "type": "SINGLE_CHOICE",
+    "title": "Your details",
+    "text": "What was your sex at birth?",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "Male",
+     "Female"
+    ],
+    "optionIds": [
+     "100013$88",
+     "100013$89"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "100013": "Male"
+  }
+ },
+ {
+  "n": 4,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nYour details\nWhat is your date of birth?\nFor example: 31 3 1980\nDay\nMonth\nYear\nNext\nBack",
+  "sig": "100014",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "100014",
+    "type": "DATE_OF_BIRTH",
+    "title": "Your details",
+    "text": "What is your date of birth?",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "For example: 31 3 1980"
+    ],
+    "optionIds": [
+     "100014$100011"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "100014": {
+    "dob": [
+     15,
+     6,
+     1994
+    ]
+   }
+  }
+ },
+ {
+  "n": 5,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nLearn more about male pattern hair loss\n\nFind out what causes it, and which treatments may help slow it down or help hair grow back.\n\nTell me more\nSkip, I already know\nBack",
+  "sig": "107977",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "107977",
+    "type": "SINGLE_CHOICE",
+    "title": "Learn more about male pattern hair loss",
+    "text": "Find out what causes it, and which treatments may help slow it down or help hair grow back.",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "Tell me more",
+     "Skip, I already know"
+    ],
+    "optionIds": [
+     "107977$105187",
+     "107977$105188"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "107977": "Tell me more"
+  }
+ },
+ {
+  "n": 6,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nWhat causes hair loss?\n\nMale pattern hair loss is caused by a combination of genetics and sensitivity to DHT (dihydrotestosterone), a hormone made from testosterone.\n\nIn people who are susceptible, DHT gradually causes affected hair follicles to shrink and shortens the hair growth phase. New hairs become finer and shorter and may eventually stop growing in some areas of the scalp.\n\nTreatments can help slow further hair loss and may support regrowth. Options include finasteride and minoxidil, which work in different ways.\n\nNext\nBack",
+  "sig": "107978",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "107978",
+    "type": "MESSAGE",
+    "title": "What causes hair loss?",
+    "text": "Male pattern hair loss is caused by a combination of genetics and sensitivity to DHT (dihydrotestosterone) , a hormone made from testosterone. In people who are susceptible, DHT gradually causes affected hair follicles to shrink and shortens the hair growth phase. New hairs become finer and shorter and may eventually stop growing in some areas of the scalp. Treatments can help slow further hair loss and may support regrowth. Options include finasteride and minoxidil , which work in different ways.",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [],
+    "optionIds": [],
+    "cards": []
+   }
+  ]
+ },
+ {
+  "n": 7,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nHow does finasteride work?\n\nFinasteride reduces DHT by blocking an enzyme that converts testosterone into DHT.\n\nLowering DHT can slow the shrinking of affected hair follicles. When taken consistently, finasteride can slow hair loss and may support regrowth in some men.\n\nNext\nBack",
+  "sig": "107979",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "107979",
+    "type": "MESSAGE",
+    "title": "How does finasteride work?",
+    "text": "Finasteride reduces DHT by blocking an enzyme that converts testosterone into DHT. Lowering DHT can slow the shrinking of affected hair follicles. When taken consistently, finasteride can slow hair loss and may support regrowth in some men.",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [],
+    "optionIds": [],
+    "cards": []
+   }
+  ]
+ },
+ {
+  "n": 8,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nHow does minoxidil work?\n\nMinoxidil increases blood flow and nutrients to hair roots.\n\nUsed regularly, it can help hair grow back thicker over time. It usually takes a few months to notice a difference.\n\nSome men use finasteride and minoxidil together. Complete your assessment to find out what's right for you.\n\nNext\nBack",
+  "sig": "107980",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "107980",
+    "type": "MESSAGE",
+    "title": "How does minoxidil work?",
+    "text": "Minoxidil increases blood flow and nutrients to hair roots. Used regularly, it can help hair grow back thicker over time. It usually takes a few months to notice a difference. Some men use finasteride and minoxidil together. Complete your assessment to find out what's right for you.",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [],
+    "optionIds": [],
+    "cards": []
+   }
+  ]
+ },
+ {
+  "n": 9,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nYour hair loss\nPlease select which of the images below best represents your hair loss\nTemples only\nTemples and Crown\nModerate\nExtensive\nComplete\nRandom patches\nNext\nBack",
+  "sig": "103257",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "103257",
+    "type": "IMAGE_SINGLE_CHOICE",
+    "title": "Your hair loss",
+    "text": "Please select which of the images below best represents your hair loss",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "Temples only",
+     "Temples and Crown",
+     "Moderate",
+     "Extensive",
+     "Complete",
+     "Random patches"
+    ],
+    "optionIds": [
+     "103257$102140",
+     "103257$102141",
+     "103257$102142",
+     "103257$102143",
+     "103257$102144",
+     "103257$102145"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "103257": "Temples and Crown"
+  }
+ },
+ {
+  "n": 10,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "noStep": true,
+  "text": "Exit consultation\nYour hair loss\nPlease select which of the images below best represents your hair loss\nTemples only\nTemples and Crown\nModerate\nExtensive\nComplete\nRandom patches\nBack"
+ }
+]

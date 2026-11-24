@@ -5,7 +5,8 @@
  "changedStep": "htam",
  "baselinesPooled": [
   "baseline-men",
-  "s2-base-men-1"
+  "s2-base-men-1",
+  "verify-base-men"
  ],
  "stepOrder": [
   "tp",
@@ -63,66 +64,6 @@
    "alsoIn": []
   },
   {
-   "step": "st",
-   "key": "q9346.options",
-   "where": "after-change",
-   "alsoIn": [
-    "entry-promo-caps-men",
-    "s2-base-women-1",
-    "s2-m-age-17"
-   ]
-  },
-  {
-   "step": "st",
-   "key": "q9346.type",
-   "where": "after-change",
-   "alsoIn": [
-    "entry-promo-caps-men",
-    "s2-base-women-1",
-    "s2-m-age-17"
-   ]
-  },
-  {
-   "step": "st",
-   "key": "q9348.options",
-   "where": "after-change",
-   "alsoIn": [
-    "entry-promo-caps-men",
-    "s2-base-women-1",
-    "s2-m-age-17"
-   ]
-  },
-  {
-   "step": "st",
-   "key": "q9348.type",
-   "where": "after-change",
-   "alsoIn": [
-    "entry-promo-caps-men",
-    "s2-base-women-1",
-    "s2-m-age-17"
-   ]
-  },
-  {
-   "step": "st",
-   "key": "q9349.config",
-   "where": "after-change",
-   "alsoIn": [
-    "entry-promo-caps-men",
-    "s2-base-women-1",
-    "s2-m-age-17"
-   ]
-  },
-  {
-   "step": "st",
-   "key": "q9349.type",
-   "where": "after-change",
-   "alsoIn": [
-    "entry-promo-caps-men",
-    "s2-base-women-1",
-    "s2-m-age-17"
-   ]
-  },
-  {
    "step": "ct",
    "key": "q180026.config",
    "where": "after-change",
@@ -130,16 +71,6 @@
     "s2-base-women-1",
     "s2-m-age-85",
     "s2-m-al-finasteride"
-   ]
-  },
-  {
-   "step": "ct",
-   "key": "title",
-   "where": "after-change",
-   "alsoIn": [
-    "baseline-women",
-    "entry-promo-caps-men",
-    "s2-m-age-18"
    ]
   }
  ],

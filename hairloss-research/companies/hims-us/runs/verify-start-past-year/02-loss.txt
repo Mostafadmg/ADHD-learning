@@ -1,0 +1,31 @@
+STEP 02
+URL: https://www.hims.com/g/i/hl/loss
+SERVER NODE: loss (nodeModularScreen), step value 6
+
+--- VISIBLE TEXT ---
+How much hair have you lost?
+A lot
+It’s obvious to everyone
+Some
+Those close to me notice
+A little
+Only I notice
+Continue
+Already have an account? Sign In
+
+--- CHOICES ---
+[radio] A lot It’s obvious to everyone
+[radio] Some Those close to me notice
+[radio] A little Only I notice
+
+--- BUTTONS ---
+Continue
+
+--- FIELDS ---
+
+
+--- LINKS ---
+Already have an account? Sign In -> /c/hl?skipToSignIn=true&goFlow=true&flowId=hl&sessionId=c0637c1a-e359-43b0-8a2d-9f39e8cbc80e
+
+--- OUTPUT SCHEMA (server) ---
+{"type":"object","required":["responses"],"properties":{"responses":{"type":"object","required":["i-hl-hims-hair-loss"],"properties":{"i-hl-hims-hair-loss":{"type":"object","required":["i-hl-hims-hair-loss"],"properties":{"i-hl-hims-hair-loss":{"enum":["i-hl-hims-hair-loss-lot","i-hl-hims-hair-loss-some","i-hl-hims-hair-loss-little"],"type":"string"}},"additionalProperties":false}},"additionalProperties":false}}}

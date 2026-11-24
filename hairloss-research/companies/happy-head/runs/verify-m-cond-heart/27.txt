@@ -1,0 +1,15 @@
+STEP 27 fill "textarea:visible, input[type=text]:visible" = "High blood pressure, treated"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Please provide additional details on your diagnoses and treatments
+Include whether your condition is well controlled, date of last check-up, and if your PCP or other specialist has given you any restrictions based on your conditions.
+NEXT
+
+--- CONTROLS ---
+  textarea (1): Please share details here.
+
+--- LINKS ---
+

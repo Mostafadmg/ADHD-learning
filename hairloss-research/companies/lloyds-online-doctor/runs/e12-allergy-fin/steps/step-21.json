@@ -1,0 +1,35 @@
+{
+ "step": {
+  "title": "HL",
+  "questions": [
+   {
+    "questionId": "108405",
+    "explanationAvailable": true,
+    "displayText": "<p>As you have allergies, you must check the list of ingredients of any medication prescribed to you before taking it.</p>\n<p>It's important to be sure you're not allergic to any of the ingredients as these can be different depending on the manufacturer of the medicine. </p>\n<p>The leaflet that comes with your medicine will have a list of ingredients.</p>",
+    "type": "MULTIPLE_CHOICE",
+    "answerRequired": true,
+    "smoothTransition": false,
+    "answerChoices": [
+     {
+      "answerId": "108405$100618",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "108405",
+      "displayText": "I understand",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false
+     }
+    ],
+    "explanationHref": "/api/questionnaire/traversals/10926625/explanations/108405",
+    "titleOverride": "Medical history"
+   }
+  ],
+  "questionAnswerErrors": {},
+  "summaryRequiredBeforeStep": false,
+  "registrationRequiredBeforeStep": false,
+  "fastSummaryRequiredBeforeStep": false
+ },
+ "explanation": "/api/questionnaire/traversals/10926625/explanations",
+ "previous": "/api/questionnaire/traversals/10926625/steps/previous",
+ "current": "/api/questionnaire/traversals/10926625/steps/current"
+}

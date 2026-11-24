@@ -1,0 +1,12 @@
+STEP 01 wait 8000
+URL: https://www.hims.com/c/hl/goals
+TITLE: 
+
+--- VISIBLE TEXT ---
+
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

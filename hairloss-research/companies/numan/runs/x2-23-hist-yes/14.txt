@@ -1,0 +1,19 @@
+STEP 14 click "label:text-is(\"I have a major illness, ongoing medical condition, operation, allergy to medication or take prescribed or over the counter medication to tell you about.\")"
+URL: https://www.numan.com/subscribe/hair-loss/fb569a8e-7e30-4dce-9824-75fa0375ecc0/sq/tell_us_about_medical_history
+TITLE: Please tell us about your major illness, ongoing medical condition, allergy, or operation you've had. This information is needed so that our clinicians can ensure the prescription is safe for you to take. | Numan
+
+--- VISIBLE TEXT ---
+93%
+Please tell us about your major illness, ongoing medical condition, allergy, or operation you've had.
+
+This information is needed so that our clinicians can ensure the prescription is safe for you to take.
+​
+Back
+Next
+
+--- CONTROLS ---
+  textarea (1): tell_us_about_medical_history
+  button (2): Back  ·  Next
+
+--- LINKS ---
+  link (1): Visit the main page -> /

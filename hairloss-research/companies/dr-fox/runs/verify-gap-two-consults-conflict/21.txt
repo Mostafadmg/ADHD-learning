@@ -1,0 +1,66 @@
+STEP 21 click "input[type=radio]"
+URL: https://www.doctorfox.co.uk/order/choose
+TITLE: Choose treatment - Dr Fox
+
+--- VISIBLE TEXT ---
+Male pattern hair loss
+Answer medical questions
+Choose treatment
+Complete order
+Choose treatment required
+	Treatment	Qty	Price
+Dr Fox Hair Growth Spray - finasteride 0.3% & minoxidil 5%
+	
+Dr Fox Hair Growth Spray
+1 x 60ml spray (2 months) - UK mainland only
+£26.00
+
+	
+Dr Fox Hair Growth Spray
+2 x 60ml sprays (4 months) - UK mainland only
+£48.50
+
+	
+Dr Fox Hair Growth Spray
+3 x 60ml sprays (6 months) - UK mainland only
+£72.00
+
+Confirm items
+ 
+Medicine cost:	£26.00
+Prescription fee:	£0.00
+
+Next: Confirm order, enter your details and pay
+
+Prescription fees
+
+Dr Fox supplies medicine on prescription and charges a small prescription fee based on the order value per consultation.
+
+Prescriptions are issued by our doctors online and sent electronically to our pharmacy.
+
+Dr Fox prices are 25%-50% lower than other UK online clinics.
+
+ 
+Order value	Prescription fee
+up to £10	£1.00
+up to £20	£2.00
+up to £40	£3.00
+over £40	£4.00
+
+As a registered pharmacy all products are guaranteed genuine sourced from UK licensed suppliers.
+
+ 
+UK delivery only
+Royal Mail Tracked 24hr
+from £2.90
+ 
+
+Dr Fox is committed to providing excellent customer service. In the rare event of a non-delivery a re-post or full refund will be offered.
+
+--- CONTROLS ---
+  input:text (1): Search…
+  button (3): Search  ·  More  ·  Confirm items
+  radio (3): Dr Fox Hair Growth Spray 1 x 60ml spray (2 months) - UK mainland only £26.00 [checked]  ·  Dr Fox Hair Growth Spray 2 x 60ml sprays (4 months) - UK mainland only £48.50  ·  Dr Fox Hair Growth Spray 3 x 60ml sprays (6 months) - UK mainland only £72.00
+
+--- LINKS ---
+  link (81): Online Doctor and Pharmacy -> https://www.doctorfox.co.uk/  ·  Skip to main content -> #main-content  ·  Login -> https://www.doctorfox.co.uk/login  ·  Basket 0 -> https://www.doctorfox.co.uk/order/confirm  ·  Contact Dr Fox -> https://www.doctorfox.co.uk/contact-us.html  ·  info@doctorfox.co.uk -> mailto:info@doctorfox.co.uk?subject=Enquiry  ·  Men -> https://www.doctorfox.co.uk/mens-health.html  ·  Women -> https://www.doctorfox.co.uk/womens-health.html  ·  Sexual -> https://www.doctorfox.co.uk/sexual-health.html  ·  Travel -> https://www.doctorfox.co.uk/travel-health.html  ·  Medications & prices -> #  ·  Reviews -> https://www.doctorfox.co.uk/customer-reviews.html  ·  Regulated -> https://www.doctorfox.co.uk/regulation.html  ·  Delivery -> https://www.doctorfox.co.uk/delivery.html  ·  Refunds -> https://www.doctorfox.co.uk/refunds.html  ·  About us -> https://www.doctorfox.co.uk/about-us.html  ·  FAQs -> https://www.doctorfox.co.uk/faqs.html  ·  Our team -> https://www.doctorfox.co.uk/our-team/  ·  Medications & prices -> https://www.doctorfox.co.uk/medications-online-prescriptions.html  ·  Antimalarials -> /anti-malaria-tablets/  ·  Erectile dysfunction -> /erectile-dysfunction/  ·  Male hair loss -> /hair-loss-treatments/  ·  Progestogen-only pill (mini pill) -> /progestogen-only-contraceptive-pill/  ·  Morning after pill -> /morning-after-pill/  ·  Combined contraceptive pill -> /contraceptive-pill/  ·  HRT/menopause treatment -> /hrt-menopause-treatment/  ·  Vaginal oestrogens -> /vaginal-oestrogens/  ·  Stop smoking -> /stop-smoking/  ·  Period delay -> /period-delay/  ·  Cystitis -> /cystitis/  ·  Bacterial vaginosis -> /bacterial-vaginosis/  ·  Female facial hair -> /female-facial-hair/  ·  Chlamydia -> /chlamydia/  ·  Altitude sickness -> /altitude-sickness/  ·  Acne -> /acne-treatment/  ·  Travellers' diarrhoea -> /travellers-diarrhoea/  ·  Travel sickness -> /travel-sickness/  ·  Hay fever -> /hay-fever/  ·  Rosacea -> /rosacea-treatment/  ·  Genital thrush -> /thrush/  ·  Jet lag -> /jet-lag/  ·  Irritable bowel syndrome -> /irritable-bowel-syndrome/  ·  Acid reflux -> /acid-reflux/  ·  Migraine -> /migraine/  ·  Eczema -> /eczema-dry-skin/  ·  Genital herpes -> /genital-herpes/  ·  Cold sores -> /cold-sore-treatments/  ·  Premature ejaculation -> /premature-ejaculation/  ·  Weight loss -> /weight-loss/  ·  Flu antivirals -> /flu-anti-virals/  ·  BBC Newsbeat -> https://www.bbc.co.uk/news/newsbeat-50592361  ·  Your guarantee -> https://www.trustedshops.co.uk/buyerrating/info_XCDBA406183B6F6A6B6A3FAE6291F711B.html  ·  Trusted Shops -> https://www.trustedshops.co.uk/buyerrating/info_XCDBA406183B6F6A6B6A3FAE6291F711B.html  ·  Fully UK regulated -> https://www.doctorfox.co.uk/regulation.html  ·  Independent reviews -> https://www.trustedshops.co.uk/buyerrating/info_XCDBA406183B6F6A6B6A3FAE6291F711B.html  ·  Read reviews -> https://www.trustedshops.co.uk/buyerrating/info_XCDBA406183B6F6A6B6A3FAE6291F711B.html  ·  UK delivery £2.90 -> https://www.doctorfox.co.uk/delivery.html  ·  More details -> https://www.doctorfox.co.uk/delivery.html  ·  Discreet parcel -> https://www.doctorfox.co.uk/discreet-packaging.html  ·  Returns -> https://www.doctorfox.co.uk/refunds.html  ·  Online prescriptions -> https://www.doctorfox.co.uk/medications-online-prescriptions.html  ·  1.07 Video: how it works -> https://vimeo.com/165135972?title=0&byline=0&portrait=&&autoplay=1  ·  Good -> https://www.cqc.org.uk/location/1-9709847380  ·  0117 2050198 -> tel:00441172050198  ·  info@doctorfox.co.uk -> mailto:info@doctorfox.co.uk  ·  Facebook -> https://www.facebook.com/doctorfoxpharmacy  ·  YouTube -> https://www.youtube.com/@DrFoxUK  ·  TikTok -> https://www.tiktok.com/@drfoxonlinepharmacy  ·  Instagram -> https://www.instagram.com/drfoxpharmacy/  ·  Data security -> https://www.doctorfox.co.uk/data-security.html  ·  Payment security -> https://www.doctorfox.co.uk/payment-security.html  ·  Terms of use -> https://www.doctorfox.co.uk/terms.html  ·  Terms & conditions -> https://www.doctorfox.co.uk/terms-and-conditions.html  ·  Privacy policy -> https://www.doctorfox.co.uk/privacy-policy.html  ·  Data sharing policy -> https://www.doctorfox.co.uk/data-sharing.html  ·  Cookie policy -> https://www.doctorfox.co.uk/cookies.html  ·  Contact us -> https://www.doctorfox.co.uk/contact-us.html  ·  News -> https://www.doctorfox.co.uk/news/  ·  Continue without Marketing Cookies -> #  ·  Manage Cookies -> https://www.doctorfox.co.uk/cookies.html

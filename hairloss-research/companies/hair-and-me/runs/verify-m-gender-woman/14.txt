@@ -1,0 +1,29 @@
+STEP 14 scc
+URL: https://www.hairandme.com/c/suh/scc
+
+--- VISIBLE TEXT ---
+Are you experiencing any of the following on your scalp?
+Flaking or dandruff
+Redness and crusting around the base of your hair
+Highly sensitive and irritable areas
+Diagnosed eczema, psoriasis or seborrheic dermatitis
+Pustules/lumps/cysts
+A diagnosed active infection (e.g. folliculitis, candida, ringworm)
+Pain and/or burning sensation
+None of the above
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:checkbox[name=9328] | Flaking or dandruff
+input:checkbox[name=9328] | Redness and crusting around the base of your hair
+input:checkbox[name=9328] | Highly sensitive and irritable areas
+input:checkbox[name=9328] | Diagnosed eczema, psoriasis or seborrheic dermatitis
+input:checkbox[name=9328] | Pustules/lumps/cysts
+input:checkbox[name=9328] | A diagnosed active infection (e.g. folliculitis, candida, ringworm)
+input:checkbox[name=9328] | Pain and/or burning sensation
+input:checkbox[name=9328] | None of the above
+button:submit | NEXT QUESTION [disabled]
+a -> /c/suh/scc?action=previous | Back to previous page

@@ -1,0 +1,24 @@
+{
+ "step": {
+  "title": "HL - Recommendations",
+  "questions": [
+   {
+    "questionId": "108360",
+    "explanationAvailable": false,
+    "displayText": "<center><img src=\"https://cdn.shopify.com/s/files/1/0611/1284/4476/files/Hair_Loss_clinically_proven_results_Mobile.png?v=1789048814\"/></center>\n<p><small><b><sup>1</sup></b> Hu et al., Dermatol Ther 2015, <b><sup>2</sup></b> Kaufman et al., JAAD 1998, <b><sup>3</sup></b> Olsen et al., JAAD 2007</small></p>",
+    "type": "MESSAGE",
+    "answerRequired": true,
+    "smoothTransition": false,
+    "answerChoices": [],
+    "titleOverride": "Clinically proven results"
+   }
+  ],
+  "questionAnswerErrors": {},
+  "summaryRequiredBeforeStep": false,
+  "registrationRequiredBeforeStep": false,
+  "fastSummaryRequiredBeforeStep": false
+ },
+ "explanation": "/api/questionnaire/traversals/5733910/explanations",
+ "previous": "/api/questionnaire/traversals/5733910/steps/previous",
+ "current": "/api/questionnaire/traversals/5733910/steps/current"
+}

@@ -1,0 +1,16 @@
+STEP 24 click "Normal (Around 120 / 80)"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+What is your current weight?
+<100 pounds (<45kg)
+100-200 pounds (45kg - 90kg)
+>200 pounds (>90kg)
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

@@ -1,0 +1,61 @@
+{
+ "step": {
+  "title": "HL - Previous HL treatment and Side effects",
+  "questions": [
+   {
+    "questionId": "108022",
+    "explanationAvailable": false,
+    "displayText": "<p><b>Has Finasteride tablets helped with your hair loss?</b></p><p>This could mean slowing or stopping further hair loss, or helping hair grow back.</p>",
+    "type": "SINGLE_CHOICE",
+    "answerRequired": true,
+    "smoothTransition": false,
+    "answerChoices": [
+     {
+      "answerId": "108022$105630",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "108022",
+      "displayText": "Yes, it's helped",
+      "type": "SINGLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "108022$105149",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "108022",
+      "displayText": "It's helped a little",
+      "type": "SINGLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "108022$105631",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "108022",
+      "displayText": "No, I haven't noticed any benefit",
+      "type": "SINGLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "108022$105632",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "108022",
+      "displayText": "It's too early to tell",
+      "type": "SINGLE_CHOICE",
+      "selected": false
+     }
+    ],
+    "titleOverride": "Hair loss medication"
+   }
+  ],
+  "questionAnswerErrors": {},
+  "summaryRequiredBeforeStep": false,
+  "registrationRequiredBeforeStep": false,
+  "fastSummaryRequiredBeforeStep": false
+ },
+ "explanation": "/api/questionnaire/traversals/15760492/explanations",
+ "previous": "/api/questionnaire/traversals/15760492/steps/previous",
+ "current": "/api/questionnaire/traversals/15760492/steps/current"
+}

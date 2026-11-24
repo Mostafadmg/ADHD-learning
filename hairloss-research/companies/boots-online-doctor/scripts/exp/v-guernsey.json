@@ -1,0 +1,29 @@
+{
+ "start": "https://onlinedoctor-clinic.boots.com/Hair-Loss",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2000
+  },
+  {
+   "do": "click",
+   "selector": "input[name=zip]"
+  },
+  {
+   "do": "type",
+   "value": "GY1 1AA"
+  },
+  {
+   "do": "wait",
+   "ms": 3000
+  },
+  {
+   "do": "click",
+   "selector": "#next-step"
+  },
+  {
+   "do": "wait",
+   "ms": 5000
+  }
+ ]
+}

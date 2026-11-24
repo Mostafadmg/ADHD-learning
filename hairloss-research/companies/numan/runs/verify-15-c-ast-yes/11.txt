@@ -1,0 +1,17 @@
+STEP 11 click "Next"
+URL: https://www.numan.com/subscribe/hair-loss/cde3e627-0be6-4cb2-8431-35b09ecd7162/sq/clarify_asthma
+TITLE: Topical formulations (such as spray) may contain alcohol, inhaling this spray may worsen your asthma symptoms and cause you to become short of breath. | Numan
+
+--- VISIBLE TEXT ---
+58%
+Topical formulations (such as spray) may contain alcohol, inhaling this spray may worsen your asthma symptoms and cause you to become short of breath.
+I understand that topical formulations (such as spray) may worsen my asthma and would like to be considered topical formulations.
+I do not wish to be considered for topical formulations (such as spray).
+Back
+
+--- CONTROLS ---
+  radio (2): I understand that topical formulations (such as spray) may worsen my asthma and would like to be considered topical formulations.  ·  I do not wish to be considered for topical formulations (such as spray).
+  button (1): Back
+
+--- LINKS ---
+  link (1): Visit the main page -> /

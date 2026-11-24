@@ -1,0 +1,15 @@
+STEP 12 click "Take Me to My Plan"
+URL: https://www.form.happyhead.com/get-started/?l=false&ph=true
+TITLE: Get Started | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+Building Your Personalized
+Treatment Plan
+Our dermatologists use clinically backed ingredients to help target hair loss from multiple angles
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

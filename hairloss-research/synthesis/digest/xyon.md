@@ -1,0 +1,85 @@
+# XYON Health (US and Canada) — digest
+Slug: xyon · Verified: NO (not independently checked) · Audiences: men, women
+
+Model: Doctor-founded telehealth brand that sells compounded topical finasteride, dutasteride and finasteride-plus-minoxidil in its patented SiloxysSystem gel (plus oral options and hair-care cosmetics), prescribed after an online questionnaire and photo review, with a second channel through partner hair clinics.
+Account wall: After the eligibility gate. Men answer 4 questions (country, state or province, date of birth, biological sex), women 5 (plus pregnancy / conception / breastfeeding / fertility), then see "Congrats! You are eligible." and must create an account (legal first and last name, email, password, consent tick-box). The whole medical history, treatment preference, plan choice, photos and ID sit behind that account. Nothing is recommended before the wall.
+Tested by: live-walk, site-code, public-docs
+Coverage: Stage 1 (map). Walked live: the full anonymous eligibility flow for the baseline man and woman up to the account form, one stop screen (pregnancy = Yes), and the 3-question marketing quiz. Read from publicly served code: the whole eligibility schema with every branch and stop reason, the country and region lists, the product and variant enums, the field keys and step groups of the signed-in medical history (keys only, not wording), feature flags. Read from public pages: the Shopify product feed (all 64 products with prices and sex-eligibility tags), seven prescription product pages with safety information, the how-it-works page, help-centre articles and policies. Not tested: anything after the account wall, Canadian (en-CA) prices and wording, one-change experiments.
+
+Questions: 50 (18 before sign-in; 14 branch). Flows: rx (44q), landing-quiz (4q), clinic-connect (2q)
+
+## Engine summary
+XYON's public engine is only a gate, not a recommender. Four or five anonymous questions check where you live, that you are 18 or over, your biological sex and, for women, pregnancy, conception, breastfeeding or fertility treatment. Pass and you must create an account; fail and you are asked for an email for updates (or, in 28 European countries, sent to a partner). The real decision happens after sign-in: a medical history (hair-loss history, earlier treatments and why they were stopped, mental health, cancer, sexual and urinary history, general conditions, blood pressure, kidney, medicines, allergies, pregnancy in the household), then the patient states a treatment preference and an application method (Topical, Topical low dose, Oral, or no preference), picks a plan, uploads scalp photos and photo ID, and a doctor chooses the medicine. Sex limits the product set through tags on the checkout products: finasteride-only gel and finasteride tablets are for men, spironolactone is for women, the rest are for both. The "personalised" quiz on the marketing site always recommends the same gel.
+
+## Rules
+| id | when | then | effect | evidence | conf |
+|---|---|---|---|---|---|
+| R1 | rx-q4 = Female and rx-q5 = Yes (pregnant, trying to conceive, breastfeeding, or having or planning fertility treatment) | Hard stop before account creation: "XYON cannot offer this service to females who are pregnant or trying to conceive." Only an email box for updates is offered. [Topical Finasteride with SiloxysSystem Gel; Topical Dutasteride with SiloxysSystem Gel; Topical Finasteride & Minoxidil with SiloxysSystem Gel; Topical Finasteride & Minoxidil Solution; Oral Finasteride; Oral Minoxidil; Oral Minoxidil with Vitamin D; Oral Spironolactone] | hard-stop | observed | high |
+| R2 | Age under 18 on the day (from rx-q3) | Hard stop: "XYON can only offer this service to those aged 18 and older." No upper age limit exists in the anonymous code. [Topical Finasteride with SiloxysSystem Gel; Topical Dutasteride with SiloxysSystem Gel; Topical Finasteride & Minoxidil with SiloxysSystem Gel; Topical Finasteride & Minoxidil Solution; Oral Finasteride; Oral Minoxidil; Oral Minoxidil with Vitamin D; Oral Spironolactone] | hard-stop | code | high |
+| R3 | rx-q1 = Canada and province is Manitoba, New Brunswick, Prince Edward Island, Quebec or Saskatchewan | Hard stop with the country/region reason. All US states and DC, and the other eight provinces and territories, pass. [Topical Finasteride with SiloxysSystem Gel; Topical Dutasteride with SiloxysSystem Gel; Topical Finasteride & Minoxidil with SiloxysSystem Gel; Topical Finasteride & Minoxidil Solution; Oral Finasteride; Oral Minoxidil; Oral Minoxidil with Vitamin D; Oral Spironolactone] | hard-stop | code | high |
+| R4 | rx-q1 = Other and country is one of 28 listed European countries (EU members plus the United Kingdom) | No XYON consultation. A partner hand-off screen points to EU specialist physicians (status CURAFLOW_SUPPORTED; link dashboard.curoflow.ch/SiloxysSystem). Any other country gets the not-eligible screen. [Topical Finasteride with SiloxysSystem Gel; Topical Dutasteride with SiloxysSystem Gel; Topical Finasteride & Minoxidil with SiloxysSystem Gel; Topical Finasteride & Minoxidil Solution; Oral Finasteride; Oral Minoxidil; Oral Minoxidil with Vitamin D; Oral Spironolactone] | hard-stop | code | high |
+| R5 | rx-q4 = Female | One extra question (rx-q5) is added. The signed-in route becomes /womens/new. In the product feed the finasteride-only gel and oral finasteride carry only MALE_ELIGIBLE, so they are not available to women; oral spironolactone carries only FEMALE_ELIGIBLE, so it is not available to men. Dutasteride gel, finasteride-plus-minoxidil gel and solution, oral minoxidil and oral minoxidil with vitamin D carry both tags. [Topical Finasteride with SiloxysSystem Gel; Oral Finasteride; Oral Spironolactone] | product-removed | code | medium |
+| R6 | Any combination of the three answers | The same product is always shown as "Recommended for you": Topical Finasteride & Minoxidil with SiloxysSystem Gel. Answers only become link parameters and analytics events. [Topical Finasteride & Minoxidil with SiloxysSystem Gel] | marketing-only | code | high |
+| R7 | Plan type = one-time purchase (first order) | A $20 consultation fee is added ("New" checkout SKUs cost $20 more than "Refill" SKUs). Subscriptions include the consultation. [Online doctor consultation ("Hair Loss Assessment Questionnaire")] | none | docs | high |
+
+## Products
+| name | category | actives | form | for | legal | price | offered when | ev |
+|---|---|---|---|---|---|---|---|---|
+| Topical Finasteride with SiloxysSystem Gel | rx-topical-compounded | finasteride 2.5% | gel in a pump bottle (1 mL once daily; 30 mL = 1 oz bottle, 90 mL = 3 oz bottle) | men | US compounded prescription medicine (not FDA-approved; off-label topical use). Also supplied in Canada. | $109 every 30 days on subscription (US) | Men only (Shopify tag MALE_ELIGIBLE, no FEMALE_ELIGIBLE tag). The patient can flag it as a preferred treatment in the signed-in intake; the prescribing doctor decides. Exact rule not observable without an account: unknown. | docs |
+| Topical Dutasteride with SiloxysSystem Gel | rx-topical-compounded | dutasteride 2% | gel in a pump bottle (1 mL once daily; 30 mL or 90 mL) | both | US compounded prescription medicine (not FDA-approved; off-label). Also supplied in Canada. | $139 every 30 days on subscription (US) | Tagged MALE_ELIGIBLE and FEMALE_ELIGIBLE. Product page: not for people with liver disease, or women who are pregnant, may be pregnant or breastfeeding. Doctor decides after the signed-in intake; exact selection rule unknown. | docs |
+| Topical Finasteride & Minoxidil with SiloxysSystem Gel | rx-topical-compounded | finasteride 2.5%; minoxidil 3% | gel in a pump bottle (once daily; 30 mL or 90 mL) | both | US compounded prescription medicine (not FDA-approved; off-label). Also supplied in Canada. | $129 every 30 days on subscription (US) | The marketing quiz at /pages/hl-qlp always shows this product as "Recommended for you", whatever is answered. In the real consultation it is tagged for both sexes; the doctor decides. Exact rule unknown. | observed |
+| Topical Finasteride & Minoxidil Solution | rx-topical-compounded | finasteride not stated on the public pages; minoxidil not stated on the public pages | alcohol-based liquid solution (about 1 mL once daily; 30 mL or 90 mL) | both | US compounded prescription medicine (not FDA-approved; off-label). | $204 every 90 days on subscription ($68 a month, US) | Unknown. Probably offered when the patient picks the "Topical (LowDose)" application method in the signed-in intake (inferred from code names, not observed). | docs |
+| Oral Finasteride | rx-oral | finasteride 1 mg | tablet, one a day (30 or 90 tablets) | men | US prescription medicine: generic of Propecia, FDA-approved for male pattern hair loss (the page also carries XYON's standard compounded-medicine notice). | $105 every 90 days on subscription ($35 a month, US) | Men only (tag MALE_ELIGIBLE only). Probably offered when the patient prefers the "Oral" application method (inferred). Doctor decides; exact rule unknown. | docs |
+| Oral Minoxidil | rx-oral | minoxidil 2.5 mg or 5 mg (a 1.25 mg variant is named in the consultation code) | tablet (30 or 90 tablets) | both | US prescription medicine: FDA-approved tablets for high blood pressure, prescribed off-label for hair loss. | $87 every 90 days on subscription ($29 a month, US) | Tagged for both sexes. Dose is picked by the doctor (the code has a separate "change dosage" request flow). Exact rule unknown. | code |
+| Oral Minoxidil with Vitamin D | rx-oral-compounded | minoxidil 0.5 mg or 1 mg (a 2 mg variant is named in the consultation code); vitamin D not stated | compounded tablet (30 or 90 tablets) | both | US compounded prescription medicine (not FDA-approved; off-label). | $117 every 90 days on subscription ($39 a month, US) | Tagged for both sexes. Product page: not for people with liver disease or high blood calcium, or women who are pregnant or breastfeeding; tell the doctor about heart or vascular conditions. Exact rule unknown. | docs |
+| Oral Spironolactone | rx-oral | spironolactone 50 mg or 100 mg (a 25 mg variant is named in the consultation code) | tablet (30 or 90 tablets) | women | US prescription medicine: FDA-approved for blood pressure, heart failure and oedema, prescribed off-label for female pattern hair loss (the page also carries XYON's standard compounded-medicine notice). | $87 every 90 days on subscription ($29 a month, US) | Women only (tag FEMALE_ELIGIBLE only). Product page: not for people with liver or kidney disease, or women who are pregnant, may be pregnant or breastfeeding. Exact rule unknown. | docs |
+| Performance DHT-Blocking Shampoo | cosmetic | saw palmetto extract; clover flower extract | shampoo, 10 oz (33.8 oz listed, out of stock) | men | US cosmetic, no prescription (store type "OTC") | $45 (10 oz) | Not part of the consultation result. Tagged POST_PURCHASE_UPSELL: offered as an add-on after purchase. | code |
+| Performance DHT-Blocking Conditioner | cosmetic | saw palmetto extract | conditioner | men | US cosmetic, no prescription (store type "OTC") | $45 | Not part of the consultation result. Tagged POST_PURCHASE_UPSELL. | code |
+| Defend Hair & Scalp Serum | cosmetic |  | leave-in scalp serum | men | US cosmetic, no prescription (store type "OTC") | $59 | Not part of the consultation result. Tagged MALE_ELIGIBLE and POST_PURCHASE_UPSELL. | code |
+| Revitalize Peptide Serum | cosmetic | peptides including copies of human VEGF and FGF growth factors (as described by XYON) | scalp serum | men | US cosmetic, no prescription (store type "OTC") | $59 | Not part of the consultation result (tagged MALE_ELIGIBLE, HAIR_TREATMENT). | code |
+| Hair Plus Supplement | supplement | pomegranate extract; collagen peptides; saw palmetto | powder to mix into a drink | both | US dietary supplement (carries the standard FDA disclaimer) | $79 | Not part of the consultation result; sold directly on the store. | docs |
+| Activate Performance Shampoo (women) | cosmetic |  | shampoo, 10 oz or 33.8 oz | women | US cosmetic, no prescription (store type "OTC") | $45 (10 oz) | Not part of the consultation result. Tagged FEMALE_ELIGIBLE and POST_PURCHASE_UPSELL. | code |
+| Fortify Performance Conditioner (women) | cosmetic |  | conditioner, 10 oz or 33.8 oz | women | US cosmetic, no prescription (store type "OTC") | $45 (10 oz) | Not part of the consultation result. Tagged FEMALE_ELIGIBLE and POST_PURCHASE_UPSELL. | code |
+| Nourish Perfecting Hair Oil (women) | cosmetic |  | hair oil | women | US cosmetic, no prescription (store type "OTC") | $55 | Not part of the consultation result. Tagged FEMALE_ELIGIBLE and POST_PURCHASE_UPSELL. | code |
+| Online doctor consultation ("Hair Loss Assessment Questionnaire") | service |  | online questionnaire and photos reviewed by a doctor, with chat follow-up | both | US and Canadian telehealth service (doctor visit run through a third-party medical group platform; the code links to message.mdintegrations.com) | Free with a subscription; $20 with a one-time order | Required before any prescription product. | docs |
+| ClinicConnect (partner-clinic channel for SiloxysSystem gel) | service |  | clinic-prescribed gel fulfilled through a XYON account (bring-your-own-prescription sign-up) | both | Business-to-business channel: partner hair clinics prescribe; XYON takes the order and a pharmacy fills it | Not published | Only for patients sent by a partner clinic with an existing prescription. Not part of the public consultation. | code |
+
+## Who gets what
+- Marketing quiz, any answers (seen with: receding hairline / yes / yes) → Topical Finasteride & Minoxidil with SiloxysSystem Gel [observed] Fixed card; not a real recommendation engine.
+- Man, 32, California: real consultation → nothing [observed] Nothing is offered before the account wall. After it the patient flags a preference and a doctor decides. Not observable under the rules.
+- Woman, 38, California, not pregnant: real consultation → nothing [observed] Same: eligible, then account wall, no product shown.
+
+## Strengths
+- A clear technical story: one patented gel base (SiloxysSystem, US patent 11,786,466) with published absorption claims ("92% less absorbed into the blood than pills") and doctor founders.
+- Honest, prominent compounded-medicine and safety notices on every prescription page.
+- Very short eligibility gate (4 to 5 taps) before the account wall.
+- Serves women with the same flow, with a hard pregnancy and fertility stop before any data is collected.
+- A second route to market through 100+ partner hair-restoration clinics (ClinicConnect).
+- Simple plan logic: subscription includes the consultation; one-time orders pay $20.
+
+## Weaknesses
+- No recommendation or price is shown before sign-up: the visitor must give a legal name, email and password to learn anything personal.
+- The marketing quiz is not real: every answer leads to the same product.
+- Premium prices ($109 to $139 a month for the gels) against cheaper compounded sprays elsewhere.
+- The finasteride and minoxidil solution's strengths are not published on its page.
+- Help centre has dead links for the articles on who is ineligible and which treatment suits whom.
+- Review time is stated inconsistently (24–48 hours on product pages, 3–5 business days on the how-it-works page).
+- Photo ID step adds friction (they are testing its removal on half of US visitors).
+
+## Opportunities
+- Show a genuine, answer-driven recommendation with price before asking for an account.
+- Publish plain eligibility rules (conditions and medicines that rule each treatment out) instead of leaving them to the doctor review.
+- Offer a lower-priced controlled-release topical, or publish strengths and absorption data for every formula.
+- Give women a tailored path (menopause, contraception, PCOS questions) rather than one shared flow with a single pregnancy gate.
+
+## Verification verdict
+not verified
+
+## Limitations
+- The medical-history questions are known only as field keys from public code. Their wording, options, order and branch conditions were not seen, because they are served only after an account is created.
+- Some field keys in the shared enum (nitroglycerin, recreational drugs, serious cardiac episode) may belong to the sexual-health flow, not the hair flow.
+- What the doctor prescribes for a given patient cannot be observed. Sex-based product limits are read from Shopify product tags, not from a live result.
+- US prices only (en-US). Canadian prices and the en-CA flow were not checked.
+- The strengths of the finasteride and minoxidil solution, and the vitamin D dose in the compounded minoxidil tablet, are not published on the pages read.
+- No web search was possible in this session, so no third-party reviews, press or regulator records were used.
+- Only the pregnancy stop screen was seen live; the age, region and European-partner screens are from the code.

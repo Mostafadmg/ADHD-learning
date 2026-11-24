@@ -96,3 +96,53 @@ form messages visible). Each replay takes 35-50 s. Variant answer files are save
   When only some products are removed, nothing is explained on the choose page. Runs exp-01..exp-09.
 - Q753 Yes: empty box blocks submit (exp-11); a neutral typed question leaves the offer unchanged (exp-10). In walk.js,
   type the text as the LAST step before submit: typing first stopped the Q754 click from registering.
+- All 11 hard stops now replayed one at a time (exp-12..19, exp-24, exp-25, plus map run check-q740-yes): each keeps the
+  page on the form with its message; none reaches /order/choose. Q805 No was sampled on the spray route.
+- Baskets to the confirm page (stop before 'Confirm order'): spray 60 ml £28.90 (no fee, exp-20); finasteride 28 + Sons
+  60 ml £34.85 (fee £2 from the finasteride only, exp-21); Sons only £22.85 (no fee, exp-22).
+- exp-23: five ticks → the fifth is undone (order-9ca4503f.js checkMaxItems, max 4). Generic finasteride + Propecia and
+  Sons + Regaine solution all reached one basket (£108.25, fee £4): no duplicate-treatment check before the wall.
+  order.js is public at https://www.doctorfox.co.uk/assets/js/order-9ca4503f.js (also recalcPrice, is_prescription fee).
+- company.json now has 22 rules, 30 experiments, 10 recommendation profiles; validator passes at --stage rules.
+- Shot added: shots/08-q742-spray-route-nothing-left.jpg (the empty choose page with 'please cancel this consultation').
+
+### Not tested (and why)
+- Anything after /order/login (no accounts). Server-side enforcement of the hard stops (would need submitting outside
+  the normal page flow). Q743 + Q746 together (same server rules as exp-09). Repeat orders. Age/sex (not asked before
+  the wall).
+
+## Stage 3 (verify), 23 Nov 2026
+Independent re-check. Helper scripts in the session scratchpad (mkvar.js, summ.js) as in stage 2; each variant's
+answer file is saved inside its run folder as `actions.json`.
+- Baselines replayed fresh, all match the record: `runs/verify-base-men` (17 checkboxes, same 17 prices),
+  `runs/verify-base-spray` (3 radio packs £26.00 / £48.50 / £72.00), `runs/verify-base-wall` (Finasteride 28 £10.00 +
+  fee £2.00 + delivery £2.90 = £14.90, then /order/login "Please login to continue").
+- Small inconsistency seen: the fee table printed on the choose and confirm pages says "up to £10: £1.00", but a £10.00
+  pack is charged £2.00 (the code's band is £10.00-£19.99 = £2).
+- Rule re-tests (all CONFIRMED, same lists as stage 2): `runs/verify-r4` (Q742 Yes, tablets: only Sons + 2 Regaine, 9 boxes),
+  `verify-r5` (Q742 Yes, spray: empty page, "please cancel this consultation"; it also prints a leftover internal
+  label "spray only message"), `verify-r6` (Q743 Yes, tablets: 9 minoxidil boxes), `verify-r8` (Q746 Yes, tablets: 8
+  finasteride/Propecia boxes), `verify-r9` (Q746 Yes, spray: empty page), `verify-r10` (Q747 Yes: all 17 boxes),
+  `verify-r3-q741` and `verify-r3-q805` (stay on the form with the stop message), and the stage-2 gap
+  `verify-r11-q743-q746` (Q743 + Q746 Yes, tablets: empty page, both reasons listed).
+- Code re-read (live order-9ca4503f.js, main-9ca4503f.js, form HTML): 23 of 34 answers carry data-correct="1" (so 11
+  stops); every answer has data-multiexclusionrules="0" and no product id, so no product rule is in the form code;
+  maxItemsAllowedPerConsultation = 4; the only clash check is Betnovate vs betamethasone (not hair loss); fee bands as
+  recorded; spray, Regaine and Sons are flagged data-is_prescription="0". The register page's "Birth gender" radio is
+  named "title"; choosing FEMALE runs showGenderError, which also DISABLES the register button.
+- Product pages re-read with curl (23 Nov): all 20 pack prices match; spray strengths and Xeal Pharma MS 46688 match;
+  emc confirms Regaine solution (5765, GSL, men 18-65), Regaine foam (5781, GSL, men 18-49), minoxidil 5% spray (100306,
+  GSL, men 18-65). Sitemap lists only the five product pages; every "Start order" goes to the same form.
+- Gap found in the docs: the spray page says do NOT use with an allergy to minoxidil or tretinoin, or severe scalp
+  infections or psoriasis; the form asks only about finasteride allergy (Q742) and current scalp symptoms (Q740).
+- NEW (contradicts stage 2's "never sold together"): `runs/verify-gap-two-consults` = spray route, 1 spray to basket,
+  then `goto` the form again, tablets route, Finasteride 28, Confirm items → ONE basket holds both ("Basket 2"),
+  confirm page £26.00 + £10.00 + fee £2.00 + delivery £5.80 (£2.90 per consultation) = £43.80, no warning. Screenshot
+  `shots/09-two-consultations-spray-plus-finasteride-basket.jpg`. `runs/verify-gap-two-consults-conflict` = same but the
+  second form says Q746 Yes: the second choose page drops minoxidil (8 boxes) but the minoxidil spray stays in the
+  basket, £43.80. Rules R23, R24 in company.json. Stopped at the confirm page; nothing entered.
+- Label fixes: men-q23 was "observed" but no run opened /register (now "code"); men-q21/q22 "docs" → "code".
+  Strength "lowest prices in the UK market" softened: market/uk-sweep.md lists five cheaper headline finasteride prices.
+  The sweep also says Dr Fox's fee on a £10 pack is £1; live it is £2 (not changed: outside this folder).
+- 14 replays this stage. company.json now: 25 rules, 44 experiments, 11 recommendation profiles, plus a
+  `verification` block. `node tools/validate.js dr-fox --stage final` passes (0 errors, 0 warnings).

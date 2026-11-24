@@ -172,3 +172,39 @@ Results so far (end state = final URL + `node scripts/summ.js runs/<id>`):
 - x09 bundle baseline (£50.36, sku 817-9): questionnaire 2050, /camera/id, admin 4.1.
 - x10 bundle + BP medicine Yes + "change my prescription to tablets alone": order still the bundle at £50.36 (no switch on site).
 Helper: `scripts/summ.js`; experiment walk files and override files in `scripts/exp/`.
+- x11 bundle age 50+ → "I'd rather NOT have Regaine": partial (slow click at screen 15 of 21 after one retry); order still bundle.
+- x12 returning tablets (84 tablets £80): no proof asked; questionnaire 2051; /camera/id; sku 24-9, HAI-R, admin 4.1.
+- x13 out-of-stock tile (£80, first time): clicking does nothing (stays on /products/HAI-F, no draft order).
+
+Stage 2 conclusion: the website never acts on answers. Only the three preflight gates stop anyone (sex, age, postcode);
+the first-time/returning answer and the pack stock flags limit packs; product choice picks the questionnaire. Red flags,
+"I will stop" answers and "change to tablets alone" change nothing on screen or in the order.
+company.json = `node scripts/build-company.js` (stage 1) then `node scripts/stage2.js` (stage 2 experiments, rules,
+recommendations, summaries). Validate: `node ../../tools/validate.js boots-online-doctor --stage rules` (passes).
+Not tested live: returning bundle, Propecia bundle, single conditions one by one, medicines/allergies (free text), GP Yes.
+Stop-screen screenshots: last .jpg in runs/x02-female and runs/x03-age17 (shots/ kept at the 8-image limit).
+
+## 11. Stage 3 (VERIFY) log, 2026-11-23 (independent reviewer)
+
+Runs are in `runs/verify-*`. End state = `node scripts/summ.js runs/<id>` plus the order line's `answer_status`.
+- verify-b01-baseline: fresh replay of baseline-men.json. Same end state as x00 (/camera/id, sku 25-9, £28, admin 4.1).
+- verify-b04-returning-bundle: first ever full replay of the returning bundle route. Questionnaire 2052, /camera/id, sku 829-9, £50.36, HAI-R.
+- **Correction found:** the final order JSON is NOT identical after red-flag answers. Each order line has
+  `answer_status` (Normal / Warning / Danger) and `answer_score_1`, `answer_score_2`. Baselines: Normal 0 0.
+  x01 (partner TTC) Danger; x07 (circular patches) Danger; x08 (all red flags) Danger 2 2; x10 (bundle BP Yes → tablets alone) Warning.
+  Matches option `status` in the definitions (2 = Warning, 3 = Danger). The server triages; the screen does not.
+  Meaning of answer_score_1/2 is unknown (no score fields in the definitions).
+- Product list JSON (`net/*categories_HAI_F_products.json`, `..._HAI_R_products.json`) matches every price and stock flag in company.json.
+  The largest tablet packs are titled "364 Tablets" but coded "...-336-Tablets".
+- Public page /treatments/finasteride lists the same ten tablet prices (curl, 23 Nov 2026).
+- verify-r-x02 female, verify-r-x03 age 17, verify-r-x05 Jersey: same stop messages as stage 2.
+- verify-r-age18 (DOB 22/11/2008, 18 yesterday): accepted. verify-r-guernsey (GY1 1AA): refused like Jersey.
+- verify-r-x13: out-of-stock tile still does nothing. verify-r-x11-age50: full run, order still bundle, answer_status "Warning".
+- verify-r-elsewhere (hair lost elsewhere = Yes, amber, alone): answer_status "Query". verify-r-galactose (red, alone): "Danger".
+- verify-r-propecia-bundle (£72): questionnaire 2050, sku 825-9.
+- verify-b02-first-bundle and verify-b03-returning-tablets: fresh replays match x09 and x12 ("Normal").
+- Saved definitions are identical (all sections) to the ones served today.
+- company.json corrections live in `scripts/stage3.js` (run after build-company.js and stage2.js; it rebuilds from the
+  stage 2 file, so keep a copy of that before re-running). `verification` block added. `validate.js --stage final` passes.
+- Lesson for the next person: compare the WHOLE order JSON (`orderlines[0].answer_status`, `answer_score_1/2`), not only
+  the fields summ.js prints. That is where the server's triage shows.

@@ -1,0 +1,32 @@
+STEP 08 htp AFTER ANSWERS ["Spironolactone tablets","Yes, I understand this."]
+URL: https://www.hairandme.com/c/suh/htp
+
+--- VISIBLE TEXT ---
+Have you used any of the following products to help you achieve your hair goals in the last three months?
+Minoxidil tablets
+Finasteride tablets
+Spironolactone tablets
+Minoxidil spray
+Finasteride spray
+Dutasteride capsules
+None of the above
+
+It's useful to know what ingredients you already have a tolerance for. However, you need to stop using them when you start your Hair + Me treatment.
+
+Yes, I understand this.
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:checkbox[name=250] | Minoxidil tablets
+input:checkbox[name=250] | Finasteride tablets
+input:checkbox[name=250] | Spironolactone tablets [checked]
+input:checkbox[name=250] | Minoxidil spray
+input:checkbox[name=250] | Finasteride spray
+input:checkbox[name=250] | Dutasteride capsules
+input:checkbox[name=250] | None of the above [disabled]
+input:checkbox[name=4443] | Yes, I understand this. [checked]
+button:submit | NEXT QUESTION
+a -> /c/suh/htp?action=previous | Back to previous page

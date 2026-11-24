@@ -6,7 +6,8 @@
  "baselinesPooled": [
   "baseline-women",
   "women-a",
-  "s2-base-women-1"
+  "s2-base-women-1",
+  "verify-base-women"
  ],
  "stepOrder": [
   "tp",

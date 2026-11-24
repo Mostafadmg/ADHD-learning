@@ -1,0 +1,1011 @@
+[
+ {
+  "from": "101561",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "101564",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "101564",
+     "type": "SINGLE_CHOICE",
+     "title": "Medical history",
+     "text": "What was your most recent eGFR result within the past 12 months ? This is a blood test that tells you how well your kidneys are working.",
+     "required": true,
+     "explanationAvailable": true,
+     "options": [
+      "Less than 30",
+      "More than 30",
+      "I haven't had an eGFR test in the past year",
+      "I don't know"
+     ],
+     "optionIds": [
+      "101564$100568",
+      "101564$104739",
+      "101564$104740",
+      "101564$100203"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-01-101561",
+  "text": "Exit consultation\nMedical history\n\nWhat was your most recent eGFR result within the past 12 months?\n\nThis is a blood test that tells you how well your kidneys are working.\n\nLess than 30\nMore than 30\nI haven't had an eGFR test in the past year\nI don't know\nNext\nBack"
+ },
+ {
+  "from": "101564",
+  "option": "More than 30",
+  "trail": [
+   "101561=Yes"
+  ],
+  "result": {
+   "sig": "107973",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "107973",
+     "type": "SINGLE_CHOICE",
+     "title": "Medical history",
+     "text": "Have you ever had a condition that affects your heart or blood pressure? Examples include: High or low blood pressure Dizziness or faintness when standing up Heart failure An irregular heartbeat (arrythmias) Fluid or inflammation around the heart Heart valve or structural heart problems A heart attack, angina, stroke or mini-stroke (TIA) Another heart or blood vessel condition",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "107973$1",
+      "107973$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-02-101564"
+ },
+ {
+  "from": "101564",
+  "option": "I haven't had an eGFR test in the past year",
+  "trail": [
+   "101561=Yes"
+  ],
+  "result": {
+   "sig": "107973",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "107973",
+     "type": "SINGLE_CHOICE",
+     "title": "Medical history",
+     "text": "Have you ever had a condition that affects your heart or blood pressure? Examples include: High or low blood pressure Dizziness or faintness when standing up Heart failure An irregular heartbeat (arrythmias) Fluid or inflammation around the heart Heart valve or structural heart problems A heart attack, angina, stroke or mini-stroke (TIA) Another heart or blood vessel condition",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "107973$1",
+      "107973$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-03-101564"
+ },
+ {
+  "from": "101564",
+  "option": "I don't know",
+  "trail": [
+   "101561=Yes"
+  ],
+  "result": {
+   "sig": "107973",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "107973",
+     "type": "SINGLE_CHOICE",
+     "title": "Medical history",
+     "text": "Have you ever had a condition that affects your heart or blood pressure? Examples include: High or low blood pressure Dizziness or faintness when standing up Heart failure An irregular heartbeat (arrythmias) Fluid or inflammation around the heart Heart valve or structural heart problems A heart attack, angina, stroke or mini-stroke (TIA) Another heart or blood vessel condition",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "107973$1",
+      "107973$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-04-101564"
+ },
+ {
+  "from": "107973",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "107800",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "107800",
+     "type": "SINGLE_CHOICE",
+     "title": "Medical history",
+     "text": "Do you have any medical conditions other than those we have already asked about?",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "107800$1",
+      "107800$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-05-107973"
+ },
+ {
+  "from": "107800",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "107160",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "107160",
+     "type": "TEXT_AREA",
+     "title": "Medical history",
+     "text": "Please can you give us more details about your medical condition(s)?",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      ""
+     ],
+     "optionIds": [
+      "107160$100516"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-06-107800",
+  "text": "Exit consultation\nMedical history\nPlease can you give us more details about your medical condition(s)?\n0/511 characters\nNext\nBack"
+ },
+ {
+  "from": "102632",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "103769",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "103769",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Medical history",
+     "text": "Are you taking any of the following medications:",
+     "required": false,
+     "explanationAvailable": false,
+     "options": [
+      "Finasteride or Dutasteride for prostate problems",
+      "Medicines for high blood pressure (e.g. amlodipine, ramipril, lisinopril, losartan etc.)",
+      "Antidepressants (e.g. escitalopram, citalopram, duloxetine, fluoxetine, mirtazapine, paroxetine, sertraline, venlafaxine etc.)",
+      "Erectile dysfunction tablets (e.g. sildenafil (Viagra), tadalafil (Cialis), vardenafil (Levitra) etc.)",
+      "Medicated creams applied to your scalp (e.g. steroids (hydrocortisone, betamethasone, clobetasone) and calcipotriol (dovonex) to treat psoriasis and eczema etc.)",
+      "Guanethidine"
+     ],
+     "optionIds": [
+      "103769$105167",
+      "103769$105246",
+      "103769$104870",
+      "103769$105168",
+      "103769$105247",
+      "103769$105169"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-07-102632",
+  "text": "Exit consultation\nMedical history\nAre you taking any of the following medications:\nFinasteride or Dutasteride for prostate problems\nMedicines for high blood pressure\n(e.g. amlodipine, ramipril, lisinopril, losartan etc.)\nAntidepressants\n(e.g. escitalopram, citalopram, duloxetine, fluoxetine, mirtazapine, paroxetine, sertraline, venlafaxine etc.)\nErectile dysfunction tablets\n(e.g. sildenafil (Viagra), tadalafil (Cialis), vardenafil (Levitra) etc.)\nMedicated creams applied to your scalp\n(e.g. steroids (hydrocortisone, betamethasone, clobetasone) and calcipotriol (dovonex) to treat psoriasis and eczema etc.)\nGuanethidine\nNone of the above\nNext\nBack"
+ },
+ {
+  "from": "103769",
+  "option": "Finasteride or Dutasteride for prostate problems",
+  "trail": [
+   "102632=Yes"
+  ],
+  "result": {
+   "sig": "108158",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108158",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Medical history",
+     "text": "And what about these?",
+     "required": false,
+     "explanationAvailable": false,
+     "options": [
+      "Testosterone or Anabolic steroids",
+      "Inhalers for asthma or COPD",
+      "Antihistamines",
+      "Painkillers",
+      "Acid reflux medication (e.g. omeprazole, lansoprazole, pantoprazole, etc.)",
+      "Other medication"
+     ],
+     "optionIds": [
+      "108158$105170",
+      "108158$100069",
+      "108158$100063",
+      "108158$100065",
+      "108158$105311",
+      "108158$100073"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-08-103769",
+  "text": "Exit consultation\nMedical history\nAnd what about these?\nTestosterone or Anabolic steroids\nInhalers for asthma or COPD\nAntihistamines\nPainkillers\nAcid reflux medication\n(e.g. omeprazole, lansoprazole, pantoprazole, etc.)\nOther medication\nNone of the above\nNext\nBack"
+ },
+ {
+  "from": "108158",
+  "option": "Testosterone or Anabolic steroids",
+  "trail": [
+   "102632=Yes",
+   "103769=Finasteride or Dutasteride for prostate problems"
+  ],
+  "result": {
+   "sig": "103277",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "103277",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Medical history",
+     "text": "Steroids are thought to create male pattern hair loss by causing your body to produce higher levels of dihydrotestosterone (DHT). DHT acts on the hair follicles on your scalp, causing them to weaken over time. They eventually die and stop growing back, which results in baldness. Taking Finasteride or Propecia is unlikely to be helpful if you are still taking steroids. Steroids can also cause lots of other problems such as erectile dysfunction, infertility, heart and kidney problems as well as mood disorders.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "I understand"
+     ],
+     "optionIds": [
+      "103277$100618"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-09-108158",
+  "text": "Exit consultation\nMedical history\n\nSteroids are thought to create male pattern hair loss by causing your body to produce higher levels of dihydrotestosterone (DHT). DHT acts on the hair follicles on your scalp, causing them to weaken over time. They eventually die and stop growing back, which results in baldness.\n\nTaking Finasteride or Propecia is unlikely to be helpful if you are still taking steroids.\n\nSteroids can also cause lots of other problems such as erectile dysfunction, infertility, heart and kidney problems as well as mood disorders.\n\nI understand\nNext\nBack"
+ },
+ {
+  "from": "108158",
+  "option": "Inhalers for asthma or COPD",
+  "trail": [
+   "102632=Yes",
+   "103769=Finasteride or Dutasteride for prostate problems"
+  ],
+  "result": {
+   "sig": "102624",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "102624",
+     "type": "SINGLE_CHOICE",
+     "title": "Medical history",
+     "text": "Do you have any allergies?",
+     "required": true,
+     "explanationAvailable": true,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "102624$1",
+      "102624$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-10-108158"
+ },
+ {
+  "from": "108158",
+  "option": "Antihistamines",
+  "trail": [
+   "102632=Yes",
+   "103769=Finasteride or Dutasteride for prostate problems"
+  ],
+  "result": {
+   "sig": "102624",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "102624",
+     "type": "SINGLE_CHOICE",
+     "title": "Medical history",
+     "text": "Do you have any allergies?",
+     "required": true,
+     "explanationAvailable": true,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "102624$1",
+      "102624$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-11-108158"
+ },
+ {
+  "from": "108158",
+  "option": "Painkillers",
+  "trail": [
+   "102632=Yes",
+   "103769=Finasteride or Dutasteride for prostate problems"
+  ],
+  "result": {
+   "sig": "102624",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "102624",
+     "type": "SINGLE_CHOICE",
+     "title": "Medical history",
+     "text": "Do you have any allergies?",
+     "required": true,
+     "explanationAvailable": true,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "102624$1",
+      "102624$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-12-108158"
+ },
+ {
+  "from": "108158",
+  "option": "Acid reflux medication (e.g. omeprazole, lansoprazole, pantoprazole, etc.)",
+  "trail": [
+   "102632=Yes",
+   "103769=Finasteride or Dutasteride for prostate problems"
+  ],
+  "result": {
+   "sig": "102624",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "102624",
+     "type": "SINGLE_CHOICE",
+     "title": "Medical history",
+     "text": "Do you have any allergies?",
+     "required": true,
+     "explanationAvailable": true,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "102624$1",
+      "102624$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-13-108158"
+ },
+ {
+  "from": "108158",
+  "option": "Other medication",
+  "trail": [
+   "102632=Yes",
+   "103769=Finasteride or Dutasteride for prostate problems"
+  ],
+  "result": {
+   "sig": "101599",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "101599",
+     "type": "TEXT_AREA",
+     "title": "Medical history",
+     "text": "Please can you list all your medications below.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      ""
+     ],
+     "optionIds": [
+      "101599$101948"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-14-108158",
+  "text": "Exit consultation\nMedical history\n\nPlease can you list all your medications below.\n0/511 characters\nNext\nBack"
+ },
+ {
+  "from": "103769",
+  "option": "Medicines for high blood pressure (e.g. amlodipine, ramipril, lisinopril, losartan etc.)",
+  "trail": [
+   "102632=Yes"
+  ],
+  "error": "could not click"
+ },
+ {
+  "from": "103769",
+  "option": "Antidepressants (e.g. escitalopram, citalopram, duloxetine, fluoxetine, mirtazapine, paroxetine, sertraline, venlafaxine etc.)",
+  "trail": [
+   "102632=Yes"
+  ],
+  "result": {
+   "sig": "108158",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108158",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Medical history",
+     "text": "And what about these?",
+     "required": false,
+     "explanationAvailable": false,
+     "options": [
+      "Testosterone or Anabolic steroids",
+      "Inhalers for asthma or COPD",
+      "Antihistamines",
+      "Painkillers",
+      "Acid reflux medication (e.g. omeprazole, lansoprazole, pantoprazole, etc.)",
+      "Other medication"
+     ],
+     "optionIds": [
+      "108158$105170",
+      "108158$100069",
+      "108158$100063",
+      "108158$100065",
+      "108158$105311",
+      "108158$100073"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-15-103769",
+  "text": "Exit consultation\nMedical history\nAnd what about these?\nTestosterone or Anabolic steroids\nInhalers for asthma or COPD\nAntihistamines\nPainkillers\nAcid reflux medication\n(e.g. omeprazole, lansoprazole, pantoprazole, etc.)\nOther medication\nNone of the above\nNext\nBack"
+ },
+ {
+  "from": "103769",
+  "option": "Erectile dysfunction tablets (e.g. sildenafil (Viagra), tadalafil (Cialis), vardenafil (Levitra) etc.)",
+  "trail": [
+   "102632=Yes"
+  ],
+  "result": {
+   "sig": "108158",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108158",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Medical history",
+     "text": "And what about these?",
+     "required": false,
+     "explanationAvailable": false,
+     "options": [
+      "Testosterone or Anabolic steroids",
+      "Inhalers for asthma or COPD",
+      "Antihistamines",
+      "Painkillers",
+      "Acid reflux medication (e.g. omeprazole, lansoprazole, pantoprazole, etc.)",
+      "Other medication"
+     ],
+     "optionIds": [
+      "108158$105170",
+      "108158$100069",
+      "108158$100063",
+      "108158$100065",
+      "108158$105311",
+      "108158$100073"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-16-103769",
+  "text": "Exit consultation\nMedical history\nAnd what about these?\nTestosterone or Anabolic steroids\nInhalers for asthma or COPD\nAntihistamines\nPainkillers\nAcid reflux medication\n(e.g. omeprazole, lansoprazole, pantoprazole, etc.)\nOther medication\nNone of the above\nNext\nBack"
+ },
+ {
+  "from": "103769",
+  "option": "Medicated creams applied to your scalp (e.g. steroids (hydrocortisone, betamethasone, clobetasone) and calcipotriol (dovonex) to treat psoriasis and eczema etc.)",
+  "trail": [
+   "102632=Yes"
+  ],
+  "error": "could not click"
+ },
+ {
+  "from": "103769",
+  "option": "Guanethidine",
+  "trail": [
+   "102632=Yes"
+  ],
+  "result": {
+   "sig": "108158",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108158",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Medical history",
+     "text": "And what about these?",
+     "required": false,
+     "explanationAvailable": false,
+     "options": [
+      "Testosterone or Anabolic steroids",
+      "Inhalers for asthma or COPD",
+      "Antihistamines",
+      "Painkillers",
+      "Acid reflux medication (e.g. omeprazole, lansoprazole, pantoprazole, etc.)",
+      "Other medication"
+     ],
+     "optionIds": [
+      "108158$105170",
+      "108158$100069",
+      "108158$100063",
+      "108158$100065",
+      "108158$105311",
+      "108158$100073"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-17-103769",
+  "text": "Exit consultation\nMedical history\nAnd what about these?\nTestosterone or Anabolic steroids\nInhalers for asthma or COPD\nAntihistamines\nPainkillers\nAcid reflux medication\n(e.g. omeprazole, lansoprazole, pantoprazole, etc.)\nOther medication\nNone of the above\nNext\nBack"
+ },
+ {
+  "from": "102624",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "100038",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "100038",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Medical history",
+     "text": "Are you allergic to any of the following?",
+     "required": false,
+     "explanationAvailable": false,
+     "options": [
+      "Minoxidil or Regaine",
+      "Finasteride, Propecia or dutasteride"
+     ],
+     "optionIds": [
+      "100038$105147",
+      "100038$105145"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-18-102624",
+  "text": "Exit consultation\nMedical history\nAre you allergic to any of the following?\nMinoxidil or Regaine\nFinasteride, Propecia or dutasteride\nNone of the above\nNext\nBack"
+ },
+ {
+  "from": "100038",
+  "option": "Minoxidil or Regaine",
+  "trail": [
+   "102624=Yes"
+  ],
+  "result": {
+   "sig": "108405",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108405",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Medical history",
+     "text": "As you have allergies, you must check the list of ingredients of any medication prescribed to you before taking it. It's important to be sure you're not allergic to any of the ingredients as these can be different depending on the manufacturer of the medicine. The leaflet that comes with your medicine will have a list of ingredients.",
+     "required": true,
+     "explanationAvailable": true,
+     "options": [
+      "I understand"
+     ],
+     "optionIds": [
+      "108405$100618"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-19-100038",
+  "text": "Exit consultation\nMedical history\n\nAs you have allergies, you must check the list of ingredients of any medication prescribed to you before taking it.\n\nIt's important to be sure you're not allergic to any of the ingredients as these can be different depending on the manufacturer of the medicine.\n\nThe leaflet that comes with your medicine will have a list of ingredients.\n\nI understand\nNext\nBack"
+ },
+ {
+  "from": "108405",
+  "option": "I understand",
+  "trail": [
+   "102624=Yes",
+   "100038=Minoxidil or Regaine"
+  ],
+  "result": {
+   "sig": "108003",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108003",
+     "type": "SINGLE_CHOICE",
+     "title": "Pregnancy",
+     "text": "Is your partner pregnant, or are you planning or trying for a baby?",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "My partner is pregnant",
+      "We are currently planning or trying for a baby",
+      "None of the above"
+     ],
+     "optionIds": [
+      "108003$105642",
+      "108003$105643",
+      "108003$102508"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-20-108405"
+ },
+ {
+  "from": "100038",
+  "option": "Finasteride, Propecia or dutasteride",
+  "trail": [
+   "102624=Yes"
+  ],
+  "result": {
+   "sig": "108405",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108405",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Medical history",
+     "text": "As you have allergies, you must check the list of ingredients of any medication prescribed to you before taking it. It's important to be sure you're not allergic to any of the ingredients as these can be different depending on the manufacturer of the medicine. The leaflet that comes with your medicine will have a list of ingredients.",
+     "required": true,
+     "explanationAvailable": true,
+     "options": [
+      "I understand"
+     ],
+     "optionIds": [
+      "108405$100618"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-21-100038",
+  "text": "Exit consultation\nMedical history\n\nAs you have allergies, you must check the list of ingredients of any medication prescribed to you before taking it.\n\nIt's important to be sure you're not allergic to any of the ingredients as these can be different depending on the manufacturer of the medicine.\n\nThe leaflet that comes with your medicine will have a list of ingredients.\n\nI understand\nNext\nBack"
+ },
+ {
+  "from": "108003",
+  "option": "My partner is pregnant",
+  "trail": [],
+  "result": {
+   "sig": "108001",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108001",
+     "type": "SINGLE_CHOICE",
+     "title": "Pets",
+     "text": "Do you live with pets?",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "108001$1",
+      "108001$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-22-108003"
+ },
+ {
+  "from": "108003",
+  "option": "We are currently planning or trying for a baby",
+  "trail": [],
+  "result": {
+   "sig": "108004",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108004",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Finasteride and trying for a baby",
+     "text": "Finasteride can affect sperm quality in some men, which may make it harder to conceive. This is uncommon and sperm quality usually improves after stopping treatment . Only small amounts of finasteride pass into semen. Harm to a baby through this exposure is considered very unlikely. As a precaution, we don't prescribe finasteride to men who are trying for a baby. If you are planning to try for a baby, we recommend stopping finasteride at least 3 months before trying to conceive.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "I understand"
+     ],
+     "optionIds": [
+      "108004$100618"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-23-108003",
+  "text": "Exit consultation\nFinasteride and trying for a baby\n\nFinasteride can affect sperm quality in some men, which may make it harder to conceive. This is uncommon and sperm quality usually improves after stopping treatment.\n\nOnly small amounts of finasteride pass into semen. Harm to a baby through this exposure is considered very unlikely.\n\nAs a precaution, we don't prescribe finasteride to men who are trying for a baby.\n\nIf you are planning to try for a baby, we recommend stopping finasteride at least 3 months before trying to conceive.\n\nI understand\nNext\nBack"
+ },
+ {
+  "from": "108004",
+  "option": "I understand",
+  "trail": [
+   "108003=We are currently planning or trying for a baby"
+  ],
+  "result": {
+   "sig": "108001",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108001",
+     "type": "SINGLE_CHOICE",
+     "title": "Pets",
+     "text": "Do you live with pets?",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "108001$1",
+      "108001$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-24-108004"
+ },
+ {
+  "from": "108001",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "108002",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108002",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Living with Pets",
+     "text": "You've told us that you live with pets. Some of our treatments contain topical minoxidil , which is toxic to all pets including cats and dogs . The main risk is accidental exposure, for example if a pet licks minoxidil from your fingers, hair, skin, clothing, or bedding after application. Oral tablets or capsules are less likely to pose a risk because the medication does not sit on your hair or skin in the same way. However, tablets or capsules are still harmful if a pet ingests them. By continuing, you confirm that you understand this risk and will take appropriate precautions to protect your pets.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "I confirm"
+     ],
+     "optionIds": [
+      "108002$103826"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-25-108001",
+  "text": "Exit consultation\nLiving with Pets\n\nYou've told us that you live with pets. Some of our treatments contain topical minoxidil, which is toxic to all pets including cats and dogs.\n\nThe main risk is accidental exposure, for example if a pet licks minoxidil from your fingers, hair, skin, clothing, or bedding after application.\n\nOral tablets or capsules are less likely to pose a risk because the medication does not sit on your hair or skin in the same way. However, tablets or capsules are still harmful if a pet ingests them.\n\nBy continuing, you confirm that you understand this risk and will take appropriate precautions to protect your pets.\n\nI confirm\nNext\nBack"
+ },
+ {
+  "from": "108002",
+  "option": "I confirm",
+  "trail": [
+   "108001=Yes"
+  ],
+  "result": {
+   "sig": "108360",
+   "title": "HL - Recommendations",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "108360",
+     "type": "MESSAGE",
+     "title": "Clinically proven results",
+     "text": "1 Hu et al., Dermatol Ther 2015, 2 Kaufman et al., JAAD 1998, 3 Olsen et al., JAAD 2007",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [],
+     "optionIds": [],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-26-108002"
+ }
+]

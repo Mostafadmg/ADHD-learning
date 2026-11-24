@@ -5,7 +5,8 @@
  "changedStep": "htc",
  "baselinesPooled": [
   "baseline-men",
-  "s2-base-men-1"
+  "s2-base-men-1",
+  "verify-base-men"
  ],
  "stepOrder": [
   "tp",
@@ -53,16 +54,6 @@
     "s2-base-women-1",
     "s2-m-age-17",
     "s2-m-age-18"
-   ]
-  },
-  {
-   "step": "ar",
-   "key": "q429.config",
-   "where": "after-change",
-   "alsoIn": [
-    "s2-m-age-17",
-    "s2-m-age-85",
-    "s2-m-gender-transwoman"
    ]
   },
   {

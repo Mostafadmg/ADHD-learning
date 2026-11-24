@@ -1,0 +1,19 @@
+STEP 16 click "Next"
+URL: https://www.numan.com/subscribe/hair-loss/fb569a8e-7e30-4dce-9824-75fa0375ecc0/sq/tell_us_about_medication_history
+TITLE: Please include a full list of any medications, prescribed or over the counter, that you are currently taking. This information is needed so that our clinicians can ensure the prescription is safe for you to take. | Numan
+
+--- VISIBLE TEXT ---
+96%
+Please include a full list of any medications, prescribed or over the counter, that you are currently taking.
+
+This information is needed so that our clinicians can ensure the prescription is safe for you to take.
+​
+Back
+Next
+
+--- CONTROLS ---
+  textarea (1): tell_us_about_medication_history
+  button (2): Back  ·  Next
+
+--- LINKS ---
+  link (1): Visit the main page -> /

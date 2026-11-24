@@ -1,0 +1,17 @@
+STEP 07 click "Next"
+URL: https://www.numan.com/subscribe/hair-loss/18cf2904-f1f7-4c49-9239-ab131a0c0110/sq/tell_us_which_reactions_from_this_medicine
+TITLE: Please let us know how you react when you take this medicine | Numan
+
+--- VISIBLE TEXT ---
+20%
+Please let us know how you react when you take this medicine
+​
+Back
+Next
+
+--- CONTROLS ---
+  textarea (1): tell_us_which_reactions_from_this_medicine
+  button (2): Back  ·  Next
+
+--- LINKS ---
+  link (1): Visit the main page -> /

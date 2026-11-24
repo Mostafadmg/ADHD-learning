@@ -1,0 +1,23 @@
+STEP 22 click "Yes"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+IMPORTANT SAFETY INFORMATION
+Finasteride & Dutasteride: Partner Pregnancy Risk
+
+Finasteride and Dutasteride are medications that may harm a developing male fetus if a pregnant person is exposed, even through skin contact. Extra precautions are required if your partner is pregnant or could become pregnant.
+
+To reduce risk:
+
+Your partner should not handle crushed or broken tablets or come into contact with the liquid form.
+You must confirm your understanding of these risks if your partner is pregnant, breastfeeding, or trying to conceive.
+Yes, I accept these risks and would like to be prescribed Finasteride and/or Dutasteride if considered appropriate by my physician.
+No, I do not accept these risks and do not want to be prescribed Finasteride and/or Dutasteride.
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

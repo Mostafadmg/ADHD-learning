@@ -5,7 +5,8 @@
  "changedStep": "mcm",
  "baselinesPooled": [
   "baseline-men",
-  "s2-base-men-1"
+  "s2-base-men-1",
+  "verify-base-men"
  ],
  "stepOrder": [
   "tp",
@@ -44,16 +45,6 @@
  "missingSteps": [],
  "candidateEffects": [],
  "noise": [
-  {
-   "step": "ar",
-   "key": "q429.config",
-   "where": "before-change",
-   "alsoIn": [
-    "s2-m-age-17",
-    "s2-m-age-85",
-    "s2-m-gender-transwoman"
-   ]
-  },
   {
    "step": "st",
    "key": "q9346.options",

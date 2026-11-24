@@ -1,23 +1,25 @@
 STEP 30 click "Continue"
-URL: https://start.treated.com/GBR/en/#/height-weight
+URL: https://start.treated.com/GBR/en/#/medical-profile
 TITLE: Treated UK - Choose Better - Medical Experts & Treatments Online
 
 --- VISIBLE TEXT ---
-What's your height and weight?
- Height
-ft/in
-cm
-Feet
-Inches
- Weight
-lbs
-kg
-Stone
-Pounds
+Here's your medical profile.
+
+Let us know if any of the below apply to you.
+
+I have one or more medical conditions
+I've had surgery before
+I'm taking medication(s)
+I have one or more allergies
+I smoke or used to smoke
+I drink alcohol
+I have one or more disabilities
+I have one or more close relatives with a medical condition
+I use recreational drugs
 Continue
 
 --- CONTROLS ---
-  input:tel (4): Feet = "5"  ·  Inches = "10"  ·  Stone = "12"  ·  Pounds = "0"
+  checkbox (9): I have one or more medical conditions  ·  I've had surgery before  ·  I'm taking medication(s)  ·  I have one or more allergies  ·  I smoke or used to smoke  ·  I drink alcohol  ·  I have one or more disabilities  ·  I have one or more close relatives with a medical condition  ·  I use recreational drugs
   button (1): Continue
 
 --- LINKS ---

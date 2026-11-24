@@ -1,0 +1,98 @@
+{
+ "start": "https://hairloss.philipkingsley.co.uk/welcome",
+ "note": "Baseline man (PROTOCOL 5): 32, Norwood 3 temples+crown, gradual ~2 years, family history yes, no conditions, no medicines, no allergies. Stops at the account wall (step_user). Never fill the wall.",
+ "steps": [
+  {
+   "do": "click",
+   "selector": "[data-quiz-step=men_quiz_step0]"
+  },
+  {
+   "do": "click",
+   "text": "GET STARTED"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q1\"][data-quiz-selection=\"Temples and Crown\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q2a\"][data-quiz-selection=\"My hair has thinned/receded noticeably in some areas, but other areas are still dense\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q3\"][data-quiz-selection=\"More than a month ago\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q4\"][data-quiz-selection=\"Gradually over months/years\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q5\"][data-quiz-selection=\"Yes\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q6\"][data-quiz-selection=\"30 to 39\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q7a\"][data-quiz-selection=\"Itching\"]"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q7f\"][data-quiz-selection=\"Mild\"]"
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q8\"][data-quiz-selection=\"None of the above\"]"
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q9\"][data-quiz-selection=\"None of the above\"]"
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q10a\"][data-quiz-selection=\"No\"]"
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q11a\"][data-quiz-selection=\"None\"]"
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "click",
+   "selector": ".pk-quiz-control[data-quiz-question=\"q12a\"][data-quiz-selection=\"No\"]"
+  },
+  {
+   "do": "click",
+   "selector": "button.pk-quiz-action.Next"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "eval",
+   "js": "(()=>{const q=window.quiz;const d=(q.data&&q.data[q.quizId])||{};const ans={};for(const k in d){if(d[k]&&d[k].value!=='')ans[k]=d[k].value;}const skus=q.checkProductAvailability();return {quizId:q.quizId,step:q.state.current,url:location.pathname,skus:skus,noResultsTemplate:skus.length?null:q.resolveNoResultsTemplate(),answers:ans};})()"
+  }
+ ]
+}

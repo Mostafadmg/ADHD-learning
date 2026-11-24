@@ -1,0 +1,26 @@
+STEP 05 click ".pk-quiz-control[data-quiz-question=\"q3a\"][data-quiz-selection=\"Overall thinning\"]"
+URL: https://hairloss.philipkingsley.co.uk/quiz/step/view/stepId/women_quiz_step3
+TITLE: 
+
+--- VISIBLE TEXT ---
+QUESTION #3
+HOW WOULD YOU DESCRIBE YOUR HAIR LOSS?
+Overall thinning
+More shedding than usual (in the shower/on my brush)
+Seeing more of my scalp or wider parting
+Thinning at temples
+Circular bald patches
+Bandlike recession
+Something else
+HOW NOTICABLE WOULD YOU SAY YOUR OVERALL THINNING IS?
+SELECT ONE
+ONLY I CAN NOTICE IT
+PEOPLE CLOSE TO ME CAN NOTICE IT
+EVERYONE CAN NOTICE IT
+BACK
+
+--- CONTROLS ---
+  button (1): BACK
+
+--- LINKS ---
+  link (4): SIGN IN -> https://hairloss.philipkingsley.co.uk/customer/account/  ·  TERMS OF SALE -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-of-sale  ·  TERMS & CONDITIONS -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-conditions  ·  PRIVACY POLICY -> https://hairloss.philipkingsley.co.uk/hair-loss-privacy-policy

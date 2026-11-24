@@ -15,9 +15,9 @@ const REP = path.join(ROOT, 'reports');
 fs.mkdirSync(OUT, { recursive: true }); fs.mkdirSync(REP, { recursive: true });
 
 // order and grouping of companies in the report
-const ORDER = ['hims-uk', 'voy', 'hair-and-me', 'sons', 'numan', 'treated', 'oxford-online-pharmacy', 'superdrug-online-doctor', 'boots-online-doctor', 'lloyds-online-doctor',
+const ORDER = ['hims-uk', 'voy', 'hair-and-me', 'sons', 'numan', 'treated', 'dr-fox', 'philip-kingsley', 'oxford-online-pharmacy', 'superdrug-online-doctor', 'boots-online-doctor', 'lloyds-online-doctor',
   'hims-us', 'hers-us', 'keeps', 'ro', 'happy-head', 'strut', 'musely', 'xyon', 'oana', 'nutrafol', 'pilot'];
-const GROUP = s => ['hims-uk', 'voy', 'hair-and-me', 'sons', 'numan', 'treated'].includes(s) ? 'UK specialists'
+const GROUP = s => ['hims-uk', 'voy', 'hair-and-me', 'sons', 'numan', 'treated', 'dr-fox', 'philip-kingsley'].includes(s) ? 'UK specialists'
   : ['oxford-online-pharmacy', 'superdrug-online-doctor', 'boots-online-doctor', 'lloyds-online-doctor'].includes(s) ? 'UK pharmacies and online doctors'
   : ['pilot'].includes(s) ? 'Rest of world' : 'United States';
 

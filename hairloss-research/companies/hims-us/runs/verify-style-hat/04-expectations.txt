@@ -1,0 +1,33 @@
+STEP 04
+URL: https://www.hims.com/g/i/hl/expectations
+SERVER NODE: expectations (nodeModularScreen), step value 11
+
+--- VISIBLE TEXT ---
+With treatment, what results are you hoping for?
+Choose as many as you’d like.
+A stronger, defined hairline
+Visibly thicker, fuller hair
+More scalp coverage
+Keep the hair I have
+All of the above
+Continue
+Already have an account? Sign In
+
+--- CHOICES ---
+[checkbox] A stronger, defined hairline
+[checkbox] Visibly thicker, fuller hair
+[checkbox] More scalp coverage
+[checkbox] Keep the hair I have
+[checkbox] All of the above
+
+--- BUTTONS ---
+Continue
+
+--- FIELDS ---
+
+
+--- LINKS ---
+Already have an account? Sign In -> /c/hl?skipToSignIn=true&goFlow=true&flowId=hl&sessionId=adac5199-2fbf-4cd2-a0aa-24979ebe7869
+
+--- OUTPUT SCHEMA (server) ---
+{"type":"object","required":["responses"],"properties":{"responses":{"type":"object","required":["i-hl-hims-hair-expectations"],"properties":{"i-hl-hims-hair-expectations":{"type":"object","required":["i-hl-hims-hair-expectations"],"properties":{"i-hl-hims-hair-expectations":{"type":"array","items":{"enum":["i-hl-hims-hair-expectations-defined","i-hl-hims-hair-expectations-fuller","i-hl-hims-hair-expectations-coverage","i-hl-hims-hair-expectations-keep","i-hl-hims-hair-expectations-all"],"type":"string"},"minItems":1}},"additionalProperties":false}},"additionalProperties":false}}}

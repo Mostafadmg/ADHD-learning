@@ -1,0 +1,141 @@
+{
+ "start": "https://start.treated.com/GBR/en/#/choose-gender/024",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 6000
+  },
+  {
+   "do": "click",
+   "text": "Male"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "wait",
+   "ms": 3000
+  },
+  {
+   "do": "click",
+   "text": "It's receding from the front"
+  },
+  {
+   "do": "click",
+   "text": "It's thinning all over the top"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "More than 3 months ago"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "I've never used any"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "Normal (Between 90/60 - 140/90)"
+  },
+  {
+   "do": "click",
+   "text": "In the last six months"
+  },
+  {
+   "do": "click",
+   "text": "None of the above"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "No, none of the above"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "wait",
+   "ms": 1500
+  },
+  {
+   "do": "click",
+   "text": "Okay"
+  },
+  {
+   "do": "wait",
+   "ms": 1500
+  },
+  {
+   "do": "fill",
+   "label": "Feet",
+   "value": "5"
+  },
+  {
+   "do": "fill",
+   "label": "Inches",
+   "value": "10"
+  },
+  {
+   "do": "fill",
+   "label": "Stone",
+   "value": "12"
+  },
+  {
+   "do": "fill",
+   "label": "Pounds",
+   "value": "0"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "wait",
+   "ms": 1500
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "Yes, correct"
+  },
+  {
+   "do": "wait",
+   "ms": 8000
+  }
+ ]
+}

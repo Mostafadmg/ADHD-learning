@@ -1,0 +1,33 @@
+STEP 44 click ".radio-answer:has(label:text-is(\"Hereditary problems of galactose intolerance, Lapp lactase deficiency or glucosegalactose malabsorption\")), .checkbox-answer:has(label:text-is(\"Hereditary problems of galactose intolerance, Lapp lactase deficiency or glucosegalactose malabsorption\"))"
+URL: https://onlinedoctor-clinic.boots.com/questions/10
+TITLE: Consultation | Boots Online Doctor
+
+--- VISIBLE TEXT ---
+Call us: Mon-Fri 8:30AM-6PM, Sat-Sun 9:30AM-4:30PM
+ 0203 3183773
+Boots Advantage Card Shop Boots.com
+Services
+Meet the team
+FAQ
+LOG IN
+57%
+Do you have any of the following conditions?
+Cancer
+Liver condition
+Depression
+Suicidal thoughts
+Sexual dysfunction (including decreased sex drive and erectile dysfunction)
+Skin condition
+Kidney/urinary condition
+Hereditary problems of galactose intolerance, Lapp lactase deficiency or glucosegalactose malabsorption
+None of these apply
+NEXT
+Powered by:
+©2026 Boots Digital Health Limited
+
+--- CONTROLS ---
+  button (12): Cookie Preferences  ·  LOG IN  ·  Cancer  ·  Liver condition  ·  Depression  ·  Suicidal thoughts  ·  Sexual dysfunction (including decreased sex drive and erectile dysfunction)  ·  Skin condition  ·  Kidney/urinary condition  ·  Hereditary problems of galactose intolerance, Lapp lactase deficiency or glucosegalactose malabsorption  ·  None of these apply  ·  NEXT
+  checkbox (9): Cancer  ·  Liver condition  ·  Depression  ·  Suicidal thoughts  ·  Sexual dysfunction (including decreased sex drive and erectile dysfunction)  ·  Skin condition  ·  Kidney/urinary condition  ·  Hereditary problems of galactose intolerance, Lapp lactase deficiency or glucosegalactose malabsorption [checked]  ·  None of these apply
+
+--- LINKS ---
+  link (6): 0203 3183773 -> tel:0203 3183773  ·  Boots Advantage Card -> https://www.boots.com/advantage-card  ·  Shop Boots.com -> https://boots.com  ·  Services ->   ·  Meet the team -> https://onlinedoctor.boots.com/meet-the-team  ·  FAQ -> 

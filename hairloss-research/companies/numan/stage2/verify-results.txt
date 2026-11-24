@@ -1,0 +1,137 @@
+=== al-fin
+RC=0
+QUESTIONS(9): what_is_your_age > which_image_best_matches_your_hair_loss > when_did_you_notice > do_you_have_an_allergy_or_intolerance_to_any > tell_us_which_reactions_from_this_medicine > have_any_scalp_issues > are_any_of_the_following_true > what_is_most_important_when_choosing_product > medical_history 
+FLAGS: {"isFinasterideEligible":"true","isMinoxidilEligible":"true","hasAllergyToFinasteride":"true","hasAllergyToMinoxidil":"false","allergies":"[\"finasteride_allergy\"]","numberOfQuestions":"9"}
+URL: https://www.numan.com/subscribe/hair-loss/a911c765-1783-401f-9b7d-17dbf1d60801/product-selection
+FEATURED: Extra Strength Spray Extra | Recommended for you | £18.00
+OTHERS: Regaine £51.67 ; Rosemary Oil £14.00
+=== al-min
+RC=0
+QUESTIONS(9): what_is_your_age > which_image_best_matches_your_hair_loss > when_did_you_notice > do_you_have_an_allergy_or_intolerance_to_any > tell_us_which_reactions_from_this_medicine > have_any_scalp_issues > are_any_of_the_following_true > what_is_most_important_when_choosing_product > medical_history 
+FLAGS: {"isFinasterideEligible":"true","isMinoxidilEligible":"true","hasAllergyToFinasteride":"false","hasAllergyToMinoxidil":"true","allergies":"[\"minoxidil_allergy\"]","numberOfQuestions":"9"}
+URL: https://www.numan.com/subscribe/hair-loss/05cbd535-b345-45ed-98d9-9804687d80cd/product-selection
+FEATURED: undefined | Recommended for you | £16.80
+OTHERS: Rosemary Oil £14.00
+=== sc-red
+RC=0
+QUESTIONS(9): what_is_your_age > which_image_best_matches_your_hair_loss > when_did_you_notice > do_you_have_an_allergy_or_intolerance_to_any > have_any_scalp_issues > clarify_red_rinds_or_rashes > are_any_of_the_following_true > what_is_most_important_when_choosing_product > medical_history 
+FLAGS: {"isFinasterideEligible":"true","isMinoxidilEligible":"false","hasAllergyToFinasteride":"false","hasAllergyToMinoxidil":"false","allergies":"[]","numberOfQuestions":"9"}
+URL: https://www.numan.com/subscribe/hair-loss/f56d088f-0292-4dd1-9afd-5ab75e41be3c/product-selection
+FEATURED: undefined | Recommended for you | £16.80
+OTHERS: Rosemary Oil £14.00
+=== c-bp-yes
+RC=0
+QUESTIONS(9): what_is_your_age > which_image_best_matches_your_hair_loss > when_did_you_notice > do_you_have_an_allergy_or_intolerance_to_any > have_any_scalp_issues > are_any_of_the_following_true > clarify_uncontrolled_bp > what_is_most_important_when_choosing_product > medical_history 
+FLAGS: {"isFinasterideEligible":"true","isMinoxidilEligible":"false","hasAllergyToFinasteride":"false","hasAllergyToMinoxidil":"false","allergies":"[]","numberOfQuestions":"9"}
+URL: https://www.numan.com/subscribe/hair-loss/4dfc4a36-019d-4641-8f68-bde883aeb503/product-selection
+FEATURED: undefined | Recommended for you | £16.80
+OTHERS: Rosemary Oil £14.00
+=== dep-suic
+RC=0
+QUESTIONS(13): what_is_your_age > which_image_best_matches_your_hair_loss > when_did_you_notice > do_you_have_an_allergy_or_intolerance_to_any > have_any_scalp_issues > are_any_of_the_following_true > mood_alterations > who_manages_your_mental_health > mental_health_medications > mental_health_medications_changed_yes_no > mental_health_suicidal > what_is_most_important_when_choosing_product > medical_history 
+FLAGS: {"isFinasterideEligible":"false","isMinoxidilEligible":"true","hasAllergyToFinasteride":"false","hasAllergyToMinoxidil":"false","allergies":"[]","numberOfQuestions":"13"}
+URL: https://www.numan.com/subscribe/hair-loss/7ce1435a-10f9-414e-b1f9-b939f2e962dc/product-selection
+FEATURED: Extra Strength Spray Extra | Recommended for you | £18.00
+OTHERS: Regaine £51.67 ; Rosemary Oil £14.00
+=== regaine-almin
+RC=0
+QUESTIONS(9): what_is_your_age > which_image_best_matches_your_hair_loss > when_did_you_notice > do_you_have_an_allergy_or_intolerance_to_any > tell_us_which_reactions_from_this_medicine > have_any_scalp_issues > are_any_of_the_following_true > what_is_most_important_when_choosing_product > medical_history 
+FLAGS: {"isFinasterideEligible":"true","isMinoxidilEligible":"true","hasAllergyToFinasteride":"false","hasAllergyToMinoxidil":"true","allergies":"[\"minoxidil_allergy\"]","numberOfQuestions":"9"}
+URL: https://www.numan.com/subscribe/hair-loss/18cf2904-f1f7-4c49-9239-ab131a0c0110/product-selection
+FEATURED: Regaine | Most effective | £65.00
+OTHERS: Finasteride £28.00 ; Rosemary Oil £23.33
+=== onset-sudden
+RC=2
+!!!!! STEP 06 FAILED: click "label:text-is(\"I am not allergic to any of the above\")"
+===== STEP 06 FAILED click "label:text-is(\"I am not allergic to any of the above\")" =====
+QUESTIONS(3): what_is_your_age > which_image_best_matches_your_hair_loss > when_did_you_notice  REJECT:when_did_you_notice/reject/sudden
+FLAGS: {"isFinasterideEligible":"true","isMinoxidilEligible":"true","hasAllergyToFinasteride":"false","hasAllergyToMinoxidil":"false","allergies":"[]","numberOfQuestions":"2"}
+URL: https://www.numan.com/subscribe/hair-loss/abe5b46e-9073-4029-8873-8b6f82888b8e/sq/when_did_you_notice/reject/sudden
+SCREEN: STEP 06 FAILED click "label:text-is(\"I am not allergic to any of the above\")" URL: https://www.numan.com/subscribe/hair-loss/abe5b46e-9073-4029-8873-8b6f82888b8e/sq/when_did_you_notice/reject/sudden TITLE: Numan --- VISIBLE TEXT --- No suitable treatment The safety of our patients is our top priority. Unfortunately, our treatments are not suitable for you because they are not designed for sudden hair loss. Sudden hair loss can have a number of causes and we recommend you seek advice from your usual GP to investigate causes for your sudden hair loss. If you’d like to talk to our clinicians about this, please email clinic@numan.com and we’ll do our best to find a solution or recommend next steps. Did you make a mistake in your consultation? Providing false information can lead to serious harm to your health. Review your answers Back to homepage --- CONTROLS --- button (1): Review your an
+=== c-psa-no
+RC=0
+QUESTIONS(9): what_is_your_age > which_image_best_matches_your_hair_loss > when_did_you_notice > do_you_have_an_allergy_or_intolerance_to_any > have_any_scalp_issues > are_any_of_the_following_true > clarify_psa > what_is_most_important_when_choosing_product > medical_history 
+FLAGS: {"isFinasterideEligible":"true","isMinoxidilEligible":"true","hasAllergyToFinasteride":"false","hasAllergyToMinoxidil":"false","allergies":"[]","numberOfQuestions":"9"}
+URL: https://www.numan.com/subscribe/hair-loss/96127cd6-f989-43a7-821e-836289560d85/product-selection
+FEATURED: Hair Kit - Medicated Spray, Finasteride & Supplement | Most effective | £26.67
+OTHERS: Hair Kit - Medicated Spray & Finasteride £22.67 ; Hair Kit - Combination Spray & Supplement £26.67 ; Finasteride £16.80 ; Triple-Action £22.67 ; Extra £18.00 ; Regaine £51.67 ; Rosemary Oil £14.00
+=== pat-complete
+RC=2
+!!!!! STEP 05 FAILED: click "label:text-is(\"My hair loss started gradually over the last few months or years\")"
+===== STEP 05 FAILED click "label:text-is(\"My hair loss started gradually over the last few months or years\")" =====
+QUESTIONS(2): what_is_your_age > which_image_best_matches_your_hair_loss  REJECT:which_image_best_matches_your_hair_loss/reject/complete
+FLAGS: {"isFinasterideEligible":"true","isMinoxidilEligible":"true","hasAllergyToFinasteride":"false","hasAllergyToMinoxidil":"false","allergies":"[]","numberOfQuestions":"1"}
+URL: https://www.numan.com/subscribe/hair-loss/1be84ac7-01a8-45eb-bd27-b76c38022343/sq/which_image_best_matches_your_hair_loss/reject/complete
+SCREEN: STEP 05 FAILED click "label:text-is(\"My hair loss started gradually over the last few months or years\")" URL: https://www.numan.com/subscribe/hair-loss/1be84ac7-01a8-45eb-bd27-b76c38022343/sq/which_image_best_matches_your_hair_loss/reject/complete TITLE: Numan --- VISIBLE TEXT --- No suitable treatment Our treatments are not effective in individuals who have experienced complete hair loss. If you’d like to talk to our clinicians about this, please email clinic@numan.com and we’ll do our best to find a solution or recommend next steps. Did you make a mistake in your consultation? Providing false information can lead to serious harm to your health. Review your answers Back to homepage --- CONTROLS --- button (1): Review your answers --- LINKS --- link (3): Visit the main page -> / · clinic@numan.com -> mailto:clinic@numan.com · Back to homepage -> https://www.numan.com/ 
+=== age-65-no
+RC=2
+!!!!! STEP 05 FAILED: click "label:text-is(\"Temples and Crown\")"
+===== STEP 05 FAILED click "label:text-is(\"Temples and Crown\")" =====
+QUESTIONS(2): what_is_your_age > sixty_five_and_over_confirmation  REJECT:sixty_five_and_over_confirmation/reject/no
+FLAGS: {"isFinasterideEligible":"true","isMinoxidilEligible":"true","hasAllergyToFinasteride":"false","hasAllergyToMinoxidil":"false","allergies":"[]","numberOfQuestions":"1"}
+URL: https://www.numan.com/subscribe/hair-loss/b89d78f0-fd36-4205-a3d0-d48f80ce5707/sq/sixty_five_and_over_confirmation/reject/no
+SCREEN: STEP 05 FAILED click "label:text-is(\"Temples and Crown\")" URL: https://www.numan.com/subscribe/hair-loss/b89d78f0-fd36-4205-a3d0-d48f80ce5707/sq/sixty_five_and_over_confirmation/reject/no TITLE: Numan --- VISIBLE TEXT --- No suitable treatment Unfortunately, we’re unable to recommend a hair loss treatment for you. Please contact your doctor for advice. If you’d like to talk to our clinicians about this, please email clinic@numan.com and we’ll do our best to find a solution or recommend next steps. Did you make a mistake in your consultation? Providing false information can lead to serious harm to your health. Review your answers Back to homepage --- CONTROLS --- button (1): Review your answers --- LINKS --- link (3): Visit the main page -> / · clinic@numan.com -> mailto:clinic@numan.com · Back to homepage -> https://www.numan.com/ 
+=== min-entry
+RC=0
+QUESTIONS(8): what_is_your_age > which_image_best_matches_your_hair_loss > when_did_you_notice > do_you_have_an_allergy_or_intolerance_to_any > have_any_scalp_issues > are_any_of_the_following_true > what_is_most_important_when_choosing_product > medical_history 
+FLAGS: {"isFinasterideEligible":"true","isMinoxidilEligible":"true","hasAllergyToFinasteride":"false","hasAllergyToMinoxidil":"false","allergies":"[]","numberOfQuestions":"8"}
+URL: https://www.numan.com/subscribe/hair-loss/a1ce9258-ee2d-4b32-ba4f-f1115b7f8e2c/product-selection
+FEATURED: Extra Strength Spray Extra | Recommended for you | £30.00
+OTHERS: Hair Kit - Medicated Spray, Finasteride & Supplement £40.00 ; Hair Kit - Medicated Spray & Finasteride £36.00 ; Hair Kit - Combination Spray & Supplement £40.00 ; Finasteride £28.00 ; Triple-Action £36.00 ; Regaine £65.00 ; Rosemary Oil £23.33
+=== pair-alfin-scpain
+RC=2
+!!!!! STEP 22 FAILED: click "See all treatments"
+===== STEP 22 FAILED click "See all treatments" =====
+QUESTIONS(10): what_is_your_age > which_image_best_matches_your_hair_loss > when_did_you_notice > do_you_have_an_allergy_or_intolerance_to_any > tell_us_which_reactions_from_this_medicine > have_any_scalp_issues > clarify_pain_itching > are_any_of_the_following_true > what_is_most_important_when_choosing_product > medical_history 
+FLAGS: {"isFinasterideEligible":"true","isMinoxidilEligible":"false","hasAllergyToFinasteride":"true","hasAllergyToMinoxidil":"false","allergies":"[\"finasteride_allergy\"]","numberOfQuestions":"10"}
+URL: https://www.numan.com/subscribe/hair-loss/140f2476-f415-4515-9fb1-340ce66a6117/product-selection
+FEATURED: Rosemary Oil | Most effective | £14.00
+=== c-ast-yes
+RC=0
+QUESTIONS(9): what_is_your_age > which_image_best_matches_your_hair_loss > when_did_you_notice > do_you_have_an_allergy_or_intolerance_to_any > have_any_scalp_issues > are_any_of_the_following_true > clarify_asthma > what_is_most_important_when_choosing_product > medical_history 
+FLAGS: {"isFinasterideEligible":"true","isMinoxidilEligible":"true","hasAllergyToFinasteride":"false","hasAllergyToMinoxidil":"false","allergies":"[]","numberOfQuestions":"9"}
+URL: https://www.numan.com/subscribe/hair-loss/cde3e627-0be6-4cb2-8431-35b09ecd7162/product-selection
+FEATURED: Hair Kit - Medicated Spray, Finasteride & Supplement | Most effective | £26.67
+OTHERS: Hair Kit - Medicated Spray & Finasteride £22.67 ; Hair Kit - Combination Spray & Supplement £26.67 ; Finasteride £16.80 ; Triple-Action £22.67 ; Extra £18.00 ; Regaine £51.67 ; Rosemary Oil £14.00
+=== c-baby-yes
+RC=0
+QUESTIONS(9): what_is_your_age > which_image_best_matches_your_hair_loss > when_did_you_notice > do_you_have_an_allergy_or_intolerance_to_any > have_any_scalp_issues > are_any_of_the_following_true > clarify_plan_on_trying_for_baby > what_is_most_important_when_choosing_product > medical_history 
+FLAGS: {"isFinasterideEligible":"true","isMinoxidilEligible":"true","hasAllergyToFinasteride":"false","hasAllergyToMinoxidil":"false","allergies":"[]","numberOfQuestions":"9"}
+URL: https://www.numan.com/subscribe/hair-loss/ec8187b6-5c9e-4eb0-9524-f8ed12ee0c4a/product-selection
+FEATURED: Hair Kit - Medicated Spray, Finasteride & Supplement | Most effective | £26.67
+OTHERS: Hair Kit - Medicated Spray & Finasteride £22.67 ; Hair Kit - Combination Spray & Supplement £26.67 ; Finasteride £16.80 ; Triple-Action £22.67 ; Extra £18.00 ; Regaine £51.67 ; Rosemary Oil £14.00
+=== al-lac-small
+RC=0
+QUESTIONS(9): what_is_your_age > which_image_best_matches_your_hair_loss > when_did_you_notice > do_you_have_an_allergy_or_intolerance_to_any > lactose_tolerance > have_any_scalp_issues > are_any_of_the_following_true > what_is_most_important_when_choosing_product > medical_history 
+FLAGS: {"isFinasterideEligible":"true","isMinoxidilEligible":"true","hasAllergyToFinasteride":"false","hasAllergyToMinoxidil":"false","allergies":"[\"lactose_intolerance_or_allergy\"]","numberOfQuestions":"9"}
+URL: https://www.numan.com/subscribe/hair-loss/0defb14c-b645-40b8-9642-b81588738777/product-selection
+FEATURED: Hair Kit - Medicated Spray, Finasteride & Supplement | Most effective | £26.67
+OTHERS: Hair Kit - Medicated Spray & Finasteride £22.67 ; Hair Kit - Combination Spray & Supplement £26.67 ; Finasteride £16.80 ; Triple-Action £22.67 ; Extra £18.00 ; Regaine £51.67 ; Rosemary Oil £14.00
+=== imp-all
+RC=0
+QUESTIONS(8): what_is_your_age > which_image_best_matches_your_hair_loss > when_did_you_notice > do_you_have_an_allergy_or_intolerance_to_any > have_any_scalp_issues > are_any_of_the_following_true > what_is_most_important_when_choosing_product > medical_history 
+FLAGS: {"isFinasterideEligible":"true","isMinoxidilEligible":"true","hasAllergyToFinasteride":"false","hasAllergyToMinoxidil":"false","allergies":"[]","numberOfQuestions":"8"}
+URL: https://www.numan.com/subscribe/hair-loss/24c7e021-7af3-421c-a39a-964a500a9ed6/product-selection
+FEATURED: Hair Kit - Medicated Spray, Finasteride & Supplement | Most effective | £26.67
+OTHERS: Hair Kit - Medicated Spray & Finasteride £22.67 ; Hair Kit - Combination Spray & Supplement £26.67 ; Finasteride £16.80 ; Triple-Action £22.67 ; Extra £18.00 ; Regaine £51.67 ; Rosemary Oil £14.00
+=== pat-temples
+RC=0
+QUESTIONS(8): what_is_your_age > which_image_best_matches_your_hair_loss > when_did_you_notice > do_you_have_an_allergy_or_intolerance_to_any > have_any_scalp_issues > are_any_of_the_following_true > what_is_most_important_when_choosing_product > medical_history 
+FLAGS: {"isFinasterideEligible":"true","isMinoxidilEligible":"true","hasAllergyToFinasteride":"false","hasAllergyToMinoxidil":"false","allergies":"[]","numberOfQuestions":"8"}
+URL: https://www.numan.com/subscribe/hair-loss/2d18fb73-9542-42b4-bec3-159bc5a3c640/product-selection
+FEATURED: Hair Kit - Medicated Spray, Finasteride & Supplement | Most effective | £26.67
+OTHERS: Hair Kit - Medicated Spray & Finasteride £22.67 ; Hair Kit - Combination Spray & Supplement £26.67 ; Finasteride £16.80 ; Triple-Action £22.67 ; Extra £18.00 ; Regaine £51.67 ; Rosemary Oil £14.00
+=== pat-moderate
+RC=0
+QUESTIONS(8): what_is_your_age > which_image_best_matches_your_hair_loss > when_did_you_notice > do_you_have_an_allergy_or_intolerance_to_any > have_any_scalp_issues > are_any_of_the_following_true > what_is_most_important_when_choosing_product > medical_history 
+FLAGS: {"isFinasterideEligible":"true","isMinoxidilEligible":"true","hasAllergyToFinasteride":"false","hasAllergyToMinoxidil":"false","allergies":"[]","numberOfQuestions":"8"}
+URL: https://www.numan.com/subscribe/hair-loss/f3745d7f-c8ac-4446-bef0-4a9c77239410/product-selection
+FEATURED: Hair Kit - Medicated Spray, Finasteride & Supplement | Most effective | £26.67
+OTHERS: Hair Kit - Medicated Spray & Finasteride £22.67 ; Hair Kit - Combination Spray & Supplement £26.67 ; Finasteride £16.80 ; Triple-Action £22.67 ; Extra £18.00 ; Regaine £51.67 ; Rosemary Oil £14.00
+=== pair-alfin-scpain-regaine
+RC=0
+QUESTIONS(10): what_is_your_age > which_image_best_matches_your_hair_loss > when_did_you_notice > do_you_have_an_allergy_or_intolerance_to_any > tell_us_which_reactions_from_this_medicine > have_any_scalp_issues > clarify_pain_itching > are_any_of_the_following_true > what_is_most_important_when_choosing_product > medical_history 
+FLAGS: {"isFinasterideEligible":"true","isMinoxidilEligible":"false","hasAllergyToFinasteride":"true","hasAllergyToMinoxidil":"false","allergies":"[\"finasteride_allergy\"]","numberOfQuestions":"10"}
+URL: https://www.numan.com/subscribe/hair-loss/234af203-617e-40dc-adf5-f0903df3e5f2/product-selection
+FEATURED: Regaine | Most effective | £65.00
+OTHERS: Rosemary Oil £23.33

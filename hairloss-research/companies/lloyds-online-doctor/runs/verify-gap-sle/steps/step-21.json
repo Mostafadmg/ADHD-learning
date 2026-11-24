@@ -1,0 +1,43 @@
+{
+ "step": {
+  "title": "HL",
+  "questions": [
+   {
+    "questionId": "108001",
+    "explanationAvailable": false,
+    "displayText": "Do you live with pets?",
+    "type": "SINGLE_CHOICE",
+    "answerRequired": true,
+    "smoothTransition": false,
+    "answerChoices": [
+     {
+      "answerId": "108001$1",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "108001",
+      "displayText": "Yes",
+      "type": "SINGLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "108001$2",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "108001",
+      "displayText": "No",
+      "type": "SINGLE_CHOICE",
+      "selected": false
+     }
+    ],
+    "titleOverride": "Pets"
+   }
+  ],
+  "questionAnswerErrors": {},
+  "summaryRequiredBeforeStep": false,
+  "registrationRequiredBeforeStep": false,
+  "fastSummaryRequiredBeforeStep": false
+ },
+ "explanation": "/api/questionnaire/traversals/3070790/explanations",
+ "previous": "/api/questionnaire/traversals/3070790/steps/previous",
+ "current": "/api/questionnaire/traversals/3070790/steps/current"
+}

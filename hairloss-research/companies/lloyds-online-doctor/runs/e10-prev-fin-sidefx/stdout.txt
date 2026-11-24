@@ -1,0 +1,135 @@
+
+===== SCREEN 03 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 100013 [SINGLE_CHOICE] required=true title="Your details"
+    TEXT: What was your sex at birth?
+    OPTIONS: "Male" | "Female"
+
+===== SCREEN 04 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 100014 [DATE_OF_BIRTH] required=true title="Your details"
+    TEXT: What is your date of birth?
+    OPTIONS: "For example: 31 3 1980"
+
+===== SCREEN 05 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 107977 [SINGLE_CHOICE] required=true title="Learn more about male pattern hair loss"
+    TEXT: Find out what causes it, and which treatments may help slow it down or help hair grow back.
+    OPTIONS: "Tell me more" | "Skip, I already know"
+    (auto-advanced on click, no Next needed)
+
+===== SCREEN 06 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 107978 [MESSAGE] required=true title="What causes hair loss?"
+    TEXT: Male pattern hair loss is caused by a combination of genetics and sensitivity to DHT (dihydrotestosterone) , a hormone made from testosterone. In people who are susceptible, DHT gradually causes affected hair follicles to shrink and shortens the hair growth phase. New hairs become finer and shorter and may eventually stop growing in some areas of the scalp. Treatments can help slow further hair loss and may support regrowth. Options include finasteride and minoxidil , which work in different ways.
+
+===== SCREEN 07 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 107979 [MESSAGE] required=true title="How does finasteride work?"
+    TEXT: Finasteride reduces DHT by blocking an enzyme that converts testosterone into DHT. Lowering DHT can slow the shrinking of affected hair follicles. When taken consistently, finasteride can slow hair loss and may support regrowth in some men.
+
+===== SCREEN 08 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 107980 [MESSAGE] required=true title="How does minoxidil work?"
+    TEXT: Minoxidil increases blood flow and nutrients to hair roots. Used regularly, it can help hair grow back thicker over time. It usually takes a few months to notice a difference. Some men use finasteride and minoxidil together. Complete your assessment to find out what's right for you.
+
+===== SCREEN 09 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 103257 [IMAGE_SINGLE_CHOICE] required=true title="Your hair loss"
+    TEXT: Please select which of the images below best represents your hair loss
+    OPTIONS: "Temples only" | "Temples and Crown" | "Moderate" | "Extensive" | "Complete" | "Random patches"
+
+===== SCREEN 10 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 107954 [SINGLE_CHOICE] required=true title="Your hair loss"
+    TEXT: How did your hair loss start?
+    OPTIONS: "Gradually, over months or years" | "Suddenly, over days or weeks"
+
+===== SCREEN 11 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 103261 [SINGLE_CHOICE] required=true title="Your hair loss"
+    TEXT: Have you lost any hair in other areas of your body such as eyebrows or beard?
+    OPTIONS: "Yes" | "No"
+
+===== SCREEN 12 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 105935 [SINGLE_CHOICE] required=true title="Your scalp" (i)
+    TEXT: Are you currently experiencing any changes to your scalp?
+    OPTIONS: "Yes" | "No"
+
+===== SCREEN 13 | step "HL - Previous HL treatment and Side effects" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 108014 [SINGLE_CHOICE] required=true title="Hair loss medication"
+    TEXT: Have you ever taken any medication for hair loss?
+    OPTIONS: "Yes" | "No"
+
+===== SCREEN 14 | step "HL - Previous HL treatment and Side effects" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 108015 [MULTIPLE_CHOICE] required=true title="Which hair loss treatments have you used before?"
+    TEXT: Include any treatments you currently use. Some products contain more than one medication, so please select all that apply.
+    OPTIONS: "Topical minoxidil (e.g. Regaine foam, solution or spray, Sons Minoxidil Solution, etc.)" | "Oral Minoxidil (e.g. tablets, capsules, etc.)" | "Finasteride tablets (e.g. Propecia or generic finasteride, etc.)" | "Other hair loss medication (e.g. compounded sprays containing finasteride or dutasteride)"
+
+===== SCREEN 15 | step "HL - Previous HL treatment and Side effects" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 108022 [SINGLE_CHOICE] required=true title="Hair loss medication"
+    TEXT: Has Finasteride tablets helped with your hair loss? This could mean slowing or stopping further hair loss, or helping hair grow back.
+    OPTIONS: "Yes, it's helped" | "It's helped a little" | "No, I haven't noticed any benefit" | "It's too early to tell"
+    (auto-answer: "Yes, it's helped")
+
+===== SCREEN 16 | step "HL - Previous HL treatment and Side effects" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 107959 [SINGLE_CHOICE] required=true title="Side effects" (i)
+    TEXT: Have you ever experienced side effects from Finasteride tablets that: Were persistent Were severe Required medical attention Made you stop using it
+    OPTIONS: "Yes" | "No"
+
+===== SCREEN 17 | step "HL - Previous HL treatment and Side effects" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 107981 [TEXT_AREA] required=true title="Side effects"
+    TEXT: Please describe the side effects you experienced.
+    OPTIONS: ""
+
+===== SCREEN 18 | step "HL - Previous HL treatment and Side effects" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 108051 [SINGLE_CHOICE] required=true title="Side effects"
+    TEXT: Would you like the option to choose a treatment containing Finasteride 1mg tablets again, despite your previous side effects?
+    OPTIONS: "Yes" | "No"
+    (auto-answer: "No")
+
+===== SCREEN 19 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 103270 [MULTIPLE_CHOICE] required=false title="Medical history"
+    TEXT: Have you ever had any of the following conditions?
+    OPTIONS: "Alopecia" | "Breast cancer" | "Breast tissue enlargement" | "Depression" | "Current or history of suicidal thoughts, self-harm, or attempts" | "Obstructive uropathy" | "Prostate cancer" | "Liver condition" | "Phaeochromocytoma" | "Porphyria" | "Problems with my sex life" | "Systemic Lupus Erythematosus (SLE)"
+
+===== SCREEN 20 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 101561 [SINGLE_CHOICE] required=true title="Medical history"
+    TEXT: Do you have Chronic Kidney Disease (CKD) or a reduced kidney function?
+    OPTIONS: "Yes" | "No"
+
+===== SCREEN 21 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 107973 [SINGLE_CHOICE] required=true title="Medical history"
+    TEXT: Have you ever had a condition that affects your heart or blood pressure? Examples include: High or low blood pressure Dizziness or faintness when standing up Heart failure An irregular heartbeat (arrythmias) Fluid or inflammation around the heart Heart valve or structural heart problems A heart attack, angina, stroke or mini-stroke (TIA) Another heart or blood vessel condition
+    OPTIONS: "Yes" | "No"
+
+===== SCREEN 22 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 107800 [SINGLE_CHOICE] required=true title="Medical history"
+    TEXT: Do you have any medical conditions other than those we have already asked about?
+    OPTIONS: "Yes" | "No"
+
+===== SCREEN 23 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 102632 [SINGLE_CHOICE] required=true title="Medical history"
+    TEXT: Are you currently taking any prescription medications?
+    OPTIONS: "Yes" | "No"
+
+===== SCREEN 24 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 102624 [SINGLE_CHOICE] required=true title="Medical history" (i)
+    TEXT: Do you have any allergies?
+    OPTIONS: "Yes" | "No"
+
+===== SCREEN 25 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 108001 [SINGLE_CHOICE] required=true title="Pets"
+    TEXT: Do you live with pets?
+    OPTIONS: "Yes" | "No"
+
+===== SCREEN 26 | step "SUMMARY" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  (no questions; stepState=SUMMARY)
+  (answers summary page: confirming it to reach the recommendations)
+
+===== SCREEN 27 | step "SUMMARY" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  (no questions; stepState=SUMMARY)
+  (answers summary page: confirming it to reach the recommendations)
+  (no Continue on screen: waiting for the next step)
+
+===== SCREEN 28 | step "HL - Recommendations" | {"summaryRequiredBeforeStep":true,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 107988 [PRODUCT_CARD] required=true title="Your Recommendations"
+    TEXT: Dr. Sameer Sanghvi General Practitioner (GP) GMC no. 7085078 Consultation overview: Your hair loss is consistent with male pattern hair loss You've previously used hair loss treatment You reported side effects to hair loss treatments Our recommendation: You're suitable for Minoxidil tablets and Minoxidil spray
+    CARD {"id":"107988$105177","title":"Minoxidil tablets","label":"6 months","sku":4494,"price":"142.00","perWeek":"5.52 a week","inStock":true,"recommended":false,"preference":false,"mainOption":true}
+    CARD {"id":"107988$105217","title":"Sons Minoxidil spray","label":"6 months","sku":4490,"price":"99.00","perWeek":"3.85 a week","inStock":true,"recommended":false,"preference":false,"mainOption":true}
+
+##### NO ANSWER in policy for question 107988. Stopping here.
+
+FINAL URL: https://core.onlinedoctor.lloydspharmacy.com/consultation/current  (139 s)
+[explore] exit 0 -> /home/user/ADHD-learning/hairloss-research/companies/lloyds-online-doctor/runs/e10-prev-fin-sidefx

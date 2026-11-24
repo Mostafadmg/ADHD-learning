@@ -223,3 +223,105 @@ with its body, so tracking events are visible. Each run folder holds `result.jso
 The only thing an answer changes is the name of the click event sent to `api.forhims.com/dpe/producer/unauth` (Hims' own
 event collector) and to Amplitude, for example `atf_q1-what-are-your-hair-goals_stop-hair-loss_secondary-cta`. The event
 carries a device id (`uet_id`), so the answer is kept as marketing data even though no account exists.
+
+---
+
+# Stage 2 continued (second investigator), 23 November 2026, 22:50 to 23:35 UTC
+
+## S2.3 The newer intake at /g/i/hl works (the big find of stage 2)
+
+- `https://www.hims.com/g/i/hl` is drawn by Hims' server-driven flow engine (`flow-server.hims.com/api/eventProcessor/hl/s/<session>/...`),
+  not by the blocked `/c/hl` scripts, so it loads. The earlier stage 2 investigator found it and wrote `scripts/giwalk.js`
+  (answers keyed by screen slug; stops at any contact field; never ticks a consent box) and `baseline-men-gi.json`.
+- Replay: `node scripts/giwalk.js baseline-men-gi.json runs/<id>` (about 100 s). Compare with `node scripts/cmp.js runs/<id>`
+  (screen-by-screen diff against `runs/baseline-men-gi`).
+- 14 screens: goals, changes, loss, start, expectations (multi), type, length, [lifestyle info], hair-loss-heredity, stress,
+  [factors info], [routine info], hair-style, hair-style-duration, then select-state (state drop-down + Terms and Telehealth
+  Consent tick-box). Continue stays disabled until the box is ticked. **We stop there.** Server step ids: 2,4,6,9,11,12,13,5,14,15,18,19,16,17,10
+  (ids 1, 3, 7, 8 never appeared).
+- Screen one says: "The quiz is not a medical assessment and your responses will not be shared with a medical provider."
+- Each server reply holds only the current screen (with its answer enum ids), not the whole quiz, so there is no quiz
+  definition to read branch conditions from. The initialize reply has `metadata.validation.dateOfBirth` (minAge 18, maxAge 120)
+  and `legacyPath: "/c/hl"`. The "Sign In" link goes to `/c/hl?skipToSignIn=true&goFlow=true&flowId=hl`.
+
+## S2.4 Experiments (20 replays this session; action files in `actions/exp-gi-*.json`)
+
+| Run | Change | Result |
+|---|---|---|
+| s2b-baseline-men-gi | none | 14 screens → state screen, TX valid, consent wall |
+| exp-gi-01, 02 | goals → get ahead / receding | no change |
+| exp-gi-03 (earlier), 04 | changes → all over / top | no change |
+| exp-gi-05 | loss → a lot | no change |
+| exp-gi-06 (earlier) | start → past few months | no change |
+| exp-gi-07 | expectations → keep | site error twice, not tested |
+| exp-gi-08 | type → I don't have hair | no change (still asked length and styling) |
+| exp-gi-09 | length → buzzed | no change |
+| exp-gi-10 | heredity → No | no change (info screen still blames family history) |
+| exp-gi-11 | stress → all the time | no change |
+| exp-gi-12 | style → protective | no change |
+| exp-gi-13 | duration → 10+ | no change |
+| exp-gi-14 | every answer different (sweep), California | no change |
+| exp-gi-15, 18 | state → AA / AP | **stop: "Currently, we don't offer this product in your state"** (server isValid false) |
+| exp-gi-16, 17 | state → Massachusetts / Washington | valid, no message |
+
+- The site sometimes shows "Something went wrong! ... Please try again" on screen one (4 of 20 replays). Wait 30 s and retry once.
+- `s2-gi-explore-2` (earlier, multi-change) was run before the consent guard existed: it clicked the consent tick-box but chose no
+  state, so it never got past the state screen.
+- Not replayed: start "In the past year", expectations "More scalp coverage" / "Keep the hair I have", type "Textured",
+  length "Medium", style "hat", state AE.
+
+## S2.5 What changed in company.json
+
+`scripts/stage2b_patch.py` (flow `men-gi`, experiments, rules R21 to R28; removes the 7 anonymous skeleton topics from the old
+`men` flow) and `scripts/stage2b_text.py` (access, recommendations, product lines, engine summary, strengths, weaknesses,
+opportunities, limitations). Both are safe to re-run, in that order. `validate.js hims-us --stage rules` passes (0 errors).
+
+## S2.6 For stage 3 / a later investigator
+
+- The only way further is past the Terms and Telehealth Consent tick-box, which leads (most likely) to account creation:
+  out of bounds. Public documents remain the only source for the medical form and the offer.
+- Hers (forhers.com) may have a similar `/g/i/...` route on flow-server; not tried (security check on the whole domain).
+
+---
+
+# Stage 3 (VERIFY) log, 23 November 2026, independent reviewer
+
+## S3.1 Baselines replayed fresh
+
+| Run | Result |
+|---|---|
+| `runs/verify-baseline-men-gi` | Same 15 screens, same order and wording as `runs/s2b-baseline-men-gi` (`scripts/cmp.js` shows no difference). Ends on the state screen with Texas chosen, tick-box unticked, Continue disabled (screenshot `14-select-state-after-select.jpg`). **Confirmed.** |
+| `runs/verify-baseline-lp-prequiz` | Same steps, scroll positions and call-to-action links as `runs/s2-baseline-lp-prequiz`. **Confirmed.** |
+| `runs/verify-baseline-men` | `/c/hl/goals` still blank (old app still blocked). **Confirmed.** |
+| `runs/verify-baseline-women` | forhers.com still on the Cloudflare security check. **Confirmed.** |
+| `runs/verify-baseline-men-gi/net/01-GET-initialize.json` | Still serves `validation.dateOfBirth` minAge 18 / maxAge 120 and `legacyPath "/c/hl"`. R27 confirmed as code. |
+
+One-change action files for stage 3 are `actions/verify-*.json` (made from `baseline-men-gi.json`).
+
+## S3.2 Rule re-tests and new replays (13 replays in total this stage, one at a time, no site errors)
+
+| Run | Change | Result |
+|---|---|---|
+| `runs/verify-state-aa` | state AA | stop confirmed (isValid false, "Currently, we don't offer this product in your state") |
+| `runs/verify-state-ae` | state AE (first test) | same stop; screenshot `shots/verify-state-ae-not-offered.jpg` |
+| `runs/verify-state-ma` | Massachusetts | valid, no message (R25 confirmed) |
+| `runs/verify-start-past-year`, `verify-expect-scalp`, `verify-expect-keep`, `verify-type-textured`, `verify-length-medium`, `verify-style-hat` | the 6 options stage 2 never replayed | no change; the server got the changed answer each time (checked in `net/`). All 40 hair options now seen. |
+
+All 18 stage 2 `exp-gi-*` folders were re-compared with the fresh baseline using `scripts/cmp.js`: no difference (exp-gi-07 is the error run).
+
+## S3.3 Product and docs checks
+
+- `scripts/getdoc.js` (no JavaScript) into `runs/verify-products` and `runs/verify-docs`. The pages' own schema.org offer gives a clean price.
+  Loading pages WITH JavaScript and the default browser now hits the Cloudflare check (`scripts/verify_pdp.js`, `runs/verify-products-js`): not pursued.
+- **Price change:** landing page now "Starting at $29" for pill, chew, spray, serum and minoxidil chew, $33 for the 4-in-1 spray
+  (stage 1 saw $35 / $39 on the same page earlier in the day). Fixed in company.json; old figures kept as history.
+- Actives and strengths all matched. Hair Power Pack: text "Out of stock" but product data "InStock". Dandruff Detox: visible $18/$17, product data 15.
+- Safety-page wording for R1, R2, R3, R5 still live.
+
+## S3.4 What was changed
+
+`scripts/stage3_verify.py` (idempotent) applies every stage 3 correction and writes the `verification` block.
+`node tools/validate.js hims-us --stage final`: 0 errors, 7 warnings (the old "men" skeleton topics, which honestly have no options).
+
+Process note for the record: the early stage 2 run `runs/s2-gi-explore-2` (older tool) ticked the consent box but chose no
+state, so it never passed the state screen. `scripts/giwalk.js` now never ticks it.

@@ -1,0 +1,9 @@
+URL: https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+
+Exit consultation
+Medical history
+Are you currently taking any prescription medications?
+Yes
+No
+Next
+Back

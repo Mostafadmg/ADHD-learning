@@ -1,0 +1,7 @@
+PATH: 100013 > 100014 > 107977 > 107978 > 107979 > 107980 > 103257 > 107954 > 103261 > 105935 > 108014 > 103270 > 101561 > 107973 > 107800 > 102632 > 102624 > 108001 > SUMMARY > SUMMARY > 107988
+ADDED vs base: - | REMOVED vs base: 108003, 108360
+REC TEXT: Consultation overview: Your hair loss is consistent with male pattern hair loss You're new to hair loss treatment Our recommendation: You're suitable for Minoxidil tablets and Minoxidil spray
+  (same text as base: false)
+  CARD Minoxidil tablets | 6 months | £142.00 | 5.52 a week | inStock=true | rec=false | pref=false | main=true
+  CARD Sons Minoxidil spray | 6 months | £99.00 | 3.85 a week | inStock=true | rec=false | pref=false | main=true
+  CARDS vs base: removed [Dual Action - Tablet + Spray, Dual Action - Tablets, Finasteride tablets, Propecia] added [] order same: true

@@ -1,0 +1,19 @@
+STEP 33 click ".pk-quiz-control[data-quiz-question=\"q12a\"][data-quiz-selection=\"No, I do not have a medical condition and am not taking any medication\"]"
+URL: https://hairloss.philipkingsley.co.uk/quiz/step/view/stepId/women_quiz_step12
+TITLE: 
+
+--- VISIBLE TEXT ---
+QUESTION #12
+DO YOU HAVE ANY MEDICAL CONDITIONS THAT YOU ARE BEING TREATED FOR AND ARE YOU TAKING ANY OF THE BELOW MEDICATIONS ALREADY?
+SELECT ANY THAT APPLY
+YES, I HAVE A MEDICAL CONDITION, PLEASE STATE
+NO, I DO NOT HAVE A MEDICAL CONDITION AND AM NOT TAKING ANY MEDICATION
+I AM TAKING ORAL MINOXIDIL
+NEXT
+BACK
+
+--- CONTROLS ---
+  button (2): NEXT  ·  BACK
+
+--- LINKS ---
+  link (4): SIGN IN -> https://hairloss.philipkingsley.co.uk/customer/account/  ·  TERMS OF SALE -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-of-sale  ·  TERMS & CONDITIONS -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-conditions  ·  PRIVACY POLICY -> https://hairloss.philipkingsley.co.uk/hair-loss-privacy-policy

@@ -1,0 +1,20 @@
+STEP 14 click "label:text-is(\"I do not have a major illness, ongoing medical condition, operation, allergy to medication or take prescribed or over the counter medication to tell you about.\")"
+URL: https://www.numan.com/subscribe/hair-loss/930c34ee-3dcc-4020-8147-58b746700cd9/gp-notification-choice
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+89%
+Would you like your GP to be informed of this consultation?
+
+To ensure we provide the best and safest service for you, we strongly encourage you to share your GP details so we can inform them about your treatment.
+
+Yes
+No
+Back
+
+--- CONTROLS ---
+  radio (2): Yes  ·  No
+  button (1): Back
+
+--- LINKS ---
+  link (1): Visit the main page -> /

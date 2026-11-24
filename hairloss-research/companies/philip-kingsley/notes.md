@@ -94,3 +94,51 @@ r07 baseline women (to wall) · r08 baseline scalp (to wall) · exp-01 men Q8 = 
 
 - src/: raw HTML and JS as served (pages, quiz.min.js, sitemap.xml). extracted/: text versions and analysis tables.
 - scratch/: my scripts (extract.py, dump2.py, qparse.py, engine.py, build*.py, main.py, final.py rebuild company.json).
+
+## Stage 2 (experiment), 23 Nov 2026 — work log
+
+- New tool: `scratch/walk-eval.js` = copy of tools/walk.js plus one step `{"do":"eval","js":"..."}`. At the account wall it runs
+  the site's OWN client function `window.quiz.checkProductAvailability()` in the live page (read-only, nothing is sent) and saves
+  `runs/<id>/eval.json` (SKUs that pass, the no-results template if none, the stored answers). This shows, per live replay,
+  exactly which SKUs the site's own code would put on the results page. The server-rendered results page itself stays unseen.
+- Variant files: `scratch/mk.py` (helpers), `scratch/mkmen.py` (men variants) -> `scratch/exp/<id>.json`. Run one with
+  `scratch/run.sh <id>` (one browser, ~45 s). Compare with baseline + the Python port: `python3 scratch/cmp.py <id> ...`.
+- Baselines replayed: runs/b-men (PHI1220, PHI1221, PHI1301, PHI1302, PHI1303, PHI1305), runs/b-women (PHI1749, PHI1670),
+  runs/b-scalp (PHI1619, PHI1635). Every live result so far equals the Python port on the saved definition, so the served
+  rules have not changed since stage 1.
+- Done: 47 replays (3 baselines + 31 men + 12 women + 1 scalp), all to the wall; `experiments[]` in company.json lists each
+  with its live SKU list. Rules R1-R16 now carry live proof; R17-R26 are new (show-ifs seen live, warning, "no effect" set,
+  add-on switch, no under-18 answer). `recommendations[]` has 17 profiles.
+- Findings confirmed live: blood-pressure typo (m25: minoxidil plans still pass); 3% Combination Plan never passes (incl. m05);
+  women's parting + sudden onset still gets PHI1749 (w09) while overall thinning + sudden goes to consultation (w10);
+  depression warning appears but both answers end in consultation (m26, m27); wall screen text is identical in all 44 variants.
+- Dead end: the hairloss store search (/catalogsearch/result/?q=PHI1220) returns nothing even for known SKUs (PHI1301), so it
+  cannot name PHI1220/PHI1221.
+- Scripts that rebuilt company.json for this stage: scratch/stage2.py (experiments), stage2b.py (options/questions),
+  stage2c.py (rules/recommendations), stage2d.py (products, summary, strengths, limitations). They are idempotent only from
+  the stage-1 file; edit company.json directly from now on.
+- Not replayed (code only): see limitations[2] in company.json.
+
+## Stage 3 (verify), 24 Nov 2026 — work log (independent reviewer)
+
+- Tools: `scratch/verify/mk.js` builds a run file from the official baseline-<flow>.json (swap one selection; `qOld>qNew=value`
+  swaps a follow-up; `--after:<q>:<step json>` adds a follow-up click or text fill) and appends a read-only eval step.
+  `scratch/verify/run.sh <id>` replays it into `runs/verify-<id>/` (one browser, foreground). `scratch/verify/engine.js` is a
+  fresh port of the site's rule check written from quiz.min.js (not from stage 1's engine.py); it gives the predictions.
+- Baselines replayed fresh: runs/verify-b-men, verify-b-women, verify-b-scalp: same SKUs as recorded, and the served
+  rules (state.rules) are byte-identical to the saved quiz-definition-*.json files (57128 / 196018 / 49126 characters).
+- 22 replays in all (3 baselines + 19 variants: runs/verify-m-*, runs/verify-w-*). Every one matched engine.js; no rule
+  was contradicted. 12 options were replayed for the first time (men: extensive density, not started yet, acne, severe dandruff,
+  moderate itching, bleeding; women: temples, band-like, mild redness, mild dandruff, other allergy, medical condition), plus three
+  deliberate two-change contrasts (m-early-over65, m-tcr-slight, w-temples-sudden).
+- New finding: "Temples and Crown with reduced density" + a visible-scalp density answer gets the 5% Combination Plan (R27), the
+  case the broken 3% plan was meant for.
+- Product pages re-read live (scratch/verify/pages/): all 11 SKU prices matched; Subscribe & Save offers recorded (hairloss store
+  50% off first order; www 20-30% off first, 15% after, Black Friday). Healthy Scalp Topical plan strengths now from its page
+  (5% + 0.1%); plans list "Finasteride 1mg Tablet" (leaflet says capsule). Shedding Drops product page lists melatonin liposome,
+  Sandalore, botanical blend, zinc (Edelweiss/Baicapil only on the women's page). Minoxidil 5% page says male pattern only.
+- Missing from the catalogue, now added: Density Preserving Scalp Drops (£55) and Density Drops Trio (£165), www cosmetics.
+- Label fixes: severity-follow-up options were typed "hard-stop"; the consultation screen shows no prices; R18/R19/R21/R26
+  split into observed / code / inferred parts. company.json has a `verification` block; patch scripts scratch/verify/patch.py
+  (one-off; backup of the pre-stage-3 file in scratch/verify/company.before-stage3.json).
+- `node tools/validate.js philip-kingsley --stage final` passes.

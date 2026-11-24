@@ -1,0 +1,11 @@
+PATH: 100013 > 100014 > 107977 > 107978 > 107979 > 107980 > 103257 > 107954 > 103261 > 105935 > 108014 > 103270 > 101561 > 107973 > 107800 > 102632 > 103769 > 108158 > 102624 > 108003 > 108360 > SUMMARY > SUMMARY > 107988
+ADDED vs base: 103769, 108158 | REMOVED vs base: 108001
+  NEW 103769 [MULTIPLE_CHOICE] Medical history: Are you taking any of the following medications: || Finasteride or Dutasteride for prostate problems | Medicines for high blood pressure (e.g. amlodipine, ramipril, lisinopril, losartan etc.) | Antidepressants (e.g. escitalopram, citalopram, duloxetine, fluoxetine, mirtazapine, paroxetine, sertraline, venlafaxine etc.) | Erectile dysfunction tablets 
+  NEW 108158 [MULTIPLE_CHOICE] Medical history: And what about these? || Testosterone or Anabolic steroids | Inhalers for asthma or COPD | Antihistamines | Painkillers | Acid reflux medication (e.g. omeprazole, lansoprazole, pantoprazole, etc.) | Other medication
+REC TEXT: Consultation overview: Your hair loss is consistent with male pattern hair loss You're new to hair loss treatment Our recommendation: You're suitable for Finasteride tablets and Minoxidil tablets As you're new to hair loss treatment, we'd recommend starting with a licensed treatment, such as Finasteride tablets Combining Finasteride with Minoxidil may provide greater benefits than using either treatment alone, as they work in different ways.
+  (same text as base: false)
+  CARD Dual Action - Tablets | 6 months | £189.00 | 7.35 a week | inStock=false | rec=false | pref=false | main=true
+  CARD Finasteride tablets | 1 month | £163.00 | 6.79 a week | inStock=true | rec=false | pref=false | main=false
+  CARD Minoxidil tablets | 6 months | £142.00 | 5.52 a week | inStock=true | rec=false | pref=false | main=false
+  CARD Propecia | 1 month | £210.00 | 8.75 a week | inStock=true | rec=false | pref=false | main=false
+  CARDS vs base: removed [Dual Action - Tablet + Spray, Sons Minoxidil spray] added [] order same: true

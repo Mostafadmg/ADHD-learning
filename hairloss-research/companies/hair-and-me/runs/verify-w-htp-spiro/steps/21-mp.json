@@ -1,0 +1,52 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 3,
+   "sectionTitle": "MEDICAL HISTORY"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 4503,
+    "inputConfig": {
+     "options": [
+      {
+       "label": "I'm postpartum (given birth in the last 6 months)",
+       "value": "I'm postpartum (given birth in the last 6 months)"
+      },
+      {
+       "label": "I have unwanted hair on my face (e.g. upper lip, chin, jawline)",
+       "value": "I have unwanted hair on my face (e.g. upper lip, chin, jawline)"
+      },
+      {
+       "exclusive": true,
+       "label": "None of the above",
+       "value": "None of the above"
+      }
+     ]
+    },
+    "inputType": "multi_select_checkbox",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Do any of the following apply to you?",
+  "type": "question"
+ }
+}

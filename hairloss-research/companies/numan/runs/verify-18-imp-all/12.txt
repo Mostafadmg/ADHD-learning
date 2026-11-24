@@ -1,0 +1,20 @@
+STEP 12 click "label:text-is(\"All of the above\")"
+URL: https://www.numan.com/subscribe/hair-loss/24c7e021-7af3-421c-a39a-964a500a9ed6/sq/what_is_most_important_when_choosing_product
+TITLE: What’s most important to you when choosing a hair loss product? (Select all that apply) | Numan
+
+--- VISIBLE TEXT ---
+86%
+What’s most important to you when choosing a hair loss product? (Select all that apply)
+Effectiveness of the product
+Minimal side effects
+Scalp-friendly options
+All of the above
+Back
+Next
+
+--- CONTROLS ---
+  checkbox (4): Effectiveness of the product  ·  Minimal side effects  ·  Scalp-friendly options  ·  All of the above [checked]
+  button (2): Back  ·  Next
+
+--- LINKS ---
+  link (1): Visit the main page -> /

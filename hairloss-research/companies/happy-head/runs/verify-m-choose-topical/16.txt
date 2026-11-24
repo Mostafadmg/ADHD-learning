@@ -1,0 +1,64 @@
+STEP 16 wait 1500
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+We Recommend
+Dutasteride + MinoxidilRx
+Dual Treatment delivers the best chance of regrowth.
+FASTEST RESULTS
+Dual Treatment Plan
+Best For:
+Best chance of regrowth, fastest results
+TopicalRx Solution + Oral SuperCapsuleTM
+Fastest, most effective results1
+Treats hair loss from two pathways — scalp and systemic
+Apply topical twice + take one capsule daily
+Dermatologist prescribed & shipped to you
+7/10
+Customers Choose This Plan2
+CHOOSE DUAL TREATMENT
+TopicalRx Solution
+Best For:
+Starting simple, lower monthly cost
+TopicalRx Solution
+Treats hair loss at the scalp, one pathway
+Apply topical twice daily
+Dermatologist prescribed & shipped to you
+CHOOSE TOPICAL
+1. Combination therapy has been shown to be more effective than single therapy in clinical studies
+2. Internal data from Happy Head, Jan—Dec 2025.
+FDA-Approved Ingredients
+Clinically Proven Ingredients
+Free Shipping Always
+Cancel or Adjust Anytime
+Results may vary. See full safety information on product pages.
+Active Ingredients
+Dutasteride
+Dutasteride is 3x more effective than Finasteride and suppresses DHT levels by 98%. 1
+Minoxidil
+Happy Head formulations use up to 8% Minoxidil, the strongest available concentration compared to OTC Minoxidil at 5%.
+4/5 Experienced significant hair growth
+when using Minoxidil. 2
+Retinoic Acid
+Supercharges Minoxidil to promote denser hair regrowth.
+Hydrocortisone
+Prevents irritation and redness.
+1 Indian Journal of Dermatology, Venereology, and Leprology (2017). 2 Journal of the American Academy of Dermatology (2020).
+Your Treatment Includes
+FREE consultation with a board-certified dermatologist throughout your treatment.
+Clinically backed solutions tailored to your hair growth goals and medical profile.
+Expert advice from Happy Head Growth Guides to maximize results
+TRY IT RISK-FREE
+6-Month Guarantee
+If you're unsatisfied, we'll refund your most recent month's supply within 6 months. You can also pause, skip, or cancel your subscription at any time.
+* 6 Month Guarantee: See our Terms & Conditions for more information. Limited to your most recent month's Rx supply.
+How to Use
+Fill the dropper twice to 0.5ml, then line up the dropper directly onto your scalp to apply the solution and rub in for a total of 1.0ml per application. Apply twice a day (morning and night) for a total of 2.0ml daily.
+
+--- CONTROLS ---
+  button (2): CHOOSE DUAL TREATMENT  ·  CHOOSE TOPICAL
+
+--- LINKS ---
+  link (1): Terms & Conditions -> https://www.happyhead.com/legal/terms-of-use

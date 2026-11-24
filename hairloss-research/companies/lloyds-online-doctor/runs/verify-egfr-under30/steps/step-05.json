@@ -1,0 +1,43 @@
+{
+ "step": {
+  "title": "HL",
+  "questions": [
+   {
+    "questionId": "107977",
+    "explanationAvailable": false,
+    "displayText": "<p>\nFind out what causes it, and which treatments may help slow it down or help hair grow back.\n</p>",
+    "type": "SINGLE_CHOICE",
+    "answerRequired": true,
+    "smoothTransition": true,
+    "answerChoices": [
+     {
+      "answerId": "107977$105187",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "107977",
+      "displayText": "<b>Tell me more</b>",
+      "type": "SINGLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "107977$105188",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "107977",
+      "displayText": "Skip, I already know",
+      "type": "SINGLE_CHOICE",
+      "selected": false
+     }
+    ],
+    "titleOverride": "Learn more about male pattern hair loss"
+   }
+  ],
+  "questionAnswerErrors": {},
+  "summaryRequiredBeforeStep": false,
+  "registrationRequiredBeforeStep": false,
+  "fastSummaryRequiredBeforeStep": false
+ },
+ "explanation": "/api/questionnaire/traversals/7242702/explanations",
+ "previous": "/api/questionnaire/traversals/7242702/steps/previous",
+ "current": "/api/questionnaire/traversals/7242702/steps/current"
+}

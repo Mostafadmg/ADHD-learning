@@ -1,0 +1,154 @@
+[
+ {
+  "from": "108016",
+  "option": "It's helped a little",
+  "trail": [],
+  "result": {
+   "sig": "107959",
+   "title": "HL - Previous HL treatment and Side effects",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "107959",
+     "type": "SINGLE_CHOICE",
+     "title": "Side effects",
+     "text": "Have you ever experienced side effects from Minoxidil spray that: Were persistent Were severe Required medical attention Made you stop using it",
+     "required": true,
+     "explanationAvailable": true,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "107959$1",
+      "107959$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-01-108016",
+  "text": "Exit consultation\nSide effects\nHave you ever experienced side effects from Minoxidil spray that:\nWere persistent\nWere severe\nRequired medical attention\nMade you stop using it\nYes\nNo\nNext\nBack"
+ },
+ {
+  "from": "107959",
+  "option": "Yes",
+  "trail": [
+   "108016=It's helped a little"
+  ],
+  "result": {
+   "sig": "107981",
+   "title": "HL - Previous HL treatment and Side effects",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "107981",
+     "type": "TEXT_AREA",
+     "title": "Side effects",
+     "text": "Please describe the side effects you experienced.",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      ""
+     ],
+     "optionIds": [
+      "107981$100516"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-02-107959",
+  "text": "Exit consultation\nSide effects\nPlease describe the side effects you experienced.\n0/511 characters\nNext\nBack"
+ },
+ {
+  "from": "107959",
+  "option": "No",
+  "trail": [
+   "108016=It's helped a little"
+  ],
+  "result": {
+   "sig": "103270",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "103270",
+     "type": "MULTIPLE_CHOICE",
+     "title": "Medical history",
+     "text": "Have you ever had any of the following conditions?",
+     "required": false,
+     "explanationAvailable": false,
+     "options": [
+      "Alopecia",
+      "Breast cancer",
+      "Breast tissue enlargement",
+      "Depression",
+      "Current or history of suicidal thoughts, self-harm, or attempts",
+      "Obstructive uropathy",
+      "Prostate cancer",
+      "Liver condition",
+      "Phaeochromocytoma",
+      "Porphyria",
+      "Problems with my sex life",
+      "Systemic Lupus Erythematosus (SLE)"
+     ],
+     "optionIds": [
+      "103270$102159",
+      "103270$102157",
+      "103270$105165",
+      "103270$102160",
+      "103270$105304",
+      "103270$102158",
+      "103270$102155",
+      "103270$102065",
+      "103270$104302",
+      "103270$100027",
+      "103270$102152",
+      "103270$104183"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-03-107959",
+  "text": "Exit consultation\nMedical history\nHave you ever had any of the following conditions?\nAlopecia\nBreast cancer\nBreast tissue enlargement\nDepression\nCurrent or history of suicidal thoughts, self-harm, or attempts\nObstructive uropathy\nProstate cancer\nLiver condition\nPhaeochromocytoma\nPorphyria\nProblems with my sex life\nSystemic Lupus Erythematosus (SLE)\nNone of the above\nNext\nBack"
+ },
+ {
+  "from": "103270",
+  "option": "Alopecia",
+  "trail": [
+   "108016=It's helped a little",
+   "107959=No"
+  ],
+  "result": {
+   "sig": "SUMMARY",
+   "stepState": "SUMMARY",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": []
+  },
+  "onBaseline": false,
+  "shot": "peek-04-103270",
+  "text": "Exit consultation\nMedical history\nHave you ever had any of the following conditions?\nAlopecia\nBreast cancer\nBreast tissue enlargement\nDepression\nCurrent or history of suicidal thoughts, self-harm, or attempts\nObstructive uropathy\nProstate cancer\nLiver condition\nPhaeochromocytoma\nPorphyria\nProblems with my sex life\nSystemic Lupus Erythematosus (SLE)\nNone of the above\nBack",
+  "endedEarly": true
+ }
+]

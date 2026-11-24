@@ -1,0 +1,32 @@
+STEP 19 mdm AFTER ANSWERS ["Medication to treat benign prostate hyperplasia (BPH)"]
+URL: https://www.hairandme.com/c/suh/mdm
+
+--- VISIBLE TEXT ---
+Are you taking any of the following prescription medications?
+Antidepressants, anti-anxiety or medication for mental health reasons
+
+(e.g. Diazepam, amitriptyline, propranolol, fluoxetine, citalopram, sertraline or phenelzine)
+
+Medication to treat benign prostate hyperplasia (BPH)
+
+(e.g. alpha blockers like doxazosin, tamsulosin, alfuzosin or finasteride 5mg)
+
+Steroids or other medications for psoriasis or eczema on your scalp
+
+(e.g. Hydrocortisone or betamethasone)
+
+Other
+No, I don't take any medications
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:checkbox[name=4454] | Antidepressants, anti-anxiety or medication for mental health reasons (e.g. Diazepam, amitriptyline, propranolol, fluoxetine, citalopram, sertraline or phenelzi
+input:checkbox[name=4454] | Medication to treat benign prostate hyperplasia (BPH) (e.g. alpha blockers like doxazosin, tamsulosin, alfuzosin or finasteride 5mg) [checked]
+input:checkbox[name=4454] | Steroids or other medications for psoriasis or eczema on your scalp (e.g. Hydrocortisone or betamethasone)
+input:checkbox[name=4454] | Other
+input:checkbox[name=4454] | No, I don't take any medications [disabled]
+button:submit | NEXT QUESTION
+a -> /c/suh/mdm?action=previous | Back to previous page

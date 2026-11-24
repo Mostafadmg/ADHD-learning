@@ -1,0 +1,43 @@
+{
+ "step": {
+  "title": "HL - Previous HL treatment and Side effects",
+  "questions": [
+   {
+    "questionId": "108051",
+    "explanationAvailable": false,
+    "displayText": "Would you like the option to choose a treatment containing Finasteride 1mg tablets again, despite your previous side effects?",
+    "type": "SINGLE_CHOICE",
+    "answerRequired": true,
+    "smoothTransition": false,
+    "answerChoices": [
+     {
+      "answerId": "108051$1",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "108051",
+      "displayText": "Yes",
+      "type": "SINGLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "108051$2",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "108051",
+      "displayText": "No",
+      "type": "SINGLE_CHOICE",
+      "selected": false
+     }
+    ],
+    "titleOverride": "Side effects"
+   }
+  ],
+  "questionAnswerErrors": {},
+  "summaryRequiredBeforeStep": false,
+  "registrationRequiredBeforeStep": false,
+  "fastSummaryRequiredBeforeStep": false
+ },
+ "explanation": "/api/questionnaire/traversals/15760492/explanations",
+ "previous": "/api/questionnaire/traversals/15760492/steps/previous",
+ "current": "/api/questionnaire/traversals/15760492/steps/current"
+}

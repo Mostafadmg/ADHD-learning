@@ -1,0 +1,18 @@
+STEP 36 wait 1300
+URL: https://hairloss.philipkingsley.co.uk/quiz/step/view/stepId/men_quiz_step12
+TITLE: 
+
+--- VISIBLE TEXT ---
+QUESTION #12
+DO YOU HAVE ANY OTHER ALLERGIES?
+SELECT ONE
+YES
+NO
+NEXT
+BACK
+
+--- CONTROLS ---
+  button (2): NEXT  ·  BACK
+
+--- LINKS ---
+  link (4): SIGN IN -> https://hairloss.philipkingsley.co.uk/customer/account/  ·  TERMS OF SALE -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-of-sale  ·  TERMS & CONDITIONS -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-conditions  ·  PRIVACY POLICY -> https://hairloss.philipkingsley.co.uk/hair-loss-privacy-policy

@@ -1,0 +1,28 @@
+[
+ {
+  "from": "103270",
+  "option": "Phaeochromocytoma",
+  "trail": [],
+  "noStep": true,
+  "text": "Exit consultation\nMedical history\nHave you ever had any of the following conditions?\nAlopecia\nBreast cancer\nBreast tissue enlargement\nDepression\nCurrent or history of suicidal thoughts, self-harm, or attempts\nObstructive uropathy\nProstate cancer\nLiver condition\nClose\nTumour of the adrenal glands.\nPhaeochromocytoma\nPorphyria\nProblems with my sex life\nSystemic Lupus Erythematosus (SLE)\nNone of the above\nNext\nBack",
+  "shot": "peek-01-103270"
+ },
+ {
+  "from": "103270",
+  "option": "Porphyria",
+  "trail": [],
+  "error": "could not click"
+ },
+ {
+  "from": "103270",
+  "option": "Problems with my sex life",
+  "trail": [],
+  "error": "could not click"
+ },
+ {
+  "from": "103270",
+  "option": "Systemic Lupus Erythematosus (SLE)",
+  "trail": [],
+  "error": "could not click"
+ }
+]

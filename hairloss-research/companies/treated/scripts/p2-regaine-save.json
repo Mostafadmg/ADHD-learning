@@ -3,7 +3,7 @@
  "steps": [
   {
    "do": "wait",
-   "ms": 3000
+   "ms": 5000
   },
   {
    "do": "click",
@@ -11,7 +11,7 @@
   },
   {
    "do": "wait",
-   "ms": 5000
+   "ms": 6000
   },
   {
    "do": "click",
@@ -128,6 +128,10 @@
   {
    "do": "click",
    "text": "Continue"
+  },
+  {
+   "do": "wait",
+   "ms": 2500
   },
   {
    "do": "click",

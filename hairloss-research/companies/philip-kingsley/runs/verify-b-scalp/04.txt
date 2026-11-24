@@ -1,0 +1,17 @@
+STEP 04 wait 1300
+URL: https://hairloss.philipkingsley.co.uk/quiz/step/view/stepId/scalp_quiz_step1
+TITLE: 
+
+--- VISIBLE TEXT ---
+QUESTION #1
+HAVE YOU ALREADY BEEN DIAGNOSED WITH A SCALP CONDITION WITH A TRICHOLOGIST OR DERMATOLIGIST?
+SELECT ONE
+YES
+NO
+BACK
+
+--- CONTROLS ---
+  button (1): BACK
+
+--- LINKS ---
+  link (4): SIGN IN -> https://hairloss.philipkingsley.co.uk/customer/account/  ·  TERMS OF SALE -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-of-sale  ·  TERMS & CONDITIONS -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-conditions  ·  PRIVACY POLICY -> https://hairloss.philipkingsley.co.uk/hair-loss-privacy-policy

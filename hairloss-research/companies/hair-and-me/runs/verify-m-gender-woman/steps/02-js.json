@@ -1,0 +1,48 @@
+{
+ "step": {
+  "actionsList": [
+   {
+    "next": {
+     "label": "Next question"
+    }
+   },
+   {
+    "previous": {
+     "label": "Back to previous page"
+    }
+   }
+  ],
+  "breadcrumb": {
+   "sectionNumber": 1,
+   "sectionTitle": "ABOUT YOU"
+  },
+  "description": null,
+  "headerElement": null,
+  "questions": [
+   {
+    "id": 8038,
+    "inputConfig": {
+     "isOptional": true,
+     "options": [
+      {
+       "label": "Still exploring my options",
+       "value": "Still exploring my options"
+      },
+      {
+       "label": "Ready to start treatment",
+       "value": "Ready to start treatment"
+      }
+     ]
+    },
+    "inputType": "single_select_button",
+    "is_custom": false,
+    "label": null,
+    "text": null,
+    "value": null
+   }
+  ],
+  "section": null,
+  "title": "Where are you in your hair regrowth journey?",
+  "type": "question"
+ }
+}

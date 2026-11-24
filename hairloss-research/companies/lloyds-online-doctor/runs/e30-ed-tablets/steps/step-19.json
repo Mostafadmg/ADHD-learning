@@ -1,0 +1,79 @@
+{
+ "step": {
+  "title": "HL",
+  "questions": [
+   {
+    "questionId": "103769",
+    "explanationAvailable": false,
+    "displayText": "Are you taking any of the following medications:",
+    "type": "MULTIPLE_CHOICE",
+    "answerRequired": false,
+    "smoothTransition": false,
+    "answerChoices": [
+     {
+      "answerId": "103769$105167",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "103769",
+      "displayText": "Finasteride or Dutasteride for prostate problems",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "103769$105246",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "103769",
+      "displayText": "Medicines for high blood pressure<br><small>(e.g. amlodipine, ramipril, lisinopril, losartan etc.)</small>",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "103769$104870",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "103769",
+      "displayText": "Antidepressants <br><small>(e.g. escitalopram, citalopram, duloxetine, fluoxetine, mirtazapine, paroxetine, sertraline, venlafaxine etc.)</small>",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "103769$105168",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "103769",
+      "displayText": "Erectile dysfunction tablets <br><small>(e.g. sildenafil (Viagra), tadalafil (Cialis), vardenafil (Levitra) etc.)</small>",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "103769$105247",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "103769",
+      "displayText": "Medicated creams applied to your scalp<br><small>(e.g. steroids (hydrocortisone, betamethasone, clobetasone) and calcipotriol (dovonex) to treat psoriasis and eczema etc.)</small>",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false
+     },
+     {
+      "answerId": "103769$105169",
+      "maxValue": "0",
+      "explanationAvailable": false,
+      "questionId": "103769",
+      "displayText": "Guanethidine ",
+      "type": "MULTIPLE_CHOICE",
+      "selected": false
+     }
+    ],
+    "titleOverride": "Medical history"
+   }
+  ],
+  "questionAnswerErrors": {},
+  "summaryRequiredBeforeStep": false,
+  "registrationRequiredBeforeStep": false,
+  "fastSummaryRequiredBeforeStep": false
+ },
+ "explanation": "/api/questionnaire/traversals/13734978/explanations",
+ "previous": "/api/questionnaire/traversals/13734978/steps/previous",
+ "current": "/api/questionnaire/traversals/13734978/steps/current"
+}

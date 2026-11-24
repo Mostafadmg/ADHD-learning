@@ -1,0 +1,49 @@
+
+===== SCREEN 03 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 100013 [SINGLE_CHOICE] required=true title="Your details"
+    TEXT: What was your sex at birth?
+    OPTIONS: "Male" | "Female"
+
+===== SCREEN 04 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 100014 [DATE_OF_BIRTH] required=true title="Your details"
+    TEXT: What is your date of birth?
+    OPTIONS: "For example: 31 3 1980"
+
+===== SCREEN 05 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 107977 [SINGLE_CHOICE] required=true title="Learn more about male pattern hair loss"
+    TEXT: Find out what causes it, and which treatments may help slow it down or help hair grow back.
+    OPTIONS: "Tell me more" | "Skip, I already know"
+    (auto-advanced on click, no Next needed)
+
+===== SCREEN 06 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 107978 [MESSAGE] required=true title="What causes hair loss?"
+    TEXT: Male pattern hair loss is caused by a combination of genetics and sensitivity to DHT (dihydrotestosterone) , a hormone made from testosterone. In people who are susceptible, DHT gradually causes affected hair follicles to shrink and shortens the hair growth phase. New hairs become finer and shorter and may eventually stop growing in some areas of the scalp. Treatments can help slow further hair loss and may support regrowth. Options include finasteride and minoxidil , which work in different ways.
+
+===== SCREEN 07 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 107979 [MESSAGE] required=true title="How does finasteride work?"
+    TEXT: Finasteride reduces DHT by blocking an enzyme that converts testosterone into DHT. Lowering DHT can slow the shrinking of affected hair follicles. When taken consistently, finasteride can slow hair loss and may support regrowth in some men.
+
+===== SCREEN 08 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 107980 [MESSAGE] required=true title="How does minoxidil work?"
+    TEXT: Minoxidil increases blood flow and nutrients to hair roots. Used regularly, it can help hair grow back thicker over time. It usually takes a few months to notice a difference. Some men use finasteride and minoxidil together. Complete your assessment to find out what's right for you.
+
+===== SCREEN 09 | step "HL" | {"summaryRequiredBeforeStep":false,"registrationRequiredBeforeStep":false,"fastSummaryRequiredBeforeStep":false} | https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+  Q 103257 [IMAGE_SINGLE_CHOICE] required=true title="Your hair loss"
+    TEXT: Please select which of the images below best represents your hair loss
+    OPTIONS: "Temples only" | "Temples and Crown" | "Moderate" | "Extensive" | "Complete" | "Random patches"
+
+##### NO NEW STEP JSON. URL: https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+SCREEN TEXT:
+Exit consultation
+Your hair loss
+Please select which of the images below best represents your hair loss
+Temples only
+Temples and Crown
+Moderate
+Extensive
+Complete
+Random patches
+Back
+
+FINAL URL: https://core.onlinedoctor.lloydspharmacy.com/consultation/current  (53 s)
+[explore] exit 0 -> /home/user/ADHD-learning/hairloss-research/companies/lloyds-online-doctor/runs/verify-prostate-cancer

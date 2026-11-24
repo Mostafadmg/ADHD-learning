@@ -1,0 +1,21 @@
+STEP 23 wait 1300
+URL: https://hairloss.philipkingsley.co.uk/quiz/step/view/stepId/men_quiz_step8
+TITLE: 
+
+--- VISIBLE TEXT ---
+QUESTION #8
+DO YOU EVER SUFFER FROM PAIN, BURNING OR CRUSTING ON THE SCALP?
+SELECT ANY THAT APPLY
+PAIN
+BURNING
+CRUSTING
+BLEEDING
+NONE OF THE ABOVE
+NEXT
+BACK
+
+--- CONTROLS ---
+  button (2): NEXT  ·  BACK
+
+--- LINKS ---
+  link (4): SIGN IN -> https://hairloss.philipkingsley.co.uk/customer/account/  ·  TERMS OF SALE -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-of-sale  ·  TERMS & CONDITIONS -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-conditions  ·  PRIVACY POLICY -> https://hairloss.philipkingsley.co.uk/hair-loss-privacy-policy

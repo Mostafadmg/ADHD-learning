@@ -1,0 +1,17 @@
+STEP 03 click "label:text-is(\"65 or over\")"
+URL: https://www.numan.com/subscribe/hair-loss/b89d78f0-fd36-4205-a3d0-d48f80ce5707/sq/sixty_five_and_over_confirmation
+TITLE: Hair loss products are not guaranteed to show results in individuals over the age of 65, however, there is still a possibility for hair growth to reoccur. Would you still like to be considered for treatments? | Numan
+
+--- VISIBLE TEXT ---
+3%
+Hair loss products are not guaranteed to show results in individuals over the age of 65, however, there is still a possibility for hair growth to reoccur. Would you still like to be considered for treatments?
+Yes
+No
+Back
+
+--- CONTROLS ---
+  radio (2): Yes  ·  No
+  button (1): Back
+
+--- LINKS ---
+  link (1): Visit the main page -> /

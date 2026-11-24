@@ -1,0 +1,40 @@
+STEP 16 click "Stroke"
+URL: https://start.struthealth.com/flow/6aa3d578f415d1603a6e0c85
+TITLE: Minoxidil Prod
+
+--- VISIBLE TEXT ---
+37%
+
+Do you have any of the following medical conditions? Select all that apply.
+
+Heart failure or heart disease
+Heart attack or coronary artery disease
+Stroke
+Low blood pressure
+Pheochromocytoma
+Liver problems
+Kidney disease
+Thyroid disease
+Breast or prostate cancer
+Prostate enlargement (BPH)
+HIV
+Autoimmune disease
+Glaucoma or eye conditions
+Other
+None of the above
+Continue
+1
+2.5 mg · 90 Day Supply
+$65.00
+2.5 mg · 90 Day Supply
+$65.00
+Dose: 90 Day Supply - 2.5 mg
+Supply: 90 Day Supply
+Total
+$65.00
+
+--- CONTROLS ---
+  button (18): Go back  ·  Heart failure or heart disease [false]  ·  Heart attack or coronary artery disease [false]  ·  Stroke [true]  ·  Low blood pressure [false]  ·  Pheochromocytoma [false]  ·  Liver problems [false]  ·  Kidney disease [false]  ·  Thyroid disease [false]  ·  Breast or prostate cancer [false]  ·  Prostate enlargement (BPH) [false]  ·  HIV [false]  ·  Autoimmune disease [false]  ·  Glaucoma or eye conditions [false]  ·  Other [false]  ·  None of the above [false]  ·  Continue  ·  1 2.5 mg · 90 Day Supply $65.00
+
+--- LINKS ---
+

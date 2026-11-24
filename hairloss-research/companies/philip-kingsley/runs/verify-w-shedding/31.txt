@@ -1,0 +1,19 @@
+STEP 31 click ".pk-quiz-control[data-quiz-question=\"q11a\"][data-quiz-selection=\"I have no allergies\"]"
+URL: https://hairloss.philipkingsley.co.uk/quiz/step/view/stepId/women_quiz_step11
+TITLE: 
+
+--- VISIBLE TEXT ---
+QUESTION #11
+DO YOU HAVE ANY ALLERGIES? IF YOU HAVE AN ALLERGY NOT LISTED, PLEASE GIVE US MORE DETAIL ABOUT HOW SEVERE THE ALLERGY IS AND IF IT IS A TOPICAL OR ORAL CONSUMPTION ALLERGY.
+SELECT ANY THAT APPLY
+MINOXIDIL
+OTHER, PLEASE STATE
+I HAVE NO ALLERGIES
+NEXT
+BACK
+
+--- CONTROLS ---
+  button (2): NEXT  ·  BACK
+
+--- LINKS ---
+  link (4): SIGN IN -> https://hairloss.philipkingsley.co.uk/customer/account/  ·  TERMS OF SALE -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-of-sale  ·  TERMS & CONDITIONS -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-conditions  ·  PRIVACY POLICY -> https://hairloss.philipkingsley.co.uk/hair-loss-privacy-policy

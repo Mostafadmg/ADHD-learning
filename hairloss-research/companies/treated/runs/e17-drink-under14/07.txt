@@ -1,0 +1,16 @@
+STEP 07 click "Continue"
+URL: https://start.treated.com/GBR/en/#/questionnaire
+TITLE: Treated UK - Choose Better - Medical Experts & Treatments Online
+
+--- VISIBLE TEXT ---
+Question 2 of 11
+
+When did you start losing your hair?
+Less than 3 months ago
+More than 3 months ago
+
+--- CONTROLS ---
+  radio (2): Less than 3 months ago  ·  More than 3 months ago
+
+--- LINKS ---
+

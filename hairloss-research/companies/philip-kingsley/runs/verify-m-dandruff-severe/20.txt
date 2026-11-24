@@ -1,0 +1,28 @@
+STEP 20 wait 900
+URL: https://hairloss.philipkingsley.co.uk/quiz/step/view/stepId/men_quiz_step7
+TITLE: 
+
+--- VISIBLE TEXT ---
+QUESTION #7
+ARE YOU CURRENTLY EXPERIENCING ANY OF THE FOLLOWING CONDITIONS ON YOUR SCALP?
+SELECT ANY THAT APPLY
+ITCHING
+ECZEMA
+PSORIASIS
+OTHER
+DANDRUFF
+REDNESS
+ACNE
+NO CONDITIONS
+HOW SEVERE IS YOUR DANDRUFF?
+MILD
+MODERATE
+SEVERE
+NEXT
+BACK
+
+--- CONTROLS ---
+  button (2): NEXT  ·  BACK
+
+--- LINKS ---
+  link (4): SIGN IN -> https://hairloss.philipkingsley.co.uk/customer/account/  ·  TERMS OF SALE -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-of-sale  ·  TERMS & CONDITIONS -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-conditions  ·  PRIVACY POLICY -> https://hairloss.philipkingsley.co.uk/hair-loss-privacy-policy

@@ -1,0 +1,773 @@
+[
+ {
+  "n": 3,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nYour details\nWhat was your sex at birth?\nMale\nFemale\nNext",
+  "sig": "100013",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "100013",
+    "type": "SINGLE_CHOICE",
+    "title": "Your details",
+    "text": "What was your sex at birth?",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "Male",
+     "Female"
+    ],
+    "optionIds": [
+     "100013$88",
+     "100013$89"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "100013": "Male"
+  }
+ },
+ {
+  "n": 4,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nYour details\nWhat is your date of birth?\nFor example: 31 3 1980\nDay\nMonth\nYear\nNext\nBack",
+  "sig": "100014",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "100014",
+    "type": "DATE_OF_BIRTH",
+    "title": "Your details",
+    "text": "What is your date of birth?",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "For example: 31 3 1980"
+    ],
+    "optionIds": [
+     "100014$100011"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "100014": {
+    "dob": [
+     15,
+     6,
+     1994
+    ]
+   }
+  }
+ },
+ {
+  "n": 5,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nLearn more about male pattern hair loss\n\nFind out what causes it, and which treatments may help slow it down or help hair grow back.\n\nTell me more\nSkip, I already know\nBack",
+  "sig": "107977",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "107977",
+    "type": "SINGLE_CHOICE",
+    "title": "Learn more about male pattern hair loss",
+    "text": "Find out what causes it, and which treatments may help slow it down or help hair grow back.",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "Tell me more",
+     "Skip, I already know"
+    ],
+    "optionIds": [
+     "107977$105187",
+     "107977$105188"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "107977": "Tell me more"
+  }
+ },
+ {
+  "n": 6,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nWhat causes hair loss?\n\nMale pattern hair loss is caused by a combination of genetics and sensitivity to DHT (dihydrotestosterone), a hormone made from testosterone.\n\nIn people who are susceptible, DHT gradually causes affected hair follicles to shrink and shortens the hair growth phase. New hairs become finer and shorter and may eventually stop growing in some areas of the scalp.\n\nTreatments can help slow further hair loss and may support regrowth. Options include finasteride and minoxidil, which work in different ways.\n\nNext\nBack",
+  "sig": "107978",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "107978",
+    "type": "MESSAGE",
+    "title": "What causes hair loss?",
+    "text": "Male pattern hair loss is caused by a combination of genetics and sensitivity to DHT (dihydrotestosterone) , a hormone made from testosterone. In people who are susceptible, DHT gradually causes affected hair follicles to shrink and shortens the hair growth phase. New hairs become finer and shorter and may eventually stop growing in some areas of the scalp. Treatments can help slow further hair loss and may support regrowth. Options include finasteride and minoxidil , which work in different ways.",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [],
+    "optionIds": [],
+    "cards": []
+   }
+  ]
+ },
+ {
+  "n": 7,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nHow does finasteride work?\n\nFinasteride reduces DHT by blocking an enzyme that converts testosterone into DHT.\n\nLowering DHT can slow the shrinking of affected hair follicles. When taken consistently, finasteride can slow hair loss and may support regrowth in some men.\n\nNext\nBack",
+  "sig": "107979",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "107979",
+    "type": "MESSAGE",
+    "title": "How does finasteride work?",
+    "text": "Finasteride reduces DHT by blocking an enzyme that converts testosterone into DHT. Lowering DHT can slow the shrinking of affected hair follicles. When taken consistently, finasteride can slow hair loss and may support regrowth in some men.",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [],
+    "optionIds": [],
+    "cards": []
+   }
+  ]
+ },
+ {
+  "n": 8,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nHow does minoxidil work?\n\nMinoxidil increases blood flow and nutrients to hair roots.\n\nUsed regularly, it can help hair grow back thicker over time. It usually takes a few months to notice a difference.\n\nSome men use finasteride and minoxidil together. Complete your assessment to find out what's right for you.\n\nNext\nBack",
+  "sig": "107980",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "107980",
+    "type": "MESSAGE",
+    "title": "How does minoxidil work?",
+    "text": "Minoxidil increases blood flow and nutrients to hair roots. Used regularly, it can help hair grow back thicker over time. It usually takes a few months to notice a difference. Some men use finasteride and minoxidil together. Complete your assessment to find out what's right for you.",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [],
+    "optionIds": [],
+    "cards": []
+   }
+  ]
+ },
+ {
+  "n": 9,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nYour hair loss\nPlease select which of the images below best represents your hair loss\nTemples only\nTemples and Crown\nModerate\nExtensive\nComplete\nRandom patches\nNext\nBack",
+  "sig": "103257",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "103257",
+    "type": "IMAGE_SINGLE_CHOICE",
+    "title": "Your hair loss",
+    "text": "Please select which of the images below best represents your hair loss",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "Temples only",
+     "Temples and Crown",
+     "Moderate",
+     "Extensive",
+     "Complete",
+     "Random patches"
+    ],
+    "optionIds": [
+     "103257$102140",
+     "103257$102141",
+     "103257$102142",
+     "103257$102143",
+     "103257$102144",
+     "103257$102145"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "103257": "Temples and Crown"
+  }
+ },
+ {
+  "n": 10,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nYour hair loss\nHow did your hair loss start?\nGradually, over months or years\nSuddenly, over days or weeks\nNext\nBack",
+  "sig": "107954",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "107954",
+    "type": "SINGLE_CHOICE",
+    "title": "Your hair loss",
+    "text": "How did your hair loss start?",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "Gradually, over months or years",
+     "Suddenly, over days or weeks"
+    ],
+    "optionIds": [
+     "107954$105143",
+     "107954$105144"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "107954": "Gradually, over months or years"
+  }
+ },
+ {
+  "n": 11,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nYour hair loss\nHave you lost any hair in other areas of your body such as eyebrows or beard?\nYes\nNo\nNext\nBack",
+  "sig": "103261",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "103261",
+    "type": "SINGLE_CHOICE",
+    "title": "Your hair loss",
+    "text": "Have you lost any hair in other areas of your body such as eyebrows or beard?",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "optionIds": [
+     "103261$1",
+     "103261$2"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "103261": "No"
+  }
+ },
+ {
+  "n": 12,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nYour scalp\nAre you currently experiencing any changes to your scalp?\nYes\nNo\nNext\nBack",
+  "sig": "105935",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "105935",
+    "type": "SINGLE_CHOICE",
+    "title": "Your scalp",
+    "text": "Are you currently experiencing any changes to your scalp?",
+    "required": true,
+    "explanationAvailable": true,
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "optionIds": [
+     "105935$1",
+     "105935$2"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "105935": "No"
+  }
+ },
+ {
+  "n": 13,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nHair loss medication\nHave you ever taken any medication for hair loss?\nYes\nNo\nNext\nBack",
+  "sig": "108014",
+  "title": "HL - Previous HL treatment and Side effects",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "108014",
+    "type": "SINGLE_CHOICE",
+    "title": "Hair loss medication",
+    "text": "Have you ever taken any medication for hair loss?",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "optionIds": [
+     "108014$1",
+     "108014$2"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "108014": "No"
+  }
+ },
+ {
+  "n": 14,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nMedical history\nHave you ever had any of the following conditions?\nAlopecia\nBreast cancer\nBreast tissue enlargement\nDepression\nCurrent or history of suicidal thoughts, self-harm, or attempts\nObstructive uropathy\nProstate cancer\nLiver condition\nPhaeochromocytoma\nPorphyria\nProblems with my sex life\nSystemic Lupus Erythematosus (SLE)\nNone of the above\nNext\nBack",
+  "sig": "103270",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "103270",
+    "type": "MULTIPLE_CHOICE",
+    "title": "Medical history",
+    "text": "Have you ever had any of the following conditions?",
+    "required": false,
+    "explanationAvailable": false,
+    "options": [
+     "Alopecia",
+     "Breast cancer",
+     "Breast tissue enlargement",
+     "Depression",
+     "Current or history of suicidal thoughts, self-harm, or attempts",
+     "Obstructive uropathy",
+     "Prostate cancer",
+     "Liver condition",
+     "Phaeochromocytoma",
+     "Porphyria",
+     "Problems with my sex life",
+     "Systemic Lupus Erythematosus (SLE)"
+    ],
+    "optionIds": [
+     "103270$102159",
+     "103270$102157",
+     "103270$105165",
+     "103270$102160",
+     "103270$105304",
+     "103270$102158",
+     "103270$102155",
+     "103270$102065",
+     "103270$104302",
+     "103270$100027",
+     "103270$102152",
+     "103270$104183"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "103270": "None of the above"
+  }
+ },
+ {
+  "n": 15,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nMedical history\nDo you have Chronic Kidney Disease (CKD) or a reduced kidney function?\nYes\nNo\nNext\nBack",
+  "sig": "101561",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "101561",
+    "type": "SINGLE_CHOICE",
+    "title": "Medical history",
+    "text": "Do you have Chronic Kidney Disease (CKD) or a reduced kidney function?",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "optionIds": [
+     "101561$1",
+     "101561$2"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "101561": "No"
+  }
+ },
+ {
+  "n": 16,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nMedical history\n\nHave you ever had a condition that affects your heart or blood pressure? Examples include:\n\nHigh or low blood pressure\nDizziness or faintness when standing up\nHeart failure\nAn irregular heartbeat (arrythmias)\nFluid or inflammation around the heart\nHeart valve or structural heart problems\nA heart attack, angina, stroke or mini-stroke (TIA)\nAnother heart or blood vessel condition\nYes\nNo\nNext\nBack",
+  "sig": "107973",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "107973",
+    "type": "SINGLE_CHOICE",
+    "title": "Medical history",
+    "text": "Have you ever had a condition that affects your heart or blood pressure? Examples include: High or low blood pressure Dizziness or faintness when standing up Heart failure An irregular heartbeat (arrythmias) Fluid or inflammation around the heart Heart valve or structural heart problems A heart attack, angina, stroke or mini-stroke (TIA) Another heart or blood vessel condition",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "optionIds": [
+     "107973$1",
+     "107973$2"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "107973": "No"
+  }
+ },
+ {
+  "n": 17,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nMedical history\nDo you have any medical conditions other than those we have already asked about?\nYes\nNo\nNext\nBack",
+  "sig": "107800",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "107800",
+    "type": "SINGLE_CHOICE",
+    "title": "Medical history",
+    "text": "Do you have any medical conditions other than those we have already asked about?",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "optionIds": [
+     "107800$1",
+     "107800$2"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "107800": "No"
+  }
+ },
+ {
+  "n": 18,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nMedical history\nAre you currently taking any prescription medications?\nYes\nNo\nNext\nBack",
+  "sig": "102632",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "102632",
+    "type": "SINGLE_CHOICE",
+    "title": "Medical history",
+    "text": "Are you currently taking any prescription medications?",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "optionIds": [
+     "102632$1",
+     "102632$2"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "102632": "Yes"
+  }
+ },
+ {
+  "n": 19,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nMedical history\nAre you taking any of the following medications:\nFinasteride or Dutasteride for prostate problems\nMedicines for high blood pressure\n(e.g. amlodipine, ramipril, lisinopril, losartan etc.)\nAntidepressants\n(e.g. escitalopram, citalopram, duloxetine, fluoxetine, mirtazapine, paroxetine, sertraline, venlafaxine etc.)\nErectile dysfunction tablets\n(e.g. sildenafil (Viagra), tadalafil (Cialis), vardenafil (Levitra) etc.)\nMedicated creams applied to your scalp\n(e.g. steroids (hydrocortisone, betamethasone, clobetasone) and calcipotriol (dovonex) to treat psoriasis and eczema etc.)\nGuanethidine\nNone of the above\nNext\nBack",
+  "sig": "103769",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "103769",
+    "type": "MULTIPLE_CHOICE",
+    "title": "Medical history",
+    "text": "Are you taking any of the following medications:",
+    "required": false,
+    "explanationAvailable": false,
+    "options": [
+     "Finasteride or Dutasteride for prostate problems",
+     "Medicines for high blood pressure (e.g. amlodipine, ramipril, lisinopril, losartan etc.)",
+     "Antidepressants (e.g. escitalopram, citalopram, duloxetine, fluoxetine, mirtazapine, paroxetine, sertraline, venlafaxine etc.)",
+     "Erectile dysfunction tablets (e.g. sildenafil (Viagra), tadalafil (Cialis), vardenafil (Levitra) etc.)",
+     "Medicated creams applied to your scalp (e.g. steroids (hydrocortisone, betamethasone, clobetasone) and calcipotriol (dovonex) to treat psoriasis and eczema etc.)",
+     "Guanethidine"
+    ],
+    "optionIds": [
+     "103769$105167",
+     "103769$105246",
+     "103769$104870",
+     "103769$105168",
+     "103769$105247",
+     "103769$105169"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "103769": [
+    "Erectile dysfunction tablets (e.g. sildenafil (Viagra), tadalafil (Cialis), vardenafil (Levitra) etc.)"
+   ]
+  }
+ },
+ {
+  "n": 20,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nMedical history\nAnd what about these?\nTestosterone or Anabolic steroids\nInhalers for asthma or COPD\nAntihistamines\nPainkillers\nAcid reflux medication\n(e.g. omeprazole, lansoprazole, pantoprazole, etc.)\nOther medication\nNone of the above\nNext\nBack",
+  "sig": "108158",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "108158",
+    "type": "MULTIPLE_CHOICE",
+    "title": "Medical history",
+    "text": "And what about these?",
+    "required": false,
+    "explanationAvailable": false,
+    "options": [
+     "Testosterone or Anabolic steroids",
+     "Inhalers for asthma or COPD",
+     "Antihistamines",
+     "Painkillers",
+     "Acid reflux medication (e.g. omeprazole, lansoprazole, pantoprazole, etc.)",
+     "Other medication"
+    ],
+    "optionIds": [
+     "108158$105170",
+     "108158$100069",
+     "108158$100063",
+     "108158$100065",
+     "108158$105311",
+     "108158$100073"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "108158": "None of the above"
+  }
+ },
+ {
+  "n": 21,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nMedical history\nDo you have any allergies?\nYes\nNo\nNext\nBack",
+  "sig": "102624",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "102624",
+    "type": "SINGLE_CHOICE",
+    "title": "Medical history",
+    "text": "Do you have any allergies?",
+    "required": true,
+    "explanationAvailable": true,
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "optionIds": [
+     "102624$1",
+     "102624$2"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "102624": "No"
+  }
+ },
+ {
+  "n": 22,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nPets\nDo you live with pets?\nYes\nNo\nNext\nBack",
+  "sig": "108001",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "108001",
+    "type": "SINGLE_CHOICE",
+    "title": "Pets",
+    "text": "Do you live with pets?",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "Yes",
+     "No"
+    ],
+    "optionIds": [
+     "108001$1",
+     "108001$2"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "108001": "No"
+  }
+ },
+ {
+  "n": 23,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nPets\nDo you live with pets?\nYes\nNo\nBack",
+  "sig": "SUMMARY",
+  "stepState": "SUMMARY",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": []
+ },
+ {
+  "n": 24,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nYour Recommendations\n\nDr. Sameer Sanghvi\n\nGeneral Practitioner (GP)\nGMC no. 7085078\n\nConsultation overview:\n\nYour hair loss is consistent with male pattern hair loss\nYou're new to hair loss treatment\n\nOur recommendation:\n\nYou're suitable for Minoxidil spray\nMinoxidil\nRead More\nSons Minoxidil spray\nMinoxidil 5% spray\n71% showed improved hair density³\nFrom £3.85 a week\nDetails:\nTwice daily spray\nEncourages thicker, fuller looking hair\nTargeted effects\nImportant:\nEnsure pets do not come into contact with topical minoxidil\nLicensed for hair loss\nLearn more\n\n1 94% showed improvement after 12 months (Hu et al., Dermatol Ther 2015)\n\n2 83% study participants maintained or improved their hair growth over 2 years (Kaufman et al., JAAD 1998)\n\n3 71% of study participants showed improved hair density after 16 weeks (Olsen et al., JAAD 2007)",
+  "sig": "SUMMARY",
+  "stepState": "SUMMARY",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": []
+ },
+ {
+  "n": 25,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nYour Recommendations\n\nDr. Sameer Sanghvi\n\nGeneral Practitioner (GP)\nGMC no. 7085078\n\nConsultation overview:\n\nYour hair loss is consistent with male pattern hair loss\nYou're new to hair loss treatment\n\nOur recommendation:\n\nYou're suitable for Minoxidil spray\nMinoxidil\nRead More\nSons Minoxidil spray\nMinoxidil 5% spray\n71% showed improved hair density³\nFrom £3.85 a week\nDetails:\nTwice daily spray\nEncourages thicker, fuller looking hair\nTargeted effects\nImportant:\nEnsure pets do not come into contact with topical minoxidil\nLicensed for hair loss\nLearn more\n\n1 94% showed improvement after 12 months (Hu et al., Dermatol Ther 2015)\n\n2 83% study participants maintained or improved their hair growth over 2 years (Kaufman et al., JAAD 1998)\n\n3 71% of study participants showed improved hair density after 16 weeks (Olsen et al., JAAD 2007)",
+  "sig": "107988",
+  "title": "HL - Recommendations",
+  "flags": {
+   "summaryRequiredBeforeStep": true,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "107988",
+    "type": "PRODUCT_CARD",
+    "title": "Your Recommendations",
+    "text": "Dr. Sameer Sanghvi General Practitioner (GP) GMC no. 7085078 Consultation overview: Your hair loss is consistent with male pattern hair loss You're new to hair loss treatment Our recommendation: You're suitable for Minoxidil spray",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "Details: Twice daily spray Encourages thicker, fuller looking hair Targeted effects Important: Ensure pets do not come into contact with topical minoxidil"
+    ],
+    "optionIds": [
+     "107988$105217"
+    ],
+    "cards": [
+     {
+      "id": "107988$105217",
+      "title": "Sons Minoxidil spray",
+      "label": "6 months",
+      "sku": 4490,
+      "price": "99.00",
+      "perWeek": "3.85 a week",
+      "inStock": true,
+      "recommended": false,
+      "preference": false,
+      "mainOption": true
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,17 @@
+URL: https://core.onlinedoctor.lloydspharmacy.com/consultation/current
+
+Exit consultation
+Which hair loss treatments have you used before?
+
+Include any treatments you currently use. Some products contain more than one medication, so please select all that apply.
+
+Topical minoxidil
+(e.g. Regaine foam, solution or spray, Sons Minoxidil Solution, etc.)
+Oral Minoxidil
+(e.g. tablets, capsules, etc.)
+Finasteride tablets
+(e.g. Propecia or generic finasteride, etc.)
+Other hair loss medication
+(e.g. compounded sprays containing finasteride or dutasteride)
+Next
+Back

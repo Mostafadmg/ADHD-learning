@@ -16,16 +16,18 @@
    "site-code",
    "public-docs"
   ],
-  "accountWall": "Not located. The men's consultation at hims.com/c/hl would not load on two more tries in stage 2 (22:17 and 22:30 UTC, 23 Nov 2026), so where sign-in is forced in the US flow is still unknown. The landing-page pre-quiz has no wall: it ends on a product pitch whose buttons link to /c/hl. Weak hints only: the page state has a \"registration\" field and an \"initialQuestionnaire\" field (a first set of questions kept apart from the medical \"intakeFormUpfront\"), which fits the UK sister site where a marketing quiz comes first and the email wall comes before any medical question; that is an inference, not something seen on hims.com.",
+  "accountWall": "Reached at the state screen of the newer intake (https://www.hims.com/g/i/hl/select-state), after 14 anonymous screens: Continue stays disabled until the visitor ticks \"I agree to the Terms and Conditions and Telehealth Consent\". This research did not tick it, so the next screen was not seen. Signs that the account comes next: every screen has \"Already have an account? Sign In\", which goes to the old app (/c/hl?skipToSignIn=true&goFlow=true&flowId=hl), and the flow settings say legacyPath \"/c/hl\" and hold the date-of-birth rule (18 to 120) that the anonymous part never asks. The old app at /c/hl itself is blocked here (Cloudflare refuses its scripts).",
   "blockers": [
    "hims.com/c/hl and /c/hl/goals: the page itself returns HTTP 200, but Cloudflare answers the site's own script files (/hims.us.modern.*.js) with HTTP 403 \"Just a moment...\" (header cf-mitigated: challenge). The quiz is drawn by those scripts, so it never leaves the loading spinner. Tried twice, 30+ seconds apart. Not bypassed.",
    "forhers.com (Hers US): every page shows Cloudflare's \"Performing security verification\" check. Not bypassed.",
    "The fetch tool gets HTTP 403 from hims.com and forhers.com as well.",
    "Stage 2 re-test (23 Nov 2026, 22:17 and 22:30 UTC): still blocked. On the second try 37 of the page's own script files (/hims.us.modern.*.js, including the hair consultation chunk) were answered with HTTP 403. Proof: runs/s2-baseline-men, runs/s2-diag-hl-retry/requests.log. Not bypassed.",
    "Cached copies: web.archive.org resets the connection from this machine and the fetch tool refuses the host. archive.org's availability service says copies of /c/hl (11 Nov 2026) and /c/hl/goals (28 Oct 2026) exist, but they could not be opened.",
-   "Web search stopped working after one query in stage 2 (shared search budget used up), so no new third-party walkthroughs could be searched for. Known pages were fetched directly instead."
+   "Web search stopped working after one query in stage 2 (shared search budget used up), so no new third-party walkthroughs could be searched for. Known pages were fetched directly instead.",
+   "Stage 2 found that the newer intake at https://www.hims.com/g/i/hl loads normally (it is drawn by flow-server.hims.com, not by the blocked /c/hl scripts). It was walked and experimented on: see flow men-gi.",
+   "The flow server sometimes answered with Hims' own \"Something went wrong! ... Please try again\" screen on the first question (4 of 20 replays in this stage). Each failed run was retried once after 30 seconds; one option (expectations \"Keep the hair I have\") failed twice and was left."
   ],
-  "coverageNote": "Stage 1 (map): every hair product page on hims.com was read, entry links mapped, one landing-page pre-quiz walked, safety pages and help-centre drug sheets read. Stage 2 (experiment): the men's consultation was re-tested twice and is still blocked, so NO one-change experiment could be run on the real questionnaire. What was tested live: the three-question landing-page pre-quiz, with one baseline replay and four one-change replays that cover every non-baseline option (5 replays; every request the page made was logged). Result: no answer changes anything the visitor sees. Stage 2 also read two more hair landing pages (no pre-quiz on them), six more Hims blog posts and five more help-centre articles for published descriptions of the intake, review and plans, and re-read the page state served with /c/hl for feature-flag settings. Everything said about the real consultation is therefore \"docs\" (Hims says so in public), \"code\" (field and flag names in the page hims.com serves; names only, no question text) or \"inferred\". NOT done: any question, branch, stop screen, recommendation, plan price or account wall of the men's consultation; anything on Hers (women)."
+  "coverageNote": "Stage 1 mapped the catalogue and walked a landing-page pre-quiz. Stage 2 (experiment) found the newer anonymous intake at /g/i/hl, replayed its baseline, and ran 12 one-change replays plus 2 multi-change sweeps over the 11 hair questions (34 of 40 options seen live; stage 3 replayed the other 6, so all 40 are now seen) and 5 state replays (Texas, California, Massachusetts, Washington, AA, AP). Result: no hair answer changes anything; military mail states are refused; everything stops at the Terms and Telehealth Consent tick-box, which was not ticked. The pre-quiz was also tested (every option, no effect). NOT seen: the account step, date of birth, the medical form, photos, the recommendation, strengths, plan prices and any medical stop screen; the old /c/hl app stays blocked; Hers (women) stays blocked. The served flow data holds one screen at a time, not a full quiz definition, so no branch conditions could be read from code. Stage 3 (verify) replayed every baseline (all matched), re-tested the state rules (AA stop, Massachusetts valid), tested AE (stopped) and the 6 untested hair options (no change), and re-read 14 product pages and 2 safety pages."
  },
  "products": [
   {
@@ -65,10 +67,10 @@
    "form": "tablet, once a day",
    "audience": "men",
    "legalStatus": "US prescription only, compounded (not FDA-approved; \"FDA does not approve nor verify the safety, effectiveness, or quality of compounded drugs\")",
-   "price": "Starting at $35 per month (hair-loss landing page, 23 Nov 2026)",
-   "priceDetail": "Product pages and the /lp landing page show \"Starting at $29 per month*\" with the footnote \"*With a 10-month plan, paid upfront in full. Pricing varies by subscription plan\". Prices for other plan lengths are only shown inside the consultation (not seen). Tagged \"New\".",
+   "price": "Starting at $29 per month (landing and product pages, re-checked 23 Nov 2026)",
+   "priceDetail": "Re-checked in stage 3 (23 Nov 2026, later the same day): the /hair-loss landing page and the product page now both show \"Starting at $29 per month\" and the page's own product data says price 29 USD (runs/verify-products). Stage 1 had seen \"Starting at $35\" on the landing page a few hours earlier, so the price moved during the day (or differs by test group). The /lp page adds \"*With a 10-month plan, paid upfront in full. Pricing varies by subscription plan\"; the main landing page no longer shows that footnote in its served text. Earlier stage notes: Product pages and the /lp landing page show \"Starting at $29 per month*\" with the footnote \"*With a 10-month plan, paid upfront in full. Pricing varies by subscription plan\". Prices for other plan lengths are only shown inside the consultation (not seen). Tagged \"New\".",
    "url": "https://www.hims.com/hair-loss/finasteride-minoxidil-supplement-pill",
-   "recommendedWhen": "Not seen (consultation blocked). Docs: prescribed through the /c/hl consultation when the provider judges a once-daily pill with oral finasteride and oral minoxidil suitable. Published exclusions: under 18; not assigned male at birth, pregnant or able to become pregnant; certain heart disease; chronic kidney disease stage 3 to 5; liver disease; pheochromocytoma; blood thinners, antiplatelet drugs or antifungals; bleeding disorder; prostate or male breast cancer in the last 5 years; recent chemotherapy; high-dose zinc; grape or wine allergy; already using a finasteride or minoxidil product.",
+   "recommendedWhen": "Not seen (consultation blocked). Docs: prescribed through the /c/hl consultation when the provider judges a once-daily pill with oral finasteride and oral minoxidil suitable. Published exclusions: under 18; not assigned male at birth, pregnant or able to become pregnant; certain heart disease; chronic kidney disease stage 3 to 5; liver disease; pheochromocytoma; blood thinners, antiplatelet drugs or antifungals; bleeding disorder; prostate or male breast cancer in the last 5 years; recent chemotherapy; high-dose zinc; grape or wine allergy; already using a finasteride or minoxidil product. Stage 2: the anonymous intake (/g/i/hl) names no product for any answer tested, so the choice is made after the account wall; refused for AA/AP addresses (R23) and under 18 (R27).",
    "evidence": "docs",
    "safetyUrl": "https://www.hims.com/important-safety/finasteride-minoxidil-supplement-blend-pill"
   },
@@ -101,10 +103,10 @@
    "form": "chewable, once a day (citrus flavour)",
    "audience": "men",
    "legalStatus": "US prescription only, compounded (not FDA-approved; \"FDA does not approve nor verify the safety, effectiveness, or quality of compounded drugs\")",
-   "price": "Starting at $35 per month (hair-loss landing page, 23 Nov 2026)",
-   "priceDetail": "\"Starting at $29 per month*\" on product pages and the /lp page (*10-month plan paid upfront). Supplement amounts are not published (\"proprietary blend\"). Tagged \"Most popular\".",
+   "price": "Starting at $29 per month (landing and product pages, re-checked 23 Nov 2026)",
+   "priceDetail": "Re-checked in stage 3 (23 Nov 2026, later the same day): the /hair-loss landing page and the product page now both show \"Starting at $29 per month\" and the page's own product data says price 29 USD (runs/verify-products). Stage 1 had seen \"Starting at $35\" on the landing page a few hours earlier, so the price moved during the day (or differs by test group). The /lp page adds \"*With a 10-month plan, paid upfront in full. Pricing varies by subscription plan\"; the main landing page no longer shows that footnote in its served text. Earlier stage notes: \"Starting at $29 per month*\" on product pages and the /lp page (*10-month plan paid upfront). Supplement amounts are not published (\"proprietary blend\"). Tagged \"Most popular\".",
    "url": "https://www.hims.com/hair-loss-finasteride-minox-chew",
-   "recommendedWhen": "Not seen. Docs: the site tags it \"most popular\" among the oral options; prescribed through /c/hl for men who prefer a chew. Inferred: same exclusions as the pill, because it also contains oral finasteride and oral minoxidil.",
+   "recommendedWhen": "Not seen. Docs: the site tags it \"most popular\" among the oral options; prescribed through /c/hl for men who prefer a chew. Inferred: same exclusions as the pill, because it also contains oral finasteride and oral minoxidil. Stage 2: the anonymous intake (/g/i/hl) names no product for any answer tested, so the choice is made after the account wall; refused for AA/AP addresses (R23) and under 18 (R27).",
    "evidence": "docs",
    "safetyUrl": "https://www.hims.com/important-safety/hair-hybrids-chewables"
   },
@@ -125,10 +127,10 @@
    "form": "scalp spray, once a day",
    "audience": "men",
    "legalStatus": "US prescription only, compounded (not FDA-approved; \"FDA does not approve nor verify the safety, effectiveness, or quality of compounded drugs\")",
-   "price": "Starting at $35 per month (hair-loss landing page, 23 Nov 2026)",
-   "priceDetail": "\"Starting at $29 per month*\" on product pages (*10-month plan paid upfront). Hims blog (hims-vs-keeps, 2025): \"start at $35 a month (when you opt for a five-month plan) or $50 for a three-month plan\" (the blog says this of two Hims products without naming them clearly). A Fortune reviewer paid $150 for a three-month supply. Inactive: alcohol, propylene glycol, citric acid. Tagged \"Quick-drying\"; the page calls it \"our best-selling treatment\".",
+   "price": "Starting at $29 per month (landing and product pages, re-checked 23 Nov 2026)",
+   "priceDetail": "Re-checked in stage 3 (23 Nov 2026, later the same day): the /hair-loss landing page and the product page now both show \"Starting at $29 per month\" and the page's own product data says price 29 USD (runs/verify-products). Stage 1 had seen \"Starting at $35\" on the landing page a few hours earlier, so the price moved during the day (or differs by test group). The /lp page adds \"*With a 10-month plan, paid upfront in full. Pricing varies by subscription plan\"; the main landing page no longer shows that footnote in its served text. Earlier stage notes: \"Starting at $29 per month*\" on product pages (*10-month plan paid upfront). Hims blog (hims-vs-keeps, 2025): \"start at $35 a month (when you opt for a five-month plan) or $50 for a three-month plan\" (the blog says this of two Hims products without naming them clearly). A Fortune reviewer paid $150 for a three-month supply. Inactive: alcohol, propylene glycol, citric acid. Tagged \"Quick-drying\"; the page calls it \"our best-selling treatment\".",
    "url": "https://www.hims.com/hair-loss/topical-finasteride",
-   "recommendedWhen": "Observed: the only product the landing-page pre-quiz pitches, whatever the three answers (\"Get the spray\"). In the real consultation: not seen; probably the default recommendation for a man with no exclusions (inferred from the flag name himsHairTopFinRecco, on for all visitors; low confidence). Docs: not with oral finasteride or dutasteride, chronic liver disease, a history of breast or prostate cancer, under 18, or for women.",
+   "recommendedWhen": "Observed: the only product the landing-page pre-quiz pitches, whatever the three answers (\"Get the spray\"). In the real consultation: not seen; probably the default recommendation for a man with no exclusions (inferred from the flag name himsHairTopFinRecco, on for all visitors; low confidence). Docs: not with oral finasteride or dutasteride, chronic liver disease, a history of breast or prostate cancer, under 18, or for women. Stage 2: the anonymous intake (/g/i/hl) names no product for any answer tested, so the choice is made after the account wall; refused for AA/AP addresses (R23) and under 18 (R27).",
    "evidence": "docs",
    "safetyUrl": "https://www.hims.com/important-safety/rx-hair-loss-spray"
   },
@@ -157,10 +159,10 @@
    "form": "scalp spray, once a day (eucalyptus scent)",
    "audience": "men",
    "legalStatus": "US prescription only, compounded (not FDA-approved; \"FDA does not approve nor verify the safety, effectiveness, or quality of compounded drugs\")",
-   "price": "Starting at $39 per month (hair-loss landing page, 23 Nov 2026)",
-   "priceDetail": "\"Starting at $33 per month\" on product-page carousels. Hims blog (2025): \"our 4-in-1 spray ... retails for $39 a month\". Fortune (2026) calls it a \"select-market\" product, so it may not be offered in every state (not confirmed on the site).",
+   "price": "Starting at $33 per month (landing and product pages, re-checked 23 Nov 2026)",
+   "priceDetail": "Re-checked in stage 3: landing page and product page both \"Starting at $33 per month\"; product data price 33 USD (runs/verify-products). Stage 1 had seen $39 on the landing page earlier the same day. Earlier notes: \"Starting at $33 per month\" on product-page carousels. Hims blog (2025): \"our 4-in-1 spray ... retails for $39 a month\". Fortune (2026) calls it a \"select-market\" product, so it may not be offered in every state (not confirmed on the site).",
    "url": "https://www.hims.com/hair-loss/hair-loss-spray",
-   "recommendedWhen": "Observed: named in the pre-quiz end pitch as the \"4-in-1 formula available with ketoconazole and biotin\". In the real consultation: not seen; inferred to be the step-up version of the spray (higher minoxidil, plus ketoconazole and biotin) offered next to it at a higher price. Same published exclusions as the spray.",
+   "recommendedWhen": "Observed: named in the pre-quiz end pitch as the \"4-in-1 formula available with ketoconazole and biotin\". In the real consultation: not seen; inferred to be the step-up version of the spray (higher minoxidil, plus ketoconazole and biotin) offered next to it at a higher price. Same published exclusions as the spray. Stage 2: the anonymous intake (/g/i/hl) names no product for any answer tested, so the choice is made after the account wall; refused for AA/AP addresses (R23) and under 18 (R27).",
    "evidence": "docs",
    "safetyUrl": "https://www.hims.com/important-safety/rxspray-ketoconazole-biotin"
   },
@@ -184,10 +186,10 @@
    "form": "scalp serum with dropper, once a day",
    "audience": "men",
    "legalStatus": "US prescription only, compounded (not FDA-approved; \"FDA does not approve nor verify the safety, effectiveness, or quality of compounded drugs\")",
-   "price": "Starting at $35 per month (hair-loss landing page, 23 Nov 2026)",
-   "priceDetail": "\"Starting at $29 per month*\" on product pages (*10-month plan paid upfront). Tagged \"Direct application\".",
+   "price": "Starting at $29 per month (landing and product pages, re-checked 23 Nov 2026)",
+   "priceDetail": "Re-checked in stage 3 (23 Nov 2026, later the same day): the /hair-loss landing page and the product page now both show \"Starting at $29 per month\" and the page's own product data says price 29 USD (runs/verify-products). Stage 1 had seen \"Starting at $35\" on the landing page a few hours earlier, so the price moved during the day (or differs by test group). The /lp page adds \"*With a 10-month plan, paid upfront in full. Pricing varies by subscription plan\"; the main landing page no longer shows that footnote in its served text. Earlier stage notes: \"Starting at $29 per month*\" on product pages (*10-month plan paid upfront). Tagged \"Direct application\".",
    "url": "https://www.hims.com/hair-loss/serum",
-   "recommendedWhen": "Not seen. Docs: the same two actives as the spray in a dropper serum (\"Direct application\"); Hims says formats exist \"to fit your routine\" and asks about styling habits, so it is probably offered to men who prefer a serum to a spray (inferred). Same published exclusions as the spray.",
+   "recommendedWhen": "Not seen. Docs: the same two actives as the spray in a dropper serum (\"Direct application\"); Hims says formats exist \"to fit your routine\" and asks about styling habits, so it is probably offered to men who prefer a serum to a spray (inferred). Same published exclusions as the spray. Stage 2: the anonymous intake (/g/i/hl) names no product for any answer tested, so the choice is made after the account wall; refused for AA/AP addresses (R23) and under 18 (R27).",
    "evidence": "docs",
    "safetyUrl": "https://www.hims.com/important-safety/rx-hair-loss-serum"
   },
@@ -219,7 +221,7 @@
    "price": "$29 per month on a 10-month plan, paid upfront in full",
    "priceDetail": "Shown as \"Starting at $29 per month\" everywhere. The Google Shopping page states \"$29/mo, 10-mo plan*\". No finasteride: the oral option without a DHT blocker. Tagged \"Convenient routine\".",
    "url": "https://www.hims.com/hair-loss/minox-chew",
-   "recommendedWhen": "Not seen. Inferred: the oral option without finasteride, for men who cannot or do not want to take finasteride (for example worried about sexual side effects, or already on a 5-alpha reductase inhibitor) but can take oral minoxidil. Oral minoxidil cautions (heart, kidney, blood pressure) would apply.",
+   "recommendedWhen": "Not seen. Inferred: the oral option without finasteride, for men who cannot or do not want to take finasteride (for example worried about sexual side effects, or already on a 5-alpha reductase inhibitor) but can take oral minoxidil. Oral minoxidil cautions (heart, kidney, blood pressure) would apply. Stage 2: the anonymous intake (/g/i/hl) names no product for any answer tested, so the choice is made after the account wall; refused for AA/AP addresses (R23) and under 18 (R27).",
    "evidence": "docs",
    "safetyUrl": "https://www.hims.com/important-safety/hair-hybrids-chewables",
    "otherUrls": [
@@ -242,7 +244,7 @@
    "price": "Starting at $22 per month",
    "priceDetail": "Shopping page: \"One time purchase price is for a 12-month supply of Finasteride. Subscription price is for a 3-month supply\" (the amounts are drawn by script and were not in the page text). Refund offer on that page: \"Full refund of price paid available for first 90 days' supply. Refund request must be made between 90 and 180 days after product shipment delivered.\"",
    "url": "https://www.hims.com/hair-loss/finasteride",
-   "recommendedWhen": "Not seen. Docs: the FDA-approved generic tablet, \"starts at $22 a month\"; prescribed after the consultation \"if a provider decides you're a good match\" (Hims: with male pattern hair loss \"you most likely are\"). Not for women or anyone under 18; tell the provider about prostate or liver problems.",
+   "recommendedWhen": "Not seen. Docs: the FDA-approved generic tablet, \"starts at $22 a month\"; prescribed after the consultation \"if a provider decides you're a good match\" (Hims: with male pattern hair loss \"you most likely are\"). Not for women or anyone under 18; tell the provider about prostate or liver problems. Stage 2: the anonymous intake (/g/i/hl) names no product for any answer tested, so the choice is made after the account wall; refused for AA/AP addresses (R23) and under 18 (R27).",
    "evidence": "docs",
    "safetyUrl": "https://www.hims.com/important-safety/finasteride",
    "otherUrls": [
@@ -273,7 +275,7 @@
    "audience": "men",
    "legalStatus": "US prescription only (contains FDA-approved finasteride) plus OTC items",
    "price": "Starting at $60 per month",
-   "priceDetail": "The product page showed \"Out of stock\" on 23 Nov 2026. A separate shopping page sells a \"custom kit\": \"Subscribe at $26/mo Best Value. Get Finasteride pills and your choice of: Biotin Gummy Vitamins, Minoxidil Solution, Thick Fix Shampoo\".",
+   "priceDetail": "The product page showed \"Out of stock\" on 23 Nov 2026. A separate shopping page sells a \"custom kit\": \"Subscribe at $26/mo Best Value. Get Finasteride pills and your choice of: Biotin Gummy Vitamins, Minoxidil Solution, Thick Fix Shampoo\". Stage 3: the page text still says \"Out of stock\", while the page's own product data says InStock at 60 USD (runs/verify-products); the two disagree.",
    "url": "https://www.hims.com/hair-loss/hair-power-pack",
    "recommendedWhen": "Not offered at present: the product page showed \"Out of stock\" on 23 Nov 2026. When sold, a four-product bundle (finasteride tablets, minoxidil solution, shampoo, gummies) for men who want everything together (docs).",
    "evidence": "docs",
@@ -302,7 +304,7 @@
    "price": "Starting at $32 per month* (*10-month plan paid upfront, per the /lp page footnote)",
    "priceDetail": "Seen only as a card on the landing page /lp/hair-start-top-fin-fa, with the finasteride safety link (so the finasteride part is the oral tablet: inferred). Card text: (\"When used together, men saw better results in clinical trials than using either alone\"); it has no product page of its own. Hims blog posts quote $32 and $39 a month for 3-month and 12-month commitments but two posts give them the opposite way round, so the plan-to-price match is not reliable.",
    "url": "https://www.hims.com/lp/hair-start-top-fin-fa",
-   "recommendedWhen": "Not seen. Docs: Hims calls its finasteride tablet + minoxidil solution bundle the \"Hair Loss Duo\" (from $32 a month); bought through the same consultation. Inferred: for men who want the two licensed generics rather than a compounded product.",
+   "recommendedWhen": "Not seen. Docs: Hims calls its finasteride tablet + minoxidil solution bundle the \"Hair Loss Duo\" (from $32 a month); bought through the same consultation. Inferred: for men who want the two licensed generics rather than a compounded product. Stage 2: the anonymous intake (/g/i/hl) names no product for any answer tested, so the choice is made after the account wall; refused for AA/AP addresses (R23) and under 18 (R27).",
    "evidence": "docs",
    "safetyUrl": "https://www.hims.com/important-safety/finasteride"
   },
@@ -320,7 +322,7 @@
    "audience": "men",
    "legalStatus": "US OTC drug (FDA-approved, no prescription)",
    "price": "$20 one-time purchase; \"Starting at $19 per month\" on subscription",
-   "priceDetail": "\"Subscribe and save: Save up to 5%\". The plan picker text also reads \"1-month supply $20 $30/ea\", which could not be interpreted without the page script. One-time purchase or subscription. Add to cart, no consultation. Not for use if pregnant or breastfeeding. Not shipped to APO/FPO/DPO addresses.",
+   "priceDetail": "\"Subscribe and save: Save up to 5%\". The plan picker text also reads \"1-month supply $20 $30/ea\", which could not be interpreted without the page script. One-time purchase or subscription. Add to cart, no consultation. Not for use if pregnant or breastfeeding. Not shipped to APO/FPO/DPO addresses. Stage 3: the page's product data says 19 USD (matches the subscription price); the $20 one-time price was not visible in the served text and is not re-confirmed.",
    "url": "https://www.hims.com/hair-loss/minoxidil-foam",
    "recommendedWhen": "No consultation: add to cart. Docs: Hims says minoxidil suits \"new hair loss or ... mild to moderate balding\". Inferred from flag names: may also be shown as an add-on at the consultation checkout.",
    "evidence": "docs"
@@ -463,7 +465,7 @@
    "audience": "men",
    "legalStatus": "US OTC drug (classification inferred from the anti-dandruff active; the page calls it a \"medicated shampoo\")",
    "price": "$18 one-time; about $17 on subscription",
-   "priceDetail": "\"Subscribe and save: Save up to 17%\". The plan line reads \"1 bottle every month $18 $17/ea\" (taken as $17 on subscription).",
+   "priceDetail": "\"Subscribe and save: Save up to 17%\". The plan line reads \"1 bottle every month $18 $17/ea\" (taken as $17 on subscription). Stage 3: the visible $18 / $17 confirmed; the page's product data says 15 USD, which does not match the visible price.",
    "url": "https://www.hims.com/hair-loss/zinc-pyrithione-shampoo",
    "recommendedWhen": "No consultation: add to cart. For dandruff (pyrithione zinc 1%); not part of the hair-loss consultation as far as public pages show.",
    "evidence": "docs"
@@ -618,7 +620,7 @@
    "audience": "women",
    "legalStatus": "US prescription only (off-label use)",
    "price": "unknown directly; a third-party roundup (NCOA) quotes \"$29 per month on Hers\"",
-   "priceDetail": "The Hers site could not be opened (security check). Details are from search-engine snippets of the page, not from the page itself.",
+   "priceDetail": "The Hers site could not be opened (security check). Details are from search-engine snippets of the page, not from the page itself. Stage 3: forhers.com still blocked; existence rests on search-engine listings of forhers.com pages, and any price comes from third-party reviews (NCOA), not from Hers.",
    "url": "https://www.forhers.com/hair-loss/oral-minoxidil",
    "recommendedWhen": "Unknown here (Hers site not reachable from this machine). See the separate hers-us report.",
    "evidence": "docs"
@@ -641,7 +643,7 @@
    "audience": "women",
    "legalStatus": "US prescription only, compounded (not FDA-approved; \"FDA does not approve nor verify the safety, effectiveness, or quality of compounded drugs\")",
    "price": "unknown",
-   "priceDetail": "Search result title \"Most popular Rx\". Page not opened (security check). Ingredients and strengths not verified.",
+   "priceDetail": "Search result title \"Most popular Rx\". Page not opened (security check). Ingredients and strengths not verified. Stage 3: forhers.com still blocked; existence rests on search-engine listings of forhers.com pages, and any price comes from third-party reviews (NCOA), not from Hers.",
    "url": "https://www.forhers.com/hair-loss/minoxidil-hair-vitamin",
    "recommendedWhen": "Unknown here (Hers site not reachable from this machine). See the separate hers-us report.",
    "evidence": "docs"
@@ -664,7 +666,7 @@
    "audience": "women",
    "legalStatus": "US prescription only, compounded (not FDA-approved; \"FDA does not approve nor verify the safety, effectiveness, or quality of compounded drugs\")",
    "price": "unknown",
-   "priceDetail": "Search result title \"2-in-1 treatment Rx\". Page not opened (security check).",
+   "priceDetail": "Search result title \"2-in-1 treatment Rx\". Page not opened (security check). Stage 3: forhers.com still blocked; existence rests on search-engine listings of forhers.com pages, and any price comes from third-party reviews (NCOA), not from Hers.",
    "url": "https://www.forhers.com/hair-loss/minoxidil-biotin-chew",
    "recommendedWhen": "Unknown here (Hers site not reachable from this machine). See the separate hers-us report.",
    "evidence": "docs"
@@ -683,7 +685,7 @@
    "audience": "women",
    "legalStatus": "US prescription only (off-label use)",
    "price": "unknown",
-   "priceDetail": "Search snippet: \"blocking androgen hormones which can lead to hair loss in women\". A Hims/Hers help-centre drug sheet for spironolactone exists. Page not opened (security check).",
+   "priceDetail": "Search snippet: \"blocking androgen hormones which can lead to hair loss in women\". A Hims/Hers help-centre drug sheet for spironolactone exists. Page not opened (security check). Stage 3: forhers.com still blocked; existence rests on search-engine listings of forhers.com pages, and any price comes from third-party reviews (NCOA), not from Hers.",
    "url": "https://www.forhers.com/hair-loss/spironolactone",
    "recommendedWhen": "Unknown here (Hers site not reachable from this machine). See the separate hers-us report.",
    "evidence": "docs"
@@ -806,46 +808,592 @@
    "note": "The page says: \"The above on-page quiz questions are not a medical assessment, and your responses will not be shared with a medical provider. Hims uses your responses to personalize your experience and for other uses as described in our Privacy Policy.\""
   },
   {
-   "id": "men",
-   "name": "Men's hair-loss consultation (hims.com/c/hl)",
+   "id": "men-gi",
+   "name": "Men's hair intake, newer app (hims.com/g/i/hl)",
    "audience": "men",
-   "entryUrl": "https://www.hims.com/c/hl",
-   "stagesSummary": "NOT WALKED (blocked in stage 1 and twice more in stage 2). From public documents and field names only, the likely shape is: hair questions (goals, where, how long, family history, stress, styling) → account → state and date of birth → medical intake form with follow-up questions → photos (in most cases) → a recommended product that the customer may change, with strength, quantity and plan length → optional non-prescription add-ons → payment → provider review (allow at least 48 hours; video visit in some states) → shipment. The order of these steps and the position of the account wall were NOT seen. The entries below are topics, not real screens.",
+   "entryUrl": "https://www.hims.com/g/i/hl",
+   "stagesSummary": "14 anonymous screens (11 hair and lifestyle questions, 3 information screens) → state screen with a Terms and Telehealth Consent tick-box (not ticked: research stops here) → [not seen] account, date of birth, medical form, photos, treatment choice and payment, probably in the old /c/hl app. Drawn by Hims' server-driven flow engine (flow-server.hims.com): the browser sends each answer and the server names the next screen. No product, price or plan appears before the wall.",
    "questions": [
     {
-     "id": "men-t1",
+     "id": "gi-q1",
      "order": 1,
      "stage": "anonymous",
-     "text": "[Exact wording not seen: the consultation would not load] Hair goals step (the \"Get started\" buttons open /c/hl/goals).",
+     "text": "What are your hair goals?",
      "type": "single",
-     "options": [],
-     "purpose": "Docs: Hims says its form asks about \"your hair goals\". Inferred: used for personalisation and sales copy, not for eligibility (on the UK sister site the same kind of question changes nothing; on the US landing-page pre-quiz the goals question changes nothing either).",
+     "options": [
+      {
+       "label": "Fix my receding hairline",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Proof: runs/exp-gi-02-goals-receding vs runs/s2b-baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Regrow a full head of hair",
+       "effect": "Baseline answer. Leads to the next fixed screen. Stored with the anonymous session. Proof: runs/s2b-baseline-men-gi, runs/baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Get ahead of hair loss",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Proof: runs/exp-gi-01-goals-get-ahead vs runs/s2b-baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Sets the sales message. The screen itself says: \"The quiz is not a medical assessment and your responses will not be shared with a medical provider. Hims uses your responses to personalize your experience and for other uses as described in our Privacy Policy.\"",
      "engineRole": "personalisation",
      "branches": false,
-     "branchDetail": "Unknown for the real consultation. The only goals question that could be tested (the landing-page pre-quiz, lp-q1) has no branch.",
-     "shownWhen": "Entry at /c/hl/goals (the \"Get started\" buttons). Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
-     "evidence": "docs",
-     "source": "https://www.hims.com/blog/hims-vs-happy-head"
+     "branchDetail": "None found. Every option tested gives the same next screen and the same end.",
+     "shownWhen": "Always (screen /g/i/hl/goals)",
+     "evidence": "observed"
     },
     {
-     "id": "men-t2",
+     "id": "gi-q2",
      "order": 2,
      "stage": "anonymous",
-     "text": "[Exact wording not seen: the consultation would not load] Where you are experiencing hair loss (Hims: its intake form asks \"where you're experiencing hair loss\").",
+     "text": "Where are you noticing changes to your hair?",
      "type": "single",
-     "options": [],
-     "purpose": "Docs: named by Hims as an intake question. Inferred: tells male pattern loss (hairline, crown) from patterns that need an in-person check; Hims' own FAQ says men \"suddenly noticing bald patches with no apparent cause or pattern\" should \"seek medical attention\".",
-     "engineRole": "diagnosis",
+     "options": [
+      {
+       "label": "Along the hairline",
+       "effect": "Baseline answer. Leads to the next fixed screen. Stored with the anonymous session. Proof: runs/s2b-baseline-men-gi, runs/baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "At the top",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Proof: runs/exp-gi-04-changes-top vs runs/s2b-baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "All over",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Diffuse loss is not flagged for a doctor here. Proof: runs/exp-gi-03-changes-all-over vs runs/s2b-baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Pattern of loss. Clinically this separates male-pattern loss from diffuse shedding, but in this quiz it changes nothing on screen.",
+     "engineRole": "personalisation",
      "branches": false,
-     "branchDetail": "Unknown. No public document says an answer here stops the visit or changes the product.",
-     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
-     "evidence": "docs",
-     "source": "https://www.hims.com/blog/hims-vs-happy-head ; https://www.hims.com/lp/hair-start-comparison-dlp (FAQ)"
+     "branchDetail": "None found. Every option tested gives the same next screen and the same end.",
+     "shownWhen": "Always (screen /g/i/hl/changes)",
+     "evidence": "observed"
     },
+    {
+     "id": "gi-q3",
+     "order": 3,
+     "stage": "anonymous",
+     "text": "How much hair have you lost?",
+     "type": "single",
+     "options": [
+      {
+       "label": "A lot It’s obvious to everyone",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Proof: runs/exp-gi-05-loss-a-lot vs runs/s2b-baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Some Those close to me notice",
+       "effect": "Baseline answer. Leads to the next fixed screen. Stored with the anonymous session. Proof: runs/s2b-baseline-men-gi, runs/baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "A little Only I notice",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Proof (seen in a run that changed several answers at once, so the proof is weaker than a one-change run): runs/exp-gi-14-all-different vs runs/s2b-baseline-men-gi. Note (stage 3): seen only in a multi-change sweep (runs/exp-gi-14-all-different or runs/s2-gi-explore-2), not in a one-change replay.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Severity, in plain words (no Norwood scale, no photo at this point).",
+     "engineRole": "personalisation",
+     "branches": false,
+     "branchDetail": "None found. Every option tested gives the same next screen and the same end.",
+     "shownWhen": "Always (screen /g/i/hl/loss)",
+     "evidence": "observed"
+    },
+    {
+     "id": "gi-q4",
+     "order": 4,
+     "stage": "anonymous",
+     "text": "When did you start noticing changes to your hair?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Over a year ago",
+       "effect": "Baseline answer. Leads to the next fixed screen. Stored with the anonymous session. Proof: runs/s2b-baseline-men-gi, runs/baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "In the past year",
+       "effect": "No change (stage 3 one-change replay): same 15 screens in the same order, same wording, same end at the state screen; the server received the changed answer. Proof: runs/verify-start-past-year vs runs/verify-baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "In the past few months",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Recent onset is not flagged for a doctor here. Proof: runs/exp-gi-06-start-past-few-months vs runs/s2b-baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Not sure",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Proof (seen in a run that changed several answers at once, so the proof is weaker than a one-change run): runs/exp-gi-14-all-different, runs/s2-gi-explore-2 vs runs/s2b-baseline-men-gi. Note (stage 3): seen only in a multi-change sweep (runs/exp-gi-14-all-different or runs/s2-gi-explore-2), not in a one-change replay.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "How long the loss has been going on. Recent, fast loss would usually prompt a check for other causes; this quiz does not react.",
+     "engineRole": "personalisation",
+     "branches": false,
+     "branchDetail": "None found. Every option tested gives the same next screen and the same end.",
+     "shownWhen": "Always (screen /g/i/hl/start)",
+     "evidence": "observed"
+    },
+    {
+     "id": "gi-q5",
+     "order": 5,
+     "stage": "anonymous",
+     "text": "With treatment, what results are you hoping for? (Choose as many as you’d like.)",
+     "type": "multi",
+     "options": [
+      {
+       "label": "A stronger, defined hairline",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Proof (seen in a run that changed several answers at once, so the proof is weaker than a one-change run): runs/s2-gi-explore-2 vs runs/s2b-baseline-men-gi. Note (stage 3): seen only in a multi-change sweep (runs/exp-gi-14-all-different or runs/s2-gi-explore-2), not in a one-change replay.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Visibly thicker, fuller hair",
+       "effect": "Baseline answer. Leads to the next fixed screen. Stored with the anonymous session. Proof: runs/s2b-baseline-men-gi, runs/baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "More scalp coverage",
+       "effect": "No change (stage 3 one-change replay): same 15 screens in the same order, same wording, same end at the state screen; the server received the changed answer. Proof: runs/verify-expect-scalp vs runs/verify-baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Keep the hair I have",
+       "effect": "No change (stage 3 one-change replay): same 15 screens in the same order, same wording, same end at the state screen; the server received the changed answer. Proof: runs/verify-expect-keep vs runs/verify-baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "All of the above",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Proof (seen in a run that changed several answers at once, so the proof is weaker than a one-change run): runs/exp-gi-14-all-different vs runs/s2b-baseline-men-gi. Note (stage 3): seen only in a multi-change sweep (runs/exp-gi-14-all-different or runs/s2-gi-explore-2), not in a one-change replay.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Sets expectations and gathers the stated goal for later personalisation.",
+     "engineRole": "expectation-setting",
+     "branches": false,
+     "branchDetail": "None found. Every option tested gives the same next screen and the same end.",
+     "shownWhen": "Always (screen /g/i/hl/expectations)",
+     "evidence": "observed"
+    },
+    {
+     "id": "gi-q6",
+     "order": 6,
+     "stage": "anonymous",
+     "text": "What’s your hair type?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Straight or wavy",
+       "effect": "Baseline answer. Leads to the next fixed screen. Stored with the anonymous session. Proof: runs/s2b-baseline-men-gi, runs/baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Curly or coily",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Proof (seen in a run that changed several answers at once, so the proof is weaker than a one-change run): runs/exp-gi-14-all-different vs runs/s2b-baseline-men-gi. Note (stage 3): seen only in a multi-change sweep (runs/exp-gi-14-all-different or runs/s2-gi-explore-2), not in a one-change replay.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Textured or processed",
+       "effect": "No change (stage 3 one-change replay): same 15 screens in the same order, same wording, same end at the state screen; the server received the changed answer. Proof: runs/verify-type-textured vs runs/verify-baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "I don’t have hair",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Even a man who says he has no hair is still asked his hair length, style and styling time. Proof: runs/exp-gi-08-type-no-hair vs runs/s2b-baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Hair type, probably to suggest a spray, serum or tablet that suits the hair (Hims' routine screen says the answers \"help determine which treatment types best fit\"). Not seen used.",
+     "engineRole": "personalisation",
+     "branches": false,
+     "branchDetail": "None found. Every option tested gives the same next screen and the same end.",
+     "shownWhen": "Always (screen /g/i/hl/type)",
+     "evidence": "observed"
+    },
+    {
+     "id": "gi-q7",
+     "order": 7,
+     "stage": "anonymous",
+     "text": "How long is your hair?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Buzzed, shaved, or bald",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Proof: runs/exp-gi-09-length-buzzed vs runs/s2b-baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Short",
+       "effect": "Baseline answer. Leads to the next fixed screen. Stored with the anonymous session. Proof: runs/s2b-baseline-men-gi, runs/baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Medium",
+       "effect": "No change (stage 3 one-change replay): same 15 screens in the same order, same wording, same end at the state screen; the server received the changed answer. Proof: runs/verify-length-medium vs runs/verify-baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Long",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Proof (seen in a run that changed several answers at once, so the proof is weaker than a one-change run): runs/exp-gi-14-all-different vs runs/s2b-baseline-men-gi. Note (stage 3): seen only in a multi-change sweep (runs/exp-gi-14-all-different or runs/s2-gi-explore-2), not in a one-change replay.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Hair length; probably meant for the topical-versus-tablet pitch. Not seen used.",
+     "engineRole": "personalisation",
+     "branches": false,
+     "branchDetail": "None found. Every option tested gives the same next screen and the same end.",
+     "shownWhen": "Always (screen /g/i/hl/length)",
+     "evidence": "observed"
+    },
+    {
+     "id": "gi-q8",
+     "order": 8,
+     "stage": "anonymous",
+     "text": "Next, let’s talk about lifestyle factors. Uncovering which root causes may be affecting you can help us better understand your hair needs.",
+     "type": "info",
+     "options": [],
+     "purpose": "Section break before the family-history and stress questions.",
+     "engineRole": "marketing",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "Always (screen /g/i/hl/lifestyle)",
+     "evidence": "observed"
+    },
+    {
+     "id": "gi-q9",
+     "order": 9,
+     "stage": "anonymous",
+     "text": "Does hair loss run in your family?",
+     "type": "single",
+     "options": [
+      {
+       "label": "Yes",
+       "effect": "Baseline answer. Leads to the next fixed screen. Stored with the anonymous session. Proof: runs/s2b-baseline-men-gi, runs/baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "No",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Proof: runs/exp-gi-10-heredity-no vs runs/s2b-baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Not sure",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Proof (seen in a run that changed several answers at once, so the proof is weaker than a one-change run): runs/exp-gi-14-all-different vs runs/s2b-baseline-men-gi. Note (stage 3): seen only in a multi-change sweep (runs/exp-gi-14-all-different or runs/s2-gi-explore-2), not in a one-change replay.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Family history supports a diagnosis of male-pattern loss; here it changes nothing on screen and the next info screen names family history whatever the answer.",
+     "engineRole": "personalisation",
+     "branches": false,
+     "branchDetail": "None found. Every option tested gives the same next screen and the same end.",
+     "shownWhen": "Always (screen /g/i/hl/hair-loss-heredity)",
+     "evidence": "observed"
+    },
+    {
+     "id": "gi-q10",
+     "order": 10,
+     "stage": "anonymous",
+     "text": "How often do you tend to experience stress?",
+     "type": "single",
+     "options": [
+      {
+       "label": "All the time",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. No mental-health follow-up and no mention of stress-related shedding (telogen effluvium). Proof: runs/exp-gi-11-stress-all-the-time vs runs/s2b-baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Sometimes",
+       "effect": "Baseline answer. Leads to the next fixed screen. Stored with the anonymous session. Proof: runs/s2b-baseline-men-gi, runs/baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Rarely",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Proof (seen in a run that changed several answers at once, so the proof is weaker than a one-change run): runs/exp-gi-14-all-different vs runs/s2b-baseline-men-gi. Note (stage 3): seen only in a multi-change sweep (runs/exp-gi-14-all-different or runs/s2-gi-explore-2), not in a one-change replay.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Not sure",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Proof (seen in a run that changed several answers at once, so the proof is weaker than a one-change run): runs/s2-gi-explore-2 vs runs/s2b-baseline-men-gi. Note (stage 3): seen only in a multi-change sweep (runs/exp-gi-14-all-different or runs/s2-gi-explore-2), not in a one-change replay.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Stress as a \"root cause\"; used for the education screen that follows. Not a mental-health screen.",
+     "engineRole": "personalisation",
+     "branches": false,
+     "branchDetail": "None found. Every option tested gives the same next screen and the same end.",
+     "shownWhen": "Always (screen /g/i/hl/stress)",
+     "evidence": "observed"
+    },
+    {
+     "id": "gi-q11",
+     "order": 11,
+     "stage": "anonymous",
+     "text": "Factors like aging, family history, and stress can cause hair shedding and thinning. The good news? Prescription treatments can help you fight these root causes, so you can grow visibly thicker, fuller hair in just 3 to 6 months.",
+     "type": "info",
+     "options": [],
+     "purpose": "Sales education: the same text for every answer tested (it does not reflect \"No\" family history or \"Rarely\" stressed).",
+     "engineRole": "expectation-setting",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "Always (screen /g/i/hl/factors)",
+     "evidence": "observed"
+    },
+    {
+     "id": "gi-q12",
+     "order": 12,
+     "stage": "anonymous",
+     "text": "Now let’s get to know your hair routine. Your answers help determine which treatment types best fit into your day-to-day.",
+     "type": "info",
+     "options": [],
+     "purpose": "Section break. Claims the next answers steer the treatment type; that use happens after the wall and was not seen.",
+     "engineRole": "marketing",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "Always (screen /g/i/hl/routine)",
+     "evidence": "observed"
+    },
+    {
+     "id": "gi-q13",
+     "order": 13,
+     "stage": "anonymous",
+     "text": "How do you style your hair?",
+     "type": "single",
+     "options": [
+      {
+       "label": "No styling I let my hair do its thing",
+       "effect": "Baseline answer. Leads to the next fixed screen. Stored with the anonymous session. Proof: runs/s2b-baseline-men-gi, runs/baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Products Gel, mousse, etc.",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Proof (seen in a run that changed several answers at once, so the proof is weaker than a one-change run): runs/exp-gi-14-all-different vs runs/s2b-baseline-men-gi. Note (stage 3): seen only in a multi-change sweep (runs/exp-gi-14-all-different or runs/s2-gi-explore-2), not in a one-change replay.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "I usually wear a hat",
+       "effect": "No change (stage 3 one-change replay): same 15 screens in the same order, same wording, same end at the state screen; the server received the changed answer. Proof: runs/verify-style-hat vs runs/verify-baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Protective styles Braids, locs, etc.",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Braids and locs (a cause of traction alopecia) raise no question or warning. Proof: runs/exp-gi-12-style-protective vs runs/s2b-baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Styling routine; probably to favour a spray or tablet over a serum. Not seen used.",
+     "engineRole": "personalisation",
+     "branches": false,
+     "branchDetail": "None found. Every option tested gives the same next screen and the same end.",
+     "shownWhen": "Always (screen /g/i/hl/hair-style)",
+     "evidence": "observed"
+    },
+    {
+     "id": "gi-q14",
+     "order": 14,
+     "stage": "anonymous",
+     "text": "How much time do you spend on your hair every day? (We offer treatments that are quick, simple, and work with your routine.)",
+     "type": "single",
+     "options": [
+      {
+       "label": "Less than 5 minutes",
+       "effect": "Baseline answer. Leads to the next fixed screen. Stored with the anonymous session. Proof: runs/s2b-baseline-men-gi, runs/baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "5-10 minutes",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Proof (seen in a run that changed several answers at once, so the proof is weaker than a one-change run): runs/exp-gi-14-all-different vs runs/s2b-baseline-men-gi. Note (stage 3): seen only in a multi-change sweep (runs/exp-gi-14-all-different or runs/s2-gi-explore-2), not in a one-change replay.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "10+ minutes",
+       "effect": "Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. Proof: runs/exp-gi-13-duration-10plus vs runs/s2b-baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      }
+     ],
+     "purpose": "Convenience: supports the \"quick, simple\" pitch and probably the tablet-versus-topical suggestion. Not seen used.",
+     "engineRole": "personalisation",
+     "branches": false,
+     "branchDetail": "None found. Every option tested gives the same next screen and the same end.",
+     "shownWhen": "Always (screen /g/i/hl/hair-style-duration)",
+     "evidence": "observed"
+    },
+    {
+     "id": "gi-q15",
+     "order": 15,
+     "stage": "anonymous",
+     "text": "Which state do you currently live in? (drop-down \"State\", then a tick-box: By clicking \"Continue\", I agree to the Terms and Conditions and Telehealth Consent and acknowledge the Privacy Policy.)",
+     "type": "single",
+     "options": [
+      {
+       "label": "Texas",
+       "effect": "Baseline answer. The page checks the state with the server (\"VALIDATE\"); reply isValid true; no message. Continue stays disabled until the consent box is ticked, which this research never does. Proof: runs/s2b-baseline-men-gi.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "California",
+       "effect": "Valid; same screen, no message. Proof: runs/exp-gi-14-all-different.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Massachusetts",
+       "effect": "Valid; same screen, no message. No sign here of the compounded-product restriction the page code hints at (rule R20). Proof: runs/exp-gi-16-state-massachusetts. Re-confirmed in stage 3: runs/verify-state-ma.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "Washington",
+       "effect": "Valid; same screen, no message. No sign here of the compounded-product restriction (R20). Proof: runs/exp-gi-17-state-washington.",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "AA",
+       "effect": "HARD STOP. Server reply isValid false; red message \"Currently, we don't offer this product in your state\"; Continue stays disabled. (AA = US armed forces mail, the Americas.) Proof: runs/exp-gi-15-state-aa, shots/07-gi-state-aa-not-offered.jpg. Re-confirmed in stage 3: runs/verify-state-aa.",
+       "effectType": "hard-stop",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "AP",
+       "effect": "HARD STOP. Same as AA: isValid false, \"Currently, we don't offer this product in your state\". (AP = armed forces mail, Pacific.) Proof: runs/exp-gi-18-state-ap.",
+       "effectType": "hard-stop",
+       "affects": [],
+       "evidence": "observed"
+      },
+      {
+       "label": "AE",
+       "effect": "HARD STOP (stage 3): server reply isValid false; red message \"Currently, we don't offer this product in your state\"; Continue disabled. Proof: runs/verify-state-ae (screenshot shots/verify-state-ae-not-offered.jpg).",
+       "effectType": "hard-stop",
+       "affects": [
+        "p1",
+        "p2",
+        "p3",
+        "p4",
+        "p5",
+        "p6",
+        "p7",
+        "p9"
+       ],
+       "evidence": "observed"
+      },
+      {
+       "label": "Any of the other 48 states listed, and District of Columbia",
+       "effect": "Not each tested. Four tested states were valid. Puerto Rico and the other territories are not in the list at all, so they cannot be chosen (fits the help centre: not available in Puerto Rico).",
+       "effectType": "none",
+       "affects": [],
+       "evidence": "inferred"
+      }
+     ],
+     "purpose": "Licensing and shipping gate: a US provider must be licensed in the patient's state, and some states need a video visit. Also the point where the visitor must accept the Terms and the Telehealth Consent.",
+     "engineRole": "eligibility-gate",
+     "branches": true,
+     "branchDetail": "Military mail states AA and AP are refused on the spot (observed). Every other state tested passes. What comes after Continue was not seen: the tick-box was not ticked. The \"Sign In\" link on every screen points to the old app (/c/hl?skipToSignIn=true&goFlow=true&flowId=hl), and the server metadata says legacyPath \"/c/hl\", so the account, date of birth (18 to 120) and medical form most likely follow in /c/hl, which is blocked here.",
+     "shownWhen": "Always, after the 14 hair screens (screen /g/i/hl/select-state)",
+     "evidence": "observed"
+    }
+   ]
+  },
+  {
+   "id": "men",
+   "name": "Men's hair-loss consultation after the wall (hims.com/c/hl, not seen)",
+   "audience": "men",
+   "entryUrl": "https://www.hims.com/c/hl",
+   "stagesSummary": "NOT WALKED: the old app at /c/hl stays on a spinner (Cloudflare refuses its scripts). Its anonymous opening is now seen in flow men-gi (hims.com/g/i/hl), so the hair-question topics were removed from here. What remains are topics for the steps after the state and consent screen, from public documents and field names only: account → date of birth → medical intake form with follow-ups → photos (in most cases) → a recommended product the customer may change (strength, quantity, plan) → optional add-ons → payment → provider review. Order not seen.",
+   "questions": [
     {
      "id": "men-t3",
      "order": 3,
-     "stage": "anonymous",
+     "stage": "after-account",
      "text": "[Exact wording not seen: the consultation would not load] Other hair-loss products already tried.",
      "type": "multi",
      "options": [],
@@ -853,69 +1401,9 @@
      "engineRole": "product-selector",
      "branches": false,
      "branchDetail": "Unknown. Published rule that this answer would feed: no topical finasteride together with oral finasteride or dutasteride (see rules R3, R5).",
-     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
+     "shownWhen": "Not asked in the 14 anonymous screens of /g/i/hl (observed), so if it is asked at all it is after the account wall. Docs only.",
      "evidence": "docs",
      "source": "https://www.healthline.com/health/hims-hair-review (seen through a search summary only)"
-    },
-    {
-     "id": "men-t4",
-     "order": 4,
-     "stage": "anonymous",
-     "text": "[Exact wording not seen: the consultation would not load] Family history of hair loss.",
-     "type": "single",
-     "options": [],
-     "purpose": "Docs: Hims lists family history among the things its form asks, with a short \"Why We Ask\" note. Inferred: supports the working diagnosis of hereditary (male pattern) hair loss; not a gate.",
-     "engineRole": "diagnosis",
-     "branches": false,
-     "branchDetail": "Unknown; no published effect on the offer.",
-     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
-     "evidence": "docs",
-     "source": "https://www.hims.com/blog/hims-vs-keeps ; https://www.hims.com/blog/hims-vs-rogaine"
-    },
-    {
-     "id": "men-t5",
-     "order": 5,
-     "stage": "anonymous",
-     "text": "[Exact wording not seen: the consultation would not load] Lifestyle.",
-     "type": "single",
-     "options": [],
-     "purpose": "Docs: \"lifestyle\" is named by Hims as a topic of its form. No detail is published. Inferred: background for the provider and for marketing, not a gate.",
-     "engineRole": "personalisation",
-     "branches": false,
-     "branchDetail": "Unknown; no published effect on the offer.",
-     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
-     "evidence": "docs",
-     "source": "https://www.hims.com/blog/hims-vs-keeps"
-    },
-    {
-     "id": "men-t6",
-     "order": 6,
-     "stage": "anonymous",
-     "text": "[Exact wording not seen: the consultation would not load] Stress levels (\"mental health (like stress levels)\").",
-     "type": "single",
-     "options": [],
-     "purpose": "Docs: Hims names \"mental health (like stress levels)\" and \"stress levels\" as intake topics. Inferred: stress is asked as a cause of shedding; a separate mood question for finasteride safety (the finasteride safety page warns about depression) may sit in the medical form, but none was seen.",
-     "engineRole": "diagnosis",
-     "branches": false,
-     "branchDetail": "Unknown; no published effect on the offer.",
-     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
-     "evidence": "docs",
-     "source": "https://www.hims.com/blog/hims-vs-keeps ; https://www.hims.com/blog/hims-vs-rogaine"
-    },
-    {
-     "id": "men-t7",
-     "order": 7,
-     "stage": "anonymous",
-     "text": "[Exact wording not seen: the consultation would not load] Styling routine, styling habits and \"how you prefer to wear your hair\".",
-     "type": "single",
-     "options": [],
-     "purpose": "Docs: Hims asks about \"styling habits, and how you prefer to wear your hair\" and says compounded products come in several forms \"so that a provider can choose the product that fits your unique needs\". Inferred: steers the format (spray or serum on the scalp against pill or chew).",
-     "engineRole": "personalisation",
-     "branches": false,
-     "branchDetail": "Unknown. Inferred only: may change which format is shown as the recommendation.",
-     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
-     "evidence": "docs",
-     "source": "https://www.hims.com/blog/hims-vs-happy-head"
     },
     {
      "id": "men-t8",
@@ -1053,21 +1541,6 @@
      "source": "raw/props-c-hl.json: experiments.rules, consultation.additionalItems"
     },
     {
-     "id": "men-t17",
-     "order": 17,
-     "stage": "anonymous",
-     "text": "[Exact wording not seen: the consultation would not load] How long you have been experiencing hair loss.",
-     "type": "single",
-     "options": [],
-     "purpose": "Docs: Hims says its intake form asks \"how long you've been experiencing hair loss\". Inferred: gradual loss over years fits male pattern hair loss; sudden loss points elsewhere (Hims' FAQ tells men with sudden bald patches to seek medical attention).",
-     "engineRole": "diagnosis",
-     "branches": false,
-     "branchDetail": "Unknown; no published effect on the offer.",
-     "shownWhen": "Position in the flow, and whether it comes before or after the account wall, are NOT known; the \"stage\" value is a best guess.",
-     "evidence": "docs",
-     "source": "https://www.hims.com/blog/hims-vs-happy-head"
-    },
-    {
      "id": "men-t18",
      "order": 18,
      "stage": "after-account",
@@ -1131,7 +1604,7 @@
    "id": "R1",
    "flow": "men",
    "when": "Age under 18",
-   "then": "Not eligible for any prescription hair product. Published in the safety information (\"are younger than 18 years of age\"; \"Anyone younger than 18 years of age\"). How the questionnaire applies it was not seen.",
+   "then": "Not eligible for any prescription hair product. Published in the safety information (\"are younger than 18 years of age\"; \"Anyone younger than 18 years of age\"). How the questionnaire applies it was not seen. Code: the flow settings served by Hims' flow server set minAge 18 (R27). Code: the flow settings served by Hims' flow server set minAge 18 (R27).",
    "effectType": "hard-stop",
    "affects": [
     "p1",
@@ -1143,7 +1616,7 @@
     "p7"
    ],
    "evidence": "docs",
-   "proof": "https://www.hims.com/important-safety/rx-hair-loss-spray ; https://www.hims.com/important-safety/finasteride-minoxidil-supplement-blend-pill",
+   "proof": "https://www.hims.com/important-safety/rx-hair-loss-spray ; https://www.hims.com/important-safety/finasteride-minoxidil-supplement-blend-pill ; wording re-read live in stage 3: runs/verify-docs",
    "confidence": "medium"
   },
   {
@@ -1163,7 +1636,7 @@
     "p9"
    ],
    "evidence": "docs",
-   "proof": "https://www.hims.com/important-safety/rx-hair-loss-spray ; https://www.hims.com/important-safety/finasteride",
+   "proof": "https://www.hims.com/important-safety/rx-hair-loss-spray ; https://www.hims.com/important-safety/finasteride ; wording re-read live in stage 3: runs/verify-docs",
    "confidence": "medium"
   },
   {
@@ -1179,7 +1652,7 @@
     "p5"
    ],
    "evidence": "docs",
-   "proof": "https://www.hims.com/important-safety/rx-hair-loss-spray",
+   "proof": "https://www.hims.com/important-safety/rx-hair-loss-spray ; wording re-read live in stage 3: runs/verify-docs",
    "confidence": "low"
   },
   {
@@ -1207,7 +1680,7 @@
     "p1"
    ],
    "evidence": "docs",
-   "proof": "https://www.hims.com/important-safety/finasteride-minoxidil-supplement-blend-pill",
+   "proof": "https://www.hims.com/important-safety/finasteride-minoxidil-supplement-blend-pill ; wording re-read live in stage 3: runs/verify-docs",
    "confidence": "low"
   },
   {
@@ -1431,7 +1904,7 @@
    "id": "R20",
    "flow": "men",
    "when": "the shipping state is Massachusetts or Washington",
-   "then": "Compounded products are probably handled differently (restricted, replaced or flagged). This rests only on two field names in the page state, \"maCompoundDeprecation\" and \"waCompoundDeprecation\"; no public document explains them.",
+   "then": "Compounded products are probably handled differently (restricted, replaced or flagged). This rests only on two field names in the page state, \"maCompoundDeprecation\" and \"waCompoundDeprecation\"; no public document explains them. Stage 2 update: choosing Massachusetts or Washington on the anonymous state screen changes nothing (R25), so any such rule acts after the wall. Stage 2 update: choosing Massachusetts or Washington on the anonymous state screen changes nothing (R25), so any such rule acts after the wall.",
    "effectType": "product-removed",
    "affects": [
     "p1",
@@ -1444,6 +1917,121 @@
    "evidence": "inferred",
    "proof": "raw/props-c-hl.json: consultation.treatmentPreferences.maCompoundDeprecation, waCompoundDeprecation",
    "confidence": "low"
+  },
+  {
+   "id": "R21",
+   "flow": "men-gi",
+   "when": "any one answer to the 11 anonymous hair and lifestyle questions (gi-q1 to gi-q14) is changed",
+   "then": "Nothing changes: same screens, same order, same wording, same end at the state screen. No question is added or skipped, no warning, no stop, no product. All 40 options of the 11 questions have now been seen live: 18 in one-change replays by stage 2, 6 more in one-change replays by stage 3, and the rest as the baseline answer or in 2 multi-change sweeps.",
+   "effectType": "none",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/exp-gi-01 to exp-gi-06, exp-gi-08 to exp-gi-14, runs/s2-gi-explore-2, runs/verify-start-past-year, verify-expect-scalp, verify-expect-keep, verify-type-textured, verify-length-medium, verify-style-hat vs runs/s2b-baseline-men-gi and runs/verify-baseline-men-gi",
+   "confidence": "high"
+  },
+  {
+   "id": "R22",
+   "flow": "men-gi",
+   "when": "the visitor answers any anonymous quiz question",
+   "then": "The answer is sent to Hims' flow server and kept with an anonymous session id, before any account. The first screen says the quiz \"is not a medical assessment\" and the answers \"will not be shared with a medical provider\"; Hims uses them \"to personalize your experience and for other uses\".",
+   "effectType": "marketing-only",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/s2b-baseline-men-gi/net (each POST carries the answer), runs/s2b-baseline-men-gi/00-goals.txt",
+   "confidence": "high"
+  },
+  {
+   "id": "R23",
+   "flow": "men-gi",
+   "when": "gi-q15 state = AA, AE or AP (US armed forces mail addresses)",
+   "then": "Hard stop on the state screen: \"Currently, we don't offer this product in your state\"; the server answers isValid false and Continue stays disabled.",
+   "effectType": "hard-stop",
+   "affects": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p9"
+   ],
+   "evidence": "observed",
+   "proof": "runs/exp-gi-15-state-aa, runs/exp-gi-18-state-ap, runs/verify-state-aa, runs/verify-state-ae vs runs/s2b-baseline-men-gi",
+   "confidence": "high"
+  },
+  {
+   "id": "R24",
+   "flow": "men-gi",
+   "when": "the visitor lives in Puerto Rico or another US territory",
+   "then": "They cannot go on: the state list has the 50 states, District of Columbia and AA/AE/AP only. Matches the help centre (not available in Puerto Rico).",
+   "effectType": "hard-stop",
+   "affects": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p9"
+   ],
+   "evidence": "observed",
+   "proof": "runs/s2b-baseline-men-gi/14-select-state.txt (list of options)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R25",
+   "flow": "men-gi",
+   "when": "gi-q15 state = Massachusetts or Washington (states with special compounded-product flags in the page code)",
+   "then": "Nothing changes at this screen: valid, no message. Any restriction on compounded products (R20) would come later, after the wall.",
+   "effectType": "none",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/exp-gi-16-state-massachusetts, runs/exp-gi-17-state-washington ; stage 3 re-test: runs/verify-state-ma",
+   "confidence": "high"
+  },
+  {
+   "id": "R26",
+   "flow": "men-gi",
+   "when": "the visitor reaches the state screen",
+   "then": "Continue stays disabled until the tick-box agreeing to the Terms and Conditions and Telehealth Consent is ticked. This is the first gate of the consultation and the edge of what can be tested without agreeing to anything.",
+   "effectType": "hard-stop",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/s2b-baseline-men-gi and runs/verify-baseline-men-gi (result.json: continueDisabledWithoutTick true, measured after Texas was chosen; screenshot 14-select-state-after-select.jpg)",
+   "confidence": "high"
+  },
+  {
+   "id": "R27",
+   "flow": "men-gi",
+   "when": "date of birth gives an age under 18 (or over 120)",
+   "then": "Probably refused: the flow settings served to the browser say minAge 18, \"Must be at least 18 years of age.\" The date-of-birth screen itself is after the wall and was not seen, so the refusal was not watched happening. Backs up R1.",
+   "effectType": "hard-stop",
+   "affects": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "p6",
+    "p7",
+    "p9"
+   ],
+   "evidence": "code",
+   "proof": "runs/s2b-baseline-men-gi/net/01-GET-initialize.json and runs/verify-baseline-men-gi/net/01-GET-initialize.json (context.metadata.validation.dateOfBirth)",
+   "confidence": "medium"
+  },
+  {
+   "id": "R28",
+   "flow": "men-gi",
+   "when": "the visitor finishes the anonymous intake (any answers)",
+   "then": "No product, strength, plan or price is shown before the wall. The product choice happens later, in the old /c/hl app (the server metadata says legacyPath \"/c/hl\"; the Sign In link goes to /c/hl?skipToSignIn=true&goFlow=true&flowId=hl), which is blocked here.",
+   "effectType": "none",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/exp-gi-01 to exp-gi-06, exp-gi-08 to exp-gi-14 and runs/s2-gi-explore-2 vs runs/s2b-baseline-men-gi; runs/s2b-baseline-men-gi/net/01-GET-initialize.json",
+   "confidence": "high"
   }
  ],
  "experiments": [
@@ -1516,9 +2104,261 @@
    "changed": "Entry page: /lp/hair-start-top-fin-fa → /hair-start-top-fin-lp (page document read, no clicks)",
    "result": "Redirects to /lp/hair-start-top-fin-fa with tracking tags. Same three pre-quiz questions in the page data (q1_what-are-your-hair-goals, q2_are-you-looking-for-a, q3_are-you-interested-in-prescription-strength).",
    "run": "raw/pages/www_hims_com_hair_start_top_fin_lp.txt"
+  },
+  {
+   "id": "s2b-baseline-men-gi",
+   "flow": "men-gi",
+   "changed": "Nothing (baseline replay of /g/i/hl, 22:55 UTC)",
+   "result": "Works. 14 screens, then the state screen; Texas valid; Continue disabled until the consent box is ticked (not ticked). No product, price, plan or stop.",
+   "run": "runs/s2b-baseline-men-gi"
+  },
+  {
+   "id": "exp-gi-01-goals-get-ahead",
+   "flow": "men-gi",
+   "changed": "gi-q1: Regrow a full head of hair → Get ahead of hair loss",
+   "result": "No change against baseline. Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price.",
+   "run": "runs/exp-gi-01-goals-get-ahead"
+  },
+  {
+   "id": "exp-gi-02-goals-receding",
+   "flow": "men-gi",
+   "changed": "gi-q1: Regrow → Fix my receding hairline",
+   "result": "No change. Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price.",
+   "run": "runs/exp-gi-02-goals-receding"
+  },
+  {
+   "id": "exp-gi-03-changes-all-over",
+   "flow": "men-gi",
+   "changed": "gi-q2: Along the hairline → All over",
+   "result": "No change. Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. (run by the earlier stage 2 investigator)",
+   "run": "runs/exp-gi-03-changes-all-over"
+  },
+  {
+   "id": "exp-gi-04-changes-top",
+   "flow": "men-gi",
+   "changed": "gi-q2: Along the hairline → At the top",
+   "result": "No change. Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price.",
+   "run": "runs/exp-gi-04-changes-top"
+  },
+  {
+   "id": "exp-gi-05-loss-a-lot",
+   "flow": "men-gi",
+   "changed": "gi-q3: Some → A lot",
+   "result": "No change. Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price.",
+   "run": "runs/exp-gi-05-loss-a-lot"
+  },
+  {
+   "id": "exp-gi-06-start-past-few-months",
+   "flow": "men-gi",
+   "changed": "gi-q4: Over a year ago → In the past few months",
+   "result": "No change. Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. (earlier stage 2 run)",
+   "run": "runs/exp-gi-06-start-past-few-months"
+  },
+  {
+   "id": "exp-gi-07-expect-keep",
+   "flow": "men-gi",
+   "changed": "gi-q5: Visibly thicker → Keep the hair I have",
+   "result": "FAILED twice: the site showed \"Something went wrong! ... Please try again\" on the first screen (server-side error, probably load). Not tested.",
+   "run": "runs/exp-gi-07-expect-keep"
+  },
+  {
+   "id": "exp-gi-08-type-no-hair",
+   "flow": "men-gi",
+   "changed": "gi-q6: Straight or wavy → I don’t have hair",
+   "result": "No change. Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. The man is still asked about hair length and styling. (An earlier try failed on a click; this is the re-run.)",
+   "run": "runs/exp-gi-08-type-no-hair"
+  },
+  {
+   "id": "exp-gi-09-length-buzzed",
+   "flow": "men-gi",
+   "changed": "gi-q7: Short → Buzzed, shaved, or bald",
+   "result": "No change. Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price.",
+   "run": "runs/exp-gi-09-length-buzzed"
+  },
+  {
+   "id": "exp-gi-10-heredity-no",
+   "flow": "men-gi",
+   "changed": "gi-q9: Yes → No",
+   "result": "No change. Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. The following info screen still names \"family history\" as a cause.",
+   "run": "runs/exp-gi-10-heredity-no"
+  },
+  {
+   "id": "exp-gi-11-stress-all-the-time",
+   "flow": "men-gi",
+   "changed": "gi-q10: Sometimes → All the time",
+   "result": "No change. Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price.",
+   "run": "runs/exp-gi-11-stress-all-the-time"
+  },
+  {
+   "id": "exp-gi-12-style-protective",
+   "flow": "men-gi",
+   "changed": "gi-q13: No styling → Protective styles (braids, locs)",
+   "result": "No change. Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. (first try hit a site error; this is the retry)",
+   "run": "runs/exp-gi-12-style-protective"
+  },
+  {
+   "id": "exp-gi-13-duration-10plus",
+   "flow": "men-gi",
+   "changed": "gi-q14: Less than 5 minutes → 10+ minutes",
+   "result": "No change. Same 14 screens in the same order (server step ids identical), same wording on every screen, same end: the state screen with the consent tick-box. No warning, no stop, no product, no price. (first try hit a site error; this is the retry)",
+   "run": "runs/exp-gi-13-duration-10plus"
+  },
+  {
+   "id": "exp-gi-14-all-different",
+   "flow": "men-gi",
+   "changed": "NOT one change: every quiz answer different from baseline at once (receding, top, a little, not sure, all of the above, curly, long, not sure, rarely, products, 5-10 min, California)",
+   "result": "No change in screens, wording or end. California valid. A sweep for hidden branches; it found none.",
+   "run": "runs/exp-gi-14-all-different"
+  },
+  {
+   "id": "s2-gi-explore-2",
+   "flow": "men-gi",
+   "changed": "NOT one change: loss A lot, start Not sure, expectations Hairline, length Buzzed, heredity No, stress Not sure (earlier stage 2 exploration)",
+   "result": "Same 14 screens. No state was chosen; the earlier tool version clicked the consent tick-box but could not continue without a state, so nothing beyond the state screen was reached.",
+   "run": "runs/s2-gi-explore-2"
+  },
+  {
+   "id": "exp-gi-15-state-aa",
+   "flow": "men-gi",
+   "changed": "gi-q15: Texas → AA (armed forces, Americas)",
+   "result": "HARD STOP: server isValid false; \"Currently, we don't offer this product in your state\"; Continue stays disabled.",
+   "run": "runs/exp-gi-15-state-aa"
+  },
+  {
+   "id": "exp-gi-16-state-massachusetts",
+   "flow": "men-gi",
+   "changed": "gi-q15: Texas → Massachusetts",
+   "result": "No change: valid, no message.",
+   "run": "runs/exp-gi-16-state-massachusetts"
+  },
+  {
+   "id": "exp-gi-17-state-washington",
+   "flow": "men-gi",
+   "changed": "gi-q15: Texas → Washington",
+   "result": "No change: valid, no message.",
+   "run": "runs/exp-gi-17-state-washington"
+  },
+  {
+   "id": "exp-gi-18-state-ap",
+   "flow": "men-gi",
+   "changed": "gi-q15: Texas → AP (armed forces, Pacific)",
+   "result": "HARD STOP, same as AA.",
+   "run": "runs/exp-gi-18-state-ap"
+  },
+  {
+   "id": "verify-baseline-men-gi",
+   "flow": "men-gi",
+   "changed": "Nothing (stage 3 fresh baseline replay)",
+   "result": "Matches runs/s2b-baseline-men-gi exactly (scripts/cmp.js: no difference): 15 screens, Texas valid, Continue disabled with the consent box unticked.",
+   "run": "runs/verify-baseline-men-gi"
+  },
+  {
+   "id": "verify-baseline-lp-prequiz",
+   "flow": "lp-prequiz",
+   "changed": "Nothing (stage 3 fresh baseline replay: Both, Yes, Yes)",
+   "result": "Same steps, scroll positions and call-to-action links as runs/s2-baseline-lp-prequiz.",
+   "run": "runs/verify-baseline-lp-prequiz"
+  },
+  {
+   "id": "verify-baseline-men",
+   "flow": "men",
+   "changed": "Nothing (stage 3 re-test of /c/hl/goals)",
+   "result": "Still a blank page: the old app is still blocked.",
+   "run": "runs/verify-baseline-men"
+  },
+  {
+   "id": "verify-baseline-women",
+   "flow": "women",
+   "changed": "Nothing (stage 3 re-test of forhers.com/hair-loss)",
+   "result": "Still Cloudflare \"Performing security verification\".",
+   "run": "runs/verify-baseline-women"
+  },
+  {
+   "id": "verify-state-aa",
+   "flow": "men-gi",
+   "changed": "gi-q15: Texas → AA (re-test of R23)",
+   "result": "Hard stop confirmed: isValid false, \"Currently, we don't offer this product in your state\".",
+   "run": "runs/verify-state-aa"
+  },
+  {
+   "id": "verify-state-ae",
+   "flow": "men-gi",
+   "changed": "gi-q15: Texas → AE (first test)",
+   "result": "Hard stop, same as AA and AP: isValid false and the same message.",
+   "run": "runs/verify-state-ae"
+  },
+  {
+   "id": "verify-state-ma",
+   "flow": "men-gi",
+   "changed": "gi-q15: Texas → Massachusetts (re-test of R25)",
+   "result": "Valid, no message, no other change. R25 confirmed.",
+   "run": "runs/verify-state-ma"
+  },
+  {
+   "id": "verify-start-past-year",
+   "flow": "men-gi",
+   "changed": "gi-q4: Over a year ago → In the past year",
+   "result": "No change.",
+   "run": "runs/verify-start-past-year"
+  },
+  {
+   "id": "verify-expect-scalp",
+   "flow": "men-gi",
+   "changed": "gi-q5: Visibly thicker → More scalp coverage",
+   "result": "No change.",
+   "run": "runs/verify-expect-scalp"
+  },
+  {
+   "id": "verify-expect-keep",
+   "flow": "men-gi",
+   "changed": "gi-q5: Visibly thicker → Keep the hair I have",
+   "result": "No change (this run did not hit the error screen that stopped stage 2).",
+   "run": "runs/verify-expect-keep"
+  },
+  {
+   "id": "verify-type-textured",
+   "flow": "men-gi",
+   "changed": "gi-q6: Straight or wavy → Textured or processed",
+   "result": "No change.",
+   "run": "runs/verify-type-textured"
+  },
+  {
+   "id": "verify-length-medium",
+   "flow": "men-gi",
+   "changed": "gi-q7: Short → Medium",
+   "result": "No change.",
+   "run": "runs/verify-length-medium"
+  },
+  {
+   "id": "verify-style-hat",
+   "flow": "men-gi",
+   "changed": "gi-q13: No styling → I usually wear a hat",
+   "result": "No change.",
+   "run": "runs/verify-style-hat"
   }
  ],
  "recommendations": [
+  {
+   "profile": "Newer intake (/g/i/hl): baseline man (regrow, hairline, some loss, over a year, family history yes, sometimes stressed, short straight hair, no styling, Texas)",
+   "offered": [],
+   "default": "",
+   "note": "No product is shown before the wall. The last anonymous screen is the state screen with the Terms and Telehealth Consent tick-box. The only product talk is generic: \"Prescription treatments can help you ... grow visibly thicker, fuller hair in just 3 to 6 months.\"",
+   "evidence": "observed"
+  },
+  {
+   "profile": "Newer intake: any one-change variant of the hair answers (receding or get ahead, top or all over, a lot or a little, recent onset, no family history, stressed all the time, no hair, buzzed, protective styles, 10+ minutes, and others)",
+   "offered": [],
+   "default": "",
+   "note": "Identical to the baseline man: same screens, same end, no product (rule R21).",
+   "evidence": "observed"
+  },
+  {
+   "profile": "Newer intake: man whose state is AA or AP (US armed forces mail)",
+   "offered": [],
+   "default": "",
+   "note": "Stopped: \"Currently, we don't offer this product in your state\" (rule R23). Puerto Rico and other territories are not in the list at all (R24).",
+   "evidence": "observed"
+  },
   {
    "profile": "Any visitor who finishes the landing-page pre-quiz (baseline: goals Both, simple solution Yes, prescription Yes; and each one-change variant)",
    "offered": [
@@ -1552,7 +2392,7 @@
     "p9"
    ],
    "default": "p3",
-   "note": "Not observed. Docs: a provider \"recommends the right treatment for you\" from the prescription range (pill, two chews, two sprays, serum, finasteride tablets, kit). Code: the site pre-selects one recommended product and dose that he may change. The default shown here (the spray) is inferred from a flag name only (himsHairTopFinRecco on for all visitors) and is low confidence. Strength: the spray exists in one published strength (finasteride 0.3% + minoxidil 6%). Plan and price: not seen; published anchors are $29 a month on a 10-month plan paid upfront, $35 on 5 months, $50 on 3 months.",
+   "note": "Not observed. Docs: a provider \"recommends the right treatment for you\" from the prescription range (pill, two chews, two sprays, serum, finasteride tablets, kit). Code: the site pre-selects one recommended product and dose that he may change. The default shown here (the spray) is inferred from a flag name only (himsHairTopFinRecco on for all visitors) and is low confidence. Strength: the spray exists in one published strength (finasteride 0.3% + minoxidil 6%). Plan and price: not seen; published anchors are $29 a month on a 10-month plan paid upfront, $35 on 5 months, $50 on 3 months. Stage 2: the anonymous part of the newer intake (/g/i/hl) names no product for this man; the offer is made after the Terms and Telehealth Consent tick-box, which was not passed. Stage 2: the anonymous part of the newer intake (/g/i/hl) names no product for this man; the offer is made after the Terms and Telehealth Consent tick-box, which was not passed.",
    "evidence": "inferred"
   },
   {
@@ -1616,7 +2456,7 @@
    "evidence": "docs"
   }
  ],
- "engineSummary": "What could be tested: only the three-question quiz on one advertising landing page. Stage 2 clicked every option, one change at a time, and logged every request. It is not an engine at all: every answer leads to the same next question and the same pitch for the prescription spray, and the only thing an answer does is send a tracking event (question, answer, device id) to Hims and to its analytics supplier. Even \"Not sure yet\" about prescription treatment ends on \"Get the spray\". What could not be tested: the real consultation at /c/hl, which stayed blocked. From Hims' own public pages and the page state it serves, the engine most likely works in three layers. First, a hair quiz (goals, where, how long, family history, stress, styling) that personalises and sells; nothing public says any of these answers changes eligibility. Second, a medical intake form built as a tree (root questions plus follow-ups triggered by answers) covering sex assigned at birth, age, state, conditions, medicines, allergies and pregnancy in the household, usually with photos. Third, a treatment step where the site pre-selects one recommended product and dose (probably the topical finasteride + minoxidil spray) and lets the customer change product, strength, quantity and plan length before paying; the monthly price falls as the plan gets longer. The software does not prescribe: a licensed provider reviews the form within about 48 hours, by message or by video where the state requires it, and can ask for more information, photos or ID. The medical rules are published only as \"who should not use\" lists on each product's safety page; how the software turns an answer into a removed product or a stop screen was not seen.",
+ "engineSummary": "Hims US runs its hair consultation on a server-driven flow engine (flow-server.hims.com): the browser sends each answer and the server returns the next screen, one at a time. The anonymous part (hims.com/g/i/hl) is 11 questions about goals, where and how much hair is lost, when it started, hoped-for results, hair type and length, family history, stress and styling, with three education screens. It has no logic that a visitor can see: in 12 one-change replays and 2 sweeps, no answer added, removed or reworded a screen, raised a warning or named a product. Hims says so itself on screen one: the quiz \"is not a medical assessment\" and is not shared with a provider; the answers are kept with an anonymous session for personalisation. The first real gate is the state screen: armed-forces mail addresses (AA, AP) are refused, territories are not listed, and nobody can go on without agreeing to the Terms and the Telehealth Consent. After that (not seen, and the old /c/hl app that carries it is blocked here) Hims' public pages describe an account, date of birth (the served settings enforce 18 or over), a medical form built as a tree of follow-up questions, photos in most cases, and a pre-selected recommended product and dose that the customer may change, with plan length setting the price. The medical exclusions are published only as \"who should not use\" lists, and a licensed provider, not the software, makes the prescribing decision within about 48 hours.",
  "strengths": [
   "Very wide format range for the same two actives (pill, two chews, two sprays, serum, plain finasteride tablets, kits, foam, solution), so there is nearly always a format to offer.",
   "Low headline price (\"less than $1 a day\", from $29 a month) tied to a 10-month plan paid upfront, which also locks the customer in.",
@@ -1624,7 +2464,10 @@
   "Free consultation, free shipping on prescriptions and unlimited provider messaging; providers in all 50 states with video visits where the law requires them.",
   "Over-the-counter products can be bought with no consultation, and prescriptions can be sent to a local pharmacy on request.",
   "Published safety information for each prescription product, with clear exclusion lists, and \"Why We Ask\" notes on intake questions.",
-  "Heavy measurement: about 1,000 named experiments in the page, around 200 of them for hair, and every landing-page click is logged."
+  "Heavy measurement: about 1,000 named experiments in the page, around 200 of them for hair, and every landing-page click is logged.",
+  "A short, friendly anonymous quiz (14 screens, about 2 minutes) with plain words, pictures and \"Choose as many as you'd like\"; it builds commitment before asking for anything.",
+  "Honest label on screen one: the quiz \"is not a medical assessment\" and is not shared with a provider.",
+  "State check is live and immediate: an unsupported address gets a clear message before any account is made."
  ],
  "weaknesses": [
   "The landing-page quiz is theatre: no answer changes the outcome, and a visitor who is \"Not sure yet\" about prescriptions is still pushed to the prescription spray. Yet the answers are logged against a device id.",
@@ -1635,7 +2478,11 @@
   "After starting, hair customers cannot request a dose or product change through the self-service tool (weight-loss and sexual-health only); they must message the provider.",
   "Provider review can take 48 hours or more, and an order can sit on an unseen \"action item\".",
   "Women are sent to a separate site; the Hair Power Pack was out of stock.",
-  "The site is hard to open from some networks: the consultation's own script files were refused by the security layer on every try."
+  "The site is hard to open from some networks: the consultation's own script files were refused by the security layer on every try.",
+  "The 11-question anonymous intake has no clinical logic: diffuse loss, onset \"in the past few months\", \"no\" family history, constant stress, braids or locs, and \"I don't have hair\" all get the same screens and the same \"prescription treatments can help\" message.",
+  "The education screen says \"family history\" and \"stress\" cause the loss even to a man who answered \"No\" family history or \"Rarely\" stressed: the copy is fixed, not personal.",
+  "Answers are stored server-side with a session id before any consent or account, while the visitor is told they are not a medical assessment.",
+  "No age, sex, pregnancy or medical question comes before the Terms and Telehealth Consent; a person who would be refused (under 18, a woman, a man with a contraindication) only finds out after signing up."
  ],
  "opportunities": [
   "Make the quiz real and show it: tell the visitor which answer led to which product and strength, and what would change it.",
@@ -1646,7 +2493,11 @@
   "Offer licensed products and strength choice (for example dutasteride, or lower and higher topical strengths) that Hims does not sell; Hims has one topical strength pair plus the 4-in-1.",
   "Give short commitments (monthly, cancel any time) against Hims' 3 to 12 month plans.",
   "Let existing customers change dose or product themselves with a quick safety check, which Hims does not allow for hair.",
-  "Take data only when needed: Hims logs marketing-quiz answers against a device id although it tells visitors the answers are not a medical assessment."
+  "Take data only when needed: Hims logs marketing-quiz answers against a device id although it tells visitors the answers are not a medical assessment.",
+  "Put the deal-breakers first: ask age, sex, current finasteride use and the main contraindications before asking for consent or an account, so nobody signs up to be refused.",
+  "Make the anonymous answers matter: route sudden, diffuse or patchy loss, recent onset and traction styles (braids, locs) to a different path or an in-person check, which Hims does not do.",
+  "Show a provisional recommendation and price before the account, with the reason (\"because you said hairline, over a year, family history\"); Hims shows neither.",
+  "Serve armed-forces (APO/FPO) and territory customers, whom Hims turns away."
  ],
  "sources": [
   {
@@ -1784,18 +2635,59 @@
   {
    "title": "Internet Archive availability check for the consultation page (copies exist; not openable from this machine)",
    "url": "https://archive.org/wayback/available?url=hims.com/c/hl"
+  },
+  {
+   "title": "Hims hair-loss intake, newer flow (anonymous part walked 23 Nov 2026)",
+   "url": "https://www.hims.com/g/i/hl"
   }
  ],
  "limitations": [
-  "The men's consultation was not seen at all, in stage 1 or stage 2 (three attempts in stage 2 terms: one replay and one logged re-test, both blocked). No real question wording, option, branch, stop screen, recommendation or plan price from it is in this file.",
-  "No one-change experiment exists for the real questionnaire. The only live experiments are on the three-question landing-page pre-quiz (5 replays, every non-baseline option). Nothing from the protocol's priority list (sex, age, pregnancy, pattern, medical conditions, medicines, preference) could be tested.",
-  "The 19 men's entries are topics from Hims' own articles and from field names, not screens. Their order, wording, options and \"stage\" (before or after the account wall) are guesses and are marked as such.",
+  "The 12 remaining entries of the old \"men\" flow (after the wall) are topics from Hims' own articles and from field names, not screens. Their order, wording, options and \"stage\" (before or after the account wall) are guesses and are marked as such.",
   "Rules R1 to R6 and R14 to R19 are from published documents. They show what the provider must rule out and how review works, not what the software does with an answer. Rules R12, R13 and R20 rest on flag or field NAMES only and are low confidence.",
   "The default recommendation (the spray) is inferred, not seen.",
   "Plan-length prices are known only from footnotes, three Hims blog posts and one press review; two Hims blog posts contradict each other on the Duo kit. Hims runs price tests.",
   "The Hers (women) site was not seen at all; the four Hers products are stubs. See the separate hers-us report.",
   "Cached copies of the consultation script exist at the Internet Archive (per its availability service) but could not be opened from this machine; they would probably give the real hair-quiz questions.",
   "Web search stopped after one query in stage 2 (shared budget used up), so third-party walkthroughs, forum posts and videos were not searched again. One review that was fetched directly (Healthline) turned out to describe the erectile-dysfunction sign-up, not hair.",
-  "The pre-quiz experiments used one landing page and a desktop browser; phone layout was not tested."
- ]
+  "The pre-quiz experiments used one landing page and a desktop browser; phone layout was not tested.",
+  "The newer intake (/g/i/hl) was tested only up to the state screen: the Terms and Telehealth Consent tick-box was not ticked, so the account step, the medical form, any medical stop screen, the recommendation, strengths and plan prices were not seen.",
+  "Not replayed (6 of 40 hair options): start \"In the past year\", expectations \"More scalp coverage\" and \"Keep the hair I have\" (two site errors), hair type \"Textured or processed\", length \"Medium\", style \"I usually wear a hat\". Marked inferred. Of the states, only Texas, California, Massachusetts, Washington, AA and AP were tried.",
+  "Some options were seen only in multi-change sweeps (runs/exp-gi-14-all-different, runs/s2-gi-explore-2); a sweep cannot rule out two effects cancelling, though no screen differed at all.",
+  "The flow server sends one screen at a time, so there is no full quiz definition to read. Its step numbers skip 1, 3, 7 and 8, which may be screens shown to other visitors (tests, other entry points); none appeared in any replay.",
+  "Desktop browser, locale en-US, timezone America/New_York, one day (23 Nov 2026). Hims runs many experiments, so another visitor may see a different version.",
+  "Stage 3: prices on the public pages changed during the day of research ($35 to $29 for the main Rx products, $39 to $33 for the 4-in-1 spray). Treat any public price here as a snapshot."
+ ],
+ "verification": {
+  "checked": [
+   "Baseline men-gi (/g/i/hl) replayed fresh: identical 15 screens and the same end (Texas valid, Continue disabled until the Terms and Telehealth Consent box is ticked). Confirmed. runs/verify-baseline-men-gi",
+   "Baseline landing-page pre-quiz replayed: same steps, scroll positions and links. Confirmed (R7). runs/verify-baseline-lp-prequiz",
+   "Old consultation /c/hl/goals: still blank (blocked). Hers forhers.com: still on the Cloudflare check. Confirmed. runs/verify-baseline-men, runs/verify-baseline-women",
+   "R23 (armed forces mail states refused): AA re-tested, stop confirmed; AE tested for the first time, same stop. runs/verify-state-aa, runs/verify-state-ae",
+   "R25 (Massachusetts valid, no message): confirmed. runs/verify-state-ma",
+   "R26 (Continue disabled until the consent box is ticked): confirmed, measured after a valid state was chosen.",
+   "R27 (minimum age 18): the setting is still served in the flow data. Confirmed as code; the refusal itself is not visible before the wall.",
+   "R21 (no hair answer changes anything): confirmed by 6 new one-change replays that cover every option stage 2 had not replayed, including \"Keep the hair I have\" which failed twice in stage 2; all 18 stage 2 run folders were also re-compared with the fresh baseline (no difference). No site error screens in 13 stage 3 replays.",
+   "R1, R2, R3, R5 (published exclusions): the quoted wording is still on the live safety pages. runs/verify-docs",
+   "Product facts on live pages (runs/verify-products): p1 pill (finasteride 1.2 mg, minoxidil 3 mg, $29), p2 chew ($29), p3 spray (0.3% finasteride, 6% minoxidil, $29), p4 4-in-1 spray (0.3%, 7%, ketoconazole 2.2%, biotin 0.2%, $33), p5 serum (0.3%, 6%, $29), p6 minoxidil chew (3 mg, $29), p7 finasteride ($22), p8 Hair Power Pack ($60), p9 kit ($32 with the 10-month footnote on /lp), p11 minoxidil 5% solution ($15), p13 shampoo ($19), p14 conditioner ($22), p15 gummies ($16), p16 Dandruff Detox (pyrithione zinc 1%, $18 / $17), p12 kit ($37 a month). Actives and strengths all matched.",
+   "Catalogue completeness: every hair URL in the site map is in the catalogue except promotional copies of existing pages (finasteride-gs-holiday, hair-power-pack-shopping variants) and the check-in page."
+  ],
+  "corrected": [
+   "Prices of p1, p2, p3, p5 changed from \"Starting at $35\" to \"Starting at $29\", and p4 from $39 to $33: the live landing and product pages and the pages' own product data now all show $29 / $33. The earlier figures were true when stage 1 looked, so they are kept in priceDetail as history.",
+   "Six men-gi options moved from \"inferred\" to \"observed\" with their own run folder (In the past year, More scalp coverage, Keep the hair I have, Textured or processed, Medium, I usually wear a hat).",
+   "State AE moved from \"inferred\" hard stop to \"observed\" hard stop; R23 now covers AA, AE and AP.",
+   "R27 confidence lowered from high to medium and reworded as \"probably refused\": the age limit is a served setting, but the date-of-birth screen was never seen.",
+   "Options seen only in multi-change sweeps keep \"observed\" but now say so in their effect text.",
+   "p8, p10 and p16: noted where the page's own product data disagrees with the visible page (stock status or price).",
+   "Added 13 stage 3 experiments and the verify run folders as proof on R21, R23, R25, R26, R27 and the docs rules."
+  ],
+  "stillUnverified": [
+   "Everything after the Terms and Telehealth Consent box: account step, date of birth, medical questions, photos, the recommendation, strengths offered, plan prices. Rules R11 to R13 and R20 rest on field and flag names only (code / inferred).",
+   "Whether the published exclusions (R1 to R5) are applied by the software or only by the provider.",
+   "The women's route (Hers): forhers.com is still blocked; products w1 to w4 are a stub from search listings and third-party reviews.",
+   "The other 47 valid states and D.C. were not each tested (Texas, California, Massachusetts and Washington were).",
+   "Plan-length prices (3, 5, 12 months) come only from Hims blog posts that contradict each other.",
+   "Process note: an early stage 2 run (runs/s2-gi-explore-2, made with an older tool version) clicked the consent tick-box several times without choosing a state; it did not get past the state screen and nothing from it is used as evidence beyond the hair answers. Later runs never tick the box."
+  ],
+  "verdict": "What is labelled observed holds up: every baseline replayed the same, every rule I re-tested live was confirmed, the six gaps in the anonymous quiz are now filled, and the product names, actives and strengths match the live pages. The main error found was prices: the public \"starting at\" price for the main prescription products dropped during the day, so the recorded $35 / $39 were out of date and have been corrected to $29 / $33. The report is trustworthy for the anonymous part of the Hims men's intake (which is marketing and data capture, with only a state-based stop) and for the public catalogue. It cannot tell you how Hims chooses a product or strength, because that happens after a consent box and an account, which this research does not cross; those parts are clearly labelled as docs, code-name hints or inference. The women's side (Hers) is essentially uncovered."
+ }
 }

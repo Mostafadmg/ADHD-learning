@@ -1,0 +1,21 @@
+STEP 10 fill "textarea, input[type=text]" = "Small red patch for 6 months. Not seen by a doctor. No treatment."
+URL: https://www.numan.com/subscribe/hair-loss/f56d088f-0292-4dd1-9afd-5ab75e41be3c/sq/clarify_red_rinds_or_rashes
+TITLE: You mentioned you have red rinds or rashes on your scalp. Have they been seen to or treated by a doctor? If so, what treatments have you received? Please give us a detailed description of your scalp condition below (including how long you’ve had it, its appearance and any other symptoms it is causing). | Numan
+
+--- VISIBLE TEXT ---
+34%
+You mentioned you have red rinds or rashes on your scalp.
+
+Have they been seen to or treated by a doctor?
+If so, what treatments have you received?
+Please give us a detailed description of your scalp condition below (including how long you’ve had it, its appearance and any other symptoms it is causing).
+​
+Back
+Next
+
+--- CONTROLS ---
+  textarea (1): clarify_red_rinds_or_rashes
+  button (2): Back  ·  Next
+
+--- LINKS ---
+  link (1): Visit the main page -> /

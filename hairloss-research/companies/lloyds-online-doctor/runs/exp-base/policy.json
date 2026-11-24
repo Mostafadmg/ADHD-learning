@@ -1,0 +1,67 @@
+{
+ "note": "exp base-full overrides {}",
+ "answers": {
+  "100013": "Male",
+  "100014": {
+   "dob": [
+    15,
+    6,
+    1994
+   ]
+  },
+  "101561": "No",
+  "101564": "More than 30",
+  "101599": {
+   "text": "None"
+  },
+  "102624": "No",
+  "102632": "No",
+  "103257": "Temples and Crown",
+  "103261": "No",
+  "103268": "I understand and would like to continue",
+  "103270": "None of the above",
+  "103275": {
+   "text": "None"
+  },
+  "103277": "I understand",
+  "105935": "No",
+  "107160": {
+   "text": "None"
+  },
+  "107800": "No",
+  "107954": "Gradually, over months or years",
+  "107973": "No",
+  "107977": "Tell me more",
+  "107986": "I understand",
+  "107988": {
+   "card": "Finasteride tablets"
+  },
+  "108001": "No",
+  "108002": "I confirm",
+  "108003": "None of the above",
+  "108004": "I understand",
+  "108014": "No",
+  "108082": {
+   "button": "Add to basket"
+  },
+  "108131": "I understand that if I am currently experiencing thoughts of self-harm or suicide I should seek medical advice immediately",
+  "108138": "I understand that results can be less predictable in these areas",
+  "108139": "I understand",
+  "108376": "I understand that significant regrowth may be less likely",
+  "108405": "I understand",
+  "108416": {
+   "text": "None"
+  },
+  "108417": {
+   "text": "None"
+  },
+  "108418": {
+   "text": "None"
+  },
+  "108419": "No"
+ },
+ "default": "auto",
+ "explain": false,
+ "maxSteps": 60,
+ "maxSeconds": 420
+}

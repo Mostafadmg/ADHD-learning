@@ -1,0 +1,10 @@
+
+===== FINAL (after 33 steps) =====
+URL: https://start.treated.com/GBR/en/#/treatment-options
+TEXT: 1. Choose treatment ⏎ 2. Checkout ⏎ 3. Complete ⏎ Here's what we've got for you. ⏎ You can edit it to something else if you prefer. ⏎ Finasteride ⏎ Finasteride ⏎  Edit ⏎ Read more ⏎ Dosage ⏎ 1mg ⏎ Quantity ⏎ 28 tablets ⏎ £34.95 ⏎ Deliver to me: ⏎ every month ⏎ £34.95 ⏎ Most first-time users select: 1mg x 28 tablets ⏎ Express shipping ⏎ Free ⏎ Your package will arrive in 1-2 days ⏎ Consultation + Access to our clinicians ⏎ Free ⏎ Ask our experts anything you like, any time you want. ⏎ Save ⏎ OR ⏎ Not sure? ⏎ We'll pick a treatment for you based on your medical profile, and you can choose whether to accept it. ⏎ Choose for me ⏎ What's included: ⏎ Ask our doctors anything. ⏎ Get unlimited access to our clinicians and ask them anything you want, any time you like. ⏎ Personalised aftercare. ⏎ We’ll check in regularly to make sure your treatment is working out for you. ⏎ Freedom to stop anytime. ⏎ Stop or change your plan any time, with the press of a button. (No phone calls required.) ⏎ Privacy and discretion. ⏎ Any confidential info you share with us is kept private and secure. ⏎ Need help?
+CONTROLS:
+  input:search (1): (no label)
+  button (3): Save  ·  Choose for me  ·  Need help?
+  links: Edit
+
+[walk] 33 step(s), exit 0, 8 JSON bodies saved -> runs/e01-clean

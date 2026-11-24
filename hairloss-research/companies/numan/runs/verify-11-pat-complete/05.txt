@@ -1,0 +1,21 @@
+STEP 05 FAILED click "label:text-is(\"My hair loss started gradually over the last few months or years\")"
+URL: https://www.numan.com/subscribe/hair-loss/1be84ac7-01a8-45eb-bd27-b76c38022343/sq/which_image_best_matches_your_hair_loss/reject/complete
+TITLE: Numan
+
+--- VISIBLE TEXT ---
+No suitable treatment
+
+Our treatments are not effective in individuals who have experienced complete hair loss.
+
+If you’d like to talk to our clinicians about this, please email clinic@numan.com and we’ll do our best to find a solution or recommend next steps.
+
+Did you make a mistake in your consultation? Providing false information can lead to serious harm to your health.
+
+Review your answers
+Back to homepage
+
+--- CONTROLS ---
+  button (1): Review your answers
+
+--- LINKS ---
+  link (3): Visit the main page -> /  ·  clinic@numan.com -> mailto:clinic@numan.com  ·  Back to homepage -> https://www.numan.com/

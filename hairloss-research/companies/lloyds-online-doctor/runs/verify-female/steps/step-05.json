@@ -1,0 +1,9 @@
+{
+ "step": {
+  "stepState": "SUMMARY",
+  "summaryHref": "/api/questionnaire/traversals/2049280/summary",
+  "summaryRequiredBeforeStep": false,
+  "registrationRequiredBeforeStep": false,
+  "fastSummaryRequiredBeforeStep": false
+ }
+}

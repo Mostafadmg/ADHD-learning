@@ -1,0 +1,176 @@
+[
+ {
+  "from": "103270",
+  "option": "Phaeochromocytoma",
+  "trail": [],
+  "noStep": true,
+  "text": "Exit consultation\nMedical history\nHave you ever had any of the following conditions?\nAlopecia\nBreast cancer\nBreast tissue enlargement\nDepression\nCurrent or history of suicidal thoughts, self-harm, or attempts\nObstructive uropathy\nProstate cancer\nLiver condition\nClose\nTumour of the adrenal glands.\nPhaeochromocytoma\nPorphyria\nProblems with my sex life\nSystemic Lupus Erythematosus (SLE)\nNone of the above\nNext\nBack",
+  "shot": "peek-01-103270"
+ },
+ {
+  "from": "103270",
+  "option": "Porphyria",
+  "trail": [],
+  "result": {
+   "sig": "101561",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "101561",
+     "type": "SINGLE_CHOICE",
+     "title": "Medical history",
+     "text": "Do you have Chronic Kidney Disease (CKD) or a reduced kidney function?",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "101561$1",
+      "101561$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-02-103270"
+ },
+ {
+  "from": "103270",
+  "option": "Problems with my sex life",
+  "trail": [],
+  "result": {
+   "sig": "101561",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "101561",
+     "type": "SINGLE_CHOICE",
+     "title": "Medical history",
+     "text": "Do you have Chronic Kidney Disease (CKD) or a reduced kidney function?",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "101561$1",
+      "101561$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-03-103270"
+ },
+ {
+  "from": "103270",
+  "option": "Systemic Lupus Erythematosus (SLE)",
+  "trail": [],
+  "result": {
+   "sig": "101561",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "101561",
+     "type": "SINGLE_CHOICE",
+     "title": "Medical history",
+     "text": "Do you have Chronic Kidney Disease (CKD) or a reduced kidney function?",
+     "required": true,
+     "explanationAvailable": false,
+     "options": [
+      "Yes",
+      "No"
+     ],
+     "optionIds": [
+      "101561$1",
+      "101561$2"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": true,
+  "shot": "peek-04-103270"
+ },
+ {
+  "from": "101561",
+  "option": "Yes",
+  "trail": [],
+  "result": {
+   "sig": "101564",
+   "title": "HL",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": [
+    {
+     "id": "101564",
+     "type": "SINGLE_CHOICE",
+     "title": "Medical history",
+     "text": "What was your most recent eGFR result within the past 12 months ? This is a blood test that tells you how well your kidneys are working.",
+     "required": true,
+     "explanationAvailable": true,
+     "options": [
+      "Less than 30",
+      "More than 30",
+      "I haven't had an eGFR test in the past year",
+      "I don't know"
+     ],
+     "optionIds": [
+      "101564$100568",
+      "101564$104739",
+      "101564$104740",
+      "101564$100203"
+     ],
+     "cards": []
+    }
+   ]
+  },
+  "onBaseline": false,
+  "shot": "peek-05-101561",
+  "text": "Exit consultation\nMedical history\n\nWhat was your most recent eGFR result within the past 12 months?\n\nThis is a blood test that tells you how well your kidneys are working.\n\nLess than 30\nMore than 30\nI haven't had an eGFR test in the past year\nI don't know\nNext\nBack"
+ },
+ {
+  "from": "101564",
+  "option": "Less than 30",
+  "trail": [
+   "101561=Yes"
+  ],
+  "result": {
+   "sig": "SUMMARY",
+   "stepState": "SUMMARY",
+   "flags": {
+    "summaryRequiredBeforeStep": false,
+    "registrationRequiredBeforeStep": false,
+    "fastSummaryRequiredBeforeStep": false
+   },
+   "questions": []
+  },
+  "onBaseline": false,
+  "shot": "peek-06-101564",
+  "text": "Exit consultation\nMedical history\n\nWhat was your most recent eGFR result within the past 12 months?\n\nThis is a blood test that tells you how well your kidneys are working.\n\nLess than 30\nMore than 30\nI haven't had an eGFR test in the past year\nI don't know\nBack",
+  "endedEarly": true
+ }
+]

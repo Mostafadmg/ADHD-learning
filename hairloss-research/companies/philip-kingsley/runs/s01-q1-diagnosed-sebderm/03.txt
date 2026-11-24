@@ -1,0 +1,24 @@
+STEP 03 click ".pk-quiz-control[data-quiz-question=\"q1\"][data-quiz-selection=\"Yes\"]"
+URL: https://hairloss.philipkingsley.co.uk/quiz/step/view/stepId/scalp_quiz_step2
+TITLE: 
+
+--- VISIBLE TEXT ---
+QUESTION #2
+WHAT WAS YOUR DIAGNOSIS?
+SELECT ONE
+SEBORRHOEIC DERMATITIS
+ROSACEA
+PITYRIASIS AMIANTACEA
+NEURODERMATITIS
+LICHEN SIMPLEX
+PSORIASIS
+CONTACT DERMATITIS
+FOLLICULITIS
+OTHER
+BACK
+
+--- CONTROLS ---
+  button (1): BACK
+
+--- LINKS ---
+  link (4): SIGN IN -> https://hairloss.philipkingsley.co.uk/customer/account/  ·  TERMS OF SALE -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-of-sale  ·  TERMS & CONDITIONS -> https://hairloss.philipkingsley.co.uk/hair-loss-terms-conditions  ·  PRIVACY POLICY -> https://hairloss.philipkingsley.co.uk/hair-loss-privacy-policy

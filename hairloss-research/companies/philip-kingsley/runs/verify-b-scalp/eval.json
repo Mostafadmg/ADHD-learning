@@ -1,0 +1,3032 @@
+{
+ "quizId": "scalp_quiz",
+ "step": "scalp_quiz_step_user",
+ "url": "/quiz/step/view/stepId/scalp_quiz_step_user",
+ "skus": [
+  "PHI1619",
+  "PHI1635"
+ ],
+ "ruleCount": 29,
+ "rulesLen": 49126,
+ "answers": {
+  "q1": "No",
+  "q3": "Mild to Moderate Dandruff",
+  "q4": "Healthy",
+  "q5": "No",
+  "q6": "None of the above",
+  "q7": "Medium, can be wavy",
+  "q8": "Medium (shoulder length)",
+  "q9": "Healthy",
+  "q10a": "No, I don't have any allergies"
+ },
+ "heading": "YOUR DETAILS",
+ "rules": [
+  {
+   "sku": "PHI1618",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Fine and flat"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Itching",
+         "Mild to Moderate Dandruff"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1619",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Fine and flat"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Itching",
+         "Mild to Moderate Dandruff"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1619",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Medium, can be wavy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Itching",
+         "Mild to Moderate Dandruff"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1621",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Medium, can be wavy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Itching",
+         "Mild to Moderate Dandruff"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1622",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Coarse, can be curly or coily"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Itching",
+         "Mild to Moderate Dandruff"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1623",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Fine and flat"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Eczema"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1619",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Medium, can be wavy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Eczema"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1621",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Medium, can be wavy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Eczema"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1626",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Coarse, can be curly or coily"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Eczema"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1627",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Fine and flat"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Redness"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1628",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Medium, can be wavy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Redness"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1629",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Coarse, can be curly or coily"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Redness"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1630",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Fine and flat"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Oily"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pimples, spots or acne",
+         "Mild to Moderate Eczema"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1635",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Fine and flat"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pimples, spots or acne",
+         "Mild to Moderate Eczema"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1635",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Medium, can be wavy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Oily"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pimples, spots or acne",
+         "Mild to Moderate Dandruff"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1633",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Coarse, can be curly or coily"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Oily"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pimples, spots or acne",
+         "Mild to Moderate Dandruff"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1630",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Fine and flat"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Oily"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Itching",
+         "Mild to Moderate Dandruff"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1635",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Medium, can be wavy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Oily"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Itching",
+         "Mild to Moderate Dandruff",
+         "Mild to Moderate Eczema",
+         "Pimples, spots or acne"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1636",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Medium, can be wavy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Oily"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Itching",
+         "Mild to Moderate Dandruff",
+         "Mild to Moderate Eczema"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1637",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Coarse, can be curly or coily"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Oily"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Itching",
+         "Mild to Moderate Eczema",
+         "Mild to Moderate Redness"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1635",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Medium, can be wavy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Oily"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Redness"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1636",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Medium, can be wavy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Oily"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Redness"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1630",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Fine and flat"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Oily"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Redness"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1641",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Fine and flat",
+         "Medium, can be wavy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Sensitive to fragrance"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Itching",
+         "Mild to Moderate Dandruff",
+         "Mild to Moderate Eczema"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1642",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Coarse, can be curly or coily"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Sensitive to fragrance"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Itching",
+         "Mild to Moderate Dandruff",
+         "Mild to Moderate Eczema"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1643",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Fine and flat",
+         "Medium, can be wavy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Sensitive to fragrance"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Redness"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1644",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Coarse, can be curly or coily"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Sensitive to fragrance"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Mild to Moderate Redness"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1645",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Fine and flat",
+         "Medium, can be wavy"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Sensitive to fragrance"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pimples, spots or acne"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  },
+  {
+   "sku": "PHI1646",
+   "group": "Recommended",
+   "conditions": {
+    "conditions": [
+     {
+      "conditions": [
+       {
+        "code": "",
+        "question": "How would you describe your natural hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Coarse, can be curly or coily"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe your scalp before these symptoms started?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Sensitive to fragrance"
+        ]
+       },
+       {
+        "code": "",
+        "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Pimples, spots or acne"
+        ]
+       },
+       {
+        "code": "",
+        "question": "How would you describe the condition of your hair?",
+        "type": "GenericCondition",
+        "operator": "or",
+        "values": [
+         "Healthy",
+         "Dry or Damaged"
+        ]
+       }
+      ],
+      "type": "CompositeCondition",
+      "operator": "and"
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   },
+   "blockers": {
+    "conditions": [
+     {
+      "code": "",
+      "question": "Are you currently experiencing any of the following conditions or symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Severe Itching",
+       "Severe Dandruff",
+       "Severe Eczema",
+       "Severe Redness",
+       "Psoriasis"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Are you having, have you recently had or are you about to have chemotherapy or radiotherapy treatment?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you ever suffer from any of the following symptoms on your scalp?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Pain",
+       "Burning",
+       "Crusting",
+       "Bleeding",
+       "Patchy hair loss"
+      ]
+     },
+     {
+      "code": "",
+      "question": "Do you have any allergies?",
+      "type": "GenericCondition",
+      "operator": "or",
+      "values": [
+       "Yes, I'm allergic to Minoxidil"
+      ]
+     }
+    ],
+    "type": "CompositeCondition",
+    "operator": "or"
+   }
+  }
+ ],
+ "noResultsTpl": 25495
+}

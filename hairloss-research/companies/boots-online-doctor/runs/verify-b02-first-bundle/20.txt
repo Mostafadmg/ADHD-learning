@@ -1,0 +1,32 @@
+STEP 20 wait 4000
+URL: https://onlinedoctor-clinic.boots.com/product/817/HAI-F
+TITLE: Consultation | Boots Online Doctor
+
+--- VISIBLE TEXT ---
+Call us: Mon-Fri 8:30AM-6PM, Sat-Sun 9:30AM-4:30PM
+ 0203 3183773
+Boots Advantage Card Shop Boots.com
+Services
+Meet the team
+FAQ
+LOG IN
+ Go back
+£50.36
+Finasteride 1mg (28 tablets) | Regaine foam extra strength (73ml)
+
+Finasteride 1mg is a treatment for male hair loss. It comes in a pack of 28 or 84 tablets. Regaine (Minoxidil) is a topical foam that is applied twice daily to the affected areas of your scalp. We can prescribe enough of both Finasteride and Regaine for 4, 12, 24 or 48 weeks of treatment.
+
+CONTINUE
+Is it suitable for me?
+How to take it
+How it works
+What else should I know?
+Ultimately it will be a joint decision between you and one of our clinicians on whether a particular medicine is appropriate.
+Powered by:
+©2026 Boots Digital Health Limited
+
+--- CONTROLS ---
+  button (7): Cookie Preferences  ·  LOG IN  ·  CONTINUE  ·  Is it suitable for me?  ·  How to take it  ·  How it works  ·  What else should I know?
+
+--- LINKS ---
+  link (7): 0203 3183773 -> tel:0203 3183773  ·  Boots Advantage Card -> https://www.boots.com/advantage-card  ·  Shop Boots.com -> https://boots.com  ·  Services ->   ·  Meet the team -> https://onlinedoctor.boots.com/meet-the-team  ·  FAQ ->   ·  Go back -> /products/HAI-F

@@ -1,0 +1,31 @@
+STEP 25 rhf
+URL: https://www.hairandme.com/c/suh/rhf
+
+--- VISIBLE TEXT ---
+How have you felt about your hair in the last week?
+
+Choose the number from 0-10 that best reflects your answer.
+
+0
+1
+2
+3
+4
+5
+5
+6
+7
+8
+9
+10
+THE WORST I'VE EVER FELT
+THE BEST I'VE EVER FELT
+NEXT QUESTION
+Back to previous page
+
+--- CONTROLS ---
+a -> / | Navigate home
+a -> https://www.hairandme.com/support | Support Centre
+input:range[name=254] | 254
+button:submit | NEXT QUESTION
+a -> /c/suh/rhf?action=previous | Back to previous page

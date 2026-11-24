@@ -29,7 +29,6 @@ def variant(flow, changes=(), after=None, extra_end=None):
         i=qi(st,q)
         j=i
         while j+1<len(st) and 'data-quiz-question="%s"'%q in st[j+1].get('selector',''): j+=1
-        if j+1<len(st) and st[j+1]==NEXT: j+=1
         st[j+1:j+1]=ins
     st.append({"do":"wait","ms":800})
     st.append({"do":"eval","js":EVAL})

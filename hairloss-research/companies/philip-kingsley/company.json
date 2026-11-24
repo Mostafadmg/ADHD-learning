@@ -9,19 +9,19 @@
   "women"
  ],
  "model": "Heritage trichology clinic and haircare brand selling compounded (unlicensed) minoxidil/finasteride subscriptions through an online quiz, with paid trichologist consultations as the fallback route.",
- "checkedOn": "2026-11-23",
+ "checkedOn": "2026-11-24",
  "access": {
   "howTested": [
    "live-walk",
    "site-code",
    "public-docs"
   ],
-  "accountWall": "Straight after the last question of every quiz (step *_step_user, \"Almost done! Your details\": first name, last name, date of birth, email, password, GP and consent ticks). It comes BEFORE any result: the plan choice and the consultation screen are only shown after /quiz/step/register.",
+  "accountWall": "Straight after the last question of every quiz (step *_step_user, \"Almost done! Your details\": first name, last name, date of birth, email, password, a GP-information tick, a consent tick with four statements, and an optional newsletter tick). It comes BEFORE any result: the plan choice and the consultation screen are only shown after /quiz/step/register.",
   "blockers": [
    "Account wall before results: the recommendation screen and the consultation screen could not be seen live.",
    "Some SKUs in the rules (PHI1220, PHI1221, PHI1306, PHI1307, PHI1309, PHI1749, women's add-ons, scalp products) have no public product page that could be found, so their names are unknown."
   ],
-  "coverageNote": "Both hair-loss quizzes were walked live to the account wall with the protocol baselines (runs r05, r07); every screen matched the served quiz definition. The full quiz definition (all questions, show-if conditions, product rules with conditions and blockers, and the no-results template) is served in every quiz page and was saved; product effects for every option were computed by running the site's own rule logic (ported to scratch/engine.py) one change at a time from each baseline. These are \"code\" findings: the results page itself is after the wall. The scalp quiz was walked live to the wall with a synthetic baseline (r08). One wall check (exp-01) confirmed that a man whose answers block every product meets the same wall with no warning."
+  "coverageNote": "Stage 1 walked all three quizzes to the account wall and saved the full served quiz definition. Stage 2 replayed the three baselines and 44 variants (42 one-change, 2 deliberate two-change contrasts) (47 replays, runs/b-* , m*, w*, s01), each to the wall. At the wall the site's own client function window.quiz.checkProductAvailability() was run read-only in the live page (scratch/walk-eval.js), which returns the SKUs the results page would list; it matched the Python port of the rules in all 47 runs, so the served rules have not changed. Follow-up questions (show-ifs) were seen live; no answer produced a warning screen, stop screen or different wall before registration. Results screens themselves were not seen (account wall). Stage 3 (independent verify, 24 Nov 2026): 3 fresh baselines and 19 variants (runs/verify-*), 12 of them on options never replayed before, 3 deliberate two-change contrasts; all 22 matched an independent port of the rule check (scratch/verify/engine.js) and the served rules were byte-identical to the saved definitions. 12 product pages, both leaflets and the clinic price list were re-read live."
  },
  "products": [
   {
@@ -47,12 +47,12 @@
     }
    ],
    "form": "scalp drops (solution with pipette), 100 ml bottle, about 40 doses of 2.5 ml",
-   "audience": "both",
+   "audience": "men",
    "legalStatus": "POM, unlicensed special (compounded); the PK Labs leaflet says \"This medication is unlicensed and is made and dispensed under pharmacist supervision\"",
    "price": "£40 (price shown on the product page; the page says the plan rolls every 3 months)",
-   "priceDetail": "Hair-loss T&Cs: men get 50% off the first subscription (1, 3 or 6 month) when signing up on hairloss.philipkingsley.co.uk. A web snippet seen in the market sweep (unverified) showed a minoxidil 5% + shampoo plan at £28 first delivery then £56.",
+   "priceDetail": "Hairloss store (checked 24 Nov 2026): £40, subscription only, page structured data \"Subscribe & Save: 50% off the first order, 0% off thereafter, free delivery\" (£20 first order). www store the same day: £40 with Subscribe & Save £28 (30% off the first order, 15% off after; Black Friday banner on the site). Actives from the PK Labs leaflet: minoxidil 5%, ethanol, water, propylene glycol, caffeine, zinc, melatonin.",
    "url": "https://hairloss.philipkingsley.co.uk/minoxidil-5-scalp-drops.html",
-   "recommendedWhen": "Men: offered as an \"Other\" (second-line) choice when the hair-loss picture is Early signs + noticeable thinning, Temples, or Temples and Crown, with no scalp condition and no blocker (code). Women: not referenced under this SKU by the women's rules.",
+   "recommendedWhen": "Men: offered as an \"Other\" (second-line) choice when the hair-loss picture is Early signs + noticeable thinning, Temples, or Temples and Crown, with no scalp condition and no blocker (code). Women: not referenced under this SKU by the women's rules. The store page says it is \"used to treat male pattern hair loss\" (the 3% page says male and female); the leaflet covers men and women aged 18+. No women's rule offers PHI1301.",
    "evidence": "code"
   },
   {
@@ -81,7 +81,7 @@
    "audience": "both",
    "legalStatus": "POM, unlicensed special (compounded); the PK Labs leaflet says \"This medication is unlicensed and is made and dispensed under pharmacist supervision\"",
    "price": "£36",
-   "priceDetail": "Product page price; plan length options not shown anonymously.",
+   "priceDetail": "Hairloss store page (checked 24 Nov 2026): £36, subscription only, Subscribe & Save 50% off the first order (£18), 0% after. Page says \"used to treat male and female pattern hair loss\". Leaflet: minoxidil 3%, ethanol, water, caffeine, zinc, melatonin; 100 ml, about 40 doses of 2.5 ml.",
    "url": "https://hairloss.philipkingsley.co.uk/minoxidil-3-scalp-drops.html",
    "recommendedWhen": "Not referenced by SKU in any quiz rule. The women's main SKU PHI1749 may be this or a women's minoxidil plan (unmapped).",
    "evidence": "docs"
@@ -116,7 +116,7 @@
    "audience": "men",
    "legalStatus": "POM, unlicensed special (compounded); the PK Labs leaflet says \"This medication is unlicensed and is made and dispensed under pharmacist supervision\"",
    "price": "£58",
-   "priceDetail": "Product page price. The leaflet says the drops suit people born male aged 18+ and people born female once post-menopausal, but no women's rule offers it. PK Lab page (search snippet, not re-checked) advertised 50% off the first order of this plan.",
+   "priceDetail": "Hairloss store (checked 24 Nov 2026): £58; Subscribe & Save 50% off the first order (£29), 0% after. Product page price. The leaflet says the drops suit people born male aged 18+ and people born female once post-menopausal, but no women's rule offers it. PK Lab page (search snippet, not re-checked) advertised 50% off the first order of this plan.",
    "url": "https://hairloss.philipkingsley.co.uk/the-topical-combination-plan.html",
    "recommendedWhen": "Men: \"Recommended\" group for Early signs + noticeable thinning, Temples, or Temples and Crown with no scalp condition and no finasteride/minoxidil blocker (code).",
    "evidence": "code"
@@ -143,7 +143,7 @@
    "audience": "men",
    "legalStatus": "POM, unlicensed special (compounded); the PK Labs leaflet says \"This medication is unlicensed and is made and dispensed under pharmacist supervision\"",
    "price": "£40 on the hairloss store page; £42 on the www product page",
-   "priceDetail": "Two different prices on the same day (23 Nov 2026).",
+   "priceDetail": "Re-checked 24 Nov 2026: £40 on the hairloss store (Subscribe & Save 50% off the first order, £20), £42 on the www store (www Subscribe & Save £29.40). Leaflet: finasteride 1 mg capsule once daily with biotin 500 micrograms and vitamin D 1000 IU; \"unlicensed and is made and dispensed under pharmacist supervision\".",
    "url": "https://hairloss.philipkingsley.co.uk/density-oral-finasteride.html",
    "recommendedWhen": "Men: \"Other\" (second-line) choice in the same hair-loss pictures as the combination plans; removed by finasteride allergy, PSA/cancer, trying for a baby or depression history (code).",
    "evidence": "code"
@@ -155,20 +155,20 @@
    "actives": [
     {
      "name": "finasteride (oral)",
-     "strength": "1 mg (inferred)"
+     "strength": "1 mg (page text: \"Finasteride 1mg Tablet, take 1 tablet per day\")"
     },
     {
      "name": "minoxidil (topical)",
-     "strength": "3% (inferred from the name)"
+     "strength": "3% (from the product name)"
     }
    ],
-   "form": "capsules + scalp drops (inferred from \"dual-action ... inside and out\")",
+   "form": "finasteride 1 mg tablets + minoxidil 3% scalp drops (2.5 ml a day) per the product page; the finasteride leaflet calls the same product a capsule",
    "audience": "men",
    "legalStatus": "POM, unlicensed special (compounded); the PK Labs leaflet says \"This medication is unlicensed and is made and dispensed under pharmacist supervision\"",
    "price": "£76",
-   "priceDetail": "Product page price.",
+   "priceDetail": "Hairloss store (checked 24 Nov 2026): £76; Subscribe & Save 50% off the first order (£38).",
    "url": "https://hairloss.philipkingsley.co.uk/the-3-combination-plan.html",
-   "recommendedWhen": "Men: \"Recommended\" group only for some Early-signs pictures (code); not offered to the baseline man.",
+   "recommendedWhen": "Never offered as served. Its rule was meant for men choosing \"Temples and Crown with reduced density\" with a visible scalp and no scalp conditions, but it asks for the answer text \"Temples & Crown with Reduced Density\", which the quiz does not have (code). PHI1304 did not pass in any of the 47 live replays (for example runs/m05, which chose that picture).",
    "evidence": "code"
   },
   {
@@ -189,7 +189,7 @@
    "audience": "men",
    "legalStatus": "POM, unlicensed special (compounded); the PK Labs leaflet says \"This medication is unlicensed and is made and dispensed under pharmacist supervision\"",
    "price": "£80",
-   "priceDetail": "Product page price; page metadata says subscription only.",
+   "priceDetail": "Hairloss store (checked 24 Nov 2026): £80, subscription only; Subscribe & Save 50% off the first order (£40), 0% after. Page text: \"Finasteride 1mg Tablet, take one tablet per day\" + minoxidil drops 2.5 ml a day.",
    "url": "https://hairloss.philipkingsley.co.uk/the-5-combination-plan.html",
    "recommendedWhen": "Men: \"Recommended\" group for Temples / Temples and Crown / Early signs with noticeable thinning, no scalp condition and no blocker (code). Offered to the baseline man.",
    "evidence": "code"
@@ -201,18 +201,18 @@
    "actives": [
     {
      "name": "minoxidil",
-     "strength": "5% (inferred: same drops as the Topical Combination Plan)"
+     "strength": "5%"
     },
     {
      "name": "finasteride",
-     "strength": "0.1% (inferred)"
+     "strength": "0.1%"
     }
    ],
-   "form": "scalp drops + shampoo",
+   "form": "scalp drops (\"Density+ Minoxidil 5% + Finasteride 0.1% Scalp Drops\") + Healthy Scalp Shampoo",
    "audience": "men",
    "legalStatus": "Drops: POM unlicensed special (compounded); shampoo: cosmetic",
    "price": "£100",
-   "priceDetail": "Product page price.",
+   "priceDetail": "Hairloss store (checked 24 Nov 2026): £100; Subscribe & Save 50% off the first order (£50). Strengths from the page description (docs), no longer inferred.",
    "url": "https://hairloss.philipkingsley.co.uk/healthy-scalp-topical-combination-plan.html",
    "recommendedWhen": "Men with mild dandruff (code).",
    "evidence": "code"
@@ -223,19 +223,19 @@
    "category": "bundle",
    "actives": [
     {
-     "name": "minoxidil",
+     "name": "minoxidil (topical)",
      "strength": "3% (from the name)"
     },
     {
-     "name": "finasteride",
-     "strength": "not stated"
+     "name": "finasteride (oral)",
+     "strength": "1 mg tablet (page text: \"Finasteride 1mg Tablet\")"
     }
    ],
    "form": "not stated (\"triple-action\" plan for hair loss with mild to moderate scalp flaking)",
    "audience": "men",
    "legalStatus": "POM unlicensed special(s) plus a cosmetic shampoo (inferred)",
    "price": "£118",
-   "priceDetail": "Product page price.",
+   "priceDetail": "Hairloss store (checked 24 Nov 2026): £118; Subscribe & Save 50% off the first order (£59). Page: \"triple-action approach targets hair loss and mild-moderate scalp flaking\"; shampoo content inferred from the name.",
    "url": "https://hairloss.philipkingsley.co.uk/minoxidil-3-healthy-scalp-combination-plan.html",
    "recommendedWhen": "Not referenced by SKU in the men's rules.",
    "evidence": "docs"
@@ -246,19 +246,19 @@
    "category": "bundle",
    "actives": [
     {
-     "name": "minoxidil",
+     "name": "minoxidil (topical)",
      "strength": "5% (from the name)"
     },
     {
-     "name": "finasteride",
-     "strength": "not stated"
+     "name": "finasteride (oral)",
+     "strength": "1 mg tablet (page text: \"Finasteride 1mg Tablet\")"
     }
    ],
    "form": "not stated (plan with Healthy Scalp Shampoo, inferred)",
    "audience": "men",
    "legalStatus": "POM unlicensed special(s) plus a cosmetic shampoo (inferred)",
    "price": "£122",
-   "priceDetail": "Product page price.",
+   "priceDetail": "Hairloss store (checked 24 Nov 2026): £122; Subscribe & Save 50% off the first order (£61). Page: \"triple-action approach targets hair loss and mild-moderate scalp flaking\"; shampoo content inferred from the name.",
    "url": "https://hairloss.philipkingsley.co.uk/minoxidil-5-healthy-scalp-combination-plan.html",
    "recommendedWhen": "Men with mild or moderate dandruff (code).",
    "evidence": "code"
@@ -281,7 +281,7 @@
    "audience": "men",
    "legalStatus": "POM, unlicensed special (compounded); the PK Labs leaflet says \"This medication is unlicensed and is made and dispensed under pharmacist supervision\"",
    "price": "£216",
-   "priceDetail": "www product page price; no plan length shown. Not referenced by any quiz rule.",
+   "priceDetail": "www store (checked 24 Nov 2026): £216, Subscribe & Save £151.20 (30% off the first order, 15% after). Not referenced by any quiz rule.",
    "url": "https://www.philipkingsley.co.uk/the-combination-plan.html",
    "recommendedWhen": "Not referenced by the quiz rules (www store page only).",
    "evidence": "docs"
@@ -292,19 +292,19 @@
    "category": "cosmetic",
    "actives": [
     {
-     "name": "Edelweiss extract",
-     "strength": "not stated"
-    },
-    {
-     "name": "Baicapil",
-     "strength": "not stated"
-    },
-    {
      "name": "melatonin liposome",
      "strength": "not stated"
     },
     {
      "name": "Sandalore",
+     "strength": "not stated"
+    },
+    {
+     "name": "zinc",
+     "strength": "not stated"
+    },
+    {
+     "name": "botanical blend (the women's page names Edelweiss extract and Baicapil)",
      "strength": "not stated"
     }
    ],
@@ -312,7 +312,7 @@
    "audience": "women",
    "legalStatus": "cosmetic",
    "price": "£65",
-   "priceDetail": "Women's page: \"1 bottle per month\".",
+   "priceDetail": "www product page (checked 24 Nov 2026): £65, Subscribe & Save £52 (20% off the first order, 15% after). The product page lists melatonin liposome, Sandalore, a botanical blend and zinc; the women's treatment page names Edelweiss extract and Baicapil. Women's page: \"1 bottle per month\".",
    "url": "https://www.philipkingsley.co.uk/hair-shedding-drops.html",
    "recommendedWhen": "Women whose main problem is \"More shedding than usual\", with no blocker (code).",
    "evidence": "code"
@@ -352,7 +352,7 @@
    "price": "unknown",
    "priceDetail": "",
    "url": "https://hairloss.philipkingsley.co.uk/",
-   "recommendedWhen": "Every man who passes the general safety blockers and has no minoxidil allergy/itching/dandruff, whatever his pattern (code). May be a retired product the server hides.",
+   "recommendedWhen": "Every man who passes the shared safety blockers (no pain/burning/crusting/bleeding, no cancer/PSA, depression or trying for a baby, gradual loss already noticed) and has no minoxidil allergy, itching or dandruff, whatever his pattern; also kept with uncontrolled blood pressure and with finasteride allergy (code; live runs/b-men, m25, m31). It is the only thing left, with PHI1221, for Patchy, Extensive or reduced-density loss and for psoriasis, redness or other scalp conditions (runs/m01, m02, m05, m19-m21). Name not found; may be a retired product the server hides.",
    "evidence": "inferred"
   },
   {
@@ -371,7 +371,7 @@
    "price": "unknown",
    "priceDetail": "",
    "url": "https://hairloss.philipkingsley.co.uk/",
-   "recommendedWhen": "Every man who passes the general safety blockers and has no finasteride-related blocker, whatever his pattern (code). May be a retired product.",
+   "recommendedWhen": "Same safety blockers as PHI1220, plus finasteride allergy, declining finasteride, uncontrolled blood pressure, itching or dandruff (code; live runs/m25, m31). Kept with minoxidil allergy (runs/m30), so it behaves like a finasteride-type product. Name not found; may be retired.",
    "evidence": "inferred"
   },
   {
@@ -390,7 +390,7 @@
    "price": "unknown",
    "priceDetail": "Probably minoxidil + Healthy Scalp Shampoo style plans (inferred from when they appear and from a search result for a \"minoxidil-5-healthy-scalp-shampoo-plan\" page, now unavailable).",
    "url": "https://hairloss.philipkingsley.co.uk/",
-   "recommendedWhen": "Men with mild/moderate itching, mild/moderate dandruff or mild/moderate eczema (code).",
+   "recommendedWhen": "PHI1306 + PHI1309: men with mild or moderate itching or eczema (runs/m15, m18); PHI1306, PHI1307, PHI1309: men with mild dandruff, beside the two Healthy Scalp plans (runs/m17); PHI1306 alone is also added for \"Early signs\" men under 50 (runs/m03). All code, confirmed in the live page.",
    "evidence": "inferred"
   },
   {
@@ -438,7 +438,7 @@
    "actives": [],
    "form": "in-person trichologist consultation plus treatment, 120 minutes",
    "audience": "both",
-   "legalStatus": "service (trichology; not a regulated medical consultation as far as the pages say)",
+   "legalStatus": "service (trichologist consultation and treatment; regulatory status not stated on the pages)",
    "price": "from £345",
    "priceDetail": "Clinic price list. Blood tests may be advised (extra fees).",
    "url": "https://www.philipkingsley.co.uk/treatments",
@@ -454,9 +454,63 @@
    "audience": "both",
    "legalStatus": "service",
    "price": "from £200",
-   "priceDetail": "Clinic price list says from £200; the /clinics/virtual-consultation page still says \"Pricing begins at £150\". Hair-loss T&Cs mention promotional discounts for a first virtual consultation booked via the assessment.",
+   "priceDetail": "Re-checked 24 Nov 2026: clinic price list \"Virtual Initial Consultation From £200, 60 minutes\"; the /clinics/virtual-consultation page still says \"Pricing begins at £150\". The quiz's consultation screen says 45-60 minutes and shows no price.",
    "url": "https://www.philipkingsley.co.uk/clinics/virtual-consultation",
    "recommendedWhen": "Shown on the \"Choose your consultation type\" screen whenever no plan survives the rules (code).",
+   "evidence": "docs"
+  },
+  {
+   "id": "p-dps",
+   "name": "Density Preserving Scalp Drops (www store)",
+   "category": "cosmetic",
+   "actives": [
+    {
+     "name": "piroctone olamine",
+     "strength": "not stated"
+    },
+    {
+     "name": "azelaic acid",
+     "strength": "not stated"
+    },
+    {
+     "name": "pyridoxine HCl",
+     "strength": "not stated"
+    },
+    {
+     "name": "zinc PCA",
+     "strength": "not stated"
+    },
+    {
+     "name": "glycerin",
+     "strength": "not stated"
+    }
+   ],
+   "form": "scalp drops, 85 ml (image file name)",
+   "audience": "both",
+   "legalStatus": "cosmetic (inferred: sold in the general haircare store, no prescription)",
+   "price": "£55",
+   "priceDetail": "Stage 1 saved page (23 Nov 2026, extracted/www-density-preserving-scalp-drops.html.txt): £55 with a £38.50 sale price during the Black Friday banner. Not re-fetched in stage 3.",
+   "url": "https://www.philipkingsley.co.uk/density-preserving-scalp-drops.html",
+   "recommendedWhen": "Not referenced by any quiz rule (code). Found only in the www store; added in stage 3 because the catalogue missed it.",
+   "evidence": "docs"
+  },
+  {
+   "id": "p-dps-trio",
+   "name": "Density Drops Trio (3-month pack of Density Preserving Scalp Drops, www store)",
+   "category": "bundle",
+   "actives": [
+    {
+     "name": "as Density Preserving Scalp Drops",
+     "strength": "not stated"
+    }
+   ],
+   "form": "three bottles of scalp drops (image file name \"density_drops_3_months\")",
+   "audience": "both",
+   "legalStatus": "cosmetic (inferred)",
+   "price": "£165",
+   "priceDetail": "Stage 1 saved page (23 Nov 2026): £165 with a £115.50 sale price. Not re-fetched in stage 3.",
+   "url": "https://www.philipkingsley.co.uk/density-drops-trio.html",
+   "recommendedWhen": "Not referenced by any quiz rule (code). Added in stage 3.",
    "evidence": "docs"
   }
  ],
@@ -556,7 +610,7 @@
      "options": [
       {
        "label": "Early signs",
-       "effect": "Adds: Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309 (code; one change from the baseline).",
+       "effect": "Adds: Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309 (code; one change from the baseline). Live check (runs/m03-q1-early): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1221, PHI1301, PHI1302, PHI1303, PHI1305, PHI1306; no warning before the wall.",
        "effectType": "product-added",
        "affects": [
         "p-scalp-addons-men"
@@ -565,14 +619,14 @@
       },
       {
        "label": "Temples",
-       "effect": "No change to the products offered (code).",
+       "effect": "No change to the products offered (code). Live check (runs/m04-q1-temples): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1221, PHI1301, PHI1302, PHI1303, PHI1305; no warning before the wall.",
        "effectType": "none",
        "affects": [],
        "evidence": "code"
       },
       {
        "label": "Patchy",
-       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline). Live check (runs/m01-q1-patchy): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1221; no warning before the wall. Stage 3 live check (runs/verify-m-patchy): PHI1220, PHI1221.",
        "effectType": "product-removed",
        "affects": [
         "p-min5",
@@ -584,14 +638,14 @@
       },
       {
        "label": "Temples and Crown",
-       "effect": "No change to the products offered (code).",
+       "effect": "No change to the products offered (code). Live check (runs/b-men): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1221, PHI1301, PHI1302, PHI1303, PHI1305; no warning before the wall.",
        "effectType": "none",
        "affects": [],
        "evidence": "code"
       },
       {
        "label": "Temples and Crown with reduced density",
-       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline). Live check (runs/m05-q1-tc-reduced): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1221; no warning before the wall. Stage 3 live check (runs/verify-m-tcr-slight): with a visible-scalp density answer (two changes on purpose) the 5% Combination Plan passes: PHI1220, PHI1221, PHI1305.",
        "effectType": "product-removed",
        "affects": [
         "p-min5",
@@ -603,7 +657,7 @@
       },
       {
        "label": "Extensive",
-       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline). Live check (runs/m02-q1-extensive): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1221; no warning before the wall.",
        "effectType": "product-removed",
        "affects": [
         "p-min5",
@@ -630,7 +684,7 @@
      "options": [
       {
        "label": "I have less hair than before, but it is not very noticeable",
-       "effect": "No change to the products offered (code).",
+       "effect": "No change to the products offered (code). Live check (runs/m07-q2a-not-noticeable): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1221, PHI1301, PHI1302, PHI1303, PHI1305; no warning before the wall.",
        "effectType": "none",
        "affects": [],
        "evidence": "code"
@@ -651,14 +705,14 @@
       },
       {
        "label": "My scalp is very visible and my hair feels much less dense",
-       "effect": "No change to the products offered (code).",
+       "effect": "No change to the products offered (code). Live check (runs/m06-q2a-very-visible): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1221, PHI1301, PHI1302, PHI1303, PHI1305; no warning before the wall.",
        "effectType": "none",
        "affects": [],
        "evidence": "code"
       },
       {
        "label": "My hair has thinned extensively, or been lost entirely, throughout the top region",
-       "effect": "No change to the products offered (code).",
+       "effect": "No change to the products offered (code). Stage 3 live check (runs/verify-m-q2a-extensive): PHI1220, PHI1221, PHI1301, PHI1302, PHI1303, PHI1305.",
        "effectType": "none",
        "affects": [],
        "evidence": "code"
@@ -680,7 +734,7 @@
      "options": [
       {
        "label": "In the last month",
-       "effect": "No change to the products offered (code).",
+       "effect": "No change to the products offered (code). Live check (runs/m09-q3-last-month): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1221, PHI1301, PHI1302, PHI1303, PHI1305; no warning before the wall.",
        "effectType": "none",
        "affects": [],
        "evidence": "code"
@@ -694,7 +748,7 @@
       },
       {
        "label": "I haven't noticed any yet",
-       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345). Live check (runs/m08-q3-not-yet): the site's own rule check, run in the live page at the wall, gave no SKU passes, so the consultation screen follows the wall; no warning before the wall.",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -719,7 +773,7 @@
      "options": [
       {
        "label": "It started to fall out quite suddenly",
-       "effect": "Sudden loss: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effect": "Sudden loss: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345). Live check (runs/m10-q4-sudden): the site's own rule check, run in the live page at the wall, gave no SKU passes, so the consultation screen follows the wall; no warning before the wall.",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -736,7 +790,7 @@
       },
       {
        "label": "It's not started yet",
-       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345). Stage 3 live check (runs/verify-m-notstarted): NO SKU passes (consultation screen after the wall).",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -768,7 +822,7 @@
       },
       {
        "label": "No",
-       "effect": "No change to the products offered (code).",
+       "effect": "No change to the products offered (code). Live check (runs/m11-q5-no): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1221, PHI1301, PHI1302, PHI1303, PHI1305; no warning before the wall.",
        "effectType": "none",
        "affects": [],
        "evidence": "code"
@@ -818,7 +872,7 @@
       },
       {
        "label": "50 to 64",
-       "effect": "No change for the baseline (Temples and Crown). For the Early signs and Temples pictures this age band removes Oral Finasteride and the 5% Combination Plan (only minoxidil 5%, the Topical Combination Plan and the two unmapped SKUs stay) (code: extracted/men-pattern-density-age-code.txt).",
+       "effect": "No change for the baseline (Temples and Crown). For the Early signs and Temples pictures this age band removes Oral Finasteride and the 5% Combination Plan (only minoxidil 5%, the Topical Combination Plan and the two unmapped SKUs stay) (code: extracted/men-pattern-density-age-code.txt). Live check (runs/m12-q6-50-64): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1221, PHI1301, PHI1302, PHI1303, PHI1305; no warning before the wall.",
        "effectType": "product-removed",
        "affects": [
         "p-fin",
@@ -828,7 +882,7 @@
       },
       {
        "label": "Over 65",
-       "effect": "No change for the baseline (Temples and Crown). For the Early signs and Temples pictures this age band removes Oral Finasteride and the 5% Combination Plan (only minoxidil 5%, the Topical Combination Plan and the two unmapped SKUs stay) (code: extracted/men-pattern-density-age-code.txt).",
+       "effect": "No change for the baseline (Temples and Crown). For the Early signs and Temples pictures this age band removes Oral Finasteride and the 5% Combination Plan (only minoxidil 5%, the Topical Combination Plan and the two unmapped SKUs stay) (code: extracted/men-pattern-density-age-code.txt). Live check (runs/m13-q6-over65): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1221, PHI1301, PHI1302, PHI1303, PHI1305; no warning before the wall. Stage 3 live check (runs/verify-m-early-over65): with Early signs (two changes on purpose): PHI1220, PHI1221, PHI1301, PHI1302.",
        "effectType": "product-removed",
        "affects": [
         "p-fin",
@@ -853,8 +907,8 @@
      "options": [
       {
        "label": "Itching",
-       "effect": "Opens follow-up: How severe is the itching?. Outcome depends on that answer (see the follow-up). Without it: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
-       "effectType": "hard-stop",
+       "effect": "Opens a severity follow-up on the same screen. The outcome depends on that answer: Mild or Moderate swaps the hair-loss plans for the unnamed scalp SKUs PHI1306 + PHI1309; Severe leaves no SKU (consultation). (code; stage 2 and 3 live checks)",
+       "effectType": "extra-questions",
        "affects": [
         "p-consult-virtual",
         "p-consult-clinic"
@@ -863,8 +917,8 @@
       },
       {
        "label": "Eczema",
-       "effect": "Opens follow-up: How severe is the eczema?. Outcome depends on that answer (see the follow-up). Without it: Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
-       "effectType": "product-removed",
+       "effect": "Opens a severity follow-up on the same screen. The outcome depends on that answer: Mild or Moderate gives PHI1220, PHI1221, PHI1306, PHI1309; Severe leaves only PHI1220 + PHI1221. (code; stage 2 and 3 live checks)",
+       "effectType": "extra-questions",
        "affects": [
         "p-min5",
         "p-topcombo",
@@ -875,7 +929,7 @@
       },
       {
        "label": "Psoriasis",
-       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline). Live check (runs/m20-q7a-psoriasis): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1221; no warning before the wall.",
        "effectType": "product-removed",
        "affects": [
         "p-min5",
@@ -887,7 +941,7 @@
       },
       {
        "label": "Other",
-       "effect": "Opens follow-up: Please tell us about the condition. Outcome depends on that answer (see the follow-up). Without it: Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effect": "Opens follow-up: Please tell us about the condition. Outcome depends on that answer (see the follow-up). Without it: Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline). Live check (runs/m21-q7a-other): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1221; no warning before the wall.",
        "effectType": "product-removed",
        "affects": [
         "p-min5",
@@ -899,8 +953,8 @@
       },
       {
        "label": "Dandruff",
-       "effect": "Opens follow-up: How severe is your dandruff?. Outcome depends on that answer (see the follow-up). Without it: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
-       "effectType": "hard-stop",
+       "effect": "Opens a severity follow-up on the same screen. The outcome depends on that answer: Mild or Moderate swaps the hair-loss plans for Healthy Scalp plans (PHI1306-PHI1311); Severe leaves no SKU (consultation). (code; stage 2 and 3 live checks)",
+       "effectType": "extra-questions",
        "affects": [
         "p-consult-virtual",
         "p-consult-clinic"
@@ -909,7 +963,7 @@
       },
       {
        "label": "Redness",
-       "effect": "Opens follow-up: How severe is the redness?. Outcome depends on that answer (see the follow-up). Without it: Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effect": "Opens follow-up: How severe is the redness?. Outcome depends on that answer (see the follow-up). Without it: Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline). Live check (runs/m19-q7a-redness-mild): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1221; no warning before the wall.",
        "effectType": "product-removed",
        "affects": [
         "p-min5",
@@ -921,7 +975,7 @@
       },
       {
        "label": "Acne",
-       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline). Stage 3 live check (runs/verify-m-acne): PHI1220, PHI1221.",
        "effectType": "product-removed",
        "affects": [
         "p-min5",
@@ -942,7 +996,7 @@
      "purpose": "Scalp conditions must be treated first; they swap hair-loss plans for scalp plans or end the online route.",
      "engineRole": "safety-screen",
      "branches": true,
-     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "branchDetail": "Ticking Itching, Dandruff, Redness or Eczema opens a severity question on the same screen; Other opens a text box (all seen live). Products: mild/moderate itching, dandruff or eczema swap the hair-loss plans for scalp plans; severe itching or dandruff, or severe eczema, ends at the consultation screen; psoriasis, redness, acne or other leave only the unnamed SKUs PHI1220/PHI1221 (code, confirmed in the live page runs m15-m21).",
      "shownWhen": "always",
      "evidence": "observed",
      "order": 10
@@ -955,7 +1009,7 @@
      "options": [
       {
        "label": "Mild",
-       "effect": "Removes: Men's SKU PHI1220; Men's SKU PHI1221; Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan. Adds: Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309 (code; one change from the baseline).",
+       "effect": "Removes: Men's SKU PHI1220; Men's SKU PHI1221; Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan. Adds: Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309 (code; one change from the baseline). Live check (runs/m15-q7a-itching-mild): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1306, PHI1309; no warning before the wall.",
        "effectType": "product-switched",
        "affects": [
         "p-sku1220",
@@ -970,7 +1024,7 @@
       },
       {
        "label": "Moderate",
-       "effect": "Removes: Men's SKU PHI1220; Men's SKU PHI1221; Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan. Adds: Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309 (code; one change from the baseline).",
+       "effect": "Removes: Men's SKU PHI1220; Men's SKU PHI1221; Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan. Adds: Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309 (code; one change from the baseline). Stage 3 live check (runs/verify-m-itch-moderate): PHI1306, PHI1309.",
        "effectType": "product-switched",
        "affects": [
         "p-sku1220",
@@ -985,7 +1039,7 @@
       },
       {
        "label": "Severe",
-       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345). Live check (runs/m16-q7a-itching-severe): the site's own rule check, run in the live page at the wall, gave no SKU passes, so the consultation screen follows the wall; no warning before the wall.",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -998,7 +1052,7 @@
      "engineRole": "product-selector",
      "branches": true,
      "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
-     "shownWhen": "when q7a includes \"Itching\"",
+     "shownWhen": "when q7a includes \"Itching\" (seen live on the same screen as its parent question, runs/m15-q7a-itching-mild; absent in the baseline run)",
      "evidence": "observed",
      "order": 11
     },
@@ -1010,7 +1064,7 @@
      "options": [
       {
        "label": "Mild",
-       "effect": "Removes: Men's SKU PHI1220; Men's SKU PHI1221; Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan. Adds: Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309; The 5% Healthy Scalp Combination Plan; The Healthy Scalp Topical Combination Plan (code; one change from the baseline).",
+       "effect": "Removes: Men's SKU PHI1220; Men's SKU PHI1221; Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan. Adds: Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309; The 5% Healthy Scalp Combination Plan; The Healthy Scalp Topical Combination Plan (code; one change from the baseline). Live check (runs/m17-q7a-dandruff-mild): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1306, PHI1307, PHI1308, PHI1309, PHI1311; no warning before the wall.",
        "effectType": "product-switched",
        "affects": [
         "p-sku1220",
@@ -1043,7 +1097,7 @@
       },
       {
        "label": "Severe",
-       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345). Stage 3 live check (runs/verify-m-dandruff-severe): NO SKU passes (consultation screen after the wall).",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -1056,7 +1110,7 @@
      "engineRole": "product-selector",
      "branches": true,
      "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
-     "shownWhen": "when q7a includes \"Dandruff\"",
+     "shownWhen": "when q7a includes \"Dandruff\" (seen live on the same screen as its parent question, runs/m17-q7a-dandruff-mild; absent in the baseline run)",
      "evidence": "observed",
      "order": 12
     },
@@ -1068,7 +1122,7 @@
      "options": [
       {
        "label": "Mild",
-       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline). Live check (runs/m19-q7a-redness-mild): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1221; no warning before the wall.",
        "effectType": "product-removed",
        "affects": [
         "p-min5",
@@ -1107,7 +1161,7 @@
      "engineRole": "data-capture",
      "branches": true,
      "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
-     "shownWhen": "when q7a includes \"Redness\"",
+     "shownWhen": "when q7a includes \"Redness\" (seen live on the same screen as its parent question, runs/m19-q7a-redness-mild; absent in the baseline run)",
      "evidence": "observed",
      "order": 13
     },
@@ -1132,7 +1186,7 @@
       },
       {
        "label": "Moderate",
-       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan. Adds: Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309 (code; one change from the baseline).",
+       "effect": "Removes: Minoxidil 5% Scalp Drops; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan. Adds: Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309 (code; one change from the baseline). Live check (runs/m18-q7a-eczema-moderate): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1221, PHI1306, PHI1309; no warning before the wall.",
        "effectType": "product-switched",
        "affects": [
         "p-min5",
@@ -1160,7 +1214,7 @@
      "engineRole": "product-selector",
      "branches": true,
      "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
-     "shownWhen": "when q7a includes \"Eczema\"",
+     "shownWhen": "when q7a includes \"Eczema\" (seen live on the same screen as its parent question, runs/m18-q7a-eczema-moderate; absent in the baseline run)",
      "evidence": "observed",
      "order": 14
     },
@@ -1174,7 +1228,7 @@
      "engineRole": "data-capture",
      "branches": false,
      "branchDetail": "",
-     "shownWhen": "when q7a includes \"Other\"",
+     "shownWhen": "when q7a includes \"Other\" (seen live on the same screen as its parent question, runs/m21-q7a-other; absent in the baseline run)",
      "evidence": "observed",
      "order": 15
     },
@@ -1186,7 +1240,7 @@
      "options": [
       {
        "label": "Pain",
-       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345). Live check (runs/exp-01-men-q8-pain): same account wall, no warning.",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -1196,7 +1250,7 @@
       },
       {
        "label": "Burning",
-       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345). Live check (runs/m23-q8-burning): the site's own rule check, run in the live page at the wall, gave no SKU passes, so the consultation screen follows the wall; no warning before the wall.",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -1216,7 +1270,7 @@
       },
       {
        "label": "Bleeding",
-       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345). Stage 3 live check (runs/verify-m-bleeding): NO SKU passes (consultation screen after the wall).",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -1248,7 +1302,7 @@
      "options": [
       {
        "label": "I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring",
-       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345). Live check (runs/m24-q9-cancer-psa): the site's own rule check, run in the live page at the wall, gave no SKU passes, so the consultation screen follows the wall; no warning before the wall.",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -1258,7 +1312,7 @@
       },
       {
        "label": "I have uncontrolled low or high blood pressure",
-       "effect": "Removes: Men's SKU PHI1221 (code; one change from the baseline). Only PHI1221 is removed because the main safety blocker lists this answer with a leading space (\" I have uncontrolled...\") so it never matches: a man with uncontrolled blood pressure is still offered minoxidil products (code; configuration error).",
+       "effect": "Removes: Men's SKU PHI1221 (code; one change from the baseline). Only PHI1221 is removed because the main safety blocker lists this answer with a leading space (\" I have uncontrolled...\") so it never matches: a man with uncontrolled blood pressure is still offered minoxidil products (code; configuration error). Live check (runs/m25-q9-bp): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1301, PHI1302, PHI1303, PHI1305; no warning before the wall. Stage 3 live check (runs/verify-m-bp): PHI1220, PHI1301, PHI1302, PHI1303, PHI1305.",
        "effectType": "product-removed",
        "affects": [
         "p-sku1221"
@@ -1267,7 +1321,7 @@
       },
       {
        "label": "I am experiencing, or have previously experienced, depression, anxiety or panic disorders",
-       "effect": "Opens follow-up: There are occasional reports of depression and even suicidal thoughts with Finasteride (Propecia). If you are currently stable, and happy to stop this treatment and consult a doctor if this occurs, then click to accept you have understood the above.. Outcome depends on that answer (see the follow-up). Without it: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effect": "Opens follow-up: There are occasional reports of depression and even suicidal thoughts with Finasteride (Propecia). If you are currently stable, and happy to stop this treatment and consult a doctor if this occurs, then click to accept you have understood the above.. Outcome depends on that answer (see the follow-up). Without it: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345). Live check (runs/m26-q9-depression-accept): the site's own rule check, run in the live page at the wall, gave no SKU passes, so the consultation screen follows the wall; no warning before the wall.",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -1277,7 +1331,7 @@
       },
       {
        "label": "I am currently trying for a baby",
-       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345). Live check (runs/m28-q9-baby): the site's own rule check, run in the live page at the wall, gave no SKU passes, so the consultation screen follows the wall; no warning before the wall.",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -1296,7 +1350,7 @@
      "purpose": "Finasteride and minoxidil contraindications and cautions (cancer/PSA, blood pressure, mood, conception).",
      "engineRole": "safety-screen",
      "branches": true,
-     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "branchDetail": "The depression/anxiety option opens the finasteride mood warning (men-q9e) on the same screen (seen live). Cancer/PSA, depression and trying for a baby block every SKU, so the consultation screen follows the wall; the blood-pressure option removes only PHI1221 because of a typo in the main blocker (code, confirmed live m24-m28).",
      "shownWhen": "always",
      "evidence": "observed",
      "order": 17
@@ -1309,7 +1363,7 @@
      "options": [
       {
        "label": "I'm happy to be recommended Finasteride",
-       "effect": "Either answer ends the same way: the depression/anxiety answer in Q9 already trips the main safety blocker for every SKU, so no plan survives and the consultation screen is shown (code). The finasteride opt-out has no separate effect.",
+       "effect": "Either answer ends the same way: the depression/anxiety answer in Q9 already trips the main safety blocker for every SKU, so no plan survives and the consultation screen is shown (code). The finasteride opt-out has no separate effect. Live check (runs/m26-q9-depression-accept): the site's own rule check, run in the live page at the wall, gave no SKU passes, so the consultation screen follows the wall; no warning before the wall.",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -1319,7 +1373,7 @@
       },
       {
        "label": "I would not like to be recommended Finasteride",
-       "effect": "Either answer ends the same way: the depression/anxiety answer in Q9 already trips the main safety blocker for every SKU, so no plan survives and the consultation screen is shown (code). The finasteride opt-out has no separate effect.",
+       "effect": "Either answer ends the same way: the depression/anxiety answer in Q9 already trips the main safety blocker for every SKU, so no plan survives and the consultation screen is shown (code). The finasteride opt-out has no separate effect. Live check (runs/m27-q9-depression-decline): the site's own rule check, run in the live page at the wall, gave no SKU passes, so the consultation screen follows the wall; no warning before the wall.",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -1331,8 +1385,8 @@
      "purpose": "Finasteride mood warning with a choice to accept or decline finasteride.",
      "engineRole": "consent",
      "branches": true,
-     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
-     "shownWhen": "when q9 includes \"I am experiencing, or have previously experienced, depression, anxiety or panic disorders\"",
+     "branchDetail": "Shown only after the depression/anxiety option (seen live). Both answers end at the consultation screen because the Q9 answer already blocks every SKU (code, live m26 and m27); the opt-out choice has no separate effect.",
+     "shownWhen": "when q9 includes \"I am experiencing, or have previously experienced, depression, anxiety or panic disorders\" (seen live on the same screen as its parent question, runs/m26-q9-depression-accept; absent in the baseline run)",
      "evidence": "observed",
      "order": 18
     },
@@ -1344,7 +1398,7 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "Opens two free-text boxes (medicine names and doses; what they are for). No rule reads them; no change to products (code). Presumably for human review.",
+       "effect": "Opens two free-text boxes (medicine names and doses; what they are for). No rule reads them; no change to products (code). Presumably for human review. Live check (runs/m29-q10a-yes): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1221, PHI1301, PHI1302, PHI1303, PHI1305; no warning before the wall.",
        "effectType": "extra-questions",
        "affects": [],
        "evidence": "code"
@@ -1360,7 +1414,7 @@
      "purpose": "Medicines for the reviewer to check.",
      "engineRole": "data-capture",
      "branches": true,
-     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "branchDetail": "Yes opens two text boxes (medicine names and doses; what they are for), seen live. No product rule reads them (live check m29: same SKUs).",
      "shownWhen": "always",
      "evidence": "observed",
      "order": 19
@@ -1375,7 +1429,7 @@
      "engineRole": "data-capture",
      "branches": false,
      "branchDetail": "",
-     "shownWhen": "when q10a includes \"Yes\"",
+     "shownWhen": "when q10a includes \"Yes\" (seen live on the same screen as its parent question, runs/m29-q10a-yes; absent in the baseline run)",
      "evidence": "observed",
      "order": 20
     },
@@ -1389,7 +1443,7 @@
      "engineRole": "data-capture",
      "branches": false,
      "branchDetail": "",
-     "shownWhen": "when q10a includes \"Yes\"",
+     "shownWhen": "when q10a includes \"Yes\" (seen live on the same screen as its parent question, runs/m29-q10a-yes; absent in the baseline run)",
      "evidence": "observed",
      "order": 21
     },
@@ -1401,7 +1455,7 @@
      "options": [
       {
        "label": "Minoxidil",
-       "effect": "Removes: Men's SKU PHI1220; Minoxidil 5% Scalp Drops; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effect": "Removes: Men's SKU PHI1220; Minoxidil 5% Scalp Drops; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline). Live check (runs/m30-q11a-minoxidil): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1221, PHI1303; no warning before the wall.",
        "effectType": "product-removed",
        "affects": [
         "p-sku1220",
@@ -1413,7 +1467,7 @@
       },
       {
        "label": "Finasteride",
-       "effect": "Removes: Men's SKU PHI1221; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline).",
+       "effect": "Removes: Men's SKU PHI1221; Oral Finasteride; The 5% Combination Plan; The Topical Combination Plan (code; one change from the baseline). Live check (runs/m31-q11a-finasteride): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1301; no warning before the wall.",
        "effectType": "product-removed",
        "affects": [
         "p-sku1221",
@@ -1447,7 +1501,7 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "Opens follow-up: Please describe your allergy, including the symptoms and severity. Outcome depends on that answer (see the follow-up). Without it: No change to the products offered (code).",
+       "effect": "Opens follow-up: Please describe your allergy, including the symptoms and severity. Outcome depends on that answer (see the follow-up). Without it: No change to the products offered (code). Live check (runs/m32-q12a-yes): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1220, PHI1221, PHI1301, PHI1302, PHI1303, PHI1305; no warning before the wall.",
        "effectType": "extra-questions",
        "affects": [],
        "evidence": "code"
@@ -1463,7 +1517,7 @@
      "purpose": "Other allergies for the reviewer.",
      "engineRole": "data-capture",
      "branches": true,
-     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "branchDetail": "Yes opens a text box for the allergy (seen live). No product rule reads it (live check m32: same SKUs).",
      "shownWhen": "always",
      "evidence": "observed",
      "order": 23
@@ -1478,7 +1532,7 @@
      "engineRole": "data-capture",
      "branches": false,
      "branchDetail": "",
-     "shownWhen": "when q12a includes \"Yes\"",
+     "shownWhen": "when q12a includes \"Yes\" (seen live on the same screen as its parent question, runs/m32-q12a-yes; absent in the baseline run)",
      "evidence": "observed",
      "order": 24
     },
@@ -1607,7 +1661,7 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345). Live check (runs/w01-q1-pregnant): the site's own rule check, run in the live page at the wall, gave no SKU passes, so the consultation screen follows the wall; no warning before the wall.",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -1639,7 +1693,7 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345). Live check (runs/w02-q2-chemo): the site's own rule check, run in the live page at the wall, gave no SKU passes, so the consultation screen follows the wall; no warning before the wall.",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -1671,14 +1725,14 @@
      "options": [
       {
        "label": "Overall thinning",
-       "effect": "Opens follow-up: How noticable would you say your Overall Thinning is?. Outcome depends on that answer (see the follow-up). Without it: No change to the products offered (code).",
+       "effect": "Opens follow-up: How noticable would you say your Overall Thinning is?. Outcome depends on that answer (see the follow-up). Without it: No change to the products offered (code). Live check (runs/w03-q3a-overall): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1749, PHI1670; no warning before the wall.",
        "effectType": "extra-questions",
        "affects": [],
        "evidence": "code"
       },
       {
        "label": "More shedding than usual (in the shower/on my brush)",
-       "effect": "Opens follow-up: How noticable has your shedding become?. Outcome depends on that answer (see the follow-up). Without it: Removes: Women's main hair-loss product, SKU PHI1749. Adds: Hair Shedding Drops. Swaps the SKU within: Women's \"Complete Your Routine\" haircare add-ons (PHI1670 -> PHI1668) (code; one change from the baseline).",
+       "effect": "Opens follow-up: How noticable has your shedding become?. Outcome depends on that answer (see the follow-up). Without it: Removes: Women's main hair-loss product, SKU PHI1749. Adds: Hair Shedding Drops. Swaps the SKU within: Women's \"Complete Your Routine\" haircare add-ons (PHI1670 -> PHI1668) (code; one change from the baseline). Live check (runs/w04-q3a-shedding): the site's own rule check, run in the live page at the wall, gave passing SKUs PKC145, PHI1668; no warning before the wall. Stage 3 live check (runs/verify-w-shedding): PKC145, PHI1668.",
        "effectType": "product-switched",
        "affects": [
         "p-sku1749",
@@ -1689,21 +1743,21 @@
       },
       {
        "label": "Seeing more of my scalp or wider parting",
-       "effect": "Opens follow-up: How visible would you say your wider parting has become?. Outcome depends on that answer (see the follow-up). Without it: No change to the products offered (code).",
+       "effect": "Opens follow-up: How visible would you say your wider parting has become?. Outcome depends on that answer (see the follow-up). Without it: No change to the products offered (code). Live check (runs/b-women): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1749, PHI1670; no warning before the wall.",
        "effectType": "extra-questions",
        "affects": [],
        "evidence": "code"
       },
       {
        "label": "Thinning at temples",
-       "effect": "Opens follow-up: How noticable would you say your Thinning at Temples is?. Outcome depends on that answer (see the follow-up). Without it: No change to the products offered (code).",
+       "effect": "Opens follow-up: How noticable would you say your Thinning at Temples is?. Outcome depends on that answer (see the follow-up). Without it: No change to the products offered (code). Stage 3 live check (runs/verify-w-temples): no follow-up change; PHI1749, PHI1670.",
        "effectType": "extra-questions",
        "affects": [],
        "evidence": "code"
       },
       {
        "label": "Circular bald patches",
-       "effect": "Opens follow-up: How noticable are your circular bald patches?. Outcome depends on that answer (see the follow-up). Without it: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effect": "Opens follow-up: How noticable are your circular bald patches?. Outcome depends on that answer (see the follow-up). Without it: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345). Live check (runs/w06-q3a-patches): the site's own rule check, run in the live page at the wall, gave no SKU passes, so the consultation screen follows the wall; no warning before the wall.",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -1713,7 +1767,7 @@
       },
       {
        "label": "Bandlike recession",
-       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345). Stage 3 live check (runs/verify-w-bandlike): no follow-up question appeared; NO SKU passes (consultation screen after the wall).",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -1735,7 +1789,7 @@
      "purpose": "Main picture: pattern thinning gets the main plan, shedding gets Hair Shedding Drops, patches or band-like loss go to a consultation.",
      "engineRole": "product-selector",
      "branches": true,
-     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "branchDetail": "Each picture except band-like recession and something else opens a \"how noticeable\" follow-up on the same screen (seen live for overall thinning, shedding, patches, parting). The picture decides the product (main product PHI1749, Hair Shedding Drops for shedding, consultation for patches, band-like recession or something else); the follow-up answer is not used by any rule (code, confirmed live w03, w04, w06).",
      "shownWhen": "always",
      "evidence": "observed",
      "order": 6
@@ -1772,7 +1826,7 @@
      "engineRole": "data-capture",
      "branches": false,
      "branchDetail": "",
-     "shownWhen": "when q3a includes \"Overall thinning\"",
+     "shownWhen": "when q3a includes \"Overall thinning\" (seen live on the same screen as its parent question, runs/w03-q3a-overall; absent in the baseline run)",
      "evidence": "observed",
      "order": 7
     },
@@ -1791,7 +1845,7 @@
       },
       {
        "label": "People close to me can notice it",
-       "effect": "No change to the products offered (code).",
+       "effect": "No change to the products offered (code). Stage 3 live check (runs/verify-w-temples): PHI1749, PHI1670.",
        "effectType": "none",
        "affects": [],
        "evidence": "code"
@@ -1844,7 +1898,7 @@
      "engineRole": "data-capture",
      "branches": false,
      "branchDetail": "",
-     "shownWhen": "when q3a includes \"Seeing more of my scalp or wider parting\"",
+     "shownWhen": "when q3a includes \"Seeing more of my scalp or wider parting\" (seen live on the same screen as its parent question, runs/b-women; absent in the baseline run)",
      "evidence": "observed",
      "order": 9
     },
@@ -1892,7 +1946,7 @@
      "engineRole": "data-capture",
      "branches": true,
      "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
-     "shownWhen": "when q3a includes \"More shedding than usual (in the shower/on my brush)\"",
+     "shownWhen": "when q3a includes \"More shedding than usual (in the shower/on my brush)\" (seen live on the same screen as its parent question, runs/w04-q3a-shedding; absent in the baseline run)",
      "evidence": "observed",
      "order": 10
     },
@@ -1937,7 +1991,7 @@
      "engineRole": "data-capture",
      "branches": true,
      "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
-     "shownWhen": "when q3a includes \"Circular bald patches\"",
+     "shownWhen": "when q3a includes \"Circular bald patches\" (seen live on the same screen as its parent question, runs/w06-q3a-patches; absent in the baseline run)",
      "evidence": "observed",
      "order": 11
     },
@@ -1949,7 +2003,7 @@
      "options": [
       {
        "label": "It's happened very suddenly",
-       "effect": "For the baseline picture (wider parting) nothing changes, because the sudden-onset blocker lists every picture EXCEPT \"Seeing more of my scalp or wider parting\". For overall thinning, temple thinning or shedding, sudden onset leaves no plan and routes to the consultation screen (code).",
+       "effect": "For the baseline picture (wider parting) nothing changes, because the sudden-onset blocker lists every picture EXCEPT \"Seeing more of my scalp or wider parting\". For overall thinning, temple thinning or shedding, sudden onset leaves no plan and routes to the consultation screen (code). Live check (runs/w09-q4-sudden): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1749, PHI1670; no warning before the wall. Stage 3 live check (runs/verify-w-sudden): with the baseline wider parting: PHI1749, PHI1670; with thinning at temples (two changes on purpose, runs/verify-w-temples-sudden): NO SKU passes (consultation screen after the wall).",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -1988,8 +2042,8 @@
      "options": [
       {
        "label": "Itching",
-       "effect": "Opens follow-up: How severe is the itching?. Outcome depends on that answer (see the follow-up). Without it: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
-       "effectType": "hard-stop",
+       "effect": "Opens a severity follow-up. Mild keeps the main product PHI1749 (itching and dandruff switch the haircare add-on to PHI1688; mild eczema removes the add-on); Moderate or Severe leaves no SKU (consultation) (code; live: runs/w11, runs/verify-w-dandruff-mild).",
+       "effectType": "extra-questions",
        "affects": [
         "p-consult-virtual",
         "p-consult-clinic"
@@ -1998,8 +2052,8 @@
       },
       {
        "label": "Dandruff",
-       "effect": "Opens follow-up: How severe is the dandruff?. Outcome depends on that answer (see the follow-up). Without it: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
-       "effectType": "hard-stop",
+       "effect": "Opens a severity follow-up. Mild keeps the main product PHI1749 (itching and dandruff switch the haircare add-on to PHI1688; mild eczema removes the add-on); Moderate or Severe leaves no SKU (consultation) (code; live: runs/w11, runs/verify-w-dandruff-mild).",
+       "effectType": "extra-questions",
        "affects": [
         "p-consult-virtual",
         "p-consult-clinic"
@@ -2008,8 +2062,8 @@
       },
       {
        "label": "Eczema",
-       "effect": "Opens follow-up: How severe is the eczema?. Outcome depends on that answer (see the follow-up). Without it: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
-       "effectType": "hard-stop",
+       "effect": "Opens a severity follow-up. Mild keeps the main product PHI1749 (itching and dandruff switch the haircare add-on to PHI1688; mild eczema removes the add-on); Moderate or Severe leaves no SKU (consultation) (code; live: runs/w11, runs/verify-w-dandruff-mild).",
+       "effectType": "extra-questions",
        "affects": [
         "p-consult-virtual",
         "p-consult-clinic"
@@ -2038,7 +2092,7 @@
       },
       {
        "label": "Psoriasis",
-       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345). Live check (runs/w14-q5a-psoriasis): the site's own rule check, run in the live page at the wall, gave no SKU passes, so the consultation screen follows the wall; no warning before the wall.",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -2067,7 +2121,7 @@
      "purpose": "Scalp symptoms: mild itching/dandruff/eczema keep the plan, anything more goes to a consultation.",
      "engineRole": "safety-screen",
      "branches": true,
-     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "branchDetail": "Itching, dandruff, redness or eczema open a severity question on the same screen (seen live for itching). Mild itching keeps the main product and switches the haircare add-on (live w11); psoriasis, redness, acne, other and moderate or severe symptoms end at the consultation screen (code, live w14).",
      "shownWhen": "always",
      "evidence": "observed",
      "order": 13
@@ -2080,7 +2134,7 @@
      "options": [
       {
        "label": "Mild",
-       "effect": "Swaps the SKU within: Women's \"Complete Your Routine\" haircare add-ons (PHI1670 -> PHI1688) (code; one change from the baseline).",
+       "effect": "Swaps the SKU within: Women's \"Complete Your Routine\" haircare add-ons (PHI1670 -> PHI1688) (code; one change from the baseline). Live check (runs/w11-q5a-itching-mild): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1749, PHI1688; no warning before the wall.",
        "effectType": "product-switched",
        "affects": [
         "p-w-routine"
@@ -2112,7 +2166,7 @@
      "engineRole": "safety-screen",
      "branches": true,
      "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
-     "shownWhen": "when q5a includes \"Itching\"",
+     "shownWhen": "when q5a includes \"Itching\" (seen live on the same screen as its parent question, runs/w11-q5a-itching-mild; absent in the baseline run)",
      "evidence": "observed",
      "order": 14
     },
@@ -2124,7 +2178,7 @@
      "options": [
       {
        "label": "Mild",
-       "effect": "Swaps the SKU within: Women's \"Complete Your Routine\" haircare add-ons (PHI1670 -> PHI1688) (code; one change from the baseline).",
+       "effect": "Swaps the SKU within: Women's \"Complete Your Routine\" haircare add-ons (PHI1670 -> PHI1688) (code; one change from the baseline). Stage 3 live check (runs/verify-w-dandruff-mild): PHI1749, PHI1688.",
        "effectType": "product-switched",
        "affects": [
         "p-w-routine"
@@ -2168,7 +2222,7 @@
      "options": [
       {
        "label": "Mild",
-       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345). Stage 3 live check (runs/verify-w-redness-mild): NO SKU passes (consultation screen after the wall).",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -2431,7 +2485,7 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "No rule uses menopause status (code): post-menopausal women are NOT offered the topical finasteride drops even though the drops leaflet says they suit post-menopausal women.",
+       "effect": "No rule uses menopause status (code): post-menopausal women are NOT offered the topical finasteride drops even though the drops leaflet says they suit post-menopausal women. Live check (runs/w17-q10a-menopause-hrt): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1749, PHI1670; no warning before the wall.",
        "effectType": "none",
        "affects": [],
        "evidence": "code"
@@ -2447,7 +2501,7 @@
      "purpose": "Menopause status (asked but not used by any rule).",
      "engineRole": "data-capture",
      "branches": true,
-     "branchDetail": "Product rules are evaluated only after the account wall; effects shown are from running the site's own rules (code).",
+     "branchDetail": "Yes opens \"Are you on HRT?\" (seen live). Neither answer changes the offer (live check w17).",
      "shownWhen": "always",
      "evidence": "observed",
      "order": 22
@@ -2460,7 +2514,7 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "No change to the products offered (code).",
+       "effect": "No change to the products offered (code). Live check (runs/w17-q10a-menopause-hrt): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1749, PHI1670; no warning before the wall.",
        "effectType": "none",
        "affects": [],
        "evidence": "code"
@@ -2477,7 +2531,7 @@
      "engineRole": "data-capture",
      "branches": false,
      "branchDetail": "",
-     "shownWhen": "when q10a includes \"Yes\"",
+     "shownWhen": "when q10a includes \"Yes\" (seen live on the same screen as its parent question, runs/w17-q10a-menopause-hrt; absent in the baseline run)",
      "evidence": "observed",
      "order": 23
     },
@@ -2489,7 +2543,7 @@
      "options": [
       {
        "label": "Minoxidil",
-       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345). Live check (runs/w18-q11a-minoxidil): the site's own rule check, run in the live page at the wall, gave no SKU passes, so the consultation screen follows the wall; no warning before the wall.",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -2499,7 +2553,7 @@
       },
       {
        "label": "Other, please state",
-       "effect": "Opens follow-up: Please describe your allergy, including the symptoms and severity. Outcome depends on that answer (see the follow-up). Without it: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effect": "Opens follow-up: Please describe your allergy, including the symptoms and severity. Outcome depends on that answer (see the follow-up). Without it: No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345). Stage 3 live check (runs/verify-w-other-allergy): NO SKU passes (consultation screen after the wall).",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -2545,7 +2599,7 @@
      "options": [
       {
        "label": "Yes, I have a medical condition, please state",
-       "effect": "Opens follow-up: Please describe your medical conditions. Outcome depends on that answer (see the follow-up). Without it: No change to the products offered (code).",
+       "effect": "Opens follow-up: Please describe your medical conditions. Outcome depends on that answer (see the follow-up). Without it: No change to the products offered (code). Stage 3 live check (runs/verify-w-medcond): PHI1749, PHI1670.",
        "effectType": "extra-questions",
        "affects": [],
        "evidence": "code"
@@ -2559,7 +2613,7 @@
       },
       {
        "label": "I am taking oral minoxidil",
-       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345).",
+       "effect": "No plan survives the rules, so the quiz (after the account wall) shows \"Choose your consultation type\": book a Virtual Initial Consultation (from £200) or an in-clinic Initial Consultation (from £345). Live check (runs/w19-q12a-oral-minoxidil): the site's own rule check, run in the live page at the wall, gave no SKU passes, so the consultation screen follows the wall; no warning before the wall.",
        "effectType": "hard-stop",
        "affects": [
         "p-consult-virtual",
@@ -2686,7 +2740,7 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "No change to the products offered (code).",
+       "effect": "No change to the products offered (code). Live check (runs/s01-q1-diagnosed-sebderm): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1619, PHI1635; no warning before the wall.",
        "effectType": "none",
        "affects": [],
        "evidence": "code"
@@ -2701,8 +2755,8 @@
      ],
      "purpose": "Already diagnosed? \"No\" skips the diagnosis question.",
      "engineRole": "diagnosis",
-     "branches": false,
-     "branchDetail": "",
+     "branches": true,
+     "branchDetail": "No skips Q2 through a conditional transition (baseline run); Yes shows \"What was your diagnosis?\" (seen live, s01). The diagnosis given did not change the offer for Seborrhoeic Dermatitis (live check s01).",
      "shownWhen": "always",
      "evidence": "observed",
      "order": 3
@@ -2715,7 +2769,7 @@
      "options": [
       {
        "label": "Seborrhoeic Dermatitis",
-       "effect": "No change to the products offered (code).",
+       "effect": "No change to the products offered (code). Live check (runs/s01-q1-diagnosed-sebderm): the site's own rule check, run in the live page at the wall, gave passing SKUs PHI1619, PHI1635; no warning before the wall.",
        "effectType": "none",
        "affects": [],
        "evidence": "code"
@@ -2781,8 +2835,8 @@
      "engineRole": "diagnosis",
      "branches": false,
      "branchDetail": "",
-     "shownWhen": "only when Q1 = \"Yes\" (conditional transition: Q1 = \"No\" skips to Q3)",
-     "evidence": "code",
+     "shownWhen": "only when Q1 = \"Yes\" (conditional transition: Q1 = \"No\" skips to Q3) (seen live on the same screen as its parent question, runs/s01-q1-diagnosed-sebderm; absent in the baseline run)",
+     "evidence": "observed",
      "order": 4
     },
     {
@@ -3253,35 +3307,35 @@
    "id": "R1",
    "flow": "men",
    "when": "Any of: men-q3 = \"I haven't noticed any yet\"; men-q4 = \"It started to fall out quite suddenly\" or \"It's not started yet\"; men-q8 = Pain, Burning, Crusting or Bleeding; men-q9 = cancer/PSA, depression-anxiety-panic, or trying for a baby; allergy to BOTH minoxidil and finasteride",
-   "then": "Every SKU is blocked, so no plan is offered and the consultation booking screen (\"Choose your consultation type\": virtual from £200, clinic from £345) is shown after the account wall.",
+   "then": "Every SKU is blocked, so no plan is offered and the consultation booking screen (\"Choose your consultation type\": in-clinic or virtual initial consultation; prices are not on that screen, the clinic price list says virtual from £200, clinic from £345) is shown after the account wall.  Confirmed in live replays: at the account wall the site's own rule check (window.quiz.checkProductAvailability(), run read-only in the live page) gave the same SKUs as the code reading. Each of these single changes left no SKU passing. Stage 3 also confirmed two options stage 2 had not replayed: Bleeding (men-q8) and \"It's not started yet\" (men-q4).",
    "effectType": "hard-stop",
    "affects": [
     "p-consult-virtual",
     "p-consult-clinic"
    ],
    "evidence": "code",
-   "proof": "quiz-definition-men.json rules[*].blockers (first OR group, shared by all SKUs); evaluated with scratch/engine.py, table extracted/men-one-change-code.json",
+   "proof": "quiz-definition-men.json rules[*].blockers (first OR group, shared by all SKUs); evaluated with scratch/engine.py, table extracted/men-one-change-code.json; live: runs/m08-q3-not-yet, runs/m10-q4-sudden, runs/m23-q8-burning, runs/exp-01-men-q8-pain, runs/m24-q9-cancer-psa, runs/m26-q9-depression-accept, runs/m27-q9-depression-decline, runs/m28-q9-baby; stage 3 re-test (confirmed): runs/verify-m-bleeding, runs/verify-m-notstarted",
    "confidence": "high"
   },
   {
    "id": "R2",
    "flow": "men",
    "when": "men-q7a includes Itching or Dandruff and severity (men-q7f / men-q7b) = Severe",
-   "then": "No plan; consultation screen.",
+   "then": "No plan; consultation screen.  Confirmed in live replays: at the account wall the site's own rule check (window.quiz.checkProductAvailability(), run read-only in the live page) gave the same SKUs as the code reading. Stage 3 confirmed the dandruff branch live (Dandruff + Severe: no SKU passes).",
    "effectType": "hard-stop",
    "affects": [
     "p-consult-virtual",
     "p-consult-clinic"
    ],
    "evidence": "code",
-   "proof": "extracted/men-one-change-code.json (q7f/q7b = Severe)",
+   "proof": "extracted/men-one-change-code.json (q7f/q7b = Severe); live: runs/m16-q7a-itching-severe; stage 3 re-test (confirmed): runs/verify-m-dandruff-severe",
    "confidence": "high"
   },
   {
    "id": "R3",
    "flow": "men",
    "when": "men-q7a includes Itching (mild/moderate) or Dandruff (mild/moderate) or Eczema (mild/moderate)",
-   "then": "Hair-loss plans are replaced by scalp plans: unmapped SKUs PHI1306/PHI1309 (+PHI1307, Healthy Scalp Topical Combination Plan PHI1308 and 5% Healthy Scalp Combination Plan PHI1311 for mild dandruff; PHI1311 also for moderate dandruff).",
+   "then": "Hair-loss plans are swapped for scalp plans. Live page checks: mild itching -> only PHI1306 + PHI1309 (unnamed scalp SKUs); mild dandruff -> PHI1306, PHI1307, PHI1308 (Healthy Scalp Topical Combination Plan), PHI1309, PHI1311 (5% Healthy Scalp Combination Plan); moderate eczema -> PHI1306 + PHI1309 next to the unnamed PHI1220/PHI1221. Minoxidil 5%, Oral Finasteride, the Topical and 5% Combination Plans are removed in all three. Stage 3: moderate itching gives the same PHI1306 + PHI1309 as mild.",
    "effectType": "product-switched",
    "affects": [
     "p-scalp-addons-men",
@@ -3293,14 +3347,14 @@
     "p-5combo"
    ],
    "evidence": "code",
-   "proof": "extracted/men-one-change-code.json (q7f, q7b, q7d)",
+   "proof": "extracted/men-one-change-code.json (q7f, q7b, q7d); live: runs/m15-q7a-itching-mild, runs/m17-q7a-dandruff-mild, runs/m18-q7a-eczema-moderate; stage 3 re-test (confirmed): runs/verify-m-itch-moderate",
    "confidence": "high"
   },
   {
    "id": "R4",
    "flow": "men",
    "when": "men-q7a includes Psoriasis, Redness, Acne or Other (or severe eczema)",
-   "then": "All named plans are removed; only unmapped SKUs PHI1220/PHI1221 remain. If those SKUs are retired on the server, the person reaches the consultation screen.",
+   "then": "All named plans are removed; only unmapped SKUs PHI1220/PHI1221 remain. If those SKUs are retired on the server, the person reaches the consultation screen.  Confirmed in live replays: at the account wall the site's own rule check (window.quiz.checkProductAvailability(), run read-only in the live page) gave the same SKUs as the code reading. Acne was not replayed. Stage 3 confirmed Acne live (only PHI1220 and PHI1221 pass).",
    "effectType": "product-removed",
    "affects": [
     "p-min5",
@@ -3309,14 +3363,14 @@
     "p-5combo"
    ],
    "evidence": "code",
-   "proof": "extracted/men-one-change-code.json",
-   "confidence": "medium"
+   "proof": "extracted/men-one-change-code.json; live: runs/m19-q7a-redness-mild, runs/m20-q7a-psoriasis, runs/m21-q7a-other; stage 3 re-test (confirmed): runs/verify-m-acne",
+   "confidence": "high"
   },
   {
    "id": "R5",
    "flow": "men",
    "when": "men-q1 = Patchy or Extensive, or \"Temples and Crown with reduced density\" without a visible-scalp density answer, or Early signs with any density other than \"thinned/receded noticeably\"",
-   "then": "All named plans are removed; only unmapped PHI1220/PHI1221 remain (the no_results_rules list shows Patchy and Extensive were meant to go to a consultation).",
+   "then": "All named plans are removed; only unmapped PHI1220/PHI1221 remain (the no_results_rules list shows Patchy and Extensive were meant to go to a consultation).  Confirmed in live replays: at the account wall the site's own rule check (window.quiz.checkProductAvailability(), run read-only in the live page) gave the same SKUs as the code reading. Stage 3: Patchy again gave only PHI1220 + PHI1221. With \"Temples and Crown with reduced density\" plus a visible-scalp density answer, the 5% Combination Plan does pass (see R27).",
    "effectType": "product-removed",
    "affects": [
     "p-min5",
@@ -3325,28 +3379,29 @@
     "p-5combo"
    ],
    "evidence": "code",
-   "proof": "extracted/men-pattern-density-age-code.txt; quiz-definition-men.json no_results_rules",
-   "confidence": "medium"
+   "proof": "extracted/men-pattern-density-age-code.txt; quiz-definition-men.json no_results_rules; live: runs/m01-q1-patchy, runs/m02-q1-extensive, runs/m05-q1-tc-reduced; stage 3 re-test (confirmed): runs/verify-m-patchy, runs/verify-m-tcr-slight",
+   "confidence": "high"
   },
   {
    "id": "R6",
    "flow": "men",
    "when": "men-q1 = Early signs (with noticeable thinning) or Temples, and men-q6 = 50 to 64 or Over 65",
-   "then": "Oral Finasteride and the 5% Combination Plan are removed; minoxidil 5% and the Topical Combination Plan stay.",
+   "then": "Oral Finasteride and the 5% Combination Plan are removed; minoxidil 5% and the Topical Combination Plan stay.  Confirmed in live replays: at the account wall the site's own rule check (window.quiz.checkProductAvailability(), run read-only in the live page) gave the same SKUs as the code reading. m33 (Temples + 50 to 64) dropped PHI1303 and PHI1305; for the baseline picture (Temples and Crown) age 50 to 64 or over 65 changed nothing (m12, m13). Stage 3 (two changes on purpose, Early signs + Over 65): PHI1220, PHI1221, PHI1301, PHI1302. For Early signs the age rule also drops PHI1306, which only men under 50 get (R23).",
    "effectType": "product-removed",
    "affects": [
     "p-fin",
-    "p-5combo"
+    "p-5combo",
+    "p-scalp-addons-men"
    ],
    "evidence": "code",
-   "proof": "extracted/men-pattern-density-age-code.txt",
+   "proof": "extracted/men-pattern-density-age-code.txt; live: runs/m33-q1-temples-q6-50-64, runs/m12-q6-50-64, runs/m13-q6-over65; stage 3 re-test (confirmed): runs/verify-m-early-over65",
    "confidence": "high"
   },
   {
    "id": "R7",
    "flow": "men",
    "when": "men-q11a = Minoxidil",
-   "then": "Removes Minoxidil 5%, the Topical Combination Plan and the 5% Combination Plan; Oral Finasteride (and PHI1221) stay.",
+   "then": "Removes Minoxidil 5%, the Topical Combination Plan and the 5% Combination Plan; Oral Finasteride (and PHI1221) stay.  Confirmed in live replays: at the account wall the site's own rule check (window.quiz.checkProductAvailability(), run read-only in the live page) gave the same SKUs as the code reading. Live result: only PHI1221 and PHI1303 (Oral Finasteride) remain.",
    "effectType": "product-removed",
    "affects": [
     "p-min5",
@@ -3354,14 +3409,14 @@
     "p-5combo"
    ],
    "evidence": "code",
-   "proof": "extracted/men-one-change-code.json q11a",
+   "proof": "extracted/men-one-change-code.json q11a; live: runs/m30-q11a-minoxidil",
    "confidence": "high"
   },
   {
    "id": "R8",
    "flow": "men",
    "when": "men-q11a = Finasteride",
-   "then": "Removes Oral Finasteride, the Topical Combination Plan and the 5% Combination Plan; Minoxidil 5% (and PHI1220) stay.",
+   "then": "Removes Oral Finasteride, the Topical Combination Plan and the 5% Combination Plan; Minoxidil 5% (and PHI1220) stay.  Confirmed in live replays: at the account wall the site's own rule check (window.quiz.checkProductAvailability(), run read-only in the live page) gave the same SKUs as the code reading. Live result: only PHI1220 and PHI1301 (Minoxidil 5%) remain.",
    "effectType": "product-removed",
    "affects": [
     "p-fin",
@@ -3369,33 +3424,33 @@
     "p-5combo"
    ],
    "evidence": "code",
-   "proof": "extracted/men-one-change-code.json q11a",
+   "proof": "extracted/men-one-change-code.json q11a; live: runs/m31-q11a-finasteride",
    "confidence": "high"
   },
   {
    "id": "R9",
    "flow": "men",
    "when": "men-q9 = \"I have uncontrolled low or high blood pressure\"",
-   "then": "Only PHI1221 is removed; minoxidil products stay because the main blocker value has a leading space and never matches (configuration error).",
+   "then": "Only PHI1221 is removed; minoxidil products stay because the main blocker value has a leading space and never matches (configuration error).  Confirmed in live replays: at the account wall the site's own rule check (window.quiz.checkProductAvailability(), run read-only in the live page) gave the same SKUs as the code reading. Live result: PHI1220, PHI1301, PHI1302, PHI1303, PHI1305 still pass; only PHI1221 (whose second blocker list spells the answer without the space) drops out. Stage 3 code re-read: the shared safety blocker of all 16 men's SKUs has the value \" I have uncontrolled low or high blood pressure\" (leading space); only PHI1221 (and the never-firing PHI1771/PHI1772) have a second, correct blood-pressure blocker.",
    "effectType": "product-removed",
    "affects": [
     "p-sku1221"
    ],
    "evidence": "code",
-   "proof": "quiz-definition-men.json rules PHI1220 blockers value \" I have uncontrolled low or high blood pressure\"",
+   "proof": "quiz-definition-men.json rules PHI1220 blockers value \" I have uncontrolled low or high blood pressure\"; live: runs/m25-q9-bp; stage 3 re-test (confirmed): runs/verify-m-bp",
    "confidence": "high"
   },
   {
    "id": "R10",
    "flow": "men",
    "when": "Rule for SKU PHI1304 (3% Combination Plan)",
-   "then": "Never fires: it requires the Q1 answer \"Temples & Crown with Reduced Density\", but the option is \"Temples and Crown with reduced density\". PHI1230 (wrong question label) and PHI1770-1772 (require itching/dandruff but are blocked by them) also never fire.",
+   "then": "Never fires: it requires the Q1 answer \"Temples & Crown with Reduced Density\", but the option is \"Temples and Crown with reduced density\". PHI1230 (wrong question label) and PHI1770-1772 (require itching/dandruff but are blocked by them) also never fire. In all 47 live replays of this stage PHI1304 never passed.",
    "effectType": "none",
    "affects": [
     "p-3combo"
    ],
    "evidence": "code",
-   "proof": "quiz-definition-men.json rules PHI1304, PHI1230, PHI1770-PHI1772",
+   "proof": "quiz-definition-men.json rules PHI1304, PHI1230, PHI1770-PHI1772; live: none of the 47 runs in experiments[] returned PHI1304; stage 3 code re-read (confirmed): PHI1304 conditions ask for \"Temples & Crown with Reduced Density\" while the option is \"Temples and Crown with reduced density\"; PHI1230 puts a density answer under the picture question label; PHI1770 has Itching/Dandruff both as conditions and as blockers. Live: runs/verify-m-tcr-slight (the exact case the 3% plan was meant for) returned PHI1305, not PHI1304.",
    "confidence": "high"
   },
   {
@@ -3406,28 +3461,28 @@
    "effectType": "none",
    "affects": [],
    "evidence": "observed",
-   "proof": "runs/exp-01-men-q8-pain vs runs/r05-baseline-men",
+   "proof": "runs/exp-01-men-q8-pain vs runs/r05-baseline-men; every one of the 44 variant runs in experiments[] (runs/m01 ... runs/s01) ended on a wall screen with exactly the same text as the baseline, including the 16 runs where no SKU passed",
    "confidence": "high"
   },
   {
    "id": "R11",
    "flow": "women",
    "when": "Any of: women-q1 pregnant/breastfeeding = Yes; women-q2 chemo/radiotherapy = Yes; women-q3a = Circular bald patches, Bandlike recession or Something else; women-q5a = Redness, Psoriasis, Pimples/acne, Other or Not Sure, or Moderate/Severe itching, dandruff or eczema; women-q11a = Minoxidil or Other allergy; women-q12a = \"I am taking oral minoxidil\"",
-   "then": "No plan; consultation screen.",
+   "then": "No plan; consultation screen.  Confirmed in live replays: at the account wall the site's own rule check (window.quiz.checkProductAvailability(), run read-only in the live page) gave the same SKUs as the code reading. Stage 3 confirmed three options stage 2 had not replayed: Bandlike recession, mild Redness and an \"Other\" allergy each leave no SKU.",
    "effectType": "hard-stop",
    "affects": [
     "p-consult-virtual",
     "p-consult-clinic"
    ],
    "evidence": "code",
-   "proof": "extracted/women-one-change-code.json",
+   "proof": "extracted/women-one-change-code.json; live: runs/w01-q1-pregnant, runs/w02-q2-chemo, runs/w06-q3a-patches, runs/w14-q5a-psoriasis, runs/w18-q11a-minoxidil, runs/w19-q12a-oral-minoxidil; stage 3 re-test (confirmed): runs/verify-w-bandlike, runs/verify-w-redness-mild, runs/verify-w-other-allergy",
    "confidence": "high"
   },
   {
    "id": "R12",
    "flow": "women",
    "when": "women-q4 = \"It's happened very suddenly\"",
-   "then": "Consultation for overall thinning, temple thinning or shedding, but NOT for \"Seeing more of my scalp or wider parting\", which still gets the main product (gap in the blocker list).",
+   "then": "Consultation for overall thinning, temple thinning or shedding, but NOT for \"Seeing more of my scalp or wider parting\", which still gets the main product (gap in the blocker list).  Confirmed in live replays: at the account wall the site's own rule check (window.quiz.checkProductAvailability(), run read-only in the live page) gave the same SKUs as the code reading. w09 (wider parting + sudden) still passes PHI1749 + add-on; w10 (overall thinning + sudden) passes nothing. Stage 3: wider parting + sudden still gets PHI1749; thinning at temples + sudden gets nothing (two changes on purpose), so the gap is specific to the wider-parting picture.",
    "effectType": "hard-stop",
    "affects": [
     "p-consult-virtual",
@@ -3435,21 +3490,21 @@
     "p-sku1749"
    ],
    "evidence": "code",
-   "proof": "quiz-definition-women.json PHI1749 blockers (AND group lists every picture except the wider parting)",
+   "proof": "quiz-definition-women.json PHI1749 blockers (AND group lists every picture except the wider parting); live: runs/w09-q4-sudden, runs/w10-q3a-overall-q4-sudden; stage 3 re-test (confirmed): runs/verify-w-sudden, runs/verify-w-temples-sudden",
    "confidence": "high"
   },
   {
    "id": "R13",
    "flow": "women",
    "when": "women-q3a = \"More shedding than usual (in the shower/on my brush)\"",
-   "then": "Main product PHI1749 is replaced by Hair Shedding Drops (cosmetic, PKC145).",
+   "then": "Main product PHI1749 is replaced by Hair Shedding Drops (cosmetic, PKC145).  Confirmed in live replays: at the account wall the site's own rule check (window.quiz.checkProductAvailability(), run read-only in the live page) gave the same SKUs as the code reading. The haircare add-on also changes (PHI1670 -> PHI1668).",
    "effectType": "product-switched",
    "affects": [
     "p-sku1749",
     "p-shedding"
    ],
    "evidence": "code",
-   "proof": "extracted/women-one-change-code.json q3a",
+   "proof": "extracted/women-one-change-code.json q3a; live: runs/w04-q3a-shedding; stage 3 re-test (confirmed): runs/verify-w-shedding",
    "confidence": "high"
   },
   {
@@ -3469,11 +3524,169 @@
    "id": "R15",
    "flow": "women",
    "when": "women-q10a menopause = Yes (with or without HRT)",
-   "then": "No effect: no women's rule offers a finasteride product, so post-menopausal women never get the topical finasteride drops online.",
+   "then": "No effect: no women's rule offers a finasteride product, so post-menopausal women never get the topical finasteride drops online.  Confirmed in live replays: at the account wall the site's own rule check (window.quiz.checkProductAvailability(), run read-only in the live page) gave the same SKUs as the code reading. Menopause = Yes and HRT = Yes gave the same SKUs as the baseline (PHI1749, PHI1670).",
    "effectType": "none",
    "affects": [],
    "evidence": "code",
-   "proof": "quiz-definition-women.json rules (no SKU references menopause)",
+   "proof": "quiz-definition-women.json rules (no SKU references menopause); live: runs/w17-q10a-menopause-hrt",
+   "confidence": "high"
+  },
+  {
+   "id": "R17",
+   "flow": "men",
+   "when": "men-q7a includes Itching, Dandruff, Redness or Eczema (or Other)",
+   "then": "A severity question (Mild / Moderate / Severe) appears on the same screen for each ticked symptom; Other opens a free-text box instead. Nothing else in the quiz changes.",
+   "effectType": "extra-questions",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/m15-q7a-itching-mild, runs/m17-q7a-dandruff-mild, runs/m18-q7a-eczema-moderate, runs/m19-q7a-redness-mild, runs/m21-q7a-other (follow-ups absent in runs/b-men)",
+   "confidence": "high"
+  },
+  {
+   "id": "R18",
+   "flow": "men",
+   "when": "men-q9 includes \"I am experiencing, or have previously experienced, depression, anxiety or panic disorders\"",
+   "then": "A finasteride mood warning (men-q9e: \"occasional reports of depression and even suicidal thoughts\") appears with accept / decline choices (observed). Whatever is chosen, the site's rule check finds no SKU (code, client function run live), so the consultation screen would follow the wall; the warning answer never changes the outcome.",
+   "effectType": "soft-warning",
+   "affects": [
+    "p-consult-virtual",
+    "p-consult-clinic"
+   ],
+   "evidence": "observed",
+   "proof": "runs/m26-q9-depression-accept, runs/m27-q9-depression-decline (warning seen; live rule check: no SKU passes)",
+   "confidence": "high"
+  },
+  {
+   "id": "R19",
+   "flow": "men",
+   "when": "men-q10a = Yes (medicines) or men-q12a = Yes (other allergies)",
+   "then": "Free-text boxes appear (medicine names and doses, and what they are for; allergy description) (observed). No product rule reads them, and the live rule check gave the baseline SKUs (code). That a prescriber reads them is an assumption (inferred), not shown anywhere public.",
+   "effectType": "flag-for-clinician",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/m29-q10a-yes, runs/m32-q12a-yes (same SKUs as baseline in the live rule check)",
+   "confidence": "high"
+  },
+  {
+   "id": "R20",
+   "flow": "women",
+   "when": "women-q3a = a hair-loss picture with a follow-up (overall thinning, shedding, wider parting, temples, circular patches)",
+   "then": "A \"how noticeable\" question appears on the same screen (only I / people close to me / everyone). No product rule reads this answer; the picture alone decides.",
+   "effectType": "extra-questions",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/w03-q3a-overall, runs/w04-q3a-shedding, runs/w06-q3a-patches, runs/b-women; rules in quiz-definition-women.json",
+   "confidence": "high"
+  },
+  {
+   "id": "R21",
+   "flow": "women",
+   "when": "women-q10a = Yes (menopause)",
+   "then": "\"Are you on HRT?\" appears (observed). Neither answer changes the SKUs in the live rule check (code).",
+   "effectType": "extra-questions",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/w17-q10a-menopause-hrt (live rule check: PHI1749 + PHI1670, same as baseline)",
+   "confidence": "high"
+  },
+  {
+   "id": "R22",
+   "flow": "scalp",
+   "when": "scalp-q1 = No (not diagnosed)",
+   "then": "Q2 \"What was your diagnosis?\" is skipped (the only conditional jump in any of the three quizzes). With Q1 = Yes, Q2 is shown; answering Seborrhoeic Dermatitis did not change the products.",
+   "effectType": "skip-questions",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/b-scalp vs runs/s01-q1-diagnosed-sebderm; conditional_transitions in quiz-definition-scalp.json",
+   "confidence": "high"
+  },
+  {
+   "id": "R23",
+   "flow": "men",
+   "when": "men-q1 = \"Early signs\" (with the baseline density answer \"thinned/receded noticeably in some areas\") and age under 50",
+   "then": "Everything the baseline gets, plus the unnamed SKU PHI1306 in the \"Other\" group.",
+   "effectType": "product-added",
+   "affects": [
+    "p-scalp-addons-men"
+   ],
+   "evidence": "code",
+   "proof": "quiz-definition-men.json rule PHI1306; live: runs/m03-q1-early",
+   "confidence": "high"
+  },
+  {
+   "id": "R24",
+   "flow": "men",
+   "when": "Any single change of: family history (men-q5 = No), age (men-q6 = 50 to 64 or Over 65) for the baseline Temples and Crown picture, density (men-q2a = very visible, or not very noticeable), onset \"In the last month\", medicines = Yes, other allergies = Yes",
+   "then": "No change: the same six SKUs pass as for the baseline man. These answers are recorded but do not steer the offer. Stage 3: the \"thinned extensively ... throughout the top region\" density answer also changes nothing for the baseline picture.",
+   "effectType": "none",
+   "affects": [],
+   "evidence": "code",
+   "proof": "live: runs/m11-q5-no, runs/m12-q6-50-64, runs/m13-q6-over65, runs/m06-q2a-very-visible, runs/m07-q2a-not-noticeable, runs/m09-q3-last-month, runs/m29-q10a-yes, runs/m32-q12a-yes; stage 3 re-test (confirmed): runs/verify-m-q2a-extensive",
+   "confidence": "high"
+  },
+  {
+   "id": "R25",
+   "flow": "women",
+   "when": "women-q5a = Itching or Dandruff with severity Mild",
+   "then": "The main product (PHI1749) stays; only the \"Complete Your Routine\" haircare add-on switches (PHI1670 -> PHI1688). Stage 3: mild dandruff does the same (PHI1749 kept, add-on PHI1670 -> PHI1688).",
+   "effectType": "product-switched",
+   "affects": [
+    "p-w-routine"
+   ],
+   "evidence": "code",
+   "proof": "quiz-definition-women.json; live: runs/w11-q5a-itching-mild; stage 3 re-test (confirmed): runs/verify-w-dandruff-mild",
+   "confidence": "high"
+  },
+  {
+   "id": "R26",
+   "flow": "men",
+   "when": "Age: men-q6 offers only 18 to 29, 30 to 39, 40 to 49, 50 to 64, Over 65",
+   "then": "There is no under-18 answer, so the quiz itself cannot screen out minors (code; seen in runs/b-men). The women's and scalp quizzes ask no age question at all. The wall asks for a date of birth; whether that is used to refuse under-18s was not tested (needs an account), so any age check after the wall is unknown.",
+   "effectType": "none",
+   "affects": [],
+   "evidence": "code",
+   "proof": "quiz-definition-men.json step6; quiz-definition-women.json and quiz-definition-scalp.json have no age step; runs/b-men",
+   "confidence": "high"
+  },
+  {
+   "id": "R27",
+   "flow": "men",
+   "when": "men-q1 = \"Temples and Crown with reduced density\" AND men-q2a = scalp slightly visible or very visible",
+   "then": "Of the named plans only the 5% Combination Plan (PHI1305) passes, beside PHI1220 and PHI1221. This is the case the 3% Combination Plan (PHI1304) was built for, but its typo means the 5% plan is offered instead. With any other density answer this picture keeps only PHI1220 and PHI1221 (R5).",
+   "effectType": "product-removed",
+   "affects": [
+    "p-5combo",
+    "p-3combo",
+    "p-min5",
+    "p-topcombo",
+    "p-fin"
+   ],
+   "evidence": "code",
+   "proof": "quiz-definition-men.json rules PHI1305 and PHI1304; independent port scratch/verify/engine.js; live (two changes on purpose): runs/verify-m-tcr-slight (PHI1220, PHI1221, PHI1305)",
+   "confidence": "high"
+  },
+  {
+   "id": "R28",
+   "flow": "women",
+   "when": "women-q12a = \"Yes, I have a medical condition, please state\" (text box filled)",
+   "then": "A text box appears (observed). No rule reads it: PHI1749 and the add-on PHI1670 still pass (code, live rule check). Only \"I am taking oral minoxidil\" in this question blocks (R11).",
+   "effectType": "extra-questions",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/verify-w-medcond vs runs/verify-b-women",
+   "confidence": "high"
+  },
+  {
+   "id": "R29",
+   "flow": "women",
+   "when": "women-q3a = \"Thinning at temples\" (any \"how noticeable\" answer), onset gradual",
+   "then": "Same as the baseline: main product PHI1749 + add-on PHI1670. Thinning at temples, overall thinning and wider parting all lead to the same product; only shedding (R13) changes it.",
+   "effectType": "none",
+   "affects": [
+    "p-sku1749"
+   ],
+   "evidence": "code",
+   "proof": "quiz-definition-women.json PHI1749 conditions; live: runs/verify-w-temples",
    "confidence": "high"
   }
  ],
@@ -3484,6 +3697,489 @@
    "changed": "men-q8: None of the above -> Pain (a code-predicted consultation case)",
    "result": "Same account wall straight after Q12, with no hint that no plan will be offered; the consultation screen is only reachable after creating an account.",
    "run": "runs/exp-01-men-q8-pain"
+  },
+  {
+   "id": "b-men",
+   "flow": "men",
+   "changed": "none (baseline replay)",
+   "result": "Baseline man replayed (protocol baseline). Reached the account wall (\"Almost done! Your details\") as in stage 1. The site's own rule check, run in the live page at the wall, passes: PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221), PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan).",
+   "run": "runs/b-men"
+  },
+  {
+   "id": "b-women",
+   "flow": "women",
+   "changed": "none (baseline replay)",
+   "result": "Baseline woman replayed (protocol baseline). Reached the account wall (\"Almost done! Your details\") as in stage 1. The site's own rule check, run in the live page at the wall, passes: PHI1749 (Women's main hair-loss product, SKU PHI1749), PHI1670 (Women's \"Complete Your Routine\" haircare add-ons).",
+   "run": "runs/b-women"
+  },
+  {
+   "id": "b-scalp",
+   "flow": "scalp",
+   "changed": "none (baseline replay)",
+   "result": "Synthetic scalp baseline replayed. Reached the account wall (\"Almost done! Your details\") as in stage 1. The site's own rule check, run in the live page at the wall, passes: PHI1619 (Scalp-assessment products), PHI1635 (Scalp-assessment products).",
+   "run": "runs/b-scalp"
+  },
+  {
+   "id": "m01-q1-patchy",
+   "flow": "men",
+   "changed": "men-q1: baseline -> \"Patchy\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221). Removed vs baseline: PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan).",
+   "run": "runs/m01-q1-patchy"
+  },
+  {
+   "id": "m02-q1-extensive",
+   "flow": "men",
+   "changed": "men-q1: baseline -> \"Extensive\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221). Removed vs baseline: PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan).",
+   "run": "runs/m02-q1-extensive"
+  },
+  {
+   "id": "m03-q1-early",
+   "flow": "men",
+   "changed": "men-q1: baseline -> \"Early signs\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221), PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan), PHI1306 (Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309). Added: PHI1306 (Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309).",
+   "run": "runs/m03-q1-early"
+  },
+  {
+   "id": "m04-q1-temples",
+   "flow": "men",
+   "changed": "men-q1: baseline -> \"Temples\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: same SKUs as baseline (PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221), PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan)). No effect on the offer.",
+   "run": "runs/m04-q1-temples"
+  },
+  {
+   "id": "m05-q1-tc-reduced",
+   "flow": "men",
+   "changed": "men-q1: baseline -> \"Temples and Crown with reduced density\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221). Removed vs baseline: PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan).",
+   "run": "runs/m05-q1-tc-reduced"
+  },
+  {
+   "id": "m06-q2a-very-visible",
+   "flow": "men",
+   "changed": "men-q2a: baseline -> \"My scalp is very visible and my hair feels much less dense\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: same SKUs as baseline (PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221), PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan)). No effect on the offer.",
+   "run": "runs/m06-q2a-very-visible"
+  },
+  {
+   "id": "m07-q2a-not-noticeable",
+   "flow": "men",
+   "changed": "men-q2a: baseline -> \"I have less hair than before, but it is not very noticeable\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: same SKUs as baseline (PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221), PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan)). No effect on the offer.",
+   "run": "runs/m07-q2a-not-noticeable"
+  },
+  {
+   "id": "m08-q3-not-yet",
+   "flow": "men",
+   "changed": "men-q3: baseline -> \"I haven't noticed any yet\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: NO SKU passes, so after the wall the quiz would show the no-results template \"CHOOSE YOUR CONSULTATION TYPE\" (virtual from £200 or clinic from £345).",
+   "run": "runs/m08-q3-not-yet"
+  },
+  {
+   "id": "m09-q3-last-month",
+   "flow": "men",
+   "changed": "men-q3: baseline -> \"In the last month\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: same SKUs as baseline (PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221), PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan)). No effect on the offer.",
+   "run": "runs/m09-q3-last-month"
+  },
+  {
+   "id": "m10-q4-sudden",
+   "flow": "men",
+   "changed": "men-q4: baseline -> \"It started to fall out quite suddenly\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: NO SKU passes, so after the wall the quiz would show the no-results template \"CHOOSE YOUR CONSULTATION TYPE\" (virtual from £200 or clinic from £345).",
+   "run": "runs/m10-q4-sudden"
+  },
+  {
+   "id": "m11-q5-no",
+   "flow": "men",
+   "changed": "men-q5: baseline -> \"No\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: same SKUs as baseline (PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221), PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan)). No effect on the offer.",
+   "run": "runs/m11-q5-no"
+  },
+  {
+   "id": "m12-q6-50-64",
+   "flow": "men",
+   "changed": "men-q6: baseline -> \"50 to 64\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: same SKUs as baseline (PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221), PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan)). No effect on the offer.",
+   "run": "runs/m12-q6-50-64"
+  },
+  {
+   "id": "m13-q6-over65",
+   "flow": "men",
+   "changed": "men-q6: baseline -> \"Over 65\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: same SKUs as baseline (PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221), PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan)). No effect on the offer.",
+   "run": "runs/m13-q6-over65"
+  },
+  {
+   "id": "m15-q7a-itching-mild",
+   "flow": "men",
+   "changed": "men-q7a: baseline -> \"Itching\"",
+   "result": "\"How severe is the itching?\" appeared on the same screen (answered Mild). Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: PHI1306 (Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309), PHI1309 (Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309). Removed vs baseline: PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221), PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan). Added: PHI1306 (Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309), PHI1309 (Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309).",
+   "run": "runs/m15-q7a-itching-mild"
+  },
+  {
+   "id": "m16-q7a-itching-severe",
+   "flow": "men",
+   "changed": "men-q7a: baseline -> \"Itching\"",
+   "result": "\"How severe is the itching?\" appeared (answered Severe). Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: NO SKU passes, so after the wall the quiz would show the no-results template \"CHOOSE YOUR CONSULTATION TYPE\" (virtual from £200 or clinic from £345).",
+   "run": "runs/m16-q7a-itching-severe"
+  },
+  {
+   "id": "m17-q7a-dandruff-mild",
+   "flow": "men",
+   "changed": "men-q7a: baseline -> \"Dandruff\"",
+   "result": "\"How severe is your dandruff?\" appeared (answered Mild). Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: PHI1306 (Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309), PHI1307 (Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309), PHI1308 (The Healthy Scalp Topical Combination Plan), PHI1309 (Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309), PHI1311 (The 5% Healthy Scalp Combination Plan). Removed vs baseline: PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221), PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan). Added: PHI1306 (Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309), PHI1307 (Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309), PHI1308 (The Healthy Scalp Topical Combination Plan), PHI1309 (Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309), PHI1311 (The 5% Healthy Scalp Combination Plan).",
+   "run": "runs/m17-q7a-dandruff-mild"
+  },
+  {
+   "id": "m18-q7a-eczema-moderate",
+   "flow": "men",
+   "changed": "men-q7a: baseline -> \"Eczema\"",
+   "result": "\"How severe is the eczema?\" appeared (answered Moderate). Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221), PHI1306 (Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309), PHI1309 (Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309). Removed vs baseline: PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan). Added: PHI1306 (Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309), PHI1309 (Men's scalp-symptom plans, SKUs PHI1306 / PHI1307 / PHI1309).",
+   "run": "runs/m18-q7a-eczema-moderate"
+  },
+  {
+   "id": "m19-q7a-redness-mild",
+   "flow": "men",
+   "changed": "men-q7a: baseline -> \"Redness\"",
+   "result": "\"How severe is the redness?\" appeared (answered Mild). Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221). Removed vs baseline: PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan).",
+   "run": "runs/m19-q7a-redness-mild"
+  },
+  {
+   "id": "m20-q7a-psoriasis",
+   "flow": "men",
+   "changed": "men-q7a: baseline -> \"Psoriasis\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221). Removed vs baseline: PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan).",
+   "run": "runs/m20-q7a-psoriasis"
+  },
+  {
+   "id": "m21-q7a-other",
+   "flow": "men",
+   "changed": "men-q7a: baseline -> \"Other\"",
+   "result": "A text box \"Please tell us about the condition\" appeared (filled with a neutral \"Mild flaking\"). Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221). Removed vs baseline: PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan).",
+   "run": "runs/m21-q7a-other"
+  },
+  {
+   "id": "m23-q8-burning",
+   "flow": "men",
+   "changed": "men-q8: baseline -> \"Burning\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: NO SKU passes, so after the wall the quiz would show the no-results template \"CHOOSE YOUR CONSULTATION TYPE\" (virtual from £200 or clinic from £345).",
+   "run": "runs/m23-q8-burning"
+  },
+  {
+   "id": "m24-q9-cancer-psa",
+   "flow": "men",
+   "changed": "men-q9: baseline -> \"I have previously been diagnosed with breast cancer, prostate cancer, or I am currently undergoing PSA (prostate) monitoring\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: NO SKU passes, so after the wall the quiz would show the no-results template \"CHOOSE YOUR CONSULTATION TYPE\" (virtual from £200 or clinic from £345).",
+   "run": "runs/m24-q9-cancer-psa"
+  },
+  {
+   "id": "m25-q9-bp",
+   "flow": "men",
+   "changed": "men-q9: baseline -> \"I have uncontrolled low or high blood pressure\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: PHI1220 (Men's SKU PHI1220), PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan). Removed vs baseline: PHI1221 (Men's SKU PHI1221).",
+   "run": "runs/m25-q9-bp"
+  },
+  {
+   "id": "m26-q9-depression-accept",
+   "flow": "men",
+   "changed": "men-q9: baseline -> \"I am experiencing, or have previously experienced, depression, anxiety or panic disorders\"",
+   "result": "The finasteride mood warning (men-q9e) appeared on the same screen; answered \"I'm happy to be recommended Finasteride\". Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: NO SKU passes, so after the wall the quiz would show the no-results template \"CHOOSE YOUR CONSULTATION TYPE\" (virtual from £200 or clinic from £345).",
+   "run": "runs/m26-q9-depression-accept"
+  },
+  {
+   "id": "m27-q9-depression-decline",
+   "flow": "men",
+   "changed": "men-q9: baseline -> \"I am experiencing, or have previously experienced, depression, anxiety or panic disorders\"",
+   "result": "The finasteride mood warning (men-q9e) appeared; answered \"I would not like to be recommended Finasteride\". Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: NO SKU passes, so after the wall the quiz would show the no-results template \"CHOOSE YOUR CONSULTATION TYPE\" (virtual from £200 or clinic from £345).",
+   "run": "runs/m27-q9-depression-decline"
+  },
+  {
+   "id": "m28-q9-baby",
+   "flow": "men",
+   "changed": "men-q9: baseline -> \"I am currently trying for a baby\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: NO SKU passes, so after the wall the quiz would show the no-results template \"CHOOSE YOUR CONSULTATION TYPE\" (virtual from £200 or clinic from £345).",
+   "run": "runs/m28-q9-baby"
+  },
+  {
+   "id": "m29-q10a-yes",
+   "flow": "men",
+   "changed": "men-q10a: baseline -> \"Yes\"",
+   "result": "Two text boxes appeared (medicine names and doses; what they are for), filled neutrally (\"Vitamin D 1000 units daily\", \"General health\"). Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: same SKUs as baseline (PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221), PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan)). No effect on the offer.",
+   "run": "runs/m29-q10a-yes"
+  },
+  {
+   "id": "m30-q11a-minoxidil",
+   "flow": "men",
+   "changed": "men-q11a: baseline -> \"Minoxidil\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: PHI1221 (Men's SKU PHI1221), PHI1303 (Oral Finasteride). Removed vs baseline: PHI1220 (Men's SKU PHI1220), PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1305 (The 5% Combination Plan).",
+   "run": "runs/m30-q11a-minoxidil"
+  },
+  {
+   "id": "m31-q11a-finasteride",
+   "flow": "men",
+   "changed": "men-q11a: baseline -> \"Finasteride\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: PHI1220 (Men's SKU PHI1220), PHI1301 (Minoxidil 5% Scalp Drops). Removed vs baseline: PHI1221 (Men's SKU PHI1221), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan).",
+   "run": "runs/m31-q11a-finasteride"
+  },
+  {
+   "id": "m32-q12a-yes",
+   "flow": "men",
+   "changed": "men-q12a: baseline -> \"Yes\"",
+   "result": "A text box \"Please describe your allergy\" appeared (filled neutrally: hay fever). Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: same SKUs as baseline (PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221), PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan), PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan)). No effect on the offer.",
+   "run": "runs/m32-q12a-yes"
+  },
+  {
+   "id": "m33-q1-temples-q6-50-64",
+   "flow": "men",
+   "changed": "Two changes on purpose (men-q1 = Temples AND men-q6 = 50 to 64)",
+   "result": "Two changes on purpose (men-q1 = Temples AND men-q6 = 50 to 64) to test the code-read age rule, which only applies to Early signs / Temples. Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: PHI1220 (Men's SKU PHI1220), PHI1221 (Men's SKU PHI1221), PHI1301 (Minoxidil 5% Scalp Drops), PHI1302 (The Topical Combination Plan). Removed vs baseline: PHI1303 (Oral Finasteride), PHI1305 (The 5% Combination Plan).",
+   "run": "runs/m33-q1-temples-q6-50-64"
+  },
+  {
+   "id": "w01-q1-pregnant",
+   "flow": "women",
+   "changed": "women-q1: baseline -> \"Yes\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: NO SKU passes, so after the wall the quiz would show the no-results template \"CHOOSE YOUR CONSULTATION TYPE\" (virtual from £200 or clinic from £345).",
+   "run": "runs/w01-q1-pregnant"
+  },
+  {
+   "id": "w02-q2-chemo",
+   "flow": "women",
+   "changed": "women-q2: baseline -> \"Yes\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: NO SKU passes, so after the wall the quiz would show the no-results template \"CHOOSE YOUR CONSULTATION TYPE\" (virtual from £200 or clinic from £345).",
+   "run": "runs/w02-q2-chemo"
+  },
+  {
+   "id": "w03-q3a-overall",
+   "flow": "women",
+   "changed": "women-q3a: baseline -> \"Overall thinning\"",
+   "result": "\"How noticable would you say your Overall Thinning is?\" appeared (answered \"People close to me can notice it\"). Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: same SKUs as baseline (PHI1749 (Women's main hair-loss product, SKU PHI1749), PHI1670 (Women's \"Complete Your Routine\" haircare add-ons)). No effect on the offer.",
+   "run": "runs/w03-q3a-overall"
+  },
+  {
+   "id": "w04-q3a-shedding",
+   "flow": "women",
+   "changed": "women-q3a: baseline -> \"More shedding than usual (in the shower/on my brush)\"",
+   "result": "\"How noticable has your shedding become?\" appeared (answered \"People close to me can notice it\"). Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: PKC145 (Hair Shedding Drops), PHI1668 (Women's \"Complete Your Routine\" haircare add-ons). Removed vs baseline: PHI1749 (Women's main hair-loss product, SKU PHI1749), PHI1670 (Women's \"Complete Your Routine\" haircare add-ons). Added: PKC145 (Hair Shedding Drops), PHI1668 (Women's \"Complete Your Routine\" haircare add-ons).",
+   "run": "runs/w04-q3a-shedding"
+  },
+  {
+   "id": "w06-q3a-patches",
+   "flow": "women",
+   "changed": "women-q3a: baseline -> \"Circular bald patches\"",
+   "result": "\"How noticable are your circular bald patches?\" appeared (answered \"People close to me can notice it\"). Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: NO SKU passes, so after the wall the quiz would show the no-results template \"CHOOSE YOUR CONSULTATION TYPE\" (virtual from £200 or clinic from £345).",
+   "run": "runs/w06-q3a-patches"
+  },
+  {
+   "id": "w09-q4-sudden",
+   "flow": "women",
+   "changed": "women-q4: baseline -> \"It's happened very suddenly\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: same SKUs as baseline (PHI1749 (Women's main hair-loss product, SKU PHI1749), PHI1670 (Women's \"Complete Your Routine\" haircare add-ons)). No effect on the offer.",
+   "run": "runs/w09-q4-sudden"
+  },
+  {
+   "id": "w10-q3a-overall-q4-sudden",
+   "flow": "women",
+   "changed": "Two changes on purpose (women-q3a = Overall thinning AND women-q4 = sudden)",
+   "result": "Two changes on purpose (women-q3a = Overall thinning AND women-q4 = sudden) to contrast with w09. Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: NO SKU passes, so after the wall the quiz would show the no-results template \"CHOOSE YOUR CONSULTATION TYPE\" (virtual from £200 or clinic from £345).",
+   "run": "runs/w10-q3a-overall-q4-sudden"
+  },
+  {
+   "id": "w11-q5a-itching-mild",
+   "flow": "women",
+   "changed": "women-q5a: baseline -> \"Itching\"",
+   "result": "\"How severe is the itching?\" appeared (answered Mild). Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: PHI1749 (Women's main hair-loss product, SKU PHI1749), PHI1688 (Women's \"Complete Your Routine\" haircare add-ons). Removed vs baseline: PHI1670 (Women's \"Complete Your Routine\" haircare add-ons). Added: PHI1688 (Women's \"Complete Your Routine\" haircare add-ons).",
+   "run": "runs/w11-q5a-itching-mild"
+  },
+  {
+   "id": "w14-q5a-psoriasis",
+   "flow": "women",
+   "changed": "women-q5a: baseline -> \"Psoriasis\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: NO SKU passes, so after the wall the quiz would show the no-results template \"CHOOSE YOUR CONSULTATION TYPE\" (virtual from £200 or clinic from £345).",
+   "run": "runs/w14-q5a-psoriasis"
+  },
+  {
+   "id": "w17-q10a-menopause-hrt",
+   "flow": "women",
+   "changed": "women-q10a: baseline -> \"Yes\"",
+   "result": "\"Are you on HRT?\" appeared (answered Yes). Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: same SKUs as baseline (PHI1749 (Women's main hair-loss product, SKU PHI1749), PHI1670 (Women's \"Complete Your Routine\" haircare add-ons)). No effect on the offer.",
+   "run": "runs/w17-q10a-menopause-hrt"
+  },
+  {
+   "id": "w18-q11a-minoxidil",
+   "flow": "women",
+   "changed": "women-q11a: baseline -> \"Minoxidil\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: NO SKU passes, so after the wall the quiz would show the no-results template \"CHOOSE YOUR CONSULTATION TYPE\" (virtual from £200 or clinic from £345).",
+   "run": "runs/w18-q11a-minoxidil"
+  },
+  {
+   "id": "w19-q12a-oral-minoxidil",
+   "flow": "women",
+   "changed": "women-q12a: baseline -> \"I am taking oral minoxidil\"",
+   "result": "Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: NO SKU passes, so after the wall the quiz would show the no-results template \"CHOOSE YOUR CONSULTATION TYPE\" (virtual from £200 or clinic from £345).",
+   "run": "runs/w19-q12a-oral-minoxidil"
+  },
+  {
+   "id": "s01-q1-diagnosed-sebderm",
+   "flow": "scalp",
+   "changed": "scalp-q1: baseline -> \"Yes\"",
+   "result": "\"What was your diagnosis?\" (scalp-q2) appeared, which the baseline (Q1 = No) skips; answered Seborrhoeic Dermatitis. Same later questions otherwise; no warning or stop screen; same account wall as baseline. Site's own rule check in the live page: same SKUs as baseline (PHI1619 (Scalp-assessment products), PHI1635 (Scalp-assessment products)). No effect on the offer.",
+   "run": "runs/s01-q1-diagnosed-sebderm"
+  },
+  {
+   "id": "v-b-men",
+   "flow": "men",
+   "changed": "none (stage 3 fresh baseline replay)",
+   "result": "Same account wall; site rule check gave the recorded six SKUs. Served men rules byte-identical to quiz-definition-men.json (57,128 characters). (stage 3 verify run)",
+   "run": "runs/verify-b-men"
+  },
+  {
+   "id": "v-b-women",
+   "flow": "women",
+   "changed": "none (stage 3 fresh baseline replay)",
+   "result": "Same account wall; PHI1749 + PHI1670 as recorded. Served women rules byte-identical to the saved definition (196,018 characters). (stage 3 verify run)",
+   "run": "runs/verify-b-women"
+  },
+  {
+   "id": "v-b-scalp",
+   "flow": "scalp",
+   "changed": "none (stage 3 fresh baseline replay)",
+   "result": "Same account wall; PHI1619 + PHI1635 as recorded. Served scalp rules byte-identical to the saved definition (49,126 characters). (stage 3 verify run)",
+   "run": "runs/verify-b-scalp"
+  },
+  {
+   "id": "v-m-patchy",
+   "flow": "men",
+   "changed": "men-q1: Temples and Crown -> Patchy (re-test of R5)",
+   "result": "Reached the same account wall (\"Almost done! Your details\"); no warning or stop screen before it. Site rule check in the live page: PHI1220, PHI1221. (stage 3 verify run)",
+   "run": "runs/verify-m-patchy"
+  },
+  {
+   "id": "v-m-bp",
+   "flow": "men",
+   "changed": "men-q9: None of the above -> uncontrolled low or high blood pressure (re-test of R9)",
+   "result": "Reached the same account wall (\"Almost done! Your details\"); no warning or stop screen before it. Site rule check in the live page: PHI1220, PHI1301, PHI1302, PHI1303, PHI1305. (stage 3 verify run)",
+   "run": "runs/verify-m-bp"
+  },
+  {
+   "id": "v-m-dandruff-severe",
+   "flow": "men",
+   "changed": "men-q7a: No conditions -> Dandruff, follow-up men-q7b = Severe (new option; tests R2)",
+   "result": "Reached the same account wall (\"Almost done! Your details\"); no warning or stop screen before it. Site rule check in the live page: NO SKU passes (consultation screen after the wall). (stage 3 verify run)",
+   "run": "runs/verify-m-dandruff-severe"
+  },
+  {
+   "id": "v-m-acne",
+   "flow": "men",
+   "changed": "men-q7a: No conditions -> Acne (new option; tests R4)",
+   "result": "Reached the same account wall (\"Almost done! Your details\"); no warning or stop screen before it. Site rule check in the live page: PHI1220, PHI1221. (stage 3 verify run)",
+   "run": "runs/verify-m-acne"
+  },
+  {
+   "id": "v-m-bleeding",
+   "flow": "men",
+   "changed": "men-q8: None of the above -> Bleeding (new option; tests R1)",
+   "result": "Reached the same account wall (\"Almost done! Your details\"); no warning or stop screen before it. Site rule check in the live page: NO SKU passes (consultation screen after the wall). (stage 3 verify run)",
+   "run": "runs/verify-m-bleeding"
+  },
+  {
+   "id": "v-m-notstarted",
+   "flow": "men",
+   "changed": "men-q4: Gradually -> It's not started yet (new option; tests R1)",
+   "result": "Reached the same account wall (\"Almost done! Your details\"); no warning or stop screen before it. Site rule check in the live page: NO SKU passes (consultation screen after the wall). (stage 3 verify run)",
+   "run": "runs/verify-m-notstarted"
+  },
+  {
+   "id": "v-m-early-over65",
+   "flow": "men",
+   "changed": "Two changes on purpose: men-q1 = Early signs AND men-q6 = Over 65 (tests R6, which needs both)",
+   "result": "Reached the same account wall (\"Almost done! Your details\"); no warning or stop screen before it. Site rule check in the live page: PHI1220, PHI1221, PHI1301, PHI1302. (stage 3 verify run)",
+   "run": "runs/verify-m-early-over65"
+  },
+  {
+   "id": "v-m-itch-moderate",
+   "flow": "men",
+   "changed": "men-q7a: No conditions -> Itching, follow-up men-q7f = Moderate (new option; tests R3)",
+   "result": "Reached the same account wall (\"Almost done! Your details\"); no warning or stop screen before it. Site rule check in the live page: PHI1306, PHI1309. (stage 3 verify run)",
+   "run": "runs/verify-m-itch-moderate"
+  },
+  {
+   "id": "v-m-q2a-extensive",
+   "flow": "men",
+   "changed": "men-q2a: noticeable thinning -> \"My hair has thinned extensively, or been lost entirely, throughout the top region\" (new option)",
+   "result": "Reached the same account wall (\"Almost done! Your details\"); no warning or stop screen before it. Site rule check in the live page: PHI1220, PHI1221, PHI1301, PHI1302, PHI1303, PHI1305. (stage 3 verify run)",
+   "run": "runs/verify-m-q2a-extensive"
+  },
+  {
+   "id": "v-m-tcr-slight",
+   "flow": "men",
+   "changed": "Two changes on purpose: men-q1 = Temples and Crown with reduced density AND men-q2a = scalp slightly visible (the only density answers that let this picture through; tests R5/R10/R27)",
+   "result": "Reached the same account wall (\"Almost done! Your details\"); no warning or stop screen before it. Site rule check in the live page: PHI1220, PHI1221, PHI1305. (stage 3 verify run)",
+   "run": "runs/verify-m-tcr-slight"
+  },
+  {
+   "id": "v-w-sudden",
+   "flow": "women",
+   "changed": "women-q4: gradually over a year -> It's happened very suddenly (re-test of R12)",
+   "result": "Reached the same account wall (\"Almost done! Your details\"); no warning or stop screen before it. Site rule check in the live page: PHI1749, PHI1670. (stage 3 verify run)",
+   "run": "runs/verify-w-sudden"
+  },
+  {
+   "id": "v-w-shedding",
+   "flow": "women",
+   "changed": "women-q3a: wider parting -> More shedding than usual, follow-up women-q3e = People close to me (re-test of R13)",
+   "result": "Reached the same account wall (\"Almost done! Your details\"); no warning or stop screen before it. Site rule check in the live page: PKC145, PHI1668. (stage 3 verify run)",
+   "run": "runs/verify-w-shedding"
+  },
+  {
+   "id": "v-w-bandlike",
+   "flow": "women",
+   "changed": "women-q3a: wider parting -> Bandlike recession (new option; tests R11). No follow-up appeared; the quiz moved straight to Q4.",
+   "result": "Reached the same account wall (\"Almost done! Your details\"); no warning or stop screen before it. Site rule check in the live page: NO SKU passes (consultation screen after the wall). (stage 3 verify run)",
+   "run": "runs/verify-w-bandlike"
+  },
+  {
+   "id": "v-w-temples",
+   "flow": "women",
+   "changed": "women-q3a: wider parting -> Thinning at temples, follow-up women-q3d = People close to me (new option)",
+   "result": "Reached the same account wall (\"Almost done! Your details\"); no warning or stop screen before it. Site rule check in the live page: PHI1749, PHI1670. (stage 3 verify run)",
+   "run": "runs/verify-w-temples"
+  },
+  {
+   "id": "v-w-temples-sudden",
+   "flow": "women",
+   "changed": "Two changes on purpose: women-q3a = Thinning at temples AND women-q4 = It's happened very suddenly (tests the R12 gap from the other side)",
+   "result": "Reached the same account wall (\"Almost done! Your details\"); no warning or stop screen before it. Site rule check in the live page: NO SKU passes (consultation screen after the wall). (stage 3 verify run)",
+   "run": "runs/verify-w-temples-sudden"
+  },
+  {
+   "id": "v-w-redness-mild",
+   "flow": "women",
+   "changed": "women-q5a: none -> Redness, follow-up women-q5c = Mild (new option; tests R11)",
+   "result": "Reached the same account wall (\"Almost done! Your details\"); no warning or stop screen before it. Site rule check in the live page: NO SKU passes (consultation screen after the wall). (stage 3 verify run)",
+   "run": "runs/verify-w-redness-mild"
+  },
+  {
+   "id": "v-w-dandruff-mild",
+   "flow": "women",
+   "changed": "women-q5a: none -> Dandruff, follow-up women-q5b = Mild (new option; tests R25)",
+   "result": "Reached the same account wall (\"Almost done! Your details\"); no warning or stop screen before it. Site rule check in the live page: PHI1749, PHI1688. (stage 3 verify run)",
+   "run": "runs/verify-w-dandruff-mild"
+  },
+  {
+   "id": "v-w-other-allergy",
+   "flow": "women",
+   "changed": "women-q11a: no allergies -> Other, please state (text box filled with a neutral \"Hay fever\") (new option; tests R11)",
+   "result": "Reached the same account wall (\"Almost done! Your details\"); no warning or stop screen before it. Site rule check in the live page: NO SKU passes (consultation screen after the wall). (stage 3 verify run)",
+   "run": "runs/verify-w-other-allergy"
+  },
+  {
+   "id": "v-w-medcond",
+   "flow": "women",
+   "changed": "women-q12a: No -> Yes, I have a medical condition (text box filled with a neutral \"Asthma, uses an inhaler when needed\") (new option)",
+   "result": "Reached the same account wall (\"Almost done! Your details\"); no warning or stop screen before it. Site rule check in the live page: PHI1749, PHI1670. (stage 3 verify run)",
+   "run": "runs/verify-w-medcond"
   }
  ],
  "recommendations": [
@@ -3498,7 +4194,7 @@
     "p-sku1221"
    ],
    "default": "p-5combo",
-   "note": "Recommended group: Topical Combination Plan, 5% Combination Plan, PHI1220, PHI1221. Other group: Minoxidil 5%, Oral Finasteride. The default/first item on the real page is unknown (after the wall). Code result; the live walk confirmed the questions and the wall only.",
+   "note": "Recommended group: Topical Combination Plan, 5% Combination Plan, PHI1220, PHI1221. Other group: Minoxidil 5%, Oral Finasteride. The default/first item on the real page is unknown (after the wall). Code result; the live walk confirmed the questions and the wall only. Live rule check at the wall gave exactly PHI1220, PHI1221, PHI1301, PHI1302, PHI1303, PHI1305 (runs/b-men).",
    "evidence": "code"
   },
   {
@@ -3510,7 +4206,7 @@
     "p-sku1221"
    ],
    "default": "",
-   "note": "Oral finasteride plans drop out.",
+   "note": "Oral finasteride and the 5% Combination Plan drop out (and, for Early signs, PHI1306). Live: runs/m33 (Temples + 50-64), runs/verify-m-early-over65 (Early signs + Over 65): PHI1220, PHI1221, PHI1301, PHI1302.",
    "evidence": "code"
   },
   {
@@ -3540,7 +4236,7 @@
     "p-w-routine"
    ],
    "default": "p-sku1749",
-   "note": "Main product PHI1749 (minoxidil-type, name not found) + haircare add-on PHI1670.",
+   "note": "Main product PHI1749 (minoxidil-type, name not found) + haircare add-on PHI1670. Live rule check at the wall: PHI1749 + add-on PHI1670 (runs/b-women).",
    "evidence": "code"
   },
   {
@@ -3562,30 +4258,162 @@
    "default": "",
    "note": "Consultation route only.",
    "evidence": "code"
+  },
+  {
+   "profile": "Man with mild scalp itching (otherwise baseline)",
+   "offered": [
+    "p-scalp-addons-men"
+   ],
+   "default": "p-scalp-addons-men",
+   "note": "Only the unnamed scalp SKUs PHI1306 and PHI1309; no minoxidil or finasteride plan (live rule check runs/m15).",
+   "evidence": "code"
+  },
+  {
+   "profile": "Man with mild dandruff (otherwise baseline)",
+   "offered": [
+    "p-scalp-addons-men",
+    "p-hs-topcombo",
+    "p-5hs"
+   ],
+   "default": "",
+   "note": "PHI1306, PHI1307, PHI1308 Healthy Scalp Topical Combination Plan (£100), PHI1309, PHI1311 5% Healthy Scalp Combination Plan (£122) (runs/m17).",
+   "evidence": "code"
+  },
+  {
+   "profile": "Man with moderate eczema, psoriasis, redness or other scalp condition",
+   "offered": [
+    "p-sku1220",
+    "p-sku1221",
+    "p-scalp-addons-men"
+   ],
+   "default": "",
+   "note": "Moderate eczema: PHI1220, PHI1221, PHI1306, PHI1309 (runs/m18). Psoriasis, mild redness or other: only PHI1220 and PHI1221 (runs/m19-m21). If those unnamed SKUs are not sold, these men reach the consultation screen.",
+   "evidence": "code"
+  },
+  {
+   "profile": "Man allergic to minoxidil",
+   "offered": [
+    "p-sku1221",
+    "p-fin"
+   ],
+   "default": "",
+   "note": "Oral Finasteride (£40) and PHI1221 only (runs/m30).",
+   "evidence": "code"
+  },
+  {
+   "profile": "Man allergic to finasteride",
+   "offered": [
+    "p-sku1220",
+    "p-min5"
+   ],
+   "default": "",
+   "note": "Minoxidil 5% (£40) and PHI1220 only (runs/m31).",
+   "evidence": "code"
+  },
+  {
+   "profile": "Man with uncontrolled low or high blood pressure",
+   "offered": [
+    "p-sku1220",
+    "p-min5",
+    "p-topcombo",
+    "p-fin",
+    "p-5combo"
+   ],
+   "default": "p-5combo",
+   "note": "Minoxidil plans still offered because of the typo in the blood-pressure blocker; only PHI1221 drops (runs/m25).",
+   "evidence": "code"
+  },
+  {
+   "profile": "Man with early signs of loss (noticeable thinning in some areas), under 50",
+   "offered": [
+    "p-sku1220",
+    "p-sku1221",
+    "p-min5",
+    "p-topcombo",
+    "p-fin",
+    "p-5combo",
+    "p-scalp-addons-men"
+   ],
+   "default": "",
+   "note": "Baseline set plus PHI1306 (runs/m03).",
+   "evidence": "code"
+  },
+  {
+   "profile": "Woman with wider parting whose loss happened very suddenly",
+   "offered": [
+    "p-sku1749",
+    "p-w-routine"
+   ],
+   "default": "p-sku1749",
+   "note": "Same as the baseline woman: sudden onset is not escalated for this picture (runs/w09); the same change with overall thinning goes to consultation (runs/w10).",
+   "evidence": "code"
+  },
+  {
+   "profile": "Woman with mild scalp itching",
+   "offered": [
+    "p-sku1749",
+    "p-w-routine"
+   ],
+   "default": "p-sku1749",
+   "note": "Main product kept; add-on switched to PHI1688 (runs/w11).",
+   "evidence": "code"
+  },
+  {
+   "profile": "Scalp quiz baseline (mild-moderate dandruff, not diagnosed)",
+   "offered": [
+    "p-scalp-range"
+   ],
+   "default": "",
+   "note": "PHI1619 and PHI1635 (names not found); same after a Seborrhoeic Dermatitis diagnosis (runs/b-scalp, runs/s01).",
+   "evidence": "code"
+  },
+  {
+   "profile": "Man, Temples and Crown with reduced density, scalp slightly or very visible",
+   "offered": [
+    "p-5combo",
+    "p-sku1220",
+    "p-sku1221"
+   ],
+   "default": "p-5combo",
+   "note": "Only named plan is the 5% Combination Plan; the 3% plan meant for this case never appears (runs/verify-m-tcr-slight).",
+   "evidence": "code"
+  },
+  {
+   "profile": "Woman with thinning at temples, gradual (otherwise baseline)",
+   "offered": [
+    "p-sku1749",
+    "p-w-routine"
+   ],
+   "default": "p-sku1749",
+   "note": "Same as the baseline woman (runs/verify-w-temples). If the loss was sudden, no SKU passes (runs/verify-w-temples-sudden).",
+   "evidence": "code"
   }
  ],
- "engineSummary": "All logic is client-side and visible. Each product SKU has a rule: \"conditions\" (pattern, density, age, scalp state) that must be true and \"blockers\" (safety answers) that must all be false; questions are matched by their label text. Every SKU that passes is listed, split into \"Recommended\" and \"Other\" groups. If nothing passes, the person is sent to a paid trichologist consultation (virtual from £200, clinic from £345). Results of either kind are shown only after an account is created. The three routes are therefore: subscribe (some SKU passes), consultation (all blocked), and the clinic booking link that skips the quiz.",
+ "engineSummary": "A rules engine that runs in the browser and is fully visible. Each product SKU has \"conditions\" (hair-loss picture, density, age, scalp state) that must be true and \"blockers\" (safety answers) that must all be false; questions are matched by their on-screen label text. The served rules put each passing SKU in a \"Recommended\" or \"Other\" group (the rendered results page itself was not seen); if none passes, the person gets the \"Choose your consultation type\" screen (in-clinic or virtual initial consultation with a booking calendar; the screen shows no price, the clinic price list says virtual from £200, clinic from £345). That is the three-route triage: subscribe (something passes), consultation (everything blocked), or the clinic booking link that skips the quiz. What decides the route: (1) safety answers block everything (men: sudden or not-yet-noticed loss, pain/burning/crusting/bleeding, cancer or PSA monitoring, depression or anxiety, trying for a baby, severe itching or dandruff, allergy to both actives; women: pregnant or breastfeeding, chemotherapy, patches, band-like or other patterns, psoriasis, redness, acne, other or moderate-to-severe scalp symptoms, minoxidil allergy, oral minoxidil); (2) the hair-loss picture picks the product family (men: Temples / Temples and Crown / Early signs get minoxidil, oral finasteride and combination plans; Patchy, Extensive and reduced-density pictures keep only two unnamed SKUs; women: shedding gets cosmetic Hair Shedding Drops, other common pictures get the main SKU PHI1749); (3) mild scalp symptoms swap hair-loss plans for \"Healthy Scalp\" plans; (4) single allergies remove the matching active; men 50+ with Early signs or Temples lose oral finasteride. Family history, density for the common pictures, onset timing within gradual loss, medicines, other allergies, menopause and HRT change nothing. Women's hair type and styling answers only pick a haircare add-on. All of this was checked in 47 stage 2 and 22 stage 3 live replays by running the site's own rule function at the wall (every one matched the served rules, which were byte-identical to the saved copy on 24 Nov 2026); the results screen itself needs an account, and it comes before any result, so nobody learns their route (even a £200+ consultation) until they have registered.",
  "strengths": [
-  "Whole quiz in plain sight and logically simple: a clear triage to subscription or consultation.",
-  "Distinct consultation fallback with a calendar (trichologist or senior trichologist, male or female consultant) instead of a flat refusal.",
-  "Women have their own quiz with scalp-symptom triage and a shedding route (cosmetic drops).",
-  "Scalp-first philosophy: scalp symptoms swap hair-loss plans for scalp plans or a consultation; a separate scalp quiz exists.",
-  "Leaflets state plainly that the products are unlicensed and compounded under pharmacist supervision; the men's start screen makes the person confirm it."
+  "One transparent, simple triage: every product has explicit safety blockers, and anyone who trips one is routed to a paid trichologist consultation rather than refused.",
+  "Consultation fallback is a real service with a calendar (virtual or clinic; trichologist or senior trichologist; male or female consultant).",
+  "Scalp-first approach: mild scalp symptoms swap hair-loss plans for \"Healthy Scalp\" plans; severe symptoms go to a consultation; a separate scalp quiz exists.",
+  "Women have their own quiz with a shedding route (cosmetic Hair Shedding Drops) and a haircare add-on chosen from hair type, length and styling: a natural upsell.",
+  "Strong safety coverage for a short quiz: cancer/PSA, depression with a specific finasteride mood warning, trying for a baby, pregnancy, chemotherapy and oral minoxidil are all screened before any product.",
+  "Men must confirm on the start screen that the finasteride and minoxidil products are unlicensed; leaflets say they are made under pharmacist supervision."
  ],
  "weaknesses": [
-  "Account wall before any result: the person gives name, DOB, email and password before learning whether they get a plan or a £200+ consultation.",
-  "Configuration errors in served rules: blood-pressure blocker has a leading space (minoxidil still offered with uncontrolled BP); the 3% Combination Plan rule can never fire; PHI1230 and PHI1770-1772 can never fire; label typos (\"curerrently\", \"redness??\").",
-  "Women: sudden onset with a widening parting is not routed to a consultation; post-menopausal women are never offered the finasteride drops despite the leaflet saying they suit them; menopause and HRT answers are unused.",
-  "Mixed messages: the men's treatments page says \"FULLY LICENSED - Tested and certified for the UK\" while the leaflets and start screen say unlicensed.",
-  "Different prices for the same product on two store views (oral finasteride £40 vs £42); virtual consultation \"from £150\" on one page and \"from £200\" on the price list; dosing 2 ml vs 2.5 ml on different pages.",
-  "No exact age question (bands only, no under-18 option); no blood pressure or heart questions beyond one tick-box; medicines are free text no rule reads.",
-  "Who prescribes is not stated anywhere seen (trichologists are not prescribers; the leaflet only says \"pharmacist supervision\")."
+  "Account wall before any result: name, date of birth, email and password are taken before the person learns whether they get a plan or must pay £200-£345 for a consultation. The wall screen is identical for both routes (44 live variants checked).",
+  "Configuration errors in the served rules: the blood-pressure blocker has a leading space, so men who tick uncontrolled low or high blood pressure are still offered minoxidil 5% and the combination plans (live runs/m25); the 3% Combination Plan can never be offered; PHI1230 and PHI1770-1772 can never fire; label typos (\"curerrently\", \"redness??\").",
+  "Women: sudden loss with a widening parting is not escalated (live runs/w09), while the same change with overall thinning is (runs/w10); menopause and HRT answers are unused; no finasteride product is ever offered to women online.",
+  "Thin clinical screen: no under-18 answer (age bands start at 18; the women's quiz asks no age at all), one tick-box for blood pressure, no heart, kidney, liver or sexual side-effect questions; medicines and allergies are free text that no rule reads.",
+  "Men with Patchy, Extensive or reduced-density loss, or psoriasis/redness, are not routed to a consultation in the rules; they keep two unnamed SKUs (PHI1220, PHI1221). Whether these are still sold decides what they see.",
+  "Family history and hair density do not change the offer for the common male pictures, and the women's \"how noticeable\" follow-ups are never used: questions that look diagnostic are decoration.",
+  "Mixed messages: the men's page says \"FULLY LICENSED\" while leaflets say unlicensed; prices differ between pages (oral finasteride £40 vs £42; virtual consultation from £150 vs from £200).",
+  "Who prescribes is not stated anywhere public (trichologists are not prescribers; leaflets only say \"pharmacist supervision\")."
  ],
  "opportunities": [
-  "Show the outcome (plan or consultation) before asking for an account, or at least say which route the person is on.",
-  "A prescriber-led women's offer: PK's women's online route is minoxidil-type drops or cosmetic shedding drops only; no spironolactone, no finasteride for post-menopausal women online.",
-  "Clear, consistent licensing and prescriber information as a trust advantage.",
-  "A cheaper, faster path for people PK routes to a £200-£345 consultation (sudden shedding, mild scalp symptoms) with a photo review by a prescriber."
+  "Show the route (plan or consultation, and its price) before asking for an account. PK makes people register before they find out they owe £200+.",
+  "Offer a cheaper middle route for the people PK sends to a £200-£345 consultation (sudden shedding, mild-to-moderate scalp symptoms, patchy loss): a prescriber review with photos at a fixed lower price.",
+  "A prescriber-led women's offer: PK sells women only a minoxidil-type drop or cosmetic shedding drops online; no oral minoxidil, spironolactone or topical finasteride for post-menopausal women, and menopause answers are ignored.",
+  "Use the answers PK collects but ignores (family history, density, menopause, medicines) to personalise strength and expectations: an easy way to look more clinical.",
+  "Clear licensing and prescriber information, and a blood-pressure and heart screen that actually works, as trust signals against a premium brand whose rules contain visible mistakes."
  ],
  "sources": [
   {
@@ -3687,13 +4515,65 @@
   {
    "title": "Hair Shedding Drops",
    "url": "https://www.philipkingsley.co.uk/hair-shedding-drops.html"
+  },
+  {
+   "title": "PK Labs patient leaflet: Topical Minoxidil Scalp Drops 3% and 5% (re-read 24 Nov 2026)",
+   "url": "https://www.philipkingsley.co.uk/pklabs-patient-information-topical-minoxidil"
+  },
+  {
+   "title": "Density Preserving Scalp Drops (www store)",
+   "url": "https://www.philipkingsley.co.uk/density-preserving-scalp-drops.html"
+  },
+  {
+   "title": "Density Drops Trio (www store)",
+   "url": "https://www.philipkingsley.co.uk/density-drops-trio.html"
   }
  ],
  "limitations": [
-  "The results page is behind the account wall, so the real plan list, its order, the default choice and plan-length prices (1/2/3-month) were not seen; product effects come from running the served rules, not from a live results screen.",
-  "The server may hide retired SKUs (for example PHI1220/PHI1221) on the results page; if so, Patchy/Extensive men and men with psoriasis/redness/acne would reach the consultation screen instead. This cannot be tested without an account.",
-  "Product prices are the single prices shown on product pages; whether they are per month or per 3-month delivery is not stated clearly (the pages say the plan \"rolls on a three monthly basis\"; the treatments page says every 1, 2 or 3 months).",
-  "Several SKUs could not be named. Contents of the 3%/5% and Healthy Scalp combination plans are partly inferred from their names.",
-  "Who prescribes and which pharmacy compounds and dispenses was not found in public pages."
- ]
+  "The results screen is behind the account wall, so the plan list as rendered by the server, its order, the default choice and the 1/2/3-month plan prices were not seen. Product effects come from the site's own rule function run in the live page at the wall (47 replays) and from the served rule file; the server could still hide SKUs or show something different after registration.",
+  "The server may hide retired SKUs (for example PHI1220/PHI1221). If so, Patchy/Extensive men and men with psoriasis, redness or other scalp conditions would reach the consultation screen instead. Cannot be tested without an account. A search of the hairloss store for SKU codes returns nothing (even for known SKUs), so it could not settle this.",
+  "Not replayed live (effects taken from the served rules only): men-q2a \"slightly visible\" alone, men-q5 \"Don't know\", men-q6 \"18 to 29\" and \"40 to 49\", moderate dandruff/redness, severe eczema, men-q8 Crusting, men-q9 combinations; women \"something else\", women-q4 \"a few months\", eczema and other symptoms, moderate/severe dandruff and redness, women-q6 to q9 (haircare add-on choices), the scalp quiz beyond Q1/Q2. Every live replay matched the code reading exactly, so these are high-confidence code findings. Stage 3 replayed 12 of the previously untested options (men: extensive density, not started yet, acne, severe dandruff, moderate itching, bleeding; women: thinning at temples, band-like recession, mild redness, mild dandruff, other allergy, medical condition) and all matched the code.",
+  "Some SKUs could not be named (PHI1220, PHI1221, PHI1306, PHI1307, PHI1309, PHI1749, women's add-ons, scalp products). Contents of the combination plans are partly inferred from their names.",
+  "Who prescribes and which pharmacy compounds and dispenses was not found in public pages. Questions after registration (if any), photo upload and the prescriber's review were not seen."
+ ],
+ "verification": {
+  "checked": [
+   "Baselines replayed fresh (runs/verify-b-men, verify-b-women, verify-b-scalp): each reached the same \"Almost done! Your details\" wall, and the site's own rule check gave exactly the recorded SKUs (men PHI1220, PHI1221, PHI1301, PHI1302, PHI1303, PHI1305; women PHI1749 + PHI1670; scalp PHI1619 + PHI1635). Confirmed.",
+   "The rules the live page serves (state.rules) were compared character for character with the saved quiz-definition-*.json files: identical for men (57,128 characters), women (196,018) and scalp (49,126). The no-results (consultation) template is also unchanged. Confirmed.",
+   "Wrote an independent port of the site's rule check from quiz.min.js (scratch/verify/engine.js, not reusing stage 1's engine.py). It predicted all 22 stage 3 live results exactly.",
+   "R1 hard stops: re-tested live with two options never replayed before, men-q8 Bleeding (runs/verify-m-bleeding) and men-q4 \"It's not started yet\" (runs/verify-m-notstarted): no SKU passes. Confirmed.",
+   "R2 severe scalp symptoms: Dandruff + Severe (runs/verify-m-dandruff-severe): no SKU. Confirmed (stage 2 had only tested itching).",
+   "R4 and R5 product removal: Acne (runs/verify-m-acne) and Patchy (runs/verify-m-patchy) leave only the unnamed PHI1220 + PHI1221. Confirmed.",
+   "R6 age rule: Early signs + Over 65 (two changes on purpose, runs/verify-m-early-over65) gives PHI1220, PHI1221, PHI1301, PHI1302: oral finasteride and the 5% Combination Plan are removed. Confirmed; it also removes PHI1306 (added to the rule).",
+   "R9 blood-pressure typo: re-tested live (runs/verify-m-bp, minoxidil plans still pass, only PHI1221 drops) and re-read in the code (the shared blocker value starts with a space in all 16 men's SKUs). Confirmed.",
+   "R10 never-firing 3% Combination Plan: code re-read (the rule asks for \"Temples & Crown with Reduced Density\"; the option says \"Temples and Crown with reduced density\") and the exact intended case replayed (runs/verify-m-tcr-slight): the 5% plan PHI1305 is offered, never PHI1304. Confirmed.",
+   "R11 women consultation triggers: Bandlike recession, mild Redness and an \"Other\" allergy each leave no SKU (runs/verify-w-bandlike, w-redness-mild, w-other-allergy). Confirmed.",
+   "R12 women sudden-onset gap: wider parting + sudden still gets PHI1749 (runs/verify-w-sudden); thinning at temples + sudden gets nothing (runs/verify-w-temples-sudden). Confirmed.",
+   "R13 shedding switch: PKC145 Hair Shedding Drops + add-on PHI1668 replace PHI1749 (runs/verify-w-shedding). Confirmed.",
+   "Product facts re-read on the live pages on 24 Nov 2026 (name, SKU and price all matched): PHI1300 Minoxidil 3% £36, PHI1301 Minoxidil 5% £40, PHI1302 Topical Combination Plan £58, PHI1303 Oral Finasteride £40 (hairloss store) and £42 (www), PHI1304 3% Combination Plan £76, PHI1305 5% Combination Plan £80, PHI1308 Healthy Scalp Topical Combination Plan £100, PHI1310 £118, PHI1311 £122, PHI1223 The Combination Plan £216, PKC145 Hair Shedding Drops £65; clinic price list: in-clinic initial consultation from £345, virtual from £200; virtual page still \"from £150\".",
+   "Actives and strengths re-read in the live PK Labs leaflets: minoxidil 3% and 5% drops with caffeine, zinc and melatonin, 100 ml, 2.5 ml doses; finasteride 1 mg capsule with biotin 500 micrograms and vitamin D 1000 IU; both say \"unlicensed and is made and dispensed under pharmacist supervision\". The men's page still says \"FULLY LICENSED\".",
+   "Evidence labels: every rule marked \"observed\" names a run folder; product effects throughout come from the site's client rule function, so they stay \"code\" (not \"observed\")."
+  ],
+  "corrected": [
+   "Added 22 stage 3 experiments (v-*), proof lines on R1-R6, R9-R13, R24, R25, and three new rules: R27 (reduced-density picture with a visible scalp gets only the 5% Combination Plan, the case the broken 3% plan was meant for), R28 (women's medical-condition text changes nothing), R29 (women's thinning at temples = baseline).",
+   "Option effect types fixed: men-q7a Itching and Dandruff were \"hard-stop\" and Eczema \"product-removed\", but each only opens a severity follow-up whose answer decides (mild/moderate keeps or swaps products); women-q5a Itching, Dandruff and Eczema likewise. Now \"extra-questions\" with the real outcome per severity. Women-q12a \"Yes, I have a medical condition\" and q3a \"Thinning at temples\" also corrected.",
+   "R1 and the engine summary said the consultation screen shows \"virtual from £200, clinic from £345\". The screen shows no prices; those figures come from the clinic price list. Reworded.",
+   "R18, R19, R21 and R26 mixed observed, code and assumed facts under one label. Reworded so each part carries its own label; that a prescriber reads the free-text answers, and any age check on the date of birth, are now stated as unknown or inferred.",
+   "Minoxidil 5% Scalp Drops audience changed from \"both\" to \"men\": its store page says \"male pattern hair loss\" and no women's rule offers it (the 3% page says male and female).",
+   "Strengths that were \"inferred\" are now from the product pages: Healthy Scalp Topical Combination Plan = \"Density+ Minoxidil 5% + Finasteride 0.1% Scalp Drops\"; the 3% and 5% Combination and Healthy Scalp plans contain \"Finasteride 1mg Tablet\" (the leaflet calls it a capsule; noted).",
+   "Hair Shedding Drops actives: the live product page lists melatonin liposome, Sandalore, a botanical blend and zinc; Edelweiss and Baicapil appear only on the women's treatment page. Zinc added and both sources noted.",
+   "Prices: added the live \"Subscribe & Save\" offers (hairloss store: 50% off the first order, 0% after; www store during the Black Friday banner: 20-30% off the first order, 15% after). The market-sweep £28 snippet for minoxidil 5% is explained by the www 30% first-order price.",
+   "Catalogue gap: added two hair-loss products the catalogue missed, Density Preserving Scalp Drops (£55) and Density Drops Trio (£165), both cosmetic www products that no quiz rule offers.",
+   "Limitations list of untested options shortened by the 12 options replayed in this stage."
+  ],
+  "stillUnverified": [
+   "The results page itself (plan list, order, default, plan-length prices) is behind the account wall. All product effects come from the site's client rule function and the served rules; the server could render something different after registration.",
+   "Names and contents of SKUs PHI1220, PHI1221, PHI1306, PHI1307, PHI1309, PHI1749, the women's add-ons and the scalp products. Their product types are inferred from their blockers. Whether PHI1220/PHI1221 are still sold decides whether Patchy/Extensive men and men with psoriasis, redness or acne see a plan or the consultation screen.",
+   "The options still listed in limitations[2] were never replayed live (mostly answers with no effect, moderate or severe follow-ups, the women's haircare add-on choices and most of the scalp quiz). They rest on the code, which matched every one of 69 live replays (47 in stage 2, 22 in stage 3).",
+   "Who prescribes, which pharmacy compounds and dispenses, any questions after registration, photo upload and the clinician review.",
+   "Whether the date of birth on the wall is used to turn away under-18s.",
+   "Density Preserving Scalp Drops and Density Drops Trio prices come from the stage 1 saved pages (23 Nov 2026) and were not re-fetched."
+  ],
+  "verdict": "Trustworthy as labelled for what the quiz asks and how its rules decide. The served rule set was byte-identical to the saved copy, the three baselines reproduced exactly, and 19 more live replays (12 on options nobody had tested) each matched an independent port of the site's own rule check, so every \"code\" rule in this file can be relied on as a description of the client-side engine on 24 Nov 2026. No rule was contradicted. The main errors found were labelling, not substance: option effect types that called a severity follow-up a hard stop, prices attributed to a screen that does not show them, a few assumptions written as fact, one wrong audience and two missing cosmetic products; all are fixed. The real limit is the account wall: nobody has seen the rendered results page, and six SKUs (including the women's main product PHI1749) remain unnamed, so \"what product a person finally sees\" is a strong code-based prediction, not an observation."
+ }
 }

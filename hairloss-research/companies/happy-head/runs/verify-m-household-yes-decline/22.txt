@@ -1,0 +1,20 @@
+STEP 22 click "No"
+URL: https://www.form.happyhead.com/get-started-now/?l=false&email_capture=sms_capture&ph=true&_stsgnoredir=1
+TITLE: Get Started Now | Happy Head
+
+--- VISIBLE TEXT ---
+BACK
+When did you last see a doctor for a check-up?
+Within the last year
+Within the last 2 years
+Within the last 3-5 years
+Over 5 years ago
+Why we ask
+This helps our dermatologists better understand your recent medical care and overall health history.
+Your information is secure and always kept private.
+
+--- CONTROLS ---
+
+
+--- LINKS ---
+

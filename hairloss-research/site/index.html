@@ -248,7 +248,7 @@ select { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px soli
     const items = lib ? lib.filter(x => x.kind === kind) : [];
     if (!items.length) return `<header class="stack"><h1>${kind === 'blueprint' ? 'Our company' : 'Background research'}</h1></header><p class="empty">${kind === 'blueprint' ? 'The plan for the new company is being written. It appears here once the competitor research is complete.' : 'The background research is still being fact-checked.'}</p>`;
     const cur = items.find(x => x.id === S.doc) || items[0]; const body = await getOpt(cur.file);
-    return `<header class="stack"><h1>${kind === 'blueprint' ? 'Our company' : 'Background research'}</h1><p class="lede">${kind === 'blueprint' ? 'The competitor we would build, based on the gaps found in every company above.' : 'The clinical evidence, the UK rules, what customers complain about and the market numbers. Each file was fact-checked by a second reviewer.'}</p></header>
+    return `<header class="stack"><h1>${kind === 'blueprint' ? 'Our company' : 'Background research'}</h1><p class="lede">${kind === 'blueprint' ? 'The competitor we would build, based on the gaps found in every company above.' : 'The clinical evidence, the UK rules, what customers complain about and the market numbers. These were fact-checked by a second reviewer; the two market sweeps (other sellers) were not.'}</p></header>
       <div class="tabs" role="tablist">${items.map(x => `<button role="tab" aria-selected="${x.id === cur.id}" data-doc="${esc(x.id)}">${esc(x.title)}</button>`).join('')}</div>
       <section class="card md">${body ? mdHtml(body.markdown) : '<p class="empty">Could not load this file.</p>'}</section>`;
   }

@@ -1,0 +1,93 @@
+[
+ {
+  "n": 3,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nYour details\nWhat was your sex at birth?\nMale\nFemale\nNext",
+  "sig": "100013",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "100013",
+    "type": "SINGLE_CHOICE",
+    "title": "Your details",
+    "text": "What was your sex at birth?",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "Male",
+     "Female"
+    ],
+    "optionIds": [
+     "100013$88",
+     "100013$89"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "100013": "Male"
+  }
+ },
+ {
+  "n": 4,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nYour details\nWhat is your date of birth?\nFor example: 31 3 1980\nDay\nMonth\nYear\nNext\nBack",
+  "sig": "100014",
+  "title": "HL",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": [
+   {
+    "id": "100014",
+    "type": "DATE_OF_BIRTH",
+    "title": "Your details",
+    "text": "What is your date of birth?",
+    "required": true,
+    "explanationAvailable": false,
+    "options": [
+     "For example: 31 3 1980"
+    ],
+    "optionIds": [
+     "100014$100011"
+    ],
+    "cards": []
+   }
+  ],
+  "answered": {
+   "100014": {
+    "dob": [
+     15,
+     6,
+     2009
+    ]
+   }
+  }
+ },
+ {
+  "n": 5,
+  "url": "https://core.onlinedoctor.lloydspharmacy.com/consultation/current",
+  "text": "Exit consultation\nYour details\nWhat is your date of birth?\nFor example: 31 3 1980\nDay\nMonth\nYear\nI confirm I am\n17\nyears old\nBack",
+  "sig": "QUESTIONNAIRE_END",
+  "stepState": "QUESTIONNAIRE_END",
+  "flags": {
+   "summaryRequiredBeforeStep": false,
+   "registrationRequiredBeforeStep": false,
+   "fastSummaryRequiredBeforeStep": false
+  },
+  "questions": []
+ },
+ {
+  "n": 6,
+  "url": "https://onlinedoctor.lloydspharmacy.com/pages/under-18s",
+  "noStep": true,
+  "text": "Save £50 on your first weight loss consultation with code BFRIDAY50. From £49.99^. Terms and conditions apply.\n\nBasket\nAccount\nClose ×\n\nWhich service do you want to login to?\n\nLog in or Register\n\nWeight Loss\nWeight loss\nWeight loss injections\nWeight loss tablets\nWegovy tablets\nFoundayo tablets\nMounjaro\nWegovy\nWeight management app\nWeight management advice hub\nSexual Health\nSTI test kits\n4-In-1 STI test kit: Chlamydia, gonorrhoea, syphilis & HIV\nAt home HIV test kit\nChlamydia and Gonorrhoea STI test kits\nChlamydia, Gonorrhoea & Trichomoniasis tests\nGenital photo assessment service\nSTI treatments\nContraception & birth control pills\nMorning after pill\nErectile dysfunction (ED) treatments\nViagra Connect (branded Sildenafil)\nCialis (Branded Tadalafil)\nED Combo Pack\nSildenafil Tablets\nTadalafil Tablets\nSpedra\nPremature ejaculation (PE) treatments\nEMLA Cream\nPriligy\nHPV vaccine\nSexual health & relationships advice hub\nMen's Health\nErectile dysfunction (ED) treatments\nPremature ejaculation (PE) treatments\nHair loss treatments\nFinasteride tablets\nPropecia\nSons Minoxidil spray\nHair loss tablets\nDual Action - Tablet + Spray\nDual Action - Tablets\nSTI tests kits\nSTI treatments\nMen's home blood test\nMen's health advice hub\nWomen's Health\nCystitis & UTI treatment\nContraception & birth control pills\nMorning after pill\nPeriod delay tablets\nFemale facial hair removal\nSTI tests kits\nSTI treatments\nWomen's home blood test\nWomen's health advice hub\nGeneral Health\nHome blood tests\nMigraine tablets\nAcne treatments\nAsthma treatments\nAllergy and hay fever\nStop smoking aids\nOccupational health\nWeight loss treatments\nAdvice health hub\nWeight Loss\nSexual Health\nMen's Health\nWomen's Health\nGeneral Health\nTravel Health\nConfidential assessment\nReviewed by clinicians\nClick & Collect or delivery to your door\nHome / We do not treat under 18s\nJump to section\nWhat to do next\nWe do not treat under 18s\n\nPlease see a doctor in person for treatment and medical advice.\n\nWhat to do next\n\nWe strongly advise you to see a doctor in person.\n\nMake an appointment with your GP.\nContact your out-of-hours GP if it's a weekend or evening (call your GP surgery for details).\nVisit your local NHS walk-in centre without an appointment.\nVisit an NHS STI clinic for sexual health problems or contraception. These provide services tailored to young people and are very discreet.\nVisit a Brook clinic for confidential sexual health services tailored to the under-25s.\nCall NHS direct on 111 for advice over the phone.\nCall 999 for all medical emergencies, or visit a local A&E department.\n\nIf you need emergency contraception you should get this urgently from your GP, local sexual health clinic, or a pharmacy.\n\nDo not attempt to re-register using an incorrect date of birth; this will be treated as fraud and your information may be passed to social services. If you do not enter your true age and personal details, any advice or treatment you receive may be harmful to your health.\n\nIf you entered your date of birth incorrectly by mistake, please contact our Customer Services team on 020 7989 9888.\n\nRegulated and certified\nCustomer services\n\nOnline Doctor 020 7989 9888\nMon-Fri: 9am-5pm\nSat: 9am-1pm\nContact us\n\nPatient support & Our company\nFAQs\nDelivery & collection\nPayment information\nStudent & graduates\nAbout us\nMeet the clinical team\nPatient guide\nLloydsPharmacy stores\nAffiliates program\nTerms and conditions\nRegulations\nCookies notice\nCookie preferences\nPrivacy notice\nSitemap\nOnline Doctor services & Useful sites\nWeight loss treatments\nErectile dysfunction treatments\nHair loss treatments\nContraception & birth control\nSexual health\nWomen's health\nMen's health\nGeneral health\nLloydsPharmacy\n\n©2026 Expert Health Limited. All rights reserved\n\nGPhC registration no. 9011437\n\n*Available on orders approved before 5pm Monday–Friday. Weekend cut-off times apply. Exclusions apply. See \nhere\n for full next day delivery details and terms.\n\nFind us on social media\n    "
+ }
+]
