@@ -178,7 +178,7 @@ Suggested order:
   answer to No, so only screen 03 counts). Scalp red flags, NHS and GP consents behaved as the definition says.
 - Validate: `node tools/validate.js sons --stage rules` passes (43 rules, 73 experiments, 16 profiles).
 
-## 11. Stage 3 (VERIFY), 24 Nov 2026 (in progress)
+## 11. Stage 3 (VERIFY), 24 Nov 2026
 
 - An earlier stage 3 attempt (23 Nov evening) left 12 run folders `runs/verify-*` and no notes. This attempt kept them, read
   every one, and continued. Its findings are written into `scripts/verify-results.json` (hand-written results) and applied by
@@ -189,3 +189,22 @@ Suggested order:
   (offline re-run of the newer rules, `runs/verify-offline/`), `verify-products.sh` + `verify-products.js` (live product
   pages, `runs/verify-products/`), `verify-catalogue.sh` (live product sitemap), `verify-compare.js` (screen-by-screen
   diff of two run folders), `verify-labels.js` (every "observed" claim must name an existing run folder).
+- Replays: 12 from the earlier attempt (`verify-beard-bodyloss-yes` was cut off at step 11; redone as `-2`) plus 8 here:
+  `verify-beard-bodyloss-yes-2`, `verify-beard-eczema`, `verify-beard-other-face`, `verify-clinic-1`, `verify-clinic-2`,
+  `verify-clinic-future`, `verify-clinic-future-continue`, `verify-clinic-past`. One browser at a time, foreground only.
+- Results:
+  - Baselines replay identically (13/13 men's screens, 3/3 women's). Survey definition unchanged (0 differences).
+  - Both copies of the recommendation code are still served byte-for-byte unchanged; every high-consequence product rule
+    (R13, R15, R17, R18, R20, R21, R22, R25, R28, R29) matches both copies and an independent offline re-run. None contradicted.
+  - 14 live product pages: every 6-month price matches; all 30 products in the live product sitemap are in the catalogue.
+  - Corrections: proof named a missing folder `runs/s2-baseline-women` (now `runs/baseline-women`); 48 "observed" items named
+    no run (now they do; none had to be downgraded); 17 code-labelled questions seen live upgraded with proof; beard Female is
+    not a silent dead end (Continue shows an unrelated email-domain error, explained by the survey's completion handler);
+    beard "not willing to proceed" after the psoriasis warning has no effect; eczema gets no warning.
+  - New: partner-clinic route (`shop.sons.co.uk/clinics/british-hair-clinic`): treatment type (only "Hair Transplant") →
+    procedure date → free post-op pack offer only if the date is within the next two months → "Create your account" form
+    (mailing list pre-ticked) before any medical question. Code: chunk `4062-18354781e29ab8fb.js` in `runs/verify-clinic-code/`
+    then opens `/consultation?clinic_consultation=pre|post|free&logged_in=true`. Rules R44, R45.
+- Still unproven: anything behind an account form (recommendation page, server overrides, prescriber decisions, age rules,
+  clinic consultations), legal class of the minoxidil spray and ketoconazole shampoo (a web search found PL 50640/0001 held
+  by Careforsons but no UK supply category).

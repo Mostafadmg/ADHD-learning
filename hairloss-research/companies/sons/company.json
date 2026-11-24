@@ -15,12 +15,12 @@
    "site-code",
    "public-docs"
   ],
-  "accountWall": "After the last consent screen (finasteride statement). The next screen is an account form (first name, last name, email, phone, date of birth, password) titled \"Based on your questionnaire results, we are now preparing your personalised health plan. Please complete your account set up to continue.\" No recommendation, product or price is shown before it. Pressing \"Get my personalised plan\" creates the account and sends the consultation together. Answering \"Yes\" to \"Are you an existing Sons customer?\" hits the sign-in page at question 1.",
+  "accountWall": "Hair and beard flows: after the last consent screen (finasteride statement in the hair flow). The next screen is an account form (first name, last name, email, phone, date of birth, password) titled \"Based on your questionnaire results, we are now preparing your personalised health plan. Please complete your account set up to continue.\" No recommendation, product or price is shown before it. Pressing \"Get my personalised plan\" creates the account and sends the consultation together. Answering \"Yes\" to \"Are you an existing Sons customer?\" hits the sign-in page at question 1. Partner-clinic pages: the account form (\"Create your account\") comes straight after treatment type and procedure date, before any medical question.",
   "blockers": [
    "sons.co.uk/agents.md (listed in the sitemap) returned a Cloudflare \"Verifying your connection\" check to curl; not pursued.",
    "The recommendation, plan length, basket, checkout, identity check and prescriber review all sit behind the account form. Their rules were read from served code and run offline, never seen live."
   ],
-  "coverageNote": "Stage 1 walked the baseline man to the account form and saw every conditional screen. Stage 2 replayed both baselines and then 45 one-change experiments live, each ending on the account form, the female stop notice or the sign-in page. Because no plan is shown before the account form, product effects could not be seen live: instead both copies of the recommendation code that the site serves to every visitor were run offline on the same one-change answers (28 further offline-only cases, plus all 32,768 combinations of the answers the code reads). Nothing behind the account form was tested: no account, email, phone number, date of birth, photo, payment or order was entered or created."
+  "coverageNote": "Stage 1 walked the baseline man to the account form and saw every conditional screen. Stage 2 replayed both baselines and then 45 one-change experiments live, each ending on the account form, the female stop notice or the sign-in page. Because no plan is shown before the account form, product effects could not be seen live: instead both copies of the recommendation code that the site serves to every visitor were run offline on the same one-change answers (28 further offline-only cases, plus all 32,768 combinations of the answers the code reads). Stage 3 (24 Nov 2026) replayed the baselines and the stop rules again (20 live replays in all), walked the partner-clinic route to its account form, confirmed that the survey definition and both copies of the recommendation code are unchanged, re-ran the newer code offline, and checked 14 live product pages and the product sitemap. Nothing behind an account form was tested: no account, email, phone number, date of birth, photo, payment or order was entered or created."
  },
  "products": [
   {
@@ -46,7 +46,8 @@
     "oral-tablet"
    ],
    "ageOnPage": "18-75",
-   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Finasteride_PIL_04.06.pdf"
+   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Finasteride_PIL_04.06.pdf",
+   "checkedLive": "Live product page checked 24 Nov 2026 (runs/verify-products/finasteride.html, variants in runs/verify-products/variants.json): list prices £29 for 1 month, £83 for 3 months, £136 for 6 months, £272 for 12 months; the 6-month price matches this entry. Actives: page title 'Buy Oral tablet 1mg'; text 'dose for treating male pattern hair loss is 1mg'."
   },
   {
    "id": "p-min",
@@ -70,7 +71,8 @@
     "minoxidil"
    ],
    "ageOnPage": "18-65",
-   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Minoxidil_PIL_2C_v5_2C_260526.pdf"
+   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Minoxidil_PIL_2C_v5_2C_260526.pdf",
+   "checkedLive": "Live product page checked 24 Nov 2026 (runs/verify-products/minoxidil.html, variants in runs/verify-products/variants.json): list prices £33 / £54 / £99 / £180 for 1 / 3 / 6 / 12 months; the 6-month price matches this entry. Actives: page FAQ: '5% Minoxidil solution'."
   },
   {
    "id": "p-oralmin",
@@ -99,7 +101,8 @@
     "oral-capsule"
    ],
    "ageOnPage": "18-65",
-   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_Oral_Minoxidil__Biotin_PIL_Outlined_4.pdf"
+   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_Oral_Minoxidil__Biotin_PIL_Outlined_4.pdf",
+   "checkedLive": "Live product page checked 24 Nov 2026 (runs/verify-products/oral-minoxidil.html, variants in runs/verify-products/variants.json): list prices £77 for 3 months, £142 for 6 months (no 1-month option); the 6-month price matches this entry. Actives: text 'recommended daily dose of our Hair Loss Capsule is 2.5mg (one capsule)'."
   },
   {
    "id": "p-oralmin5",
@@ -122,7 +125,8 @@
    "handles": [
     "oral-minoxidil-5mg"
    ],
-   "ageOnPage": "18-65"
+   "ageOnPage": "18-65",
+   "checkedLive": "Live product page checked 24 Nov 2026 (runs/verify-products/oral-minoxidil-5mg.html, variants in runs/verify-products/variants.json): list prices £105.30 for 3 months, £187.20 for 6 months; the 6-month price matches this entry. Actives: text 'daily dose of our Hair Loss Capsule is 2 x 2.5mg'."
   },
   {
    "id": "p-topfin",
@@ -145,7 +149,8 @@
    "handles": [
     "topical-hair-loss-spray"
    ],
-   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Topical_Finasteride_PIL_Site_Version.pdf"
+   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Topical_Finasteride_PIL_Site_Version.pdf",
+   "checkedLive": "Live product page checked 24 Nov 2026 (runs/verify-products/topical-hair-loss-spray.html, variants in runs/verify-products/variants.json): list prices £83 for 3 months, £136 for 6 months; the 6-month price matches this entry. Actives: strength 0.15% not printed on the page; it comes from the served dose table (identical file today)."
   },
   {
    "id": "p-combospray",
@@ -178,7 +183,8 @@
    ],
    "ageOnPage": "18-70",
    "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_MinoFinaTret_Topical_PIL_1126_site.pdf",
-   "strengthNote": "Strengths are from the November 2026 leaflet and the shop app code. The topical finasteride product page still says its 0.15% is \"slightly higher\" than the Combination Spray, which suggests the page text predates a reformulation."
+   "strengthNote": "Strengths are from the November 2026 leaflet and the shop app code. The topical finasteride product page still says its 0.15% is \"slightly higher\" than the Combination Spray, which suggests the page text predates a reformulation.",
+   "checkedLive": "Live product page checked 24 Nov 2026 (runs/verify-products/topical-finasteride-minoxidil-spray.html, variants in runs/verify-products/variants.json): list prices £106 for 3 months, £189 for 6 months; the 6-month price matches this entry. Actives: page says 'With Tretinoin for use once daily, 90 day supply per bottle'; strengths from the served dose table."
   },
   {
    "id": "p-combocap",
@@ -211,7 +217,8 @@
     "combination-capsule-ads"
    ],
    "ageOnPage": "18-70",
-   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_Combo_Cap_Leaflet_01_Site.pdf"
+   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_Combo_Cap_Leaflet_01_Site.pdf",
+   "checkedLive": "Live product page checked 24 Nov 2026 (runs/verify-products/combination-capsule.html, variants in runs/verify-products/variants.json): list prices £32 for 1 month, £106 for 3 months, £189 for 6 months; the 6-month price matches this entry."
   },
   {
    "id": "p-dutaspray",
@@ -242,7 +249,8 @@
    "handles": [
     "dutasteride-combination-spray"
    ],
-   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_Dutasteride_Mino_Tret_PIL_0726.pdf"
+   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_Dutasteride_Mino_Tret_PIL_0726.pdf",
+   "checkedLive": "Live product page checked 24 Nov 2026 (runs/verify-products/dutasteride-combination-spray.html, variants in runs/verify-products/variants.json): list prices £111 for 3 months, £199 for 6 months; the 6-month price matches this entry. Actives: page: 'combines dutasteride with minoxidil and tretinoin'."
   },
   {
    "id": "p-keto",
@@ -265,7 +273,8 @@
    "handles": [
     "ketoconazole",
     "ketoconazole-1"
-   ]
+   ],
+   "checkedLive": "Live product page checked 24 Nov 2026 (runs/verify-products/ketoconazole.html, variants in runs/verify-products/variants.json): list prices £9.49 for 3 months, £16 for 6 months; the 6-month price matches this entry. Actives: page title 'Ketoconazole 2% Anti-Dandruff Shampoo'."
   },
   {
    "id": "p-hgc",
@@ -288,7 +297,8 @@
    "handles": [
     "hair-growth-complex",
     "hair-growth-complex-1"
-   ]
+   ],
+   "checkedLive": "Live product page checked 24 Nov 2026 (runs/verify-products/hair-growth-complex.html, variants in runs/verify-products/variants.json): list prices £35 / £96 / £168 / £300 for 1 / 3 / 6 / 12 months; the 6-month price matches this entry."
   },
   {
    "id": "p-biotin",
@@ -310,7 +320,8 @@
    "evidence": "docs",
    "handles": [
     "biotin"
-   ]
+   ],
+   "checkedLive": "Live product page checked 24 Nov 2026 (runs/verify-products/biotin.html, variants in runs/verify-products/variants.json): list prices £12.99 / £30 / £54 / £96 for 1 / 3 / 6 / 12 months; the 6-month price matches this entry."
   },
   {
    "id": "p-shampoo",
@@ -459,7 +470,8 @@
    "handles": [
     "the-duo-plan"
    ],
-   "ageOnPage": "18-65"
+   "ageOnPage": "18-65",
+   "checkedLive": "Live product page checked 24 Nov 2026 (runs/verify-products/the-duo-plan.html, variants in runs/verify-products/variants.json): list prices £43 / £106 / £189 / £378 for 1 / 3 / 6 / 12 months; the 6-month price matches this entry."
   },
   {
    "id": "p-core-cap",
@@ -612,7 +624,8 @@
    "evidence": "code",
    "handles": [
     "the-non-prescription-plan"
-   ]
+   ],
+   "checkedLive": "Live product page checked 24 Nov 2026 (runs/verify-products/the-non-prescription-plan.html, variants in runs/verify-products/variants.json): list prices £42 / £109 / £198 / £380 for 1 / 3 / 6 / 12 months; the 6-month price matches this entry."
   },
   {
    "id": "p-advanced",
@@ -812,9 +825,9 @@
    "audience": "men",
    "legalStatus": "Not medicines.",
    "price": "£0 (gift)",
-   "priceDetail": "Welcome Pack: free with selected first 6-month plans during the offer. Free Care Pack \"worth £49.99\": for men referred by a partner transplant clinic who give a procedure date.",
+   "priceDetail": "Welcome Pack: free with selected first 6-month plans during the offer. Free post-op pack \"worth £49.99\" (neck pillow, aluminium saline spray bottle, anti-itch shampoo, Hair Growth Complex supplement; \"shipping costs may apply\"): offered on a partner-clinic page only when the procedure date is within the next two months (seen live, runs/verify-clinic-future; not offered for a past date, runs/verify-clinic-past).",
    "url": "https://sons.co.uk/products/the-sons-welcome-pack",
-   "recommendedWhen": "Gift logic, not clinical.",
+   "recommendedWhen": "Gift logic, not clinical. Post-op pack: partner-clinic route with a procedure date after today and no more than two months ahead.",
    "evidence": "docs"
   },
   {
@@ -843,7 +856,8 @@
     "beard-booster"
    ],
    "ageOnPage": "18-75",
-   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_Beard_Booster_PIL_A522UKA01_260526.pdf"
+   "leaflet": "https://cdn.shopify.com/s/files/1/0255/7725/9086/files/Sons_Beard_Booster_PIL_A522UKA01_260526.pdf",
+   "checkedLive": "Live product page checked 24 Nov 2026 (runs/verify-products/beard-booster.html, variants in runs/verify-products/variants.json): list prices £46 for 1 month, £105 for 3 months, £180 for 6 months; the 6-month price matches this entry."
   }
  ],
  "flows": [
@@ -2920,7 +2934,7 @@
      "options": [
       {
        "label": "I accept",
-       "effect": "Required tick.",
+       "effect": "Required tick (seen live, runs/s2-baseline-men).",
        "effectType": "next-question",
        "affects": [
         "p-beard"
@@ -3001,16 +3015,16 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "Opens a required free-text box about hair loss on the rest of the body (definition: visibleIf {5173} = 1). No stop.",
+       "effect": "Opens a required free-text box \"Please tell us more about your hair loss on the rest of your body?\"; no warning and no stop, the flow carries on to the minoxidil question and ends on the account form (seen live, runs/verify-beard-bodyloss-yes-2).",
        "effectType": "extra-questions",
        "affects": [
         "p-beard"
        ],
-       "evidence": "code"
+       "evidence": "observed"
       },
       {
        "label": "No",
-       "effect": "Moves on.",
+       "effect": "Moves on (seen live, runs/exp-38).",
        "effectType": "next-question",
        "affects": [
         "p-beard"
@@ -3063,7 +3077,7 @@
       },
       {
        "label": "No",
-       "effect": "Moves on.",
+       "effect": "Moves on (seen live, runs/exp-38).",
        "effectType": "next-question",
        "affects": [
         "p-beard"
@@ -3152,7 +3166,7 @@
       },
       {
        "label": "No",
-       "effect": "Moves on.",
+       "effect": "Moves on (seen live, runs/exp-38).",
        "effectType": "next-question",
        "affects": [
         "p-beard"
@@ -3188,12 +3202,12 @@
       },
       {
        "label": "Eczema",
-       "effect": "No extra screen in the definition: the \"willing to proceed\" question is tied to Psoriasis only, although its wording also names eczema. Stored for the prescriber.",
-       "effectType": "flag-for-clinician",
+       "effect": "No extra screen and no warning: the next screen is the account form (seen live, runs/verify-beard-eczema), although the psoriasis warning text names eczema too. Stored for the prescriber.",
+       "effectType": "none",
        "affects": [
         "p-beard"
        ],
-       "evidence": "code"
+       "evidence": "observed"
       },
       {
        "label": "Scalp/skin infections",
@@ -3206,12 +3220,12 @@
       },
       {
        "label": "Any other medical conditions/operations' affecting the face/beard area",
-       "effect": "Opens a required free-text box about the face (definition: visibleIf {5179} = 3).",
+       "effect": "Opens a required free-text box \"Please, can you tell us more about the issues that you have with your face?\", then the account form; no stop (seen live, runs/verify-beard-other-face).",
        "effectType": "extra-questions",
        "affects": [
         "p-beard"
        ],
-       "evidence": "code"
+       "evidence": "observed"
       },
       {
        "label": "None of these",
@@ -3305,10 +3319,10 @@
   },
   {
    "id": "clinic",
-   "name": "Partner hair-transplant clinic entry",
+   "name": "Partner hair-transplant clinic entry (account form comes before any medical question)",
    "audience": "men",
    "entryUrl": "https://shop.sons.co.uk/clinics/british-hair-clinic",
-   "stagesSummary": "Clinic landing page (treatment type, procedure date) → the standard hair consultation with the clinic attached → clinic recommendation page with the clinic's own pre-/post-procedure plan list. Only the landing page was opened.",
+   "stagesSummary": "Clinic landing page: treatment type (one option, Hair Transplant) → procedure date → free post-op pack offer (only if the procedure is within the next two months) → ACCOUNT WALL (account form, mailing-list box ticked by default) → the hair consultation with the clinic attached (clinic_consultation=pre, post or free) → clinic recommendation page. Walked live to the account form in stage 3 (runs/verify-clinic-future-continue, runs/verify-clinic-past); everything after the form is from served code.",
    "questions": [
     {
      "id": "clinic-q1",
@@ -3320,19 +3334,17 @@
      "required": true,
      "options": [
       {
-       "label": "transplant (the only value in the clinic record for British Hair Clinic; the on-screen label was not opened)",
-       "effect": "Not opened. From the clinic record the page downloads: the record carries separate pre-procedure and post-procedure plan lists, so the answer and the procedure date pick which list the man sees after the standard questionnaire. Exact effect unknown.",
-       "effectType": "product-switched",
-       "affects": [
-        "p-transplant-bundle"
-       ],
-       "evidence": "code"
+       "label": "Hair Transplant",
+       "effect": "The only option in the picker (seen live, runs/verify-clinic-1). Continue opens the procedure-date question (runs/verify-clinic-2). The answer is sent with the account form as treatment_type (served code, chunk 4062); no other effect was seen.",
+       "effectType": "next-question",
+       "affects": [],
+       "evidence": "observed"
       }
      ],
      "purpose": "Partner hair-transplant clinic landing page. Ties the man to the clinic and to a pre- or post-procedure plan list.",
      "engineRole": "product-selector",
      "branches": true,
-     "branchDetail": "Leads to a procedure date question, then the standard consultation with clinic_id attached.",
+     "branchDetail": "Leads to the procedure-date question (runs/verify-clinic-2).",
      "shownWhen": "on shop.sons.co.uk/clinics/<clinic>",
      "evidence": "observed",
      "proof": "Seen live in runs/page-clinic, runs/verify-clinic-1, runs/verify-clinic-2 and 3 more run folders"
@@ -3346,13 +3358,47 @@
      "type": "date",
      "required": true,
      "options": [],
-     "purpose": "Decides pre-op versus post-op plans and the free post-op pack (\"You're eligible for a free* post-op transplant pack worth £49.99\").",
+     "purpose": "Decides whether the free post-op pack is offered and which version of the consultation (pre, post or free) follows the account form.",
      "engineRole": "product-selector",
-     "branches": false,
-     "branchDetail": "",
+     "branches": true,
+     "branchDetail": "A date after today and no more than two months ahead adds a free post-op pack offer screen before the account form (runs/verify-clinic-future). A past date goes straight to the account form (runs/verify-clinic-past). Served code (chunk 4062-18354781e29ab8fb.js, saved in runs/verify-clinic-code) also sends the man, after sign-up, to /consultation?clinic_consultation=post (date today or earlier), =pre (more than two months ahead) or =free (within two months).",
      "shownWhen": "after treatment type",
      "evidence": "observed",
      "proof": "Seen live in runs/verify-clinic-2, runs/verify-clinic-future, runs/verify-clinic-future-continue and 1 more run folders"
+    },
+    {
+     "id": "clinic-q3",
+     "order": 3,
+     "codeId": "step-free-pack",
+     "stage": "anonymous",
+     "text": "You’re eligible for a free* post-op transplant pack worth £49.99",
+     "type": "info",
+     "required": false,
+     "options": [],
+     "purpose": "Offer screen listing the pack contents (neck pillow, aluminium saline spray bottle, anti-itch shampoo, Hair Growth Complex supplement; \"* Shipping costs may apply\"). One button, Continue.",
+     "engineRole": "marketing",
+     "branches": false,
+     "branchDetail": "",
+     "shownWhen": "only if the procedure date is after today and no more than two months ahead (served code: diff in months <= 2)",
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-clinic-future (screen 10); absent in runs/verify-clinic-past"
+    },
+    {
+     "id": "clinic-q4",
+     "order": 4,
+     "codeId": "clinic account form",
+     "stage": "anonymous",
+     "text": "Create your account",
+     "type": "contact",
+     "required": true,
+     "options": [],
+     "purpose": "Account wall for the clinic route: first name, last name, phone number, email, date of birth, password, and a \"Sign me up to join the mailing list\" box that is ticked by default. Sent with clinic_id, procedure_date and treatment_type (served code). No medical question has been asked at this point.",
+     "engineRole": "identity",
+     "branches": true,
+     "branchDetail": "After sign-up the served code opens /consultation?clinic_consultation=post|pre|free&clinic_id=…&logged_in=true (not tested).",
+     "shownWhen": "after the procedure date (and the free pack offer when shown)",
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-clinic-future-continue (screen 12) and runs/verify-clinic-past (screen 11); not filled in"
     }
    ]
   }
@@ -3496,7 +3542,8 @@
    ],
    "evidence": "code",
    "proof": "runs/offline/results.txt (the site's own code run offline: recommendation-engine.excerpt.js lines 273-1140 and engine-newer.extract.js module 30216) off-00",
-   "confidence": "medium"
+   "confidence": "medium",
+   "verification": "confirmed: offline re-run v-baseline (runs/verify-offline) gives 8 cards carrying the 12 plans through their toggles; code unchanged live (runs/verify-code-freshness)."
   },
   {
    "id": "R13",
@@ -3898,7 +3945,8 @@
    "affects": [],
    "evidence": "code",
    "proof": "src/chunks/4346-bc4e0cf681126f20.pretty.js lines 889-895 vs quiz-definition.json; https://sons.co.uk/blogs/journal/answered-six-common-questions-people-have-about-sons-treatments",
-   "confidence": "medium"
+   "confidence": "medium",
+   "verification": "confirmed and extended: The same list in the served code (src/chunks/4346-bc4e0cf681126f20.pretty.js line 889) also names 'Beard Booster Not Recommended'. None of the old stop pages is in today's hair or beard definitions (checked again in the stage 3 capture). If the survey completes on one of these pages the code shows 'Unfortunately you are ineligible for prescription based products. Redirecting to the home page.' This explains the beard-flow dead end for women: with no female notice page, Continue falls through to the account-form email check."
   },
   {
    "id": "R38",
@@ -3938,8 +3986,9 @@
     "p-beard"
    ],
    "evidence": "observed",
-   "proof": "runs/exp-38, runs/exp-39, runs/exp-40; src/survey-beard.raw.json",
-   "confidence": "medium"
+   "proof": "runs/exp-38, runs/exp-39, runs/exp-40; runs/verify-beard-bodyloss-yes-2, runs/verify-beard-eczema, runs/verify-beard-other-face, runs/verify-beard-psoriasis-no; src/survey-beard.raw.json",
+   "confidence": "high",
+   "verification": "confirmed: Four more live beard replays reached the account form with no stop: hair loss elsewhere on the body Yes (runs/verify-beard-bodyloss-yes-2), Eczema (runs/verify-beard-eczema), another face condition (runs/verify-beard-other-face) and Psoriasis with 'not willing to proceed' (runs/verify-beard-psoriasis-no)."
   },
   {
    "id": "R41",
@@ -3953,7 +4002,7 @@
    "evidence": "observed",
    "proof": "runs/exp-42 vs runs/exp-38; runs/verify-beard-female; runs/verify-beard-female-continue screen 05",
    "confidence": "high",
-   "verification": "corrected: Live replays runs/verify-beard-female (same as runs/exp-42) and runs/verify-beard-female-continue: the dead end is real, but it is not silent. Pressing the Continue button still on screen shows an unrelated error, 'Your email address appears to be from an invalid domain name. Please check for typos and try again'."
+   "verification": "corrected: Live replays runs/verify-beard-female (same as runs/exp-42) and runs/verify-beard-female-continue: the dead end is real, but it is not silent. Pressing the Continue button still on screen shows an unrelated error, 'Your email address appears to be from an invalid domain name. Please check for typos and try again'. Served code explains it: Continue on the gender page completes the survey (no female notice page exists in the beard definition), and the completion handler's email check fires first (src/chunks/4346-bc4e0cf681126f20.pretty.js lines 1226-1242)."
   },
   {
    "id": "R42",
@@ -3977,6 +4026,32 @@
    "proof": "runs/exp-43 screen 03 vs runs/exp-44; runs/verify-om5-se-yes",
    "confidence": "high",
    "verification": "confirmed: Live replay runs/verify-om5-se-yes shows the side-effects text box with Yes (stage 2 could only count screen 03 of runs/exp-43)."
+  },
+  {
+   "id": "R44",
+   "flow": "clinic",
+   "when": "clinic-q2 procedure date after today and no more than two months ahead",
+   "then": "A free post-op pack offer (worth £49.99; neck pillow, saline spray bottle, anti-itch shampoo, Hair Growth Complex supplement) is shown before the account form. A past date skips the offer and goes straight to the account form.",
+   "effectType": "product-added",
+   "affects": [
+    "p-free-packs"
+   ],
+   "evidence": "observed",
+   "proof": "runs/verify-clinic-future vs runs/verify-clinic-past; served code runs/verify-clinic-code/4062-18354781e29ab8fb.js",
+   "confidence": "high",
+   "verification": "new in stage 3"
+  },
+  {
+   "id": "R45",
+   "flow": "clinic",
+   "when": "Any man arriving through a partner-clinic page",
+   "then": "ACCOUNT WALL before any medical question: after treatment type and procedure date the next screen is 'Create your account' (mailing-list box ticked by default). Served code then opens the hair consultation as a signed-in customer with clinic_consultation=post (procedure today or earlier), pre (more than two months ahead) or free (within two months).",
+   "effectType": "none",
+   "affects": [],
+   "evidence": "observed",
+   "proof": "runs/verify-clinic-future-continue (screen 12), runs/verify-clinic-past (screen 11); redirect from served code runs/verify-clinic-code/4062-18354781e29ab8fb.js",
+   "confidence": "high",
+   "verification": "new in stage 3; the redirect after the form is code only"
   }
  ],
  "experiments": [
@@ -4647,6 +4722,62 @@
    "changed": "none: offline re-run of the newer rules for 18 cases (scripts/verify-engine.js)",
    "result": "NOT a live replay. runs/verify-offline/results.json: every case gives the plans stated in R12, R13, R15, R17, R18, R20, R21, R22, R25, R28 and R29.",
    "run": "runs/verify-offline"
+  },
+  {
+   "id": "v-13",
+   "flow": "beard",
+   "changed": "beard-q5 hair loss elsewhere on the body: No → Yes (retry of runs/verify-beard-bodyloss-yes, cut off at step 11)",
+   "result": "Live (runs/verify-beard-bodyloss-yes-2): a required free-text box about the rest of the body, then the usual questions and the account form; no stop.",
+   "run": "runs/verify-beard-bodyloss-yes-2"
+  },
+  {
+   "id": "v-14",
+   "flow": "beard",
+   "changed": "beard-q11 face conditions: None of these → Eczema",
+   "result": "Live (runs/verify-beard-eczema): straight to the account form; no warning (the psoriasis warning is not shown for eczema).",
+   "run": "runs/verify-beard-eczema"
+  },
+  {
+   "id": "v-15",
+   "flow": "beard",
+   "changed": "beard-q11 face conditions: None of these → Any other medical conditions/operations",
+   "result": "Live (runs/verify-beard-other-face): a required free-text box about the face, then the account form; no stop.",
+   "run": "runs/verify-beard-other-face"
+  },
+  {
+   "id": "v-16",
+   "flow": "clinic",
+   "changed": "none: open the treatment-type picker on the British Hair Clinic page",
+   "result": "Live (runs/verify-clinic-1): one option, 'Hair Transplant'.",
+   "run": "runs/verify-clinic-1"
+  },
+  {
+   "id": "v-17",
+   "flow": "clinic",
+   "changed": "clinic-q1 = Hair Transplant, Continue",
+   "result": "Live (runs/verify-clinic-2): 'What is your procedure date?' with a date box; Continue stays disabled until a date is given.",
+   "run": "runs/verify-clinic-2"
+  },
+  {
+   "id": "v-18",
+   "flow": "clinic",
+   "changed": "clinic-q2 procedure date = 15 Dec 2026 (future, within two months)",
+   "result": "Live (runs/verify-clinic-future): 'You’re eligible for a free* post-op transplant pack worth £49.99' with its contents.",
+   "run": "runs/verify-clinic-future"
+  },
+  {
+   "id": "v-19",
+   "flow": "clinic",
+   "changed": "as v-18, then Continue on the pack offer",
+   "result": "Live (runs/verify-clinic-future-continue): 'Create your account' form (name, phone, email, date of birth, password, mailing list ticked by default). Not filled in.",
+   "run": "runs/verify-clinic-future-continue"
+  },
+  {
+   "id": "v-20",
+   "flow": "clinic",
+   "changed": "clinic-q2 procedure date: 15 Dec 2026 → 10 Nov 2026 (past)",
+   "result": "Live (runs/verify-clinic-past): no pack offer; Continue goes straight to the 'Create your account' form.",
+   "run": "runs/verify-clinic-past"
   }
  ],
  "recommendations": [
@@ -4877,7 +5008,7 @@
    "evidence": "code"
   }
  ],
- "engineSummary": "Sons runs one short questionnaire for men only. Sex at birth is the only gate: a woman is stopped at question 2, and a man is never stopped or warned, whatever he answers (33 live one-change replays all ended on the same account form). Nothing is recommended until he has given his name, email, phone number, date of birth and a password. After that a script in his own browser turns the answers into five on/off switches: finasteride tablet, finasteride spray, minoxidil capsule, minoxidil spray, combination spray. Each medical tick or reported side effect switches off a whole drug family: finasteride goes with a low-mood score of 2 or more, past finasteride side effects, kidney or liver disease, prostate disease or male cancers, rheumatoid arthritis, lupus or methotrexate, and sexual dysfunction; minoxidil (spray and capsule) goes with high blood pressure, heart disease and past minoxidil side effects; a scalp disorder removes the sprays that contain minoxidil; phaeochromocytoma removes the capsule; a lactose allergy removes both oral products; sudden onset removes everything on prescription. A fixed list of twelve plans is then filtered by the switches and the top one or two survivors are shown as \"the plan our medical team recommend\". The format preference only changes the order. The hair picture, the three sudden-onset follow-ups, the scalp tick boxes and all free text change nothing in this code. Strength never varies: each medicine comes in one strength. Hair Growth Complex, a supplement, is never removed, so there is always something to buy. Two copies of the code are served and they agree on everything except what goes first and what a man over 65 is shown. A prescriber at the partner pharmacy reviews the order afterwards and can refuse it; the server can also override the list. Those two steps are not public.",
+ "engineSummary": "Sons runs one short questionnaire for men only. Sex at birth is the only gate: a woman is stopped at question 2, and a man is never stopped or warned, whatever he answers (33 live one-change replays all ended on the same account form). Nothing is recommended until he has given his name, email, phone number, date of birth and a password. After that a script in his own browser turns the answers into five on/off switches: finasteride tablet, finasteride spray, minoxidil capsule, minoxidil spray, combination spray. Each medical tick or reported side effect switches off a whole drug family: finasteride goes with a low-mood score of 2 or more, past finasteride side effects, kidney or liver disease, prostate disease or male cancers, rheumatoid arthritis, lupus or methotrexate, and sexual dysfunction; minoxidil (spray and capsule) goes with high blood pressure, heart disease and past minoxidil side effects; a scalp disorder removes the sprays that contain minoxidil; phaeochromocytoma removes the capsule; a lactose allergy removes both oral products; sudden onset removes everything on prescription. A fixed list of twelve plans is then filtered by the switches and the top one or two survivors are shown as \"the plan our medical team recommend\". The format preference only changes the order. The hair picture, the three sudden-onset follow-ups, the scalp tick boxes and all free text change nothing in this code. Strength never varies: each medicine comes in one strength. Hair Growth Complex, a supplement, is never removed, so there is always something to buy. Two copies of the code are served and they agree on everything except what goes first and what a man over 65 is shown. A prescriber at the partner pharmacy reviews the order afterwards and can refuse it; the server can also override the list. Those two steps are not public. Partner transplant-clinic pages work differently: they ask only the treatment type and procedure date, offer a free post-op pack when the procedure is within the next two months, and ask for an account before any medical question (seen live in stage 3).",
  "strengths": [
   "Very little friction: a healthy man taps through ten screens, and no answer ever ends the journey before his contact details are captured.",
   "A simple, consistent rule set. Whole drug families are switched on or off, and both served copies agree on every medical rule (13 distinct outcomes in total).",
@@ -5024,10 +5155,11 @@
   "What the prescriber does with the answers is unknown: how often orders are refused, and whether the hair picture, the sudden-onset answers, scalp red flags or free text lead to refusal. One web search found no public accounts of refusals.",
   "Age rules were not tested live (date of birth is asked only on the account form). The over-65 rule depends on the date of birth reaching the script under a particular name, which could not be checked.",
   "Not replayed live: the middle PHQ answers (\"Several days\", \"More than half the days\"), eight of the twelve scalp tick-box options on their own and any combination of two or more changes. All were covered offline or from code.",
-  "The oral minoxidil 5 mg step-up, beard and partner-clinic flows were only lightly tested; their forms cannot be sent without an account, and the clinic flow was opened at its first screen only.",
+  "The oral minoxidil 5 mg step-up, beard and partner-clinic flows were only lightly tested; their forms cannot be sent without an account, and the clinic flow was walked only to its account form (stage 3).",
   "Renewal health checks, the plan customiser, basket, checkout consents and identity check were read from code and public text only.",
   "Prices are list prices from the product feed on one day during a Black Friday sale; first-order discounts change often.",
-  "Legal class of the minoxidil spray and ketoconazole shampoo (P or GSL) was not checked against the MHRA register."
+  "Legal class of the minoxidil spray and ketoconazole shampoo (P or GSL) was not checked against the MHRA register.",
+  "Stage 3 walked the partner-clinic route only to its account form, for one clinic (British Hair Clinic); other clinics may differ."
  ],
  "stage2": {
   "experimentsLive": 45,
@@ -5055,21 +5187,41 @@
    "R38 (5 mg step-up: health or medicines changed opens a text box): confirmed. Live replay runs/verify-om5-changes-yes: Yes opens 'Please can you tell us more about what has changed?' with no warning or stop.",
    "R43 (5 mg step-up: side effects opens a text box): confirmed. Live replay runs/verify-om5-se-yes shows the side-effects text box with Yes (stage 2 could only count screen 03 of runs/exp-43).",
    "R39 (beard psoriasis warning): confirmed and extended. Live replay runs/verify-beard-psoriasis-no: the warning question appears after Psoriasis, and answering No (not willing to proceed) still goes straight to the account form. The warning is a question with no effect on the flow.",
-   "R41 (beard flow female dead end): corrected. Live replays runs/verify-beard-female (same as runs/exp-42) and runs/verify-beard-female-continue: the dead end is real, but it is not silent. Pressing the Continue button still on screen shows an unrelated error, 'Your email address appears to be from an invalid domain name. Please check for typos and try again'.",
+   "R41 (beard flow female dead end): corrected. Live replays runs/verify-beard-female (same as runs/exp-42) and runs/verify-beard-female-continue: the dead end is real, but it is not silent. Pressing the Continue button still on screen shows an unrelated error, 'Your email address appears to be from an invalid domain name. Please check for typos and try again'. Served code explains it: Continue on the gender page completes the survey (no female notice page exists in the beard definition), and the completion handler's email check fires first (src/chunks/4346-bc4e0cf681126f20.pretty.js lines 1226-1242).",
+   "R40 (no stop in the beard flow): confirmed. Four more live beard replays reached the account form with no stop: hair loss elsewhere on the body Yes (runs/verify-beard-bodyloss-yes-2), Eczema (runs/verify-beard-eczema), another face condition (runs/verify-beard-other-face) and Psoriasis with 'not willing to proceed' (runs/verify-beard-psoriasis-no).",
+   "R37 (old stop screens no longer in the form): confirmed and extended. The same list in the served code (src/chunks/4346-bc4e0cf681126f20.pretty.js line 889) also names 'Beard Booster Not Recommended'. None of the old stop pages is in today's hair or beard definitions (checked again in the stage 3 capture). If the survey completes on one of these pages the code shows 'Unfortunately you are ineligible for prescription based products. Redirecting to the home page.' This explains the beard-flow dead end for women: with no female notice page, Continue falls through to the account-form email check.",
    "Survey definition: re-downloaded on the live page (runs/verify-capture-definition); no difference from quiz-definition.json in 38 pages and 57 questions (scripts/verify-defdiff.js).",
    "Recommendation code is still what the site serves (24 Nov 2026): shop.sons.co.uk/recommendation still loads app/recommendation/page-9574552c5f8ec4c0.js and 1234-6277a6fc5802d9fd.js, both byte-identical to the saved copies; all 588 code lines of recommendation-engine.excerpt.js are present unchanged in the live sons.co.uk/pages/recommendation (runs/verify-code-freshness, scripts/verify-freshness.sh, scripts/verify-oldpage.js).",
-   "Question-to-code mapping: the question ids and option values the code reads (5143 Suddenly = 1; 3275/3276 0 to 3; 5149/5151/5153 Yes = 1; 5155 values 0 to 8; preference 'Topical' = 0) match quiz-definition.json."
+   "Question-to-code mapping: the question ids and option values the code reads (5143 Suddenly = 1; 3275/3276 0 to 3; 5149/5151/5153 Yes = 1; 5155 values 0 to 8; preference 'Topical' = 0) match quiz-definition.json.",
+   "Product facts: 14 live product pages (runs/verify-products, scripts/verify-products.sh) - finasteride, minoxidil spray, oral minoxidil, oral minoxidil 5 mg, topical finasteride, combination spray, combination capsule, dutasteride spray, Hair Growth Complex, biotin, ketoconazole, Beard Booster, Core Plan, Non-Prescription plan. Every 6-month list price matches company.json. Strengths printed on the pages match (finasteride 1 mg, oral minoxidil 2.5 mg, 5 mg as 2 x 2.5 mg, minoxidil 5%, ketoconazole 2%, tretinoin in both combination sprays); the topical percentages are not printed on the pages and rest on the served dose table, which is byte-identical today.",
+   "Catalogue completeness: all 30 products in the live product sitemap (runs/verify-catalogue/live-handles.txt) are in company.json; nothing on sale is missing. 17 handles in the catalogue (legacy customiser plans, duplicates, clinic bundle, welcome pack) are hidden from the sitemap but were in the stage 1 product feed.",
+   "Women: Sons serves no women. The hair flow stops at question 2 (re-tested live), the beard flow dead-ends (re-tested live), no product page or sitemap entry is for women, and the medical FAQ says Sons may not sell its 5% minoxidil to women. The women's route is therefore covered as a stop, not a flow.",
+   "Evidence labels: scripts/verify-labels.js checks that every 'observed' rule, question and option names a run folder that exists. After the corrections below it reports no gaps.",
+   "Partner-clinic route walked live for the first time (runs/verify-clinic-1, -2, -future, -future-continue, -past): treatment type, procedure date, a free post-op pack offer only for a date within the next two months, then an account form before any medical question (new rules R44 and R45).",
+   "Replays in stage 3: 12 by the earlier interrupted attempt (11 usable, one cut off) and 8 in this attempt, 20 in all, one at a time."
   ],
   "corrected": [
    "3 claims named runs/s2-baseline-women as proof, a folder that does not exist (stage 2 replayed the woman as runs/exp-02). They now name runs/baseline-women and the stage 3 replay runs/verify-baseline-women, which both end on the same female notice.",
    "17 questions were labelled \"code\" although their wording appears on saved live screens; upgraded to \"observed\" with the run folders named: om5-q3, om5-q5, beard-q1, beard-q2, beard-q3, beard-q4, beard-q5, beard-q6, beard-q7, beard-q8, beard-q9, beard-q10, beard-q11, beard-q12, beard-q13, beard-q14, clinic-q2.",
-   "44 questions and options were labelled \"observed\" without naming a run folder. Each now names the run folders whose saved screens show it (found by searching every runs/*/NN.txt for the question wording). All were found on saved screens; none had to be downgraded.",
+   "48 questions and options were labelled \"observed\" without naming a run folder. Each now names the run folders whose saved screens show it (found by searching every runs/*/NN.txt for the question wording). All were found on saved screens; none had to be downgraded.",
    "beard-q12 \"No\" (not willing to proceed despite the psoriasis warning) was labelled code and typed flag-for-clinician. A live replay (runs/verify-beard-psoriasis-no) shows it goes straight to the account form like Yes; now observed, effect none on the flow.",
    "beard-q2 \"Female\" was described as a silent dead end with no message. Pressing the Continue button still on screen shows an unrelated email-domain error (runs/verify-beard-female-continue screen 05). Wording corrected in the option and in R41.",
    "R39: R39 now says that answering No to 'willing to proceed' does not stop the man (runs/verify-beard-psoriasis-no).",
-   "R41: R41 said the beard-flow dead end for women shows no message. Pressing Continue shows an unrelated email-domain error (runs/verify-beard-female-continue screen 05); wording corrected."
+   "R41: R41 said the beard-flow dead end for women shows no message. Pressing Continue shows an unrelated email-domain error (runs/verify-beard-female-continue screen 05); wording corrected.",
+   "R37: R37 now also names the 'Beard Booster Not Recommended' stop page and the 'ineligible for prescription based products' message the code would show.",
+   "clinic-q1: the option was recorded from the clinic record as 'transplant' and 'not opened'. Live (runs/verify-clinic-1) the picker shows one option, 'Hair Transplant'; label, effect and evidence updated.",
+   "Clinic flow: stage 1 wrote that the clinic landing page leads into the standard hair consultation. Live (runs/verify-clinic-future-continue, runs/verify-clinic-past) it leads to an account form first, with no medical question asked; the served code then opens the consultation with logged_in=true. stagesSummary corrected and two screens added (clinic-q3 free pack offer, clinic-q4 account form).",
+   "p-free-packs: the post-op pack's contents and its two-month date window were confirmed live (runs/verify-clinic-future vs runs/verify-clinic-past) and in served code; it also contains a Hair Growth Complex supplement, which the entry did not list."
   ],
-  "stillUnverified": [],
-  "verdict": "Review in progress."
+  "stillUnverified": [
+   "Every product effect (R12 to R35): read and run offline from the code the site serves, and that code is confirmed unchanged today, but no recommendation page was ever seen live because it sits behind the account form.",
+   "Which of the two code copies new customers actually see, and whether the server overrides either (plan name in the sign-up reply, account/recommendations list, account tags).",
+   "The over-65 rule (R29) and the under-18 refusal (R30): both depend on the date of birth typed into the account form, which was never filled in.",
+   "What the prescriber does with red flags (sudden onset, PHQ-2 answers, scalp sores, psoriasis 'not willing to proceed') and how often orders are refused.",
+   "The clinic route after the account form (pre, post and free consultations, clinic recommendation page): code only.",
+   "Legal class (P or GSL) of the minoxidil 5% spray and ketoconazole shampoo. A web search found a UK public assessment report for minoxidil 5% cutaneous solution, PL 50640/0001, held by Careforsons and granted 6 Aug 2020, but no source stating its UK supply category; the Irish twin is not subject to prescription. Not opened directly, so left unconfirmed.",
+   "Topical strengths (finasteride 0.15%, combination spray 0.15% / 5% / tretinoin 0.015%, dutasteride 0.1%) come from the served dose table and leaflets; the live product pages do not print them."
+  ],
+  "verdict": "The questionnaire side of this report is trustworthy. Every stop, branch and extra screen that matters was replayed live at least once, the baselines replay identically a day later, and the survey definition is unchanged. The product side is trustworthy as code, not as observed fact: the rules that remove a drug family (sudden onset, PHQ-2, side effects, heart and blood pressure, finasteride exclusions, scalp disorder, lactose, over 65) match both copies of the served code line for line, both copies are still served byte-for-byte unchanged, and an independent offline re-run gives the stated plans. But no recommendation was seen live, the server can override the browser, and the prescriber's decisions are unknown, so these rules show what the site is built to offer, not what a patient finally receives. Stage 3 found no contradicted product rule. It corrected proof that pointed at a missing run folder, unlabelled 'observed' claims, an inaccurate 'silent' dead end in the beard flow, a beard warning that turned out to have no effect, and an untested partner-clinic route that asks for an account before any medical question. Prices and actives checked against 14 live product pages all matched."
  }
 }

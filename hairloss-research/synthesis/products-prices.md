@@ -353,7 +353,7 @@ unlicensed compounded capsule.
 
 | Company | Product | 1 month | 3 months | 6 months | First order | Label |
 |---|---|---|---|---|---|---|
-| Oxford | 2.5 mg licensed tablet (generic) | £22.49 (30) | £18.75 (120 for £74.99) | £19.17 (180 for £114.99) | none | docs |
+| Oxford | 2.5 mg licensed tablet (generic) | £22.49 (30) | £18.75 a month for 120 tablets (4 months, £74.99) | £19.17 (180 for £114.99) | none | docs |
 | Lloyds | 2.5 mg licensed tablet | £29.00 | £25.67 | £23.67 | none | obs |
 | Sons | 2.5 mg capsule + biotin | — | £25.67 | £23.67 | from £14.20 | code |
 | Sons | 5 mg (two capsules) | — | £35.10 | £31.20 | — | code |
@@ -437,8 +437,134 @@ Happy Head prices are per 25-day bottle ($89 or $59); the per-30-day figures abo
 plans fall to $104 to $134 a month on 5-month plans [docs]. The US sweep adds that plain generics are now almost free
 in the US (GoodRx from $16 a month including the visit; Costco minoxidil under $3 a month) [sweep].
 
-**What the US comparison shows.** US list prices for compounded mixes ($43 to $107) are higher than UK list prices
-(£16.50 to £37.91), but US brands lean harder on first-order discounts. Finasteride is about $16 to $35 in the US and
-£7 to £35 in the UK, so the UK mass-market finasteride price is not cheaper than the US one.
+**What the US comparison shows.** US compounded scalp mixes run from $29 a month (Hims, only on a 10-month prepaid
+plan) to about $107 (Happy Head), against £12 to £58 in the UK. US brands lean harder on first-order discounts and on
+long prepaid plans. Finasteride is about $16 to $35 a month in the US and £7.25 to £35 in the UK, so the UK
+mass-market finasteride price is not lower than the US one.
+
+---
+
+## 4. The women's offer
+
+**What the evidence says a women's service needs** (`foundations/clinical-women.md`): topical minoxidil is the only
+UK-licensed treatment for female pattern hair loss (2% solution, 5% once-a-day foam, ages 18 to 65). Low-dose oral
+minoxidil (usual start 1.25 mg, range 0.625 to 5 mg) and spironolactone (NHS schedule from 50 mg, rising monthly to
+200 mg) are off-label. Finasteride and dutasteride are contraindicated in women in their UK product information.
+Core blood tests for diffuse hair loss are full blood count, ferritin and thyroid function. Anti-androgens need
+reliable contraception, checked again at each supply.
+
+### 4.1 UK companies
+
+| Company | What a woman can get | Price (from) | Gaps |
+|---|---|---|---|
+| **Hers UK** (Hims UK) | C oral minoxidil 1.5 mg with biotin, vitamins and zinc (pill or lemon chew); C serum minoxidil 7% + ketoconazole 2.2% + dexpanthenol 5%; C capsule spironolactone 44 mg + minoxidil 1.5 mg + vitamins; S vitamins; G Regaine for Women once-a-day foam [code/docs] | £13 a month; £20 with spironolactone [docs]. Plan prices only after sign-in | Fixed strengths: the oral minoxidil cannot start lower than 1.5 mg, and spironolactone is fixed at 44 mg, far below the NHS dose range. No anonymous quiz: the first screen asks for her name [obs]. No blood tests described |
+| **Voy** | Topical minoxidil "serum or foam" or oral minoxidil, strength "set by your clinician"; S vitamins [docs] | Topical £24 a month on the main page; £14.99 on ad pages (£39 struck through); oral £15 (£25 struck through); vitamins £18 [docs] | Minoxidil only. No anti-androgen, no blood test, strengths not published; pregnancy and breastfeeding read as a stop [inf] |
+| **Hair + Me** | C oral minoxidil 0.5, 1.25 or 2.5 mg; C minoxidil 5% drops (± tretinoin 0.01%); C niacinamide drops (± urea, ± melatonin) as the route for pregnancy, breastfeeding or trying to conceive [docs] | £34.99 every 4 weeks (£37.91 a calendar month); £14.99 for the first three [obs] | No anti-androgen (spironolactone appears only as a past treatment); no questions on periods, menopause, contraception, thyroid or iron; PCOS gets no follow-up; tretinoin needs contraception that is never asked about [obs/docs] |
+| **Philip Kingsley** | C minoxidil 3% drops; S Hair Shedding Drops (cosmetic) for shedding; haircare add-ons; trichologist video (from £200) or clinic (from £345) [code/docs] | 3% drops £36 (first delivery £18); Shedding Drops £65 [code] | No finasteride, spironolactone or oral minoxidil online. Sudden loss with a widening parting is not escalated [obs] |
+| **Oxford Online Pharmacy** | G Regaine for Women 2% and 5% foam; "Female Hair Loss Programme": blood test (ferritin, TSH, free T4, B12, folate, vitamin D) then 3 months of an oral treatment that is not named [docs] | Regaine 2% £27.77; 5% foam £34.80; programme £75.99 [docs] | Drug not named (probably low-dose oral minoxidil [inf]). Pages conflict: elsewhere oral treatments are refused for women [docs]. Not walked live |
+| **Superdrug** | G Regaine for Women 2%; S Nourkrin Woman; S Alpecin shampoos; £25 phone call with a doctor (no medicine) [obs] | Regaine £25; Nourkrin £51 [obs] | Licensed topical only. Pregnancy and breastfeeding do not remove Regaine and show no warning [obs]. A woman with several allergies is left with only the phone call, with no explanation [obs] |
+| **Treated** | Regaine for Women in a telogen effluvium category marked "Not available" [docs] | — | No women's consultation (hard stop on sex) [obs] |
+| **Numan, Sons, Dr Fox, Boots, Lloyds** | Nothing (women stopped at the sex question or no women's flow) [obs] | — | Men only. Numan's rosemary oil and supplement can be bought by anyone without a consultation [obs] |
+
+### 4.2 US companies
+
+| Company | What a woman can get | Price (from, per month) | Notes |
+|---|---|---|---|
+| **Hers (US)** | O oral minoxidil 1.25 mg rising to 2.5 mg; C minoxidil chews and gummies; C serums (minoxidil 7%); C post-menopause finasteride 0.3% + minoxidil 6% spray; O spironolactone (may no longer be offered for hair); G 5% foam, 2% solution [docs] | $29 oral minoxidil; $35 blends; foam from $12.67 [docs] | Site not opened (security check). No blood tests or blood-pressure reading described |
+| **Ro** | O low-dose oral minoxidil (0.25 to 2.5 mg range); C Hair Solution Rx: minoxidil 5% + tretinoin 0.025% + melatonin 0.1% [code] | $30 oral; $40 topical [code] | Two products only; one plan length |
+| **Happy Head** | Under 50: C minoxidil 6% + tretinoin + hydrocortisone topical and C capsule spironolactone 25 mg + minoxidil 1.25 mg + D3; C topical spironolactone 0.5% + minoxidil 6%. 50 and over: the dutasteride products [obs/docs] | $70.80 topical, $106.80 capsule per 30 days [inf from obs] | Splits women by age 50 as a stand-in for menopause |
+| **Strut** | C women's formula: spironolactone 1% + finasteride 0.25% + minoxidil 0 to 7.5% ± tretinoin ± fluocinolone; C women's topical finasteride 0.25%; O oral minoxidil; C latanoprost booster [code/docs] | $59 [docs] | Topical finasteride offered to women without an age or menopause split in the data read [code] |
+| **XYON** (unverified) | C topical dutasteride 2% gel and finasteride + minoxidil gel listed "for both"; O oral minoxidil; C low-dose minoxidil with vitamin D; O spironolactone 25, 50 or 100 mg [docs/code] | spironolactone $29; minoxidil + vitamin D $39 [docs] | Asks about kidney problems and recent kidney blood tests [code] |
+| **Keeps, Hims (US)** | Nothing for women (Keeps refers to another brand; Hims sends women to Hers) | — | — |
+
+### 4.3 What this shows
+
+- **Six of the 12 UK companies treat men only**, and Superdrug offers women only licensed Regaine and supplements.
+- **Only Hers UK sells an anti-androgen to women in the UK set**, and only as a fixed 44 mg dose inside a compounded
+  capsule. No UK company in the set sells plain spironolactone tablets that can be stepped up, or topical
+  spironolactone. In the UK sweep, oral spironolactone for hair loss appears only at small private dermatology services
+  and topical spironolactone only at City Skin Clinic and Hair Repair Clinic [sweep].
+- **No UK company names a blood-test-led plan with a named treatment.** Oxford's programme has the right tests but
+  hides the drug. Superdrug sells a hair blood test separately at £99 [sweep].
+- **Women's strengths are mostly hidden.** Voy sets strength per patient and does not publish it; Hair + Me names no
+  formula before payment; Hers UK publishes strengths only in its app code.
+- **Women at life stages are not served.** Nobody in the UK set asks about periods, menopause, HRT or contraception
+  before sign-in, although tretinoin and anti-androgens need it. US menopause brands (Alloy, Midi) treat thinning hair
+  alongside HRT [sweep].
+- **US practice includes things a UK service should not copy without care:** topical finasteride for women of
+  child-bearing age (Strut) and dutasteride gel "for both" (XYON). Both drugs are contraindicated in women in the UK
+  product information, and the US FDA has warned that topical finasteride can transfer to others
+  (`foundations/market-economics.md`, 7.2).
+
+---
+
+## 5. Gaps
+
+### 5.1 Sold in the US or overseas, sold by none of the 12 UK companies
+
+"Evidence" grades come from `foundations/clinical-men.md` (section 8) and `foundations/clinical-women.md`.
+
+| Product | Who sells it | Evidence | Worth a UK entrant's attention? |
+|---|---|---|---|
+| **Oral spironolactone as plain tablets, with dose steps** | XYON (25, 50, 100 mg), Hers US; Happy Head as a fixed 25 mg capsule [docs/obs] | Off-label; 56.6% of women improved in pooled studies; no placebo-controlled trial | **Yes.** The clearest women's gap in the UK. Needs contraception checks and a potassium plan from age 45 |
+| **Topical spironolactone** | Happy Head (0.5%), Strut (1%) [docs]; in the UK only at small clinics [sweep] | Little trial evidence (`clinical-women.md`, 3.7) | Low priority |
+| **Licensed finasteride scalp spray (Fynzur, finasteride 2.275 mg/ml)** | ZAVA Germany from EUR 75.32 [sweep] | Moderate (one phase III trial of a 0.25% spray) | **Check.** MHRA guidance ranks "an imported product licensed in its country of origin" above a UK-made special. A UK claim that a licensed spray is now authorised here could not be confirmed [sweep] |
+| **Topical dutasteride at the big brands** | Keeps, Happy Head, Strut, XYON [obs/docs]; in the UK only Sons in the set (0.1% spray) and small compounders [sweep] | Weak; worse than oral in a network meta-analysis | Low priority |
+| **Latanoprost in scalp mixes** | Keeps (0.005%), Happy Head (0.005%), Strut (0.03% or 0.1%) [obs/docs] | Insufficient (one 16-man pilot) | No |
+| **Topical cetirizine** | Keeps, Happy Head (1%) [obs] | Weak; no benefit when added to minoxidil | No |
+| **Steroid inside the hair-loss mix** (hydrocortisone, fluocinolone) | Keeps, Happy Head, Strut [obs/code] | No trial of such mixes found | No: hides irritation rather than fixing the base |
+| **"10- and 11-in-1" serums** (minoxidil + dutasteride + finasteride + latanoprost + tretinoin + cetirizine + melatonin + caffeine + biotin + vitamin D) | Keeps, Happy Head [obs/docs] | No trial of the mixture; each extra active adds irritation and makes reactions hard to trace | No |
+| **Dutasteride + minoxidil chew** | Keeps [obs] | No trial of fixed combinations | No (Hair + Me already sells a dutasteride capsule) |
+| **Hair-loss + erection tablet** (tadalafil with finasteride or dutasteride) | Hims US, Happy Head [docs] | No trial found | No |
+| **Laser helmets and caps** | Happy Head (204-diode helmet) [docs]; CurrentBody helmet sold in UK shops at £649.99 [sweep] | Moderate as an add-on to minoxidil | **Maybe**, as an optional add-on with honest wording |
+| **DNA and "will minoxidil work?" tests** | Happy Head StrandIQ ($349 with first month) [docs]; Daniel Alain ($139); TrichoTest via a UK pharmacy [sweep] | Mainly company-funded | No |
+| **Sublingual minoxidil** (under the tongue) | Ulo (US, women, 2.25 mg) [sweep] | Weak | Not yet |
+| **Copper peptide (GHK-Cu) on prescription** | Happy Head [code] | Not graded in the clinical files | No |
+| **Prescription ketoconazole shampoo bundled into hair plans** | Keeps, Strut [obs/docs]. In the UK it is a pharmacy product; only Sons sells it | Weak; use only with dandruff or seborrhoeic dermatitis | Only as a targeted add-on |
+
+**Correction to the US sweep.** The US sweep says combined capsules for women were "found only for men" in the UK. That
+is out of date: Hers UK sells a minoxidil + spironolactone capsule for women [code], and Hair + Me sells minoxidil
+capsules to women [docs].
+
+### 5.2 Not sold in the needed form anywhere in the set, but the evidence supports it
+
+These are things the clinical files support that no company in the 19, as far as public material shows, sells in a
+form that matches the evidence. What happens after each sign-in wall was not observed, so a company may do some of
+this privately.
+
+1. **A licensed-first, adjustable plan with planned reviews.** The evidence ladder is: licensed finasteride 1 mg
+   and/or licensed minoxidil 5% first; review at 6 months; oral minoxidil (from a licensed tablet) or
+   propylene-glycol-free foam if the first step fails; switch finasteride to oral dutasteride 0.5 mg after 12 months
+   without enough response; stop what has not worked by 12 months (`clinical-men.md`, section 11). Companies sell the
+   pieces, but none publishes this sequence, and the subscription brands lead with fixed compounded combinations.
+2. **Oral dutasteride as a step-up from finasteride.** Graded "strong for efficacy" (off-label). In the UK set, plain
+   dutasteride 0.5 mg is sold only by two pharmacies (Treated, Oxford) as a one-off product. The subscription brands
+   sell it only inside fixed compounded capsules (Hair + Me, Voy) or as a topical (Sons).
+3. **A spironolactone pathway for women with dose steps and monitoring.** NHS schedules start at 50 mg and step up
+   monthly to 200 mg, with potassium checks from age 45 and pregnancy checks at each review. The only UK product is a
+   fixed 44 mg capsule (Hers UK). In the US, XYON's separate 25, 50 and 100 mg tablets come closest.
+4. **Women's oral minoxidil from a licensed tablet.** UK companies use compounded capsules (Hers 1.5 mg, Hair + Me
+   0.5 to 2.5 mg). Loniten 2.5 mg is documented as dividing into equal halves (1.25 mg), which is the usual
+   international starting dose for women (`clinical-women.md`, 4.3). MHRA guidance prefers a licensed product used
+   off-label over an unlicensed special.
+5. **Microneedling as a supervised protocol.** Minoxidil plus microneedling adds about 13 hairs per cm² over minoxidil
+   alone (moderate evidence). Sons sells a £14 dermaroller and Happy Head gives one away, but nobody sells the
+   protocol: weekly, not on the same day as the lotion, with instructions and follow-up.
+6. **A choice of base for the same formula.** Switching to a propylene-glycol-free foam is the evidence-based fix for
+   irritation. Hair + Me (alcohol-free drops) and Hims UK (alcohol-free serum) each sell one PG-free product, but no
+   company in the set lets a patient keep the same drug and change only the base.
+
+### 5.3 What the UK market overcharges for
+
+| What | Evidence of overcharging | Source |
+|---|---|---|
+| **Generic finasteride 1 mg** | £7.25 to £14 a month at Dr Fox and Oxford; £22 to £35 elsewhere for the same licensed tablet. The UK sweep found 10 sellers under £11 for 28 tablets | Section 3.2; [sweep] |
+| **Branded Regaine through subscriptions** | £44 to £80 a month at Hims UK and Numan for a product sold at about £29 (Dr Fox) to £37 (supermarket) a bottle | Section 3.3 |
+| **Compounded combination topicals** | £31.50 to £37.91 a month at Sons, Numan and Hair + Me against £12 to £13 at Dr Fox for a similar triple spray. The clinical grade for compounded topical finasteride with minoxidil is "weak" (three small trials) | Sections 3.4, 5.2 |
+| **Minoxidil above 5% sold as "extra strength"** | Voy 10%, Numan 6% and 10%, Hims 6% and 7% (and US brands to 8%). The one trial of 10% found it worse than 5% and more irritating. Customers report the 10% solution as sticky | `clinical-men.md`, 3.1 and 9; `customer-voice.md`, 3.5 |
+| **Vitamins and supplements** | £16.50 to £51 a month (Hims UK chew, Numan, Sons, Voy, Nourkrin). No evidence of regrowth in people who are not deficient; biotin can distort blood tests, including troponin | Section 3.5; `clinical-men.md`, 8 and 9 |
+| **Unlicensed capsules where a licensed tablet exists** | Oral minoxidil 2.5 mg capsules (Sons £23.67 to £25.67, Voy £25 to £29.67 on older pages) against the licensed 2.5 mg tablet at Oxford (£18.75 to £22.49). MHRA guidance (GN14) says a licensed product, even off-label, should be used before a special, and that cost or convenience is not a reason | Section 3.5; `foundations/uk-regulation.md`, 1.5 and 1.6 |
+| **Four-weekly billing** | Hair + Me charges 13 times a year: £34.99 looks like a monthly price but is £37.91 a calendar month | Section 3.3 |
+| **First-order discounts paid for by renewals** | Headline prices of £13 to £19 renew at £31.50 to £44. Sons customers report being offered 40% and then 50% off when they try to cancel, which made them feel overcharged | Section 3.1; `customer-voice.md` |
 
 <!-- next -->

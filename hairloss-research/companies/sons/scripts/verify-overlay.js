@@ -50,9 +50,8 @@ function runsShowing(text) {
     if (qq.evidence === 'code' && qq.stage === 'anonymous' && hits.length && !has) {
       // seen on a saved live screen: the question itself (wording, when shown) is observed, not only read in code
       qq.evidence = 'observed'; qq.proof = 'Seen live in ' + hits.slice(0, 3).map(r => 'runs/' + r).join(', ') + (hits.length > 3 ? ` and ${hits.length - 3} more run folders` : '');
-      upgraded.push(qq.id); continue;
-    }
-    if (qq.evidence === 'observed' && !has) {
+      upgraded.push(qq.id);
+    } else if (qq.evidence === 'observed' && !has) {
       if (hits.length) { qq.proof = 'Seen live in ' + hits.slice(0, 3).map(r => 'runs/' + r).join(', ') + (hits.length > 3 ? ` and ${hits.length - 3} more run folders` : ''); added++; }
       else { qq.evidence = 'code'; down.push(qq.id); }
     }
@@ -115,6 +114,7 @@ for (const c of VR.corrected || []) corrected.push(c);
 
 // ---------------------------------------------------------------- 4. summary fields
 if (VR.access) Object.assign(d.access, VR.access);
+for (const fx of VR.limitationsFix || []) d.limitations = d.limitations.map(l => l.includes(fx.find) ? l.replace(fx.find, fx.replace) : l);
 if (VR.limitationsAdd) for (const l of VR.limitationsAdd) if (!d.limitations.includes(l)) d.limitations.push(l);
 if (VR.sourcesAdd) for (const s of VR.sourcesAdd) if (!d.sources.some(x => x.url === s.url)) d.sources.push(s);
 if (VR.engineSummaryAdd && !d.engineSummary.includes(VR.engineSummaryAdd)) d.engineSummary += ' ' + VR.engineSummaryAdd;
