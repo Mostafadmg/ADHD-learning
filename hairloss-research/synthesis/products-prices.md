@@ -44,11 +44,11 @@ and marked **CONFLICT**. Old prices are marked **OLD**.
 ## Ten findings that matter most
 
 1. **The same licensed finasteride tablet costs 2 to 4 times more at the subscription brands.** £7.25 to £14 a month
-   at Dr Fox and Oxford Online Pharmacy, against £22 to £35 at Numan, Sons, Hims UK, Treated, Lloyds, Boots and
+   at Dr Fox and Oxford Online Pharmacy, against about £22 to £35 at Numan, Sons, Hims UK, Treated, Lloyds, Boots and
    Superdrug. UK median: £28.50 for a single month, £22.83 a month on a 6-month supply (section 3.2).
 2. **Compounded finasteride + minoxidil scalp products cost £12 to £58 a month.** Dr Fox sells a triple-active
    spray for £12 to £13 a month with no subscription. The subscription brands cluster at £31.50 to £37.91. Hims UK
-   reaches £16.50 only on a 6-month plan paid up front (section 3.3).
+   reaches £16.50 only on a 6-month plan paid up front (section 3.4).
 3. **Headline prices are first-order prices.** Voy "from £13", Sons "from £13.60", Hair + Me £14.99 for three months,
    Philip Kingsley 50% off the first delivery, Numan 40% off (its banner says 50%: **CONFLICT**). Renewals are at
    list price (section 3.1).
@@ -65,11 +65,12 @@ and marked **CONFLICT**. Old prices are marked **OLD**.
    capsule). No UK company in the set sells plain spironolactone tablets, topical spironolactone or a blood-test-led
    women's plan with a named treatment (section 4).
 8. **What US firms sell that no UK company in the set sells:** latanoprost, topical cetirizine, steroid-containing
-   scalp mixes, topical spironolactone, plain oral spironolactone, laser helmets, DNA tests and prescription
-   ketoconazole bundles. Most of these have weak or no evidence. The useful gaps for a UK entrant are spironolactone
+   scalp mixes, topical spironolactone, plain oral spironolactone, laser helmets and DNA tests. Most of these have
+   weak or no evidence. The useful gaps for a UK entrant are spironolactone
    for women, licensed-first adjustable plans, and add-ons with moderate evidence (microneedling, laser) (section 5).
-9. **Services are thin where it matters clinically.** Scalp photos before prescribing are not routine at any of the
-   12 UK companies as far as public material shows; blood tests are built into a hair plan only in Oxford's women's
+9. **Services are thin where it matters clinically.** Only Superdrug was seen to demand scalp photos before
+   payment, and only for unusual patterns; Voy's public documents describe photos before the order review, Hair + Me's
+   are optional after payment, and the rest ask for none. Blood tests are built into a hair plan only in Oxford's women's
    programme; money-back promises exist at Voy, Numan, Sons and Hers UK but not for Hims UK men; Hims UK cancels only
    by message to support, and Hair + Me's prepaid bundles cannot be cancelled mid-term (section 6).
 10. **Evidence limits:** Voy, Hers (US) and Oxford rest on public pages, XYON is unverified, Sons and Ro were in final
@@ -457,7 +458,7 @@ reliable contraception, checked again at each supply.
 
 | Company | What a woman can get | Price (from) | Gaps |
 |---|---|---|---|
-| **Hers UK** (Hims UK) | C oral minoxidil 1.5 mg with biotin, vitamins and zinc (pill or lemon chew); C serum minoxidil 7% + ketoconazole 2.2% + dexpanthenol 5%; C capsule spironolactone 44 mg + minoxidil 1.5 mg + vitamins; S vitamins; G Regaine for Women once-a-day foam [code/docs] | £13 a month; £20 with spironolactone [docs]. Plan prices only after sign-in | Fixed strengths: the oral minoxidil cannot start lower than 1.5 mg, and spironolactone is fixed at 44 mg, far below the NHS dose range. No anonymous quiz: the first screen asks for her name [obs]. No blood tests described |
+| **Hers UK** (Hims UK) | C oral minoxidil 1.5 mg with biotin, vitamins and zinc (pill or lemon chew); C serum minoxidil 7% + ketoconazole 2.2% + dexpanthenol 5%; C capsule spironolactone 44 mg + minoxidil 1.5 mg + vitamins; S vitamins; G Regaine for Women once-a-day foam [code/docs] | £13 a month; £20 with spironolactone [docs]. Plan prices only after sign-in | Fixed strengths: the oral minoxidil cannot start lower than 1.5 mg (the usual starting dose for women is 1.25 mg), and spironolactone is fixed at 44 mg, below the 50 mg NHS starting dose, with no way to step it up. No anonymous quiz: the first screen asks for her name [obs]. No blood tests described |
 | **Voy** | Topical minoxidil "serum or foam" or oral minoxidil, strength "set by your clinician"; S vitamins [docs] | Topical £24 a month on the main page; £14.99 on ad pages (£39 struck through); oral £15 (£25 struck through); vitamins £18 [docs] | Minoxidil only. No anti-androgen, no blood test, strengths not published; pregnancy and breastfeeding read as a stop [inf] |
 | **Hair + Me** | C oral minoxidil 0.5, 1.25 or 2.5 mg; C minoxidil 5% drops (± tretinoin 0.01%); C niacinamide drops (± urea, ± melatonin) as the route for pregnancy, breastfeeding or trying to conceive [docs] | £34.99 every 4 weeks (£37.91 a calendar month); £14.99 for the first three [obs] | No anti-androgen (spironolactone appears only as a past treatment); no questions on periods, menopause, contraception, thyroid or iron; PCOS gets no follow-up; tretinoin needs contraception that is never asked about [obs/docs] |
 | **Philip Kingsley** | C minoxidil 3% drops; S Hair Shedding Drops (cosmetic) for shedding; haircare add-ons; trichologist video (from £200) or clinic (from £345) [code/docs] | 3% drops £36 (first delivery £18); Shedding Drops £65 [code] | No finasteride, spironolactone or oral minoxidil online. Sudden loss with a widening parting is not escalated [obs] |
@@ -538,7 +539,7 @@ this privately.
    without enough response; stop what has not worked by 12 months (`clinical-men.md`, section 11). Companies sell the
    pieces, but none publishes this sequence, and the subscription brands lead with fixed compounded combinations.
 2. **Oral dutasteride as a step-up from finasteride.** Graded "strong for efficacy" (off-label). In the UK set, plain
-   dutasteride 0.5 mg is sold only by two pharmacies (Treated, Oxford) as a one-off product. The subscription brands
+   dutasteride 0.5 mg is sold only by two pharmacies (Treated, Oxford), with no step-up pathway around it. The subscription brands
    sell it only inside fixed compounded capsules (Hair + Me, Voy) or as a topical (Sons).
 3. **A spironolactone pathway for women with dose steps and monitoring.** NHS schedules start at 50 mg and step up
    monthly to 200 mg, with potassium checks from age 45 and pregnancy checks at each review. The only UK product is a
@@ -585,7 +586,7 @@ Everything in this section that happens after sign-in comes from public document
 | **Philip Kingsley** | Assessment routes to a subscription, a trichologist video call (from £200; another page says from £150, **CONFLICT**) or a London clinic visit (from £345) [docs] | Sent 48 hours before a video call [docs] | May be advised at the clinic, for extra fees [docs] | — | None found | Drops are subscription-only [code] | Not recorded |
 | **Dr Fox** | One-page form; a doctor approves before dispatch [obs/docs] | None | None | None | None found | Pay per order, no subscription [obs] | Nothing to cancel |
 | **Boots** | Questionnaire, clinician review afterwards; photo ID and selfie required [obs] | None [obs] | None | None | Pay only if approved [docs] | One-off packs; free delivery or store collection [obs] | Nothing to cancel |
-| **Superdrug** | Questionnaire; £25 phone call with a doctor (no medicine) [obs] | Asked for when the chosen pattern is not typical male pattern [obs] | Hair blood test sold separately (£99) [sweep] | None: every supply is a new order [obs] | None found | One-off orders [obs] | Nothing to cancel |
+| **Superdrug** | Questionnaire; £25 phone call with a doctor (no medicine) [obs] | Required before the product list for men who pick pattern A, E or "no pattern fits" [obs] | Hair blood test sold separately (£99) [sweep] | None: every supply is a new order [obs] | None found | One-off orders [obs] | Nothing to cancel |
 | **Lloyds** | Questionnaire [obs] | None before the recommendation [obs] | None | None | None found | One-off, or subscription "Save 15% & cancel anytime" [obs] | "Cancel anytime" [obs] |
 | **Treated** | Questionnaire; most first-time buyers are flagged for clinician review without being told [obs] | None [obs] | None | None | None found | Auto-renewing subscription, free delivery [obs] | Cancellable [docs] |
 | **Oxford** | Payment taken before the prescriber decides; GP informed; blood-pressure checks before oral minoxidil [docs] | Asked for in the women's consultation [docs] | Women's programme only [docs] | — | None found | One-off packs [docs] | Nothing to cancel |

@@ -154,7 +154,7 @@ for the clinician, offer unchanged · **none** asked, nothing changes · **not a
 | Suicidal thoughts or self-harm (now or recent) | STOP (o) | −F (o) | crisis signposting + 'Danger' flag (o) | not asked (o) | crisis signposting; continues (o) | ? |
 | Sexual problems now (libido, erections, ejaculation) | not asked (o) | not asked (only past side effects) (o) | warn + acknowledge (c) | warn (o) | −F (ED tablets: −F, −oM) (o) | ? |
 | **E. Type of hair loss and scalp** | | | | | | |
-| Patchy bald patches | clin (o) | STOP (o) | clin ('Danger') (o) | men photos required; women −Regaine (o) | STOP (o) | ? |
+| Patchy bald patches | clin (o) | STOP (o) | clin ('Danger') (o) | men: 'no pattern fits' needs photos; women −Regaine (o) | STOP (o) | ? |
 | Sudden or rapid shedding | clin (o) | STOP (days or weeks) (o) | warn (c) | men free text; women −Regaine (o) | STOP (o) | ? |
 | Complete baldness, scars or shiny skin | scars: clin (o) | STOP (total alopecia) (o) | clin ('Danger') (o) | extensive: warn + photos (o) | STOP (o) | ? |
 | Scalp pain, redness, infection, psoriasis or eczema | itchy scalp: clin (o) | STOP (o) | clin ('Danger') (o/c) | men warn (see GP); women −Regaine (o) | −topical minoxidil + 'see GP' (o) | ? |
@@ -163,7 +163,7 @@ for the clinician, offer unchanged · **none** asked, nothing changes · **not a
 | Allergy to finasteride | clin (any allergy) (o) | −F (o) | clin ('other medicines') (c) | none (o) | −F (o) | ? |
 | Propylene glycol or alcohol (ethanol) sensitivity | clin (any allergy) (o) | not asked (o) | clin ('something else') (c) | women −Regaine (o) | not asked (o) | ? |
 | Already taking dutasteride or finasteride 5 mg | clin (o) | −F (o) | PSA notice only (c) | free text; none (o) | −F (o) | dutasteride + finasteride refused (d) |
-| Lactose or galactose intolerance | clin (any allergy) (o) | not asked (o) | clin ('Danger') (o) | follow-up question; none (o) | ? | ? |
+| Lactose or galactose intolerance | not asked (any allergy → clin) (o) | not asked (o) | clin ('Danger') (o) | follow-up question; none (o) | ? | ? |
 | **G. Household and lifestyle** | | | | | | |
 | Pets at home (cats especially) | not asked (o) | not asked (o) | not asked (c) | not asked (o) | warn (tick to confirm) (o) | ? |
 | Babies or young children who touch the scalp or pillow | not asked (o) | not asked (o) | not asked (c) | not asked (o) | not asked (o) | ? |
@@ -191,7 +191,7 @@ for the clinician, offer unchanged · **none** asked, nothing changes · **not a
 | High blood pressure | ? | clin (d) | after pay (o) | only 'very high': −oM from recommendation (c) | not flagged (c) | none (o) | ? |
 | Low blood pressure or fainting | ? | clin (d) | after pay (o) | no recommendation; all pickable (c) | clin 'critical'; oral kept (o) | none (o) | ? |
 | Takes blood-pressure medicines | ? | clin (d) | after pay (o) | none (medicines not flagged) (c) | not flagged (c) | free text; none (o) | ? |
-| Phaeochromocytoma (adrenal tumour) | −combo pill (d) | −oM (d) | after pay (o) | −oM (c) | clin (c) | none (o) | ? |
+| Phaeochromocytoma (adrenal tumour) | −combo pill (d) | −oM (d) | after pay (o) | men −oM from recommendation; women −oM (c) | clin (c) | none (o) | ? |
 | **C. Other organs and cancers** | | | | | | | |
 | Kidney disease | CKD 3-5: −combo pill (d) | clin (d) | after pay (o) | men none (any stage); women free text (c) | clin (c) | none (o) | ? |
 | Liver disease | −spray, −combo pill (d) | clin (d) | after pay (o) | none (even cirrhosis) (c) | clin (c) | none (o) | ? |
@@ -433,7 +433,7 @@ Ranked by harm, highest first.
 | 9 | **Dr Fox** | **High blood pressure or heart disease:** a message only; every minoxidil product, including Regaine solution, is still sold. **No question on minoxidil allergy.** Two consultations in one session put the spray (which contains minoxidil 5% and finasteride) and finasteride tablets in one basket, even when the second form reports low blood-pressure symptoms | Observed: R10, R23, R24 (runs/verify-gap-two-consults, verify-gap-two-consults-conflict); docs R25 | Regaine SmPC: high blood pressure is a contraindication (clinical-men 3.1); do not double 5-ARIs (clinical-men 2.1) | Yes, likely: a doctor approves every order before despatch (R22, docs). The basket conflict breaks Dr Fox's own published rule |
 | 10 | **Sons** † | **Severe kidney or liver disease** removes finasteride but **keeps oral minoxidil**. **Sudden onset** keeps the minoxidil spray. "Random patches" and "Completely bald" change nothing. Earlier stop screens for extensive and sudden loss have been removed from the current form | Code: R21, R13, R27, R37 | Kidney impairment is a precaution for oral minoxidil (clinical-men 3.2); patchy, sudden or complete loss: not for remote treatment (clinical-men 10.2) | Partly: the prescriber reviews after the order (R36, docs) |
 | 11 | **Ro** † (US) | **Kidney disease of any stage (including stage 5), liver failure or cirrhosis** raise no flag: the spray stays recommended and oral minoxidil can be picked. **Prostate cancer** flags the spray but not finasteride tablets. A **breastfeeding** woman is still offered the topical minoxidil product | Code (schema simulation): R15, R10, R27 | Kidney impairment: oral minoxidil precaution (clinical-men 3.2); UK SmPC: topical minoxidil not in lactation (clinical-women 3.12; LactMed is more relaxed) | Yes, probably: a US clinician reviews every visit (R18, code). Not verified independently |
-| 12 | **Treated** | **Low blood pressure** gives the automatic offer with Regaine, no review. **Heart disease** or an **adrenal tumour** keeps Regaine on the list (the case does go to review) | Observed: R10, R12 | Oral minoxidil precaution below 90/60; topical minoxidil: medical advice first with heart disease (clinical-men 10.2; clinical-women 3.1) | Low BP: no, the offer is automatic ("no approval required" in the server reply, R3). Heart disease: yes, a clinician reviews |
+| 12 | **Treated** | **Low blood pressure** gives the automatic offer with Regaine, no review. **Heart disease** or an **adrenal tumour** keeps Regaine on the list (the case does go to review) | Observed: R10, R12 | Oral minoxidil precaution below 90/60; topical minoxidil: medical advice first with heart disease (clinical-men 10.2; clinical-women 3.1) | Low BP: not for a man in the automatic-offer group (he has seen a doctor, used treatment before and gave only 'pass' answers): the server reply says "no approval required" (R3). Heart disease: yes, a clinician reviews |
 | 13 | **Boots** | Every red-flag answer (suicidal thoughts, circular patches, complete baldness, painful or pus-filled scalp, partner trying to conceive, galactose intolerance) lets the patient carry on to ID photos, account and payment. Taking dutasteride or finasteride 5 mg for the prostate brings only a PSA notice. No heart, low blood pressure or minoxidil-allergy question on the Regaine bundle | Observed: R6, R15 (runs/x08-all-red-flags, verify-r-galactose); code for the prostate and bundle questions | Double 5-ARI not allowed (clinical-men 2.1); patchy or complete loss: refer (10.2) | **Yes, by design:** the server labels the order "Danger" or "Warning" for the clinician (R15). The gap is timing and patient experience, not missing information. Boots does show crisis help for suicidal thoughts |
 | 14 | **Strut** (US) | In the oral minoxidil form, **minoxidil allergy, heart failure, low blood pressure, phaeochromocytoma, kidney disease, patchy loss and a bleeding scalp** all change nothing, even all at once | Observed: R8, R9, R10, R12, R24, R25 (runs/exp-26-worst-case, exp-09 to exp-23) | Phaeochromocytoma and heart failure: never oral minoxidil (clinical-men 3.2) | Only by the provider after sign-up, ID check and card (R22, docs) |
 
@@ -443,7 +443,7 @@ A reviewer cannot act on an answer that was never given. These gaps are not fixe
 
 | Missing question | Who misses it (before the wall) | Why it matters |
 |---|---|---|
-| Propylene glycol or ethanol sensitivity | Everyone except Superdrug women and Hims UK leaflets | Decides between minoxidil solution and the licensed PG-free foam (clinical-men 3.1) |
+| Propylene glycol or ethanol sensitivity | Everyone except Superdrug's women's route (Hims UK's leaflets mention it, but its questions were not seen) | Decides between minoxidil solution and the licensed PG-free foam (clinical-men 3.1) |
 | Children or babies at home | Everyone (Happy Head asks about pregnancy in the household only) | Infant hair growth after contact with a treated scalp (clinical-men 3.1) |
 | Pets | All but Lloyds and Hair + Me | Cat poisoning from topical minoxidil (customer-voice.md) |
 | Current sexual function (baseline) | Numan, Treated, Dr Fox, Philip Kingsley | Needed to judge later change; effects can persist (clinical-men 10.2) |
@@ -476,3 +476,146 @@ A reviewer cannot act on an answer that was never given. These gaps are not fixe
 - **Hair + Me:** a person who says they have **no hair loss** is still sold a "Prescription" line (observed, R7).
 - **Strut:** "End questionnaire" on a stop screen leads to an error page (observed, R13); **Sons** beard route:
   a woman meets a silent dead end with no message (observed, R41).
+
+## 5. Best-practice rule set for a new UK service
+
+These are the rules a new UK service for men and women should build into its engine. Each one names its source in
+the fact-checked foundations files. Where no foundations file covers a point, the rule says so and asks for a check
+before launch. The order matters: the questions that stop a patient come first, so nobody answers 40 questions and
+then hears "see your GP" (clinical-women 4.1).
+
+**How to read the "Action" column.** STOP = end the sale and show where to go next. EXCLUDE = take that product off
+the list and say why in one line. CLINICIAN = keep the case open, but a prescriber must speak to the patient
+(two-way) before prescribing. COUNSEL = carry on, and show the advice on screen and in writing.
+
+### 5.1 Stage 1: who can be treated (ask first, before email or payment)
+
+| # | When the patient says | Action | Why, in one line | Source |
+|---|---|---|---|---|
+| S1 | Under 18 | STOP. "See your GP." Re-check date of birth at the ID step | Every licence starts at 18 | clinical-men 10.2; clinical-women 1.11 (7); uk-regulation 6.2 |
+| S2 | Female at birth, on the men's route | Switch to the women's pathway (do not stop) | Finasteride, dutasteride and men's 5% solutions are contraindicated in women | clinical-women 3.1, 3.4 |
+| S3 | Woman pregnant, trying to conceive or breastfeeding | STOP all medicines; advice and scalp care only | Topical minoxidil "should not be used during pregnancy or lactation"; oral options and anti-androgens are worse | clinical-women 3.12, 4.1 Q2 |
+| S4 | Woman who could conceive, no effective contraception | EXCLUDE oral minoxidil and spironolactone | Anti-androgens can feminise a male fetus; oral minoxidil "not recommended" without contraception | clinical-women 3.2, 3.3, 4.1 Q3; key fact 23 |
+| S5 | Women: finasteride or dutasteride requested | Not offered online (refer) | Contraindicated; the one good 1 mg trial was negative | clinical-women 3.4; key fact 24 |
+| S6 | Over 65 | CLINICIAN. Topical: off-label above the licence age, record why and tell the GP. Oral minoxidil only with a verified blood pressure and pulse, under a written service age limit | Licence ages: men's solution 18-65, men's foam 18-49, women 18-65; oral minoxidil: few data over 65, dizziness on standing | clinical-men 3.1; clinical-women 3.0, 3.2, 4.1 Q1 |
+| S7 | No GP details, or no consent to share | Licensed topical only at most; record the decision | GPhC expects GP sharing for higher-risk prescribing | clinical-women 4.0, 4.1 Q4; uk-regulation 3.2 (c) |
+
+### 5.2 Stage 2: red flags (any "yes" stops the sale and points somewhere)
+
+| # | When the patient says | Action | Why | Source |
+|---|---|---|---|---|
+| R1 | Scalp pain, burning, tenderness, pustules, crusting, scale round hairs, or smooth shiny patches | STOP; refer (urgent if scarring is possible) | Scarring hair loss is permanent | clinical-women 1.0, 1.11 (1); key fact 1 |
+| R2 | Separate bald patches; eyebrow or eyelash loss; a hairline moving back (women) | STOP; refer to GP or dermatology | Alopecia areata, tinea, frontal fibrosing alopecia: not pattern loss | clinical-women 1.11 (2, 3); clinical-men 10.2 |
+| R3 | Sudden loss over days or weeks (men); complete baldness; body hair loss | STOP; signpost to the GP | Not suitable for remote treatment; minoxidil product information excludes sudden or patchy loss | clinical-men 10.2 |
+| R4 | Women: sudden shedding about 3 months after a trigger (birth, illness, dieting, weight-loss injection, new medicine) | Telogen effluvium route: explain, no hair medicine; blood tests (FBC, ferritin, thyroid) if over 6 months or no trigger | Usually recovers by itself | clinical-women 1.3, 3.13, 4.1 Q12-Q14 |
+| R5 | Women: deeper voice, fast new body hair, more muscle, periods stopped; male-pattern loss; new androgen signs after the menopause | STOP; urgent referral | Possible androgen-secreting tumour | clinical-women 1.6, 1.11 (4, 5) |
+| R6 | Thoughts of suicide or self-harm now or recently | STOP the sale. Show crisis help on the same screen (NHS 111, Samaritans, 999). A clinician contacts them | Never a quiet product swap | clinical-women 4.1 Q11; clinical-men 10.1 |
+| R7 | Breast lump, pain or nipple discharge (men) | STOP; GP | Male breast cancer reported on finasteride | clinical-men 10.2 |
+| R8 | Weight loss without trying, fevers, night sweats, extreme tiredness (women) | STOP; refer | Systemic illness | clinical-women 4.1 Q10 |
+
+### 5.3 Stage 3: which medicine is excluded (product rules)
+
+**Finasteride and dutasteride (5-ARIs)**
+
+| # | When | Action | Why | Source |
+|---|---|---|---|---|
+| F1 | Depression or anxiety, past or present | CLINICIAN before any 5-ARI. Do not remove minoxidil. Written mood warning (patient-card wording if the product is compounded, because specials have no card) | MHRA: ask, decide with the patient, review regularly | clinical-men 10.1, 10.2; key facts 6-8 |
+| F2 | Mood change or lasting sexual side effects on a 5-ARI before | EXCLUDE all 5-ARIs, oral and topical, unless a specialist advises | Effects can persist; topical is not a way round the warning | clinical-men 10.1 |
+| F3 | Sexual problems now | Record a baseline; CLINICIAN; offer minoxidil-only if he prefers | Needed to judge later change; not a contraindication | clinical-men 10.2; key fact 5 |
+| F4 | Already on dutasteride or finasteride 5 mg | EXCLUDE all 5-ARIs; minoxidil only; tell the GP | Never two 5-ARIs | clinical-men 2.1, 11 (step 3) |
+| F5 | Trying for a baby, or fertility treatment | CLINICIAN; EXCLUDE dutasteride; finasteride by shared decision | Dutasteride's sperm effects last months; finasteride fertility data are from 5 mg | clinical-men 2.1, 2.3 |
+| F6 | Partner pregnant | Tablets: COUNSEL (she must not handle crushed or broken tablets). Dutasteride: condom. Topical 5-ARI: EXCLUDE or strict transfer advice | Semen exposure judged unlikely to harm; skin transfer is the risk with topicals | clinical-men 2.1, 2.3, 10.2 |
+| F7 | Prostate cancer history | CLINICIAN; GP or urologist agreement before any 5-ARI | PSA masking; the finasteride SmPC discusses high-grade prostate cancer (not yet reviewed in the files) | clinical-men 2.1, 10.2; verification gap 4 |
+| F8 | Has PSA tests | COUNSEL and tell the GP: finasteride lowers PSA (consider doubling the result); dutasteride halves it by 6 months | So prostate checks are read correctly | clinical-men 2.1, 2.3 |
+| F9 | Severe liver disease | EXCLUDE dutasteride; CLINICIAN for other oral options | Dutasteride contraindicated | clinical-men 2.3; clinical-women 3.2 |
+| F10 | Allergy to finasteride | EXCLUDE every finasteride product | Contraindication | clinical-men 2.1 |
+| F11 | Lactose or galactose conditions | Ask; check each brand's excipients before supplying tablets | Companies' own documents say finasteride tablets contain lactose. **Not in the foundations files: verify against the SmPC** | Boots, Voy and Numan digests |
+
+**Minoxidil**
+
+| # | When | Action | Why | Source |
+|---|---|---|---|---|
+| M1 | High blood pressure, treated or untreated | EXCLUDE topical minoxidil unless the prescriber records a reason (for example GP agreement). Oral minoxidil: CLINICIAN with a verified reading and a full medicines list | Listed contraindication in the licensed solution's SmPC | clinical-men 3.1, 10.2; clinical-women 4.1 Q22 |
+| M2 | Past pericardial effusion, tamponade or pericarditis; heart failure; pulmonary hypertension with mitral stenosis; phaeochromocytoma | EXCLUDE oral minoxidil | Consensus contraindications | clinical-men 3.2, 10.2; clinical-women 3.2 |
+| M3 | Fast heartbeat or arrhythmia; BP below 90/60 or fainting; kidney impairment or dialysis | Oral minoxidil only with GP or cardiology input. Topical not blocked (counsel about dizziness) | Consensus precautions | clinical-men 3.2; clinical-women 4.1 Q23, Q34 |
+| M4 | Any blood-pressure medicine | CLINICIAN before oral minoxidil (more stopped treatment on doxazosin or 3+ drugs); women's pathway: EXCLUDE oral minoxidil | Effects add up | clinical-men 10.2; clinical-women 4.1 Q22, Q27 |
+| M5 | Reaction to minoxidil solution | Ask what happened. Itch or rash from the solution: switch to the licensed foam (no propylene glycol). True minoxidil allergy: EXCLUDE all minoxidil | Propylene glycol is the usual culprit | clinical-men 3.1; key fact 12 |
+| M6 | Scalp psoriasis, eczema, sunburn, broken skin, shaved scalp, other scalp medicines | EXCLUDE topical minoxidil until settled; treat the scalp first | SmPC contraindications; scalp medicines raise absorption | clinical-men 3.1; clinical-women 4.1 Q26 |
+| M7 | Plain dandruff or seborrhoeic dermatitis | Add ketoconazole shampoo; carry on. (Whether a rinse-off medicated shampoo counts as "another scalp medicine" is not settled: decide a rule) | Step 1 adjunct | clinical-men 11; clinical-women verification "still missing" 4 |
+| M8 | Cats or other pets at home | COUNSEL: topical minoxidil can poison cats; wash hands, keep pets off pillows; offer oral if clinically suitable | Real poisonings reported | customer-voice.md (Cats Protection; PubMed 34370845) |
+| M9 | Babies or young children at home | COUNSEL: keep them away from the treated scalp and pillow | Infant hair growth after contact | clinical-men 3.1 |
+| M10 | Smoker | COUNSEL: solution and foam are flammable; do not apply while smoking | Product information | clinical-women 3.1 |
+| M11 | Would extra face or body hair be unacceptable? | Prefer topical; avoid or minimise oral | Facial hair in up to 73% of women on 1 mg when looked for | clinical-women 3.2, 4.1 Q32; key fact 19 |
+
+**Spironolactone (women)**
+
+| # | When | Action | Why | Source |
+|---|---|---|---|---|
+| W1 | Kidney disease, Addison's disease, past high potassium | EXCLUDE | SmPC contraindications | clinical-women 3.3, 4.1 Q24 |
+| W2 | ACE inhibitor, sartan, potassium or potassium salt substitute, NSAIDs, heparin, lithium, digoxin, co-trimoxazole (trimethoprim alone: unverified) | EXCLUDE, or only with GP agreement and potassium checks | Raise potassium or interact | clinical-women 3.3, 4.1 Q27 |
+| W3 | Drospirenone pill (for example Yasmin) | Allowed; check potassium in the first cycle | Yasmin SmPC | clinical-women 3.3 |
+| W4 | Age 45 or over | U&E (kidney and potassium test) at baseline and repeat potassium | High potassium in 10.1% of women 45+ | clinical-women 3.3; key fact 22 |
+
+### 5.4 Things that should not be rules
+
+| Situation | Do this instead | Source |
+|---|---|---|
+| Smoking or alcohol | Record only; flammability advice for smokers | clinical-women 3.1 (no restriction in the clinical files) |
+| BMI | Record weight as a baseline for oral minoxidil (rapid gain is a stop sign); ask women about weight-loss injections | clinical-men 11; clinical-women 3.13 |
+| No family history | Not a stop. Women: the clinician confirms pattern loss from photos and records why, because the licensed minoxidil SmPC says "not indicated" without family history | clinical-women 3.1, 4.1 Q17 |
+| Mental-health history and minoxidil | Never remove minoxidil for a mood history | clinical-men 10.1 (warning is for 5-ARIs) |
+| Low blood pressure and topical minoxidil | Do not remove topical; counsel about dizziness | clinical-men 3.1, 10.2 |
+
+### 5.5 Rules for the engine itself (lessons from the competitors)
+
+| # | Rule | Why | Source |
+|---|---|---|---|
+| E1 | Ask the stop questions before email, account or payment, and say on screen what will happen | Hims, Keeps, Voy and Philip Kingsley take details first and refuse later | clinical-women 4.1 ("order matters"); section 4 above |
+| E2 | Every stop shows the reason and a next step (GP, NHS 111, dermatology); never a dead end or an error page | Strut R13, Sons R41 and R42, Voy R1 | clinical-women 1.11 |
+| E3 | Safety filters apply on every route: product links, re-orders, second consultations in one basket, "existing customer" routes | Numan R18 and R24; Dr Fox R23 and R24; Boots "Returning" unlocks every pack with no proof (R5) | section 4 above |
+| E4 | When a patient opts out of a drug, remove it | Numan R11 | section 4 above |
+| E5 | Test every rule automatically against its answer text (exact string match) | Philip Kingsley's leading-space bug (R9) and three dead rules (R10) | section 4 above |
+| E6 | Answers that need judgement go to a named prescriber, and anything off-label or oral is backed by two-way contact, photos and a GP letter | GPhC: no higher-risk prescribing on a questionnaire alone | uk-regulation 3.2 (a) and (c); clinical-women 4.0 |
+| E7 | Identity check with date of birth; flag repeat accounts and early re-orders | GPhC identity rules | uk-regulation 3.2 (b), 6.2 |
+| E8 | Licensed first: finasteride 1 mg tablets and minoxidil 5% solution or foam. A compounded product only with a recorded special clinical need (not cost or convenience), and the patient-card information given in writing | MHRA Guidance Note 14; specials have no patient card | clinical-men 10.1, 10.4; key fact 24 |
+| E9 | Follow-up built into the engine: 2-4 weeks, 3, 6 and 12 months, then every 6-12 months; mood and sexual-function questions every time; a fast route to report low mood | MHRA "review regularly" | clinical-men 10.3 |
+| E10 | Explain every removal in one plain line ("Minoxidil is not suitable with high blood pressure; your prescriber will talk to you") | Most competitors remove products silently; patients notice | customer-voice.md; section 4 above |
+| E11 | Never present a cosmetic as "most effective" with a results guarantee when medicines are excluded | ASA ruling on money-back results wording | uk-regulation 2.5; Numan R21 |
+
+### 5.6 Limits of this rule set
+
+- NICE CKS and the BNF were not readable from the research machine; check both before writing the clinical
+  protocol (clinical-men 12; clinical-women Part 5).
+- The oral minoxidil consensus lists were confirmed only partly first-hand (clinical-men verification row 23).
+- UKTIS pregnancy monographs were not read (clinical-women Part 5).
+- Lactose content of finasteride tablets is taken from company documents, not the SmPC.
+- This is a clinical and engine review, not legal advice; the regulation file recommends regulatory advice before
+  launch (clinical-men 10.4).
+
+## 6. The ten findings that matter most
+
+1. **Lloyds is the only UK company whose engine acts on screen for most clinical risks** (observed), with Numan
+   next. Even Lloyds does not ask about propylene glycol, children at home or lactose.
+2. **Most engines decide nothing before payment.** Hair + Me changes nothing for any medical answer; Boots only
+   labels the order "Danger" for its clinician; Superdrug's men's list never changes; Keeps asks medical questions
+   after payment; Happy Head and Strut (US) only flag. A clinician may still refuse, but after ID, account and card.
+3. **The most serious let-throughs:** Numan and Sons show no crisis help for suicidal thoughts (Numan even skips
+   that question after a recent dose change); Strut's women's topical finasteride has no pregnancy question; Happy
+   Head offers dutasteride to women aged 50+ who say they can become pregnant.
+4. **Bugs and bypasses:** a typo in Philip Kingsley's rules keeps minoxidil for uncontrolled blood pressure; Numan's
+   product links skip its allergy and eligibility filters; Dr Fox lets two consultations put its minoxidil and
+   finasteride spray and finasteride tablets in one basket.
+5. **Blood pressure is handled inconsistently.** The licensed SmPC contraindicates topical minoxidil in high blood
+   pressure, yet Dr Fox, Hair + Me and Treated keep it on offer; meanwhile Numan, Lloyds and Dr Fox remove topical
+   minoxidil for *low* blood pressure, which the evidence does not require.
+6. **Mood:** the MHRA asks prescribers to ask, discuss and review, not to block. Treated and Philip Kingsley block
+   minoxidil too; Superdrug's men's form has no mood question at all.
+7. **Patchy, sudden or complete loss:** Numan, Lloyds and Dr Fox stop and signpost (right); Hair + Me, Sons, Strut and
+   the anonymous Hims quizzes do nothing.
+8. **Easy wins nobody takes:** ask what reacted (propylene glycol versus minoxidil), about children and pets at home,
+   baseline sexual function, and contraception for women; explain every removal in one line.
+9. **No clinical basis for smoking, alcohol or BMI gates** (only Treated uses them); smokers and pet owners need
+   advice, not a block.
+10. **Evidence limits:** Voy, Hers (US) and Oxford Online Pharmacy were not walked live; XYON is unverified; Sons and
+    Ro rest on code and simulation and were still in final review; everything after each sign-in wall is from
+    documents.

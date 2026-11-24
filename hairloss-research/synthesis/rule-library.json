@@ -1000,7 +1000,7 @@
     "evidence": "observed"
    },
    "ro": {
-    "effect": "removes oral minoxidil",
+    "effect": "men removes oral minoxidil from recommendation; women removes oral minoxidil",
     "evidence": "code"
    },
    "happy-head": {
@@ -1656,7 +1656,7 @@
     "evidence": "observed"
    },
    "superdrug-online-doctor": {
-    "effect": "men photos required; women −Regaine",
+    "effect": "men: 'no pattern fits' needs photos; women −Regaine",
     "evidence": "observed"
    },
    "lloyds-online-doctor": {
@@ -2324,7 +2324,7 @@
     "evidence": "code"
    },
    "treated": {
-    "effect": "flagged for the clinician (offer unchanged) (any allergy)",
+    "effect": "not asked (any allergy → flagged for the clinician (offer unchanged))",
     "evidence": "observed"
    },
    "dr-fox": {
