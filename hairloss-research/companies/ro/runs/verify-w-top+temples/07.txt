@@ -1,0 +1,27 @@
+STEP 07 click "3"
+URL: https://start.ro.co/tefcyb/online-visit/16
+TITLE: Online Visit
+
+--- VISIBLE TEXT ---
+Medical evaluation and prescriptions by U.S.-licensed physicians
+Free shipping
+Continued support from your doctor and our care team
+CA Privacy Notice
+Your Privacy Choices
+Thanks for sharing. Ready to go deeper?
+
+Next, you’ll tell your provider about your health, medical history, and lifestyle. Your provider will use this information to evaluate your symptoms and, if appropriate, prescribe medication for treatment.
+
+Already a member? Log in and continue
+
+Sign up with Email
+
+OR
+
+Continue with Google
+
+--- CONTROLS ---
+  button (4): Your Privacy Choices  ·  Log in and continue  ·  Sign up with Email  ·  Continue with Google
+
+--- LINKS ---
+  link (1): CA Privacy Notice -> //ro.co/privacy-policy/#privacy-california
