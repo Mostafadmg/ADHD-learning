@@ -169,7 +169,10 @@ fs.writeFileSync(path.join(REP, 'README.md'), ['# Company reports', '', '| Compa
 const DOCS = [
   ['blueprint', 'plan', 'The plan', 'blueprint/plan.md'], ['blueprint', 'products', 'Product range', 'blueprint/products.md'], ['blueprint', 'engine', 'Consultation engine', 'blueprint/engine.md'],
   ['blueprint', 'launch', 'Launch and numbers', 'blueprint/launch.md'], ['blueprint', 'risks', 'Rules and risks', 'blueprint/risks.md'],
+  ['blueprint', 'judging', 'How we chose', 'blueprint/drafts/judging.md'],
   ['evidence', 'synthesis', 'What the research shows', 'synthesis/cross-company.md'],
+  ['evidence', 'rule-library', 'Every rule, side by side', 'synthesis/rule-library.md'], ['evidence', 'products-prices', 'Products and prices', 'synthesis/products-prices.md'],
+  ['evidence', 'engines-experience', 'How the engines decide', 'synthesis/engines-experience.md'],
   ['evidence', 'clinical-men', 'Evidence: men', 'foundations/clinical-men.md'], ['evidence', 'clinical-women', 'Evidence: women', 'foundations/clinical-women.md'],
   ['evidence', 'uk-regulation', 'UK rules', 'foundations/uk-regulation.md'], ['evidence', 'customer-voice', 'What customers say', 'foundations/customer-voice.md'],
   ['evidence', 'market-economics', 'Market and money', 'foundations/market-economics.md'], ['evidence', 'uk-sweep', 'Other UK sellers', 'market/uk-sweep.md'], ['evidence', 'us-intl-sweep', 'Other sellers worldwide', 'market/us-intl-sweep.md'],

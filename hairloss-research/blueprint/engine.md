@@ -1,0 +1,569 @@
+# The consultation engine
+
+Part of the final blueprint (see `plan.md` for the summary, evidence marks and labels). This file sets out the
+consultation question by question, for men and for women; then the rules as a "when → then" table with the clinical
+source for each; then the treatment ladder and the follow-up schedule.
+
+**Base and grafts.** CP's stages, action codes and result screen [CP 4], with: CP's scalp split (B1); GP consent
+before the result (WF); WF's extra women's questions and hairline photos; VT's "not losing hair" exit, date-of-birth
+match, weight baseline and hand-over rule; and the judge's settled values [judging 5]. **No dose here is final** until
+NICE CKS, the BNF, UKTIS and the full oral minoxidil consensus paper are read. The **PHQ-2 cut-off** and the
+**distress threshold** are set by the clinical lead from the published tools before launch [to verify].
+[reviewed: corrected] The PHQ-2's published cut-off is now known: a score of 3 or more out of 6 (Kroenke 2003, Med Care,
+PMID 14583691: sensitivity 83%, specificity 92% for major depression; "a PHQ-2 score of 3 as the optimal cutpoint for
+screening"). The clinical lead still signs it off; the distress threshold is still open.
+
+**Settled values used here** [judging 5]: crisis window = last month; no new minoxidil tablets at 66 or over at launch;
+women's minoxidil tablets ceiling 2.5 mg online; spironolactone ceiling 100 mg online; men with sudden shedding go to
+the free shedding programme if there is a trigger (refer if no trigger, over 6 months, or photos do not fit); two
+blood pressure readings on different days, photographed; Wales after advice; Northern Ireland stop until advice.
+
+---
+
+## 1. Rules the engine itself follows
+
+Each fixes something a rival gets wrong [rule-library 5.5; engines-experience 6].
+
+1. **Stop questions first, before any contact details** (age, place, pregnancy, red flags, crisis). Nobody answers 40
+   questions to be told "see your GP".
+2. **Every stop gives the reason and a named next step** (GP, dermatology, NHS 111, Samaritans, 999) and a printable
+   one-page GP summary made on the person's own device. Never a dead end.
+3. **Three outcomes, not two:** allowed, not allowed, or "prescriber decides and records why".
+4. **One plain sentence for every removal**, and what is still possible.
+5. **Every question changes something or is cut.** Answers that only help diagnosis are highlighted to the prescriber.
+   Free text is always read by a person.
+6. **A stop is final for that consultation.** If someone goes back and changes a stopping answer, both answers are
+   logged and shown to the prescriber.
+7. **The same rules on every route in:** advert links, product pages, repeat orders, a second consultation, an existing
+   patient's request. The engine checks the whole account for duplicates and clashes (for example two 5-ARIs).
+8. **Opt-outs are honoured at once.**
+9. **Preferences are asked last,** and only options still allowed are shown.
+10. **Licensed first by default.** Only a prescriber can choose a special, with the clinical need recorded.
+11. **Rules run on the server, one automated test per rule**, matched to the exact answer text, run before every
+    release. (A leading space made one rival's blood-pressure rule fail silently [rule-library 4.1].)
+12. **Smart skipping:** questions that protect a medicine disappear once that medicine is off the table. The crisis
+    question is **never** skipped.
+13. **Privacy:** answers are not stored against a person until they choose to continue; "Delete my answers" on every
+    screen; optional 7-day save on the device. The DPIA covers this anonymous stage [uk-regulation 6.1].
+14. **Landing-page rule:** when the hair check is the landing page of an advert, its first screen talks about the
+    condition and the service only. Medicines appear only on the result screen, after the questions (the ASA upheld
+    against Voy in September 2025 for an advert with no medicine named whose landing page talked about "weight loss
+    prescriptions") [judging 3.4].
+
+---
+
+## 2. Action codes
+
+| Code | What happens on screen and behind it |
+|---|---|
+| **STOP-URGENT** | Ends the consultation. Says why and "see your GP within days" or "urgent referral". Printable GP summary. No contact details asked |
+| **STOP-REFER** | Ends the consultation with a routine GP or dermatology signpost and the printable summary |
+| **STOP-CRISIS** | Crisis help on the same screen that cannot be clicked past to any sale: 999 or A&E if in danger now; Samaritans 116 123 any time; GP today, or NHS 111 and "select the mental health option" (nhs.uk urgent mental health page, read 24 Nov 2026) [reviewed: corrected]. Offers, never requires, a **same-day** call from our prescriber |
+| **END** | Ends politely with no prescription needed (for example "I'm not losing hair") and offers a free tool |
+| **ROUTE** | Moves the person to another pathway: women's route, shedding programme (S4), pregnancy route (W6), traction care (W7), prescriber call |
+| **EXCLUDE x** | Removes product x, with one plain sentence why |
+| **ADD x** | Adds product or check x to the provisional plan |
+| **SET x** | Switches a strength or base (for example foam instead of liquid) |
+| **BLOODS x** | Adds blood panel x (`products.md` S3), with its price on the result screen |
+| **PHOTO+** | Asks for an extra close-up or a required photo after sign-in |
+| **BP** | Requires two blood pressure readings on different days, each photographed, with the pulse |
+| **CALL** | Requires a two-way video or phone consultation before prescribing |
+| **GP** | GP details and consent needed; a GP letter will be sent |
+| **FLAG** | The prescriber must look at this before approving and record the decision; the reason is shown to the patient in plain words |
+| **COUNSEL** | Carry on; advice shown on screen and repeated in writing in the parcel |
+| **SKIP** | Later questions that no longer matter are skipped |
+| **BASELINE** | Stored as a starting measurement for follow-up |
+
+---
+
+## 3. The journey, and where sign-in comes
+
+```
+ BEFORE SIGN-IN (anonymous, about 5 to 6 minutes, nothing saved unless chosen)
+  Welcome    "You'll see your result and full price before we ask who you are."
+  Stage A    Gates: age, route, where you live; women: pregnancy, contraception; GP consent
+  Stage B    Red flags and wellbeing (crisis question for everyone, never skipped)
+  Stage C    What is happening: thinning or shedding, where, how fast, what happened before;
+             women: hair type, periods, menopause, PCOS signs, HRT
+  Stage D    Health and medicines
+  Stage E    Men only, while finasteride or dutasteride is still possible
+  Stage F    Past treatment, goals, preferences, household, routine (asked last)
+  RESULT     What we think; the plan with names, strengths, licence status and full prices;
+             what is ruled out and why; next steps; what to expect
+ ════════════ SIGN-IN WALL: email and password (mobile optional) ════════════
+  G Identity (date of birth must match A1) · H GP details · I Photos · J Blood pressure (tablets)
+  K Blood tests (if flagged) · L Information and consent · M Card saved, not charged
+  N Prescriber review (and call if required) · O Second pharmacist check → dispense → tracked delivery
+```
+
+**Which questions each person sees** (with smart skipping):
+
+| | Questions in order | Length [estimate] |
+|---|---|---|
+| **A typical man** (gradual loss, no flags, GP consent) | A1 to A3, A7 · B1, B2, B4 to B8, B11 · C1 to C8, C9M [reviewed: corrected] · D1 to D8, D10 · E1 to E6 · F1 to F7 | About 20 screens, 4 to 5 minutes |
+| **A typical woman** (wider parting, could conceive, GP consent) | A1 to A7 · B1 to B7, B9 to B11 · C1, C4 to C8, CW1 to CW8 · D1 to D4, D6 to D10 · F1 to F7 | About 25 to 30 screens, about 6 minutes |
+
+Checklists with a "None of these" button share a screen; each item is still answered on its own. Test the length in
+the pilot.
+
+### 3.1 Welcome screen (before any question)
+
+- "This takes about 5 minutes. You'll see what we think and the full price **before** we ask for your name."
+- "A pharmacist prescriber makes the final decision. **You pay only if they approve.**"
+- "We may ask for scalp photos, ID, two blood pressure readings or a blood test. We'll tell you which, and what they
+  cost, before you sign up."
+- Who we are: pharmacy name and GPhC number, superintendent, the prescriber's name and GPhC number and that they are a
+  pharmacist, how to complain [uk-regulation 3.2].
+- "Your answers stay in this session. **Delete my answers** any time. Tick here to keep them 7 days on this device."
+
+---
+
+## 4. The questions
+
+### 4.1 Stage A: gates (everyone, first)
+
+| # | Question (patient words) | Why we ask | Options → what each does |
+|---|---|---|---|
+| A1 | What is your date of birth? | Every licence starts at 18; scalp minoxidil licences end at 65 (men's foam at 49); minoxidil tablets have few data over 65 and can cause dizziness on standing [clinical-men 3.1; clinical-women 3.2] | **Under 18:** STOP-REFER ("Hair-loss medicines are licensed from 18. Please see your GP"). **18 to 49:** continue. **50 to 65:** continue; men: foam is outside its licence, so SET liquid first; foam only with FLAG. **66 or over:** continue; FLAG every scalp minoxidil (outside licence age: prescriber records why, tells the GP); **EXCLUDE starting minoxidil tablets** ("We don't start minoxidil tablets at 66 or over"; launch rule, revisit after the first audit). Re-entered at sign-in: must match |
+| A2 | Which route is right for you? We ask about sex registered at birth because some medicines are unsafe in pregnancy or work differently by sex | Finasteride, dutasteride and the men's 5% solution are contraindicated in women [rule-library S2] | **Male:** men's route. **Female:** women's route (never a stop). **I'm trans or non-binary, or on hormones such as testosterone or oestrogen:** ROUTE to a free prescriber call; no automatic plan (the files do not cover gender-affirming hormones; a written protocol must follow [to verify]) |
+| A3 | Where do you live? | Welsh rules not checked; Northern Ireland has its own regulator; an English service treating patients in Scotland was not researched [uk-regulation 4.3, missing item 2; WF 1.3] | **England:** continue. **Scotland:** continue once the Scotland check is cleared [to verify]; until then, as Wales. **Wales:** STOP-REFER at launch ("We can't treat people in Wales yet"), with a waiting list. **Northern Ireland:** STOP-REFER until advice is taken. **Outside the UK:** STOP |
+| A4 | *(Women)* Are you pregnant, trying to get pregnant (including fertility treatment), or breastfeeding? | Scalp minoxidil "should not be used during pregnancy or lactation"; tablets and anti-androgens are worse [clinical-women 3.12] | **Pregnant, trying or breastfeeding:** ROUTE to W6 (free; no medicines); she may still answer the shedding questions for advice; SKIP all medicine questions. **Had a baby in the last 12 months, not breastfeeding:** continue; "Had a baby" is pre-ticked in C5; FLAG licensed minoxidil (it is "not indicated" for loss due to childbirth, so off-label) [WF 1.5]. **None:** continue |
+| A5 | *(Women)* Could you become pregnant? (You still have periods and nothing prevents pregnancy) | Decides whether tablets and spironolactone are possible [clinical-women 4.1] | **Yes or Not sure:** ask A6. **No (after the menopause, sterilisation, hysterectomy or another reason):** SKIP A6; the prescriber confirms at review |
+| A6 | *(Women)* What contraception do you use now? | Anti-androgens can feminise a male fetus; minoxidil tablets "not recommended" without contraception; the combined pill makes androgen tests unreliable [clinical-women 2.3, 3.2, 3.3] | **None, natural methods or condoms only:** EXCLUDE W2 and W3 ("These can harm a baby, so we only prescribe them with reliable contraception. A licensed scalp treatment is still possible"). [reviewed: corrected] Condoms alone were a FLAG; the MHRA says methods used at the time of sex "should not be relied upon alone" for medicines that may harm a baby (Drug Safety Update, 21 March 2019). **Other:** FLAG; the prescriber classes it against the MHRA table. **Combined pill, patch or ring (which?):** BASELINE; no androgen tests while on it; a drospirenone pill (for example Yasmin): potassium in the first cycle of spironolactone; COUNSEL (user-dependent: about 9 in 100 in typical use). **Progestogen-only pill:** continue with the same counselling. **Implant, injection, hormonal or copper coil, sterilisation:** continue |
+| A7 | Are you registered with a UK GP, and may we tell them about any treatment we give? | GPhC: share with the GP for higher-risk prescribing or record why it is still safe; the MHRA asks finasteride prescribers to review the medical record. Asked **before** the result so the result is honest [uk-regulation 3.2; judging 3.4; WF 1.8] | **Yes, and yes:** all routes open. **Yes, but please don't tell them / I don't have a GP:** licensed scalp treatments only; EXCLUDE every tablet, finasteride included ("Tablets need us to share your care with your GP. Licensed scalp treatments are still possible"); SKIP Stage E and tablet-only rows |
+
+### 4.2 Stage B: red flags and wellbeing (everyone)
+
+| # | Question | Why we ask | Options → what each does |
+|---|---|---|---|
+| B1 | Do you have any of these on your scalp? Tick all | Scarring loss is permanent and needs urgent care; scalp disease is a contraindication for scalp minoxidil. This **splits** scarring signs from ordinary dandruff and diagnosed psoriasis, which WF's draft lumped together [clinical-women 1.0, 1.11; clinical-men 3.1; judging 3.2] | **Pain, burning or tenderness · Spots with pus, crusts or open sores · Redness or scale stuck around the hairs · Smooth, shiny areas where no hair grows · Soft, boggy swellings or lumps on the scalp** [reviewed: corrected: added; PCDS says refer dissecting cellulitis urgently, clinical-women 1.10]**:** STOP-URGENT ("these can be signs of a scarring type of hair loss, which is permanent if not treated quickly"). **Strong itch that does not settle, without dandruff-type flakes** [reviewed: corrected: "marked itch" is on the clinical red-flag list, clinical-women 1.11 item 1, and had no route]**:** STOP-REFER (GP or dermatology soon); with any sign above, STOP-URGENT. **Itch with flakes, like dandruff:** COUNSEL; ADD S1 shampoo; continue. If the close-up shows a red, inflamed scalp (seborrhoeic dermatitis), S1 first and scalp minoxidil only once settled (a "scalp abnormality" is a contraindication in each Regaine scalp minoxidil SmPC read, section 4.3) [reviewed: corrected]. **Psoriasis or eczema on the scalp (diagnosed):** EXCLUDE scalp minoxidil until settled ("treat the scalp first with your GP"); tablets stay possible. **Sunburn or broken skin now:** EXCLUDE scalp minoxidil until healed. **Not sure:** PHOTO+ (close-up) and FLAG. **None:** continue |
+| B2 | Do you have any of these? Tick all | Alopecia areata, tinea or other non-pattern causes [rule-library R2, R3] | **Separate round bald patches · Loss of eyebrows or eyelashes · Patchy loss in the beard or on the body:** STOP-REFER (fast-track wording if spreading fast or brows or lashes are going). **All the hair on your scalp has gone:** STOP-REFER with honest words that medicine is unlikely to help, and information on other options. **None:** continue |
+| B3 | *(Women)* Is your front hairline, or the hair at your temples, moving back? | In a woman, a receding hairline is frontal fibrosing alopecia (FFA) until proven otherwise; hair lost there does not regrow [clinical-women 1.9, key fact 5] | **Yes:** STOP-REFER ("This needs a face-to-face check by your GP or a dermatologist"). **Not sure:** PHOTO+ (hairline pulled back, both temples, eyebrows) and FLAG. **No:** continue |
+| B4 | How quickly has it happened? | Sudden loss is not pattern loss; in women it is usually shedding (telogen effluvium) [clinical-men 10.2; clinical-women 1.3] | **Slowly, over months or years:** pattern questions. **Suddenly, over a few weeks, with a lot of hair coming out:** shedding questions; C5 decides (men: shedding programme with a trigger, GP without one; no hair medicine on this route). **Not sure:** photos decide (FLAG) |
+| B5 | Over the last 2 weeks, how often have you been bothered by (a) little interest or pleasure in doing things; (b) feeling down, depressed or hopeless? | The PHQ-2, a standard two-question depression screen. The MHRA asks prescribers to ask about depression before finasteride and decide with the patient; it does not say block, and says nothing against minoxidil [clinical-men 10.1] | Not at all · Several days · More than half the days · Nearly every day (each). Always BASELINE. **Any answer above "Not at all":** support information shown (GP, NHS talking therapies). **Positive screen** (scored 0 to 3 per question, total 0 to 6; published cut-off **3 or more**, Kroenke 2003 [reviewed: corrected]; the clinical lead confirms): FLAG; CALL before any finasteride or dutasteride. **Minoxidil is never removed for mood** |
+| B6 | In the last month, have you had thoughts that you would be better off dead, or of hurting yourself? **Asked of everyone; never skipped** | Thoughts of self-harm need crisis help on the screen, never a quiet product swap. Numan skips this after a recent dose change; Sons† shows nothing [rule-library R6; cross-company 4.4] | **Yes, in the last month:** STOP-CRISIS, with an optional **same-day** call from our prescriber (the only phone number asked before sign-in). **Yes, 1 to 12 months ago:** FLAG; CALL before any 5-ARI; support information; minoxidil allowed. **Yes, more than a year ago:** FLAG; CALL before any 5-ARI (shared decision). **No:** continue |
+| B7 | On a scale of 0 to 10, how much is your hair loss affecting your mood or daily life? Do you avoid going out, or is it affecting work or relationships? | Moderate to severe distress is a reason to refer; an outcome score from day one [clinical-women 1.2, 1.11] | BASELINE (asked again at every review). **High score** (threshold set by the clinical lead [to verify]) **with "Yes":** FLAG; a prescriber call before any plan; support information; and a **GP referral letter** (with consent) for support and a dermatology opinion [reviewed: corrected: PCDS lists moderate to severe distress as a reason to refer, clinical-women 1.2, 1.11 item 8, 4.1 question 11; the draft only flagged it]. Treatment of confirmed pattern loss may go on alongside if the prescriber judges it safe |
+| B8 | *(Men)* Have you noticed a lump, pain, swelling or discharge in either breast or nipple? | Male breast cancer has been reported on finasteride [rule-library R7] | **Yes:** STOP-REFER ("Please see your GP soon"). **No:** continue |
+| B9 | *(Women)* In the last year, have you had any of these, and did they come on quickly? A deeper voice · A lot of new hair on the face, chest or tummy · More muscle · Periods stopped (not menopause, pregnancy or contraception) | Possible androgen-secreting tumour [clinical-women 1.6, 1.11; rule-library R5] | **Any "Yes, quickly":** STOP-URGENT (urgent endocrine or gynaecology referral via the GP; printable letter). **"Yes, slowly":** continue; BLOODS androgen panel via Stage C (unless on the combined pill). **No:** continue |
+| B10 | *(Women)* Have you noticed a rounder face with new stretch marks and easy bruising, or your hands, feet or jaw getting bigger? | Signs of Cushing's syndrome or acromegaly [clinical-women 1.6; WF 2.7] | **Yes:** STOP-URGENT (urgent endocrine referral via the GP; printable letter) [reviewed: corrected: clinical-women 1.6 lists these under "red flags that mean urgent referral"; the draft had a routine referral]. **No:** continue |
+| B11 | Have you had any of these with the hair loss? Weight loss without trying · Fevers · Night sweats · Joint pains · A new rash · Extreme tiredness | Illness elsewhere in the body [rule-library R8; clinical-women 1.3]. The source is the women's file; we ask men too [our view] | **Any:** STOP-REFER ("these need a doctor to check for an illness behind the hair loss"). **None:** continue |
+
+### 4.3 Stage C: what is happening (diagnosis)
+
+**Everyone**
+
+| # | Question | Why we ask | Options → what each does |
+|---|---|---|---|
+| C1 | What is happening to your hair? | The first sort: thinning or shedding. People with no hair loss should not get a prescription (Hims UK and Hair + Me sold to them) [clinical-women 1.0; VT C1] | **Getting thinner, slowly:** pattern questions. **More hair falling out than usual:** C5 weighs heavily. **Both:** both routes; photos decide; women BLOODS core panel. **I'm not losing hair; I want to prevent it:** END ("You don't need a prescription now"); offer the free photo tracker. **Not sure:** photos decide (FLAG) |
+| C2M | *(Men)* Where is your hair thinning? Tick all (pictures) | Male pattern is temples and crown; diffuse loss is not for remote treatment [clinical-men 10.2] | **Temples and front hairline · Crown · Top of the head (any mix):** fits male pattern. **All over evenly, including sides and back:** does not fit; PHOTO+; shedding questions; if photos confirm diffuse loss with no trigger: STOP-REFER (optional bloods as C6). **Not sure:** photos decide (FLAG) |
+| C3M | *(Men)* Which picture looks most like you now? (pattern stages) | Honest expectations; copies the LloydsPharmacy and Keeps expectation screens [engines-experience 4.1] | BASELINE. **Advanced stages:** COUNSEL honestly that medicine aims to keep what is left and cannot rebuild bald areas; information on procedures; he may continue |
+| C4 | How long has it been going on? | Shedding timing; shedding past 6 months needs a cause looked for [clinical-women 1.3, 4.1] | **Under 6 months and sudden:** shedding route. **Women shedding over 6 months:** BLOODS core panel; consider pattern loss as well; refer if no cause. Otherwise BASELINE |
+| C5 | In the 6 months before it started, did any of these happen? Tick all, with the month if you know it: Illness with a high fever (including COVID-19) or a hospital stay · An operation · A major stress or life event · Fast weight loss or a strict diet · A weight-loss injection (for example semaglutide or tirzepatide) · Started, stopped or changed a medicine (which?) · *(Men)* Started testosterone, anabolic steroids or similar · *(Women)* Had a baby or a pregnancy ended · *(Women)* Stopped or changed the pill or HRT · None | The trigger question is how a clinician tells shedding from pattern loss. Nobody in the market asks it as a timing question, or asks about weight-loss injections [cross-company 5; clinical-women 1.3, 3.13] | **Sudden shedding + any trigger:** ROUTE to S4 shedding programme (free; no hair medicine); the screen shows a timeline ("your shedding began about 3 months after X, which fits"). **Men, sudden shedding + no trigger:** STOP-REFER (GP; printable summary). **Women, sudden shedding + no trigger:** BLOODS core panel; shedding programme with a GP letter if unexplained. **Gradual thinning + a trigger:** both may be present; photos decide (FLAG). **Weight-loss injection:** COUNSEL (a known cause; most recover while continuing; do not stop it for hair alone); ask D9. **Fast weight loss, strict diet or injection:** ask C5a. **New medicine:** COUNSEL ("speak to the prescriber of that medicine; we won't just add a hair treatment"); FLAG. **Testosterone or steroids:** COUNSEL (these can drive pattern loss); FLAG |
+| C5a | *(If fast weight loss, a strict diet, an injection or a very low-calorie diet was ticked)* Are you eating much less than usual, skipping meals most days, or worried about your eating? | Very low intake can point to an eating disorder [clinical-women 1.3, author's synthesis; WF 3W.3a]. Asked of men too [our view] | **Yes:** FLAG; a prescriber call before any plan; GP referral letter (with consent) [reviewed: corrected: clinical-women 1.3 and 4.1 question 14 say "think eating disorder and refer"; a signpost alone did not meet that]; no hair medicine until the prescriber has spoken to them. **Prefer not to say:** FLAG; call offered; GP signpost. **No:** continue |
+| C6 | Do any of these apply? Vegetarian or vegan · Very low-calorie diet · Bowel disease such as coeliac or Crohn's · Weight-loss surgery · *(Women)* Heavy periods · None | Points to iron deficiency [clinical-men 6; clinical-women 4.1] | **Any:** BLOODS (FBC and ferritin). An unexplained low ferritin in a man goes to his GP |
+| C7 | Do you take any supplements? Biotin or "hair, skin and nails" · High-dose vitamin A · Selenium · Saw palmetto or pumpkin seed oil · Iron · Other · None | Biotin distorts blood tests; vitamin A and selenium excess can cause hair loss [clinical-men 6; clinical-women 2.4] | **Biotin:** COUNSEL (tell us and the lab before any blood test; we won't add more). **High-dose vitamin A or selenium:** COUNSEL to stop. **Saw palmetto:** FLAG (ask about sexual side effects). All: BASELINE |
+| C8 | Do you often wear your hair in tight styles? Tight ponytail or bun · Braids or cornrows · Weaves or extensions · Relaxers · Wigs fixed with clips or glue · Tight head scarf · None | Traction alopecia: stop the pulling first [clinical-women 1.7] | **Any, with loss at the edges (CW1 or photos):** ROUTE to W7 traction care. **Any, without edge loss:** COUNSEL (lower the tension). **Men, any:** COUNSEL; PHOTO+ of the edges; FLAG |
+
+[reviewed: corrected] Family history **is now asked of men** (C9M below). The draft said it "changes no rule for men in
+the clinical files or any engine seen", but both men's minoxidil SmPCs (Regaine for Men 5% solution and 5% foam,
+section 4.4, emc, read 24 Nov 2026) rule out use when there is no family history of hair loss (the solution: "should
+not be used ... when there is no family history of hair loss"; the foam: not indicated). It changes nothing for
+finasteride. It is asked of women too (CW2).
+
+| # | Question | Why we ask | Options → what each does |
+|---|---|---|---|
+| C9M | *(Men, only while scalp minoxidil is still possible)* Does anyone in your family have thinning hair or baldness (either parent's side)? | The men's minoxidil SmPCs exclude use when there is no family history [reviewed: corrected] | **Yes:** continue. **No or Don't know:** FLAG: the prescriber confirms male pattern loss from the photos and records why before scalp minoxidil (outside the SmPC wording; rule R24). Never a stop |
+
+**Women only**
+
+| # | Question | Why we ask | Options → what each does |
+|---|---|---|---|
+| CW1 | Where is your hair thinnest? Tick all (pictures) | Pattern tells FPHL from traction, scarring and androgen excess [clinical-women 1.2, 1.7, 1.10, 1.11] | **Top and crown, front hairline kept:** FPHL likely. **Temples and crown, like a man's pattern:** STOP-REFER with a printable letter suggesting testosterone and SHBG tests. **At the edges, where hair is pulled:** ROUTE to W7 (with C8). **Middle of the crown, spreading outwards:** ask CW3 and CW3a. **All over evenly:** shedding questions; BLOODS core panel |
+| CW2 | Does anyone in your family have thinning hair (either parent's side)? | The licensed minoxidil "is not indicated when there is no family history" [clinical-women 3.1] | **Yes:** supports FPHL. **No or Don't know:** FLAG: the prescriber confirms the diagnosis from photos and records why before licensed minoxidil |
+| CW3 | What is your natural hair like? Straight · Wavy · Curly · Tightly curled or coily | Early central centrifugal cicatricial alopecia (CCCA, a scarring loss) looks like FPHL on the crown; also used for product fit [clinical-women 1.10] | **Tightly curled or coily, with crown thinning (CW1):** ask CW3a. All: used to suggest foam or tablets in Stage F |
+| CW3a | On your crown, do you have tenderness, itch or hair breaking off? | The CCCA trap: early treatment limits permanent loss [clinical-women 1.10; WF 3W.5a] | **Yes:** STOP-REFER (dermatology). **No:** continue; PHOTO+ (crown close-up) and FLAG (low bar for referral) |
+| CW4 | Are your periods regular? Regular · Irregular or far apart · Never regular · Stopped: menopause · Stopped: my contraception stops them · Stopped: after a hysterectomy · Stopped: another reason | Hyperandrogenism and PCOS work-up; the combined-pill trap [clinical-women 1.5, 2.3] | **Irregular, far apart, never regular, or stopped for another reason:** BLOODS androgen panel plus prolactin, FSH and TSH; GP letter. **On the combined pill:** no androgen tests (unreliable); FLAG (prescriber discusses with the GP) |
+| CW5 | Where are you with the menopause? Not started · Changes have started (perimenopause) · Periods have stopped · Not sure | FFA mainly affects women after the menopause; check the hairline and eyebrows in every woman over about 45 [clinical-women 1.4] | **Perimenopause, after the menopause, or aged 45+ from A1 (automatic):** PHOTO+ hairline (pulled back, both temples) and eyebrows **required, cannot be skipped**; the prescriber records an FFA check before approving [WF 4.2]. **After the menopause:** ask CW6 |
+| CW6 | *(After the menopause)* Since the menopause, have you had new hair on your face or body, or new acne? | New androgen signs after the menopause need investigation for an androgen-secreting tumour or ovarian hyperthecosis [clinical-women 1.4] | **Yes:** STOP-URGENT (urgent referral via the GP to endocrinology or gynaecology), with a printable letter suggesting testosterone and SHBG tests [WF 4.4]. [reviewed: corrected: clinical-women 1.11 item 4 puts "new androgen signs after the menopause" under urgent referral; the draft said "GP soon"]. **No:** continue |
+| CW7 | Do you have acne, or unwanted hair on your face, chest or tummy? Have you been told you have PCOS (polycystic ovary syndrome)? | 22% of women with PCOS had pattern hair loss; test only with signs [clinical-women 1.5] | **Any:** BLOODS androgen panel (not on the combined pill). **PCOS:** GP letter (PCOS also needs diabetes and heart-risk checks). If A6 shows effective contraception: ADD W3 spironolactone as an option |
+| CW8 | Are you on HRT? Not on HRT · On HRT, no change · Started or changed in the last 6 months · Stopped in the last 6 months | A hormone change can trigger shedding; HRT data for hair are limited [clinical-women 3.9] | **Started, changed or stopped:** possible trigger (ROUTE to S4 if the pattern fits); COUNSEL ("We never start or change HRT for hair; that's for your GP or menopause service"). All: BASELINE (type) |
+
+### 4.4 Stage D: health and medicines (everyone; tablet-only rows skipped when no tablet is possible)
+
+| # | Question | Why we ask | Options → what each does |
+|---|---|---|---|
+| D1 | Has a doctor or nurse ever told you that you have high blood pressure? | The licensed solution lists high blood pressure, treated or not, as a contraindication; low blood pressure is a precaution for tablets only [clinical-men 3.1; rule-library M1, M3, 5.4] | **Yes, and I take medicine / Yes, no medicine:** EXCLUDE scalp minoxidil by default ("its product information says not to use it with high blood pressure; your prescriber can still consider it if your GP agrees"), with a FLAG route via GP agreement. Tablets: men CALL + BP + full medicines list; **women on blood-pressure medicine: EXCLUDE W2**; women not on medicine: FLAG + GP. **Low blood pressure, or I faint or feel dizzy when I stand:** EXCLUDE minoxidil tablets; scalp minoxidil stays, with COUNSEL about dizziness. **Don't know:** a reading is needed before any minoxidil [proposal] |
+| D2 | Have you ever had any of these? Heart failure · Fluid around the heart or pericarditis · Pulmonary hypertension with a narrowed heart valve · Phaeochromocytoma (an adrenal tumour) · A fast or irregular heartbeat · Angina or a heart attack · Another heart condition · None | Consensus contraindications and precautions for minoxidil tablets [clinical-men 10.2; clinical-women 3.2] | **First four:** EXCLUDE minoxidil tablets; scalp minoxidil FLAG (doctor's advice first). **Fast or irregular heartbeat:** tablets only with GP or cardiology input in writing (FLAG); scalp FLAG (medical advice first) [reviewed: corrected: was COUNSEL; each Regaine SmPC read, men's included, says people with "known cardiovascular disease or cardiac arrhythmia should contact a physician before using", section 4.4]. **Angina or heart attack:** tablets EXCLUDE by default (FLAG with GP or cardiology input); scalp FLAG. **Another heart condition:** tablets EXCLUDE pending the GP; scalp minoxidil, **men and women**, only after medical advice (FLAG) [reviewed: corrected: the draft limited this to women] |
+| D3 | Do you have kidney disease or dialysis, Addison's disease, or have you been told your potassium was high? | Spironolactone contraindications; minoxidil tablet precaution [clinical-women 3.3; clinical-men 3.2] | **Kidney disease or dialysis:** minoxidil tablets EXCLUDE at launch (refer; kidney impairment and dialysis are consensus precautions, and the Loniten SmPC says these patients "may require smaller doses") [reviewed: corrected: was FLAG, which clashed with the "refer at launch" rule on the M4 and W2 cards]; women EXCLUDE W3. **Addison's or high potassium:** EXCLUDE W3 |
+| D4 | Do you have liver disease? Severe · Other · None | Dutasteride is contraindicated in severe liver impairment [clinical-men 2.3] | **Severe:** EXCLUDE M5; FLAG all other tablets. **Other:** FLAG |
+| D5 | *(Men)* Prostate cancer now or before? PSA (prostate) blood tests? Do you take dutasteride or finasteride 5 mg for your prostate? | PSA masking; never two 5-ARIs [clinical-men 2.1, 2.3; rule-library F4, F7, F8] | **Prostate cancer:** FLAG; GP or urologist agreement before any 5-ARI. **PSA tests:** COUNSEL and GP letter (finasteride lowers PSA, so doubling the result "should be considered"; dutasteride halves it by 6 months). **Already on a 5-ARI:** EXCLUDE all 5-ARIs; minoxidil only; tell the GP |
+| D6 | Have you ever reacted badly to any of these? Finasteride · Dutasteride · Minoxidil liquid or spray · Minoxidil foam · Propylene glycol · Alcohol on the skin · Soya or peanut · Spironolactone · None. Then: "What happened?" (itch, redness or flaking · rash or hives · swelling of face or lips · other). **And:** Have you been told you have a rare inherited problem with galactose or lactose (galactose intolerance, total lactase deficiency or glucose-galactose malabsorption)? [reviewed: corrected] | Propylene glycol is the usual cause of minoxidil "allergy"; the foam has none. No company asks *what* reacted [rule-library M5, 3.7] | **Finasteride:** EXCLUDE every finasteride product. **Minoxidil liquid only, with itch, redness or flaking:** SET foam; EXCLUDE liquid. **Both bases, or hives or swelling:** EXCLUDE all scalp minoxidil; if irritation only with both, FLAG for S2 (later phase). **Propylene glycol:** SET foam. **Alcohol on the skin:** both licensed bases contain ethanol, so FLAG (tablets or S2). **Soya or peanut:** EXCLUDE M5 (Avodart SmPC 4.3 contraindication) [reviewed: corrected: added]. **Rare inherited galactose or lactase problem:** EXCLUDE finasteride tablets and Loniten (both contain lactose; their SmPCs say these patients "should not take this medicine"); ordinary lactose intolerance is not named in the SmPCs, so FLAG for the prescriber [reviewed: corrected: the lactose question was [to verify]; confirmed on the emc, 24 Nov 2026]. **Spironolactone:** EXCLUDE W3 |
+| D7 | Are you using any other medicine on your scalp (for example a steroid lotion, coal tar or dithranol), or is your scalp shaved? | Other scalp medicines raise how much minoxidil gets into the body (SmPC) [rule-library M6] | **Yes:** EXCLUDE scalp minoxidil while it continues. **No:** continue |
+| D8 | Which of these medicines do you take? Tick all (picker plus free text): Blood-pressure tablets (how many? doxazosin?) · Water tablets, including spironolactone, eplerenone or amiloride · ACE inhibitors or "sartans" · Potassium tablets or a potassium salt substitute · Regular anti-inflammatory painkillers such as ibuprofen · Heparin injections · Lithium · Digoxin · Co-trimoxazole or trimethoprim · Ritonavir or itraconazole · Erection tablets · Medicines for mental health · Acitretin · Testosterone · A weight-loss injection · A medicine started in the last 6 months · None | Interactions with minoxidil tablets, spironolactone and dutasteride [clinical-men 10.2; clinical-women 3.3, 4.1] | **Blood-pressure tablets:** men CALL before M4 (more stopped treatment on doxazosin or three or more such drugs); **women EXCLUDE W2** (spironolactone that we prescribe as W3 does not count; the W4 rules apply instead [reviewed: corrected]). **Eplerenone or a potassium-sparing diuretic:** EXCLUDE W3. **ACE inhibitor, sartan, potassium, NSAIDs, heparin, lithium, digoxin, co-trimoxazole, trimethoprim:** EXCLUDE W3, or FLAG with GP agreement and potassium checks [reviewed: corrected: trimethoprim alone confirmed from a UK trimethoprim SmPC, which names potassium-sparing diuretics among drugs that raise potassium with it; see `products.md` W3]. **Ritonavir or itraconazole:** FLAG for M5. **Erection tablets:** FLAG; COUNSEL about dizziness on standing [reviewed: corrected: neither the Loniten nor the Viagra SmPC names the other, but the Loniten SmPC says minoxidil's effect "may be additive to concurrent antihypertensive agents" and the Viagra SmPC calls sildenafil a vasodilator that lowers blood pressure and warns about alpha-blockers (sections 4.4, 4.5, emc, read 24 Nov 2026); the FLAG stands]. **Mental-health medicines:** FLAG before any 5-ARI; B6 is still asked. **Acitretin:** a known cause of diffuse loss; ask its prescriber. **Testosterone:** FLAG. **Weight-loss injection:** ask D9. **New medicine:** FLAG (possible trigger). **Free text:** always read by the prescriber |
+| D9 | *(If a weight-loss injection)* Which one, since when, how much weight have you lost, and when did the dose last change? | Hair loss: 2.5% on semaglutide 2.4 mg and 4.9% on tirzepatide against 1.0% on placebo. Tirzepatide can make the pill less reliable [clinical-women 3.3, 3.13] | ROUTE to S4 if the pattern fits; BLOODS (FBC, ferritin; TSH if diffuse). **Women on tirzepatide who rely on the pill:** COUNSEL and FLAG: before W2 or W3, switch to a non-oral method or add condoms for **4 weeks after starting and after each dose rise** (Mounjaro SmPC) [WF 5.12] |
+| D10 | *(Only if tablets are still possible)* What is your weight? | Fast weight gain on minoxidil tablets is a stop sign [rule-library 5.4; VT E11] | BASELINE. **Never a block** |
+
+### 4.5 Stage E: men, only while finasteride or dutasteride is still possible (otherwise SKIP)
+
+| # | Question | Why we ask | Options → what each does |
+|---|---|---|---|
+| E1 | Have you ever had depression, anxiety, self-harm or another mental health condition? Are you under a mental health team now? Has a mental-health medicine changed in the last 3 months? | MHRA (April 2024, 11 May 2026): ask the history, decide with the patient, review regularly [clinical-men 10.1] | **Any yes:** FLAG; CALL before any 5-ARI; written warning. **Minoxidil is never removed for a mood history.** B6 is still asked |
+| E2 | Right now, how are your (a) sex drive, (b) erections, (c) ejaculation? No problems · Some problems · Big problems (each) | A baseline is needed to judge later change; no company records one [clinical-men 10.2; cross-company 5] | BASELINE for every man. **Any problem:** FLAG; offer a minoxidil-only plan beside the finasteride plan. Not a contraindication |
+| E3 | Have you taken finasteride or dutasteride before? If yes: low mood, anxiety or suicidal thoughts · sexual problems that lasted after stopping · breast tenderness or swelling · other · none | Effects can persist; a scalp 5-ARI is not a way round the warning [rule-library F2] | **Mood change or lasting sexual effects:** EXCLUDE all 5-ARIs, tablet and scalp, unless a specialist advises. **Breast changes or other:** FLAG |
+| E4 | Are you trying for a baby, or having fertility treatment, now or in the next 12 months? | Dutasteride's semen effects last months [rule-library F5; clinical-men 2.1, 2.3] | **Yes:** EXCLUDE M5; finasteride by shared decision (FLAG; COUNSEL that the sperm-count data come from the 5 mg dose). **No:** continue |
+| E5 | Is your partner pregnant, or might she be? | Skin transfer is the risk with scalp 5-ARIs; she must not handle crushed or broken tablets [rule-library F6] | **Yes:** tablets COUNSEL; M5 COUNSEL (condom); M6 EXCLUDE unless strict transfer advice is accepted (FLAG). **No / Not applicable:** continue |
+| E6 | Information screen: what finasteride can do to mood and sexual function; the patient-card points; "stop at once and contact us if your mood drops"; show the card to family | MHRA 2024 and 2026; opt-outs honoured (Numan fails this) [clinical-men 10.1; rule-library E4] | **"I've read this and want to consider finasteride":** continue. **"I'd rather not take finasteride":** EXCLUDE all finasteride and dutasteride at once. **"I'd like to talk first":** CALL before any 5-ARI |
+
+### 4.6 Stage F: past treatment, goals and preferences (everyone; asked last)
+
+| # | Question | Why we ask | Options → what each does |
+|---|---|---|---|
+| F1 | Have you used a hair-loss treatment before? For each: how long, used as directed, did it help, side effects, why you stopped. **Are you still getting treatment from another service?** | A real treatment history (LloydsPharmacy's good pattern); safe hand-over [engines-experience 3, 5.2; VT C7] | **Scalp minoxidil under 6 months:** "too early to call it a failure". **Under 12 months of finasteride + minoxidil:** not yet a step-3 failure. **12+ months of both, used reliably, not enough:** ADD M5 option (replaces finasteride) with CALL. **Scalp minoxidil failed after 6 to 12 months used as directed:** tablets become an option (Tier B). **Irritation with liquid only:** SET foam. **Swelling, palpitations, breathlessness or dizziness on minoxidil tablets:** EXCLUDE tablets; FLAG. **Mood or lasting sexual effects on a 5-ARI:** as E3. **Helped:** ADD the same treatment. **Still treated elsewhere:** CALL to plan a safe hand-over (no double supply) |
+| F2 | What matters most to you? Keep the hair I have · Regrow as much as possible · Not sure | The main aim is to stop further loss; regrowth is modest [clinical-men 11] | **Regrow, with more than mild loss (C3M):** men offered M3 from the start; women offered the combination route if eligible. **Keep:** one licensed medicine is a reasonable start. Sets the expectation text on the result screen |
+| F3 | How would you like to treat it? Something on the scalp · A tablet · No preference · *(Men)* I don't want finasteride | Preferences honoured; never default to unlicensed (Sons'† "I don't mind" = capsule) [engines-experience 4.1] | **Honoured** among allowed options. **No preference:** licensed options side by side with plain pros and cons; never defaults to an off-label or unlicensed product. **Tablet not possible:** say why; offer what is possible. **No finasteride:** EXCLUDE all 5-ARIs |
+| F4 | Who shares your home, bed or pillows? A cat · A dog · A baby or young children · *(Men)* A woman who is or may be pregnant · None | Minoxidil on skin, hands or pillows can poison cats; infant hair growth after contact; finasteride skin transfer [rule-library M8, M9, F6] | **Cat or dog:** COUNSEL (wash hands; keep pets off pillows); show a tablet option if clinically suitable. **Children:** COUNSEL (keep them away from the treated scalp and pillow). **Pregnant woman at home:** COUNSEL on tablets; FLAG M6 |
+| F5 | How often do you wash your hair? Daily · Every 2 to 3 days · Weekly or less. Do you style with products? Would greasy residue put you off? | Product feel; residue and styling problems are a recognised reason for tablets [clinical-men 3.2; customer-voice 3.5, 7] | **Washes less often, textured hair (CW3) or residue a deal-breaker:** suggest foam (women: once-daily foam); tablets explained as a possible later step, decided at a call |
+| F6 | *(If tablets are still possible)* Would extra hair growth on your face or body be unacceptable to you? Yes · No · Not sure | Facial hair in up to 73% of women on 1 mg when looked for [rule-library M11] | **Yes:** prefer scalp treatment; avoid or keep tablet doses low. **No or Not sure:** continue with honest COUNSEL |
+| F7 | Do you smoke? | Liquid and foam are flammable [rule-library M10] | **Yes:** COUNSEL (never apply while smoking). **Never a block** |
+
+**Deliberately not rules** [rule-library 5.4]: smoking, alcohol and body mass index block nothing; a mood history never
+removes minoxidil; low blood pressure never removes scalp minoxidil; no family history in a woman, or in a man
+[reviewed: corrected], is a FLAG, not a stop.
+
+---
+
+## 5. The result screen (still before sign-in)
+
+In this order [CP 4.10; VT 4.11; WF 4.11]:
+
+1. **What we think is going on**, in one sentence, marked provisional: "Your answers fit male pattern hair loss";
+   "Your answers fit shedding after a trigger, which usually settles by itself"; "Your photos will decide".
+2. **Your route** and why: shedding programme, Tier A (questions and photos) or Tier B (plus a call, two blood pressure
+   readings, blood tests if needed and a GP letter).
+3. **What we suggest:** one or two plan cards. Each names the medicine, strength, form and how to use it; a licence
+   label (**Licensed** / **Off-label: licensed for something else** / **Unlicensed special**) with one line on what that
+   means; the **price per calendar month, delivery included**, the same whatever the delivery rhythm; and "Why this
+   plan" in two lines quoting the person's own answers.
+4. **What we've ruled out and why**, one line each. Where A7 was "no", say plainly: "Without your GP's details and
+   consent we can offer scalp treatments only."
+5. **What happens next:** account, ID check, GP details, photos (every new patient; hairline and eyebrows for women
+   45+), two blood pressure readings and a call for tablets, blood tests if needed (with price), "**you pay only if
+   your prescriber approves**".
+6. **What to expect:** possible extra shedding in weeks 2 to 6 of minoxidil; 6 to 12 months to judge; benefit lasts
+   only while treatment continues; the main side effects.
+7. **Buttons:** "Continue to photos and prescriber review" · "**Talk to a prescriber first**" (a free call, offered
+   while the capacity rule allows) · "Print or download this summary" · "Email me this summary" (optional, separate
+   consent) · "Delete my answers". **Never** "Buy now" or "Add to basket" for any prescription medicine
+   [uk-regulation 2.2]. [reviewed: corrected] The summary email is sent **once, on request**. No reminder, "finish your
+   consultation" or marketing email may name a medicine: emails naming POMs to people who had opted in or consulted
+   before were upheld as POM adverts (MHRA v Numan, April 2023; ASA v Voy, May 2026) [uk-regulation 2.5, 2.6]. The free
+   call is described as a free consultation, never a free trial of a medicine (MHRA v Skin + Me, January 2022).
+
+**Legal note.** Naming prescription medicines here is part of a consultation the person chose to start, not an
+advert. Keep it factual and balanced, and have it reviewed by a regulatory adviser before launch [judging 3.4].
+
+**Stop screens** show what may be happening (without diagnosing), why remote treatment is not right, where to go
+(GP, urgent GP, dermatology, NHS 111, 999), and a printable GP summary made on the person's own device. No email.
+
+---
+
+## 6. After sign-in (stages G to O)
+
+| Stage | What happens | Rule and source |
+|---|---|---|
+| **G. Identity** | Photo ID with a selfie match, or a credit-reference check. **Date of birth must match A1**; a mismatch stops the order and goes to the prescriber. The system flags multiple accounts, shared cards, many orders to one address and orders that are too big or too frequent | GPhC distance guidance [uk-regulation 3.2(b), 6.2]; face matching is biometric data, so it is in the DPIA [6.1]; DOB re-entry from Happy Head [VT H1] |
+| **H. GP and records** | GP name and surgery (consent already given at A7). Optional consent to view the NHS Summary Care Record (how a private pharmacy gets this access [to verify]) | [rule-library S7; uk-regulation 3.2(c)] |
+| **I. Photos** | Guided capture with on-screen frames and a blur and light check. **Men (6):** hairline with hair pushed back; left temple; right temple; top from above; crown from above; back of the head; plus any area of concern. **Women (5 + extras):** parting from above (middle parting, dry hair, good light); front hairline pulled back showing both temples; eyebrows close-up; crown from above; back of the head; plus any patch or sore area. **Women 45+, perimenopausal or after the menopause: hairline and eyebrow photos cannot be skipped.** Photos that do not fit the history mean refer | [clinical-women 1.1; clinical-men 10.2]; men's set is CP's adaptation [our view] |
+| **J. Blood pressure and pulse** | **Minoxidil tablets: two readings on different days**, each **photographed** showing the display, with the pulse: from a pharmacy, a GP surgery or an upper-arm home monitor. **Below 90/60, or a fast or irregular pulse:** no minoxidil tablets ("fast" to be defined in the protocol by the clinical lead [to verify]). **"Don't know" at D1 with scalp minoxidil:** one photographed reading [proposal]. [reviewed: corrected: the draft acted only on low readings] **High readings:** a home reading of 135/85 or more, or a pharmacy or surgery reading of 140/90 or more, in someone not known to have high blood pressure: GP letter asking for the diagnosis to be confirmed (NICE NG136 1.2.3 and 1.2.8 diagnose hypertension at clinic 140/90 with a home or ambulatory average of 135/85); scalp minoxidil waits, because "untreated hypertension" is a contraindication in each Regaine scalp minoxidil SmPC read (men's solution and foam, women's foam and 2%); tablets wait for the prescriber. **180/120 or more:** STOP-URGENT (GP the same day; 999 if chest pain, new confusion, breathlessness or other emergency symptoms, which NICE NG136 1.5.2 lists for same-day specialist review) | Stricter than the consensus on purpose: a remote service cannot examine [clinical-women 3.2, 4.0; judging 5]. NICE NG136 read 24 Nov 2026 |
+| **K. Blood tests** | Kit or appointment booked only when flagged; price shown first; biotin reminder; tests that decide the plan (androgens, U&E) come back **before** prescribing. [reviewed: corrected] Who takes the blood decides CQC scope: see `products.md` S3 | [clinical-women 2.4, 4.2]; CQC scope of registration, August 2026 |
+| **L. Information and consent** | Off-label or unlicensed: what it means, in writing. Finasteride: patient-card information in writing for every man. Women on tablets or spironolactone: contraception declaration, re-checked at every supply. Everyone: the early-shed warning. A real opt-out for each medicine. [reviewed: corrected] Finasteride and dutasteride: do not give blood while taking them (deferral reported as 4 weeks after finasteride and 6 months after dutasteride [to verify on the JPAC guidelines]). Scalp minoxidil: the SmPC stop list (chest pain, fast heartbeat, faintness or dizziness, sudden unexplained weight gain, swollen hands or feet, persistent redness or irritation) and "tell us if extra shedding lasts more than 2 weeks" | [uk-regulation "You must"; clinical-men 10.1, 10.2]; Regaine for Men 5% solution SmPC 4.4 |
+| **M. Payment** | Card saved, charged **only on approval**; full refund any time before dispensing; **one payment retry only** if a later charge fails | Pay-on-approval removes the refund fight [engines-experience 5.2]; [VT 5.8] |
+| **N. Prescriber review** | Section 7 | |
+| **O. Check and dispense** | A **second pharmacist** does the clinical and accuracy check; the patient is told in writing that **they may take their prescription to another pharmacy** | GPhC prescriber guidance [uk-regulation key fact 19, "You must"] |
+
+**Repeat supplies:** a short check-in 2 to 3 weeks before each shipment (new medicines, new conditions, side effects,
+mood; for women on tablets or spironolactone, pregnancy and contraception). The same rule set runs every time [VT 4.12].
+[reviewed: corrected] The check-in also repeats the red-flag questions in short form (new scalp pain, burning,
+tenderness, pustules or shiny patches; new bald patches; hairline, eyebrow or eyelash loss; for women, new androgen
+signs; the crisis question): clinical-women 4.4 says a new red flag at any time means stop and refer, and the draft
+check-in did not ask for them.
+
+---
+
+## 7. Prescriber review
+
+**One screen shows:** the provisional plan and the rule behind each part; every answer, with changed answers and free
+text highlighted; colour-coded flags with a written playbook note for each (Numan's good pattern); photos beside a
+pattern guide; past orders and any duplicate or clash; blood and blood pressure results.
+
+| Outcome | When | What the patient gets |
+|---|---|---|
+| Approve as proposed | Everything fits | Plan, reasons and follow-up dates in writing |
+| Approve with a change | For example a lower start, a different base | The change, in one line |
+| Need more | Retake photos, a call, blood pressure readings, blood tests or GP information | What and by when |
+| Decline and refer | Photos or history do not fit pattern loss, or a safety reason | The reason and a GP letter (with consent); card released |
+
+**A call is required for:** every off-label tablet (M4, M5, W2, W3); any mood or crisis FLAG before a 5-ARI; any
+special (M6, S2); anyone on gender-affirming hormones; anything unclear. GPhC guidance says higher-risk prescribing
+should not rest on a questionnaire alone [uk-regulation 3.2(a)].
+
+**Always recorded:** every off-label or unlicensed choice and why it serves the patient better; every departure from
+an SmPC; every "prescriber decides" outcome; for women 45+, the FFA check from hairline and eyebrow photos.
+
+**Targets [proposal]:** a decision within one working day of a complete file; side-effect messages answered by a
+prescriber the same working day. If these slip, the capacity rule pauses new sign-ups (`launch.md` 6.5).
+
+---
+
+## 8. The rules: when → then
+
+IDs: **G** gates, **R** red flags and diagnosis, **P** photos, **B** bloods, **M** minoxidil, **F** finasteride and
+dutasteride (5-ARIs), **W** spironolactone, **E** the engine itself. Sources point to the fact-checked files.
+
+### 8.1 Gates
+
+| ID | When | Then | Source |
+|---|---|---|---|
+| G1 | Under 18 | STOP-REFER; date of birth re-checked at the ID step | [rule-library S1; clinical-men 10.2] |
+| G2 | Aged 66 or over | No new minoxidil tablets (launch rule); scalp minoxidil FLAG (off-label above 65; tell the GP) | [rule-library S6; judging 5] |
+| G3 | Man aged 50 to 65 wanting foam | Foam is off-label (licence 18 to 49): liquid first; foam with a recorded reason | [clinical-men 3.1] |
+| G4 | Female at birth | Women's route; never finasteride, dutasteride or the men's 5% solution as routine | [rule-library S2, S5; clinical-women 3.1, 3.4] |
+| G5 | Trans, non-binary or on hormones | Prescriber call; no automatic plan until a protocol exists | No source in the files [to verify] |
+| G6 | Lives in Wales, Northern Ireland or outside the UK | STOP at launch, with a waiting list for Wales and NI | [uk-regulation 4.3, missing item 2; judging 5] |
+| G7 | Pregnant, trying or breastfeeding | No medicines; W6 free route | [rule-library S3; clinical-women 3.12] |
+| G8 | Could conceive, no effective contraception | EXCLUDE W2 and W3; scalp treatment still possible | [rule-library S4; clinical-women 3.2, 3.3] |
+| G9 | No GP, or no consent to share | Licensed scalp treatments only; EXCLUDE every tablet, finasteride included; record why | [rule-library S7; uk-regulation 3.2(c); judging 3.4] |
+
+### 8.2 Red flags and diagnosis
+
+| ID | When | Then | Source |
+|---|---|---|---|
+| R1 | Scalp pain, burning, tenderness, pustules, crusting, scale stuck round hairs, smooth shiny patches, or soft boggy swellings | STOP-URGENT [reviewed: corrected: swellings added] | [rule-library R1; clinical-women 1.0, 1.10, 1.11] |
+| R2 | Dandruff-type itch with flakes only | Continue; ADD S1; if the scalp is red and inflamed, scalp minoxidil waits until it settles (SmPC 4.3 "scalp abnormality") [reviewed: corrected] | [rule-library M7] |
+| R2a | Strong itch that does not settle, without dandruff-type flakes | STOP-REFER; with any R1 sign, STOP-URGENT [reviewed: corrected: new rule] | [clinical-women 1.11 item 1, 4.1 question 5] |
+| R3 | Diagnosed scalp psoriasis or eczema, sunburn, broken skin | EXCLUDE scalp minoxidil until settled; tablets still possible | [rule-library M6] |
+| R4 | Separate bald patches; eyebrow, eyelash, beard or body loss; a woman's hairline moving back | STOP-REFER | [rule-library R2; clinical-women 1.9] |
+| R5 | All scalp hair gone | STOP-REFER with honest words | [rule-library R3] |
+| R6 | Man, sudden shedding **with** a trigger | S4 shedding programme, no medicine; refer if no trigger, over 6 months, or photos do not fit | [judging 5; rule-library R3] |
+| R7 | Woman, sudden shedding about 3 months after a trigger | S4; bloods (FBC, ferritin, TSH) if over 6 months, no trigger or severe | [rule-library R4; clinical-women 1.3] |
+| R8 | Thoughts of self-harm in the last month | STOP-CRISIS; same-day call offered; 999, NHS 111, Samaritans on screen | [rule-library R6; judging 5] |
+| R9 | Thoughts of self-harm more than a month ago | CALL before any 5-ARI; minoxidil allowed | [rule-library F1; clinical-men 10.1] |
+| R10 | Positive PHQ-2 (score 3 or more out of 6) [reviewed: corrected] | Support information; CALL before any 5-ARI; never remove minoxidil | [clinical-men 10.1; rule-library 5.4; Kroenke 2003, PMID 14583691] |
+| R11 | High distress score with life impact | FLAG; a call before any plan; GP referral letter for support and a dermatology opinion [reviewed: corrected: was FLAG and call only] | [clinical-women 1.2, 1.11 item 8, 4.1 question 11] |
+| R12 | Man: breast lump, pain, swelling or discharge | STOP-REFER | [rule-library R7] |
+| R13 | Woman: fast deeper voice, new body hair, more muscle or periods stopping | STOP-URGENT | [rule-library R5; clinical-women 1.6] |
+| R14 | Woman: new face or body hair or acne after the menopause | STOP-URGENT with a letter suggesting testosterone and SHBG [reviewed: corrected: was STOP-REFER] | [clinical-women 1.4, 1.11 item 4] |
+| R15 | Woman: Cushing's or acromegaly signs | STOP-URGENT [reviewed: corrected: was STOP-REFER] | [clinical-women 1.6] |
+| R16 | Woman: male-pattern loss (temples and crown) | STOP-REFER with a letter suggesting androgen tests | [clinical-women 1.11] |
+| R17 | Woman: tightly curled hair, crown thinning and tenderness, itch or breakage | STOP-REFER (dermatology); without symptoms: crown close-up and FLAG | [clinical-women 1.10] |
+| R18 | Weight loss without trying, fevers, night sweats, joint pains, new rash, extreme tiredness | STOP-REFER | [rule-library R8] |
+| R19 | "I'm not losing hair" | END: no prescription; free photo tracker | [VT C1] |
+| R20 | Eating much less or worried about eating | FLAG; call before any plan; GP referral letter; no hair medicine until the call [reviewed: corrected: was a signpost only] | [clinical-women 1.3, 4.1 question 14] |
+| R21 | Woman: no family history of thinning | FLAG; the prescriber confirms FPHL from photos and records why | [clinical-women 3.1; rule-library 5.4] |
+| R22 | New medicine, testosterone or anabolic steroids in the 6 months before | COUNSEL; FLAG; ask the prescriber of that medicine | [clinical-women 1.3; engines-experience 3] |
+| R23 | Any red flag (R1 to R5, R12 to R18) reported at a repeat check-in | Stop supply of the affected product; refer as the rule says [reviewed: corrected: new rule] | [clinical-women 4.4] |
+| R24 | Man: no family history of thinning, or does not know, and scalp minoxidil is possible | FLAG; the prescriber confirms male pattern loss from photos and records why (outside the SmPC wording) [reviewed: corrected: new rule] | Regaine for Men 5% solution and foam SmPCs, section 4.4 |
+
+### 8.3 Photos
+
+| ID | When | Then | Source |
+|---|---|---|---|
+| P1 | Every new patient | Guided photo set before the first prescription, kept as the baseline | [clinical-women 1.1; clinical-men 10.2] |
+| P2 | Woman aged 45+, perimenopausal or after the menopause | Hairline and eyebrow photos required; FFA check recorded | [clinical-women 1.4; WF 4.2] |
+| P3 | Man with loss all over, including sides and back | Extra photos; refer if diffuse loss is confirmed with no trigger | [clinical-men 10.2] |
+| P4 | Photos do not fit the history | Decline and refer | [clinical-women 1.1] |
+
+### 8.4 Blood tests
+
+| ID | When | Then | Source |
+|---|---|---|---|
+| B1 | Woman: diffuse loss, shedding over 6 months, heavy periods, restricted diet, rapid weight loss or a weight-loss injection | FBC, ferritin, TSH (TSH if diffuse) | [clinical-women 4.2] |
+| B2 | Woman: irregular periods, acne, unwanted hair or male-pattern loss | Testosterone and SHBG (free androgen index); prolactin, FSH, TSH if periods infrequent; **not** on the combined pill | [clinical-women 2.3, 4.2] |
+| B3 | Before spironolactone | U&E in everyone; repeat potassium after starting and dose rises if 45+ or at risk; drospirenone pill: first cycle | [clinical-women 3.3; rule-library W3, W4] |
+| B4 | Takes biotin | Tell the lab before any test | [clinical-women 2.4] |
+| B5 | Man with typical pattern loss | No blood tests; diet, weight loss or bowel disease: FBC and ferritin | [clinical-men 6] |
+
+### 8.5 Minoxidil
+
+| ID | When | Then | Source |
+|---|---|---|---|
+| M1 | High blood pressure, treated or not | EXCLUDE scalp minoxidil unless the prescriber records a reason (for example GP agreement). Tablets: men Tier B with readings and full medicines list | [rule-library M1; clinical-men 3.1] |
+| M2 | Woman on any blood-pressure medicine (not counting W3 spironolactone that we prescribe [reviewed: corrected]) | EXCLUDE W2 | [rule-library M4; clinical-women 4.1] |
+| M3 | Heart failure; fluid round the heart or pericarditis; pulmonary hypertension with mitral stenosis; phaeochromocytoma | EXCLUDE minoxidil tablets | [rule-library M2] |
+| M4 | Fast or irregular heartbeat | Tablets only with written GP or cardiology input; scalp minoxidil only after medical advice (SmPC 4.4) [reviewed: corrected] | [rule-library M3] |
+| M4a | Kidney disease or dialysis | No minoxidil tablets at launch (refer) [reviewed: corrected: split from M4 to match the M4 and W2 product cards] | [rule-library M3; clinical-women 3.2] |
+| M5 | Low blood pressure, fainting, or a reading below 90/60, or a fast or irregular pulse | No minoxidil tablets; scalp minoxidil stays, with counselling | [rule-library M3, 5.4] |
+| M6 | Minoxidil tablets considered | Call; **two blood pressure readings on different days, photographed**, with pulse; full medicines list; weight baseline; GP letter | [clinical-women 3.2, 4.0; judging 5] |
+| M7 | Men's tablet dose | Start 2.5 mg (or 1.25 mg); range 1.25 to 5 mg; Loniten named when halving | [clinical-men 3.2; clinical-women 3.2] |
+| M8 | Women's tablet dose | Start 1.25 mg; gentler start 0.625 mg on alternate days (approximate, said so); **online ceiling 2.5 mg**; higher only with specialist input | [clinical-women 3.2; judging 5] |
+| M9 | Itch, redness or flaking with liquid only, or propylene glycol reaction | SET foam | [rule-library M5] |
+| M10 | Reaction to both bases, or hives or swelling | EXCLUDE all scalp minoxidil; irritation with both: FLAG for S2 | [rule-library M5] |
+| M11 | Other scalp medicine or shaved scalp | EXCLUDE scalp minoxidil while it continues | [rule-library M6] |
+| M12 | Cat or dog at home; babies or young children | COUNSEL; tablet option shown if clinically suitable | [rule-library M8, M9] |
+| M13 | Smoker | COUNSEL (flammable); never a block | [rule-library M10] |
+| M14 | Extra face or body hair unacceptable | Prefer scalp; avoid or minimise tablets | [rule-library M11] |
+| M15 | Woman with no family history, after childbirth, with traction, or over 65 | Licensed scalp minoxidil is off-label: prescriber decision with recorded reason | [clinical-women 3.1] |
+| M16 | A photographed reading of 135/85 or more at home, or 140/90 or more in a pharmacy or surgery, with no known high blood pressure; or 180/120 or more at any time | GP letter to confirm the diagnosis; scalp minoxidil and tablets wait for the prescriber. 180/120 or more: STOP-URGENT (same-day GP; 999 with emergency symptoms) [reviewed: corrected: new rule] | NICE NG136 1.2.3, 1.2.8, 1.5.1, 1.5.2; minoxidil SmPCs 4.3 |
+| M17 | Extra shedding on scalp minoxidil that lasts more than 2 weeks | The patient tells us; the prescriber reviews before any reassurance (the SmPC says stop and see a doctor) [reviewed: corrected: new rule] | Regaine SmPCs 4.4 |
+| M18 | Rare inherited galactose or lactase problem | No Loniten (it contains lactose) [reviewed: corrected: new rule] | Loniten SmPC sections 2, 6.1 |
+
+### 8.6 Finasteride and dutasteride
+
+| ID | When | Then | Source |
+|---|---|---|---|
+| F1 | Depression, anxiety or self-harm history | CALL before any 5-ARI; written warning; never remove minoxidil | [rule-library F1] |
+| F2 | Mood change or lasting sexual effects on a 5-ARI before | EXCLUDE all 5-ARIs, tablet and scalp, unless a specialist advises | [rule-library F2] |
+| F3 | Sexual problems now | BASELINE; CALL; offer minoxidil only | [rule-library F3] |
+| F4 | Already on dutasteride or finasteride 5 mg | EXCLUDE all 5-ARIs; minoxidil only; tell the GP | [rule-library F4] |
+| F5 | Trying for a baby or fertility treatment | EXCLUDE dutasteride; finasteride by shared decision | [rule-library F5] |
+| F6 | Partner pregnant | Tablets: counsel; dutasteride: condom; scalp finasteride: EXCLUDE or strict transfer advice | [rule-library F6] |
+| F7 | Prostate cancer | GP or urologist agreement before any 5-ARI | [rule-library F7] |
+| F8 | Has PSA tests | COUNSEL; GP letter (finasteride: consider doubling; dutasteride halves PSA by 6 months) | [rule-library F8] |
+| F9 | Severe liver disease | EXCLUDE dutasteride | [rule-library F9] |
+| F10 | Allergy to finasteride | EXCLUDE every finasteride product | [rule-library F10] |
+| F11 | Rare inherited galactose intolerance, total lactase deficiency or glucose-galactose malabsorption | EXCLUDE finasteride tablets (Propecia and generic 1 mg both contain lactose; SmPC: "should not take this medicine"); ordinary lactose intolerance: FLAG [reviewed: corrected: was "to verify"] | Propecia and finasteride 1 mg SmPCs 4.4, 6.1 (emc, 24 Nov 2026) |
+| F12 | Opts out of finasteride | EXCLUDE all 5-ARIs at once | [rule-library E4] |
+| F13 | Considering dutasteride | Only after 12 months of finasteride + minoxidil used reliably; replaces finasteride; never both | [clinical-men 11] |
+| F14 | Ritonavir or itraconazole | CALL before dutasteride | [clinical-men 10.2] |
+| F15 | Allergy to soya or peanut | EXCLUDE dutasteride [reviewed: corrected: new rule] | Avodart SmPC 4.3 |
+| F16 | Any 5-ARI supplied | COUNSEL in writing: no blood donation while taking it and for a period after (reported 4 weeks for finasteride, 6 months for dutasteride [to verify]) [reviewed: corrected: new rule] | [clinical-men 10.2] |
+
+### 8.7 Spironolactone (women)
+
+| ID | When | Then | Source |
+|---|---|---|---|
+| W1 | Kidney disease, Addison's disease, high potassium | EXCLUDE | [rule-library W1] |
+| W2 | ACE inhibitor, sartan, potassium supplement or salt substitute, NSAIDs, heparin, lithium, digoxin, co-trimoxazole, trimethoprim [reviewed: corrected: trimethoprim confirmed] | EXCLUDE, or only with GP agreement and potassium checks | [rule-library W2]; UK trimethoprim 200 mg SmPC 4.4, 4.5 |
+| W3 | Eplerenone or another potassium-sparing diuretic | EXCLUDE | [clinical-women 3.3] |
+| W4 | Drospirenone pill (for example Yasmin) | Allowed; potassium in the first cycle | [rule-library W3] |
+| W5 | Aged 45 or over | U&E at baseline and repeat potassium; optional 25 mg start | [rule-library W4; WF W3] |
+| W6 | Dose | 50 mg for a month, then 100 mg if tolerated and bloods normal (baseline U&E if under 45 with no risk factor; a repeat potassium and kidney test first if 45+ or at risk [reviewed: corrected]); **online ceiling 100 mg**; more only with GP or dermatologist agreement | [clinical-women 3.3; judging 5] |
+| W7 | On tirzepatide and relying on the pill | Before W2 or W3: switch to a non-oral method or add a barrier method for 4 weeks after starting and after each dose rise | [clinical-women 3.3] |
+| W8 | On W2 or W3 | Pregnancy and contraception check **at every supply** | [clinical-women 4.4] |
+| W9 | "Effective contraception" for W2 and W3 | Implant, coil, sterilisation (highly effective); combined pill, patch or ring, progestogen-only pill or injection (effective, user-dependent: counsel). Condoms alone, natural methods or none: EXCLUDE W2 and W3 [reviewed: corrected: new rule, replaces the "to verify" definition] | MHRA Drug Safety Update, 21 March 2019 (table updated 2024) |
+
+### 8.8 The engine itself
+
+| ID | When | Then | Source |
+|---|---|---|---|
+| E1 | Any stop question | Asked before email, account or payment | [rule-library E1] |
+| E2 | Any stop | Reason, next step, printable GP summary; never a dead end | [rule-library E2] |
+| E3 | Any route in (advert, product page, repeat, second consultation) | Same rule set; account-wide duplicate and clash check | [rule-library E3] |
+| E4 | A stopping answer is changed | Stop holds for that consultation; both answers shown to the prescriber | [engines-experience 6] |
+| E5 | Every rule | One automated test on the exact answer text, run before every release | [rule-library E5] |
+| E6 | Any off-label or oral medicine | Two-way contact, photos and a GP letter | [rule-library E6] |
+| E7 | Sign-in | ID check; date of birth must match A1; flag repeat accounts and early re-orders | [rule-library E7] |
+| E8 | Any unlicensed product | Only a prescriber chooses it, with a recorded special need; licensed first | [rule-library E8] |
+| E9 | Preferences | Asked last; only allowed options shown; honoured or the reason given | [engines-experience 6] |
+| E10 | Free-text answer | Always read by a prescriber | [rule-library 5.5] |
+| E11 | A product is out of stock | Never recommended; patient told before any charge, offered a licensed alternative or a pause | [engines-experience 4.1] |
+| E12 | A later payment fails | One retry, then a message | [VT 5.8] |
+
+---
+
+## 9. The treatment ladder
+
+### 9.1 Step up
+
+| Step | Men | Women | Review |
+|---|---|---|---|
+| **0. Diagnose and set expectations** | Photos, history, triggers; the main aim is to stop further loss; 6 to 12 months to judge | Same, plus hormones and life stage; bloods when indicated; shedding, pregnancy or traction route where they fit | Before any prescription |
+| **1. Licensed first** | M1 finasteride and/or M2 scalp minoxidil; M3 (both) from the start for more than mild loss or the best chance of regrowth | W1 scalp minoxidil (foam or 2% solution) | 2 to 4 weeks, 3 months, 6 months |
+| **2. Fix what stops step 1 working** | Liquid itches: switch to foam. Failed or cannot keep up: M4 tablets (Tier B). Later phase: S5 microneedling; M6 only with a recorded reason not to take the tablet | Base itches: swap. Not tolerated, residue or failed after a fair trial: W2 tablets (start 1.25 mg). Androgen signs and contraception: W3 spironolactone (50 mg, or 25 mg at 45+), usually with minoxidil (W4) | 6 months, then 12 months |
+| **3. Not enough after 12 months of reliable use** | M5 dutasteride **replaces** finasteride; M4 dose may rise to 5 mg after a call and repeat readings (a trial found 5 mg no better than 2.5 mg; provisional) [clinical-men 3.2] | W3 to 100 mg if tolerated and bloods normal; W2 to 2.5 mg if tolerated and wanted (**online ceilings**); combine W3 with W1 or W2 | 12 months |
+| **4. Refer** | Diagnosis in doubt; wants surgery or procedures; nothing worked at 12 months | Same; plus any red flag at any time, or a dose above the online ceiling (GP or dermatologist) | Any time |
+
+Sources: [clinical-men 11; clinical-women 4.3, 4.4]. Rise timings for W2 within the ceiling are a prescriber decision at
+a scheduled review [our view].
+
+### 9.2 Step down and stop
+
+| Situation | What we do | Source |
+|---|---|---|
+| New low mood or suicidal thoughts on finasteride or dutasteride | **Stop at once**; crisis screen if needed; offer a minoxidil-only plan | [clinical-men 10.1, 11] |
+| Sexual problems on a 5-ARI | Review against the baseline; consider stopping; minoxidil-only offered | [clinical-men 10.1] |
+| Chest pain, breathlessness, fainting, rapid weight gain or marked swelling on minoxidil tablets | **Stop and seek urgent medical help** | [clinical-men 11] |
+| Light-headedness or fast heartbeat in the first week of tablets, or unwanted hair growth | Prescriber review; lower the dose or switch to scalp minoxidil [our view] | [clinical-women 3.2] |
+| Potassium above range or reduced kidney function on spironolactone | Stop spironolactone | [clinical-women 4.2] |
+| Itch or redness on a scalp product | Switch base; true allergy to both: stop scalp minoxidil; S2 only with a recorded need | [rule-library M5] |
+| Extra shedding on scalp minoxidil lasting more than 2 weeks | Prescriber review before any reassurance; the SmPC tells users to stop and consult their doctor [reviewed: corrected: new row; the draft offered reassurance only] | Regaine SmPCs 4.4 |
+| Women's 5% foam, no improvement by 24 weeks | Stop it; consider step 2 | [clinical-women 3.1] |
+| 2% solution or men's minoxidil, no improvement after a year | Stop it; consider the next step | [clinical-men 10.3; clinical-women 3.1] |
+| Anything that has not worked by 12 months | Stop what has not worked; do not keep posting it | [clinical-men 11] |
+| Planning a pregnancy | Women: stop all treatment first (one NHS leaflet: wait a month after spironolactone). Men on a 5-ARI: discuss before trying | [clinical-women 4.4] |
+| Choosing to stop | Tell them what to expect: finasteride gains fade within 9 to 12 months; minoxidil gains within 3 to 4 months | [clinical-men 11] |
+
+---
+
+## 10. Follow-up schedule (built into every plan, not optional)
+
+| When | Everyone | Minoxidil tablets | Finasteride or dutasteride | Spironolactone |
+|---|---|---|---|---|
+| **Before the first dose** | How to use; early-shed warning in plain words; side effects to watch. Scalp minoxidil: stop and contact us for chest pain, fast heartbeat, faintness or dizziness, sudden unexplained weight gain, swollen hands or feet, persistent redness or irritation, or shedding that lasts more than 2 weeks (SmPC 4.4) [reviewed: corrected] | Stop and get help for chest pain, breathlessness, fainting, fast weight gain, marked swelling | Patient-card information; "stop at once if your mood drops" | Pregnancy rule; dizziness on standing; period changes |
+| **Days 3 to 7** | – | Light-headedness, fast or irregular heartbeat | – | – |
+| **Weeks 2 to 4** (women: 2 to 6) | Side effects, scalp reaction, early-shed check (reassure only after the prescriber has looked at shedding that has lasted more than 2 weeks [reviewed: corrected]) | Swelling, weight gain, breathlessness | PHQ-2, the crisis question, sexual function against baseline | Dizziness and periods; potassium if 45+ or at risk; first dose step at one month if tolerated and bloods normal |
+| **Weeks 4 to 6** | – | Repeat blood pressure and pulse | – | – |
+| **Month 3** | Same checks; patient scores (B7 and "how happy are you with your hair?"); "too early to judge, keep going" | Blood pressure if a precaution exists | Mood and sexual function | Dose reached and side effects |
+| **Month 6** | **Photo set against baseline; prescriber's written verdict** (better, same, worse, and what we do). Step 2 if needed. Women's foam: stop if no improvement | Same | Same | Same |
+| **Month 12** | **Photo verdict: continue, change or stop.** Men: step 3 if needed | Same | Same; PSA at 6 months on dutasteride, told to the GP | Full effect takes 12 to 18 months |
+| **Then every 6 months** | Photos at least yearly; new medicines and conditions | Blood pressure if a precaution exists | Mood and sexual function **every time** | Potassium if 45+ or at risk |
+| **Every supply** | Short check-in 2 to 3 weeks before shipping; ship with about 3 weeks left | – | – | **Women on W2 or W3: pregnancy and contraception every time** |
+| **Shedding programme** | Photo check-ins at 3 and 6 months; past 6 months: bloods, reconsider pattern loss, refer if unexplained | | | |
+| **Any time** | "Report a side effect" goes straight to a prescriber; billing pauses | Stop rules above | Stop at once for low mood | Stop if pregnant and contact us |
+
+Reviews start **4 to 6 weeks before supply runs out**, so a check never leaves a patient without treatment (a Hair + Me
+reviewer was asked for an annual review 4 days before running out) [engines-experience 4.1]. Sources:
+[clinical-men 10.3; clinical-women 4.4; VT 5.2]. Six-monthly reviews are our choice within the 6 to 12 months in the
+files [CP 5.2].
+
+### 10.1 What each blood result does
+
+| Result | Action | Source |
+|---|---|---|
+| Low haemoglobin with low ferritin | **Refer to the GP**; urgent pathway wording for men and women after the menopause (about a third have a gut cause); coeliac screening in younger women. Not a sale | [clinical-women 2.2, 4.2] |
+| Ferritin below 30 µg/L, haemoglobin normal | W5 iron and a GP letter; look for a cause | [clinical-women 2.2] |
+| Ferritin 30 to 40 µg/L with shedding | Time-limited iron trial, with honest words that the hair evidence is weak | [clinical-women 2.2] |
+| Ferritin above 40 µg/L | No promise that pushing it higher regrows hair | [clinical-women 2.2] |
+| Abnormal TSH | Refer to the GP; hair treatment waits | [clinical-women 4.2] |
+| Testosterone above 4.8 on a repeat test, or any result with rapid virilisation | Urgent referral (unit not stated in the source; use the laboratory's range [to verify]) | [clinical-women 1.6, 4.2] |
+| Mildly raised testosterone or free androgen index | Assess for PCOS with the GP | [clinical-women 4.2] |
+| Potassium above range or reduced kidney function | No spironolactone | [clinical-women 4.2] |
+| Man with unexplained low ferritin | GP to find the cause | [clinical-men 6] |
+
+---
+
+## 11. Worked examples (what the result screen would show)
+
+Prices are proposals.
+
+| Person | Key answers | What the result screen shows |
+|---|---|---|
+| Man, 27 | Temples and crown, 3 years, gradual, no flags, GP consent, wants to regrow, no preference | "Fits male pattern hair loss." Finasteride 1 mg + minoxidil 5% (liquid or foam), **£32 a month**. Single-medicine options shown. Next: ID, photos |
+| Man, 44 | Crown, gradual; high blood pressure on amlodipine | Finasteride, **£18 to £20**. "Minoxidil on the scalp isn't usually suitable with high blood pressure; your prescriber can consider it if your GP agrees. Minoxidil tablets need a call and two blood pressure readings" |
+| Man, 31 | Sudden heavy shedding for 6 weeks; COVID-19 with fever 3 months ago | "Fits shedding after an illness, which usually regrows by itself." **Shedding programme, free**; photo check-ins at 3 and 6 months |
+| Man, 35 | Sudden heavy shedding, no trigger | STOP-REFER: "Sudden shedding without a clear cause needs your GP to look for one", with a printable summary (no dead end, no medicine) |
+| Man, 38 | Pattern loss; lasting sexual problems on finasteride before | All 5-ARIs ruled out, with the reason. Minoxidil 5% liquid or foam, **£22**; tablets possible after a call |
+| Man, 68 | Crown thinning, no flags | Finasteride (licensed; the trials were in men 18 to 41, so the expectation text is more cautious) with a PSA note for his GP (finasteride lowers PSA; the SmPC says doubling the result "should be considered") [reviewed: corrected]; scalp minoxidil with a note that it is outside its licence age (prescriber decides, GP told). "We don't start minoxidil tablets at 66 or over" |
+| Woman, 33 | Heavy shedding 3 months after giving birth; breastfeeding | No medicines while breastfeeding. **New-mum route and shedding programme, free**; bloods if it lasts past 6 months or is severe |
+| Woman, 36 | Wider parting; itchy, flaky scalp like dandruff | "Fits female pattern hair loss." Ketoconazole shampoo added for the dandruff; minoxidil foam or 2% solution, **£26**. (Dandruff no longer triggers an urgent referral, fixing WF's error.) If her close-up shows a red, inflamed scalp, the shampoo comes first and minoxidil starts once it settles [reviewed: corrected] |
+| Woman, 52 | Wider parting, slow, no periods for 2 years, family history | "Fits female pattern hair loss." Minoxidil foam once daily or 2% solution, **£26**. Hairline and eyebrow photos required |
+| Woman, 29 | Wider parting; irregular periods, acne, PCOS; drospirenone pill | No androgen tests on the combined pill; FBC, ferritin and TSH offered. Minoxidil now; spironolactone discussed on a call (U&E first; potassium in the first cycle) |
+| Woman, 41 | Shedding all over for 5 months; on tirzepatide, lost weight fast; relies on the pill | Shedding programme; core bloods; "don't stop your injection for hair alone". Tablets not offered until contraception is changed (non-oral, or add a barrier for 4 weeks after starting and each dose rise) |
+| Woman, 30 | Tightly curled hair; crown thinning with tenderness | STOP-REFER to dermatology: "this can be an early scarring type; early treatment limits permanent loss" |
+| Woman, 58 | Hairline moving back, thinner eyebrows | STOP-REFER: "this pattern needs a face-to-face check by your GP or a dermatologist" |
+
+---
+
+## 12. Proving the engine works
+
+- **Automated tests:** one per rule, on the exact answer text, before every release [rule-library E5].
+- **Route tests:** every entry link (adverts, product information pages, repeat orders, second consultations) runs
+  through the same rules [rule-library E3].
+- **Monthly audit [proposal]:** the second pharmacist re-reviews a random sample of decisions and every stop; the
+  clinical lead reviews any disagreement. Blinded re-rating of paired photos is an **internal** audit only until legal
+  advice on publishing outcomes [judging 4.4].
+- **Before launch:** walk the engine against NICE CKS, the BNF, UKTIS and the full oral minoxidil consensus; confirm the
+  PHQ-2 cut-off (published value 3 or more [reviewed: corrected]) and set the distress threshold from a published tool;
+  define a "fast pulse" for rule J; regulatory review of the result screen.
+- **In the pilot:** time to finish, share stopped and why, decisions overturned by the prescriber, and any rule that
+  never fires.

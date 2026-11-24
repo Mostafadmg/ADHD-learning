@@ -27,7 +27,7 @@
   --none: #9fb0b3; --none-soft: #22363a; color-scheme: dark }
 
 * { box-sizing: border-box }
-body { background: var(--bg); color: var(--ink); font: 400 16px/1.55 var(--body); margin: 0 }
+body { background: var(--bg); color: var(--ink); font: 400 16px/1.55 var(--body); margin: 0; overflow-wrap: break-word }
 body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface) }
 h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.2; text-wrap: balance; margin: 0 }
 h1 { font-size: clamp(1.6rem, 4.5vw, 2.15rem) } h2 { font-size: 1.3rem } h3 { font-size: 1.05rem }
@@ -50,7 +50,7 @@ main { padding-block: 22px 60px; display: flex; flex-direction: column; gap: 20p
 .muted { color: var(--muted) } .small { font-size: .875rem } .eyebrow { font: 600 .74rem var(--body); letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }
 
 /* labels */
-.chip { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px; border-radius: 999px; font-size: .8rem; font-weight: 500; background: var(--none-soft); color: var(--none); white-space: nowrap }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 2px 10px; border-radius: 999px; font-size: .8rem; font-weight: 500; background: var(--none-soft); color: var(--none); white-space: normal; max-width: 100%; overflow-wrap: anywhere; line-height: 1.35 }
 .chip.acc { background: var(--accent-soft); color: var(--accent-ink) }
 .e-hard-stop { background: var(--stop-soft); color: var(--stop) } .e-product-removed { background: var(--remove-soft); color: var(--remove) }
 .e-product-added { background: var(--add-soft); color: var(--add) } .e-product-switched, .e-strength-changed { background: var(--switch-soft); color: var(--switch) }
@@ -88,7 +88,7 @@ main { padding-block: 22px 60px; display: flex; flex-direction: column; gap: 20p
 .rule .then { font-weight: 500 }
 /* questions */
 details.q { border-top: 1px solid var(--line) } details.q:first-of-type { border-top: 0 }
-details.q > summary { list-style: none; cursor: pointer; padding: 12px 0; display: grid; grid-template-columns: 2.2rem 1fr; gap: 6px 8px; align-items: start }
+details.q > summary { list-style: none; cursor: pointer; padding: 12px 0; display: grid; grid-template-columns: 2.2rem minmax(0, 1fr); gap: 6px 8px; align-items: start; overflow-wrap: anywhere }
 details.q > summary::-webkit-details-marker { display: none }
 .qn { font: 600 .95rem var(--display); color: var(--accent-ink); font-variant-numeric: tabular-nums }
 .qmeta { grid-column: 2; display: flex; gap: 6px; flex-wrap: wrap }
@@ -108,7 +108,7 @@ table { border-collapse: collapse; width: 100%; font-size: .86rem } th, td { pad
 th { font-weight: 600; background: var(--soft); white-space: nowrap } tbody th { position: sticky; left: 0; background: var(--surface); z-index: 1; white-space: normal; min-width: 8.5rem }
 td.yes { color: var(--ink) } td.no { color: var(--line) } .cmp { font-size: .7rem; color: var(--accent-ink); font-weight: 600; letter-spacing: .04em }
 .md h1 { font-size: 1.4rem; margin: 1.2em 0 .5em } .md h2 { margin: 1.4em 0 .5em } .md h3 { margin: 1.1em 0 .4em } .md p, .md ul, .md ol { margin: 0 0 .8em; max-width: 72ch } .md li { margin-bottom: .3em }
-.md table { margin-bottom: 1em } .md .tw { overflow-x: auto } .md blockquote { margin: 0 0 .8em; padding-left: 12px; border-left: 3px solid var(--line); color: var(--muted) } .md a { overflow-wrap: anywhere }
+.md table { margin-bottom: 1em } .md .tw { overflow-x: auto } .md blockquote { margin: 0 0 .8em; padding-left: 12px; border-left: 3px solid var(--line); color: var(--muted) } .md a { overflow-wrap: anywhere } .md pre { overflow-x: auto; max-width: 100%; padding: 12px; background: var(--soft); border-radius: 8px; font-size: .82rem; line-height: 1.45 } .md code { font-size: .88em }
 .back { border: 0; background: none; color: var(--accent-ink); font-weight: 500; padding: 6px 0; min-height: 40px; text-align: left }
 .note { background: var(--warn-soft); color: var(--ink); border-radius: var(--r); padding: 14px 16px } .note b { color: var(--warn) }
 .empty { color: var(--muted); padding: 30px 0; text-align: center }
@@ -248,7 +248,7 @@ select { font: inherit; padding: 8px 12px; border-radius: 10px; border: 1px soli
     const items = lib ? lib.filter(x => x.kind === kind) : [];
     if (!items.length) return `<header class="stack"><h1>${kind === 'blueprint' ? 'Our company' : 'Background research'}</h1></header><p class="empty">${kind === 'blueprint' ? 'The plan for the new company is being written. It appears here once the competitor research is complete.' : 'The background research is still being fact-checked.'}</p>`;
     const cur = items.find(x => x.id === S.doc) || items[0]; const body = await getOpt(cur.file);
-    return `<header class="stack"><h1>${kind === 'blueprint' ? 'Our company' : 'Background research'}</h1><p class="lede">${kind === 'blueprint' ? 'The competitor we would build, based on the gaps found in every company above.' : 'The clinical evidence, the UK rules, what customers complain about and the market numbers. These were fact-checked by a second reviewer; the two market sweeps (other sellers) were not.'}</p></header>
+    return `<header class="stack"><h1>${kind === 'blueprint' ? 'Our company' : 'Background research'}</h1><p class="lede">${kind === 'blueprint' ? 'The competitor we would build, based on the gaps found in every company above. Three concepts were written and scored; the winner was then checked by a clinical-regulatory reviewer and a commercial reviewer, who fixed it in place. Every price and figure is an estimate until real supplier quotes and a pilot replace it.' : 'The comparisons across companies, the clinical evidence, the UK rules, what customers complain about and the market numbers. The comparisons are built from the checked company reports; the background files were fact-checked by a second reviewer; the two market sweeps (other sellers) were not.'}</p></header>
       <div class="tabs" role="tablist">${items.map(x => `<button role="tab" aria-selected="${x.id === cur.id}" data-doc="${esc(x.id)}">${esc(x.title)}</button>`).join('')}</div>
       <section class="card md">${body ? mdHtml(body.markdown) : '<p class="empty">Could not load this file.</p>'}</section>`;
   }
