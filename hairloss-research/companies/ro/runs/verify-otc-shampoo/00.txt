@@ -1,0 +1,29 @@
+STEP 00 start (HTTP 200)
+URL: https://start.ro.co/kwrssq/
+TITLE: Online Visit
+
+--- VISIBLE TEXT ---
+Revive Shampoo
+Cleanse & Thicken
+
+Enriched with saw palmetto, pumpkin seed oil, salicylic acid, and caffeine to cleanse the scalp for thicker-looking hair-8 oz, peppermint scented.
+
+3-Month Plan
+
+now is
+$24
+/3 mo
+per 3 months
+
+Your plan will be billed and shipped every 3 months. You’ll receive a 3-month (90–day) supply in each shipment. Modify or cancel your plan at any time.
+
+Continue
+Free shipping
+Modify or cancel any time
+Backed by U.S.-licensed physicians and medical advisors
+
+--- CONTROLS ---
+  button (1): Continue
+
+--- LINKS ---
+

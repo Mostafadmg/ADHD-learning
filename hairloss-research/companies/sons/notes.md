@@ -177,3 +177,15 @@ Suggested order:
   5 mg step-up: Yes to side effects opens a free-text box (runs/exp-43 screen 03; a later click in that walk reset the
   answer to No, so only screen 03 counts). Scalp red flags, NHS and GP consents behaved as the definition says.
 - Validate: `node tools/validate.js sons --stage rules` passes (43 rules, 73 experiments, 16 profiles).
+
+## 11. Stage 3 (VERIFY), 24 Nov 2026 (in progress)
+
+- An earlier stage 3 attempt (23 Nov evening) left 12 run folders `runs/verify-*` and no notes. This attempt kept them, read
+  every one, and continued. Its findings are written into `scripts/verify-results.json` (hand-written results) and applied by
+  `scripts/verify-overlay.js`, which `scripts/build-company.js` now calls after `s2-overlay.js`. Rebuild with
+  `node scripts/build-company.js`, then `node tools/validate.js sons --stage final`.
+- Helper scripts (all small, run with node or bash, no inline loops): `verify-defdiff.js` (survey definition then vs now),
+  `verify-freshness.sh` + `verify-oldpage.js` (is the recommendation code still served unchanged), `verify-engine.js`
+  (offline re-run of the newer rules, `runs/verify-offline/`), `verify-products.sh` + `verify-products.js` (live product
+  pages, `runs/verify-products/`), `verify-catalogue.sh` (live product sitemap), `verify-compare.js` (screen-by-screen
+  diff of two run folders), `verify-labels.js` (every "observed" claim must name an existing run folder).

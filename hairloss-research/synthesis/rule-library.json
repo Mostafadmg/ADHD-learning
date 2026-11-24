@@ -1,0 +1,2977 @@
+[
+ {
+  "id": "under-18",
+  "group": "A. Who is asking",
+  "situation": "Under 18",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "hard stop after sign-up",
+    "evidence": "code"
+   },
+   "voy": {
+    "effect": "hard stop",
+    "evidence": "docs"
+   },
+   "hair-and-me": {
+    "effect": "hard stop",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "hard stop at account form",
+    "evidence": "code"
+   },
+   "numan": {
+    "effect": "hard stop (can go back)",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "no under-18 option; ? after wall",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "? age limit 18, asked at checkout",
+    "evidence": "code"
+   },
+   "dr-fox": {
+    "effect": "declares 18+; DOB after wall",
+    "evidence": "docs"
+   },
+   "boots-online-doctor": {
+    "effect": "hard stop",
+    "evidence": "observed"
+   },
+   "superdrug-online-doctor": {
+    "effect": "? DOB after wall",
+    "evidence": "none"
+   },
+   "lloyds-online-doctor": {
+    "effect": "hard stop",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "hard stop for finasteride",
+    "evidence": "docs"
+   },
+   "hims-us": {
+    "effect": "hard stop after wall",
+    "evidence": "docs/code"
+   },
+   "hers-us": {
+    "effect": "removes oral minoxidil; in-person care",
+    "evidence": "docs"
+   },
+   "keeps": {
+    "effect": "hard stop (18+ tick box)",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "hard stop",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "hard stop",
+    "evidence": "observed"
+   },
+   "strut": {
+    "effect": "hard stop",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "hard stop",
+    "evidence": "code"
+   }
+  },
+  "bestPractice": "STOP before any other question. Say why and point to the GP. Check date of birth again at the ID step.",
+  "source": "Every licence is 18+ (clinical-men 10.2; clinical-women 1.11 item 7 and 4.1 Q1); verify DOB with ID (uk-regulation 6.2)."
+ },
+ {
+  "id": "over-65",
+  "group": "A. Who is asking",
+  "situation": "Over 65",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "66-75 −most range; >75 hard stop",
+    "evidence": "inferred/docs"
+   },
+   "voy": {
+    "effect": "minoxidil 'not suitable' >65; effect ?",
+    "evidence": "docs"
+   },
+   "hair-and-me": {
+    "effect": "none (oral capsules at 85)",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "−most or all (2 code copies differ)",
+    "evidence": "code"
+   },
+   "numan": {
+    "effect": "must confirm; 'No' = hard stop",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "−oral fin for some pictures only",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "flagged for the clinician (offer unchanged)? (limit 49 for fin, Regaine)",
+    "evidence": "code"
+   },
+   "dr-fox": {
+    "effect": "supplied off-label",
+    "evidence": "docs"
+   },
+   "boots-online-doctor": {
+    "effect": "none; bundle 50+ off-label warning only",
+    "evidence": "observed"
+   },
+   "superdrug-online-doctor": {
+    "effect": "? DOB after wall",
+    "evidence": "none"
+   },
+   "lloyds-online-doctor": {
+    "effect": "removes oral minoxidil",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "? (max age 120 in settings)",
+    "evidence": "code"
+   },
+   "hers-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "men none; women 66+ removes oral minoxidil",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "none (70 tested)",
+    "evidence": "observed"
+   },
+   "strut": {
+    "effect": "none (61+)",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "none (no upper limit)",
+    "evidence": "code"
+   }
+  },
+  "bestPractice": "No stop. Route to the clinician. Topical minoxidil over 65 is off-label: record why and tell the GP. Oral minoxidil only after a real blood pressure and pulse reading; set and publish a service age limit for it.",
+  "source": "Men's 5% solution licensed 18-65, men's foam 18-49 (clinical-men 3.1); women's products 18-65 (clinical-women 3.0, 4.1 Q1); oral minoxidil SmPC: few studies over 65, risk of dizziness on standing (clinical-women 3.2 'Older women')."
+ },
+ {
+  "id": "woman-mens-route",
+  "group": "A. Who is asking",
+  "situation": "Woman (female at birth) on a men's route",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "hard stop; sent to Hers UK",
+    "evidence": "docs"
+   },
+   "voy": {
+    "effect": "switched to women's plans",
+    "evidence": "inferred"
+   },
+   "hair-and-me": {
+    "effect": "re-routed by sex at birth; no 5-ARI",
+    "evidence": "observed/docs"
+   },
+   "sons": {
+    "effect": "hard stop, no signposting",
+    "evidence": "observed"
+   },
+   "numan": {
+    "effect": "? sex asked at the wall",
+    "evidence": "none"
+   },
+   "philip-kingsley": {
+    "effect": "separate women's quiz, no 5-ARI",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "hard stop",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "hard stop at registration",
+    "evidence": "code"
+   },
+   "boots-online-doctor": {
+    "effect": "hard stop",
+    "evidence": "observed"
+   },
+   "superdrug-online-doctor": {
+    "effect": "separate women's route",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "hard stop",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "no 5-ARI or oral minoxidil",
+    "evidence": "docs"
+   },
+   "hims-us": {
+    "effect": "sent to Hers; no finasteride",
+    "evidence": "docs"
+   },
+   "hers-us": {
+    "effect": "n/a: women only",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "hard stop (assigned-male tick)",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "sent to women's visit",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "women's set; 50+ get dutasteride",
+    "evidence": "observed"
+   },
+   "strut": {
+    "effect": "mixed by form (see note)",
+    "evidence": "observed/code"
+   },
+   "xyon": {
+    "effect": "some products men-only",
+    "evidence": "code"
+   }
+  },
+  "bestPractice": "Switch her to the women's pathway (do not just stop). Never offer finasteride, dutasteride or a men's 5% minoxidil solution.",
+  "source": "Finasteride and dutasteride contraindicated in women; men's 5% solutions contraindicated in women (clinical-women 3.1, 3.4; key facts 17, 24)."
+ },
+ {
+  "id": "pregnant-woman",
+  "group": "A. Who is asking",
+  "situation": "Woman pregnant, breastfeeding or trying to conceive",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "hard stop likely (Hers UK)",
+    "evidence": "docs/inferred"
+   },
+   "voy": {
+    "effect": "hard stop likely; TTC removes oral minoxidil",
+    "evidence": "inferred/docs"
+   },
+   "hair-and-me": {
+    "effect": "info screen; niacinamide only",
+    "evidence": "observed/docs"
+   },
+   "sons": {
+    "effect": "n/a: men only",
+    "evidence": "none"
+   },
+   "numan": {
+    "effect": "n/a: men only",
+    "evidence": "none"
+   },
+   "philip-kingsley": {
+    "effect": "no plan; paid consult",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "n/a: men only",
+    "evidence": "none"
+   },
+   "dr-fox": {
+    "effect": "n/a: men only",
+    "evidence": "none"
+   },
+   "boots-online-doctor": {
+    "effect": "n/a: men only",
+    "evidence": "none"
+   },
+   "superdrug-online-doctor": {
+    "effect": "none: Regaine stays",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "n/a: men only",
+    "evidence": "none"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "no finasteride",
+    "evidence": "docs"
+   },
+   "hers-us": {
+    "effect": "removes oral minoxidil, removes finasteride and dutasteride products, −spiro",
+    "evidence": "docs"
+   },
+   "keeps": {
+    "effect": "n/a: men only",
+    "evidence": "none"
+   },
+   "ro": {
+    "effect": "pregnant hard stop; breastfeeding removes oral minoxidil, topical kept",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "flagged for the clinician (offer unchanged) 'critical'; nothing removed",
+    "evidence": "code/observed"
+   },
+   "strut": {
+    "effect": "not asked",
+    "evidence": "code/observed"
+   },
+   "xyon": {
+    "effect": "hard stop",
+    "evidence": "observed"
+   }
+  },
+  "bestPractice": "No medicine at all: advice and safe scalp care only. Re-ask at every supply.",
+  "source": "Topical minoxidil 'should not be used during pregnancy or lactation'; oral minoxidil, spironolactone and 5-ARIs contraindicated or avoided (clinical-women 3.12 and 4.1 Q2)."
+ },
+ {
+  "id": "no-contraception",
+  "group": "A. Who is asking",
+  "situation": "Woman who could conceive and uses no contraception",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "voy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hair-and-me": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "n/a: men only",
+    "evidence": "none"
+   },
+   "numan": {
+    "effect": "n/a: men only",
+    "evidence": "none"
+   },
+   "philip-kingsley": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "n/a: men only",
+    "evidence": "none"
+   },
+   "dr-fox": {
+    "effect": "n/a: men only",
+    "evidence": "none"
+   },
+   "boots-online-doctor": {
+    "effect": "n/a: men only",
+    "evidence": "none"
+   },
+   "superdrug-online-doctor": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "n/a: men only",
+    "evidence": "none"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "n/a",
+    "evidence": "none"
+   },
+   "hers-us": {
+    "effect": "not reported by reviewers",
+    "evidence": "inferred"
+   },
+   "keeps": {
+    "effect": "n/a: men only",
+    "evidence": "none"
+   },
+   "ro": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "happy-head": {
+    "effect": "flagged for the clinician (offer unchanged); spironolactone + oral minoxidil kept",
+    "evidence": "observed"
+   },
+   "strut": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Exclude spironolactone and oral minoxidil until effective contraception is in place. Ask again at every supply.",
+  "source": "clinical-women 3.2, 3.3 and 4.1 Q3; key fact 23 (anti-androgens can feminise a male fetus)."
+ },
+ {
+  "id": "partner-pregnant",
+  "group": "A. Who is asking",
+  "situation": "Man whose partner is pregnant (or a pregnant person at home)",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "flagged for the clinician (offer unchanged) or removes finasteride and dutasteride products expected",
+    "evidence": "inferred"
+   },
+   "voy": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "docs"
+   },
+   "hair-and-me": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "not asked (statement only)",
+    "evidence": "observed"
+   },
+   "numan": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "awareness tick only",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "warning only: use condoms",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "consent text only",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "none (card note)",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "warning only",
+    "evidence": "docs"
+   },
+   "hims-us": {
+    "effect": "handling warning or flagged for the clinician (offer unchanged)",
+    "evidence": "docs"
+   },
+   "hers-us": {
+    "effect": "n/a",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "flagged for the clinician (offer unchanged); 'do not accept' keeps dutasteride",
+    "evidence": "observed"
+   },
+   "strut": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Tablets: carry on, with 'do not let her handle crushed or broken tablets'. Dutasteride: condom while she is or may be pregnant. Topical finasteride or dutasteride: counsel on skin transfer, or choose another product.",
+  "source": "Semen exposure judged unlikely to harm (finasteride SmPC); dutasteride SmPC condom advice; topical products absorbed through skin (clinical-men 2.1, 2.3 and 10.2 table)."
+ },
+ {
+  "id": "trying-to-conceive",
+  "group": "A. Who is asking",
+  "situation": "Man trying for a baby",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "flagged for the clinician (offer unchanged) or removes finasteride and dutasteride products expected",
+    "evidence": "inferred"
+   },
+   "voy": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "docs"
+   },
+   "hair-and-me": {
+    "effect": "not asked; leaflet removes finasteride and dutasteride products",
+    "evidence": "observed/docs"
+   },
+   "sons": {
+    "effect": "not asked (statement only)",
+    "evidence": "observed"
+   },
+   "numan": {
+    "effect": "warning only; opt-out not enforced",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "no plan; paid consult",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "flagged for the clinician (offer unchanged) ('Danger' flag)",
+    "evidence": "observed"
+   },
+   "superdrug-online-doctor": {
+    "effect": "consent text only",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "warning only (12 weeks)",
+    "evidence": "docs"
+   },
+   "hims-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hers-us": {
+    "effect": "n/a",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "removes finasteride and dutasteride products from recommendation + caution",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "flagged for the clinician (offer unchanged) 'critical'",
+    "evidence": "code"
+   },
+   "strut": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Clinician discussion, not a silent removal. Avoid dutasteride (weeks-long half-life, sperm effects persist). Finasteride: shared decision; offer minoxidil-only if he prefers.",
+  "source": "clinical-men 2.1 (fertility data are from 5 mg), 2.3 (dutasteride sperm count still down 24 weeks after stopping), 10.2 table."
+ },
+ {
+  "id": "heart-disease",
+  "group": "B. Heart and circulation",
+  "situation": "Heart disease (heart failure, pericarditis, arrhythmia, angina)",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "flagged for the clinician (offer unchanged) or removes all minoxidil products expected",
+    "evidence": "inferred"
+   },
+   "voy": {
+    "effect": "removes oral minoxidil",
+    "evidence": "docs"
+   },
+   "hair-and-me": {
+    "effect": "none; leaflet removes oral minoxidil",
+    "evidence": "observed/docs"
+   },
+   "sons": {
+    "effect": "removes all minoxidil products (topical too)",
+    "evidence": "code"
+   },
+   "numan": {
+    "effect": "not asked (free text)",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "flagged for the clinician (offer unchanged); Regaine kept",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "warning only only; minoxidil kept",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "women −Regaine; men n/a",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "removes all minoxidil products",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "removes oral minoxidil",
+    "evidence": "inferred"
+   },
+   "hims-us": {
+    "effect": "−combo pill",
+    "evidence": "docs"
+   },
+   "hers-us": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "docs"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "removes oral minoxidil from recommendation (some conditions)",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "flagged for the clinician (offer unchanged); oral kept",
+    "evidence": "observed"
+   },
+   "strut": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "No oral minoxidil with past pericardial effusion, tamponade or pericarditis, heart failure, or pulmonary hypertension with mitral stenosis. Arrhythmia or fast pulse: precaution, involve GP or cardiology. Topical minoxidil: medical advice first.",
+  "source": "Oral minoxidil consensus lists (clinical-men 3.2, 10.2; clinical-women 3.2); topical SmPC 'see a doctor first' (clinical-women 3.1)."
+ },
+ {
+  "id": "high-bp",
+  "group": "B. Heart and circulation",
+  "situation": "High blood pressure",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "−Regaine; oral flagged",
+    "evidence": "docs/inferred"
+   },
+   "voy": {
+    "effect": "uncontrolled: removes oral minoxidil",
+    "evidence": "docs"
+   },
+   "hair-and-me": {
+    "effect": "extra question; none",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "removes all minoxidil products (5% spray too)",
+    "evidence": "code"
+   },
+   "numan": {
+    "effect": "removes all minoxidil products",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "bug: minoxidil kept",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "flagged for the clinician (offer unchanged); Regaine kept",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "warning only only; minoxidil kept",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "bundle: flagged for the clinician (offer unchanged) ('Danger')",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "women −Regaine",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "removes all minoxidil products",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "oral: agree BP checks",
+    "evidence": "docs"
+   },
+   "hims-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hers-us": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "docs"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "only 'very high': removes oral minoxidil from recommendation",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "not flagged",
+    "evidence": "code"
+   },
+   "strut": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Topical minoxidil: contraindicated (treated or untreated) in the licensed SmPC; prescriber may override only with a recorded reason. Oral minoxidil: verified reading and full BP-medicine list first.",
+  "source": "Regaine 5% solution SmPC 4.3 (clinical-men 3.1, 10.2); clinical-women 4.1 Q22."
+ },
+ {
+  "id": "low-bp",
+  "group": "B. Heart and circulation",
+  "situation": "Low blood pressure or fainting",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "flagged for the clinician (offer unchanged) expected",
+    "evidence": "inferred"
+   },
+   "voy": {
+    "effect": "removes oral minoxidil",
+    "evidence": "docs"
+   },
+   "hair-and-me": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "numan": {
+    "effect": "removes all minoxidil products",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "bug: minoxidil kept",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "none (auto-offer with Regaine)",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "removes all minoxidil products",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "removes all minoxidil products",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "removes oral minoxidil",
+    "evidence": "inferred"
+   },
+   "hims-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hers-us": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "docs"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "no recommendation; all pickable",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "flagged for the clinician (offer unchanged) 'critical'; oral kept",
+    "evidence": "observed"
+   },
+   "strut": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Below 90/60 or fainting: no oral minoxidil without specialist input. Topical minoxidil is not contraindicated: counsel about dizziness.",
+  "source": "Consensus precaution BP < 90/60 (clinical-men 10.2; clinical-women 3.2 and 4.1 Q34)."
+ },
+ {
+  "id": "bp-medicines",
+  "group": "B. Heart and circulation",
+  "situation": "Takes blood-pressure medicines",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "flagged for the clinician (offer unchanged) expected",
+    "evidence": "inferred"
+   },
+   "voy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hair-and-me": {
+    "effect": "not asked (free text)",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "numan": {
+    "effect": "removes all minoxidil products (via BP answer)",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "free text, no rule reads it",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "flagged for the clinician (offer unchanged) (any medicine)",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "not asked (BP warning only only)",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "bundle: switch request + flagged for the clinician (offer unchanged)",
+    "evidence": "observed"
+   },
+   "superdrug-online-doctor": {
+    "effect": "women −Regaine",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "removes all minoxidil products",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hers-us": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "docs"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "none (medicines not flagged)",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "not flagged",
+    "evidence": "code"
+   },
+   "strut": {
+    "effect": "free text; none",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Oral minoxidil only after a clinician has reviewed the full list (doxazosin or 3+ BP drugs: higher drop-out); women's pathway excludes oral minoxidil on BP tablets.",
+  "source": "clinical-men 10.2 (oral minoxidil); clinical-women 4.1 Q22 and Q27."
+ },
+ {
+  "id": "phaeo",
+  "group": "B. Heart and circulation",
+  "situation": "Phaeochromocytoma (adrenal tumour)",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "−oral chews",
+    "evidence": "docs"
+   },
+   "voy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hair-and-me": {
+    "effect": "none; leaflet removes oral minoxidil",
+    "evidence": "observed/docs"
+   },
+   "sons": {
+    "effect": "removes oral minoxidil",
+    "evidence": "code"
+   },
+   "numan": {
+    "effect": "not asked (free text)",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "flagged for the clinician (offer unchanged); Regaine kept",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "removes oral minoxidil",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "−combo pill",
+    "evidence": "docs"
+   },
+   "hers-us": {
+    "effect": "removes oral minoxidil",
+    "evidence": "docs"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "removes oral minoxidil",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "code"
+   },
+   "strut": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Never oral minoxidil.",
+  "source": "Loniten SmPC and consensus contraindication (clinical-men 3.2; clinical-women 3.2)."
+ },
+ {
+  "id": "kidney",
+  "group": "C. Other organs and cancers",
+  "situation": "Kidney disease",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "voy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hair-and-me": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "severe: removes finasteride and dutasteride products only; oral minoxidil kept",
+    "evidence": "code"
+   },
+   "numan": {
+    "effect": "free text → flagged for the clinician (offer unchanged)",
+    "evidence": "code"
+   },
+   "philip-kingsley": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "flagged for the clinician (offer unchanged) (amber)",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "not asked (free text)",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "eGFR<30 hard stop; else removes oral minoxidil",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "CKD 3-5: −combo pill",
+    "evidence": "docs"
+   },
+   "hers-us": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "docs"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "men none (any stage); women free text",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "code"
+   },
+   "strut": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Ask about kidney disease and, if yes, the latest eGFR. Oral minoxidil: precaution, specialist or GP input. Spironolactone: not with significant kidney impairment.",
+  "source": "Consensus precaution 'kidney impairment; dialysis' (clinical-men 3.2); Aldactone SmPC (clinical-women 3.3, 4.1 Q24)."
+ },
+ {
+  "id": "liver",
+  "group": "C. Other organs and cancers",
+  "situation": "Liver disease",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "−finasteride spray",
+    "evidence": "docs"
+   },
+   "voy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hair-and-me": {
+    "effect": "none; leaflet removes oral minoxidil, −dutasteride",
+    "evidence": "observed/docs"
+   },
+   "sons": {
+    "effect": "severe: removes finasteride and dutasteride products",
+    "evidence": "code"
+   },
+   "numan": {
+    "effect": "free text → flagged for the clinician (offer unchanged)",
+    "evidence": "code"
+   },
+   "philip-kingsley": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "flagged for the clinician (offer unchanged) (amber)",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "details box; none",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "follow-up; severe = hard stop",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "−spray, −combo pill",
+    "evidence": "docs"
+   },
+   "hers-us": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "docs"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "none (even cirrhosis)",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "code"
+   },
+   "strut": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Severe liver disease: no dutasteride. Caution with every oral option; discuss with the GP.",
+  "source": "Avodart SmPC (clinical-men 2.3, 10.2); PCDS severe liver impairment for oral minoxidil (clinical-women 3.2, 4.1 Q25)."
+ },
+ {
+  "id": "prostate",
+  "group": "C. Other organs and cancers",
+  "situation": "Prostate cancer history, or PSA monitoring",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "−finasteride spray",
+    "evidence": "docs"
+   },
+   "voy": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "docs"
+   },
+   "hair-and-me": {
+    "effect": "none; leaflet removes finasteride and dutasteride products",
+    "evidence": "observed/docs"
+   },
+   "sons": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "code"
+   },
+   "numan": {
+    "effect": "PSA: warning only; opt-out not enforced",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "no plan; paid consult",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "flagged for the clinician (offer unchanged) (amber); PSA notice",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "−spray, −combo pill",
+    "evidence": "docs"
+   },
+   "hers-us": {
+    "effect": "n/a",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "−spray only; tablets kept",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "code"
+   },
+   "strut": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Prostate cancer history: clinician route and GP or urologist agreement before any 5-ARI. PSA monitoring: tell the GP; finasteride halves PSA (SmPC says consider doubling the result).",
+  "source": "clinical-men 2.1 (PSA), 10.2 table, and verification gap 4 (high-grade prostate cancer wording in the SmPC)."
+ },
+ {
+  "id": "breast",
+  "group": "C. Other organs and cancers",
+  "situation": "Male breast cancer history, breast lump or gynaecomastia",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "−finasteride spray",
+    "evidence": "docs"
+   },
+   "voy": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "docs"
+   },
+   "hair-and-me": {
+    "effect": "none; leaflet removes finasteride and dutasteride products",
+    "evidence": "observed/docs"
+   },
+   "sons": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "code"
+   },
+   "numan": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "no plan; paid consult",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "removes finasteride and dutasteride products (gynaecomastia)",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "flagged for the clinician (offer unchanged) (amber)",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "−spray",
+    "evidence": "docs"
+   },
+   "hers-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "code"
+   },
+   "strut": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Current lump, pain or discharge: STOP and refer to the GP. Past male breast cancer: clinician route, no 5-ARI without specialist agreement.",
+  "source": "Male breast cancer reported on finasteride (clinical-men 10.2 table)."
+ },
+ {
+  "id": "depression",
+  "group": "D. Mood and sexual function",
+  "situation": "Depression or anxiety (history or now)",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "voy": {
+    "effect": "warning only or flagged for the clinician (offer unchanged) likely",
+    "evidence": "docs/inferred"
+   },
+   "hair-and-me": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "low score none; high score removes finasteride and dutasteride products",
+    "evidence": "code"
+   },
+   "numan": {
+    "effect": "extra questions + flagged for the clinician (offer unchanged); specialist-led removes finasteride and dutasteride products",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "warning only, then paid consult (minoxidil blocked too)",
+    "evidence": "observed/code"
+   },
+   "treated": {
+    "effect": "hard stop whole consultation",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "warning only + acknowledge",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "not asked (consent text)",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "warning only + opt-out; extra questions",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "asked; effect ?",
+    "evidence": "docs"
+   },
+   "hims-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hers-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "removes finasteride and dutasteride products from recommendation",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "code"
+   },
+   "strut": {
+    "effect": "none (generic warning)",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Always ask. Do not auto-block minoxidil. Before any 5-ARI: two-way clinician discussion, written mood warning (patient-card wording if compounded), GP letter, review at 2-4 weeks and every visit.",
+  "source": "MHRA April 2024 and May 2026 (clinical-men 10.1, 10.2; key facts 6-8); dutasteride precautionary warning (clinical-men 2.3)."
+ },
+ {
+  "id": "suicidal",
+  "group": "D. Mood and sexual function",
+  "situation": "Suicidal thoughts or self-harm (now or recent)",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "voy": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "docs"
+   },
+   "hair-and-me": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "removes finasteride and dutasteride products silently; no signposting",
+    "evidence": "observed/code"
+   },
+   "numan": {
+    "effect": "removes finasteride and dutasteride products; no signposting",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "no plan; paid consult",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "hard stop",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "crisis signposting + 'Danger' flag",
+    "evidence": "observed"
+   },
+   "superdrug-online-doctor": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "crisis signposting; continues",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hers-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "happy-head": {
+    "effect": "flagged for the clinician (offer unchanged) (mental health)",
+    "evidence": "code"
+   },
+   "strut": {
+    "effect": "hard stop + crisis lines",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "STOP the sale, show crisis help on the same screen (NHS 111, Samaritans, 999), and have a clinician contact the patient. No 5-ARI.",
+  "source": "clinical-women 4.1 Q11 ('self-harm thoughts: urgent help'); MHRA: stop finasteride at once if suicidal thoughts (clinical-men 10.1, 11)."
+ },
+ {
+  "id": "sexual-dysfunction",
+  "group": "D. Mood and sexual function",
+  "situation": "Sexual problems now (libido, erections, ejaculation)",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "voy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hair-and-me": {
+    "effect": "none; leaflet −oral 5-ARI",
+    "evidence": "observed/docs"
+   },
+   "sons": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "code"
+   },
+   "numan": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "not asked (only past side effects)",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "warning only + acknowledge",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "warning only",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "removes finasteride and dutasteride products (ED tablets: removes finasteride and dutasteride products, removes oral minoxidil)",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hers-us": {
+    "effect": "n/a",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "removes finasteride and dutasteride products from recommendation",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "code"
+   },
+   "strut": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Ask and record a baseline. Not a contraindication: clinician discussion; offer minoxidil-only if he prefers.",
+  "source": "Baseline needed because effects can persist (clinical-men 10.2 table); sexual side effects 3.8% vs 2.1% (key fact 5)."
+ },
+ {
+  "id": "patchy",
+  "group": "E. Type of hair loss and scalp",
+  "situation": "Patchy bald patches",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "quiz: none; hard stop likely later",
+    "evidence": "observed/inferred"
+   },
+   "voy": {
+    "effect": "hard stop (shown after email)",
+    "evidence": "code"
+   },
+   "hair-and-me": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "none",
+    "evidence": "observed/code"
+   },
+   "numan": {
+    "effect": "hard stop",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "men −named plans; women paid consult",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "hard stop",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "flagged for the clinician (offer unchanged) ('Danger')",
+    "evidence": "observed"
+   },
+   "superdrug-online-doctor": {
+    "effect": "men photos required; women −Regaine",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "hard stop",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "quiz: none; 'seek medical attention'",
+    "evidence": "observed/docs"
+   },
+   "hers-us": {
+    "effect": "removes oral minoxidil reported",
+    "evidence": "docs"
+   },
+   "keeps": {
+    "effect": "legacy → clinician request; main quiz none",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "men: no recommendation; women: symptom flagged for the clinician (offer unchanged)",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "code"
+   },
+   "strut": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "STOP and signpost to the GP or dermatology. Not pattern hair loss.",
+  "source": "Minoxidil SmPCs exclude patchy loss (clinical-men 10.2); clinical-women 1.11 item 3 and 4.1 Q7."
+ },
+ {
+  "id": "sudden",
+  "group": "E. Type of hair loss and scalp",
+  "situation": "Sudden or rapid shedding",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "quiz: none; hard stop likely later",
+    "evidence": "observed/inferred"
+   },
+   "voy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hair-and-me": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "removes finasteride and dutasteride products, removes oral minoxidil; minoxidil spray kept",
+    "evidence": "code"
+   },
+   "numan": {
+    "effect": "hard stop",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "paid consult (women: gap for wider parting)",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "hard stop (days or weeks)",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "warning only",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "men free text; women −Regaine",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "hard stop",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "flagged for the clinician (offer unchanged) expected",
+    "evidence": "docs"
+   },
+   "hers-us": {
+    "effect": "removes oral minoxidil reported",
+    "evidence": "docs"
+   },
+   "keeps": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "men: no recommendation; women: flagged for the clinician (offer unchanged)",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "strut": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Men: STOP and signpost. Women: telogen effluvium pathway (trigger questions, explain, bloods if over 6 months or no trigger); no hair medicine.",
+  "source": "clinical-men 10.2; clinical-women 1.3, 4.1 Q12-Q14, 4.3."
+ },
+ {
+  "id": "complete-scarring",
+  "group": "E. Type of hair loss and scalp",
+  "situation": "Complete baldness, scars or shiny skin",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "quiz: none; hard stop likely later",
+    "evidence": "observed/inferred"
+   },
+   "voy": {
+    "effect": "hard stop",
+    "evidence": "code/docs"
+   },
+   "hair-and-me": {
+    "effect": "none (extensive loss)",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "none",
+    "evidence": "code"
+   },
+   "numan": {
+    "effect": "hard stop",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "−named plans (extensive)",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "scars: flagged for the clinician (offer unchanged)",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "hard stop (total alopecia)",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "flagged for the clinician (offer unchanged) ('Danger')",
+    "evidence": "observed"
+   },
+   "superdrug-online-doctor": {
+    "effect": "extensive: warning only + photos",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "hard stop",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hers-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "'Mostly scalp' hard stop",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "women: named scarring diagnosis hard stop",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "strut": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Scarring signs: STOP and urgent referral (scarring is permanent). Complete baldness: STOP; medicines do not regrow it.",
+  "source": "PCDS urgent referral (clinical-women 1.0, 1.11 item 1; key fact 1); treatments not shown to work in complete loss (Voy and Hims leaflets; clinical-men 10.2)."
+ },
+ {
+  "id": "scalp-inflammation",
+  "group": "E. Type of hair loss and scalp",
+  "situation": "Scalp pain, redness, infection, psoriasis or eczema",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "−topicals; 'see your GP'",
+    "evidence": "docs/inferred"
+   },
+   "voy": {
+    "effect": "−topical minoxidil",
+    "evidence": "inferred"
+   },
+   "hair-and-me": {
+    "effect": "none; leaflet −drops",
+    "evidence": "observed/docs"
+   },
+   "sons": {
+    "effect": "−topical minoxidil; capsules first",
+    "evidence": "code"
+   },
+   "numan": {
+    "effect": "pain/redness removes all minoxidil products; psoriasis flagged for the clinician (offer unchanged) only",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "pain or crusting: paid consult; mild itch: scalp plans",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "itchy scalp: flagged for the clinician (offer unchanged)",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "hard stop",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "flagged for the clinician (offer unchanged) ('Danger')",
+    "evidence": "observed/code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "men warning only (see GP); women −Regaine",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "−topical minoxidil + 'see GP'",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hers-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "dandruff: + ketoconazole",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "men: redness no recommendation, pain none; women: diagnosis hard stop",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "free text; flagged for the clinician (offer unchanged)",
+    "evidence": "observed"
+   },
+   "strut": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Pain, burning, pustules, crusting, scale round hairs: STOP and refer. Diagnosed psoriasis or eczema, sunburn, broken skin: no topical minoxidil until settled. Plain dandruff: ketoconazole shampoo, carry on.",
+  "source": "Topical minoxidil SmPC contraindication (clinical-men 3.1); red flags (clinical-women 1.11 item 1, 4.1 Q5 and Q26); ketoconazole for dandruff (clinical-men 11 step 1)."
+ },
+ {
+  "id": "minoxidil-allergy",
+  "group": "F. Allergies and medicines",
+  "situation": "Allergy to minoxidil",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "removes all minoxidil products",
+    "evidence": "docs"
+   },
+   "voy": {
+    "effect": "−product; women: active removed",
+    "evidence": "docs"
+   },
+   "hair-and-me": {
+    "effect": "none; leaflet −minoxidil",
+    "evidence": "observed/docs"
+   },
+   "sons": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "numan": {
+    "effect": "removes all minoxidil products (product links bypass it)",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "−minoxidil plans",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "flagged for the clinician (offer unchanged) (any allergy)",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "not asked",
+    "evidence": "observed/docs"
+   },
+   "boots-online-doctor": {
+    "effect": "flagged for the clinician (offer unchanged) ('other medicines')",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "women −Regaine; men n/a",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "removes all minoxidil products",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hers-us": {
+    "effect": "removes oral minoxidil",
+    "evidence": "docs"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "men −from recommendation; women hard stop",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "not flagged",
+    "evidence": "code"
+   },
+   "strut": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Ask what reacted and how. True minoxidil allergy: no minoxidil in any form. Itch or rash from the solution: usually propylene glycol, so offer the licensed foam.",
+  "source": "clinical-men 3.1 and key fact 12 (propylene glycol is the usual cause; foam has none)."
+ },
+ {
+  "id": "finasteride-allergy",
+  "group": "F. Allergies and medicines",
+  "situation": "Allergy to finasteride",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "docs"
+   },
+   "voy": {
+    "effect": "−product",
+    "evidence": "docs"
+   },
+   "hair-and-me": {
+    "effect": "none; leaflet removes finasteride and dutasteride products",
+    "evidence": "observed/docs"
+   },
+   "sons": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "numan": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "−finasteride plans",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "flagged for the clinician (offer unchanged) (any allergy)",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "flagged for the clinician (offer unchanged) ('other medicines')",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hers-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "removes finasteride and dutasteride products from recommendation",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "not flagged; dutasteride kept",
+    "evidence": "observed/code"
+   },
+   "strut": {
+    "effect": "none (no branch)",
+    "evidence": "code"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "No finasteride in any form (tablet, spray, capsule). Dutasteride only after clinician review.",
+  "source": "Allergy to an active ingredient is a contraindication in the SmPCs (clinical-men 2.1; clinical-women 3.1 lists it for minoxidil). Dutasteride step: clinical-men 11 step 3."
+ },
+ {
+  "id": "pg-ethanol",
+  "group": "F. Allergies and medicines",
+  "situation": "Propylene glycol or alcohol (ethanol) sensitivity",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "−Regaine",
+    "evidence": "docs"
+   },
+   "voy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hair-and-me": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "numan": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "free text, no rule reads it",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "flagged for the clinician (offer unchanged) (any allergy)",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "flagged for the clinician (offer unchanged) ('something else')",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "women −Regaine",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hers-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "happy-head": {
+    "effect": "not flagged",
+    "evidence": "code"
+   },
+   "strut": {
+    "effect": "none (no branch)",
+    "evidence": "code"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Remove propylene-glycol solutions; offer the licensed PG-free foam. Ethanol sensitivity: the foam also contains ethanol, so clinician review.",
+  "source": "Regaine solution SmPC contraindicates ethanol or propylene glycol sensitivity; formulation table (clinical-men 3.1)."
+ },
+ {
+  "id": "on-5ari",
+  "group": "F. Allergies and medicines",
+  "situation": "Already taking dutasteride or finasteride 5 mg",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "−finasteride products",
+    "evidence": "docs"
+   },
+   "voy": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "docs"
+   },
+   "hair-and-me": {
+    "effect": "must agree to stop it; leaflet removes finasteride and dutasteride products",
+    "evidence": "observed/docs"
+   },
+   "sons": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "numan": {
+    "effect": "not asked (free text)",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "free text, no rule reads it",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "flagged for the clinician (offer unchanged)",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "PSA notice only",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "free text; none",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "dutasteride + finasteride refused",
+    "evidence": "docs"
+   },
+   "hims-us": {
+    "effect": "−spray, −combo pill",
+    "evidence": "docs"
+   },
+   "hers-us": {
+    "effect": "n/a",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "happy-head": {
+    "effect": "not flagged",
+    "evidence": "code"
+   },
+   "strut": {
+    "effect": "free text",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "No second 5-ARI. Offer minoxidil only, and tell the GP (he is likely under prostate care).",
+  "source": "'Do not combine with another 5-alpha reductase inhibitor' (clinical-men 2.1); 'never both' (clinical-men 11 step 3)."
+ },
+ {
+  "id": "lactose",
+  "group": "F. Allergies and medicines",
+  "situation": "Lactose or galactose intolerance",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "−tablets (old platform tag)",
+    "evidence": "inferred"
+   },
+   "voy": {
+    "effect": "−finasteride tablets",
+    "evidence": "docs"
+   },
+   "hair-and-me": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "−oral finasteride, removes oral minoxidil",
+    "evidence": "code"
+   },
+   "numan": {
+    "effect": "flagged for the clinician (offer unchanged) note; tablets kept",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "flagged for the clinician (offer unchanged) (any allergy)",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "flagged for the clinician (offer unchanged) ('Danger')",
+    "evidence": "observed"
+   },
+   "superdrug-online-doctor": {
+    "effect": "follow-up question; none",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hers-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "happy-head": {
+    "effect": "not flagged",
+    "evidence": "code"
+   },
+   "strut": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Ask. Hereditary galactose intolerance, Lapp lactase deficiency or glucose-galactose malabsorption: no lactose-containing tablet; check each brand's excipients.",
+  "source": "Not covered in the foundations files. The companies' own documents (Boots, Voy, Numan) say finasteride tablets contain lactose; confirm against the SmPC before writing the rule."
+ },
+ {
+  "id": "pets",
+  "group": "G. Household and lifestyle",
+  "situation": "Pets at home (cats especially)",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "voy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hair-and-me": {
+    "effect": "warning only + nudge to capsules",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "numan": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "warning only (tick to confirm)",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hers-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "strut": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Ask. Warn that topical minoxidil can poison cats (licking skin, pillows, spills); give handling advice; offer an oral option if clinically suitable. Never a reason to stop.",
+  "source": "customer-voice.md (Cats Protection, May 2026: 20 cat poisonings; PubMed 34370845: 8 of 62 poisoned cats died)."
+ },
+ {
+  "id": "children-home",
+  "group": "G. Household and lifestyle",
+  "situation": "Babies or young children who touch the scalp or pillow",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "voy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hair-and-me": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "numan": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hers-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "happy-head": {
+    "effect": "household pregnancy only",
+    "evidence": "observed"
+   },
+   "strut": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Counsel: keep children away from the treated scalp and pillow (infant hair growth reported); topical 5-ARIs pass through skin.",
+  "source": "clinical-men 3.1 (infants) and 10.2 table (women or children in the household); clinical-women 3.1 counsel."
+ },
+ {
+  "id": "smoking-alcohol",
+  "group": "G. Household and lifestyle",
+  "situation": "Smoking or drinking alcohol",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "voy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hair-and-me": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "numan": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "removes dutasteride in the automatic offer only",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "recreational drugs: flagged for the clinician (offer unchanged)",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hers-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "happy-head": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "strut": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Record only. Counsel smokers that minoxidil solution and foam are flammable (do not apply while smoking). No product needs to be blocked for smoking or alcohol on the evidence in our files.",
+  "source": "Flammability counsel (clinical-women 3.1). No smoking or alcohol restriction appears in the clinical files."
+ },
+ {
+  "id": "bmi",
+  "group": "G. Household and lifestyle",
+  "situation": "BMI or weight",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "voy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hair-and-me": {
+    "effect": "not asked (weight-loss statement only)",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "numan": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "BMI > 35: flagged for the clinician (offer unchanged)",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hers-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "after pay",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "asked for capsules; not flagged",
+    "evidence": "observed/code"
+   },
+   "strut": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Record weight as a baseline for oral minoxidil (rapid weight gain is a stop sign). Ask women about rapid weight loss and weight-loss injections (shedding trigger). No BMI gate.",
+  "source": "clinical-men 11 stop rules; clinical-women 3.13 and 4.1 Q14, Q28."
+ },
+ {
+  "id": "prev-finasteride-se",
+  "group": "H. Treatment history",
+  "situation": "Side effects on finasteride before",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "voy": {
+    "effect": "clinician may switch to topical",
+    "evidence": "docs"
+   },
+   "hair-and-me": {
+    "effect": "not asked (tick-list only)",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "removes finasteride and dutasteride products",
+    "evidence": "code"
+   },
+   "numan": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "asked, not acted on",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "sexual side effects: removes finasteride and dutasteride products",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "current users: flagged for the clinician (offer unchanged) (amber)",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "free text; none",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "removes finasteride and dutasteride products unless he opts back in",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hers-us": {
+    "effect": "n/a",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "asked; no follow-up",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "removes finasteride and dutasteride products from recommendation",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "flagged for the clinician (offer unchanged) 'critical'; dutasteride kept",
+    "evidence": "observed"
+   },
+   "strut": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Mood or persistent sexual effects: no 5-ARI (finasteride or dutasteride, oral or topical) without specialist review. Minor effects: clinician discussion.",
+  "source": "MHRA warnings; effects may persist (clinical-men 10.1); topical is not a way round the warning (clinical-men 10.1 'What this means')."
+ },
+ {
+  "id": "prev-minoxidil-se",
+  "group": "H. Treatment history",
+  "situation": "Side effects on minoxidil before",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "voy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hair-and-me": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "removes all minoxidil products (spray and capsule)",
+    "evidence": "code"
+   },
+   "numan": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "asked, not acted on",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "text box; effect not recorded",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hers-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "asked; no follow-up",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "oral: removes oral minoxidil from recommendation",
+    "evidence": "code"
+   },
+   "happy-head": {
+    "effect": "flagged for the clinician (offer unchanged) 'critical'",
+    "evidence": "code"
+   },
+   "strut": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Ask what happened. Scalp irritation: switch to foam or consider oral. Heart, swelling or fainting on oral: no oral minoxidil.",
+  "source": "clinical-men 11 step 2 table and stop rules; clinical-women 4.1 Q32."
+ },
+ {
+  "id": "no-family-history",
+  "group": "H. Treatment history",
+  "situation": "No family history of hair loss",
+  "perCompany": {
+   "hims-uk": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "voy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hair-and-me": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "sons": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "numan": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "philip-kingsley": {
+    "effect": "none",
+    "evidence": "code"
+   },
+   "treated": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "dr-fox": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "boots-online-doctor": {
+    "effect": "not asked",
+    "evidence": "code"
+   },
+   "superdrug-online-doctor": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "lloyds-online-doctor": {
+    "effect": "not asked",
+    "evidence": "observed"
+   },
+   "oxford-online-pharmacy": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "hims-us": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "hers-us": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "keeps": {
+    "effect": "none (legacy quiz)",
+    "evidence": "observed"
+   },
+   "ro": {
+    "effect": "men not asked; women none",
+    "evidence": "observed/code"
+   },
+   "happy-head": {
+    "effect": "none",
+    "evidence": "observed"
+   },
+   "strut": {
+    "effect": "?",
+    "evidence": "none"
+   },
+   "xyon": {
+    "effect": "?",
+    "evidence": "none"
+   }
+  },
+  "bestPractice": "Not a stop. Women: the licensed minoxidil SmPC says 'not indicated' without family history, so the clinician confirms the pattern from photos and records why. Men: supports the diagnosis only.",
+  "source": "clinical-women 3.1 ('licence limit that is easy to miss') and 4.1 Q17."
+ }
+]

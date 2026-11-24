@@ -1,0 +1,67 @@
+{
+ "_about": "Stage 3: beard baseline (exp-38) with face conditions = Any other medical conditions/operations instead of None of these (definition: opens a required text box).",
+ "start": "https://shop.sons.co.uk/beard-consultation/",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "Male"
+  },
+  {
+   "do": "click",
+   "text": "I accept"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "click",
+   "text": "Slow, patchy or thin growth areas"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "No"
+  },
+  {
+   "do": "click",
+   "text": "Any other medical conditions/operations"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "fill",
+   "selector": "textarea",
+   "value": "test"
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "wait",
+   "ms": 1500
+  }
+ ]
+}

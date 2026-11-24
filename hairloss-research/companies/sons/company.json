@@ -8,7 +8,7 @@
   "men"
  ],
  "model": "Men-only UK hair-loss subscription brand. Its own Shopify store and consultation app sell licensed finasteride 1 mg and minoxidil 5% (Sons holds the licences), unlicensed compounded sprays and capsules, supplements and shampoos; prescribing and dispensing are done by a partner, The Independent Pharmacy (ABSM Healthcare Ltd, GPhC 9012559).",
- "checkedOn": "2026-11-23",
+ "checkedOn": "2026-11-24",
  "access": {
   "howTested": [
    "live-walk",
@@ -906,7 +906,7 @@
       {
        "label": "No",
        "value": 0,
-       "effect": "Moves to the next question. No effect on what is offered.",
+       "effect": "Moves to the next question. No effect on what is offered (seen live, runs/s2-baseline-men).",
        "effectType": "next-question",
        "affects": [],
        "evidence": "observed"
@@ -917,7 +917,8 @@
      "branches": true,
      "branchDetail": "Yes leaves the questionnaire for the sign-in page.",
      "shownWhen": "always (first screen)",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/s2-baseline-men, runs/verify-baseline-men, runs/exp-38 and 55 more run folders"
     },
     {
      "id": "men-q02",
@@ -939,7 +940,7 @@
       {
        "label": "Male",
        "value": 0,
-       "effect": "Moves to the next question. No effect on what is offered.",
+       "effect": "Moves to the next question. No effect on what is offered (seen live, runs/s2-baseline-men).",
        "effectType": "next-question",
        "affects": [],
        "evidence": "observed"
@@ -950,7 +951,8 @@
      "branches": true,
      "branchDetail": "Female hides every other page and shows the female notice.",
      "shownWhen": "always (second screen)",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/s2-baseline-men, runs/verify-baseline-men, runs/exp-38 and 51 more run folders"
     },
     {
      "id": "men-q03",
@@ -977,7 +979,8 @@
      "branchDetail": "",
      "shownWhen": "always (for anyone who answered Male)",
      "visibleIfInCode": "{5141} anyof ['0']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/s2-baseline-men, runs/verify-baseline-men, runs/exp-38 and 44 more run folders"
     },
     {
      "id": "men-q04",
@@ -1041,7 +1044,7 @@
       {
        "label": "Gradually over months and years",
        "value": 0,
-       "effect": "Moves to the next question. No effect on what is offered.",
+       "effect": "Moves to the next question. No effect on what is offered (seen live, runs/s2-baseline-men).",
        "effectType": "next-question",
        "affects": [],
        "evidence": "observed"
@@ -1107,7 +1110,8 @@
      "branchDetail": "",
      "shownWhen": "only if hair loss started \"Suddenly\"",
      "visibleIfInCode": "{5143} anyof ['1']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-stacked-redflags, runs/all-branches-men, runs/exp-07 and 3 more run folders"
     },
     {
      "id": "men-q07",
@@ -1141,7 +1145,8 @@
      "branchDetail": "",
      "shownWhen": "only if hair loss started \"Suddenly\"",
      "visibleIfInCode": "{5143} anyof ['1']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-stacked-redflags, runs/all-branches-men, runs/exp-07 and 3 more run folders"
     },
     {
      "id": "men-q08",
@@ -1175,7 +1180,8 @@
      "branchDetail": "",
      "shownWhen": "only if hair loss started \"Suddenly\"",
      "visibleIfInCode": "{5143} anyof ['1']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-stacked-redflags, runs/all-branches-men, runs/exp-07 and 3 more run folders"
     },
     {
      "id": "men-q09",
@@ -1198,7 +1204,7 @@
       {
        "label": "No",
        "value": 0,
-       "effect": "Moves to the next question. No effect on what is offered.",
+       "effect": "Moves to the next question. No effect on what is offered (seen live, runs/s2-baseline-men).",
        "effectType": "next-question",
        "affects": [],
        "evidence": "observed"
@@ -1228,7 +1234,8 @@
      "branchDetail": "",
      "shownWhen": "only if mood question = Yes",
      "visibleIfInCode": "{3216} anyof ['1']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-stacked-redflags, runs/all-branches-men, runs/exp-11 and 2 more run folders"
     },
     {
      "id": "men-q11",
@@ -1301,7 +1308,8 @@
      "branchDetail": "",
      "shownWhen": "only if mood question = Yes",
      "visibleIfInCode": "{3216} anyof ['1']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-stacked-redflags, runs/all-branches-men, runs/exp-11 and 2 more run folders"
     },
     {
      "id": "men-q12",
@@ -1374,7 +1382,8 @@
      "branchDetail": "",
      "shownWhen": "only if mood question = Yes",
      "visibleIfInCode": "{3216} anyof ['1']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-stacked-redflags, runs/all-branches-men, runs/exp-11 and 2 more run folders"
     },
     {
      "id": "men-q13",
@@ -1412,7 +1421,7 @@
       {
        "label": "None of these",
        "value": "none",
-       "effect": "Moves to the next question. No effect on what is offered.",
+       "effect": "Moves to the next question. No effect on what is offered (seen live, runs/s2-baseline-men).",
        "effectType": "next-question",
        "affects": [],
        "evidence": "observed"
@@ -1523,7 +1532,8 @@
      "branchDetail": "Yes adds an optional free-text box.",
      "shownWhen": "only if \"Finasteride or Propecia\" was ticked",
      "visibleIfInCode": "{5148} anyof ['0']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-stacked-redflags, runs/all-branches-men, runs/exp-14 and 5 more run folders"
     },
     {
      "id": "men-q16",
@@ -1540,7 +1550,8 @@
      "branchDetail": "",
      "shownWhen": "only if finasteride side effects = Yes",
      "visibleIfInCode": "{5149} anyof ['1']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-stacked-redflags, runs/all-branches-men, runs/exp-15"
     },
     {
      "id": "men-q17",
@@ -1586,7 +1597,8 @@
      "branchDetail": "Yes adds an optional free-text box.",
      "shownWhen": "only if \"Minoxidil or Regaine\" was ticked",
      "visibleIfInCode": "{5148} anyof ['1']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-stacked-redflags, runs/all-branches-men, runs/exp-14 and 5 more run folders"
     },
     {
      "id": "men-q18",
@@ -1603,7 +1615,8 @@
      "branchDetail": "",
      "shownWhen": "only if minoxidil side effects = Yes",
      "visibleIfInCode": "{5151} anyof ['1']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/all-branches-men, runs/exp-17, runs/exp-19"
     },
     {
      "id": "men-q19",
@@ -1640,7 +1653,8 @@
      "branchDetail": "Yes adds an optional free-text box.",
      "shownWhen": "only if \"Topical Finasteride Minoxidil Combination\" was ticked",
      "visibleIfInCode": "{5148} anyof ['2']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-stacked-redflags, runs/all-branches-men, runs/exp-14 and 5 more run folders"
     },
     {
      "id": "men-q20",
@@ -1657,7 +1671,8 @@
      "branchDetail": "",
      "shownWhen": "only if combination side effects = Yes",
      "visibleIfInCode": "{5153} anyof ['1']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/all-branches-men, runs/exp-17, runs/exp-19"
     },
     {
      "id": "men-q21",
@@ -1833,7 +1848,7 @@
       {
        "label": "None of these",
        "value": "none",
-       "effect": "Moves to the next question. No effect on what is offered.",
+       "effect": "Moves to the next question. No effect on what is offered (seen live, runs/s2-baseline-men).",
        "effectType": "next-question",
        "affects": [],
        "evidence": "observed"
@@ -1863,7 +1878,8 @@
      "branchDetail": "",
      "shownWhen": "only if High Blood Pressure ticked",
      "visibleIfInCode": "{5155} anyof ['0']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-stacked-redflags, runs/all-branches-men, runs/exp-22"
     },
     {
      "id": "men-q23",
@@ -1880,7 +1896,8 @@
      "branchDetail": "",
      "shownWhen": "only if Cardiovascular Disease ticked",
      "visibleIfInCode": "{5155} anyof ['1']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-stacked-redflags, runs/all-branches-men, runs/exp-23"
     },
     {
      "id": "men-q24",
@@ -1897,7 +1914,8 @@
      "branchDetail": "",
      "shownWhen": "only if Severe Kidney or Liver Disease ticked",
      "visibleIfInCode": "{5155} anyof ['2']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/all-branches-men, runs/exp-24"
     },
     {
      "id": "men-q25",
@@ -1914,7 +1932,8 @@
      "branchDetail": "",
      "shownWhen": "only if Prostate Disease, Male Breast Cancer or Testicular Cancer ticked",
      "visibleIfInCode": "{5155} anyof ['3']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/all-branches-men, runs/exp-25"
     },
     {
      "id": "men-q26",
@@ -1931,7 +1950,8 @@
      "branchDetail": "",
      "shownWhen": "only if Rheumatoid Arthritis, Systemic Lupus or on Methotrexate ticked",
      "visibleIfInCode": "{5155} anyof ['4']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/all-branches-men, runs/exp-26"
     },
     {
      "id": "men-q27",
@@ -1948,7 +1968,8 @@
      "branchDetail": "",
      "shownWhen": "only if Scalp Disorders ticked",
      "visibleIfInCode": "{5155} anyof ['5']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/all-branches-men, runs/exp-27, runs/exp-31 and 3 more run folders"
     },
     {
      "id": "men-q28",
@@ -2014,7 +2035,8 @@
      "branchDetail": "",
      "shownWhen": "only if Scalp Disorders ticked",
      "visibleIfInCode": "{5155} anyof ['5']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/all-branches-men, runs/exp-27, runs/exp-31 and 3 more run folders"
     },
     {
      "id": "men-q29",
@@ -2064,7 +2086,8 @@
      "branchDetail": "",
      "shownWhen": "only if Scalp Disorders ticked",
      "visibleIfInCode": "{5155} anyof ['5']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/all-branches-men, runs/exp-27, runs/exp-31 and 3 more run folders"
     },
     {
      "id": "men-q30",
@@ -2106,7 +2129,8 @@
      "branchDetail": "",
      "shownWhen": "only if Scalp Disorders ticked",
      "visibleIfInCode": "{5155} anyof ['5']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/s2-baseline-men, runs/verify-baseline-men, runs/verify-stacked-redflags and 36 more run folders"
     },
     {
      "id": "men-q31",
@@ -2123,7 +2147,8 @@
      "branchDetail": "",
      "shownWhen": "only if Phaeochromocytoma ticked",
      "visibleIfInCode": "{5155} anyof ['6']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/all-branches-men, runs/exp-28"
     },
     {
      "id": "men-q32",
@@ -2140,7 +2165,8 @@
      "branchDetail": "",
      "shownWhen": "only if Diagnosed Lactose Allergy ticked",
      "visibleIfInCode": "{5155} anyof ['7']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/all-branches-men, runs/exp-29"
     },
     {
      "id": "men-q33",
@@ -2157,7 +2183,8 @@
      "branchDetail": "",
      "shownWhen": "only if Sexual Dysfunction ticked",
      "visibleIfInCode": "{5155} anyof ['8']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-stacked-redflags, runs/all-branches-men, runs/exp-30"
     },
     {
      "id": "men-q34",
@@ -2209,7 +2236,8 @@
      "branchDetail": "",
      "shownWhen": "always (for anyone who answered Male)",
      "visibleIfInCode": "{5141} anyof ['0']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/s2-baseline-men, runs/verify-baseline-men, runs/verify-stacked-redflags and 36 more run folders"
     },
     {
      "id": "men-q37",
@@ -2235,7 +2263,8 @@
      "branchDetail": "",
      "shownWhen": "always (for anyone who answered Male)",
      "visibleIfInCode": "{5141} anyof ['0']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/s2-baseline-men, runs/verify-baseline-men, runs/verify-stacked-redflags and 36 more run folders"
     },
     {
      "id": "men-q38",
@@ -2261,7 +2290,8 @@
      "branchDetail": "",
      "shownWhen": "always (for anyone who answered Male)",
      "visibleIfInCode": "{5141} anyof ['0']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/exp-36"
     },
     {
      "id": "men-q39",
@@ -2287,7 +2317,8 @@
      "branchDetail": "Agreeing adds five GP surgery fields to the account form.",
      "shownWhen": "always (for anyone who answered Male)",
      "visibleIfInCode": "{5141} anyof ['0']",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/exp-37"
     },
     {
      "id": "men-q40",
@@ -2304,7 +2335,8 @@
      "branches": false,
      "branchDetail": "",
      "shownWhen": "always, after the finasteride statement",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/s2-baseline-men, runs/verify-baseline-men, runs/exp-38 and 39 more run folders"
     },
     {
      "id": "men-q41",
@@ -2320,7 +2352,8 @@
      "branches": false,
      "branchDetail": "",
      "shownWhen": "only if gender at birth = Female",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/baseline-women, runs/exp-02, runs/exp-45 and 1 more run folders"
     },
     {
      "id": "men-q42",
@@ -2662,7 +2695,8 @@
      "branches": false,
      "branchDetail": "",
      "shownWhen": "always",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/exp-44, runs/exp-43, runs/verify-om5-changes-yes and 1 more run folders"
     },
     {
      "id": "om5-q2",
@@ -2695,7 +2729,8 @@
      "branches": true,
      "branchDetail": "Yes shows the free-text box that follows.",
      "shownWhen": "always",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/exp-44, runs/exp-43, runs/verify-om5-changes-yes and 1 more run folders"
     },
     {
      "id": "om5-q3",
@@ -2711,7 +2746,8 @@
      "branches": false,
      "branchDetail": "",
      "shownWhen": "only if the question before = Yes",
-     "evidence": "code"
+     "evidence": "observed",
+     "proof": "Seen live in runs/exp-43 (screen 03) and runs/verify-om5-se-yes (screen 06)"
     },
     {
      "id": "om5-q4",
@@ -2724,10 +2760,10 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "Opens a required free-text box about what has changed (Read from the survey definition the page downloads; visibleIf {5715} = Yes). No stop screen. Effect on approval unknown.",
+       "effect": "Opens a required free-text box \"Please can you tell us more about what has changed?\"; no warning and no stop (seen live, runs/verify-om5-changes-yes screen 06).",
        "effectType": "extra-questions",
        "affects": [],
-       "evidence": "code"
+       "evidence": "observed"
       },
       {
        "label": "No",
@@ -2744,7 +2780,8 @@
      "branches": true,
      "branchDetail": "Yes shows the free-text box that follows.",
      "shownWhen": "always",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/exp-44, runs/exp-43, runs/verify-om5-changes-yes and 1 more run folders"
     },
     {
      "id": "om5-q5",
@@ -2760,7 +2797,8 @@
      "branches": false,
      "branchDetail": "",
      "shownWhen": "only if the question before = Yes",
-     "evidence": "code"
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-om5-changes-yes (screen 06)"
     },
     {
      "id": "om5-q6",
@@ -2786,7 +2824,8 @@
      "branches": false,
      "branchDetail": "",
      "shownWhen": "always",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/exp-44, runs/exp-43, runs/verify-om5-changes-yes and 1 more run folders"
     }
    ]
   },
@@ -2843,7 +2882,7 @@
      "options": [
       {
        "label": "Female",
-       "effect": "Silent dead end (seen live, runs/exp-42). The screen stays on the gender question with no notice and no way forward; every later page is hidden (each has the condition gender = Male) and this definition has no notice page for women.",
+       "effect": "Dead end (seen live, runs/exp-42 and runs/verify-beard-female): the screen stays on the gender question with no notice. Pressing the Continue button that is still on screen shows an unrelated error, \"Your email address appears to be from an invalid domain name. Please check for typos and try again\", and still does not move on (runs/verify-beard-female-continue screen 05). No signposting to a GP or specialist.",
        "effectType": "hard-stop",
        "affects": [
         "p-beard"
@@ -2879,7 +2918,7 @@
      "options": [
       {
        "label": "I accept",
-       "effect": "Required tick.",
+       "effect": "Required tick (seen live, runs/s2-baseline-men).",
        "effectType": "next-question",
        "affects": [
         "p-beard"
@@ -2967,7 +3006,7 @@
       },
       {
        "label": "No",
-       "effect": "Moves on.",
+       "effect": "Moves on (seen live, runs/exp-38).",
        "effectType": "next-question",
        "affects": [
         "p-beard"
@@ -3009,16 +3048,16 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "Opens \"Did you experience any side effects?\" (definition: visibleIf {5175} = 1).",
+       "effect": "Opens \"Did you experience any side effects?\" (seen live, runs/verify-beard-minox-se-yes screen 08).",
        "effectType": "extra-questions",
        "affects": [
         "p-beard"
        ],
-       "evidence": "code"
+       "evidence": "observed"
       },
       {
        "label": "No",
-       "effect": "Moves on.",
+       "effect": "Moves on (seen live, runs/exp-38).",
        "effectType": "next-question",
        "affects": [
         "p-beard"
@@ -3044,12 +3083,12 @@
      "options": [
       {
        "label": "Yes",
-       "effect": "Opens a required free-text box about the side effects (definition: visibleIf {5176} = 1). No stop.",
+       "effect": "Opens a required free-text box about the side effects; no warning and no stop, the flow carries on to the allergy question (seen live, runs/verify-beard-minox-se-yes screens 09 to 11).",
        "effectType": "extra-questions",
        "affects": [
         "p-beard"
        ],
-       "evidence": "code"
+       "evidence": "observed"
       },
       {
        "label": "No",
@@ -3066,7 +3105,8 @@
      "branches": true,
      "branchDetail": "",
      "shownWhen": "code condition: {5175} anyof ['1']",
-     "evidence": "code"
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-beard-minox-se-yes (screen 08)"
     },
     {
      "id": "beard-q9",
@@ -3082,7 +3122,8 @@
      "branches": false,
      "branchDetail": "",
      "shownWhen": "code condition: {5176} anyof ['1']",
-     "evidence": "code"
+     "evidence": "observed",
+     "proof": "Seen live in runs/verify-beard-minox-se-yes (screen 09)"
     },
     {
      "id": "beard-q10",
@@ -3104,7 +3145,7 @@
       },
       {
        "label": "No",
-       "effect": "Moves on.",
+       "effect": "Moves on (seen live, runs/exp-38).",
        "effectType": "next-question",
        "affects": [
         "p-beard"
@@ -3201,12 +3242,12 @@
       },
       {
        "label": "No",
-       "effect": "No stop screen in the definition: the flow still goes to the account form. What the prescriber does with a No is unknown. Not replayed.",
-       "effectType": "flag-for-clinician",
+       "effect": "No effect on the flow: answering No (not willing to proceed) goes straight to the account form, exactly like Yes. No stop, no message (seen live, runs/verify-beard-psoriasis-no screen 12, same 10 screens as runs/exp-41). What the prescriber does with a No is unknown.",
+       "effectType": "none",
        "affects": [
         "p-beard"
        ],
-       "evidence": "code"
+       "evidence": "observed"
       }
      ],
      "purpose": "Informed-risk question for psoriasis.",
@@ -3281,7 +3322,8 @@
      "branches": true,
      "branchDetail": "Leads to a procedure date question, then the standard consultation with clinic_id attached.",
      "shownWhen": "on shop.sons.co.uk/clinics/<clinic>",
-     "evidence": "observed"
+     "evidence": "observed",
+     "proof": "Seen live in runs/page-clinic"
     },
     {
      "id": "clinic-q2",
@@ -3311,8 +3353,9 @@
    "effectType": "hard-stop",
    "affects": [],
    "evidence": "observed",
-   "proof": "runs/exp-02 and runs/s2-baseline-women vs runs/s2-baseline-men",
-   "confidence": "high"
+   "proof": "runs/exp-02 and runs/baseline-women, runs/verify-baseline-women vs runs/s2-baseline-men",
+   "confidence": "high",
+   "verification": "confirmed: Live replay runs/verify-baseline-women ends on the same female notice; its 3 distinct screens are identical to runs/baseline-women and runs/exp-02."
   },
   {
    "id": "R2",
@@ -3323,7 +3366,8 @@
    "affects": [],
    "evidence": "observed",
    "proof": "runs/exp-01",
-   "confidence": "high"
+   "confidence": "high",
+   "verification": "confirmed: Live replay runs/verify-existing-yes lands on sons.co.uk/account/login, screens identical to runs/exp-01."
   },
   {
    "id": "R3",
@@ -3334,7 +3378,8 @@
    "affects": [],
    "evidence": "observed",
    "proof": "runs/exp-04 to runs/exp-34, runs/all-branches-men",
-   "confidence": "high"
+   "confidence": "high",
+   "verification": "confirmed: Live replay runs/verify-stacked-redflags gave every warning answer at once (sudden onset with all three follow-ups Yes, mood Yes with both PHQ-2 answers \"Nearly every day\", finasteride side effects Yes, high blood pressure + cardiovascular disease + sexual dysfunction) and still reached the account form with no warning."
   },
   {
    "id": "R4",
@@ -3345,7 +3390,8 @@
    "affects": [],
    "evidence": "observed",
    "proof": "runs/s2-baseline-men (last screen)",
-   "confidence": "high"
+   "confidence": "high",
+   "verification": "confirmed: Live replay runs/verify-baseline-men: all 13 distinct screens identical to runs/s2-baseline-men, ending on the account form."
   },
   {
    "id": "R5",
@@ -3458,7 +3504,8 @@
    ],
    "evidence": "code",
    "proof": "runs/offline/results.txt (the site's own code run offline: recommendation-engine.excerpt.js lines 273-1140 and engine-newer.extract.js module 30216) off-04; screens in runs/exp-07",
-   "confidence": "medium"
+   "confidence": "medium",
+   "verification": "confirmed: Re-read in both copies (older: recommendation-engine.excerpt.js 'if (hairLossOnset === 1)'; newer: engine-newer.extract.js line 331 '1 === v'). Independent offline re-run runs/verify-offline/results.json case v-sudden: Minoxidil Spray, Non-Prescription plan, Hair Growth Complex. Both code copies are still served unchanged on 24 Nov 2026 (runs/verify-code-freshness)."
   },
   {
    "id": "R14",
@@ -3489,7 +3536,8 @@
    ],
    "evidence": "code",
    "proof": "runs/offline/results.txt (the site's own code run offline: recommendation-engine.excerpt.js lines 273-1140 and engine-newer.extract.js module 30216) off-10, off-11, off-13, off-14",
-   "confidence": "medium"
+   "confidence": "medium",
+   "verification": "confirmed: Re-read in both copies ('littleInterest >= 2 || feelingDown >= 2'; newer line 332). Offline re-run v-phq2 removes every finasteride product; v-phq1 (both answers 'Several days') removes nothing. Option values 0-3 checked in quiz-definition.json."
   },
   {
    "id": "R16",
@@ -3520,7 +3568,8 @@
    ],
    "evidence": "code",
    "proof": "runs/offline/results.txt (the site's own code run offline: recommendation-engine.excerpt.js lines 273-1140 and engine-newer.extract.js module 30216) off-16; screens in runs/exp-15",
-   "confidence": "medium"
+   "confidence": "medium",
+   "verification": "confirmed: Re-read in both copies (5149 === 1). Offline re-run v-fin-se: Oral Minoxidil (toggle Minoxidil Spray), Non-Prescription plan, Hair Growth Complex."
   },
   {
    "id": "R18",
@@ -3541,7 +3590,8 @@
    ],
    "evidence": "code",
    "proof": "runs/offline/results.txt (the site's own code run offline: recommendation-engine.excerpt.js lines 273-1140 and engine-newer.extract.js module 30216) off-18; screens in runs/exp-17",
-   "confidence": "medium"
+   "confidence": "medium",
+   "verification": "confirmed: Re-read in both copies (5151 === 1). Offline re-run v-minox-se: Finasteride tablets (toggle Topical Finasteride) and Hair Growth Complex only."
   },
   {
    "id": "R19",
@@ -3575,7 +3625,8 @@
    ],
    "evidence": "code",
    "proof": "runs/offline/results.txt (the site's own code run offline: recommendation-engine.excerpt.js lines 273-1140 and engine-newer.extract.js module 30216) off-23, off-24; screens in runs/exp-22, exp-23",
-   "confidence": "medium"
+   "confidence": "medium",
+   "verification": "confirmed: Re-read in both copies: any tick of value 0 or 1 in question 5155 blocks oral minoxidil, topical minoxidil and the Combination Spray; the older copy's 'not controlled' branch reads a field this questionnaire never asks. Offline re-run v-hbp and v-cardio: Finasteride tablets (toggle Topical Finasteride) and Hair Growth Complex only."
   },
   {
    "id": "R21",
@@ -3595,7 +3646,8 @@
    ],
    "evidence": "code",
    "proof": "runs/offline/results.txt (the site's own code run offline: recommendation-engine.excerpt.js lines 273-1140 and engine-newer.extract.js module 30216) off-25, off-26, off-27, off-31; screens in runs/exp-24, exp-25, exp-26, exp-30",
-   "confidence": "medium"
+   "confidence": "medium",
+   "verification": "confirmed: Re-read in both copies (values 2, 3, 4, 8). Offline re-run v-kidney and v-sexdys: Oral Minoxidil (toggle Minoxidil Spray), Non-Prescription plan, Hair Growth Complex."
   },
   {
    "id": "R22",
@@ -3612,7 +3664,8 @@
    ],
    "evidence": "code",
    "proof": "runs/offline/results.txt (the site's own code run offline: recommendation-engine.excerpt.js lines 273-1140 and engine-newer.extract.js module 30216) off-28; screens in runs/exp-27",
-   "confidence": "medium"
+   "confidence": "medium",
+   "verification": "confirmed: Re-read in both copies (value 5). Offline re-run v-scalp: main card Core Plan - Capsule, then Topical Finasteride & Oral Minoxidil, Ultimate Plan - Capsule, Oral Minoxidil, Finasteride tablets (toggle Topical Finasteride), Hair Growth Complex."
   },
   {
    "id": "R23",
@@ -3658,7 +3711,8 @@
    ],
    "evidence": "code",
    "proof": "runs/offline/results.txt (the site's own code run offline: recommendation-engine.excerpt.js lines 273-1140 and engine-newer.extract.js module 30216) off-30; screens in runs/exp-29",
-   "confidence": "medium"
+   "confidence": "medium",
+   "verification": "confirmed: Re-read in both copies (value 7). Offline re-run v-lactose: Combination Spray first, then Minoxidil Spray, Topical Finasteride, Non-Prescription plan, Hair Growth Complex."
   },
   {
    "id": "R26",
@@ -3697,7 +3751,8 @@
    ],
    "evidence": "code",
    "proof": "runs/offline/truthtable.json; runs/offline/results.txt (the site's own code run offline: recommendation-engine.excerpt.js lines 273-1140 and engine-newer.extract.js module 30216) off-49 to off-54, off-59 to off-61",
-   "confidence": "medium"
+   "confidence": "medium",
+   "verification": "confirmed: Offline re-run v-hbp+sexdys (High Blood Pressure + Sexual Dysfunction): Hair Growth Complex only, in the newer copy."
   },
   {
    "id": "R29",
@@ -3720,7 +3775,8 @@
    ],
    "evidence": "code",
    "proof": "runs/offline/results.txt (the site's own code run offline: recommendation-engine.excerpt.js lines 273-1140 and engine-newer.extract.js module 30216) off-39, off-40, off-41",
-   "confidence": "low"
+   "confidence": "low",
+   "verification": "confirmed: Re-read: older copy 'ageInYears > 65' blocks finasteride, oral minoxidil and the Combination Spray but not the spray; newer copy blocks all five. Offline re-run v-age65: nothing removed; v-age66: Hair Growth Complex only (newer copy). Whether the server passes the date of birth to either copy is still unknown."
   },
   {
    "id": "R30",
@@ -3841,21 +3897,23 @@
     "p-oralmin5"
    ],
    "evidence": "observed",
-   "proof": "runs/exp-43 vs runs/exp-44; src/survey-oral_minoxidil_5mg_consultation.raw.json",
-   "confidence": "medium"
+   "proof": "runs/exp-43 vs runs/exp-44; runs/verify-om5-changes-yes; src/survey-oral_minoxidil_5mg_consultation.raw.json",
+   "confidence": "medium",
+   "verification": "confirmed: Live replay runs/verify-om5-changes-yes: Yes opens 'Please can you tell us more about what has changed?' with no warning or stop."
   },
   {
    "id": "R39",
    "flow": "beard",
    "when": "beard-q11 = \"Psoriasis\"",
-   "then": "One extra question asks whether the man is willing to proceed although psoriasis and eczema can be made worse by minoxidil and tretinoin. Eczema and skin infection tick boxes do not trigger it.",
+   "then": "One extra question asks whether the man is willing to proceed although psoriasis and eczema can be made worse by minoxidil and tretinoin. Answering No does not stop him: the next screen is the account form, as with Yes (runs/verify-beard-psoriasis-no). Eczema and skin infection do not open the question.",
    "effectType": "soft-warning",
    "affects": [
     "p-beard"
    ],
    "evidence": "observed",
-   "proof": "runs/exp-41 vs runs/exp-38; src/survey-beard.raw.json",
-   "confidence": "medium"
+   "proof": "runs/exp-41 vs runs/exp-38; runs/verify-beard-psoriasis-no; src/survey-beard.raw.json",
+   "confidence": "medium",
+   "verification": "confirmed and extended: Live replay runs/verify-beard-psoriasis-no: the warning question appears after Psoriasis, and answering No (not willing to proceed) still goes straight to the account form. The warning is a question with no effect on the flow."
   },
   {
    "id": "R40",
@@ -3874,14 +3932,15 @@
    "id": "R41",
    "flow": "beard",
    "when": "beard-q2 gender at birth = \"Female\"",
-   "then": "Silent dead end: the screen stays on the gender question with no notice, no message and no way forward (the hair flow at least shows a notice).",
+   "then": "Dead end: the screen stays on the gender question with no notice and no signposting. Pressing Continue shows an unrelated error about an invalid email domain and still does not move on (the hair flow at least shows a notice).",
    "effectType": "hard-stop",
    "affects": [
     "p-beard"
    ],
    "evidence": "observed",
-   "proof": "runs/exp-42 vs runs/exp-38",
-   "confidence": "high"
+   "proof": "runs/exp-42 vs runs/exp-38; runs/verify-beard-female; runs/verify-beard-female-continue screen 05",
+   "confidence": "high",
+   "verification": "corrected: Live replays runs/verify-beard-female (same as runs/exp-42) and runs/verify-beard-female-continue: the dead end is real, but it is not silent. Pressing the Continue button still on screen shows an unrelated error, 'Your email address appears to be from an invalid domain name. Please check for typos and try again'."
   },
   {
    "id": "R42",
@@ -3902,8 +3961,9 @@
    "effectType": "extra-questions",
    "affects": [],
    "evidence": "observed",
-   "proof": "runs/exp-43 screen 03 vs runs/exp-44",
-   "confidence": "high"
+   "proof": "runs/exp-43 screen 03 vs runs/exp-44; runs/verify-om5-se-yes",
+   "confidence": "high",
+   "verification": "confirmed: Live replay runs/verify-om5-se-yes shows the side-effects text box with Yes (stage 2 could only count screen 03 of runs/exp-43)."
   }
  ],
  "experiments": [
@@ -3919,7 +3979,7 @@
    "id": "exp-02",
    "flow": "men",
    "changed": "men-q02 gender at birth: Male → Female",
-   "result": "Live (runs/exp-02; the same walk as baseline-women.json, replayed as runs/s2-baseline-women): stop screen at question 2. Text: \"Sons products are formulated for those born male and we do not currently provide treatment for those who were born female. Whilst some of these treatments may be suitable for those born female, we would recommend a face to face consultation with a hair loss specialist or GP…\". One button, \"Finish Consultation\". No further question, product or price.",
+   "result": "Live (runs/exp-02; the same walk as baseline-women.json, replayed as runs/baseline-women, runs/verify-baseline-women): stop screen at question 2. Text: \"Sons products are formulated for those born male and we do not currently provide treatment for those who were born female. Whilst some of these treatments may be suitable for those born female, we would recommend a face to face consultation with a hair loss specialist or GP…\". One button, \"Finish Consultation\". No further question, product or price.",
    "run": "runs/exp-02",
    "kind": "live replay"
   },
@@ -4490,6 +4550,90 @@
    "result": "NOT a live replay. Site code run offline (off-61): both copies take out Core Plan - Capsule (tablet + minoxidil capsule), Core Plan (tablet + minoxidil spray), Combination Spray, Topical Finasteride & Oral Minoxidil, Ultimate Plan - Capsule, Ultimate Plan, Oral Minoxidil, Minoxidil Spray, Finasteride tablets, Non-Prescription plan. Left on offer (older copy): Topical Finasteride, Hair Growth Complex. First card: Topical Finasteride (older copy); Topical Finasteride (newer copy). Evidence type: code.",
    "run": "runs/offline/results.json",
    "kind": "site code run offline"
+  },
+  {
+   "id": "v-01",
+   "flow": "men",
+   "changed": "none: stage 3 fresh replay of baseline-men.json",
+   "result": "Live (runs/verify-baseline-men): all 13 distinct screens identical to runs/s2-baseline-men, ending on the account form.",
+   "run": "runs/verify-baseline-men"
+  },
+  {
+   "id": "v-02",
+   "flow": "men",
+   "changed": "none: stage 3 fresh replay of baseline-women.json",
+   "result": "Live (runs/verify-baseline-women): same female notice, 3 distinct screens identical to runs/baseline-women and runs/exp-02.",
+   "run": "runs/verify-baseline-women"
+  },
+  {
+   "id": "v-03",
+   "flow": "men",
+   "changed": "men-q01 existing customer: No → Yes (repeat of exp-01)",
+   "result": "Live (runs/verify-existing-yes): sign-in page at sons.co.uk/account/login, identical to runs/exp-01.",
+   "run": "runs/verify-existing-yes"
+  },
+  {
+   "id": "v-04",
+   "flow": "men",
+   "changed": "NOT one-change: every warning answer at once (sudden onset + all follow-ups Yes, mood Yes + PHQ-2 'Nearly every day' twice, finasteride side effects Yes, high blood pressure + cardiovascular disease + sexual dysfunction)",
+   "result": "Live (runs/verify-stacked-redflags): reaches the account form with no stop, warning or signposting.",
+   "run": "runs/verify-stacked-redflags"
+  },
+  {
+   "id": "v-05",
+   "flow": "oral-minoxidil-5mg",
+   "changed": "om5-q2 side effects on 2.5 mg: No → Yes (repeat of exp-43, which only counted screen 03)",
+   "result": "Live (runs/verify-om5-se-yes): the side-effects free-text box opens; no warning, no stop.",
+   "run": "runs/verify-om5-se-yes"
+  },
+  {
+   "id": "v-06",
+   "flow": "oral-minoxidil-5mg",
+   "changed": "om5-q4 health or medicines changed: No → Yes",
+   "result": "Live (runs/verify-om5-changes-yes): opens 'Please can you tell us more about what has changed?'; no warning, no stop.",
+   "run": "runs/verify-om5-changes-yes"
+  },
+  {
+   "id": "v-07",
+   "flow": "beard",
+   "changed": "beard-q2 gender at birth: Male → Female (repeat of exp-42)",
+   "result": "Live (runs/verify-beard-female): screen stays on the gender question; same as exp-42.",
+   "run": "runs/verify-beard-female"
+  },
+  {
+   "id": "v-08",
+   "flow": "beard",
+   "changed": "beard-q2 Female, then press the Continue button still on screen",
+   "result": "Live (runs/verify-beard-female-continue): an unrelated error appears, 'Your email address appears to be from an invalid domain name. Please check for typos and try again', and the screen stays on the gender question.",
+   "run": "runs/verify-beard-female-continue"
+  },
+  {
+   "id": "v-09",
+   "flow": "beard",
+   "changed": "beard-q11 Psoriasis, then beard-q12 willing to proceed: Yes → No (against exp-41)",
+   "result": "Live (runs/verify-beard-psoriasis-no): No goes straight to the account form; the 10 distinct screens are identical to runs/exp-41.",
+   "run": "runs/verify-beard-psoriasis-no"
+  },
+  {
+   "id": "v-10",
+   "flow": "beard",
+   "changed": "beard-q7 minoxidil before: No → Yes, then beard-q8 side effects: Yes (against exp-38)",
+   "result": "Live (runs/verify-beard-minox-se-yes): 'Did you experience any side effects?' then a free-text box about them, then the allergy question; no warning or stop. The walk stopped on the face-conditions screen (a scripting slip ticked and unticked 'None of these'), so the end of this route was not seen.",
+   "run": "runs/verify-beard-minox-se-yes"
+  },
+  {
+   "id": "v-11",
+   "flow": "men",
+   "changed": "none: re-download of the hair survey definition (scripts/capture-survey.js)",
+   "result": "runs/verify-capture-definition: 38 pages and 57 elements, no difference in any title, option, condition or required flag from quiz-definition.json (scripts/verify-defdiff.js).",
+   "run": "runs/verify-capture-definition"
+  },
+  {
+   "id": "v-12",
+   "flow": "men",
+   "changed": "none: offline re-run of the newer rules for 18 cases (scripts/verify-engine.js)",
+   "result": "NOT a live replay. runs/verify-offline/results.json: every case gives the plans stated in R12, R13, R15, R17, R18, R20, R21, R22, R25, R28 and R29.",
+   "run": "runs/verify-offline"
   }
  ],
  "recommendations": [
@@ -4517,7 +4661,7 @@
    "profile": "Baseline woman: 38, any answers",
    "offered": [],
    "default": null,
-   "note": "Stopped at question 2 with a notice to see a hair-loss specialist or GP (runs/exp-02, runs/s2-baseline-women). The medical FAQ adds that 5% minoxidil \"cannot be sold to females as Sons are not permitted to do so under UK licensing\".",
+   "note": "Stopped at question 2 with a notice to see a hair-loss specialist or GP (runs/exp-02, runs/baseline-women, runs/verify-baseline-women). The medical FAQ adds that 5% minoxidil \"cannot be sold to females as Sons are not permitted to do so under UK licensing\".",
    "evidence": "observed"
   },
   {
@@ -4878,5 +5022,40 @@
   "distinctOutcomes": 13,
   "answerCombinationsRun": 32768,
   "missingRuns": []
+ },
+ "verification": {
+  "checked": [
+   "R1 (female stop, hair flow): confirmed. Live replay runs/verify-baseline-women ends on the same female notice; its 3 distinct screens are identical to runs/baseline-women and runs/exp-02.",
+   "R2 (existing customer goes to sign-in): confirmed. Live replay runs/verify-existing-yes lands on sons.co.uk/account/login, screens identical to runs/exp-01.",
+   "R3 (no stop screen for any man): confirmed. Live replay runs/verify-stacked-redflags gave every warning answer at once (sudden onset with all three follow-ups Yes, mood Yes with both PHQ-2 answers \"Nearly every day\", finasteride side effects Yes, high blood pressure + cardiovascular disease + sexual dysfunction) and still reached the account form with no warning.",
+   "R4 (account wall after the finasteride statement): confirmed. Live replay runs/verify-baseline-men: all 13 distinct screens identical to runs/s2-baseline-men, ending on the account form.",
+   "R13 (sudden onset removes finasteride, oral minoxidil and the Combination Spray): confirmed. Re-read in both copies (older: recommendation-engine.excerpt.js 'if (hairLossOnset === 1)'; newer: engine-newer.extract.js line 331 '1 === v'). Independent offline re-run runs/verify-offline/results.json case v-sudden: Minoxidil Spray, Non-Prescription plan, Hair Growth Complex. Both code copies are still served unchanged on 24 Nov 2026 (runs/verify-code-freshness).",
+   "R15 (PHQ-2 answer of 2 or more removes finasteride): confirmed. Re-read in both copies ('littleInterest >= 2 || feelingDown >= 2'; newer line 332). Offline re-run v-phq2 removes every finasteride product; v-phq1 (both answers 'Several days') removes nothing. Option values 0-3 checked in quiz-definition.json.",
+   "R17 (past finasteride side effects remove finasteride): confirmed. Re-read in both copies (5149 === 1). Offline re-run v-fin-se: Oral Minoxidil (toggle Minoxidil Spray), Non-Prescription plan, Hair Growth Complex.",
+   "R18 (past minoxidil side effects remove all minoxidil): confirmed. Re-read in both copies (5151 === 1). Offline re-run v-minox-se: Finasteride tablets (toggle Topical Finasteride) and Hair Growth Complex only.",
+   "R20 (high blood pressure or heart disease removes all minoxidil, spray included): confirmed. Re-read in both copies: any tick of value 0 or 1 in question 5155 blocks oral minoxidil, topical minoxidil and the Combination Spray; the older copy's 'not controlled' branch reads a field this questionnaire never asks. Offline re-run v-hbp and v-cardio: Finasteride tablets (toggle Topical Finasteride) and Hair Growth Complex only.",
+   "R21 (kidney/liver, prostate/cancer, arthritis/lupus or sexual dysfunction removes finasteride): confirmed. Re-read in both copies (values 2, 3, 4, 8). Offline re-run v-kidney and v-sexdys: Oral Minoxidil (toggle Minoxidil Spray), Non-Prescription plan, Hair Growth Complex.",
+   "R22 (scalp disorder removes topical minoxidil and the Combination Spray): confirmed. Re-read in both copies (value 5). Offline re-run v-scalp: main card Core Plan - Capsule, then Topical Finasteride & Oral Minoxidil, Ultimate Plan - Capsule, Oral Minoxidil, Finasteride tablets (toggle Topical Finasteride), Hair Growth Complex.",
+   "R25 (lactose allergy removes both oral drugs): confirmed. Re-read in both copies (value 7). Offline re-run v-lactose: Combination Spray first, then Minoxidil Spray, Topical Finasteride, Non-Prescription plan, Hair Growth Complex.",
+   "R28 (blocks add up to supplement only): confirmed. Offline re-run v-hbp+sexdys (High Blood Pressure + Sexual Dysfunction): Hair Growth Complex only, in the newer copy.",
+   "R29 (over 65): confirmed. Re-read: older copy 'ageInYears > 65' blocks finasteride, oral minoxidil and the Combination Spray but not the spray; newer copy blocks all five. Offline re-run v-age65: nothing removed; v-age66: Hair Growth Complex only (newer copy). Whether the server passes the date of birth to either copy is still unknown.",
+   "R38 (5 mg step-up: health or medicines changed opens a text box): confirmed. Live replay runs/verify-om5-changes-yes: Yes opens 'Please can you tell us more about what has changed?' with no warning or stop.",
+   "R43 (5 mg step-up: side effects opens a text box): confirmed. Live replay runs/verify-om5-se-yes shows the side-effects text box with Yes (stage 2 could only count screen 03 of runs/exp-43).",
+   "R39 (beard psoriasis warning): confirmed and extended. Live replay runs/verify-beard-psoriasis-no: the warning question appears after Psoriasis, and answering No (not willing to proceed) still goes straight to the account form. The warning is a question with no effect on the flow.",
+   "R41 (beard flow female dead end): corrected. Live replays runs/verify-beard-female (same as runs/exp-42) and runs/verify-beard-female-continue: the dead end is real, but it is not silent. Pressing the Continue button still on screen shows an unrelated error, 'Your email address appears to be from an invalid domain name. Please check for typos and try again'.",
+   "Survey definition: re-downloaded on the live page (runs/verify-capture-definition); no difference from quiz-definition.json in 38 pages and 57 questions (scripts/verify-defdiff.js).",
+   "Recommendation code is still what the site serves (24 Nov 2026): shop.sons.co.uk/recommendation still loads app/recommendation/page-9574552c5f8ec4c0.js and 1234-6277a6fc5802d9fd.js, both byte-identical to the saved copies; all 588 code lines of recommendation-engine.excerpt.js are present unchanged in the live sons.co.uk/pages/recommendation (runs/verify-code-freshness, scripts/verify-freshness.sh, scripts/verify-oldpage.js).",
+   "Question-to-code mapping: the question ids and option values the code reads (5143 Suddenly = 1; 3275/3276 0 to 3; 5149/5151/5153 Yes = 1; 5155 values 0 to 8; preference 'Topical' = 0) match quiz-definition.json."
+  ],
+  "corrected": [
+   "3 claims named runs/s2-baseline-women as proof, a folder that does not exist (stage 2 replayed the woman as runs/exp-02). They now name runs/baseline-women and the stage 3 replay runs/verify-baseline-women, which both end on the same female notice.",
+   "48 questions and options were labelled \"observed\" without naming a run folder. Each now names the run folders whose saved screens show it (found by searching every runs/*/NN.txt for the question wording). All were found on saved screens; none had to be downgraded.",
+   "beard-q12 \"No\" (not willing to proceed despite the psoriasis warning) was labelled code and typed flag-for-clinician. A live replay (runs/verify-beard-psoriasis-no) shows it goes straight to the account form like Yes; now observed, effect none on the flow.",
+   "beard-q2 \"Female\" was described as a silent dead end with no message. Pressing the Continue button still on screen shows an unrelated email-domain error (runs/verify-beard-female-continue screen 05). Wording corrected in the option and in R41.",
+   "R39: R39 now says that answering No to 'willing to proceed' does not stop the man (runs/verify-beard-psoriasis-no).",
+   "R41: R41 said the beard-flow dead end for women shows no message. Pressing Continue shows an unrelated email-domain error (runs/verify-beard-female-continue screen 05); wording corrected."
+  ],
+  "stillUnverified": [],
+  "verdict": "Review in progress."
  }
 }

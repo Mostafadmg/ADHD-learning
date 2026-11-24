@@ -1,0 +1,3 @@
+{ "_about": "Stage 3: partner-clinic landing page (British Hair Clinic). Open the treatment-type picker to read its options. No contact details.",
+  "start": "https://shop.sons.co.uk/clinics/british-hair-clinic",
+  "steps": [ {"do":"wait","ms":3000}, {"do":"click","text":"Select treatment"}, {"do":"wait","ms":1200} ] }

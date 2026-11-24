@@ -1,0 +1,59 @@
+{
+ "_about": "Stage 3: as runs/verify-clinic-future, then press Continue on the free post-op pack offer to see where the clinic route goes next. No contact details.",
+ "start": "https://shop.sons.co.uk/clinics/british-hair-clinic",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 3000
+  },
+  {
+   "do": "click",
+   "text": "Select treatment"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "click",
+   "text": "Hair Transplant"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "wait",
+   "ms": 1500
+  },
+  {
+   "do": "fill",
+   "selector": "input[type=date]",
+   "value": "2026-12-15"
+  },
+  {
+   "do": "wait",
+   "ms": 800
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "wait",
+   "ms": 3500
+  },
+  {
+   "do": "click",
+   "text": "Continue"
+  },
+  {
+   "do": "wait",
+   "ms": 4000
+  }
+ ]
+}

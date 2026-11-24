@@ -1,0 +1,72 @@
+{
+ "beard-booster": [
+  "1 month=\u00a346.00",
+  "3 months=\u00a3105.00",
+  "6 months=\u00a3180.00"
+ ],
+ "biotin": [
+  "1 month=\u00a312.99",
+  "3 months=\u00a330.00",
+  "6 months=\u00a354.00",
+  "12 months=\u00a396.00"
+ ],
+ "combination-capsule": [
+  "1 month=\u00a332.00",
+  "3 months=\u00a3106.00",
+  "6 months=\u00a3189.00"
+ ],
+ "dutasteride-combination-spray": [
+  "3 months=\u00a3111.00",
+  "6 months=\u00a3199.00"
+ ],
+ "finasteride": [
+  "1 month=\u00a329.00",
+  "3 months=\u00a383.00",
+  "6 months=\u00a3136.00",
+  "12 months=\u00a3272.00"
+ ],
+ "hair-growth-complex": [
+  "1 month=\u00a335.00",
+  "3 months=\u00a396.00",
+  "6 months=\u00a3168.00",
+  "12 months=\u00a3300.00"
+ ],
+ "ketoconazole": [
+  "3 months=\u00a39.49",
+  "6 months=\u00a316.00"
+ ],
+ "minoxidil": [
+  "1 month=\u00a333.00",
+  "3 months=\u00a354.00",
+  "6 months=\u00a399.00",
+  "12 months=\u00a3180.00"
+ ],
+ "oral-minoxidil-5mg": [
+  "3 months=\u00a3105.30",
+  "6 months=\u00a3187.20"
+ ],
+ "oral-minoxidil": [
+  "3 months=\u00a377.00",
+  "6 months=\u00a3142.00"
+ ],
+ "the-duo-plan": [
+  "1 month=\u00a343.00",
+  "3 months=\u00a3106.00",
+  "6 months=\u00a3189.00",
+  "12 months=\u00a3378.00"
+ ],
+ "the-non-prescription-plan": [
+  "1 month=\u00a342.00",
+  "3 months=\u00a3109.00",
+  "6 months=\u00a3198.00",
+  "12 months=\u00a3380.00"
+ ],
+ "topical-finasteride-minoxidil-spray": [
+  "3 months=\u00a3106.00",
+  "6 months=\u00a3189.00"
+ ],
+ "topical-hair-loss-spray": [
+  "3 months=\u00a383.00",
+  "6 months=\u00a3136.00"
+ ]
+}

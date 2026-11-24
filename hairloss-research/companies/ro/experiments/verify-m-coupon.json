@@ -1,0 +1,38 @@
+{
+ "start": "https://start.ro.co/fxdxbh/?c=dhg3wrpe3qn32yash32ng",
+ "locale": "en-US",
+ "timezone": "America/Chicago",
+ "steps": [
+  {
+   "do": "wait",
+   "ms": 2500
+  },
+  {
+   "do": "click",
+   "text": "Regrow my hair"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 3500
+  },
+  {
+   "do": "click",
+   "text": "None of the above"
+  },
+  {
+   "do": "click",
+   "text": "Continue",
+   "settle": 3500
+  },
+  {
+   "do": "click",
+   "text": "Didn't want or need to until now",
+   "settle": 4000
+  },
+  {
+   "do": "wait",
+   "ms": 3000
+  }
+ ]
+}

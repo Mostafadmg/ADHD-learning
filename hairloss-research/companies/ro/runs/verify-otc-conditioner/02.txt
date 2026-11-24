@@ -1,0 +1,41 @@
+STEP 02 click "Continue"
+URL: https://start.ro.co/qcalmd/online-visit/10
+TITLE: Online Visit
+
+--- VISIBLE TEXT ---
+Your Account
+Ro takes your security very seriously. All your confidential data is encrypted and handled securely.
+
+Already a member? Log in and continue
+
+Sign up with Email
+
+OR
+
+Continue with Google
+
+Restore Conditioner
+
+1 x 8 oz supply ($24 ea.)
+
+3 month plan ($8/mo)
+
+$24
+
+Shipping
+
+Included
+
+Total
+
+$24
+
+Free shipping
+Modify or cancel any time
+Backed by U.S.-licensed physicians and medical advisors
+
+--- CONTROLS ---
+  button (3): Log in and continue  ·  Sign up with Email  ·  Continue with Google
+
+--- LINKS ---
+

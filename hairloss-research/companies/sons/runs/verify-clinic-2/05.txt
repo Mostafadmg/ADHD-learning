@@ -1,0 +1,54 @@
+STEP 05 wait 800
+URL: https://shop.sons.co.uk/clinics/british-hair-clinic
+TITLE: Sons
+
+--- VISIBLE TEXT ---
+Sons x British Hair Clinic
+
+Sons has partnered with the British Hair Clinic, a leading hair transplant clinic to provide a complete approach to hair restoration, combining expert medical treatments with advanced surgical solutions. Together with their highly skilled hair transplant surgery technicians, the BHC consistently achieve the best natural looking before and after hair transplant results.
+
+Post-Op Pack
+
+The support pack that meets your post transplant needs and is worth £49.99. Complete the section below to see if suitable.
+
+Find out more
+Finasteride and Minoxidil explained
+
+The two leading ingredients in our medication - and why they matter
+
+What is your treatment type?
+option Hair Transplant, selected.
+Hair Transplant
+Continue
+Sons
+About Us
+People & Planet
+Hair Loss Science
+Testimonials
+Our Blog
+Refer A Friend
+FAQs
+Legal Info
+Delivery & Info
+Terms & Conditions
+Privacy Policy
+Refund Policy
+Make A Complaint
+Indemnity Insurance
+Responsible Pharmacist
+Get In Touch
+
+hello@sons.co.uk
+
+0208 154 2524
+
+The Independent Pharmacy is our partner pharmacy and independent prescribing service. ABSM Healthcare Ltd, 14 - 16 Dixon Road, Brislington, Bristol, BS4 5QW.
+Our medical products have been licensed for sale in the UK and are regulated by the Medicines & Healthcare products Regulatory Agency (MHRA).
+©2026 CAREFORSONS LTD. ALL RIGHTS RESERVED.
+
+--- CONTROLS ---
+  button (2): Find out more  ·  Continue
+  input:text (1): react-select-2-input
+
+--- LINKS ---
+  link (15): About Us -> https://sons.co.uk/pages/about  ·  People & Planet -> https://sons.co.uk/pages/people-and-planet  ·  Hair Loss Science -> https://sons.co.uk/pages/hair-loss-science  ·  Testimonials -> https://sons.co.uk/blogs/testimonials  ·  Our Blog -> https://sons.co.uk/blogs/journal  ·  Refer A Friend -> https://sons.co.uk/pages/refer-a-friend  ·  FAQs -> https://sons.co.uk/pages/faqs  ·  Delivery & Info -> https://sons.co.uk/pages/delivery-returns  ·  Terms & Conditions -> https://sons.co.uk/pages/terms-conditions  ·  Privacy Policy -> https://sons.co.uk/pages/sons-privacy-policy  ·  Refund Policy -> https://sons.co.uk/pages/refund-policy  ·  Make A Complaint -> https://sons.co.uk/pages/complaints  ·  Indemnity Insurance -> https://cdn.shopify.com/s/files/1/0255/7725/9086/files/1657517955_PIPL_Policy_Certificate.pdf?v=1699374958  ·  Responsible Pharmacist -> https://www.chemist-4-u.com/responsible-pharmacist  ·  CAREFORSONS LTD -> https://sons.co.uk/

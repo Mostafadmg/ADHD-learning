@@ -1,0 +1,5 @@
+{ "_about": "Stage 3: beard baseline (exp-38) with face conditions = Eczema instead of None of these. Checks the claim that only Psoriasis opens the 'willing to proceed' warning.",
+  "start": "https://shop.sons.co.uk/beard-consultation/",
+  "steps": [ {"do":"wait","ms":2500}, {"do":"click","text":"No"}, {"do":"click","text":"Male"}, {"do":"click","text":"I accept"}, {"do":"click","text":"Continue"},
+    {"do":"click","text":"Slow, patchy or thin growth areas"}, {"do":"click","text":"No"}, {"do":"click","text":"No"}, {"do":"click","text":"No"},
+    {"do":"click","text":"Eczema"}, {"do":"click","text":"Continue"}, {"do":"wait","ms":1500} ] }

@@ -201,3 +201,34 @@ no branch on q4 / q6 / q10 (women).
 - Parent company confirmed in stage 2 from the terms of use (`raw/terms-of-use.html`): 'Roman Health Ventures Inc. and its affiliates including Roman Health Medical LLC, Roman Health Pharmacy LLC, ...'.
 - Web search was not used: the served code answered the questions; no public review was needed to describe post-wall steps.
 - Each live replay leaves one anonymous draft record on Ro's side (stage 2 added 21). Use the simulator for anything further.
+
+## Stage 3 (VERIFY) finished 2026-11-24
+
+An earlier attempt at this stage (23 Nov, interrupted) left: fresh baselines `runs/verify-baseline-men` and
+`runs/verify-baseline-women` (wall screens byte-for-byte the same as stage 2), fresh code downloads in `runs/verify-code/`
+(new main bundle `main.492909756d6fd4640b5b.js`; recommender chunk 48419 unchanged), fresh product pages in
+`runs/verify-pages/`, and four men's pre-wall replays (`verify-m-dismiss`, `verify-m-goals-all`, `verify-m-nonrx+rx`,
+`verify-m-rx-easier`). This attempt continues from there. Runner: `bash scripts/run_verify.sh <id> ...` (action files in
+`experiments/verify-*.json`).
+
+- Served schemas re-checked: men v77 and women v32 are unchanged (only difference = `key` fields blanked by redact.py).
+- New main bundle re-read: parseInt on variable values, fork evaluator (first true rule), multi-select next question
+  (first ticked answer in display order) are all unchanged. `userAge` is set from date of birth on the Basics screen
+  (`runs/verify-code/70959.*.chunk.js`); Basics enforces schema `meta.minAge` 18; men and women have no `maxAge`.
+- Live today: `verify-w-temples` and `verify-w-temples+frontal` skip the part-line picture; `verify-w-top+temples` asks it
+  (R20 confirmed).
+- Live today (all one at a time, foreground): `verify-w-sudden`, `verify-w-pic2`, `verify-w-pic4` (no branch; pictures 2 and 4
+  had never been replayed), `verify-m-coupon` (coupon 253, 35% off, still matched silently), `verify-otc-minoxidil`
+  (sign-up first, cart $48 per 3 months), `verify-otc-shampoo`, `verify-otc-conditioner` ($24 per 3 months, then sign-up).
+  Every wall screen is word-for-word the baseline's. Stage 3 total: 18 live replays (6 from the interrupted attempt, 12 today, incl. `verify-entry-escptw` and `verify-entry-afbkau`, both as in stage 1).
+- Pricing page re-fetched today (`runs/verify-pages-1124/pricing.txt`): all hair-loss prices unchanged.
+- Code re-read (raw schema, not the simulator) for the high-impact rules: women's stops (6020 pregnancy; 6040 via forks 1087,
+  1091, 1159, 1251 and answers 1254 Yes, 1258 Foam/Both), tablet removal (fork 4020: not eligible or userAge > 65), the men's
+  no-recommend setters (every one listed and matched to R8 to R13) and the recommender order. All confirmed; none contradicted.
+- Simulator vs code: same parseInt, same first-true fork, same first-ticked-answer routing for choice/multichoice questions;
+  it does not model the state rule (R7), which is server-side.
+- `scripts/stage3.py` applies the stage 3 changes to company.json (experiments, observed upgrades, proofs, limitations,
+  the `verification` block). Rebuild order is now: build_company.py -> sweep.py -> stage2.py -> stage3.py, then
+  `node ../../tools/validate.js ro --stage final` (passes: 0 errors, 1 warning for the supplement with no URL).
+- Still open: anything after the wall live; the state list; other men's schemas named by the coupon (kit, overhaul, gs, renewal);
+  women's tablet strength; isEligibleFor6And12MonthShipments.

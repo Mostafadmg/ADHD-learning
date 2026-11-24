@@ -447,3 +447,7 @@ console.log('products', products.length, '| men questions', mq.length, '| option
 // ---------------------------------------------------------------- stage 2 (EXPERIMENT) overlay
 // Adds experiments, rules, recommendations and per-option effects from the one-change runs. See scripts/s2-overlay.js.
 if (fs.existsSync(path.join(__dirname, 's2-overlay.js')) && fs.existsSync(path.join(ROOT, 'runs', 'offline', 'results.json'))) require('./s2-overlay.js');
+
+// ---------------------------------------------------------------- stage 3 (VERIFY) overlay
+// Re-test results, corrections and the "verification" block. See scripts/verify-overlay.js and scripts/verify-results.json.
+if (fs.existsSync(path.join(__dirname, 'verify-overlay.js')) && fs.existsSync(path.join(__dirname, 'verify-results.json'))) require('./verify-overlay.js');

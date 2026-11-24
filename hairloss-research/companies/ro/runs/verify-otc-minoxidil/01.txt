@@ -1,0 +1,43 @@
+STEP 01 wait 4000
+URL: https://start.ro.co/vwayzg/
+TITLE: Online Visit
+
+--- VISIBLE TEXT ---
+Your Account
+Ro takes your security very seriously and encrypts all of your information, meaning that your confidential data is handled securely.
+
+Already a member? Log in and continue
+
+Sign up with Email
+
+OR
+
+Continue with Google
+
+Minoxidil Topical Solution, 60mL
+
+5%, 1 x per month
+
+1 x month ($16 ea.)
+
+3 month plan ($16/mo)
+
+$48
+
+Shipping
+
+Included
+
+Total
+
+$48
+
+Free shipping
+Modify or cancel your plan any time
+Backed by U.S.-licensed physicians and medical advisors
+
+--- CONTROLS ---
+  button (3): Log in and continue  ·  Sign up with Email  ·  Continue with Google
+
+--- LINKS ---
+

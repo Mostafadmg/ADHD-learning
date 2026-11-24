@@ -1,0 +1,3 @@
+{ "_about": "Stage 3: partner-clinic landing page (British Hair Clinic). Treatment type = Hair Transplant, Continue, then see the procedure-date step. No contact details.",
+  "start": "https://shop.sons.co.uk/clinics/british-hair-clinic",
+  "steps": [ {"do":"wait","ms":3000}, {"do":"click","text":"Select treatment"}, {"do":"wait","ms":800}, {"do":"click","text":"Hair Transplant"}, {"do":"wait","ms":800}, {"do":"click","text":"Continue"}, {"do":"wait","ms":2000} ] }

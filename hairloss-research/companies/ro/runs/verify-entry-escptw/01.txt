@@ -1,0 +1,28 @@
+STEP 01 wait 4000
+URL: https://start.ro.co/fxdxbh/online-visit/7
+TITLE: Online Visit
+
+--- VISIBLE TEXT ---
+“This program has seriously helped me with something I never thought I’d feel comfortable addressing. So thanks for the work you’re doing.”
+
+Ro Member, California
+Medical evaluation and prescriptions by U.S.-licensed physicians
+Free shipping
+Continued support from your doctor and the care team
+CA Privacy Notice
+Your Privacy Choices
+Getting started with your hair loss visit.
+
+Already a member? Log in and continue
+
+Sign up with Email
+
+OR
+
+Continue with Google
+
+--- CONTROLS ---
+  button (4): Your Privacy Choices  ·  Log in and continue  ·  Sign up with Email  ·  Continue with Google
+
+--- LINKS ---
+  link (1): CA Privacy Notice -> //ro.co/privacy-policy/#privacy-california
